@@ -1,0 +1,81 @@
+{
+  "schemaVersion": 1,
+  "batchId": "ostermann-1876-language-review-21",
+  "reviewedAt": "2026-08-02",
+  "sourceDecisionFiles": [
+    "review-decisions-batch-21.json"
+  ],
+  "purpose": "Ventunesima revisione linguistica ed editoriale dei candidati Ostermann 1876 verificati sul facsimile. Non pubblica contenuti nella UI.",
+  "policy": {
+    "publish": false,
+    "rule": "La normalizzazione FUR conserva il significato attestato nel facsimile e adotta le forme proverbiali registrate dal Dizionari de Lenghe Furlane. Le quattro massime sono generali e non ricevono vincoli temporali artificiali."
+  },
+  "summary": {
+    "records": 4,
+    "languageReviewed": 4,
+    "mergeExisting": 0,
+    "needsNativeReview": 0
+  },
+  "records": [
+    {
+      "id": "ost1876-necessitat-fas-om-mestri",
+      "reviewStatus": "language_reviewed",
+      "furNormalized": "La necessitât e fâs l'om mestri.",
+      "itFinal": "La necessità rende l'uomo esperto.",
+      "destination": "almanac",
+      "calendarRule": { "type": "general", "bucket": "wisdom", "fallbackAllowed": true },
+      "duplicateAudit": { "status": "new_distinct" },
+      "evidence": [
+        { "label": "Facsimile Ostermann 1876, p. PDF 133", "kind": "primary" },
+        { "label": "Dizionari de Lenghe Furlane, proverbio registrato alla voce fâ", "kind": "secondary" }
+      ],
+      "editorialNote": "Adottata la forma proverbiale normalizzata attestata integralmente dal dizionario.",
+      "publish": false
+    },
+    {
+      "id": "ost1876-par-fa-bisugne-scomenca",
+      "reviewStatus": "language_reviewed",
+      "furNormalized": "Par fâ bisugne scomençâ.",
+      "itFinal": "Per fare bisogna cominciare.",
+      "destination": "almanac",
+      "calendarRule": { "type": "general", "bucket": "wisdom", "fallbackAllowed": true },
+      "duplicateAudit": { "status": "new_distinct" },
+      "evidence": [
+        { "label": "Facsimile Ostermann 1876, p. PDF 135", "kind": "primary" },
+        { "label": "Dizionari de Lenghe Furlane, proverbio registrato alla voce bisugnâ", "kind": "secondary" }
+      ],
+      "editorialNote": "Adottata la forma proverbiale normalizzata attestata integralmente dal dizionario.",
+      "publish": false
+    },
+    {
+      "id": "ost1876-nol-baste-scomenca-seguita",
+      "reviewStatus": "language_reviewed",
+      "furNormalized": "Nol baste scomençâ, bisugne seguitâ.",
+      "itFinal": "Non basta cominciare, bisogna continuare.",
+      "destination": "almanac",
+      "calendarRule": { "type": "general", "bucket": "wisdom", "fallbackAllowed": true },
+      "duplicateAudit": { "status": "new_distinct" },
+      "evidence": [
+        { "label": "Facsimile Ostermann 1876, p. PDF 135", "kind": "primary" },
+        { "label": "Dizionari de Lenghe Furlane, proverbio registrato alla voce bisugnâ", "kind": "secondary" }
+      ],
+      "editorialNote": "Il facsimile usa continuâ; adottata la forma proverbiale normalizzata registrata dal dizionario.",
+      "publish": false
+    },
+    {
+      "id": "ost1876-compagnie-fas-fa-trop",
+      "reviewStatus": "language_reviewed",
+      "furNormalized": "La compagnie a fâs fâ trop.",
+      "itFinal": "La compagnia porta a esagerare.",
+      "destination": "almanac",
+      "calendarRule": { "type": "general", "bucket": "wisdom", "fallbackAllowed": true },
+      "duplicateAudit": { "status": "new_distinct" },
+      "evidence": [
+        { "label": "Facsimile Ostermann 1876, p. PDF 113", "kind": "primary" },
+        { "label": "Dizionari de Lenghe Furlane, proverbio registrato alla voce fâ", "kind": "secondary" }
+      ],
+      "editorialNote": "Adottata la forma proverbiale normalizzata attestata integralmente dal dizionario.",
+      "publish": false
+    }
+  ]
+}

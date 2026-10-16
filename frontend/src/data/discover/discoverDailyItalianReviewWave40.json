@@ -1,0 +1,212 @@
+{
+  "schemaVersion": 1,
+  "generatedAt": "2026-07-17",
+  "purpose": "Quarantesimo lotto Scopri IT: audit editoriale di quindici candidati della coda. Otto figure superano la soglia storico-culturale: Celso Costantini per il ruolo nelle relazioni tra Chiesa e Cina, Mirko Polič per il teatro musicale sloveno, Tiberio Deciani per la storia del diritto penale, Vittorio Ieralla per la rappresentanza internazionale delle persone sorde, Carlo Errera per la storia della geografia, Bruno Premiani per l'illustrazione e il fumetto internazionale, Sergij Vilfan per la storia del diritto e Antonio Franconi per lo sviluppo del circo moderno. Sei profili sportivi, politici o professionali ordinari vengono esclusi; Mirella Parutto resta fuori per la contraddizione non risolta su data e anno di nascita. La pubblicazione resta bloccata fino alla revisione FUR degli otto record selezionati.",
+  "policy": {
+    "readyForUi": false,
+    "furDeferred": true,
+    "dateFormat": "DD-MM",
+    "requiresFinalItalianApproval": true,
+    "excludeDeaths": true,
+    "excludeGenericPoliticalProfiles": true,
+    "excludeGenericProfessionalProfiles": true,
+    "excludeSportsOnlyProfiles": true,
+    "allowExceptionalSportsProfiles": true,
+    "rejectBirthplaceOnlyProfiles": true,
+    "rejectSemanticDuplicates": true,
+    "rejectUncertainCalendarDates": true,
+    "sourceFirst": true,
+    "publishAfterFurOnly": true,
+    "allowMultipleMemoriesPerDate": true,
+    "secondaryOrderedByPriority": true,
+    "doNotPromoteToPrimaryForCoverageOnly": true
+  },
+  "summary": {
+    "reviewed": 15,
+    "keepDaily": 8,
+    "primary": 4,
+    "secondary": 4,
+    "hold": 0,
+    "excluded": 7,
+    "canonicalPrimaryDatesBefore": 240,
+    "canonicalPrimaryDatesAfter": 244,
+    "currentVisiblePrimaryCoverage": 233
+  },
+  "keepDaily": [
+    {
+      "id": "master-fvg-03-04-Q918301",
+      "wikidataId": "Q918301",
+      "dateIt": "03-04",
+      "year": 1876,
+      "municipality": "Zoppola",
+      "locality": "Castions di Zoppola",
+      "province": "PN",
+      "canonicalCategory": "storia",
+      "dailyRole": "secondary",
+      "priority": 98,
+      "titleIt": "Celso Costantini, dal Friuli alla Cina",
+      "copyIt": "Il 3 aprile 1876 nasce a Castions di Zoppola Celso Costantini. Primo delegato apostolico in Cina, promuove una Chiesa con vescovi e istituzioni locali e un dialogo più rispettoso tra culture e religioni.",
+      "sourceLabel": "Associazione Cardinale Celso Costantini - Biografia",
+      "sourceUrl": "https://www.associazionecardinalecostantini.it/celso-costantini/",
+      "sourceStatus": "pass",
+      "readyForUi": false
+    },
+    {
+      "id": "master-fvg-03-06-Q18644770",
+      "wikidataId": "Q18644770",
+      "dateIt": "03-06",
+      "year": 1890,
+      "municipality": "Trieste",
+      "locality": "Trieste",
+      "province": "TS",
+      "canonicalCategory": "cultura",
+      "dailyRole": "primary",
+      "priority": 93,
+      "titleIt": "Mirko Polič e il teatro musicale sloveno",
+      "copyIt": "Il 3 giugno 1890 nasce a Trieste Mirko Polič. Direttore d'orchestra e compositore, guida l'orchestra del teatro sloveno al Narodni dom e rinnova il repertorio e la regia del Teatro dell'Opera di Lubiana.",
+      "sourceLabel": "SLORI - Un teatro per la città",
+      "sourceUrl": "https://www.slori.org/wp-content/uploads/2015/11/un_teatro_per_la_citta_def_splet.pdf",
+      "sourceStatus": "pass",
+      "readyForUi": false
+    },
+    {
+      "id": "master-fvg-03-08-Q3991119",
+      "wikidataId": "Q3991119",
+      "dateIt": "03-08",
+      "year": 1509,
+      "municipality": "Udine",
+      "locality": "Udine",
+      "province": "UD",
+      "canonicalCategory": "cultura",
+      "dailyRole": "secondary",
+      "priority": 97,
+      "titleIt": "Tiberio Deciani e le radici del diritto penale moderno",
+      "copyIt": "Il 3 agosto 1509 nasce a Udine Tiberio Deciani. Giurista e docente a Padova, con il Tractatus criminalis contribuisce all'autonomia scientifica del diritto penale e diventa un riferimento della tradizione giuridica europea.",
+      "sourceLabel": "Treccani - Dizionario Biografico degli Italiani",
+      "sourceUrl": "https://www.treccani.it/enciclopedia/tiberio-deciani_%28Dizionario-Biografico%29/",
+      "sourceStatus": "pass",
+      "readyForUi": false
+    },
+    {
+      "id": "master-fvg-03-08-Q18118106",
+      "wikidataId": "Q18118106",
+      "dateIt": "03-08",
+      "year": 1903,
+      "municipality": "Trieste",
+      "locality": "Trieste",
+      "province": "TS",
+      "canonicalCategory": "storia",
+      "dailyRole": "secondary",
+      "priority": 96,
+      "titleIt": "Vittorio Ieralla e i diritti delle persone sorde",
+      "copyIt": "Il 3 agosto 1903 nasce a Trieste Vittorio Ieralla. Tra i fondatori della Federazione Mondiale dei Sordi e suo primo presidente, porta i diritti e la rappresentanza delle persone sorde nel confronto internazionale.",
+      "sourceLabel": "Ente Nazionale Sordi - Vittorio Ieralla",
+      "sourceUrl": "https://www.ens.it/a-trieste-la-commemorazione-del-presidente-ens-ieralla-a-40-anni-dalla-sua-scomparsa/",
+      "sourceStatus": "pass",
+      "readyForUi": false
+    },
+    {
+      "id": "master-fvg-03-12-Q3659310",
+      "wikidataId": "Q3659310",
+      "dateIt": "03-12",
+      "year": 1867,
+      "municipality": "Trieste",
+      "locality": "Trieste",
+      "province": "TS",
+      "canonicalCategory": "cultura",
+      "dailyRole": "primary",
+      "priority": 92,
+      "titleIt": "Carlo Errera e la storia della geografia",
+      "copyIt": "Il 3 dicembre 1867 nasce a Trieste Carlo Errera. Geografo e storico delle esplorazioni, studia cartografia, toponomastica e grandi scoperte e promuove un insegnamento moderno della geografia nelle università italiane.",
+      "sourceLabel": "Treccani - Dizionario Biografico degli Italiani",
+      "sourceUrl": "https://www.treccani.it/enciclopedia/carlo-errera_%28Dizionario-Biografico%29/",
+      "sourceStatus": "pass",
+      "readyForUi": false
+    },
+    {
+      "id": "master-fvg-04-01-Q4979365",
+      "wikidataId": "Q4979365",
+      "dateIt": "04-01",
+      "year": 1907,
+      "municipality": "Trieste",
+      "locality": "Trieste",
+      "province": "TS",
+      "canonicalCategory": "cultura",
+      "dailyRole": "primary",
+      "priority": 94,
+      "titleIt": "Bruno Premiani, dal disegno politico alla Doom Patrol",
+      "copyIt": "Il 4 gennaio 1907 nasce a Trieste Bruno Premiani. Illustratore e fumettista antifascista, emigra in Argentina e lavora poi negli Stati Uniti, dove contribuisce alla creazione della Doom Patrol e dei Teen Titans per DC Comics.",
+      "sourceLabel": "Lambiek Comiclopedia - Bruno Premiani",
+      "sourceUrl": "https://www.lambiek.net/artists/p/premiani_bruno.htm",
+      "sourceStatus": "pass",
+      "readyForUi": false
+    },
+    {
+      "id": "master-fvg-05-04-Q7454162",
+      "wikidataId": "Q7454162",
+      "dateIt": "05-04",
+      "year": 1919,
+      "municipality": "Trieste",
+      "locality": "Trieste",
+      "province": "TS",
+      "canonicalCategory": "cultura",
+      "dailyRole": "primary",
+      "priority": 92,
+      "titleIt": "Sergij Vilfan e la storia del diritto",
+      "copyIt": "Il 5 aprile 1919 nasce a Trieste Sergij Vilfan. Storico del diritto e archivista, dirige l'Archivio civico di Lubiana e diventa uno degli studiosi sloveni più riconosciuti nella storia giuridica e sociale.",
+      "sourceLabel": "Accademia slovena delle scienze e delle arti - Sergij Vilfan",
+      "sourceUrl": "https://www.sazu.si/clani/sergij-vilfan",
+      "sourceStatus": "pass",
+      "readyForUi": false
+    },
+    {
+      "id": "master-fvg-05-08-Q570580",
+      "wikidataId": "Q570580",
+      "dateIt": "05-08",
+      "year": 1737,
+      "municipality": "Udine",
+      "locality": "Udine",
+      "province": "UD",
+      "canonicalCategory": "cultura",
+      "dailyRole": "secondary",
+      "priority": 93,
+      "titleIt": "Antonio Franconi, da Udine alla storia del circo",
+      "copyIt": "Il 5 agosto 1737 nasce a Udine Antonio Franconi. Trasferitosi in Francia, lega il proprio nome al Cirque Olympique e contribuisce allo sviluppo dello spettacolo equestre e del circo moderno.",
+      "sourceLabel": "Bibliothèque nationale de France - Cirque Olympique",
+      "sourceUrl": "https://expositions.bnf.fr/cnac/grand/cir_2493.htm",
+      "sourceStatus": "pass",
+      "readyForUi": false
+    }
+  ],
+  "hold": [],
+  "excluded": [
+    {
+      "id": "master-fvg-03-05-Q96973711",
+      "reason": "Profilo sportivo e mediatico contemporaneo senza un risultato storico eccezionale o un lascito territoriale autonomo adeguato alla rubrica."
+    },
+    {
+      "id": "master-fvg-04-05-Q3858823",
+      "reason": "La coda e le fonti consultate riportano giorno e anno di nascita incompatibili; una memoria giornaliera non può essere pubblicata con un ancoraggio di calendario incerto."
+    },
+    {
+      "id": "master-fvg-04-06-Q3972356",
+      "reason": "Carriera sportiva nazionale senza risultato mondiale o olimpico e senza un lascito storico territoriale autonomo."
+    },
+    {
+      "id": "master-fvg-04-06-Q16555047",
+      "reason": "Profilo sportivo e politico contemporaneo che non supera né la soglia sportiva eccezionale né quella storico-culturale della rubrica."
+    },
+    {
+      "id": "master-fvg-05-01-Q3770098",
+      "reason": "Carriera militare contemporanea di rilievo professionale, ma priva di un contributo storico autonomo documentato sufficiente per una memoria giornaliera."
+    },
+    {
+      "id": "master-fvg-05-04-Q55217569",
+      "reason": "Profilo sportivo nel sollevamento pesi senza risultato mondiale, europeo assoluto o olimpico sufficiente per la deroga editoriale."
+    },
+    {
+      "id": "master-fvg-05-06-Q52713324",
+      "reason": "Profilo esclusivamente atletico senza risultato storico eccezionale o lascito territoriale autonomo."
+    }
+  ]
+}

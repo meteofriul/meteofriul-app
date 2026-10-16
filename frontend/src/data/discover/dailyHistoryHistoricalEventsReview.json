@@ -1,0 +1,281 @@
+{
+  "schemaVersion": 1,
+  "purpose": "Selezione controllata di eventi storici prioritari per Scopri. Non letto dalla UI.",
+  "generatedAt": "2026-07-11",
+  "policy": {
+    "doNotPublishFromThisFile": true,
+    "historicalEventsBeforeSimpleBirths": true,
+    "dateFormat": "DD-MM",
+    "requiresHumanReview": true,
+    "requiresFurReview": true,
+    "furWorkDeferredUntilItalianSelectionConfirmed": true,
+    "notes": [
+      "Battaglie, assedi, guerre e grandi eventi storici hanno priorita editoriale rispetto alle semplici nascite.",
+      "La fonte master/Wikipedia serve solo per staging: la pubblicazione richiede controllo fonte e copy finale.",
+      "Le voci troppo larghe o senza data storica puntuale restano in hold.",
+      "Il FUR si avvia soltanto dopo la conferma della selezione editoriale italiana."
+    ]
+  },
+  "records": [
+    {
+      "id": "history-event-1210-assedio-trieste-1813",
+      "wikidataId": "Q15045856",
+      "dateIt": "12-10",
+      "year": "1813",
+      "type": "Evento",
+      "place": "Trieste",
+      "category": "memoria_storica",
+      "batchDecision": "copy_candidate",
+      "surface": "memory_of_the_day",
+      "rank": "A",
+      "title": "Assedio di Trieste",
+      "copyDraft": {
+        "it": "Il 12 ottobre 1813 iniziò l'assedio di Trieste nella campagna d'Italia della Sesta coalizione. Una data da raccontare con taglio storico, senza retorica militare.",
+        "fur": "deferred_until_it_selection"
+      },
+      "source": {
+        "label": "Wikipedia / assedio di Trieste",
+        "type": "daily_history_master_candidate",
+        "url": "https://it.wikipedia.org/wiki/assedio_di_Trieste",
+        "confidence": "medium"
+      },
+      "reviewNotes": "Buon candidato: data puntuale, evento storico chiaro, copy da verificare prima della pubblicazione.",
+      "readyForUi": false
+    },
+    {
+      "id": "history-event-0401-assedio-aquileia-238",
+      "wikidataId": "Q11794840",
+      "dateIt": "01-04",
+      "year": "0238",
+      "type": "Evento",
+      "place": "Aquileia",
+      "category": "memoria_storica",
+      "batchDecision": "evergreen_archive_candidate",
+      "surface": "discover_archive",
+      "rank": "A",
+      "title": "Assedio di Aquileia del 238",
+      "reason": "Evento storico forte, ma la data esatta non e' abbastanza stabile per una Memoria del giorno: conservarlo come approfondimento senza ricorrenza.",
+      "source": {
+        "label": "Wikipedia / assedio di Aquileia",
+        "type": "daily_history_master_candidate",
+        "url": "https://it.wikipedia.org/wiki/assedio_di_Aquileia",
+        "confidence": "medium"
+      },
+      "reviewNotes": "Tenere in hold: fonti da verificare, la data potrebbe essere solo orientativa.",
+      "readyForUi": false
+    },
+    {
+      "id": "history-event-0729-assedio-aquileia-388",
+      "wikidataId": "Q21235600",
+      "dateIt": "29-07",
+      "year": "0388",
+      "type": "Evento",
+      "place": "Aquileia",
+      "category": "memoria_storica",
+      "batchDecision": "hold_strong_source",
+      "surface": "hold",
+      "rank": "hold",
+      "title": "Assedio di Aquileia del 388",
+      "reason": "Evento interessante, ma la data non e' stabile tra le fonti: non usarlo come Accadde oggi finche' non e' verificato.",
+      "source": {
+        "label": "Wikipedia / assedio di Aquileia",
+        "type": "daily_history_master_candidate",
+        "url": "https://it.wikipedia.org/wiki/assedio_di_Aquileia",
+        "confidence": "medium"
+      },
+      "reviewNotes": "Tenere in hold: evitare pubblicazione giornaliera con data incerta.",
+      "readyForUi": false
+    },
+    {
+      "id": "history-event-0806-battaglia-doberdo",
+      "wikidataId": "Q757186",
+      "dateIt": "06-08",
+      "year": "1916",
+      "type": "Evento",
+      "place": "Gorizia",
+      "category": "memoria_storica",
+      "batchDecision": "copy_candidate",
+      "surface": "memory_of_the_day",
+      "rank": "A",
+      "title": "Battaglia di Doberdò",
+      "copyDraft": {
+        "it": "Il 6 agosto 1916 la battaglia di Doberdò segnò il fronte isontino della Prima guerra mondiale. Una memoria dura, da raccontare con sobrietà.",
+        "fur": "deferred_until_it_selection"
+      },
+      "source": {
+        "label": "Wikipedia / battaglia di Doberdò",
+        "type": "daily_history_master_candidate",
+        "url": "https://it.wikipedia.org/wiki/battaglia_di_Doberdò",
+        "confidence": "medium"
+      },
+      "reviewNotes": "Candidato forte per il territorio isontino; evitare tono celebrativo.",
+      "readyForUi": false
+    },
+    {
+      "id": "history-event-1103-rivolta-trieste",
+      "wikidataId": "Q3938038",
+      "dateIt": "03-11",
+      "year": "1953",
+      "type": "Evento",
+      "place": "Trieste",
+      "category": "memoria_storica",
+      "batchDecision": "hold_strong_source",
+      "surface": "hold",
+      "rank": "hold",
+      "title": "Rivolta di Trieste",
+      "copyDraft": {
+        "it": "Il 3 novembre 1953 Trieste visse giornate di tensione entrate nella memoria pubblica della città. Da trattare come storia civile, con equilibrio.",
+        "fur": "deferred_until_it_selection"
+      },
+      "source": {
+        "label": "Wikipedia / Rivolta di Trieste",
+        "type": "daily_history_master_candidate",
+        "url": "https://it.wikipedia.org/wiki/Rivolta_di_Trieste",
+        "confidence": "medium"
+      },
+      "reviewNotes": "Evento importante ma politicamente sensibile: serve fonte/copy controllata.",
+      "readyForUi": false
+    },
+    {
+      "id": "history-event-0515-battaglia-tarvisio-1809",
+      "wikidataId": "Q4872513",
+      "dateIt": "15-05",
+      "year": "1809",
+      "type": "Evento",
+      "place": "Tarvisio",
+      "category": "memoria_storica",
+      "batchDecision": "copy_candidate",
+      "surface": "memory_of_the_day",
+      "rank": "B",
+      "title": "Battaglia di Tarvisio del 1809",
+      "copyDraft": {
+        "it": "Il 15 maggio 1809 Tarvisio fu teatro di una battaglia della guerra della Quinta coalizione. Una memoria alpina da verificare nella fonte prima della pubblicazione.",
+        "fur": "deferred_until_it_selection"
+      },
+      "source": {
+        "label": "Wikipedia / battaglia di Tarvisio",
+        "type": "daily_history_master_candidate",
+        "url": "https://it.wikipedia.org/wiki/battaglia_di_Tarvisio",
+        "confidence": "medium"
+      },
+      "reviewNotes": "Buono per area montana, ma va distinto dalla battaglia di Tarvisio del 1797.",
+      "readyForUi": false
+    },
+    {
+      "id": "history-event-0321-battaglia-tarvisio-1797",
+      "wikidataId": "Q4872512",
+      "dateIt": "21-03",
+      "year": "1797",
+      "type": "Evento",
+      "place": "Tarvisio",
+      "category": "memoria_storica",
+      "batchDecision": "hold_duplicate_theme",
+      "surface": "hold",
+      "rank": "hold",
+      "title": "Battaglia di Tarvisio del 1797",
+      "copyDraft": {
+        "it": "Il 21 marzo 1797 Tarvisio entrò nelle cronache militari delle campagne napoleoniche. Da usare solo con una fonte storica chiara.",
+        "fur": "deferred_until_it_selection"
+      },
+      "source": {
+        "label": "Wikipedia / Battaglia di Tarvisio",
+        "type": "daily_history_master_candidate",
+        "url": "https://it.wikipedia.org/wiki/Battaglia_di_Tarvisio",
+        "confidence": "medium"
+      },
+      "reviewNotes": "Secondo evento su Tarvisio: utile ma da non sovraccaricare se il calendario ha alternative migliori.",
+      "readyForUi": false
+    },
+    {
+      "id": "history-event-0429-battaglia-opicina",
+      "wikidataId": "Q28670055",
+      "dateIt": "29-04",
+      "year": "1945",
+      "type": "Evento",
+      "place": "Opicina",
+      "category": "memoria_storica",
+      "batchDecision": "hold_strong_source",
+      "surface": "hold",
+      "rank": "hold",
+      "title": "Battaglia di Opicina",
+      "copyDraft": {
+        "it": "Il 29 aprile 1945 Opicina fu coinvolta negli ultimi giorni di guerra nell'area triestina. Una memoria da raccontare con precisione e senza semplificare.",
+        "fur": "deferred_until_it_selection"
+      },
+      "source": {
+        "label": "Wikipedia / battaglia di Opicina",
+        "type": "daily_history_master_candidate",
+        "url": "https://it.wikipedia.org/wiki/battaglia_di_Opicina",
+        "confidence": "medium"
+      },
+      "reviewNotes": "Candidato forte ma sensibile: richiede controllo fonte prima della pubblicazione.",
+      "readyForUi": false
+    },
+    {
+      "id": "history-hold-0523-fronte-italiano",
+      "wikidataId": "Q659745",
+      "dateIt": "23-05",
+      "year": "1915",
+      "type": "Evento",
+      "place": "Pianura veneto-friulana",
+      "category": "memoria_storica",
+      "batchDecision": "hold_strong_source",
+      "surface": "hold",
+      "rank": "hold",
+      "title": "Fronte italiano",
+      "reason": "Tema troppo largo per una Memoria del giorno locale senza un fatto puntuale.",
+      "readyForUi": false
+    },
+    {
+      "id": "history-hold-0523-battaglie-isonzo",
+      "wikidataId": "Q681517",
+      "dateIt": "23-05",
+      "year": "1915",
+      "type": "Evento",
+      "place": "Friuli-Venezia Giulia",
+      "category": "memoria_storica",
+      "batchDecision": "hold_strong_source",
+      "surface": "hold",
+      "rank": "hold",
+      "title": "Battaglie dell'Isonzo",
+      "reason": "Serie di battaglie, non singolo evento: usare solo se troviamo una data specifica migliore.",
+      "readyForUi": false
+    },
+    {
+      "id": "history-hold-0919-redipuglia",
+      "wikidataId": "Q498934",
+      "dateIt": "19-09",
+      "year": "1938",
+      "type": "Evento",
+      "place": "Fogliano Redipuglia",
+      "category": "memoria_storica",
+      "batchDecision": "hold_strong_source",
+      "surface": "hold",
+      "rank": "hold",
+      "title": "Sacrario militare di Redipuglia",
+      "reason": "Luogo importante, ma serve fonte ufficiale sulla data prima di usarlo come Accadde oggi.",
+      "readyForUi": false
+    },
+    {
+      "id": "history-discard-0401-corriere-trieste",
+      "wikidataId": "Q3792641",
+      "dateIt": "01-04",
+      "year": "2014",
+      "type": "Evento",
+      "place": "Trieste",
+      "category": "stampa_storia_civile",
+      "batchDecision": "discard_entity_not_event",
+      "surface": "hold",
+      "rank": "hold",
+      "title": "Il Corriere di Trieste",
+      "reason": "La data appartiene alla voce enciclopedica del quotidiano e non identifica un fatto storico avvenuto quel giorno.",
+      "source": {
+        "label": "Master Accadde oggi FVG / Wikipedia",
+        "type": "daily_history_master_candidate",
+        "url": "https://it.wikipedia.org/wiki/Il_Corriere_di_Trieste",
+        "confidence": "misclassified_entity"
+      },
+      "readyForUi": false
+    }
+  ]
+}

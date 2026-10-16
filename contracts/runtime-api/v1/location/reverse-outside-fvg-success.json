@@ -1,0 +1,28 @@
+{
+  "city": "Bologna",
+  "displayName": "Bologna",
+  "region": "Emilia-Romagna",
+  "country": "Italia",
+  "countryCode": "IT",
+  "lat": 44.4949,
+  "lon": 11.3426,
+  "province": null,
+  "provinceName": null,
+  "istatCode": null,
+  "locality": null,
+  "municipality": null,
+  "dataPoint": {
+    "lat": 44.4938203,
+    "lon": 11.3426327,
+    "source": "nominatim_place"
+  },
+  "resolution": {
+    "status": "external_place",
+    "municipalityResolved": false,
+    "localityCorroborated": false,
+    "matchMethod": "nearest",
+    "distanceM": 120.085,
+    "runnerUpDistanceM": null,
+    "boundaryDistanceM": null
+  }
+}

@@ -1,0 +1,39 @@
+{
+  "id": "why-palmanova-star",
+  "question": {
+    "it": "Perché Palmanova ha la forma di una stella?",
+    "fur": "Parcè Palme aie la forme di une stele?"
+  },
+  "lead": {
+    "it": "Per difendersi.",
+    "fur": "Par difindisi."
+  },
+  "answer": {
+    "it": [
+      "Le nove punte corrispondono ai bastioni della prima cerchia fortificata.",
+      "Numero e dimensioni dei bastioni furono studiati in relazione alla gittata dei cannoni dell’epoca. La forma a stella non nacque quindi come decorazione: era una macchina difensiva."
+    ],
+    "fur": [
+      "Lis nûf pontis a son i bastions che a formin la prime cente murarie.",
+      "Il numar e lis dimensions dai bastions a jerin studiâts su la puartade dai canons dal timp. La forme a stele, duncje, no jere dome une decorazion: e jere une machine difensive."
+    ]
+  },
+  "sources": [
+    {
+      "label": "Comune di Palmanova · Parco dei Bastioni",
+      "url": "https://www.visitpalmanova.it/passeggiata-nel-parco-dei-bastioni/"
+    },
+    {
+      "label": "Comune di Palmanova · Il Bastione",
+      "url": "https://www.visitpalmanova.it/bastione-garzoni/"
+    }
+  ],
+  "review": {
+    "sourceCheckedAt": "2026-09-08",
+    "method": "assisted_source_cross_check",
+    "furReference": "https://arlef.it/app/uploads/materiali/pianura-e-costa-friulane-quaderno.pdf",
+    "furReviewMethod": "assisted_reference_check_not_human_certification",
+    "independentHumanReview": false,
+    "scope": "First pilot question, not a daily rotation catalogue."
+  }
+}

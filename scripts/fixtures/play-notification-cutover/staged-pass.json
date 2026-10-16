@@ -1,0 +1,231 @@
+{
+  "schemaVersion": 1,
+  "capturedAtUtc": "2026-08-23T10:00:00Z",
+  "identity": {
+    "activeAccount": "meteofriul@gmail.com",
+    "projectId": "meteo-friul",
+    "projectNumber": "49007668366"
+  },
+  "firebase": {
+    "androidApp": {
+      "name": "projects/meteo-friul/androidApps/1:49007668366:android:725bf6f8b339177a852ddf",
+      "appId": "1:49007668366:android:725bf6f8b339177a852ddf",
+      "packageName": "com.meteofriul.app",
+      "state": "ACTIVE",
+      "shaCertificates": [
+        {
+          "certType": "SHA_256",
+          "shaHash": "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+        }
+      ]
+    },
+    "appCheck": {
+      "playIntegrityConfig": {
+        "name": "projects/49007668366/apps/1:49007668366:android:725bf6f8b339177a852ddf/playIntegrityConfig",
+        "tokenTtl": "3600s",
+        "appIntegrity": {
+          "allowUnrecognizedVersion": false
+        },
+        "deviceIntegrity": {
+          "minDeviceRecognitionLevel": "MEETS_DEVICE_INTEGRITY"
+        },
+        "accountDetails": {
+          "requireLicensed": true
+        }
+      },
+      "debugTokenPages": [
+        {
+          "requestPageToken": "",
+          "nextPageToken": "page-2",
+          "debugTokens": []
+        },
+        {
+          "requestPageToken": "page-2",
+          "nextPageToken": "",
+          "debugTokens": []
+        }
+      ]
+    }
+  },
+  "debugTokenRevocationEvidence": {
+    "path": "release-history/play-notification-cutover/evidence/20260820T180000Z-debug-tokens-revoked.json",
+    "tracked": true,
+    "clean": true,
+    "addCommitCount": 1,
+    "addCommitTimeUtc": "2026-08-20T18:06:00Z",
+    "mutationCommitCount": 0,
+    "record": {
+      "schemaVersion": 1,
+      "event": "firebase-app-check-debug-tokens-revoked",
+      "recordedAtUtc": "2026-08-20T18:05:00Z",
+      "revokedAtUtc": "2026-08-20T18:00:00Z",
+      "projectId": "meteo-friul",
+      "projectNumber": "49007668366",
+      "firebaseAppId": "1:49007668366:android:725bf6f8b339177a852ddf",
+      "androidPackage": "com.meteofriul.app",
+      "playSigningCertificateSha256": "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+      "maximumTokenTtlSeconds": 3600,
+      "verifiedDebugTokenCount": 0,
+      "verificationMethod": "firebase-app-check-rest-v1-paginated",
+      "playConsoleEvidenceReference": "Play Console > Integrita app > Certificato firma app",
+      "firebaseConsoleEvidenceReference": "Firebase Console > App Check > Meteo Friul Android"
+    }
+  },
+  "legacyPushCleanupEvidence": {
+    "path": "release-history/play-notification-cutover/evidence/20260823T093000Z-legacy-push-cleanup-verified.json",
+    "tracked": true,
+    "clean": true,
+    "addCommitCount": 1,
+    "addCommitTimeUtc": "2026-08-23T09:36:00Z",
+    "mutationCommitCount": 0,
+    "record": {
+      "schemaVersion": 1,
+      "event": "legacy-push-state-cleanup-verified",
+      "recordedAtUtc": "2026-08-23T09:35:00Z",
+      "firstPlayRegistrationVerifiedAtUtc": "2026-08-23T09:20:00Z",
+      "cleanupCompletedAtUtc": "2026-08-23T09:30:00Z",
+      "readBackAtUtc": "2026-08-23T09:34:00Z",
+      "projectId": "meteo-friul",
+      "projectNumber": "49007668366",
+      "firebaseAppId": "1:49007668366:android:725bf6f8b339177a852ddf",
+      "androidPackage": "com.meteofriul.app",
+      "currentEnrollmentGeneration": "play-beta-v1",
+      "currentAppVersion": "1.0.0+300011",
+      "cleanupScope": "missing-or-different-enrollment-generation-only",
+      "legacyPushDeviceCountAfterReadBack": 0,
+      "orphanOrLegacyTargetOwnerCountAfterReadBack": 0,
+      "legacyCapacityDocumentCountAfterReadBack": 0,
+      "currentGenerationPushDeviceCountAfterReadBack": 1,
+      "currentGenerationTargetOwnerCountAfterReadBack": 1,
+      "currentGenerationCapacityDocumentCountAfterReadBack": 1,
+      "currentGenerationCapacityActiveCountAfterReadBack": 1,
+      "currentPlayRecordPreserved": true,
+      "verificationMethod": "firestore-admin-paginated-read-back",
+      "evidenceReference": "Controlled Firestore cleanup/read-back log; no identifiers copied"
+    }
+  },
+  "runtimeRevisionEvidence": [
+    {
+      "path": "release-history/play-notification-cutover/evidence/20260823T094500Z-runtime-revision-retarget-verified.json",
+      "tracked": true,
+      "clean": true,
+      "addCommitCount": 1,
+      "addCommitTimeUtc": "2026-08-23T09:46:00Z",
+      "mutationCommitCount": 0,
+      "record": {
+        "schemaVersion": 1,
+        "event": "android-play-runtime-revision-retarget-verified",
+        "recordedAtUtc": "2026-08-23T09:45:00+00:00",
+        "retargetedAtUtc": "2026-08-23T09:40:00+00:00",
+        "projectId": "meteo-friul",
+        "projectNumber": "49007668366",
+        "region": "europe-west1",
+        "serviceName": "meteofriul-api",
+        "androidPackage": "com.meteofriul.app",
+        "versionName": "1.0.0",
+        "versionCode": 300011,
+        "aabSha256": "BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB",
+        "aabReleaseManifestPath": "release-history/android-play/meteofriul-300011-1.0.0.release.json",
+        "aabReleaseManifestSha256": "DDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDD",
+        "previousEvidencePath": "",
+        "apiTag": "play-beta",
+        "apiBase": "https://play-beta---meteofriul-api-example.a.run.app/api",
+        "fromRevision": "meteofriul-api-play-beta-abcdef0",
+        "fromImageDigest": "europe-west1-docker.pkg.dev/meteo-friul/cloud-run-source-deploy/meteofriul-api@sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+        "fromTag": "play-beta",
+        "fromTagUrl": "https://play-beta---meteofriul-api-example.a.run.app",
+        "toRevision": "meteofriul-api-play-beta-runtime-1234567",
+        "toImageDigest": "europe-west1-docker.pkg.dev/meteo-friul/cloud-run-source-deploy/meteofriul-api@sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+        "toTag": "play-beta",
+        "toTagUrl": "https://play-beta---meteofriul-api-example.a.run.app",
+        "sameImageDigest": true,
+        "configurationPurpose": "play-notification-cutover-staged",
+        "verificationMethod": "cloud-run-admin-read-back"
+      }
+    }
+  ],
+  "aabReleaseManifestEvidence": {
+    "path": "release-history/android-play/meteofriul-300011-1.0.0.release.json",
+    "tracked": true,
+    "clean": true,
+    "fileSha256": "DDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDD",
+    "addCommitCount": 1,
+    "addCommitTimeUtc": "2026-08-23T08:30:00Z",
+    "mutationCommitCount": 0,
+    "record": {
+      "SchemaVersion": 2,
+      "Target": "android-play",
+      "Status": "built-not-uploaded",
+      "ApplicationId": "com.meteofriul.app",
+      "VersionCode": 300011,
+      "VersionName": "1.0.0",
+      "ApiBase": "https://play-beta---meteofriul-api-example.a.run.app/api",
+      "ApiTag": "play-beta",
+      "CloudRunRevision": "meteofriul-api-play-beta-abcdef0",
+      "CloudRunImageDigest": "europe-west1-docker.pkg.dev/meteo-friul/cloud-run-source-deploy/meteofriul-api@sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+      "AabSha256": "BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB",
+      "FrontendCommit": "cccccccccccccccccccccccccccccccccccccccc",
+      "BackendCommit": "dddddddddddddddddddddddddddddddddddddddd"
+    }
+  },
+  "cloudRun": {
+    "service": {
+      "name": "meteofriul-api",
+      "kind": "service",
+      "ready": true,
+      "revision": "meteofriul-api-play-beta-runtime-1234567",
+      "latestReadyRevision": "meteofriul-api-newer-1234567",
+      "trafficTag": "play-beta",
+      "trafficRevision": "meteofriul-api-play-beta-runtime-1234567",
+      "trafficUrl": "https://play-beta---meteofriul-api-example.a.run.app",
+      "imageDigest": "europe-west1-docker.pkg.dev/meteo-friul/cloud-run-source-deploy/meteofriul-api@sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+      "env": {
+        "PUSH_APP_CHECK_MODE": "enforce",
+        "PUSH_PILOT_ENROLLMENT_MODE": "play_beta",
+        "LOCAL_NOTICE_ENROLLMENT_MODE": "play_beta",
+        "PUSH_ENROLLMENT_GENERATION": "play-beta-v1",
+        "PUSH_APP_CHECK_ANDROID_APP_IDS": "1:49007668366:android:725bf6f8b339177a852ddf",
+        "PUSH_PLAY_BETA_ALLOWED_APP_VERSIONS": "1.0.0+300011,1.0.1+300012",
+        "PUSH_PILOT_MAX_DEVICES": "1",
+        "PUSH_PILOT_ALLOWED_INSTALLATION_HASHES": "",
+        "LOCAL_NOTICE_ALLOWED_INSTALLATION_HASHES": "",
+        "PUSH_OFFICIAL_ALERTS_MODE": "dry_run"
+      }
+    },
+    "officialAlertsJob": {
+      "name": "meteofriul-official-alert-sync",
+      "kind": "job",
+      "ready": true,
+      "imageDigest": "europe-west1-docker.pkg.dev/meteo-friul/cloud-run-source-deploy/meteofriul-api@sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+      "env": {
+        "PUSH_PILOT_ENROLLMENT_MODE": "play_beta",
+        "LOCAL_NOTICE_ENROLLMENT_MODE": "play_beta",
+        "PUSH_ENROLLMENT_GENERATION": "play-beta-v1",
+        "PUSH_APP_CHECK_ANDROID_APP_IDS": "1:49007668366:android:725bf6f8b339177a852ddf",
+        "PUSH_PLAY_BETA_ALLOWED_APP_VERSIONS": "1.0.0+300011,1.0.1+300012",
+        "PUSH_PILOT_MAX_DEVICES": "1",
+        "PUSH_PILOT_ALLOWED_INSTALLATION_HASHES": "",
+        "LOCAL_NOTICE_ALLOWED_INSTALLATION_HASHES": "",
+        "PUSH_OFFICIAL_ALERTS_MODE": "dry_run",
+        "PUSH_OFFICIAL_ALERTS_REQUIRED": "false"
+      }
+    },
+    "localNoticesJob": {
+      "name": "meteofriul-local-notice",
+      "kind": "job",
+      "ready": true,
+      "imageDigest": "europe-west1-docker.pkg.dev/meteo-friul/cloud-run-source-deploy/meteofriul-api@sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+      "env": {
+        "PUSH_PILOT_ENROLLMENT_MODE": "play_beta",
+        "LOCAL_NOTICE_ENROLLMENT_MODE": "play_beta",
+        "PUSH_ENROLLMENT_GENERATION": "play-beta-v1",
+        "PUSH_APP_CHECK_ANDROID_APP_IDS": "1:49007668366:android:725bf6f8b339177a852ddf",
+        "PUSH_PLAY_BETA_ALLOWED_APP_VERSIONS": "1.0.0+300011,1.0.1+300012",
+        "PUSH_PILOT_MAX_DEVICES": "1",
+        "PUSH_PILOT_ALLOWED_INSTALLATION_HASHES": "",
+        "LOCAL_NOTICE_ALLOWED_INSTALLATION_HASHES": "",
+        "LOCAL_NOTICE_DELIVERY_MODE": "dry_run"
+      }
+    }
+  }
+}

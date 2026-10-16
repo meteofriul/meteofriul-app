@@ -1,0 +1,73 @@
+{
+  "schemaVersion": 1,
+  "generatedAt": "2026-07-21",
+  "purpose": "Settantottesimo lotto Scopri IT: due nuove Memorie principali per l'8 e il 29 dicembre. La tradizione dell'Immacolata a Gemona è documentata da Ostermann; la nascita e il lavoro meteorologico di Fabio Asquini sono documentati dalla Società Alpina Friulana. Con queste due selezioni il calendario delle Memorie principali raggiunge 366 giorni su 366.",
+  "policy": {
+    "readyForUi": false,
+    "furDeferred": true,
+    "dateFormat": "DD-MM",
+    "requiresFinalItalianApproval": true,
+    "excludeDeaths": true,
+    "excludeGenericPoliticalProfiles": true,
+    "excludeGenericProfessionalProfiles": true,
+    "excludeSportsOnlyProfiles": true,
+    "rejectBirthplaceOnlyProfiles": true,
+    "rejectSemanticDuplicates": true,
+    "rejectUncertainCalendarDates": true,
+    "requireOneCanonicalSource": true,
+    "sourceFirst": true,
+    "publishAfterFurOnly": true,
+    "allowMultipleMemoriesPerDate": true,
+    "doNotPromoteToPrimaryForCoverageOnly": true
+  },
+  "summary": {
+    "reviewed": 2,
+    "keepDaily": 2,
+    "primary": 2,
+    "secondary": 0,
+    "hold": 0,
+    "excluded": 0,
+    "canonicalPrimaryDatesBefore": 364,
+    "canonicalPrimaryDatesAfter": 366,
+    "currentVisiblePrimaryCoverage": 364
+  },
+  "keepDaily": [
+    {
+      "id": "source-gap-08-12-processione-immacolata-gemona-1448",
+      "sourceEntityId": "ostermann-1894-page-623-processione-concezione-gemona-8-dicembre",
+      "dateIt": "08-12",
+      "year": 1448,
+      "municipality": "Gemona del Friuli",
+      "locality": "Gemona del Friuli",
+      "province": "UD",
+      "canonicalCategory": "tradizioni",
+      "dailyRole": "primary",
+      "priority": 88,
+      "titleIt": "A Gemona l'Immacolata ricorda un grande incendio",
+      "copyIt": "Ostermann racconta che la processione dell'8 dicembre fu istituita dopo un terribile incendio che nella prima metà del Quattrocento aveva distrutto gran parte di Gemona. Un registro del 1448 annota anche la distribuzione di candele al popolo nel giorno della Concezione di Santa Maria.",
+      "sourceLabel": "Ostermann 1894 - pagina 598",
+      "sourceStatus": "pass",
+      "readyForUi": false
+    },
+    {
+      "id": "source-gap-29-12-fabio-asquini-meteorologia-1726",
+      "sourceEntityId": "saf-in-alto-2015-2016-fabio-asquini-29-dicembre-1726",
+      "dateIt": "29-12",
+      "year": 1726,
+      "municipality": "Fagagna",
+      "locality": "Fagagna",
+      "province": "UD",
+      "canonicalCategory": "scienza_territorio",
+      "dailyRole": "primary",
+      "priority": 92,
+      "titleIt": "Fabio Asquini, l'agricoltura incontra la scienza",
+      "copyIt": "Il 29 dicembre 1726 nasce a Fagagna Fabio Asquini, protagonista dell'Illuminismo agrario friulano. Membro fondatore della Società d'agricoltura pratica di Udine, dal 1776 registra osservazioni meteorologiche giornaliere e lega lo studio del clima all'innovazione agricola.",
+      "sourceLabel": "Società Alpina Friulana, In Alto 2015-2016 - pagina 29",
+      "sourceUrl": "https://www.alpinafriulana.it/wp-content/uploads/2013/01/IN-ALTO-2015-2016.pdf",
+      "sourceStatus": "pass",
+      "readyForUi": false
+    }
+  ],
+  "hold": [],
+  "excluded": []
+}

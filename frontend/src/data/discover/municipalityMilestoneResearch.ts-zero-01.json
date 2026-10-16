@@ -1,0 +1,201 @@
+{
+  "schemaVersion": 1,
+  "batchId": "ts-zero-milestones-01",
+  "snapshotDate": "2026-08-21",
+  "purpose": "Lotto di ricerca non visibile in UI per ampliare le tappe storiche dei tre Comuni TS che ne sono privi.",
+  "runtimeIntegration": false,
+  "editorialPolicy": {
+    "sourceEvidenceRequired": true,
+    "ambiguousDatesExcluded": true,
+    "duplicateAuditRequired": true,
+    "italianCopyStatus": "editorial_draft",
+    "friulianCopyStatus": "pending_human_review",
+    "readyForUi": false
+  },
+  "excludedClaims": [
+    {
+      "municipality": "Duino Aurisina",
+      "claim": "Rainer Maria Rilke avrebbe soggiornato a Duino a partire dal 1910.",
+      "reason": "Le fonti istituzionali consultate non concordano tra 1910 e 1911-1912; la data resta esclusa dal lotto."
+    },
+    {
+      "municipality": "Monrupino",
+      "claim": "La chiesa sarebbe stata costruita nel 911.",
+      "reason": "La tradizione è riportata senza una base documentaria sufficiente; la prima attestazione certa usata dal lotto è del 1316."
+    },
+    {
+      "municipality": "San Dorligo della Valle",
+      "claim": "Il castello di Moccò sarebbe stato costruito nel 1223.",
+      "reason": "Il documento del 1223 è la prima attestazione certa del castello, non la data della sua costruzione."
+    },
+    {
+      "municipality": "San Dorligo della Valle",
+      "claim": "L'attentato all'oleodotto SIOT del 4 agosto 1972.",
+      "reason": "Il fatto è già presente in Memoria del giorno e produrrebbe una duplicazione editoriale."
+    }
+  ],
+  "duplicateAudit": {
+    "status": "passed_with_thematic_overlap",
+    "exactDuplicates": 0,
+    "notes": [
+      "Il santuario e le Nozze Carsiche sono già richiamati nel riassunto di Monrupino, ma le tappe aggiungono fatti distinti e datati.",
+      "La Val Rosandra è già citata nel riassunto di San Dorligo della Valle, ma l'istituzione della Riserva nel 1996 è un fatto distinto.",
+      "Il Castello di Duino compare nella fotografia della scheda locale, senza duplicare il contenuto editoriale."
+    ]
+  },
+  "municipalities": [
+    {
+      "istatCode": "032001",
+      "municipality": "Duino Aurisina",
+      "province": "TS",
+      "currentMilestoneCount": 0,
+      "decision": "source_verified_it_fur_pending",
+      "candidates": [
+        {
+          "id": "duino-aurisina-castello-fonti-1363",
+          "year": 1363,
+          "label": {
+            "it": "L'attuale castello di Duino compare per la prima volta nelle fonti scritte",
+            "fur": null
+          },
+          "evidence": "Il Comune data al 1363 il primo documento sull'attuale castello; la data non viene presentata come anno di costruzione.",
+          "source": {
+            "label": "Comune di Duino Aurisina - Duino ed il castello",
+            "type": "official_municipality",
+            "url": "https://comune.duino-aurisina.ts.it/it/turismo-14716/itinerario-enogastronomico-culturale-14729/duino-ed-il-castello-14734"
+          }
+        },
+        {
+          "id": "duino-aurisina-alasia-vocabolario-1607",
+          "year": 1607,
+          "label": {
+            "it": "Gregorio Alasia, attivo a Duino, pubblica il Vocabolario Italiano e Schiavo",
+            "fur": null
+          },
+          "evidence": "Treccani documenta l'attività di Alasia a Duino e la stampa del vocabolario a Udine nel 1607; la scheda non attribuisce la stampa a Duino.",
+          "source": {
+            "label": "Treccani - Gregorio Alasia",
+            "type": "cultural_institution",
+            "url": "https://www.treccani.it/enciclopedia/gregorio-alasia_%28Dizionario-Biografico%29/"
+          }
+        },
+        {
+          "id": "duino-aurisina-uwc-adriatico-1982",
+          "year": 1982,
+          "label": {
+            "it": "A Duino viene fondato il Collegio del Mondo Unito dell'Adriatico",
+            "fur": null
+          },
+          "evidence": "La cronologia ufficiale UWC registra nel 1982 la fondazione del Collegio, distinta dai trasferimenti del 1983 e dall'inaugurazione dell'edificio del 1984.",
+          "source": {
+            "label": "UWC Adriatic - Storia del Collegio",
+            "type": "cultural_institution",
+            "url": "https://www.uwcad.it/it/who-we-are/"
+          }
+        }
+      ]
+    },
+    {
+      "istatCode": "032002",
+      "municipality": "Monrupino",
+      "province": "TS",
+      "currentMilestoneCount": 0,
+      "decision": "source_verified_it_fur_pending",
+      "candidates": [
+        {
+          "id": "monrupino-chiesa-prima-attestazione-1316",
+          "year": 1316,
+          "label": {
+            "it": "Prima attestazione della chiesa come Sancta Maria in Reypen",
+            "fur": null
+          },
+          "evidence": "La scheda storica comunale indica il 1316 come prima citazione della chiesa nella forma latina Sancta Maria in Reypen.",
+          "source": {
+            "label": "Comune di Monrupino - La parrocchia di Monrupino",
+            "type": "official_municipality",
+            "url": "https://www.comune.monrupino.ts.it/media/files/032002/attachment/parrocchia_monrupino_1.pdf"
+          }
+        },
+        {
+          "id": "monrupino-chiesa-consacrazione-1512",
+          "year": 1512,
+          "label": {
+            "it": "La chiesa ampliata viene consacrata alla Beata Vergine Assunta",
+            "fur": null
+          },
+          "evidence": "La scheda comunale documenta nel 1512 la consacrazione della chiesa ampliata da parte del vescovo Pietro Bonomo.",
+          "source": {
+            "label": "Comune di Monrupino - La parrocchia di Monrupino",
+            "type": "official_municipality",
+            "url": "https://www.comune.monrupino.ts.it/media/files/032002/attachment/parrocchia_monrupino_1.pdf"
+          }
+        },
+        {
+          "id": "monrupino-nozze-carsiche-ripresa-1968",
+          "year": 1968,
+          "label": {
+            "it": "La cooperativa Naš Kras riprende la tradizione delle Nozze Carsiche",
+            "fur": null
+          },
+          "evidence": "Il documento programmatico comunale attribuisce al 1968 la ripresa della tradizione da parte della cooperativa Naš Kras insieme alla comunità locale.",
+          "source": {
+            "label": "Comune di Monrupino - Documento unico di programmazione 2020-2022",
+            "type": "official_municipality",
+            "url": "https://www.comune.monrupino.ts.it/media/files/md/032002/DOCUMENTO_UNICO_DI_PROGRAMMAZIONE_2020-2022.pdf"
+          }
+        }
+      ]
+    },
+    {
+      "istatCode": "032004",
+      "municipality": "San Dorligo della Valle",
+      "province": "TS",
+      "currentMilestoneCount": 0,
+      "decision": "source_verified_it_fur_pending",
+      "candidates": [
+        {
+          "id": "san-dorligo-castello-mocco-attestazione-1223",
+          "year": 1223,
+          "label": {
+            "it": "Prima attestazione documentaria del castello di Moccò",
+            "fur": null
+          },
+          "evidence": "Il rapporto comunale precisa che l'anno di costruzione non è noto e documenta nel 1223 la forma in castro Muchou.",
+          "source": {
+            "label": "Comune di San Dorligo della Valle - Rapporto preliminare VAS",
+            "type": "official_municipality",
+            "url": "https://www.comune.san-dorligo-della-valle.ts.it/media/files/md/032004/R6_Rapporto_preliminare_di_verifica_di_assoggettabilit%C3%A0_a_Valutazione_Ambientale_Strategica.pdf"
+          }
+        },
+        {
+          "id": "san-dorligo-rifugio-premuda-1940",
+          "year": 1940,
+          "label": {
+            "it": "Viene inaugurato il Rifugio Mario Premuda all'imbocco della Val Rosandra",
+            "fur": null
+          },
+          "evidence": "La Regione documenta la costruzione e l'inaugurazione del rifugio nel 1940, senza confonderle con la scuola di alpinismo fondata nel 1929.",
+          "source": {
+            "label": "Regione FVG - Rifugio Mario Premuda",
+            "type": "regional_institution",
+            "url": "https://www.regione.fvg.it/rafvg/comunicati/comunicato.act?dir=%2Frafvg%2Fcms%2FRAFVG%2Fnotiziedallagiunta%2F&nm=20250417184143015"
+          }
+        },
+        {
+          "id": "san-dorligo-riserva-val-rosandra-1996",
+          "year": 1996,
+          "label": {
+            "it": "Viene istituita la Riserva naturale regionale della Val Rosandra",
+            "fur": null
+          },
+          "evidence": "La Regione identifica l'articolo 52 della legge regionale 42/1996 come provvedimento istitutivo; la modifica del perimetro del 2022 non viene trattata come una nuova istituzione.",
+          "source": {
+            "label": "Regione FVG - Riserva naturale della Val Rosandra",
+            "type": "regional_institution",
+            "url": "https://www.regione.fvg.it/rafvg/cms/RAFVG/ambiente-territorio/tutela-ambiente-gestione-risorse-naturali/FOGLIA400/FOGLIA11/"
+          }
+        }
+      ]
+    }
+  ]
+}

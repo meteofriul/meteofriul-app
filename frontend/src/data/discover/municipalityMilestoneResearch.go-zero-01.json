@@ -1,0 +1,463 @@
+{
+  "schemaVersion": 1,
+  "batchId": "go-zero-milestones-01",
+  "snapshotDate": "2026-08-21",
+  "purpose": "Lotto di ricerca non visibile in UI per ampliare le tappe storiche dei nove Comuni GO che ne sono privi.",
+  "runtimeIntegration": false,
+  "editorialPolicy": {
+    "sourceEvidenceRequired": true,
+    "ambiguousDatesExcluded": true,
+    "duplicateAuditRequired": true,
+    "italianCopyStatus": "editorial_draft",
+    "friulianCopyStatus": "pending_human_review",
+    "readyForUi": false
+  },
+  "excludedClaims": [
+    {
+      "municipality": "Capriva del Friuli",
+      "claim": "Il Castello di Spessa sarebbe stato costruito nel 1200.",
+      "reason": "Le fonti istituzionali consultate non concordano tra origine duecentesca, nucleo seicentesco e preesistenze ipotetiche; la data resta esclusa."
+    },
+    {
+      "municipality": "Cormons",
+      "claim": "L'Armistizio di Cormons del 1866.",
+      "reason": "Il fatto è già presente in Memoria del giorno e produrrebbe una duplicazione editoriale."
+    },
+    {
+      "municipality": "Dolegna del Collio",
+      "claim": "La nascita di Pietro Zorutti nel 1792.",
+      "reason": "Il fatto è già presente in Memoria del giorno e produrrebbe una duplicazione editoriale."
+    },
+    {
+      "municipality": "Farra d'Isonzo",
+      "claim": "La fondazione del Circolo Culturale Astronomico nel 1975.",
+      "reason": "Il riassunto comunale è già dedicato alla nascita dell'osservatorio; la tappa è conservata come riserva per evitare una ripetizione concettuale."
+    },
+    {
+      "municipality": "Fogliano Redipuglia",
+      "claim": "La consacrazione del Cimitero degli Invitti nel 1923 e l'inaugurazione del Sacrario nel 1938.",
+      "reason": "Entrambi i fatti sono già presenti in Memoria del giorno; per il Sacrario esiste inoltre una discordanza secondaria tra 18 e 19 settembre."
+    },
+    {
+      "municipality": "Moraro",
+      "claim": "Moraro avrebbe origine preromana.",
+      "reason": "SIUSA presenta l'origine come probabile e senza una data, quindi non è adatta a una tappa datata."
+    },
+    {
+      "municipality": "San Canzian d'Isonzo",
+      "claim": "Il martirio dei Canziani sarebbe avvenuto nel 303 o nel 304.",
+      "reason": "Le fonti riportano una tradizione agiografica con data discordante; il fatto non viene trasformato in una tappa certa."
+    },
+    {
+      "municipality": "San Pier d'Isonzo",
+      "claim": "Il Cimitero degli Invitti del 1923 sarebbe una tappa di San Pier d'Isonzo.",
+      "reason": "Il fatto appartiene già alla memoria editoriale di Fogliano Redipuglia e presenta un'ambiguità territoriale che ne impedisce il riuso."
+    },
+    {
+      "municipality": "Villesse",
+      "claim": "Villesse sarebbe stata aggregata a Romans d'Isonzo nel 1929.",
+      "reason": "SIUSA riporta il 1929, ma il R.D. 1 marzo 1928 n. 678 documentato da ISTAT fissa il provvedimento al 1928; prevale la fonte normativa."
+    }
+  ],
+  "duplicateAudit": {
+    "status": "passed_with_thematic_overlap",
+    "exactDuplicates": 0,
+    "excludedExactDuplicates": 4,
+    "notes": [
+      "Il Castello di Spessa, l'osservatorio di Farra e gli scavi di San Canzian sono già richiamati nei rispettivi riassunti, ma le tappe promosse aggiungono fatti distinti e datati.",
+      "Armistizio di Cormons, Pietro Zorutti, Cimitero degli Invitti e Sacrario di Redipuglia sono stati esclusi perché già presenti in Memoria del giorno.",
+      "Le tappe amministrative di Moraro e Villesse sono mantenute perché documentano passaggi diversi e non sono presenti in altre rubriche."
+    ]
+  },
+  "sourceConflicts": [
+    {
+      "municipality": "Villesse",
+      "field": "aggregationYear",
+      "selectedValue": 1928,
+      "selectedAuthority": "R.D. 1 marzo 1928 n. 678, documentato da ISTAT",
+      "discardedValue": 1929,
+      "discardedAuthority": "SIUSA",
+      "decision": "SIUSA colloca l'unione nel 1929 e registra il Comune fino al 1929; la tappa adotta il 1928, anno del provvedimento normativo preciso citato da ISTAT. Il 1929 resta documentato come dato discordante e non viene mostrato nell'interfaccia."
+    }
+  ],
+  "municipalities": [
+    {
+      "istatCode": "031001",
+      "municipality": "Capriva del Friuli",
+      "province": "GO",
+      "currentMilestoneCount": 0,
+      "decision": "source_verified_it_fur_pending",
+      "candidates": [
+        {
+          "id": "capriva-prima-attestazione-1307",
+          "year": 1307,
+          "label": { "it": "Prima attestazione documentaria di Capriva", "fur": null },
+          "evidence": "Il PRGC comunale data al 1307 i primi riscontri cartacei dell'esistenza di Capriva, presenti in documenti di natura economica.",
+          "source": {
+            "label": "Comune di Capriva del Friuli - Relazione illustrativa PRGC",
+            "type": "official_municipality",
+            "url": "https://www.comune.caprivadelfriuli.go.it/media/files/md/031001/a-Relazione_illustrativa.pdf"
+          }
+        },
+        {
+          "id": "capriva-casanova-spessa-1773",
+          "year": 1773,
+          "label": { "it": "Luigi Torriani ospita Giacomo Casanova al Castello di Spessa", "fur": null },
+          "evidence": "La scheda regionale documenta che Luigi Torriani ospitò Giacomo Casanova al Castello di Spessa nel 1773.",
+          "source": {
+            "label": "ERPAC FVG - Castello di Spessa",
+            "type": "regional_institution",
+            "url": "https://patrimonioculturale.regione.fvg.it/architettura/?s_id=447858"
+          }
+        },
+        {
+          "id": "capriva-villa-russiz-scuola-1877",
+          "year": 1877,
+          "label": { "it": "Elvine de La Tour fonda a Villa Russiz una scuola per ragazze bisognose", "fur": null },
+          "evidence": "ERPAC data al gennaio 1877 la fondazione dell'istituto scolastico per ragazze bisognose, divenuto in seguito anche orfanotrofio.",
+          "source": {
+            "label": "ERPAC FVG - Villa Russiz",
+            "type": "regional_institution",
+            "url": "https://patrimonioculturale.regione.fvg.it/architettura/?s_id=448449"
+          }
+        }
+      ]
+    },
+    {
+      "istatCode": "031002",
+      "municipality": "Cormons",
+      "province": "GO",
+      "currentMilestoneCount": 0,
+      "decision": "source_verified_it_fur_pending",
+      "candidates": [
+        {
+          "id": "cormons-sede-patriarcato-628",
+          "year": 628,
+          "label": { "it": "Cormons è sede del Patriarcato durante lo Scisma dei Tre Capitoli", "fur": null },
+          "evidence": "Il pannello storico comunale documenta che Cormons fu sede del Patriarcato di Aquileia dal 628 al 737 durante lo Scisma dei Tre Capitoli; la tappa usa il 628 come inizio del periodo.",
+          "source": {
+            "label": "Comune di Cormons - Pannello storico in cinque lingue",
+            "type": "official_municipality",
+            "url": "https://www.comune.cormons.go.it/media/files/031002/attachment/traduzione_5_lingue.pdf"
+          }
+        },
+        {
+          "id": "cormons-asburgo-1521",
+          "year": 1521,
+          "label": { "it": "Cormons viene assegnata definitivamente agli Asburgo", "fur": null },
+          "evidence": "Il Comune data al 1521 l'assegnazione definitiva agli Asburgo dopo i ripetuti passaggi durante lo scontro tra Venezia e Impero.",
+          "source": {
+            "label": "Comune di Cormons - Pannello storico in cinque lingue",
+            "type": "official_municipality",
+            "url": "https://www.comune.cormons.go.it/media/files/031002/attachment/traduzione_5_lingue.pdf"
+          }
+        },
+        {
+          "id": "cormons-vino-pace-1985",
+          "year": 1985,
+          "label": { "it": "La Cantina Produttori avvia la produzione del Vino della Pace", "fur": null },
+          "evidence": "La relazione comunale indica nel 1985 l'avvio della produzione del Vino della Pace da parte della Cantina Produttori.",
+          "source": {
+            "label": "Comune di Cormons - Relazione di conformazione al PPR",
+            "type": "official_municipality",
+            "url": "https://www.comune.cormons.go.it/media/files/031002/attachment/Elab_14_Relazione_di_conformazione_del_PRGC_al_PPR_signed_fAxwlTy.pdf"
+          }
+        }
+      ]
+    },
+    {
+      "istatCode": "031004",
+      "municipality": "Dolegna del Collio",
+      "province": "GO",
+      "currentMilestoneCount": 0,
+      "decision": "source_verified_it_fur_pending",
+      "candidates": [
+        {
+          "id": "dolegna-castello-trussio-1257",
+          "year": 1257,
+          "label": { "it": "Il Castello di Trussio viene citato, incendiato e ricostruito", "fur": null },
+          "evidence": "Il Comune indica il 1257 come prima citazione del castello e precisa che nello stesso anno fu incendiato e ricostruito.",
+          "source": {
+            "label": "Comune di Dolegna del Collio - Castello di Trussio",
+            "type": "official_municipality",
+            "url": "https://www.comune.dolegnadelcollio.go.it/it/vivere-il-comune-72698/luoghi-72699/castello-di-trussio-72931"
+          }
+        },
+        {
+          "id": "dolegna-ruttars-prima-attestazione-1289",
+          "year": 1289,
+          "label": { "it": "Ruttars compare per la prima volta in un documento di vendita", "fur": null },
+          "evidence": "Lo studio pubblicato dal Comune documenta il 4 maggio 1289 la forma villam que dicitur Rutars in un atto di vendita.",
+          "source": {
+            "label": "Sot la nape - La vendita di Ruttars, PDF ospitato dal Comune di Dolegna",
+            "type": "cultural_institution",
+            "url": "https://www.comune.dolegnadelcollio.go.it/media/files/031004/attachment/Ruttars_salva_Trieste_nel_1289.pdf"
+          }
+        },
+        {
+          "id": "dolegna-parrocchiale-1927",
+          "year": 1927,
+          "label": { "it": "Viene costruita l'attuale chiesa parrocchiale di Dolegna", "fur": null },
+          "evidence": "Il Comune documenta la demolizione della cappella ottocentesca e la costruzione dell'attuale parrocchiale nel 1927.",
+          "source": {
+            "label": "Comune di Dolegna del Collio - Chiesa parrocchiale",
+            "type": "official_municipality",
+            "url": "https://www.comune.dolegnadelcollio.go.it/it/vivere-il-comune-72698/luoghi-72699/chiesa-parrocchiale-72929"
+          }
+        }
+      ]
+    },
+    {
+      "istatCode": "031005",
+      "municipality": "Farra d'Isonzo",
+      "province": "GO",
+      "currentMilestoneCount": 0,
+      "decision": "source_verified_it_fur_pending",
+      "candidates": [
+        {
+          "id": "farra-monte-fortin-1616",
+          "year": 1616,
+          "label": { "it": "Sul colle oggi chiamato Monte Fortin viene eretto un forte", "fur": null },
+          "evidence": "Il Comune documenta nel 1616 la costruzione arciducale di un forte di legno e terra sul colle allora chiamato San Pietro, durante la guerra di Gradisca.",
+          "source": {
+            "label": "Comune di Farra d'Isonzo - Le gallerie cannoniere di Monte Fortin",
+            "type": "official_municipality",
+            "url": "https://www.comune.farradisonzo.go.it/it/novita-191556/notizie-191557/le-gallerie-cannoniere-di-monte-fortin-36824"
+          }
+        },
+        {
+          "id": "farra-filatoio-1725",
+          "year": 1725,
+          "label": { "it": "Inizia la costruzione del Cesareo Regio Filatoio di Farra", "fur": null },
+          "evidence": "Il Comune data tra il 1725 e l'inizio del 1726 la costruzione del filatoio voluto da Carlo VI.",
+          "source": {
+            "label": "Comune di Farra d'Isonzo - L'allevamento del baco da seta",
+            "type": "official_municipality",
+            "url": "https://www.comune.farradisonzo.go.it/it/cultura-14714/museo-di-documentazione-della-civilta-contadina-friulana-14715/sezioni-del-museo-25716/lallevamento-del-baco-da-seta-19747"
+          }
+        },
+        {
+          "id": "farra-museo-civilta-contadina-1993",
+          "year": 1993,
+          "label": { "it": "Apre al pubblico il Museo della civiltà contadina", "fur": null },
+          "evidence": "La Regione distingue l'istituzione formale del museo nel 1981 dalla sua apertura al pubblico nel 1993.",
+          "source": {
+            "label": "Regione FVG - Museo di documentazione della civiltà contadina",
+            "type": "regional_institution",
+            "url": "https://patrimonioculturale.regione.fvg.it/museo/?s_id=440560"
+          }
+        }
+      ]
+    },
+    {
+      "istatCode": "031006",
+      "municipality": "Fogliano Redipuglia",
+      "province": "GO",
+      "currentMilestoneCount": 0,
+      "decision": "source_verified_it_fur_pending",
+      "candidates": [
+        {
+          "id": "fogliano-toponimi-967",
+          "year": 967,
+          "label": { "it": "Prima attestazione di Foliano e Aulianico nel Privilegio di Ottone I", "fur": null },
+          "evidence": "Il Comune identifica nel Privilegio del 29 aprile 967 la prima citazione di Foliano, per Fogliano, e Aulianico, per Elianico-Redipuglia.",
+          "source": {
+            "label": "Comune di Fogliano Redipuglia - 1059° anniversario del Comune",
+            "type": "official_municipality",
+            "url": "https://www.comune.foglianoredipuglia.go.it/it/news/1059-anniversario-del-comune-di-fogliano-redipuglia"
+          }
+        },
+        {
+          "id": "fogliano-dominio-veneziano-1420",
+          "year": 1420,
+          "label": { "it": "Fogliano passa sotto il dominio veneziano", "fur": null },
+          "evidence": "SIUSA colloca nel 1420 il passaggio di Fogliano a Venezia, senza attribuire automaticamente allo stesso anno la successiva fortificazione.",
+          "source": {
+            "label": "SIUSA - Comune di Fogliano Redipuglia",
+            "type": "national_institution",
+            "url": "https://siusa-archivi.cultura.gov.it/cgi-bin/siusa/pagina.pl?Chiave=9080&RicDimF=2&TipoPag=prodente"
+          }
+        },
+        {
+          "id": "fogliano-province-illiriche-1809",
+          "year": 1809,
+          "label": { "it": "Fogliano entra nelle Province Illiriche napoleoniche", "fur": null },
+          "evidence": "SIUSA documenta il passaggio alle Province Illiriche nel 1809 e il ritorno all'Austria nel 1813.",
+          "source": {
+            "label": "SIUSA - Comune di Fogliano Redipuglia",
+            "type": "national_institution",
+            "url": "https://siusa-archivi.cultura.gov.it/cgi-bin/siusa/pagina.pl?Chiave=9080&RicDimF=2&TipoPag=prodente"
+          }
+        }
+      ]
+    },
+    {
+      "istatCode": "031013",
+      "municipality": "Moraro",
+      "province": "GO",
+      "currentMilestoneCount": 0,
+      "decision": "source_verified_it_fur_pending",
+      "candidates": [
+        {
+          "id": "moraro-asburgo-1500",
+          "year": 1500,
+          "label": { "it": "Moraro passa sotto il dominio asburgico", "fur": null },
+          "evidence": "SIUSA data al 1500 il passaggio agli Asburgo e ricorda la successiva posizione di confine tra territorio veneziano e arciducale.",
+          "source": {
+            "label": "SIUSA - Comune di Moraro",
+            "type": "national_institution",
+            "url": "https://siusa-archivi.cultura.gov.it/cgi-bin/siusa/pagina.pl?Chiave=9180&RicDimF=2&TipoPag=prodente"
+          }
+        },
+        {
+          "id": "moraro-comune-autonomo-1807",
+          "year": 1807,
+          "label": { "it": "Moraro diventa Comune autonomo nel Dipartimento di Passariano", "fur": null },
+          "evidence": "SIUSA documenta nel 1807 Moraro come Comune autonomo del Regno d'Italia napoleonico nel Dipartimento di Passariano.",
+          "source": {
+            "label": "SIUSA - Comune di Moraro",
+            "type": "national_institution",
+            "url": "https://siusa-archivi.cultura.gov.it/cgi-bin/siusa/pagina.pl?Chiave=9180&RicDimF=2&TipoPag=prodente"
+          }
+        },
+        {
+          "id": "moraro-autonomia-1955",
+          "year": 1955,
+          "label": { "it": "Moraro viene ricostituito come Comune autonomo", "fur": null },
+          "evidence": "Il D.P.R. 3 giugno 1955 n. 612 ricostituisce Moraro dopo la soppressione del 1927 e l'aggregazione a Capriva.",
+          "source": {
+            "label": "Gazzetta Ufficiale - D.P.R. 3 giugno 1955 n. 612",
+            "type": "national_institution",
+            "url": "https://www.gazzettaufficiale.it/eli/id/1955/08/04/055U0612/sg"
+          }
+        }
+      ]
+    },
+    {
+      "istatCode": "031018",
+      "municipality": "San Canzian d'Isonzo",
+      "province": "GO",
+      "currentMilestoneCount": 0,
+      "decision": "source_verified_it_fur_pending",
+      "candidates": [
+        {
+          "id": "san-canzian-pieve-1247",
+          "year": 1247,
+          "label": { "it": "Prima attestazione documentaria della pieve di San Canzian", "fur": null },
+          "evidence": "La scheda comunale documenta la pieve nel 1247 nell'elenco della tassazione patriarcale.",
+          "source": {
+            "label": "Comune di San Canzian d'Isonzo - Storia romana e medievale",
+            "type": "official_municipality",
+            "url": "https://www.comune.sancanziandisonzo.go.it/media/files/031018/attachment/Volantino_2.0_3.pdf"
+          }
+        },
+        {
+          "id": "san-canzian-chiesa-dimensioni-1593",
+          "year": 1593,
+          "label": { "it": "La chiesa di San Canzian assume le dimensioni attuali", "fur": null },
+          "evidence": "La scheda comunale precisa che dal 1593 la chiesa assunse le dimensioni attuali e venne realizzata la cripta.",
+          "source": {
+            "label": "Comune di San Canzian d'Isonzo - Storia romana e medievale",
+            "type": "official_municipality",
+            "url": "https://www.comune.sancanziandisonzo.go.it/media/files/031018/attachment/Volantino_2.0_3.pdf"
+          }
+        },
+        {
+          "id": "san-canzian-scavi-archeologici-1960",
+          "year": 1960,
+          "label": { "it": "L'Università di Trieste avvia le campagne di scavo nell'area di San Proto", "fur": null },
+          "evidence": "La Regione documenta le campagne dell'Università di Trieste del 1960-61 e precisa che furono precedute da un sondaggio nel 1950; la tappa non le presenta come le prime indagini assolute.",
+          "source": {
+            "label": "Regione FVG - Sito pluristratificato di San Proto",
+            "type": "regional_institution",
+            "url": "https://patrimonioculturale.regione.fvg.it/sito-archeologico/?s_id=548439"
+          }
+        }
+      ]
+    },
+    {
+      "istatCode": "031021",
+      "municipality": "San Pier d'Isonzo",
+      "province": "GO",
+      "currentMilestoneCount": 0,
+      "decision": "source_verified_it_fur_pending",
+      "candidates": [
+        {
+          "id": "san-pier-dominio-veneziano-1420",
+          "year": 1420,
+          "label": { "it": "San Pier d'Isonzo passa sotto il dominio della Repubblica di Venezia", "fur": null },
+          "evidence": "SIUSA documenta il dominio veneziano su San Pier d'Isonzo dal 1420 al 1797.",
+          "source": {
+            "label": "SIUSA - Comune di San Pier d'Isonzo",
+            "type": "national_institution",
+            "url": "https://siusa-archivi.cultura.gov.it/cgi-bin/siusa/pagina.pl?Chiave=9324&RicDimF=2&TipoPag=prodente"
+          }
+        },
+        {
+          "id": "san-pier-parrocchiale-consacrazione-1767",
+          "year": 1767,
+          "label": { "it": "Viene consacrata la chiesa parrocchiale di San Pietro Apostolo", "fur": null },
+          "evidence": "Il Ministero della Cultura documenta la consacrazione del 21 giugno 1767 da parte dell'arcivescovo Girolamo Gradenigo.",
+          "source": {
+            "label": "Ministero della Cultura - Chiese distrutte: San Pietro Apostolo",
+            "type": "national_institution",
+            "url": "https://www.chiesedistruttegorizia.beniculturali.it/sanpietroap.php"
+          }
+        },
+        {
+          "id": "san-pier-campanile-distrutto-1916",
+          "year": 1916,
+          "label": { "it": "Il campanile della parrocchiale viene distrutto durante la Prima guerra mondiale", "fur": null },
+          "evidence": "Il Ministero della Cultura documenta l'abbattimento del campanile il 16 aprile 1916 per i colpi d'artiglieria.",
+          "source": {
+            "label": "Ministero della Cultura - Chiese distrutte: San Pietro Apostolo",
+            "type": "national_institution",
+            "url": "https://www.chiesedistruttegorizia.beniculturali.it/sanpietroap.php"
+          }
+        }
+      ]
+    },
+    {
+      "istatCode": "031025",
+      "municipality": "Villesse",
+      "province": "GO",
+      "currentMilestoneCount": 0,
+      "decision": "source_verified_it_fur_pending",
+      "candidates": [
+        {
+          "id": "villesse-pieve-alluvione-1490",
+          "year": 1490,
+          "label": { "it": "Dopo un'alluvione Villesse viene separata dalla pieve di San Pietro", "fur": null },
+          "evidence": "SIUSA lega esplicitamente al 1490 la separazione dalla pieve di San Pietro e l'alluvione che la precedette.",
+          "source": {
+            "label": "SIUSA - Comune di Villesse",
+            "type": "national_institution",
+            "url": "https://siusa-archivi.cultura.gov.it/cgi-bin/siusa/pagina.pl?Chiave=6915&RicDimF=2&TipoPag=prodente"
+          }
+        },
+        {
+          "id": "villesse-aggregazione-romans-1928",
+          "year": 1928,
+          "label": { "it": "Villesse viene aggregata al nuovo Comune di Romans d'Isonzo", "fur": null },
+          "evidence": "ISTAT documenta il R.D. 1 marzo 1928 n. 678 che aggrega Villesse al nuovo Comune di Romans d'Isonzo; la data normativa prevale sul 1929 riportato da SIUSA.",
+          "source": {
+            "label": "ISTAT - Catasto agrario 1929, provincia di Gorizia",
+            "type": "national_institution",
+            "url": "https://ebiblio.istat.it/digibib/Catasto/Catasto%20agrario%201929/IST0006576Catasto%20agrario%201929.Gorizia%2BOCRottim.pdf"
+          }
+        },
+        {
+          "id": "villesse-autonomia-1954",
+          "year": 1954,
+          "label": { "it": "Villesse viene ricostituita come Comune autonomo", "fur": null },
+          "evidence": "ISTAT documenta il D.P.R. 27 marzo 1954 n. 281 che ricostituisce Villesse con la circoscrizione e la denominazione preesistenti.",
+          "source": {
+            "label": "ISTAT - Popolazione e circoscrizioni amministrative 1952-1954",
+            "type": "national_institution",
+            "url": "https://ebiblio.istat.it/digibib/Demografia/Movimentostatocivile/UFI0044838Pop_circ_amm_com_1952_1953_1954.pdf"
+          }
+        }
+      ]
+    }
+  ]
+}

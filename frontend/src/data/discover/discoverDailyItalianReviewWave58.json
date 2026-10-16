@@ -1,0 +1,48 @@
+{
+  "schemaVersion": 1,
+  "generatedAt": "2026-07-19",
+  "purpose": "Cinquantottesimo lotto Scopri IT: chiusura delle due alternative emerse dopo il lotto precedente per date ancora prive di memoria principale. Entrambe descrivono carriere cestistiche senza medaglie, primati o risultati storici eccezionali; nessuna voce viene promossa per il solo scopo di coprire il calendario.",
+  "policy": {
+    "readyForUi": false,
+    "furDeferred": true,
+    "dateFormat": "DD-MM",
+    "requiresFinalItalianApproval": true,
+    "excludeDeaths": true,
+    "excludeGenericPoliticalProfiles": true,
+    "excludeGenericProfessionalProfiles": true,
+    "excludeSportsOnlyProfiles": true,
+    "allowExceptionalSportsProfiles": true,
+    "rejectBirthplaceOnlyProfiles": true,
+    "rejectSemanticDuplicates": true,
+    "rejectUncertainCalendarDates": true,
+    "rejectInternallyInconsistentRecords": true,
+    "requireOneCanonicalSource": true,
+    "sourceFirst": true,
+    "publishAfterFurOnly": true,
+    "allowMultipleMemoriesPerDate": true,
+    "doNotPromoteToPrimaryForCoverageOnly": true
+  },
+  "summary": {
+    "reviewed": 2,
+    "keepDaily": 0,
+    "primary": 0,
+    "secondary": 0,
+    "hold": 0,
+    "excluded": 2,
+    "canonicalPrimaryDatesBefore": 277,
+    "canonicalPrimaryDatesAfter": 277,
+    "currentVisiblePrimaryCoverage": 272
+  },
+  "keepDaily": [],
+  "hold": [],
+  "excluded": [
+    {
+      "id": "master-fvg-19-05-Q109933627",
+      "reason": "Lodovico Deangeli presenta una carriera cestistica professionale, ma il materiale disponibile non documenta una medaglia, un primato internazionale o un risultato storico eccezionale sufficiente per Scopri."
+    },
+    {
+      "id": "master-fvg-26-02-Q3608777",
+      "reason": "Albino Cuppo viene ricordato come cestista italiano, ma il materiale disponibile non documenta una medaglia, un primato internazionale o un risultato storico eccezionale sufficiente per Scopri."
+    }
+  ]
+}

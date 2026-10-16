@@ -1,0 +1,67 @@
+{
+  "schemaVersion": 1,
+  "batchId": "go-ts-enrichment-milestones-01-fur-review",
+  "sourceResearchBatchId": "go-ts-enrichment-milestones-01",
+  "reviewedAt": "2026-09-01",
+  "runtimeIntegration": false,
+  "reviewMethod": "assisted_standard_reference_review",
+  "approvalBasis": "user_delegated_assisted_editorial_review",
+  "reviewer": "assistant",
+  "independentHumanReview": false,
+  "approvalNote": "Decisione editoriale assistita sotto il mandato di completamento Scopri. Le fonti ARLeF verificano lessico e modelli d'uso, non certificano queste frasi; nessuna revisione professionale indipendente né lettura frase per frase attribuita all'utente.",
+  "summary": {
+    "totalRecords": 3,
+    "approved": 3,
+    "pendingHumanReview": 0
+  },
+  "records": [
+    {
+      "id": "doberdo-prima-attestazione-1179",
+      "status": "approved",
+      "labelFur": "La localitât di Doberdò e comparìs pe prime volte intun document cul non «Dobradan»",
+      "notes": "Localitât e atestazion sono verificate nelle voci ARLeF; la costruzione pe prime volte intun document è già consolidata nel catalogo. Doberdò e Dobradan restano forme proprie della fonte e non ricevono un'etimologia dedotta.",
+      "references": [
+        {
+          "url": "https://superdizionari.arlef.it/lemma/attestazione/7425?language=it&oneshot=1&gui=fur",
+          "note": "Attestazione storica e presenza documentata → atestazion."
+        },
+        {
+          "url": "https://superdizionari.arlef.it/lemma/localit%C3%A0/28456?language=it&oneshot=1&gui=fur",
+          "note": "Località → localitât."
+        }
+      ]
+    },
+    {
+      "id": "doberdo-comunita-zupa-1524",
+      "status": "approved",
+      "labelFur": "Pe prime volte e je documentade une comunitât istituzionalizade di Doberdò, che la font e indiche come župa",
+      "notes": "Comunitât e istituzionalizâ sono verificati nelle voci ARLeF; il participio femminile segue la morfologia standard. Župa resta il termine storico della fonte e non viene tradotto come Comun o amministrazion comunâl.",
+      "references": [
+        {
+          "url": "https://superdizionari.arlef.it/lemma/comunit%C3%A0/19869?language=it&oneshot=1&gui=fur",
+          "note": "Comunità → comunitât."
+        },
+        {
+          "url": "https://superdizionari.arlef.it/lemma/istituzionalizzare/43937?language=it&oneshot=1&gui=fur",
+          "note": "Istituzionalizzare → istituzionalizâ."
+        }
+      ]
+    },
+    {
+      "id": "sgonico-grotta-gigante-apertura-1908",
+      "status": "approved",
+      "labelFur": "La Grotta Gigante e vierç al public cul percors turistic",
+      "notes": "Vierzi e public sono verificati nelle voci ARLeF e il modello vierç al public è già usato nelle tappe approvate. Grotta Gigante resta il nome proprio ufficiale; la copy non attribuisce l'apertura al Comune.",
+      "references": [
+        {
+          "url": "https://superdizionari.arlef.it/lemma/aprire/2323?language=it&oneshot=1&gui=fur",
+          "note": "Aprire → vierzi; terza persona vierç."
+        },
+        {
+          "url": "https://superdizionari.arlef.it/lemma/pubblico/7856?language=it&oneshot=1&gui=fur",
+          "note": "Pubblico → public."
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,111 @@
+{
+  "schemaVersion": 1,
+  "generatedAt": "2026-07-18",
+  "purpose": "Cinquantaduesimo lotto Scopri IT: quarta pulizia della coda residua. Dodici candidati coincidono con memorie canoniche gia pubblicate; Renzo Pascolat viene escluso come politico generico; Luigi Delneri e Paride Tumburus non superano la soglia sportiva eccezionale concordata. Il lotto non crea record e non modifica la copertura.",
+  "policy": {
+    "readyForUi": false,
+    "furDeferred": true,
+    "dateFormat": "DD-MM",
+    "requiresFinalItalianApproval": true,
+    "excludeDeaths": true,
+    "excludeGenericPoliticalProfiles": true,
+    "excludeGenericProfessionalProfiles": true,
+    "excludeSportsOnlyProfiles": true,
+    "allowExceptionalSportsProfiles": true,
+    "rejectBirthplaceOnlyProfiles": true,
+    "rejectSemanticDuplicates": true,
+    "rejectUncertainCalendarDates": true,
+    "sourceFirst": true,
+    "publishAfterFurOnly": true,
+    "allowMultipleMemoriesPerDate": true,
+    "secondaryRequiresPrimaryAnchor": true,
+    "doNotPromoteToPrimaryForCoverageOnly": true
+  },
+  "summary": {
+    "reviewed": 15,
+    "keepDaily": 0,
+    "primary": 0,
+    "secondary": 0,
+    "hold": 0,
+    "excluded": 15,
+    "canonicalPrimaryDatesBefore": 274,
+    "canonicalPrimaryDatesAfter": 274,
+    "currentVisiblePrimaryCoverage": 269
+  },
+  "keepDaily": [],
+  "hold": [],
+  "excluded": [
+    {
+      "id": "master-fvg-13-08-Q3737655",
+      "duplicateOf": "memory-it-ready-0813-fabio-conforto-e-la-geometria",
+      "reason": "Fabio Conforto e gia pubblicato il 13 agosto con una scheda dedicata alla geometria algebrica."
+    },
+    {
+      "id": "master-fvg-17-08-Q1937725",
+      "duplicateOf": "memory-it-ready-0817-theodor-daubler-e-le-avanguardie",
+      "reason": "Theodor Daubler e gia pubblicato il 17 agosto con una scheda dedicata alla poesia e alle avanguardie."
+    },
+    {
+      "id": "master-fvg-25-02-Q12345443",
+      "duplicateOf": "memory-backlog-0225-achille-tellini",
+      "reason": "Achille Tellini e gia pubblicato il 25 febbraio con una scheda dedicata alla scienza e alle lingue del Nordest."
+    },
+    {
+      "id": "master-fvg-29-08-Q842033",
+      "duplicateOf": "memory-it-ready-0829-michelangelo-grigoletti-pittura-pordenonese",
+      "reason": "Michelangelo Grigoletti e gia pubblicato il 29 agosto con una scheda dedicata alla pittura pordenonese."
+    },
+    {
+      "id": "master-fvg-09-10-Q3709251",
+      "duplicateOf": "memory-history-1009-vajont",
+      "reason": "Il disastro del Vajont e gia pubblicato come memoria principale del 9 ottobre."
+    },
+    {
+      "id": "master-fvg-28-09-Q1938259",
+      "duplicateOf": "memory-it-ready-0928-mirko-basaldella-arte-friulana-del-novecento",
+      "reason": "Mirko Basaldella e gia pubblicato il 28 settembre con una scheda dedicata all'arte friulana del Novecento."
+    },
+    {
+      "id": "master-fvg-07-10-Q15229393",
+      "duplicateOf": "memory-copy-1007-giovanni-battista-brusin",
+      "reason": "Giovanni Battista Brusin e gia pubblicato il 7 ottobre con una scheda dedicata all'archeologia di Aquileia."
+    },
+    {
+      "id": "master-fvg-11-12-Q108620032",
+      "reason": "Renzo Pascolat e descritto soltanto come politico. Il profilo non supera la soglia storica concordata per Scopri."
+    },
+    {
+      "id": "master-fvg-14-04-Q542649",
+      "duplicateOf": "memory-it-ready-0414-luigi-carnera-astronomia-triestina",
+      "reason": "Luigi Carnera e gia pubblicato il 14 aprile con una scheda dedicata all'astronomia triestina."
+    },
+    {
+      "id": "master-fvg-23-08-Q332742",
+      "reason": "Luigi Delneri ha una carriera calcistica rilevante, ma il candidato non documenta un primato, un titolo mondiale o europeo, una medaglia o un risultato storico eccezionale sufficiente per la rubrica."
+    },
+    {
+      "id": "master-fvg-08-03-Q2705256",
+      "reason": "Paride Tumburus e descritto come calciatore e allenatore. Il candidato non documenta un risultato sportivo eccezionale sufficiente per la soglia editoriale di Scopri."
+    },
+    {
+      "id": "master-fvg-14-10-Q3770812",
+      "duplicateOf": "memory-it-ready-1014-giuseppe-levi-scuola-di-scienza",
+      "reason": "Giuseppe Levi e gia pubblicato il 14 ottobre con una scheda dedicata alla sua scuola scientifica."
+    },
+    {
+      "id": "master-fvg-31-03-Q187199",
+      "duplicateOf": "memory-review-0331-carlo-rubbia",
+      "reason": "Carlo Rubbia e gia pubblicato il 31 marzo con una scheda dedicata al premio Nobel per la fisica."
+    },
+    {
+      "id": "master-fvg-16-07-Q472212",
+      "duplicateOf": "memory-backlog-0716-graziadio-ascoli",
+      "reason": "Graziadio Isaia Ascoli e gia pubblicato il 16 luglio con una scheda dedicata alla lingua e ai confini."
+    },
+    {
+      "id": "master-fvg-20-09-Q3080044",
+      "duplicateOf": "memory-it-ready-0920-marij-kogoj-musica-di-confine",
+      "reason": "Marij Kogoj e gia pubblicato il 20 settembre con una scheda dedicata alla musica di confine."
+    }
+  ]
+}

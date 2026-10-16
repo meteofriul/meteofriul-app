@@ -1,0 +1,89 @@
+{
+  "schemaVersion": 1,
+  "generatedAt": "2026-07-12",
+  "purpose": "Revisione FUR dell'undicesimo lotto Scopri: arte, scienza, architettura, archeologia e design. File di controllo, non letto direttamente dalla UI.",
+  "summary": {
+    "totalRecords": 11,
+    "approved": 11,
+    "pendingHumanReview": 0
+  },
+  "records": [
+    {
+      "id": "memory-it-ready-0122-luigi-loir-gorizia-e-l-illustrazione",
+      "status": "approved",
+      "titleFur": "Luigi Loir, Gurize e la ilustrazion",
+      "summaryFur": "Ai 22 di Zenâr dal 1845 al nas a Gurize Luigi Loir, pitôr e ilustradôr che al lavorà po in France. Une memorie lizere par contâ passadis di arts e lenghis tra confins.",
+      "notes": "Gurize coerente con uso FUR gia adottato."
+    },
+    {
+      "id": "memory-it-ready-0111-guido-fulignot-ritratti-da-trieste",
+      "status": "approved",
+      "titleFur": "Guido Fulignot, ritrats di Triest",
+      "summaryFur": "Ai 11 di Zenâr dal 1900 al nas a Triest Guido Fulignot, pitôr cognossût pai siei ritrats. In Scuvierç al reste come une olme di une citât vierte a viaçs, comitencis e gust european.",
+      "notes": "Scuvierç mantiene la denominazione FUR della sezione."
+    },
+    {
+      "id": "memory-it-ready-0609-fabio-beltram-fisica-da-gorizia",
+      "status": "approved",
+      "titleFur": "Fabio Beltram, fisiche di Gurize",
+      "summaryFur": "Ai 9 di Jugn dal 1959 al nas a Gurize Fabio Beltram, fisic de materie e docint universitari. Une memorie di science: no dome storie antighe, ma ancje ricercje contemporanie.",
+      "notes": "Profilo vivente ma scientifico forte; tono neutro."
+    },
+    {
+      "id": "memory-it-ready-0103-roberto-car-e-la-fisica-computazionale",
+      "status": "approved",
+      "titleFur": "Roberto Car e la fisiche computazionâl",
+      "summaryFur": "Ai 3 di Zenâr dal 1947 al nas a Triest Roberto Car, fisic cognossût pal lavôr su la dinamiche molecolâr. Une memorie curte par leâ teritori, ricercje e science moderne.",
+      "notes": "Termine tecnico mantenuto in forma trasparente."
+    },
+    {
+      "id": "memory-it-ready-0723-michele-vendruscolo-proteine-e-biofisica",
+      "status": "approved",
+      "titleFur": "Michele Vendruscolo, proteinis e biofisiche",
+      "summaryFur": "Ai 23 di Lui dal 1966 al nas a Udin Michele Vendruscolo, fisic e chimic atîf te biofisiche. Une vôs sientifiche par ricuardâ che Scuvierç nol è dome passât lontan.",
+      "notes": "Profilo vivente ma scientifico forte; copy neutra."
+    },
+    {
+      "id": "memory-it-ready-0220-vigilio-de-grassi-architettura-da-grado",
+      "status": "approved",
+      "titleFur": "Vigilio De Grassi, architeture di Grado",
+      "summaryFur": "Ai 20 di Fevrâr dal 1889 al nas a Grado Vigilio De Grassi, architet e urbanist. Une memorie urbane, adate par contâ cemût i lûcs e lis citâts a cambiin forme cul timp.",
+      "notes": "Toponimo Grado lasciato in forma italiana per evitare forzature."
+    },
+    {
+      "id": "memory-it-ready-0202-iginio-montini-scultura-a-cividale",
+      "status": "approved",
+      "titleFur": "Iginio Montini, sculture a Cividât",
+      "summaryFur": "Ai 2 di Fevrâr dal 1878 al nas a Cividât Iginio Montini, scultôr. Une piçule schede di art locâl, di tignî tal calendari cence fâle deventâ monumentâl.",
+      "notes": "Cividât coerente con uso FUR gia adottato."
+    },
+    {
+      "id": "memory-it-ready-0105-alberto-riccoboni-architettura-e-storia-dell-arte",
+      "status": "approved",
+      "titleFur": "Alberto Riccoboni, architeture e storie de art",
+      "summaryFur": "Ai 5 di Zenâr dal 1874 al nas a Triest Alberto Riccoboni, architet e storic de art. Une memorie discrete par lei il teritori ancje traviers edifizis, studi e disegn.",
+      "notes": "Copy breve e non celebrativa."
+    },
+    {
+      "id": "memory-it-ready-0831-enrico-de-cillia-pittura-e-carso",
+      "status": "approved",
+      "titleFur": "Enrico De Cillia, piture e Cjars",
+      "summaryFur": "Ai 31 di Avost dal 1910 al nas a Trep di Cjargne Enrico De Cillia, pitôr ricuardât pal leam cul Cjars. Une memorie visive, tra mont, piere e paisaç.",
+      "notes": "Trep di Cjargne e Cjars usati per dare tono territoriale."
+    },
+    {
+      "id": "memory-it-ready-1112-bruno-sacco-design-da-udine",
+      "status": "approved",
+      "titleFur": "Bruno Sacco, design di Udin",
+      "summaryFur": "Ai 12 di Novembar dal 1933 al nas a Udin Bruno Sacco, designer leât a une lungje stagjon Mercedes-Benz. Une memorie di design: tecniche, stîl e culture materiâl.",
+      "notes": "Mercedes-Benz mantenuto come nome proprio."
+    },
+    {
+      "id": "memory-it-ready-0601-doro-levi-archeologia-e-storia-dell-arte",
+      "status": "approved",
+      "titleFur": "Doro Levi, archeologjie e storie de art",
+      "summaryFur": "Ai 1 di Jugn dal 1898 al nas a Triest Doro Levi, archeolic e storic de art. Une memorie adate a Scuvierç: studi, antichitât e un sguard european.",
+      "notes": "Archeolic coerente con forma gia usata nei testi FUR."
+    }
+  ]
+}

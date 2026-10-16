@@ -1,0 +1,156 @@
+{
+  "schemaVersion": 1,
+  "generatedAt": "2026-07-17",
+  "purpose": "Trentanovesimo lotto Scopri IT: audit editoriale di quindici candidati della coda. Quattro figure superano la soglia storico-culturale: Franco Gulli per il rilievo musicale internazionale e il percorso triestino, Leonardo Andervolti per la difesa di Osoppo e Venezia nel 1848, Gabriella Gherbez per Resistenza, ricostruzione e tutela della minoranza slovena, Elody Oblath per la cultura letteraria triestina. Undici profili vengono esclusi come ruoli politici, imprenditoriali, sportivi o professionali ordinari. La pubblicazione resta bloccata fino alla revisione FUR dei quattro record selezionati.",
+  "policy": {
+    "readyForUi": false,
+    "furDeferred": true,
+    "dateFormat": "DD-MM",
+    "requiresFinalItalianApproval": true,
+    "excludeDeaths": true,
+    "excludeGenericPoliticalProfiles": true,
+    "excludeGenericProfessionalProfiles": true,
+    "excludeSportsOnlyProfiles": true,
+    "allowExceptionalSportsProfiles": true,
+    "rejectBirthplaceOnlyProfiles": true,
+    "rejectSemanticDuplicates": true,
+    "rejectUncertainCalendarDates": true,
+    "sourceFirst": true,
+    "publishAfterFurOnly": true,
+    "allowMultipleMemoriesPerDate": true,
+    "secondaryOrderedByPriority": true,
+    "doNotPromoteToPrimaryForCoverageOnly": true
+  },
+  "summary": {
+    "reviewed": 15,
+    "keepDaily": 4,
+    "primary": 2,
+    "secondary": 2,
+    "hold": 0,
+    "excluded": 11,
+    "canonicalPrimaryDatesBefore": 238,
+    "canonicalPrimaryDatesAfter": 240,
+    "currentVisiblePrimaryCoverage": 231
+  },
+  "keepDaily": [
+    {
+      "id": "master-fvg-01-09-Q641789",
+      "wikidataId": "Q641789",
+      "dateIt": "01-09",
+      "year": 1926,
+      "municipality": "Trieste",
+      "locality": "Trieste",
+      "province": "TS",
+      "canonicalCategory": "cultura",
+      "dailyRole": "secondary",
+      "priority": 94,
+      "titleIt": "Franco Gulli, violinista da Trieste al mondo",
+      "copyIt": "Il 1 settembre 1926 nasce a Trieste Franco Gulli. Diplomato con lode al Conservatorio di Trieste, diventa solista nelle principali sale internazionali, forma il Trio Italiano d'archi e insegna all'Accademia Chigiana, a Lucerna e negli Stati Uniti.",
+      "sourceLabel": "Dizionario della Musica in Italia - Franco Gulli",
+      "sourceUrl": "https://www.dmi.it/dizionario/pagine/001127_Gulli_Franco.html",
+      "sourceStatus": "pass",
+      "readyForUi": false
+    },
+    {
+      "id": "master-fvg-02-05-Q3229700",
+      "wikidataId": "Q3229700",
+      "dateIt": "02-05",
+      "year": 1805,
+      "municipality": "Spilimbergo",
+      "locality": "Spilimbergo",
+      "province": "PN",
+      "canonicalCategory": "storia",
+      "dailyRole": "primary",
+      "priority": 96,
+      "titleIt": "Leonardo Andervolti e la difesa del 1848",
+      "copyIt": "Il 2 maggio 1805 nasce a Spilimbergo Leonardo Andervolti. Nel 1848 prende parte alla resistenza contro gli austriaci a Osoppo e Venezia, diventando una delle figure spilimberghesi legate alla prima guerra d'indipendenza.",
+      "sourceLabel": "Città di Spilimbergo - La città e la sua storia",
+      "sourceUrl": "https://www.comune.spilimbergo.pn.it/it/novita-202743/notizie-202745/la-citta-e-la-sua-storia-249660",
+      "sourceStatus": "pass",
+      "readyForUi": false
+    },
+    {
+      "id": "master-fvg-02-09-Q65496893",
+      "wikidataId": "Q65496893",
+      "dateIt": "02-09",
+      "year": 1927,
+      "municipality": "Trieste",
+      "locality": "Trieste",
+      "province": "TS",
+      "canonicalCategory": "storia",
+      "dailyRole": "secondary",
+      "priority": 94,
+      "titleIt": "Gabriella Gherbez, Resistenza e diritti",
+      "copyIt": "Il 2 settembre 1927 nasce a Trieste Gabriella Gherbez. Partigiana, poi senatrice per tre legislature, partecipa ai lavori per la ricostruzione dopo il terremoto del 1976 e promuove la tutela della minoranza slovena.",
+      "sourceLabel": "Soprintendenza archivistica FVG - Fondo Gabriella Jelka Gherbez",
+      "sourceUrl": "https://sa-fvg.cultura.gov.it/fileadmin/inventari/archivi_privati/Gherbez_Gabriella._Inventario__Anna_Peschier__Alessandro_Volk__2007_.pdf",
+      "sourceStatus": "pass",
+      "readyForUi": false
+    },
+    {
+      "id": "master-fvg-02-12-Q3723601",
+      "wikidataId": "Q3723601",
+      "dateIt": "02-12",
+      "year": 1889,
+      "municipality": "Trieste",
+      "locality": "Trieste",
+      "province": "TS",
+      "canonicalCategory": "cultura",
+      "dailyRole": "primary",
+      "priority": 92,
+      "titleIt": "Elody Oblath, una voce letteraria di Trieste",
+      "copyIt": "Il 2 dicembre 1889 nasce a Trieste Elody Oblath. Legata al gruppo culturale di Scipio Slataper e Giani Stuparich, raccoglie le proprie carte, scrive note autobiografiche e pubblica poesie; nel 1944 viene internata alla Risiera di San Sabba per le sue origini ebraiche.",
+      "sourceLabel": "Comune di Trieste - Fondo Cartoline Elody Oblath",
+      "sourceUrl": "https://catalogomusei.comune.trieste.it/samira/resource/file/Inventario_Oblath.pdf",
+      "sourceStatus": "pass",
+      "readyForUi": false
+    }
+  ],
+  "hold": [],
+  "excluded": [
+    {
+      "id": "master-fvg-01-02-Q2159489",
+      "reason": "Profilo politico e imprenditoriale contemporaneo senza un contributo storico autonomo; rientra nelle esclusioni deliberate per ruoli politici e professionali generici."
+    },
+    {
+      "id": "master-fvg-01-03-Q1338092",
+      "reason": "Carriera sportiva nazionale senza risultati storici eccezionali né un lascito territoriale autonomo adeguato alla rubrica."
+    },
+    {
+      "id": "master-fvg-01-04-Q3619131",
+      "reason": "Politico e militare ottocentesco, ma le fonti disponibili non documentano un contributo storico abbastanza distinto da giustificare una memoria giornaliera."
+    },
+    {
+      "id": "master-fvg-01-04-Q538464",
+      "reason": "Regista contemporaneo con attività professionale riconosciuta, ma privo del rilievo storico-culturale eccezionale richiesto da Scopri."
+    },
+    {
+      "id": "master-fvg-01-09-Q28033552",
+      "reason": "Profilo esclusivamente ciclistico senza risultato mondiale o olimpico e senza un lascito storico territoriale autonomo."
+    },
+    {
+      "id": "master-fvg-01-10-Q3675632",
+      "reason": "Profilo sportivo nel curling privo dell'eccezionalità storica necessaria per derogare all'esclusione dello sport ordinario."
+    },
+    {
+      "id": "master-fvg-02-04-Q3617591",
+      "reason": "Carriera di attrice contemporanea, ma il solo profilo professionale non supera la soglia storico-culturale della rubrica."
+    },
+    {
+      "id": "master-fvg-02-05-Q16528352",
+      "reason": "Profilo politico contemporaneo senza un contributo storico autonomo; rientra nell'esclusione dei ruoli politici generici."
+    },
+    {
+      "id": "master-fvg-02-07-Q3893868",
+      "reason": "Carriera sportiva nazionale nelle prove multiple senza risultato storico eccezionale o lascito territoriale autonomo."
+    },
+    {
+      "id": "master-fvg-02-09-Q3615792",
+      "reason": "Profilo imprenditoriale contemporaneo, noto ma non coerente con la soglia storico-culturale deliberata per le memorie giornaliere."
+    },
+    {
+      "id": "master-fvg-02-09-Q88456481",
+      "reason": "Profilo professionale contemporaneo nella ristorazione, privo di un contributo storico autonomo sufficiente per Scopri."
+    }
+  ]
+}

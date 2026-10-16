@@ -1,0 +1,358 @@
+{
+  "schemaVersion": 1,
+  "batchId": "ostermann-1876-language-review-03",
+  "reviewedAt": "2026-07-22",
+  "sourceDecisionFiles": [
+    "review-decisions-batch-03.json"
+  ],
+  "purpose": "Terza revisione linguistica ed editoriale dei candidati Ostermann 1876 gia verificati sul facsimile. Non pubblica contenuti nella UI.",
+  "policy": {
+    "publish": false,
+    "rule": "IT e FUR revisionati non equivalgono a pubblicazione. Le ricorrenze restano vincolate alla data, i detti mensili e stagionali al loro periodo e le massime generali potranno essere assegnate al calendario soltanto in una promozione separata."
+  },
+  "summary": {
+    "records": 12,
+    "languageReviewed": 12,
+    "mergeExisting": 0,
+    "needsNativeReview": 0
+  },
+  "records": [
+    {
+      "id": "ost1876-epifanie-fiestis-vie",
+      "reviewStatus": "language_reviewed",
+      "furNormalized": "Pifanie, dutis lis fiestis e mene vie.",
+      "itFinal": "L'Epifania porta via tutte le feste.",
+      "destination": "almanac",
+      "calendarRule": {
+        "type": "date",
+        "day": 6,
+        "month": 1,
+        "fallbackAllowed": false
+      },
+      "duplicateAudit": {
+        "status": "new_distinct",
+        "relatedId": "ostermann-054-epifanie-fred"
+      },
+      "evidence": [
+        {
+          "label": "Facsimile Ostermann 1876, p. PDF 26",
+          "kind": "primary"
+        },
+        {
+          "label": "ARLeF, Pagjine furlane, 10 gennaio 2024",
+          "url": "https://arlef.it/app/uploads/stampa-friulana/02_-_10-01-2024_vc-37.pdf",
+          "kind": "normalized_reference"
+        }
+      ],
+      "editorialNote": "Solo per il 6 gennaio. E distinto dal detto gia pubblicato sul freddo dell'Epifania e non crea un secondo slot annuale automatico.",
+      "publish": false
+    },
+    {
+      "id": "ost1876-san-valantin-svinte",
+      "reviewStatus": "language_reviewed",
+      "furNormalized": "Se al svinte a Sant Valantin, cuarante dîs nol à fin.",
+      "itFinal": "Se tira vento a San Valentino, non finisce per quaranta giorni.",
+      "destination": "almanac",
+      "calendarRule": {
+        "type": "date",
+        "day": 14,
+        "month": 2,
+        "fallbackAllowed": false
+      },
+      "duplicateAudit": {
+        "status": "new_distinct",
+        "relatedId": "ostermann-054-san-valantin-fin-inviar"
+      },
+      "evidence": [
+        {
+          "label": "Facsimile Ostermann 1876, p. PDF 28",
+          "kind": "primary"
+        },
+        {
+          "label": "La Vita Cattolica, 8 febbraio 2017",
+          "url": "https://sifaprestoadireparti.altervista.org/alterpages/files/LaVitaCattolica_2017_02_08.pdf",
+          "kind": "normalized_reference"
+        }
+      ],
+      "editorialNote": "Solo per il 14 febbraio. La frase resta un detto condizionale sul vento, non una previsione prodotta dall'app.",
+      "publish": false
+    },
+    {
+      "id": "ost1876-prime-ploe-avost-bosc",
+      "reviewStatus": "language_reviewed",
+      "furNormalized": "La prime ploe di avost e rinfrescje il bosc.",
+      "itFinal": "La prima pioggia d'agosto rinfresca il bosco.",
+      "destination": "almanac",
+      "calendarRule": {
+        "type": "months",
+        "months": [
+          8
+        ],
+        "fallbackAllowed": false
+      },
+      "duplicateAudit": {
+        "status": "new_distinct"
+      },
+      "evidence": [
+        {
+          "label": "Facsimile Ostermann 1876, p. PDF 30",
+          "kind": "primary"
+        },
+        {
+          "label": "ParemioRom, scheda del proverbio",
+          "url": "https://stel.ub.edu/paremio-rom/en/proverbs-sheets?page=305",
+          "kind": "normalized_reference"
+        }
+      ],
+      "editorialNote": "Detto esclusivamente di agosto; non puo comparire come proverbio estivo generico in giugno o luglio.",
+      "publish": false
+    },
+    {
+      "id": "ost1876-an-plojos-an-fanos",
+      "reviewStatus": "language_reviewed",
+      "furNormalized": "An plojôs, an fanôs.",
+      "itFinal": "Annata piovosa, annata ricca di fieno.",
+      "destination": "almanac",
+      "calendarRule": {
+        "type": "general",
+        "bucket": "agriculture",
+        "fallbackAllowed": true
+      },
+      "duplicateAudit": {
+        "status": "new_distinct"
+      },
+      "evidence": [
+        {
+          "label": "Facsimile Ostermann 1876, p. PDF 40",
+          "kind": "primary"
+        },
+        {
+          "label": "ParemioRom, repertorio Ostermann",
+          "url": "https://stel.ub.edu/paremio-rom/en/sources/ostermann-valentino-proverbi-friulani-raccolti-dalla-viva-voce-del-popolo",
+          "kind": "normalized_reference"
+        }
+      ],
+      "editorialNote": "Detto agricolo generale sull'andamento dell'annata; non nomina una data, una festa o una stagione incompatibile.",
+      "publish": false
+    },
+    {
+      "id": "ost1876-nolis-panolis",
+      "reviewStatus": "language_reviewed",
+      "furNormalized": "Anade di nolis, anade di panolis.",
+      "itFinal": "Annata di nuvole, annata di pannocchie.",
+      "destination": "almanac",
+      "calendarRule": {
+        "type": "general",
+        "bucket": "agriculture",
+        "fallbackAllowed": true
+      },
+      "duplicateAudit": {
+        "status": "new_distinct"
+      },
+      "evidence": [
+        {
+          "label": "Facsimile Ostermann 1876, p. PDF 40",
+          "kind": "primary"
+        },
+        {
+          "label": "Dizionari de Lenghe Furlane, voce panole",
+          "url": "https://dizionarifurlan.eu/headword/panole",
+          "kind": "normalized_reference"
+        }
+      ],
+      "editorialNote": "Detto agricolo generale. La grafia normalizzata non usa gli accenti storici di nolis e panolis.",
+      "publish": false
+    },
+    {
+      "id": "ost1876-avril-ploe-sutil",
+      "reviewStatus": "language_reviewed",
+      "furNormalized": "Avrîl, e ûl ploe par sutîl.",
+      "itFinal": "Aprile vuole una pioggia sottile.",
+      "destination": "almanac",
+      "calendarRule": {
+        "type": "months",
+        "months": [
+          4
+        ],
+        "fallbackAllowed": false
+      },
+      "duplicateAudit": {
+        "status": "new_distinct"
+      },
+      "evidence": [
+        {
+          "label": "Facsimile Ostermann 1876, p. PDF 41",
+          "kind": "primary"
+        },
+        {
+          "label": "ParemioRom, repertorio Ostermann",
+          "url": "https://stel.ub.edu/paremio-rom/en/sources/ostermann-valentino-proverbi-friulani-raccolti-dalla-viva-voce-del-popolo",
+          "kind": "normalized_reference"
+        }
+      ],
+      "editorialNote": "Solo per aprile. Il copy italiano conserva il valore verbale di e ul invece di trasformarlo in una constatazione meteorologica.",
+      "publish": false
+    },
+    {
+      "id": "ost1876-cuc-dafa-par-dut",
+      "reviewStatus": "language_reviewed",
+      "furNormalized": "Cuant che al cjante il cuc, al è dafâ pardut; cuant che al lasse di cjantâ, al rive il grant dafâ.",
+      "itFinal": "Quando canta il cuculo, c'è da fare dappertutto; quando smette di cantare, arriva il lavoro più grande.",
+      "destination": "almanac",
+      "calendarRule": {
+        "type": "seasons",
+        "seasons": [
+          "spring",
+          "summer"
+        ],
+        "fallbackAllowed": false
+      },
+      "duplicateAudit": {
+        "status": "new_distinct"
+      },
+      "evidence": [
+        {
+          "label": "Facsimile Ostermann 1876, p. PDF 41",
+          "kind": "primary"
+        }
+      ],
+      "editorialNote": "Il sostantivo dafâ e il verbo cjantâ sono attestati nel repertorio lessicografico; la resa conserva il senso agricolo e resta limitata a primavera ed estate.",
+      "publish": false
+    },
+    {
+      "id": "ost1876-strade-viere-gnove",
+      "reviewStatus": "language_reviewed",
+      "furNormalized": "No bisugne lassâ la strade viere par chê gnove.",
+      "itFinal": "Non bisogna lasciare la strada vecchia per quella nuova.",
+      "destination": "almanac",
+      "calendarRule": {
+        "type": "general",
+        "bucket": "wisdom",
+        "fallbackAllowed": true
+      },
+      "duplicateAudit": {
+        "status": "new_distinct"
+      },
+      "evidence": [
+        {
+          "label": "Facsimile Ostermann 1876, p. PDF 146",
+          "kind": "primary"
+        },
+        {
+          "label": "Dizionari de Lenghe Furlane, voce bisugnâ",
+          "url": "https://dizionarifurlan.eu/headword/bisugn%C3%A2",
+          "kind": "normalized_reference"
+        }
+      ],
+      "editorialNote": "Massima generale verificata integralmente nel repertorio lessicografico.",
+      "publish": false
+    },
+    {
+      "id": "ost1876-ogni-ritard-pericul",
+      "reviewStatus": "language_reviewed",
+      "furNormalized": "Ogni ritart al puarte pericul.",
+      "itFinal": "Ogni ritardo porta pericolo.",
+      "destination": "almanac",
+      "calendarRule": {
+        "type": "general",
+        "bucket": "wisdom",
+        "fallbackAllowed": true
+      },
+      "duplicateAudit": {
+        "status": "new_distinct"
+      },
+      "evidence": [
+        {
+          "label": "Facsimile Ostermann 1876, p. PDF 146",
+          "kind": "primary"
+        }
+      ],
+      "editorialNote": "Il facsimile attesta ritard; la grafia moderna ritart è confermata dal repertorio lessicografico e il pronome soggetto al completa la costruzione verbale.",
+      "publish": false
+    },
+    {
+      "id": "ost1876-timp-svole",
+      "reviewStatus": "language_reviewed",
+      "furNormalized": "Il timp al svole.",
+      "itFinal": "Il tempo vola.",
+      "destination": "almanac",
+      "calendarRule": {
+        "type": "general",
+        "bucket": "wisdom",
+        "fallbackAllowed": true
+      },
+      "duplicateAudit": {
+        "status": "new_distinct"
+      },
+      "evidence": [
+        {
+          "label": "Facsimile Ostermann 1876, p. PDF 146",
+          "kind": "primary"
+        },
+        {
+          "label": "Dizionari de Lenghe Furlane, voce timp",
+          "url": "https://dizionarifurlan.eu/headword/timp",
+          "kind": "normalized_reference"
+        }
+      ],
+      "editorialNote": "Massima generale verificata integralmente nel repertorio lessicografico.",
+      "publish": false
+    },
+    {
+      "id": "ost1876-ogni-cose-timp-lug",
+      "reviewStatus": "language_reviewed",
+      "furNormalized": "Ogni cjosse a timp e lûc.",
+      "itFinal": "Ogni cosa a suo tempo e luogo.",
+      "destination": "almanac",
+      "calendarRule": {
+        "type": "general",
+        "bucket": "wisdom",
+        "fallbackAllowed": true
+      },
+      "duplicateAudit": {
+        "status": "new_distinct"
+      },
+      "evidence": [
+        {
+          "label": "Facsimile Ostermann 1876, p. PDF 146",
+          "kind": "primary"
+        },
+        {
+          "label": "Dizionari de Lenghe Furlane, voce timp",
+          "url": "https://dizionarifurlan.eu/headword/timp",
+          "kind": "normalized_reference"
+        }
+      ],
+      "editorialNote": "Massima generale verificata integralmente nel repertorio lessicografico.",
+      "publish": false
+    },
+    {
+      "id": "ost1876-timp-pierd-no-quiste",
+      "reviewStatus": "language_reviewed",
+      "furNormalized": "Il timp che si piert no si lu cuiste mai.",
+      "itFinal": "Il tempo che si perde non si recupera mai.",
+      "destination": "almanac",
+      "calendarRule": {
+        "type": "general",
+        "bucket": "wisdom",
+        "fallbackAllowed": true
+      },
+      "duplicateAudit": {
+        "status": "new_distinct"
+      },
+      "evidence": [
+        {
+          "label": "Facsimile Ostermann 1876, p. PDF 146",
+          "kind": "primary"
+        },
+        {
+          "label": "Dizionari de Lenghe Furlane, voce timp",
+          "url": "https://dizionarifurlan.eu/headword/timp",
+          "kind": "normalized_reference"
+        }
+      ],
+      "editorialNote": "Massima generale verificata integralmente nel repertorio lessicografico.",
+      "publish": false
+    }
+  ]
+}

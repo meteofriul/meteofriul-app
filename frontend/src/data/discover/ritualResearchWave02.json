@@ -1,0 +1,209 @@
+{
+  "schemaVersion": 1,
+  "snapshotDate": "2026-08-31",
+  "purpose": "Secondo lotto di ricerca su riti documentati: Matajur e Missus. Dossier separato dalla UI, collegato alle sole due schede promosse.",
+  "readyForUi": false,
+  "editorialDecision": {
+    "basis": "user_delegated_assisted_editorial_review",
+    "reviewer": "assistant",
+    "independentHumanReview": false,
+    "scope": ["ritual-research-matajur-rogazione-maggiore", "ritual-research-missus-novena"],
+    "note": "Decisione assistita nel mandato attuale di continuare Scopri, non approvazione dell'utente frase per frase. Nessuna certificazione ARLeF o revisione professionale indipendente; non estende automaticamente la decisione ad altri testi."
+  },
+  "rules": [
+    "Il dossier e le sue copie di ricerca restano readyForUi:false; soltanto i promotedRecordId appartengono al catalogo runtime.",
+    "Le fonti culturali sono pagine HTML istituzionali lette direttamente; i riferimenti FUR distinguono HTML diretto e testo PDF indicizzato senza audit visivo.",
+    "Le aree descrivono la provenienza culturale, non la località dell'utente o un evento nelle sue vicinanze.",
+    "Nessun riuso di immagini, video o riproduzioni delle fonti; titolo e sintesi sono originali.",
+    "Nessun nuovo programma, orario, itinerario operativo o affermazione di svolgimento attuale viene introdotto.",
+    "Calendario della tradizione e finestra editoriale dell'app sono separati quando non coincidono."
+  ],
+  "records": [
+    {
+      "id": "ritual-research-matajur-rogazione-maggiore",
+      "canonicalKey": "matajur-tercimonte-rogazione-maggiore-aprile25",
+      "rubric": "riti_credenze_popolari",
+      "theme": "rogazioni",
+      "title": {
+        "it": "La rogazione fra i paesi del Matajur",
+        "fur": "La rogazion fra i paîs dal Matajur"
+      },
+      "draftCopy": {
+        "it": "Nel 2023 la rogazione maggiore del Matajur era descritta come una processione dalla chiesa di Tercimonte attraverso le comunità del monte, con soste per la preghiera e un ristoro condiviso.",
+        "fur": "Tal 2023 la rogazion maiôr dal Matajur e jere descrite come une procession de glesie di Tercimonte pes comunitâts dal Matajur, cun sostis pe preiere e par mangjâ alc adun."
+      },
+      "draftAppShort": {
+        "it": "Nel 2023 la rogazione del Matajur era descritta con soste per la preghiera e il ristoro.",
+        "fur": "Tal 2023 la rogazion dal Matajur e jere descrite cun sostis pe preiere e par mangjâ alc adun."
+      },
+      "evidenceSummary": "L'Arcidiocesi descrive il 19 aprile 2023 la rogazione maggiore prevista per il 25 aprile: dalla chiesa di Tercimonte attraverso le comunità del Matajur, con soste di preghiera e ristoro. La fonte è un annuncio descrittivo, non una prova dell'effettivo svolgimento né un programma valido per il 2026.",
+      "geographicScope": ["tercimonte", "matajur", "valli_del_natisone"],
+      "geographicScopeNote": "Rito locale del Matajur, non tutte le Rogazioni del Friuli e non il Bacio delle Croci di Zuglio. Tercimonte conservato nella forma già usata dall'app; nessun toponimo FUR nuovo non verificato. Ambito culturale, non posizione dell'utente.",
+      "temporalRule": { "type": "fixed_date", "date": "04-25" },
+      "documentedTraditionCalendar": {
+        "dateAnchors": ["04-25"],
+        "evidenceYear": 2023,
+        "currentEventScheduleVerified": false
+      },
+      "source": {
+        "label": "Arcidiocesi di Udine · Rogazioni",
+        "url": "https://www.diocesiudine.it/in-prossimita-della-festa-di-san-marco-tornano-gli-antichi-riti-delle-rogazioni/",
+        "type": "institutional_publication",
+        "publishedAt": "2023-04-19",
+        "checkedAt": "2026-08-31",
+        "accessMethod": "direct_html",
+        "rightsNote": "Sintesi originale, senza riuso di immagini, filmati o riproduzioni della fonte."
+      },
+      "reviewStatus": "promoted",
+      "editorialStatus": "promoted_to_catalog",
+      "languageStatus": { "it": "approved", "fur": "approved" },
+      "readyForUi": false,
+      "promotedRecordId": "institutional-ritual-matajur-rogazione-maggiore",
+      "promotionReview": {
+        "decision": "promoted",
+        "promotedAt": "2026-08-31",
+        "targetRecordId": "institutional-ritual-matajur-rogazione-maggiore",
+        "targetSection": "riti_credenze_popolari",
+        "runtimeTemporal": {
+          "recurrence": "fixed_date",
+          "dateAnchors": ["04-25"],
+          "dateRanges": [],
+          "movableDates": [],
+          "movableDateRanges": [],
+          "seasons": ["primavera"],
+          "weatherTags": []
+        },
+        "remainingBlockers": []
+      },
+      "languageReview": {
+        "fur": {
+          "approvalBasis": "user_delegated_assisted_editorial_review",
+          "reviewMethod": "assisted_standard_reference_review",
+          "reviewer": "assistant",
+          "independentHumanReview": false,
+          "approvedAt": "2026-08-31",
+          "approvalNote": "Decisione editoriale assistita circoscritta a queste due schede nel mandato di proseguire Scopri. Non approvazione dell'utente frase per frase, non certificazione ARLeF e non revisione professionale indipendente.",
+          "references": [
+            {
+              "url": "https://arlef.it/app/uploads/stampa-friulana/patrie_avricc82l_2024_cerce.pdf",
+              "accessMethod": "indexed_pdf_text_not_visual_audit",
+              "note": "La Patrie dal Friûl, aprile 2024, p. 7: attestazioni di Rogazion Maiôr. Periodico ospitato da ARLeF, non traduzione ufficiale della scheda; consultato il testo indicizzato, senza audit visivo del PDF."
+            },
+            {
+              "url": "https://superdizionari.arlef.it/lemma/processione/23870?language=it&oneshot=1&gui=fur",
+              "accessMethod": "direct_http_html",
+              "note": "Processione → procession; lemma letto direttamente nel contenuto HTML."
+            },
+            {
+              "url": "https://superdizionari.arlef.it/lemma/preghiera/31181?language=it&oneshot=1&gui=fur",
+              "accessMethod": "direct_http_html",
+              "note": "Preghiera → preiere; lemma letto direttamente nel contenuto HTML."
+            },
+            {
+              "url": "https://superdizionari.arlef.it/lemma/sosta/18948?language=it&oneshot=1&gui=fur",
+              "accessMethod": "direct_http_html",
+              "note": "Sosta → soste, con plurale regolare sostis; lemma letto direttamente nel contenuto HTML."
+            }
+          ]
+        }
+      },
+      "duplicateReview": {
+        "status": "distinct",
+        "comparedCatalogs": ["institutionalRituals", "institutionalArchive", "ostermannCulturalDiscover", "ritualResearchBacklog", "archiveResearchWave01", "archiveResearchWave02"],
+        "comparedRecordIds": ["institutional-archive-bacio-croci-zuglio"],
+        "note": "Matajur/Tercimonte e data del 25 aprile sono distinti dal Bacio delle Croci di Zuglio legato all'Ascensione. Nessun record esistente racconta questa processione locale."
+      }
+    },
+    {
+      "id": "ritual-research-missus-novena",
+      "canonicalKey": "friuli-missus-novena-natale",
+      "rubric": "riti_credenze_popolari",
+      "theme": "avvento",
+      "title": {
+        "it": "Il Missus nelle nove sere prima di Natale",
+        "fur": "Il Missus tes nûf seris prime di Nadâl"
+      },
+      "draftCopy": {
+        "it": "Dal 15 al 23 dicembre, nelle comunità friulane che custodiscono questa usanza, il Missus accompagna la Novena di Natale. Si canta il racconto evangelico dell'Annunciazione.",
+        "fur": "Dai 15 ai 23 di Dicembar, tes comunitâts furlanis che a conservin cheste usance, il Missus al compagne la novene di Nadâl. Si cjante il toc dal Vanzeli de Anunciazion."
+      },
+      "draftAppShort": {
+        "it": "Il canto dell'Annunciazione accompagna nove sere della Novena di Natale.",
+        "fur": "Il cjant de Anunciazion al compagne nûf seris de novene di Nadâl."
+      },
+      "evidenceSummary": "L'Arcidiocesi descrive nove sere del Missus dal 15 al 23 dicembre, con il canto di Luca 1,26–38, e distingue la Devetica Božična del Natisone, nella quale il Missus non viene cantato. La derivazione aquileiese è proposta come ipotesi, non assunta come fatto nella copy.",
+      "geographicScope": ["arcidiocesi_udine", "comunita_di_tradizione_friulana"],
+      "geographicScopeNote": "Comunità di tradizione friulana dell'Arcidiocesi di Udine che conservano l'usanza, non ogni località del FVG. Ambito culturale, non posizione dell'utente.",
+      "nonEquivalentTraditions": ["devetica_bozicna_valli_natisone"],
+      "temporalRule": {
+        "type": "date_range",
+        "dateRanges": ["12-15..12-17"],
+        "purpose": "editorial_first_three_evenings",
+        "note": "La lettura dell'app copre solo le prime tre sere, 15–17 dicembre, per evitare nove giorni di ripetizione della stessa scheda; la durata documentata del rito resta di nove sere, 15–23 dicembre."
+      },
+      "documentedTraditionCalendar": {
+        "dateRanges": ["12-15..12-23"],
+        "evenings": 9,
+        "currentEventScheduleVerified": false
+      },
+      "source": {
+        "label": "Arcidiocesi di Udine · Missus",
+        "url": "https://www.diocesiudine.it/missus-est-il-canto-dellannunciazione-illumina-le-sere-della-novena-del-natale-in-friuli/",
+        "type": "institutional_publication",
+        "publishedAt": "2022-12-14",
+        "checkedAt": "2026-08-31",
+        "accessMethod": "direct_html",
+        "rightsNote": "Sintesi originale, senza riuso di immagini, filmati o riproduzioni della fonte."
+      },
+      "reviewStatus": "promoted",
+      "editorialStatus": "promoted_to_catalog",
+      "languageStatus": { "it": "approved", "fur": "approved" },
+      "readyForUi": false,
+      "promotedRecordId": "institutional-ritual-missus-novena",
+      "promotionReview": {
+        "decision": "promoted",
+        "promotedAt": "2026-08-31",
+        "targetRecordId": "institutional-ritual-missus-novena",
+        "targetSection": "riti_credenze_popolari",
+        "runtimeTemporal": {
+          "recurrence": "date_range",
+          "dateAnchors": [],
+          "dateRanges": ["12-15..12-17"],
+          "movableDates": [],
+          "movableDateRanges": [],
+          "seasons": ["inverno"],
+          "weatherTags": []
+        },
+        "remainingBlockers": []
+      },
+      "languageReview": {
+        "fur": {
+          "approvalBasis": "user_delegated_assisted_editorial_review",
+          "reviewMethod": "assisted_standard_reference_review",
+          "reviewer": "assistant",
+          "independentHumanReview": false,
+          "approvedAt": "2026-08-31",
+          "approvalNote": "Decisione editoriale assistita circoscritta a queste due schede nel mandato di proseguire Scopri. Non approvazione dell'utente frase per frase, non certificazione ARLeF e non revisione professionale indipendente.",
+          "references": [
+            {
+              "url": "https://arlef.it/app/uploads/stampa-friulana/fnm_luglio_agosto_2017.pdf",
+              "accessMethod": "indexed_pdf_text_not_visual_audit",
+              "note": "FNM, luglio–agosto 2017: novene di Nadâl e cjant dal Missus in prosa friulana ospitata da ARLeF. Consultato il testo indicizzato, senza audit visivo del PDF; non traduzione ufficiale della scheda."
+            },
+            {
+              "url": "https://arlef.it/app/uploads/stampa-friulana/vc_20-03-2019.pdf",
+              "accessMethod": "indexed_pdf_text_not_visual_audit",
+              "note": "La Vita Cattolica, 20 marzo 2019, p. 34: forma Anunciazion nel calendario in friulano. Periodico ospitato da ARLeF; consultato il testo indicizzato, senza audit visivo del PDF."
+            }
+          ]
+        }
+      },
+      "duplicateReview": {
+        "status": "distinct",
+        "comparedCatalogs": ["institutionalRituals", "institutionalArchive", "ostermannCulturalDiscover", "ritualResearchBacklog", "archiveResearchWave01", "archiveResearchWave02"],
+        "comparedRecordIds": ["institutional-ritual-winter-gift-bearers"],
+        "note": "Il canto della Novena non duplica i portatori dei doni d'inverno né le credenze delle dodici notti. Non viene identificato con la diversa Devetica Božična delle Valli del Natisone."
+      }
+    }
+  ]
+}

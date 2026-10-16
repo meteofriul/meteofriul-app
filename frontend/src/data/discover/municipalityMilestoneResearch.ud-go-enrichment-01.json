@@ -1,0 +1,142 @@
+{
+  "schemaVersion": 1,
+  "batchId": "ud-go-enrichment-milestones-01",
+  "snapshotDate": "2026-08-31",
+  "purpose": "Ricerca iniziale di quattro tappe per Bagnaria Arsa, Talmassons e Monfalcone; la promozione e la revisione FUR sono documentate separatamente.",
+  "runtimeIntegration": false,
+  "initialTotalMilestones": 411,
+  "editorialPolicy": {
+    "sourceEvidenceRequired": true,
+    "ambiguousDatesExcluded": true,
+    "italianCopyStatus": "editorial_draft",
+    "friulianCopyStatus": "pending_assisted_review",
+    "readyForUi": false
+  },
+  "excludedClaims": [
+    {
+      "municipality": "Bagnaria Arsa",
+      "claim": "Tutte le undici tombe appartenevano a Longobardi.",
+      "reason": "La fonte riferisce possibili indizi di origine longobarda soltanto per due corredi; il ritrovamento del 1990 non coincide con la datazione della necropoli.",
+      "sourceUrl": "https://www.comune.bagnariaarsa.ud.it/vivere-il-comune/territorio/storia-del-comune/"
+    },
+    {
+      "municipality": "Bagnaria Arsa",
+      "claim": "Nel 1375 nasce il Comune moderno o si svolge il primo censimento.",
+      "reason": "La fonte documenta un elenco di abitanti dei villaggi, non un primato né l'istituzione del Comune moderno.",
+      "sourceUrl": "https://www.comune.bagnariaarsa.ud.it/vivere-il-comune/territorio/storia-del-comune/"
+    }
+  ],
+  "municipalities": [
+    {
+      "istatCode": "030008",
+      "municipality": "Bagnaria Arsa",
+      "province": "UD",
+      "currentMilestoneCount": 1,
+      "currentMilestoneIds": ["bagnaria-arsa-name"],
+      "decision": "source_verified_it_fur_pending",
+      "candidates": [
+        {
+          "id": "bagnaria-arsa-censimento-1375",
+          "year": 1375,
+          "label": {
+            "it": "Un censimento registra nomi, età e mestieri degli abitanti dei villaggi",
+            "fur": null
+          },
+          "evidence": "La sezione L'età di Mezzo descrive un censimento del 1375 con nomi, età e professioni, paese per paese.",
+          "source": {
+            "label": "Comune di Bagnaria Arsa - Storia del Comune, L'età di Mezzo",
+            "type": "official_municipality",
+            "url": "https://www.comune.bagnariaarsa.ud.it/vivere-il-comune/territorio/storia-del-comune/",
+            "checkedAt": "2026-08-31"
+          },
+          "duplicateReview": {
+            "exactDuplicate": false,
+            "relatedRecordIds": [],
+            "note": "Distinto dal cambio di nome del 1867. Il 1375 compare anche per lo statuto di Nimis, ma riguarda un altro fatto e un altro Comune."
+          }
+        },
+        {
+          "id": "bagnaria-arsa-necropoli-1990",
+          "year": 1990,
+          "label": {
+            "it": "Vengono rinvenute undici tombe della necropoli altomedievale",
+            "fur": null
+          },
+          "evidence": "La sezione La necropoli altomedievale di Bagnaria Arsa data al 1990 il rinvenimento di undici tombe; l'uso del sepolcreto risale soprattutto alla prima metà del VII secolo.",
+          "source": {
+            "label": "Comune di Bagnaria Arsa - Storia del Comune, necropoli altomedievale",
+            "type": "official_municipality",
+            "url": "https://www.comune.bagnariaarsa.ud.it/vivere-il-comune/territorio/storia-del-comune/",
+            "checkedAt": "2026-08-31"
+          },
+          "duplicateReview": {
+            "exactDuplicate": false,
+            "relatedRecordIds": [],
+            "note": "Non coincide con le necropoli di Romans d'Isonzo o Tramonti di Sotto: luogo, anno e fatto sono distinti. Nessuna duplicazione nelle memorie o nei cataloghi rituali e d'archivio."
+          }
+        }
+      ]
+    },
+    {
+      "istatCode": "030114",
+      "municipality": "Talmassons",
+      "province": "UD",
+      "currentMilestoneCount": 2,
+      "currentMilestoneIds": ["talmassons-plebs-flambri", "talmassons-sanvidotto"],
+      "decision": "source_verified_it_fur_pending",
+      "candidates": [
+        {
+          "id": "talmassons-feudo-bojani-1339",
+          "year": 1339,
+          "label": {
+            "it": "Talmassons viene concesso in feudo a Corardo Bojani",
+            "fur": null
+          },
+          "evidence": "La storia comunale colloca nel 1339 la concessione del paese al nobile cividalese Corardo Bojani; il nome è mantenuto nella grafia della fonte.",
+          "source": {
+            "label": "Comune di Talmassons - Storia",
+            "type": "official_municipality",
+            "url": "https://www.comune.talmassons.ud.it/informazioni-sul-comune/storia/",
+            "checkedAt": "2026-08-31"
+          },
+          "duplicateReview": {
+            "exactDuplicate": false,
+            "relatedRecordIds": [],
+            "note": "Distinto dall'attestazione della pieve del 1126 e dalla distruzione di Sanvidotto del 1477. Non equivale alla nascita di un Comune moderno."
+          }
+        }
+      ]
+    },
+    {
+      "istatCode": "031012",
+      "municipality": "Monfalcone",
+      "province": "GO",
+      "currentMilestoneCount": 2,
+      "currentMilestoneIds": ["monfalcone-return-to-italy", "monfalcone-osimo-border-ratification"],
+      "decision": "source_verified_it_fur_pending",
+      "candidates": [
+        {
+          "id": "monfalcone-cantiere-navale-1908",
+          "year": 1908,
+          "documentedDate": "1908-04-03",
+          "label": {
+            "it": "La famiglia Cosulich fonda a Monfalcone il Cantiere Navale Triestino",
+            "fur": null
+          },
+          "evidence": "Il Museo della Cantieristica di Monfalcone indica il 3 aprile 1908 per la fondazione del CNT, su iniziativa della famiglia Cosulich, e colloca il cantiere nell'area di Panzano.",
+          "source": {
+            "label": "MuCa Monfalcone - Storia del cantiere",
+            "type": "cultural_institution",
+            "url": "https://www.mucamonfalcone.it/storia-del-cantiere/",
+            "checkedAt": "2026-08-31"
+          },
+          "duplicateReview": {
+            "exactDuplicate": false,
+            "relatedRecordIds": [],
+            "note": "Aggiunge una data alla sintesi industriale del profilo, distinta dai trattati del 1947 e 1975. La memoria su Callisto Cosulich riguarda il critico cinematografico nato nel 1922, non questa fondazione."
+          }
+        }
+      ]
+    }
+  ]
+}

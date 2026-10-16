@@ -1,0 +1,73 @@
+# Dependencies
+node_modules/
+frontend/node_modules/
+
+# Build outputs and caches
+dist/
+build/
+.vite/
+frontend/dist/
+frontend/.vite/
+coverage/
+frontend/vitest-results.json
+frontend/android/.gradle/
+frontend/android/build/
+frontend/android/app/build/
+release-artifacts/android-play/
+.firebase/
+.wrangler/
+.pytest_cache/
+__pycache__/
+*.py[cod]
+
+# Virtual environments
+venv/
+.venv/
+backend/venv/
+backend_dryrun_staging/venv/
+
+# Local environment and secrets
+.env
+.env.*
+!.env.example
+frontend/.env
+frontend/.env.*
+!frontend/.env.example
+frontend/android/app/google-services.json
+frontend/android/*.jks
+frontend/android/*.keystore
+frontend/android/app/*.jks
+frontend/android/app/*.keystore
+frontend/android/keystore.properties
+frontend/android/play-keystore.properties
+frontend/android/play-keystore.properties.*.tmp
+frontend/android/bundletool*.jar
+
+# Local logs and process files
+*.log
+*.pid
+.dev-logs/
+.dev-patches/
+frontend/dev-server*.log
+frontend/ui3-vite*.log
+frontend/ui3-vite.pid
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Generated dry-run/audit outputs
+backend_dryrun_staging/audit_log/
+backend_dryrun_staging/exports/
+backend/app/events/cache/
+experiments/weather_autonomy/*_20??????.json
+experiments/weather_autonomy/*_20??????.grib
+experiments/weather_autonomy/*_20??????.zip
+experiments/weather_autonomy/uv-pilot-local/
+tmp/
+.tmp/
+.tmp-*/
+
+# Local Codex/agent workspace metadata
+.agents/
+.codex/
+.codex-remote-attachments/

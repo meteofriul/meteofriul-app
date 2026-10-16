@@ -1,0 +1,156 @@
+{
+  "schemaVersion": 1,
+  "generatedAt": "2026-07-15",
+  "purpose": "Venticinquesimo lotto Scopri IT: quattro memorie selezionate con fonti forti e soglia editoriale alta. Due aprono giornate prive di memoria primaria e due arricchiscono giornate gia coperte. I record restano bloccati fino alla revisione FUR.",
+  "policy": {
+    "readyForUi": false,
+    "furDeferred": true,
+    "dateFormat": "DD-MM",
+    "requiresFinalItalianApproval": true,
+    "excludeDeaths": true,
+    "excludeGenericPoliticalProfiles": true,
+    "excludeGenericProfessionalProfiles": true,
+    "rejectSemanticDuplicates": true,
+    "rejectUncertainCalendarDates": true,
+    "sourceFirst": true,
+    "publishAfterFurOnly": true,
+    "allowMultipleMemoriesPerDate": true,
+    "secondaryOrderedByPriority": true
+  },
+  "summary": {
+    "keepDaily": 4,
+    "primary": 2,
+    "secondary": 2,
+    "hold": 4,
+    "excluded": 8,
+    "canonicalPrimaryDatesBefore": 212,
+    "canonicalPrimaryDatesAfter": 214,
+    "currentVisiblePrimaryCoverage": 204
+  },
+  "keepDaily": [
+    {
+      "id": "master-fvg-11-08-Q67413",
+      "wikidataId": "Q67413",
+      "dateIt": "11-08",
+      "year": 1772,
+      "municipality": "Aquileia",
+      "locality": "Aquileia",
+      "province": "UD",
+      "canonicalCategory": "scienza_territorio",
+      "dailyRole": "primary",
+      "priority": 82,
+      "titleIt": "Eduard Joseph d'Alton tra natura e archeologia",
+      "copyIt": "L'11 agosto 1772 nasce ad Aquileia Eduard Joseph d'Alton, naturalista, anatomista, archeologo e storico dell'arte. Professore a Bonn, unisce gli studi di anatomia comparata all'interesse per il patrimonio antico.",
+      "sourceLabel": "Deutsche Biographie",
+      "sourceUrl": "https://www.deutsche-biographie.de/gnd119061341.html",
+      "sourceStatus": "pass",
+      "readyForUi": false
+    },
+    {
+      "id": "master-fvg-11-09-Q15936517",
+      "wikidataId": "Q15936517",
+      "dateIt": "11-09",
+      "year": 1938,
+      "municipality": "Trieste",
+      "locality": "Trieste",
+      "province": "TS",
+      "canonicalCategory": "cultura",
+      "dailyRole": "primary",
+      "priority": 80,
+      "titleIt": "Fabio Doplicher tra poesia e teatro",
+      "copyIt": "L'11 settembre 1938 nasce a Trieste Fabio Doplicher, poeta, scrittore e drammaturgo. Tra poesia, teatro, radio e televisione, lavora alla diffusione della cultura letteraria ed e anche fondatore e direttore della rivista Stilb.",
+      "sourceLabel": "Comune di Trieste - inventario dell'archivio Fabio Doplicher",
+      "sourceUrl": "https://catalogomusei.comune.trieste.it/samira/data/INVENTARIODOPLICHER1.pdf",
+      "sourceStatus": "pass",
+      "readyForUi": false
+    },
+    {
+      "id": "master-fvg-18-09-Q21542913",
+      "wikidataId": "Q21542913",
+      "dateIt": "18-09",
+      "year": 1839,
+      "municipality": "Cividale del Friuli",
+      "locality": "Cividale del Friuli e Valli del Natisone",
+      "province": "UD",
+      "canonicalCategory": "storia",
+      "dailyRole": "secondary",
+      "priority": 84,
+      "titleIt": "Carlo Podrecca, patriota e storico delle Valli del Natisone",
+      "copyIt": "Il 18 settembre 1839 nasce a Cividale del Friuli Carlo Podrecca, patriota, garibaldino e storico. Dopo la spedizione dei Mille dedica i suoi studi alla storia e alle comunita delle Valli del Natisone, raccolti anche nell'opera Slavia italiana.",
+      "sourceLabel": "Liber Liber - Carlo Podrecca",
+      "sourceUrl": "https://liberliber.it/autori/autori-p/carlo-podrecca/",
+      "sourceStatus": "pass",
+      "readyForUi": false
+    },
+    {
+      "id": "master-fvg-04-11-Q2180406",
+      "wikidataId": "Q2180406",
+      "dateIt": "04-11",
+      "year": 1686,
+      "municipality": "Tarvisio",
+      "locality": "Tarvisio",
+      "province": "UD",
+      "canonicalCategory": "cultura",
+      "dailyRole": "secondary",
+      "priority": 80,
+      "titleIt": "Anton Kasutnik tra storia e teatro",
+      "copyIt": "Il 4 novembre 1686 nasce a Tarvisio Anton Kasutnik, gesuita, storico e drammaturgo. Scrive in latino opere storiche, geografiche e teatrali e lavora in diversi centri dell'area asburgica.",
+      "sourceLabel": "Slovenska biografija",
+      "sourceUrl": "https://www.slovenska-biografija.si/oseba/sbi1013690/",
+      "sourceStatus": "pass",
+      "readyForUi": false
+    }
+  ],
+  "hold": [
+    {
+      "id": "master-fvg-13-05-Q3791751",
+      "reason": "Ida Vallerugo e una figura centrale della poesia friulana, ma manca ancora una fonte autorevole che confermi il giorno esatto di nascita. Resta candidata per Archivio Scopri."
+    },
+    {
+      "id": "master-fvg-24-11-Q36834676",
+      "reason": "La data del master per Scipione di Manzano, 24 novembre, contrasta con il 14 novembre riportato dalle fonti biografiche consultate. Non calendarizzare finche il conflitto non e risolto."
+    },
+    {
+      "id": "master-fvg-26-08-Q3836392",
+      "reason": "Le fonti consultate riportano date diverse per la nascita di Lodovico Zanini, 23 o 26 agosto. Il profilo resta materiale da Archivio Scopri, non memoria giornaliera."
+    },
+    {
+      "id": "master-fvg-06-04-Q109814",
+      "reason": "Rudolf Creutz richiede un inquadramento storico documentato sul nazismo e sulle SS. La sola nascita a Trieste non basta per una memoria quotidiana; valutare eventualmente una scheda d'archivio contestualizzata."
+    }
+  ],
+  "excluded": [
+    {
+      "id": "master-fvg-12-04-Q2273489",
+      "reason": "Gillo Dorfles e escluso per decisione editoriale gia concordata: profilo noto, ma non prioritario per la rubrica Scopri."
+    },
+    {
+      "id": "master-fvg-09-08-Q107094210",
+      "reason": "Profilo militare e istituzionale contemporaneo senza un impatto storico-culturale autonomo sufficiente per la rubrica."
+    },
+    {
+      "id": "master-fvg-08-04-Q18418031",
+      "reason": "Profilo giornalistico ed editoriale sotto la soglia di rilevanza generale concordata."
+    },
+    {
+      "id": "master-fvg-09-03-Q56247008",
+      "reason": "Profilo giornalistico e dirigenziale RAI sotto la soglia editoriale della memoria quotidiana."
+    },
+    {
+      "id": "master-fvg-14-06-Q4023313",
+      "reason": "Profilo giornalistico e biografico privo di un legame territoriale o storico sufficiente per la rubrica quotidiana."
+    },
+    {
+      "id": "master-fvg-01-12-Q2739325",
+      "reason": "Profilo sportivo individuale escluso dalla linea editoriale attuale di Scopri."
+    },
+    {
+      "id": "master-fvg-06-10-Q3608247",
+      "reason": "Profilo di scrittore senza una rilevanza storico-culturale sovralocale sufficientemente documentata."
+    },
+    {
+      "id": "master-fvg-02-07-Q2857056",
+      "reason": "Profilo radiofonico e televisivo contemporaneo non prioritario per la memoria storico-culturale di Scopri."
+    }
+  ]
+}

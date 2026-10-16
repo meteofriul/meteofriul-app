@@ -1,0 +1,16 @@
+:root {
+  --mf-space-1: 0.25rem;
+  --mf-space-2: 0.5rem;
+  --mf-space-3: 0.75rem;
+  --mf-space-4: 1rem;
+  --mf-space-5: 1.25rem;
+  --mf-space-6: 1.5rem;
+  --mf-space-8: 2rem;
+  --mf-space-10: 2.5rem;
+  --mf-radius-sm: 8px;
+  --mf-radius-card: 14px;
+  --mf-radius-control: 12px;
+  --mf-radius-shell: 24px;
+  --mf-touch-target: 44px;
+  --mf-page-max-width: 480px;
+}

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Override the Capacitor bridge layout, preserving its WebView ID and class. -->
+<androidx.core.view.insets.ProtectionLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/meteo_system_bar_protection"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <!-- Keyboard padding belongs here, below the system-bar protection surfaces. -->
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <com.getcapacitor.CapacitorWebView
+            android:id="@+id/webview"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+</androidx.core.view.insets.ProtectionLayout>

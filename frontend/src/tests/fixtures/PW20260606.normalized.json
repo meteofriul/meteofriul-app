@@ -1,0 +1,1593 @@
+{
+  "author": "meteo.fvg",
+  "author_url": "http://www.meteo.fvg.it",
+  "checked_at": "2026-06-07T07:00:09.307258Z",
+  "data_emissione": "2026-06-06T10:19:00Z",
+  "days": [
+    {
+      "areas9": {
+        "A1": {
+          "attendibilita": {
+            "operator": "=",
+            "raw": "80",
+            "value": 80
+          },
+          "dominant_condition": "light_rain",
+          "id": "A1",
+          "mountain": {
+            "freezing_level_m": 3500,
+            "temperature_1000": 17,
+            "temperature_2000": 10,
+            "wind_2000_direction": "SE",
+            "wind_2000_intensity_ms": 3,
+            "wind_3000_direction": "S",
+            "wind_3000_intensity_ms": 3
+          },
+          "name": "Alpi Carniche",
+          "precipitation_probability": {
+            "operator": "=",
+            "raw": "70",
+            "value": 70
+          },
+          "snow_level": null,
+          "storm_probability": {
+            "operator": "=",
+            "raw": "30",
+            "value": 30
+          },
+          "symbols": {
+            "cielo": {
+              "code": 2,
+              "description": "variabile",
+              "id": "variable",
+              "label": "variabile"
+            },
+            "nebbia": {
+              "code": 100,
+              "id": "none",
+              "label": ""
+            },
+            "neve": {
+              "code": 100,
+              "id": "none",
+              "label": ""
+            },
+            "pioggia": {
+              "code": 6,
+              "description": "debole",
+              "id": "light_rain",
+              "label": "debole"
+            },
+            "temporale": {
+              "code": 100,
+              "id": "none",
+              "label": ""
+            },
+            "vento": {
+              "code": 100,
+              "id": "none",
+              "label": ""
+            }
+          },
+          "text": "Al mattino cielo in prevalenza poco nuvoloso. Nel pomeriggio cielo variabile per cumuli e saranno possibili delle locali piogge o dei rovesci, specie tra Alpi e Prealpi Carniche nelle zone verso il Cadore."
+        },
+        "A2": {
+          "attendibilita": {
+            "operator": "=",
+            "raw": "80",
+            "value": 80
+          },
+          "dominant_condition": "variable",
+          "id": "A2",
+          "mountain": {
+            "freezing_level_m": 3500,
+            "temperature_1000": 18,
+            "temperature_2000": 10,
+            "wind_2000_direction": "E",
+            "wind_2000_intensity_ms": 3,
+            "wind_3000_direction": "S",
+            "wind_3000_intensity_ms": 3
+          },
+          "name": "Alpi Giulie",
+          "precipitation_probability": {
+            "operator": "=",
+            "raw": "50",
+            "value": 50
+          },
+          "snow_level": null,
+          "storm_probability": {
+            "operator": "=",
+            "raw": "10",
+            "value": 10
+          },
+          "symbols": {
+            "cielo": {
+              "code": 2,
+              "description": "variabile",
+              "id": "variable",
+              "label": "variabile"
+            },
+            "nebbia": {
+              "code": 100,
+              "id": "none",
+              "label": ""
+            },
+            "neve": {
+              "code": 100,
+              "id": "none",
+              "label": ""
+            },
+            "pioggia": {
+              "code": 100,
+              "id": "none",
+              "label": ""
+            },
+            "temporale": {
+              "code": 100,
+              "id": "none",
+              "label": ""
+            },
+            "vento": {
+              "code": 100,
+              "id": "none",
+              "label": ""
+            }
+          },
+          "text": "Al mattino cielo in prevalenza poco nuvoloso. Nel pomeriggio cielo variabile per cumuli."
+        },
+        "A3": {
+          "attendibilita": {
+            "operator": "=",
+            "raw": "80",
+            "value": 80
+          },
+          "dominant_condition": "light_rain",
+          "id": "A3",
+          "mountain": {
+            "freezing_level_m": 3500,
+            "temperature_1000": 18,
+            "temperature_2000": 10,
+            "wind_2000_direction": "NE",
+            "wind_2000_intensity_ms": 3,
+            "wind_3000_direction": "S",
+            "wind_3000_intensity_ms": 3
+          },
+          "name": "Prealpi Carniche",
+          "precipitation_probability": {
+            "operator": "=",
+            "raw": "70",
+            "value": 70
+          },
+          "snow_level": null,
+          "storm_probability": {
+            "operator": "=",
+            "raw": "30",
+            "value": 30
+          },
+          "symbols": {
+            "cielo": {
+              "code": 2,
+              "description": "variabile",
+              "id": "variable",
+              "label": "variabile"
+            },
+            "nebbia": {
+              "code": 100,
+              "id": "none",
+              "label": ""
+            },
+            "neve": {
+              "code": 100,
+              "id": "none",
+              "label": ""
+            },
+            "pioggia": {
+              "code": 6,
+              "description": "debole",
+              "id": "light_rain",
+              "label": "debole"
+            },
+            "temporale": {
+              "code": 100,
+              "id": "none",
+              "label": ""
+            },
+            "vento": {
+              "code": 100,
+              "id": "none",
+              "label": ""
+            }
+          },
+          "text": "Al mattino cielo in prevalenza poco nuvoloso. Nel pomeriggio cielo variabile per cumuli e saranno possibili delle locali piogge o dei rovesci, specie tra Alpi e Prealpi Carniche nelle zone verso il Cadore. Venti di brezza."
+        },
+        "A4": {
+          "attendibilita": {
+            "operator": "=",
+            "raw": "80",
+            "value": 80
+          },
+          "dominant_condition": "variable",
+          "id": "A4",
+          "mountain": {
+            "freezing_level_m": 3500,
+            "temperature_1000": 17,
+            "temperature_2000": 10,
+            "wind_2000_direction": "SE",
+            "wind_2000_intensity_ms": 3,
+            "wind_3000_direction": "S",
+            "wind_3000_intensity_ms": 3
+          },
+          "name": "Prealpi Giulie",
+          "precipitation_probability": {
+            "operator": "=",
+            "raw": "20",
+            "value": 20
+          },
+          "snow_level": null,
+          "storm_probability": {
+            "operator": "=",
+            "raw": "10",
+            "value": 10
+          },
+          "symbols": {
+            "cielo": {
+              "code": 2,
+              "description": "variabile",
+              "id": "variable",
+              "label": "variabile"
+            },
+            "nebbia": {
+              "code": 100,
+              "id": "none",
+              "label": ""
+            },
+            "neve": {
+              "code": 100,
+              "id": "none",
+              "label": ""
+            },
+            "pioggia": {
+              "code": 100,
+              "id": "none",
+              "label": ""
+            },
+            "temporale": {
+              "code": 100,
+              "id": "none",
+              "label": ""
+            },
+            "vento": {
+              "code": 100,
+              "id": "none",
+              "label": ""
+            }
+          },
+          "text": "Al mattino cielo in prevalenza poco nuvoloso. Nel pomeriggio cielo variabile per cumuli. Venti di brezza."
+        },
+        "A5": {
+          "attendibilita": {
+            "operator": "=",
+            "raw": "60",
+            "value": 60
+          },
+          "dominant_condition": "mostly_sunny",
+          "id": "A5",
+          "mountain": {
+            "freezing_level_m": null,
+            "temperature_1000": null,
+            "temperature_2000": null,
+            "wind_2000_direction": null,
+            "wind_2000_intensity_ms": null,
+            "wind_3000_direction": null,
+            "wind_3000_intensity_ms": null
+          },
+          "name": "Pordenone",
+          "precipitation_probability": null,
+          "snow_level": null,
+          "storm_probability": null,
+          "symbols": {
+            "cielo": {
+              "code": 1,
+              "description": "poco nuvoloso",
+              "id": "mostly_sunny",
+              "label": "poco nuvoloso"
+            },
+            "nebbia": {
+              "code": 100,
+              "id": "none",
+              "label": ""
+            },
+            "neve": {
+              "code": 100,
+              "id": "none",
+              "label": ""
+            },
+            "pioggia": {
+              "code": 100,
+              "id": "none",
+              "label": ""
+            },
+            "temporale": {
+              "code": 100,
+              "id": "none",
+              "label": ""
+            },
+            "vento": {
+              "code": 100,
+              "id": "none",
+              "label": ""
+            }
+          },
+          "text": ""
+        },
+        "A6": {
+          "attendibilita": {
+            "operator": "=",
+            "raw": "60",
+            "value": 60
+          },
+          "dominant_condition": "mostly_sunny",
+          "id": "A6",
+          "mountain": {
+            "freezing_level_m": null,
+            "temperature_1000": null,
+            "temperature_2000": null,
+            "wind_2000_direction": null,
+            "wind_2000_intensity_ms": null,
+            "wind_3000_direction": null,
+            "wind_3000_intensity_ms": null
+          },
+          "name": "Udine",
+          "precipitation_probability": null,
+          "snow_level": null,
+          "storm_probability": null,
+          "symbols": {
+            "cielo": {
+              "code": 1,
+              "description": "poco nuvoloso",
+              "id": "mostly_sunny",
+              "label": "poco nuvoloso"
+            },
+            "nebbia": {
+              "code": 100,
+              "id": "none",
+              "label": ""
+            },
+            "neve": {
+              "code": 100,
+              "id": "none",
+              "label": ""
+            },
+            "pioggia": {
+              "code": 100,
+              "id": "none",
+              "label": ""
+            },
+            "temporale": {
+              "code": 100,
+              "id": "none",
+              "label": ""
+            },
+            "vento": {
+              "code": 100,
+              "id": "none",
+              "label": ""
+            }
+          },
+          "text": ""
+        },
+        "A7": {
+          "attendibilita": {
+            "operator": "=",
+            "raw": "60",
+            "value": 60
+          },
+          "dominant_condition": "mostly_sunny",
+          "id": "A7",
+          "mountain": {
+            "freezing_level_m": null,
+            "temperature_1000": null,
+            "temperature_2000": null,
+            "wind_2000_direction": null,
+            "wind_2000_intensity_ms": null,
+            "wind_3000_direction": null,
+            "wind_3000_intensity_ms": null
+          },
+          "name": "Gorizia",
+          "precipitation_probability": null,
+          "snow_level": null,
+          "storm_probability": null,
+          "symbols": {
+            "cielo": {
+              "code": 1,
+              "description": "poco nuvoloso",
+              "id": "mostly_sunny",
+              "label": "poco nuvoloso"
+            },
+            "nebbia": {
+              "code": 100,
+              "id": "none",
+              "label": ""
+            },
+            "neve": {
+              "code": 100,
+              "id": "none",
+              "label": ""
+            },
+            "pioggia": {
+              "code": 100,
+              "id": "none",
+              "label": ""
+            },
+            "temporale": {
+              "code": 100,
+              "id": "none",
+              "label": ""
+            },
+            "vento": {
+              "code": 100,
+              "id": "none",
+              "label": ""
+            }
+          },
+          "text": ""
+        },
+        "A8": {
+          "attendibilita": {
+            "operator": "=",
+            "raw": "60",
+            "value": 60
+          },
+          "dominant_condition": "mostly_sunny",
+          "id": "A8",
+          "mountain": {
+            "freezing_level_m": null,
+            "temperature_1000": null,
+            "temperature_2000": null,
+            "wind_2000_direction": null,
+            "wind_2000_intensity_ms": null,
+            "wind_3000_direction": null,
+            "wind_3000_intensity_ms": null
+          },
+          "name": "Lignano",
+          "precipitation_probability": null,
+          "snow_level": null,
+          "storm_probability": null,
+          "symbols": {
+            "cielo": {
+              "code": 1,
+              "description": "poco nuvoloso",
+              "id": "mostly_sunny",
+              "label": "poco nuvoloso"
+            },
+            "nebbia": {
+              "code": 100,
+              "id": "none",
+              "label": ""
+            },
+            "neve": {
+              "code": 100,
+              "id": "none",
+              "label": ""
+            },
+            "pioggia": {
+              "code": 100,
+              "id": "none",
+              "label": ""
+            },
+            "temporale": {
+              "code": 100,
+              "id": "none",
+              "label": ""
+            },
+            "vento": {
+              "code": 100,
+              "id": "none",
+              "label": ""
+            }
+          },
+          "text": ""
+        },
+        "A9": {
+          "attendibilita": {
+            "operator": "=",
+            "raw": "60",
+            "value": 60
+          },
+          "dominant_condition": "mostly_sunny",
+          "id": "A9",
+          "mountain": {
+            "freezing_level_m": null,
+            "temperature_1000": null,
+            "temperature_2000": null,
+            "wind_2000_direction": null,
+            "wind_2000_intensity_ms": null,
+            "wind_3000_direction": null,
+            "wind_3000_intensity_ms": null
+          },
+          "name": "Trieste",
+          "precipitation_probability": null,
+          "snow_level": null,
+          "storm_probability": null,
+          "symbols": {
+            "cielo": {
+              "code": 1,
+              "description": "poco nuvoloso",
+              "id": "mostly_sunny",
+              "label": "poco nuvoloso"
+            },
+            "nebbia": {
+              "code": 100,
+              "id": "none",
+              "label": ""
+            },
+            "neve": {
+              "code": 100,
+              "id": "none",
+              "label": ""
+            },
+            "pioggia": {
+              "code": 100,
+              "id": "none",
+              "label": ""
+            },
+            "temporale": {
+              "code": 100,
+              "id": "none",
+              "label": ""
+            },
+            "vento": {
+              "code": 100,
+              "id": "none",
+              "label": ""
+            }
+          },
+          "text": ""
+        }
+      },
+      "day_label": "DOMANI",
+      "fasce4": {
+        "F1": {
+          "attendibilita": {
+            "operator": "=",
+            "raw": "80",
+            "value": 80
+          },
+          "evolution": [
+            {
+              "code": 0,
+              "description": "sereno",
+              "hour": 0,
+              "id": "sun",
+              "label": "sereno"
+            },
+            {
+              "code": 3,
+              "description": "variabile con pioggie moderate",
+              "hour": 12,
+              "id": "variable_moderate_rain",
+              "label": "variabile con piogge moderate"
+            },
+            {
+              "code": 1,
+              "description": "variabile",
+              "hour": 24,
+              "id": "variable",
+              "label": "variabile"
+            }
+          ],
+          "freezing_level_m": 3600,
+          "id": "F1",
+          "name": "Monti",
+          "precipitation_probability": {
+            "operator": "=",
+            "raw": "60",
+            "value": 60
+          },
+          "storm_probability": {
+            "operator": "=",
+            "raw": "40",
+            "value": 40
+          },
+          "temperature_1000": 17,
+          "temperature_2000": 10,
+          "text": "Al mattino cielo in prevalenza poco nuvoloso. Nel pomeriggio cielo variabile per cumuli e saranno possibili delle locali piogge o dei rovesci, specie tra Alpi e Prealpi Carniche nelle zone verso il Cadore."
+        },
+        "F2": {
+          "attendibilita": {
+            "operator": "=",
+            "raw": "80",
+            "value": 80
+          },
+          "evolution": [
+            {
+              "code": 0,
+              "description": "sereno",
+              "hour": 0,
+              "id": "sun",
+              "label": "sereno"
+            },
+            {
+              "code": 1,
+              "description": "variabile",
+              "hour": 12,
+              "id": "variable",
+              "label": "variabile"
+            },
+            {
+              "code": 1,
+              "description": "variabile",
+              "hour": 24,
+              "id": "variable",
+              "label": "variabile"
+            }
+          ],
+          "id": "F2",
+          "name": "Alta Pianura",
+          "precipitation_probability": {
+            "operator": "=",
+            "raw": "60",
+            "value": 60
+          },
+          "storm_probability": {
+            "operator": "=",
+            "raw": "40",
+            "value": 40
+          },
+          "text": "Al mattino cielo sereno, al pomeriggio poco nuvoloso o variabile. Temperature massime lievemente sopra la media del periodo. Venti di brezza."
+        },
+        "F3": {
+          "attendibilita": {
+            "operator": "=",
+            "raw": "80",
+            "value": 80
+          },
+          "evolution": [
+            {
+              "code": 0,
+              "description": "sereno",
+              "hour": 0,
+              "id": "sun",
+              "label": "sereno"
+            },
+            {
+              "code": 0,
+              "description": "sereno",
+              "hour": 12,
+              "id": "sun",
+              "label": "sereno"
+            },
+            {
+              "code": 0,
+              "description": "sereno",
+              "hour": 24,
+              "id": "sun",
+              "label": "sereno"
+            }
+          ],
+          "id": "F3",
+          "name": "Bassa Pianura",
+          "precipitation_probability": {
+            "operator": "<",
+            "raw": "<10",
+            "value": 10
+          },
+          "storm_probability": {
+            "operator": "=",
+            "raw": "10",
+            "value": 10
+          },
+          "temperature_max": {
+            "max": 30,
+            "min": 28,
+            "raw": "28/30"
+          },
+          "temperature_min": {
+            "max": 17,
+            "min": 14,
+            "raw": "14/17"
+          },
+          "text": "Al mattino cielo sereno, al pomeriggio poco nuvoloso o variabile. Temperature massime lievemente sopra la media del periodo. Venti di brezza."
+        },
+        "F4": {
+          "attendibilita": {
+            "operator": "=",
+            "raw": "80",
+            "value": 80
+          },
+          "evolution": [
+            {
+              "code": 0,
+              "description": "sereno",
+              "hour": 0,
+              "id": "sun",
+              "label": "sereno"
+            },
+            {
+              "code": 0,
+              "description": "sereno",
+              "hour": 12,
+              "id": "sun",
+              "label": "sereno"
+            },
+            {
+              "code": 0,
+              "description": "sereno",
+              "hour": 24,
+              "id": "sun",
+              "label": "sereno"
+            }
+          ],
+          "id": "F4",
+          "name": "Costa",
+          "precipitation_probability": {
+            "operator": "<",
+            "raw": "<10",
+            "value": 10
+          },
+          "storm_probability": {
+            "operator": "=",
+            "raw": "10",
+            "value": 10
+          },
+          "temperature_max": {
+            "max": 27,
+            "min": 24,
+            "raw": "24/27"
+          },
+          "temperature_min": {
+            "max": 19,
+            "min": 16,
+            "raw": "16/19"
+          },
+          "text": "Al mattino cielo sereno, al pomeriggio poco nuvoloso. Venti di brezza."
+        }
+      },
+      "id": "1",
+      "quality": {
+        "all_fasce_present": true,
+        "all_nodes_present": true,
+        "confidence": "alta",
+        "missing_fasce": [],
+        "missing_nodes": []
+      },
+      "regional": {
+        "attendibilita": {
+          "operator": "=",
+          "raw": "80",
+          "value": 80
+        },
+        "evolution": [
+          {
+            "code": 0,
+            "description": "sereno",
+            "hour": 0,
+            "id": "sun",
+            "label": "sereno"
+          },
+          {
+            "code": 1,
+            "description": "variabile",
+            "hour": 12,
+            "id": "variable",
+            "label": "variabile"
+          },
+          {
+            "code": 1,
+            "description": "variabile",
+            "hour": 24,
+            "id": "variable",
+            "label": "variabile"
+          }
+        ],
+        "text": "Al mattino cielo in prevalenza sereno o poco nuvoloso. Nel pomeriggio poco nuvoloso su pianura e costa, variabile per cumuli sulla zona montana dove saranno possibili delle locali piogge o dei rovesci, specie tra Alpi e Prealpi Carniche nelle zone verso il Cadore. Venti di brezza."
+      },
+      "valid_date": "2026-06-07"
+    },
+    {
+      "areas9": {
+        "A1": {
+          "attendibilita": {
+            "operator": "=",
+            "raw": "80",
+            "value": 80
+          },
+          "dominant_condition": "light_rain",
+          "id": "A1",
+          "mountain": {
+            "freezing_level_m": 3700,
+            "temperature_1000": 18,
+            "temperature_2000": 11,
+            "wind_2000_direction": "SW",
+            "wind_2000_intensity_ms": 3,
+            "wind_3000_direction": "SW",
+            "wind_3000_intensity_ms": 3
+          },
+          "name": "Alpi Carniche",
+          "precipitation_probability": {
+            "operator": "=",
+            "raw": "70",
+            "value": 70
+          },
+          "snow_level": null,
+          "storm_probability": {
+            "operator": "=",
+            "raw": "30",
+            "value": 30
+          },
+          "symbols": {
+            "cielo": {
+              "code": 2,
+              "description": "variabile",
+              "id": "variable",
+              "label": "variabile"
+            },
+            "nebbia": {
+              "code": 100,
+              "id": "none",
+              "label": ""
+            },
+            "neve": {
+              "code": 100,
+              "id": "none",
+              "label": ""
+            },
+            "pioggia": {
+              "code": 6,
+              "description": "debole",
+              "id": "light_rain",
+              "label": "debole"
+            },
+            "temporale": {
+              "code": 100,
+              "id": "none",
+              "label": ""
+            },
+            "vento": {
+              "code": 100,
+              "id": "none",
+              "label": ""
+            }
+          },
+          "text": "Al mattino cielo poco nuvoloso. Nel pomeriggio cielo variabile con possibili locali piogge o qualche rovescio, specie nelle zone vicine al Cadore."
+        },
+        "A2": {
+          "attendibilita": {
+            "operator": "=",
+            "raw": "80",
+            "value": 80
+          },
+          "dominant_condition": "variable",
+          "id": "A2",
+          "mountain": {
+            "freezing_level_m": 3700,
+            "temperature_1000": 18,
+            "temperature_2000": 11,
+            "wind_2000_direction": "SW",
+            "wind_2000_intensity_ms": 3,
+            "wind_3000_direction": "SW",
+            "wind_3000_intensity_ms": 3
+          },
+          "name": "Alpi Giulie",
+          "precipitation_probability": {
+            "operator": "=",
+            "raw": "50",
+            "value": 50
+          },
+          "snow_level": null,
+          "storm_probability": {
+            "operator": "=",
+            "raw": "10",
+            "value": 10
+          },
+          "symbols": {
+            "cielo": {
+              "code": 2,
+              "description": "variabile",
+              "id": "variable",
+              "label": "variabile"
+            },
+            "nebbia": {
+              "code": 100,
+              "id": "none",
+              "label": ""
+            },
+            "neve": {
+              "code": 100,
+              "id": "none",
+              "label": ""
+            },
+            "pioggia": {
+              "code": 100,
+              "id": "none",
+              "label": ""
+            },
+            "temporale": {
+              "code": 100,
+              "id": "none",
+              "label": ""
+            },
+            "vento": {
+              "code": 100,
+              "id": "none",
+              "label": ""
+            }
+          },
+          "text": "Al mattino cielo poco nuvoloso. Nel pomeriggio cielo variabile per nubi cumuliformi."
+        },
+        "A3": {
+          "attendibilita": {
+            "operator": "=",
+            "raw": "80",
+            "value": 80
+          },
+          "dominant_condition": "light_rain",
+          "id": "A3",
+          "mountain": {
+            "freezing_level_m": 3700,
+            "temperature_1000": 18,
+            "temperature_2000": 11,
+            "wind_2000_direction": "SW",
+            "wind_2000_intensity_ms": 3,
+            "wind_3000_direction": "SW",
+            "wind_3000_intensity_ms": 3
+          },
+          "name": "Prealpi Carniche",
+          "precipitation_probability": {
+            "operator": "=",
+            "raw": "70",
+            "value": 70
+          },
+          "snow_level": null,
+          "storm_probability": {
+            "operator": "=",
+            "raw": "30",
+            "value": 30
+          },
+          "symbols": {
+            "cielo": {
+              "code": 2,
+              "description": "variabile",
+              "id": "variable",
+              "label": "variabile"
+            },
+            "nebbia": {
+              "code": 100,
+              "id": "none",
+              "label": ""
+            },
+            "neve": {
+              "code": 100,
+              "id": "none",
+              "label": ""
+            },
+            "pioggia": {
+              "code": 6,
+              "description": "debole",
+              "id": "light_rain",
+              "label": "debole"
+            },
+            "temporale": {
+              "code": 100,
+              "id": "none",
+              "label": ""
+            },
+            "vento": {
+              "code": 100,
+              "id": "none",
+              "label": ""
+            }
+          },
+          "text": "Al mattino cielo poco nuvoloso. Nel pomeriggio cielo variabile con possibili locali piogge o qualche rovescio, specie nelle zone vicine al Cadore."
+        },
+        "A4": {
+          "attendibilita": {
+            "operator": "=",
+            "raw": "80",
+            "value": 80
+          },
+          "dominant_condition": "variable",
+          "id": "A4",
+          "mountain": {
+            "freezing_level_m": 3700,
+            "temperature_1000": 18,
+            "temperature_2000": 10,
+            "wind_2000_direction": "SW",
+            "wind_2000_intensity_ms": 3,
+            "wind_3000_direction": "SW",
+            "wind_3000_intensity_ms": 3
+          },
+          "name": "Prealpi Giulie",
+          "precipitation_probability": {
+            "operator": "=",
+            "raw": "20",
+            "value": 20
+          },
+          "snow_level": null,
+          "storm_probability": {
+            "operator": "=",
+            "raw": "10",
+            "value": 10
+          },
+          "symbols": {
+            "cielo": {
+              "code": 2,
+              "description": "variabile",
+              "id": "variable",
+              "label": "variabile"
+            },
+            "nebbia": {
+              "code": 100,
+              "id": "none",
+              "label": ""
+            },
+            "neve": {
+              "code": 100,
+              "id": "none",
+              "label": ""
+            },
+            "pioggia": {
+              "code": 100,
+              "id": "none",
+              "label": ""
+            },
+            "temporale": {
+              "code": 100,
+              "id": "none",
+              "label": ""
+            },
+            "vento": {
+              "code": 100,
+              "id": "none",
+              "label": ""
+            }
+          },
+          "text": "Al mattino cielo poco nuvoloso. Nel pomeriggio cielo variabile per nubi cumuliformi."
+        },
+        "A5": {
+          "attendibilita": {
+            "operator": "=",
+            "raw": "60",
+            "value": 60
+          },
+          "dominant_condition": "mostly_sunny",
+          "id": "A5",
+          "mountain": {
+            "freezing_level_m": null,
+            "temperature_1000": null,
+            "temperature_2000": null,
+            "wind_2000_direction": null,
+            "wind_2000_intensity_ms": null,
+            "wind_3000_direction": null,
+            "wind_3000_intensity_ms": null
+          },
+          "name": "Pordenone",
+          "precipitation_probability": null,
+          "snow_level": null,
+          "storm_probability": null,
+          "symbols": {
+            "cielo": {
+              "code": 1,
+              "description": "poco nuvoloso",
+              "id": "mostly_sunny",
+              "label": "poco nuvoloso"
+            },
+            "nebbia": {
+              "code": 100,
+              "id": "none",
+              "label": ""
+            },
+            "neve": {
+              "code": 100,
+              "id": "none",
+              "label": ""
+            },
+            "pioggia": {
+              "code": 100,
+              "id": "none",
+              "label": ""
+            },
+            "temporale": {
+              "code": 100,
+              "id": "none",
+              "label": ""
+            },
+            "vento": {
+              "code": 100,
+              "id": "none",
+              "label": ""
+            }
+          },
+          "text": ""
+        },
+        "A6": {
+          "attendibilita": {
+            "operator": "=",
+            "raw": "60",
+            "value": 60
+          },
+          "dominant_condition": "mostly_sunny",
+          "id": "A6",
+          "mountain": {
+            "freezing_level_m": null,
+            "temperature_1000": null,
+            "temperature_2000": null,
+            "wind_2000_direction": null,
+            "wind_2000_intensity_ms": null,
+            "wind_3000_direction": null,
+            "wind_3000_intensity_ms": null
+          },
+          "name": "Udine",
+          "precipitation_probability": null,
+          "snow_level": null,
+          "storm_probability": null,
+          "symbols": {
+            "cielo": {
+              "code": 1,
+              "description": "poco nuvoloso",
+              "id": "mostly_sunny",
+              "label": "poco nuvoloso"
+            },
+            "nebbia": {
+              "code": 100,
+              "id": "none",
+              "label": ""
+            },
+            "neve": {
+              "code": 100,
+              "id": "none",
+              "label": ""
+            },
+            "pioggia": {
+              "code": 100,
+              "id": "none",
+              "label": ""
+            },
+            "temporale": {
+              "code": 100,
+              "id": "none",
+              "label": ""
+            },
+            "vento": {
+              "code": 100,
+              "id": "none",
+              "label": ""
+            }
+          },
+          "text": ""
+        },
+        "A7": {
+          "attendibilita": {
+            "operator": "=",
+            "raw": "60",
+            "value": 60
+          },
+          "dominant_condition": "mostly_sunny",
+          "id": "A7",
+          "mountain": {
+            "freezing_level_m": null,
+            "temperature_1000": null,
+            "temperature_2000": null,
+            "wind_2000_direction": null,
+            "wind_2000_intensity_ms": null,
+            "wind_3000_direction": null,
+            "wind_3000_intensity_ms": null
+          },
+          "name": "Gorizia",
+          "precipitation_probability": null,
+          "snow_level": null,
+          "storm_probability": null,
+          "symbols": {
+            "cielo": {
+              "code": 1,
+              "description": "poco nuvoloso",
+              "id": "mostly_sunny",
+              "label": "poco nuvoloso"
+            },
+            "nebbia": {
+              "code": 100,
+              "id": "none",
+              "label": ""
+            },
+            "neve": {
+              "code": 100,
+              "id": "none",
+              "label": ""
+            },
+            "pioggia": {
+              "code": 100,
+              "id": "none",
+              "label": ""
+            },
+            "temporale": {
+              "code": 100,
+              "id": "none",
+              "label": ""
+            },
+            "vento": {
+              "code": 100,
+              "id": "none",
+              "label": ""
+            }
+          },
+          "text": ""
+        },
+        "A8": {
+          "attendibilita": {
+            "operator": "=",
+            "raw": "60",
+            "value": 60
+          },
+          "dominant_condition": "mostly_sunny",
+          "id": "A8",
+          "mountain": {
+            "freezing_level_m": null,
+            "temperature_1000": null,
+            "temperature_2000": null,
+            "wind_2000_direction": null,
+            "wind_2000_intensity_ms": null,
+            "wind_3000_direction": null,
+            "wind_3000_intensity_ms": null
+          },
+          "name": "Lignano",
+          "precipitation_probability": null,
+          "snow_level": null,
+          "storm_probability": null,
+          "symbols": {
+            "cielo": {
+              "code": 1,
+              "description": "poco nuvoloso",
+              "id": "mostly_sunny",
+              "label": "poco nuvoloso"
+            },
+            "nebbia": {
+              "code": 100,
+              "id": "none",
+              "label": ""
+            },
+            "neve": {
+              "code": 100,
+              "id": "none",
+              "label": ""
+            },
+            "pioggia": {
+              "code": 100,
+              "id": "none",
+              "label": ""
+            },
+            "temporale": {
+              "code": 100,
+              "id": "none",
+              "label": ""
+            },
+            "vento": {
+              "code": 100,
+              "id": "none",
+              "label": ""
+            }
+          },
+          "text": ""
+        },
+        "A9": {
+          "attendibilita": {
+            "operator": "=",
+            "raw": "60",
+            "value": 60
+          },
+          "dominant_condition": "mostly_sunny",
+          "id": "A9",
+          "mountain": {
+            "freezing_level_m": null,
+            "temperature_1000": null,
+            "temperature_2000": null,
+            "wind_2000_direction": null,
+            "wind_2000_intensity_ms": null,
+            "wind_3000_direction": null,
+            "wind_3000_intensity_ms": null
+          },
+          "name": "Trieste",
+          "precipitation_probability": null,
+          "snow_level": null,
+          "storm_probability": null,
+          "symbols": {
+            "cielo": {
+              "code": 1,
+              "description": "poco nuvoloso",
+              "id": "mostly_sunny",
+              "label": "poco nuvoloso"
+            },
+            "nebbia": {
+              "code": 100,
+              "id": "none",
+              "label": ""
+            },
+            "neve": {
+              "code": 100,
+              "id": "none",
+              "label": ""
+            },
+            "pioggia": {
+              "code": 100,
+              "id": "none",
+              "label": ""
+            },
+            "temporale": {
+              "code": 100,
+              "id": "none",
+              "label": ""
+            },
+            "vento": {
+              "code": 100,
+              "id": "none",
+              "label": ""
+            }
+          },
+          "text": ""
+        }
+      },
+      "day_label": "DOPODOMANI",
+      "fasce4": {
+        "F1": {
+          "attendibilita": {
+            "operator": "=",
+            "raw": "80",
+            "value": 80
+          },
+          "evolution": [
+            {
+              "code": 0,
+              "description": "sereno",
+              "hour": 0,
+              "id": "sun",
+              "label": "sereno"
+            },
+            {
+              "code": 3,
+              "description": "variabile con pioggie moderate",
+              "hour": 12,
+              "id": "variable_moderate_rain",
+              "label": "variabile con piogge moderate"
+            },
+            {
+              "code": 1,
+              "description": "variabile",
+              "hour": 24,
+              "id": "variable",
+              "label": "variabile"
+            }
+          ],
+          "freezing_level_m": 3700,
+          "id": "F1",
+          "name": "Monti",
+          "precipitation_probability": {
+            "operator": "=",
+            "raw": "60",
+            "value": 60
+          },
+          "storm_probability": {
+            "operator": "=",
+            "raw": "40",
+            "value": 40
+          },
+          "temperature_1000": 18,
+          "temperature_2000": 10,
+          "text": "Al mattino cielo poco nuvoloso. Nel pomeriggio cielo variabile con possibili locali piogge o qualche rovescio tra Alpi e Prealpi Carniche, specie nelle zone vicine al Cadore."
+        },
+        "F2": {
+          "attendibilita": {
+            "operator": "=",
+            "raw": "80",
+            "value": 80
+          },
+          "evolution": [
+            {
+              "code": 0,
+              "description": "sereno",
+              "hour": 0,
+              "id": "sun",
+              "label": "sereno"
+            },
+            {
+              "code": 1,
+              "description": "variabile",
+              "hour": 12,
+              "id": "variable",
+              "label": "variabile"
+            },
+            {
+              "code": 1,
+              "description": "variabile",
+              "hour": 24,
+              "id": "variable",
+              "label": "variabile"
+            }
+          ],
+          "id": "F2",
+          "name": "Alta Pianura",
+          "precipitation_probability": {
+            "operator": "=",
+            "raw": "60",
+            "value": 60
+          },
+          "storm_probability": {
+            "operator": "=",
+            "raw": "40",
+            "value": 40
+          },
+          "text": "Al mattino cielo poco nuvoloso. Nel pomeriggio aumento della nuvolosit\u00e0. Venti di brezza. Temperature massime sopra la media del periodo."
+        },
+        "F3": {
+          "attendibilita": {
+            "operator": "=",
+            "raw": "80",
+            "value": 80
+          },
+          "evolution": [
+            {
+              "code": 0,
+              "description": "sereno",
+              "hour": 0,
+              "id": "sun",
+              "label": "sereno"
+            },
+            {
+              "code": 1,
+              "description": "variabile",
+              "hour": 12,
+              "id": "variable",
+              "label": "variabile"
+            },
+            {
+              "code": 1,
+              "description": "variabile",
+              "hour": 24,
+              "id": "variable",
+              "label": "variabile"
+            }
+          ],
+          "id": "F3",
+          "name": "Bassa Pianura",
+          "precipitation_probability": {
+            "operator": "<",
+            "raw": "<10",
+            "value": 10
+          },
+          "storm_probability": {
+            "operator": "=",
+            "raw": "10",
+            "value": 10
+          },
+          "temperature_max": {
+            "max": 31,
+            "min": 29,
+            "raw": "29/31"
+          },
+          "temperature_min": {
+            "max": 18,
+            "min": 15,
+            "raw": "15/18"
+          },
+          "text": "Al mattino cielo poco nuvoloso. Nel pomeriggio aumento della nuvolosit\u00e0. Venti di brezza. Temperature massime sopra la media del periodo."
+        },
+        "F4": {
+          "attendibilita": {
+            "operator": "=",
+            "raw": "80",
+            "value": 80
+          },
+          "evolution": [
+            {
+              "code": 0,
+              "description": "sereno",
+              "hour": 0,
+              "id": "sun",
+              "label": "sereno"
+            },
+            {
+              "code": 0,
+              "description": "sereno",
+              "hour": 12,
+              "id": "sun",
+              "label": "sereno"
+            },
+            {
+              "code": 0,
+              "description": "sereno",
+              "hour": 24,
+              "id": "sun",
+              "label": "sereno"
+            }
+          ],
+          "id": "F4",
+          "name": "Costa",
+          "precipitation_probability": {
+            "operator": "<",
+            "raw": "<10",
+            "value": 10
+          },
+          "storm_probability": {
+            "operator": "=",
+            "raw": "10",
+            "value": 10
+          },
+          "temperature_max": {
+            "max": 27,
+            "min": 24,
+            "raw": "24/27"
+          },
+          "temperature_min": {
+            "max": 21,
+            "min": 18,
+            "raw": "18/21"
+          },
+          "text": "Al mattino cielo poco nuvoloso. Nel pomeriggio maggiore variabilit\u00e0. Venti di brezza che, nelle zone vicine al mare, mitigheranno il caldo."
+        }
+      },
+      "id": "2",
+      "quality": {
+        "all_fasce_present": true,
+        "all_nodes_present": true,
+        "confidence": "alta",
+        "missing_fasce": [],
+        "missing_nodes": []
+      },
+      "regional": {
+        "attendibilita": {
+          "operator": "=",
+          "raw": "80",
+          "value": 80
+        },
+        "evolution": [
+          {
+            "code": 0,
+            "description": "sereno",
+            "hour": 0,
+            "id": "sun",
+            "label": "sereno"
+          },
+          {
+            "code": 1,
+            "description": "variabile",
+            "hour": 12,
+            "id": "variable",
+            "label": "variabile"
+          },
+          {
+            "code": 1,
+            "description": "variabile",
+            "hour": 24,
+            "id": "variable",
+            "label": "variabile"
+          }
+        ],
+        "text": "Al mattino cielo poco nuvoloso. Nel pomeriggio aumento della nuvolosit\u00e0 sulla regione con possibili locali piogge o qualche rovescio tra Alpi e Prealpi Carniche, specie nelle zone vicine al Cadore. Venti di brezza. Temperature massime sopra la media del periodo."
+      },
+      "valid_date": "2026-06-08"
+    }
+  ],
+  "fonte": "structured_xml",
+  "id_emissione": "PW20260606",
+  "is_stale": false,
+  "language": "italiano",
+  "parser_version": "1.0.0",
+  "published_at": "2026-06-06T10:19:00Z",
+  "quality": {
+    "all_days_complete": true,
+    "confidence": "alta",
+    "days_count": 2,
+    "incomplete_days": [],
+    "xml_valid": true
+  },
+  "raw_hash": "5aa004d47d8b362c5489e14bb7b7832cf5945dca25506e5a716bb0eb884dc9fc",
+  "requested_date": "2026-06-07",
+  "schema_version": "1.0.0",
+  "source_date": "2026-06-06",
+  "source_status": "local_fixture",
+  "source_url": "https://dev.meteo.fvg.it/xml/previsioni/PW20260606.xml",
+  "stale_reason": null,
+  "testo_ufficiale": {
+    "situazione_generale": "Fino a luned\u00ec prevarranno sulla regione correnti occidentali in prevalenza secche che garantiranno stabilit\u00e0.",
+    "tendenza": "Marted\u00ec cielo variabile. Sulla zona montana possibili rovesci e temporali sparsi, specie verso la zona montana."
+  },
+  "updated_at": "2026-06-06T10:20:23Z"
+}

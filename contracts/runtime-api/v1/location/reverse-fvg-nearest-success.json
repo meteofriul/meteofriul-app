@@ -1,0 +1,41 @@
+{
+  "city": "Claut",
+  "displayName": "Cellino di Sopra",
+  "region": "Friuli Venezia Giulia",
+  "country": "Italia",
+  "countryCode": "IT",
+  "lat": 46.2479446,
+  "lon": 12.4703415,
+  "province": "PN",
+  "provinceName": "Pordenone",
+  "istatCode": "093015",
+  "locality": {
+    "id": "irdat-5000:DBPRIOR_0411_LOCAL_PUNT.9095",
+    "name": "Cellino di Sopra",
+    "kind": "settlement",
+    "source": "rafvg_irdat_5000",
+    "datasetVersion": "2006"
+  },
+  "municipality": {
+    "name": "Claut",
+    "istatCode": "093015",
+    "province": "PN",
+    "provinceName": "Pordenone",
+    "source": "istat_boundaries",
+    "datasetVersion": "2026-01-01"
+  },
+  "dataPoint": {
+    "lat": 46.247575,
+    "lon": 12.46985,
+    "source": "rafvg_irdat_5000"
+  },
+  "resolution": {
+    "status": "resolved",
+    "municipalityResolved": true,
+    "localityCorroborated": true,
+    "matchMethod": "nearest",
+    "distanceM": 55.834,
+    "runnerUpDistanceM": 138.264,
+    "boundaryDistanceM": 1669.155
+  }
+}

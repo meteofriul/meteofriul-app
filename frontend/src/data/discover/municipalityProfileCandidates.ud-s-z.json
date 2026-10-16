@@ -1,0 +1,1492 @@
+{
+  "schemaVersion": 1,
+  "generatedAt": "2026-07-19",
+  "scope": "province:UD;canonicalNameRange:S-Z;exclude:Udine",
+  "profiles": [
+    {
+      "id": "municipality-profile-san-daniele-del-friuli",
+      "istatCode": "030099",
+      "municipality": "San Daniele del Friuli",
+      "province": "UD",
+      "title": {
+        "it": "San Daniele del Friuli, il colle dei libri",
+        "fur": "San Denêl, il cuel dai libris"
+      },
+      "summary": {
+        "it": "Nel 1466 Guarnerio d'Artegna lasciò alla comunità 173 manoscritti, dando origine alla Biblioteca Guarneriana. Quella raccolta civica, tra le prime istituzioni italiane di pubblica lettura, è ancora un segno centrale dell'identità di San Daniele.",
+        "fur": "Tal 1466 Guarnerio d'Artegna al lassà ae comunitât 173 manuscrits, dant origjin ae Biblioteche Guarneriane. Chê racuelte civiche, tra lis primis istituzions talianis di leture publiche, e je inmò un segn centrâl de identitât di San Denêl."
+      },
+      "milestones": [
+        {
+          "id": "san-daniele-guarneriana",
+          "year": 1466,
+          "label": {
+            "it": "Il lascito di Guarnerio d'Artegna fonda la Biblioteca Guarneriana",
+            "fur": "Il lascit di Guarnerio d'Artegna al fonde la Biblioteche Guarneriane"
+          }
+        }
+      ],
+      "source": {
+        "label": "Civica Biblioteca Guarneriana - La nostra storia",
+        "type": "cultural_institution",
+        "url": "https://www.guarneriana.it/la-storia"
+      },
+      "languageStatus": {
+        "it": "approved",
+        "fur": "approved"
+      },
+      "editorialStatus": "reviewed",
+      "readyForUi": true,
+      "review": {
+        "itReviewedAt": "2026-07-19",
+        "method": "source_cross_check",
+        "furReviewedAt": "2026-07-19",
+        "furMethod": "linguistic_review"
+      }
+    },
+    {
+      "id": "municipality-profile-san-giorgio-di-nogaro",
+      "istatCode": "030100",
+      "municipality": "San Giorgio di Nogaro",
+      "province": "UD",
+      "title": {
+        "it": "San Giorgio di Nogaro, lungo la via Annia",
+        "fur": "San Zorç di Noiâr, dilunc de vie Annia"
+      },
+      "summary": {
+        "it": "I nuclei più antichi del territorio sorsero lungo la via Annia, la strada romana diretta ad Aquileia. Nel medioevo l'abitato si spostò verso sud e prese il nome del santo guerriero venerato da Bizantini e Longobardi.",
+        "fur": "I insediaments plui antîcs dal teritori a nassèrin dilunc de vie Annia, la strade romane direte viers Aquilee. Tal Medi Ev l'abitât si spostà viers sud e al cjapà il non dal sant vuerrîr venerât dai Bizantins e dai Longobarts."
+      },
+      "milestones": [
+        {
+          "id": "san-giorgio-first-record",
+          "year": 1031,
+          "label": {
+            "it": "Il documento più antico noto cita Villam Sancti Georgii",
+            "fur": "Il document plui antîc cognossût al cite Villam Sancti Georgii"
+          }
+        }
+      ],
+      "source": {
+        "label": "Comune di San Giorgio di Nogaro - Il Comune di San Giorgio di Nogaro",
+        "type": "official_municipality",
+        "url": "https://www.comune.sangiorgiodinogaro.ud.it/luoghi/3021533/comune-san-giorgio-nogaro"
+      },
+      "languageStatus": {
+        "it": "approved",
+        "fur": "approved"
+      },
+      "editorialStatus": "reviewed",
+      "readyForUi": true,
+      "review": {
+        "itReviewedAt": "2026-07-19",
+        "method": "source_cross_check",
+        "furReviewedAt": "2026-07-19",
+        "furMethod": "linguistic_review"
+      }
+    },
+    {
+      "id": "municipality-profile-san-giovanni-al-natisone",
+      "istatCode": "030101",
+      "municipality": "San Giovanni al Natisone",
+      "province": "UD",
+      "title": {
+        "it": "San Giovanni al Natisone, legno e progetto",
+        "fur": "San Zuan dal Nadison, len e progjet"
+      },
+      "summary": {
+        "it": "Tra Ottocento e Novecento le botteghe di seggiolai trasformarono questo centro rurale in uno dei vertici del Triangolo della Sedia. La specializzazione nel mobile resta il tratto produttivo che lega artigianato, industria e design locale.",
+        "fur": "Tra Votcent e Nûfcent, lis buteghis dai artigjans des cjadrêis a trasformarin chest centri rurâl intun dai vertiçs dal Triangul de Cjadrêe. La specializazion tal mobil e reste il caratar produtîf che al lee artesanât, industrie e design locâl."
+      },
+      "milestones": [
+        {
+          "id": "san-giovanni-chair-district",
+          "century": "XIX-XX",
+          "label": {
+            "it": "Fioriscono le botteghe dedicate alla fabbricazione di sedie",
+            "fur": "A florissin lis buteghis dedicadis ae fabricazion di cjadrêis"
+          }
+        }
+      ],
+      "source": {
+        "label": "Regione Friuli Venezia Giulia - La collezione di sedie di Manzano",
+        "type": "regional_institution",
+        "url": "https://patrimonioculturale.regione.fvg.it/percorso-tematico/?s_id=822799"
+      },
+      "languageStatus": {
+        "it": "approved",
+        "fur": "approved"
+      },
+      "editorialStatus": "reviewed",
+      "readyForUi": true,
+      "review": {
+        "itReviewedAt": "2026-07-19",
+        "method": "source_cross_check",
+        "furReviewedAt": "2026-07-19",
+        "furMethod": "linguistic_review"
+      }
+    },
+    {
+      "id": "municipality-profile-san-leonardo",
+      "istatCode": "030102",
+      "municipality": "San Leonardo",
+      "province": "UD",
+      "title": {
+        "it": "San Leonardo, tra Cosizza ed Erbezzo",
+        "fur": "San Leonardo, tra Cosizza e Erbezzo"
+      },
+      "summary": {
+        "it": "San Leonardo compare per la prima volta in documenti del 1257 e deve il nome al proprio patrono. Il comune ha il capoluogo a Merso di Sopra e raccoglie paesi disposti lungo le valli del Cosizza e dell'Erbezzo.",
+        "fur": "San Leonardo al comparìs pe prime volte intai documents dal 1257 e al cjape il non dal so patron. Il comun al à il cjâf-lûc a Merso di Sopra e al met adun paîs disponûts dilunc des valadis dal Cosizza e dal Erbezzo."
+      },
+      "milestones": [
+        {
+          "id": "san-leonardo-first-record",
+          "year": 1257,
+          "label": {
+            "it": "Prima menzione documentaria nota della località",
+            "fur": "Prime menzion documentarie cognossude de localitât"
+          }
+        }
+      ],
+      "source": {
+        "label": "Comune di San Leonardo - Territorio",
+        "type": "official_municipality",
+        "url": "https://www.comune.sanleonardo.ud.it/vivere-il-comune/territorio/territorio/"
+      },
+      "languageStatus": {
+        "it": "approved",
+        "fur": "approved"
+      },
+      "editorialStatus": "reviewed",
+      "readyForUi": true,
+      "review": {
+        "itReviewedAt": "2026-07-19",
+        "method": "source_cross_check",
+        "furReviewedAt": "2026-07-19",
+        "furMethod": "linguistic_review"
+      }
+    },
+    {
+      "id": "municipality-profile-san-pietro-al-natisone",
+      "istatCode": "030103",
+      "municipality": "San Pietro al Natisone",
+      "province": "UD",
+      "title": {
+        "it": "San Pietro al Natisone, porta della Benecia",
+        "fur": "San Pietro al Natisone, puarte de Benecia"
+      },
+      "summary": {
+        "it": "Il paese fu a lungo chiamato San Pietro degli Slavi, nome sostituito nel 1869 con quello attuale. La sua identità resta legata alle Valli del Natisone e alla cultura slovena locale, raccontata anche dal museo multimediale SMO.",
+        "fur": "Par un lunc timp il paîs al fo clamât San Pietro degli Slavi, non sostituît tal 1869 cun chel atuâl. La sô identitât e reste leade aes Valadis dal Nadison e ae culture slovene locâl, contade ancje dal museu multimediâl SMO."
+      },
+      "milestones": [
+        {
+          "id": "san-pietro-name-change",
+          "year": 1869,
+          "label": {
+            "it": "Il nome diventa San Pietro al Natisone",
+            "fur": "Il non al devente San Pietro al Natisone"
+          }
+        }
+      ],
+      "source": {
+        "label": "Wikipedia italiana - San Pietro al Natisone",
+        "type": "wikipedia_reference",
+        "url": "https://it.wikipedia.org/wiki/San_Pietro_al_Natisone"
+      },
+      "languageStatus": {
+        "it": "approved",
+        "fur": "approved"
+      },
+      "editorialStatus": "reviewed",
+      "readyForUi": true,
+      "review": {
+        "itReviewedAt": "2026-07-19",
+        "method": "source_cross_check",
+        "furReviewedAt": "2026-07-19",
+        "furMethod": "linguistic_review"
+      }
+    },
+    {
+      "id": "municipality-profile-san-vito-al-torre",
+      "istatCode": "030105",
+      "municipality": "San Vito al Torre",
+      "province": "UD",
+      "title": {
+        "it": "San Vito al Torre, terra tra Aquileia e Austria",
+        "fur": "San Vît de Tor, tiere tra Aquilee e Austrie"
+      },
+      "summary": {
+        "it": "Il territorio, già legato all'agro romano di Aquileia, fu donato al patriarca nel 981. Passò alla Casa d'Austria nel 1516 e rimase nella Contea di Gorizia e Gradisca fino al 1918.",
+        "fur": "Il teritori, za leât al agri roman di Aquilee, al fo donât al patriarcje tal 981. Al passà ae Cjase d'Austrie tal 1516 e al restà te Contee di Gurize e Gardiscje fintremai al 1918."
+      },
+      "milestones": [
+        {
+          "id": "san-vito-al-torre-patriarch",
+          "year": 981,
+          "label": {
+            "it": "Il territorio viene donato al patriarca di Aquileia",
+            "fur": "Il teritori al ven donât al patriarcje di Aquilee"
+          }
+        },
+        {
+          "id": "san-vito-al-torre-municipality",
+          "year": 1889,
+          "label": {
+            "it": "Viene istituito il Comune di San Vito al Torre",
+            "fur": "Al ven istituît il Comun di San Vît de Tor"
+          }
+        }
+      ],
+      "source": {
+        "label": "Wikipedia italiana - San Vito al Torre",
+        "type": "wikipedia_reference",
+        "url": "https://it.wikipedia.org/wiki/San_Vito_al_Torre"
+      },
+      "languageStatus": {
+        "it": "approved",
+        "fur": "approved"
+      },
+      "editorialStatus": "reviewed",
+      "readyForUi": true,
+      "review": {
+        "itReviewedAt": "2026-07-19",
+        "method": "source_cross_check",
+        "furReviewedAt": "2026-07-19",
+        "furMethod": "linguistic_review"
+      }
+    },
+    {
+      "id": "municipality-profile-san-vito-di-fagagna",
+      "istatCode": "030106",
+      "municipality": "San Vito di Fagagna",
+      "province": "UD",
+      "title": {
+        "it": "San Vito di Fagagna, autonomia ritrovata",
+        "fur": "San Vît di Feagne, autonomie cjatade di gnûf"
+      },
+      "summary": {
+        "it": "Una carta del 1236 cita esplicitamente il villaggio e lo lega già allora al territorio di Fagagna. Il comune, soppresso e aggregato a Fagagna nel 1927, tornò autonomo nel 1947.",
+        "fur": "Une cjarte dal 1236 e cite in mût esplicit il vilaç e lu lee za in chê volte al teritori di Feagne. Il comun, sopress e agregât a Feagne tal 1927, al tornà autonom tal 1947."
+      },
+      "milestones": [
+        {
+          "id": "san-vito-di-fagagna-first-record",
+          "year": 1236,
+          "label": {
+            "it": "Prima citazione esplicita nota del villaggio",
+            "fur": "Prime citazion esplicite cognossude dal vilaç"
+          }
+        },
+        {
+          "id": "san-vito-di-fagagna-suppression",
+          "year": 1927,
+          "label": {
+            "it": "Il comune viene soppresso e aggregato a Fagagna",
+            "fur": "Il comun al ven sopress e agregât a Feagne"
+          }
+        },
+        {
+          "id": "san-vito-di-fagagna-restored",
+          "year": 1947,
+          "label": {
+            "it": "San Vito di Fagagna torna comune autonomo",
+            "fur": "San Vît di Feagne al torne comun autonom"
+          }
+        }
+      ],
+      "source": {
+        "label": "Comune di San Vito di Fagagna - PIAO 2025-2027",
+        "type": "official_municipality",
+        "url": "https://piao.dfp.gov.it/data/documents/179889/PIAO_S_V_F_2025_2027_.pdf"
+      },
+      "languageStatus": {
+        "it": "approved",
+        "fur": "approved"
+      },
+      "editorialStatus": "reviewed",
+      "readyForUi": true,
+      "review": {
+        "itReviewedAt": "2026-07-19",
+        "method": "source_cross_check",
+        "furReviewedAt": "2026-07-19",
+        "furMethod": "linguistic_review"
+      }
+    },
+    {
+      "id": "municipality-profile-santa-maria-la-longa",
+      "istatCode": "030104",
+      "municipality": "Santa Maria la Longa",
+      "province": "UD",
+      "title": {
+        "it": "Santa Maria la Longa, nomi lungo la pianura",
+        "fur": "Sante Marie la Lungje, nons dilunc de planure"
+      },
+      "summary": {
+        "it": "Prima di assumere il nome attuale, il paese fu ricordato come Meleretum e poi come Villa Sclavorum. La forma Santa Maria Longa è attestata dal 1250 e conserva la memoria di una comunità medievale della pianura friulana.",
+        "fur": "Prime di cjapâ il non atuâl, il paîs al fo ricuardât come Meleretum e po come Villa Sclavorum. La forme Santa Maria Longa e je atestade dal 1250 e e conserve la memorie di une comunitât medievâl de planure furlane."
+      },
+      "milestones": [
+        {
+          "id": "santa-maria-longa-name",
+          "year": 1250,
+          "label": {
+            "it": "È attestato il nome Santa Maria Longa",
+            "fur": "Al è atestât il non Santa Maria Longa"
+          }
+        }
+      ],
+      "source": {
+        "label": "Wikipedia italiana - Santa Maria la Longa",
+        "type": "wikipedia_reference",
+        "url": "https://it.wikipedia.org/wiki/Santa_Maria_la_Longa"
+      },
+      "languageStatus": {
+        "it": "approved",
+        "fur": "approved"
+      },
+      "editorialStatus": "reviewed",
+      "readyForUi": true,
+      "review": {
+        "itReviewedAt": "2026-07-19",
+        "method": "source_cross_check",
+        "furReviewedAt": "2026-07-19",
+        "furMethod": "linguistic_review"
+      }
+    },
+    {
+      "id": "municipality-profile-sappada",
+      "istatCode": "030189",
+      "municipality": "Sappada",
+      "province": "UD",
+      "title": {
+        "it": "Sappada, la comunità germanofona di Plodn",
+        "fur": "Sappada/Plodn, la comunitât di lenghe todescje"
+      },
+      "summary": {
+        "it": "Sappada, chiamata Plodn nella lingua locale, ospita una comunità storica di lingua tedesca che parla il plodarisch. Il passaggio dalla regione Veneto al Friuli Venezia Giulia risale al 2017.",
+        "fur": "Sappada, clamade Plodn te lenghe locâl, e je sede di une comunitât storiche di lenghe todescje che e fevele il plodarisch. Il passaç dal Venit al Friûl Vignesie Julie al è dal 2017."
+      },
+      "milestones": [
+        {
+          "id": "sappada-fvg",
+          "year": 2017,
+          "label": {
+            "it": "Sappada entra nel Friuli Venezia Giulia",
+            "fur": "Sappada/Plodn e jentre tal Friûl Vignesie Julie"
+          }
+        }
+      ],
+      "source": {
+        "label": "Consiglio regionale FVG - Comunità linguistica tedesca di Sappada",
+        "type": "regional_institution",
+        "url": "https://www.consiglio.regione.fvg.it/cms/export/sites/consiglio/pagine/comunita-linguistiche-regionali/allegati/atti-della-prima-conferenza-regionale-tedesco.pdf"
+      },
+      "languageStatus": {
+        "it": "approved",
+        "fur": "approved"
+      },
+      "editorialStatus": "reviewed",
+      "readyForUi": true,
+      "review": {
+        "itReviewedAt": "2026-07-19",
+        "method": "source_cross_check",
+        "furReviewedAt": "2026-07-19",
+        "furMethod": "linguistic_review"
+      }
+    },
+    {
+      "id": "municipality-profile-sauris",
+      "istatCode": "030107",
+      "municipality": "Sauris",
+      "province": "UD",
+      "title": {
+        "it": "Sauris, Zahre tra lingua e legno",
+        "fur": "Sauris, Zahre tra lenghe e len"
+      },
+      "summary": {
+        "it": "Sauris è un'isola linguistica germanofona che nel nome locale si riconosce come Zahre. Le case tradizionali uniscono basamenti in pietra e piani di legno costruiti con la tecnica del blockbau, segno visibile di questa identità alpina.",
+        "fur": "Sauris e je une isule linguistiche di lenghe todescje e tal non locâl si clame Zahre. Lis cjasis tradizionâls a unissin basaments di piere e plans di len costruîts cu la tecniche dal blockbau, segn visibil di cheste identitât alpine."
+      },
+      "milestones": [],
+      "source": {
+        "label": "Sauris Turismo - Sauris e le sue origini",
+        "type": "cultural_institution",
+        "url": "https://www.sauris.org/wp-content/uploads/2024/02/ITA_-about-Sauris.pdf"
+      },
+      "languageStatus": {
+        "it": "approved",
+        "fur": "approved"
+      },
+      "editorialStatus": "reviewed",
+      "readyForUi": true,
+      "review": {
+        "itReviewedAt": "2026-07-19",
+        "method": "source_cross_check",
+        "furReviewedAt": "2026-07-19",
+        "furMethod": "linguistic_review"
+      }
+    },
+    {
+      "id": "municipality-profile-savogna",
+      "istatCode": "030108",
+      "municipality": "Savogna",
+      "province": "UD",
+      "title": {
+        "it": "Savogna, grotte e memoria della Slavia",
+        "fur": "Savogna, grotis e memorie de Slavie"
+      },
+      "summary": {
+        "it": "La grotta Velika Jama ha restituito reperti del Neolitico e dell'antica età del bronzo. Nel medioevo le comunità della zona parteciparono all'autogoverno della Slavia veneta attraverso arenghi e decani eletti dalle famiglie.",
+        "fur": "La grote Velika Jama e à restituît reperts dal Neolitic e de antighe etât dal bronç. Tal Medi Ev lis comunitâts de zone a parteciparin al autoguvier de Slavie venite midiant arenghis e decans elets des fameis."
+      },
+      "milestones": [
+        {
+          "id": "savogna-first-record",
+          "century": "XV",
+          "label": {
+            "it": "La località compare nei documenti come villa Zavonja",
+            "fur": "La localitât e comparìs intai documents come villa Zavonja"
+          }
+        }
+      ],
+      "source": {
+        "label": "Wikipedia italiana - Savogna",
+        "type": "wikipedia_reference",
+        "url": "https://it.wikipedia.org/wiki/Savogna"
+      },
+      "languageStatus": {
+        "it": "approved",
+        "fur": "approved"
+      },
+      "editorialStatus": "reviewed",
+      "readyForUi": true,
+      "review": {
+        "itReviewedAt": "2026-07-19",
+        "method": "source_cross_check",
+        "furReviewedAt": "2026-07-19",
+        "furMethod": "linguistic_review"
+      }
+    },
+    {
+      "id": "municipality-profile-sedegliano",
+      "istatCode": "030109",
+      "municipality": "Sedegliano",
+      "province": "UD",
+      "title": {
+        "it": "Sedegliano, dal castelliere al Parlamento friulano",
+        "fur": "Sedean, dal cjastelîr al Parlament furlan"
+      },
+      "summary": {
+        "it": "Il castelliere ricorda il ruolo di Sedegliano nella civiltà paleoveneta, mentre il toponimo conserva una probabile radice romana. In età patriarcale la sua gastaldia ebbe rilievo anche come sede di convocazione del Parlamento friulano.",
+        "fur": "Il cjastelîr al ricuarde il rûl di Sedean te civiltât paleovenite, intant che il toponim al conserve une probabile lidrîs romane. In etât patriarcjâl la sô gastaldie e ve un rûl di rilêf ancje tant che sede di convocazion dal Parlament furlan."
+      },
+      "milestones": [
+        {
+          "id": "sedegliano-municipality",
+          "year": 1806,
+          "label": {
+            "it": "È attestata l'esistenza amministrativa del Comune di Sedegliano",
+            "fur": "E je atestade la esistence aministrative dal Comun di Sedean"
+          }
+        }
+      ],
+      "source": {
+        "label": "SIUSA - Comune di Sedegliano",
+        "type": "cultural_institution",
+        "url": "https://siusa-archivi.cultura.gov.it/cgi-bin/siusa/pagina.pl?Chiave=9341&RicDimF=2&TipoPag=prodente"
+      },
+      "languageStatus": {
+        "it": "approved",
+        "fur": "approved"
+      },
+      "editorialStatus": "reviewed",
+      "readyForUi": true,
+      "review": {
+        "itReviewedAt": "2026-07-19",
+        "method": "source_cross_check",
+        "furReviewedAt": "2026-07-19",
+        "furMethod": "linguistic_review"
+      }
+    },
+    {
+      "id": "municipality-profile-socchieve",
+      "istatCode": "030110",
+      "municipality": "Socchieve",
+      "province": "UD",
+      "title": {
+        "it": "Socchieve, sotto il colle di Castoia",
+        "fur": "Soclêf, sot dal cuel di Castoia"
+      },
+      "summary": {
+        "it": "Il nome Socchieve viene ricondotto al latino sub clivo, in riferimento alla pieve di Castoia che domina il borgo. La quattrocentesca chiesa di San Martino custodisce nel coro gli affreschi di Gianfrancesco da Tolmezzo.",
+        "fur": "Il non Soclêf al ven ricondot al latin sub clivo, in riferiment ae pieve di Castoia che e domine il borc. La glesie dal Cuatricent di San Martin e conserve tal côr i afrescs di Gianfrancesco da Tolmezzo."
+      },
+      "milestones": [
+        {
+          "id": "socchieve-san-martino",
+          "century": "XV",
+          "label": {
+            "it": "Viene edificata la chiesa di San Martino",
+            "fur": "E ven edificade la glesie di San Martin"
+          }
+        }
+      ],
+      "source": {
+        "label": "Visita Socchieve - Storia",
+        "type": "cultural_institution",
+        "url": "https://visitasocchieve.it/storia"
+      },
+      "languageStatus": {
+        "it": "approved",
+        "fur": "approved"
+      },
+      "editorialStatus": "reviewed",
+      "readyForUi": true,
+      "review": {
+        "itReviewedAt": "2026-07-19",
+        "method": "source_cross_check",
+        "furReviewedAt": "2026-07-19",
+        "furMethod": "linguistic_review"
+      }
+    },
+    {
+      "id": "municipality-profile-stregna",
+      "istatCode": "030111",
+      "municipality": "Stregna",
+      "province": "UD",
+      "title": {
+        "it": "Stregna, comunità della Banca di Merso",
+        "fur": "Stregna, comunitât de Banca di Merso"
+      },
+      "summary": {
+        "it": "Dal Patriarcato di Aquileia alla fine della Repubblica di Venezia, Stregna e le contrade vicine appartennero alla Banca di Merso. Questa organizzazione della Slavia friulana amministrava con ampia autonomia la vita locale e la giustizia.",
+        "fur": "Dal Patriarcjât di Aquilee ae fin de Republiche di Vignesie, Stregna e lis contradis dongje a fasevin part de Banca di Merso. Cheste organizazion de Slavie furlane e aministrave cun largje autonomie la vite locâl e la justizie."
+      },
+      "milestones": [],
+      "source": {
+        "label": "Wikipedia italiana - Stregna",
+        "type": "wikipedia_reference",
+        "url": "https://it.wikipedia.org/wiki/Stregna"
+      },
+      "languageStatus": {
+        "it": "approved",
+        "fur": "approved"
+      },
+      "editorialStatus": "reviewed",
+      "readyForUi": true,
+      "review": {
+        "itReviewedAt": "2026-07-19",
+        "method": "source_cross_check",
+        "furReviewedAt": "2026-07-19",
+        "furMethod": "linguistic_review"
+      }
+    },
+    {
+      "id": "municipality-profile-sutrio",
+      "istatCode": "030112",
+      "municipality": "Sutrio",
+      "province": "UD",
+      "title": {
+        "it": "Sutrio, il borgo dei maestri del legno",
+        "fur": "Sudri, il borc dai mestris dal len"
+      },
+      "summary": {
+        "it": "La lavorazione del legno è una tradizione che attraversa botteghe, case e spazi pubblici di Sutrio. Il Presepe di Teno, creato dal maestro Gaudenzio Straulino, racconta in miniatura la vita e le tradizioni del borgo carnico.",
+        "fur": "La lavorazion dal len e je une tradizion che e travierse buteghis, cjasis e spazis publics di Sudri. Il Presepi di Teno, creât dal mestri Gaudenzio Straulino, al conte in miniature la vite e lis tradizions dal borc cjargnel."
+      },
+      "milestones": [],
+      "source": {
+        "label": "Ministero della Cultura - Sutrio paese presepe",
+        "type": "cultural_institution",
+        "url": "https://borghi.cultura.gov.it/2024/12/sutrio-paese-presepe-dove-il-legno-esalta-le-vie-del-natale/"
+      },
+      "languageStatus": {
+        "it": "approved",
+        "fur": "approved"
+      },
+      "editorialStatus": "reviewed",
+      "readyForUi": true,
+      "review": {
+        "itReviewedAt": "2026-07-19",
+        "method": "source_cross_check",
+        "furReviewedAt": "2026-07-19",
+        "furMethod": "linguistic_review"
+      }
+    },
+    {
+      "id": "municipality-profile-taipana",
+      "istatCode": "030113",
+      "municipality": "Taipana",
+      "province": "UD",
+      "title": {
+        "it": "Taipana, una valle di lingua slava",
+        "fur": "Taipana, une val di lenghe slave"
+      },
+      "summary": {
+        "it": "L'assetto storico del territorio viene fatto risalire agli insediamenti slavi dell'VIII secolo, di cui resta un patrimonio linguistico vivo. Le difficili vie verso il fondovalle mantennero a lungo più stretti i rapporti con le comunità poste oltre i rilievi.",
+        "fur": "La struture storiche dal teritori e ven ricondote ai insediaments slâfs dal secul VIII, che di lôr al reste un patrimoni linguistic vîf. Lis viis dificilis viers il fonts de val a mantignirin par lunc timp rapuarts plui strents cu lis comunitâts di là dai rilêfs."
+      },
+      "milestones": [
+        {
+          "id": "taipana-slavic-settlement",
+          "century": "VIII",
+          "label": {
+            "it": "Gli insediamenti slavi contribuiscono alla formazione del territorio",
+            "fur": "I insediaments slâfs a contribuissin ae formazion dal teritori"
+          }
+        },
+        {
+          "id": "taipana-italy",
+          "year": 1866,
+          "label": {
+            "it": "Il territorio viene annesso al Regno d'Italia",
+            "fur": "Il teritori al ven anetût al Ream d'Italie"
+          }
+        }
+      ],
+      "source": {
+        "label": "Comune di Taipana - Storia del Comune",
+        "type": "official_municipality",
+        "url": "https://www.comune.taipana.ud.it/vivere-il-comune/territorio/storia-del-comune/"
+      },
+      "languageStatus": {
+        "it": "approved",
+        "fur": "approved"
+      },
+      "editorialStatus": "reviewed",
+      "readyForUi": true,
+      "review": {
+        "itReviewedAt": "2026-07-19",
+        "method": "source_cross_check",
+        "furReviewedAt": "2026-07-19",
+        "furMethod": "linguistic_review"
+      }
+    },
+    {
+      "id": "municipality-profile-talmassons",
+      "istatCode": "030114",
+      "municipality": "Talmassons",
+      "province": "UD",
+      "title": {
+        "it": "Talmassons, terre di risorgiva e antiche strade",
+        "fur": "Talmassons, tieris di risultive e stradis antighis"
+      },
+      "summary": {
+        "it": "Il paese crebbe in una zona fertile di acque di risorgiva, vicina all'antica Stradalta di origine romana. La pieve di Flambro è documentata dal 1126 e ricorda il peso storico che questa frazione ebbe nel territorio.",
+        "fur": "Il paîs al cressè intune zone fertîle di aghis di risultive, dongje de antighe Stradalta di origjin romane. La pieve di Flambro e je documentade dal 1126 e e ricuarde il pês storic che cheste frazion e veve tal teritori."
+      },
+      "milestones": [
+        {
+          "id": "talmassons-plebs-flambri",
+          "year": 1126,
+          "label": {
+            "it": "Prima attestazione nota della Plebs Flambri",
+            "fur": "Prime atestazion cognossude de Plebs Flambri"
+          }
+        },
+        {
+          "id": "talmassons-sanvidotto",
+          "year": 1477,
+          "label": {
+            "it": "Un'incursione distrugge l'abitato di Sanvidotto",
+            "fur": "Une incursione e distrûç l'abitât di Sanvidotto"
+          }
+        }
+      ],
+      "source": {
+        "label": "Comune di Talmassons - Storia",
+        "type": "official_municipality",
+        "url": "https://www.comune.talmassons.ud.it/informazioni-sul-comune/storia/"
+      },
+      "languageStatus": {
+        "it": "approved",
+        "fur": "approved"
+      },
+      "editorialStatus": "reviewed",
+      "readyForUi": true,
+      "review": {
+        "itReviewedAt": "2026-07-19",
+        "method": "source_cross_check",
+        "furReviewedAt": "2026-07-19",
+        "furMethod": "linguistic_review"
+      }
+    },
+    {
+      "id": "municipality-profile-tarcento",
+      "istatCode": "030116",
+      "municipality": "Tarcento",
+      "province": "UD",
+      "title": {
+        "it": "Tarcento, crocevia della valle del Torre",
+        "fur": "Tarcint, crosere de val de Tor"
+      },
+      "summary": {
+        "it": "Il nome di Tarcento compare nei documenti del XII secolo, su un territorio frequentato fin dalla preistoria e poi in età romana. La posizione tra Cividale e Gemona ne consolidò il ruolo di passaggio e di scambio ai piedi delle Prealpi Giulie.",
+        "fur": "Il non di Tarcint al comparìs intai documents dal secul XII, suntun teritori frequentât za de preistorie e po in etât romane. La posizion tra Cividât e Glemone e consolidà il so rûl di passaç e di scambi ai pîts des Prealps Juliis."
+      },
+      "milestones": [
+        {
+          "id": "tarcento-first-records",
+          "century": "XII",
+          "label": {
+            "it": "Il nome di Tarcento compare nelle fonti scritte",
+            "fur": "Il non di Tarcint al comparìs tes fonts scritis"
+          }
+        }
+      ],
+      "source": {
+        "label": "Comune di Tarcento - La storia",
+        "type": "official_municipality",
+        "url": "https://comune.tarcento.ud.it/it/page/la-storia"
+      },
+      "languageStatus": {
+        "it": "approved",
+        "fur": "approved"
+      },
+      "editorialStatus": "reviewed",
+      "readyForUi": true,
+      "review": {
+        "itReviewedAt": "2026-07-19",
+        "method": "source_cross_check",
+        "furReviewedAt": "2026-07-19",
+        "furMethod": "linguistic_review"
+      }
+    },
+    {
+      "id": "municipality-profile-tarvisio",
+      "istatCode": "030117",
+      "municipality": "Tarvisio",
+      "province": "UD",
+      "title": {
+        "it": "Tarvisio, quattro lingue sulla via del Nord",
+        "fur": "Tarvis, cuatri lenghis su la vie dal Nord"
+      },
+      "summary": {
+        "it": "La Valcanale era già attraversata in età romana da una via di traffico diretta verso il Nord. A Tarvisio questa storia di passaggi vive nella compresenza quotidiana di italiano, friulano, tedesco e sloveno.",
+        "fur": "La Val Cjanâl e jere za traviersade in etât romane di une vie di trafic direte viers il Nord. A Tarvis cheste storie di passaçs e vîf te presince cotidiane di talian, furlan, todesc e sloven."
+      },
+      "milestones": [],
+      "source": {
+        "label": "Consorzio Tarvisiano - Storia e cultura",
+        "type": "cultural_institution",
+        "url": "https://www.tarvisiano.org/it/Territorio/Storia-e-cultura"
+      },
+      "languageStatus": {
+        "it": "approved",
+        "fur": "approved"
+      },
+      "editorialStatus": "reviewed",
+      "readyForUi": true,
+      "review": {
+        "itReviewedAt": "2026-07-19",
+        "method": "source_cross_check",
+        "furReviewedAt": "2026-07-19",
+        "furMethod": "linguistic_review"
+      }
+    },
+    {
+      "id": "municipality-profile-tavagnacco",
+      "istatCode": "030118",
+      "municipality": "Tavagnacco",
+      "province": "UD",
+      "title": {
+        "it": "Tavagnacco, un comune di borghi",
+        "fur": "Tavagnà, un comun di borcs"
+      },
+      "summary": {
+        "it": "Nel medioevo le borgate del territorio dipendevano da diverse signorie locali, tra cui quelle di Tavagnacco, Feletto Umberto, Adegliacco e Cavalicco. Dal 1928 al 1947 Pagnacco e Feletto Umberto furono aggregati a Tavagnacco; poi Pagnacco tornò autonomo mentre Feletto rimase sede comunale.",
+        "fur": "Tal Medi Ev lis borgadis dal teritori a dipendevin di diviersis signoriis locâls, tra chestis chês di Tavagnà, Feletto Umberto, Adegliacco e Cavalicco. Dal 1928 al 1947 Pagnà e Feletto Umberto a forin agregâts a Tavagnà; po Pagnà al tornà autonom, intant che Feletto Umberto al restà sede comunâl."
+      },
+      "milestones": [
+        {
+          "id": "tavagnacco-aggregations",
+          "year": 1928,
+          "label": {
+            "it": "Pagnacco e Feletto Umberto vengono aggregati a Tavagnacco",
+            "fur": "Pagnà e Feletto Umberto a vegnin agregâts a Tavagnà"
+          }
+        },
+        {
+          "id": "tavagnacco-pagnacco-restored",
+          "year": 1947,
+          "label": {
+            "it": "Pagnacco torna autonomo e Feletto resta sede comunale",
+            "fur": "Pagnà al torne autonom e Feletto Umberto al reste sede comunâl"
+          }
+        }
+      ],
+      "source": {
+        "label": "SIUSA - Comune di Tavagnacco",
+        "type": "cultural_institution",
+        "url": "https://siusa-archivi.cultura.gov.it/cgi-bin/siusa/pagina.pl?Chiave=9384&TipoPag=prodente"
+      },
+      "languageStatus": {
+        "it": "approved",
+        "fur": "approved"
+      },
+      "editorialStatus": "reviewed",
+      "readyForUi": true,
+      "review": {
+        "itReviewedAt": "2026-07-19",
+        "method": "source_cross_check",
+        "furReviewedAt": "2026-07-19",
+        "furMethod": "linguistic_review"
+      }
+    },
+    {
+      "id": "municipality-profile-terzo-d-aquileia",
+      "istatCode": "030120",
+      "municipality": "Terzo d'Aquileia",
+      "province": "UD",
+      "title": {
+        "it": "Terzo d'Aquileia, al terzo miglio",
+        "fur": "Tierç di Aquilee, al tierç mîl"
+      },
+      "summary": {
+        "it": "Il nome deriva da Ad tertium lapidem, il terzo miglio dalla vicina Aquileia lungo l'antico percorso romano. Soppresso e unito ad Aquileia nel 1925, il comune recuperò la propria autonomia nel 1947.",
+        "fur": "Il non al derive di Ad tertium lapidem, il tierç mîl de vicine Aquilee dilunc dal antîc percors roman. Sopress e unît a Aquilee tal 1925, il comun al recuperà la sô autonomie tal 1947."
+      },
+      "milestones": [
+        {
+          "id": "terzo-suppression",
+          "year": 1925,
+          "label": {
+            "it": "Il comune viene aggregato ad Aquileia",
+            "fur": "Il comun al ven agregât a Aquilee"
+          }
+        },
+        {
+          "id": "terzo-restored",
+          "year": 1947,
+          "label": {
+            "it": "Terzo d'Aquileia torna comune autonomo",
+            "fur": "Tierç di Aquilee al torne comun autonom"
+          }
+        }
+      ],
+      "source": {
+        "label": "SIUSA - Comune di Terzo d'Aquileia",
+        "type": "cultural_institution",
+        "url": "https://siusa-archivi.cultura.gov.it/cgi-bin/siusa/pagina.pl?Chiave=9392&RicDimF=2&TipoPag=prodente"
+      },
+      "languageStatus": {
+        "it": "approved",
+        "fur": "approved"
+      },
+      "editorialStatus": "reviewed",
+      "readyForUi": true,
+      "review": {
+        "itReviewedAt": "2026-07-19",
+        "method": "source_cross_check",
+        "furReviewedAt": "2026-07-19",
+        "furMethod": "linguistic_review"
+      }
+    },
+    {
+      "id": "municipality-profile-tolmezzo",
+      "istatCode": "030121",
+      "municipality": "Tolmezzo",
+      "province": "UD",
+      "title": {
+        "it": "Tolmezzo, mercato e manifattura della Carnia",
+        "fur": "Tumieç, marcjât e manifature de Cjargne"
+      },
+      "summary": {
+        "it": "Il nome Tulmetium compare nel 1158 e nel basso medioevo la città era protetta da mura, diciotto torri e tre porte. Nel Settecento l'impresa tessile di Jacopo Linussio fece di Tolmezzo un centro manifatturiero noto ben oltre la Carnia.",
+        "fur": "Il non Tulmetium al comparìs tal 1158 e tal bas Medi Ev la citât e jere protezude di muris, disevot tors e trê puartis. Tal Setecent la imprese tessile di Jacopo Linussio e trasformà Tumieç intun centri manifaturîr cognossût ben fûr de Cjargne."
+      },
+      "milestones": [
+        {
+          "id": "tolmezzo-first-record",
+          "year": 1158,
+          "label": {
+            "it": "Prima attestazione nota del nome Tulmetium",
+            "fur": "Prime atestazion cognossude dal non Tulmetium"
+          }
+        },
+        {
+          "id": "tolmezzo-linussio",
+          "century": "XVIII",
+          "label": {
+            "it": "La manifattura tessile di Jacopo Linussio dà nuovo impulso alla città",
+            "fur": "La manifature tessile di Jacopo Linussio e da gnûf slanç ae citât"
+          }
+        }
+      ],
+      "source": {
+        "label": "Città di Tolmezzo - Località di Tolmezzo",
+        "type": "official_municipality",
+        "url": "https://www.comune.tolmezzo.ud.it/localita-di-tolmezzo/"
+      },
+      "languageStatus": {
+        "it": "approved",
+        "fur": "approved"
+      },
+      "editorialStatus": "reviewed",
+      "readyForUi": true,
+      "review": {
+        "itReviewedAt": "2026-07-19",
+        "method": "source_cross_check",
+        "furReviewedAt": "2026-07-19",
+        "furMethod": "linguistic_review"
+      }
+    },
+    {
+      "id": "municipality-profile-torreano",
+      "istatCode": "030122",
+      "municipality": "Torreano",
+      "province": "UD",
+      "title": {
+        "it": "Torreano, borghi e grotte della Val Chiarò",
+        "fur": "Torean, borcs e grotis de Val Chiarò"
+      },
+      "summary": {
+        "it": "Il territorio comunale si sviluppa dalla pianura a nord-ovest di Cividale lungo la Val Chiarò. A Prestento si aprono il Foran di Landri e il Foran des Aganis, cavità legate alla storia più antica della valle.",
+        "fur": "Il teritori comunâl si slargje de planure a nord-ovest di Cividât dilunc de Val Chiarò. A Prestento si vierzin il Foran di Landri e il Foran des Aganis, cavitâts leadis ae storie plui antighe de val."
+      },
+      "milestones": [],
+      "source": {
+        "label": "Comune di Torreano - Relazione paesaggistica",
+        "type": "official_municipality",
+        "url": "https://www.comune.torreano.ud.it/media/files/030122/attachment/028-16_D-E_B_relazione_paesaggistica.pdf"
+      },
+      "languageStatus": {
+        "it": "approved",
+        "fur": "approved"
+      },
+      "editorialStatus": "reviewed",
+      "readyForUi": true,
+      "review": {
+        "itReviewedAt": "2026-07-19",
+        "method": "source_cross_check",
+        "furReviewedAt": "2026-07-19",
+        "furMethod": "linguistic_review"
+      }
+    },
+    {
+      "id": "municipality-profile-torviscosa",
+      "istatCode": "030123",
+      "municipality": "Torviscosa",
+      "province": "UD",
+      "title": {
+        "it": "Torviscosa, la città della cellulosa",
+        "fur": "Tor di Zuin, la citât de celulose"
+      },
+      "summary": {
+        "it": "Torviscosa prese forma come città aziendale attorno allo stabilimento della SAICI-SNIA per la produzione di cellulosa e fibre artificiali. Il comune nacque nel 1940 e il suo archivio conserva anche centinaia di disegni dell'organizzazione industriale e urbana.",
+        "fur": "Tor di Zuin al cjapà forme come citât aziendâl ator dal stabiliment de SAICI-SNIA pe produzion di celulose e fibris artificiâls. Il comun al nassè tal 1940 e il so archivi al conserve ancje centenârs di dissens de organizazion industriâl e urbane."
+      },
+      "milestones": [
+        {
+          "id": "torviscosa-municipality",
+          "year": 1940,
+          "label": {
+            "it": "Viene costituito il Comune di Torviscosa",
+            "fur": "Al ven costituît il Comun di Tor di Zuin"
+          }
+        }
+      ],
+      "source": {
+        "label": "Comune di Torviscosa - Archivio storico comunale",
+        "type": "official_municipality",
+        "url": "https://www.comune.torviscosa.ud.it/it/novita-50218/avvisi-50221/gli-archivi-storici-51227/archivio-storico-comunale-51228"
+      },
+      "languageStatus": {
+        "it": "approved",
+        "fur": "approved"
+      },
+      "editorialStatus": "reviewed",
+      "readyForUi": true,
+      "review": {
+        "itReviewedAt": "2026-07-19",
+        "method": "source_cross_check",
+        "furReviewedAt": "2026-07-19",
+        "furMethod": "linguistic_review"
+      }
+    },
+    {
+      "id": "municipality-profile-trasaghis",
+      "istatCode": "030124",
+      "municipality": "Trasaghis",
+      "province": "UD",
+      "title": {
+        "it": "Trasaghis, memoria e ricostruzione",
+        "fur": "Trasaghis, memorie e ricostruzion"
+      },
+      "summary": {
+        "it": "Il 2 maggio 1945 ad Avasinis furono uccisi 51 civili da reparti tedeschi in ritirata, una ferita centrale nella memoria locale. Il terremoto del 1976 devastò poi il comune, che ricostruì case e chiese lasciando visibili anche alcune rovine.",
+        "fur": "Ai 2 di Mai dal 1945, a Avasinis, 51 civîi a forin copâts di reparts todescs in ritirade, une feride centrâl te memorie locâl. Po, il taramot dal 1976 al devastà il comun, che al ricostruì cjasis e glesiis lassant visibilis ancje cualchi ruvine."
+      },
+      "milestones": [
+        {
+          "id": "trasaghis-avasinis",
+          "year": 1945,
+          "label": {
+            "it": "La strage di Avasinis colpisce la comunità",
+            "fur": "La stragje di Avasinis e colpìs la comunitât"
+          }
+        },
+        {
+          "id": "trasaghis-earthquake",
+          "year": 1976,
+          "label": {
+            "it": "Il terremoto devasta il territorio comunale",
+            "fur": "Il taramot al devaste il teritori comunâl"
+          }
+        }
+      ],
+      "source": {
+        "label": "Wikipedia italiana - Trasaghis",
+        "type": "wikipedia_reference",
+        "url": "https://it.wikipedia.org/wiki/Trasaghis"
+      },
+      "languageStatus": {
+        "it": "approved",
+        "fur": "approved"
+      },
+      "editorialStatus": "reviewed",
+      "readyForUi": true,
+      "review": {
+        "itReviewedAt": "2026-07-19",
+        "method": "source_cross_check",
+        "furReviewedAt": "2026-07-19",
+        "furMethod": "linguistic_review"
+      }
+    },
+    {
+      "id": "municipality-profile-treppo-grande",
+      "istatCode": "030126",
+      "municipality": "Treppo Grande",
+      "province": "UD",
+      "title": {
+        "it": "Treppo Grande, borghi lungo vie antiche",
+        "fur": "Trep Grant, borcs dilunc di viis antighis"
+      },
+      "summary": {
+        "it": "Il territorio conserva tracce di frequentazione antica lungo direttrici ricondotte alla via Iulia Augusta. Carvacco, Vendoglio e Zegliacco ebbero castelli o fortilizi, segni della storia medievale dei borghi.",
+        "fur": "Il teritori al conserve segns di presincis antighis dilunc di percors ricondots ae vie Iulia Augusta. Carvacco, Vendoglio e Zegliacco a vevin cjistiei o fortilizi, segns de storie medievâl dai borcs."
+      },
+      "milestones": [
+        {
+          "id": "treppo-grande-earthquake",
+          "year": 1976,
+          "label": {
+            "it": "Il terremoto del Friuli colpisce duramente il comune",
+            "fur": "Il taramot dal Friûl al colpìs in mût dûr il comun"
+          }
+        }
+      ],
+      "source": {
+        "label": "Comune di Treppo Grande - Piano comunale di illuminazione",
+        "type": "official_municipality",
+        "url": "https://comune.treppogrande.ud.it/media/files/030126/attachment/01_PIC_FASE_1-Censimento.pdf"
+      },
+      "languageStatus": {
+        "it": "approved",
+        "fur": "approved"
+      },
+      "editorialStatus": "reviewed",
+      "readyForUi": true,
+      "review": {
+        "itReviewedAt": "2026-07-19",
+        "method": "source_cross_check",
+        "furReviewedAt": "2026-07-19",
+        "furMethod": "linguistic_review"
+      }
+    },
+    {
+      "id": "municipality-profile-treppo-ligosullo",
+      "istatCode": "030191",
+      "municipality": "Treppo Ligosullo",
+      "province": "UD",
+      "title": {
+        "it": "Treppo Ligosullo, due comunità dell'Alta Carnia",
+        "fur": "Trep di Cjargne Liussûl, dôs comunitâts de Alte Cjargne"
+      },
+      "summary": {
+        "it": "Il comune nacque nel 2018 dalla fusione di Treppo Carnico e Ligosullo, dopo il referendum regionale dell'anno precedente. Le due comunità conservano patroni, borghi e memorie distinte, riunite nel nuovo stemma dall'olmo e dall'abete.",
+        "fur": "Il comun al nassè tal 2018 de fusion di Trep di Cjargne e Liussûl, dopo dal referendum regjonâl fât l'an prime. Lis dôs comunitâts a conservin patrons, borcs e memoriis distintis, che tal gnûf stemme a son rapresentadis dal olm e dal peç."
+      },
+      "milestones": [
+        {
+          "id": "treppo-ligosullo-established",
+          "year": 2018,
+          "label": {
+            "it": "Diventa operativo il nuovo Comune di Treppo Ligosullo",
+            "fur": "Al devente operatîf il gnûf Comun di Trep di Cjargne Liussûl"
+          }
+        }
+      ],
+      "source": {
+        "label": "Wikipedia italiana - Treppo Ligosullo",
+        "type": "wikipedia_reference",
+        "url": "https://it.wikipedia.org/wiki/Treppo_Ligosullo"
+      },
+      "languageStatus": {
+        "it": "approved",
+        "fur": "approved"
+      },
+      "editorialStatus": "reviewed",
+      "readyForUi": true,
+      "review": {
+        "itReviewedAt": "2026-07-19",
+        "method": "source_cross_check",
+        "furReviewedAt": "2026-07-19",
+        "furMethod": "linguistic_review"
+      }
+    },
+    {
+      "id": "municipality-profile-tricesimo",
+      "istatCode": "030127",
+      "municipality": "Tricesimo",
+      "province": "UD",
+      "title": {
+        "it": "Tricesimo, gastaldia sulla strada del Norico",
+        "fur": "Tresesin, gastaldie su la strade dal Noric"
+      },
+      "summary": {
+        "it": "L'incrocio tra la via da Aquileia al Norico e la strada bariglaria favorì commerci e insediamenti. Nel medioevo Tricesimo fu capoluogo di una gastaldia di 33 ville, regolata anche da statuti giunti in una versione quattrocentesca.",
+        "fur": "L'incros tra la vie di Aquilee al Noric e la strade bariglarie al favorì comerçs e insediaments. Tal Medi Ev Tresesin al fo cjâf-lûc di une gastaldie di 33 vilis, regolade ancje di statûts rivâts fint a nô intune version dal Cuatricent."
+      },
+      "milestones": [
+        {
+          "id": "tricesimo-statutes",
+          "century": "XV",
+          "label": {
+            "it": "È tramandata la versione quattrocentesca degli Statuti di Tricesimo",
+            "fur": "E je rivade fint a nô la version dal Cuatricent dai Statûts di Tresesin"
+          }
+        }
+      ],
+      "source": {
+        "label": "Wikipedia italiana - Tricesimo",
+        "type": "wikipedia_reference",
+        "url": "https://it.wikipedia.org/wiki/Tricesimo"
+      },
+      "languageStatus": {
+        "it": "approved",
+        "fur": "approved"
+      },
+      "editorialStatus": "reviewed",
+      "readyForUi": true,
+      "review": {
+        "itReviewedAt": "2026-07-19",
+        "method": "source_cross_check",
+        "furReviewedAt": "2026-07-19",
+        "furMethod": "linguistic_review"
+      }
+    },
+    {
+      "id": "municipality-profile-trivignano-udinese",
+      "istatCode": "030128",
+      "municipality": "Trivignano Udinese",
+      "province": "UD",
+      "title": {
+        "it": "Trivignano Udinese, un paese nato sulle strade",
+        "fur": "Trivignan, un paîs nassût su lis stradis"
+      },
+      "summary": {
+        "it": "Il toponimo, probabilmente legato al nome romano Travinus, richiama la colonizzazione dell'agro aquileiese. Citato nel 1184, il paese conserva a est anche la memoria materiale dell'antico confine tra Italia e Austria.",
+        "fur": "Il toponim, probabilmentri leât al non roman Travinus, al riclame la colonizazion dal agri aquileiês. Citât tal 1184, il paîs al conserve a est ancje la memorie materiâl dal antîc confin tra Italie e Austrie."
+      },
+      "milestones": [
+        {
+          "id": "trivignano-first-record",
+          "year": 1184,
+          "label": {
+            "it": "Prima citazione ufficiale nota di Trivignano",
+            "fur": "Prime citazion uficiâl cognossude di Trivignan"
+          }
+        }
+      ],
+      "source": {
+        "label": "Comune di Trivignano Udinese - Note storiche",
+        "type": "official_municipality",
+        "url": "https://www.comune.trivignano-udinese.ud.it/it/vivere-il-comune-71678/il-paese-72039/note-storiche-72045"
+      },
+      "languageStatus": {
+        "it": "approved",
+        "fur": "approved"
+      },
+      "editorialStatus": "reviewed",
+      "readyForUi": true,
+      "review": {
+        "itReviewedAt": "2026-07-19",
+        "method": "source_cross_check",
+        "furReviewedAt": "2026-07-19",
+        "furMethod": "linguistic_review"
+      }
+    },
+    {
+      "id": "municipality-profile-varmo",
+      "istatCode": "030130",
+      "municipality": "Varmo",
+      "province": "UD",
+      "title": {
+        "it": "Varmo, terra di conti e acque",
+        "fur": "Vildivar, tiere di conts e aghis"
+      },
+      "summary": {
+        "it": "Il territorio storico era diviso tra la giurisdizione dei conti di Varmo e quella degli Ungrispach a Madrisio e Canussio. Nel plebiscito del 1866 Varmo espresse voto contrario all'annessione al Regno d'Italia, un episodio singolare della sua storia civica.",
+        "fur": "Il teritori storic al jere dividût tra la juridizion dai conts di Varmo e chê dai Ungrispach a Madrisio e Canussio. Tal plebiscit dal 1866 Vildivar al votà cuintri la anession al Ream d'Italie, un episodi particolâr de sô storie civiche."
+      },
+      "milestones": [
+        {
+          "id": "varmo-plebiscite",
+          "year": 1866,
+          "label": {
+            "it": "Varmo vota contro l'annessione al Regno d'Italia",
+            "fur": "Vildivar al vote cuintri la anession al Ream d'Italie"
+          }
+        }
+      ],
+      "source": {
+        "label": "Comune di Varmo - La storia",
+        "type": "official_municipality",
+        "url": "https://www.comune.varmo.ud.it/it/novita-189543/notizie-189544/la-storia-125684"
+      },
+      "languageStatus": {
+        "it": "approved",
+        "fur": "approved"
+      },
+      "editorialStatus": "reviewed",
+      "readyForUi": true,
+      "review": {
+        "itReviewedAt": "2026-07-19",
+        "method": "source_cross_check",
+        "furReviewedAt": "2026-07-19",
+        "furMethod": "linguistic_review"
+      }
+    },
+    {
+      "id": "municipality-profile-venzone",
+      "istatCode": "030131",
+      "municipality": "Venzone",
+      "province": "UD",
+      "title": {
+        "it": "Venzone, mura ricostruite pietra su pietra",
+        "fur": "Vençon, muris ricostruidis piere par piere"
+      },
+      "summary": {
+        "it": "Venzone conserva l'impianto di un borgo medievale racchiuso dalle mura e dal 1965 è monumento nazionale. Dopo il terremoto del 1976, il centro storico fu ricomposto con l'anastilosi, ricollocando gli elementi originari per restituire al borgo il suo aspetto.",
+        "fur": "Vençon al conserve la struture di un borc medievâl sierât dentri des muris e dal 1965 al è monument nazionâl. Dopo dal taramot dal 1976, il centri storic al fo ricomponût cu la anastilosi, tornant a meti a puest i elements origjinâi e a dâ al borc il so aspiet."
+      },
+      "milestones": [
+        {
+          "id": "venzone-national-monument",
+          "year": 1965,
+          "label": {
+            "it": "Venzone viene dichiarata monumento nazionale",
+            "fur": "Vençon al ven declarât monument nazionâl"
+          }
+        },
+        {
+          "id": "venzone-earthquake",
+          "year": 1976,
+          "label": {
+            "it": "Il terremoto devasta il borgo medievale",
+            "fur": "Il taramot al devaste il borc medievâl"
+          }
+        }
+      ],
+      "source": {
+        "label": "PromoTurismoFVG - Venzone",
+        "type": "regional_institution",
+        "url": "https://www.turismofvg.it/en/venzone?LangSetCMS=en"
+      },
+      "languageStatus": {
+        "it": "approved",
+        "fur": "approved"
+      },
+      "editorialStatus": "reviewed",
+      "readyForUi": true,
+      "review": {
+        "itReviewedAt": "2026-07-19",
+        "method": "source_cross_check",
+        "furReviewedAt": "2026-07-19",
+        "furMethod": "linguistic_review"
+      }
+    },
+    {
+      "id": "municipality-profile-verzegnis",
+      "istatCode": "030132",
+      "municipality": "Verzegnis",
+      "province": "UD",
+      "title": {
+        "it": "Verzegnis, la via del marmo rosso",
+        "fur": "Verzegnis, la vie dal marmul ros"
+      },
+      "summary": {
+        "it": "Il marmo rosso di Verzegnis ha legato per generazioni la montagna al lavoro di cava. A Sella Chianzutan l'antica stazione della teleferica racconta ancora come i blocchi venivano trasportati a valle.",
+        "fur": "Par gjenerazions, il marmul ros di Verzegnis al à leât la mont al lavôr di gjave. A Sella Chianzutan la antighe stazion de teleferiche e conte inmò cemût che i blocs a vignivin puartâts jù te val."
+      },
+      "milestones": [],
+      "source": {
+        "label": "Comune di Verzegnis - Patrimonio culturale",
+        "type": "official_municipality",
+        "url": "https://www.comune.verzegnis.ud.it/argomento/patrimonio-culturale/"
+      },
+      "languageStatus": {
+        "it": "approved",
+        "fur": "approved"
+      },
+      "editorialStatus": "reviewed",
+      "readyForUi": true,
+      "review": {
+        "itReviewedAt": "2026-07-19",
+        "method": "source_cross_check",
+        "furReviewedAt": "2026-07-19",
+        "furMethod": "linguistic_review"
+      }
+    },
+    {
+      "id": "municipality-profile-villa-santina",
+      "istatCode": "030133",
+      "municipality": "Villa Santina",
+      "province": "UD",
+      "title": {
+        "it": "Villa Santina, dalla rocca di Invillino alla villa",
+        "fur": "Vile di Cjargne, de roche di Invillino ae vile"
+      },
+      "summary": {
+        "it": "L'abitato, un tempo chiamato Villa d'Invillino, crebbe come dipendenza dell'antico castello di Ibligine. Mentre la rocca perdeva importanza, la villa ai piedi del Col Santina divenne il centro che diede nome al comune attuale.",
+        "fur": "L'abitât, clamât une volte Villa d'Invillino, al cressè come dipendence dal antîc cjistiel di Ibligine. Intant che la roche e perdeve impuartance, la vile ai pîts dal Col Santina e deventà il centri che i dè il non al comun atuâl."
+      },
+      "milestones": [
+        {
+          "id": "villa-santina-municipality",
+          "year": 1806,
+          "label": {
+            "it": "Il comune viene istituito nell'ordinamento napoleonico",
+            "fur": "Il comun al ven istituît tal ordenament napoleonic"
+          }
+        }
+      ],
+      "source": {
+        "label": "SIUSA - Comune di Villa Santina",
+        "type": "cultural_institution",
+        "url": "https://siusa-archivi.cultura.gov.it/cgi-bin/siusa/pagina.pl?Chiave=6905&RicDimF=2&TipoPag=prodente"
+      },
+      "languageStatus": {
+        "it": "approved",
+        "fur": "approved"
+      },
+      "editorialStatus": "reviewed",
+      "readyForUi": true,
+      "review": {
+        "itReviewedAt": "2026-07-19",
+        "method": "source_cross_check",
+        "furReviewedAt": "2026-07-19",
+        "furMethod": "linguistic_review"
+      }
+    },
+    {
+      "id": "municipality-profile-visco",
+      "istatCode": "030135",
+      "municipality": "Visco",
+      "province": "UD",
+      "title": {
+        "it": "Visco, paese di frontiera",
+        "fur": "Visc, paîs di frontiere"
+      },
+      "summary": {
+        "it": "Citato già nel 1154, Visco passò alla Casa d'Austria nel 1500 e rimase un paese di confine dopo il 1866. Alla fine della Prima guerra mondiale entrò nel Regno d'Italia; il 1947 segnò poi il ricongiungimento con la Repubblica italiana nel nuovo assetto di frontiera.",
+        "fur": "Citât za tal 1154, Visc al passà ae Cjase d'Austrie tal 1500 e al restà un paîs di confin dopo dal 1866. Ae fin de Prime Vuere mondiâl al jentrà tal Ream d'Italie; il 1947 al segnà po il ricongiungjiment cu la Republiche taliane tal gnûf ordenament di frontiere."
+      },
+      "milestones": [
+        {
+          "id": "visco-first-record",
+          "year": 1154,
+          "label": {
+            "it": "Prima menzione documentaria nota dell'abitato",
+            "fur": "Prime menzion documentarie cognossude dal abitât"
+          }
+        },
+        {
+          "id": "visco-italy-1918",
+          "year": 1918,
+          "label": {
+            "it": "Visco passa al Regno d'Italia",
+            "fur": "Visc al passe al Ream d'Italie"
+          }
+        },
+        {
+          "id": "visco-italy",
+          "year": 1947,
+          "label": {
+            "it": "Visco viene ricongiunto alla Repubblica italiana",
+            "fur": "Visc al ven ricongjont ae Republiche taliane"
+          }
+        }
+      ],
+      "source": {
+        "label": "Comune di Visco - La storia",
+        "type": "official_municipality",
+        "url": "https://www.comune.visco.ud.it/it/page/la-storia-19"
+      },
+      "languageStatus": {
+        "it": "approved",
+        "fur": "approved"
+      },
+      "editorialStatus": "reviewed",
+      "readyForUi": true,
+      "review": {
+        "itReviewedAt": "2026-07-19",
+        "method": "source_cross_check",
+        "furReviewedAt": "2026-07-19",
+        "furMethod": "linguistic_review"
+      }
+    },
+    {
+      "id": "municipality-profile-zuglio",
+      "istatCode": "030136",
+      "municipality": "Zuglio",
+      "province": "UD",
+      "title": {
+        "it": "Zuglio, la città romana della Carnia",
+        "fur": "Zui, la citât romane de Cjargne"
+      },
+      "summary": {
+        "it": "Zuglio sorge sull'antica Iulium Carnicum, fondata probabilmente durante il proconsolato di Giulio Cesare lungo la via tra Aquileia e il Norico. Il foro e il museo archeologico restituiscono il ruolo politico, religioso e commerciale di quel centro alpino.",
+        "fur": "Zui al nas su la antighe Iulium Carnicum, fondade probabilmentri tal timp dal proconsolât di Juli Cesar su la vie tra Aquilee e il Noric. Il forum e il museu archeologic a documentin il rûl politic, religjôs e comerciâl di chel centri alpin."
+      },
+      "milestones": [
+        {
+          "id": "zuglio-iulium-carnicum",
+          "century": "I a.C.",
+          "label": {
+            "it": "Nasce il centro romano di Iulium Carnicum",
+            "fur": "Al nas il centri roman di Iulium Carnicum"
+          }
+        },
+        {
+          "id": "zuglio-museum",
+          "year": 1995,
+          "label": {
+            "it": "Apre il Civico Museo Archeologico Iulium Carnicum",
+            "fur": "Al vierç il Civîc Museu Archeologic Iulium Carnicum"
+          }
+        }
+      ],
+      "source": {
+        "label": "Comune di Zuglio - La storia",
+        "type": "official_municipality",
+        "url": "https://www.comune.zuglio.ud.it/it/home-2611/cultura-2614/la-storia-6506"
+      },
+      "languageStatus": {
+        "it": "approved",
+        "fur": "approved"
+      },
+      "editorialStatus": "reviewed",
+      "readyForUi": true,
+      "review": {
+        "itReviewedAt": "2026-07-19",
+        "method": "source_cross_check",
+        "furReviewedAt": "2026-07-19",
+        "furMethod": "linguistic_review"
+      }
+    }
+  ]
+}

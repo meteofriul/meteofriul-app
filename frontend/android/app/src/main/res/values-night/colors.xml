@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="system_status_bar">@color/system_status_bar_dark</color>
+    <color name="system_navigation_bar">@color/system_navigation_bar_dark</color>
+    <bool name="system_bars_use_dark_icons">false</bool>
+</resources>

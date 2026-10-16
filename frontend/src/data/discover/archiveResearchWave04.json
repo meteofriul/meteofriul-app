@@ -1,0 +1,123 @@
+{
+  "schemaVersion": 1,
+  "snapshotDate": "2026-08-31",
+  "purpose": "Quarto lotto d'archivio: tre racconti di cultura materiale fra Maniago, Pesariis e il Carso triestino. Copy bilingue e riferimenti linguistici sono conservati una sola volta nei record promossi.",
+  "readyForUi": false,
+  "runtimeCatalog": "frontend/src/data/discover/institutionalArchive.json",
+  "editorialDecision": {
+    "basis": "user_delegated_assisted_editorial_review",
+    "reviewer": "assistant",
+    "independentHumanReview": false,
+    "scope": [
+      "archive-research-maniago-maglio-ascolto",
+      "archive-research-pesariis-orologi-portici",
+      "archive-research-opicina-tram-funicolare"
+    ],
+    "note": "Decisione editoriale assistita nel mandato di continuare Scopri, non approvazione dell'utente frase per frase e non certificazione ARLeF o revisione professionale indipendente."
+  },
+  "preservedCatalog": {
+    "records": 23,
+    "sha256Json": "a33c0a3cfd40008ebe12ca8763c22ecfc23ef5ddb485ebd2e602e73d4ff08bfe"
+  },
+  "rules": [
+    "Il manifest non è importato dalla UI: soltanto i tre promotedRecordId sono promossi nel catalogo attivo.",
+    "Fonti primarie HTML controllate e attribuite al catalogo ERPAC, alla scheda museale MiC e al gestore TPL FVG, senza presentarle tutte come fonti comunali.",
+    "Rotazione annuale senza date forzate, stagioni esclusive o attivazioni meteo: il Seicento è un contesto storico e gli 800 metri descrivono soltanto il tratto ripido del tram.",
+    "Nessuna informazione pratica di visita, orario, prezzo o promessa di servizio attuale. Sintesi originali, senza riuso di immagini, filmati o riproduzioni."
+  ],
+  "records": [
+    {
+      "id": "archive-research-maniago-maglio-ascolto",
+      "promotedRecordId": "institutional-archive-maniago-maglio-ascolto",
+      "canonicalKey": "maniago-maglio-balestra-ascolto",
+      "rubric": "archive_traditions",
+      "reviewStatus": "promoted",
+      "readyForUi": false,
+      "promotedAt": "2026-08-31",
+      "source": {
+        "url": "https://patrimonioculturale.regione.fvg.it/patrimonio-scientifico-tecnologico/?s_id=597151",
+        "authority": "ERPAC FVG · Maglio a balestra, PST_219",
+        "accessMethod": "direct_http_html",
+        "checkedAt": "2026-08-31"
+      },
+      "evidenceSummary": "La scheda descrive la molla composta di lamine sovrapposte, che ammortizza i colpi del maglio, e il riconoscimento della lamina rotta attraverso il rumore diverso. La modalità d'uso è documentata con la testimonianza di Antonio Toffoli, ex dipendente Ausonia.",
+      "temporalRule": { "type": "annual_rotation" },
+      "geographicScope": ["maniago"],
+      "scopeNote": "Dettaglio dello specifico maglio a balestra conservato a Maniago, non pratica attribuita a tutte le officine. La datazione dell'oggetto non diventa data di origine della pratica; nessuna istruzione operativa o di manutenzione.",
+      "languageReview": {
+        "approvalBasis": "user_delegated_assisted_editorial_review",
+        "reviewer": "assistant",
+        "independentHumanReview": false,
+        "referencesLocation": "institutional-archive-maniago-maglio-ascolto.languageReview.fur.references",
+        "notes": "Mai, balestre, suste, lamine, amortizâ, rumôr, orele, alenât, operadôr, cambiâ e rompi controllati in HTML ARLeF, con accezioni meccaniche pertinenti. Lamine sovrapposte reso con una parafrasi; Manià conservato dal toponimo già approvato."
+      },
+      "duplicateReview": {
+        "status": "distinct",
+        "comparedCatalogs": ["ostermannCulturalDiscover", "institutionalRituals", "institutionalArchive", "archiveResearchWave01", "archiveResearchWave02", "archiveResearchWave03", "localMemory", "municipalityProfiles"],
+        "note": "Il profilo di Maniago tratta CORICAMA e le tappe del museo, non la diagnosi acustica del maglio. La bicicletta dell'arrotino di Stolvizza e il torcitoio di Gorizia riguardano altri mestieri e meccanismi. Nessun doppione fra schede attive, memorie e candidati d'archivio."
+      }
+    },
+    {
+      "id": "archive-research-pesariis-orologi-portici",
+      "promotedRecordId": "institutional-archive-pesariis-orologi-portici",
+      "canonicalKey": "pesariis-orologi-portici-lavori-agricoli",
+      "rubric": "archive_traditions",
+      "reviewStatus": "promoted",
+      "readyForUi": false,
+      "promotedAt": "2026-08-31",
+      "source": {
+        "url": "https://cultura.gov.it/luogo/museo-dell-orologeria-pesarina",
+        "authority": "Ministero della Cultura · Museo dell'orologeria Pesarina",
+        "accessMethod": "direct_html",
+        "checkedAt": "2026-08-31"
+      },
+      "evidenceSummary": "La scheda MiC documenta famiglie di Pesariis che nel Seicento costruivano orologi meccanici, collocati sotto i portici delle case padronali per suonare le ore e scandire le attività agricole. Descrive casse generalmente in legno o ferro battuto e decorato.",
+      "temporalRule": { "type": "annual_rotation" },
+      "geographicScope": ["prato_carnico", "pesariis", "carnia"],
+      "scopeNote": "Uso domestico e agricolo documentato, non esteso a tutte le abitazioni o a tutti gli orologi pesarini. Il Seicento descrive il contesto storico: nessun anniversario dedotto e nessuna informazione pratica di visita.",
+      "languageReview": {
+        "approvalBasis": "user_delegated_assisted_editorial_review",
+        "reviewer": "assistant",
+        "independentHumanReview": false,
+        "referencesLocation": "institutional-archive-pesariis-orologi-portici.languageReview.fur.references",
+        "notes": "Orloi, puarti, casse, segnâ il pas, mecanic, fier, Sîscent e agricul controllati nei lemmi HTML ARLeF. Pesariis mantenuto come nome proprio; nessuna variante locale o certificazione linguistica inventata."
+      },
+      "duplicateReview": {
+        "status": "distinct",
+        "comparedCatalogs": ["ostermannCulturalDiscover", "institutionalRituals", "institutionalArchive", "archiveResearchWave01", "archiveResearchWave02", "archiveResearchWave03", "localMemory", "municipalityProfiles"],
+        "note": "Il profilo di Prato Carnico menziona Pesariis, Solari e il museo. Questa scheda racconta invece l'orologio domestico sotto il portico e il rapporto con i lavori agricoli, non la fondazione della fabbrica o del museo. I racconti generici sulle ore del giorno non descrivono questo oggetto e questo uso."
+      }
+    },
+    {
+      "id": "archive-research-opicina-tram-funicolare",
+      "promotedRecordId": "institutional-archive-opicina-tram-funicolare",
+      "canonicalKey": "opicina-tram-carri-scudo-funicolare",
+      "rubric": "archive_traditions",
+      "reviewStatus": "promoted",
+      "readyForUi": false,
+      "promotedAt": "2026-08-31",
+      "source": {
+        "url": "https://tplfvg.it/it/servizi/tramopicina/",
+        "authority": "TPL FVG · Tram di Opicina",
+        "accessMethod": "direct_html",
+        "checkedAt": "2026-08-31"
+      },
+      "evidenceSummary": "Il gestore descrive il collegamento fra Trieste e l'altopiano carsico e il tratto ripido di circa 800 metri, dove le vetture sono spinte o trattenute da carri-scudo collegati a una funicolare.",
+      "temporalRule": { "type": "annual_rotation" },
+      "geographicScope": ["trieste", "opicina", "carso"],
+      "scopeNote": "Racconto del meccanismo di trasporto: gli 800 metri non sono la lunghezza dell'intera linea. Esclusi inaugurazione del 1902, riapertura del 2025, primati di unicità, orari, prezzi e promesse sul servizio odierno. TPL FVG è un gestore del trasporto pubblico, non un museo o un Comune.",
+      "languageReview": {
+        "approvalBasis": "user_delegated_assisted_editorial_review",
+        "reviewer": "assistant",
+        "independentHumanReview": false,
+        "referencesLocation": "institutional-archive-opicina-tram-funicolare.languageReview.fur.references",
+        "notes": "Tram, cuarde, funicolâr, altiplan, sburtâ, stratignî, ripit, veture, judâ e Cjars verificati in HTML ARLeF; consultata anche la distinzione fra carsico geografico e geologico. Altiplan dal Cjars evita l'ambiguità. Carri-scudo conservato come termine tecnico italiano citato, non traduzione inventata."
+      },
+      "duplicateReview": {
+        "status": "distinct",
+        "comparedCatalogs": ["ostermannCulturalDiscover", "institutionalRituals", "institutionalArchive", "archiveResearchWave01", "archiveResearchWave02", "archiveResearchWave03", "localMemory", "municipalityProfiles"],
+        "note": "Le memorie che citano Opicina riguardano episodi della Seconda guerra mondiale; nessuna tratta il tram o la funicolare. La verifica comprende tutti i profili comunali, oltre ai cataloghi attivi e ai candidati d'archivio. Il tema aggiunge tecnologia dei trasporti nel Triestino, distinto dagli strumenti di Maniago e Pesariis."
+      }
+    }
+  ]
+}

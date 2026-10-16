@@ -1,0 +1,1743 @@
+{
+  "schemaVersion": 1,
+  "generatedAt": "2026-07-19",
+  "scope": "Comuni della provincia di Udine con nome canonico >= M e < S, esclusa Udine",
+  "profiles": [
+    {
+      "id": "municipality-profile-magnano-in-riviera",
+      "istatCode": "030052",
+      "municipality": "Magnano in Riviera",
+      "province": "UD",
+      "title": {
+        "it": "Magnano in Riviera, il paese sul pendio",
+        "fur": "Magnan, il paîs sul declîf"
+      },
+      "summary": {
+        "it": "Magnano in Riviera si distende sul pendio dell'anfiteatro morenico del Tagliamento. Proprio questa disposizione dell'abitato sulla collina spiega l'appellativo «in Riviera», parte riconoscibile del suo nome.",
+        "fur": "Magnan si slungje sul declîf dal anfiteatri morenic dal Tiliment. Propite cheste disposizion dal abitât su la culine e spieghe l'apelatîf «in Riviera», part ricognossibile dal so non."
+      },
+      "milestones": [],
+      "source": {
+        "label": "Comune di Magnano in Riviera - Il territorio",
+        "type": "official_municipality",
+        "url": "https://www.comune.magnanoinriviera.ud.it/"
+      },
+      "languageStatus": {
+        "it": "approved",
+        "fur": "approved"
+      },
+      "editorialStatus": "reviewed",
+      "readyForUi": true,
+      "review": {
+        "itReviewedAt": "2026-07-19",
+        "method": "source_cross_check",
+        "furReviewedAt": "2026-07-19",
+        "furMethod": "linguistic_review"
+      }
+    },
+    {
+      "id": "municipality-profile-majano",
+      "istatCode": "030053",
+      "municipality": "Majano",
+      "province": "UD",
+      "title": {
+        "it": "Majano, tra radici romane e borghi medievali",
+        "fur": "Maian, tra lidrîs romanis e borcs medievâi"
+      },
+      "summary": {
+        "it": "Il nome di Majano conserva la traccia di un fondo agricolo romano, forse il Fundus Mallianus o Maianus. Le pergamene medievali registrano Villa di Majano nel 1230, dentro un territorio di borghi attestati già dall'XI e XII secolo.",
+        "fur": "Il non di Maian al conserve la olme di un fonts agricul roman, forsit il Fundus Mallianus o Maianus. Lis pergamenis medievâls a regjistrin Villa di Majano tal 1230, dentri di un teritori di borcs atestâts za dai secui XI e XII."
+      },
+      "milestones": [
+        {
+          "id": "majano-first-mention",
+          "year": 1230,
+          "label": {
+            "it": "Prima attestazione nota di Villa di Majano",
+            "fur": "Prime atestazion cognossude di Villa di Majano"
+          }
+        }
+      ],
+      "source": {
+        "label": "Comune di Majano - La storia",
+        "type": "official_municipality",
+        "url": "https://www.comune.majano.ud.it/it/cultura-99764/la-storia-106896"
+      },
+      "languageStatus": {
+        "it": "approved",
+        "fur": "approved"
+      },
+      "editorialStatus": "reviewed",
+      "readyForUi": true,
+      "review": {
+        "itReviewedAt": "2026-07-19",
+        "method": "source_cross_check",
+        "furReviewedAt": "2026-07-19",
+        "furMethod": "linguistic_review"
+      }
+    },
+    {
+      "id": "municipality-profile-malborghetto-valbruna",
+      "istatCode": "030054",
+      "municipality": "Malborghetto Valbruna",
+      "province": "UD",
+      "title": {
+        "it": "Malborghetto Valbruna, memoria di frontiera",
+        "fur": "Malborghet e Valbrune, memorie di frontiere"
+      },
+      "summary": {
+        "it": "Nel maggio 1809 il forte di Malborghetto oppose per tre giorni la guarnigione del capitano Friedrich Hensel alle armate napoleoniche. Il seicentesco Palazzo Veneziano custodisce oggi la memoria etnografica della Val Canale.",
+        "fur": "Tal Mai dal 1809, par trê dîs la guarnigjon dal cjapitani Friedrich Hensel e difindè il fuart di Malborghet cuintri lis armadis napoleonichis. Il Palaç Veneziam dal secul XVII al ten vuê la memorie etnografiche de Val Cjanâl."
+      },
+      "milestones": [
+        {
+          "id": "malborghetto-battle",
+          "year": 1809,
+          "label": {
+            "it": "Battaglia del forte di Malborghetto",
+            "fur": "Bataie dal fuart di Malborghet"
+          }
+        }
+      ],
+      "source": {
+        "label": "Wikipedia italiana - Malborghetto-Valbruna",
+        "type": "wikipedia_reference",
+        "url": "https://it.wikipedia.org/wiki/Malborghetto-Valbruna"
+      },
+      "languageStatus": {
+        "it": "approved",
+        "fur": "approved"
+      },
+      "editorialStatus": "reviewed",
+      "readyForUi": true,
+      "review": {
+        "itReviewedAt": "2026-07-19",
+        "method": "source_cross_check",
+        "furReviewedAt": "2026-07-19",
+        "furMethod": "linguistic_review"
+      }
+    },
+    {
+      "id": "municipality-profile-manzano",
+      "istatCode": "030055",
+      "municipality": "Manzano",
+      "province": "UD",
+      "title": {
+        "it": "Manzano, il cuore della sedia friulana",
+        "fur": "Manzan, il cûr de Cjadree furlane"
+      },
+      "summary": {
+        "it": "A Manzano la manifattura della sedia divenne, dalla fine dell'Ottocento, un sapere artigiano condiviso. Le collezioni comunali di sedie e attrezzi raccontano il nucleo storico del «Triangolo della sedia».",
+        "fur": "A Manzan, de fin dal Votcent, la manifature des cjadreis e deventà un savê artigjan condividût. Lis coleziôns comunâls di cjadreis e imprescj a contin il nucli storic dal «Triangul de Cjadree»."
+      },
+      "milestones": [],
+      "source": {
+        "label": "ERPAC FVG - La collezione di sedie di Manzano",
+        "type": "regional_institution",
+        "url": "https://patrimonioculturale.regione.fvg.it/percorso-tematico/?s_id=822799"
+      },
+      "languageStatus": {
+        "it": "approved",
+        "fur": "approved"
+      },
+      "editorialStatus": "reviewed",
+      "readyForUi": true,
+      "review": {
+        "itReviewedAt": "2026-07-19",
+        "method": "source_cross_check",
+        "furReviewedAt": "2026-07-19",
+        "furMethod": "linguistic_review"
+      }
+    },
+    {
+      "id": "municipality-profile-marano-lagunare",
+      "istatCode": "030056",
+      "municipality": "Marano Lagunare",
+      "province": "UD",
+      "title": {
+        "it": "Marano Lagunare, borgo di pesca e di calli",
+        "fur": "Maran, borc di pescje e di cjalis"
+      },
+      "summary": {
+        "it": "Marano Lagunare vive nel rapporto con la laguna, i casoni di canna e la tradizione dei pescatori. Calli, campielli e la Torre Millenaria conservano l'impronta della lunga presenza veneziana.",
+        "fur": "Maran al vîf tal rapuart cu la lagune, i casons di cjane e la tradizion dai pescjadôrs. Cjalis, campiei e la Tor Milenarie a conservin la olme de lungje presince veneziane."
+      },
+      "milestones": [
+        {
+          "id": "marano-venetian-rule",
+          "century": "XV-XVIII",
+          "label": {
+            "it": "La Repubblica di Venezia governa Marano",
+            "fur": "La Republiche di Vignesie e governe Maran"
+          }
+        }
+      ],
+      "source": {
+        "label": "PromoTurismoFVG - Laguna di Marano",
+        "type": "regional_institution",
+        "url": "https://www.turismofvg.it/it/outdoor/laguna-di-marano?LangSetCMS=it"
+      },
+      "languageStatus": {
+        "it": "approved",
+        "fur": "approved"
+      },
+      "editorialStatus": "reviewed",
+      "readyForUi": true,
+      "review": {
+        "itReviewedAt": "2026-07-19",
+        "method": "source_cross_check",
+        "furReviewedAt": "2026-07-19",
+        "furMethod": "linguistic_review"
+      }
+    },
+    {
+      "id": "municipality-profile-martignacco",
+      "istatCode": "030057",
+      "municipality": "Martignacco",
+      "province": "UD",
+      "title": {
+        "it": "Martignacco, il paese della corte reale",
+        "fur": "Martignà, il paîs de cort reâl"
+      },
+      "summary": {
+        "it": "Durante la Prima guerra mondiale Martignacco ospitò la residenza di Vittorio Emanuele III. Lo Squadrone Carabinieri Guardie del Re vi rimase dal giugno 1915 all'ottobre 1917, lasciando una memoria insolita nel paese alle porte di Udine.",
+        "fur": "Dilunc de Prime Vuere mondiâl, Martignà al ospità la residence di Vittorio Emanuele III. Il Squaron Carabiniers Vuardiis dal Re al restà a Martignà dal Jugn dal 1915 al Otubar dal 1917, lassant une memorie insolite tal paîs dongje Udin."
+      },
+      "milestones": [
+        {
+          "id": "martignacco-royal-residence",
+          "year": 1915,
+          "label": {
+            "it": "Inizia la permanenza della corte militare del re",
+            "fur": "E tache la permanence de cort militâr dal re"
+          }
+        }
+      ],
+      "source": {
+        "label": "Comune di Martignacco - Il paese",
+        "type": "official_municipality",
+        "url": "https://www.comune.martignacco.ud.it/it/novita-215963/avvisi-215966/il-paese-36756"
+      },
+      "languageStatus": {
+        "it": "approved",
+        "fur": "approved"
+      },
+      "editorialStatus": "reviewed",
+      "readyForUi": true,
+      "review": {
+        "itReviewedAt": "2026-07-19",
+        "method": "source_cross_check",
+        "furReviewedAt": "2026-07-19",
+        "furMethod": "linguistic_review"
+      }
+    },
+    {
+      "id": "municipality-profile-mereto-di-tomba",
+      "istatCode": "030058",
+      "municipality": "Mereto di Tomba",
+      "province": "UD",
+      "title": {
+        "it": "Mereto di Tomba, la terra della Tùmbare",
+        "fur": "Merêt di Tombe, la tiere de Tùmbare"
+      },
+      "summary": {
+        "it": "A sud del paese sorge la Tùmbare, uno dei più grandi tumuli protostorici del Friuli. Le indagini del 2006-2008 hanno datato la deposizione originaria attorno al 1750 a.C. e ricostruito le successive fasi di crescita del monumento.",
+        "fur": "A sud dal paîs e je la Tùmbare, un dai plui grancj tumui protostorics dal Friûl. Lis ricercjis dal 2006-2008 a àn datât la deposizion origjinâl ator dal 1750 a.C. e ricostruît lis fasis sucessivis di cressite dal monument."
+      },
+      "milestones": [],
+      "source": {
+        "label": "ERPAC FVG - Tracce nascoste di un paesaggio antico",
+        "type": "regional_institution",
+        "url": "https://patrimonioculturale.regione.fvg.it/percorso-tematico/?s_id=819761"
+      },
+      "languageStatus": {
+        "it": "approved",
+        "fur": "approved"
+      },
+      "editorialStatus": "reviewed",
+      "readyForUi": true,
+      "review": {
+        "itReviewedAt": "2026-07-19",
+        "method": "source_cross_check",
+        "furReviewedAt": "2026-07-19",
+        "furMethod": "linguistic_review"
+      }
+    },
+    {
+      "id": "municipality-profile-moggio-udinese",
+      "istatCode": "030059",
+      "municipality": "Moggio Udinese",
+      "province": "UD",
+      "title": {
+        "it": "Moggio Udinese, il paese dell'abbazia",
+        "fur": "Mueç, il paîs de badie"
+      },
+      "summary": {
+        "it": "Moggio Udinese si è sviluppata attorno alla storica abbazia benedettina sul colle di Santo Spirito. Consacrata nel 1119 e legata a San Gallo, l'abbazia resta il fulcro visivo e religioso del paese.",
+        "fur": "Mueç si è svilupât ator de badie benedetine storiche sul cuel di Sant Spirt. Consacrade tal 1119 e leade a San Gal, la badie e reste il fulcri visîf e religjôs dal paîs."
+      },
+      "milestones": [
+        {
+          "id": "moggio-abbey-consecration",
+          "year": 1119,
+          "label": {
+            "it": "Consacrazione dell'abbazia benedettina",
+            "fur": "Consacrazion de badie benedetine"
+          }
+        }
+      ],
+      "source": {
+        "label": "Comune di Moggio Udinese - Il paese",
+        "type": "official_municipality",
+        "url": "https://www.comune.moggioudinese.ud.it/it/vivere-il-comune-28700/luoghi-28701/il-paese-100295"
+      },
+      "languageStatus": {
+        "it": "approved",
+        "fur": "approved"
+      },
+      "editorialStatus": "reviewed",
+      "readyForUi": true,
+      "review": {
+        "itReviewedAt": "2026-07-19",
+        "method": "source_cross_check",
+        "furReviewedAt": "2026-07-19",
+        "furMethod": "linguistic_review"
+      }
+    },
+    {
+      "id": "municipality-profile-moimacco",
+      "istatCode": "030060",
+      "municipality": "Moimacco",
+      "province": "UD",
+      "title": {
+        "it": "Moimacco, la villa dei Claricini",
+        "fur": "Muimans, la vile dai Claricini"
+      },
+      "summary": {
+        "it": "A Bottenicco la seicentesca Villa de Claricini Dornpacher univa residenza nobiliare e organizzazione agricola. Il lascito di Giuditta de Claricini ne ha fatto la sede di una fondazione dedicata a conservare e produrre cultura.",
+        "fur": "A Botenic, Vile de Claricini Dornpacher dal secul XVII e tignive dongje residence nobiliâr e organizazion agricole. Il legât di Giuditta de Claricini le à fate deventâ la sede di une fondazion dedicade a conservâ e produsi culture."
+      },
+      "milestones": [
+        {
+          "id": "moimacco-villa-chapel",
+          "year": 1697,
+          "label": {
+            "it": "Completamento della cappella gentilizia della villa",
+            "fur": "Completament de capele nobiliâr de vile"
+          }
+        },
+        {
+          "id": "moimacco-claricini-foundation",
+          "year": 1971,
+          "label": {
+            "it": "Nasce la Fondazione de Claricini Dornpacher",
+            "fur": "E nas la Fondazion de Claricini Dornpacher"
+          }
+        }
+      ],
+      "source": {
+        "label": "Fondazione de Claricini Dornpacher - Storia",
+        "type": "cultural_institution",
+        "url": "https://www.fondazionedeclaricinidornpacher.org/storia/"
+      },
+      "languageStatus": {
+        "it": "approved",
+        "fur": "approved"
+      },
+      "editorialStatus": "reviewed",
+      "readyForUi": true,
+      "review": {
+        "itReviewedAt": "2026-07-19",
+        "method": "source_cross_check",
+        "furReviewedAt": "2026-07-19",
+        "furMethod": "linguistic_review"
+      }
+    },
+    {
+      "id": "municipality-profile-montenars",
+      "istatCode": "030061",
+      "municipality": "Montenars",
+      "province": "UD",
+      "title": {
+        "it": "Montenars, il paesaggio dei roccoli",
+        "fur": "Montenârs, il paisaç dai rocoi"
+      },
+      "summary": {
+        "it": "I roccoli, architetture vegetali un tempo usate per la cattura degli uccelli migratori, hanno segnato il paesaggio di Montenars. Il loro recupero li trasforma oggi in osservatori della fauna e in segni riconoscibili della pedemontana.",
+        "fur": "I rocoi, architeturis vegetâls dopradis une volte pe cjace dai uciei migradôrs, a àn segnât il paisaç di Montenârs. Il lôr recupar ju trasforme vuê in osservatoris de faune e in segns ricognossibii de pedemontane."
+      },
+      "milestones": [],
+      "source": {
+        "label": "Ecomuseo delle Acque - Roccoli a Montenars",
+        "type": "cultural_institution",
+        "url": "https://www.ecomuseodelleacque.it/conservazione-del-paesaggio/roccoli-a-montenars/"
+      },
+      "languageStatus": {
+        "it": "approved",
+        "fur": "approved"
+      },
+      "editorialStatus": "reviewed",
+      "readyForUi": true,
+      "review": {
+        "itReviewedAt": "2026-07-19",
+        "method": "source_cross_check",
+        "furReviewedAt": "2026-07-19",
+        "furMethod": "linguistic_review"
+      }
+    },
+    {
+      "id": "municipality-profile-mortegliano",
+      "istatCode": "030062",
+      "municipality": "Mortegliano",
+      "province": "UD",
+      "title": {
+        "it": "Mortegliano, il campanile della pianura",
+        "fur": "Mortean, il cjampanili de planure"
+      },
+      "summary": {
+        "it": "Il campanile di Mortegliano raggiunge 113,20 metri ed è il più alto d'Italia. Inaugurato nel 1959, domina la pianura accanto al duomo neogotico come riferimento visibile da grande distanza.",
+        "fur": "Il cjampanili di Mortean al rive a 113,20 metris e al è il plui alt di Italie. Inaugurât tal 1959, al domine la planure dongje dal domo neogotic e al è un pont di riferiment visibil di lontan."
+      },
+      "milestones": [
+        {
+          "id": "mortegliano-bell-tower-opening",
+          "year": 1959,
+          "label": {
+            "it": "Inaugurazione del nuovo campanile",
+            "fur": "Inaugurazion dal gnûf cjampanili"
+          }
+        }
+      ],
+      "source": {
+        "label": "Comune di Mortegliano - Campanile",
+        "type": "official_municipality",
+        "url": "https://www.comune.mortegliano.ud.it/it/vivere-il-comune-92648/luoghi-92649/campanile-93551"
+      },
+      "languageStatus": {
+        "it": "approved",
+        "fur": "approved"
+      },
+      "editorialStatus": "reviewed",
+      "readyForUi": true,
+      "review": {
+        "itReviewedAt": "2026-07-19",
+        "method": "source_cross_check",
+        "furReviewedAt": "2026-07-19",
+        "furMethod": "linguistic_review"
+      }
+    },
+    {
+      "id": "municipality-profile-moruzzo",
+      "istatCode": "030063",
+      "municipality": "Moruzzo",
+      "province": "UD",
+      "title": {
+        "it": "Moruzzo, i castelli di Brazzacco",
+        "fur": "Murùs, i cjistiei di Brazzà"
+      },
+      "summary": {
+        "it": "Sui colli di Moruzzo sorgono i castelli di Brazzacco, memoria del sistema fortificato medievale. Del Castello inferiore, abbandonato nel 1630, restano una torre, la chiesetta di Sant'Andrea e alcuni ruderi.",
+        "fur": "Sui cuei di Murùs a son i cjistiei di Brazzà, memorie dal sisteme fortificât medievâl. Dal Cjistiel inferiôr, bandonât tal 1630, a restin une tor, la gleseute di Sant Andree e cualchi rudin."
+      },
+      "milestones": [],
+      "source": {
+        "label": "Comune di Moruzzo - I castelli di Brazzacco",
+        "type": "official_municipality",
+        "url": "https://servizionline.comune.moruzzo.ud.it/zf/index.php/servizi-aggiuntivi/index/index/idtesto/6"
+      },
+      "languageStatus": {
+        "it": "approved",
+        "fur": "approved"
+      },
+      "editorialStatus": "reviewed",
+      "readyForUi": true,
+      "review": {
+        "itReviewedAt": "2026-07-19",
+        "method": "source_cross_check",
+        "furReviewedAt": "2026-07-19",
+        "furMethod": "linguistic_review"
+      }
+    },
+    {
+      "id": "municipality-profile-muzzana-del-turgnano",
+      "istatCode": "030064",
+      "municipality": "Muzzana del Turgnano",
+      "province": "UD",
+      "title": {
+        "it": "Muzzana del Turgnano, custode della foresta di pianura",
+        "fur": "Muçane, vuardie dal bosc di planure"
+      },
+      "summary": {
+        "it": "Muzzana conserva lembi preziosi dei boschi planiziali che un tempo coprivano la Bassa friulana. Il Bosco Baredi e la Selva di Arvonchi mantengono vivo il paesaggio dell'antica Silva Lupanica.",
+        "fur": "A Muçane a restin tocs preziôs dai boscs di planure che une volte a cuvierzevin la Basse furlane. Il Bosc Baredi e la Selve di Arvonchi a tegnin vîf il paisaç de antighe Silva Lupanica."
+      },
+      "milestones": [],
+      "source": {
+        "label": "Regione FVG - Camminaboschi: la Selva di Arvonchi",
+        "type": "regional_institution",
+        "url": "https://www.regione.fvg.it/rafvg/export/sites/default/RAFVG/ambiente-territorio/Centro_didattico-naturalistico_di_Basovizza/FOGLIA9/allegati/Camminaboschi_IMP_p2.pdf"
+      },
+      "languageStatus": {
+        "it": "approved",
+        "fur": "approved"
+      },
+      "editorialStatus": "reviewed",
+      "readyForUi": true,
+      "review": {
+        "itReviewedAt": "2026-07-19",
+        "method": "source_cross_check",
+        "furReviewedAt": "2026-07-19",
+        "furMethod": "linguistic_review"
+      }
+    },
+    {
+      "id": "municipality-profile-nimis",
+      "istatCode": "030065",
+      "municipality": "Nimis",
+      "province": "UD",
+      "title": {
+        "it": "Nimis, la terra del Ramandolo",
+        "fur": "Nimis, la tiere dal Ramandul"
+      },
+      "summary": {
+        "it": "La frazione collinare di Ramandolo dà il nome al vino simbolo di Nimis. Questo bianco dolce fu il primo vino friulano a ottenere la denominazione DOCG, legando vigneti e identità locale.",
+        "fur": "La frazion su lis culinis di Ramandul e da il non al vin simbol di Nimis. Chest blanc dolç al fo il prin vin furlan a otignî la denominazion DOCG, leant vignâi e identitât locâl."
+      },
+      "milestones": [],
+      "source": {
+        "label": "PromoTurismoFVG - Nimis",
+        "type": "regional_institution",
+        "url": "https://www.turismofvg.it/locality/nimis?LangSetCMS=en"
+      },
+      "languageStatus": {
+        "it": "approved",
+        "fur": "approved"
+      },
+      "editorialStatus": "reviewed",
+      "readyForUi": true,
+      "review": {
+        "itReviewedAt": "2026-07-19",
+        "method": "source_cross_check",
+        "furReviewedAt": "2026-07-19",
+        "furMethod": "linguistic_review"
+      }
+    },
+    {
+      "id": "municipality-profile-osoppo",
+      "istatCode": "030066",
+      "municipality": "Osoppo",
+      "province": "UD",
+      "title": {
+        "it": "Osoppo, la rocca che resistette",
+        "fur": "Osôf, la fuartece che e resistè"
+      },
+      "summary": {
+        "it": "Nel 1848 la fortezza di Osoppo resistette per sette mesi alle truppe austriache. Quella difesa risorgimentale valse al gonfalone comunale la medaglia d'oro al valor militare.",
+        "fur": "Tal 1848 la fuartece di Osôf e resistè par siet mês aes trupis austriachis. Chê difese dal Risorgjiment i valè al gonfalon comunâl la medaie di aur al valôr militâr."
+      },
+      "milestones": [
+        {
+          "id": "osoppo-siege",
+          "year": 1848,
+          "label": {
+            "it": "Assedio e resistenza della fortezza",
+            "fur": "Assedi e resistence de fuartece"
+          }
+        }
+      ],
+      "source": {
+        "label": "Comune di Osoppo - La storia",
+        "type": "official_municipality",
+        "url": "https://www.comune.osoppo.ud.it/it/il-comune-di-osoppo-11216/la-storia-11218"
+      },
+      "languageStatus": {
+        "it": "approved",
+        "fur": "approved"
+      },
+      "editorialStatus": "reviewed",
+      "readyForUi": true,
+      "review": {
+        "itReviewedAt": "2026-07-19",
+        "method": "source_cross_check",
+        "furReviewedAt": "2026-07-19",
+        "furMethod": "linguistic_review"
+      }
+    },
+    {
+      "id": "municipality-profile-ovaro",
+      "istatCode": "030067",
+      "municipality": "Ovaro",
+      "province": "UD",
+      "title": {
+        "it": "Ovaro, memoria della miniera di Cludinico",
+        "fur": "Davâr, memorie de minere di Cludinic"
+      },
+      "summary": {
+        "it": "A Cludinico il carbone trasformò una frazione di Ovaro in un vero villaggio minerario. Il museo nell'ex magazzino conserva attrezzi, documenti e ricordi raccolti dagli ex minatori e dalle loro famiglie.",
+        "fur": "A Cludinic il cjarbon al trasformà une frazion di Davâr intun vêr paîs di minadôrs. Il museu tal ex magazin al conserve imprescj, documents e ricuarts metûts dongje dai ex minadôrs e des lôr fameis."
+      },
+      "milestones": [
+        {
+          "id": "ovaro-mine-closure",
+          "year": 1956,
+          "label": {
+            "it": "Termina lo sfruttamento del giacimento di Cludinico",
+            "fur": "Al finìs il sfrutament dal jaciment di Cludinic"
+          }
+        }
+      ],
+      "source": {
+        "label": "CarniaMusei - Museo ex miniera di carbone di Cludinico",
+        "type": "cultural_institution",
+        "url": "https://www.carniamusei.org/it/scopri-i-musei-9495/area-della-scienza-e-della-tecnica-9501/museo-ex-miniera-di-carbone-di-cludinico-9536"
+      },
+      "languageStatus": {
+        "it": "approved",
+        "fur": "approved"
+      },
+      "editorialStatus": "reviewed",
+      "readyForUi": true,
+      "review": {
+        "itReviewedAt": "2026-07-19",
+        "method": "source_cross_check",
+        "furReviewedAt": "2026-07-19",
+        "furMethod": "linguistic_review"
+      }
+    },
+    {
+      "id": "municipality-profile-pagnacco",
+      "istatCode": "030068",
+      "municipality": "Pagnacco",
+      "province": "UD",
+      "title": {
+        "it": "Pagnacco, la memoria della vita contadina",
+        "fur": "Pagnà, la memorie de vite contadine"
+      },
+      "summary": {
+        "it": "A Fontanabona il Museo di Storia Contadina occupa due edifici rurali dell'antico feudo, datati tra Seicento e Settecento. Attrezzi, telai e oggetti domestici ricostruiscono il lavoro e la vita quotidiana della campagna friulana.",
+        "fur": "A Fontanebuine il Museu de Storie Contadine al ocupe doi edificis rurâi dal antîc feut, datâts tra Sîscent e Sietcent. Imprescj, telârs e ogjets di cjase a ricostruissin il lavôr e la vite di ogni dì de campagne furlane."
+      },
+      "milestones": [],
+      "source": {
+        "label": "PromoTurismoFVG - Museo di Storia Contadina di Pagnacco",
+        "type": "regional_institution",
+        "url": "https://www.turismofvg.it/musei/museo-di-storia-contadina-di-pagnacco?LangSetCMS=it"
+      },
+      "languageStatus": {
+        "it": "approved",
+        "fur": "approved"
+      },
+      "editorialStatus": "reviewed",
+      "readyForUi": true,
+      "review": {
+        "itReviewedAt": "2026-07-19",
+        "method": "source_cross_check",
+        "furReviewedAt": "2026-07-19",
+        "furMethod": "linguistic_review"
+      }
+    },
+    {
+      "id": "municipality-profile-palazzolo-dello-stella",
+      "istatCode": "030069",
+      "municipality": "Palazzolo dello Stella",
+      "province": "UD",
+      "title": {
+        "it": "Palazzolo dello Stella, sul tracciato della Via Annia",
+        "fur": "Palaçûl, sul percors de Vie Anie"
+      },
+      "summary": {
+        "it": "Palazzolo dello Stella sorse lungo un corridoio frequentato già in età romana. Presso il fiume sono documentate le strutture del ponte della Via Annia, la strada che collegava Concordia ad Aquileia.",
+        "fur": "Palaçûl al nassè dilunc di un coridôr doprât za in ete romane. Dongje dal flum a son documentadis lis struturis dal puint de Vie Anie, la strade che e leave Concordia a Aquilee."
+      },
+      "milestones": [],
+      "source": {
+        "label": "ERPAC FVG - Ponte della Via Annia sul fiume Stella",
+        "type": "regional_institution",
+        "url": "https://patrimonioculturale.regione.fvg.it/go/?id=548490"
+      },
+      "languageStatus": {
+        "it": "approved",
+        "fur": "approved"
+      },
+      "editorialStatus": "reviewed",
+      "readyForUi": true,
+      "review": {
+        "itReviewedAt": "2026-07-19",
+        "method": "source_cross_check",
+        "furReviewedAt": "2026-07-19",
+        "furMethod": "linguistic_review"
+      }
+    },
+    {
+      "id": "municipality-profile-palmanova",
+      "istatCode": "030070",
+      "municipality": "Palmanova",
+      "province": "UD",
+      "title": {
+        "it": "Palmanova, la fortezza a nove punte",
+        "fur": "Palme, la fuartece a nûf pontis"
+      },
+      "summary": {
+        "it": "La Repubblica di Venezia fondò Palmanova il 7 ottobre 1593 come fortezza dei confini orientali. La città stellata è entrata nel 2017 nel sito UNESCO delle opere di difesa veneziane.",
+        "fur": "La Republiche di Vignesie e fondà Palme ai 7 di Otubar dal 1593 come fuartece dai confins orientâi. La citât a steile e je jentrade tal 2017 tal sît UNESCO des oparis di difese venezianis."
+      },
+      "milestones": [
+        {
+          "id": "palmanova-foundation",
+          "year": 1593,
+          "label": {
+            "it": "Posa della prima pietra della fortezza di Palma",
+            "fur": "Pose de prime piere de fuartece di Palma"
+          }
+        },
+        {
+          "id": "palmanova-unesco",
+          "year": 2017,
+          "label": {
+            "it": "Ingresso della fortezza nel Patrimonio mondiale UNESCO",
+            "fur": "La fuartece e jentre tal Patrimoni mondiâl UNESCO"
+          }
+        }
+      ],
+      "source": {
+        "label": "Città di Palmanova - Storia della fortezza",
+        "type": "official_municipality",
+        "url": "https://www.comune.palmanova.ud.it/it/territorio-2802/storia-della-fortezza-3654"
+      },
+      "languageStatus": {
+        "it": "approved",
+        "fur": "approved"
+      },
+      "editorialStatus": "reviewed",
+      "readyForUi": true,
+      "review": {
+        "itReviewedAt": "2026-07-19",
+        "method": "source_cross_check",
+        "furReviewedAt": "2026-07-19",
+        "furMethod": "linguistic_review"
+      }
+    },
+    {
+      "id": "municipality-profile-paluzza",
+      "istatCode": "030071",
+      "municipality": "Paluzza",
+      "province": "UD",
+      "title": {
+        "it": "Paluzza, la torre sulla via dei passi",
+        "fur": "Paluce, la tor su la vie dai pas"
+      },
+      "summary": {
+        "it": "La Torre Moscarda è ciò che resta di un sistema difensivo e doganale posto sulle due rive del torrente Bût. Sorvegliava la strada verso il passo di Monte Croce Carnico, valico frequentato fin dall'antichità.",
+        "fur": "La Tor Moscarda e je ce che al reste di un sisteme difensîf e doganâl metût su lis dôs rivis dal torint Bût. E controlave la strade viers il pas di Mont Crôs Cjargnel, pass doprât fin de antichitât."
+      },
+      "milestones": [],
+      "source": {
+        "label": "Comune di Paluzza - Torre Moscarda",
+        "type": "official_municipality",
+        "url": "https://www.comune.paluzza.ud.it/it/vivere-il-comune-207823/luoghi-207824/torre-moscarda-237809"
+      },
+      "languageStatus": {
+        "it": "approved",
+        "fur": "approved"
+      },
+      "editorialStatus": "reviewed",
+      "readyForUi": true,
+      "review": {
+        "itReviewedAt": "2026-07-19",
+        "method": "source_cross_check",
+        "furReviewedAt": "2026-07-19",
+        "furMethod": "linguistic_review"
+      }
+    },
+    {
+      "id": "municipality-profile-pasian-di-prato",
+      "istatCode": "030072",
+      "municipality": "Pasian di Prato",
+      "province": "UD",
+      "title": {
+        "it": "Pasian di Prato, la comunità della Vicinia",
+        "fur": "Pasian di Prât, la comunitât de Vicinie"
+      },
+      "summary": {
+        "it": "Dalla metà del Cinquecento Pasian di Prato si organizzò nella Vicinia, assemblea rurale dei capifamiglia. Il decano eletto ogni due anni ha lasciato una traccia anche nel cognome Degano, ancora molto diffuso nel Comune.",
+        "fur": "De metât dal Cinccent, Pasian di Prât si organizà te Vicinie, assemblee rurâl dai cjâfs famee. Il decan elet ogni doi agns al à lassât une olme ancje tal cognon Degano, ancjemò une vore difondût tal Comun."
+      },
+      "milestones": [
+        {
+          "id": "pasian-vicinia",
+          "century": "XVI",
+          "label": {
+            "it": "Si consolida la Vicinia dei capifamiglia",
+            "fur": "Si consolide la Vicinie dai cjâfs famee"
+          }
+        }
+      ],
+      "source": {
+        "label": "Wikipedia italiana - Pasian di Prato",
+        "type": "wikipedia_reference",
+        "url": "https://it.wikipedia.org/wiki/Pasian_di_Prato"
+      },
+      "languageStatus": {
+        "it": "approved",
+        "fur": "approved"
+      },
+      "editorialStatus": "reviewed",
+      "readyForUi": true,
+      "review": {
+        "itReviewedAt": "2026-07-19",
+        "method": "source_cross_check",
+        "furReviewedAt": "2026-07-19",
+        "furMethod": "linguistic_review"
+      }
+    },
+    {
+      "id": "municipality-profile-paularo",
+      "istatCode": "030073",
+      "municipality": "Paularo",
+      "province": "UD",
+      "title": {
+        "it": "Paularo, i mestieri della Val d'Incarojo",
+        "fur": "Paulâr, i mistîrs de Val d'Incjaroi"
+      },
+      "summary": {
+        "it": "L'Ecomuseo I Mistîrs raccoglie la memoria del lavoro nella Val d'Incarojo. Boscaioli, mugnai, malgari, fabbri e artigiani raccontano una comunità che riconosce nei mestieri una parte viva della propria identità.",
+        "fur": "L'Ecomuseu I Mistîrs al met dongje la memorie dal lavôr te Val d'Incjaroi. Boscadôrs, mugnârs, malghês, favris e artesans a contin une comunitât che e ricognòs tai mistîrs une part vive de sô identitât."
+      },
+      "milestones": [],
+      "source": {
+        "label": "Ecomuseo I Mistîrs - L'ecomuseo",
+        "type": "cultural_institution",
+        "url": "https://www.ecomuseomistirs.it/ecomuseo/"
+      },
+      "languageStatus": {
+        "it": "approved",
+        "fur": "approved"
+      },
+      "editorialStatus": "reviewed",
+      "readyForUi": true,
+      "review": {
+        "itReviewedAt": "2026-07-19",
+        "method": "source_cross_check",
+        "furReviewedAt": "2026-07-19",
+        "furMethod": "linguistic_review"
+      }
+    },
+    {
+      "id": "municipality-profile-pavia-di-udine",
+      "istatCode": "030074",
+      "municipality": "Pavia di Udine",
+      "province": "UD",
+      "title": {
+        "it": "Pavia di Udine, un comune formato da molti paesi",
+        "fur": "Pavie, un comun formât di tancj paîs"
+      },
+      "summary": {
+        "it": "Pavia di Udine è attestata nel 1135 come possedimento dell'abbazia di Rosazzo. Dal 1807 è documentata come Comune; nel Regno Lombardo-Veneto comprendeva Pavia, Lauzacco, Percoto, Persereano e Risano, cui nel 1818 si aggiunsero Cortello e Lumignacco.",
+        "fur": "Pavie e je atestade tal 1135 come possediment de badie di Rosacis. Dal 1807 e je documentade come Comun; tal Ream Lombart-Venit e comprendeve Pavia, Lauzacco, Percoto, Persereano e Risano, e tal 1818 si zontarin Cortello e Lumignacco."
+      },
+      "milestones": [
+        {
+          "id": "pavia-first-mention",
+          "year": 1135,
+          "label": {
+            "it": "Prima attestazione nota di Pavia",
+            "fur": "Prime atestazion cognossude di Pavie"
+          }
+        }
+      ],
+      "source": {
+        "label": "SIUSA - Comune di Pavia di Udine",
+        "type": "national_institution",
+        "url": "https://siusa-archivi.cultura.gov.it/cgi-bin/siusa/pagina.pl?Chiave=9228&TipoPag=prodente"
+      },
+      "languageStatus": {
+        "it": "approved",
+        "fur": "approved"
+      },
+      "editorialStatus": "reviewed",
+      "readyForUi": true,
+      "review": {
+        "itReviewedAt": "2026-07-19",
+        "method": "source_cross_check",
+        "furReviewedAt": "2026-07-19",
+        "furMethod": "linguistic_review"
+      }
+    },
+    {
+      "id": "municipality-profile-pocenia",
+      "istatCode": "030075",
+      "municipality": "Pocenia",
+      "province": "UD",
+      "title": {
+        "it": "Pocenia, il borgo nato attorno a Villa Caratti",
+        "fur": "Pucinie, il borc nassût ator di Vile Caratti"
+      },
+      "summary": {
+        "it": "A Paradiso, Villa Caratti è il fulcro attorno al quale il borgo si sviluppò dal XVII secolo. Il complesso comprende la villa, la barchessa, gli edifici rurali, la chiesa e una casetta di caccia immersa nel parco.",
+        "fur": "A Paradiso, Vile Caratti e je il fulcri ator dal cual il borc si svilupà dal secul XVII. Il complès al cjape dentri la vile, la barcjesse, i edificis rurâi, la glesie e une cjaseute di cjace tal mieç dal parc."
+      },
+      "milestones": [],
+      "source": {
+        "label": "ERPAC FVG - Villa Caratti, Fraccaroli",
+        "type": "regional_institution",
+        "url": "https://patrimonioculturale.regione.fvg.it/architettura/?s_id=441486"
+      },
+      "languageStatus": {
+        "it": "approved",
+        "fur": "approved"
+      },
+      "editorialStatus": "reviewed",
+      "readyForUi": true,
+      "review": {
+        "itReviewedAt": "2026-07-19",
+        "method": "source_cross_check",
+        "furReviewedAt": "2026-07-19",
+        "furMethod": "linguistic_review"
+      }
+    },
+    {
+      "id": "municipality-profile-pontebba",
+      "istatCode": "030076",
+      "municipality": "Pontebba",
+      "province": "UD",
+      "title": {
+        "it": "Pontebba, il paese diviso dal confine",
+        "fur": "Pontêbe, il paîs dividût dal confin"
+      },
+      "summary": {
+        "it": "Il torrente Pontebbana separò per secoli Pontebba da Pontafel, mettendo faccia a faccia mondi veneziani, italiani e asburgici. Fino al 1919 il ponte nel centro abitato segnava materialmente il confine tra Italia e Austria.",
+        "fur": "Il torint Pontebane al separà par secui Pontêbe di Pontafel, metint mus par mus monts venezian, talian e asburgjic. Fint al 1919 il puint tal centri abitât al segnave in maniere concrete il confin tra Italie e Austrie."
+      },
+      "milestones": [
+        {
+          "id": "pontebba-border-end",
+          "year": 1919,
+          "label": {
+            "it": "Il torrente cessa di essere confine di Stato",
+            "fur": "Il torint al cesse di jessi confin di Stât"
+          }
+        }
+      ],
+      "source": {
+        "label": "Comune di Pontebba - Il ponte, vecchio confine fra Italia e Austria",
+        "type": "official_municipality",
+        "url": "https://www.comune.pontebba.ud.it/it/vivere-il-comune-53622/luoghi-53623/il-ponte-vecchio-confine-fra-italia-ed-austria-106849"
+      },
+      "languageStatus": {
+        "it": "approved",
+        "fur": "approved"
+      },
+      "editorialStatus": "reviewed",
+      "readyForUi": true,
+      "review": {
+        "itReviewedAt": "2026-07-19",
+        "method": "source_cross_check",
+        "furReviewedAt": "2026-07-19",
+        "furMethod": "linguistic_review"
+      }
+    },
+    {
+      "id": "municipality-profile-porpetto",
+      "istatCode": "030077",
+      "municipality": "Porpetto",
+      "province": "UD",
+      "title": {
+        "it": "Porpetto, memoria di un castello scomparso",
+        "fur": "Porpêt, memorie di un cjistiel sparît"
+      },
+      "summary": {
+        "it": "A Porpetto sorgeva un castello medievale oggi scomparso, ma documentato nelle carte d'archivio. Nel 1186 Volrico compare in un atto imperiale con il nome «de Porpeto», segno del legame tra il luogo e la sua famiglia feudale.",
+        "fur": "A Porpêt al jere un cjistiel medievâl cumò sparît, ma documentât tes cjartis di archivi. Tal 1186 Volrico al comparìs intun at imperiâl cul non «de Porpeto», segn dal leam tra il lûc e la sô famee feudâl."
+      },
+      "milestones": [
+        {
+          "id": "porpetto-feudal-record",
+          "year": 1186,
+          "label": {
+            "it": "Volrico è documentato con il nome de Porpeto",
+            "fur": "Volrico al è documentât cul non de Porpeto"
+          }
+        }
+      ],
+      "source": {
+        "label": "Wikipedia italiana - Porpetto",
+        "type": "wikipedia_reference",
+        "url": "https://it.wikipedia.org/wiki/Porpetto"
+      },
+      "languageStatus": {
+        "it": "approved",
+        "fur": "approved"
+      },
+      "editorialStatus": "reviewed",
+      "readyForUi": true,
+      "review": {
+        "itReviewedAt": "2026-07-19",
+        "method": "source_cross_check",
+        "furReviewedAt": "2026-07-19",
+        "furMethod": "linguistic_review"
+      }
+    },
+    {
+      "id": "municipality-profile-povoletto",
+      "istatCode": "030078",
+      "municipality": "Povoletto",
+      "province": "UD",
+      "title": {
+        "it": "Povoletto, il territorio raccontato dalla Motta",
+        "fur": "Paulêt, il teritori contât de Mote"
+      },
+      "summary": {
+        "it": "L'Antiquarium della Motta ricostruisce la storia antica di Povoletto attraverso reperti, fossili e modelli. Gli scavi del castello della Motta hanno restituito una rara immagine della vita economica e sociale del basso Medioevo.",
+        "fur": "L'Antiquarium de Mote al ricostruìs la storie antighe di Paulêt midiant reperts, fossii e modei. I scavaments dal cjistiel de Mote a àn tornât une imagjin rare de vite economiche e sociâl dal bas Medioevo."
+      },
+      "milestones": [],
+      "source": {
+        "label": "Antiquarium della Motta e Mostra del Fossile",
+        "type": "cultural_institution",
+        "url": "https://www.antiquariumpovoletto.it/"
+      },
+      "languageStatus": {
+        "it": "approved",
+        "fur": "approved"
+      },
+      "editorialStatus": "reviewed",
+      "readyForUi": true,
+      "review": {
+        "itReviewedAt": "2026-07-19",
+        "method": "source_cross_check",
+        "furReviewedAt": "2026-07-19",
+        "furMethod": "linguistic_review"
+      }
+    },
+    {
+      "id": "municipality-profile-pozzuolo-del-friuli",
+      "istatCode": "030079",
+      "municipality": "Pozzuolo del Friuli",
+      "province": "UD",
+      "title": {
+        "it": "Pozzuolo del Friuli, memoria di cavalleria",
+        "fur": "Puçui, memorie di cavalarie"
+      },
+      "summary": {
+        "it": "Tra il 29 e il 30 ottobre 1917 Pozzuolo fu teatro di una dura battaglia durante la ritirata di Caporetto. Fanti e cavalleggeri rallentarono l'avanzata austro-tedesca, legando per sempre il nome del paese alla memoria della cavalleria.",
+        "fur": "Tra i 29 e i 30 di Otubar dal 1917, Puçui al fo teatri di une bataie dure intant de ritirade di Cjaurêt. Soldâts de fantarie e cavalîrs a ralentarin la avanzade austro-todescje, leant par simpri il non dal paîs ae memorie de cavalarie."
+      },
+      "milestones": [
+        {
+          "id": "pozzuolo-battle",
+          "year": 1917,
+          "label": {
+            "it": "Battaglia di Pozzuolo del Friuli",
+            "fur": "Bataie di Puçui"
+          }
+        }
+      ],
+      "source": {
+        "label": "Esercito Italiano - 98° anniversario dei fatti d'arme",
+        "type": "national_institution",
+        "url": "https://www.esercito.difesa.it/comunicazione/98%C2%B0-anniversario-dei-fatti-d-arme/86204.html"
+      },
+      "languageStatus": {
+        "it": "approved",
+        "fur": "approved"
+      },
+      "editorialStatus": "reviewed",
+      "readyForUi": true,
+      "review": {
+        "itReviewedAt": "2026-07-19",
+        "method": "source_cross_check",
+        "furReviewedAt": "2026-07-19",
+        "furMethod": "linguistic_review"
+      }
+    },
+    {
+      "id": "municipality-profile-pradamano",
+      "istatCode": "030080",
+      "municipality": "Pradamano",
+      "province": "UD",
+      "title": {
+        "it": "Pradamano, ville tra campagna e neoclassico",
+        "fur": "Pradaman, vilis tra campagne e neoclassic"
+      },
+      "summary": {
+        "it": "Le ville di Pradamano raccontano il rapporto fra famiglie nobili e campagna friulana. Villa Giacomelli, progettata da Andrea Scala nel 1852, ne è l'esempio neoclassico più riconoscibile.",
+        "fur": "Lis vilis di Pradaman a contin il rapuart tra fameis nobii e campagne furlane. Vile Giacomelli, progjetade di Andrea Scala tal 1852, e je l'esempli neoclassic plui ricognossibil."
+      },
+      "milestones": [
+        {
+          "id": "pradamano-villa-giacomelli",
+          "year": 1852,
+          "label": {
+            "it": "Realizzazione di Villa Giacomelli",
+            "fur": "Realizazion di Vile Giacomelli"
+          }
+        }
+      ],
+      "source": {
+        "label": "ERPAC FVG - Villa Giacomelli",
+        "type": "regional_institution",
+        "url": "https://patrimonioculturale.regione.fvg.it/architettura/?s_id=441666"
+      },
+      "languageStatus": {
+        "it": "approved",
+        "fur": "approved"
+      },
+      "editorialStatus": "reviewed",
+      "readyForUi": true,
+      "review": {
+        "itReviewedAt": "2026-07-19",
+        "method": "source_cross_check",
+        "furReviewedAt": "2026-07-19",
+        "furMethod": "linguistic_review"
+      }
+    },
+    {
+      "id": "municipality-profile-prato-carnico",
+      "istatCode": "030081",
+      "municipality": "Prato Carnico",
+      "province": "UD",
+      "title": {
+        "it": "Prato Carnico, la Valle del Tempo",
+        "fur": "Prât di Cjargne, la Val dal Timp"
+      },
+      "summary": {
+        "it": "A Pesariis la tradizione degli orologi da torre ha dato alla Val Pesarina il nome di Valle del Tempo. Il museo e gli orologi monumentali del borgo raccontano l'ingegno da cui nacque la storia internazionale dei Solari.",
+        "fur": "A Pesariis la tradizion dai orlois di tor e à dât ae Val Pesarine il non di Val dal Timp. Il museu e i orlois monumentâi dal borc a contin l'ingjen dal cual e nassè la storie internazionâl dai Solari."
+      },
+      "milestones": [],
+      "source": {
+        "label": "Comune di Prato Carnico - Museo dell'Orologeria di Pesariis",
+        "type": "official_municipality",
+        "url": "https://www.comune.prato-carnico.ud.it/it/home-1827/museo-dellorologeria-di-pesariis-1834"
+      },
+      "languageStatus": {
+        "it": "approved",
+        "fur": "approved"
+      },
+      "editorialStatus": "reviewed",
+      "readyForUi": true,
+      "review": {
+        "itReviewedAt": "2026-07-19",
+        "method": "source_cross_check",
+        "furReviewedAt": "2026-07-19",
+        "furMethod": "linguistic_review"
+      }
+    },
+    {
+      "id": "municipality-profile-precenicco",
+      "istatCode": "030082",
+      "municipality": "Precenicco",
+      "province": "UD",
+      "title": {
+        "it": "Precenicco, una storia sul fiume Stella",
+        "fur": "Prissinins, une storie sul flum Stele"
+      },
+      "summary": {
+        "it": "All'inizio del Duecento Precenicco fu donata dal conte Mainardo II all'Ordine Teutonico. Dopo circa quattro secoli ai cavalieri succedettero i gesuiti, lasciando al paese una vicenda diversa da quella di molti centri friulani.",
+        "fur": "Tal inizi dal Duscent Prissinins al fo donât dal cont Mainardo II al Ordin Teutonic. Dopo cirche cuatri secui, ai cavalîrs a sucederin i gesuits, lassant al paîs une vicende diferente di chê di tancj centris furlans."
+      },
+      "milestones": [
+        {
+          "id": "precenicco-teutonic-order",
+          "century": "XIII",
+          "label": {
+            "it": "Il territorio passa all'Ordine Teutonico",
+            "fur": "Il teritori al passe al Ordin Teutonic"
+          }
+        }
+      ],
+      "source": {
+        "label": "Comune di Precenicco - I conti di Gorizia e i cavalieri teutonici",
+        "type": "official_municipality",
+        "url": "https://www.comune.precenicco.ud.it/it/novita-176742/notizie-176743/precenicco-i-conti-di-gorizia-e-i-cavalieri-teutonici-130408"
+      },
+      "languageStatus": {
+        "it": "approved",
+        "fur": "approved"
+      },
+      "editorialStatus": "reviewed",
+      "readyForUi": true,
+      "review": {
+        "itReviewedAt": "2026-07-19",
+        "method": "source_cross_check",
+        "furReviewedAt": "2026-07-19",
+        "furMethod": "linguistic_review"
+      }
+    },
+    {
+      "id": "municipality-profile-premariacco",
+      "istatCode": "030083",
+      "municipality": "Premariacco",
+      "province": "UD",
+      "title": {
+        "it": "Premariacco, la terra di Fiore dei Liberi",
+        "fur": "Premariâs, la tiere di Fiore dei Liberi"
+      },
+      "summary": {
+        "it": "Fiore dei Liberi nacque tra il 1340 e il 1350 a Premariacco o, più probabilmente, a Cividale, da una famiglia originaria di Premariacco. Alla corte estense compose nel 1409 il Flos duellatorum, il primo trattato italiano conosciuto sull'arte del combattimento.",
+        "fur": "Fiore dei Liberi al nassè tra il 1340 e il 1350 a Premariâs o, plui probabilmentri, a Cividât, intune famee origjinarie di Premariâs. Te cort estense al componè tal 1409 il Flos duellatorum, il prin tratât talian cognossût su la art dal combatiment."
+      },
+      "milestones": [],
+      "source": {
+        "label": "Treccani - Fiore de' Liberi",
+        "type": "national_institution",
+        "url": "https://www.treccani.it/enciclopedia/fiore-de-liberi_%28Dizionario-Biografico%29/"
+      },
+      "languageStatus": {
+        "it": "approved",
+        "fur": "approved"
+      },
+      "editorialStatus": "reviewed",
+      "readyForUi": true,
+      "review": {
+        "itReviewedAt": "2026-07-19",
+        "method": "source_cross_check",
+        "furReviewedAt": "2026-07-19",
+        "furMethod": "linguistic_review"
+      }
+    },
+    {
+      "id": "municipality-profile-preone",
+      "istatCode": "030084",
+      "municipality": "Preone",
+      "province": "UD",
+      "title": {
+        "it": "Preone, il paese degli pterosauri",
+        "fur": "Preon, il paîs dai pterosauris"
+      },
+      "summary": {
+        "it": "Nella valle di Preone sono emersi i resti del Preondactylus buffarinii, uno dei più antichi rettili volanti conosciuti. L'esposizione «Preone 200 milioni di anni» racconta questo geosito triassico e gli altri fossili che lo hanno reso celebre tra i paleontologi.",
+        "fur": "Te val di Preon a son vignûts fûr i rescj dal Preondactylus buffarinii, un dai plui antîcs retii svoladôrs cognossûts. La mostre «Preone 200 milioni di anni» e conte chest geosît triassic e chei altris fossii che lu àn fat deventâ cognossût tra i paleontolics."
+      },
+      "milestones": [],
+      "source": {
+        "label": "Geoparco Alpi Carniche - Preone 200 milioni di anni",
+        "type": "cultural_institution",
+        "url": "https://www.geoparcoalpicarniche.org/it/centri_visite/esposizione-naturalistica-preone-200-milioni-di-anni-preone/"
+      },
+      "languageStatus": {
+        "it": "approved",
+        "fur": "approved"
+      },
+      "editorialStatus": "reviewed",
+      "readyForUi": true,
+      "review": {
+        "itReviewedAt": "2026-07-19",
+        "method": "source_cross_check",
+        "furReviewedAt": "2026-07-19",
+        "furMethod": "linguistic_review"
+      }
+    },
+    {
+      "id": "municipality-profile-prepotto",
+      "istatCode": "030085",
+      "municipality": "Prepotto",
+      "province": "UD",
+      "title": {
+        "it": "Prepotto, la terra dello Schioppettino",
+        "fur": "Prepot, la tiere dal Schioppettino"
+      },
+      "summary": {
+        "it": "Lo Schioppettino è un vitigno autoctono nato nella valle dello Judrio e profondamente legato a Prepotto. Salvato da pochi ceppi locali negli anni Settanta, fu inserito nel 1977 fra i vitigni autorizzati dei Colli Orientali.",
+        "fur": "Il Schioppettino al è une varietât autoctone nassude te val dal Judri e leade in profonditât a Prepot. Salvât di pôcs çocs locâi tai agns Setante, tal 1977 al fo metût jenfri lis varietâts autorizadis dai Cuei Orientâi."
+      },
+      "milestones": [
+        {
+          "id": "prepotto-schioppettino-authorized",
+          "year": 1977,
+          "label": {
+            "it": "Lo Schioppettino entra tra i vitigni autorizzati",
+            "fur": "Il Schioppettino al jentre jenfri lis varietâts autorizadis"
+          }
+        }
+      ],
+      "source": {
+        "label": "PromoTurismoFVG - Terra dello Schioppettino",
+        "type": "regional_institution",
+        "url": "https://www.turismofvg.it/it/gal/natura/terra-dello-schioppettino"
+      },
+      "languageStatus": {
+        "it": "approved",
+        "fur": "approved"
+      },
+      "editorialStatus": "reviewed",
+      "readyForUi": true,
+      "review": {
+        "itReviewedAt": "2026-07-19",
+        "method": "source_cross_check",
+        "furReviewedAt": "2026-07-19",
+        "furMethod": "linguistic_review"
+      }
+    },
+    {
+      "id": "municipality-profile-pulfero",
+      "istatCode": "030086",
+      "municipality": "Pulfero",
+      "province": "UD",
+      "title": {
+        "it": "Pulfero, la chiesa dentro la grotta",
+        "fur": "Pulfar, la glesie dentri de grote"
+      },
+      "summary": {
+        "it": "La grotta di San Giovanni d'Antro offrì riparo fin dall'antichità e divenne luogo di culto almeno dall'VIII secolo. Dietro l'ingresso fortificato custodisce una cappella, sculture cinquecentesche e un altare ligneo di scuola slovena.",
+        "fur": "La grote di Sant Zuan d'Antro e ufrì ripâr fin de antichitât e e deventà lûc di cult almancul dal secul VIII. Daûr dal jentrade fortificade e ten une capele, sculturis dal Cinccent e un altâr di len di scuele slovene."
+      },
+      "milestones": [],
+      "source": {
+        "label": "PromoTurismoFVG - Grotta di San Giovanni d'Antro",
+        "type": "regional_institution",
+        "url": "https://www.turismofvg.it/it/outdoor/grotta-di-san-giovanni-d-antro?LangSetCMS=it"
+      },
+      "languageStatus": {
+        "it": "approved",
+        "fur": "approved"
+      },
+      "editorialStatus": "reviewed",
+      "readyForUi": true,
+      "review": {
+        "itReviewedAt": "2026-07-19",
+        "method": "source_cross_check",
+        "furReviewedAt": "2026-07-19",
+        "furMethod": "linguistic_review"
+      }
+    },
+    {
+      "id": "municipality-profile-ragogna",
+      "istatCode": "030087",
+      "municipality": "Ragogna",
+      "province": "UD",
+      "title": {
+        "it": "Ragogna, castello e trincee sul Tagliamento",
+        "fur": "Ruvigne, cjistiel e trinceis sul Tiliment"
+      },
+      "summary": {
+        "it": "Il castello di Ragogna domina il Tagliamento da uno sperone roccioso. Sul monte, sentieri e fortificazioni della Prima guerra mondiale compongono un paesaggio della memoria raccontato anche dal museo civico.",
+        "fur": "Il cjistiel di Ruvigne al domine il Tiliment di un speron di cret. Sul mont, troi e fortificazions de Prime Vuere mondiâl a componin un paisaç de memorie contât ancje dal museu civic."
+      },
+      "milestones": [],
+      "source": {
+        "label": "PromoTurismoFVG - Ragogna",
+        "type": "regional_institution",
+        "url": "https://www.turismofvg.it/ort/ragogna"
+      },
+      "languageStatus": {
+        "it": "approved",
+        "fur": "approved"
+      },
+      "editorialStatus": "reviewed",
+      "readyForUi": true,
+      "review": {
+        "itReviewedAt": "2026-07-19",
+        "method": "source_cross_check",
+        "furReviewedAt": "2026-07-19",
+        "furMethod": "linguistic_review"
+      }
+    },
+    {
+      "id": "municipality-profile-ravascletto",
+      "istatCode": "030088",
+      "municipality": "Ravascletto",
+      "province": "UD",
+      "title": {
+        "it": "Ravascletto, dalle carte medievali alla Carnia veneziana",
+        "fur": "Ravasclêt, des cjartis medievâls ae Cjargne veneziane"
+      },
+      "summary": {
+        "it": "Il primo documento che conferma l'esistenza di Ravascletto risale al 1281. Durante il dominio della Repubblica di Venezia il paese dipendeva, come il resto della Carnia, dalla Magnifica Comunità di Tolmezzo.",
+        "fur": "Il prin document che al conferme la esistence di Ravasclêt al è dal 1281. Tal periodi dal domini de Republiche di Vignesie, il paîs al dipendeve, come il rest de Cjargne, de Magnifiche Comunitât di Tumieç."
+      },
+      "milestones": [],
+      "source": {
+        "label": "SIUSA - Comune di Ravascletto",
+        "type": "national_institution",
+        "url": "https://siusa-archivi.cultura.gov.it/cgi-bin/siusa/pagina.pl?Chiave=9270&RicDimF=2&TipoPag=prodente"
+      },
+      "languageStatus": {
+        "it": "approved",
+        "fur": "approved"
+      },
+      "editorialStatus": "reviewed",
+      "readyForUi": true,
+      "review": {
+        "itReviewedAt": "2026-07-19",
+        "method": "source_cross_check",
+        "furReviewedAt": "2026-07-19",
+        "furMethod": "linguistic_review"
+      }
+    },
+    {
+      "id": "municipality-profile-raveo",
+      "istatCode": "030089",
+      "municipality": "Raveo",
+      "province": "UD",
+      "title": {
+        "it": "Raveo, il sito archeologico del Monte Sorantri",
+        "fur": "Raviei, il sît archeologjic dal Mont Sorantri"
+      },
+      "summary": {
+        "it": "Sul Monte Sorantri le indagini hanno riconosciuto una lunga frequentazione legata, nella tarda età del ferro, alla presenza celtica. Sulla sommità sono stati documentati un possibile santuario militare celtico e i resti di un abitato romano delimitato da una cinta muraria.",
+        "fur": "Sul Mont Sorantri lis ricercjis a àn ricognossût une lungje frequentazion leade, te tarde Ete dal fier, ae presince celtiche. Su la spice a son stâts documentâts un pussibil santuari militâr celtic e i rescj di un abitât roman delimitât di une cinte murarie."
+      },
+      "milestones": [],
+      "source": {
+        "label": "ERPAC FVG - Sito archeologico del Monte Sorantri",
+        "type": "regional_institution",
+        "url": "https://patrimonioculturale.regione.fvg.it/sito-archeologico/?s_id=549417"
+      },
+      "languageStatus": {
+        "it": "approved",
+        "fur": "approved"
+      },
+      "editorialStatus": "reviewed",
+      "readyForUi": true,
+      "review": {
+        "itReviewedAt": "2026-07-19",
+        "method": "source_cross_check",
+        "furReviewedAt": "2026-07-19",
+        "furMethod": "linguistic_review"
+      }
+    },
+    {
+      "id": "municipality-profile-reana-del-rojale",
+      "istatCode": "030090",
+      "municipality": "Reana del Rojale",
+      "province": "UD",
+      "title": {
+        "it": "Reana del Rojale, il paese delle rogge",
+        "fur": "Reane dal Roiâl, il paîs des rois"
+      },
+      "summary": {
+        "it": "Il territorio del Rojale prende nome dalle rogge che lo attraversano da nord a sud. Derivata dal torrente Torre, la roggia di Udine è documentata dal 1171 e a Valle si divide nel tronco chiamato roggia di Palma.",
+        "fur": "Il teritori dal Roiâl al cjape il non des rois che lu traviersin di nord a sud. Tirade fûr dal torint Tôr, la roe di Udin e je documentade dal 1171 e a Valle si divît tal ram clamât roe di Palme."
+      },
+      "milestones": [],
+      "source": {
+        "label": "Comune di Reana del Rojale - Paese e turismo",
+        "type": "official_municipality",
+        "url": "https://www.comune.reanadelrojale.ud.it/vivere-il-comune/territorio/paese-e-turismo/"
+      },
+      "languageStatus": {
+        "it": "approved",
+        "fur": "approved"
+      },
+      "editorialStatus": "reviewed",
+      "readyForUi": true,
+      "review": {
+        "itReviewedAt": "2026-07-19",
+        "method": "source_cross_check",
+        "furReviewedAt": "2026-07-19",
+        "furMethod": "linguistic_review"
+      }
+    },
+    {
+      "id": "municipality-profile-remanzacco",
+      "istatCode": "030091",
+      "municipality": "Remanzacco",
+      "province": "UD",
+      "title": {
+        "it": "Remanzacco, la memoria della Fornace Juri",
+        "fur": "Remanzâs, la memorie de Fornace Juri"
+      },
+      "summary": {
+        "it": "A Cerneglons la Fornace Juri, costruita nel 1911 per produrre laterizi, rimase attiva fino ai primi anni Sessanta. Il complesso comprendeva il laboratorio, l'essiccatoio e il forno con l'alta ciminiera.",
+        "fur": "A Cerneglons la Fornace Juri, costruide tal 1911 par produsi laterizi, e restà ative fin ai prins agns Sessante. Il complès al comprendeve il laboratori, il secjadôr e il for cul alt cjamin."
+      },
+      "milestones": [
+        {
+          "id": "remanzacco-kiln-built",
+          "year": 1911,
+          "label": {
+            "it": "Costruzione della Fornace Juri",
+            "fur": "Costruzion de Fornace Juri"
+          }
+        }
+      ],
+      "source": {
+        "label": "Parco del Torre e del Malina - Fornace Juri",
+        "type": "cultural_institution",
+        "url": "https://parcodeltorreemalina.it/storia/fornace/"
+      },
+      "languageStatus": {
+        "it": "approved",
+        "fur": "approved"
+      },
+      "editorialStatus": "reviewed",
+      "readyForUi": true,
+      "review": {
+        "itReviewedAt": "2026-07-19",
+        "method": "source_cross_check",
+        "furReviewedAt": "2026-07-19",
+        "furMethod": "linguistic_review"
+      }
+    },
+    {
+      "id": "municipality-profile-resia",
+      "istatCode": "030092",
+      "municipality": "Resia",
+      "province": "UD",
+      "title": {
+        "it": "Resia, una valle che suona",
+        "fur": "Resie, une val che e sune"
+      },
+      "summary": {
+        "it": "La musica resiana nasce dal dialogo fra la cïtira, la bünkula e il battito ritmico del piede. Danze, canti e strumenti non sono soltanto folclore, ma una pratica ancora condivisa dalla comunità della valle.",
+        "fur": "La musiche resiane e nas dal dialic tra la cïtira, la bünkula e il bati ritmic dal pît. Bal, cjants e struments no son dome folclôr, ma une pratiche ancjemò condividude de comunitât de val."
+      },
+      "milestones": [
+        {
+          "id": "resia-folklore-group",
+          "year": 1838,
+          "label": {
+            "it": "Prima uscita documentata del Gruppo Folkloristico Val Resia",
+            "fur": "Prime jessude documentade dal Gruppo Folkloristico Val Resia"
+          }
+        }
+      ],
+      "source": {
+        "label": "Ecomuseo Val Resia - Musica",
+        "type": "cultural_institution",
+        "url": "https://www.ecomuseovalresia.it/cultura/musica/"
+      },
+      "languageStatus": {
+        "it": "approved",
+        "fur": "approved"
+      },
+      "editorialStatus": "reviewed",
+      "readyForUi": true,
+      "review": {
+        "itReviewedAt": "2026-07-19",
+        "method": "source_cross_check",
+        "furReviewedAt": "2026-07-19",
+        "furMethod": "linguistic_review"
+      }
+    },
+    {
+      "id": "municipality-profile-resiutta",
+      "istatCode": "030093",
+      "municipality": "Resiutta",
+      "province": "UD",
+      "title": {
+        "it": "Resiutta, la memoria del Resartico",
+        "fur": "Resiute, la memorie dal Resartico"
+      },
+      "summary": {
+        "it": "Per oltre un secolo le miniere del Rio Resartico furono una delle principali fonti di reddito per Resiutta. Ruderi, gallerie e una mostra del Parco raccontano oggi la geologia del luogo e il duro lavoro dei minatori.",
+        "fur": "Par plui di un secul lis minieris dal Rio Resartico a forin une des principâls fonts di vuadagn par Resiute. Rudins, galariis e une mostre dal Parc a contin vuê la gjeologjie dal lûc e il lavôr dûr dai minadôrs."
+      },
+      "milestones": [],
+      "source": {
+        "label": "Parco naturale delle Prealpi Giulie - Mostra miniera del Resartico",
+        "type": "regional_institution",
+        "url": "https://www.parcoprealpigiulie.it/it/principale/attivita/strutture-del-parco/mostra-miniera-del-resartico"
+      },
+      "languageStatus": {
+        "it": "approved",
+        "fur": "approved"
+      },
+      "editorialStatus": "reviewed",
+      "readyForUi": true,
+      "review": {
+        "itReviewedAt": "2026-07-19",
+        "method": "source_cross_check",
+        "furReviewedAt": "2026-07-19",
+        "furMethod": "linguistic_review"
+      }
+    },
+    {
+      "id": "municipality-profile-rigolato",
+      "istatCode": "030094",
+      "municipality": "Rigolato",
+      "province": "UD",
+      "title": {
+        "it": "Rigolato, miniere e boschi della Serenissima",
+        "fur": "Rigulât, minieris e boscs de Serenissime"
+      },
+      "summary": {
+        "it": "Rigolato acquistò importanza dal Quattrocento con lo sfruttamento dei giacimenti di rame e argento del Monte Avanza. Nei suoi boschi restano i cippi del «Bosco Bandito», riservato dalla Serenissima al legname per navi e palafitte.",
+        "fur": "Rigulât al cjapà impuartance dal Cuatricent cul sfrutament dai jaciments di ram e arint dal Mont Avanza. Tai siei boscs a restin i cips dal «Bosc Bandît», riservât de Serenissime al len par nâfs e palafitis."
+      },
+      "milestones": [
+        {
+          "id": "rigolato-mining",
+          "century": "XV",
+          "label": {
+            "it": "Inizia lo sfruttamento regolare dei giacimenti del Monte Avanza",
+            "fur": "Al tache il sfrutament regolâr dai jaciments dal Mont Avanza"
+          }
+        }
+      ],
+      "source": {
+        "label": "PromoTurismoFVG - Rigolato",
+        "type": "regional_institution",
+        "url": "https://www.turismofvg.it/rigolato?LangSetCMS=it"
+      },
+      "languageStatus": {
+        "it": "approved",
+        "fur": "approved"
+      },
+      "editorialStatus": "reviewed",
+      "readyForUi": true,
+      "review": {
+        "itReviewedAt": "2026-07-19",
+        "method": "source_cross_check",
+        "furReviewedAt": "2026-07-19",
+        "furMethod": "linguistic_review"
+      }
+    },
+    {
+      "id": "municipality-profile-rive-d-arcano",
+      "istatCode": "030095",
+      "municipality": "Rive d'Arcano",
+      "province": "UD",
+      "title": {
+        "it": "Rive d'Arcano, il castello sul paesaggio morenico",
+        "fur": "Rivis Darcjan, il cjistiel sul paisaç morenic"
+      },
+      "summary": {
+        "it": "Un castelliere preistorico testimonia la lunga frequentazione del terrazzo morenico di Rive d'Arcano. Poco distante, il castello d'Arcano del XII secolo conserva la presenza feudale che ha dato nome al Comune.",
+        "fur": "Un cjistielîr preistoric al testemonee la lungje frequentazion dal terraç morenic di Rivis Darcjan. Pôc lontan, il cjistiel d'Arcano dal secul XII al conserve la presince feudâl che e à dât il non al Comun."
+      },
+      "milestones": [
+        {
+          "id": "rive-arcano-castle",
+          "century": "XII",
+          "label": {
+            "it": "È documentato il nucleo medievale del castello d'Arcano",
+            "fur": "Al è documentât il nucli medievâl dal cjistiel d'Arcano"
+          }
+        }
+      ],
+      "source": {
+        "label": "PromoTurismoFVG - Rive d'Arcano",
+        "type": "regional_institution",
+        "url": "https://www.turismofvg.it/rive-di-arcano?LangSetCMS=it"
+      },
+      "languageStatus": {
+        "it": "approved",
+        "fur": "approved"
+      },
+      "editorialStatus": "reviewed",
+      "readyForUi": true,
+      "review": {
+        "itReviewedAt": "2026-07-19",
+        "method": "source_cross_check",
+        "furReviewedAt": "2026-07-19",
+        "furMethod": "linguistic_review"
+      }
+    },
+    {
+      "id": "municipality-profile-rivignano-teor",
+      "istatCode": "030188",
+      "municipality": "Rivignano Teor",
+      "province": "UD",
+      "title": {
+        "it": "Rivignano Teor, il comune nato dalla fusione",
+        "fur": "Rivignan Teôr, il comun nassût de fusion"
+      },
+      "summary": {
+        "it": "Rivignano Teor è stato istituito il 1° gennaio 2014 dalla fusione dei Comuni di Rivignano e Teor. La legge regionale stabilì il capoluogo a Rivignano e affidò allo statuto forme di partecipazione per le due comunità d'origine.",
+        "fur": "Rivignan Teôr al è stât istituît ai 1 di Zenâr dal 2014 de fusion dai Comuns di Rivignano e Teor. La leç regjonâl e stabilì il cjâf-lûc a Rivignan e e affidà al statût formis di partecipazion pes dôs comunitâts di origjin."
+      },
+      "milestones": [
+        {
+          "id": "rivignano-teor-merger",
+          "year": 2014,
+          "label": {
+            "it": "Nasce il Comune di Rivignano Teor",
+            "fur": "Al nas il Comun di Rivignan Teôr"
+          }
+        }
+      ],
+      "source": {
+        "label": "Regione FVG - Legge regionale 7 febbraio 2013, n. 1",
+        "type": "regional_institution",
+        "url": "https://lexview-int.regione.fvg.it/fontinormative/xml/scarico.aspx?ANN=2013&LEX=0001&a_ante=&ci=&dataVig=&id=art1&idx=&lang=ita&n_ante=&tip=0&vig="
+      },
+      "languageStatus": {
+        "it": "approved",
+        "fur": "approved"
+      },
+      "editorialStatus": "reviewed",
+      "readyForUi": true,
+      "review": {
+        "itReviewedAt": "2026-07-19",
+        "method": "source_cross_check",
+        "furReviewedAt": "2026-07-19",
+        "furMethod": "linguistic_review"
+      }
+    },
+    {
+      "id": "municipality-profile-ronchis",
+      "istatCode": "030097",
+      "municipality": "Ronchis",
+      "province": "UD",
+      "title": {
+        "it": "Ronchis, il paese segnato dal Tagliamento",
+        "fur": "Roncjis, il paîs segnât dal Tiliment"
+      },
+      "summary": {
+        "it": "Le forme storiche del nome Ronchis compaiono nei documenti dal Duecento, con Ronche nel 1226, Roncha nel 1261 e Ronches nel 1296. Nel 1597 una piena del Tagliamento danneggiò gravemente la chiesa e le case; l'anno seguente la chiesa e il borgo di Volta furono abbandonati.",
+        "fur": "Lis formis storichis dal non Roncjis a comparissin tai documents dal Duscent, cun Ronche tal 1226, Roncha tal 1261 e Ronches tal 1296. Tal 1597 une plene dal Tiliment e danegjà in maniere grave la glesie e lis cjasis; l'an dopo la glesie e il borc di Volta a forin bandonâts."
+      },
+      "milestones": [
+        {
+          "id": "ronchis-tagliamento-flood",
+          "year": 1597,
+          "label": {
+            "it": "Una piena del Tagliamento colpisce il paese",
+            "fur": "Une plene dal Tiliment e colpìs il paîs"
+          }
+        }
+      ],
+      "source": {
+        "label": "Comune di Ronchis - Storia di Ronchis",
+        "type": "official_municipality",
+        "url": "https://www.comune.ronchis.ud.it/it/vivere-il-comune-31944/luoghi-31946/storia-e-cultura-locale-32085/storia-di-ronchis-32040"
+      },
+      "languageStatus": {
+        "it": "approved",
+        "fur": "approved"
+      },
+      "editorialStatus": "reviewed",
+      "readyForUi": true,
+      "review": {
+        "itReviewedAt": "2026-07-19",
+        "method": "source_cross_check",
+        "furReviewedAt": "2026-07-19",
+        "furMethod": "linguistic_review"
+      }
+    },
+    {
+      "id": "municipality-profile-ruda",
+      "istatCode": "030098",
+      "municipality": "Ruda",
+      "province": "UD",
+      "title": {
+        "it": "Ruda, la fabbrica dell'amido",
+        "fur": "Rude, la fabriche dal amit"
+      },
+      "summary": {
+        "it": "A Perteole l'Amideria Chiozza trasformava il riso in amido attraverso vasche di macerazione, lavaggio, decantazione ed essiccazione. Il complesso completato agli inizi del Novecento conserva edifici produttivi, magazzini, officine, uffici, alloggi e case operaie.",
+        "fur": "A Perteole, la Amideria Chiozza e trasformave il rîs in amit midiant vaschis di macerazion, lavament, decantazion e secjadure. Il complès completât ai prins dal Nûfcent al conserve edificis produtîfs, magazins, oficinis, uficis, alogjos e cjasis pai operaris."
+      },
+      "milestones": [],
+      "source": {
+        "label": "ERPAC FVG - Amideria Chiozza",
+        "type": "regional_institution",
+        "url": "https://patrimonioculturale.regione.fvg.it/archeologia-industriale/?s_id=765355"
+      },
+      "languageStatus": {
+        "it": "approved",
+        "fur": "approved"
+      },
+      "editorialStatus": "reviewed",
+      "readyForUi": true,
+      "review": {
+        "itReviewedAt": "2026-07-19",
+        "method": "source_cross_check",
+        "furReviewedAt": "2026-07-19",
+        "furMethod": "linguistic_review"
+      }
+    }
+  ]
+}

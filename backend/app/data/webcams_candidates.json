@@ -1,0 +1,71 @@
+{
+  "version": 5,
+  "mode": "shadow",
+  "publish": false,
+  "sourceUpdatedAt": "2026-10-02T06:43:41Z",
+  "generatedAt": "2026-10-02T06:43:41Z",
+  "candidates": [
+    {
+      "id": "claut-val-settimana",
+      "name": "Val Settimana - Rifugio La Pussa",
+      "group": "mountain",
+      "category": "Dolomiti Friulane",
+      "area": "Val Settimana · Rifugio La Pussa",
+      "municipality": "Claut",
+      "lat": 46.3452137,
+      "lon": 12.5925223,
+      "fallbackImageUrl": "/municipalities/photos/093015-photo.webp",
+      "provider": "WhatsUpCams / Rifugio La Pussa",
+      "sourcePage": "https://www.whatsupcams.com/it/webcams/italia/friuli-venezia-giulia-it/claut-it/val-settimana-rifugio-la-pussa/",
+      "health": "candidate",
+      "checkedAt": "2026-08-27T20:27:30Z",
+      "sortOrder": 30
+    },
+    {
+      "id": "savogna-matajur",
+      "name": "Monte Matajur - Dom na Matajure",
+      "group": "mountain",
+      "category": "Prealpi Giulie",
+      "area": "Monte Matajur · Dom na Matajure",
+      "municipality": "Savogna",
+      "lat": 46.2091561,
+      "lon": 13.522345,
+      "fallbackImageUrl": "/municipalities/photos/030108-photo.webp",
+      "provider": "WhatsUpCams / Planinska družina Benečije",
+      "sourcePage": "https://benecija.eu/it/webcam/",
+      "health": "candidate",
+      "checkedAt": "2026-09-19T15:16:00Z",
+      "sortOrder": 40
+    },
+    {
+      "id": "cervignano-meteo",
+      "name": "Cervignano Meteo",
+      "group": "plain",
+      "category": "Bassa pianura friulana",
+      "area": "Area urbana",
+      "municipality": "Cervignano del Friuli",
+      "fallbackImageUrl": "/municipalities/photos/030023-photo.webp",
+      "provider": "Cervignano Meteo",
+      "sourcePage": "https://www.cervignanometeo.org/",
+      "health": "candidate",
+      "checkedAt": "2026-09-19T15:22:17Z",
+      "sortOrder": 60
+    },
+    {
+      "id": "gorizia-transalpina",
+      "name": "Gorizia - Piazza della Transalpina",
+      "group": "plain",
+      "category": "Pianura Goriziana",
+      "area": "Piazza della Transalpina",
+      "municipality": "Gorizia",
+      "lat": 45.95528,
+      "lon": 13.6348449,
+      "fallbackImageUrl": "/municipalities/photos/031007-photo.webp",
+      "provider": "GECT GO / WhatsUpCams",
+      "sourcePage": "https://euro-go.eu/it/transalpinatrgevrope/webcam-live-europasquare/",
+      "health": "candidate",
+      "checkedAt": "2026-09-19T15:27:00Z",
+      "sortOrder": 70
+    }
+  ]
+}

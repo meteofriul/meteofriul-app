@@ -1,0 +1,9 @@
+# Explicit source allowlist is supplied by --ignore-file. No runtime credentials.
+timeout: 900s
+options:
+  logging: CLOUD_LOGGING_ONLY
+steps:
+  - name: gcr.io/cloud-builders/docker
+    args: ['build', '-f', 'experiments/weather_autonomy/Dockerfile.pilot', '-t', 'pilot-package-check', '.']
+  - name: gcr.io/cloud-builders/docker
+    args: ['run', '--rm', '--network=none', 'pilot-package-check', 'python', '-m', 'unittest', 'test_cloud_worker', 'test_gcs_object_store', 'test_object_state_store', 'test_remote_publication_intent', 'test_retrieve_remote_cams']

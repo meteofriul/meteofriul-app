@@ -1,0 +1,96 @@
+{
+  "schemaVersion": 1,
+  "purpose": "Revisione FUR controllata dei 12 record DAILY con copy IT canonica. Solo i record approved possono diventare visibili.",
+  "reviewedAt": "2026-07-12",
+  "summary": {
+    "totalRecords": 12,
+    "approved": 12,
+    "pendingHumanReview": 0
+  },
+  "records": [
+    {
+      "id": "memory-it-ready-0404-giani-stuparich-e-la-trieste-del-novecento",
+      "titleFur": "Giani Stuparich e la Triest dal Nûfcent",
+      "summaryFur": "Ai 4 di Avrîl dal 1891 al nas a Triest Giani Stuparich, scritôr che te sô opare al interprete la citât di confin e il Nûfcent triestin.",
+      "status": "approved",
+      "notes": "Triest, Nûfcent, scritôr e citât di confin sono coerenti con il corpus approvato."
+    },
+    {
+      "id": "memory-it-ready-0910-leonardo-zanier-poesia-ed-emigrazione",
+      "titleFur": "Leonardo Zanier, poesie e emigrazion",
+      "summaryFur": "Ai 10 di Setembar dal 1935 al nas a Maranzanis Leonardo Zanier, poet in furlan, scritôr e sindicalist. La emigrazion e il lavôr a son doi temis centrâi de sô opare.",
+      "status": "approved",
+      "notes": "Sindicalist, emigrazion e lavôr verificati nel lessico controllato."
+    },
+    {
+      "id": "memory-it-ready-0115-virgilio-giotti-e-la-poesia-di-trieste",
+      "titleFur": "Virgilio Giotti e la poesie di Triest",
+      "summaryFur": "Ai 15 di Zenâr dal 1885 al nas a Triest Virgilio Giotti, poet in dialet triestin e autôr di une poesie intime leade ae vite di ogni dì de citât.",
+      "status": "approved",
+      "notes": "Dialet triestin resta distinto dal furlan e conserva il dato biografico."
+    },
+    {
+      "id": "memory-it-ready-0317-bruno-pincherle-medicina-e-impegno-civile",
+      "titleFur": "Bruno Pincherle, medisine e impegn civîl",
+      "summaryFur": "Ai 17 di Març dal 1903 al nas a Triest Bruno Pincherle, pediatre, antifassist e storic de medisine. La sô vite e je segnade dal studi e dal impegn civîl.",
+      "status": "approved",
+      "notes": "Pediatre, antifassist, medisine e impegn sono presenti nel lessico controllato."
+    },
+    {
+      "id": "memory-it-ready-0125-ivan-trinko-e-la-cultura-della-benecia",
+      "titleFur": "Ivan Trinko e la culture de Benecia",
+      "summaryFur": "Ai 25 di Zenâr dal 1863 al nas a Tercimonte Ivan Trinko, predi, poet, scritôr, tradutôr e linguist, figure centrâl de culture slovene de Benecia.",
+      "status": "approved",
+      "notes": "Benecia e Tercimonte restano le denominazioni storico-geografiche del record canonico."
+    },
+    {
+      "id": "memory-it-ready-0928-mirko-basaldella-arte-friulana-del-novecento",
+      "titleFur": "Mirko Basaldella, art furlane dal Nûfcent",
+      "summaryFur": "Ai 28 di Setembar dal 1910 al nas a Udin Mirko Basaldella, scultôr e pitôr, une des figuris de art taliane dal Nûfcent.",
+      "status": "approved",
+      "notes": "Struttura e lessico allineati al record FUR approvato di Afro Basaldella."
+    },
+    {
+      "id": "memory-it-ready-0329-tarcisio-petracco-e-l-universita-del-friuli",
+      "titleFur": "Tarcisio Petracco e la Universitât dal Friûl",
+      "summaryFur": "Ai 29 di Març dal 1910 al nas Tarcisio Petracco, partesan e protagonist de mobilitazion che e puartà ae nassite de Universitât di Udin.",
+      "status": "approved",
+      "notes": "Universitât dal Friûl e Universitât di Udin seguono l'uso istituzionale; partesan è attestato."
+    },
+    {
+      "id": "memory-it-ready-0423-l-eccidio-di-via-ghega",
+      "titleFur": "La stragje di vie Ghega",
+      "summaryFur": "Ai 23 di Avrîl dal 1944, tal Palaç Rittmeyer in vie Ghega, 51 presonîrs a forin picjâts dai naziscj par rapresalie.",
+      "status": "approved",
+      "notes": "Picjâ è attestato dal SuperDizionari ARLeF anche nel significato specifico di impiccare; picjâts concorda con presonîrs."
+    },
+    {
+      "id": "memory-it-ready-0531-la-strage-di-peteano",
+      "titleFur": "La stragje di Peteano",
+      "summaryFur": "Ai 31 di Mai dal 1972 un atentât teroristic neofassist a Peteano al copà trê carabinîrs e al ferì altris doi.",
+      "status": "approved",
+      "notes": "Stragje sostituisce il più incerto maçalizi; atentât, neofassist e carabinîrs sono attestati."
+    },
+    {
+      "id": "memory-it-ready-0701-la-fucilazione-di-cercivento",
+      "titleFur": "I Fusilâts di Çurçuvint",
+      "summaryFur": "Ai 1 di Lui dal 1916, cuatri Alpins a forin fusilâts a Çurçuvint dopo di un procediment militâr somari. Vuê la lôr memorie e je leade ae restituzion dal onôr.",
+      "status": "approved",
+      "notes": "Fusilâts di Çurçuvint riprende la denominazione friulana usata dal Consiglio regionale FVG."
+    },
+    {
+      "id": "memory-it-ready-0403-l-eccidio-di-opicina",
+      "titleFur": "La stragje di Opicina",
+      "summaryFur": "Ai 3 di Avrîl dal 1944, a Opicina, 71 ostaçs a forin fusilâts intune rapresalie naziste.",
+      "status": "approved",
+      "notes": "Ostaç e il plurale ostaçs sono attestati dal SuperDizionari ARLeF nel significato storico di ostaggio."
+    },
+    {
+      "id": "memory-it-ready-0804-l-attentato-al-deposito-costiero-siot",
+      "titleFur": "L'atentât al dipuesit costîr SIOT",
+      "summaryFur": "Ai 4 di Avost dal 1972 un atentât al colpì lis cistiernis dal dipuesit costîr SIOT a San Dorligo della Valle e al provocà un grant incendi.",
+      "status": "approved",
+      "notes": "Cistierne indica il serbatoio per liquidi, dipuesit traduce deposito e costîr è la forma aggettivale attestata dal SuperDizionari ARLeF."
+    }
+  ]
+}

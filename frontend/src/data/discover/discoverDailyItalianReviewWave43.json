@@ -1,0 +1,171 @@
+{
+  "schemaVersion": 1,
+  "generatedAt": "2026-07-17",
+  "purpose": "Quarantatreesimo lotto Scopri IT: audit editoriale di quindici profili con applicazione rigorosa delle soglie decise per persone, sport, politica e professioni. Cinque figure superano la soglia e coprono cinque nuove date. Cinque restano sospese per data incerta o perché adatte soltanto come approfondimento secondario; cinque vengono escluse dalla memoria giornaliera. La pubblicazione resta bloccata fino alla revisione FUR.",
+  "policy": {
+    "readyForUi": false,
+    "furDeferred": true,
+    "dateFormat": "DD-MM",
+    "requiresFinalItalianApproval": true,
+    "excludeDeaths": true,
+    "excludeGenericPoliticalProfiles": true,
+    "excludeGenericProfessionalProfiles": true,
+    "excludeSportsOnlyProfiles": true,
+    "allowExceptionalSportsProfiles": true,
+    "rejectBirthplaceOnlyProfiles": true,
+    "rejectSemanticDuplicates": true,
+    "rejectUncertainCalendarDates": true,
+    "sourceFirst": true,
+    "publishAfterFurOnly": true,
+    "allowMultipleMemoriesPerDate": true,
+    "secondaryRequiresPrimaryAnchor": true,
+    "doNotPromoteToPrimaryForCoverageOnly": true
+  },
+  "summary": {
+    "reviewed": 15,
+    "keepDaily": 5,
+    "primary": 5,
+    "secondary": 0,
+    "hold": 5,
+    "excluded": 5,
+    "canonicalPrimaryDatesBefore": 263,
+    "canonicalPrimaryDatesAfter": 268,
+    "currentVisiblePrimaryCoverage": 258
+  },
+  "keepDaily": [
+    {
+      "id": "master-fvg-10-10-Q87448316",
+      "wikidataId": "Q87448316",
+      "dateIt": "10-10",
+      "year": 1884,
+      "municipality": "Trieste",
+      "locality": "Trieste",
+      "province": "TS",
+      "canonicalCategory": "storia",
+      "dailyRole": "primary",
+      "priority": 96,
+      "titleIt": "Enrico Paolo Salem, tra regime e leggi razziali",
+      "copyIt": "Il 10 ottobre 1884 nasce a Trieste Enrico Paolo Salem. Podestà fascista della città tra il 1933 e il 1938, partecipa alle trasformazioni urbanistiche del periodo; di origine ebraica, viene poi escluso dalla vita pubblica con le leggi razziali.",
+      "sourceLabel": "Quest - Issues in Contemporary Jewish History / CDEC",
+      "sourceUrl": "https://www.quest-cdecjournal.it/fascist-jews-in-trieste-social-cultural-and-political-dynamics-1919-1938/",
+      "sourceStatus": "pass",
+      "readyForUi": false
+    },
+    {
+      "id": "master-fvg-28-01-Q5479079",
+      "wikidataId": "Q5479079",
+      "dateIt": "28-01",
+      "year": 1988,
+      "municipality": "Trieste",
+      "locality": "Trieste",
+      "province": "TS",
+      "canonicalCategory": "sport",
+      "dailyRole": "primary",
+      "priority": 94,
+      "titleIt": "Francesca Clapcich e la vela oceanica",
+      "copyIt": "Il 28 gennaio 1988 nasce a Trieste Francesca Clapcich. Campionessa mondiale ed europea nel 49erFX, partecipa a due Olimpiadi e diventa la prima italiana a vincere The Ocean Race.",
+      "sourceLabel": "The Ocean Race - Francesca Clapcich",
+      "sourceUrl": "https://www.theoceanrace.com/it/crew/1006_Francesca-Clapcich",
+      "sourceStatus": "pass",
+      "readyForUi": false
+    },
+    {
+      "id": "master-fvg-14-06-Q3766213",
+      "wikidataId": "Q3766213",
+      "dateIt": "14-06",
+      "year": 1957,
+      "municipality": "Trieste",
+      "locality": "Trieste",
+      "province": "TS",
+      "canonicalCategory": "storia_cultura",
+      "dailyRole": "primary",
+      "priority": 91,
+      "titleIt": "Giovanna Botteri, dai Balcani ai grandi conflitti",
+      "copyIt": "Il 14 giugno 1957 nasce a Trieste Giovanna Botteri. Dopo gli inizi alla Rai di Trieste, documenta la rivoluzione romena, le guerre balcaniche e i conflitti in Afghanistan e Iraq, diventando una delle inviate italiane più riconoscibili.",
+      "sourceLabel": "Rai - Curriculum vitae di Giovanna Botteri",
+      "sourceUrl": "https://www.rai.it/dl/doc/1638469192796_Giovanna%20Botteri%20-%20Curriculum%20vitae.pdf",
+      "sourceStatus": "pass",
+      "readyForUi": false
+    },
+    {
+      "id": "master-fvg-24-04-Q27518247",
+      "wikidataId": "Q27518247",
+      "dateIt": "24-04",
+      "year": 1943,
+      "municipality": "Trieste",
+      "locality": "Trieste",
+      "province": "TS",
+      "canonicalCategory": "sport",
+      "dailyRole": "primary",
+      "priority": 90,
+      "titleIt": "Anna Maria Cecchi e il nuoto olimpico",
+      "copyIt": "Il 24 aprile 1943 nasce a Trieste Anna Maria Cecchi. Primatista italiana, partecipa a due Olimpiadi e raggiunge una finale e una semifinale, entrando nella storia del nuoto triestino.",
+      "sourceLabel": "World Aquatics - Anna Maria Cecchi",
+      "sourceUrl": "https://www.worldaquatics.com/athletes/1156586/anna-maria-cecchi",
+      "sourceStatus": "pass",
+      "readyForUi": false
+    },
+    {
+      "id": "master-fvg-21-04-Q17711811",
+      "wikidataId": "Q17711811",
+      "dateIt": "21-04",
+      "year": 1931,
+      "municipality": "Trieste",
+      "locality": "Trieste",
+      "province": "TS",
+      "canonicalCategory": "sport",
+      "dailyRole": "primary",
+      "priority": 93,
+      "titleIt": "Laura Micheli e la ginnastica del dopoguerra",
+      "copyIt": "Il 21 aprile 1931 nasce a Trieste Laura Micheli. Atleta della Ginnastica Triestina e tre volte campionessa italiana assoluta, conquista il bronzo mondiale a squadre nel 1950 e nel 1948 ottiene il terzo risultato individuale alle Olimpiadi, quando le medaglie femminili individuali non erano ancora assegnate.",
+      "sourceLabel": "CONI - Finalisti italiani ai Giochi olimpici",
+      "sourceUrl": "https://parigi2024.coni.it/it/italia-team/i-giochi-del-passato/finalisti-all-time/finalisti_all_time/125.html",
+      "sourceStatus": "pass",
+      "readyForUi": false
+    }
+  ],
+  "hold": [
+    {
+      "id": "master-fvg-13-11-Q47470515",
+      "reason": "La finale olimpica di Savino Rebek è significativa, ma il profilo non è abbastanza forte come memoria principale isolata. Resta disponibile come approfondimento secondario o voce d'archivio quando il 13 novembre avrà una memoria primaria."
+    },
+    {
+      "id": "master-fvg-26-06-Q3634671",
+      "reason": "I risultati scacchistici e scientifici di Barbara Pernici superano la soglia editoriale, ma le fonti autorevoli consultate confermano soltanto l'anno 1956, non il 26 giugno e il luogo di nascita."
+    },
+    {
+      "id": "master-fvg-09-01-Q1089072",
+      "reason": "Arturo Reggio è una figura importante nella storia degli scacchi italiani, ma le fonti biografiche discordano tra 1862 e 1863. Il 9 gennaio non può essere calendarizzato finché la data non è chiarita."
+    },
+    {
+      "id": "master-fvg-01-11-Q3639381",
+      "reason": "I cinque titoli italiani e i primati di Bianca Lokar sono meritevoli, ma manca una fonte autorevole indipendente che confermi esattamente il 1 novembre 1915."
+    },
+    {
+      "id": "master-fvg-15-07-Q87736992",
+      "reason": "Il lavoro culturale di Cristina Battocletti è adatto a Scopri, ma una fonte bibliografica riporta sia il 1972 sia il 1973. La memoria resta sospesa finché l'anno non viene risolto."
+    }
+  ],
+  "excluded": [
+    {
+      "id": "master-fvg-14-01-Q457572",
+      "reason": "La carriera cinematografica di Giorgia Moll resta utile per un eventuale archivio, ma non raggiunge la soglia storico-culturale richiesta per la memoria giornaliera."
+    },
+    {
+      "id": "master-fvg-12-08-Q17638296",
+      "reason": "Paolo Sandro Molinaro rientra nella categoria dei profili politici e professionali generici senza un contributo storico autonomo sufficiente."
+    },
+    {
+      "id": "master-fvg-29-11-Q19984803",
+      "reason": "L'episcopato breve di Andrea Jordán non presenta un contributo storico distinto sufficiente per la memoria giornaliera."
+    },
+    {
+      "id": "master-fvg-29-11-Q56253677",
+      "reason": "La sola partecipazione olimpica di Ítalo Sartori, senza finale o medaglia, non supera la soglia sportiva eccezionale stabilita."
+    },
+    {
+      "id": "master-fvg-09-08-Q35816187",
+      "reason": "Le presenze europee di Foscarina Rozzo non sono accompagnate da risultati storici sufficienti per l'eccezione sportiva prevista."
+    }
+  ]
+}

@@ -1,0 +1,44 @@
+{
+  "schemaVersion": "firestore-push-ttl-runtime-writers-v1",
+  "projectId": "meteo-friul",
+  "region": "europe-west1",
+  "service": {
+    "name": "meteofriul-api",
+    "traffic": [
+      {
+        "revisionName": "meteofriul-api-ttl-writer-abc1234",
+        "percent": 100,
+        "tag": ""
+      }
+    ],
+    "revisions": [
+      {
+        "name": "meteofriul-api-ttl-writer-abc1234",
+        "ready": true,
+        "imageDigest": "europe-west1-docker.pkg.dev/meteo-friul/cloud-run-source-deploy/meteofriul-api@sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+      }
+    ]
+  },
+  "jobs": [
+    {
+      "name": "meteofriul-official-alert-sync",
+      "ready": true,
+      "imageDigest": "europe-west1-docker.pkg.dev/meteo-friul/cloud-run-source-deploy/meteofriul-api@sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+    },
+    {
+      "name": "meteofriul-local-notice",
+      "ready": true,
+      "imageDigest": "europe-west1-docker.pkg.dev/meteo-friul/cloud-run-source-deploy/meteofriul-api@sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+    },
+    {
+      "name": "meteofriul-morning-forecast",
+      "ready": true,
+      "imageDigest": "europe-west1-docker.pkg.dev/meteo-friul/cloud-run-source-deploy/meteofriul-api@sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+    },
+    {
+      "name": "meteofriul-evening-forecast",
+      "ready": true,
+      "imageDigest": "europe-west1-docker.pkg.dev/meteo-friul/cloud-run-source-deploy/meteofriul-api@sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+    }
+  ]
+}

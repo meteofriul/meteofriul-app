@@ -1,0 +1,114 @@
+{
+  "schemaVersion": 1,
+  "generatedAt": "2026-07-16",
+  "purpose": "Trentasettesimo lotto Scopri IT: audit editoriale di quindici candidati della coda. Henrika Šantel entra come approfondimento secondario del 17 agosto grazie al suo legame documentato con la scuola artistica di Gorizia. Quattordici candidati vengono esclusi per sport ordinario, professione generica, rilevanza insufficiente o rapporto con il FVG limitato alla nascita. La pubblicazione resta bloccata fino alla revisione FUR dell'unico record selezionato.",
+  "policy": {
+    "readyForUi": false,
+    "furDeferred": true,
+    "dateFormat": "DD-MM",
+    "requiresFinalItalianApproval": true,
+    "excludeDeaths": true,
+    "excludeGenericPoliticalProfiles": true,
+    "excludeGenericProfessionalProfiles": true,
+    "excludeSportsOnlyProfiles": true,
+    "allowExceptionalSportsProfiles": true,
+    "rejectBirthplaceOnlyProfiles": true,
+    "rejectSemanticDuplicates": true,
+    "rejectUncertainCalendarDates": true,
+    "sourceFirst": true,
+    "publishAfterFurOnly": true,
+    "allowMultipleMemoriesPerDate": true,
+    "secondaryOrderedByPriority": true,
+    "doNotPromoteToPrimaryForCoverageOnly": true
+  },
+  "summary": {
+    "reviewed": 15,
+    "keepDaily": 1,
+    "primary": 0,
+    "secondary": 1,
+    "hold": 0,
+    "excluded": 14,
+    "canonicalPrimaryDatesBefore": 238,
+    "canonicalPrimaryDatesAfter": 238,
+    "currentVisiblePrimaryCoverage": 231
+  },
+  "keepDaily": [
+    {
+      "id": "master-fvg-17-08-Q18508284",
+      "wikidataId": "Q18508284",
+      "dateIt": "17-08",
+      "year": 1874,
+      "municipality": "Gorizia",
+      "locality": "Gorizia",
+      "province": "GO",
+      "canonicalCategory": "cultura",
+      "dailyRole": "secondary",
+      "priority": 78,
+      "titleIt": "Henrika Šantel, arte e insegnamento nella Gorizia di confine",
+      "copyIt": "Il 17 agosto 1874 nasce a Gorizia Henrika Šantel. Formata a Monaco e Vienna, torna nella città natale e assume la direzione della scuola di pittura della madre, unendo lavoro artistico e insegnamento nella Gorizia di confine.",
+      "sourceLabel": "National Gallery of Slovenia - Henrika Šantel",
+      "sourceUrl": "https://www.ng-slo.si/si/stalna-zbirka/1900-1918/henrika-santel?authorId=531&tab=collections",
+      "sourceStatus": "pass",
+      "readyForUi": false
+    }
+  ],
+  "hold": [],
+  "excluded": [
+    {
+      "id": "master-fvg-09-07-Q327955",
+      "reason": "Carriera sportiva nazionale e internazionale, ma senza un risultato eccezionale o un lascito storico territoriale sufficiente per Scopri."
+    },
+    {
+      "id": "master-fvg-10-11-Q78770",
+      "reason": "Ruolo politico generico nell'Impero austriaco e rapporto con Gorizia limitato alla nascita; non supera la soglia storica e territoriale della rubrica."
+    },
+    {
+      "id": "master-fvg-11-05-Q1280314",
+      "reason": "Figura storica importante per la memoria jugoslava, ma il legame con Gorizia e il FVG resta soprattutto anagrafico e infantile; non e adatto alla memoria giornaliera locale."
+    },
+    {
+      "id": "master-fvg-11-06-Q9258367",
+      "reason": "Profilo sportivo contemporaneo senza medaglia olimpica o titolo mondiale e senza un lascito storico territoriale autonomo."
+    },
+    {
+      "id": "master-fvg-13-06-Q6761014",
+      "reason": "Medaglia europea di valore, ma il rapporto con Trieste resta limitato alla nascita e non emerge un contributo storico regionale autonomo."
+    },
+    {
+      "id": "master-fvg-15-03-Q1124188",
+      "reason": "Carriera calcistica nazionale priva della rilevanza storica eccezionale richiesta e legame territoriale sostanzialmente anagrafico."
+    },
+    {
+      "id": "master-fvg-17-07-Q23869532",
+      "reason": "Profilo sportivo contemporaneo ordinario, senza titolo mondiale o medaglia olimpica e senza rilevanza storica sufficiente per Scopri."
+    },
+    {
+      "id": "master-fvg-17-11-Q4816716",
+      "reason": "Carriera sportiva internazionale, ma senza risultati eccezionali o un impatto storico territoriale sufficiente per la rubrica."
+    },
+    {
+      "id": "master-fvg-18-01-Q520868",
+      "reason": "Attrice conosciuta, ma il legame con Trieste e prevalentemente anagrafico e non emerge un lascito storico-culturale regionale autonomo."
+    },
+    {
+      "id": "master-fvg-18-06-Q17352964",
+      "reason": "Atleta internazionale di rilievo, ma il rapporto con Pordenone resta limitato alla nascita e manca un contributo storico territoriale autonomo."
+    },
+    {
+      "id": "master-fvg-19-03-Q20856001",
+      "reason": "Profilo sportivo contemporaneo con risultati nazionali, ma senza la soglia eccezionale e il radicamento territoriale richiesti dalla rubrica."
+    },
+    {
+      "id": "master-fvg-19-04-Q328126",
+      "reason": "Campione mondiale di boxe di grande rilievo, ma il materiale disponibile collega Duilio Loi al FVG soltanto per la nascita a Trieste; la nascita da sola non basta."
+    },
+    {
+      "id": "master-fvg-19-07-Q1283597",
+      "reason": "Attrice di rilievo nazionale, ma senza un legame documentato con Trieste oltre la nascita e senza un impatto storico-culturale regionale autonomo."
+    },
+    {
+      "id": "master-fvg-20-09-Q3701837",
+      "reason": "Carriera cinematografica conosciuta, ma il rapporto con Trieste resta anagrafico e non supera la soglia delle figure illustri della rubrica."
+    }
+  ]
+}

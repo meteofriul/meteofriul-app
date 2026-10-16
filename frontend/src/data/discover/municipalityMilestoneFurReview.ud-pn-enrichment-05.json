@@ -1,0 +1,171 @@
+{
+  "schemaVersion": 1,
+  "batchId": "ud-pn-enrichment-milestones-05-fur-review",
+  "sourceResearchBatchId": "ud-pn-enrichment-milestones-05",
+  "reviewedAt": "2026-09-01",
+  "runtimeIntegration": false,
+  "reviewMethod": "assisted_standard_reference_review",
+  "approvalBasis": "user_delegated_assisted_editorial_review",
+  "reviewer": "assistant",
+  "independentHumanReview": false,
+  "approvalNote": "Decisione editoriale assistita sotto il mandato di completamento Scopri. Le fonti ARLeF verificano lessico, toponimi e modelli d'uso, non certificano queste frasi; nessuna revisione professionale indipendente né lettura frase per frase attribuita all'utente.",
+  "summary": {
+    "totalRecords": 6,
+    "approved": 6,
+    "pendingHumanReview": 0
+  },
+  "records": [
+    {
+      "id": "aiello-san-carlo-fair-1816",
+      "status": "approved",
+      "labelFur": "E ven istituide la Fiere di San Carli",
+      "notes": "Fiere e istituide seguono i lemmi ARLeF; San Carli espande la forma abbreviata S. Carli attestata dal dizionario e mantiene il riferimento storico della fonte.",
+      "references": [
+        {
+          "url": "https://superdizionari.arlef.it/lemma/fiera/35841?language=it&oneshot=1&gui=fur",
+          "note": "Fiera → fiere."
+        },
+        {
+          "url": "https://superdizionari.arlef.it/lemma/istituire/3610?language=it&oneshot=1&gui=fur",
+          "note": "Istituire → istituî; participio femminile istituide."
+        },
+        {
+          "url": "https://superdizionari.arlef.it/lemma/Carlo/70240?language=it&oneshot=1&gui=fur",
+          "note": "Carlo → Carli; il catalogo espande la forma abbreviata del santo."
+        }
+      ]
+    },
+    {
+      "id": "aiello-joannis-aggregation-1931",
+      "status": "approved",
+      "labelFur": "Il Comun di Vuanis al ven sopress e agregât a Dael",
+      "notes": "Vuanis e Dael sono i toponimi ufficiali ARLeF. Sopress e agregât riusa il modello amministrativo già approvato nel catalogo e conserva i due effetti giuridici documentati da ISTAT.",
+      "references": [
+        {
+          "url": "https://arlef.it/app/uploads/documenti/DPReg_Toponimi_ALLEGATO.pdf",
+          "note": "Repertorio ufficiale ARLeF: Joannis → Vuanis."
+        },
+        {
+          "url": "https://superdizionari.arlef.it/lemma/Aiello%20del%20Friuli/70972?language=it&oneshot=1&gui=fur",
+          "note": "Aiello del Friuli → Dael."
+        },
+        {
+          "url": "https://superdizionari.arlef.it/lemma/sopprimere/6007?language=it&oneshot=1&gui=fur",
+          "note": "Riferimento lessicale per la soppressione amministrativa."
+        },
+        {
+          "url": "https://superdizionari.arlef.it/lemma/aggregare/12542?language=it&oneshot=1&gui=fur",
+          "note": "Riferimento lessicale per l'aggregazione amministrativa."
+        }
+      ]
+    },
+    {
+      "id": "cividale-patriarch-callisto-seat-737",
+      "status": "approved",
+      "labelFur": "Il patriarcje Calist al trasferìs la sô sede a Cividât",
+      "notes": "Patriarcje, Calist, trasferìs e Cividât seguono le forme ARLeF. La frase non aggiunge una provenienza diversa da quella documentata dalle fonti.",
+      "references": [
+        {
+          "url": "https://superdizionari.arlef.it/lemma/patriarca/26634?language=it&oneshot=1&gui=fur",
+          "note": "Patriarca → patriarcje."
+        },
+        {
+          "url": "https://superdizionari.arlef.it/lemma/Callisto/70234?language=it&oneshot=1&gui=fur",
+          "note": "Callisto → Calist."
+        },
+        {
+          "url": "https://superdizionari.arlef.it/lemma/trasferire/30568?language=it&oneshot=1&gui=fur",
+          "note": "Trasferire → trasferî; terza persona trasferìs."
+        },
+        {
+          "url": "https://superdizionari.arlef.it/lemma/Cividale%20del%20Friuli/71781?language=it&oneshot=1&gui=fur",
+          "note": "Cividale del Friuli → Cividât."
+        }
+      ]
+    },
+    {
+      "id": "cividale-archaeological-museum-founded-1817",
+      "status": "approved",
+      "labelFur": "Al ven fondât il Museu archeologjic di Cividât",
+      "notes": "Fondât, Museu e archeologjic seguono i lemmi ARLeF. La copy non retrodata al 1817 l'attuale qualifica amministrativa di museo nazionale.",
+      "references": [
+        {
+          "url": "https://superdizionari.arlef.it/lemma/fondare/9640?language=it&oneshot=1&gui=fur",
+          "note": "Fondare → fondâ; participio fondât."
+        },
+        {
+          "url": "https://superdizionari.arlef.it/lemma/museo/49255?language=it&oneshot=1&gui=fur",
+          "note": "Museo → museu."
+        },
+        {
+          "url": "https://superdizionari.arlef.it/lemma/archeologico/3891?language=it&oneshot=1&gui=fur",
+          "note": "Archeologico → archeologjic."
+        },
+        {
+          "url": "https://superdizionari.arlef.it/lemma/Cividale%20del%20Friuli/71781?language=it&oneshot=1&gui=fur",
+          "note": "Cividale del Friuli → Cividât."
+        }
+      ]
+    },
+    {
+      "id": "san-quirino-incursion-church-fire-1499",
+      "status": "approved",
+      "labelFur": "La incursion turche e met San Quarin e la sô glesie a fûc e sanc",
+      "notes": "Incursion turche e meti a fûc e sanc seguono i lemmi e l'esempio ARLeF; San Quarin è il toponimo ufficiale del Comune pordenonese. La frase non aggiunge vittime o distruzione totale.",
+      "references": [
+        {
+          "url": "https://superdizionari.arlef.it/lemma/incursione/17701?language=it&oneshot=1&gui=fur",
+          "note": "Incursione → incursion."
+        },
+        {
+          "url": "https://superdizionari.arlef.it/lemma/turco/3702?language=it&oneshot=1&gui=fur",
+          "note": "Turco → turc; al femminile turche."
+        },
+        {
+          "url": "https://superdizionari.arlef.it/lemma/mettere%20a%20ferro%20e%20fuoco/31577?language=it&oneshot=1&gui=fur",
+          "note": "Mettere a ferro e fuoco → meti a fûc e sanc."
+        },
+        {
+          "url": "https://superdizionari.arlef.it/lemma/chiesa/28900?language=it&oneshot=1&gui=fur",
+          "note": "Chiesa → glesie."
+        },
+        {
+          "url": "https://superdizionari.arlef.it/lemma/San%20Quirino/73425?language=it&oneshot=1&gui=fur",
+          "note": "San Quirino → San Quarin."
+        }
+      ]
+    },
+    {
+      "id": "san-quirino-napoleonic-district-1807",
+      "status": "approved",
+      "labelFur": "San Quarin al jentre tal Distret di Pordenon dal Ream d'Italie napoleonic",
+      "notes": "Jentre, Distret, Pordenon, Ream e napoleonic seguono le forme ARLeF. La frase descrive l'inquadramento amministrativo del 1807, non la nascita assoluta del Comune.",
+      "references": [
+        {
+          "url": "https://superdizionari.arlef.it/lemma/entrare/7180?language=it&oneshot=1&gui=fur",
+          "note": "Entrare → jentrâ; terza persona jentre."
+        },
+        {
+          "url": "https://superdizionari.arlef.it/lemma/distretto/33254?language=it&oneshot=1&gui=fur",
+          "note": "Distretto → distret."
+        },
+        {
+          "url": "https://superdizionari.arlef.it/lemma/Pordenone/73015?language=it&oneshot=1&gui=fur",
+          "note": "Pordenone → Pordenon."
+        },
+        {
+          "url": "https://superdizionari.arlef.it/lemma/regno/55176?language=it&oneshot=1&gui=fur",
+          "note": "Regno → ream."
+        },
+        {
+          "url": "https://superdizionari.arlef.it/lemma/napoleonico/49341?language=it&oneshot=1&gui=fur",
+          "note": "Napoleonico → napoleonic, senza accento."
+        },
+        {
+          "url": "https://superdizionari.arlef.it/lemma/San%20Quirino/73425?language=it&oneshot=1&gui=fur",
+          "note": "San Quirino → San Quarin."
+        }
+      ]
+    }
+  ]
+}

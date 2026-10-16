@@ -1,0 +1,198 @@
+{
+  "schemaVersion": 1,
+  "batchId": "legacy-candidate-finalization-batch-02",
+  "reviewedAt": "2026-07-23",
+  "purpose": "Chiusura completa dei candidati Ostermann residui: promozione controllata o decisione editoriale finale.",
+  "counts": {
+    "promoted": 15,
+    "archiveOnly": 12,
+    "variantNotSelected": 3,
+    "provisionalRemaining": 0
+  },
+  "promoted": [
+    {
+      "id": "ostermann-105-bon-timp-gnot",
+      "almanacTargetUse": "almanac_generic"
+    },
+    {
+      "id": "ostermann-105-aghe-pais",
+      "almanacTargetUse": "almanac_generic"
+    },
+    {
+      "id": "ostermann-190-marz-avril-mai",
+      "almanacTargetUse": "almanac_monthly",
+      "months": [
+        "03",
+        "04",
+        "05"
+      ]
+    },
+    {
+      "id": "ostermann-126-bruntule-tempieste",
+      "almanacTargetUse": "almanac_weather_sign",
+      "weatherTags": [
+        "temporale",
+        "grandine"
+      ]
+    },
+    {
+      "id": "ostermann-126-tempieste-no-charestie",
+      "almanacTargetUse": "almanac_weather_sign",
+      "weatherTags": [
+        "grandine",
+        "temporale"
+      ]
+    },
+    {
+      "id": "ostermann-132-prime-nev-plan",
+      "almanacTargetUse": "almanac_seasonal"
+    },
+    {
+      "id": "ostermann-029-canicule-bagnat-sut",
+      "almanacTargetUse": "almanac_date_range",
+      "dateRanges": [
+        {
+          "from": "07-21",
+          "to": "08-23"
+        }
+      ]
+    },
+    {
+      "id": "ostermann-062-sis-dis-an-mesais",
+      "almanacTargetUse": "almanac_date_range",
+      "dateRanges": [
+        {
+          "from": "12-26",
+          "to": "01-06"
+        }
+      ]
+    },
+    {
+      "id": "ostermann-063-otubar-febrar",
+      "almanacTargetUse": "almanac_monthly",
+      "months": [
+        "10"
+      ]
+    },
+    {
+      "id": "ostermann-059-vinars-sant-arsure",
+      "almanacTargetUse": "almanac_movable_feast",
+      "movableFeasts": [
+        {
+          "id": "easter",
+          "offsetDays": -2
+        }
+      ]
+    },
+    {
+      "id": "ostermann-059-vinars-sant-ploe",
+      "almanacTargetUse": "almanac_movable_feast",
+      "movableFeasts": [
+        {
+          "id": "easter",
+          "offsetDays": -2
+        }
+      ]
+    },
+    {
+      "id": "ostermann-059-ascense-ploe",
+      "almanacTargetUse": "almanac_movable_feast",
+      "movableFeasts": [
+        {
+          "id": "easter",
+          "offsetDays": 39
+        }
+      ]
+    },
+    {
+      "id": "ostermann-193-pasche-fen",
+      "almanacTargetUse": "almanac_movable_feast",
+      "movableFeasts": [
+        {
+          "id": "easter",
+          "offsetDays": 0
+        }
+      ]
+    },
+    {
+      "id": "ostermann-063-sant-egidi-color-mes",
+      "almanacTargetUse": "almanac_dated",
+      "scheduleDate": "09-01"
+    },
+    {
+      "id": "ostermann-062-san-ruperto-lui",
+      "almanacTargetUse": "almanac_dated",
+      "scheduleDate": "03-27"
+    }
+  ],
+  "archiveOnly": [
+    {
+      "id": "ostermann-103-montane-san-michel",
+      "reason": "La data di San Michele riportata nel blocco sorgente è incoerente con il calendario corrente: resta materiale d'archivio."
+    },
+    {
+      "id": "ostermann-103-cuatri-timporis",
+      "reason": "Richiede una spiegazione estesa delle Quattro Tempora e non funziona come proverbio quotidiano autonomo."
+    },
+    {
+      "id": "ostermann-103-joibe-vinars",
+      "reason": "Formula legata a una sequenza settimanale poco immediata: utile soltanto in una scheda di approfondimento."
+    },
+    {
+      "id": "ostermann-049-lune-sabadine",
+      "reason": "Detto lunare che richiede contesto e confronto con le varianti: destinato all'archivio tematico."
+    },
+    {
+      "id": "ostermann-049-sabadine-camisine",
+      "reason": "Variante lunare non adatta a una card giornaliera senza spiegazione: destinata all'archivio tematico."
+    },
+    {
+      "id": "ostermann-104-ambruset-chapiel",
+      "reason": "Lessico e riferimento locale richiedono una nota editoriale estesa: non entra nel repertorio quotidiano."
+    },
+    {
+      "id": "ostermann-131-sante-catarine-nev",
+      "reason": "La data indicata dalla fonte non coincide con la ricorrenza adottata dall'app: resta fuori dal calendario giornaliero."
+    },
+    {
+      "id": "ostermann-031-macis-zenar",
+      "reason": "Testo oscuro senza una spiegazione culturale sufficiente: destinato all'archivio, non all'Almanacco."
+    },
+    {
+      "id": "ostermann-062-san-macari-setembar",
+      "reason": "Data e interpretazione non sono abbastanza solide per un aggancio giornaliero."
+    },
+    {
+      "id": "ostermann-190-albe-anunziade",
+      "reason": "Il riferimento cronologico della fonte non coincide con la ricorrenza corrente: resta materiale di studio."
+    },
+    {
+      "id": "ostermann-102-quart-dopo-pleniluni",
+      "reason": "La regola lunare non dispone ancora di una forma FUR e di un'interpretazione abbastanza sicure."
+    },
+    {
+      "id": "ostermann-131-nev-decembrine",
+      "reason": "Il significato meteorologico resta ambiguo e non va presentato come proverbio autonomo."
+    }
+  ],
+  "variantNotSelected": [
+    {
+      "id": "ostermann-132-verd-nadal",
+      "reason": "Variante ridondante del gruppo Natale/Pasqua: non selezionata per evitare duplicazioni."
+    },
+    {
+      "id": "ostermann-141-cercli-san-march",
+      "reason": "Variante ambigua e sovrapposta alla voce di San Marco già calendarizzata."
+    },
+    {
+      "id": "ostermann-057-san-lucio-nadal-gial",
+      "reason": "Variante meno chiara del gruppo Santa Lucia/Natale: non selezionata."
+    }
+  ],
+  "invariants": [
+    "Nessun candidato resta in needs_context o hold.",
+    "Le ricorrenze mobili usano esclusivamente offset dalla Pasqua.",
+    "I testi stagionali o datati non entrano nella rotazione generica.",
+    "Le varianti non selezionate restano tracciate nel catalogo sorgente."
+  ]
+}

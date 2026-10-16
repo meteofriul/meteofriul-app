@@ -1,0 +1,213 @@
+{
+  "schemaVersion": 1,
+  "batchId": "ud-pn-enrichment-milestones-07",
+  "snapshotDate": "2026-09-02",
+  "purpose": "Ricerca di tre tappe per Venzone, Polcenigo e Terzo d'Aquileia; revisione FUR e promozione sono documentate separatamente.",
+  "runtimeIntegration": false,
+  "initialTotalMilestones": 454,
+  "editorialPolicy": {
+    "sourceEvidenceRequired": true,
+    "ambiguousDatesExcluded": true,
+    "italianCopyStatus": "editorial_draft",
+    "friulianCopyStatus": "pending_assisted_review",
+    "readyForUi": false
+  },
+  "excludedClaims": [
+    {
+      "municipality": "Venzone",
+      "claim": "La doppia cinta muraria viene completata nel 1258.",
+      "reason": "ERPAC attribuisce al 1258 l'inizio della costruzione; la tappa non trasforma l'avvio del cantiere nel suo completamento.",
+      "sourceUrl": "https://patrimonioculturale.regione.fvg.it/architettura/?s_id=446567"
+    },
+    {
+      "municipality": "Venzone",
+      "claim": "La cinta visibile oggi è rimasta integralmente originale dal Medioevo.",
+      "reason": "La scheda ERPAC documenta anche distruzioni e ricostruzioni, comprese quelle successive al terremoto del 1976; la nuova tappa resta limitata all'avvio medievale del circuito difensivo.",
+      "sourceUrl": "https://patrimonioculturale.regione.fvg.it/architettura/?s_id=446567"
+    },
+    {
+      "municipality": "Polcenigo",
+      "claim": "Nel 1499 l'incursione distrugge definitivamente il castello di Polcenigo.",
+      "reason": "La fonte comunale descrive Polcenigo ridotta in macerie, ma non attribuisce in quel passo la distruzione definitiva del castello all'incursione; la tappa resta riferita al borgo.",
+      "sourceUrl": "https://www.comune.polcenigo.pn.it/it/vivere-il-comune-273915/luoghi-273916/castello-di-polcenigo-289700"
+    },
+    {
+      "municipality": "Polcenigo",
+      "claim": "L'incursione del 1499 provoca l'abbandono permanente di Polcenigo.",
+      "reason": "Le fonti documentano una devastazione, non la scomparsa definitiva dell'abitato; la copy non aggiunge conseguenze permanenti non attestate.",
+      "sourceUrl": "https://www.comune.polcenigo.pn.it/media/files/md/093031/COMUNE_DI_POLCENIGO_Op_Scrignoverde.pdf"
+    },
+    {
+      "municipality": "Terzo d'Aquileia",
+      "claim": "A Canale Anfora si produceva vino nel XIV-XIII secolo a.C.",
+      "reason": "Le analisi documentano residui e consumo di vino in una coppa, non la coltivazione della vite o la produzione locale della bevanda.",
+      "sourceUrl": "https://comune.terzodiaquileia.ud.it/media/files/md/030120/Piano_Comunale_di_illuminazione_web_1.pdf"
+    },
+    {
+      "municipality": "Terzo d'Aquileia",
+      "claim": "Canale Anfora conserva la più antica prova di vino d'Italia.",
+      "reason": "L'Università di Udine qualifica il reperto come la più antica attestazione regionale; la tappa evita ogni primato nazionale e conserva il solo fatto analiticamente documentato.",
+      "sourceUrl": "https://qui.uniud.it/ricerca-e-innovazione/3000-anni-fa-in-friuli-venezia-giulia-si-consumava-vino/"
+    }
+  ],
+  "editorialOmissions": [
+    {
+      "municipality": "Venzone",
+      "year": 1258,
+      "claim": "La doppia cinta è accompagnata da un fossato esterno.",
+      "decision": "source_verified_not_promoted",
+      "reason": "Il dettaglio è documentato, ma la copy breve conserva il passaggio principale dell'avvio della doppia cinta senza sovraccaricare la tappa.",
+      "sourceUrl": "https://patrimonioculturale.regione.fvg.it/architettura/?s_id=446567"
+    },
+    {
+      "municipality": "Polcenigo",
+      "year": 1420,
+      "claim": "Polcenigo passa sotto il dominio della Repubblica di Venezia.",
+      "decision": "source_verified_not_promoted",
+      "reason": "Il fatto è documentato dalla guida comunale; l'incursione del 1499 aggiunge però un episodio locale più distinto dalle due tappe già presenti sul castello.",
+      "sourceUrl": "https://www.comune.polcenigo.pn.it/media/files/md/093031/COMUNE_DI_POLCENIGO_Op_Scrignoverde.pdf"
+    },
+    {
+      "municipality": "Terzo d'Aquileia",
+      "century": "2013-2015",
+      "claim": "Le campagne di scavo portano alla luce l'abitato di Canale Anfora.",
+      "decision": "source_verified_not_promoted",
+      "reason": "Le campagne moderne sono tracciate nelle fonti, ma la timeline promuove il fatto storico attestato dai reperti e non la cronaca contemporanea della ricerca.",
+      "sourceUrl": "https://comune.terzodiaquileia.ud.it/media/files/md/030120/Piano_Comunale_di_illuminazione_web_1.pdf"
+    }
+  ],
+  "municipalities": [
+    {
+      "istatCode": "030131",
+      "municipality": "Venzone",
+      "province": "UD",
+      "currentMilestoneCount": 2,
+      "currentMilestoneIds": [
+        "venzone-national-monument",
+        "venzone-earthquake"
+      ],
+      "decision": "source_verified_it_fur_pending",
+      "candidates": [
+        {
+          "id": "venzone-double-defensive-walls-1258",
+          "year": 1258,
+          "label": {
+            "it": "Inizia la costruzione della doppia cinta muraria di Venzone",
+            "fur": null
+          },
+          "evidence": "ERPAC FVG documenta che Glizoio di Mels iniziò nel 1258 la costruzione della doppia cinta muraria di Venzone, accompagnata da un fossato esterno; una seconda scheda regionale conferma l'anno e il carattere doppio del circuito difensivo.",
+          "source": {
+            "label": "ERPAC FVG - Circuito difensivo di Venzone",
+            "type": "regional_institution",
+            "url": "https://patrimonioculturale.regione.fvg.it/architettura/?s_id=446567",
+            "checkedAt": "2026-09-02"
+          },
+          "supportingSources": [
+            {
+              "label": "ERPAC FVG - Venzone, borgo fortificato",
+              "type": "regional_institution",
+              "url": "https://patrimonioculturale.regione.fvg.it/percorso-tematico/?s_id=875161",
+              "checkedAt": "2026-09-02"
+            }
+          ],
+          "duplicateReview": {
+            "exactDuplicate": false,
+            "relatedRecordIds": [
+              "venzone-national-monument",
+              "venzone-earthquake"
+            ],
+            "note": "L'avvio medievale della fortificazione è distinto sia dal riconoscimento del 1965 sia dal terremoto e dalla successiva ricostruzione del 1976."
+          }
+        }
+      ]
+    },
+    {
+      "istatCode": "093031",
+      "municipality": "Polcenigo",
+      "province": "PN",
+      "currentMilestoneCount": 2,
+      "currentMilestoneIds": [
+        "polcenigo-963",
+        "polcenigo-century-xviii"
+      ],
+      "decision": "source_verified_it_fur_pending",
+      "candidates": [
+        {
+          "id": "polcenigo-turkish-incursion-1499",
+          "year": 1499,
+          "label": {
+            "it": "L'incursione turca devasta Polcenigo",
+            "fur": null
+          },
+          "evidence": "La pagina del castello e la guida storico-naturalistica pubblicate dal Comune documentano l'incursione turca del 1499 e descrivono Polcenigo ridotta a un cumulo di macerie.",
+          "source": {
+            "label": "Comune di Polcenigo - Castello di Polcenigo",
+            "type": "official_municipality",
+            "url": "https://www.comune.polcenigo.pn.it/it/vivere-il-comune-273915/luoghi-273916/castello-di-polcenigo-289700",
+            "checkedAt": "2026-09-02"
+          },
+          "supportingSources": [
+            {
+              "label": "Comune di Polcenigo - Scrigno verde, guida storico-naturalistica",
+              "type": "official_municipality",
+              "url": "https://www.comune.polcenigo.pn.it/media/files/md/093031/COMUNE_DI_POLCENIGO_Op_Scrignoverde.pdf",
+              "checkedAt": "2026-09-02"
+            }
+          ],
+          "duplicateReview": {
+            "exactDuplicate": false,
+            "relatedRecordIds": [
+              "polcenigo-963",
+              "polcenigo-century-xviii"
+            ],
+            "note": "La devastazione del 1499 è distinta dalla prima attestazione del castello nel 963 e dalla sua trasformazione settecentesca in villa."
+          }
+        }
+      ]
+    },
+    {
+      "istatCode": "030120",
+      "municipality": "Terzo d'Aquileia",
+      "province": "UD",
+      "currentMilestoneCount": 2,
+      "currentMilestoneIds": [
+        "terzo-suppression",
+        "terzo-restored"
+      ],
+      "decision": "source_verified_it_fur_pending",
+      "candidates": [
+        {
+          "id": "terzo-canale-anfora-wine-consumption",
+          "century": "XIV-XIII a.C.",
+          "label": {
+            "it": "Nell'abitato di Canale Anfora è documentato il consumo di vino",
+            "fur": null
+          },
+          "evidence": "Il piano comunale documenta residui di vino in una coppa accanto a un focolare dell'abitato di Canale Anfora, databile al XIV-XIII secolo a.C.; l'Università di Udine conferma l'identificazione analitica e il contesto archeologico.",
+          "source": {
+            "label": "Comune di Terzo d'Aquileia - Piano comunale dell'illuminazione",
+            "type": "official_municipality",
+            "url": "https://comune.terzodiaquileia.ud.it/media/files/md/030120/Piano_Comunale_di_illuminazione_web_1.pdf",
+            "checkedAt": "2026-09-02"
+          },
+          "supportingSources": [
+            {
+              "label": "Università degli Studi di Udine - 3000 anni fa in Friuli Venezia Giulia si consumava vino",
+              "type": "university",
+              "url": "https://qui.uniud.it/ricerca-e-innovazione/3000-anni-fa-in-friuli-venezia-giulia-si-consumava-vino/",
+              "checkedAt": "2026-09-02"
+            }
+          ],
+          "duplicateReview": {
+            "exactDuplicate": false,
+            "relatedRecordIds": [
+              "terzo-suppression",
+              "terzo-restored"
+            ],
+            "note": "La testimonianza protostorica amplia la timeline ed è distinta dai due passaggi amministrativi del 1925 e del 1947."
+          }
+        }
+      ]
+    }
+  ]
+}

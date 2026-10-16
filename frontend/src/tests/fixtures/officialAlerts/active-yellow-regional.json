@@ -1,0 +1,17 @@
+{
+  "active": true,
+  "alerts": [
+    {
+      "id": "pc-fvg-yellow-storm-20260624",
+      "level": "gialla",
+      "official_text": "ALLERTA GIALLA PER TEMPORALI SU TUTTA LA REGIONE",
+      "title": "Allerta regionale gialla",
+      "valid_from": "2026-06-24T12:00:00+02:00",
+      "valid_to": "2026-06-25T00:00:00+02:00"
+    }
+  ],
+  "count": 1,
+  "fetched_at": "2026-06-24T10:00:00+02:00",
+  "source": "Protezione Civile FVG",
+  "source_mode": "github_actions_official_page"
+}

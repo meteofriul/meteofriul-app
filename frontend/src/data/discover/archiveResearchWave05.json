@@ -1,0 +1,123 @@
+{
+  "schemaVersion": 1,
+  "snapshotDate": "2026-09-01",
+  "purpose": "Quinto lotto d'archivio: tre racconti sul rapporto concreto fra clima, lavoro e comunicazione nel Friuli Venezia Giulia. Copy bilingue e riferimenti linguistici sono conservati una sola volta nei record promossi.",
+  "readyForUi": false,
+  "runtimeCatalog": "frontend/src/data/discover/institutionalArchive.json",
+  "editorialDecision": {
+    "basis": "user_delegated_assisted_editorial_review",
+    "reviewer": "assistant",
+    "independentHumanReview": false,
+    "scope": [
+      "archive-research-osmer-previsioni-fax-1991",
+      "archive-research-carnia-alpeggio-fieno-inverno",
+      "archive-research-carso-ghiacciaie-pietra"
+    ],
+    "note": "Decisione editoriale assistita nel mandato di continuare Scopri, non approvazione dell'utente frase per frase e non certificazione ARLeF o revisione professionale indipendente."
+  },
+  "preservedCatalog": {
+    "records": 26,
+    "sha256Json": "3ed64fd1dc30322cd96d8805bceb75485760ecf1ed384d65de541b3179e64914"
+  },
+  "rules": [
+    "Il manifest non è importato dalla UI: soltanto i tre promotedRecordId sono promossi nel catalogo attivo.",
+    "Le fonti sono un approfondimento ARPA FVG, una pagina del Museo Carnico e un manuale pubblicato dal Comune di Duino Aurisina; le tre autorità restano distinte.",
+    "Rotazione annuale senza trigger meteo, data commemorativa automatica o attribuzione alla località dell'utente. Il 25 giugno 1991 resta nel racconto storico e non diventa una ricorrenza.",
+    "Nessuna informazione pratica di visita, localizzazione di manufatti privati o descrizione dell'alpeggio contemporaneo. Sintesi originali, senza riuso di immagini, mappe, tavole o citazioni estese."
+  ],
+  "records": [
+    {
+      "id": "archive-research-osmer-previsioni-fax-1991",
+      "promotedRecordId": "institutional-archive-osmer-previsioni-fax-1991",
+      "canonicalKey": "fvg-previsioni-regionali-fax-1991",
+      "rubric": "archive_traditions",
+      "reviewStatus": "promoted",
+      "readyForUi": false,
+      "promotedAt": "2026-09-01",
+      "source": {
+        "url": "https://www.arpa.fvg.it/temi/temi/meteo-e-clima/ultimi-approfondimenti-pubblicati/losservatorio-meteorologico-regionale-di-arpa-fvg-evoluzione-dei-servizi-e-della-comunicazione-in-ambito-meteo-climatico/",
+        "authority": "ARPA FVG · Evoluzione dell'OSMER",
+        "accessMethod": "search_cached_primary_html",
+        "checkedAt": "2026-09-01"
+      },
+      "evidenceSummary": "ARPA FVG documenta che il 25 giugno 1991 il Centro Meteorologico ERSA emise le prime previsioni regionali a due giorni. Le mappe ECMWF arrivavano via fax da Klagenfurt, venivano disegnate a mano e inviate via fax agli utenti e al Gazzettino il lunedì, mercoledì e venerdì.",
+      "temporalRule": { "type": "annual_rotation" },
+      "geographicScope": ["friuli_venezia_giulia"],
+      "scopeNote": "Storia regionale della comunicazione meteorologica. Il Centro Meteorologico ERSA è il predecessore dell'OSMER: il racconto non retrodata l'istituzione dell'OSMER, non importa mappe o bollettini e non usa il 25 giugno come anniversario automatico.",
+      "languageReview": {
+        "approvalBasis": "user_delegated_assisted_editorial_review",
+        "reviewer": "assistant",
+        "independentHumanReview": false,
+        "referencesLocation": "institutional-archive-osmer-previsioni-fax-1991.languageReview.fur.references",
+        "notes": "Meteorologjic, prevision, regjonâl, mape, dissegnâ, predecessôr, utent, fax e i nomi dei giorni controllati nelle pagine HTML ARLeF. ERSA, OSMER, ECMWF, Klagenfurt e Gazzettino restano nomi propri."
+      },
+      "duplicateReview": {
+        "status": "distinct",
+        "comparedCatalogs": ["ostermannCulturalDiscover", "institutionalRituals", "institutionalArchive", "archiveResearchWave01", "archiveResearchWave02", "archiveResearchWave03", "archiveResearchWave04", "localMemory", "municipalityProfiles"],
+        "note": "Nessun catalogo attivo racconta la produzione e diffusione delle prime previsioni regionali del 1991. Le memorie meteorologiche esistenti riguardano fenomeni, persone o istituzioni differenti; le altre schede d'archivio non trattano la comunicazione del meteo."
+      }
+    },
+    {
+      "id": "archive-research-carnia-alpeggio-fieno-inverno",
+      "promotedRecordId": "institutional-archive-carnia-alpeggio-fieno-inverno",
+      "canonicalKey": "carnia-alpeggio-scorta-fieno-inverno",
+      "rubric": "archive_traditions",
+      "reviewStatus": "promoted",
+      "readyForUi": false,
+      "promotedAt": "2026-09-01",
+      "source": {
+        "url": "https://museocarnico.it/it/esplora/la-malga/alpeggio/",
+        "authority": "Museo Carnico delle Arti Popolari · Alpeggio",
+        "accessMethod": "direct_html",
+        "checkedAt": "2026-09-01"
+      },
+      "evidenceSummary": "Il Museo Carnico spiega che distanza dai paesi e breve periodo vegetativo favorivano l'uso comunitario della malga. Portare gli animali in alpeggio consentiva di accumulare fieno per il periodo autunno-vernino-primaverile e di dedicarsi alla fienagione.",
+      "temporalRule": { "type": "annual_rotation" },
+      "geographicScope": ["carnia"],
+      "scopeNote": "Organizzazione storica del lavoro e delle scorte in Carnia, senza attribuzione a un singolo paese o descrizione dell'alpeggio corrente. Non si ripetono campanacci, caseificazione o programmi del museo già coperti da altre schede.",
+      "languageReview": {
+        "approvalBasis": "user_delegated_assisted_editorial_review",
+        "reviewer": "assistant",
+        "independentHumanReview": false,
+        "referencesLocation": "institutional-archive-carnia-alpeggio-fieno-inverno.languageReview.fur.references",
+        "notes": "Cjampei, fen, scorte, Invier, vegjetatîf, comunitari, ingrumâ, Sierade e Vierte controllati nelle pagine HTML ARLeF. La formula Cjamâ e scjamâ la mònt resta documentata nella fonte ma non viene trasformata in titolo standardizzato."
+      },
+      "duplicateReview": {
+        "status": "distinct",
+        "comparedCatalogs": ["ostermannCulturalDiscover", "institutionalRituals", "institutionalArchive", "archiveResearchWave01", "archiveResearchWave02", "archiveResearchWave03", "archiveResearchWave04", "localMemory", "municipalityProfiles"],
+        "note": "La scheda sui campanacci racconta nomi e suoni degli animali; quella sulla latteria racconta la trasformazione del latte. Questa aggiunta è limitata all'organizzazione comunitaria dell'alpeggio e alla scorta di fieno per l'inverno."
+      }
+    },
+    {
+      "id": "archive-research-carso-ghiacciaie-pietra",
+      "promotedRecordId": "institutional-archive-carso-ghiacciaie-pietra",
+      "canonicalKey": "carso-ghiacciaie-pietra-elettricita",
+      "rubric": "archive_traditions",
+      "reviewStatus": "promoted",
+      "readyForUi": false,
+      "promotedAt": "2026-09-01",
+      "source": {
+        "url": "https://comune.duino-aurisina.ts.it/media/files/032001/attachment/Living_Landscape_Manuale_per_la_gestione_ed_il_recupero_del_paesaggio_cult..._Carso.pdf",
+        "authority": "Comune di Duino Aurisina · Manuale del paesaggio culturale del Carso",
+        "accessMethod": "direct_pdf_text_page_53",
+        "checkedAt": "2026-09-01"
+      },
+      "evidenceSummary": "La pagina 53 del manuale descrive le ghiacciaie come strutture in pietra usate per produrre e conservare il ghiaccio fino all'introduzione dell'elettricità nelle abitazioni. I pochi esempi superstiti sono fuori dai centri, spesso su terreni privati, e non hanno più la funzione originaria.",
+      "temporalRule": { "type": "annual_rotation" },
+      "geographicScope": ["carso", "carso_triestino"],
+      "scopeNote": "Tipologia del paesaggio culturale del Carso, senza inventare coordinate o accessibilità dei manufatti superstiti. Distinta dalla galleria-ghiacciaia citata in una tappa di Resiutta e priva di indicazioni di visita su proprietà private.",
+      "languageReview": {
+        "approvalBasis": "user_delegated_assisted_editorial_review",
+        "reviewer": "assistant",
+        "independentHumanReview": false,
+        "referencesLocation": "institutional-archive-carso-ghiacciaie-pietra.languageReview.fur.references",
+        "notes": "Glacere, piere, glace, eletricitât, conservâ, struture, centri abitât e Cjars controllati nelle pagine HTML ARLeF. Il testo italiano del manuale, non la parallela versione slovena, è la fonte della sintesi."
+      },
+      "duplicateReview": {
+        "status": "distinct",
+        "comparedCatalogs": ["ostermannCulturalDiscover", "institutionalRituals", "institutionalArchive", "archiveResearchWave01", "archiveResearchWave02", "archiveResearchWave03", "archiveResearchWave04", "localMemory", "municipalityProfiles"],
+        "note": "La tappa di Resiutta riguarda una specifica galleria naturale usata anche come ghiacciaia per un birrificio. Questa scheda racconta invece una tipologia costruita in pietra e diffusa nel paesaggio carsico; nessun altro record attivo tratta queste strutture."
+      }
+    }
+  ]
+}

@@ -1,0 +1,46 @@
+{
+  "ok": true,
+  "status": "ok",
+  "source": "local",
+  "source_url": "",
+  "version": 1,
+  "source_updated_at": "2026-06-08T00:00:00Z",
+  "generated_at": "2026-08-02T06:45:43Z",
+  "count": 2,
+  "webcams": [
+    {
+      "id": "grado-al-bosco",
+      "name": "Grado Pineta - Isolotto Sacca dei Moreri",
+      "group": "coast",
+      "category": "Costa ovest e Laguna",
+      "area": "Grado Pineta",
+      "imageUrl": "https://cam.kitelifefvg.it/webcam_grado.php",
+      "mediaType": "snapshot",
+      "fallbackImageUrl": "/municipalities/photos/031009-photo.webp",
+      "provider": "Grado.it",
+      "sourcePage": "https://grado.it/it/scoprire-grado/webcam",
+      "attribution": "Residence Hotel Al Bosco · Kite Life FVG",
+      "attributionUrl": "https://www.kitelifefvg.it/webcam/",
+      "health": "ok",
+      "checkedAt": "2026-09-19T17:36:30Z",
+      "sortOrder": 10
+    },
+    {
+      "id": "lignano-punta-faro",
+      "name": "Lignano Sabbiadoro - Punta Faro",
+      "group": "coast",
+      "category": "Costa ovest e Laguna",
+      "area": "Lignano",
+      "imageUrl": "https://www.lignanosabbiadoro.com/images/webcam6.jpg",
+      "mediaType": "snapshot",
+      "fallbackImageUrl": "/municipalities/photos/030049-photo.webp",
+      "provider": "LignanoSabbiadoro.com",
+      "sourcePage": "https://www.lignanosabbiadoro.com/webcam/webcam-spiaggia-punta-faro",
+      "attribution": "LignanoSabbiadoro.com",
+      "attributionUrl": "https://www.lignanosabbiadoro.com/webcam/webcam-spiaggia-punta-faro",
+      "health": "ok",
+      "checkedAt": "2026-09-19T15:28:37Z",
+      "sortOrder": 20
+    }
+  ]
+}

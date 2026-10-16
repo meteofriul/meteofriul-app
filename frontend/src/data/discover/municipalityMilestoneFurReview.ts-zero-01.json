@@ -1,0 +1,69 @@
+{
+  "schemaVersion": 1,
+  "batchId": "ts-zero-milestones-fur-01",
+  "sourceResearchBatchId": "ts-zero-milestones-01",
+  "reviewedAt": "2026-08-21",
+  "purpose": "Revisione linguistica separata delle nove tappe storiche TS prima di qualsiasi promozione nel catalogo visibile.",
+  "runtimeIntegration": false,
+  "summary": {
+    "totalRecords": 9,
+    "approved": 9,
+    "pendingHumanReview": 0
+  },
+  "records": [
+    {
+      "id": "duino-aurisina-castello-fonti-1363",
+      "status": "approved",
+      "labelFur": "Il cjistiel atuâl di Duin al comparìs pe prime volte tes fonts scritis",
+      "notes": "Duin, cjistiel e fonts scritis seguissin il corpus; la frase no presente il 1363 come date di costruzion."
+    },
+    {
+      "id": "duino-aurisina-alasia-vocabolario-1607",
+      "status": "approved",
+      "labelFur": "Gregorio Alasia, atîf a Duin, al publiche il Vocabolario Italiano e Schiavo",
+      "notes": "Atîf al è za doprât tal corpus; il titul storic al reste invariât e la stampe no ven atribuide a Duin."
+    },
+    {
+      "id": "duino-aurisina-uwc-adriatico-1982",
+      "status": "approved",
+      "labelFur": "A Duin al ven fondât il Collegio del Mondo Unito dell'Adriatico",
+      "notes": "Il non uficiâl dal Coleç al reste invariât; fondât al corispuint ae cronologjie de istituzion."
+    },
+    {
+      "id": "monrupino-chiesa-prima-attestazione-1316",
+      "status": "approved",
+      "labelFur": "Prime atestazion de glesie come Sancta Maria in Reypen",
+      "notes": "La forme latine storiche e reste invariade e atestazion no trasforme la citazion intune costruzion."
+    },
+    {
+      "id": "monrupino-chiesa-consacrazione-1512",
+      "status": "approved",
+      "labelFur": "La glesie slargjade e ven consacrade ae Beade Vergjine Assunte",
+      "notes": "Beade Vergjine Assunte e je la forme za aprovade tal profîl comunâl."
+    },
+    {
+      "id": "monrupino-nozze-carsiche-ripresa-1968",
+      "status": "approved",
+      "labelFur": "La cooperative Naš Kras e torne a proponi la tradizion des Nocis Carsichis",
+      "notes": "Naš Kras e Nocis Carsichis a restin invariâts; torne a proponi al seguìs il model torne a + verp za doprât tal corpus aprovât."
+    },
+    {
+      "id": "san-dorligo-castello-mocco-attestazione-1223",
+      "status": "approved",
+      "labelFur": "Prime atestazion documentarie dal cjistiel di Moccò",
+      "notes": "La formulazion e conserve la cautiele de font e no date la costruzion dal cjistiel."
+    },
+    {
+      "id": "san-dorligo-rifugio-premuda-1940",
+      "status": "approved",
+      "labelFur": "Al ven inaugurât il Rifugio Mario Premuda ae jentrade de Val Rosandra",
+      "notes": "I nons propris a restin invariâts; ae jentrade e rint in mût sempliç la posizion documentade."
+    },
+    {
+      "id": "san-dorligo-riserva-val-rosandra-1996",
+      "status": "approved",
+      "labelFur": "E ven istituide la Risierve naturâl regjonâl de Val Rosandra",
+      "notes": "La costruzion e il lessic a seguissin il model za aprovât pes riservis regjonâls."
+    }
+  ]
+}

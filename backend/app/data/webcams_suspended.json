@@ -1,0 +1,43 @@
+{
+  "version": 2,
+  "mode": "shadow",
+  "publish": false,
+  "sourceUpdatedAt": "2026-09-19T15:40:00Z",
+  "generatedAt": "2026-09-19T15:40:00Z",
+  "suspensionReasons": {
+    "aquileia-basilica": "Flusso HLS HTTP 404; widget senza player e snapshot con Last-Modified 2026-05-17. Pagina raggiungibile, ripresa attuale non disponibile. Ricontrollare prima di una promozione esplicita.",
+    "val-saisera": "La JPEG servita da Radio Punto Zero risulta ferma al 2025-02-08. La pagina è raggiungibile, ma non offre una ripresa attuale della Val Saisera. Non sostituire con Piani del Montasio OGS mantenendo questa identità geografica."
+  },
+  "candidates": [
+    {
+      "id": "aquileia-basilica",
+      "name": "Aquileia - Basilica",
+      "group": "plain",
+      "category": "Pianura Udinese",
+      "area": "Basilica",
+      "municipality": "Aquileia",
+      "lat": 45.7697,
+      "lon": 13.36967,
+      "fallbackImageUrl": "/municipalities/photos/030004-photo.webp",
+      "provider": "WhatsUpCams",
+      "sourcePage": "https://www.whatsupcams.com/it/webcams/italia/friuli-venezia-giulia-it/aquileia-it/aquileia-piazza-capitolo/",
+      "health": "offline",
+      "checkedAt": "2026-08-30T14:14:24Z",
+      "sortOrder": 45
+    },
+    {
+      "id": "val-saisera",
+      "name": "Jôf di Montasio - Val Saisera",
+      "group": "mountain",
+      "category": "Alpi Giulie",
+      "area": "Val Saisera",
+      "municipality": "Malborghetto Valbruna",
+      "fallbackImageUrl": "/municipalities/photos/030054-photo.webp",
+      "provider": "Radio Punto Zero",
+      "sourcePage": "https://www.radiopuntozero.it/cam/",
+      "health": "offline",
+      "checkedAt": "2026-09-19T15:18:00Z",
+      "sortOrder": 40
+    }
+  ]
+}

@@ -1,0 +1,56 @@
+{
+  "schemaVersion": 1,
+  "generatedAt": "2026-07-20",
+  "purpose": "Sessantaquattresimo lotto Scopri IT: una nuova Memoria principale per il 19 maggio, verificata sul riconoscimento della DOC Friuli Latisana. La pubblicazione resta bloccata fino alla revisione FUR.",
+  "policy": {
+    "readyForUi": false,
+    "furDeferred": true,
+    "dateFormat": "DD-MM",
+    "requiresFinalItalianApproval": true,
+    "excludeDeaths": true,
+    "excludeGenericPoliticalProfiles": true,
+    "excludeGenericProfessionalProfiles": true,
+    "excludeSportsOnlyProfiles": true,
+    "rejectBirthplaceOnlyProfiles": true,
+    "rejectSemanticDuplicates": true,
+    "rejectUncertainCalendarDates": true,
+    "requireOneCanonicalSource": true,
+    "sourceFirst": true,
+    "publishAfterFurOnly": true,
+    "allowMultipleMemoriesPerDate": true,
+    "doNotPromoteToPrimaryForCoverageOnly": true
+  },
+  "summary": {
+    "reviewed": 1,
+    "keepDaily": 1,
+    "primary": 1,
+    "secondary": 0,
+    "hold": 0,
+    "excluded": 0,
+    "canonicalPrimaryDatesBefore": 313,
+    "canonicalPrimaryDatesAfter": 314,
+    "currentVisiblePrimaryCoverage": 313
+  },
+  "keepDaily": [
+    {
+      "id": "source-gap-19-05-doc-friuli-latisana-1975",
+      "sourceEntityId": "bur-fvg-dpr-friuli-latisana-1975",
+      "dateIt": "19-05",
+      "year": 1975,
+      "municipality": "Latisana",
+      "locality": "Bassa friulana",
+      "province": "UD",
+      "canonicalCategory": "territorio",
+      "dailyRole": "primary",
+      "priority": 88,
+      "titleIt": "Il riconoscimento della DOC Friuli Latisana",
+      "copyIt": "Il 19 maggio 1975 un decreto del Presidente della Repubblica riconosce la denominazione di origine controllata dei vini Friuli Latisana. La tutela riunisce sotto un nome legato al territorio una zona vitivinicola della Bassa friulana e i suoi vini.",
+      "sourceLabel": "Bollettino Ufficiale della Regione Friuli Venezia Giulia",
+      "sourceUrl": "https://bur.regione.fvg.it/newbur/downloadPDF?doc=0&name=reposit%2Fbur%2F02%2F3%2Fbu_40.pdf",
+      "sourceStatus": "pass",
+      "readyForUi": false
+    }
+  ],
+  "hold": [],
+  "excluded": []
+}

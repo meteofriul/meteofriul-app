@@ -1,0 +1,1089 @@
+{
+  "schemaVersion": 1,
+  "generatedAt": "2026-08-10",
+  "source": {
+    "catalog": "frontend/src/data/discover/municipalityProfiles.json",
+    "officialToponymy": "ARLeF - Comuni friulanofoni del Friuli-Venezia Giulia"
+  },
+  "coverage": {
+    "municipalities": 215,
+    "furApproved": 215
+  },
+  "names": [
+    {
+      "istatCode": "030001",
+      "it": "Aiello del Friuli",
+      "fur": "Dael"
+    },
+    {
+      "istatCode": "030002",
+      "it": "Amaro",
+      "fur": "Damâr"
+    },
+    {
+      "istatCode": "030003",
+      "it": "Ampezzo",
+      "fur": "Dimpeç"
+    },
+    {
+      "istatCode": "030004",
+      "it": "Aquileia",
+      "fur": "Aquilee"
+    },
+    {
+      "istatCode": "030005",
+      "it": "Arta Terme",
+      "fur": "Darte"
+    },
+    {
+      "istatCode": "030006",
+      "it": "Artegna",
+      "fur": "Dartigne"
+    },
+    {
+      "istatCode": "030007",
+      "it": "Attimis",
+      "fur": "Atimis"
+    },
+    {
+      "istatCode": "030008",
+      "it": "Bagnaria Arsa",
+      "fur": "Bagnarie"
+    },
+    {
+      "istatCode": "030009",
+      "it": "Basiliano",
+      "fur": "Basilian"
+    },
+    {
+      "istatCode": "030010",
+      "it": "Bertiolo",
+      "fur": "Bertiûl"
+    },
+    {
+      "istatCode": "030011",
+      "it": "Bicinicco",
+      "fur": "Bicinins"
+    },
+    {
+      "istatCode": "030012",
+      "it": "Bordano",
+      "fur": "Bordan"
+    },
+    {
+      "istatCode": "030013",
+      "it": "Buja",
+      "fur": "Buie"
+    },
+    {
+      "istatCode": "030014",
+      "it": "Buttrio",
+      "fur": "Buri"
+    },
+    {
+      "istatCode": "030015",
+      "it": "Camino al Tagliamento",
+      "fur": "Cjamin dal Tiliment"
+    },
+    {
+      "istatCode": "030016",
+      "it": "Campoformido",
+      "fur": "Cjampfuarmit"
+    },
+    {
+      "istatCode": "030018",
+      "it": "Carlino",
+      "fur": "Cjarlins"
+    },
+    {
+      "istatCode": "030019",
+      "it": "Cassacco",
+      "fur": "Cjassà"
+    },
+    {
+      "istatCode": "030020",
+      "it": "Castions di Strada",
+      "fur": "Cjasteons di Strade"
+    },
+    {
+      "istatCode": "030021",
+      "it": "Cavazzo Carnico",
+      "fur": "Cjavaç"
+    },
+    {
+      "istatCode": "030022",
+      "it": "Cercivento",
+      "fur": "Çurçuvint"
+    },
+    {
+      "istatCode": "030023",
+      "it": "Cervignano del Friuli",
+      "fur": "Çarvignan"
+    },
+    {
+      "istatCode": "030024",
+      "it": "Chiopris-Viscone",
+      "fur": "Cjopris e Viscon"
+    },
+    {
+      "istatCode": "030025",
+      "it": "Chiusaforte",
+      "fur": "Scluse"
+    },
+    {
+      "istatCode": "030026",
+      "it": "Cividale del Friuli",
+      "fur": "Cividât"
+    },
+    {
+      "istatCode": "030027",
+      "it": "Codroipo",
+      "fur": "Codroip"
+    },
+    {
+      "istatCode": "030028",
+      "it": "Colloredo di Monte Albano",
+      "fur": "Colorêt di Montalban"
+    },
+    {
+      "istatCode": "030029",
+      "it": "Comeglians",
+      "fur": "Comelians"
+    },
+    {
+      "istatCode": "030030",
+      "it": "Corno di Rosazzo",
+      "fur": "Cuar di Rosacis"
+    },
+    {
+      "istatCode": "030031",
+      "it": "Coseano",
+      "fur": "Cosean"
+    },
+    {
+      "istatCode": "030032",
+      "it": "Dignano",
+      "fur": "Dignan"
+    },
+    {
+      "istatCode": "030033",
+      "it": "Dogna",
+      "fur": "Dogne"
+    },
+    {
+      "istatCode": "030034",
+      "it": "Drenchia",
+      "fur": "Drenchia"
+    },
+    {
+      "istatCode": "030035",
+      "it": "Enemonzo",
+      "fur": "Enemonç"
+    },
+    {
+      "istatCode": "030036",
+      "it": "Faedis",
+      "fur": "Faedis"
+    },
+    {
+      "istatCode": "030037",
+      "it": "Fagagna",
+      "fur": "Feagne"
+    },
+    {
+      "istatCode": "030039",
+      "it": "Flaibano",
+      "fur": "Flaiban"
+    },
+    {
+      "istatCode": "030040",
+      "it": "Forni Avoltri",
+      "fur": "For Davôtri"
+    },
+    {
+      "istatCode": "030041",
+      "it": "Forni di Sopra",
+      "fur": "For Disore"
+    },
+    {
+      "istatCode": "030042",
+      "it": "Forni di Sotto",
+      "fur": "For Disot"
+    },
+    {
+      "istatCode": "030043",
+      "it": "Gemona del Friuli",
+      "fur": "Glemone"
+    },
+    {
+      "istatCode": "030044",
+      "it": "Gonars",
+      "fur": "Gonârs"
+    },
+    {
+      "istatCode": "030045",
+      "it": "Grimacco",
+      "fur": "Grimacco"
+    },
+    {
+      "istatCode": "030046",
+      "it": "Latisana",
+      "fur": "Tisane"
+    },
+    {
+      "istatCode": "030047",
+      "it": "Lauco",
+      "fur": "Lauc"
+    },
+    {
+      "istatCode": "030048",
+      "it": "Lestizza",
+      "fur": "Listize"
+    },
+    {
+      "istatCode": "030049",
+      "it": "Lignano Sabbiadoro",
+      "fur": "Lignan"
+    },
+    {
+      "istatCode": "030051",
+      "it": "Lusevera",
+      "fur": "Lusevera"
+    },
+    {
+      "istatCode": "030052",
+      "it": "Magnano in Riviera",
+      "fur": "Magnan"
+    },
+    {
+      "istatCode": "030053",
+      "it": "Majano",
+      "fur": "Maian"
+    },
+    {
+      "istatCode": "030054",
+      "it": "Malborghetto Valbruna",
+      "fur": "Malborghet e Valbrune"
+    },
+    {
+      "istatCode": "030055",
+      "it": "Manzano",
+      "fur": "Manzan"
+    },
+    {
+      "istatCode": "030056",
+      "it": "Marano Lagunare",
+      "fur": "Maran"
+    },
+    {
+      "istatCode": "030057",
+      "it": "Martignacco",
+      "fur": "Martignà"
+    },
+    {
+      "istatCode": "030058",
+      "it": "Mereto di Tomba",
+      "fur": "Merêt di Tombe"
+    },
+    {
+      "istatCode": "030059",
+      "it": "Moggio Udinese",
+      "fur": "Mueç"
+    },
+    {
+      "istatCode": "030060",
+      "it": "Moimacco",
+      "fur": "Muimans"
+    },
+    {
+      "istatCode": "030061",
+      "it": "Montenars",
+      "fur": "Montenârs"
+    },
+    {
+      "istatCode": "030062",
+      "it": "Mortegliano",
+      "fur": "Mortean"
+    },
+    {
+      "istatCode": "030063",
+      "it": "Moruzzo",
+      "fur": "Murùs"
+    },
+    {
+      "istatCode": "030064",
+      "it": "Muzzana del Turgnano",
+      "fur": "Muçane"
+    },
+    {
+      "istatCode": "030065",
+      "it": "Nimis",
+      "fur": "Nimis"
+    },
+    {
+      "istatCode": "030066",
+      "it": "Osoppo",
+      "fur": "Osôf"
+    },
+    {
+      "istatCode": "030067",
+      "it": "Ovaro",
+      "fur": "Davâr"
+    },
+    {
+      "istatCode": "030068",
+      "it": "Pagnacco",
+      "fur": "Pagnà"
+    },
+    {
+      "istatCode": "030069",
+      "it": "Palazzolo dello Stella",
+      "fur": "Palaçûl"
+    },
+    {
+      "istatCode": "030070",
+      "it": "Palmanova",
+      "fur": "Palme"
+    },
+    {
+      "istatCode": "030071",
+      "it": "Paluzza",
+      "fur": "Paluce"
+    },
+    {
+      "istatCode": "030072",
+      "it": "Pasian di Prato",
+      "fur": "Pasian di Prât"
+    },
+    {
+      "istatCode": "030073",
+      "it": "Paularo",
+      "fur": "Paulâr"
+    },
+    {
+      "istatCode": "030074",
+      "it": "Pavia di Udine",
+      "fur": "Pavie"
+    },
+    {
+      "istatCode": "030075",
+      "it": "Pocenia",
+      "fur": "Pucinie"
+    },
+    {
+      "istatCode": "030076",
+      "it": "Pontebba",
+      "fur": "Pontêbe"
+    },
+    {
+      "istatCode": "030077",
+      "it": "Porpetto",
+      "fur": "Porpêt"
+    },
+    {
+      "istatCode": "030078",
+      "it": "Povoletto",
+      "fur": "Paulêt"
+    },
+    {
+      "istatCode": "030079",
+      "it": "Pozzuolo del Friuli",
+      "fur": "Puçui"
+    },
+    {
+      "istatCode": "030080",
+      "it": "Pradamano",
+      "fur": "Pradaman"
+    },
+    {
+      "istatCode": "030081",
+      "it": "Prato Carnico",
+      "fur": "Prât di Cjargne"
+    },
+    {
+      "istatCode": "030082",
+      "it": "Precenicco",
+      "fur": "Prissinins"
+    },
+    {
+      "istatCode": "030083",
+      "it": "Premariacco",
+      "fur": "Premariâs"
+    },
+    {
+      "istatCode": "030084",
+      "it": "Preone",
+      "fur": "Preon"
+    },
+    {
+      "istatCode": "030085",
+      "it": "Prepotto",
+      "fur": "Prepot"
+    },
+    {
+      "istatCode": "030086",
+      "it": "Pulfero",
+      "fur": "Pulfar"
+    },
+    {
+      "istatCode": "030087",
+      "it": "Ragogna",
+      "fur": "Ruvigne"
+    },
+    {
+      "istatCode": "030088",
+      "it": "Ravascletto",
+      "fur": "Ravasclêt"
+    },
+    {
+      "istatCode": "030089",
+      "it": "Raveo",
+      "fur": "Raviei"
+    },
+    {
+      "istatCode": "030090",
+      "it": "Reana del Rojale",
+      "fur": "Reane dal Roiâl"
+    },
+    {
+      "istatCode": "030091",
+      "it": "Remanzacco",
+      "fur": "Remanzâs"
+    },
+    {
+      "istatCode": "030092",
+      "it": "Resia",
+      "fur": "Resie"
+    },
+    {
+      "istatCode": "030093",
+      "it": "Resiutta",
+      "fur": "Resiute"
+    },
+    {
+      "istatCode": "030094",
+      "it": "Rigolato",
+      "fur": "Rigulât"
+    },
+    {
+      "istatCode": "030095",
+      "it": "Rive d'Arcano",
+      "fur": "Rivis Darcjan"
+    },
+    {
+      "istatCode": "030097",
+      "it": "Ronchis",
+      "fur": "Roncjis"
+    },
+    {
+      "istatCode": "030098",
+      "it": "Ruda",
+      "fur": "Rude"
+    },
+    {
+      "istatCode": "030099",
+      "it": "San Daniele del Friuli",
+      "fur": "San Denêl"
+    },
+    {
+      "istatCode": "030100",
+      "it": "San Giorgio di Nogaro",
+      "fur": "San Zorç di Noiâr"
+    },
+    {
+      "istatCode": "030101",
+      "it": "San Giovanni al Natisone",
+      "fur": "San Zuan dal Nadison"
+    },
+    {
+      "istatCode": "030102",
+      "it": "San Leonardo",
+      "fur": "San Leonardo"
+    },
+    {
+      "istatCode": "030103",
+      "it": "San Pietro al Natisone",
+      "fur": "San Pietro al Natisone"
+    },
+    {
+      "istatCode": "030104",
+      "it": "Santa Maria la Longa",
+      "fur": "Sante Marie la Lungje"
+    },
+    {
+      "istatCode": "030105",
+      "it": "San Vito al Torre",
+      "fur": "San Vît de Tor"
+    },
+    {
+      "istatCode": "030106",
+      "it": "San Vito di Fagagna",
+      "fur": "San Vît di Feagne"
+    },
+    {
+      "istatCode": "030107",
+      "it": "Sauris",
+      "fur": "Sauris"
+    },
+    {
+      "istatCode": "030108",
+      "it": "Savogna",
+      "fur": "Savogna"
+    },
+    {
+      "istatCode": "030109",
+      "it": "Sedegliano",
+      "fur": "Sedean"
+    },
+    {
+      "istatCode": "030110",
+      "it": "Socchieve",
+      "fur": "Soclêf"
+    },
+    {
+      "istatCode": "030111",
+      "it": "Stregna",
+      "fur": "Stregna"
+    },
+    {
+      "istatCode": "030112",
+      "it": "Sutrio",
+      "fur": "Sudri"
+    },
+    {
+      "istatCode": "030113",
+      "it": "Taipana",
+      "fur": "Taipana"
+    },
+    {
+      "istatCode": "030114",
+      "it": "Talmassons",
+      "fur": "Talmassons"
+    },
+    {
+      "istatCode": "030116",
+      "it": "Tarcento",
+      "fur": "Tarcint"
+    },
+    {
+      "istatCode": "030117",
+      "it": "Tarvisio",
+      "fur": "Tarvis"
+    },
+    {
+      "istatCode": "030118",
+      "it": "Tavagnacco",
+      "fur": "Tavagnà"
+    },
+    {
+      "istatCode": "030120",
+      "it": "Terzo d'Aquileia",
+      "fur": "Tierç di Aquilee"
+    },
+    {
+      "istatCode": "030121",
+      "it": "Tolmezzo",
+      "fur": "Tumieç"
+    },
+    {
+      "istatCode": "030122",
+      "it": "Torreano",
+      "fur": "Torean"
+    },
+    {
+      "istatCode": "030123",
+      "it": "Torviscosa",
+      "fur": "Tor di Zuin"
+    },
+    {
+      "istatCode": "030124",
+      "it": "Trasaghis",
+      "fur": "Trasaghis"
+    },
+    {
+      "istatCode": "030126",
+      "it": "Treppo Grande",
+      "fur": "Trep Grant"
+    },
+    {
+      "istatCode": "030127",
+      "it": "Tricesimo",
+      "fur": "Tresesin"
+    },
+    {
+      "istatCode": "030128",
+      "it": "Trivignano Udinese",
+      "fur": "Trivignan"
+    },
+    {
+      "istatCode": "030129",
+      "it": "Udine",
+      "fur": "Udin"
+    },
+    {
+      "istatCode": "030130",
+      "it": "Varmo",
+      "fur": "Vildivar"
+    },
+    {
+      "istatCode": "030131",
+      "it": "Venzone",
+      "fur": "Vençon"
+    },
+    {
+      "istatCode": "030132",
+      "it": "Verzegnis",
+      "fur": "Verzegnis"
+    },
+    {
+      "istatCode": "030133",
+      "it": "Villa Santina",
+      "fur": "Vile di Cjargne"
+    },
+    {
+      "istatCode": "030135",
+      "it": "Visco",
+      "fur": "Visc"
+    },
+    {
+      "istatCode": "030136",
+      "it": "Zuglio",
+      "fur": "Zui"
+    },
+    {
+      "istatCode": "030137",
+      "it": "Forgaria nel Friuli",
+      "fur": "Forgjarie"
+    },
+    {
+      "istatCode": "030138",
+      "it": "Campolongo Tapogliano",
+      "fur": "Cjamplunc Tapoian"
+    },
+    {
+      "istatCode": "030188",
+      "it": "Rivignano Teor",
+      "fur": "Rivignan Teôr"
+    },
+    {
+      "istatCode": "030189",
+      "it": "Sappada",
+      "fur": "Sappada/Plodn"
+    },
+    {
+      "istatCode": "030190",
+      "it": "Fiumicello Villa Vicentina",
+      "fur": "Flumisel Vile Visintine"
+    },
+    {
+      "istatCode": "030191",
+      "it": "Treppo Ligosullo",
+      "fur": "Trep di Cjargne Liussûl"
+    },
+    {
+      "istatCode": "031001",
+      "it": "Capriva del Friuli",
+      "fur": "Caprive"
+    },
+    {
+      "istatCode": "031002",
+      "it": "Cormons",
+      "fur": "Cormons"
+    },
+    {
+      "istatCode": "031003",
+      "it": "Doberdò del Lago",
+      "fur": "Doberdò del Lago"
+    },
+    {
+      "istatCode": "031004",
+      "it": "Dolegna del Collio",
+      "fur": "Dolegne dal Cuei"
+    },
+    {
+      "istatCode": "031005",
+      "it": "Farra d'Isonzo",
+      "fur": "Fare"
+    },
+    {
+      "istatCode": "031006",
+      "it": "Fogliano Redipuglia",
+      "fur": "Fogliano Redipuglia"
+    },
+    {
+      "istatCode": "031007",
+      "it": "Gorizia",
+      "fur": "Gurize"
+    },
+    {
+      "istatCode": "031008",
+      "it": "Gradisca d'Isonzo",
+      "fur": "Gardiscje dal Isonç"
+    },
+    {
+      "istatCode": "031009",
+      "it": "Grado",
+      "fur": "Grau"
+    },
+    {
+      "istatCode": "031010",
+      "it": "Mariano del Friuli",
+      "fur": "Marian"
+    },
+    {
+      "istatCode": "031011",
+      "it": "Medea",
+      "fur": "Migjee"
+    },
+    {
+      "istatCode": "031012",
+      "it": "Monfalcone",
+      "fur": "Monfalcon"
+    },
+    {
+      "istatCode": "031013",
+      "it": "Moraro",
+      "fur": "Morâr"
+    },
+    {
+      "istatCode": "031014",
+      "it": "Mossa",
+      "fur": "Mosse"
+    },
+    {
+      "istatCode": "031015",
+      "it": "Romans d'Isonzo",
+      "fur": "Romans dal Lusinç"
+    },
+    {
+      "istatCode": "031016",
+      "it": "Ronchi dei Legionari",
+      "fur": "Roncjis dai Legionaris"
+    },
+    {
+      "istatCode": "031017",
+      "it": "Sagrado",
+      "fur": "Segrât"
+    },
+    {
+      "istatCode": "031018",
+      "it": "San Canzian d'Isonzo",
+      "fur": "San Canzian d'Isonzo"
+    },
+    {
+      "istatCode": "031019",
+      "it": "San Floriano del Collio",
+      "fur": "San Florean dal Cuei"
+    },
+    {
+      "istatCode": "031020",
+      "it": "San Lorenzo Isontino",
+      "fur": "San Lurinç Lisuntin"
+    },
+    {
+      "istatCode": "031021",
+      "it": "San Pier d'Isonzo",
+      "fur": "San Pier dal Lusinç"
+    },
+    {
+      "istatCode": "031022",
+      "it": "Savogna d'Isonzo",
+      "fur": "Savogne dal Lusinç"
+    },
+    {
+      "istatCode": "031023",
+      "it": "Staranzano",
+      "fur": "Staranzan"
+    },
+    {
+      "istatCode": "031024",
+      "it": "Turriaco",
+      "fur": "Turriaco"
+    },
+    {
+      "istatCode": "031025",
+      "it": "Villesse",
+      "fur": "Vilès"
+    },
+    {
+      "istatCode": "032001",
+      "it": "Duino Aurisina",
+      "fur": "Duino Aurisina"
+    },
+    {
+      "istatCode": "032002",
+      "it": "Monrupino",
+      "fur": "Monrupino"
+    },
+    {
+      "istatCode": "032003",
+      "it": "Muggia",
+      "fur": "Mugle"
+    },
+    {
+      "istatCode": "032004",
+      "it": "San Dorligo della Valle",
+      "fur": "San Dorligo della Valle"
+    },
+    {
+      "istatCode": "032005",
+      "it": "Sgonico",
+      "fur": "Sgonico"
+    },
+    {
+      "istatCode": "032006",
+      "it": "Trieste",
+      "fur": "Triest"
+    },
+    {
+      "istatCode": "093001",
+      "it": "Andreis",
+      "fur": "Andreis"
+    },
+    {
+      "istatCode": "093002",
+      "it": "Arba",
+      "fur": "Darbe"
+    },
+    {
+      "istatCode": "093004",
+      "it": "Aviano",
+      "fur": "Davian"
+    },
+    {
+      "istatCode": "093005",
+      "it": "Azzano Decimo",
+      "fur": "Azzano Decimo"
+    },
+    {
+      "istatCode": "093006",
+      "it": "Barcis",
+      "fur": "Barcis"
+    },
+    {
+      "istatCode": "093007",
+      "it": "Brugnera",
+      "fur": "Brugnera"
+    },
+    {
+      "istatCode": "093008",
+      "it": "Budoia",
+      "fur": "Budoie"
+    },
+    {
+      "istatCode": "093009",
+      "it": "Caneva",
+      "fur": "Cjanive"
+    },
+    {
+      "istatCode": "093010",
+      "it": "Casarsa della Delizia",
+      "fur": "Cjasarse"
+    },
+    {
+      "istatCode": "093011",
+      "it": "Castelnovo del Friuli",
+      "fur": "Cjastelgnûf"
+    },
+    {
+      "istatCode": "093012",
+      "it": "Cavasso Nuovo",
+      "fur": "Cjavàs Gnûf"
+    },
+    {
+      "istatCode": "093013",
+      "it": "Chions",
+      "fur": "Chions"
+    },
+    {
+      "istatCode": "093014",
+      "it": "Cimolais",
+      "fur": "Cimolais"
+    },
+    {
+      "istatCode": "093015",
+      "it": "Claut",
+      "fur": "Claut"
+    },
+    {
+      "istatCode": "093016",
+      "it": "Clauzetto",
+      "fur": "Clausêt"
+    },
+    {
+      "istatCode": "093017",
+      "it": "Cordenons",
+      "fur": "Cordenons"
+    },
+    {
+      "istatCode": "093018",
+      "it": "Cordovado",
+      "fur": "Cordovât"
+    },
+    {
+      "istatCode": "093019",
+      "it": "Erto e Casso",
+      "fur": "Erto e Casso"
+    },
+    {
+      "istatCode": "093020",
+      "it": "Fanna",
+      "fur": "Fane"
+    },
+    {
+      "istatCode": "093021",
+      "it": "Fiume Veneto",
+      "fur": "Fiume Veneto"
+    },
+    {
+      "istatCode": "093022",
+      "it": "Fontanafredda",
+      "fur": "Fontanefrede"
+    },
+    {
+      "istatCode": "093024",
+      "it": "Frisanco",
+      "fur": "Frisanc"
+    },
+    {
+      "istatCode": "093025",
+      "it": "Maniago",
+      "fur": "Manià"
+    },
+    {
+      "istatCode": "093026",
+      "it": "Meduno",
+      "fur": "Midun"
+    },
+    {
+      "istatCode": "093027",
+      "it": "Montereale Valcellina",
+      "fur": "Montreâl"
+    },
+    {
+      "istatCode": "093028",
+      "it": "Morsano al Tagliamento",
+      "fur": "Morsan"
+    },
+    {
+      "istatCode": "093029",
+      "it": "Pasiano di Pordenone",
+      "fur": "Pasiano"
+    },
+    {
+      "istatCode": "093030",
+      "it": "Pinzano al Tagliamento",
+      "fur": "Pinçan"
+    },
+    {
+      "istatCode": "093031",
+      "it": "Polcenigo",
+      "fur": "Polcenic"
+    },
+    {
+      "istatCode": "093032",
+      "it": "Porcia",
+      "fur": "Porcia"
+    },
+    {
+      "istatCode": "093033",
+      "it": "Pordenone",
+      "fur": "Pordenon"
+    },
+    {
+      "istatCode": "093034",
+      "it": "Prata di Pordenone",
+      "fur": "Prate"
+    },
+    {
+      "istatCode": "093035",
+      "it": "Pravisdomini",
+      "fur": "Pravisdomini"
+    },
+    {
+      "istatCode": "093036",
+      "it": "Roveredo in Piano",
+      "fur": "Roveredo"
+    },
+    {
+      "istatCode": "093037",
+      "it": "Sacile",
+      "fur": "Sacîl"
+    },
+    {
+      "istatCode": "093038",
+      "it": "San Giorgio della Richinvelda",
+      "fur": "San Zorç"
+    },
+    {
+      "istatCode": "093039",
+      "it": "San Martino al Tagliamento",
+      "fur": "San Martin"
+    },
+    {
+      "istatCode": "093040",
+      "it": "San Quirino",
+      "fur": "San Quarin"
+    },
+    {
+      "istatCode": "093041",
+      "it": "San Vito al Tagliamento",
+      "fur": "San Vît"
+    },
+    {
+      "istatCode": "093042",
+      "it": "Sequals",
+      "fur": "Secuals"
+    },
+    {
+      "istatCode": "093043",
+      "it": "Sesto al Reghena",
+      "fur": "Siest"
+    },
+    {
+      "istatCode": "093044",
+      "it": "Spilimbergo",
+      "fur": "Spilimberc"
+    },
+    {
+      "istatCode": "093045",
+      "it": "Tramonti di Sopra",
+      "fur": "Tramonç Disore"
+    },
+    {
+      "istatCode": "093046",
+      "it": "Tramonti di Sotto",
+      "fur": "Tramonç Disot"
+    },
+    {
+      "istatCode": "093047",
+      "it": "Travesio",
+      "fur": "Travês"
+    },
+    {
+      "istatCode": "093049",
+      "it": "Vito d'Asio",
+      "fur": "Vît"
+    },
+    {
+      "istatCode": "093050",
+      "it": "Vivaro",
+      "fur": "Vivâr"
+    },
+    {
+      "istatCode": "093051",
+      "it": "Zoppola",
+      "fur": "Çopule"
+    },
+    {
+      "istatCode": "093052",
+      "it": "Vajont",
+      "fur": "Vajont"
+    },
+    {
+      "istatCode": "093053",
+      "it": "Valvasone Arzene",
+      "fur": "Voleson Darzin"
+    }
+  ]
+}

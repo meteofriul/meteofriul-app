@@ -1,0 +1,120 @@
+{
+  "schemaVersion": 1,
+  "batchId": "traditional-saying-reuse-wave-03",
+  "snapshotDate": "2026-08-31",
+  "purpose": "Dodici detti generali per ampliare la varietà di Scopri riusando soltanto testi IT/FUR già approvati nell'Almanacco.",
+  "readyForUi": false,
+  "authoritativeCatalog": "frontend/src/data/almanac/proverbs.json",
+  "runtimeDescriptorCatalog": "frontend/src/data/discover/traditionalSayingAlmanacReuse.json",
+  "editorialDecision": {
+    "basis": "user_delegated_assisted_editorial_review",
+    "scope": "reuse_existing_approved_copy_only",
+    "independentHumanReview": false,
+    "note": "Decisione assistita di riuso nel mandato di proseguire Scopri. Testi e precedenti approvazioni IT/FUR restano nel catalogo Almanacco: nessuna nuova traduzione, approvazione dell'utente frase per frase, verifica del facsimile o certificazione ARLeF."
+  },
+  "preservedCatalog": {
+    "records": 379,
+    "sha256Json": "fc6d44d1636cc9c3eaa6aeb7e8fefcdba88cf35f4ba51173ef52dd15176169d6"
+  },
+  "preservedDescriptors": {
+    "records": 52,
+    "sha256Json": "894c51de12d2051dd7e172604b803debc312419469935aaf4007a8a41074b449"
+  },
+  "temporalRule": {
+    "recurrence": "always",
+    "selectionKind": "rotation",
+    "note": "Nessuno dei dodici record autorevoli ha ancoraggi di calendario. Rotazione generale senza date, mesi, stagioni, fasi lunari o osservazioni meteo dedotte; invariata la precedenza delle ricorrenze precise."
+  },
+  "rules": [
+    "Il manifest non è contenuto UI e non duplica copy IT/FUR; i descrittori puntano ai proverbId autorevoli.",
+    "Fonte, pagina e data di approvazione sono riferimenti già presenti nei record, non nuove verifiche esterne.",
+    "Riusare un proverbio in Scopri non cambia la selezione, il calendario o il numero dei proverbi dell'Almanacco.",
+    "I dodici testi sono distinti dai cinquantadue riusi e dalle undici schede dedicate: vicinanza tematica non implica equivalenza del messaggio."
+  ],
+  "records": [
+    {
+      "proverbId": "ost1876-forment-ten-vend",
+      "theme": "conservazione_del_raccolto",
+      "reason": "Il frumento conservato e poi venduto aggiunge un'immagine della gestione del raccolto, distinta dalla semina e dalla proporzione del podere già presenti. Non è un consiglio commerciale attuale né una ricorrenza di raccolta.",
+      "sourceReference": { "citation": "Facsimile Ostermann 1876, p. PDF 45", "edition": 1876, "pdfPage": 45 },
+      "existingEditorialReviewAt": "2026-07-22"
+    },
+    {
+      "proverbId": "ost1876-prat-seat-no-scuindisi",
+      "theme": "immagini_dei_campi",
+      "reason": "Il prato falciato rende visibile chi vi si trova: immagine diversa dal sentiero consumato dal passaggio e dall'erba che produce seme. Nessun mese di fienagione inventato.",
+      "sourceReference": { "citation": "Facsimile Ostermann 1876, p. PDF 149", "edition": 1876, "pdfPage": 149 },
+      "existingEditorialReviewAt": "2026-07-23"
+    },
+    {
+      "proverbId": "ost1876-bati-fier-cjald",
+      "theme": "mestiere_e_tempismo",
+      "reason": "La lavorazione del ferro richiama il momento adatto all'azione, non l'apprendimento del mestiere per necessità. Caldo indica il materiale lavorato, non la temperatura meteorologica.",
+      "sourceReference": { "citation": "Facsimile Ostermann 1876, p. PDF 147", "edition": 1876, "pdfPage": 147 },
+      "existingEditorialReviewAt": "2026-07-22"
+    },
+    {
+      "proverbId": "ost1876-dome-farine-no-pan",
+      "theme": "casa_e_preparazione",
+      "reason": "La farina da sola non basta a fare il pane: porta la preparazione domestica e la necessità di elementi diversi, non una variante del solo ceppo che non fa fuoco.",
+      "sourceReference": { "citation": "Facsimile Ostermann 1876, p. PDF 234", "edition": 1876, "pdfPage": 234 },
+      "existingEditorialReviewAt": "2026-08-02"
+    },
+    {
+      "proverbId": "ost1876-olei-ben-no-coste-nuje",
+      "theme": "affetto_quotidiano",
+      "reason": "La gratuità dell'affetto amplia i rapporti quotidiani oltre al proverbio sui conti fra amici. Nessuna associazione arbitraria a San Valentino.",
+      "sourceReference": { "citation": "Facsimile Ostermann 1876, p. PDF 302", "edition": 1876, "pdfPage": 302 },
+      "existingEditorialReviewAt": "2026-07-23"
+    },
+    {
+      "proverbId": "ost1876-ducj-sanc-ros",
+      "theme": "uguaglianza",
+      "reason": "L'immagine del sangue comune riguarda l'uguaglianza fra persone, non la maggiore forza dell'unione; non introduce affermazioni o consigli sanitari.",
+      "sourceReference": { "citation": "Facsimile Ostermann 1876, p. PDF 304", "edition": 1876, "pdfPage": 304 },
+      "existingEditorialReviewAt": "2026-07-23"
+    },
+    {
+      "proverbId": "ost1876-cognossi-mangja-star-sal",
+      "theme": "conoscenza_delle_persone",
+      "reason": "Lo staio di sale è l'immagine del tempo condiviso necessario a conoscere una persona. Si conserva la misura tradizionale nel testo approvato, senza trasformarla in quantità alimentare consigliata.",
+      "sourceReference": { "citation": "Facsimile Ostermann 1876, p. PDF 175", "edition": 1876, "pdfPage": 175 },
+      "existingEditorialReviewAt": "2026-07-25"
+    },
+    {
+      "proverbId": "ost1876-prometi-mantigni",
+      "theme": "responsabilita",
+      "reason": "Distingue la promessa dal mantenerla: responsabilità verso gli impegni, non semplice avvio o prosecuzione di un lavoro.",
+      "sourceReference": { "citation": "Facsimile Ostermann 1876, p. PDF 190", "edition": 1876, "pdfPage": 190 },
+      "existingEditorialReviewAt": "2026-08-02"
+    },
+    {
+      "proverbId": "ost1876-gotis-spessis-forin-clap",
+      "theme": "perseveranza",
+      "reason": "Le gocce ripetute esprimono l'effetto di piccole azioni costanti; non affermano che stia piovendo. È azione ripetuta, distinta dall'attesa del detto sul dare tempo al tempo.",
+      "sourceReference": { "citation": "Facsimile Ostermann 1876, p. PDF 201", "edition": 1876, "pdfPage": 201 },
+      "existingEditorialReviewAt": "2026-08-02"
+    },
+    {
+      "proverbId": "ost1876-cuatri-voi-plui-doi",
+      "theme": "osservazione_condivisa",
+      "reason": "Più osservatori possono vedere ciò che sfugge a uno solo: collaborazione nell'attenzione, distinta dalla forza numerica dell'unione.",
+      "sourceReference": { "citation": "Facsimile Ostermann 1876, p. PDF 176", "edition": 1876, "pdfPage": 176 },
+      "existingEditorialReviewAt": "2026-07-25"
+    },
+    {
+      "proverbId": "ost1876-mior-pleasi-scjavacasi",
+      "theme": "adattabilita",
+      "reason": "La flessibilità evita la rottura; non ripete la formazione dell'albero giovane già presente e non richiede un vento osservato.",
+      "sourceReference": { "citation": "Facsimile Ostermann 1876, p. PDF 180", "edition": 1876, "pdfPage": 180 },
+      "existingEditorialReviewAt": "2026-08-02"
+    },
+    {
+      "proverbId": "ost1876-da-timp-al-timp",
+      "theme": "pazienza",
+      "reason": "Invita a lasciare maturare le cose: l'attesa si distingue dalla previdenza del pensare oggi a domani e dall'azione perseverante delle gocce.",
+      "sourceReference": { "citation": "Facsimile Ostermann 1876, p. PDF 230", "edition": 1876, "pdfPage": 230 },
+      "existingEditorialReviewAt": "2026-08-02"
+    }
+  ]
+}

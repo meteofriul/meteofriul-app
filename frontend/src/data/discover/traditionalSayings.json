@@ -1,0 +1,542 @@
+{
+  "schemaVersion": 1,
+  "purpose": "Rubrica Scopri 'Si diceva che...' per detti Ostermann controllati, compresi proverbi gia usati dall'Almanacco quando Scopri assegna loro un ruolo editoriale distinto.",
+  "primaryDestination": "discover",
+  "rules": [
+    "Un proverbio puo comparire anche nell'Almanacco: in Scopri resta una voce culturale autonoma e tracciata.",
+    "La presenza dello stesso proverbio nelle due superfici non e un doppione: Almanacco anticipa, Scopri ripropone e contestualizza.",
+    "Ogni scheda deve dichiarare il contesto: tradizione popolare, non previsione certa.",
+    "Si mostra al massimo un record al giorno.",
+    "La fonte Ostermann va mantenuta visibile nel dettaglio dati.",
+    "La copy FUR deve essere approvata prima della vista FUR."
+  ],
+  "categories": {
+    "detto_meteo": {
+      "it": "Detto meteo",
+      "fur": "Dit dal timp"
+    },
+    "calendario_popolare": {
+      "it": "Calendario popolare",
+      "fur": "Calendari popolâr"
+    },
+    "vita_dei_campi": {
+      "it": "Vita dei campi",
+      "fur": "Vite dai cjamps"
+    },
+    "detto_popolare": {
+      "it": "Detto popolare",
+      "fur": "Dit popolâr"
+    }
+  },
+  "records": [
+    {
+      "id": "saying-ostermann-san-macari-setembar",
+      "primaryUse": "discover",
+      "recommendedSurface": "discover",
+      "rubric": "si_diceva_che",
+      "candidateId": "ostermann-062-san-macari-setembar",
+      "category": "detto_meteo",
+      "dateAnchors": ["01-02"],
+      "months": ["09"],
+      "priority": 10,
+      "title": {
+        "it": "San Macario e settembre",
+        "fur": "San Macari e Setembar"
+      },
+      "summary": {
+        "it": "Il tempo del 2 gennaio richiamava quello di settembre.",
+        "fur": "Il timp di San Macari al clamave chel di Setembar."
+      },
+      "dateLabel": {
+        "it": "2 gennaio / settembre",
+        "fur": "2 di Zenâr / Setembar"
+      },
+      "original": {
+        "fur": "Tal il dì di San Macari, tal il mês di setembar.",
+        "it": "Com'e il giorno di San Macario, cosi sara il mese di settembre."
+      },
+      "source": {
+        "label": "Ostermann 1894",
+        "type": "verified_source",
+        "pdfPage": 62,
+        "textPage": 37,
+        "sourcePath": "documentazione ed installer/ostermann-text/normalized-pages/page-062.txt",
+        "verifiedAgainst": "documentazione ed installer/ostermann-text/pages/page-062.txt",
+        "note": "La fonte storica marca il detto con punto interrogativo: pubblicare solo con contesto editoriale."
+      },
+      "editorialStatus": "ready_for_discover",
+      "languageStatus": {
+        "it": "approved",
+        "fur": "approved"
+      },
+      "editorialReview": {
+        "reviewedAt": "2026-07-05",
+        "note": "Rubrica Scopri, non Almanacco: copy breve e contestualizzata."
+      },
+      "readyForUi": true
+    },
+    {
+      "id": "saying-ostermann-san-ruperto-lui",
+      "primaryUse": "discover",
+      "recommendedSurface": "discover",
+      "rubric": "si_diceva_che",
+      "candidateId": "ostermann-062-san-ruperto-lui",
+      "category": "detto_meteo",
+      "dateAnchors": ["03-27"],
+      "months": ["07"],
+      "priority": 20,
+      "title": {
+        "it": "San Ruperto e luglio",
+        "fur": "San Ruperto e Lui"
+      },
+      "summary": {
+        "it": "Se il cielo di San Ruperto è senza nubi, anche luglio sarà più sereno.",
+        "fur": "Se San Ruperto nol à nûis, no ju varà nancje il mês di Lui."
+      },
+      "dateLabel": {
+        "it": "27 marzo / luglio",
+        "fur": "27 di Març / Lui"
+      },
+      "original": {
+        "fur": "Se San Ruperto no l'ha nûi, no ju varà nancje il mês di lui.",
+        "it": "Se San Ruperto non ha nubi, non le avra nemmeno il mese di luglio."
+      },
+      "source": {
+        "label": "Ostermann 1894",
+        "type": "verified_source",
+        "pdfPage": 62,
+        "textPage": 37,
+        "sourcePath": "documentazione ed installer/ostermann-text/normalized-pages/page-062.txt",
+        "verifiedAgainst": "documentazione ed installer/ostermann-text/pages/page-062.txt",
+        "note": "La fonte storica marca il detto con punto interrogativo: pubblicare solo con contesto editoriale."
+      },
+      "editorialStatus": "ready_for_discover",
+      "languageStatus": {
+        "it": "approved",
+        "fur": "approved"
+      },
+      "editorialReview": {
+        "reviewedAt": "2026-07-05",
+        "note": "Rubrica Scopri, non Almanacco: copy breve e contestualizzata."
+      },
+      "readyForUi": true
+    },
+    {
+      "id": "saying-ostermann-neve-pane-pioggia",
+      "primaryUse": "discover",
+      "recommendedSurface": "discover",
+      "rubric": "si_diceva_che",
+      "candidateId": "ost-discover-130-neve-pane-pioggia-fame",
+      "category": "detto_meteo",
+      "dateAnchors": [],
+      "months": ["12", "01", "02"],
+      "priority": 30,
+      "title": {
+        "it": "Neve, pane e pioggia",
+        "fur": "Nêf, pan e ploie"
+      },
+      "summary": {
+        "it": "Sotto la neve pane, sotto la pioggia fame: la neve era letta come promessa di raccolti.",
+        "fur": "Sot nêf pan, sot ploie fan: la nêf e jere lete come promesse di racolts."
+      },
+      "dateLabel": {
+        "it": "inverno",
+        "fur": "Invier"
+      },
+      "original": {
+        "fur": "Sot nêv pàn, sot ploe fan.",
+        "it": "Sotto la neve pane, sotto la pioggia fame."
+      },
+      "source": {
+        "label": "Ostermann 1894",
+        "type": "verified_source",
+        "pdfPage": 130,
+        "textPage": 105,
+        "sourcePath": "documentazione ed installer/ostermann-text/normalized-pages/page-130.txt",
+        "verifiedAgainst": "documentazione ed installer/ostermann-text/pages/page-130.txt",
+        "note": "La pagina collega il proverbio all'idea contadina della neve come protezione dei raccolti."
+      },
+      "editorialStatus": "ready_for_discover",
+      "languageStatus": {
+        "it": "approved",
+        "fur": "approved"
+      },
+      "editorialReview": {
+        "reviewedAt": "2026-07-06",
+        "note": "Promosso dal backlog Scopri come detto breve, non come proverbio Almanacco."
+      },
+      "readyForUi": true
+    },
+    {
+      "id": "saying-ostermann-arcobaleno-annata",
+      "primaryUse": "discover",
+      "recommendedSurface": "discover",
+      "rubric": "si_diceva_che",
+      "candidateId": "ost-discover-140-arcobaleno-annata",
+      "category": "detto_meteo",
+      "dateAnchors": [],
+      "months": ["03", "04", "05"],
+      "priority": 40,
+      "title": {
+        "it": "Arcobaleno e annata",
+        "fur": "Arcobalen e annade"
+      },
+      "summary": {
+        "it": "Il primo arcobaleno di primavera era letto come segno dell'annata: verde per i foraggi, rosso per il vino.",
+        "fur": "Il prin arcobalen di primavere al jere let come segn de annade: vert pai forazs, ros pal vin."
+      },
+      "dateLabel": {
+        "it": "primavera",
+        "fur": "Primavere"
+      },
+      "original": {
+        "fur": "Arch di San Mârch, ârch celèst.",
+        "it": "Il primo arcobaleno che apparirà in primavera darà il pronostico dell'annata."
+      },
+      "source": {
+        "label": "Ostermann 1894",
+        "type": "verified_source",
+        "pdfPage": 140,
+        "textPage": 115,
+        "sourcePath": "documentazione ed installer/ostermann-text/normalized-pages/page-140.txt",
+        "verifiedAgainst": "documentazione ed installer/ostermann-text/pages/page-140.txt",
+        "note": "La pagina collega il primo arcobaleno di primavera ai raccolti; il testo OCR disponibile si interrompe dopo il riferimento al giallo, quindi la copy usa solo verde e rosso."
+      },
+      "editorialStatus": "ready_for_discover",
+      "languageStatus": {
+        "it": "approved",
+        "fur": "approved"
+      },
+      "editorialReview": {
+        "reviewedAt": "2026-07-06",
+        "note": "Promosso dal backlog Scopri come detto breve: sintesi limitata alle parti verificate della pagina 140."
+      },
+      "readyForUi": true
+    },
+    {
+      "id": "saying-ostermann-arcobaleno-tempo",
+      "primaryUse": "discover",
+      "recommendedSurface": "discover",
+      "rubric": "si_diceva_che",
+      "candidateId": "ost-discover-141-arcobaleno-tempo",
+      "category": "detto_meteo",
+      "dateAnchors": [],
+      "months": ["03", "04", "05", "06", "07", "08", "09", "10"],
+      "priority": 50,
+      "title": {
+        "it": "Arcobaleno, pioggia e vento",
+        "fur": "Arcobalen, ploie e vint"
+      },
+      "summary": {
+        "it": "L'arcobaleno del mattino annunciava pioggia vicina; prima di sera poteva lasciare strade e campi bagnati.",
+        "fur": "L'arcobalen dal doman al clamave ploie dongje; prime de sere al podeve lassâ stradis e cjamps bagnâts."
+      },
+      "dateLabel": {
+        "it": "quando appare l'arcobaleno",
+        "fur": "Cuant che al ven fûr l'arcobalen"
+      },
+      "original": {
+        "fur": "Il cercli di San March la matine, ploe vizine. L'arch di San March la doman, no ven la sere ch'a nol sei pantan.",
+        "it": "L'arcobaleno del mattino annuncia pioggia vicina; prima della sera può esserci pantano."
+      },
+      "source": {
+        "label": "Ostermann 1894",
+        "type": "verified_source",
+        "pdfPage": 141,
+        "textPage": 116,
+        "sourcePath": "documentazione ed installer/ostermann-text/normalized-pages/page-141.txt",
+        "verifiedAgainst": "documentazione ed installer/ostermann-text/pages/page-141.txt",
+        "note": "La pagina riporta credenze su arco celeste, pioggia e vento; la copy isola i due versi brevi sul mattino."
+      },
+      "editorialStatus": "ready_for_discover",
+      "languageStatus": {
+        "it": "approved",
+        "fur": "approved"
+      },
+      "editorialReview": {
+        "reviewedAt": "2026-07-06",
+        "note": "Promosso dal backlog Scopri come detto breve, senza inserirlo nello schedule Almanacco."
+      },
+      "readyForUi": true
+    },
+    {
+      "id": "saying-ostermann-pasqua-fieno",
+      "primaryUse": "discover",
+      "recommendedSurface": "discover",
+      "rubric": "si_diceva_che",
+      "candidateId": "ost-discover-193-pasqua-fieno",
+      "category": "detto_meteo",
+      "dateAnchors": [],
+      "movableDates": ["easter"],
+      "months": [],
+      "priority": 60,
+      "title": {
+        "it": "Pasqua, pioggia e fieno",
+        "fur": "Pasche, ploie e fen"
+      },
+      "summary": {
+        "it": "Se la Pasqua era piovosa, si aspettava poco fieno sul prato; se era bella e serena, burro e formaggio a buon mercato.",
+        "fur": "Se Pasche e jere plojose, si spietave pôc fen sul prât; se e jere biele e serene, ont e formadi a bon marcjât."
+      },
+      "dateLabel": {
+        "it": "Pasqua",
+        "fur": "Pasche"
+      },
+      "original": {
+        "fur": "Plojose la Pasche, poch fen sul prat - biele e serene, ont e formadi a bon marchat.",
+        "it": "Pasqua piovosa, poco fieno sul prato; bella e serena, burro e formaggio a buon mercato."
+      },
+      "source": {
+        "label": "Ostermann 1894",
+        "type": "verified_source",
+        "pdfPage": 193,
+        "textPage": 168,
+        "sourcePath": "documentazione ed installer/ostermann-text/normalized-pages/page-193.txt",
+        "verifiedAgainst": "documentazione ed installer/ostermann-text/pages/page-193.txt",
+        "note": "La scheda usa soltanto il detto su Pasqua, pioggia e fieno. Il distinto riferimento a Sant'Anacleto resta escluso da questa calendarizzazione."
+      },
+      "editorialStatus": "ready_for_discover",
+      "languageStatus": {
+        "it": "approved",
+        "fur": "approved"
+      },
+      "editorialReview": {
+        "reviewedAt": "2026-07-06",
+        "note": "Promosso dal backlog Scopri come detto breve e mostrato soltanto nella data mobile di Pasqua."
+      },
+      "readyForUi": true
+    },
+    {
+      "id": "saying-ost1876-sante-catarine-fred-caretine",
+      "primaryUse": "discover",
+      "recommendedSurface": "discover",
+      "rubric": "si_diceva_che",
+      "candidateId": "ost1876-sante-catarine-fred-caretine",
+      "category": "detto_meteo",
+      "dateAnchors": ["11-25"],
+      "months": [],
+      "priority": 70,
+      "title": {
+        "it": "Santa Caterina e la carretta del freddo",
+        "fur": "Sante Catarine e la caretine dal frêt"
+      },
+      "summary": {
+        "it": "Per Santa Caterina si diceva che il freddo arrivasse con la carretta.",
+        "fur": "Sante Catarine e mene il frêt cu la caretine."
+      },
+      "dateLabel": {
+        "it": "25 novembre",
+        "fur": "25 di Novembar"
+      },
+      "original": {
+        "fur": "Sante Catarine e mene il frêt cu la caretine.",
+        "it": "Santa Caterina porta il freddo con la carretta."
+      },
+      "source": {
+        "label": "Ostermann 1876",
+        "type": "verified_source",
+        "pdfPage": 31,
+        "textPage": 27,
+        "sourcePath": "scripts/data/ostermann-proverbs-1876/language-review-batch-01.json",
+        "verifiedAgainst": "Facsimile Ostermann 1876, pagina PDF 31",
+        "note": "Seconda voce del 25 novembre, distinta dal proverbio sul mese che separa Santa Caterina da Natale."
+      },
+      "editorialStatus": "ready_for_discover",
+      "languageStatus": {
+        "it": "approved",
+        "fur": "approved"
+      },
+      "editorialReview": {
+        "reviewedAt": "2026-07-22",
+        "note": "Pubblicata in Scopri soltanto il 25 novembre; non crea un secondo proverbio nell'Almanacco."
+      },
+      "readyForUi": true
+    },
+    {
+      "id": "saying-ost1876-ombrene-avost-panze-genar",
+      "primaryUse": "discover",
+      "recommendedSurface": "discover",
+      "rubric": "si_diceva_che",
+      "candidateId": "ost1876-ombrene-avost-panze-genar",
+      "category": "vita_dei_campi",
+      "dateAnchors": [],
+      "months": ["08"],
+      "priority": 80,
+      "title": {
+        "it": "L'ombra d'agosto e l'inverno",
+        "fur": "La ombrene di avost e l'invier"
+      },
+      "summary": {
+        "it": "L'ombra d'agosto fa dolere la pancia in gennaio: il detto ricordava che le scorte per l'inverno si preparavano d'estate.",
+        "fur": "La ombrene dal mês di avost e fâs dulî la panze tal mês di zenâr."
+      },
+      "dateLabel": {
+        "it": "agosto",
+        "fur": "Avost"
+      },
+      "original": {
+        "fur": "La ombrene dal mês di avost e fâs dulî la panze tal mês di zenâr.",
+        "it": "L'ombra d'agosto fa dolere la pancia in gennaio."
+      },
+      "source": {
+        "label": "Ostermann 1876",
+        "type": "verified_source",
+        "pdfPage": 42,
+        "textPage": 38,
+        "sourcePath": "scripts/data/ostermann-proverbs-1876/language-review-batch-02.json",
+        "verifiedAgainst": "Facsimile Ostermann 1876, pagina PDF 42",
+        "note": "Il senso riguarda il lavoro e le scorte estive, non la salute."
+      },
+      "editorialStatus": "ready_for_discover",
+      "languageStatus": {
+        "it": "approved",
+        "fur": "approved"
+      },
+      "editorialReview": {
+        "reviewedAt": "2026-07-22",
+        "note": "Limitata ad agosto e spiegata come memoria del lavoro agricolo."
+      },
+      "readyForUi": true
+    },
+    {
+      "id": "saying-ost1876-epifanie-fiestis-vie",
+      "primaryUse": "discover",
+      "recommendedSurface": "discover",
+      "rubric": "si_diceva_che",
+      "candidateId": "ost1876-epifanie-fiestis-vie",
+      "category": "calendario_popolare",
+      "dateAnchors": ["01-06"],
+      "months": [],
+      "priority": 90,
+      "title": {
+        "it": "L'Epifania porta via le feste",
+        "fur": "La Pifanie e mene vie lis fiestis"
+      },
+      "summary": {
+        "it": "Nel calendario popolare l'Epifania portava via tutte le feste.",
+        "fur": "Pifanie, dutis lis fiestis e mene vie."
+      },
+      "dateLabel": {
+        "it": "6 gennaio",
+        "fur": "6 di Zenâr"
+      },
+      "original": {
+        "fur": "Pifanie, dutis lis fiestis e mene vie.",
+        "it": "L'Epifania porta via tutte le feste."
+      },
+      "source": {
+        "label": "Ostermann 1876",
+        "type": "verified_source",
+        "pdfPage": 26,
+        "textPage": 22,
+        "sourcePath": "scripts/data/ostermann-proverbs-1876/language-review-batch-03.json",
+        "verifiedAgainst": "Facsimile Ostermann 1876, pagina PDF 26",
+        "note": "Voce distinta dal proverbio sul freddo dell'Epifania già presente nell'Almanacco."
+      },
+      "editorialStatus": "ready_for_discover",
+      "languageStatus": {
+        "it": "approved",
+        "fur": "approved"
+      },
+      "editorialReview": {
+        "reviewedAt": "2026-07-22",
+        "note": "Pubblicata in Scopri soltanto il 6 gennaio."
+      },
+      "readyForUi": true
+    },
+    {
+      "id": "saying-ost1876-san-valantin-svinte",
+      "primaryUse": "discover",
+      "recommendedSurface": "discover",
+      "rubric": "si_diceva_che",
+      "candidateId": "ost1876-san-valantin-svinte",
+      "category": "detto_meteo",
+      "dateAnchors": ["02-14"],
+      "months": [],
+      "priority": 100,
+      "title": {
+        "it": "Il vento di San Valentino",
+        "fur": "Il vint di Sant Valantin"
+      },
+      "summary": {
+        "it": "Se tira vento a San Valentino, non finisce per quaranta giorni.",
+        "fur": "Se al svinte a Sant Valantin, cuarante dîs nol à fin."
+      },
+      "dateLabel": {
+        "it": "14 febbraio",
+        "fur": "14 di Fevrâr"
+      },
+      "original": {
+        "fur": "Se al svinte a Sant Valantin, cuarante dîs nol à fin.",
+        "it": "Se tira vento a San Valentino, non finisce per quaranta giorni."
+      },
+      "source": {
+        "label": "Ostermann 1876",
+        "type": "verified_source",
+        "pdfPage": 28,
+        "textPage": 24,
+        "sourcePath": "scripts/data/ostermann-proverbs-1876/language-review-batch-03.json",
+        "verifiedAgainst": "Facsimile Ostermann 1876, pagina PDF 28",
+        "note": "Detto condizionale sul vento, non previsione prodotta dall'app."
+      },
+      "editorialStatus": "ready_for_discover",
+      "languageStatus": {
+        "it": "approved",
+        "fur": "approved"
+      },
+      "editorialReview": {
+        "reviewedAt": "2026-07-22",
+        "note": "Pubblicata in Scopri soltanto il 14 febbraio."
+      },
+      "readyForUi": true
+    },
+    {
+      "id": "saying-ost1876-cuc-dafa-par-dut",
+      "primaryUse": "discover",
+      "recommendedSurface": "discover",
+      "rubric": "si_diceva_che",
+      "candidateId": "ost1876-cuc-dafa-par-dut",
+      "category": "vita_dei_campi",
+      "dateAnchors": [],
+      "months": [],
+      "seasons": ["spring", "summer"],
+      "recurrence": "seasonal",
+      "priority": 110,
+      "title": {
+        "it": "Il cuculo e il lavoro nei campi",
+        "fur": "Il cuc e il lavôr tai cjamps"
+      },
+      "summary": {
+        "it": "Quando canta il cuculo, c'è da fare dappertutto; quando smette di cantare, arriva il lavoro più grande.",
+        "fur": "Cuant che al cjante il cuc, al è dafâ pardut; cuant che al lasse di cjantâ, al rive il grant dafâ."
+      },
+      "dateLabel": {
+        "it": "primavera ed estate",
+        "fur": "Primavere e Istât"
+      },
+      "original": {
+        "fur": "Cuant che al cjante il cuc, al è dafâ pardut; cuant che al lasse di cjantâ, al rive il grant dafâ.",
+        "it": "Quando canta il cuculo, c'è da fare dappertutto; quando smette di cantare, arriva il lavoro più grande."
+      },
+      "source": {
+        "label": "Ostermann 1876",
+        "type": "verified_source",
+        "pdfPage": 41,
+        "textPage": 37,
+        "sourcePath": "scripts/data/ostermann-proverbs-1876/language-review-batch-03.json",
+        "verifiedAgainst": "Facsimile Ostermann 1876, pagina PDF 41",
+        "note": "Detto sul ritmo del lavoro agricolo, limitato a primavera ed estate."
+      },
+      "editorialStatus": "ready_for_discover",
+      "languageStatus": {
+        "it": "approved",
+        "fur": "approved"
+      },
+      "editorialReview": {
+        "reviewedAt": "2026-07-22",
+        "note": "Pubblicata in Scopri come memoria stagionale della vita nei campi."
+      },
+      "readyForUi": true
+    }
+  ]
+}

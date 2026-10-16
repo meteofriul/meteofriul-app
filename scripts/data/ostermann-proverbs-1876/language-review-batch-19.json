@@ -1,0 +1,66 @@
+{
+  "schemaVersion": 1,
+  "batchId": "ostermann-1876-language-review-19",
+  "reviewedAt": "2026-08-02",
+  "sourceDecisionFiles": [
+    "review-decisions-batch-19.json"
+  ],
+  "purpose": "Diciannovesima revisione linguistica ed editoriale dei candidati Ostermann 1876 verificati sul facsimile. Non pubblica contenuti nella UI.",
+  "policy": {
+    "publish": false,
+    "rule": "La normalizzazione FUR conserva il significato attestato nel facsimile e adotta, quando disponibile, la forma proverbiale registrata dal Dizionari de Lenghe Furlane. Le tre massime sono generali e non ricevono date, feste o stagioni artificiali."
+  },
+  "summary": {
+    "records": 3,
+    "languageReviewed": 3,
+    "mergeExisting": 0,
+    "needsNativeReview": 0
+  },
+  "records": [
+    {
+      "id": "ost1876-no-pae-debit-stes-di",
+      "reviewStatus": "language_reviewed",
+      "furNormalized": "No si pae il debit in chê dì che si lu fâs.",
+      "itFinal": "Non si paga il debito il giorno in cui lo si contrae.",
+      "destination": "almanac",
+      "calendarRule": { "type": "general", "bucket": "wisdom", "fallbackAllowed": true },
+      "duplicateAudit": { "status": "new_distinct" },
+      "evidence": [
+        { "label": "Facsimile Ostermann 1876, p. PDF 275", "kind": "primary" },
+        { "label": "Dizionari de Lenghe Furlane, lessico di paiâ, debit, dì e fâ", "kind": "secondary" }
+      ],
+      "editorialNote": "Normalizzati il relativo e la grafia; mantenuta la struttura del facsimile.",
+      "publish": false
+    },
+    {
+      "id": "ost1876-fat-mal-fasi-pinitince",
+      "reviewStatus": "language_reviewed",
+      "furNormalized": "Cui che al à fat il mâl che al fasi la pinitince.",
+      "itFinal": "Chi ha fatto il male faccia penitenza.",
+      "destination": "almanac",
+      "calendarRule": { "type": "general", "bucket": "wisdom", "fallbackAllowed": true },
+      "duplicateAudit": { "status": "new_distinct" },
+      "evidence": [
+        { "label": "Facsimile Ostermann 1876, p. PDF 275", "kind": "primary" },
+        { "label": "Dizionari de Lenghe Furlane, proverbio registrato alla voce fâ", "kind": "secondary" }
+      ],
+      "editorialNote": "Adottata la forma normalizzata attestata integralmente dal dizionario.",
+      "publish": false
+    },
+    {
+      "id": "ost1876-no-vus-sepin-no-falis",
+      "reviewStatus": "language_reviewed",
+      "furNormalized": "Se no tu vûs che lis sepin, fâs di mancul di fâlis.",
+      "itFinal": "Se non vuoi che si sappiano, evita di farle.",
+      "destination": "almanac",
+      "calendarRule": { "type": "general", "bucket": "wisdom", "fallbackAllowed": true },
+      "duplicateAudit": { "status": "new_distinct" },
+      "evidence": [
+        { "label": "Facsimile Ostermann 1876, p. PDF 275", "kind": "primary" },
+        { "label": "Dizionari de Lenghe Furlane, proverbio registrato alla voce fâ di mancul", "kind": "secondary" }
+      ],
+      "editorialNote": "Adottata la forma normalizzata attestata integralmente dal dizionario.",
+      "publish": false
+    }
+  ]
+}

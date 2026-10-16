@@ -1,0 +1,14 @@
+[
+  {
+    "name": "projects/meteo-friul/databases/(default)/collectionGroups/push_official_alert_outbox/fields/expires_at",
+    "ttlConfig": {
+      "state": "ACTIVE"
+    }
+  },
+  {
+    "name": "projects/meteo-friul/databases/(default)/collectionGroups/push_local_notice_outbox/fields/expires_at",
+    "ttlConfig": {
+      "state": "ACTIVE"
+    }
+  }
+]

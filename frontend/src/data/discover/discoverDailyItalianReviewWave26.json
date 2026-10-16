@@ -1,0 +1,166 @@
+{
+  "schemaVersion": 1,
+  "generatedAt": "2026-07-15",
+  "purpose": "Ventiseiesimo lotto Scopri IT: cinque memorie secondarie di rilievo culturale e storico, selezionate senza forzare nuove coperture di calendario. Il lotto registra anche le voci sospese o escluse e resta bloccato fino alla revisione FUR.",
+  "policy": {
+    "readyForUi": false,
+    "furDeferred": true,
+    "dateFormat": "DD-MM",
+    "requiresFinalItalianApproval": true,
+    "excludeDeaths": true,
+    "excludeGenericPoliticalProfiles": true,
+    "excludeGenericProfessionalProfiles": true,
+    "rejectSemanticDuplicates": true,
+    "rejectUncertainCalendarDates": true,
+    "sourceFirst": true,
+    "publishAfterFurOnly": true,
+    "allowMultipleMemoriesPerDate": true,
+    "secondaryOrderedByPriority": true
+  },
+  "summary": {
+    "keepDaily": 5,
+    "primary": 0,
+    "secondary": 5,
+    "hold": 4,
+    "excluded": 6,
+    "canonicalPrimaryDatesBefore": 214,
+    "canonicalPrimaryDatesAfter": 214,
+    "currentVisiblePrimaryCoverage": 206
+  },
+  "keepDaily": [
+    {
+      "id": "master-fvg-18-04-Q3608988",
+      "wikidataId": "Q3608988",
+      "dateIt": "18-04",
+      "year": 1928,
+      "municipality": "Udine",
+      "locality": "Udine",
+      "province": "UD",
+      "canonicalCategory": "cultura",
+      "dailyRole": "secondary",
+      "priority": 81,
+      "titleIt": "Alcide Paolini tra scrittura ed editoria",
+      "copyIt": "Il 18 aprile 1928 nasce a Udine Alcide Paolini, poeta, narratore e critico letterario. Fondatore della rivista La situazione e poi direttore editoriale alla Mondadori, mantiene nelle sue opere un legame profondo con il Friuli e con la città d'origine.",
+      "sourceLabel": "Dizionario Biografico dei Friulani - Alcide Paolini",
+      "sourceUrl": "https://www.dizionariobiograficodeifriulani.it/paolini-alcide-1928-2016",
+      "sourceStatus": "pass",
+      "readyForUi": false
+    },
+    {
+      "id": "master-fvg-27-02-Q15691344",
+      "wikidataId": "Q15691344",
+      "dateIt": "27-02",
+      "year": 1927,
+      "municipality": "Trieste",
+      "locality": "Trieste",
+      "province": "TS",
+      "canonicalCategory": "cultura",
+      "dailyRole": "secondary",
+      "priority": 83,
+      "titleIt": "Ugo Guarino, arte e libertà",
+      "copyIt": "Il 27 febbraio 1927 nasce a Trieste Ugo Guarino, pittore, scultore e disegnatore. Negli anni della riforma psichiatrica lavora accanto a Franco Basaglia e usa il disegno come strumento di libertà, comunicazione e critica delle istituzioni.",
+      "sourceLabel": "Musei Civici del Comune di Trieste - Ugo Guarino",
+      "sourceUrl": "https://beniculturali.comune.trieste.it/autore/?s_id=81004",
+      "sourceStatus": "pass",
+      "readyForUi": false
+    },
+    {
+      "id": "master-fvg-21-03-Q26721352",
+      "wikidataId": "Q26721352",
+      "dateIt": "21-03",
+      "year": 1893,
+      "municipality": "Trieste",
+      "locality": "Trieste e Friuli",
+      "province": "TS",
+      "canonicalCategory": "cultura",
+      "dailyRole": "secondary",
+      "priority": 80,
+      "titleIt": "Mario Ceconi, scultura del Novecento",
+      "copyIt": "Il 21 marzo 1893 nasce a Trieste Mario Ceconi di Montececon. Dalla Secessione romana alla Biennale di Venezia, porta la sua scultura nelle principali esposizioni del Novecento e conserva un rapporto costante con il Friuli.",
+      "sourceLabel": "Dizionario Biografico dei Friulani - Mario Ceconi di Montececon",
+      "sourceUrl": "https://www.dizionariobiograficodeifriulani.it/ceconi-di-montececon-mario",
+      "sourceStatus": "pass",
+      "readyForUi": false
+    },
+    {
+      "id": "master-fvg-16-08-Q3754315",
+      "wikidataId": "Q3754315",
+      "dateIt": "16-08",
+      "year": 1930,
+      "municipality": "Trieste",
+      "locality": "Trieste",
+      "province": "TS",
+      "canonicalCategory": "cultura",
+      "dailyRole": "secondary",
+      "priority": 82,
+      "titleIt": "Fulvio Papi, filosofia e impegno civile",
+      "copyIt": "Il 16 agosto 1930 nasce a Trieste Fulvio Papi, filosofo e protagonista della cultura italiana del secondo Novecento. Professore di filosofia teoretica all'Università di Pavia, unisce ricerca, insegnamento e impegno civile.",
+      "sourceLabel": "VIDAS - Un saluto a Fulvio Papi",
+      "sourceUrl": "https://www.vidas.it/un-saluto-a-fulvio-papi/",
+      "sourceStatus": "pass",
+      "readyForUi": false
+    },
+    {
+      "id": "master-fvg-18-08-Q28652231",
+      "wikidataId": "Q28652231",
+      "dateIt": "18-08",
+      "year": 1833,
+      "municipality": "Trieste",
+      "locality": "Trieste",
+      "province": "TS",
+      "canonicalCategory": "storia",
+      "dailyRole": "secondary",
+      "priority": 79,
+      "titleIt": "Demetrio Livaditi e La Ciarla",
+      "copyIt": "Il 18 agosto 1833 nasce a Trieste Demetrio Livaditi, scrittore, traduttore e patriota. Fondatore del periodico La Ciarla, partecipa alla vita culturale e politica del Risorgimento triestino e combatte tra i volontari garibaldini.",
+      "sourceLabel": "Patrimonio culturale FVG - La Ciarla e Demetrio Livaditi",
+      "sourceUrl": "https://patrimonioculturale.regione.fvg.it/disegno/?s_id=534264",
+      "sourceStatus": "pass",
+      "readyForUi": false
+    }
+  ],
+  "hold": [
+    {
+      "id": "master-fvg-09-10-Q1440917",
+      "reason": "Francesco Bearzatti supera la soglia di rilevanza musicale, ma la fonte ufficiale consultata non conferma ancora il giorno esatto di nascita. Non calendarizzare finché la data non è consolidata."
+    },
+    {
+      "id": "master-fvg-27-12-Q1876293",
+      "reason": "Luigi Ricci-Stolz è un compositore da valutare, ma servono una fonte biografica più solida e una verifica del legame territoriale prima della pubblicazione quotidiana."
+    },
+    {
+      "id": "master-fvg-20-01-Q41733397",
+      "reason": "Bruno Fael resta candidato per l'archivio artistico; la rilevanza sovralocale e la data richiedono ancora una fonte biografica autorevole."
+    },
+    {
+      "id": "master-fvg-13-01-Q3629648",
+      "reason": "Augusto Levi resta in valutazione: il profilo letterario può essere pertinente, ma non dispone ancora di una fonte sufficiente per una memoria giornaliera."
+    }
+  ],
+  "excluded": [
+    {
+      "id": "master-fvg-27-05-Q3659637",
+      "reason": "Profilo politico contemporaneo senza un impatto storico-culturale autonomo sufficiente per Scopri."
+    },
+    {
+      "id": "master-fvg-21-05-Q98092786",
+      "reason": "Profilo giornalistico contemporaneo sotto la soglia di rilevanza generale concordata."
+    },
+    {
+      "id": "master-fvg-27-03-Q28967175",
+      "reason": "Profilo prevalentemente giornalistico e divulgativo, privo di un impatto storico-culturale autonomo sufficiente per la rubrica quotidiana."
+    },
+    {
+      "id": "master-fvg-21-09-Q1487471",
+      "reason": "Profilo sportivo individuale escluso dalla linea editoriale attuale di Scopri."
+    },
+    {
+      "id": "master-fvg-12-11-Q99283000",
+      "reason": "Profilo professionale e letterario contemporaneo sotto la soglia di rilevanza storico-culturale concordata."
+    },
+    {
+      "id": "master-fvg-27-11-Q3716150",
+      "reason": "La sola nascita a Udine non compensa un'attività letteraria legata soprattutto ad Ancona; il legame territoriale non è sufficiente per Scopri FVG."
+    }
+  ]
+}

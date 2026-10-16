@@ -1,0 +1,8 @@
+{
+  "SchemaVersion": 1,
+  "CreatedAtUtc": "2026-09-24T16:37:38.6971235Z",
+  "Event": "abandoned",
+  "VersionCode": 300018,
+  "VersionName": "0.1.1",
+  "Reason": "Candidate not uploaded: replaced after fixing Europe/Rome webcam timestamp formatting and its timezone-dependent CI tests."
+}

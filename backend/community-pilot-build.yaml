@@ -1,0 +1,17 @@
+# Submit the dedicated OS-temp allowlist context, never the repository root.
+steps:
+  - name: gcr.io/cloud-builders/docker
+    entrypoint: bash
+    args:
+      - -ceu
+      - |
+        test "$PROJECT_ID" = "meteo-friul"
+        docker build -f Dockerfile -t "${_IMAGE_URI}:${_IMAGE_TAG}" .
+images:
+  - '${_IMAGE_URI}:${_IMAGE_TAG}'
+substitutions:
+  _IMAGE_URI: europe-west1-docker.pkg.dev/meteo-friul/meteofriul/community
+  _IMAGE_TAG: preflight
+options:
+  logging: CLOUD_LOGGING_ONLY
+timeout: 900s

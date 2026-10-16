@@ -1,0 +1,82 @@
+{
+  "schemaVersion": 1,
+  "generatedAt": "2026-07-13",
+  "purpose": "Revisione FUR del quindicesimo lotto Scopri. I dieci testi derivano esclusivamente dal lotto IT gia verificato; i tre candidati hold restano esclusi.",
+  "summary": {
+    "totalRecords": 10,
+    "approved": 9,
+    "pendingHumanReview": 1
+  },
+  "records": [
+    {
+      "id": "memory-it-ready-0804-luigi-scrosoppi-educazione-e-cura-sociale",
+      "status": "approved",
+      "titleFur": "Luigi Scrosoppi, educazion e impegn sociâl",
+      "summaryFur": "Ai 4 di Avost dal 1804 al nas a Udin Luigi Scrosoppi, predi che al dediche une grande part de sô vite a dâ acet e educazion aes fantatis plui puaris. Une seconde memorie citadine sul valôr concret dal impegn sociâl.",
+      "notes": "Lessico sociale sobrio; accoglienza ed educazione restano il nucleo della memoria senza tono agiografico."
+    },
+    {
+      "id": "memory-it-ready-0418-giovanni-battista-de-gasperi-geografia-e-grotte",
+      "status": "approved",
+      "titleFur": "Giovanni Battista De Gasperi, gjeografie e grotis",
+      "summaryFur": "Ai 18 di Avrîl dal 1892 al nas a Udin Giovanni Battista De Gasperi, gjeograf, naturalist e speleolic. I siei studis su lis grotis, sui glaçârs e sui insediaments a contribuissin ae cognossince sientifiche dal teritori furlan.",
+      "notes": "Glaçâr attestato in materiali regionali FUR; terminologia scientifica mantenuta breve."
+    },
+    {
+      "id": "memory-it-ready-0920-ruggero-berlam-e-l-architettura-di-trieste",
+      "status": "approved",
+      "titleFur": "Ruggero Berlam e la architeture di Triest",
+      "summaryFur": "Ai 20 di Setembar dal 1854 al nas a Triest Ruggero Berlam, architet triestin. Lis sôs oparis, dispès progjetadis cul fi Arduino, a dan forme ae Triest urbane tra Votcent e Nûfcent.",
+      "notes": "Copy semplificata sul contributo architettonico; evitato un titolo museale specialistico non necessario."
+    },
+    {
+      "id": "memory-it-ready-0927-vittorio-vidali-antifascismo-e-conflitti-del-novecen",
+      "status": "approved",
+      "titleFur": "Vittorio Vidali, antifassisim e conflits dal Nûfcent",
+      "summaryFur": "Ai 27 di Setembar dal 1900 al nas a Mugle Vittorio Vidali, antifassist e dirigjent comunist atîf in Europe e in Messic, ancje te vuere civîl spagnole. La sô biografie complesse e travierse cualchidun dai conflits politics plui impuartants dal Nûfcent.",
+      "notes": "Mugle riusa il toponimo gia approvato nella wave 8; tono storico neutro."
+    },
+    {
+      "id": "memory-it-ready-0612-daniele-antonio-bertoli-alla-corte-imperiale",
+      "status": "approved",
+      "titleFur": "Daniele Antonio Bertoli ae cort imperiâl",
+      "summaryFur": "Ai 12 di Jugn dal 1677 al nas a San Denêl dal Friûl Daniele Antonio Bertoli, dissegnadôr e costumist. A Viene al lavore pe cort dai imperadôrs Giuseppe I e Carlo VI e al puarte une formazion furlane te culture di cort europeane.",
+      "notes": "Toponimo esteso e frase di corte semplificata; evitato il titolo specialistico di disegnatore di camera."
+    },
+    {
+      "id": "memory-it-ready-1220-paolo-rumiz-viaggi-e-frontiere",
+      "status": "approved",
+      "titleFur": "Paolo Rumiz, viaçs e frontieris",
+      "summaryFur": "Ai 20 di Dicembar dal 1947 al nas a Triest Paolo Rumiz, scritôr e viazadôr che al conte confins, vuêris, paisaçs e comunitâts europeanis. Une seconde memorie leade ae vocazion adriatiche e mitteleuropeane de citât.",
+      "notes": "Lessico di viaggio e confine coerente con le memorie letterarie approvate."
+    },
+    {
+      "id": "memory-it-ready-1119-giorgio-celiberti-arte-da-udine-all-europa",
+      "status": "approved",
+      "titleFur": "Giorgio Celiberti, art di Udin ae Europe",
+      "summaryFur": "Ai 19 di Novembar dal 1929 al nas a Udin Giorgio Celiberti, pitôr e scultôr. A disenûf agns al partecipe ae Bienâl di Vignesie dal 1948 e al invie un percors artistic che di Udin al rive in tantis citâts europeanis.",
+      "notes": "Toponimi e lessico artistico coerenti con i record FUR gia approvati."
+    },
+    {
+      "id": "memory-it-ready-0217-franco-vegliani-e-la-letteratura-di-frontiera",
+      "status": "approved",
+      "titleFur": "Franco Vegliani e la leterature di frontiere",
+      "summaryFur": "Ai 17 di Fevrâr dal 1915 al nas a Triest Franco Vegliani, scritôr che al conte l'Adriatic orientâl e lis identitâts complessis dai teritoris di confin. Tai siei libris la storie coletive e jentre tes vitis individuâls.",
+      "notes": "Resa umana e non letterale del tema dell'identita inquieta."
+    },
+    {
+      "id": "memory-it-ready-0910-il-litorale-adriatico-sotto-occupazione-tedesca",
+      "status": "pending_human_review",
+      "titleFur": "Il Litorâl adriatic sot ocupazion todescje",
+      "summaryFur": "Ai 10 di Setembar dal 1943 une ordenance todescje e met lis provinciis di Udin, Gurize e Triest te Zone di operazions dal Litorâl adriatic. Une seconde memorie par capî la ocupazion naziste dal confin nordorientâl.",
+      "notes": "Grafie ordinarie corrette; la denominazione istituzionale storica in FUR richiede ancora conferma umana e resta fuori dalla UI."
+    },
+    {
+      "id": "memory-it-ready-0918-viktor-dankl-da-udine-ai-fronti-della-grande-guerra",
+      "status": "approved",
+      "titleFur": "Viktor Dankl, di Udin ai fronts de Grande Vuere",
+      "summaryFur": "Ai 18 di Setembar dal 1854 al nas a Udin Viktor Dankl von Krasnik, uficiâl austro-ungaric che al devente comandant di armade inte Prime Vuere mondiâl. La sô cariere e lee il Friûl asburgjic ai grancj fronts europeans dal conflit.",
+      "notes": "Austro-ungaric e Prime Vuere mondiâl riusano forme gia presenti nel corpus approvato."
+    }
+  ]
+}

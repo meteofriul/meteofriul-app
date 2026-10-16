@@ -1,0 +1,12 @@
+timeout: 1800s
+options:
+  logging: CLOUD_LOGGING_ONLY
+substitutions:
+  _TAG: production-20260923
+steps:
+  - name: gcr.io/cloud-builders/docker
+    args: ['build', '-f', 'experiments/weather_autonomy/Dockerfile.national-pilot', '-t', 'europe-west1-docker.pkg.dev/meteo-friul/meteofriul/national-weather:${_TAG}', '.']
+  - name: gcr.io/cloud-builders/docker
+    args: ['run', '--rm', '--network=none', 'europe-west1-docker.pkg.dev/meteo-friul/meteofriul/national-weather:${_TAG}', 'python', '-m', 'unittest', 'test_national_cloud', 'test_national_icon_bundle', 'test_national_forecast_points', 'test_benchmark_national_icon_real', 'test_serve_national_bundle_v2', 'test_gcs_object_store']
+images:
+  - europe-west1-docker.pkg.dev/meteo-friul/meteofriul/national-weather:${_TAG}

@@ -1,0 +1,8 @@
+steps:
+  - name: gcr.io/cloud-builders/docker
+    args: ['build', '-f', 'backend/Dockerfile.events-pilot', '-t', 'europe-west1-docker.pkg.dev/meteo-friul/meteofriul/events-worker:production-20260925-r2', '.']
+images:
+  - europe-west1-docker.pkg.dev/meteo-friul/meteofriul/events-worker:production-20260925-r2
+timeout: 900s
+options:
+  logging: CLOUD_LOGGING_ONLY

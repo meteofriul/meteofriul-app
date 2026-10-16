@@ -1,0 +1,194 @@
+{
+  "schemaVersion": 1,
+  "generatedAt": "2026-07-15",
+  "purpose": "Ventisettesimo lotto Scopri IT: sette memorie di rilievo scientifico, culturale e storico selezionate da fonti autorevoli. Tre aprono giornate prive di memoria primaria e quattro arricchiscono giornate gia coperte. Il lotto registra tutte le decisioni e resta bloccato fino alla revisione FUR.",
+  "policy": {
+    "readyForUi": false,
+    "furDeferred": true,
+    "dateFormat": "DD-MM",
+    "requiresFinalItalianApproval": true,
+    "excludeDeaths": true,
+    "excludeGenericPoliticalProfiles": true,
+    "excludeGenericProfessionalProfiles": true,
+    "rejectSemanticDuplicates": true,
+    "rejectUncertainCalendarDates": true,
+    "sourceFirst": true,
+    "publishAfterFurOnly": true,
+    "allowMultipleMemoriesPerDate": true,
+    "secondaryOrderedByPriority": true
+  },
+  "summary": {
+    "keepDaily": 7,
+    "primary": 3,
+    "secondary": 4,
+    "hold": 5,
+    "excluded": 3,
+    "canonicalPrimaryDatesBefore": 214,
+    "canonicalPrimaryDatesAfter": 217,
+    "currentVisiblePrimaryCoverage": 209
+  },
+  "keepDaily": [
+    {
+      "id": "master-fvg-02-09-Q88004412",
+      "wikidataId": "Q88004412",
+      "dateIt": "02-09",
+      "year": 1912,
+      "municipality": "Trieste",
+      "locality": "Trieste",
+      "province": "TS",
+      "canonicalCategory": "storia",
+      "dailyRole": "secondary",
+      "priority": 86,
+      "titleIt": "Ferruccio Dardi e la battaglia di El Qatara",
+      "copyIt": "Il 2 settembre 1912 nasce a Trieste Ferruccio Dardi, ufficiale dei Lancieri di Novara. Nel 1942 guida il proprio squadrone carri armati nella battaglia di El Qatara, in Africa settentrionale, e riceve alla memoria la medaglia d'oro al valor militare.",
+      "sourceLabel": "Presidenza della Repubblica - Ferruccio Dardi",
+      "sourceUrl": "https://www.quirinale.it/onorificenze/insigniti/45421",
+      "sourceStatus": "pass",
+      "readyForUi": false
+    },
+    {
+      "id": "master-fvg-06-09-Q18945299",
+      "wikidataId": "Q18945299",
+      "dateIt": "06-09",
+      "year": 1756,
+      "municipality": "Udine",
+      "locality": "Udine",
+      "province": "UD",
+      "canonicalCategory": "scienza_territorio",
+      "dailyRole": "primary",
+      "priority": 83,
+      "titleIt": "Francesco Maria Franceschinis, matematica e insegnamento",
+      "copyIt": "Il 6 settembre 1756 nasce a Udine Giacomo Francesco Maria Franceschinis, barnabita, matematico e filosofo. Insegna a Bologna e Roma e diventa professore e rettore dell'Università di Padova, unendo ricerca scientifica e formazione.",
+      "sourceLabel": "Dizionario Biografico dei Friulani - Francesco Maria Franceschinis",
+      "sourceUrl": "https://www.dizionariobiograficodeifriulani.it/franceschinis-della-villa-giacomo-francesco-maria/",
+      "sourceStatus": "pass",
+      "readyForUi": false
+    },
+    {
+      "id": "master-fvg-19-08-Q26253949",
+      "wikidataId": "Q26253949",
+      "dateIt": "19-08",
+      "year": 1926,
+      "municipality": "Trieste",
+      "locality": "Trieste",
+      "province": "TS",
+      "canonicalCategory": "scienza_territorio",
+      "dailyRole": "primary",
+      "priority": 87,
+      "titleIt": "Mario Rigutti, una vita dedicata alle stelle",
+      "copyIt": "Il 19 agosto 1926 nasce a Trieste Mario Rigutti, astronomo e divulgatore scientifico. Studia il Sole e le eclissi, rinnova l'Osservatorio di Capodimonte e racconta l'astronomia a generazioni di lettori.",
+      "sourceLabel": "INAF - Mario Rigutti",
+      "sourceUrl": "https://www.beniculturali.inaf.it/opac/astronomi/mario-rigutti",
+      "sourceStatus": "pass",
+      "readyForUi": false
+    },
+    {
+      "id": "master-fvg-21-09-Q3657294",
+      "wikidataId": "Q3657294",
+      "dateIt": "21-09",
+      "year": 1889,
+      "municipality": "Trieste",
+      "locality": "Trieste",
+      "province": "TS",
+      "canonicalCategory": "scienza_territorio",
+      "dailyRole": "secondary",
+      "priority": 88,
+      "titleIt": "Edoardo Weiss, pioniere della psicoanalisi",
+      "copyIt": "Il 21 settembre 1889 nasce a Trieste Edoardo Weiss, psichiatra e psicoanalista. Allievo di Freud, contribuisce in modo decisivo alla nascita e alla diffusione della psicoanalisi in Italia.",
+      "sourceLabel": "Treccani - Edoardo Weiss",
+      "sourceUrl": "https://www.treccani.it/enciclopedia/edoardo-weiss_%28Il-Contributo-italiano-alla-storia-del-Pensiero%3A-Scienze%29/",
+      "sourceStatus": "pass",
+      "readyForUi": false
+    },
+    {
+      "id": "master-fvg-28-07-Q3703497",
+      "wikidataId": "Q3703497",
+      "dateIt": "28-07",
+      "year": 1845,
+      "municipality": "Trieste",
+      "locality": "Trieste",
+      "province": "TS",
+      "canonicalCategory": "scienza_territorio",
+      "dailyRole": "secondary",
+      "priority": 81,
+      "titleIt": "Davide Besso e il Periodico di Matematica",
+      "copyIt": "Il 28 luglio 1845 nasce a Trieste Davide Besso, matematico e docente. Studia analisi ed equazioni differenziali e nel 1886 fonda il Periodico di Matematica, una rivista destinata a durare nel tempo.",
+      "sourceLabel": "Associazione per la Formazione Scientifica Umanistica - Davide Besso",
+      "sourceUrl": "https://www.afsu.it/1988-2/",
+      "sourceStatus": "pass",
+      "readyForUi": false
+    },
+    {
+      "id": "master-fvg-28-10-Q46002433",
+      "wikidataId": "Q46002433",
+      "dateIt": "28-10",
+      "year": 1910,
+      "municipality": "Trieste",
+      "locality": "Trieste",
+      "province": "TS",
+      "canonicalCategory": "scienza_territorio",
+      "dailyRole": "primary",
+      "priority": 86,
+      "titleIt": "Nicolò Dallaporta, dalle particelle alle galassie",
+      "copyIt": "Il 28 ottobre 1910 nasce a Trieste Nicolò Dallaporta, fisico e astrofisico. Professore a Padova, studia raggi cosmici, evoluzione stellare e galassie e contribuisce alla nascita del settore di Astrofisica e Cosmologia della SISSA.",
+      "sourceLabel": "Istituto Veneto di Scienze, Lettere ed Arti - Nicolò Dallaporta",
+      "sourceUrl": "https://www.istitutoveneto.it/dallaporta-nicolo-2/",
+      "sourceStatus": "pass",
+      "readyForUi": false
+    },
+    {
+      "id": "master-fvg-01-03-Q3876089",
+      "wikidataId": "Q3876089",
+      "dateIt": "01-03",
+      "year": 1929,
+      "municipality": "Casarsa della Delizia",
+      "locality": "Casarsa della Delizia",
+      "province": "PN",
+      "canonicalCategory": "cultura",
+      "dailyRole": "secondary",
+      "priority": 84,
+      "titleIt": "Nico Naldini, una voce autonoma del Novecento",
+      "copyIt": "Il 1 marzo 1929 nasce a Casarsa della Delizia Nico Naldini, poeta, narratore e biografo. Formatosi nell'Academiuta di lenga furlana, costruisce un percorso autonomo tra poesia, cinema ed editoria e racconta figure centrali della cultura italiana.",
+      "sourceLabel": "Centro Studi Pier Paolo Pasolini - Nico Naldini",
+      "sourceUrl": "https://www.centrostudipierpaolopasolinicasarsa.it/attivita/convegni/convegnonaldiniepasolini/",
+      "sourceStatus": "pass",
+      "readyForUi": false
+    }
+  ],
+  "hold": [
+    {
+      "id": "master-fvg-14-02-Q3903208",
+      "reason": "Le fonti consultate riportano il 14 o il 17 febbraio per la nascita di Piero Colobini. Il profilo resta sospeso finche la data non e risolta con una fonte univoca."
+    },
+    {
+      "id": "master-fvg-06-05-Q15711028",
+      "reason": "Vincenzo De Michiel e una figura meritevole di memoria, ma manca ancora una fonte biografica istituzionale che confermi insieme data e percorso."
+    },
+    {
+      "id": "master-fvg-16-05-Q3840139",
+      "reason": "Luigi Sbaiz resta candidato per la memoria della Resistenza; le fonti reperite sono frammentarie e non bastano ancora per una scheda giornaliera completa."
+    },
+    {
+      "id": "master-fvg-17-07-Q21207688",
+      "reason": "Giuseppe D'Agostinis supera la soglia militare, ma il profilo richiede una fonte istituzionale piu solida prima di essere calendarizzato."
+    },
+    {
+      "id": "master-fvg-04-04-Q3680156",
+      "reason": "Claudio Nicolini resta in valutazione per il contributo scientifico; occorre separare e documentare la rilevanza della ricerca rispetto al ruolo politico."
+    }
+  ],
+  "excluded": [
+    {
+      "id": "master-fvg-11-03-Q3612802",
+      "reason": "Profilo prevalentemente giornalistico e politico, oltre che storicamente sensibile, non adatto alla rubrica quotidiana senza un approfondimento autonomo e contestualizzato."
+    },
+    {
+      "id": "master-fvg-01-06-Q4000305",
+      "reason": "Scrittore contemporaneo non prioritario rispetto alla soglia storico-culturale concordata per la Memoria del giorno."
+    },
+    {
+      "id": "master-fvg-13-10-Q3769487",
+      "reason": "Il record sorgente confonde il medico Giulio Ascoli nato nel 1870 con il matematico omonimo nato nel 1843. La voce non e utilizzabile e viene esclusa dalla coda."
+    }
+  ]
+}

@@ -1,0 +1,280 @@
+{
+  "schemaVersion": 1,
+  "batchId": "ostermann-1876-review-04",
+  "reviewedAt": "2026-07-22",
+  "source": {
+    "title": "Proverbi friulani raccolti dalla viva voce del popolo",
+    "author": "Valentino Ostermann",
+    "editionYear": 1876,
+    "catalogUrl": "https://www.techeudine.it/biblioteche-digital-furlane/proverbi-friulani-raccolti-dalla-viva-voce-del-popolo",
+    "facsimileUrl": "https://manoscrittisbhu.comune.udine.it/uploads/BDF/LO11116556.pdf"
+  },
+  "policy": {
+    "publish": false,
+    "furNormalizationAllowed": false,
+    "rule": "Il facsimile conferma il testo sorgente. La raccomandazione editoriale non equivale a pubblicazione o traduzione approvata."
+  },
+  "summary": {
+    "records": 15,
+    "promoteAfterLanguageReview": 15,
+    "needsContextOrLanguageReview": 0,
+    "secondaryVariant": 0
+  },
+  "records": [
+    {
+      "id": "ost1876-o-la-o-rompi",
+      "sourceBlockIds": [
+        "ost1876-p147-b001"
+      ],
+      "pdfPage": 147,
+      "printedPage": 143,
+      "furOriginal": "O lâ o rompi.",
+      "proposedIt": "O va o si rompe.",
+      "recommendation": "promote_after_language_review",
+      "targetUse": "almanac_general",
+      "calendar": {
+        "rotation": "general_wisdom"
+      },
+      "reason": "Massima breve e autonoma, verificata sul facsimile e adatta alla rotazione generale dopo revisione linguistica.",
+      "publish": false
+    },
+    {
+      "id": "ost1876-fur-dint-fur-dolor",
+      "sourceBlockIds": [
+        "ost1876-p147-b001"
+      ],
+      "pdfPage": 147,
+      "printedPage": 143,
+      "furOriginal": "Fûr il dint e fûr il dolôr.",
+      "proposedIt": "Tolto il dente, tolto il dolore.",
+      "recommendation": "promote_after_language_review",
+      "targetUse": "almanac_general",
+      "calendar": {
+        "rotation": "general_wisdom"
+      },
+      "reason": "Proverbio completo e immediatamente comprensibile, distinto dagli altri record gia revisionati.",
+      "publish": false
+    },
+    {
+      "id": "ost1876-roste-denant-aghe",
+      "sourceBlockIds": [
+        "ost1876-p147-b002"
+      ],
+      "pdfPage": 147,
+      "printedPage": 143,
+      "furOriginal": "Bisugne fâ la roste denant câ vegni l’âghe.",
+      "proposedIt": "Bisogna costruire l'argine prima che arrivi l'acqua.",
+      "recommendation": "promote_after_language_review",
+      "targetUse": "almanac_general",
+      "calendar": {
+        "rotation": "general_wisdom"
+      },
+      "reason": "Immagine di prudenza chiara e autonoma; non dipende da una data o da una stagione.",
+      "publish": false
+    },
+    {
+      "id": "ost1876-cui-cir-cjate",
+      "sourceBlockIds": [
+        "ost1876-p147-b005"
+      ],
+      "pdfPage": 147,
+      "printedPage": 143,
+      "furOriginal": "Cui che cîr čate.",
+      "proposedIt": "Chi cerca trova.",
+      "recommendation": "promote_after_language_review",
+      "targetUse": "almanac_general",
+      "calendar": {
+        "rotation": "general_wisdom"
+      },
+      "reason": "Formula universale molto breve, attestata come riga autonoma nel facsimile.",
+      "publish": false
+    },
+    {
+      "id": "ost1876-batti-par-viergi",
+      "sourceBlockIds": [
+        "ost1876-p147-b006"
+      ],
+      "pdfPage": 147,
+      "printedPage": 143,
+      "furOriginal": "Bisugne batti par che a vegnin a viergi.",
+      "proposedIt": "Bisogna bussare perché vengano ad aprire.",
+      "recommendation": "promote_after_language_review",
+      "targetUse": "almanac_general",
+      "calendar": {
+        "rotation": "general_wisdom"
+      },
+      "reason": "Massima sull'iniziativa personale separata dalla citazione latina che la segue nella fonte.",
+      "publish": false
+    },
+    {
+      "id": "ost1876-prin-pensir-mior",
+      "sourceBlockIds": [
+        "ost1876-p147-b006"
+      ],
+      "pdfPage": 147,
+      "printedPage": 143,
+      "furOriginal": "Il prin pensîr l’è simpri il miôr.",
+      "proposedIt": "Il primo pensiero è sempre il migliore.",
+      "recommendation": "promote_after_language_review",
+      "targetUse": "almanac_general",
+      "calendar": {
+        "rotation": "general_wisdom"
+      },
+      "reason": "Proverbio generale completo e leggibile, isolato dal blocco lungo grazie al confronto con il facsimile.",
+      "publish": false
+    },
+    {
+      "id": "ost1876-bati-fier-cjald",
+      "sourceBlockIds": [
+        "ost1876-p147-b006"
+      ],
+      "pdfPage": 147,
+      "printedPage": 143,
+      "furOriginal": "Bisugne bati il fier quand ca l’è čald.",
+      "proposedIt": "Bisogna battere il ferro quando è caldo.",
+      "recommendation": "promote_after_language_review",
+      "targetUse": "almanac_general",
+      "calendar": {
+        "rotation": "general_wisdom"
+      },
+      "reason": "Detto autonomo sull'opportunita, verificato direttamente nella pagina sorgente.",
+      "publish": false
+    },
+    {
+      "id": "ost1876-nol-sa-balla-fieste",
+      "sourceBlockIds": [
+        "ost1876-p147-b008"
+      ],
+      "pdfPage": 147,
+      "printedPage": 143,
+      "furOriginal": "Cui ca nol sa ballâ nol vadi su la fieste.",
+      "proposedIt": "Chi non sa ballare non vada alla festa.",
+      "recommendation": "promote_after_language_review",
+      "targetUse": "almanac_general",
+      "calendar": {
+        "rotation": "general_wisdom"
+      },
+      "reason": "Proverbio completo e distinto dalla variante sul trovarsi gia al ballo presente subito dopo.",
+      "publish": false
+    },
+    {
+      "id": "ost1876-tal-bal-balla",
+      "sourceBlockIds": [
+        "ost1876-p147-b008"
+      ],
+      "pdfPage": 147,
+      "printedPage": 143,
+      "furOriginal": "Co si è tal bal bisugne ballâ.",
+      "proposedIt": "Quando si è al ballo bisogna ballare.",
+      "recommendation": "promote_after_language_review",
+      "targetUse": "almanac_general",
+      "calendar": {
+        "rotation": "general_wisdom"
+      },
+      "reason": "Massima autonoma sulla responsabilita di agire quando si e coinvolti, non una duplicazione testuale del record precedente.",
+      "publish": false
+    },
+    {
+      "id": "ost1876-om-propon-dio-dispon",
+      "sourceBlockIds": [
+        "ost1876-p148-b002"
+      ],
+      "pdfPage": 148,
+      "printedPage": 144,
+      "furOriginal": "L’om propon e Dio al dispon.",
+      "proposedIt": "L'uomo propone e Dio dispone.",
+      "recommendation": "promote_after_language_review",
+      "targetUse": "almanac_general",
+      "calendar": {
+        "rotation": "general_wisdom"
+      },
+      "reason": "Proverbio generale completo e chiaramente leggibile nel facsimile.",
+      "publish": false
+    },
+    {
+      "id": "ost1876-ogni-robe-so-viers",
+      "sourceBlockIds": [
+        "ost1876-p148-b003"
+      ],
+      "pdfPage": 148,
+      "printedPage": 144,
+      "furOriginal": "Ogni rôbe va čolte pal so viêrs.",
+      "proposedIt": "Ogni cosa va presa per il verso giusto.",
+      "recommendation": "promote_after_language_review",
+      "targetUse": "almanac_general",
+      "calendar": {
+        "rotation": "general_wisdom"
+      },
+      "reason": "Massima pratica autonoma; la variante esplicativa che segue resta fuori da questo record.",
+      "publish": false
+    },
+    {
+      "id": "ost1876-voli-paron-ingrasse-cjaval",
+      "sourceBlockIds": [
+        "ost1876-p148-b005"
+      ],
+      "pdfPage": 148,
+      "printedPage": 144,
+      "furOriginal": "Il vôli dal paron l’ingrasse il čaval.",
+      "proposedIt": "L'occhio del padrone ingrassa il cavallo.",
+      "recommendation": "promote_after_language_review",
+      "targetUse": "almanac_general",
+      "calendar": {
+        "rotation": "general_wisdom"
+      },
+      "reason": "Proverbio autonomo sulla cura diretta delle proprie cose, separato dalle note domestiche successive.",
+      "publish": false
+    },
+    {
+      "id": "ost1876-jeve-pierd-siele",
+      "sourceBlockIds": [
+        "ost1876-p148-b010"
+      ],
+      "pdfPage": 148,
+      "printedPage": 144,
+      "furOriginal": "Cui che jeve piêrd la siele.",
+      "proposedIt": "Chi si alza perde la sedia.",
+      "recommendation": "promote_after_language_review",
+      "targetUse": "almanac_general",
+      "calendar": {
+        "rotation": "general_wisdom"
+      },
+      "reason": "Detto autonomo e leggibile; la seconda riga affine del blocco non viene fusa artificialmente nel testo.",
+      "publish": false
+    },
+    {
+      "id": "ost1876-rive-prin-mulin",
+      "sourceBlockIds": [
+        "ost1876-p148-b011"
+      ],
+      "pdfPage": 148,
+      "printedPage": 144,
+      "furOriginal": "Cui ca rive prin tal mulin masane.",
+      "proposedIt": "Chi arriva per primo al mulino macina.",
+      "recommendation": "promote_after_language_review",
+      "targetUse": "almanac_general",
+      "calendar": {
+        "rotation": "general_wisdom"
+      },
+      "reason": "Proverbio completo sull'ordine di arrivo, distinto dalle altre due massime nello stesso blocco.",
+      "publish": false
+    },
+    {
+      "id": "ost1876-mond-di-cui-pialu",
+      "sourceBlockIds": [
+        "ost1876-p148-b011"
+      ],
+      "pdfPage": 148,
+      "printedPage": 144,
+      "furOriginal": "Il mond l’è di cui che al sa piâlu.",
+      "proposedIt": "Il mondo è di chi sa prenderlo.",
+      "recommendation": "promote_after_language_review",
+      "targetUse": "almanac_general",
+      "calendar": {
+        "rotation": "general_wisdom"
+      },
+      "reason": "Massima generale completa, isolata con certezza dal facsimile e adatta a una futura rotazione non stagionale.",
+      "publish": false
+    }
+  ]
+}

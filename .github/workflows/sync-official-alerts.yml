@@ -1,0 +1,56 @@
+name: Sync official FVG alerts
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  id-token: write
+
+concurrency:
+  group: sync-official-fvg-alerts
+  cancel-in-progress: false
+
+jobs:
+  sync:
+    # Solo fallback manuale: la pianificazione ufficiale vive in Cloud Scheduler.
+    if: github.ref == 'refs/heads/main' && vars.OFFICIAL_ALERT_SYNC_WORKFLOW_ENABLED == 'true'
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7
+
+      - name: Set up Python
+        uses: actions/setup-python@5fda3b95a4ea91299a34e894583c3862153e4b97 # v7
+        with:
+          python-version: "3.13"
+          cache: pip
+          cache-dependency-path: backend/requirements.txt
+
+      - name: Authenticate to Google Cloud
+        uses: google-github-actions/auth@7c6bc770dae815cd3e89ee6cdf493a5fab2cc093 # v3
+        with:
+          workload_identity_provider: projects/49007668366/locations/global/workloadIdentityPools/github-actions/providers/meteofriul-app
+          service_account: github-alert-sync@meteo-friul.iam.gserviceaccount.com
+
+      - name: Install backend dependencies
+        run: python -m pip install --requirement backend/requirements.txt
+
+      - name: Store confirmed official state
+        working-directory: backend
+        env:
+          COMMUNITY_STORAGE: firestore
+          FIREBASE_PROJECT_ID: meteo-friul
+          OFFICIAL_ALERTS_REQUIRE_PERSISTENT_STORAGE: "true"
+          PUSH_OFFICIAL_ALERTS_MODE: ${{ vars.PUSH_OFFICIAL_ALERTS_MODE || 'off' }}
+          PUSH_OFFICIAL_ALERTS_REQUIRED: ${{ vars.PUSH_OFFICIAL_ALERTS_REQUIRED || 'false' }}
+          PUSH_APP_CHECK_MODE: ${{ vars.PUSH_APP_CHECK_MODE || 'enforce' }}
+          PUSH_APP_CHECK_ANDROID_APP_IDS: ${{ vars.PUSH_APP_CHECK_ANDROID_APP_IDS || '' }}
+          PUSH_PILOT_ENROLLMENT_MODE: ${{ vars.PUSH_PILOT_ENROLLMENT_MODE || 'owner_allowlist' }}
+          PUSH_PILOT_ALLOWED_INSTALLATION_HASHES: ${{ vars.PUSH_PILOT_ALLOWED_INSTALLATION_HASHES || '' }}
+          PUSH_PILOT_MAX_DEVICES: ${{ vars.PUSH_PILOT_MAX_DEVICES || '1' }}
+          PUSH_ENROLLMENT_GENERATION: ${{ vars.PUSH_ENROLLMENT_GENERATION || '' }}
+          PUSH_PLAY_BETA_ALLOWED_APP_VERSIONS: ${{ vars.PUSH_PLAY_BETA_ALLOWED_APP_VERSIONS || '' }}
+        run: python -m app.jobs.sync_official_alerts

@@ -1,0 +1,426 @@
+{
+  "schemaVersion": 1,
+  "batchId": "ostermann-1876-language-review-07",
+  "reviewedAt": "2026-07-23",
+  "sourceDecisionFiles": [
+    "review-decisions-batch-07.json"
+  ],
+  "purpose": "Settima revisione linguistica ed editoriale dei candidati Ostermann 1876 verificati sul facsimile. Non pubblica contenuti nella UI.",
+  "policy": {
+    "publish": false,
+    "rule": "La normalizzazione FUR conserva il significato attestato nel facsimile. Le quindici massime sono generali e non ricevono date, feste o stagioni artificiali."
+  },
+  "summary": {
+    "records": 15,
+    "languageReviewed": 15,
+    "mergeExisting": 0,
+    "needsNativeReview": 0
+  },
+  "records": [
+    {
+      "id": "ost1876-ocasion-fas-om-mestri",
+      "reviewStatus": "language_reviewed",
+      "furNormalized": "La ocasion e fâs l'om mestri.",
+      "itFinal": "L'occasione rende l'uomo maestro.",
+      "destination": "almanac",
+      "calendarRule": {
+        "type": "general",
+        "bucket": "wisdom",
+        "fallbackAllowed": true
+      },
+      "duplicateAudit": {
+        "status": "new_distinct"
+      },
+      "evidence": [
+        {
+          "label": "Facsimile Ostermann 1876, p. PDF 149",
+          "kind": "primary"
+        },
+        {
+          "label": "Dizionari de Lenghe Furlane, lessico e grafia normalizzati",
+          "kind": "secondary"
+        }
+      ],
+      "editorialNote": "Normalizzazione dell'articolo e del pronome atono; mestri è attestato nel repertorio lessicografico.",
+      "publish": false
+    },
+    {
+      "id": "ost1876-ocasion-fas-om-lari",
+      "reviewStatus": "language_reviewed",
+      "furNormalized": "La ocasion e fâs l'om lari.",
+      "itFinal": "L'occasione fa l'uomo ladro.",
+      "destination": "almanac",
+      "calendarRule": {
+        "type": "general",
+        "bucket": "wisdom",
+        "fallbackAllowed": true
+      },
+      "duplicateAudit": {
+        "status": "new_distinct"
+      },
+      "evidence": [
+        {
+          "label": "Facsimile Ostermann 1876, p. PDF 149",
+          "kind": "primary"
+        },
+        {
+          "label": "Dizionari de Lenghe Furlane, lessico e grafia normalizzati",
+          "kind": "secondary"
+        }
+      ],
+      "editorialNote": "Normalizzazione dell'articolo e del pronome atono; lari è la forma lessicografica moderna.",
+      "publish": false
+    },
+    {
+      "id": "ost1876-no-riscje-no-rosee",
+      "reviewStatus": "language_reviewed",
+      "furNormalized": "Se no si riscje, no si rosee.",
+      "itFinal": "Chi non rischia non rosicchia.",
+      "destination": "almanac",
+      "calendarRule": {
+        "type": "general",
+        "bucket": "wisdom",
+        "fallbackAllowed": true
+      },
+      "duplicateAudit": {
+        "status": "new_distinct"
+      },
+      "evidence": [
+        {
+          "label": "Facsimile Ostermann 1876, p. PDF 149",
+          "kind": "primary"
+        },
+        {
+          "label": "Dizionari de Lenghe Furlane, riscjâ e roseâ",
+          "kind": "secondary"
+        }
+      ],
+      "editorialNote": "Le forme storiche risie e rosie sono ricondotte ai verbi moderni riscjâ e roseâ.",
+      "publish": false
+    },
+    {
+      "id": "ost1876-mior-uf-vue-gjaline-doman",
+      "reviewStatus": "language_reviewed",
+      "furNormalized": "Miôr un ûf vuê che une gjaline doman.",
+      "itFinal": "Meglio un uovo oggi che una gallina domani.",
+      "destination": "almanac",
+      "calendarRule": {
+        "type": "general",
+        "bucket": "wisdom",
+        "fallbackAllowed": true
+      },
+      "duplicateAudit": {
+        "status": "new_distinct"
+      },
+      "evidence": [
+        {
+          "label": "Facsimile Ostermann 1876, p. PDF 149",
+          "kind": "primary"
+        },
+        {
+          "label": "Dizionari de Lenghe Furlane, proverbio attestato",
+          "kind": "secondary"
+        }
+      ],
+      "editorialNote": "La forma moderna è attestata integralmente nel repertorio lessicografico.",
+      "publish": false
+    },
+    {
+      "id": "ost1876-prat-seat-no-scuindisi",
+      "reviewStatus": "language_reviewed",
+      "furNormalized": "Tal prât seât no si pues scuindisi.",
+      "itFinal": "In un prato falciato non ci si può nascondere.",
+      "destination": "almanac",
+      "calendarRule": {
+        "type": "general",
+        "bucket": "wisdom",
+        "fallbackAllowed": true
+      },
+      "duplicateAudit": {
+        "status": "new_distinct"
+      },
+      "evidence": [
+        {
+          "label": "Facsimile Ostermann 1876, p. PDF 149",
+          "kind": "primary"
+        },
+        {
+          "label": "Dizionari de Lenghe Furlane, locuzione scuindisi tun prât seât",
+          "kind": "secondary"
+        }
+      ],
+      "editorialNote": "Normalizzazione di seât, pues e scuindisi sulla locuzione lessicografica attestata.",
+      "publish": false
+    },
+    {
+      "id": "ost1876-cjapa-ucei-cuant-passin",
+      "reviewStatus": "language_reviewed",
+      "furNormalized": "Bisugne cjapâ i uciei cuant che a passin.",
+      "itFinal": "Bisogna prendere gli uccelli quando passano.",
+      "destination": "almanac",
+      "calendarRule": {
+        "type": "general",
+        "bucket": "wisdom",
+        "fallbackAllowed": true
+      },
+      "duplicateAudit": {
+        "status": "new_distinct"
+      },
+      "evidence": [
+        {
+          "label": "Facsimile Ostermann 1876, p. PDF 150",
+          "kind": "primary"
+        },
+        {
+          "label": "Dizionari de Lenghe Furlane, cjapâ e uciel",
+          "kind": "secondary"
+        }
+      ],
+      "editorialNote": "Normalizzazione di cjapâ, uciei e cuant che; mantenuto il significato figurato dell'occasione.",
+      "publish": false
+    },
+    {
+      "id": "ost1876-mulin-cuant-je-aghe",
+      "reviewStatus": "language_reviewed",
+      "furNormalized": "Bisugne lâ a mulin cuant che e je aghe.",
+      "itFinal": "Bisogna andare al mulino quando c'è acqua.",
+      "destination": "almanac",
+      "calendarRule": {
+        "type": "general",
+        "bucket": "wisdom",
+        "fallbackAllowed": true
+      },
+      "duplicateAudit": {
+        "status": "new_distinct"
+      },
+      "evidence": [
+        {
+          "label": "Facsimile Ostermann 1876, p. PDF 150",
+          "kind": "primary"
+        },
+        {
+          "label": "Dizionari de Lenghe Furlane, locuzione attestata",
+          "kind": "secondary"
+        }
+      ],
+      "editorialNote": "La locuzione moderna è attestata integralmente nel repertorio lessicografico.",
+      "publish": false
+    },
+    {
+      "id": "ost1876-pense-prime-no-pintiti",
+      "reviewStatus": "language_reviewed",
+      "furNormalized": "Pense prime par no pintîti dopo.",
+      "itFinal": "Pensa prima, per non pentirti dopo.",
+      "destination": "almanac",
+      "calendarRule": {
+        "type": "general",
+        "bucket": "wisdom",
+        "fallbackAllowed": true
+      },
+      "duplicateAudit": {
+        "status": "new_distinct"
+      },
+      "evidence": [
+        {
+          "label": "Facsimile Ostermann 1876, p. PDF 151",
+          "kind": "primary"
+        },
+        {
+          "label": "Dizionari de Lenghe Furlane, pintîsi",
+          "kind": "secondary"
+        }
+      ],
+      "editorialNote": "La forma storica pentîti è ricondotta al verbo moderno pintîsi.",
+      "publish": false
+    },
+    {
+      "id": "ost1876-pense-vue-par-doman",
+      "reviewStatus": "language_reviewed",
+      "furNormalized": "Pense vuê par doman.",
+      "itFinal": "Pensa oggi per domani.",
+      "destination": "almanac",
+      "calendarRule": {
+        "type": "general",
+        "bucket": "wisdom",
+        "fallbackAllowed": true
+      },
+      "duplicateAudit": {
+        "status": "new_distinct"
+      },
+      "evidence": [
+        {
+          "label": "Facsimile Ostermann 1876, p. PDF 151",
+          "kind": "primary"
+        },
+        {
+          "label": "Dizionari de Lenghe Furlane, grafia normalizzata",
+          "kind": "secondary"
+        }
+      ],
+      "editorialNote": "Normalizzazione di vuê; massima breve e priva di riferimenti a una data specifica.",
+      "publish": false
+    },
+    {
+      "id": "ost1876-cjale-bas-denant-muda-pas",
+      "reviewStatus": "language_reviewed",
+      "furNormalized": "Bisugne cjalâ a bas denant di mudâ il pas.",
+      "itFinal": "Guarda in basso prima di cambiare passo.",
+      "destination": "almanac",
+      "calendarRule": {
+        "type": "general",
+        "bucket": "wisdom",
+        "fallbackAllowed": true
+      },
+      "duplicateAudit": {
+        "status": "new_distinct"
+      },
+      "evidence": [
+        {
+          "label": "Facsimile Ostermann 1876, p. PDF 151",
+          "kind": "primary"
+        },
+        {
+          "label": "Dizionari de Lenghe Furlane, lessico e grafia normalizzati",
+          "kind": "secondary"
+        }
+      ],
+      "editorialNote": "Normalizzazione conservativa di cjalâ e mudâ; uniti i due versi in una sola frase.",
+      "publish": false
+    },
+    {
+      "id": "ost1876-no-comede-picule-buse",
+      "reviewStatus": "language_reviewed",
+      "furNormalized": "Cui che nol comede la piçule buse, al comede la grande.",
+      "itFinal": "Chi non ripara il piccolo buco, riparerà quello grande.",
+      "destination": "almanac",
+      "calendarRule": {
+        "type": "general",
+        "bucket": "wisdom",
+        "fallbackAllowed": true
+      },
+      "duplicateAudit": {
+        "status": "new_distinct"
+      },
+      "evidence": [
+        {
+          "label": "Facsimile Ostermann 1876, p. PDF 151",
+          "kind": "primary"
+        },
+        {
+          "label": "Dizionari de Lenghe Furlane, comedâ e buse",
+          "kind": "secondary"
+        }
+      ],
+      "editorialNote": "Normalizzazione del pronome atono e della grafia di piçule; il presente gnomico resta invariato.",
+      "publish": false
+    },
+    {
+      "id": "ost1876-dopo-fat-ognidun-sa-fa",
+      "reviewStatus": "language_reviewed",
+      "furNormalized": "Dopo fat, ognidun al sa fâ.",
+      "itFinal": "A cose fatte, tutti sanno come fare.",
+      "destination": "almanac",
+      "calendarRule": {
+        "type": "general",
+        "bucket": "wisdom",
+        "fallbackAllowed": true
+      },
+      "duplicateAudit": {
+        "status": "new_distinct"
+      },
+      "evidence": [
+        {
+          "label": "Facsimile Ostermann 1876, p. PDF 151",
+          "kind": "primary"
+        },
+        {
+          "label": "Dizionari de Lenghe Furlane, ognidun e grafia normalizzata",
+          "kind": "secondary"
+        }
+      ],
+      "editorialNote": "Ognun è ricondotto a ognidun e viene esplicitato il pronome atono della frase moderna.",
+      "publish": false
+    },
+    {
+      "id": "ost1876-tet-no-par-une-ploe",
+      "reviewStatus": "language_reviewed",
+      "furNormalized": "No si fâs il tet par une sole ploie.",
+      "itFinal": "Non si fa il tetto per una sola pioggia.",
+      "destination": "almanac",
+      "calendarRule": {
+        "type": "general",
+        "bucket": "wisdom",
+        "fallbackAllowed": true
+      },
+      "duplicateAudit": {
+        "status": "new_distinct"
+      },
+      "evidence": [
+        {
+          "label": "Facsimile Ostermann 1876, p. PDF 152",
+          "kind": "primary"
+        },
+        {
+          "label": "Dizionari de Lenghe Furlane, tet e ploie",
+          "kind": "secondary"
+        }
+      ],
+      "editorialNote": "La forma storica ploe è ricondotta a ploie; il valore resta figurato e generale.",
+      "publish": false
+    },
+    {
+      "id": "ost1876-jet-no-par-une-sere",
+      "reviewStatus": "language_reviewed",
+      "furNormalized": "Il jet no si fâs par durmî une sole sere.",
+      "itFinal": "Non si fa il letto per dormirci una sola sera.",
+      "destination": "almanac",
+      "calendarRule": {
+        "type": "general",
+        "bucket": "wisdom",
+        "fallbackAllowed": true
+      },
+      "duplicateAudit": {
+        "status": "new_distinct"
+      },
+      "evidence": [
+        {
+          "label": "Facsimile Ostermann 1876, p. PDF 152",
+          "kind": "primary"
+        },
+        {
+          "label": "Dizionari de Lenghe Furlane, jet e grafia normalizzata",
+          "kind": "secondary"
+        }
+      ],
+      "editorialNote": "Rimosso il pronome storico ridondante; jet e durmî seguono la grafia moderna.",
+      "publish": false
+    },
+    {
+      "id": "ost1876-plea-arbul-zovin",
+      "reviewStatus": "language_reviewed",
+      "furNormalized": "Bisugne pleâ l'arbul cuant che al è zovin.",
+      "itFinal": "Bisogna piegare l'albero quando è giovane.",
+      "destination": "almanac",
+      "calendarRule": {
+        "type": "general",
+        "bucket": "wisdom",
+        "fallbackAllowed": true
+      },
+      "duplicateAudit": {
+        "status": "new_distinct"
+      },
+      "evidence": [
+        {
+          "label": "Facsimile Ostermann 1876, p. PDF 152",
+          "kind": "primary"
+        },
+        {
+          "label": "Dizionari de Lenghe Furlane, pleâ e arbul",
+          "kind": "secondary"
+        }
+      ],
+      "editorialNote": "La forma storica sovin è ricondotta a zovin; mantenuto il valore figurato del detto.",
+      "publish": false
+    }
+  ]
+}

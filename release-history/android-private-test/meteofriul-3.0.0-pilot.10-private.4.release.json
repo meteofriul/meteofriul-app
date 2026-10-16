@@ -1,0 +1,15 @@
+{
+  "SchemaVersion": 1,
+  "Target": "android-private-test",
+  "Status": "distributed-baseline",
+  "RecordedFrom": "existing-firebase-app-distribution-release",
+  "VersionCode": 300010,
+  "VersionName": "3.0.0-pilot.10-private.4",
+  "CertificateSha256": "8c7d6e0c3c0c23ba30ca3223c2b6154ca18a21e41ae1abd2e0d0d5ee35bf8495",
+  "ApkSha256": null,
+  "FrontendCommit": null,
+  "BackendCommit": null,
+  "CloudRunRevision": null,
+  "CloudRunImageDigest": null,
+  "Note": "Baseline registrata dopo la distribuzione esistente; gli identificatori non verificabili retroattivamente restano null e non vengono ricostruiti per deduzione."
+}

@@ -1,0 +1,205 @@
+{
+  "schemaVersion": 1,
+  "batchId": "ud-enrichment-milestones-06",
+  "snapshotDate": "2026-09-01",
+  "purpose": "Ricerca di tre tappe per Lignano Sabbiadoro, Tolmezzo e Zuglio; revisione FUR e promozione sono documentate separatamente.",
+  "runtimeIntegration": false,
+  "initialTotalMilestones": 451,
+  "editorialPolicy": {
+    "sourceEvidenceRequired": true,
+    "ambiguousDatesExcluded": true,
+    "italianCopyStatus": "editorial_draft",
+    "friulianCopyStatus": "pending_assisted_review",
+    "readyForUi": false
+  },
+  "excludedClaims": [
+    {
+      "municipality": "Lignano Sabbiadoro",
+      "claim": "Il primo stabilimento balneare apre nel 1903.",
+      "reason": "Il PRGC comunale ne documenta la costruzione nel 1903 e la pagina celebrativa colloca al 15 aprile il momento fondativo; un'altra cronologia comunale indica invece l'apertura nel 1904. La tappa conserva il solo fatto non confliggente della costruzione nel 1903.",
+      "sourceUrl": "https://comune.lignano-sabbiadoro.ud.it/amministrazione/documenti-e-dati/amministrazione-trasparente/pianificazione-e-governo-del-territorio/varianti-al-prgc-1/variante-n-66-trasposizione-dello-strumento-urbanistico-su-nuovo-supporto-cartografico/relazione.pdf/@@download/file_principale"
+    },
+    {
+      "municipality": "Lignano Sabbiadoro",
+      "claim": "Il Comune di Lignano Sabbiadoro nasce nel 1903.",
+      "reason": "Il 1903 riguarda l'avvio della località balneare; l'autonomia comunale è già documentata dalla tappa del 1959.",
+      "sourceUrl": "https://comune.lignano-sabbiadoro.ud.it/argomenti/turismo/120-anni"
+    },
+    {
+      "municipality": "Tolmezzo",
+      "claim": "La Torre Picotta viene completata nel 1477.",
+      "reason": "La fonte comunale colloca la costruzione nell'intervallo 1477-1479; la tappa conserva l'intero intervallo e non sceglie arbitrariamente il primo anno come completamento.",
+      "sourceUrl": "https://www.comune.tolmezzo.ud.it/localita-di-tolmezzo/"
+    },
+    {
+      "municipality": "Tolmezzo",
+      "claim": "La Torre Picotta respinge un'incursione turca.",
+      "reason": "La fonte documenta la funzione difensiva della torre di fronte alla minaccia turca, ma non descrive in quella sede una specifica battaglia o un'incursione respinta dalla torre.",
+      "sourceUrl": "https://www.comune.tolmezzo.ud.it/localita-di-tolmezzo/"
+    },
+    {
+      "municipality": "Zuglio",
+      "claim": "I primi scavi sistematici del Foro iniziano esattamente nel 1800.",
+      "reason": "ERPAC e Comune collocano l'avvio all'inizio dell'Ottocento senza fissare un anno; la tappa usa quindi il periodo «inizio XIX».",
+      "sourceUrl": "https://patrimonioculturale.regione.fvg.it/museo/?s_id=440628"
+    },
+    {
+      "municipality": "Zuglio",
+      "claim": "All'inizio dell'Ottocento iniziano i primi scavi archeologici in assoluto a Zuglio.",
+      "reason": "Le fonti qualificano come primi scavi sistematici quelli condotti nel Foro; la tappa non estende il primato a ogni ricerca o rinvenimento precedente nell'intero territorio.",
+      "sourceUrl": "https://patrimonioculturale.regione.fvg.it/museo/?s_id=440628"
+    }
+  ],
+  "editorialOmissions": [
+    {
+      "municipality": "Lignano Sabbiadoro",
+      "year": 1905,
+      "claim": "Viene costruito il primo albergo di Lignano.",
+      "decision": "source_verified_not_promoted",
+      "reason": "Il fatto è verificato dal PRGC, ma il lotto promuove l'avvio della località balneare senza affiancargli una seconda tappa turistica quasi consecutiva.",
+      "sourceUrl": "https://comune.lignano-sabbiadoro.ud.it/amministrazione/documenti-e-dati/amministrazione-trasparente/pianificazione-e-governo-del-territorio/varianti-al-prgc-1/variante-n-66-trasposizione-dello-strumento-urbanistico-su-nuovo-supporto-cartografico/relazione.pdf/@@download/file_principale"
+    },
+    {
+      "municipality": "Tolmezzo",
+      "year": 1752,
+      "claim": "Inizia la costruzione dell'attuale Duomo di San Martino.",
+      "decision": "source_verified_not_promoted",
+      "reason": "La fonte documenta il cantiere tra 1752 e 1764; la tappa della Torre Picotta amplia invece la fase medievale già richiamata dal profilo senza duplicare il Settecento manifatturiero.",
+      "sourceUrl": "https://www.comune.tolmezzo.ud.it/localita-di-tolmezzo/"
+    },
+    {
+      "municipality": "Zuglio",
+      "year": 1820,
+      "claim": "Parte dei reperti del Foro viene ceduta a musei di Cividale, Parigi e Vienna.",
+      "decision": "source_verified_not_promoted",
+      "reason": "ERPAC presenta la cessione come conseguenza della prima stagione di scavi; il lotto conserva l'avvio delle indagini come passaggio storico principale.",
+      "sourceUrl": "https://patrimonioculturale.regione.fvg.it/museo/?s_id=440628"
+    }
+  ],
+  "municipalities": [
+    {
+      "istatCode": "030049",
+      "municipality": "Lignano Sabbiadoro",
+      "province": "UD",
+      "currentMilestoneCount": 2,
+      "currentMilestoneIds": [
+        "lignano-pineta-spiral-plan",
+        "lignano-municipal-autonomy"
+      ],
+      "decision": "source_verified_it_fur_pending",
+      "candidates": [
+        {
+          "id": "lignano-first-bathing-establishment-1903",
+          "year": 1903,
+          "label": {
+            "it": "Viene costruito il primo stabilimento balneare di Lignano",
+            "fur": null
+          },
+          "evidence": "Il PRGC del Comune di Lignano Sabbiadoro documenta che nel 1903 venne costruito il primo stabilimento balneare, la cosiddetta terrazza a mare. La pagina comunale per i 120 anni collega al 15 aprile 1903 il momento fondativo dei Bagni di Lignano.",
+          "source": {
+            "label": "Comune di Lignano Sabbiadoro - PRGC, cenni storici",
+            "type": "official_municipality",
+            "url": "https://comune.lignano-sabbiadoro.ud.it/amministrazione/documenti-e-dati/amministrazione-trasparente/pianificazione-e-governo-del-territorio/varianti-al-prgc-1/variante-n-66-trasposizione-dello-strumento-urbanistico-su-nuovo-supporto-cartografico/relazione.pdf/@@download/file_principale",
+            "checkedAt": "2026-09-01"
+          },
+          "supportingSources": [
+            {
+              "label": "Città di Lignano Sabbiadoro - 120 anni",
+              "type": "official_municipality",
+              "url": "https://comune.lignano-sabbiadoro.ud.it/argomenti/turismo/120-anni",
+              "checkedAt": "2026-09-01"
+            }
+          ],
+          "duplicateReview": {
+            "exactDuplicate": false,
+            "relatedRecordIds": [
+              "lignano-pineta-spiral-plan",
+              "lignano-municipal-autonomy"
+            ],
+            "note": "La costruzione del primo stabilimento nel 1903 precede ed è distinta sia dal piano di Lignano Pineta del 1953 sia dall'autonomia comunale del 1959."
+          }
+        }
+      ]
+    },
+    {
+      "istatCode": "030121",
+      "municipality": "Tolmezzo",
+      "province": "UD",
+      "currentMilestoneCount": 2,
+      "currentMilestoneIds": [
+        "tolmezzo-first-record",
+        "tolmezzo-linussio"
+      ],
+      "decision": "source_verified_it_fur_pending",
+      "candidates": [
+        {
+          "id": "tolmezzo-torre-picotta-1477-1479",
+          "century": "1477-1479",
+          "label": {
+            "it": "Viene costruita la Torre Picotta a difesa del borgo e del castello",
+            "fur": null
+          },
+          "evidence": "La pagina storica del Comune di Tolmezzo documenta che la Torre Picotta fu costruita tra il 1477 e il 1479 a difesa del borgo e del castello di fronte alla minaccia turca.",
+          "source": {
+            "label": "Città di Tolmezzo - Tolmezzo medievale",
+            "type": "official_municipality",
+            "url": "https://www.comune.tolmezzo.ud.it/localita-di-tolmezzo/",
+            "checkedAt": "2026-09-01"
+          },
+          "duplicateReview": {
+            "exactDuplicate": false,
+            "relatedRecordIds": [
+              "tolmezzo-first-record",
+              "tolmezzo-linussio"
+            ],
+            "note": "La fortificazione del 1477-1479 è distinta dalla prima attestazione del 1158 e dalla manifattura settecentesca di Jacopo Linussio."
+          }
+        }
+      ]
+    },
+    {
+      "istatCode": "030136",
+      "municipality": "Zuglio",
+      "province": "UD",
+      "currentMilestoneCount": 2,
+      "currentMilestoneIds": [
+        "zuglio-iulium-carnicum",
+        "zuglio-museum"
+      ],
+      "decision": "source_verified_it_fur_pending",
+      "candidates": [
+        {
+          "id": "zuglio-first-systematic-forum-excavations",
+          "century": "inizio XIX",
+          "label": {
+            "it": "Iniziano i primi scavi sistematici nel Foro di Iulium Carnicum",
+            "fur": null
+          },
+          "evidence": "ERPAC FVG colloca all'inizio dell'Ottocento i primi scavi sistematici nel Foro, condotti dal Commissario di Guerra del Regno d'Italia e da studiosi carnici; la cronologia comunale conferma i primi scavi regolari nello stesso periodo.",
+          "source": {
+            "label": "ERPAC FVG - Museo archeologico Iulium Carnicum",
+            "type": "regional_institution",
+            "url": "https://patrimonioculturale.regione.fvg.it/museo/?s_id=440628",
+            "checkedAt": "2026-09-01"
+          },
+          "supportingSources": [
+            {
+              "label": "Comune di Zuglio - La storia",
+              "type": "official_municipality",
+              "url": "https://www.comune.zuglio.ud.it/it/home-2611/cultura-2614/la-storia-6506",
+              "checkedAt": "2026-09-01"
+            }
+          ],
+          "duplicateReview": {
+            "exactDuplicate": false,
+            "relatedRecordIds": [
+              "zuglio-iulium-carnicum",
+              "zuglio-museum"
+            ],
+            "note": "L'avvio ottocentesco degli scavi sistematici è distinto sia dalla nascita del centro romano sia dall'apertura dell'allestimento museale del 1995."
+          }
+        }
+      ]
+    }
+  ]
+}

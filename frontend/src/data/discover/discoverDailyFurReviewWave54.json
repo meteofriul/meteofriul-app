@@ -1,0 +1,47 @@
+{
+  "schemaVersion": 1,
+  "generatedAt": "2026-07-19",
+  "purpose": "Revisione FUR del cinquantaquattresimo lotto Scopri. Le cinque voci approvate in italiano superano la revisione linguistica e restano approfondimenti secondari delle rispettive date.",
+  "summary": {
+    "totalRecords": 5,
+    "approved": 5,
+    "pendingHumanReview": 0
+  },
+  "records": [
+    {
+      "id": "memory-it-ready-0703-federico-flora-e-la-scienza-delle-finanze",
+      "status": "approved",
+      "titleFur": "Federico Flora e la sience des financis",
+      "summaryFur": "Ai 3 di Lui dal 1867 al nas a Pordenon Federico Flora. Docent universitari e studiôs di economie, al devente une vôs autorevule te finance publiche e al jentre tra i socis de Academie dai Lincei.",
+      "notes": "Pordenon, economie, finance e Academie dai Lincei seguono il lessico gia consolidato nel corpus Scopri."
+    },
+    {
+      "id": "memory-it-ready-0803-federico-enriques-e-la-cultura-dei-libri",
+      "status": "approved",
+      "titleFur": "Federico Enriques e la culture dai libris",
+      "summaryFur": "Ai 3 di Avost dal 1941 al nas a Udin Federico Enriques. Par cuasi cincuant agns al vuide la Zanichelli e al contribuìs a fâ de cjase editore un pont di riferiment pe scuele taliane, tra vocabolari, manuâi e libris di science.",
+      "notes": "Udin, cjase editore, vocabolari e manuâi seguono il corpus editoriale approvato; Zanichelli resta nome proprio."
+    },
+    {
+      "id": "memory-it-ready-0507-franco-devescovi-e-martin-mystere",
+      "status": "approved",
+      "titleFur": "Franco Devescovi e Martin Mystère",
+      "summaryFur": "Ai 7 di Mai dal 1943 al nas a Triest Franco Devescovi. Fumetist e pitôr, al travierse une lungje cariere e al lavore par Martin Mystère, Zagor e Tex cun Sergio Bonelli Editore.",
+      "notes": "Triest segue il corpus territoriale; Martin Mystère, Zagor, Tex e Sergio Bonelli Editore restano nomi propri editoriali."
+    },
+    {
+      "id": "memory-it-ready-0901-ricciotti-lazzero-e-la-memoria-della-deportazione",
+      "status": "approved",
+      "titleFur": "Ricciotti Lazzero e la memorie de deportazion",
+      "summaryFur": "Ai 1 di Setembar dal 1921 al nas a Triest Ricciotti Lazzero. Gjornalist e storic, al studie la Republiche Sociâl Taliane, il fassisim e la deportazion; par plui di cuarante agns al colabore cun Simon Wiesenthal.",
+      "notes": "Republiche Sociâl Taliane, fassisim e deportazion seguono la terminologia storica del corpus; Simon Wiesenthal resta nome proprio."
+    },
+    {
+      "id": "memory-it-ready-0711-bruno-dreossi-bronzo-olimpico-in-canoa",
+      "status": "approved",
+      "titleFur": "Bruno Dreossi e il bronç olimpic dal 1992",
+      "summaryFur": "Ai 11 di Lui dal 1964 al nas a Monfalcon Bruno Dreossi. Ai Zûcs olimpics di Barcelone dal 1992, adun cun Antonio Rossi, al conquiste la medaie di bronç inte gare K2 sui 500 metris.",
+      "notes": "Monfalcon, Zûcs olimpics e medaie di bronç seguono il lessico sportivo e territoriale approvato; K2 resta sigla tecnica."
+    }
+  ]
+}

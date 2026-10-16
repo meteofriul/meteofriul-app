@@ -1,0 +1,239 @@
+{
+  "schemaVersion": 1,
+  "generatedAt": "2026-07-12",
+  "purpose": "Nono lotto Scopri IT: candidati culturali storici selezionati dal master, evitando profili contemporanei deboli, morti e politica generica. Non letto direttamente dalla UI.",
+  "policy": {
+    "readyForUi": false,
+    "furDeferred": true,
+    "dateFormat": "DD-MM",
+    "requiresFinalItalianApproval": true,
+    "excludeDeaths": true,
+    "excludeGenericPoliticalProfiles": true,
+    "excludeLivingProfilesWithoutDedicatedReview": true,
+    "sourceFirst": true,
+    "publishAfterFurOnly": true
+  },
+  "summary": {
+    "keepDaily": 10,
+    "primary": 10,
+    "secondary": 0,
+    "hold": 8,
+    "potentialPrimaryCoverageBefore": 92,
+    "potentialPrimaryCoverageAfter": 102,
+    "currentVisiblePrimaryCoverage": 92
+  },
+  "keepDaily": [
+    {
+      "id": "master-fvg-10-12-Q4015466",
+      "wikidataId": "Q4015466",
+      "dateIt": "10-12",
+      "year": 1879,
+      "municipality": "Trieste",
+      "locality": "Trieste",
+      "province": "TS",
+      "canonicalCategory": "cultura",
+      "dailyRole": "primary",
+      "titleIt": "Farfa, futurismo da Trieste",
+      "copyIt": "Il 10 dicembre 1879 nasce a Trieste Vittorio Osvaldo Tommasini, noto come Farfa. Una memoria futurista, laterale ma viva, dentro il Novecento artistico.",
+      "sourceLabel": "Wikidata",
+      "sourceUrl": "https://www.wikidata.org/wiki/Q4015466",
+      "sourceStatus": "pass",
+      "readyForUi": false
+    },
+    {
+      "id": "master-fvg-07-04-Q37787609",
+      "wikidataId": "Q37787609",
+      "dateIt": "07-04",
+      "year": 1875,
+      "municipality": "Trieste",
+      "locality": "Trieste",
+      "province": "TS",
+      "canonicalCategory": "cultura",
+      "dailyRole": "primary",
+      "titleIt": "Bruno Croatto, pittura e incisione",
+      "copyIt": "Il 7 aprile 1875 nasce a Trieste Bruno Croatto, pittore e incisore. Una traccia discreta della cultura figurativa triestina.",
+      "sourceLabel": "Wikidata",
+      "sourceUrl": "https://www.wikidata.org/wiki/Q37787609",
+      "sourceStatus": "pass",
+      "readyForUi": false
+    },
+    {
+      "id": "master-fvg-20-09-Q3660610",
+      "wikidataId": "Q3660610",
+      "dateIt": "20-09",
+      "year": 1908,
+      "municipality": "Trieste",
+      "locality": "Trieste",
+      "province": "TS",
+      "canonicalCategory": "cultura",
+      "dailyRole": "primary",
+      "titleIt": "Carolus Cergoly, Trieste in versi",
+      "copyIt": "Il 20 settembre 1908 nasce a Trieste Carolus Cergoly, poeta e scrittore. Una voce letteraria che tiene insieme citta, lingua e memoria.",
+      "sourceLabel": "Wikidata",
+      "sourceUrl": "https://www.wikidata.org/wiki/Q3660610",
+      "sourceStatus": "pass",
+      "readyForUi": false
+    },
+    {
+      "id": "master-fvg-01-03-Q24262941",
+      "wikidataId": "Q24262941",
+      "dateIt": "01-03",
+      "year": 1773,
+      "municipality": "Muggia",
+      "locality": "Muggia",
+      "province": "TS",
+      "canonicalCategory": "cultura",
+      "dailyRole": "primary",
+      "titleIt": "Carlo Marin, Muggia e scrittura",
+      "copyIt": "Il primo marzo 1773 nasce a Muggia Carlo Marin, autore legato alla cultura locale. Una memoria breve per allargare Scopri oltre i centri maggiori.",
+      "sourceLabel": "Wikidata",
+      "sourceUrl": "https://www.wikidata.org/wiki/Q24262941",
+      "sourceStatus": "pass",
+      "readyForUi": false
+    },
+    {
+      "id": "master-fvg-14-02-Q3645781",
+      "wikidataId": "Q3645781",
+      "dateIt": "14-02",
+      "year": 1906,
+      "municipality": "Trieste",
+      "locality": "Trieste",
+      "province": "TS",
+      "canonicalCategory": "cultura",
+      "dailyRole": "primary",
+      "titleIt": "Bruno Giordano Sanzin, poesia triestina",
+      "copyIt": "Il 14 febbraio 1906 nasce a Trieste Bruno Giordano Sanzin, poeta. Una piccola memoria letteraria del Novecento triestino.",
+      "sourceLabel": "Wikidata",
+      "sourceUrl": "https://www.wikidata.org/wiki/Q3645781",
+      "sourceStatus": "pass",
+      "readyForUi": false
+    },
+    {
+      "id": "master-fvg-15-04-Q3425645",
+      "wikidataId": "Q3425645",
+      "dateIt": "15-04",
+      "year": 1926,
+      "municipality": "Trieste",
+      "locality": "Trieste",
+      "province": "TS",
+      "canonicalCategory": "cultura",
+      "dailyRole": "primary",
+      "titleIt": "Renzo Rosso, narrativa triestina",
+      "copyIt": "Il 15 aprile 1926 nasce a Trieste Renzo Rosso, scrittore. Una memoria di narrativa e sguardo urbano, dentro la Trieste del secondo Novecento.",
+      "sourceLabel": "Wikidata",
+      "sourceUrl": "https://www.wikidata.org/wiki/Q3425645",
+      "sourceStatus": "pass",
+      "readyForUi": false
+    },
+    {
+      "id": "master-fvg-16-08-Q4002840",
+      "wikidataId": "Q4002840",
+      "dateIt": "16-08",
+      "year": 1870,
+      "municipality": "Trieste",
+      "locality": "Trieste",
+      "province": "TS",
+      "canonicalCategory": "cultura",
+      "dailyRole": "primary",
+      "titleIt": "Ugo Mioni, libri e ragazzi",
+      "copyIt": "Il 16 agosto 1870 nasce a Trieste Ugo Mioni, scrittore. Una memoria di letture popolari e libri pensati anche per i piu giovani.",
+      "sourceLabel": "Wikidata",
+      "sourceUrl": "https://www.wikidata.org/wiki/Q4002840",
+      "sourceStatus": "pass",
+      "readyForUi": false
+    },
+    {
+      "id": "master-fvg-21-10-Q3745352",
+      "wikidataId": "Q3745352",
+      "dateIt": "21-10",
+      "year": 1826,
+      "municipality": "Trieste",
+      "locality": "Trieste",
+      "province": "TS",
+      "canonicalCategory": "cultura",
+      "dailyRole": "primary",
+      "titleIt": "Filippo Zamboni, poesia e Risorgimento",
+      "copyIt": "Il 21 ottobre 1826 nasce a Trieste Filippo Zamboni, poeta e patriota. Una memoria tra letteratura, ideali civili e storia dell'Ottocento.",
+      "sourceLabel": "Wikidata",
+      "sourceUrl": "https://www.wikidata.org/wiki/Q3745352",
+      "sourceStatus": "pass",
+      "readyForUi": false
+    },
+    {
+      "id": "master-fvg-24-09-Q50553974",
+      "wikidataId": "Q50553974",
+      "dateIt": "24-09",
+      "year": 1851,
+      "municipality": "Trieste",
+      "locality": "Trieste",
+      "province": "TS",
+      "canonicalCategory": "cultura",
+      "dailyRole": "primary",
+      "titleIt": "Enrico Nordio, forme per Trieste",
+      "copyIt": "Il 24 settembre 1851 nasce a Trieste Enrico Nordio, architetto. Una memoria urbana, fatta di edifici, scuole e trasformazioni della citta.",
+      "sourceLabel": "Wikidata",
+      "sourceUrl": "https://www.wikidata.org/wiki/Q50553974",
+      "sourceStatus": "pass",
+      "readyForUi": false
+    },
+    {
+      "id": "master-fvg-02-10-Q16590320",
+      "wikidataId": "Q16590320",
+      "dateIt": "02-10",
+      "year": 1802,
+      "municipality": "San Vito al Tagliamento",
+      "locality": "San Vito al Tagliamento",
+      "province": "PN",
+      "canonicalCategory": "cultura",
+      "dailyRole": "primary",
+      "titleIt": "Pierviviano Zecchini, San Vito e cultura",
+      "copyIt": "Il 2 ottobre 1802 nasce a San Vito al Tagliamento Pierviviano Zecchini. Una memoria locale per dare spazio anche alla storia culturale del Pordenonese.",
+      "sourceLabel": "Wikidata",
+      "sourceUrl": "https://www.wikidata.org/wiki/Q16590320",
+      "sourceStatus": "pass",
+      "readyForUi": false
+    }
+  ],
+  "hold": [
+    {
+      "id": "master-fvg-05-03-Q355411",
+      "reason": "Luca Turilli: profilo musicale pop/metal contemporaneo, non prioritario per Memoria del giorno.",
+      "readyForUi": false
+    },
+    {
+      "id": "master-fvg-12-04-Q2273489",
+      "reason": "Gillo Dorfles: gia escluso dalla linea editoriale attuale per Scopri quotidiano.",
+      "readyForUi": false
+    },
+    {
+      "id": "master-fvg-07-05-Q661716",
+      "reason": "Gianni Bisiach: giornalista/divulgatore noto, ma non prioritario per la rubrica.",
+      "readyForUi": false
+    },
+    {
+      "id": "master-fvg-26-10-Q57037727",
+      "reason": "Tatjana Rojc: profilo contemporaneo e politico-culturale; da lasciare fuori senza revisione dedicata.",
+      "readyForUi": false
+    },
+    {
+      "id": "master-fvg-03-01-Q1526025",
+      "reason": "Roberto Car: scienziato vivente, da valutare solo con revisione dedicata.",
+      "readyForUi": false
+    },
+    {
+      "id": "master-fvg-19-06-Q77048411",
+      "reason": "Parco Zoo Punta Verde: evento/ente turistico, non memoria storico-culturale prioritaria.",
+      "readyForUi": false
+    },
+    {
+      "id": "master-fvg-23-07-Q28322492",
+      "reason": "Michele Vendruscolo: scienziato vivente, da non inserire in lotto automatico.",
+      "readyForUi": false
+    },
+    {
+      "id": "master-fvg-21-11-Q941440",
+      "reason": "Igor Skamperle: profilo vivente e non centrale per il calendario quotidiano.",
+      "readyForUi": false
+    }
+  ]
+}

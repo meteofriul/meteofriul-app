@@ -1,0 +1,26 @@
+{
+  "schemaVersion": 1,
+  "generatedAt": "2026-07-21",
+  "purpose": "Revisione FUR del settantaquattresimo lotto Scopri. Le Memorie del 24 e del 27 novembre superano la revisione linguistica senza modificare le decisioni editoriali italiane.",
+  "summary": {
+    "totalRecords": 2,
+    "approved": 2,
+    "pendingHumanReview": 0
+  },
+  "records": [
+    {
+      "id": "memory-it-ready-1124-le-strade-deserte-di-gorizia",
+      "status": "approved",
+      "titleFur": "Lis stradis vueidis di Gurize",
+      "summaryFur": "Ai 24 di Novembar dal 1915 lis stradis di Gurize a son vueidis. Dome cualchi buteghe di alimentârs e reste vierte e, intant che a continuin a colâ granatis e shrapnel, la croniche e restituìs la vite di ogni dì intune citât sot bombardament.",
+      "notes": "Gurize, granatis, bombardament e la costruzione temporale seguono il lessico storico già approvato; shrapnel resta il termine tecnico presente nella fonte."
+    },
+    {
+      "id": "memory-it-ready-1127-l-ospedale-femminile-diventa-militare",
+      "status": "approved",
+      "titleFur": "L'ospedâl feminin al devente militâr",
+      "summaryFur": "Ai 27 di Novembar dal 1915 lis personis ricoveradis tal ospedâl feminin di Gurize a vegnin trasferidis a Triest. La struture e ven destinade ae cure dai militârs ferîts: un passaç che al mostre cemût che la rêt sanitarie de citât e vignive reorganizade sot la pression de vuere.",
+      "notes": "Ospedâl, Gurize, Triest, militârs e vuere seguono il corpus approvato; personis ricoveradis evita un tecnicismo non necessario nella card."
+    }
+  ]
+}

@@ -1,0 +1,19 @@
+{
+  "schema_version": 1,
+  "project": "meteo-friul",
+  "region": "europe-west1",
+  "public_reader_base_url": "https://meteofriul-weather-49007668366.europe-west1.run.app",
+  "jobs": {
+    "cams": {
+      "cloud_run_job": "meteofriul-cams",
+      "cloud_scheduler_job": "meteofriul-cams-refresh",
+      "environment_file": "production-cams.env.yaml",
+      "schedule": "0 10,15,20 * * *",
+      "time_zone": "Etc/UTC",
+      "environment": {
+        "WEATHER_PUBLIC_BASE_URL": "https://meteofriul-weather-49007668366.europe-west1.run.app",
+        "WEATHER_UV_UTC_HOURS": "15,20"
+      }
+    }
+  }
+}

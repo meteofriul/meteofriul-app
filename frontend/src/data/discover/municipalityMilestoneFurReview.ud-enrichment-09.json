@@ -1,0 +1,91 @@
+{
+  "schemaVersion": 1,
+  "batchId": "ud-enrichment-milestones-09-fur-review",
+  "sourceResearchBatchId": "ud-enrichment-milestones-09",
+  "reviewedAt": "2026-09-02",
+  "runtimeIntegration": false,
+  "reviewMethod": "assisted_standard_reference_review",
+  "approvalBasis": "user_delegated_assisted_editorial_review",
+  "reviewer": "assistant",
+  "independentHumanReview": false,
+  "approvalNote": "Decisione editoriale assistita sotto il mandato di completamento Scopri. Le fonti ARLeF verificano lessico, toponimi e modelli d'uso, non certificano queste frasi; nessuna revisione professionale indipendente né lettura frase per frase attribuita all'utente.",
+  "summary": {
+    "totalRecords": 3,
+    "approved": 3,
+    "pendingHumanReview": 0
+  },
+  "records": [
+    {
+      "id": "magnano-prampero-document-1107",
+      "status": "approved",
+      "labelFur": "Il cjistiel di Prampar al è documentât par scrit",
+      "notes": "Cjistiel, Prampar e documentât seguono i lemmi ARLeF; par scrit è il modello attestato per per scritto. La frase conserva il significato documentario, senza trasformarlo in fondazione.",
+      "references": [
+        {
+          "url": "https://superdizionari.arlef.it/ricerca?term=castello&language=it&gui=fur",
+          "note": "Castello → cjistiel."
+        },
+        {
+          "url": "https://superdizionari.arlef.it/ricerca?term=Prampero&language=it&gui=fur",
+          "note": "Prampero → Prampar, località nel Comune di Magnano in Riviera."
+        },
+        {
+          "url": "https://superdizionari.arlef.it/ricerca?term=documentare&language=it&gui=fur",
+          "note": "Documentare → documentâ; participio documentât."
+        },
+        {
+          "url": "https://superdizionari.arlef.it/ricerca?term=scritto&language=it&gui=fur",
+          "note": "Scritto → scrit; per scritto → par scrit."
+        }
+      ]
+    },
+    {
+      "id": "taipana-platischis-renaming-decree-1931",
+      "status": "approved",
+      "labelFur": "Il Comun di Platiscjis al ven autorizât a clamâsi Taipane",
+      "notes": "Platiscjis e Taipane sono i toponimi ARLeF. Autorizât segue autorizâ, con una sola z, e clamâsi conserva il valore del cambio di denominazione autorizzato. I nomi locali sloveni e il contesto storico del profilo non vengono sostituiti.",
+      "references": [
+        {
+          "url": "https://superdizionari.arlef.it/ricerca?term=Platischis&language=it&gui=fur",
+          "note": "Platischis → Platiscjis."
+        },
+        {
+          "url": "https://superdizionari.arlef.it/ricerca?term=Taipana&language=it&gui=fur",
+          "note": "Taipana → Taipane."
+        },
+        {
+          "url": "https://superdizionari.arlef.it/ricerca?term=autorizzare&language=it&gui=fur",
+          "note": "Autorizzare → autorizâ; participio autorizât."
+        },
+        {
+          "url": "https://superdizionari.arlef.it/ricerca?term=chiamarsi&language=it&gui=fur",
+          "note": "Chiamarsi → clamâsi."
+        }
+      ]
+    },
+    {
+      "id": "tavagnacco-fuluto-madonna-cavalicco-1512",
+      "status": "approved",
+      "labelFur": "Pietro Fuluto al piture la Madone in tron a Cjavalì",
+      "notes": "Piture e Madone seguono i lemmi ARLeF; tron è attestato anche nell'accezione del trono di una divinità, mentre Cjavalì è il toponimo di Cavalicco. In tron è una composizione editoriale, non una frase certificata dal dizionario. Pietro Fuluto resta il nome proprio dell'artista.",
+      "references": [
+        {
+          "url": "https://superdizionari.arlef.it/ricerca?term=dipingere&language=it&gui=fur",
+          "note": "Dipingere → piturâ; l'esempio attesta al piture."
+        },
+        {
+          "url": "https://superdizionari.arlef.it/ricerca?term=Madonna&language=it&gui=fur",
+          "note": "Madonna → Madone."
+        },
+        {
+          "url": "https://superdizionari.arlef.it/ricerca?term=trono&language=it&gui=fur",
+          "note": "Trono → tron; il lemma comprende il senso riferito a una divinità."
+        },
+        {
+          "url": "https://superdizionari.arlef.it/ricerca?term=Cavalicco&language=it&gui=fur",
+          "note": "Cavalicco → Cjavalì."
+        }
+      ]
+    }
+  ]
+}

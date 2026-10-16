@@ -1,0 +1,11 @@
+:root {
+  --mf-shadow-card: 0 14px 32px rgba(6, 58, 96, 0.12);
+  --mf-shadow-control: 0 8px 18px rgba(6, 58, 96, 0.1);
+  --mf-shadow-nav: 0 -12px 32px rgba(6, 58, 96, 0.14);
+}
+
+html[data-theme="dark"] {
+  --mf-shadow-card: 0 18px 38px rgba(0, 0, 0, 0.28);
+  --mf-shadow-control: 0 10px 24px rgba(0, 0, 0, 0.22);
+  --mf-shadow-nav: 0 -14px 34px rgba(0, 0, 0, 0.28);
+}

@@ -1,0 +1,27 @@
+{
+  "schemaVersion": 1,
+  "promotionId": "pn-enrichment-milestones-promotion-01",
+  "researchBatchId": "pn-enrichment-milestones-01",
+  "furReviewBatchId": "pn-enrichment-milestones-01-fur-review",
+  "promotedAt": "2026-08-31",
+  "approvalBasis": "user_delegated_assisted_editorial_review",
+  "approvalNote": "Decisione editoriale assistita nell'ambito della richiesta dell'utente di completare Scopri e proseguire con tutte le rubriche. Non attesta una lettura frase per frase dell'utente, una revisione professionale indipendente o una certificazione ARLeF.",
+  "independentHumanReview": false,
+  "totalRecords": 4,
+  "addedMilestoneCounts": {
+    "093001": 1,
+    "093014": 2,
+    "093037": 1
+  },
+  "resultingMilestoneCounts": {
+    "093001": 2,
+    "093014": 3,
+    "093037": 3
+  },
+  "recordIds": [
+    "andreis-museo-1981",
+    "cimolais-rifugio-pordenone-1930",
+    "cimolais-stambecco-1985",
+    "sacile-liberta-comunali-1190"
+  ]
+}

@@ -1,0 +1,185 @@
+export const BULLETIN_SOURCE_URL = "https://www.meteo.fvg.it/";
+
+export const BULLETIN_DAYS = [
+  {
+    id: "today",
+    labels: {
+      it: "Oggi",
+      fur: "Vuê",
+    },
+    date: "Lunedi 22 giugno",
+    reliability: "70%",
+    mapAlt: "Mappa Meteo Friul con dati previsionali ARPA FVG OSMER per oggi",
+    mapBadges: [
+      { id: "quota-2000", tone: "mountain", x: 29, y: 29, value: "2000m 16°C" },
+      { id: "quota-1000", tone: "mountain", x: 25, y: 43, value: "1000m 23°C" },
+      { id: "plain-max", tone: "hot", x: 53, y: 64, value: "33/36" },
+      { id: "plain-min", tone: "cool", x: 62, y: 72, value: "20/23" },
+      { id: "coast-max", tone: "hot", x: 78, y: 81, value: "30/33" },
+      { id: "coast-min", tone: "cool", x: 84, y: 88, value: "24/27" },
+    ],
+    mapPoints: [
+      { id: "a1", type: "storm", x: 34, y: 19 },
+      { id: "a2", type: "storm", x: 68, y: 18 },
+      { id: "a3", type: "partly", x: 28, y: 39 },
+      { id: "a4", type: "partly", x: 61, y: 37 },
+      { id: "a5", type: "partly", x: 31, y: 61 },
+      { id: "a6", type: "partly", x: 53, y: 57 },
+      { id: "a7", type: "storm", x: 72, y: 63 },
+      { id: "a8", type: "sun", x: 55, y: 78 },
+      { id: "a9", type: "storm", x: 84, y: 79 },
+    ],
+    summary: "Sole e nubi, temporali isolati sui rilievi",
+    text:
+      "Giornata calda e in prevalenza soleggiata. Nel pomeriggio saranno possibili rovesci o temporali locali sui monti, con qualche episodio in possibile estensione verso pianura e costa.",
+    focus: [
+      { label: "Pianura", value: "Caldo, vento debole" },
+      { label: "Montagna", value: "Temporali locali" },
+      { label: "Costa", value: "Sole, brezza" },
+    ],
+  },
+  {
+    id: "tomorrow",
+    labels: {
+      it: "Domani",
+      fur: "Doman",
+    },
+    weekdayLabels: {
+      it: "Martedì",
+      fur: "Martars",
+    },
+    date: "Martedi 23 giugno",
+    reliability: "70%",
+    mapAlt: "Mappa Meteo Friul con dati previsionali ARPA FVG OSMER per domani",
+    mapBadges: [
+      { id: "quota-2000", tone: "mountain", x: 30, y: 30, value: "2000m 17°C" },
+      { id: "quota-1000", tone: "mountain", x: 25, y: 43, value: "1000m 24°C" },
+      { id: "plain-max", tone: "hot", x: 55, y: 65, value: "34/37" },
+      { id: "plain-min", tone: "cool", x: 63, y: 73, value: "20/24" },
+    ],
+    mapPoints: [
+      { id: "a1", type: "partly", x: 34, y: 19 },
+      { id: "a2", type: "partly", x: 68, y: 18 },
+      { id: "a3", type: "partly", x: 28, y: 39 },
+      { id: "a4", type: "partly", x: 61, y: 37 },
+      { id: "a5", type: "sun", x: 31, y: 61 },
+      { id: "a6", type: "sun", x: 53, y: 57 },
+      { id: "a7", type: "sun", x: 72, y: 63 },
+      { id: "a8", type: "sun", x: 55, y: 78 },
+      { id: "a9", type: "sun", x: 84, y: 79 },
+    ],
+    summary: "Tempo stabile, caldo ancora presente",
+    text:
+      "Su pianura e costa tempo in genere stabile. Sui rilievi saranno possibili annuvolamenti pomeridiani con qualche rovescio locale.",
+    focus: [
+      { label: "Pianura", value: "Stabile" },
+      { label: "Montagna", value: "Nubi pomeridiane" },
+      { label: "Costa", value: "Brezza" },
+    ],
+  },
+  {
+    id: "afterTomorrow",
+    labels: {
+      it: "Dopodomani",
+      fur: "Dopodoman",
+    },
+    weekdayLabels: {
+      it: "Mercoledì",
+      fur: "Miercus",
+    },
+    date: "Mercoledi 24 giugno",
+    reliability: "60%",
+    mapAlt: "Mappa Meteo Friul con dati previsionali ARPA FVG OSMER per dopodomani",
+    mapBadges: [
+      { id: "quota-2000", tone: "mountain", x: 30, y: 30, value: "2000m 15°C" },
+      { id: "plain-max", tone: "hot", x: 55, y: 65, value: "31/34" },
+    ],
+    mapPoints: [
+      { id: "a1", type: "rain", x: 34, y: 19 },
+      { id: "a2", type: "storm", x: 68, y: 18 },
+      { id: "a3", type: "partly", x: 28, y: 39 },
+      { id: "a4", type: "storm", x: 61, y: 37 },
+      { id: "a5", type: "partly", x: 31, y: 61 },
+      { id: "a6", type: "partly", x: 53, y: 57 },
+      { id: "a7", type: "partly", x: 72, y: 63 },
+      { id: "a8", type: "sun", x: 55, y: 78 },
+      { id: "a9", type: "partly", x: 84, y: 79 },
+    ],
+    summary: "Variabilita sui monti",
+    text:
+      "Cielo poco nuvoloso in pianura, piu variabile sulla fascia montana. Possibili precipitazioni sparse nelle ore piu calde.",
+    focus: [
+      { label: "Pianura", value: "Poco nuvoloso" },
+      { label: "Montagna", value: "Variabile" },
+      { label: "Costa", value: "Asciutto" },
+    ],
+  },
+  {
+    id: "plus3",
+    labels: {
+      it: "+3",
+      fur: "+3",
+    },
+    weekdayLabels: {
+      it: "Giovedì",
+      fur: "Joibe",
+    },
+    date: "Giovedi 25 giugno",
+    reliability: "60%",
+    mapAlt: "Mappa Meteo Friul con dati previsionali ARPA FVG OSMER per piu tre giorni",
+    mapBadges: [{ id: "plain-max", tone: "hot", x: 55, y: 65, value: "32/35" }],
+    mapPoints: [
+      { id: "a1", type: "partly", x: 34, y: 19 },
+      { id: "a2", type: "partly", x: 68, y: 18 },
+      { id: "a3", type: "sun", x: 28, y: 39 },
+      { id: "a4", type: "partly", x: 61, y: 37 },
+      { id: "a5", type: "sun", x: 31, y: 61 },
+      { id: "a6", type: "sun", x: 53, y: 57 },
+      { id: "a7", type: "sun", x: 72, y: 63 },
+      { id: "a8", type: "sun", x: 55, y: 78 },
+      { id: "a9", type: "sun", x: 84, y: 79 },
+    ],
+    summary: "Tendenza stabile",
+    text:
+      "La tendenza resta orientata a condizioni stabili o poco variabili, con caldo e possibili passaggi nuvolosi sui rilievi.",
+    focus: [
+      { label: "Pianura", value: "Caldo" },
+      { label: "Montagna", value: "Nubi sparse" },
+      { label: "Costa", value: "Stabile" },
+    ],
+  },
+  {
+    id: "plus4",
+    labels: {
+      it: "+4",
+      fur: "+4",
+    },
+    weekdayLabels: {
+      it: "Venerdì",
+      fur: "Vinars",
+    },
+    date: "Venerdi 26 giugno",
+    reliability: "50%",
+    mapAlt: "Mappa Meteo Friul con dati previsionali ARPA FVG OSMER per piu quattro giorni",
+    mapBadges: [],
+    mapPoints: [
+      { id: "a1", type: "partly", x: 34, y: 19 },
+      { id: "a2", type: "partly", x: 68, y: 18 },
+      { id: "a3", type: "partly", x: 28, y: 39 },
+      { id: "a4", type: "partly", x: 61, y: 37 },
+      { id: "a5", type: "sun", x: 31, y: 61 },
+      { id: "a6", type: "sun", x: 53, y: 57 },
+      { id: "a7", type: "sun", x: 72, y: 63 },
+      { id: "a8", type: "sun", x: 55, y: 78 },
+      { id: "a9", type: "sun", x: 84, y: 79 },
+    ],
+    summary: "Evoluzione da confermare",
+    text:
+      "Scenario ancora da seguire: tempo in prevalenza asciutto, con incertezza maggiore sui rilievi e nelle ore pomeridiane.",
+    focus: [
+      { label: "Pianura", value: "Da confermare" },
+      { label: "Montagna", value: "Incertezza" },
+      { label: "Costa", value: "Asciutto" },
+    ],
+  },
+];

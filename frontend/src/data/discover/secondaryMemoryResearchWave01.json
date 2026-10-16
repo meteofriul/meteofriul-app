@@ -1,0 +1,139 @@
+{
+  "schemaVersion": 1,
+  "snapshotDate": "2026-08-31",
+  "purpose": "Due memorie secondarie di cultura e scienza con date storiche esatte. Manifest di provenienza non importato dalla UI; la copy bilingue è conservata una sola volta nei record promossi.",
+  "readyForUi": false,
+  "runtimeCatalog": "frontend/src/data/discover/localMemory.json",
+  "baseline": {
+    "records": 579,
+    "recordsSha256": "9aeff48310ed6744443568a1944821588000e4ec39e9d6870a2a27bf9e720dcd",
+    "pendingRecords": 14,
+    "pendingRecordsSha256": "56d96cbff0abf02c633d3a8f6610005477c01d4457b5efbd57c073e8f2cca125"
+  },
+  "editorialDecision": {
+    "approvalBasis": "user_delegated_assisted_editorial_review",
+    "reviewer": "assistant",
+    "independentHumanReview": false,
+    "recordIds": ["memory-secondary-0101-societa-minerva-1810", "memory-secondary-1005-ictp-inaugurazione-1964"],
+    "note": "Eccezione scoped dichiarata anche nelle regole del catalogo. Il mandato di proseguire Scopri autorizza revisione editoriale assistita, non certificazione ARLeF o approvazione umana frase per frase. Le 14 bozze precedenti restano sospese."
+  },
+  "rules": [
+    "Nessuna nuova memoria primaria, tappa comunale o regola di calendario; solo aggiunta di due secondarie nelle date documentate.",
+    "Le aree trieste/ts indicano l'ambito storico e mantengono il filtro locale esistente; non si estendono all'intera regione.",
+    "Fonti primarie HTML lette direttamente; nessun PDF necessario, nessuna riproduzione di immagini o filmati.",
+    "I riferimenti ARLeF attestano lessico e costruzioni, non certificano le sintesi. Le denominazioni Società di Minerva e Archeografo Triestino restano invariate in FUR.",
+    "Dossier non visibile; la promozione è limitata ai due promotedRecordId."
+  ],
+  "records": [
+    {
+      "id": "secondary-memory-research-0101-societa-minerva-1810",
+      "promotedRecordId": "memory-secondary-0101-societa-minerva-1810",
+      "canonicalKey": "trieste-societa-minerva-fondazione-1810-01-01",
+      "rubric": "memorie_secondarie",
+      "reviewStatus": "promoted",
+      "readyForUi": false,
+      "eventDate": "1810-01-01",
+      "dateAnchors": ["01-01"],
+      "geographicScope": ["trieste", "ts"],
+      "existingReadySecondaryCount": 0,
+      "preservedPrimaryId": "memory-it-ready-0101-paolo-diacono-memoria-longobarda",
+      "reasonForSecondary": "Aggiunge storia associativa e culturale nella data senza secondarie, senza sostituire la memoria principale né creare una tappa comunale.",
+      "source": {
+        "url": "https://www.societadiminerva.it/demo/un-po-di-storia/",
+        "authority": "Società di Minerva",
+        "accessMethod": "direct_html",
+        "checkedAt": "2026-08-31",
+        "evidenceSummary": "Formazione il 1° gennaio 1810 per iniziativa di Domenico Rossetti; Archeografo Triestino dal 1829, primi quattro volumi 1829–1837 con studi e documenti di archeologia, storia e statistica su Trieste e Istria."
+      },
+      "supportingSources": [
+        {
+          "url": "https://www.societadiminerva.it/storia.php",
+          "authority": "Società di Minerva",
+          "accessMethod": "direct_html",
+          "evidenceSummary": "Conferma esplicitamente istituzione il 1° gennaio 1810 e avvio dell'Archeografo nel 1829. Nessun programma attuale ripreso dalla pagina storica."
+        }
+      ],
+      "languageReview": {
+        "approvalBasis": "user_delegated_assisted_editorial_review",
+        "reviewer": "assistant",
+        "independentHumanReview": false,
+        "method": "assisted_standard_reference_review",
+        "checkedAt": "2026-08-31",
+        "accessMethod": "public_html_via_powershell_Invoke-WebRequest",
+        "references": [
+          { "url": "https://superdizionari.arlef.it/lemma/fondare/9640?language=it&oneshot=1&gui=fur", "attestation": "fondâ" },
+          { "url": "https://superdizionari.arlef.it/lemma/archeologia/3889?language=it&oneshot=1&gui=fur", "attestation": "archeologjie" },
+          { "url": "https://superdizionari.arlef.it/lemma/statistica/57469?language=it&oneshot=1&gui=fur", "attestation": "statistiche" },
+          { "url": "https://superdizionari.arlef.it/lemma/volume/23523?language=it&oneshot=1&gui=fur", "attestation": "volum" }
+        ],
+        "note": "HTML dei risultati lessicali ARLeF letto direttamente, non solo snippet. Nomi dell'associazione e della rivista invariati; metin adun evita una costruzione meno trasparente. Nessuna attestazione equivale a certificazione della traduzione."
+      },
+      "duplicateReview": {
+        "status": "distinct",
+        "comparedCatalogs": ["localMemory", "archiveResearchWave01", "archiveResearchWave02", "municipalityProfiles", "ostermannCulturalDiscover", "institutionalArchive"],
+        "note": "Nessuna fondazione della Società di Minerva nei cataloghi e nelle bozze controllate. Il riferimento al teatro Il Rossetti in una fonte delle Maldobrie non riguarda questa associazione."
+      }
+    },
+    {
+      "id": "secondary-memory-research-1005-ictp-inaugurazione-1964",
+      "promotedRecordId": "memory-secondary-1005-ictp-inaugurazione-1964",
+      "canonicalKey": "trieste-ictp-inaugurazione-1964-10-05",
+      "rubric": "memorie_secondarie",
+      "reviewStatus": "promoted",
+      "readyForUi": false,
+      "eventDate": "1964-10-05",
+      "dateAnchors": ["10-05"],
+      "geographicScope": ["trieste", "ts"],
+      "existingReadySecondaryCount": 1,
+      "preservedPrimaryId": "memory-it-ready-1005-francesco-arnaldi-e-i-classici-latini",
+      "preservedSecondaryIds": ["memory-copy-1005-giorgio-pressburger"],
+      "reasonForSecondary": "Affianca la memoria culturale già disponibile il 5 ottobre con un episodio scientifico internazionale di Trieste, senza rimpiazzare primaria o secondaria esistente.",
+      "source": {
+        "url": "https://2022.ictp.it/news/2024/5/training-scientists-fusion-energy",
+        "authority": "ICTP",
+        "publishedAt": "2024-05-21",
+        "accessMethod": "direct_html",
+        "checkedAt": "2026-08-31",
+        "evidenceSummary": "Convegno 5–31 ottobre 1964: la cerimonia di apertura coincide con l'inaugurazione ICTP. Abdus Salam parla all'Hotel Jolly; il patrocinio ONU permette l'incontro di studiosi dai due lati della cortina di ferro."
+      },
+      "supportingSources": [
+        {
+          "url": "https://cern-courier.web.cern.ch/a/ictp-at-40-the-centres-legacy-for-the-future/",
+          "authority": "CERN Courier · Daniel Schaffer, public information officer ICTP",
+          "publishedAt": "2004-11-12",
+          "accessMethod": "direct_html",
+          "evidenceSummary": "Indica esplicitamente 5 ottobre 1964 e Jolly Hotel; distingue l'inaugurazione del centro dalla nuova sede completata nel 1968."
+        },
+        {
+          "url": "https://www.ictp.it/home/our-history",
+          "authority": "ICTP",
+          "accessMethod": "direct_html",
+          "evidenceSummary": "Conferma fondazione nel 1964 da parte di Salam in collaborazione con Budinich e finalità di cooperazione scientifica internazionale."
+        }
+      ],
+      "languageReview": {
+        "approvalBasis": "user_delegated_assisted_editorial_review",
+        "reviewer": "assistant",
+        "independentHumanReview": false,
+        "method": "assisted_standard_reference_review",
+        "checkedAt": "2026-08-31",
+        "accessMethod": "public_html_via_powershell_Invoke-WebRequest",
+        "references": [
+          { "url": "https://superdizionari.arlef.it/lemma/inaugurare/20412?language=it&oneshot=1&gui=fur", "attestation": "inaugurâ" },
+          { "url": "https://superdizionari.arlef.it/lemma/fisica/38388?language=it&oneshot=1&gui=fur", "attestation": "fisiche" },
+          { "url": "https://superdizionari.arlef.it/lemma/teorico/6929?language=it&oneshot=1&gui=fur", "attestation": "teoric" },
+          { "url": "https://superdizionari.arlef.it/lemma/scienziato/58670?language=it&oneshot=1&gui=fur", "attestation": "sienziât" },
+          { "url": "https://superdizionari.arlef.it/lemma/benvenuto/16474?language=it&oneshot=1&gui=fur", "attestation": "dâ il benvignût, con esempio il sindic al à dât il benvignût ai ospits" },
+          { "url": "https://superdizionari.arlef.it/lemma/divisione/19610?language=it&oneshot=1&gui=fur", "attestation": "division" },
+          { "url": "https://superdizionari.arlef.it/lemma/guerra/22778?language=it&oneshot=1&gui=fur", "attestation": "vuere" }
+        ],
+        "note": "Risultati lessicali e lemma benvenuto letti come HTML diretto. Sigla ICTP e nomi personali invariati; formulazione oltre le divisioni riferita agli studiosi riuniti, non a una fine della guerra fredda. Nessuna certificazione ARLeF."
+      },
+      "duplicateReview": {
+        "status": "distinct",
+        "comparedCatalogs": ["localMemory", "archiveResearchWave01", "archiveResearchWave02", "municipalityProfiles", "ostermannCulturalDiscover", "institutionalArchive"],
+        "note": "Nessuna inaugurazione ICTP presente. Distinta dalle memorie di Elettra, Margherita Hack e Nicolò Dallaporta; quest'ultima cita SISSA, istituzione diversa. SISSA 6 marzo 1978 esclusa da questo lotto per sovrapposizione al decreto UniUd già primario."
+      }
+    }
+  ]
+}

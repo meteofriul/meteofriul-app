@@ -1,0 +1,727 @@
+{
+  "schemaVersion": 1,
+  "purpose": "Primo batch editoriale dalla coda leggera Accadde oggi. Non letto dalla UI.",
+  "sourceInput": {
+    "backlogAudit": "frontend/src/data/discover/dailyHistoryBacklogAudit.json",
+    "queue": "nextLightReviewCandidates",
+    "selection": "first_12_one_per_day"
+  },
+  "policy": {
+    "doNotPublishFromThisFile": true,
+    "copyDraftsAreEditorialStartingPoints": true,
+    "requiresHumanReview": true,
+    "requiresFurReview": true,
+    "oneMainMemoryPerDay": true,
+    "notes": [
+      "Questo batch serve a decidere cosa merita una Memoria del giorno e cosa resta Archivio Scopri.",
+      "Le voci contemporanee o con legame territoriale debole non vengono usate per riempire il calendario.",
+      "La fonte master resta indice di lavoro; la pubblicazione richiede revisione finale."
+    ]
+  },
+  "records": [
+    {
+      "wikidataId": "Q337352",
+      "dateAnchor": "01-01",
+      "title": "TWAS, the academy of sciences for the developing world",
+      "place": "Trieste",
+      "category": "scienza_territorio",
+      "batchDecision": "archive_context",
+      "surface": "discover_archive",
+      "reason": "Istituzione importante, ma poco immediata come memoria giornaliera popolare.",
+      "readyForUi": false
+    },
+    {
+      "wikidataId": "Q1491020",
+      "dateAnchor": "08-18",
+      "title": "Gaetano Kanizsa",
+      "place": "Trieste",
+      "category": "arte_cultura",
+      "batchDecision": "copy_candidate",
+      "surface": "memory_of_the_day",
+      "copyDraft": {
+        "it": "Nasce a Trieste Gaetano Kanizsa, psicologo e pittore. Il suo nome resta legato agli studi sulla percezione: un modo elegante per ricordare che anche quello che vediamo ha una storia.",
+        "fur": "pending_review"
+      },
+      "reason": "Profilo culturale-scientifico forte, leggibile e poco rischioso.",
+      "readyForUi": false
+    },
+    {
+      "wikidataId": "Q3886735",
+      "dateAnchor": "07-03",
+      "title": "Osservatore Triestino",
+      "place": "Trieste",
+      "category": "altro",
+      "batchDecision": "archive_context",
+      "surface": "discover_archive",
+      "reason": "Buon tema per stampa e storia cittadina, ma va spiegato in archivio piu' che in card giornaliera.",
+      "readyForUi": false
+    },
+    {
+      "wikidataId": "Q3942546",
+      "dateAnchor": "02-16",
+      "title": "Ruggero Timeus",
+      "place": "Trieste",
+      "category": "arte_cultura",
+      "batchDecision": "hold_strong_source",
+      "surface": "hold",
+      "reason": "Saggista e scrittore, ma il profilo puo' toccare storia politica e identitaria triestina: prima fonte forte e tono controllato.",
+      "readyForUi": false
+    },
+    {
+      "wikidataId": "Q326243",
+      "dateAnchor": "06-16",
+      "title": "Stanislaus Joyce",
+      "place": "Trieste",
+      "category": "arte_cultura",
+      "batchDecision": "copy_candidate",
+      "surface": "memory_of_the_day",
+      "copyDraft": {
+        "it": "Muore a Trieste Stanislaus Joyce, scrittore e fratello di James Joyce. La sua vicenda ricorda una Trieste letteraria, internazionale e piena di passaggi inattesi.",
+        "fur": "pending_review"
+      },
+      "reason": "Profilo culturale con legame triestino chiaro e racconto breve possibile.",
+      "readyForUi": false
+    },
+    {
+      "wikidataId": "Q3263200",
+      "dateAnchor": "10-16",
+      "title": "Louis Toffoli",
+      "place": "Trieste",
+      "category": "arte_cultura",
+      "batchDecision": "archive_context",
+      "surface": "discover_archive",
+      "reason": "Profilo artistico interessante, ma il legame FVG va contestualizzato prima di usarlo come memoria principale.",
+      "readyForUi": false
+    },
+    {
+      "wikidataId": "Q17284902",
+      "dateAnchor": "02-05",
+      "title": "Napoleone Cozzi",
+      "place": "Trieste",
+      "category": "arte_cultura",
+      "batchDecision": "copy_candidate",
+      "surface": "memory_of_the_day",
+      "copyDraft": {
+        "it": "Nasce Napoleone Cozzi, alpinista e pittore triestino. Montagna, arte e territorio si incrociano in una figura che racconta bene il carattere plurale del Friuli Venezia Giulia.",
+        "fur": "pending_review"
+      },
+      "reason": "Figura locale forte, tra cultura e paesaggio, adatta a una rubrica breve.",
+      "readyForUi": false
+    },
+    {
+      "wikidataId": "Q355411",
+      "dateAnchor": "03-05",
+      "title": "Luca Turilli",
+      "place": "Trieste",
+      "category": "arte_cultura",
+      "batchDecision": "archive_context",
+      "surface": "discover_archive",
+      "reason": "Profilo musicale contemporaneo interessante, ma non prioritario per memoria storica giornaliera.",
+      "readyForUi": false
+    },
+    {
+      "wikidataId": "Q3746508",
+      "dateAnchor": "07-05",
+      "title": "Flavio Paulin",
+      "place": "Trieste",
+      "category": "arte_cultura",
+      "batchDecision": "copy_candidate",
+      "surface": "memory_of_the_day",
+      "copyDraft": {
+        "it": "Nasce a Trieste Flavio Paulin, musicista e voce dei Cugini di Campagna. Una piccola nota pop dentro il calendario culturale del territorio.",
+        "fur": "pending_review"
+      },
+      "reason": "Contenuto leggero, riconoscibile e non problematico, adatto a rotazione se serve varieta'.",
+      "readyForUi": false
+    },
+    {
+      "wikidataId": "Q3845573",
+      "dateAnchor": "10-13",
+      "title": "Marcello De Stefano",
+      "place": "Udine",
+      "category": "arte_cultura",
+      "batchDecision": "copy_candidate",
+      "surface": "memory_of_the_day",
+      "copyDraft": {
+        "it": "Muore Marcello De Stefano, regista e pittore nato a Udine. Una memoria breve per ricordare il filo tra arti visive, cinema e territorio.",
+        "fur": "pending_review"
+      },
+      "reason": "Profilo culturale locale, semplice da raccontare senza enfasi.",
+      "readyForUi": false
+    },
+    {
+      "wikidataId": "Q983350",
+      "dateAnchor": "10-15",
+      "title": "Giovanni da Udine",
+      "place": "Udine",
+      "category": "arte_cultura",
+      "batchDecision": "copy_candidate",
+      "surface": "memory_of_the_day",
+      "copyDraft": {
+        "it": "Nasce Giovanni da Udine, pittore, decoratore e architetto. Il suo nome porta Udine dentro una storia artistica piu' ampia, fatta di botteghe, viaggi e Rinascimento.",
+        "fur": "pending_review"
+      },
+      "reason": "Profilo artistico forte e chiaramente locale.",
+      "readyForUi": false
+    },
+    {
+      "wikidataId": "Q104176849",
+      "dateAnchor": "03-18",
+      "title": "Eugenio Pilutti",
+      "place": "Trieste",
+      "category": "arte_cultura",
+      "batchDecision": "copy_candidate",
+      "surface": "memory_of_the_day",
+      "copyDraft": {
+        "it": "Muore Eugenio Pilutti, poeta e scrittore. Una voce da conservare nell'archivio culturale del territorio, senza trasformarla in una nota enciclopedica.",
+        "fur": "pending_review"
+      },
+      "reason": "Candidato culturale leggero, ma da rileggere prima della pubblicazione.",
+      "readyForUi": false
+    },
+    {
+      "wikidataId": "Q1008988",
+      "dateAnchor": "10-05",
+      "title": "Giorgio Pressburger",
+      "place": "Trieste",
+      "category": "arte_cultura",
+      "batchDecision": "copy_candidate",
+      "surface": "memory_of_the_day",
+      "copyDraft": {
+        "it": "Muore Giorgio Pressburger, regista, scrittore e drammaturgo legato a Trieste. Una figura che tiene insieme teatro, letteratura e memoria europea.",
+        "fur": "pending_review"
+      },
+      "reason": "Profilo culturale forte e adatto a una memoria breve.",
+      "readyForUi": false
+    },
+    {
+      "wikidataId": "Q2273489",
+      "dateAnchor": "04-12",
+      "title": "Gillo Dorfles",
+      "place": "Trieste",
+      "category": "arte_cultura",
+      "batchDecision": "copy_candidate",
+      "surface": "memory_of_the_day",
+      "copyDraft": {
+        "it": "Nasce a Trieste Gillo Dorfles, critico d'arte, pittore e filosofo. Il suo percorso ricorda una citta' capace di parlare con l'arte europea.",
+        "fur": "pending_review"
+      },
+      "reason": "Profilo culturale riconoscibile, con legame territoriale chiaro.",
+      "readyForUi": false
+    },
+    {
+      "wikidataId": "Q2704669",
+      "dateAnchor": "01-20",
+      "title": "Luca Carlevarijs",
+      "place": "Udine",
+      "category": "arte_cultura",
+      "batchDecision": "copy_candidate",
+      "surface": "memory_of_the_day",
+      "copyDraft": {
+        "it": "Nasce Luca Carlevarijs, pittore originario di Udine. Una memoria d'arte che porta dal Friuli alla grande stagione delle vedute veneziane.",
+        "fur": "pending_review"
+      },
+      "reason": "Profilo artistico locale forte, adatto a una card giornaliera.",
+      "readyForUi": false
+    },
+    {
+      "wikidataId": "Q1339427",
+      "dateAnchor": "08-20",
+      "title": "Enrico Rava",
+      "place": "Trieste",
+      "category": "arte_cultura",
+      "batchDecision": "copy_candidate",
+      "surface": "memory_of_the_day",
+      "copyDraft": {
+        "it": "Nasce a Trieste Enrico Rava, trombettista e compositore. Una nota jazz nel calendario culturale del Friuli Venezia Giulia.",
+        "fur": "pending_review"
+      },
+      "reason": "Profilo musicale forte e leggero, utile per varieta' culturale.",
+      "readyForUi": false
+    },
+    {
+      "wikidataId": "Q1666532",
+      "dateAnchor": "05-09",
+      "title": "Riunione Adriatica di Sicurta'",
+      "place": "Trieste",
+      "category": "altro",
+      "batchDecision": "archive_context",
+      "surface": "discover_archive",
+      "reason": "Tema storico-economico interessante, ma troppo istituzionale per una memoria giornaliera immediata.",
+      "readyForUi": false
+    },
+    {
+      "wikidataId": "Q5080225",
+      "dateAnchor": "06-01",
+      "title": "Charles Lever",
+      "place": "Trieste",
+      "category": "arte_cultura",
+      "batchDecision": "archive_context",
+      "surface": "discover_archive",
+      "reason": "Profilo letterario interessante, ma il legame locale richiede racconto di contesto in Archivio Scopri.",
+      "readyForUi": false
+    },
+    {
+      "wikidataId": "Q3830078",
+      "dateAnchor": "07-08",
+      "title": "Lelio Luttazzi",
+      "place": "Trieste",
+      "category": "arte_cultura",
+      "batchDecision": "copy_candidate",
+      "surface": "memory_of_the_day",
+      "copyDraft": {
+        "it": "Muore Lelio Luttazzi, musicista, attore e uomo di spettacolo nato a Trieste. Una memoria brillante, legata alla musica e alla radio italiana.",
+        "fur": "pending_review"
+      },
+      "reason": "Profilo culturale popolare e riconoscibile, adatto a una nota leggera.",
+      "readyForUi": false
+    },
+    {
+      "wikidataId": "Q6520921",
+      "dateAnchor": "08-13",
+      "title": "Lella Vignelli",
+      "place": "Udine",
+      "category": "arte_cultura",
+      "batchDecision": "copy_candidate",
+      "surface": "memory_of_the_day",
+      "copyDraft": {
+        "it": "Nasce a Udine Lella Vignelli, designer e architetta. Una memoria elegante per ricordare il contributo friulano al design internazionale.",
+        "fur": "pending_review"
+      },
+      "reason": "Profilo locale forte, moderno e molto adatto a Scopri.",
+      "readyForUi": false
+    },
+    {
+      "wikidataId": "Q544750",
+      "dateAnchor": "03-16",
+      "title": "Ernesto Nathan Rogers",
+      "place": "Trieste",
+      "category": "arte_cultura",
+      "batchDecision": "copy_candidate",
+      "surface": "memory_of_the_day",
+      "copyDraft": {
+        "it": "Nasce a Trieste Ernesto Nathan Rogers, architetto e teorico. Una figura utile per raccontare il territorio come porta verso il Novecento europeo.",
+        "fur": "pending_review"
+      },
+      "reason": "Profilo architettura/design forte, con chiara leggibilita' culturale.",
+      "readyForUi": false
+    },
+    {
+      "wikidataId": "Q581808",
+      "dateAnchor": "03-26",
+      "title": "Jovan Vesel Koseski",
+      "place": "Trieste",
+      "category": "arte_cultura",
+      "batchDecision": "archive_context",
+      "surface": "discover_archive",
+      "reason": "Profilo letterario transfrontaliero: interessante, ma richiede contesto prima di diventare memoria principale.",
+      "readyForUi": false
+    },
+    {
+      "wikidataId": "Q3812958",
+      "dateAnchor": "09-03",
+      "title": "Karel Vladimir Truhlar",
+      "place": "Gorizia",
+      "category": "arte_cultura",
+      "batchDecision": "archive_context",
+      "surface": "discover_archive",
+      "reason": "Profilo culturale e religioso, ma piu' adatto ad archivio o approfondimento che a card giornaliera rapida.",
+      "readyForUi": false
+    },
+    {
+      "wikidataId": "Q12795100",
+      "dateAnchor": "05-04",
+      "title": "Lojzka Bratuz",
+      "place": "Gorizia",
+      "category": "arte_cultura",
+      "batchDecision": "copy_candidate",
+      "surface": "memory_of_the_day",
+      "copyDraft": {
+        "it": "Muore Lojzka Bratuz, studiosa e scrittrice legata a Gorizia. Una memoria culturale di confine, da raccontare con tono semplice e rispettoso.",
+        "fur": "pending_review"
+      },
+      "reason": "Profilo culturale locale, valido per memoria breve dopo review finale.",
+      "readyForUi": false
+    },
+    {
+      "wikidataId": "Q3608590",
+      "dateAnchor": "07-06",
+      "title": "Alberto Spaini",
+      "place": "Trieste",
+      "category": "arte_cultura",
+      "batchDecision": "copy_candidate",
+      "surface": "memory_of_the_day",
+      "copyDraft": {
+        "it": "Nasce Alberto Spaini, scrittore e giornalista triestino. Una voce del Novecento che racconta la citta' come luogo di lingue, libri e passaggi culturali.",
+        "fur": "pending_review"
+      },
+      "reason": "Profilo letterario triestino adatto a memoria breve.",
+      "readyForUi": false
+    },
+    {
+      "wikidataId": "Q661716",
+      "dateAnchor": "05-07",
+      "title": "Gianni Bisiach",
+      "place": "Gorizia",
+      "category": "arte_cultura",
+      "batchDecision": "copy_candidate",
+      "surface": "memory_of_the_day",
+      "copyDraft": {
+        "it": "Nasce a Gorizia Gianni Bisiach, giornalista, regista e divulgatore. Una memoria che unisce racconto, radio, televisione e curiosita' per il mondo.",
+        "fur": "pending_review"
+      },
+      "reason": "Figura riconoscibile e locale, buona per rubrica leggera.",
+      "readyForUi": false
+    },
+    {
+      "wikidataId": "Q18646312",
+      "dateAnchor": "04-09",
+      "title": "Stefan Kociancic",
+      "place": "Gorizia",
+      "category": "arte_cultura",
+      "batchDecision": "copy_candidate",
+      "surface": "memory_of_the_day",
+      "copyDraft": {
+        "it": "Muore Stefan Kociancic, storico, traduttore e linguista legato a Gorizia. Una memoria di confine, fatta di lingue, studio e territorio.",
+        "fur": "pending_review"
+      },
+      "reason": "Profilo culturale goriziano coerente con Scopri.",
+      "readyForUi": false
+    },
+    {
+      "wikidataId": "Q3609332",
+      "dateAnchor": "07-09",
+      "title": "Aldo Stellita",
+      "place": "Udine",
+      "category": "arte_cultura",
+      "batchDecision": "copy_candidate",
+      "surface": "memory_of_the_day",
+      "copyDraft": {
+        "it": "Muore Aldo Stellita, musicista nato a Udine e bassista dei Matia Bazar. Una piccola traccia pop dentro la memoria culturale friulana.",
+        "fur": "pending_review"
+      },
+      "reason": "Profilo musicale leggero e riconoscibile.",
+      "readyForUi": false
+    },
+    {
+      "wikidataId": "Q4015466",
+      "dateAnchor": "12-10",
+      "title": "Vittorio Osvaldo Tommasini",
+      "place": "Trieste",
+      "category": "arte_cultura",
+      "batchDecision": "archive_context",
+      "surface": "discover_archive",
+      "reason": "Profilo artistico interessante, ma richiede contesto prima di diventare memoria principale.",
+      "readyForUi": false
+    },
+    {
+      "wikidataId": "Q325885",
+      "dateAnchor": "04-11",
+      "title": "Matteo Pertsch",
+      "place": "Trieste",
+      "category": "arte_cultura",
+      "batchDecision": "copy_candidate",
+      "surface": "memory_of_the_day",
+      "copyDraft": {
+        "it": "Muore Matteo Pertsch, architetto legato a Trieste. Una memoria urbana: palazzi, teatri e forme che ancora aiutano a leggere la citta'.",
+        "fur": "pending_review"
+      },
+      "reason": "Architettura e territorio: adatto a memoria breve.",
+      "readyForUi": false
+    },
+    {
+      "wikidataId": "Q2161101",
+      "dateAnchor": "11-11",
+      "title": "Giorgio Voghera",
+      "place": "Trieste",
+      "category": "arte_cultura",
+      "batchDecision": "copy_candidate",
+      "surface": "memory_of_the_day",
+      "copyDraft": {
+        "it": "Muore Giorgio Voghera, scrittore triestino. Una voce utile per ricordare la Trieste letteraria, discreta e complessa, del Novecento.",
+        "fur": "pending_review"
+      },
+      "reason": "Profilo letterario triestino leggibile e pertinente.",
+      "readyForUi": false
+    },
+    {
+      "wikidataId": "Q922154",
+      "dateAnchor": "06-15",
+      "title": "Lojze Spacal",
+      "place": "Trieste",
+      "category": "arte_cultura",
+      "batchDecision": "copy_candidate",
+      "surface": "memory_of_the_day",
+      "copyDraft": {
+        "it": "Nasce Lojze Spacal, pittore legato al Carso e alla cultura di confine. Una memoria visiva, fatta di pietra, segni e paesaggio.",
+        "fur": "pending_review"
+      },
+      "reason": "Profilo artistico forte e territoriale.",
+      "readyForUi": false
+    },
+    {
+      "wikidataId": "Q3770239",
+      "dateAnchor": "05-16",
+      "title": "Giuseppe Caprin",
+      "place": "Trieste",
+      "category": "arte_cultura",
+      "batchDecision": "archive_context",
+      "surface": "discover_archive",
+      "reason": "Tema letterario e storico interessante, ma piu' adatto a scheda di archivio che a card rapida.",
+      "readyForUi": false
+    },
+    {
+      "wikidataId": "Q16828119",
+      "dateAnchor": "02-18",
+      "title": "Giovanni Giuseppe Cosattini",
+      "place": "Udine",
+      "category": "arte_cultura",
+      "batchDecision": "archive_context",
+      "surface": "discover_archive",
+      "reason": "Profilo artistico locale, ma serve contesto prima di promuoverlo come memoria principale.",
+      "readyForUi": false
+    },
+    {
+      "wikidataId": "Q872953",
+      "dateAnchor": "07-20",
+      "title": "Francesco Arcangeli",
+      "place": "Trieste",
+      "category": "arte_cultura",
+      "batchDecision": "archive_context",
+      "surface": "discover_archive",
+      "reason": "Voce non adatta a rubrica leggera: possibile archivio solo con contesto e tono molto prudente.",
+      "readyForUi": false
+    },
+    {
+      "wikidataId": "Q17335079",
+      "dateAnchor": "11-20",
+      "title": "Matteo Ravnikar",
+      "place": "Trieste",
+      "category": "arte_cultura",
+      "batchDecision": "archive_context",
+      "surface": "discover_archive",
+      "reason": "Profilo religioso-culturale, ma non prioritario per memoria giornaliera immediata.",
+      "readyForUi": false
+    },
+    {
+      "wikidataId": "Q3991880",
+      "dateAnchor": "01-21",
+      "title": "Tito Maniacco",
+      "place": "Udine",
+      "category": "arte_cultura",
+      "batchDecision": "copy_candidate",
+      "surface": "memory_of_the_day",
+      "copyDraft": {
+        "it": "Muore Tito Maniacco, scrittore e storico friulano. Una memoria adatta a Scopri: territorio, cultura e racconto civile senza toni celebrativi.",
+        "fur": "pending_review"
+      },
+      "reason": "Profilo friulano forte, coerente con identita' app.",
+      "readyForUi": false
+    },
+    {
+      "wikidataId": "Q3960835",
+      "dateAnchor": "11-22",
+      "title": "Silvio Benco",
+      "place": "Trieste",
+      "category": "arte_cultura",
+      "batchDecision": "copy_candidate",
+      "surface": "memory_of_the_day",
+      "copyDraft": {
+        "it": "Nasce Silvio Benco, scrittore, giornalista e critico letterario triestino. Un nome da segnare nella mappa culturale della citta'.",
+        "fur": "pending_review"
+      },
+      "reason": "Profilo letterario triestino, adatto a nota breve.",
+      "readyForUi": false
+    },
+    {
+      "wikidataId": "Q4893834",
+      "dateAnchor": "06-23",
+      "title": "Bernardino Blaceo",
+      "place": "Udine",
+      "category": "arte_cultura",
+      "batchDecision": "archive_context",
+      "surface": "discover_archive",
+      "reason": "Profilo artistico storico, ma necessita di contesto e fonte migliore prima della memoria principale.",
+      "readyForUi": false
+    },
+    {
+      "wikidataId": "Q3059608",
+      "dateAnchor": "02-25",
+      "title": "Eugenio Geiringer",
+      "place": "Trieste",
+      "category": "arte_cultura",
+      "batchDecision": "copy_candidate",
+      "surface": "memory_of_the_day",
+      "copyDraft": {
+        "it": "Nasce Eugenio Geiringer, architetto e ingegnere triestino. Una memoria urbana, tra progetto, tecnica e trasformazioni della citta'.",
+        "fur": "pending_review"
+      },
+      "reason": "Architettura e citta': buon candidato leggero.",
+      "readyForUi": false
+    },
+    {
+      "wikidataId": "Q3769521",
+      "dateAnchor": "03-25",
+      "title": "Giulio Camagni",
+      "place": "Udine",
+      "category": "arte_cultura",
+      "batchDecision": "copy_candidate",
+      "surface": "memory_of_the_day",
+      "copyDraft": {
+        "it": "Nasce Giulio Camagni, fumettista e pittore nato a Udine. Una memoria visiva, piu' leggera, che allarga Scopri anche al disegno contemporaneo.",
+        "fur": "pending_review"
+      },
+      "reason": "Profilo culturale leggero e adatto a varieta'.",
+      "readyForUi": false
+    },
+    {
+      "wikidataId": "Q57037727",
+      "dateAnchor": "10-26",
+      "title": "Tatjana Rojc",
+      "place": "Trieste",
+      "category": "arte_cultura",
+      "batchDecision": "hold_strong_source",
+      "surface": "hold",
+      "reason": "Profilo contemporaneo con dimensione politica: non usare come memoria leggera senza scelta editoriale esplicita.",
+      "readyForUi": false
+    },
+    {
+      "wikidataId": "Q2508496",
+      "dateAnchor": "04-29",
+      "title": "Valentin Stanic",
+      "place": "Gorizia",
+      "category": "arte_cultura",
+      "batchDecision": "copy_candidate",
+      "surface": "memory_of_the_day",
+      "copyDraft": {
+        "it": "Muore Valentin Stanic, alpinista, poeta e sacerdote legato a Gorizia. Una figura di confine tra montagna, cultura e spiritualita'.",
+        "fur": "pending_review"
+      },
+      "reason": "Profilo storico-culturale adatto a memoria breve, previa review.",
+      "readyForUi": false
+    },
+    {
+      "wikidataId": "Q3845614",
+      "dateAnchor": "09-29",
+      "title": "Marcello Labor",
+      "place": "Trieste",
+      "category": "arte_cultura",
+      "batchDecision": "archive_context",
+      "surface": "discover_archive",
+      "reason": "Profilo culturale interessante ma piu' complesso: meglio archivio o approfondimento.",
+      "readyForUi": false
+    },
+    {
+      "wikidataId": "Q56225980",
+      "dateAnchor": "04-01",
+      "title": "Avrelij Lukezic",
+      "place": "Trieste",
+      "category": "arte_cultura",
+      "batchDecision": "archive_context",
+      "surface": "discover_archive",
+      "reason": "Profilo artistico da conservare, ma non prima scelta per memoria giornaliera.",
+      "readyForUi": false
+    },
+    {
+      "wikidataId": "Q133876935",
+      "dateAnchor": "09-02",
+      "title": "Adalgiso Fior",
+      "place": "Udine",
+      "category": "arte_cultura",
+      "batchDecision": "copy_candidate",
+      "surface": "memory_of_the_day",
+      "copyDraft": {
+        "it": "Muore Adalgiso Fior, poeta friulano. Una voce da trattare con cura, ma perfetta per ricordare che la lingua e' anche memoria quotidiana.",
+        "fur": "pending_review"
+      },
+      "reason": "Profilo friulano forte, molto coerente con l'app.",
+      "readyForUi": false
+    },
+    {
+      "wikidataId": "Q15921979",
+      "dateAnchor": "06-03",
+      "title": "Giovanni Battista Bassi",
+      "place": "Pordenone",
+      "category": "arte_cultura",
+      "batchDecision": "copy_candidate",
+      "surface": "memory_of_the_day",
+      "copyDraft": {
+        "it": "Nasce a Pordenone Giovanni Battista Bassi, architetto. Una memoria locale utile per dare spazio anche alla storia urbana pordenonese.",
+        "fur": "pending_review"
+      },
+      "reason": "Profilo pordenonese utile per copertura locale.",
+      "readyForUi": false
+    },
+    {
+      "wikidataId": "Q3758359",
+      "dateAnchor": "08-03",
+      "title": "Garibaldo Marussi",
+      "place": "Trieste",
+      "category": "arte_cultura",
+      "batchDecision": "archive_context",
+      "surface": "discover_archive",
+      "reason": "Profilo culturale da conservare, ma non prioritario per memoria principale.",
+      "readyForUi": false
+    },
+    {
+      "wikidataId": "Q354003",
+      "dateAnchor": "01-29",
+      "title": "Adelaide Ristori",
+      "place": "Cividale del Friuli",
+      "category": "arte_cultura",
+      "batchDecision": "copy_candidate",
+      "surface": "memory_of_the_day",
+      "copyDraft": {
+        "it": "Il 29 gennaio 1822 nasce a Cividale del Friuli Adelaide Ristori, attrice teatrale tra le grandi interpreti dell'Ottocento. Una memoria scenica, forte e non solo locale.",
+        "fur": "pending_review"
+      },
+      "reason": "Profilo teatrale di rilievo nazionale e internazionale, con radice chiara a Cividale.",
+      "readyForUi": false
+    },
+    {
+      "wikidataId": "Q114492",
+      "dateAnchor": "08-04",
+      "title": "Luigi Scrosoppi",
+      "place": "Udine",
+      "category": "arte_cultura",
+      "batchDecision": "copy_candidate",
+      "surface": "memory_of_the_day",
+      "copyDraft": {
+        "it": "Il 4 agosto 1804 nasce a Udine Luigi Scrosoppi, sacerdote ricordato per l'impegno sociale e l'educazione delle ragazze povere. Una memoria cittadina da raccontare senza tono agiografico.",
+        "fur": "pending_review"
+      },
+      "reason": "Profilo udinese forte, utilizzabile con taglio storico-sociale e non devozionale.",
+      "readyForUi": false
+    },
+    {
+      "wikidataId": "Q1526025",
+      "dateAnchor": "01-03",
+      "title": "Roberto Car",
+      "place": "Trieste",
+      "category": "scienza_territorio",
+      "batchDecision": "copy_candidate",
+      "surface": "memory_of_the_day",
+      "copyDraft": {
+        "it": "Il 3 gennaio 1947 nasce a Trieste Roberto Car, fisico noto per il lavoro sulla dinamica molecolare. Una memoria scientifica breve, da usare solo se vogliamo dare spazio alla ricerca contemporanea.",
+        "fur": "pending_review"
+      },
+      "reason": "Profilo scientifico internazionale con radice triestina; candidato utile ma da confermare editorialmente.",
+      "readyForUi": false
+    },
+    {
+      "wikidataId": "Q525798",
+      "dateAnchor": "05-21",
+      "title": "Fulvio Tomizza",
+      "place": "Trieste",
+      "category": "arte_cultura",
+      "batchDecision": "copy_candidate",
+      "surface": "memory_of_the_day",
+      "copyDraft": {
+        "it": "Il 21 maggio 1999 muore a Trieste Fulvio Tomizza, scrittore legato al confine adriatico e all'Istria. Una memoria letteraria per raccontare identita' plurali e passaggi di frontiera.",
+        "fur": "pending_review"
+      },
+      "reason": "Scrittore importante per Trieste, Istria e frontiera adriatica; profilo alto e coerente.",
+      "readyForUi": false
+    }
+  ]
+}

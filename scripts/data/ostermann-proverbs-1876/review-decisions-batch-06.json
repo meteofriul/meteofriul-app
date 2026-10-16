@@ -1,0 +1,280 @@
+{
+  "schemaVersion": 1,
+  "batchId": "ostermann-1876-review-06",
+  "reviewedAt": "2026-07-23",
+  "source": {
+    "title": "Proverbi friulani raccolti dalla viva voce del popolo",
+    "author": "Valentino Ostermann",
+    "editionYear": 1876,
+    "catalogUrl": "https://www.techeudine.it/biblioteche-digital-furlane/proverbi-friulani-raccolti-dalla-viva-voce-del-popolo",
+    "facsimileUrl": "https://manoscrittisbhu.comune.udine.it/uploads/BDF/LO11116556.pdf"
+  },
+  "policy": {
+    "publish": false,
+    "furNormalizationAllowed": false,
+    "rule": "Il facsimile conferma il testo sorgente. La raccomandazione editoriale non equivale a pubblicazione o traduzione approvata."
+  },
+  "summary": {
+    "records": 15,
+    "promoteAfterLanguageReview": 15,
+    "needsContextOrLanguageReview": 0,
+    "secondaryVariant": 0
+  },
+  "records": [
+    {
+      "id": "ost1876-ducj-sintin-orelis",
+      "sourceBlockIds": [
+        "ost1876-p305-b001"
+      ],
+      "pdfPage": 305,
+      "printedPage": 301,
+      "furOriginal": "Dug sintin cu lis lôr oreliz.",
+      "proposedIt": "Tutti ascoltano con le proprie orecchie.",
+      "recommendation": "promote_after_language_review",
+      "targetUse": "almanac_general",
+      "calendar": {
+        "rotation": "general_wisdom"
+      },
+      "reason": "Prima massima autonoma del blocco, chiara e priva di riferimenti temporali.",
+      "publish": false
+    },
+    {
+      "id": "ost1876-ognidun-mangje-bocje",
+      "sourceBlockIds": [
+        "ost1876-p305-b001"
+      ],
+      "pdfPage": 305,
+      "printedPage": 301,
+      "furOriginal": "Ognidun mange cu la sô boce.",
+      "proposedIt": "Ognuno mangia con la propria bocca.",
+      "recommendation": "promote_after_language_review",
+      "targetUse": "almanac_general",
+      "calendar": {
+        "rotation": "general_wisdom"
+      },
+      "reason": "Seconda massima autonoma del blocco, attestata anche nel repertorio lessicografico moderno.",
+      "publish": false
+    },
+    {
+      "id": "ost1876-ognidun-viot-siei-voi",
+      "sourceBlockIds": [
+        "ost1876-p305-b001"
+      ],
+      "pdfPage": 305,
+      "printedPage": 301,
+      "furOriginal": "Ognun viôd cui siei vôi.",
+      "proposedIt": "Ognuno vede con i propri occhi.",
+      "recommendation": "promote_after_language_review",
+      "targetUse": "almanac_general",
+      "calendar": {
+        "rotation": "general_wisdom"
+      },
+      "reason": "Terza massima autonoma del blocco, comprensibile senza contesto aggiuntivo.",
+      "publish": false
+    },
+    {
+      "id": "ost1876-aghe-corinte-no-puarte-sporcjetat",
+      "sourceBlockIds": [
+        "ost1876-p305-b003"
+      ],
+      "pdfPage": 305,
+      "printedPage": 301,
+      "furOriginal": "L'âghe corrint no puarte sporcetât.",
+      "proposedIt": "L'acqua corrente non porta sporcizia.",
+      "recommendation": "promote_after_language_review",
+      "targetUse": "almanac_general",
+      "calendar": {
+        "rotation": "general_nature"
+      },
+      "reason": "Immagine naturale autonoma e attestata nel repertorio lessicografico moderno.",
+      "publish": false
+    },
+    {
+      "id": "ost1876-fat-mont-po-disfalu",
+      "sourceBlockIds": [
+        "ost1876-p305-b007"
+      ],
+      "pdfPage": 305,
+      "printedPage": 301,
+      "furOriginal": "Cui che l'ha fat il mond al po disfâlu.",
+      "proposedIt": "Chi ha fatto il mondo può disfarlo.",
+      "recommendation": "promote_after_language_review",
+      "targetUse": "almanac_general",
+      "calendar": {
+        "rotation": "general_wisdom"
+      },
+      "reason": "Prima massima completa del blocco; la seconda variante religiosa resta esclusa.",
+      "publish": false
+    },
+    {
+      "id": "ost1876-ogni-di-ven-gnot",
+      "sourceBlockIds": [
+        "ost1876-p305-b009"
+      ],
+      "pdfPage": 305,
+      "printedPage": 301,
+      "furOriginal": "Ogni dì ven gnot.",
+      "proposedIt": "Ogni giorno viene la notte.",
+      "recommendation": "promote_after_language_review",
+      "targetUse": "almanac_general",
+      "calendar": {
+        "rotation": "general_wisdom"
+      },
+      "reason": "Massima generale breve e attestata nel repertorio lessicografico moderno.",
+      "publish": false
+    },
+    {
+      "id": "ost1876-pazience-maride-frari",
+      "sourceBlockIds": [
+        "ost1876-p305-b011"
+      ],
+      "pdfPage": 305,
+      "printedPage": 301,
+      "furOriginal": "Cu la pazienze si maridâ un frâri.",
+      "proposedIt": "Con la pazienza si sposa anche un frate.",
+      "recommendation": "promote_after_language_review",
+      "targetUse": "almanac_general",
+      "calendar": {
+        "rotation": "general_wisdom"
+      },
+      "reason": "Detto figurato sulla pazienza, completo e indipendente dal calendario.",
+      "publish": false
+    },
+    {
+      "id": "ost1876-vul-ledi-nol-vul-mandi",
+      "sourceBlockIds": [
+        "ost1876-p305-b012"
+      ],
+      "pdfPage": 305,
+      "printedPage": 301,
+      "furOriginal": "Cui che ûl vadi e cui che no ûl mandi.",
+      "proposedIt": "Chi vuole vada; chi non vuole mandi.",
+      "recommendation": "promote_after_language_review",
+      "targetUse": "almanac_general",
+      "calendar": {
+        "rotation": "general_wisdom"
+      },
+      "reason": "Seconda voce autonoma del blocco, attestata nel repertorio lessicografico moderno.",
+      "publish": false
+    },
+    {
+      "id": "ost1876-ogni-trop-masse",
+      "sourceBlockIds": [
+        "ost1876-p306-b001"
+      ],
+      "pdfPage": 306,
+      "printedPage": 302,
+      "furOriginal": "Ogni trop l'è masse.",
+      "proposedIt": "Ogni eccesso è di troppo.",
+      "recommendation": "promote_after_language_review",
+      "targetUse": "almanac_general",
+      "calendar": {
+        "rotation": "general_wisdom"
+      },
+      "reason": "Seconda variante del blocco, scelta perché più concisa e attestata nella grafia moderna.",
+      "publish": false
+    },
+    {
+      "id": "ost1876-bez-po-spindi",
+      "sourceBlockIds": [
+        "ost1876-p306-b006"
+      ],
+      "pdfPage": 306,
+      "printedPage": 302,
+      "furOriginal": "Cui che l'ha bêz po spindi.",
+      "proposedIt": "Chi ha denaro può spendere.",
+      "recommendation": "promote_after_language_review",
+      "targetUse": "almanac_general",
+      "calendar": {
+        "rotation": "general_wisdom"
+      },
+      "reason": "Seconda variante del blocco, più esplicita e comprensibile della prima.",
+      "publish": false
+    },
+    {
+      "id": "ost1876-len-sec-cjape-prin",
+      "sourceBlockIds": [
+        "ost1876-p306-b008"
+      ],
+      "pdfPage": 306,
+      "printedPage": 302,
+      "furOriginal": "Un len sech cape plui prest che no un vêrt.",
+      "proposedIt": "Un legno secco prende fuoco prima di uno verde.",
+      "recommendation": "promote_after_language_review",
+      "targetUse": "almanac_general",
+      "calendar": {
+        "rotation": "general_nature"
+      },
+      "reason": "Prima massima autonoma del blocco, attestata nel repertorio lessicografico moderno.",
+      "publish": false
+    },
+    {
+      "id": "ost1876-acuile-no-pie-moscjis",
+      "sourceBlockIds": [
+        "ost1876-p306-b008"
+      ],
+      "pdfPage": 306,
+      "printedPage": 302,
+      "furOriginal": "L'aquile no pie mosciz.",
+      "proposedIt": "L'aquila non acchiappa mosche.",
+      "recommendation": "promote_after_language_review",
+      "targetUse": "almanac_general",
+      "calendar": {
+        "rotation": "general_wisdom"
+      },
+      "reason": "Terza massima autonoma del blocco, attestata nel repertorio lessicografico moderno.",
+      "publish": false
+    },
+    {
+      "id": "ost1876-farine-no-buine-ostiis",
+      "sourceBlockIds": [
+        "ost1876-p306-b011"
+      ],
+      "pdfPage": 306,
+      "printedPage": 302,
+      "furOriginal": "Ogni farine no è buine par fa ostiiz.",
+      "proposedIt": "Non ogni farina è buona per fare ostie.",
+      "recommendation": "promote_after_language_review",
+      "targetUse": "almanac_general",
+      "calendar": {
+        "rotation": "general_wisdom"
+      },
+      "reason": "Massima figurata completa e attestata nel repertorio lessicografico moderno.",
+      "publish": false
+    },
+    {
+      "id": "ost1876-come-che-ven",
+      "sourceBlockIds": [
+        "ost1876-p307-b005"
+      ],
+      "pdfPage": 307,
+      "printedPage": 303,
+      "furOriginal": "Come cu ven ven.",
+      "proposedIt": "Come viene, viene.",
+      "recommendation": "promote_after_language_review",
+      "targetUse": "almanac_general",
+      "calendar": {
+        "rotation": "general_wisdom"
+      },
+      "reason": "Seconda voce autonoma del blocco, più breve e chiara della variante precedente.",
+      "publish": false
+    },
+    {
+      "id": "ost1876-dut-a-un-fin",
+      "sourceBlockIds": [
+        "ost1876-p307-b008"
+      ],
+      "pdfPage": 307,
+      "printedPage": 303,
+      "furOriginal": "Dut ha un fin.",
+      "proposedIt": "Tutto ha una fine.",
+      "recommendation": "promote_after_language_review",
+      "targetUse": "almanac_general",
+      "calendar": {
+        "rotation": "general_wisdom"
+      },
+      "reason": "Massima conclusiva breve, autonoma e priva di vincoli temporali.",
+      "publish": false
+    }
+  ]
+}

@@ -1,0 +1,2211 @@
+{
+  "schemaVersion": 1,
+  "generatedAt": "2026-07-19",
+  "scope": "municipalities_pn_excluding_pordenone",
+  "profiles": [
+    {
+      "id": "municipality-profile-andreis",
+      "istatCode": "093001",
+      "municipality": "Andreis",
+      "province": "PN",
+      "title": {
+        "it": "Andreis, la lingua di Federico Tavan",
+        "fur": "Andreis, la lenghe di Federico Tavan"
+      },
+      "summary": {
+        "it": "Andreis ha dato voce a Federico Tavan, nato qui nel 1949 e autore di una poesia radicata nella parlata friulana locale. Nei suoi versi il paese diventa il luogo concreto da cui osservare quotidianità, fragilità e margini.",
+        "fur": "Andreis al à dât vôs a Federico Tavan, nassût achì tal 1949 e autôr di une poesie lidrisade te fevelade furlane locâl. Tai siei viers il paîs al devente il lûc concret dal cual cjalâ la vite di ogni dì, lis fragilitâts e i margjins."
+      },
+      "milestones": [
+        {
+          "id": "andreis-1949",
+          "year": 1949,
+          "label": {
+            "it": "Nasce ad Andreis il poeta Federico Tavan",
+            "fur": "Al nas a Andreis il poete Federico Tavan"
+          }
+        }
+      ],
+      "source": {
+        "label": "Sistema Bibliotecario del Friuli - Federico Tavan",
+        "type": "cultural_institution",
+        "url": "https://www.sbhu.it/Archivi/SBUF/Files/131107-tavan.pdf"
+      },
+      "languageStatus": {
+        "it": "approved",
+        "fur": "approved"
+      },
+      "editorialStatus": "reviewed",
+      "readyForUi": true,
+      "review": {
+        "itReviewedAt": "2026-07-19",
+        "method": "source_cross_check",
+        "furReviewedAt": "2026-07-19",
+        "furMethod": "linguistic_review"
+      }
+    },
+    {
+      "id": "municipality-profile-arba",
+      "istatCode": "093002",
+      "municipality": "Arba",
+      "province": "PN",
+      "title": {
+        "it": "Arba, una curtina nella pianura",
+        "fur": "Darbe, une curtine te planure"
+      },
+      "summary": {
+        "it": "Arba compare in una bolla papale del 1186, mentre il territorio conserva tracce funerarie già dal secondo millennio avanti Cristo. La curtina documentata nel 1379 racconta un abitato rurale raccolto attorno a uno spazio difeso.",
+        "fur": "Darbe e comparìs intune bole papâl dal 1186, intant che il teritori al conserve olmis funerariis za dal secont mileni prin di Crist. La curtine documentade tal 1379 e conte di un abitât rurâl strent ator di un spazi difindût."
+      },
+      "milestones": [
+        {
+          "id": "arba-1186",
+          "year": 1186,
+          "label": {
+            "it": "Prima attestazione nota di Arba",
+            "fur": "Prime atestazion cognossude di Darbe"
+          }
+        },
+        {
+          "id": "arba-1379",
+          "year": 1379,
+          "label": {
+            "it": "È documentata la curtina del paese",
+            "fur": "E je documentade la curtine dal paîs"
+          }
+        }
+      ],
+      "source": {
+        "label": "Wikipedia italiana - Arba",
+        "type": "wikipedia_reference",
+        "url": "https://it.wikipedia.org/wiki/Arba"
+      },
+      "languageStatus": {
+        "it": "approved",
+        "fur": "approved"
+      },
+      "editorialStatus": "reviewed",
+      "readyForUi": true,
+      "review": {
+        "itReviewedAt": "2026-07-19",
+        "method": "source_cross_check",
+        "furReviewedAt": "2026-07-19",
+        "furMethod": "linguistic_review"
+      }
+    },
+    {
+      "id": "municipality-profile-aviano",
+      "istatCode": "093004",
+      "municipality": "Aviano",
+      "province": "PN",
+      "title": {
+        "it": "Aviano, dal castello a Piancavallo",
+        "fur": "Davian, dal cjistiel a Piancavallo"
+      },
+      "summary": {
+        "it": "Le rovine del castello, datate al X secolo, ricordano il nucleo fortificato da cui si sviluppò Aviano. Più in alto, Piancavallo lega oggi il comune alla montagna e agli sport invernali.",
+        "fur": "Lis ruvinis dal cjistiel, datadis al secul X, a ricuardin il nucli fortificât dal cual Davian si è svilupât. Plui in alt, Piancavallo al leie vuê il comun ae mont e ai sports invernâi."
+      },
+      "milestones": [
+        {
+          "id": "aviano-century-x",
+          "century": "X",
+          "label": {
+            "it": "Risale a questo secolo il primo nucleo del castello",
+            "fur": "A chest secul al risalìs il prin nucli dal cjistiel"
+          }
+        }
+      ],
+      "source": {
+        "label": "Comune di Aviano - Assaggi Passaggi",
+        "type": "official_municipality",
+        "url": "https://www.comune.aviano.pn.it/media/files/093004/attachment/DEF_BROCHURE_22092025_1.pdf"
+      },
+      "languageStatus": {
+        "it": "approved",
+        "fur": "approved"
+      },
+      "editorialStatus": "reviewed",
+      "readyForUi": true,
+      "review": {
+        "itReviewedAt": "2026-07-19",
+        "method": "source_cross_check",
+        "furReviewedAt": "2026-07-19",
+        "furMethod": "linguistic_review"
+      }
+    },
+    {
+      "id": "municipality-profile-azzano-decimo",
+      "istatCode": "093005",
+      "municipality": "Azzano Decimo",
+      "province": "PN",
+      "title": {
+        "it": "Azzano Decimo, tracce prima del borgo",
+        "fur": "Azzano Decimo, olmis prin dal borc"
+      },
+      "summary": {
+        "it": "Tra Fagnigola e Valer-Pezzacurta il territorio di Azzano Decimo conserva siti neolitici e numerosi reperti di età romana. Il castello medievale, distrutto alla fine del XIII secolo, resta nella memoria storica del capoluogo.",
+        "fur": "Tra Fagnigola e Valer-Pezzacurta il teritori di Azzano Decimo al conserve sîts neolitics e cetancj reperts di etât romane. Il cjistiel medievâl, distrut ae fin dal secul XIII, al reste te memorie storiche dal cjâf-lûc."
+      },
+      "milestones": [
+        {
+          "id": "azzano-decimo-century-xiii",
+          "century": "XIII",
+          "label": {
+            "it": "Il castello medievale viene distrutto verso la fine del secolo",
+            "fur": "Il cjistiel medievâl al ven distrut viers la fin dal secul"
+          }
+        }
+      ],
+      "source": {
+        "label": "Wikipedia italiana - Azzano Decimo",
+        "type": "wikipedia_reference",
+        "url": "https://it.wikipedia.org/wiki/Azzano_Decimo"
+      },
+      "languageStatus": {
+        "it": "approved",
+        "fur": "approved"
+      },
+      "editorialStatus": "reviewed",
+      "readyForUi": true,
+      "review": {
+        "itReviewedAt": "2026-07-19",
+        "method": "source_cross_check",
+        "furReviewedAt": "2026-07-19",
+        "furMethod": "linguistic_review"
+      }
+    },
+    {
+      "id": "municipality-profile-barcis",
+      "istatCode": "093006",
+      "municipality": "Barcis",
+      "province": "PN",
+      "title": {
+        "it": "Barcis, il paese ridisegnato dal lago",
+        "fur": "Barcis, il paîs tornât a disegnâ dal lâc"
+      },
+      "summary": {
+        "it": "Barcis è documentata almeno dal 1182 e nel 1327 ottenne un mercato libero, segno del suo ruolo nella Valcellina. Dal 1954 il lago artificiale ha ridisegnato il paesaggio e l'identità del paese.",
+        "fur": "Barcis e je documentade almancul dal 1182 e tal 1327 e otignì un marcjât libar, segn dal so rûl te Valcellina. Dal 1954 il lâc artificiâl al à tornât a disegnâ il paisaç e la identitât dal paîs."
+      },
+      "milestones": [
+        {
+          "id": "barcis-1182",
+          "year": 1182,
+          "label": {
+            "it": "Prima attestazione nota di Barcis",
+            "fur": "Prime atestazion cognossude di Barcis"
+          }
+        },
+        {
+          "id": "barcis-1327",
+          "year": 1327,
+          "label": {
+            "it": "Il paese ottiene il mercato libero",
+            "fur": "Il paîs al oten il marcjât libar"
+          }
+        },
+        {
+          "id": "barcis-1954",
+          "year": 1954,
+          "label": {
+            "it": "La diga crea il lago artificiale",
+            "fur": "La dighe e cree il lâc artificiâl"
+          }
+        }
+      ],
+      "source": {
+        "label": "Wikipedia italiana - Barcis",
+        "type": "wikipedia_reference",
+        "url": "https://it.wikipedia.org/wiki/Barcis"
+      },
+      "languageStatus": {
+        "it": "approved",
+        "fur": "approved"
+      },
+      "editorialStatus": "reviewed",
+      "readyForUi": true,
+      "review": {
+        "itReviewedAt": "2026-07-19",
+        "method": "source_cross_check",
+        "furReviewedAt": "2026-07-19",
+        "furMethod": "linguistic_review"
+      }
+    },
+    {
+      "id": "municipality-profile-brugnera",
+      "istatCode": "093007",
+      "municipality": "Brugnera",
+      "province": "PN",
+      "title": {
+        "it": "Brugnera, un borgo sulle rive del Livenza",
+        "fur": "Brugnera, un borc su lis rivis de Livence"
+      },
+      "summary": {
+        "it": "Brugnera crebbe attorno a un castello sorto presso il Livenza come punto di controllo e comunicazione. Dopo la distruzione del 1220 l'abitato si spostò sulla riva destra, mentre Villa Varda conserva la memoria della stagione signorile.",
+        "fur": "Brugnera e je cressude ator di un cjistiel costruît dongje de Livence come pont di control e comunicazion. Dopo de distruzion dal 1220 l'abitât si spostà su la rive diestre, intant che Vile Varde e conserve la memorie de stagjon signorîl."
+      },
+      "milestones": [
+        {
+          "id": "brugnera-1220",
+          "year": 1220,
+          "label": {
+            "it": "Il castello viene distrutto e l'abitato cambia riva",
+            "fur": "Il cjistiel al ven distrut e l'abitât al cambie rive"
+          }
+        },
+        {
+          "id": "brugnera-1418",
+          "year": 1418,
+          "label": {
+            "it": "Brugnera si consegna pacificamente a Venezia",
+            "fur": "Brugnera si consegne in pâs a Vignesie"
+          }
+        }
+      ],
+      "source": {
+        "label": "Wikipedia italiana - Brugnera",
+        "type": "wikipedia_reference",
+        "url": "https://it.wikipedia.org/wiki/Brugnera"
+      },
+      "languageStatus": {
+        "it": "approved",
+        "fur": "approved"
+      },
+      "editorialStatus": "reviewed",
+      "readyForUi": true,
+      "review": {
+        "itReviewedAt": "2026-07-19",
+        "method": "source_cross_check",
+        "furReviewedAt": "2026-07-19",
+        "furMethod": "linguistic_review"
+      }
+    },
+    {
+      "id": "municipality-profile-budoia",
+      "istatCode": "093008",
+      "municipality": "Budoia",
+      "province": "PN",
+      "title": {
+        "it": "Budoia, dal colle neolitico a Venezia",
+        "fur": "Budoie, dal cuel neolitic a Vignesie"
+      },
+      "summary": {
+        "it": "Il colle di San Tomè conserva tracce neolitiche che attestano una frequentazione molto antica del territorio di Budoia. Nel 1419 il paese seguì i conti di Polcenigo nella dedizione a Venezia, dentro una storia condivisa tra montagna e pianura.",
+        "fur": "Il cuel di San Tomè al conserve olmis neolitichis che a testemonein une presince une vore antighe tal teritori di Budoie. Tal 1419 il paîs al seguì i conts di Polcenic te dedizion a Vignesie, dentri di une storie condividude tra mont e planure."
+      },
+      "milestones": [
+        {
+          "id": "budoia-1419",
+          "year": 1419,
+          "label": {
+            "it": "Budoia passa sotto il dominio veneziano",
+            "fur": "Budoie e passe sot dal domini venezian"
+          }
+        }
+      ],
+      "source": {
+        "label": "Wikipedia italiana - Budoia",
+        "type": "wikipedia_reference",
+        "url": "https://it.wikipedia.org/wiki/Budoia"
+      },
+      "languageStatus": {
+        "it": "approved",
+        "fur": "approved"
+      },
+      "editorialStatus": "reviewed",
+      "readyForUi": true,
+      "review": {
+        "itReviewedAt": "2026-07-19",
+        "method": "source_cross_check",
+        "furReviewedAt": "2026-07-19",
+        "furMethod": "linguistic_review"
+      }
+    },
+    {
+      "id": "municipality-profile-caneva",
+      "istatCode": "093009",
+      "municipality": "Caneva",
+      "province": "PN",
+      "title": {
+        "it": "Caneva, il paesaggio neolitico del Palù",
+        "fur": "Cjanive, il paisaç neolitic dal Palù"
+      },
+      "summary": {
+        "it": "Tra Caneva e Polcenigo, il Palù di Livenza conserva resti di villaggi palafitticoli neolitici datati tra il 4300 e il 3600 avanti Cristo. Il riconoscimento UNESCO del 2011 ha reso questo paesaggio d'acqua un tratto identitario internazionale del comune.",
+        "fur": "Tra Cjanive e Polcenic, il Palù di Livence al conserve i rescj di vilazs palafitics neolitics datâts tra il 4300 e il 3600 prin di Crist. La ricognossince UNESCO dal 2011 e à fat di chest paisaç di aghe un element identitari internazionâl dal comun."
+      },
+      "milestones": [
+        {
+          "id": "caneva-2011",
+          "year": 2011,
+          "label": {
+            "it": "Il Palù di Livenza entra nel patrimonio UNESCO",
+            "fur": "Il Palù di Livence al jentre tal patrimoni UNESCO"
+          }
+        }
+      ],
+      "source": {
+        "label": "Soprintendenza Archeologia, belle arti e paesaggio FVG - Palù di Livenza",
+        "type": "regional_institution",
+        "url": "https://sabapfvg.cultura.gov.it/storie-dacqua-e-di-terra-palu-di-livenza/"
+      },
+      "languageStatus": {
+        "it": "approved",
+        "fur": "approved"
+      },
+      "editorialStatus": "reviewed",
+      "readyForUi": true,
+      "review": {
+        "itReviewedAt": "2026-07-19",
+        "method": "source_cross_check",
+        "furReviewedAt": "2026-07-19",
+        "furMethod": "linguistic_review"
+      }
+    },
+    {
+      "id": "municipality-profile-casarsa-della-delizia",
+      "istatCode": "093010",
+      "municipality": "Casarsa della Delizia",
+      "province": "PN",
+      "title": {
+        "it": "Casarsa, la lingua di Poesie a Casarsa",
+        "fur": "Cjasarse, la lenghe di Poesiis a Cjasarse"
+      },
+      "summary": {
+        "it": "Nel 1942 Pier Paolo Pasolini pubblicò Poesie a Casarsa, scritte nel friulano locale. Stabilitosi qui con la famiglia nel 1943, trasformò quella parlata da lingua poetica in voce viva del paese e dei suoi abitanti.",
+        "fur": "Tal 1942 Pier Paolo Pasolini al publicà Poesiis a Cjasarse, scritis tal furlan locâl. Stabilît achì cu la famee tal 1943, al trasformà chê fevelade di lenghe poetiche in vôs vive dal paîs e dai siei abitants."
+      },
+      "milestones": [
+        {
+          "id": "casarsa-della-delizia-1942",
+          "year": 1942,
+          "label": {
+            "it": "Pasolini pubblica Poesie a Casarsa",
+            "fur": "Pasolini al publiche Poesiis a Cjasarse"
+          }
+        },
+        {
+          "id": "casarsa-della-delizia-1943",
+          "year": 1943,
+          "label": {
+            "it": "Pasolini si stabilisce a Casarsa con la famiglia",
+            "fur": "Pasolini si stabilìs a Cjasarse cu la famee"
+          }
+        }
+      ],
+      "source": {
+        "label": "Treccani - Dizionario Biografico degli Italiani: Pier Paolo Pasolini",
+        "type": "cultural_institution",
+        "url": "https://www.treccani.it/enciclopedia/pier-paolo-pasolini_%28Dizionario-Biografico%29/"
+      },
+      "languageStatus": {
+        "it": "approved",
+        "fur": "approved"
+      },
+      "editorialStatus": "reviewed",
+      "readyForUi": true,
+      "review": {
+        "itReviewedAt": "2026-07-19",
+        "method": "source_cross_check",
+        "furReviewedAt": "2026-07-19",
+        "furMethod": "linguistic_review"
+      }
+    },
+    {
+      "id": "municipality-profile-castelnovo-del-friuli",
+      "istatCode": "093011",
+      "municipality": "Castelnovo del Friuli",
+      "province": "PN",
+      "title": {
+        "it": "Castelnovo, un comune di borghi e ceramiche",
+        "fur": "Cjastelgnûf, un comun di borcs e ceramichis"
+      },
+      "summary": {
+        "it": "Castelnovo del Friuli non coincide con un unico paese, ma riunisce numerosi borghi distesi sui colli della Val Cosa. La ceramica tradizionale, oggi raccontata a Villa Sulis, è uno dei fili che tengono insieme questa identità diffusa.",
+        "fur": "Cjastelgnûf dal Friûl nol coincît cuntun sôl paîs, ma al met adun tancj borcs slargjâts sui cuei de Val Cosa. La ceramiche tradizionâl, vuê contade a Vile Sulis, e je un dai fîi che a tegnin adun cheste identitât difondude."
+      },
+      "milestones": [
+        {
+          "id": "castelnovo-del-friuli-1976",
+          "year": 1976,
+          "label": {
+            "it": "Il terremoto colpisce duramente i borghi del comune",
+            "fur": "Il taramot al colpìs dûr i borcs dal comun"
+          }
+        }
+      ],
+      "source": {
+        "label": "Wikipedia italiana - Castelnovo del Friuli",
+        "type": "wikipedia_reference",
+        "url": "https://it.wikipedia.org/wiki/Castelnovo_del_Friuli"
+      },
+      "languageStatus": {
+        "it": "approved",
+        "fur": "approved"
+      },
+      "editorialStatus": "reviewed",
+      "readyForUi": true,
+      "review": {
+        "itReviewedAt": "2026-07-19",
+        "method": "source_cross_check",
+        "furReviewedAt": "2026-07-19",
+        "furMethod": "linguistic_review"
+      }
+    },
+    {
+      "id": "municipality-profile-cavasso-nuovo",
+      "istatCode": "093012",
+      "municipality": "Cavasso Nuovo",
+      "province": "PN",
+      "title": {
+        "it": "Cavasso Nuovo, un nome tra due epoche",
+        "fur": "Cjavàs Gnûf, un non tra dôs epocjis"
+      },
+      "summary": {
+        "it": "Cavasso compare nelle fonti nel 1140 con il nome di un Walpertus de Cauaso e fu a lungo legata al vicino feudo di Fanna. L'aggettivo Nuovo, aggiunto nel 1867, distingue il comune moderno dalla sua storia medievale.",
+        "fur": "Cjavàs al comparìs tes fonts tal 1140 cul non di un Walpertus de Cauaso e al fo leât par une vore al feut dongje di Fane. L'agjetîf Gnûf, zontât tal 1867, al distinguìs il comun modern de sô storie medievâl."
+      },
+      "milestones": [
+        {
+          "id": "cavasso-nuovo-1140",
+          "year": 1140,
+          "label": {
+            "it": "Prima attestazione nota del nome Cavasso",
+            "fur": "Prime atestazion cognossude dal non Cjavàs"
+          }
+        },
+        {
+          "id": "cavasso-nuovo-1222",
+          "year": 1222,
+          "label": {
+            "it": "Cavasso e Fanna sono affidate ai Polcenigo",
+            "fur": "Cjavàs e Fane a vegnin afidadis ai Polcenic"
+          }
+        },
+        {
+          "id": "cavasso-nuovo-1867",
+          "year": 1867,
+          "label": {
+            "it": "Il comune assume il nome Cavasso Nuovo",
+            "fur": "Il comun al cjape il non Cjavàs Gnûf"
+          }
+        }
+      ],
+      "source": {
+        "label": "Wikipedia italiana - Cavasso Nuovo",
+        "type": "wikipedia_reference",
+        "url": "https://it.wikipedia.org/wiki/Cavasso_Nuovo"
+      },
+      "languageStatus": {
+        "it": "approved",
+        "fur": "approved"
+      },
+      "editorialStatus": "reviewed",
+      "readyForUi": true,
+      "review": {
+        "itReviewedAt": "2026-07-19",
+        "method": "source_cross_check",
+        "furReviewedAt": "2026-07-19",
+        "furMethod": "linguistic_review"
+      }
+    },
+    {
+      "id": "municipality-profile-chions",
+      "istatCode": "093013",
+      "municipality": "Chions",
+      "province": "PN",
+      "title": {
+        "it": "Chions, la trama antica della campagna",
+        "fur": "Chions, la trame antighe de campagne"
+      },
+      "summary": {
+        "it": "La campagna di Chions conserva ancora il disegno della centuriazione romana, leggibile nella trama di strade e fossati. A Villotta, l'antica Villa Caum è attestata dal 1072 e richiama l'origine medievale dei nuclei abitati.",
+        "fur": "La campagne di Chions e conserve ancjemò il dissen de centuriazion romane, che si pues lei te trame di stradis e fossâi. A Vilote, la antighe Villa Caum e je atestade dal 1072; e riclame la origjin medievâl dai nucleis abitâts."
+      },
+      "milestones": [
+        {
+          "id": "chions-1072",
+          "year": 1072,
+          "label": {
+            "it": "Prima attestazione di Villa Caum, l'odierna Villotta",
+            "fur": "Prime atestazion di Villa Caum, la Vilote di vuê"
+          }
+        }
+      ],
+      "source": {
+        "label": "Wikipedia italiana - Chions",
+        "type": "wikipedia_reference",
+        "url": "https://it.wikipedia.org/wiki/Chions"
+      },
+      "languageStatus": {
+        "it": "approved",
+        "fur": "approved"
+      },
+      "editorialStatus": "reviewed",
+      "readyForUi": true,
+      "review": {
+        "itReviewedAt": "2026-07-19",
+        "method": "source_cross_check",
+        "furReviewedAt": "2026-07-19",
+        "furMethod": "linguistic_review"
+      }
+    },
+    {
+      "id": "municipality-profile-cimolais",
+      "istatCode": "093014",
+      "municipality": "Cimolais",
+      "province": "PN",
+      "title": {
+        "it": "Cimolais, ai piedi del Campanile",
+        "fur": "Cimolais, ai pîts dal Cjampanîl"
+      },
+      "summary": {
+        "it": "Cimolais apre la Val Cimoliana nel cuore delle Dolomiti Friulane, tra borgate di pietra e antichi percorsi di lavoro montano. Nel 1902 la prima ascensione del Campanile di Val Montanaia trasformò una guglia già familiare alla valle in un simbolo dell'alpinismo.",
+        "fur": "Cimolais al vierç la Val Cimoliana tal cûr des Dolomitis Furlanis, tra borgadis di piere e antîcs percors di lavôr montan. Tal 1902 la prime salide sul Cjampanîl di Val Montanaia e trasformà une ponte za familiâr ae val intun simbul dal alpinisim."
+      },
+      "milestones": [
+        {
+          "id": "cimolais-1902",
+          "year": 1902,
+          "label": {
+            "it": "Prima ascensione del Campanile di Val Montanaia",
+            "fur": "Prime salide sul Cjampanîl di Val Montanaia"
+          }
+        }
+      ],
+      "source": {
+        "label": "Parco Naturale Dolomiti Friulane - Cimolais",
+        "type": "regional_institution",
+        "url": "https://www.parcodolomitifriulane.it/i-paesi-del-parco/cimolais/"
+      },
+      "languageStatus": {
+        "it": "approved",
+        "fur": "approved"
+      },
+      "editorialStatus": "reviewed",
+      "readyForUi": true,
+      "review": {
+        "itReviewedAt": "2026-07-19",
+        "method": "source_cross_check",
+        "furReviewedAt": "2026-07-19",
+        "furMethod": "linguistic_review"
+      }
+    },
+    {
+      "id": "municipality-profile-claut",
+      "istatCode": "093015",
+      "municipality": "Claut",
+      "province": "PN",
+      "title": {
+        "it": "Claut, legno e storia della Valcellina",
+        "fur": "Claut, len e storie de Valcellina"
+      },
+      "summary": {
+        "it": "Claut è citata in un documento del 924, una delle attestazioni più antiche della Valcellina. Per secoli boschi e torrenti alimentarono il commercio del legname verso la pianura e Venezia.",
+        "fur": "Claut al è citât intun document dal 924, une des atestazions plui antighis de Valcellina. Par secui boscs e torints a alimentarin il comerci dal len viers la planure e Vignesie."
+      },
+      "milestones": [
+        {
+          "id": "claut-924",
+          "year": 924,
+          "label": {
+            "it": "Prima attestazione documentaria di Claut",
+            "fur": "Prime atestazion documentarie di Claut"
+          }
+        }
+      ],
+      "source": {
+        "label": "Comune di Claut - Relazione territoriale PEBA",
+        "type": "official_municipality",
+        "url": "https://www.comune.claut.pn.it/media/files/093015/attachment/01_-_PEBA_Comune_di_CLAUT_-_RELAZIONE1.0.pdf"
+      },
+      "languageStatus": {
+        "it": "approved",
+        "fur": "approved"
+      },
+      "editorialStatus": "reviewed",
+      "readyForUi": true,
+      "review": {
+        "itReviewedAt": "2026-07-19",
+        "method": "source_cross_check",
+        "furReviewedAt": "2026-07-19",
+        "furMethod": "linguistic_review"
+      }
+    },
+    {
+      "id": "municipality-profile-clauzetto",
+      "istatCode": "093016",
+      "municipality": "Clauzetto",
+      "province": "PN",
+      "title": {
+        "it": "Clauzetto, la pietra viva di Pradis",
+        "fur": "Clausêt, la piere vive di Pradis"
+      },
+      "summary": {
+        "it": "Clauzetto trova nelle Grotte di Pradis una delle espressioni più forti del proprio paesaggio carsico. Negli anni Sessanta don Terziano Cattaruzza e la comunità locale avviarono i primi interventi che resero visitabile la forra.",
+        "fur": "Clausêt al cjate tes Grotis di Pradis une des espressions plui fuartis dal so paisaç carsic. Tai agns Sessante pre Terziano Cattaruzza e la comunitât locâl a inviarin i prins intervents che a renderin visitabile la forre."
+      },
+      "milestones": [],
+      "source": {
+        "label": "Comune di Clauzetto - Le Grotte di Pradis",
+        "type": "official_municipality",
+        "url": "https://www.comune.clauzetto.pn.it/it/vivere-il-comune-39571/luoghi-39572/le-grotte-di-pradis-39821"
+      },
+      "languageStatus": {
+        "it": "approved",
+        "fur": "approved"
+      },
+      "editorialStatus": "reviewed",
+      "readyForUi": true,
+      "review": {
+        "itReviewedAt": "2026-07-19",
+        "method": "source_cross_check",
+        "furReviewedAt": "2026-07-19",
+        "furMethod": "linguistic_review"
+      }
+    },
+    {
+      "id": "municipality-profile-cordenons",
+      "istatCode": "093017",
+      "municipality": "Cordenons",
+      "province": "PN",
+      "title": {
+        "it": "Cordenons, dalla Curtis Naonis alle risorgive",
+        "fur": "Cordenons, de Curtis Naonis aes risultivis"
+      },
+      "summary": {
+        "it": "Il nome di Cordenons richiama la Curtis Naonis, insediamento di origine longobarda ricordato in un diploma dell'897. Tra Noncello, risorgive e Magredi, il comune conserva un'identità plasmata dall'acqua e dalla terra.",
+        "fur": "Il non di Cordenons al riclame la Curtis Naonis, insediament di origjin longobarde ricuardât intun diplome dal 897. Tra Noncel, risultivis e Magredis, il comun al conserve une identitât modellade de aghe e de tiere."
+      },
+      "milestones": [
+        {
+          "id": "cordenons-897",
+          "year": 897,
+          "label": {
+            "it": "Un diploma ricorda la corte regia di Cordenons",
+            "fur": "Un diplome al ricuarde la curt regjie di Cordenons"
+          }
+        },
+        {
+          "id": "cordenons-1814",
+          "year": 1814,
+          "label": {
+            "it": "Cordenons diventa comune autonomo",
+            "fur": "Cordenons al devente comun autonom"
+          }
+        }
+      ],
+      "source": {
+        "label": "Comune di Cordenons - Storia del Comune",
+        "type": "official_municipality",
+        "url": "https://www.comune.cordenons.pn.it/it/novita-31910/notizie-31911/storia-del-comune-49452"
+      },
+      "languageStatus": {
+        "it": "approved",
+        "fur": "approved"
+      },
+      "editorialStatus": "reviewed",
+      "readyForUi": true,
+      "review": {
+        "itReviewedAt": "2026-07-19",
+        "method": "source_cross_check",
+        "furReviewedAt": "2026-07-19",
+        "furMethod": "linguistic_review"
+      }
+    },
+    {
+      "id": "municipality-profile-cordovado",
+      "istatCode": "093018",
+      "municipality": "Cordovado",
+      "province": "PN",
+      "title": {
+        "it": "Cordovado, il borgo dei vescovi",
+        "fur": "Cordovât, il borc dai vesculs"
+      },
+      "summary": {
+        "it": "Cordovado nacque come borgo fortificato dei vescovi di Concordia ed è documentata con certezza dal 1186. Il castrum attestato nel 1276 ha lasciato nel centro storico porte, mura e un impianto urbano ancora leggibile.",
+        "fur": "Cordovât al nassè come borc fortificât dai vesculs di Concordie e al è documentât cun sigurece dal 1186. Il castrum atestât tal 1276 al à lassât tal centri storic puartis, muris e un implant urban ancjemò leibil."
+      },
+      "milestones": [
+        {
+          "id": "cordovado-1186",
+          "year": 1186,
+          "label": {
+            "it": "Prima attestazione certa di Cordovado",
+            "fur": "Prime atestazion sigure di Cordovât"
+          }
+        },
+        {
+          "id": "cordovado-1276",
+          "year": 1276,
+          "label": {
+            "it": "Il borgo è indicato come castrum",
+            "fur": "Il borc al è indicât come castrum"
+          }
+        },
+        {
+          "id": "cordovado-1420",
+          "year": 1420,
+          "label": {
+            "it": "Cordovado entra nei domini di Venezia",
+            "fur": "Cordovât al jentre tai dominis di Vignesie"
+          }
+        }
+      ],
+      "source": {
+        "label": "I Borghi più belli d'Italia in FVG - La storia di Cordovado",
+        "type": "cultural_institution",
+        "url": "https://www.borghibellifvg.it/it/i-borghi/cordovado/la-storia"
+      },
+      "languageStatus": {
+        "it": "approved",
+        "fur": "approved"
+      },
+      "editorialStatus": "reviewed",
+      "readyForUi": true,
+      "review": {
+        "itReviewedAt": "2026-07-19",
+        "method": "source_cross_check",
+        "furReviewedAt": "2026-07-19",
+        "furMethod": "linguistic_review"
+      }
+    },
+    {
+      "id": "municipality-profile-erto-e-casso",
+      "istatCode": "093019",
+      "municipality": "Erto e Casso",
+      "province": "PN",
+      "title": {
+        "it": "Erto e Casso, due comunità nella stessa valle",
+        "fur": "Erto e Casso, dôs comunitâts te stesse val"
+      },
+      "summary": {
+        "it": "Erto e Casso custodisce due comunità con parlate, tradizioni e forme dell'abitare distinte, unite da un severo paesaggio di montagna. La tragedia del Vajont del 9 ottobre 1963 ha segnato per sempre la loro storia senza cancellarne l'identità.",
+        "fur": "Il comun di Erto e Casso al custodìs dôs comunitâts cun feveladis, tradizions e manieris di abitâ diferentis, unidis di un paisaç sever di mont. La tragedie dal Vajont dai 9 di Otubar dal 1963 e à segnât par simpri la lôr storie cence scancelâ la identitât."
+      },
+      "milestones": [
+        {
+          "id": "erto-e-casso-1963",
+          "year": 1963,
+          "label": {
+            "it": "La tragedia del Vajont segna la storia delle due comunità",
+            "fur": "La tragedie dal Vajont e segne la storie des dôs comunitâts"
+          }
+        }
+      ],
+      "source": {
+        "label": "Comune di Erto e Casso - Storia, tradizioni e artigianato",
+        "type": "official_municipality",
+        "url": "https://www.comune.ertoecasso.pn.it/it/novita-25857/notizie-25858/dati-territorio-la-storia-26163"
+      },
+      "languageStatus": {
+        "it": "approved",
+        "fur": "approved"
+      },
+      "editorialStatus": "reviewed",
+      "readyForUi": true,
+      "review": {
+        "itReviewedAt": "2026-07-19",
+        "method": "source_cross_check",
+        "furReviewedAt": "2026-07-19",
+        "furMethod": "linguistic_review"
+      }
+    },
+    {
+      "id": "municipality-profile-fanna",
+      "istatCode": "093020",
+      "municipality": "Fanna",
+      "province": "PN",
+      "title": {
+        "it": "Fanna, feudo e poesia friulana",
+        "fur": "Fane, feut e poesie furlane"
+      },
+      "summary": {
+        "it": "Fanna fu legata per secoli alla signoria dei Polcenigo-Fanna e condivise a lungo l'amministrazione con Cavasso. La parlata friulana occidentale del paese trovò una voce letteraria nelle poesie di Vittorio Cadel.",
+        "fur": "Fane e fo leade par secui ae signorie dai Polcenic-Fanna; par une vore, e condividè la aministrazion cun Cjavàs. La fevelade furlane ocidentâl dal paîs e cjatà une vôs leterarie tes poesiis di Vittorio Cadel."
+      },
+      "milestones": [],
+      "source": {
+        "label": "Wikipedia italiana - Fanna",
+        "type": "wikipedia_reference",
+        "url": "https://it.wikipedia.org/wiki/Fanna"
+      },
+      "languageStatus": {
+        "it": "approved",
+        "fur": "approved"
+      },
+      "editorialStatus": "reviewed",
+      "readyForUi": true,
+      "review": {
+        "itReviewedAt": "2026-07-19",
+        "method": "source_cross_check",
+        "furReviewedAt": "2026-07-19",
+        "furMethod": "linguistic_review"
+      }
+    },
+    {
+      "id": "municipality-profile-fiume-veneto",
+      "istatCode": "093021",
+      "municipality": "Fiume Veneto",
+      "province": "PN",
+      "title": {
+        "it": "Fiume Veneto, un paese nato lungo l'acqua",
+        "fur": "Fiume Veneto, un paîs nassût dilunc de aghe"
+      },
+      "summary": {
+        "it": "Il nome del corso d'acqua che attraversa Fiume Veneto compare nelle fonti già nel 996, mentre l'abitato è attestato dal 1182. I nuclei di Fiume Grande e Fiume Piccolo raccontano un paese cresciuto lungo rogge e vie di pianura.",
+        "fur": "Il non dal cors di aghe che al traverse Fiume Veneto al comparìs tes fonts za tal 996, intant che l'abitât al è atestât dal 1182. I nucleis di Fiume Grande e Fiume Piccolo a contin di un paîs cressût dilunc di roiis e viis di planure."
+      },
+      "milestones": [
+        {
+          "id": "fiume-veneto-996",
+          "year": 996,
+          "label": {
+            "it": "Prima attestazione del nome del fiume",
+            "fur": "Prime atestazion dal non dal flum"
+          }
+        },
+        {
+          "id": "fiume-veneto-1182",
+          "year": 1182,
+          "label": {
+            "it": "Prima attestazione dell'abitato",
+            "fur": "Prime atestazion dal abitât"
+          }
+        }
+      ],
+      "source": {
+        "label": "Wikipedia italiana - Fiume Veneto",
+        "type": "wikipedia_reference",
+        "url": "https://it.wikipedia.org/wiki/Fiume_Veneto"
+      },
+      "languageStatus": {
+        "it": "approved",
+        "fur": "approved"
+      },
+      "editorialStatus": "reviewed",
+      "readyForUi": true,
+      "review": {
+        "itReviewedAt": "2026-07-19",
+        "method": "source_cross_check",
+        "furReviewedAt": "2026-07-19",
+        "furMethod": "linguistic_review"
+      }
+    },
+    {
+      "id": "municipality-profile-fontanafredda",
+      "istatCode": "093022",
+      "municipality": "Fontanafredda",
+      "province": "PN",
+      "title": {
+        "it": "Fontanafredda, tra veneto e friulano",
+        "fur": "Fontanefrede, tra venit e furlan"
+      },
+      "summary": {
+        "it": "Fontanafredda si trova in una fascia di passaggio linguistico tra il veneto e il friulano occidentale. A Vigonovo, la chiesa di Santa Maria Assunta conserva una pala di Andrea Vicentino datata 1596, testimonianza concreta della storia artistica delle sue frazioni.",
+        "fur": "Fontanefrede si cjate intune fasse di passaç linguistic tra il venit e il furlan ocidentâl. A Vigonovo, la glesie di Sante Marie Assunte e conserve une pale di Andrea Vicentino datade 1596, testemoneance concrete de storie artistiche des sôs frazions."
+      },
+      "milestones": [
+        {
+          "id": "fontanafredda-1596",
+          "year": 1596,
+          "label": {
+            "it": "Andrea Vicentino firma la pala conservata a Vigonovo",
+            "fur": "Andrea Vicentino al firme la pale conservade a Vigonovo"
+          }
+        }
+      ],
+      "source": {
+        "label": "Wikipedia italiana - Fontanafredda",
+        "type": "wikipedia_reference",
+        "url": "https://it.wikipedia.org/wiki/Fontanafredda"
+      },
+      "languageStatus": {
+        "it": "approved",
+        "fur": "approved"
+      },
+      "editorialStatus": "reviewed",
+      "readyForUi": true,
+      "review": {
+        "itReviewedAt": "2026-07-19",
+        "method": "source_cross_check",
+        "furReviewedAt": "2026-07-19",
+        "furMethod": "linguistic_review"
+      }
+    },
+    {
+      "id": "municipality-profile-frisanco",
+      "istatCode": "093024",
+      "municipality": "Frisanco",
+      "province": "PN",
+      "title": {
+        "it": "Frisanco, pietra e legno della Val Colvera",
+        "fur": "Frisanc, piere e len de Val Colvera"
+      },
+      "summary": {
+        "it": "Frisanco è documentata dal 1293, mentre Poffabro compare nelle fonti medievali come Prafabrorum. Case di pietra e legno, corti e passaggi stretti hanno dato alla Val Colvera un'architettura costruita con i materiali del luogo.",
+        "fur": "Frisanc al è documentât dal 1293, intant che Poffabro al comparìs tes fonts medievâls come Prafabrorum. Cjasis di piere e len, corts e passaçs strents a àn dât ae Val Colvera une architeture costruide cui materiâi dal lûc."
+      },
+      "milestones": [
+        {
+          "id": "frisanco-1293",
+          "year": 1293,
+          "label": {
+            "it": "Prima attestazione nota di Frisanco",
+            "fur": "Prime atestazion cognossude di Frisanc"
+          }
+        },
+        {
+          "id": "frisanco-1339",
+          "year": 1339,
+          "label": {
+            "it": "Poffabro compare come Prafabrorum",
+            "fur": "Poffabro al comparìs come Prafabrorum"
+          }
+        }
+      ],
+      "source": {
+        "label": "I Borghi più belli d'Italia in FVG - La storia di Poffabro",
+        "type": "cultural_institution",
+        "url": "https://www.borghibellifvg.it/it/i-borghi/poffabro/la-storia"
+      },
+      "languageStatus": {
+        "it": "approved",
+        "fur": "approved"
+      },
+      "editorialStatus": "reviewed",
+      "readyForUi": true,
+      "review": {
+        "itReviewedAt": "2026-07-19",
+        "method": "source_cross_check",
+        "furReviewedAt": "2026-07-19",
+        "furMethod": "linguistic_review"
+      }
+    },
+    {
+      "id": "municipality-profile-maniago",
+      "istatCode": "093025",
+      "municipality": "Maniago",
+      "province": "PN",
+      "title": {
+        "it": "Maniago, dalle fucine alla fabbrica",
+        "fur": "Manià, des fusinis ae fabriche"
+      },
+      "summary": {
+        "it": "Maniago racconta nel Museo dell'Arte Fabbrile una tradizione di lame passata dalle botteghe dei fabbri alla produzione industriale. La nascita della CORICAMA nel 1907 segnò il salto verso la grande fabbrica senza spezzare il legame con il mestiere.",
+        "fur": "Manià al conte tal Museu de Art dai Faris une tradizion di lamis passade des buteghis dai faris ae produzion industriâl. La nassite de CORICAMA tal 1907 e segnà il passaç ae grande fabriche cence rompi il leam cul mistîr."
+      },
+      "milestones": [
+        {
+          "id": "maniago-1907",
+          "year": 1907,
+          "label": {
+            "it": "Nasce la prima grande fabbrica di coltelli CORICAMA",
+            "fur": "E nas la prime grande fabriche di curtìs CORICAMA"
+          }
+        },
+        {
+          "id": "maniago-1998",
+          "year": 1998,
+          "label": {
+            "it": "Viene inaugurato il Museo dell'Arte Fabbrile",
+            "fur": "Al ven inaugurât il Museu de Art dai Faris"
+          }
+        },
+        {
+          "id": "maniago-2009",
+          "year": 2009,
+          "label": {
+            "it": "Il museo riapre nell'ex stabilimento CORICAMA",
+            "fur": "Il museu al torne a vierzisi tal ex stabiliment CORICAMA"
+          }
+        }
+      ],
+      "source": {
+        "label": "Comune di Maniago - Museo dell'Arte Fabbrile e delle Coltellerie",
+        "type": "official_municipality",
+        "url": "https://www.comune.maniago.pn.it/it/vivere-il-comune-221534/luoghi-221535/museo-dellarte-fabbrile-e-delle-coltellerie-239411"
+      },
+      "languageStatus": {
+        "it": "approved",
+        "fur": "approved"
+      },
+      "editorialStatus": "reviewed",
+      "readyForUi": true,
+      "review": {
+        "itReviewedAt": "2026-07-19",
+        "method": "source_cross_check",
+        "furReviewedAt": "2026-07-19",
+        "furMethod": "linguistic_review"
+      }
+    },
+    {
+      "id": "municipality-profile-meduno",
+      "istatCode": "093026",
+      "municipality": "Meduno",
+      "province": "PN",
+      "title": {
+        "it": "Meduno, i moti risorgimentali di Navarons",
+        "fur": "Midun, i mots risorgjimentâi di Navarons"
+      },
+      "summary": {
+        "it": "A Navarons, Casa Andreuzzi conserva la memoria dei moti risorgimentali organizzati nella valle. Il museo racconta il ruolo della famiglia Andreuzzi e dei patrioti che vi presero parte.",
+        "fur": "A Navarons, Cjase Andreuzzi e conserve la memorie dai mots risorgjimentâi organizâts te val. Il museu al conte il rûl de famee Andreuzzi e dai patriots che a cjaparin part a chei mots."
+      },
+      "milestones": [],
+      "source": {
+        "label": "Comune di Meduno - Casa Andreuzzi",
+        "type": "official_municipality",
+        "url": "https://www.comune.meduno.pn.it/"
+      },
+      "languageStatus": {
+        "it": "approved",
+        "fur": "approved"
+      },
+      "editorialStatus": "reviewed",
+      "readyForUi": true,
+      "review": {
+        "itReviewedAt": "2026-07-19",
+        "method": "source_cross_check",
+        "furReviewedAt": "2026-07-19",
+        "furMethod": "linguistic_review"
+      }
+    },
+    {
+      "id": "municipality-profile-montereale-valcellina",
+      "istatCode": "093027",
+      "municipality": "Montereale Valcellina",
+      "province": "PN",
+      "title": {
+        "it": "Montereale, l'energia del Cellina",
+        "fur": "Montreâl, la energjie dal Cellina"
+      },
+      "summary": {
+        "it": "A Malnisio la centrale idroelettrica Pitter entrò in funzione nel maggio 1905. La sua energia diede la prima luce a Piazza San Marco, mentre dal 2006 l'edificio è un museo dedicato alla storia dell'elettricità.",
+        "fur": "A Malnisio la centrâl idroeletriche Pitter e jentrà in funzion tal Mai dal 1905. La sô energjie e dede la prime lûs a Place San Marc, intant che dal 2006 l'edifici al è un museu dedicât ae storie de eletricitât."
+      },
+      "milestones": [
+        {
+          "id": "montereale-valcellina-1905",
+          "year": 1905,
+          "label": {
+            "it": "La centrale Pitter entra in funzione",
+            "fur": "La centrâl Pitter e jentre in funzion"
+          }
+        },
+        {
+          "id": "montereale-valcellina-2006",
+          "year": 2006,
+          "label": {
+            "it": "L'edificio riapre come Museo dell'energia",
+            "fur": "L'edifici al torne a vierzisi come Museu de energjie"
+          }
+        }
+      ],
+      "source": {
+        "label": "Comune di Montereale Valcellina - Guida del territorio",
+        "type": "official_municipality",
+        "url": "https://www.comune.monterealevalcellina.pn.it/media/files/093027/attachment/Guida_Montereale_Valcellina_interno.pdf"
+      },
+      "languageStatus": {
+        "it": "approved",
+        "fur": "approved"
+      },
+      "editorialStatus": "reviewed",
+      "readyForUi": true,
+      "review": {
+        "itReviewedAt": "2026-07-19",
+        "method": "source_cross_check",
+        "furReviewedAt": "2026-07-19",
+        "furMethod": "linguistic_review"
+      }
+    },
+    {
+      "id": "municipality-profile-morsano-al-tagliamento",
+      "istatCode": "093028",
+      "municipality": "Morsano al Tagliamento",
+      "province": "PN",
+      "title": {
+        "it": "Morsano, un paese scritto dal Tagliamento",
+        "fur": "Morsan, un paîs scrit dal Tiliment"
+      },
+      "summary": {
+        "it": "Morsano al Tagliamento è documentata dal 1182 e la sua storia è inseparabile dai guadi e dalle piene del fiume. Le alluvioni del 1596 e del 1692 mutarono il corso del Tagliamento e la geografia degli insediamenti.",
+        "fur": "Morsan dal Tiliment al è documentât dal 1182 e la sô storie no si pues separâ dai vuaiz e des plenis dal flum. Lis inondazions dal 1596 e dal 1692 a mudarin il cors dal Tiliment e la gjeografie dai insediaments."
+      },
+      "milestones": [
+        {
+          "id": "morsano-al-tagliamento-1182",
+          "year": 1182,
+          "label": {
+            "it": "Prima attestazione nota di Morsano",
+            "fur": "Prime atestazion cognossude di Morsan"
+          }
+        },
+        {
+          "id": "morsano-al-tagliamento-1596",
+          "year": 1596,
+          "label": {
+            "it": "Una piena trasforma il territorio in un'isola fluviale",
+            "fur": "Une plene e trasforme il teritori intune isule fluvâl"
+          }
+        },
+        {
+          "id": "morsano-al-tagliamento-1692",
+          "year": 1692,
+          "label": {
+            "it": "Il Tagliamento sposta il proprio alveo",
+            "fur": "Il Tiliment al sposte il so jet"
+          }
+        }
+      ],
+      "source": {
+        "label": "Comune di Morsano al Tagliamento - Cenni storici e socio-economici",
+        "type": "official_municipality",
+        "url": "https://www.comune.morsanoaltagliamento.pn.it/media/files/md/093028/Mors_Pac_Rel_S0vAWad.pdf"
+      },
+      "languageStatus": {
+        "it": "approved",
+        "fur": "approved"
+      },
+      "editorialStatus": "reviewed",
+      "readyForUi": true,
+      "review": {
+        "itReviewedAt": "2026-07-19",
+        "method": "source_cross_check",
+        "furReviewedAt": "2026-07-19",
+        "furMethod": "linguistic_review"
+      }
+    },
+    {
+      "id": "municipality-profile-pasiano-di-pordenone",
+      "istatCode": "093029",
+      "municipality": "Pasiano di Pordenone",
+      "province": "PN",
+      "title": {
+        "it": "Pasiano, castelli e ville tra due fiumi",
+        "fur": "Pasiano, cjistiei e vilis tra doi flums"
+      },
+      "summary": {
+        "it": "Pasiano di Pordenone si sviluppò nell'orbita del castello di Meduna e della signoria dei Da Prata fino all'inizio del dominio veneziano. Le ville venete diffuse nel territorio raccontano la successiva stagione agricola e signorile lungo Livenza e Meduna.",
+        "fur": "Pasiano di Pordenone si svilupà te orbite dal cjistiel di Midune e de signorie dai Da Prata fint al inizi dal domini venezian. Lis vilis venitis sparniçadis tal teritori a contin la stagjon agricule e signorîl vignude dopo, dilunc de Livence e de Midune."
+      },
+      "milestones": [
+        {
+          "id": "pasiano-di-pordenone-1419",
+          "year": 1419,
+          "label": {
+            "it": "Termina la signoria dei Da Prata e inizia il dominio veneziano",
+            "fur": "E finìs la signorie dai Da Prata e al scomence il domini venezian"
+          }
+        }
+      ],
+      "source": {
+        "label": "Wikipedia italiana - Pasiano di Pordenone",
+        "type": "wikipedia_reference",
+        "url": "https://it.wikipedia.org/wiki/Pasiano_di_Pordenone"
+      },
+      "languageStatus": {
+        "it": "approved",
+        "fur": "approved"
+      },
+      "editorialStatus": "reviewed",
+      "readyForUi": true,
+      "review": {
+        "itReviewedAt": "2026-07-19",
+        "method": "source_cross_check",
+        "furReviewedAt": "2026-07-19",
+        "furMethod": "linguistic_review"
+      }
+    },
+    {
+      "id": "municipality-profile-pinzano-al-tagliamento",
+      "istatCode": "093030",
+      "municipality": "Pinzano al Tagliamento",
+      "province": "PN",
+      "title": {
+        "it": "Pinzano, il passaggio sul Tagliamento",
+        "fur": "Pinçan, il passaç sul Tiliment"
+      },
+      "summary": {
+        "it": "Pinzano al Tagliamento è cresciuta attorno a un passaggio strategico del fiume, usato per secoli da traghetti e viandanti. Il ponte del 1906, sostituito tra il 1968 e il 1970, rese stabile un attraversamento che aveva già segnato la storia locale.",
+        "fur": "Pinçan sul Tiliment al è cressût ator di un passaç strategic dal flum, doprât par secui di batelis e viandants. Il puint dal 1906, sostituît tra il 1968 e il 1970, al rendè stabil un passaç che al veve za segnât la storie locâl."
+      },
+      "milestones": [
+        {
+          "id": "pinzano-al-tagliamento-1906",
+          "year": 1906,
+          "label": {
+            "it": "Viene costruito il primo ponte stradale",
+            "fur": "Al ven costruît il prin puint stradâl"
+          }
+        },
+        {
+          "id": "pinzano-al-tagliamento-1970",
+          "year": 1970,
+          "label": {
+            "it": "Entra in funzione il ponte attuale",
+            "fur": "Al jentre in funzion il puint di vuê"
+          }
+        }
+      ],
+      "source": {
+        "label": "Comune di Pinzano al Tagliamento - Profilo territoriale",
+        "type": "official_municipality",
+        "url": "https://www.comune.pinzanoaltagliamento.pn.it/media/files/093030/attachment/PIAO_2025_27.pdf"
+      },
+      "languageStatus": {
+        "it": "approved",
+        "fur": "approved"
+      },
+      "editorialStatus": "reviewed",
+      "readyForUi": true,
+      "review": {
+        "itReviewedAt": "2026-07-19",
+        "method": "source_cross_check",
+        "furReviewedAt": "2026-07-19",
+        "furMethod": "linguistic_review"
+      }
+    },
+    {
+      "id": "municipality-profile-polcenigo",
+      "istatCode": "093031",
+      "municipality": "Polcenigo",
+      "province": "PN",
+      "title": {
+        "it": "Polcenigo, il borgo sotto il castello",
+        "fur": "Polcenic, il borc sot dal cjistiel"
+      },
+      "summary": {
+        "it": "Il castello di Polcenigo è documentato dal 963 e attorno alla sua altura si organizzò il borgo medievale. Nel Settecento la fortezza lasciò posto a una villa progettata da Matteo Lucchesi, oggi suggestiva rovina sopra il paese.",
+        "fur": "Il cjistiel di Polcenic al è documentât dal 963 e ator de sô alture si organizà il borc medievâl. Tal Votcent la fortece e lassà il puest a une vile progjetade di Matteo Lucchesi, vuê ruvine sugestive parsore dal paîs."
+      },
+      "milestones": [
+        {
+          "id": "polcenigo-963",
+          "year": 963,
+          "label": {
+            "it": "Prima attestazione documentaria del castello",
+            "fur": "Prime atestazion documentarie dal cjistiel"
+          }
+        },
+        {
+          "id": "polcenigo-century-xviii",
+          "century": "XVIII",
+          "label": {
+            "it": "Il castello viene trasformato in villa signorile",
+            "fur": "Il cjistiel al ven trasformât intune vile signorîl"
+          }
+        }
+      ],
+      "source": {
+        "label": "Comune di Polcenigo - Castello di Polcenigo",
+        "type": "official_municipality",
+        "url": "https://www.comune.polcenigo.pn.it/it/vivere-il-comune-273915/luoghi-273916/castello-di-polcenigo-289700"
+      },
+      "languageStatus": {
+        "it": "approved",
+        "fur": "approved"
+      },
+      "editorialStatus": "reviewed",
+      "readyForUi": true,
+      "review": {
+        "itReviewedAt": "2026-07-19",
+        "method": "source_cross_check",
+        "furReviewedAt": "2026-07-19",
+        "furMethod": "linguistic_review"
+      }
+    },
+    {
+      "id": "municipality-profile-porcia",
+      "istatCode": "093032",
+      "municipality": "Porcia",
+      "province": "PN",
+      "title": {
+        "it": "Porcia, il borgo della signoria",
+        "fur": "Porcia, il borc de signorie"
+      },
+      "summary": {
+        "it": "Il castello di Porcia, documentato dal 1178, fu il centro di una signoria che prese forma amministrativa nel 1214. Il borgo cresciuto attorno alle sue mura conserva ancora il legame con la famiglia dei conti di Porcia.",
+        "fur": "Il cjistiel di Porcia, documentât dal 1178, al fo il centri di une signorie che e cjapà forme aministrative tal 1214. Il borc cressût ator des sôs muris al conserve ancjemò il leam cu la famee dai conts di Porcia."
+      },
+      "milestones": [
+        {
+          "id": "porcia-1178",
+          "year": 1178,
+          "label": {
+            "it": "Prima attestazione certa del castello",
+            "fur": "Prime atestazion sigure dal cjistiel"
+          }
+        },
+        {
+          "id": "porcia-1214",
+          "year": 1214,
+          "label": {
+            "it": "Si consolida la signoria di Porcia",
+            "fur": "Si consolide la signorie di Porcia"
+          }
+        },
+        {
+          "id": "porcia-1809",
+          "year": 1809,
+          "label": {
+            "it": "Il territorio è coinvolto nella battaglia di Sacile",
+            "fur": "Il teritori al è coinvolzût te bataie di Sacîl"
+          }
+        }
+      ],
+      "source": {
+        "label": "Wikipedia italiana - Porcia",
+        "type": "wikipedia_reference",
+        "url": "https://it.wikipedia.org/wiki/Porcia"
+      },
+      "languageStatus": {
+        "it": "approved",
+        "fur": "approved"
+      },
+      "editorialStatus": "reviewed",
+      "readyForUi": true,
+      "review": {
+        "itReviewedAt": "2026-07-19",
+        "method": "source_cross_check",
+        "furReviewedAt": "2026-07-19",
+        "furMethod": "linguistic_review"
+      }
+    },
+    {
+      "id": "municipality-profile-prata-di-pordenone",
+      "istatCode": "093034",
+      "municipality": "Prata di Pordenone",
+      "province": "PN",
+      "title": {
+        "it": "Prata, un archivio medievale di pietra",
+        "fur": "Prate, un archivi medievâl di piere"
+      },
+      "summary": {
+        "it": "Nel cuore di Prata, il tempio trecentesco di San Giovanni dei Cavalieri conserva le memorie funerarie dei signori locali. Le arche di Pileo, Giacomo e altri membri della casata trasformano la chiesa in un archivio di pietra del borgo medievale.",
+        "fur": "Tal cûr di Prate, il templi dal Tresinte di San Zuan dai Cavalîrs al conserve lis memoriis funerariis dai siôrs locâi. Lis arcjis di Pileo, Giacomo e altris membris de cjase a trasformin la glesie intun archivi di piere dal borc medievâl."
+      },
+      "milestones": [
+        {
+          "id": "prata-di-pordenone-1325",
+          "year": 1325,
+          "label": {
+            "it": "Viene realizzata l'arca funeraria di Pileo",
+            "fur": "E ven fate la arcje funerarie di Pileo"
+          }
+        },
+        {
+          "id": "prata-di-pordenone-1344",
+          "year": 1344,
+          "label": {
+            "it": "È datata l'arca di Nicolò e Caterina",
+            "fur": "E je datade la arcje di Nicolò e Caterina"
+          }
+        }
+      ],
+      "source": {
+        "label": "Comune di Prata di Pordenone - Antico tempio di San Giovanni dei Cavalieri",
+        "type": "official_municipality",
+        "url": "https://www.comune.prata.pn.it/it/vivere-in-citta-88654/cosa-vedere-92071/antico-tempio-di-s-giovanni-dei-cavalieri-92077"
+      },
+      "languageStatus": {
+        "it": "approved",
+        "fur": "approved"
+      },
+      "editorialStatus": "reviewed",
+      "readyForUi": true,
+      "review": {
+        "itReviewedAt": "2026-07-19",
+        "method": "source_cross_check",
+        "furReviewedAt": "2026-07-19",
+        "furMethod": "linguistic_review"
+      }
+    },
+    {
+      "id": "municipality-profile-pravisdomini",
+      "istatCode": "093035",
+      "municipality": "Pravisdomini",
+      "province": "PN",
+      "title": {
+        "it": "Pravisdomini, segni antichi nella campagna",
+        "fur": "Pravisdomini, segns antîcs te campagne"
+      },
+      "summary": {
+        "it": "Pravisdomini conserva nel paesaggio agricolo tracce neolitiche e il disegno della centuriazione romana. La parrocchia divenne autonoma nel 1434, prima che l'incursione ottomana del 1477 devastasse il paese.",
+        "fur": "Pravisdomini al conserve tal paisaç agricul olmis neolitichis e il dissen de centuriazion romane. La parochie e deventà autonome tal 1434, prin che la incursione otomane dal 1477 e devastàs il paîs."
+      },
+      "milestones": [
+        {
+          "id": "pravisdomini-1434",
+          "year": 1434,
+          "label": {
+            "it": "La parrocchia diventa autonoma",
+            "fur": "La parochie e devente autonome"
+          }
+        },
+        {
+          "id": "pravisdomini-1477",
+          "year": 1477,
+          "label": {
+            "it": "Un'incursione ottomana devasta il paese",
+            "fur": "Une incursione otomane e devaste il paîs"
+          }
+        }
+      ],
+      "source": {
+        "label": "Wikipedia italiana - Pravisdomini",
+        "type": "wikipedia_reference",
+        "url": "https://it.wikipedia.org/wiki/Pravisdomini"
+      },
+      "languageStatus": {
+        "it": "approved",
+        "fur": "approved"
+      },
+      "editorialStatus": "reviewed",
+      "readyForUi": true,
+      "review": {
+        "itReviewedAt": "2026-07-19",
+        "method": "source_cross_check",
+        "furReviewedAt": "2026-07-19",
+        "furMethod": "linguistic_review"
+      }
+    },
+    {
+      "id": "municipality-profile-roveredo-in-piano",
+      "istatCode": "093036",
+      "municipality": "Roveredo in Piano",
+      "province": "PN",
+      "title": {
+        "it": "Roveredo, un paese ricostruito nel tempo",
+        "fur": "Roveredo, un paîs ricostruît tal timp"
+      },
+      "summary": {
+        "it": "Roveredo in Piano affonda le sue origini in un territorio frequentato fin dalla preistoria e organizzato in età romana. La chiesa di San Bartolomeo, incendiata nel 1293 e poi ricostruita, accompagna una comunità tornata autonoma nel 1816.",
+        "fur": "Roveredo in Piano al à lis sôs lidrîs intun teritori frequentât za de preistorie e organizât in ete romane. La glesie di San Bartolomeo, brusade tal 1293 e dopo ricostruide, e compagne une comunitât tornade autonome tal 1816."
+      },
+      "milestones": [
+        {
+          "id": "roveredo-in-piano-1293",
+          "year": 1293,
+          "label": {
+            "it": "La chiesa di San Bartolomeo viene incendiata",
+            "fur": "La glesie di San Bartolomeo e ven brusade"
+          }
+        },
+        {
+          "id": "roveredo-in-piano-1816",
+          "year": 1816,
+          "label": {
+            "it": "Roveredo torna a essere comune autonomo",
+            "fur": "Roveredo al torne a jessi comun autonom"
+          }
+        }
+      ],
+      "source": {
+        "label": "Wikipedia italiana - Roveredo in Piano",
+        "type": "wikipedia_reference",
+        "url": "https://it.wikipedia.org/wiki/Roveredo_in_Piano"
+      },
+      "languageStatus": {
+        "it": "approved",
+        "fur": "approved"
+      },
+      "editorialStatus": "reviewed",
+      "readyForUi": true,
+      "review": {
+        "itReviewedAt": "2026-07-19",
+        "method": "source_cross_check",
+        "furReviewedAt": "2026-07-19",
+        "furMethod": "linguistic_review"
+      }
+    },
+    {
+      "id": "municipality-profile-sacile",
+      "istatCode": "093037",
+      "municipality": "Sacile",
+      "province": "PN",
+      "title": {
+        "it": "Sacile, la porta fluviale del Friuli",
+        "fur": "Sacîl, la puarte fluvâl dal Friûl"
+      },
+      "summary": {
+        "it": "Sacile nacque presso un guado strategico sul Livenza, dove nel 796 il duca Enrico fece edificare una chiesa. Dal 1420 Venezia ne valorizzò il ruolo di porta occidentale del Friuli, ancora leggibile nei palazzi affacciati sul fiume.",
+        "fur": "Sacîl e nassè dongje di un vuait strategic su la Livence, dulà che tal 796 il duc Enric al fasè costruî une glesie. Dal 1420 Vignesie e valorizà il so rûl di puarte ocidentâl dal Friûl, ancjemò leibil tai palaçs in rive al flum."
+      },
+      "milestones": [
+        {
+          "id": "sacile-796",
+          "year": 796,
+          "label": {
+            "it": "Il duca Enrico fonda una chiesa presso il guado",
+            "fur": "Il duc Enric al fonde une glesie dongje dal vuait"
+          }
+        },
+        {
+          "id": "sacile-1420",
+          "year": 1420,
+          "label": {
+            "it": "Sacile entra nei domini della Repubblica di Venezia",
+            "fur": "Sacîl al jentre tai dominis de Republiche di Vignesie"
+          }
+        }
+      ],
+      "source": {
+        "label": "Visit Sacile - Storia della città",
+        "type": "official_municipality",
+        "url": "https://www.visitsacile.it/arte-storia-fede/storia/"
+      },
+      "languageStatus": {
+        "it": "approved",
+        "fur": "approved"
+      },
+      "editorialStatus": "reviewed",
+      "readyForUi": true,
+      "review": {
+        "itReviewedAt": "2026-07-19",
+        "method": "source_cross_check",
+        "furReviewedAt": "2026-07-19",
+        "furMethod": "linguistic_review"
+      }
+    },
+    {
+      "id": "municipality-profile-san-giorgio-della-richinvelda",
+      "istatCode": "093038",
+      "municipality": "San Giorgio della Richinvelda",
+      "province": "PN",
+      "title": {
+        "it": "San Giorgio, la piana di Bertrando",
+        "fur": "San Zorç, la planure di Bertrant"
+      },
+      "summary": {
+        "it": "Nella piana della Richinvelda fu ucciso nel 1350 il patriarca Bertrando di San Genesio, figura centrale del Friuli medievale. Il drappo azzurro con l'aquila d'oro legato alla sua memoria unisce ancora San Giorgio alla bandiera storica friulana.",
+        "fur": "Te planure de Richinvelde al fo copât tal 1350 il patriarcje Bertrant di Sant Geniès, figure centrâl dal Friûl medievâl. Il drap celest cu la acuile di aur leât ae sô memorie al unìs ancjemò San Zorç ae bandiere storiche furlane."
+      },
+      "milestones": [
+        {
+          "id": "san-giorgio-della-richinvelda-1350",
+          "year": 1350,
+          "label": {
+            "it": "Il patriarca Bertrando viene ucciso nella Richinvelda",
+            "fur": "Il patriarcje Bertrant al ven copât te Richinvelde"
+          }
+        }
+      ],
+      "source": {
+        "label": "Comune di San Giorgio della Richinvelda - Il Beato Bertrando e la bandiera",
+        "type": "official_municipality",
+        "url": "https://comune.sangiorgiodellarichinvelda.pn.it/eventi/3380543/fieste-de-patrie-friul"
+      },
+      "languageStatus": {
+        "it": "approved",
+        "fur": "approved"
+      },
+      "editorialStatus": "reviewed",
+      "readyForUi": true,
+      "review": {
+        "itReviewedAt": "2026-07-19",
+        "method": "source_cross_check",
+        "furReviewedAt": "2026-07-19",
+        "furMethod": "linguistic_review"
+      }
+    },
+    {
+      "id": "municipality-profile-san-martino-al-tagliamento",
+      "istatCode": "093039",
+      "municipality": "San Martino al Tagliamento",
+      "province": "PN",
+      "title": {
+        "it": "San Martino, una pieve dipinta dal Pordenone",
+        "fur": "San Martin, une pieve piturade dal Pordenon"
+      },
+      "summary": {
+        "it": "La chiesa di San Martino Vescovo è documentata dal 1319 e conserva il nucleo religioso più antico del capoluogo. Il campanile del 1495 e il San Cristoforo dipinto dal Pordenone raccontano la lunga continuità artistica del paese.",
+        "fur": "La glesie di San Martin Vescul e je documentade dal 1319; e conserve il nucli religjôs plui antîc dal cjâf-lûc. Il cjampanili dal 1495 e il San Cristoforo piturât dal Pordenon a contin la lungje continuitât artistiche dal paîs."
+      },
+      "milestones": [
+        {
+          "id": "san-martino-al-tagliamento-1319",
+          "year": 1319,
+          "label": {
+            "it": "Prima attestazione della chiesa di San Martino",
+            "fur": "Prime atestazion de glesie di San Martin"
+          }
+        },
+        {
+          "id": "san-martino-al-tagliamento-1495",
+          "year": 1495,
+          "label": {
+            "it": "Viene completato il campanile",
+            "fur": "Al ven completât il cjampanili"
+          }
+        }
+      ],
+      "source": {
+        "label": "Comune di San Martino al Tagliamento - Chiesa di San Martino Vescovo",
+        "type": "official_municipality",
+        "url": "https://www.comune.sanmartinoaltagliamento.pn.it/it/vivere-il-comune-25058/luoghi-25059/chiesa-di-san-martino-vescovo-48648"
+      },
+      "languageStatus": {
+        "it": "approved",
+        "fur": "approved"
+      },
+      "editorialStatus": "reviewed",
+      "readyForUi": true,
+      "review": {
+        "itReviewedAt": "2026-07-19",
+        "method": "source_cross_check",
+        "furReviewedAt": "2026-07-19",
+        "furMethod": "linguistic_review"
+      }
+    },
+    {
+      "id": "municipality-profile-san-quirino",
+      "istatCode": "093040",
+      "municipality": "San Quirino",
+      "province": "PN",
+      "title": {
+        "it": "San Quirino, la villa dei Templari",
+        "fur": "San Quarin, la vile dai Templârs"
+      },
+      "summary": {
+        "it": "Nel 1218 il duca Ottocaro di Stiria donò la villa di San Quirino ai Cavalieri Templari. I beni passarono poi ai Cavalieri di Malta, lasciando una traccia durevole nella storia medievale del paese.",
+        "fur": "Tal 1218 il duc Otocâr de Stirie al donà la vile di San Quarin ai Cavalîrs Templârs. I bens a passarin dopo ai Cavalîrs di Malte, lassant une olme durevole te storie medievâl dal paîs."
+      },
+      "milestones": [
+        {
+          "id": "san-quirino-1218",
+          "year": 1218,
+          "label": {
+            "it": "La villa di San Quirino viene donata ai Cavalieri Templari",
+            "fur": "La vile di San Quarin e ven donade ai Cavalîrs Templârs"
+          }
+        }
+      ],
+      "source": {
+        "label": "SIUSA - Comune di San Quirino",
+        "type": "cultural_institution",
+        "url": "https://siusa-archivi.cultura.gov.it/cgi-bin/siusa/pagina.pl?Chiave=9327&RicDimF=2&TipoPag=prodente"
+      },
+      "languageStatus": {
+        "it": "approved",
+        "fur": "approved"
+      },
+      "editorialStatus": "reviewed",
+      "readyForUi": true,
+      "review": {
+        "itReviewedAt": "2026-07-19",
+        "method": "source_cross_check",
+        "furReviewedAt": "2026-07-19",
+        "furMethod": "linguistic_review"
+      }
+    },
+    {
+      "id": "municipality-profile-san-vito-al-tagliamento",
+      "istatCode": "093041",
+      "municipality": "San Vito al Tagliamento",
+      "province": "PN",
+      "title": {
+        "it": "San Vito, la città murata dei patriarchi",
+        "fur": "San Vît, la citât murade dai patriarcjis"
+      },
+      "summary": {
+        "it": "San Vito al Tagliamento fu una città patriarcale fortificata, organizzata attorno al castello, alle torri e alle porte urbane. Nel 1420 Venezia ne riconobbe privilegi e autonomie, mantenendo vivo il ruolo del borgo murato nella pianura friulana.",
+        "fur": "San Vît dal Tiliment e fo une citât patriarcjâl fortificade, organizade ator dal cjistiel, des tors e des puartis urbanis. Tal 1420 Vignesie e ricognossè i privileçs e lis autonomiis, tignint vîf il rûl dal borc murât te planure furlane."
+      },
+      "milestones": [
+        {
+          "id": "san-vito-al-tagliamento-1420",
+          "year": 1420,
+          "label": {
+            "it": "Venezia riconosce i privilegi della comunità",
+            "fur": "Vignesie e ricognòs i privileçs de comunitât"
+          }
+        }
+      ],
+      "source": {
+        "label": "Comune di San Vito al Tagliamento - Cenni storici",
+        "type": "official_municipality",
+        "url": "https://comune.san-vito-al-tagliamento.pn.it/media/files/093041/attachment/STATUTO_MODIFICATO_FEBBRAIO_2006.pdf"
+      },
+      "languageStatus": {
+        "it": "approved",
+        "fur": "approved"
+      },
+      "editorialStatus": "reviewed",
+      "readyForUi": true,
+      "review": {
+        "itReviewedAt": "2026-07-19",
+        "method": "source_cross_check",
+        "furReviewedAt": "2026-07-19",
+        "furMethod": "linguistic_review"
+      }
+    },
+    {
+      "id": "municipality-profile-sequals",
+      "istatCode": "093042",
+      "municipality": "Sequals",
+      "province": "PN",
+      "title": {
+        "it": "Sequals, terra di forza e mosaico",
+        "fur": "Secuals, tiere di fuarce e mosaic"
+      },
+      "summary": {
+        "it": "Sequals unisce la memoria di Primo Carnera a una tradizione di terrazzieri e mosaicisti partita dalle sue borgate. Gian Domenico Facchina, nato qui nel 1826, portò la tecnica locale del mosaico nei grandi cantieri europei.",
+        "fur": "Secuals al unìs la memorie di Primo Carnera a une tradizion di terraçârs e mosaiciscj partide des sôs borgadis. Gian Domenico Facchina, nassût achì tal 1826, al puartà la tecniche locâl dal mosaic tai grancj cantîrs europeans."
+      },
+      "milestones": [
+        {
+          "id": "sequals-1826",
+          "year": 1826,
+          "label": {
+            "it": "Nasce a Sequals il mosaicista Gian Domenico Facchina",
+            "fur": "Al nas a Secuals il mosaicist Gian Domenico Facchina"
+          }
+        }
+      ],
+      "source": {
+        "label": "Comune di Sequals - Di pietra in pietra",
+        "type": "official_municipality",
+        "url": "https://comune.sequals.pn.it/media/files/093042/attachment/Dep__Sequals.pdf"
+      },
+      "languageStatus": {
+        "it": "approved",
+        "fur": "approved"
+      },
+      "editorialStatus": "reviewed",
+      "readyForUi": true,
+      "review": {
+        "itReviewedAt": "2026-07-19",
+        "method": "source_cross_check",
+        "furReviewedAt": "2026-07-19",
+        "furMethod": "linguistic_review"
+      }
+    },
+    {
+      "id": "municipality-profile-sesto-al-reghena",
+      "istatCode": "093043",
+      "municipality": "Sesto al Reghena",
+      "province": "PN",
+      "title": {
+        "it": "Sesto al Reghena, il borgo dell'abbazia",
+        "fur": "Siest, il borc de badie"
+      },
+      "summary": {
+        "it": "L'abbazia di Santa Maria in Silvis fu fondata nella prima metà dell'VIII secolo. Nel 762 ricevette la donazione dei nobili longobardi Erfo, Marco e Anto; il complesso fortificato divenne il cuore storico di Sesto al Reghena.",
+        "fur": "La badie di Sante Marie in Silvis e fo fondade te prime metât dal secul VIII. Tal 762 e ricevè la donazion dai nobii longobarts Erfo, Marco e Anto; il complès fortificât al deventà il cûr storic di Siest."
+      },
+      "milestones": [
+        {
+          "id": "sesto-al-reghena-century-viii",
+          "century": "VIII",
+          "label": {
+            "it": "Nella prima metà del secolo viene fondata l'abbazia",
+            "fur": "Te prime metât dal secul e ven fondade la badie"
+          }
+        },
+        {
+          "id": "sesto-al-reghena-762",
+          "year": 762,
+          "label": {
+            "it": "Erfo, Marco e Anto donano beni al monastero",
+            "fur": "Erfo, Marco e Anto a donin bens al monastîr"
+          }
+        }
+      ],
+      "source": {
+        "label": "Comune di Sesto al Reghena - L'Abbazia",
+        "type": "official_municipality",
+        "url": "https://www.comune.sesto-al-reghena.pn.it/vivere-il-comune/territorio/labbazia/"
+      },
+      "languageStatus": {
+        "it": "approved",
+        "fur": "approved"
+      },
+      "editorialStatus": "reviewed",
+      "readyForUi": true,
+      "review": {
+        "itReviewedAt": "2026-07-19",
+        "method": "source_cross_check",
+        "furReviewedAt": "2026-07-19",
+        "furMethod": "linguistic_review"
+      }
+    },
+    {
+      "id": "municipality-profile-spilimbergo",
+      "istatCode": "093044",
+      "municipality": "Spilimbergo",
+      "province": "PN",
+      "title": {
+        "it": "Spilimbergo, pietra, mercato e mosaico",
+        "fur": "Spilimberc, piere, marcjât e mosaic"
+      },
+      "summary": {
+        "it": "Spilimbergo crebbe attorno al castello dei conti di Spengenberg e a un mercato posto sulle vie del Tagliamento. Il Duomo avviato nel 1284 e la moderna scuola del mosaico rendono visibile una continuità di arti e mestieri.",
+        "fur": "Spilimberc al cressè ator dal cjistiel dai conts di Spengenberg e di un marcjât metût su lis viis dal Tiliment. Il Domo scomençât tal 1284 e la moderne scuele dal mosaic a fasin viodi une continuitât di arts e mistîrs."
+      },
+      "milestones": [
+        {
+          "id": "spilimbergo-1284",
+          "year": 1284,
+          "label": {
+            "it": "Inizia la costruzione del Duomo",
+            "fur": "E scomence la costruzion dal Domo"
+          }
+        },
+        {
+          "id": "spilimbergo-1326",
+          "year": 1326,
+          "label": {
+            "it": "La comunità si dota di un proprio statuto",
+            "fur": "La comunitât si da un so statût"
+          }
+        }
+      ],
+      "source": {
+        "label": "Città di Spilimbergo - La città e la sua storia",
+        "type": "official_municipality",
+        "url": "https://www.comune.spilimbergo.pn.it/it/novita-202743/notizie-202745/la-citta-e-la-sua-storia-249660"
+      },
+      "languageStatus": {
+        "it": "approved",
+        "fur": "approved"
+      },
+      "editorialStatus": "reviewed",
+      "readyForUi": true,
+      "review": {
+        "itReviewedAt": "2026-07-19",
+        "method": "source_cross_check",
+        "furReviewedAt": "2026-07-19",
+        "furMethod": "linguistic_review"
+      }
+    },
+    {
+      "id": "municipality-profile-tramonti-di-sopra",
+      "istatCode": "093045",
+      "municipality": "Tramonti di Sopra",
+      "province": "PN",
+      "title": {
+        "it": "Tramonti di Sopra, un paese tra molti borghi",
+        "fur": "Tramonç Disore, un paîs tra tantis borgadis"
+      },
+      "summary": {
+        "it": "Il nome Tramonti deriva da Intra montes e descrive bene un territorio raccolto tra le montagne. Tramonti di Sopra riunisce oltre centocinquanta borgate e località, alcune abbandonate, che conservano la memoria di una comunità diffusa.",
+        "fur": "Il non Tramonç al ven di Intra montes e al descrîf ben un teritori strent tra lis monts. Tramonç Disore al met adun plui di cent e cincuante borgadis e localitâts, cualchidune bandonade, che a conservin la memorie di une comunitât sparniçade."
+      },
+      "milestones": [],
+      "source": {
+        "label": "Parco Naturale Dolomiti Friulane - Tramonti di Sopra",
+        "type": "regional_institution",
+        "url": "https://www.parcodolomitifriulane.it/i-paesi-del-parco/tramonti-di-sopra/"
+      },
+      "languageStatus": {
+        "it": "approved",
+        "fur": "approved"
+      },
+      "editorialStatus": "reviewed",
+      "readyForUi": true,
+      "review": {
+        "itReviewedAt": "2026-07-19",
+        "method": "source_cross_check",
+        "furReviewedAt": "2026-07-19",
+        "furMethod": "linguistic_review"
+      }
+    },
+    {
+      "id": "municipality-profile-tramonti-di-sotto",
+      "istatCode": "093046",
+      "municipality": "Tramonti di Sotto",
+      "province": "PN",
+      "title": {
+        "it": "Tramonti di Sotto, borgate attorno al lago",
+        "fur": "Tramonç Disot, borgadis ator dal lâc"
+      },
+      "summary": {
+        "it": "Tramonti di Sotto è un paese di borgate distribuite nella valle e oggi raccolte attorno al paesaggio del lago. A Tridis, case, corti e percorsi conservano le forme dell'abitare tradizionale tramontino.",
+        "fur": "Tramonç Disot al è un paîs di borgadis distribuidis te val e vuê metudis adun ator dal paisaç dal lâc. A Tridis, cjasis, corts e percors a conservin lis formis dal abitâ tradizionâl di Tramonç."
+      },
+      "milestones": [],
+      "source": {
+        "label": "Comune di Tramonti di Sotto - Percorso del sole",
+        "type": "official_municipality",
+        "url": "https://www.comune.tramonti-di-sotto.pn.it/media/files/093046/attachment/tramonti-sotto.pdf"
+      },
+      "languageStatus": {
+        "it": "approved",
+        "fur": "approved"
+      },
+      "editorialStatus": "reviewed",
+      "readyForUi": true,
+      "review": {
+        "itReviewedAt": "2026-07-19",
+        "method": "source_cross_check",
+        "furReviewedAt": "2026-07-19",
+        "furMethod": "linguistic_review"
+      }
+    },
+    {
+      "id": "municipality-profile-travesio",
+      "istatCode": "093047",
+      "municipality": "Travesio",
+      "province": "PN",
+      "title": {
+        "it": "Travesio, una pieve sulle vie delle valli",
+        "fur": "Travês, une pieve su lis viis des vals"
+      },
+      "summary": {
+        "it": "Travesio è documentata come pieve dal 1174 e per secoli fu un riferimento religioso per un territorio molto più ampio. La posizione tra pianura, Val Cosa e Val Tramontina ne fece anche un passaggio naturale di persone e merci.",
+        "fur": "Travês al è documentât come pieve dal 1174 e par secui al fo un riferiment religjôs par un teritori une vore plui vast. La posizion tra planure, Val Cosa e Val Tramontina e fasè dal paîs ancje un passaç naturâl di personis e marcjanzie."
+      },
+      "milestones": [
+        {
+          "id": "travesio-1174",
+          "year": 1174,
+          "label": {
+            "it": "Prima attestazione documentaria della pieve",
+            "fur": "Prime atestazion documentarie de pieve"
+          }
+        }
+      ],
+      "source": {
+        "label": "Wikipedia italiana - Travesio",
+        "type": "wikipedia_reference",
+        "url": "https://it.wikipedia.org/wiki/Travesio"
+      },
+      "languageStatus": {
+        "it": "approved",
+        "fur": "approved"
+      },
+      "editorialStatus": "reviewed",
+      "readyForUi": true,
+      "review": {
+        "itReviewedAt": "2026-07-19",
+        "method": "source_cross_check",
+        "furReviewedAt": "2026-07-19",
+        "furMethod": "linguistic_review"
+      }
+    },
+    {
+      "id": "municipality-profile-vajont",
+      "istatCode": "093052",
+      "municipality": "Vajont",
+      "province": "PN",
+      "title": {
+        "it": "Vajont, una comunità nata dalla ricostruzione",
+        "fur": "Vajont, une comunitât nassude de ricostruzion"
+      },
+      "summary": {
+        "it": "Vajont nacque come nuovo abitato per gli abitanti di Erto e Casso trasferiti dopo la catastrofe del 1963. Costituito comune autonomo nel 1971, costruì nel tempo una propria identità civile.",
+        "fur": "Vajont al nassè come gnûf abitât pai abitants di Erto e Casso trasferîts dopo de catastrofe dal 1963. Costituît comun autonom tal 1971, al costruì cul timp une sô identitât civîl."
+      },
+      "milestones": [
+        {
+          "id": "vajont-1966",
+          "year": 1966,
+          "label": {
+            "it": "Viene posata la prima pietra del nuovo abitato",
+            "fur": "E ven metude la prime piere dal gnûf abitât"
+          }
+        },
+        {
+          "id": "vajont-1971",
+          "year": 1971,
+          "label": {
+            "it": "Vajont viene costituito come comune autonomo",
+            "fur": "Vajont al ven costituît come comun autonom"
+          }
+        }
+      ],
+      "source": {
+        "label": "Comune di Vajont - Statuto comunale",
+        "type": "official_municipality",
+        "url": "https://www.comune.vajont.pn.it/media/files/093052/attachment/statuto_VAJONT.pdf"
+      },
+      "languageStatus": {
+        "it": "approved",
+        "fur": "approved"
+      },
+      "editorialStatus": "reviewed",
+      "readyForUi": true,
+      "review": {
+        "itReviewedAt": "2026-07-19",
+        "method": "source_cross_check",
+        "furReviewedAt": "2026-07-19",
+        "furMethod": "linguistic_review"
+      }
+    },
+    {
+      "id": "municipality-profile-valvasone-arzene",
+      "istatCode": "093053",
+      "municipality": "Valvasone Arzene",
+      "province": "PN",
+      "title": {
+        "it": "Valvasone Arzene, due stemmi in un comune",
+        "fur": "Voleson Darzin, doi stemis intun comun"
+      },
+      "summary": {
+        "it": "Dal 2015 Valvasone Arzene riunisce in un solo comune due centri già contigui. Il nuovo stemma conserva gli emblemi di entrambi, rendendo visibile l'incontro tra le due storie locali.",
+        "fur": "Dal 2015 Voleson Darzin al met adun intun sôl comun doi centris che a jerin za dongje un di chel altri. Il gnûf steme al conserve i emblemes di ducj i doi, fasint viodi l'incontri tra lis dôs storiis locâls."
+      },
+      "milestones": [
+        {
+          "id": "valvasone-arzene-2015",
+          "year": 2015,
+          "label": {
+            "it": "Nasce il comune di Valvasone Arzene",
+            "fur": "Al nas il comun di Voleson Darzin"
+          }
+        }
+      ],
+      "source": {
+        "label": "Wikipedia italiana - Valvasone Arzene",
+        "type": "wikipedia_reference",
+        "url": "https://it.wikipedia.org/wiki/Valvasone_Arzene"
+      },
+      "languageStatus": {
+        "it": "approved",
+        "fur": "approved"
+      },
+      "editorialStatus": "reviewed",
+      "readyForUi": true,
+      "review": {
+        "itReviewedAt": "2026-07-19",
+        "method": "source_cross_check",
+        "furReviewedAt": "2026-07-19",
+        "furMethod": "linguistic_review"
+      }
+    },
+    {
+      "id": "municipality-profile-vito-d-asio",
+      "istatCode": "093049",
+      "municipality": "Vito d'Asio",
+      "province": "PN",
+      "title": {
+        "it": "Vito d'Asio, la pieve della Val d'Arzino",
+        "fur": "Vît, la pieve de Val d'Arzino"
+      },
+      "summary": {
+        "it": "La pieve d'Asio è documentata dal 1186, mentre Vito compare nelle fonti nel 1260. I paesi disposti lungo la Val d'Arzino condividono una storia di montagna fatta di pievi, borghi e vie di collegamento.",
+        "fur": "La pieve di Asio e je documentade dal 1186, intant che Vît al comparìs tes fonts tal 1260. I paîs metûts dilunc de Val d'Arzino a condividin une storie di mont fate di pievis, borcs e viis di colegament."
+      },
+      "milestones": [
+        {
+          "id": "vito-d-asio-1186",
+          "year": 1186,
+          "label": {
+            "it": "Prima attestazione della pieve d'Asio",
+            "fur": "Prime atestazion de pieve di Asio"
+          }
+        },
+        {
+          "id": "vito-d-asio-1260",
+          "year": 1260,
+          "label": {
+            "it": "Prima attestazione nota di Vito",
+            "fur": "Prime atestazion cognossude di Vît"
+          }
+        }
+      ],
+      "source": {
+        "label": "Wikipedia italiana - Vito d'Asio",
+        "type": "wikipedia_reference",
+        "url": "https://it.wikipedia.org/wiki/Vito_d%27Asio"
+      },
+      "languageStatus": {
+        "it": "approved",
+        "fur": "approved"
+      },
+      "editorialStatus": "reviewed",
+      "readyForUi": true,
+      "review": {
+        "itReviewedAt": "2026-07-19",
+        "method": "source_cross_check",
+        "furReviewedAt": "2026-07-19",
+        "furMethod": "linguistic_review"
+      }
+    },
+    {
+      "id": "municipality-profile-vivaro",
+      "istatCode": "093050",
+      "municipality": "Vivaro",
+      "province": "PN",
+      "title": {
+        "it": "Vivaro, archeologia e acque dei Magredi",
+        "fur": "Vivâr, archeologjie e aghis dai Magredis"
+      },
+      "summary": {
+        "it": "Vivaro racconta la lunga frequentazione dei Magredi attraverso i reperti romani custoditi nell'Antiquarium di Tesis. Il mulino attestato dal 1341 ricorda invece quanto rogge e acque derivate dal Cellina abbiano sostenuto la vita rurale.",
+        "fur": "Vivâr al conte la lungje frequentazion dai Magredis cui reperts romans custodîts tal Antiquarium di Tesis. Il mulin atestât dal 1341 al ricuarde invezit trop che lis roiis e lis aghis derivadis dal Cellina a àn sostignût la vite rurâl."
+      },
+      "milestones": [
+        {
+          "id": "vivaro-1341",
+          "year": 1341,
+          "label": {
+            "it": "Prima attestazione documentaria del mulino",
+            "fur": "Prime atestazion documentarie dal mulin"
+          }
+        }
+      ],
+      "source": {
+        "label": "Comune di Vivaro - Vivere il comune",
+        "type": "official_municipality",
+        "url": "https://www.comune.vivaro.pn.it/it/vivere-il-comune-57548"
+      },
+      "languageStatus": {
+        "it": "approved",
+        "fur": "approved"
+      },
+      "editorialStatus": "reviewed",
+      "readyForUi": true,
+      "review": {
+        "itReviewedAt": "2026-07-19",
+        "method": "source_cross_check",
+        "furReviewedAt": "2026-07-19",
+        "furMethod": "linguistic_review"
+      }
+    },
+    {
+      "id": "municipality-profile-zoppola",
+      "istatCode": "093051",
+      "municipality": "Zoppola",
+      "province": "PN",
+      "title": {
+        "it": "Zoppola, il castello sulla strada del guado",
+        "fur": "Çopule, il cjistiel su la strade dal vuait"
+      },
+      "summary": {
+        "it": "Il castello di Zoppola sorse probabilmente agli inizi dell'XI secolo a difesa della strada che dal guado del Tagliamento conduceva a Pordenone. Affidato ai Panciera nel 1405, conserva nel cortile affreschi attribuiti a Pomponio Amalteo.",
+        "fur": "Il cjistiel di Çopule al fo costruît probabilmentri ai inizis dal secul XI par difindi la strade che dal vuait dal Tiliment e menave a Pordenon. Afidât ai Panciera tal 1405, al conserve tal curtîl frescs atribuîts a Pomponio Amalteo."
+      },
+      "milestones": [
+        {
+          "id": "zoppola-1405",
+          "year": 1405,
+          "label": {
+            "it": "Il castello viene affidato alla famiglia Panciera",
+            "fur": "Il cjistiel al ven afidât ae famee Panciera"
+          }
+        }
+      ],
+      "source": {
+        "label": "Comune di Zoppola - Scheda archeologica del castello",
+        "type": "official_municipality",
+        "url": "https://www.comune.zoppola.pn.it/media/files/093051/attachment/14_Zop_Prgc_v_PPR_Schede_archeo.pdf"
+      },
+      "languageStatus": {
+        "it": "approved",
+        "fur": "approved"
+      },
+      "editorialStatus": "reviewed",
+      "readyForUi": true,
+      "review": {
+        "itReviewedAt": "2026-07-19",
+        "method": "source_cross_check",
+        "furReviewedAt": "2026-07-19",
+        "furMethod": "linguistic_review"
+      }
+    }
+  ]
+}

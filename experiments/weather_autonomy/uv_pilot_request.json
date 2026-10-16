@@ -1,0 +1,17 @@
+{
+  "status": "draft_not_submitted_constraints_pending",
+  "dataset": "cams-global-atmospheric-composition-forecasts",
+  "purpose": "One isolated FVG UV sample; no production integration",
+  "request": {
+    "variable": ["uv_biologically_effective_dose"],
+    "date": "2026-09-05",
+    "time": ["00:00"],
+    "leadtime_hour": ["24", "25", "26", "27", "28", "29", "30", "31", "32", "33", "34", "35", "36", "37", "38", "39", "40", "41", "42", "43", "44", "45", "46", "47"],
+    "type": ["forecast"],
+    "area": [46.7, 12.2, 45.5, 14.0],
+    "data_format": "grib"
+  },
+  "credentials_included": false,
+  "conversion": "Only verified biologically effective irradiance in W/m2 multiplied by 40",
+  "attribution": "CAMS / Copernicus; elaborazione Meteo Friul"
+}

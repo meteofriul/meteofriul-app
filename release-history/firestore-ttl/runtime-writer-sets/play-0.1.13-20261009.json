@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "firestore-push-ttl-live-writer-set-v1",
+  "projectId": "meteo-friul",
+  "serviceRegion": "europe-west1",
+  "releaseApiTag": "play-b6fbe4d",
+  "pushRepositorySha256": "989a05445be31c46fa8d23e9613d0fd54c83dd29aae999402a7cd3b41bbae71c",
+  "targets": {
+    "serviceDefault": "europe-west1-docker.pkg.dev/meteo-friul/meteofriul/backend@sha256:3e5c601420311bbd4d724758d1c00900b10392cf1d893b5eeef268a469d025b6",
+    "releaseApi": "europe-west1-docker.pkg.dev/meteo-friul/cloud-run-source-deploy/meteofriul-api@sha256:9a06a675314599dfc2559b7f7a7ed0877a11066f7f2530d3dcb717999499f0a0",
+    "jobs": [
+      {
+        "name": "meteofriul-official-alert-sync",
+        "region": "europe-west8",
+        "imageDigest": "europe-west1-docker.pkg.dev/meteo-friul/meteofriul/backend@sha256:1f5171ad3e07748ac7fa8e3a8d1764458ee3ab4a3f4c4b78e8275925fa621d7f"
+      },
+      {
+        "name": "meteofriul-local-notice",
+        "region": "europe-west1",
+        "imageDigest": "europe-west1-docker.pkg.dev/meteo-friul/meteofriul/backend@sha256:7af9d579cdc135b1823e226ae99aec7fb3ec93276d5aa0af80910923b363fe04"
+      },
+      {
+        "name": "meteofriul-morning-forecast",
+        "region": "europe-west1",
+        "imageDigest": "europe-west1-docker.pkg.dev/meteo-friul/meteofriul/backend@sha256:7af9d579cdc135b1823e226ae99aec7fb3ec93276d5aa0af80910923b363fe04"
+      },
+      {
+        "name": "meteofriul-evening-forecast",
+        "region": "europe-west1",
+        "imageDigest": "europe-west1-docker.pkg.dev/meteo-friul/meteofriul/backend@sha256:7af9d579cdc135b1823e226ae99aec7fb3ec93276d5aa0af80910923b363fe04"
+      }
+    ]
+  },
+  "images": [
+    {
+      "imageDigest": "europe-west1-docker.pkg.dev/meteo-friul/meteofriul/backend@sha256:3e5c601420311bbd4d724758d1c00900b10392cf1d893b5eeef268a469d025b6",
+      "sourceCommit": "b6fbe4d91d8e52d1f5a015c64c2e878b2643597b",
+      "cloudBuildId": "714f0fb6-87b0-41dd-a469-d0772c77049d",
+      "cloudBuildRegion": "europe-west1",
+      "cloudBuildSourceArchiveSha256Base64": "6OUrC5iJmrBEbvYOrwCmcZA7fQSDuNloscD6R90WXTM=",
+      "sourceArchivePushRepositorySha256": "989a05445be31c46fa8d23e9613d0fd54c83dd29aae999402a7cd3b41bbae71c"
+    },
+    {
+      "imageDigest": "europe-west1-docker.pkg.dev/meteo-friul/meteofriul/backend@sha256:7af9d579cdc135b1823e226ae99aec7fb3ec93276d5aa0af80910923b363fe04",
+      "sourceCommit": "56f94e1f9f4d54f9459c410898287b00e28b435c",
+      "cloudBuildId": "6b2bc110-0ddb-4bec-96b3-1046a6c89e75",
+      "cloudBuildRegion": "europe-west1",
+      "cloudBuildSourceArchiveSha256Base64": "tW7eakMVJw79dOmP-lLds1MWErkWWM13IRHLJ4_pMw8=",
+      "sourceArchivePushRepositorySha256": "989a05445be31c46fa8d23e9613d0fd54c83dd29aae999402a7cd3b41bbae71c"
+    },
+    {
+      "imageDigest": "europe-west1-docker.pkg.dev/meteo-friul/meteofriul/backend@sha256:1f5171ad3e07748ac7fa8e3a8d1764458ee3ab4a3f4c4b78e8275925fa621d7f",
+      "sourceCommit": "0a398fa6c28caf24586f25e7147b56f6b0e76408",
+      "cloudBuildId": "79a08742-4661-478a-b2e6-60e242372c41",
+      "cloudBuildRegion": "global",
+      "cloudBuildSourceArchiveSha256Base64": "_elev6zKmTg4X2TU17G548AXmZ9TIeLh3SV4JOtV7-c=",
+      "sourceArchivePushRepositorySha256": "989a05445be31c46fa8d23e9613d0fd54c83dd29aae999402a7cd3b41bbae71c"
+    },
+    {
+      "imageDigest": "europe-west1-docker.pkg.dev/meteo-friul/cloud-run-source-deploy/meteofriul-api@sha256:9a06a675314599dfc2559b7f7a7ed0877a11066f7f2530d3dcb717999499f0a0",
+      "sourceCommit": "da3e711de85dfd4c7799e0a2a8465b9ce576d2fd",
+      "cloudBuildId": "347cd0c6-f421-48ec-bdbf-09a30f4f73d5",
+      "cloudBuildRegion": "europe-west1",
+      "cloudBuildSourceArchiveSha256Base64": "aKSUn9NRAEYsGVHTzmrEt54GuakQj_o4IehlsQmJQ20=",
+      "sourceArchivePushRepositorySha256": "989a05445be31c46fa8d23e9613d0fd54c83dd29aae999402a7cd3b41bbae71c"
+    }
+  ]
+}

@@ -1,0 +1,286 @@
+{
+  "schemaVersion": 1,
+  "generatedAt": "2026-07-14",
+  "purpose": "Diciottesimo lotto Scopri IT: dieci figure di rilievo storico, scientifico e culturale con data italiana, territorio e fonte verificati. I record restano bloccati fino alla revisione FUR e non sono letti direttamente dalla UI.",
+  "policy": {
+    "readyForUi": false,
+    "furDeferred": true,
+    "dateFormat": "DD-MM",
+    "requiresFinalItalianApproval": true,
+    "excludeDeaths": true,
+    "excludeGenericPoliticalProfiles": true,
+    "excludeGenericProfessionalProfiles": true,
+    "excludeAlreadyReviewedProfiles": true,
+    "rejectSemanticDuplicates": true,
+    "rejectUncertainCalendarDates": true,
+    "sourceFirst": true,
+    "publishAfterFurOnly": true,
+    "allowMultipleMemoriesPerDate": true,
+    "secondaryOrderedByPriority": true
+  },
+  "summary": {
+    "keepDaily": 10,
+    "primary": 0,
+    "secondary": 10,
+    "hold": 4,
+    "excluded": 9,
+    "canonicalPrimaryDatesBefore": 182,
+    "canonicalPrimaryDatesAfter": 182,
+    "currentVisiblePrimaryCoverage": 168
+  },
+  "keepDaily": [
+    {
+      "id": "master-fvg-04-12-Q8867",
+      "wikidataId": "Q8867",
+      "dateIt": "04-12",
+      "year": 1927,
+      "municipality": "Palazzolo dello Stella",
+      "locality": "Palazzolo dello Stella",
+      "province": "UD",
+      "canonicalCategory": "cultura",
+      "dailyRole": "secondary",
+      "priority": 82,
+      "titleIt": "Gae Aulenti, architettura senza confini",
+      "copyIt": "Il 4 dicembre 1927 nasce a Palazzolo dello Stella Gae Aulenti, architetta e designer tra le figure italiane più influenti del Novecento. Dalla lampada Pipistrello al Museo d'Orsay, i suoi progetti hanno trasformato oggetti e grandi spazi culturali in tutto il mondo.",
+      "sourceLabel": "Rai Cultura",
+      "sourceUrl": "https://www.raicultura.it/raicultura/articoli/2026/03/Gae-Aulenti-una-vita-di-passioni-b5f85397-0aa9-42ca-a322-d53dfb5f5ddc.html",
+      "sourceStatus": "pass",
+      "readyForUi": false
+    },
+    {
+      "id": "master-fvg-18-04-Q560233",
+      "wikidataId": "Q560233",
+      "dateIt": "18-04",
+      "year": 1897,
+      "municipality": "Palmanova",
+      "locality": "Palmanova",
+      "province": "UD",
+      "canonicalCategory": "scienza",
+      "dailyRole": "secondary",
+      "priority": 84,
+      "titleIt": "Ardito Desio, dal Friuli al K2",
+      "copyIt": "Il 18 aprile 1897 nasce a Palmanova Ardito Desio, geologo ed esploratore. Studiò le Alpi Giulie, guidò la spedizione italiana che raggiunse il K2 nel 1954 e portò la ricerca scientifica dal Karakorum all'Antartide.",
+      "sourceLabel": "Dizionario Biografico dei Friulani",
+      "sourceUrl": "https://www.dizionariobiograficodeifriulani.it/desio-ardito",
+      "sourceStatus": "pass",
+      "readyForUi": false
+    },
+    {
+      "id": "master-fvg-11-12-Q3734324",
+      "wikidataId": "Q3734324",
+      "dateIt": "11-12",
+      "year": 1912,
+      "municipality": "Trieste",
+      "locality": "Trieste",
+      "province": "TS",
+      "canonicalCategory": "storia",
+      "dailyRole": "secondary",
+      "priority": 83,
+      "titleIt": "Eugenio Curiel, scienza e Resistenza",
+      "copyIt": "L'11 dicembre 1912 nasce a Trieste Eugenio Curiel, fisico e protagonista della Resistenza. Fondò il Fronte della Gioventù e ricevette alla memoria la Medaglia d'oro al valor militare.",
+      "sourceLabel": "ANPI",
+      "sourceUrl": "https://www.anpi.it/biografia/eugenio-curiel",
+      "sourceStatus": "pass",
+      "readyForUi": false
+    },
+    {
+      "id": "master-fvg-22-11-Q10970739",
+      "wikidataId": "Q10970739",
+      "dateIt": "22-11",
+      "year": 1789,
+      "municipality": "Dignano",
+      "locality": "Dignano",
+      "province": "UD",
+      "canonicalCategory": "cultura",
+      "dailyRole": "secondary",
+      "priority": 86,
+      "titleIt": "Jacopo Pirona e il vocabolario friulano",
+      "copyIt": "Il 22 novembre 1789 nasce a Dignano Jacopo Pirona, insegnante, erudito e lessicografo. Avviò il Vocabolario friulano che porta il suo nome, un'opera fondamentale per lo studio e la valorizzazione della lingua friulana.",
+      "sourceLabel": "Dizionario Biografico dei Friulani",
+      "sourceUrl": "https://www.dizionariobiograficodeifriulani.it/pirona-iacopo",
+      "sourceStatus": "pass",
+      "readyForUi": false
+    },
+    {
+      "id": "master-fvg-26-07-Q1042531",
+      "wikidataId": "Q1042531",
+      "dateIt": "26-07",
+      "year": 1930,
+      "municipality": "Cassacco",
+      "locality": "Cassacco",
+      "province": "UD",
+      "canonicalCategory": "cultura",
+      "dailyRole": "secondary",
+      "priority": 81,
+      "titleIt": "Carlo Sgorlon, il Friuli nei romanzi",
+      "copyIt": "Il 26 luglio 1930 nasce a Cassacco Carlo Sgorlon. Nei suoi romanzi ha raccontato il mondo contadino, i miti e le ferite storiche del Friuli, ottenendo riconoscimenti come il Premio Strega e il SuperCampiello.",
+      "sourceLabel": "Archivio Carlo Sgorlon",
+      "sourceUrl": "https://www.sgorlon.it/",
+      "sourceStatus": "pass",
+      "readyForUi": false
+    },
+    {
+      "id": "master-fvg-11-03-Q574624",
+      "wikidataId": "Q574624",
+      "dateIt": "11-03",
+      "year": 1853,
+      "municipality": "Trieste",
+      "locality": "Trieste",
+      "province": "TS",
+      "canonicalCategory": "scienza",
+      "dailyRole": "secondary",
+      "priority": 80,
+      "titleIt": "Salvatore Pincherle e l'analisi moderna",
+      "copyIt": "L'11 marzo 1853 nasce a Trieste Salvatore Pincherle, matematico tra i fondatori dell'analisi funzionale. Fu il primo presidente dell'Unione Matematica Italiana e contribuì a rinnovare la ricerca e l'insegnamento della matematica.",
+      "sourceLabel": "Treccani - Dizionario Biografico degli Italiani",
+      "sourceUrl": "https://www.treccani.it/enciclopedia/salvatore-pincherle_%28Dizionario-Biografico%29/",
+      "sourceStatus": "pass",
+      "readyForUi": false
+    },
+    {
+      "id": "master-fvg-10-04-Q464890",
+      "wikidataId": "Q464890",
+      "dateIt": "10-04",
+      "year": 1892,
+      "municipality": "Trieste",
+      "locality": "Trieste",
+      "province": "TS",
+      "canonicalCategory": "cultura",
+      "dailyRole": "secondary",
+      "priority": 76,
+      "titleIt": "Victor de Sabata, una bacchetta internazionale",
+      "copyIt": "Il 10 aprile 1892 nasce a Trieste Victor de Sabata, compositore e direttore d'orchestra. Legò il suo nome al Teatro alla Scala e fu tra i protagonisti della vita musicale internazionale del Novecento.",
+      "sourceLabel": "Treccani - Dizionario Biografico degli Italiani",
+      "sourceUrl": "https://www.treccani.it/enciclopedia/victor-de-sabata_%28Dizionario-Biografico%29/",
+      "sourceStatus": "pass",
+      "readyForUi": false
+    },
+    {
+      "id": "master-fvg-28-08-Q3725978",
+      "wikidataId": "Q3725978",
+      "dateIt": "28-08",
+      "year": 1908,
+      "municipality": "Pinzano al Tagliamento",
+      "locality": "Pinzano al Tagliamento",
+      "province": "PN",
+      "canonicalCategory": "cultura",
+      "dailyRole": "secondary",
+      "priority": 75,
+      "titleIt": "Enrico Peressutti e l'architettura moderna",
+      "copyIt": "Il 28 agosto 1908 nasce a Pinzano al Tagliamento Enrico Peressutti. Con Banfi, Belgiojoso e Rogers fondò il gruppo BBPR, protagonista dell'architettura moderna italiana e autore di opere come la Torre Velasca.",
+      "sourceLabel": "SIUSA - Archivi degli architetti",
+      "sourceUrl": "https://siusa-archivi.cultura.gov.it/cgi-bin/pagina.pl?Chiave=52883&RicProgetto=architetti&RicSez=prodpersone&RicTipoScheda=pp&RicVM=indice&TipoPag=prodpersona",
+      "sourceStatus": "pass",
+      "readyForUi": false
+    },
+    {
+      "id": "master-fvg-30-01-Q3618056",
+      "wikidataId": "Q3618056",
+      "dateIt": "30-01",
+      "year": 1886,
+      "municipality": "Udine",
+      "locality": "Udine",
+      "province": "UD",
+      "canonicalCategory": "scienza",
+      "dailyRole": "secondary",
+      "priority": 74,
+      "titleIt": "Annibale Comessatti, geometria da Udine",
+      "copyIt": "Il 30 gennaio 1886 nasce a Udine Annibale Comessatti, matematico specializzato in geometria algebrica. Dopo gli studi a Padova sviluppò una lunga attività di ricerca e insegnamento universitario.",
+      "sourceLabel": "Dizionario Biografico dei Friulani",
+      "sourceUrl": "https://www.dizionariobiograficodeifriulani.it/comessatti-annibale",
+      "sourceStatus": "pass",
+      "readyForUi": false
+    },
+    {
+      "id": "master-fvg-28-07-Q74849",
+      "wikidataId": "Q74849",
+      "dateIt": "28-07",
+      "year": 1813,
+      "municipality": "Udine",
+      "locality": "Udine",
+      "province": "UD",
+      "canonicalCategory": "cultura",
+      "dailyRole": "secondary",
+      "priority": 73,
+      "titleIt": "Alberto Mazzucato, musica e insegnamento",
+      "copyIt": "Il 28 luglio 1813 nasce a Udine Alberto Mazzucato, compositore, direttore d'orchestra e didatta. Fu maestro concertatore alla Scala e direttore del Conservatorio di Milano, dove formò una nuova generazione di musicisti.",
+      "sourceLabel": "Dizionario Biografico dei Friulani",
+      "sourceUrl": "https://www.dizionariobiograficodeifriulani.it/mazzucato-alberto",
+      "sourceStatus": "pass",
+      "readyForUi": false
+    }
+  ],
+  "hold": [
+    {
+      "id": "master-fvg-17-08-Q466946",
+      "dateIt": "17-08",
+      "titleIt": "Tina Modotti",
+      "reason": "Figura di grande rilievo, ma le fonti istituzionali consultate riportano sia il 16 sia il 17 agosto. La data va risolta prima di calendarizzare la memoria."
+    },
+    {
+      "id": "master-fvg-19-09-Q498934",
+      "dateIt": "19-09",
+      "titleIt": "Sacrario militare di Redipuglia",
+      "reason": "Tema storico prioritario, ma la data del record non e ancora sostenuta da una fonte istituzionale sufficiente."
+    },
+    {
+      "id": "master-fvg-30-04-Q12804486",
+      "dateIt": "30-04",
+      "titleIt": "Corsa per Trieste",
+      "reason": "Evento storico pertinente, da ricostruire con una fonte forte prima di fissare data e testo."
+    },
+    {
+      "id": "master-fvg-01-01-Q2972662",
+      "dateIt": "01-01",
+      "titleIt": "Cimitero degli Invitti",
+      "reason": "Il primo gennaio appare come data convenzionale del dataset, non come ricorrenza verificata. Il contenuto puo restare candidato per Archivio Scopri."
+    }
+  ],
+  "excluded": [
+    {
+      "id": "memory-copy-0616-stanislaus-joyce",
+      "titleIt": "Stanislaus Joyce",
+      "reason": "Record costruito sulla morte e sotto la soglia della Memoria del giorno."
+    },
+    {
+      "id": "memory-copy-0507-gianni-bisiach",
+      "titleIt": "Gianni Bisiach",
+      "reason": "Profilo giornalistico e mediatico generico rispetto alla soglia editoriale concordata."
+    },
+    {
+      "id": "memory-copy-0412-gillo-dorfles",
+      "titleIt": "Gillo Dorfles",
+      "reason": "Escluso dalla rubrica quotidiana per decisione editoriale gia concordata e per data non univoca."
+    },
+    {
+      "id": "memory-copy-0705-flavio-paulin",
+      "titleIt": "Flavio Paulin",
+      "reason": "Profilo pop leggero sotto la soglia della Memoria del giorno."
+    },
+    {
+      "id": "memory-copy-1013-marcello-de-stefano",
+      "titleIt": "Marcello De Stefano",
+      "reason": "Record costruito sulla morte e con legame territoriale non sufficientemente documentato."
+    },
+    {
+      "id": "memory-copy-0318-eugenio-pilutti",
+      "titleIt": "Eugenio Pilutti",
+      "reason": "Record costruito sulla morte e profilo sotto la soglia editoriale."
+    },
+    {
+      "id": "memory-copy-0706-alberto-spaini",
+      "titleIt": "Alberto Spaini",
+      "reason": "Data non confermata e profilo professionale generico per la rubrica quotidiana."
+    },
+    {
+      "id": "memory-copy-0709-aldo-stellita",
+      "titleIt": "Aldo Stellita",
+      "reason": "Record costruito sulla morte e profilo pop sotto la soglia editoriale."
+    },
+    {
+      "id": "memory-copy-0325-giulio-camagni",
+      "titleIt": "Giulio Camagni",
+      "reason": "Profilo professionale contemporaneo sotto la soglia di rilevanza concordata."
+    }
+  ]
+}

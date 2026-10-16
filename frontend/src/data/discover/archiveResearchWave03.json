@@ -1,0 +1,131 @@
+{
+  "schemaVersion": 1,
+  "snapshotDate": "2026-08-31",
+  "purpose": "Terzo lotto d'archivio: tre storie di strumenti di lavoro e abitazioni in Val Resia e nel Goriziano. Copy bilingue e riferimenti linguistici sono conservati una sola volta nei record promossi.",
+  "readyForUi": false,
+  "runtimeCatalog": "frontend/src/data/discover/institutionalArchive.json",
+  "editorialDecision": {
+    "basis": "user_delegated_assisted_editorial_review",
+    "reviewer": "assistant",
+    "independentHumanReview": false,
+    "scope": [
+      "archive-research-arrotini-bicicletta-stolvizza",
+      "archive-research-torcitoio-seta-gorizia",
+      "archive-research-casoni-porta-ovest-grado"
+    ],
+    "note": "Decisione editoriale assistita nel mandato di continuare Scopri, non approvazione dell'utente frase per frase e non certificazione ARLeF o revisione professionale indipendente."
+  },
+  "preservedCatalog": {
+    "records": 20,
+    "sha256Json": "fcf05f6cb692cb18f9ed3c5abe7ad2532a56e52da0bdec1fbfb2fecff1930aef"
+  },
+  "rules": [
+    "Il manifest non è importato dalla UI: soltanto i tre promotedRecordId sono promossi nel catalogo attivo.",
+    "Fonti culturali primarie HTML controllate; Grado Turismo è indicato come consorzio turistico, non come Comune.",
+    "Rotazione annuale senza date forzate, stagioni esclusive o attivazioni meteo; il Settecento data il torcitoio e i venti spiegano l'orientamento dei casoni.",
+    "Nessuna informazione pratica di visita o promessa di apertura attuale. Sintesi originali, senza riuso di immagini, filmati o riproduzioni."
+  ],
+  "records": [
+    {
+      "id": "archive-research-arrotini-bicicletta-stolvizza",
+      "promotedRecordId": "institutional-archive-arrotini-bicicletta-stolvizza",
+      "canonicalKey": "val-resia-arrotini-bicicletta-mola",
+      "rubric": "archive_traditions",
+      "reviewStatus": "promoted",
+      "readyForUi": false,
+      "promotedAt": "2026-08-31",
+      "source": {
+        "url": "https://cultura.gov.it/luogo/museo-dell-arrotino",
+        "authority": "Ministero della Cultura · Museo dell'arrotino",
+        "accessMethod": "direct_html",
+        "checkedAt": "2026-08-31"
+      },
+      "evidenceSummary": "La scheda museale descrive la mola a pedale portata sulle spalle dentro una cassa di legno e l'arrivo della bicicletta, usata per viaggiare e, ferma sui cavalletti, per azionare la mola con i pedali.",
+      "temporalRule": { "type": "annual_rotation" },
+      "geographicScope": ["resia", "stolvizza"],
+      "scopeNote": "Storia della meccanica di un mestiere itinerante, non mezzo motorizzato. Nessuna data commemorativa dedotta dall'arrivo della bicicletta.",
+      "languageReview": {
+        "approvalBasis": "user_delegated_assisted_editorial_review",
+        "reviewer": "assistant",
+        "independentHumanReview": false,
+        "referencesLocation": "institutional-archive-arrotini-bicicletta-stolvizza.languageReview.fur.references",
+        "notes": "Gue, muele, cavalet e pedâl controllati nei lemmi HTML ARLeF. Val Resie conservato dal rito resiano già approvato nell'app; nessuna variante resiana inventata."
+      },
+      "duplicateReview": {
+        "status": "distinct",
+        "comparedCatalogs": ["ostermannCulturalDiscover", "institutionalRituals", "institutionalArchive", "archiveResearchWave01", "archiveResearchWave02", "localMemory", "municipalityProfiles"],
+        "note": "Il profilo di Resia e il rito resiano riguardano musica, ballo e carnevale. I cramârs sono mercanti, non arrotini: non raccontano la bicicletta e la mola. Nessuna scheda precedente tratta questi strumenti."
+      }
+    },
+    {
+      "id": "archive-research-torcitoio-seta-gorizia",
+      "promotedRecordId": "institutional-archive-torcitoio-seta-gorizia",
+      "canonicalKey": "gorizia-torcitoio-seta-trazione-umana",
+      "rubric": "archive_traditions",
+      "reviewStatus": "promoted",
+      "readyForUi": false,
+      "promotedAt": "2026-08-31",
+      "source": {
+        "url": "https://www.go2025.eu/it/imports/poi/erpac/museo-della-moda-e-delle-arti-applicate",
+        "authority": "ERPAC FVG · scheda museale pubblicata da GO!2025",
+        "accessMethod": "direct_html",
+        "checkedAt": "2026-08-31"
+      },
+      "supportingSources": [
+        {
+          "url": "https://cultura.gov.it/luogo/museo-della-moda-e-delle-arti-applicate",
+          "authority": "Ministero della Cultura",
+          "accessMethod": "direct_html",
+          "purpose": "Conferma il torcitoio da seta circolare settecentesco a trazione umana conservato nel museo."
+        }
+      ],
+      "evidenceSummary": "La scheda ERPAC descrive il torcitoio circolare da seta della metà del XVIII secolo e la persona che, al suo interno, lo spinge camminando all'indietro. La scheda MiC del luogo conferma oggetto e trazione umana.",
+      "temporalRule": { "type": "annual_rotation" },
+      "geographicScope": ["gorizia"],
+      "scopeNote": "Il Settecento è la datazione dell'oggetto. Non si riusano il programma del ventennale del museo o affermazioni di unicità e primati. Il collegamento primario è la pagina ERPAC/GO!2025 leggibile, non il vecchio annuncio MiC in timeout.",
+      "languageReview": {
+        "approvalBasis": "user_delegated_assisted_editorial_review",
+        "reviewer": "assistant",
+        "independentHumanReview": false,
+        "referencesLocation": "institutional-archive-torcitoio-seta-gorizia.languageReview.fur.references",
+        "notes": "Sede, sburtâ e indaûr verificati nei lemmi HTML ARLeF. Torcitoio non restituisce un lemma: termine tecnico italiano citato, non traduzione inventata. Il nome proprio del museo resta italiano."
+      },
+      "duplicateReview": {
+        "status": "distinct",
+        "comparedCatalogs": ["ostermannCulturalDiscover", "institutionalRituals", "institutionalArchive", "archiveResearchWave01", "archiveResearchWave02", "localMemory", "municipalityProfiles"],
+        "note": "I tacamenti di Cavazzo riguardano disegni per la tessitura, i cesti il trasporto dei bozzoli; qui si racconta il movimento di uno specifico torcitoio. La tappa del Filatoio di Farra è di un altro Comune e riguarda la fondazione, non questo macchinario."
+      }
+    },
+    {
+      "id": "archive-research-casoni-porta-ovest-grado",
+      "promotedRecordId": "institutional-archive-casoni-porta-ovest-grado",
+      "canonicalKey": "grado-casoni-materiali-porta-ovest",
+      "rubric": "archive_traditions",
+      "reviewStatus": "promoted",
+      "readyForUi": false,
+      "promotedAt": "2026-08-31",
+      "source": {
+        "url": "https://grado.it/it/cosa-fare/natura/la-laguna-di-grado/i-casoni",
+        "authority": "Consorzio Grado Turismo",
+        "accessMethod": "direct_html",
+        "checkedAt": "2026-08-31"
+      },
+      "evidenceSummary": "La pagina descrive i casoni dei pescatori costruiti con pali, canne e paglia, l'unica stanza con focolare e la porta a Ovest che ripara dai venti orientali.",
+      "temporalRule": { "type": "annual_rotation" },
+      "geographicScope": ["grado", "laguna_di_grado"],
+      "scopeNote": "Architettura e materiali della laguna di Grado, non tutti gli edifici lagunari. Nessun suggerimento di navigazione, dato meteo attuale o uso dei venti come trigger editoriale.",
+      "languageReview": {
+        "approvalBasis": "user_delegated_assisted_editorial_review",
+        "reviewer": "assistant",
+        "independentHumanReview": false,
+        "referencesLocation": "institutional-archive-casoni-porta-ovest-grado.languageReview.fur.references",
+        "notes": "Cjane, paie, fogolâr e Ovest verificati nei lemmi HTML ARLeF. Casone → cjasament indica un grande edificio residenziale e non è usato: si conserva casoni citato come termine locale. Grau ripreso dal toponimo già approvato."
+      },
+      "duplicateReview": {
+        "status": "distinct",
+        "comparedCatalogs": ["ostermannCulturalDiscover", "institutionalRituals", "institutionalArchive", "archiveResearchWave01", "archiveResearchWave02", "localMemory", "municipalityProfiles"],
+        "note": "Il tòco di Marano descrive l'assegnazione delle zone di pesca, non le case. Il profilo di Marano menziona genericamente i casoni; quello di Grado tratta il Castrum e le basiliche. Il ciavedâl riguarda un arredo del focolare, non materiali e orientamento dei casoni gradesi."
+      }
+    }
+  ]
+}

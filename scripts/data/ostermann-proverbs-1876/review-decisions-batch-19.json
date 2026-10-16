@@ -1,0 +1,64 @@
+{
+  "schemaVersion": 1,
+  "batchId": "ostermann-1876-review-19",
+  "reviewedAt": "2026-08-02",
+  "source": {
+    "title": "Proverbi friulani raccolti dalla viva voce del popolo",
+    "author": "Valentino Ostermann",
+    "editionYear": 1876,
+    "catalogUrl": "https://www.techeudine.it/biblioteche-digital-furlane/proverbi-friulani-raccolti-dalla-viva-voce-del-popolo",
+    "facsimileUrl": "https://manoscrittisbhu.comune.udine.it/uploads/BDF/LO11116556.pdf"
+  },
+  "policy": {
+    "publish": false,
+    "furNormalizationAllowed": false,
+    "rule": "Il facsimile conferma il testo sorgente. La raccomandazione editoriale non equivale a pubblicazione o traduzione approvata. Il lotto chiude il numero minimo di proverbi distinti per l'Almanacco senza assegnare date, feste o stagioni artificiali."
+  },
+  "summary": {
+    "records": 3,
+    "promoteAfterLanguageReview": 3,
+    "needsContextOrLanguageReview": 0,
+    "secondaryVariant": 0
+  },
+  "records": [
+    {
+      "id": "ost1876-no-pae-debit-stes-di",
+      "sourceBlockIds": ["ost1876-p275-b005"],
+      "pdfPage": 275,
+      "printedPage": 271,
+      "furOriginal": "No si pae il debit in chê dì ca si lu fâs.",
+      "proposedIt": "Non si paga il debito il giorno in cui lo si contrae.",
+      "recommendation": "promote_after_language_review",
+      "targetUse": "almanac_general",
+      "calendar": { "rotation": "general_wisdom" },
+      "reason": "Detto autonomo sulle conseguenze che maturano nel tempo.",
+      "publish": false
+    },
+    {
+      "id": "ost1876-fat-mal-fasi-pinitince",
+      "sourceBlockIds": ["ost1876-p275-b006"],
+      "pdfPage": 275,
+      "printedPage": 271,
+      "furOriginal": "Cui che l'ha fat il mâl fasi la pinitince.",
+      "proposedIt": "Chi ha fatto il male faccia penitenza.",
+      "recommendation": "promote_after_language_review",
+      "targetUse": "almanac_general",
+      "calendar": { "rotation": "general_wisdom" },
+      "reason": "Massima completa sulla responsabilità personale per le proprie azioni.",
+      "publish": false
+    },
+    {
+      "id": "ost1876-no-vus-sepin-no-falis",
+      "sourceBlockIds": ["ost1876-p275-b013"],
+      "pdfPage": 275,
+      "printedPage": 271,
+      "furOriginal": "Se no tu vûs ca lis sepin, fâs di mancul di fâlis.",
+      "proposedIt": "Se non vuoi che si sappiano, evita di farle.",
+      "recommendation": "promote_after_language_review",
+      "targetUse": "almanac_general",
+      "calendar": { "rotation": "general_wisdom" },
+      "reason": "Avvertimento autonomo che lega la discrezione alla responsabilità delle azioni.",
+      "publish": false
+    }
+  ]
+}

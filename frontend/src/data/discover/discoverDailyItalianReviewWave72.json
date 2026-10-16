@@ -1,0 +1,89 @@
+{
+  "schemaVersion": 1,
+  "generatedAt": "2026-07-21",
+  "purpose": "Settantaduesimo lotto Scopri IT: due nuove Memorie principali per il 15 novembre e il 23 dicembre. Le fonti del Ministero della Cultura e della Biblioteca Statale Isontina documentano la protesta e l'arresto di Emilio Cravos nella Gorizia di guerra e la composizione di Veglia di Giuseppe Ungaretti sul monte San Michele. Due fatti minori di dicembre restano fuori dalla rubrica principale.",
+  "policy": {
+    "readyForUi": false,
+    "furDeferred": true,
+    "dateFormat": "DD-MM",
+    "requiresFinalItalianApproval": true,
+    "excludeDeaths": true,
+    "excludeGenericPoliticalProfiles": true,
+    "excludeGenericProfessionalProfiles": true,
+    "excludeSportsOnlyProfiles": true,
+    "rejectBirthplaceOnlyProfiles": true,
+    "rejectSemanticDuplicates": true,
+    "rejectUncertainCalendarDates": true,
+    "requireOneCanonicalSource": true,
+    "sourceFirst": true,
+    "publishAfterFurOnly": true,
+    "allowMultipleMemoriesPerDate": true,
+    "doNotPromoteToPrimaryForCoverageOnly": true
+  },
+  "summary": {
+    "reviewed": 4,
+    "keepDaily": 2,
+    "primary": 2,
+    "secondary": 0,
+    "hold": 2,
+    "excluded": 0,
+    "canonicalPrimaryDatesBefore": 346,
+    "canonicalPrimaryDatesAfter": 348,
+    "currentVisiblePrimaryCoverage": 346
+  },
+  "keepDaily": [
+    {
+      "id": "source-gap-15-11-emilio-cravos-protesta-gorizia-1915",
+      "sourceEntityId": "mic-bsi-cravos-arresto-gorizia-15-novembre-1915",
+      "dateIt": "15-11",
+      "year": 1915,
+      "municipality": "Gorizia",
+      "locality": "Osteria Tausani, Gorizia",
+      "province": "GO",
+      "canonicalCategory": "memoria_storica",
+      "dailyRole": "primary",
+      "priority": 94,
+      "titleIt": "Emilio Cravos protesta nella Gorizia di guerra",
+      "copyIt": "Il 15 novembre 1915, nell'osteria Tausani di piazza Grande a Gorizia, il commerciante Emilio Cravos inneggia pubblicamente all'Italia e contro l'Austria. In una città sotto bombardamento e ancora asburgica, i militari presenti lo arrestano: l'episodio documenta le tensioni civili e identitarie della guerra sul confine.",
+      "sourceLabel": "Ministero della Cultura - Biblioteca Statale Isontina",
+      "sourceUrl": "https://goriziagrandeguerra.cultura.gov.it/gorizia-giorno-per-giorno-15-novembre-1915/",
+      "sourceStatus": "pass",
+      "readyForUi": false
+    },
+    {
+      "id": "source-gap-23-12-ungaretti-veglia-san-michele-1915",
+      "sourceEntityId": "mic-bsi-ungaretti-veglia-san-michele-23-dicembre-1915",
+      "dateIt": "23-12",
+      "year": 1915,
+      "municipality": "Sagrado",
+      "locality": "Monte San Michele",
+      "province": "GO",
+      "canonicalCategory": "cultura",
+      "dailyRole": "primary",
+      "priority": 98,
+      "titleIt": "Ungaretti scrive Veglia sul San Michele",
+      "copyIt": "Il 23 dicembre 1915 Giuseppe Ungaretti compone Veglia sotto la Cima Quattro del monte San Michele, sul fronte del Carso. Nello stesso giorno, nelle trincee austro-ungariche del monte, Josef Klain scrive Freddo della notte: due testimonianze poetiche nate sullo stesso monte e su fronti opposti.",
+      "sourceLabel": "Ministero della Cultura - Biblioteca Statale Isontina",
+      "sourceUrl": "https://goriziagrandeguerra.cultura.gov.it/gorizia-giorno-per-giorno-23-dicembre-1915/",
+      "sourceStatus": "pass",
+      "readyForUi": false
+    }
+  ],
+  "hold": [
+    {
+      "id": "source-gap-08-12-studenti-gorizia-societa-1918",
+      "dateIt": "08-12",
+      "decision": "hold_for_better_event",
+      "reason": "La fonte documenta la riunione di studenti per ricostituire una società sciolta dalle autorità austriache, ma non ne chiarisce abbastanza identità, continuità e rilievo per farne la Memoria principale.",
+      "readyForUi": false
+    },
+    {
+      "id": "source-gap-29-12-orsoline-riapertura-scuole-1918",
+      "dateIt": "29-12",
+      "decision": "hold_for_archive",
+      "reason": "La richiesta delle Orsoline di riaprire scuola italiana, giardino infantile e ricreatorio è documentata e utile per un archivio sull'istruzione a Gorizia, ma non supera la soglia della rubrica giornaliera principale.",
+      "readyForUi": false
+    }
+  ],
+  "excluded": []
+}

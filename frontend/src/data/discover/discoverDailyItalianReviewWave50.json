@@ -1,0 +1,113 @@
+{
+  "schemaVersion": 1,
+  "generatedAt": "2026-07-18",
+  "purpose": "Cinquantesimo lotto Scopri IT: seconda pulizia della coda residua. Tredici candidati coincidono con memorie canoniche gia pubblicate; Alessandra Guerra viene esclusa come profilo politico generico e Alberto Spaini non supera la soglia editoriale, pur avendo una vecchia bozza non pubblicata. Il lotto non crea record e non modifica la copertura del calendario.",
+  "policy": {
+    "readyForUi": false,
+    "furDeferred": true,
+    "dateFormat": "DD-MM",
+    "requiresFinalItalianApproval": true,
+    "excludeDeaths": true,
+    "excludeGenericPoliticalProfiles": true,
+    "excludeGenericProfessionalProfiles": true,
+    "excludeSportsOnlyProfiles": true,
+    "allowExceptionalSportsProfiles": true,
+    "rejectBirthplaceOnlyProfiles": true,
+    "rejectSemanticDuplicates": true,
+    "rejectUncertainCalendarDates": true,
+    "sourceFirst": true,
+    "publishAfterFurOnly": true,
+    "allowMultipleMemoriesPerDate": true,
+    "secondaryRequiresPrimaryAnchor": true,
+    "doNotPromoteToPrimaryForCoverageOnly": true
+  },
+  "summary": {
+    "reviewed": 15,
+    "keepDaily": 0,
+    "primary": 0,
+    "secondary": 0,
+    "hold": 0,
+    "excluded": 15,
+    "canonicalPrimaryDatesBefore": 274,
+    "canonicalPrimaryDatesAfter": 274,
+    "currentVisiblePrimaryCoverage": 269
+  },
+  "keepDaily": [],
+  "hold": [],
+  "excluded": [
+    {
+      "id": "master-fvg-16-10-Q3263200",
+      "duplicateOf": "memory-it-ready-1016-louis-toffoli-pittura-triestina-d-origine",
+      "reason": "Louis Toffoli e gia pubblicato il 16 ottobre con una scheda dedicata alla sua origine triestina e alla pittura."
+    },
+    {
+      "id": "master-fvg-19-07-Q3609696",
+      "reason": "Alessandra Guerra e presente nella fonte soltanto per un ruolo politico regionale. Il profilo non supera la soglia storica concordata per Scopri."
+    },
+    {
+      "id": "master-fvg-15-10-Q983350",
+      "duplicateOf": "memory-copy-1015-giovanni-da-udine",
+      "reason": "Giovanni da Udine e gia pubblicato il 15 ottobre con una scheda dedicata al Rinascimento e alle botteghe artistiche."
+    },
+    {
+      "id": "master-fvg-17-03-Q16533960",
+      "duplicateOf": "memory-it-ready-0317-bruno-pincherle-medicina-e-impegno-civile",
+      "reason": "Bruno Pincherle e gia pubblicato il 17 marzo con una scheda dedicata alla medicina, all'antifascismo e all'impegno civile."
+    },
+    {
+      "id": "master-fvg-31-01-Q23857090",
+      "duplicateOf": "memory-it-ready-0131-domenico-schiavi-architettura-carnica",
+      "reason": "Domenico Schiavi e gia pubblicato il 31 gennaio con una scheda dedicata alla sua architettura in Carnia e in Friuli."
+    },
+    {
+      "id": "master-fvg-04-03-Q388090",
+      "duplicateOf": "memory-copy-0304-afro-basaldella",
+      "reason": "Afro Basaldella e gia pubblicato il 4 marzo con una scheda dedicata a Udine e all'arte del Novecento."
+    },
+    {
+      "id": "master-fvg-20-08-Q1339427",
+      "duplicateOf": "memory-copy-0820-enrico-rava",
+      "reason": "Enrico Rava e gia pubblicato il 20 agosto con una scheda dedicata al jazz e al legame con Trieste."
+    },
+    {
+      "id": "master-fvg-02-01-Q3609973",
+      "duplicateOf": "memory-it-ready-0102-alessandro-de-stefani-scrittura-e-scena",
+      "reason": "Alessandro De Stefani e gia pubblicato il 2 gennaio con una scheda dedicata alla scrittura, al teatro e al cinema."
+    },
+    {
+      "id": "master-fvg-14-07-Q1683317",
+      "duplicateOf": "memory-backlog-0714-scipio-slataper",
+      "reason": "Scipio Slataper e gia pubblicato il 14 luglio con una scheda dedicata a Trieste e al Carso."
+    },
+    {
+      "id": "master-fvg-16-03-Q544750",
+      "duplicateOf": "memory-copy-0316-ernesto-nathan-rogers",
+      "reason": "Ernesto Nathan Rogers e gia pubblicato il 16 marzo con una scheda dedicata all'architettura e al Novecento."
+    },
+    {
+      "id": "master-fvg-27-04-Q3547989",
+      "duplicateOf": "memory-it-ready-0427-jacopo-stellini-filosofia-da-cividale",
+      "reason": "Jacopo Stellini e gia pubblicato il 27 aprile con una scheda dedicata alla filosofia e a Cividale."
+    },
+    {
+      "id": "master-fvg-29-06-Q855258",
+      "duplicateOf": "memory-copy-0629-biagio-marin",
+      "reason": "Biagio Marin e gia pubblicato il 29 giugno con una scheda dedicata alla poesia e alla voce di Grado."
+    },
+    {
+      "id": "master-fvg-06-07-Q3608590",
+      "existingDraft": "memory-copy-0706-alberto-spaini",
+      "reason": "Alberto Spaini ha gia una bozza non pubblicata. Il profilo di scrittore, giornalista e traduttore non supera la soglia editoriale attuale e non viene duplicato ne promosso."
+    },
+    {
+      "id": "master-fvg-15-06-Q922154",
+      "duplicateOf": "memory-copy-0615-lojze-spacal",
+      "reason": "Lojze Spacal e gia pubblicato il 15 giugno con una scheda dedicata alla pittura e al Carso."
+    },
+    {
+      "id": "master-fvg-16-05-Q2050322",
+      "duplicateOf": "memory-it-ready-0516-paolo-bozzi-e-la-scienza-del-vedere",
+      "reason": "Paolo Bozzi e gia pubblicato il 16 maggio con una scheda dedicata alla psicologia della percezione."
+    }
+  ]
+}

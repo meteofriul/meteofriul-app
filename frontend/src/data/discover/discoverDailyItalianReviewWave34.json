@@ -1,0 +1,185 @@
+{
+  "schemaVersion": 1,
+  "generatedAt": "2026-07-16",
+  "purpose": "Trentaquattresimo lotto Scopri IT: audit editoriale dei primi quindici candidati rimasti nella coda. Sei profili superano la soglia come approfondimenti secondari grazie a risultati internazionali e legami territoriali sostanziali; nessuno sostituisce le memorie primarie già presenti. Giulio Marra resta in attesa per la data non verificata e otto profili vengono esclusi. La pubblicazione resta bloccata fino alla revisione FUR dei sei record selezionati.",
+  "policy": {
+    "readyForUi": false,
+    "furDeferred": true,
+    "dateFormat": "DD-MM",
+    "requiresFinalItalianApproval": true,
+    "excludeDeaths": true,
+    "excludeGenericPoliticalProfiles": true,
+    "excludeGenericProfessionalProfiles": true,
+    "excludeSportsOnlyProfiles": true,
+    "allowExceptionalSportsProfiles": true,
+    "rejectBirthplaceOnlyProfiles": true,
+    "rejectSemanticDuplicates": true,
+    "rejectUncertainCalendarDates": true,
+    "sourceFirst": true,
+    "publishAfterFurOnly": true,
+    "allowMultipleMemoriesPerDate": true,
+    "secondaryOrderedByPriority": true,
+    "doNotPromoteToPrimaryForCoverageOnly": true
+  },
+  "summary": {
+    "reviewed": 15,
+    "keepDaily": 6,
+    "primary": 0,
+    "secondary": 6,
+    "hold": 1,
+    "excluded": 8,
+    "canonicalPrimaryDatesBefore": 237,
+    "canonicalPrimaryDatesAfter": 237,
+    "currentVisiblePrimaryCoverage": 229
+  },
+  "keepDaily": [
+    {
+      "id": "master-fvg-05-08-Q468762",
+      "wikidataId": "Q468762",
+      "dateIt": "05-08",
+      "year": 1941,
+      "municipality": "Gemona del Friuli",
+      "locality": "Gemona del Friuli",
+      "province": "UD",
+      "canonicalCategory": "cultura",
+      "dailyRole": "secondary",
+      "priority": 91,
+      "titleIt": "Carla Gravina, dal Friuli al grande cinema",
+      "copyIt": "Il 5 agosto 1941 nasce a Gemona del Friuli Carla Gravina. Cresciuta fra Gemona e Moggio Udinese, diventa una delle interpreti più autorevoli del teatro e del cinema italiani, premiata anche ai festival di Cannes, Locarno e Montréal.",
+      "sourceLabel": "Enciclopedia delle donne - Carla Gravina",
+      "sourceUrl": "https://www.enciclopediadelledonne.it/edd.nsf/biografie/carla-gravina/",
+      "sourceStatus": "pass",
+      "readyForUi": false
+    },
+    {
+      "id": "master-fvg-08-08-Q319451",
+      "wikidataId": "Q319451",
+      "dateIt": "08-08",
+      "year": 1958,
+      "municipality": "Trieste",
+      "locality": "Trieste",
+      "province": "TS",
+      "canonicalCategory": "musica",
+      "dailyRole": "secondary",
+      "priority": 94,
+      "titleIt": "Mauro Maur, la tromba triestina nel mondo",
+      "copyIt": "L'8 agosto 1958 nasce a Trieste Mauro Maur. Formatosi musicalmente in città, diventa prima tromba del Teatro dell'Opera di Roma e collabora a lungo con Ennio Morricone; Trieste gli conferisce il Sigillo trecentesco.",
+      "sourceLabel": "Messaggero Veneto - Mauro Maur",
+      "sourceUrl": "https://www.messaggeroveneto.it/cronaca/il-trombettista-mauro-maur-ufficiale-della-repubblica-oshdzibk",
+      "sourceStatus": "pass",
+      "readyForUi": false
+    },
+    {
+      "id": "master-fvg-11-04-Q3764684",
+      "wikidataId": "Q3764684",
+      "dateIt": "11-04",
+      "year": 1943,
+      "municipality": "San Giorgio della Richinvelda",
+      "locality": "Domanins",
+      "province": "PN",
+      "canonicalCategory": "sport",
+      "dailyRole": "secondary",
+      "priority": 89,
+      "titleIt": "Gino Pancino, un mondiale nato sulle piste friulane",
+      "copyIt": "L'11 aprile 1943 nasce a Domanins Gino Pancino. Cresciuto nei sodalizi ciclistici di San Vito al Tagliamento, nel 1966 conquista il titolo mondiale dilettanti nell'inseguimento a squadre, primo friulano non professionista a riuscirci.",
+      "sourceLabel": "Extra Muros - Memorie storiche e cronache recenti",
+      "sourceUrl": "https://www.extramuros.it/wp-content/uploads/2018/03/Memorie-storiche-e-cronache-recenti.pdf",
+      "sourceStatus": "pass",
+      "readyForUi": false
+    },
+    {
+      "id": "master-fvg-15-06-Q1388868",
+      "wikidataId": "Q1388868",
+      "dateIt": "15-06",
+      "year": 1954,
+      "municipality": "Fagagna",
+      "locality": "Fagagna",
+      "province": "UD",
+      "canonicalCategory": "storia",
+      "dailyRole": "secondary",
+      "priority": 94,
+      "titleIt": "Lamberto Zannier, da Fagagna alla diplomazia internazionale",
+      "copyIt": "Il 15 giugno 1954 nasce a Fagagna Lamberto Zannier. Dopo gli studi all'Università di Trieste, guida la missione ONU in Kosovo e ricopre per due mandati l'incarico di segretario generale dell'OSCE.",
+      "sourceLabel": "OSCE - Lamberto Zannier",
+      "sourceUrl": "https://www.osce.org/node/327811",
+      "sourceStatus": "pass",
+      "readyForUi": false
+    },
+    {
+      "id": "master-fvg-18-07-Q1442283",
+      "wikidataId": "Q1442283",
+      "dateIt": "18-07",
+      "year": 1985,
+      "municipality": "Udine",
+      "locality": "Udine",
+      "province": "UD",
+      "canonicalCategory": "sport",
+      "dailyRole": "secondary",
+      "priority": 96,
+      "titleIt": "Mara Navarria, dalla Bassa friulana all'oro olimpico",
+      "copyIt": "Il 18 luglio 1985 nasce a Udine Mara Navarria. Cresciuta sportivamente in Friuli, diventa campionessa mondiale di spada nel 2018 e conquista con la squadra italiana il bronzo olimpico a Tokyo e l'oro a Parigi 2024.",
+      "sourceLabel": "CONI - Mara Navarria",
+      "sourceUrl": "https://www.coni.it/it/italia-team/medaglie/scheda_atleta/medagliato/1254%3AMARA_NAVARRIA.html",
+      "sourceStatus": "pass",
+      "readyForUi": false
+    },
+    {
+      "id": "master-fvg-20-06-Q52151570",
+      "wikidataId": "Q52151570",
+      "dateIt": "20-06",
+      "year": 1989,
+      "municipality": "Udine",
+      "locality": "Udine",
+      "province": "UD",
+      "canonicalCategory": "sport",
+      "dailyRole": "secondary",
+      "priority": 92,
+      "titleIt": "Giulia Rizzi, la spada udinese d'oro a Parigi",
+      "copyIt": "Il 20 giugno 1989 nasce a Udine Giulia Rizzi. Muove i primi passi schermistici nell'Associazione Sportiva Udinese e nel 2024 conquista con la squadra italiana l'oro olimpico nella spada a Parigi.",
+      "sourceLabel": "CONI Parigi 2024 - Giulia Rizzi",
+      "sourceUrl": "https://parigi2024.coni.it/it/italia-team/gli-azzurri/scheda_atleta/2455%3AGIULIA_RIZZI.html",
+      "sourceStatus": "pass",
+      "readyForUi": false
+    }
+  ],
+  "hold": [
+    {
+      "id": "master-fvg-19-11-Q3769707",
+      "reason": "Il profilo accademico è rilevante, ma le fonti bibliografiche autorevoli confermano soltanto l'anno 1944 e non il 19 novembre; inoltre il rapporto sostanziale con il FVG oltre la nascita a Udine resta da documentare."
+    }
+  ],
+  "excluded": [
+    {
+      "id": "master-fvg-11-07-Q361532",
+      "reason": "Filosofo e pubblicista di rilievo nazionale, ma formazione e attività risultano romane e il rapporto con il FVG resta limitato alla nascita a Cervignano."
+    },
+    {
+      "id": "master-fvg-03-06-Q3771061",
+      "reason": "Profilo esclusivamente calcistico senza statura storica eccezionale né attività territoriale documentata oltre la nascita a Cividale."
+    },
+    {
+      "id": "master-fvg-11-04-Q980530",
+      "reason": "Profilo esclusivamente calcistico, legato soprattutto alla storia del Padova e senza rilevanza storica autonoma per il FVG."
+    },
+    {
+      "id": "master-fvg-06-12-Q934669",
+      "reason": "Carriera pop, radiofonica e televisiva contemporanea senza un contributo storico-culturale territoriale sufficiente per Scopri."
+    },
+    {
+      "id": "master-fvg-09-07-Q19985123",
+      "reason": "Profilo comico-musicale contemporaneo con legame udinese reale ma privo dell'eccezionalità storica richiesta dalla rubrica."
+    },
+    {
+      "id": "master-fvg-12-04-Q3703505",
+      "reason": "Autore e interprete legato ai teatri triestini, ma profilo contemporaneo non ancora di statura storico-culturale eccezionale."
+    },
+    {
+      "id": "master-fvg-13-02-Q16597179",
+      "reason": "Innovatore teatrale di rilievo internazionale, ma trasferito da Udine nell'infanzia e con attività e lascito istituzionale radicati nelle Marche e in Europa."
+    },
+    {
+      "id": "master-fvg-17-04-Q24942555",
+      "reason": "Profilo contemporaneo di musica, moda e spettacolo senza rilevanza storica sufficiente; il giorno esatto di nascita non è inoltre confermato da una fonte autorevole."
+    }
+  ]
+}

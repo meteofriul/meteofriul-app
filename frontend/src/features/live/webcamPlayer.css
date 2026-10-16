@@ -1,0 +1,384 @@
+.mf-live-webcam-preview__live-trigger,
+.mf-live-webcam-preview__external-trigger {
+  position: absolute;
+  z-index: 4;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  min-height: 48px;
+  padding: 14px 16px 10px;
+  border: 0;
+  background: linear-gradient(180deg, transparent, rgba(3, 28, 43, 0.84));
+  color: #fff;
+  font: inherit;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.mf-live-webcam-preview__live-trigger > span,
+.mf-live-webcam-preview__external-trigger > span {
+  display: grid;
+  place-items: center;
+  width: 32px;
+  height: 32px;
+  border: 1px solid rgba(255, 255, 255, 0.72);
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.16);
+  box-shadow: 0 5px 16px rgba(3, 28, 43, 0.22);
+  backdrop-filter: blur(6px);
+  transition: transform 160ms ease, background 160ms ease;
+}
+
+.mf-live-webcam-preview__live-trigger strong,
+.mf-live-webcam-preview__external-trigger strong {
+  color: inherit;
+  font-size: var(--mf-text-sm);
+  font-weight: 840;
+  letter-spacing: 0.01em;
+  text-shadow: 0 1px 6px rgba(3, 28, 43, 0.72);
+}
+
+.mf-live-webcam-preview__live-trigger:hover > span,
+.mf-live-webcam-preview__external-trigger:hover > span {
+  background: rgba(255, 255, 255, 0.26);
+  transform: scale(1.05);
+}
+
+.mf-live-webcam-preview__live-trigger:focus-visible,
+.mf-live-webcam-preview__external-trigger:focus-visible {
+  outline: 3px solid #fff;
+  outline-offset: -5px;
+}
+
+.mf-live-webcam-preview__external-trigger ~ .mf-live-webcam-preview__fallback-notice {
+  bottom: 64px;
+}
+
+html.mf-webcam-player-open,
+html.mf-webcam-player-open body {
+  overflow: hidden;
+  overscroll-behavior: none;
+}
+
+.mf-live-webcam-player-layer {
+  position: fixed;
+  z-index: 5100;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  padding:
+    max(12px, var(--mf-safe-area-inset-top))
+    max(12px, var(--mf-safe-area-inset-right))
+    max(12px, var(--mf-safe-area-inset-bottom))
+    max(12px, var(--mf-safe-area-inset-left));
+}
+
+.mf-live-webcam-player-layer__backdrop {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  border: 0;
+  border-radius: 0;
+  background: rgba(3, 25, 45, 0.7);
+  backdrop-filter: blur(5px);
+  animation: mf-webcam-player-backdrop-in 160ms ease-out both;
+}
+
+.mf-live-webcam-player {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  width: min(940px, 100%);
+  max-height: 100%;
+  overflow: hidden;
+  border: 1px solid color-mix(in srgb, var(--mf-border) 70%, #75b8ae 30%);
+  border-radius: 20px;
+  background: var(--mf-surface);
+  box-shadow: 0 26px 80px rgba(3, 25, 45, 0.42);
+  animation: mf-webcam-player-dialog-in 190ms cubic-bezier(0.2, 0.82, 0.25, 1) both;
+}
+
+.mf-live-webcam-player__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 11px 12px 11px 16px;
+  border-bottom: 1px solid color-mix(in srgb, var(--mf-border) 72%, transparent);
+}
+
+.mf-live-webcam-player__header > div {
+  display: grid;
+  gap: 2px;
+  min-width: 0;
+}
+
+.mf-live-webcam-player__header small {
+  color: var(--mf-blue);
+  font-size: 0.64rem;
+  font-weight: 850;
+  letter-spacing: 0.055em;
+  text-transform: uppercase;
+}
+
+.mf-live-webcam-player__header strong {
+  overflow: hidden;
+  color: var(--mf-ink);
+  font-size: 0.95rem;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.mf-live-webcam-player__frame {
+  aspect-ratio: 16 / 9;
+  min-height: 0;
+  background: #061d2a;
+}
+
+.mf-live-webcam-player__frame iframe {
+  display: block;
+  width: 100%;
+  height: 100%;
+  border: 0;
+  background: #061d2a;
+}
+
+.mf-live-webcam-player__footer {
+  display: flex;
+  justify-content: flex-end;
+  padding: 9px 16px 11px;
+  border-top: 1px solid color-mix(in srgb, var(--mf-border) 72%, transparent);
+}
+
+.mf-live-webcam-player__footer a {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  min-height: 40px;
+  color: var(--mf-blue);
+  font-size: 0.72rem;
+  font-weight: 820;
+  text-decoration: none;
+}
+
+.mf-live-webcam-player__footer a:hover {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.mf-live-webcam-player__footer a:focus-visible {
+  outline: 2px solid var(--mf-blue);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+html[data-theme="dark"] .mf-live-webcam-player {
+  border-color: rgba(139, 211, 255, 0.2);
+  background: #092a3a;
+}
+
+html[data-theme="dark"] .mf-live-webcam-player__header,
+html[data-theme="dark"] .mf-live-webcam-player__footer {
+  border-color: rgba(139, 211, 255, 0.14);
+}
+
+.mf-live-webcam-image-viewer-layer {
+  position: fixed;
+  z-index: 5200;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  padding:
+    max(8px, var(--mf-safe-area-inset-top))
+    max(8px, var(--mf-safe-area-inset-right))
+    max(8px, var(--mf-safe-area-inset-bottom))
+    max(8px, var(--mf-safe-area-inset-left));
+}
+
+.mf-live-webcam-image-viewer-layer__backdrop {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  border: 0;
+  border-radius: 0;
+  background: rgba(1, 10, 16, 0.9);
+  backdrop-filter: blur(6px);
+  animation: mf-webcam-player-backdrop-in 160ms ease-out both;
+}
+
+.mf-live-webcam-image-viewer {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-rows: auto minmax(0, 1fr) auto;
+  width: min(1100px, 100%);
+  height: min(860px, 100%);
+  overflow: hidden;
+  border: 1px solid rgba(139, 211, 255, 0.18);
+  border-radius: 18px;
+  background: #03131e;
+  box-shadow: 0 30px 90px rgba(0, 0, 0, 0.54);
+  color: #fff;
+  animation: mf-webcam-player-dialog-in 190ms cubic-bezier(0.2, 0.82, 0.25, 1) both;
+}
+
+.mf-live-webcam-image-viewer__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  min-width: 0;
+  padding: 10px 11px 10px 15px;
+  border-bottom: 1px solid rgba(139, 211, 255, 0.15);
+  background: rgba(6, 31, 44, 0.98);
+}
+
+.mf-live-webcam-image-viewer__header > div {
+  display: grid;
+  gap: 2px;
+  min-width: 0;
+}
+
+.mf-live-webcam-image-viewer__header small {
+  color: #8bd3ff;
+  font-size: 0.62rem;
+  font-weight: 840;
+  letter-spacing: 0.055em;
+  text-transform: uppercase;
+}
+
+.mf-live-webcam-image-viewer__header strong {
+  overflow: hidden;
+  font-size: 0.92rem;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.mf-live-webcam-image-viewer__header .mf-icon-button {
+  border-color: rgba(255, 255, 255, 0.2);
+  background: rgba(255, 255, 255, 0.1);
+  color: #fff;
+}
+
+.mf-live-webcam-image-viewer__viewport {
+  position: relative;
+  display: grid;
+  min-height: 0;
+  overflow: hidden;
+  place-items: center;
+  background: #01080d;
+  cursor: grab;
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+.mf-live-webcam-image-viewer__viewport[data-zoomed="true"] {
+  cursor: grab;
+}
+
+.mf-live-webcam-image-viewer__viewport:active {
+  cursor: grabbing;
+}
+
+.mf-live-webcam-image-viewer__image {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  transform-origin: center;
+  user-select: none;
+  -webkit-user-drag: none;
+  will-change: transform;
+}
+
+.mf-live-webcam-image-viewer__controls {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  min-height: 54px;
+  padding: 7px max(12px, var(--mf-safe-area-inset-right)) max(7px, var(--mf-safe-area-inset-bottom));
+  border-top: 1px solid rgba(139, 211, 255, 0.15);
+  background: rgba(6, 31, 44, 0.98);
+}
+
+.mf-live-webcam-image-viewer__controls .mf-icon-button {
+  border-color: rgba(255, 255, 255, 0.2);
+  background: rgba(255, 255, 255, 0.1);
+  color: #fff;
+}
+
+.mf-live-webcam-image-viewer__controls .mf-icon-button:disabled {
+  opacity: 0.38;
+}
+
+.mf-live-webcam-image-viewer__zoom-value {
+  min-width: 50px;
+  color: #d7f1ff;
+  font-size: 0.72rem;
+  font-weight: 800;
+  text-align: center;
+}
+
+@keyframes mf-webcam-player-backdrop-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes mf-webcam-player-dialog-in {
+  from {
+    opacity: 0;
+    transform: translateY(8px) scale(0.97);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@media (max-width: 520px) {
+  .mf-live-webcam-player {
+    border-radius: 16px;
+  }
+
+  .mf-live-webcam-player__footer {
+    justify-content: center;
+  }
+
+  .mf-live-webcam-image-viewer-layer {
+    padding: 0;
+  }
+
+  .mf-live-webcam-image-viewer {
+    width: 100%;
+    height: 100%;
+    border: 0;
+    border-radius: 0;
+  }
+
+  .mf-live-webcam-image-viewer__header {
+    padding-top: max(10px, var(--mf-safe-area-inset-top));
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .mf-live-webcam-player-layer__backdrop,
+  .mf-live-webcam-player,
+  .mf-live-webcam-image-viewer-layer__backdrop,
+  .mf-live-webcam-image-viewer {
+    animation: none;
+  }
+
+  .mf-live-webcam-preview__live-trigger > span,
+  .mf-live-webcam-preview__external-trigger > span {
+    transition: none;
+  }
+}

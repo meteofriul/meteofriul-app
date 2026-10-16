@@ -1,0 +1,273 @@
+{
+  "schemaVersion": 1,
+  "purpose": "Review editoriale dei copy_candidate importati in localMemory. Serve a scegliere cosa promuovere, cosa lasciare in archivio e cosa tenere basso.",
+  "generatedAt": "2026-07-09",
+  "rules": [
+    "Nessun record viene pubblicato da questo file.",
+    "La promozione richiede source review finale, FUR approvato e readyForUi esplicito.",
+    "Una Memoria del giorno deve essere comprensibile in pochi secondi.",
+    "I profili troppo leggeri o troppo pop restano archivio o seconda scelta.",
+    "La notorieta generica non basta: giornalisti, personaggi pop o biografie con solo legame di nascita restano fuori dalla card principale se non hanno impatto storico, culturale, scientifico, artistico o istituzionale forte per il territorio.",
+    "La selezione deve bilanciare territorio, cultura, scienza, arte e memoria locale."
+  ],
+  "summary": {
+    "totalReviewed": 36,
+    "primaryPromotionCandidates": 9,
+    "secondaryPromotionCandidates": 17,
+    "archiveOnlyCandidates": 10
+  },
+  "records": [
+    {
+      "id": "memory-copy-0818-gaetano-kanizsa",
+      "recommendation": "primary_promotion_candidate",
+      "priority": 1,
+      "reason": "Profilo forte, triestino, leggibile anche per pubblico generale: percezione, arte e scienza stanno bene in Scopri.",
+      "needsBeforePublish": ["FUR human review"]
+    },
+    {
+      "id": "memory-copy-1015-giovanni-da-udine",
+      "recommendation": "primary_promotion_candidate",
+      "priority": 2,
+      "reason": "Nome territoriale forte e immediatamente riconoscibile; ottimo ponte tra Udine e storia dell'arte.",
+      "needsBeforePublish": ["FUR human review"]
+    },
+    {
+      "id": "memory-copy-0121-tito-maniacco",
+      "recommendation": "primary_promotion_candidate",
+      "priority": 3,
+      "reason": "Profilo coerente con identita friulana, cultura e racconto del territorio.",
+      "needsBeforePublish": ["FUR human review"]
+    },
+    {
+      "id": "memory-copy-0615-lojze-spacal",
+      "recommendation": "primary_promotion_candidate",
+      "priority": 4,
+      "reason": "Carso, arte e confine: contenuto visivo e territoriale, adatto a una memoria breve.",
+      "needsBeforePublish": ["FUR human review"]
+    },
+    {
+      "id": "memory-copy-0603-giovanni-battista-bassi",
+      "recommendation": "secondary_promotion_candidate",
+      "priority": 5,
+      "reason": "Utile per coprire Pordenone, oggi poco presente nella coda. Profilo locale e urbano.",
+      "needsBeforePublish": []
+    },
+    {
+      "id": "memory-copy-0507-gianni-bisiach",
+      "recommendation": "archive_only_candidate",
+      "priority": 6,
+      "reason": "Profilo chiaro e accessibile, ma resta piu adatto all'Archivio Scopri: non abbastanza centrale per diventare Memoria del giorno principale.",
+      "needsBeforePublish": ["archive context copy", "FUR human review"]
+    },
+    {
+      "id": "memory-copy-0504-lojzka-bratuz",
+      "recommendation": "secondary_promotion_candidate",
+      "priority": 7,
+      "reason": "Memoria culturale di confine, importante per area goriziana e pluralita linguistica.",
+      "needsBeforePublish": []
+    },
+    {
+      "id": "memory-copy-0429-valentin-stanic",
+      "recommendation": "secondary_promotion_candidate",
+      "priority": 8,
+      "reason": "Montagna, cultura e Gorizia: profilo coerente con identita alpina e territoriale.",
+      "needsBeforePublish": []
+    },
+    {
+      "id": "memory-copy-0412-gillo-dorfles",
+      "recommendation": "archive_only_candidate",
+      "priority": 9,
+      "reason": "Nome culturale importante, ma per Scopri e' piu corretto come scheda di archivio: non deve occupare la memoria principale solo per notorieta.",
+      "needsBeforePublish": ["archive context copy", "FUR human review"]
+    },
+    {
+      "id": "memory-copy-1005-giorgio-pressburger",
+      "recommendation": "secondary_promotion_candidate",
+      "priority": 10,
+      "reason": "Teatro, letteratura e memoria europea: buono per Scopri, da rifinire nel tono.",
+      "needsBeforePublish": []
+    },
+    {
+      "id": "memory-copy-0120-luca-carlevarijs",
+      "recommendation": "secondary_promotion_candidate",
+      "priority": 11,
+      "reason": "Profilo artistico solido e legame con Udine; utile per alternare Trieste con Friuli interno.",
+      "needsBeforePublish": []
+    },
+    {
+      "id": "memory-copy-0411-matteo-pertsch",
+      "recommendation": "secondary_promotion_candidate",
+      "priority": 12,
+      "reason": "Architettura e citta: memoria urbana concreta, non solo biografica.",
+      "needsBeforePublish": []
+    },
+    {
+      "id": "memory-copy-0616-stanislaus-joyce",
+      "recommendation": "secondary_promotion_candidate",
+      "priority": 13,
+      "reason": "Interessante per Trieste letteraria, ma rischia di vivere troppo all'ombra di James Joyce.",
+      "needsBeforePublish": ["FUR human review", "copy less derivative"]
+    },
+    {
+      "id": "memory-copy-0205-napoleone-cozzi",
+      "recommendation": "secondary_promotion_candidate",
+      "priority": 14,
+      "reason": "Buon incrocio tra montagna e arte, ma serve fonte/copy piu forte per renderlo memorabile.",
+      "needsBeforePublish": ["FUR human review", "copy strengthening"]
+    },
+    {
+      "id": "memory-copy-0813-lella-vignelli",
+      "recommendation": "secondary_promotion_candidate",
+      "priority": 15,
+      "reason": "Profilo internazionale elegante, ma il legame locale e' quasi solo nascita a Udine: da usare con misura.",
+      "needsBeforePublish": ["FUR human review"]
+    },
+    {
+      "id": "memory-copy-0902-adalgiso-fior",
+      "recommendation": "secondary_promotion_candidate",
+      "priority": 16,
+      "reason": "Molto coerente con lingua e memoria friulana, ma richiede controllo linguistico accurato.",
+      "needsBeforePublish": []
+    },
+    {
+      "id": "memory-copy-1013-marcello-de-stefano",
+      "recommendation": "secondary_promotion_candidate",
+      "priority": 17,
+      "reason": "Buono per arti visive e cinema, ma meno immediato di altri profili.",
+      "needsBeforePublish": ["FUR human review"]
+    },
+    {
+      "id": "memory-copy-0820-enrico-rava",
+      "recommendation": "secondary_promotion_candidate",
+      "priority": 18,
+      "reason": "Profilo musicale forte, ma va valutato se basta il legame di nascita triestina.",
+      "needsBeforePublish": ["FUR human review"]
+    },
+    {
+      "id": "memory-copy-0316-ernesto-nathan-rogers",
+      "recommendation": "secondary_promotion_candidate",
+      "priority": 19,
+      "reason": "Profilo importante, ma serve copy piu concreto per non sembrare enciclopedico.",
+      "needsBeforePublish": []
+    },
+    {
+      "id": "memory-copy-0409-stefan-kociancic",
+      "recommendation": "secondary_promotion_candidate",
+      "priority": 20,
+      "reason": "Molto coerente con confine e lingue, ma necessita controllo di nome, grafia e fonte.",
+      "needsBeforePublish": []
+    },
+    {
+      "id": "memory-copy-1122-silvio-benco",
+      "recommendation": "secondary_promotion_candidate",
+      "priority": 21,
+      "reason": "Trieste letteraria e giornalistica; buono ma non prioritario finche la coda e' molto triestina.",
+      "needsBeforePublish": ["FUR human review"]
+    },
+    {
+      "id": "memory-copy-0705-flavio-paulin",
+      "recommendation": "archive_only_candidate",
+      "priority": 22,
+      "reason": "Nota pop simpatica ma debole come Memoria del giorno principale.",
+      "needsBeforePublish": ["keep as archive or secondary note"]
+    },
+    {
+      "id": "memory-copy-0318-eugenio-pilutti",
+      "recommendation": "archive_only_candidate",
+      "priority": 23,
+      "reason": "Profilo troppo poco leggibile senza contesto aggiuntivo.",
+      "needsBeforePublish": ["archive context copy"]
+    },
+    {
+      "id": "memory-copy-0708-lelio-luttazzi",
+      "recommendation": "archive_only_candidate",
+      "priority": 24,
+      "reason": "Figura nota e piacevole, ma rischia di essere piu costume nazionale che memoria locale.",
+      "needsBeforePublish": ["keep as secondary note"]
+    },
+    {
+      "id": "memory-copy-0706-alberto-spaini",
+      "recommendation": "archive_only_candidate",
+      "priority": 25,
+      "reason": "Interessante ma troppo generico nella forma attuale.",
+      "needsBeforePublish": ["copy strengthening"]
+    },
+    {
+      "id": "memory-copy-0709-aldo-stellita",
+      "recommendation": "archive_only_candidate",
+      "priority": 26,
+      "reason": "Nota pop utile per archivio, non abbastanza solida come scheda del giorno.",
+      "needsBeforePublish": ["keep as archive or secondary note"]
+    },
+    {
+      "id": "memory-copy-1111-giorgio-voghera",
+      "recommendation": "archive_only_candidate",
+      "priority": 27,
+      "reason": "Trieste letteraria gia coperta da candidati piu forti; meglio archivio.",
+      "needsBeforePublish": ["archive context copy"]
+    },
+    {
+      "id": "memory-copy-0225-eugenio-geiringer",
+      "recommendation": "secondary_promotion_candidate",
+      "priority": 28,
+      "reason": "Buona memoria urbana, ma sovrapposta a Pertsch e meno prioritaria.",
+      "needsBeforePublish": []
+    },
+    {
+      "id": "memory-copy-0325-giulio-camagni",
+      "recommendation": "archive_only_candidate",
+      "priority": 29,
+      "reason": "Contenuto leggero e interessante, ma non prioritario per copertura annuale.",
+      "needsBeforePublish": ["keep as archive or secondary note"]
+    },
+    {
+      "id": "memory-copy-0410-claudio-magris",
+      "recommendation": "primary_promotion_candidate",
+      "priority": 30,
+      "reason": "Profilo culturale forte, territoriale e internazionale: candidato da Memoria del giorno primaria dopo FUR review.",
+      "needsBeforePublish": ["FUR human review", "readyForUi decision"]
+    },
+    {
+      "id": "memory-copy-0304-afro-basaldella",
+      "recommendation": "primary_promotion_candidate",
+      "priority": 31,
+      "reason": "Arte, Udine e Novecento: candidato primario, ma da pubblicare solo dopo FUR review.",
+      "needsBeforePublish": ["FUR human review", "readyForUi decision"]
+    },
+    {
+      "id": "memory-copy-0629-biagio-marin",
+      "recommendation": "primary_promotion_candidate",
+      "priority": 32,
+      "reason": "Profilo poetico e territoriale molto forte; candidato primario dopo FUR review.",
+      "needsBeforePublish": ["FUR human review", "readyForUi decision"]
+    },
+    {
+      "id": "memory-copy-0826-novella-cantarutti",
+      "recommendation": "primary_promotion_candidate",
+      "priority": 33,
+      "reason": "Voce friulana forte; candidata primaria dopo revisione FUR accurata.",
+      "needsBeforePublish": ["FUR human review", "readyForUi decision"]
+    },
+    {
+      "id": "memory-copy-1001-pierluigi-cappello",
+      "recommendation": "primary_promotion_candidate",
+      "priority": 34,
+      "reason": "Profilo poetico forte e vicino all'identita friulana; candidato primario dopo FUR review.",
+      "needsBeforePublish": ["FUR human review", "readyForUi decision"]
+    },
+    {
+      "id": "memory-copy-1007-giovanni-battista-brusin",
+      "recommendation": "secondary_promotion_candidate",
+      "priority": 35,
+      "reason": "Buona voce archeologica territoriale; meglio seconda memoria o archivio dopo FUR review.",
+      "needsBeforePublish": ["FUR human review", "readyForUi decision"]
+    },
+    {
+      "id": "memory-copy-1017-carlo-michelstaedter",
+      "recommendation": "primary_promotion_candidate",
+      "priority": 36,
+      "reason": "Profilo culturale forte per Gorizia, pubblicabile solo con tono sobrio e non celebrativo.",
+      "needsBeforePublish": []
+    }
+  ]
+}

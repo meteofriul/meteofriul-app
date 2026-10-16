@@ -1,0 +1,182 @@
+{
+  "schemaVersion": 1,
+  "purpose": "Selezione controllata di proverbi Almanacco riutilizzabili in Scopri senza duplicare le traduzioni IT/FUR.",
+  "rules": [
+    "Il testo resta autorevole in frontend/src/data/almanac/proverbs.json.",
+    "Sono ammessi soltanto record con revisione editoriale IT e FUR approvata.",
+    "L'uso in Scopri non modifica calendario o selezione dell'Almanacco.",
+    "I detti generali entrano nella rotazione controllata: non spostano le date esatte o le feste mobili e si alternano ai detti di intervallo, mese o stagione secondo le regole del selettore."
+  ],
+  "records": [
+    {
+      "proverbId": "ost1876-sant-antoni-ore-lus",
+      "dateAnchors": ["01-17"],
+      "priority": 120,
+      "dateLabel": { "it": "17 gennaio", "fur": "17 di Zenâr" }
+    },
+    {
+      "proverbId": "ost1876-un-fior-no-fas-primevere",
+      "recurrence": "seasonal",
+      "seasons": ["spring"],
+      "priority": 130,
+      "dateLabel": { "it": "primavera", "fur": "Primevere" }
+    },
+    { "proverbId": "ost1876-ogni-fior-so-stagion", "priority": 140 },
+    { "proverbId": "ost1876-aghe-corinte-no-puarte-sporcjetat", "priority": 150 },
+    { "proverbId": "ost1876-un-len-no-fas-fuc", "priority": 160 },
+    { "proverbId": "ost1876-mior-uf-vue-gjaline-doman", "priority": 170 },
+    { "proverbId": "ost1876-pense-vue-par-doman", "priority": 180 },
+    { "proverbId": "ost1876-tet-no-par-une-ploe", "priority": 190 },
+    { "proverbId": "ost1876-plea-arbul-zovin", "priority": 200 },
+    { "proverbId": "ost1876-conts-spes-amicizie-lungje", "priority": 210 },
+    { "proverbId": "ost1876-om-visat-miec-armat", "priority": 220 },
+    { "proverbId": "ost1876-cui-no-prove-no-crot", "priority": 230 },
+    { "proverbId": "ost1876-ogni-robe-so-viers", "priority": 240 },
+    { "proverbId": "ost1876-ocasion-fas-om-mestri", "priority": 250 },
+    { "proverbId": "ost1876-no-si-sa-mai-avonde", "priority": 260 },
+    { "proverbId": "ost1876-par-fa-bisugne-scomenca", "priority": 270 },
+    { "proverbId": "ost1876-nol-baste-scomenca-seguita", "priority": 280 },
+    { "proverbId": "ost1876-union-fas-fuarce", "priority": 290 },
+    { "proverbId": "ost1876-necessitat-fas-om-mestri", "priority": 300 },
+    { "proverbId": "ostermann-mulinars", "priority": 310 },
+    { "proverbId": "ostermann-barbe-mus", "priority": 320 },
+    { "proverbId": "ost1876-cjase-braide-prat", "priority": 330 },
+    { "proverbId": "ost1876-ogni-vit-so-pal", "priority": 340 },
+    { "proverbId": "ost1876-troi-batit-no-jerbe", "priority": 350 },
+    { "proverbId": "ost1876-rive-prin-mulin", "priority": 360 },
+    { "proverbId": "ost1876-roste-denant-aghe", "priority": 370 },
+    { "proverbId": "ost1876-no-comede-picule-buse", "priority": 380 },
+    { "proverbId": "ost1876-cjar-cence-tamon-fossal", "priority": 390 },
+    { "proverbId": "ost1876-ogni-pais-so-usance", "priority": 400 },
+    {
+      "proverbId": "ost1876-genar-febrar-marc",
+      "category": "detto_meteo",
+      "months": ["01", "02", "03"],
+      "priority": 410,
+      "dateLabel": { "it": "gennaio-marzo", "fur": "Zenâr-Març" }
+    },
+    {
+      "proverbId": "ost1876-febrar-un-di-ben",
+      "category": "detto_meteo",
+      "months": ["02"],
+      "priority": 420,
+      "dateLabel": { "it": "febbraio", "fur": "Fevrâr" }
+    },
+    {
+      "proverbId": "ost1876-san-nicolo-fred-cumo",
+      "category": "calendario_popolare",
+      "dateAnchors": ["12-06"],
+      "priority": 430,
+      "dateLabel": { "it": "6 dicembre", "fur": "6 di Dicembar" }
+    },
+    {
+      "proverbId": "ost1876-nef-prime-nadal-regal",
+      "category": "detto_meteo",
+      "dateRanges": ["12-01..12-24"],
+      "priority": 440,
+      "dateLabel": { "it": "prima di Natale", "fur": "prime di Nadâl" }
+    },
+    {
+      "proverbId": "ost1876-prime-ploe-avost-bosc",
+      "category": "detto_meteo",
+      "months": ["08"],
+      "priority": 450,
+      "dateLabel": { "it": "agosto", "fur": "Avost" }
+    },
+    {
+      "proverbId": "ost1876-avril-ploe-sutil",
+      "category": "detto_meteo",
+      "months": ["04"],
+      "priority": 460,
+      "dateLabel": { "it": "aprile", "fur": "Avrîl" }
+    },
+    { "proverbId": "ostermann-103-no-mai-ploe", "category": "detto_meteo", "priority": 470 },
+    { "proverbId": "ostermann-105-bon-timp-gnot", "category": "detto_meteo", "priority": 480 },
+    { "proverbId": "ostermann-105-aghe-pais", "category": "detto_meteo", "priority": 490 },
+    {
+      "proverbId": "ostermann-190-marz-avril-mai",
+      "category": "detto_meteo",
+      "recurrence": "seasonal",
+      "months": ["03", "04", "05"],
+      "seasons": ["spring"],
+      "priority": 500,
+      "dateLabel": { "it": "marzo-maggio", "fur": "Març-Mai" }
+    },
+    {
+      "proverbId": "ostermann-126-bruntule-tempieste",
+      "category": "detto_meteo",
+      "recurrence": "seasonal",
+      "seasons": ["spring", "summer"],
+      "priority": 510,
+      "dateLabel": { "it": "primavera-estate", "fur": "Primevere-istât" }
+    },
+    {
+      "proverbId": "ostermann-126-tempieste-no-charestie",
+      "category": "detto_meteo",
+      "recurrence": "seasonal",
+      "seasons": ["spring", "summer"],
+      "priority": 520,
+      "dateLabel": { "it": "primavera-estate", "fur": "Primevere-istât" }
+    },
+    {
+      "proverbId": "ostermann-132-prime-nev-plan",
+      "category": "detto_meteo",
+      "recurrence": "seasonal",
+      "seasons": ["winter"],
+      "priority": 530,
+      "dateLabel": { "it": "inverno", "fur": "Invier" }
+    },
+    {
+      "proverbId": "ostermann-029-canicule-bagnat-sut",
+      "category": "calendario_popolare",
+      "dateRanges": ["07-21..08-23"],
+      "priority": 540,
+      "dateLabel": { "it": "Canicola", "fur": "Canicule" }
+    },
+    {
+      "proverbId": "ostermann-062-sis-dis-an-mesais",
+      "category": "calendario_popolare",
+      "dateAnchors": [],
+      "dateRanges": ["12-26..01-06"],
+      "priority": 550,
+      "dateLabel": { "it": "26 dicembre-6 gennaio", "fur": "26 di Dicembar-6 di Zenâr" }
+    },
+    {
+      "proverbId": "ostermann-063-otubar-febrar",
+      "category": "detto_meteo",
+      "months": ["10"],
+      "priority": 560,
+      "dateLabel": { "it": "ottobre / febbraio", "fur": "Otubar / Fevrâr" }
+    },
+    {
+      "proverbId": "ostermann-063-sant-egidi-color-mes",
+      "category": "calendario_popolare",
+      "dateAnchors": ["09-01"],
+      "priority": 570,
+      "dateLabel": { "it": "1 settembre", "fur": "1 di Setembar" }
+    },
+    { "proverbId": "ost1876-ploe-stagion-tesaur", "category": "vita_dei_campi", "priority": 580 },
+    { "proverbId": "ost1876-se-semena-vece-forment", "category": "vita_dei_campi", "priority": 590 },
+    { "proverbId": "ost1876-ogni-jerbe-semence", "category": "vita_dei_campi", "priority": 600 },
+    { "proverbId": "ostermann-mus-vene", "priority": 610 },
+    { "proverbId": "ost1876-cjacaris-lungjis-gnot-curte", "priority": 620 },
+    { "proverbId": "ost1876-nissun-nas-mestri", "priority": 630 },
+    { "proverbId": "ost1876-forment-ten-vend", "category": "vita_dei_campi", "priority": 640 },
+    { "proverbId": "ost1876-prat-seat-no-scuindisi", "category": "vita_dei_campi", "priority": 650 },
+    { "proverbId": "ost1876-bati-fier-cjald", "priority": 660 },
+    { "proverbId": "ost1876-dome-farine-no-pan", "priority": 670 },
+    { "proverbId": "ost1876-olei-ben-no-coste-nuje", "priority": 680 },
+    { "proverbId": "ost1876-ducj-sanc-ros", "priority": 690 },
+    { "proverbId": "ost1876-cognossi-mangja-star-sal", "priority": 700 },
+    { "proverbId": "ost1876-prometi-mantigni", "priority": 710 },
+    { "proverbId": "ost1876-gotis-spessis-forin-clap", "priority": 720 },
+    { "proverbId": "ost1876-cuatri-voi-plui-doi", "priority": 730 },
+    { "proverbId": "ost1876-mior-pleasi-scjavacasi", "priority": 740 },
+    { "proverbId": "ost1876-da-timp-al-timp", "priority": 750 },
+    { "proverbId": "ost1876-nolis-panolis", "category": "vita_dei_campi", "priority": 760 },
+    { "proverbId": "ost1876-altris-timps-altris-usancis", "priority": 770 },
+    { "proverbId": "ost1876-scove-denant-puarte", "priority": 780 },
+    { "proverbId": "ost1876-pan-sudat-no-robat", "priority": 790 },
+    { "proverbId": "ost1876-cite-mani", "priority": 800 }
+  ]
+}

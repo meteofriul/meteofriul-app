@@ -1,0 +1,161 @@
+{
+  "schemaVersion": 1,
+  "snapshotDate": "2026-09-01",
+  "purpose": "Sesto lotto di riti: una processione votiva lagunare e una rievocazione del ciclo agricolo, entrambe legate a una domenica ordinale di luglio. Copy bilingue e riferimenti linguistici restano una sola volta nel catalogo promosso.",
+  "readyForUi": false,
+  "runtimeCatalog": "frontend/src/data/discover/institutionalRituals.json",
+  "editorialDecision": {
+    "basis": "user_delegated_assisted_editorial_review",
+    "reviewer": "assistant",
+    "independentHumanReview": false,
+    "scope": [
+      "ritual-research-grado-perdon-barbana",
+      "ritual-research-fagagna-trebbiatura"
+    ],
+    "note": "Decisione editoriale assistita nel mandato di continuare Scopri, non approvazione dell'utente frase per frase né certificazione ARLeF o revisione professionale indipendente."
+  },
+  "rules": [
+    "Manifest e record di ricerca non sono contenuti UI; la promozione riguarda soltanto i due promotedRecordId.",
+    "Le fonti culturali primarie e i riferimenti linguistici sono HTML verificati; nessun PDF è necessario alla decisione.",
+    "Le regole ordinali derivano da descrizioni annuali, non dalla data isolata di una singola edizione.",
+    "Nessun orario, programma corrente o invito. Le aree indicano il contesto culturale, non la posizione dell'utente.",
+    "Testi originali di sintesi; nessuna immagine, ripresa o copia estesa delle fonti."
+  ],
+  "records": [
+    {
+      "id": "ritual-research-grado-perdon-barbana",
+      "promotedRecordId": "institutional-ritual-grado-perdon-barbana",
+      "canonicalKey": "grado-perdon-barbana-prima-domenica-luglio",
+      "rubric": "riti_credenze_popolari",
+      "reviewStatus": "promoted",
+      "readyForUi": false,
+      "promotedAt": "2026-09-01",
+      "source": {
+        "url": "https://grado.it/it/eventi-ed-escursioni/grandi-eventi/sabo-grando-e-perdon-di-barbana",
+        "authority": "Consorzio Grado Turismo",
+        "accessMethod": "direct_http_html",
+        "checkedAt": "2026-09-01"
+      },
+      "supportingSources": [
+        {
+          "url": "https://www.turismofvg.it/it/mare/escursioni-in-barca-nella-costa-del-friuli-venezia-giulia/i-10-itinerari-in-barca-da-non-perdere/in-visita-al-santuario-di-barbana-nella-laguna-di-grado",
+          "authority": "PromoTurismoFVG",
+          "accessMethod": "direct_http_html",
+          "purpose": "Conferma la prima domenica di luglio, il corteo annuale di barche e la tradizione legata al 1237."
+        },
+        {
+          "url": "https://www.diocesigorizia.it/wd-interventi-vesc/ciascuno-di-noi-partecipa-a-disegnare-una-responsabilita-collettiva/",
+          "authority": "Arcidiocesi di Gorizia",
+          "publishedAt": "2022-07-03",
+          "accessMethod": "direct_http_html",
+          "purpose": "Conferma il voto rinnovato dalla comunità di Grado e attribuisce alla tradizione l'origine del 1237."
+        }
+      ],
+      "evidenceSummary": "La fonte di Grado dichiara che il Perdòn si tiene ogni anno la prima domenica di luglio: il corteo di barche va da Grado a Barbana e la Stella del Mare trasporta la statua della Madonna degli Angeli. PromoTurismoFVG e l'Arcidiocesi corroborano calendario, comunità e voto.",
+      "temporalRule": {
+        "type": "nth_weekday",
+        "month": 7,
+        "weekday": 0,
+        "ordinal": 1
+      },
+      "editorialWindow": {
+        "type": "nth_weekday",
+        "month": 7,
+        "weekday": 0,
+        "ordinal": 1
+      },
+      "currentEventScheduleVerified": false,
+      "geographicScope": [
+        "grado",
+        "barbana",
+        "laguna"
+      ],
+      "scopeNote": "Il 1237 viene attribuito alla tradizione e non trattato come cronaca dimostrata. La scheda non include il Sabo Grando, il programma di un'edizione, orari o la distinta processione dei pescatori del primo maggio. La bozza memory-draft-grado-perdon-barbana resta nascosta e intatta; questo manifest registra che la nuova scheda ne supera il tema senza duplicarla nella selezione.",
+      "languageReview": {
+        "approvalBasis": "user_delegated_assisted_editorial_review",
+        "reviewer": "assistant",
+        "independentHumanReview": false,
+        "referencesLocation": "institutional-ritual-grado-perdon-barbana.languageReview.fur.references",
+        "notes": "Perdòn di Barbana è conservato come nome tradizionale. Procession/corteu, barcje, santuari, vôt, epidemie, statue e Lui sono stati controllati in HTML ARLeF; il corpo usa friulano standard assistito, non una ricostruzione del gradese locale."
+      },
+      "duplicateReview": {
+        "status": "supersedes_hidden_draft",
+        "comparedCatalogs": [
+          "ostermannCulturalDiscover",
+          "institutionalRituals",
+          "institutionalArchive",
+          "localMemory",
+          "municipalityProfiles"
+        ],
+        "supersededRecordId": "memory-draft-grado-perdon-barbana",
+        "note": "La traccia locale era una bozza non visibile, senza data, con fonte candidata Wikipedia e FUR non revisionato. Viene recuperata in una sola scheda istituzionale attiva; casoni, profilo di Grado e processione dei pescatori trattano temi distinti."
+      }
+    },
+    {
+      "id": "ritual-research-fagagna-trebbiatura",
+      "promotedRecordId": "institutional-ritual-fagagna-trebbiatura",
+      "canonicalKey": "fagagna-cjase-cocel-trebbiatura-seconda-domenica-luglio",
+      "rubric": "riti_credenze_popolari",
+      "reviewStatus": "promoted",
+      "readyForUi": false,
+      "promotedAt": "2026-09-01",
+      "source": {
+        "url": "https://www.prolocofagagna.it/festa-della-rebbiatura/",
+        "authority": "Pro Loco Fagagna APS",
+        "accessMethod": "direct_http_html",
+        "checkedAt": "2026-09-01"
+      },
+      "supportingSources": [
+        {
+          "url": "https://www.museocjasecocel.it/iniziative1-iniziative-annuali",
+          "authority": "Museo della vita contadina Cjase Cocèl",
+          "accessMethod": "indexed_html_checked_directly_unavailable",
+          "purpose": "La copia indicizzata conferma la seconda domenica di luglio, la trebbiatura del frumento e la battitura manuale della segale; il percorso diretto restituiva 404 al controllo finale."
+        },
+        {
+          "url": "https://www.comune.fagagna.ud.it/it/vivere-il-comune-29554/eventi-29556",
+          "authority": "Comune di Fagagna",
+          "accessMethod": "indexed_javascript_listing",
+          "purpose": "L'elenco comunale conferma domenica 12 luglio per l'edizione 2026, coerente con la seconda domenica del mese."
+        }
+      ],
+      "evidenceSummary": "La Pro Loco indica la seconda domenica di luglio e descrive il frumento portato sull'aia, la trebbia azionata dal trattore e la battitura manuale della segale. Le pagine del museo e del Comune corroborano la ricorrenza e l'edizione 2026.",
+      "temporalRule": {
+        "type": "nth_weekday",
+        "month": 7,
+        "weekday": 0,
+        "ordinal": 2
+      },
+      "editorialWindow": {
+        "type": "nth_weekday",
+        "month": 7,
+        "weekday": 0,
+        "ordinal": 2
+      },
+      "currentEventScheduleVerified": false,
+      "geographicScope": [
+        "fagagna",
+        "cjase_cocel"
+      ],
+      "scopeNote": "È descritta come rievocazione museale annuale, non come pratica agricola proseguita senza interruzioni. La regola ordinale è stabilita dalla pagina dell'organizzatore; il calendario 2026 serve solo da riscontro. Nessun orario o programma viene pubblicato nell'app.",
+      "languageReview": {
+        "approvalBasis": "user_delegated_assisted_editorial_review",
+        "reviewer": "assistant",
+        "independentHumanReview": false,
+        "referencesLocation": "institutional-ritual-fagagna-trebbiatura.languageReview.fur.references",
+        "notes": "Batidure, forment, siale, machine e lavorâ sono stati controllati direttamente nel dizionario HTML ARLeF; Cjase Cocèl resta il nome proprio del museo."
+      },
+      "duplicateReview": {
+        "status": "distinct",
+        "comparedCatalogs": [
+          "ostermannCulturalDiscover",
+          "institutionalRituals",
+          "institutionalArchive",
+          "localMemory",
+          "municipalityProfiles"
+        ],
+        "note": "Nessun contenuto sulla trebbiatura di Fagagna nei cataloghi controllati. La vendemmia, le Rogazioni e il profilo storico di Cjase Cocèl raccontano altri gesti o aspetti."
+      }
+    }
+  ]
+}

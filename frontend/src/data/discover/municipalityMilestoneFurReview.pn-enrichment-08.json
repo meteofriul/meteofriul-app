@@ -1,0 +1,87 @@
+{
+  "schemaVersion": 1,
+  "batchId": "pn-enrichment-milestones-08-fur-review",
+  "sourceResearchBatchId": "pn-enrichment-milestones-08",
+  "reviewedAt": "2026-09-02",
+  "runtimeIntegration": false,
+  "reviewMethod": "assisted_standard_reference_review",
+  "approvalBasis": "user_delegated_assisted_editorial_review",
+  "reviewer": "assistant",
+  "independentHumanReview": false,
+  "approvalNote": "Decisione editoriale assistita sotto il mandato di completamento Scopri. Le fonti ARLeF verificano lessico, toponimi e modelli d'uso, non certificano queste frasi; nessuna revisione professionale indipendente né lettura frase per frase attribuita all'utente.",
+  "summary": {
+    "totalRecords": 3,
+    "approved": 3,
+    "pendingHumanReview": 0
+  },
+  "records": [
+    {
+      "id": "casarsa-academiuta-founded-1945",
+      "status": "approved",
+      "labelFur": "A Versute e nas la Academiuta di lenga furlana",
+      "notes": "Versute è il toponimo ARLeF; e nas segue il lemma nassi. Academiuta di lenga furlana resta il nome storico del sodalizio, conservato anche nell'esempio lessicografico di Versutta, senza normalizzarlo in un nome diverso.",
+      "references": [
+        {
+          "url": "https://superdizionari.arlef.it/ricerca?term=Versutta&language=it&gui=fur",
+          "note": "Versutta → Versute; l'esempio conserva il nome proprio Academiuta di Lenga Furlana."
+        },
+        {
+          "url": "https://superdizionari.arlef.it/ricerca?term=nascere&language=it&gui=fur",
+          "note": "Nascere → nassi; e nas è la forma femminile singolare, utilizzabile anche per la nascita di un sodalizio."
+        }
+      ]
+    },
+    {
+      "id": "montereale-archaeological-museum-opening-2011",
+      "status": "approved",
+      "labelFur": "Al ven inaugurât il Museu archeologjic di Montreâl",
+      "notes": "Inaugurât, museu e archeologjic seguono i lemmi ARLeF; Montreâl è il toponimo repertoriato, già presente nel titolo del profilo. La frase distingue esplicitamente il museo archeologico da quello dell'energia.",
+      "references": [
+        {
+          "url": "https://superdizionari.arlef.it/ricerca?term=inaugurare&language=it&gui=fur",
+          "note": "Inaugurare → inaugurâ; participio inaugurât."
+        },
+        {
+          "url": "https://superdizionari.arlef.it/ricerca?term=museo&language=it&gui=fur",
+          "note": "Museo → museu."
+        },
+        {
+          "url": "https://superdizionari.arlef.it/ricerca?term=archeologico&language=it&gui=fur",
+          "note": "Archeologico → archeologjic."
+        },
+        {
+          "url": "https://superdizionari.arlef.it/ricerca?term=Montereale%20Valcellina&language=it&gui=fur",
+          "note": "Montereale Valcellina → Montreâl."
+        }
+      ]
+    },
+    {
+      "id": "pinzano-pordenone-madonna-san-martino-1525",
+      "status": "approved",
+      "labelFur": "Il Pordenone al piture la Madone cul Frutin te glesie di sant Martin",
+      "notes": "Piture segue piturâ; Madone cul Frutin riprende il modello ARLeF per la rappresentazione artistica di Maria con Gesù bambino. Glesie e sant Martin sono verificati; il nome d'arte Il Pordenone resta invariato.",
+      "references": [
+        {
+          "url": "https://superdizionari.arlef.it/ricerca?term=dipingere&language=it&gui=fur",
+          "note": "Dipingere → piturâ; l'esempio attesta al piture."
+        },
+        {
+          "url": "https://superdizionari.arlef.it/ricerca?term=Madonna&language=it&gui=fur",
+          "note": "Madonna → Madone."
+        },
+        {
+          "url": "https://superdizionari.arlef.it/ricerca?term=bambino&language=it&gui=fur",
+          "note": "Per Gesù bambino nelle rappresentazioni artistiche: Frutin, Frut; l'esempio attesta Madone cul Frutin."
+        },
+        {
+          "url": "https://superdizionari.arlef.it/ricerca?term=chiesa&language=it&gui=fur",
+          "note": "Chiesa come edificio → glesie."
+        },
+        {
+          "url": "https://superdizionari.arlef.it/ricerca?term=San%20Martino&language=it&gui=fur",
+          "note": "San Martino, santo → sant Martin."
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,400 @@
+{
+  "schemaVersion": 1,
+  "snapshotDate": "2026-09-01",
+  "purpose": "Registro non visibile in UI delle lacune editoriali e dei contenuti Scopri da integrare in futuro.",
+  "rules": [
+    "La copertura tecnica giornaliera non equivale automaticamente a ricchezza editoriale.",
+    "Un campo vuoto non viene riempito senza una fonte verificabile e un ambito geografico corretto.",
+    "I conteggi sono controllati dai test e devono essere aggiornati insieme ai cataloghi.",
+    "I contenuti dipendenti dal meteo restano separati dalle vere lacune di materiale.",
+    "Il file documenta il lavoro futuro ma non viene letto dalla UI.",
+    "Cesti, Latteria e Cartoline di Lignano conservano l'approvazione editoriale condizionata del 30 agosto: user_conditional_standard_reference_review. Le altre 17 schede dei primi due lotti sono promosse il 31 agosto dopo approvazione editoriale esplicita dell'utente sulla base della revisione assistita, senza revisione FUR esterna: user_explicit_assisted_review_approval. Le nove schede dei lotti archivio 03–05 sono promosse il 1 settembre nel mandato delegato di completare Scopri: user_delegated_assisted_editorial_review. Nessuna di queste basi equivale a certificazione ARLeF o revisione professionale indipendente."
+  ],
+  "executionPlan": {
+    "status": "in_progress",
+    "strategy": "municipality_first_editorial_batches",
+    "scope": [
+      "municipality-historical-milestones",
+      "ritual-calendar-breadth",
+      "traditional-sayings-variety",
+      "archive-weather-context",
+      "daily-memory-coverage"
+    ],
+    "nextFocus": "municipality-historical-milestones",
+    "document": "docs/operations/SCOPRI_COMPLETION_PLAN_2026-08-31.md",
+    "rules": [
+      "Per questa fase il focus resta sulle tappe comunali fino a una nuova decisione editoriale; le altre rubriche restano valide ma non interrompono i lotti comunali.",
+      "Ogni ciclo lascia aggiunte verificabili e misura i conteggi e la varietà; la presenza quotidiana da sola non basta.",
+      "Tre tappe per Comune sono un obiettivo editoriale quando documentabili, non una quota da riempire con fatti dubbi o duplicati.",
+      "Le decisioni editoriali assistite sotto il mandato di completamento sono tracciate come tali: non attestano revisione professionale indipendente, certificazione ARLeF o lettura frase per frase dell'utente.",
+      "I nuovi candidati incerti restano separati dalla UI; le copie storiche di ricerca non diventano cataloghi runtime.",
+      "I 26 contenuti meteorologici sono stati valutati: otto reinterpretati soltanto in Scopri come racconti storici, diciotto ancora esclusi con motivazione individuale in weatherContextReview.json. Nessun dato meteo dedotto dai tag e nessuna modifica ad Almanacco."
+    ]
+  },
+  "records": [
+    {
+      "id": "municipality-historical-milestones",
+      "rubric": "Conosci la localita",
+      "status": "editorial_material_gap",
+      "priority": "high",
+      "currentSnapshot": {
+        "municipalityProfiles": 215,
+        "totalMilestones": 463,
+        "profilesWithoutMilestones": 0,
+        "profilesWithOneMilestone": 83,
+        "profilesWithTwoMilestones": 16,
+        "profilesWithAtLeastThreeMilestones": 116,
+        "pordenoneMilestones": 3
+      },
+      "researchProgress": {
+        "batchId": "ud-enrichment-milestones-09",
+        "snapshotDate": "2026-09-02",
+        "municipalities": 3,
+        "sourceVerifiedCandidates": 3,
+        "itDraftCandidates": 0,
+        "furDraftPendingReviewCandidates": 0,
+        "promotedCandidates": 3,
+        "runtimeIntegration": false
+      },
+      "previousResearchBatches": [
+        {
+          "batchId": "pn-enrichment-milestones-01",
+          "snapshotDate": "2026-08-31",
+          "municipalities": 3,
+          "sourceVerifiedCandidates": 4,
+          "itDraftCandidates": 0,
+          "furDraftPendingReviewCandidates": 0,
+          "promotedCandidates": 4,
+          "runtimeIntegration": false
+        },
+        {
+          "batchId": "ud-go-enrichment-milestones-01",
+          "snapshotDate": "2026-08-31",
+          "municipalities": 3,
+          "sourceVerifiedCandidates": 4,
+          "itDraftCandidates": 0,
+          "furDraftPendingReviewCandidates": 0,
+          "promotedCandidates": 4,
+          "runtimeIntegration": false
+        },
+        {
+          "batchId": "ts-ud-pn-enrichment-milestones-01",
+          "snapshotDate": "2026-08-31",
+          "municipalities": 3,
+          "sourceVerifiedCandidates": 6,
+          "itDraftCandidates": 0,
+          "furDraftPendingReviewCandidates": 0,
+          "promotedCandidates": 6,
+          "runtimeIntegration": false
+        },
+        {
+          "batchId": "ud-go-pn-enrichment-milestones-02",
+          "snapshotDate": "2026-08-31",
+          "municipalities": 3,
+          "sourceVerifiedCandidates": 6,
+          "itDraftCandidates": 0,
+          "furDraftPendingReviewCandidates": 0,
+          "promotedCandidates": 6,
+          "runtimeIntegration": false
+        },
+        {
+          "batchId": "ud-go-pn-enrichment-milestones-03",
+          "snapshotDate": "2026-09-01",
+          "municipalities": 3,
+          "sourceVerifiedCandidates": 3,
+          "itDraftCandidates": 0,
+          "furDraftPendingReviewCandidates": 0,
+          "promotedCandidates": 3,
+          "runtimeIntegration": false
+        },
+        {
+          "batchId": "ud-go-pn-ts-enrichment-milestones-04",
+          "snapshotDate": "2026-09-01",
+          "municipalities": 4,
+          "sourceVerifiedCandidates": 4,
+          "itDraftCandidates": 0,
+          "furDraftPendingReviewCandidates": 0,
+          "promotedCandidates": 4,
+          "runtimeIntegration": false
+        },
+        {
+          "batchId": "pn-enrichment-milestones-02",
+          "snapshotDate": "2026-09-01",
+          "municipalities": 3,
+          "sourceVerifiedCandidates": 4,
+          "itDraftCandidates": 0,
+          "furDraftPendingReviewCandidates": 0,
+          "promotedCandidates": 4,
+          "runtimeIntegration": false
+        },
+        {
+          "batchId": "go-ts-enrichment-milestones-01",
+          "snapshotDate": "2026-09-01",
+          "municipalities": 2,
+          "sourceVerifiedCandidates": 3,
+          "itDraftCandidates": 0,
+          "furDraftPendingReviewCandidates": 0,
+          "promotedCandidates": 3,
+          "runtimeIntegration": false
+        },
+        {
+          "batchId": "ud-go-enrichment-milestones-02",
+          "snapshotDate": "2026-09-01",
+          "municipalities": 2,
+          "sourceVerifiedCandidates": 4,
+          "itDraftCandidates": 0,
+          "furDraftPendingReviewCandidates": 0,
+          "promotedCandidates": 4,
+          "runtimeIntegration": false
+        },
+        {
+          "batchId": "ud-pn-enrichment-milestones-05",
+          "snapshotDate": "2026-09-01",
+          "municipalities": 3,
+          "sourceVerifiedCandidates": 6,
+          "itDraftCandidates": 0,
+          "furDraftPendingReviewCandidates": 0,
+          "promotedCandidates": 6,
+          "runtimeIntegration": false
+        },
+        {
+          "batchId": "ud-enrichment-milestones-06",
+          "snapshotDate": "2026-09-01",
+          "municipalities": 3,
+          "sourceVerifiedCandidates": 3,
+          "itDraftCandidates": 0,
+          "furDraftPendingReviewCandidates": 0,
+          "promotedCandidates": 3,
+          "runtimeIntegration": false
+        },
+        {
+          "batchId": "ud-pn-enrichment-milestones-07",
+          "snapshotDate": "2026-09-02",
+          "municipalities": 3,
+          "sourceVerifiedCandidates": 3,
+          "itDraftCandidates": 0,
+          "furDraftPendingReviewCandidates": 0,
+          "promotedCandidates": 3,
+          "runtimeIntegration": false
+        },
+        {
+          "batchId": "pn-enrichment-milestones-08",
+          "snapshotDate": "2026-09-02",
+          "municipalities": 3,
+          "sourceVerifiedCandidates": 3,
+          "itDraftCandidates": 0,
+          "furDraftPendingReviewCandidates": 0,
+          "promotedCandidates": 3,
+          "runtimeIntegration": false
+        }
+      ],
+      "futureWork": [
+        "Nessun profilo e più vuoto: ampliare progressivamente i 99 Comuni che hanno ancora soltanto una o due tappe.",
+        "Usare fonti comunali, regionali, archivistiche o bibliografiche verificabili.",
+        "Puntare a tre tappe soltanto quando le fonti lo consentono, senza inventare date o importanza storica.",
+        "Conservare una fonte specifica per ogni nuova tappa.",
+        "Primo lotto di arricchimento PN integrato: quattro tappe per Andreis, Cimolais e Sacile, con decisione editoriale assistita nell'ambito del mandato di completamento Scopri. Ricerca iniziale conservata separatamente; nessuna certificazione o revisione professionale indipendente.",
+        "Secondo lotto UD/GO integrato: quattro tappe per Bagnaria Arsa, Talmassons e Monfalcone; i tre profili raggiungono tre tappe. Il censimento del 1375, le tombe rinvenute nel 1990, il feudo del 1339 e il cantiere fondato nel 1908 restano fatti distinti e con fonte propria.",
+        "Terzo lotto TS/UD/PN integrato: sei tappe per Muggia, Artegna e San Vito al Tagliamento, tutti ora con tre tappe. Sovranità veneziana e Museo Ugo Carà; passaggio del castello ai Savorgnan e nascita della banda; attestazione dell'Ospedale dei Battuti e primo spettacolo ERT nella sala. Non confondere attestazioni, proprietà e intitolazioni con fondazioni. La revisione IT/FUR assistita è limitata ai sei ID, non è una certificazione linguistica.",
+        "Quarto lotto UD/GO/PN integrato: sei tappe per Gemona del Friuli, Grado e Aviano, tutti con tre tappe. Rifacimento del Palazzo Comunale e apertura dell'Archivio Cinema; riconoscimento come stazione di cura e ponte girevole; consacrazione del santuario e apertura internazionale del festival. Per il ponte si conserva solo l'anno 1936, non il giorno discordante; per il festival non si sceglie arbitrariamente fra le fondazioni 1968 e 1969.",
+        "Quinto lotto UD/GO/PN integrato: tre tappe per Aquileia, Gradisca d'Isonzo e Cordenons, tutti ora con tre tappe. Iscrizione UNESCO dell'area archeologica e della Basilica patriarcale, sede vescovile dal 1788 al 1791 e creazione del giardino di Villa Raetz nel 1902. Il riconoscimento UNESCO non è esteso a tutta la città, il ruolo ecclesiastico non è confuso con il dominio asburgico e il progetto di Raetz è attribuito soltanto al giardino.",
+        "Sesto lotto UD/GO/TS/PN integrato: quattro tappe per Palmanova, Medea, Sgonico e Spilimbergo. Palmanova, Medea e Spilimbergo raggiungono tre tappe; Sgonico passa da una a due. Il 1806 indica l'avvio della terza cinta e non il completamento, il 1915 resta un ingresso militare e non un'annessione, l'apertura di Carsiana resta distinta dalla fondazione e la scuola del mosaico non riceve primati non documentati.",
+        "Settimo lotto PN integrato: quattro tappe per Budoia, Fiume Veneto e Sesto al Reghena, tutti ora con tre tappe. Le opere idrauliche di Dardago non conservano il primato regionale del mulino, la scuola femminile del 1870 non viene presentata come piena parità scolastica, il decreto del 1911 modifica il nome Fiume senza fondare il Comune e la distruzione dell'899 resta limitata all'abbazia, con ricostruzione successiva.",
+        "Ottavo lotto GO/TS integrato: tre tappe per Doberdò del Lago e Sgonico, entrambi ora con tre tappe. La menzione del 1179 non viene trasformata nella nascita del Comune, župa resta il termine storico della fonte senza equivalenti amministrativi moderni e l'apertura turistica della Grotta Gigante nel 1908 non viene attribuita al Comune.",
+        "Nono lotto UD/GO integrato: quattro tappe per San Daniele del Friuli e Staranzano, entrambi ora con tre tappe. L'istituzione del Consorzio nel 1961 non diventa la nascita del prosciutto; il riconoscimento DOP del 1996 resta distinto dal riconoscimento statale del 1970, documentato ma non promosso. Per Staranzano sono esclusi sia un anno unico arbitrario nell'intervallo 1817-1820 sia l'aggregazione data al 1867: la fonte documenta in quell'anno soltanto la richiesta.",
+        "Decimo lotto UD/PN integrato: sei tappe per Aiello del Friuli, Cividale del Friuli e San Quirino, tutti ora con tre tappe. La Fiera di San Carlo resta distinta dalla festa patronale e non riceve una continuità ininterrotta non documentata; Joannis è trattato come Comune soppresso e aggregato. Il trasferimento di Callisto non viene fatto partire da Aquileia e il museo del 1817 non riceve retroattivamente l'attuale qualifica nazionale. Per San Quirino l'incursione del 1499 non aggiunge vittime o distruzione totale e l'assetto napoleonico del 1807 non diventa la fondazione del Comune.",
+        "Undicesimo lotto UD integrato: tre tappe per Lignano Sabbiadoro, Tolmezzo e Zuglio, tutti ora con tre tappe. Per Lignano il 1903 resta l'anno documentato della costruzione del primo stabilimento, senza scegliere fra le date comunali discordanti sull'apertura; la Torre Picotta conserva l'intervallo 1477-1479 e non riceve una battaglia non documentata; gli scavi di Zuglio restano collocati all'inizio dell'Ottocento e qualificati come primi scavi sistematici nel Foro.",
+        "Dodicesimo lotto UD/PN integrato: tre tappe per Venzone, Polcenigo e Terzo d'Aquileia, tutti ora con tre tappe. Il 1258 resta l'inizio della doppia cinta e non il suo completamento; l'incursione del 1499 devasta Polcenigo senza essere trasformata nella distruzione definitiva del castello; i residui di vino di Canale Anfora attestano il consumo nel XIV-XIII secolo a.C., non la produzione locale né un primato nazionale.",
+        "Tredicesimo lotto PN integrato: tre tappe per Casarsa della Delizia, Montereale Valcellina e Pinzano al Tagliamento, tutti ora con tre tappe. Fondazione dell'Academiuta nel 1945, inaugurazione del Museo archeologico nel 2011 e Madonna col Bambino del Pordenone nel 1525. Il sodalizio resta distinto dalle pubblicazioni precedenti, il museo da quello dell'energia e l'affresco dalle altre opere e chiese del territorio.",
+        "Quattordicesimo lotto UD integrato: tre tappe per Magnano in Riviera, Taipana e Tavagnacco, tutti ora con tre tappe. La menzione di Prampero del 1107 non diventa la fondazione del castello; l'autorizzazione del 1931 cambia il nome del Comune di Platischis senza fondarlo; la Madonna in trono di Pietro Fuluto del 1512 resta a Cavalicco, distinta dagli altri affreschi e dalle opere di Osais."
+      ]
+    },
+    {
+      "id": "ritual-calendar-breadth",
+      "rubric": "Riti e credenze popolari",
+      "status": "editorial_research_gap",
+      "priority": "high",
+      "currentSnapshot": {
+        "catalogRecords": 29,
+        "calendarizableRecords": 27,
+        "weatherDependentRecords": 2,
+        "recordsUsedInPordenone2028": 22,
+        "daysShownInPordenone2028": 48
+      },
+      "latestEditorialBatch": {
+        "batchId": "ritual-research-wave-07",
+        "manifest": "frontend/src/data/discover/ritualResearchWave07.json",
+        "promotedRecords": 2,
+        "approvalBasis": "user_delegated_assisted_editorial_review",
+        "independentHumanReview": false
+      },
+      "futureWork": [
+        "Cercare altri riti documentati legati a Rogazioni, semine, raccolti, vendemmia, Avvento e ricorrenze patronali.",
+        "Mantenere separate le varianti locali e dichiarare sempre paese o area culturale.",
+        "Non trasformare la rubrica in una presenza quotidiana: deve comparire soltanto quando il calendario lo giustifica.",
+        "Due credenze meteorologiche sono ora racconti storici d'Archivio, non riti in corso. Campane e lin di strie restano escluse; valutarle editorialmente senza inventare date o usare il meteo come prova della pratica.",
+        "Titiano (5 agosto) e il pellegrinaggio diocesano a Castelmonte (8 settembre) ampliano estate e settembre. Non considerano chiusa la ricerca sui cicli agricoli: escluse date arbitrarie per il Ringraziamento e duplicazioni della vendemmia già raccontata da Ostermann.",
+        "Integrate Santa Margherita a Sappada/Plodn (20 luglio) e il Rosario a Piano d'Arta (prima domenica di ottobre). La regola ordinale mostra la scheda soltanto quel giorno, senza finestre settimanali arbitrarie; la testimonianza del 2014 non è un programma attuale.",
+        "Maggio e novembre ora includono Pasian di Prato (31 maggio) e Moggio Udinese (21 novembre). Le date derivano dai corpi delle fonti, non dai contenitori CMS spostati al giorno successivo; nessun programma attuale, direzione invariabile del percorso o origine non dimostrata. Questo non esaurisce la ricerca sui due mesi.",
+        "Illegio richiede ancora distinzione fra memoria del 4 maggio e data variabile della processione. Il Maj di Lucinico è già nell'Archivio. Proseguire anche su cicli agricoli e pratiche non limitate alle feste patronali.",
+        "Sesto lotto integrato: il Perdòn di Barbana compare la prima domenica di luglio e recupera, senza duplicarla, la bozza locale nascosta; la trebbiatura di Cjase Cocèl compare la seconda domenica e resta qualificata come rievocazione museale. Le fonti non diventano programmi correnti e il 1237 resta origine secondo tradizione.",
+        "Settimo lotto integrato: la processione dell'Immacolata a Pignano compare soltanto l'8 dicembre e resta distinta dalla memoria di Gemona; la Femenàte di Paularo compare il 5 gennaio e racconta fumo e faville come lettura rituale, non come previsione meteorologica. Le due schede non importano programmi correnti.",
+        "Il pellegrinaggio di Porzûs alla Madone de sesule è una pista con regola esatta per un lotto successivo, mantenendo il limite dichiarato dall'Arcidiocesi sulle apparizioni. Il pellegrinaggio da Forni Avoltri a Maria Luggau richiede ancora una regola di ultimo fine settimana rappresentata senza approssimazioni; Majenca resta sospesa per fonti calendariali discordanti."
+      ]
+    },
+    {
+      "id": "traditional-sayings-variety",
+      "rubric": "Si diceva che...",
+      "status": "adequate_now_future_expansion",
+      "priority": "medium",
+      "currentSnapshot": {
+        "catalogRecords": 80,
+        "dedicatedDiscoverRecords": 11,
+        "reusedAlmanacRecords": 69,
+        "exactDateRecords": 8,
+        "daysShownIn2028": 366,
+        "recordsUsedIn2028": 80,
+        "unusedEligibleRecords": 0,
+        "longestConsecutiveRepeatDays": 2
+      },
+      "latestEditorialBatch": {
+        "batchId": "traditional-saying-reuse-wave-04",
+        "manifest": "frontend/src/data/discover/traditionalSayingReuseWave04.json",
+        "reusedRecords": 5,
+        "copyChanged": false,
+        "almanacChanged": false
+      },
+      "precedingEditorialBatch": {
+        "batchId": "traditional-saying-reuse-wave-03",
+        "manifest": "frontend/src/data/discover/traditionalSayingReuseWave03.json",
+        "reusedRecords": 12,
+        "copyChanged": false,
+        "almanacChanged": false
+      },
+      "futureWork": [
+        "Ampliare il repertorio soltanto per aumentare la varieta pluriennale, non per colmare giorni vuoti.",
+        "Selezionare nuovi detti dal patrimonio Ostermann gia revisionato prima di cercare altre fonti.",
+        "Conservare le varianti friulane autentiche e distinguere le equivalenze italiane piu diffuse.",
+        "Continuare a riusare dall'Almanacco una sola copia autorevole del testo IT/FUR.",
+        "Il lotto di riuso 03 aggiunge dodici detti generali già approvati, senza riscrivere IT/FUR o inventare date. Restano otto ancoraggi esatti. I crediti distinguono ora i volumi Ostermann 1876 e 1894 e conservano le pagine originali.",
+        "Il lotto di riuso 04 aggiunge cinque detti già approvati su campi, mutamento delle usanze, responsabilità, onestà e abilità del mestiere. Nessuna nuova traduzione, data, stagione, provenienza locale o regola meteo; il testo Almanacco resta l'unica copia autorevole."
+      ]
+    },
+    {
+      "id": "archive-weather-context",
+      "rubric": "Archivio e tradizioni",
+      "status": "runtime_context_gap",
+      "priority": "medium",
+      "currentSnapshot": {
+        "catalogRecords": 80,
+        "calendarizableRecords": 64,
+        "weatherDependentRecords": 16,
+        "recordsUsedIn2028": 62,
+        "daysShownIn2028": 366,
+        "longestConsecutiveRepeatDays": 2,
+        "exactRecordsCoveredByMemoryOfTheDay": 2
+      },
+      "latestEditorialBatch": {
+        "batchId": "archive-research-wave-05",
+        "manifest": "frontend/src/data/discover/archiveResearchWave05.json",
+        "promotedRecords": 3,
+        "approvalBasis": "user_delegated_assisted_editorial_review",
+        "independentHumanReview": false
+      },
+      "weatherReview": {
+        "manifest": "frontend/src/data/discover/weatherContextReview.json",
+        "originalWeatherRecords": 26,
+        "reviewedRecords": 26,
+        "reclassifiedForDiscover": 8,
+        "stillExcluded": 18,
+        "runtimeWeatherIntegration": false,
+        "sharedOstermannCatalogChanged": false
+      },
+      "futureWork": [
+        "Non serve nuovo materiale per la copertura quotidiana attuale.",
+        "Sono integrate ventinove schede da fonti istituzionali, museali, archivistiche, dal Consorzio Grado Turismo e dal gestore TPL FVG, oltre al patrimonio Ostermann. Il quinto lotto aggiunge le prime previsioni regionali del Centro Meteorologico ERSA diffuse via fax nel 1991, l'alpeggio carnico come organizzazione della scorta di fieno e le ghiacciaie di pietra del Carso; proseguire per varietà di temi e territori, non per riempire giornate già coperte.",
+        "Otto testi storici sono recuperati tramite overlay Scopri, preservando stagioni, copy e fonte originali. Restano esclusi sedici approfondimenti e due riti: riesaminare singolarmente le fonti, la cornice storica e i dati necessari prima di una nuova integrazione.",
+        "Il contesto meteo non è stato collegato: lo stato corrente può mescolare stazione e modello, la condition può derivare dal bollettino e la cache non garantisce da sola la freschezza dell'osservazione. Dettagli in SCOPRI_WEATHER_CONTEXT_AUDIT_2026-08-31.md.",
+        "Mantenere la deduplicazione con Memoria del giorno per le ricorrenze condivise."
+      ]
+    },
+    {
+      "id": "archive-daily-variety-research-wave-01",
+      "rubric": "Archivio e tradizioni",
+      "status": "promoted_complete_monitor",
+      "priority": "low",
+      "currentSnapshot": {
+        "candidateRecords": 10,
+        "sourceVerifiedRecords": 10,
+        "itDraftRecords": 0,
+        "itApprovedRecords": 10,
+        "itReadyForFurDraftRecords": 0,
+        "furDraftPendingReviewRecords": 0,
+        "furPendingRecords": 0,
+        "promotionReadyExceptFurRecords": 0,
+        "promotedRecords": 10,
+        "readyForUiRecords": 0
+      },
+      "futureWork": [
+        "Le dieci schede sono promosse nel catalogo separato institutionalArchive; le copie di ricerca restano non visibili. Approvazioni del 30 e del 31 agosto distinte in languageReview.fur; tracciabilità in SCOPRI_ARCHIVE_PROMOTION_2026-08-31.md.",
+        "I metadati itCopyReview, furDraftReview e furCopyEditReview conservano gli esiti storici delle letture; lo stato corrente è in promotionReview e languageReview.",
+        "Conservare le finestre editoriali del Bacio delle Croci (Pasqua +39..+42) e del Maj (30 aprile–7 maggio) come contesto di lettura, non come eventi attuali. Osmiza e tòco restano racconti d'archivio senza calendario di aperture o pesca.",
+        "Ripetere l'audit pluriennale di rotazione e duplicati dopo modifiche alle regole o ai cataloghi.",
+        "Non riutilizzare fotografie, filmati o riproduzioni d'archivio senza un diritto esplicito.",
+        "Per nuovi record ripetere audit fonti, duplicati, IT e FUR e registrare separatamente l'approvazione editoriale."
+      ]
+    },
+    {
+      "id": "archive-daily-variety-research-wave-02",
+      "rubric": "Archivio e tradizioni",
+      "status": "promoted_complete_monitor",
+      "priority": "low",
+      "currentSnapshot": {
+        "candidateRecords": 10,
+        "sourceVerifiedRecords": 10,
+        "itDraftRecords": 0,
+        "itApprovedRecords": 10,
+        "itReadyForFurDraftRecords": 0,
+        "furDraftPendingReviewRecords": 0,
+        "furPendingRecords": 0,
+        "promotionReadyExceptFurRecords": 0,
+        "promotedRecords": 10,
+        "readyForUiRecords": 0
+      },
+      "futureWork": [
+        "Le dieci schede sono promosse nel catalogo separato institutionalArchive; le copie di ricerca restano non visibili. Approvazioni del 30 e del 31 agosto distinte in languageReview.fur; tracciabilità in SCOPRI_ARCHIVE_PROMOTION_2026-08-31.md.",
+        "I metadati itCopyReview, furDraftReview e furCopyEditReview conservano gli esiti storici delle letture; lo stato corrente è in promotionReview e languageReview.",
+        "Verificare il termine ambiguo nella fonte di Andreis prima di ampliare il contenuto relativo alla lavorazione dell'osso.",
+        "Conservare la distinzione documentata rispetto ai profili di Camino, Marano e Andreis, ai cesti e ai segni naturali di Ostermann.",
+        "Ripetere l'audit pluriennale di rotazione e duplicati dopo modifiche alle regole o ai cataloghi.",
+        "Non riutilizzare fotografie, filmati o riproduzioni d'archivio senza un diritto esplicito.",
+        "Per nuovi record ripetere audit fonti, duplicati, IT e FUR e registrare separatamente l'approvazione editoriale."
+      ]
+    },
+    {
+      "id": "daily-memory-coverage",
+      "rubric": "Memoria del giorno",
+      "status": "complete_monitor",
+      "priority": "low",
+      "currentSnapshot": {
+        "readyPrimaryRecords": 369,
+        "coveredCalendarDates": 366,
+        "readySecondaryRecords": 198,
+        "datesWithSecondaryRecords": 146
+      },
+      "latestEditorialBatch": {
+        "batchId": "secondary-memory-research-wave-01",
+        "manifest": "frontend/src/data/discover/secondaryMemoryResearchWave01.json",
+        "promotedRecords": 2,
+        "approvalBasis": "user_delegated_assisted_editorial_review",
+        "independentHumanReview": false
+      },
+      "futureWork": [
+        "Non cercare riempitivi: il calendario principale e completo.",
+        "Aggiungere memorie secondarie soltanto quando sono rilevanti, documentate e territorialmente corrette.",
+        "Minerva (1 gennaio 1810) e ICTP (5 ottobre 1964) sono due secondarie triestine; le 369 primarie e le 14 bozze non pronte restano invariate. La deroga alla revisione umana è limitata ai due ID dichiarati, senza certificazione linguistica implicita.",
+        "Rieseguire il controllo delle collisioni dopo ogni nuova integrazione."
+      ]
+    }
+  ]
+}

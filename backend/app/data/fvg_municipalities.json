@@ -1,0 +1,2161 @@
+{
+  "schemaVersion": 1,
+  "generatedFrom": "frontend/src/data/fvgPlaces.js",
+  "source": {
+    "municipalities": "ISTAT Elenco-comuni-italiani.xlsx CODICI al 21_02_2026",
+    "coordinates": "Open-Meteo geocoding via local backend; selected aliases/components for merged municipalities",
+    "count": 215
+  },
+  "municipalities": [
+    {
+      "slug": "aiello-del-friuli",
+      "name": "Aiello del Friuli",
+      "admin1": "Friuli Venezia Giulia",
+      "province": "UD",
+      "provinceName": "Udine",
+      "istatCode": "030001",
+      "latitude": 45.87276,
+      "longitude": 13.36038
+    },
+    {
+      "slug": "amaro",
+      "name": "Amaro",
+      "admin1": "Friuli Venezia Giulia",
+      "province": "UD",
+      "provinceName": "Udine",
+      "istatCode": "030002",
+      "latitude": 46.37367,
+      "longitude": 13.09368
+    },
+    {
+      "slug": "ampezzo",
+      "name": "Ampezzo",
+      "admin1": "Friuli Venezia Giulia",
+      "province": "UD",
+      "provinceName": "Udine",
+      "istatCode": "030003",
+      "latitude": 46.41459,
+      "longitude": 12.79634
+    },
+    {
+      "slug": "aquileia",
+      "name": "Aquileia",
+      "admin1": "Friuli Venezia Giulia",
+      "province": "UD",
+      "provinceName": "Udine",
+      "istatCode": "030004",
+      "latitude": 45.7683,
+      "longitude": 13.36779
+    },
+    {
+      "slug": "arta-terme",
+      "name": "Arta Terme",
+      "admin1": "Friuli Venezia Giulia",
+      "province": "UD",
+      "provinceName": "Udine",
+      "istatCode": "030005",
+      "latitude": 46.48021,
+      "longitude": 13.0204
+    },
+    {
+      "slug": "artegna",
+      "name": "Artegna",
+      "admin1": "Friuli Venezia Giulia",
+      "province": "UD",
+      "provinceName": "Udine",
+      "istatCode": "030006",
+      "latitude": 46.23929,
+      "longitude": 13.15399
+    },
+    {
+      "slug": "attimis",
+      "name": "Attimis",
+      "admin1": "Friuli Venezia Giulia",
+      "province": "UD",
+      "provinceName": "Udine",
+      "istatCode": "030007",
+      "latitude": 46.19022,
+      "longitude": 13.31127
+    },
+    {
+      "slug": "bagnaria-arsa",
+      "name": "Bagnaria Arsa",
+      "admin1": "Friuli Venezia Giulia",
+      "province": "UD",
+      "provinceName": "Udine",
+      "istatCode": "030008",
+      "latitude": 45.88383,
+      "longitude": 13.28562
+    },
+    {
+      "slug": "basiliano",
+      "name": "Basiliano",
+      "admin1": "Friuli Venezia Giulia",
+      "province": "UD",
+      "provinceName": "Udine",
+      "istatCode": "030009",
+      "latitude": 46.01417,
+      "longitude": 13.07
+    },
+    {
+      "slug": "bertiolo",
+      "name": "Bertiolo",
+      "admin1": "Friuli Venezia Giulia",
+      "province": "UD",
+      "provinceName": "Udine",
+      "istatCode": "030010",
+      "latitude": 45.94463,
+      "longitude": 13.05606
+    },
+    {
+      "slug": "bicinicco",
+      "name": "Bicinicco",
+      "admin1": "Friuli Venezia Giulia",
+      "province": "UD",
+      "provinceName": "Udine",
+      "istatCode": "030011",
+      "latitude": 45.93211,
+      "longitude": 13.253
+    },
+    {
+      "slug": "bordano",
+      "name": "Bordano",
+      "admin1": "Friuli Venezia Giulia",
+      "province": "UD",
+      "provinceName": "Udine",
+      "istatCode": "030012",
+      "latitude": 46.31528,
+      "longitude": 13.10529
+    },
+    {
+      "slug": "buja",
+      "name": "Buja",
+      "admin1": "Friuli Venezia Giulia",
+      "province": "UD",
+      "provinceName": "Udine",
+      "istatCode": "030013",
+      "latitude": 46.20662,
+      "longitude": 13.11582
+    },
+    {
+      "slug": "buttrio",
+      "name": "Buttrio",
+      "admin1": "Friuli Venezia Giulia",
+      "province": "UD",
+      "provinceName": "Udine",
+      "istatCode": "030014",
+      "latitude": 46.01098,
+      "longitude": 13.33354
+    },
+    {
+      "slug": "camino-al-tagliamento",
+      "name": "Camino al Tagliamento",
+      "admin1": "Friuli Venezia Giulia",
+      "province": "UD",
+      "provinceName": "Udine",
+      "istatCode": "030015",
+      "latitude": 45.92767,
+      "longitude": 12.94489
+    },
+    {
+      "slug": "campoformido",
+      "name": "Campoformido",
+      "admin1": "Friuli Venezia Giulia",
+      "province": "UD",
+      "provinceName": "Udine",
+      "istatCode": "030016",
+      "latitude": 46.01952,
+      "longitude": 13.1575
+    },
+    {
+      "slug": "carlino",
+      "name": "Carlino",
+      "admin1": "Friuli Venezia Giulia",
+      "province": "UD",
+      "provinceName": "Udine",
+      "istatCode": "030018",
+      "latitude": 45.80321,
+      "longitude": 13.18874
+    },
+    {
+      "slug": "cassacco",
+      "name": "Cassacco",
+      "admin1": "Friuli Venezia Giulia",
+      "province": "UD",
+      "provinceName": "Udine",
+      "istatCode": "030019",
+      "latitude": 46.17345,
+      "longitude": 13.19236
+    },
+    {
+      "slug": "castions-di-strada",
+      "name": "Castions di Strada",
+      "admin1": "Friuli Venezia Giulia",
+      "province": "UD",
+      "provinceName": "Udine",
+      "istatCode": "030020",
+      "latitude": 45.91247,
+      "longitude": 13.18167
+    },
+    {
+      "slug": "cavazzo-carnico",
+      "name": "Cavazzo Carnico",
+      "admin1": "Friuli Venezia Giulia",
+      "province": "UD",
+      "provinceName": "Udine",
+      "istatCode": "030021",
+      "latitude": 46.36793,
+      "longitude": 13.04075
+    },
+    {
+      "slug": "cercivento",
+      "name": "Cercivento",
+      "admin1": "Friuli Venezia Giulia",
+      "province": "UD",
+      "provinceName": "Udine",
+      "istatCode": "030022",
+      "latitude": 46.52745,
+      "longitude": 12.99219
+    },
+    {
+      "slug": "cervignano-del-friuli",
+      "name": "Cervignano del Friuli",
+      "admin1": "Friuli Venezia Giulia",
+      "province": "UD",
+      "provinceName": "Udine",
+      "istatCode": "030023",
+      "latitude": 45.82082,
+      "longitude": 13.33929
+    },
+    {
+      "slug": "chiopris-viscone",
+      "name": "Chiopris-Viscone",
+      "admin1": "Friuli Venezia Giulia",
+      "province": "UD",
+      "provinceName": "Udine",
+      "istatCode": "030024",
+      "latitude": 45.9266,
+      "longitude": 13.39449
+    },
+    {
+      "slug": "chiusaforte",
+      "name": "Chiusaforte",
+      "admin1": "Friuli Venezia Giulia",
+      "province": "UD",
+      "provinceName": "Udine",
+      "istatCode": "030025",
+      "latitude": 46.40663,
+      "longitude": 13.30552
+    },
+    {
+      "slug": "cividale-del-friuli",
+      "name": "Cividale del Friuli",
+      "admin1": "Friuli Venezia Giulia",
+      "province": "UD",
+      "provinceName": "Udine",
+      "istatCode": "030026",
+      "latitude": 46.09019,
+      "longitude": 13.42861
+    },
+    {
+      "slug": "codroipo",
+      "name": "Codroipo",
+      "admin1": "Friuli Venezia Giulia",
+      "province": "UD",
+      "provinceName": "Udine",
+      "istatCode": "030027",
+      "latitude": 45.96469,
+      "longitude": 12.97985
+    },
+    {
+      "slug": "colloredo-di-monte-albano",
+      "name": "Colloredo di Monte Albano",
+      "admin1": "Friuli Venezia Giulia",
+      "province": "UD",
+      "provinceName": "Udine",
+      "istatCode": "030028",
+      "latitude": 46.16472,
+      "longitude": 13.13861
+    },
+    {
+      "slug": "comeglians",
+      "name": "Comeglians",
+      "admin1": "Friuli Venezia Giulia",
+      "province": "UD",
+      "provinceName": "Udine",
+      "istatCode": "030029",
+      "latitude": 46.51614,
+      "longitude": 12.86619
+    },
+    {
+      "slug": "corno-di-rosazzo",
+      "name": "Corno di Rosazzo",
+      "admin1": "Friuli Venezia Giulia",
+      "province": "UD",
+      "provinceName": "Udine",
+      "istatCode": "030030",
+      "latitude": 45.9911,
+      "longitude": 13.44368
+    },
+    {
+      "slug": "coseano",
+      "name": "Coseano",
+      "admin1": "Friuli Venezia Giulia",
+      "province": "UD",
+      "provinceName": "Udine",
+      "istatCode": "030031",
+      "latitude": 46.09636,
+      "longitude": 13.02028
+    },
+    {
+      "slug": "dignano",
+      "name": "Dignano",
+      "admin1": "Friuli Venezia Giulia",
+      "province": "UD",
+      "provinceName": "Udine",
+      "istatCode": "030032",
+      "latitude": 46.08392,
+      "longitude": 12.94009
+    },
+    {
+      "slug": "dogna",
+      "name": "Dogna",
+      "admin1": "Friuli Venezia Giulia",
+      "province": "UD",
+      "provinceName": "Udine",
+      "istatCode": "030033",
+      "latitude": 46.44793,
+      "longitude": 13.31502
+    },
+    {
+      "slug": "drenchia",
+      "name": "Drenchia",
+      "admin1": "Friuli Venezia Giulia",
+      "province": "UD",
+      "provinceName": "Udine",
+      "istatCode": "030034",
+      "latitude": 46.18343,
+      "longitude": 13.63584
+    },
+    {
+      "slug": "enemonzo",
+      "name": "Enemonzo",
+      "admin1": "Friuli Venezia Giulia",
+      "province": "UD",
+      "provinceName": "Udine",
+      "istatCode": "030035",
+      "latitude": 46.40833,
+      "longitude": 12.87944
+    },
+    {
+      "slug": "faedis",
+      "name": "Faedis",
+      "admin1": "Friuli Venezia Giulia",
+      "province": "UD",
+      "provinceName": "Udine",
+      "istatCode": "030036",
+      "latitude": 46.14931,
+      "longitude": 13.34463
+    },
+    {
+      "slug": "fagagna",
+      "name": "Fagagna",
+      "admin1": "Friuli Venezia Giulia",
+      "province": "UD",
+      "provinceName": "Udine",
+      "istatCode": "030037",
+      "latitude": 46.10698,
+      "longitude": 13.09361
+    },
+    {
+      "slug": "flaibano",
+      "name": "Flaibano",
+      "admin1": "Friuli Venezia Giulia",
+      "province": "UD",
+      "provinceName": "Udine",
+      "istatCode": "030039",
+      "latitude": 46.05837,
+      "longitude": 12.98424
+    },
+    {
+      "slug": "forni-avoltri",
+      "name": "Forni Avoltri",
+      "admin1": "Friuli Venezia Giulia",
+      "province": "UD",
+      "provinceName": "Udine",
+      "istatCode": "030040",
+      "latitude": 46.58615,
+      "longitude": 12.7751
+    },
+    {
+      "slug": "forni-di-sopra",
+      "name": "Forni di Sopra",
+      "admin1": "Friuli Venezia Giulia",
+      "province": "UD",
+      "provinceName": "Udine",
+      "istatCode": "030041",
+      "latitude": 46.42028,
+      "longitude": 12.58312
+    },
+    {
+      "slug": "forni-di-sotto",
+      "name": "Forni di Sotto",
+      "admin1": "Friuli Venezia Giulia",
+      "province": "UD",
+      "provinceName": "Udine",
+      "istatCode": "030042",
+      "latitude": 46.39379,
+      "longitude": 12.6721
+    },
+    {
+      "slug": "gemona-del-friuli",
+      "name": "Gemona del Friuli",
+      "admin1": "Friuli Venezia Giulia",
+      "province": "UD",
+      "provinceName": "Udine",
+      "istatCode": "030043",
+      "latitude": 46.27405,
+      "longitude": 13.12237
+    },
+    {
+      "slug": "gonars",
+      "name": "Gonars",
+      "admin1": "Friuli Venezia Giulia",
+      "province": "UD",
+      "provinceName": "Udine",
+      "istatCode": "030044",
+      "latitude": 45.8974,
+      "longitude": 13.24402
+    },
+    {
+      "slug": "grimacco",
+      "name": "Grimacco",
+      "admin1": "Friuli Venezia Giulia",
+      "province": "UD",
+      "provinceName": "Udine",
+      "istatCode": "030045",
+      "latitude": 46.1565,
+      "longitude": 13.57295
+    },
+    {
+      "slug": "latisana",
+      "name": "Latisana",
+      "admin1": "Friuli Venezia Giulia",
+      "province": "UD",
+      "provinceName": "Udine",
+      "istatCode": "030046",
+      "latitude": 45.76859,
+      "longitude": 13.00618
+    },
+    {
+      "slug": "lauco",
+      "name": "Lauco",
+      "admin1": "Friuli Venezia Giulia",
+      "province": "UD",
+      "provinceName": "Udine",
+      "istatCode": "030047",
+      "latitude": 46.42397,
+      "longitude": 12.93222
+    },
+    {
+      "slug": "lestizza",
+      "name": "Lestizza",
+      "admin1": "Friuli Venezia Giulia",
+      "province": "UD",
+      "provinceName": "Udine",
+      "istatCode": "030048",
+      "latitude": 45.95656,
+      "longitude": 13.14221
+    },
+    {
+      "slug": "lignano-sabbiadoro",
+      "name": "Lignano Sabbiadoro",
+      "admin1": "Friuli Venezia Giulia",
+      "province": "UD",
+      "provinceName": "Udine",
+      "istatCode": "030049",
+      "latitude": 45.6759,
+      "longitude": 13.11727
+    },
+    {
+      "slug": "lusevera",
+      "name": "Lusevera",
+      "admin1": "Friuli Venezia Giulia",
+      "province": "UD",
+      "provinceName": "Udine",
+      "istatCode": "030051",
+      "latitude": 46.27529,
+      "longitude": 13.26922
+    },
+    {
+      "slug": "magnano-in-riviera",
+      "name": "Magnano in Riviera",
+      "admin1": "Friuli Venezia Giulia",
+      "province": "UD",
+      "provinceName": "Udine",
+      "istatCode": "030052",
+      "latitude": 46.22369,
+      "longitude": 13.19483
+    },
+    {
+      "slug": "majano",
+      "name": "Majano",
+      "admin1": "Friuli Venezia Giulia",
+      "province": "UD",
+      "provinceName": "Udine",
+      "istatCode": "030053",
+      "latitude": 46.18752,
+      "longitude": 13.06162
+    },
+    {
+      "slug": "malborghetto-valbruna",
+      "name": "Malborghetto Valbruna",
+      "admin1": "Friuli Venezia Giulia",
+      "province": "UD",
+      "provinceName": "Udine",
+      "istatCode": "030054",
+      "latitude": 46.50679,
+      "longitude": 13.43946
+    },
+    {
+      "slug": "manzano",
+      "name": "Manzano",
+      "admin1": "Friuli Venezia Giulia",
+      "province": "UD",
+      "provinceName": "Udine",
+      "istatCode": "030055",
+      "latitude": 45.98843,
+      "longitude": 13.37674
+    },
+    {
+      "slug": "marano-lagunare",
+      "name": "Marano Lagunare",
+      "admin1": "Friuli Venezia Giulia",
+      "province": "UD",
+      "provinceName": "Udine",
+      "istatCode": "030056",
+      "latitude": 45.76353,
+      "longitude": 13.16733
+    },
+    {
+      "slug": "martignacco",
+      "name": "Martignacco",
+      "admin1": "Friuli Venezia Giulia",
+      "province": "UD",
+      "provinceName": "Udine",
+      "istatCode": "030057",
+      "latitude": 46.09313,
+      "longitude": 13.13973
+    },
+    {
+      "slug": "mereto-di-tomba",
+      "name": "Mereto di Tomba",
+      "admin1": "Friuli Venezia Giulia",
+      "province": "UD",
+      "provinceName": "Udine",
+      "istatCode": "030058",
+      "latitude": 46.05128,
+      "longitude": 13.04432
+    },
+    {
+      "slug": "moggio-udinese",
+      "name": "Moggio Udinese",
+      "admin1": "Friuli Venezia Giulia",
+      "province": "UD",
+      "provinceName": "Udine",
+      "istatCode": "030059",
+      "latitude": 46.41083,
+      "longitude": 13.20139
+    },
+    {
+      "slug": "moimacco",
+      "name": "Moimacco",
+      "admin1": "Friuli Venezia Giulia",
+      "province": "UD",
+      "provinceName": "Udine",
+      "istatCode": "030060",
+      "latitude": 46.09145,
+      "longitude": 13.3727
+    },
+    {
+      "slug": "montenars",
+      "name": "Montenars",
+      "admin1": "Friuli Venezia Giulia",
+      "province": "UD",
+      "provinceName": "Udine",
+      "istatCode": "030061",
+      "latitude": 46.25111,
+      "longitude": 13.16944
+    },
+    {
+      "slug": "mortegliano",
+      "name": "Mortegliano",
+      "admin1": "Friuli Venezia Giulia",
+      "province": "UD",
+      "provinceName": "Udine",
+      "istatCode": "030062",
+      "latitude": 45.94553,
+      "longitude": 13.17255
+    },
+    {
+      "slug": "moruzzo",
+      "name": "Moruzzo",
+      "admin1": "Friuli Venezia Giulia",
+      "province": "UD",
+      "provinceName": "Udine",
+      "istatCode": "030063",
+      "latitude": 46.11967,
+      "longitude": 13.124
+    },
+    {
+      "slug": "muzzana-del-turgnano",
+      "name": "Muzzana del Turgnano",
+      "admin1": "Friuli Venezia Giulia",
+      "province": "UD",
+      "provinceName": "Udine",
+      "istatCode": "030064",
+      "latitude": 45.81799,
+      "longitude": 13.12751
+    },
+    {
+      "slug": "nimis",
+      "name": "Nimis",
+      "admin1": "Friuli Venezia Giulia",
+      "province": "UD",
+      "provinceName": "Udine",
+      "istatCode": "030065",
+      "latitude": 46.20659,
+      "longitude": 13.26777
+    },
+    {
+      "slug": "osoppo",
+      "name": "Osoppo",
+      "admin1": "Friuli Venezia Giulia",
+      "province": "UD",
+      "provinceName": "Udine",
+      "istatCode": "030066",
+      "latitude": 46.25536,
+      "longitude": 13.08453
+    },
+    {
+      "slug": "ovaro",
+      "name": "Ovaro",
+      "admin1": "Friuli Venezia Giulia",
+      "province": "UD",
+      "provinceName": "Udine",
+      "istatCode": "030067",
+      "latitude": 46.48409,
+      "longitude": 12.86704
+    },
+    {
+      "slug": "pagnacco",
+      "name": "Pagnacco",
+      "admin1": "Friuli Venezia Giulia",
+      "province": "UD",
+      "provinceName": "Udine",
+      "istatCode": "030068",
+      "latitude": 46.11462,
+      "longitude": 13.18377
+    },
+    {
+      "slug": "palazzolo-dello-stella",
+      "name": "Palazzolo dello Stella",
+      "admin1": "Friuli Venezia Giulia",
+      "province": "UD",
+      "provinceName": "Udine",
+      "istatCode": "030069",
+      "latitude": 45.79823,
+      "longitude": 13.08776
+    },
+    {
+      "slug": "palmanova",
+      "name": "Palmanova",
+      "admin1": "Friuli Venezia Giulia",
+      "province": "UD",
+      "provinceName": "Udine",
+      "istatCode": "030070",
+      "latitude": 45.9054,
+      "longitude": 13.30998
+    },
+    {
+      "slug": "paluzza",
+      "name": "Paluzza",
+      "admin1": "Friuli Venezia Giulia",
+      "province": "UD",
+      "provinceName": "Udine",
+      "istatCode": "030071",
+      "latitude": 46.53202,
+      "longitude": 13.01586
+    },
+    {
+      "slug": "pasian-di-prato",
+      "name": "Pasian di Prato",
+      "admin1": "Friuli Venezia Giulia",
+      "province": "UD",
+      "provinceName": "Udine",
+      "istatCode": "030072",
+      "latitude": 46.04667,
+      "longitude": 13.1878
+    },
+    {
+      "slug": "paularo",
+      "name": "Paularo",
+      "admin1": "Friuli Venezia Giulia",
+      "province": "UD",
+      "provinceName": "Udine",
+      "istatCode": "030073",
+      "latitude": 46.53101,
+      "longitude": 13.11886
+    },
+    {
+      "slug": "pavia-di-udine",
+      "name": "Pavia di Udine",
+      "admin1": "Friuli Venezia Giulia",
+      "province": "UD",
+      "provinceName": "Udine",
+      "istatCode": "030074",
+      "latitude": 45.99502,
+      "longitude": 13.30367
+    },
+    {
+      "slug": "pocenia",
+      "name": "Pocenia",
+      "admin1": "Friuli Venezia Giulia",
+      "province": "UD",
+      "provinceName": "Udine",
+      "istatCode": "030075",
+      "latitude": 45.8357,
+      "longitude": 13.10145
+    },
+    {
+      "slug": "pontebba",
+      "name": "Pontebba",
+      "admin1": "Friuli Venezia Giulia",
+      "province": "UD",
+      "provinceName": "Udine",
+      "istatCode": "030076",
+      "latitude": 46.5054,
+      "longitude": 13.30622
+    },
+    {
+      "slug": "porpetto",
+      "name": "Porpetto",
+      "admin1": "Friuli Venezia Giulia",
+      "province": "UD",
+      "provinceName": "Udine",
+      "istatCode": "030077",
+      "latitude": 45.857,
+      "longitude": 13.21703
+    },
+    {
+      "slug": "povoletto",
+      "name": "Povoletto",
+      "admin1": "Friuli Venezia Giulia",
+      "province": "UD",
+      "provinceName": "Udine",
+      "istatCode": "030078",
+      "latitude": 46.11568,
+      "longitude": 13.29171
+    },
+    {
+      "slug": "pozzuolo-del-friuli",
+      "name": "Pozzuolo del Friuli",
+      "admin1": "Friuli Venezia Giulia",
+      "province": "UD",
+      "provinceName": "Udine",
+      "istatCode": "030079",
+      "latitude": 45.98517,
+      "longitude": 13.19724
+    },
+    {
+      "slug": "pradamano",
+      "name": "Pradamano",
+      "admin1": "Friuli Venezia Giulia",
+      "province": "UD",
+      "provinceName": "Udine",
+      "istatCode": "030080",
+      "latitude": 46.03391,
+      "longitude": 13.30223
+    },
+    {
+      "slug": "prato-carnico",
+      "name": "Prato Carnico",
+      "admin1": "Friuli Venezia Giulia",
+      "province": "UD",
+      "provinceName": "Udine",
+      "istatCode": "030081",
+      "latitude": 46.52049,
+      "longitude": 12.80886
+    },
+    {
+      "slug": "precenicco",
+      "name": "Precenicco",
+      "admin1": "Friuli Venezia Giulia",
+      "province": "UD",
+      "provinceName": "Udine",
+      "istatCode": "030082",
+      "latitude": 45.79694,
+      "longitude": 13.07554
+    },
+    {
+      "slug": "premariacco",
+      "name": "Premariacco",
+      "admin1": "Friuli Venezia Giulia",
+      "province": "UD",
+      "provinceName": "Udine",
+      "istatCode": "030083",
+      "latitude": 46.06145,
+      "longitude": 13.39461
+    },
+    {
+      "slug": "preone",
+      "name": "Preone",
+      "admin1": "Friuli Venezia Giulia",
+      "province": "UD",
+      "provinceName": "Udine",
+      "istatCode": "030084",
+      "latitude": 46.39411,
+      "longitude": 12.86645
+    },
+    {
+      "slug": "prepotto",
+      "name": "Prepotto",
+      "admin1": "Friuli Venezia Giulia",
+      "province": "UD",
+      "provinceName": "Udine",
+      "istatCode": "030085",
+      "latitude": 46.04522,
+      "longitude": 13.47921
+    },
+    {
+      "slug": "pulfero",
+      "name": "Pulfero",
+      "admin1": "Friuli Venezia Giulia",
+      "province": "UD",
+      "provinceName": "Udine",
+      "istatCode": "030086",
+      "latitude": 46.17376,
+      "longitude": 13.48363
+    },
+    {
+      "slug": "ragogna",
+      "name": "Ragogna",
+      "admin1": "Friuli Venezia Giulia",
+      "province": "UD",
+      "provinceName": "Udine",
+      "istatCode": "030087",
+      "latitude": 46.17704,
+      "longitude": 12.9836
+    },
+    {
+      "slug": "ravascletto",
+      "name": "Ravascletto",
+      "admin1": "Friuli Venezia Giulia",
+      "province": "UD",
+      "provinceName": "Udine",
+      "istatCode": "030088",
+      "latitude": 46.52504,
+      "longitude": 12.92138
+    },
+    {
+      "slug": "raveo",
+      "name": "Raveo",
+      "admin1": "Friuli Venezia Giulia",
+      "province": "UD",
+      "provinceName": "Udine",
+      "istatCode": "030089",
+      "latitude": 46.43392,
+      "longitude": 12.87165
+    },
+    {
+      "slug": "reana-del-rojale",
+      "name": "Reana del Rojale",
+      "admin1": "Friuli Venezia Giulia",
+      "province": "UD",
+      "provinceName": "Udine",
+      "istatCode": "030090",
+      "latitude": 46.14322,
+      "longitude": 13.24653
+    },
+    {
+      "slug": "remanzacco",
+      "name": "Remanzacco",
+      "admin1": "Friuli Venezia Giulia",
+      "province": "UD",
+      "provinceName": "Udine",
+      "istatCode": "030091",
+      "latitude": 46.08535,
+      "longitude": 13.32358
+    },
+    {
+      "slug": "resia",
+      "name": "Resia",
+      "admin1": "Friuli Venezia Giulia",
+      "province": "UD",
+      "provinceName": "Udine",
+      "istatCode": "030092",
+      "latitude": 46.37364,
+      "longitude": 13.30659
+    },
+    {
+      "slug": "resiutta",
+      "name": "Resiutta",
+      "admin1": "Friuli Venezia Giulia",
+      "province": "UD",
+      "provinceName": "Udine",
+      "istatCode": "030093",
+      "latitude": 46.39371,
+      "longitude": 13.21796
+    },
+    {
+      "slug": "rigolato",
+      "name": "Rigolato",
+      "admin1": "Friuli Venezia Giulia",
+      "province": "UD",
+      "provinceName": "Udine",
+      "istatCode": "030094",
+      "latitude": 46.55393,
+      "longitude": 12.84619
+    },
+    {
+      "slug": "rive-d-arcano",
+      "name": "Rive d'Arcano",
+      "admin1": "Friuli Venezia Giulia",
+      "province": "UD",
+      "provinceName": "Udine",
+      "istatCode": "030095",
+      "latitude": 46.12722,
+      "longitude": 13.03222
+    },
+    {
+      "slug": "ronchis",
+      "name": "Ronchis",
+      "admin1": "Friuli Venezia Giulia",
+      "province": "UD",
+      "provinceName": "Udine",
+      "istatCode": "030097",
+      "latitude": 45.80792,
+      "longitude": 12.99545
+    },
+    {
+      "slug": "ruda",
+      "name": "Ruda",
+      "admin1": "Friuli Venezia Giulia",
+      "province": "UD",
+      "provinceName": "Udine",
+      "istatCode": "030098",
+      "latitude": 45.83986,
+      "longitude": 13.40177
+    },
+    {
+      "slug": "san-daniele-del-friuli",
+      "name": "San Daniele del Friuli",
+      "admin1": "Friuli Venezia Giulia",
+      "province": "UD",
+      "provinceName": "Udine",
+      "istatCode": "030099",
+      "latitude": 46.15714,
+      "longitude": 13.00726
+    },
+    {
+      "slug": "san-giorgio-di-nogaro",
+      "name": "San Giorgio di Nogaro",
+      "admin1": "Friuli Venezia Giulia",
+      "province": "UD",
+      "provinceName": "Udine",
+      "istatCode": "030100",
+      "latitude": 45.82745,
+      "longitude": 13.21088
+    },
+    {
+      "slug": "san-giovanni-al-natisone",
+      "name": "San Giovanni al Natisone",
+      "admin1": "Friuli Venezia Giulia",
+      "province": "UD",
+      "provinceName": "Udine",
+      "istatCode": "030101",
+      "latitude": 45.97079,
+      "longitude": 13.40182
+    },
+    {
+      "slug": "san-leonardo",
+      "name": "San Leonardo",
+      "admin1": "Friuli Venezia Giulia",
+      "province": "UD",
+      "provinceName": "Udine",
+      "istatCode": "030102",
+      "latitude": 46.11913,
+      "longitude": 13.53085
+    },
+    {
+      "slug": "san-pietro-al-natisone",
+      "name": "San Pietro al Natisone",
+      "admin1": "Friuli Venezia Giulia",
+      "province": "UD",
+      "provinceName": "Udine",
+      "istatCode": "030103",
+      "latitude": 46.11444,
+      "longitude": 13.48296
+    },
+    {
+      "slug": "santa-maria-la-longa",
+      "name": "Santa Maria la Longa",
+      "admin1": "Friuli Venezia Giulia",
+      "province": "UD",
+      "provinceName": "Udine",
+      "istatCode": "030104",
+      "latitude": 45.93403,
+      "longitude": 13.28911
+    },
+    {
+      "slug": "san-vito-al-torre",
+      "name": "San Vito al Torre",
+      "admin1": "Friuli Venezia Giulia",
+      "province": "UD",
+      "provinceName": "Udine",
+      "istatCode": "030105",
+      "latitude": 45.89587,
+      "longitude": 13.37588
+    },
+    {
+      "slug": "san-vito-di-fagagna",
+      "name": "San Vito di Fagagna",
+      "admin1": "Friuli Venezia Giulia",
+      "province": "UD",
+      "provinceName": "Udine",
+      "istatCode": "030106",
+      "latitude": 46.09103,
+      "longitude": 13.06569
+    },
+    {
+      "slug": "sauris",
+      "name": "Sauris",
+      "admin1": "Friuli Venezia Giulia",
+      "province": "UD",
+      "provinceName": "Udine",
+      "istatCode": "030107",
+      "latitude": 46.46624,
+      "longitude": 12.70852
+    },
+    {
+      "slug": "savogna",
+      "name": "Savogna",
+      "admin1": "Friuli Venezia Giulia",
+      "province": "UD",
+      "provinceName": "Udine",
+      "istatCode": "030108",
+      "latitude": 46.15846,
+      "longitude": 13.53089
+    },
+    {
+      "slug": "sedegliano",
+      "name": "Sedegliano",
+      "admin1": "Friuli Venezia Giulia",
+      "province": "UD",
+      "provinceName": "Udine",
+      "istatCode": "030109",
+      "latitude": 46.01396,
+      "longitude": 12.97734
+    },
+    {
+      "slug": "socchieve",
+      "name": "Socchieve",
+      "admin1": "Friuli Venezia Giulia",
+      "province": "UD",
+      "provinceName": "Udine",
+      "istatCode": "030110",
+      "latitude": 46.3965,
+      "longitude": 12.848
+    },
+    {
+      "slug": "stregna",
+      "name": "Stregna",
+      "admin1": "Friuli Venezia Giulia",
+      "province": "UD",
+      "provinceName": "Udine",
+      "istatCode": "030111",
+      "latitude": 46.12689,
+      "longitude": 13.57761
+    },
+    {
+      "slug": "sutrio",
+      "name": "Sutrio",
+      "admin1": "Friuli Venezia Giulia",
+      "province": "UD",
+      "provinceName": "Udine",
+      "istatCode": "030112",
+      "latitude": 46.51206,
+      "longitude": 12.99325
+    },
+    {
+      "slug": "taipana",
+      "name": "Taipana",
+      "admin1": "Friuli Venezia Giulia",
+      "province": "UD",
+      "provinceName": "Udine",
+      "istatCode": "030113",
+      "latitude": 46.24911,
+      "longitude": 13.3415
+    },
+    {
+      "slug": "talmassons",
+      "name": "Talmassons",
+      "admin1": "Friuli Venezia Giulia",
+      "province": "UD",
+      "provinceName": "Udine",
+      "istatCode": "030114",
+      "latitude": 45.9281,
+      "longitude": 13.12199
+    },
+    {
+      "slug": "tarcento",
+      "name": "Tarcento",
+      "admin1": "Friuli Venezia Giulia",
+      "province": "UD",
+      "provinceName": "Udine",
+      "istatCode": "030116",
+      "latitude": 46.21251,
+      "longitude": 13.21514
+    },
+    {
+      "slug": "tarvisio",
+      "name": "Tarvisio",
+      "admin1": "Friuli Venezia Giulia",
+      "province": "UD",
+      "provinceName": "Udine",
+      "istatCode": "030117",
+      "latitude": 46.50567,
+      "longitude": 13.58689
+    },
+    {
+      "slug": "tavagnacco",
+      "name": "Tavagnacco",
+      "admin1": "Friuli Venezia Giulia",
+      "province": "UD",
+      "provinceName": "Udine",
+      "istatCode": "030118",
+      "latitude": 46.10976,
+      "longitude": 13.22251
+    },
+    {
+      "slug": "terzo-d-aquileia",
+      "name": "Terzo d'Aquileia",
+      "admin1": "Friuli Venezia Giulia",
+      "province": "UD",
+      "provinceName": "Udine",
+      "istatCode": "030120",
+      "latitude": 45.79994,
+      "longitude": 13.34177
+    },
+    {
+      "slug": "tolmezzo",
+      "name": "Tolmezzo",
+      "admin1": "Friuli Venezia Giulia",
+      "province": "UD",
+      "provinceName": "Udine",
+      "istatCode": "030121",
+      "latitude": 46.39996,
+      "longitude": 13.02051
+    },
+    {
+      "slug": "torreano",
+      "name": "Torreano",
+      "admin1": "Friuli Venezia Giulia",
+      "province": "UD",
+      "provinceName": "Udine",
+      "istatCode": "030122",
+      "latitude": 46.12786,
+      "longitude": 13.42933
+    },
+    {
+      "slug": "torviscosa",
+      "name": "Torviscosa",
+      "admin1": "Friuli Venezia Giulia",
+      "province": "UD",
+      "provinceName": "Udine",
+      "istatCode": "030123",
+      "latitude": 45.82337,
+      "longitude": 13.2805
+    },
+    {
+      "slug": "trasaghis",
+      "name": "Trasaghis",
+      "admin1": "Friuli Venezia Giulia",
+      "province": "UD",
+      "provinceName": "Udine",
+      "istatCode": "030124",
+      "latitude": 46.28164,
+      "longitude": 13.07545
+    },
+    {
+      "slug": "treppo-grande",
+      "name": "Treppo Grande",
+      "admin1": "Friuli Venezia Giulia",
+      "province": "UD",
+      "provinceName": "Udine",
+      "istatCode": "030126",
+      "latitude": 46.19988,
+      "longitude": 13.1535
+    },
+    {
+      "slug": "tricesimo",
+      "name": "Tricesimo",
+      "admin1": "Friuli Venezia Giulia",
+      "province": "UD",
+      "provinceName": "Udine",
+      "istatCode": "030127",
+      "latitude": 46.16058,
+      "longitude": 13.21566
+    },
+    {
+      "slug": "trivignano-udinese",
+      "name": "Trivignano Udinese",
+      "admin1": "Friuli Venezia Giulia",
+      "province": "UD",
+      "provinceName": "Udine",
+      "istatCode": "030128",
+      "latitude": 45.94601,
+      "longitude": 13.34019
+    },
+    {
+      "slug": "udine",
+      "name": "Udine",
+      "admin1": "Friuli Venezia Giulia",
+      "province": "UD",
+      "provinceName": "Udine",
+      "istatCode": "030129",
+      "latitude": 46.0693,
+      "longitude": 13.23715
+    },
+    {
+      "slug": "varmo",
+      "name": "Varmo",
+      "admin1": "Friuli Venezia Giulia",
+      "province": "UD",
+      "provinceName": "Udine",
+      "istatCode": "030130",
+      "latitude": 45.8863,
+      "longitude": 12.99005
+    },
+    {
+      "slug": "venzone",
+      "name": "Venzone",
+      "admin1": "Friuli Venezia Giulia",
+      "province": "UD",
+      "provinceName": "Udine",
+      "istatCode": "030131",
+      "latitude": 46.33031,
+      "longitude": 13.13825
+    },
+    {
+      "slug": "verzegnis",
+      "name": "Verzegnis",
+      "admin1": "Friuli Venezia Giulia",
+      "province": "UD",
+      "provinceName": "Udine",
+      "istatCode": "030132",
+      "latitude": 46.38877,
+      "longitude": 12.99155
+    },
+    {
+      "slug": "villa-santina",
+      "name": "Villa Santina",
+      "admin1": "Friuli Venezia Giulia",
+      "province": "UD",
+      "provinceName": "Udine",
+      "istatCode": "030133",
+      "latitude": 46.41368,
+      "longitude": 12.92445
+    },
+    {
+      "slug": "visco",
+      "name": "Visco",
+      "admin1": "Friuli Venezia Giulia",
+      "province": "UD",
+      "provinceName": "Udine",
+      "istatCode": "030135",
+      "latitude": 45.89194,
+      "longitude": 13.34861
+    },
+    {
+      "slug": "zuglio",
+      "name": "Zuglio",
+      "admin1": "Friuli Venezia Giulia",
+      "province": "UD",
+      "provinceName": "Udine",
+      "istatCode": "030136",
+      "latitude": 46.4583,
+      "longitude": 13.02589
+    },
+    {
+      "slug": "forgaria-nel-friuli",
+      "name": "Forgaria nel Friuli",
+      "admin1": "Friuli Venezia Giulia",
+      "province": "UD",
+      "provinceName": "Udine",
+      "istatCode": "030137",
+      "latitude": 46.22036,
+      "longitude": 12.9747
+    },
+    {
+      "slug": "campolongo-tapogliano",
+      "name": "Campolongo Tapogliano",
+      "admin1": "Friuli Venezia Giulia",
+      "province": "UD",
+      "provinceName": "Udine",
+      "istatCode": "030138",
+      "latitude": 45.86995,
+      "longitude": 13.39816
+    },
+    {
+      "slug": "rivignano-teor",
+      "name": "Rivignano Teor",
+      "admin1": "Friuli Venezia Giulia",
+      "province": "UD",
+      "provinceName": "Udine",
+      "istatCode": "030188",
+      "latitude": 45.87575,
+      "longitude": 13.0419
+    },
+    {
+      "slug": "sappada",
+      "name": "Sappada",
+      "admin1": "Friuli Venezia Giulia",
+      "province": "UD",
+      "provinceName": "Udine",
+      "istatCode": "030189",
+      "latitude": 46.56663,
+      "longitude": 12.68421
+    },
+    {
+      "slug": "fiumicello-villa-vicentina",
+      "name": "Fiumicello Villa Vicentina",
+      "admin1": "Friuli Venezia Giulia",
+      "province": "UD",
+      "provinceName": "Udine",
+      "istatCode": "030190",
+      "latitude": 45.8029,
+      "longitude": 13.40148
+    },
+    {
+      "slug": "treppo-ligosullo",
+      "name": "Treppo Ligosullo",
+      "admin1": "Friuli Venezia Giulia",
+      "province": "UD",
+      "provinceName": "Udine",
+      "istatCode": "030191",
+      "latitude": 46.53666,
+      "longitude": 13.05919
+    },
+    {
+      "slug": "capriva-del-friuli",
+      "name": "Capriva del Friuli",
+      "admin1": "Friuli Venezia Giulia",
+      "province": "GO",
+      "provinceName": "Gorizia",
+      "istatCode": "031001",
+      "latitude": 45.94093,
+      "longitude": 13.51422
+    },
+    {
+      "slug": "cormons",
+      "name": "Cormons",
+      "admin1": "Friuli Venezia Giulia",
+      "province": "GO",
+      "provinceName": "Gorizia",
+      "istatCode": "031002",
+      "latitude": 45.95531,
+      "longitude": 13.46683
+    },
+    {
+      "slug": "doberdò-del-lago",
+      "name": "Doberdò del Lago",
+      "admin1": "Friuli Venezia Giulia",
+      "province": "GO",
+      "provinceName": "Gorizia",
+      "istatCode": "031003",
+      "latitude": 45.84444,
+      "longitude": 13.53908
+    },
+    {
+      "slug": "dolegna-del-collio",
+      "name": "Dolegna del Collio",
+      "admin1": "Friuli Venezia Giulia",
+      "province": "GO",
+      "provinceName": "Gorizia",
+      "istatCode": "031004",
+      "latitude": 46.03094,
+      "longitude": 13.47885
+    },
+    {
+      "slug": "farra-d-isonzo",
+      "name": "Farra d'Isonzo",
+      "admin1": "Friuli Venezia Giulia",
+      "province": "GO",
+      "provinceName": "Gorizia",
+      "istatCode": "031005",
+      "latitude": 45.90802,
+      "longitude": 13.51654
+    },
+    {
+      "slug": "fogliano-redipuglia",
+      "name": "Fogliano Redipuglia",
+      "admin1": "Friuli Venezia Giulia",
+      "province": "GO",
+      "provinceName": "Gorizia",
+      "istatCode": "031006",
+      "latitude": 45.86556,
+      "longitude": 13.48222
+    },
+    {
+      "slug": "gorizia",
+      "name": "Gorizia",
+      "admin1": "Friuli Venezia Giulia",
+      "province": "GO",
+      "provinceName": "Gorizia",
+      "istatCode": "031007",
+      "latitude": 45.94088,
+      "longitude": 13.62167
+    },
+    {
+      "slug": "gradisca-d-isonzo",
+      "name": "Gradisca d'Isonzo",
+      "admin1": "Friuli Venezia Giulia",
+      "province": "GO",
+      "provinceName": "Gorizia",
+      "istatCode": "031008",
+      "latitude": 45.8925,
+      "longitude": 13.50167
+    },
+    {
+      "slug": "grado",
+      "name": "Grado",
+      "admin1": "Friuli Venezia Giulia",
+      "province": "GO",
+      "provinceName": "Gorizia",
+      "istatCode": "031009",
+      "latitude": 45.67774,
+      "longitude": 13.40323
+    },
+    {
+      "slug": "mariano-del-friuli",
+      "name": "Mariano del Friuli",
+      "admin1": "Friuli Venezia Giulia",
+      "province": "GO",
+      "provinceName": "Gorizia",
+      "istatCode": "031010",
+      "latitude": 45.91509,
+      "longitude": 13.45947
+    },
+    {
+      "slug": "medea",
+      "name": "Medea",
+      "admin1": "Friuli Venezia Giulia",
+      "province": "GO",
+      "provinceName": "Gorizia",
+      "istatCode": "031011",
+      "latitude": 45.91751,
+      "longitude": 13.42444
+    },
+    {
+      "slug": "monfalcone",
+      "name": "Monfalcone",
+      "admin1": "Friuli Venezia Giulia",
+      "province": "GO",
+      "provinceName": "Gorizia",
+      "istatCode": "031012",
+      "latitude": 45.80463,
+      "longitude": 13.53292
+    },
+    {
+      "slug": "moraro",
+      "name": "Moraro",
+      "admin1": "Friuli Venezia Giulia",
+      "province": "GO",
+      "provinceName": "Gorizia",
+      "istatCode": "031013",
+      "latitude": 45.92971,
+      "longitude": 13.49575
+    },
+    {
+      "slug": "mossa",
+      "name": "Mossa",
+      "admin1": "Friuli Venezia Giulia",
+      "province": "GO",
+      "provinceName": "Gorizia",
+      "istatCode": "031014",
+      "latitude": 45.93674,
+      "longitude": 13.54933
+    },
+    {
+      "slug": "romans-d-isonzo",
+      "name": "Romans d'Isonzo",
+      "admin1": "Friuli Venezia Giulia",
+      "province": "GO",
+      "provinceName": "Gorizia",
+      "istatCode": "031015",
+      "latitude": 45.88816,
+      "longitude": 13.44187
+    },
+    {
+      "slug": "ronchi-dei-legionari",
+      "name": "Ronchi dei Legionari",
+      "admin1": "Friuli Venezia Giulia",
+      "province": "GO",
+      "provinceName": "Gorizia",
+      "istatCode": "031016",
+      "latitude": 45.82735,
+      "longitude": 13.50417
+    },
+    {
+      "slug": "sagrado",
+      "name": "Sagrado",
+      "admin1": "Friuli Venezia Giulia",
+      "province": "GO",
+      "provinceName": "Gorizia",
+      "istatCode": "031017",
+      "latitude": 45.87393,
+      "longitude": 13.48418
+    },
+    {
+      "slug": "san-canzian-d-isonzo",
+      "name": "San Canzian d'Isonzo",
+      "admin1": "Friuli Venezia Giulia",
+      "province": "GO",
+      "provinceName": "Gorizia",
+      "istatCode": "031018",
+      "latitude": 45.7975,
+      "longitude": 13.46639
+    },
+    {
+      "slug": "san-floriano-del-collio",
+      "name": "San Floriano del Collio",
+      "admin1": "Friuli Venezia Giulia",
+      "province": "GO",
+      "provinceName": "Gorizia",
+      "istatCode": "031019",
+      "latitude": 45.98088,
+      "longitude": 13.58875
+    },
+    {
+      "slug": "san-lorenzo-isontino",
+      "name": "San Lorenzo Isontino",
+      "admin1": "Friuli Venezia Giulia",
+      "province": "GO",
+      "provinceName": "Gorizia",
+      "istatCode": "031020",
+      "latitude": 45.9302,
+      "longitude": 13.52517
+    },
+    {
+      "slug": "san-pier-d-isonzo",
+      "name": "San Pier d'Isonzo",
+      "admin1": "Friuli Venezia Giulia",
+      "province": "GO",
+      "provinceName": "Gorizia",
+      "istatCode": "031021",
+      "latitude": 45.84452,
+      "longitude": 13.46764
+    },
+    {
+      "slug": "savogna-d-isonzo",
+      "name": "Savogna d'Isonzo",
+      "admin1": "Friuli Venezia Giulia",
+      "province": "GO",
+      "provinceName": "Gorizia",
+      "istatCode": "031022",
+      "latitude": 45.90894,
+      "longitude": 13.57936
+    },
+    {
+      "slug": "staranzano",
+      "name": "Staranzano",
+      "admin1": "Friuli Venezia Giulia",
+      "province": "GO",
+      "provinceName": "Gorizia",
+      "istatCode": "031023",
+      "latitude": 45.80233,
+      "longitude": 13.50226
+    },
+    {
+      "slug": "turriaco",
+      "name": "Turriaco",
+      "admin1": "Friuli Venezia Giulia",
+      "province": "GO",
+      "provinceName": "Gorizia",
+      "istatCode": "031024",
+      "latitude": 45.82119,
+      "longitude": 13.44369
+    },
+    {
+      "slug": "villesse",
+      "name": "Villesse",
+      "admin1": "Friuli Venezia Giulia",
+      "province": "GO",
+      "provinceName": "Gorizia",
+      "istatCode": "031025",
+      "latitude": 45.86526,
+      "longitude": 13.4438
+    },
+    {
+      "slug": "duino-aurisina",
+      "name": "Duino Aurisina",
+      "admin1": "Friuli Venezia Giulia",
+      "province": "TS",
+      "provinceName": "Trieste",
+      "istatCode": "032001",
+      "latitude": 45.74968,
+      "longitude": 13.67345
+    },
+    {
+      "slug": "monrupino",
+      "name": "Monrupino",
+      "admin1": "Friuli Venezia Giulia",
+      "province": "TS",
+      "provinceName": "Trieste",
+      "istatCode": "032002",
+      "latitude": 45.72284,
+      "longitude": 13.79098
+    },
+    {
+      "slug": "muggia",
+      "name": "Muggia",
+      "admin1": "Friuli Venezia Giulia",
+      "province": "TS",
+      "provinceName": "Trieste",
+      "istatCode": "032003",
+      "latitude": 45.60419,
+      "longitude": 13.76754
+    },
+    {
+      "slug": "san-dorligo-della-valle",
+      "name": "San Dorligo della Valle",
+      "admin1": "Friuli Venezia Giulia",
+      "province": "TS",
+      "provinceName": "Trieste",
+      "istatCode": "032004",
+      "latitude": 45.6008,
+      "longitude": 13.85929
+    },
+    {
+      "slug": "sgonico",
+      "name": "Sgonico",
+      "admin1": "Friuli Venezia Giulia",
+      "province": "TS",
+      "provinceName": "Trieste",
+      "istatCode": "032005",
+      "latitude": 45.73583,
+      "longitude": 13.74708
+    },
+    {
+      "slug": "trieste",
+      "name": "Trieste",
+      "admin1": "Friuli Venezia Giulia",
+      "province": "TS",
+      "provinceName": "Trieste",
+      "istatCode": "032006",
+      "latitude": 45.64953,
+      "longitude": 13.77678
+    },
+    {
+      "slug": "andreis",
+      "name": "Andreis",
+      "admin1": "Friuli Venezia Giulia",
+      "province": "PN",
+      "provinceName": "Pordenone",
+      "istatCode": "093001",
+      "latitude": 46.20146,
+      "longitude": 12.61448
+    },
+    {
+      "slug": "arba",
+      "name": "Arba",
+      "admin1": "Friuli Venezia Giulia",
+      "province": "PN",
+      "provinceName": "Pordenone",
+      "istatCode": "093002",
+      "latitude": 46.14611,
+      "longitude": 12.79009
+    },
+    {
+      "slug": "aviano",
+      "name": "Aviano",
+      "admin1": "Friuli Venezia Giulia",
+      "province": "PN",
+      "provinceName": "Pordenone",
+      "istatCode": "093004",
+      "latitude": 46.07056,
+      "longitude": 12.59472
+    },
+    {
+      "slug": "azzano-decimo",
+      "name": "Azzano Decimo",
+      "admin1": "Friuli Venezia Giulia",
+      "province": "PN",
+      "provinceName": "Pordenone",
+      "istatCode": "093005",
+      "latitude": 45.90937,
+      "longitude": 12.6642
+    },
+    {
+      "slug": "barcis",
+      "name": "Barcis",
+      "admin1": "Friuli Venezia Giulia",
+      "province": "PN",
+      "provinceName": "Pordenone",
+      "istatCode": "093006",
+      "latitude": 46.19071,
+      "longitude": 12.56068
+    },
+    {
+      "slug": "brugnera",
+      "name": "Brugnera",
+      "admin1": "Friuli Venezia Giulia",
+      "province": "PN",
+      "provinceName": "Pordenone",
+      "istatCode": "093007",
+      "latitude": 45.89947,
+      "longitude": 12.54178
+    },
+    {
+      "slug": "budoia",
+      "name": "Budoia",
+      "admin1": "Friuli Venezia Giulia",
+      "province": "PN",
+      "provinceName": "Pordenone",
+      "istatCode": "093008",
+      "latitude": 46.04453,
+      "longitude": 12.53429
+    },
+    {
+      "slug": "caneva",
+      "name": "Caneva",
+      "admin1": "Friuli Venezia Giulia",
+      "province": "PN",
+      "provinceName": "Pordenone",
+      "istatCode": "093009",
+      "latitude": 45.97078,
+      "longitude": 12.45261
+    },
+    {
+      "slug": "casarsa-della-delizia",
+      "name": "Casarsa della Delizia",
+      "admin1": "Friuli Venezia Giulia",
+      "province": "PN",
+      "provinceName": "Pordenone",
+      "istatCode": "093010",
+      "latitude": 45.95091,
+      "longitude": 12.8425
+    },
+    {
+      "slug": "castelnovo-del-friuli",
+      "name": "Castelnovo del Friuli",
+      "admin1": "Friuli Venezia Giulia",
+      "province": "PN",
+      "provinceName": "Pordenone",
+      "istatCode": "093011",
+      "latitude": 46.19617,
+      "longitude": 12.91061
+    },
+    {
+      "slug": "cavasso-nuovo",
+      "name": "Cavasso Nuovo",
+      "admin1": "Friuli Venezia Giulia",
+      "province": "PN",
+      "provinceName": "Pordenone",
+      "istatCode": "093012",
+      "latitude": 46.19441,
+      "longitude": 12.77193
+    },
+    {
+      "slug": "chions",
+      "name": "Chions",
+      "admin1": "Friuli Venezia Giulia",
+      "province": "PN",
+      "provinceName": "Pordenone",
+      "istatCode": "093013",
+      "latitude": 45.84546,
+      "longitude": 12.71232
+    },
+    {
+      "slug": "cimolais",
+      "name": "Cimolais",
+      "admin1": "Friuli Venezia Giulia",
+      "province": "PN",
+      "provinceName": "Pordenone",
+      "istatCode": "093014",
+      "latitude": 46.289,
+      "longitude": 12.43792
+    },
+    {
+      "slug": "claut",
+      "name": "Claut",
+      "admin1": "Friuli Venezia Giulia",
+      "province": "PN",
+      "provinceName": "Pordenone",
+      "istatCode": "093015",
+      "latitude": 46.26855,
+      "longitude": 12.5144
+    },
+    {
+      "slug": "clauzetto",
+      "name": "Clauzetto",
+      "admin1": "Friuli Venezia Giulia",
+      "province": "PN",
+      "provinceName": "Pordenone",
+      "istatCode": "093016",
+      "latitude": 46.22931,
+      "longitude": 12.91662
+    },
+    {
+      "slug": "cordenons",
+      "name": "Cordenons",
+      "admin1": "Friuli Venezia Giulia",
+      "province": "PN",
+      "provinceName": "Pordenone",
+      "istatCode": "093017",
+      "latitude": 45.9836,
+      "longitude": 12.70038
+    },
+    {
+      "slug": "cordovado",
+      "name": "Cordovado",
+      "admin1": "Friuli Venezia Giulia",
+      "province": "PN",
+      "provinceName": "Pordenone",
+      "istatCode": "093018",
+      "latitude": 45.84425,
+      "longitude": 12.88537
+    },
+    {
+      "slug": "erto-e-casso",
+      "name": "Erto e Casso",
+      "admin1": "Friuli Venezia Giulia",
+      "province": "PN",
+      "provinceName": "Pordenone",
+      "istatCode": "093019",
+      "latitude": 46.2764,
+      "longitude": 12.37149
+    },
+    {
+      "slug": "fanna",
+      "name": "Fanna",
+      "admin1": "Friuli Venezia Giulia",
+      "province": "PN",
+      "provinceName": "Pordenone",
+      "istatCode": "093020",
+      "latitude": 46.18455,
+      "longitude": 12.75161
+    },
+    {
+      "slug": "fiume-veneto",
+      "name": "Fiume Veneto",
+      "admin1": "Friuli Venezia Giulia",
+      "province": "PN",
+      "provinceName": "Pordenone",
+      "istatCode": "093021",
+      "latitude": 45.92865,
+      "longitude": 12.73811
+    },
+    {
+      "slug": "fontanafredda",
+      "name": "Fontanafredda",
+      "admin1": "Friuli Venezia Giulia",
+      "province": "PN",
+      "provinceName": "Pordenone",
+      "istatCode": "093022",
+      "latitude": 45.97556,
+      "longitude": 12.56833
+    },
+    {
+      "slug": "frisanco",
+      "name": "Frisanco",
+      "admin1": "Friuli Venezia Giulia",
+      "province": "PN",
+      "provinceName": "Pordenone",
+      "istatCode": "093024",
+      "latitude": 46.21246,
+      "longitude": 12.72626
+    },
+    {
+      "slug": "maniago",
+      "name": "Maniago",
+      "admin1": "Friuli Venezia Giulia",
+      "province": "PN",
+      "provinceName": "Pordenone",
+      "istatCode": "093025",
+      "latitude": 46.16644,
+      "longitude": 12.70602
+    },
+    {
+      "slug": "meduno",
+      "name": "Meduno",
+      "admin1": "Friuli Venezia Giulia",
+      "province": "PN",
+      "provinceName": "Pordenone",
+      "istatCode": "093026",
+      "latitude": 46.21518,
+      "longitude": 12.79932
+    },
+    {
+      "slug": "montereale-valcellina",
+      "name": "Montereale Valcellina",
+      "admin1": "Friuli Venezia Giulia",
+      "province": "PN",
+      "provinceName": "Pordenone",
+      "istatCode": "093027",
+      "latitude": 46.1511,
+      "longitude": 12.64771
+    },
+    {
+      "slug": "morsano-al-tagliamento",
+      "name": "Morsano al Tagliamento",
+      "admin1": "Friuli Venezia Giulia",
+      "province": "PN",
+      "provinceName": "Pordenone",
+      "istatCode": "093028",
+      "latitude": 45.85969,
+      "longitude": 12.92769
+    },
+    {
+      "slug": "pasiano-di-pordenone",
+      "name": "Pasiano di Pordenone",
+      "admin1": "Friuli Venezia Giulia",
+      "province": "PN",
+      "provinceName": "Pordenone",
+      "istatCode": "093029",
+      "latitude": 45.84972,
+      "longitude": 12.62722
+    },
+    {
+      "slug": "pinzano-al-tagliamento",
+      "name": "Pinzano al Tagliamento",
+      "admin1": "Friuli Venezia Giulia",
+      "province": "PN",
+      "provinceName": "Pordenone",
+      "istatCode": "093030",
+      "latitude": 46.18216,
+      "longitude": 12.94433
+    },
+    {
+      "slug": "polcenigo",
+      "name": "Polcenigo",
+      "admin1": "Friuli Venezia Giulia",
+      "province": "PN",
+      "provinceName": "Pordenone",
+      "istatCode": "093031",
+      "latitude": 46.03822,
+      "longitude": 12.50321
+    },
+    {
+      "slug": "porcia",
+      "name": "Porcia",
+      "admin1": "Friuli Venezia Giulia",
+      "province": "PN",
+      "provinceName": "Pordenone",
+      "istatCode": "093032",
+      "latitude": 45.96301,
+      "longitude": 12.61642
+    },
+    {
+      "slug": "pordenone",
+      "name": "Pordenone",
+      "admin1": "Friuli Venezia Giulia",
+      "province": "PN",
+      "provinceName": "Pordenone",
+      "istatCode": "093033",
+      "latitude": 45.95689,
+      "longitude": 12.66051
+    },
+    {
+      "slug": "prata-di-pordenone",
+      "name": "Prata di Pordenone",
+      "admin1": "Friuli Venezia Giulia",
+      "province": "PN",
+      "provinceName": "Pordenone",
+      "istatCode": "093034",
+      "latitude": 45.89441,
+      "longitude": 12.58843
+    },
+    {
+      "slug": "pravisdomini",
+      "name": "Pravisdomini",
+      "admin1": "Friuli Venezia Giulia",
+      "province": "PN",
+      "provinceName": "Pordenone",
+      "istatCode": "093035",
+      "latitude": 45.81972,
+      "longitude": 12.69478
+    },
+    {
+      "slug": "roveredo-in-piano",
+      "name": "Roveredo in Piano",
+      "admin1": "Friuli Venezia Giulia",
+      "province": "PN",
+      "provinceName": "Pordenone",
+      "istatCode": "093036",
+      "latitude": 46.00847,
+      "longitude": 12.61938
+    },
+    {
+      "slug": "sacile",
+      "name": "Sacile",
+      "admin1": "Friuli Venezia Giulia",
+      "province": "PN",
+      "provinceName": "Pordenone",
+      "istatCode": "093037",
+      "latitude": 45.95412,
+      "longitude": 12.50274
+    },
+    {
+      "slug": "san-giorgio-della-richinvelda",
+      "name": "San Giorgio della Richinvelda",
+      "admin1": "Friuli Venezia Giulia",
+      "province": "PN",
+      "provinceName": "Pordenone",
+      "istatCode": "093038",
+      "latitude": 46.04778,
+      "longitude": 12.86867
+    },
+    {
+      "slug": "san-martino-al-tagliamento",
+      "name": "San Martino al Tagliamento",
+      "admin1": "Friuli Venezia Giulia",
+      "province": "PN",
+      "provinceName": "Pordenone",
+      "istatCode": "093039",
+      "latitude": 46.01697,
+      "longitude": 12.86989
+    },
+    {
+      "slug": "san-quirino",
+      "name": "San Quirino",
+      "admin1": "Friuli Venezia Giulia",
+      "province": "PN",
+      "provinceName": "Pordenone",
+      "istatCode": "093040",
+      "latitude": 46.03411,
+      "longitude": 12.67846
+    },
+    {
+      "slug": "san-vito-al-tagliamento",
+      "name": "San Vito al Tagliamento",
+      "admin1": "Friuli Venezia Giulia",
+      "province": "PN",
+      "provinceName": "Pordenone",
+      "istatCode": "093041",
+      "latitude": 45.9168,
+      "longitude": 12.85945
+    },
+    {
+      "slug": "sequals",
+      "name": "Sequals",
+      "admin1": "Friuli Venezia Giulia",
+      "province": "PN",
+      "provinceName": "Pordenone",
+      "istatCode": "093042",
+      "latitude": 46.16385,
+      "longitude": 12.83037
+    },
+    {
+      "slug": "sesto-al-reghena",
+      "name": "Sesto al Reghena",
+      "admin1": "Friuli Venezia Giulia",
+      "province": "PN",
+      "provinceName": "Pordenone",
+      "istatCode": "093043",
+      "latitude": 45.84938,
+      "longitude": 12.81295
+    },
+    {
+      "slug": "spilimbergo",
+      "name": "Spilimbergo",
+      "admin1": "Friuli Venezia Giulia",
+      "province": "PN",
+      "provinceName": "Pordenone",
+      "istatCode": "093044",
+      "latitude": 46.11345,
+      "longitude": 12.89241
+    },
+    {
+      "slug": "tramonti-di-sopra",
+      "name": "Tramonti di Sopra",
+      "admin1": "Friuli Venezia Giulia",
+      "province": "PN",
+      "provinceName": "Pordenone",
+      "istatCode": "093045",
+      "latitude": 46.31023,
+      "longitude": 12.78994
+    },
+    {
+      "slug": "tramonti-di-sotto",
+      "name": "Tramonti di Sotto",
+      "admin1": "Friuli Venezia Giulia",
+      "province": "PN",
+      "provinceName": "Pordenone",
+      "istatCode": "093046",
+      "latitude": 46.28475,
+      "longitude": 12.79644
+    },
+    {
+      "slug": "travesio",
+      "name": "Travesio",
+      "admin1": "Friuli Venezia Giulia",
+      "province": "PN",
+      "provinceName": "Pordenone",
+      "istatCode": "093047",
+      "latitude": 46.19667,
+      "longitude": 12.8674
+    },
+    {
+      "slug": "vito-d-asio",
+      "name": "Vito d'Asio",
+      "admin1": "Friuli Venezia Giulia",
+      "province": "PN",
+      "provinceName": "Pordenone",
+      "istatCode": "093049",
+      "latitude": 46.22824,
+      "longitude": 12.93889
+    },
+    {
+      "slug": "vivaro",
+      "name": "Vivaro",
+      "admin1": "Friuli Venezia Giulia",
+      "province": "PN",
+      "provinceName": "Pordenone",
+      "istatCode": "093050",
+      "latitude": 46.07656,
+      "longitude": 12.77912
+    },
+    {
+      "slug": "zoppola",
+      "name": "Zoppola",
+      "admin1": "Friuli Venezia Giulia",
+      "province": "PN",
+      "provinceName": "Pordenone",
+      "istatCode": "093051",
+      "latitude": 45.96624,
+      "longitude": 12.76828
+    },
+    {
+      "slug": "vajont",
+      "name": "Vajont",
+      "admin1": "Friuli Venezia Giulia",
+      "province": "PN",
+      "provinceName": "Pordenone",
+      "istatCode": "093052",
+      "latitude": 46.14534,
+      "longitude": 12.69647
+    },
+    {
+      "slug": "valvasone-arzene",
+      "name": "Valvasone Arzene",
+      "admin1": "Friuli Venezia Giulia",
+      "province": "PN",
+      "provinceName": "Pordenone",
+      "istatCode": "093053",
+      "latitude": 45.99648,
+      "longitude": 12.85846
+    }
+  ]
+}

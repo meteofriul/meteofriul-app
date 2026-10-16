@@ -1,0 +1,82 @@
+{
+  "schemaVersion": 1,
+  "generatedAt": "2026-07-12",
+  "purpose": "Revisione FUR del nono lotto Scopri, dopo approvazione IT. Non letto direttamente dalla UI.",
+  "summary": {
+    "totalRecords": 10,
+    "approved": 10,
+    "pendingHumanReview": 0
+  },
+  "records": [
+    {
+      "id": "memory-it-ready-1210-farfa-futurismo-da-trieste",
+      "status": "approved",
+      "titleFur": "Farfa, futurisim di Triest",
+      "summaryFur": "Ai 10 di Dicembar dal 1879 al nas a Triest Vittorio Osvaldo Tommasini, cognossût come Farfa. Une memorie futuriste, laterâl ma vive, dentri dal Nûfcent artistic.",
+      "notes": "Futurisim e Nûfcent mantengono il senso storico-artistico."
+    },
+    {
+      "id": "memory-it-ready-0407-bruno-croatto-pittura-e-incisione",
+      "status": "approved",
+      "titleFur": "Bruno Croatto, piture e incision",
+      "summaryFur": "Ai 7 di Avrîl dal 1875 al nas a Triest Bruno Croatto, pitôr e incisôr. Une linie discrete de culture figurative triestine.",
+      "notes": "Incisôr e culture figurative sono coerenti con il lessico già usato."
+    },
+    {
+      "id": "memory-it-ready-0920-carolus-cergoly-trieste-in-versi",
+      "status": "approved",
+      "titleFur": "Carolus Cergoly, Triest in viers",
+      "summaryFur": "Ai 20 di Setembar dal 1908 al nas a Triest Carolus Cergoly, poet e scritôr. Une vôs leterarie che e ten dongje citât, lenghe e memorie.",
+      "notes": "Viers, vôs leterarie e lenghe rendono il tono poetico senza forzature."
+    },
+    {
+      "id": "memory-it-ready-0301-carlo-marin-muggia-e-scrittura",
+      "status": "approved",
+      "titleFur": "Carlo Marin, Mugle e scriture",
+      "summaryFur": "Ai 1 di Març dal 1773 al nas a Mugle Carlo Marin, autôr leât ae culture locâl. Une memorie curte par slargjâ Scuvierç ancje fûr dai centris plui grancj.",
+      "notes": "Mugle usato per Muggia; Scuvierç coerente con tab FUR."
+    },
+    {
+      "id": "memory-it-ready-0214-bruno-giordano-sanzin-poesia-triestina",
+      "status": "approved",
+      "titleFur": "Bruno Giordano Sanzin, poesie triestine",
+      "summaryFur": "Ai 14 di Fevrâr dal 1906 al nas a Triest Bruno Giordano Sanzin, poet. Une piçule memorie leterarie dal Nûfcent triestin.",
+      "notes": "Piçule memorie leterarie mantiene la scala della card."
+    },
+    {
+      "id": "memory-it-ready-0415-renzo-rosso-narrativa-triestina",
+      "status": "approved",
+      "titleFur": "Renzo Rosso, narrative triestine",
+      "summaryFur": "Ai 15 di Avrîl dal 1926 al nas a Triest Renzo Rosso, scritôr. Une memorie di narrative e sguard urban, dentri de Triest dal secont Nûfcent.",
+      "notes": "Secont Nûfcent usato per secondo Novecento."
+    },
+    {
+      "id": "memory-it-ready-0816-ugo-mioni-libri-e-ragazzi",
+      "status": "approved",
+      "titleFur": "Ugo Mioni, libris e fruts",
+      "summaryFur": "Ai 16 di Avost dal 1870 al nas a Triest Ugo Mioni, scritôr. Une memorie di leturis popolârs e libris pensâts ancje pai plui zovins.",
+      "notes": "Fruts nel titolo, plui zovins nel testo per naturalezza."
+    },
+    {
+      "id": "memory-it-ready-1021-filippo-zamboni-poesia-e-risorgimento",
+      "status": "approved",
+      "titleFur": "Filippo Zamboni, poesie e Risorgiment",
+      "summaryFur": "Ai 21 di Otubar dal 1826 al nas a Triest Filippo Zamboni, poet e patriot. Une memorie tra leterature, ideâi civîi e storie dal Votcent.",
+      "notes": "Risorgiment lasciato come riferimento storico riconoscibile."
+    },
+    {
+      "id": "memory-it-ready-0924-enrico-nordio-forme-per-trieste",
+      "status": "approved",
+      "titleFur": "Enrico Nordio, formis par Triest",
+      "summaryFur": "Ai 24 di Setembar dal 1851 al nas a Triest Enrico Nordio, architet. Une memorie urbane, fate di edificis, scuelis e trasformazions de citât.",
+      "notes": "Edificis/scuelis/trasformazions mantiene il senso urbano."
+    },
+    {
+      "id": "memory-it-ready-1002-pierviviano-zecchini-san-vito-e-cultura",
+      "status": "approved",
+      "titleFur": "Pierviviano Zecchini, San Vît e culture",
+      "summaryFur": "Ai 2 di Otubar dal 1802 al nas a San Vît dal Tiliment Pierviviano Zecchini. Une memorie locâl par dâ spazi ancje ae storie culturâl dal Pordenonês.",
+      "notes": "San Vît dal Tiliment e Pordenonês per localizzazione FUR."
+    }
+  ]
+}

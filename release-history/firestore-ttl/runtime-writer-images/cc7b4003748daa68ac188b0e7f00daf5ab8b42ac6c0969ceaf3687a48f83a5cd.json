@@ -1,0 +1,13 @@
+{
+  "schemaVersion": "firestore-push-ttl-runtime-writer-contract-v1",
+  "projectId": "meteo-friul",
+  "region": "europe-west1",
+  "expectedImageDigest": "europe-west1-docker.pkg.dev/meteo-friul/cloud-run-source-deploy/meteofriul-api@sha256:cc7b4003748daa68ac188b0e7f00daf5ab8b42ac6c0969ceaf3687a48f83a5cd",
+  "pushRepositorySha256": "42b0f320ea9a5179083a4c7f3f5d9a83c8035286db1c0bc9f166de8c925612c1",
+  "verificationMethod": "cloud-build-result-plus-source-sha256",
+  "sourceCommit": "c74d1c1f1b0c1d35701f126207b38e128958fd75",
+  "cloudBuildId": "8f1ee739-23e6-41e7-b413-7575d6c151f2",
+  "cloudBuildStatus": "SUCCESS",
+  "cloudBuildResultImageDigest": "europe-west1-docker.pkg.dev/meteo-friul/cloud-run-source-deploy/meteofriul-api@sha256:cc7b4003748daa68ac188b0e7f00daf5ab8b42ac6c0969ceaf3687a48f83a5cd",
+  "cloudBuildSourceArchiveSha256Base64": "0vPYCXMB_MJUNiPk6cn3ZPx2APPl27hs7wJ_2yViWiM="
+}

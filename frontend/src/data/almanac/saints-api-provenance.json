@@ -1,0 +1,33 @@
+{
+  "imported_at": "2026-09-07T18:29:12.575Z",
+  "service": "https://santodelgiorno.marcointroini.it/api/v1",
+  "records": 21,
+  "days": 1,
+  "rights_review": "not_performed_user_requested_import",
+  "sources": {
+    "1": {
+      "data": {
+        "type": "fonte",
+        "id": 1,
+        "attributes": {
+          "nome": "Cathopedia",
+          "url": "https://it.cathopedia.org/wiki/Cathopedia:Pagina_principale",
+          "note": "Wikipedia Cattolica",
+          "numeroSanti": 4800
+        }
+      }
+    },
+    "2": {
+      "data": {
+        "type": "fonte",
+        "id": 2,
+        "attributes": {
+          "nome": "Luigi Rignanese",
+          "url": "https://luirig.altervista.org/calendario/onomast.htm",
+          "note": "Sito web Luigì Rignanese",
+          "numeroSanti": 523
+        }
+      }
+    }
+  }
+}

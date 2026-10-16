@@ -1,0 +1,134 @@
+{
+  "schemaVersion": 1,
+  "generatedAt": "2026-07-12",
+  "purpose": "Sesto lotto Scopri IT: piccolo lotto pulito dopo esclusione di morti, sport, politica generica e profili viventi. Non letto direttamente dalla UI.",
+  "policy": {
+    "readyForUi": false,
+    "furDeferred": true,
+    "dateFormat": "DD-MM",
+    "requiresFinalItalianApproval": true,
+    "excludeDeaths": true,
+    "excludeGenericPoliticalProfiles": true,
+    "excludeLivingProfilesWithoutDedicatedReview": true,
+    "sourceFirst": true,
+    "publishAfterFurOnly": true
+  },
+  "summary": {
+    "keepDaily": 5,
+    "primary": 3,
+    "secondary": 2,
+    "hold": 5,
+    "potentialPrimaryCoverageBefore": 67,
+    "potentialPrimaryCoverageAfter": 70,
+    "currentVisiblePrimaryCoverage": 85
+  },
+  "keepDaily": [
+    {
+      "id": "daily-history-review-01-08-20",
+      "wikidataId": "Q4893980",
+      "dateIt": "08-01",
+      "year": 1687,
+      "municipality": "Cividale del Friuli",
+      "province": "UD",
+      "canonicalCategory": "cultura",
+      "dailyRole": "primary",
+      "titleIt": "Bernardo Maria De Rubeis, storia da Cividale",
+      "copyIt": "L'8 gennaio 1687 nasce a Cividale del Friuli Bernardo Maria De Rubeis, teologo e storico: una voce sobria per la memoria culturale locale.",
+      "sourceLabel": "Wikipedia",
+      "sourceUrl": "https://it.wikipedia.org/wiki/Bernardo_Maria_De_Rubeis",
+      "sourceStatus": "pass",
+      "readyForUi": false
+    },
+    {
+      "id": "daily-history-review-02-16-10",
+      "wikidataId": "Q3942546",
+      "dateIt": "16-02",
+      "year": 1892,
+      "municipality": "Trieste",
+      "province": "TS",
+      "canonicalCategory": "storia",
+      "dailyRole": "primary",
+      "titleIt": "Ruggero Timeus, Trieste e il Novecento",
+      "copyIt": "Il 16 febbraio 1892 nasce a Trieste Ruggero Timeus, saggista e scrittore. Una memoria da trattare con tono storico, senza enfasi.",
+      "sourceLabel": "Wikipedia",
+      "sourceUrl": "https://it.wikipedia.org/wiki/Ruggero_Timeus",
+      "sourceStatus": "pass",
+      "readyForUi": false
+    },
+    {
+      "id": "daily-history-review-10-16-12",
+      "wikidataId": "Q3263200",
+      "dateIt": "16-10",
+      "year": 1907,
+      "municipality": "Trieste",
+      "province": "TS",
+      "canonicalCategory": "cultura",
+      "dailyRole": "primary",
+      "titleIt": "Louis Toffoli, pittura triestina d'origine",
+      "copyIt": "Il 16 ottobre 1907 nasce a Trieste Louis Toffoli, pittore che portò con sé una memoria personale e artistica legata alla città.",
+      "sourceLabel": "Wikipedia",
+      "sourceUrl": "https://it.wikipedia.org/wiki/Louis_Toffoli",
+      "sourceStatus": "pass",
+      "readyForUi": false
+    },
+    {
+      "id": "daily-history-review-02-26-4",
+      "wikidataId": "Q1748033",
+      "dateIt": "26-02",
+      "year": 1867,
+      "municipality": "Trieste",
+      "province": "TS",
+      "canonicalCategory": "cultura",
+      "dailyRole": "secondary",
+      "titleIt": "Alexander Kircher, mare e pittura",
+      "copyIt": "Il 26 febbraio 1867 nasce a Trieste Alexander Kircher, pittore e illustratore legato anche all'immaginario marittimo austro-ungarico.",
+      "sourceLabel": "Wikipedia",
+      "sourceUrl": "https://it.wikipedia.org/wiki/Alexander_Kircher",
+      "sourceStatus": "pass",
+      "readyForUi": false
+    },
+    {
+      "id": "profile-archive-review-0709-spiridon-gopcevic",
+      "wikidataId": "Q89400",
+      "dateIt": "09-07",
+      "year": 1855,
+      "municipality": "Trieste",
+      "province": "TS",
+      "canonicalCategory": "cultura",
+      "dailyRole": "secondary",
+      "titleIt": "Spiridon Gopcevic, astronomia e scrittura",
+      "copyIt": "Il 9 luglio 1855 nasce a Trieste Spiridon Gopcevic, astronomo e autore austro-serbo noto anche con lo pseudonimo Leo Brenner.",
+      "sourceLabel": "Wikipedia",
+      "sourceUrl": "https://it.wikipedia.org/wiki/Spiridon_Gop%C4%8Devi%C4%87",
+      "sourceStatus": "pass",
+      "readyForUi": false
+    }
+  ],
+  "hold": [
+    {
+      "id": "daily-history-review-02-12-6",
+      "reason": "Remo Anzovino e' vivente e contemporaneo: lo teniamo fuori finche non decidiamo una politica dedicata.",
+      "readyForUi": false
+    },
+    {
+      "id": "daily-history-review-06-09-23",
+      "reason": "Fabio Beltram e' vivente: serve revisione dedicata per profili contemporanei.",
+      "readyForUi": false
+    },
+    {
+      "id": "profile-hold-0113-enrico-paoli",
+      "reason": "Profilo scacchistico riconosciuto ma troppo specialistico per la rubrica principale.",
+      "readyForUi": false
+    },
+    {
+      "id": "profile-hold-0222-peter-butkovic",
+      "reason": "Profilo sloveno locale interessante, ma il master non basta per stabilire il peso editoriale.",
+      "readyForUi": false
+    },
+    {
+      "id": "profile-hold-0616-lado-piscanc",
+      "reason": "Legame territoriale chiaro, ma serve fonte piu completa prima della selezione.",
+      "readyForUi": false
+    }
+  ]
+}

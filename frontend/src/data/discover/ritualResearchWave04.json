@@ -1,0 +1,93 @@
+{
+  "schemaVersion": 1,
+  "snapshotDate": "2026-08-31",
+  "purpose": "Quarto lotto di riti: una festa di luglio e una ricorrenza mobile di ottobre. Copy e riferimenti linguistici restano una sola volta nel catalogo promosso.",
+  "readyForUi": false,
+  "runtimeCatalog": "frontend/src/data/discover/institutionalRituals.json",
+  "editorialDecision": {
+    "basis": "user_delegated_assisted_editorial_review",
+    "reviewer": "assistant",
+    "independentHumanReview": false,
+    "scope": ["ritual-research-sappada-santa-margherita", "ritual-research-piano-arta-rosario"],
+    "note": "Decisione editoriale assistita nel mandato di continuare Scopri, non approvazione dell'utente frase per frase né certificazione ARLeF o revisione professionale indipendente."
+  },
+  "rules": [
+    "Manifest e record di ricerca non sono contenuti UI; la promozione riguarda soltanto i due promotedRecordId.",
+    "Fonti culturali e riferimenti linguistici sono HTML verificati; nessun PDF necessario alla decisione.",
+    "Le date indicano ricorrenze documentate, non confermano programmi del 2026 o di edizioni future.",
+    "Nessun orario o invito operativo. Le aree indicano il contesto culturale, non la posizione dell'utente.",
+    "Testi originali di sintesi, senza immagini o filmati delle fonti."
+  ],
+  "records": [
+    {
+      "id": "ritual-research-sappada-santa-margherita",
+      "promotedRecordId": "institutional-ritual-sappada-santa-margherita",
+      "canonicalKey": "sappada-santa-margherita-luglio20",
+      "rubric": "riti_credenze_popolari",
+      "reviewStatus": "promoted",
+      "readyForUi": false,
+      "promotedAt": "2026-08-31",
+      "source": {
+        "url": "https://www.plodn.info/tradizioni/",
+        "section": "Estate",
+        "authority": "Associazione Plodar – Germanofoni di Sappada",
+        "authorityUrl": "https://www.plodn.info/associazione-plodar/",
+        "accessMethod": "direct_html",
+        "checkedAt": "2026-08-31"
+      },
+      "evidenceSummary": "La fonte indica Santa Margherita, patrona di Sappada, il 20 luglio. Descrive separatamente i ragazzi coscritti che portano statue nelle processioni estive e i cappelli ornati anche con fiori di carta preparati dalle coetanee.",
+      "temporalRule": { "type": "fixed_date", "date": "07-20" },
+      "editorialWindow": { "type": "fixed_date", "date": "07-20" },
+      "currentEventScheduleVerified": false,
+      "geographicScope": ["sappada"],
+      "scopeNote": "Il ruolo dei ragazzi e i cappelli appartengono alla descrizione generale delle processioni estive: non si afferma che siano esclusivi del 20 luglio. Plodn è il nome sappadino, conservato in entrambe le lingue.",
+      "languageReview": {
+        "approvalBasis": "user_delegated_assisted_editorial_review",
+        "reviewer": "assistant",
+        "independentHumanReview": false,
+        "referencesLocation": "institutional-ritual-sappada-santa-margherita.languageReview.fur.references",
+        "notes": "Coscrit/coscrits, cjapiel, cjarte, statue e vê sù verificati in HTML ARLeF; rilettura assistita dell'equivalenza IT/FUR. Santa Margherita resta nome proprio della fonte."
+      },
+      "duplicateReview": {
+        "status": "distinct",
+        "comparedCatalogs": ["ostermannCulturalDiscover", "institutionalRituals", "institutionalArchive", "localMemory", "municipalityProfiles"],
+        "note": "Nessun rito di Santa Margherita già presente. Il profilo di Sappada riguarda lingua e passaggio regionale del 2017; Alesso/Capodanno e Maj di Lucinico raccontano altre azioni, luoghi e date dei coscritti. Barbana resta una diversa bozza di Grado."
+      }
+    },
+    {
+      "id": "ritual-research-piano-arta-rosario",
+      "promotedRecordId": "institutional-ritual-piano-arta-rosario",
+      "canonicalKey": "piano-arta-rosario-prima-domenica-ottobre",
+      "rubric": "riti_credenze_popolari",
+      "reviewStatus": "promoted",
+      "readyForUi": false,
+      "promotedAt": "2026-08-31",
+      "source": {
+        "url": "https://www.diocesiudine.it/wd-appuntamenti/piano-darta-celebra-la-madonna-del-rosario/",
+        "section": "La storia",
+        "authority": "Arcidiocesi di Udine",
+        "publishedAt": "2014-09-30",
+        "accessMethod": "direct_http_html",
+        "checkedAt": "2026-08-31"
+      },
+      "evidenceSummary": "L'articolo del 2014 esplicita la prima domenica di ottobre come ricorrenza annuale. Nello stesso racconto documenta il lavoro delle donne del Mercatino artigianale: rosari fatti a mano, fiori in chiesa e preparativi della processione.",
+      "temporalRule": { "type": "nth_weekday", "month": 10, "weekday": 0, "ordinal": 1 },
+      "editorialWindow": { "type": "nth_weekday", "month": 10, "weekday": 0, "ordinal": 1 },
+      "currentEventScheduleVerified": false,
+      "geographicScope": ["piano_arta", "arta_terme"],
+      "scopeNote": "Visibilità limitata a un solo giorno ogni anno, non al mese di ottobre. I preparativi sono attribuiti al 2014; non si annunciano programmi, orari o svolgimento di edizioni attuali.",
+      "languageReview": {
+        "approvalBasis": "user_delegated_assisted_editorial_review",
+        "reviewer": "assistant",
+        "independentHumanReview": false,
+        "referencesLocation": "institutional-ritual-piano-arta-rosario.languageReview.fur.references",
+        "notes": "Rosari/rosaris, testemoneance e domenie controllati in HTML ARLeF; toponimo e nome del Mercatino restano quelli della fonte. La data del racconto è esplicita anche in friulano."
+      },
+      "duplicateReview": {
+        "status": "distinct",
+        "comparedCatalogs": ["ostermannCulturalDiscover", "institutionalRituals", "institutionalArchive", "localMemory", "municipalityProfiles"],
+        "note": "Nessuna scheda precedente del Rosario di Piano d'Arta; il profilo comunale di Arta Terme non racconta il lavoro delle donne per questa ricorrenza. La festa locale non è presentata come rito uniforme del Friuli."
+      }
+    }
+  ]
+}

@@ -1,0 +1,14 @@
+{
+  "schemaVersion": 1,
+  "recordedAtUtc": "2026-09-29T14:50:12Z",
+  "sourceCommit": "3c82c89acb8fa63df0b8757f68e3c7b9bef79564",
+  "cloudBuildId": "adc1f8f6-e5a4-4152-b6e0-cf5031e05545",
+  "cloudBuildStatus": "SUCCESS",
+  "cloudBuildImage": "europe-west1-docker.pkg.dev/meteo-friul/meteofriul/backend:notifications-3c82c89a",
+  "expectedImageDigest": "europe-west1-docker.pkg.dev/meteo-friul/meteofriul/backend@sha256:4cc5bbe6f9ac3b3cf05aab3c5783481eb913da21921a2affa459407f3098ee56",
+  "cloudBuildResultImageDigest": "europe-west1-docker.pkg.dev/meteo-friul/meteofriul/backend@sha256:4cc5bbe6f9ac3b3cf05aab3c5783481eb913da21921a2affa459407f3098ee56",
+  "deployedRevision": "meteofriul-api-notify-3c82c89a",
+  "tag": "sponsor-bdde99b",
+  "tagUrl": "https://sponsor-bdde99b---meteofriul-api-bx24xqvcda-ew.a.run.app",
+  "stableTrafficChanged": false
+}

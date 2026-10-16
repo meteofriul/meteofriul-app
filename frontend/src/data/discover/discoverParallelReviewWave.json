@@ -1,0 +1,201 @@
+{
+  "schemaVersion": 1,
+  "generatedAt": "2026-07-11",
+  "purpose": "Prima ondata parallela Scopri: staging editoriale IT, non letto dalla UI.",
+  "policy": {
+    "readyForUi": false,
+    "furDeferred": true,
+    "dateFormat": "DD-MM",
+    "requiresItalianReview": true,
+    "requiresSourceReview": true
+  },
+  "summary": {
+    "newDailyHistoryKeep": 7,
+    "newDailyHistoryHold": 19,
+    "newDailyHistoryDiscard": 4,
+    "ostermannSayingKeep": 5,
+    "ostermannSayingHold": 15,
+    "ostermannArchiveKeep": 2,
+    "ostermannRitualHold": 1
+  },
+  "dailyHistoryKeep": [
+    {
+      "id": "wave-history-1026-ritorno-trieste-1954",
+      "wikidataId": "Q3880709",
+      "dateIt": "26-10",
+      "titleIt": "Il ritorno di Trieste all'Italia",
+      "municipality": "Trieste",
+      "province": "TS",
+      "territorialLevel": "regional_national",
+      "sourceUrl": "https://it.wikipedia.org/wiki/Ritorno_di_Trieste_all%27Italia",
+      "reviewDecision": "keep_daily_candidate",
+      "readyForUi": false
+    },
+    {
+      "id": "wave-history-0423-eccidio-via-ghega",
+      "wikidataId": "Q63451338",
+      "dateIt": "23-04",
+      "titleIt": "L'eccidio di via Ghega",
+      "municipality": "Trieste",
+      "province": "TS",
+      "territorialLevel": "municipality_regional",
+      "sourceUrl": "https://it.wikipedia.org/wiki/Eccidio_di_via_Ghega",
+      "reviewDecision": "keep_daily_candidate",
+      "readyForUi": false
+    },
+    {
+      "id": "wave-history-0531-strage-peteano",
+      "wikidataId": "Q1109413",
+      "dateIt": "31-05",
+      "titleIt": "La strage di Peteano",
+      "municipality": "Sagrado",
+      "locality": "Peteano",
+      "province": "GO",
+      "territorialLevel": "municipality_regional_national",
+      "sourceUrl": "https://it.wikipedia.org/wiki/strage_di_Peteano",
+      "reviewDecision": "keep_daily_candidate",
+      "readyForUi": false
+    },
+    {
+      "id": "wave-history-0701-decimazione-cercivento",
+      "wikidataId": "Q18397589",
+      "dateIt": "01-07",
+      "titleIt": "La decimazione di Cercivento",
+      "municipality": "Cercivento",
+      "province": "UD",
+      "territorialLevel": "municipality_regional_national",
+      "sourceUrl": "https://it.wikipedia.org/wiki/Decimazione_di_Cercivento",
+      "reviewDecision": "keep_daily_candidate",
+      "readyForUi": false
+    },
+    {
+      "id": "wave-history-0403-eccidio-opicina",
+      "wikidataId": "Q107073670",
+      "dateIt": "03-04",
+      "titleIt": "L'eccidio di Opicina",
+      "municipality": "Trieste",
+      "locality": "Opicina",
+      "province": "TS",
+      "territorialLevel": "municipality_regional",
+      "sourceUrl": "https://it.wikipedia.org/wiki/Eccidio_di_Opicina",
+      "reviewDecision": "keep_daily_candidate",
+      "readyForUi": false
+    },
+    {
+      "id": "wave-history-0804-attentato-siot",
+      "wikidataId": "Q48806396",
+      "dateIt": "04-08",
+      "titleIt": "L'attentato all'oleodotto SIOT",
+      "municipality": "San Dorligo della Valle",
+      "province": "TS",
+      "territorialLevel": "municipality_regional_international",
+      "sourceUrl": "https://it.wikipedia.org/wiki/Attentato_all%27oleodotto_della_SIOT",
+      "reviewDecision": "keep_daily_candidate",
+      "readyForUi": false
+    },
+    {
+      "id": "wave-profile-0827-ciamician",
+      "wikidataId": "Q1088813",
+      "dateIt": "27-08",
+      "titleIt": "Giacomo Luigi Ciamician",
+      "municipality": "Trieste",
+      "province": "TS",
+      "territorialLevel": "municipality_international",
+      "sourceUrl": "https://it.wikipedia.org/wiki/Giacomo_Luigi_Ciamician",
+      "reviewDecision": "keep_daily_candidate",
+      "readyForUi": false
+    }
+  ],
+  "ostermannSayingKeep": [
+    {
+      "id": "wave-ostermann-059-ascensione-pioggia",
+      "sourcePage": 59,
+      "sourceTextPage": 34,
+      "temporalAnchor": "ascension",
+      "titleIt": "Pioggia all'Ascensione",
+      "summaryIt": "Si diceva che la pioggia dell'Ascensione potesse durare quaranta giorni; Ostermann annota anche un caso in cui il pronostico non si avvero.",
+      "surface": "traditional_saying",
+      "reviewDecision": "keep_contextual_candidate",
+      "readyForUi": false
+    },
+    {
+      "id": "wave-ostermann-102-colori-luna",
+      "sourcePage": 102,
+      "sourceTextPage": 77,
+      "temporalAnchor": "evergreen_lunar",
+      "titleIt": "I colori della luna e il tempo",
+      "summaryIt": "Nella fonte il colore della luna viene collegato a pioggia, vento o bel tempo. E' una descrizione popolare in prosa, non un proverbio friulano attestato.",
+      "surface": "discover_archive",
+      "reviewDecision": "keep_archive_candidate",
+      "readyForUi": false
+    },
+    {
+      "id": "wave-ostermann-126-campane-grandine",
+      "sourcePage": 126,
+      "sourceTextPage": 101,
+      "temporalAnchor": "spring_summer",
+      "titleIt": "Le campane contro la grandine",
+      "summaryIt": "Il detto ricorda che suonare le campane quando la grandine e' gia iniziata non serve piu: un frammento da spiegare nel contesto dei riti contro i temporali.",
+      "surface": "rituals",
+      "reviewDecision": "keep_contextual_candidate",
+      "readyForUi": false
+    },
+    {
+      "id": "wave-ostermann-126-grandine-campi",
+      "sourcePage": 126,
+      "sourceTextPage": 101,
+      "temporalAnchor": "spring_summer",
+      "titleIt": "La grandine e il singolo campo",
+      "summaryIt": "Il detto distingue la carestia generale dal danno durissimo subito dal campo colpito dalla grandine.",
+      "surface": "traditional_saying",
+      "reviewDecision": "keep_contextual_candidate",
+      "readyForUi": false
+    },
+    {
+      "id": "wave-ostermann-132-prima-neve-pianura",
+      "sourcePage": 132,
+      "sourceTextPage": 107,
+      "temporalAnchor": "winter",
+      "titleIt": "La prima neve in pianura",
+      "summaryIt": "Secondo il detto, se la prima neve arriva fino in pianura, durante l'anno ne cadra poca.",
+      "surface": "traditional_saying",
+      "reviewDecision": "keep_contextual_candidate",
+      "readyForUi": false
+    }
+  ],
+  "ostermannArchiveKeep": [
+    {
+      "id": "ost-extract-099-nebbia-pronostici",
+      "sourcePage": 99,
+      "sourceTextPage": 74,
+      "titleIt": "La nebbia nel linguaggio del tempo",
+      "summaryIt": "La nebbia entra nei modi popolari di raccontare pioggia, paesaggio e malinconia, senza ripetere i proverbi gia pubblicati.",
+      "seasons": ["autumn", "winter", "spring"],
+      "surface": "discover_archive",
+      "reviewDecision": "keep_archive_candidate",
+      "readyForUi": false
+    },
+    {
+      "id": "ost-extract-234-erbe-buona-stagione",
+      "sourcePage": 234,
+      "sourceTextPage": 209,
+      "titleIt": "Erbe, nomi locali e buona stagione",
+      "summaryIt": "Nomi locali e usi domestici storici raccontano il rapporto tra erbe, primavera e vita quotidiana nel Basso Friuli.",
+      "seasons": ["spring", "summer"],
+      "surface": "discover_archive",
+      "reviewDecision": "keep_archive_candidate",
+      "readyForUi": false
+    }
+  ],
+  "ostermannRitualHold": [
+    {
+      "id": "ost-extract-058-inverno-estate-stagioni",
+      "sourcePage": 58,
+      "sourceTextPage": 33,
+      "titleIt": "Inverno mite, estate piovosa",
+      "reason": "Controllo della pagina sorgente ancora parziale e taglio editoriale troppo generico.",
+      "reviewDecision": "hold_source_and_copy",
+      "readyForUi": false
+    }
+  ]
+}

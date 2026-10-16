@@ -1,0 +1,9 @@
+{
+  "active": false,
+  "alerts": [],
+  "count": 0,
+  "fetched_at": "2026-06-24T10:00:00+02:00",
+  "source": "DPC nazionale",
+  "source_mode": "github_actions_dpc_national_criticity_no_active_fvg_unverified",
+  "warning": "Fonte regionale Protezione Civile FVG non raggiungibile; fallback nazionale senza criticita FVG attiva."
+}

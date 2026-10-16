@@ -1,0 +1,30 @@
+{
+  "reviewedAt": "2026-07-23",
+  "scope": "Risoluzione dei nove record unpublished ancora classificati come variant_choose_one.",
+  "promotedAfterFurReview": [
+    {
+      "id": "ostermann-103-nadal-chase-pasche-plazze",
+      "variantGroup": "natale_pasche_tempo",
+      "targetUse": "almanac_movable_feast",
+      "recommendedFur": "Nadal in cjase e Pasche in place, o viceversa.",
+      "reason": "Formula comprensibile e coerente sia a Natale sia a Pasqua."
+    },
+    {
+      "id": "ostermann-103-no-mai-ploe",
+      "variantGroup": "dopo_pioggia_bon_timp",
+      "targetUse": "generic",
+      "recommendedFur": "No je mai stade ploie che il bon timp nol sedi tornât.",
+      "reason": "Formula completa e utilizzabile come proverbio generico."
+    }
+  ],
+  "notSelected": [
+    "ostermann-103-nadal-pasche-fuch",
+    "ostermann-103-dopo-ploe-bon-timp",
+    "ostermann-190-san-josef-seren",
+    "ostermann-054-san-vizenz-san-lorenz",
+    "ostermann-099-fumate-no-sbasse",
+    "ostermann-189-pulvin-zenar-granar",
+    "ostermann-192-san-barnabe-ue"
+  ],
+  "publicationRule": "I due record scelti sono stati promossi solo dopo revisione editoriale IT/FUR; le altre varianti restano escluse."
+}

@@ -1,0 +1,280 @@
+{
+  "schemaVersion": 1,
+  "batchId": "ostermann-1876-review-07",
+  "reviewedAt": "2026-07-23",
+  "source": {
+    "title": "Proverbi friulani raccolti dalla viva voce del popolo",
+    "author": "Valentino Ostermann",
+    "editionYear": 1876,
+    "catalogUrl": "https://www.techeudine.it/biblioteche-digital-furlane/proverbi-friulani-raccolti-dalla-viva-voce-del-popolo",
+    "facsimileUrl": "https://manoscrittisbhu.comune.udine.it/uploads/BDF/LO11116556.pdf"
+  },
+  "policy": {
+    "publish": false,
+    "furNormalizationAllowed": false,
+    "rule": "Il facsimile conferma il testo sorgente. La raccomandazione editoriale non equivale a pubblicazione o traduzione approvata."
+  },
+  "summary": {
+    "records": 15,
+    "promoteAfterLanguageReview": 15,
+    "needsContextOrLanguageReview": 0,
+    "secondaryVariant": 0
+  },
+  "records": [
+    {
+      "id": "ost1876-ocasion-fas-om-mestri",
+      "sourceBlockIds": [
+        "ost1876-p149-b002"
+      ],
+      "pdfPage": 149,
+      "printedPage": 145,
+      "furOriginal": "L’occasion fâs l’om mestri.",
+      "proposedIt": "L'occasione rende l'uomo maestro.",
+      "recommendation": "promote_after_language_review",
+      "targetUse": "almanac_general",
+      "calendar": {
+        "rotation": "general_wisdom"
+      },
+      "reason": "Massima autonoma sull'esperienza, completa e priva di riferimenti temporali.",
+      "publish": false
+    },
+    {
+      "id": "ost1876-ocasion-fas-om-lari",
+      "sourceBlockIds": [
+        "ost1876-p149-b002"
+      ],
+      "pdfPage": 149,
+      "printedPage": 145,
+      "furOriginal": "L’occasion fâs l’om lari.",
+      "proposedIt": "L'occasione fa l'uomo ladro.",
+      "recommendation": "promote_after_language_review",
+      "targetUse": "almanac_general",
+      "calendar": {
+        "rotation": "general_wisdom"
+      },
+      "reason": "Proverbio noto, autosufficiente e distinto dall'altra massima sull'occasione.",
+      "publish": false
+    },
+    {
+      "id": "ost1876-no-riscje-no-rosee",
+      "sourceBlockIds": [
+        "ost1876-p149-b003"
+      ],
+      "pdfPage": 149,
+      "printedPage": 145,
+      "furOriginal": "Sa no si risie no si rosie.",
+      "proposedIt": "Chi non rischia non rosicchia.",
+      "recommendation": "promote_after_language_review",
+      "targetUse": "almanac_general",
+      "calendar": {
+        "rotation": "general_wisdom"
+      },
+      "reason": "Detto breve sul rischio e sul risultato, comprensibile senza spiegazione.",
+      "publish": false
+    },
+    {
+      "id": "ost1876-mior-uf-vue-gjaline-doman",
+      "sourceBlockIds": [
+        "ost1876-p149-b004"
+      ],
+      "pdfPage": 149,
+      "printedPage": 145,
+      "furOriginal": "Miôr l’ûv uè che la gjaline doman.",
+      "proposedIt": "Meglio un uovo oggi che una gallina domani.",
+      "recommendation": "promote_after_language_review",
+      "targetUse": "almanac_general",
+      "calendar": {
+        "rotation": "general_wisdom"
+      },
+      "reason": "Proverbio completo e attestato anche nel repertorio lessicografico moderno.",
+      "publish": false
+    },
+    {
+      "id": "ost1876-prat-seat-no-scuindisi",
+      "sourceBlockIds": [
+        "ost1876-p149-b005"
+      ],
+      "pdfPage": 149,
+      "printedPage": 145,
+      "furOriginal": "Tal prât seât no si po squindisi.",
+      "proposedIt": "In un prato falciato non ci si può nascondere.",
+      "recommendation": "promote_after_language_review",
+      "targetUse": "almanac_general",
+      "calendar": {
+        "rotation": "general_wisdom"
+      },
+      "reason": "Immagine figurata chiara; il riferimento al prato non impone una stagione.",
+      "publish": false
+    },
+    {
+      "id": "ost1876-cjapa-ucei-cuant-passin",
+      "sourceBlockIds": [
+        "ost1876-p150-b001"
+      ],
+      "pdfPage": 150,
+      "printedPage": 146,
+      "furOriginal": "Bisugne çapâ i ucei quand ca passin.",
+      "proposedIt": "Bisogna prendere gli uccelli quando passano.",
+      "recommendation": "promote_after_language_review",
+      "targetUse": "almanac_general",
+      "calendar": {
+        "rotation": "general_wisdom"
+      },
+      "reason": "Massima autonoma sul cogliere l'occasione, senza vincoli di calendario.",
+      "publish": false
+    },
+    {
+      "id": "ost1876-mulin-cuant-je-aghe",
+      "sourceBlockIds": [
+        "ost1876-p150-b001"
+      ],
+      "pdfPage": 150,
+      "printedPage": 146,
+      "furOriginal": "Bisugne lâ a mulin quand ca je aghe.",
+      "proposedIt": "Bisogna andare al mulino quando c'è acqua.",
+      "recommendation": "promote_after_language_review",
+      "targetUse": "almanac_general",
+      "calendar": {
+        "rotation": "general_wisdom"
+      },
+      "reason": "Detto completo sul momento opportuno, attestato nel repertorio lessicografico.",
+      "publish": false
+    },
+    {
+      "id": "ost1876-pense-prime-no-pintiti",
+      "sourceBlockIds": [
+        "ost1876-p151-b003"
+      ],
+      "pdfPage": 151,
+      "printedPage": 147,
+      "furOriginal": "Pense prime par no pentîti dopo.",
+      "proposedIt": "Pensa prima, per non pentirti dopo.",
+      "recommendation": "promote_after_language_review",
+      "targetUse": "almanac_general",
+      "calendar": {
+        "rotation": "general_wisdom"
+      },
+      "reason": "Invito alla prudenza breve, diretto e valido durante tutto l'anno.",
+      "publish": false
+    },
+    {
+      "id": "ost1876-pense-vue-par-doman",
+      "sourceBlockIds": [
+        "ost1876-p151-b003"
+      ],
+      "pdfPage": 151,
+      "printedPage": 147,
+      "furOriginal": "Pense uè par doman.",
+      "proposedIt": "Pensa oggi per domani.",
+      "recommendation": "promote_after_language_review",
+      "targetUse": "almanac_general",
+      "calendar": {
+        "rotation": "general_wisdom"
+      },
+      "reason": "Massima concisa sulla previdenza, autonoma e non calendarizzata.",
+      "publish": false
+    },
+    {
+      "id": "ost1876-cjale-bas-denant-muda-pas",
+      "sourceBlockIds": [
+        "ost1876-p151-b005"
+      ],
+      "pdfPage": 151,
+      "printedPage": 147,
+      "furOriginal": "Bisugne cjalâ a bas denant di mudâ il pas.",
+      "proposedIt": "Guarda in basso prima di cambiare passo.",
+      "recommendation": "promote_after_language_review",
+      "targetUse": "almanac_general",
+      "calendar": {
+        "rotation": "general_wisdom"
+      },
+      "reason": "Immagine prudenziale completa e comprensibile anche isolata dal blocco.",
+      "publish": false
+    },
+    {
+      "id": "ost1876-no-comede-picule-buse",
+      "sourceBlockIds": [
+        "ost1876-p151-b007"
+      ],
+      "pdfPage": 151,
+      "printedPage": 147,
+      "furOriginal": "Cui che no comede la piçule buse, comede la grande.",
+      "proposedIt": "Chi non ripara il piccolo buco, riparerà quello grande.",
+      "recommendation": "promote_after_language_review",
+      "targetUse": "almanac_general",
+      "calendar": {
+        "rotation": "general_wisdom"
+      },
+      "reason": "Detto autosufficiente sulla prevenzione, distinto dal repertorio già pubblicato.",
+      "publish": false
+    },
+    {
+      "id": "ost1876-dopo-fat-ognidun-sa-fa",
+      "sourceBlockIds": [
+        "ost1876-p151-b007"
+      ],
+      "pdfPage": 151,
+      "printedPage": 147,
+      "furOriginal": "Dopo fat ognun sa fâ.",
+      "proposedIt": "A cose fatte, tutti sanno come fare.",
+      "recommendation": "promote_after_language_review",
+      "targetUse": "almanac_general",
+      "calendar": {
+        "rotation": "general_wisdom"
+      },
+      "reason": "Massima breve e generale sul giudizio a posteriori.",
+      "publish": false
+    },
+    {
+      "id": "ost1876-tet-no-par-une-ploe",
+      "sourceBlockIds": [
+        "ost1876-p152-b002"
+      ],
+      "pdfPage": 152,
+      "printedPage": 148,
+      "furOriginal": "No si fâs il tet par une sole ploe.",
+      "proposedIt": "Non si fa il tetto per una sola pioggia.",
+      "recommendation": "promote_after_language_review",
+      "targetUse": "almanac_general",
+      "calendar": {
+        "rotation": "general_wisdom"
+      },
+      "reason": "Detto figurato sulla scelta ponderata; la pioggia è un'immagine, non un vincolo meteo.",
+      "publish": false
+    },
+    {
+      "id": "ost1876-jet-no-par-une-sere",
+      "sourceBlockIds": [
+        "ost1876-p152-b002"
+      ],
+      "pdfPage": 152,
+      "printedPage": 148,
+      "furOriginal": "Il jet a no si fâs par durmî une sole sere.",
+      "proposedIt": "Non si fa il letto per dormirci una sola sera.",
+      "recommendation": "promote_after_language_review",
+      "targetUse": "almanac_general",
+      "calendar": {
+        "rotation": "general_wisdom"
+      },
+      "reason": "Massima autonoma sulla durata delle scelte, priva di riferimenti stagionali.",
+      "publish": false
+    },
+    {
+      "id": "ost1876-plea-arbul-zovin",
+      "sourceBlockIds": [
+        "ost1876-p152-b004"
+      ],
+      "pdfPage": 152,
+      "printedPage": 148,
+      "furOriginal": "Bisugne pleâ l’arbul co l’è sovin.",
+      "proposedIt": "Bisogna piegare l'albero quando è giovane.",
+      "recommendation": "promote_after_language_review",
+      "targetUse": "almanac_general",
+      "calendar": {
+        "rotation": "general_wisdom"
+      },
+      "reason": "Proverbio tradizionale completo; l'albero ha valore figurato e non stagionale.",
+      "publish": false
+    }
+  ]
+}

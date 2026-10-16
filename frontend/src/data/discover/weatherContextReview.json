@@ -1,0 +1,273 @@
+{
+  "schemaVersion": 1,
+  "reviewedAt": "2026-08-31",
+  "scope": "discover_only",
+  "readyForUi": false,
+  "sourceCatalog": "frontend/src/data/ostermannCulturalDiscover.json",
+  "purpose": "Decisione editoriale sui 26 record con ricorrenza weather: otto approfondimenti storici ammessi solo nella rotazione di Scopri, diciotto ancora esclusi. Il manifest contiene metadati, non copie dei testi.",
+  "copyChanged": false,
+  "newSourceChecksPerformed": false,
+  "editorialDecision": {
+    "approvalBasis": "user_delegated_assisted_editorial_review",
+    "reviewer": "assistant",
+    "independentHumanReview": false,
+    "recordIds": [
+      "ost-0005-lessico-venti",
+      "ost-0009-luna-lavori-agricoli",
+      "ost-0021-segni-animali-vento",
+      "ost-0024-monti-col-cappello",
+      "ost-0026-pioggia-grandine-streghe",
+      "ost-0042-vespe-neve-inverno",
+      "ost-0048-palle-neve-slitte",
+      "ost-0058-demoni-aria-tempeste"
+    ],
+    "note": "Decisione editoriale assistita sul riuso archivistico degli otto testi IT/FUR invariati, nel mandato di continuare Scopri. Non approvazione dell'utente frase per frase, non certificazione ARLeF e non revisione professionale indipendente. Gli stati linguistici e le note di fonte originali non vengono riscritti né promossi implicitamente."
+  },
+  "sharedSourceSnapshot": {
+    "records": 63,
+    "sha256Json": "f4a8864f7d16765c3e4091573e4fe66e48b24bd0669d05a63db8ba7c9c0bfc05"
+  },
+  "references": [
+    {
+      "path": "frontend/src/data/ostermannCulturalDiscover.json",
+      "note": "Letti i 26 record weather in entrambe le lingue, comprese fonti, stati e stagioni. Il catalogo condiviso con Almanacco resta invariato."
+    },
+    {
+      "path": "ALMANAC_DISCOVER_CONTENT_CONTRACT.md",
+      "note": "Scopri può riusare la fonte testuale unica come patrimonio culturale; i riti richiedono un calendario preciso e l'archivio ammette al massimo una scheda quotidiana."
+    },
+    {
+      "path": "docs/operations/SCOPRI_COMPLETION_PLAN_2026-08-31.md",
+      "note": "Il piano distingue pertinenza meteo, calendario lunare, fenomeni non inferibili e riti senza data. Non si apre indistintamente il selettore delle ricorrenze weather."
+    },
+    {
+      "path": "frontend/src/domain/almanac/almanacData.js",
+      "note": "Importa lo stesso catalogo e usa recurrence nella selezione delle tradizioni: per questo gli override sono applicati soltanto a Scopri. La regola del primo martedì di lunazione esiste ma non viene attivata da questo manifest."
+    }
+  ],
+  "rules": [
+    "Applicare soltanto section e recurrence degli otto override espliciti; stagioni, testi, fonti, identità e stati linguistici restano quelli originali.",
+    "Non mutare il catalogo condiviso, il comportamento di Almanacco o la sua anteprima Home.",
+    "Nessuna API meteo, inferenza di osservazioni locali, fase lunare specifica o nuova fonte storica è introdotta da questa decisione.",
+    "Le otto schede sono racconti storici nella rubrica Archivio e tradizioni, non avvisi o previsioni. Le due credenze senza data spostate in archivio non alimentano il riempimento della rubrica Riti.",
+    "I diciotto record esclusi non ricevono override. Ciascuno conserva un motivo e un prossimo controllo; esclusione attuale non significa rifiuto definitivo del contenuto."
+  ],
+  "records": [
+    {
+      "recordId": "ost-0001-nubi-pioggia",
+      "original": { "section": "almanacco", "recurrence": "weather", "seasons": ["all"] },
+      "disposition": "excluded",
+      "reason": "Il tema delle nubi sarebbe contestualizzabile, ma sourceStatus è da_controllare e la nota richiede ancora il controllo dell'immagine della fonte. Pioggia o nuvolosità non descrivono da sole forma, colore e altezza delle nubi.",
+      "contextRequirements": ["Controllo della fonte segnalato nel record originale", "Eventuale dato locale recente e tracciabile sulle condizioni del cielo, senza dedurre la forma delle nubi"],
+      "nextStep": "Chiudere prima il controllo della fonte; poi scegliere esplicitamente fra racconto d'archivio e pertinenza tematica con dati reali."
+    },
+    {
+      "recordId": "ost-0005-lessico-venti",
+      "original": { "section": "almanacco", "recurrence": "weather", "seasons": ["all"] },
+      "disposition": "archive_rotation",
+      "override": { "section": "archivio_tradizioni", "recurrence": "always" },
+      "reason": "Il testo attribuisce a Ostermann una raccolta di nomi del vento: è un approfondimento lessicale, non afferma che uno di questi venti soffi ora nella località selezionata.",
+      "contextRequirements": ["Nessun dato meteo necessario per il riuso storico", "Non trasformare i nomi elencati in classificazioni del vento attuale"],
+      "nextStep": "Usare il testo originale nella sola rotazione archivistica di Scopri, con fonte visibile e senza cambiare Almanacco."
+    },
+    {
+      "recordId": "ost-0006-colore-luna-pronostici",
+      "original": { "section": "almanacco", "recurrence": "weather", "seasons": ["all"] },
+      "disposition": "excluded",
+      "reason": "La fase lunare disponibile non misura il colore apparente della luna. I tag pioggia, vento e sole non giustificano una rilevazione di luna blu, rossa o bianca.",
+      "contextRequirements": ["Nessuna equivalenza fra fase lunare e colore osservato", "Cornice storica indipendente dal meteo locale"],
+      "nextStep": "Valutare un successivo riuso archivistico della credenza, separato dal calendario delle fasi lunari."
+    },
+    {
+      "recordId": "ost-0007-grandine-temporale",
+      "original": { "section": "almanacco", "recurrence": "weather", "seasons": ["primavera", "estate"] },
+      "disposition": "excluded",
+      "reason": "La pertinenza al temporale è possibile, ma la sola pioggia non prova tuoni o grandine. La frase sul gesto rituale tardivo richiede attenzione per non suggerire efficacia preventiva.",
+      "contextRequirements": ["Eventuale condizione temporalesca locale recente, non semplice probabilità di pioggia", "Nessuna attribuzione di efficacia al gesto rituale"],
+      "nextStep": "Rivedere il perimetro editoriale del proverbio prima di scegliere un contesto meteo o un riuso esclusivamente storico."
+    },
+    {
+      "recordId": "ost-0008-vento-aloni-neve",
+      "original": { "section": "almanacco", "recurrence": "weather", "seasons": ["inverno", "all"] },
+      "disposition": "excluded",
+      "reason": "Aloni e stelle velate non sono ricavati dai dati meteo disponibili; il record descrive inoltre un vento che si placa, quindi una variazione nel tempo e non una sola misura.",
+      "contextRequirements": ["Non inferire aloni da umidità, nubi o fase lunare", "Rispettare il vincolo invernale già espresso insieme ad all"],
+      "nextStep": "Valutare una lettura storica invernale con la precedenza stagionale già adottata dal selettore, senza inventare un segnale osservato."
+    },
+    {
+      "recordId": "ost-0009-luna-lavori-agricoli",
+      "original": { "section": "almanacco", "recurrence": "weather", "seasons": ["all"] },
+      "disposition": "archive_rotation",
+      "override": { "section": "archivio_tradizioni", "recurrence": "always" },
+      "reason": "Il testo racconta al passato il ruolo della luna nel calendario agricolo. Non indica una fase precisa e non prescrive che cosa fare oggi: l'approfondimento storico può ruotare tutto l'anno.",
+      "contextRequirements": ["Nessuna fase lunare specifica richiesta o inventata", "Nessuna raccomandazione agronomica attuale dedotta dal racconto"],
+      "nextStep": "Proporre la copy invariata come patrimonio culturale nell'archivio, non come consiglio della terra legato alla luna di oggi."
+    },
+    {
+      "recordId": "ost-0014-proverbi-lunari-pioggia",
+      "original": { "section": "almanacco", "recurrence": "weather", "seasons": ["all"] },
+      "disposition": "excluded",
+      "reason": "Il titolo richiama il primo martedì di luna: il generico tag luna o pioggia non identifica quel giorno. Serve una decisione esplicita sul calendario e non un abbinamento meteorologico qualsiasi.",
+      "contextRequirements": ["Giorno della settimana ed età della lunazione", "Definizione verificata della finestra del primo martedì, con limiti del calcolo lunare esistente"],
+      "nextStep": "Esaminare il riuso della regola first_tuesday_of_lunation già presente in Almanacco, senza attivarla automaticamente e senza trattare il proverbio come previsione."
+    },
+    {
+      "recordId": "ost-0021-segni-animali-vento",
+      "original": { "section": "archivio_tradizioni", "recurrence": "weather", "seasons": ["all"] },
+      "disposition": "archive_rotation",
+      "override": { "section": "archivio_tradizioni", "recurrence": "always" },
+      "reason": "La scheda è già collocata in archivio e dice esplicitamente che non erano previsioni. Racconta l'osservazione contadina raccolta da Ostermann senza affermare comportamenti animali attuali.",
+      "contextRequirements": ["Nessuna rilevazione di animali richiesta", "Conservare la cornice storica e la negazione della natura previsionale"],
+      "nextStep": "Ammettere soltanto la rotazione archivistica di Scopri, mantenendo la copy e la fonte originali."
+    },
+    {
+      "recordId": "ost-0023-gallo-sole-rosso-nebbia",
+      "original": { "section": "almanacco", "recurrence": "weather", "seasons": ["all"] },
+      "disposition": "excluded",
+      "reason": "La scheda combina canto del gallo, colore del sole e nebbia che si alza all'alba. Nessuna misura di pioggia, sole o nebbia accerta questa combinazione di osservazioni.",
+      "contextRequirements": ["Non dedurre comportamento animale o colore del sole da un codice meteo", "Separare il racconto mattutino da una constatazione locale attuale"],
+      "nextStep": "Valutare in un lotto successivo la lettura storica di questi segnali, senza un trigger automatico basato sul solo meteo."
+    },
+    {
+      "recordId": "ost-0024-monti-col-cappello",
+      "original": { "section": "archivio_tradizioni", "recurrence": "weather", "seasons": ["primavera", "estate", "autunno"] },
+      "disposition": "archive_rotation",
+      "override": { "section": "archivio_tradizioni", "recurrence": "seasonal" },
+      "reason": "È già un racconto d'archivio sul paesaggio e dice che non era una previsione. La riclassificazione rispetta le tre stagioni esistenti, senza sostenere che le cime siano oggi coperte di nubi.",
+      "contextRequirements": ["Primavera, estate o autunno secondo le stagioni originali", "Nessuna deduzione delle nubi sulle cime dal cielo del Comune selezionato"],
+      "nextStep": "Inserire la scheda invariata nella rotazione archivistica delle stagioni ammesse, conservando l'ambito territoriale originale."
+    },
+    {
+      "recordId": "ost-0025-rane-vacche-pioggia",
+      "original": { "section": "almanacco", "recurrence": "weather", "seasons": ["primavera", "estate", "autunno"] },
+      "disposition": "excluded",
+      "reason": "Canto delle rane e comportamento delle vacche non sono dati disponibili. Il tema è inoltre vicino alla scheda generale sugli animali già ammessa in questo lotto.",
+      "contextRequirements": ["Nessuna inferenza di comportamento animale da pioggia o temporale", "Distinzione editoriale dalla scheda ost-0021-segni-animali-vento"],
+      "nextStep": "Valutare la varietà aggiunta da un secondo racconto stagionale sugli animali, evitando duplicazioni tematiche ravvicinate."
+    },
+    {
+      "recordId": "ost-0026-pioggia-grandine-streghe",
+      "original": { "section": "riti_credenze_popolari", "recurrence": "weather", "seasons": ["primavera", "estate"] },
+      "disposition": "archive_rotation",
+      "override": { "section": "archivio_tradizioni", "recurrence": "seasonal" },
+      "reason": "Il testo definisce già la credenza un documento storico delle paure. Non c'è una ricorrenza precisa: viene letto come approfondimento d'archivio nelle stagioni originali, non come rito in corso o causa della grandine.",
+      "contextRequirements": ["Primavera o estate secondo le stagioni originali", "Nessun dato di grandine richiesto e nessuna attribuzione reale a streghe o malie"],
+      "nextStep": "Usare la copy invariata soltanto in Archivio e tradizioni, lasciando la rubrica Riti riservata a date e intervalli verificati."
+    },
+    {
+      "recordId": "ost-0031-stelle-burrasca",
+      "original": { "section": "almanacco", "recurrence": "weather", "seasons": ["estate", "autunno", "all"] },
+      "disposition": "excluded",
+      "reason": "Luminosità e impallidimento apparente delle stelle non sono misurati dall'app. Le stagioni esplicite estate e autunno non vanno annullate dalla presenza contemporanea di all.",
+      "contextRequirements": ["Nessuna deduzione della luminosità stellare da cielo sereno o vento", "Rispetto delle stagioni esplicite secondo il selettore comune"],
+      "nextStep": "Valutare un approfondimento storico estivo e autunnale, chiaramente distinto da un pronostico della notte corrente."
+    },
+    {
+      "recordId": "ost-0037-grandine-campane-scongiuri",
+      "original": { "section": "riti_credenze_popolari", "recurrence": "weather", "seasons": ["primavera", "estate"] },
+      "disposition": "excluded",
+      "reason": "La pratica delle campane non ha una data precisa. L'arrivo di un temporale non prova che sia in corso, e la breve sintesi al presente può far sembrare attuale la risposta rituale del paese.",
+      "contextRequirements": ["Cornice storica della difesa rituale, senza promessa di efficacia", "Nessuna attribuzione al Comune selezionato o a un temporale attuale"],
+      "nextStep": "Esaminare separatamente il passaggio a un approfondimento d'archivio; non usare un tag temporale per riempire la rubrica Riti."
+    },
+    {
+      "recordId": "ost-0039-segni-grandine",
+      "original": { "section": "almanacco", "recurrence": "weather", "seasons": ["primavera", "estate"] },
+      "disposition": "excluded",
+      "reason": "La fonte ha confidence bassa e sourceStatus utile_da_controllare. Nubi cenerognole, vortici, fumo basso e animali inquieti non sono accertati dai dati meteo; la nota limita anche il brano sorgente utilizzabile.",
+      "contextRequirements": ["Controllo puntuale della pagina e del solo blocco sui segni della grandine", "Nessuna inferenza di grandine da indicatori generici"],
+      "nextStep": "Completare l'audit di fonte e la delimitazione del brano prima di qualsiasi decisione di pubblicazione o riclassificazione."
+    },
+    {
+      "recordId": "ost-0041-neve-abbondanza",
+      "original": { "section": "almanacco", "recurrence": "weather", "seasons": ["inverno"] },
+      "disposition": "excluded",
+      "reason": "Il rapporto fra neve e raccolti è presentato come meteorologia contadina, ma il solo freddo non prova neve al suolo né consente conclusioni sull'andamento agricolo. Il lotto integra già un diverso racconto invernale sulla neve.",
+      "contextRequirements": ["Nessuna deduzione di innevamento dalla temperatura", "Separazione fra proverbio, dato nivologico e previsione del raccolto"],
+      "nextStep": "Valutare il detto come successivo racconto invernale o con un contesto neve documentato, senza trasformarlo in una previsione agronomica."
+    },
+    {
+      "recordId": "ost-0042-vespe-neve-inverno",
+      "original": { "section": "almanacco", "recurrence": "weather", "seasons": ["estate", "inverno"] },
+      "disposition": "archive_rotation",
+      "override": { "section": "archivio_tradizioni", "recurrence": "seasonal" },
+      "reason": "La copy dichiara esplicitamente che il legame fra vespe estive e neve invernale non è scientifico. È un racconto sulle corrispondenze popolari fra stagioni, non una rilevazione di vespe o una previsione della neve.",
+      "contextRequirements": ["Estate o inverno secondo le stagioni originali", "Conservare l'esplicita natura non scientifica del legame"],
+      "nextStep": "Usare la scheda invariata nella rotazione archivistica di Scopri per le due stagioni già previste."
+    },
+    {
+      "recordId": "ost-0043-brina-neve-valanghe",
+      "original": { "section": "almanacco", "recurrence": "weather", "seasons": ["inverno"] },
+      "disposition": "excluded",
+      "reason": "Il testo richiama la prima neve al piano: una condizione attuale di neve non basta a stabilire che sia la prima della stagione. Il riferimento alle valanghe richiede di restare chiaramente nella memoria popolare, non negli avvisi di sicurezza.",
+      "contextRequirements": ["Non inferire prima neve, neve al suolo o pericolo valanghe dal codice meteo", "Cornice storica distinta fra pianura e montagna"],
+      "nextStep": "Valutare un successivo racconto invernale del paesaggio, senza affermare primati stagionali o condizioni nivologiche attuali."
+    },
+    {
+      "recordId": "ost-0045-arcobaleno-tempo",
+      "original": { "section": "almanacco", "recurrence": "weather", "seasons": ["all"] },
+      "disposition": "excluded",
+      "reason": "La combinazione pioggia e sole non accerta un arcobaleno visibile dalla località. Il testo racconta interpretazioni popolari anche discordanti, che non vanno lette come evoluzione meteo attuale.",
+      "contextRequirements": ["Nessun trigger arcobaleno derivato dai tag pioggia, sole o vento", "Lettura storico-culturale, non previsione dei giorni successivi"],
+      "nextStep": "Esaminare il riuso d'archivio delle diverse letture dell'arcobaleno, senza collegarlo a un'osservazione non disponibile."
+    },
+    {
+      "recordId": "ost-0046-erba-da-pioggia",
+      "original": { "section": "almanacco", "recurrence": "weather", "seasons": ["all"] },
+      "disposition": "excluded",
+      "reason": "La copy afferma al presente che i fiori della carlina si chiudono in determinate condizioni. Il record cita una fonte storica e non documenta una verifica botanica attuale; l'umidità misurata non osserva comunque la pianta.",
+      "contextRequirements": ["Verifica botanica della proposizione al presente oppure revisione esplicitamente storica", "Nessuna inferenza dello stato dei fiori dall'umidità locale"],
+      "nextStep": "Controllare il fatto botanico con una fonte pertinente prima di riproporre la copy invariata; questa passata non effettua tale verifica."
+    },
+    {
+      "recordId": "ost-0047-lin-di-strie-igroscopio",
+      "original": { "section": "riti_credenze_popolari", "recurrence": "weather", "seasons": ["all"] },
+      "disposition": "excluded",
+      "reason": "La scheda unisce un nome botanico, il soprannaturale e la funzione attribuita alle reste come igroscopio. Non ha una data rituale e nessun dato meteo prova lo stato della pianta.",
+      "contextRequirements": ["Distinzione fra nome popolare, credenza e proprietà botanica", "Nessun uso dell'umidità come prova della presenza o del comportamento della pianta"],
+      "nextStep": "Valutare un autonomo approfondimento d'archivio sulla botanica popolare, mantenendo separati credenza e fatto naturale."
+    },
+    {
+      "recordId": "ost-0048-palle-neve-slitte",
+      "original": { "section": "almanacco", "recurrence": "weather", "seasons": ["inverno"] },
+      "disposition": "archive_rotation",
+      "override": { "section": "archivio_tradizioni", "recurrence": "seasonal" },
+      "reason": "Il testo racconta giochi invernali e attribuisce a Ostermann un divieto udinese del 1348. Non descrive neve presente né invita a praticare attività in condizioni attuali: basta la stagione invernale già prevista.",
+      "contextRequirements": ["Inverno secondo la stagione originale", "Nessun requisito di neve osservata e nessuna data commemorativa derivata dal solo anno 1348"],
+      "nextStep": "Ammettere la copy invariata nella rotazione invernale di Archivio e tradizioni, conservando la fonte storica originale."
+    },
+    {
+      "recordId": "ost-0053-uccelli-marini-pioggia",
+      "original": { "section": "almanacco", "recurrence": "weather", "seasons": ["all"] },
+      "disposition": "excluded",
+      "reason": "La nota di fonte segnala una pagina che inizia a metà frase. Il corpo italiano e la sintesi usano il presente, mentre il corpo friulano racconta al passato: il riuso invariato rischia di presentare il segno come previsione valida.",
+      "contextRequirements": ["Ricostruzione del contesto della fonte tronca", "Allineamento della cornice storica IT/FUR", "Nessuna inferenza del volo o del canto degli uccelli da pioggia e vento"],
+      "nextStep": "Rivedere fonte e formulazione temporale prima di decidere un riuso archivistico del racconto costiero."
+    },
+    {
+      "recordId": "ost-0057-alcione-igroscopio",
+      "original": { "section": "almanacco", "recurrence": "weather", "seasons": ["all"] },
+      "disposition": "excluded",
+      "reason": "Il testo attribuisce il comportamento delle penne a una credenza raccolta da Ostermann. Nessun dato di umidità, pioggia o sole rileva l'alcione descritto; il tema richiede un proprio contesto antropologico.",
+      "contextRequirements": ["Attribuzione esplicita alla credenza storica", "Nessuna indicazione di tenere animali o di usarli come strumento meteorologico"],
+      "nextStep": "Valutare un successivo racconto d'archivio sugli oggetti e animali del pronostico domestico, distinto dai dati strumentali."
+    },
+    {
+      "recordId": "ost-0058-demoni-aria-tempeste",
+      "original": { "section": "riti_credenze_popolari", "recurrence": "weather", "seasons": ["all"] },
+      "disposition": "archive_rotation",
+      "override": { "section": "archivio_tradizioni", "recurrence": "always" },
+      "reason": "La copy esclude esplicitamente che la credenza sia una spiegazione del tempo e la presenta come geografia immaginaria delle paure. Non c'è una ricorrenza: il contenuto appartiene all'approfondimento storico, non a un rito attuale.",
+      "contextRequirements": ["Nessun vento, temporale o nubifragio richiesto", "Conservare l'esplicita natura immaginaria e non meteorologica del racconto"],
+      "nextStep": "Usare il testo invariato nella rotazione annuale dell'archivio, senza attivarlo in risposta a un'allerta o riempire la rubrica Riti."
+    },
+    {
+      "recordId": "ost-0059-pareli-aloni-lunari",
+      "original": { "section": "almanacco", "recurrence": "weather", "seasons": ["all"] },
+      "disposition": "excluded",
+      "reason": "Pareli, paraseleni e aloni non sono ricavati dal calendario lunare o dai tag pioggia e vento. La nota di fonte chiede anche di separare i fenomeni nel contesto originario.",
+      "contextRequirements": ["Nessuna equivalenza fra fase lunare e alone, o fra sole e parelio", "Controllo della distinzione dei fenomeni indicata nella nota di fonte"],
+      "nextStep": "Rivedere il perimetro del racconto ottico prima di un eventuale riuso archivistico, senza generare un avvistamento locale."
+    }
+  ]
+}

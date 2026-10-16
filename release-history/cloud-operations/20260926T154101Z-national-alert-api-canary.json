@@ -1,0 +1,74 @@
+{
+  "schemaVersion": 1,
+  "recordedAt": "2026-09-26T15:41:01Z",
+  "identity": {
+    "account": "meteofriul@gmail.com",
+    "projectId": "meteo-friul",
+    "region": "europe-west1"
+  },
+  "source": {
+    "gitCommit": "54081370c8ece4789a5c5fd6f632222d3cbaa502",
+    "image": "europe-west1-docker.pkg.dev/meteo-friul/meteofriul/backend@sha256:1eae4ccd8d79f8b3c4d3435a614eb3e04973a83dea951cf48b7c7ae76db3893b"
+  },
+  "deployment": {
+    "service": "meteofriul-api",
+    "revision": "meteofriul-api-dpc-5408137",
+    "tag": "national-dpc-5408137",
+    "url": "https://national-dpc-5408137---meteofriul-api-bx24xqvcda-ew.a.run.app",
+    "trafficPercent": 0,
+    "publicTrafficRevision": "meteofriul-api-official-608b61f",
+    "publicTrafficPercent": 100,
+    "androidTag": "play-608b61f",
+    "androidRevision": "meteofriul-api-push013-0925",
+    "androidTagChanged": false,
+    "firebaseConfigurationChanged": false,
+    "runtimeConfigurationPreserved": {
+      "serviceAccount": true,
+      "containerConcurrency": true,
+      "timeoutSeconds": true,
+      "environmentVariableNames": true
+    }
+  },
+  "smokeTests": [
+    {
+      "path": "/api/healthz",
+      "status": 200
+    },
+    {
+      "path": "/api/weather/official-alerts",
+      "status": 200
+    },
+    {
+      "path": "/api/weather/official-alerts/national?municipality_istat=041067",
+      "status": 200,
+      "municipality": "Urbino",
+      "zones": [
+        "DPC:Marc-1",
+        "DPC:Marc-2"
+      ],
+      "standaloneDisplayAllowed": true,
+      "storage": "firestore"
+    },
+    {
+      "path": "/api/weather/official-alerts/national?municipality_istat=093033",
+      "status": 200,
+      "municipality": "Pordenone",
+      "standaloneDisplayAllowed": false,
+      "regionalDetailRequired": true,
+      "storage": "firestore"
+    },
+    {
+      "path": "/api/community/reports",
+      "status": 200
+    },
+    {
+      "path": "/api/local/events?city=Pordenone&limit=1",
+      "status": 200
+    }
+  ],
+  "promotion": {
+    "status": "deferred",
+    "reason": "Keep current Android and Firebase cutover unchanged until the next app release is prepared."
+  },
+  "androidAab": "not_built"
+}

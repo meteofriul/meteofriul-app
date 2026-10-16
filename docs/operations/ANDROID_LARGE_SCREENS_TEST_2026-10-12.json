@@ -1,0 +1,358 @@
+{
+  "date": "2026-10-12",
+  "branch": "codex/android-large-screens-test",
+  "mainBase": "48c67c41a98f4576424101e3a75b38949191aa02",
+  "scope": "TEST only; no main promotion, Play bundle, publication or physical-device installation.",
+  "changes": [
+    "Remove portrait lock and Android16 restricted-resizability opt-out; explicitly allow resizing.",
+    "Center the full-width light header background despite asymmetric side insets, preventing viewport widening.",
+    "Add an Android instrumentation regression for left/right cutouts."
+  ],
+  "apk": {
+    "version": "0.1.14-tester",
+    "package": "com.meteofriul.app.tester",
+    "sha256": "6B772EA343431EBD7719980EB4A3B6CA855073C80394C5887BAC65F5FAEB0353",
+    "mergedManifest": "No screenOrientation or restricted-resizability property; resizeableActivity=true",
+    "guardedBuild": "passed"
+  },
+  "automated": {
+    "frontendFiles": 5,
+    "instrumentationExecution": "New Java test compiled; equivalent JavaScript geometry checks executed in the Android16 TEST WebView for left, right and no cutout.",
+    "frontendTests": 23,
+    "instrumentationCompilation": "passed",
+    "frontendResult": "passed"
+  },
+  "runtime": {
+    "cases": [
+      {
+        "name": "api35-final-compact-settings-dark",
+        "viewport": {
+          "width": 320,
+          "height": 534,
+          "dpr": 1.5
+        },
+        "documentWidth": 320,
+        "clientWidth": 320,
+        "navigationButtons": 4,
+        "theme": "dark",
+        "documentToken": "1791834811139",
+        "status": "passed",
+        "screenshot": ".tmp/android-large-screens/api35-final-compact-settings-dark.png"
+      },
+      {
+        "name": "api35-final-phone-landscape-left",
+        "viewport": {
+          "width": 915,
+          "height": 412,
+          "dpr": 2.625
+        },
+        "documentWidth": 915,
+        "clientWidth": 915,
+        "navigationButtons": 4,
+        "theme": "light",
+        "documentToken": "1791834811139",
+        "status": "passed",
+        "screenshot": ".tmp/android-large-screens/api35-final-phone-landscape-left.png"
+      },
+      {
+        "name": "api35-final-phone-landscape-right",
+        "viewport": {
+          "width": 915,
+          "height": 412,
+          "dpr": 2.625
+        },
+        "documentWidth": 915,
+        "clientWidth": 915,
+        "navigationButtons": 4,
+        "theme": "light",
+        "documentToken": "1791834811139",
+        "status": "passed",
+        "screenshot": ".tmp/android-large-screens/api35-final-phone-landscape-right.png"
+      },
+      {
+        "name": "api35-final-phone-portrait",
+        "viewport": {
+          "width": 412,
+          "height": 915,
+          "dpr": 2.625
+        },
+        "documentWidth": 412,
+        "clientWidth": 412,
+        "navigationButtons": 4,
+        "theme": "light",
+        "documentToken": "1791834811139",
+        "status": "passed",
+        "screenshot": ".tmp/android-large-screens/api35-final-phone-portrait.png"
+      },
+      {
+        "name": "api35-final-tablet-discover",
+        "viewport": {
+          "width": 1280,
+          "height": 800,
+          "dpr": 1.5
+        },
+        "documentWidth": 1280,
+        "clientWidth": 1280,
+        "navigationButtons": 4,
+        "theme": "light",
+        "documentToken": "1791834811139",
+        "status": "passed",
+        "screenshot": ".tmp/android-large-screens/api35-final-tablet-discover.png"
+      },
+      {
+        "name": "api35-final-tablet-events",
+        "viewport": {
+          "width": 1280,
+          "height": 800,
+          "dpr": 1.5
+        },
+        "documentWidth": 1280,
+        "clientWidth": 1280,
+        "navigationButtons": 4,
+        "theme": "light",
+        "documentToken": "1791834811139",
+        "status": "passed",
+        "screenshot": ".tmp/android-large-screens/api35-final-tablet-events.png"
+      },
+      {
+        "name": "api35-final-tablet-landscape-meteo",
+        "viewport": {
+          "width": 1280,
+          "height": 800,
+          "dpr": 1.5
+        },
+        "documentWidth": 1280,
+        "clientWidth": 1280,
+        "navigationButtons": 4,
+        "theme": "light",
+        "documentToken": "1791834811139",
+        "status": "passed",
+        "screenshot": ".tmp/android-large-screens/api35-final-tablet-landscape-meteo.png"
+      },
+      {
+        "name": "api35-final-tablet-portrait-home",
+        "viewport": {
+          "width": 800,
+          "height": 1280,
+          "dpr": 1.5
+        },
+        "documentWidth": 800,
+        "clientWidth": 800,
+        "navigationButtons": 4,
+        "theme": "light",
+        "documentToken": "1791834811139",
+        "status": "passed",
+        "screenshot": ".tmp/android-large-screens/api35-final-tablet-portrait-home.png"
+      },
+      {
+        "name": "api35-final-tablet-portrait-meteo",
+        "viewport": {
+          "width": 800,
+          "height": 1280,
+          "dpr": 1.5
+        },
+        "documentWidth": 800,
+        "clientWidth": 800,
+        "navigationButtons": 4,
+        "theme": "light",
+        "documentToken": "1791834811139",
+        "status": "passed",
+        "screenshot": ".tmp/android-large-screens/api35-final-tablet-portrait-meteo.png"
+      },
+      {
+        "name": "api35-final-tablet-settings-dark",
+        "viewport": {
+          "width": 1280,
+          "height": 800,
+          "dpr": 1.5
+        },
+        "documentWidth": 1280,
+        "clientWidth": 1280,
+        "navigationButtons": 4,
+        "theme": "dark",
+        "documentToken": "1791834811139",
+        "status": "passed",
+        "screenshot": ".tmp/android-large-screens/api35-final-tablet-settings-dark.png"
+      },
+      {
+        "name": "api36-final-compact-discover",
+        "viewport": {
+          "width": 360,
+          "height": 600,
+          "dpr": 1.5
+        },
+        "documentWidth": 360,
+        "clientWidth": 360,
+        "navigationButtons": 4,
+        "theme": "dark",
+        "documentToken": "1791835166085",
+        "status": "passed",
+        "screenshot": ".tmp/android-large-screens/api36-final-compact-discover.png"
+      },
+      {
+        "name": "api36-final-compact-events",
+        "viewport": {
+          "width": 360,
+          "height": 600,
+          "dpr": 1.5
+        },
+        "documentWidth": 360,
+        "clientWidth": 360,
+        "navigationButtons": 4,
+        "theme": "dark",
+        "documentToken": "1791835166085",
+        "status": "passed",
+        "screenshot": ".tmp/android-large-screens/api36-final-compact-events.png"
+      },
+      {
+        "name": "api36-final-compact-meteo",
+        "viewport": {
+          "width": 360,
+          "height": 600,
+          "dpr": 1.5
+        },
+        "documentWidth": 360,
+        "clientWidth": 360,
+        "navigationButtons": 4,
+        "theme": "dark",
+        "documentToken": "1791835166085",
+        "status": "passed",
+        "screenshot": ".tmp/android-large-screens/api36-final-compact-meteo.png"
+      },
+      {
+        "name": "api36-final-compact-settings-dark",
+        "viewport": {
+          "width": 360,
+          "height": 600,
+          "dpr": 1.5
+        },
+        "documentWidth": 360,
+        "clientWidth": 360,
+        "navigationButtons": 4,
+        "theme": "dark",
+        "documentToken": "1791835166085",
+        "status": "passed",
+        "screenshot": ".tmp/android-large-screens/api36-final-compact-settings-dark.png"
+      },
+      {
+        "name": "api36-final-phone-landscape",
+        "viewport": {
+          "width": 915,
+          "height": 412,
+          "dpr": 2.625
+        },
+        "documentWidth": 915,
+        "clientWidth": 915,
+        "navigationButtons": 4,
+        "theme": "dark",
+        "documentToken": "1791835166085",
+        "status": "passed",
+        "screenshot": ".tmp/android-large-screens/api36-final-phone-landscape.png"
+      },
+      {
+        "name": "api36-final-phone-portrait",
+        "viewport": {
+          "width": 412,
+          "height": 915,
+          "dpr": 2.625
+        },
+        "documentWidth": 412,
+        "clientWidth": 412,
+        "navigationButtons": 4,
+        "theme": "dark",
+        "documentToken": "1791835166085",
+        "status": "passed",
+        "screenshot": ".tmp/android-large-screens/api36-final-phone-portrait.png"
+      },
+      {
+        "name": "api36-final-tablet-landscape-home",
+        "viewport": {
+          "width": 1280,
+          "height": 800,
+          "dpr": 1.5
+        },
+        "documentWidth": 1280,
+        "clientWidth": 1280,
+        "navigationButtons": 4,
+        "theme": "dark",
+        "documentToken": "1791835166085",
+        "status": "passed",
+        "screenshot": ".tmp/android-large-screens/api36-final-tablet-landscape-home.png"
+      },
+      {
+        "name": "api36-final-tablet-meteo",
+        "viewport": {
+          "width": 800,
+          "height": 1280,
+          "dpr": 1.5
+        },
+        "documentWidth": 800,
+        "clientWidth": 800,
+        "navigationButtons": 4,
+        "theme": "dark",
+        "documentToken": "1791835166085",
+        "status": "passed",
+        "screenshot": ".tmp/android-large-screens/api36-final-tablet-meteo.png"
+      },
+      {
+        "name": "api36-final-tablet-portrait-home",
+        "viewport": {
+          "width": 800,
+          "height": 1280,
+          "dpr": 1.5
+        },
+        "documentWidth": 800,
+        "clientWidth": 800,
+        "navigationButtons": 4,
+        "theme": "dark",
+        "documentToken": "1791835166085",
+        "status": "passed",
+        "screenshot": ".tmp/android-large-screens/api36-final-tablet-portrait-home.png"
+      },
+      {
+        "name": "api36-final-tablet-settings-dark",
+        "viewport": {
+          "width": 1280,
+          "height": 800,
+          "dpr": 1.5
+        },
+        "documentWidth": 1280,
+        "clientWidth": 1280,
+        "navigationButtons": 4,
+        "theme": "dark",
+        "documentToken": "1791835166085",
+        "status": "passed",
+        "screenshot": ".tmp/android-large-screens/api36-final-tablet-settings-dark.png"
+      },
+      {
+        "name": "api36-final-visible-home",
+        "viewport": {
+          "width": 1280,
+          "height": 800,
+          "dpr": 1.5
+        },
+        "documentWidth": 1280,
+        "clientWidth": 1280,
+        "navigationButtons": 4,
+        "theme": "light",
+        "documentToken": "1791835166085",
+        "status": "passed",
+        "screenshot": ".tmp/android-large-screens/api36-final-visible-home.png"
+      }
+    ],
+    "api35": "Phone portrait and both landscape rotations; tablet portrait/landscape; 320dp compact settings; Home/Meteo/Eventi/Scopri/settings; light/dark; scrolling and selected forecast day retained.",
+    "state": "Single WebView document retained throughout each API test sequence.",
+    "api36": "Phone portrait/landscape; tablet portrait/landscape; 360dp compact; Home/Meteo/Eventi/Scopri/settings; light/dark; selected forecast day retained across resizing."
+  },
+  "limitations": [
+    "Tablet and folded/open-sized viewports simulated using Android wm size/density on dedicated emulators; no physical foldable or hinge posture tested.",
+    "Freeform launch request on API36 remained fullscreen; actual desktop freeform/split-window interaction not verified.",
+    "First cold WebView launch on API36 was slow; initial capture ran before React mounted and was repeated after readiness.",
+    "Existing Android15 emulator three-button tint issue remains documented in the edge-to-edge workstream.",
+    "Full Android lint has known unrelated errors; no new full lint or remote CI run requested for this TEST-only candidate."
+  ],
+  "visible": "Android16 emulator-5570, 1280x800dp, Home, light theme, landscape",
+  "references": [
+    "https://developer.android.com/develop/adaptive-apps/guides/app-orientation-aspect-ratio-resizability"
+  ]
+}

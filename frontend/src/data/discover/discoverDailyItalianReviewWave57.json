@@ -1,0 +1,140 @@
+{
+  "schemaVersion": 1,
+  "generatedAt": "2026-07-19",
+  "purpose": "Cinquantasettesimo lotto Scopri IT: verifica dei quattordici candidati rimasti per date prive di memoria principale. Luciano Savio, Gioacchino Rasponi e Paolo Treu superano la soglia grazie a fonti che documentano insieme data, legame territoriale e contributo storico. Due profili restano sospesi e nove vengono esclusi per rilevanza soltanto professionale o politica.",
+  "policy": {
+    "readyForUi": false,
+    "furDeferred": true,
+    "dateFormat": "DD-MM",
+    "requiresFinalItalianApproval": true,
+    "excludeDeaths": true,
+    "excludeGenericPoliticalProfiles": true,
+    "excludeGenericProfessionalProfiles": true,
+    "excludeSportsOnlyProfiles": true,
+    "allowExceptionalSportsProfiles": true,
+    "rejectBirthplaceOnlyProfiles": true,
+    "rejectSemanticDuplicates": true,
+    "rejectUncertainCalendarDates": true,
+    "rejectInternallyInconsistentRecords": true,
+    "requireOneCanonicalSource": true,
+    "sourceFirst": true,
+    "publishAfterFurOnly": true,
+    "allowMultipleMemoriesPerDate": true,
+    "doNotPromoteToPrimaryForCoverageOnly": true
+  },
+  "summary": {
+    "reviewed": 14,
+    "keepDaily": 3,
+    "primary": 3,
+    "secondary": 0,
+    "hold": 2,
+    "excluded": 9,
+    "canonicalPrimaryDatesBefore": 274,
+    "canonicalPrimaryDatesAfter": 277,
+    "currentVisiblePrimaryCoverage": 269
+  },
+  "keepDaily": [
+    {
+      "id": "master-fvg-06-10-Q16574025",
+      "wikidataId": "Q16574025",
+      "dateIt": "06-10",
+      "year": 1912,
+      "municipality": "Pordenone",
+      "locality": "Pordenone",
+      "province": "PN",
+      "canonicalCategory": "storia",
+      "dailyRole": "primary",
+      "priority": 97,
+      "titleIt": "Luciano Savio e lo sviluppo industriale di Pordenone",
+      "copyIt": "Il 6 ottobre 1912 nasce a Pordenone Luciano Savio. Alla guida delle Officine Savio trasforma il laboratorio di famiglia in un'industria con oltre duemila dipendenti e una produzione venduta in più di cinquanta Paesi.",
+      "sourceLabel": "Dizionario Biografico dei Friulani - Luciano Savio",
+      "sourceUrl": "https://www.dizionariobiograficodeifriulani.it/savio-luciano",
+      "sourceStatus": "pass",
+      "readyForUi": false
+    },
+    {
+      "id": "master-fvg-08-03-Q3764851",
+      "wikidataId": "Q3764851",
+      "dateIt": "08-03",
+      "year": 1829,
+      "municipality": "Trieste",
+      "locality": "Trieste",
+      "province": "TS",
+      "canonicalCategory": "storia",
+      "dailyRole": "primary",
+      "priority": 97,
+      "titleIt": "Gioacchino Rasponi e il Risorgimento",
+      "copyIt": "L'8 marzo 1829 nasce a Trieste Gioacchino Rasponi. Protagonista del Risorgimento in Romagna, partecipa alla giunta provvisoria del 1859, diventa vicepresidente della Camera dei deputati e prefetto di Palermo.",
+      "sourceLabel": "Treccani - Gioacchino Rasponi",
+      "sourceUrl": "https://www.treccani.it/enciclopedia/gioacchino-rasponi_%28Dizionario-Biografico%29/",
+      "sourceStatus": "pass",
+      "readyForUi": false
+    },
+    {
+      "id": "master-fvg-15-07-Q64225994",
+      "wikidataId": "Q64225994",
+      "dateIt": "15-07",
+      "year": 1958,
+      "municipality": "San Vito al Tagliamento",
+      "locality": "San Vito al Tagliamento",
+      "province": "PN",
+      "canonicalCategory": "storia",
+      "dailyRole": "primary",
+      "priority": 97,
+      "titleIt": "Paolo Treu, ai vertici della Marina",
+      "copyIt": "Il 15 luglio 1958 nasce a San Vito al Tagliamento Paolo Treu. Ammiraglio di squadra, guida il 30° Gruppo Navale in una missione di cinque mesi tra Golfo Persico, Oceano Indiano e coste africane e riceve la Medaglia d'oro al merito di Marina.",
+      "sourceLabel": "Gazzetta Ufficiale - Medaglia d'oro al merito di Marina",
+      "sourceUrl": "https://www.gazzettaufficiale.it/atto/serie_generale/caricaArticoloDefault/originario?atto.codiceRedazionale=15A04341&atto.dataPubblicazioneGazzetta=2015-06-09&atto.tipoProvvedimento=COMUNICATO",
+      "sourceStatus": "pass",
+      "readyForUi": false
+    }
+  ],
+  "hold": [
+    {
+      "id": "master-fvg-20-10-Q60062760",
+      "reason": "Il materiale reperito documenta il ruolo storico di Francesco Massimiliano Vaccano come vescovo di Trieste, ma non offre ancora una singola fonte autorevole che confermi insieme il giorno esatto di nascita e il merito della voce."
+    },
+    {
+      "id": "master-fvg-28-12-Q3848334",
+      "reason": "Mario Bertolissi ha un profilo accademico rilevante nel diritto costituzionale, ma le fonti disponibili sono soprattutto curriculum e interviste: la voce resta sospesa finché una fonte istituzionale dimostra un impatto storico adatto alla rubrica."
+    }
+  ],
+  "excluded": [
+    {
+      "id": "master-fvg-13-11-Q18811808",
+      "reason": "Stefano Bossi presenta una carriera cestistica professionale, ma il materiale disponibile non documenta una medaglia, un primato internazionale o un risultato storico eccezionale sufficiente per Scopri."
+    },
+    {
+      "id": "master-fvg-19-04-Q87271680",
+      "reason": "Vittorio Brancati viene descritto soltanto come politico italiano; non emerge un intervento legislativo, istituzionale o storico autonomo coerente con la soglia editoriale di Scopri."
+    },
+    {
+      "id": "master-fvg-19-05-Q18752373",
+      "reason": "Alberto Zeppieri ha svolto una carriera articolata nella produzione musicale e radiofonica, ma la notorietà professionale documentata non dimostra un impatto storico autonomo sufficiente per la memoria giornaliera."
+    },
+    {
+      "id": "master-fvg-23-08-Q16557042",
+      "reason": "Franca Maresa ha lavorato nel cinema, nel teatro e nella prosa televisiva, ma il materiale disponibile non documenta un'opera o un contributo culturale storico sufficiente per la soglia selettiva di Scopri."
+    },
+    {
+      "id": "master-fvg-24-07-Q3776526",
+      "reason": "Gregorio Paolini ha ideato e prodotto numerosi programmi televisivi, ma il profilo resta legato alla notorietà professionale e non documenta un impatto storico autonomo sufficiente per la memoria giornaliera."
+    },
+    {
+      "id": "master-fvg-26-02-Q19614736",
+      "reason": "Claudio Beorchia viene descritto soltanto come politico italiano; non emerge un intervento legislativo, istituzionale o storico autonomo coerente con la soglia editoriale di Scopri."
+    },
+    {
+      "id": "master-fvg-26-05-Q559928",
+      "reason": "Anna Carlucci ha lavorato come autrice e regista televisiva, ma il materiale disponibile documenta una carriera professionale e non un contributo storico o culturale autonomo sufficiente per Scopri."
+    },
+    {
+      "id": "master-fvg-26-06-Q3723851",
+      "reason": "Emanuela Grimalda presenta una carriera riconoscibile come attrice, ma il materiale disponibile non documenta un'opera o un contributo culturale storico sufficiente per la soglia selettiva di Scopri."
+    },
+    {
+      "id": "master-fvg-27-06-Q16622997",
+      "reason": "Walter Rizzetto viene descritto soltanto come politico italiano; non emerge un intervento legislativo, istituzionale o storico autonomo coerente con la soglia editoriale di Scopri."
+    }
+  ]
+}

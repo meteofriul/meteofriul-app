@@ -1,0 +1,14 @@
+{
+  "active": false,
+  "alerts": [
+    {
+      "id": "pc-fvg-green-20260624",
+      "level": "verde",
+      "title": "Nessuna allerta"
+    }
+  ],
+  "count": 0,
+  "fetched_at": "2026-06-24T10:00:00+02:00",
+  "source": "Protezione Civile FVG",
+  "source_mode": "github_actions_official_widget"
+}

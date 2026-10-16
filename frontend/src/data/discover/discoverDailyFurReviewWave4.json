@@ -1,0 +1,47 @@
+{
+  "schemaVersion": 1,
+  "purpose": "Quarto lotto FUR controllato per i record Scopri gia approvati in IT. Solo questi record possono diventare visibili.",
+  "reviewedAt": "2026-07-12",
+  "summary": {
+    "totalRecords": 5,
+    "approved": 5,
+    "pendingHumanReview": 0
+  },
+  "records": [
+    {
+      "id": "memory-it-ready-0108-bernardo-maria-de-rubeis-storia-da-cividale",
+      "titleFur": "Bernardo Maria De Rubeis, storie di Cividât",
+      "summaryFur": "Ai 8 di Zenâr dal 1687 al nas a Cividât dal Friûl Bernardo Maria De Rubeis, teolic e storic: une vôs sobrie pe memorie culturâl locâl.",
+      "status": "approved",
+      "notes": "Profilo storico-culturale locale, frase breve e non celebrativa."
+    },
+    {
+      "id": "memory-it-ready-0216-ruggero-timeus-trieste-e-il-novecento",
+      "titleFur": "Ruggero Timeus, Triest e il Nûfcent",
+      "summaryFur": "Ai 16 di Fevrâr dal 1892 al nas a Triest Ruggero Timeus, sagjist e scritôr. Une memorie di tratâ cun ton storic, cence enfasi.",
+      "status": "approved",
+      "notes": "Mantiene il tono prudente scelto in IT, senza formule allarmistiche."
+    },
+    {
+      "id": "memory-it-ready-1016-louis-toffoli-pittura-triestina-d-origine",
+      "titleFur": "Louis Toffoli, piture di origjin triestine",
+      "summaryFur": "Ai 16 di Otubar dal 1907 al nas a Triest Louis Toffoli, pitôr che al puartà cun sé une memorie personâl e artistiche leade ae citât.",
+      "status": "approved",
+      "notes": "Traduzione fedele al taglio personale e artistico, senza ampliare il profilo."
+    },
+    {
+      "id": "memory-it-ready-0226-alexander-kircher-mare-e-pittura",
+      "titleFur": "Alexander Kircher, mâr e piture",
+      "summaryFur": "Ai 26 di Fevrâr dal 1867 al nas a Triest Alexander Kircher, pitôr e ilustradôr leât ancje al imaginari maritim austro-ungaric.",
+      "status": "approved",
+      "notes": "Voce secondaria coerente con il tema mare/pittura."
+    },
+    {
+      "id": "memory-it-ready-0709-spiridon-gopcevic-astronomia-e-scrittura",
+      "titleFur": "Spiridon Gopcevic, astronomie e scriture",
+      "summaryFur": "Ai 9 di Lui dal 1855 al nas a Triest Spiridon Gopcevic, astronom e autôr austro-serbi cognossût ancje cul pseudonim Leo Brenner.",
+      "status": "approved",
+      "notes": "Profilo secondario, pubblicabile come memoria locale/archivio senza enfasi."
+    }
+  ]
+}

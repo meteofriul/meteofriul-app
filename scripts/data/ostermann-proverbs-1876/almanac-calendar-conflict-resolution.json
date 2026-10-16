@@ -1,0 +1,39 @@
+{
+  "schemaVersion": 1,
+  "reviewedAt": "2026-08-02",
+  "purpose": "Risoluzione editoriale delle ricorrenze che hanno più proverbi idonei nello stesso giorno. Una sola voce resta nel calendario quotidiano; le varianti restano disponibili per Scopri o archivio.",
+  "records": [
+    {
+      "id": "ost1876-sant-antoni-ore-lus",
+      "decision": "discover_archive",
+      "conflict": "fixed_date",
+      "calendarKey": "01-17",
+      "primaryId": "ostermann-054-sant-antoni-fred",
+      "reason": "Il 17 gennaio ha già una voce principale verificata; questa resta come approfondimento sul crescere della luce."
+    },
+    {
+      "id": "ostermann-103-nadal-chase-pasche-plazze",
+      "decision": "discover_archive",
+      "conflict": "movable_feast",
+      "calendarKey": "easter+0",
+      "primaryId": "ost1876-pasche-cun-foe",
+      "reason": "La domenica di Pasqua deve mostrare una sola voce principale."
+    },
+    {
+      "id": "ostermann-193-pasche-fen",
+      "decision": "discover_archive",
+      "conflict": "movable_feast",
+      "calendarKey": "easter+0",
+      "primaryId": "ost1876-pasche-cun-foe",
+      "reason": "La domenica di Pasqua deve mostrare una sola voce principale."
+    },
+    {
+      "id": "ostermann-059-vinars-sant-arsure",
+      "decision": "discover_archive",
+      "conflict": "movable_feast",
+      "calendarKey": "easter-2",
+      "primaryId": "ostermann-059-vinars-sant-ploe",
+      "reason": "Il Venerdì Santo deve mostrare una sola voce principale."
+    }
+  ]
+}

@@ -1,0 +1,70 @@
+{
+  "schemaVersion": 1,
+  "reviewedAt": "2026-08-02",
+  "purpose": "Rende espliciti i vincoli temporali dei record storici già pubblicati e rimuove dal calendario un testo privo di fonte primaria verificata.",
+  "demotions": [
+    {
+      "id": "ostermann-lune-cresse",
+      "decision": "source_review",
+      "reason": "La forma disponibile deriva da una fonte indiretta e ha ancora stato draft; resta in archivio finché non viene verificata sul facsimile."
+    }
+  ],
+  "rules": [
+    {
+      "id": "ostermann-105-lune-cercli",
+      "patch": {
+        "almanacTargetUse": "almanac_lunar_cycle",
+        "lunarRule": { "type": "any_lunar_day" }
+      },
+      "reason": "Detto lunare generale, senza riferimento a una fase, un mese o un giorno specifico."
+    },
+    {
+      "id": "ostermann-105-lune-pelose",
+      "patch": {
+        "almanacTargetUse": "almanac_lunar_cycle",
+        "lunarRule": { "type": "any_lunar_day" }
+      },
+      "reason": "Detto lunare generale, senza riferimento a una fase, un mese o un giorno specifico."
+    },
+    {
+      "id": "ostermann-190-avril-plojos",
+      "patch": {
+        "almanacTargetUse": "almanac_monthly",
+        "months": ["04"]
+      },
+      "reason": "Il testo nomina esplicitamente aprile."
+    },
+    {
+      "id": "ostermann-190-avril-bagnat",
+      "patch": {
+        "almanacTargetUse": "almanac_monthly",
+        "months": ["04"]
+      },
+      "reason": "Il testo nomina esplicitamente aprile."
+    },
+    {
+      "id": "ostermann-190-plois-marz-brosiz-avril",
+      "patch": {
+        "almanacTargetUse": "almanac_monthly",
+        "months": ["03", "04"]
+      },
+      "reason": "Il testo collega esplicitamente marzo e aprile."
+    },
+    {
+      "id": "ostermann-190-mai-jugn-pan-vin",
+      "patch": {
+        "almanacTargetUse": "almanac_monthly",
+        "months": ["05", "06"]
+      },
+      "reason": "Il testo collega esplicitamente maggio e giugno."
+    },
+    {
+      "id": "ostermann-190-pluv-avost",
+      "patch": {
+        "almanacTargetUse": "almanac_monthly",
+        "months": ["08"]
+      },
+      "reason": "Il testo nomina esplicitamente agosto."
+    }
+  ]
+}

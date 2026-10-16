@@ -1,0 +1,86 @@
+{
+  "schemaVersion": 1,
+  "recordedAt": "2026-09-26T15:09:32Z",
+  "identity": {
+    "account": "meteofriul@gmail.com",
+    "projectId": "meteo-friul",
+    "region": "europe-west1"
+  },
+  "source": {
+    "gitCommit": "79a6838",
+    "cloudBuildId": "139b4821-5a6c-4ed4-9958-73cbef8b92c6",
+    "imageTag": "europe-west1-docker.pkg.dev/meteo-friul/meteofriul/backend:national-alerts-79a6838",
+    "imageDigest": "sha256:1eae4ccd8d79f8b3c4d3435a614eb3e04973a83dea951cf48b7c7ae76db3893b"
+  },
+  "nationalOfficialAlerts": {
+    "jobName": "meteofriul-national-official-alert-sync",
+    "entrypoint": "python -m app.jobs.sync_national_official_alerts",
+    "schedulerName": "meteofriul-national-official-alert-sync",
+    "schedule": "15 */2 * * *",
+    "timeZone": "Europe/Rome",
+    "schedulerState": "ENABLED",
+    "push": "disabled_by_design",
+    "apiServiceDeployedByThisOperation": false,
+    "firstExecution": {
+      "name": "meteofriul-national-official-alert-sync-95nb5",
+      "status": "SUCCEEDED",
+      "durationSeconds": 37.45,
+      "result": {
+        "status": "ok",
+        "reason": "stored",
+        "storedIn": "firestore",
+        "refreshed": true,
+        "revision": "20260926_1442",
+        "zoneCount": 187,
+        "recordCount": 1122,
+        "active": false,
+        "push": "disabled_by_design"
+      }
+    }
+  },
+  "cams": {
+    "schedulerName": "meteofriul-cams-refresh",
+    "schedule": "0 15,20 * * *",
+    "timeZone": "Etc/UTC",
+    "schedulerState": "ENABLED",
+    "removedUtcHour": 10
+  },
+  "monitoring": {
+    "notificationChannel": "projects/meteo-friul/notificationChannels/11334808831344967323",
+    "auditReady": true,
+    "policies": [
+      {
+        "job": "meteofriul-local-notice",
+        "name": "projects/meteo-friul/alertPolicies/16366343826489083162"
+      },
+      {
+        "job": "meteofriul-official-alert-sync",
+        "name": "projects/meteo-friul/alertPolicies/13826022647837543358"
+      },
+      {
+        "job": "meteofriul-national-official-alert-sync",
+        "name": "projects/meteo-friul/alertPolicies/10858568682187524658"
+      },
+      {
+        "job": "meteofriul-icon",
+        "name": "projects/meteo-friul/alertPolicies/16366343826489084163"
+      },
+      {
+        "job": "meteofriul-national-icon",
+        "name": "projects/meteo-friul/alertPolicies/9190322764958795862"
+      },
+      {
+        "job": "meteofriul-cams",
+        "name": "projects/meteo-friul/alertPolicies/12710286801829094226"
+      },
+      {
+        "job": "meteofriul-events-refresh",
+        "name": "projects/meteo-friul/alertPolicies/13483592592255950505"
+      }
+    ]
+  },
+  "excludedChanges": {
+    "firebaseCutover": "unchanged",
+    "androidAab": "not_built"
+  }
+}

@@ -1,0 +1,100 @@
+{
+  "schemaVersion": 1,
+  "generatedAt": "2026-07-21",
+  "purpose": "Settantaseiesimo lotto Scopri IT: due nuove Memorie principali per il 18 maggio e il 13 giugno. Le cronache del Ministero della Cultura e della Biblioteca Statale Isontina documentano la partenza di sei bambini della scuola delle Orsoline e l'intervento di Luigi Faidutti a favore dei profughi goriziani. Cinque fatti già valutati nelle Wave 68, 69, 71 e 72 restano esclusi per continuità editoriale.",
+  "policy": {
+    "readyForUi": false,
+    "furDeferred": true,
+    "dateFormat": "DD-MM",
+    "requiresFinalItalianApproval": true,
+    "excludeDeaths": true,
+    "excludeGenericPoliticalProfiles": true,
+    "excludeGenericProfessionalProfiles": true,
+    "excludeSportsOnlyProfiles": true,
+    "rejectBirthplaceOnlyProfiles": true,
+    "rejectSemanticDuplicates": true,
+    "rejectUncertainCalendarDates": true,
+    "requireOneCanonicalSource": true,
+    "sourceFirst": true,
+    "publishAfterFurOnly": true,
+    "allowMultipleMemoriesPerDate": true,
+    "doNotPromoteToPrimaryForCoverageOnly": true
+  },
+  "summary": {
+    "reviewed": 7,
+    "keepDaily": 2,
+    "primary": 2,
+    "secondary": 0,
+    "hold": 5,
+    "excluded": 0,
+    "canonicalPrimaryDatesBefore": 357,
+    "canonicalPrimaryDatesAfter": 359,
+    "currentVisiblePrimaryCoverage": 357
+  },
+  "keepDaily": [
+    {
+      "id": "source-gap-18-05-bambini-orsoline-livorno-1917",
+      "sourceEntityId": "mic-bsi-bambini-orsoline-gorizia-18-maggio-1917",
+      "dateIt": "18-05",
+      "year": 1917,
+      "municipality": "Gorizia",
+      "locality": "Monastero delle Orsoline, Gorizia",
+      "province": "GO",
+      "canonicalCategory": "memoria_storica",
+      "dailyRole": "primary",
+      "priority": 84,
+      "titleIt": "Sei bambini delle Orsoline partono per Livorno",
+      "copyIt": "Il 18 maggio 1917 sei bambini che frequentano la scuola delle Orsoline di Gorizia partono per Livorno. Nella stessa giornata tre granate colpiscono la canonica delle religiose: una breve cronaca che racconta l'infanzia allontanata dalla città in guerra.",
+      "sourceLabel": "Ministero della Cultura - Biblioteca Statale Isontina",
+      "sourceUrl": "https://goriziagrandeguerra.cultura.gov.it/gorizia-giorno-per-giorno-18-maggio-1917/",
+      "sourceStatus": "pass",
+      "readyForUi": false
+    },
+    {
+      "id": "source-gap-13-06-faidutti-sussidio-profughi-goriziani-1917",
+      "sourceEntityId": "mic-bsi-faidutti-profughi-goriziani-13-giugno-1917",
+      "dateIt": "13-06",
+      "year": 1917,
+      "municipality": "Gorizia",
+      "locality": "Distretto di St. Pölten, Austria",
+      "province": "GO",
+      "canonicalCategory": "memoria_storica",
+      "dailyRole": "primary",
+      "priority": 86,
+      "titleIt": "Faidutti difende il sussidio dei profughi goriziani",
+      "copyIt": "Il 13 giugno 1917 monsignor Luigi Faidutti propone di riassegnare il sussidio ai profughi goriziani nel distretto di St. Pölten. Avevano rinunciato all'aiuto per non essere trasferiti nelle baracche del campo e trovare invece una sistemazione all'esterno.",
+      "sourceLabel": "Ministero della Cultura - Biblioteca Statale Isontina",
+      "sourceUrl": "https://goriziagrandeguerra.cultura.gov.it/gorizia-giorno-per-giorno-13-giugno-1917/",
+      "sourceStatus": "pass",
+      "readyForUi": false
+    }
+  ],
+  "hold": [
+    {
+      "id": "source-gap-10-08-acquedotto-gorizia-pompieri-1916",
+      "dateIt": "10-08",
+      "reason": "Il ripristino dell'acquedotto e lo spegnimento degli incendi sono documentati, ma seguono direttamente il passaggio di Gorizia sotto il controllo italiano già pubblicato per il 9 agosto. Resta valido il hold della Wave 68."
+    },
+    {
+      "id": "source-gap-25-09-ospedale-via-seminario-gorizia-1915",
+      "dateIt": "25-09",
+      "reason": "Il trasferimento dell'ospedale è documentato, ma ripete il filone dei bombardamenti sugli ospedali già rappresentato. Resta valido il hold della Wave 69."
+    },
+    {
+      "id": "source-gap-20-10-autonomia-friuli-austriaco-gorizia-1918",
+      "dateIt": "20-10",
+      "reason": "Il sostegno all'autonomia del Friuli austriaco appartiene alla sequenza politica già rappresentata più chiaramente il 25 ottobre. Resta valido il hold della Wave 69."
+    },
+    {
+      "id": "source-gap-08-12-societa-studenti-gorizia-1918",
+      "dateIt": "08-12",
+      "reason": "La fonte non chiarisce identità, continuità e rilievo della Società ricostituita dagli studenti. Resta valido il hold della Wave 72."
+    },
+    {
+      "id": "source-gap-29-12-orsoline-riapertura-scuola-gorizia-1918",
+      "dateIt": "29-12",
+      "reason": "La richiesta di riaprire scuola e spazi per l'infanzia è documentata, ma era già stata valutata come materiale d'archivio sotto la soglia della Memoria principale. Resta valido il hold della Wave 72."
+    }
+  ],
+  "excluded": []
+}

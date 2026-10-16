@@ -1,0 +1,40 @@
+{
+  "id": "/",
+  "name": "Meteo Friûl",
+  "short_name": "Meteo Friûl",
+  "description": "Meteo, allerte ufficiali e territorio del Friuli Venezia Giulia.",
+  "lang": "it",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#061A2E",
+  "theme_color": "#091D3D",
+  "categories": ["weather", "news"],
+  "icons": [
+    {
+      "src": "/branding/icon_launcher_any_mf-r5-20260927-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/branding/icon_launcher_any_mf-r5-20260927-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/branding/icon_launcher_maskable_mf-r5-20260927-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "maskable"
+    },
+    {
+      "src": "/branding/icon_launcher_maskable_mf-r5-20260927-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ]
+}

@@ -1,0 +1,199 @@
+{
+  "schemaVersion": 1,
+  "batchId": "ostermann-1876-language-review-11",
+  "reviewedAt": "2026-08-02",
+  "sourceDecisionFiles": ["review-decisions-batch-11.json"],
+  "purpose": "Undicesima revisione linguistica ed editoriale dei candidati Ostermann 1876 verificati sul facsimile. Non pubblica contenuti nella UI.",
+  "policy": {
+    "publish": false,
+    "rule": "La normalizzazione FUR conserva il significato attestato nel facsimile. Le quindici massime sono generali e non ricevono date, feste o stagioni artificiali."
+  },
+  "summary": {
+    "records": 15,
+    "languageReviewed": 15,
+    "mergeExisting": 0,
+    "needsNativeReview": 0
+  },
+  "records": [
+    {
+      "id": "ost1876-dure-vinc",
+      "reviewStatus": "language_reviewed",
+      "furNormalized": "Cui che al dure, al vinc.",
+      "itFinal": "Chi la dura la vince.",
+      "destination": "almanac",
+      "calendarRule": {"type": "general", "bucket": "wisdom", "fallbackAllowed": true},
+      "duplicateAudit": {"status": "new_distinct"},
+      "evidence": [{"label": "Facsimile Ostermann 1876, p. PDF 181", "kind": "primary"}, {"label": "ARLeF e Dizionari de Lenghe Furlane, durâ e vinci", "kind": "secondary"}],
+      "editorialNote": "Aggiunti i pronomi soggetto della grafia standard; conservata la formula proverbiale.",
+      "publish": false
+    },
+    {
+      "id": "ost1876-ognun-pense-so-mut",
+      "reviewStatus": "language_reviewed",
+      "furNormalized": "Ognun al pense a so mût.",
+      "itFinal": "Ognuno la pensa a modo suo.",
+      "destination": "almanac",
+      "calendarRule": {"type": "general", "bucket": "wisdom", "fallbackAllowed": true},
+      "duplicateAudit": {"status": "new_distinct"},
+      "evidence": [{"label": "Facsimile Ostermann 1876, p. PDF 181", "kind": "primary"}, {"label": "ARLeF e Dizionari de Lenghe Furlane, pensâ e mût", "kind": "secondary"}],
+      "editorialNote": "Aggiunto il pronome soggetto e mantenuta la forma nominale mût.",
+      "publish": false
+    },
+    {
+      "id": "ost1876-scomence-mal-finis-pies",
+      "reviewStatus": "language_reviewed",
+      "furNormalized": "Cui che al scomence mâl al finìs piês.",
+      "itFinal": "Chi comincia male finisce peggio.",
+      "destination": "almanac",
+      "calendarRule": {"type": "general", "bucket": "wisdom", "fallbackAllowed": true},
+      "duplicateAudit": {"status": "new_distinct"},
+      "evidence": [{"label": "Facsimile Ostermann 1876, p. PDF 181", "kind": "primary"}, {"label": "ARLeF e Dizionari de Lenghe Furlane, scomençâ e piês", "kind": "secondary"}],
+      "editorialNote": "Normalizzati i pronomi soggetto e la flessione verbale senza modificare il senso.",
+      "publish": false
+    },
+    {
+      "id": "ost1876-fortune-jude-tente",
+      "reviewStatus": "language_reviewed",
+      "furNormalized": "La fortune e jude cui che al tente.",
+      "itFinal": "La fortuna aiuta chi tenta.",
+      "destination": "almanac",
+      "calendarRule": {"type": "general", "bucket": "wisdom", "fallbackAllowed": true},
+      "duplicateAudit": {"status": "new_distinct"},
+      "evidence": [{"label": "Facsimile Ostermann 1876, p. PDF 182", "kind": "primary"}, {"label": "Dizionari de Lenghe Furlane, fortune, judâ e tentâ", "kind": "secondary"}],
+      "editorialNote": "Normalizzata la forma storica furtune e aggiunti i pronomi soggetto.",
+      "publish": false
+    },
+    {
+      "id": "ost1876-vul-aghe-fontane",
+      "reviewStatus": "language_reviewed",
+      "furNormalized": "Cui che al vûl aghe, al vadi ae fontane.",
+      "itFinal": "Chi vuole acqua vada alla fontana.",
+      "destination": "almanac",
+      "calendarRule": {"type": "general", "bucket": "wisdom", "fallbackAllowed": true},
+      "duplicateAudit": {"status": "new_distinct"},
+      "evidence": [{"label": "Facsimile Ostermann 1876, p. PDF 182", "kind": "primary"}, {"label": "ARLeF e Dizionari de Lenghe Furlane, volê, aghe e fontane", "kind": "secondary"}],
+      "editorialNote": "La costruzione storica è ricondotta alla sintassi standard; conservata l'immagine della fontana.",
+      "publish": false
+    },
+    {
+      "id": "ost1876-vue-pierd-doman-vuadagne",
+      "reviewStatus": "language_reviewed",
+      "furNormalized": "Vuê si pierd, doman si vuadagne.",
+      "itFinal": "Oggi si perde, domani si guadagna.",
+      "destination": "almanac",
+      "calendarRule": {"type": "general", "bucket": "wisdom", "fallbackAllowed": true},
+      "duplicateAudit": {"status": "new_distinct"},
+      "evidence": [{"label": "Facsimile Ostermann 1876, p. PDF 183", "kind": "primary"}, {"label": "ARLeF e Dizionari de Lenghe Furlane, vuê, pierdi e vuadagnâ", "kind": "secondary"}],
+      "editorialNote": "Normalizzati vuê e vuadagne; oggi e domani indicano alternanza, non date di calendario.",
+      "publish": false
+    },
+    {
+      "id": "ost1876-ogni-di-no-fieste",
+      "reviewStatus": "language_reviewed",
+      "furNormalized": "Ogni dì nol è fieste.",
+      "itFinal": "Non tutti i giorni sono festa.",
+      "destination": "almanac",
+      "calendarRule": {"type": "general", "bucket": "wisdom", "fallbackAllowed": true},
+      "duplicateAudit": {"status": "new_distinct"},
+      "evidence": [{"label": "Facsimile Ostermann 1876, p. PDF 184", "kind": "primary"}, {"label": "Dizionari de Lenghe Furlane, dì e fieste", "kind": "secondary"}],
+      "editorialNote": "Normalizzata la negazione; il riferimento ai giorni è generale e non stagionale.",
+      "publish": false
+    },
+    {
+      "id": "ost1876-ogni-fadie-premi",
+      "reviewStatus": "language_reviewed",
+      "furNormalized": "Ogni fadie e merite premi.",
+      "itFinal": "Ogni fatica merita un premio.",
+      "destination": "almanac",
+      "calendarRule": {"type": "general", "bucket": "wisdom", "fallbackAllowed": true},
+      "duplicateAudit": {"status": "new_distinct"},
+      "evidence": [{"label": "Facsimile Ostermann 1876, p. PDF 184", "kind": "primary"}, {"label": "ARLeF e Dizionari de Lenghe Furlane, fadie e premi", "kind": "secondary"}],
+      "editorialNote": "Aggiunto il pronome soggetto richiesto dalla grafia standard.",
+      "publish": false
+    },
+    {
+      "id": "ost1876-robe-mal-cuistade",
+      "reviewStatus": "language_reviewed",
+      "furNormalized": "La robe mâl cuistade no à né pâs né durade.",
+      "itFinal": "La roba mal acquistata non ha pace né durata.",
+      "destination": "almanac",
+      "calendarRule": {"type": "general", "bucket": "wisdom", "fallbackAllowed": true},
+      "duplicateAudit": {"status": "new_distinct"},
+      "evidence": [{"label": "Facsimile Ostermann 1876, p. PDF 187", "kind": "primary"}, {"label": "ARLeF e Dizionari de Lenghe Furlane, robe, cuistâ e durade", "kind": "secondary"}],
+      "editorialNote": "Normalizzati articolo, verbo e accenti; conservato il parallelismo pâs e durade.",
+      "publish": false
+    },
+    {
+      "id": "ost1876-pan-sudat-no-robat",
+      "reviewStatus": "language_reviewed",
+      "furNormalized": "Miôr un pan sudât che une man di chel robât.",
+      "itFinal": "Meglio il pane guadagnato col sudore che una manciata di quello rubato.",
+      "destination": "almanac",
+      "calendarRule": {"type": "general", "bucket": "wisdom", "fallbackAllowed": true},
+      "duplicateAudit": {"status": "new_distinct"},
+      "evidence": [{"label": "Facsimile Ostermann 1876, p. PDF 189", "kind": "primary"}, {"label": "ARLeF e Dizionari de Lenghe Furlane, miôr, sudât e man", "kind": "secondary"}],
+      "editorialNote": "Normalizzato miei in miôr; la traduzione esplicita il valore figurato di man.",
+      "publish": false
+    },
+    {
+      "id": "ost1876-ingjan-torne-ingjanador",
+      "reviewStatus": "language_reviewed",
+      "furNormalized": "L'ingjan al torne sul ingjanadôr.",
+      "itFinal": "L'inganno torna sull'ingannatore.",
+      "destination": "almanac",
+      "calendarRule": {"type": "general", "bucket": "wisdom", "fallbackAllowed": true},
+      "duplicateAudit": {"status": "new_distinct"},
+      "evidence": [{"label": "Facsimile Ostermann 1876, p. PDF 189", "kind": "primary"}, {"label": "ARLeF e Dizionari de Lenghe Furlane, ingjan, tornâ e ingjanadôr", "kind": "secondary"}],
+      "editorialNote": "La costruzione storica è resa nella grafia corrente mantenendo intatto il significato.",
+      "publish": false
+    },
+    {
+      "id": "ost1876-picule-macule-tapet",
+      "reviewStatus": "language_reviewed",
+      "furNormalized": "Une picule macule e rovine un biel tapêt.",
+      "itFinal": "Una piccola macchia rovina un bel tappeto.",
+      "destination": "almanac",
+      "calendarRule": {"type": "general", "bucket": "wisdom", "fallbackAllowed": true},
+      "duplicateAudit": {"status": "new_distinct"},
+      "evidence": [{"label": "Facsimile Ostermann 1876, p. PDF 190", "kind": "primary"}, {"label": "ARLeF e Dizionari de Lenghe Furlane, picule, macule e tapêt", "kind": "secondary"}],
+      "editorialNote": "La forma storica mâgle è ricondotta a macule; aggiunti articolo e pronome soggetto.",
+      "publish": false
+    },
+    {
+      "id": "ost1876-fi-des-sos-azions",
+      "reviewStatus": "language_reviewed",
+      "furNormalized": "Ognun al è fi des sôs azions.",
+      "itFinal": "Ognuno è figlio delle proprie azioni.",
+      "destination": "almanac",
+      "calendarRule": {"type": "general", "bucket": "wisdom", "fallbackAllowed": true},
+      "duplicateAudit": {"status": "new_distinct"},
+      "evidence": [{"label": "Facsimile Ostermann 1876, p. PDF 190", "kind": "primary"}, {"label": "ARLeF e Dizionari de Lenghe Furlane, fi e azion", "kind": "secondary"}],
+      "editorialNote": "Aggiunto il pronome soggetto e normalizzato il plurale azions.",
+      "publish": false
+    },
+    {
+      "id": "ost1876-prometi-mantigni",
+      "reviewStatus": "language_reviewed",
+      "furNormalized": "Nol baste imprometi: bisugne mantignî.",
+      "itFinal": "Non basta promettere: bisogna mantenere.",
+      "destination": "almanac",
+      "calendarRule": {"type": "general", "bucket": "wisdom", "fallbackAllowed": true},
+      "duplicateAudit": {"status": "new_distinct"},
+      "evidence": [{"label": "Facsimile Ostermann 1876, p. PDF 190", "kind": "primary"}, {"label": "ARLeF e Dizionari de Lenghe Furlane, imprometi e mantignî", "kind": "secondary"}],
+      "editorialNote": "Riunite le due righe del facsimile e normalizzate le forme verbali.",
+      "publish": false
+    },
+    {
+      "id": "ost1876-peraule-fas-om",
+      "reviewStatus": "language_reviewed",
+      "furNormalized": "La peraule e fâs l'om.",
+      "itFinal": "La parola fa l'uomo.",
+      "destination": "almanac",
+      "calendarRule": {"type": "general", "bucket": "wisdom", "fallbackAllowed": true},
+      "duplicateAudit": {"status": "new_distinct"},
+      "evidence": [{"label": "Facsimile Ostermann 1876, p. PDF 191", "kind": "primary"}, {"label": "ARLeF e Dizionari de Lenghe Furlane, peraule e fâ", "kind": "secondary"}],
+      "editorialNote": "Aggiunto il pronome soggetto; conservata la brevità della fonte.",
+      "publish": false
+    }
+  ]
+}

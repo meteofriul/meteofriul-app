@@ -1,0 +1,35 @@
+{
+  "schemaVersion": 1,
+  "generatedAt": "2026-07-21",
+  "purpose": "Coda editoriale dei giorni senza Memoria primaria exact-date in Scopri. Non letta dalla UI.",
+  "datePolicy": {
+    "dateIt": "DD-MM, formato mostrato e usato nella revisione italiana",
+    "dateAnchor": "MM-DD, chiave tecnica interna del calendario applicativo"
+  },
+  "policy": {
+    "noAutomaticPublication": true,
+    "exactDateRequired": true,
+    "excludeDeaths": true,
+    "excludeGenericPoliticalProfiles": true,
+    "excludeGenericProfessionalProfiles": true,
+    "doNotLowerEditorialThresholdToFillCalendar": true,
+    "requireVerifiedSourceAndApprovedItFurBeforePromotion": true,
+    "classBCandidatesRequireExplicitSecondPassDecision": true
+  },
+  "summary": {
+    "dailyTarget": 366,
+    "readyPrimaryDays": 366,
+    "missingPrimaryDays": 0,
+    "targetedSourceCheckDays": 0,
+    "targetedSourceCheckCandidates": 0,
+    "closedSecondPassCandidates": 0,
+    "completedPromotions": 0,
+    "reviewedSecondaryMemories": 0,
+    "secondaryMemoriesKeptSecondary": 0,
+    "researchNewSourceDays": 0,
+    "rawButNoEligibleDays": 0,
+    "processedEligibleButNoPrimaryDays": 0,
+    "byMonth": {}
+  },
+  "records": []
+}

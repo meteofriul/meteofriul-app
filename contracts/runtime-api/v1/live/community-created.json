@@ -1,0 +1,30 @@
+{
+  "report": {
+    "id": "community-test-1",
+    "typeId": "rain",
+    "typeCategory": "phenomenon",
+    "groupId": "group-rain:pordenone:496186",
+    "place": "Pordenone",
+    "lat": 45.95689,
+    "lon": 12.66051,
+    "locationPrecision": "zone",
+    "x": 22.85,
+    "y": 63.59,
+    "createdAt": 1786269600000,
+    "expiresAt": 1786273200000,
+    "time": "",
+    "source": "community",
+    "sourceKey": "39be5f24c5e08bb68219a0cf"
+  },
+  "cooldown_until": 1786272300000,
+  "undo_until": 1786269660000,
+  "undo_window_seconds": 60,
+  "ttl_seconds": 3600,
+  "source": {
+    "id": "community_reports",
+    "type": "informative_unverified",
+    "verified": false,
+    "storage": "memory",
+    "cooldown_storage": "memory"
+  }
+}

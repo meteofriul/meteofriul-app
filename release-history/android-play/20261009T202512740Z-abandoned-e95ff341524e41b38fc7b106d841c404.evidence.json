@@ -1,0 +1,8 @@
+{
+  "SchemaVersion": 1,
+  "CreatedAtUtc": "2026-10-09T20:25:12.7402746Z",
+  "Event": "abandoned",
+  "VersionCode": 300030,
+  "VersionName": "0.1.13",
+  "Reason": "Guarded build stopped before AAB generation: Carto configuration missing in release worktree; no bundle uploaded to Play"
+}

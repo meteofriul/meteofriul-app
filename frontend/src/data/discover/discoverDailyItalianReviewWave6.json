@@ -1,0 +1,205 @@
+{
+  "schemaVersion": 1,
+  "generatedAt": "2026-07-12",
+  "purpose": "Settimo lotto Scopri IT: candidati culturali/istituzionali selezionati dal master, senza morti, politica generica o profili minori contemporanei. Non letto direttamente dalla UI.",
+  "policy": {
+    "readyForUi": false,
+    "furDeferred": true,
+    "dateFormat": "DD-MM",
+    "requiresFinalItalianApproval": true,
+    "excludeDeaths": true,
+    "excludeGenericPoliticalProfiles": true,
+    "excludeLivingProfilesWithoutDedicatedReview": true,
+    "sourceFirst": true,
+    "publishAfterFurOnly": true
+  },
+  "summary": {
+    "keepDaily": 8,
+    "primary": 8,
+    "secondary": 0,
+    "hold": 8,
+    "potentialPrimaryCoverageBefore": 70,
+    "potentialPrimaryCoverageAfter": 78,
+    "currentVisiblePrimaryCoverage": 70
+  },
+  "keepDaily": [
+    {
+      "id": "master-fvg-09-05-Q1666532",
+      "wikidataId": "Q1666532",
+      "dateIt": "09-05",
+      "year": 1838,
+      "municipality": "Trieste",
+      "locality": "Trieste",
+      "province": "TS",
+      "canonicalCategory": "storia",
+      "dailyRole": "primary",
+      "titleIt": "La Riunione Adriatica di Sicurta",
+      "copyIt": "Il 9 maggio 1838 nasce a Trieste la Riunione Adriatica di Sicurta: una traccia della citta mercantile, portuale e assicurativa dell'Ottocento.",
+      "sourceLabel": "Wikidata",
+      "sourceUrl": "https://www.wikidata.org/wiki/Q1666532",
+      "sourceStatus": "pass",
+      "readyForUi": false
+    },
+    {
+      "id": "master-fvg-03-09-Q3812958",
+      "wikidataId": "Q3812958",
+      "dateIt": "03-09",
+      "year": 1912,
+      "municipality": "Gorizia",
+      "locality": "Gorizia",
+      "province": "GO",
+      "canonicalCategory": "cultura",
+      "dailyRole": "primary",
+      "titleIt": "Karel Vladimir Truhlar, poesia e pensiero",
+      "copyIt": "Il 3 settembre 1912 nasce a Gorizia Karel Vladimir Truhlar, teologo, poeta e gesuita: una voce di confine tra cultura slovena e orizzonte europeo.",
+      "sourceLabel": "Wikidata",
+      "sourceUrl": "https://www.wikidata.org/wiki/Q3812958",
+      "sourceStatus": "pass",
+      "readyForUi": false
+    },
+    {
+      "id": "master-fvg-28-07-Q19357598",
+      "wikidataId": "Q19357598",
+      "dateIt": "28-07",
+      "year": 1935,
+      "municipality": "Gorizia",
+      "locality": "Gorizia",
+      "province": "GO",
+      "canonicalCategory": "cultura",
+      "dailyRole": "primary",
+      "titleIt": "Guido Fink, sguardo da Gorizia",
+      "copyIt": "Il 28 luglio 1935 nasce a Gorizia Guido Fink, scrittore, saggista e traduttore: una memoria adatta a Scopri per letteratura e dialogo culturale.",
+      "sourceLabel": "Wikidata",
+      "sourceUrl": "https://www.wikidata.org/wiki/Q19357598",
+      "sourceStatus": "pass",
+      "readyForUi": false
+    },
+    {
+      "id": "master-fvg-29-05-Q21329159",
+      "wikidataId": "Q21329159",
+      "dateIt": "29-05",
+      "year": 1891,
+      "municipality": "Trieste",
+      "locality": "Trieste",
+      "province": "TS",
+      "canonicalCategory": "cultura",
+      "dailyRole": "primary",
+      "titleIt": "Giorgio Nicodemi, arte e musei",
+      "copyIt": "Il 29 maggio 1891 nasce a Trieste Giorgio Nicodemi, museografo e scrittore d'arte. Una piccola porta verso musei, critica e storia artistica.",
+      "sourceLabel": "Wikidata",
+      "sourceUrl": "https://www.wikidata.org/wiki/Q21329159",
+      "sourceStatus": "pass",
+      "readyForUi": false
+    },
+    {
+      "id": "master-fvg-21-02-Q19357674",
+      "wikidataId": "Q19357674",
+      "dateIt": "21-02",
+      "year": 1889,
+      "municipality": "Trieste",
+      "locality": "Trieste",
+      "province": "TS",
+      "canonicalCategory": "cultura",
+      "dailyRole": "primary",
+      "titleIt": "Italo Tavolato, scrittura triestina",
+      "copyIt": "Il 21 febbraio 1889 nasce a Trieste Italo Tavolato, scrittore del primo Novecento. Una voce da tenere nel calendario culturale della citta.",
+      "sourceLabel": "Wikidata",
+      "sourceUrl": "https://www.wikidata.org/wiki/Q19357674",
+      "sourceStatus": "pass",
+      "readyForUi": false
+    },
+    {
+      "id": "master-fvg-18-02-Q16828119",
+      "wikidataId": "Q16828119",
+      "dateIt": "18-02",
+      "year": 1625,
+      "municipality": "Udine",
+      "locality": "Udine",
+      "province": "UD",
+      "canonicalCategory": "cultura",
+      "dailyRole": "primary",
+      "titleIt": "Giovanni Giuseppe Cosattini, pittura udinese",
+      "copyIt": "Il 18 febbraio 1625 nasce a Udine Giovanni Giuseppe Cosattini, pittore. Una traccia breve per ricordare l'arte locale del Seicento.",
+      "sourceLabel": "Wikidata",
+      "sourceUrl": "https://www.wikidata.org/wiki/Q16828119",
+      "sourceStatus": "pass",
+      "readyForUi": false
+    },
+    {
+      "id": "master-fvg-20-04-Q3929884",
+      "wikidataId": "Q3929884",
+      "dateIt": "20-04",
+      "year": 1895,
+      "municipality": "Trieste",
+      "locality": "Trieste",
+      "province": "TS",
+      "canonicalCategory": "cultura",
+      "dailyRole": "primary",
+      "titleIt": "Ramiro Meng, forme e citta",
+      "copyIt": "Il 20 aprile 1895 nasce a Trieste Ramiro Meng, pittore, scultore e architetto: una memoria visuale tra arte e spazio urbano.",
+      "sourceLabel": "Wikidata",
+      "sourceUrl": "https://www.wikidata.org/wiki/Q3929884",
+      "sourceStatus": "pass",
+      "readyForUi": false
+    },
+    {
+      "id": "master-fvg-21-06-Q18578197",
+      "wikidataId": "Q18578197",
+      "dateIt": "21-06",
+      "year": 1866,
+      "municipality": "Gorizia",
+      "locality": "Gorizia",
+      "province": "GO",
+      "canonicalCategory": "cultura",
+      "dailyRole": "primary",
+      "titleIt": "Luigi Comel, disegno e pittura",
+      "copyIt": "Il 21 giugno 1866 nasce a Gorizia Luigi Comel, pittore e insegnante di disegno: una memoria sobria della cultura figurativa locale.",
+      "sourceLabel": "Wikidata",
+      "sourceUrl": "https://www.wikidata.org/wiki/Q18578197",
+      "sourceStatus": "pass",
+      "readyForUi": false
+    }
+  ],
+  "hold": [
+    {
+      "id": "master-fvg-01-01-Q2972662",
+      "reason": "Cimitero degli Invitti: tema storico sensibile, buono per approfondimento dopo fonte piu forte.",
+      "readyForUi": false
+    },
+    {
+      "id": "master-fvg-01-01-Q274606",
+      "reason": "Berengario del Friuli: candidato forte, ma 1 gennaio gia coperto; da valutare come secondaria dedicata.",
+      "readyForUi": false
+    },
+    {
+      "id": "master-fvg-01-01-Q2307935",
+      "reason": "Universita di Udine: evento importante ma 1 gennaio gia coperto; da usare come secondaria o focus locale.",
+      "readyForUi": false
+    },
+    {
+      "id": "master-fvg-01-01-Q1058654",
+      "reason": "Fiore dei Liberi: figura forte ma 1 gennaio gia coperto; da tenere per seconda voce.",
+      "readyForUi": false
+    },
+    {
+      "id": "master-fvg-12-04-Q2273489",
+      "reason": "Gillo Dorfles: profilo noto ma gia escluso dalla linea editoriale attuale per Scopri quotidiano.",
+      "readyForUi": false
+    },
+    {
+      "id": "master-fvg-07-05-Q3746508",
+      "reason": "Flavio Paulin: profilo pop leggero, non prioritario per Memoria del giorno.",
+      "readyForUi": false
+    },
+    {
+      "id": "master-fvg-07-12-Q3608514",
+      "reason": "Alberto Picotti: profilo letterario possibile ma meno forte del lotto selezionato.",
+      "readyForUi": false
+    },
+    {
+      "id": "master-fvg-11-02-Q65953245",
+      "reason": "Angelo Fusco: profilo scrittore da archivio, non da pubblicare prima di una scrematura piu ampia.",
+      "readyForUi": false
+    }
+  ]
+}

@@ -1,0 +1,9 @@
+{
+  "schemaVersion": "firestore-push-ttl-cloud-build-verification-v1",
+  "id": "11111111-2222-3333-4444-555555555555",
+  "status": "SUCCESS",
+  "canonicalImageDigests": [
+    "europe-west1-docker.pkg.dev/meteo-friul/cloud-run-source-deploy/meteofriul-api@sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+  ],
+  "sourceArchiveSha256Base64": "MDEyMzQ1Njc4OWFiY2RlZjAxMjM0NTY3ODkwMTIzNDU="
+}

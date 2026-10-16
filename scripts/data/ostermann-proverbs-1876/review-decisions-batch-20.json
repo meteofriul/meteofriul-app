@@ -1,0 +1,77 @@
+{
+  "schemaVersion": 1,
+  "batchId": "ostermann-1876-review-20",
+  "reviewedAt": "2026-08-02",
+  "source": {
+    "title": "Proverbi friulani raccolti dalla viva voce del popolo",
+    "author": "Valentino Ostermann",
+    "editionYear": 1876,
+    "catalogUrl": "https://www.techeudine.it/biblioteche-digital-furlane/proverbi-friulani-raccolti-dalla-viva-voce-del-popolo",
+    "facsimileUrl": "https://manoscrittisbhu.comune.udine.it/uploads/BDF/LO11116556.pdf"
+  },
+  "policy": {
+    "publish": false,
+    "furNormalizationAllowed": false,
+    "rule": "Il lotto completa il calendario annuale con quattro massime generali verificate sul facsimile. Nessun testo riceve date, feste, mesi o stagioni artificiali."
+  },
+  "summary": {
+    "records": 4,
+    "promoteAfterLanguageReview": 4,
+    "needsContextOrLanguageReview": 0,
+    "secondaryVariant": 0
+  },
+  "records": [
+    {
+      "id": "ost1876-daspo-ridi-ven-vai",
+      "sourceBlockIds": ["ost1876-p275-b007"],
+      "pdfPage": 275,
+      "printedPage": 271,
+      "furOriginal": "Dopo il ridi, ven il vaì.",
+      "proposedIt": "Dopo il riso viene il pianto.",
+      "recommendation": "promote_after_language_review",
+      "targetUse": "almanac_general",
+      "calendar": { "rotation": "general_wisdom" },
+      "reason": "Massima autonoma sull'alternarsi dei momenti lieti e difficili.",
+      "publish": false
+    },
+    {
+      "id": "ost1876-daspo-dolc-ven-amar",
+      "sourceBlockIds": ["ost1876-p275-b008"],
+      "pdfPage": 275,
+      "printedPage": 271,
+      "furOriginal": "Dopo il dolç al ven l'amâr.",
+      "proposedIt": "Dopo il dolce viene l'amaro.",
+      "recommendation": "promote_after_language_review",
+      "targetUse": "almanac_general",
+      "calendar": { "rotation": "general_wisdom" },
+      "reason": "Detto breve e comprensibile sulle conseguenze che seguono ai momenti piacevoli.",
+      "publish": false
+    },
+    {
+      "id": "ost1876-daspo-seren-ven-ploie",
+      "sourceBlockIds": ["ost1876-p275-b009"],
+      "pdfPage": 275,
+      "printedPage": 271,
+      "furOriginal": "Dopo il bon timp, torne la ploe.",
+      "proposedIt": "Dopo il sereno viene la pioggia.",
+      "recommendation": "promote_after_language_review",
+      "targetUse": "almanac_general",
+      "calendar": { "rotation": "general_wisdom" },
+      "reason": "Detto generale sul mutare del tempo, privo di un vincolo stagionale o giornaliero.",
+      "publish": false
+    },
+    {
+      "id": "ost1876-union-fas-fuarce",
+      "sourceBlockIds": ["ost1876-p202-b005"],
+      "pdfPage": 202,
+      "printedPage": 198,
+      "furOriginal": "L'union fas la fuarde.",
+      "proposedIt": "L'unione fa la forza.",
+      "recommendation": "promote_after_language_review",
+      "targetUse": "almanac_general",
+      "calendar": { "rotation": "general_wisdom" },
+      "reason": "Massima autonoma e immediata sul valore della collaborazione.",
+      "publish": false
+    }
+  ]
+}

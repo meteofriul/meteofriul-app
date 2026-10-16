@@ -1,0 +1,102 @@
+{
+  "schemaVersion": 1,
+  "batchId": "ts-ud-pn-enrichment-milestones-01",
+  "snapshotDate": "2026-08-31",
+  "purpose": "Ricerca di sei tappe per Muggia, Artegna e San Vito al Tagliamento; revisione FUR e promozione sono documentate separatamente.",
+  "runtimeIntegration": false,
+  "initialTotalMilestones": 415,
+  "editorialPolicy": {
+    "sourceEvidenceRequired": true,
+    "ambiguousDatesExcluded": true,
+    "italianCopyStatus": "editorial_draft",
+    "friulianCopyStatus": "pending_assisted_review",
+    "readyForUi": false
+  },
+  "excludedClaims": [
+    { "municipality": "Muggia", "claim": "Il passaggio alla sovranità veneziana avviene nel 1202.", "reason": "La fonte distingue il patto del 1202 dalla sovranità della Serenissima del 1420.", "sourceUrl": "https://siusa-archivi.cultura.gov.it/cgi-bin/siusa/pagina.pl?Chiave=9188&TipoPag=prodente" },
+    { "municipality": "Artegna", "claim": "La banda è già intitolata a Luigi Mattiussi nel 1878.", "reason": "Il 1878 riguarda la nascita della banda sotto la sua guida; l'intitolazione è successiva, del 1953.", "sourceUrl": "https://www.anbimafvg.it/index.php/2018/03/31/artegna/" },
+    { "municipality": "San Vito al Tagliamento", "claim": "Nel 1369 viene fondato l'Ospedale dei Battuti.", "reason": "La data riguarda la documentazione dell'ospedale, non una fondazione accertata.", "sourceUrl": "https://guidartefvg.it/elenco/la-chiesa-dei-battuti-san-vito-al-tagliamento/" },
+    { "municipality": "San Vito al Tagliamento", "claim": "Nel 1973 viene inaugurato il Teatro Cinema Italia.", "reason": "Il 21 marzo 1973 è il primo spettacolo ERT nella sede, non la nascita dell'edificio o del teatro.", "sourceUrl": "https://ertfvg.it/teatri/san-vito-al-tagliamento/" }
+  ],
+  "municipalities": [
+    {
+      "istatCode": "032003",
+      "municipality": "Muggia",
+      "province": "TS",
+      "currentMilestoneCount": 1,
+      "currentMilestoneIds": ["muggia-medieval-municipality"],
+      "decision": "source_verified_it_fur_pending",
+      "candidates": [
+        {
+          "id": "muggia-venetian-sovereignty",
+          "year": 1420,
+          "label": { "it": "Muggia passa sotto la sovranità della Repubblica di Venezia", "fur": null },
+          "evidence": "SIUSA colloca nel 1420 la sostituzione del dominio patriarcale con la sovranità della Serenissima, distinguendola dal precedente patto di fedeltà del 1202.",
+          "source": { "label": "SIUSA - Comune di Muggia", "type": "national_institution", "url": "https://siusa-archivi.cultura.gov.it/cgi-bin/siusa/pagina.pl?Chiave=9188&TipoPag=prodente", "checkedAt": "2026-08-31" },
+          "duplicateReview": { "exactDuplicate": false, "relatedRecordIds": [], "note": "Distinto dalla formazione medievale del Comune a Borgolauro. La sintesi del profilo richiama l'impronta veneziana senza questa data; nessun evento uguale nei cataloghi culturali o nelle memorie incluse le bozze." }
+        },
+        {
+          "id": "muggia-ugo-cara-museum-opening",
+          "year": 2006,
+          "label": { "it": "Viene inaugurato il Museo d’arte moderna Ugo Carà", "fur": null },
+          "evidence": "ERPAC indica l'inaugurazione del museo nel 2006. Donazione del 1999 e realizzazione dell'edificio nel 2004–2005 sono fatti distinti.",
+          "source": { "label": "ERPAC FVG - Collezione Ugo Carà", "type": "regional_institution", "url": "https://patrimonioculturale.regione.fvg.it/museo/?s_id=440670", "checkedAt": "2026-08-31" },
+          "duplicateReview": { "exactDuplicate": false, "relatedRecordIds": ["memory-it-ready-1126-ugo-cara-scultura-e-design-a-muggia"], "note": "La memoria riguarda la nascita dell'artista nel 1908; questa tappa documenta invece l'apertura di un'istituzione museale nel 2006." }
+        }
+      ]
+    },
+    {
+      "istatCode": "030006",
+      "municipality": "Artegna",
+      "province": "UD",
+      "currentMilestoneCount": 1,
+      "currentMilestoneIds": ["artegna-san-martino-inscription"],
+      "decision": "source_verified_it_fur_pending",
+      "candidates": [
+        {
+          "id": "artegna-castello-savorgnan-1384",
+          "year": 1384,
+          "label": { "it": "Il castello inferiore passa alla famiglia Savorgnan", "fur": null },
+          "evidence": "La Soprintendenza data al 1384 il passaggio del castello inferiore ai Savorgnan. Non si attribuisce questa data alla costruzione del castello.",
+          "source": { "label": "SABAP FVG - Artegna", "type": "national_institution", "url": "https://sabapfvg.cultura.gov.it/artegna/", "checkedAt": "2026-08-31" },
+          "duplicateReview": { "exactDuplicate": false, "relatedRecordIds": [], "note": "Aggiunge una data alla menzione del castello nella sintesi; distinto dall'iscrizione della pieve del 1005 e senza doppioni in memorie, Ostermann, Archivio e Riti." }
+        },
+        {
+          "id": "artegna-banda-mattiussi-1878",
+          "year": 1878,
+          "label": { "it": "Nasce la banda musicale di Artegna, guidata da Luigi Mattiussi", "fur": null },
+          "evidence": "La storia pubblicata da ANBIMA FVG indica il 1878 per la nascita della banda, guidata da Luigi Mattiussi. ANBIMA è un'associazione culturale di riferimento per le bande, non il Comune.",
+          "source": { "label": "ANBIMA FVG - Filarmonica L. Mattiussi di Artegna", "type": "cultural_institution", "url": "https://www.anbimafvg.it/index.php/2018/03/31/artegna/", "checkedAt": "2026-08-31" },
+          "duplicateReview": { "exactDuplicate": false, "relatedRecordIds": [], "note": "Il fatto musicale non è presente nel profilo né negli altri cataloghi. Non retrodata l'intitolazione del 1953 e non usa la data di una festa recente come data di fondazione." }
+        }
+      ]
+    },
+    {
+      "istatCode": "093041",
+      "municipality": "San Vito al Tagliamento",
+      "province": "PN",
+      "currentMilestoneCount": 1,
+      "currentMilestoneIds": ["san-vito-al-tagliamento-1420"],
+      "decision": "source_verified_it_fur_pending",
+      "candidates": [
+        {
+          "id": "san-vito-al-tagliamento-1369-ospedale-battuti",
+          "year": 1369,
+          "label": { "it": "È documentato l’Ospedale dei Battuti", "fur": null },
+          "evidence": "La scheda Guidarte, progetto della Deputazione di Storia Patria per il Friuli curato da Paolo Pastres, attesta l'Ospedale dei Battuti nel 1369. È una documentazione, non una data di fondazione.",
+          "source": { "label": "Guidarte FVG - La Chiesa dei Battuti a San Vito al Tagliamento", "type": "cultural_institution", "url": "https://guidartefvg.it/elenco/la-chiesa-dei-battuti-san-vito-al-tagliamento/", "checkedAt": "2026-08-31" },
+          "duplicateReview": { "exactDuplicate": false, "relatedRecordIds": [], "note": "Distinto dai privilegi riconosciuti da Venezia nel 1420. Nessuna precedente scheda delle memorie o dei cataloghi culturali racconta questa attestazione." }
+        },
+        {
+          "id": "san-vito-al-tagliamento-1973-circuito-ert",
+          "year": 1973,
+          "documentedDate": "1973-03-21",
+          "label": { "it": "Primo spettacolo ERT al Teatro Cinema Italia", "fur": null },
+          "evidence": "La storia ERT firmata da Angelo Battel indica il 21 marzo 1973 per il primo spettacolo ERT al Teatro Cinema Italia. Non è l'inaugurazione dell'edificio.",
+          "source": { "label": "ERT FVG - San Vito al Tagliamento, storia del teatro", "type": "cultural_institution", "url": "https://ertfvg.it/teatri/san-vito-al-tagliamento/", "checkedAt": "2026-08-31" },
+          "duplicateReview": { "exactDuplicate": false, "relatedRecordIds": [], "note": "Fatto teatrale locale distinto dalla storia generale del circuito ERT e dagli altri monumenti del Comune. Nessun doppione rilevato nei cataloghi incluse le memorie pendenti." }
+        }
+      ]
+    }
+  ]
+}

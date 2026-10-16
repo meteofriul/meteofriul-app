@@ -1,0 +1,96 @@
+{
+  "schemaVersion": 1,
+  "purpose": "Candidati documentati per ampliare Riti e credenze popolari. Il file non e letto dalla UI.",
+  "rules": [
+    "Una fonte documenta un candidato, ma non autorizza la pubblicazione senza copy IT/FUR approvata.",
+    "L'ambito geografico non viene esteso oltre quanto dichiarato dalla fonte.",
+    "Carnevale e Settimana Santa richiedono regole mobili calcolate anno per anno.",
+    "Candidati affini restano separati finche l'audit non decide se siano varianti locali o doppioni."
+  ],
+  "records": [
+    {
+      "id": "ritual-lead-cidulis-cercivento",
+      "titleIt": "Le cidulis di San Giovanni a Cercivento",
+      "temporalRule": { "type": "fixed_date", "date": "06-24" },
+      "geographicScope": ["Cercivento", "Carnia"],
+      "evidenceSummary": "Rilevamento etnografico del 24 giugno 1973: preparazione e lancio notturno di rotelle infuocate dedicate a San Giovanni, alla comunita e alle giovani del paese.",
+      "source": {
+        "label": "Teche Friulane - Ricerche etnografiche Pellis-Ciceri",
+        "url": "https://www.techefriulane.it/patrimonio-culturale/ricerche-etnografiche-ciceri-pellis/il-lancio-delle-cidulas-a-cercivento-in-carnia",
+        "type": "institutional_archive"
+      },
+      "status": "approved_promoted_to_institutional_rituals",
+      "promotedRecordId": "institutional-ritual-cidulis-cercivento",
+      "approvalNote": "Fonte, data, ambito di Cercivento e copy IT/FUR controllati; il toponimo FUR usa la forma ufficiale Çurçuvint.",
+      "readyForUi": false
+    },
+    {
+      "id": "ritual-lead-maschere-carnevale-friuli",
+      "titleIt": "Le maschere rituali del Carnevale",
+      "temporalRule": { "type": "movable_period", "period": "carnival" },
+      "geographicScope": ["Carnia", "Andreis", "Valli del Natisone"],
+      "evidenceSummary": "Il patrimonio regionale documenta maschere lignee e metalliche con forme diverse secondo le aree, collegate al travestimento rituale del Carnevale.",
+      "source": {
+        "label": "ERPAC FVG - Patrimonio culturale",
+        "url": "https://patrimonioculturale.regione.fvg.it/percorso-tematico/?s_id=819757",
+        "type": "institutional_catalogue"
+      },
+      "status": "approved_promoted_to_institutional_rituals",
+      "promotedRecordId": "institutional-ritual-carnival-masks",
+      "approvalNote": "Approvata come confronto tra Carnia, Andreis e Grimacco; nessuna maschera unica viene attribuita all'intera regione.",
+      "readyForUi": false
+    },
+    {
+      "id": "ritual-lead-carnevale-resiano",
+      "titleIt": "Musiche e balli del Carnevale resiano",
+      "temporalRule": { "type": "movable_period", "period": "carnival" },
+      "geographicScope": ["Resia"],
+      "evidenceSummary": "L'Ecomuseo Val Resia conserva un corpus di 22 schede dedicate alle musiche e ai balli del Carnevale resiano, redatte da specialisti.",
+      "source": {
+        "label": "ERPAC FVG - Ecomuseo Val Resia",
+        "url": "https://patrimonioculturale.regione.fvg.it/museo/?s_id=440665",
+        "type": "institutional_catalogue"
+      },
+      "status": "approved_promoted_to_institutional_rituals",
+      "promotedRecordId": "institutional-ritual-resian-carnival",
+      "approvalNote": "Approvata come pratica esclusiva della Val Resia, mantenendo i termini resiani documentati dalla fonte.",
+      "readyForUi": false
+    },
+    {
+      "id": "ritual-lead-craceles-settimana-santa",
+      "titleIt": "Le craceles della Settimana Santa",
+      "temporalRule": {
+        "type": "movable_range",
+        "from": "easter-3",
+        "to": "easter-1"
+      },
+      "geographicScope": ["Andreis", "Friuli"],
+      "evidenceSummary": "Fonti etnografiche e museali documentano raganelle e craceles usate durante la Settimana Santa quando le campane tacevano.",
+      "source": {
+        "label": "Teche Friulane - I sistemi di credenza e le pratiche rituali",
+        "url": "https://www.techefriulane.it/download.aspx?s=DTMI_RTIYIlDKL8dZZ-nAyiX4ZvYu5Ez070oPw4_k-ji0MZ4kLGLSCpaweH1CD5k0",
+        "type": "scholarly_archive"
+      },
+      "status": "approved_promoted_to_institutional_rituals",
+      "promotedRecordId": "institutional-ritual-craceles-holy-week",
+      "approvalNote": "Approvata per Andreis e Friuli occidentale negli ultimi tre giorni della Settimana Santa; mantenuta la forma locale cràceles.",
+      "readyForUi": false
+    },
+    {
+      "id": "ritual-lead-portatori-doni-inverno",
+      "titleIt": "I portatori di doni dell'inverno",
+      "temporalRule": { "type": "fixed_dates", "dates": ["12-06", "12-13", "12-24", "12-25"] },
+      "geographicScope": ["Friuli", "aree culturali differenziate"],
+      "evidenceSummary": "La ricerca etnografica distingue Santa Lucia, San Nicolo, l'oselin, Gesu Bambino e Babbo Natale come tradizioni sovrapposte e di provenienza diversa.",
+      "source": {
+        "label": "Teche Friulane - I sistemi di credenza e le pratiche rituali",
+        "url": "https://www.techefriulane.it/download.aspx?s=DTMI_RTIYIlDKL8dZZ-nAyiX4ZvYu5Ez070oPw4_k-ji0MZ4kLGLSCpaweH1CD5k0",
+        "type": "scholarly_archive"
+      },
+      "status": "approved_promoted_as_stratified_overview",
+      "promotedRecordId": "institutional-ritual-winter-gift-bearers",
+      "approvalNote": "Approvata come scheda comparativa tra aree culturali: non fonde Santa Lucia, San Nicolò, l'oselin, Gesù Bambino e Babbo Natale in un solo rito regionale.",
+      "readyForUi": false
+    }
+  ]
+}

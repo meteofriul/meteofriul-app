@@ -1,0 +1,114 @@
+{
+  "schemaVersion": 1,
+  "generatedAt": "2026-07-16",
+  "purpose": "Trentottesimo lotto Scopri IT: audit editoriale di quindici candidati della coda. Luigi Gasparotto entra come approfondimento secondario del 31 maggio per il rilievo nazionale della sua attività politica, l'opposizione alle leggi eccezionali fasciste e il legame documentato con Sacile. Quattordici candidati vengono esclusi per sport ordinario, professione generica, rilevanza insufficiente, rapporto con il FVG limitato alla nascita o incoerenza della fonte. La pubblicazione resta bloccata fino alla revisione FUR dell'unico record selezionato.",
+  "policy": {
+    "readyForUi": false,
+    "furDeferred": true,
+    "dateFormat": "DD-MM",
+    "requiresFinalItalianApproval": true,
+    "excludeDeaths": true,
+    "excludeGenericPoliticalProfiles": true,
+    "excludeGenericProfessionalProfiles": true,
+    "excludeSportsOnlyProfiles": true,
+    "allowExceptionalSportsProfiles": true,
+    "rejectBirthplaceOnlyProfiles": true,
+    "rejectSemanticDuplicates": true,
+    "rejectUncertainCalendarDates": true,
+    "sourceFirst": true,
+    "publishAfterFurOnly": true,
+    "allowMultipleMemoriesPerDate": true,
+    "secondaryOrderedByPriority": true,
+    "doNotPromoteToPrimaryForCoverageOnly": true
+  },
+  "summary": {
+    "reviewed": 15,
+    "keepDaily": 1,
+    "primary": 0,
+    "secondary": 1,
+    "hold": 0,
+    "excluded": 14,
+    "canonicalPrimaryDatesBefore": 238,
+    "canonicalPrimaryDatesAfter": 238,
+    "currentVisiblePrimaryCoverage": 231
+  },
+  "keepDaily": [
+    {
+      "id": "master-fvg-31-05-Q3839683",
+      "wikidataId": "Q3839683",
+      "dateIt": "31-05",
+      "year": 1873,
+      "municipality": "Sacile",
+      "locality": "Sacile",
+      "province": "PN",
+      "canonicalCategory": "storia",
+      "dailyRole": "secondary",
+      "priority": 95,
+      "titleIt": "Luigi Gasparotto, da Sacile alla Costituente",
+      "copyIt": "Il 31 maggio 1873 nasce a Sacile Luigi Gasparotto. Deputato e ministro, vota contro le leggi eccezionali fasciste. Dopo l'esilio torna alla vita pubblica, viene eletto all'Assemblea Costituente e diventa senatore nella prima legislatura repubblicana.",
+      "sourceLabel": "Consiglio regionale FVG - Il Friuli Venezia Giulia e l'Assemblea Costituente",
+      "sourceUrl": "https://www.consiglio.regione.fvg.it/cms/export/sites/consiglio/pagine/2/la-scuola/allegati/Costituente.pdf",
+      "sourceStatus": "pass",
+      "readyForUi": false
+    }
+  ],
+  "hold": [],
+  "excluded": [
+    {
+      "id": "master-fvg-21-05-Q10628",
+      "reason": "Imprenditore e dirigente sportivo contemporaneo molto noto, ma il profilo resta legato all'impresa e al calcio e non supera la soglia storico-culturale deliberata per Scopri."
+    },
+    {
+      "id": "master-fvg-23-06-Q16039218",
+      "reason": "Profilo politico contemporaneo privo di un contributo storico autonomo; rientra nell'esclusione dei ruoli politici generici."
+    },
+    {
+      "id": "master-fvg-23-10-Q933243",
+      "reason": "Carriera sportiva di livello nazionale, ma senza titolo mondiale o medaglia olimpica e senza un lascito storico territoriale autonomo."
+    },
+    {
+      "id": "master-fvg-24-03-Q1206914",
+      "reason": "Profilo esclusivamente ciclistico e privo dell'eccezionalità storica richiesta per derogare all'esclusione dello sport ordinario."
+    },
+    {
+      "id": "master-fvg-24-05-Q3620333",
+      "reason": "Carriera diplomatica nazionale e internazionale, ma il rapporto documentato con Udine e il FVG resta limitato alla nascita."
+    },
+    {
+      "id": "master-fvg-24-09-Q695875",
+      "reason": "Figura imprenditoriale e politica regionale contemporanea, ma non presenta ancora la distanza e la rilevanza storica richieste dalla rubrica giornaliera."
+    },
+    {
+      "id": "master-fvg-26-05-Q2114260",
+      "reason": "Medaglia olimpica di bronzo nella vela per la Svizzera, ma il legame con Trieste e il FVG risulta limitato alla nascita e non soddisfa il requisito territoriale."
+    },
+    {
+      "id": "master-fvg-29-06-Q3950260",
+      "reason": "Profilo calcistico e tecnico contemporaneo senza rilevanza storica eccezionale né un lascito territoriale autonomo."
+    },
+    {
+      "id": "master-fvg-29-10-Q50359713",
+      "reason": "Profilo sportivo nell'arco privo di un risultato storico eccezionale e di un contributo territoriale sufficiente per Scopri."
+    },
+    {
+      "id": "master-fvg-30-09-Q3723013",
+      "reason": "Somma di attività politica, medica e sportiva, ma nessuna delle tre produce una rilevanza storica autonoma adeguata alla rubrica."
+    },
+    {
+      "id": "master-fvg-31-05-Q509618",
+      "reason": "Regista dalla carriera nazionale, con rapporto documentato con Trieste limitato alla nascita e senza un lascito storico-culturale regionale autonomo."
+    },
+    {
+      "id": "master-fvg-12-04-Q36489451",
+      "reason": "Studiosa di rilievo internazionale, ma il legame con Trieste e il FVG risulta soltanto anagrafico e non emerge un contributo territoriale sostanziale."
+    },
+    {
+      "id": "master-fvg-19-07-Q7454409",
+      "reason": "Record escluso per incoerenza della fonte: il titolo identifica un velista nato a Trieste, mentre l'estratto associato descrive un filosofo omonimo."
+    },
+    {
+      "id": "master-fvg-01-02-Q3935911",
+      "reason": "Profilo politico e professionale generico senza una rilevanza storica autonoma sufficiente per Scopri."
+    }
+  ]
+}

@@ -1,0 +1,166 @@
+{
+  "schemaVersion": 1,
+  "generatedAt": "2026-07-15",
+  "purpose": "Ventiquattresimo lotto Scopri IT: cinque memorie territoriali verificate selezionate con soglia editoriale alta. Quattro aprono giornate prive di memoria primaria e una arricchisce una giornata gia coperta. I record restano bloccati fino alla revisione FUR.",
+  "policy": {
+    "readyForUi": false,
+    "furDeferred": true,
+    "dateFormat": "DD-MM",
+    "requiresFinalItalianApproval": true,
+    "excludeDeaths": true,
+    "excludeGenericPoliticalProfiles": true,
+    "excludeGenericProfessionalProfiles": true,
+    "rejectSemanticDuplicates": true,
+    "rejectUncertainCalendarDates": true,
+    "sourceFirst": true,
+    "publishAfterFurOnly": true,
+    "allowMultipleMemoriesPerDate": true,
+    "secondaryOrderedByPriority": true
+  },
+  "summary": {
+    "keepDaily": 5,
+    "primary": 4,
+    "secondary": 1,
+    "hold": 1,
+    "excluded": 9,
+    "canonicalPrimaryDatesBefore": 208,
+    "canonicalPrimaryDatesAfter": 212,
+    "currentVisiblePrimaryCoverage": 200
+  },
+  "keepDaily": [
+    {
+      "id": "master-fvg-22-10-Q79091",
+      "wikidataId": "Q79091",
+      "dateIt": "22-10",
+      "year": 1879,
+      "municipality": "Trieste",
+      "locality": "Trieste",
+      "province": "TS",
+      "canonicalCategory": "storia",
+      "dailyRole": "primary",
+      "priority": 88,
+      "titleIt": "Camillo Castiglioni e l'industria mitteleuropea",
+      "copyIt": "Il 22 ottobre 1879 nasce a Trieste Camillo Castiglioni, finanziere e industriale tra i protagonisti dell'economia mitteleuropea del primo dopoguerra. Investe nell'aviazione e partecipa alle grandi trasformazioni industriali dell'epoca.",
+      "sourceLabel": "Treccani - Dizionario Biografico degli Italiani",
+      "sourceUrl": "https://www.treccani.it/enciclopedia/camillo-castiglioni_%28Dizionario-Biografico%29/",
+      "sourceStatus": "pass",
+      "readyForUi": false
+    },
+    {
+      "id": "master-fvg-19-09-Q981101",
+      "wikidataId": "Q981101",
+      "dateIt": "19-09",
+      "year": 1966,
+      "municipality": "Pordenone",
+      "locality": "Pordenone",
+      "province": "PN",
+      "canonicalCategory": "cultura",
+      "dailyRole": "secondary",
+      "priority": 78,
+      "titleIt": "Teho Teardo, musica tra cinema e teatro",
+      "copyIt": "Il 19 settembre 1966 nasce a Pordenone Teho Teardo, compositore e sound designer. Le sue musiche attraversano cinema, teatro e ricerca sonora e gli valgono, tra gli altri riconoscimenti, il David di Donatello.",
+      "sourceLabel": "LazioCrea - curriculum pubblico di Teho Teardo",
+      "sourceUrl": "https://www.laziocrea.it/app/uploads/consulenti/2024/TEARDO-CV-1.pdf",
+      "sourceStatus": "pass",
+      "readyForUi": false
+    },
+    {
+      "id": "master-fvg-16-11-Q3928892",
+      "wikidataId": "Q3928892",
+      "dateIt": "16-11",
+      "year": 1915,
+      "municipality": "Trieste",
+      "locality": "Trieste",
+      "province": "TS",
+      "canonicalCategory": "cultura",
+      "dailyRole": "primary",
+      "priority": 80,
+      "titleIt": "Rado Bordon tra poesia e traduzione",
+      "copyIt": "Il 16 novembre 1915 nasce a Trieste Rado Bordon, poeta, traduttore e operatore culturale sloveno. Scrive poesia e prosa e lavora tra lingue slave e romanze, contribuendo alla circolazione di opere e idee tra culture diverse.",
+      "sourceLabel": "Slovenska biografija",
+      "sourceUrl": "https://www.slovenska-biografija.si/oseba/sbi1002740/",
+      "sourceStatus": "pass",
+      "readyForUi": false
+    },
+    {
+      "id": "master-fvg-13-12-Q117212009",
+      "wikidataId": "Q117212009",
+      "dateIt": "13-12",
+      "year": 1907,
+      "municipality": "Cormons",
+      "locality": "Cormons",
+      "province": "GO",
+      "canonicalCategory": "storia",
+      "dailyRole": "primary",
+      "priority": 84,
+      "titleIt": "Luciano Zani e la ritirata dal fronte russo",
+      "copyIt": "Il 13 dicembre 1907 nasce a Cormons Luciano Zani, ufficiale alpino decorato con la medaglia d'oro al valor militare. La sua vicenda e legata alla drammatica ritirata dal Don e ai combattimenti di Nikolajewka.",
+      "sourceLabel": "Associazione Nazionale Alpini - Sezione di Gorizia",
+      "sourceUrl": "https://www.anagorizia.it/sezione-di-gorizia-medaglie-doro-zani/",
+      "sourceStatus": "pass",
+      "readyForUi": false
+    },
+    {
+      "id": "master-fvg-08-02-Q109942476",
+      "wikidataId": "Q109942476",
+      "dateIt": "08-02",
+      "year": 1895,
+      "municipality": "Flaibano",
+      "locality": "Flaibano",
+      "province": "UD",
+      "canonicalCategory": "storia",
+      "dailyRole": "primary",
+      "priority": 82,
+      "titleIt": "Luigi Bevilacqua, sergente del Genio",
+      "copyIt": "L'8 febbraio 1895 nasce a Flaibano Luigi Bevilacqua, sergente del Genio nella Prima guerra mondiale. Impegnato sul fronte dall'Isonzo al Piave, riceve la medaglia d'oro al valor militare alla memoria.",
+      "sourceLabel": "Comune di Flaibano - commemorazione del centenario",
+      "sourceUrl": "https://www.ilpontecodroipo.it/profiles/ilponte/images/file/1748719941.pdf",
+      "sourceStatus": "pass",
+      "readyForUi": false
+    }
+  ],
+  "hold": [
+    {
+      "id": "master-fvg-01-01-Q116645606",
+      "reason": "L'opera Annunciazione di Savoldo e pertinente al territorio, ma il primo gennaio non documenta un avvenimento storico avvenuto in quel giorno. Resta materiale da Archivio Scopri, non memoria giornaliera."
+    }
+  ],
+  "excluded": [
+    {
+      "id": "master-fvg-17-11-Q927898",
+      "reason": "Profilo militare individuale sotto la soglia di rilevanza storica generale concordata."
+    },
+    {
+      "id": "master-fvg-19-06-Q11876912",
+      "reason": "Profilo militare individuale sotto la soglia di interesse generale della rubrica quotidiana."
+    },
+    {
+      "id": "master-fvg-02-07-Q17352060",
+      "reason": "Profilo militare individuale senza un impatto storico-culturale generale sufficiente."
+    },
+    {
+      "id": "master-fvg-11-01-Q3645802",
+      "reason": "La decorazione militare non basta da sola a superare la soglia editoriale della memoria quotidiana."
+    },
+    {
+      "id": "master-fvg-13-02-Q3766597",
+      "reason": "Profilo di aviatore individuale sotto la soglia di rilevanza generale concordata."
+    },
+    {
+      "id": "master-fvg-09-03-Q2527720",
+      "reason": "Profilo medico e politico generico, escluso secondo la policy editoriale concordata."
+    },
+    {
+      "id": "master-fvg-03-12-Q50975795",
+      "reason": "Profilo militare individuale sotto la soglia di rilevanza storica generale concordata."
+    },
+    {
+      "id": "master-fvg-27-08-Q19984966",
+      "reason": "Profilo militare e professionale individuale sotto la soglia editoriale della rubrica."
+    },
+    {
+      "id": "master-fvg-12-08-Q63718205",
+      "reason": "Ruolo politico generico senza una rilevanza storica autonoma sufficiente."
+    }
+  ]
+}

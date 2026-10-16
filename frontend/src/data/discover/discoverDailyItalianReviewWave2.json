@@ -1,0 +1,133 @@
+{
+  "schemaVersion": 1,
+  "generatedAt": "2026-07-12",
+  "purpose": "Terza ondata Scopri IT: piccolo lotto fonte-first per aumentare la copertura Memoria del giorno senza pubblicare in UI. Non letta dalla UI.",
+  "policy": {
+    "readyForUi": false,
+    "furDeferred": true,
+    "dateFormat": "DD-MM",
+    "requiresFinalItalianApproval": true,
+    "excludeDeaths": true,
+    "excludeGenericPoliticalProfiles": true,
+    "sourceFirst": true
+  },
+  "summary": {
+    "keepDaily": 6,
+    "hold": 2,
+    "potentialPrimaryCoverageBefore": 45,
+    "potentialPrimaryCoverageAfter": 51,
+    "currentVisiblePrimaryCoverage": 45
+  },
+  "keepDaily": [
+    {
+      "id": "history-event-1210-assedio-trieste-1813",
+      "wikidataId": "Q15045856",
+      "dateIt": "12-10",
+      "year": 1813,
+      "municipality": "Trieste",
+      "province": "TS",
+      "canonicalCategory": "storia",
+      "dailyRole": "primary",
+      "titleIt": "L'assedio di Trieste del 1813",
+      "copyIt": "Il 12 ottobre 1813 inizio l'assedio di Trieste durante la campagna d'Italia della Sesta coalizione.",
+      "sourceLabel": "Wikipedia",
+      "sourceUrl": "https://it.wikipedia.org/wiki/Assedio_di_Trieste",
+      "sourceStatus": "pass",
+      "readyForUi": false
+    },
+    {
+      "id": "history-event-0515-battaglia-tarvisio-1809",
+      "wikidataId": "Q4872513",
+      "dateIt": "15-05",
+      "year": 1809,
+      "municipality": "Tarvisio",
+      "province": "UD",
+      "canonicalCategory": "storia",
+      "dailyRole": "primary",
+      "titleIt": "La battaglia di Tarvisio del 1809",
+      "copyIt": "Tra il 15 e il 18 maggio 1809 Tarvisio fu al centro di uno scontro della guerra della Quinta coalizione.",
+      "sourceLabel": "Wikipedia",
+      "sourceUrl": "https://it.wikipedia.org/wiki/Battaglia_di_Tarvisio_(1809)",
+      "sourceStatus": "pass",
+      "readyForUi": false
+    },
+    {
+      "id": "profile-copy-1014-giuseppe-levi",
+      "wikidataId": "Q3770812",
+      "dateIt": "14-10",
+      "year": 1872,
+      "municipality": "Trieste",
+      "province": "TS",
+      "canonicalCategory": "cultura",
+      "dailyRole": "primary",
+      "titleIt": "Giuseppe Levi, scuola di scienza",
+      "copyIt": "Il 14 ottobre 1872 nasce a Trieste Giuseppe Levi, medico e scienziato. Dalla sua scuola passarono tre futuri premi Nobel.",
+      "sourceLabel": "Wikipedia",
+      "sourceUrl": "https://it.wikipedia.org/wiki/Giuseppe_Levi",
+      "sourceStatus": "pass",
+      "readyForUi": false
+    },
+    {
+      "id": "profile-review-1230-sergio-doplicher",
+      "wikidataId": "Q22669799",
+      "dateIt": "30-12",
+      "year": 1940,
+      "municipality": "Trieste",
+      "province": "TS",
+      "canonicalCategory": "cultura",
+      "dailyRole": "primary",
+      "titleIt": "Sergio Doplicher e la fisica matematica",
+      "copyIt": "Il 30 dicembre 1940 nasce a Trieste Sergio Doplicher, fisico matematico noto per gli studi sulla teoria quantistica dei campi.",
+      "sourceLabel": "Wikipedia",
+      "sourceUrl": "https://it.wikipedia.org/wiki/Sergio_Doplicher",
+      "sourceStatus": "pass",
+      "readyForUi": false
+    },
+    {
+      "id": "profile-review-0731-antonio-mario-radmilli",
+      "wikidataId": "Q3619846",
+      "dateIt": "31-07",
+      "year": 1922,
+      "municipality": "Gorizia",
+      "province": "GO",
+      "canonicalCategory": "archeologia",
+      "dailyRole": "primary",
+      "titleIt": "Antonio Mario Radmilli e la preistoria",
+      "copyIt": "Il 31 luglio 1922 nasce a Gorizia Antonio Mario Radmilli, archeologo e studioso della preistoria italiana.",
+      "sourceLabel": "Wikipedia",
+      "sourceUrl": "https://it.wikipedia.org/wiki/Antonio_Mario_Radmilli",
+      "sourceStatus": "pass",
+      "readyForUi": false
+    },
+    {
+      "id": "profile-review-1130-richard-mollier",
+      "wikidataId": "Q65825",
+      "dateIt": "30-11",
+      "year": 1863,
+      "municipality": "Trieste",
+      "province": "TS",
+      "canonicalCategory": "cultura",
+      "dailyRole": "primary",
+      "titleIt": "Richard Mollier e la termodinamica",
+      "copyIt": "Il 30 novembre 1863 nasce a Trieste Richard Mollier, fisico e ingegnere legato alla storia della termodinamica moderna.",
+      "sourceLabel": "Wikipedia",
+      "sourceUrl": "https://it.wikipedia.org/wiki/Richard_Mollier",
+      "sourceStatus": "pass",
+      "readyForUi": false
+    }
+  ],
+  "hold": [
+    {
+      "id": "history-event-0806-battaglia-doberdo",
+      "reason": "Evento storico forte, ma la fonte controllata finora conferma agosto 1916 e non la data puntuale 6 agosto.",
+      "sourceStatus": "hold_exact_date",
+      "readyForUi": false
+    },
+    {
+      "id": "profile-review-0414-luigi-carnera",
+      "reason": "Profilo scientifico valido, ma il 14 aprile e gia occupato da una Memoria pronta. Da valutare come secondaria o archivio.",
+      "sourceStatus": "hold_date_collision",
+      "readyForUi": false
+    }
+  ]
+}

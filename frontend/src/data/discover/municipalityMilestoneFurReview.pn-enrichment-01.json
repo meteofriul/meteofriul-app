@@ -1,0 +1,108 @@
+{
+  "schemaVersion": 1,
+  "batchId": "pn-enrichment-milestones-01-fur-review",
+  "sourceResearchBatchId": "pn-enrichment-milestones-01",
+  "reviewedAt": "2026-08-31",
+  "purpose": "Revisione FUR assistita delle quattro tappe comunali: approvazione editoriale locale sotto il mandato di completamento Scopri, con riferimenti standard. Non traduzioni ufficiali dei testi né certificazioni ARLeF.",
+  "runtimeIntegration": false,
+  "reviewMethod": "assisted_standard_reference_review",
+  "approvalBasis": "user_delegated_assisted_editorial_review",
+  "summary": {
+    "totalRecords": 4,
+    "approved": 4,
+    "pendingHumanReview": 0
+  },
+  "records": [
+    {
+      "id": "andreis-museo-1981",
+      "status": "approved",
+      "labelFur": "Al vierç al public il Museo dell'Arte e Civiltà Contadina di Andreis",
+      "notes": "Costruzione di apertura attestata nell'uso ARLeF. La denominazione italiana del museo è conservata come nome proprio: non è stata accertata una denominazione ufficiale FUR. Approvazione editoriale assistita; nessuna certificazione linguistica.",
+      "references": [
+        {
+          "url": "https://arlef.it/a-aquilee-al-vierc-il-sportel-regjonal-pe-lenghe-furlane/",
+          "note": "Uso istituzionale di al vierç e viert al public."
+        },
+        {
+          "url": "https://superdizionari.arlef.it/lemma/pubblico/7856?language=it&oneshot=1&gui=fur",
+          "note": "Voce pubblico: esempio museale con al public."
+        }
+      ]
+    },
+    {
+      "id": "cimolais-rifugio-pordenone-1930",
+      "status": "approved",
+      "labelFur": "Al ven inaugurât il Rifugio Pordenone in Val Cimoliana",
+      "notes": "Inaugurâ è documentato dal dizionario; inaugurât compare nei materiali ARLeF. Rifugio Pordenone e Val Cimoliana restano i nomi della fonte, senza inventare denominazioni ufficiali FUR. Approvazione editoriale assistita; nessuna certificazione linguistica.",
+      "references": [
+        {
+          "url": "https://superdizionari.arlef.it/lemma/inaugurare/20412?language=it&oneshot=1&gui=fur",
+          "note": "Voce inaugurare: inaugurâ."
+        },
+        {
+          "url": "https://arlef.it/app/uploads/materiali/04-cuf-audiovisivi.pdf",
+          "note": "Attestazione del participio inaugurât nei materiali didattici."
+        }
+      ]
+    },
+    {
+      "id": "cimolais-stambecco-1985",
+      "status": "approved",
+      "labelFur": "In Val Cimoliana il stambec al ven introdusût di gnûf",
+      "notes": "Parafrasi fedele di reintrodurre una specie. Evitato tornâ a meti in vore, proposto dal dizionario per usanze e non per animali. Toponimo della fonte conservato; Approvazione editoriale assistita; nessuna certificazione linguistica.",
+      "references": [
+        {
+          "url": "https://superdizionari.arlef.it/lemma/stambecco/57419?language=it&oneshot=1&gui=fur",
+          "note": "Voce stambecco: stambec."
+        },
+        {
+          "url": "https://superdizionari.arlef.it/lemma/introdurre/10135?language=it&oneshot=1&gui=fur",
+          "note": "Voce introdurre: introdusi."
+        },
+        {
+          "url": "https://arlef.it/libris/tiere/",
+          "note": "Attestazione del participio introdusût."
+        },
+        {
+          "url": "https://superdizionari.arlef.it/lemma/di%20nuovo/14678?language=it&oneshot=1&gui=fur",
+          "note": "Voce di nuovo: di gnûf."
+        }
+      ]
+    },
+    {
+      "id": "sacile-liberta-comunali-1190",
+      "status": "approved",
+      "labelFur": "Sacîl al oten il privileç di borghesie e lis libertât comunâls",
+      "notes": "Sacîl è il nome FUR già presente nel profilo; uso maschile attestato da ARLeF. Borghesie comprende l'accezione medievale. Libertât è femminile invariabile; comunâls concorda al plurale femminile. Nessuna inferenza di indipendenza statale; Approvazione editoriale assistita; nessuna certificazione linguistica.",
+      "references": [
+        {
+          "url": "https://arlef.it/app/uploads/post/fiestepatrie_2025_volantino-a5-fur_web-2-1.pdf",
+          "note": "Uso istituzionale di Sacîl al nel programma 2025."
+        },
+        {
+          "url": "https://arlef.it/lenghe-e-culture/cine/",
+          "note": "Attestazione della forma al oten."
+        },
+        {
+          "url": "https://superdizionari.arlef.it/lemma/privilegio/32913?language=it&oneshot=1&gui=fur",
+          "note": "Voce privilegio: privileç."
+        },
+        {
+          "url": "https://superdizionari.arlef.it/lemma/borghesia/4461?language=it&oneshot=1&gui=fur",
+          "note": "Voce borghesia: borghesie, anche nell'accezione medievale."
+        },
+        {
+          "url": "https://superdizionari.arlef.it/lemma/libert%C3%A0/7855?language=it&oneshot=1&gui=fur",
+          "note": "Voce libertà: libertât, sostantivo femminile invariabile."
+        },
+        {
+          "url": "https://arlef.it/app/uploads/page/c_materiacc82i-pe-certificazion-repertori-nivel-c.pdf",
+          "note": "Pagina 76: plurale femminile degli aggettivi in -âl, comunâls."
+        }
+      ]
+    }
+  ],
+  "approvalNote": "Decisione editoriale assistita nell'ambito della richiesta dell'utente di completare Scopri e proseguire con tutte le rubriche. Non attesta una lettura frase per frase dell'utente, una revisione professionale indipendente o una certificazione ARLeF.",
+  "reviewer": "assistant",
+  "independentHumanReview": false
+}

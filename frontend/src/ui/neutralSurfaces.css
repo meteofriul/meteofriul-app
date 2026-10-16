@@ -1,0 +1,160 @@
+/* Shared neutral treatment for Home, Meteo, Scopri, Events, Almanac and Settings. Semantic accents,
+   selection states, weather scenes and official alerts remain feature-owned.
+   The utilities layer deliberately wins over feature-specific theme rules. */
+:is(.mf-home-local-metrics, .mf-home-quick-card, .mf-home-bulletin-card,
+    .mf-settings-panel, .mf-discover-calendar,
+    .mf-almanac-saint, .mf-almanac-culture, .mf-almanac-earth, .mf-almanac-sky-card,
+    .mf-events-card, .mf-event-preview__panel, .mf-events-empty,
+    .mf-discover-card:not(.mf-discover-card--municipality),
+    .mf-weather-current-card, .mf-weather-hourly-card, .mf-weather-cams-card,
+    .mf-bulletin-map-card, .mf-bulletin-summary,
+    .mf-live-card, .mf-tab-page--live .mf-bulletin-radar-card) {
+  background: var(--mf-neutral-surface);
+  border-top-color: var(--mf-neutral-border);
+  border-right-color: var(--mf-neutral-border);
+  border-left-color: var(--mf-neutral-border);
+  box-shadow: var(--mf-neutral-shadow);
+}
+
+/* Keep the coloured bottom accents owned by Live. */
+:is(.mf-home-local-metrics, .mf-home-quick-card, .mf-home-bulletin-card,
+    .mf-settings-panel, .mf-discover-calendar,
+    .mf-almanac-saint, .mf-almanac-culture, .mf-almanac-earth, .mf-almanac-sky-card,
+    .mf-events-card, .mf-event-preview__panel, .mf-events-empty,
+    .mf-discover-card:not(.mf-discover-card--municipality),
+    .mf-weather-current-card, .mf-weather-hourly-card, .mf-weather-cams-card,
+    .mf-bulletin-map-card, .mf-bulletin-summary,
+    .mf-tab-page--live .mf-bulletin-radar-card) {
+  border-bottom-color: var(--mf-neutral-border);
+}
+
+:is(.mf-weather-section-nav:not(.mf-weather-section-nav--compact), .mf-bottom-nav, .mf-events-time-tabs:not(.mf-weather-section-nav--compact),
+    .mf-header-actions > .mf-icon-button:not(.mf-header-profile-button),
+    .mf-location-change--surface) {
+  background: var(--mf-neutral-surface);
+  border-color: var(--mf-neutral-border);
+}
+
+.mf-weather-day-summary:not([data-active="true"]),
+.mf-bulletin-focus-grid article {
+  background: var(--mf-neutral-surface);
+  border-color: var(--mf-neutral-border);
+}
+
+.mf-settings-segments {
+  background: var(--mf-neutral-surface);
+  border-color: var(--mf-neutral-border);
+}
+
+.mf-settings-view--pilot .mf-settings-panel--pilot-group {
+  background: var(--mf-neutral-surface);
+  border-color: var(--mf-neutral-border);
+  box-shadow: 0 3px 10px rgba(9, 48, 61, 0.08);
+}
+
+/* In the pilot bulletin, the official text is a caption within the map card,
+   not a second elevated surface. */
+.mf-bulletin-view--story .mf-bulletin-day-panel > .mf-bulletin-summary {
+  background: transparent;
+  box-shadow: none;
+}
+
+/* Light definitive-app chrome: the same technical navy used by the public app. */
+html:not([data-theme="dark"]) .mf-app-shell.is-definitive-app {
+  --mf-definitive-navy: #091d3d;
+  --mf-definitive-blue: #173965;
+  --mf-definitive-glow: rgb(19 137 201 / 36%);
+  --mf-definitive-badge: #8edbff;
+  --mf-definitive-muted: #c9d7e6;
+  --mf-definitive-gradient:
+    radial-gradient(circle at 92% 5%, var(--mf-definitive-glow), transparent 34%),
+    linear-gradient(140deg, var(--mf-definitive-blue), var(--mf-definitive-navy));
+}
+
+html:not([data-theme="dark"]) body:has(.mf-app-shell.is-definitive-app) {
+  /* An image layer covers the unlayered navy startup background-color in index.html. */
+  background: linear-gradient(var(--mf-paper), var(--mf-paper));
+}
+
+/* Let the real header height set the navy boundary, including wrapped layouts.
+   The pseudo-element also fills the safe-area above the header on Android/PWA. */
+html:not([data-theme="dark"]) .mf-app-shell.is-definitive-app .mf-app-header {
+  isolation: isolate;
+  position: relative;
+}
+
+html:not([data-theme="dark"]) .mf-app-shell.is-definitive-app .mf-app-header::before {
+  background: var(--mf-definitive-gradient);
+  bottom: 0;
+  content: "";
+  left: 50%;
+  pointer-events: none;
+  position: absolute;
+  top: calc(-1 * max(var(--mf-safe-area-inset-top), var(--mf-space-4)));
+  transform: translateX(-50%);
+  width: 100vw;
+  z-index: -1;
+}
+
+/* Side cutouts offset the header content; keep its full-width background centered. */
+html:not([data-theme="dark"]) .mf-app-shell.is-native-android.is-definitive-app .mf-app-header::before {
+  left: calc(50% + (max(var(--mf-safe-area-inset-right), var(--mf-native-inline-gap)) - max(var(--mf-safe-area-inset-left), var(--mf-native-inline-gap))) / 2);
+}
+
+html:not([data-theme="dark"]) .mf-app-shell.is-definitive-app .mf-brand--friulora .mf-brand-title {
+  color: #fff;
+}
+
+html:not([data-theme="dark"]) .mf-app-shell.is-definitive-app .mf-brand--friulora .mf-brand-tagline {
+  color: var(--mf-definitive-muted);
+}
+
+html:not([data-theme="dark"]) .mf-app-shell.is-definitive-app :is(
+  .mf-weather-section-nav__item.is-active,
+  .mf-events-category-scroll button.is-active,
+  .mf-bulletin-view--story .mf-bulletin-tabs .mf-tab.is-active,
+  .mf-weather-hourly-card--ribbon .mf-weather-day-picker button[aria-pressed="true"],
+  .mf-settings-segment.is-active,
+  .mf-bottom-nav-item.is-active
+) {
+  background: var(--mf-definitive-gradient);
+  border-color: rgb(142 219 255 / 45%);
+  box-shadow: 0 5px 14px rgb(9 29 61 / 20%);
+  color: #fff;
+  text-shadow: none;
+}
+
+html:not([data-theme="dark"]) .mf-app-shell.is-definitive-app .mf-bottom-nav-item.is-active::before {
+  background: var(--mf-definitive-badge);
+}
+
+html:not([data-theme="dark"]) .mf-app-shell.is-definitive-app .mf-events-time-tabs .mf-weather-section-nav__item.is-active .mf-events-time-tabs__count {
+  background: var(--mf-definitive-badge);
+  color: var(--mf-definitive-navy);
+}
+
+/* Keep the Meteocon artwork coloured and legible against the navy day tile,
+   without adding a second tile around the icon. */
+html:not([data-theme="dark"]) .mf-app-shell.is-definitive-app .mf-weather-hourly-card--ribbon .mf-weather-day-picker button[aria-pressed="true"] .mf-home-meteocon-icon {
+  background: transparent;
+  border: 0;
+  border-radius: 0;
+  filter: drop-shadow(0 1px 2px rgb(0 0 0 / 38%));
+}
+
+/* Approved Meteo selection: calmer blue in dark mode only. */
+html[data-theme="dark"] .mf-app-shell.is-definitive-app .mf-weather-route-shell .mf-weather-section-nav--compact .mf-weather-section-nav__item.is-active {
+  background: linear-gradient(135deg, #0277b5, #0369a1);
+  border-color: rgb(142 219 255 / 45%);
+  border-top-color: rgb(255 255 255 / 45%);
+  box-shadow: 0 4px 12px rgb(2 132 199 / 24%);
+  color: #fff;
+}
+
+html[data-theme="dark"] .mf-app-shell.is-definitive-app .mf-weather-route-shell .mf-weather-hourly-card--ribbon .mf-weather-day-picker button[aria-pressed="true"] {
+  background: linear-gradient(135deg, #087db7, #0474aa);
+  border-color: rgb(142 219 255 / 55%);
+  border-top-color: rgb(255 255 255 / 55%);
+  box-shadow: 0 6px 16px rgb(2 132 199 / 28%);
+  color: #fff;
+}

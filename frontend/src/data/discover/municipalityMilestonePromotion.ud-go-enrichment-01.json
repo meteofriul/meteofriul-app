@@ -1,0 +1,21 @@
+{
+  "schemaVersion": 1,
+  "promotionId": "ud-go-enrichment-milestones-promotion-01",
+  "researchBatchId": "ud-go-enrichment-milestones-01",
+  "furReviewBatchId": "ud-go-enrichment-milestones-01-fur-review",
+  "promotedAt": "2026-08-31",
+  "approvalBasis": "user_delegated_assisted_editorial_review",
+  "approvalNote": "Approvazione editoriale assistita nel mandato di completamento Scopri; non certificazione ARLeF o revisione professionale indipendente.",
+  "independentHumanReview": false,
+  "totalRecords": 4,
+  "previousTotalMilestones": 411,
+  "resultingTotalMilestones": 415,
+  "addedMilestoneCounts": { "030008": 2, "030114": 1, "031012": 1 },
+  "resultingMilestoneCounts": { "030008": 3, "030114": 3, "031012": 3 },
+  "recordIds": [
+    "bagnaria-arsa-censimento-1375",
+    "bagnaria-arsa-necropoli-1990",
+    "talmassons-feudo-bojani-1339",
+    "monfalcone-cantiere-navale-1908"
+  ]
+}

@@ -1,0 +1,1105 @@
+{
+  "schemaVersion": 1,
+  "purpose": "Coda piccola di candidati Accadde oggi da review umana. Non letta dalla UI.",
+  "sourceInput": {
+    "triageOutput": "backend_dryrun_staging/exports/discover_daily_history_master_triage.json",
+    "masterSource": "external/fvg/accadde_oggi_fvg_completo_esteso_metadata.json"
+  },
+  "policy": {
+    "noAutomaticPublication": true,
+    "readyForUiDefault": false,
+    "oneCandidatePerDay": true,
+    "balancedByPlace": true,
+    "excludesSensitiveKeywords": true
+  },
+  "summary": {
+    "totalAvailableAfterFilter": 284,
+    "selectedRecords": 25,
+    "byReviewStatus": {
+      "archive_after_review": 11,
+      "hold_after_review": 2,
+      "copy_candidate": 6,
+      "review_pending": 6
+    },
+    "byEditorialStatus": {
+      "light_candidate_for_review": 19,
+      "light_copy_candidate": 6
+    },
+    "byCategory": {
+      "luoghi_patrimonio": 10,
+      "arte_cultura": 12,
+      "scienza_territorio": 3
+    },
+    "byPlace": {
+      "Museo civico d'arte di Pordenone": 1,
+      "Aquileia": 4,
+      "Trieste": 4,
+      "Udine": 4,
+      "Pordenone": 2,
+      "Gorizia": 3,
+      "Cividale del Friuli": 4,
+      "Tolmezzo": 1,
+      "San Vito al Tagliamento": 1,
+      "Duino": 1
+    },
+    "byType": {
+      "Evento": 1,
+      "Morte": 17,
+      "Nascita": 7
+    },
+    "recordsWithItDraft": 0,
+    "recordsWithFurDraft": 0
+  },
+  "records": [
+    {
+      "id": "daily-history-review-01-01-1",
+      "sourceCandidateId": "master-fvg-01-01-Q116645606",
+      "wikidataId": "Q116645606",
+      "sourceDayKey": "01-01",
+      "dateAnchor": "01-01",
+      "title": {
+        "it": "Annunciazione (Savoldo)"
+      },
+      "sourceTitle": "Annunciazione",
+      "year": 1530,
+      "place": "Museo civico d'arte di Pordenone",
+      "type": "Evento",
+      "category": "luoghi_patrimonio",
+      "score": 84,
+      "editorialClass": "A",
+      "reviewStatus": "archive_after_review",
+      "editorialStatus": "light_candidate_for_review",
+      "languageStatus": {
+        "it": "not_started",
+        "fur": "not_started"
+      },
+      "source": {
+        "type": "master_triage_candidate",
+        "label": "Master Accadde oggi FVG esteso",
+        "path": "external/fvg/accadde_oggi_fvg_completo_esteso_metadata.json",
+        "wikipediaUrl": "https://it.wikipedia.org/wiki/Annunciazione",
+        "wikidataId": "Q116645606",
+        "confidence": "candidate_only"
+      },
+      "reviewGuidance": {
+        "allowedSurface": "light_daily_rubric_after_review",
+        "copyTone": "breve, umano, prudente",
+        "doNotPublishAutomatically": true,
+        "needsHumanSelection": true,
+        "preliminaryDecision": "archive_after_review",
+        "preliminaryReason": "Opera/tema iconografico non abbastanza chiaro dal record sorgente: non e' una memoria giornaliera autonoma."
+      },
+      "copyDraft": null,
+      "detailPreview": "L'Annunciazione del Signore o della Beata Vergine Maria è, nella religione cristiana, l'annuncio del concepimento verginale e della nascita verginale di Gesù che viene fatto a sua madre Maria e a suo padre Giuseppe dall'arcangelo Gabriele. In alcuni contesti regionali è detta \"Conceptio Domini\" o \"Conceptio Christi\".",
+      "readyForUi": false
+    },
+    {
+      "id": "daily-history-review-05-10-2",
+      "sourceCandidateId": "master-fvg-10-05-Q1777",
+      "wikidataId": "Q1777",
+      "sourceDayKey": "10-05",
+      "dateAnchor": "05-10",
+      "title": {
+        "it": "Muore Massimino il Trace (venticinquesimo imperatore romano (r. 235-238))"
+      },
+      "sourceTitle": "Massimino il Trace",
+      "year": 238,
+      "place": "Aquileia",
+      "type": "Morte",
+      "category": "luoghi_patrimonio",
+      "score": 82,
+      "editorialClass": "A",
+      "reviewStatus": "archive_after_review",
+      "editorialStatus": "light_candidate_for_review",
+      "languageStatus": {
+        "it": "not_started",
+        "fur": "not_started"
+      },
+      "source": {
+        "type": "master_triage_candidate",
+        "label": "Master Accadde oggi FVG esteso",
+        "path": "external/fvg/accadde_oggi_fvg_completo_esteso_metadata.json",
+        "wikipediaUrl": "https://it.wikipedia.org/wiki/Massimino_il_Trace",
+        "wikidataId": "Q1777",
+        "confidence": "candidate_only"
+      },
+      "reviewGuidance": {
+        "allowedSurface": "light_daily_rubric_after_review",
+        "copyTone": "breve, umano, prudente",
+        "doNotPublishAutomatically": true,
+        "needsHumanSelection": true,
+        "preliminaryDecision": "archive_after_review",
+        "preliminaryReason": "Figura storica antica legata ad Aquileia, ma richiede fonte/contesto piu' forte."
+      },
+      "copyDraft": null,
+      "detailPreview": "Gaio Giulio Vero Massimino, meglio noto come Massimino il Trace, è stato imperatore romano dal 235 alla sua morte, avvenuta nel 238.",
+      "readyForUi": false
+    },
+    {
+      "id": "daily-history-review-04-01-3",
+      "sourceCandidateId": "master-fvg-01-04-Q46734",
+      "wikidataId": "Q46734",
+      "sourceDayKey": "01-04",
+      "dateAnchor": "04-01",
+      "title": {
+        "it": "Muore Costantino II (imperatore romano (r. 337-340))"
+      },
+      "sourceTitle": "Costantino II",
+      "year": 340,
+      "place": "Aquileia",
+      "type": "Morte",
+      "category": "luoghi_patrimonio",
+      "score": 81,
+      "editorialClass": "A",
+      "reviewStatus": "archive_after_review",
+      "editorialStatus": "light_candidate_for_review",
+      "languageStatus": {
+        "it": "not_started",
+        "fur": "not_started"
+      },
+      "source": {
+        "type": "master_triage_candidate",
+        "label": "Master Accadde oggi FVG esteso",
+        "path": "external/fvg/accadde_oggi_fvg_completo_esteso_metadata.json",
+        "wikipediaUrl": "https://it.wikipedia.org/wiki/Costantino_II",
+        "wikidataId": "Q46734",
+        "confidence": "candidate_only"
+      },
+      "reviewGuidance": {
+        "allowedSurface": "light_daily_rubric_after_review",
+        "copyTone": "breve, umano, prudente",
+        "doNotPublishAutomatically": true,
+        "needsHumanSelection": true,
+        "preliminaryDecision": "archive_after_review",
+        "preliminaryReason": "Figura romana legata ad Aquileia, ma richiede contesto storico piu' robusto prima di una card breve."
+      },
+      "copyDraft": null,
+      "detailPreview": "Costantino II è stato un imperatore romano della dinastia costantiniana dal maggio 337 fino alla sua morte.",
+      "readyForUi": false
+    },
+    {
+      "id": "daily-history-review-02-26-4",
+      "sourceCandidateId": "master-fvg-26-02-Q1748033",
+      "wikidataId": "Q1748033",
+      "sourceDayKey": "26-02",
+      "dateAnchor": "02-26",
+      "title": {
+        "it": "Nasce Alexander Kircher (pittore austriaco)"
+      },
+      "sourceTitle": "Alexander Kircher",
+      "year": 1867,
+      "place": "Trieste",
+      "type": "Nascita",
+      "category": "arte_cultura",
+      "score": 75,
+      "editorialClass": "B",
+      "reviewStatus": "archive_after_review",
+      "editorialStatus": "light_candidate_for_review",
+      "languageStatus": {
+        "it": "not_started",
+        "fur": "not_started"
+      },
+      "source": {
+        "type": "master_triage_candidate",
+        "label": "Master Accadde oggi FVG esteso",
+        "path": "external/fvg/accadde_oggi_fvg_completo_esteso_metadata.json",
+        "wikipediaUrl": "https://it.wikipedia.org/wiki/Alexander_Kircher",
+        "wikidataId": "Q1748033",
+        "confidence": "candidate_only"
+      },
+      "reviewGuidance": {
+        "allowedSurface": "light_daily_rubric_after_review",
+        "copyTone": "breve, umano, prudente",
+        "doNotPublishAutomatically": true,
+        "needsHumanSelection": true,
+        "preliminaryDecision": "archive_after_review",
+        "preliminaryReason": "Profilo artistico interessante ma non prioritario per Memoria del giorno."
+      },
+      "copyDraft": null,
+      "detailPreview": "Alexander Kircher fu pittore ufficiale della marina, paesaggista e illustratore austroungarico, poi austriaco e infine, dopo l'Anschluss, cittadino tedesco. Firmava i suoi quadri come Alex Kircher, a volte aggiungendo l'anno della sua creazione, altre volte firmandosi A. Kircher.",
+      "readyForUi": false
+    },
+    {
+      "id": "daily-history-review-02-01-5",
+      "sourceCandidateId": "master-fvg-01-02-Q3978261",
+      "wikidataId": "Q3978261",
+      "sourceDayKey": "01-02",
+      "dateAnchor": "02-01",
+      "title": {
+        "it": "Muore Susanna Pasolini (scrittrice e attrice italiana)"
+      },
+      "sourceTitle": "Susanna Pasolini",
+      "year": 1981,
+      "place": "Udine",
+      "type": "Morte",
+      "category": "arte_cultura",
+      "score": 74,
+      "editorialClass": "B",
+      "reviewStatus": "hold_after_review",
+      "editorialStatus": "light_candidate_for_review",
+      "languageStatus": {
+        "it": "not_started",
+        "fur": "not_started"
+      },
+      "source": {
+        "type": "master_triage_candidate",
+        "label": "Master Accadde oggi FVG esteso",
+        "path": "external/fvg/accadde_oggi_fvg_completo_esteso_metadata.json",
+        "wikipediaUrl": "https://it.wikipedia.org/wiki/Susanna_Pasolini",
+        "wikidataId": "Q3978261",
+        "confidence": "candidate_only"
+      },
+      "reviewGuidance": {
+        "allowedSurface": "light_daily_rubric_after_review",
+        "copyTone": "breve, umano, prudente",
+        "doNotPublishAutomatically": true,
+        "needsHumanSelection": true,
+        "preliminaryDecision": "hold_after_review",
+        "preliminaryReason": "Anteprima fonte incoerente: parla di Pier Paolo Pasolini, non di Susanna Pasolini."
+      },
+      "copyDraft": null,
+      "detailPreview": "Pier Paolo Pasolini è stato un poeta, scrittore, regista, sceneggiatore, attore, pittore e drammaturgo italiano, considerato tra i maggiori intellettuali italiani del Novecento. Culturalmente versatile, anzitutto poeta, critico letterario e regista, si distinse in numerosi campi, lasciando contributi come pittore, romanziere, linguista, traduttore e saggista",
+      "readyForUi": false
+    },
+    {
+      "id": "daily-history-review-02-12-6",
+      "sourceCandidateId": "master-fvg-12-02-Q3932450",
+      "wikidataId": "Q3932450",
+      "sourceDayKey": "12-02",
+      "dateAnchor": "02-12",
+      "title": {
+        "it": "Nasce Remo Anzovino (compositore e musicista italiano)"
+      },
+      "sourceTitle": "Remo Anzovino",
+      "year": 1976,
+      "place": "Pordenone",
+      "type": "Nascita",
+      "category": "arte_cultura",
+      "score": 74,
+      "editorialClass": "B",
+      "reviewStatus": "copy_candidate",
+      "editorialStatus": "light_copy_candidate",
+      "languageStatus": {
+        "it": "not_started",
+        "fur": "not_started"
+      },
+      "source": {
+        "type": "master_triage_candidate",
+        "label": "Master Accadde oggi FVG esteso",
+        "path": "external/fvg/accadde_oggi_fvg_completo_esteso_metadata.json",
+        "wikipediaUrl": "https://it.wikipedia.org/wiki/Remo_Anzovino",
+        "wikidataId": "Q3932450",
+        "confidence": "candidate_only"
+      },
+      "reviewGuidance": {
+        "allowedSurface": "light_daily_rubric_after_review",
+        "copyTone": "breve, umano, prudente",
+        "doNotPublishAutomatically": true,
+        "needsHumanSelection": true,
+        "preliminaryDecision": "copy_candidate",
+        "preliminaryReason": "Remo Anzovino e' cultura musicale contemporanea locale, buona per Scopri."
+      },
+      "copyDraft": null,
+      "detailPreview": "Remo Anzovino è un compositore e musicista italiano. Noto per le sue colonne sonore, composizioni per il teatro e progetti artistici che spaziano tra diversi generi musicali, tra cui jazz, musica classica contemporanea e pop.",
+      "readyForUi": false
+    },
+    {
+      "id": "daily-history-review-07-13-7",
+      "sourceCandidateId": "master-fvg-13-07-Q2857502",
+      "wikidataId": "Q2857502",
+      "sourceDayKey": "13-07",
+      "dateAnchor": "07-13",
+      "title": {
+        "it": "Muore Antonio Zucchelli (missionario, viaggiatore e scrittore italiano)"
+      },
+      "sourceTitle": "Antonio Zucchelli",
+      "year": 1716,
+      "place": "Gorizia",
+      "type": "Morte",
+      "category": "arte_cultura",
+      "score": 74,
+      "editorialClass": "B",
+      "reviewStatus": "copy_candidate",
+      "editorialStatus": "light_copy_candidate",
+      "languageStatus": {
+        "it": "not_started",
+        "fur": "not_started"
+      },
+      "source": {
+        "type": "master_triage_candidate",
+        "label": "Master Accadde oggi FVG esteso",
+        "path": "external/fvg/accadde_oggi_fvg_completo_esteso_metadata.json",
+        "wikipediaUrl": "https://it.wikipedia.org/wiki/Antonio_Zucchelli",
+        "wikidataId": "Q2857502",
+        "confidence": "candidate_only"
+      },
+      "reviewGuidance": {
+        "allowedSurface": "light_daily_rubric_after_review",
+        "copyTone": "breve, umano, prudente",
+        "doNotPublishAutomatically": true,
+        "needsHumanSelection": true,
+        "preliminaryDecision": "copy_candidate",
+        "preliminaryReason": "Antonio Zucchelli permette una pillola su viaggio, scrittura e Gradisca."
+      },
+      "copyDraft": null,
+      "detailPreview": "Padre Antonio Zucchelli da Gradisca, al secolo Nicolò Ubaldo Zucchelli, è stato un missionario, viaggiatore e scrittore italiano, ricordato per un importante reportage di viaggio dal titolo Relazioni del viaggio e missione del Congo, pubblicato nel 1712.",
+      "readyForUi": false
+    },
+    {
+      "id": "daily-history-review-08-14-8",
+      "sourceCandidateId": "master-fvg-14-08-Q597895",
+      "wikidataId": "Q597895",
+      "sourceDayKey": "14-08",
+      "dateAnchor": "08-14",
+      "title": {
+        "it": "Muore Max Fabiani (architetto e urbanista italiano (1865-1962))"
+      },
+      "sourceTitle": "Max Fabiani",
+      "year": 1962,
+      "place": "Gorizia",
+      "type": "Morte",
+      "category": "arte_cultura",
+      "score": 74,
+      "editorialClass": "B",
+      "reviewStatus": "copy_candidate",
+      "editorialStatus": "light_copy_candidate",
+      "languageStatus": {
+        "it": "not_started",
+        "fur": "not_started"
+      },
+      "source": {
+        "type": "master_triage_candidate",
+        "label": "Master Accadde oggi FVG esteso",
+        "path": "external/fvg/accadde_oggi_fvg_completo_esteso_metadata.json",
+        "wikipediaUrl": "https://it.wikipedia.org/wiki/Max_Fabiani",
+        "wikidataId": "Q597895",
+        "confidence": "candidate_only"
+      },
+      "reviewGuidance": {
+        "allowedSurface": "light_daily_rubric_after_review",
+        "copyTone": "breve, umano, prudente",
+        "doNotPublishAutomatically": true,
+        "needsHumanSelection": true,
+        "preliminaryDecision": "copy_candidate",
+        "preliminaryReason": "Max Fabiani e' un profilo architettonico forte tra Gorizia e area mitteleuropea."
+      },
+      "copyDraft": null,
+      "detailPreview": "Maximilian Fabiani, meglio conosciuto come Max Fabiani, è stato un architetto e urbanista italiano.",
+      "readyForUi": false
+    },
+    {
+      "id": "daily-history-review-04-15-9",
+      "sourceCandidateId": "master-fvg-15-04-Q3061672",
+      "wikidataId": "Q3061672",
+      "sourceDayKey": "15-04",
+      "dateAnchor": "04-15",
+      "title": {
+        "it": "Muore Évelyne Lenton (cantante, compositrice e produttrice discografica francese (1945-2026))"
+      },
+      "sourceTitle": "Évelyne Lenton",
+      "year": 2026,
+      "place": "Pordenone",
+      "type": "Morte",
+      "category": "arte_cultura",
+      "score": 74,
+      "editorialClass": "B",
+      "reviewStatus": "hold_after_review",
+      "editorialStatus": "light_candidate_for_review",
+      "languageStatus": {
+        "it": "not_started",
+        "fur": "not_started"
+      },
+      "source": {
+        "type": "master_triage_candidate",
+        "label": "Master Accadde oggi FVG esteso",
+        "path": "external/fvg/accadde_oggi_fvg_completo_esteso_metadata.json",
+        "wikipediaUrl": "https://it.wikipedia.org/wiki/Évelyne_Lenton",
+        "wikidataId": "Q3061672",
+        "confidence": "candidate_only"
+      },
+      "reviewGuidance": {
+        "allowedSurface": "light_daily_rubric_after_review",
+        "copyTone": "breve, umano, prudente",
+        "doNotPublishAutomatically": true,
+        "needsHumanSelection": true,
+        "preliminaryDecision": "hold_after_review",
+        "preliminaryReason": "Data troppo recente/futura nel corpus 2026: da non usare senza controllo dedicato."
+      },
+      "copyDraft": null,
+      "detailPreview": "Évelyne Lenton è stata una cantante, compositrice e produttrice discografica francese. Capace di esibirsi, oltre che nella sua madre lingua, anche in italiano, in inglese e in spagnolo, fu famosa negli anni sessanta in Francia e in Italia con il nome di Evy; più avanti, negli anni settanta, tornò alla ribalta con una versione disco di Black Is Black alla gui",
+      "readyForUi": false
+    },
+    {
+      "id": "daily-history-review-02-16-10",
+      "sourceCandidateId": "master-fvg-16-02-Q3942546",
+      "wikidataId": "Q3942546",
+      "sourceDayKey": "16-02",
+      "dateAnchor": "02-16",
+      "title": {
+        "it": "Nasce Ruggero Timeus (saggista e scrittore italiano)"
+      },
+      "sourceTitle": "Ruggero Timeus",
+      "year": 1892,
+      "place": "Trieste",
+      "type": "Nascita",
+      "category": "arte_cultura",
+      "score": 74,
+      "editorialClass": "B",
+      "reviewStatus": "review_pending",
+      "editorialStatus": "light_candidate_for_review",
+      "languageStatus": {
+        "it": "not_started",
+        "fur": "not_started"
+      },
+      "source": {
+        "type": "master_triage_candidate",
+        "label": "Master Accadde oggi FVG esteso",
+        "path": "external/fvg/accadde_oggi_fvg_completo_esteso_metadata.json",
+        "wikipediaUrl": "https://it.wikipedia.org/wiki/Ruggero_Timeus",
+        "wikidataId": "Q3942546",
+        "confidence": "candidate_only"
+      },
+      "reviewGuidance": {
+        "allowedSurface": "light_daily_rubric_after_review",
+        "copyTone": "breve, umano, prudente",
+        "doNotPublishAutomatically": true,
+        "needsHumanSelection": true,
+        "preliminaryDecision": "review_pending",
+        "preliminaryReason": "Da valutare manualmente."
+      },
+      "copyDraft": null,
+      "detailPreview": "Ruggero Timeus conosciuto anche come Ruggero Fauro Timeus o Ruggero Timeus Fauro o semplicemente Ruggero Fauro o anche Ruggero Timeus (Fauro) (Trieste, 16 febbraio 1892 – Pal Piccolo, 14 settembre 1915) è stato un saggista e scrittore italiano, fra i più noti irredentisti del suo tempo.",
+      "readyForUi": false
+    },
+    {
+      "id": "daily-history-review-06-16-11",
+      "sourceCandidateId": "master-fvg-16-06-Q326243",
+      "wikidataId": "Q326243",
+      "sourceDayKey": "16-06",
+      "dateAnchor": "06-16",
+      "title": {
+        "it": "Muore Stanislaus Joyce (scrittore irlandese)"
+      },
+      "sourceTitle": "Stanislaus Joyce",
+      "year": 1955,
+      "place": "Trieste",
+      "type": "Morte",
+      "category": "arte_cultura",
+      "score": 74,
+      "editorialClass": "B",
+      "reviewStatus": "review_pending",
+      "editorialStatus": "light_candidate_for_review",
+      "languageStatus": {
+        "it": "not_started",
+        "fur": "not_started"
+      },
+      "source": {
+        "type": "master_triage_candidate",
+        "label": "Master Accadde oggi FVG esteso",
+        "path": "external/fvg/accadde_oggi_fvg_completo_esteso_metadata.json",
+        "wikipediaUrl": "https://it.wikipedia.org/wiki/Stanislaus_Joyce",
+        "wikidataId": "Q326243",
+        "confidence": "candidate_only"
+      },
+      "reviewGuidance": {
+        "allowedSurface": "light_daily_rubric_after_review",
+        "copyTone": "breve, umano, prudente",
+        "doNotPublishAutomatically": true,
+        "needsHumanSelection": true,
+        "preliminaryDecision": "review_pending",
+        "preliminaryReason": "Da valutare manualmente."
+      },
+      "copyDraft": null,
+      "detailPreview": "John Stanislaus Joyce è stato uno scrittore e docente irlandese di nazionalità inglese, che ha vissuto molti anni a Trieste. Fratello minore di James Joyce, era in genere noto semplicemente come Stanislaus Joyce per distinguerlo dal padre, di cui condivideva il nome completo.",
+      "readyForUi": false
+    },
+    {
+      "id": "daily-history-review-10-16-12",
+      "sourceCandidateId": "master-fvg-16-10-Q3263200",
+      "wikidataId": "Q3263200",
+      "sourceDayKey": "16-10",
+      "dateAnchor": "10-16",
+      "title": {
+        "it": "Nasce Louis Toffoli (pittore francese)"
+      },
+      "sourceTitle": "Louis Toffoli",
+      "year": 1907,
+      "place": "Trieste",
+      "type": "Nascita",
+      "category": "arte_cultura",
+      "score": 74,
+      "editorialClass": "B",
+      "reviewStatus": "review_pending",
+      "editorialStatus": "light_candidate_for_review",
+      "languageStatus": {
+        "it": "not_started",
+        "fur": "not_started"
+      },
+      "source": {
+        "type": "master_triage_candidate",
+        "label": "Master Accadde oggi FVG esteso",
+        "path": "external/fvg/accadde_oggi_fvg_completo_esteso_metadata.json",
+        "wikipediaUrl": "https://it.wikipedia.org/wiki/Louis_Toffoli",
+        "wikidataId": "Q3263200",
+        "confidence": "candidate_only"
+      },
+      "reviewGuidance": {
+        "allowedSurface": "light_daily_rubric_after_review",
+        "copyTone": "breve, umano, prudente",
+        "doNotPublishAutomatically": true,
+        "needsHumanSelection": true,
+        "preliminaryDecision": "review_pending",
+        "preliminaryReason": "Da valutare manualmente."
+      },
+      "copyDraft": null,
+      "detailPreview": "Louis Toffoli è stato un pittore francese, nato da padre italiano e madre slovena. È stato austro-ungherese e italiano e francese, Toffoli ha dichiarato di sentirsi soltanto \"di Trieste\" e ha firmato i suoi quadri non come Luigi, né Louis, ma soltanto Toffoli.",
+      "readyForUi": false
+    },
+    {
+      "id": "daily-history-review-10-27-13",
+      "sourceCandidateId": "master-fvg-27-10-Q575523",
+      "wikidataId": "Q575523",
+      "sourceDayKey": "27-10",
+      "dateAnchor": "10-27",
+      "title": {
+        "it": "Muore Ulrico III di Carinzia"
+      },
+      "sourceTitle": "Ulrico III di Carinzia",
+      "year": 1269,
+      "place": "Cividale del Friuli",
+      "type": "Morte",
+      "category": "luoghi_patrimonio",
+      "score": 74,
+      "editorialClass": "B",
+      "reviewStatus": "archive_after_review",
+      "editorialStatus": "light_candidate_for_review",
+      "languageStatus": {
+        "it": "not_started",
+        "fur": "not_started"
+      },
+      "source": {
+        "type": "master_triage_candidate",
+        "label": "Master Accadde oggi FVG esteso",
+        "path": "external/fvg/accadde_oggi_fvg_completo_esteso_metadata.json",
+        "wikipediaUrl": "https://it.wikipedia.org/wiki/Ulrico_III_di_Carinzia",
+        "wikidataId": "Q575523",
+        "confidence": "candidate_only"
+      },
+      "reviewGuidance": {
+        "allowedSurface": "light_daily_rubric_after_review",
+        "copyTone": "breve, umano, prudente",
+        "doNotPublishAutomatically": true,
+        "needsHumanSelection": true,
+        "preliminaryDecision": "archive_after_review",
+        "preliminaryReason": "Profilo dinastico medievale poco immediato per card giornaliera."
+      },
+      "copyDraft": null,
+      "detailPreview": "Ulrico III di Carinzia, noto anche come Ulrico III di Spanheim, governò come langravio della marca di Carniola dal 1248 alla morte e fu duca di Carinzia assieme al padre dal 1251 e unico duca di Carinzia dal 1256 alla morte, l'ultimo sovrano della dinastia Sponheim.",
+      "readyForUi": false
+    },
+    {
+      "id": "daily-history-review-02-09-14",
+      "sourceCandidateId": "master-fvg-09-02-Q16571333",
+      "wikidataId": "Q16571333",
+      "sourceDayKey": "09-02",
+      "dateAnchor": "02-09",
+      "title": {
+        "it": "Muore Laura Sturma Fanelli (saggista e critica letteraria italiana)"
+      },
+      "sourceTitle": "Laura Sturma Fanelli",
+      "year": 2011,
+      "place": "Udine",
+      "type": "Morte",
+      "category": "arte_cultura",
+      "score": 73,
+      "editorialClass": "B",
+      "reviewStatus": "copy_candidate",
+      "editorialStatus": "light_copy_candidate",
+      "languageStatus": {
+        "it": "not_started",
+        "fur": "not_started"
+      },
+      "source": {
+        "type": "master_triage_candidate",
+        "label": "Master Accadde oggi FVG esteso",
+        "path": "external/fvg/accadde_oggi_fvg_completo_esteso_metadata.json",
+        "wikipediaUrl": "https://it.wikipedia.org/wiki/Laura_Sturma_Fanelli",
+        "wikidataId": "Q16571333",
+        "confidence": "candidate_only"
+      },
+      "reviewGuidance": {
+        "allowedSurface": "light_daily_rubric_after_review",
+        "copyTone": "breve, umano, prudente",
+        "doNotPublishAutomatically": true,
+        "needsHumanSelection": true,
+        "preliminaryDecision": "copy_candidate",
+        "preliminaryReason": "Laura Sturma Fanelli e' profilo culturale; da rendere umano e non enciclopedico."
+      },
+      "copyDraft": null,
+      "detailPreview": "Laura Sturma Fanelli è stata una saggista e critica letteraria italiana. L'interesse per la Letteratura moderna e per la filosofia avvicinò gli studi di Laura Sturma Fanelli agli studi rispettivamente di Stefano Agosti e di Emanuele Severino. I suoi saggi sono stati pubblicati su diverse riviste specializzate.",
+      "readyForUi": false
+    },
+    {
+      "id": "daily-history-review-12-19-15",
+      "sourceCandidateId": "master-fvg-19-12-Q136700264",
+      "wikidataId": "Q136700264",
+      "sourceDayKey": "19-12",
+      "dateAnchor": "12-19",
+      "title": {
+        "it": "Muore Giovanni Canciani"
+      },
+      "sourceTitle": "Giovanni Canciani",
+      "year": 2018,
+      "place": "Tolmezzo",
+      "type": "Morte",
+      "category": "arte_cultura",
+      "score": 73,
+      "editorialClass": "B",
+      "reviewStatus": "review_pending",
+      "editorialStatus": "light_candidate_for_review",
+      "languageStatus": {
+        "it": "not_started",
+        "fur": "not_started"
+      },
+      "source": {
+        "type": "master_triage_candidate",
+        "label": "Master Accadde oggi FVG esteso",
+        "path": "external/fvg/accadde_oggi_fvg_completo_esteso_metadata.json",
+        "wikipediaUrl": "https://it.wikipedia.org/wiki/Giovanni_Canciani",
+        "wikidataId": "Q136700264",
+        "confidence": "candidate_only"
+      },
+      "reviewGuidance": {
+        "allowedSurface": "light_daily_rubric_after_review",
+        "copyTone": "breve, umano, prudente",
+        "doNotPublishAutomatically": true,
+        "needsHumanSelection": true,
+        "preliminaryDecision": "review_pending",
+        "preliminaryReason": "Da valutare manualmente."
+      },
+      "copyDraft": null,
+      "detailPreview": "Giovanni Canciani è stato un compositore italiano che fu attivo in Carnia e in Piemonte. Nella sua carriera oltre alla composizione si occupò di arti figurative, del restauro di strumenti antichi e coltivò interessi per la teologia, la letteratura, la filosofia, l'arte e la scienza. Nel corso della sua carriera ha composto oltre centocinquanta opere.",
+      "readyForUi": false
+    },
+    {
+      "id": "daily-history-review-09-20-16",
+      "sourceCandidateId": "master-fvg-20-09-Q18638739",
+      "wikidataId": "Q18638739",
+      "sourceDayKey": "20-09",
+      "dateAnchor": "09-20",
+      "title": {
+        "it": "Muore Mario Costalonga (musicista italiano)"
+      },
+      "sourceTitle": "Mario Costalonga",
+      "year": 2014,
+      "place": "San Vito al Tagliamento",
+      "type": "Morte",
+      "category": "arte_cultura",
+      "score": 73,
+      "editorialClass": "B",
+      "reviewStatus": "review_pending",
+      "editorialStatus": "light_candidate_for_review",
+      "languageStatus": {
+        "it": "not_started",
+        "fur": "not_started"
+      },
+      "source": {
+        "type": "master_triage_candidate",
+        "label": "Master Accadde oggi FVG esteso",
+        "path": "external/fvg/accadde_oggi_fvg_completo_esteso_metadata.json",
+        "wikipediaUrl": "https://it.wikipedia.org/wiki/Mario_Costalonga",
+        "wikidataId": "Q18638739",
+        "confidence": "candidate_only"
+      },
+      "reviewGuidance": {
+        "allowedSurface": "light_daily_rubric_after_review",
+        "copyTone": "breve, umano, prudente",
+        "doNotPublishAutomatically": true,
+        "needsHumanSelection": true,
+        "preliminaryDecision": "review_pending",
+        "preliminaryReason": "Da valutare manualmente."
+      },
+      "copyDraft": null,
+      "detailPreview": "Mario Costalonga è stato un musicista italiano. Si è esibito in Italia e in Estremo Oriente, dagli anni cinquanta alla fine degli anni novanta, soprattutto come trombettista, ma anche come fisarmonicista, vibrafonista, trombonista, pianista e cantante. È stato anche compositore e arrangiatore.",
+      "readyForUi": false
+    },
+    {
+      "id": "daily-history-review-10-04-17",
+      "sourceCandidateId": "master-fvg-04-10-Q1391772",
+      "wikidataId": "Q1391772",
+      "sourceDayKey": "04-10",
+      "dateAnchor": "10-04",
+      "title": {
+        "it": "Muore Poppone di Carinzia (vescovo tedesco)"
+      },
+      "sourceTitle": "Poppone di Carinzia",
+      "year": 1042,
+      "place": "Aquileia",
+      "type": "Morte",
+      "category": "luoghi_patrimonio",
+      "score": 70,
+      "editorialClass": "B",
+      "reviewStatus": "archive_after_review",
+      "editorialStatus": "light_candidate_for_review",
+      "languageStatus": {
+        "it": "not_started",
+        "fur": "not_started"
+      },
+      "source": {
+        "type": "master_triage_candidate",
+        "label": "Master Accadde oggi FVG esteso",
+        "path": "external/fvg/accadde_oggi_fvg_completo_esteso_metadata.json",
+        "wikipediaUrl": "https://it.wikipedia.org/wiki/Poppone_di_Carinzia",
+        "wikidataId": "Q1391772",
+        "confidence": "candidate_only"
+      },
+      "reviewGuidance": {
+        "allowedSurface": "light_daily_rubric_after_review",
+        "copyTone": "breve, umano, prudente",
+        "doNotPublishAutomatically": true,
+        "needsHumanSelection": true,
+        "preliminaryDecision": "archive_after_review",
+        "preliminaryReason": "Patriarca di Aquileia: utile per archivio, meno per rubrica breve."
+      },
+      "copyDraft": null,
+      "detailPreview": "Poppone, citato anche come Poppo o Popone e in un solo caso come Wolfgang, è stato un patriarca cattolico tedesco, ricordato come uno dei più importanti patriarchi di Aquileia.",
+      "readyForUi": false
+    },
+    {
+      "id": "daily-history-review-09-15-18",
+      "sourceCandidateId": "master-fvg-15-09-Q3776550",
+      "wikidataId": "Q3776550",
+      "sourceDayKey": "15-09",
+      "dateAnchor": "09-15",
+      "title": {
+        "it": "Muore Gregorio da Montelongo (patriarca cattolico italiano)"
+      },
+      "sourceTitle": "Gregorio da Montelongo",
+      "year": 1269,
+      "place": "Cividale del Friuli",
+      "type": "Morte",
+      "category": "luoghi_patrimonio",
+      "score": 69,
+      "editorialClass": "B",
+      "reviewStatus": "archive_after_review",
+      "editorialStatus": "light_candidate_for_review",
+      "languageStatus": {
+        "it": "not_started",
+        "fur": "not_started"
+      },
+      "source": {
+        "type": "master_triage_candidate",
+        "label": "Master Accadde oggi FVG esteso",
+        "path": "external/fvg/accadde_oggi_fvg_completo_esteso_metadata.json",
+        "wikipediaUrl": "https://it.wikipedia.org/wiki/Gregorio_da_Montelongo",
+        "wikidataId": "Q3776550",
+        "confidence": "candidate_only"
+      },
+      "reviewGuidance": {
+        "allowedSurface": "light_daily_rubric_after_review",
+        "copyTone": "breve, umano, prudente",
+        "doNotPublishAutomatically": true,
+        "needsHumanSelection": true,
+        "preliminaryDecision": "archive_after_review",
+        "preliminaryReason": "Patriarca di Aquileia: utile per archivio, meno per rubrica breve."
+      },
+      "copyDraft": null,
+      "detailPreview": "Gregorio da Montelongo è stato un patriarca cattolico italiano, patriarca di Aquileia dal 1251 al 1269.",
+      "readyForUi": false
+    },
+    {
+      "id": "daily-history-review-05-01-19",
+      "sourceCandidateId": "master-fvg-01-05-Q27150629",
+      "wikidataId": "Q27150629",
+      "sourceDayKey": "01-05",
+      "dateAnchor": "05-01",
+      "title": {
+        "it": "Nasce Filippo della Torre (vescovo cattolico italiano)"
+      },
+      "sourceTitle": "Filippo della Torre",
+      "year": 1657,
+      "place": "Cividale del Friuli",
+      "type": "Nascita",
+      "category": "luoghi_patrimonio",
+      "score": 68,
+      "editorialClass": "B",
+      "reviewStatus": "archive_after_review",
+      "editorialStatus": "light_candidate_for_review",
+      "languageStatus": {
+        "it": "not_started",
+        "fur": "not_started"
+      },
+      "source": {
+        "type": "master_triage_candidate",
+        "label": "Master Accadde oggi FVG esteso",
+        "path": "external/fvg/accadde_oggi_fvg_completo_esteso_metadata.json",
+        "wikipediaUrl": "https://it.wikipedia.org/wiki/Filippo_della_Torre",
+        "wikidataId": "Q27150629",
+        "confidence": "candidate_only"
+      },
+      "reviewGuidance": {
+        "allowedSurface": "light_daily_rubric_after_review",
+        "copyTone": "breve, umano, prudente",
+        "doNotPublishAutomatically": true,
+        "needsHumanSelection": true,
+        "preliminaryDecision": "archive_after_review",
+        "preliminaryReason": "Profilo medievale complesso, non prima scelta come memoria rapida."
+      },
+      "copyDraft": null,
+      "detailPreview": "Filippo della Torre, figlio di Iacopo della Torre e nipote di Pagano I della Torre, fu de facto signore di Milano dal 1263 fino alla sua morte, succedendo al fratello Martino.",
+      "readyForUi": false
+    },
+    {
+      "id": "daily-history-review-01-08-20",
+      "sourceCandidateId": "master-fvg-08-01-Q4893980",
+      "wikidataId": "Q4893980",
+      "sourceDayKey": "08-01",
+      "dateAnchor": "01-08",
+      "title": {
+        "it": "Nasce Bernardo Maria De Rubeis (teologo e storico italiano)"
+      },
+      "sourceTitle": "Bernardo Maria De Rubeis",
+      "year": 1687,
+      "place": "Cividale del Friuli",
+      "type": "Nascita",
+      "category": "luoghi_patrimonio",
+      "score": 68,
+      "editorialClass": "B",
+      "reviewStatus": "copy_candidate",
+      "editorialStatus": "light_copy_candidate",
+      "languageStatus": {
+        "it": "not_started",
+        "fur": "not_started"
+      },
+      "source": {
+        "type": "master_triage_candidate",
+        "label": "Master Accadde oggi FVG esteso",
+        "path": "external/fvg/accadde_oggi_fvg_completo_esteso_metadata.json",
+        "wikipediaUrl": "https://it.wikipedia.org/wiki/Bernardo_Maria_De_Rubeis",
+        "wikidataId": "Q4893980",
+        "confidence": "candidate_only"
+      },
+      "reviewGuidance": {
+        "allowedSurface": "light_daily_rubric_after_review",
+        "copyTone": "breve, umano, prudente",
+        "doNotPublishAutomatically": true,
+        "needsHumanSelection": true,
+        "preliminaryDecision": "copy_candidate",
+        "preliminaryReason": "Teologo e storico legato a Cividale: possibile pillola culturale sobria."
+      },
+      "copyDraft": null,
+      "detailPreview": "Bernardo Maria De Rubeis, noto anche come Bernardo de Rossi, è stato un teologo, storico e domenicano italiano.",
+      "readyForUi": false
+    },
+    {
+      "id": "daily-history-review-08-15-21",
+      "sourceCandidateId": "master-fvg-15-08-Q3898933",
+      "wikidataId": "Q3898933",
+      "sourceDayKey": "15-08",
+      "dateAnchor": "08-15",
+      "title": {
+        "it": "Muore Pellegrino di Ortenburg (vescovo cattolico italiano)"
+      },
+      "sourceTitle": "Pellegrino di Ortenburg",
+      "year": 1161,
+      "place": "Udine",
+      "type": "Morte",
+      "category": "luoghi_patrimonio",
+      "score": 68,
+      "editorialClass": "B",
+      "reviewStatus": "archive_after_review",
+      "editorialStatus": "light_candidate_for_review",
+      "languageStatus": {
+        "it": "not_started",
+        "fur": "not_started"
+      },
+      "source": {
+        "type": "master_triage_candidate",
+        "label": "Master Accadde oggi FVG esteso",
+        "path": "external/fvg/accadde_oggi_fvg_completo_esteso_metadata.json",
+        "wikipediaUrl": "https://it.wikipedia.org/wiki/Pellegrino_di_Ortenburg",
+        "wikidataId": "Q3898933",
+        "confidence": "candidate_only"
+      },
+      "reviewGuidance": {
+        "allowedSurface": "light_daily_rubric_after_review",
+        "copyTone": "breve, umano, prudente",
+        "doNotPublishAutomatically": true,
+        "needsHumanSelection": true,
+        "preliminaryDecision": "archive_after_review",
+        "preliminaryReason": "Patriarca di Aquileia: utile per archivio, meno per rubrica breve."
+      },
+      "copyDraft": null,
+      "detailPreview": "Pellegrino di Povo di Beseno di Manzano, o Pellegrino I di Ortenburg, è stato un patriarca cattolico italiano, patriarca di Aquileia dal 1130 al 1161.",
+      "readyForUi": false
+    },
+    {
+      "id": "daily-history-review-02-23-22",
+      "sourceCandidateId": "master-fvg-23-02-Q3506847",
+      "wikidataId": "Q3506847",
+      "sourceDayKey": "23-02",
+      "dateAnchor": "02-23",
+      "title": {
+        "it": "Muore Federico di Moravia (vescovo boemo)"
+      },
+      "sourceTitle": "Federico di Moravia",
+      "year": 1086,
+      "place": "Aquileia",
+      "type": "Morte",
+      "category": "luoghi_patrimonio",
+      "score": 68,
+      "editorialClass": "B",
+      "reviewStatus": "archive_after_review",
+      "editorialStatus": "light_candidate_for_review",
+      "languageStatus": {
+        "it": "not_started",
+        "fur": "not_started"
+      },
+      "source": {
+        "type": "master_triage_candidate",
+        "label": "Master Accadde oggi FVG esteso",
+        "path": "external/fvg/accadde_oggi_fvg_completo_esteso_metadata.json",
+        "wikipediaUrl": "https://it.wikipedia.org/wiki/Federico_di_Moravia",
+        "wikidataId": "Q3506847",
+        "confidence": "candidate_only"
+      },
+      "reviewGuidance": {
+        "allowedSurface": "light_daily_rubric_after_review",
+        "copyTone": "breve, umano, prudente",
+        "doNotPublishAutomatically": true,
+        "needsHumanSelection": true,
+        "preliminaryDecision": "archive_after_review",
+        "preliminaryReason": "Patriarca di Aquileia: utile per archivio, meno per rubrica breve."
+      },
+      "copyDraft": null,
+      "detailPreview": "Federico di Moravia è stato un vescovo boemo, Patriarca di Aquileia dal 1084 al 23 febbraio 1086.",
+      "readyForUi": false
+    },
+    {
+      "id": "daily-history-review-06-09-23",
+      "sourceCandidateId": "master-fvg-09-06-Q3737610",
+      "wikidataId": "Q3737610",
+      "sourceDayKey": "09-06",
+      "dateAnchor": "06-09",
+      "title": {
+        "it": "Nasce Fabio Beltram (fisico italiano, venticinquesimo direttore della Scuola Normale Superiore di Pisa)"
+      },
+      "sourceTitle": "Fabio Beltram",
+      "year": 1959,
+      "place": "Gorizia",
+      "type": "Nascita",
+      "category": "scienza_territorio",
+      "score": 67,
+      "editorialClass": "B",
+      "reviewStatus": "archive_after_review",
+      "editorialStatus": "light_candidate_for_review",
+      "languageStatus": {
+        "it": "not_started",
+        "fur": "not_started"
+      },
+      "source": {
+        "type": "master_triage_candidate",
+        "label": "Master Accadde oggi FVG esteso",
+        "path": "external/fvg/accadde_oggi_fvg_completo_esteso_metadata.json",
+        "wikipediaUrl": "https://it.wikipedia.org/wiki/Fabio_Beltram",
+        "wikidataId": "Q3737610",
+        "confidence": "candidate_only"
+      },
+      "reviewGuidance": {
+        "allowedSurface": "light_daily_rubric_after_review",
+        "copyTone": "breve, umano, prudente",
+        "doNotPublishAutomatically": true,
+        "needsHumanSelection": true,
+        "preliminaryDecision": "archive_after_review",
+        "preliminaryReason": "Profilo scientifico valido, ma non abbastanza territoriale per la card giornaliera principale."
+      },
+      "copyDraft": null,
+      "detailPreview": "Fabio Beltram è un fisico italiano. È professore ordinario di fisica della materia alla Scuola Normale Superiore di Pisa, di cui è stato direttore dal 2010 al 2016. Dal 2016 è Presidente della Fondazione Pisana per la Scienza ONLUS.",
+      "readyForUi": false
+    },
+    {
+      "id": "daily-history-review-03-26-24",
+      "sourceCandidateId": "master-fvg-26-03-Q3805845",
+      "wikidataId": "Q3805845",
+      "sourceDayKey": "26-03",
+      "dateAnchor": "03-26",
+      "title": {
+        "it": "Muore Jacopo Belgrado (matematico, fisico e astronomo e gesuita italiano)"
+      },
+      "sourceTitle": "Jacopo Belgrado",
+      "year": 1789,
+      "place": "Udine",
+      "type": "Morte",
+      "category": "scienza_territorio",
+      "score": 65,
+      "editorialClass": "B",
+      "reviewStatus": "review_pending",
+      "editorialStatus": "light_candidate_for_review",
+      "languageStatus": {
+        "it": "not_started",
+        "fur": "not_started"
+      },
+      "source": {
+        "type": "master_triage_candidate",
+        "label": "Master Accadde oggi FVG esteso",
+        "path": "external/fvg/accadde_oggi_fvg_completo_esteso_metadata.json",
+        "wikipediaUrl": "https://it.wikipedia.org/wiki/Jacopo_Belgrado",
+        "wikidataId": "Q3805845",
+        "confidence": "candidate_only"
+      },
+      "reviewGuidance": {
+        "allowedSurface": "light_daily_rubric_after_review",
+        "copyTone": "breve, umano, prudente",
+        "doNotPublishAutomatically": true,
+        "needsHumanSelection": true,
+        "preliminaryDecision": "review_pending",
+        "preliminaryReason": "Da valutare manualmente."
+      },
+      "copyDraft": null,
+      "detailPreview": "Jacopo Belgrado, chiamato a volte Jacopo da Belgrado, è stato un matematico, fisico, astronomo e gesuita italiano.",
+      "readyForUi": false
+    },
+    {
+      "id": "daily-history-review-09-05-25",
+      "sourceCandidateId": "master-fvg-05-09-Q84296",
+      "wikidataId": "Q84296",
+      "sourceDayKey": "05-09",
+      "dateAnchor": "09-05",
+      "title": {
+        "it": "Muore Ludwig Boltzmann (fisico e matematico austriaco (1844-1906))"
+      },
+      "sourceTitle": "Ludwig Boltzmann",
+      "year": 1906,
+      "place": "Duino",
+      "type": "Morte",
+      "category": "scienza_territorio",
+      "score": 62,
+      "editorialClass": "B",
+      "reviewStatus": "copy_candidate",
+      "editorialStatus": "light_copy_candidate",
+      "languageStatus": {
+        "it": "not_started",
+        "fur": "not_started"
+      },
+      "source": {
+        "type": "master_triage_candidate",
+        "label": "Master Accadde oggi FVG esteso",
+        "path": "external/fvg/accadde_oggi_fvg_completo_esteso_metadata.json",
+        "wikipediaUrl": "https://it.wikipedia.org/wiki/Ludwig_Boltzmann",
+        "wikidataId": "Q84296",
+        "confidence": "candidate_only"
+      },
+      "reviewGuidance": {
+        "allowedSurface": "light_daily_rubric_after_review",
+        "copyTone": "breve, umano, prudente",
+        "doNotPublishAutomatically": true,
+        "needsHumanSelection": true,
+        "preliminaryDecision": "copy_candidate",
+        "preliminaryReason": "Boltzmann a Duino e' una memoria scientifica forte e comprensibile."
+      },
+      "copyDraft": null,
+      "detailPreview": "Ludwig Eduard Boltzmann è stato un fisico, matematico e filosofo austriaco.",
+      "readyForUi": false
+    }
+  ]
+}

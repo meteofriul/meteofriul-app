@@ -1,0 +1,81 @@
+{
+  "schemaVersion": 1,
+  "batchId": "ostermann-1876-language-review-20",
+  "reviewedAt": "2026-08-02",
+  "sourceDecisionFiles": [
+    "review-decisions-batch-20.json"
+  ],
+  "purpose": "Ventesima revisione linguistica ed editoriale dei candidati Ostermann 1876 verificati sul facsimile. Non pubblica contenuti nella UI.",
+  "policy": {
+    "publish": false,
+    "rule": "La normalizzazione FUR conserva il significato attestato nel facsimile e adotta le forme proverbiali registrate dal Dizionari de Lenghe Furlane. Le quattro massime sono generali e non ricevono vincoli temporali artificiali."
+  },
+  "summary": {
+    "records": 4,
+    "languageReviewed": 4,
+    "mergeExisting": 0,
+    "needsNativeReview": 0
+  },
+  "records": [
+    {
+      "id": "ost1876-daspo-ridi-ven-vai",
+      "reviewStatus": "language_reviewed",
+      "furNormalized": "Daspò dal ridi al ven il vaî.",
+      "itFinal": "Dopo il riso viene il pianto.",
+      "destination": "almanac",
+      "calendarRule": { "type": "general", "bucket": "wisdom", "fallbackAllowed": true },
+      "duplicateAudit": { "status": "new_distinct" },
+      "evidence": [
+        { "label": "Facsimile Ostermann 1876, p. PDF 275", "kind": "primary" },
+        { "label": "Dizionari de Lenghe Furlane, proverbio registrato alla voce vaî", "kind": "secondary" }
+      ],
+      "editorialNote": "Adottata la forma proverbiale normalizzata attestata integralmente dal dizionario.",
+      "publish": false
+    },
+    {
+      "id": "ost1876-daspo-dolc-ven-amar",
+      "reviewStatus": "language_reviewed",
+      "furNormalized": "Daspò dal dolç al ven l'amâr.",
+      "itFinal": "Dopo il dolce viene l'amaro.",
+      "destination": "almanac",
+      "calendarRule": { "type": "general", "bucket": "wisdom", "fallbackAllowed": true },
+      "duplicateAudit": { "status": "new_distinct" },
+      "evidence": [
+        { "label": "Facsimile Ostermann 1876, p. PDF 275", "kind": "primary" },
+        { "label": "Dizionari de Lenghe Furlane, proverbio registrato alla voce vignî", "kind": "secondary" }
+      ],
+      "editorialNote": "Adottata la forma proverbiale normalizzata attestata integralmente dal dizionario.",
+      "publish": false
+    },
+    {
+      "id": "ost1876-daspo-seren-ven-ploie",
+      "reviewStatus": "language_reviewed",
+      "furNormalized": "Daspò dal seren a ven la ploie.",
+      "itFinal": "Dopo il sereno viene la pioggia.",
+      "destination": "almanac",
+      "calendarRule": { "type": "general", "bucket": "wisdom", "fallbackAllowed": true },
+      "duplicateAudit": { "status": "new_distinct" },
+      "evidence": [
+        { "label": "Facsimile Ostermann 1876, p. PDF 275", "kind": "primary" },
+        { "label": "Dizionari de Lenghe Furlane, proverbio registrato alla voce vignî", "kind": "secondary" }
+      ],
+      "editorialNote": "Il facsimile usa bon timp; adottata la forma proverbiale normalizzata registrata dal dizionario.",
+      "publish": false
+    },
+    {
+      "id": "ost1876-union-fas-fuarce",
+      "reviewStatus": "language_reviewed",
+      "furNormalized": "La union e fâs la fuarce.",
+      "itFinal": "L'unione fa la forza.",
+      "destination": "almanac",
+      "calendarRule": { "type": "general", "bucket": "wisdom", "fallbackAllowed": true },
+      "duplicateAudit": { "status": "new_distinct" },
+      "evidence": [
+        { "label": "Facsimile Ostermann 1876, p. PDF 202", "kind": "primary" },
+        { "label": "Dizionari de Lenghe Furlane, proverbio registrato alla voce fâ", "kind": "secondary" }
+      ],
+      "editorialNote": "Corretto l'errore OCR fuarde e adottata la forma normalizzata attestata dal dizionario.",
+      "publish": false
+    }
+  ]
+}

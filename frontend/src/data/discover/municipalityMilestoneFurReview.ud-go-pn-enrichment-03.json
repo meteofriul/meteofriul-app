@@ -1,0 +1,95 @@
+{
+  "schemaVersion": 1,
+  "batchId": "ud-go-pn-enrichment-milestones-03-fur-review",
+  "sourceResearchBatchId": "ud-go-pn-enrichment-milestones-03",
+  "reviewedAt": "2026-09-01",
+  "runtimeIntegration": false,
+  "reviewMethod": "assisted_standard_reference_review",
+  "approvalBasis": "user_delegated_assisted_editorial_review",
+  "reviewer": "assistant",
+  "independentHumanReview": false,
+  "approvalNote": "Decisione editoriale assistita sotto il mandato di completamento Scopri. Le fonti ARLeF verificano il lessico, non certificano queste frasi; nessuna revisione professionale indipendente né lettura frase per frase attribuita all'utente.",
+  "summary": {
+    "totalRecords": 3,
+    "approved": 3,
+    "pendingHumanReview": 0
+  },
+  "records": [
+    {
+      "id": "aquileia-unesco-inscription-1998",
+      "status": "approved",
+      "labelFur": "La aree archeologjiche e la Basiliche patriarcjâl a jentrin tal Patrimoni mondiâl UNESCO",
+      "notes": "Aree, archeologjic, Basiliche e patriarcjâl sono verificati nel dizionario e nel profilo FUR approvato di Aquilee. Jentrâ, patrimoni e mondiâl sono verificati in HTML ARLeF. La formulazione nomina le due componenti del bene senza estendere il riconoscimento a tutta la città e senza confonderlo con fondazione o tutela.",
+      "references": [
+        {
+          "url": "https://superdizionari.arlef.it/lemma/area/4166?language=it&oneshot=1&gui=fur",
+          "note": "Area → aree; HTML letto direttamente nella revisione assistita."
+        },
+        {
+          "url": "https://superdizionari.arlef.it/lemma/archeologico/3891?language=it&oneshot=1&gui=fur",
+          "note": "Archeologico → archeologjic; HTML letto direttamente nella revisione assistita."
+        },
+        {
+          "url": "https://superdizionari.arlef.it/lemma/basilica/15872?language=it&oneshot=1&gui=fur",
+          "note": "Basilica → basiliche; HTML letto direttamente nella revisione assistita."
+        },
+        {
+          "url": "https://superdizionari.arlef.it/lemma/patrimonio/14949?language=it&oneshot=1&gui=fur",
+          "note": "Patrimonio → patrimoni; HTML letto direttamente nella revisione assistita."
+        },
+        {
+          "url": "https://superdizionari.arlef.it/lemma/mondiale/34211?language=it&oneshot=1&gui=fur",
+          "note": "Mondiale → mondiâl; HTML letto direttamente nella revisione assistita."
+        },
+        {
+          "url": "https://superdizionari.arlef.it/ricerca?term=entrare&language=it&gui=fur",
+          "note": "Voce completa in HTML: jentrâ."
+        }
+      ]
+    },
+    {
+      "id": "gradisca-episcopal-seat-1788",
+      "status": "approved",
+      "labelFur": "Gardiscje e devente citât vescovîl",
+      "notes": "Gardiscje è il toponimo del profilo approvato. Deventâ, citât e vescovîl sono verificati nelle fonti HTML ARLeF. La resa evita di attribuire alla città una sede fisica specifica non nominata dalla fonte.",
+      "references": [
+        {
+          "url": "https://superdizionari.arlef.it/ricerca?term=vescovile&language=it&gui=fur",
+          "note": "Voce completa in HTML: vescovîl."
+        },
+        {
+          "url": "https://superdizionari.arlef.it/ricerca?term=sede&language=it&gui=fur",
+          "note": "Voce sede riletta per il significato istituzionale della formula italiana."
+        },
+        {
+          "url": "https://superdizionari.arlef.it/lemma/diventare/24104?language=it&oneshot=1&gui=fur",
+          "note": "Diventare → deventâ; HTML letto direttamente nella revisione assistita."
+        },
+        {
+          "url": "https://superdizionari.arlef.it/ricerca?term=città&language=it&gui=fur",
+          "note": "Voce completa in HTML: citât."
+        }
+      ]
+    },
+    {
+      "id": "cordenons-1902-giardino-villa-raetz",
+      "status": "approved",
+      "labelFur": "Al ven creât il zardin di Vile Raetz",
+      "notes": "Creâ, zardin e vile sono verificati in HTML ARLeF. Raetz resta il nome proprio della fonte. La frase riguarda soltanto il giardino e non attribuisce all'imprenditore il progetto del cotonificio o della villa.",
+      "references": [
+        {
+          "url": "https://superdizionari.arlef.it/lemma/creare/10658?language=it&oneshot=1&gui=fur",
+          "note": "Creare → creâ; HTML letto direttamente nella revisione assistita."
+        },
+        {
+          "url": "https://superdizionari.arlef.it/lemma/giardino/40580?language=it&oneshot=1&gui=fur",
+          "note": "Giardino → zardin; HTML letto direttamente nella revisione assistita."
+        },
+        {
+          "url": "https://superdizionari.arlef.it/ricerca?term=villa&language=it&gui=fur",
+          "note": "Voce completa in HTML: vile."
+        }
+      ]
+    }
+  ]
+}

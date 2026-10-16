@@ -1,0 +1,1937 @@
+{
+  "schemaVersion": 1,
+  "selectionId": "ostermann-1876-it-selection-01",
+  "reviewedAt": "2026-08-02",
+  "sourceLanguageReviewFiles": [
+    "language-review-batch-01.json",
+    "language-review-batch-02.json",
+    "language-review-batch-03.json",
+    "language-review-batch-04.json",
+    "language-review-batch-05.json",
+    "language-review-batch-06.json",
+    "language-review-batch-07.json",
+    "language-review-batch-08.json",
+    "language-review-batch-09.json",
+    "language-review-batch-10.json",
+    "language-review-batch-11.json",
+    "language-review-batch-12.json",
+    "language-review-batch-13.json",
+    "language-review-batch-14.json",
+    "language-review-batch-15.json",
+    "language-review-batch-16.json",
+    "language-review-batch-17.json",
+    "language-review-batch-18.json",
+    "language-review-batch-19.json",
+    "language-review-batch-20.json",
+    "language-review-batch-21.json"
+  ],
+  "purpose": "Selezione editoriale italiana dei candidati verificati sul facsimile. Non pubblica contenuti e non approva automaticamente il FUR.",
+  "policy": [
+    "Un testo destinato all'Almanacco deve essere breve, comprensibile e compatibile con la data, la stagione o il meteo corrente.",
+    "Le seconde voci della stessa ricorrenza e i testi che richiedono spiegazione passano a Scopri.",
+    "I detti meteorologici condizionali restano sospesi finche il modello dati non fornisce il fenomeno richiesto.",
+    "I testi ridondanti, poco chiari o gia presenti non generano un nuovo proverbio.",
+    "Tutti i record restano publish=false fino alla revisione FUR e all'integrazione nel calendario definitivo."
+  ],
+  "summary": {
+    "records": 270,
+    "approveAlmanac": 256,
+    "approveDiscover": 6,
+    "holdRuntimeCondition": 4,
+    "mergeExisting": 1,
+    "excludeEditorial": 3,
+    "publishedRecords": 0
+  },
+  "records": [
+    {
+      "id": "ost1876-genar-febrar-marc",
+      "decision": "approve_almanac",
+      "target": "almanac",
+      "reason": "Detto stagionale completo; utilizzabile soltanto tra gennaio e marzo.",
+      "publish": false
+    },
+    {
+      "id": "ost1876-sant-antoni-ore-lus",
+      "decision": "approve_discover",
+      "target": "discover",
+      "reason": "Seconda voce del 17 gennaio; resta come approfondimento senza duplicare il proverbio giornaliero.",
+      "publish": false
+    },
+    {
+      "id": "ost1876-sante-catarine-nadal-mes",
+      "decision": "approve_almanac",
+      "target": "almanac",
+      "reason": "Prima voce del 25 novembre, immediata e coerente con il calendario.",
+      "publish": false
+    },
+    {
+      "id": "ost1876-sante-catarine-fred-caretine",
+      "decision": "approve_discover",
+      "target": "discover",
+      "reason": "Seconda voce del 25 novembre; utile come approfondimento senza duplicare il proverbio giornaliero.",
+      "publish": false
+    },
+    {
+      "id": "ost1876-fumate-sere-doman",
+      "decision": "hold_runtime_condition",
+      "target": "almanac",
+      "reason": "Valido solo quando il dato locale segnala nebbia nel momento coerente.",
+      "publish": false
+    },
+    {
+      "id": "ost1876-ploe-misdi-dut-di",
+      "decision": "hold_runtime_condition",
+      "target": "almanac",
+      "reason": "Richiede pioggia osservata o prevista nelle ore centrali; non va ruotato casualmente.",
+      "publish": false
+    },
+    {
+      "id": "ost1876-ploe-stagion-tesaur",
+      "decision": "approve_almanac",
+      "target": "almanac",
+      "reason": "Proverbio agricolo generale, autosufficiente e senza riferimenti temporali incompatibili.",
+      "publish": false
+    },
+    {
+      "id": "ost1876-lune-pis-marinar",
+      "decision": "merge_existing",
+      "target": "existing",
+      "reason": "Coincide con ostermann-lune-sentade e deve consolidare quel record, non crearne uno nuovo.",
+      "publish": false
+    },
+    {
+      "id": "ost1876-vints-vin-pan",
+      "decision": "hold_runtime_condition",
+      "target": "almanac",
+      "reason": "Richiede direzione del vento locale affidabile e una mappatura esplicita dei nomi tradizionali.",
+      "publish": false
+    },
+    {
+      "id": "ost1876-pasche-cun-foe",
+      "decision": "approve_almanac",
+      "target": "almanac",
+      "reason": "Detto chiaro per la sola domenica di Pasqua; resta subordinato alla revisione FUR.",
+      "publish": false
+    },
+    {
+      "id": "ost1876-febrar-un-di-ben",
+      "decision": "approve_almanac",
+      "target": "almanac",
+      "reason": "Breve, comprensibile e utilizzabile esclusivamente in febbraio.",
+      "publish": false
+    },
+    {
+      "id": "ost1876-san-nicolo-fred-cumo",
+      "decision": "approve_almanac",
+      "target": "almanac",
+      "reason": "Detto autonomo e legato senza ambiguita al 6 dicembre.",
+      "publish": false
+    },
+    {
+      "id": "ost1876-nef-prime-nadal-regal",
+      "decision": "approve_almanac",
+      "target": "almanac",
+      "reason": "Coerente nel periodo dal 1 al 24 dicembre e sufficientemente breve.",
+      "publish": false
+    },
+    {
+      "id": "ost1876-nul-balcons-ploe-bleons",
+      "decision": "hold_runtime_condition",
+      "target": "almanac",
+      "reason": "Segno meteorologico valido soltanto con nubi a fasce e pioggia coerenti.",
+      "publish": false
+    },
+    {
+      "id": "ost1876-ombrene-avost-panze-genar",
+      "decision": "approve_discover",
+      "target": "discover",
+      "reason": "Il senso riguarda lavoro e scorte estive e necessita di una breve spiegazione, non di una card isolata.",
+      "publish": false
+    },
+    {
+      "id": "ost1876-cjase-braide-prat",
+      "decision": "approve_almanac",
+      "target": "almanac",
+      "reason": "Massima rurale sulla misura, chiara anche senza testo esplicativo.",
+      "publish": false
+    },
+    {
+      "id": "ost1876-se-semena-vece-forment",
+      "decision": "approve_almanac",
+      "target": "almanac",
+      "reason": "Detto agricolo generale comprensibile; resta subordinato alla revisione FUR.",
+      "publish": false
+    },
+    {
+      "id": "ost1876-forment-ten-vend",
+      "decision": "approve_almanac",
+      "target": "almanac",
+      "reason": "Massima agricola autonoma e leggibile, utile nel repertorio generale.",
+      "publish": false
+    },
+    {
+      "id": "ost1876-ogni-vit-so-pal",
+      "decision": "approve_almanac",
+      "target": "almanac",
+      "reason": "Breve proverbio rurale, chiaro e distintivo.",
+      "publish": false
+    },
+    {
+      "id": "ost1876-vit-cence-arbul",
+      "decision": "exclude_editorial",
+      "target": "none",
+      "reason": "Ripete il concetto del proverbio sulla vite e il suo palo senza aggiungere valore editoriale.",
+      "publish": false
+    },
+    {
+      "id": "ost1876-ogni-jerbe-semence",
+      "decision": "approve_almanac",
+      "target": "almanac",
+      "reason": "Detto naturale breve e autosufficiente.",
+      "publish": false
+    },
+    {
+      "id": "ost1876-troi-batit-no-jerbe",
+      "decision": "approve_almanac",
+      "target": "almanac",
+      "reason": "Immagine popolare chiara, generale e non legata a un periodo incompatibile.",
+      "publish": false
+    },
+    {
+      "id": "ost1876-epifanie-fiestis-vie",
+      "decision": "approve_discover",
+      "target": "discover",
+      "reason": "Seconda voce del 6 gennaio; va mostrata come approfondimento dopo il proverbio principale gia presente.",
+      "publish": false
+    },
+    {
+      "id": "ost1876-san-valantin-svinte",
+      "decision": "approve_discover",
+      "target": "discover",
+      "reason": "Seconda voce del 14 febbraio e previsione popolare condizionale; richiede contesto.",
+      "publish": false
+    },
+    {
+      "id": "ost1876-prime-ploe-avost-bosc",
+      "decision": "approve_almanac",
+      "target": "almanac",
+      "reason": "Detto stagionale breve e utilizzabile soltanto in agosto.",
+      "publish": false
+    },
+    {
+      "id": "ost1876-an-plojos-an-fanos",
+      "decision": "approve_almanac",
+      "target": "almanac",
+      "reason": "Proverbio agricolo generale, chiaro e autosufficiente.",
+      "publish": false
+    },
+    {
+      "id": "ost1876-nolis-panolis",
+      "decision": "approve_almanac",
+      "target": "almanac",
+      "reason": "Detto agricolo conciso e distinto dagli altri candidati.",
+      "publish": false
+    },
+    {
+      "id": "ost1876-avril-ploe-sutil",
+      "decision": "approve_almanac",
+      "target": "almanac",
+      "reason": "Breve e temporalmente corretto soltanto nel mese di aprile.",
+      "publish": false
+    },
+    {
+      "id": "ost1876-cuc-dafa-par-dut",
+      "decision": "approve_discover",
+      "target": "discover",
+      "reason": "Il testo stagionale e articolato rende meglio con una breve spiegazione in Scopri; resta da revisionare in FUR.",
+      "publish": false
+    },
+    {
+      "id": "ost1876-strade-viere-gnove",
+      "decision": "approve_almanac",
+      "target": "almanac",
+      "reason": "Massima generale completa e immediatamente comprensibile.",
+      "publish": false
+    },
+    {
+      "id": "ost1876-ogni-ritard-pericul",
+      "decision": "approve_almanac",
+      "target": "almanac",
+      "reason": "Massima generale chiara; resta subordinata alla revisione FUR.",
+      "publish": false
+    },
+    {
+      "id": "ost1876-timp-svole",
+      "decision": "approve_almanac",
+      "target": "almanac",
+      "reason": "Formula molto breve ma attestata e adatta alla rotazione generale.",
+      "publish": false
+    },
+    {
+      "id": "ost1876-ogni-cose-timp-lug",
+      "decision": "approve_almanac",
+      "target": "almanac",
+      "reason": "Massima generale completa e leggibile senza spiegazioni.",
+      "publish": false
+    },
+    {
+      "id": "ost1876-timp-pierd-no-quiste",
+      "decision": "approve_almanac",
+      "target": "almanac",
+      "reason": "Detto generale autonomo e adatto alla rotazione quotidiana.",
+      "publish": false
+    },
+    {
+      "id": "ost1876-o-la-o-rompi",
+      "decision": "exclude_editorial",
+      "target": "none",
+      "reason": "La resa italiana resta troppo ellittica e poco chiara in una card isolata.",
+      "publish": false
+    },
+    {
+      "id": "ost1876-fur-dint-fur-dolor",
+      "decision": "approve_almanac",
+      "target": "almanac",
+      "reason": "Proverbio generale noto, breve e autosufficiente.",
+      "publish": false
+    },
+    {
+      "id": "ost1876-roste-denant-aghe",
+      "decision": "approve_almanac",
+      "target": "almanac",
+      "reason": "Immagine di prudenza chiara, con valore rurale e generale.",
+      "publish": false
+    },
+    {
+      "id": "ost1876-cui-cir-cjate",
+      "decision": "approve_almanac",
+      "target": "almanac",
+      "reason": "Formula generale breve e attestata nel repertorio friulano.",
+      "publish": false
+    },
+    {
+      "id": "ost1876-batti-par-viergi",
+      "decision": "approve_almanac",
+      "target": "almanac",
+      "reason": "Massima sull'iniziativa, comprensibile senza spiegazioni.",
+      "publish": false
+    },
+    {
+      "id": "ost1876-prin-pensir-mior",
+      "decision": "approve_almanac",
+      "target": "almanac",
+      "reason": "Detto generale autonomo e sufficientemente caratterizzato.",
+      "publish": false
+    },
+    {
+      "id": "ost1876-bati-fier-cjald",
+      "decision": "approve_almanac",
+      "target": "almanac",
+      "reason": "Proverbio generale chiaro e adatto a una card quotidiana.",
+      "publish": false
+    },
+    {
+      "id": "ost1876-nol-sa-balla-fieste",
+      "decision": "approve_almanac",
+      "target": "almanac",
+      "reason": "Massima figurata comprensibile e indipendente dal calendario delle feste.",
+      "publish": false
+    },
+    {
+      "id": "ost1876-tal-bal-balla",
+      "decision": "approve_almanac",
+      "target": "almanac",
+      "reason": "Detto generale chiaro in italiano; resta subordinato alla revisione FUR.",
+      "publish": false
+    },
+    {
+      "id": "ost1876-om-propon-dio-dispon",
+      "decision": "approve_almanac",
+      "target": "almanac",
+      "reason": "Massima tradizionale completa e autosufficiente.",
+      "publish": false
+    },
+    {
+      "id": "ost1876-ogni-robe-so-viers",
+      "decision": "approve_almanac",
+      "target": "almanac",
+      "reason": "Detto generale chiaro e adatto alla rotazione quotidiana.",
+      "publish": false
+    },
+    {
+      "id": "ost1876-voli-paron-ingrasse-cjaval",
+      "decision": "approve_almanac",
+      "target": "almanac",
+      "reason": "Proverbio rurale noto, autonomo e coerente con l'identita dell'Almanacco.",
+      "publish": false
+    },
+    {
+      "id": "ost1876-jeve-pierd-siele",
+      "decision": "approve_almanac",
+      "target": "almanac",
+      "reason": "Detto breve e comprensibile, distinto dagli altri candidati.",
+      "publish": false
+    },
+    {
+      "id": "ost1876-rive-prin-mulin",
+      "decision": "approve_almanac",
+      "target": "almanac",
+      "reason": "Massima rurale chiara sull'ordine di arrivo.",
+      "publish": false
+    },
+    {
+      "id": "ost1876-mond-di-cui-pialu",
+      "decision": "exclude_editorial",
+      "target": "none",
+      "reason": "La formulazione italiana e il messaggio restano vaghi e non aggiungono abbastanza valore alla rubrica.",
+      "publish": false
+    },
+    {
+      "id": "ost1876-un-len-no-fas-fuc",
+      "decision": "approve_almanac",
+      "target": "almanac",
+      "reason": "Proverbio generale breve, autonomo e distinto dal repertorio esistente.",
+      "publish": false
+    },
+    {
+      "id": "ost1876-olei-ben-no-coste-nuje",
+      "decision": "approve_almanac",
+      "target": "almanac",
+      "reason": "Massima positiva chiara e utilizzabile durante tutto l'anno.",
+      "publish": false
+    },
+    {
+      "id": "ost1876-altris-timps-altris-usancis",
+      "decision": "approve_almanac",
+      "target": "almanac",
+      "reason": "Detto generale completo, comprensibile senza spiegazione.",
+      "publish": false
+    },
+    {
+      "id": "ost1876-cjamine-pis-plomp",
+      "decision": "approve_almanac",
+      "target": "almanac",
+      "reason": "Invito figurato alla prudenza, breve e autosufficiente.",
+      "publish": false
+    },
+    {
+      "id": "ost1876-plui-fum-che-rost",
+      "decision": "approve_almanac",
+      "target": "almanac",
+      "reason": "Proverbio noto e autonomo, distinto dai testi già pubblicati.",
+      "publish": false
+    },
+    {
+      "id": "ost1876-nissune-gnove-buine-gnove",
+      "decision": "approve_almanac",
+      "target": "almanac",
+      "reason": "Massima completa e adatta alla rotazione quotidiana.",
+      "publish": false
+    },
+    {
+      "id": "ost1876-un-fior-no-fas-primevere",
+      "decision": "approve_almanac",
+      "target": "almanac",
+      "reason": "Detto chiaro, limitato alla primavera per rispettare il riferimento temporale esplicito.",
+      "publish": false
+    },
+    {
+      "id": "ost1876-ogni-regule-so-ecezion",
+      "decision": "approve_almanac",
+      "target": "almanac",
+      "reason": "Massima generale breve e immediatamente comprensibile.",
+      "publish": false
+    },
+    {
+      "id": "ost1876-ogni-fior-so-stagion",
+      "decision": "approve_almanac",
+      "target": "almanac",
+      "reason": "Detto naturale sul tempo proprio di ogni cosa, senza richiamo a una stagione specifica.",
+      "publish": false
+    },
+    {
+      "id": "ost1876-timp-consume-dut",
+      "decision": "approve_almanac",
+      "target": "almanac",
+      "reason": "Massima generale distinta dagli altri proverbi sul tempo già presenti.",
+      "publish": false
+    },
+    {
+      "id": "ost1876-fat-no-si-disfa",
+      "decision": "approve_almanac",
+      "target": "almanac",
+      "reason": "Detto autonomo e leggibile senza il resto del blocco sorgente.",
+      "publish": false
+    },
+    {
+      "id": "ost1876-di-gnot-gjats-gris",
+      "decision": "approve_almanac",
+      "target": "almanac",
+      "reason": "Proverbio noto, completo e privo di vincoli di calendario.",
+      "publish": false
+    },
+    {
+      "id": "ost1876-vos-popul-vos-diu",
+      "decision": "approve_almanac",
+      "target": "almanac",
+      "reason": "Formula tradizionale completa e adatta alla rotazione generale.",
+      "publish": false
+    },
+    {
+      "id": "ost1876-ducj-sanc-ros",
+      "decision": "approve_almanac",
+      "target": "almanac",
+      "reason": "Detto breve sull'uguaglianza umana, autonomo e chiaro.",
+      "publish": false
+    },
+    {
+      "id": "ost1876-dopo-trist-ven-bon",
+      "decision": "approve_almanac",
+      "target": "almanac",
+      "reason": "Massima positiva, generale e distinta dai testi esistenti.",
+      "publish": false
+    },
+    {
+      "id": "ost1876-ducj-sintin-orelis",
+      "decision": "approve_almanac",
+      "target": "almanac",
+      "reason": "Massima generale autonoma e distinta dal repertorio esistente.",
+      "publish": false
+    },
+    {
+      "id": "ost1876-ognidun-mangje-bocje",
+      "decision": "approve_almanac",
+      "target": "almanac",
+      "reason": "Detto breve, attestato e comprensibile senza spiegazione.",
+      "publish": false
+    },
+    {
+      "id": "ost1876-ognidun-viot-siei-voi",
+      "decision": "approve_almanac",
+      "target": "almanac",
+      "reason": "Massima generale completa e priva di vincoli temporali.",
+      "publish": false
+    },
+    {
+      "id": "ost1876-aghe-corinte-no-puarte-sporcjetat",
+      "decision": "approve_almanac",
+      "target": "almanac",
+      "reason": "Immagine naturale attestata e valida durante tutto l'anno.",
+      "publish": false
+    },
+    {
+      "id": "ost1876-fat-mont-po-disfalu",
+      "decision": "approve_almanac",
+      "target": "almanac",
+      "reason": "Massima tradizionale autonoma e attestata nella grafia moderna.",
+      "publish": false
+    },
+    {
+      "id": "ost1876-ogni-di-ven-gnot",
+      "decision": "approve_almanac",
+      "target": "almanac",
+      "reason": "Formula breve e generale, senza riferimento a una data specifica.",
+      "publish": false
+    },
+    {
+      "id": "ost1876-pazience-maride-frari",
+      "decision": "approve_almanac",
+      "target": "almanac",
+      "reason": "Detto figurato sulla pazienza, completo e autosufficiente.",
+      "publish": false
+    },
+    {
+      "id": "ost1876-vul-ledi-nol-vul-mandi",
+      "decision": "approve_almanac",
+      "target": "almanac",
+      "reason": "Massima attestata, chiara e indipendente dal calendario.",
+      "publish": false
+    },
+    {
+      "id": "ost1876-ogni-trop-masse",
+      "decision": "approve_almanac",
+      "target": "almanac",
+      "reason": "Variante concisa e attestata del detto sull'eccesso.",
+      "publish": false
+    },
+    {
+      "id": "ost1876-bez-po-spindi",
+      "decision": "approve_almanac",
+      "target": "almanac",
+      "reason": "Massima economica generale, breve e chiaramente leggibile.",
+      "publish": false
+    },
+    {
+      "id": "ost1876-len-sec-cjape-prin",
+      "decision": "approve_almanac",
+      "target": "almanac",
+      "reason": "Detto naturale attestato; il riferimento al legno non impone una stagione.",
+      "publish": false
+    },
+    {
+      "id": "ost1876-acuile-no-pie-moscjis",
+      "decision": "approve_almanac",
+      "target": "almanac",
+      "reason": "Proverbio figurato attestato e distinto dai testi esistenti.",
+      "publish": false
+    },
+    {
+      "id": "ost1876-farine-no-buine-ostiis",
+      "decision": "approve_almanac",
+      "target": "almanac",
+      "reason": "Massima figurata completa, attestata e leggibile senza contesto.",
+      "publish": false
+    },
+    {
+      "id": "ost1876-come-che-ven",
+      "decision": "approve_almanac",
+      "target": "almanac",
+      "reason": "Detto colloquiale breve e autonomo, adatto alla rotazione generale.",
+      "publish": false
+    },
+    {
+      "id": "ost1876-dut-a-un-fin",
+      "decision": "approve_almanac",
+      "target": "almanac",
+      "reason": "Massima conclusiva generale, chiara e distinta dal repertorio.",
+      "publish": false
+    },
+    {
+      "id": "ost1876-ocasion-fas-om-mestri",
+      "decision": "approve_almanac",
+      "target": "almanac",
+      "reason": "Massima generale autonoma sull'esperienza e distinta dal repertorio.",
+      "publish": false
+    },
+    {
+      "id": "ost1876-ocasion-fas-om-lari",
+      "decision": "approve_almanac",
+      "target": "almanac",
+      "reason": "Proverbio noto, autosufficiente e distinto dall'altra massima sull'occasione.",
+      "publish": false
+    },
+    {
+      "id": "ost1876-no-riscje-no-rosee",
+      "decision": "approve_almanac",
+      "target": "almanac",
+      "reason": "Detto breve sul rischio e sul risultato, privo di vincoli temporali.",
+      "publish": false
+    },
+    {
+      "id": "ost1876-mior-uf-vue-gjaline-doman",
+      "decision": "approve_almanac",
+      "target": "almanac",
+      "reason": "Proverbio completo e attestato anche nella forma lessicografica moderna.",
+      "publish": false
+    },
+    {
+      "id": "ost1876-prat-seat-no-scuindisi",
+      "decision": "approve_almanac",
+      "target": "almanac",
+      "reason": "Immagine figurata chiara; il prato non costituisce un vincolo stagionale.",
+      "publish": false
+    },
+    {
+      "id": "ost1876-cjapa-ucei-cuant-passin",
+      "decision": "approve_almanac",
+      "target": "almanac",
+      "reason": "Massima completa sul cogliere l'occasione, valida durante tutto l'anno.",
+      "publish": false
+    },
+    {
+      "id": "ost1876-mulin-cuant-je-aghe",
+      "decision": "approve_almanac",
+      "target": "almanac",
+      "reason": "Detto attestato sul momento opportuno, distinto dai proverbi esistenti sul mulino.",
+      "publish": false
+    },
+    {
+      "id": "ost1876-pense-prime-no-pintiti",
+      "decision": "approve_almanac",
+      "target": "almanac",
+      "reason": "Invito alla prudenza breve, diretto e non calendarizzato.",
+      "publish": false
+    },
+    {
+      "id": "ost1876-pense-vue-par-doman",
+      "decision": "approve_almanac",
+      "target": "almanac",
+      "reason": "Massima concisa sulla previdenza, autonoma e generale.",
+      "publish": false
+    },
+    {
+      "id": "ost1876-cjale-bas-denant-muda-pas",
+      "decision": "approve_almanac",
+      "target": "almanac",
+      "reason": "Immagine prudenziale completa e leggibile senza spiegazioni aggiuntive.",
+      "publish": false
+    },
+    {
+      "id": "ost1876-no-comede-picule-buse",
+      "decision": "approve_almanac",
+      "target": "almanac",
+      "reason": "Detto autosufficiente sulla prevenzione e distinto dal repertorio pubblicato.",
+      "publish": false
+    },
+    {
+      "id": "ost1876-dopo-fat-ognidun-sa-fa",
+      "decision": "approve_almanac",
+      "target": "almanac",
+      "reason": "Massima breve e generale sul giudizio a posteriori.",
+      "publish": false
+    },
+    {
+      "id": "ost1876-tet-no-par-une-ploe",
+      "decision": "approve_almanac",
+      "target": "almanac",
+      "reason": "Detto figurato sulla scelta ponderata; la pioggia non costituisce un vincolo meteo.",
+      "publish": false
+    },
+    {
+      "id": "ost1876-jet-no-par-une-sere",
+      "decision": "approve_almanac",
+      "target": "almanac",
+      "reason": "Massima autonoma sulla durata delle scelte e priva di vincoli stagionali.",
+      "publish": false
+    },
+    {
+      "id": "ost1876-plea-arbul-zovin",
+      "decision": "approve_almanac",
+      "target": "almanac",
+      "reason": "Proverbio figurato tradizionale, completo e indipendente dal calendario.",
+      "publish": false
+    },
+    {
+      "id": "ost1876-conts-spes-amicizie-lungje",
+      "decision": "approve_almanac",
+      "target": "almanac",
+      "reason": "Massima autonoma sui rapporti corretti e distinta dal repertorio pubblicato.",
+      "publish": false
+    },
+    {
+      "id": "ost1876-fas-pas-secont-gjambe",
+      "decision": "approve_almanac",
+      "target": "almanac",
+      "reason": "Invito figurato alla misura, breve e generale.",
+      "publish": false
+    },
+    {
+      "id": "ost1876-sofle-cinise-jemple-voi",
+      "decision": "approve_almanac",
+      "target": "almanac",
+      "reason": "Immagine prudenziale completa e priva di vincoli temporali.",
+      "publish": false
+    },
+    {
+      "id": "ost1876-lasse-cjan-cuant-duar",
+      "decision": "approve_almanac",
+      "target": "almanac",
+      "reason": "Detto autonomo sul non provocare un problema quieto.",
+      "publish": false
+    },
+    {
+      "id": "ost1876-fuesse-altris-prin-dentri",
+      "decision": "approve_almanac",
+      "target": "almanac",
+      "reason": "Proverbio morale completo e distinto dal repertorio.",
+      "publish": false
+    },
+    {
+      "id": "ost1876-cjar-cence-tamon-fossal",
+      "decision": "approve_almanac",
+      "target": "almanac",
+      "reason": "Immagine chiara sulla necessità di una guida.",
+      "publish": false
+    },
+    {
+      "id": "ost1876-cjar-denant-bus",
+      "decision": "approve_almanac",
+      "target": "almanac",
+      "reason": "Proverbio tradizionale sull'ordine delle azioni.",
+      "publish": false
+    },
+    {
+      "id": "ost1876-om-visat-miec-armat",
+      "decision": "approve_almanac",
+      "target": "almanac",
+      "reason": "Massima nota sulla preparazione e priva di vincoli temporali.",
+      "publish": false
+    },
+    {
+      "id": "ost1876-cui-no-prove-no-crot",
+      "decision": "approve_almanac",
+      "target": "almanac",
+      "reason": "Detto conciso sull'esperienza diretta.",
+      "publish": false
+    },
+    {
+      "id": "ost1876-no-lassa-ciert-inciert",
+      "decision": "approve_almanac",
+      "target": "almanac",
+      "reason": "Massima prudenziale autonoma e distinta dalle varianti del blocco.",
+      "publish": false
+    },
+    {
+      "id": "ost1876-lens-verts-fasin-fum",
+      "decision": "approve_almanac",
+      "target": "almanac",
+      "reason": "Osservazione domestica breve e generale.",
+      "publish": false
+    },
+    {
+      "id": "ost1876-no-fidati-cui-no-si-fide",
+      "decision": "approve_almanac",
+      "target": "almanac",
+      "reason": "Detto autonomo sulla fiducia, isolato correttamente dal blocco lungo.",
+      "publish": false
+    },
+    {
+      "id": "ost1876-bon-crot-bogns-trist-compagns",
+      "decision": "approve_almanac",
+      "target": "almanac",
+      "reason": "Massima morale completa e comprensibile senza spiegazioni.",
+      "publish": false
+    },
+    {
+      "id": "ost1876-trop-tira-cuarde-romp",
+      "decision": "approve_almanac",
+      "target": "almanac",
+      "reason": "Immagine proverbiale autonoma sull'eccesso.",
+      "publish": false
+    },
+    {
+      "id": "ost1876-va-plan-san-lontan",
+      "decision": "approve_almanac",
+      "target": "almanac",
+      "reason": "Proverbio noto, completo e valido come saggezza generale.",
+      "publish": false
+    },
+    {
+      "id": "ost1876-vivint-impare-vivi",
+      "decision": "approve_almanac",
+      "target": "almanac",
+      "reason": "Massima autonoma sull'apprendimento continuo.",
+      "publish": false
+    },
+    {
+      "id": "ost1876-tre-dis-no-mestris",
+      "decision": "approve_almanac",
+      "target": "almanac",
+      "reason": "Detto breve sulla pazienza necessaria per imparare.",
+      "publish": false
+    },
+    {
+      "id": "ost1876-pratiche-plui-gramatiche",
+      "decision": "approve_almanac",
+      "target": "almanac",
+      "reason": "Contrasto proverbiale completo tra pratica e conoscenza teorica.",
+      "publish": false
+    },
+    {
+      "id": "ost1876-esperience-gran-scuele",
+      "decision": "approve_almanac",
+      "target": "almanac",
+      "reason": "Massima comprensibile sull'esperienza come scuola.",
+      "publish": false
+    },
+    {
+      "id": "ost1876-prime-garzon-po-mestri",
+      "decision": "approve_almanac",
+      "target": "almanac",
+      "reason": "Detto autonomo sul percorso necessario prima di diventare esperti.",
+      "publish": false
+    },
+    {
+      "id": "ost1876-lezion-propriis-spesis",
+      "decision": "approve_almanac",
+      "target": "almanac",
+      "reason": "Massima completa sulla lezione appresa attraverso l'esperienza diretta.",
+      "publish": false
+    },
+    {
+      "id": "ost1876-impare-spesis-altris",
+      "decision": "approve_almanac",
+      "target": "almanac",
+      "reason": "Invita a imparare dagli errori altrui e resta distinta dalle varianti vicine.",
+      "publish": false
+    },
+    {
+      "id": "ost1876-fa-falle-falla-impare",
+      "decision": "approve_almanac",
+      "target": "almanac",
+      "reason": "Formula autonoma che lega azione, errore e apprendimento.",
+      "publish": false
+    },
+    {
+      "id": "ost1876-mus-cadut-no-cole",
+      "decision": "approve_almanac",
+      "target": "almanac",
+      "reason": "Immagine completa sulla memoria dell'esperienza.",
+      "publish": false
+    },
+    {
+      "id": "ost1876-scotat-aghe-cjalde",
+      "decision": "approve_almanac",
+      "target": "almanac",
+      "reason": "Proverbio prudenziale completo e privo di vincoli temporali.",
+      "publish": false
+    },
+    {
+      "id": "ost1876-om-cognos-faz-no-cacaris",
+      "decision": "approve_almanac",
+      "target": "almanac",
+      "reason": "Massima chiara sul valore dei fatti rispetto alle parole.",
+      "publish": false
+    },
+    {
+      "id": "ost1876-disgraciis-menin-judizi",
+      "decision": "approve_almanac",
+      "target": "almanac",
+      "reason": "Detto autonomo sull'esperienza maturata nelle difficoltà.",
+      "publish": false
+    },
+    {
+      "id": "ost1876-cognossi-mangja-star-sal",
+      "decision": "approve_almanac",
+      "target": "almanac",
+      "reason": "Immagine tradizionale sul tempo necessario per conoscere una persona.",
+      "publish": false
+    },
+    {
+      "id": "ost1876-cuatri-voi-plui-doi",
+      "decision": "approve_almanac",
+      "target": "almanac",
+      "reason": "Massima autonoma sul valore del confronto.",
+      "publish": false
+    },
+    {
+      "id": "ost1876-cite-mani",
+      "decision": "approve_almanac",
+      "target": "almanac",
+      "reason": "Proverbio completo sull'ingegno necessario a terminare un lavoro.",
+      "publish": false
+    },
+    {
+      "id": "ost1876-va-lof-impare-urla",
+      "decision": "approve_almanac",
+      "target": "almanac",
+      "reason": "Massima autonoma sull'influenza delle compagnie.",
+      "publish": false
+    },
+    {
+      "id": "ost1876-mal-impare-cence-mestri",
+      "decision": "approve_almanac",
+      "target": "almanac",
+      "reason": "Detto breve e completo sulla facilità con cui si apprendono le cattive abitudini.",
+      "publish": false
+    },
+    {
+      "id": "ost1876-bon-consei-borse-becs",
+      "decision": "approve_almanac",
+      "target": "almanac",
+      "reason": "Massima chiara sul valore del consiglio rispetto al denaro.",
+      "publish": false
+    },
+    {
+      "id": "ost1876-abitudin-seconde-nature",
+      "decision": "approve_almanac",
+      "target": "almanac",
+      "reason": "Formula proverbiale completa sul peso delle abitudini.",
+      "publish": false
+    },
+    {
+      "id": "ost1876-ogni-pais-so-usance",
+      "decision": "approve_almanac",
+      "target": "almanac",
+      "reason": "Detto autonomo sulla varietà delle consuetudini locali e familiari.",
+      "publish": false
+    },
+    {
+      "id": "ost1876-usance-grande-sclavitud",
+      "decision": "approve_almanac",
+      "target": "almanac",
+      "reason": "Massima breve sull'abitudine che finisce per vincolare.",
+      "publish": false
+    },
+    {
+      "id": "ost1876-scomence-poc-finis-trop",
+      "decision": "approve_almanac",
+      "target": "almanac",
+      "reason": "Avvertimento completo sulla crescita graduale degli eccessi.",
+      "publish": false
+    },
+    {
+      "id": "ost1876-lenghe-dint-dul",
+      "decision": "approve_almanac",
+      "target": "almanac",
+      "reason": "Immagine tradizionale distinta sul pensiero che torna al proprio cruccio.",
+      "publish": false
+    },
+    {
+      "id": "ost1876-gjambis-cur-tire",
+      "decision": "approve_almanac",
+      "target": "almanac",
+      "reason": "Massima figurata e comprensibile sul desiderio che guida le azioni.",
+      "publish": false
+    },
+    {
+      "id": "ost1876-volp-piel-vizi",
+      "decision": "approve_almanac",
+      "target": "almanac",
+      "reason": "Proverbio completo e distinto sulla persistenza del carattere.",
+      "publish": false
+    },
+    {
+      "id": "ost1876-vizi-clame-altri",
+      "decision": "approve_almanac",
+      "target": "almanac",
+      "reason": "Detto breve sulla tendenza delle cattive abitudini ad accumularsi.",
+      "publish": false
+    },
+    {
+      "id": "ost1876-mior-pleasi-scjavacasi",
+      "decision": "approve_almanac",
+      "target": "almanac",
+      "reason": "Massima autonoma sulla flessibilità, distinta dal proverbio già presente sull'albero giovane.",
+      "publish": false
+    },
+    {
+      "id": "ost1876-nissun-sort-no-vul-sinti",
+      "decision": "approve_almanac",
+      "target": "almanac",
+      "reason": "Proverbio completo sull'ostinazione nel non ascoltare.",
+      "publish": false
+    },
+    {
+      "id": "ost1876-pesta-aghe-mortar",
+      "decision": "approve_almanac",
+      "target": "almanac",
+      "reason": "Immagine proverbiale completa sulla fatica inutile.",
+      "publish": false
+    },
+    {
+      "id": "ost1876-timp-maduris-int",
+      "decision": "approve_almanac",
+      "target": "almanac",
+      "reason": "Massima generale sulla maturazione delle persone attraverso il tempo.",
+      "publish": false
+    },
+    {
+      "id": "ost1876-dure-vinc",
+      "decision": "approve_almanac",
+      "target": "almanac",
+      "reason": "Massima breve e autonoma sulla perseveranza.",
+      "publish": false
+    },
+    {
+      "id": "ost1876-ognun-pense-so-mut",
+      "decision": "approve_almanac",
+      "target": "almanac",
+      "reason": "Detto generale completo sulla diversità dei punti di vista.",
+      "publish": false
+    },
+    {
+      "id": "ost1876-scomence-mal-finis-pies",
+      "decision": "approve_almanac",
+      "target": "almanac",
+      "reason": "Avvertimento autonomo sull'importanza dell'inizio.",
+      "publish": false
+    },
+    {
+      "id": "ost1876-fortune-jude-tente",
+      "decision": "approve_almanac",
+      "target": "almanac",
+      "reason": "Massima positiva e completa sull'iniziativa.",
+      "publish": false
+    },
+    {
+      "id": "ost1876-vul-aghe-fontane",
+      "decision": "approve_almanac",
+      "target": "almanac",
+      "reason": "Immagine concreta e autosufficiente sull'iniziativa personale.",
+      "publish": false
+    },
+    {
+      "id": "ost1876-vue-pierd-doman-vuadagne",
+      "decision": "approve_almanac",
+      "target": "almanac",
+      "reason": "Detto generale sull'alternanza della sorte, senza vincoli di calendario.",
+      "publish": false
+    },
+    {
+      "id": "ost1876-ogni-di-no-fieste",
+      "decision": "approve_almanac",
+      "target": "almanac",
+      "reason": "Massima generale e immediata sull'alternanza tra festa e dovere.",
+      "publish": false
+    },
+    {
+      "id": "ost1876-ogni-fadie-premi",
+      "decision": "approve_almanac",
+      "target": "almanac",
+      "reason": "Detto positivo, breve e adatto alla rotazione generale.",
+      "publish": false
+    },
+    {
+      "id": "ost1876-robe-mal-cuistade",
+      "decision": "approve_almanac",
+      "target": "almanac",
+      "reason": "Massima completa sull'onestà e sulle conseguenze di ciò che è ottenuto male.",
+      "publish": false
+    },
+    {
+      "id": "ost1876-pan-sudat-no-robat",
+      "decision": "approve_almanac",
+      "target": "almanac",
+      "reason": "Proverbio rurale completo sul valore del lavoro onesto.",
+      "publish": false
+    },
+    {
+      "id": "ost1876-ingjan-torne-ingjanador",
+      "decision": "approve_almanac",
+      "target": "almanac",
+      "reason": "Massima autonoma sulle conseguenze dell'inganno.",
+      "publish": false
+    },
+    {
+      "id": "ost1876-picule-macule-tapet",
+      "decision": "approve_almanac",
+      "target": "almanac",
+      "reason": "Immagine proverbiale chiara sull'effetto di un piccolo difetto.",
+      "publish": false
+    },
+    {
+      "id": "ost1876-fi-des-sos-azions",
+      "decision": "approve_almanac",
+      "target": "almanac",
+      "reason": "Massima generale e completa sulla responsabilità personale.",
+      "publish": false
+    },
+    {
+      "id": "ost1876-prometi-mantigni",
+      "decision": "approve_almanac",
+      "target": "almanac",
+      "reason": "Detto breve e autonomo sulla coerenza tra parola e azione.",
+      "publish": false
+    },
+    {
+      "id": "ost1876-peraule-fas-om",
+      "decision": "approve_almanac",
+      "target": "almanac",
+      "reason": "Formula tradizionale concisa sul valore della parola data.",
+      "publish": false
+    },
+    {
+      "id": "ost1876-gjave-no-met-fontane-sech",
+      "decision": "approve_almanac",
+      "target": "almanac",
+      "reason": "Immagine concreta e autonoma sull'equilibrio tra consumo e risorse.",
+      "publish": false
+    },
+    {
+      "id": "ost1876-gotis-spessis-forin-clap",
+      "decision": "approve_almanac",
+      "target": "almanac",
+      "reason": "Massima breve e riconoscibile sulla forza della costanza.",
+      "publish": false
+    },
+    {
+      "id": "ost1876-divisions-rovinin-fameis",
+      "decision": "approve_almanac",
+      "target": "almanac",
+      "reason": "Detto generale e comprensibile sull'unita familiare.",
+      "publish": false
+    },
+    {
+      "id": "ost1876-sta-ben-no-si-movi",
+      "decision": "approve_almanac",
+      "target": "almanac",
+      "reason": "Formula prudenziale breve, completa e priva di vincoli temporali.",
+      "publish": false
+    },
+    {
+      "id": "ost1876-ogni-lavade-fruiade",
+      "decision": "approve_almanac",
+      "target": "almanac",
+      "reason": "Immagine domestica tradizionale sull'usura prodotta da ogni intervento.",
+      "publish": false
+    },
+    {
+      "id": "ost1876-spint-poc-spint-trop",
+      "decision": "approve_almanac",
+      "target": "almanac",
+      "reason": "Massima economica autonoma sul costo delle scelte solo apparentemente convenienti.",
+      "publish": false
+    },
+    {
+      "id": "ost1876-poc-spes-jemple-borse",
+      "decision": "approve_almanac",
+      "target": "almanac",
+      "reason": "Detto breve sulla continuita dei piccoli risparmi.",
+      "publish": false
+    },
+    {
+      "id": "ost1876-no-contente-poc-pierd-trop",
+      "decision": "approve_almanac",
+      "target": "almanac",
+      "reason": "Avvertimento generale e completo contro l'avidita.",
+      "publish": false
+    },
+    {
+      "id": "ost1876-umins-fasin-robe",
+      "decision": "approve_almanac",
+      "target": "almanac",
+      "reason": "Massima chiara sul rapporto tra valore umano e ricchezza.",
+      "publish": false
+    },
+    {
+      "id": "ost1876-cur-content-pan-forment",
+      "decision": "approve_almanac",
+      "target": "almanac",
+      "reason": "Immagine rurale positiva sul valore della contentezza.",
+      "publish": false
+    },
+    {
+      "id": "ost1876-rich-no-baste-content",
+      "decision": "approve_almanac",
+      "target": "almanac",
+      "reason": "Detto generale e immediato sui limiti della ricchezza.",
+      "publish": false
+    },
+    {
+      "id": "ost1876-fa-come-si-pues",
+      "decision": "approve_almanac",
+      "target": "almanac",
+      "reason": "Massima completa e pratica sull'adattamento alle possibilita reali.",
+      "publish": false
+    },
+    {
+      "id": "ost1876-ridade-claut-casse",
+      "decision": "approve_almanac",
+      "target": "almanac",
+      "reason": "Immagine popolare incisiva sul valore benefico della risata.",
+      "publish": false
+    },
+    {
+      "id": "ost1876-superbie-fie-ignorance",
+      "decision": "approve_almanac",
+      "target": "almanac",
+      "reason": "Sentenza morale breve e autonoma sulla superbia.",
+      "publish": false
+    },
+    {
+      "id": "ost1876-dit-fat-gran-trat",
+      "decision": "approve_almanac",
+      "target": "almanac",
+      "reason": "Formula tradizionale concisa sulla distanza tra parole e azioni.",
+      "publish": false
+    },
+    {
+      "id": "ost1876-rispiete-se-stes",
+      "decision": "approve_almanac",
+      "target": "almanac",
+      "reason": "Massima breve e autonoma sul rispetto di se stessi.",
+      "publish": false
+    },
+    {
+      "id": "ost1876-umilie-ven-esaltat",
+      "decision": "approve_almanac",
+      "target": "almanac",
+      "reason": "Sentenza morale completa sull'umilta, priva di vincoli temporali.",
+      "publish": false
+    },
+    {
+      "id": "ost1876-vante-ben-pierd-merit",
+      "decision": "approve_almanac",
+      "target": "almanac",
+      "reason": "Detto chiaro e autosufficiente sul valore discreto delle buone azioni.",
+      "publish": false
+    },
+    {
+      "id": "ost1876-rid-altris-rid-se",
+      "decision": "approve_almanac",
+      "target": "almanac",
+      "reason": "Massima immediata sullo scherno e sulla consapevolezza di se.",
+      "publish": false
+    },
+    {
+      "id": "ost1876-miei-fasi-ama-che-teme",
+      "decision": "approve_almanac",
+      "target": "almanac",
+      "reason": "Formula concisa e universalmente comprensibile sul modo di guidare gli altri.",
+      "publish": false
+    },
+    {
+      "id": "ost1876-vendete-no-sane-plais",
+      "decision": "approve_almanac",
+      "target": "almanac",
+      "reason": "Immagine morale autonoma sulle conseguenze della vendetta.",
+      "publish": false
+    },
+    {
+      "id": "ost1876-passade-batoste-coragjos",
+      "decision": "approve_almanac",
+      "target": "almanac",
+      "reason": "Detto ironico e completo sul coraggio dichiarato dopo il pericolo.",
+      "publish": false
+    },
+    {
+      "id": "ost1876-pore-no-resone",
+      "decision": "approve_almanac",
+      "target": "almanac",
+      "reason": "Massima molto breve e autonoma sull'irrazionalita della paura.",
+      "publish": false
+    },
+    {
+      "id": "ost1876-plui-berle-plui-pore",
+      "decision": "approve_almanac",
+      "target": "almanac",
+      "reason": "Osservazione popolare immediata sul rapporto tra clamore e timore.",
+      "publish": false
+    },
+    {
+      "id": "ost1876-diaul-no-plui-neri",
+      "decision": "approve_almanac",
+      "target": "almanac",
+      "reason": "Formula tradizionale chiara contro l'esagerazione dei problemi.",
+      "publish": false
+    },
+    {
+      "id": "ost1876-trist-scampe-nissun-daur",
+      "decision": "approve_almanac",
+      "target": "almanac",
+      "reason": "Massima narrativa breve sul peso della cattiva coscienza.",
+      "publish": false
+    },
+    {
+      "id": "ost1876-om-fas-piore-lof-mangje",
+      "decision": "approve_almanac",
+      "target": "almanac",
+      "reason": "Immagine animale completa sulla necessita di non rendersi indifesi.",
+      "publish": false
+    },
+    {
+      "id": "ost1876-invidie-rosee-se-stesse",
+      "decision": "approve_almanac",
+      "target": "almanac",
+      "reason": "Sentenza breve e autosufficiente sull'effetto dell'invidia.",
+      "publish": false
+    },
+    {
+      "id": "ost1876-miei-pati-compagnie",
+      "decision": "approve_almanac",
+      "target": "almanac",
+      "reason": "Detto completo sul valore della condivisione anche nelle difficolta.",
+      "publish": false
+    },
+    {
+      "id": "ost1876-vivi-lassa-vivi",
+      "decision": "approve_almanac",
+      "target": "almanac",
+      "reason": "Massima generale, positiva e immediatamente comprensibile.",
+      "publish": false
+    },
+    {
+      "id": "ost1876-panze-plene-no-crot-vueide",
+      "decision": "approve_almanac",
+      "target": "almanac",
+      "reason": "Detto breve sulla difficoltà di comprendere il bisogno altrui.",
+      "publish": false
+    },
+    {
+      "id": "ost1876-sac-vueit-no-sta-pits",
+      "decision": "approve_almanac",
+      "target": "almanac",
+      "reason": "Immagine popolare completa e immediatamente comprensibile.",
+      "publish": false
+    },
+    {
+      "id": "ost1876-ogni-cjase-so-cros",
+      "decision": "approve_almanac",
+      "target": "almanac",
+      "reason": "Massima autonoma sulle difficoltà presenti in ogni famiglia.",
+      "publish": false
+    },
+    {
+      "id": "ost1876-ogni-dret-so-ruviers",
+      "decision": "approve_almanac",
+      "target": "almanac",
+      "reason": "Detto conciso sul doppio lato delle cose.",
+      "publish": false
+    },
+    {
+      "id": "ost1876-spinis-nas-rose",
+      "decision": "approve_almanac",
+      "target": "almanac",
+      "reason": "Immagine positiva e autosufficiente sulla possibilità del bene nelle difficoltà.",
+      "publish": false
+    },
+    {
+      "id": "ost1876-soreli-so-maglis",
+      "decision": "approve_almanac",
+      "target": "almanac",
+      "reason": "Massima figurata chiara sull'imperfezione di ogni cosa.",
+      "publish": false
+    },
+    {
+      "id": "ost1876-tristis-gnovis-indenant",
+      "decision": "approve_almanac",
+      "target": "almanac",
+      "reason": "Osservazione popolare breve sulla rapidità con cui si diffondono le cattive notizie.",
+      "publish": false
+    },
+    {
+      "id": "ost1876-cognos-ben-cuant-pierdut",
+      "decision": "approve_almanac",
+      "target": "almanac",
+      "reason": "Massima completa sul valore riconosciuto dopo una perdita.",
+      "publish": false
+    },
+    {
+      "id": "ost1876-necessitat-virtut",
+      "decision": "approve_almanac",
+      "target": "almanac",
+      "reason": "Formula tradizionale autonoma sulla capacità di adattarsi alle circostanze.",
+      "publish": false
+    },
+    {
+      "id": "ost1876-sperance-ultime-pierdisi",
+      "decision": "approve_almanac",
+      "target": "almanac",
+      "reason": "Proverbio noto, positivo e privo di vincoli temporali.",
+      "publish": false
+    },
+    {
+      "id": "ost1876-poc-justizie-no-trop-pecjat",
+      "decision": "approve_almanac",
+      "target": "almanac",
+      "reason": "Massima morale chiara sul valore della rettitudine rispetto all'abbondanza.",
+      "publish": false
+    },
+    {
+      "id": "ost1876-soreli-scjalde-ducj",
+      "decision": "approve_almanac",
+      "target": "almanac",
+      "reason": "Immagine naturale breve sul carattere universale dei beni comuni.",
+      "publish": false
+    },
+    {
+      "id": "ost1876-timp-sane-ogni-plae",
+      "decision": "approve_almanac",
+      "target": "almanac",
+      "reason": "Massima completa e consolatoria sul trascorrere del tempo.",
+      "publish": false
+    },
+    {
+      "id": "ost1876-da-timp-al-timp",
+      "decision": "approve_almanac",
+      "target": "almanac",
+      "reason": "Invito breve e autonomo alla pazienza.",
+      "publish": false
+    },
+    {
+      "id": "ost1876-perdona-no-dismentea",
+      "decision": "approve_almanac",
+      "target": "almanac",
+      "reason": "Massima morale completa e comprensibile senza spiegazione.",
+      "publish": false
+    },
+    {
+      "id": "ost1876-inocent-patis-pecjador",
+      "decision": "approve_almanac",
+      "target": "almanac",
+      "reason": "Massima autonoma sulle conseguenze che possono ricadere su chi non ha colpa.",
+      "publish": false
+    },
+    {
+      "id": "ost1876-no-pietat-no-felicitat",
+      "decision": "approve_almanac",
+      "target": "almanac",
+      "reason": "Detto morale breve e comprensibile senza il contesto delle varianti vicine.",
+      "publish": false
+    },
+    {
+      "id": "ost1876-no-fas-altris",
+      "decision": "approve_almanac",
+      "target": "almanac",
+      "reason": "Regola di reciprocità completa e priva di riferimenti temporali.",
+      "publish": false
+    },
+    {
+      "id": "ost1876-man-lave-altre",
+      "decision": "approve_almanac",
+      "target": "almanac",
+      "reason": "Immagine popolare immediata sulla collaborazione reciproca.",
+      "publish": false
+    },
+    {
+      "id": "ost1876-ducj-bisugne-un-altri",
+      "decision": "approve_almanac",
+      "target": "almanac",
+      "reason": "Massima essenziale sull'interdipendenza tra le persone.",
+      "publish": false
+    },
+    {
+      "id": "ost1876-da-subit-dos-voltis",
+      "decision": "approve_almanac",
+      "target": "almanac",
+      "reason": "Detto autonomo sul valore di un aiuto offerto senza ritardo.",
+      "publish": false
+    },
+    {
+      "id": "ost1876-plase-clame-altri",
+      "decision": "approve_almanac",
+      "target": "almanac",
+      "reason": "Formula concisa sulla reciprocità dei favori.",
+      "publish": false
+    },
+    {
+      "id": "ost1876-disgraciis-cognossin-amis",
+      "decision": "approve_almanac",
+      "target": "almanac",
+      "reason": "Massima completa sul valore dell'amicizia nelle difficoltà.",
+      "publish": false
+    },
+    {
+      "id": "ost1876-contentasi-fat-so",
+      "decision": "approve_almanac",
+      "target": "almanac",
+      "reason": "Massima completa sulla contentezza e sull'apprezzare ciò che si ha.",
+      "publish": false
+    },
+    {
+      "id": "ost1876-dome-farine-no-pan",
+      "decision": "approve_almanac",
+      "target": "almanac",
+      "reason": "Immagine concreta sulla necessità di più elementi per compiere un lavoro.",
+      "publish": false
+    },
+    {
+      "id": "ost1876-cent-pinsirs-no-pain-debit",
+      "decision": "approve_almanac",
+      "target": "almanac",
+      "reason": "Massima chiara sulla differenza tra preoccuparsi e risolvere un problema.",
+      "publish": false
+    },
+    {
+      "id": "ost1876-prin-fa-di-pensa",
+      "decision": "approve_almanac",
+      "target": "almanac",
+      "reason": "Invito completo a valutare le conseguenze prima di agire o parlare.",
+      "publish": false
+    },
+    {
+      "id": "ost1876-peraule-no-merite-rispueste",
+      "decision": "approve_almanac",
+      "target": "almanac",
+      "reason": "Massima autonoma sulla misura nel rispondere.",
+      "publish": false
+    },
+    {
+      "id": "ost1876-no-po-di-ben-miei-tase",
+      "decision": "approve_almanac",
+      "target": "almanac",
+      "reason": "Detto completo sulla prudenza nel parlare.",
+      "publish": false
+    },
+    {
+      "id": "ost1876-sinti-ducj-fa-so-mut",
+      "decision": "approve_almanac",
+      "target": "almanac",
+      "reason": "Invito ad ascoltare i consigli mantenendo autonomia di giudizio.",
+      "publish": false
+    },
+    {
+      "id": "ost1876-conseiti-trops-scielg-miei",
+      "decision": "approve_almanac",
+      "target": "almanac",
+      "reason": "Massima autonoma sul valore del confronto prima di scegliere.",
+      "publish": false
+    },
+    {
+      "id": "ost1876-fevele-doman",
+      "decision": "approve_almanac",
+      "target": "almanac",
+      "reason": "Invito breve a lasciare decantare le parole prima di pronunciarle.",
+      "publish": false
+    },
+    {
+      "id": "ost1876-pecjat-no-pecjador",
+      "decision": "approve_almanac",
+      "target": "almanac",
+      "reason": "Formula completa sulla discrezione nel riferire una colpa.",
+      "publish": false
+    },
+    {
+      "id": "ost1876-vue-dis-ai-falat",
+      "decision": "approve_almanac",
+      "target": "almanac",
+      "reason": "Massima chiara sul riconoscere i propri errori.",
+      "publish": false
+    },
+    {
+      "id": "ost1876-cjacaris-no-jemple-panze",
+      "decision": "approve_almanac",
+      "target": "almanac",
+      "reason": "Immagine popolare immediata sulla differenza tra parole e sostanza.",
+      "publish": false
+    },
+    {
+      "id": "ost1876-no-di-tac-fin-sac",
+      "decision": "approve_almanac",
+      "target": "almanac",
+      "reason": "Detto autonomo contro le conclusioni premature.",
+      "publish": false
+    },
+    {
+      "id": "ost1876-predi-fale-altar",
+      "decision": "approve_almanac",
+      "target": "almanac",
+      "reason": "Formula concisa sull'errore come possibilità comune a tutti.",
+      "publish": false
+    },
+    {
+      "id": "ost1876-promet-altris-paie-se",
+      "decision": "approve_almanac",
+      "target": "almanac",
+      "reason": "Avvertimento completo sulla responsabilità di promettere per conto altrui.",
+      "publish": false
+    },
+    {
+      "id": "ost1876-scove-denant-puarte",
+      "decision": "approve_almanac",
+      "target": "almanac",
+      "reason": "Immagine concreta che invita a guardare prima ai propri difetti.",
+      "publish": false
+    },
+    {
+      "id": "ost1876-lasse-disin-fas-ben",
+      "decision": "approve_almanac",
+      "target": "almanac",
+      "reason": "Invito autonomo a non farsi guidare dalle chiacchiere altrui.",
+      "publish": false
+    },
+    {
+      "id": "ost1876-maraveis-tre-dis",
+      "decision": "approve_almanac",
+      "target": "almanac",
+      "reason": "Massima breve sulla durata effimera dello stupore e delle novità.",
+      "publish": false
+    },
+    {
+      "id": "ost1876-amis-public-corez-segret",
+      "decision": "approve_almanac",
+      "target": "almanac",
+      "reason": "Regola completa sul rispetto e sulla lealtà nell'amicizia.",
+      "publish": false
+    },
+    {
+      "id": "ost1876-no-di-ce-no-sa-ciert",
+      "decision": "approve_almanac",
+      "target": "almanac",
+      "reason": "Invito diretto a non presentare come certo ciò che non si conosce.",
+      "publish": false
+    },
+    {
+      "id": "ost1876-cjacaris-lungjis-gnot-curte",
+      "decision": "approve_almanac",
+      "target": "almanac",
+      "reason": "Detto conviviale completo e comprensibile senza spiegazioni aggiuntive.",
+      "publish": false
+    },
+    {
+      "id": "ost1876-vizi-vistit-virtut",
+      "decision": "approve_almanac",
+      "target": "almanac",
+      "reason": "Massima autonoma sull'ipocrisia, separata dai passaggi offensivi dello stesso blocco.",
+      "publish": false
+    },
+    {
+      "id": "ost1876-aghe-cidine-puarte-ruvine",
+      "decision": "approve_almanac",
+      "target": "almanac",
+      "reason": "Immagine popolare autonoma che invita a non sottovalutare ciò che agisce senza rumore.",
+      "publish": false
+    },
+    {
+      "id": "ost1876-abit-no-fas-frari",
+      "decision": "approve_almanac",
+      "target": "almanac",
+      "reason": "Detto completo e immediato sulla differenza tra apparenza e sostanza.",
+      "publish": false
+    },
+    {
+      "id": "ost1876-plui-dis-mancul-fas",
+      "decision": "approve_almanac",
+      "target": "almanac",
+      "reason": "Massima breve e autonoma sulla distanza tra parole e azioni.",
+      "publish": false
+    },
+    {
+      "id": "ost1876-crodi-dut-o-nuje",
+      "decision": "approve_almanac",
+      "target": "almanac",
+      "reason": "Detto equilibrato e comprensibile sul valore del giudizio critico.",
+      "publish": false
+    },
+    {
+      "id": "ost1876-promet-masse-manten-nuje",
+      "decision": "approve_almanac",
+      "target": "almanac",
+      "reason": "Avvertimento autonomo contro le promesse eccessive.",
+      "publish": false
+    },
+    {
+      "id": "ost1876-onestat-sta-tai-fats",
+      "decision": "approve_almanac",
+      "target": "almanac",
+      "reason": "Formula essenziale che lega il valore morale alle azioni concrete.",
+      "publish": false
+    },
+    {
+      "id": "ost1876-cjanta-dal-cur",
+      "decision": "approve_almanac",
+      "target": "almanac",
+      "reason": "Detto autonomo e positivo sulla sincerità di ciò che si esprime.",
+      "publish": false
+    },
+    {
+      "id": "ost1876-peraule-tire-altre",
+      "decision": "approve_almanac",
+      "target": "almanac",
+      "reason": "Formula breve e conviviale sul naturale susseguirsi delle parole.",
+      "publish": false
+    },
+    {
+      "id": "ost1876-bausiis-no-vegnin-fur",
+      "decision": "approve_almanac",
+      "target": "almanac",
+      "reason": "Massima completa sulle conseguenze delle menzogne.",
+      "publish": false
+    },
+    {
+      "id": "ost1876-timp-bon-testemoni",
+      "decision": "approve_almanac",
+      "target": "almanac",
+      "reason": "Massima concisa sul tempo come prova dei fatti.",
+      "publish": false
+    },
+    {
+      "id": "ost1876-insult-di-cui-lu-fas",
+      "decision": "approve_almanac",
+      "target": "almanac",
+      "reason": "Detto autonomo che restituisce la responsabilità dell'offesa a chi la compie.",
+      "publish": false
+    },
+    {
+      "id": "ost1876-fas-ben-cence-cjala-cui",
+      "decision": "approve_almanac",
+      "target": "almanac",
+      "reason": "Invito universale e immediato ad agire bene senza distinzioni.",
+      "publish": false
+    },
+    {
+      "id": "ost1876-done-ingrat-piert-dos-voltis",
+      "decision": "approve_almanac",
+      "target": "almanac",
+      "reason": "Massima autonoma sull'ingratitudine e sul valore di ciò che viene donato.",
+      "publish": false
+    },
+    {
+      "id": "ost1876-no-spuda-plat-che-si-mangje",
+      "decision": "approve_almanac",
+      "target": "almanac",
+      "reason": "Immagine popolare completa contro l'ingratitudine.",
+      "publish": false
+    },
+    {
+      "id": "ost1876-plases-amis-ver-nemis",
+      "decision": "approve_almanac",
+      "target": "almanac",
+      "reason": "Osservazione autonoma e comprensibile sul diverso effetto dei favori e della sincerità.",
+      "publish": false
+    },
+    {
+      "id": "ost1876-no-si-sa-mai-avonde",
+      "decision": "approve_almanac",
+      "target": "almanac",
+      "reason": "Massima autonoma sul valore di continuare a conoscere e imparare.",
+      "publish": false
+    },
+    {
+      "id": "ost1876-ben-save-poc-di-dut",
+      "decision": "approve_almanac",
+      "target": "almanac",
+      "reason": "Detto breve e comprensibile sull'utilità di una conoscenza ampia.",
+      "publish": false
+    },
+    {
+      "id": "ost1876-plui-sa-mancul-sa",
+      "decision": "approve_almanac",
+      "target": "almanac",
+      "reason": "Paradosso popolare autonomo sulla consapevolezza dei limiti del sapere.",
+      "publish": false
+    },
+    {
+      "id": "ost1876-plui-sa-plui-impara",
+      "decision": "approve_almanac",
+      "target": "almanac",
+      "reason": "Massima positiva e completa sul desiderio di continuare a imparare.",
+      "publish": false
+    },
+    {
+      "id": "ost1876-nissun-nas-mestri",
+      "decision": "approve_almanac",
+      "target": "almanac",
+      "reason": "Detto essenziale sul valore dell'esperienza e dell'apprendimento.",
+      "publish": false
+    },
+    {
+      "id": "ost1876-fuarce-fa-impare",
+      "decision": "approve_almanac",
+      "target": "almanac",
+      "reason": "Formula immediata sull'apprendimento attraverso la pratica.",
+      "publish": false
+    },
+    {
+      "id": "ost1876-sa-fa-sa-comanda",
+      "decision": "approve_almanac",
+      "target": "almanac",
+      "reason": "Massima autonoma che lega la capacità di guidare alla conoscenza pratica.",
+      "publish": false
+    },
+    {
+      "id": "ost1876-save-no-sta-stomi",
+      "decision": "approve_almanac",
+      "target": "almanac",
+      "reason": "Immagine popolare breve che presenta la conoscenza come ricchezza, non come peso.",
+      "publish": false
+    },
+    {
+      "id": "ost1876-savi-no-mai-sol",
+      "decision": "approve_almanac",
+      "target": "almanac",
+      "reason": "Detto conciso sulla compagnia offerta dal pensiero e dalla conoscenza.",
+      "publish": false
+    },
+    {
+      "id": "ost1876-san-plui-doi-che-un",
+      "decision": "approve_almanac",
+      "target": "almanac",
+      "reason": "Massima autonoma sul valore del confronto e della collaborazione.",
+      "publish": false
+    },
+    {
+      "id": "ost1876-fevele-trop-pense-poc",
+      "decision": "approve_almanac",
+      "target": "almanac",
+      "reason": "Avvertimento breve e autonomo sul parlare senza riflettere.",
+      "publish": false
+    },
+    {
+      "id": "ost1876-fale-premure-pentis",
+      "decision": "approve_almanac",
+      "target": "almanac",
+      "reason": "Massima completa sulle conseguenze della fretta.",
+      "publish": false
+    },
+    {
+      "id": "ost1876-un-fal-nas-mil",
+      "decision": "approve_almanac",
+      "target": "almanac",
+      "reason": "Immagine popolare autonoma sulla propagazione degli errori.",
+      "publish": false
+    },
+    {
+      "id": "ost1876-no-va-indenant-torne-indaur",
+      "decision": "approve_almanac",
+      "target": "almanac",
+      "reason": "Massima concisa sulla necessità di progredire.",
+      "publish": false
+    },
+    {
+      "id": "ost1876-grops-vegnin-pietin",
+      "decision": "approve_almanac",
+      "target": "almanac",
+      "reason": "Detto completo e immediato sulle conseguenze che prima o poi emergono.",
+      "publish": false
+    },
+    {
+      "id": "ost1876-no-pae-debit-stes-di",
+      "decision": "approve_almanac",
+      "target": "almanac",
+      "reason": "Detto autonomo sulle conseguenze che maturano nel tempo.",
+      "publish": false
+    },
+    {
+      "id": "ost1876-fat-mal-fasi-pinitince",
+      "decision": "approve_almanac",
+      "target": "almanac",
+      "reason": "Massima completa sulla responsabilità personale per le proprie azioni.",
+      "publish": false
+    },
+    {
+      "id": "ost1876-no-vus-sepin-no-falis",
+      "decision": "approve_almanac",
+      "target": "almanac",
+      "reason": "Avvertimento autonomo che lega la discrezione alla responsabilità delle azioni.",
+      "publish": false
+    },
+    {
+      "id": "ost1876-daspo-ridi-ven-vai",
+      "decision": "approve_almanac",
+      "target": "almanac",
+      "reason": "Massima generale distinta, breve e priva di vincoli temporali.",
+      "publish": false
+    },
+    {
+      "id": "ost1876-daspo-dolc-ven-amar",
+      "decision": "approve_almanac",
+      "target": "almanac",
+      "reason": "Massima generale distinta, breve e priva di vincoli temporali.",
+      "publish": false
+    },
+    {
+      "id": "ost1876-daspo-seren-ven-ploie",
+      "decision": "approve_almanac",
+      "target": "almanac",
+      "reason": "Detto generale sul mutare del tempo, senza riferimenti a una giornata o stagione specifica.",
+      "publish": false
+    },
+    {
+      "id": "ost1876-union-fas-fuarce",
+      "decision": "approve_almanac",
+      "target": "almanac",
+      "reason": "Massima generale distinta, breve e priva di vincoli temporali.",
+      "publish": false
+    },
+    {
+      "id": "ost1876-necessitat-fas-om-mestri",
+      "decision": "approve_almanac",
+      "target": "almanac",
+      "reason": "Massima generale distinta sul valore formativo della necessità.",
+      "publish": false
+    },
+    {
+      "id": "ost1876-par-fa-bisugne-scomenca",
+      "decision": "approve_almanac",
+      "target": "almanac",
+      "reason": "Invito generale, breve e autonomo a cominciare ciò che si vuole realizzare.",
+      "publish": false
+    },
+    {
+      "id": "ost1876-nol-baste-scomenca-seguita",
+      "decision": "approve_almanac",
+      "target": "almanac",
+      "reason": "Massima generale e completa sul valore della costanza.",
+      "publish": false
+    },
+    {
+      "id": "ost1876-compagnie-fas-fa-trop",
+      "decision": "approve_almanac",
+      "target": "almanac",
+      "reason": "Osservazione popolare generale e autonoma sull'influenza della compagnia.",
+      "publish": false
+    }
+  ]
+}

@@ -1,0 +1,139 @@
+{
+  "schemaVersion": 1,
+  "batchId": "ud-go-pn-enrichment-milestones-02-fur-review",
+  "sourceResearchBatchId": "ud-go-pn-enrichment-milestones-02",
+  "reviewedAt": "2026-08-31",
+  "runtimeIntegration": false,
+  "reviewMethod": "assisted_standard_reference_review",
+  "approvalBasis": "user_delegated_assisted_editorial_review",
+  "reviewer": "assistant",
+  "independentHumanReview": false,
+  "approvalNote": "Decisione editoriale assistita sotto il mandato di completamento Scopri. Le fonti ARLeF verificano il lessico, non certificano queste frasi; nessuna revisione professionale indipendente né lettura frase per frase attribuita all'utente.",
+  "summary": {
+    "totalRecords": 6,
+    "approved": 6,
+    "pendingHumanReview": 0
+  },
+  "records": [
+    {
+      "id": "gemona-palazzo-comunale-1502",
+      "status": "approved",
+      "labelFur": "A scomencin i lavôrs par tornâ a fâ il palaç comunâl",
+      "notes": "Scomençâ, lavôrs, tornâ a fâ, palaç e comunâl verificati in HTML ARLeF. La parafrasi di rifare evita un sostantivo non attestato; la frase indica l'inizio dei lavori, non il completamento.",
+      "references": [
+        {
+          "url": "https://superdizionari.arlef.it/ricerca?term=iniziare&language=it&gui=fur",
+          "note": "Voce completa in HTML: scomençâ nell'accezione di dare inizio."
+        },
+        {
+          "url": "https://superdizionari.arlef.it/ricerca?term=lavoro&language=it&gui=fur",
+          "note": "Voce completa in HTML: lavôr e plurale lavôrs per opere tecniche."
+        },
+        {
+          "url": "https://superdizionari.arlef.it/ricerca?term=rifare&language=it&gui=fur",
+          "note": "Voce completa in HTML: tornâ a fâ, anche per rifare un edificio o una sua parte."
+        },
+        {
+          "url": "https://superdizionari.arlef.it/ricerca?term=palazzo&language=it&gui=fur",
+          "note": "Voce completa in HTML: palaç."
+        },
+        {
+          "url": "https://superdizionari.arlef.it/ricerca?term=comunale&language=it&gui=fur",
+          "note": "Voce completa in HTML: comunâl."
+        }
+      ]
+    },
+    {
+      "id": "gemona-archivio-cinema-2008",
+      "status": "approved",
+      "labelFur": "Al ven viert l’Archivio Cinema del Friuli Venezia Giulia",
+      "notes": "Vierzi e viert verificati nell'accezione dell'apertura di una struttura. Il nome proprio Archivio Cinema del Friuli Venezia Giulia resta identico nelle due lingue; non è tradotto in un nome ufficiale inventato.",
+      "references": [
+        {
+          "url": "https://superdizionari.arlef.it/ricerca?term=aprire&language=it&gui=fur",
+          "note": "Voce completa in HTML: vierzi e viert; apertura di luoghi e attività."
+        }
+      ]
+    },
+    {
+      "id": "grado-stazione-cura-1892",
+      "status": "approved",
+      "labelFur": "Grau al oten il titul di «Azienda di cura»",
+      "notes": "Otignî, al oten e titul verificati in HTML ARLeF. Grau resta il toponimo del profilo approvato; Azienda di cura è la denominazione storica italiana citata, non un nome ufficiale friulano inventato.",
+      "references": [
+        {
+          "url": "https://superdizionari.arlef.it/ricerca?term=ottenere&language=it&gui=fur",
+          "note": "Voce completa nel risultato HTML: otignî."
+        },
+        {
+          "url": "https://arlef.it/lenghe-e-culture/cine/",
+          "note": "Uso istituzionale della forma al oten nel paragrafo su Prime di sere."
+        },
+        {
+          "url": "https://superdizionari.arlef.it/ricerca?term=titolo&language=it&gui=fur",
+          "note": "Voce completa nel risultato HTML: titul."
+        }
+      ]
+    },
+    {
+      "id": "grado-ponte-girevole-1936",
+      "status": "approved",
+      "labelFur": "Al ven inaugurât il puint zirevul che al coleghe Grau ae tiereferme",
+      "notes": "Inaugurâ, puint, zirevul, colegâ e tiereferme controllati nelle voci HTML ARLeF. Conservato Grau dal profilo. La frase non include il giorno dell'inaugurazione, controverso fra le fonti.",
+      "references": [
+        {
+          "url": "https://superdizionari.arlef.it/ricerca?term=inaugurare&language=it&gui=fur",
+          "note": "Voce completa nel risultato HTML: inaugurâ."
+        },
+        {
+          "url": "https://superdizionari.arlef.it/ricerca?term=ponte&language=it&gui=fur",
+          "note": "Voce completa nel risultato HTML: puint."
+        },
+        {
+          "url": "https://superdizionari.arlef.it/ricerca?term=girevole&language=it&gui=fur",
+          "note": "Voce completa nel risultato HTML: zirevul."
+        },
+        {
+          "url": "https://superdizionari.arlef.it/ricerca?term=collegare&language=it&gui=fur",
+          "note": "Voce completa nel risultato HTML: colegâ."
+        },
+        {
+          "url": "https://superdizionari.arlef.it/ricerca?term=terraferma&language=it&gui=fur",
+          "note": "Voce completa nel risultato HTML: tiereferme."
+        }
+      ]
+    },
+    {
+      "id": "aviano-1615-santuario-madonna-del-monte",
+      "status": "approved",
+      "labelFur": "Consacrât il santuari «Madonna del Monte»",
+      "notes": "Consacrâ e santuari verificati in HTML ARLeF. Madonna del Monte resta il nome proprio della fonte, evitando di confondere il luogo con Castelmonte. La consacrazione non è una fondazione né la conferma storica di un'apparizione.",
+      "references": [
+        {
+          "url": "https://superdizionari.arlef.it/lemma/consacrare/21977?language=it&oneshot=1&gui=fur",
+          "note": "Consacrare → consacrâ; HTML letto direttamente nella revisione assistita."
+        },
+        {
+          "url": "https://superdizionari.arlef.it/lemma/santuario/58053?language=it&oneshot=1&gui=fur",
+          "note": "Santuario → santuari; HTML letto direttamente nella revisione assistita."
+        }
+      ]
+    },
+    {
+      "id": "aviano-1971-festival-folklore-internazionale",
+      "status": "approved",
+      "labelFur": "Il Festival del Folklore al devente internazionâl",
+      "notes": "Deventâ e festival internazionâl verificati nelle fonti HTML ARLeF. Il Festival del Folklore conserva il proprio nome. La frase riguarda il passaggio internazionale del 1971, non la fondazione o il programma di un'edizione attuale.",
+      "references": [
+        {
+          "url": "https://superdizionari.arlef.it/lemma/diventare/24104?language=it&oneshot=1&gui=fur",
+          "note": "Diventare → deventâ; HTML letto direttamente nella revisione assistita."
+        },
+        {
+          "url": "https://arlef.it/progjets/manifestazioni-sul-territorio/",
+          "note": "Uso istituzionale di festival internazionâl nell'HTML letto."
+        }
+      ]
+    }
+  ]
+}

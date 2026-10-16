@@ -1,0 +1,156 @@
+{
+  "schemaVersion": 1,
+  "generatedAt": "2026-07-16",
+  "purpose": "Trentaseiesimo lotto Scopri IT: audit editoriale di quindici candidati della coda. Una figura storica triestina entra come memoria primaria; due campioni con risultati internazionali eccezionali e una testata legata all'esodo istriano entrano come approfondimenti secondari. Undici candidati vengono esclusi per rilievo generico, sport ordinario, legame limitato alla nascita o insufficiente solidità documentaria. La pubblicazione resta bloccata fino alla revisione FUR dei quattro record selezionati.",
+  "policy": {
+    "readyForUi": false,
+    "furDeferred": true,
+    "dateFormat": "DD-MM",
+    "requiresFinalItalianApproval": true,
+    "excludeDeaths": true,
+    "excludeGenericPoliticalProfiles": true,
+    "excludeGenericProfessionalProfiles": true,
+    "excludeSportsOnlyProfiles": true,
+    "allowExceptionalSportsProfiles": true,
+    "rejectBirthplaceOnlyProfiles": true,
+    "rejectSemanticDuplicates": true,
+    "rejectUncertainCalendarDates": true,
+    "sourceFirst": true,
+    "publishAfterFurOnly": true,
+    "allowMultipleMemoriesPerDate": true,
+    "secondaryOrderedByPriority": true,
+    "doNotPromoteToPrimaryForCoverageOnly": true
+  },
+  "summary": {
+    "reviewed": 15,
+    "keepDaily": 4,
+    "primary": 1,
+    "secondary": 3,
+    "hold": 0,
+    "excluded": 11,
+    "canonicalPrimaryDatesBefore": 238,
+    "canonicalPrimaryDatesAfter": 238,
+    "currentVisiblePrimaryCoverage": 230
+  },
+  "keepDaily": [
+    {
+      "id": "master-fvg-22-10-Q15402993",
+      "wikidataId": "Q15402993",
+      "dateIt": "22-10",
+      "year": 1989,
+      "municipality": "Trieste",
+      "locality": "Trieste",
+      "province": "TS",
+      "canonicalCategory": "sport",
+      "dailyRole": "secondary",
+      "priority": 90,
+      "titleIt": "Piero Codia, dalla Triestina Nuoto al titolo europeo",
+      "copyIt": "Il 22 ottobre 1989 nasce a Trieste Piero Codia. Cresciuto nella Triestina Nuoto, partecipa ai Giochi olimpici di Rio 2016 e nel 2018 vince il titolo europeo dei 100 metri farfalla.",
+      "sourceLabel": "Triestina Nuoto - Storia",
+      "sourceUrl": "https://triestinanuoto.com/storia/",
+      "sourceStatus": "pass",
+      "readyForUi": false
+    },
+    {
+      "id": "master-fvg-26-03-Q3434035",
+      "wikidataId": "Q3434035",
+      "dateIt": "26-03",
+      "year": 1926,
+      "municipality": "Grado",
+      "locality": "Grado",
+      "province": "GO",
+      "canonicalCategory": "sport",
+      "dailyRole": "secondary",
+      "priority": 90,
+      "titleIt": "Aldo Tarlao, da Grado all'argento olimpico",
+      "copyIt": "Il 26 marzo 1926 nasce a Grado Aldo Tarlao. Trasferitosi da bambino a Capodistria, diventa uno dei canottieri italiani del dopoguerra e conquista la medaglia d'argento ai Giochi olimpici di Londra 1948.",
+      "sourceLabel": "Federazione Italiana Canottaggio - Aldo Tarlao",
+      "sourceUrl": "https://www.canottaggio.org/news/2018/la-scomparsa-di-aldo-tarlao-argento-a-londra-48/",
+      "sourceStatus": "pass",
+      "readyForUi": false
+    },
+    {
+      "id": "master-fvg-29-07-Q3817949",
+      "wikidataId": "Q3817949",
+      "dateIt": "29-07",
+      "year": 1945,
+      "municipality": "Trieste",
+      "locality": "Trieste",
+      "province": "TS",
+      "canonicalCategory": "storia",
+      "dailyRole": "secondary",
+      "priority": 76,
+      "titleIt": "L'Arena di Pola, un giornale attraverso l'esodo",
+      "copyIt": "Il 29 luglio 1945 esce a Pola il primo numero de L'Arena di Pola. La testata segue l'esodo: nel 1947 trasferisce la redazione prima a Trieste e poi a Gorizia, continuando a custodire memoria e cultura della comunità polesana.",
+      "sourceLabel": "L'Arena di Pola - Le annate 1945-1947",
+      "sourceUrl": "https://arenadipola.it/index.php/90-notizie-ultime/822-larena-di-pola-presentate-a-rovigno-le-annate-194519461947",
+      "sourceStatus": "pass",
+      "readyForUi": false
+    },
+    {
+      "id": "master-fvg-07-05-Q3945954",
+      "wikidataId": "Q3945954",
+      "dateIt": "07-05",
+      "year": 1860,
+      "municipality": "Trieste",
+      "locality": "Trieste",
+      "province": "TS",
+      "canonicalCategory": "storia",
+      "dailyRole": "primary",
+      "priority": 88,
+      "titleIt": "Salvatore Barzilai, da Trieste al governo delle terre liberate",
+      "copyIt": "Il 7 maggio 1860 nasce a Trieste Salvatore Barzilai. Protagonista dell'irredentismo triestino e tra i fondatori del Partito Repubblicano Italiano, nel 1915 entra nel governo Salandra come ministro per le terre liberate; nel 1920 viene nominato senatore.",
+      "sourceLabel": "Ministero della Cultura - Lives and Libraries",
+      "sourceUrl": "https://www.movio.beniculturali.it/uniroma1/livesandlibraries/it/barzilai",
+      "sourceStatus": "pass",
+      "readyForUi": false
+    }
+  ],
+  "hold": [],
+  "excluded": [
+    {
+      "id": "master-fvg-22-01-Q357693",
+      "reason": "Carriera sportiva professionistica con risultati nazionali, ma senza titolo mondiale o medaglia olimpica e con rapporto territoriale non sufficiente per la soglia eccezionale di Scopri."
+    },
+    {
+      "id": "master-fvg-22-09-Q3433481",
+      "reason": "Medaglia olimpica di valore, ma il materiale disponibile collega Carlo Turcato al FVG soltanto per la nascita a Cervignano; manca un legame territoriale sostanziale oltre il dato anagrafico."
+    },
+    {
+      "id": "master-fvg-18-01-Q3737702",
+      "reason": "Profilo scientifico privo di una biografia e di fonti sufficienti per dimostrare un contributo storico autonomo o un legame territoriale sostanziale."
+    },
+    {
+      "id": "master-fvg-01-07-Q3759654",
+      "reason": "Nascita di una società commerciale contemporanea: rilevante per la storia d'impresa, ma non abbastanza significativa come memoria giornaliera rispetto alla storia regionale già disponibile per la data."
+    },
+    {
+      "id": "master-fvg-03-01-Q1891505",
+      "reason": "Profilo sportivo ordinario con legame al FVG limitato alla nascita a Udine e senza risultati eccezionali richiesti dalla rubrica."
+    },
+    {
+      "id": "master-fvg-03-03-Q282119",
+      "reason": "Attrice conosciuta, ma il rapporto con Trieste resta prevalentemente anagrafico e non emerge un lascito storico-culturale territoriale sufficiente per Scopri."
+    },
+    {
+      "id": "master-fvg-04-02-Q1335813",
+      "reason": "Atleta internazionale nato a Udine ma cresciuto e attivo sportivamente in Francia; il collegamento regionale resta limitato alla nascita."
+    },
+    {
+      "id": "master-fvg-04-08-Q509664",
+      "reason": "Profilo sportivo con risultati nazionali e internazionali, ma senza titolo mondiale o medaglia olimpica e già sovrastato da memorie storiche e culturali più forti nella stessa data."
+    },
+    {
+      "id": "master-fvg-05-01-Q273804",
+      "reason": "Attrice di rilievo, ma senza un legame territoriale documentato oltre la nascita a Trieste e senza un impatto storico-culturale regionale autonomo."
+    },
+    {
+      "id": "master-fvg-05-05-Q3741568",
+      "reason": "Carriera cinematografica non sufficiente a superare la soglia delle figure illustri della rubrica; il rapporto con Trieste resta essenzialmente anagrafico."
+    },
+    {
+      "id": "master-fvg-07-12-Q14251607",
+      "reason": "Profilo sportivo ordinario senza medaglia olimpica o titolo mondiale e con rilevanza storica insufficiente rispetto alla memoria architettonica già presente nella data."
+    }
+  ]
+}

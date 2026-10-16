@@ -1,0 +1,54 @@
+{
+  "schemaVersion": 1,
+  "batchId": "ud-quality-10",
+  "reviewedAt": "2026-09-06",
+  "runtimeIntegration": false,
+  "purpose": "Verifica di fonti istituzionali per tappe esistenti e preparazione della successiva integrazione editoriale.",
+  "baseline": { "profiles": 215, "milestones": 463, "profilesBelowThreeMilestones": 99 },
+  "reviews": [
+    {
+      "recordId": "trasaghis-avasinis",
+      "istatCode": "030124",
+      "year": 1945,
+      "status": "source_verified_pending_integration",
+      "source": {
+        "label": "Regione FVG - Commemorazione dell'eccidio di Avasinis",
+        "type": "regional_institution",
+        "url": "https://www.regione.fvg.it/rafvg/comunicati/comunicato.act?dir=%2Frafvg%2Fcms%2FRAFVG%2Frss%2F&nm=20240502151708003"
+      },
+      "method": "full_public_html_read",
+      "evidenceSummary": "Il comunicato del 2 maggio 2024 ricorda l'eccidio avvenuto ad Avasinis il 2 maggio 1945 e le 51 vittime civili.",
+      "limits": "Non attribuire con certezza il reparto militare specifico né aggiungere interpretazioni sulle motivazioni.",
+      "copyChange": false,
+      "furReview": "existing_copy_unchanged_no_new_linguistic_certification"
+    },
+    {
+      "recordId": "trasaghis-earthquake",
+      "istatCode": "030124",
+      "year": 1976,
+      "status": "source_verified_pending_integration",
+      "source": {
+        "label": "Vigili del Fuoco - Il terremoto del Friuli del maggio 1976",
+        "type": "national_institution",
+        "url": "https://www.vigilfuoco.it/chi-siamo/memoria-storica/notizie-storiche/il-terremoto-del-friuli-del-maggio-1976"
+      },
+      "method": "full_public_html_read",
+      "evidenceSummary": "La ricostruzione storica include esplicitamente Trasaghis fra i centri che subirono estese distruzioni nel terremoto del maggio 1976.",
+      "limits": "Non dedurre percentuali di edifici distrutti, numero di vittime locali o date di ricostruzione.",
+      "copyChange": false,
+      "furReview": "existing_copy_unchanged_no_new_linguistic_certification"
+    }
+  ],
+  "candidates": [
+    {
+      "recordId": "moimacco-attestazione-1192",
+      "istatCode": "030060",
+      "year": 1192,
+      "label": { "it": "Moimacco è menzionato come possedimento del capitolo della Chiesa di Cividale", "fur": null },
+      "sourceUrl": "https://siusa-archivi.cultura.gov.it/cgi-bin/siusa/pagina.pl?Chiave=9164&TipoPag=prodente",
+      "status": "search_evidence_only_pending_full_source_and_fur_review",
+      "readyForUi": false,
+      "limits": "Il lettore Web non ha aperto la pagina completa. L'estratto non basta alla promozione. Il 1192 non va trasformato nella fondazione del paese."
+    }
+  ]
+}

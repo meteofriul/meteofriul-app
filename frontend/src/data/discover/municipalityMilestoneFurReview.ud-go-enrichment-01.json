@@ -1,0 +1,56 @@
+{
+  "schemaVersion": 1,
+  "batchId": "ud-go-enrichment-milestones-01-fur-review",
+  "sourceResearchBatchId": "ud-go-enrichment-milestones-01",
+  "reviewedAt": "2026-08-31",
+  "runtimeIntegration": false,
+  "reviewMethod": "assisted_standard_reference_review",
+  "approvalBasis": "user_delegated_assisted_editorial_review",
+  "reviewer": "assistant",
+  "independentHumanReview": false,
+  "approvalNote": "Decisione editoriale assistita sotto il mandato di completamento Scopri. Le fonti ARLeF verificano il lessico, non certificano queste frasi; nessuna revisione professionale indipendente né lettura frase per frase attribuita all'utente.",
+  "summary": { "totalRecords": 4, "approved": 4, "pendingHumanReview": 0 },
+  "records": [
+    {
+      "id": "bagnaria-arsa-censimento-1375",
+      "status": "approved",
+      "labelFur": "Un censiment al regjistre nons, etât e mistîrs dai abitants dai paîs",
+      "notes": "Censiment, regjistrâ e mistîr sono attestati nei rispettivi significati. La frase non aggiunge un primato o un'istituzione moderna.",
+      "references": [
+        { "url": "https://superdizionari.arlef.it/lemma/censimento/28345?language=it&oneshot=1&gui=fur", "note": "Censiment, anche riferito alla popolazione." },
+        { "url": "https://superdizionari.arlef.it/lemma/registrare/1138?language=it&oneshot=1&gui=fur", "note": "Regjistrâ: annotare in un registro." },
+        { "url": "https://superdizionari.arlef.it/lemma/mestiere/7550?language=it&oneshot=1&gui=fur", "note": "Mistîr, anche nel senso di professione." }
+      ]
+    },
+    {
+      "id": "bagnaria-arsa-necropoli-1990",
+      "status": "approved",
+      "labelFur": "A vegnin scuviertis undis tombis de necropoli alt medievâl",
+      "notes": "Alt medievâl è la forma separata del dizionario; necropoli è femminile invariabile. Scuviertis concorda con tombis, non attribuisce origine longobarda a tutte le tombe.",
+      "references": [
+        { "url": "https://superdizionari.arlef.it/lemma/altomedievale/13716?language=it&oneshot=1&gui=fur", "note": "Alt medievâl, in due parole." },
+        { "url": "https://superdizionari.arlef.it/lemma/necropoli/49501?language=it&oneshot=1&gui=fur", "note": "Necropoli; la definizione attesta tombis." },
+        { "url": "https://superdizionari.arlef.it/lemma/undici/60999?language=it&oneshot=1&gui=fur", "note": "Undis, numerale invariabile." },
+        { "url": "https://superdizionari.arlef.it/lemma/scoprire/2950?language=it&oneshot=1&gui=fur", "note": "Scuvierzi, anche per ritrovamenti importanti dopo ricerche." }
+      ]
+    },
+    {
+      "id": "talmassons-feudo-bojani-1339",
+      "status": "approved",
+      "labelFur": "Talmassons al ven dât in feut a Corardo Bojani",
+      "notes": "Feut nell'accezione storica di territorio concesso in beneficio. Il nome della persona rimane quello della fonte comunale.",
+      "references": [
+        { "url": "https://superdizionari.arlef.it/lemma/feudo/37701?language=it&oneshot=1&gui=fur", "note": "Feut; nella definizione compare teritori dât in benefici." }
+      ]
+    },
+    {
+      "id": "monfalcone-cantiere-navale-1908",
+      "status": "approved",
+      "labelFur": "La famee Cosulich e fonde a Monfalcon il Cantiere Navale Triestino",
+      "notes": "Fondâ nell'accezione istitutiva; Monfalcon è il toponimo già usato dal profilo. Cantiere Navale Triestino rimane il nome proprio storico italiano, non una denominazione ufficiale FUR inventata.",
+      "references": [
+        { "url": "https://superdizionari.arlef.it/lemma/fondare/9640?language=it&oneshot=1&gui=fur", "note": "Fondâ anche per istituire un'associazione o una società." }
+      ]
+    }
+  ]
+}

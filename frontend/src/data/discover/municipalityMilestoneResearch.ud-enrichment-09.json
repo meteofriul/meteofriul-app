@@ -1,0 +1,207 @@
+{
+  "schemaVersion": 1,
+  "batchId": "ud-enrichment-milestones-09",
+  "snapshotDate": "2026-09-02",
+  "purpose": "Ricerca di tre tappe per Magnano in Riviera, Taipana e Tavagnacco; revisione FUR e promozione sono documentate separatamente.",
+  "runtimeIntegration": false,
+  "initialTotalMilestones": 460,
+  "editorialPolicy": {
+    "sourceEvidenceRequired": true,
+    "ambiguousDatesExcluded": true,
+    "italianCopyStatus": "editorial_draft",
+    "friulianCopyStatus": "pending_assisted_review",
+    "readyForUi": false
+  },
+  "excludedClaims": [
+    {
+      "municipality": "Magnano in Riviera",
+      "claim": "Il castello di Prampero viene fondato nel 1107.",
+      "reason": "Il 1107 data una menzione documentaria; la fonte ammette una costruzione precedente.",
+      "sourceUrl": "https://consorziocastelli.it/biblioteca/pubblicazioni/notiziario/anno-2006/107.pdf"
+    },
+    {
+      "municipality": "Magnano in Riviera",
+      "claim": "Una licenza del patriarca Poppo prova senza dubbi la fondazione nel 1025.",
+      "reason": "La tavola rotonda distingue tradizione, epigrafe e fonti documentarie e segnala incertezza sulla licenza. Non si sceglie una data certa di fondazione.",
+      "sourceUrl": "https://consorziocastelli.it/biblioteca/pubblicazioni/notiziario/anno-2006/107.pdf"
+    },
+    {
+      "municipality": "Taipana",
+      "claim": "Il Comune di Taipana nasce nel 1931.",
+      "reason": "Il decreto autorizza il cambio di nome di un Comune già esistente, non la fondazione dell'ente.",
+      "sourceUrl": "https://www.gazzettaufficiale.it/eli/id/1931/11/21/031U1382/sg"
+    },
+    {
+      "municipality": "Taipana",
+      "claim": "La nuova denominazione entra in vigore il 15 ottobre 1931.",
+      "reason": "Il 15 ottobre è la data del decreto; l'entrata in vigore indicata dalla Gazzetta è il 6 dicembre 1931.",
+      "sourceUrl": "https://www.gazzettaufficiale.it/eli/id/1931/11/21/031U1382/sg"
+    },
+    {
+      "municipality": "Tavagnacco",
+      "claim": "Nel 1512 Pietro Fuluto dipinge tutti gli affreschi di San Leonardo a Cavalicco.",
+      "reason": "La fonte distingue la Madonna in trono dagli affreschi di altri autori, alcuni risalenti alla fine del Quattrocento.",
+      "sourceUrl": "https://agenda.comune.tavagnacco.ud.it/Luoghi/Chiesa-antica-di-Cavalicco"
+    },
+    {
+      "municipality": "Tavagnacco",
+      "claim": "La Madonna in trono del 1512 è dipinta nella chiesa di San Leonardo a Osais.",
+      "reason": "Il Dizionario biografico distingue Cavalicco nel 1512 dagli affreschi di Osais del 1506; il fatto resta nel territorio di Tavagnacco.",
+      "sourceUrl": "https://www.dizionariobiograficodeifriulani.it/fuluto-pietro/"
+    }
+  ],
+  "editorialOmissions": [
+    {
+      "municipality": "Magnano in Riviera",
+      "year": 1131,
+      "claim": "Un altro manoscritto menziona il castello di Prampero.",
+      "decision": "source_verified_not_promoted",
+      "reason": "Il documento è ricordato dalla stessa tavola rotonda; non si aggiunge una seconda attestazione quasi equivalente nello stesso piccolo lotto.",
+      "sourceUrl": "https://consorziocastelli.it/biblioteca/pubblicazioni/notiziario/anno-2006/107.pdf"
+    },
+    {
+      "municipality": "Taipana",
+      "year": 1930,
+      "claim": "Il Consiglio comunale delibera il cambio di denominazione il 31 luglio.",
+      "decision": "source_verified_not_promoted",
+      "reason": "Il testo del decreto richiama la deliberazione preparatoria; la tappa privilegia l'autorizzazione statale del 1931.",
+      "sourceUrl": "https://www.gazzettaufficiale.it/atto/vediMenuHTML?atto.codiceRedazionale=031U1382&atto.dataPubblicazioneGazzetta=1931-11-21&tipoSerie=serie_generale&tipoVigenza=originario"
+    },
+    {
+      "municipality": "Tavagnacco",
+      "year": 1261,
+      "claim": "La chiesa di San Leonardo a Cavalicco viene rimaneggiata.",
+      "decision": "source_verified_not_promoted",
+      "reason": "La scheda comunale documenta il rifacimento; il lotto seleziona un solo fatto e privilegia l'opera firmata e datata.",
+      "sourceUrl": "https://agenda.comune.tavagnacco.ud.it/Luoghi/Chiesa-antica-di-Cavalicco"
+    }
+  ],
+  "municipalities": [
+    {
+      "istatCode": "030052",
+      "municipality": "Magnano in Riviera",
+      "province": "UD",
+      "currentMilestoneCount": 2,
+      "currentMilestoneIds": [
+        "magnano-comune-1827",
+        "magnano-afro-prampero-1961"
+      ],
+      "decision": "source_verified_it_fur_pending",
+      "candidates": [
+        {
+          "id": "magnano-prampero-document-1107",
+          "year": 1107,
+          "label": {
+            "it": "Il castello di Prampero è documentato per iscritto",
+            "fur": null
+          },
+          "evidence": "Il notiziario Castelli n. 107 del Consorzio Castelli FVG, marzo 2006, p. 2, riferisce la tavola rotonda del 3 febbraio sul Castello di Prampero. Il confronto documentario presentato dallo storico Reinhard Härtel colloca al 1107 un documento che cita il castello e il suo fondatore, distinguendolo dall'ipotesi di costruzione precedente e dalla tradizione del 1025.",
+          "verificationNote": "Consultato il testo del PDF istituzionale, p. 2. La tappa riguarda una menzione scritta, non la fondazione né un primato assoluto. La ricerca storica ud-zero-milestones-03 aveva escluso cronologie discordanti (1025, 1025-1121, 1225, 1265): quello snapshot resta intatto; il nuovo documento consente un fatto più circoscritto.",
+          "source": {
+            "label": "Consorzio Castelli FVG - Castelli n. 107, marzo 2006, p. 2",
+            "type": "cultural_institution",
+            "url": "https://consorziocastelli.it/biblioteca/pubblicazioni/notiziario/anno-2006/107.pdf",
+            "checkedAt": "2026-09-02"
+          },
+          "duplicateReview": {
+            "exactDuplicate": false,
+            "relatedRecordIds": [
+              "magnano-comune-1827",
+              "magnano-afro-prampero-1961"
+            ],
+            "note": "La menzione medievale è distinta dall'istituzione comunale del 1827 e dal soggiorno creativo di Afro dal 1961, già presenti nel profilo."
+          }
+        }
+      ]
+    },
+    {
+      "istatCode": "030113",
+      "municipality": "Taipana",
+      "province": "UD",
+      "currentMilestoneCount": 2,
+      "currentMilestoneIds": [
+        "taipana-slavic-settlement",
+        "taipana-italy"
+      ],
+      "decision": "source_verified_it_fur_pending",
+      "candidates": [
+        {
+          "id": "taipana-platischis-renaming-decree-1931",
+          "year": 1931,
+          "label": {
+            "it": "Il Comune di Platischis viene autorizzato a chiamarsi Taipana",
+            "fur": null
+          },
+          "evidence": "Il Regio decreto 15 ottobre 1931, n. 1382, autorizza il Comune di Platischis, in provincia di Udine, a modificare la denominazione in Taipana. La Gazzetta Ufficiale distingue la data del decreto, la pubblicazione del 21 novembre 1931 e l'entrata in vigore del 6 dicembre 1931.",
+          "verificationNote": "Consultati la scheda ufficiale e il testo originario dell'atto. La deliberazione comunale del 31 luglio 1930 e la domanda del 13 maggio 1931 precedono l'autorizzazione; la timeline conserva solo l'anno 1931, senza confondere firma, pubblicazione ed efficacia.",
+          "source": {
+            "label": "Gazzetta Ufficiale - Regio decreto 15 ottobre 1931, n. 1382",
+            "type": "national_institution",
+            "url": "https://www.gazzettaufficiale.it/eli/id/1931/11/21/031U1382/sg",
+            "checkedAt": "2026-09-02"
+          },
+          "supportingSources": [
+            {
+              "label": "Gazzetta Ufficiale - Testo originario del Regio decreto n. 1382/1931",
+              "type": "national_institution",
+              "url": "https://www.gazzettaufficiale.it/atto/vediMenuHTML?atto.codiceRedazionale=031U1382&atto.dataPubblicazioneGazzetta=1931-11-21&tipoSerie=serie_generale&tipoVigenza=originario",
+              "checkedAt": "2026-09-02"
+            }
+          ],
+          "duplicateReview": {
+            "exactDuplicate": false,
+            "relatedRecordIds": [
+              "taipana-slavic-settlement",
+              "taipana-italy"
+            ],
+            "note": "Il cambio di denominazione è distinto dagli insediamenti slavi e dall'annessione al Regno d'Italia nel 1866; non modifica il contesto linguistico raccontato dal profilo."
+          }
+        }
+      ]
+    },
+    {
+      "istatCode": "030118",
+      "municipality": "Tavagnacco",
+      "province": "UD",
+      "currentMilestoneCount": 2,
+      "currentMilestoneIds": [
+        "tavagnacco-aggregations",
+        "tavagnacco-pagnacco-restored"
+      ],
+      "decision": "source_verified_it_fur_pending",
+      "candidates": [
+        {
+          "id": "tavagnacco-fuluto-madonna-cavalicco-1512",
+          "year": 1512,
+          "label": {
+            "it": "Pietro Fuluto dipinge la Madonna in trono a Cavalicco",
+            "fur": null
+          },
+          "evidence": "La scheda del Comune di Tavagnacco sulla chiesa antica di Cavalicco attribuisce a Pietro Fuluto la Madonna in trono, affrescata nel 1512 in San Leonardo. Il Dizionario biografico dei friulani dell'Istituto Pio Paschini conferma anno e luogo e precisa che il dipinto è firmato e datato.",
+          "source": {
+            "label": "Comune di Tavagnacco - Chiesa antica di Cavalicco",
+            "type": "official_municipality",
+            "url": "https://agenda.comune.tavagnacco.ud.it/Luoghi/Chiesa-antica-di-Cavalicco",
+            "checkedAt": "2026-09-02"
+          },
+          "supportingSources": [
+            {
+              "label": "Istituto Pio Paschini - Dizionario biografico dei friulani: Pietro Fuluto",
+              "type": "cultural_institution",
+              "url": "https://www.dizionariobiograficodeifriulani.it/fuluto-pietro/",
+              "checkedAt": "2026-09-02"
+            }
+          ],
+          "duplicateReview": {
+            "exactDuplicate": false,
+            "relatedRecordIds": [
+              "tavagnacco-aggregations",
+              "tavagnacco-pagnacco-restored"
+            ],
+            "note": "La testimonianza artistica di Cavalicco è distinta dalle aggregazioni amministrative del 1928 e dall'autonomia di Pagnacco del 1947."
+          }
+        }
+      ]
+    }
+  ]
+}

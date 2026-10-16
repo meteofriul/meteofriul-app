@@ -1,0 +1,171 @@
+{
+  "account": "meteofriul@gmail.com",
+  "configuredProject": "meteo-friul",
+  "project": {
+    "projectId": "meteo-friul",
+    "projectNumber": "49007668366",
+    "state": "ACTIVE"
+  },
+  "enabledApis": [
+    "cloudscheduler.googleapis.com",
+    "firestore.googleapis.com",
+    "iam.googleapis.com",
+    "logging.googleapis.com",
+    "monitoring.googleapis.com",
+    "run.googleapis.com"
+  ],
+  "serviceAccounts": [
+    {
+      "email": "community-moderation-digest@meteo-friul.iam.gserviceaccount.com",
+      "disabled": false,
+      "userManagedKeyCount": 0
+    },
+    {
+      "email": "community-moderation-scheduler@meteo-friul.iam.gserviceaccount.com",
+      "disabled": false,
+      "userManagedKeyCount": 0
+    }
+  ],
+  "jobs": [
+    {
+      "name": "meteofriul-community-moderation-digest",
+      "region": "europe-west1",
+      "ready": true,
+      "image": "europe-west1-docker.pkg.dev/meteo-friul/cloud-run-source-deploy/meteofriul-api@sha256:07c50b39437ecb07e9fd707fd8cd60e706d9f5822637652f30bfb5d6063ce0f5",
+      "serviceAccount": "community-moderation-digest@meteo-friul.iam.gserviceaccount.com",
+      "command": ["python"],
+      "args": [
+        "-m",
+        "app.jobs.emit_community_moderation_digest",
+        "--apply"
+      ],
+      "env": [
+        {"name": "FIREBASE_PROJECT_ID", "value": "meteo-friul"},
+        {"name": "COMMUNITY_STORAGE", "value": "firestore"}
+      ],
+      "containerCount": 1,
+      "volumeCount": 0,
+      "volumeMountCount": 0,
+      "taskCount": 1,
+      "parallelism": 1,
+      "maxRetries": 0,
+      "timeoutSeconds": 120,
+      "cpu": "1",
+      "memory": "512Mi",
+      "iamBindings": [
+        {
+          "role": "roles/run.invoker",
+          "members": [
+            "serviceAccount:community-moderation-scheduler@meteo-friul.iam.gserviceaccount.com"
+          ]
+        }
+      ]
+    }
+  ],
+  "schedulers": [
+    {
+      "name": "community-moderation-digest",
+      "region": "europe-west1",
+      "state": "ENABLED",
+      "schedule": "40 8,20 * * *",
+      "timeZone": "Europe/Rome",
+      "uri": "https://run.googleapis.com/v2/projects/meteo-friul/locations/europe-west1/jobs/meteofriul-community-moderation-digest:run",
+      "httpMethod": "POST",
+      "authType": "oauth",
+      "serviceAccount": "community-moderation-scheduler@meteo-friul.iam.gserviceaccount.com",
+      "scope": "https://www.googleapis.com/auth/cloud-platform",
+      "attemptDeadlineSeconds": 120,
+      "maxRetryAttempts": 0,
+      "body": "",
+      "headers": []
+    }
+  ],
+  "projectIamBindings": [
+    {
+      "role": "roles/datastore.user",
+      "members": [
+        "serviceAccount:community-moderation-digest@meteo-friul.iam.gserviceaccount.com"
+      ]
+    },
+    {
+      "role": "roles/logging.logWriter",
+      "members": [
+        "serviceAccount:community-moderation-digest@meteo-friul.iam.gserviceaccount.com"
+      ]
+    },
+    {
+      "role": "roles/cloudscheduler.serviceAgent",
+      "members": [
+        "serviceAccount:service-49007668366@gcp-sa-cloudscheduler.iam.gserviceaccount.com"
+      ]
+    }
+  ],
+  "notificationChannel": {
+    "name": "projects/meteo-friul/notificationChannels/11334808831344967323",
+    "type": "email",
+    "enabled": true,
+    "verificationStatus": "",
+    "emailAddress": "info@meteofriul.it"
+  },
+  "alertPolicies": [
+    {
+      "name": "projects/meteo-friul/alertPolicies/1111111111111111111",
+      "displayName": "Meteo Friul - digest moderazione Community",
+      "enabled": true,
+      "severity": "WARNING",
+      "combiner": "OR",
+      "documentation": {
+        "mimeType": "text/markdown",
+        "content": "Nuove segnalazioni Territorio raggruppate in un digest sanitizzato. Usare il `group_ref` solo per correlare il gruppo tramite lo strumento operatore privato. Il log non contiene ID installazione, chiavi private o coordinate GPS."
+      },
+      "userLabels": {
+        "service": "community-moderation",
+        "signal": "digest-ready"
+      },
+      "conditions": [
+        {
+          "displayName": "Digest moderazione pronto",
+          "type": "conditionMatchedLog",
+          "filter": "log_id(\"meteofriul-community-moderation-digest\") AND jsonPayload.event=\"community_moderation_digest_ready\" AND severity=WARNING",
+          "labelExtractors": []
+        }
+      ],
+      "notificationChannels": [
+        "projects/meteo-friul/notificationChannels/11334808831344967323"
+      ],
+      "notificationRateLimitPeriod": "3600s",
+      "autoClose": "1800s",
+      "notificationPrompts": ["OPENED"]
+    },
+    {
+      "name": "projects/meteo-friul/alertPolicies/2222222222222222222",
+      "displayName": "Meteo Friul - circuito moderazione Community fallito",
+      "enabled": true,
+      "severity": "ERROR",
+      "combiner": "OR",
+      "documentation": {
+        "mimeType": "text/markdown",
+        "content": "Errore del job o dello scheduler di moderazione Territorio. Controllare l'esecuzione `meteofriul-community-moderation-digest`; il digest non viene riconosciuto come consegnato finche' Cloud Logging non lo accetta."
+      },
+      "userLabels": {
+        "service": "community-moderation",
+        "signal": "runtime-failure"
+      },
+      "conditions": [
+        {
+          "displayName": "Errore job o scheduler moderazione",
+          "type": "conditionMatchedLog",
+          "filter": "severity>=ERROR AND ((resource.type=\"cloud_run_job\" AND resource.labels.job_name=\"meteofriul-community-moderation-digest\") OR (resource.type=\"cloud_scheduler_job\" AND resource.labels.job_id=\"community-moderation-digest\"))",
+          "labelExtractors": []
+        }
+      ],
+      "notificationChannels": [
+        "projects/meteo-friul/notificationChannels/11334808831344967323"
+      ],
+      "notificationRateLimitPeriod": "3600s",
+      "autoClose": "1800s",
+      "notificationPrompts": ["OPENED"]
+    }
+  ],
+  "logMetrics": []
+}

@@ -1,0 +1,246 @@
+{
+  "schemaVersion": 1,
+  "batchId": "ostermann-1876-language-review-17",
+  "reviewedAt": "2026-08-02",
+  "sourceDecisionFiles": [
+    "review-decisions-batch-17.json"
+  ],
+  "purpose": "Diciassettesima revisione linguistica ed editoriale dei candidati Ostermann 1876 verificati sul facsimile. Non pubblica contenuti nella UI.",
+  "policy": {
+    "publish": false,
+    "rule": "La normalizzazione FUR conserva il significato attestato nel facsimile e adotta, quando disponibile, la forma proverbiale registrata dal Dizionari de Lenghe Furlane. Le quindici massime sono generali e non ricevono date, feste o stagioni artificiali."
+  },
+  "summary": {
+    "records": 15,
+    "languageReviewed": 15,
+    "mergeExisting": 0,
+    "needsNativeReview": 0
+  },
+  "records": [
+    {
+      "id": "ost1876-aghe-cidine-puarte-ruvine",
+      "reviewStatus": "language_reviewed",
+      "furNormalized": "Aghe cidine e puarte ruvine.",
+      "itFinal": "L'acqua silenziosa porta rovina.",
+      "destination": "almanac",
+      "calendarRule": { "type": "general", "bucket": "wisdom", "fallbackAllowed": true },
+      "duplicateAudit": { "status": "new_distinct" },
+      "evidence": [
+        { "label": "Facsimile Ostermann 1876, p. PDF 251", "kind": "primary" },
+        { "label": "Dizionari de Lenghe Furlane, proverbio registrato alla voce cidin", "kind": "secondary" }
+      ],
+      "editorialNote": "Adottata la forma normalizzata attestata integralmente dal dizionario.",
+      "publish": false
+    },
+    {
+      "id": "ost1876-abit-no-fas-frari",
+      "reviewStatus": "language_reviewed",
+      "furNormalized": "L'abit nol fâs il frari.",
+      "itFinal": "L'abito non fa il frate.",
+      "destination": "almanac",
+      "calendarRule": { "type": "general", "bucket": "wisdom", "fallbackAllowed": true },
+      "duplicateAudit": { "status": "new_distinct" },
+      "evidence": [
+        { "label": "Facsimile Ostermann 1876, p. PDF 251", "kind": "primary" },
+        { "label": "Dizionari de Lenghe Furlane, proverbio registrato alla voce abit", "kind": "secondary" }
+      ],
+      "editorialNote": "Adottata la forma normalizzata attestata integralmente dal dizionario.",
+      "publish": false
+    },
+    {
+      "id": "ost1876-plui-dis-mancul-fas",
+      "reviewStatus": "language_reviewed",
+      "furNormalized": "Cui che plui al dîs mancul al fâs.",
+      "itFinal": "Chi più parla, meno fa.",
+      "destination": "almanac",
+      "calendarRule": { "type": "general", "bucket": "wisdom", "fallbackAllowed": true },
+      "duplicateAudit": { "status": "new_distinct" },
+      "evidence": [
+        { "label": "Facsimile Ostermann 1876, p. PDF 251", "kind": "primary" },
+        { "label": "Dizionari de Lenghe Furlane, proverbio registrato alla voce fâ", "kind": "secondary" }
+      ],
+      "editorialNote": "Adottata la forma normalizzata attestata integralmente dal dizionario.",
+      "publish": false
+    },
+    {
+      "id": "ost1876-crodi-dut-o-nuje",
+      "reviewStatus": "language_reviewed",
+      "furNormalized": "Al è mâl tant crodi dut che no crodi nuie.",
+      "itFinal": "È male credere a tutto quanto non credere a nulla.",
+      "destination": "almanac",
+      "calendarRule": { "type": "general", "bucket": "wisdom", "fallbackAllowed": true },
+      "duplicateAudit": { "status": "new_distinct" },
+      "evidence": [
+        { "label": "Facsimile Ostermann 1876, p. PDF 251", "kind": "primary" },
+        { "label": "Dizionari de Lenghe Furlane, proverbio registrato alla voce crodi", "kind": "secondary" }
+      ],
+      "editorialNote": "Adottata la forma normalizzata attestata integralmente dal dizionario.",
+      "publish": false
+    },
+    {
+      "id": "ost1876-promet-masse-manten-nuje",
+      "reviewStatus": "language_reviewed",
+      "furNormalized": "Cui che al promet masse nol manten nuie.",
+      "itFinal": "Chi promette troppo non mantiene nulla.",
+      "destination": "almanac",
+      "calendarRule": { "type": "general", "bucket": "wisdom", "fallbackAllowed": true },
+      "duplicateAudit": { "status": "new_distinct" },
+      "evidence": [
+        { "label": "Facsimile Ostermann 1876, p. PDF 251", "kind": "primary" },
+        { "label": "Dizionari de Lenghe Furlane, prometi, masse e mantignî", "kind": "secondary" }
+      ],
+      "editorialNote": "Normalizzati il pronome soggetto e la grafia di nuie; mantenuta la struttura del facsimile.",
+      "publish": false
+    },
+    {
+      "id": "ost1876-onestat-sta-tai-fats",
+      "reviewStatus": "language_reviewed",
+      "furNormalized": "L'onestât e sta tai fats.",
+      "itFinal": "L'onestà sta nei fatti.",
+      "destination": "almanac",
+      "calendarRule": { "type": "general", "bucket": "wisdom", "fallbackAllowed": true },
+      "duplicateAudit": { "status": "new_distinct" },
+      "evidence": [
+        { "label": "Facsimile Ostermann 1876, p. PDF 252", "kind": "primary" },
+        { "label": "Dizionari de Lenghe Furlane, onestât e fat", "kind": "secondary" }
+      ],
+      "editorialNote": "Normalizzati l'accento di onestât, il pronome soggetto e il plurale fats.",
+      "publish": false
+    },
+    {
+      "id": "ost1876-cjanta-dal-cur",
+      "reviewStatus": "language_reviewed",
+      "furNormalized": "Cjantâ no si po ben se dal cûr nol ven.",
+      "itFinal": "Non si può cantare bene se non viene dal cuore.",
+      "destination": "almanac",
+      "calendarRule": { "type": "general", "bucket": "wisdom", "fallbackAllowed": true },
+      "duplicateAudit": { "status": "new_distinct" },
+      "evidence": [
+        { "label": "Facsimile Ostermann 1876, p. PDF 252", "kind": "primary" },
+        { "label": "Dizionari de Lenghe Furlane, proverbio registrato alla voce cjantâ", "kind": "secondary" }
+      ],
+      "editorialNote": "Adottata la forma normalizzata attestata integralmente dal dizionario.",
+      "publish": false
+    },
+    {
+      "id": "ost1876-peraule-tire-altre",
+      "reviewStatus": "language_reviewed",
+      "furNormalized": "Une peraule e tire chê altre.",
+      "itFinal": "Una parola tira l'altra.",
+      "destination": "almanac",
+      "calendarRule": { "type": "general", "bucket": "wisdom", "fallbackAllowed": true },
+      "duplicateAudit": { "status": "new_distinct" },
+      "evidence": [
+        { "label": "Facsimile Ostermann 1876, p. PDF 255", "kind": "primary" },
+        { "label": "Dizionari de Lenghe Furlane, proverbio registrato alla voce altri", "kind": "secondary" }
+      ],
+      "editorialNote": "Adottata la forma normalizzata attestata integralmente dal dizionario.",
+      "publish": false
+    },
+    {
+      "id": "ost1876-bausiis-no-vegnin-fur",
+      "reviewStatus": "language_reviewed",
+      "furNormalized": "No bisugne fâ bausiis cun sperance che no vegnin fûr.",
+      "itFinal": "Non bisogna mentire sperando che non venga fuori.",
+      "destination": "almanac",
+      "calendarRule": { "type": "general", "bucket": "wisdom", "fallbackAllowed": true },
+      "duplicateAudit": { "status": "new_distinct" },
+      "evidence": [
+        { "label": "Facsimile Ostermann 1876, p. PDF 253", "kind": "primary" },
+        { "label": "Dizionari de Lenghe Furlane, proverbio registrato alla voce bisugnâ", "kind": "secondary" }
+      ],
+      "editorialNote": "Adottata la forma normalizzata attestata integralmente dal dizionario.",
+      "publish": false
+    },
+    {
+      "id": "ost1876-timp-bon-testemoni",
+      "reviewStatus": "language_reviewed",
+      "furNormalized": "Il timp al è un bon testemoni.",
+      "itFinal": "Il tempo è un buon testimone.",
+      "destination": "almanac",
+      "calendarRule": { "type": "general", "bucket": "wisdom", "fallbackAllowed": true },
+      "duplicateAudit": { "status": "new_distinct" },
+      "evidence": [
+        { "label": "Facsimile Ostermann 1876, p. PDF 253", "kind": "primary" },
+        { "label": "Dizionari de Lenghe Furlane, proverbio registrato alla voce timp", "kind": "secondary" }
+      ],
+      "editorialNote": "Adottata la forma normalizzata attestata integralmente dal dizionario.",
+      "publish": false
+    },
+    {
+      "id": "ost1876-insult-di-cui-lu-fas",
+      "reviewStatus": "language_reviewed",
+      "furNormalized": "L'insult al è di cui che lu fâs e no di cui che lu ricêf.",
+      "itFinal": "L'offesa appartiene a chi la fa, non a chi la riceve.",
+      "destination": "almanac",
+      "calendarRule": { "type": "general", "bucket": "wisdom", "fallbackAllowed": true },
+      "duplicateAudit": { "status": "new_distinct" },
+      "evidence": [
+        { "label": "Facsimile Ostermann 1876, p. PDF 255", "kind": "primary" },
+        { "label": "Dizionari de Lenghe Furlane, proverbio registrato alla voce fâ", "kind": "secondary" }
+      ],
+      "editorialNote": "Adottata la forma normalizzata attestata integralmente dal dizionario.",
+      "publish": false
+    },
+    {
+      "id": "ost1876-fas-ben-cence-cjala-cui",
+      "reviewStatus": "language_reviewed",
+      "furNormalized": "Fâs il ben cence cjalâ a cui.",
+      "itFinal": "Fa' il bene senza guardare a chi.",
+      "destination": "almanac",
+      "calendarRule": { "type": "general", "bucket": "wisdom", "fallbackAllowed": true },
+      "duplicateAudit": { "status": "new_distinct" },
+      "evidence": [
+        { "label": "Facsimile Ostermann 1876, p. PDF 255", "kind": "primary" },
+        { "label": "Dizionari de Lenghe Furlane, proverbio registrato alla voce fâ", "kind": "secondary" }
+      ],
+      "editorialNote": "Adottata la forma normalizzata attestata integralmente dal dizionario.",
+      "publish": false
+    },
+    {
+      "id": "ost1876-done-ingrat-piert-dos-voltis",
+      "reviewStatus": "language_reviewed",
+      "furNormalized": "Cui che al done al ingrât al piert dôs voltis.",
+      "itFinal": "Chi dona all'ingrato perde due volte.",
+      "destination": "almanac",
+      "calendarRule": { "type": "general", "bucket": "wisdom", "fallbackAllowed": true },
+      "duplicateAudit": { "status": "new_distinct" },
+      "evidence": [
+        { "label": "Facsimile Ostermann 1876, p. PDF 257", "kind": "primary" },
+        { "label": "Dizionari de Lenghe Furlane, proverbio registrato alla voce volte", "kind": "secondary" }
+      ],
+      "editorialNote": "Adottata la forma normalizzata attestata integralmente dal dizionario.",
+      "publish": false
+    },
+    {
+      "id": "ost1876-no-spuda-plat-che-si-mangje",
+      "reviewStatus": "language_reviewed",
+      "furNormalized": "No bisugne spudâ sul plat che si mangje.",
+      "itFinal": "Non bisogna sputare nel piatto in cui si mangia.",
+      "destination": "almanac",
+      "calendarRule": { "type": "general", "bucket": "wisdom", "fallbackAllowed": true },
+      "duplicateAudit": { "status": "new_distinct" },
+      "evidence": [
+        { "label": "Facsimile Ostermann 1876, p. PDF 257", "kind": "primary" },
+        { "label": "Dizionari de Lenghe Furlane, proverbio registrato alla voce mangjâ", "kind": "secondary" }
+      ],
+      "editorialNote": "Adottata la forma normalizzata attestata integralmente dal dizionario.",
+      "publish": false
+    },
+    {
+      "id": "ost1876-plases-amis-ver-nemis",
+      "reviewStatus": "language_reviewed",
+      "furNormalized": "Cul fâ plasês tu cuistis amîs, cul dî il vêr nemîs.",
+      "itFinal": "Facendo favori ti guadagni amici, dicendo la verità nemici.",
+      "destination": "almanac",
+      "calendarRule": { "type": "general", "bucket": "wisdom", "fallbackAllowed": true },
+      "duplicateAudit": { "status": "new_distinct" },
+      "evidence": [
+        { "label": "Facsimile Ostermann 1876, p. PDF 257", "kind": "primary" },
+        { "label": "Dizionari de Lenghe Furlane, proverbio registrato alla voce dî", "kind": "secondary" }
+      ],
+      "editorialNote": "Adottata la forma normalizzata attestata integralmente dal dizionario.",
+      "publish": false
+    }
+  ]
+}

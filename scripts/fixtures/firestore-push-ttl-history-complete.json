@@ -1,0 +1,52 @@
+{
+  "schemaVersion": "firestore-push-ttl-history-v1",
+  "projectId": "meteo-friul",
+  "databaseId": "(default)",
+  "verifiedAtUtc": "2026-08-23T12:00:00Z",
+  "ttlPolicies": [
+    {
+      "collectionGroup": "push_official_alert_outbox",
+      "field": "expires_at",
+      "state": "ACTIVE",
+      "expirationOffsetSeconds": 0,
+      "appHorizonDays": 30
+    },
+    {
+      "collectionGroup": "push_local_notice_outbox",
+      "field": "expires_at",
+      "state": "ACTIVE",
+      "expirationOffsetSeconds": 0,
+      "appHorizonDays": 14
+    }
+  ],
+  "collections": [
+    {
+      "collectionGroup": "push_official_alert_outbox",
+      "field": "expires_at",
+      "action": "verified-empty",
+      "readbackMethod": "firestore.runQuery.expires_at-projection",
+      "observedDocumentCount": 0,
+      "missingOrInvalidExpiresAt": 0,
+      "provenance": {
+        "mutationKind": "none-readback-only",
+        "operationAtUtc": "2026-08-23T11:59:00Z",
+        "targetSetSha256": "",
+        "postReadbackSha256": "1111111111111111111111111111111111111111111111111111111111111111"
+      }
+    },
+    {
+      "collectionGroup": "push_local_notice_outbox",
+      "field": "expires_at",
+      "action": "backfilled",
+      "readbackMethod": "firestore.runQuery.expires_at-projection",
+      "observedDocumentCount": 2,
+      "missingOrInvalidExpiresAt": 0,
+      "provenance": {
+        "mutationKind": "atomic-backfill",
+        "operationAtUtc": "2026-08-23T11:58:00Z",
+        "targetSetSha256": "3333333333333333333333333333333333333333333333333333333333333333",
+        "postReadbackSha256": "2222222222222222222222222222222222222222222222222222222222222222"
+      }
+    }
+  ]
+}

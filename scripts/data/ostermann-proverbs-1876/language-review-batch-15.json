@@ -1,0 +1,246 @@
+{
+  "schemaVersion": 1,
+  "batchId": "ostermann-1876-language-review-15",
+  "reviewedAt": "2026-08-02",
+  "sourceDecisionFiles": [
+    "review-decisions-batch-15.json"
+  ],
+  "purpose": "Quindicesima revisione linguistica ed editoriale dei candidati Ostermann 1876 verificati sul facsimile. Non pubblica contenuti nella UI.",
+  "policy": {
+    "publish": false,
+    "rule": "La normalizzazione FUR conserva il significato attestato nel facsimile. Le quindici massime sono generali e non ricevono date, feste o stagioni artificiali."
+  },
+  "summary": {
+    "records": 15,
+    "languageReviewed": 15,
+    "mergeExisting": 0,
+    "needsNativeReview": 0
+  },
+  "records": [
+    {
+      "id": "ost1876-inocent-patis-pecjador",
+      "reviewStatus": "language_reviewed",
+      "furNormalized": "Dispès l'inocent al patìs pal pecjadôr.",
+      "itFinal": "Spesso l'innocente paga per il peccatore.",
+      "destination": "almanac",
+      "calendarRule": { "type": "general", "bucket": "wisdom", "fallbackAllowed": true },
+      "duplicateAudit": { "status": "new_distinct" },
+      "evidence": [
+        { "label": "Facsimile Ostermann 1876, p. PDF 231", "kind": "primary" },
+        { "label": "Dizionari de Lenghe Furlane, dispès, inocent, patî e pecjadôr", "kind": "secondary" }
+      ],
+      "editorialNote": "Normalizzati l'avverbio dispès, il pronome soggetto al e il nome pecjadôr.",
+      "publish": false
+    },
+    {
+      "id": "ost1876-no-pietat-no-felicitat",
+      "reviewStatus": "language_reviewed",
+      "furNormalized": "Dulà che no je pietât, no je felicitât.",
+      "itFinal": "Dove non c'è pietà non c'è felicità.",
+      "destination": "almanac",
+      "calendarRule": { "type": "general", "bucket": "wisdom", "fallbackAllowed": true },
+      "duplicateAudit": { "status": "new_distinct" },
+      "evidence": [
+        { "label": "Facsimile Ostermann 1876, p. PDF 231", "kind": "primary" },
+        { "label": "Dizionari de Lenghe Furlane, dulà, pietât e felicitât", "kind": "secondary" }
+      ],
+      "editorialNote": "Resa in grafia standard la costruzione locativa e normalizzata la copula je.",
+      "publish": false
+    },
+    {
+      "id": "ost1876-no-fas-altris",
+      "reviewStatus": "language_reviewed",
+      "furNormalized": "No sta fâ ai altris ce che no tu vuelis che ti fasin a ti.",
+      "itFinal": "Non fare agli altri ciò che non vuoi che facciano a te.",
+      "destination": "almanac",
+      "calendarRule": { "type": "general", "bucket": "wisdom", "fallbackAllowed": true },
+      "duplicateAudit": { "status": "new_distinct" },
+      "evidence": [
+        { "label": "Facsimile Ostermann 1876, p. PDF 231", "kind": "primary" },
+        { "label": "Dizionari de Lenghe Furlane, fâs ai altris ce che tu volaressis fat a ti", "kind": "secondary" }
+      ],
+      "editorialNote": "Conservata la forma negativa del facsimile e normalizzati vuelis e la congiunzione ce che.",
+      "publish": false
+    },
+    {
+      "id": "ost1876-man-lave-altre",
+      "reviewStatus": "language_reviewed",
+      "furNormalized": "Une man e lave chê altre e dutis dôs a lavin la muse.",
+      "itFinal": "Una mano lava l'altra e tutte e due lavano il viso.",
+      "destination": "almanac",
+      "calendarRule": { "type": "general", "bucket": "wisdom", "fallbackAllowed": true },
+      "duplicateAudit": { "status": "new_distinct" },
+      "evidence": [
+        { "label": "Facsimile Ostermann 1876, p. PDF 231", "kind": "primary" },
+        { "label": "Dizionari de Lenghe Furlane, man, lavâ e muse", "kind": "secondary" }
+      ],
+      "editorialNote": "Aggiunti i pronomi soggetto e normalizzato il dimostrativo chê senza cambiare l'immagine tradizionale.",
+      "publish": false
+    },
+    {
+      "id": "ost1876-ducj-bisugne-un-altri",
+      "reviewStatus": "language_reviewed",
+      "furNormalized": "O vin ducj bisugne un di chel altri.",
+      "itFinal": "Abbiamo tutti bisogno l'uno dell'altro.",
+      "destination": "almanac",
+      "calendarRule": { "type": "general", "bucket": "wisdom", "fallbackAllowed": true },
+      "duplicateAudit": { "status": "new_distinct" },
+      "evidence": [
+        { "label": "Facsimile Ostermann 1876, p. PDF 231", "kind": "primary" },
+        { "label": "Dizionari de Lenghe Furlane, vê bisugne e chel altri", "kind": "secondary" }
+      ],
+      "editorialNote": "Normalizzati il pronome soggetto o e la costruzione un di chel altri.",
+      "publish": false
+    },
+    {
+      "id": "ost1876-da-subit-dos-voltis",
+      "reviewStatus": "language_reviewed",
+      "furNormalized": "Cui che al da subit, al da dôs voltis.",
+      "itFinal": "Chi dà subito dà due volte.",
+      "destination": "almanac",
+      "calendarRule": { "type": "general", "bucket": "wisdom", "fallbackAllowed": true },
+      "duplicateAudit": { "status": "new_distinct" },
+      "evidence": [
+        { "label": "Facsimile Ostermann 1876, p. PDF 232", "kind": "primary" },
+        { "label": "Dizionari de Lenghe Furlane, dâ, subit e dôs voltis", "kind": "secondary" }
+      ],
+      "editorialNote": "Aggiunto il pronome soggetto al in entrambe le proposizioni e conservata la forma proverbiale.",
+      "publish": false
+    },
+    {
+      "id": "ost1876-plase-clame-altri",
+      "reviewStatus": "language_reviewed",
+      "furNormalized": "Un plasê al clame chel altri.",
+      "itFinal": "Un favore chiama l'altro.",
+      "destination": "almanac",
+      "calendarRule": { "type": "general", "bucket": "wisdom", "fallbackAllowed": true },
+      "duplicateAudit": { "status": "new_distinct" },
+      "evidence": [
+        { "label": "Facsimile Ostermann 1876, p. PDF 232", "kind": "primary" },
+        { "label": "Dizionari de Lenghe Furlane, plasê e clamâ", "kind": "secondary" }
+      ],
+      "editorialNote": "Aggiunto il pronome soggetto al e conservato il lessico del facsimile.",
+      "publish": false
+    },
+    {
+      "id": "ost1876-disgraciis-cognossin-amis",
+      "reviewStatus": "language_reviewed",
+      "furNormalized": "Tes disgraciis si cognossin i amîs.",
+      "itFinal": "Nelle disgrazie si conoscono gli amici.",
+      "destination": "almanac",
+      "calendarRule": { "type": "general", "bucket": "wisdom", "fallbackAllowed": true },
+      "duplicateAudit": { "status": "new_distinct" },
+      "evidence": [
+        { "label": "Facsimile Ostermann 1876, p. PDF 233", "kind": "primary" },
+        { "label": "Dizionari de Lenghe Furlane, disgracie, cognossi e amì", "kind": "secondary" }
+      ],
+      "editorialNote": "Normalizzata la preposizione articolata in tes e mantenuto il plurale amîs.",
+      "publish": false
+    },
+    {
+      "id": "ost1876-contentasi-fat-so",
+      "reviewStatus": "language_reviewed",
+      "furNormalized": "Contentâsi dal fat so e gjoldi plui che si pues.",
+      "itFinal": "Accontentarsi di ciò che si ha e goderne quanto si può.",
+      "destination": "almanac",
+      "calendarRule": { "type": "general", "bucket": "wisdom", "fallbackAllowed": true },
+      "duplicateAudit": { "status": "new_distinct" },
+      "evidence": [
+        { "label": "Facsimile Ostermann 1876, p. PDF 234", "kind": "primary" },
+        { "label": "Dizionari de Lenghe Furlane, contentâsi, gjoldi e podê", "kind": "secondary" }
+      ],
+      "editorialNote": "Riuniti i due versi consecutivi e normalizzati gli infiniti e il verbo pues.",
+      "publish": false
+    },
+    {
+      "id": "ost1876-dome-farine-no-pan",
+      "reviewStatus": "language_reviewed",
+      "furNormalized": "Dome cu la farine no si fâs pan.",
+      "itFinal": "Con la sola farina non si fa il pane.",
+      "destination": "almanac",
+      "calendarRule": { "type": "general", "bucket": "wisdom", "fallbackAllowed": true },
+      "duplicateAudit": { "status": "new_distinct" },
+      "evidence": [
+        { "label": "Facsimile Ostermann 1876, p. PDF 234", "kind": "primary" },
+        { "label": "Dizionari de Lenghe Furlane, proverbio registrato alla voce fâ", "kind": "secondary" }
+      ],
+      "editorialNote": "Adottata la forma normalizzata attestata integralmente dal dizionario.",
+      "publish": false
+    },
+    {
+      "id": "ost1876-cent-pinsirs-no-pain-debit",
+      "reviewStatus": "language_reviewed",
+      "furNormalized": "Cent pinsîrs no pain un debit.",
+      "itFinal": "Cento pensieri non pagano un debito.",
+      "destination": "almanac",
+      "calendarRule": { "type": "general", "bucket": "wisdom", "fallbackAllowed": true },
+      "duplicateAudit": { "status": "new_distinct" },
+      "evidence": [
+        { "label": "Facsimile Ostermann 1876, p. PDF 235", "kind": "primary" },
+        { "label": "Dizionari de Lenghe Furlane, pinsîr, paiâ e debit", "kind": "secondary" }
+      ],
+      "editorialNote": "Normalizzati l'accento di pinsîrs e la forma verbale pain; escluse le varianti equivalenti del blocco.",
+      "publish": false
+    },
+    {
+      "id": "ost1876-prin-fa-di-pensa",
+      "reviewStatus": "language_reviewed",
+      "furNormalized": "Prin di fâ e di dî bisugne pensâ ce che al po vignî.",
+      "itFinal": "Prima di fare e di dire bisogna pensare a ciò che può accadere.",
+      "destination": "almanac",
+      "calendarRule": { "type": "general", "bucket": "wisdom", "fallbackAllowed": true },
+      "duplicateAudit": { "status": "new_distinct" },
+      "evidence": [
+        { "label": "Facsimile Ostermann 1876, p. PDF 236", "kind": "primary" },
+        { "label": "Dizionari de Lenghe Furlane, proverbio registrato alla voce fâ", "kind": "secondary" }
+      ],
+      "editorialNote": "Adottata la forma normalizzata attestata integralmente dal dizionario.",
+      "publish": false
+    },
+    {
+      "id": "ost1876-peraule-no-merite-rispueste",
+      "reviewStatus": "language_reviewed",
+      "furNormalized": "Ogni peraule no merite rispueste.",
+      "itFinal": "Non ogni parola merita una risposta.",
+      "destination": "almanac",
+      "calendarRule": { "type": "general", "bucket": "wisdom", "fallbackAllowed": true },
+      "duplicateAudit": { "status": "new_distinct" },
+      "evidence": [
+        { "label": "Facsimile Ostermann 1876, p. PDF 238", "kind": "primary" },
+        { "label": "Dizionari de Lenghe Furlane, peraule, meritâ e rispueste", "kind": "secondary" }
+      ],
+      "editorialNote": "Conservata la forma singolare breve del facsimile e normalizzato il lessico.",
+      "publish": false
+    },
+    {
+      "id": "ost1876-no-po-di-ben-miei-tase",
+      "reviewStatus": "language_reviewed",
+      "furNormalized": "Cuant che no si pues dî ben, al è miei tasê.",
+      "itFinal": "Quando non si può dire bene, è meglio tacere.",
+      "destination": "almanac",
+      "calendarRule": { "type": "general", "bucket": "wisdom", "fallbackAllowed": true },
+      "duplicateAudit": { "status": "new_distinct" },
+      "evidence": [
+        { "label": "Facsimile Ostermann 1876, p. PDF 238", "kind": "primary" },
+        { "label": "Dizionari de Lenghe Furlane, podê, dî, miei e tasê", "kind": "secondary" }
+      ],
+      "editorialNote": "Normalizzati cuant, il verbo pues e la copula al è; mantenuto il significato originale.",
+      "publish": false
+    },
+    {
+      "id": "ost1876-sinti-ducj-fa-so-mut",
+      "reviewStatus": "language_reviewed",
+      "furNormalized": "Sintî ducj e po fâ a so mût.",
+      "itFinal": "Ascoltare tutti e poi fare a modo proprio.",
+      "destination": "almanac",
+      "calendarRule": { "type": "general", "bucket": "wisdom", "fallbackAllowed": true },
+      "duplicateAudit": { "status": "new_distinct" },
+      "evidence": [
+        { "label": "Facsimile Ostermann 1876, p. PDF 240", "kind": "primary" },
+        { "label": "Dizionari de Lenghe Furlane, proverbio registrato alle voci fâ e sintî", "kind": "secondary" }
+      ],
+      "editorialNote": "Adottata la forma normalizzata attestata integralmente dal dizionario.",
+      "publish": false
+    }
+  ]
+}

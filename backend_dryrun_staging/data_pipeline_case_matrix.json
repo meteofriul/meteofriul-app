@@ -1,0 +1,286 @@
+{
+  "schema_version": "1.0",
+  "purpose": "Local non-regression matrix for data-pipeline decisions before any live wiring.",
+  "rules": [
+    "Only active and inactive_confirmed official-alert states can be treated as final app decisions.",
+    "Only inactive_confirmed can clear a previous alert.",
+    "When the primary FVG portal is unreachable and a previous alert is still valid, retain the previous alert without user-facing uncertainty copy.",
+    "Telegram FVG and national DPC are diagnostic support only: they cannot clear alerts and cannot decide no-alert state.",
+    "Telegram FVG and national DPC can never trigger notifications.",
+    "Same-level text changes do not notify unless the change is explicitly marked important.",
+    "Notification is only allowed by dry-run contract; this matrix never means live FCM is connected.",
+    "OSMER can show the bulletin only when can_use_as_current is true.",
+    "The native map can render only when can_render_native_map is true."
+  ],
+  "official_alert_cases": [
+    {
+      "id": "no_alert_confirmed",
+      "description": "Regional source read successfully and confirms no active alert.",
+      "state": "inactive_confirmed",
+      "can_clear_previous_alert": true,
+      "can_notify": false,
+      "home_show_alert": false,
+      "bulletin_show_notice": false,
+      "expected_overall_with_ready_osmer": "ready_for_review"
+    },
+    {
+      "id": "yellow_alert",
+      "description": "Regional yellow alert is active.",
+      "state": "active",
+      "severity": "yellow",
+      "can_clear_previous_alert": false,
+      "can_notify": true,
+      "home_show_alert": true,
+      "bulletin_show_notice": true,
+      "expected_overall_with_ready_osmer": "ready_for_review"
+    },
+    {
+      "id": "orange_alert",
+      "description": "Regional orange alert is active.",
+      "state": "active",
+      "severity": "orange",
+      "can_clear_previous_alert": false,
+      "can_notify": true,
+      "home_show_alert": true,
+      "bulletin_show_notice": true,
+      "expected_overall_with_ready_osmer": "ready_for_review"
+    },
+    {
+      "id": "red_alert",
+      "description": "Regional red alert is active.",
+      "state": "active",
+      "severity": "red",
+      "can_clear_previous_alert": false,
+      "can_notify": true,
+      "home_show_alert": true,
+      "bulletin_show_notice": true,
+      "expected_overall_with_ready_osmer": "ready_for_review"
+    },
+    {
+      "id": "primary_unreachable_keep_previous_alert",
+      "description": "Primary FVG portal cannot be reached, but the previous alert is still valid and must remain visible without uncertainty wording.",
+      "state": "stale_held_active",
+      "severity": "yellow",
+      "previous_alert_valid": true,
+      "primary_source_reachable": false,
+      "diagnostics_only": [
+        "telegram_public_channel",
+        "national_dpc"
+      ],
+      "diagnostics_can_decide": false,
+      "can_clear_previous_alert": false,
+      "can_notify": false,
+      "home_show_alert": true,
+      "home_copy_mode": "retain_previous_alert",
+      "home_show_uncertainty_copy": false,
+      "bulletin_show_notice": true,
+      "bulletin_copy_mode": "retain_previous_alert",
+      "bulletin_show_unreachable_copy": false,
+      "expected_overall_with_ready_osmer": "needs_review"
+    },
+    {
+      "id": "source_unavailable",
+      "description": "Official alert source cannot be read.",
+      "state": "unavailable",
+      "can_clear_previous_alert": false,
+      "can_notify": false,
+      "home_show_alert": false,
+      "bulletin_show_notice": true,
+      "expected_overall_with_ready_osmer": "needs_review"
+    },
+    {
+      "id": "page_changed_parse_error",
+      "description": "Official source is reachable but parser cannot safely interpret it.",
+      "state": "diagnostic",
+      "can_clear_previous_alert": false,
+      "can_notify": false,
+      "home_show_alert": false,
+      "bulletin_show_notice": true,
+      "expected_overall_with_ready_osmer": "needs_review"
+    },
+    {
+      "id": "stale_data",
+      "description": "Alert data exists but is not fresh enough for a final app decision.",
+      "state": "stale",
+      "can_clear_previous_alert": false,
+      "can_notify": false,
+      "home_show_alert": false,
+      "bulletin_show_notice": true,
+      "expected_overall_with_ready_osmer": "needs_review"
+    }
+  ],
+  "notification_cases": [
+    {
+      "id": "new_yellow_fvg_alert",
+      "description": "A new yellow alert from the primary FVG source can notify.",
+      "previous_state": "none",
+      "final_state": "active",
+      "source_authority": "regional_fvg_primary",
+      "severity": "yellow",
+      "can_notify": true,
+      "reason": "new_fvg_alert"
+    },
+    {
+      "id": "new_orange_fvg_alert",
+      "description": "A new orange alert from the primary FVG source can notify.",
+      "previous_state": "none",
+      "final_state": "active",
+      "source_authority": "regional_fvg_primary",
+      "severity": "orange",
+      "can_notify": true,
+      "reason": "new_fvg_alert"
+    },
+    {
+      "id": "new_red_fvg_alert",
+      "description": "A new red alert from the primary FVG source can notify.",
+      "previous_state": "none",
+      "final_state": "active",
+      "source_authority": "regional_fvg_primary",
+      "severity": "red",
+      "can_notify": true,
+      "reason": "new_fvg_alert"
+    },
+    {
+      "id": "same_alert_already_known",
+      "description": "The same alert signature is already known.",
+      "previous_state": "active",
+      "final_state": "active",
+      "source_authority": "regional_fvg_primary",
+      "severity": "yellow",
+      "same_signature": true,
+      "can_notify": false,
+      "reason": "same_alert_already_known"
+    },
+    {
+      "id": "yellow_to_orange",
+      "description": "Severity change from yellow to orange can notify.",
+      "previous_state": "active",
+      "previous_severity": "yellow",
+      "final_state": "active",
+      "source_authority": "regional_fvg_primary",
+      "severity": "orange",
+      "can_notify": true,
+      "reason": "severity_changed"
+    },
+    {
+      "id": "same_level_text_change",
+      "description": "A same-level text-only change is suppressed unless explicitly important.",
+      "previous_state": "active",
+      "previous_severity": "yellow",
+      "final_state": "active",
+      "source_authority": "regional_fvg_primary",
+      "severity": "yellow",
+      "change_kind": "text_only",
+      "important_change": false,
+      "can_notify": false,
+      "reason": "same_level_text_change_suppressed"
+    },
+    {
+      "id": "important_same_level_change",
+      "description": "A same-level important signature change can notify.",
+      "previous_state": "active",
+      "previous_severity": "yellow",
+      "final_state": "active",
+      "source_authority": "regional_fvg_primary",
+      "severity": "yellow",
+      "important_change": true,
+      "can_notify": true,
+      "reason": "important_signature_changed"
+    },
+    {
+      "id": "fvg_unreachable_held_previous",
+      "description": "FVG unreachable and previous alert retained does not notify.",
+      "previous_state": "active",
+      "final_state": "stale_held_active",
+      "source_authority": "regional_fvg_primary_unreachable",
+      "severity": "yellow",
+      "can_notify": false,
+      "reason": "stale_held_active_does_not_notify"
+    },
+    {
+      "id": "inactive_confirmed",
+      "description": "Confirmed no alert does not notify.",
+      "previous_state": "active",
+      "final_state": "inactive_confirmed",
+      "source_authority": "regional_fvg_primary",
+      "can_notify": false,
+      "reason": "inactive_confirmed_does_not_notify"
+    },
+    {
+      "id": "expired_without_fvg_confirmation",
+      "description": "Expired alert without fresh FVG confirmation does not notify.",
+      "previous_state": "active",
+      "final_state": "expired",
+      "source_authority": "regional_fvg_primary_unreachable",
+      "can_notify": false,
+      "reason": "expired_does_not_notify"
+    },
+    {
+      "id": "telegram_diagnostic",
+      "description": "Telegram diagnostic data can never notify.",
+      "previous_state": "active",
+      "final_state": "active",
+      "source_authority": "telegram_public_channel",
+      "severity": "orange",
+      "can_notify": false,
+      "reason": "non_primary_fvg_source_does_not_notify"
+    },
+    {
+      "id": "dpc_diagnostic",
+      "description": "DPC diagnostic data can never notify.",
+      "previous_state": "active",
+      "final_state": "active",
+      "source_authority": "national_dpc",
+      "severity": "red",
+      "can_notify": false,
+      "reason": "non_primary_fvg_source_does_not_notify"
+    }
+  ],
+  "osmer_cases": [
+    {
+      "id": "xml_complete",
+      "description": "Structured XML gives complete bulletin and A1-A9 map data.",
+      "state": "ready",
+      "source_status": "reachable_xml",
+      "can_use_as_current": true,
+      "can_render_native_map": true,
+      "expected_overall_with_no_alert_confirmed": "ready_for_review"
+    },
+    {
+      "id": "xml_404_recovered_from_window",
+      "description": "Requested XML is 404, but the accepted XML window gives a valid merged snapshot.",
+      "state": "ready",
+      "source_status": "merged_xml_window",
+      "can_use_as_current": true,
+      "can_render_native_map": true,
+      "expected_overall_with_no_alert_confirmed": "ready_for_review"
+    },
+    {
+      "id": "missing_a1_a9",
+      "description": "Bulletin text can exist, but native A1-A9 map is incomplete.",
+      "state": "partial",
+      "source_status": "reachable_xml",
+      "can_use_as_current": true,
+      "can_render_native_map": false,
+      "expected_overall_with_no_alert_confirmed": "needs_review"
+    },
+    {
+      "id": "text_without_map",
+      "description": "Useful textual forecast exists, but the map contract cannot be rendered.",
+      "state": "partial",
+      "source_status": "reachable_xml",
+      "can_use_as_current": true,
+      "can_render_native_map": false,
+      "expected_overall_with_no_alert_confirmed": "needs_review"
+    },
+    {
+      "id": "source_unavailable",
+      "description": "OSMER source cannot be read and no safe current snapshot is available.",
+      "state": "unavailable",
+      "source_status": "source_unavailable",
+      "can_use_as_current": false,
+      "can_render_native_map": false,
+      "expected_overall_with_no_alert_confirmed": "needs_review"
+    }
+  ]
+}

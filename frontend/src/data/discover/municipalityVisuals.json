@@ -1,0 +1,881 @@
+{
+  "schemaVersion": 1,
+  "generatedAt": "2026-07-19T19:43:07.016Z",
+  "sourcePolicy": {
+    "primary": "Wikidata P94",
+    "fallback": "Italian Wikipedia municipality infobox",
+    "localAssets": true
+  },
+  "coverage": {
+    "profiles": 215,
+    "resolved": 215,
+    "unresolved": 0
+  },
+  "visuals": [
+    {
+      "istatCode": "030001",
+      "localUrl": "/municipalities/coats/030001-coat.png"
+    },
+    {
+      "istatCode": "030002",
+      "localUrl": "/municipalities/coats/030002-coat.png"
+    },
+    {
+      "istatCode": "030003",
+      "localUrl": "/municipalities/coats/030003-coat.png"
+    },
+    {
+      "istatCode": "030004",
+      "localUrl": "/municipalities/coats/030004-coat.png"
+    },
+    {
+      "istatCode": "030005",
+      "localUrl": "/municipalities/coats/030005-coat.png"
+    },
+    {
+      "istatCode": "030006",
+      "localUrl": "/municipalities/coats/030006-coat.png"
+    },
+    {
+      "istatCode": "030007",
+      "localUrl": "/municipalities/coats/030007-coat.png"
+    },
+    {
+      "istatCode": "030008",
+      "localUrl": "/municipalities/coats/030008-coat.png"
+    },
+    {
+      "istatCode": "030009",
+      "localUrl": "/municipalities/coats/030009-coat.png"
+    },
+    {
+      "istatCode": "030010",
+      "localUrl": "/municipalities/coats/030010-coat.png"
+    },
+    {
+      "istatCode": "030011",
+      "localUrl": "/municipalities/coats/030011-coat.png"
+    },
+    {
+      "istatCode": "030012",
+      "localUrl": "/municipalities/coats/030012-coat.png"
+    },
+    {
+      "istatCode": "030013",
+      "localUrl": "/municipalities/coats/030013-coat.png"
+    },
+    {
+      "istatCode": "030014",
+      "localUrl": "/municipalities/coats/030014-coat.png"
+    },
+    {
+      "istatCode": "030015",
+      "localUrl": "/municipalities/coats/030015-coat.png"
+    },
+    {
+      "istatCode": "030016",
+      "localUrl": "/municipalities/coats/030016-coat.png"
+    },
+    {
+      "istatCode": "030018",
+      "localUrl": "/municipalities/coats/030018-coat.png"
+    },
+    {
+      "istatCode": "030019",
+      "localUrl": "/municipalities/coats/030019-coat.png"
+    },
+    {
+      "istatCode": "030020",
+      "localUrl": "/municipalities/coats/030020-coat.png"
+    },
+    {
+      "istatCode": "030021",
+      "localUrl": "/municipalities/coats/030021-coat.jpg"
+    },
+    {
+      "istatCode": "030022",
+      "localUrl": "/municipalities/coats/030022-coat.png"
+    },
+    {
+      "istatCode": "030023",
+      "localUrl": "/municipalities/coats/030023-coat.png"
+    },
+    {
+      "istatCode": "030024",
+      "localUrl": "/municipalities/coats/030024-coat.png"
+    },
+    {
+      "istatCode": "030025",
+      "localUrl": "/municipalities/coats/030025-coat.png"
+    },
+    {
+      "istatCode": "030026",
+      "localUrl": "/municipalities/coats/030026-coat.png"
+    },
+    {
+      "istatCode": "030027",
+      "localUrl": "/municipalities/coats/030027-coat.png"
+    },
+    {
+      "istatCode": "030028",
+      "localUrl": "/municipalities/coats/030028-coat.png"
+    },
+    {
+      "istatCode": "030029",
+      "localUrl": "/municipalities/coats/030029-coat.png"
+    },
+    {
+      "istatCode": "030030",
+      "localUrl": "/municipalities/coats/030030-coat.png"
+    },
+    {
+      "istatCode": "030031",
+      "localUrl": "/municipalities/coats/030031-coat.png"
+    },
+    {
+      "istatCode": "030032",
+      "localUrl": "/municipalities/coats/030032-coat.png"
+    },
+    {
+      "istatCode": "030033",
+      "localUrl": "/municipalities/coats/030033-coat.png"
+    },
+    {
+      "istatCode": "030034",
+      "localUrl": "/municipalities/coats/030034-coat.png"
+    },
+    {
+      "istatCode": "030035",
+      "localUrl": "/municipalities/coats/030035-coat.png"
+    },
+    {
+      "istatCode": "030036",
+      "localUrl": "/municipalities/coats/030036-coat.png"
+    },
+    {
+      "istatCode": "030037",
+      "localUrl": "/municipalities/coats/030037-coat.png"
+    },
+    {
+      "istatCode": "030039",
+      "localUrl": "/municipalities/coats/030039-coat.png"
+    },
+    {
+      "istatCode": "030040",
+      "localUrl": "/municipalities/coats/030040-coat.png"
+    },
+    {
+      "istatCode": "030041",
+      "localUrl": "/municipalities/coats/030041-coat.png"
+    },
+    {
+      "istatCode": "030042",
+      "localUrl": "/municipalities/coats/030042-coat.png"
+    },
+    {
+      "istatCode": "030043",
+      "localUrl": "/municipalities/coats/030043-coat.png"
+    },
+    {
+      "istatCode": "030044",
+      "localUrl": "/municipalities/coats/030044-coat.png"
+    },
+    {
+      "istatCode": "030045",
+      "localUrl": "/municipalities/coats/030045-coat.png"
+    },
+    {
+      "istatCode": "030046",
+      "localUrl": "/municipalities/coats/030046-coat.png"
+    },
+    {
+      "istatCode": "030047",
+      "localUrl": "/municipalities/coats/030047-coat.png"
+    },
+    {
+      "istatCode": "030048",
+      "localUrl": "/municipalities/coats/030048-coat.png"
+    },
+    {
+      "istatCode": "030049",
+      "localUrl": "/municipalities/coats/030049-coat.png"
+    },
+    {
+      "istatCode": "030051",
+      "localUrl": "/municipalities/coats/030051-coat.png"
+    },
+    {
+      "istatCode": "030052",
+      "localUrl": "/municipalities/coats/030052-coat.png"
+    },
+    {
+      "istatCode": "030053",
+      "localUrl": "/municipalities/coats/030053-coat.png"
+    },
+    {
+      "istatCode": "030054",
+      "localUrl": "/municipalities/coats/030054-coat.png"
+    },
+    {
+      "istatCode": "030055",
+      "localUrl": "/municipalities/coats/030055-coat.png"
+    },
+    {
+      "istatCode": "030056",
+      "localUrl": "/municipalities/coats/030056-coat.png"
+    },
+    {
+      "istatCode": "030057",
+      "localUrl": "/municipalities/coats/030057-coat.png"
+    },
+    {
+      "istatCode": "030058",
+      "localUrl": "/municipalities/coats/030058-coat.png"
+    },
+    {
+      "istatCode": "030059",
+      "localUrl": "/municipalities/coats/030059-coat.png"
+    },
+    {
+      "istatCode": "030060",
+      "localUrl": "/municipalities/coats/030060-coat.png"
+    },
+    {
+      "istatCode": "030061",
+      "localUrl": "/municipalities/coats/030061-coat.png"
+    },
+    {
+      "istatCode": "030062",
+      "localUrl": "/municipalities/coats/030062-coat.png"
+    },
+    {
+      "istatCode": "030063",
+      "localUrl": "/municipalities/coats/030063-coat.png"
+    },
+    {
+      "istatCode": "030064",
+      "localUrl": "/municipalities/coats/030064-coat.png"
+    },
+    {
+      "istatCode": "030065",
+      "localUrl": "/municipalities/coats/030065-coat.png"
+    },
+    {
+      "istatCode": "030066",
+      "localUrl": "/municipalities/coats/030066-coat.png"
+    },
+    {
+      "istatCode": "030067",
+      "localUrl": "/municipalities/coats/030067-coat.png"
+    },
+    {
+      "istatCode": "030068",
+      "localUrl": "/municipalities/coats/030068-coat.png"
+    },
+    {
+      "istatCode": "030069",
+      "localUrl": "/municipalities/coats/030069-coat.png"
+    },
+    {
+      "istatCode": "030070",
+      "localUrl": "/municipalities/coats/030070-coat.png"
+    },
+    {
+      "istatCode": "030071",
+      "localUrl": "/municipalities/coats/030071-coat.png"
+    },
+    {
+      "istatCode": "030072",
+      "localUrl": "/municipalities/coats/030072-coat.png"
+    },
+    {
+      "istatCode": "030073",
+      "localUrl": "/municipalities/coats/030073-coat.png"
+    },
+    {
+      "istatCode": "030074",
+      "localUrl": "/municipalities/coats/030074-coat.png"
+    },
+    {
+      "istatCode": "030075",
+      "localUrl": "/municipalities/coats/030075-coat.png"
+    },
+    {
+      "istatCode": "030076",
+      "localUrl": "/municipalities/coats/030076-coat.png"
+    },
+    {
+      "istatCode": "030077",
+      "localUrl": "/municipalities/coats/030077-coat.png"
+    },
+    {
+      "istatCode": "030078",
+      "localUrl": "/municipalities/coats/030078-coat.png"
+    },
+    {
+      "istatCode": "030079",
+      "localUrl": "/municipalities/coats/030079-coat.png"
+    },
+    {
+      "istatCode": "030080",
+      "localUrl": "/municipalities/coats/030080-coat.png"
+    },
+    {
+      "istatCode": "030081",
+      "localUrl": "/municipalities/coats/030081-coat.png"
+    },
+    {
+      "istatCode": "030082",
+      "localUrl": "/municipalities/coats/030082-coat.png"
+    },
+    {
+      "istatCode": "030083",
+      "localUrl": "/municipalities/coats/030083-coat.png"
+    },
+    {
+      "istatCode": "030084",
+      "localUrl": "/municipalities/coats/030084-coat.png"
+    },
+    {
+      "istatCode": "030085",
+      "localUrl": "/municipalities/coats/030085-coat.png"
+    },
+    {
+      "istatCode": "030086",
+      "localUrl": "/municipalities/coats/030086-coat.png"
+    },
+    {
+      "istatCode": "030087",
+      "localUrl": "/municipalities/coats/030087-coat.png"
+    },
+    {
+      "istatCode": "030088",
+      "localUrl": "/municipalities/coats/030088-coat.png"
+    },
+    {
+      "istatCode": "030089",
+      "localUrl": "/municipalities/coats/030089-coat.png"
+    },
+    {
+      "istatCode": "030090",
+      "localUrl": "/municipalities/coats/030090-coat.png"
+    },
+    {
+      "istatCode": "030091",
+      "localUrl": "/municipalities/coats/030091-coat.png"
+    },
+    {
+      "istatCode": "030092",
+      "localUrl": "/municipalities/coats/030092-coat.png"
+    },
+    {
+      "istatCode": "030093",
+      "localUrl": "/municipalities/coats/030093-coat.jpg"
+    },
+    {
+      "istatCode": "030094",
+      "localUrl": "/municipalities/coats/030094-coat.png"
+    },
+    {
+      "istatCode": "030095",
+      "localUrl": "/municipalities/coats/030095-coat.png"
+    },
+    {
+      "istatCode": "030097",
+      "localUrl": "/municipalities/coats/030097-coat.png"
+    },
+    {
+      "istatCode": "030098",
+      "localUrl": "/municipalities/coats/030098-coat.png"
+    },
+    {
+      "istatCode": "030099",
+      "localUrl": "/municipalities/coats/030099-coat.png"
+    },
+    {
+      "istatCode": "030100",
+      "localUrl": "/municipalities/coats/030100-coat.png"
+    },
+    {
+      "istatCode": "030101",
+      "localUrl": "/municipalities/coats/030101-coat.png"
+    },
+    {
+      "istatCode": "030102",
+      "localUrl": "/municipalities/coats/030102-coat.png"
+    },
+    {
+      "istatCode": "030103",
+      "localUrl": "/municipalities/coats/030103-coat.png"
+    },
+    {
+      "istatCode": "030104",
+      "localUrl": "/municipalities/coats/030104-coat.png"
+    },
+    {
+      "istatCode": "030105",
+      "localUrl": "/municipalities/coats/030105-coat.png"
+    },
+    {
+      "istatCode": "030106",
+      "localUrl": "/municipalities/coats/030106-coat.png"
+    },
+    {
+      "istatCode": "030107",
+      "localUrl": "/municipalities/coats/030107-coat.png"
+    },
+    {
+      "istatCode": "030108",
+      "localUrl": "/municipalities/coats/030108-coat.png"
+    },
+    {
+      "istatCode": "030109",
+      "localUrl": "/municipalities/coats/030109-coat.png"
+    },
+    {
+      "istatCode": "030110",
+      "localUrl": "/municipalities/coats/030110-coat.jpg"
+    },
+    {
+      "istatCode": "030111",
+      "localUrl": "/municipalities/coats/030111-coat.png"
+    },
+    {
+      "istatCode": "030112",
+      "localUrl": "/municipalities/coats/030112-coat.png"
+    },
+    {
+      "istatCode": "030113",
+      "localUrl": "/municipalities/coats/030113-coat.png"
+    },
+    {
+      "istatCode": "030114",
+      "localUrl": "/municipalities/coats/030114-coat.png"
+    },
+    {
+      "istatCode": "030116",
+      "localUrl": "/municipalities/coats/030116-coat.png"
+    },
+    {
+      "istatCode": "030117",
+      "localUrl": "/municipalities/coats/030117-coat.png"
+    },
+    {
+      "istatCode": "030118",
+      "localUrl": "/municipalities/coats/030118-coat.png"
+    },
+    {
+      "istatCode": "030120",
+      "localUrl": "/municipalities/coats/030120-coat.png"
+    },
+    {
+      "istatCode": "030121",
+      "localUrl": "/municipalities/coats/030121-coat.png"
+    },
+    {
+      "istatCode": "030122",
+      "localUrl": "/municipalities/coats/030122-coat.png"
+    },
+    {
+      "istatCode": "030123",
+      "localUrl": "/municipalities/coats/030123-coat.png"
+    },
+    {
+      "istatCode": "030124",
+      "localUrl": "/municipalities/coats/030124-coat.png"
+    },
+    {
+      "istatCode": "030126",
+      "localUrl": "/municipalities/coats/030126-coat.png"
+    },
+    {
+      "istatCode": "030127",
+      "localUrl": "/municipalities/coats/030127-coat.png"
+    },
+    {
+      "istatCode": "030128",
+      "localUrl": "/municipalities/coats/030128-coat.png"
+    },
+    {
+      "istatCode": "030129",
+      "localUrl": "/municipalities/coats/030129-coat.png"
+    },
+    {
+      "istatCode": "030130",
+      "localUrl": "/municipalities/coats/030130-coat.png"
+    },
+    {
+      "istatCode": "030131",
+      "localUrl": "/municipalities/coats/030131-coat.png"
+    },
+    {
+      "istatCode": "030132",
+      "localUrl": "/municipalities/coats/030132-coat.png"
+    },
+    {
+      "istatCode": "030133",
+      "localUrl": "/municipalities/coats/030133-coat.png"
+    },
+    {
+      "istatCode": "030135",
+      "localUrl": "/municipalities/coats/030135-coat.png"
+    },
+    {
+      "istatCode": "030136",
+      "localUrl": "/municipalities/coats/030136-coat.png"
+    },
+    {
+      "istatCode": "030137",
+      "localUrl": "/municipalities/coats/030137-coat.png"
+    },
+    {
+      "istatCode": "030138",
+      "localUrl": "/municipalities/coats/030138-coat.png"
+    },
+    {
+      "istatCode": "030188",
+      "localUrl": "/municipalities/coats/030188-coat.png"
+    },
+    {
+      "istatCode": "030189",
+      "localUrl": "/municipalities/coats/030189-coat.png"
+    },
+    {
+      "istatCode": "030190",
+      "localUrl": "/municipalities/coats/030190-coat.png"
+    },
+    {
+      "istatCode": "030191",
+      "localUrl": "/municipalities/coats/030191-coat.png"
+    },
+    {
+      "istatCode": "031001",
+      "localUrl": "/municipalities/coats/031001-coat.png"
+    },
+    {
+      "istatCode": "031002",
+      "localUrl": "/municipalities/coats/031002-coat.png"
+    },
+    {
+      "istatCode": "031003",
+      "localUrl": "/municipalities/coats/031003-coat.png"
+    },
+    {
+      "istatCode": "031004",
+      "localUrl": "/municipalities/coats/031004-coat.png"
+    },
+    {
+      "istatCode": "031005",
+      "localUrl": "/municipalities/coats/031005-coat.png"
+    },
+    {
+      "istatCode": "031006",
+      "localUrl": "/municipalities/coats/031006-coat.png"
+    },
+    {
+      "istatCode": "031007",
+      "localUrl": "/municipalities/coats/031007-coat.png"
+    },
+    {
+      "istatCode": "031008",
+      "localUrl": "/municipalities/coats/031008-coat.png"
+    },
+    {
+      "istatCode": "031009",
+      "localUrl": "/municipalities/coats/031009-coat.png"
+    },
+    {
+      "istatCode": "031010",
+      "localUrl": "/municipalities/coats/031010-coat.png"
+    },
+    {
+      "istatCode": "031011",
+      "localUrl": "/municipalities/coats/031011-coat.png"
+    },
+    {
+      "istatCode": "031012",
+      "localUrl": "/municipalities/coats/031012-coat.png"
+    },
+    {
+      "istatCode": "031013",
+      "localUrl": "/municipalities/coats/031013-coat.png"
+    },
+    {
+      "istatCode": "031014",
+      "localUrl": "/municipalities/coats/031014-coat.png"
+    },
+    {
+      "istatCode": "031015",
+      "localUrl": "/municipalities/coats/031015-coat.png"
+    },
+    {
+      "istatCode": "031016",
+      "localUrl": "/municipalities/coats/031016-coat.png"
+    },
+    {
+      "istatCode": "031017",
+      "localUrl": "/municipalities/coats/031017-coat.png"
+    },
+    {
+      "istatCode": "031018",
+      "localUrl": "/municipalities/coats/031018-coat.png"
+    },
+    {
+      "istatCode": "031019",
+      "localUrl": "/municipalities/coats/031019-coat.png"
+    },
+    {
+      "istatCode": "031020",
+      "localUrl": "/municipalities/coats/031020-coat.png"
+    },
+    {
+      "istatCode": "031021",
+      "localUrl": "/municipalities/coats/031021-coat.png"
+    },
+    {
+      "istatCode": "031022",
+      "localUrl": "/municipalities/coats/031022-coat.png"
+    },
+    {
+      "istatCode": "031023",
+      "localUrl": "/municipalities/coats/031023-coat.png"
+    },
+    {
+      "istatCode": "031024",
+      "localUrl": "/municipalities/coats/031024-coat.png"
+    },
+    {
+      "istatCode": "031025",
+      "localUrl": "/municipalities/coats/031025-coat.png"
+    },
+    {
+      "istatCode": "032001",
+      "localUrl": "/municipalities/coats/032001-coat.png"
+    },
+    {
+      "istatCode": "032002",
+      "localUrl": "/municipalities/coats/032002-coat.png"
+    },
+    {
+      "istatCode": "032003",
+      "localUrl": "/municipalities/coats/032003-coat.png"
+    },
+    {
+      "istatCode": "032004",
+      "localUrl": "/municipalities/coats/032004-coat.png"
+    },
+    {
+      "istatCode": "032005",
+      "localUrl": "/municipalities/coats/032005-coat.png"
+    },
+    {
+      "istatCode": "032006",
+      "localUrl": "/municipalities/coats/032006-coat.png"
+    },
+    {
+      "istatCode": "093001",
+      "localUrl": "/municipalities/coats/093001-coat.png"
+    },
+    {
+      "istatCode": "093002",
+      "localUrl": "/municipalities/coats/093002-coat.png"
+    },
+    {
+      "istatCode": "093004",
+      "localUrl": "/municipalities/coats/093004-coat.png"
+    },
+    {
+      "istatCode": "093005",
+      "localUrl": "/municipalities/coats/093005-coat.png"
+    },
+    {
+      "istatCode": "093006",
+      "localUrl": "/municipalities/coats/093006-coat.png"
+    },
+    {
+      "istatCode": "093007",
+      "localUrl": "/municipalities/coats/093007-coat.png"
+    },
+    {
+      "istatCode": "093008",
+      "localUrl": "/municipalities/coats/093008-coat.png"
+    },
+    {
+      "istatCode": "093009",
+      "localUrl": "/municipalities/coats/093009-coat.png"
+    },
+    {
+      "istatCode": "093010",
+      "localUrl": "/municipalities/coats/093010-coat.png"
+    },
+    {
+      "istatCode": "093011",
+      "localUrl": "/municipalities/coats/093011-coat.png"
+    },
+    {
+      "istatCode": "093012",
+      "localUrl": "/municipalities/coats/093012-coat.png"
+    },
+    {
+      "istatCode": "093013",
+      "localUrl": "/municipalities/coats/093013-coat.png"
+    },
+    {
+      "istatCode": "093014",
+      "localUrl": "/municipalities/coats/093014-coat.png"
+    },
+    {
+      "istatCode": "093015",
+      "localUrl": "/municipalities/coats/093015-coat.png"
+    },
+    {
+      "istatCode": "093016",
+      "localUrl": "/municipalities/coats/093016-coat.png"
+    },
+    {
+      "istatCode": "093017",
+      "localUrl": "/municipalities/coats/093017-coat.png"
+    },
+    {
+      "istatCode": "093018",
+      "localUrl": "/municipalities/coats/093018-coat.png"
+    },
+    {
+      "istatCode": "093019",
+      "localUrl": "/municipalities/coats/093019-coat.png"
+    },
+    {
+      "istatCode": "093020",
+      "localUrl": "/municipalities/coats/093020-coat.png"
+    },
+    {
+      "istatCode": "093021",
+      "localUrl": "/municipalities/coats/093021-coat.png"
+    },
+    {
+      "istatCode": "093022",
+      "localUrl": "/municipalities/coats/093022-coat.png"
+    },
+    {
+      "istatCode": "093024",
+      "localUrl": "/municipalities/coats/093024-coat.png"
+    },
+    {
+      "istatCode": "093025",
+      "localUrl": "/municipalities/coats/093025-coat.png"
+    },
+    {
+      "istatCode": "093026",
+      "localUrl": "/municipalities/coats/093026-coat.png"
+    },
+    {
+      "istatCode": "093027",
+      "localUrl": "/municipalities/coats/093027-coat.png"
+    },
+    {
+      "istatCode": "093028",
+      "localUrl": "/municipalities/coats/093028-coat.png"
+    },
+    {
+      "istatCode": "093029",
+      "localUrl": "/municipalities/coats/093029-coat.png"
+    },
+    {
+      "istatCode": "093030",
+      "localUrl": "/municipalities/coats/093030-coat.png"
+    },
+    {
+      "istatCode": "093031",
+      "localUrl": "/municipalities/coats/093031-coat.png"
+    },
+    {
+      "istatCode": "093032",
+      "localUrl": "/municipalities/coats/093032-coat.png"
+    },
+    {
+      "istatCode": "093033",
+      "localUrl": "/municipalities/coats/093033-coat.png"
+    },
+    {
+      "istatCode": "093034",
+      "localUrl": "/municipalities/coats/093034-coat.png"
+    },
+    {
+      "istatCode": "093035",
+      "localUrl": "/municipalities/coats/093035-coat.png"
+    },
+    {
+      "istatCode": "093036",
+      "localUrl": "/municipalities/coats/093036-coat.png"
+    },
+    {
+      "istatCode": "093037",
+      "localUrl": "/municipalities/coats/093037-coat.png"
+    },
+    {
+      "istatCode": "093038",
+      "localUrl": "/municipalities/coats/093038-coat.png"
+    },
+    {
+      "istatCode": "093039",
+      "localUrl": "/municipalities/coats/093039-coat.png"
+    },
+    {
+      "istatCode": "093040",
+      "localUrl": "/municipalities/coats/093040-coat.png"
+    },
+    {
+      "istatCode": "093041",
+      "localUrl": "/municipalities/coats/093041-coat.png"
+    },
+    {
+      "istatCode": "093042",
+      "localUrl": "/municipalities/coats/093042-coat.png"
+    },
+    {
+      "istatCode": "093043",
+      "localUrl": "/municipalities/coats/093043-coat.png"
+    },
+    {
+      "istatCode": "093044",
+      "localUrl": "/municipalities/coats/093044-coat.png"
+    },
+    {
+      "istatCode": "093045",
+      "localUrl": "/municipalities/coats/093045-coat.png"
+    },
+    {
+      "istatCode": "093046",
+      "localUrl": "/municipalities/coats/093046-coat.png"
+    },
+    {
+      "istatCode": "093047",
+      "localUrl": "/municipalities/coats/093047-coat.png"
+    },
+    {
+      "istatCode": "093049",
+      "localUrl": "/municipalities/coats/093049-coat.png"
+    },
+    {
+      "istatCode": "093050",
+      "localUrl": "/municipalities/coats/093050-coat.png"
+    },
+    {
+      "istatCode": "093051",
+      "localUrl": "/municipalities/coats/093051-coat.png"
+    },
+    {
+      "istatCode": "093052",
+      "localUrl": "/municipalities/coats/093052-coat.png"
+    },
+    {
+      "istatCode": "093053",
+      "localUrl": "/municipalities/coats/093053-coat.png"
+    }
+  ],
+  "unresolved": [],
+  "downloads": {
+    "downloaded": 0,
+    "reused": 215
+  }
+}

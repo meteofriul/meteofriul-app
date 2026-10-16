@@ -1,0 +1,20 @@
+{
+  "points": 0,
+  "total_reports": 0,
+  "validated_reports": 0,
+  "pending_reports": 0,
+  "rank": {
+    "id": "novice",
+    "label": "Osservadôr dal Cîl",
+    "min_points": 0,
+    "next_rank_at": 5
+  },
+  "max_daily_awards": 3,
+  "retention_seconds": 31536000,
+  "source": {
+    "id": "community_reputation",
+    "type": "validated_contributions",
+    "verified": true,
+    "storage": "memory"
+  }
+}

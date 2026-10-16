@@ -1,0 +1,97 @@
+{
+  "schemaVersion": 1,
+  "recordedAt": "2026-09-27T18:44:00Z",
+  "identity": {
+    "account": "meteofriul@gmail.com",
+    "projectId": "meteo-friul",
+    "firebaseAppId": "1:49007668366:android:725bf6f8b339177a852ddf"
+  },
+  "source": {
+    "playTrack": "internal-testing",
+    "playReleaseId": 9,
+    "playReleaseStatus": "available-to-internal-testers",
+    "playReleaseEvidence": "release-history/android-play/20260927T184341144Z-play-accepted-4a53ad9dde744b8abdb2c19b39a13082.evidence.json",
+    "aabReleaseManifest": "release-history/android-play/meteofriul-300024-0.1.7.release.json"
+  },
+  "installedAppReadBack": {
+    "versionName": "0.1.7",
+    "versionCode": 300024,
+    "installationSource": "Google Play internal testing",
+    "appDataPreserved": true,
+    "bulletinVisualCheck": "pass"
+  },
+  "firestoreReadBack": {
+    "schemaVersion": "play-install-registration-readback-v1",
+    "capturedAtUtc": "2026-09-27T18:37:23.2912913Z",
+    "sourceMode": "live-read-only-aggregate",
+    "totalDeviceCount": 22,
+    "activeDeviceCount": 21,
+    "countsByVersion": {
+      "0.1.3+300020": 3,
+      "0.1.4": 1,
+      "0.1.7+300024": 1,
+      "1.0.0+300011": 1,
+      "1.0.1+300012": 16
+    },
+    "countsByEnrollmentGeneration": {
+      "play-beta-v1": 22
+    },
+    "targetVersion": "0.1.7+300024",
+    "targetRegistrationCount": 1,
+    "targetActiveRegistrationCount": 1,
+    "targetAndroidRegistrationCount": 1,
+    "targetFirebaseAppIdValidCount": 1,
+    "targetEnrollmentValidCount": 1,
+    "targetOfficialAlertsEnabledCount": 1,
+    "targetWeatherNoticesEnabledCount": 1,
+    "targetLatestUpdatedAtUtc": "2026-09-27T18:43:04.364258Z",
+    "targetLatestSeenAtUtc": "2026-09-27T18:43:04.364258Z",
+    "containsDeviceIdentifiers": false,
+    "containsFcmTokens": false,
+    "mutationKind": "none-readback-only"
+  },
+  "appCheckReadBack": {
+    "capturedAtUtc": "2026-09-27T18:37:58.8510361Z",
+    "provider": "Play Integrity",
+    "tokenTtlSeconds": 3600,
+    "minimumDeviceRecognitionLevel": "MEETS_DEVICE_INTEGRITY",
+    "requireLicensedPlayAccount": true,
+    "expectedPlaySigningCertificatePresent": true,
+    "debugTokenCount": 0,
+    "targetRegistrationAcceptedByProtectedBackend": true,
+    "mutationKind": "none-readback-only"
+  },
+  "notificationTests": {
+    "scope": "single active Android registration with app_version 0.1.7+300024",
+    "containsDeviceIdentifiers": false,
+    "containsFcmTokens": false,
+    "officialAlert": {
+      "sentAtUtc": "2026-09-27T18:40:39.076Z",
+      "targetCount": 1,
+      "channelId": "mf_official_alerts_v1",
+      "deliveryAcceptedByFcm": true,
+      "receivedOnDevice": true,
+      "notificationIconVisible": true,
+      "notificationIconVisualResult": "white-mark-centered-readable",
+      "tapOpenedTab": "bulletin"
+    },
+    "localWeatherNotice": {
+      "sentAtUtc": "2026-09-27T18:42:21.796Z",
+      "targetCount": 1,
+      "channelId": "mf_weather_notices_v1",
+      "deliveryAcceptedByFcm": true,
+      "receivedOnDevice": true,
+      "notificationIconVisible": true,
+      "notificationIconVisualResult": "white-mark-centered-readable",
+      "tapOpenedTab": "bulletin"
+    },
+    "otherRegistrationsTargeted": 0
+  },
+  "result": {
+    "status": "play-017-registration-app-check-and-notifications-verified",
+    "existingRegistrationUpdatedInPlace": true,
+    "deviceDocumentsDeleted": false,
+    "cloudJobsModified": false,
+    "legacyCleanupPerformed": false
+  }
+}

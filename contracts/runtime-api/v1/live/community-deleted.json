@@ -1,0 +1,9 @@
+{
+  "ok": true,
+  "report_id": "community-test-1",
+  "source": {
+    "id": "community_reports",
+    "storage": "memory",
+    "cooldown_storage": "memory"
+  }
+}

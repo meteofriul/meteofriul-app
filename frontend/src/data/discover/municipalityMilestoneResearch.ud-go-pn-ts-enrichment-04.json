@@ -1,0 +1,193 @@
+{
+  "schemaVersion": 1,
+  "batchId": "ud-go-pn-ts-enrichment-milestones-04",
+  "snapshotDate": "2026-09-01",
+  "purpose": "Ricerca di quattro tappe per Palmanova, Medea, Sgonico e Spilimbergo; revisione FUR e promozione sono documentate separatamente.",
+  "runtimeIntegration": false,
+  "initialTotalMilestones": 430,
+  "editorialPolicy": {
+    "sourceEvidenceRequired": true,
+    "ambiguousDatesExcluded": true,
+    "italianCopyStatus": "editorial_draft",
+    "friulianCopyStatus": "pending_assisted_review",
+    "readyForUi": false
+  },
+  "excludedClaims": [
+    {
+      "municipality": "Palmanova",
+      "claim": "La terza cinta fortificata viene completata nel 1806.",
+      "reason": "La fonte data al 1806 l'avvio del progetto e dei lavori napoleonici, non il loro completamento nello stesso anno.",
+      "sourceUrl": "https://www.comune.palmanova.ud.it/it/territorio-2802/storia-della-fortezza-3654"
+    },
+    {
+      "municipality": "Medea",
+      "claim": "L'ingresso delle truppe italiane nel 1915 coincide con l'annessione politica di Medea.",
+      "reason": "La fonte documenta l'ingresso militare del 24 maggio 1915; la tappa non gli attribuisce un effetto politico o amministrativo non dichiarato.",
+      "sourceUrl": "https://www.comune.medea.go.it/it/turismo-e-informazioni-7829/la-storia-17930"
+    },
+    {
+      "municipality": "Sgonico",
+      "claim": "Carsiana viene fondata nel 1978.",
+      "reason": "Il Giardino viene fondato nel 1964 e apre al pubblico nel 1978: fondazione e apertura restano due fasi distinte.",
+      "sourceUrl": "https://giardinobotanicocarsiana.it/it/giardino/storia.html"
+    },
+    {
+      "municipality": "Spilimbergo",
+      "claim": "La tappa del 1922 dimostra un primato assoluto o una continuità immutata dell'istituzione.",
+      "reason": "Le fonti documentano la nascita a Spilimbergo della scuola nel 1922; la copy non aggiunge primati né ricostruisce passaggi istituzionali successivi.",
+      "sourceUrl": "https://scuolamosaicistifriuli.it/storia-e-attualita/"
+    }
+  ],
+  "municipalities": [
+    {
+      "istatCode": "030070",
+      "municipality": "Palmanova",
+      "province": "UD",
+      "currentMilestoneCount": 2,
+      "currentMilestoneIds": [
+        "palmanova-foundation",
+        "palmanova-unesco"
+      ],
+      "decision": "source_verified_it_fur_pending",
+      "candidates": [
+        {
+          "id": "palmanova-terza-cinta-1806",
+          "year": 1806,
+          "label": {
+            "it": "Inizia la costruzione della terza cinta fortificata napoleonica",
+            "fur": null
+          },
+          "evidence": "A partire dal 1806 Napoleone fa consolidare le difese e avvia il progetto della terza cinta fortificata, la più esterna, con le lunette napoleoniche in asse ai baluardi veneziani.",
+          "source": {
+            "label": "Città di Palmanova - Storia della fortezza",
+            "type": "official_municipality",
+            "url": "https://www.comune.palmanova.ud.it/it/territorio-2802/storia-della-fortezza-3654",
+            "checkedAt": "2026-09-01"
+          },
+          "duplicateReview": {
+            "exactDuplicate": false,
+            "relatedRecordIds": [
+              "palmanova-foundation",
+              "palmanova-unesco"
+            ],
+            "note": "La cinta napoleonica è una fase costruttiva distinta dalla fondazione veneziana del 1593 e dal riconoscimento UNESCO del 2017."
+          }
+        }
+      ]
+    },
+    {
+      "istatCode": "031011",
+      "municipality": "Medea",
+      "province": "GO",
+      "currentMilestoneCount": 2,
+      "currentMilestoneIds": [
+        "medea-destruction",
+        "medea-ara-pacis"
+      ],
+      "decision": "source_verified_it_fur_pending",
+      "candidates": [
+        {
+          "id": "medea-truppe-italiane-1915",
+          "year": 1915,
+          "label": {
+            "it": "Le truppe italiane entrano nel territorio comunale",
+            "fur": null
+          },
+          "evidence": "La storia comunale documenta l'ingresso delle truppe italiane nel territorio di Medea il 24 maggio 1915, mentre il colle assume una funzione strategica di osservazione e comando.",
+          "source": {
+            "label": "Comune di Medea - La storia",
+            "type": "official_municipality",
+            "url": "https://www.comune.medea.go.it/it/turismo-e-informazioni-7829/la-storia-17930",
+            "checkedAt": "2026-09-01"
+          },
+          "duplicateReview": {
+            "exactDuplicate": false,
+            "relatedRecordIds": [
+              "medea-destruction",
+              "medea-ara-pacis"
+            ],
+            "note": "L'episodio della Prima guerra mondiale è distinto dalla distruzione medievale del paese e dall'erezione dell'Ara Pacis nel 1951."
+          }
+        }
+      ]
+    },
+    {
+      "istatCode": "032005",
+      "municipality": "Sgonico",
+      "province": "TS",
+      "currentMilestoneCount": 1,
+      "currentMilestoneIds": [
+        "sgonico-carsiana-foundation"
+      ],
+      "decision": "source_verified_it_fur_pending",
+      "candidates": [
+        {
+          "id": "sgonico-carsiana-apertura-1978",
+          "year": 1978,
+          "label": {
+            "it": "Il Giardino botanico Carsiana apre al pubblico",
+            "fur": null
+          },
+          "evidence": "Fondato nel 1964, sostenuto dalla Provincia di Trieste dal 1972, il Giardino botanico Carsiana viene aperto al pubblico nel 1978.",
+          "source": {
+            "label": "Giardino botanico Carsiana - La storia",
+            "type": "cultural_institution",
+            "url": "https://giardinobotanicocarsiana.it/it/giardino/storia.html",
+            "checkedAt": "2026-09-01"
+          },
+          "duplicateReview": {
+            "exactDuplicate": false,
+            "relatedRecordIds": [
+              "sgonico-carsiana-foundation"
+            ],
+            "note": "L'apertura del 1978 è una fase distinta dalla fondazione del 1964 e porta a due, non artificialmente a tre, le tappe del profilo."
+          }
+        }
+      ]
+    },
+    {
+      "istatCode": "093044",
+      "municipality": "Spilimbergo",
+      "province": "PN",
+      "currentMilestoneCount": 2,
+      "currentMilestoneIds": [
+        "spilimbergo-1284",
+        "spilimbergo-1326"
+      ],
+      "decision": "source_verified_it_fur_pending",
+      "candidates": [
+        {
+          "id": "spilimbergo-scuola-mosaico-1922",
+          "year": 1922,
+          "label": {
+            "it": "Nasce la Scuola di mosaico",
+            "fur": null
+          },
+          "evidence": "Nel 1922 nasce a Spilimbergo la scuola per mosaicisti voluta da Lodovico Zanini e concretizzata dal sindaco Ezio Cantarutti; l'istituzione apre le porte il 22 gennaio.",
+          "source": {
+            "label": "Scuola Mosaicisti del Friuli - Storia e attualità",
+            "type": "cultural_institution",
+            "url": "https://scuolamosaicistifriuli.it/storia-e-attualita/",
+            "checkedAt": "2026-09-01"
+          },
+          "supportingSources": [
+            {
+              "label": "Città di Spilimbergo - La città e la sua storia",
+              "type": "official_municipality",
+              "url": "https://www.comune.spilimbergo.pn.it/it/novita-202743/notizie-202745/la-citta-e-la-sua-storia-249660",
+              "checkedAt": "2026-09-01"
+            }
+          ],
+          "duplicateReview": {
+            "exactDuplicate": false,
+            "relatedRecordIds": [
+              "spilimbergo-1284",
+              "spilimbergo-1326"
+            ],
+            "note": "La nascita della scuola racconta il Novecento musivo ed è distinta dal Duomo del 1284 e dallo statuto comunale del 1326."
+          }
+        }
+      ]
+    }
+  ]
+}

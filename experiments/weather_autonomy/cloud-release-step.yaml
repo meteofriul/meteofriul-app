@@ -1,0 +1,13 @@
+# Explicit allowlist upload; each step is built/tested separately and deployed by digest.
+timeout: 1800s
+options:
+  logging: CLOUD_LOGGING_ONLY
+substitutions:
+  _STEP: diagnostics-20260908
+steps:
+  - name: gcr.io/cloud-builders/docker
+    args: ['build', '-f', 'experiments/weather_autonomy/Dockerfile.pilot', '-t', 'europe-west1-docker.pkg.dev/meteofriul-pilot-20260906/pilot/weather-worker:${_STEP}', '.']
+  - name: gcr.io/cloud-builders/docker
+    args: ['run', '--rm', '--network=none', 'europe-west1-docker.pkg.dev/meteofriul-pilot-20260906/pilot/weather-worker:${_STEP}', 'python', '-m', 'unittest', 'test_cloud_worker', 'test_cloud_reader', 'test_gcs_object_store', 'test_object_state_store', 'test_remote_publication_intent', 'test_retrieve_remote_cams', 'test_uv_cloud', 'test_operational_diagnostics', 'test_cams_request_plan', 'test_job_entrypoints', 'test_contract_publisher', 'test_icon_checkpoint', 'test_icon_publication_recovery', 'test_probe_icon2i', 'test_benchmark_icon2i', 'test_run_pilot']
+images:
+  - europe-west1-docker.pkg.dev/meteofriul-pilot-20260906/pilot/weather-worker:${_STEP}

@@ -1,0 +1,613 @@
+{
+  "schemaVersion": 1,
+  "batchId": "ud-zero-milestones-02",
+  "snapshotDate": "2026-08-21",
+  "purpose": "Lotto di ricerca non visibile in UI per ampliare le tappe storiche dei successivi nove Comuni UD che ne sono privi.",
+  "runtimeIntegration": false,
+  "editorialPolicy": {
+    "sourceEvidenceRequired": true,
+    "ambiguousDatesExcluded": true,
+    "duplicateAuditRequired": true,
+    "noForcedMilestoneCount": true,
+    "italianCopyStatus": "editorial_draft",
+    "friulianCopyStatus": "pending_human_review",
+    "readyForUi": false
+  },
+  "excludedClaims": [
+    {
+      "municipality": "Comeglians",
+      "claim": "La pieve attuale sarebbe stata consacrata nel 1745 o nel 1748.",
+      "reason": "Le fonti secondarie consultate discordano sulla consacrazione; il 1740 inciso sull'architrave non risolve il conflitto e non viene trasformato in una data diversa."
+    },
+    {
+      "municipality": "Comeglians",
+      "claim": "Nel 1944 sarebbero state aggregate le frazioni indicate da SIUSA come Munchia e Nojaret.",
+      "reason": "La denominazione archivistica non coincide con la toponomastica corrente Runchia e Noiaretto; la tappa resta esclusa finché l'identificazione non è verificata."
+    },
+    {
+      "municipality": "Comeglians",
+      "claim": "La tranvia della Val Degano sarebbe stata aperta nel 1915 o nel 1917.",
+      "reason": "Le cronologie reperite non concordano tra costruzione, apertura e successiva riattivazione; non viene scelta una data arbitraria."
+    },
+    {
+      "municipality": "Comeglians",
+      "claim": "Il terremoto del Friuli del 6 maggio 1976.",
+      "reason": "Il fatto è già presente in Memoria del giorno e produrrebbe una duplicazione editoriale."
+    },
+    {
+      "municipality": "Comeglians",
+      "claim": "La nascita di Leonardo Zanier il 10 settembre 1935.",
+      "reason": "La memoria biografica è già pubblicata in Memoria del giorno."
+    },
+    {
+      "municipality": "Drenchia",
+      "claim": "La fondazione del Comune nel XIX secolo.",
+      "reason": "La fonte archivistica fornisce soltanto il secolo e non consente una tappa annuale."
+    },
+    {
+      "municipality": "Drenchia",
+      "claim": "La costruzione della linea difensiva del Colovrat tra il 1915 e il 1918.",
+      "reason": "Il tema è già al centro del riassunto comunale e le fonti non isolano un unico anno locale di costruzione."
+    },
+    {
+      "municipality": "Drenchia",
+      "claim": "Il cimitero militare di San Volfango nel 1917 e il trasferimento delle salme nel 1923.",
+      "reason": "Il luogo è già richiamato nel riassunto comunale; le due date restano una riserva documentata e non vengono forzate nel limite editoriale di tre tappe."
+    },
+    {
+      "municipality": "Enemonzo",
+      "claim": "La prima citazione di Enemonzo intorno all'anno Mille.",
+      "reason": "Le fonti reperite non attestano un anno univoco e non viene convertita un'indicazione approssimativa in data certa."
+    },
+    {
+      "municipality": "Enemonzo",
+      "claim": "L'aggregazione di Preone a Enemonzo nel 1920 o nel 1928.",
+      "reason": "Le schede SIUSA di Enemonzo e Preone riportano cronologie non conciliabili; la tappa resta esclusa."
+    },
+    {
+      "municipality": "Enemonzo",
+      "claim": "Il terremoto del Friuli del 6 maggio 1976.",
+      "reason": "Il fatto è già presente in Memoria del giorno e produrrebbe una duplicazione editoriale."
+    },
+    {
+      "municipality": "Faedis",
+      "claim": "Il castello di Cucagna sarebbe stato fondato nel 1025 o nel 1027.",
+      "reason": "La ricerca archeometrica non rende univoca la fondazione e segnala come non comprovata la tradizione documentaria; entrambe le date restano escluse."
+    },
+    {
+      "municipality": "Faedis",
+      "claim": "Gli ulteriori incendi del 1301 e del 1310.",
+      "reason": "Sono attestati, ma ripeterebbero il medesimo episodio storico già rappresentato dall'incendio del 1293 senza ampliare il profilo."
+    },
+    {
+      "municipality": "Fagagna",
+      "claim": "Nel 1891 sarebbe nata a Fagagna la Scuola di merletti di Brazzà.",
+      "reason": "ERPAC data la scuola originaria di Brazzà ma non l'epoca precisa del successivo passaggio alla scuola di Fagagna."
+    },
+    {
+      "municipality": "Fagagna",
+      "claim": "Il castello di Villalta sarebbe stato dichiarato monumento nazionale nel 1974.",
+      "reason": "Il fatto resta una riserva verificata: il lotto privilegia la sede museale di Cjase Cocèl, più direttamente collegata al riassunto comunale."
+    },
+    {
+      "municipality": "Flaibano",
+      "claim": "I tumuli dell'età del bronzo e la fondazione della chiesa tra XI e XII secolo.",
+      "reason": "Non forniscono un anno puntuale e sono già interamente rappresentati nel riassunto comunale."
+    },
+    {
+      "municipality": "Flaibano",
+      "claim": "Il bombardamento durante la ritirata di Caporetto nel 1917.",
+      "reason": "SIUSA attesta l'episodio senza una data esatta e l'anno è soltanto implicito nel contesto bellico."
+    },
+    {
+      "municipality": "Flaibano",
+      "claim": "Il Comune avrebbe assunto il nome Flaibano il 16 settembre 1927.",
+      "reason": "SIUSA e ISTAT confermano soltanto l'anno; il giorno compare in una fonte secondaria e non viene promosso."
+    },
+    {
+      "municipality": "Forni Avoltri",
+      "claim": "L'avvio regolare dello sfruttamento dei giacimenti del Monte Avanza nel XV secolo.",
+      "reason": "Il fatto è già una tappa del profilo di Rigolato; Forni Avoltri usa invece la concessione documentata del 1328 per un forno e una fucina nella contrada Avoltri."
+    },
+    {
+      "municipality": "Forni Avoltri",
+      "claim": "Forni Avoltri entra nel sistema comunale napoleonico nel 1806.",
+      "reason": "La data è corretta ma generica; sono disponibili tre fatti locali più identitari e ugualmente verificati."
+    },
+    {
+      "municipality": "Forni Avoltri",
+      "claim": "Le gallerie del Monte Avanza vengono date in concessione alla SAMMA dal 1939 al 1952.",
+      "reason": "La cronologia è verificata ma resta una riserva secondaria; la concessione patriarcale del 1328 documenta più direttamente la storia locale del lavoro metallurgico."
+    },
+    {
+      "municipality": "Forni Avoltri",
+      "claim": "La prima edizione della Staffetta dei tre rifugi nel 1951.",
+      "reason": "La data è verificata e resta in riserva; nel limite di tre tappe ha precedenza la tragica alluvione del 1966."
+    },
+    {
+      "municipality": "Forni Avoltri e Forni di Sopra",
+      "claim": "La citazione di Furnus nel 778 identificherebbe con certezza uno dei due abitati moderni.",
+      "reason": "La data documentaria è certa, ma le ricostruzioni istituzionali non rendono univoca la sua localizzazione moderna; la tappa resta esclusa."
+    },
+    {
+      "municipality": "Forni di Sopra",
+      "claim": "Il territorio sarebbe passato al Patriarcato di Aquileia nel 967 o nel 997.",
+      "reason": "Il Piano regionale presenta il 967 come ipotesi mentre SIUSA indica il 997; nessuna delle due date viene promossa."
+    },
+    {
+      "municipality": "Forni di Sotto",
+      "claim": "Il terremoto del Friuli del 6 maggio 1976.",
+      "reason": "Il fatto è già presente in Memoria del giorno e produrrebbe una duplicazione editoriale."
+    },
+    {
+      "municipality": "Forni di Sotto",
+      "claim": "La ricostruzione seguita alla distruzione del 1944 termina nel 1975.",
+      "reason": "La data resta una riserva solida, ma è troppo legata alla tappa del 1944 e immediatamente seguita dal terremoto già trattato in Memoria del giorno."
+    }
+  ],
+  "duplicateAudit": {
+    "status": "passed_with_thematic_overlap",
+    "exactDuplicates": 0,
+    "excludedExactDuplicates": 2,
+    "countingRule": "unique_facts_already_present_in_other_rubrics",
+    "notes": [
+      "I due fatti unici già presenti altrove sono il terremoto del 1976 e la nascita di Leonardo Zanier; il terremoto conta una sola volta anche se escluso da tre profili comunali.",
+      "Riccardo Giusto non duplica la Memoria del 23 maggio 1915 sull'ingresso dell'Italia in guerra: persona, data e fatto sono distinti.",
+      "La Festa del formaggio di Enemonzo, Cjase Cocèl e il museo Cemùot chi èrin compaiono nei rispettivi riassunti, ma le tappe promosse ne aggiungono l'origine o una data istituzionale precisa.",
+      "Il Monte Avanza è già rappresentato nel profilo di Rigolato dal XV secolo: il nuovo record di Forni Avoltri riguarda una concessione puntuale del 1328 per forno e fucina nella contrada Avoltri.",
+      "Il passaggio ai Savorgnan del 1326 viene assegnato soltanto a Forni di Sopra e la separazione del 1445 soltanto a Forni di Sotto, evitando due card gemelle."
+    ]
+  },
+  "sourceConflicts": [
+    {
+      "municipality": "Comeglians",
+      "field": "sanGiorgioProtectionDate",
+      "selectedValue": "6 ottobre 1952",
+      "selectedAuthority": "Decreto ministeriale ricostruito dal Piano paesaggistico regionale",
+      "discardedValue": "14 ottobre 1952",
+      "discardedAuthority": "Data di pubblicazione del decreto nella Gazzetta Ufficiale",
+      "decision": "La tappa usa la data del provvedimento, mentre il 14 ottobre resta soltanto la data della sua pubblicazione."
+    },
+    {
+      "municipality": "Drenchia",
+      "field": "riccardoGiustoNameAndPlace",
+      "selectedValue": "Riccardo Giusto; luogo omesso dall'etichetta",
+      "selectedAuthority": "Ministero della Difesa e forma corrente del monumento",
+      "discardedValue": "Riccardo Di Giusto; Natpriciar, Zagradan o Solarie",
+      "discardedAuthority": "Varianti onomastiche e geografiche presenti nelle fonti",
+      "decision": "La tappa conserva il nome ufficiale corrente e non attribuisce la morte a un punto geografico non univoco."
+    },
+    {
+      "municipality": "Flaibano",
+      "field": "officialNameChangeDate",
+      "selectedValue": 1927,
+      "selectedAuthority": "SIUSA e tavola storica ISTAT",
+      "discardedValue": "16 settembre 1927",
+      "discardedAuthority": "Data completa presente soltanto in una fonte secondaria",
+      "decision": "La tappa mostra esclusivamente l'anno condiviso dalle fonti istituzionali."
+    },
+    {
+      "municipality": "Forni di Sopra e Forni di Sotto",
+      "field": "savorgnanTransferDate",
+      "selectedValue": 1326,
+      "selectedAuthority": "SIUSA - Comune di Forni di Sopra",
+      "discardedValue": "secolo XII",
+      "discardedAuthority": "SIUSA - Comune di Forni di Sotto",
+      "decision": "La data puntuale del 1326 viene usata soltanto nel profilo di Forni di Sopra; il riferimento generico del XII secolo non viene trasformato in una seconda tappa."
+    },
+    {
+      "municipality": "Forni Avoltri e Forni di Sopra",
+      "field": "furnus778ModernLocation",
+      "selectedValue": "esclusione della tappa",
+      "selectedAuthority": "Confronto tra Piano di gestione della Carnia, Piano del Parco e SIUSA",
+      "discardedValue": "attribuzione univoca ad Avoltri oppure a Forni di Sopra",
+      "discardedAuthority": "Interpretazioni territoriali non coincidenti",
+      "decision": "Il documento del 778 resta storicamente valido ma non viene associato a un Comune moderno senza una localizzazione istituzionale univoca."
+    },
+    {
+      "municipality": "Forni di Sopra",
+      "field": "patriarchateTransferYear",
+      "selectedValue": "esclusione della tappa",
+      "selectedAuthority": "Confronto tra Piano regionale e SIUSA",
+      "discardedValue": "967 oppure 997",
+      "discardedAuthority": "Data ipotetica del Piano regionale e data SIUSA non coincidenti",
+      "decision": "Il passaggio al Patriarcato non viene datato nella timeline finché il conflitto non è risolto."
+    },
+    {
+      "municipality": "Forni di Sotto",
+      "field": "1944FireAttribution",
+      "selectedValue": "incendio di guerra",
+      "selectedAuthority": "Concordanza sul fatto e sulla data tra Piano regionale, SIUSA ed ERPAC",
+      "discardedValue": "attribuzione a tedeschi, truppe nazifasciste o contesto cosacco",
+      "discardedAuthority": "Formulazioni non coincidenti nelle fonti istituzionali",
+      "decision": "La tappa mantiene una formulazione neutra sulla responsabilità e conserva il fatto documentato del 26 maggio 1944."
+    }
+  ],
+  "municipalities": [
+    {
+      "istatCode": "030029",
+      "municipality": "Comeglians",
+      "province": "UD",
+      "currentMilestoneCount": 0,
+      "decision": "source_verified_it_fur_pending",
+      "candidates": [
+        {
+          "id": "comeglians-pieve-san-giorgio-1305",
+          "year": 1305,
+          "label": { "it": "La pieve di San Giorgio è menzionata in una pergamena", "fur": null },
+          "evidence": "Il Piano paesaggistico regionale rinvia a una pergamena della Pieve di Gorto del 12 maggio 1305 come prima menzione documentaria della chiesa; la data non viene presentata come costruzione dell'edificio o nascita del paese.",
+          "source": {
+            "label": "Regione FVG - Piano paesaggistico, Colle di San Giorgio",
+            "type": "regional_institution",
+            "url": "https://www.regione.fvg.it/rafvg/export/sites/default/RAFVG/ambiente-territorio/pianificazione-gestione-territorio/FOGLIA21/allegati/BUR/18_SO25_1_DPR_111_29_ALL29.pdf"
+          }
+        },
+        {
+          "id": "comeglians-consiglio-comunale-1819",
+          "year": 1819,
+          "label": { "it": "Il Convocato viene sostituito dal Consiglio comunale", "fur": null },
+          "evidence": "SIUSA documenta che nel 1819 il Convocato fu sostituito da un Consiglio comunale senza ufficio proprio; non si tratta della fondazione del Comune, datato al 1806.",
+          "source": {
+            "label": "SIUSA - Comune di Comeglians",
+            "type": "national_institution",
+            "url": "https://siusa-archivi.cultura.gov.it/cgi-bin/siusa/pagina.pl?Chiave=9040&RicDimF=2&TipoPag=prodente"
+          }
+        },
+        {
+          "id": "comeglians-colle-tutela-1952",
+          "year": 1952,
+          "label": { "it": "Il Colle di San Giorgio è dichiarato di notevole interesse pubblico", "fur": null },
+          "evidence": "Il Piano paesaggistico regionale ricostruisce il decreto ministeriale del 6 ottobre 1952, pubblicato nella Gazzetta Ufficiale del 14 ottobre, che sottopone il colle a tutela paesaggistica.",
+          "source": {
+            "label": "Regione FVG - Piano paesaggistico, Colle di San Giorgio",
+            "type": "regional_institution",
+            "url": "https://www.regione.fvg.it/rafvg/export/sites/default/RAFVG/ambiente-territorio/pianificazione-gestione-territorio/FOGLIA21/allegati/BUR/18_SO25_1_DPR_111_29_ALL29.pdf"
+          }
+        }
+      ]
+    },
+    {
+      "istatCode": "030034",
+      "municipality": "Drenchia",
+      "province": "UD",
+      "currentMilestoneCount": 0,
+      "decision": "source_verified_it_fur_pending",
+      "candidates": [
+        {
+          "id": "drenchia-regno-italia-1866",
+          "year": 1866,
+          "label": { "it": "Drenchia entra nel Regno d'Italia", "fur": null },
+          "evidence": "SIUSA documenta il passaggio definitivo di Drenchia al Regno d'Italia nel 1866; la tappa non ricostruisce le dominazioni precedenti compresse nella fonte.",
+          "source": {
+            "label": "SIUSA - Comune di Drenchia",
+            "type": "national_institution",
+            "url": "https://siusa-archivi.cultura.gov.it/cgi-bin/siusa/pagina.pl?Chiave=9062&RicDimF=2&TipoPag=prodente"
+          }
+        },
+        {
+          "id": "drenchia-riccardo-giusto-1915",
+          "year": 1915,
+          "label": { "it": "Muore l'alpino Riccardo Giusto, ricordato come il primo caduto italiano della Grande Guerra", "fur": null },
+          "evidence": "Il Ministero della Difesa colloca alle ore 4 del 24 maggio 1915 la morte dell'alpino Riccardo Giusto, ricordato come il primo caduto italiano della Grande Guerra; l'etichetta omette il luogo perché le fonti usano riferimenti diversi.",
+          "source": {
+            "label": "Ministero della Difesa - 8° Reggimento Alpini",
+            "type": "national_institution",
+            "url": "https://www.difesa.it/content/manifestazioni/2giugno2024/sfilamento/3-settore/8-reggimento-alpini/52912.html"
+          }
+        },
+        {
+          "id": "drenchia-incendio-municipio-1969",
+          "year": 1969,
+          "label": { "it": "Un incendio distrugge la sede municipale e l'archivio di Drenchia", "fur": null },
+          "evidence": "La scheda SIUSA del fondo di stato civile documenta che nel 1969 un incendio distrusse completamente la sede municipale e l'archivio; i registri conservati derivano dalle copie del tribunale.",
+          "source": {
+            "label": "SIUSA - Stato civile del Comune di Drenchia",
+            "type": "national_institution",
+            "url": "https://siusa-archivi.cultura.gov.it/cgi-bin/siusa/pagina.pl?Chiave=241543&RicExtInquisizione=on&TipoPag=comparc"
+          }
+        }
+      ]
+    },
+    {
+      "istatCode": "030035",
+      "municipality": "Enemonzo",
+      "province": "UD",
+      "currentMilestoneCount": 0,
+      "decision": "source_verified_it_fur_pending",
+      "candidates": [
+        {
+          "id": "enemonzo-affreschi-urbanis-1588",
+          "year": 1588,
+          "label": { "it": "Giulio Urbanis firma e data gli affreschi di Santa Giuliana a Fresis", "fur": null },
+          "evidence": "Il Catalogo generale dei Beni culturali trascrive nel presbiterio l'iscrizione MDLXXXVIII OPVS IVLII VRBAI; l'anno viene riferito al ciclo di affreschi e non alla costruzione della chiesa.",
+          "source": {
+            "label": "Catalogo generale dei Beni culturali - Santa Giuliana a Fresis",
+            "type": "national_institution",
+            "url": "https://catalogo.beniculturali.it/detail/ArchitecturalOrLandscapeHeritage/0600042346"
+          }
+        },
+        {
+          "id": "enemonzo-consiglio-comunale-1819",
+          "year": 1819,
+          "label": { "it": "A Enemonzo viene concesso il Consiglio comunale", "fur": null },
+          "evidence": "SIUSA documenta che nel 1819 a Enemonzo fu concesso un Consiglio comunale senza ufficio proprio al posto del Convocato generale degli estimati; non si tratta della fondazione del Comune.",
+          "source": {
+            "label": "SIUSA - Comune di Enemonzo",
+            "type": "national_institution",
+            "url": "https://siusa-archivi.cultura.gov.it/cgi-bin/siusa/pagina.pl?Chiave=9064&RicDimF=2&TipoPag=prodente"
+          }
+        },
+        {
+          "id": "enemonzo-prima-festa-formaggio-1974",
+          "year": 1974,
+          "label": { "it": "Si tiene la prima Festa del formaggio e della ricotta di malga", "fur": null },
+          "evidence": "Il periodico ufficiale dei Comuni di Enemonzo, Preone e Socchieve colloca nell'autunno 1974, alla Casa del popolo di Enemonzo, la prima Festa del formaggio e della ricotta di malga.",
+          "source": {
+            "label": "Comune di Enemonzo - La vôs dai nestris paîs",
+            "type": "official_municipality",
+            "url": "https://www.comune.enemonzo.ud.it/media/files/030035/attachment/La_vos_dai_nestris_pais_N1_202502.pdf"
+          }
+        }
+      ]
+    },
+    {
+      "istatCode": "030036",
+      "municipality": "Faedis",
+      "province": "UD",
+      "currentMilestoneCount": 0,
+      "decision": "source_verified_it_fur_pending",
+      "candidates": [
+        {
+          "id": "faedis-incendio-zuccola-1293",
+          "year": 1293,
+          "label": { "it": "Faedis viene incendiata dai conti di Zuccola", "fur": null },
+          "evidence": "SIUSA documenta che nel 1293 Faedis fu incendiata dai conti di Zuccola e distingue l'episodio dagli ulteriori incendi del 1301 e del 1310.",
+          "source": {
+            "label": "SIUSA - Comune di Faedis",
+            "type": "national_institution",
+            "url": "https://siusa-archivi.cultura.gov.it/cgi-bin/siusa/pagina.pl?Chiave=9068&TipoPag=prodente"
+          }
+        },
+        {
+          "id": "faedis-scavi-chiesa-1934",
+          "year": 1934,
+          "label": { "it": "Gli scavi sotto la chiesa riportano alla luce un edificio antico e un ripostiglio di monete", "fur": null },
+          "evidence": "ERPAC data al 1934 gli scavi eseguiti durante il rifacimento del pavimento, che individuarono un edificio antico e un deposito di monete di epoche diverse.",
+          "source": {
+            "label": "ERPAC FVG - Chiesa di Santa Maria Assunta",
+            "type": "regional_institution",
+            "url": "https://patrimonioculturale.regione.fvg.it/complesso-archeologico/?s_id=759549"
+          }
+        },
+        {
+          "id": "faedis-refosco-sottozona-doc-2011",
+          "year": 2011,
+          "label": { "it": "Il disciplinare riconosce la sottozona «Refosco di Faedis» della DOC Friuli Colli Orientali", "fur": null },
+          "evidence": "Il disciplinare pubblicato nella Gazzetta Ufficiale del 15 giugno 2011 riconosce la specificazione Refosco di Faedis e ne delimita la zona, comprendendo il Comune di Faedis.",
+          "source": {
+            "label": "Gazzetta Ufficiale - Disciplinare DOC Friuli Colli Orientali",
+            "type": "national_institution",
+            "url": "https://www.gazzettaufficiale.it/eli/gu/2011/06/15/137/sg/pdf"
+          }
+        }
+      ]
+    },
+    {
+      "istatCode": "030037",
+      "municipality": "Fagagna",
+      "province": "UD",
+      "currentMilestoneCount": 0,
+      "decision": "source_verified_it_fur_pending",
+      "candidates": [
+        {
+          "id": "fagagna-diploma-ottone-983",
+          "year": 983,
+          "label": { "it": "Un diploma di Ottone II conferma al patriarca Rodoaldo il possesso del castello di Fagagna", "fur": null },
+          "evidence": "SIUSA documenta che il diploma del 983 riconfermò al patriarca Rodoaldo possesso, immunità e giurisdizione su cinque castelli, compreso quello di Fagagna; non viene presentato come fondazione.",
+          "source": {
+            "label": "SIUSA - Comune di Fagagna",
+            "type": "national_institution",
+            "url": "https://siusa-archivi.cultura.gov.it/cgi-bin/siusa/pagina.pl?Chiave=9069&TipoPag=prodente"
+          }
+        },
+        {
+          "id": "fagagna-rivolta-castello-1511",
+          "year": 1511,
+          "label": { "it": "Il castello di Fagagna viene incendiato e saccheggiato durante la rivolta del Giovedì Grasso", "fur": null },
+          "evidence": "SIUSA attesta che durante la rivolta scoppiata a Udine nel 1511 venne bruciato e saccheggiato anche il castello di Fagagna; il fatto non viene confuso con il terremoto dello stesso anno.",
+          "source": {
+            "label": "SIUSA - Comune di Fagagna",
+            "type": "national_institution",
+            "url": "https://siusa-archivi.cultura.gov.it/cgi-bin/siusa/pagina.pl?Chiave=9069&TipoPag=prodente"
+          }
+        },
+        {
+          "id": "fagagna-cjase-cocel-museo-1994",
+          "year": 1994,
+          "label": { "it": "Cjase Cocèl diventa sede del Museo della Vita Contadina", "fur": null },
+          "evidence": "ERPAC documenta che nel 1994 Cjase Cocèl divenne sede del Museo; l'esposizione era già nata alla fine degli anni Ottanta e la tappa non ne sposta l'origine.",
+          "source": {
+            "label": "ERPAC FVG - Cjase Cocèl",
+            "type": "regional_institution",
+            "url": "https://patrimonioculturale.regione.fvg.it/architettura/?s_id=449053"
+          }
+        }
+      ]
+    },
+    {
+      "istatCode": "030039",
+      "municipality": "Flaibano",
+      "province": "UD",
+      "currentMilestoneCount": 0,
+      "decision": "source_verified_it_fur_pending",
+      "candidates": [
+        {
+          "id": "flaibano-donazione-san-odorico-1058",
+          "year": 1058,
+          "label": { "it": "La villa e la cappella di San Odorico vengono donate alla Chiesa di Salisburgo", "fur": null },
+          "evidence": "Il Comune data al 23 febbraio 1058 la donazione della villa e della cappella di San Odorico ai canonici dei Santi Pietro e Roberto di Salisburgo; la data non viene presentata come fondazione della chiesa.",
+          "source": {
+            "label": "Comune di Flaibano - Arte e cultura",
+            "type": "official_municipality",
+            "url": "https://www.comune.flaibano.ud.it/arte-e-cultura/"
+          }
+        },
+        {
+          "id": "flaibano-cortina-san-odorico-1410",
+          "year": 1410,
+          "label": { "it": "Udine prende provvedimenti dopo l'espugnazione della cortina di San Odorico", "fur": null },
+          "evidence": "ERPAC documenta che il 25 agosto 1410 il Comune di Udine prese provvedimenti contro gli abitanti di Spilimbergo e gli alleati che avevano espugnato la cortina; non viene dedotta la sua distruzione.",
+          "source": {
+            "label": "ERPAC FVG - Cortina di San Odorico",
+            "type": "regional_institution",
+            "url": "https://patrimonioculturale.regione.fvg.it/complesso-archeologico/?s_id=759570"
+          }
+        },
+        {
+          "id": "flaibano-denominazione-1927",
+          "year": 1927,
+          "label": { "it": "Il Comune assume ufficialmente il nome di Flaibano", "fur": null },
+          "evidence": "SIUSA documenta che fino al 1927 la denominazione ufficiale era Comune di San Odorico; la tavola storica ISTAT conferma l'anno senza indicare un giorno.",
+          "source": {
+            "label": "SIUSA - Comune di Flaibano",
+            "type": "national_institution",
+            "url": "https://siusa-archivi.cultura.gov.it/cgi-bin/siusa/pagina.pl?Chiave=9078&RicDimF=2&TipoPag=prodente"
+          }
+        }
+      ]
+    },
+    {
+      "istatCode": "030040",
+      "municipality": "Forni Avoltri",
+      "province": "UD",
+      "currentMilestoneCount": 0,
+      "decision": "source_verified_it_fur_pending",
+      "candidates": [
+        {
+          "id": "forni-avoltri-forno-fucina-1328",
+          "year": 1328,
+          "label": { "it": "Una concessione patriarcale documenta un forno e una fucina ad Avoltri", "fur": null },
+          "evidence": "Il Piano di gestione regionale documenta il 6 giugno 1328 la concessione del patriarca Pagano della Torre a Nassimbene detto Guercio di Scarfedara e soci per realizzare un forno da ferro e una fucina nella contrada Avoltri; non viene definita inizio assoluto dell'attività mineraria.",
+          "source": {
+            "label": "Regione FVG - Piano di gestione della Carnia",
+            "type": "regional_institution",
+            "url": "https://www.regione.fvg.it/rafvg/export/sites/default/RAFVG/ambiente-territorio/tutela-ambiente-gestione-risorse-naturali/FOGLIA203/FOGLIA121/allegati/PdG_Carnia_Parte1_def.pdf"
+          }
+        },
+        {
+          "id": "forni-avoltri-alluvione-1966",
+          "year": 1966,
+          "label": { "it": "L'alluvione del 4 novembre causa sette vittime a Forni Avoltri", "fur": null },
+          "evidence": "Il Consiglio regionale FVG documenta l'alluvione del 4 novembre 1966 e ricorda i sette abitanti che persero la vita, compreso il sindaco Riccardo Romanin.",
+          "source": {
+            "label": "Consiglio regionale FVG - Sessantesimo dell'alluvione di Forni Avoltri",
+            "type": "regional_institution",
+            "url": "https://www.consiglio.regione.fvg.it/pagineinterne/Portale/comunicatiStampaDettaglio.aspx?ID=917738"
+          }
+        },
+        {
+          "id": "forni-avoltri-cemuot-1992",
+          "year": 1992,
+          "label": { "it": "Dalle feste natalizie nasce il primo nucleo della raccolta Cemùot chi èrin", "fur": null },
+          "evidence": "ERPAC ricostruisce l'origine della raccolta: durante le feste natalizie del 1992 la comunità recuperò costumi, oggetti e strumenti per un presepe carnico, poi trasferito nell'ex Palazzo Municipale e ampliato; la tappa non lo presenta come inaugurazione del museo.",
+          "source": {
+            "label": "ERPAC FVG - Museo Cemùot chi èrin",
+            "type": "regional_institution",
+            "url": "https://patrimonioculturale.regione.fvg.it/museo/?s_id=440512"
+          }
+        }
+      ]
+    },
+    {
+      "istatCode": "030041",
+      "municipality": "Forni di Sopra",
+      "province": "UD",
+      "currentMilestoneCount": 0,
+      "decision": "source_verified_it_fur_pending",
+      "candidates": [
+        {
+          "id": "forni-sopra-savorgnan-1326",
+          "year": 1326,
+          "label": { "it": "La giurisdizione dei Forni passa ai Savorgnan", "fur": null },
+          "evidence": "Il Piano regionale documenta che nel 1326 Gualtiero di Nonta vendette castelli e giurisdizione dei Forni a Ettore Savorgnan; SIUSA conferma l'anno e il passaggio alla famiglia senza definirlo inizio assoluto di ogni precedente rapporto feudale.",
+          "source": {
+            "label": "Regione FVG - Piano del Parco naturale Dolomiti Friulane",
+            "type": "regional_institution",
+            "url": "https://decreti.regione.fvg.it/Storage/2024_90/ALLEGATO2%20AL%20DPREG%20090-2024.PDF"
+          }
+        },
+        {
+          "id": "forni-sopra-affreschi-san-floriano-1500",
+          "year": 1500,
+          "label": { "it": "Gianfrancesco da Tolmezzo realizza gli affreschi di San Floriano", "fur": null },
+          "evidence": "La Soprintendenza Archeologia, belle arti e paesaggio del FVG data al 1500 il ciclo dell'abside di San Floriano a Cella; la tappa usa soltanto l'anno perché nella pagina il giorno dell'iscrizione è trascritto in due forme diverse.",
+          "source": {
+            "label": "SABAP FVG - Affreschi di San Floriano",
+            "type": "national_institution",
+            "url": "https://sabapfvg.cultura.gov.it/fiera-internazionale-monumento-salzburg/"
+          }
+        },
+        {
+          "id": "forni-sopra-unesco-2009",
+          "year": 2009,
+          "label": { "it": "Le Dolomiti Friulane entrano nel Patrimonio mondiale UNESCO", "fur": null },
+          "evidence": "L'UNESCO documenta l'iscrizione delle Dolomiti nel Patrimonio mondiale il 26 giugno 2009; la Regione colloca il territorio di Forni di Sopra nel sistema Dolomiti Friulane e d'Oltre Piave, senza estendere la qualifica all'intero Comune.",
+      "source": {
+        "label": "UNESCO World Heritage Centre - The Dolomites",
+        "type": "international_institution",
+        "url": "https://whc.unesco.org/en/news/525/"
+      },
+      "supportingSources": [
+        {
+          "label": "Regione FVG - Piano del Parco naturale Dolomiti Friulane",
+          "type": "regional_institution",
+          "url": "https://decreti.regione.fvg.it/Storage/2024_90/ALLEGATO2%20AL%20DPREG%20090-2024.PDF"
+        }
+      ]
+        }
+      ]
+    },
+    {
+      "istatCode": "030042",
+      "municipality": "Forni di Sotto",
+      "province": "UD",
+      "currentMilestoneCount": 0,
+      "decision": "source_verified_it_fur_pending",
+      "candidates": [
+        {
+          "id": "forni-sotto-separazione-1445",
+          "year": 1445,
+          "label": { "it": "Forni di Sotto si separa da Forni di Sopra", "fur": null },
+          "evidence": "SIUSA data al 1445 la fine dell'unione tra Forni di Sotto e Forni di Sopra; il profilo dell'ente comunale di Forni di Sotto inizia nello stesso anno.",
+          "source": {
+            "label": "SIUSA - Comune di Forni di Sotto",
+            "type": "national_institution",
+            "url": "https://siusa-archivi.cultura.gov.it/cgi-bin/siusa/pagina.pl?Chiave=9086&TipoPag=prodente"
+          }
+        },
+        {
+          "id": "forni-sotto-passo-morte-1848",
+          "year": 1848,
+          "label": { "it": "I volontari dei due Forni combattono al Passo della Morte", "fur": null },
+          "evidence": "Il Piano regionale documenta che il 24 maggio 1848 cittadini dei due Comuni, insieme a volontari cadorini e sauriani guidati da Pier Fortunato Calvi, affrontarono le truppe austriache al Passo della Morte.",
+          "source": {
+            "label": "Regione FVG - Piano del Parco naturale Dolomiti Friulane",
+            "type": "regional_institution",
+            "url": "https://decreti.regione.fvg.it/Storage/2024_90/ALLEGATO2%20AL%20DPREG%20090-2024.PDF"
+          }
+        },
+        {
+          "id": "forni-sotto-incendio-1944",
+          "year": 1944,
+          "label": { "it": "L'incendio di guerra distrugge quasi interamente Forni di Sotto", "fur": null },
+          "evidence": "Il Piano regionale data al 26 maggio 1944 l'incendio che distrusse quasi interamente Forni di Sotto; SIUSA conferma la perdita degli archivi comunale e parrocchiale, mentre l'etichetta non forza un'attribuzione non uniforme nelle fonti.",
+          "source": {
+            "label": "Regione FVG - Piano del Parco naturale Dolomiti Friulane",
+            "type": "regional_institution",
+            "url": "https://decreti.regione.fvg.it/Storage/2024_90/ALLEGATO2%20AL%20DPREG%20090-2024.PDF"
+          }
+        }
+      ]
+    }
+  ]
+}

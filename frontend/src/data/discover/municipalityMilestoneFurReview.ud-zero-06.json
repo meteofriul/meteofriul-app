@@ -1,0 +1,123 @@
+{
+  "schemaVersion": 1,
+  "batchId": "ud-zero-milestones-fur-06",
+  "sourceResearchBatchId": "ud-zero-milestones-06",
+  "reviewedAt": "2026-08-21",
+  "purpose": "Revisione linguistica separata delle diciotto tappe storiche dell'ultimo lotto UD prima della promozione nel catalogo visibile.",
+  "runtimeIntegration": false,
+  "summary": {
+    "totalRecords": 18,
+    "approved": 18,
+    "pendingHumanReview": 0
+  },
+  "records": [
+    {
+      "id": "stregna-venezia-1420",
+      "status": "approved",
+      "labelFur": "Stregna e Tribil a passin sot de Republiche di Vignesie",
+      "notes": "Stregna e Tribil a restin i toponims documentâts; la costruzion e seguìs il model za aprovât pai passaçs sot Vignesie."
+    },
+    {
+      "id": "stregna-comune-1806",
+      "status": "approved",
+      "labelFur": "Stregna e je documentade tant che Comun dal 1806",
+      "notes": "Documentade tant che Comun e manten la prudence de font cence inventâ un at di fondazion."
+    },
+    {
+      "id": "stregna-pastregna-1846",
+      "status": "approved",
+      "labelFur": "La frazion di Pastregna e ven agregade a Stregna",
+      "notes": "La forme passive e je coerente cu lis altris agregazions dal catalog; i toponims a restin invariâts."
+    },
+    {
+      "id": "sutrio-feudo-mels-1275",
+      "status": "approved",
+      "labelFur": "Il patriarcje Raimont de Tor al da Sudri in feut a Rodolf di Mels",
+      "notes": "Sudri al è il toponim FUR dal profîl; i nons storics a son rendûts cence alterâ il fat juridic."
+    },
+    {
+      "id": "sutrio-decreto-comune-1807",
+      "status": "approved",
+      "labelFur": "Sudri al ven inserît tant che Comun tal decret napoleonic",
+      "notes": "Inserît tant che Comun al manten la distinzion tra l'at documentât e une fondazion no dimostrade."
+    },
+    {
+      "id": "sutrio-incendio-archivio-1940",
+      "status": "approved",
+      "labelFur": "Un incendi al distrûç cuasi dal dut l'archivi storic comunâl",
+      "notes": "La costruzion al distrûç cuasi dal dut e archivi comunâl a son za consolidadis tal corpus."
+    },
+    {
+      "id": "tarvisio-fiera-1456",
+      "status": "approved",
+      "labelFur": "Tarvis al oten il privileç di tignî une fiere anuâl",
+      "notes": "Tarvis al è il toponim FUR aprovât; privileç e fiere anuâl a delimitin il dirit documentât."
+    },
+    {
+      "id": "tarvisio-rango-citta-1909",
+      "status": "approved",
+      "labelFur": "L'imperadôr Francesco Giuseppe I al eleve Tarvis al ranc di citât",
+      "notes": "Il non dal sovran al reste te forme storiche taliane de font; ranc di citât al rint il proviodiment."
+    },
+    {
+      "id": "tarvisio-lussari-1924",
+      "status": "approved",
+      "labelFur": "Il Santuari dal Mont Lussari al ven ricostruît e consacrât di gnûf",
+      "notes": "Mont Lussari al reste il toponim doprât de font; consacrât di gnûf al rint la riconsacrazion cence zontis."
+    },
+    {
+      "id": "torreano-comune-1806",
+      "status": "approved",
+      "labelFur": "Torean al è documentât tant che Comun dal 1806",
+      "notes": "Torean al è il toponim FUR dal profîl e la formule istituzionâl e je za consolidate."
+    },
+    {
+      "id": "torreano-scavi-landri-1921",
+      "status": "approved",
+      "labelFur": "Egidio Feruglio al fâs i scavs tal Foran di Landri",
+      "notes": "Il non dal studiôs e il toponim de groti a restin invariâts; la frase e descrîf dome la campagne documentade."
+    },
+    {
+      "id": "torreano-vincolo-landri-1995",
+      "status": "approved",
+      "labelFur": "Il Foran di Landri al ricêf il vincul archeologjic",
+      "notes": "Vincul archeologjic al rint il proviodiment di tutele e no une gnove interpretazion dal sît."
+    },
+    {
+      "id": "verzegnis-stato-cosacco-1944-1945",
+      "status": "approved",
+      "labelFur": "Verzegnis e devente sede dal Stât Cosac de Cjargne",
+      "notes": "La frase e manten il tiermin storic Stât Cosac de Cjargne e il perimetri di sede documentât des fonts."
+    },
+    {
+      "id": "verzegnis-art-park-1989",
+      "status": "approved",
+      "labelFur": "Al tache a cjapâ forme l'Art Park di Egidio Marzona",
+      "notes": "Art Park e il nome proprio restano invariati; la forma friulana descrive l'avvio dal 1989 senza fissare un'inaugurazione non documentata."
+    },
+    {
+      "id": "verzegnis-crist-val-2002",
+      "status": "approved",
+      "labelFur": "Une campagne di ricercje e documente lis incisions de groti Crist di Val",
+      "notes": "La frase e limite la tappa ae documentazion des incisions e no presente come certe la frequentazion preistoriche."
+    },
+    {
+      "id": "forgaria-castello-flagogna-1170",
+      "status": "approved",
+      "labelFur": "Il cjistiel di Flagogna al ven donât ae Glesie di Aquilee",
+      "notes": "Cjistiel e Glesie di Aquilee a seguissin il lessic storic dal catalog; Flagogna al reste il toponim de font."
+    },
+    {
+      "id": "forgaria-progetto-grifone-1987",
+      "status": "approved",
+      "labelFur": "Il Progjet grifon al cjate sede su lis cretis di Cornin",
+      "notes": "Cornin al è il toponim FUR dal profîl; la frase e date l'av concrete dal progjet e no la propueste dal 1975."
+    },
+    {
+      "id": "forgaria-julius-cornino-1996",
+      "status": "approved",
+      "labelFur": "A Cornin al nas Julius, prin sucès riprodutîf dal progjet",
+      "notes": "Julius al reste il non documentât dal grifon; prin sucès riprodutîf al rint in maniere precise il risultât de font."
+    }
+  ]
+}

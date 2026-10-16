@@ -1,0 +1,12 @@
+{
+  "active": false,
+  "alerts": [],
+  "cache": {
+    "reason": "direct_fetch_deferred",
+    "status": "unavailable"
+  },
+  "count": 0,
+  "error": "official_alerts_unavailable",
+  "source": "Backend fallback",
+  "source_mode": "official_alerts_unavailable_fast_fallback"
+}

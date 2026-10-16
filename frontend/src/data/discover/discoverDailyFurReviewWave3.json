@@ -1,0 +1,96 @@
+{
+  "schemaVersion": 1,
+  "purpose": "Terzo lotto FUR controllato per i record Scopri gia approvati in IT. Solo questi record possono diventare visibili.",
+  "reviewedAt": "2026-07-12",
+  "summary": {
+    "totalRecords": 12,
+    "approved": 12,
+    "pendingHumanReview": 0
+  },
+  "records": [
+    {
+      "id": "memory-it-ready-0102-alessandro-de-stefani-scrittura-e-scena",
+      "titleFur": "Alessandro De Stefani, scriture e scene",
+      "summaryFur": "Ai 2 di Zenâr dal 1891 al nas a Cividât dal Friûl Alessandro De Stefani, autôr par teatri, cine e narrative.",
+      "status": "approved",
+      "notes": "Formula culturale breve; Cividât dal Friûl resta coerente con il corpus."
+    },
+    {
+      "id": "memory-it-ready-0131-domenico-schiavi-architettura-carnica",
+      "titleFur": "Domenico Schiavi, architeture de Cjargne",
+      "summaryFur": "Ai 31 di Zenâr dal 1718 al nas a Tumieç Domenico Schiavi, architet atîf in tancj lûcs di cult dal Friûl.",
+      "status": "approved",
+      "notes": "Tumieç usato per Tolmezzo; tono asciutto e locale."
+    },
+    {
+      "id": "memory-it-ready-0427-jacopo-stellini-filosofia-da-cividale",
+      "titleFur": "Jacopo Stellini, filosofie di Cividât",
+      "summaryFur": "Ai 27 di Avrîl dal 1699 al nas a Cividât dal Friûl Jacopo Stellini, abat, scritôr e professôr di filosofie.",
+      "status": "approved",
+      "notes": "Titolo semplice, senza caricare il profilo oltre il necessario."
+    },
+    {
+      "id": "memory-it-ready-0514-l-r-johannis-immaginazione-da-sacile",
+      "titleFur": "L. R. Johannis, imagjinazion di Sazil",
+      "summaryFur": "Ai 14 di Mai dal 1905 al nas a Sazil Luigi Rapuzzi, cognossût come L. R. Johannis, pitôr e autôr di fantassience.",
+      "status": "approved",
+      "notes": "Fantassience mantiene il senso senza appesantire."
+    },
+    {
+      "id": "memory-it-ready-0516-paolo-bozzi-e-la-scienza-del-vedere",
+      "titleFur": "Paolo Bozzi e la science dal viodi",
+      "summaryFur": "Ai 16 di Mai dal 1930 al nas a Gurize Paolo Bozzi, psicolic e filosof de percezion: une memorie par Scuvierzi, tra science e sguard.",
+      "status": "approved",
+      "notes": "Scuvierzi richiama la sezione senza sembrare una spiegazione tecnica."
+    },
+    {
+      "id": "memory-it-ready-0726-giulio-krall-matematica-applicata",
+      "titleFur": "Giulio Krall, matematiche aplicade",
+      "summaryFur": "Ai 26 di Lui dal 1901 al nas a Triest Giulio Krall, inzegnîr e matematic, tra i protagoniscj talians de mecaniche aplicade dal Nûfcent.",
+      "status": "approved",
+      "notes": "Profilo scientifico tenuto leggibile."
+    },
+    {
+      "id": "memory-it-ready-0806-la-battaglia-di-doberdo",
+      "titleFur": "La bataie di Doberdò",
+      "summaryFur": "Ai 6 di Avost dal 1916 la bataie di Doberdò e segne il front isontin de Prime Vuere mondiâl. Une memorie dure, di contâ cun sobrietât.",
+      "status": "approved",
+      "notes": "Tema bellico trattato con tono neutro, come richiesto."
+    },
+    {
+      "id": "memory-it-ready-0803-carlo-stuparich-scrittura-triestina",
+      "titleFur": "Carlo Stuparich, scriture triestine",
+      "summaryFur": "Ai 3 di Avost dal 1894 al nas a Triest Carlo Stuparich, scritôr leât ae memorie leterarie e civîl de citât.",
+      "status": "approved",
+      "notes": "Memorie leterarie e civîl rende il taglio scelto in IT."
+    },
+    {
+      "id": "memory-it-ready-0829-michelangelo-grigoletti-pittura-pordenonese",
+      "titleFur": "Michelangelo Grigoletti, piture pordenonese",
+      "summaryFur": "Ai 29 di Avost dal 1801 al nas a Pordenon Michelangelo Grigoletti, pitôr dal Votcent leât ae storie artistiche locâl.",
+      "status": "approved",
+      "notes": "Pordenon e piture pordenonese danno focus territoriale."
+    },
+    {
+      "id": "memory-it-ready-0414-luigi-carnera-astronomia-triestina",
+      "titleFur": "Luigi Carnera, astronomie triestine",
+      "summaryFur": "Ai 14 di Avrîl dal 1875 al nas a Triest Luigi Carnera, astronom e matematic atîf te ricercje europeane tra Votcent e Nûfcent.",
+      "status": "approved",
+      "notes": "Voce secondaria scientifica, sobria e comprensibile."
+    },
+    {
+      "id": "memory-it-ready-0813-fabio-conforto-e-la-geometria",
+      "titleFur": "Fabio Conforto e la geometrie",
+      "summaryFur": "Ai 13 di Avost dal 1909 al nas a Triest Fabio Conforto, matematic leât ae scuele taliane di geometrie algebriche.",
+      "status": "approved",
+      "notes": "Termine specialistico conservato con frase breve."
+    },
+    {
+      "id": "memory-it-ready-1122-david-maria-turoldo-voce-civile",
+      "titleFur": "David Maria Turoldo, vôs civîl",
+      "summaryFur": "Ai 22 di Novembar dal 1916 al nas a Coderni David Maria Turoldo, poet e vôs civîl dal Nûfcent. Lu tignìn come aprofondiment, no come memorie principâl.",
+      "status": "approved",
+      "notes": "Voce secondaria: il testo chiarisce il ruolo senza forzarlo come memoria principale."
+    }
+  ]
+}

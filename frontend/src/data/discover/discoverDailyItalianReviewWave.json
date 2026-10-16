@@ -1,0 +1,242 @@
+{
+  "schemaVersion": 1,
+  "generatedAt": "2026-07-11",
+  "purpose": "Seconda ondata Scopri: intersezione tra verifica fonti, copy IT e controllo duplicati/copertura. Non letta dalla UI.",
+  "policy": {
+    "readyForUi": false,
+    "furDeferred": true,
+    "dateFormat": "DD-MM",
+    "requiresFinalItalianApproval": true
+  },
+  "summary": {
+    "keepDaily": 12,
+    "demoteArchive": 3,
+    "reuseExisting": 3,
+    "hold": 1,
+    "potentialPrimaryCoverage": 45,
+    "currentPrimaryCoverage": 33
+  },
+  "keepDaily": [
+    {
+      "id": "profile-copy-0404-giani-stuparich",
+      "wikidataId": "Q325308",
+      "dateIt": "04-04",
+      "year": 1891,
+      "municipality": "Trieste",
+      "province": "TS",
+      "titleIt": "Giani Stuparich e la Trieste del Novecento",
+      "copyIt": "Il 4 aprile 1891 nasce a Trieste Giani Stuparich, scrittore e interprete della citta di confine e del suo Novecento.",
+      "sourceLabel": "Dizionario Biografico Treccani",
+      "sourceUrl": "https://www.treccani.it/enciclopedia/giani-stuparich_%28Dizionario-Biografico%29/",
+      "sourceStatus": "pass",
+      "readyForUi": false
+    },
+    {
+      "id": "profile-copy-0910-leonardo-zanier",
+      "wikidataId": "Q10978897",
+      "dateIt": "10-09",
+      "year": 1935,
+      "municipality": "Comeglians",
+      "locality": "Maranzanis",
+      "province": "UD",
+      "titleIt": "Leonardo Zanier, poesia ed emigrazione",
+      "copyIt": "Il 10 settembre 1935 nasce a Maranzanis Leonardo Zanier, poeta in friulano, scrittore e sindacalista. Emigrazione e lavoro attraversano la sua opera.",
+      "sourceLabel": "Dizionario Biografico dei Friulani",
+      "sourceUrl": "https://www.dizionariobiograficodeifriulani.it/zanier-leonardo-1935-2016",
+      "sourceStatus": "pass",
+      "readyForUi": false
+    },
+    {
+      "id": "profile-copy-0115-virgilio-giotti",
+      "wikidataId": "Q2160344",
+      "dateIt": "15-01",
+      "year": 1885,
+      "municipality": "Trieste",
+      "province": "TS",
+      "titleIt": "Virgilio Giotti e la poesia di Trieste",
+      "copyIt": "Il 15 gennaio 1885 nasce a Trieste Virgilio Giotti, poeta in dialetto triestino e autore di una poesia intima legata alla vita quotidiana della citta.",
+      "sourceLabel": "Treccani",
+      "sourceUrl": "https://www.treccani.it/enciclopedia/virgilio-giotti_%28Enciclopedia-Italiana%29/",
+      "sourceStatus": "pass",
+      "readyForUi": false
+    },
+    {
+      "id": "profile-review-0317-bruno-pincherle",
+      "wikidataId": "Q16533960",
+      "dateIt": "17-03",
+      "year": 1903,
+      "municipality": "Trieste",
+      "province": "TS",
+      "titleIt": "Bruno Pincherle, medicina e impegno civile",
+      "copyIt": "Il 17 marzo 1903 nasce a Trieste Bruno Pincherle, pediatra, antifascista e storico della medicina. Studio e impegno civile accompagnano la sua vita.",
+      "sourceLabel": "ANPI",
+      "sourceUrl": "https://www.anpi.it/biografia/bruno-pincherle",
+      "sourceStatus": "pass",
+      "readyForUi": false
+    },
+    {
+      "id": "profile-copy-0125-ivan-trinko",
+      "wikidataId": "Q12791659",
+      "dateIt": "25-01",
+      "year": 1863,
+      "municipality": "Savogna",
+      "locality": "Tercimonte",
+      "province": "UD",
+      "titleIt": "Ivan Trinko e la cultura della Benecia",
+      "copyIt": "Il 25 gennaio 1863 nasce a Tercimonte Ivan Trinko, sacerdote, poeta, scrittore, traduttore e linguista, figura centrale della cultura slovena della Benecia.",
+      "sourceLabel": "Slovenska biografija",
+      "sourceUrl": "https://www.slovenska-biografija.si/oseba/sbi722979/",
+      "sourceStatus": "pass",
+      "readyForUi": false
+    },
+    {
+      "id": "profile-copy-0928-mirko-basaldella",
+      "wikidataId": "Q1938259",
+      "dateIt": "28-09",
+      "year": 1910,
+      "municipality": "Udine",
+      "province": "UD",
+      "titleIt": "Mirko Basaldella, arte friulana del Novecento",
+      "copyIt": "Il 28 settembre 1910 nasce a Udine Mirko Basaldella, scultore e pittore tra le figure dell'arte italiana del Novecento.",
+      "sourceLabel": "Dizionario Biografico Treccani",
+      "sourceUrl": "https://www.treccani.it/enciclopedia/mirko-basaldella_%28Dizionario-Biografico%29/",
+      "sourceStatus": "pass",
+      "readyForUi": false
+    },
+    {
+      "id": "profile-review-0329-tarcisio-petracco",
+      "wikidataId": "Q3981102",
+      "dateIt": "29-03",
+      "year": 1910,
+      "municipality": "San Giorgio della Richinvelda",
+      "province": "PN",
+      "titleIt": "Tarcisio Petracco e l'Universita del Friuli",
+      "copyIt": "Il 29 marzo 1910 nasce Tarcisio Petracco, partigiano e protagonista della mobilitazione che porto alla nascita dell'Universita di Udine.",
+      "sourceLabel": "Universita degli Studi di Udine",
+      "sourceUrl": "https://qui.uniud.it/ateneo/tarcisio-petracco-il-tributo-dell2019universita-di-udine-al-suo-padre-fondatore/",
+      "sourceStatus": "pass",
+      "readyForUi": false
+    },
+    {
+      "id": "wave-history-0423-eccidio-via-ghega",
+      "wikidataId": "Q63451338",
+      "dateIt": "23-04",
+      "year": 1944,
+      "municipality": "Trieste",
+      "province": "TS",
+      "titleIt": "L'eccidio di via Ghega",
+      "copyIt": "Il 23 aprile 1944, a Palazzo Rittmeyer in via Ghega, 51 prigionieri furono impiccati dai nazisti per rappresaglia.",
+      "sourceLabel": "Conservatorio Giuseppe Tartini di Trieste",
+      "sourceUrl": "https://conts.it/it/produzione-artistica/eventi/commemorazione-delleccidio-di-via-ghega-2026/",
+      "sourceStatus": "pass",
+      "readyForUi": false
+    },
+    {
+      "id": "wave-history-0531-strage-peteano",
+      "wikidataId": "Q1109413",
+      "dateIt": "31-05",
+      "year": 1972,
+      "municipality": "Sagrado",
+      "locality": "Peteano",
+      "province": "GO",
+      "titleIt": "La strage di Peteano",
+      "copyIt": "Il 31 maggio 1972 un attentato terroristico neofascista a Peteano uccise tre carabinieri e ne feri altri due.",
+      "sourceLabel": "Archivio di Stato di Gorizia",
+      "sourceUrl": "https://archiviodistatogorizia.cultura.gov.it/31-maggio-1972-31-maggio-2022/",
+      "sourceStatus": "pass",
+      "readyForUi": false
+    },
+    {
+      "id": "wave-history-0701-decimazione-cercivento",
+      "wikidataId": "Q18397589",
+      "dateIt": "01-07",
+      "year": 1916,
+      "municipality": "Cercivento",
+      "province": "UD",
+      "titleIt": "La fucilazione di Cercivento",
+      "copyIt": "Il 1 luglio 1916 quattro Alpini furono fucilati a Cercivento dopo un procedimento militare sommario. La loro memoria e oggi legata alla restituzione dell'onore.",
+      "sourceLabel": "Consiglio regionale del Friuli Venezia Giulia",
+      "sourceUrl": "https://www.consiglio.regione.fvg.it/cms/home/notizie/article/1a-Giornata-regionale-della-restituzione-dellOnore-la-fucilazione-di-Cercivento-1916/",
+      "sourceStatus": "pass",
+      "readyForUi": false
+    },
+    {
+      "id": "wave-history-0403-eccidio-opicina",
+      "wikidataId": "Q107073670",
+      "dateIt": "03-04",
+      "year": 1944,
+      "municipality": "Trieste",
+      "locality": "Opicina",
+      "province": "TS",
+      "titleIt": "L'eccidio di Opicina",
+      "copyIt": "Il 3 aprile 1944, a Opicina, 71 ostaggi furono fucilati in una rappresaglia nazista.",
+      "sourceLabel": "Atlante delle stragi naziste e fasciste in Italia",
+      "sourceUrl": "https://www.straginazifasciste.it/?id_strage=5350&page_id=38",
+      "sourceStatus": "pass",
+      "readyForUi": false
+    },
+    {
+      "id": "wave-history-0804-attentato-siot",
+      "wikidataId": "Q48806396",
+      "dateIt": "04-08",
+      "year": 1972,
+      "municipality": "San Dorligo della Valle",
+      "locality": "Mattonaia",
+      "province": "TS",
+      "titleIt": "L'attentato al deposito costiero SIOT",
+      "copyIt": "Il 4 agosto 1972 un attentato colpi i serbatoi del deposito costiero SIOT a San Dorligo della Valle, provocando un vasto incendio.",
+      "sourceLabel": "Commissione parlamentare d'inchiesta, Senato della Repubblica",
+      "sourceUrl": "https://patrimonio.archivio.senato.it/attach/Atti%20parlamentari/Commissione%20stragi/XI-XIII%20Legislatura/XIII%20legislatura/Documenti/XIII%20leg.%20Doc.%20XXIII%2C%2064%20vol.%20I%2C%20tomo%20III%2C%20p.1.pdf",
+      "sourceStatus": "pass",
+      "readyForUi": false
+    }
+  ],
+  "demoteArchive": [
+    {
+      "id": "profile-copy-1014-giuseppe-levi",
+      "reason": "Profilo scientifico importante, ma il legame territoriale espresso resta soprattutto anagrafico.",
+      "sourceStatus": "pass",
+      "readyForUi": false
+    },
+    {
+      "id": "profile-review-1130-richard-mollier",
+      "reason": "Profilo specialistico e giornata gia affollata; piu adatto a un approfondimento.",
+      "sourceStatus": "pass",
+      "readyForUi": false
+    },
+    {
+      "id": "wave-profile-0827-ciamician",
+      "reason": "Profilo scientifico di grande rilievo, da sviluppare come archivio prima della card giornaliera.",
+      "sourceStatus": "pass",
+      "readyForUi": false
+    }
+  ],
+  "reuseExisting": [
+    {
+      "id": "history-event-0806-battaglia-doberdo",
+      "canonicalTarget": "Sesta battaglia dell'Isonzo",
+      "reason": "Stesso nucleo storico di un record gia accodato; data e titolo richiedono normalizzazione.",
+      "readyForUi": false
+    },
+    {
+      "id": "history-event-1210-assedio-trieste-1813",
+      "canonicalTarget": "dailyHistoryCandidates / dailyHistoryBatchReview",
+      "reason": "Stesso fatto e Wikidata ID gia presenti nelle code canoniche.",
+      "readyForUi": false
+    },
+    {
+      "id": "profile-upgrade-1122-jacopo-pirona",
+      "canonicalTarget": "memory-draft-pirona-vocabolario",
+      "reason": "Aggiornare il record esistente usando la forma autorevole Iacopo Pirona, senza crearne un secondo.",
+      "readyForUi": false
+    }
+  ],
+  "hold": [
+    {
+      "id": "wave-history-1026-ritorno-trieste-1954",
+      "reason": "Il titolo deve distinguere il passaggio dell'amministrazione della Zona A dalla sistemazione giuridica definitiva; manca inoltre l'anno nel primo staging.",
+      "sourceStatus": "hold_copy_and_context",
+      "readyForUi": false
+    }
+  ]
+}

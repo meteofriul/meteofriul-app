@@ -1,0 +1,311 @@
+{
+  "schemaVersion": 1,
+  "batchId": "ud-zero-milestones-06",
+  "snapshotDate": "2026-08-21",
+  "purpose": "Lotto di ricerca non visibile in UI per completare le tappe storiche degli ultimi sei Comuni UD ancora privi di cronologia.",
+  "runtimeIntegration": false,
+  "editorialPolicy": {
+    "sourceEvidenceRequired": true,
+    "ambiguousDatesExcluded": true,
+    "duplicateAuditRequired": true,
+    "noForcedMilestoneCount": true,
+    "italianCopyStatus": "editorial_draft",
+    "friulianCopyStatus": "pending_human_review",
+    "readyForUi": false
+  },
+  "excludedClaims": [
+    {
+      "municipality": "Stregna",
+      "claim": "Il territorio comunale avrebbe restituito testimonianze preistoriche.",
+      "reason": "La relazione ufficiale del Comune dichiara che non sono noti reperti preistorici e che mancano ricerche archeologiche nell'area; non viene costruita una tappa per analogia territoriale."
+    },
+    {
+      "municipality": "Sutrio",
+      "claim": "I reperti nei pressi del paese dimostrerebbero un insediamento preromano.",
+      "reason": "SIUSA usa una formulazione ipotetica e non indica una campagna, un reperto o una cronologia abbastanza precisa per una tappa."
+    },
+    {
+      "municipality": "Tarvisio",
+      "claim": "Il passaggio di Tarvisio all'Italia verrebbe fissato nel 1918 oppure nel 1919.",
+      "reason": "SIUSA indica il 1918, mentre la documentazione comunale lega il passaggio al trattato di Saint-Germain del 1919; la timeline non sceglie arbitrariamente."
+    },
+    {
+      "municipality": "Tarvisio",
+      "claim": "L'inaugurazione della ferrovia internazionale verrebbe fissata nel 1872 oppure nel 1879.",
+      "reason": "Due documenti comunali citano anni diversi e descrivono collegamenti ferroviari non sufficientemente distinti; entrambi restano esclusi."
+    },
+    {
+      "municipality": "Tarvisio",
+      "claim": "Le battaglie del 1797 e del 1809, i Mondiali juniores del 2002 e la nascita di Anton Kasutnik diventerebbero tappe comunali.",
+      "reason": "I quattro fatti sono già pubblicati in Memoria del giorno e non vengono duplicati nella timeline."
+    },
+    {
+      "municipality": "Torreano",
+      "claim": "I reperti del Foran di Landri verrebbero attribuiti con certezza al Neolitico.",
+      "reason": "Il Catasto speleologico regionale dichiara non verificata l'attribuzione neolitica e documenta una frequentazione di lunga durata; la tappa riguarda invece la storia certa delle ricerche."
+    },
+    {
+      "municipality": "Verzegnis",
+      "claim": "La vicenda delle cosiddette indemoniate verrebbe datata al 1878 oppure al 1879.",
+      "reason": "Le fonti istituzionali e bibliografiche consultate non concordano sull'anno e il tema richiede inoltre un perimetro editoriale particolarmente accurato; la tappa resta esclusa."
+    },
+    {
+      "municipality": "Verzegnis",
+      "claim": "Una scheggia di selce dimostrerebbe una frequentazione mesolitica della grotta Crist di Val.",
+      "reason": "Il Catasto speleologico presenta la frequentazione preistorica come ipotesi; la tappa registra soltanto la campagna di documentazione del 2002."
+    },
+    {
+      "municipality": "Forgaria nel Friuli",
+      "claim": "L'autonomia amministrativa concessa in età napoleonica verrebbe associata a un anno preciso.",
+      "reason": "SIUSA documenta il passaggio ma non fornisce un singolo anno istitutivo; non viene dedotto dal contesto."
+    },
+    {
+      "municipality": "Forgaria nel Friuli",
+      "claim": "Il terremoto del 1976 diventerebbe una tappa locale.",
+      "reason": "Il sisma è già coperto dalla Memoria del giorno regionale e non viene ripetuto in ogni Comune colpito."
+    }
+  ],
+  "duplicateAudit": {
+    "status": "passed_with_thematic_overlap",
+    "exactDuplicates": 0,
+    "excludedExactDuplicates": 4,
+    "countingRule": "unique_facts_already_present_in_other_rubrics",
+    "notes": [
+      "Le battaglie di Tarvisio del 1797 e del 1809, i Mondiali juniores del 2002 e la nascita di Anton Kasutnik sono già pubblicati in Memoria del giorno e restano esclusi.",
+      "Foran di Landri, Art Park e progetto grifone sono temi già presenti nei riassunti comunali; le tappe selezionate aggiungono soltanto passaggi cronologici distinti e verificati.",
+      "La citazione della foresta di Tarvisio nella memoria su Gio Batta Morassi non descrive un evento avvenuto a Tarvisio e non costituisce un doppione.",
+      "Nessun candidato coincide con una tappa già presente in un altro profilo comunale."
+    ]
+  },
+  "sourceConflicts": [
+    {
+      "municipality": "Sutrio",
+      "field": "modernMunicipalityYear",
+      "selectedValue": "1807, inserimento come Comune nel decreto napoleonico",
+      "selectedAuthority": "SIUSA - testo storico della scheda del Comune di Sutrio",
+      "discardedValue": "1806, estremo iniziale della scheda archivistica",
+      "discardedAuthority": "SIUSA - campo Date di esistenza",
+      "decision": "La tappa descrive soltanto l'atto documentato del 22 dicembre 1807 e non lo trasforma nella nascita assoluta del Comune."
+    },
+    {
+      "municipality": "Tarvisio",
+      "field": "annexationToItalyYear",
+      "selectedValue": "esclusione della tappa",
+      "selectedAuthority": "Confronto tra SIUSA e documentazione del Comune di Tarvisio",
+      "discardedValue": "1918 oppure 1919",
+      "discardedAuthority": "Due fonti istituzionali non coincidenti",
+      "decision": "La cronologia non sceglie uno dei due anni."
+    },
+    {
+      "municipality": "Tarvisio",
+      "field": "railwayOpeningYear",
+      "selectedValue": "esclusione della tappa",
+      "selectedAuthority": "Confronto tra due documenti del Comune di Tarvisio",
+      "discardedValue": "1872 oppure 1879",
+      "discardedAuthority": "Guida turistica e relazione paesaggistica comunali",
+      "decision": "Le due linee e i due passaggi infrastrutturali non sono distinti abbastanza chiaramente per la timeline."
+    },
+    {
+      "municipality": "Verzegnis",
+      "field": "possessionEventsYear",
+      "selectedValue": "esclusione della tappa",
+      "selectedAuthority": "Confronto tra portale nazionale del turismo e bibliografia dedicata",
+      "discardedValue": "1878 oppure 1879",
+      "discardedAuthority": "Cronologie non coincidenti",
+      "decision": "Il fatto non viene pubblicato finché anno e formulazione editoriale non saranno consolidati."
+    }
+  ],
+  "municipalities": [
+    {
+      "istatCode": "030111",
+      "municipality": "Stregna",
+      "province": "UD",
+      "currentMilestoneCount": 0,
+      "decision": "source_verified_it_fur_pending",
+      "candidates": [
+        {
+          "id": "stregna-venezia-1420",
+          "year": 1420,
+          "label": { "it": "Stregna e Tribil passano sotto la Repubblica di Venezia", "fur": null },
+          "evidence": "SIUSA documenta il passaggio sotto Venezia nel 1420 delle comunità rurali di Stregna e Tribil dipendenti dalla gastaldia di Cividale.",
+          "summaryOverlap": "exact_date_detail",
+          "source": { "label": "SIUSA - Comune di Stregna", "type": "national_institution", "url": "https://siusa-archivi.cultura.gov.it/cgi-bin/siusa/pagina.pl?Chiave=9360&TipoPag=prodente" }
+        },
+        {
+          "id": "stregna-comune-1806",
+          "year": 1806,
+          "label": { "it": "Stregna è documentata come Comune dal 1806", "fur": null },
+          "evidence": "La scheda SIUSA data dal 1806 l'esistenza del Comune moderno di Stregna.",
+          "source": { "label": "SIUSA - Comune di Stregna", "type": "national_institution", "url": "https://siusa-archivi.cultura.gov.it/cgi-bin/siusa/pagina.pl?Chiave=9360&TipoPag=prodente" }
+        },
+        {
+          "id": "stregna-pastregna-1846",
+          "year": 1846,
+          "label": { "it": "La frazione di Pastregna viene aggregata a Stregna", "fur": null },
+          "evidence": "SIUSA documenta l'aggregazione della frazione di Pastregna al Comune di Stregna mediante la circolare n. 80 del 1846.",
+          "source": { "label": "SIUSA - Comune di Stregna", "type": "national_institution", "url": "https://siusa-archivi.cultura.gov.it/cgi-bin/siusa/pagina.pl?Chiave=9360&TipoPag=prodente" }
+        }
+      ]
+    },
+    {
+      "istatCode": "030112",
+      "municipality": "Sutrio",
+      "province": "UD",
+      "currentMilestoneCount": 0,
+      "decision": "source_verified_it_fur_pending",
+      "candidates": [
+        {
+          "id": "sutrio-feudo-mels-1275",
+          "year": 1275,
+          "label": { "it": "Il patriarca Raimondo della Torre infeuda Sutrio a Rodolfo di Mels", "fur": null },
+          "evidence": "SIUSA data al 1275 l'infeudazione di Sutrio a Rodolfo di Mels da parte del patriarca Raimondo della Torre.",
+          "source": { "label": "SIUSA - Comune di Sutrio", "type": "national_institution", "url": "https://siusa-archivi.cultura.gov.it/cgi-bin/siusa/pagina.pl?Chiave=9363&TipoPag=prodente" }
+        },
+        {
+          "id": "sutrio-decreto-comune-1807",
+          "year": 1807,
+          "label": { "it": "Sutrio è inserito come Comune nel decreto napoleonico", "fur": null },
+          "evidence": "SIUSA documenta l'inserimento di Sutrio come Comune di terza classe nel decreto napoleonico del 22 dicembre 1807; l'etichetta non identifica l'atto con una fondazione assoluta.",
+          "source": { "label": "SIUSA - Comune di Sutrio", "type": "national_institution", "url": "https://siusa-archivi.cultura.gov.it/cgi-bin/siusa/pagina.pl?Chiave=9363&TipoPag=prodente" }
+        },
+        {
+          "id": "sutrio-incendio-archivio-1940",
+          "year": 1940,
+          "label": { "it": "Un incendio distrugge quasi interamente l'archivio storico comunale", "fur": null },
+          "evidence": "SIUSA data al 30 dicembre 1940 l'incendio che distrusse quasi completamente l'archivio storico del Comune di Sutrio.",
+          "source": { "label": "SIUSA - Archivio del Comune di Sutrio", "type": "national_institution", "url": "https://siusa-archivi.cultura.gov.it/cgi-bin/siusa/pagina.pl?Chiave=242430&TipoPag=comparc" }
+        }
+      ]
+    },
+    {
+      "istatCode": "030117",
+      "municipality": "Tarvisio",
+      "province": "UD",
+      "currentMilestoneCount": 0,
+      "decision": "source_verified_it_fur_pending",
+      "candidates": [
+        {
+          "id": "tarvisio-fiera-1456",
+          "year": 1456,
+          "label": { "it": "Tarvisio ottiene il privilegio di tenere una fiera annuale", "fur": null },
+          "evidence": "La relazione paesaggistica del Comune data al 1456 il privilegio di organizzare una fiera annuale, origine del successivo mercato stabile.",
+          "source": { "label": "Comune di Tarvisio - Relazione paesaggistica", "type": "official_municipality", "url": "https://www.comune.tarvisio.ud.it/media/files/030117/attachment/P0-04RelazionePaesaggistica.pdf" }
+        },
+        {
+          "id": "tarvisio-rango-citta-1909",
+          "year": 1909,
+          "label": { "it": "L'imperatore Francesco Giuseppe I eleva Tarvisio al rango di città", "fur": null },
+          "evidence": "La guida ufficiale del Comune documenta l'elevazione di Tarvisio al rango di città da parte dell'imperatore Francesco Giuseppe I nel 1909.",
+          "source": { "label": "Comune di Tarvisio - Guida turistica", "type": "official_municipality", "url": "https://comune.tarvisio.ud.it/media/files/030117/attachment/Guida_Turistica_-_Tarvisio.pdf" }
+        },
+        {
+          "id": "tarvisio-lussari-1924",
+          "year": 1924,
+          "label": { "it": "Il Santuario del Monte Lussari viene ricostruito e riconsacrato", "fur": null },
+          "evidence": "La relazione paesaggistica comunale data al 1924 la ricostruzione e la riconsacrazione del santuario dopo la distruzione della Prima guerra mondiale.",
+          "source": { "label": "Comune di Tarvisio - Relazione paesaggistica", "type": "official_municipality", "url": "https://www.comune.tarvisio.ud.it/media/files/030117/attachment/P0-04RelazionePaesaggistica.pdf" }
+        }
+      ]
+    },
+    {
+      "istatCode": "030122",
+      "municipality": "Torreano",
+      "province": "UD",
+      "currentMilestoneCount": 0,
+      "decision": "source_verified_it_fur_pending",
+      "candidates": [
+        {
+          "id": "torreano-comune-1806",
+          "year": 1806,
+          "label": { "it": "Torreano è documentato come Comune dal 1806", "fur": null },
+          "evidence": "La scheda SIUSA data dal 1806 l'esistenza del Comune moderno di Torreano.",
+          "source": { "label": "SIUSA - Comune di Torreano", "type": "national_institution", "url": "https://siusa-archivi.cultura.gov.it/cgi-bin/siusa/pagina.pl?Chiave=9401&TipoPag=prodente" }
+        },
+        {
+          "id": "torreano-scavi-landri-1921",
+          "year": 1921,
+          "label": { "it": "Egidio Feruglio conduce gli scavi al Foran di Landri", "fur": null },
+          "evidence": "Il Catasto speleologico regionale documenta gli scavi estensivi condotti da Egidio Feruglio nel marzo 1921 e la pubblicazione dei risultati nello stesso anno.",
+          "summaryOverlap": "dated_research_detail",
+          "source": { "label": "Catasto speleologico regionale - Foran di Landri", "type": "regional_institution", "url": "https://catastogrotte.regione.fvg.it/11" }
+        },
+        {
+          "id": "torreano-vincolo-landri-1995",
+          "year": 1995,
+          "label": { "it": "Il Foran di Landri riceve il vincolo archeologico", "fur": null },
+          "evidence": "Il Catasto speleologico regionale registra il decreto ministeriale di vincolo archeologico trasmesso il 5 luglio 1995 per la grotta nei Comuni di Faedis e Torreano.",
+          "summaryOverlap": "protection_date_detail",
+          "source": { "label": "Catasto speleologico regionale - Foran di Landri", "type": "regional_institution", "url": "https://catastogrotte.regione.fvg.it/11" }
+        }
+      ]
+    },
+    {
+      "istatCode": "030132",
+      "municipality": "Verzegnis",
+      "province": "UD",
+      "currentMilestoneCount": 0,
+      "decision": "source_verified_it_fur_pending",
+      "candidates": [
+        {
+          "id": "verzegnis-stato-cosacco-1944-1945",
+          "century": "1944-1945",
+          "label": { "it": "Verzegnis diventa sede dello Stato Cosacco della Carnia", "fur": null },
+          "evidence": "SIUSA documenta che dal 1944 al 1945 lo Stato Cosacco della Carnia ebbe sede o capitale a Verzegnis; il portale nazionale del turismo conferma l'occupazione cosacca nello stesso intervallo.",
+          "source": { "label": "SIUSA - Comune di Raveo", "type": "national_institution", "url": "https://siusa-archivi.cultura.gov.it/cgi-bin/siusa/pagina.pl?Chiave=9274&TipoPag=prodente" },
+          "supportingSources": [
+            { "label": "Italia.it - Verzegnis", "type": "national_institution", "url": "https://www.italia.it/it/friuli-venezia-giulia/verzegnis" }
+          ]
+        },
+        {
+          "id": "verzegnis-art-park-1989",
+          "year": 1989,
+          "label": { "it": "Prende forma l'Art Park di Egidio Marzona", "fur": null },
+          "evidence": "ERPAC documenta che dal 1989 Egidio Marzona invitò artisti internazionali a concepire e realizzare sul posto le opere del parco di Villa.",
+          "source": { "label": "ERPAC FVG - Art Park di Egidio Marzona", "type": "regional_institution", "url": "https://patrimonioculturale.regione.fvg.it/museo/?s_id=440538&s_tab=Contenitore+architettonico" },
+          "supportingSources": [
+            { "label": "Ministero della Cultura - Art Park", "type": "national_institution", "url": "https://cultura.gov.it/luogo/art-park-parco-di-arte-contemporanea" }
+          ]
+        },
+        {
+          "id": "verzegnis-crist-val-2002",
+          "year": 2002,
+          "label": { "it": "Una campagna di ricerca documenta le incisioni della grotta Crist di Val", "fur": null },
+          "evidence": "Il Catasto speleologico regionale registra nel 2002 la campagna di pulitura, rilievo e documentazione delle incisioni e dei bassorilievi della grotta; le ipotesi sulla frequentazione preistorica non entrano nell'etichetta.",
+          "source": { "label": "Catasto speleologico regionale - Crist di Val", "type": "regional_institution", "url": "https://catastogrotte.regione.fvg.it/3995" }
+        }
+      ]
+    },
+    {
+      "istatCode": "030137",
+      "municipality": "Forgaria nel Friuli",
+      "province": "UD",
+      "currentMilestoneCount": 0,
+      "decision": "source_verified_it_fur_pending",
+      "candidates": [
+        {
+          "id": "forgaria-castello-flagogna-1170",
+          "year": 1170,
+          "label": { "it": "Il castello di Flagogna viene donato alla Chiesa di Aquileia", "fur": null },
+          "evidence": "SIUSA data al 1170 la donazione del castello di Flagogna e dei possedimenti friulani di Ulderico d'Attems alla Chiesa di Aquileia.",
+          "source": { "label": "SIUSA - Comune di Forgaria nel Friuli", "type": "national_institution", "url": "https://siusa-archivi.cultura.gov.it/cgi-bin/siusa/pagina.pl?Chiave=9082&TipoPag=prodente" }
+        },
+        {
+          "id": "forgaria-progetto-grifone-1987",
+          "year": 1987,
+          "label": { "it": "Il progetto grifone trova sede sulle pareti di Cornino", "fur": null },
+          "evidence": "La pubblicazione ufficiale della Regione data al 1987 l'avvio concreto sulle pareti di Cornino del progetto proposto nel 1975.",
+          "summaryOverlap": "exact_project_start",
+          "source": { "label": "Regione FVG - Il Progetto grifone", "type": "regional_institution", "url": "https://www.regione.fvg.it/rafvg/allApps/20070904093424_Aree%20Naturali_parteII.pdf" }
+        },
+        {
+          "id": "forgaria-julius-cornino-1996",
+          "year": 1996,
+          "label": { "it": "A Cornino nasce Julius, primo successo riproduttivo del progetto", "fur": null },
+          "evidence": "La pubblicazione regionale identifica nel 1996 la nascita e la sopravvivenza del grifone Julius Cornino come primo successo riproduttivo del progetto.",
+          "summaryOverlap": "dated_conservation_result",
+          "source": { "label": "Regione FVG - Il Progetto grifone", "type": "regional_institution", "url": "https://www.regione.fvg.it/rafvg/allApps/20070904093424_Aree%20Naturali_parteII.pdf" }
+        }
+      ]
+    }
+  ]
+}

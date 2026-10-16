@@ -1,0 +1,103 @@
+{
+  "schemaVersion": 1,
+  "batchId": "ud-go-pn-ts-enrichment-milestones-04-fur-review",
+  "sourceResearchBatchId": "ud-go-pn-ts-enrichment-milestones-04",
+  "reviewedAt": "2026-09-01",
+  "runtimeIntegration": false,
+  "reviewMethod": "assisted_standard_reference_review",
+  "approvalBasis": "user_delegated_assisted_editorial_review",
+  "reviewer": "assistant",
+  "independentHumanReview": false,
+  "approvalNote": "Decisione editoriale assistita sotto il mandato di completamento Scopri. Le fonti ARLeF verificano lessico e modelli d'uso, non certificano queste frasi; nessuna revisione professionale indipendente né lettura frase per frase attribuita all'utente.",
+  "summary": {
+    "totalRecords": 4,
+    "approved": 4,
+    "pendingHumanReview": 0
+  },
+  "records": [
+    {
+      "id": "palmanova-terza-cinta-1806",
+      "status": "approved",
+      "labelFur": "E scomence la costruzion de tierce cerclade di muris napoleonichis",
+      "notes": "Palme, fuartece e il modello cerclade di muris sono già approvati nei profili comunali; scomençâ, tierç, costruzion e fortificazion sono controllati nel dizionario. La frase conserva l'avvio dei lavori e non dichiara la cinta completata nel 1806.",
+      "references": [
+        {
+          "url": "https://superdizionari.arlef.it/ricerca?term=cominciare&language=it&gui=fur",
+          "note": "Voce completa: scomençâ."
+        },
+        {
+          "url": "https://superdizionari.arlef.it/ricerca?term=terzo&language=it&gui=fur",
+          "note": "Voce terzo e flessione femminile tierce."
+        },
+        {
+          "url": "https://superdizionari.arlef.it/ricerca?term=costruzione&language=it&gui=fur",
+          "note": "Voce completa: costruzion."
+        },
+        {
+          "url": "https://superdizionari.arlef.it/ricerca?term=fortificazione&language=it&gui=fur",
+          "note": "Voce completa: fortificazion."
+        }
+      ]
+    },
+    {
+      "id": "medea-truppe-italiane-1915",
+      "status": "approved",
+      "labelFur": "Lis trupis talianis a jentrin tal teritori comunâl",
+      "notes": "Migjee è il toponimo del profilo, ma non serve ripeterlo nella tappa. Trupe, jentrâ, teritori e comunâl sono verificati nelle fonti ARLeF e già consolidati nel corpus. La copy descrive soltanto l'ingresso militare.",
+      "references": [
+        {
+          "url": "https://superdizionari.arlef.it/ricerca?term=truppa&language=it&gui=fur",
+          "note": "Truppa → trupe; plurale trupis."
+        },
+        {
+          "url": "https://superdizionari.arlef.it/ricerca?term=entrare&language=it&gui=fur",
+          "note": "Voce completa: jentrâ."
+        },
+        {
+          "url": "https://superdizionari.arlef.it/ricerca?term=territorio&language=it&gui=fur",
+          "note": "Voce completa: teritori."
+        },
+        {
+          "url": "https://superdizionari.arlef.it/ricerca?term=comunale&language=it&gui=fur",
+          "note": "Voce completa: comunâl."
+        }
+      ]
+    },
+    {
+      "id": "sgonico-carsiana-apertura-1978",
+      "status": "approved",
+      "labelFur": "Il Zardin botanic Carsiana al vierç al public",
+      "notes": "Zardin botanic Carsiana è già approvato nel profilo di Sgonico. Al vierç al public segue il modello istituzionale ARLeF già usato per le aperture museali; il nome proprio Carsiana resta invariato.",
+      "references": [
+        {
+          "url": "https://arlef.it/a-aquilee-al-vierc-il-sportel-regjonal-pe-lenghe-furlane/",
+          "note": "Uso istituzionale del costrutto al vierç."
+        },
+        {
+          "url": "https://superdizionari.arlef.it/lemma/pubblico/7856?language=it&oneshot=1&gui=fur",
+          "note": "Voce pubblico con esempi di apertura al public."
+        }
+      ]
+    },
+    {
+      "id": "spilimbergo-scuola-mosaico-1922",
+      "status": "approved",
+      "labelFur": "E nas la Scuele dal mosaic",
+      "notes": "Spilimberc e scuele dal mosaic sono già presenti nel profilo approvato. Nas, scuele e mosaic sono controllati nelle voci ARLeF; la formulazione non aggiunge un primato e non traduce una denominazione giuridica storica.",
+      "references": [
+        {
+          "url": "https://superdizionari.arlef.it/ricerca?term=nascere&language=it&gui=fur",
+          "note": "Voce completa: nassi; terza persona nas."
+        },
+        {
+          "url": "https://superdizionari.arlef.it/ricerca?term=scuola&language=it&gui=fur",
+          "note": "Voce completa: scuele."
+        },
+        {
+          "url": "https://superdizionari.arlef.it/ricerca?term=mosaico&language=it&gui=fur",
+          "note": "Voce completa: mosaic."
+        }
+      ]
+    }
+  ]
+}

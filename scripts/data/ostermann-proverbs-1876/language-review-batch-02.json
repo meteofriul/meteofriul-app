@@ -1,0 +1,350 @@
+{
+  "schemaVersion": 1,
+  "batchId": "ostermann-1876-language-review-02",
+  "reviewedAt": "2026-07-22",
+  "sourceDecisionFiles": [
+    "review-decisions-batch-02.json"
+  ],
+  "purpose": "Seconda revisione linguistica ed editoriale dei candidati Ostermann 1876 gia verificati sul facsimile. Non pubblica contenuti nella UI.",
+  "policy": {
+    "publish": false,
+    "rule": "IT e FUR revisionati non equivalgono a pubblicazione. Le ricorrenze e i periodi stagionali restano vincolati alla data; i segni meteo richiedono una condizione coerente; i detti generali potranno essere assegnati al calendario soltanto in una promozione separata."
+  },
+  "summary": {
+    "records": 12,
+    "languageReviewed": 12,
+    "mergeExisting": 0,
+    "needsNativeReview": 0
+  },
+  "records": [
+    {
+      "id": "ost1876-febrar-un-di-ben",
+      "reviewStatus": "language_reviewed",
+      "furNormalized": "Fevrâr, un dì ben e un dì mâl.",
+      "itFinal": "Febbraio, un giorno bene e un giorno male.",
+      "destination": "almanac",
+      "calendarRule": {
+        "type": "months",
+        "months": [2],
+        "fallbackAllowed": false
+      },
+      "duplicateAudit": {
+        "status": "new_distinct"
+      },
+      "evidence": [
+        {
+          "label": "Facsimile Ostermann 1876, p. PDF 27",
+          "kind": "primary"
+        },
+        {
+          "label": "La Vita Cattolica, 8 febbraio 2017",
+          "url": "https://sifaprestoadireparti.altervista.org/alterpages/files/LaVitaCattolica_2017_02_08.pdf",
+          "kind": "normalized_reference"
+        }
+      ],
+      "editorialNote": "Detto esclusivamente di febbraio; la forma moderna usa il maschile un dì.",
+      "publish": false
+    },
+    {
+      "id": "ost1876-san-nicolo-fred-cumo",
+      "reviewStatus": "language_reviewed",
+      "furNormalized": "A San Nicolò il frêt al dîs: «Soi ca cumò».",
+      "itFinal": "A san Nicolò il freddo dice: «Eccomi qua».",
+      "destination": "almanac",
+      "calendarRule": {
+        "type": "date",
+        "day": 6,
+        "month": 12,
+        "fallbackAllowed": false
+      },
+      "duplicateAudit": {
+        "status": "new_distinct"
+      },
+      "evidence": [
+        {
+          "label": "Facsimile Ostermann 1876, p. PDF 32",
+          "kind": "primary"
+        },
+        {
+          "label": "ParemioRom, repertorio Ostermann",
+          "url": "https://stel.ub.edu/paremio-rom/en/sources/ostermann-valentino-proverbi-friulani-raccolti-dalla-viva-voce-del-popolo",
+          "kind": "normalized_reference"
+        }
+      ],
+      "editorialNote": "Solo per il 6 dicembre; non deve diventare un proverbio invernale generico.",
+      "publish": false
+    },
+    {
+      "id": "ost1876-nef-prime-nadal-regal",
+      "reviewStatus": "language_reviewed",
+      "furNormalized": "La nêf prime di Nadâl e je dute di regâl.",
+      "itFinal": "La neve prima di Natale è tutta un regalo.",
+      "destination": "almanac",
+      "calendarRule": {
+        "type": "date_range",
+        "from": {"day": 1, "month": 12},
+        "to": {"day": 24, "month": 12},
+        "fallbackAllowed": false
+      },
+      "duplicateAudit": {
+        "status": "new_distinct"
+      },
+      "evidence": [
+        {
+          "label": "Facsimile Ostermann 1876, p. PDF 32",
+          "kind": "primary"
+        },
+        {
+          "label": "ARLeF, Messaggero Veneto, 23 dicembre 2014",
+          "url": "https://arlef.it/app/uploads/stampa-friulana/messaggero_veneto_23_12_2014.pdf",
+          "kind": "normalized_reference"
+        }
+      ],
+      "editorialNote": "Utilizzabile dal 1 al 24 dicembre; dal giorno di Natale il riferimento temporale non è più coerente.",
+      "publish": false
+    },
+    {
+      "id": "ost1876-nul-balcons-ploe-bleons",
+      "reviewStatus": "language_reviewed",
+      "furNormalized": "Nûl a balcons, ploe a bleons.",
+      "itFinal": "Nuvole a balconi, pioggia a lenzuola.",
+      "destination": "almanac",
+      "calendarRule": {
+        "type": "weather_condition",
+        "phenomena": ["cloud_bands", "rain"],
+        "fallbackAllowed": false
+      },
+      "duplicateAudit": {
+        "status": "new_distinct",
+        "relatedId": "ostermann-104-nul-schialins"
+      },
+      "evidence": [
+        {
+          "label": "Facsimile Ostermann 1876, p. PDF 36",
+          "kind": "primary"
+        },
+        {
+          "label": "ParemioRom, repertorio Ostermann",
+          "url": "https://stel.ub.edu/paremio-rom/es/sources/ostermann-valentino-proverbi-friulani-raccolti-dalla-viva-voce-del-popolo?order=type&page=4&sort=desc",
+          "kind": "normalized_reference"
+        }
+      ],
+      "editorialNote": "È una variante autonoma del segno delle nuvole a fasce, non un duplicato del detto sulle nuvole a scalini. Richiede una situazione meteo coerente.",
+      "publish": false
+    },
+    {
+      "id": "ost1876-ombrene-avost-panze-genar",
+      "reviewStatus": "language_reviewed",
+      "furNormalized": "La ombrene dal mês di avost e fâs dulî la panze tal mês di zenâr.",
+      "itFinal": "L'ombra d'agosto fa dolere la pancia in gennaio.",
+      "destination": "discover",
+      "calendarRule": {
+        "type": "months",
+        "months": [8],
+        "fallbackAllowed": false
+      },
+      "duplicateAudit": {
+        "status": "new_distinct"
+      },
+      "evidence": [
+        {
+          "label": "Facsimile Ostermann 1876, p. PDF 42; seguito dalla glossa: Chi riposa estate digiuna d'inverno",
+          "kind": "primary"
+        }
+      ],
+      "editorialNote": "Il senso è un richiamo al lavoro e alle scorte estive, non un consiglio medico. La forma normalizzata conserva la ombrene, attestato nel repertorio lessicografico, e va spiegata in Scopri.",
+      "publish": false
+    },
+    {
+      "id": "ost1876-cjase-braide-prat",
+      "reviewStatus": "language_reviewed",
+      "furNormalized": "Cjase tante di stâ, braide tante di coltâ, prât tant di cjalâ.",
+      "itFinal": "Casa quanto basta per abitarci, podere quanto basta da coltivare, prato quanto basta da curare.",
+      "destination": "almanac",
+      "calendarRule": {
+        "type": "general",
+        "bucket": "wisdom",
+        "fallbackAllowed": true
+      },
+      "duplicateAudit": {
+        "status": "new_distinct"
+      },
+      "evidence": [
+        {
+          "label": "Facsimile Ostermann 1876, p. PDF 42",
+          "kind": "primary"
+        },
+        {
+          "label": "Dizionari de Lenghe Furlane, voce tant",
+          "url": "https://dizionarifurlan.eu/headword/tant",
+          "kind": "normalized_reference"
+        }
+      ],
+      "editorialNote": "Proverbio generale sulla misura; non contiene riferimenti incompatibili con la data corrente.",
+      "publish": false
+    },
+    {
+      "id": "ost1876-se-semena-vece-forment",
+      "reviewStatus": "language_reviewed",
+      "furNormalized": "Se si semene vece, nol pues nassi forment.",
+      "itFinal": "Se si semina veccia non può nascere frumento.",
+      "destination": "almanac",
+      "calendarRule": {
+        "type": "general",
+        "bucket": "agriculture",
+        "fallbackAllowed": true
+      },
+      "duplicateAudit": {
+        "status": "new_distinct"
+      },
+      "evidence": [
+        {
+          "label": "Facsimile Ostermann 1876, p. PDF 45",
+          "kind": "primary"
+        }
+      ],
+      "editorialNote": "La congiunzione se rende esplicito il valore condizionale; semene, pues e nassi seguono la grafia normalizzata.",
+      "publish": false
+    },
+    {
+      "id": "ost1876-forment-ten-vend",
+      "reviewStatus": "language_reviewed",
+      "furNormalized": "Il forment plui si lu ten e plui ben si lu vent.",
+      "itFinal": "Il frumento, più lo si conserva e meglio lo si vende.",
+      "destination": "almanac",
+      "calendarRule": {
+        "type": "general",
+        "bucket": "agriculture",
+        "fallbackAllowed": true
+      },
+      "duplicateAudit": {
+        "status": "new_distinct"
+      },
+      "evidence": [
+        {
+          "label": "Facsimile Ostermann 1876, p. PDF 45",
+          "kind": "primary"
+        },
+        {
+          "label": "Dizionari de Lenghe Furlane, voce tignî",
+          "url": "https://dizionarifurlan.eu/headword/tign%C3%AE",
+          "kind": "normalized_reference"
+        }
+      ],
+      "editorialNote": "La forma normalizzata usa vent, attestato nel dizionario; il precedente vend era una trascrizione non normalizzata.",
+      "publish": false
+    },
+    {
+      "id": "ost1876-ogni-vit-so-pal",
+      "reviewStatus": "language_reviewed",
+      "furNormalized": "Ogni vît il so pâl.",
+      "itFinal": "Ogni vite ha il suo palo.",
+      "destination": "almanac",
+      "calendarRule": {
+        "type": "general",
+        "bucket": "wisdom",
+        "fallbackAllowed": true
+      },
+      "duplicateAudit": {
+        "status": "new_distinct"
+      },
+      "evidence": [
+        {
+          "label": "Facsimile Ostermann 1876, p. PDF 45",
+          "kind": "primary"
+        },
+        {
+          "label": "Dizionari de Lenghe Furlane, voce ogni",
+          "url": "https://dizionarifurlan.eu/headword/ogni",
+          "kind": "normalized_reference"
+        }
+      ],
+      "editorialNote": "Detto generale, breve e autosufficiente; potrà essere assegnato a una data libera nella matrice finale.",
+      "publish": false
+    },
+    {
+      "id": "ost1876-vit-cence-arbul",
+      "reviewStatus": "language_reviewed",
+      "furNormalized": "Une vît cence arbul no sta sù.",
+      "itFinal": "Una vite senza sostegno non sta in piedi.",
+      "destination": "almanac",
+      "calendarRule": {
+        "type": "general",
+        "bucket": "wisdom",
+        "fallbackAllowed": true
+      },
+      "duplicateAudit": {
+        "status": "new_distinct"
+      },
+      "evidence": [
+        {
+          "label": "Facsimile Ostermann 1876, p. PDF 45",
+          "kind": "primary"
+        },
+        {
+          "label": "Dizionari de Lenghe Furlane, voce stâ sù",
+          "url": "https://dizionarifurlan.eu/headword/st%C3%A2%20s%C3%B9",
+          "kind": "normalized_reference"
+        }
+      ],
+      "editorialNote": "Detto generale sul sostegno, verificato nella forma normalizzata completa.",
+      "publish": false
+    },
+    {
+      "id": "ost1876-ogni-jerbe-semence",
+      "reviewStatus": "language_reviewed",
+      "furNormalized": "Ogni jerbe e fâs la sô semence.",
+      "itFinal": "Ogni erba produce il proprio seme.",
+      "destination": "almanac",
+      "calendarRule": {
+        "type": "general",
+        "bucket": "nature",
+        "fallbackAllowed": true
+      },
+      "duplicateAudit": {
+        "status": "new_distinct"
+      },
+      "evidence": [
+        {
+          "label": "Facsimile Ostermann 1876, p. PDF 49",
+          "kind": "primary"
+        },
+        {
+          "label": "Dizionari de Lenghe Furlane, voce ogni",
+          "url": "https://dizionarifurlan.eu/headword/ogni",
+          "kind": "normalized_reference"
+        }
+      ],
+      "editorialNote": "Il dizionario conferma il pronome soggetto e e la forma completa del proverbio.",
+      "publish": false
+    },
+    {
+      "id": "ost1876-troi-batit-no-jerbe",
+      "reviewStatus": "language_reviewed",
+      "furNormalized": "Tal troi simpri batût no ven sù jerbe.",
+      "itFinal": "Sul sentiero sempre battuto non cresce erba.",
+      "destination": "almanac",
+      "calendarRule": {
+        "type": "general",
+        "bucket": "wisdom",
+        "fallbackAllowed": true
+      },
+      "duplicateAudit": {
+        "status": "new_distinct"
+      },
+      "evidence": [
+        {
+          "label": "Facsimile Ostermann 1876, p. PDF 49",
+          "kind": "primary"
+        },
+        {
+          "label": "Dizionari de Lenghe Furlane, voce troi",
+          "url": "https://dizionarifurlan.eu/headword/troi",
+          "kind": "normalized_reference"
+        }
+      ],
+      "editorialNote": "La forma normalizzata reintegra sù, confermato dal repertorio lessicografico.",
+      "publish": false
+    }
+  ]
+}

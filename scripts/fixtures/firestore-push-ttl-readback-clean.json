@@ -1,0 +1,24 @@
+{
+  "schemaVersion": "firestore-push-ttl-readback-v1",
+  "projectId": "meteo-friul",
+  "databaseId": "(default)",
+  "method": "firestore.runQuery.expires_at-projection",
+  "collections": [
+    {
+      "collectionGroup": "push_official_alert_outbox",
+      "field": "expires_at",
+      "documentCount": 1,
+      "validExpiresAtCount": 1,
+      "missingOrInvalidExpiresAt": 0,
+      "documentSetSha256": "1111111111111111111111111111111111111111111111111111111111111111"
+    },
+    {
+      "collectionGroup": "push_local_notice_outbox",
+      "field": "expires_at",
+      "documentCount": 2,
+      "validExpiresAtCount": 2,
+      "missingOrInvalidExpiresAt": 0,
+      "documentSetSha256": "2222222222222222222222222222222222222222222222222222222222222222"
+    }
+  ]
+}

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="splash_background">#061A2E</color>
+    <color name="system_status_bar_light">#091D3D</color>
+    <color name="system_navigation_bar_light">#091D3D</color>
+    <color name="system_status_bar_dark">#08213A</color>
+    <color name="system_navigation_bar_dark">#0B2742</color>
+    <color name="system_status_bar">@color/system_status_bar_light</color>
+    <color name="system_navigation_bar">@color/system_navigation_bar_light</color>
+    <bool name="system_bars_use_dark_icons">false</bool>
+</resources>

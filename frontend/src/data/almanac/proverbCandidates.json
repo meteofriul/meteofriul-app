@@ -1,0 +1,3741 @@
+{
+  "schemaVersion": 1,
+  "purpose": "Archivio di lavoro per nuovi proverbi Ostermann. I record qui dentro non sono pubblicabili automaticamente e non vengono letti dalla UI.",
+  "promotionRule": "Promuovere in proverbs.json solo record con fonte verificata, FUR normalizzato, traduzione IT controllata, tag e stato ready.",
+  "reviewStates": {
+    "candidate": "Estratto grezzo o trascritto: non pubblicabile.",
+    "source_checked": "Controllato contro pagina clean/PDF.",
+    "fur_normalized": "Grafia FUR normalizzata e senza mojibake.",
+    "it_reviewed": "Traduzione italiana controllata.",
+    "ready": "Pubblicabile in proverbs.json.",
+    "excluded": "Scartato o non adatto alla app."
+  },
+  "recordShape": {
+    "id": "ostermann-page-line-slug",
+    "furOriginal": "testo originale o trascrizione conservativa",
+    "fur": "testo FUR normalizzato",
+    "it": "traduzione italiana breve",
+    "source": {
+      "label": "Ostermann 1894",
+      "pdfPage": 0,
+      "textPage": 0,
+      "sourcePath": "normalized-pages/page-000.txt",
+      "verifiedAgainst": "clean-page-or-pdf"
+    },
+    "tags": [
+      "meteo",
+      "stagione"
+    ],
+    "dateAnchors": [],
+    "seasons": [],
+    "almanacEligible": false,
+    "review": {
+      "status": "candidate",
+      "notes": ""
+    }
+  },
+  "records": [
+    {
+      "id": "ostermann-103-montane-san-michel",
+      "furOriginal": "La montane di San Michel 29/7 no reste in cîl.",
+      "fur": "La montane di San Michel no reste in cîl.",
+      "it": "La montana di San Michele non resta in cielo.",
+      "category": "meteo_stagionale",
+      "source": {
+        "label": "Ostermann 1894",
+        "pdfPage": 103,
+        "textPage": 78,
+        "sourcePath": "normalized-pages/page-103.txt",
+        "verifiedAgainst": "pages/page-103.txt"
+      },
+      "tags": [
+        "san_michel",
+        "montagna",
+        "pioggia",
+        "estate"
+      ],
+      "dateAnchors": [
+        "07-29"
+      ],
+      "seasons": [
+        "summer"
+      ],
+      "almanacEligible": false,
+      "review": {
+        "status": "source_checked",
+        "notes": "Traduzione e grafia FUR da rivedere; chiarire il senso meteorologico di montane prima della promozione."
+      }
+    },
+    {
+      "id": "ostermann-103-muarz-novembre",
+      "furOriginal": "I Muarz 2/11 o ch'a justin o ch'a disjustin.",
+      "fur": "I Muarz o ch'a justin o ch'a disjustin.",
+      "it": "I Morti o aggiustano o scompigliano.",
+      "category": "almanacco_santi",
+      "source": {
+        "label": "Ostermann 1894",
+        "pdfPage": 103,
+        "textPage": 78,
+        "sourcePath": "normalized-pages/page-103.txt",
+        "verifiedAgainst": "pages/page-103.txt"
+      },
+      "tags": [
+        "morti",
+        "novembre",
+        "meteo",
+        "cambio_tempo"
+      ],
+      "dateAnchors": [
+        "11-02"
+      ],
+      "seasons": [
+        "autumn"
+      ],
+      "almanacEligible": false,
+      "review": {
+        "status": "source_checked",
+        "notes": "Traduzione letterale provvisoria; richiede revisione FUR e nota interpretativa."
+      }
+    },
+    {
+      "id": "ostermann-103-nadal-pasche-fuch",
+      "furOriginal": "Nadal 25/12 al zúch e Pasche donge il fùch.",
+      "fur": "Nadal al zûc e Pasche dongje il fûc.",
+      "it": "Natale all'aperto e Pasqua vicino al fuoco.",
+      "category": "meteo_stagionale",
+      "source": {
+        "label": "Ostermann 1894",
+        "pdfPage": 103,
+        "textPage": 78,
+        "sourcePath": "normalized-pages/page-103.txt",
+        "verifiedAgainst": "pages/page-103.txt"
+      },
+      "tags": [
+        "natale",
+        "pasqua",
+        "freddo",
+        "stagione"
+      ],
+      "dateAnchors": [
+        "12-25"
+      ],
+      "movableDates": [
+        "easter"
+      ],
+      "seasons": [
+        "winter",
+        "spring"
+      ],
+      "almanacEligible": false,
+      "review": {
+        "status": "source_checked",
+        "notes": "Da verificare resa di zûc/zúch e traduzione naturale prima della pubblicazione."
+      }
+    },
+    {
+      "id": "ostermann-103-nadal-chase-pasche-plazze",
+      "furOriginal": "Nadal in chase e Pasche in plazze, o viceversa.",
+      "fur": "Nadal in cjase e Pasche in place, o viceversa.",
+      "it": "Natale in casa e Pasqua in piazza, o viceversa.",
+      "category": "meteo_stagionale",
+      "source": {
+        "label": "Ostermann 1894",
+        "pdfPage": 103,
+        "textPage": 78,
+        "sourcePath": "normalized-pages/page-103.txt",
+        "verifiedAgainst": "pages/page-103.txt"
+      },
+      "tags": [
+        "natale",
+        "pasqua",
+        "stagione"
+      ],
+      "dateAnchors": [
+        "12-25"
+      ],
+      "movableDates": [
+        "easter"
+      ],
+      "seasons": [
+        "winter",
+        "spring"
+      ],
+      "almanacEligible": false,
+      "review": {
+        "status": "source_checked",
+        "notes": "Da decidere se mostrare insieme al proverbio Natale/Pasqua o come variante."
+      }
+    },
+    {
+      "id": "ostermann-103-umiditat-glazze",
+      "furOriginal": "L' umiditat disfe la glazze.",
+      "fur": "L'umiditât disfe la glace.",
+      "it": "L'umidità scioglie il ghiaccio.",
+      "category": "meteo",
+      "source": {
+        "label": "Ostermann 1894",
+        "pdfPage": 103,
+        "textPage": 78,
+        "sourcePath": "normalized-pages/page-103.txt",
+        "verifiedAgainst": "pages/page-103.txt"
+      },
+      "tags": [
+        "umidita",
+        "ghiaccio",
+        "freddo"
+      ],
+      "dateAnchors": [],
+      "seasons": [
+        "winter"
+      ],
+      "almanacEligible": false,
+      "review": {
+        "status": "source_checked",
+        "notes": "Possibile sostituto pulito del record esistente con mojibake; verificare grafia."
+      }
+    },
+    {
+      "id": "ostermann-103-parsore-nul-seren",
+      "furOriginal": "Parsore il nûl l'è simpri serèn.",
+      "fur": "Parsore il nûl al è simpri serèn.",
+      "it": "Sopra la nuvola è sempre sereno.",
+      "category": "meteo_giornaliero",
+      "source": {
+        "label": "Ostermann 1894",
+        "pdfPage": 103,
+        "textPage": 78,
+        "sourcePath": "normalized-pages/page-103.txt",
+        "verifiedAgainst": "pages/page-103.txt"
+      },
+      "tags": [
+        "nubi",
+        "sereno",
+        "cielo"
+      ],
+      "dateAnchors": [],
+      "seasons": [
+        "all"
+      ],
+      "almanacEligible": false,
+      "review": {
+        "status": "source_checked",
+        "notes": "Buon candidato editoriale; revisione FUR prima della promozione."
+      }
+    },
+    {
+      "id": "ostermann-103-bon-timp-buine-int",
+      "furOriginal": "Nè dal bon timp nè da buine int no si stúfisi mai.",
+      "fur": "Né dal bon timp né da buine int no si stufisi mai.",
+      "it": "Del bel tempo e della brava gente non ci si stanca mai.",
+      "category": "saggezza",
+      "source": {
+        "label": "Ostermann 1894",
+        "pdfPage": 103,
+        "textPage": 78,
+        "sourcePath": "normalized-pages/page-103.txt",
+        "verifiedAgainst": "pages/page-103.txt"
+      },
+      "tags": [
+        "bel_tempo",
+        "vita",
+        "saggezza"
+      ],
+      "dateAnchors": [],
+      "seasons": [
+        "all"
+      ],
+      "almanacEligible": false,
+      "review": {
+        "status": "source_checked",
+        "notes": "Tono adatto; da normalizzare graficamente."
+      }
+    },
+    {
+      "id": "ostermann-103-dopo-ploe-bon-timp",
+      "furOriginal": "Dopo la ploe ven il bon timp, o viceversa.",
+      "fur": "Dopo la ploe ven il bon timp.",
+      "it": "Dopo la pioggia viene il bel tempo.",
+      "category": "meteo_giornaliero",
+      "source": {
+        "label": "Ostermann 1894",
+        "pdfPage": 103,
+        "textPage": 78,
+        "sourcePath": "normalized-pages/page-103.txt",
+        "verifiedAgainst": "pages/page-103.txt"
+      },
+      "tags": [
+        "pioggia",
+        "bel_tempo",
+        "cambio_tempo"
+      ],
+      "dateAnchors": [],
+      "seasons": [
+        "all"
+      ],
+      "almanacEligible": false,
+      "review": {
+        "status": "source_checked",
+        "notes": "Valutare se mantenere la variante 'o viceversa' o usare versione breve."
+      }
+    },
+    {
+      "id": "ostermann-103-no-mai-ploe",
+      "furOriginal": "No è mai stade ploe, che bon timp nol sei tornât.",
+      "fur": "No è mai stade ploe, che bon timp nol sei tornât.",
+      "it": "Non c'è mai stata pioggia senza che tornasse il bel tempo.",
+      "category": "meteo_giornaliero",
+      "source": {
+        "label": "Ostermann 1894",
+        "pdfPage": 103,
+        "textPage": 78,
+        "sourcePath": "normalized-pages/page-103.txt",
+        "verifiedAgainst": "pages/page-103.txt"
+      },
+      "tags": [
+        "pioggia",
+        "bel_tempo",
+        "cambio_tempo"
+      ],
+      "dateAnchors": [],
+      "seasons": [
+        "all"
+      ],
+      "almanacEligible": false,
+      "review": {
+        "status": "source_checked",
+        "notes": "Buon candidato; verificare forma verbale in revisione FUR."
+      }
+    },
+    {
+      "id": "ostermann-103-timp-si-rifas",
+      "furOriginal": "Il timp si rifas.",
+      "fur": "Il timp si rifàs.",
+      "it": "Il tempo si rifà.",
+      "category": "meteo_giornaliero",
+      "source": {
+        "label": "Ostermann 1894",
+        "pdfPage": 103,
+        "textPage": 78,
+        "sourcePath": "normalized-pages/page-103.txt",
+        "verifiedAgainst": "pages/page-103.txt"
+      },
+      "tags": [
+        "tempo",
+        "cambio_tempo"
+      ],
+      "dateAnchors": [],
+      "seasons": [
+        "all"
+      ],
+      "almanacEligible": false,
+      "review": {
+        "status": "source_checked",
+        "notes": "Molto breve: utile come proverbio secondario o microcopy."
+      }
+    },
+    {
+      "id": "ostermann-103-zornade-matine",
+      "furOriginal": "Se si ûl savè la zornade, si chali la matine.",
+      "fur": "Se si vûl savê la zornade, si cjale la matine.",
+      "it": "Se vuoi conoscere la giornata, guarda la mattina.",
+      "category": "meteo_giornaliero",
+      "source": {
+        "label": "Ostermann 1894",
+        "pdfPage": 103,
+        "textPage": 78,
+        "sourcePath": "normalized-pages/page-103.txt",
+        "verifiedAgainst": "pages/page-103.txt"
+      },
+      "tags": [
+        "mattina",
+        "giorno",
+        "osservazione"
+      ],
+      "dateAnchors": [],
+      "seasons": [
+        "all"
+      ],
+      "almanacEligible": false,
+      "review": {
+        "status": "source_checked",
+        "notes": "Candidato forte per Almanacco; grafia normalizzata da controllare."
+      }
+    },
+    {
+      "id": "ostermann-103-cuatri-timporis",
+      "furOriginal": "Lis cuatri timporis cambiin il timp.",
+      "fur": "Lis cuatri timporis cambiin il timp.",
+      "it": "Le quattro tempora cambiano il tempo.",
+      "category": "calendario_rituale",
+      "source": {
+        "label": "Ostermann 1894",
+        "pdfPage": 103,
+        "textPage": 78,
+        "sourcePath": "normalized-pages/page-103.txt",
+        "verifiedAgainst": "pages/page-103.txt"
+      },
+      "tags": [
+        "tempora",
+        "calendario",
+        "cambio_tempo"
+      ],
+      "dateAnchors": [],
+      "seasons": [
+        "all"
+      ],
+      "almanacEligible": false,
+      "review": {
+        "status": "source_checked",
+        "notes": "Richiede nota editoriale: 'tempora' potrebbe non essere chiaro a tutti."
+      }
+    },
+    {
+      "id": "ostermann-103-nul-lizer-sere",
+      "furOriginal": "Nul lizêr la sere bon timp si spere.",
+      "fur": "Nûl lizêr la sere, bon timp si spere.",
+      "it": "Nuvola leggera la sera, si spera bel tempo.",
+      "category": "meteo_giornaliero",
+      "source": {
+        "label": "Ostermann 1894",
+        "pdfPage": 103,
+        "textPage": 78,
+        "sourcePath": "normalized-pages/page-103.txt",
+        "verifiedAgainst": "pages/page-103.txt"
+      },
+      "tags": [
+        "sera",
+        "nubi",
+        "bel_tempo"
+      ],
+      "dateAnchors": [],
+      "seasons": [
+        "all"
+      ],
+      "almanacEligible": false,
+      "review": {
+        "status": "source_checked",
+        "notes": "Candidato forte; controllare se duplicato concettuale di altri proverbi su cielo rosso/nubi."
+      }
+    },
+    {
+      "id": "ostermann-103-joibe-vinars",
+      "furOriginal": "Chèl che la joibe l'impromèt, lu vinars lu atind.",
+      "fur": "Chêl che la joibe e impromet, il vinars lu atind.",
+      "it": "Quello che il giovedì promette, il venerdì lo attende.",
+      "category": "meteo_giornaliero",
+      "source": {
+        "label": "Ostermann 1894",
+        "pdfPage": 103,
+        "textPage": 78,
+        "sourcePath": "normalized-pages/page-103.txt",
+        "verifiedAgainst": "pages/page-103.txt"
+      },
+      "tags": [
+        "giovedi",
+        "venerdi",
+        "continuita_tempo"
+      ],
+      "dateAnchors": [],
+      "seasons": [
+        "all"
+      ],
+      "almanacEligible": false,
+      "review": {
+        "status": "source_checked",
+        "notes": "Da verificare traduzione e forma FUR."
+      }
+    },
+    {
+      "id": "ostermann-105-bon-timp-gnot",
+      "furOriginal": "Bon timp fat di gnot, se al dure un'ore al dure trop.",
+      "fur": "Bon timp fat di gnot, se al dure un'ore al dure trop.",
+      "it": "Bel tempo fatto di notte: se dura un'ora dura troppo.",
+      "category": "meteo_giornaliero",
+      "source": {
+        "label": "Ostermann 1894",
+        "pdfPage": 105,
+        "textPage": 80,
+        "sourcePath": "normalized-pages/page-105.txt",
+        "verifiedAgainst": "pages/page-105.txt"
+      },
+      "tags": [
+        "notte",
+        "bel_tempo",
+        "durata"
+      ],
+      "dateAnchors": [],
+      "seasons": [
+        "all"
+      ],
+      "almanacEligible": false,
+      "review": {
+        "status": "source_checked",
+        "notes": "Candidato buono ma da rendere naturale in italiano."
+      }
+    },
+    {
+      "id": "ostermann-105-timp-gnot-misdi",
+      "furOriginal": "Il timp ch'a si fàs di gnòt, nol dure tròp; E chèl ch'a si fas di misdi, al dure dut il dì.",
+      "fur": "Il timp ch'a si fàs di gnot, nol dure trop; e chêl ch'a si fàs di misdì, al dure dut il dì.",
+      "it": "Il tempo che si fa di notte dura poco; quello che si fa a mezzogiorno dura tutto il giorno.",
+      "category": "meteo_giornaliero",
+      "source": {
+        "label": "Ostermann 1894",
+        "pdfPage": 105,
+        "textPage": 80,
+        "sourcePath": "normalized-pages/page-105.txt",
+        "verifiedAgainst": "pages/page-105.txt"
+      },
+      "tags": [
+        "notte",
+        "mezzogiorno",
+        "durata",
+        "meteo"
+      ],
+      "dateAnchors": [],
+      "seasons": [
+        "all"
+      ],
+      "almanacEligible": false,
+      "review": {
+        "status": "source_checked",
+        "notes": "Testo lungo: valutare se spezzarlo o usarlo solo in Scopri/archivio."
+      }
+    },
+    {
+      "id": "ostermann-105-lune-cercli",
+      "furOriginal": "Cuand che la lune ha il cercli, ploe sigure.",
+      "fur": "Cuant che la lune e à il cercli, ploe sigure.",
+      "it": "Quando la luna ha il cerchio, pioggia sicura.",
+      "category": "meteo_mensile",
+      "source": {
+        "label": "Ostermann 1894",
+        "pdfPage": 105,
+        "textPage": 80,
+        "sourcePath": "normalized-pages/page-105.txt",
+        "verifiedAgainst": "pages/page-105.txt"
+      },
+      "tags": [
+        "luna",
+        "alone",
+        "pioggia"
+      ],
+      "dateAnchors": [],
+      "seasons": [
+        "all"
+      ],
+      "almanacEligible": false,
+      "review": {
+        "status": "source_checked",
+        "notes": "Candidato forte per Almanacco luna; controllare grafia."
+      }
+    },
+    {
+      "id": "ostermann-105-lune-pelose",
+      "furOriginal": "Lune pelose zornade plojose.",
+      "fur": "Lune pelose, zornade plojose.",
+      "it": "Luna velata, giornata piovosa.",
+      "category": "meteo_mensile",
+      "source": {
+        "label": "Ostermann 1894",
+        "pdfPage": 105,
+        "textPage": 80,
+        "sourcePath": "normalized-pages/page-105.txt",
+        "verifiedAgainst": "pages/page-105.txt"
+      },
+      "tags": [
+        "luna",
+        "pioggia",
+        "giornata"
+      ],
+      "dateAnchors": [],
+      "seasons": [
+        "all"
+      ],
+      "almanacEligible": false,
+      "review": {
+        "status": "source_checked",
+        "notes": "Candidato breve e leggibile; verificare resa di 'pelose'."
+      }
+    },
+    {
+      "id": "ostermann-105-aghe-pais",
+      "furOriginal": "l'åghe torne ai siei pais.",
+      "fur": "L'aghe torne ai siei paîs.",
+      "it": "L'acqua torna ai suoi paesi.",
+      "category": "meteo_giornaliero",
+      "source": {
+        "label": "Ostermann 1894",
+        "pdfPage": 105,
+        "textPage": 80,
+        "sourcePath": "normalized-pages/page-105.txt",
+        "verifiedAgainst": "pages/page-105.txt"
+      },
+      "tags": [
+        "acqua",
+        "pioggia",
+        "ciclo_acqua"
+      ],
+      "dateAnchors": [],
+      "seasons": [
+        "all"
+      ],
+      "almanacEligible": false,
+      "review": {
+        "status": "source_checked",
+        "notes": "Interessante ma richiede breve contesto per essere capito."
+      }
+    },
+    {
+      "id": "ostermann-190-san-josef-seren",
+      "furOriginal": "Buine anade a ven se a San Josef al fås serèn.",
+      "fur": "Buine anade a ven se a San Josef al fâs serèn.",
+      "it": "Buona annata viene se a San Giuseppe fa sereno.",
+      "category": "almanacco_santi",
+      "source": {
+        "label": "Ostermann 1894",
+        "pdfPage": 190,
+        "textPage": 165,
+        "sourcePath": "normalized-pages/page-190.txt",
+        "verifiedAgainst": "pages/page-190.txt"
+      },
+      "tags": [
+        "san_josef",
+        "sereno",
+        "annata",
+        "primavera"
+      ],
+      "dateAnchors": [
+        "03-19"
+      ],
+      "seasons": [
+        "spring"
+      ],
+      "almanacEligible": false,
+      "review": {
+        "status": "source_checked",
+        "notes": "Fonte contiene punto interrogativo editoriale; da trattare con cautela."
+      }
+    },
+    {
+      "id": "ostermann-190-san-josef-biel",
+      "furOriginal": "San Josef biel, buine anade.",
+      "fur": "San Josef biel, buine anade.",
+      "it": "San Giuseppe bello, buona annata.",
+      "category": "almanacco_santi",
+      "source": {
+        "label": "Ostermann 1894",
+        "pdfPage": 190,
+        "textPage": 165,
+        "sourcePath": "normalized-pages/page-190.txt",
+        "verifiedAgainst": "pages/page-190.txt"
+      },
+      "tags": [
+        "san_josef",
+        "sereno",
+        "annata",
+        "primavera"
+      ],
+      "dateAnchors": [
+        "03-19"
+      ],
+      "seasons": [
+        "spring"
+      ],
+      "almanacEligible": false,
+      "review": {
+        "status": "source_checked",
+        "notes": "Versione breve, probabilmente preferibile alla variante lunga dopo revisione."
+      }
+    },
+    {
+      "id": "ostermann-190-albe-anunziade",
+      "furOriginal": "L'albe clare a l' Anunziade 28/3 anade beade.",
+      "fur": "L'albe clare a l'Anunziade, anade beade.",
+      "it": "Alba chiara all'Annunciazione, annata beata.",
+      "category": "almanacco_santi",
+      "source": {
+        "label": "Ostermann 1894",
+        "pdfPage": 190,
+        "textPage": 165,
+        "sourcePath": "normalized-pages/page-190.txt",
+        "verifiedAgainst": "pages/page-190.txt"
+      },
+      "tags": [
+        "annunciazione",
+        "alba",
+        "annata"
+      ],
+      "dateAnchors": [
+        "03-28"
+      ],
+      "seasons": [
+        "spring"
+      ],
+      "almanacEligible": false,
+      "review": {
+        "status": "source_checked",
+        "notes": "Data in fonte indicata 28/3: verificare calendario/fonte prima di assegnazione definitiva."
+      }
+    },
+    {
+      "id": "ostermann-190-plois-marz-brosiz-avril",
+      "furOriginal": "Tantis plois di marz, tantis brosiz d'avril.",
+      "fur": "Tantis plois di març, tantis brosiz d'avril.",
+      "it": "Tante piogge di marzo, tante brinate d'aprile.",
+      "category": "meteo_mensile",
+      "source": {
+        "label": "Ostermann 1894",
+        "pdfPage": 190,
+        "textPage": 165,
+        "sourcePath": "normalized-pages/page-190.txt",
+        "verifiedAgainst": "pages/page-190.txt"
+      },
+      "tags": [
+        "marzo",
+        "aprile",
+        "pioggia",
+        "brina"
+      ],
+      "dateAnchors": [],
+      "seasons": [
+        "spring"
+      ],
+      "almanacEligible": false,
+      "review": {
+        "status": "source_checked",
+        "notes": "Candidato stagionale buono; controllare grafia."
+      }
+    },
+    {
+      "id": "ostermann-190-avril-plojos",
+      "furOriginal": "Avril plojós – àn bondanzós.",
+      "fur": "Avril plojôs, an bondanzôs.",
+      "it": "Aprile piovoso, anno abbondante.",
+      "category": "meteo_mensile",
+      "source": {
+        "label": "Ostermann 1894",
+        "pdfPage": 190,
+        "textPage": 165,
+        "sourcePath": "normalized-pages/page-190.txt",
+        "verifiedAgainst": "pages/page-190.txt"
+      },
+      "tags": [
+        "aprile",
+        "pioggia",
+        "raccolto",
+        "annata"
+      ],
+      "dateAnchors": [],
+      "seasons": [
+        "spring"
+      ],
+      "almanacEligible": false,
+      "review": {
+        "status": "source_checked",
+        "notes": "Candidato forte e breve."
+      }
+    },
+    {
+      "id": "ostermann-190-avril-bagnat",
+      "furOriginal": "Avril bagnât - la benediziòn sul semenât.",
+      "fur": "Avril bagnât, la benedizion sul semenât.",
+      "it": "Aprile bagnato, benedizione sul seminato.",
+      "category": "meteo_mensile",
+      "source": {
+        "label": "Ostermann 1894",
+        "pdfPage": 190,
+        "textPage": 165,
+        "sourcePath": "normalized-pages/page-190.txt",
+        "verifiedAgainst": "pages/page-190.txt"
+      },
+      "tags": [
+        "aprile",
+        "pioggia",
+        "semina",
+        "campagna"
+      ],
+      "dateAnchors": [],
+      "seasons": [
+        "spring"
+      ],
+      "almanacEligible": false,
+      "review": {
+        "status": "source_checked",
+        "notes": "Candidato molto adatto all'Almanacco; grafia da rivedere."
+      }
+    },
+    {
+      "id": "ostermann-190-marz-avril-mai",
+      "furOriginal": "Márz sút, avril bagnat, mai temperat, Biat a chèl che haverà ben semenât.",
+      "fur": "Març sût, avril bagnât, mai temperât, biât a chêl che al varà ben semenât.",
+      "it": "Marzo asciutto, aprile bagnato, maggio temperato: beato chi avrà seminato bene.",
+      "category": "meteo_mensile",
+      "source": {
+        "label": "Ostermann 1894",
+        "pdfPage": 190,
+        "textPage": 165,
+        "sourcePath": "normalized-pages/page-190.txt",
+        "verifiedAgainst": "pages/page-190.txt"
+      },
+      "tags": [
+        "marzo",
+        "aprile",
+        "maggio",
+        "semina",
+        "campagna"
+      ],
+      "dateAnchors": [],
+      "seasons": [
+        "spring"
+      ],
+      "almanacEligible": false,
+      "review": {
+        "status": "source_checked",
+        "notes": "Testo lungo ma forte; verificare con particolare attenzione perche' la fonte ha layout disturbato."
+      }
+    },
+    {
+      "id": "ostermann-190-mai-jugn-pan-vin",
+      "furOriginal": "Mai temperât e Jùgn bagnat, pån e vin in cuantitat.",
+      "fur": "Mai temperât e Jugn bagnât, pan e vin in cuantitât.",
+      "it": "Maggio temperato e giugno bagnato, pane e vino in quantità.",
+      "category": "meteo_mensile",
+      "source": {
+        "label": "Ostermann 1894",
+        "pdfPage": 190,
+        "textPage": 165,
+        "sourcePath": "normalized-pages/page-190.txt",
+        "verifiedAgainst": "pages/page-190.txt"
+      },
+      "tags": [
+        "maggio",
+        "giugno",
+        "pioggia",
+        "raccolto",
+        "vino"
+      ],
+      "dateAnchors": [],
+      "seasons": [
+        "spring",
+        "summer"
+      ],
+      "almanacEligible": false,
+      "review": {
+        "status": "source_checked",
+        "notes": "Candidato forte per calendario agricolo; normalizzazione da rivedere."
+      }
+    },
+    {
+      "id": "ostermann-190-pluv-avost",
+      "furOriginal": "Se al pluv d' avòst al pluv gran e most.",
+      "fur": "Se al plûf d'avost, al plûf gran e most.",
+      "it": "Se piove d'agosto, piovono grano e mosto.",
+      "category": "meteo_mensile",
+      "source": {
+        "label": "Ostermann 1894",
+        "pdfPage": 190,
+        "textPage": 165,
+        "sourcePath": "normalized-pages/page-190.txt",
+        "verifiedAgainst": "pages/page-190.txt"
+      },
+      "tags": [
+        "agosto",
+        "pioggia",
+        "grano",
+        "mosto",
+        "raccolto"
+      ],
+      "dateAnchors": [],
+      "seasons": [
+        "summer"
+      ],
+      "almanacEligible": false,
+      "review": {
+        "status": "source_checked",
+        "notes": "Candidato forte; verificare resa di gran/most."
+      }
+    },
+    {
+      "id": "ostermann-190-burlaz-san-bortolomio",
+      "furOriginal": "Burláz dopo San Bortolomio racomandinsi a Dio.",
+      "fur": "Burlaz dopo San Bortolomio, racomandinsi a Dio.",
+      "it": "Temporale dopo San Bartolomeo, raccomandiamoci a Dio.",
+      "category": "almanacco_santi",
+      "source": {
+        "label": "Ostermann 1894",
+        "pdfPage": 190,
+        "textPage": 165,
+        "sourcePath": "normalized-pages/page-190.txt",
+        "verifiedAgainst": "pages/page-190.txt"
+      },
+      "tags": [
+        "san_bartolomeo",
+        "temporale",
+        "agosto"
+      ],
+      "dateAnchors": [
+        "08-24"
+      ],
+      "seasons": [
+        "summer"
+      ],
+      "almanacEligible": false,
+      "review": {
+        "status": "source_checked",
+        "notes": "Tono forte/religioso: valutare se adatto alla UI o solo archivio culturale."
+      }
+    },
+    {
+      "id": "ostermann-193-pasche-fen",
+      "furOriginal": "Plojose la Pasche, poch fen sul prat - biele e serene, ont e formadi a bon marchat.",
+      "fur": "Plojose la Pasche, pôc fen sul prat; biele e serene, ont e formadi a bon marcjât.",
+      "it": "Pasqua piovosa, poco fieno sul prato; bella e serena, burro e formaggio a buon mercato.",
+      "category": "almanacco_santi",
+      "source": {
+        "label": "Ostermann 1894",
+        "pdfPage": 193,
+        "textPage": 168,
+        "sourcePath": "normalized-pages/page-193.txt",
+        "verifiedAgainst": "pages/page-193.txt"
+      },
+      "tags": [
+        "pasqua",
+        "pioggia",
+        "fieno",
+        "campagna"
+      ],
+      "dateAnchors": [],
+      "movableDates": [
+        "easter"
+      ],
+      "seasons": [
+        "spring"
+      ],
+      "almanacEligible": false,
+      "review": {
+        "status": "source_checked",
+        "notes": "Fonte marcata con doppio punto interrogativo; usare con cautela e solo dopo verifica ulteriore."
+      }
+    },
+    {
+      "id": "ostermann-193-sant-anaclet",
+      "furOriginal": "La ploe il dì di Sant' Anaclet (15/7) puarte trist fen in Salet.",
+      "fur": "La ploe il dì di Sant'Anaclet e puarte trist fen in Salet.",
+      "it": "La pioggia nel giorno di Sant'Anacleto porta fieno cattivo a Saletto.",
+      "category": "almanacco_santi",
+      "source": {
+        "label": "Ostermann 1894",
+        "pdfPage": 193,
+        "textPage": 168,
+        "sourcePath": "normalized-pages/page-193.txt",
+        "verifiedAgainst": "pages/page-193.txt"
+      },
+      "tags": [
+        "sant_anaclet",
+        "pioggia",
+        "fieno",
+        "salet"
+      ],
+      "dateAnchors": [
+        "07-15"
+      ],
+      "seasons": [
+        "summer"
+      ],
+      "almanacEligible": false,
+      "review": {
+        "status": "source_checked",
+        "notes": "Molto locale; verificare localita' Salet/Saletto prima della promozione."
+      }
+    },
+    {
+      "id": "ostermann-049-prin-martars-lune-pluv",
+      "furOriginal": "Cuand ch' al plûv il prin martars di lune / No vin sech plui par chè lune.",
+      "fur": "Cuant che al plûf il prin martars di lune, no vin sec plui par chê lune.",
+      "it": "Quando piove il primo martedì di luna, non avremo più secco per quella luna.",
+      "category": "meteo_lunare",
+      "source": {
+        "label": "Ostermann 1894",
+        "pdfPage": 49,
+        "textPage": 24,
+        "sourcePath": "normalized-pages/page-049.txt",
+        "verifiedAgainst": "pages/page-049.txt"
+      },
+      "tags": [
+        "luna",
+        "martedi",
+        "pioggia",
+        "periodo"
+      ],
+      "dateAnchors": [],
+      "seasons": [
+        "all"
+      ],
+      "almanacEligible": false,
+      "review": {
+        "status": "source_checked",
+        "notes": "Candidato forte per rubrica Luna; verificare resa di 'prin martars di lune' e traduzione di 'sech'."
+      }
+    },
+    {
+      "id": "ostermann-049-prin-martars-va-lune",
+      "furOriginal": "Come che al va il prin martars di lune, a va dute la lune.",
+      "fur": "Come che al va il prin martars di lune, e va dute la lune.",
+      "it": "Come va il primo martedì di luna, così va tutta la lunazione.",
+      "category": "meteo_lunare",
+      "source": {
+        "label": "Ostermann 1894",
+        "pdfPage": 49,
+        "textPage": 24,
+        "sourcePath": "normalized-pages/page-049.txt",
+        "verifiedAgainst": "pages/page-049.txt"
+      },
+      "tags": [
+        "luna",
+        "martedi",
+        "pronostico",
+        "periodo"
+      ],
+      "dateAnchors": [],
+      "seasons": [
+        "all"
+      ],
+      "almanacEligible": false,
+      "review": {
+        "status": "source_checked",
+        "notes": "Buono come proverbio generale; confermare accordo FUR 'e va dute la lune'."
+      }
+    },
+    {
+      "id": "ostermann-049-lune-sabadine",
+      "furOriginal": "Lune sabadine, di cent une di buine.",
+      "fur": "Lune sabadine, di cent une di buine.",
+      "it": "Luna di sabato, di cento una buona.",
+      "category": "meteo_lunare",
+      "source": {
+        "label": "Ostermann 1894",
+        "pdfPage": 49,
+        "textPage": 24,
+        "sourcePath": "normalized-pages/page-049.txt",
+        "verifiedAgainst": "pages/page-049.txt"
+      },
+      "tags": [
+        "luna",
+        "sabato",
+        "pronostico"
+      ],
+      "dateAnchors": [],
+      "seasons": [
+        "all"
+      ],
+      "almanacEligible": false,
+      "review": {
+        "status": "source_checked",
+        "notes": "Detto breve ma severo; valutare tono e spiegazione prima della UI."
+      }
+    },
+    {
+      "id": "ostermann-049-sabadine-camisine",
+      "furOriginal": "Sabidine si cambie siet voltis di camisine.",
+      "fur": "Sabidine si cambie siet voltis di camisine.",
+      "it": "La luna sabatina cambia sette volte camicina.",
+      "category": "meteo_lunare",
+      "source": {
+        "label": "Ostermann 1894",
+        "pdfPage": 49,
+        "textPage": 24,
+        "sourcePath": "normalized-pages/page-049.txt",
+        "verifiedAgainst": "pages/page-049.txt"
+      },
+      "tags": [
+        "luna",
+        "sabato",
+        "variabilita",
+        "meteo"
+      ],
+      "dateAnchors": [],
+      "seasons": [
+        "all"
+      ],
+      "almanacEligible": false,
+      "review": {
+        "status": "source_checked",
+        "notes": "Bella immagine popolare; richiede nota editoriale per non risultare oscura."
+      }
+    },
+    {
+      "id": "ostermann-049-lune-brume",
+      "furOriginal": "Lune di Brume mieze sute e mieze bagnade.",
+      "fur": "Lune di Brume, mieze sute e mieze bagnade.",
+      "it": "Luna di novembre, mezza asciutta e mezza bagnata.",
+      "category": "meteo_mensile",
+      "source": {
+        "label": "Ostermann 1894",
+        "pdfPage": 49,
+        "textPage": 24,
+        "sourcePath": "normalized-pages/page-049.txt",
+        "verifiedAgainst": "pages/page-049.txt"
+      },
+      "tags": [
+        "novembre",
+        "luna",
+        "pioggia",
+        "asciutto"
+      ],
+      "dateAnchors": [],
+      "seasons": [
+        "autumn"
+      ],
+      "almanacEligible": false,
+      "review": {
+        "status": "source_checked",
+        "notes": "Candidato forte per novembre; verificare uso di Brume come mese/Novembre nella copy."
+      }
+    },
+    {
+      "id": "ostermann-049-lune-no-taronde",
+      "furOriginal": "La lune no è simpri taronde.",
+      "fur": "La lune no je simpri taronde.",
+      "it": "La luna non è sempre rotonda.",
+      "category": "saggezza_lunare",
+      "source": {
+        "label": "Ostermann 1894",
+        "pdfPage": 49,
+        "textPage": 24,
+        "sourcePath": "normalized-pages/page-049.txt",
+        "verifiedAgainst": "pages/page-049.txt"
+      },
+      "tags": [
+        "luna",
+        "ciclo",
+        "saggezza"
+      ],
+      "dateAnchors": [],
+      "seasons": [
+        "all"
+      ],
+      "almanacEligible": false,
+      "review": {
+        "status": "source_checked",
+        "notes": "Piu' saggezza che meteo; probabile uso in Almanacco/Scopri, non necessariamente proverbio quotidiano."
+      }
+    },
+    {
+      "id": "ostermann-054-epifanie-fred",
+      "furOriginal": "Epifanie il frèd s'invie.",
+      "fur": "Epifanie il frêt s'invie.",
+      "it": "All'Epifania il freddo si avvia.",
+      "category": "almanacco_santi",
+      "source": {
+        "label": "Ostermann 1894",
+        "pdfPage": 54,
+        "textPage": 29,
+        "sourcePath": "normalized-pages/page-054.txt",
+        "verifiedAgainst": "pages/page-054.txt"
+      },
+      "tags": [
+        "epifania",
+        "freddo",
+        "inverno"
+      ],
+      "dateAnchors": [
+        "01-06"
+      ],
+      "seasons": [
+        "winter"
+      ],
+      "almanacEligible": false,
+      "review": {
+        "status": "source_checked",
+        "notes": "Candidato forte per data fissa; verificare grafia frêt e forma verbale."
+      }
+    },
+    {
+      "id": "ostermann-054-sant-antoni-fred",
+      "furOriginal": "Sant Antoni frêd di demoni.",
+      "fur": "Sant Antoni, frêt di demoni.",
+      "it": "Sant'Antonio, freddo da demonio.",
+      "category": "almanacco_santi",
+      "source": {
+        "label": "Ostermann 1894",
+        "pdfPage": 54,
+        "textPage": 29,
+        "sourcePath": "normalized-pages/page-054.txt",
+        "verifiedAgainst": "pages/page-054.txt"
+      },
+      "tags": [
+        "sant_antoni",
+        "freddo",
+        "inverno"
+      ],
+      "dateAnchors": [
+        "01-17"
+      ],
+      "seasons": [
+        "winter"
+      ],
+      "almanacEligible": false,
+      "review": {
+        "status": "source_checked",
+        "notes": "Tono popolare molto diretto; valutare se adatto alla UI Home o solo ad Almanacco."
+      }
+    },
+    {
+      "id": "ostermann-054-san-vizenz-san-lorenz",
+      "furOriginal": "San Vizenz (23 gennaio) gran criure / San Lorenz (10 agosto) gran chaldure / L'une e l'altre poch a dure.",
+      "fur": "San Vizenz gran criure, San Lorenz gran cjaldure: l'une e l'altre pôc a dure.",
+      "it": "San Vincenzo gran freddo, San Lorenzo gran calura: l'una e l'altra durano poco.",
+      "category": "almanacco_santi",
+      "source": {
+        "label": "Ostermann 1894",
+        "pdfPage": 54,
+        "textPage": 29,
+        "sourcePath": "normalized-pages/page-054.txt",
+        "verifiedAgainst": "pages/page-054.txt"
+      },
+      "tags": [
+        "san_vincenzo",
+        "san_lorenzo",
+        "freddo",
+        "caldo"
+      ],
+      "dateAnchors": [
+        "01-23",
+        "08-10"
+      ],
+      "seasons": [
+        "winter",
+        "summer"
+      ],
+      "almanacEligible": false,
+      "review": {
+        "status": "source_checked",
+        "notes": "Candidato buono ma doppia data; decidere se dividerlo o tenerlo come proverbio completo."
+      }
+    },
+    {
+      "id": "ostermann-054-febrar-soreli",
+      "furOriginal": "Febrår il sorèli al va par ogni agar.",
+      "fur": "Fevrâr il soreli al va par ogni agâr.",
+      "it": "A febbraio il sole arriva in ogni angolo.",
+      "category": "meteo_mensile",
+      "source": {
+        "label": "Ostermann 1894",
+        "pdfPage": 54,
+        "textPage": 29,
+        "sourcePath": "normalized-pages/page-054.txt",
+        "verifiedAgainst": "pages/page-054.txt"
+      },
+      "tags": [
+        "febbraio",
+        "sole",
+        "luce",
+        "inverno"
+      ],
+      "dateAnchors": [],
+      "seasons": [
+        "winter"
+      ],
+      "almanacEligible": false,
+      "review": {
+        "status": "source_checked",
+        "notes": "Candidato forte per Almanacco solare; verificare traduzione di agâr."
+      }
+    },
+    {
+      "id": "ostermann-054-san-blas-fred",
+      "furOriginal": "San Blas (3 febbraio) - il frèd al tae il nås, o al fås la pás.",
+      "fur": "San Blâs, il frêt al taie il nâs, o al fâs la pâs.",
+      "it": "A San Biagio il freddo taglia il naso, oppure fa pace.",
+      "category": "almanacco_santi",
+      "source": {
+        "label": "Ostermann 1894",
+        "pdfPage": 54,
+        "textPage": 29,
+        "sourcePath": "normalized-pages/page-054.txt",
+        "verifiedAgainst": "pages/page-054.txt"
+      },
+      "tags": [
+        "san_blas",
+        "freddo",
+        "febbraio"
+      ],
+      "dateAnchors": [
+        "02-03"
+      ],
+      "seasons": [
+        "winter"
+      ],
+      "almanacEligible": false,
+      "review": {
+        "status": "source_checked",
+        "notes": "Candidato forte ma da verificare nella grafia di Blâs/frêt/nâs/pâs."
+      }
+    },
+    {
+      "id": "ostermann-054-san-valantin-fin-inviar",
+      "furOriginal": "San Valantin, l'unviar al so fin.",
+      "fur": "San Valantin, l'invier al so fin.",
+      "it": "A San Valentino, l'inverno verso la sua fine.",
+      "category": "almanacco_santi",
+      "source": {
+        "label": "Ostermann 1894",
+        "pdfPage": 54,
+        "textPage": 29,
+        "sourcePath": "normalized-pages/page-054.txt",
+        "verifiedAgainst": "pages/page-054.txt"
+      },
+      "tags": [
+        "san_valentin",
+        "inverno",
+        "febbraio"
+      ],
+      "dateAnchors": [
+        "02-14"
+      ],
+      "seasons": [
+        "winter"
+      ],
+      "almanacEligible": false,
+      "review": {
+        "status": "source_checked",
+        "notes": "Candidato forte per data fissa; confermare forma 'invier' e resa italiana."
+      }
+    },
+    {
+      "id": "ostermann-054-san-matie-glace",
+      "furOriginal": "San Matie se al chate glace la pare vie / E s'a non chate an fås vignî - o viceversa.",
+      "fur": "San Matie se al cjate glace le pare vie; e s'al no le cjate, al fâs vignî.",
+      "it": "San Mattia, se trova ghiaccio lo porta via; se non lo trova, lo fa venire.",
+      "category": "almanacco_santi",
+      "source": {
+        "label": "Ostermann 1894",
+        "pdfPage": 54,
+        "textPage": 29,
+        "sourcePath": "normalized-pages/page-054.txt",
+        "verifiedAgainst": "pages/page-054.txt"
+      },
+      "tags": [
+        "san_matie",
+        "ghiaccio",
+        "freddo",
+        "febbraio"
+      ],
+      "dateAnchors": [
+        "02-24"
+      ],
+      "seasons": [
+        "winter"
+      ],
+      "almanacEligible": false,
+      "review": {
+        "status": "source_checked",
+        "notes": "Candidato forte ma con variante 'o viceversa'; serve review prima di promozione."
+      }
+    },
+    {
+      "id": "ostermann-097-san-grivor-vint",
+      "furOriginal": "Se al svinte a San Grivór (Gregorio) / In vin cuarante dis a få rumor.",
+      "fur": "Se al svinte a San Grivôr, in vin cuarante dîs a fâ rumôr.",
+      "it": "Se tira vento a San Gregorio, avremo quaranta giorni di vento.",
+      "category": "almanacco_santi",
+      "source": {
+        "label": "Ostermann 1894",
+        "pdfPage": 97,
+        "textPage": 72,
+        "sourcePath": "normalized-pages/page-097.txt",
+        "verifiedAgainst": "pages/page-097.txt"
+      },
+      "tags": [
+        "san_grivor",
+        "vento",
+        "marzo",
+        "meteo"
+      ],
+      "dateAnchors": [
+        "03-26"
+      ],
+      "seasons": [
+        "spring"
+      ],
+      "almanacEligible": false,
+      "review": {
+        "status": "source_checked",
+        "notes": "La pagina clean conferma il proverbio; la vecchia estrazione ordinata scioglie la data OCR sporca come 26/3. Grafia di San Grivôr da tenere in review umana."
+      }
+    },
+    {
+      "id": "ostermann-097-rosadis-marz-bueris-avril",
+      "furOriginal": "Tantis rosadis di marz tantis bueris d'avril.",
+      "fur": "Tantis rosadis di març, tantis bueris d'avril.",
+      "it": "Tante rugiade di marzo, tanti rovesci d'aprile.",
+      "category": "meteo_mensile",
+      "source": {
+        "label": "Ostermann 1894",
+        "pdfPage": 97,
+        "textPage": 72,
+        "sourcePath": "normalized-pages/page-097.txt",
+        "verifiedAgainst": "pages/page-097.txt"
+      },
+      "tags": [
+        "marzo",
+        "aprile",
+        "rugiada",
+        "pioggia"
+      ],
+      "dateAnchors": [],
+      "seasons": [
+        "spring"
+      ],
+      "almanacEligible": false,
+      "review": {
+        "status": "source_checked",
+        "notes": "Candidato chiaro e breve; controllare resa di 'bueris' e decidere se usarlo nel calendario di marzo/aprile."
+      }
+    },
+    {
+      "id": "ostermann-102-lune-tinte",
+      "furOriginal": "Se la luna ha una tinta bluastra pronostica pioggia; se rossa, vento; se bianca, bel tempo.",
+      "fur": "",
+      "it": "Luna azzurrastra: pioggia; luna rossa: vento; luna bianca: bel tempo.",
+      "category": "meteo_pronostico",
+      "source": {
+        "label": "Ostermann 1894",
+        "pdfPage": 102,
+        "textPage": 77,
+        "sourcePath": "normalized-pages/page-102.txt",
+        "verifiedAgainst": "pages/page-102.txt"
+      },
+      "tags": [
+        "luna",
+        "colore",
+        "pioggia",
+        "vento"
+      ],
+      "dateAnchors": [],
+      "seasons": [
+        "all"
+      ],
+      "almanacEligible": false,
+      "review": {
+        "status": "candidate",
+        "notes": "Non e' proverbio FUR trascritto ma pronostico italiano dalla fonte; utile per Almanacco/Scopri, non promuovere in proverbs.json senza riscrittura editoriale separata."
+      }
+    },
+    {
+      "id": "ostermann-102-quart-dopo-pleniluni",
+      "furOriginal": "Come sara' il quarto giorno dopo il plenilunio, andra' tutto il restante di quella luna.",
+      "fur": "",
+      "it": "Come sara' il quarto giorno dopo il plenilunio, cosi' proseguira' il resto della luna.",
+      "category": "meteo_pronostico",
+      "source": {
+        "label": "Ostermann 1894",
+        "pdfPage": 102,
+        "textPage": 77,
+        "sourcePath": "normalized-pages/page-102.txt",
+        "verifiedAgainst": "pages/page-102.txt"
+      },
+      "tags": [
+        "luna",
+        "plenilunio",
+        "ciclo_lunare",
+        "meteo"
+      ],
+      "dateAnchors": [],
+      "seasons": [
+        "all"
+      ],
+      "almanacEligible": false,
+      "review": {
+        "status": "candidate",
+        "notes": "Pronostico italiano dalla fonte; adatto come materiale Almanacco ma non come proverbio FUR pronto."
+      }
+    },
+    {
+      "id": "ostermann-102-cuch-ploe-sut",
+      "furOriginal": "Cuand ch'al chante il cuch / Une di ploe e une dì sùt.",
+      "fur": "Cuant ch'al cjante il cuc, une di ploe e une di sût.",
+      "it": "Quando canta il cuculo, un giorno di pioggia e uno d'asciutto.",
+      "category": "meteo_stagionale",
+      "source": {
+        "label": "Ostermann 1894",
+        "pdfPage": 102,
+        "textPage": 77,
+        "sourcePath": "normalized-pages/page-102.txt",
+        "verifiedAgainst": "pages/page-102.txt"
+      },
+      "tags": [
+        "cuculo",
+        "pioggia",
+        "asciutto",
+        "primavera"
+      ],
+      "dateAnchors": [],
+      "seasons": [
+        "spring"
+      ],
+      "almanacEligible": false,
+      "review": {
+        "status": "source_checked",
+        "notes": "Candidato leggibile; controllare normalizzazione cuc/cuch e usare solo dopo revisione linguistica."
+      }
+    },
+    {
+      "id": "ostermann-102-cuch-montagne",
+      "furOriginal": "Cuand che il cùch al va in montagne / Nol torne jù se no si bagne.",
+      "fur": "Cuant che il cuc al va in montagne, nol torne jù se no si bagne.",
+      "it": "Quando il cuculo va in montagna, non torna giu' se non si bagna.",
+      "category": "meteo_stagionale",
+      "source": {
+        "label": "Ostermann 1894",
+        "pdfPage": 102,
+        "textPage": 77,
+        "sourcePath": "normalized-pages/page-102.txt",
+        "verifiedAgainst": "pages/page-102.txt"
+      },
+      "tags": [
+        "cuculo",
+        "montagna",
+        "pioggia",
+        "primavera"
+      ],
+      "dateAnchors": [],
+      "seasons": [
+        "spring"
+      ],
+      "almanacEligible": false,
+      "review": {
+        "status": "source_checked",
+        "notes": "Candidato interessante ma immagine non immediata; valutare uso in Scopri piu' che in Home."
+      }
+    },
+    {
+      "id": "ostermann-099-tre-fumatis-ploe",
+      "furOriginal": "Tre fumatis fasin une ploe.",
+      "fur": "Trê fumatis a fasin une ploe.",
+      "it": "Tre nebbie fanno una pioggia.",
+      "category": "meteo_giornaliero",
+      "source": {
+        "label": "Ostermann 1894",
+        "pdfPage": 99,
+        "textPage": 74,
+        "sourcePath": "normalized-pages/page-099.txt",
+        "verifiedAgainst": "pages/page-099.txt"
+      },
+      "tags": [
+        "nebbia",
+        "pioggia",
+        "meteo"
+      ],
+      "dateAnchors": [],
+      "seasons": [
+        "autumn",
+        "winter"
+      ],
+      "almanacEligible": false,
+      "review": {
+        "status": "source_checked",
+        "notes": "Candidato breve e leggibile; controllare normalizzazione di Trê/fumatis prima della promozione."
+      }
+    },
+    {
+      "id": "ostermann-099-fumate-basse",
+      "furOriginal": "Fumate basse chèl timp ch'a chate lasse.",
+      "fur": "Fumate basse, chêl timp ch'a cjate e lasse.",
+      "it": "Nebbia bassa lascia il tempo che trova.",
+      "category": "meteo_giornaliero",
+      "source": {
+        "label": "Ostermann 1894",
+        "pdfPage": 99,
+        "textPage": 74,
+        "sourcePath": "normalized-pages/page-099.txt",
+        "verifiedAgainst": "pages/page-099.txt"
+      },
+      "tags": [
+        "nebbia",
+        "stabilita",
+        "meteo"
+      ],
+      "dateAnchors": [],
+      "seasons": [
+        "autumn",
+        "winter"
+      ],
+      "almanacEligible": false,
+      "review": {
+        "status": "source_checked",
+        "notes": "Candidato da usare con cautela: resa italiana provvisoria e grafia FUR da verificare."
+      }
+    },
+    {
+      "id": "ostermann-099-fumate-no-sbasse",
+      "furOriginal": "Fumate che no si sbasse ploe lasse.",
+      "fur": "Fumate che no si sbasse, ploe lasse.",
+      "it": "Nebbia che non si abbassa lascia pioggia.",
+      "category": "meteo_giornaliero",
+      "source": {
+        "label": "Ostermann 1894",
+        "pdfPage": 99,
+        "textPage": 74,
+        "sourcePath": "normalized-pages/page-099.txt",
+        "verifiedAgainst": "pages/page-099.txt"
+      },
+      "tags": [
+        "nebbia",
+        "pioggia",
+        "meteo"
+      ],
+      "dateAnchors": [],
+      "seasons": [
+        "autumn",
+        "winter"
+      ],
+      "almanacEligible": false,
+      "review": {
+        "status": "source_checked",
+        "notes": "Formula leggibile ma interpretazione non immediata; richiede review FUR/IT prima dell'uso in Almanacco."
+      }
+    },
+    {
+      "id": "ostermann-104-monts-chapiel",
+      "furOriginal": "Cuand che lis mons han il chapièl, / Met jù la falz chol su il rischèl.",
+      "fur": "Cuant che lis monts a àn il cjapiel, met jù la falç, cjol sù il rischjel.",
+      "it": "Quando i monti hanno il cappello, posa la falce e prendi il rastrello.",
+      "category": "meteo_locale",
+      "source": {
+        "label": "Ostermann 1894",
+        "pdfPage": 104,
+        "textPage": 79,
+        "sourcePath": "normalized-pages/page-104.txt",
+        "verifiedAgainst": "pages/page-104.txt"
+      },
+      "tags": [
+        "montagna",
+        "nubi",
+        "pioggia",
+        "lavori"
+      ],
+      "dateAnchors": [],
+      "seasons": [
+        "spring",
+        "summer",
+        "autumn"
+      ],
+      "almanacEligible": false,
+      "review": {
+        "status": "source_checked",
+        "notes": "Candidato forte e visuale; controllare grafia di cjapiel/falç/rischjel."
+      }
+    },
+    {
+      "id": "ostermann-104-ambruset-chapiel",
+      "furOriginal": "Se l'Ambruset a l'ha il chapièl, ven ploe sigure.",
+      "fur": "Se l'Ambruset al à il cjapiel, ven ploe sigure.",
+      "it": "Se l'Ambruset ha il cappello, viene pioggia sicura.",
+      "category": "meteo_locale",
+      "source": {
+        "label": "Ostermann 1894",
+        "pdfPage": 104,
+        "textPage": 79,
+        "sourcePath": "normalized-pages/page-104.txt",
+        "verifiedAgainst": "pages/page-104.txt"
+      },
+      "tags": [
+        "ambruset",
+        "montagna",
+        "nubi",
+        "pioggia"
+      ],
+      "dateAnchors": [],
+      "seasons": [
+        "all"
+      ],
+      "almanacEligible": false,
+      "review": {
+        "status": "source_checked",
+        "notes": "Candidato locale interessante; prima della pubblicazione chiarire riferimento geografico di Ambruset."
+      }
+    },
+    {
+      "id": "ostermann-104-cil-lane",
+      "furOriginal": "Il cil l'è dut a lane, - la ploe no è lontane.",
+      "fur": "Il cîl al è dut a lane, la ploe no è lontane.",
+      "it": "Il cielo è tutto a lana: la pioggia non è lontana.",
+      "category": "meteo_giornaliero",
+      "source": {
+        "label": "Ostermann 1894",
+        "pdfPage": 104,
+        "textPage": 79,
+        "sourcePath": "normalized-pages/page-104.txt",
+        "verifiedAgainst": "pages/page-104.txt"
+      },
+      "tags": [
+        "cielo",
+        "nubi",
+        "pioggia",
+        "meteo"
+      ],
+      "dateAnchors": [],
+      "seasons": [
+        "all"
+      ],
+      "almanacEligible": false,
+      "review": {
+        "status": "source_checked",
+        "notes": "Candidato breve e adatto ad Almanacco; verificare grafia e resa di 'a lane'."
+      }
+    },
+    {
+      "id": "ostermann-104-nul-schialins",
+      "furOriginal": "Núl a schialins, - ploe a slavins.",
+      "fur": "Nûl a schialins, ploe a slavins.",
+      "it": "Nuvole a scalini, pioggia a rovesci.",
+      "category": "meteo_giornaliero",
+      "source": {
+        "label": "Ostermann 1894",
+        "pdfPage": 104,
+        "textPage": 79,
+        "sourcePath": "normalized-pages/page-104.txt",
+        "verifiedAgainst": "pages/page-104.txt"
+      },
+      "tags": [
+        "nubi",
+        "pioggia",
+        "rovesci",
+        "meteo"
+      ],
+      "dateAnchors": [],
+      "seasons": [
+        "all"
+      ],
+      "almanacEligible": false,
+      "review": {
+        "status": "source_checked",
+        "notes": "Candidato buono ma traduzione 'scalini/rovesci' da controllare."
+      }
+    },
+    {
+      "id": "ostermann-104-rane-ploe",
+      "furOriginal": "Cuand che la rane chante, ploe sigure.",
+      "fur": "Cuant che la rane e cjante, ploe sigure.",
+      "it": "Quando canta la rana, pioggia sicura.",
+      "category": "meteo_animali",
+      "source": {
+        "label": "Ostermann 1894",
+        "pdfPage": 104,
+        "textPage": 79,
+        "sourcePath": "normalized-pages/page-104.txt",
+        "verifiedAgainst": "pages/page-104.txt"
+      },
+      "tags": [
+        "rana",
+        "animali",
+        "pioggia",
+        "meteo"
+      ],
+      "dateAnchors": [],
+      "seasons": [
+        "spring",
+        "summer"
+      ],
+      "almanacEligible": false,
+      "review": {
+        "status": "source_checked",
+        "notes": "Candidato molto leggibile; confrontare con record Scopri gia presente su rane/vacche prima di pubblicare."
+      }
+    },
+    {
+      "id": "ostermann-059-vinars-sant-arsure",
+      "furOriginal": "S'a l'è års Vinars Sant l'è års dut l'àn.",
+      "fur": "S'al è ars Vinars Sant, al è ars dut l'an.",
+      "it": "Se è asciutto il Venerdì Santo, sarà asciutto tutto l'anno.",
+      "category": "almanacco_mobile",
+      "source": {
+        "label": "Ostermann 1894",
+        "pdfPage": 59,
+        "textPage": 34,
+        "sourcePath": "normalized-pages/page-059.txt",
+        "verifiedAgainst": "pages/page-059.txt"
+      },
+      "tags": [
+        "vinars_sant",
+        "siccita",
+        "anno",
+        "meteo"
+      ],
+      "dateAnchors": [],
+      "movableDates": [
+        "good_friday"
+      ],
+      "seasons": [
+        "spring"
+      ],
+      "almanacEligible": false,
+      "review": {
+        "status": "source_checked",
+        "notes": "Fonte segnala proverbi contraddittori sul Venerdi Santo; usare solo con nota editoriale."
+      }
+    },
+    {
+      "id": "ostermann-059-vinars-sant-ploe",
+      "furOriginal": "Se al plûv Vinars Sant la tière no è mai sazie.",
+      "fur": "Se al plûf Vinars Sant, la tiere no è mai sazie.",
+      "it": "Se piove il Venerdì Santo, la terra non è mai sazia.",
+      "category": "almanacco_mobile",
+      "source": {
+        "label": "Ostermann 1894",
+        "pdfPage": 59,
+        "textPage": 34,
+        "sourcePath": "normalized-pages/page-059.txt",
+        "verifiedAgainst": "pages/page-059.txt"
+      },
+      "tags": [
+        "vinars_sant",
+        "pioggia",
+        "terra",
+        "anno"
+      ],
+      "dateAnchors": [],
+      "movableDates": [
+        "good_friday"
+      ],
+      "seasons": [
+        "spring"
+      ],
+      "almanacEligible": false,
+      "review": {
+        "status": "source_checked",
+        "notes": "Variante opposta al candidato sul secco; tenere insieme alle varianti o archiviare, non usare isolato."
+      }
+    },
+    {
+      "id": "ostermann-059-ascense-ploe",
+      "furOriginal": "Se al plûv il di d'Ascense, Cuarante dîs no si sta senze.",
+      "fur": "Se al plûf il di d'Ascense, cuarante dîs no si sta cence.",
+      "it": "Se piove il giorno dell'Ascensione, per quaranta giorni non se ne resta senza.",
+      "category": "almanacco_mobile",
+      "source": {
+        "label": "Ostermann 1894",
+        "pdfPage": 59,
+        "textPage": 34,
+        "sourcePath": "normalized-pages/page-059.txt",
+        "verifiedAgainst": "pages/page-059.txt"
+      },
+      "tags": [
+        "ascensione",
+        "pioggia",
+        "quaranta_giorni",
+        "meteo"
+      ],
+      "dateAnchors": [],
+      "movableDates": [
+        "ascension"
+      ],
+      "seasons": [
+        "spring"
+      ],
+      "almanacEligible": false,
+      "review": {
+        "status": "source_checked",
+        "notes": "Del Negro cita la mancata verifica del proverbio; da usare solo con cautela o in Scopri."
+      }
+    },
+    {
+      "id": "ostermann-060-sant-ane-furmiar",
+      "furOriginal": "Se a Sant' Ane (26 luglio) al bute sù il furmiar / Al dinote un trist unviar.",
+      "fur": "Se a Sant'Ane al bute sù il furmiâr, al denote un trist unviâr.",
+      "it": "Se a Sant'Anna si alza il formicaio, annuncia un brutto inverno.",
+      "category": "almanacco_santi",
+      "source": {
+        "label": "Ostermann 1894",
+        "pdfPage": 60,
+        "textPage": 35,
+        "sourcePath": "normalized-pages/page-060.txt",
+        "verifiedAgainst": "pages/page-060.txt"
+      },
+      "tags": [
+        "sant_ane",
+        "formiche",
+        "inverno",
+        "luglio"
+      ],
+      "dateAnchors": [
+        "07-26"
+      ],
+      "seasons": [
+        "summer"
+      ],
+      "almanacEligible": false,
+      "review": {
+        "status": "source_checked",
+        "notes": "Candidato databile; controllare resa di furmiâr e formula italiana."
+      }
+    },
+    {
+      "id": "ostermann-060-san-lurinz-seren",
+      "furOriginal": "Se il di di San Lurinz (10 agosto) a l'è serèn / Si spere deliziós l'autun ch'al ven.",
+      "fur": "Se il di di San Lurinz al è seren, si spere deliziôs l'autun ch'al ven.",
+      "it": "Se a San Lorenzo il cielo è sereno, si spera un autunno delizioso.",
+      "category": "almanacco_santi",
+      "source": {
+        "label": "Ostermann 1894",
+        "pdfPage": 60,
+        "textPage": 35,
+        "sourcePath": "normalized-pages/page-060.txt",
+        "verifiedAgainst": "pages/page-060.txt"
+      },
+      "tags": [
+        "san_lurinz",
+        "sereno",
+        "autunno",
+        "agosto"
+      ],
+      "dateAnchors": [
+        "08-10"
+      ],
+      "seasons": [
+        "summer"
+      ],
+      "almanacEligible": false,
+      "review": {
+        "status": "source_checked",
+        "notes": "Candidato chiaro e databile; controllare grafia FUR prima della promozione."
+      }
+    },
+    {
+      "id": "ostermann-060-san-bortolomio-bon-timp",
+      "furOriginal": "Se a San Bortolomio (24 agosto) l'è bon timp / L'è bon timp dutis lis vendemis.",
+      "fur": "Se a San Bortolomio al è bon timp, al è bon timp dutis lis vendemis.",
+      "it": "Se a San Bartolomeo fa bel tempo, sarà bel tempo per tutta la vendemmia.",
+      "category": "almanacco_santi",
+      "source": {
+        "label": "Ostermann 1894",
+        "pdfPage": 60,
+        "textPage": 35,
+        "sourcePath": "normalized-pages/page-060.txt",
+        "verifiedAgainst": "pages/page-060.txt"
+      },
+      "tags": [
+        "san_bortolomio",
+        "vendemmia",
+        "bel_tempo",
+        "agosto"
+      ],
+      "dateAnchors": [
+        "08-24"
+      ],
+      "seasons": [
+        "summer",
+        "autumn"
+      ],
+      "almanacEligible": false,
+      "review": {
+        "status": "source_checked",
+        "notes": "Candidato forte per calendario agricolo; verificare resa di vendemis."
+      }
+    },
+    {
+      "id": "ostermann-060-avost-monz-fumin",
+      "furOriginal": "Se d'avost fumin lis monz di spes, Segno di trist unviar.",
+      "fur": "Se d'avost a fumin lis monts dispès, segn di trist unviâr.",
+      "it": "Se in agosto i monti fumano spesso, è segno di brutto inverno.",
+      "category": "meteo_stagionale",
+      "source": {
+        "label": "Ostermann 1894",
+        "pdfPage": 60,
+        "textPage": 35,
+        "sourcePath": "normalized-pages/page-060.txt",
+        "verifiedAgainst": "pages/page-060.txt"
+      },
+      "tags": [
+        "agosto",
+        "montagna",
+        "inverno",
+        "nebbia"
+      ],
+      "dateAnchors": [],
+      "seasons": [
+        "summer"
+      ],
+      "almanacEligible": false,
+      "review": {
+        "status": "source_checked",
+        "notes": "Candidato visuale ma da controllare: 'fumin lis monz' va reso con precisione."
+      }
+    },
+    {
+      "id": "ostermann-061-san-gorgon-ploe",
+      "furOriginal": "Se al pluv a San Gorgòn / Siet montanis e un montanon.",
+      "fur": "Se al plûf a San Gorgòn, siet montanis e un montanon.",
+      "it": "Se piove a San Gorgone, sette piogge di monte e una grande.",
+      "category": "almanacco_santi",
+      "source": {
+        "label": "Ostermann 1894",
+        "pdfPage": 61,
+        "textPage": 36,
+        "sourcePath": "normalized-pages/page-061.txt",
+        "verifiedAgainst": "pages/page-061.txt"
+      },
+      "tags": [
+        "san_gorgon",
+        "pioggia",
+        "montagna",
+        "settembre"
+      ],
+      "dateAnchors": [
+        "09-09"
+      ],
+      "seasons": [
+        "autumn"
+      ],
+      "almanacEligible": false,
+      "review": {
+        "status": "source_checked",
+        "notes": "Traduzione di 'montanis/montanon' provvisoria; richiede revisione prima dell'uso."
+      }
+    },
+    {
+      "id": "ostermann-061-san-maurizi-seren",
+      "furOriginal": "Se a San Maurizi (22 settembre) al fås serèn / Vintos l'unviar ch'al ven.",
+      "fur": "Se a San Maurizi al fâs seren, vintôs l'unviâr ch'al ven.",
+      "it": "Se a San Maurizio fa sereno, sarà ventoso l'inverno che viene.",
+      "category": "almanacco_santi",
+      "source": {
+        "label": "Ostermann 1894",
+        "pdfPage": 61,
+        "textPage": 36,
+        "sourcePath": "normalized-pages/page-061.txt",
+        "verifiedAgainst": "pages/page-061.txt"
+      },
+      "tags": [
+        "san_maurizi",
+        "sereno",
+        "vento",
+        "inverno"
+      ],
+      "dateAnchors": [
+        "09-22"
+      ],
+      "seasons": [
+        "autumn"
+      ],
+      "almanacEligible": false,
+      "review": {
+        "status": "source_checked",
+        "notes": "Candidato databile; verificare forma 'vintôs' e traduzione."
+      }
+    },
+    {
+      "id": "ostermann-061-san-simon-unviar",
+      "furOriginal": "San Simón (28 ottobre) passat, - l'unviar entråt.",
+      "fur": "San Simon passât, l'unviâr entrât.",
+      "it": "Passato San Simone, l'inverno è entrato.",
+      "category": "almanacco_santi",
+      "source": {
+        "label": "Ostermann 1894",
+        "pdfPage": 61,
+        "textPage": 36,
+        "sourcePath": "normalized-pages/page-061.txt",
+        "verifiedAgainst": "pages/page-061.txt"
+      },
+      "tags": [
+        "san_simon",
+        "inverno",
+        "ottobre"
+      ],
+      "dateAnchors": [
+        "10-28"
+      ],
+      "seasons": [
+        "autumn"
+      ],
+      "almanacEligible": false,
+      "review": {
+        "status": "source_checked",
+        "notes": "Candidato semplice e databile; controllare grafia e accento."
+      }
+    },
+    {
+      "id": "ostermann-061-fueis-tardis",
+      "furOriginal": "Tardis a chadè lis fueis, l'è di temè un crùd unviar.",
+      "fur": "Tardis a cjâdi lis fueis, al è di temê un crût unviâr.",
+      "it": "Se le foglie cadono tardi, c'è da temere un inverno duro.",
+      "category": "meteo_stagionale",
+      "source": {
+        "label": "Ostermann 1894",
+        "pdfPage": 61,
+        "textPage": 36,
+        "sourcePath": "normalized-pages/page-061.txt",
+        "verifiedAgainst": "pages/page-061.txt"
+      },
+      "tags": [
+        "foglie",
+        "inverno",
+        "autunno",
+        "meteo"
+      ],
+      "dateAnchors": [],
+      "seasons": [
+        "autumn"
+      ],
+      "almanacEligible": false,
+      "review": {
+        "status": "source_checked",
+        "notes": "Candidato naturale per Almanacco autunnale; FUR da revisionare."
+      }
+    },
+    {
+      "id": "ostermann-063-san-zuan-timp",
+      "furOriginal": "Il timp ch'al còr a San Zuàn al côr dùt l'àn.",
+      "fur": "Il timp ch'al cor a San Zuan al cor dut l'an.",
+      "it": "Il tempo che corre a San Giovanni corre per tutto l'anno.",
+      "category": "almanacco_santi",
+      "source": {
+        "label": "Ostermann 1894",
+        "pdfPage": 63,
+        "textPage": 38,
+        "sourcePath": "normalized-pages/page-063.txt",
+        "verifiedAgainst": "pages/page-063.txt"
+      },
+      "tags": [
+        "san_zuan",
+        "giugno",
+        "anno",
+        "meteo"
+      ],
+      "dateAnchors": [
+        "06-24"
+      ],
+      "seasons": [
+        "summer"
+      ],
+      "almanacEligible": false,
+      "review": {
+        "status": "source_checked",
+        "notes": "Gia esiste materiale Scopri su San Zuan; evitare duplicazione in UI e usare solo se serve proverbio databile."
+      }
+    },
+    {
+      "id": "ostermann-063-sant-egidi-color-mes",
+      "furOriginal": "Sant' Egidi ti dirà (1 settembre) - ce color che il mês varà.",
+      "fur": "Sant'Egidi ti dirà ce color che il mês varà.",
+      "it": "Sant'Egidio ti dirà che colore avrà il mese.",
+      "category": "almanacco_santi",
+      "source": {
+        "label": "Ostermann 1894",
+        "pdfPage": 63,
+        "textPage": 38,
+        "sourcePath": "normalized-pages/page-063.txt",
+        "verifiedAgainst": "pages/page-063.txt"
+      },
+      "tags": [
+        "sant_egidi",
+        "settembre",
+        "mese",
+        "meteo"
+      ],
+      "dateAnchors": [
+        "09-01"
+      ],
+      "seasons": [
+        "autumn"
+      ],
+      "almanacEligible": false,
+      "review": {
+        "status": "source_checked",
+        "notes": "Candidato databile ma Del Negro riporta anche smentite; usare con cautela editoriale."
+      }
+    },
+    {
+      "id": "ostermann-063-otubar-febrar",
+      "furOriginal": "Tant bendi otubar, - tant mål di febrår.",
+      "fur": "Tant biel otubar, tant mâl di fevrâr.",
+      "it": "Tanto bello ottobre, tanto cattivo febbraio.",
+      "category": "meteo_mensile",
+      "source": {
+        "label": "Ostermann 1894",
+        "pdfPage": 63,
+        "textPage": 38,
+        "sourcePath": "normalized-pages/page-063.txt",
+        "verifiedAgainst": "pages/page-063.txt"
+      },
+      "tags": [
+        "ottobre",
+        "febbraio",
+        "stagione",
+        "meteo"
+      ],
+      "dateAnchors": [],
+      "seasons": [
+        "autumn",
+        "winter"
+      ],
+      "almanacEligible": false,
+      "review": {
+        "status": "source_checked",
+        "notes": "OCR/normalizzazione incerta su 'bendi'; candidato da verificare prima di qualsiasi uso."
+      }
+    },
+    {
+      "id": "ostermann-094-plovi-razzis-stelis",
+      "furOriginal": "Dio neli ch'al plovi tant fin che lis razzis bechin lis stelis.",
+      "fur": "Dio neli ch'al plovi tant fin che lis razzis a bechin lis stelis.",
+      "it": "Dio voglia che piova tanto finche' le anatre becchino le stelle.",
+      "category": "meteo_giornaliero",
+      "source": {
+        "label": "Ostermann 1894",
+        "pdfPage": 94,
+        "textPage": 69,
+        "sourcePath": "normalized-pages/page-094.txt",
+        "verifiedAgainst": "pages/page-094.txt"
+      },
+      "tags": [
+        "pioggia",
+        "basse",
+        "detto",
+        "iperbole"
+      ],
+      "dateAnchors": [],
+      "seasons": [
+        "all"
+      ],
+      "almanacEligible": false,
+      "review": {
+        "status": "source_checked",
+        "notes": "Detto iperbolico piu' che proverbio meteo diretto; probabile uso in Scopri, non in card breve."
+      }
+    },
+    {
+      "id": "ostermann-096-garbin-timp",
+      "furOriginal": "Garbin al lasse il timp ch'al chate.",
+      "fur": "Garbin al lasse il timp ch'al cjate.",
+      "it": "Il garbino lascia il tempo come lo trova.",
+      "category": "meteo_vento",
+      "source": {
+        "label": "Ostermann 1894",
+        "pdfPage": 96,
+        "textPage": 71,
+        "sourcePath": "normalized-pages/page-096.txt",
+        "verifiedAgainst": "pages/page-096.txt"
+      },
+      "tags": [
+        "garbino",
+        "vento",
+        "meteo"
+      ],
+      "dateAnchors": [],
+      "seasons": [
+        "all"
+      ],
+      "almanacEligible": false,
+      "review": {
+        "status": "source_checked",
+        "notes": "Candidato breve; verificare se 'garbin' va spiegato in UI prima dell'uso."
+      }
+    },
+    {
+      "id": "ostermann-096-buere-dispari",
+      "furOriginal": "Cuand che la buere si mûv, o un, o tre, o cinch, o sièt, o nùv.",
+      "fur": "Cuant che la buere si mûf, o un, o trê, o cinc, o siet, o nûf.",
+      "it": "Quando la bora si muove, dura uno, tre, cinque, sette o nove giorni.",
+      "category": "meteo_vento",
+      "source": {
+        "label": "Ostermann 1894",
+        "pdfPage": 96,
+        "textPage": 71,
+        "sourcePath": "normalized-pages/page-096.txt",
+        "verifiedAgainst": "pages/page-096.txt"
+      },
+      "tags": [
+        "bora",
+        "vento",
+        "durata",
+        "meteo"
+      ],
+      "dateAnchors": [],
+      "seasons": [
+        "all"
+      ],
+      "almanacEligible": false,
+      "review": {
+        "status": "source_checked",
+        "notes": "Candidato chiaro ma grafia numeri/FUR da controllare; utile per archivio vento."
+      }
+    },
+    {
+      "id": "ostermann-096-arie-rosse",
+      "furOriginal": "Arie rosse o ch'a pisce o ch'a sofle.",
+      "fur": "Ariis rossis o che a pissin o che a soflin.",
+      "it": "Arie rosse: o piove o soffia vento.",
+      "category": "meteo_vento",
+      "source": {
+        "label": "Ostermann 1894",
+        "pdfPage": 96,
+        "textPage": 71,
+        "sourcePath": "normalized-pages/page-096.txt",
+        "verifiedAgainst": "pages/page-096.txt"
+      },
+      "tags": [
+        "cielo_rosso",
+        "pioggia",
+        "vento",
+        "meteo"
+      ],
+      "dateAnchors": [],
+      "seasons": [
+        "all"
+      ],
+      "almanacEligible": false,
+      "review": {
+        "status": "source_checked",
+        "notes": "Riga vicina a zona OCR disordinata ma leggibile nella pagina clean; FUR e traduzione da revisionare."
+      }
+    },
+    {
+      "id": "ostermann-101-gial-dopo-miesdi",
+      "furOriginal": "Cuand che il gial chante dopo miesdi / Il timp se no si cambie al sta cussi.",
+      "fur": "Cuant che il gjal al cjante dopo misdì, il timp se no si cambie al sta cussì.",
+      "it": "Quando il gallo canta dopo mezzogiorno, il tempo se non cambia resta così.",
+      "category": "meteo_animali",
+      "source": {
+        "label": "Ostermann 1894",
+        "pdfPage": 101,
+        "textPage": 76,
+        "sourcePath": "normalized-pages/page-101.txt",
+        "verifiedAgainst": "pages/page-101.txt"
+      },
+      "tags": [
+        "gallo",
+        "animali",
+        "cambio_tempo",
+        "meteo"
+      ],
+      "dateAnchors": [],
+      "seasons": [
+        "all"
+      ],
+      "almanacEligible": false,
+      "review": {
+        "status": "source_checked",
+        "notes": "Gia presente come tema Scopri; candidato proverbiale separato da promuovere solo se serve repertorio giornaliero."
+      }
+    },
+    {
+      "id": "ostermann-126-bruntule-tempieste",
+      "furOriginal": "Al bruntule e po' al tempieste.",
+      "fur": "Al bruntule e po al tempieste.",
+      "it": "Brontola e poi grandina.",
+      "category": "meteo_temporali",
+      "source": {
+        "label": "Ostermann 1894",
+        "pdfPage": 126,
+        "textPage": 101,
+        "sourcePath": "normalized-pages/page-126.txt",
+        "verifiedAgainst": "pages/page-126.txt"
+      },
+      "tags": [
+        "tuono",
+        "grandine",
+        "temporale",
+        "meteo"
+      ],
+      "dateAnchors": [],
+      "seasons": [
+        "spring",
+        "summer"
+      ],
+      "almanacEligible": false,
+      "review": {
+        "status": "source_checked",
+        "notes": "Candidato breve ma richiede contesto: 'al bruntule' va chiarito linguisticamente."
+      }
+    },
+    {
+      "id": "ostermann-126-tone-ploe-tempieste",
+      "furOriginal": "Cuand che al tone, o ploe o tempieste.",
+      "fur": "Cuant che al tone, o ploe o tempieste.",
+      "it": "Quando tuona, o pioggia o grandine.",
+      "category": "meteo_temporali",
+      "source": {
+        "label": "Ostermann 1894",
+        "pdfPage": 126,
+        "textPage": 101,
+        "sourcePath": "normalized-pages/page-126.txt",
+        "verifiedAgainst": "pages/page-126.txt"
+      },
+      "tags": [
+        "tuono",
+        "pioggia",
+        "grandine",
+        "temporale"
+      ],
+      "dateAnchors": [],
+      "seasons": [
+        "spring",
+        "summer"
+      ],
+      "almanacEligible": false,
+      "review": {
+        "status": "source_checked",
+        "notes": "Candidato forte e leggibile; controllare grafia e resa italiana."
+      }
+    },
+    {
+      "id": "ostermann-126-no-val-suna",
+      "furOriginal": "No val sunâ pal timp, co' l'ha za scomenzát a tempestå.",
+      "fur": "No val sunâ pal timp, cuant che al à za scomençât a tempestâ.",
+      "it": "Non serve suonare contro il tempo, quando ha già cominciato a grandinare.",
+      "category": "meteo_temporali",
+      "source": {
+        "label": "Ostermann 1894",
+        "pdfPage": 126,
+        "textPage": 101,
+        "sourcePath": "normalized-pages/page-126.txt",
+        "verifiedAgainst": "pages/page-126.txt"
+      },
+      "tags": [
+        "grandine",
+        "temporale",
+        "campane",
+        "meteo"
+      ],
+      "dateAnchors": [],
+      "seasons": [
+        "spring",
+        "summer"
+      ],
+      "almanacEligible": false,
+      "review": {
+        "status": "source_checked",
+        "notes": "Più culturale che proverbio meteo breve; adatto a Scopri o nota editoriale."
+      }
+    },
+    {
+      "id": "ostermann-126-tempieste-no-charestie",
+      "furOriginal": "La tempieste no puarte mai charestie, ma pùar chel ch'ai toche.",
+      "fur": "La tempieste no puarte mai cjarestie, ma puar chel ch'ai tocje.",
+      "it": "La grandine non porta mai carestia, ma povero chi ne viene colpito.",
+      "category": "meteo_temporali",
+      "source": {
+        "label": "Ostermann 1894",
+        "pdfPage": 126,
+        "textPage": 101,
+        "sourcePath": "normalized-pages/page-126.txt",
+        "verifiedAgainst": "pages/page-126.txt"
+      },
+      "tags": [
+        "grandine",
+        "raccolto",
+        "campi",
+        "meteo"
+      ],
+      "dateAnchors": [],
+      "seasons": [
+        "spring",
+        "summer"
+      ],
+      "almanacEligible": false,
+      "review": {
+        "status": "source_checked",
+        "notes": "Candidato forte ma da usare con cautela per tono; FUR da revisionare."
+      }
+    },
+    {
+      "id": "ostermann-126-mai-tempieste",
+      "furOriginal": "Se in Mai tempieste, - nuie nus reste.",
+      "fur": "Se in Mai e tempieste, nuie nus reste.",
+      "it": "Se in maggio grandina, non ci resta nulla.",
+      "category": "meteo_temporali",
+      "source": {
+        "label": "Ostermann 1894",
+        "pdfPage": 126,
+        "textPage": 101,
+        "sourcePath": "normalized-pages/page-126.txt",
+        "verifiedAgainst": "pages/page-126.txt"
+      },
+      "tags": [
+        "maggio",
+        "grandine",
+        "raccolto",
+        "meteo"
+      ],
+      "dateAnchors": [],
+      "seasons": [
+        "spring"
+      ],
+      "almanacEligible": false,
+      "review": {
+        "status": "source_checked",
+        "notes": "Candidato chiaro e stagionale; controllare forma FUR prima della pubblicazione."
+      }
+    },
+    {
+      "id": "ostermann-130-sot-nev-pan",
+      "furOriginal": "Sot nev pan, sot ploe fan.",
+      "fur": "Sot nef pan, sot ploe fan.",
+      "it": "Sotto la neve pane, sotto la pioggia fame.",
+      "category": "meteo_neve",
+      "source": {
+        "label": "Ostermann 1894",
+        "pdfPage": 130,
+        "textPage": 105,
+        "sourcePath": "normalized-pages/page-130.txt",
+        "verifiedAgainst": "pages/page-130.txt"
+      },
+      "tags": [
+        "neve",
+        "pioggia",
+        "raccolto",
+        "inverno"
+      ],
+      "dateAnchors": [],
+      "seasons": [
+        "winter"
+      ],
+      "almanacEligible": false,
+      "review": {
+        "status": "source_checked",
+        "notes": "Candidato forte e tradizionale; grafia FUR da rifinire prima di promozione."
+      }
+    },
+    {
+      "id": "ostermann-131-tons-marz-nev-mai",
+      "furOriginal": "Tons di marz, nev di mai.",
+      "fur": "Tons di marz, nef di mai.",
+      "it": "Tuoni di marzo, neve di maggio.",
+      "category": "meteo_neve",
+      "source": {
+        "label": "Ostermann 1894",
+        "pdfPage": 131,
+        "textPage": 106,
+        "sourcePath": "normalized-pages/page-131.txt",
+        "verifiedAgainst": "pages/page-131.txt"
+      },
+      "tags": [
+        "marzo",
+        "maggio",
+        "tuono",
+        "neve"
+      ],
+      "dateAnchors": [],
+      "seasons": [
+        "spring"
+      ],
+      "almanacEligible": false,
+      "review": {
+        "status": "source_checked",
+        "notes": "Candidato breve e databile per stagione; verificare grafia e contesto prima di pubblicazione."
+      }
+    },
+    {
+      "id": "ostermann-131-sante-catarine-nev",
+      "furOriginal": "Sante Catarine la nev a la coline, e a San Bastian la nev al mont e al plan.",
+      "fur": "Sante Catarine la nef a la coline, e a San Bastian la nef al mont e al plan.",
+      "it": "A Santa Caterina la neve alla collina, a San Sebastiano la neve al monte e al piano.",
+      "category": "calendario_neve",
+      "source": {
+        "label": "Ostermann 1894",
+        "pdfPage": 131,
+        "textPage": 106,
+        "sourcePath": "normalized-pages/page-131.txt",
+        "verifiedAgainst": "pages/page-131.txt"
+      },
+      "tags": [
+        "santa_caterina",
+        "san_sebastiano",
+        "neve",
+        "inverno"
+      ],
+      "dateAnchors": [
+        "11-25",
+        "01-20"
+      ],
+      "seasons": [
+        "winter",
+        "autumn"
+      ],
+      "almanacEligible": false,
+      "review": {
+        "status": "candidate",
+        "notes": "Candidato datato ma da controllare: la fonte annota date e varianti; non promuovere senza revisione calendario."
+      }
+    },
+    {
+      "id": "ostermann-131-nev-decembrine",
+      "furOriginal": "La nev decembrine par tre mes a confine.",
+      "fur": "La nef decembrine par tre mes a confine.",
+      "it": "La neve di dicembre resta confinata per tre mesi.",
+      "category": "meteo_neve",
+      "source": {
+        "label": "Ostermann 1894",
+        "pdfPage": 131,
+        "textPage": 106,
+        "sourcePath": "normalized-pages/page-131.txt",
+        "verifiedAgainst": "pages/page-131.txt"
+      },
+      "tags": [
+        "dicembre",
+        "neve",
+        "inverno",
+        "durata"
+      ],
+      "dateAnchors": [],
+      "seasons": [
+        "winter"
+      ],
+      "almanacEligible": false,
+      "review": {
+        "status": "candidate",
+        "notes": "Candidato utile ma resa italiana e forma FUR da verificare; tenere fuori dall'Almanacco finche non chiarito."
+      }
+    },
+    {
+      "id": "ostermann-132-verd-nadal",
+      "furOriginal": "Verd di Nadal, blanch di Pasche: o viceversa.",
+      "fur": "Vert di Nadal, blanc di Pasche: o viceversa.",
+      "it": "Natale verde, Pasqua bianca, o viceversa.",
+      "category": "calendario_neve",
+      "source": {
+        "label": "Ostermann 1894",
+        "pdfPage": 132,
+        "textPage": 107,
+        "sourcePath": "normalized-pages/page-132.txt",
+        "verifiedAgainst": "pages/page-132.txt"
+      },
+      "tags": [
+        "natale",
+        "pasqua",
+        "neve",
+        "calendario"
+      ],
+      "dateAnchors": [
+        "12-25"
+      ],
+      "seasons": [
+        "winter",
+        "spring"
+      ],
+      "almanacEligible": false,
+      "review": {
+        "status": "source_checked",
+        "notes": "Candidato semplice; Pasqua e mobile, quindi serve logica editoriale prima di inserirlo in calendario."
+      }
+    },
+    {
+      "id": "ostermann-132-prime-nev-plan",
+      "furOriginal": "Cuand che la prime nev ven al plan, poche nev in chel an.",
+      "fur": "Cuant che la prime nef e ven al plan, pocje nef in chel an.",
+      "it": "Quando la prima neve arriva in pianura, poca neve in quell'anno.",
+      "category": "meteo_neve",
+      "source": {
+        "label": "Ostermann 1894",
+        "pdfPage": 132,
+        "textPage": 107,
+        "sourcePath": "normalized-pages/page-132.txt",
+        "verifiedAgainst": "pages/page-132.txt"
+      },
+      "tags": [
+        "prima_neve",
+        "pianura",
+        "inverno",
+        "annata"
+      ],
+      "dateAnchors": [],
+      "seasons": [
+        "winter"
+      ],
+      "almanacEligible": false,
+      "review": {
+        "status": "candidate",
+        "notes": "Candidato chiaro ma FUR normalizzato da revisionare; utile per repertorio invernale."
+      }
+    },
+    {
+      "id": "ostermann-132-urtiis-rose-nev",
+      "furOriginal": "Cuand che lis urtiis e han la rose fin da pid, ven une vore di nev anche al plan.",
+      "fur": "Cuant che lis urtiis e han la rose fin da pit, ven une vore di nef ancje al plan.",
+      "it": "Quando le ortiche hanno il colore fino al piede, viene molta neve anche in pianura.",
+      "category": "meteo_neve",
+      "source": {
+        "label": "Ostermann 1894",
+        "pdfPage": 132,
+        "textPage": 107,
+        "sourcePath": "normalized-pages/page-132.txt",
+        "verifiedAgainst": "pages/page-132.txt"
+      },
+      "tags": [
+        "ortiche",
+        "neve",
+        "pianura",
+        "segni"
+      ],
+      "dateAnchors": [],
+      "seasons": [
+        "autumn",
+        "winter"
+      ],
+      "almanacEligible": false,
+      "review": {
+        "status": "candidate",
+        "notes": "Molto interessante ma lessico e traduzione sono incerti; da trattare come materiale Scopri finche non revisionato."
+      }
+    },
+    {
+      "id": "ostermann-140-prim-arch-color",
+      "furOriginal": "",
+      "fur": "",
+      "it": "Il primo arcobaleno di primavera pronostica l'annata: verde per i foraggi, rosso per il vino, giallo per il granoturco.",
+      "category": "meteo_arcobaleno",
+      "source": {
+        "label": "Ostermann 1894",
+        "pdfPage": 140,
+        "textPage": 115,
+        "sourcePath": "normalized-pages/page-140.txt",
+        "verifiedAgainst": "pages/page-140.txt"
+      },
+      "tags": [
+        "arcobaleno",
+        "primavera",
+        "annata",
+        "raccolto"
+      ],
+      "dateAnchors": [],
+      "seasons": [
+        "spring"
+      ],
+      "almanacEligible": false,
+      "review": {
+        "status": "candidate",
+        "notes": "Pronostico in prosa italiana, non proverbio FUR pronto. Utile come traccia per Scopri, non per Almanacco quotidiano."
+      }
+    },
+    {
+      "id": "ostermann-141-cercli-san-march",
+      "furOriginal": "Il cercli di San March la matine, ploe vizine, o viceversa.",
+      "fur": "Il cercli di San Marc la matine, ploe vicine, o viceversa.",
+      "it": "Il cerchio di San Marco al mattino indica pioggia vicina, o viceversa.",
+      "category": "calendario_meteo",
+      "source": {
+        "label": "Ostermann 1894",
+        "pdfPage": 141,
+        "textPage": 116,
+        "sourcePath": "normalized-pages/page-141.txt",
+        "verifiedAgainst": "pages/page-141.txt"
+      },
+      "tags": [
+        "san_marco",
+        "arcobaleno",
+        "pioggia",
+        "calendario"
+      ],
+      "dateAnchors": [
+        "04-25"
+      ],
+      "seasons": [
+        "spring"
+      ],
+      "almanacEligible": false,
+      "review": {
+        "status": "candidate",
+        "notes": "Candidato databile, ma il testo contiene 'o viceversa': serve nota editoriale prima di uso pubblico."
+      }
+    },
+    {
+      "id": "ostermann-141-arch-san-march-doman",
+      "furOriginal": "L'arch di San March la doman, no ven la sere ch'a nol sei pantan.",
+      "fur": "L'arc di San Marc la doman, no ven la sere che nol sedi pantan.",
+      "it": "L'arcobaleno di San Marco al mattino non arriva a sera senza fango.",
+      "category": "calendario_meteo",
+      "source": {
+        "label": "Ostermann 1894",
+        "pdfPage": 141,
+        "textPage": 116,
+        "sourcePath": "normalized-pages/page-141.txt",
+        "verifiedAgainst": "pages/page-141.txt"
+      },
+      "tags": [
+        "san_marco",
+        "arcobaleno",
+        "pioggia",
+        "fango"
+      ],
+      "dateAnchors": [
+        "04-25"
+      ],
+      "seasons": [
+        "spring"
+      ],
+      "almanacEligible": false,
+      "review": {
+        "status": "candidate",
+        "notes": "Candidato forte ma FUR da verificare; non promuovere senza revisione linguistica."
+      }
+    },
+    {
+      "id": "ostermann-189-sut-zenar-granar",
+      "furOriginal": "Sut di zenar, emple il granar.",
+      "fur": "Sut di Zenar, al jemple il granar.",
+      "it": "Asciutto di gennaio, riempie il granaio.",
+      "category": "calendario_agricolo",
+      "source": {
+        "label": "Ostermann 1894",
+        "pdfPage": 189,
+        "textPage": 164,
+        "sourcePath": "normalized-pages/page-189.txt",
+        "verifiedAgainst": "pages/page-189.txt"
+      },
+      "tags": [
+        "gennaio",
+        "asciutto",
+        "granaio",
+        "raccolto"
+      ],
+      "dateAnchors": [],
+      "seasons": [
+        "winter"
+      ],
+      "almanacEligible": false,
+      "review": {
+        "status": "candidate",
+        "notes": "Candidato agricolo chiaro; normalizzazione FUR da revisionare prima di promozione."
+      }
+    },
+    {
+      "id": "ostermann-189-pulvin-zenar-granar",
+      "furOriginal": "Pulvin di zenar al emple il granar.",
+      "fur": "Pulvin di Zenar al jemple il granar.",
+      "it": "Polvere di gennaio riempie il granaio.",
+      "category": "calendario_agricolo",
+      "source": {
+        "label": "Ostermann 1894",
+        "pdfPage": 189,
+        "textPage": 164,
+        "sourcePath": "normalized-pages/page-189.txt",
+        "verifiedAgainst": "pages/page-189.txt"
+      },
+      "tags": [
+        "gennaio",
+        "polvere",
+        "granaio",
+        "raccolto"
+      ],
+      "dateAnchors": [],
+      "seasons": [
+        "winter"
+      ],
+      "almanacEligible": false,
+      "review": {
+        "status": "candidate",
+        "notes": "Variante del proverbio su gennaio asciutto; valutare se tenere entrambe o una sola."
+      }
+    },
+    {
+      "id": "ostermann-189-ploe-febrar-ledamar",
+      "furOriginal": "La ploe di febrar val tant che un ledamar.",
+      "fur": "La ploe di Fevrar e val tant che un ledamar.",
+      "it": "La pioggia di febbraio vale quanto un letamaio.",
+      "category": "calendario_agricolo",
+      "source": {
+        "label": "Ostermann 1894",
+        "pdfPage": 189,
+        "textPage": 164,
+        "sourcePath": "normalized-pages/page-189.txt",
+        "verifiedAgainst": "pages/page-189.txt"
+      },
+      "tags": [
+        "febbraio",
+        "pioggia",
+        "campi",
+        "raccolto"
+      ],
+      "dateAnchors": [],
+      "seasons": [
+        "winter"
+      ],
+      "almanacEligible": false,
+      "review": {
+        "status": "source_checked",
+        "notes": "Candidato forte per calendario agricolo; controllare resa italiana per tono app."
+      }
+    },
+    {
+      "id": "ostermann-192-san-barnabe-ue",
+      "furOriginal": "Se al pluv il di di San Barnabe, cole la ue fin che an d'e.",
+      "fur": "Se al pluf il di di San Barnabe, e cole la ue fin che an d'e.",
+      "it": "Se piove il giorno di San Barnaba, cade l'uva finche ce n'e.",
+      "category": "calendario_vendemmia",
+      "source": {
+        "label": "Ostermann 1894",
+        "pdfPage": 192,
+        "textPage": 167,
+        "sourcePath": "normalized-pages/page-192.txt",
+        "verifiedAgainst": "pages/page-192.txt"
+      },
+      "tags": [
+        "san_barnaba",
+        "pioggia",
+        "uva",
+        "vendemmia"
+      ],
+      "dateAnchors": [
+        "06-11"
+      ],
+      "seasons": [
+        "summer"
+      ],
+      "almanacEligible": false,
+      "review": {
+        "status": "candidate",
+        "notes": "Candidato datato ma con grafia e resa da controllare; pagina 608 contiene lo stesso nucleo, non duplicato a parte."
+      }
+    },
+    {
+      "id": "ostermann-192-san-barnaba-vin",
+      "furOriginal": "Ploe a San Barnaba, il vin al va.",
+      "fur": "Ploe a San Barnaba, il vin al va.",
+      "it": "Pioggia a San Barnaba, il vino se ne va.",
+      "category": "calendario_vendemmia",
+      "source": {
+        "label": "Ostermann 1894",
+        "pdfPage": 192,
+        "textPage": 167,
+        "sourcePath": "normalized-pages/page-192.txt",
+        "verifiedAgainst": "pages/page-192.txt"
+      },
+      "tags": [
+        "san_barnaba",
+        "pioggia",
+        "vino",
+        "vendemmia"
+      ],
+      "dateAnchors": [
+        "06-11"
+      ],
+      "seasons": [
+        "summer"
+      ],
+      "almanacEligible": false,
+      "review": {
+        "status": "source_checked",
+        "notes": "Candidato breve e chiaro; va verificata la forma FUR finale prima della pubblicazione."
+      }
+    },
+    {
+      "id": "ostermann-192-assunte-vin",
+      "furOriginal": "Biel soreli a l'Assunte bondanze di vin.",
+      "fur": "Biel soreli a l'Assunte, bondance di vin.",
+      "it": "Bel sole all'Assunta, abbondanza di vino.",
+      "category": "calendario_vendemmia",
+      "source": {
+        "label": "Ostermann 1894",
+        "pdfPage": 192,
+        "textPage": 167,
+        "sourcePath": "normalized-pages/page-192.txt",
+        "verifiedAgainst": "pages/page-192.txt"
+      },
+      "tags": [
+        "assunta",
+        "sole",
+        "vino",
+        "vendemmia"
+      ],
+      "dateAnchors": [
+        "08-15"
+      ],
+      "seasons": [
+        "summer"
+      ],
+      "almanacEligible": false,
+      "review": {
+        "status": "source_checked",
+        "notes": "Candidato datato e leggibile; richiede revisione FUR prima di entrare nel calendario."
+      }
+    },
+    {
+      "id": "ostermann-609-ermacora-bufere",
+      "furOriginal": "",
+      "fur": "",
+      "it": "Intorno a Sant'Ermacora si attendevano grandini e bufere: la settimana era ricordata come tempo di possibili disgrazie.",
+      "category": "calendario_meteo",
+      "source": {
+        "label": "Ostermann 1894",
+        "pdfPage": 609,
+        "textPage": 584,
+        "sourcePath": "normalized-pages/page-609.txt",
+        "verifiedAgainst": "pages/page-609.txt"
+      },
+      "tags": [
+        "sant_ermacora",
+        "grandine",
+        "bufere",
+        "luglio"
+      ],
+      "dateAnchors": [
+        "07-12"
+      ],
+      "seasons": [
+        "summer"
+      ],
+      "almanacEligible": false,
+      "review": {
+        "status": "candidate",
+        "notes": "Memoria in prosa, non proverbio FUR pronto. Usare eventualmente in Scopri/Almanacco come nota culturale, non come allerta."
+      }
+    },
+    {
+      "id": "ostermann-674-balons-nev",
+      "furOriginal": "Si chate il gran solev a fa balons di nev.",
+      "fur": "Si cjate il gran sol\u00eav a fa balons di nef.",
+      "it": "Si trova grande sollievo a fare palle di neve.",
+      "category": "neve_popolare",
+      "source": {
+        "label": "Ostermann 1894",
+        "pdfPage": 674,
+        "textPage": 649,
+        "sourcePath": "normalized-pages/page-674.txt",
+        "verifiedAgainst": "pages/page-674.txt"
+      },
+      "tags": [
+        "neve",
+        "giochi",
+        "inverno",
+        "friuli"
+      ],
+      "dateAnchors": [],
+      "seasons": [
+        "winter"
+      ],
+      "almanacEligible": false,
+      "review": {
+        "status": "candidate",
+        "notes": "Piu culturale che proverbiale; utile per Scopri o pillola invernale, non per calendario proverbiale principale."
+      }
+    },
+    {
+      "id": "ostermann-029-canicule-bagnat-sut",
+      "furOriginal": "La Canicule se chate bagnât, lasce bagnat, se chate sút lasce sút.",
+      "fur": "La Canicule se cjate bagnât, e lasse bagnât; se e cjate sût, e lasse sût.",
+      "it": "La Canicola, se trova bagnato, lascia bagnato; se trova asciutto, lascia asciutto.",
+      "category": "calendario_stagionale",
+      "source": {
+        "label": "Ostermann 1894",
+        "pdfPage": 29,
+        "textPage": 4,
+        "sourcePath": "normalized-pages/page-029.txt",
+        "verifiedAgainst": "pages/page-029.txt"
+      },
+      "tags": [
+        "canicola",
+        "estate",
+        "pioggia",
+        "asciutto",
+        "stagione"
+      ],
+      "dateAnchors": [],
+      "seasons": [
+        "summer"
+      ],
+      "almanacEligible": false,
+      "review": {
+        "status": "source_checked",
+        "notes": "Proverbio verificato su pagina clean; Ostermann segnala varianti contraddittorie sulla Canicola, quindi non pubblicare senza nota editoriale."
+      }
+    },
+    {
+      "id": "ostermann-031-macis-zenar",
+      "furOriginal": "Lis Macis, di Zenar, La buine filandere ha di mandalis a ponar.",
+      "fur": "Lis Macis di Zenar: la buine filandere e à di mandâlis a ponar.",
+      "it": "Le stelle di gennaio: la buona filatrice deve mandarle a riposare.",
+      "category": "calendario_astronomico",
+      "source": {
+        "label": "Ostermann 1894",
+        "pdfPage": 31,
+        "textPage": 6,
+        "sourcePath": "normalized-pages/page-031.txt",
+        "verifiedAgainst": "pages/page-031.txt"
+      },
+      "tags": [
+        "orione",
+        "stelle",
+        "gennaio",
+        "carnia",
+        "inverno"
+      ],
+      "dateAnchors": [],
+      "seasons": [
+        "winter"
+      ],
+      "almanacEligible": false,
+      "review": {
+        "status": "source_checked",
+        "notes": "Candidato legato alla Cintura di Orione in Carnia; richiede revisione FUR su Macis/mandalis prima della promozione."
+      }
+    },
+    {
+      "id": "ostermann-058-san-pauli-scur",
+      "furOriginal": "San Pauli (10 gennaio) scur dall' inviar no sin fùr.",
+      "fur": "San Pauli scûr: dal inviar no sin fûr.",
+      "it": "San Paolo scuro: dall'inverno non siamo fuori.",
+      "category": "calendario_meteo",
+      "source": {
+        "label": "Ostermann 1894",
+        "pdfPage": 58,
+        "textPage": 33,
+        "sourcePath": "normalized-pages/page-058.txt",
+        "verifiedAgainst": "pages/page-058.txt"
+      },
+      "tags": [
+        "san_paolo",
+        "gennaio",
+        "inverno",
+        "freddo",
+        "cielo_scuro"
+      ],
+      "dateAnchors": [
+        "01-10"
+      ],
+      "seasons": [
+        "winter"
+      ],
+      "almanacEligible": false,
+      "review": {
+        "status": "source_checked",
+        "notes": "Candidato databile; verificare se usare San Pauli come forma storica o normalizzare il santo in FUR moderno."
+      }
+    },
+    {
+      "id": "ostermann-146-cercli-lune-ploe",
+      "furOriginal": "Cercli vizin, ploe lontane; Cercli lontan, plse vizine.",
+      "fur": "Cercli vizin, ploe lontane; cercli lontan, ploe vizine.",
+      "it": "Cerchio vicino, pioggia lontana; cerchio lontano, pioggia vicina.",
+      "category": "meteo_lunare",
+      "source": {
+        "label": "Ostermann 1894",
+        "pdfPage": 146,
+        "textPage": 121,
+        "sourcePath": "normalized-pages/page-146.txt",
+        "verifiedAgainst": "pages/page-146.txt"
+      },
+      "tags": [
+        "luna",
+        "alone_lunare",
+        "pioggia",
+        "vento",
+        "meteo"
+      ],
+      "dateAnchors": [],
+      "seasons": [
+        "all"
+      ],
+      "almanacEligible": false,
+      "review": {
+        "status": "source_checked",
+        "notes": "Pagina clean contiene l'OCR 'plse', ma la vecchia estrazione ordinata scioglie la riga come 'ploe vizine'. Promuovibile come segno meteo sugli aloni lunari, non come regola lunare automatica."
+      }
+    },
+    {
+      "id": "ostermann-043-lune-setembar-siet",
+      "furOriginal": "La lune di setembar dà la ciere a di chès siét che i vegnin daùr.",
+      "fur": "La lune di setembar e dà la cjere a di chês siet che i vegnin daûr.",
+      "it": "La luna di settembre dà il volto alle sette che vengono dopo.",
+      "category": "calendario_lunare",
+      "source": {
+        "label": "Ostermann 1894",
+        "pdfPage": 43,
+        "textPage": 18,
+        "sourcePath": "normalized-pages/page-043.txt",
+        "verifiedAgainst": "pages/page-043.txt"
+      },
+      "tags": [
+        "luna",
+        "settembre",
+        "stagione",
+        "autunno",
+        "meteo"
+      ],
+      "dateAnchors": [],
+      "seasons": [
+        "autumn"
+      ],
+      "almanacEligible": false,
+      "review": {
+        "status": "source_checked",
+        "notes": "Candidato breve gia collegato a materiale Scopri sulla luna di settembre; FUR e resa IT da rivedere prima della promozione."
+      }
+    },
+    {
+      "id": "ostermann-068-fum-traviers-bez",
+      "furOriginal": "Cuand che il fum al và a traviêrs / Al va là ch'a son i bez.",
+      "fur": "Cuant che il fum al va a traviêrs, al va là che a son i bêçs.",
+      "it": "Quando il fumo va di traverso, va dove ci sono i soldi.",
+      "category": "calendario_rituale",
+      "source": {
+        "label": "Ostermann 1894",
+        "pdfPage": 68,
+        "textPage": 43,
+        "sourcePath": "normalized-pages/page-068.txt",
+        "verifiedAgainst": "pages/page-068.txt"
+      },
+      "tags": [
+        "epifania",
+        "midili",
+        "fumo",
+        "vento",
+        "annata"
+      ],
+      "dateAnchors": [
+        "01-06"
+      ],
+      "seasons": [
+        "winter"
+      ],
+      "almanacEligible": false,
+      "review": {
+        "status": "source_checked",
+        "notes": "Proverbio locale del Midili: utile come ponte Scopri, non come consiglio meteo. Significato e resa FUR da validare."
+      }
+    },
+    {
+      "id": "ostermann-068-fum-riviel-biel",
+      "furOriginal": "Cuand che il fum al va a rivièl / Al va donge dal plui bièl.",
+      "fur": "Cuant che il fum al va a rivièl, al va dongje dal plui biel.",
+      "it": "Quando il fumo va a rivièl, va vicino al più bello.",
+      "category": "calendario_rituale",
+      "source": {
+        "label": "Ostermann 1894",
+        "pdfPage": 68,
+        "textPage": 43,
+        "sourcePath": "normalized-pages/page-068.txt",
+        "verifiedAgainst": "pages/page-068.txt"
+      },
+      "tags": [
+        "epifania",
+        "midili",
+        "fumo",
+        "vento",
+        "annata"
+      ],
+      "dateAnchors": [
+        "01-06"
+      ],
+      "seasons": [
+        "winter"
+      ],
+      "almanacEligible": false,
+      "review": {
+        "status": "source_checked",
+        "notes": "Secondo proverbio del Midili; rivièl e traduzione sono da validare. Da usare prima come spiegazione Scopri, non come Almanacco pubblicato."
+      }
+    },
+    {
+      "id": "ostermann-083-joibe-setemane",
+      "furOriginal": "Joibe vignude setemane jessude.",
+      "fur": "Joibe vignude, setemane jessude.",
+      "it": "Arrivato il giovedì, la settimana è uscita.",
+      "category": "calendario_popolare",
+      "source": {
+        "label": "Ostermann 1894",
+        "pdfPage": 83,
+        "textPage": 58,
+        "sourcePath": "normalized-pages/page-083.txt",
+        "verifiedAgainst": "pages/page-083.txt"
+      },
+      "tags": [
+        "giovedi",
+        "settimana",
+        "calendario",
+        "giorni",
+        "detto_popolare"
+      ],
+      "dateAnchors": [],
+      "seasons": [
+        "all"
+      ],
+      "almanacEligible": false,
+      "review": {
+        "status": "source_checked",
+        "notes": "Formula breve verificata; non e' meteo, possibile contenuto Scopri o rubrica calendario popolare."
+      }
+    },
+    {
+      "id": "ostermann-087-sante-luzie-nadal",
+      "furOriginal": "Da Sante Luzie 13/12 a Nadal tredis dis bièl anal.",
+      "fur": "Da Sante Luzie a Nadâl: tredîs dîs.",
+      "it": "Da Santa Lucia a Natale passano tredici giorni.",
+      "category": "calendario_popolare",
+      "source": {
+        "label": "Ostermann 1894",
+        "pdfPage": 87,
+        "textPage": 62,
+        "sourcePath": "normalized-pages/page-087.txt",
+        "verifiedAgainst": "pages/page-087.txt"
+      },
+      "tags": [
+        "santa_lucia",
+        "natale",
+        "dicembre",
+        "calendario",
+        "inverno"
+      ],
+      "dateAnchors": [
+        "12-13"
+      ],
+      "seasons": [
+        "winter"
+      ],
+      "almanacEligible": false,
+      "review": {
+        "status": "source_checked",
+        "notes": "Candidato databile; la chiusa originale 'bièl anal' va verificata prima di pubblicare la formula completa."
+      }
+    },
+    {
+      "id": "ostermann-087-nadal-une-volte",
+      "furOriginal": "Nadal ven nome une volte all' an.",
+      "fur": "Nadâl al ven dome une volte al an.",
+      "it": "Natale viene solo una volta all'anno.",
+      "category": "calendario_popolare",
+      "source": {
+        "label": "Ostermann 1894",
+        "pdfPage": 87,
+        "textPage": 62,
+        "sourcePath": "normalized-pages/page-087.txt",
+        "verifiedAgainst": "pages/page-087.txt"
+      },
+      "tags": [
+        "natale",
+        "dicembre",
+        "calendario",
+        "festa",
+        "inverno"
+      ],
+      "dateAnchors": [
+        "12-25"
+      ],
+      "seasons": [
+        "winter"
+      ],
+      "almanacEligible": false,
+      "review": {
+        "status": "source_checked",
+        "notes": "Formula chiara ma molto comune; utile come candidato calendario solo dopo review editoriale."
+      }
+    },
+    {
+      "id": "ostermann-100-nul-plovi",
+      "furOriginal": "Co l'è nul / al po plovi cuand ch'a l'ûl.",
+      "fur": "Co al è nul, al pues plovi cuant che al vûl.",
+      "it": "Quando è nuvoloso, può piovere quando vuole.",
+      "category": "meteo_nubi",
+      "source": {
+        "label": "Ostermann 1894",
+        "pdfPage": 100,
+        "textPage": 75,
+        "sourcePath": "normalized-pages/page-100.txt",
+        "verifiedAgainst": "pages/page-100.txt"
+      },
+      "tags": [
+        "nubi",
+        "pioggia",
+        "meteo",
+        "cielo",
+        "tempo"
+      ],
+      "dateAnchors": [],
+      "seasons": [
+        "all"
+      ],
+      "almanacEligible": false,
+      "review": {
+        "status": "source_checked",
+        "notes": "Proverbio breve sulle nubi verificato su pagina clean; adatto a coda meteo dopo revisione FUR."
+      }
+    },
+    {
+      "id": "ostermann-057-san-tomas-zornade-curte",
+      "furOriginal": "A San Tomas (21 dicembre), j\u00e8 la zornade plui curte.",
+      "fur": "A San Tomas, e je la zornade plui curte.",
+      "it": "A San Tommaso la giornata \u00e8 la pi\u00f9 corta.",
+      "category": "calendario_luce",
+      "source": {
+        "label": "Ostermann 1894",
+        "pdfPage": 57,
+        "textPage": 32,
+        "sourcePath": "normalized-pages/page-057.txt",
+        "verifiedAgainst": "pages/page-057.txt"
+      },
+      "tags": [
+        "san_tomas",
+        "luce",
+        "giornate",
+        "calendario",
+        "inverno"
+      ],
+      "dateAnchors": [
+        "12-21"
+      ],
+      "seasons": [
+        "winter"
+      ],
+      "almanacEligible": false,
+      "review": {
+        "status": "source_checked",
+        "notes": "Formula datata e breve; usare solo dopo review FUR su San Tomas/San Tommaso e resa di 'zornade'."
+      }
+    },
+    {
+      "id": "ostermann-057-san-tomas-nadal-di-gial",
+      "furOriginal": "Da San Tom\u00e1s a Nadal, cres il di un p\u00e0s di gi\u00e0l.",
+      "fur": "Da San Tomas a Nad\u00e2l, al cr\u00e8s il d\u00ec di un pas di gjal.",
+      "it": "Da San Tommaso a Natale il giorno cresce di un passo di gallo.",
+      "category": "calendario_luce",
+      "source": {
+        "label": "Ostermann 1894",
+        "pdfPage": 57,
+        "textPage": 32,
+        "sourcePath": "normalized-pages/page-057.txt",
+        "verifiedAgainst": "pages/page-057.txt"
+      },
+      "tags": [
+        "san_tomas",
+        "natale",
+        "luce",
+        "giornate",
+        "calendario",
+        "inverno"
+      ],
+      "dateAnchors": [
+        "12-21",
+        "12-25"
+      ],
+      "seasons": [
+        "winter"
+      ],
+      "almanacEligible": false,
+      "review": {
+        "status": "source_checked",
+        "notes": "Candidato databile su aumento della luce; traduzione FUR da rivedere prima di eventuale promozione."
+      }
+    },
+    {
+      "id": "ostermann-057-san-lucio-nadal-gial",
+      "furOriginal": "Da San Lucio (24 dicembre) a Nadal, cr\u00e8s il d\u00ec un pid di gial.",
+      "fur": "Da San Lucio a Nad\u00e2l, al cr\u00e8s il d\u00ec di un p\u00eet di gjal.",
+      "it": "Da San Lucio a Natale il giorno cresce di un piede di gallo.",
+      "category": "calendario_luce",
+      "source": {
+        "label": "Ostermann 1894",
+        "pdfPage": 57,
+        "textPage": 32,
+        "sourcePath": "normalized-pages/page-057.txt",
+        "verifiedAgainst": "pages/page-057.txt"
+      },
+      "tags": [
+        "san_lucio",
+        "natale",
+        "luce",
+        "giornate",
+        "calendario",
+        "inverno"
+      ],
+      "dateAnchors": [
+        "12-24",
+        "12-25"
+      ],
+      "seasons": [
+        "winter"
+      ],
+      "almanacEligible": false,
+      "review": {
+        "status": "source_checked",
+        "notes": "Candidato databile; verificare forma di San Lucio e resa 'pid/p\u00eet di gjal'."
+      }
+    },
+    {
+      "id": "ostermann-057-nadal-pascute-orute",
+      "furOriginal": "A Nadal un pid di gial - a Pascute (6 gennaio) miez' orute.",
+      "fur": "A Nad\u00e2l un p\u00eet di gjal, a Pascute mieze orute.",
+      "it": "A Natale un piede di gallo, all'Epifania una mezz'oretta.",
+      "category": "calendario_luce",
+      "source": {
+        "label": "Ostermann 1894",
+        "pdfPage": 57,
+        "textPage": 32,
+        "sourcePath": "normalized-pages/page-057.txt",
+        "verifiedAgainst": "pages/page-057.txt"
+      },
+      "tags": [
+        "natale",
+        "epifania",
+        "luce",
+        "giornate",
+        "calendario",
+        "inverno"
+      ],
+      "dateAnchors": [
+        "12-25",
+        "01-06"
+      ],
+      "seasons": [
+        "winter"
+      ],
+      "almanacEligible": false,
+      "review": {
+        "status": "source_checked",
+        "notes": "Candidato databile; variante vicina a formule gia presenti sull'Epifania, da valutare prima della promozione."
+      }
+    },
+    {
+      "id": "ostermann-057-san-luigi-zornade-lunge",
+      "furOriginal": "Il d\u00ec di San Luigi (21 giugno) j\u00e8 la zornade plui lunge.",
+      "fur": "Il d\u00ec di San Luigi e je la zornade plui lungje.",
+      "it": "Il giorno di San Luigi \u00e8 la giornata pi\u00f9 lunga.",
+      "category": "calendario_luce",
+      "source": {
+        "label": "Ostermann 1894",
+        "pdfPage": 57,
+        "textPage": 32,
+        "sourcePath": "normalized-pages/page-057.txt",
+        "verifiedAgainst": "pages/page-057.txt"
+      },
+      "tags": [
+        "san_luigi",
+        "luce",
+        "giornate",
+        "calendario",
+        "estate"
+      ],
+      "dateAnchors": [
+        "06-21"
+      ],
+      "seasons": [
+        "summer"
+      ],
+      "almanacEligible": false,
+      "review": {
+        "status": "source_checked",
+        "notes": "Candidato databile e chiaro; verificare se pubblicarlo come proverbio o come nota solstiziale in Scopri."
+      }
+    },
+    {
+      "id": "ostermann-062-sis-dis-an-mesais",
+      "furOriginal": "I sis ultims dis de l'an e i s\u00ees prins indichin lis mesais.",
+      "fur": "I s\u00ees ultims d\u00ees dal an e i s\u00ees prins a indichin lis mesadis.",
+      "it": "Gli ultimi sei giorni dell'anno e i primi sei indicano i mesi.",
+      "category": "calendario_popolare",
+      "source": {
+        "label": "Ostermann 1894",
+        "pdfPage": 62,
+        "textPage": 37,
+        "sourcePath": "normalized-pages/page-062.txt",
+        "verifiedAgainst": "pages/page-062.txt"
+      },
+      "tags": [
+        "fine_anno",
+        "gennaio",
+        "mesi",
+        "calendario",
+        "pronostico"
+      ],
+      "dateAnchors": [
+        "12-26",
+        "01-06"
+      ],
+      "seasons": [
+        "winter"
+      ],
+      "almanacEligible": false,
+      "review": {
+        "status": "source_checked",
+        "notes": "Formula calendario interessante ma non immediata: richiede nota Scopri o spiegazione prima dell'uso in Almanacco."
+      }
+    },
+    {
+      "id": "ostermann-062-zenar-ploe-avril",
+      "furOriginal": "Tante pozale di zenar, - tante ploe d'avril.",
+      "fur": "Tantis po\u00e7alis di Zen\u00e2r, tantis plois d'Avr\u00eel.",
+      "it": "Tante pozzanghere a gennaio, tanta pioggia d'aprile.",
+      "category": "calendario_mesi",
+      "source": {
+        "label": "Ostermann 1894",
+        "pdfPage": 62,
+        "textPage": 37,
+        "sourcePath": "normalized-pages/page-062.txt",
+        "verifiedAgainst": "pages/page-062.txt"
+      },
+      "tags": [
+        "gennaio",
+        "aprile",
+        "pioggia",
+        "mesi",
+        "meteo"
+      ],
+      "dateAnchors": [],
+      "months": [
+        "01",
+        "04"
+      ],
+      "seasons": [
+        "winter",
+        "spring"
+      ],
+      "weatherTags": [
+        "pioggia"
+      ],
+      "almanacEligible": false,
+      "review": {
+        "status": "source_checked",
+        "notes": "Candidato mensile breve e chiaro; utile per rotazione gennaio/aprile dopo review FUR finale."
+      }
+    },
+    {
+      "id": "ostermann-062-san-macari-setembar",
+      "furOriginal": "T\u00e5l il d\u00ec di San Macari (2 gennaio) -e t\u00e5l il m\u00eas di setembar.",
+      "fur": "Tal d\u00ec di San Macari, tal il m\u00eas di Setembar.",
+      "it": "Com'e il giorno di San Macario, cos\u00ec sar\u00e0 il mese di settembre.",
+      "category": "calendario_santi",
+      "source": {
+        "label": "Ostermann 1894",
+        "pdfPage": 62,
+        "textPage": 37,
+        "sourcePath": "normalized-pages/page-062.txt",
+        "verifiedAgainst": "pages/page-062.txt"
+      },
+      "tags": [
+        "san_macari",
+        "gennaio",
+        "settembre",
+        "calendario",
+        "pronostico"
+      ],
+      "dateAnchors": [
+        "01-02"
+      ],
+      "months": [
+        "09"
+      ],
+      "seasons": [
+        "winter",
+        "autumn"
+      ],
+      "almanacEligible": false,
+      "review": {
+        "status": "source_checked",
+        "notes": "Data esplicita, ma la fonte marca incertezza con punto interrogativo: non promuovere senza nota editoriale."
+      }
+    },
+    {
+      "id": "ostermann-062-febrar-curt-amar",
+      "furOriginal": "Febr\u00e5r! febr\u00e5r! c\u00fbrt si, ma amar.",
+      "fur": "Febr\u00e2r, Febr\u00e2r: curt s\u00ec, ma am\u00e2r.",
+      "it": "Febbraio, febbraio: corto s\u00ec, ma amaro.",
+      "category": "calendario_mesi",
+      "source": {
+        "label": "Ostermann 1894",
+        "pdfPage": 62,
+        "textPage": 37,
+        "sourcePath": "normalized-pages/page-062.txt",
+        "verifiedAgainst": "pages/page-062.txt"
+      },
+      "tags": [
+        "febbraio",
+        "freddo",
+        "mesi",
+        "inverno"
+      ],
+      "dateAnchors": [],
+      "months": [
+        "02"
+      ],
+      "seasons": [
+        "winter"
+      ],
+      "weatherTags": [
+        "freddo"
+      ],
+      "almanacEligible": false,
+      "review": {
+        "status": "source_checked",
+        "notes": "Formula breve e leggibile per febbraio; buona per rotazione mensile dopo review FUR finale."
+      }
+    },
+    {
+      "id": "ostermann-062-febrar-senze-criure",
+      "furOriginal": "Febr\u00e5r senze criure, - marz si vi\u00e8st di verdure.",
+      "fur": "Febr\u00e2r cence criure, Mar\u00e7 si vist di verdure.",
+      "it": "Febbraio senza gelo, marzo si veste di verde.",
+      "category": "calendario_mesi",
+      "source": {
+        "label": "Ostermann 1894",
+        "pdfPage": 62,
+        "textPage": 37,
+        "sourcePath": "normalized-pages/page-062.txt",
+        "verifiedAgainst": "pages/page-062.txt"
+      },
+      "tags": [
+        "febbraio",
+        "marzo",
+        "gelo",
+        "primavera",
+        "mesi"
+      ],
+      "dateAnchors": [],
+      "months": [
+        "02",
+        "03"
+      ],
+      "seasons": [
+        "winter",
+        "spring"
+      ],
+      "weatherTags": [
+        "freddo"
+      ],
+      "almanacEligible": false,
+      "review": {
+        "status": "source_checked",
+        "notes": "Candidato mensile chiaro; verificare grafia 'criure' prima della promozione."
+      }
+    },
+    {
+      "id": "ostermann-062-san-ruperto-lui",
+      "furOriginal": "Se San Ruperto no l'ha nui (27 marzo) No ju var\u00e0 nanche il m\u00eas di lui.",
+      "fur": "Se San Ruperto no l'ha n\u00fbi, no ju var\u00e0 nancje il m\u00eas di Lui.",
+      "it": "Se San Ruperto non ha nubi, non le avr\u00e0 nemmeno il mese di luglio.",
+      "category": "calendario_santi",
+      "source": {
+        "label": "Ostermann 1894",
+        "pdfPage": 62,
+        "textPage": 37,
+        "sourcePath": "normalized-pages/page-062.txt",
+        "verifiedAgainst": "pages/page-062.txt"
+      },
+      "tags": [
+        "san_ruperto",
+        "marzo",
+        "luglio",
+        "nubi",
+        "calendario"
+      ],
+      "dateAnchors": [
+        "03-27"
+      ],
+      "months": [
+        "07"
+      ],
+      "seasons": [
+        "spring",
+        "summer"
+      ],
+      "weatherTags": [
+        "nubi"
+      ],
+      "almanacEligible": false,
+      "review": {
+        "status": "source_checked",
+        "notes": "Interessante e datato, ma la fonte marca incertezza e la resa di 'nui' va confermata."
+      }
+    }
+  ]
+}

@@ -1,0 +1,13 @@
+* text=auto eol=lf
+
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.webp binary
+*.ico binary
+*.pdf binary
+
+# L'inventario launcher e' verificato byte per byte: non normalizzare CRLF/LF
+# e non sottoporlo ai controlli testuali del diff.
+android/launcher-assets/approved-082026/inventario-approvati.csv binary
+android/launcher-assets/approved-web-shortcut-082026-r2/inventario-sha256.csv binary

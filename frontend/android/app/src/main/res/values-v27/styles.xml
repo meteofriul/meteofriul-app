@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Navigation icon appearance is supported starting with Android 8.1. -->
+    <style name="AppTheme.NoActionBar" parent="BaseAppTheme.NoActionBar">
+        <item name="android:windowLightNavigationBar">@bool/system_bars_use_dark_icons</item>
+    </style>
+
+    <style name="AppTheme.NoActionBarLaunch" parent="BaseAppTheme.NoActionBarLaunch">
+        <item name="android:windowLightNavigationBar">false</item>
+    </style>
+</resources>

@@ -1,0 +1,158 @@
+{
+  "schemaVersion": 1,
+  "batchId": "ud-go-pn-enrichment-milestones-03",
+  "snapshotDate": "2026-09-01",
+  "purpose": "Ricerca di tre tappe per Aquileia, Gradisca d'Isonzo e Cordenons; revisione FUR e promozione sono documentate separatamente.",
+  "runtimeIntegration": false,
+  "initialTotalMilestones": 427,
+  "editorialPolicy": {
+    "sourceEvidenceRequired": true,
+    "ambiguousDatesExcluded": true,
+    "italianCopyStatus": "editorial_draft",
+    "friulianCopyStatus": "pending_assisted_review",
+    "readyForUi": false
+  },
+  "excludedClaims": [
+    {
+      "municipality": "Aquileia",
+      "claim": "L'iscrizione UNESCO del 1998 fonda il sito o ne avvia la tutela legale.",
+      "reason": "Il 1998 riguarda l'iscrizione dell'area archeologica e della Basilica patriarcale nella Lista del Patrimonio Mondiale, non la fondazione del sito né l'inizio della tutela.",
+      "sourceUrl": "https://unesco.cultura.gov.it/projects/archaeological-area-and-the-patriarchal-basilica-of-aquileia/"
+    },
+    {
+      "municipality": "Gradisca d'Isonzo",
+      "claim": "Gli eventi politici del 1647 o del 1754 costituiscono la nuova tappa.",
+      "reason": "Sono stati esclusi perché troppo vicini alla tappa già presente sul passaggio sotto il controllo asburgico; si conserva il distinto ruolo di sede vescovile dal 1788 al 1791.",
+      "sourceUrl": "https://www.comune.gradiscadisonzo.go.it/it/novita-232939/avvisi-232942/la-citta-48177"
+    },
+    {
+      "municipality": "Cordenons",
+      "claim": "Guglielmo Raetz progetta anche il cotonificio e la villa padronale.",
+      "reason": "La fonte attribuisce a Raetz il disegno del giardino; la contemporaneità con cotonificio e villa non estende l'attribuzione progettuale agli altri edifici.",
+      "sourceUrl": "https://patrimonioculturale.regione.fvg.it/parchi-e-giardini/?s_id=749704"
+    }
+  ],
+  "municipalities": [
+    {
+      "istatCode": "030004",
+      "municipality": "Aquileia",
+      "province": "UD",
+      "currentMilestoneCount": 2,
+      "currentMilestoneIds": [
+        "aquileia-roman-foundation",
+        "aquileia-attila-sack"
+      ],
+      "decision": "source_verified_it_fur_pending",
+      "candidates": [
+        {
+          "id": "aquileia-unesco-inscription-1998",
+          "year": 1998,
+          "label": {
+            "it": "L’area archeologica e la Basilica patriarcale entrano nel Patrimonio mondiale UNESCO",
+            "fur": null
+          },
+          "evidence": "Nel 1998 l'area archeologica e la Basilica patriarcale di Aquileia vengono iscritte nella Lista del Patrimonio Mondiale. Il riconoscimento riguarda insieme le testimonianze della città romana e il complesso basilicale.",
+          "source": {
+            "label": "Ministero della Cultura - Area archeologica e Basilica patriarcale di Aquileia",
+            "type": "cultural_institution",
+            "url": "https://unesco.cultura.gov.it/projects/archaeological-area-and-the-patriarchal-basilica-of-aquileia/",
+            "checkedAt": "2026-09-01"
+          },
+          "supportingSources": [
+            {
+              "label": "UNESCO World Heritage Centre - Archaeological Area and the Patriarchal Basilica of Aquileia",
+              "type": "international_institution",
+              "url": "https://whc.unesco.org/en/list/825/",
+              "checkedAt": "2026-09-01"
+            }
+          ],
+          "duplicateReview": {
+            "exactDuplicate": false,
+            "relatedRecordIds": [
+              "aquileia-roman-foundation",
+              "aquileia-attila-sack",
+              "memory-source-aquileia-unesco-181"
+            ],
+            "note": "La memoria collegata alla fonte UNESCO tratta la fondazione romana del 181 a.C., non l'iscrizione del 1998. Nessun catalogo racconta già questo riconoscimento."
+          }
+        }
+      ]
+    },
+    {
+      "istatCode": "031008",
+      "municipality": "Gradisca d'Isonzo",
+      "province": "GO",
+      "currentMilestoneCount": 2,
+      "currentMilestoneIds": [
+        "gradisca-venetian-walls",
+        "gradisca-habsburg-rule"
+      ],
+      "decision": "source_verified_it_fur_pending",
+      "candidates": [
+        {
+          "id": "gradisca-episcopal-seat-1788",
+          "year": 1788,
+          "label": {
+            "it": "Gradisca diventa sede vescovile",
+            "fur": null
+          },
+          "evidence": "Dal 1788 al 1791 Gradisca è sede vescovile.",
+          "source": {
+            "label": "Comune di Gradisca d'Isonzo - La città",
+            "type": "official_municipality",
+            "url": "https://www.comune.gradiscadisonzo.go.it/it/novita-232939/avvisi-232942/la-citta-48177",
+            "checkedAt": "2026-09-01"
+          },
+          "supportingSources": [
+            {
+              "label": "SIUSA - Autorità ecclesiastiche di Gradisca",
+              "type": "national_institution",
+              "url": "https://siusa-archivi.cultura.gov.it/cgi-bin/siusa/pagina.pl?Chiave=9097&RicDimF=2&RicProgetto=reg-fvg&TipoPag=prodente",
+              "checkedAt": "2026-09-01"
+            }
+          ],
+          "duplicateReview": {
+            "exactDuplicate": false,
+            "relatedRecordIds": [
+              "gradisca-habsburg-rule"
+            ],
+            "note": "Il ruolo ecclesiastico del 1788-1791 è distinto dal passaggio politico sotto il controllo asburgico del 1511. Gli eventi politici del 1647 e del 1754 non sono stati aggiunti."
+          }
+        }
+      ]
+    },
+    {
+      "istatCode": "093017",
+      "municipality": "Cordenons",
+      "province": "PN",
+      "currentMilestoneCount": 2,
+      "currentMilestoneIds": [
+        "cordenons-897",
+        "cordenons-1814"
+      ],
+      "decision": "source_verified_it_fur_pending",
+      "candidates": [
+        {
+          "id": "cordenons-1902-giardino-villa-raetz",
+          "year": 1902,
+          "label": {
+            "it": "Viene creato il giardino di Villa Raetz",
+            "fur": null
+          },
+          "evidence": "Il giardino nasce nel 1902, contemporaneamente al cotonificio e alla villa padronale, su disegno dell'imprenditore Guglielmo Raetz. L'attribuzione del disegno riguarda soltanto il giardino.",
+          "source": {
+            "label": "ERPAC FVG - Parco di Villa Raetz",
+            "type": "regional_institution",
+            "url": "https://patrimonioculturale.regione.fvg.it/parchi-e-giardini/?s_id=749704",
+            "checkedAt": "2026-09-01"
+          },
+          "duplicateReview": {
+            "exactDuplicate": false,
+            "relatedRecordIds": [],
+            "note": "La storia del giardino industriale è distinta dal diploma dell'897 e dall'autonomia comunale del 1814. Nessun catalogo racconta già la creazione del giardino nel 1902."
+          }
+        }
+      ]
+    }
+  ]
+}

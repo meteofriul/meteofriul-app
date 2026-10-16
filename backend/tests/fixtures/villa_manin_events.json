@@ -1,0 +1,93 @@
+[
+  {
+    "id": 27297,
+    "status": "publish",
+    "type": "evento",
+    "slug": "cena-in-bianco",
+    "link": "https://www.villamanin.it/evento/cena-in-bianco/",
+    "title": {"rendered": "Cena in bianco"},
+    "content": {
+      "rendered": "<h1>Una serata di convivialità, eleganza e condivisione nella splendida cornice di Villa Manin</h1><h2>Sabato 5 settembre 2026</h2><div class=\"elementor-widget-text-editor\"><p><em>Sabato 5 settembre 2026, Villa Manin ospiterà un’unica ed elegante serata all’insegna della convivialità, della condivisione e della sostenibilità.</em></p><p><strong>CODROIPO (UD)</strong> — Ritorna la spettacolare Cena in Bianco nella straordinaria ambientazione di Piazza Tonda della Villa Manin di Passariano.</p></div>"
+    },
+    "featured_media": 27298,
+    "_embedded": {
+      "wp:featuredmedia": [
+        {
+          "id": 27298,
+          "source_url": "https://www.villamanin.it/wp-content/uploads/2026/08/villa_manin-1x1-cena_in_bianco.jpg"
+        }
+      ],
+      "wp:term": [
+        [{"id": 8, "name": "Evento", "taxonomy": "tipologia"}],
+        [{"id": 96, "name": "2026", "taxonomy": "anno"}]
+      ]
+    }
+  },
+  {
+    "id": 26666,
+    "status": "publish",
+    "type": "evento",
+    "slug": "visite-tematiche-a-villa-manin",
+    "link": "https://www.villamanin.it/evento/visite-tematiche-a-villa-manin/",
+    "title": {"rendered": "Visite Tematiche a Villa Manin"},
+    "content": {
+      "rendered": "<p>VISITE TEMATICHE A VILLA MANIN DAL 20 GIUGNO AL 5 SETTEMBRE 2026</p><p>Villa Manin vi aspetta al fresco delle sue sale e all’ombra degli alberi secolari del parco storico.</p><p>Per accogliervi al meglio abbiamo organizzato un programma di visite tematiche.</p>"
+    },
+    "featured_media": 26667,
+    "_embedded": {
+      "wp:featuredmedia": [
+        {
+          "id": 26667,
+          "source_url": "https://www.villamanin.it/wp-content/uploads/2026/06/villa_manin-1x1-visitetematiche.jpg"
+        }
+      ],
+      "wp:term": [[{"id": 8, "name": "Evento", "taxonomy": "tipologia"}]]
+    }
+  },
+  {
+    "id": 18096,
+    "status": "publish",
+    "type": "evento",
+    "slug": "lo-scrigno-del-doge-in-villa-manin",
+    "link": "https://www.villamanin.it/evento/lo-scrigno-del-doge-in-villa-manin/",
+    "title": {"rendered": "Lo scrigno del Doge in Villa Manin"},
+    "content": {
+      "rendered": "<h2>Il Mercatino dell’Antiquariato e del Collezionismo</h2><p>Lo scrigno del Doge propone incontri e conversazioni dedicate ai vari settori del collezionismo.</p><p>Gli appuntamenti si articolano attraverso 6 eventi: 25 aprile, 2 giugno, 20 settembre, 1 novembre, 8 dicembre, 6 gennaio 2026.</p>"
+    },
+    "featured_media": 18097,
+    "_embedded": {
+      "wp:featuredmedia": [
+        {
+          "id": 18097,
+          "source_url": "https://www.villamanin.it/wp-content/uploads/2026/04/villa_manin-1x1-scrignodoge.jpg"
+        }
+      ]
+    }
+  },
+  {
+    "id": 25868,
+    "status": "publish",
+    "type": "evento",
+    "slug": "nuda-veritas",
+    "link": "https://www.villamanin.it/evento/nuda-veritas/",
+    "title": {"rendered": "Nuda Veritas. Klimt"},
+    "content": {
+      "rendered": "<h1>Un capolavoro a Villa Manin</h1><h2>Dal 21.05.2026 al 06.09.2026</h2><p>È un’opera che sicuramente vale un viaggio. Perché Nuda Veritas di Gustav Klimt non è solo uno dei capolavori dell’artista viennese ma è un dipinto che interroga chi lo osserva.</p>"
+    },
+    "featured_media": 25869,
+    "_embedded": {
+      "wp:featuredmedia": [
+        {
+          "id": 25869,
+          "source_url": "https://www.villamanin.it/wp-content/uploads/2026/05/1000x1000-px.jpg"
+        }
+      ],
+      "wp:term": [
+        [
+          {"id": 8, "name": "Evento", "taxonomy": "tipologia"},
+          {"id": 7, "name": "Mostra", "taxonomy": "tipologia"}
+        ]
+      ]
+    }
+  }
+]

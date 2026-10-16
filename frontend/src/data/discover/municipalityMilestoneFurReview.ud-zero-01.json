@@ -1,0 +1,171 @@
+{
+  "schemaVersion": 1,
+  "batchId": "ud-zero-milestones-fur-01",
+  "sourceResearchBatchId": "ud-zero-milestones-01",
+  "reviewedAt": "2026-08-21",
+  "purpose": "Revisione linguistica separata delle ventisei tappe storiche del primo lotto UD prima di qualsiasi promozione nel catalogo visibile.",
+  "runtimeIntegration": false,
+  "summary": {
+    "totalRecords": 26,
+    "approved": 26,
+    "pendingHumanReview": 0
+  },
+  "records": [
+    {
+      "id": "amaro-comune-napoleonico-1807",
+      "status": "approved",
+      "labelFur": "Damâr al comparìs tant che Comun tal compartiment napoleonîc",
+      "notes": "Damâr e je la forme uficiâl dal profîl; tant che Comun al rint il sens aministratîf cence antecipâ la date."
+    },
+    {
+      "id": "amaro-regno-italia-1866",
+      "status": "approved",
+      "labelFur": "Damâr al passe al Ream d'Italie",
+      "notes": "Ream d'Italie e passe a seguissin il lessic storic za aprovât."
+    },
+    {
+      "id": "arta-venezia-1420",
+      "status": "approved",
+      "labelFur": "Darte e passe sot de sovranitât de Republiche di Vignesie",
+      "notes": "Darte e Vignesie a son formis za aprovadis; sovranitât e manten la formulazion prudente de font."
+    },
+    {
+      "id": "arta-primo-stabilimento-termale-1870",
+      "status": "approved",
+      "labelFur": "Al ven costruît il prin stabiliment termâl di Darte",
+      "notes": "Costruît al rint cun precision il fat documentât dal studi de Universitât di Udin; stabiliment termâl al è za doprât tal corpus."
+    },
+    {
+      "id": "arta-terme-denominazione-1965",
+      "status": "approved",
+      "labelFur": "Il Comun al cjape il non Arta Terme al puest di Arta",
+      "notes": "La costruzion cjape il non ... al puest di e je coerente cul corpus; lis dôs denominazions legâls a restin invariadis."
+    },
+    {
+      "id": "basiliano-prima-menzione-1149",
+      "status": "approved",
+      "labelFur": "Prime menzion documentarie de localitât di Basilian",
+      "notes": "Basilian e je la forme uficiâl dal profîl; localitât e distinguint il paîs dal non personâl dal 1072."
+    },
+    {
+      "id": "basiliano-incendio-cortine-1411",
+      "status": "approved",
+      "labelFur": "Lis trupis di Pippo Spano a brusin lis cortinis di Vissandon, Blessan e Varian",
+      "notes": "Brusin e je la tierce persone plurâl; la frase e limite il fat aes trê cortinis documentadis e e dopre i toponims furlans uficiâi."
+    },
+    {
+      "id": "basiliano-denominazione-1923",
+      "status": "approved",
+      "labelFur": "Pasiano Schiavonesco al cjape il non Basilian",
+      "notes": "La formulazion e je coerente cul corpus; il non storic al reste invariât e il toponim gnûf al dopre la forme furlane uficiâl."
+    },
+    {
+      "id": "bordano-autonomia-1822",
+      "status": "approved",
+      "labelFur": "Bordan al torne a jessi comun autonom",
+      "notes": "La costruzion torne a jessi comun autonom e je za aprovade tal corpus des tapis storichis."
+    },
+    {
+      "id": "bordano-municipio-1988",
+      "status": "approved",
+      "labelFur": "Al ven inaugurât il gnûf Municipi di Bordan",
+      "notes": "Bordan e je la forme uficiâl; Municipi al indiche l'edifici e no l'istituzion comunâl."
+    },
+    {
+      "id": "bordano-casa-farfalle-2003",
+      "status": "approved",
+      "labelFur": "E vierç la Cjase des Paveis",
+      "notes": "Cjase des Paveis e je la denominazion za aprovade tal profîl comunâl."
+    },
+    {
+      "id": "buttrio-placito-1015",
+      "status": "approved",
+      "labelFur": "A Buri al è documentât il dirit al placit anuâl dal Avocât de Glesie aquileiese",
+      "notes": "Dirit al placit al rint la font cence afirmâ che il placit al sedi stât tignût tal 1015; la frase no lu presente tant che prime atestazion dal paîs."
+    },
+    {
+      "id": "buttrio-comune-napoleonico-1807",
+      "status": "approved",
+      "labelFur": "Buri al comparìs tant che Comun modern tal decret napoleonîc",
+      "notes": "Buri e je la forme uficiâl; la formulazion e reste specifiche sul Comun modern."
+    },
+    {
+      "id": "buttrio-fiera-vini-1933",
+      "status": "approved",
+      "labelFur": "E vierç la prime Fiere regjonâl dai vins di Buri",
+      "notes": "Fiere regjonâl dai vins e manten il titul storic de manifestazion in forme furlane trasparente."
+    },
+    {
+      "id": "carlino-prima-attestazione-1031",
+      "status": "approved",
+      "labelFur": "Prime atestazion documentarie di Cjarlins",
+      "notes": "Cjarlins e je la forme uficiâl dal profîl e atestazion documentarie e seguìs il corpus."
+    },
+    {
+      "id": "carlino-comune-1818",
+      "status": "approved",
+      "labelFur": "Cjarlins al devente Comun cun Sarvâs e Casino",
+      "notes": "Sarvâs e je la forme furlane comune uficiâl di San Gervasio; Casino al reste il non storic documentât."
+    },
+    {
+      "id": "carlino-chiamana-scoperta-1970",
+      "status": "approved",
+      "labelFur": "A vegnin individuâts i rescj dal implant produtîf roman de Chiamana",
+      "notes": "Rescj e implant produtîf a seguissin il corpus; individuâts al distinguint il 1970 dal inizi dai scavaments tal 1971."
+    },
+    {
+      "id": "castions-capitolo-aquileia-1031",
+      "status": "approved",
+      "labelFur": "Il patriarcje di Aquilee al done Cjasteons al Cjapitul aquileiês",
+      "notes": "La frase e seguìs la cronologjie SIUSA dal 1031 e e dopre Cjasteons, Aquilee e Cjapitul aquileiês in forme furlane."
+    },
+    {
+      "id": "castions-dipartimento-passariano-1806",
+      "status": "approved",
+      "labelFur": "Cjasteons al ven comprendût tal Dipartiment di Passarian",
+      "notes": "La frase e rint la collocazion aministrative documentade da SIUSA cence confondile cuntune fondazion dal Comun."
+    },
+    {
+      "id": "castions-morsano-strada-romana-1862",
+      "status": "approved",
+      "labelFur": "A Morsan di Strade a vegnin cjatadis olmis di une strade romane",
+      "notes": "La forme furlane uficiâl complete Morsan di Strade e distinguint la frazion di Morsan des altris localitâts omonimis."
+    },
+    {
+      "id": "cercivento-farie-1426",
+      "status": "approved",
+      "labelFur": "Prime testemoneance documentarie de Fàrie di Checo",
+      "notes": "Fàrie di Checo e reste la denominazion locâl za aprovade; testemoneance no anticipe la costruzion dal opifici."
+    },
+    {
+      "id": "cercivento-comune-1806",
+      "status": "approved",
+      "labelFur": "Çurçuvint al è documentât tant che Comun dal Dipartiment di Passarian",
+      "notes": "La frase e limite il 1806 al stat dal ent comunâl e no lu confont cul passaç dal teritori tal Ream d'Italie, documentât tal 1805."
+    },
+    {
+      "id": "cercivento-regno-italia-1866",
+      "status": "approved",
+      "labelFur": "Çurçuvint al ven unît al Ream d'Italie",
+      "notes": "Unît al Ream d'Italie al rint la formulazion de font cence zontâ une date dal dì no documentade."
+    },
+    {
+      "id": "cervignano-castrum-cirviganum-1036",
+      "status": "approved",
+      "labelFur": "Prime atestazion dal non «Castrum Cirviganum» intun document origjinâl",
+      "notes": "Castrum Cirviganum al reste invariât; la costruzion e atribuìs origjinâl al document dal 1036 e no ae atestazion."
+    },
+    {
+      "id": "cervignano-comune-rurale-1081",
+      "status": "approved",
+      "labelFur": "La comunitât di Çarvignan si costituìs tant che Comun rurâl",
+      "notes": "Çarvignan e je la forme uficiâl dal profîl; Comun rurâl al conserve la figure juridiche documentade."
+    },
+    {
+      "id": "cervignano-ferrovia-1897",
+      "status": "approved",
+      "labelFur": "E ven inaugurade la linie feroviarie San Zorç di Noiâr-Çarvignan",
+      "notes": "I doi estremis geografics dal trat ferroviari a doprin lis formis furlanis uficiâls."
+    }
+  ]
+}

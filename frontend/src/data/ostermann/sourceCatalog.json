@@ -1,0 +1,676 @@
+{
+  "schemaVersion": 1,
+  "purpose": "Catalogo operativo delle pagine Ostermann prioritarie per Scopri, Almanacco e archivio editoriale. Non e' letto dalla UI.",
+  "source": {
+    "label": "Ostermann 1894",
+    "pdf": "Ostermann La vita in Friuli 1876.pdf",
+    "archiveRoot": "external:ostermann-text",
+    "normalizedPagesPath": "normalized-pages",
+    "cleanPagesPath": "pages",
+    "themeIndexPath": "reports/normalized-theme-index.json"
+  },
+  "selection": {
+    "date": "2026-06-24",
+    "totalIndexedPages": 683,
+    "method": "Prima soglia: score >= 40 su temi meteo_popolare, proverbi_friulano, calendario_rituale, agricoltura_natura, luna_astronomia, stagioni_freddo_neve, vento e luoghi_fvg. Aggiunte pagine del piano P1 gia selezionate per continuita con candidati e backlog Scopri.",
+    "rule": "Catalogare prima, estrarre in tranche, tradurre come bozza, poi revisionare FUR/IT e fonte prima di qualunque promozione."
+  },
+  "states": {
+    "cataloged": "Pagina individuata dall'indice e da leggere/estrarre.",
+    "backlog_page_extracted": "Pagina gia rappresentata nel backlog Scopri a livello tema.",
+    "granular_extracted": "Sono presenti estratti granulari separati in extracts.json.",
+    "candidate_extracted": "La pagina ha gia prodotto candidati proverbio/almanacco in staging.",
+    "curated_recovered": "Pagina gia trasformata nel precedente archivio curato Ostermann, recuperata come fonte controllata senza duplicare subito gli estratti.",
+    "archive_context": "Utile come contesto culturale, ma da usare con molta cautela in UI."
+  },
+  "records": [
+    {
+      "pdfPage": 100,
+      "score": 95,
+      "priority": "P1",
+      "topic": "nubi e pioggia",
+      "themes": ["agricoltura_natura", "luoghi_fvg", "meteo_popolare", "proverbi_friulano", "stagioni_freddo_neve", "vento"],
+      "recommendedUse": ["discover", "almanac_teaser"],
+      "status": "granular_extracted",
+      "extractIds": ["ost-extract-100-nubi-pioggia"]
+    },
+    {
+      "pdfPage": 94,
+      "score": 83,
+      "priority": "P1",
+      "topic": "lessico dei venti",
+      "themes": ["agricoltura_natura", "luna_astronomia", "meteo_popolare", "proverbi_friulano", "vento"],
+      "recommendedUse": ["discover", "glossary"],
+      "status": "granular_extracted",
+      "extractIds": ["ost-extract-094-lessico-vento"]
+    },
+    {
+      "pdfPage": 105,
+      "score": 75,
+      "priority": "P1",
+      "topic": "proverbi meteo e calendario dei santi",
+      "themes": ["calendario_rituale", "luna_astronomia", "meteo_popolare", "proverbi_friulano", "stagioni_freddo_neve"],
+      "recommendedUse": ["proverb_candidates", "almanac"],
+      "status": "candidate_extracted",
+      "recoveredRecordIds": ["ost-0027-marzo-aprile-annata"],
+      "extractIds": ["ost-extract-190-marzo-aprile-annata"]
+    },
+    {
+      "pdfPage": 102,
+      "score": 59,
+      "priority": "P1",
+      "topic": "colore della luna",
+      "themes": ["luna_astronomia", "meteo_popolare", "proverbi_friulano", "vento"],
+      "recommendedUse": ["discover", "almanac_luna"],
+      "status": "granular_extracted",
+      "extractIds": ["ost-extract-102-colore-luna"]
+    },
+    {
+      "pdfPage": 97,
+      "score": 58,
+      "priority": "P1",
+      "topic": "vento, aloni, neve e pioggia",
+      "themes": ["luna_astronomia", "meteo_popolare", "proverbi_friulano", "stagioni_freddo_neve", "vento"],
+      "recommendedUse": ["discover", "proverb_candidates"],
+      "status": "granular_extracted",
+      "extractIds": ["ost-extract-097-vento-date"]
+    },
+    {
+      "pdfPage": 63,
+      "score": 56,
+      "priority": "P1",
+      "topic": "San Giovanni e Sant'Egidio",
+      "themes": ["meteo_popolare", "proverbi_friulano", "stagioni_freddo_neve", "vento"],
+      "recommendedUse": ["discover", "almanac_calendar"],
+      "status": "granular_extracted",
+      "extractIds": ["ost-extract-063-san-zuan-sant-egidi"]
+    },
+    {
+      "pdfPage": 126,
+      "score": 55,
+      "priority": "P1",
+      "topic": "temporali, lampi e grandine",
+      "themes": ["agricoltura_natura", "luoghi_fvg", "meteo_popolare", "proverbi_friulano", "stagioni_freddo_neve", "vento"],
+      "recommendedUse": ["discover", "archive"],
+      "status": "granular_extracted",
+      "extractIds": ["ost-extract-126-grandine-temporali"]
+    },
+    {
+      "pdfPage": 538,
+      "score": 53,
+      "priority": "P1",
+      "topic": "segni naturali e lavori dei campi",
+      "themes": ["agricoltura_natura", "luna_astronomia", "meteo_popolare", "proverbi_friulano", "stagioni_freddo_neve", "vento"],
+      "recommendedUse": ["discover", "earth_tips"],
+      "status": "granular_extracted",
+      "extractIds": ["ost-extract-538-streghe-meteo-archive"]
+    },
+    {
+      "pdfPage": 33,
+      "score": 52,
+      "priority": "P1",
+      "topic": "stelle e pronostici",
+      "themes": ["luna_astronomia", "meteo_popolare", "proverbi_friulano", "stagioni_freddo_neve", "vento"],
+      "recommendedUse": ["discover", "almanac_sky"],
+      "status": "granular_extracted",
+      "extractIds": ["ost-extract-033-stelle-pronostici"]
+    },
+    {
+      "pdfPage": 44,
+      "score": 48,
+      "priority": "P1",
+      "topic": "luna e lavori agricoli",
+      "themes": ["agricoltura_natura", "luna_astronomia", "proverbi_friulano", "stagioni_freddo_neve", "vento"],
+      "recommendedUse": ["discover", "earth_tips", "almanac_luna"],
+      "status": "granular_extracted",
+      "extractIds": ["ost-extract-044-luna-lavori-campi"]
+    },
+    {
+      "pdfPage": 29,
+      "score": 46,
+      "priority": "P1",
+      "topic": "costellazioni, semina e luna",
+      "themes": ["agricoltura_natura", "luna_astronomia", "meteo_popolare", "proverbi_friulano", "vento"],
+      "recommendedUse": ["discover", "almanac_sky"],
+      "status": "granular_extracted",
+      "extractIds": ["ost-extract-029-canicola-stagione"]
+    },
+    {
+      "pdfPage": 190,
+      "score": 45,
+      "priority": "P1",
+      "topic": "luna, Udine e proverbi",
+      "themes": ["luna_astronomia", "luoghi_fvg", "meteo_popolare", "proverbi_friulano", "vento"],
+      "recommendedUse": ["proverb_candidates", "almanac"],
+      "status": "candidate_extracted",
+      "recoveredRecordIds": ["ost-0029-natale-pasqua-fieno"],
+      "extractIds": ["ost-extract-193-natale-pasqua-fieno"]
+    },
+    {
+      "pdfPage": 60,
+      "score": 44,
+      "priority": "P1",
+      "topic": "santi estivi e vendemmia",
+      "themes": ["proverbi_friulano", "stagioni_freddo_neve"],
+      "recommendedUse": ["discover", "almanac_calendar"],
+      "status": "granular_extracted",
+      "extractIds": ["ost-extract-060-santi-vendemmia"]
+    },
+    {
+      "pdfPage": 61,
+      "score": 44,
+      "priority": "P1",
+      "topic": "calende, santi e inverno",
+      "themes": ["calendario_rituale", "proverbi_friulano", "vento"],
+      "recommendedUse": ["discover", "almanac_calendar"],
+      "status": "granular_extracted",
+      "extractIds": ["ost-extract-061-mesais-calende"]
+    },
+    {
+      "pdfPage": 99,
+      "score": 44,
+      "priority": "P1",
+      "topic": "nebbia e pronostici",
+      "themes": ["luoghi_fvg", "meteo_popolare", "proverbi_friulano", "vento"],
+      "recommendedUse": ["discover", "almanac_weather"],
+      "status": "granular_extracted",
+      "extractIds": ["ost-extract-099-nebbia-pronostici"]
+    },
+    {
+      "pdfPage": 101,
+      "score": 44,
+      "priority": "P1",
+      "topic": "sole rosso, galli e segnali del tempo",
+      "themes": ["meteo_popolare", "proverbi_friulano", "stagioni_freddo_neve", "vento"],
+      "recommendedUse": ["discover", "almanac_weather"],
+      "status": "granular_extracted",
+      "extractIds": ["ost-extract-101-sole-rosso"]
+    },
+    {
+      "pdfPage": 193,
+      "score": 44,
+      "priority": "P1",
+      "topic": "erbe, fieno, luna e inverno",
+      "themes": ["agricoltura_natura", "calendario_rituale", "luna_astronomia", "meteo_popolare", "proverbi_friulano", "stagioni_freddo_neve"],
+      "recommendedUse": ["proverb_candidates", "almanac"],
+      "status": "candidate_extracted",
+      "extractIds": []
+    },
+    {
+      "pdfPage": 107,
+      "score": 42,
+      "priority": "P1",
+      "topic": "pioggia col sole e credenze popolari",
+      "themes": ["agricoltura_natura", "luoghi_fvg", "meteo_popolare", "proverbi_friulano"],
+      "recommendedUse": ["discover", "archive"],
+      "status": "granular_extracted",
+      "extractIds": ["ost-extract-107-pioggia-sole-streghe"]
+    },
+    {
+      "pdfPage": 49,
+      "score": 41,
+      "priority": "P1",
+      "topic": "luna e pioggia",
+      "themes": ["luna_astronomia", "luoghi_fvg", "meteo_popolare", "proverbi_friulano", "stagioni_freddo_neve"],
+      "recommendedUse": ["proverb_candidates", "almanac_luna"],
+      "status": "granular_extracted",
+      "extractIds": ["ost-extract-049-primo-martedi-luna"]
+    },
+    {
+      "pdfPage": 238,
+      "score": 41,
+      "priority": "P1",
+      "topic": "fuochi di San Giovanni e San Pietro",
+      "themes": ["agricoltura_natura", "calendario_rituale", "luoghi_fvg", "proverbi_friulano", "stagioni_freddo_neve"],
+      "recommendedUse": ["discover", "almanac_calendar"],
+      "status": "granular_extracted",
+      "extractIds": ["ost-extract-238-fuochi-san-giovanni-pietro"]
+    },
+    {
+      "pdfPage": 31,
+      "score": 40,
+      "priority": "P1",
+      "topic": "Orione, Sirio e stelle contadine",
+      "themes": ["agricoltura_natura", "luna_astronomia", "luoghi_fvg", "proverbi_friulano"],
+      "recommendedUse": ["discover", "almanac_sky"],
+      "status": "granular_extracted",
+      "extractIds": ["ost-extract-031-orione-carnia", "ost-extract-031-sirio-canicola"]
+    },
+    {
+      "pdfPage": 54,
+      "score": 39,
+      "priority": "P1-manual",
+      "topic": "freddo, luna e santi invernali",
+      "themes": ["calendario_rituale", "luna_astronomia", "proverbi_friulano", "stagioni_freddo_neve"],
+      "recommendedUse": ["proverb_candidates", "almanac_calendar"],
+      "status": "granular_extracted",
+      "extractIds": ["ost-extract-054-santi-freddo-febbraio"]
+    },
+    {
+      "pdfPage": 104,
+      "score": 38,
+      "priority": "P1-manual",
+      "topic": "monti col cappello, nubi e animali",
+      "themes": ["meteo_popolare", "proverbi_friulano", "agricoltura_natura", "luoghi_fvg"],
+      "recommendedUse": ["discover", "almanac_weather"],
+      "status": "granular_extracted",
+      "extractIds": ["ost-extract-104-monti-cappello-nubi"]
+    },
+    {
+      "pdfPage": 130,
+      "score": 38,
+      "priority": "P1-manual",
+      "topic": "neve e abbondanza",
+      "themes": ["stagioni_freddo_neve", "proverbi_friulano", "agricoltura_natura"],
+      "recommendedUse": ["discover", "winter_calendar"],
+      "status": "granular_extracted",
+      "extractIds": ["ost-extract-130-neve-pane"]
+    },
+    {
+      "pdfPage": 131,
+      "score": 37,
+      "priority": "P1-manual",
+      "topic": "vespe, neve e santi invernali",
+      "themes": ["stagioni_freddo_neve", "calendario_rituale", "proverbi_friulano"],
+      "recommendedUse": ["discover", "winter_calendar"],
+      "status": "granular_extracted",
+      "extractIds": ["ost-extract-131-vespe-neve", "ost-extract-131-santi-neve"]
+    },
+    {
+      "pdfPage": 132,
+      "score": 36,
+      "priority": "P1-manual",
+      "topic": "neve, brina e valanghe",
+      "themes": ["stagioni_freddo_neve", "agricoltura_natura", "luoghi_fvg"],
+      "recommendedUse": ["discover", "archive"],
+      "status": "granular_extracted",
+      "extractIds": ["ost-extract-132-neve-brina"]
+    },
+    {
+      "pdfPage": 140,
+      "score": 35,
+      "priority": "P1-manual",
+      "topic": "arcobaleno e annata",
+      "themes": ["meteo_popolare", "calendario_rituale", "agricoltura_natura", "proverbi_friulano"],
+      "recommendedUse": ["discover", "spring_calendar"],
+      "status": "granular_extracted",
+      "extractIds": ["ost-extract-140-arcobaleno-primavera"]
+    },
+    {
+      "pdfPage": 40,
+      "score": 38,
+      "priority": "P1-manual",
+      "topic": "luna nel calendario popolare",
+      "themes": ["luna_astronomia", "meteo_popolare", "proverbi_friulano"],
+      "recommendedUse": ["discover", "almanac_luna"],
+      "status": "granular_extracted",
+      "extractIds": ["ost-extract-040-luna-calendario-popolare"]
+    },
+    {
+      "pdfPage": 43,
+      "score": 37,
+      "priority": "P1-manual",
+      "topic": "luna, fieno, viti e legname",
+      "themes": ["agricoltura_natura", "luna_astronomia", "meteo_popolare", "proverbi_friulano"],
+      "recommendedUse": ["discover", "almanac_luna"],
+      "status": "granular_extracted",
+      "extractIds": ["ost-extract-043-luna-fieno-viti-legna"]
+    },
+    {
+      "pdfPage": 57,
+      "score": 32,
+      "priority": "P1-manual",
+      "topic": "durata delle giornate e santi",
+      "themes": ["calendario_rituale", "stagioni_freddo_neve", "proverbi_friulano"],
+      "recommendedUse": ["discover", "almanac_calendar"],
+      "status": "granular_extracted",
+      "extractIds": ["ost-extract-057-giornate-santi"]
+    },
+    {
+      "pdfPage": 58,
+      "score": 36,
+      "priority": "P1-manual",
+      "topic": "inverno mite, estate piovosa e stagioni",
+      "themes": ["meteo_popolare", "stagioni_freddo_neve", "vento", "proverbi_friulano"],
+      "recommendedUse": ["discover", "season_calendar"],
+      "status": "granular_extracted",
+      "extractIds": ["ost-extract-058-inverno-estate-stagioni"]
+    },
+    {
+      "pdfPage": 59,
+      "score": 34,
+      "priority": "P1-manual",
+      "topic": "Candelora, Venerdi Santo e Ascensione",
+      "themes": ["calendario_rituale", "meteo_popolare", "proverbi_friulano", "stagioni_freddo_neve"],
+      "recommendedUse": ["discover", "almanac_calendar", "proverb_candidates"],
+      "status": "granular_extracted",
+      "extractIds": ["ost-extract-059-candelora-pasqua-ascensione"]
+    },
+    {
+      "pdfPage": 68,
+      "score": 36,
+      "priority": "P1-manual",
+      "topic": "fumo del Midili e presagi dell'annata",
+      "themes": ["calendario_rituale", "meteo_popolare", "proverbi_friulano", "agricoltura_natura"],
+      "recommendedUse": ["discover", "epiphany_calendar"],
+      "status": "granular_extracted",
+      "extractIds": ["ost-extract-068-fumo-midili"]
+    },
+    {
+      "pdfPage": 87,
+      "score": 33,
+      "priority": "P1-manual",
+      "topic": "nomi delle feste e ore del giorno",
+      "themes": ["calendario_rituale", "proverbi_friulano", "luoghi_fvg"],
+      "recommendedUse": ["discover", "calendar_glossary"],
+      "status": "granular_extracted",
+      "extractIds": ["ost-extract-087-feste-ore-giorno"]
+    },
+    {
+      "pdfPage": 96,
+      "score": 39,
+      "priority": "P1-manual",
+      "topic": "Garbin, vento delle Palme e durata del vento",
+      "themes": ["meteo_popolare", "vento", "proverbi_friulano"],
+      "recommendedUse": ["discover", "almanac_weather"],
+      "status": "granular_extracted",
+      "extractIds": ["ost-extract-096-garbin-vento-palme"]
+    },
+    {
+      "pdfPage": 119,
+      "score": 38,
+      "priority": "P1-manual",
+      "topic": "campane contro temporali e grandine",
+      "themes": ["calendario_rituale", "folklore_meteo", "meteo_popolare", "luoghi_fvg"],
+      "recommendedUse": ["discover", "archive"],
+      "status": "granular_extracted",
+      "extractIds": ["ost-extract-119-campane-temporale-grandine"]
+    },
+    {
+      "pdfPage": 121,
+      "score": 34,
+      "priority": "P1-manual",
+      "topic": "riti contro grandine e nubi temporalesche",
+      "themes": ["calendario_rituale", "folklore_meteo", "meteo_popolare", "agricoltura_natura"],
+      "recommendedUse": ["discover", "archive"],
+      "status": "granular_extracted",
+      "extractIds": ["ost-extract-121-riti-grandine-nubi"]
+    },
+    {
+      "pdfPage": 122,
+      "score": 33,
+      "priority": "P1-manual",
+      "topic": "segni di grandine e racconti di maltempo",
+      "themes": ["folklore_meteo", "meteo_popolare", "luoghi_fvg"],
+      "recommendedUse": ["discover", "archive"],
+      "status": "granular_extracted",
+      "extractIds": ["ost-extract-122-segni-grandine-dragone"]
+    },
+    {
+      "pdfPage": 129,
+      "score": 32,
+      "priority": "P1-manual",
+      "topic": "piante, fulmini e temporali",
+      "themes": ["folklore_meteo", "meteo_popolare", "agricoltura_natura"],
+      "recommendedUse": ["discover", "archive"],
+      "status": "granular_extracted",
+      "extractIds": ["ost-extract-129-piante-fulmini"]
+    },
+    {
+      "pdfPage": 141,
+      "score": 31,
+      "priority": "P1-manual",
+      "topic": "arcobaleno e tre giorni di tempo",
+      "themes": ["meteo_popolare", "proverbi_friulano", "luoghi_fvg"],
+      "recommendedUse": ["discover", "almanac_weather"],
+      "status": "granular_extracted",
+      "extractIds": ["ost-extract-141-arcobaleno-tempo"]
+    },
+    {
+      "pdfPage": 146,
+      "score": 36,
+      "priority": "P1-manual",
+      "topic": "paraseleni e aloni lunari",
+      "themes": ["luna_astronomia", "meteo_popolare", "vento", "proverbi_friulano"],
+      "recommendedUse": ["discover", "almanac_luna"],
+      "status": "granular_extracted",
+      "extractIds": ["ost-extract-146-aloni-lunari"]
+    },
+    {
+      "pdfPage": 189,
+      "score": 33,
+      "priority": "P1-manual",
+      "topic": "annate umide, erbe e funghi",
+      "themes": ["agricoltura_natura", "meteo_popolare", "proverbi_friulano", "stagioni_freddo_neve"],
+      "recommendedUse": ["discover", "season_calendar", "proverb_candidates"],
+      "status": "granular_extracted",
+      "extractIds": ["ost-extract-189-annate-erbe-funghi"]
+    },
+    {
+      "pdfPage": 192,
+      "score": 30,
+      "priority": "P1-manual",
+      "topic": "vigna, vendemmia e santi di giugno",
+      "themes": ["agricoltura_natura", "calendario_rituale", "meteo_popolare", "proverbi_friulano"],
+      "recommendedUse": ["discover", "almanac_calendar", "proverb_candidates"],
+      "status": "granular_extracted",
+      "extractIds": ["ost-extract-192-vigna-santi-vendemmia"]
+    },
+    {
+      "pdfPage": 234,
+      "score": 39,
+      "priority": "P1-manual",
+      "topic": "erbe, nomi locali e buona stagione",
+      "themes": ["agricoltura_natura", "calendario_stagionale", "luoghi_fvg"],
+      "recommendedUse": ["discover", "archive"],
+      "status": "granular_extracted",
+      "extractIds": ["ost-extract-234-erbe-buona-stagione"]
+    },
+    {
+      "pdfPage": 608,
+      "score": 31,
+      "priority": "P1-manual",
+      "topic": "San Giorgio, San Barnaba e protezioni agricole",
+      "themes": ["calendario_rituale", "agricoltura_natura", "proverbi_friulano"],
+      "recommendedUse": ["discover", "almanac_calendar"],
+      "status": "granular_extracted",
+      "extractIds": ["ost-extract-608-san-giorgio-barnaba"]
+    },
+    {
+      "pdfPage": 609,
+      "score": 31,
+      "priority": "P1-manual",
+      "topic": "Sant'Ermacora e settimana delle bufere",
+      "themes": ["calendario_rituale", "meteo_popolare", "luoghi_fvg"],
+      "recommendedUse": ["discover", "almanac_calendar"],
+      "status": "granular_extracted",
+      "extractIds": ["ost-extract-609-ermacora-bufere"]
+    },
+    {
+      "pdfPage": 674,
+      "score": 31,
+      "priority": "P1-manual",
+      "topic": "giochi di neve e slitte",
+      "themes": ["stagioni_freddo_neve", "luoghi_fvg", "tradizioni"],
+      "recommendedUse": ["discover", "winter_calendar"],
+      "status": "granular_extracted",
+      "extractIds": ["ost-extract-674-giochi-neve-slitte"]
+    },
+    {
+      "pdfPage": 28,
+      "score": 0,
+      "priority": "P1-recovered",
+      "topic": "perche un almanacco",
+      "themes": ["calendario_rituale", "luna_astronomia", "meteo_popolare"],
+      "recommendedUse": ["discover", "almanac_bridge"],
+      "status": "curated_recovered",
+      "recoveredRecordIds": ["ost-0054-almanacchi-lunari"],
+      "extractIds": ["ost-extract-028-almanacchi-lunari"]
+    },
+    {
+      "pdfPage": 45,
+      "score": 0,
+      "priority": "P1-recovered",
+      "topic": "luna e maiale",
+      "themes": ["luna_astronomia", "calendario_rituale", "agricoltura_natura"],
+      "recommendedUse": ["discover", "almanac_bridge"],
+      "status": "curated_recovered",
+      "recoveredRecordIds": ["ost-0012-luna-maiale"],
+      "extractIds": ["ost-extract-045-luna-maiale"]
+    },
+    {
+      "pdfPage": 46,
+      "score": 0,
+      "priority": "P1-recovered",
+      "topic": "luna, uccelli e bucato",
+      "themes": ["luna_astronomia", "calendario_rituale", "agricoltura_natura"],
+      "recommendedUse": ["discover", "archive"],
+      "status": "curated_recovered",
+      "recoveredRecordIds": ["ost-0013-luna-uccelli-bucato"],
+      "extractIds": ["ost-extract-046-luna-uccelli-bucato"]
+    },
+    {
+      "pdfPage": 67,
+      "score": 0,
+      "priority": "P1-recovered",
+      "topic": "fuochi dell'Epifania",
+      "themes": ["calendario_rituale", "agricoltura_natura", "meteo_popolare", "vento"],
+      "recommendedUse": ["discover", "almanac_bridge"],
+      "status": "curated_recovered",
+      "recoveredRecordIds": ["ost-0003-epifania-fuochi"],
+      "extractIds": ["ost-extract-067-epifania-fuochi"]
+    },
+    {
+      "pdfPage": 69,
+      "score": 0,
+      "priority": "P1-recovered",
+      "topic": "acqua dell'Epifania",
+      "themes": ["calendario_rituale", "folklore_meteo"],
+      "recommendedUse": ["discover", "almanac_bridge"],
+      "status": "curated_recovered",
+      "recoveredRecordIds": ["ost-0016-benedizioni-epifania"],
+      "extractIds": ["ost-extract-069-benedizioni-epifania"]
+    },
+    {
+      "pdfPage": 70,
+      "score": 0,
+      "priority": "P1-recovered",
+      "topic": "ulivo contro il temporale",
+      "themes": ["calendario_rituale", "folklore_meteo", "meteo_popolare"],
+      "recommendedUse": ["discover", "archive"],
+      "status": "curated_recovered",
+      "recoveredRecordIds": ["ost-0036-palme-temporale"],
+      "extractIds": ["ost-extract-070-palme-temporale"]
+    },
+    {
+      "pdfPage": 98,
+      "score": 0,
+      "priority": "P1-recovered",
+      "topic": "bissaboga e trombe di vento",
+      "themes": ["meteo_popolare", "vento", "luoghi_fvg"],
+      "recommendedUse": ["discover", "almanac_bridge"],
+      "status": "curated_recovered",
+      "recoveredRecordIds": ["ost-0022-bissaboga-trombe-vento"],
+      "extractIds": ["ost-extract-098-bissaboga-trombe-vento"]
+    },
+    {
+      "pdfPage": 106,
+      "score": 0,
+      "priority": "P1-recovered",
+      "topic": "pioggia, grandine e streghe",
+      "themes": ["folklore_meteo", "meteo_popolare", "proverbi_friulano"],
+      "recommendedUse": ["discover", "archive"],
+      "status": "curated_recovered",
+      "recoveredRecordIds": ["ost-0026-pioggia-grandine-streghe"],
+      "extractIds": ["ost-extract-106-pioggia-grandine-streghe"]
+    },
+    {
+      "pdfPage": 111,
+      "score": 0,
+      "priority": "P1-recovered",
+      "topic": "uccelli marini e pioggia",
+      "themes": ["agricoltura_natura", "meteo_popolare", "vento"],
+      "recommendedUse": ["discover", "almanac_bridge"],
+      "status": "curated_recovered",
+      "recoveredRecordIds": ["ost-0053-uccelli-marini-pioggia"],
+      "extractIds": ["ost-extract-111-uccelli-marini-pioggia"]
+    },
+    {
+      "pdfPage": 145,
+      "score": 0,
+      "priority": "P1-recovered",
+      "topic": "pareli, tre soli e aloni",
+      "themes": ["luna_astronomia", "meteo_popolare", "vento"],
+      "recommendedUse": ["discover", "almanac_bridge"],
+      "status": "curated_recovered",
+      "recoveredRecordIds": ["ost-0059-pareli-aloni-lunari"],
+      "extractIds": ["ost-extract-145-pareli-aloni-lunari"]
+    },
+    {
+      "pdfPage": 227,
+      "score": 0,
+      "priority": "P1-recovered",
+      "topic": "erba da pioggia",
+      "themes": ["agricoltura_natura", "meteo_popolare", "calendario_stagionale"],
+      "recommendedUse": ["discover", "almanac_bridge"],
+      "status": "curated_recovered",
+      "recoveredRecordIds": ["ost-0046-erba-da-pioggia"],
+      "extractIds": ["ost-extract-227-erba-da-pioggia"]
+    },
+    {
+      "pdfPage": 233,
+      "score": 0,
+      "priority": "P1-recovered",
+      "topic": "lino delle fate e umidita",
+      "themes": ["agricoltura_natura", "meteo_popolare", "folklore_meteo"],
+      "recommendedUse": ["discover", "archive"],
+      "status": "curated_recovered",
+      "recoveredRecordIds": ["ost-0047-lin-di-strie-igroscopio"],
+      "extractIds": ["ost-extract-233-lin-di-strie-igroscopio"]
+    },
+    {
+      "pdfPage": 299,
+      "score": 0,
+      "priority": "P1-recovered",
+      "topic": "alcione e pioggia",
+      "themes": ["agricoltura_natura", "meteo_popolare", "calendario_stagionale"],
+      "recommendedUse": ["discover", "almanac_bridge"],
+      "status": "curated_recovered",
+      "recoveredRecordIds": ["ost-0057-alcione-igroscopio"],
+      "extractIds": ["ost-extract-299-alcione-igroscopio"]
+    },
+    {
+      "pdfPage": 541,
+      "score": 0,
+      "priority": "P1-recovered",
+      "topic": "erbe della notte di San Giovanni",
+      "themes": ["calendario_rituale", "folklore_meteo", "agricoltura_natura"],
+      "recommendedUse": ["discover", "archive"],
+      "status": "curated_recovered",
+      "recoveredRecordIds": ["ost-0017-erbe-san-giovanni-unguento"],
+      "extractIds": ["ost-extract-541-erbe-san-giovanni-unguento"]
+    },
+    {
+      "pdfPage": 545,
+      "score": 0,
+      "priority": "P1-recovered",
+      "topic": "iperico di San Giovanni",
+      "themes": ["calendario_rituale", "agricoltura_natura", "folklore_meteo"],
+      "recommendedUse": ["discover", "archive"],
+      "status": "curated_recovered",
+      "recoveredRecordIds": ["ost-0018-iperico-san-giovanni"],
+      "extractIds": ["ost-extract-545-iperico-san-giovanni"]
+    },
+    {
+      "pdfPage": 604,
+      "score": 0,
+      "priority": "P1-recovered",
+      "topic": "demoni dell'aria e tempeste",
+      "themes": ["folklore_meteo", "meteo_popolare", "vento"],
+      "recommendedUse": ["discover", "archive"],
+      "status": "curated_recovered",
+      "recoveredRecordIds": ["ost-0058-demoni-aria-tempeste"],
+      "extractIds": ["ost-extract-604-demoni-aria-tempeste"]
+    }
+  ]
+}

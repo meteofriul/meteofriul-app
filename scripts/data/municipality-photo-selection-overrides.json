@@ -1,0 +1,82 @@
+{
+  "schemaVersion": 1,
+  "policy": "Only choices that differ from the reviewed catalog ranking are listed here.",
+  "records": [
+    {
+      "istatCode": "030035",
+      "selectedFileName": "Enemonzo - Chiesa di San Nicolò Vescovo - 2024-09-16 09-22-34 001.JPG",
+      "reviewMethod": "detailed_visual_review"
+    },
+    {
+      "istatCode": "030048",
+      "selectedFileName": "Chiesa di San Giacomo Apostolo (Lestizza) 02.jpg",
+      "reviewMethod": "detailed_visual_review"
+    },
+    {
+      "istatCode": "030129",
+      "selectedFileName": "Piazza San Giacomo - Udine.jpg",
+      "creditDisplayName": {
+        "it": "Udine",
+        "fur": "Udin"
+      },
+      "creditSubject": {
+        "it": "Piazza San Giacomo",
+        "fur": "Place San Jacum"
+      }
+    },
+    {
+      "istatCode": "031007",
+      "selectedFileName": "Panorama Gorizia (tramonto).jpg",
+      "creditDisplayName": {
+        "it": "Gorizia",
+        "fur": "Gurize"
+      },
+      "creditSubject": {
+        "it": "Panorama di Gorizia al tramonto",
+        "fur": "Panorame di Gurize al tramont"
+      }
+    },
+    {
+      "istatCode": "032003",
+      "selectedFileName": "Muggia z002.JPG",
+      "reviewMethod": "detailed_visual_review",
+      "reviewedAt": "2026-08-02"
+    },
+    {
+      "istatCode": "032006",
+      "selectedFileName": "Trieste (28766391880).jpg",
+      "creditDisplayName": {
+        "it": "Trieste",
+        "fur": "Triest"
+      },
+      "creditSubject": {
+        "it": "Veduta di Trieste",
+        "fur": "Viodude di Triest"
+      }
+    },
+    {
+      "istatCode": "093026",
+      "selectedFileName": "Stazione di Meduno.jpg",
+      "reviewMethod": "detailed_visual_review",
+      "reviewedAt": "2026-08-02"
+    },
+    {
+      "istatCode": "093033",
+      "selectedFileName": "Palazzo Comunale, Pordenone.JPG",
+      "creditDisplayName": {
+        "it": "Pordenone",
+        "fur": "Pordenon"
+      },
+      "creditSubject": {
+        "it": "Palazzo Comunale di Pordenone",
+        "fur": "Palaç comunâl di Pordenon"
+      }
+    },
+    {
+      "istatCode": "093036",
+      "selectedFileName": "Chiesa di San Bartolomeo Apostolo (Roveredo in Piano) 01.jpg",
+      "reviewMethod": "detailed_visual_review",
+      "reviewedAt": "2026-08-02"
+    }
+  ]
+}

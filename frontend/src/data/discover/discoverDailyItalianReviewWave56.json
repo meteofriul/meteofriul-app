@@ -1,0 +1,100 @@
+{
+  "schemaVersion": 1,
+  "generatedAt": "2026-07-19",
+  "purpose": "Cinquantaseiesimo lotto Scopri IT: verifica di quindici candidati proposti per date ancora prive di memoria principale. Le fonti disponibili descrivono soltanto carriere professionali, politiche o sportive generiche e non documentano opere, primati o contributi storici sufficienti. Nessuna voce viene usata per coprire artificialmente il calendario.",
+  "policy": {
+    "readyForUi": false,
+    "furDeferred": true,
+    "dateFormat": "DD-MM",
+    "requiresFinalItalianApproval": true,
+    "excludeDeaths": true,
+    "excludeGenericPoliticalProfiles": true,
+    "excludeGenericProfessionalProfiles": true,
+    "excludeSportsOnlyProfiles": true,
+    "allowExceptionalSportsProfiles": true,
+    "rejectBirthplaceOnlyProfiles": true,
+    "rejectSemanticDuplicates": true,
+    "rejectUncertainCalendarDates": true,
+    "rejectInternallyInconsistentRecords": true,
+    "requireOneCanonicalSource": true,
+    "sourceFirst": true,
+    "publishAfterFurOnly": true,
+    "allowMultipleMemoriesPerDate": true,
+    "doNotPromoteToPrimaryForCoverageOnly": true
+  },
+  "summary": {
+    "reviewed": 15,
+    "keepDaily": 0,
+    "primary": 0,
+    "secondary": 0,
+    "hold": 0,
+    "excluded": 15,
+    "canonicalPrimaryDatesBefore": 274,
+    "canonicalPrimaryDatesAfter": 274,
+    "currentVisiblePrimaryCoverage": 269
+  },
+  "keepDaily": [],
+  "hold": [],
+  "excluded": [
+    {
+      "id": "master-fvg-06-12-Q3860838",
+      "reason": "Monica Samassa viene descritta soltanto come attrice italiana; il materiale disponibile non documenta un'opera o un contributo culturale di rilievo storico sufficiente per Scopri."
+    },
+    {
+      "id": "master-fvg-09-01-Q16041299",
+      "reason": "Andrea Zanussi viene indicato come ex pilota di rally ed editore, ma il materiale disponibile non documenta un primato sportivo eccezionale o un contributo editoriale storico sufficiente per Scopri."
+    },
+    {
+      "id": "master-fvg-13-04-Q28058625",
+      "reason": "Sara Alzetta viene descritta soltanto come attrice e performer italiana; il materiale disponibile non documenta un'opera o un contributo culturale storico sufficiente per Scopri."
+    },
+    {
+      "id": "master-fvg-13-06-Q3770672",
+      "reason": "Giuseppe Giacomelli viene descritto soltanto come politico italiano; non emerge un intervento legislativo, istituzionale o storico autonomo coerente con la soglia editoriale di Scopri."
+    },
+    {
+      "id": "master-fvg-13-11-Q3740341",
+      "reason": "Fausto Biloslavo viene descritto soltanto come giornalista italiano; il materiale disponibile non documenta un contributo storico o culturale autonomo sufficiente per la memoria giornaliera."
+    },
+    {
+      "id": "master-fvg-15-07-Q17635276",
+      "reason": "Laura Perin presenta una carriera calcistica professionale, ma il materiale disponibile non documenta una medaglia, un primato internazionale o un risultato storico eccezionale sufficiente per Scopri."
+    },
+    {
+      "id": "master-fvg-15-11-Q3645907",
+      "reason": "Bruno Renner presenta una carriera cestistica professionale, ma il materiale disponibile non documenta una medaglia, un primato internazionale o un risultato storico eccezionale sufficiente per Scopri."
+    },
+    {
+      "id": "master-fvg-16-09-Q21651781",
+      "reason": "Lorenzo Molinaro presenta una carriera cestistica professionale, ma il materiale disponibile non documenta una medaglia, un primato internazionale o un risultato storico eccezionale sufficiente per Scopri."
+    },
+    {
+      "id": "master-fvg-18-01-Q3051068",
+      "reason": "Elisa Manzano presenta una carriera nella pallavolo professionale, ma il materiale disponibile non documenta una medaglia olimpica o mondiale né un risultato storico eccezionale sufficiente per Scopri."
+    },
+    {
+      "id": "master-fvg-19-04-Q3770103",
+      "reason": "Giuseppe Bernini presenta una carriera cestistica professionale, ma il materiale disponibile non documenta una medaglia, un primato internazionale o un risultato storico eccezionale sufficiente per Scopri."
+    },
+    {
+      "id": "master-fvg-22-08-Q21030430",
+      "reason": "Noura Mabilo presenta una carriera nella pallavolo professionale, ma il materiale disponibile non documenta una medaglia olimpica o mondiale né un risultato storico eccezionale sufficiente per Scopri."
+    },
+    {
+      "id": "master-fvg-23-10-Q3958507",
+      "reason": "Severino Radici presenta una carriera cestistica professionale, ma il materiale disponibile non documenta una medaglia, un primato internazionale o un risultato storico eccezionale sufficiente per Scopri."
+    },
+    {
+      "id": "master-fvg-24-02-Q64225322",
+      "reason": "Martina Loss viene descritta soltanto come politica italiana; non emerge un intervento legislativo, istituzionale o storico autonomo coerente con la soglia editoriale di Scopri."
+    },
+    {
+      "id": "master-fvg-24-03-Q56704255",
+      "reason": "Aurelia Bubisutti viene descritta soltanto come politica italiana; non emerge un intervento legislativo, istituzionale o storico autonomo coerente con la soglia editoriale di Scopri."
+    },
+    {
+      "id": "master-fvg-24-07-Q7406656",
+      "reason": "Salvatore Giannone viene descritto soltanto come velocista italiano; il materiale disponibile non documenta una medaglia olimpica o mondiale né un primato storico eccezionale sufficiente per Scopri."
+    }
+  ]
+}

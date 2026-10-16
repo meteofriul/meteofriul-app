@@ -1,0 +1,28 @@
+#!/bin/sh
+
+set -eu
+
+remote_name="${1:-origin}"
+remote_url="${2:-unknown}"
+targets_main=0
+
+while read -r local_ref local_sha remote_ref remote_sha; do
+  if [ "$remote_ref" = "refs/heads/main" ]; then
+    targets_main=1
+  fi
+done
+
+if [ "$targets_main" -eq 1 ] && [ "${METEOFRIUL_ALLOW_MAIN_PUSH:-0}" != "1" ]; then
+  cat >&2 <<EOF
+Push diretto a main bloccato dal guardrail locale Meteo Friul.
+
+Remote: $remote_name ($remote_url)
+
+Pubblica un branch e integra la modifica tramite pull request.
+Per una deroga intenzionale e verificata, esegui il singolo comando con:
+  METEOFRIUL_ALLOW_MAIN_PUSH=1
+EOF
+  exit 1
+fi
+
+exit 0

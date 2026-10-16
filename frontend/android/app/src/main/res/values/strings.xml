@@ -1,0 +1,8 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">Meteo Friûl</string>
+    <string name="title_activity_main">Meteo Friûl</string>
+    <string name="package_name">com.meteofriul.app</string>
+    <string name="custom_url_scheme">com.meteofriul.app</string>
+    <string name="push_channel_official_id" translatable="false">mf_official_alerts_v1</string>
+</resources>

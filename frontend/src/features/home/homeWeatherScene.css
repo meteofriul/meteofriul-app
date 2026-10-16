@@ -1,0 +1,476 @@
+.mf-home-flight-scene {
+  --mf-scene-phase-cloud: rgba(255, 255, 255, 0.78);
+  --mf-scene-phase-field-a: #deb846;
+  --mf-scene-phase-field-b: #6dac70;
+  --mf-scene-phase-glow: transparent;
+  --mf-scene-phase-hill: #70a977;
+  --mf-scene-phase-ridge-far: #7aa6a1;
+  --mf-scene-phase-ridge-near: #4f8469;
+  --mf-scene-phase-river: #45a8c6;
+  --mf-scene-phase-sky-bottom: #b8dcdf;
+  --mf-scene-phase-sky-top: #79c8ea;
+  --mf-scene-phase-stars: 0;
+  --mf-scene-cloud: var(--mf-scene-phase-cloud);
+  --mf-scene-field-a: var(--mf-scene-phase-field-a);
+  --mf-scene-field-b: var(--mf-scene-phase-field-b);
+  --mf-scene-hill: var(--mf-scene-phase-hill);
+  --mf-scene-ridge-far: var(--mf-scene-phase-ridge-far);
+  --mf-scene-ridge-near: var(--mf-scene-phase-ridge-near);
+  --mf-scene-river: var(--mf-scene-phase-river);
+  --mf-scene-sky-bottom: var(--mf-scene-phase-sky-bottom);
+  --mf-scene-sky-top: var(--mf-scene-phase-sky-top);
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+  position: absolute;
+  z-index: 0;
+}
+
+.mf-home-flight-scene--phase-night {
+  --mf-scene-phase-cloud: rgba(172, 190, 211, 0.54);
+  --mf-scene-phase-field-a: #344d65;
+  --mf-scene-phase-field-b: #28535c;
+  --mf-scene-phase-hill: #315861;
+  --mf-scene-phase-ridge-far: #385069;
+  --mf-scene-phase-ridge-near: #263f56;
+  --mf-scene-phase-river: #39788f;
+  --mf-scene-phase-sky-bottom: #183f63;
+  --mf-scene-phase-sky-top: #081a38;
+  --mf-scene-phase-stars: 1;
+}
+
+.mf-home-flight-scene--phase-dawn {
+  --mf-scene-phase-cloud: rgba(251, 226, 211, 0.76);
+  --mf-scene-phase-field-a: #b69b62;
+  --mf-scene-phase-field-b: #66866f;
+  --mf-scene-phase-glow: rgba(255, 180, 124, 0.2);
+  --mf-scene-phase-hill: #6f887b;
+  --mf-scene-phase-ridge-far: #718095;
+  --mf-scene-phase-ridge-near: #536a72;
+  --mf-scene-phase-river: #679aae;
+  --mf-scene-phase-sky-bottom: #f2ad7d;
+  --mf-scene-phase-sky-top: #526e9f;
+  --mf-scene-phase-stars: 0;
+}
+
+.mf-home-flight-scene--phase-morning {
+  --mf-scene-phase-cloud: rgba(255, 255, 255, 0.82);
+  --mf-scene-phase-field-a: #d9bb55;
+  --mf-scene-phase-field-b: #72b17a;
+  --mf-scene-phase-hill: #76ad7c;
+  --mf-scene-phase-ridge-far: #83aaa4;
+  --mf-scene-phase-ridge-near: #568b70;
+  --mf-scene-phase-river: #49abc8;
+  --mf-scene-phase-sky-bottom: #c8e7df;
+  --mf-scene-phase-sky-top: #57b4df;
+}
+
+.mf-home-flight-scene--phase-midday {
+  --mf-scene-phase-cloud: rgba(255, 255, 255, 0.78);
+  --mf-scene-phase-field-a: #deb846;
+  --mf-scene-phase-field-b: #6dac70;
+  --mf-scene-phase-hill: #70a977;
+  --mf-scene-phase-ridge-far: #7aa6a1;
+  --mf-scene-phase-ridge-near: #4f8469;
+  --mf-scene-phase-river: #45a8c6;
+  --mf-scene-phase-sky-bottom: #b8dcdf;
+  --mf-scene-phase-sky-top: #79c8ea;
+}
+
+.mf-home-flight-scene--phase-afternoon {
+  --mf-scene-phase-cloud: rgba(255, 249, 231, 0.8);
+  --mf-scene-phase-field-a: #ddb64a;
+  --mf-scene-phase-field-b: #75a96d;
+  --mf-scene-phase-glow: rgba(246, 203, 122, 0.1);
+  --mf-scene-phase-hill: #7fa374;
+  --mf-scene-phase-ridge-far: #7d9d99;
+  --mf-scene-phase-ridge-near: #598069;
+  --mf-scene-phase-river: #55a1b7;
+  --mf-scene-phase-sky-bottom: #e2d59a;
+  --mf-scene-phase-sky-top: #66b6d8;
+}
+
+.mf-home-flight-scene--phase-sunset {
+  --mf-scene-phase-cloud: rgba(247, 210, 194, 0.74);
+  --mf-scene-phase-field-a: #b98c56;
+  --mf-scene-phase-field-b: #63785e;
+  --mf-scene-phase-glow: rgba(255, 139, 91, 0.22);
+  --mf-scene-phase-hill: #707564;
+  --mf-scene-phase-ridge-far: #716d7c;
+  --mf-scene-phase-ridge-near: #57596a;
+  --mf-scene-phase-river: #797f9b;
+  --mf-scene-phase-sky-bottom: #ef936b;
+  --mf-scene-phase-sky-top: #536390;
+  --mf-scene-phase-stars: 0;
+}
+
+.mf-home-flight-scene--partly {
+  --mf-scene-cloud: color-mix(in srgb, var(--mf-scene-phase-cloud) 80%, rgba(239, 247, 247, 0.86));
+  --mf-scene-sky-bottom: color-mix(in srgb, var(--mf-scene-phase-sky-bottom) 78%, #b5d5dc);
+  --mf-scene-sky-top: color-mix(in srgb, var(--mf-scene-phase-sky-top) 78%, #70b7d7);
+}
+
+.mf-home-flight-scene--cloud {
+  --mf-scene-cloud: color-mix(in srgb, var(--mf-scene-phase-cloud) 42%, rgba(225, 236, 239, 0.92));
+  --mf-scene-sky-bottom: color-mix(in srgb, var(--mf-scene-phase-sky-bottom) 46%, #91b3be);
+  --mf-scene-sky-top: color-mix(in srgb, var(--mf-scene-phase-sky-top) 46%, #5d879d);
+}
+
+.mf-home-flight-scene--rain {
+  --mf-scene-cloud: color-mix(in srgb, var(--mf-scene-phase-cloud) 24%, rgba(194, 216, 224, 0.94));
+  --mf-scene-sky-bottom: color-mix(in srgb, var(--mf-scene-phase-sky-bottom) 30%, #66889a);
+  --mf-scene-sky-top: color-mix(in srgb, var(--mf-scene-phase-sky-top) 30%, #3c657d);
+}
+
+.mf-home-flight-scene--storm {
+  --mf-scene-cloud: color-mix(in srgb, var(--mf-scene-phase-cloud) 14%, rgba(153, 175, 188, 0.96));
+  --mf-scene-sky-bottom: color-mix(in srgb, var(--mf-scene-phase-sky-bottom) 18%, #3b526d);
+  --mf-scene-sky-top: color-mix(in srgb, var(--mf-scene-phase-sky-top) 18%, #1f3653);
+}
+
+.mf-home-flight-scene--snow {
+  --mf-scene-cloud: rgba(244, 249, 250, 0.96);
+  --mf-scene-field-a: #dce9e9;
+  --mf-scene-field-b: #c9ddda;
+  --mf-scene-hill: #c5dad7;
+  --mf-scene-ridge-far: #bed2d6;
+  --mf-scene-ridge-near: #a9c1c2;
+  --mf-scene-sky-bottom: color-mix(in srgb, var(--mf-scene-phase-sky-bottom) 32%, #d9e8ea);
+  --mf-scene-sky-top: color-mix(in srgb, var(--mf-scene-phase-sky-top) 32%, #9dbdca);
+}
+
+.mf-home-flight-scene--fog {
+  --mf-scene-cloud: rgba(239, 246, 246, 0.68);
+  --mf-scene-sky-bottom: color-mix(in srgb, var(--mf-scene-phase-sky-bottom) 24%, #c3d5d5);
+  --mf-scene-sky-top: color-mix(in srgb, var(--mf-scene-phase-sky-top) 24%, #91aaad);
+}
+
+.mf-home-flight-scene--env-neutral {
+  --mf-scene-sky-bottom: color-mix(
+    in srgb,
+    var(--mf-scene-phase-sky-bottom) 52%,
+    #b8c9cf
+  );
+  --mf-scene-sky-top: color-mix(
+    in srgb,
+    var(--mf-scene-phase-sky-top) 56%,
+    #7694a3
+  );
+}
+
+.mf-home-flight-scene--env-neutral.mf-home-flight-scene--phase-night {
+  --mf-scene-sky-bottom: color-mix(
+    in srgb,
+    var(--mf-scene-phase-sky-bottom) 68%,
+    #536d7c
+  );
+  --mf-scene-sky-top: color-mix(
+    in srgb,
+    var(--mf-scene-phase-sky-top) 72%,
+    #263d57
+  );
+}
+
+.mf-home-flight-scene__sky {
+  background: linear-gradient(180deg, var(--mf-scene-sky-top), var(--mf-scene-sky-bottom));
+  inset: 0;
+  position: absolute;
+}
+
+.mf-home-flight-scene__stars {
+  background:
+    radial-gradient(circle at 9% 18%, rgba(255, 255, 235, 0.86) 0 1px, transparent 1.5px),
+    radial-gradient(circle at 23% 31%, rgba(255, 255, 235, 0.7) 0 1px, transparent 1.5px),
+    radial-gradient(circle at 39% 13%, rgba(255, 255, 235, 0.82) 0 1px, transparent 1.5px),
+    radial-gradient(circle at 57% 25%, rgba(255, 255, 235, 0.68) 0 1px, transparent 1.5px),
+    radial-gradient(circle at 74% 16%, rgba(255, 255, 235, 0.82) 0 1px, transparent 1.5px),
+    radial-gradient(circle at 91% 33%, rgba(255, 255, 235, 0.7) 0 1px, transparent 1.5px);
+  inset: 0;
+  opacity: var(--mf-scene-phase-stars);
+  position: absolute;
+}
+
+.mf-home-flight-scene__cloud {
+  background: var(--mf-scene-cloud);
+  border-radius: 999px;
+  display: block;
+  height: 16px;
+  position: absolute;
+  width: 46px;
+}
+
+.mf-home-flight-scene__cloud::before,
+.mf-home-flight-scene__cloud::after {
+  background: inherit;
+  border-radius: 50%;
+  bottom: 3px;
+  content: "";
+  position: absolute;
+}
+
+.mf-home-flight-scene__cloud::before {
+  height: 19px;
+  left: 8px;
+  width: 19px;
+}
+
+.mf-home-flight-scene__cloud::after {
+  height: 23px;
+  right: 7px;
+  width: 23px;
+}
+
+.mf-home-flight-scene__cloud--one {
+  left: 28%;
+  opacity: 0.8;
+  top: 18%;
+}
+
+.mf-home-flight-scene__cloud--two {
+  left: 55%;
+  opacity: 0.62;
+  top: 30%;
+  transform: scale(0.78);
+}
+
+.mf-home-flight-scene--clear .mf-home-flight-scene__cloud--two,
+.mf-home-flight-scene--phase-night .mf-home-flight-scene__cloud--two {
+  opacity: 0.2;
+}
+
+.mf-home-flight-scene__landscape {
+  bottom: 0;
+  height: 56%;
+  left: 0;
+  overflow: hidden;
+  position: absolute;
+  right: 0;
+}
+
+.mf-home-flight-scene__loop {
+  animation: mf-home-scene-drift var(--mf-scene-speed) linear infinite;
+  bottom: 0;
+  display: grid;
+  grid-template-columns: repeat(2, 50%);
+  height: 100%;
+  left: 0;
+  position: absolute;
+  width: 200%;
+  will-change: transform;
+}
+
+.mf-home-flight-scene__loop--far {
+  --mf-scene-speed: 92s;
+  opacity: 0.8;
+  z-index: 1;
+}
+
+.mf-home-flight-scene__loop--mid {
+  --mf-scene-speed: 62s;
+  z-index: 2;
+}
+
+.mf-home-flight-scene__loop--near {
+  --mf-scene-speed: 38s;
+  z-index: 3;
+}
+
+.mf-home-flight-scene__strip {
+  display: block;
+  height: 100%;
+  position: relative;
+}
+
+.mf-home-flight-scene__ridge,
+.mf-home-flight-scene__hills,
+.mf-home-flight-scene__fields,
+.mf-home-flight-scene__river,
+.mf-home-flight-scene__trees,
+.mf-home-flight-scene__village {
+  display: block;
+  position: absolute;
+}
+
+.mf-home-flight-scene__ridge--far {
+  background: var(--mf-scene-ridge-far);
+  bottom: 28%;
+  clip-path: polygon(0 100%, 0 70%, 9% 52%, 17% 65%, 27% 24%, 38% 62%, 50% 34%, 62% 66%, 73% 26%, 84% 60%, 100% 39%, 100% 100%);
+  height: 72%;
+  left: -2%;
+  right: -2%;
+}
+
+.mf-home-flight-scene__ridge--near {
+  background: var(--mf-scene-ridge-near);
+  bottom: 18%;
+  clip-path: polygon(0 100%, 0 62%, 12% 45%, 23% 68%, 34% 35%, 47% 68%, 61% 43%, 75% 70%, 88% 39%, 100% 58%, 100% 100%);
+  height: 58%;
+  left: -2%;
+  right: -2%;
+}
+
+.mf-home-flight-scene__hills {
+  background:
+    radial-gradient(34% 68% at 15% 100%, var(--mf-scene-hill) 0 96%, transparent 100%),
+    radial-gradient(42% 76% at 52% 100%, color-mix(in srgb, var(--mf-scene-hill) 82%, white) 0 96%, transparent 100%),
+    radial-gradient(35% 64% at 88% 100%, var(--mf-scene-hill) 0 96%, transparent 100%);
+  bottom: 12%;
+  height: 44%;
+  left: -2%;
+  right: -2%;
+}
+
+.mf-home-flight-scene__fields {
+  background:
+    linear-gradient(12deg, transparent 0 31%, rgba(255, 255, 255, 0.2) 32% 34%, transparent 35%),
+    repeating-linear-gradient(92deg, transparent 0 26px, rgba(42, 77, 62, 0.16) 27px 29px),
+    linear-gradient(90deg, var(--mf-scene-field-a) 0 38%, var(--mf-scene-field-b) 38% 75%, color-mix(in srgb, var(--mf-scene-field-a) 78%, #bd7d65) 75% 100%);
+  bottom: 0;
+  height: 34%;
+  left: 0;
+  right: 0;
+}
+
+.mf-home-flight-scene__river {
+  background: var(--mf-scene-river);
+  border-radius: 50%;
+  bottom: 8%;
+  box-shadow: 16px 2px 0 -3px rgba(255, 255, 255, 0.24);
+  height: 13%;
+  left: 23%;
+  transform: rotate(-7deg);
+  width: 29%;
+}
+
+.mf-home-flight-scene__trees {
+  background:
+    radial-gradient(circle at 12% 68%, #326a4e 0 6px, transparent 7px),
+    radial-gradient(circle at 35% 51%, #3d7957 0 8px, transparent 9px),
+    radial-gradient(circle at 59% 68%, #2e654a 0 6px, transparent 7px),
+    radial-gradient(circle at 83% 55%, #4c8054 0 7px, transparent 8px);
+  bottom: 21%;
+  height: 24px;
+  width: 48px;
+}
+
+.mf-home-flight-scene__trees--left {
+  left: 7%;
+}
+
+.mf-home-flight-scene__trees--right {
+  right: 19%;
+  transform: scale(0.78);
+  transform-origin: bottom right;
+}
+
+.mf-home-flight-scene__village {
+  background:
+    linear-gradient(#44544b, #44544b) 31px 4px / 5px 21px no-repeat,
+    linear-gradient(135deg, transparent 0 47%, #a76759 48% 100%) 7px 2px / 18px 10px no-repeat,
+    linear-gradient(135deg, transparent 0 47%, #a76759 48% 100%) 40px 10px / 14px 8px no-repeat,
+    linear-gradient(#f0dfbd, #f0dfbd) 6px 11px / 20px 13px no-repeat,
+    linear-gradient(#ead5aa, #ead5aa) 39px 17px / 16px 8px no-repeat;
+  bottom: 23%;
+  height: 27px;
+  right: 7%;
+  width: 56px;
+}
+
+.mf-home-flight-scene--env-coast {
+  --mf-scene-field-a: #89c8cf;
+  --mf-scene-field-b: #64b8c6;
+  --mf-scene-hill: #77a69c;
+  --mf-scene-ridge-near: #558478;
+  --mf-scene-river: #3fabc7;
+}
+
+.mf-home-flight-scene--env-coast .mf-home-flight-scene__fields {
+  background:
+    repeating-linear-gradient(172deg, transparent 0 11px, rgba(255, 255, 255, 0.2) 12px 13px),
+    linear-gradient(180deg, #69bcc8, #3f9fb6);
+  height: 38%;
+}
+
+.mf-home-flight-scene--env-coast .mf-home-flight-scene__river,
+.mf-home-flight-scene--env-coast .mf-home-flight-scene__trees,
+.mf-home-flight-scene--env-coast .mf-home-flight-scene__ridge--near {
+  display: none;
+}
+
+.mf-home-flight-scene--env-coast .mf-home-flight-scene__ridge--far {
+  bottom: 35%;
+  height: 28%;
+}
+
+.mf-home-flight-scene--env-hills .mf-home-flight-scene__hills {
+  height: 58%;
+}
+
+.mf-home-flight-scene--env-mountain .mf-home-flight-scene__ridge--far {
+  bottom: 19%;
+  height: 92%;
+}
+
+.mf-home-flight-scene--env-mountain .mf-home-flight-scene__ridge--near {
+  bottom: 12%;
+  height: 70%;
+}
+
+.mf-home-flight-scene--env-mountain .mf-home-flight-scene__hills {
+  opacity: 0.56;
+}
+
+.mf-home-flight-scene__weather-icon {
+  filter: drop-shadow(0 10px 14px rgba(1, 23, 42, 0.24));
+  height: 112px;
+  position: absolute;
+  right: 16px;
+  top: 46%;
+  transform: translateY(-80%);
+  width: 112px;
+  z-index: 4;
+}
+
+.mf-home-meteocon-icon {
+  display: block;
+  height: 100%;
+  object-fit: contain;
+  width: 100%;
+}
+
+.mf-home-flight-scene__wash {
+  background:
+    linear-gradient(180deg, var(--mf-scene-phase-glow), transparent 48%),
+    linear-gradient(90deg, rgba(3, 36, 62, 0.2) 0, rgba(3, 36, 62, 0.05) 44%, transparent 66%),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.07), transparent 40%, rgba(3, 36, 62, 0.12));
+  inset: 0;
+  position: absolute;
+  z-index: 5;
+}
+
+@keyframes mf-home-scene-drift {
+  from { transform: translate3d(-50%, 0, 0); }
+  to { transform: translate3d(0, 0, 0); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .mf-home-flight-scene__loop {
+    animation: none;
+  }
+}
+
+@media (max-width: 480px) {
+  .mf-home-flight-scene__weather-icon {
+    height: 96px;
+    right: 8px;
+    width: 96px;
+  }
+}
+
+@media (max-width: 380px) {
+  .mf-home-flight-scene__weather-icon {
+    height: 84px;
+    right: 4px;
+    width: 84px;
+  }
+}

@@ -1,0 +1,819 @@
+{
+  "schemaVersion": 2,
+  "purpose": "Coda di revisione FUR per tutti i candidati Memoria del giorno gia selezionati nella final review. Questo file non pubblica nulla e non approva automaticamente la lingua.",
+  "generatedAt": "2026-07-09",
+  "rules": [
+    "La revisione FUR parte solo dai candidati gia triagiati nella final review.",
+    "Le copy qui sono bozze da validare: non cambiano editorialStatus e non impostano readyForUi.",
+    "Ogni record resta bloccato finche FUR non e approvato, editorialStatus non diventa ready_for_discover e readyForUi non diventa true in localMemory.",
+    "Per nomi propri, grafie territoriali e lessico tecnico serve controllo umano prima della pubblicazione."
+  ],
+  "summary": {
+    "totalRecords": 36,
+    "bySurface": {
+      "daily_primary": 9,
+      "daily_secondary": 11,
+      "archive": 16
+    },
+    "furApproved": 20,
+    "readyForUi": 20
+  },
+  "records": [
+    {
+      "id": "memory-copy-0818-gaetano-kanizsa",
+      "dateAnchors": [
+        "08-18"
+      ],
+      "surface": "daily_primary",
+      "rank": "A",
+      "title": {
+        "it": "Gaetano Kanizsa e la percezione",
+        "furDraft": "Gaetano Kanizsa e la percezion"
+      },
+      "summary": {
+        "it": "Nasce a Trieste Gaetano Kanizsa, psicologo e pittore. Il suo nome resta legato agli studi sulla percezione: un modo elegante per ricordare che anche quello che vediamo ha una storia.",
+        "furDraft": "Al nas a Triest Gaetano Kanizsa, psicolog e pitôr. Il so non al reste leât ai studis su la percezion: un mût fin par visâsi che ancje ce che o viodìn al à une storie."
+      },
+      "furReviewStatus": "approved",
+      "reviewQuestions": [],
+      "publicationBlockers": []
+    },
+    {
+      "id": "memory-copy-1015-giovanni-da-udine",
+      "dateAnchors": [
+        "10-15"
+      ],
+      "surface": "daily_primary",
+      "rank": "A",
+      "title": {
+        "it": "Giovanni da Udine, botteghe e Rinascimento",
+        "furDraft": "Zuan di Udin, boteghis e Rinassiment"
+      },
+      "summary": {
+        "it": "Nasce Giovanni da Udine, pittore, decoratore e architetto. Il suo nome porta Udine dentro una storia artistica piu' ampia, fatta di botteghe, viaggi e Rinascimento.",
+        "furDraft": "Al nas Zuan di Udin, pitôr, decoradôr e architet. Il so non al puarte Udin dentri une storie artistiche plui largje, fate di boteghis, viaçs e Rinassiment."
+      },
+      "furReviewStatus": "approved",
+      "reviewQuestions": [],
+      "publicationBlockers": []
+    },
+    {
+      "id": "memory-copy-0121-tito-maniacco",
+      "dateAnchors": [
+        "01-21"
+      ],
+      "surface": "daily_primary",
+      "rank": "A",
+      "title": {
+        "it": "Tito Maniacco, cultura friulana",
+        "furDraft": "Tito Maniacco, culture furlane"
+      },
+      "summary": {
+        "it": "Muore Tito Maniacco, scrittore e storico friulano. Una memoria adatta a Scopri: territorio, cultura e racconto civile senza toni celebrativi.",
+        "furDraft": "Al mûr Tito Maniacco, scritôr e storic furlan. Une memorie juste par Scuvierç: teritori, culture e racont civîl cence tons celebratîfs."
+      },
+      "furReviewStatus": "approved",
+      "reviewQuestions": [],
+      "publicationBlockers": []
+    },
+    {
+      "id": "memory-copy-0615-lojze-spacal",
+      "dateAnchors": [
+        "06-15"
+      ],
+      "surface": "daily_primary",
+      "rank": "A",
+      "title": {
+        "it": "Lojze Spacal e il Carso",
+        "furDraft": "Lojze Spacal e il Cjars"
+      },
+      "summary": {
+        "it": "Nasce Lojze Spacal, pittore legato al Carso e alla cultura di confine. Una memoria visiva, fatta di pietra, segni e paesaggio.",
+        "furDraft": "Al nas Lojze Spacal, pitôr leât al Cjars e ae culture di confin. Une memorie visive, fate di piere, segns e paisaç."
+      },
+      "furReviewStatus": "approved",
+      "reviewQuestions": [],
+      "publicationBlockers": []
+    },
+    {
+      "id": "memory-copy-0603-giovanni-battista-bassi",
+      "dateAnchors": [
+        "06-03"
+      ],
+      "surface": "daily_secondary",
+      "rank": "B",
+      "title": {
+        "it": "Giovanni Battista Bassi a Pordenone",
+        "furDraft": "Giovanni Battista Bassi a Pordenon"
+      },
+      "summary": {
+        "it": "Nasce a Pordenone Giovanni Battista Bassi, architetto. Una memoria locale utile per dare spazio anche alla storia urbana pordenonese.",
+        "furDraft": "Al nas a Pordenon Giovanni Battista Bassi, architet. Une memorie locâl utile par dâ spazi ancje ae storie urbane di Pordenon."
+      },
+      "furReviewStatus": "approved",
+      "reviewQuestions": [],
+      "publicationBlockers": []
+    },
+    {
+      "id": "memory-copy-0507-gianni-bisiach",
+      "dateAnchors": [
+        "05-07"
+      ],
+      "surface": "archive",
+      "rank": "C",
+      "title": {
+        "it": "Gianni Bisiach, racconto e divulgazione",
+        "furDraft": "Gianni Bisiach, cont e divulgazion"
+      },
+      "summary": {
+        "it": "Nasce a Gorizia Gianni Bisiach, giornalista, regista e divulgatore. Una memoria che unisce racconto, radio, televisione e curiosita' per il mondo.",
+        "furDraft": "Al nas a Gurize Gianni Bisiach, gjornalist, regjist e divulgadôr. Une memorie che e ten dongje cont, radio, television e curiositât pal mont."
+      },
+      "furReviewStatus": "pending_human_review",
+      "reviewQuestions": [
+        "Controllare che il testo FUR funzioni come scheda Archivio, non come card giornaliera.",
+        "Verificare che non sembri una voce enciclopedica automatica."
+      ],
+      "publicationBlockers": [
+        "fur_human_review",
+        "ready_for_discover_status",
+        "ready_for_ui_flag"
+      ]
+    },
+    {
+      "id": "memory-copy-0504-lojzka-bratuz",
+      "dateAnchors": [
+        "05-04"
+      ],
+      "surface": "daily_secondary",
+      "rank": "B",
+      "title": {
+        "it": "Lojzka Bratuz, memoria di confine",
+        "furDraft": "Lojzka Bratuz, memorie di confin"
+      },
+      "summary": {
+        "it": "Muore Lojzka Bratuz, studiosa e scrittrice legata a Gorizia. Una memoria culturale di confine, da raccontare con tono semplice e rispettoso.",
+        "furDraft": "E mûr Lojzka Bratuz, studiose e scritore leade a Gurize. Une memorie culturâl di confin, di contâ cun ton sempliç e rispietôs."
+      },
+      "furReviewStatus": "approved",
+      "reviewQuestions": [],
+      "publicationBlockers": []
+    },
+    {
+      "id": "memory-copy-0429-valentin-stanic",
+      "dateAnchors": [
+        "04-29"
+      ],
+      "surface": "daily_secondary",
+      "rank": "B",
+      "title": {
+        "it": "Valentin Stanic, montagna e cultura",
+        "furDraft": "Valentin Stanic, mont e culture"
+      },
+      "summary": {
+        "it": "Muore Valentin Stanic, alpinista, poeta e sacerdote legato a Gorizia. Una figura di confine tra montagna, cultura e spiritualita'.",
+        "furDraft": "Al mûr Valentin Stanic, alpinist, poet e predi leât a Gurize. Une figure di confin tra mont, culture e spiritualitât."
+      },
+      "furReviewStatus": "approved",
+      "reviewQuestions": [],
+      "publicationBlockers": []
+    },
+    {
+      "id": "memory-copy-0412-gillo-dorfles",
+      "dateAnchors": [
+        "04-12"
+      ],
+      "surface": "archive",
+      "rank": "B",
+      "title": {
+        "it": "Gillo Dorfles, arte europea",
+        "furDraft": "Gillo Dorfles, art europeane"
+      },
+      "summary": {
+        "it": "Nasce a Trieste Gillo Dorfles, critico d'arte, pittore e filosofo. Il suo percorso ricorda una citta' capace di parlare con l'arte europea.",
+        "furDraft": "Al nas a Triest Gillo Dorfles, critic d'art, pitôr e filosof. Il so percors al ricuarde une citât buine di fevelâ cu l'art europeane."
+      },
+      "furReviewStatus": "pending_human_review",
+      "reviewQuestions": [
+        "Controllare che il testo FUR funzioni come scheda Archivio, non come card giornaliera.",
+        "Verificare che non sembri una voce enciclopedica automatica."
+      ],
+      "publicationBlockers": [
+        "fur_human_review",
+        "ready_for_discover_status",
+        "ready_for_ui_flag"
+      ]
+    },
+    {
+      "id": "memory-copy-1005-giorgio-pressburger",
+      "dateAnchors": [
+        "10-05"
+      ],
+      "surface": "daily_secondary",
+      "rank": "B",
+      "title": {
+        "it": "Giorgio Pressburger, teatro e memoria",
+        "furDraft": "Giorgio Pressburger, teatri e memorie"
+      },
+      "summary": {
+        "it": "Muore Giorgio Pressburger, regista, scrittore e drammaturgo legato a Trieste. Una figura che tiene insieme teatro, letteratura e memoria europea.",
+        "furDraft": "Al mûr Giorgio Pressburger, regjist, scritôr e dramaturc leât a Triest. Une figure che e ten dongje teatri, leterature e memorie europeane."
+      },
+      "furReviewStatus": "approved",
+      "reviewQuestions": [],
+      "publicationBlockers": []
+    },
+    {
+      "id": "memory-copy-0120-luca-carlevarijs",
+      "dateAnchors": [
+        "01-20"
+      ],
+      "surface": "daily_secondary",
+      "rank": "B",
+      "title": {
+        "it": "Luca Carlevarijs, dal Friuli alle vedute",
+        "furDraft": "Luca Carlevarijs, dal Friûl aes vedutis"
+      },
+      "summary": {
+        "it": "Nasce Luca Carlevarijs, pittore originario di Udine. Una memoria d'arte che porta dal Friuli alla grande stagione delle vedute veneziane.",
+        "furDraft": "Al nas Luca Carlevarijs, pitôr originari di Udin. Une memorie d'art che e puarte dal Friûl ae grande stagjon des vedutis venezianis."
+      },
+      "furReviewStatus": "approved",
+      "reviewQuestions": [],
+      "publicationBlockers": []
+    },
+    {
+      "id": "memory-copy-0411-matteo-pertsch",
+      "dateAnchors": [
+        "04-11"
+      ],
+      "surface": "daily_secondary",
+      "rank": "B",
+      "title": {
+        "it": "Matteo Pertsch e la Trieste urbana",
+        "furDraft": "Matteo Pertsch e la Triest urbane"
+      },
+      "summary": {
+        "it": "Muore Matteo Pertsch, architetto legato a Trieste. Una memoria urbana: palazzi, teatri e forme che ancora aiutano a leggere la citta'.",
+        "furDraft": "Al mûr Matteo Pertsch, architet leât a Triest. Une memorie urbane: palaçs, teatris e formis che ancjemò a judin a lei la citât."
+      },
+      "furReviewStatus": "approved",
+      "reviewQuestions": [],
+      "publicationBlockers": []
+    },
+    {
+      "id": "memory-copy-0616-stanislaus-joyce",
+      "dateAnchors": [
+        "06-16"
+      ],
+      "surface": "archive",
+      "rank": "C",
+      "title": {
+        "it": "Stanislaus Joyce, Trieste letteraria",
+        "furDraft": "Stanislaus Joyce, Triest leterarie"
+      },
+      "summary": {
+        "it": "Muore a Trieste Stanislaus Joyce. Non e' una memoria da prima pagina, ma aiuta a leggere la citta' come luogo di incontri, lingue e passaggi letterari.",
+        "furDraft": "Al mûr a Triest Stanislaus Joyce, scritôr e fradi di James Joyce. La sô vicende e ricuarde une Triest leterarie, internazionâl e plene di passaçs imprevedûts."
+      },
+      "furReviewStatus": "pending_human_review",
+      "reviewQuestions": [
+        "Controllare che il testo FUR funzioni come scheda Archivio, non come card giornaliera.",
+        "Verificare che non sembri una voce enciclopedica automatica."
+      ],
+      "publicationBlockers": [
+        "fur_human_review",
+        "ready_for_discover_status",
+        "ready_for_ui_flag"
+      ]
+    },
+    {
+      "id": "memory-copy-0205-napoleone-cozzi",
+      "dateAnchors": [
+        "02-05"
+      ],
+      "surface": "archive",
+      "rank": "C",
+      "title": {
+        "it": "Napoleone Cozzi, arte e montagna",
+        "furDraft": "Napoleone Cozzi, art e mont"
+      },
+      "summary": {
+        "it": "Nasce a Trieste Napoleone Cozzi, alpinista e pittore. In archivio racconta un Friuli Venezia Giulia fatto anche di montagna, disegno e passioni di confine.",
+        "furDraft": "Al nas a Triest Napoleone Cozzi, alpinist e pitôr. Mont, art e teritori si incrosin intune figure che e conte ben il caratar plurâl dal Friûl Vignesie Julie."
+      },
+      "furReviewStatus": "pending_human_review",
+      "reviewQuestions": [
+        "Controllare che il testo FUR funzioni come scheda Archivio, non come card giornaliera.",
+        "Verificare che non sembri una voce enciclopedica automatica."
+      ],
+      "publicationBlockers": [
+        "fur_human_review",
+        "ready_for_discover_status",
+        "ready_for_ui_flag"
+      ]
+    },
+    {
+      "id": "memory-copy-0813-lella-vignelli",
+      "dateAnchors": [
+        "08-13"
+      ],
+      "surface": "archive",
+      "rank": "B",
+      "title": {
+        "it": "Lella Vignelli e il design",
+        "furDraft": "Lella Vignelli e il design"
+      },
+      "summary": {
+        "it": "Nasce a Udine Lella Vignelli, designer e architetta. Una memoria elegante per ricordare il contributo friulano al design internazionale.",
+        "furDraft": "E nas a Udin Lella Vignelli, designer e architete. Une memorie elegante par ricuardâ il contribût furlan al design internazionâl."
+      },
+      "furReviewStatus": "pending_human_review",
+      "reviewQuestions": [
+        "Controllare che il testo FUR funzioni come scheda Archivio, non come card giornaliera.",
+        "Verificare che non sembri una voce enciclopedica automatica."
+      ],
+      "publicationBlockers": [
+        "fur_human_review",
+        "ready_for_discover_status",
+        "ready_for_ui_flag"
+      ]
+    },
+    {
+      "id": "memory-copy-0902-adalgiso-fior",
+      "dateAnchors": [
+        "09-02"
+      ],
+      "surface": "daily_secondary",
+      "rank": "B",
+      "title": {
+        "it": "Adalgiso Fior, voce friulana",
+        "furDraft": "Adalgiso Fior, vôs furlane"
+      },
+      "summary": {
+        "it": "Muore a Udine Adalgiso Fior, poeta friulano. Una memoria piccola ma preziosa: la lingua non resta solo nei libri, vive anche nelle voci che la tengono accesa.",
+        "furDraft": "Al mûr a Udin Adalgiso Fior, poet furlan. Une vôs di tratâ cun cure, ma juste par ricuardâ che la lenghe e je ancje memorie di ogni dì."
+      },
+      "furReviewStatus": "approved",
+      "reviewQuestions": [],
+      "publicationBlockers": []
+    },
+    {
+      "id": "memory-copy-1013-marcello-de-stefano",
+      "dateAnchors": [
+        "10-13"
+      ],
+      "surface": "archive",
+      "rank": "C",
+      "title": {
+        "it": "Marcello De Stefano, cinema e pittura",
+        "furDraft": "Marcello De Stefano, cine e piture"
+      },
+      "summary": {
+        "it": "Muore Marcello De Stefano, regista e pittore nato a Udine. Una memoria breve per ricordare il filo tra arti visive, cinema e territorio.",
+        "furDraft": "Al mûr Marcello De Stefano, regjist e pitôr nassût a Udin. Une memorie curte par ricuardâ il fîl tra arts visivis, cine e teritori."
+      },
+      "furReviewStatus": "pending_human_review",
+      "reviewQuestions": [
+        "Controllare che il testo FUR funzioni come scheda Archivio, non come card giornaliera.",
+        "Verificare che non sembri una voce enciclopedica automatica."
+      ],
+      "publicationBlockers": [
+        "fur_human_review",
+        "ready_for_discover_status",
+        "ready_for_ui_flag"
+      ]
+    },
+    {
+      "id": "memory-copy-0820-enrico-rava",
+      "dateAnchors": [
+        "08-20"
+      ],
+      "surface": "archive",
+      "rank": "B",
+      "title": {
+        "it": "Enrico Rava, jazz e territorio",
+        "furDraft": "Enrico Rava, jazz e teritori"
+      },
+      "summary": {
+        "it": "Nasce a Trieste Enrico Rava, trombettista e compositore. Una nota jazz nel calendario culturale del Friuli Venezia Giulia.",
+        "furDraft": "Al nas a Triest Enrico Rava, trombetist e compositôr. Une note jazz tal calendari culturâl dal Friûl Vignesie Julie."
+      },
+      "furReviewStatus": "pending_human_review",
+      "reviewQuestions": [
+        "Controllare che il testo FUR funzioni come scheda Archivio, non come card giornaliera.",
+        "Verificare che non sembri una voce enciclopedica automatica."
+      ],
+      "publicationBlockers": [
+        "fur_human_review",
+        "ready_for_discover_status",
+        "ready_for_ui_flag"
+      ]
+    },
+    {
+      "id": "memory-copy-0316-ernesto-nathan-rogers",
+      "dateAnchors": [
+        "03-16"
+      ],
+      "surface": "daily_secondary",
+      "rank": "B",
+      "title": {
+        "it": "Ernesto Nathan Rogers e il Novecento",
+        "furDraft": "Ernesto Nathan Rogers e il Nûfcent"
+      },
+      "summary": {
+        "it": "Nasce a Trieste Ernesto Nathan Rogers, architetto e teorico. Dal suo lavoro passa un'idea semplice e potente: progettare non e' solo costruire, ma leggere il tempo in cui si vive.",
+        "furDraft": "Al nas a Triest Ernesto Nathan Rogers, architet e teoric. Dal so lavôr e passe une idee semplice e fuarte: progetâ nol è dome costruî, ma lei il timp che si vîf."
+      },
+      "furReviewStatus": "approved",
+      "reviewQuestions": [],
+      "publicationBlockers": []
+    },
+    {
+      "id": "memory-copy-0409-stefan-kociancic",
+      "dateAnchors": [
+        "04-09"
+      ],
+      "surface": "daily_secondary",
+      "rank": "B",
+      "title": {
+        "it": "Stefan Kociancic, lingue e confine",
+        "furDraft": "Stefan Kociancic, lenghis e confin"
+      },
+      "summary": {
+        "it": "Muore Stefan Kociancic, storico, traduttore e linguista legato a Gorizia. Una memoria di confine, fatta di lingue, studio e territorio.",
+        "furDraft": "Al mûr Stefan Kociancic, storic, tradutôr e linguist leât a Gurize. Une memorie di confin, fate di lenghis, studi e teritori."
+      },
+      "furReviewStatus": "approved",
+      "reviewQuestions": [],
+      "publicationBlockers": []
+    },
+    {
+      "id": "memory-copy-0705-flavio-paulin",
+      "dateAnchors": [
+        "07-05"
+      ],
+      "surface": "archive",
+      "rank": "C",
+      "title": {
+        "it": "Flavio Paulin, una nota pop",
+        "furDraft": "Flavio Paulin, une note pop"
+      },
+      "summary": {
+        "it": "Nasce a Trieste Flavio Paulin, musicista e voce dei Cugini di Campagna. Una piccola nota pop dentro il calendario culturale del territorio.",
+        "furDraft": "Al nas a Triest Flavio Paulin, musicist e vôs dai Cugini di Campagna. Une piçule note pop dentri il calendari culturâl dal teritori."
+      },
+      "furReviewStatus": "pending_human_review",
+      "reviewQuestions": [
+        "Controllare che il testo FUR funzioni come scheda Archivio, non come card giornaliera.",
+        "Verificare che non sembri una voce enciclopedica automatica."
+      ],
+      "publicationBlockers": [
+        "fur_human_review",
+        "ready_for_discover_status",
+        "ready_for_ui_flag"
+      ]
+    },
+    {
+      "id": "memory-copy-0318-eugenio-pilutti",
+      "dateAnchors": [
+        "03-18"
+      ],
+      "surface": "archive",
+      "rank": "C",
+      "title": {
+        "it": "Eugenio Pilutti, voce da archivio",
+        "furDraft": "Eugenio Pilutti, vôs di archivi"
+      },
+      "summary": {
+        "it": "Muore a Trieste Eugenio Pilutti, poeta e scrittore. Una voce minuta da tenere in archivio: non tutto deve diventare titolo, ma certe tracce aiutano a non perdere il paesaggio culturale.",
+        "furDraft": "Al mûr a Triest Eugenio Pilutti, poet e scritôr. Une vôs di conservâ tal archivi culturâl dal teritori, cence trasformâle intune note enciclopediche."
+      },
+      "furReviewStatus": "pending_human_review",
+      "reviewQuestions": [
+        "Controllare che il testo FUR funzioni come scheda Archivio, non come card giornaliera.",
+        "Verificare che non sembri una voce enciclopedica automatica."
+      ],
+      "publicationBlockers": [
+        "fur_human_review",
+        "ready_for_discover_status",
+        "ready_for_ui_flag"
+      ]
+    },
+    {
+      "id": "memory-copy-0708-lelio-luttazzi",
+      "dateAnchors": [
+        "07-08"
+      ],
+      "surface": "archive",
+      "rank": "B",
+      "title": {
+        "it": "Lelio Luttazzi, musica e radio",
+        "furDraft": "Lelio Luttazzi, musiche e radio"
+      },
+      "summary": {
+        "it": "Muore Lelio Luttazzi, musicista, attore e uomo di spettacolo nato a Trieste. Una memoria brillante, legata alla musica e alla radio italiana.",
+        "furDraft": "Al mûr Lelio Luttazzi, musicist, atôr e om di spetacul nassût a Triest. Une memorie brillante, leade ae musiche e ae radio taliane."
+      },
+      "furReviewStatus": "pending_human_review",
+      "reviewQuestions": [
+        "Controllare che il testo FUR funzioni come scheda Archivio, non come card giornaliera.",
+        "Verificare che non sembri una voce enciclopedica automatica."
+      ],
+      "publicationBlockers": [
+        "fur_human_review",
+        "ready_for_discover_status",
+        "ready_for_ui_flag"
+      ]
+    },
+    {
+      "id": "memory-copy-0706-alberto-spaini",
+      "dateAnchors": [
+        "07-06"
+      ],
+      "surface": "archive",
+      "rank": "C",
+      "title": {
+        "it": "Alberto Spaini, Trieste e i libri",
+        "furDraft": "Alberto Spaini, Triest e i libris"
+      },
+      "summary": {
+        "it": "Nasce a Trieste Alberto Spaini, scrittore e giornalista. Lo teniamo come traccia d'archivio della Trieste dei libri e delle lingue, non come memoria principale.",
+        "furDraft": "Al nas a Triest Alberto Spaini, scritôr e gjornalist. Une vôs dal Nûfcent che e conte la citât come lûc di lenghis, libris e passaçs culturâi."
+      },
+      "furReviewStatus": "pending_human_review",
+      "reviewQuestions": [
+        "Controllare che il testo FUR funzioni come scheda Archivio, non come card giornaliera.",
+        "Verificare che non sembri una voce enciclopedica automatica."
+      ],
+      "publicationBlockers": [
+        "fur_human_review",
+        "ready_for_discover_status",
+        "ready_for_ui_flag"
+      ]
+    },
+    {
+      "id": "memory-copy-0709-aldo-stellita",
+      "dateAnchors": [
+        "07-09"
+      ],
+      "surface": "archive",
+      "rank": "C",
+      "title": {
+        "it": "Aldo Stellita, memoria pop friulana",
+        "furDraft": "Aldo Stellita, memorie pop furlane"
+      },
+      "summary": {
+        "it": "Muore Aldo Stellita, musicista nato a Udine e bassista dei Matia Bazar. Una piccola traccia pop dentro la memoria culturale friulana.",
+        "furDraft": "Al mûr Aldo Stellita, musicist nassût a Udin e bassist dai Matia Bazar. Une piçule olme pop dentri la memorie culturâl furlane."
+      },
+      "furReviewStatus": "pending_human_review",
+      "reviewQuestions": [
+        "Controllare che il testo FUR funzioni come scheda Archivio, non come card giornaliera.",
+        "Verificare che non sembri una voce enciclopedica automatica."
+      ],
+      "publicationBlockers": [
+        "fur_human_review",
+        "ready_for_discover_status",
+        "ready_for_ui_flag"
+      ]
+    },
+    {
+      "id": "memory-copy-1111-giorgio-voghera",
+      "dateAnchors": [
+        "11-11"
+      ],
+      "surface": "archive",
+      "rank": "B",
+      "title": {
+        "it": "Giorgio Voghera, Trieste discreta",
+        "furDraft": "Giorgio Voghera, Triest discrete"
+      },
+      "summary": {
+        "it": "Muore a Trieste Giorgio Voghera. Una voce discreta della letteratura triestina: non serve urlare il nome, basta conservarlo dove la citta' racconta il suo Novecento.",
+        "furDraft": "Al mûr a Triest Giorgio Voghera, scritôr. Une vôs utile par ricuardâ la Triest leterarie, discrete e complesse, dal Nûfcent."
+      },
+      "furReviewStatus": "pending_human_review",
+      "reviewQuestions": [
+        "Controllare che il testo FUR funzioni come scheda Archivio, non come card giornaliera.",
+        "Verificare che non sembri una voce enciclopedica automatica."
+      ],
+      "publicationBlockers": [
+        "fur_human_review",
+        "ready_for_discover_status",
+        "ready_for_ui_flag"
+      ]
+    },
+    {
+      "id": "memory-copy-1122-silvio-benco",
+      "dateAnchors": [
+        "11-22"
+      ],
+      "surface": "archive",
+      "rank": "B",
+      "title": {
+        "it": "Silvio Benco, giornalismo e letteratura",
+        "furDraft": "Silvio Benco, gjornalisim e leterature"
+      },
+      "summary": {
+        "it": "Nasce Silvio Benco, scrittore, giornalista e critico letterario triestino. Un nome da segnare nella mappa culturale della citta'.",
+        "furDraft": "Al nas Silvio Benco, scritôr, gjornalist e critic leterari triestin. Un non di segnâ te mape culturâl de citât."
+      },
+      "furReviewStatus": "pending_human_review",
+      "reviewQuestions": [
+        "Controllare che il testo FUR funzioni come scheda Archivio, non come card giornaliera.",
+        "Verificare che non sembri una voce enciclopedica automatica."
+      ],
+      "publicationBlockers": [
+        "fur_human_review",
+        "ready_for_discover_status",
+        "ready_for_ui_flag"
+      ]
+    },
+    {
+      "id": "memory-copy-0225-eugenio-geiringer",
+      "dateAnchors": [
+        "02-25"
+      ],
+      "surface": "daily_secondary",
+      "rank": "B",
+      "title": {
+        "it": "Eugenio Geiringer, tecnica e citta",
+        "furDraft": "Eugenio Geiringer, tecniche e citât"
+      },
+      "summary": {
+        "it": "Nasce a Trieste Eugenio Geiringer, architetto e ingegnere. Una voce urbana: dietro ponti, palazzi e scelte tecniche c'e' anche il modo in cui una citta' cambia volto.",
+        "furDraft": "Al nas a Triest Eugenio Geiringer, architet e inzegnîr. Une memorie urbane: daûr di puints, palaçs e decisions tecnichis al è ancje il mût che une citât e cambie muse."
+      },
+      "furReviewStatus": "approved",
+      "reviewQuestions": [],
+      "publicationBlockers": []
+    },
+    {
+      "id": "memory-copy-0325-giulio-camagni",
+      "dateAnchors": [
+        "03-25"
+      ],
+      "surface": "archive",
+      "rank": "C",
+      "title": {
+        "it": "Giulio Camagni, disegno contemporaneo",
+        "furDraft": "Giulio Camagni, dissen contemporani"
+      },
+      "summary": {
+        "it": "Nasce Giulio Camagni, fumettista e pittore nato a Udine. Una memoria visiva, piu' leggera, che allarga Scopri anche al disegno contemporaneo.",
+        "furDraft": "Al nas Giulio Camagni, fumetist e pitôr nassût a Udin. Une memorie visive, plui lizere, che e slargje Scuvierç ancje al dissen contemporani."
+      },
+      "furReviewStatus": "pending_human_review",
+      "reviewQuestions": [
+        "Controllare che il testo FUR funzioni come scheda Archivio, non come card giornaliera.",
+        "Verificare che non sembri una voce enciclopedica automatica."
+      ],
+      "publicationBlockers": [
+        "fur_human_review",
+        "ready_for_discover_status",
+        "ready_for_ui_flag"
+      ]
+    },
+    {
+      "id": "memory-copy-0410-claudio-magris",
+      "dateAnchors": [
+        "04-10"
+      ],
+      "surface": "daily_primary",
+      "rank": "A",
+      "title": {
+        "it": "Claudio Magris, Trieste e l'Europa",
+        "furDraft": "Claudio Magris, Triest e l'Europe"
+      },
+      "summary": {
+        "it": "Nasce a Trieste Claudio Magris, scrittore, saggista e germanista. Una voce che lega la citta al Danubio, ai confini e alla cultura europea.",
+        "furDraft": "Al nas a Triest Claudio Magris, scritôr, sagjist e germanist. Une vôs che e lee la citât al Danubi, ai confins e ae culture europeane."
+      },
+      "furReviewStatus": "approved",
+      "reviewQuestions": [],
+      "publicationBlockers": []
+    },
+    {
+      "id": "memory-copy-0304-afro-basaldella",
+      "dateAnchors": [
+        "03-04"
+      ],
+      "surface": "daily_primary",
+      "rank": "A",
+      "title": {
+        "it": "Afro Basaldella, Udine e l'arte del Novecento",
+        "furDraft": "Afro Basaldella, Udin e l'art dal Nûfcent"
+      },
+      "summary": {
+        "it": "Nasce a Udine Afro Basaldella, pittore tra i grandi nomi dell'arte italiana del dopoguerra. Una memoria visiva, concreta e radicata nel territorio.",
+        "furDraft": "Al nas a Udin Afro Basaldella, pitôr tra i grancj nons de art taliane dal dopovuere. Une memorie visive, concrete e radicade tal teritori."
+      },
+      "furReviewStatus": "approved",
+      "reviewQuestions": [],
+      "publicationBlockers": []
+    },
+    {
+      "id": "memory-copy-1017-carlo-michelstaedter",
+      "dateAnchors": [
+        "10-17"
+      ],
+      "surface": "archive",
+      "rank": "C",
+      "title": {
+        "it": "Carlo Michelstaedter, Gorizia inquieta",
+        "furDraft": "Carlo Michelstaedter, Gurize inquiete"
+      },
+      "summary": {
+        "it": "Muore a Gorizia Carlo Michelstaedter, scrittore, filosofo, poeta e pittore. Una memoria intensa, da trattare con tono sobrio e non celebrativo.",
+        "furDraft": "Al mûr a Gurize Carlo Michelstaedter, scritôr, filosof, poet e pitôr. Une memorie intense, di tratâ cun ton sobri e no celebratîf."
+      },
+      "furReviewStatus": "pending_human_review",
+      "reviewQuestions": [
+        "Controllare grafia FUR, tono e microcopy prima della pubblicazione.",
+        "Verificare che il tono resti sobrio: archivio/racconto, non card leggera."
+      ],
+      "publicationBlockers": [
+        "fur_human_review",
+        "ready_for_discover_status",
+        "ready_for_ui_flag"
+      ]
+    },
+    {
+      "id": "memory-copy-0629-biagio-marin",
+      "dateAnchors": [
+        "06-29"
+      ],
+      "surface": "daily_primary",
+      "rank": "A",
+      "title": {
+        "it": "Biagio Marin, la voce di Grado",
+        "furDraft": "Biagio Marin, la vôs di Grau"
+      },
+      "summary": {
+        "it": "Nasce a Grado Biagio Marin, poeta e scrittore. Una memoria legata alla laguna, alla lingua e a un modo tutto suo di guardare il mare.",
+        "furDraft": "Al nas a Grau Biagio Marin, poet e scritôr. Une memorie leade ae lagune, ae lenghe e a un mût dut so di cjalâ il mâr."
+      },
+      "furReviewStatus": "approved",
+      "reviewQuestions": [],
+      "publicationBlockers": []
+    },
+    {
+      "id": "memory-copy-0826-novella-cantarutti",
+      "dateAnchors": [
+        "08-26"
+      ],
+      "surface": "daily_primary",
+      "rank": "A",
+      "title": {
+        "it": "Novella Cantarutti, poesia friulana",
+        "furDraft": "Novella Cantarutti, poesie furlane"
+      },
+      "summary": {
+        "it": "Nasce a Spilimbergo Novella Cantarutti, poetessa e scrittrice in friulano. Una memoria che parla direttamente di lingua, territorio e voce popolare.",
+        "furDraft": "E nas a Spilimberc Novella Cantarutti, poetesse e scritore in furlan. Une memorie che e fevele diretementri di lenghe, teritori e vôs popolâr."
+      },
+      "furReviewStatus": "approved",
+      "reviewQuestions": [],
+      "publicationBlockers": []
+    },
+    {
+      "id": "memory-copy-1001-pierluigi-cappello",
+      "dateAnchors": [
+        "10-01"
+      ],
+      "surface": "daily_primary",
+      "rank": "A",
+      "title": {
+        "it": "Pierluigi Cappello, poesia del Friuli",
+        "furDraft": "Pierluigi Cappello, poesie dal Friûl"
+      },
+      "summary": {
+        "it": "Muore Pierluigi Cappello, poeta in italiano e friulano. Una voce recente, limpida, capace di tenere insieme lingua, ferita e paesaggio.",
+        "furDraft": "Al mûr Pierluigi Cappello, poet in talian e in furlan. Une vôs resinte e limpide, capace di tignî dongje lenghe, feride e paisaç."
+      },
+      "furReviewStatus": "approved",
+      "reviewQuestions": [],
+      "publicationBlockers": []
+    },
+    {
+      "id": "memory-copy-1007-giovanni-battista-brusin",
+      "dateAnchors": [
+        "10-07"
+      ],
+      "surface": "daily_secondary",
+      "rank": "B",
+      "title": {
+        "it": "Giovanni Battista Brusin e Aquileia",
+        "furDraft": "Giovanni Battista Brusin e Aquilee"
+      },
+      "summary": {
+        "it": "Nasce Giovanni Battista Brusin, storico e archeologo legato ad Aquileia. Una memoria per ricordare chi ha aiutato a leggere la citta antica.",
+        "furDraft": "Al nas Giovanni Battista Brusin, storic e archeolic leât a Aquilee. Une memorie par visâ cui che al à judât a lei la citât antighe."
+      },
+      "furReviewStatus": "approved",
+      "reviewQuestions": [],
+      "publicationBlockers": []
+    }
+  ]
+}

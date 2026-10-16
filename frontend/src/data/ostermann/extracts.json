@@ -1,0 +1,2733 @@
+{
+  "schemaVersion": 1,
+  "purpose": "Archivio di estratti granulari Ostermann con traduzione italiana in bozza, recuperi curati e FUR tracciato. Non e' letto dalla UI.",
+  "primaryDestination": "discover",
+  "rules": [
+    "Ogni estratto deve conservare pagina, pagina testo, path normalizzato e path clean/PDF da verificare.",
+    "La traduzione IT e' una bozza editoriale moderna, non testo definitivo, salvo record recuperati dal precedente archivio curato.",
+    "Il FUR resta pending_review finche' non viene controllato con glossario/correttore e revisione umana; i record recuperati possono puntare al FUR approvato in ostermannCulturalDiscover.json senza duplicarlo.",
+    "Gli estratti folklorici delicati o superstiziosi vanno marcati archive_context e non usati come consigli pratici.",
+    "Nessun estratto e' pubblicabile nella UI senza promozione manuale tracciata."
+  ],
+  "editorialStates": {
+    "translated_it_draft": "Estratto letto e sintetizzato in italiano moderno, con FUR ancora da rivedere.",
+    "curated_recovered": "Estratto derivato dal precedente archivio curato Ostermann, collegato con curatedRecordId e non pubblicabile automaticamente nella nuova UI.",
+    "needs_source_check": "Da verificare contro pagina clean/PDF per OCR, layout o frase ambigua.",
+    "archive_context": "Utile per capire il corpus, ma non adatto come card principale senza forte filtro editoriale.",
+    "ready_for_editorial_review": "Fonte e traduzione controllate, pronto per review copy/FUR.",
+    "ready_for_ui": "Copy IT/FUR e fonte approvati. Stato non usato in questa tranche."
+  },
+  "records": [
+    {
+      "id": "ost-extract-031-orione-carnia",
+      "sourcePage": 31,
+      "textPage": 6,
+      "category": "cielo_popolare",
+      "primaryUse": "discover",
+      "secondaryUse": ["almanac_sky", "winter_calendar"],
+      "title": {
+        "itDraft": "Orione e il tempo della filatura",
+        "fur": "pending_review"
+      },
+      "sourceText": {
+        "language": "fur_it",
+        "excerpt": "Lis Macis, di Zenar, la buine filandere ha di mandalis a ponar.",
+        "context": "La Cintura d'Orione viene ricordata in Carnia come riferimento stagionale per la filatura."
+      },
+      "translation": {
+        "itDraft": "Nel calendario popolare carnico la Cintura d'Orione aiutava a leggere il tempo dell'inverno: a gennaio la buona filatrice doveva lavorare finche' quelle stelle scendevano.",
+        "furDraft": "pending_review",
+        "status": "it_draft"
+      },
+      "tags": ["stelle", "orione", "carnia", "inverno", "lavori_domestici"],
+      "dateAnchors": ["01"],
+      "seasons": ["winter"],
+      "areas": ["carnia", "fvg"],
+      "editorialStatus": "translated_it_draft",
+      "uiReadiness": "not_ready",
+      "review": {
+        "sourceCheck": "normalized_page",
+        "needsCleanPageCheck": true,
+        "furReviewRequired": true,
+        "notes": "Buon materiale Scopri; non e' un proverbio quotidiano finche' non viene normalizzato in FUR."
+      },
+      "source": {
+        "label": "Ostermann 1894",
+        "pdfPage": 31,
+        "textPage": 6,
+        "sourcePath": "normalized-pages/page-031.txt",
+        "verifiedAgainst": "pages/page-031.txt",
+        "auditStatus": "partial"
+      }
+    },
+    {
+      "id": "ost-extract-031-sirio-canicola",
+      "sourcePage": 31,
+      "textPage": 6,
+      "category": "cielo_popolare",
+      "primaryUse": "discover",
+      "secondaryUse": ["almanac_sky", "summer_calendar"],
+      "title": {
+        "itDraft": "Sirio, la Canicola e il tempo dell'anno",
+        "fur": "pending_review"
+      },
+      "sourceText": {
+        "language": "it",
+        "excerpt": "All'alba del 21 luglio, in cui entra la Canicola, si osserva il sorgere di questa stella.",
+        "context": "Sirio e' collegata a un pronostico annuale su nebbie, pioggia e malattie."
+      },
+      "translation": {
+        "itDraft": "La Stella di Betlemme, identificata con Sirio, entra nel calendario popolare il 21 luglio: se sorge fra le nebbie, l'anno viene immaginato piovoso e difficile.",
+        "furDraft": "pending_review",
+        "status": "it_draft"
+      },
+      "tags": ["sirio", "canicola", "nebbia", "pioggia", "calendario"],
+      "dateAnchors": ["07-21"],
+      "seasons": ["summer"],
+      "areas": ["fvg"],
+      "editorialStatus": "translated_it_draft",
+      "uiReadiness": "not_ready",
+      "review": {
+        "sourceCheck": "normalized_page",
+        "needsCleanPageCheck": true,
+        "furReviewRequired": true,
+        "notes": "Da usare come racconto culturale, evitando tono predittivo."
+      },
+      "source": {
+        "label": "Ostermann 1894",
+        "pdfPage": 31,
+        "textPage": 6,
+        "sourcePath": "normalized-pages/page-031.txt",
+        "verifiedAgainst": "pages/page-031.txt",
+        "auditStatus": "partial"
+      }
+    },
+    {
+      "id": "ost-extract-033-stelle-pronostici",
+      "sourcePage": 33,
+      "textPage": 8,
+      "category": "meteo_popolare",
+      "primaryUse": "discover",
+      "secondaryUse": ["almanac_sky", "weather_lore"],
+      "title": {
+        "itDraft": "Quando le stelle annunciano il tempo",
+        "fur": "pending_review"
+      },
+      "sourceText": {
+        "language": "it",
+        "excerpt": "Dalle stelle si traggono i pronostici sul tempo.",
+        "context": "La pagina raccoglie segni attribuiti a stelle impallidite, stelle grandi d'estate e stelle piu' brillanti d'autunno."
+      },
+      "translation": {
+        "itDraft": "Le stelle diventano un barometro popolare: se impallidiscono annunciano burrasca, se d'estate sembrano grandi con vento di levante promettono pioggia, mentre in autunno piu' brillanti indicano bel tempo stabile.",
+        "furDraft": "pending_review",
+        "status": "it_draft"
+      },
+      "tags": ["stelle", "burrasca", "levante", "pioggia", "bel_tempo"],
+      "dateAnchors": [],
+      "seasons": ["summer", "autumn"],
+      "areas": ["fvg"],
+      "editorialStatus": "translated_it_draft",
+      "uiReadiness": "not_ready",
+      "review": {
+        "sourceCheck": "normalized_page",
+        "needsCleanPageCheck": true,
+        "furReviewRequired": true,
+        "notes": "Ottimo per Scopri; evitare di presentarlo come previsione scientifica."
+      },
+      "source": {
+        "label": "Ostermann 1894",
+        "pdfPage": 33,
+        "textPage": 8,
+        "sourcePath": "normalized-pages/page-033.txt",
+        "verifiedAgainst": "pages/page-033.txt",
+        "auditStatus": "partial"
+      }
+    },
+    {
+      "id": "ost-extract-044-luna-lavori-campi",
+      "sourcePage": 44,
+      "textPage": 19,
+      "category": "agricoltura_lunare",
+      "primaryUse": "discover",
+      "secondaryUse": ["earth_tips", "almanac_luna"],
+      "title": {
+        "itDraft": "La luna nei lavori dei campi",
+        "fur": "pending_review"
+      },
+      "sourceText": {
+        "language": "it",
+        "excerpt": "La semina delle erbe foraggiere deve farsi a luna nuova.",
+        "context": "La pagina collega luna nuova, ultimo quarto, plenilunio, patate, vino e lavori agricoli."
+      },
+      "translation": {
+        "itDraft": "Ostermann raccoglie un sistema di regole agricole legate alla luna: semine, trapianti, innesti, patate, vino e carni vengono ordinati secondo le fasi lunari.",
+        "furDraft": "pending_review",
+        "status": "it_draft"
+      },
+      "tags": ["luna", "semina", "campi", "vendemmia", "patate"],
+      "dateAnchors": [],
+      "seasons": ["spring", "summer", "autumn"],
+      "areas": ["fvg"],
+      "editorialStatus": "translated_it_draft",
+      "uiReadiness": "not_ready",
+      "review": {
+        "sourceCheck": "clean_page_checked_with_image",
+        "needsCleanPageCheck": false,
+        "furReviewRequired": true,
+        "notes": "Controllata pages/page-044.txt, ocr-pages/page-044-psm4.txt e immagine ocr-pages/page-044.png: il nucleo su luna nuova, ultimo quarto, patate, vino e lavori agricoli e' leggibile. Resta bozza, non copy finale."
+      },
+      "source": {
+        "label": "Ostermann 1894",
+        "pdfPage": 44,
+        "textPage": 19,
+        "sourcePath": "normalized-pages/page-044.txt",
+        "verifiedAgainst": "pages/page-044.txt",
+        "ocrImagePath": "ocr-pages/page-044.png",
+        "ocrAlternativePath": "ocr-pages/page-044-psm4.txt",
+        "auditStatus": "clean_page_checked_with_image"
+      }
+    },
+    {
+      "id": "ost-extract-094-lessico-vento",
+      "sourcePage": 94,
+      "textPage": 69,
+      "category": "lessico_meteo",
+      "primaryUse": "discover",
+      "secondaryUse": ["glossary", "weather_lore"],
+      "title": {
+        "itDraft": "Il vocabolario friulano del vento",
+        "fur": "pending_review"
+      },
+      "sourceText": {
+        "language": "it_fur_terms",
+        "excerpt": "I movimenti delle masse aeree dell'atmosfera si dicono: aure, bavesele, bave, zefiro, ajarin, ajar, vint...",
+        "context": "La pagina elenca nomi generici del vento e nomi legati alla rosa dei venti."
+      },
+      "translation": {
+        "itDraft": "Il vento non e' una cosa sola: Ostermann registra una costellazione di nomi per brezze, raffiche, tramontane, scirocco, maestrale e vortici. E' materiale perfetto per una rubrica lessicale in Scopri.",
+        "furDraft": "pending_review",
+        "status": "it_draft"
+      },
+      "tags": ["vento", "lessico", "friulano", "rosa_dei_venti"],
+      "dateAnchors": [],
+      "seasons": ["all"],
+      "areas": ["fvg"],
+      "editorialStatus": "translated_it_draft",
+      "uiReadiness": "not_ready",
+      "review": {
+        "sourceCheck": "normalized_page",
+        "needsCleanPageCheck": true,
+        "furReviewRequired": true,
+        "notes": "Da trasformare in glossario controllato, non in proverbio."
+      },
+      "source": {
+        "label": "Ostermann 1894",
+        "pdfPage": 94,
+        "textPage": 69,
+        "sourcePath": "normalized-pages/page-094.txt",
+        "verifiedAgainst": "pages/page-094.txt",
+        "auditStatus": "partial"
+      }
+    },
+    {
+      "id": "ost-extract-097-vento-date",
+      "sourcePage": 97,
+      "textPage": 72,
+      "category": "calendario_meteo",
+      "primaryUse": "discover",
+      "secondaryUse": ["proverb_candidates", "almanac_calendar"],
+      "title": {
+        "itDraft": "Il vento dei santi di febbraio e marzo",
+        "fur": "pending_review"
+      },
+      "sourceText": {
+        "language": "fur_it",
+        "excerpt": "Se al svinte a San Valantin, cuarante dis a no l'ha fin.",
+        "context": "La pagina collega il vento di San Valentino e altri santi di fine inverno a una durata simbolica di quaranta giorni."
+      },
+      "translation": {
+        "itDraft": "Nel calendario popolare il vento osservato in certe date diventa segno di durata: se soffia a San Valentino, viene raccontato come vento capace di continuare per quaranta giorni.",
+        "furDraft": "pending_review",
+        "status": "it_draft"
+      },
+      "tags": ["vento", "san_valentino", "quaranta_giorni"],
+      "dateAnchors": ["02-14"],
+      "seasons": ["winter", "spring"],
+      "areas": ["fvg"],
+      "editorialStatus": "translated_it_draft",
+      "uiReadiness": "not_ready",
+      "review": {
+        "sourceCheck": "clean_page_checked_partial",
+        "needsCleanPageCheck": false,
+        "furReviewRequired": true,
+        "notes": "Controllata pages/page-097.txt: il nucleo su San Valentino e' leggibile; il blocco successivo resta disturbato e non va usato senza PDF."
+      },
+      "source": {
+        "label": "Ostermann 1894",
+        "pdfPage": 97,
+        "textPage": 72,
+        "sourcePath": "normalized-pages/page-097.txt",
+        "verifiedAgainst": "pages/page-097.txt",
+        "auditStatus": "clean_page_checked_partial"
+      }
+    },
+    {
+      "id": "ost-extract-099-nebbia-pronostici",
+      "sourcePage": 99,
+      "textPage": 74,
+      "category": "meteo_popolare",
+      "primaryUse": "discover",
+      "secondaryUse": ["almanac_weather", "fog"],
+      "title": {
+        "itDraft": "La nebbia nel linguaggio del tempo",
+        "fur": "pending_review"
+      },
+      "sourceText": {
+        "language": "fur_it",
+        "excerpt": "Tre fumatis fasin une ploe.",
+        "context": "La pagina descrive la nebbia come segnale meteorologico, immagine di malinconia e memoria di piccoli pronostici popolari."
+      },
+      "translation": {
+        "itDraft": "Ostermann raccoglieva la nebbia come una presenza familiare del paesaggio friulano: bagna quasi come la pioggia, entra nei proverbi e diventa immagine di giornate lente e malinconiche. Non e' una previsione: e' un modo popolare di leggere il cielo basso.",
+        "furDraft": "Ostermann al racuei la fumate come une presince familiâr dal paisaç furlan: e bagne cuasi come la ploie, e jentre tai proverbis, deventant imagjin di zornadis lentis e malinconichis. No je une prevision: e je un mût popolâr di lei il cîl bas.",
+        "status": "it_draft"
+      },
+      "tags": ["nebbia", "pioggia", "malinconia", "giugno", "marzo"],
+      "dateAnchors": [],
+      "seasons": ["spring", "autumn", "winter"],
+      "areas": ["fvg"],
+      "editorialStatus": "archive_context",
+      "uiReadiness": "not_ready",
+      "review": {
+        "sourceCheck": "clean_page_checked",
+        "needsCleanPageCheck": false,
+        "furReviewRequired": true,
+        "notes": "Copy IT impostata come Archivio Scopri. Bozza FUR inserita ma non approvata. Non duplicare i proverbi gia in Almanacco e non riportare in UI le righe su malattie, capelli o emicranie: restano contesto storico della fonte."
+      },
+      "source": {
+        "label": "Ostermann 1894",
+        "pdfPage": 99,
+        "textPage": 74,
+        "sourcePath": "normalized-pages/page-099.txt",
+        "verifiedAgainst": "pages/page-099.txt",
+        "auditStatus": "normalized_checked",
+        "auditNote": "Pagina controllata su normalized-pages/page-099.txt: nebbia/fumate, tre fumatis, varianti su sereno/pioggia, malinconia e nota Del Negro. Escluse dalla copy UI le affermazioni popolari su salute/malattie."
+      }
+    },
+    {
+      "id": "ost-extract-100-nubi-pioggia",
+      "sourcePage": 100,
+      "textPage": 75,
+      "category": "meteo_popolare",
+      "primaryUse": "discover",
+      "secondaryUse": ["almanac_weather", "weather_lore"],
+      "title": {
+        "itDraft": "Le nubi come alfabeto del tempo",
+        "fur": "pending_review"
+      },
+      "sourceText": {
+        "language": "fur_it",
+        "excerpt": "Lis nuvolis o niulis sono preludio di pioggia.",
+        "context": "Forma, direzione, cime dei monti e ore del giorno sono lette come indizi del tempo."
+      },
+      "translation": {
+        "itDraft": "Le nubi non sono solo sfondo: per la meteorologia popolare diventano un alfabeto quotidiano. Forma, direzione e luogo in cui si addensano aiutano a immaginare pioggia, temporali o cambi di tempo.",
+        "furDraft": "pending_review",
+        "status": "it_draft"
+      },
+      "tags": ["nubi", "pioggia", "temporale", "monti", "pronostici"],
+      "dateAnchors": [],
+      "seasons": ["all"],
+      "areas": ["fvg", "canale_del_ferro"],
+      "editorialStatus": "translated_it_draft",
+      "uiReadiness": "not_ready",
+      "review": {
+        "sourceCheck": "normalized_page",
+        "needsCleanPageCheck": true,
+        "furReviewRequired": true,
+        "notes": "Tema forte per Scopri e teaser Almanacco; fonte gia individuata anche nell'archivio culturale."
+      },
+      "source": {
+        "label": "Ostermann 1894",
+        "pdfPage": 100,
+        "textPage": 75,
+        "sourcePath": "normalized-pages/page-100.txt",
+        "verifiedAgainst": "pages/page-100.txt",
+        "auditStatus": "partial"
+      }
+    },
+    {
+      "id": "ost-extract-101-sole-rosso",
+      "sourcePage": 101,
+      "textPage": 76,
+      "category": "meteo_popolare",
+      "primaryUse": "discover",
+      "secondaryUse": ["almanac_weather", "weather_lore"],
+      "title": {
+        "itDraft": "Sole rosso, nebbia leggera e cambio di tempo",
+        "fur": "pending_review"
+      },
+      "sourceText": {
+        "language": "it",
+        "excerpt": "Il sole rosso al mattino predica pioggia per la sera, e il sole rosso la sera pronostichi bel tempo pel domani.",
+        "context": "La pagina raccoglie segni osservabili: galli, fumo sui monti, sole rosso, sole piccolo e nebbia al mattino."
+      },
+      "translation": {
+        "itDraft": "La pagina riunisce segnali immediati e quotidiani: il canto del gallo fuori orario, il fumo sui monti, il sole rosso e la nebbia che si alza diventano indizi popolari per leggere la giornata.",
+        "furDraft": "pending_review",
+        "status": "it_draft"
+      },
+      "tags": ["sole_rosso", "nebbia", "galli", "monti", "bel_tempo"],
+      "dateAnchors": [],
+      "seasons": ["all"],
+      "areas": ["fvg"],
+      "editorialStatus": "translated_it_draft",
+      "uiReadiness": "not_ready",
+      "review": {
+        "sourceCheck": "normalized_page",
+        "needsCleanPageCheck": true,
+        "furReviewRequired": true,
+        "notes": "Molto leggibile per Scopri; adatto a card educativa se dichiarato come tradizione."
+      },
+      "source": {
+        "label": "Ostermann 1894",
+        "pdfPage": 101,
+        "textPage": 76,
+        "sourcePath": "normalized-pages/page-101.txt",
+        "verifiedAgainst": "pages/page-101.txt",
+        "auditStatus": "partial"
+      }
+    },
+    {
+      "id": "ost-extract-102-colore-luna",
+      "sourcePage": 102,
+      "textPage": 77,
+      "category": "luna_meteo",
+      "primaryUse": "discover",
+      "secondaryUse": ["almanac_luna", "weather_lore"],
+      "title": {
+        "itDraft": "Il colore della luna",
+        "fur": "pending_review"
+      },
+      "sourceText": {
+        "language": "it",
+        "excerpt": "Se la luna ha una tinta bluastra pronostica pioggia; se rossa, vento; se bianca, bel tempo.",
+        "context": "La stessa pagina collega anche il quarto giorno dopo il plenilunio all'andamento della lunazione."
+      },
+      "translation": {
+        "itDraft": "La luna viene letta come un piccolo schermo del tempo: bluastra richiama la pioggia, rossa il vento, bianca il bel tempo. E il quarto giorno dopo il plenilunio diventa misura simbolica della lunazione.",
+        "furDraft": "pending_review",
+        "status": "it_draft"
+      },
+      "tags": ["luna", "colore", "pioggia", "vento", "bel_tempo"],
+      "dateAnchors": [],
+      "seasons": ["all"],
+      "areas": ["fvg"],
+      "editorialStatus": "translated_it_draft",
+      "uiReadiness": "not_ready",
+      "review": {
+        "sourceCheck": "normalized_page",
+        "needsCleanPageCheck": true,
+        "furReviewRequired": true,
+        "notes": "Perfetto per Scopri/Almanacco, ma va presentato come tradizione popolare."
+      },
+      "source": {
+        "label": "Ostermann 1894",
+        "pdfPage": 102,
+        "textPage": 77,
+        "sourcePath": "normalized-pages/page-102.txt",
+        "verifiedAgainst": "pages/page-102.txt",
+        "auditStatus": "partial"
+      }
+    },
+    {
+      "id": "ost-extract-107-pioggia-sole-streghe",
+      "sourcePage": 107,
+      "textPage": 82,
+      "category": "folklore_meteo",
+      "primaryUse": "discover",
+      "secondaryUse": ["archive"],
+      "title": {
+        "itDraft": "Quando piove col sole",
+        "fur": "pending_review"
+      },
+      "sourceText": {
+        "language": "fur_it",
+        "excerpt": "Cuand ch'al pluv e l'e' soreli, si petenin lis striis.",
+        "context": "La pagina collega pioggia col sole, streghe e credenze su fenomeni ritenuti di cattivo augurio."
+      },
+      "translation": {
+        "itDraft": "La pioggia col sole entra nell'immaginario fantastico: il detto racconta che, quando piove e c'e' sole, le streghe si pettinano. E' un frammento culturale, non una previsione.",
+        "furDraft": "pending_review",
+        "status": "it_draft"
+      },
+      "tags": ["pioggia_col_sole", "folklore", "streghe", "credenze"],
+      "dateAnchors": [],
+      "seasons": ["all"],
+      "areas": ["fvg", "tagliamento"],
+      "editorialStatus": "archive_context",
+      "uiReadiness": "not_ready",
+      "review": {
+        "sourceCheck": "normalized_page",
+        "needsCleanPageCheck": true,
+        "furReviewRequired": true,
+        "notes": "Da usare solo in Scopri con tono storico/folklorico; non trasformare in consiglio o dato meteo."
+      },
+      "source": {
+        "label": "Ostermann 1894",
+        "pdfPage": 107,
+        "textPage": 82,
+        "sourcePath": "normalized-pages/page-107.txt",
+        "verifiedAgainst": "pages/page-107.txt",
+        "auditStatus": "partial"
+      }
+    },
+    {
+      "id": "ost-extract-126-grandine-temporali",
+      "sourcePage": 126,
+      "textPage": 101,
+      "category": "meteo_popolare",
+      "primaryUse": "discover",
+      "secondaryUse": ["weather_lore", "archive"],
+      "title": {
+        "itDraft": "Tuoni, temporali e grandine",
+        "fur": "pending_review"
+      },
+      "sourceText": {
+        "language": "fur_it",
+        "excerpt": "Cuand che al tone, o ploe o tempieste.",
+        "context": "La pagina raccoglie proverbi su brontolii, tuoni, grandine e temporali."
+      },
+      "translation": {
+        "itDraft": "Il temporale e' raccontato attraverso segnali forti: prima brontola, poi puo' arrivare grandine; quando tuona, si attende pioggia o tempesta. La parte piu' superstiziosa va conservata come contesto, non come copy principale.",
+        "furDraft": "pending_review",
+        "status": "it_draft"
+      },
+      "tags": ["temporale", "tuono", "grandine", "pioggia", "canino"],
+      "dateAnchors": [],
+      "seasons": ["spring", "summer"],
+      "areas": ["fvg", "canino", "slavia_friulana"],
+      "editorialStatus": "translated_it_draft",
+      "uiReadiness": "not_ready",
+      "review": {
+        "sourceCheck": "normalized_page",
+        "needsCleanPageCheck": true,
+        "furReviewRequired": true,
+        "notes": "Separare proverbi brevi da narrazioni su demoni/streghe prima di usare in UI."
+      },
+      "source": {
+        "label": "Ostermann 1894",
+        "pdfPage": 126,
+        "textPage": 101,
+        "sourcePath": "normalized-pages/page-126.txt",
+        "verifiedAgainst": "pages/page-126.txt",
+        "auditStatus": "partial"
+      }
+    },
+    {
+      "id": "ost-extract-238-fuochi-san-giovanni-pietro",
+      "sourcePage": 238,
+      "textPage": 213,
+      "category": "calendario_rituale",
+      "primaryUse": "discover",
+      "secondaryUse": ["almanac_calendar", "june_traditions"],
+      "title": {
+        "itDraft": "I fuochi di San Giovanni e San Pietro",
+        "fur": "pending_review"
+      },
+      "sourceText": {
+        "language": "it",
+        "excerpt": "I fuochi che si fanno alla vigilia di S. Giovanni e di S. Pietro sono sempre di frasche secche di gelso.",
+        "context": "Il passo compare dentro la voce sul gelso e collega la pianta alle vigilie rituali di giugno."
+      },
+      "translation": {
+        "itDraft": "Dentro la voce dedicata al gelso compare una tradizione stagionale: le frasche secche del gelso alimentano i fuochi della vigilia di San Giovanni e di San Pietro.",
+        "furDraft": "pending_review",
+        "status": "it_draft"
+      },
+      "tags": ["san_giovanni", "san_pietro", "fuochi", "gelso", "giugno"],
+      "dateAnchors": ["06-23", "06-28"],
+      "seasons": ["summer"],
+      "areas": ["udine", "fvg"],
+      "editorialStatus": "translated_it_draft",
+      "uiReadiness": "not_ready",
+      "review": {
+        "sourceCheck": "normalized_page",
+        "needsCleanPageCheck": true,
+        "furReviewRequired": true,
+        "notes": "Molto coerente con Scopri e con teaser Almanacco vicino a San Giovanni/San Pietro."
+      },
+      "source": {
+        "label": "Ostermann 1894",
+        "pdfPage": 238,
+        "textPage": 213,
+        "sourcePath": "normalized-pages/page-238.txt",
+        "verifiedAgainst": "pages/page-238.txt",
+        "auditStatus": "partial"
+      }
+    },
+    {
+      "id": "ost-extract-029-canicola-stagione",
+      "sourcePage": 29,
+      "textPage": 4,
+      "category": "calendario_stagionale",
+      "primaryUse": "discover",
+      "secondaryUse": ["summer_calendar", "almanac_sky"],
+      "title": {
+        "itDraft": "La Canicola e l'andamento dell'estate",
+        "fur": "pending_review"
+      },
+      "sourceText": {
+        "language": "fur_it",
+        "excerpt": "La Canicule se chate bagnat, lasce bagnat; se chate sut, lasce sut.",
+        "context": "La pagina collega la Canicola, la semina estiva, Sirio e pronostici stagionali."
+      },
+      "translation": {
+        "itDraft": "La Canicola diventa una soglia dell'estate: se trova bagnato, lascia bagnato; se trova asciutto, lascia asciutto. E' una regola popolare di continuita' stagionale, non una previsione scientifica.",
+        "furDraft": "pending_review",
+        "status": "it_draft"
+      },
+      "tags": ["canicola", "estate", "pioggia", "siccita", "sirio"],
+      "dateAnchors": ["07-21"],
+      "seasons": ["summer"],
+      "areas": ["fvg"],
+      "editorialStatus": "translated_it_draft",
+      "uiReadiness": "not_ready",
+      "review": {
+        "sourceCheck": "normalized_page",
+        "needsCleanPageCheck": true,
+        "furReviewRequired": true,
+        "notes": "Da confrontare con pagina 31/Sirio per evitare doppioni in Scopri."
+      },
+      "source": {
+        "label": "Ostermann 1894",
+        "pdfPage": 29,
+        "textPage": 4,
+        "sourcePath": "normalized-pages/page-029.txt",
+        "verifiedAgainst": "pages/page-029.txt",
+        "auditStatus": "partial"
+      }
+    },
+    {
+      "id": "ost-extract-049-primo-martedi-luna",
+      "sourcePage": 49,
+      "textPage": 24,
+      "category": "luna_meteo",
+      "primaryUse": "discover",
+      "secondaryUse": ["proverb_candidates", "almanac_luna"],
+      "title": {
+        "itDraft": "Il primo martedi della luna",
+        "fur": "pending_review"
+      },
+      "sourceText": {
+        "language": "fur_it",
+        "excerpt": "Cuand ch'al pluv il prin martars di lune, no vin sech plui par che lune.",
+        "context": "La pagina raccoglie proverbi sulla prima parte della lunazione e sull'andamento del tempo."
+      },
+      "translation": {
+        "itDraft": "Il primo martedi della lunazione viene letto come segnale: se piove, quella luna viene immaginata umida; se il tempo prende una piega, la mantiene per tutto il ciclo.",
+        "furDraft": "pending_review",
+        "status": "it_draft"
+      },
+      "tags": ["luna", "martedi", "pioggia", "lunazione"],
+      "dateAnchors": [],
+      "seasons": ["all"],
+      "areas": ["fvg", "udine"],
+      "editorialStatus": "translated_it_draft",
+      "uiReadiness": "not_ready",
+      "review": {
+        "sourceCheck": "normalized_page",
+        "needsCleanPageCheck": true,
+        "furReviewRequired": true,
+        "notes": "Gia fonte candidati proverbio; qui resta anche come spiegazione Scopri."
+      },
+      "source": {
+        "label": "Ostermann 1894",
+        "pdfPage": 49,
+        "textPage": 24,
+        "sourcePath": "normalized-pages/page-049.txt",
+        "verifiedAgainst": "pages/page-049.txt",
+        "auditStatus": "partial"
+      }
+    },
+    {
+      "id": "ost-extract-054-santi-freddo-febbraio",
+      "sourcePage": 54,
+      "textPage": 29,
+      "category": "calendario_meteo",
+      "primaryUse": "discover",
+      "secondaryUse": ["proverb_candidates", "almanac_calendar"],
+      "title": {
+        "itDraft": "Il freddo nei santi di febbraio",
+        "fur": "pending_review"
+      },
+      "sourceText": {
+        "language": "fur_it",
+        "excerpt": "San Blas, il fred al tae il nas; San Valantin, l'unviar al so fin.",
+        "context": "La pagina mette in fila Epifania, Sant'Antonio, San Biagio, San Valentino e San Mattia."
+      },
+      "translation": {
+        "itDraft": "Il freddo invernale viene distribuito nel calendario dei santi: Epifania, Sant'Antonio, San Biagio, San Valentino e San Mattia diventano tappe popolari per raccontare gelo, disgelo e fine dell'inverno.",
+        "furDraft": "pending_review",
+        "status": "it_draft"
+      },
+      "tags": ["freddo", "febbraio", "san_biagio", "san_valentino", "san_mattia"],
+      "dateAnchors": ["01-17", "02-03", "02-14", "02-24"],
+      "seasons": ["winter"],
+      "areas": ["fvg"],
+      "editorialStatus": "translated_it_draft",
+      "uiReadiness": "not_ready",
+      "review": {
+        "sourceCheck": "normalized_page",
+        "needsCleanPageCheck": true,
+        "furReviewRequired": true,
+        "notes": "Buona base per Scopri e calendario, ma va separata in micro-record se usata giorno per giorno."
+      },
+      "source": {
+        "label": "Ostermann 1894",
+        "pdfPage": 54,
+        "textPage": 29,
+        "sourcePath": "normalized-pages/page-054.txt",
+        "verifiedAgainst": "pages/page-054.txt",
+        "auditStatus": "partial"
+      }
+    },
+    {
+      "id": "ost-extract-060-santi-vendemmia",
+      "sourcePage": 60,
+      "textPage": 35,
+      "category": "calendario_meteo",
+      "primaryUse": "discover",
+      "secondaryUse": ["almanac_calendar", "autumn_calendar"],
+      "title": {
+        "itDraft": "Santi d'estate e vendemmie",
+        "fur": "pending_review"
+      },
+      "sourceText": {
+        "language": "fur_it",
+        "excerpt": "Se a San Bortolomio l'e' bon timp, l'e' bon timp dutis lis vendemis.",
+        "context": "La pagina raccoglie luglio, agosto e settembre come passaggi verso vendemmia e autunno."
+      },
+      "translation": {
+        "itDraft": "Tra luglio e agosto i santi segnano il passaggio verso l'autunno: San Lorenzo e San Bartolomeo diventano indicatori popolari per vendemmia, caldo e qualita' della stagione.",
+        "furDraft": "pending_review",
+        "status": "it_draft"
+      },
+      "tags": ["san_lorenzo", "san_bartolomeo", "vendemmia", "autunno", "caldo"],
+      "dateAnchors": ["08-10", "08-24", "09-09"],
+      "seasons": ["summer", "autumn"],
+      "areas": ["fvg"],
+      "editorialStatus": "translated_it_draft",
+      "uiReadiness": "not_ready",
+      "review": {
+        "sourceCheck": "clean_page_checked_partial",
+        "needsCleanPageCheck": false,
+        "furReviewRequired": true,
+        "notes": "Controllata pages/page-060.txt: il nucleo su San Bartolomeo/vendemmie e' leggibile; altre righe della pagina restano frammentarie."
+      },
+      "source": {
+        "label": "Ostermann 1894",
+        "pdfPage": 60,
+        "textPage": 35,
+        "sourcePath": "normalized-pages/page-060.txt",
+        "verifiedAgainst": "pages/page-060.txt",
+        "auditStatus": "clean_page_checked_partial"
+      }
+    },
+    {
+      "id": "ost-extract-061-mesais-calende",
+      "sourcePage": 61,
+      "textPage": 36,
+      "category": "calendario_rituale",
+      "primaryUse": "discover",
+      "secondaryUse": ["almanac_calendar", "winter_calendar"],
+      "title": {
+        "itDraft": "Mesais, calende e mesi dell'anno",
+        "fur": "pending_review"
+      },
+      "sourceText": {
+        "language": "it_fur_terms",
+        "excerpt": "I sei ultimi giorni dell'anno e i sei primi dell'entrante si dicono lis mesais.",
+        "context": "I giorni fra fine anno e inizio anno vengono usati per immaginare l'andamento dei mesi."
+      },
+      "translation": {
+        "itDraft": "Le mesais trasformano i giorni di passaggio fra due anni in un piccolo calendario del futuro: ogni giornata corrisponde simbolicamente a un mese dell'anno nuovo.",
+        "furDraft": "pending_review",
+        "status": "it_draft"
+      },
+      "tags": ["mesais", "calende", "anno_nuovo", "mesi", "inverno"],
+      "dateAnchors": ["12-26", "01-06"],
+      "seasons": ["winter"],
+      "areas": ["fvg", "slavia_friulana"],
+      "editorialStatus": "translated_it_draft",
+      "uiReadiness": "not_ready",
+      "review": {
+        "sourceCheck": "normalized_page",
+        "needsCleanPageCheck": true,
+        "furReviewRequired": true,
+        "notes": "Ottimo tema Scopri; non usare come previsione."
+      },
+      "source": {
+        "label": "Ostermann 1894",
+        "pdfPage": 61,
+        "textPage": 36,
+        "sourcePath": "normalized-pages/page-061.txt",
+        "verifiedAgainst": "pages/page-061.txt",
+        "auditStatus": "partial"
+      }
+    },
+    {
+      "id": "ost-extract-063-san-zuan-sant-egidi",
+      "sourcePage": 63,
+      "textPage": 38,
+      "category": "calendario_meteo",
+      "primaryUse": "discover",
+      "secondaryUse": ["almanac_calendar", "june_calendar"],
+      "title": {
+        "itDraft": "San Zuan e Sant'Egidio",
+        "fur": "pending_review"
+      },
+      "sourceText": {
+        "language": "fur_it",
+        "excerpt": "Il timp ch'al cor a San Zuan al cor dut l'an.",
+        "context": "San Giovanni e Sant'Egidio sono usati come date-spia per mese, anno e autunno."
+      },
+      "translation": {
+        "itDraft": "San Giovanni e Sant'Egidio diventano due date di lettura del tempo: il clima del giorno si trasforma in racconto dell'andamento del mese, dell'anno o dell'autunno.",
+        "furDraft": "pending_review",
+        "status": "it_draft"
+      },
+      "tags": ["san_giovanni", "sant_egidio", "giugno", "settembre", "autunno"],
+      "dateAnchors": ["06-24", "09-01"],
+      "seasons": ["summer", "autumn"],
+      "areas": ["fvg"],
+      "editorialStatus": "translated_it_draft",
+      "uiReadiness": "not_ready",
+      "review": {
+        "sourceCheck": "clean_page_checked_partial",
+        "needsCleanPageCheck": false,
+        "furReviewRequired": true,
+        "notes": "Controllata pages/page-063.txt: San Zuan e Sant'Egidio sono leggibili; la parte bassa della pagina resta frammentaria."
+      },
+      "source": {
+        "label": "Ostermann 1894",
+        "pdfPage": 63,
+        "textPage": 38,
+        "sourcePath": "normalized-pages/page-063.txt",
+        "verifiedAgainst": "pages/page-063.txt",
+        "auditStatus": "clean_page_checked_partial"
+      }
+    },
+    {
+      "id": "ost-extract-104-monti-cappello-nubi",
+      "sourcePage": 104,
+      "textPage": 79,
+      "category": "meteo_popolare",
+      "primaryUse": "discover",
+      "secondaryUse": ["almanac_weather", "weather_lore"],
+      "title": {
+        "itDraft": "Quando i monti mettono il cappello",
+        "fur": "pending_review"
+      },
+      "sourceText": {
+        "language": "fur_it",
+        "excerpt": "Cuand che lis mons han il chapiel, met ju la falz chol su il rischiel.",
+        "context": "La pagina raccoglie nubi sui monti, cielo a lana, rane, vacche e colori del cielo."
+      },
+      "translation": {
+        "itDraft": "I monti col cappello sono uno dei segnali piu' immediati del meteo popolare: quando le nubi coprono le cime, si lascia il lavoro asciutto e ci si prepara alla pioggia.",
+        "furDraft": "pending_review",
+        "status": "it_draft"
+      },
+      "tags": ["monti", "nubi", "pioggia", "rane", "cielo"],
+      "dateAnchors": [],
+      "seasons": ["all"],
+      "areas": ["fvg", "pinzano", "grado"],
+      "editorialStatus": "translated_it_draft",
+      "uiReadiness": "not_ready",
+      "review": {
+        "sourceCheck": "clean_page_checked_partial",
+        "needsCleanPageCheck": false,
+        "furReviewRequired": true,
+        "notes": "Controllata pages/page-104.txt: i proverbi su monti col cappello, nubi, rane e cielo sono leggibili; la parte bassa resta sporca e va separata."
+      },
+      "source": {
+        "label": "Ostermann 1894",
+        "pdfPage": 104,
+        "textPage": 79,
+        "sourcePath": "normalized-pages/page-104.txt",
+        "verifiedAgainst": "pages/page-104.txt",
+        "auditStatus": "clean_page_checked_partial"
+      }
+    },
+    {
+      "id": "ost-extract-130-neve-pane",
+      "sourcePage": 130,
+      "textPage": 105,
+      "category": "neve_popolare",
+      "primaryUse": "discover",
+      "secondaryUse": ["winter_calendar", "almanac_weather"],
+      "title": {
+        "itDraft": "Sotto la neve, il pane",
+        "fur": "pending_review"
+      },
+      "sourceText": {
+        "language": "fur_it",
+        "excerpt": "Sot nev pan.",
+        "context": "La neve e' raccontata come promessa di raccolti abbondanti e come desiderio contadino."
+      },
+      "translation": {
+        "itDraft": "La neve non e' solo disagio: nella cultura contadina diventa protezione dei campi e promessa di pane. Per questo molti detti la collegano all'abbondanza futura.",
+        "furDraft": "pending_review",
+        "status": "it_draft"
+      },
+      "tags": ["neve", "pane", "raccolti", "inverno", "campi"],
+      "dateAnchors": [],
+      "seasons": ["winter"],
+      "areas": ["fvg"],
+      "editorialStatus": "translated_it_draft",
+      "uiReadiness": "not_ready",
+      "review": {
+        "sourceCheck": "normalized_page",
+        "needsCleanPageCheck": true,
+        "furReviewRequired": true,
+        "notes": "Da usare con attenzione: bel tema editoriale, non previsione agricola reale."
+      },
+      "source": {
+        "label": "Ostermann 1894",
+        "pdfPage": 130,
+        "textPage": 105,
+        "sourcePath": "normalized-pages/page-130.txt",
+        "verifiedAgainst": "pages/page-130.txt",
+        "auditStatus": "partial"
+      }
+    },
+    {
+      "id": "ost-extract-131-vespe-neve",
+      "sourcePage": 131,
+      "textPage": 106,
+      "category": "neve_popolare",
+      "primaryUse": "discover",
+      "secondaryUse": ["winter_calendar", "weather_lore"],
+      "title": {
+        "itDraft": "Vespe d'estate, neve d'inverno",
+        "fur": "pending_review"
+      },
+      "sourceText": {
+        "language": "it",
+        "excerpt": "Quando l'estate sono assai vespe viene assai neve l'inverno.",
+        "context": "Il diario Del Negro registra il legame popolare fra vespe estive e neve invernale."
+      },
+      "translation": {
+        "itDraft": "Anche gli insetti diventano segnali stagionali: molte vespe in estate vengono lette come annuncio di un inverno nevoso.",
+        "furDraft": "pending_review",
+        "status": "it_draft"
+      },
+      "tags": ["vespe", "neve", "estate", "inverno", "del_negro"],
+      "dateAnchors": [],
+      "seasons": ["summer", "winter"],
+      "areas": ["fvg"],
+      "editorialStatus": "translated_it_draft",
+      "uiReadiness": "not_ready",
+      "review": {
+        "sourceCheck": "normalized_page",
+        "needsCleanPageCheck": true,
+        "furReviewRequired": true,
+        "notes": "Buona pillola Scopri; evitare tono predittivo."
+      },
+      "source": {
+        "label": "Ostermann 1894",
+        "pdfPage": 131,
+        "textPage": 106,
+        "sourcePath": "normalized-pages/page-131.txt",
+        "verifiedAgainst": "pages/page-131.txt",
+        "auditStatus": "partial"
+      }
+    },
+    {
+      "id": "ost-extract-131-santi-neve",
+      "sourcePage": 131,
+      "textPage": 106,
+      "category": "calendario_meteo",
+      "primaryUse": "discover",
+      "secondaryUse": ["winter_calendar", "almanac_calendar"],
+      "title": {
+        "itDraft": "La neve nel calendario dei santi",
+        "fur": "pending_review"
+      },
+      "sourceText": {
+        "language": "fur_it",
+        "excerpt": "Sante Catarine la nev a la coline, e a San Bastian la nev al mont e al plan.",
+        "context": "La pagina mette in relazione Santa Caterina, Sant'Andrea, Natale e San Bastiano con la neve."
+      },
+      "translation": {
+        "itDraft": "La neve viene distribuita fra date e santi: Santa Caterina, Sant'Andrea, Natale e San Bastiano segnano tappe popolari dell'inverno.",
+        "furDraft": "pending_review",
+        "status": "it_draft"
+      },
+      "tags": ["neve", "santa_caterina", "sant_andrea", "natale", "san_bastiano"],
+      "dateAnchors": ["11-28", "11-30", "12-25", "01-20"],
+      "seasons": ["winter"],
+      "areas": ["fvg"],
+      "editorialStatus": "translated_it_draft",
+      "uiReadiness": "not_ready",
+      "review": {
+        "sourceCheck": "clean_page_checked_partial",
+        "needsCleanPageCheck": false,
+        "furReviewRequired": true,
+        "notes": "Controllata pages/page-131.txt: Santa Caterina e San Bastiano sono leggibili; la riga su Natale contiene data OCR discordante e non va promossa come slot data senza PDF."
+      },
+      "source": {
+        "label": "Ostermann 1894",
+        "pdfPage": 131,
+        "textPage": 106,
+        "sourcePath": "normalized-pages/page-131.txt",
+        "verifiedAgainst": "pages/page-131.txt",
+        "auditStatus": "clean_page_checked_partial"
+      }
+    },
+    {
+      "id": "ost-extract-132-neve-brina",
+      "sourcePage": 132,
+      "textPage": 107,
+      "category": "neve_popolare",
+      "primaryUse": "discover",
+      "secondaryUse": ["winter_calendar", "archive"],
+      "title": {
+        "itDraft": "Neve, brina e valanghe",
+        "fur": "pending_review"
+      },
+      "sourceText": {
+        "language": "fur_it",
+        "excerpt": "Verd di Nadal, blanch di Pasche; o viceversa.",
+        "context": "La pagina raccoglie durata della neve, brina, nomi locali e credenze sulle valanghe."
+      },
+      "translation": {
+        "itDraft": "La neve viene raccontata come misura del freddo, del Natale, della Pasqua e della montagna. La brina ha molti nomi locali, mentre le valanghe aprono un filone piu' delicato da tenere in archivio.",
+        "furDraft": "pending_review",
+        "status": "it_draft"
+      },
+      "tags": ["neve", "brina", "valanghe", "natale", "pasqua"],
+      "dateAnchors": ["12-25", "04"],
+      "seasons": ["winter", "spring"],
+      "areas": ["fvg", "montagna"],
+      "editorialStatus": "archive_context",
+      "uiReadiness": "not_ready",
+      "review": {
+        "sourceCheck": "normalized_page",
+        "needsCleanPageCheck": true,
+        "furReviewRequired": true,
+        "notes": "La parte sulle valanghe va trattata solo come contesto storico, non come contenuto leggero."
+      },
+      "source": {
+        "label": "Ostermann 1894",
+        "pdfPage": 132,
+        "textPage": 107,
+        "sourcePath": "normalized-pages/page-132.txt",
+        "verifiedAgainst": "pages/page-132.txt",
+        "auditStatus": "partial"
+      }
+    },
+    {
+      "id": "ost-extract-140-arcobaleno-primavera",
+      "sourcePage": 140,
+      "textPage": 115,
+      "category": "meteo_popolare",
+      "primaryUse": "discover",
+      "secondaryUse": ["spring_calendar", "almanac_weather"],
+      "title": {
+        "itDraft": "Il primo arcobaleno di primavera",
+        "fur": "pending_review"
+      },
+      "sourceText": {
+        "language": "it",
+        "excerpt": "Il primo arcobaleno che apparira' in primavera dara' il pronostico dell'annata.",
+        "context": "I colori prevalenti dell'arcobaleno vengono collegati a foraggi, vino e raccolti."
+      },
+      "translation": {
+        "itDraft": "L'arcobaleno non e' solo un fenomeno bello da guardare: nel racconto popolare il primo arco di primavera diventa lettura simbolica dell'annata, dei foraggi, del vino e dei raccolti.",
+        "furDraft": "pending_review",
+        "status": "it_draft"
+      },
+      "tags": ["arcobaleno", "primavera", "foraggi", "vino", "raccolti"],
+      "dateAnchors": [],
+      "seasons": ["spring"],
+      "areas": ["gemona", "fvg"],
+      "editorialStatus": "translated_it_draft",
+      "uiReadiness": "not_ready",
+      "review": {
+        "sourceCheck": "normalized_page",
+        "needsCleanPageCheck": true,
+        "furReviewRequired": true,
+        "notes": "Tema forte per Scopri; evitare toni superstiziosi eccessivi."
+      },
+      "source": {
+        "label": "Ostermann 1894",
+        "pdfPage": 140,
+        "textPage": 115,
+        "sourcePath": "normalized-pages/page-140.txt",
+        "verifiedAgainst": "pages/page-140.txt",
+        "auditStatus": "partial"
+      }
+    },
+    {
+      "id": "ost-extract-538-streghe-meteo-archive",
+      "sourcePage": 538,
+      "textPage": 513,
+      "category": "folklore_meteo",
+      "primaryUse": "discover",
+      "secondaryUse": ["archive"],
+      "title": {
+        "itDraft": "Magia, nubi e tempeste nel folklore",
+        "fur": "pending_review"
+      },
+      "sourceText": {
+        "language": "it",
+        "excerpt": "Le streghe ed i maghi godono inoltre la potenza di riunire ed allontanare le nubi.",
+        "context": "La pagina attribuisce a streghe e maghi il controllo di nubi, fulmini, grandine, venti e caldo/freddo."
+      },
+      "translation": {
+        "itDraft": "Questa pagina mostra il lato piu' fantastico del corpus: nubi, fulmini, grandine e temperature estreme vengono attribuiti a poteri magici. Serve come contesto storico, non come contenuto di Almanacco.",
+        "furDraft": "pending_review",
+        "status": "it_draft"
+      },
+      "tags": ["folklore", "streghe", "temporali", "grandine", "archivio"],
+      "dateAnchors": [],
+      "seasons": ["all"],
+      "areas": ["fvg"],
+      "editorialStatus": "archive_context",
+      "uiReadiness": "not_ready",
+      "review": {
+        "sourceCheck": "normalized_page",
+        "needsCleanPageCheck": true,
+        "furReviewRequired": true,
+        "notes": "Archiviare come contesto; non usare in Home/Almanacco leggero."
+      },
+      "source": {
+        "label": "Ostermann 1894",
+        "pdfPage": 538,
+        "textPage": 513,
+        "sourcePath": "normalized-pages/page-538.txt",
+        "verifiedAgainst": "pages/page-538.txt",
+        "auditStatus": "partial"
+      }
+    },
+    {
+      "id": "ost-extract-040-luna-calendario-popolare",
+      "sourcePage": 40,
+      "textPage": 15,
+      "category": "luna_meteo",
+      "primaryUse": "discover",
+      "secondaryUse": ["almanac_luna", "archive"],
+      "title": {
+        "itDraft": "La luna nel calendario popolare",
+        "fur": "pending_review"
+      },
+      "sourceText": {
+        "language": "fur_it",
+        "excerpt": "Ogni mes si fas la lune, ogni di s'impare une.",
+        "context": "La pagina introduce la centralita' della luna nelle credenze popolari, nei lunari e nelle pratiche agricole."
+      },
+      "translation": {
+        "itDraft": "Ostermann apre il capitolo lunare raccontando quanto la luna pesasse nel calendario popolare: ogni mese una luna nuova, ogni giorno un'osservazione o una regola da imparare.",
+        "furDraft": "pending_review",
+        "status": "it_draft"
+      },
+      "tags": ["luna", "lunario", "calendario", "credenze_popolari"],
+      "dateAnchors": [],
+      "seasons": ["all"],
+      "areas": ["fvg"],
+      "editorialStatus": "translated_it_draft",
+      "uiReadiness": "not_ready",
+      "review": {
+        "sourceCheck": "normalized_page",
+        "needsCleanPageCheck": true,
+        "furReviewRequired": true,
+        "notes": "Buon ponte per Scopri/Almanacco; tenere distinto il dato astronomico reale dalle credenze storiche."
+      },
+      "source": {
+        "label": "Ostermann 1894",
+        "pdfPage": 40,
+        "textPage": 15,
+        "sourcePath": "normalized-pages/page-040.txt",
+        "verifiedAgainst": "pages/page-040.txt",
+        "auditStatus": "partial"
+      }
+    },
+    {
+      "id": "ost-extract-043-luna-fieno-viti-legna",
+      "sourcePage": 43,
+      "textPage": 18,
+      "category": "agricoltura_lunare",
+      "primaryUse": "discover",
+      "secondaryUse": ["almanac_luna", "archive"],
+      "title": {
+        "itDraft": "Luna, fieno, viti e legname",
+        "fur": "pending_review"
+      },
+      "sourceText": {
+        "language": "it",
+        "excerpt": "Il fieno sfalciato in crescente non e' appetito dagli animali; le viti potate in pari condizione daranno molta foglia e pochi grappoli.",
+        "context": "La pagina raccoglie regole popolari su luna crescente/calante per fieno, viti, legna e luna d'agosto."
+      },
+      "translation": {
+        "itDraft": "Nel lavoro dei campi la luna diventa una bussola simbolica: fieno, viti e legname vengono associati a crescente e calante, con regole pratiche tramandate ma da raccontare come tradizione, non come consiglio tecnico.",
+        "furDraft": "pending_review",
+        "status": "it_draft"
+      },
+      "tags": ["luna", "fieno", "viti", "legna", "lavori_dei_campi"],
+      "dateAnchors": ["08", "09"],
+      "seasons": ["summer", "autumn"],
+      "areas": ["fvg"],
+      "editorialStatus": "translated_it_draft",
+      "uiReadiness": "not_ready",
+      "review": {
+        "sourceCheck": "normalized_page",
+        "needsCleanPageCheck": true,
+        "furReviewRequired": true,
+        "notes": "Non trasformare in consigli agricoli attuali; utile per rubrica storica o Scopri."
+      },
+      "source": {
+        "label": "Ostermann 1894",
+        "pdfPage": 43,
+        "textPage": 18,
+        "sourcePath": "normalized-pages/page-043.txt",
+        "verifiedAgainst": "pages/page-043.txt",
+        "auditStatus": "partial"
+      }
+    },
+    {
+      "id": "ost-extract-057-giornate-santi",
+      "sourcePage": 57,
+      "textPage": 32,
+      "category": "calendario_stagionale",
+      "primaryUse": "discover",
+      "secondaryUse": ["almanac_calendar", "winter_calendar", "summer_calendar"],
+      "title": {
+        "itDraft": "Le giornate che si allungano",
+        "fur": "pending_review"
+      },
+      "sourceText": {
+        "language": "fur_it",
+        "excerpt": "A San Tomas, je la zornade plui curte. Da San Tomas a Nadal, cres il di un pas di gial.",
+        "context": "La pagina elenca proverbi sul crescere e accorciarsi delle giornate, da San Tommaso a San Giovanni."
+      },
+      "translation": {
+        "itDraft": "Il calendario popolare misura la luce con immagini semplici: dopo San Tommaso il giorno cresce di un passo di gallo, fino ai riferimenti estivi di San Luigi e San Giovanni.",
+        "furDraft": "pending_review",
+        "status": "it_draft"
+      },
+      "tags": ["giornate", "luce", "san_tommaso", "san_giovanni", "solstizio"],
+      "dateAnchors": ["12-21", "12-25", "01-06", "06-21", "06-24"],
+      "seasons": ["winter", "summer"],
+      "areas": ["fvg"],
+      "editorialStatus": "translated_it_draft",
+      "uiReadiness": "not_ready",
+      "review": {
+        "sourceCheck": "normalized_page",
+        "needsCleanPageCheck": true,
+        "furReviewRequired": true,
+        "notes": "Molto adatto ad Almanacco, ma va normalizzato con date moderne e FUR revisionato."
+      },
+      "source": {
+        "label": "Ostermann 1894",
+        "pdfPage": 57,
+        "textPage": 32,
+        "sourcePath": "normalized-pages/page-057.txt",
+        "verifiedAgainst": "pages/page-057.txt",
+        "auditStatus": "partial"
+      }
+    },
+    {
+      "id": "ost-extract-058-inverno-estate-stagioni",
+      "sourcePage": 58,
+      "textPage": 33,
+      "category": "calendario_stagionale",
+      "primaryUse": "discover",
+      "secondaryUse": ["season_calendar", "almanac_weather"],
+      "title": {
+        "itDraft": "Inverno mite, estate piovosa",
+        "fur": "not_required"
+      },
+      "sourceText": {
+        "language": "it_fur",
+        "excerpt": "Quando l'inverno e' mite, l'estate e' piovoso e burrascoso.",
+        "context": "La pagina collega l'andamento delle stagioni e introduce villotte sulla primavera."
+      },
+      "translation": {
+        "itDraft": "Le stagioni vengono lette come un equilibrio: a un inverno mite o asciutto il racconto popolare fa seguire un'estate o una primavera di segno opposto.",
+        "furDraft": "not_required",
+        "status": "editorially_closed"
+      },
+      "tags": ["inverno", "estate", "primavera", "pioggia", "stagioni"],
+      "dateAnchors": [],
+      "seasons": ["winter", "spring", "summer"],
+      "areas": ["fvg"],
+      "editorialStatus": "do_not_publish",
+      "uiReadiness": "not_ready",
+      "review": {
+        "sourceCheck": "editorially_closed_partial_source",
+        "needsCleanPageCheck": false,
+        "furReviewRequired": false,
+        "notes": "Chiuso senza pubblicazione: la formulazione della fonte resta controllata solo parzialmente e non giustifica una scheda autonoma. Conservare l'estratto come materiale d'archivio, senza trasformarlo in regola meteorologica."
+      },
+      "source": {
+        "label": "Ostermann 1894",
+        "pdfPage": 58,
+        "textPage": 33,
+        "sourcePath": "normalized-pages/page-058.txt",
+        "verifiedAgainst": "pages/page-058.txt",
+        "auditStatus": "partial"
+      }
+    },
+    {
+      "id": "ost-extract-059-candelora-pasqua-ascensione",
+      "sourcePage": 59,
+      "textPage": 34,
+      "category": "calendario_meteo",
+      "primaryUse": "discover",
+      "secondaryUse": ["almanac_calendar", "proverb_candidates"],
+      "title": {
+        "itDraft": "Candelora, Pasqua e Ascensione",
+        "fur": "pending_review"
+      },
+      "sourceText": {
+        "language": "fur_it",
+        "excerpt": "A Madone des chandelis s'a l'e nul, o sin fur; s'a l'e clar a miez unviar.",
+        "context": "La pagina raccoglie proverbi su Candelora, San Biagio, Venerdi Santo, Pasqua e Ascensione."
+      },
+      "translation": {
+        "itDraft": "Fra febbraio e primavera il calendario popolare lega il tempo dei giorni sacri alla fine dell'inverno e alla pioggia delle settimane successive: materiale ricco, ma da separare in schede datate.",
+        "furDraft": "pending_review",
+        "status": "it_draft"
+      },
+      "tags": ["candelora", "san_biagio", "venerdi_santo", "pasqua", "ascensione"],
+      "dateAnchors": ["02-02", "02-03", "04", "05"],
+      "seasons": ["winter", "spring"],
+      "areas": ["carnia", "fvg"],
+      "editorialStatus": "translated_it_draft",
+      "uiReadiness": "not_ready",
+      "review": {
+        "sourceCheck": "normalized_page",
+        "needsCleanPageCheck": true,
+        "furReviewRequired": true,
+        "notes": "Ottima miniera per 365 proverbi, ma va spezzata in singoli record dopo revisione FUR."
+      },
+      "source": {
+        "label": "Ostermann 1894",
+        "pdfPage": 59,
+        "textPage": 34,
+        "sourcePath": "normalized-pages/page-059.txt",
+        "verifiedAgainst": "pages/page-059.txt",
+        "auditStatus": "partial"
+      }
+    },
+    {
+      "id": "ost-extract-068-fumo-midili",
+      "sourcePage": 68,
+      "textPage": 43,
+      "category": "calendario_rituale",
+      "primaryUse": "discover",
+      "secondaryUse": ["epiphany_calendar", "archive"],
+      "title": {
+        "itDraft": "Il fumo del Midili",
+        "fur": "pending_review"
+      },
+      "sourceText": {
+        "language": "it_fur",
+        "excerpt": "Se il fumo del Midili si volge a levante si avra' annata di abbondanza; se sara' spinto verso ponente, di miseria.",
+        "context": "La direzione del fumo viene letta come presagio dell'annata, con due proverbi friulani sul fumo."
+      },
+      "translation": {
+        "itDraft": "Il fumo dei fuochi rituali diventa una specie di bussola popolare dell'annata: verso levante annuncia abbondanza, verso ponente miseria, secondo una lettura simbolica antica.",
+        "furDraft": "pending_review",
+        "status": "it_draft"
+      },
+      "tags": ["midili", "fumo", "epifania", "annata", "presagi"],
+      "dateAnchors": ["01-06"],
+      "seasons": ["winter"],
+      "areas": ["pontebba", "fvg"],
+      "editorialStatus": "translated_it_draft",
+      "uiReadiness": "not_ready",
+      "review": {
+        "sourceCheck": "normalized_page",
+        "needsCleanPageCheck": true,
+        "furReviewRequired": true,
+        "notes": "Contenuto molto identitario; evitare di presentarlo come previsione."
+      },
+      "source": {
+        "label": "Ostermann 1894",
+        "pdfPage": 68,
+        "textPage": 43,
+        "sourcePath": "normalized-pages/page-068.txt",
+        "verifiedAgainst": "pages/page-068.txt",
+        "auditStatus": "partial"
+      }
+    },
+    {
+      "id": "ost-extract-087-feste-ore-giorno",
+      "sourcePage": 87,
+      "textPage": 62,
+      "category": "calendario_rituale",
+      "primaryUse": "discover",
+      "secondaryUse": ["calendar_glossary", "almanac_calendar"],
+      "title": {
+        "itDraft": "Feste e ore del giorno",
+        "fur": "pending_review"
+      },
+      "sourceText": {
+        "language": "fur_it",
+        "excerpt": "Il giorno si suddivide tuttora dai nostri friulani in albe, matine, miesdi, dopo gustat, sere, avemarie, ore di gnot.",
+        "context": "La pagina raccoglie nomi locali di feste e scansioni quotidiane del tempo."
+      },
+      "translation": {
+        "itDraft": "Accanto ai nomi delle feste, Ostermann conserva anche un modo friulano di dividere la giornata: alba, mattina, mezzodi', dopo pranzo, sera, avemaria e ore di notte.",
+        "furDraft": "pending_review",
+        "status": "it_draft"
+      },
+      "tags": ["feste", "ore_del_giorno", "angelus", "gemona", "lessico"],
+      "dateAnchors": ["12-13", "12-25", "01-06"],
+      "seasons": ["all"],
+      "areas": ["gemona", "fvg"],
+      "editorialStatus": "translated_it_draft",
+      "uiReadiness": "not_ready",
+      "review": {
+        "sourceCheck": "normalized_page",
+        "needsCleanPageCheck": true,
+        "furReviewRequired": true,
+        "notes": "Piu' adatto a Scopri/glossario che ad Almanacco giornaliero."
+      },
+      "source": {
+        "label": "Ostermann 1894",
+        "pdfPage": 87,
+        "textPage": 62,
+        "sourcePath": "normalized-pages/page-087.txt",
+        "verifiedAgainst": "pages/page-087.txt",
+        "auditStatus": "partial"
+      }
+    },
+    {
+      "id": "ost-extract-096-garbin-vento-palme",
+      "sourcePage": 96,
+      "textPage": 71,
+      "category": "meteo_popolare",
+      "primaryUse": "discover",
+      "secondaryUse": ["almanac_weather", "wind_glossary"],
+      "title": {
+        "itDraft": "Garbin e vento delle Palme",
+        "fur": "pending_review"
+      },
+      "sourceText": {
+        "language": "fur_it",
+        "excerpt": "Garbin al lasse il timp ch'al chate.",
+        "context": "La pagina parla del garbino, del vento osservato nella Domenica delle Palme e della durata popolare dei venti."
+      },
+      "translation": {
+        "itDraft": "Il garbino e' descritto come un vento che lascia il tempo come lo trova. Nella Domenica delle Palme, inoltre, il vento del Passio veniva osservato come segno dell'anno.",
+        "furDraft": "pending_review",
+        "status": "it_draft"
+      },
+      "tags": ["garbin", "vento", "domenica_delle_palme", "palme", "buere"],
+      "dateAnchors": ["03", "04"],
+      "seasons": ["spring", "winter"],
+      "areas": ["fvg"],
+      "editorialStatus": "translated_it_draft",
+      "uiReadiness": "not_ready",
+      "review": {
+        "sourceCheck": "normalized_page",
+        "needsCleanPageCheck": true,
+        "furReviewRequired": true,
+        "notes": "Buono per lessico vento e rubrica Scopri; separare folklore fantastico della stessa pagina."
+      },
+      "source": {
+        "label": "Ostermann 1894",
+        "pdfPage": 96,
+        "textPage": 71,
+        "sourcePath": "normalized-pages/page-096.txt",
+        "verifiedAgainst": "pages/page-096.txt",
+        "auditStatus": "partial"
+      }
+    },
+    {
+      "id": "ost-extract-119-campane-temporale-grandine",
+      "sourcePage": 119,
+      "textPage": 94,
+      "category": "folklore_meteo",
+      "primaryUse": "discover",
+      "secondaryUse": ["archive"],
+      "title": {
+        "itDraft": "Campane contro temporali e grandine",
+        "fur": "pending_review"
+      },
+      "sourceText": {
+        "language": "it",
+        "excerpt": "In alcuni paesi si suonano a stormo le campane all'avvicinarsi del temporale.",
+        "context": "La pagina racconta l'uso di suonare le campane contro nubi temporalesche, grandine e paura del maltempo."
+      },
+      "translation": {
+        "itDraft": "Quando arrivava il temporale, in alcuni paesi si suonavano le campane a stormo. Ostermann registra questa pratica come risposta comunitaria alla paura della grandine.",
+        "furDraft": "pending_review",
+        "status": "it_draft"
+      },
+      "tags": ["campane", "temporale", "grandine", "folklore", "paesi"],
+      "dateAnchors": [],
+      "seasons": ["spring", "summer"],
+      "areas": ["basse", "fvg"],
+      "editorialStatus": "archive_context",
+      "uiReadiness": "not_ready",
+      "review": {
+        "sourceCheck": "normalized_page",
+        "needsCleanPageCheck": true,
+        "furReviewRequired": true,
+        "notes": "Materiale storico sensibile; non trasformare in consiglio pratico."
+      },
+      "source": {
+        "label": "Ostermann 1894",
+        "pdfPage": 119,
+        "textPage": 94,
+        "sourcePath": "normalized-pages/page-119.txt",
+        "verifiedAgainst": "pages/page-119.txt",
+        "auditStatus": "partial"
+      }
+    },
+    {
+      "id": "ost-extract-121-riti-grandine-nubi",
+      "sourcePage": 121,
+      "textPage": 96,
+      "category": "folklore_meteo",
+      "primaryUse": "discover",
+      "secondaryUse": ["archive"],
+      "title": {
+        "itDraft": "Riti contro grandine e nubi",
+        "fur": "pending_review"
+      },
+      "sourceText": {
+        "language": "it",
+        "excerpt": "Si brucia pure olivo benedetto, cera del triangolo o del cero pasquale, ed incenso.",
+        "context": "La pagina raccoglie riti e oggetti protettivi contro nubi temporalesche e grandine."
+      },
+      "translation": {
+        "itDraft": "Olivo benedetto, cera pasquale, incenso, timoni dei carri e ghirlande di San Giovanni compongono un repertorio di protezioni popolari contro grandine e temporali.",
+        "furDraft": "pending_review",
+        "status": "it_draft"
+      },
+      "tags": ["grandine", "nubi", "san_giovanni", "olivo_benedetto", "rituali"],
+      "dateAnchors": ["06-24"],
+      "seasons": ["spring", "summer"],
+      "areas": ["basso_friuli", "friuli_orientale", "fvg"],
+      "editorialStatus": "archive_context",
+      "uiReadiness": "not_ready",
+      "review": {
+        "sourceCheck": "normalized_page",
+        "needsCleanPageCheck": true,
+        "furReviewRequired": true,
+        "notes": "Da usare solo come contesto storico e con cornice esplicita."
+      },
+      "source": {
+        "label": "Ostermann 1894",
+        "pdfPage": 121,
+        "textPage": 96,
+        "sourcePath": "normalized-pages/page-121.txt",
+        "verifiedAgainst": "pages/page-121.txt",
+        "auditStatus": "partial"
+      }
+    },
+    {
+      "id": "ost-extract-122-segni-grandine-dragone",
+      "sourcePage": 122,
+      "textPage": 97,
+      "category": "folklore_meteo",
+      "primaryUse": "discover",
+      "secondaryUse": ["archive"],
+      "title": {
+        "itDraft": "Segni di grandine e racconti di maltempo",
+        "fur": "pending_review"
+      },
+      "sourceText": {
+        "language": "it",
+        "excerpt": "Se il fumo dei fuochi dell'Epifania resta basso e va verso tramontana, indica che nell'anno cadra' frequente la grandine.",
+        "context": "Il normalizzato e' rumoroso; l'OCR alternativo conferma fumo dell'Epifania, grandine, dragone e racconti processuali."
+      },
+      "translation": {
+        "itDraft": "La pagina unisce indizi atmosferici, fuochi dell'Epifania e racconti fantastici sul maltempo: materiale utile per capire l'immaginario della grandine, non per una card pratica.",
+        "furDraft": "pending_review",
+        "status": "it_draft"
+      },
+      "tags": ["grandine", "epifania", "fumo", "dragone", "slavia"],
+      "dateAnchors": ["01-06"],
+      "seasons": ["winter", "spring", "summer"],
+      "areas": ["slavia", "maniago", "san_daniele", "fvg"],
+      "editorialStatus": "archive_context",
+      "uiReadiness": "not_ready",
+      "review": {
+        "sourceCheck": "ocr_alternative_page",
+        "needsCleanPageCheck": true,
+        "furReviewRequired": true,
+        "notes": "Normalizzato pessimo; OCR psm4 leggibile ma con mojibake. Usare solo dopo verifica su immagine/PDF."
+      },
+      "source": {
+        "label": "Ostermann 1894",
+        "pdfPage": 122,
+        "textPage": 97,
+        "sourcePath": "normalized-pages/page-122.txt",
+        "verifiedAgainst": "ocr-pages/page-122-psm4.txt",
+        "ocrImagePath": "ocr-pages/page-122.png",
+        "auditStatus": "ocr_alternative_checked_partial"
+      }
+    },
+    {
+      "id": "ost-extract-129-piante-fulmini",
+      "sourcePage": 129,
+      "textPage": 104,
+      "category": "folklore_meteo",
+      "primaryUse": "discover",
+      "secondaryUse": ["archive"],
+      "title": {
+        "itDraft": "Piante e fulmini",
+        "fur": "pending_review"
+      },
+      "sourceText": {
+        "language": "it",
+        "excerpt": "Altri preservativi sono i rami d'alloro, le viti selvatiche o brionie, il fico, il pino, l'abete, il larice ed il semprevivo selvatico dei tetti.",
+        "context": "La pagina raccoglie credenze su fulmini, piante protettive, pietre e comportamento durante i temporali."
+      },
+      "translation": {
+        "itDraft": "Il fulmine viene raccontato attraverso oggetti, piante e precauzioni popolari: alloro, brionia, fico e semprevivo dei tetti appartengono a un repertorio storico di protezione domestica.",
+        "furDraft": "pending_review",
+        "status": "it_draft"
+      },
+      "tags": ["fulmini", "temporali", "piante", "alloro", "semprevivo"],
+      "dateAnchors": ["06-24"],
+      "seasons": ["spring", "summer"],
+      "areas": ["slavia_italiana", "fvg"],
+      "editorialStatus": "archive_context",
+      "uiReadiness": "not_ready",
+      "review": {
+        "sourceCheck": "normalized_page",
+        "needsCleanPageCheck": true,
+        "furReviewRequired": true,
+        "notes": "Non usare come sicurezza meteo; puo' diventare contenuto storico su Scopri con disclaimer."
+      },
+      "source": {
+        "label": "Ostermann 1894",
+        "pdfPage": 129,
+        "textPage": 104,
+        "sourcePath": "normalized-pages/page-129.txt",
+        "verifiedAgainst": "pages/page-129.txt",
+        "auditStatus": "partial"
+      }
+    },
+    {
+      "id": "ost-extract-141-arcobaleno-tempo",
+      "sourcePage": 141,
+      "textPage": 116,
+      "category": "meteo_popolare",
+      "primaryUse": "discover",
+      "secondaryUse": ["almanac_weather", "spring_calendar"],
+      "title": {
+        "itDraft": "Arcobaleno e tre giorni di tempo",
+        "fur": "pending_review"
+      },
+      "sourceText": {
+        "language": "fur_it",
+        "excerpt": "Il cercli di San March la matine, ploe vizine.",
+        "context": "La pagina continua il tema dell'arcobaleno e cita il diario Del Negro su pioggia e vento dopo l'arco."
+      },
+      "translation": {
+        "itDraft": "L'arcobaleno viene interpretato come segnale ambiguo: a volte bel tempo, a volte tre giorni di vento o pioggia, secondo posizione e momento della comparsa.",
+        "furDraft": "pending_review",
+        "status": "it_draft"
+      },
+      "tags": ["arcobaleno", "san_marco", "pioggia", "vento", "del_negro"],
+      "dateAnchors": ["04-25", "05-27", "06-09", "07-01"],
+      "seasons": ["spring", "summer", "autumn"],
+      "areas": ["fvg"],
+      "editorialStatus": "translated_it_draft",
+      "uiReadiness": "not_ready",
+      "review": {
+        "sourceCheck": "normalized_page",
+        "needsCleanPageCheck": true,
+        "furReviewRequired": true,
+        "notes": "Ottimo completamento della pagina 140; va tenuto come tradizione meteorologica, non previsione."
+      },
+      "source": {
+        "label": "Ostermann 1894",
+        "pdfPage": 141,
+        "textPage": 116,
+        "sourcePath": "normalized-pages/page-141.txt",
+        "verifiedAgainst": "pages/page-141.txt",
+        "auditStatus": "partial"
+      }
+    },
+    {
+      "id": "ost-extract-146-aloni-lunari",
+      "sourcePage": 146,
+      "textPage": 121,
+      "category": "luna_meteo",
+      "primaryUse": "discover",
+      "secondaryUse": ["almanac_luna", "almanac_weather"],
+      "title": {
+        "itDraft": "Aloni lunari e vento",
+        "fur": "pending_review"
+      },
+      "sourceText": {
+        "language": "fur_it",
+        "excerpt": "Cercli vizin, ploe lontane; cercli lontan, ploe vizine.",
+        "context": "La pagina descrive paraseleni, aloni lunari, pioggia, vento e bufera."
+      },
+      "translation": {
+        "itDraft": "Gli aloni della luna entrano nella meteorologia popolare: cerchio vicino o lontano, apertura dell'anello e numero dei cerchi diventano segnali di pioggia, vento o bufera.",
+        "furDraft": "pending_review",
+        "status": "it_draft"
+      },
+      "tags": ["luna", "aloni", "paraseleni", "pioggia", "vento", "bufera"],
+      "dateAnchors": [],
+      "seasons": ["all"],
+      "areas": ["fvg"],
+      "editorialStatus": "translated_it_draft",
+      "uiReadiness": "not_ready",
+      "review": {
+        "sourceCheck": "normalized_page",
+        "needsCleanPageCheck": true,
+        "furReviewRequired": true,
+        "notes": "Candidato forte per Almanacco/Scopri dopo revisione grafia FUR."
+      },
+      "source": {
+        "label": "Ostermann 1894",
+        "pdfPage": 146,
+        "textPage": 121,
+        "sourcePath": "normalized-pages/page-146.txt",
+        "verifiedAgainst": "pages/page-146.txt",
+        "auditStatus": "partial"
+      }
+    },
+    {
+      "id": "ost-extract-189-annate-erbe-funghi",
+      "sourcePage": 189,
+      "textPage": 164,
+      "category": "agricoltura_natura",
+      "primaryUse": "discover",
+      "secondaryUse": ["season_calendar", "proverb_candidates"],
+      "title": {
+        "itDraft": "Annate umide, erbe e funghi",
+        "fur": "pending_review"
+      },
+      "sourceText": {
+        "language": "fur_it",
+        "excerpt": "Fonchs in cuantitat, an tribulat. Anade di jerbe, anade di mierde.",
+        "context": "La pagina raccoglie proverbi su pioggia, funghi, erbe, siccita' e gennaio."
+      },
+      "translation": {
+        "itDraft": "L'annata umida viene raccontata attraverso funghi, erbe e fatica nei campi: un blocco ricco di proverbi, utile per costruire un archivio stagionale controllato.",
+        "furDraft": "pending_review",
+        "status": "it_draft"
+      },
+      "tags": ["pioggia", "funghi", "erbe", "annata", "gennaio"],
+      "dateAnchors": ["01", "01-22", "01-28"],
+      "seasons": ["winter", "spring", "autumn"],
+      "areas": ["fvg"],
+      "editorialStatus": "translated_it_draft",
+      "uiReadiness": "not_ready",
+      "review": {
+        "sourceCheck": "normalized_page",
+        "needsCleanPageCheck": true,
+        "furReviewRequired": true,
+        "notes": "Da spezzare in piu' proverbi datati, alcuni con OCR e punteggiatura incerti."
+      },
+      "source": {
+        "label": "Ostermann 1894",
+        "pdfPage": 189,
+        "textPage": 164,
+        "sourcePath": "normalized-pages/page-189.txt",
+        "verifiedAgainst": "pages/page-189.txt",
+        "auditStatus": "partial"
+      }
+    },
+    {
+      "id": "ost-extract-192-vigna-santi-vendemmia",
+      "sourcePage": 192,
+      "textPage": 167,
+      "category": "calendario_agricolo",
+      "primaryUse": "discover",
+      "secondaryUse": ["almanac_calendar", "proverb_candidates"],
+      "title": {
+        "itDraft": "Vigna, santi e vendemmia",
+        "fur": "pending_review"
+      },
+      "sourceText": {
+        "language": "fur_it",
+        "excerpt": "Ploe a San Barnaba, il vin al va.",
+        "context": "La pagina raccoglie proverbi su vite, uva, San Barnaba, San Vito, Assunta, vendemmia e vespe."
+      },
+      "translation": {
+        "itDraft": "Il tempo dei santi di giugno e agosto viene collegato alla vigna: pioggia, sole, vespe e foglie diventano segni popolari per uva, vino e vendemmia.",
+        "furDraft": "pending_review",
+        "status": "it_draft"
+      },
+      "tags": ["vigna", "vendemmia", "san_barnaba", "san_vito", "assunta", "vespe"],
+      "dateAnchors": ["06-11", "06-18", "08-15", "08-18", "09-10"],
+      "seasons": ["summer", "autumn"],
+      "areas": ["fvg"],
+      "editorialStatus": "translated_it_draft",
+      "uiReadiness": "not_ready",
+      "review": {
+        "sourceCheck": "normalized_page",
+        "needsCleanPageCheck": true,
+        "furReviewRequired": true,
+        "notes": "Molti versi marcati con punti interrogativi nel normalizzato; non promuovere senza revisione pagina/PDF."
+      },
+      "source": {
+        "label": "Ostermann 1894",
+        "pdfPage": 192,
+        "textPage": 167,
+        "sourcePath": "normalized-pages/page-192.txt",
+        "verifiedAgainst": "pages/page-192.txt",
+        "auditStatus": "partial"
+      }
+    },
+    {
+      "id": "ost-extract-234-erbe-buona-stagione",
+      "sourcePage": 234,
+      "textPage": 209,
+      "category": "erbe_popolari",
+      "primaryUse": "discover",
+      "secondaryUse": ["archive", "spring_calendar"],
+      "title": {
+        "itDraft": "Erbe, nomi locali e buona stagione",
+        "fur": "pending_review"
+      },
+      "sourceText": {
+        "language": "it_fur",
+        "excerpt": "Al riapparire della buona stagione usano pascerne anche i cavalli signorili, per purgativo.",
+        "context": "La pagina elenca nomi locali di erbe e usi popolari, tra cedrina, lupino e gramigna."
+      },
+      "translation": {
+        "itDraft": "Il lessico delle erbe mostra un Friuli fatto di nomi locali, stagione e usi domestici. Per l'app va trattato come cultura botanica storica, non come indicazione medica.",
+        "furDraft": "Il lessic des jerbis al mostre un Friûl fat di nons locâi, stagjon e ûs di cjase. Par Meteo Friûl, chest materiâl al va tratât come memorie botaniche storiche, no come indicazions medichis o pratichis.",
+        "status": "it_draft"
+      },
+      "tags": ["erbe", "luise", "lupino", "gramigna", "primavera", "lessico"],
+      "dateAnchors": [],
+      "seasons": ["spring", "summer"],
+      "areas": ["basso_friuli", "fvg"],
+      "editorialStatus": "archive_context",
+      "uiReadiness": "not_ready",
+      "review": {
+        "sourceCheck": "clean_page_checked",
+        "needsCleanPageCheck": false,
+        "furReviewRequired": true,
+        "notes": "Fonte controllata su pagina normalizzata. Bozza FUR inserita ma non approvata. Tema buono per Archivio Scopri solo come lessico/cultura popolare: evitare ogni tono di consiglio medico o pratico sulle erbe."
+      },
+      "source": {
+        "label": "Ostermann 1894",
+        "pdfPage": 234,
+        "textPage": 209,
+        "sourcePath": "normalized-pages/page-234.txt",
+        "verifiedAgainst": "pages/page-234.txt",
+        "auditStatus": "normalized_checked",
+        "auditNote": "Pagina controllata: Luise/erba cedrina, Luvin/lupino, Malegrame/gramigna e nota sulla buona stagione. Da usare come racconto storico-lessicale, non come indicazione pratica."
+      }
+    },
+    {
+      "id": "ost-extract-608-san-giorgio-barnaba",
+      "sourcePage": 608,
+      "textPage": 583,
+      "category": "calendario_rituale",
+      "primaryUse": "discover",
+      "secondaryUse": ["almanac_calendar", "spring_calendar"],
+      "title": {
+        "itDraft": "San Giorgio e San Barnaba",
+        "fur": "pending_review"
+      },
+      "sourceText": {
+        "language": "it_fur",
+        "excerpt": "San Barnaba e' lui che ci assicura abbondanti vendemmie proteggendo le viti.",
+        "context": "La pagina lega San Giorgio alla primavera e San Barnaba alla protezione delle viti."
+      },
+      "translation": {
+        "itDraft": "San Giorgio apre il pascolo e la primavera, mentre San Barnaba entra nella cultura della vigna: due figure utili per raccontare il calendario agricolo friulano.",
+        "furDraft": "pending_review",
+        "status": "it_draft"
+      },
+      "tags": ["san_giorgio", "san_barnaba", "primavera", "viti", "vendemmia"],
+      "dateAnchors": ["04-23", "06-11"],
+      "seasons": ["spring", "summer"],
+      "areas": ["forni_savorgnano", "fvg"],
+      "editorialStatus": "translated_it_draft",
+      "uiReadiness": "not_ready",
+      "review": {
+        "sourceCheck": "normalized_page",
+        "needsCleanPageCheck": true,
+        "furReviewRequired": true,
+        "notes": "Utile per santo/tradizione del giorno; evitare tono devozionale non coerente con app meteo."
+      },
+      "source": {
+        "label": "Ostermann 1894",
+        "pdfPage": 608,
+        "textPage": 583,
+        "sourcePath": "normalized-pages/page-608.txt",
+        "verifiedAgainst": "pages/page-608.txt",
+        "auditStatus": "partial"
+      }
+    },
+    {
+      "id": "ost-extract-609-ermacora-bufere",
+      "sourcePage": 609,
+      "textPage": 584,
+      "category": "calendario_meteo",
+      "primaryUse": "discover",
+      "secondaryUse": ["almanac_calendar", "summer_calendar"],
+      "title": {
+        "itDraft": "Sant'Ermacora e la settimana delle bufere",
+        "fur": "pending_review"
+      },
+      "sourceText": {
+        "language": "it",
+        "excerpt": "Siccome ricorre nell'epoca delle grandini, delle bufere, cosi' nei giorni prima e dopo la sua festa si sta ogni anno in attesa di qualche malanno.",
+        "context": "La pagina collega Sant'Ermacora, patrono aquileiese, a grandini e bufere di luglio."
+      },
+      "translation": {
+        "itDraft": "La festa di Sant'Ermacora cade in un periodo temuto per grandini e bufere: per questo la settimana viene raccontata da Ostermann come tempo di attesa e prudenza popolare.",
+        "furDraft": "pending_review",
+        "status": "it_draft"
+      },
+      "tags": ["sant_ermacora", "grandine", "bufere", "udine", "aquileia"],
+      "dateAnchors": ["07-12"],
+      "seasons": ["summer"],
+      "areas": ["udine", "aquileia", "fvg"],
+      "editorialStatus": "translated_it_draft",
+      "uiReadiness": "not_ready",
+      "review": {
+        "sourceCheck": "normalized_page",
+        "needsCleanPageCheck": true,
+        "furReviewRequired": true,
+        "notes": "Buon contenuto Almanacco/Scopri; va formulato come memoria locale, non allerta meteo."
+      },
+      "source": {
+        "label": "Ostermann 1894",
+        "pdfPage": 609,
+        "textPage": 584,
+        "sourcePath": "normalized-pages/page-609.txt",
+        "verifiedAgainst": "pages/page-609.txt",
+        "auditStatus": "partial"
+      }
+    },
+    {
+      "id": "ost-extract-674-giochi-neve-slitte",
+      "sourcePage": 674,
+      "textPage": 649,
+      "category": "neve_popolare",
+      "primaryUse": "discover",
+      "secondaryUse": ["winter_calendar"],
+      "title": {
+        "itDraft": "Giochi di neve e slitte",
+        "fur": "pending_review"
+      },
+      "sourceText": {
+        "language": "it_fur",
+        "excerpt": "Lo spasso invernale di fare pallottole di neve e di tirarsele l'un l'altro, nel Friuli dove la neve quasi mai non difetta.",
+        "context": "La pagina racconta giochi di neve, divieti medievali udinesi e uso di slitte e loze."
+      },
+      "translation": {
+        "itDraft": "La neve non e' solo clima: e' gioco, memoria urbana e vita di montagna. Ostermann cita pallottole di neve, uno statuto udinese del 1348 e le slitte usate per ragazzi, fieno e legna.",
+        "furDraft": "pending_review",
+        "status": "it_draft"
+      },
+      "tags": ["neve", "slitte", "giochi", "udine", "inverno", "loze"],
+      "dateAnchors": ["02"],
+      "seasons": ["winter"],
+      "areas": ["udine", "montagna", "fvg"],
+      "editorialStatus": "translated_it_draft",
+      "uiReadiness": "not_ready",
+      "review": {
+        "sourceCheck": "normalized_page",
+        "needsCleanPageCheck": true,
+        "furReviewRequired": true,
+        "notes": "Ottimo contenuto Scopri invernale; richiede revisione FUR per termini loze/jose."
+      },
+      "source": {
+        "label": "Ostermann 1894",
+        "pdfPage": 674,
+        "textPage": 649,
+        "sourcePath": "normalized-pages/page-674.txt",
+        "verifiedAgainst": "pages/page-674.txt",
+        "auditStatus": "partial"
+      }
+    },
+    {
+      "id": "ost-extract-028-almanacchi-lunari",
+      "curatedRecordId": "ost-0054-almanacchi-lunari",
+      "sourcePage": 28,
+      "textPage": 3,
+      "category": "calendario_storico",
+      "primaryUse": "discover",
+      "secondaryUse": ["almanac_context"],
+      "title": {
+        "itDraft": "Perche un almanacco",
+        "fur": "approved_in_curated_record"
+      },
+      "sourceText": {
+        "language": "curated_it_fur",
+        "excerpt": "L'almanacco come forma antica di conoscenza del tempo.",
+        "context": "Record curato recuperato dall'archivio Ostermann precedente; base culturale dell'almanacco e diario Del Negro."
+      },
+      "translation": {
+        "itDraft": "Ostermann spiega che almanacchi e lunari erano tra i libri da cui il popolo traeva la propria scienza del cielo. Per Meteo Friul questa e' una radice importante: non inventare folklore, ma ordinare una memoria gia scritta.",
+        "furDraft": "approved_in_curated_record",
+        "status": "curated_recovered"
+      },
+      "tags": ["almanacco", "lunari", "del_negro", "luna", "pioggia"],
+      "dateAnchors": [],
+      "seasons": ["all"],
+      "areas": ["fvg", "carnia"],
+      "editorialStatus": "curated_recovered",
+      "uiReadiness": "not_ready",
+      "review": {
+        "sourceCheck": "curated_record",
+        "needsCleanPageCheck": false,
+        "furReviewRequired": false,
+        "notes": "Testo IT/FUR gia curato in ostermannCulturalDiscover.json; tenere come contesto Scopri/Almanacco, non duplicare copy finale."
+      },
+      "source": {
+        "label": "Ostermann 1894",
+        "pdfPage": 28,
+        "textPage": 3,
+        "sourcePath": "normalized-pages/page-028.txt",
+        "verifiedAgainst": "pages/page-028.txt",
+        "auditStatus": "curated_not_required"
+      }
+    },
+    {
+      "id": "ost-extract-045-luna-maiale",
+      "curatedRecordId": "ost-0012-luna-maiale",
+      "sourcePage": 45,
+      "textPage": 20,
+      "category": "agricoltura_lunare",
+      "primaryUse": "discover",
+      "secondaryUse": ["almanac_luna", "archive"],
+      "title": {
+        "itDraft": "La luna e il maiale",
+        "fur": "approved_in_curated_record"
+      },
+      "sourceText": {
+        "language": "curated_it_fur",
+        "excerpt": "La luna entra anche nella dispensa.",
+        "context": "Record curato recuperato dall'archivio Ostermann precedente; vita domestica rurale, macellazione e luna."
+      },
+      "translation": {
+        "itDraft": "Anche la vita domestica seguiva il calendario lunare. Ostermann registra credenze legate alla macellazione del maiale e alla conservazione delle carni: un frammento concreto della cultura rurale.",
+        "furDraft": "approved_in_curated_record",
+        "status": "curated_recovered"
+      },
+      "tags": ["luna", "maiale", "dispensa", "vita_rurale"],
+      "dateAnchors": [],
+      "seasons": ["autumn", "winter", "spring"],
+      "areas": ["fvg"],
+      "editorialStatus": "curated_recovered",
+      "uiReadiness": "not_ready",
+      "review": {
+        "sourceCheck": "curated_record",
+        "needsCleanPageCheck": false,
+        "furReviewRequired": false,
+        "notes": "Materiale storico rurale; non trasformare in consiglio pratico."
+      },
+      "source": {
+        "label": "Ostermann 1894",
+        "pdfPage": 45,
+        "textPage": 20,
+        "sourcePath": "normalized-pages/page-045.txt",
+        "verifiedAgainst": "pages/page-045.txt",
+        "auditStatus": "curated_not_required"
+      }
+    },
+    {
+      "id": "ost-extract-046-luna-uccelli-bucato",
+      "curatedRecordId": "ost-0013-luna-uccelli-bucato",
+      "sourcePage": 46,
+      "textPage": 21,
+      "category": "luna_meteo",
+      "primaryUse": "discover",
+      "secondaryUse": ["archive"],
+      "title": {
+        "itDraft": "La luna nelle cose di casa",
+        "fur": "short_ready_in_curated_record"
+      },
+      "sourceText": {
+        "language": "curated_it_fur",
+        "excerpt": "Un frammento d'archivio sulla luna quotidiana.",
+        "context": "Record curato recuperato dall'archivio Ostermann precedente; passaggio degli uccelli, bucato, capelli e unghie."
+      },
+      "translation": {
+        "itDraft": "La luna compare anche nei gesti minori: passaggio degli uccelli, bucato, capelli, unghie. Non tutto deve diventare card principale, ma questo materiale resta utile per capire quanto fosse estesa la grammatica lunare.",
+        "furDraft": "La lune e jentre ancje tai piçui segns di ogni dì: il passaç dai ucei, la bugade, i cjavei, lis onglis. No dut al à di deventâ schede principâl, ma chest materiâl al reste util par capî trop che la gramatiche lunâr e jere largje.",
+        "status": "curated_recovered"
+      },
+      "tags": ["luna", "uccelli", "bucato", "vita_domestica"],
+      "dateAnchors": [],
+      "seasons": ["autumn", "all"],
+      "areas": ["fvg"],
+      "editorialStatus": "archive_context",
+      "uiReadiness": "not_ready",
+      "review": {
+        "sourceCheck": "curated_record",
+        "needsCleanPageCheck": false,
+        "furReviewRequired": false,
+        "notes": "FUR lungo approvato nel record curato; resta archivio/Scopri come contesto secondario."
+      },
+      "source": {
+        "label": "Ostermann 1894",
+        "pdfPage": 46,
+        "textPage": 21,
+        "sourcePath": "normalized-pages/page-046.txt",
+        "verifiedAgainst": "pages/page-046.txt",
+        "auditStatus": "curated_not_required"
+      }
+    },
+    {
+      "id": "ost-extract-067-epifania-fuochi",
+      "curatedRecordId": "ost-0003-epifania-fuochi",
+      "sourcePage": 67,
+      "textPage": 42,
+      "category": "calendario_rituale",
+      "primaryUse": "discover",
+      "secondaryUse": ["almanac_calendar", "winter_calendar"],
+      "title": {
+        "itDraft": "I fuochi dell'Epifania",
+        "fur": "approved_in_curated_record"
+      },
+      "sourceText": {
+        "language": "curated_it_fur",
+        "excerpt": "Il fuoco d'inverno come augurio per campi e viti.",
+        "context": "Record curato recuperato dall'archivio Ostermann precedente; fuochi dell'Epifania nei campi e lungo le viti."
+      },
+      "translation": {
+        "itDraft": "Nei campi e lungo i filari, i fuochi dell'Epifania aprivano l'anno agricolo con un gesto comunitario. Luce, fumo, viti e canti propiziatori univano festa religiosa e speranza di abbondanza.",
+        "furDraft": "approved_in_curated_record",
+        "status": "curated_recovered"
+      },
+      "tags": ["epifania", "fuochi", "campi", "viti", "freddo", "vento"],
+      "dateAnchors": ["01-06"],
+      "seasons": ["winter"],
+      "areas": ["fvg", "bassa_friulana", "friuli_centrale"],
+      "editorialStatus": "curated_recovered",
+      "uiReadiness": "not_ready",
+      "review": {
+        "sourceCheck": "curated_record",
+        "needsCleanPageCheck": false,
+        "furReviewRequired": false,
+        "notes": "Record forte per Scopri e potenziale teaser Almanacco; non pubblicare senza scelta UX."
+      },
+      "source": {
+        "label": "Ostermann 1894",
+        "pdfPage": 67,
+        "textPage": 42,
+        "sourcePath": "normalized-pages/page-067.txt",
+        "verifiedAgainst": "pages/page-067.txt",
+        "auditStatus": "curated_not_required"
+      }
+    },
+    {
+      "id": "ost-extract-069-benedizioni-epifania",
+      "curatedRecordId": "ost-0016-benedizioni-epifania",
+      "sourcePage": 69,
+      "textPage": 44,
+      "category": "calendario_rituale",
+      "primaryUse": "discover",
+      "secondaryUse": ["almanac_calendar", "archive"],
+      "title": {
+        "itDraft": "L'acqua dell'Epifania",
+        "fur": "approved_in_curated_record"
+      },
+      "sourceText": {
+        "language": "curated_it_fur",
+        "excerpt": "L'Epifania portata dentro la vita quotidiana.",
+        "context": "Record curato recuperato dall'archivio Ostermann precedente; contesto domestico e rituale dell'Epifania."
+      },
+      "translation": {
+        "itDraft": "Nella mattina dell'Epifania, in alcuni villaggi, acqua benedetta, aglio, cipolle, sale e mele entravano in un rito domestico di protezione e buon auspicio. La festa scendeva cosi' nella casa, nella dispensa e negli animali.",
+        "furDraft": "approved_in_curated_record",
+        "status": "curated_recovered"
+      },
+      "tags": ["epifania", "acqua", "riti_domestici", "casa"],
+      "dateAnchors": ["01-06"],
+      "seasons": ["winter"],
+      "areas": ["fvg", "bassa_friulana", "friuli_centrale", "friuli_occidentale"],
+      "editorialStatus": "curated_recovered",
+      "uiReadiness": "not_ready",
+      "review": {
+        "sourceCheck": "curated_record",
+        "needsCleanPageCheck": false,
+        "furReviewRequired": false,
+        "notes": "Contenuto rituale domestico da usare con cornice culturale, non devozionale."
+      },
+      "source": {
+        "label": "Ostermann 1894",
+        "pdfPage": 69,
+        "textPage": 44,
+        "sourcePath": "normalized-pages/page-069.txt",
+        "verifiedAgainst": "pages/page-069.txt",
+        "auditStatus": "curated_not_required"
+      }
+    },
+    {
+      "id": "ost-extract-070-palme-temporale",
+      "curatedRecordId": "ost-0036-palme-temporale",
+      "sourcePage": 70,
+      "textPage": 45,
+      "category": "folklore_meteo",
+      "primaryUse": "discover",
+      "secondaryUse": ["archive"],
+      "title": {
+        "itDraft": "L'ulivo contro il temporale",
+        "fur": "approved_in_curated_record"
+      },
+      "sourceText": {
+        "language": "curated_it_fur",
+        "excerpt": "Un ramo conservato per i giorni di tempesta.",
+        "context": "Record curato recuperato dall'archivio Ostermann precedente; ulivo delle Palme usato quando minaccia temporale."
+      },
+      "translation": {
+        "itDraft": "Il ramo d'ulivo benedetto nelle Palme veniva conservato in casa e bruciato quando minacciava temporale. Nella sottosezione dei riti, questo gesto racconta il bisogno di proteggere famiglia, stalla e raccolti davanti al cielo che cambia.",
+        "furDraft": "approved_in_curated_record",
+        "status": "curated_recovered"
+      },
+      "tags": ["palme", "ulivo", "temporale", "grandine", "riti"],
+      "dateAnchors": [],
+      "seasons": ["spring"],
+      "areas": ["fvg"],
+      "editorialStatus": "archive_context",
+      "uiReadiness": "not_ready",
+      "review": {
+        "sourceCheck": "curated_record",
+        "needsCleanPageCheck": false,
+        "furReviewRequired": false,
+        "notes": "Rito popolare delicato: solo contesto storico, non consiglio pratico."
+      },
+      "source": {
+        "label": "Ostermann 1894",
+        "pdfPage": 70,
+        "textPage": 45,
+        "sourcePath": "normalized-pages/page-070.txt",
+        "verifiedAgainst": "pages/page-070.txt",
+        "auditStatus": "curated_not_required"
+      }
+    },
+    {
+      "id": "ost-extract-098-bissaboga-trombe-vento",
+      "curatedRecordId": "ost-0022-bissaboga-trombe-vento",
+      "sourcePage": 98,
+      "textPage": 73,
+      "category": "meteo_popolare",
+      "primaryUse": "discover",
+      "secondaryUse": ["almanac_weather", "wind_glossary"],
+      "title": {
+        "itDraft": "Bissaboga",
+        "fur": "approved_in_curated_record"
+      },
+      "sourceText": {
+        "language": "curated_it_fur",
+        "excerpt": "Un nome antico per il vento che devasta.",
+        "context": "Record curato recuperato dall'archivio Ostermann precedente; cronache di vento violento e vortici."
+      },
+      "translation": {
+        "itDraft": "Le cronache citate da Ostermann raccontano episodi di vento violentissimo, vortici e temporali capaci di danneggiare campi e alberi. La parola bissaboga conserva la memoria locale dei fenomeni severi.",
+        "furDraft": "approved_in_curated_record",
+        "status": "curated_recovered"
+      },
+      "tags": ["bissaboga", "vento", "temporale", "vortici"],
+      "dateAnchors": [],
+      "seasons": ["summer"],
+      "areas": ["fvg", "friuli_centrale", "alpi_giulie"],
+      "editorialStatus": "curated_recovered",
+      "uiReadiness": "not_ready",
+      "review": {
+        "sourceCheck": "curated_record",
+        "needsCleanPageCheck": false,
+        "furReviewRequired": false,
+        "notes": "Buon lessico Scopri; evitare tono sensazionalistico."
+      },
+      "source": {
+        "label": "Ostermann 1894",
+        "pdfPage": 98,
+        "textPage": 73,
+        "sourcePath": "normalized-pages/page-098.txt",
+        "verifiedAgainst": "pages/page-098.txt",
+        "auditStatus": "curated_ready_from_normalized"
+      }
+    },
+    {
+      "id": "ost-extract-106-pioggia-grandine-streghe",
+      "curatedRecordId": "ost-0026-pioggia-grandine-streghe",
+      "sourcePage": 106,
+      "textPage": 81,
+      "category": "folklore_meteo",
+      "primaryUse": "discover",
+      "secondaryUse": ["archive"],
+      "title": {
+        "itDraft": "Chi mandava la grandine",
+        "fur": "approved_in_curated_record"
+      },
+      "sourceText": {
+        "language": "curated_it_fur",
+        "excerpt": "La grandine spiegata attraverso il mondo delle credenze.",
+        "context": "Record curato recuperato dall'archivio Ostermann precedente; grandine e streghe, materiale delicato."
+      },
+      "translation": {
+        "itDraft": "In molte credenze la grandine non era solo un fenomeno del cielo: poteva essere attribuita a streghe, malie o forze ostili. Questa voce appartiene alle credenze popolari e va letta come documento storico del modo in cui si dava forma alla paura.",
+        "furDraft": "approved_in_curated_record",
+        "status": "curated_recovered"
+      },
+      "tags": ["grandine", "streghe", "temporale", "credenze"],
+      "dateAnchors": [],
+      "seasons": ["spring", "summer"],
+      "areas": ["fvg", "carnia"],
+      "editorialStatus": "archive_context",
+      "uiReadiness": "not_ready",
+      "review": {
+        "sourceCheck": "curated_record",
+        "needsCleanPageCheck": false,
+        "furReviewRequired": false,
+        "notes": "Antropologia del maltempo: non usare in Home/Almanacco leggero."
+      },
+      "source": {
+        "label": "Ostermann 1894",
+        "pdfPage": 106,
+        "textPage": 81,
+        "sourcePath": "normalized-pages/page-106.txt",
+        "verifiedAgainst": "pages/page-106.txt",
+        "auditStatus": "curated_not_required"
+      }
+    },
+    {
+      "id": "ost-extract-111-uccelli-marini-pioggia",
+      "curatedRecordId": "ost-0053-uccelli-marini-pioggia",
+      "sourcePage": 111,
+      "textPage": 86,
+      "category": "meteo_popolare",
+      "primaryUse": "discover",
+      "secondaryUse": ["almanac_weather", "coast_calendar"],
+      "title": {
+        "itDraft": "Uccelli verso la pioggia",
+        "fur": "approved_in_curated_record"
+      },
+      "sourceText": {
+        "language": "curated_it_fur",
+        "excerpt": "Il mare annuncia il tempo anche attraverso gli uccelli.",
+        "context": "Record curato recuperato dall'archivio Ostermann precedente; cornacchie, uccelli marini e pioggia."
+      },
+      "translation": {
+        "itDraft": "Cornacchie e uccelli marini, quando cambiano volo, voce o direzione, entrano tra gli indizi popolari della pioggia. Una voce utile soprattutto per la costa e la bassa, dove mare e cielo si leggono insieme.",
+        "furDraft": "approved_in_curated_record",
+        "status": "curated_recovered"
+      },
+      "tags": ["uccelli", "pioggia", "mare", "costa", "vento"],
+      "dateAnchors": [],
+      "seasons": ["all"],
+      "areas": ["fvg", "costa", "bassa_friulana"],
+      "editorialStatus": "curated_recovered",
+      "uiReadiness": "not_ready",
+      "review": {
+        "sourceCheck": "curated_record",
+        "needsCleanPageCheck": false,
+        "furReviewRequired": false,
+        "notes": "Buon ponte Scopri per localita di costa e bassa."
+      },
+      "source": {
+        "label": "Ostermann 1894",
+        "pdfPage": 111,
+        "textPage": 86,
+        "sourcePath": "normalized-pages/page-111.txt",
+        "verifiedAgainst": "pages/page-111.txt",
+        "auditStatus": "curated_ready_from_normalized"
+      }
+    },
+    {
+      "id": "ost-extract-145-pareli-aloni-lunari",
+      "curatedRecordId": "ost-0059-pareli-aloni-lunari",
+      "sourcePage": 145,
+      "textPage": 120,
+      "category": "luna_meteo",
+      "primaryUse": "discover",
+      "secondaryUse": ["almanac_luna", "almanac_weather"],
+      "title": {
+        "itDraft": "Tre soli al mattino",
+        "fur": "approved_in_curated_record"
+      },
+      "sourceText": {
+        "language": "curated_it_fur",
+        "excerpt": "Quando luce e aloni diventano pronostico.",
+        "context": "Record curato recuperato dall'archivio Ostermann precedente; pareli, paraseleni e aloni lunari."
+      },
+      "translation": {
+        "itDraft": "Pareli, paraseleni e aloni lunari appartengono alle meteore ottiche che piu' colpivano l'immaginazione popolare. Tre soli al mattino potevano annunciare pioggia; il cerchio attorno alla luna indicava distanza o vicinanza del maltempo.",
+        "furDraft": "approved_in_curated_record",
+        "status": "curated_recovered"
+      },
+      "tags": ["pareli", "aloni", "luna", "pioggia", "vento"],
+      "dateAnchors": [],
+      "seasons": ["all"],
+      "areas": ["fvg"],
+      "editorialStatus": "curated_recovered",
+      "uiReadiness": "not_ready",
+      "review": {
+        "sourceCheck": "curated_record",
+        "needsCleanPageCheck": false,
+        "furReviewRequired": false,
+        "notes": "Completa il filone pagina 146; utile per Luna/Scopri."
+      },
+      "source": {
+        "label": "Ostermann 1894",
+        "pdfPage": 145,
+        "textPage": 120,
+        "sourcePath": "normalized-pages/page-145.txt",
+        "verifiedAgainst": "pages/page-145.txt",
+        "auditStatus": "curated_ready_from_normalized"
+      }
+    },
+    {
+      "id": "ost-extract-190-marzo-aprile-annata",
+      "curatedRecordId": "ost-0027-marzo-aprile-annata",
+      "sourcePage": 190,
+      "textPage": 165,
+      "category": "calendario_agricolo",
+      "primaryUse": "discover",
+      "secondaryUse": ["almanac_calendar", "spring_calendar", "proverb_candidates"],
+      "title": {
+        "itDraft": "Marzo asciutto, aprile bagnato",
+        "fur": "approved_in_curated_record"
+      },
+      "sourceText": {
+        "language": "curated_it_fur",
+        "excerpt": "La misura della primavera decide il raccolto.",
+        "context": "Record curato recuperato dall'archivio Ostermann precedente; marzo/aprile e raccolti."
+      },
+      "translation": {
+        "itDraft": "La primavera agricola vive di equilibrio: troppa pioggia rovina, ma l'acqua giusta benedice il seminato. Nei proverbi raccolti da Ostermann, marzo, aprile e maggio formano una piccola previsione dell'annata.",
+        "furDraft": "approved_in_curated_record",
+        "status": "curated_recovered"
+      },
+      "tags": ["marzo", "aprile", "pioggia", "raccolti", "annata"],
+      "dateAnchors": ["03", "04", "05"],
+      "seasons": ["spring"],
+      "areas": ["fvg"],
+      "editorialStatus": "curated_recovered",
+      "uiReadiness": "not_ready",
+      "review": {
+        "sourceCheck": "curated_record",
+        "needsCleanPageCheck": false,
+        "furReviewRequired": false,
+        "notes": "Gia in catalogo come candidato proverbiale; ora coperto anche da estratto granulare."
+      },
+      "source": {
+        "label": "Ostermann 1894",
+        "pdfPage": 190,
+        "textPage": 165,
+        "sourcePath": "normalized-pages/page-190.txt",
+        "verifiedAgainst": "pages/page-190.txt",
+        "auditStatus": "curated_ready_from_normalized"
+      }
+    },
+    {
+      "id": "ost-extract-193-natale-pasqua-fieno",
+      "curatedRecordId": "ost-0029-natale-pasqua-fieno",
+      "sourcePage": 193,
+      "textPage": 168,
+      "category": "calendario_agricolo",
+      "primaryUse": "discover",
+      "secondaryUse": ["almanac_calendar", "winter_calendar", "spring_calendar"],
+      "title": {
+        "itDraft": "Natale, Pasqua e il fieno",
+        "fur": "approved_in_curated_record"
+      },
+      "sourceText": {
+        "language": "curated_it_fur",
+        "excerpt": "Le grandi feste lette con gli occhi del fieno.",
+        "context": "Record curato recuperato dall'archivio Ostermann precedente; Natale/Pasqua e fieno."
+      },
+      "translation": {
+        "itDraft": "Nel calendario contadino, Natale e Pasqua dialogano a distanza. La notte chiara, la pioggia pasquale e il tempo delle feste diventano segni per fieno, latte, formaggio e vita dei campi.",
+        "furDraft": "approved_in_curated_record",
+        "status": "curated_recovered"
+      },
+      "tags": ["natale", "pasqua", "fieno", "latte", "luna"],
+      "dateAnchors": ["12-25", "04"],
+      "seasons": ["winter", "spring"],
+      "areas": ["fvg"],
+      "editorialStatus": "curated_recovered",
+      "uiReadiness": "not_ready",
+      "review": {
+        "sourceCheck": "curated_record",
+        "needsCleanPageCheck": false,
+        "furReviewRequired": false,
+        "notes": "Gia in catalogo come candidato proverbiale; ora coperto anche da estratto granulare."
+      },
+      "source": {
+        "label": "Ostermann 1894",
+        "pdfPage": 193,
+        "textPage": 168,
+        "sourcePath": "normalized-pages/page-193.txt",
+        "verifiedAgainst": "pages/page-193.txt",
+        "auditStatus": "curated_ready_from_normalized"
+      }
+    },
+    {
+      "id": "ost-extract-227-erba-da-pioggia",
+      "curatedRecordId": "ost-0046-erba-da-pioggia",
+      "sourcePage": 227,
+      "textPage": 202,
+      "category": "erbe_popolari",
+      "primaryUse": "discover",
+      "secondaryUse": ["almanac_weather", "archive"],
+      "title": {
+        "itDraft": "L'erba da pioggia",
+        "fur": "approved_in_curated_record"
+      },
+      "sourceText": {
+        "language": "curated_it_fur",
+        "excerpt": "Una pianta che si chiude quando l'aria cambia.",
+        "context": "Record curato recuperato dall'archivio Ostermann precedente; carlina, pianta igroscopica."
+      },
+      "translation": {
+        "itDraft": "La carlina era consultata come un piccolo igroscopio naturale: i suoi fiori si chiudono di notte, con l'umidita' o quando minaccia pioggia. Una pianta diventa cosi' uno strumento quotidiano per leggere l'aria.",
+        "furDraft": "approved_in_curated_record",
+        "status": "curated_recovered"
+      },
+      "tags": ["carlina", "pioggia", "umidita", "igroscopio", "piante"],
+      "dateAnchors": [],
+      "seasons": ["all"],
+      "areas": ["fvg"],
+      "editorialStatus": "curated_recovered",
+      "uiReadiness": "not_ready",
+      "review": {
+        "sourceCheck": "curated_record",
+        "needsCleanPageCheck": false,
+        "furReviewRequired": false,
+        "notes": "Pianta come cultura meteo popolare; non presentare come dato scientifico attuale."
+      },
+      "source": {
+        "label": "Ostermann 1894",
+        "pdfPage": 227,
+        "textPage": 202,
+        "sourcePath": "normalized-pages/page-227.txt",
+        "verifiedAgainst": "pages/page-227.txt",
+        "auditStatus": "curated_not_required"
+      }
+    },
+    {
+      "id": "ost-extract-233-lin-di-strie-igroscopio",
+      "curatedRecordId": "ost-0047-lin-di-strie-igroscopio",
+      "sourcePage": 233,
+      "textPage": 208,
+      "category": "erbe_popolari",
+      "primaryUse": "discover",
+      "secondaryUse": ["archive"],
+      "title": {
+        "itDraft": "Il lino delle fate",
+        "fur": "approved_in_curated_record"
+      },
+      "sourceText": {
+        "language": "curated_it_fur",
+        "excerpt": "Una pianta sospesa tra aria umida e leggenda.",
+        "context": "Record curato recuperato dall'archivio Ostermann precedente; lino delle fate come igroscopio."
+      },
+      "translation": {
+        "itDraft": "Il lin di strie, o lino delle fate, porta gia' nel nome un legame con il soprannaturale. Le sue reste erano considerate un buon igroscopio: un incontro elegante tra botanica popolare, umidita' e immaginario.",
+        "furDraft": "approved_in_curated_record",
+        "status": "curated_recovered"
+      },
+      "tags": ["lin_di_strie", "umidita", "pioggia", "igroscopio", "piante"],
+      "dateAnchors": [],
+      "seasons": ["all"],
+      "areas": ["fvg", "carnia", "alpi_giulie"],
+      "editorialStatus": "archive_context",
+      "uiReadiness": "not_ready",
+      "review": {
+        "sourceCheck": "curated_record",
+        "needsCleanPageCheck": false,
+        "furReviewRequired": false,
+        "notes": "Pianta e credenza: ottimo archivio Scopri, non consiglio pratico."
+      },
+      "source": {
+        "label": "Ostermann 1894",
+        "pdfPage": 233,
+        "textPage": 208,
+        "sourcePath": "normalized-pages/page-233.txt",
+        "verifiedAgainst": "pages/page-233.txt",
+        "auditStatus": "curated_not_required"
+      }
+    },
+    {
+      "id": "ost-extract-299-alcione-igroscopio",
+      "curatedRecordId": "ost-0057-alcione-igroscopio",
+      "sourcePage": 299,
+      "textPage": 274,
+      "category": "meteo_popolare",
+      "primaryUse": "discover",
+      "secondaryUse": ["almanac_weather", "coast_calendar"],
+      "title": {
+        "itDraft": "L'alcione e la pioggia",
+        "fur": "approved_in_curated_record"
+      },
+      "sourceText": {
+        "language": "curated_it_fur",
+        "excerpt": "Un uccello trasformato in piccolo barometro domestico.",
+        "context": "Record curato recuperato dall'archivio Ostermann precedente; alcione come igroscopio."
+      },
+      "translation": {
+        "itDraft": "L'alcione era tenuto come uccello di buon augurio e, secondo la credenza raccolta da Ostermann, le sue penne si sollevavano con la pioggia vicina e tornavano lisce col bel tempo. La casa diventava cosi' un piccolo osservatorio dell'umidita'.",
+        "furDraft": "approved_in_curated_record",
+        "status": "curated_recovered"
+      },
+      "tags": ["alcione", "pioggia", "umidita", "uccelli", "costa"],
+      "dateAnchors": [],
+      "seasons": ["all"],
+      "areas": ["fvg", "costa", "bassa_friulana"],
+      "editorialStatus": "curated_recovered",
+      "uiReadiness": "not_ready",
+      "review": {
+        "sourceCheck": "curated_record",
+        "needsCleanPageCheck": false,
+        "furReviewRequired": false,
+        "notes": "Contenuto curioso per Scopri; evitare di proporlo come osservazione affidabile moderna."
+      },
+      "source": {
+        "label": "Ostermann 1894",
+        "pdfPage": 299,
+        "textPage": 274,
+        "sourcePath": "normalized-pages/page-299.txt",
+        "verifiedAgainst": "pages/page-299.txt",
+        "auditStatus": "curated_not_required"
+      }
+    },
+    {
+      "id": "ost-extract-541-erbe-san-giovanni-unguento",
+      "curatedRecordId": "ost-0017-erbe-san-giovanni-unguento",
+      "sourcePage": 541,
+      "textPage": 516,
+      "category": "folklore_meteo",
+      "primaryUse": "discover",
+      "secondaryUse": ["archive", "summer_calendar"],
+      "title": {
+        "itDraft": "Le erbe della notte di San Giovanni",
+        "fur": "approved_in_curated_record"
+      },
+      "sourceText": {
+        "language": "curated_it_fur",
+        "excerpt": "La notte in cui le erbe cambiano significato.",
+        "context": "Record curato recuperato dall'archivio Ostermann precedente; erbe di San Giovanni e tono antropologico."
+      },
+      "translation": {
+        "itDraft": "La notte di San Giovanni concentra molte credenze sulle erbe: raccolte in quel momento, potevano entrare in racconti di protezione, malia o trasformazione. Qui il tono deve restare storico, per non ridurre la fonte a folklore spettacolare.",
+        "furDraft": "approved_in_curated_record",
+        "status": "curated_recovered"
+      },
+      "tags": ["san_giovanni", "erbe", "credenze", "estate"],
+      "dateAnchors": ["06-24"],
+      "seasons": ["summer"],
+      "areas": ["fvg", "friuli_occidentale", "friuli_centrale"],
+      "editorialStatus": "archive_context",
+      "uiReadiness": "not_ready",
+      "review": {
+        "sourceCheck": "curated_record",
+        "needsCleanPageCheck": false,
+        "furReviewRequired": false,
+        "notes": "Tema delicato: non spettacolarizzare e non dare istruzioni pratiche."
+      },
+      "source": {
+        "label": "Ostermann 1894",
+        "pdfPage": 541,
+        "textPage": 516,
+        "sourcePath": "normalized-pages/page-541.txt",
+        "verifiedAgainst": "pages/page-541.txt",
+        "auditStatus": "curated_not_required"
+      }
+    },
+    {
+      "id": "ost-extract-545-iperico-san-giovanni",
+      "curatedRecordId": "ost-0018-iperico-san-giovanni",
+      "sourcePage": 545,
+      "textPage": 520,
+      "category": "erbe_popolari",
+      "primaryUse": "discover",
+      "secondaryUse": ["archive", "summer_calendar"],
+      "title": {
+        "itDraft": "L'iperico di San Giovanni",
+        "fur": "approved_in_curated_record"
+      },
+      "sourceText": {
+        "language": "curated_it_fur",
+        "excerpt": "Un'erba estiva appesa per proteggere la casa.",
+        "context": "Record curato recuperato dall'archivio Ostermann precedente; iperico e protezioni domestiche."
+      },
+      "translation": {
+        "itDraft": "L'iperico raccolto nella notte di San Giovanni veniva appeso nelle stalle o nelle camere come erba protettiva. E' una delle immagini piu' nitide del rapporto tra calendario, piante e credenze domestiche.",
+        "furDraft": "approved_in_curated_record",
+        "status": "curated_recovered"
+      },
+      "tags": ["iperico", "san_giovanni", "erbe", "casa", "estate"],
+      "dateAnchors": ["06-24"],
+      "seasons": ["summer"],
+      "areas": ["fvg", "bassa_friulana"],
+      "editorialStatus": "archive_context",
+      "uiReadiness": "not_ready",
+      "review": {
+        "sourceCheck": "curated_record",
+        "needsCleanPageCheck": false,
+        "furReviewRequired": false,
+        "notes": "Da trattare come cultura storica, non rimedio o consiglio salute."
+      },
+      "source": {
+        "label": "Ostermann 1894",
+        "pdfPage": 545,
+        "textPage": 520,
+        "sourcePath": "normalized-pages/page-545.txt",
+        "verifiedAgainst": "pages/page-545.txt",
+        "auditStatus": "curated_not_required"
+      }
+    },
+    {
+      "id": "ost-extract-604-demoni-aria-tempeste",
+      "curatedRecordId": "ost-0058-demoni-aria-tempeste",
+      "sourcePage": 604,
+      "textPage": 579,
+      "category": "folklore_meteo",
+      "primaryUse": "discover",
+      "secondaryUse": ["archive"],
+      "title": {
+        "itDraft": "I demoni dell'aria",
+        "fur": "approved_in_curated_record"
+      },
+      "sourceText": {
+        "language": "curated_it_fur",
+        "excerpt": "Una mappa antica delle paure del cielo.",
+        "context": "Record curato recuperato dall'archivio Ostermann precedente; cornice antropologica su venti, trombe, grandine e tempeste."
+      },
+      "translation": {
+        "itDraft": "In alcune credenze, venti, trombe, grandine e tempeste venivano collegati a esseri dell'aria e delle acque. Questa voce non va letta come spiegazione del tempo, ma come geografia immaginaria delle paure meteorologiche.",
+        "furDraft": "approved_in_curated_record",
+        "status": "curated_recovered"
+      },
+      "tags": ["demoni", "vento", "grandine", "temporale", "nubifragio"],
+      "dateAnchors": [],
+      "seasons": ["all"],
+      "areas": ["fvg"],
+      "editorialStatus": "archive_context",
+      "uiReadiness": "not_ready",
+      "review": {
+        "sourceCheck": "curated_record",
+        "needsCleanPageCheck": false,
+        "furReviewRequired": false,
+        "notes": "Cornice antropologica delicata: solo archivio e non card principale."
+      },
+      "source": {
+        "label": "Ostermann 1894",
+        "pdfPage": 604,
+        "textPage": 579,
+        "sourcePath": "normalized-pages/page-604.txt",
+        "verifiedAgainst": "pages/page-604.txt",
+        "auditStatus": "curated_not_required"
+      }
+    }
+  ]
+}

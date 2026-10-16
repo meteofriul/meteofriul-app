@@ -1,0 +1,114 @@
+{
+  "schemaVersion": 1,
+  "generatedAt": "2026-07-16",
+  "purpose": "Trentatreesimo lotto Scopri IT: audit editoriale dei primi quindici candidati rimasti nella coda. Il lotto applica una soglia più severa ai profili legati al territorio soltanto per nascita, allo sport e allo spettacolo contemporaneo. Mario Maranzana resta come approfondimento secondario della memoria teatrale triestina; Alberto Liuzzi resta in attesa di una fonte storica neutrale; tredici candidati vengono esclusi. La pubblicazione resta bloccata fino alla revisione FUR dell'unico record selezionato.",
+  "policy": {
+    "readyForUi": false,
+    "furDeferred": true,
+    "dateFormat": "DD-MM",
+    "requiresFinalItalianApproval": true,
+    "excludeDeaths": true,
+    "excludeGenericPoliticalProfiles": true,
+    "excludeGenericProfessionalProfiles": true,
+    "excludeSportsOnlyProfiles": true,
+    "rejectBirthplaceOnlyProfiles": true,
+    "rejectSemanticDuplicates": true,
+    "rejectUncertainCalendarDates": true,
+    "sourceFirst": true,
+    "publishAfterFurOnly": true,
+    "allowMultipleMemoriesPerDate": true,
+    "secondaryOrderedByPriority": true,
+    "doNotPromoteToPrimaryForCoverageOnly": true
+  },
+  "summary": {
+    "reviewed": 15,
+    "keepDaily": 1,
+    "primary": 0,
+    "secondary": 1,
+    "hold": 1,
+    "excluded": 13,
+    "canonicalPrimaryDatesBefore": 237,
+    "canonicalPrimaryDatesAfter": 237,
+    "currentVisiblePrimaryCoverage": 229
+  },
+  "keepDaily": [
+    {
+      "id": "master-fvg-14-07-Q1195788",
+      "wikidataId": "Q1195788",
+      "dateIt": "14-07",
+      "year": 1930,
+      "municipality": "Trieste",
+      "locality": "Trieste",
+      "province": "TS",
+      "canonicalCategory": "cultura",
+      "dailyRole": "secondary",
+      "priority": 92,
+      "titleIt": "Mario Maranzana e il teatro della memoria triestina",
+      "copyIt": "Il 14 luglio 1930 nasce a Trieste Mario Maranzana. Attore, regista e drammaturgo, torna più volte alla memoria teatrale della città, lavorando anche con il Teatro Stabile del Friuli Venezia Giulia e portando in scena le Storie delle Maldobrie.",
+      "sourceLabel": "Il Rossetti - Storie delle Maldobrie",
+      "sourceUrl": "https://www.ilrossetti.it/it/spettacoli/storie-delle-maldobrie-1427",
+      "sourceStatus": "pass",
+      "readyForUi": false
+    }
+  ],
+  "hold": [
+    {
+      "id": "master-fvg-01-03-Q3608381",
+      "reason": "Figura legata alla Carnia, agli Alpini e alla guerra civile spagnola, ma le fonti reperite hanno un taglio prevalentemente celebrativo militare. Serve una fonte storica critica e neutrale prima di scrivere una memoria non celebrativa sul suo ruolo nella Milizia fascista."
+    }
+  ],
+  "excluded": [
+    {
+      "id": "master-fvg-22-01-Q116323663",
+      "reason": "Sottosezione sportiva dell'EYOF 2023 priva di rilevanza storica autonoma rispetto alla manifestazione complessiva."
+    },
+    {
+      "id": "master-fvg-30-11-Q41618886",
+      "reason": "Fisico e studioso rilevante, ma il rapporto con il FVG risulta limitato alla nascita ad Attimis; attività e carriera si svolgono nell'ambiente scientifico padovano e veneziano."
+    },
+    {
+      "id": "master-fvg-05-01-Q1042105",
+      "reason": "Profilo teatrale e cinematografico nazionale con legame territoriale limitato alla nascita; inoltre le fonti divergono tra 1898 e 1899."
+    },
+    {
+      "id": "master-fvg-05-01-Q3101539",
+      "reason": "Carriera cinematografica costruita negli Stati Uniti e nessun legame sostanziale con Trieste oltre il luogo di nascita."
+    },
+    {
+      "id": "master-fvg-10-11-Q2273093",
+      "reason": "Interprete e doppiatore noto, ma la carriera e nazionale e non emerge un contributo storico-culturale specifico al territorio oltre la nascita a Udine."
+    },
+    {
+      "id": "master-fvg-15-01-Q354229",
+      "reason": "Profilo esclusivamente sportivo, escluso dalle regole editoriali gia deliberate."
+    },
+    {
+      "id": "master-fvg-06-01-Q28974232",
+      "reason": "Il legame calcistico regionale è reale, ma il profilo resta esclusivamente sportivo e non presenta rilevanza storica eccezionale."
+    },
+    {
+      "id": "master-fvg-07-01-Q1874855",
+      "reason": "Carriera calcistica con radici regionali, ma priva dell'eccezionalità storica necessaria per derogare all'esclusione dei profili sportivi."
+    },
+    {
+      "id": "master-fvg-13-05-Q81738241",
+      "reason": "Profilo televisivo e dello spettacolo senza rilevanza storico-culturale autonoma per il FVG; anche il luogo di nascita è discordante tra le fonti."
+    },
+    {
+      "id": "master-fvg-19-05-Q760748",
+      "reason": "Figura politica jugoslava storicamente rilevante, ma il rapporto documentato con Trieste si limita alla nascita e la sua attività si svolge fuori dal FVG."
+    },
+    {
+      "id": "master-fvg-19-06-Q3610023",
+      "reason": "Il legame con il teatro e la cultura triestina è reale, ma il profilo contemporaneo non supera la soglia di rilevanza storica richiesta per la rubrica giornaliera."
+    },
+    {
+      "id": "master-fvg-27-09-Q1343806",
+      "reason": "Caratterista radiofonico, cinematografico e televisivo con carriera nazionale e legame territoriale limitato alla nascita a Trieste."
+    },
+    {
+      "id": "master-fvg-01-04-Q3792641",
+      "reason": "Entità editoriale classificata erroneamente come evento: il giorno 1 deriva dalla normalizzazione di una data con precisione mensile e non identifica un fatto storico del 1 aprile 2014."
+    }
+  ]
+}

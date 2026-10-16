@@ -1,0 +1,244 @@
+{
+  "schemaVersion": 1,
+  "batchId": "ostermann-1876-language-review-13",
+  "reviewedAt": "2026-08-02",
+  "sourceDecisionFiles": ["review-decisions-batch-13.json"],
+  "purpose": "Tredicesima revisione linguistica ed editoriale dei candidati Ostermann 1876 verificati sul facsimile. Non pubblica contenuti nella UI.",
+  "policy": {
+    "publish": false,
+    "rule": "La normalizzazione FUR conserva il significato attestato nel facsimile. Le quindici massime sono generali e non ricevono date, feste o stagioni artificiali."
+  },
+  "summary": {
+    "records": 15,
+    "languageReviewed": 15,
+    "mergeExisting": 0,
+    "needsNativeReview": 0
+  },
+  "records": [
+    {
+      "id": "ost1876-rispiete-se-stes",
+      "reviewStatus": "language_reviewed",
+      "furNormalized": "Cui che nol rispiete se stes nol vâl un ves.",
+      "itFinal": "Chi non rispetta se stesso non vale un soldo.",
+      "destination": "almanac",
+      "calendarRule": { "type": "general", "bucket": "wisdom", "fallbackAllowed": true },
+      "duplicateAudit": { "status": "new_distinct" },
+      "evidence": [
+        { "label": "Facsimile Ostermann 1876, p. PDF 217", "kind": "primary" },
+        { "label": "Dizionari de Lenghe Furlane, rispietâ, stes e vâl", "kind": "secondary" }
+      ],
+      "editorialNote": "Normalizzati il verbo rispietâ e l'accento di vâl; conservata la costruzione proverbiale.",
+      "publish": false
+    },
+    {
+      "id": "ost1876-umilie-ven-esaltat",
+      "reviewStatus": "language_reviewed",
+      "furNormalized": "Cui che si umilie al ven esaltât.",
+      "itFinal": "Chi si umilia viene esaltato.",
+      "destination": "almanac",
+      "calendarRule": { "type": "general", "bucket": "wisdom", "fallbackAllowed": true },
+      "duplicateAudit": { "status": "new_distinct" },
+      "evidence": [
+        { "label": "Facsimile Ostermann 1876, p. PDF 217", "kind": "primary" },
+        { "label": "Dizionari de Lenghe Furlane, umiliâ ed esaltâ", "kind": "secondary" }
+      ],
+      "editorialNote": "Aggiunto il pronome soggetto della grafia standard e normalizzato il participio esaltât.",
+      "publish": false
+    },
+    {
+      "id": "ost1876-vante-ben-pierd-merit",
+      "reviewStatus": "language_reviewed",
+      "furNormalized": "Cui che si vante dal ben fat al pierd il merit.",
+      "itFinal": "Chi si vanta del bene fatto ne perde il merito.",
+      "destination": "almanac",
+      "calendarRule": { "type": "general", "bucket": "wisdom", "fallbackAllowed": true },
+      "duplicateAudit": { "status": "new_distinct" },
+      "evidence": [
+        { "label": "Facsimile Ostermann 1876, p. PDF 217", "kind": "primary" },
+        { "label": "Dizionari de Lenghe Furlane, vantâ, ben, pierdi e merit", "kind": "secondary" }
+      ],
+      "editorialNote": "La normalizzazione introduce soltanto il pronome soggetto richiesto; il significato resta invariato.",
+      "publish": false
+    },
+    {
+      "id": "ost1876-rid-altris-rid-se",
+      "reviewStatus": "language_reviewed",
+      "furNormalized": "Cui che al rît dai altris al rît di se.",
+      "itFinal": "Chi ride degli altri ride di se stesso.",
+      "destination": "almanac",
+      "calendarRule": { "type": "general", "bucket": "wisdom", "fallbackAllowed": true },
+      "duplicateAudit": { "status": "new_distinct" },
+      "evidence": [
+        { "label": "Facsimile Ostermann 1876, p. PDF 217", "kind": "primary" },
+        { "label": "Dizionari de Lenghe Furlane, ridi e altri", "kind": "secondary" }
+      ],
+      "editorialNote": "Normalizzati il presente rît e i pronomi soggetto; nessuna espansione del testo.",
+      "publish": false
+    },
+    {
+      "id": "ost1876-miei-fasi-ama-che-teme",
+      "reviewStatus": "language_reviewed",
+      "furNormalized": "Al è miei fâsi amâ che temê.",
+      "itFinal": "È meglio farsi amare che temere.",
+      "destination": "almanac",
+      "calendarRule": { "type": "general", "bucket": "wisdom", "fallbackAllowed": true },
+      "duplicateAudit": { "status": "new_distinct" },
+      "evidence": [
+        { "label": "Facsimile Ostermann 1876, p. PDF 217", "kind": "primary" },
+        { "label": "Dizionari de Lenghe Furlane, miei, fâsi, amâ e temê", "kind": "secondary" }
+      ],
+      "editorialNote": "Ricondotti gli infiniti e la copula alla grafia standard.",
+      "publish": false
+    },
+    {
+      "id": "ost1876-vendete-no-sane-plais",
+      "reviewStatus": "language_reviewed",
+      "furNormalized": "La vendete no sane dutis lis plais.",
+      "itFinal": "La vendetta non guarisce tutte le ferite.",
+      "destination": "almanac",
+      "calendarRule": { "type": "general", "bucket": "wisdom", "fallbackAllowed": true },
+      "duplicateAudit": { "status": "new_distinct" },
+      "evidence": [
+        { "label": "Facsimile Ostermann 1876, p. PDF 218", "kind": "primary" },
+        { "label": "ARLeF e Dizionari de Lenghe Furlane, vendete, sanâ e plaie", "kind": "secondary" }
+      ],
+      "editorialNote": "Normalizzati vendete e il plurale dutis; conservata l'immagine delle ferite.",
+      "publish": false
+    },
+    {
+      "id": "ost1876-passade-batoste-coragjos",
+      "reviewStatus": "language_reviewed",
+      "furNormalized": "Passade la batoste, ducj a son coragjôs.",
+      "itFinal": "Passata la battaglia, tutti sono coraggiosi.",
+      "destination": "almanac",
+      "calendarRule": { "type": "general", "bucket": "wisdom", "fallbackAllowed": true },
+      "duplicateAudit": { "status": "new_distinct" },
+      "evidence": [
+        { "label": "Facsimile Ostermann 1876, p. PDF 218", "kind": "primary" },
+        { "label": "Dizionari de Lenghe Furlane, passâ, batoste, ducj e coragjôs", "kind": "secondary" }
+      ],
+      "editorialNote": "Normalizzati ducj, il pronome plurale e la forma coragjôs.",
+      "publish": false
+    },
+    {
+      "id": "ost1876-pore-no-resone",
+      "reviewStatus": "language_reviewed",
+      "furNormalized": "La pôre no resone.",
+      "itFinal": "La paura non ragiona.",
+      "destination": "almanac",
+      "calendarRule": { "type": "general", "bucket": "wisdom", "fallbackAllowed": true },
+      "duplicateAudit": { "status": "new_distinct" },
+      "evidence": [
+        { "label": "Facsimile Ostermann 1876, p. PDF 218", "kind": "primary" },
+        { "label": "Dizionari de Lenghe Furlane, pôre, reson e resonâ", "kind": "secondary" }
+      ],
+      "editorialNote": "Le forme storiche paûre e rasone sono ricondotte a pôre e resone.",
+      "publish": false
+    },
+    {
+      "id": "ost1876-plui-berle-plui-pore",
+      "reviewStatus": "language_reviewed",
+      "furNormalized": "Cui che plui al berle, plui al à pôre.",
+      "itFinal": "Chi grida di più ha più paura.",
+      "destination": "almanac",
+      "calendarRule": { "type": "general", "bucket": "wisdom", "fallbackAllowed": true },
+      "duplicateAudit": { "status": "new_distinct" },
+      "evidence": [
+        { "label": "Facsimile Ostermann 1876, p. PDF 218", "kind": "primary" },
+        { "label": "Dizionari de Lenghe Furlane, berlâ e pôre", "kind": "secondary" }
+      ],
+      "editorialNote": "Aggiunti i pronomi soggetto e normalizzato pôre; mantenuta la struttura comparativa.",
+      "publish": false
+    },
+    {
+      "id": "ost1876-diaul-no-plui-neri",
+      "reviewStatus": "language_reviewed",
+      "furNormalized": "No bisugne fâ il diaul plui neri di chel che al è.",
+      "itFinal": "Non bisogna dipingere il diavolo più nero di com'è.",
+      "destination": "almanac",
+      "calendarRule": { "type": "general", "bucket": "wisdom", "fallbackAllowed": true },
+      "duplicateAudit": { "status": "new_distinct" },
+      "evidence": [
+        { "label": "Facsimile Ostermann 1876, p. PDF 218", "kind": "primary" },
+        { "label": "Dizionari de Lenghe Furlane, bisugnâ, fâ, diaul e neri", "kind": "secondary" }
+      ],
+      "editorialNote": "Normalizzati l'infinito fâ e il pronome soggetto finale; il paragone resta quello della fonte.",
+      "publish": false
+    },
+    {
+      "id": "ost1876-trist-scampe-nissun-daur",
+      "reviewStatus": "language_reviewed",
+      "furNormalized": "Il trist al scjampe ancje se nissun i côr daûr.",
+      "itFinal": "Il malvagio fugge anche se nessuno lo insegue.",
+      "destination": "almanac",
+      "calendarRule": { "type": "general", "bucket": "wisdom", "fallbackAllowed": true },
+      "duplicateAudit": { "status": "new_distinct" },
+      "evidence": [
+        { "label": "Facsimile Ostermann 1876, p. PDF 219", "kind": "primary" },
+        { "label": "Dizionari de Lenghe Furlane, trist, scjampâ, cori e daûr", "kind": "secondary" }
+      ],
+      "editorialNote": "Normalizzati scjampe, ancje, côr e daûr; trist conserva il valore morale della fonte.",
+      "publish": false
+    },
+    {
+      "id": "ost1876-om-fas-piore-lof-mangje",
+      "reviewStatus": "language_reviewed",
+      "furNormalized": "L'om che si fâs piore, il lôf lu mangje.",
+      "itFinal": "Chi si fa pecora, il lupo lo mangia.",
+      "destination": "almanac",
+      "calendarRule": { "type": "general", "bucket": "wisdom", "fallbackAllowed": true },
+      "duplicateAudit": { "status": "new_distinct" },
+      "evidence": [
+        { "label": "Facsimile Ostermann 1876, p. PDF 219", "kind": "primary" },
+        { "label": "Dizionari de Lenghe Furlane, om, piore, lôf e mangjâ", "kind": "secondary" }
+      ],
+      "editorialNote": "La forma storica lôv è ricondotta a lôf e sono normalizzati i pronomi della frase.",
+      "publish": false
+    },
+    {
+      "id": "ost1876-invidie-rosee-se-stesse",
+      "reviewStatus": "language_reviewed",
+      "furNormalized": "La invidie si rosee se stesse.",
+      "itFinal": "L'invidia rode se stessa.",
+      "destination": "almanac",
+      "calendarRule": { "type": "general", "bucket": "wisdom", "fallbackAllowed": true },
+      "duplicateAudit": { "status": "new_distinct" },
+      "evidence": [
+        { "label": "Facsimile Ostermann 1876, p. PDF 219", "kind": "primary" },
+        { "label": "Dizionari de Lenghe Furlane, proverbio registrato alla voce roseâ", "kind": "secondary" }
+      ],
+      "editorialNote": "Adottata la forma proverbiale normalizzata attestata dal dizionario: La invidie si rosee se stesse.",
+      "publish": false
+    },
+    {
+      "id": "ost1876-miei-pati-compagnie",
+      "reviewStatus": "language_reviewed",
+      "furNormalized": "Miei patî in compagnie che gjoldi bessôl.",
+      "itFinal": "Meglio soffrire in compagnia che gioire da soli.",
+      "destination": "almanac",
+      "calendarRule": { "type": "general", "bucket": "wisdom", "fallbackAllowed": true },
+      "duplicateAudit": { "status": "new_distinct" },
+      "evidence": [
+        { "label": "Facsimile Ostermann 1876, p. PDF 220", "kind": "primary" },
+        { "label": "Dizionari de Lenghe Furlane, patî, compagnie, gjoldi e bessôl", "kind": "secondary" }
+      ],
+      "editorialNote": "La forma storica soi è esplicitata con bessôl senza cambiare il confronto del proverbio.",
+      "publish": false
+    },
+    {
+      "id": "ost1876-vivi-lassa-vivi",
+      "reviewStatus": "language_reviewed",
+      "furNormalized": "Bisugne vivi e lassâ vivi.",
+      "itFinal": "Bisogna vivere e lasciar vivere.",
+      "destination": "almanac",
+      "calendarRule": { "type": "general", "bucket": "wisdom", "fallbackAllowed": true },
+      "duplicateAudit": { "status": "new_distinct" },
+      "evidence": [
+        { "label": "Facsimile Ostermann 1876, p. PDF 220", "kind": "primary" },
+        { "label": "Dizionari de Lenghe Furlane, bisugnâ, vivi e lassâ", "kind": "secondary" }
+      ],
+      "editorialNote": "Normalizzato soltanto l'infinito lassâ; conservata la forma breve e generale.",
+      "publish": false
+    }
+  ]
+}

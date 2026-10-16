@@ -1,0 +1,26 @@
+{
+  "reports": [],
+  "map_groups": [],
+  "ttl_seconds": 3600,
+  "cooldown_seconds": 2700,
+  "max_distance_km": 5,
+  "locations": [
+    {
+      "place": "Cordenons",
+      "lat": 45.9836,
+      "lon": 12.70038
+    },
+    {
+      "place": "Pordenone",
+      "lat": 45.95689,
+      "lon": 12.66051
+    }
+  ],
+  "generated_at": "2026-08-09T10:00:00+00:00",
+  "source": {
+    "id": "community_reports",
+    "type": "informative_unverified",
+    "verified": false,
+    "storage": "memory"
+  }
+}

@@ -1,0 +1,140 @@
+{
+  "schemaVersion": 1,
+  "snapshotDate": "2026-08-31",
+  "purpose": "Quinto lotto di riti: due ricorrenze locali in maggio e novembre. Copy bilingue e riferimenti linguistici restano una sola volta nel catalogo promosso.",
+  "readyForUi": false,
+  "runtimeCatalog": "frontend/src/data/discover/institutionalRituals.json",
+  "editorialDecision": {
+    "basis": "user_delegated_assisted_editorial_review",
+    "reviewer": "assistant",
+    "independentHumanReview": false,
+    "scope": [
+      "ritual-research-pasian-prato-maria",
+      "ritual-research-moggio-madonna-salute"
+    ],
+    "note": "Decisione editoriale assistita nel mandato di continuare Scopri, non approvazione dell'utente frase per frase né certificazione ARLeF o revisione professionale indipendente."
+  },
+  "rules": [
+    "Manifest e record di ricerca non sono contenuti UI; la promozione riguarda soltanto i due promotedRecordId.",
+    "Fonti culturali e riferimenti linguistici sono HTML verificati; nessun PDF necessario alla decisione.",
+    "La ricorrenza deriva dalla descrizione della tradizione, non dal programma isolato di un'edizione o da widget discordanti.",
+    "Le date non confermano lo svolgimento di eventi del 2026 o di edizioni future. Nessun orario, itinerario operativo o invito.",
+    "Le aree indicano il contesto culturale, non la posizione dell'utente. Sintesi originali senza immagini o filmati delle fonti."
+  ],
+  "records": [
+    {
+      "id": "ritual-research-pasian-prato-maria",
+      "promotedRecordId": "institutional-ritual-pasian-prato-maria",
+      "canonicalKey": "pasian-prato-processione-mariana-maggio31",
+      "rubric": "riti_credenze_popolari",
+      "reviewStatus": "promoted",
+      "readyForUi": false,
+      "promotedAt": "2026-08-31",
+      "source": {
+        "url": "https://www.diocesiudine.it/wd-appuntamenti/pasian-di-prato-con-maria-in-cammino-fino-a-la-nostra-famiglia/",
+        "authority": "Arcidiocesi di Udine",
+        "publishedAt": "2024-05-28",
+        "accessMethod": "direct_http_html",
+        "checkedAt": "2026-08-31"
+      },
+      "supportingSources": [
+        {
+          "url": "https://www.parrocchiapasiandiprato.it/maggio-mese-mariano-ecco-gli-appuntamenti/",
+          "authority": "Parrocchia di San Giacomo Apostolo di Pasian di Prato",
+          "publishedAt": "2025-04-27",
+          "accessMethod": "direct_http_html",
+          "purpose": "L'organizzatore conferma il 31 maggio 2025 e il collegamento a piedi fra i due luoghi; la data di pubblicazione è nei metadati HTML."
+        }
+      ],
+      "evidenceSummary": "Il corpo della fonte diocesana afferma che la processione mariana si tiene il 31 maggio di ogni anno e coinvolge le quattro parrocchie della collaborazione pastorale. Il programma parrocchiale del 2025 corrobora la data e il cammino tra San Giacomo e La Nostra Famiglia.",
+      "temporalRule": {
+        "type": "fixed_date",
+        "date": "05-31"
+      },
+      "editorialWindow": {
+        "type": "fixed_date",
+        "date": "05-31"
+      },
+      "currentEventScheduleVerified": false,
+      "geographicScope": [
+        "pasian_di_prato"
+      ],
+      "scopeNote": "L'annualità viene dal testo diocesano, non da una singola edizione. Il widget del 2024 riporta invece 1 giugno: il dato discordante non è adottato. I testi del 2024 e 2025 descrivono direzioni opposte del percorso, perciò la copy non ne fissa una. Nessun orario, anniversario dell'istituto o programma attuale viene trasformato in ricorrenza.",
+      "languageReview": {
+        "approvalBasis": "user_delegated_assisted_editorial_review",
+        "reviewer": "assistant",
+        "independentHumanReview": false,
+        "referencesLocation": "institutional-ritual-pasian-prato-maria.languageReview.fur.references",
+        "notes": "Otto voci HTML ARLeF controllate per lessico ed equivalenza: procession, marian, parochiis, clamâ dongje, percors/a pît, colegâ, fin e istitût. Pasian di Prât è già nel profilo comunale; San Giacomo e La Nostra Famiglia restano nomi propri."
+      },
+      "duplicateReview": {
+        "status": "distinct",
+        "comparedCatalogs": [
+          "ostermannCulturalDiscover",
+          "institutionalRituals",
+          "institutionalArchive",
+          "localMemory",
+          "municipalityProfiles"
+        ],
+        "note": "Nessuna scheda o bozza della processione di Pasian. Il profilo comunale tratta la Vicinia; Maj di Lucinico, Rogazione del Matajur e Bacio delle Croci riguardano altri gesti e luoghi. Le memorie del 31 maggio restano cronache storiche distinte."
+      }
+    },
+    {
+      "id": "ritual-research-moggio-madonna-salute",
+      "promotedRecordId": "institutional-ritual-moggio-madonna-salute",
+      "canonicalKey": "moggio-madonna-salute-novembre21",
+      "rubric": "riti_credenze_popolari",
+      "reviewStatus": "promoted",
+      "readyForUi": false,
+      "promotedAt": "2026-08-31",
+      "source": {
+        "url": "https://www.diocesiudine.it/wd-appuntamenti/moggio-udinese-messa-e-processione-per-la-madonna-della-salute/",
+        "authority": "Arcidiocesi di Udine",
+        "publishedAt": "2024-11-20",
+        "accessMethod": "direct_http_html",
+        "checkedAt": "2026-08-31"
+      },
+      "supportingSources": [
+        {
+          "url": "https://www.diocesiudine.it/wd-appuntamenti/a-moggio-udinese-si-rinnova-la-processione-della-madonna-della-salute/",
+          "authority": "Arcidiocesi di Udine",
+          "publishedAt": "2022-11-18",
+          "accessMethod": "direct_http_html",
+          "purpose": "Conferma la ricorrenza del 21 novembre e il trasporto della statua da parte dei pompieri volontari; documenta inoltre la sospensione pandemica e dichiara incerte le origini."
+        }
+      ],
+      "evidenceSummary": "Le due testimonianze diocesane descrivono la Madonna della Salute il 21 novembre a Moggio, la statua portata a spalla dai pompieri volontari e i fedeli provenienti anche dai paesi vicini. La formulazione del 2024 descrive la ricorrenza; il 2022 ne conferma il carattere tradizionale.",
+      "temporalRule": {
+        "type": "fixed_date",
+        "date": "11-21"
+      },
+      "editorialWindow": {
+        "type": "fixed_date",
+        "date": "11-21"
+      },
+      "currentEventScheduleVerified": false,
+      "geographicScope": [
+        "moggio_udinese"
+      ],
+      "scopeNote": "Si adotta il 21 novembre, concordante nei corpi degli articoli, non il 22 novembre dei contenitori calendario. Le fonti non provano lo svolgimento delle edizioni annunciate. Origini incerte e ipotesi migratoria restano escluse; la peregrinazione domestica descritta per il periodo 2006–pandemia non diventa un intervallo annuale corrente. Nessun orario o invito operativo.",
+      "languageReview": {
+        "approvalBasis": "user_delegated_assisted_editorial_review",
+        "reviewer": "assistant",
+        "independentHumanReview": false,
+        "referencesLocation": "institutional-ritual-moggio-madonna-salute.languageReview.fur.references",
+        "notes": "Procession, pompîr/pompîrs, volontari/volontaris, spale/spalis, statue, salût e Mueç verificati in HTML ARLeF; rilettura assistita dell'equivalenza IT/FUR senza certificazione."
+      },
+      "duplicateReview": {
+        "status": "distinct",
+        "comparedCatalogs": [
+          "ostermannCulturalDiscover",
+          "institutionalRituals",
+          "institutionalArchive",
+          "localMemory",
+          "municipalityProfiles"
+        ],
+        "note": "Nessuna scheda o bozza della Madonna della Salute a Moggio. Il profilo comunale tratta l'abbazia e la consacrazione del 1119; la memoria di Carla Gravina è biografica. Gli altri riti mariani hanno luoghi, date e gesti distinti."
+      }
+    }
+  ]
+}

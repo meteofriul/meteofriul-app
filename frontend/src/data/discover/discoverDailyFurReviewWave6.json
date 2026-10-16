@@ -1,0 +1,26 @@
+{
+  "schemaVersion": 1,
+  "purpose": "Sesto lotto FUR controllato per due record Scopri gia presenti in localMemory come candidati. Promozione senza duplicare record.",
+  "reviewedAt": "2026-07-12",
+  "summary": {
+    "totalRecords": 2,
+    "approved": 2,
+    "pendingHumanReview": 0
+  },
+  "records": [
+    {
+      "id": "memory-backlog-0714-scipio-slataper",
+      "titleFur": "Scipio Slataper, Triest e il Cjars",
+      "summaryFur": "Ai 14 di Lui dal 1888 al nas a Triest Scipio Slataper, scritôr leât ae storie leterarie de citât. Une memorie tra Triest, Cjars e peraule.",
+      "status": "approved",
+      "notes": "Promosso come memoria letteraria/territoriale, non come profilo biografico lungo."
+    },
+    {
+      "id": "memory-backlog-0229-pietro-blaserna",
+      "titleFur": "Pietro Blaserna, science intun dì râr",
+      "summaryFur": "Ai 29 di Fevrâr dal 1836 al nas a Fiumicello Pietro Blaserna, fisic. Une memorie di science che e sta ben intune date rare dal calendari.",
+      "status": "approved",
+      "notes": "Promosso per profilo scientifico; il copy evita il ruolo politico generico."
+    }
+  ]
+}

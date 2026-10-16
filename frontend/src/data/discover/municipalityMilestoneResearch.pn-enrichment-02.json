@@ -1,0 +1,153 @@
+{
+  "schemaVersion": 1,
+  "batchId": "pn-enrichment-milestones-02",
+  "snapshotDate": "2026-09-01",
+  "purpose": "Ricerca di quattro tappe per Budoia, Fiume Veneto e Sesto al Reghena; revisione FUR e promozione sono documentate separatamente.",
+  "runtimeIntegration": false,
+  "initialTotalMilestones": 434,
+  "editorialPolicy": {
+    "sourceEvidenceRequired": true,
+    "ambiguousDatesExcluded": true,
+    "italianCopyStatus": "editorial_draft",
+    "friulianCopyStatus": "pending_assisted_review",
+    "readyForUi": false
+  },
+  "excludedClaims": [
+    {
+      "municipality": "Budoia",
+      "claim": "A Dardago viene sperimentato il primo mulino alla bolognese del Friuli.",
+      "reason": "La sintesi turistica comunale usa il primato, ma la tappa è limitata al provvedimento veneziano e alle opere idrauliche documentate nel 1670.",
+      "sourceUrl": "https://turismo.comune.budoia.pn.it/contenuti/430923/storia"
+    },
+    {
+      "municipality": "Budoia",
+      "claim": "L'apertura della scuola femminile realizza la piena parità scolastica.",
+      "reason": "La fonte documenta l'apertura del 1870 e numerose iscrizioni, non la parità del sistema educativo o il superamento di ogni opposizione.",
+      "sourceUrl": "https://turismo.comune.budoia.pn.it/contenuti/430923/storia"
+    },
+    {
+      "municipality": "Fiume Veneto",
+      "claim": "Il Comune di Fiume Veneto nasce nel 1911.",
+      "reason": "Nel 1911 cambia il nome tramite l'aggiunta del predicato Veneto; la fonte colloca l'organizzazione comunale moderna all'inizio del XIX secolo.",
+      "sourceUrl": "https://www.comune.fiumeveneto.pn.it/it/cultura-23021/la-storia-26125"
+    },
+    {
+      "municipality": "Sesto al Reghena",
+      "claim": "Nel 899 gli Ungheri distruggono Sesto e nello stesso anno l'abbazia viene ricostruita.",
+      "reason": "La fonte limita la distruzione quasi completa all'abbazia e colloca l'inizio della ricostruzione fra il 960 e il 965.",
+      "sourceUrl": "https://www.comune.sesto-al-reghena.pn.it/labbazia/"
+    }
+  ],
+  "municipalities": [
+    {
+      "istatCode": "093008",
+      "municipality": "Budoia",
+      "province": "PN",
+      "currentMilestoneCount": 1,
+      "currentMilestoneIds": ["budoia-1419"],
+      "decision": "source_verified_it_fur_pending",
+      "candidates": [
+        {
+          "id": "budoia-opere-idrauliche-dardago-1670",
+          "year": 1670,
+          "label": {
+            "it": "Le autorità veneziane autorizzano le opere idrauliche a Dardago",
+            "fur": null
+          },
+          "evidence": "La storia pubblicata dal portale turistico comunale riferisce che nel 1670 le autorità veneziane permisero la canalizzazione, l'imbrigliamento e l'uso delle acque, con la realizzazione di opere idrauliche a Dardago.",
+          "source": {
+            "label": "Turismo Budoia - Dardago, Budoia e Santa Lucia: la nostra storia",
+            "type": "official_municipality",
+            "url": "https://turismo.comune.budoia.pn.it/contenuti/430923/storia",
+            "checkedAt": "2026-09-01"
+          },
+          "duplicateReview": {
+            "exactDuplicate": false,
+            "relatedRecordIds": ["budoia-1419"],
+            "note": "Le opere idrauliche seicentesche sono distinte dal passaggio sotto il dominio veneziano del 1419; la copy non conserva il primato regionale attribuito al mulino dalla stessa sintesi locale."
+          }
+        },
+        {
+          "id": "budoia-scuola-femminile-1870",
+          "year": 1870,
+          "label": {
+            "it": "Apre la scuola femminile",
+            "fur": null
+          },
+          "evidence": "La pagina comunale data al 1870 l'apertura della scuola femminile di Budoia e registra numerose iscrizioni, dopo che l'istruzione elementare avviata nel 1823 era riservata ai maschi.",
+          "source": {
+            "label": "Turismo Budoia - Dardago, Budoia e Santa Lucia: la nostra storia",
+            "type": "official_municipality",
+            "url": "https://turismo.comune.budoia.pn.it/contenuti/430923/storia",
+            "checkedAt": "2026-09-01"
+          },
+          "duplicateReview": {
+            "exactDuplicate": false,
+            "relatedRecordIds": ["budoia-1419", "budoia-opere-idrauliche-dardago-1670"],
+            "note": "La storia dell'istruzione ottocentesca non coincide con la fase veneziana né con le opere idrauliche di Dardago e non compare negli altri cataloghi Scopri."
+          }
+        }
+      ]
+    },
+    {
+      "istatCode": "093021",
+      "municipality": "Fiume Veneto",
+      "province": "PN",
+      "currentMilestoneCount": 2,
+      "currentMilestoneIds": ["fiume-veneto-996", "fiume-veneto-1182"],
+      "decision": "source_verified_it_fur_pending",
+      "candidates": [
+        {
+          "id": "fiume-veneto-predicato-1911",
+          "year": 1911,
+          "label": {
+            "it": "Un decreto reale aggiunge «Veneto» al nome Fiume",
+            "fur": null
+          },
+          "evidence": "La storia comunale documenta che nel 1911 un decreto di Vittorio Emanuele III aggiunse il predicato Veneto al nome Fiume, su richiesta del Consiglio comunale per evitare frequenti confusioni soprattutto postali.",
+          "source": {
+            "label": "Comune di Fiume Veneto - La storia",
+            "type": "official_municipality",
+            "url": "https://www.comune.fiumeveneto.pn.it/it/cultura-23021/la-storia-26125",
+            "checkedAt": "2026-09-01"
+          },
+          "duplicateReview": {
+            "exactDuplicate": false,
+            "relatedRecordIds": ["fiume-veneto-996", "fiume-veneto-1182"],
+            "note": "L'aggiunta del predicato nel 1911 è distinta dalla prima attestazione del corso d'acqua nel 996 e da quella dell'abitato nel 1182; non viene presentata come fondazione del Comune."
+          }
+        }
+      ]
+    },
+    {
+      "istatCode": "093043",
+      "municipality": "Sesto al Reghena",
+      "province": "PN",
+      "currentMilestoneCount": 2,
+      "currentMilestoneIds": ["sesto-al-reghena-century-viii", "sesto-al-reghena-762"],
+      "decision": "source_verified_it_fur_pending",
+      "candidates": [
+        {
+          "id": "sesto-al-reghena-abbazia-distrutta-899",
+          "year": 899,
+          "label": {
+            "it": "L'invasione degli Ungheri distrugge quasi completamente l'abbazia",
+            "fur": null
+          },
+          "evidence": "Il Comune documenta che nel 899 l'invasione degli Ungheri distrusse quasi completamente l'abbazia di Santa Maria; l'abate Adalberto II ne iniziò la ricostruzione soltanto fra il 960 e il 965.",
+          "source": {
+            "label": "Comune di Sesto al Reghena - L'Abbazia",
+            "type": "official_municipality",
+            "url": "https://www.comune.sesto-al-reghena.pn.it/labbazia/",
+            "checkedAt": "2026-09-01"
+          },
+          "duplicateReview": {
+            "exactDuplicate": false,
+            "relatedRecordIds": ["sesto-al-reghena-century-viii", "sesto-al-reghena-762"],
+            "note": "La distruzione dell'899 è una fase successiva e distinta dalla fondazione nella prima metà dell'VIII secolo e dalla donazione del 762."
+          }
+        }
+      ]
+    }
+  ]
+}

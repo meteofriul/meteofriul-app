@@ -1,0 +1,77 @@
+{
+  "schemaVersion": 1,
+  "batchId": "ostermann-1876-review-21",
+  "reviewedAt": "2026-08-02",
+  "source": {
+    "title": "Proverbi friulani raccolti dalla viva voce del popolo",
+    "author": "Valentino Ostermann",
+    "editionYear": 1876,
+    "catalogUrl": "https://www.techeudine.it/biblioteche-digital-furlane/proverbi-friulani-raccolti-dalla-viva-voce-del-popolo",
+    "facsimileUrl": "https://manoscrittisbhu.comune.udine.it/uploads/BDF/LO11116556.pdf"
+  },
+  "policy": {
+    "publish": false,
+    "furNormalizationAllowed": false,
+    "rule": "Il lotto crea una riserva minima per il calendario annuale con quattro massime generali verificate sul facsimile. Nessun testo riceve date, feste, mesi o stagioni artificiali."
+  },
+  "summary": {
+    "records": 4,
+    "promoteAfterLanguageReview": 4,
+    "needsContextOrLanguageReview": 0,
+    "secondaryVariant": 0
+  },
+  "records": [
+    {
+      "id": "ost1876-necessitat-fas-om-mestri",
+      "sourceBlockIds": ["ost1876-p133-b007"],
+      "pdfPage": 133,
+      "printedPage": 129,
+      "furOriginal": "La necessitat fas l'om mestri.",
+      "proposedIt": "La necessità rende l'uomo esperto.",
+      "recommendation": "promote_after_language_review",
+      "targetUse": "almanac_general",
+      "calendar": { "rotation": "general_wisdom" },
+      "reason": "Massima autonoma sul valore formativo della necessità.",
+      "publish": false
+    },
+    {
+      "id": "ost1876-par-fa-bisugne-scomenca",
+      "sourceBlockIds": ["ost1876-p135-b003"],
+      "pdfPage": 135,
+      "printedPage": 131,
+      "furOriginal": "Par fa bisugne scomençâ.",
+      "proposedIt": "Per fare bisogna cominciare.",
+      "recommendation": "promote_after_language_review",
+      "targetUse": "almanac_general",
+      "calendar": { "rotation": "general_wisdom" },
+      "reason": "Invito breve e autonomo a passare dall'intenzione all'azione.",
+      "publish": false
+    },
+    {
+      "id": "ost1876-nol-baste-scomenca-seguita",
+      "sourceBlockIds": ["ost1876-p135-b003"],
+      "pdfPage": 135,
+      "printedPage": 131,
+      "furOriginal": "Nol baste scomençâ, bisugne continuâ.",
+      "proposedIt": "Non basta cominciare, bisogna continuare.",
+      "recommendation": "promote_after_language_review",
+      "targetUse": "almanac_general",
+      "calendar": { "rotation": "general_wisdom" },
+      "reason": "Massima completa sulla costanza necessaria per portare avanti un lavoro.",
+      "publish": false
+    },
+    {
+      "id": "ost1876-compagnie-fas-fa-trop",
+      "sourceBlockIds": ["ost1876-p113-b006"],
+      "pdfPage": 113,
+      "printedPage": 109,
+      "furOriginal": "La compagnie fas fa trop.",
+      "proposedIt": "La compagnia porta a esagerare.",
+      "recommendation": "promote_after_language_review",
+      "targetUse": "almanac_general",
+      "calendar": { "rotation": "general_wisdom" },
+      "reason": "Osservazione popolare autonoma sull'influenza del gruppo nelle azioni.",
+      "publish": false
+    }
+  ]
+}

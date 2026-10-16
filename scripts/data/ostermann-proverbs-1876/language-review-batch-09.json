@@ -1,0 +1,199 @@
+{
+  "schemaVersion": 1,
+  "batchId": "ostermann-1876-language-review-09",
+  "reviewedAt": "2026-07-25",
+  "sourceDecisionFiles": ["review-decisions-batch-09.json"],
+  "purpose": "Nona revisione linguistica ed editoriale dei candidati Ostermann 1876 verificati sul facsimile. Non pubblica contenuti nella UI.",
+  "policy": {
+    "publish": false,
+    "rule": "La normalizzazione FUR conserva il significato attestato nel facsimile. Le quindici massime sono generali e non ricevono date, feste o stagioni artificiali."
+  },
+  "summary": {
+    "records": 15,
+    "languageReviewed": 15,
+    "mergeExisting": 0,
+    "needsNativeReview": 0
+  },
+  "records": [
+    {
+      "id": "ost1876-vivint-impare-vivi",
+      "reviewStatus": "language_reviewed",
+      "furNormalized": "Vivint si impare a vivi.",
+      "itFinal": "Vivendo s'impara a vivere.",
+      "destination": "almanac",
+      "calendarRule": {"type": "general", "bucket": "wisdom", "fallbackAllowed": true},
+      "duplicateAudit": {"status": "new_distinct"},
+      "evidence": [{"label": "Facsimile Ostermann 1876, p. PDF 174", "kind": "primary"}, {"label": "Dizionari de Lenghe Furlane, vivi e imparâ", "kind": "secondary"}],
+      "editorialNote": "Normalizzazione del gerundio in vivint; mantenuta la costruzione proverbiale.",
+      "publish": false
+    },
+    {
+      "id": "ost1876-tre-dis-no-mestris",
+      "reviewStatus": "language_reviewed",
+      "furNormalized": "In trê dîs no si devente mestris.",
+      "itFinal": "In tre giorni non si diventa maestri.",
+      "destination": "almanac",
+      "calendarRule": {"type": "general", "bucket": "wisdom", "fallbackAllowed": true},
+      "duplicateAudit": {"status": "new_distinct"},
+      "evidence": [{"label": "Facsimile Ostermann 1876, p. PDF 174", "kind": "primary"}, {"label": "Dizionari de Lenghe Furlane, trê, dî e mestri", "kind": "secondary"}],
+      "editorialNote": "Normalizzazione di trê e dîs; la forma plurale mestris resta fedele al testo.",
+      "publish": false
+    },
+    {
+      "id": "ost1876-pratiche-plui-gramatiche",
+      "reviewStatus": "language_reviewed",
+      "furNormalized": "E vâl plui la pratiche che la gramatiche.",
+      "itFinal": "Vale più la pratica della grammatica.",
+      "destination": "almanac",
+      "calendarRule": {"type": "general", "bucket": "wisdom", "fallbackAllowed": true},
+      "duplicateAudit": {"status": "new_distinct"},
+      "evidence": [{"label": "Facsimile Ostermann 1876, p. PDF 174", "kind": "primary"}, {"label": "Dizionari de Lenghe Furlane, pratiche e gramatiche", "kind": "secondary"}],
+      "editorialNote": "Aggiunto il pronome atono richiesto dalla forma moderna; significato invariato.",
+      "publish": false
+    },
+    {
+      "id": "ost1876-esperience-gran-scuele",
+      "reviewStatus": "language_reviewed",
+      "furNormalized": "La esperience e je une grande scuele.",
+      "itFinal": "L'esperienza è una grande scuola.",
+      "destination": "almanac",
+      "calendarRule": {"type": "general", "bucket": "wisdom", "fallbackAllowed": true},
+      "duplicateAudit": {"status": "new_distinct"},
+      "evidence": [{"label": "Facsimile Ostermann 1876, p. PDF 174", "kind": "primary"}, {"label": "Dizionari de Lenghe Furlane, esperience e scuele", "kind": "secondary"}],
+      "editorialNote": "Normalizzazione dell'articolo e della copula; gran è reso con grande nella forma corrente.",
+      "publish": false
+    },
+    {
+      "id": "ost1876-prime-garzon-po-mestri",
+      "reviewStatus": "language_reviewed",
+      "furNormalized": "Bisugne jessi prime garzon e po mestri.",
+      "itFinal": "Bisogna essere prima garzone e poi maestro.",
+      "destination": "almanac",
+      "calendarRule": {"type": "general", "bucket": "wisdom", "fallbackAllowed": true},
+      "duplicateAudit": {"status": "new_distinct"},
+      "evidence": [{"label": "Facsimile Ostermann 1876, p. PDF 174", "kind": "primary"}, {"label": "Dizionari de Lenghe Furlane, garzon e mestri", "kind": "secondary"}],
+      "editorialNote": "Il testo è già vicino alla grafia corrente e viene conservato.",
+      "publish": false
+    },
+    {
+      "id": "ost1876-lezion-propriis-spesis",
+      "reviewStatus": "language_reviewed",
+      "furNormalized": "La lezion plui imprimude e je chê imparade a propriis spesis.",
+      "itFinal": "La lezione che resta più impressa è quella imparata a proprie spese.",
+      "destination": "almanac",
+      "calendarRule": {"type": "general", "bucket": "wisdom", "fallbackAllowed": true},
+      "duplicateAudit": {"status": "new_distinct"},
+      "evidence": [{"label": "Facsimile Ostermann 1876, p. PDF 174", "kind": "primary"}, {"label": "Dizionari de Lenghe Furlane, lezion, imprimi e spese", "kind": "secondary"}],
+      "editorialNote": "Normalizzazione della copula e di chê; propriis spesis conserva il valore attestato.",
+      "publish": false
+    },
+    {
+      "id": "ost1876-impare-spesis-altris",
+      "reviewStatus": "language_reviewed",
+      "furNormalized": "Fortunât cui che al impare a spesis dai altris e no a spesis sôs.",
+      "itFinal": "Fortunato chi impara a spese degli altri e non a proprie spese.",
+      "destination": "almanac",
+      "calendarRule": {"type": "general", "bucket": "wisdom", "fallbackAllowed": true},
+      "duplicateAudit": {"status": "new_distinct"},
+      "evidence": [{"label": "Facsimile Ostermann 1876, p. PDF 174", "kind": "primary"}, {"label": "Dizionari de Lenghe Furlane, fortunât, spese e altri", "kind": "secondary"}],
+      "editorialNote": "Inserito il pronome atono moderno; normalizzati fortunât e sôs.",
+      "publish": false
+    },
+    {
+      "id": "ost1876-fa-falle-falla-impare",
+      "reviewStatus": "language_reviewed",
+      "furNormalized": "Cul fâ si fale e cul falâ si impare.",
+      "itFinal": "Facendo si sbaglia e sbagliando s'impara.",
+      "destination": "almanac",
+      "calendarRule": {"type": "general", "bucket": "wisdom", "fallbackAllowed": true},
+      "duplicateAudit": {"status": "new_distinct"},
+      "evidence": [{"label": "Facsimile Ostermann 1876, p. PDF 174", "kind": "primary"}, {"label": "Dizionari de Lenghe Furlane, fâ e falâ", "kind": "secondary"}],
+      "editorialNote": "Normalizzazione degli infiniti; la struttura parallela resta invariata.",
+      "publish": false
+    },
+    {
+      "id": "ost1876-mus-cadut-no-cole",
+      "reviewStatus": "language_reviewed",
+      "furNormalized": "Il mus, là che al è colât une volte, nol cole plui.",
+      "itFinal": "L'asino non cade più dove è già caduto una volta.",
+      "destination": "almanac",
+      "calendarRule": {"type": "general", "bucket": "wisdom", "fallbackAllowed": true},
+      "duplicateAudit": {"status": "new_distinct"},
+      "evidence": [{"label": "Facsimile Ostermann 1876, p. PDF 175", "kind": "primary"}, {"label": "Dizionari de Lenghe Furlane, mus e colâ", "kind": "secondary"}],
+      "editorialNote": "La ca è normalizzato in là che; cadût è reso con il verbo corrente colâ.",
+      "publish": false
+    },
+    {
+      "id": "ost1876-scotat-aghe-cjalde",
+      "reviewStatus": "language_reviewed",
+      "furNormalized": "Cui che al è stât scotât te aghe cjalde al à pôre di chê frede.",
+      "itFinal": "Chi si è scottato con l'acqua calda ha paura di quella fredda.",
+      "destination": "almanac",
+      "calendarRule": {"type": "general", "bucket": "wisdom", "fallbackAllowed": true},
+      "duplicateAudit": {"status": "new_distinct"},
+      "evidence": [{"label": "Facsimile Ostermann 1876, p. PDF 175", "kind": "primary"}, {"label": "Dizionari de Lenghe Furlane, scotâ, aghe, cjalt e pôre", "kind": "secondary"}],
+      "editorialNote": "Normalizzati i pronomi atoni, cjalde, pôre e chê; nessuna aggiunta semantica.",
+      "publish": false
+    },
+    {
+      "id": "ost1876-om-cognos-faz-no-cacaris",
+      "reviewStatus": "language_reviewed",
+      "furNormalized": "L'om si cognòs cui fats, no cu lis cjacaris.",
+      "itFinal": "L'uomo si riconosce dai fatti, non dalle chiacchiere.",
+      "destination": "almanac",
+      "calendarRule": {"type": "general", "bucket": "wisdom", "fallbackAllowed": true},
+      "duplicateAudit": {"status": "new_distinct"},
+      "evidence": [{"label": "Facsimile Ostermann 1876, p. PDF 175", "kind": "primary"}, {"label": "Dizionari de Lenghe Furlane, cognossi, fat e cjacare", "kind": "secondary"}],
+      "editorialNote": "Normalizzati cognòs, fats e cjacaris; la contrapposizione tra fatti e parole resta invariata.",
+      "publish": false
+    },
+    {
+      "id": "ost1876-disgraciis-menin-judizi",
+      "reviewStatus": "language_reviewed",
+      "furNormalized": "Lis disgraciis a menin giudizi.",
+      "itFinal": "Le disgrazie mettono giudizio.",
+      "destination": "almanac",
+      "calendarRule": {"type": "general", "bucket": "wisdom", "fallbackAllowed": true},
+      "duplicateAudit": {"status": "new_distinct"},
+      "evidence": [{"label": "Facsimile Ostermann 1876, p. PDF 176", "kind": "primary"}, {"label": "Dizionari de Lenghe Furlane, disgracie e giudizi", "kind": "secondary"}],
+      "editorialNote": "Inserito il pronome atono plurale della forma moderna; il significato resta invariato.",
+      "publish": false
+    },
+    {
+      "id": "ost1876-cognossi-mangja-star-sal",
+      "reviewStatus": "language_reviewed",
+      "furNormalized": "Prin di cognossi ben un, bisugne mangjâ cun lui un stâr di sâl.",
+      "itFinal": "Prima di conoscere bene qualcuno, bisogna mangiare con lui uno staio di sale.",
+      "destination": "almanac",
+      "calendarRule": {"type": "general", "bucket": "wisdom", "fallbackAllowed": true},
+      "duplicateAudit": {"status": "new_distinct"},
+      "evidence": [{"label": "Facsimile Ostermann 1876, p. PDF 175", "kind": "primary"}, {"label": "Dizionari de Lenghe Furlane, cognossi, mangjâ, stâr e sâl", "kind": "secondary"}],
+      "editorialNote": "Normalizzati mangjâ, stâr e sâl; lo staio resta l'immagine tradizionale del testo.",
+      "publish": false
+    },
+    {
+      "id": "ost1876-cuatri-voi-plui-doi",
+      "reviewStatus": "language_reviewed",
+      "furNormalized": "Cuatri voi a viodin plui di doi.",
+      "itFinal": "Quattro occhi vedono più di due.",
+      "destination": "almanac",
+      "calendarRule": {"type": "general", "bucket": "wisdom", "fallbackAllowed": true},
+      "duplicateAudit": {"status": "new_distinct"},
+      "evidence": [{"label": "Facsimile Ostermann 1876, p. PDF 176", "kind": "primary"}, {"label": "Dizionari de Lenghe Furlane, cuatri, voli e viodi", "kind": "secondary"}],
+      "editorialNote": "Quattri è normalizzato in cuatri; voi è mantenuto come plurale di voli.",
+      "publish": false
+    },
+    {
+      "id": "ost1876-cite-mani",
+      "reviewStatus": "language_reviewed",
+      "furNormalized": "Cui che al sa fâ la cite al sa fâ ancje il mani.",
+      "itFinal": "Chi ha fatto la pentola sa fare anche il manico.",
+      "destination": "almanac",
+      "calendarRule": {"type": "general", "bucket": "wisdom", "fallbackAllowed": true},
+      "duplicateAudit": {"status": "new_distinct"},
+      "evidence": [{"label": "Facsimile Ostermann 1876, p. PDF 176", "kind": "primary"}, {"label": "Dizionari de Lenghe Furlane, cite, fâ e mani", "kind": "secondary"}],
+      "editorialNote": "Inseriti i pronomi atoni e normalizzato ancje; il senso resta quello attestato.",
+      "publish": false
+    }
+  ]
+}

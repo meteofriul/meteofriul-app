@@ -1,0 +1,199 @@
+{
+  "schemaVersion": 1,
+  "batchId": "pn-enrichment-milestones-08",
+  "snapshotDate": "2026-09-02",
+  "purpose": "Ricerca di tre tappe per Casarsa della Delizia, Montereale Valcellina e Pinzano al Tagliamento; revisione FUR e promozione sono documentate separatamente.",
+  "runtimeIntegration": false,
+  "initialTotalMilestones": 457,
+  "editorialPolicy": {
+    "sourceEvidenceRequired": true,
+    "ambiguousDatesExcluded": true,
+    "italianCopyStatus": "editorial_draft",
+    "friulianCopyStatus": "pending_assisted_review",
+    "readyForUi": false
+  },
+  "excludedClaims": [
+    {
+      "municipality": "Casarsa della Delizia",
+      "claim": "L'Academiuta nasce nel 1942 insieme a Poesie a Casarsa.",
+      "reason": "La fonte distingue la fondazione del sodalizio nel 1945 dalla precedente attività poetica.",
+      "sourceUrl": "https://www.pasolinibibliografiafriulana.it/opere/academiuta-di-lenga-furlana_2728"
+    },
+    {
+      "municipality": "Casarsa della Delizia",
+      "claim": "Pasolini fonda da solo l'Academiuta.",
+      "reason": "Il passo elenca più fondatori; la copy non attribuisce l'iniziativa esclusivamente a Pasolini.",
+      "sourceUrl": "https://www.pasolinibibliografiafriulana.it/opere/academiuta-di-lenga-furlana_2728"
+    },
+    {
+      "municipality": "Montereale Valcellina",
+      "claim": "Nel 2011 viene inaugurato il Museo dell'energia.",
+      "reason": "Il notiziario riguarda il Museo archeologico a Palazzo Toffoli, non l'istituzione nella centrale Pitter.",
+      "sourceUrl": "https://museoarcheologicocividale.beniculturali.it/wp-content/uploads/2021/03/Forum-Iulii-XXXV-Notiziari.compressed.pdf"
+    },
+    {
+      "municipality": "Montereale Valcellina",
+      "claim": "Il Museo archeologico viene inaugurato il 1 marzo 2011.",
+      "reason": "Il passo documenta il mese, non il giorno: la timeline conserva soltanto l'anno.",
+      "sourceUrl": "https://museoarcheologicocividale.beniculturali.it/wp-content/uploads/2021/03/Forum-Iulii-XXXV-Notiziari.compressed.pdf"
+    },
+    {
+      "municipality": "Pinzano al Tagliamento",
+      "claim": "Nel 1525 il Pordenone completa tutti gli affreschi di San Martino.",
+      "reason": "La fonte distingue la Madonna col Bambino da un altro affresco successivo; il 1525 non viene esteso all'intero ciclo.",
+      "sourceUrl": "https://www.turismofvg.it/it/71917/chiesa-di-san-martino-vescovo"
+    },
+    {
+      "municipality": "Pinzano al Tagliamento",
+      "claim": "La Madonna del 1525 si trova nella chiesa dei Battuti a Valeriano.",
+      "reason": "La scheda consultata colloca questa opera in San Martino a Pinzano: non si trasferisce il fatto a un'altra chiesa del territorio.",
+      "sourceUrl": "https://www.turismofvg.it/it/71917/chiesa-di-san-martino-vescovo"
+    }
+  ],
+  "editorialOmissions": [
+    {
+      "municipality": "Casarsa della Delizia",
+      "year": 1945,
+      "claim": "In agosto Il Stroligut riparte dal numero 1 dopo la nascita dell'Academiuta.",
+      "decision": "source_verified_not_promoted",
+      "reason": "La ripresa editoriale è documentata ma resta distinta dalla fondazione; il lotto aggiunge un solo fatto al profilo.",
+      "sourceUrl": "https://www.pasolinibibliografiafriulana.it/opere/academiuta-di-lenga-furlana_2728"
+    },
+    {
+      "municipality": "Montereale Valcellina",
+      "year": 1991,
+      "claim": "Sondaggi archeologici mettono in luce una porzione della villa romana di Malnisio, in località Maniana.",
+      "decision": "source_verified_not_promoted",
+      "reason": "Il dato è documentato da ERPAC; si privilegia l'apertura dell'istituzione che rende accessibile il patrimonio archeologico.",
+      "sourceUrl": "https://patrimonioculturale.regione.fvg.it/museo/?s_id=440633"
+    },
+    {
+      "municipality": "Pinzano al Tagliamento",
+      "century": "XVIII",
+      "claim": "La chiesa di San Martino viene rimodernata nel Settecento.",
+      "decision": "source_verified_not_promoted",
+      "reason": "La fonte non propone un singolo anno e il lotto privilegia l'opera pittorica con datazione puntuale.",
+      "sourceUrl": "https://www.turismofvg.it/it/71917/chiesa-di-san-martino-vescovo"
+    }
+  ],
+  "municipalities": [
+    {
+      "istatCode": "093010",
+      "municipality": "Casarsa della Delizia",
+      "province": "PN",
+      "currentMilestoneCount": 2,
+      "currentMilestoneIds": [
+        "casarsa-della-delizia-1942",
+        "casarsa-della-delizia-1943"
+      ],
+      "decision": "source_verified_it_fur_pending",
+      "candidates": [
+        {
+          "id": "casarsa-academiuta-founded-1945",
+          "year": 1945,
+          "documentedDate": "1945-02-18",
+          "label": {
+            "it": "A Versuta nasce l'Academiuta di lenga furlana",
+            "fur": null
+          },
+          "evidence": "La bibliografia della Società Filologica Friulana e del Centro Studi Pasolini riproduce il passo di Il Stroligut, n. 1, agosto 1945, p. I, che data al 18 febbraio 1945 a Versuta la fondazione dell'Academiuta da parte di Pasolini e di un gruppo di compagni.",
+          "source": {
+            "label": "Società Filologica Friulana / Centro Studi Pasolini - Academiuta di lenga furlana",
+            "type": "cultural_institution",
+            "url": "https://www.pasolinibibliografiafriulana.it/opere/academiuta-di-lenga-furlana_2728",
+            "checkedAt": "2026-09-02"
+          },
+          "duplicateReview": {
+            "exactDuplicate": false,
+            "relatedRecordIds": [
+              "casarsa-della-delizia-1942",
+              "casarsa-della-delizia-1943"
+            ],
+            "note": "La nascita del sodalizio è distinta dalla pubblicazione di Poesie a Casarsa nel 1942 e dal trasferimento familiare del 1943 già raccontati nel profilo."
+          }
+        }
+      ]
+    },
+    {
+      "istatCode": "093027",
+      "municipality": "Montereale Valcellina",
+      "province": "PN",
+      "currentMilestoneCount": 2,
+      "currentMilestoneIds": [
+        "montereale-valcellina-1905",
+        "montereale-valcellina-2006"
+      ],
+      "decision": "source_verified_it_fur_pending",
+      "candidates": [
+        {
+          "id": "montereale-archaeological-museum-opening-2011",
+          "year": 2011,
+          "label": {
+            "it": "Viene inaugurato il Museo archeologico di Montereale Valcellina",
+            "fur": null
+          },
+          "evidence": "Serena Vitri e Alessandra Negri, nel notiziario di Forum Iulii XXXV, p. 234, collocano nel marzo 2011 l'inaugurazione del Museo archeologico a Palazzo Toffoli. ERPAC conferma sede e identità dell'istituzione, senza fornire una data di apertura.",
+          "verificationNote": "Passo datato consultato nell'estrazione indicizzata del PDF istituzionale; disponibilità del documento verificata direttamente via HTTP 200, application/pdf. Il mese resta nell'evidenza, senza inventare un giorno.",
+          "source": {
+            "label": "Museo archeologico nazionale di Cividale - Forum Iulii XXXV, notiziari, p. 234",
+            "type": "national_institution",
+            "url": "https://museoarcheologicocividale.beniculturali.it/wp-content/uploads/2021/03/Forum-Iulii-XXXV-Notiziari.compressed.pdf",
+            "checkedAt": "2026-09-02"
+          },
+          "supportingSources": [
+            {
+              "label": "ERPAC FVG - Museo archeologico di Montereale Valcellina",
+              "type": "regional_institution",
+              "url": "https://patrimonioculturale.regione.fvg.it/museo/?s_id=440633",
+              "checkedAt": "2026-09-02"
+            }
+          ],
+          "duplicateReview": {
+            "exactDuplicate": false,
+            "relatedRecordIds": [
+              "montereale-valcellina-1905",
+              "montereale-valcellina-2006"
+            ],
+            "note": "Il Museo archeologico di Palazzo Toffoli è distinto dal Museo dell'energia nella centrale Pitter, già raccontato nelle tappe del 1905 e del 2006."
+          }
+        }
+      ]
+    },
+    {
+      "istatCode": "093030",
+      "municipality": "Pinzano al Tagliamento",
+      "province": "PN",
+      "currentMilestoneCount": 2,
+      "currentMilestoneIds": [
+        "pinzano-al-tagliamento-1906",
+        "pinzano-al-tagliamento-1970"
+      ],
+      "decision": "source_verified_it_fur_pending",
+      "candidates": [
+        {
+          "id": "pinzano-pordenone-madonna-san-martino-1525",
+          "year": 1525,
+          "label": {
+            "it": "Il Pordenone dipinge la Madonna col Bambino nella chiesa di San Martino",
+            "fur": null
+          },
+          "evidence": "PromoTurismoFVG attribuisce al 1525 la Madonna col Bambino dipinta da Giovanni Antonio de' Sacchis, detto il Pordenone, sulla parete destra della navata di San Martino a Pinzano; distingue questo affresco dal successivo Martirio di san Sebastiano.",
+          "source": {
+            "label": "PromoTurismoFVG - Chiesa di San Martino Vescovo a Pinzano",
+            "type": "regional_institution",
+            "url": "https://www.turismofvg.it/it/71917/chiesa-di-san-martino-vescovo",
+            "checkedAt": "2026-09-02"
+          },
+          "duplicateReview": {
+            "exactDuplicate": false,
+            "relatedRecordIds": [
+              "pinzano-al-tagliamento-1906",
+              "pinzano-al-tagliamento-1970"
+            ],
+            "note": "L'opera cinquecentesca amplia la storia artistica del paese ed è distinta dai due ponti del 1906 e del 1970."
+          }
+        }
+      ]
+    }
+  ]
+}

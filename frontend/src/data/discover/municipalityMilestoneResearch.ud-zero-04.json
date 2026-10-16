@@ -1,0 +1,780 @@
+{
+  "schemaVersion": 1,
+  "batchId": "ud-zero-milestones-04",
+  "snapshotDate": "2026-08-21",
+  "purpose": "Lotto di ricerca non visibile in UI per ampliare le tappe storiche dei successivi nove Comuni UD che ne sono privi.",
+  "runtimeIntegration": false,
+  "editorialPolicy": {
+    "sourceEvidenceRequired": true,
+    "ambiguousDatesExcluded": true,
+    "duplicateAuditRequired": true,
+    "noForcedMilestoneCount": true,
+    "italianCopyStatus": "editorial_draft",
+    "friulianCopyStatus": "pending_human_review",
+    "readyForUi": false
+  },
+  "excludedClaims": [
+    {
+      "municipality": "Nimis",
+      "claim": "Il dettaglio della donazione del 1170 verrebbe attribuito a un unico donatore e a un unico bene.",
+      "reason": "Due pagine comunali indicano rispettivamente Voldarico e il maniero oppure Ulrico di Attimis e la villa; la tappa conserva soltanto l'esistenza documentata del castello, sulla quale le fonti concordano."
+    },
+    {
+      "municipality": "Nimis",
+      "claim": "La distruzione del castello di Cergneu verrebbe fissata in un anno preciso.",
+      "reason": "ERPAC colloca la distruzione tra il 1500 e il 1510, mentre il Comune indica il 1511; il conflitto non viene risolto arbitrariamente."
+    },
+    {
+      "municipality": "Nimis",
+      "claim": "Nemus Castrum verrebbe identificato senza riserve con Nimis e trasformato in una tappa datata.",
+      "reason": "L'identificazione puntuale del luogo citato da Paolo Diacono e la sua datazione non sono abbastanza univoche per un'etichetta assertiva."
+    },
+    {
+      "municipality": "Nimis",
+      "claim": "Il riconoscimento DOCG del Ramandolo diventerebbe una quarta tappa.",
+      "reason": "Il riconoscimento del 2001 è documentato, ma la card comunale è già imperniata sul Ramandolo; nel limite editoriale hanno precedenza tre fatti distinti che ampliano davvero il profilo."
+    },
+    {
+      "municipality": "Nimis",
+      "claim": "Il terremoto del 1976 diventerebbe una tappa locale.",
+      "reason": "Il sisma è già coperto dalla Memoria del giorno regionale e non viene duplicato nelle timeline comunali."
+    },
+    {
+      "municipality": "Pagnacco",
+      "claim": "Il documento del 1262 sarebbe presentato come prima attestazione assoluta di Pagnacco.",
+      "reason": "Una pubblicazione della Comunità Collinare segnala anche la forma Panià nel 1234; la tappa descrive soltanto il documento patriarcale verificato del 1262."
+    },
+    {
+      "municipality": "Pagnacco",
+      "claim": "L'abolizione del Comune nel 1928 e il ripristino dell'autonomia nel 1947 verrebbero ripetuti nella timeline di Pagnacco.",
+      "reason": "Entrambi i passaggi sono già pubblicati nella timeline di Tavagnacco e costituiscono gli stessi fatti amministrativi."
+    },
+    {
+      "municipality": "Pagnacco",
+      "claim": "La vicenda del castello di Castellerio verrebbe condensata nella distruzione certa del 1352.",
+      "reason": "SIUSA parla di demolizione nel 1352, mentre altre ricostruzioni distinguono una distruzione forse parziale e la scomparsa finale nel 1477."
+    },
+    {
+      "municipality": "Pagnacco",
+      "claim": "La costruzione del castello di Fontanabona verrebbe fissata nel 1609 o nel 1610.",
+      "reason": "Le fonti istituzionali non concordano sull'anno e la tappa resta esclusa."
+    },
+    {
+      "municipality": "Pagnacco",
+      "claim": "L'apertura del Museo di Storia Contadina verrebbe fissata nel 1999.",
+      "reason": "La documentazione disponibile non distingue in modo abbastanza netto l'apertura attuale dai precursori museali precedenti."
+    },
+    {
+      "municipality": "Palazzolo dello Stella",
+      "claim": "La scoperta nel 1981 del ponte della Via Annia diventerebbe una tappa autonoma.",
+      "reason": "Il ponte e la Via Annia sono già il tema centrale del riassunto comunale; le tre tappe scelte aggiungono fatti storici diversi."
+    },
+    {
+      "municipality": "Palazzolo dello Stella",
+      "claim": "La nascita di Gae Aulenti diventerebbe anche una tappa comunale.",
+      "reason": "Il fatto è già pubblicato e approvato in Memoria del giorno."
+    },
+    {
+      "municipality": "Palazzolo dello Stella",
+      "claim": "L'origine romana di Palazzolo verrebbe presentata come una fondazione certa.",
+      "reason": "Le fonti descrivono un quadro archeologico e insediativo, non un singolo atto fondativo databile."
+    },
+    {
+      "municipality": "Paluzza",
+      "claim": "La Torre Moscarda sarebbe stata costruita esattamente nel 1259.",
+      "reason": "La fonte data al 1259 la nascita del borgo Moscardum, ma colloca la torre soltanto in termini più ampi nella metà del XIII secolo."
+    },
+    {
+      "municipality": "Paluzza",
+      "claim": "La seconda torre del sistema Moscardo sarebbe stata distrutta in un anno univoco.",
+      "reason": "La pagina comunale indica il 1836, mentre il documento ufficiale di approfondimento indica il 1840."
+    },
+    {
+      "municipality": "Paularo",
+      "claim": "L'origine romana di Paularo verrebbe trasformata in una tappa storica.",
+      "reason": "La ricostruzione e l'etimologia restano ipotesi e non offrono un fatto puntuale verificabile."
+    },
+    {
+      "municipality": "Paularo",
+      "claim": "La nascita dell'Ecomuseo o della rassegna Mistîrs verrebbe ripetuta nella timeline.",
+      "reason": "L'Ecomuseo e i mestieri sono già il tema centrale del riassunto comunale; le nuove tappe documentano invece attestazione, persona e istituzione comunale."
+    },
+    {
+      "municipality": "Pocenia",
+      "claim": "La Motta incastellata sarebbe qualificata con certezza come castello.",
+      "reason": "SIUSA segnala espressamente che non è chiaro se la denominazione indicasse un castello vero e proprio; la tappa conserva la formula documentaria originale."
+    },
+    {
+      "municipality": "Pocenia",
+      "claim": "Il parco dello Stella e del Torsa sarebbe stato istituito nel 1996 o nel 2004.",
+      "reason": "Il 1996 riguarda la legge quadro e il 2004 compare in documenti secondari; l'atto regionale istitutivo è il decreto del 18 gennaio 2000."
+    },
+    {
+      "municipality": "Pocenia",
+      "claim": "La costruzione di Villa Caratti diventerebbe un'altra tappa della card.",
+      "reason": "La villa e lo sviluppo seicentesco del borgo sono già il fulcro del riassunto comunale."
+    },
+    {
+      "municipality": "Povoletto",
+      "claim": "La prima menzione del castello della Motta verrebbe fissata nel 921 o nel 922.",
+      "reason": "Le pagine comunali non concordano tra 921 e 922; nessuno dei due anni viene scelto arbitrariamente."
+    },
+    {
+      "municipality": "Povoletto",
+      "claim": "L'abbandono del castello della Motta verrebbe fissato nel 1443.",
+      "reason": "Altre ricostruzioni istituzionali descrivono un processo progressivo tra la fine del XV e l'inizio del XVI secolo."
+    },
+    {
+      "municipality": "Prato Carnico",
+      "claim": "Il primo orologio a palette verrebbe datato esattamente al 1930.",
+      "reason": "Le fonti oscillano tra 1930, fine degli anni Trenta e una formulazione più generale riferita agli anni Trenta."
+    },
+    {
+      "municipality": "Prato Carnico",
+      "claim": "Il terremoto del 1976 diventerebbe una tappa locale.",
+      "reason": "Il fatto unico è già coperto dalla Memoria del giorno regionale."
+    },
+    {
+      "municipality": "Premariacco",
+      "claim": "La nascita di Fiore dei Liberi verrebbe fissata in un anno e in un luogo certi.",
+      "reason": "La nascita è collocata tra il 1340 e il 1350, a Premariacco o più probabilmente a Cividale; inoltre la biografia è già il centro del riassunto comunale."
+    },
+    {
+      "municipality": "Premariacco",
+      "claim": "La composizione del Flos duellatorum nel 1409 diventerebbe anche una tappa locale.",
+      "reason": "Il fatto biografico, avvenuto nel contesto della corte estense, è già esplicitato nel riassunto della card."
+    },
+    {
+      "municipality": "Premariacco",
+      "claim": "Rocca Bernarda sarebbe attribuita con certezza a Giovanni da Udine.",
+      "reason": "ERPAC precisa che l'ipotesi di attribuzione non è sostenuta da documentazione; la tappa registra soltanto la data di edificazione attestata."
+    }
+  ],
+  "duplicateAudit": {
+    "status": "passed_with_thematic_overlap",
+    "exactDuplicates": 0,
+    "excludedExactDuplicates": 4,
+    "countingRule": "unique_facts_already_present_in_other_rubrics",
+    "notes": [
+      "I quattro fatti unici già presenti altrove sono l'abolizione di Pagnacco nel 1928, il ripristino della sua autonomia nel 1947, la nascita di Gae Aulenti e il terremoto del 1976; il sisma conta una sola volta anche se escluso da più profili.",
+      "Ramandolo, Fontanabona, la Via Annia, la Torre Moscarda, l'Ecomuseo di Paularo, Villa Caratti, la Motta, gli orologi di Pesariis e Fiore dei Liberi sono già richiamati nei riassunti comunali; le tappe promosse aggiungono fatti e date specifici oppure restano escluse quando ripeterebbero il testo.",
+      "La nascita di Jacopo Linussio a Villamezzo è distinta dalla successiva attività manifatturiera documentata nella timeline di Tolmezzo.",
+      "La Motta incastellata di Pocenia resta una citazione documentaria prudente al XIII secolo e non viene trasformata in un castello certo."
+    ]
+  },
+  "sourceConflicts": [
+    {
+      "municipality": "Nimis",
+      "field": "cergneuDonation1170",
+      "selectedValue": "esistenza documentata del castello dal 1170",
+      "selectedAuthority": "Concordanza tra ERPAC FVG e Comune di Nimis",
+      "discardedValue": "Voldarico e il maniero oppure Ulrico di Attimis e la villa",
+      "discardedAuthority": "Due ricostruzioni comunali non coincidenti",
+      "decision": "L'etichetta non identifica donatore e bene oggetto dell'atto."
+    },
+    {
+      "municipality": "Nimis",
+      "field": "cergneuDestructionYear",
+      "selectedValue": "esclusione della tappa",
+      "selectedAuthority": "Confronto tra ERPAC FVG e Comune di Nimis",
+      "discardedValue": "1500-1510 oppure 1511",
+      "discardedAuthority": "Cronologie istituzionali non coincidenti",
+      "decision": "Nessun anno viene promosso come data certa della distruzione."
+    },
+    {
+      "municipality": "Pagnacco",
+      "field": "firstToponymMention",
+      "selectedValue": "documento patriarcale del 1262 senza qualificarlo come prima attestazione",
+      "selectedAuthority": "SIUSA - Comune di Pagnacco",
+      "discardedValue": "Panià nel 1234",
+      "discardedAuthority": "Comunità Collinare del Friuli",
+      "decision": "La formulazione registra il documento verificato e non stabilisce un primato cronologico."
+    },
+    {
+      "municipality": "Pagnacco",
+      "field": "fontanabonaConstructionYear",
+      "selectedValue": "esclusione della tappa",
+      "selectedAuthority": "Confronto tra fonti istituzionali",
+      "discardedValue": "1609 oppure 1610",
+      "discardedAuthority": "Cronologie non coincidenti",
+      "decision": "La data non viene forzata nella timeline."
+    },
+    {
+      "municipality": "Palazzolo dello Stella",
+      "field": "firstToponymMention",
+      "selectedValue": 762,
+      "selectedAuthority": "Ministero della Cultura ed ERPAC FVG",
+      "discardedValue": 1349,
+      "discardedAuthority": "Sintesi generale SIUSA",
+      "decision": "Le due fonti specialistiche concordano sul documento del 762 e permettono una formulazione limitata alla citazione di Palaciolo."
+    },
+    {
+      "municipality": "Paluzza",
+      "field": "secondMoscardaTowerDestructionYear",
+      "selectedValue": "esclusione della tappa",
+      "selectedAuthority": "Confronto tra pagina e approfondimento del Comune di Paluzza",
+      "discardedValue": "1836 oppure 1840",
+      "discardedAuthority": "Due documenti dello stesso ente non coincidenti",
+      "decision": "La tappa non viene pubblicata finché il conflitto non è risolto."
+    },
+    {
+      "municipality": "Pocenia",
+      "field": "stellaTorsaParkEstablishmentYear",
+      "selectedValue": 2000,
+      "selectedAuthority": "Decreto regionale 014/Pres del 18 gennaio 2000 e BUR n. 5 del 2 febbraio 2000",
+      "discardedValue": "1996 oppure 2004",
+      "discardedAuthority": "Legge quadro e documentazione secondaria",
+      "decision": "La timeline usa l'anno dell'atto istitutivo specifico."
+    },
+    {
+      "municipality": "Povoletto",
+      "field": "mottaCastleFirstMention",
+      "selectedValue": "esclusione della tappa",
+      "selectedAuthority": "Confronto tra pagine del Comune di Povoletto",
+      "discardedValue": "921 oppure 922",
+      "discardedAuthority": "Date comunali non coincidenti",
+      "decision": "La timeline non sceglie una delle due date."
+    },
+    {
+      "municipality": "Prato Carnico",
+      "field": "firstFlipClockYear",
+      "selectedValue": "esclusione della tappa",
+      "selectedAuthority": "Confronto tra Comune e fonti regionali",
+      "discardedValue": "1930, anni Trenta oppure fine anni Trenta",
+      "discardedAuthority": "Formulazioni cronologiche non equivalenti",
+      "decision": "La storia dell'orologio a palette resta nel contesto, senza un anno inventato."
+    }
+  ],
+  "municipalities": [
+    {
+      "istatCode": "030065",
+      "municipality": "Nimis",
+      "province": "UD",
+      "currentMilestoneCount": 0,
+      "decision": "source_verified_it_fur_pending",
+      "candidates": [
+        {
+          "id": "nimis-castello-cergneu-1170",
+          "year": 1170,
+          "label": {
+            "it": "È documentata l'esistenza del castello di Cergneu",
+            "fur": null
+          },
+          "evidence": "ERPAC documenta l'esistenza del castello dal 1170 e la pagina comunale concorda sull'anno del documento più antico; l'etichetta non riprende i dettagli discordanti su donatore e bene donato.",
+          "source": {
+            "label": "ERPAC FVG - Castello di Cergneu, Nimis",
+            "type": "regional_institution",
+            "url": "https://patrimonioculturale.regione.fvg.it/architettura/?s_id=441184"
+          },
+          "supportingSources": [
+            {
+              "label": "Comune di Nimis - Castello di Cergneu",
+              "type": "official_municipality",
+              "url": "https://www.comune.nimis.ud.it/vivere-il-comune/luoghi/castello-di-cergneu-secoli-xii-xv/"
+            }
+          ]
+        },
+        {
+          "id": "nimis-primo-statuto-1375",
+          "year": 1375,
+          "label": {
+            "it": "Risale al 1375 il primo statuto della comunità di Nimis",
+            "fur": null
+          },
+          "evidence": "SIUSA data al 1375 il primo statuto della comunità e fa decorrere dallo stesso anno la scheda del soggetto produttore.",
+          "source": {
+            "label": "SIUSA - Comune di Nimis",
+            "type": "national_institution",
+            "url": "https://siusa-archivi.cultura.gov.it/cgi-bin/siusa/pagina.pl?Chiave=9206&RicDimF=2&TipoPag=prodente"
+          }
+        },
+        {
+          "id": "nimis-incendio-rappresaglia-1944",
+          "year": 1944,
+          "label": {
+            "it": "Nimis viene incendiata durante una rappresaglia tedesca",
+            "fur": null
+          },
+          "evidence": "SIUSA documenta l'incendio del paese nel 1944; la scheda del fondo precisa che la rappresaglia del 30 settembre distrusse quasi interamente anche l'archivio comunale.",
+          "source": {
+            "label": "SIUSA - Comune di Nimis",
+            "type": "national_institution",
+            "url": "https://siusa-archivi.cultura.gov.it/cgi-bin/siusa/pagina.pl?Chiave=9206&RicDimF=2&TipoPag=prodente"
+          },
+          "supportingSources": [
+            {
+              "label": "SIUSA - Fondo Comune di Nimis",
+              "type": "national_institution",
+              "url": "https://siusa-archivi.cultura.gov.it/cgi-bin/siusa/pagina.pl?Chiave=184892&RicSez=fondi&RicTipoScheda=ca&RicVM=indice&TipoPag=comparc&TuttoAperto=1"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "istatCode": "030068",
+      "municipality": "Pagnacco",
+      "province": "UD",
+      "currentMilestoneCount": 0,
+      "decision": "source_verified_it_fur_pending",
+      "candidates": [
+        {
+          "id": "pagnacco-paniaco-1262",
+          "year": 1262,
+          "label": {
+            "it": "Pagnacco compare come «Paniaco» in un documento patriarcale",
+            "fur": null
+          },
+          "evidence": "SIUSA descrive l'atto del 1262 con cui il patriarca Gregorio di Montelongo donò terre a Hermannus, figlio di Henrici de Paniaco; la formulazione non lo presenta come prima attestazione assoluta.",
+          "source": {
+            "label": "SIUSA - Comune di Pagnacco",
+            "type": "national_institution",
+            "url": "https://siusa-archivi.cultura.gov.it/cgi-bin/siusa/pagina.pl?Chiave=9213&RicDimF=2&RicProgetto=reg-fvg&RicSez=prodenti&RicTipoScheda=pe&RicVM=indice&TipoPag=prodente"
+          },
+          "supportingSources": [
+            {
+              "label": "Comunità Collinare del Friuli - FVG Esplora & Ama",
+              "type": "local_public_institution",
+              "url": "https://backoffice3-comuni.regione.fvg.it/media/files/A00096/attachment/Magazine_Comunit%C3%A0_Collinare_del_Friuli_def_1.pdf"
+            }
+          ]
+        },
+        {
+          "id": "pagnacco-comune-1806",
+          "year": 1806,
+          "label": {
+            "it": "Pagnacco è documentato come Comune dal 1806",
+            "fur": null
+          },
+          "evidence": "SIUSA data l'ente comunale dal 1806 al 1927 e nuovamente dal 1947; l'etichetta evita di inventare un atto istitutivo non indicato dalla fonte.",
+          "source": {
+            "label": "SIUSA - Comune di Pagnacco",
+            "type": "national_institution",
+            "url": "https://siusa-archivi.cultura.gov.it/cgi-bin/siusa/pagina.pl?Chiave=9213&RicDimF=2&RicProgetto=reg-fvg&RicSez=prodenti&RicTipoScheda=pe&RicVM=indice&TipoPag=prodente"
+          },
+          "supportingSources": [
+            {
+              "label": "Comune di Pagnacco - Storia di Pagnacco",
+              "type": "official_municipality",
+              "url": "https://pagnacco-api.cloud.municipiumapp.it/system/attachments/attachment/attachment/1/0/9/9/9/Storia_di_Pagnacco.pdf"
+            }
+          ]
+        },
+        {
+          "id": "pagnacco-fontanabona-lascito-1969",
+          "year": 1969,
+          "label": {
+            "it": "Il compendio di Fontanabona viene lasciato alla Regione Friuli Venezia Giulia",
+            "fur": null
+          },
+          "evidence": "La Regione documenta che nel 1969 il complesso di Fontanabona entrò nel lascito a favore dell'ente; ERPAC conferma la proprietà regionale dallo stesso anno.",
+          "summaryOverlap": "thematic_distinct",
+          "source": {
+            "label": "Regione FVG - Patrimonio: tutela del castello di Fontanabona",
+            "type": "regional_institution",
+            "url": "https://www.regione.fvg.it/rafvg/comunicati/comunicato.act?dir=&nm=20180917090033001"
+          },
+          "supportingSources": [
+            {
+              "label": "ERPAC FVG - Castello di Fontanabona, Pagnacco",
+              "type": "regional_institution",
+              "url": "https://patrimonioculturale.regione.fvg.it/architettura/?s_id=441274"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "istatCode": "030069",
+      "municipality": "Palazzolo dello Stella",
+      "province": "UD",
+      "currentMilestoneCount": 0,
+      "decision": "source_verified_it_fur_pending",
+      "candidates": [
+        {
+          "id": "palazzolo-palaciolo-762",
+          "year": 762,
+          "label": {
+            "it": "Un documento cita Palazzolo con il nome «Palaciolo»",
+            "fur": null
+          },
+          "evidence": "Il Ministero della Cultura descrive la donazione sestense del 762 che cita tre volte un molino in palaciolo; ERPAC concorda sulla prima citazione della località come Palaciolo.",
+          "source": {
+            "label": "Ministero della Cultura - Prima menzione di Palazzolo",
+            "type": "national_institution",
+            "url": "https://cultura.gov.it/comunicato/a-palazzolo-dello-stella-con-1250-anni-in-festa-riparte-il-progetto-anaxum"
+          },
+          "supportingSources": [
+            {
+              "label": "ERPAC FVG - Centa di Palazzolo dello Stella",
+              "type": "regional_institution",
+              "url": "https://patrimonioculturale.regione.fvg.it/complesso-archeologico/?s_id=759597"
+            }
+          ]
+        },
+        {
+          "id": "palazzolo-conquista-carrara-1388",
+          "year": 1388,
+          "label": {
+            "it": "Francesco da Carrara conquista Palazzolo",
+            "fur": null
+          },
+          "evidence": "ERPAC documenta l'assalto e la conquista di Palazzolo da parte di Francesco da Carrara nel 1388.",
+          "source": {
+            "label": "ERPAC FVG - Centa di Palazzolo dello Stella",
+            "type": "regional_institution",
+            "url": "https://patrimonioculturale.regione.fvg.it/complesso-archeologico/?s_id=759597"
+          }
+        },
+        {
+          "id": "palazzolo-comune-1806",
+          "year": 1806,
+          "label": {
+            "it": "Palazzolo dello Stella è documentato come Comune dal 1806",
+            "fur": null
+          },
+          "evidence": "SIUSA fa decorrere dal 1806 la scheda del soggetto produttore Comune di Palazzolo dello Stella; la formulazione non inventa un atto istitutivo.",
+          "source": {
+            "label": "SIUSA - Comune di Palazzolo dello Stella",
+            "type": "national_institution",
+            "url": "https://siusa-archivi.cultura.gov.it/cgi-bin/siusa/pagina.pl?Chiave=9214&RicDimF=2&TipoPag=prodente"
+          }
+        }
+      ]
+    },
+    {
+      "istatCode": "030071",
+      "municipality": "Paluzza",
+      "province": "UD",
+      "currentMilestoneCount": 0,
+      "decision": "source_verified_it_fur_pending",
+      "candidates": [
+        {
+          "id": "paluzza-borgo-moscardum-1259",
+          "year": 1259,
+          "label": {
+            "it": "Il patriarca Gregorio fa sorgere il borgo Moscardum, oggi Casteons",
+            "fur": null
+          },
+          "evidence": "L'approfondimento comunale documenta che nel 1259 il patriarca Gregorio di Montelongo fece sorgere il borgo Moscardum, corrispondente all'attuale Casteons; la tappa non data la torre allo stesso anno.",
+          "source": {
+            "label": "Comune di Paluzza - La Torre Moscarda",
+            "type": "official_municipality",
+            "url": "https://www.comune.paluzza.ud.it/media/files/030071/attachment/Locandina_au1CtQO.pdf"
+          }
+        },
+        {
+          "id": "paluzza-comune-1806",
+          "year": 1806,
+          "label": {
+            "it": "Nasce il Comune di Paluzza",
+            "fur": null
+          },
+          "evidence": "SIUSA data dal 1806 il Comune di Paluzza e ricorda che in età napoleonica fu capoluogo di cantone e sede del giudice di pace.",
+          "source": {
+            "label": "SIUSA - Comune di Paluzza",
+            "type": "national_institution",
+            "url": "https://siusa-archivi.cultura.gov.it/cgi-bin/siusa/pagina.pl?Chiave=9218&TipoPag=prodente"
+          }
+        },
+        {
+          "id": "paluzza-maria-plozner-1916",
+          "year": 1916,
+          "label": {
+            "it": "Maria Plozner Mentil cade in servizio come portatrice carnica",
+            "fur": null
+          },
+          "evidence": "Il Quirinale documenta che Maria Plozner Mentil fu colpita mortalmente il 15 febbraio 1916 a Casera Malpasso, nell'Alto Bût; la Regione collega la memoria alla comunità di Timau e Paluzza.",
+          "source": {
+            "label": "Presidenza della Repubblica - Maria Plozner Mentil",
+            "type": "national_institution",
+            "url": "https://www.quirinale.it/onorificenze/insigniti/13630"
+          },
+          "supportingSources": [
+            {
+              "label": "Regione FVG - Centenario di Maria Plozner Mentil a Timau",
+              "type": "regional_institution",
+              "url": "https://www.presidente.regione.fvg.it/massimiliano/fedriga/notizie/comunicati-stampa/dettaglio.html?det=97051"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "istatCode": "030073",
+      "municipality": "Paularo",
+      "province": "UD",
+      "currentMilestoneCount": 0,
+      "decision": "source_verified_it_fur_pending",
+      "candidates": [
+        {
+          "id": "paularo-prima-attestazione-1295",
+          "year": 1295,
+          "label": {
+            "it": "Paularo compare per la prima volta in una fonte scritta",
+            "fur": null
+          },
+          "evidence": "L'Ecomuseo I Mistîrs colloca nel 1295 la prima occorrenza documentaria, nella forma de Paular de Canali di Incaroy.",
+          "source": {
+            "label": "Ecomuseo I Mistîrs - Cenni storici",
+            "type": "cultural_institution",
+            "url": "https://www.ecomuseomistirs.it/cenni-storici/"
+          }
+        },
+        {
+          "id": "paularo-linussio-nascita-1691",
+          "year": 1691,
+          "label": {
+            "it": "Nasce a Villamezzo Jacopo Linussio",
+            "fur": null
+          },
+          "evidence": "L'Ecomuseo documenta la nascita di Jacopo Linussio nel 1691 a Villamezzo di Paularo; il fatto è distinto dalla successiva attività manifatturiera ricordata a Tolmezzo.",
+          "source": {
+            "label": "Ecomuseo I Mistîrs - Mans d'aur",
+            "type": "cultural_institution",
+            "url": "https://www.ecomuseomistirs.it/mans-daur/"
+          }
+        },
+        {
+          "id": "paularo-comune-1806",
+          "year": 1806,
+          "label": {
+            "it": "Nasce il Comune di Paularo",
+            "fur": null
+          },
+          "evidence": "SIUSA data l'esistenza del Comune di Paularo dal 30 marzo 1806; il successivo decreto del 1807 riguarda invece la collocazione distrettuale.",
+          "source": {
+            "label": "SIUSA - Comune di Paularo",
+            "type": "national_institution",
+            "url": "https://siusa-archivi.cultura.gov.it/cgi-bin/siusa/pagina.pl?Chiave=9224&TipoPag=prodente"
+          }
+        }
+      ]
+    },
+    {
+      "istatCode": "030075",
+      "municipality": "Pocenia",
+      "province": "UD",
+      "currentMilestoneCount": 0,
+      "decision": "source_verified_it_fur_pending",
+      "candidates": [
+        {
+          "id": "pocenia-motta-incastellata-xiii",
+          "century": "XIII",
+          "label": {
+            "it": "Le investiture ricordano la «Motta incastellata di Pocenia»",
+            "fur": null
+          },
+          "evidence": "SIUSA riferisce che alcune investiture del XIII secolo menzionano la Motta incastellata di Pocenia e precisa che non è chiaro se si trattasse di un castello; l'etichetta mantiene la citazione senza sciogliere il dubbio.",
+          "source": {
+            "label": "SIUSA - Comune di Pocenia",
+            "type": "national_institution",
+            "url": "https://siusa-archivi.cultura.gov.it/cgi-bin/siusa/pagina.pl?Chiave=9231&RicLin=en&TipoPag=prodente"
+          }
+        },
+        {
+          "id": "pocenia-comune-1806",
+          "year": 1806,
+          "label": {
+            "it": "Nasce il Comune di Pocenia",
+            "fur": null
+          },
+          "evidence": "SIUSA data l'ente comunale dal 1806 e documenta le successive variazioni amministrative senza anticiparne l'esistenza.",
+          "source": {
+            "label": "SIUSA - Comune di Pocenia",
+            "type": "national_institution",
+            "url": "https://siusa-archivi.cultura.gov.it/cgi-bin/siusa/pagina.pl?Chiave=9231&RicLin=en&TipoPag=prodente"
+          }
+        },
+        {
+          "id": "pocenia-parco-stella-torsa-2000",
+          "year": 2000,
+          "label": {
+            "it": "Viene istituito il Parco comunale dei fiumi Stella e Torsa",
+            "fur": null
+          },
+          "evidence": "La Regione documenta l'istituzione del parco con D.P.G.R. 014/Pres del 18 gennaio 2000, pubblicato nel BUR n. 5 del 2 febbraio 2000.",
+          "source": {
+            "label": "Regione FVG - Parco comunale dei fiumi Stella e Torsa",
+            "type": "regional_institution",
+            "url": "https://www.regione.fvg.it/rafvg/cms/RAFVG/ambiente-territorio/tutela-ambiente-gestione-risorse-naturali/FOGLIA407/FOGLIA07/"
+          },
+          "supportingSources": [
+            {
+              "label": "Bollettino Ufficiale Regione FVG n. 5/2000",
+              "type": "regional_institution",
+              "url": "https://www.regione.fvg.it/rafvg/export/sites/default/RAFVG/ambiente-territorio/tutela-ambiente-gestione-risorse-naturali/FOGLIA407/FOGLIA07/allegati/0.2_Bur-05.pdf"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "istatCode": "030078",
+      "municipality": "Povoletto",
+      "province": "UD",
+      "currentMilestoneCount": 0,
+      "decision": "source_verified_it_fur_pending",
+      "candidates": [
+        {
+          "id": "povoletto-prima-attestazione-1234",
+          "year": 1234,
+          "label": {
+            "it": "Povoletto compare per la prima volta nei documenti",
+            "fur": null
+          },
+          "evidence": "SIUSA indica che i documenti ricordano Povoletto, nella forma Di Povoleto, dal 1234; la tappa registra l'attestazione senza trasformarla in una fondazione.",
+          "source": {
+            "label": "SIUSA - Comune di Povoletto",
+            "type": "national_institution",
+            "url": "https://siusa-archivi.cultura.gov.it/cgi-bin/siusa/pagina.pl?Chiave=32364&RicDimF=2&TipoPag=prodente"
+          }
+        },
+        {
+          "id": "povoletto-comune-1806",
+          "year": 1806,
+          "label": {
+            "it": "Nasce il Comune di Povoletto",
+            "fur": null
+          },
+          "evidence": "SIUSA data dal 1806 il moderno Comune di Povoletto, nel contesto dell'ordinamento napoleonico.",
+          "source": {
+            "label": "SIUSA - Comune di Povoletto",
+            "type": "national_institution",
+            "url": "https://siusa-archivi.cultura.gov.it/cgi-bin/siusa/pagina.pl?Chiave=32364&RicDimF=2&TipoPag=prodente"
+          }
+        },
+        {
+          "id": "povoletto-scavi-motta-1997",
+          "year": 1997,
+          "label": {
+            "it": "Prendono avvio gli scavi archeologici al castello della Motta",
+            "fur": null
+          },
+          "evidence": "ERPAC documenta dal 1997 l'avvio delle ricerche archeologiche dell'Università di Udine al castello della Motta; il progetto comunale di valorizzazione del 1996 resta un fatto precedente e distinto.",
+          "source": {
+            "label": "ERPAC FVG - Castello della Motta",
+            "type": "regional_institution",
+            "url": "https://patrimonioculturale.regione.fvg.it/sito-archeologico/?s_id=549076"
+          },
+          "supportingSources": [
+            {
+              "label": "Comune di Povoletto - Antiquarium della Motta e Mostra del fossile",
+              "type": "official_municipality",
+              "url": "https://www.comune.povoletto.ud.it/antiquarium-della-motta-e-mostra-del-fossile/"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "istatCode": "030081",
+      "municipality": "Prato Carnico",
+      "province": "UD",
+      "currentMilestoneCount": 0,
+      "decision": "source_verified_it_fur_pending",
+      "candidates": [
+        {
+          "id": "prato-carnico-pesariis-attestazione-1300",
+          "year": 1300,
+          "label": {
+            "it": "Pesariis compare per la prima volta in una fonte scritta",
+            "fur": null
+          },
+          "evidence": "La pagina comunale colloca nel 1300 la prima occorrenza del toponimo, nella forma in villa de Pesargis.",
+          "source": {
+            "label": "Comune di Prato Carnico - Frazione Pesariis",
+            "type": "official_municipality",
+            "url": "https://www.comune.prato-carnico.ud.it/it/novita-28057/notizie-28058/frazione-pesariis-4790"
+          }
+        },
+        {
+          "id": "prato-carnico-solari-1725",
+          "year": 1725,
+          "label": {
+            "it": "Inizia ufficialmente l'attività della fabbrica di orologi Solari",
+            "fur": null
+          },
+          "evidence": "Il Comune indica nel 1725 l'inizio ufficiale dell'attività della fabbrica; il Consiglio regionale conferma la fondazione della Solari nello stesso anno.",
+          "source": {
+            "label": "Comune di Prato Carnico - Museo dell'Orologeria di Pesariis",
+            "type": "official_municipality",
+            "url": "https://www.comune.prato-carnico.ud.it/it/home-1827/museo-dellorologeria-di-pesariis-1834"
+          },
+          "supportingSources": [
+            {
+              "label": "Consiglio regionale FVG - Orologi di Pesariis",
+              "type": "regional_institution",
+              "url": "https://www.consiglio.regione.fvg.it/pagineinterne/Portale/comunicatiStampaDettaglio.aspx?ID=251435"
+            }
+          ]
+        },
+        {
+          "id": "prato-carnico-museo-orologeria-1992",
+          "year": 1992,
+          "label": {
+            "it": "Viene fondato il Museo dell'Orologeria di Pesariis",
+            "fur": null
+          },
+          "evidence": "Il Consiglio regionale documenta la fondazione nel 1992 del Museo dell'Orologeria nel centro storico di Pesariis.",
+          "source": {
+            "label": "Consiglio regionale FVG - Orologi di Pesariis",
+            "type": "regional_institution",
+            "url": "https://www.consiglio.regione.fvg.it/pagineinterne/Portale/comunicatiStampaDettaglio.aspx?ID=251435"
+          }
+        }
+      ]
+    },
+    {
+      "istatCode": "030083",
+      "municipality": "Premariacco",
+      "province": "UD",
+      "currentMilestoneCount": 0,
+      "decision": "source_verified_it_fur_pending",
+      "candidates": [
+        {
+          "id": "premariacco-prima-attestazione-1015",
+          "year": 1015,
+          "label": {
+            "it": "Premariacco compare per la prima volta in un documento",
+            "fur": null
+          },
+          "evidence": "SIUSA indica come prima citazione di Premariacco il diploma del patriarca Giovanni IV del 1015, senza presentarlo come fondazione dell'abitato.",
+          "source": {
+            "label": "SIUSA - Comune di Premariacco",
+            "type": "national_institution",
+            "url": "https://siusa-archivi.cultura.gov.it/cgi-bin/siusa/pagina.pl?Chiave=9260&TipoPag=prodente"
+          }
+        },
+        {
+          "id": "premariacco-aggregazione-cividale-1382",
+          "year": 1382,
+          "label": {
+            "it": "Il territorio di Premariacco viene aggregato a Cividale",
+            "fur": null
+          },
+          "evidence": "SIUSA data al 1382 l'aggregazione del territorio di Premariacco a Cividale.",
+          "source": {
+            "label": "SIUSA - Comune di Premariacco",
+            "type": "national_institution",
+            "url": "https://siusa-archivi.cultura.gov.it/cgi-bin/siusa/pagina.pl?Chiave=9260&TipoPag=prodente"
+          }
+        },
+        {
+          "id": "premariacco-rocca-bernarda-1567",
+          "year": 1567,
+          "label": {
+            "it": "Viene edificata Rocca Bernarda",
+            "fur": null
+          },
+          "evidence": "ERPAC considera certa la data 1567, confermata dall'iscrizione sul portale, e precisa che l'attribuzione a Giovanni da Udine resta priva di documentazione.",
+          "source": {
+            "label": "ERPAC FVG - Rocca Bernarda",
+            "type": "regional_institution",
+            "url": "https://patrimonioculturale.regione.fvg.it/architettura/?s_id=441778"
+          }
+        }
+      ]
+    }
+  ]
+}

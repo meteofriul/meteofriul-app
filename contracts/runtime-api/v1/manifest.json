@@ -1,0 +1,64 @@
+{
+  "schemaVersion": 1,
+  "contractStatus": {
+    "stability": "pre-release",
+    "publiclyFrozen": false,
+    "note": "Il contratto v1 e interno alla fase di stabilizzazione e non e ancora una API pubblica congelata."
+  },
+  "apiBase": "/api",
+  "families": {
+    "location": {
+      "migrationStatus": "new_backend_local",
+      "endpoints": [
+        "GET /api/location/search",
+        "POST /api/location/reverse",
+        "GET /api/location/reverse (deprecated)"
+      ]
+    },
+    "live": {
+      "migrationStatus": "new_backend_local",
+      "endpoints": [
+        "GET /api/live/webcams",
+        "GET/POST/DELETE /api/community/reports",
+        "POST /api/community/reputation",
+        "POST /api/community/reports/{groupId}/confirmation",
+        "POST /api/community/reports/{groupId}/flags"
+      ]
+    },
+    "events": {
+      "migrationStatus": "new_backend_local",
+      "endpoints": [
+        "GET /api/local/events",
+        "GET /api/event-images/{filename}"
+      ]
+    },
+    "weather-local": {
+      "migrationStatus": "new_backend_local",
+      "endpoints": [
+        "GET /api/weather/bootstrap",
+        "GET /api/weather/current"
+      ]
+    },
+    "bulletin": {
+      "migrationStatus": "new_backend_local",
+      "endpoints": [
+        "GET /api/weather/forecast",
+        "GET /api/weather/official-alerts"
+      ]
+    },
+    "radar": {
+      "migrationStatus": "new_backend_local",
+      "endpoints": [
+        "GET /api/weather/radar"
+      ]
+    },
+    "push": {
+      "migrationStatus": "private_pilot",
+      "endpoints": [
+        "POST /api/push/devices/register",
+        "POST /api/push/devices/unregister",
+        "POST /api/push/devices/location (Android App Check)"
+      ]
+    }
+  }
+}

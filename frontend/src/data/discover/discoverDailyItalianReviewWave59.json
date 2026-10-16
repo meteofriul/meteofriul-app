@@ -1,0 +1,44 @@
+{
+  "schemaVersion": 1,
+  "generatedAt": "2026-07-19",
+  "purpose": "Cinquantanovesimo lotto Scopri IT: chiusura dell'ultima alternativa disponibile per una data ancora priva di memoria principale. Il profilo descrive una carriera nello sci alpino senza medaglie o primati storici eccezionali e non viene promosso per aumentare artificialmente la copertura.",
+  "policy": {
+    "readyForUi": false,
+    "furDeferred": true,
+    "dateFormat": "DD-MM",
+    "requiresFinalItalianApproval": true,
+    "excludeDeaths": true,
+    "excludeGenericPoliticalProfiles": true,
+    "excludeGenericProfessionalProfiles": true,
+    "excludeSportsOnlyProfiles": true,
+    "allowExceptionalSportsProfiles": true,
+    "rejectBirthplaceOnlyProfiles": true,
+    "rejectSemanticDuplicates": true,
+    "rejectUncertainCalendarDates": true,
+    "rejectInternallyInconsistentRecords": true,
+    "requireOneCanonicalSource": true,
+    "sourceFirst": true,
+    "publishAfterFurOnly": true,
+    "allowMultipleMemoriesPerDate": true,
+    "doNotPromoteToPrimaryForCoverageOnly": true
+  },
+  "summary": {
+    "reviewed": 1,
+    "keepDaily": 0,
+    "primary": 0,
+    "secondary": 0,
+    "hold": 0,
+    "excluded": 1,
+    "canonicalPrimaryDatesBefore": 277,
+    "canonicalPrimaryDatesAfter": 277,
+    "currentVisiblePrimaryCoverage": 272
+  },
+  "keepDaily": [],
+  "hold": [],
+  "excluded": [
+    {
+      "id": "master-fvg-26-02-Q24052040",
+      "reason": "Pietro Canzio presenta una carriera nello sci alpino agonistico, ma il materiale disponibile non documenta una medaglia olimpica o mondiale né un primato storico eccezionale sufficiente per Scopri."
+    }
+  ]
+}

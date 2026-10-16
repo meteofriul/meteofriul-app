@@ -1,0 +1,103 @@
+{
+  "schemaVersion": 1,
+  "batchId": "pn-enrichment-milestones-02-fur-review",
+  "sourceResearchBatchId": "pn-enrichment-milestones-02",
+  "reviewedAt": "2026-09-01",
+  "runtimeIntegration": false,
+  "reviewMethod": "assisted_standard_reference_review",
+  "approvalBasis": "user_delegated_assisted_editorial_review",
+  "reviewer": "assistant",
+  "independentHumanReview": false,
+  "approvalNote": "Decisione editoriale assistita sotto il mandato di completamento Scopri. Le fonti ARLeF verificano lessico e modelli d'uso, non certificano queste frasi; nessuna revisione professionale indipendente né lettura frase per frase attribuita all'utente.",
+  "summary": {
+    "totalRecords": 4,
+    "approved": 4,
+    "pendingHumanReview": 0
+  },
+  "records": [
+    {
+      "id": "budoia-opere-idrauliche-dardago-1670",
+      "status": "approved",
+      "labelFur": "Lis autoritâts venezianis a autorizin lis oparis idraulichis a Dardago",
+      "notes": "Autoritât, autorizâ e idraulic sono verificati nelle voci ARLeF; venezianis segue l'uso già consolidato nel catalogo. Dardago conserva la forma usata dalla fonte comunale perché il toponimo di frazione non è sostituito senza un riferimento ufficiale friulano.",
+      "references": [
+        {
+          "url": "https://superdizionari.arlef.it/ricerca?term=autorit%C3%A0&language=it&gui=fur",
+          "note": "Autorità → autoritât; plurale lis autoritâts."
+        },
+        {
+          "url": "https://superdizionari.arlef.it/ricerca?term=autorizzare&language=it&gui=fur",
+          "note": "Autorizzare → autorizâ."
+        },
+        {
+          "url": "https://superdizionari.arlef.it/ricerca?term=idraulico&language=it&gui=fur",
+          "note": "Idraulico → idraulic; flessione femminile plurale idraulichis."
+        }
+      ]
+    },
+    {
+      "id": "budoia-scuola-femminile-1870",
+      "status": "approved",
+      "labelFur": "E vierç la scuele feminîl",
+      "notes": "Vierzi, scuele e feminîl sono verificati nelle voci ARLeF. La frase registra soltanto l'apertura della scuola e non aggiunge una valutazione moderna sul sistema educativo del 1870.",
+      "references": [
+        {
+          "url": "https://superdizionari.arlef.it/ricerca?term=aprire&language=it&gui=fur",
+          "note": "Aprire → vierzi; terza persona vierç."
+        },
+        {
+          "url": "https://superdizionari.arlef.it/ricerca?term=scuola&language=it&gui=fur",
+          "note": "Scuola → scuele."
+        },
+        {
+          "url": "https://superdizionari.arlef.it/ricerca?term=femminile&language=it&gui=fur",
+          "note": "Femminile → feminîl nel senso di attività riservata alle donne."
+        }
+      ]
+    },
+    {
+      "id": "fiume-veneto-predicato-1911",
+      "status": "approved",
+      "labelFur": "Un decret regâl al zonte «Veneto» al non Fiume",
+      "notes": "Decret, regâl e zontâ sono verificati nel dizionario; la label evita di presentare il 1911 come fondazione del Comune. Fiume e Veneto restano le forme proprie documentate dalla fonte.",
+      "references": [
+        {
+          "url": "https://superdizionari.arlef.it/ricerca?term=decreto&language=it&gui=fur",
+          "note": "Decreto → decret."
+        },
+        {
+          "url": "https://superdizionari.arlef.it/ricerca?term=reale&language=it&gui=fur",
+          "note": "Reale nel senso dinastico → regâl."
+        },
+        {
+          "url": "https://superdizionari.arlef.it/ricerca?term=aggiungere&language=it&gui=fur",
+          "note": "Aggiungere → zontâ."
+        }
+      ]
+    },
+    {
+      "id": "sesto-al-reghena-abbazia-distrutta-899",
+      "status": "approved",
+      "labelFur": "La invasion ongjarese e distrûç cuasi dal dut la badie",
+      "notes": "Invasion, ongjarese, distruzi e badie seguono le voci ARLeF; cuasi dal dut segue modelli già consolidati nel corpus. La copy limita esplicitamente la distruzione all'abbazia.",
+      "references": [
+        {
+          "url": "https://superdizionari.arlef.it/ricerca?term=invasione&language=it&gui=fur",
+          "note": "Invasione → invasion."
+        },
+        {
+          "url": "https://superdizionari.arlef.it/ricerca?term=ungherese&language=it&gui=fur",
+          "note": "Ungherese → ongjarês; femminile attestato ongjarese."
+        },
+        {
+          "url": "https://superdizionari.arlef.it/ricerca?term=distruggere&language=it&gui=fur",
+          "note": "Distruggere → distruzi; terza persona distrûç."
+        },
+        {
+          "url": "https://superdizionari.arlef.it/ricerca?term=abbazia&language=it&gui=fur",
+          "note": "Abbazia → badie."
+        }
+      ]
+    }
+  ]
+}

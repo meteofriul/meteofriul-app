@@ -1,0 +1,40 @@
+{
+  "schemaVersion": 1,
+  "generatedAt": "2026-07-15",
+  "purpose": "Revisione FUR del ventitreesimo lotto Scopri. Il lotto completa quattro memorie territoriali gia selezionate e approvate in italiano.",
+  "summary": {
+    "totalRecords": 4,
+    "approved": 4,
+    "pendingHumanReview": 0
+  },
+  "records": [
+    {
+      "id": "memory-it-ready-0803-felice-venezian-e-l-irredentismo-triestino",
+      "status": "approved",
+      "titleFur": "Felice Venezian e l'irredentisim triestin",
+      "summaryFur": "Ai 3 di Avost dal 1851 al nas a Triest Felice Venezian, avocât e figure centrâl dal irredentisim triestin e adriatic. Par vincj e cinc agns al siet tal Consei comunâl e al sosten la bataie par une universitât taliane in citât.",
+      "notes": "Triest, avocât, Consei comunâl e universitât taliane seguissin il lessic gia stabilit tal corpus Scopri; irredentisim al reste il concet storic di riferiment."
+    },
+    {
+      "id": "memory-it-ready-0712-silvio-marcuzzi-e-la-resistenza-nella-pianura-friula",
+      "status": "approved",
+      "titleFur": "Silvio Marcuzzi e la Resistencje te planure furlane",
+      "summaryFur": "Ai 12 di Lui dal 1907 al nas a Redipuie Silvio Marcuzzi, operari e antifassist cognossût come Montes. Fra i organizadôrs de Brigate Proletarie, al devente responsabil dai riforniments e dai GAP de planure furlane te Resistencje.",
+      "notes": "Redipuie, planure furlane e Resistencje seguissin formis gia aprovadis; Montes, Brigate Proletarie e GAP restin denominazions storichis."
+    },
+    {
+      "id": "memory-it-ready-0902-giuseppe-revere-letteratura-e-risorgimento",
+      "status": "approved",
+      "titleFur": "Giuseppe Revere, leterature e Risorgiment",
+      "summaryFur": "Ai 2 di Setembar dal 1812 al nas a Triest Giuseppe Revere, scritôr, dramaturc e patriote dal Risorgiment. Il so Lorenzino de' Medici al otten sucès; dopo al partecipe aes Cinc Zornadis di Milan e ae Republiche Romane.",
+      "notes": "Triest, leterature, dramaturc, patriote e Risorgiment a seguissin il lessic cultural e storic gia doprât in Scopri; Lorenzino de' Medici al reste titol di opare."
+    },
+    {
+      "id": "memory-it-ready-0701-alojzij-res-tra-cultura-italiana-e-slovena",
+      "status": "approved",
+      "titleFur": "Alojzij Res tra culture taliane e slovene",
+      "summaryFur": "Ai 1 di Lui dal 1893 al nas a Gurize Alojzij Res, scritôr e storic de leterature. La sô ativitât di studiôs e mediadôr culturâl e met in relazion il mont talian cun chel sloven.",
+      "notes": "Gurize e je la forme FUR gia consolidada; culture taliane e slovene, studiôs e mediadôr culturâl rendin la funzion di ponte culturâl cence forzâ il profîl."
+    }
+  ]
+}

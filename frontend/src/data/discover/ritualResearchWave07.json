@@ -1,0 +1,159 @@
+{
+  "schemaVersion": 1,
+  "snapshotDate": "2026-09-01",
+  "purpose": "Settimo lotto di riti: una processione mariana del Friuli collinare e un fuoco epifanico della Val d'Incarojo. Entrambi hanno una data fissa documentata; copy bilingue e riferimenti linguistici restano una sola volta nel catalogo promosso.",
+  "readyForUi": false,
+  "runtimeCatalog": "frontend/src/data/discover/institutionalRituals.json",
+  "editorialDecision": {
+    "basis": "user_delegated_assisted_editorial_review",
+    "reviewer": "assistant",
+    "independentHumanReview": false,
+    "scope": [
+      "ritual-research-pignano-immacolata",
+      "ritual-research-paularo-femenate"
+    ],
+    "note": "Decisione editoriale assistita nel mandato di continuare Scopri, non approvazione dell'utente frase per frase né certificazione ARLeF o revisione professionale indipendente."
+  },
+  "rules": [
+    "Manifest e record di ricerca non sono contenuti UI; la promozione riguarda soltanto i due promotedRecordId.",
+    "Le fonti culturali primarie e i riferimenti linguistici sono HTML verificati; nessun PDF è necessario alla decisione.",
+    "Le date derivano dal corpo delle fonti e dalla pratica descritta, non dai widget calendario del CMS né dal programma di una singola edizione.",
+    "Nessun orario, programma corrente o invito. Le aree indicano il contesto culturale, non la posizione dell'utente.",
+    "Il fumo e le faville della Femenàte sono raccontati come lettura rituale, non come previsione attendibile o dato meteorologico.",
+    "Testi originali di sintesi; nessuna immagine, ripresa o copia estesa delle fonti."
+  ],
+  "records": [
+    {
+      "id": "ritual-research-pignano-immacolata",
+      "promotedRecordId": "institutional-ritual-pignano-immacolata",
+      "canonicalKey": "pignano-immacolata-processione-dicembre08",
+      "rubric": "riti_credenze_popolari",
+      "reviewStatus": "promoted",
+      "readyForUi": false,
+      "promotedAt": "2026-09-01",
+      "source": {
+        "url": "https://www.diocesiudine.it/wd-appuntamenti/a-pignano-di-ragogna-da-111-anni-si-celebra-limmacolata/",
+        "authority": "Arcidiocesi di Udine",
+        "publishedAt": "2015-11-23",
+        "accessMethod": "direct_http_html",
+        "checkedAt": "2026-09-01"
+      },
+      "supportingSources": [
+        {
+          "url": "https://www.diocesiudine.it/wd-appuntamenti/pignano-di-ragogna-in-festa-per-limmacolata-2/",
+          "authority": "Arcidiocesi di Udine",
+          "publishedAt": "2024-12-04",
+          "accessMethod": "direct_http_html",
+          "purpose": "Conferma l'8 dicembre, Vespri e processione e documenta la centoventesima edizione; il widget del contenitore riporta il 9 dicembre, ma il corpo indica domenica 8."
+        },
+        {
+          "url": "https://www.diocesiudine.it/wd-appuntamenti/pignano-celebra-limmacolata-con-la-processione/",
+          "authority": "Arcidiocesi di Udine",
+          "publishedAt": "2025-12-04",
+          "accessMethod": "direct_http_html",
+          "purpose": "Conferma anche nel 2025 la celebrazione dell'8 dicembre e la processione con la statua per le vie di Pignano."
+        }
+      ],
+      "evidenceSummary": "La fonte del 2015 descrive una tradizione celebrata l'8 dicembre, collega la devozione alla statua arrivata in chiesa nel 1904 e documenta la processione per il borgo. Le pubblicazioni 2024 e 2025 confermano data e continuità; il 2024 registra la centoventesima edizione.",
+      "temporalRule": {
+        "type": "fixed_date",
+        "date": "12-08"
+      },
+      "editorialWindow": {
+        "type": "fixed_date",
+        "date": "12-08"
+      },
+      "currentEventScheduleVerified": false,
+      "geographicScope": [
+        "pignano",
+        "ragogna",
+        "friuli_collinare"
+      ],
+      "scopeNote": "La scheda racconta la tradizione dell'8 dicembre senza importare orari, nomi dei gruppi o percorso di una singola edizione. Le fonti alternano Borc di Sot e Borc di Sore, perciò il testo si limita alle vie del borgo. Pignan e Ruvigne sono i toponimi friulani ufficiali.",
+      "languageReview": {
+        "approvalBasis": "user_delegated_assisted_editorial_review",
+        "reviewer": "assistant",
+        "independentHumanReview": false,
+        "referencesLocation": "institutional-ritual-pignano-immacolata.languageReview.fur.references",
+        "notes": "Procession, Imacolade, statue, devozion, glesie, borc e Dicembar sono stati controllati in HTML ARLeF; Pignan e Ruvigne seguono la toponomastica ufficiale regionale."
+      },
+      "duplicateReview": {
+        "status": "distinct",
+        "comparedCatalogs": [
+          "ostermannCulturalDiscover",
+          "institutionalRituals",
+          "institutionalArchive",
+          "localMemory",
+          "municipalityProfiles"
+        ],
+        "comparedRecordIds": [
+          "memory-it-ready-1208-a-gemona-l-immacolata-ricorda-un-grande-incendio"
+        ],
+        "note": "La memoria di Gemona usa la stessa data ma racconta una processione ricondotta a un incendio quattrocentesco. Pignano riguarda un'altra comunità, una statua arrivata nel 1904 e una tradizione locale documentata fino al 2025."
+      }
+    },
+    {
+      "id": "ritual-research-paularo-femenate",
+      "promotedRecordId": "institutional-ritual-paularo-femenate",
+      "canonicalKey": "paularo-femenate-gennaio05",
+      "rubric": "riti_credenze_popolari",
+      "reviewStatus": "promoted",
+      "readyForUi": false,
+      "promotedAt": "2026-09-01",
+      "source": {
+        "url": "https://www.ecomuseomistirs.it/la-femenate/",
+        "authority": "Ecomuseo I Mistîrs",
+        "accessMethod": "direct_http_html",
+        "checkedAt": "2026-09-01"
+      },
+      "supportingSources": [
+        {
+          "url": "https://patrimonio.museodolom.it/items/show/5755",
+          "authority": "Museo Carnico delle arti popolari Michele Gortani",
+          "accessMethod": "direct_http_html",
+          "purpose": "Conferma il rito di Paularo, la data del 5 gennaio, la struttura romboidale e la lettura rituale di fumo e faville in relazione all'anno successivo."
+        },
+        {
+          "url": "https://www.ecomuseomistirs.it/gli-eventi/",
+          "authority": "Ecomuseo I Mistîrs",
+          "accessMethod": "direct_http_html",
+          "purpose": "La pagina degli eventi annuali indica il 5 gennaio e una Femenàte per ciascuna borgata, senza ricavare la regola da un solo programma datato."
+        }
+      ],
+      "evidenceSummary": "L'Ecomuseo descrive la Femenàte come struttura romboidale rivestita di materiali vegetali, accesa nelle borgate di Paularo la sera del 5 gennaio. Fumo e faville erano osservati per cercare auspici sull'anno nuovo; il Museo Carnico corrobora gesto, forma e calendario.",
+      "temporalRule": {
+        "type": "fixed_date",
+        "date": "01-05"
+      },
+      "editorialWindow": {
+        "type": "fixed_date",
+        "date": "01-05"
+      },
+      "currentEventScheduleVerified": false,
+      "geographicScope": [
+        "paularo",
+        "val_d_incarojo",
+        "carnia"
+      ],
+      "scopeNote": "È descritta la pratica locale di Paularo, senza estenderla a tutti i falò epifanici. La scheda non attribuisce un'origine celtica come fatto certo, non convalida i presagi e non pubblica orari, ordine di accensione o programma corrente. Femenàte resta il nome tradizionale della fonte.",
+      "languageReview": {
+        "approvalBasis": "user_delegated_assisted_editorial_review",
+        "reviewer": "assistant",
+        "independentHumanReview": false,
+        "referencesLocation": "institutional-ritual-paularo-femenate.languageReview.fur.references",
+        "notes": "Zenâr, borgade, impiâ, struture, rombe, brascjam, fum, faliscje, segn e racuelte sono stati controllati direttamente nel dizionario HTML ARLeF; Femenàte è mantenuto come nome tradizionale locale e Paulâr è il toponimo FUR già approvato nel catalogo."
+      },
+      "duplicateReview": {
+        "status": "distinct",
+        "comparedCatalogs": [
+          "ostermannCulturalDiscover",
+          "institutionalRituals",
+          "institutionalArchive",
+          "localMemory",
+          "municipalityProfiles"
+        ],
+        "note": "Nessun record attivo racconta la Femenàte di Paularo. Le cidulis di Cercivento hanno forma, data e gesto differenti; la scheda sui doni invernali non tratta i fuochi epifanici."
+      }
+    }
+  ]
+}

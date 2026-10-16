@@ -1,0 +1,665 @@
+{
+  "schemaVersion": 1,
+  "batchId": "ud-zero-milestones-03",
+  "snapshotDate": "2026-08-21",
+  "purpose": "Lotto di ricerca non visibile in UI per ampliare le tappe storiche dei successivi nove Comuni UD che ne sono privi.",
+  "runtimeIntegration": false,
+  "editorialPolicy": {
+    "sourceEvidenceRequired": true,
+    "ambiguousDatesExcluded": true,
+    "duplicateAuditRequired": true,
+    "noForcedMilestoneCount": true,
+    "italianCopyStatus": "editorial_draft",
+    "friulianCopyStatus": "pending_human_review",
+    "readyForUi": false
+  },
+  "excludedClaims": [
+    {
+      "municipality": "Grimacco",
+      "claim": "Le perdite subite dall'archivio comunale durante l'invasione del 1917 diventerebbero una tappa autonoma.",
+      "reason": "SIUSA le documenta, ma senza circoscrivere un singolo episodio; l'incendio del novembre 1944 è il fatto archivistico puntuale e meglio delimitato."
+    },
+    {
+      "municipality": "Grimacco",
+      "claim": "La raccolta Ruttar sarebbe nata in un anno preciso tra il 1950 e il 1960.",
+      "reason": "La fonte descrive un intervallo di formazione della collezione e non consente di trasformarlo in un anno univoco."
+    },
+    {
+      "municipality": "Grimacco",
+      "claim": "Il Sentiero d'arte del 2005 verrebbe promosso insieme alla Stazione di Topolò.",
+      "reason": "È un'iniziativa successiva e distinta; il lotto mantiene l'avvio documentato nel 1994 della Stazione di Topolò come fatto culturale originario."
+    },
+    {
+      "municipality": "Latisana",
+      "claim": "Il porto di Latisana avrebbe una prima attestazione certa in un unico anno.",
+      "reason": "Le fonti istituzionali distinguono il nome Portus Latisanae nel 1118, un riferimento attorno al 1180 e il porto commerciale documentato nel 1226; il conflitto non viene risolto scegliendo arbitrariamente una data."
+    },
+    {
+      "municipality": "Latisana",
+      "claim": "L'autonomia comunale di Lignano Sabbiadoro verrebbe riproposta nella timeline di Latisana.",
+      "reason": "Il fatto appartiene già al profilo di Lignano e presenta inoltre un conflitto da verificare separatamente tra il 1958 indicato da SIUSA e il 1959 registrato nel catalogo corrente."
+    },
+    {
+      "municipality": "Latisana",
+      "claim": "Il riconoscimento della DOC Friuli Latisana del 1975 diventerebbe anche una tappa comunale.",
+      "reason": "Il fatto è già pubblicato in Memoria del giorno con data, fonte e copy approvati."
+    },
+    {
+      "municipality": "Latisana",
+      "claim": "L'alluvione indicata dalle fonti tra il 1965 e il 1966 verrebbe fissata in un solo anno.",
+      "reason": "L'intervallo non permette un ancoraggio annuale prudente senza una fonte più precisa."
+    },
+    {
+      "municipality": "Lusevera",
+      "claim": "Il terremoto del 1976 diventerebbe una tappa locale.",
+      "reason": "Il sisma è già coperto dalla Memoria del giorno regionale e viene escluso con la stessa regola applicata ai precedenti lotti comunali."
+    },
+    {
+      "municipality": "Lusevera",
+      "claim": "La chiesa del 1897 sarebbe attribuita con certezza a Raimondo D'Aronco.",
+      "reason": "La stessa pagina comunale formula l'attribuzione in modo dubitativo e non consente un'etichetta assertiva."
+    },
+    {
+      "municipality": "Magnano in Riviera",
+      "claim": "Il castello di Prampero sarebbe stato fondato o attestato con certezza nel 1025.",
+      "reason": "Le fonti consultate oscillano tra 1025, l'intervallo 1025-1121 e prime attestazioni nel 1225 o 1265; la data secca resta esclusa."
+    },
+    {
+      "municipality": "Magnano in Riviera",
+      "claim": "Il terremoto del 1976 e le sue vittime diventerebbero una tappa locale.",
+      "reason": "Il fatto è già presente nella Memoria del giorno regionale e non viene duplicato nella timeline comunale."
+    },
+    {
+      "municipality": "Manzano",
+      "claim": "La nascita della manifattura della sedia verrebbe fissata in un anno della fine dell'Ottocento.",
+      "reason": "Le fonti descrivono un processo graduale e il profilo comunale lo riassume già senza inventare una data fondativa."
+    },
+    {
+      "municipality": "Manzano",
+      "claim": "La nascita di Caterina Percoto diventerebbe anche una tappa comunale.",
+      "reason": "Il fatto è già pubblicato in Memoria del giorno con fonte Treccani e copy approvati."
+    },
+    {
+      "municipality": "Manzano",
+      "claim": "Scipione di Manzano verrebbe calendarizzato il 14 o il 24 novembre.",
+      "reason": "Il candidato esistente è già bloccato perché le fonti biografiche non concordano sul giorno; il conflitto non viene trasferito nella timeline."
+    },
+    {
+      "municipality": "Mereto di Tomba",
+      "claim": "Il rinvenimento fortuito di un'urna romana nel 2006 coinciderebbe con lo scavo della Tùmbare.",
+      "reason": "Sono due fatti archeologici distinti; il lotto mantiene soltanto la campagna che nel 2008 portò alla luce la sepoltura protostorica completa."
+    },
+    {
+      "municipality": "Montenars",
+      "claim": "Il terremoto del 1976 diventerebbe una tappa locale nonostante i dati comunali sulle vittime.",
+      "reason": "La rilevanza locale è indiscussa, ma il fatto unico è già coperto dalla Memoria del giorno regionale e viene escluso per coerenza con i lotti precedenti."
+    },
+    {
+      "municipality": "Montenars",
+      "claim": "La nascita di pre Checo Placerean nel 1920 diventerebbe anche una tappa comunale.",
+      "reason": "La memoria dedicata a Francesco Placereani è già pubblicata e approvata in Memoria del giorno."
+    },
+    {
+      "municipality": "Montenars",
+      "claim": "I roccoli verrebbero associati a una data storica univoca.",
+      "reason": "Il profilo comunale è già dedicato ai roccoli e le fonti ne descrivono l'evoluzione senza offrire un unico anno fondativo."
+    },
+    {
+      "municipality": "Moruzzo",
+      "claim": "L'abbandono del Castello inferiore di Brazzacco nel 1630 diventerebbe una tappa.",
+      "reason": "Il fatto è già dichiarato nel riassunto del profilo e non viene ripetuto nella stessa card."
+    },
+    {
+      "municipality": "Moruzzo",
+      "claim": "La donazione longobarda del 762 verrebbe usata come tappa specifica di Moruzzo.",
+      "reason": "Il documento riguarda un insieme più ampio di beni ed è già richiamato in un altro profilo territoriale; manca una formulazione locale che eviti la sovrapposizione."
+    },
+    {
+      "municipality": "Moruzzo",
+      "claim": "Il diploma di Ottone II del 983 verrebbe duplicato dopo la tappa già assegnata a Fagagna.",
+      "reason": "Lo stesso diploma documenta più castelli; il lotto evita due card quasi identiche fondate sul medesimo atto."
+    },
+    {
+      "municipality": "Muzzana del Turgnano",
+      "claim": "Le presenze preistoriche del territorio diventerebbero una tappa senza data.",
+      "reason": "Le testimonianze sono rilevanti ma non offrono un ancoraggio cronologico compatibile con la timeline annuale."
+    },
+    {
+      "municipality": "Muzzana del Turgnano",
+      "claim": "L'aggiunta della specificazione del Turgnano al nome comunale verrebbe datata genericamente al Trecento.",
+      "reason": "L'intervallo secolare non consente di attribuire un anno esatto al cambiamento."
+    },
+    {
+      "municipality": "Muzzana del Turgnano",
+      "claim": "Il terremoto del 1976 diventerebbe una tappa locale.",
+      "reason": "La fonte comunale segnala l'assenza di danni rilevanti e il sisma è già coperto dalla memoria regionale."
+    }
+  ],
+  "duplicateAudit": {
+    "status": "passed_with_thematic_overlap",
+    "exactDuplicates": 0,
+    "excludedExactDuplicates": 5,
+    "countingRule": "unique_facts_already_present_in_other_rubrics",
+    "notes": [
+      "I cinque fatti unici già presenti altrove sono la DOC Friuli Latisana del 1975, il terremoto del 1976, la nascita di Caterina Percoto, la nascita di Francesco Placereani e l'autonomia comunale di Lignano; il sisma conta una sola volta anche se escluso da più profili.",
+      "La Grotta Nuova di Villanova e la Tùmbare compaiono nei rispettivi riassunti comunali, ma le nuove tappe aggiungono un fatto e una data specifici senza ripetere il testo del profilo.",
+      "Afro è già presente nel materiale giornaliero per la propria biografia, mentre la permanenza creativa a Prampero dal 1961 è un fatto locale distinto.",
+      "Promosedia del 1983 è affine alla storia generale del Distretto della Sedia, ma non duplica la tappa secolare già assegnata a San Giovanni al Natisone.",
+      "Gli atti del 762 e del 983 relativi anche al territorio di Moruzzo restano esclusi per evitare due timeline costruite sullo stesso documento già usato altrove."
+    ]
+  },
+  "sourceConflicts": [
+    {
+      "municipality": "Latisana",
+      "field": "firstPortMention",
+      "selectedValue": "esclusione della tappa portuale",
+      "selectedAuthority": "Confronto tra SIUSA e documenti pianificatori del Comune di Latisana",
+      "discardedValue": "1118, circa 1180 oppure 1226",
+      "discardedAuthority": "Riferimenti istituzionali a fatti portuali non equivalenti",
+      "decision": "Il lotto usa la citazione personale e toponimica del 1072, senza trasformarla nella prima attestazione del porto."
+    },
+    {
+      "municipality": "Latisana e Lignano Sabbiadoro",
+      "field": "lignanoMunicipalAutonomyYear",
+      "selectedValue": "esclusione e verifica separata",
+      "selectedAuthority": "SIUSA - Comune di Latisana",
+      "discardedValue": "1959 nel catalogo runtime; 1958 in SIUSA",
+      "discardedAuthority": "Catalogo comunale corrente e fonte archivistica non coincidenti",
+      "decision": "Nessun anno viene riutilizzato nel nuovo lotto finché la tappa esistente non è riesaminata."
+    },
+    {
+      "municipality": "Magnano in Riviera",
+      "field": "pramperoCastleFirstDate",
+      "selectedValue": "esclusione della tappa",
+      "selectedAuthority": "Confronto tra cataloghi istituzionali e fonte castellologica",
+      "discardedValue": "1025, 1025-1121, 1225 oppure 1265",
+      "discardedAuthority": "Cronologie non coincidenti",
+      "decision": "Il castello resta nel contesto del profilo, ma nessuna delle date viene promossa come prima attestazione certa."
+    },
+    {
+      "municipality": "Mereto di Tomba",
+      "field": "tumbareExcavationDate",
+      "selectedValue": 2008,
+      "selectedAuthority": "Comune di Mereto di Tomba e documentazione della campagna archeologica",
+      "discardedValue": "intervallo 2006-2008",
+      "discardedAuthority": "ERPAC FVG",
+      "decision": "Il 2008 identifica la terza campagna in cui fu portata alla luce la sepoltura completa; l'etichetta non presenta l'anno come inizio assoluto degli scavi."
+    },
+    {
+      "municipality": "Muzzana del Turgnano",
+      "field": "mucianoDiplomaAct",
+      "selectedValue": "attestazione di Villa Muciano nel 824",
+      "selectedAuthority": "Concordanza sull'anno e sul toponimo tra SIUSA e Comune di Muzzana del Turgnano",
+      "discardedValue": "conferma di concessione al patriarca oppure donazione di beni al capitolo",
+      "discardedAuthority": "Ricostruzioni istituzionali non coincidenti sul dettaglio giuridico",
+      "decision": "La tappa registra soltanto l'attestazione documentaria condivisa e non qualifica il tipo di trasferimento."
+    }
+  ],
+  "municipalities": [
+    {
+      "istatCode": "030045",
+      "municipality": "Grimacco",
+      "province": "UD",
+      "currentMilestoneCount": 0,
+      "decision": "source_verified_it_fur_pending",
+      "candidates": [
+        {
+          "id": "grimacco-comune-istituito-1816",
+          "year": 1816,
+          "label": {
+            "it": "Il Comune di Grimacco viene formalmente istituito",
+            "fur": null
+          },
+          "evidence": "SIUSA data l'ente dal 1816 e collega l'istituzione formale del Comune al decreto imperiale austriaco del 9 aprile 1816.",
+          "source": {
+            "label": "SIUSA - Comune di Grimacco",
+            "type": "national_institution",
+            "url": "https://siusa-archivi.cultura.gov.it/cgi-bin/siusa/pagina.pl?Chiave=9102&TipoPag=prodente"
+          }
+        },
+        {
+          "id": "grimacco-incendio-archivio-1944",
+          "year": 1944,
+          "label": {
+            "it": "Un incendio distrugge quasi interamente l'archivio comunale",
+            "fur": null
+          },
+          "evidence": "SIUSA documenta che un incendio del novembre 1944 distrusse quasi completamente la documentazione comunale più antica; l'etichetta non estende il danno all'intero paese.",
+          "source": {
+            "label": "SIUSA - Fondo Comune di Grimacco",
+            "type": "national_institution",
+            "url": "https://siusa-archivi.cultura.gov.it/cgi-bin/siusa/pagina.pl?Chiave=241767&TipoPag=comparc"
+          }
+        },
+        {
+          "id": "grimacco-stazione-topolo-1994",
+          "year": 1994,
+          "label": {
+            "it": "A Topolò prende avvio la Stazione di Topolò",
+            "fur": null
+          },
+          "evidence": "L'associazione promotrice colloca nel 1994 l'avvio della Stazione di Topolò, progetto culturale internazionale proseguito fino al 2022.",
+          "source": {
+            "label": "Associazione Topolò-Topoluove - Breve storia",
+            "type": "cultural_institution",
+            "url": "https://www.topolove.org/it_about.html"
+          }
+        }
+      ]
+    },
+    {
+      "istatCode": "030046",
+      "municipality": "Latisana",
+      "province": "UD",
+      "currentMilestoneCount": 0,
+      "decision": "source_verified_it_fur_pending",
+      "candidates": [
+        {
+          "id": "latisana-citazione-1072",
+          "year": 1072,
+          "label": {
+            "it": "Un documento dell'abbazia di Michaelbeuern cita Marquardo di Latisana",
+            "fur": null
+          },
+          "evidence": "La relazione del quadro conoscitivo comunale rinvia al documento di consacrazione dell'abbazia di Michaelbeuern del 1072, nel quale compare il cavaliere Marquardo di Latisana; la tappa non lo presenta come prima attestazione del porto.",
+          "source": {
+            "label": "Comune di Latisana - Relazione del quadro conoscitivo",
+            "type": "official_municipality",
+            "url": "https://www.comune.latisana.ud.it/media/files/030046/attachment/PCV_SDF01_Relazionediquadroconoscitivo.pdf"
+          }
+        },
+        {
+          "id": "latisana-consiglio-comunale-1816",
+          "year": 1816,
+          "label": {
+            "it": "A Latisana viene accordato il Consiglio comunale con ufficio proprio",
+            "fur": null
+          },
+          "evidence": "SIUSA documenta che nel 1816 Latisana, capoluogo di Distretto e Comune di seconda classe, ottenne il Consiglio comunale con ufficio proprio.",
+          "source": {
+            "label": "SIUSA - Comune di Latisana",
+            "type": "national_institution",
+            "url": "https://siusa-archivi.cultura.gov.it/cgi-bin/siusa/pagina.pl?Chiave=9103&TipoPag=prodente"
+          }
+        },
+        {
+          "id": "latisana-bombardamenti-1944",
+          "year": 1944,
+          "label": {
+            "it": "Latisana viene colpita dai bombardamenti del 19 maggio",
+            "fur": null
+          },
+          "evidence": "Il Comune ha commemorato nel 2024 l'ottantesimo anniversario dei bombardamenti del 19 maggio 1944 su Latisana e San Michele al Tagliamento.",
+          "source": {
+            "label": "Comune di Latisana - Ottantesimo anniversario dei bombardamenti",
+            "type": "official_municipality",
+            "url": "https://www.comune.latisana.ud.it/it/80-anniversario-dei-bombardamenti-di-san-michele-al-tagliamento-e-latisana-245362"
+          }
+        }
+      ]
+    },
+    {
+      "istatCode": "030051",
+      "municipality": "Lusevera",
+      "province": "UD",
+      "currentMilestoneCount": 0,
+      "decision": "source_verified_it_fur_pending",
+      "candidates": [
+        {
+          "id": "lusevera-citazione-1150",
+          "year": 1150,
+          "label": {
+            "it": "Lusevera compare nelle prime testimonianze scritte dell'Alta Val Torre",
+            "fur": null
+          },
+          "evidence": "La pagina storica del Comune indica Lusevera tra le località dell'Alta Val Torre citate nelle fonti scritte nel 1150; l'etichetta non trasforma il riferimento nella fondazione del paese.",
+          "source": {
+            "label": "Comune di Lusevera - La storia",
+            "type": "official_municipality",
+            "url": "https://www.comune.lusevera.ud.it/vivere-il-comune/territorio/la-storia/"
+          }
+        },
+        {
+          "id": "lusevera-vicariatus-sclaborum-1607",
+          "year": 1607,
+          "label": {
+            "it": "Il Vicariatus Sclaborum riunisce Lusevera e le ville slave dell'Alta Val Torre",
+            "fur": null
+          },
+          "evidence": "Il Comune documenta che nel 1607 il patriarca Francesco Barbaro istituì il Vicariatus Sclaborum, comprendente dieci ville dell'Alta Val Torre fra cui Lusevera.",
+          "source": {
+            "label": "Comune di Lusevera - La storia",
+            "type": "official_municipality",
+            "url": "https://www.comune.lusevera.ud.it/vivere-il-comune/territorio/la-storia/"
+          }
+        },
+        {
+          "id": "lusevera-grotta-nuova-1925",
+          "year": 1925,
+          "label": {
+            "it": "Viene scoperta la Grotta Nuova di Villanova",
+            "fur": null
+          },
+          "evidence": "Il Catasto speleologico regionale attribuisce al 1925 e a Pietro Negro di Villanova la scoperta della Grotta Nuova; l'ingresso turistico attuale, inaugurato nel 1984, è un fatto successivo.",
+          "source": {
+            "label": "Regione FVG - Catasto speleologico, Grotta Nuova di Villanova",
+            "type": "regional_institution",
+            "url": "https://catastogrotte.regione.fvg.it/939"
+          }
+        }
+      ]
+    },
+    {
+      "istatCode": "030052",
+      "municipality": "Magnano in Riviera",
+      "province": "UD",
+      "currentMilestoneCount": 0,
+      "decision": "source_verified_it_fur_pending",
+      "candidateCountDecision": "only_two_strong_candidates_no_forcing",
+      "candidates": [
+        {
+          "id": "magnano-comune-1827",
+          "year": 1827,
+          "label": {
+            "it": "Nasce il Comune di Magnano in Riviera",
+            "fur": null
+          },
+          "evidence": "SIUSA data dal 1827 il soggetto produttore Comune di Magnano in Riviera; la tappa riguarda l'ente moderno e non anticipa la storia separata dei centri di Prampero, Bueriis e Longeriacco.",
+          "source": {
+            "label": "SIUSA - Comune di Magnano in Riviera",
+            "type": "national_institution",
+            "url": "https://siusa-archivi.cultura.gov.it/cgi-bin/siusa/pagina.pl?Chiave=9128&RicLin=en&TipoPag=prodente"
+          }
+        },
+        {
+          "id": "magnano-afro-prampero-1961",
+          "year": 1961,
+          "label": {
+            "it": "Il Castello di Prampero diventa dimora e rifugio creativo di Afro",
+            "fur": null
+          },
+          "evidence": "Il Comune documenta che dal 1961 il Castello di Prampero divenne dimora e rifugio creativo del pittore Afro Basaldella; il periodo dell'atelier è circoscritto al 1961-1976.",
+          "source": {
+            "label": "Comune di Magnano in Riviera - Afro al Castello di Prampero",
+            "type": "official_municipality",
+            "url": "https://www.comune.magnanoinriviera.ud.it/novita/mostra-afro-al-castello-di-prampero-latelier-del-silenzio-1961-1976/"
+          }
+        }
+      ]
+    },
+    {
+      "istatCode": "030055",
+      "municipality": "Manzano",
+      "province": "UD",
+      "currentMilestoneCount": 0,
+      "decision": "source_verified_it_fur_pending",
+      "candidates": [
+        {
+          "id": "manzano-investitura-castello-1250",
+          "year": 1250,
+          "label": {
+            "it": "Quonzio di Siniudo riceve in feudo il castello di Manzano",
+            "fur": null
+          },
+          "evidence": "SIUSA documenta nel 1250 l'investitura a Quonzio di Siniudo del castello di Manzano; l'etichetta non presenta l'atto come costruzione della fortificazione.",
+          "source": {
+            "label": "SIUSA - Comune di Manzano",
+            "type": "national_institution",
+            "url": "https://siusa-archivi.cultura.gov.it/cgi-bin/siusa/pagina.pl?Chiave=9144&RicDimF=2&TipoPag=prodente"
+          }
+        },
+        {
+          "id": "manzano-distruzione-castello-1431",
+          "year": 1431,
+          "label": {
+            "it": "Il castello di Manzano viene definitivamente distrutto",
+            "fur": null
+          },
+          "evidence": "SIUSA riferisce che il castello, dopo ripetuti attacchi nelle lotte con Cividale, fu definitivamente distrutto nel 1431.",
+          "source": {
+            "label": "SIUSA - Comune di Manzano",
+            "type": "national_institution",
+            "url": "https://siusa-archivi.cultura.gov.it/cgi-bin/siusa/pagina.pl?Chiave=9144&RicDimF=2&TipoPag=prodente"
+          }
+        },
+        {
+          "id": "manzano-promosedia-1983",
+          "year": 1983,
+          "label": {
+            "it": "Nasce Promosedia per promuovere il Distretto della Sedia",
+            "fur": null
+          },
+          "evidence": "ERPAC data al 1983 la costituzione di Promosedia e distingue l'avvio nel 1984 del Salone Internazionale della Sedia.",
+          "source": {
+            "label": "ERPAC FVG - La collezione di sedie di Manzano",
+            "type": "regional_institution",
+            "url": "https://patrimonioculturale.regione.fvg.it/percorso-tematico/?s_id=822799"
+          }
+        }
+      ]
+    },
+    {
+      "istatCode": "030058",
+      "municipality": "Mereto di Tomba",
+      "province": "UD",
+      "currentMilestoneCount": 0,
+      "decision": "source_verified_it_fur_pending",
+      "candidates": [
+        {
+          "id": "mereto-prima-attestazione-1138",
+          "year": 1138,
+          "label": {
+            "it": "Mereto compare per la prima volta in una fonte scritta",
+            "fur": null
+          },
+          "evidence": "La relazione paesaggistica ufficiale del Comune indica nel 1138 il primo riferimento scritto noto di Mereto e distingue le attestazioni delle frazioni.",
+          "source": {
+            "label": "Comune di Mereto di Tomba - Relazione paesaggistica",
+            "type": "official_municipality",
+            "url": "https://comune.meretoditomba.ud.it/media/files/md/030058/3188_DE_1.2_paesaggistica.pdf"
+          }
+        },
+        {
+          "id": "mereto-incursione-pantianicco-1499",
+          "year": 1499,
+          "label": {
+            "it": "L'incursione turca distrugge e saccheggia Pantianicco",
+            "fur": null
+          },
+          "evidence": "La relazione comunale documenta che l'incursione del 1499 attraversò il Tagliamento e raggiunse Pantianicco, distruggendo e saccheggiando l'abitato.",
+          "source": {
+            "label": "Comune di Mereto di Tomba - Relazione paesaggistica",
+            "type": "official_municipality",
+            "url": "https://comune.meretoditomba.ud.it/media/files/md/030058/3188_DE_1.2_paesaggistica.pdf"
+          }
+        },
+        {
+          "id": "mereto-scavo-tumbare-2008",
+          "year": 2008,
+          "label": {
+            "it": "Gli scavi della Tùmbare portano alla luce la sepoltura protostorica",
+            "fur": null
+          },
+          "evidence": "ERPAC registra le campagne archeologiche del 2006-2008 e la deposizione datata attorno al 1750 a.C.; la relazione comunale precisa che nella terza campagna del 2008 venne portato alla luce lo scheletro completo.",
+          "source": {
+            "label": "ERPAC FVG - Tumulo di Mereto di Tomba",
+            "type": "regional_institution",
+            "url": "https://patrimonioculturale.regione.fvg.it/sito-archeologico/?s_id=549054&s_tab=ra"
+          },
+          "supportingSources": [
+            {
+              "label": "Comune di Mereto di Tomba - Relazione paesaggistica",
+              "type": "official_municipality",
+              "url": "https://comune.meretoditomba.ud.it/media/files/md/030058/3188_DE_1.2_paesaggistica.pdf"
+            },
+            {
+              "label": "Università degli Studi di Udine - Scavi di Mereto",
+              "type": "national_institution",
+              "url": "https://protostoria.uniud.it/Siti/Mereto.htm"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "istatCode": "030061",
+      "municipality": "Montenars",
+      "province": "UD",
+      "currentMilestoneCount": 0,
+      "decision": "source_verified_it_fur_pending",
+      "candidates": [
+        {
+          "id": "montenars-statuti-1373",
+          "year": 1373,
+          "label": {
+            "it": "Montenars ottiene uno statuto per i reati minori",
+            "fur": null
+          },
+          "evidence": "SIUSA data la comunità dal 1373 e documenta l'accordo tra le famiglie di Prampergo e Brugni che le concesse uno statuto limitato ai reati minori.",
+          "source": {
+            "label": "SIUSA - Comune di Montenars",
+            "type": "national_institution",
+            "url": "https://siusa-archivi.cultura.gov.it/cgi-bin/siusa/pagina.pl?Chiave=9173&RicProgetto=reg-fvg&TipoPag=prodente"
+          }
+        },
+        {
+          "id": "montenars-aggregazione-artegna-1928",
+          "year": 1928,
+          "label": {
+            "it": "Montenars viene aggregato al Comune di Artegna",
+            "fur": null
+          },
+          "evidence": "SIUSA documenta l'aggregazione di Montenars ad Artegna disposta dal regio decreto n. 2489 del 18 ottobre 1928.",
+          "source": {
+            "label": "SIUSA - Comune di Montenars",
+            "type": "national_institution",
+            "url": "https://siusa-archivi.cultura.gov.it/cgi-bin/siusa/pagina.pl?Chiave=9173&RicProgetto=reg-fvg&TipoPag=prodente"
+          }
+        },
+        {
+          "id": "montenars-autonomia-1947",
+          "year": 1947,
+          "label": {
+            "it": "Montenars riacquista l'autonomia comunale",
+            "fur": null
+          },
+          "evidence": "SIUSA documenta che Montenars, dopo l'aggregazione ad Artegna del 1928, tornò Comune autonomo nel 1947.",
+          "source": {
+            "label": "SIUSA - Comune di Montenars",
+            "type": "national_institution",
+            "url": "https://siusa-archivi.cultura.gov.it/cgi-bin/siusa/pagina.pl?Chiave=9173&RicProgetto=reg-fvg&TipoPag=prodente"
+          }
+        }
+      ]
+    },
+    {
+      "istatCode": "030063",
+      "municipality": "Moruzzo",
+      "province": "UD",
+      "currentMilestoneCount": 0,
+      "decision": "source_verified_it_fur_pending",
+      "candidates": [
+        {
+          "id": "moruzzo-tiglio-documentato-1301",
+          "year": 1301,
+          "label": {
+            "it": "Il tiglio di Moruzzo è documentato in un atto notarile",
+            "fur": null
+          },
+          "evidence": "Il Comune rinvia a un atto del notaio pre Jacopo di Santa Margherita del 1301 e collega il tiglio alle assemblee dei capifamiglia della comunità.",
+          "source": {
+            "label": "Comune di Moruzzo - Arte e cultura",
+            "type": "official_municipality",
+            "url": "https://www.comune.moruzzo.ud.it/vivere-il-comune/territorio/arte-e-cultura/"
+          }
+        },
+        {
+          "id": "moruzzo-statuti-1460",
+          "year": 1460,
+          "label": {
+            "it": "La comunità di Moruzzo ottiene propri statuti",
+            "fur": null
+          },
+          "evidence": "SIUSA data al 19 aprile 1460 l'ente comunitario e documenta che da quell'anno la comunità di Moruzzo ebbe statuti propri.",
+          "source": {
+            "label": "SIUSA - Comune di Moruzzo",
+            "type": "national_institution",
+            "url": "https://siusa-archivi.cultura.gov.it/cgi-bin/siusa/pagina.pl?Chiave=9184&RicDimF=2&TipoPag=prodente"
+          }
+        },
+        {
+          "id": "moruzzo-pieve-restauro-1954",
+          "year": 1954,
+          "label": {
+            "it": "Il restauro della pieve riapre il rosone gotico",
+            "fur": null
+          },
+          "evidence": "Il Comune data al 1954 l'ultimo restauro della pieve, durante il quale la facciata fu riportata a linee semplici e venne riaperto il rosone gotico.",
+          "source": {
+            "label": "Comune di Moruzzo - Arte e cultura",
+            "type": "official_municipality",
+            "url": "https://www.comune.moruzzo.ud.it/vivere-il-comune/territorio/arte-e-cultura/"
+          }
+        }
+      ]
+    },
+    {
+      "istatCode": "030064",
+      "municipality": "Muzzana del Turgnano",
+      "province": "UD",
+      "currentMilestoneCount": 0,
+      "decision": "source_verified_it_fur_pending",
+      "candidates": [
+        {
+          "id": "muzzana-villa-muciano-824",
+          "year": 824,
+          "label": {
+            "it": "Villa Muciano è attestata in un diploma di Ludovico il Pio",
+            "fur": null
+          },
+          "evidence": "SIUSA e la relazione comunale concordano sulla presenza di Villa Muciano in un diploma dell'824; l'etichetta non qualifica il trasferimento giuridico descritto in modo diverso dalle due fonti.",
+          "source": {
+            "label": "SIUSA - Comune di Muzzana del Turgnano",
+            "type": "national_institution",
+            "url": "https://siusa-archivi.cultura.gov.it/cgi-bin/siusa/pagina.pl?Chiave=9203&TipoPag=prodente"
+          },
+          "supportingSources": [
+            {
+              "label": "Comune di Muzzana del Turgnano - Relazione PAC",
+              "type": "official_municipality",
+              "url": "https://comune.muzzanadelturgnano.ud.it/media/files/030064/attachment/All.A__Relazione__ela_mod__JI4x4WU.pdf"
+            }
+          ]
+        },
+        {
+          "id": "muzzana-usi-civici-1366",
+          "year": 1366,
+          "label": {
+            "it": "Una concessione dà origine agli usi civici di Muzzana",
+            "fur": null
+          },
+          "evidence": "La relazione regionale documenta nel 1366 la concessione perpetua di terreni degli Strassoldo agli uomini e al Comune di Muzzana, indicandola come origine documentaria degli usi civici.",
+          "source": {
+            "label": "Regione FVG - Note storiche sugli usi civici di Muzzana",
+            "type": "regional_institution",
+            "url": "https://www.regione.fvg.it/rafvg/export/sites/default/RAFVG/MODULI/espropriazioni/art_11/allegati/1_12.12_Piano_particellare_-_relazione.pdf"
+          }
+        },
+        {
+          "id": "muzzana-rappresaglia-1513",
+          "year": 1513,
+          "label": {
+            "it": "Una rappresaglia austriaca colpisce gli abitanti di Muzzana",
+            "fur": null
+          },
+          "evidence": "La relazione comunale collega al 1513 una rappresaglia austriaca contro gli abitanti di Muzzana e spiega che la memoria dell'episodio è richiamata dalle frecce nello stemma comunale.",
+          "source": {
+            "label": "Comune di Muzzana del Turgnano - Relazione PAC",
+            "type": "official_municipality",
+            "url": "https://comune.muzzanadelturgnano.ud.it/media/files/030064/attachment/All.A__Relazione__ela_mod__JI4x4WU.pdf"
+          }
+        }
+      ]
+    }
+  ]
+}

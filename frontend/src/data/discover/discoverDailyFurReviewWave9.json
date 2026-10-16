@@ -1,0 +1,96 @@
+{
+  "schemaVersion": 1,
+  "generatedAt": "2026-07-12",
+  "purpose": "Revisione FUR del decimo lotto Scopri, dopo approvazione IT. Non letto direttamente dalla UI.",
+  "summary": {
+    "totalRecords": 12,
+    "approved": 12,
+    "pendingHumanReview": 0
+  },
+  "records": [
+    {
+      "id": "memory-it-ready-0806-gorizia-e-la-sesta-battaglia-dell-isonzo",
+      "status": "approved",
+      "titleFur": "Gurize e la seste bataie dal Isonç",
+      "summaryFur": "Ai 6 di Avost dal 1916 la seste bataie dal Isonç e vierç la fase che e puarte ae cjapade di Gurize. Une vôs secondarie, ma centrâl pe memorie de Grande Vuere.",
+      "notes": "Voce secondaria: mantiene il peso storico senza sostituire la primaria del giorno."
+    },
+    {
+      "id": "memory-it-ready-1029-pozzuolo-del-friuli-battaglia-di-retroguardia",
+      "status": "approved",
+      "titleFur": "Puçûl dal Friûl, bataie di retrovuardie",
+      "summaryFur": "Ai 29 di Otubar dal 1917, dopo Caporet, Puçûl dal Friûl al devente teatri di une bataie di retrovuardie. Un episodi dûr, leât ae difese e al ripiegament.",
+      "notes": "Puçûl dal Friûl usato come forma friulana comprensibile; Caporet mantenuto come toponimo storico."
+    },
+    {
+      "id": "memory-it-ready-0415-sacile-una-battaglia-napoleonica",
+      "status": "approved",
+      "titleFur": "Sacîl, une bataie napoleoniche",
+      "summaryFur": "Ai 15 di Avrîl dal 1809 Sacîl al jentre te storie des vuêris napoleonicjis. La bataie e ricuarde trop che il Friûl al sedi stât coridôr e frontiere d'Europe.",
+      "notes": "Voce secondaria su data gia occupata; lessico storico mantenuto semplice."
+    },
+    {
+      "id": "memory-it-ready-0401-aquileia-sotto-assedio",
+      "status": "approved",
+      "titleFur": "Aquilee sot assedi",
+      "summaryFur": "Ai 1 di Avrîl dal 238 al tache l'assedi di Aquilee. Une memorie antighe, cuant che la citât e jere ancjemò un nod strategic dal imperi e des sôs lotis di podê.",
+      "notes": "Aquilee coerente con uso FUR gia adottato."
+    },
+    {
+      "id": "memory-it-ready-0729-aquileia-nuovo-assedio-nella-storia-romana",
+      "status": "approved",
+      "titleFur": "Aquilee, un altri assedi te storie romane",
+      "summaryFur": "Ai 29 di Lui dal 388 Aquilee e torne tal centri di un assedi. La citât e conte secui di passaçs militârs, politics e religjôs.",
+      "notes": "Mantiene distinzione dal precedente assedio senza appesantire."
+    },
+    {
+      "id": "memory-it-ready-0316-valvasone-e-il-passaggio-napoleonico",
+      "status": "approved",
+      "titleFur": "Valvason e il passaç napoleon",
+      "summaryFur": "Ai 16 di Març dal 1797 la bataie di Valvason e segne il passaç de prime campagne d'Italie. Il Tiliment al devente linie di moviment e di scontri.",
+      "notes": "Tiliment usato per Tagliamento."
+    },
+    {
+      "id": "memory-it-ready-0523-le-battaglie-dell-isonzo",
+      "status": "approved",
+      "titleFur": "Lis bataiis dal Isonç",
+      "summaryFur": "Ai 23 di Mai dal 1915 il front dal Isonç al jentre te Grande Vuere. Di chel moment il paisaç orientâl dal Friûl al devente une lungje memorie di trinceis e monts.",
+      "notes": "Voce generale sulle battaglie dell'Isonzo; tono sintetico."
+    },
+    {
+      "id": "memory-it-ready-0326-paolo-maurensig-narrativa-da-gorizia",
+      "status": "approved",
+      "titleFur": "Paolo Maurensig, narrative di Gurize",
+      "summaryFur": "Ai 26 di Març dal 1943 al nas a Gurize Paolo Maurensig, scritôr. Une vôs leterarie buine di puartâ lûcs, memorie e zûc inteletuâl dentri dal romanç.",
+      "notes": "Romanç usato per romanzo; tono culturale."
+    },
+    {
+      "id": "memory-it-ready-1207-gino-valle-progetto-e-architettura",
+      "status": "approved",
+      "titleFur": "Gino Valle, progjet e architeture",
+      "summaryFur": "Ai 7 di Dicembar dal 1923 al nas a Udin Gino Valle, architet e designer. Une memorie di progjet, industrie e formis modernis nassudis ancje di chest teritori.",
+      "notes": "Designer mantenuto per chiarezza."
+    },
+    {
+      "id": "memory-it-ready-0120-luca-carlevarijs-vedute-e-pittura",
+      "status": "approved",
+      "titleFur": "Luca Carlevarijs, vedudis e piture",
+      "summaryFur": "Ai 20 di Zenâr dal 1663 al nas a Udin Luca Carlevarijs, pitôr. La sô opare e cjale ae vedude e e anticipe une sensibilitât urbane po deventade famose a Vignesie.",
+      "notes": "Vignesie usato per Venezia."
+    },
+    {
+      "id": "memory-it-ready-0124-gojmir-anton-kos-pittura-tra-confini",
+      "status": "approved",
+      "titleFur": "Gojmir Anton Kos, piture tra confins",
+      "summaryFur": "Ai 24 di Zenâr dal 1896 al nas a Gurize Gojmir Anton Kos, pitôr sloven. Une memorie artistiche che e ricuarde la pluralitât culturâl de aree gurizane.",
+      "notes": "Profilo culturale transfrontaliero reso senza forzature."
+    },
+    {
+      "id": "memory-it-ready-0912-ermes-midena-architettura-friulana",
+      "status": "approved",
+      "titleFur": "Ermes Midena, architeture furlane",
+      "summaryFur": "Ai 12 di Setembar dal 1895 al nas a Sant Denêl Ermes Midena, architet. Une olme utile par lei il Nûfcent costruît ancje fûr dai centris plui grancj.",
+      "notes": "Sant Denêl usato per San Daniele; olme per traccia."
+    }
+  ]
+}

@@ -1,0 +1,38 @@
+{
+  "account": "meteofriul@gmail.com",
+  "project": { "projectId": "meteo-friul", "projectNumber": "49007668366" },
+  "services": [
+    {
+      "name": "meteofriul-api",
+      "region": "europe-west1",
+      "serviceAccount": "49007668366-compute@developer.gserviceaccount.com",
+      "image": "europe-west1-docker.pkg.dev/meteo-friul/cloud-run-source-deploy/meteofriul-api@sha256:c54e96cb5d571d1f551e718f5e474657d17c05be56a3b335dbf26e0091e74886",
+      "envNames": ["FIREBASE_PROJECT_ID", "COMMUNITY_STORAGE", "PUSH_APP_CHECK_MODE", "PUSH_OFFICIAL_ALERTS_MODE", "LOCAL_NOTICE_DELIVERY_MODE", "EVENT_SOURCE_FEED_MODE"],
+      "ready": true,
+      "latestReadyRevision": "meteofriul-api-povoleto-79863d6",
+      "rollbackRevision": "",
+      "traffic": [
+        { "revisionName": "meteofriul-api-povoleto-79863d6", "percent": 100, "tag": "cfweb-bcee09e", "url": "https://cfweb-bcee09e---meteofriul-api-bx24xqvcda-ew.a.run.app" }
+      ],
+      "revisions": [
+        { "name": "meteofriul-api-povoleto-79863d6", "serviceAccount": "49007668366-compute@developer.gserviceaccount.com", "image": "europe-west1-docker.pkg.dev/meteo-friul/cloud-run-source-deploy/meteofriul-api@sha256:c54e96cb5d571d1f551e718f5e474657d17c05be56a3b335dbf26e0091e74886", "ready": true }
+      ]
+    }
+  ],
+  "jobs": [
+    { "name": "meteofriul-official-alert-sync", "region": "europe-west1", "serviceAccount": "49007668366-compute@developer.gserviceaccount.com", "image": "europe-west1-docker.pkg.dev/meteo-friul/cloud-run-source-deploy/meteofriul-api:e8ce2b1-alerts", "command": ["python"], "args": ["-m", "app.jobs.sync_official_alerts"], "envNames": ["FIREBASE_PROJECT_ID", "COMMUNITY_STORAGE", "PUSH_OFFICIAL_ALERTS_MODE"], "ready": true },
+    { "name": "meteofriul-event-source-publication-control", "region": "europe-west1", "serviceAccount": "event-source-monitor@meteo-friul.iam.gserviceaccount.com", "image": "europe-west1-docker.pkg.dev/meteo-friul/cloud-run-source-deploy/meteofriul-api@sha256:b7772ebf8d187656278052906b4502d0e789ab57d9dec874ffddacf6b055022d", "command": ["python"], "args": ["-m", "app.jobs.control_event_source_publication"], "envNames": ["FIREBASE_PROJECT_ID", "COMMUNITY_STORAGE", "EVENT_SOURCE_PUBLICATION_ACTION"], "ready": true },
+    { "name": "meteofriul-event-source-shadow", "region": "europe-west1", "serviceAccount": "event-source-monitor@meteo-friul.iam.gserviceaccount.com", "image": "europe-west1-docker.pkg.dev/meteo-friul/cloud-run-source-deploy/meteofriul-api@sha256:b7772ebf8d187656278052906b4502d0e789ab57d9dec874ffddacf6b055022d", "command": ["python"], "args": ["-m", "app.jobs.sync_event_sources"], "envNames": ["FIREBASE_PROJECT_ID", "COMMUNITY_STORAGE", "EVENT_SOURCE_AUTOMATION_MODE", "EVENT_SOURCE_FEED_MODE"], "ready": true },
+    { "name": "meteofriul-local-notice", "region": "europe-west1", "serviceAccount": "49007668366-compute@developer.gserviceaccount.com", "image": "europe-west1-docker.pkg.dev/meteo-friul/cloud-run-source-deploy/meteofriul-local-notice@sha256:ef926d6d0dd37db24bf9ce0bbacf161b774b62a4f993bf57714aeaa563999e3d", "command": ["python"], "args": ["-m", "app.jobs.send_local_weather_notices"], "envNames": ["FIREBASE_PROJECT_ID", "COMMUNITY_STORAGE", "LOCAL_NOTICE_DELIVERY_MODE"], "ready": true }
+  ],
+  "iamBindings": [
+    { "role": "roles/datastore.user", "members": ["serviceAccount:event-source-monitor@meteo-friul.iam.gserviceaccount.com"] },
+    { "role": "roles/editor", "members": ["serviceAccount:49007668366-compute@developer.gserviceaccount.com"] }
+  ],
+  "rolePermissions": [],
+  "cloudBuild": { "defaultServiceAccount": "49007668366-compute@developer.gserviceaccount.com" },
+  "schedulerServiceAccounts": [
+    "event-source-scheduler@meteo-friul.iam.gserviceaccount.com",
+    "official-alert-scheduler@meteo-friul.iam.gserviceaccount.com"
+  ]
+}

@@ -1,0 +1,15 @@
+{
+  "active": true,
+  "alerts": [
+    {
+      "id": "dpc-fvg-orange-20260624",
+      "level": "arancione",
+      "official_text": "CRITICITA ARANCIONE PER RISCHIO IDROGEOLOGICO IN FRIULI VENEZIA GIULIA",
+      "valid_to": "2026-06-25T00:00:00+02:00"
+    }
+  ],
+  "count": 1,
+  "fetched_at": "2026-06-24T10:00:00+02:00",
+  "source": "DPC nazionale",
+  "source_mode": "github_actions_dpc_national_criticity_fallback"
+}

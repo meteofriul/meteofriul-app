@@ -1,0 +1,96 @@
+{
+  "schemaVersion": 1,
+  "generatedAt": "2026-07-12",
+  "purpose": "Revisione FUR dell'ottavo lotto Scopri, dopo approvazione IT. Non letto direttamente dalla UI.",
+  "summary": {
+    "totalRecords": 12,
+    "approved": 12,
+    "pendingHumanReview": 0
+  },
+  "records": [
+    {
+      "id": "memory-it-ready-0129-adelaide-ristori-il-teatro-da-cividale",
+      "status": "approved",
+      "titleFur": "Adelaide Ristori, il teatri di Cividât",
+      "summaryFur": "Ai 29 di Zenâr dal 1822 e nas a Cividât dal Friûl Adelaide Ristori, tra lis grandis atrîs teatrâls dal Votcent. Une memorie di scene, fuarte e no dome locâl.",
+      "notes": "Cividât dal Friûl, Votcent e atrîs teatrâls usati con registro semplice."
+    },
+    {
+      "id": "memory-it-ready-0717-leopoldo-metlicovitz-arte-e-manifesti",
+      "status": "approved",
+      "titleFur": "Leopoldo Metlicovitz, art e manifest",
+      "summaryFur": "Ai 17 di Lui dal 1868 al nas a Triest Leopoldo Metlicovitz, pitôr e ilustradôr. Une memorie tra art, grafiche e imagjins pensadis pal public.",
+      "notes": "Manifest reso nel titolo; nel testo si usa grafiche e imagjins per evitare tecnicismi."
+    },
+    {
+      "id": "memory-it-ready-0720-arduino-berlam-architettura-triestina",
+      "status": "approved",
+      "titleFur": "Arduino Berlam, architeture triestine",
+      "summaryFur": "Ai 20 di Lui dal 1880 al nas a Triest Arduino Berlam, architet. Une linie urbane par lei la citât ancje tai prospets, tes cjasis e tai progjets.",
+      "notes": "Prospects/cjasis/progjets mantiene il senso urbano senza appesantire."
+    },
+    {
+      "id": "memory-it-ready-0828-antonio-somma-parole-per-la-scena",
+      "status": "approved",
+      "titleFur": "Antonio Somma, peraulis pe scene",
+      "summaryFur": "Ai 28 di Avost dal 1809 al nas a Udin Antonio Somma, poet, dramaturc e libretist. Une memorie di teatri, musiche e scriture dal Votcent.",
+      "notes": "Dramaturc/libretist scelti per chiarezza culturale."
+    },
+    {
+      "id": "memory-it-ready-0303-arturo-rietti-ritratti-triestini",
+      "status": "approved",
+      "titleFur": "Arturo Rietti, ritrats triestins",
+      "summaryFur": "Ai 3 di Març dal 1863 al nas a Triest Arturo Rietti, pitôr. Une memorie visive de citât, fate di muse, interni e atmosferis dal so timp.",
+      "notes": "Ritrats nel titolo; testo breve e umano."
+    },
+    {
+      "id": "memory-it-ready-0606-umberto-veruda-pittura-a-trieste",
+      "status": "approved",
+      "titleFur": "Umberto Veruda, piture a Triest",
+      "summaryFur": "Ai 6 di Jugn dal 1868 al nas a Triest Umberto Veruda, pitôr. Une vôs figurative par contâ la Triest artistiche tra Votcent e Nûfcent.",
+      "notes": "Vôs figurative mantiene il tono editoriale."
+    },
+    {
+      "id": "memory-it-ready-0914-marcello-mascherini-scultura-e-scena",
+      "status": "approved",
+      "titleFur": "Marcello Mascherini, sculture e scene",
+      "summaryFur": "Ai 14 di Setembar dal 1906 al nas a Udin Marcello Mascherini, scultôr e scenograf. Une memorie plastiche, tra formis, teatri e Nûfcent.",
+      "notes": "Scenograf e memorie plastiche coerenti con la sintesi IT."
+    },
+    {
+      "id": "memory-it-ready-0824-augusto-cernigoj-avanguardia-a-trieste",
+      "status": "approved",
+      "titleFur": "Augusto Cernigoj, avanguardie a Triest",
+      "summaryFur": "Ai 24 di Avost dal 1898 al nas a Triest Augusto Cernigoj, pitôr. Une memorie leade ae avanguardie e a une citât buine di cjalâ oltri confin.",
+      "notes": "Nome senza diacritico per coerenza con id/copy IT; frase breve e leggibile."
+    },
+    {
+      "id": "memory-it-ready-0127-odorico-politi-pittura-udinese",
+      "status": "approved",
+      "titleFur": "Odorico Politi, piture udinese",
+      "summaryFur": "Ai 27 di Zenâr dal 1785 al nas a Udin Odorico Politi, pitôr. Une memorie di art locâl, sobrie, dentri dal calendari culturâl furlan.",
+      "notes": "Sobrie e art locâl mantengono tono asciutto."
+    },
+    {
+      "id": "memory-it-ready-0227-marcello-d-olivo-progetto-e-paesaggio",
+      "status": "approved",
+      "titleFur": "Marcello D'Olivo, progjet e paisaç",
+      "summaryFur": "Ai 27 di Fevrâr dal 1921 al nas a Udin Marcello D'Olivo, architet e urbanist. Une memorie tra progjet, paisaç e imagjinazion dal Nûfcent.",
+      "notes": "Paisaç/progjet per coerenza con architettura e territorio."
+    },
+    {
+      "id": "memory-it-ready-1220-teobaldo-ciconi-teatro-e-poesia",
+      "status": "approved",
+      "titleFur": "Teobaldo Ciconi, teatri e poesie",
+      "summaryFur": "Ai 20 di Dicembar dal 1824 al nas a San Denêl dal Friûl Teobaldo Ciconi, poet e dramaturc. Une linie leterarie di tornâ a puartâ ae memorie.",
+      "notes": "San Denêl dal Friûl e dramaturc; registro sobrio."
+    },
+    {
+      "id": "memory-it-ready-1217-arturo-nathan-pittura-e-inquietudine",
+      "status": "approved",
+      "titleFur": "Arturo Nathan, piture triestine",
+      "summaryFur": "Ai 17 di Dicembar dal 1891 al nas a Triest Arturo Nathan, pitôr. Une memorie intense de culture figurative triestine dal Nûfcent.",
+      "notes": "Titolo FUR evita resa letterale troppo incerta di inquietudine."
+    }
+  ]
+}

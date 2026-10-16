@@ -1,0 +1,14 @@
+**
+!backend/
+!backend/app/
+!backend/app/**
+!backend/tests/
+!backend/tests/test_pilot_*.py
+!backend/tests/test_attems_audit.py
+!backend/tests/fixtures/
+!backend/tests/fixtures/spazzapan_2026.json
+!backend/Dockerfile.events-pilot
+!backend/events-pilot-build.yaml
+**/__pycache__/**
+**/*.pyc
+**/.env*

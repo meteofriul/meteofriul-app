@@ -1,0 +1,12 @@
+# Single bounded runtime check, no source upload and no ADS credentials.
+timeout: 600s
+options:
+  logging: CLOUD_LOGGING_ONLY
+steps:
+  - name: python:3.13-slim
+    entrypoint: sh
+    args:
+      - -ec
+      - |
+        pip install --disable-pip-version-check eccodes==2.48.0 numpy==2.5.2 ecmwf-datastores-client==0.5.3 google-cloud-storage==3.13.1
+        python -c "import sys,eccodes,numpy; from google.cloud import storage; import ecmwf.datastores; assert sys.platform == 'linux'; h=eccodes.codes_grib_new_from_samples('GRIB2'); assert h is not None; eccodes.codes_release(h); print('PASS Linux Python/native ecCodes/NumPy/ADS/GCS imports')"

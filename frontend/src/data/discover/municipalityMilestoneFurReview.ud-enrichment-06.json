@@ -1,0 +1,91 @@
+{
+  "schemaVersion": 1,
+  "batchId": "ud-enrichment-milestones-06-fur-review",
+  "sourceResearchBatchId": "ud-enrichment-milestones-06",
+  "reviewedAt": "2026-09-01",
+  "runtimeIntegration": false,
+  "reviewMethod": "assisted_standard_reference_review",
+  "approvalBasis": "user_delegated_assisted_editorial_review",
+  "reviewer": "assistant",
+  "independentHumanReview": false,
+  "approvalNote": "Decisione editoriale assistita sotto il mandato di completamento Scopri. Le fonti ARLeF verificano lessico, toponimi e modelli d'uso, non certificano queste frasi; nessuna revisione professionale indipendente né lettura frase per frase attribuita all'utente.",
+  "summary": {
+    "totalRecords": 3,
+    "approved": 3,
+    "pendingHumanReview": 0
+  },
+  "records": [
+    {
+      "id": "lignano-first-bathing-establishment-1903",
+      "status": "approved",
+      "labelFur": "Al ven costruît il prin stabiliment balneâr di Lignan",
+      "notes": "Costruît, stabiliment e balneâr seguono i lemmi ARLeF; Lignan è il toponimo repertoriato. La frase conserva la costruzione documentata nel 1903 e non la trasforma nell'apertura, datata diversamente da due pagine comunali.",
+      "references": [
+        {
+          "url": "https://superdizionari.arlef.it/lemma/costruire/7375?language=it&oneshot=1&gui=fur",
+          "note": "Costruire → costruî; participio costruît."
+        },
+        {
+          "url": "https://superdizionari.arlef.it/lemma/stabilimento/36488?language=it&oneshot=1&gui=fur",
+          "note": "Stabilimento → stabiliment."
+        },
+        {
+          "url": "https://superdizionari.arlef.it/lemma/balneare/15216?language=it&oneshot=1&gui=fur",
+          "note": "Balneare → balneâr."
+        },
+        {
+          "url": "https://superdizionari.arlef.it/lemma/Lignano%20Sabbiadoro/72363?language=it&oneshot=1&gui=fur",
+          "note": "Lignano Sabbiadoro → Lignan."
+        }
+      ]
+    },
+    {
+      "id": "tolmezzo-torre-picotta-1477-1479",
+      "status": "approved",
+      "labelFur": "E ven costruide la Torre Picotta par difindi il borc e il cjistiel",
+      "notes": "Costruide concorda con Torre; difindi, borc e cjistiel seguono ARLeF. Torre Picotta resta la denominazione propria usata dalla fonte comunale, senza inventare un esonimo.",
+      "references": [
+        {
+          "url": "https://superdizionari.arlef.it/lemma/costruire/7375?language=it&oneshot=1&gui=fur",
+          "note": "Costruire → costruî; participio femminile costruide."
+        },
+        {
+          "url": "https://superdizionari.arlef.it/lemma/difendere/3107?language=it&oneshot=1&gui=fur",
+          "note": "Difendere → difindi."
+        },
+        {
+          "url": "https://superdizionari.arlef.it/lemma/borgo/18120?language=it&oneshot=1&gui=fur",
+          "note": "Borgo → borc."
+        },
+        {
+          "url": "https://superdizionari.arlef.it/lemma/castello/27649?language=it&oneshot=1&gui=fur",
+          "note": "Castello → cjistiel."
+        }
+      ]
+    },
+    {
+      "id": "zuglio-first-systematic-forum-excavations",
+      "status": "approved",
+      "labelFur": "A tachin i prins sgjâfs sistematics tal forum di Iulium Carnicum",
+      "notes": "Tachin, sgjâfs e sistematics seguono i lemmi ARLeF; forum è già la forma usata nel profilo FUR di Zuglio. Iulium Carnicum resta il nome storico latino della fonte.",
+      "references": [
+        {
+          "url": "https://superdizionari.arlef.it/lemma/iniziare/3608?language=it&oneshot=1&gui=fur",
+          "note": "Iniziare → tacâ; terza persona plurale tachin."
+        },
+        {
+          "url": "https://superdizionari.arlef.it/lemma/scavo%20archeologico/3892?language=it&oneshot=1&gui=fur",
+          "note": "Scavo archeologico → sgjâf archeologjic; qui il plurale è sgjâfs."
+        },
+        {
+          "url": "https://superdizionari.arlef.it/lemma/sistematico/5816?language=it&oneshot=1&gui=fur",
+          "note": "Sistematico → sistematic; plurale sistematics."
+        },
+        {
+          "url": "https://superdizionari.arlef.it/lemma/foro/38928?language=it&oneshot=1&gui=fur",
+          "note": "Foro nel senso storico-istituzionale → forum."
+        }
+      ]
+    }
+  ]
+}

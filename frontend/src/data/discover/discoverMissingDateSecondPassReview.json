@@ -1,0 +1,143 @@
+{
+  "schemaVersion": 1,
+  "reviewedAt": "2026-07-20",
+  "purpose": "Decisioni editoriali canoniche sul secondo passaggio dei candidati di classe B trovati nei giorni senza Memoria principale. Non letto dalla UI.",
+  "policy": {
+    "dateItFormat": "DD-MM",
+    "dateAnchorFormat": "MM-DD",
+    "noAutomaticPublication": true,
+    "doNotLowerEditorialThresholdToFillCalendar": true,
+    "newEvidenceRequiredToReopenClosedCandidates": true
+  },
+  "records": [
+    {
+      "dateIt": "13-05",
+      "dateAnchor": "05-13",
+      "sourceCandidateId": "master-fvg-13-05-Q3791751",
+      "wikidataId": "Q3791751",
+      "title": "Ida Vallerugo",
+      "decision": "keep_for_archive",
+      "reason": "Universita di Bologna, ARLeF e studi accademici confermano la rilevanza di Ida Vallerugo, Meduno e l'anno 1941, ma non il 13 maggio. Senza conferma del giorno esatto resta nell'archivio e non viene calendarizzata."
+    },
+    {
+      "dateIt": "26-06",
+      "dateAnchor": "06-26",
+      "sourceCandidateId": "master-fvg-26-06-Q91017486",
+      "wikidataId": "Q91017486",
+      "title": "Arduino Buri",
+      "decision": "keep_rejected",
+      "reason": "Profilo militare individuale senza un impatto storico-culturale sufficiente per la rubrica giornaliera."
+    },
+    {
+      "dateIt": "09-07",
+      "dateAnchor": "07-09",
+      "sourceCandidateId": "master-fvg-09-07-Q89400",
+      "wikidataId": "Q89400",
+      "title": "Spiridon Gopcevic",
+      "decision": "keep_secondary",
+      "localMemoryId": "memory-it-ready-0709-spiridon-gopcevic-astronomia-e-scrittura",
+      "reason": "La memoria resta valida e pubblicabile come approfondimento secondario. Il lotto editoriale l'aveva classificata esplicitamente come secondaria e non viene promossa soltanto per coprire il 9 luglio."
+    },
+    {
+      "dateIt": "09-08",
+      "dateAnchor": "08-09",
+      "sourceCandidateId": "master-fvg-09-08-Q107094210",
+      "wikidataId": "Q107094210",
+      "title": "Roberto Corsini",
+      "decision": "keep_rejected",
+      "reason": "Profilo militare contemporaneo senza un contributo storico-culturale autonomo sufficiente per Scopri."
+    },
+    {
+      "dateIt": "12-08",
+      "dateAnchor": "08-12",
+      "sourceCandidateId": "master-fvg-12-08-Q63718205",
+      "wikidataId": "Q63718205",
+      "title": "Antonio Chiodi",
+      "decision": "keep_rejected",
+      "reason": "Ruolo politico generico, privo della rilevanza storica autonoma richiesta dalla linea editoriale."
+    },
+    {
+      "dateIt": "12-08",
+      "dateAnchor": "08-12",
+      "sourceCandidateId": "master-fvg-12-08-Q3767101",
+      "wikidataId": "Q3767101",
+      "title": "Giovanni De Lucia",
+      "decision": "keep_rejected",
+      "reason": "Profilo professionale senza contributo storico eccezionale e senza legame territoriale oltre il luogo di nascita."
+    },
+    {
+      "dateIt": "23-10",
+      "dateAnchor": "10-23",
+      "sourceCandidateId": "master-fvg-23-10-Q3956066",
+      "wikidataId": "Q3956066",
+      "title": "Sergio Cecotti",
+      "decision": "keep_on_hold",
+      "reason": "Persona vivente: resta fuori dal calendario finche non esiste una politica editoriale dedicata ai contemporanei."
+    },
+    {
+      "dateIt": "01-11",
+      "dateAnchor": "11-01",
+      "sourceCandidateId": "master-fvg-01-11-Q3804679",
+      "wikidataId": "Q3804679",
+      "title": "Ivan Crico",
+      "decision": "keep_on_hold",
+      "reason": "Profilo contemporaneo vivente che non raggiunge la soglia di rilevanza storica generale della rubrica."
+    },
+    {
+      "dateIt": "21-11",
+      "dateAnchor": "11-21",
+      "sourceCandidateId": "master-fvg-21-11-Q941440",
+      "wikidataId": "Q941440",
+      "title": "Igor Skamperle",
+      "decision": "keep_on_hold",
+      "reason": "Profilo vivente interessante ma non centrale per la memoria giornaliera; non viene promosso per sola copertura."
+    },
+    {
+      "dateIt": "24-11",
+      "dateAnchor": "11-24",
+      "sourceCandidateId": "master-fvg-24-11-Q36834676",
+      "wikidataId": "Q36834676",
+      "title": "Scipione di Manzano",
+      "decision": "keep_on_hold",
+      "reason": "Il master indica il 24 novembre, mentre le fonti biografiche consultate indicano il 14 novembre. Non calendarizzare finche il conflitto non e risolto."
+    },
+    {
+      "dateIt": "27-11",
+      "dateAnchor": "11-27",
+      "sourceCandidateId": "master-fvg-27-11-Q3716150",
+      "wikidataId": "Q3716150",
+      "title": "Duilio Scandali",
+      "decision": "keep_rejected",
+      "reason": "Il legame con il Friuli e limitato alla nascita; l'attivita letteraria e legata soprattutto ad Ancona."
+    },
+    {
+      "dateIt": "23-12",
+      "dateAnchor": "12-23",
+      "sourceCandidateId": "master-fvg-23-12-Q18171599",
+      "wikidataId": "Q18171599",
+      "title": "Giulio Camber Barni",
+      "decision": "keep_for_archive",
+      "reason": "Poeta di guerra pertinente all'Archivio Scopri, ma non abbastanza immediato e centrale per la memoria giornaliera."
+    },
+    {
+      "dateIt": "26-05",
+      "dateAnchor": "05-26",
+      "sourceCandidateId": "master-fvg-26-05-Q61655182",
+      "wikidataId": "Q61655182",
+      "title": "Roberto Damiani",
+      "decision": "keep_secondary",
+      "localMemoryId": "memory-it-ready-0526-roberto-damiani-e-la-cultura-civile-di-trieste",
+      "reason": "Scheda locale valida e gia approvata, ma il lotto editoriale la destina ad approfondimento secondario. Non diventa primaria per sola copertura del 26 maggio."
+    },
+    {
+      "dateIt": "23-12",
+      "dateAnchor": "12-23",
+      "sourceCandidateId": "master-fvg-23-12-Q59644055",
+      "wikidataId": "Q59644055",
+      "title": "Olga Brunner",
+      "decision": "keep_secondary",
+      "localMemoryId": "memory-it-ready-1223-olga-brunner-e-un-salotto-per-la-musica-europea",
+      "reason": "Scheda culturale valida e gia approvata, ma il lotto editoriale la destina ad approfondimento secondario. Non diventa primaria per sola copertura del 23 dicembre."
+    }
+  ]
+}

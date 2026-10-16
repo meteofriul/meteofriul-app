@@ -1,0 +1,333 @@
+{
+  "target": {
+    "dailySlots": 366,
+    "distinctDailyProverbs": 366,
+    "archiveMinimum": 500,
+    "description": "Il risultato finale richiede 366 proverbi distinti e approvati, uno per ogni data del calendario bisestile. La rotazione e' ammessa soltanto durante lo sviluppo. Per evitare ripetizioni rigide negli anni successivi, l'archivio editoriale dovrebbe superare i 500 testi verificati."
+  },
+  "source": {
+    "label": "Ostermann 1894",
+    "archiveRoot": "external:ostermann-text",
+    "normalizedPagesPath": "normalized-pages",
+    "cleanPagesPath": "pages",
+    "qualityReportPath": "reports/normalized-theme-index.csv",
+    "rule": "Le pagine Ostermann si preparano prima come backlog Scopri. Solo un sottoinsieme diventa candidato proverbio/almanacco dopo revisione."
+  },
+  "completeSourceArchive1876": {
+    "label": "Ostermann 1876 - Proverbi friulani raccolti dalla viva voce del popolo",
+    "cataloguePage": "https://www.techeudine.it/biblioteche-digital-furlane/proverbi-friulani-raccolti-dalla-viva-voce-del-popolo",
+    "facsimileUrl": "https://manoscrittisbhu.comune.udine.it/uploads/BDF/LO11116556.pdf",
+    "localArchivePath": "scripts/data/ostermann-proverbs-1876",
+    "pdfPages": 315,
+    "contentPagesExtracted": 289,
+    "sourceBlocks": 3093,
+    "candidateBlocks": 2875,
+    "status": "raw_source_archive_ready",
+    "rule": "Archivio sorgente completo ma non pubblicabile: ogni blocco scelto deve essere verificato sul facsimile, normalizzato in FUR, tradotto in IT e approvato prima della promozione."
+  },
+  "workflow": [
+    "extract_discover_backlog",
+    "extract_review_candidates",
+    "verify_against_clean_page_or_pdf",
+    "normalize_fur_orthography",
+    "write_it_translation",
+    "assign_date_anchor_or_rotation_bucket",
+    "promote_to_proverbs_json"
+  ],
+  "candidatePages": [
+    {
+      "pdfPage": 29,
+      "priority": "P1",
+      "theme": "Canicola e andamento stagionale",
+      "use": "Detti su canicola, pioggia, asciutto e segni estivi; da estrarre con cautela per evitare duplicati astronomici.",
+      "status": "candidate_extracted"
+    },
+    {
+      "pdfPage": 31,
+      "priority": "P1",
+      "theme": "Orione, gennaio e Canicola",
+      "use": "Proverbio carnico sulle stelle di gennaio e segni stagionali; utile per calendario e Scopri.",
+      "status": "candidate_extracted"
+    },
+    {
+      "pdfPage": 43,
+      "priority": "P1",
+      "theme": "luna di settembre",
+      "use": "Pronostici lunari stagionali con possibile rotazione mensile; verificare varianti e resa FUR.",
+      "status": "candidate_extracted"
+    },
+    {
+      "pdfPage": 44,
+      "priority": "P2",
+      "theme": "luna e lavori agricoli",
+      "use": "Gia recuperata come ost-extract-044-luna-lavori-campi; materiale agricolo-lunare piu' adatto a Scopri/consigli terra che a proverbio giornaliero.",
+      "status": "discover_backlog_extracted"
+    },
+    {
+      "pdfPage": 46,
+      "priority": "P2",
+      "theme": "luna e consuetudini domestiche",
+      "use": "Gia recuperata come ost-extract-046-luna-uccelli-bucato con record curato FUR breve; resta archivio/Scopri, non proverbio quotidiano.",
+      "status": "discover_backlog_extracted"
+    },
+    {
+      "pdfPage": 49,
+      "priority": "P1",
+      "theme": "luna e pioggia",
+      "use": "Proverbi lunari e andamento del tempo.",
+      "status": "candidate_extracted"
+    },
+    {
+      "pdfPage": 54,
+      "priority": "P1",
+      "theme": "freddo, luna e santi",
+      "use": "Proverbi invernali e calendario dei santi.",
+      "status": "candidate_extracted"
+    },
+    {
+      "pdfPage": 57,
+      "priority": "P1",
+      "theme": "giornate, luce e santi",
+      "use": "Proverbi datati sul crescere e accorciarsi delle giornate tra San Tomas, Natale, Epifania, San Luigi e San Zuan.",
+      "status": "candidate_extracted"
+    },
+    {
+      "pdfPage": 58,
+      "priority": "P1",
+      "theme": "stagioni e santi d'inverno",
+      "use": "Avvio sezione proverbi stagionali con San Paolo e San Sebastiano; estrarre solo formule brevi e databili.",
+      "status": "candidate_extracted"
+    },
+    {
+      "pdfPage": 59,
+      "priority": "P1",
+      "theme": "Candelora e inverno",
+      "use": "Date fisse, inverno e varianti contraddittorie da trattare con nota editoriale.",
+      "status": "candidate_extracted"
+    },
+    {
+      "pdfPage": 60,
+      "priority": "P1",
+      "theme": "santi estivi e vendemmie",
+      "use": "Date estive, pioggia, vendemmia e proverbio rituale.",
+      "status": "candidate_extracted"
+    },
+    {
+      "pdfPage": 61,
+      "priority": "P1",
+      "theme": "calende, santi e inverno",
+      "use": "Calendario rituale e proverbi stagionali.",
+      "status": "candidate_extracted"
+    },
+    {
+      "pdfPage": 62,
+      "priority": "P1",
+      "theme": "mesi, San Macari e San Ruperto",
+      "use": "Proverbi mensili e date esplicite su gennaio, febbraio, marzo, aprile, San Macari e San Ruperto.",
+      "status": "candidate_extracted"
+    },
+    {
+      "pdfPage": 63,
+      "priority": "P1",
+      "theme": "San Giovanni e Sant'Egidio",
+      "use": "Date chiave 24 giugno e 1 settembre.",
+      "status": "candidate_extracted"
+    },
+    {
+      "pdfPage": 68,
+      "priority": "P1",
+      "theme": "fumo, presagi e Midili",
+      "use": "Due proverbi sul fumo e presagi d'annata; buon candidato per tradizione/proverbio locale.",
+      "status": "candidate_extracted"
+    },
+    {
+      "pdfPage": 83,
+      "priority": "P2",
+      "theme": "Natale e fuoco rituale",
+      "use": "Materiale natalizio e domestico da distinguere fra proverbio, tradizione e pillola Scopri.",
+      "status": "candidate_extracted"
+    },
+    {
+      "pdfPage": 87,
+      "priority": "P2",
+      "theme": "calendario liturgico e detti",
+      "use": "Detti su feste mobili e calendario rituale; usare solo se la formula e' breve e stabile.",
+      "status": "candidate_extracted"
+    },
+    {
+      "pdfPage": 94,
+      "priority": "P1",
+      "theme": "lessico dei venti",
+      "use": "Venti, aria e detti locali.",
+      "status": "candidate_extracted"
+    },
+    {
+      "pdfPage": 96,
+      "priority": "P1",
+      "theme": "vento delle Palme",
+      "use": "Proverbi sul vento dominante dell'annata.",
+      "status": "candidate_extracted"
+    },
+    {
+      "pdfPage": 97,
+      "priority": "P1",
+      "theme": "vento, aloni, neve e pioggia",
+      "use": "Proverbi meteo su vento e segnali del cielo.",
+      "status": "candidate_extracted"
+    },
+    {
+      "pdfPage": 99,
+      "priority": "P1",
+      "theme": "nebbia e pronostici",
+      "use": "Proverbi su nebbia, pioggia e tempo locale.",
+      "status": "candidate_extracted"
+    },
+    {
+      "pdfPage": 100,
+      "priority": "P1",
+      "theme": "nubi e pronostici",
+      "use": "Pagina ponte sui segni delle nubi; estrarre solo eventuali proverbi brevi, non credenze lunghe.",
+      "status": "candidate_extracted"
+    },
+    {
+      "pdfPage": 101,
+      "priority": "P1",
+      "theme": "sole rosso e nebbia",
+      "use": "Segni facili da leggere nella card giornaliera.",
+      "status": "candidate_extracted"
+    },
+    {
+      "pdfPage": 102,
+      "priority": "P1",
+      "theme": "colore della luna",
+      "use": "Proverbi su luna, vento, pioggia e bel tempo.",
+      "status": "candidate_extracted"
+    },
+    {
+      "pdfPage": 103,
+      "priority": "P1",
+      "theme": "proverbi generali sul tempo",
+      "use": "Pagina centrale per ampliare il proverbio quotidiano.",
+      "status": "candidate_extracted"
+    },
+    {
+      "pdfPage": 104,
+      "priority": "P1",
+      "theme": "monti col cappello, rane, vacche",
+      "use": "Segni animali e segnali sui monti.",
+      "status": "candidate_extracted"
+    },
+    {
+      "pdfPage": 105,
+      "priority": "P1",
+      "theme": "proverbi meteo",
+      "use": "Pagina ad alta resa per proverbi brevi meteo.",
+      "status": "candidate_extracted"
+    },
+    {
+      "pdfPage": 111,
+      "priority": "P2",
+      "theme": "pioggia, nozze e grandine",
+      "use": "Gia recuperata come ost-extract-111-uccelli-marini-pioggia con record curato FUR approvato; usare come Scopri/meteo popolare, non come proverbio giornaliero.",
+      "status": "discover_backlog_extracted"
+    },
+    {
+      "pdfPage": 126,
+      "priority": "P1",
+      "theme": "temporali e grandine",
+      "use": "Proverbi su tuoni, temporali e grandine.",
+      "status": "candidate_extracted"
+    },
+    {
+      "pdfPage": 130,
+      "priority": "P1",
+      "theme": "neve e abbondanza",
+      "use": "Proverbi invernali leggeri.",
+      "status": "candidate_extracted"
+    },
+    {
+      "pdfPage": 131,
+      "priority": "P1",
+      "theme": "vespe e neve",
+      "use": "Segni estate/inverno.",
+      "status": "candidate_extracted"
+    },
+    {
+      "pdfPage": 132,
+      "priority": "P1",
+      "theme": "neve, brina e valanghe",
+      "use": "Materiale neve/freddo, da filtrare per tono app.",
+      "status": "candidate_extracted"
+    },
+    {
+      "pdfPage": 140,
+      "priority": "P1",
+      "theme": "arcobaleno e annata",
+      "use": "Proverbi su colori, raccolto e primavera.",
+      "status": "candidate_extracted"
+    },
+    {
+      "pdfPage": 141,
+      "priority": "P1",
+      "theme": "arcobaleno e tempo",
+      "use": "Proverbi su pioggia, vento e bel tempo.",
+      "status": "candidate_extracted"
+    },
+    {
+      "pdfPage": 146,
+      "priority": "P1",
+      "theme": "aloni lunari e tempo",
+      "use": "Proverbi brevi su cerchi lunari, pioggia vicina/lontana e vento; alto valore per Almanacco.",
+      "status": "candidate_extracted"
+    },
+    {
+      "pdfPage": 189,
+      "priority": "P1",
+      "theme": "annata, pioggia e gennaio",
+      "use": "Calendario agricolo e proverbi mensili.",
+      "status": "candidate_extracted"
+    },
+    {
+      "pdfPage": 190,
+      "priority": "P1",
+      "theme": "marzo, aprile e annata agricola",
+      "use": "Molti proverbi stagionali, buoni per assegnazione mensile.",
+      "status": "candidate_extracted"
+    },
+    {
+      "pdfPage": 192,
+      "priority": "P1",
+      "theme": "vigna, santi e vendemmia",
+      "use": "Date di santi, vite e vendemmia.",
+      "status": "candidate_extracted"
+    },
+    {
+      "pdfPage": 193,
+      "priority": "P1",
+      "theme": "Natale, Pasqua, fieno e pioggia",
+      "use": "Date liturgiche, fieno e andamento stagionale.",
+      "status": "candidate_extracted"
+    },
+    {
+      "pdfPage": 608,
+      "priority": "P1",
+      "theme": "San Giorgio e San Barnaba",
+      "use": "Primavera, pascoli, vite e vendemmia.",
+      "status": "candidate_extracted"
+    },
+    {
+      "pdfPage": 609,
+      "priority": "P1",
+      "theme": "Sant'Ermacora e bufere",
+      "use": "Luglio, grandini e bufere.",
+      "status": "candidate_extracted"
+    },
+    {
+      "pdfPage": 674,
+      "priority": "P2",
+      "theme": "giochi di neve e slitte",
+      "use": "Materiale invernale leggero, piu' culturale che proverbiale.",
+      "status": "candidate_extracted"
+    }
+  ]
+}

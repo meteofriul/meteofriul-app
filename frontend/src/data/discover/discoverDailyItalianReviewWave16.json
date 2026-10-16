@@ -1,0 +1,164 @@
+{
+  "schemaVersion": 1,
+  "generatedAt": "2026-07-13",
+  "purpose": "Sedicesimo lotto Scopri IT: cinque memorie secondarie con data italiana, localizzazione e fonte verificate. Il lotto risolve due rinvii precedenti e scarta duplicati o profili troppo generici. Non letto direttamente dalla UI.",
+  "policy": {
+    "readyForUi": false,
+    "furDeferred": true,
+    "dateFormat": "DD-MM",
+    "requiresFinalItalianApproval": true,
+    "excludeDeaths": true,
+    "excludeGenericPoliticalProfiles": true,
+    "excludeGenericProfessionalProfiles": true,
+    "excludeAlreadyReviewedProfiles": true,
+    "rejectSemanticDuplicates": true,
+    "rejectUncertainCalendarDates": true,
+    "sourceFirst": true,
+    "publishAfterFurOnly": true,
+    "allowMultipleMemoriesPerDate": true,
+    "secondaryOrderedByPriority": true
+  },
+  "summary": {
+    "keepDaily": 5,
+    "primary": 0,
+    "secondary": 5,
+    "hold": 2,
+    "excluded": 5,
+    "canonicalPrimaryDatesBefore": 182,
+    "canonicalPrimaryDatesAfter": 182,
+    "currentVisiblePrimaryCoverage": 168
+  },
+  "keepDaily": [
+    {
+      "id": "master-fvg-21-03-Q1936310",
+      "wikidataId": "Q1936310",
+      "dateIt": "21-03",
+      "year": 1878,
+      "municipality": "Trieste",
+      "locality": "Trieste",
+      "province": "TS",
+      "canonicalCategory": "cultura",
+      "dailyRole": "secondary",
+      "priority": 72,
+      "titleIt": "Marcello Dudovich e l'arte del manifesto",
+      "copyIt": "Il 21 marzo 1878 nasce a Trieste Marcello Dudovich, tra i protagonisti della grafica pubblicitaria italiana. I suoi manifesti uniscono pittura, moda e comunicazione e contribuiscono a definire l'immaginario visivo del primo Novecento.",
+      "sourceLabel": "Treccani - Dizionario Biografico degli Italiani",
+      "sourceUrl": "https://www.treccani.it/enciclopedia/marcello-dudovich_%28Dizionario-Biografico%29/",
+      "sourceStatus": "pass",
+      "readyForUi": false
+    },
+    {
+      "id": "master-fvg-12-04-Q3765343",
+      "wikidataId": "Q3765343",
+      "dateIt": "12-04",
+      "year": 1907,
+      "municipality": "Trieste",
+      "locality": "Trieste",
+      "province": "TS",
+      "canonicalCategory": "cultura",
+      "dailyRole": "secondary",
+      "priority": 68,
+      "titleIt": "Giorgio Carmelich e il futurismo giuliano",
+      "copyIt": "Il 12 aprile 1907 nasce a Trieste Giorgio Carmelich. Giovanissimo, partecipa alla nascita del futurismo giuliano e sperimenta tra disegno, editoria e avanguardie europee.",
+      "sourceLabel": "Treccani - Dizionario Biografico degli Italiani",
+      "sourceUrl": "https://www.treccani.it/enciclopedia/giorgio-carmelich_%28Dizionario-Biografico%29/",
+      "sourceStatus": "pass",
+      "readyForUi": false
+    },
+    {
+      "id": "master-fvg-16-06-Q12794563",
+      "wikidataId": "Q12794563",
+      "dateIt": "16-06",
+      "year": 1914,
+      "municipality": "Trieste",
+      "locality": "Trieste",
+      "province": "TS",
+      "canonicalCategory": "cultura",
+      "dailyRole": "secondary",
+      "priority": 67,
+      "titleIt": "Lado Piscanc, poesia dal confine orientale",
+      "copyIt": "Il 16 giugno 1914 nasce a Trieste Lado Piscanc, sacerdote e poeta sloveno. Nei suoi versi e nei suoi diari resta la voce di una generazione segnata dalla guerra e dalle tensioni del confine orientale.",
+      "sourceLabel": "Slovenska biografija",
+      "sourceUrl": "https://www.slovenska-biografija.si/oseba/sbi941810/",
+      "sourceStatus": "pass",
+      "readyForUi": false
+    },
+    {
+      "id": "master-fvg-21-01-Q21207771",
+      "wikidataId": "Q21207771",
+      "dateIt": "21-01",
+      "year": 1788,
+      "municipality": "Trieste",
+      "locality": "Trieste",
+      "province": "TS",
+      "canonicalCategory": "storia",
+      "dailyRole": "secondary",
+      "priority": 69,
+      "titleIt": "Nicolo de Miniussi, da Trieste a Waterloo",
+      "copyIt": "Il 21 gennaio 1788 nasce a Trieste Nicolo de Miniussi, ufficiale e diplomatico dall'itinerario europeo. Combatte contro le armate napoleoniche e partecipa a Waterloo nello stato maggiore di Wellington.",
+      "sourceLabel": "Universita degli Studi di Trieste - OpenstarTs",
+      "sourceUrl": "https://www.openstarts.units.it/bitstream/10077/13137/7/DV_DSU004103.pdf",
+      "sourceStatus": "pass",
+      "readyForUi": false
+    },
+    {
+      "id": "master-fvg-16-06-Q88782529",
+      "wikidataId": "Q88782529",
+      "dateIt": "16-06",
+      "year": 1922,
+      "municipality": "Flaibano",
+      "locality": "Flaibano",
+      "province": "UD",
+      "canonicalCategory": "storia",
+      "dailyRole": "secondary",
+      "priority": 70,
+      "titleIt": "Amalia Lydia Lalli, dal Friuli alla Resistenza",
+      "copyIt": "Il 16 giugno 1922 nasce a Flaibano Amalia Lydia Lalli, studentessa e staffetta partigiana con il nome di battaglia Kyra. Il suo percorso collega il Friuli alla Resistenza in Lunigiana, dove viene decorata alla memoria con la Medaglia d'argento al valor militare.",
+      "sourceLabel": "ANPI - Atlante delle partigiane e dei partigiani",
+      "sourceUrl": "https://www.anpi.it/sites/default/files/attachments/2025-02/FILE%20UNICO%20MEDAGLIE.pdf",
+      "sourceStatus": "pass",
+      "readyForUi": false
+    }
+  ],
+  "hold": [
+    {
+      "id": "master-fvg-01-01-Q464258",
+      "dateIt": "01-01",
+      "titleIt": "Lodovico Isolani",
+      "reason": "Figura rilevante della Guerra dei Trent'anni, ma il primo gennaio non e confermato come giorno di nascita e puo essere un valore convenzionale del dataset."
+    },
+    {
+      "id": "master-fvg-23-12-Q18171599",
+      "dateIt": "23-12",
+      "titleIt": "Giulio Camber Barni",
+      "reason": "Poeta di guerra pertinente, da conservare per Archivio Scopri finche il suo peso nella rubrica giornaliera non viene documentato meglio."
+    }
+  ],
+  "excluded": [
+    {
+      "id": "master-fvg-13-08-Q6520921",
+      "titleIt": "Lella Vignelli",
+      "reason": "Duplicato semantico: il profilo e gia presente, approvato e visibile nel catalogo canonico."
+    },
+    {
+      "id": "master-fvg-18-03-Q108097762",
+      "titleIt": "Armando Crisciani",
+      "reason": "Profilo militare individuale senza sufficiente peso storico generale per la rubrica quotidiana."
+    },
+    {
+      "id": "master-fvg-26-04-Q3839907",
+      "titleIt": "Luigi Molinis",
+      "reason": "Profilo professionale generico rispetto alla soglia editoriale concordata."
+    },
+    {
+      "id": "master-fvg-05-10-Q3830516",
+      "titleIt": "Leone Fortis",
+      "reason": "Il dato sorgente elenca professioni culturali senza documentare un contributo storico sufficiente per la rubrica."
+    },
+    {
+      "id": "master-fvg-21-03-Q3105183",
+      "titleIt": "Giancarlo Toniutti",
+      "reason": "Profilo contemporaneo descritto soltanto attraverso la professione, sotto la soglia di rilevanza concordata."
+    }
+  ]
+}

@@ -1,0 +1,26 @@
+[
+  {
+    "pkg": "@capacitor/app",
+    "classpath": "com.capacitorjs.plugins.app.AppPlugin"
+  },
+  {
+    "pkg": "@capacitor/app-launcher",
+    "classpath": "com.capacitorjs.plugins.applauncher.AppLauncherPlugin"
+  },
+  {
+    "pkg": "@capacitor/geolocation",
+    "classpath": "com.capacitorjs.plugins.geolocation.GeolocationPlugin"
+  },
+  {
+    "pkg": "@capacitor/push-notifications",
+    "classpath": "com.capacitorjs.plugins.pushnotifications.PushNotificationsPlugin"
+  },
+  {
+    "pkg": "@capacitor/share",
+    "classpath": "com.capacitorjs.plugins.share.SharePlugin"
+  },
+  {
+    "pkg": "meteofriul-pilot-weather-prefetch",
+    "classpath": "com.meteofriul.app.pilot.PilotWeatherPrefetchPlugin"
+  }
+]

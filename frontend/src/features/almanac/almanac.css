@@ -1,0 +1,558 @@
+.mf-tab-page--almanac {
+  gap: var(--mf-space-4);
+}
+
+.mf-almanac-view {
+  display: grid;
+  gap: var(--mf-space-3);
+  padding-bottom: var(--mf-space-4);
+}
+
+.mf-almanac-saint,
+.mf-almanac-sun-panel,
+.mf-almanac-moon-panel,
+.mf-almanac-culture,
+.mf-almanac-earth {
+  border: 1px solid var(--mf-home-card-border);
+  border-radius: 22px;
+  box-shadow: 0 14px 30px var(--mf-home-card-shadow);
+  overflow: hidden;
+  position: relative;
+}
+
+.mf-almanac-culture p,
+.mf-almanac-saint p {
+  color: var(--mf-muted);
+  font-size: var(--mf-text-sm);
+  font-weight: 760;
+  line-height: var(--mf-line-body);
+  margin: 0;
+}
+
+.mf-almanac-date-strip {
+  align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--mf-space-2);
+  margin-top: calc(var(--mf-space-2) * -1);
+  min-width: 0;
+  padding: 0 2px var(--mf-space-1);
+}
+
+.mf-almanac-date-strip span {
+  align-items: center;
+  color: var(--mf-page-muted);
+  display: inline-flex;
+  font-size: var(--mf-text-xs);
+  font-weight: 900;
+  gap: var(--mf-space-1);
+  line-height: var(--mf-line-title);
+}
+
+.mf-almanac-date-strip span:not(:last-child)::after {
+  background: var(--mf-page-muted);
+  border-radius: 999px;
+  content: "";
+  display: inline-block;
+  height: 4px;
+  margin-left: var(--mf-space-2);
+  width: 4px;
+}
+
+.mf-almanac-sky-grid {
+  display: grid;
+  gap: var(--mf-space-3);
+}
+
+.mf-almanac-saint {
+  background:
+    linear-gradient(135deg, var(--mf-home-card-bg-start), var(--mf-home-card-bg-end)),
+    repeating-linear-gradient(135deg, var(--mf-home-card-line) 0 1px, transparent 1px 16px);
+  display: grid;
+  gap: var(--mf-space-2);
+  padding: var(--mf-space-3);
+}
+
+.mf-almanac-section-kicker {
+  align-items: center;
+  color: var(--mf-blue);
+  display: inline-flex;
+  gap: var(--mf-space-1);
+  min-width: 0;
+}
+
+.mf-almanac-section-kicker span {
+  color: var(--mf-gold);
+  font-size: var(--mf-text-xs);
+  font-weight: 950;
+  line-height: var(--mf-line-title);
+  text-transform: uppercase;
+}
+
+.mf-almanac-saint__body {
+  display: grid;
+  gap: var(--mf-space-1);
+}
+
+.mf-almanac-saint strong {
+  color: var(--mf-ink);
+  display: block;
+  font-size: var(--mf-text-lg);
+  line-height: var(--mf-line-title);
+  margin: 2px 0 var(--mf-space-1);
+}
+
+.mf-almanac-name-day {
+  align-items: baseline;
+  display: grid;
+  gap: var(--mf-space-2);
+  grid-template-columns: auto minmax(0, 1fr);
+  margin-top: var(--mf-space-1);
+}
+
+.mf-almanac-name-day__label {
+  color: var(--mf-blue-700);
+  font-size: var(--mf-text-xs);
+  font-weight: 950;
+  line-height: var(--mf-line-title);
+  text-transform: uppercase;
+}
+
+.mf-almanac-name-day__names {
+  color: var(--mf-muted);
+  font-size: var(--mf-text-xs);
+  font-weight: 760;
+  line-height: var(--mf-line-title);
+}
+
+.mf-almanac-saint p.mf-almanac-other-saints-line {
+  color: var(--mf-muted);
+  font-size: var(--mf-text-xs);
+  font-weight: 720;
+  line-height: var(--mf-line-body);
+  margin-top: 2px;
+}
+
+.mf-almanac-other-saints-toggle {
+  align-items: center;
+  background: transparent;
+  border: 0;
+  color: var(--mf-blue-700);
+  cursor: pointer;
+  display: inline-flex;
+  font: inherit;
+  font-weight: 900;
+  gap: 2px;
+  margin: -3px -2px;
+  padding: 3px 2px;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.mf-almanac-other-saints-toggle svg {
+  transition: transform 160ms ease;
+}
+
+.mf-almanac-other-saints-toggle[aria-expanded="true"] svg {
+  transform: rotate(180deg);
+}
+
+.mf-almanac-other-saints-toggle:focus-visible {
+  border-radius: 4px;
+  outline: 2px solid var(--mf-blue);
+  outline-offset: 2px;
+}
+
+.mf-almanac-sun-panel,
+.mf-almanac-moon-panel,
+.mf-almanac-earth,
+.mf-almanac-culture {
+  background:
+    linear-gradient(135deg, var(--mf-home-card-bg-start), var(--mf-home-card-bg-end)),
+    repeating-linear-gradient(135deg, var(--mf-home-card-line) 0 1px, transparent 1px 16px);
+  display: grid;
+  gap: var(--mf-space-3);
+  padding: var(--mf-space-3);
+}
+
+.mf-almanac-panel-title {
+  align-items: center;
+  color: var(--mf-blue-700);
+  display: flex;
+  gap: var(--mf-space-2);
+}
+
+.mf-almanac-panel-title h2 {
+  color: var(--mf-ink);
+  font-size: var(--mf-text-lg);
+  line-height: var(--mf-line-title);
+  margin: 0;
+}
+
+.mf-almanac-panel-title--kicker {
+  color: var(--mf-blue);
+}
+
+.mf-almanac-panel-title--kicker h2 {
+  color: var(--mf-ink);
+  font-size: var(--mf-text-xs);
+  font-weight: 950;
+  text-transform: uppercase;
+}
+
+.mf-almanac-sun-summary {
+  display: grid;
+  gap: var(--mf-space-3);
+}
+
+.mf-almanac-sky-card {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+  padding: 16px;
+  border: 1px solid var(--mf-neutral-border);
+  border-radius: 18px;
+  background: var(--mf-neutral-surface);
+  box-shadow: var(--mf-neutral-shadow);
+}
+
+.mf-almanac-sky-card > article {
+  min-width: 0;
+}
+
+.mf-almanac-sky-card > article + article {
+  border-left: 1px solid var(--mf-neutral-border);
+  padding-left: 14px;
+}
+
+.mf-almanac-sky-card .mf-almanac-sun-phase,
+.mf-almanac-sky-card .mf-almanac-moon-phase {
+  grid-template-columns: minmax(0, 1fr);
+  gap: 8px;
+}
+
+.mf-almanac-sky-card .mf-almanac-panel-title h2 {
+  font-size: 1rem;
+}
+
+.mf-almanac-sky-card .mf-almanac-panel-title { margin-bottom: 12px; }
+.mf-almanac-sky-card .mf-almanac-panel-title .mf-moon-phase-icon { width: 40px; height: 40px; filter: none; }
+.mf-almanac-sky-card .mf-almanac-panel-title > span { flex-shrink: 0; }
+.mf-almanac-sky-card .mf-almanac-sun-phase strong { font-size: 1.35rem; font-weight: 800; }
+.mf-almanac-sky-card .mf-almanac-moon-phase strong { font-size: 1rem; font-weight: 750; }
+.mf-almanac-sky-card .mf-almanac-sun-phase small { font-weight: 500; margin-top: 4px; }
+.mf-almanac-sky-card .mf-almanac-sun-grid span { background: transparent; border: 0; padding: 0; }
+.mf-almanac-sky-details { grid-column: 1 / -1; border-top: 1px solid var(--mf-neutral-border); padding-top: 8px; }
+.mf-almanac-sky-details p { color: var(--mf-muted); font-size: 0.85rem; font-weight: 400; line-height: 1.5; margin: 8px 0 0; }
+.mf-almanac-sky-facts { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px; margin: 8px 0 0; }
+.mf-almanac-sky-facts > div { display: grid; grid-template-rows: 1fr auto; min-width: 0; text-align: center; }
+.mf-almanac-sky-facts dt { color: var(--mf-muted); font-size: 0.8rem; font-weight: 650; line-height: 1.35; }
+.mf-almanac-sky-facts dd { color: var(--mf-ink); font-size: 1.5rem; font-weight: 850; font-variant-numeric: tabular-nums; line-height: 1.2; margin: 8px 0 0; }
+.mf-almanac-sky-facts small { display: block; color: var(--mf-muted); font-size: 0.75rem; font-weight: 500; line-height: 1.4; margin-top: 4px; }
+.mf-almanac-sky-details .mf-almanac-sky-next { display: flex; align-items: flex-start; gap: 8px; color: var(--mf-blue-700); font-size: 1rem; line-height: 1.45; margin-top: 16px; }
+.mf-almanac-sky-next svg { flex-shrink: 0; margin-top: 2px; }
+.mf-almanac-sky-next strong { font-weight: 700; }
+
+.mf-almanac-moon-details summary {
+  cursor: pointer;
+  font-size: 0.75rem;
+  padding-block: 8px;
+  color: var(--mf-muted);
+}
+
+.mf-almanac-cycle { grid-column: 1 / -1; padding: 8px 2px; --cycle-color: var(--mf-gold); }
+.mf-almanac-cycle--night { --cycle-color: var(--mf-river); }
+.mf-almanac-cycle__labels { display: flex; justify-content: space-between; align-items: center; gap: 6px; color: var(--mf-muted); font-size: var(--mf-text-xs); margin-bottom: 12px; }
+.mf-almanac-cycle__labels strong { color: var(--mf-ink); }
+.mf-almanac-cycle__track { position: relative; height: 6px; border-radius: 999px; background: var(--mf-neutral-border); }
+.mf-almanac-cycle__fill { display: block; width: var(--cycle-progress); height: 100%; border-radius: inherit; background: var(--cycle-color); }
+.mf-almanac-cycle__marker { position: absolute; left: clamp(9px, var(--cycle-progress), calc(100% - 9px)); top: 50%; transform: translate(-50%, -50%); color: var(--cycle-color); background: var(--mf-neutral-surface); border-radius: 50%; display: grid; place-items: center; padding: 2px; }
+
+@media (max-width: 340px) {
+  .mf-almanac-sky-card { gap: 8px; padding: 12px; }
+  .mf-almanac-sky-card > article + article { padding-left: 8px; }
+}
+
+.mf-almanac-sun-phase {
+  align-items: center;
+  display: grid;
+  gap: var(--mf-space-3);
+  grid-template-columns: auto minmax(0, 1fr);
+}
+
+.mf-almanac-sun-orb {
+  background:
+    linear-gradient(145deg, rgb(var(--mf-gold-rgb) / 0.12), rgba(255, 255, 255, 0.28)),
+    var(--mf-blue-050);
+  border: 1px solid var(--mf-border);
+  border-radius: 16px;
+  box-shadow: 0 10px 24px rgba(3, 67, 111, 0.14);
+  display: block;
+  height: 58px;
+  isolation: isolate;
+  position: relative;
+  width: 58px;
+}
+
+.mf-almanac-sun-orb::before {
+  background:
+    radial-gradient(circle at 31% 29%, rgba(255, 250, 210, 0.92) 0 1.5px, transparent 2.2px),
+    radial-gradient(circle at 67% 43%, rgba(162, 93, 0, 0.22) 0 1.7px, transparent 2.5px),
+    radial-gradient(circle at 44% 70%, rgba(170, 102, 0, 0.2) 0 1.4px, transparent 2.2px),
+    radial-gradient(circle at 50% 50%, #ffdc69 0, #f4bd2e 58%, #da9910 100%);
+  border: 1px solid rgb(var(--mf-gold-rgb) / 0.56);
+  border-radius: 999px;
+  box-shadow:
+    0 0 0 3px rgb(var(--mf-gold-rgb) / 0.14),
+    0 0 13px rgb(var(--mf-gold-rgb) / 0.34),
+    inset -3px -3px 7px rgba(151, 81, 0, 0.15);
+  content: "";
+  inset: 10px;
+  position: absolute;
+  z-index: 1;
+}
+
+.mf-almanac-sun-orb::after {
+  background: radial-gradient(circle, rgb(var(--mf-gold-rgb) / 0.22) 0 42%, transparent 72%);
+  border-radius: 999px;
+  content: "";
+  inset: 3px;
+  position: absolute;
+  z-index: 0;
+}
+
+.mf-almanac-sun-progress {
+  background: var(--mf-border);
+  border-radius: 999px;
+  display: block;
+  height: 5px;
+  margin: var(--mf-space-1) 0 2px;
+  overflow: hidden;
+  width: 100%;
+}
+
+.mf-almanac-sun-progress i {
+  background: linear-gradient(90deg, var(--mf-gold), var(--mf-blue));
+  border-radius: inherit;
+  display: block;
+  height: 100%;
+  width: var(--mf-sun-progress);
+}
+
+.mf-almanac-sky-note {
+  color: var(--mf-blue-700);
+  font-size: var(--mf-text-xs);
+  font-weight: 900;
+  line-height: var(--mf-line-title);
+  margin: 4px 0 0;
+}
+
+.mf-almanac-sky-note--moon {
+  color: var(--mf-muted);
+}
+
+.mf-almanac-sun-grid span {
+  background: var(--mf-blue-050);
+  border: 1px solid var(--mf-border);
+  border-radius: var(--mf-radius-control);
+  color: var(--mf-blue-700);
+  display: grid;
+  gap: 2px;
+  min-width: 0;
+  padding: var(--mf-space-2);
+}
+
+.mf-almanac-sun-grid {
+  display: grid;
+  gap: var(--mf-space-2);
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.mf-almanac-solar-event {
+  align-items: flex-start;
+  color: var(--mf-blue-700);
+  display: flex;
+  font-size: var(--mf-text-xs);
+  font-weight: 850;
+  gap: var(--mf-space-1);
+  line-height: var(--mf-line-body);
+  margin: 0;
+}
+
+.mf-almanac-solar-event svg {
+  flex: 0 0 auto;
+  margin-top: 1px;
+}
+
+.mf-almanac-sun-grid small,
+.mf-almanac-sun-phase small,
+.mf-almanac-moon-phase small,
+.mf-almanac-culture__entry span {
+  color: var(--mf-muted);
+  font-size: var(--mf-text-xs);
+  font-weight: 850;
+  line-height: var(--mf-line-title);
+}
+
+.mf-almanac-sun-grid strong,
+.mf-almanac-sun-phase strong,
+.mf-almanac-moon-phase strong {
+  color: var(--mf-ink);
+  font-size: var(--mf-text-md);
+  line-height: var(--mf-line-title);
+}
+
+.mf-almanac-sun-phase small,
+.mf-almanac-moon-phase small {
+  display: block;
+  margin-top: 2px;
+}
+
+.mf-almanac-moon-phase {
+  align-items: center;
+  display: grid;
+  gap: var(--mf-space-3);
+  grid-template-columns: auto minmax(0, 1fr);
+}
+
+.mf-almanac-moon-orb {
+  background:
+    linear-gradient(135deg, rgb(var(--mf-gold-rgb) / 0.18), rgba(255, 255, 255, 0.24)),
+    var(--mf-blue-050);
+  border: 1px solid var(--mf-border);
+  border-radius: 16px;
+  box-shadow: 0 10px 24px rgba(3, 67, 111, 0.14);
+  align-items: center;
+  display: inline-flex;
+  height: 58px;
+  justify-content: center;
+  width: 58px;
+}
+
+.mf-moon-phase-icon {
+  --mf-moon-phase-light: #efe3b6;
+  --mf-moon-phase-rim: rgba(255, 255, 255, 0.3);
+  --mf-moon-phase-shadow: #152035;
+  display: block;
+  filter: drop-shadow(0 3px 5px rgba(3, 28, 48, 0.2));
+  height: 40px;
+  width: 40px;
+}
+
+.mf-moon-phase-icon__shadow {
+  fill: var(--mf-moon-phase-shadow);
+}
+
+.mf-moon-phase-icon__light {
+  fill: var(--mf-moon-phase-light);
+}
+
+.mf-moon-phase-icon__surface {
+  opacity: 0.96;
+}
+
+.mf-moon-phase-icon__rim {
+  fill: none;
+  stroke: var(--mf-moon-phase-rim);
+  stroke-width: 2;
+}
+
+.mf-almanac-moon-progress {
+  background: var(--mf-border);
+  border-radius: 999px;
+  display: block;
+  height: 5px;
+  margin: var(--mf-space-1) 0 2px;
+  overflow: hidden;
+  width: 100%;
+}
+
+.mf-almanac-moon-progress i {
+  background: linear-gradient(90deg, var(--mf-blue), var(--mf-gold));
+  border-radius: inherit;
+  display: block;
+  height: 100%;
+  width: var(--mf-moon-progress);
+}
+
+.mf-almanac-moon-next {
+  color: var(--mf-muted);
+  font-size: var(--mf-text-sm);
+  font-weight: 760;
+  line-height: var(--mf-line-body);
+  margin: 0;
+}
+
+.mf-almanac-culture__entry {
+  display: grid;
+  gap: var(--mf-space-2);
+}
+
+.mf-almanac-culture__entry + .mf-almanac-culture__entry {
+  border-top: 1px solid var(--mf-border);
+  padding-top: var(--mf-space-3);
+}
+
+.mf-almanac-culture__entry span {
+  align-items: center;
+  color: var(--mf-ink);
+  display: inline-flex;
+  font-size: var(--mf-text-md);
+  font-weight: 950;
+  gap: var(--mf-space-1);
+  line-height: var(--mf-line-title);
+}
+
+.mf-almanac-culture__entry--proverb span {
+  color: var(--mf-gold);
+}
+
+.mf-almanac-earth__tip {
+  border-top: 1px solid var(--mf-border);
+  color: var(--mf-ink);
+  font-size: var(--mf-text-sm);
+  font-weight: 760;
+  line-height: var(--mf-line-body);
+  margin: 0;
+  padding-top: var(--mf-space-3);
+}
+
+.mf-almanac-discover-link {
+  align-items: center;
+  background: transparent;
+  border: 0;
+  color: var(--mf-page-accent);
+  cursor: pointer;
+  display: inline-flex;
+  font: inherit;
+  font-size: var(--mf-text-sm);
+  font-weight: 900;
+  gap: var(--mf-space-1);
+  justify-self: center;
+  line-height: var(--mf-line-title);
+  margin-top: var(--mf-space-1);
+  padding: var(--mf-space-2) var(--mf-space-3);
+}
+
+.mf-almanac-discover-link:hover {
+  color: var(--mf-page-ink);
+}
+
+.mf-almanac-discover-link:focus-visible {
+  outline: 2px solid var(--mf-blue);
+  outline-offset: 3px;
+}
+
+@media (max-width: 420px) {
+  .mf-almanac-saint,
+  .mf-almanac-sun-panel,
+  .mf-almanac-moon-panel,
+  .mf-almanac-culture,
+  .mf-almanac-earth {
+    border-radius: 18px;
+  }
+
+  .mf-almanac-saint {
+    grid-template-columns: 1fr;
+  }
+}

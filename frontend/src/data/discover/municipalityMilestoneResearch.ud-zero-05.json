@@ -1,0 +1,421 @@
+{
+  "schemaVersion": 1,
+  "batchId": "ud-zero-milestones-05",
+  "snapshotDate": "2026-08-21",
+  "purpose": "Lotto di ricerca non visibile in UI per ampliare le tappe storiche dei successivi nove Comuni UD che ne sono privi.",
+  "runtimeIntegration": false,
+  "editorialPolicy": {
+    "sourceEvidenceRequired": true,
+    "ambiguousDatesExcluded": true,
+    "duplicateAuditRequired": true,
+    "noForcedMilestoneCount": true,
+    "italianCopyStatus": "editorial_draft",
+    "friulianCopyStatus": "pending_human_review",
+    "readyForUi": false
+  },
+  "excludedClaims": [
+    {
+      "municipality": "Preone",
+      "claim": "La soppressione del Comune verrebbe fissata nel 1920 o nel 1928 e il ripristino nel 1947.",
+      "reason": "Le schede archivistiche di Preone ed Enemonzo riportano cronologie non conciliabili; l'intero passaggio amministrativo resta escluso."
+    },
+    {
+      "municipality": "Preone",
+      "claim": "La scoperta del Preondactylus buffarinii verrebbe datata al 1982.",
+      "reason": "Il fossile è già il tema del riassunto comunale e la fonte istituzionale usata dal profilo non fornisce l'anno della scoperta."
+    },
+    {
+      "municipality": "Pulfero",
+      "claim": "La chiesa di San Giovanni d'Antro sarebbe sorta nel 1477.",
+      "reason": "ERPAC attribuisce al 1477 una specifica opera firmata, mentre il luogo di culto è anteriore; la tappa conserva il perimetro esatto della fonte."
+    },
+    {
+      "municipality": "Ragogna",
+      "claim": "L'assalto del 1402 al castello di Torre diventerebbe una tappa locale.",
+      "reason": "Il fatto è già pubblicato in Memoria del giorno e riguarda il castello pordenonese di Torre, non un evento avvenuto a Ragogna."
+    },
+    {
+      "municipality": "Ravascletto",
+      "claim": "I Campionati mondiali juniores di sci alpino del 2002 diventerebbero una tappa comunale.",
+      "reason": "Lo stesso fatto, con Ravascletto tra le sedi, è già pubblicato in Memoria del giorno."
+    },
+    {
+      "municipality": "Raveo",
+      "claim": "Il terremoto del 1976 diventerebbe una tappa locale.",
+      "reason": "Il sisma è già coperto dalla Memoria del giorno regionale e non viene duplicato nelle timeline comunali."
+    },
+    {
+      "municipality": "Raveo",
+      "claim": "L'esistenza di un castello sul Monte Castellano sarebbe presentata come certa.",
+      "reason": "La fonte turistica usa una formulazione ipotetica e dichiara ignota l'ubicazione; non viene trasformata in un fatto assertivo."
+    },
+    {
+      "municipality": "Reana del Rojale",
+      "claim": "L'assunzione del nome Reana del Rojale verrebbe fissata nel 1866 o nel 1867.",
+      "reason": "SIUSA indica il 1866, mentre il Comune richiama il decreto del 18 agosto 1867; la data non viene scelta arbitrariamente."
+    },
+    {
+      "municipality": "Resiutta",
+      "claim": "L'apertura e la chiusura della miniera del Resartico verrebbero fissate in anni esatti.",
+      "reason": "La fonte del Parco descrive l'attività dalla fine dell'Ottocento ai primi anni Cinquanta senza un singolo anno iniziale o finale certo."
+    },
+    {
+      "municipality": "Ruda",
+      "claim": "Ruda sarebbe stata fondata dai Longobardi tra VII e VIII secolo.",
+      "reason": "La ricostruzione è presentata come probabile e non offre un atto fondativo verificabile."
+    },
+    {
+      "municipality": "Sauris",
+      "claim": "Sauris sarebbe stata fondata intorno al 1200 da due soldati tedeschi.",
+      "reason": "La narrazione appartiene alla tradizione leggendaria e non viene pubblicata come cronologia storica."
+    },
+    {
+      "municipality": "Sauris",
+      "claim": "La costruzione della diga sarebbe terminata nel 1948.",
+      "reason": "ERPAC colloca la costruzione fra 1941 e 1947; il 1948 viene usato soltanto per la creazione del lago documentata dalla fonte locale."
+    }
+  ],
+  "duplicateAudit": {
+    "status": "passed_with_thematic_overlap",
+    "exactDuplicates": 0,
+    "excludedExactDuplicates": 2,
+    "countingRule": "unique_facts_already_present_in_other_rubrics",
+    "notes": [
+      "I due fatti unici già pubblicati altrove sono i Campionati mondiali juniores del 2002 con sede anche a Ravascletto e l'assalto del 1402 al castello di Torre attribuito ai signori di Ragogna.",
+      "La prima attestazione di Ravascletto e la roggia di Reana compaiono già nei riassunti comunali; le tappe aggiungono la data alla timeline e sono marcate come espansioni puntuali.",
+      "Monte Sorantri, Amideria Chiozza e Lago di Sauris sono temi già presenti o collegati ai profili, ma le tappe selezionate documentano passaggi cronologici distinti.",
+      "Nessun candidato coincide con una seconda tappa già pubblicata nel catalogo dei Comuni."
+    ]
+  },
+  "sourceConflicts": [
+    {
+      "municipality": "Preone",
+      "field": "municipalitySuppressionYear",
+      "selectedValue": "esclusione dell'intero passaggio amministrativo",
+      "selectedAuthority": "Confronto tra schede SIUSA di Preone ed Enemonzo",
+      "discardedValue": "1920 oppure 1928",
+      "discardedAuthority": "Cronologie archivistiche non coincidenti",
+      "decision": "Nessun anno viene promosso finché il conflitto non è risolto."
+    },
+    {
+      "municipality": "Pulfero",
+      "field": "antroWorkScope1477",
+      "selectedValue": "opera firmata nella chiesa",
+      "selectedAuthority": "ERPAC FVG",
+      "discardedValue": "origine dell'intera chiesa",
+      "discardedAuthority": "Deduzione più ampia della fonte",
+      "decision": "La tappa non retrodata né ridata il luogo di culto."
+    },
+    {
+      "municipality": "Reana del Rojale",
+      "field": "municipalityNameChangeYear",
+      "selectedValue": "esclusione della tappa",
+      "selectedAuthority": "Confronto tra SIUSA e Comune di Reana del Rojale",
+      "discardedValue": "1866 oppure 18 agosto 1867",
+      "discardedAuthority": "Due fonti istituzionali non coincidenti",
+      "decision": "La timeline non sceglie una delle due date."
+    },
+    {
+      "municipality": "Ruda",
+      "field": "amideriaConstructionPhase",
+      "selectedValue": "costruzione documentata nel 1865",
+      "selectedAuthority": "ERPAC FVG - scheda architettonica",
+      "discardedValue": "completamento del complesso agli inizi del Novecento",
+      "discardedAuthority": "ERPAC FVG - scheda di archeologia industriale",
+      "decision": "Le fonti descrivono fasi diverse: la tappa registra la costruzione iniziale, il riassunto conserva il completamento successivo."
+    },
+    {
+      "municipality": "Sauris",
+      "field": "damAndLakeYear",
+      "selectedValue": "1948, creazione del Lago di Sauris",
+      "selectedAuthority": "Sauris Turismo",
+      "discardedValue": "1947, completamento della costruzione della diga",
+      "discardedAuthority": "ERPAC FVG",
+      "decision": "I due anni descrivono eventi diversi; l'etichetta del 1948 parla soltanto della nascita del lago."
+    }
+  ],
+  "municipalities": [
+    {
+      "istatCode": "030084",
+      "municipality": "Preone",
+      "province": "UD",
+      "currentMilestoneCount": 0,
+      "decision": "source_verified_it_fur_pending",
+      "candidates": [
+        {
+          "id": "preone-prima-attestazione-1212",
+          "year": 1212,
+          "label": { "it": "Preone compare per la prima volta in un documento", "fur": null },
+          "evidence": "SIUSA indica nel 1212 la prima attestazione documentaria del nome della località.",
+          "source": { "label": "SIUSA - Comune di Preone", "type": "national_institution", "url": "https://siusa-archivi.cultura.gov.it/cgi-bin/siusa/pagina.pl?Chiave=9263&TipoPag=prodente" }
+        },
+        {
+          "id": "preone-confini-comunita-1472",
+          "year": 1472,
+          "label": { "it": "Vengono delimitati i confini tra Preone e Socchieve", "fur": null },
+          "evidence": "SIUSA documenta la delimitazione dei confini con Socchieve nel 1472 e collega a questo passaggio l'esistenza di fatto della comunità comunale.",
+          "source": { "label": "SIUSA - Comune di Preone", "type": "national_institution", "url": "https://siusa-archivi.cultura.gov.it/cgi-bin/siusa/pagina.pl?Chiave=9263&TipoPag=prodente" }
+        },
+        {
+          "id": "preone-comune-1806",
+          "year": 1806,
+          "label": { "it": "Preone è documentato come Comune dal 1806", "fur": null },
+          "evidence": "La scheda SIUSA data dal 1806 l'esistenza del Comune moderno, senza richiamare un singolo atto istitutivo.",
+          "source": { "label": "SIUSA - Comune di Preone", "type": "national_institution", "url": "https://siusa-archivi.cultura.gov.it/cgi-bin/siusa/pagina.pl?Chiave=9263&TipoPag=prodente" }
+        }
+      ]
+    },
+    {
+      "istatCode": "030086",
+      "municipality": "Pulfero",
+      "province": "UD",
+      "currentMilestoneCount": 0,
+      "decision": "source_verified_it_fur_pending",
+      "candidates": [
+        {
+          "id": "pulfero-antro-opera-1477",
+          "year": 1477,
+          "label": { "it": "Andrea e Jacob da Skofja Loka firmano l'opera nella chiesa d'Antro", "fur": null },
+          "evidence": "ERPAC attribuisce al 1477 l'opera firmata da Andrea e Jacob da Skofja Loka nella chiesa di San Giovanni d'Antro; la formulazione non data l'origine dell'intero edificio.",
+          "summaryOverlap": "specific_work_detail",
+          "source": { "label": "ERPAC FVG - Chiesa di San Giovanni d'Antro", "type": "regional_institution", "url": "https://patrimonioculturale.regione.fvg.it/architettura/?s_id=441862" }
+        },
+        {
+          "id": "pulfero-ultimo-arengo-1804",
+          "year": 1804,
+          "label": { "it": "Si riunisce per l'ultima volta l'Arengo delle Valli del Natisone", "fur": null },
+          "evidence": "SIUSA colloca al 2 maggio 1804 l'ultima riunione dell'Arengo delle Valli del Natisone.",
+          "source": { "label": "SIUSA - Comune di Pulfero", "type": "national_institution", "url": "https://siusa-archivi.cultura.gov.it/cgi-bin/siusa/pagina.pl?Chiave=9265&RicDimF=2&TipoPag=prodente" }
+        },
+        {
+          "id": "pulfero-comune-1929",
+          "year": 1929,
+          "label": { "it": "Nasce il Comune di Pulfero dalla fusione di Rodda e Tarcetta", "fur": null },
+          "evidence": "SIUSA documenta la costituzione del Comune di Pulfero nel 1929 mediante la fusione dei Comuni di Rodda e Tarcetta.",
+          "source": { "label": "SIUSA - Comune di Pulfero", "type": "national_institution", "url": "https://siusa-archivi.cultura.gov.it/cgi-bin/siusa/pagina.pl?Chiave=9265&RicDimF=2&TipoPag=prodente" }
+        }
+      ]
+    },
+    {
+      "istatCode": "030087",
+      "municipality": "Ragogna",
+      "province": "UD",
+      "currentMilestoneCount": 0,
+      "decision": "source_verified_it_fur_pending",
+      "candidates": [
+        {
+          "id": "ragogna-statuto-1442",
+          "year": 1442,
+          "label": { "it": "La comunità di Ragogna riceve il proprio Statuto", "fur": null },
+          "evidence": "SIUSA data al 1442 la concessione dello Statuto alla comunità di Ragogna.",
+          "source": { "label": "SIUSA - Comune di Ragogna", "type": "national_institution", "url": "https://siusa-archivi.cultura.gov.it/cgi-bin/siusa/pagina.pl?Chiave=9267&RicDimF=2&TipoPag=prodente" }
+        },
+        {
+          "id": "ragogna-battaglia-1917",
+          "year": 1917,
+          "label": { "it": "La battaglia di Ragogna investe il fronte del Tagliamento", "fur": null },
+          "evidence": "Il Comune presenta il museo e gli itinerari dedicati alla battaglia di Ragogna del 1917 sul fronte del Tagliamento.",
+          "summaryOverlap": "dated_historical_detail",
+          "source": { "label": "Comune di Ragogna - Museo della Grande Guerra", "type": "official_municipality", "url": "https://www.comune.ragogna.ud.it/it/vivere/museo-della-grande-guerra-di-ragogna" }
+        },
+        {
+          "id": "ragogna-museo-grande-guerra-2007",
+          "year": 2007,
+          "label": { "it": "Viene inaugurato il Museo della Grande Guerra di Ragogna", "fur": null },
+          "evidence": "La pagina ufficiale del Comune data al 2007 l'inaugurazione del museo civico dedicato al fronte del Tagliamento.",
+          "source": { "label": "Comune di Ragogna - Museo della Grande Guerra", "type": "official_municipality", "url": "https://www.comune.ragogna.ud.it/it/vivere/museo-della-grande-guerra-di-ragogna" }
+        }
+      ]
+    },
+    {
+      "istatCode": "030088",
+      "municipality": "Ravascletto",
+      "province": "UD",
+      "currentMilestoneCount": 0,
+      "decision": "source_verified_it_fur_pending",
+      "candidates": [
+        {
+          "id": "ravascletto-prima-attestazione-1281",
+          "year": 1281,
+          "label": { "it": "Ravascletto compare per la prima volta in un documento", "fur": null },
+          "evidence": "SIUSA indica nel 1281 il primo documento che conferma l'esistenza di Ravascletto.",
+          "summaryOverlap": "exact_date_detail",
+          "source": { "label": "SIUSA - Comune di Ravascletto", "type": "national_institution", "url": "https://siusa-archivi.cultura.gov.it/cgi-bin/siusa/pagina.pl?Chiave=9270&RicDimF=2&TipoPag=prodente" }
+        },
+        {
+          "id": "ravascletto-comune-1806",
+          "year": 1806,
+          "label": { "it": "Ravascletto è documentato come Comune dal 1806", "fur": null },
+          "evidence": "La scheda SIUSA data dal 1806 l'esistenza del Comune moderno.",
+          "source": { "label": "SIUSA - Comune di Ravascletto", "type": "national_institution", "url": "https://siusa-archivi.cultura.gov.it/cgi-bin/siusa/pagina.pl?Chiave=9270&RicDimF=2&TipoPag=prodente" }
+        },
+        {
+          "id": "ravascletto-funivia-zoncolan-1975",
+          "year": 1975,
+          "label": { "it": "Si completa la stazione della funivia del Monte Zoncolan", "fur": null },
+          "evidence": "Il censimento ministeriale dell'architettura contemporanea data il progetto al 1972 e il completamento della stazione della funivia al 1975.",
+          "source": { "label": "Ministero della Cultura - Stazione funivia Monte Zoncolan", "type": "national_institution", "url": "https://censimentoarchitetturecontemporanee.cultura.gov.it/scheda-opera?id=2172" }
+        }
+      ]
+    },
+    {
+      "istatCode": "030089",
+      "municipality": "Raveo",
+      "province": "UD",
+      "currentMilestoneCount": 0,
+      "decision": "source_verified_it_fur_pending",
+      "candidates": [
+        {
+          "id": "raveo-prime-menzioni-xiv",
+          "century": "XIV",
+          "label": { "it": "Raveo compare nei documenti", "fur": null },
+          "evidence": "SIUSA colloca nel XIV secolo le prime menzioni documentarie della località, senza forzare un anno non indicato.",
+          "source": { "label": "SIUSA - Comune di Raveo", "type": "national_institution", "url": "https://siusa-archivi.cultura.gov.it/cgi-bin/siusa/pagina.pl?Chiave=9274&TipoPag=prodente" }
+        },
+        {
+          "id": "raveo-santuario-1619",
+          "year": 1619,
+          "label": { "it": "Sorge il Santuario della Madonna di Raveo", "fur": null },
+          "evidence": "PromoTurismoFVG data al 1619 la costruzione del santuario sul Monte Castellano.",
+          "source": { "label": "PromoTurismoFVG - Raveo", "type": "regional_institution", "url": "https://www.turismofvg.it/raveo?LangSetCMS=it" }
+        },
+        {
+          "id": "raveo-scavi-sorantri-2000",
+          "year": 2000,
+          "label": { "it": "Iniziano le indagini archeologiche sistematiche sul Monte Sorantri", "fur": null },
+          "evidence": "ERPAC documenta campagne sistematiche di ricerca sul Monte Sorantri dal 2000 al 2004 e poi nel 2011; la tappa registra soltanto l'anno iniziale.",
+          "summaryOverlap": "dated_research_detail",
+          "source": { "label": "ERPAC FVG - Sito archeologico del Monte Sorantri", "type": "regional_institution", "url": "https://patrimonioculturale.regione.fvg.it/sito-archeologico/?s_id=549417" }
+        }
+      ]
+    },
+    {
+      "istatCode": "030090",
+      "municipality": "Reana del Rojale",
+      "province": "UD",
+      "currentMilestoneCount": 0,
+      "decision": "source_verified_it_fur_pending",
+      "candidates": [
+        {
+          "id": "reana-roggia-1171",
+          "year": 1171,
+          "label": { "it": "La roggia di Udine compare per la prima volta in un documento", "fur": null },
+          "evidence": "Il Comune data al 1171 la prima attestazione documentaria della roggia di Udine che attraversa il Rojale.",
+          "summaryOverlap": "exact_date_detail",
+          "source": { "label": "Comune di Reana del Rojale - Paese e turismo", "type": "official_municipality", "url": "https://www.comune.reanadelrojale.ud.it/vivere-il-comune/territorio/paese-e-turismo/" }
+        },
+        {
+          "id": "reana-terreni-comunita-1294",
+          "year": 1294,
+          "label": { "it": "Un documento dispone la cessione di terreni alla comunità", "fur": null },
+          "evidence": "SIUSA descrive il documento del 1294 che dispone la cessione di terreni agli abitanti e riconferma l'arimannia della comunità.",
+          "source": { "label": "SIUSA - Comune di Reana del Rojale", "type": "national_institution", "url": "https://siusa-archivi.cultura.gov.it/cgi-bin/siusa/pagina.pl?Chiave=9276&RicDimF=2&TipoPag=prodente" }
+        },
+        {
+          "id": "reana-decreto-comune-1807",
+          "year": 1807,
+          "label": { "it": "Reana è citata come Comune in un decreto napoleonico", "fur": null },
+          "evidence": "SIUSA registra nel decreto napoleonico del 22 dicembre 1807 la prima citazione verificata di Reana come Comune, precisando che la data di istituzione non è accertata.",
+          "source": { "label": "SIUSA - Comune di Reana del Rojale", "type": "national_institution", "url": "https://siusa-archivi.cultura.gov.it/cgi-bin/siusa/pagina.pl?Chiave=9276&RicDimF=2&TipoPag=prodente" }
+        }
+      ]
+    },
+    {
+      "istatCode": "030093",
+      "municipality": "Resiutta",
+      "province": "UD",
+      "currentMilestoneCount": 0,
+      "decision": "source_verified_it_fur_pending",
+      "candidates": [
+        {
+          "id": "resiutta-prima-attestazione-1322",
+          "year": 1322,
+          "label": { "it": "Resiutta compare in un documento sulla ricostruzione del ponte sul torrente Resia", "fur": null },
+          "evidence": "SIUSA individua nel 1322 il primo documento che nomina Resiutta, relativo alla ricostruzione del ponte sul torrente Resia.",
+          "source": { "label": "SIUSA - Comune di Resiutta", "type": "national_institution", "url": "https://siusa-archivi.cultura.gov.it/cgi-bin/siusa/pagina.pl?Chiave=9282&RicDimF=2&TipoPag=prodente" }
+        },
+        {
+          "id": "resiutta-capoluogo-cantone-1807",
+          "year": 1807,
+          "label": { "it": "Resiutta diventa capoluogo di Cantone", "fur": null },
+          "evidence": "SIUSA documenta che nell'ordinamento napoleonico del 1807 Resiutta fu scelta come capoluogo di Cantone.",
+          "source": { "label": "SIUSA - Comune di Resiutta", "type": "national_institution", "url": "https://siusa-archivi.cultura.gov.it/cgi-bin/siusa/pagina.pl?Chiave=9282&RicDimF=2&TipoPag=prodente" }
+        },
+        {
+          "id": "resiutta-birra-1844",
+          "year": 1844,
+          "label": { "it": "Inizia la produzione di birra nella Resiutta asburgica", "fur": null },
+          "evidence": "Il Parco naturale delle Prealpi Giulie data al 1844 l'avvio della produzione birraria da parte di imprenditori carinziani nella Resiutta asburgica.",
+          "source": { "label": "Parco naturale delle Prealpi Giulie - Galleria ghiacciaia di Resiutta", "type": "regional_institution", "url": "https://www.parcoprealpigiulie.it/it/principale/attivita/strutture-del-parco/galleria-ghiacciaia-di-resiutta" }
+        }
+      ]
+    },
+    {
+      "istatCode": "030098",
+      "municipality": "Ruda",
+      "province": "UD",
+      "currentMilestoneCount": 0,
+      "decision": "source_verified_it_fur_pending",
+      "candidates": [
+        {
+          "id": "ruda-comune-1806",
+          "year": 1806,
+          "label": { "it": "Nasce il Comune moderno di Ruda", "fur": null },
+          "evidence": "SIUSA data dal 1806 l'esistenza del Comune moderno di Ruda.",
+          "source": { "label": "SIUSA - Comune di Ruda", "type": "national_institution", "url": "https://siusa-archivi.cultura.gov.it/cgi-bin/siusa/pagina.pl?Chiave=9296&TipoPag=prodente" }
+        },
+        {
+          "id": "ruda-amideria-1865",
+          "year": 1865,
+          "label": { "it": "Risale al 1865 la costruzione dell'Amideria Chiozza", "fur": null },
+          "evidence": "La scheda architettonica ERPAC data al 1865 la costruzione dell'Amideria Chiozza; la scheda industriale descrive il successivo completamento del complesso agli inizi del Novecento.",
+          "summaryOverlap": "initial_phase_date",
+          "source": { "label": "ERPAC FVG - Amideria Chiozza, Ruda", "type": "regional_institution", "url": "https://patrimonioculturale.regione.fvg.it/architettura/?s_id=446903" },
+          "supportingSources": [
+            { "label": "ERPAC FVG - Archeologia industriale: Amideria Chiozza", "type": "regional_institution", "url": "https://patrimonioculturale.regione.fvg.it/archeologia-industriale/?s_id=765355" }
+          ]
+        },
+        {
+          "id": "ruda-italia-1918",
+          "year": 1918,
+          "label": { "it": "Ruda viene unita all'Italia", "fur": null },
+          "evidence": "SIUSA documenta il passaggio di Ruda all'Italia nel 1918 dopo la fine del dominio asburgico.",
+          "source": { "label": "SIUSA - Comune di Ruda", "type": "national_institution", "url": "https://siusa-archivi.cultura.gov.it/cgi-bin/siusa/pagina.pl?Chiave=9296&TipoPag=prodente" }
+        }
+      ]
+    },
+    {
+      "istatCode": "030107",
+      "municipality": "Sauris",
+      "province": "UD",
+      "currentMilestoneCount": 0,
+      "decision": "source_verified_it_fur_pending",
+      "candidates": [
+        {
+          "id": "sauris-santosvaldo-1300-1328",
+          "century": "1300-1328",
+          "label": { "it": "Tra il 1300 e il 1328 viene costruita la chiesa di Sant'Osvaldo", "fur": null },
+          "evidence": "ERPAC colloca fra il 1300 e il 1328 la costruzione della chiesa di Sant'Osvaldo, forse al posto di una maina più antica.",
+          "source": { "label": "ERPAC FVG - Chiesa di Sant'Osvaldo, Sauris", "type": "regional_institution", "url": "https://patrimonioculturale.regione.fvg.it/architettura/?s_id=445848" }
+        },
+        {
+          "id": "sauris-lago-1948",
+          "year": 1948,
+          "label": { "it": "Nasce il Lago di Sauris con la diga sul Lumiei", "fur": null },
+          "evidence": "La fonte locale ufficiale data al 1948 la creazione del bacino artificiale mediante lo sbarramento del torrente Lumiei.",
+          "source": { "label": "Sauris Turismo - Natura incontaminata", "type": "cultural_institution", "url": "https://www.sauris.org/natura-incontaminata/" },
+          "supportingSources": [
+            { "label": "Sauris Turismo - Sauris e le sue origini", "type": "cultural_institution", "url": "https://www.sauris.org/wp-content/uploads/2024/02/ITA_-about-Sauris.pdf" }
+          ]
+        },
+        {
+          "id": "sauris-albergo-diffuso-1994",
+          "year": 1994,
+          "label": { "it": "Sauris realizza il primo Albergo Diffuso d'Italia", "fur": null },
+          "evidence": "Un comunicato dell'Amministrazione comunale indica nel 1994 la prima concreta attuazione italiana dell'Albergo Diffuso a Sauris.",
+          "source": { "label": "Comune di Sauris - Best Tourism Village", "type": "official_municipality", "url": "https://www.sauris.org/wp-content/uploads/2024/02/comunicato-best-villages-SAURIS-ZAHRE.pdf" }
+        }
+      ]
+    }
+  ]
+}

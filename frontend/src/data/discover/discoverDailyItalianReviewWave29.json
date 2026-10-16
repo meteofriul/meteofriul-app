@@ -1,0 +1,728 @@
+{
+  "schemaVersion": 1,
+  "generatedAt": "2026-07-15",
+  "purpose": "Ventinovesimo lotto Scopri IT: audit editoriale esteso di centoventi candidati. Quindici memorie sono selezionate per contributo scientifico, artistico, musicale, storico o culturale documentato; sei aprono nuove giornate e nove arricchiscono giornate già coperte. I casi promettenti ma incerti o sensibili restano in attesa. Il lotto resta bloccato fino alla revisione FUR.",
+  "policy": {
+    "readyForUi": false,
+    "furDeferred": true,
+    "dateFormat": "DD-MM",
+    "requiresFinalItalianApproval": true,
+    "excludeDeaths": true,
+    "excludeGenericPoliticalProfiles": true,
+    "excludeGenericProfessionalProfiles": true,
+    "excludeSportsOnlyProfiles": true,
+    "rejectSemanticDuplicates": true,
+    "rejectUncertainCalendarDates": true,
+    "sourceFirst": true,
+    "publishAfterFurOnly": true,
+    "allowMultipleMemoriesPerDate": true,
+    "secondaryOrderedByPriority": true
+  },
+  "summary": {
+    "reviewed": 120,
+    "keepDaily": 15,
+    "primary": 6,
+    "secondary": 9,
+    "hold": 31,
+    "excluded": 74,
+    "canonicalPrimaryDatesBefore": 220,
+    "canonicalPrimaryDatesAfter": 226,
+    "currentVisiblePrimaryCoverage": 218
+  },
+  "keepDaily": [
+    {
+      "id": "master-fvg-21-08-Q31762858",
+      "wikidataId": "Q31762858",
+      "dateIt": "21-08",
+      "year": 1914,
+      "municipality": "Trieste",
+      "locality": "Trieste",
+      "province": "TS",
+      "canonicalCategory": "scienza_territorio",
+      "dailyRole": "primary",
+      "priority": 91,
+      "titleIt": "Renato Ricamo e la scuola italiana di fisica nucleare",
+      "copyIt": "Il 21 agosto 1914 nasce a Trieste Renato Ricamo, fisico nucleare. Professore all'Università di Catania, fonda il Centro siciliano di fisica nucleare e contribuisce alla crescita di una scuola di ricerca riconosciuta in Italia.",
+      "sourceLabel": "Università di Catania - Renato Ricamo",
+      "sourceUrl": "https://www.gioenia.unict.it/sites/default/files/CATALOGO%20MOSTRA%20GIOENIA.pdf",
+      "sourceStatus": "pass",
+      "readyForUi": false
+    },
+    {
+      "id": "master-fvg-16-06-Q27176442",
+      "wikidataId": "Q27176442",
+      "dateIt": "16-06",
+      "year": 1938,
+      "municipality": "Trieste",
+      "locality": "Trieste",
+      "province": "TS",
+      "canonicalCategory": "cultura",
+      "dailyRole": "secondary",
+      "priority": 89,
+      "titleIt": "Edoardo Müller, una vita sui podi internazionali",
+      "copyIt": "Il 16 giugno 1938 nasce a Trieste Edoardo Müller, direttore d'orchestra e pianista. Specialista del bel canto, lavora nei maggiori teatri internazionali e accompagna alcuni dei più importanti interpreti dell'opera del secondo Novecento.",
+      "sourceLabel": "Metropolitan Opera Archives - Edoardo Müller",
+      "sourceUrl": "https://archives.metopera.org/MetOperaSearch/report.jsp",
+      "sourceStatus": "pass",
+      "readyForUi": false
+    },
+    {
+      "id": "master-fvg-22-11-Q3703566",
+      "wikidataId": "Q3703566",
+      "dateIt": "22-11",
+      "year": 1921,
+      "municipality": "Camino al Tagliamento",
+      "locality": "Camino al Tagliamento",
+      "province": "UD",
+      "canonicalCategory": "cultura",
+      "dailyRole": "secondary",
+      "priority": 84,
+      "titleIt": "Davide Liani, musica e formazione in Friuli",
+      "copyIt": "Il 22 novembre 1921 nasce a Camino al Tagliamento Davide Liani, compositore e musicista. Dirige istituzioni musicali e promuove attività didattiche e corali, contribuendo alla formazione di generazioni di interpreti in Friuli Venezia Giulia.",
+      "sourceLabel": "Regione FVG - Davide Liani",
+      "sourceUrl": "https://amministrazionetrasparente.regione.fvg.it/openadmin/p/files/5422ad29-dd19-423a-8948-bd32098a426c",
+      "sourceStatus": "pass",
+      "readyForUi": false
+    },
+    {
+      "id": "master-fvg-06-06-Q1291388",
+      "wikidataId": "Q1291388",
+      "dateIt": "06-06",
+      "year": 1886,
+      "municipality": "Trieste",
+      "locality": "Trieste",
+      "province": "TS",
+      "canonicalCategory": "scienza_territorio",
+      "dailyRole": "secondary",
+      "priority": 94,
+      "titleIt": "Edvard Rusjan, pioniere del volo",
+      "copyIt": "Il 6 giugno 1886 nasce a Trieste Edvard Rusjan, aviatore e costruttore di aeroplani. Con il fratello Josip progetta e sperimenta velivoli a motore, diventando una figura pionieristica dell'aviazione slovena ed europea.",
+      "sourceLabel": "Slovenska biografija - Edvard Rusjan",
+      "sourceUrl": "https://www.slovenska-biografija.si/oseba/sbi528746/",
+      "sourceStatus": "pass",
+      "readyForUi": false
+    },
+    {
+      "id": "master-fvg-21-02-Q1337465",
+      "wikidataId": "Q1337465",
+      "dateIt": "21-02",
+      "year": 1901,
+      "municipality": "Trieste",
+      "locality": "Trieste",
+      "province": "TS",
+      "canonicalCategory": "scienza_territorio",
+      "dailyRole": "secondary",
+      "priority": 93,
+      "titleIt": "Emilio Comici e l'alpinismo moderno",
+      "copyIt": "Il 21 febbraio 1901 nasce a Trieste Emilio Comici, alpinista e speleologo. Apre nuove vie nelle Dolomiti e nelle Alpi Giulie e rinnova tecniche, attrezzature e stile dell'arrampicata, lasciando un segno nella storia dell'alpinismo europeo.",
+      "sourceLabel": "Treccani - Emilio Comici",
+      "sourceUrl": "https://www.treccani.it/enciclopedia/emilio-comici_%28Enciclopedia-dello-Sport%29/",
+      "sourceStatus": "pass",
+      "readyForUi": false
+    },
+    {
+      "id": "master-fvg-31-03-Q3827749",
+      "wikidataId": "Q3827749",
+      "dateIt": "31-03",
+      "year": 1921,
+      "municipality": "Udine",
+      "locality": "Udine",
+      "province": "UD",
+      "canonicalCategory": "scienza_territorio",
+      "dailyRole": "secondary",
+      "priority": 96,
+      "titleIt": "Laura Conti, scienza e ambientalismo",
+      "copyIt": "Il 31 marzo 1921 nasce a Udine Laura Conti, medica, partigiana, scrittrice e ambientalista. Tra le pioniere dell'ecologismo italiano, unisce ricerca, divulgazione e impegno civile e studia le conseguenze del disastro di Seveso.",
+      "sourceLabel": "Fondazione Micheletti - Archivio Laura Conti",
+      "sourceUrl": "https://www.fondazionemicheletti.eu/italiano/documentazione/archivio/dettaglio.asp?id=134&pagina=3",
+      "sourceStatus": "pass",
+      "readyForUi": false
+    },
+    {
+      "id": "master-fvg-03-01-Q1132859",
+      "wikidataId": "Q1132859",
+      "dateIt": "03-01",
+      "year": 1980,
+      "municipality": "Trieste",
+      "locality": "Trieste",
+      "province": "TS",
+      "canonicalCategory": "scienza_territorio",
+      "dailyRole": "secondary",
+      "priority": 90,
+      "titleIt": "Corinna Ulcigrai e la matematica dei sistemi dinamici",
+      "copyIt": "Il 3 gennaio 1980 nasce a Trieste Corinna Ulcigrai, matematica. Le sue ricerche sui sistemi dinamici e sulla teoria ergodica ricevono importanti riconoscimenti internazionali, tra cui i premi EMS, Whitehead e Brin.",
+      "sourceLabel": "Università di Zurigo - Corinna Ulcigrai",
+      "sourceUrl": "https://user.math.uzh.ch/ulcigrai/CV.html",
+      "sourceStatus": "pass",
+      "readyForUi": false
+    },
+    {
+      "id": "master-fvg-03-02-Q1371424",
+      "wikidataId": "Q1371424",
+      "dateIt": "03-02",
+      "year": 1869,
+      "municipality": "Udine",
+      "locality": "Udine",
+      "province": "UD",
+      "canonicalCategory": "cultura",
+      "dailyRole": "secondary",
+      "priority": 95,
+      "titleIt": "Giulio Gatti Casazza, dalla Scala al Metropolitan",
+      "copyIt": "Il 3 febbraio 1869 nasce a Udine Giulio Gatti Casazza, impresario teatrale. Dopo la direzione del Teatro alla Scala guida il Metropolitan Opera di New York dal 1908 al 1935, trasformandolo in una delle grandi istituzioni liriche mondiali.",
+      "sourceLabel": "Metropolitan Opera - Giulio Gatti Casazza",
+      "sourceUrl": "https://www.metopera.org/discover/archives/new-opera-at-the-met-then-and-now/gatti--kahn/",
+      "sourceStatus": "pass",
+      "readyForUi": false
+    },
+    {
+      "id": "master-fvg-07-09-Q2904954",
+      "wikidataId": "Q2904954",
+      "dateIt": "07-09",
+      "year": 1942,
+      "municipality": "Trieste",
+      "locality": "Trieste",
+      "province": "TS",
+      "canonicalCategory": "scienza_territorio",
+      "dailyRole": "primary",
+      "priority": 91,
+      "titleIt": "Sergio Della Pergola e la demografia contemporanea",
+      "copyIt": "Il 7 settembre 1942 nasce a Trieste Sergio Della Pergola, demografo e saggista. Studioso delle popolazioni ebraiche nel mondo, dirige istituti di ricerca e collabora con università, governi e organizzazioni internazionali.",
+      "sourceLabel": "Hebrew University of Jerusalem - Sergio Della Pergola",
+      "sourceUrl": "https://en-contemporaryjewry.huji.ac.il/people/sergio-dellapergola?ref_tid=13538",
+      "sourceStatus": "pass",
+      "readyForUi": false
+    },
+    {
+      "id": "master-fvg-10-01-Q93467",
+      "wikidataId": "Q93467",
+      "dateIt": "10-01",
+      "year": 1908,
+      "municipality": "Trieste",
+      "locality": "Trieste",
+      "province": "TS",
+      "canonicalCategory": "cultura",
+      "dailyRole": "primary",
+      "priority": 95,
+      "titleIt": "Paul Henreid, da Trieste a Casablanca",
+      "copyIt": "Il 10 gennaio 1908 nasce a Trieste Paul Henreid, attore e regista. Esule antinazista, raggiunge Hollywood e diventa uno dei volti del cinema classico con film come Casablanca e Perdutamente tua.",
+      "sourceLabel": "PBS - Paul Henreid",
+      "sourceUrl": "https://www.pbs.org/wnet/cinemasexiles/biographies/the-actors/biography-paul-henreid/209/",
+      "sourceStatus": "pass",
+      "readyForUi": false
+    },
+    {
+      "id": "master-fvg-26-07-Q2613097",
+      "wikidataId": "Q2613097",
+      "dateIt": "26-07",
+      "year": 1874,
+      "municipality": "Udine",
+      "locality": "Udine",
+      "province": "UD",
+      "canonicalCategory": "scienza_territorio",
+      "dailyRole": "secondary",
+      "priority": 94,
+      "titleIt": "Alessandro Trotter, pioniere della cecidologia",
+      "copyIt": "Il 26 luglio 1874 nasce a Udine Alessandro Trotter, botanico ed entomologo. Tra i fondatori della cecidologia, lo studio delle galle vegetali, crea la rivista Marcellia e pubblica centinaia di ricerche scientifiche.",
+      "sourceLabel": "Treccani - Alessandro Trotter",
+      "sourceUrl": "https://www.treccani.it/enciclopedia/alessandro-trotter_%28Dizionario-Biografico%29/",
+      "sourceStatus": "pass",
+      "readyForUi": false
+    },
+    {
+      "id": "master-fvg-14-12-Q1675056",
+      "wikidataId": "Q1675056",
+      "dateIt": "14-12",
+      "year": 1870,
+      "municipality": "Gorizia",
+      "locality": "Gorizia",
+      "province": "GO",
+      "canonicalCategory": "cultura",
+      "dailyRole": "primary",
+      "priority": 92,
+      "titleIt": "Italico Brass, pittura tra Gorizia e Venezia",
+      "copyIt": "Il 14 dicembre 1870 nasce a Gorizia Italico Brass, pittore e scenografo. Espone più volte alla Biennale di Venezia e in importanti rassegne europee e americane, raccontando città, paesaggi e vita quotidiana.",
+      "sourceLabel": "Ministero della Cultura - Italico Brass",
+      "sourceUrl": "https://movio.beniculturali.it/mcrr/immaginidellagrandeguerra/it/268/temi/show/85/46",
+      "sourceStatus": "pass",
+      "readyForUi": false
+    },
+    {
+      "id": "master-fvg-15-03-Q18645153",
+      "wikidataId": "Q18645153",
+      "dateIt": "15-03",
+      "year": 1883,
+      "municipality": "Gorizia",
+      "locality": "Gorizia",
+      "province": "GO",
+      "canonicalCategory": "cultura",
+      "dailyRole": "primary",
+      "priority": 88,
+      "titleIt": "Saša Šantel, pittura e musica tra due culture",
+      "copyIt": "Il 15 marzo 1883 nasce a Gorizia Saša Šantel, pittore, compositore e insegnante. La sua opera attraversa arti visive e musica e testimonia l'incontro tra la cultura goriziana e quella slovena del primo Novecento.",
+      "sourceLabel": "Slovenska biografija - Saša Šantel",
+      "sourceUrl": "https://www.slovenska-biografija.si/oseba/sbi639024/",
+      "sourceStatus": "pass",
+      "readyForUi": false
+    },
+    {
+      "id": "master-fvg-25-08-Q3764689",
+      "wikidataId": "Q3764689",
+      "dateIt": "25-08",
+      "year": 1876,
+      "municipality": "Trieste",
+      "locality": "Trieste",
+      "province": "TS",
+      "canonicalCategory": "cultura",
+      "dailyRole": "primary",
+      "priority": 89,
+      "titleIt": "Gino Parin, ritratti dalla Trieste europea",
+      "copyIt": "Il 25 agosto 1876 nasce a Trieste Gino Parin, pittore e ritrattista. Espone in importanti rassegne italiane ed europee e racconta nella sua opera la società cosmopolita della Trieste tra Ottocento e Novecento.",
+      "sourceLabel": "Università di Vienna - Gino Parin",
+      "sourceUrl": "https://exhibitions.univie.ac.at/person/ulan/500105717",
+      "sourceStatus": "pass",
+      "readyForUi": false
+    },
+    {
+      "id": "master-fvg-01-06-Q2913514",
+      "wikidataId": "Q2913514",
+      "dateIt": "01-06",
+      "year": 1940,
+      "municipality": "Trieste",
+      "locality": "Trieste",
+      "province": "TS",
+      "canonicalCategory": "memoria_storica",
+      "dailyRole": "secondary",
+      "priority": 91,
+      "titleIt": "Jože Pirjevec, storico dei Balcani",
+      "copyIt": "Il 1 giugno 1940 nasce a Trieste Jože Pirjevec, storico. I suoi studi sulla Jugoslavia, sui Balcani e sui rapporti tra italiani e sloveni lo rendono una voce di rilievo internazionale nella storia dell'Europa orientale.",
+      "sourceLabel": "Accademia slovena delle scienze e delle arti - Jože Pirjevec",
+      "sourceUrl": "https://www.sazu.si/clani/joze-pirjevec",
+      "sourceStatus": "pass",
+      "readyForUi": false
+    }
+  ],
+  "hold": [
+    {
+      "id": "master-fvg-20-06-Q3875863",
+      "reason": "Figura storicamente rilevante ma sensibile: rinviata a un lotto dedicato con contestualizzazione esplicita."
+    },
+    {
+      "id": "master-fvg-16-12-Q64433528",
+      "reason": "Profilo potenzialmente storico, ma manca una fonte autorevole diretta sufficiente per una memoria giornaliera."
+    },
+    {
+      "id": "master-fvg-18-02-Q3848487",
+      "reason": "Figura militare di rilievo nazionale: rinviata a un lotto storico dedicato."
+    },
+    {
+      "id": "master-fvg-21-06-Q105620842",
+      "reason": "Figura militare di rilievo nazionale: rinviata a un lotto storico dedicato."
+    },
+    {
+      "id": "master-fvg-09-11-Q3830081",
+      "reason": "Eccezione politica con incarichi nazionali: rinviata a una revisione istituzionale dedicata."
+    },
+    {
+      "id": "master-fvg-29-01-Q466716",
+      "reason": "Carriera cinematografica ampia, ma la soglia di rilevanza storico-artistica richiede ancora una decisione editoriale."
+    },
+    {
+      "id": "master-fvg-05-03-Q5615056",
+      "reason": "Attività artistica documentata, ma non ancora sostenuta da una fonte autorevole abbastanza forte."
+    },
+    {
+      "id": "master-fvg-29-11-Q3940010",
+      "reason": "Artista potenzialmente sopra soglia: rinviato al prossimo lotto culturale."
+    },
+    {
+      "id": "master-fvg-05-01-Q94376161",
+      "reason": "Il nome e il valore storico dell'epistolario richiedono verifica puntuale prima della pubblicazione."
+    },
+    {
+      "id": "master-fvg-08-04-Q56550770",
+      "reason": "Figura scientifico-istituzionale nazionale: rinviata al prossimo lotto per una copy non contingente."
+    },
+    {
+      "id": "master-fvg-09-04-Q108130763",
+      "reason": "Il contributo a Villa Rosebery è documentato, ma data di nascita e rilievo personale restano insufficienti."
+    },
+    {
+      "id": "master-fvg-02-08-Q28357704",
+      "reason": "Autore ed editore per l'infanzia potenzialmente rilevante: rinviato al prossimo lotto culturale."
+    },
+    {
+      "id": "master-fvg-24-08-Q3617359",
+      "reason": "Artista presente in rassegne nazionali: rinviato al prossimo lotto culturale."
+    },
+    {
+      "id": "master-fvg-26-06-Q37242490",
+      "reason": "La fonte autorevole indica il 28 giugno, non il 26: il record va corretto alla fonte prima dell'uso."
+    },
+    {
+      "id": "master-fvg-08-06-Q132529",
+      "reason": "Evento sportivo di rilevanza culturale internazionale: rinviato a un lotto eventi, non persone."
+    },
+    {
+      "id": "master-fvg-29-01-Q3639386",
+      "reason": "Pioniera della televisione italiana: rinviata al prossimo lotto culturale."
+    },
+    {
+      "id": "master-fvg-27-07-Q1905185",
+      "reason": "La fonte autorevole indica il 28 luglio, non il 27: il record va corretto alla fonte prima dell'uso."
+    },
+    {
+      "id": "master-fvg-02-03-Q601030",
+      "reason": "La data è plausibile, ma il luogo di nascita nel record non coincide con la fonte autorevole."
+    },
+    {
+      "id": "master-fvg-09-01-Q2478956",
+      "reason": "Rilevanza musicale internazionale plausibile, ma serve una fonte indipendente più solida."
+    },
+    {
+      "id": "master-fvg-10-10-Q3051027",
+      "reason": "Gli incarichi e la persecuzione razziale danno peso storico, ma il profilo politico resta da valutare con cautela."
+    },
+    {
+      "id": "master-fvg-12-07-Q524814",
+      "reason": "Figura popolare del dopoguerra oltre lo sport, ma l'eccezione culturale richiede approvazione editoriale esplicita."
+    },
+    {
+      "id": "master-fvg-19-12-Q2590896",
+      "reason": "Le fonti divergono sulla data per una probabile differenza di calendario."
+    },
+    {
+      "id": "master-fvg-14-12-Q2530566",
+      "reason": "Storico dell'arte importante, ma titolo e luogo del record richiedono correzione."
+    },
+    {
+      "id": "master-fvg-16-05-Q1680724",
+      "reason": "Il QID identifica Pietro Marussig, ma il titolo sorgente privo del nome non è pubblicabile."
+    },
+    {
+      "id": "master-fvg-01-06-Q3832010",
+      "reason": "Figura militare e tecnico-scientifica: rinviata a un lotto storico dedicato."
+    },
+    {
+      "id": "master-fvg-01-12-Q460669",
+      "reason": "Musicista di rilievo nazionale: rinviato al prossimo lotto culturale."
+    },
+    {
+      "id": "master-fvg-02-01-Q28801839",
+      "reason": "Giornalista, testimone storico e costituente: rinviato a un lotto storico dedicato."
+    },
+    {
+      "id": "master-fvg-03-11-Q16561152",
+      "reason": "Profilo rilevante per Resistenza e istituzioni, ma le fonti divergono sull'anno di nascita."
+    },
+    {
+      "id": "master-fvg-04-02-Q2134294",
+      "reason": "Ruolo istituzionale documentato, ma la rilevanza oltre il contesto regionale non è ancora sufficiente."
+    },
+    {
+      "id": "master-fvg-04-02-Q16574391",
+      "reason": "Caso culturale promettente, ma identità, opera e fonti richiedono un approfondimento dedicato."
+    },
+    {
+      "id": "master-fvg-05-07-Q3769807",
+      "reason": "Compositore e docente di rilievo: rinviato al prossimo lotto culturale."
+    }
+  ],
+  "excluded": [
+    {
+      "id": "master-fvg-14-04-Q3699232",
+      "reason": "Profilo esclusivamente sportivo, escluso dalla soglia editoriale della Memoria del giorno."
+    },
+    {
+      "id": "master-fvg-29-08-Q19984991",
+      "reason": "Profilo senza una rilevanza storica, scientifica, artistica o culturale sufficiente per la Memoria del giorno."
+    },
+    {
+      "id": "master-fvg-30-01-Q28779238",
+      "reason": "Profilo senza una rilevanza storica, scientifica, artistica o culturale sufficiente per la Memoria del giorno."
+    },
+    {
+      "id": "master-fvg-29-07-Q1229304",
+      "reason": "Profilo esclusivamente sportivo, escluso dalla soglia editoriale della Memoria del giorno."
+    },
+    {
+      "id": "master-fvg-11-02-Q3537974",
+      "reason": "Profilo esclusivamente sportivo, escluso dalla soglia editoriale della Memoria del giorno."
+    },
+    {
+      "id": "master-fvg-01-04-Q101069474",
+      "reason": "Profilo politico privo di un contributo storico o istituzionale nazionale abbastanza rilevante."
+    },
+    {
+      "id": "master-fvg-04-04-Q37006275",
+      "reason": "Profilo esclusivamente sportivo, escluso dalla soglia editoriale della Memoria del giorno."
+    },
+    {
+      "id": "master-fvg-01-08-Q2637718",
+      "reason": "Profilo esclusivamente sportivo, escluso dalla soglia editoriale della Memoria del giorno."
+    },
+    {
+      "id": "master-fvg-12-01-Q735977",
+      "reason": "Profilo esclusivamente sportivo, escluso dalla soglia editoriale della Memoria del giorno."
+    },
+    {
+      "id": "master-fvg-28-03-Q466940",
+      "reason": "Profilo esclusivamente sportivo, escluso dalla soglia editoriale della Memoria del giorno."
+    },
+    {
+      "id": "master-fvg-08-08-Q2260708",
+      "reason": "Profilo esclusivamente sportivo, escluso dalla soglia editoriale della Memoria del giorno."
+    },
+    {
+      "id": "master-fvg-08-09-Q1077255",
+      "reason": "Profilo senza una rilevanza storica, scientifica, artistica o culturale sufficiente per la Memoria del giorno."
+    },
+    {
+      "id": "master-fvg-14-07-Q3444251",
+      "reason": "Profilo senza una rilevanza storica, scientifica, artistica o culturale sufficiente per la Memoria del giorno."
+    },
+    {
+      "id": "master-fvg-05-02-Q17150446",
+      "reason": "Profilo esclusivamente sportivo, escluso dalla soglia editoriale della Memoria del giorno."
+    },
+    {
+      "id": "master-fvg-12-02-Q15848301",
+      "reason": "Profilo senza una rilevanza storica, scientifica, artistica o culturale sufficiente per la Memoria del giorno."
+    },
+    {
+      "id": "master-fvg-24-07-Q1029341",
+      "reason": "Profilo senza una rilevanza storica, scientifica, artistica o culturale sufficiente per la Memoria del giorno."
+    },
+    {
+      "id": "master-fvg-26-08-Q2905404",
+      "reason": "Profilo esclusivamente sportivo, escluso dalla soglia editoriale della Memoria del giorno."
+    },
+    {
+      "id": "master-fvg-27-02-Q2696591",
+      "reason": "Profilo esclusivamente sportivo, escluso dalla soglia editoriale della Memoria del giorno."
+    },
+    {
+      "id": "master-fvg-28-07-Q3733994",
+      "reason": "Profilo politico privo di un contributo storico o istituzionale nazionale abbastanza rilevante."
+    },
+    {
+      "id": "master-fvg-04-12-Q3737813",
+      "reason": "Profilo esclusivamente sportivo, escluso dalla soglia editoriale della Memoria del giorno."
+    },
+    {
+      "id": "master-fvg-23-09-Q3903884",
+      "reason": "Profilo politico privo di un contributo storico o istituzionale nazionale abbastanza rilevante."
+    },
+    {
+      "id": "master-fvg-24-04-Q3933126",
+      "reason": "Profilo senza una rilevanza storica, scientifica, artistica o culturale sufficiente per la Memoria del giorno."
+    },
+    {
+      "id": "master-fvg-27-03-Q582938",
+      "reason": "Profilo esclusivamente sportivo, escluso dalla soglia editoriale della Memoria del giorno."
+    },
+    {
+      "id": "master-fvg-31-01-Q2832832",
+      "reason": "Profilo esclusivamente sportivo, escluso dalla soglia editoriale della Memoria del giorno."
+    },
+    {
+      "id": "master-fvg-06-09-Q4008624",
+      "reason": "Profilo politico privo di un contributo storico o istituzionale nazionale abbastanza rilevante."
+    },
+    {
+      "id": "master-fvg-08-11-Q4012947",
+      "reason": "Profilo senza una rilevanza storica, scientifica, artistica o culturale sufficiente per la Memoria del giorno."
+    },
+    {
+      "id": "master-fvg-16-01-Q3980560",
+      "reason": "Profilo politico privo di un contributo storico o istituzionale nazionale abbastanza rilevante."
+    },
+    {
+      "id": "master-fvg-07-07-Q3849102",
+      "reason": "Profilo esclusivamente sportivo, escluso dalla soglia editoriale della Memoria del giorno."
+    },
+    {
+      "id": "master-fvg-08-04-Q3721219",
+      "reason": "Profilo esclusivamente sportivo, escluso dalla soglia editoriale della Memoria del giorno."
+    },
+    {
+      "id": "master-fvg-01-09-Q2567325",
+      "reason": "Profilo esclusivamente sportivo, escluso dalla soglia editoriale della Memoria del giorno."
+    },
+    {
+      "id": "master-fvg-04-09-Q3960798",
+      "reason": "Profilo senza una rilevanza storica, scientifica, artistica o culturale sufficiente per la Memoria del giorno."
+    },
+    {
+      "id": "master-fvg-04-11-Q3619858",
+      "reason": "Profilo senza una rilevanza storica, scientifica, artistica o culturale sufficiente per la Memoria del giorno."
+    },
+    {
+      "id": "master-fvg-06-08-Q50602703",
+      "reason": "Profilo esclusivamente sportivo, escluso dalla soglia editoriale della Memoria del giorno."
+    },
+    {
+      "id": "master-fvg-11-09-Q3750795",
+      "reason": "Profilo esclusivamente sportivo, escluso dalla soglia editoriale della Memoria del giorno."
+    },
+    {
+      "id": "master-fvg-13-12-Q429266",
+      "reason": "Profilo senza una rilevanza storica, scientifica, artistica o culturale sufficiente per la Memoria del giorno."
+    },
+    {
+      "id": "master-fvg-21-06-Q265637",
+      "reason": "Profilo esclusivamente sportivo, escluso dalla soglia editoriale della Memoria del giorno."
+    },
+    {
+      "id": "master-fvg-22-10-Q49635814",
+      "reason": "Profilo professionale privo di una rilevanza storico-culturale autonoma sufficiente."
+    },
+    {
+      "id": "master-fvg-01-10-Q4013122",
+      "reason": "Profilo senza una rilevanza storica, scientifica, artistica o culturale sufficiente per la Memoria del giorno."
+    },
+    {
+      "id": "master-fvg-04-09-Q3756669",
+      "reason": "Profilo giornalistico senza un contributo storico-culturale fondativo sufficiente."
+    },
+    {
+      "id": "master-fvg-15-09-Q21209109",
+      "reason": "Profilo senza una rilevanza storica, scientifica, artistica o culturale sufficiente per la Memoria del giorno."
+    },
+    {
+      "id": "master-fvg-25-01-Q3839806",
+      "reason": "Profilo senza una rilevanza storica, scientifica, artistica o culturale sufficiente per la Memoria del giorno."
+    },
+    {
+      "id": "master-fvg-03-07-Q3949499",
+      "reason": "Profilo esclusivamente sportivo, escluso dalla soglia editoriale della Memoria del giorno."
+    },
+    {
+      "id": "master-fvg-04-04-Q2118631",
+      "reason": "Profilo esclusivamente sportivo, escluso dalla soglia editoriale della Memoria del giorno."
+    },
+    {
+      "id": "master-fvg-05-12-Q1832352",
+      "reason": "Profilo esclusivamente sportivo, escluso dalla soglia editoriale della Memoria del giorno."
+    },
+    {
+      "id": "master-fvg-06-02-Q3934427",
+      "reason": "Profilo esclusivamente sportivo, escluso dalla soglia editoriale della Memoria del giorno."
+    },
+    {
+      "id": "master-fvg-08-03-Q788725",
+      "reason": "Profilo senza una rilevanza storica, scientifica, artistica o culturale sufficiente per la Memoria del giorno."
+    },
+    {
+      "id": "master-fvg-10-10-Q130119",
+      "reason": "Profilo senza una rilevanza storica, scientifica, artistica o culturale sufficiente per la Memoria del giorno."
+    },
+    {
+      "id": "master-fvg-10-12-Q3433429",
+      "reason": "Profilo esclusivamente sportivo, escluso dalla soglia editoriale della Memoria del giorno."
+    },
+    {
+      "id": "master-fvg-12-01-Q2060495",
+      "reason": "Profilo esclusivamente sportivo, escluso dalla soglia editoriale della Memoria del giorno."
+    },
+    {
+      "id": "master-fvg-13-08-Q1177522",
+      "reason": "Profilo esclusivamente sportivo, escluso dalla soglia editoriale della Memoria del giorno."
+    },
+    {
+      "id": "master-fvg-16-05-Q1553518",
+      "reason": "Profilo esclusivamente sportivo, escluso dalla soglia editoriale della Memoria del giorno."
+    },
+    {
+      "id": "master-fvg-21-08-Q1332869",
+      "reason": "Profilo esclusivamente sportivo, escluso dalla soglia editoriale della Memoria del giorno."
+    },
+    {
+      "id": "master-fvg-26-12-Q978436",
+      "reason": "Profilo senza una rilevanza storica, scientifica, artistica o culturale sufficiente per la Memoria del giorno."
+    },
+    {
+      "id": "master-fvg-27-03-Q1661933",
+      "reason": "Profilo esclusivamente sportivo, escluso dalla soglia editoriale della Memoria del giorno."
+    },
+    {
+      "id": "master-fvg-29-07-Q1627352",
+      "reason": "Profilo esclusivamente sportivo, escluso dalla soglia editoriale della Memoria del giorno."
+    },
+    {
+      "id": "master-fvg-05-06-Q50378757",
+      "reason": "Profilo senza una rilevanza storica, scientifica, artistica o culturale sufficiente per la Memoria del giorno."
+    },
+    {
+      "id": "master-fvg-07-10-Q51272299",
+      "reason": "Profilo esclusivamente sportivo, escluso dalla soglia editoriale della Memoria del giorno."
+    },
+    {
+      "id": "master-fvg-11-03-Q1343777",
+      "reason": "Profilo esclusivamente sportivo, escluso dalla soglia editoriale della Memoria del giorno."
+    },
+    {
+      "id": "master-fvg-13-11-Q2641149",
+      "reason": "Profilo senza una rilevanza storica, scientifica, artistica o culturale sufficiente per la Memoria del giorno."
+    },
+    {
+      "id": "master-fvg-13-12-Q680748",
+      "reason": "Profilo senza una rilevanza storica, scientifica, artistica o culturale sufficiente per la Memoria del giorno."
+    },
+    {
+      "id": "master-fvg-16-08-Q4007725",
+      "reason": "Profilo esclusivamente sportivo, escluso dalla soglia editoriale della Memoria del giorno."
+    },
+    {
+      "id": "master-fvg-19-03-Q640622",
+      "reason": "Profilo esclusivamente sportivo, escluso dalla soglia editoriale della Memoria del giorno."
+    },
+    {
+      "id": "master-fvg-19-07-Q1174376",
+      "reason": "Profilo esclusivamente sportivo, escluso dalla soglia editoriale della Memoria del giorno."
+    },
+    {
+      "id": "master-fvg-23-10-Q3720100",
+      "reason": "Profilo senza una rilevanza storica, scientifica, artistica o culturale sufficiente per la Memoria del giorno."
+    },
+    {
+      "id": "master-fvg-24-03-Q948120",
+      "reason": "Profilo esclusivamente sportivo, escluso dalla soglia editoriale della Memoria del giorno."
+    },
+    {
+      "id": "master-fvg-24-08-Q832381",
+      "reason": "Profilo senza una rilevanza storica, scientifica, artistica o culturale sufficiente per la Memoria del giorno."
+    },
+    {
+      "id": "master-fvg-26-04-Q3679843",
+      "reason": "Profilo senza una rilevanza storica, scientifica, artistica o culturale sufficiente per la Memoria del giorno."
+    },
+    {
+      "id": "master-fvg-09-12-Q3665537",
+      "reason": "Profilo senza una rilevanza storica, scientifica, artistica o culturale sufficiente per la Memoria del giorno."
+    },
+    {
+      "id": "master-fvg-10-03-Q3924715",
+      "reason": "Profilo senza una rilevanza storica, scientifica, artistica o culturale sufficiente per la Memoria del giorno."
+    },
+    {
+      "id": "master-fvg-22-03-Q3769530",
+      "reason": "Profilo giornalistico senza un contributo storico-culturale fondativo sufficiente."
+    },
+    {
+      "id": "master-fvg-22-08-Q3665476",
+      "reason": "Profilo senza una rilevanza storica, scientifica, artistica o culturale sufficiente per la Memoria del giorno."
+    },
+    {
+      "id": "master-fvg-02-01-Q3740404",
+      "reason": "Profilo senza una rilevanza storica, scientifica, artistica o culturale sufficiente per la Memoria del giorno."
+    },
+    {
+      "id": "master-fvg-04-05-Q3972716",
+      "reason": "Profilo esclusivamente sportivo, escluso dalla soglia editoriale della Memoria del giorno."
+    },
+    {
+      "id": "master-fvg-05-11-Q3723243",
+      "reason": "Profilo senza una rilevanza storica, scientifica, artistica o culturale sufficiente per la Memoria del giorno."
+    }
+  ]
+}

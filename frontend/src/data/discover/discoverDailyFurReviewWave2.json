@@ -1,0 +1,131 @@
+{
+  "schemaVersion": 1,
+  "purpose": "Secondo lotto FUR controllato per i record Scopri gia approvati in IT. Solo questi record possono diventare visibili.",
+  "reviewedAt": "2026-07-12",
+  "summary": {
+    "totalRecords": 17,
+    "approved": 17,
+    "pendingHumanReview": 0
+  },
+  "records": [
+    {
+      "id": "memory-it-ready-1012-l-assedio-di-trieste-del-1813",
+      "titleFur": "L'assedi di Triest dal 1813",
+      "summaryFur": "Ai 12 di Otubar dal 1813 al scomençà l'assedi di Triest, intant de campagne d'Italie de Seste coalizion.",
+      "status": "approved",
+      "notes": "Formula storica breve; Triest e assedi sono gia coerenti con il corpus."
+    },
+    {
+      "id": "memory-it-ready-0515-la-battaglia-di-tarvisio-del-1809",
+      "titleFur": "La bataie di Tarvis dal 1809",
+      "summaryFur": "Tra i 15 e i 18 di Mai dal 1809 Tarvis al fo al centri di un scontri de vuere de Cuinte coalizion.",
+      "status": "approved",
+      "notes": "Tarvis mantiene la forma friulana; il tono resta storico e non celebrativo."
+    },
+    {
+      "id": "memory-it-ready-1014-giuseppe-levi-scuola-di-scienza",
+      "titleFur": "Giuseppe Levi, scuele di science",
+      "summaryFur": "Ai 14 di Otubar dal 1872 al nas a Triest Giuseppe Levi, medic e sienziât. De sô scuele a passarin trê futûrs Premis Nobel.",
+      "status": "approved",
+      "notes": "Scuele di science evita una resa troppo tecnica e resta chiara."
+    },
+    {
+      "id": "memory-it-ready-1230-sergio-doplicher-e-la-fisica-matematica",
+      "titleFur": "Sergio Doplicher e la fisiche matematiche",
+      "summaryFur": "Ai 30 di Dicembar dal 1940 al nas a Triest Sergio Doplicher, fisic matematic cognossût pai studis su la teorie cuantistiche dai cjamps.",
+      "status": "approved",
+      "notes": "Termini specialistici mantenuti con struttura semplice."
+    },
+    {
+      "id": "memory-it-ready-0731-antonio-mario-radmilli-e-la-preistoria",
+      "titleFur": "Antonio Mario Radmilli e la preistorie",
+      "summaryFur": "Ai 31 di Lui dal 1922 al nas a Gurize Antonio Mario Radmilli, archeolic e studiôs de preistorie taliane.",
+      "status": "approved",
+      "notes": "Archeolic e Gurize sono coerenti con record gia approvati."
+    },
+    {
+      "id": "memory-it-ready-1130-richard-mollier-e-la-termodinamica",
+      "titleFur": "Richard Mollier e la termodinamiche",
+      "summaryFur": "Ai 30 di Novembar dal 1863 al nas a Triest Richard Mollier, fisic e inzegnîr leât ae storie de termodinamiche moderne.",
+      "status": "approved",
+      "notes": "Frase tecnica ma breve, senza appesantire il contenuto."
+    },
+    {
+      "id": "memory-it-ready-0101-paolo-diacono-memoria-longobarda",
+      "titleFur": "Paolo Diacono, memorie longobarde",
+      "summaryFur": "Ai 1 di Zenâr dal 720 al nas a Cividât Paolo Diacono, munic, storic e poet: une vôs centrâl pe memorie longobarde dal Friûl.",
+      "status": "approved",
+      "notes": "Cividât e memorie longobarde sono chiari e territoriali."
+    },
+    {
+      "id": "memory-it-ready-1103-le-giornate-di-trieste-del-1953",
+      "titleFur": "Lis zornadis di Triest dal 1953",
+      "summaryFur": "Ai 3 di Novembar dal 1953 Triest e vivè zornadis di fuarte tension, jentradis te memorie publiche de citât.",
+      "status": "approved",
+      "notes": "Tono sobrio per un tema civile sensibile."
+    },
+    {
+      "id": "memory-it-ready-0321-tarvisio-nelle-campagne-napoleoniche",
+      "titleFur": "Tarvis tes campagnis napoleonichis",
+      "summaryFur": "Ai 21 di Març dal 1797 Tarvis al jentrà tes cronichis des campagnis napoleonichis, intun passaç militâr des Alps orientâls.",
+      "status": "approved",
+      "notes": "Secondo record su Tarvis, ma con taglio storico distinto dal 1809."
+    },
+    {
+      "id": "memory-it-ready-0429-opicina-negli-ultimi-giorni-di-guerra",
+      "titleFur": "Opicina tai ultins dîs di vuere",
+      "summaryFur": "Ai 29 di Avrîl dal 1945 Opicina e fo coinvolzude tai ultins dîs de vuere te aree triestine.",
+      "status": "approved",
+      "notes": "Tema bellico trattato con frase breve e neutra."
+    },
+    {
+      "id": "memory-it-ready-1204-francesco-caucig-e-la-gorizia-d-arte",
+      "titleFur": "Francesco Caucig e la Gurize d'art",
+      "summaryFur": "Ai 4 di Dicembar dal 1755 al nas a Gurize Francesco Caucig, pitôr e dissegnadôr leât ae culture artistiche di confin.",
+      "status": "approved",
+      "notes": "Gurize d'art rende il titolo breve e comprensibile."
+    },
+    {
+      "id": "memory-it-ready-0706-giuseppe-tominz-ritratti-tra-gorizia-e-trieste",
+      "titleFur": "Giuseppe Tominz, ritrats tra Gurize e Triest",
+      "summaryFur": "Ai 6 di Lui dal 1790 al nas a Gurize Giuseppe Tominz, un dai grancj autôrs di ritrats de aree gurizane-triestine dal Votcent.",
+      "status": "approved",
+      "notes": "Voce secondaria: FUR pronto, ma non deve sostituire la memoria primaria del giorno."
+    },
+    {
+      "id": "memory-it-ready-0921-antonio-lasciac-architetto-goriziano",
+      "titleFur": "Antonio Lasciac, architet gurizan",
+      "summaryFur": "Ai 21 di Setembar dal 1856 al nas a Gurize Antonio Lasciac, architet che al puartà il so lavôr ancje fûr de Europe.",
+      "status": "approved",
+      "notes": "Profilo culturale breve, con focus territoriale chiaro."
+    },
+    {
+      "id": "memory-it-ready-1031-andrej-budal-cultura-slovena-a-gorizia",
+      "titleFur": "Andrej Budal, culture slovene a Gurize",
+      "summaryFur": "Ai 31 di Otubar dal 1889 al nas a Sant'Andree di Gurize Andrej Budal, scritôr e tradutôr leât ae culture slovene dal teritori.",
+      "status": "approved",
+      "notes": "Mantiene il tema di confine senza semplificare l'identita slovena."
+    },
+    {
+      "id": "memory-it-ready-0608-luciano-petech-studi-sull-asia",
+      "titleFur": "Luciano Petech, studis su la Asie",
+      "summaryFur": "Ai 8 di Jugn dal 1914 al nas a Triest Luciano Petech, storic e orientalist. Une figure plui adate al archivi che ae memorie principâl dal dì.",
+      "status": "approved",
+      "notes": "Voce secondaria/archivio: il testo dichiara il ruolo senza farlo sembrare una memoria principale."
+    },
+    {
+      "id": "memory-it-ready-0817-theodor-daubler-e-le-avanguardie",
+      "titleFur": "Theodor Daubler e lis avanguardis",
+      "summaryFur": "Ai 17 di Avost dal 1876 al nas a Triest Theodor Daubler, poet e scritôr leât aes avanguardis leterariis europeanis.",
+      "status": "approved",
+      "notes": "Voce culturale di archivio, con tono neutro."
+    },
+    {
+      "id": "memory-it-ready-0920-marij-kogoj-musica-di-confine",
+      "titleFur": "Marij Kogoj, musiche di confin",
+      "summaryFur": "Ai 20 di Setembar dal 1892 al nas a Triest Marij Kogoj, compositôr sloven formât te culture musicâl europeane dal prin Nûfcent.",
+      "status": "approved",
+      "notes": "Voce secondaria coerente con cultura di confine."
+    }
+  ]
+}

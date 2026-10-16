@@ -1,0 +1,78 @@
+{
+  "schemaVersion": 1,
+  "batchId": "ts-ud-pn-enrichment-milestones-01-fur-review",
+  "sourceResearchBatchId": "ts-ud-pn-enrichment-milestones-01",
+  "reviewedAt": "2026-08-31",
+  "runtimeIntegration": false,
+  "reviewMethod": "assisted_standard_reference_review",
+  "approvalBasis": "user_delegated_assisted_editorial_review",
+  "reviewer": "assistant",
+  "independentHumanReview": false,
+  "approvalNote": "Decisione editoriale assistita sotto il mandato di completamento Scopri. Le fonti ARLeF verificano il lessico, non certificano queste frasi; nessuna revisione professionale indipendente né lettura frase per frase attribuita all'utente.",
+  "summary": { "totalRecords": 6, "approved": 6, "pendingHumanReview": 0 },
+  "records": [
+    {
+      "id": "muggia-venetian-sovereignty",
+      "status": "approved",
+      "labelFur": "Mugle e passe sot de sovranitât de Republiche di Vignesie",
+      "notes": "Sovranitât e Vignesie verificati direttamente in HTML ARLeF; Mugle è conservato dal profilo già approvato. Il passaggio del 1420 non è confuso con il patto del 1202.",
+      "references": [
+        { "url": "https://superdizionari.arlef.it/lemma/sovranit%C3%A0/55141?language=it&oneshot=1&gui=fur", "note": "Sovranitât, nell'accezione del potere sovrano; HTML letto direttamente." },
+        { "url": "https://superdizionari.arlef.it/lemma/Venezia/73898?language=it&oneshot=1&gui=fur", "note": "Venezia → Vignesie; HTML letto direttamente." }
+      ]
+    },
+    {
+      "id": "muggia-ugo-cara-museum-opening",
+      "status": "approved",
+      "labelFur": "Al ven inaugurât il Museu di art moderne Ugo Carà",
+      "notes": "Museu di art e inaugurâ attestati; il nome Ugo Carà resta quello della fonte. La frase riguarda l'apertura del museo, non la nascita dell'artista o la donazione.",
+      "references": [
+        { "url": "https://superdizionari.arlef.it/lemma/museo/49255?language=it&oneshot=1&gui=fur", "note": "Museu e locuzione museu di art; HTML letto direttamente." },
+        { "url": "https://superdizionari.arlef.it/lemma/inaugurare/20412?language=it&oneshot=1&gui=fur", "note": "Inaugurâ nell'accezione dell'avvio di un'attività pubblica; HTML letto direttamente." }
+      ]
+    },
+    {
+      "id": "artegna-castello-savorgnan-1384",
+      "status": "approved",
+      "labelFur": "Il cjistiel inferiôr al passe ae famee Savorgnan",
+      "notes": "Cjistiel, inferiôr, famee e passâ controllati in HTML ARLeF. Savorgnan resta nome proprio; il passaggio riguarda il castello inferiore.",
+      "references": [
+        { "url": "https://superdizionari.arlef.it/lemma/castello/27649?language=it&oneshot=1&gui=fur", "note": "Cjistiel; esempio relativo ai Savorgnan nel lemma letto." },
+        { "url": "https://superdizionari.arlef.it/ricerca?term=inferiore&language=it&gui=fur", "note": "Risultato HTML con voce completa: inferiôr." },
+        { "url": "https://superdizionari.arlef.it/ricerca?term=famiglia&language=it&gui=fur", "note": "Risultato HTML con voce completa: famee anche per la casata." },
+        { "url": "https://superdizionari.arlef.it/ricerca?term=passare&language=it&gui=fur", "note": "Risultato HTML con voce completa: passâ anche per trasmissione generazionale." }
+      ]
+    },
+    {
+      "id": "artegna-banda-mattiussi-1878",
+      "status": "approved",
+      "labelFur": "E nas la bande musicâl di Dartigne, vuidade di Luigi Mattiussi",
+      "notes": "Bande nel senso di gruppo musicale e vuidâ nel senso di dirigere verificati; Dartigne conservato dal profilo, Luigi Mattiussi invariato. Non è retrodatata l'intitolazione successiva.",
+      "references": [
+        { "url": "https://superdizionari.arlef.it/lemma/banda/10875?language=it&oneshot=1&gui=fur", "note": "Bande, senso del gruppo di musicisti; HTML letto direttamente." },
+        { "url": "https://superdizionari.arlef.it/lemma/guidare/9130?language=it&oneshot=1&gui=fur", "note": "Vuidâ anche nell'accezione di dirigere; HTML letto direttamente." },
+        { "url": "https://superdizionari.arlef.it/ricerca?term=musicale&language=it&gui=fur", "note": "Risultato HTML con voce completa: musicâl." },
+        { "url": "https://superdizionari.arlef.it/ricerca?term=nascere&language=it&gui=fur", "note": "Risultato HTML con voce completa: nassi, e nas; anche per l'avvio di attività e gruppi." }
+      ]
+    },
+    {
+      "id": "san-vito-al-tagliamento-1369-ospedale-battuti",
+      "status": "approved",
+      "labelFur": "Al è documentât l’Ospedâl dai Battuti",
+      "notes": "Documentât indica attestazione e non fondazione. Ospedâl verificato; Battuti è mantenuto come nome storico della fonte.",
+      "references": [
+        { "url": "https://superdizionari.arlef.it/ricerca?term=documentare&language=it&gui=fur", "note": "Voce completa nel risultato HTML: documentâ, con esempio documentât." },
+        { "url": "https://superdizionari.arlef.it/ricerca?term=ospedale&language=it&gui=fur", "note": "Voce completa nel risultato HTML: ospedâl." }
+      ]
+    },
+    {
+      "id": "san-vito-al-tagliamento-1973-circuito-ert",
+      "status": "approved",
+      "labelFur": "Prin spetacul ERT al Teatro Cinema Italia",
+      "notes": "Spetacul verificato nell'accezione teatrale. ERT e Teatro Cinema Italia restano denominazioni proprie, senza inventare nomi ufficiali friulani; il primato è limitato agli spettacoli ERT in quella sede.",
+      "references": [
+        { "url": "https://superdizionari.arlef.it/ricerca?term=spettacolo&language=it&gui=fur", "note": "Voce completa nel risultato HTML: spetacul, anche rappresentazione teatrale." }
+      ]
+    }
+  ]
+}

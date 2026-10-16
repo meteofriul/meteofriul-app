@@ -1,0 +1,199 @@
+{
+  "schemaVersion": 1,
+  "batchId": "ostermann-1876-language-review-08",
+  "reviewedAt": "2026-07-25",
+  "sourceDecisionFiles": ["review-decisions-batch-08.json"],
+  "purpose": "Ottava revisione linguistica ed editoriale dei candidati Ostermann 1876 verificati sul facsimile. Non pubblica contenuti nella UI.",
+  "policy": {
+    "publish": false,
+    "rule": "La normalizzazione FUR conserva il significato attestato nel facsimile. Le quindici massime sono generali e non ricevono date, feste o stagioni artificiali."
+  },
+  "summary": {
+    "records": 15,
+    "languageReviewed": 15,
+    "mergeExisting": 0,
+    "needsNativeReview": 0
+  },
+  "records": [
+    {
+      "id": "ost1876-conts-spes-amicizie-lungje",
+      "reviewStatus": "language_reviewed",
+      "furNormalized": "Conts spes e amicizie lungje.",
+      "itFinal": "Conti frequenti, amicizia lunga.",
+      "destination": "almanac",
+      "calendarRule": {"type": "general", "bucket": "wisdom", "fallbackAllowed": true},
+      "duplicateAudit": {"status": "new_distinct"},
+      "evidence": [{"label": "Facsimile Ostermann 1876, p. PDF 153", "kind": "primary"}, {"label": "Dizionari de Lenghe Furlane, cont e lungje", "kind": "secondary"}],
+      "editorialNote": "Coins e lunge sono ricondotti a conts e lungje; spes conserva il valore di frequenti.",
+      "publish": false
+    },
+    {
+      "id": "ost1876-fas-pas-secont-gjambe",
+      "reviewStatus": "language_reviewed",
+      "furNormalized": "Fâs il pas secont la gjambe.",
+      "itFinal": "Fa' il passo secondo la gamba.",
+      "destination": "almanac",
+      "calendarRule": {"type": "general", "bucket": "wisdom", "fallbackAllowed": true},
+      "duplicateAudit": {"status": "new_distinct"},
+      "evidence": [{"label": "Facsimile Ostermann 1876, p. PDF 153", "kind": "primary"}, {"label": "Dizionari de Lenghe Furlane, locuzione fâ il pas plui lunc de gjambe", "kind": "secondary"}],
+      "editorialNote": "Normalizzazione di fâs, secont e gjambe; mantenuta la struttura proverbiale attestata.",
+      "publish": false
+    },
+    {
+      "id": "ost1876-sofle-cinise-jemple-voi",
+      "reviewStatus": "language_reviewed",
+      "furNormalized": "Cui che al sofle te cinise si jemple i voi.",
+      "itFinal": "Chi soffia nella cenere si riempie gli occhi.",
+      "destination": "almanac",
+      "calendarRule": {"type": "general", "bucket": "wisdom", "fallbackAllowed": true},
+      "duplicateAudit": {"status": "new_distinct"},
+      "evidence": [{"label": "Facsimile Ostermann 1876, p. PDF 153", "kind": "primary"}, {"label": "Dizionari de Lenghe Furlane, soflâ, cinise, jemplâ e voli", "kind": "secondary"}],
+      "editorialNote": "Normalizzazione lessicale e inserimento del pronome atono moderno; voi e il plurale di voli.",
+      "publish": false
+    },
+    {
+      "id": "ost1876-lasse-cjan-cuant-duar",
+      "reviewStatus": "language_reviewed",
+      "furNormalized": "Lasse il cjan cuant che al duar.",
+      "itFinal": "Lascia dormire il cane quando dorme.",
+      "destination": "almanac",
+      "calendarRule": {"type": "general", "bucket": "wisdom", "fallbackAllowed": true},
+      "duplicateAudit": {"status": "new_distinct"},
+      "evidence": [{"label": "Facsimile Ostermann 1876, p. PDF 153", "kind": "primary"}, {"label": "Dizionari de Lenghe Furlane, cjan e durmî", "kind": "secondary"}],
+      "editorialNote": "Quand e ricondotto a cuant; duar conserva la forma coniugata attestata.",
+      "publish": false
+    },
+    {
+      "id": "ost1876-fuesse-altris-prin-dentri",
+      "reviewStatus": "language_reviewed",
+      "furNormalized": "Cui che al fâs la fuesse pai altris al è il prin a lâ dentri.",
+      "itFinal": "Chi scava la fossa per gli altri è il primo a finirci dentro.",
+      "destination": "almanac",
+      "calendarRule": {"type": "general", "bucket": "wisdom", "fallbackAllowed": true},
+      "duplicateAudit": {"status": "new_distinct"},
+      "evidence": [{"label": "Facsimile Ostermann 1876, p. PDF 154", "kind": "primary"}, {"label": "Dizionari de Lenghe Furlane, fuesse e lâ", "kind": "secondary"}],
+      "editorialNote": "Ricostruzione conservativa dei pronomi atoni e normalizzazione di fâs; nessuna aggiunta di significato.",
+      "publish": false
+    },
+    {
+      "id": "ost1876-cjar-cence-tamon-fossal",
+      "reviewStatus": "language_reviewed",
+      "furNormalized": "Il cjar cence tamon al va tal fossâl.",
+      "itFinal": "Il carro senza timone finisce nel fosso.",
+      "destination": "almanac",
+      "calendarRule": {"type": "general", "bucket": "wisdom", "fallbackAllowed": true},
+      "duplicateAudit": {"status": "new_distinct"},
+      "evidence": [{"label": "Facsimile Ostermann 1876, p. PDF 154", "kind": "primary"}, {"label": "Dizionari de Lenghe Furlane, cjar e tamon", "kind": "secondary"}],
+      "editorialNote": "Normalizzazione di cjar e fossâl; tamon e attestato come timone.",
+      "publish": false
+    },
+    {
+      "id": "ost1876-cjar-denant-bus",
+      "reviewStatus": "language_reviewed",
+      "furNormalized": "No bisugne meti il cjar denant dai bûs.",
+      "itFinal": "Non bisogna mettere il carro davanti ai buoi.",
+      "destination": "almanac",
+      "calendarRule": {"type": "general", "bucket": "wisdom", "fallbackAllowed": true},
+      "duplicateAudit": {"status": "new_distinct"},
+      "evidence": [{"label": "Facsimile Ostermann 1876, p. PDF 155", "kind": "primary"}, {"label": "Dizionari de Lenghe Furlane, cjar e bûs", "kind": "secondary"}],
+      "editorialNote": "Le letture OCR dar e bis sono corrette dal facsimile in cjar e bûs; meti segue la grafia moderna.",
+      "publish": false
+    },
+    {
+      "id": "ost1876-om-visat-miec-armat",
+      "reviewStatus": "language_reviewed",
+      "furNormalized": "Om visât al è mieç armât.",
+      "itFinal": "Uomo avvisato è mezzo armato.",
+      "destination": "almanac",
+      "calendarRule": {"type": "general", "bucket": "wisdom", "fallbackAllowed": true},
+      "duplicateAudit": {"status": "new_distinct"},
+      "evidence": [{"label": "Facsimile Ostermann 1876, p. PDF 155", "kind": "primary"}, {"label": "Dizionari de Lenghe Furlane, visât e mieç", "kind": "secondary"}],
+      "editorialNote": "Normalizzazione di visât, mieç e armât con pronome atono moderno.",
+      "publish": false
+    },
+    {
+      "id": "ost1876-cui-no-prove-no-crot",
+      "reviewStatus": "language_reviewed",
+      "furNormalized": "Cui che nol prove nol crôt.",
+      "itFinal": "Chi non prova non crede.",
+      "destination": "almanac",
+      "calendarRule": {"type": "general", "bucket": "wisdom", "fallbackAllowed": true},
+      "duplicateAudit": {"status": "new_distinct"},
+      "evidence": [{"label": "Facsimile Ostermann 1876, p. PDF 155", "kind": "primary"}, {"label": "Dizionari de Lenghe Furlane, provâ e crodi", "kind": "secondary"}],
+      "editorialNote": "Esplicitati i pronomi atoni della forma moderna; crôt conserva la coniugazione attestata.",
+      "publish": false
+    },
+    {
+      "id": "ost1876-no-lassa-ciert-inciert",
+      "reviewStatus": "language_reviewed",
+      "furNormalized": "No sta a lassâ il ciert pal inciert.",
+      "itFinal": "Non lasciare il certo per l'incerto.",
+      "destination": "almanac",
+      "calendarRule": {"type": "general", "bucket": "wisdom", "fallbackAllowed": true},
+      "duplicateAudit": {"status": "new_distinct"},
+      "evidence": [{"label": "Facsimile Ostermann 1876, p. PDF 157", "kind": "primary"}, {"label": "Dizionari de Lenghe Furlane, ciert e inciert", "kind": "secondary"}],
+      "editorialNote": "Normalizzazione di lassâ; il testo resta distinto dalle altre varianti prudenziali del blocco.",
+      "publish": false
+    },
+    {
+      "id": "ost1876-lens-verts-fasin-fum",
+      "reviewStatus": "language_reviewed",
+      "furNormalized": "I lens vêrts a fasin fum.",
+      "itFinal": "La legna verde fa fumo.",
+      "destination": "almanac",
+      "calendarRule": {"type": "general", "bucket": "wisdom", "fallbackAllowed": true},
+      "duplicateAudit": {"status": "new_distinct"},
+      "evidence": [{"label": "Facsimile Ostermann 1876, p. PDF 158", "kind": "primary"}, {"label": "Dizionari de Lenghe Furlane, len e vert", "kind": "secondary"}],
+      "editorialNote": "Normalizzazione di vêrts e inserimento del pronome atono plurale; l'italiano usa il collettivo naturale legna.",
+      "publish": false
+    },
+    {
+      "id": "ost1876-no-fidati-cui-no-si-fide",
+      "reviewStatus": "language_reviewed",
+      "furNormalized": "No sta a fidâti di cui che no si fide.",
+      "itFinal": "Non fidarti di chi non si fida.",
+      "destination": "almanac",
+      "calendarRule": {"type": "general", "bucket": "wisdom", "fallbackAllowed": true},
+      "duplicateAudit": {"status": "new_distinct"},
+      "evidence": [{"label": "Facsimile Ostermann 1876, p. PDF 158", "kind": "primary"}, {"label": "Dizionari de Lenghe Furlane, fidâsi", "kind": "secondary"}],
+      "editorialNote": "Normalizzazione di fidâti e della congiunzione che; isolata la sola massima pertinente dal blocco lungo.",
+      "publish": false
+    },
+    {
+      "id": "ost1876-bon-crot-bogns-trist-compagns",
+      "reviewStatus": "language_reviewed",
+      "furNormalized": "Il bon al crôt ducj bogns; il trist al crôt ducj compagns di lui.",
+      "itFinal": "Il buono crede tutti buoni; il cattivo crede tutti come lui.",
+      "destination": "almanac",
+      "calendarRule": {"type": "general", "bucket": "wisdom", "fallbackAllowed": true},
+      "duplicateAudit": {"status": "new_distinct"},
+      "evidence": [{"label": "Facsimile Ostermann 1876, p. PDF 158", "kind": "primary"}, {"label": "Dizionari de Lenghe Furlane, bon, trist e crodi", "kind": "secondary"}],
+      "editorialNote": "Normalizzazione di crôt, ducj e bogns; la resa italiana scioglie compagns di lui in come lui.",
+      "publish": false
+    },
+    {
+      "id": "ost1876-trop-tira-cuarde-romp",
+      "reviewStatus": "language_reviewed",
+      "furNormalized": "Cul trop tirâ la cuarde si romp.",
+      "itFinal": "A tirare troppo la corda, si rompe.",
+      "destination": "almanac",
+      "calendarRule": {"type": "general", "bucket": "wisdom", "fallbackAllowed": true},
+      "duplicateAudit": {"status": "new_distinct"},
+      "evidence": [{"label": "Facsimile Ostermann 1876, p. PDF 158", "kind": "primary"}, {"label": "Dizionari de Lenghe Furlane, tirâ e cuarde", "kind": "secondary"}],
+      "editorialNote": "Normalizzazione dell'infinito tirâ; mantenuta la costruzione impersonale attestata.",
+      "publish": false
+    },
+    {
+      "id": "ost1876-va-plan-san-lontan",
+      "reviewStatus": "language_reviewed",
+      "furNormalized": "Cui che al va plan al va san e al va lontan.",
+      "itFinal": "Chi va piano va sano e va lontano.",
+      "destination": "almanac",
+      "calendarRule": {"type": "general", "bucket": "wisdom", "fallbackAllowed": true},
+      "duplicateAudit": {"status": "new_distinct"},
+      "evidence": [{"label": "Facsimile Ostermann 1876, p. PDF 160", "kind": "primary"}, {"label": "Dizionari de Lenghe Furlane, plan e lontan", "kind": "secondary"}],
+      "editorialNote": "Inseriti i pronomi atoni richiesti dalla forma moderna; il significato resta invariato.",
+      "publish": false
+    }
+  ]
+}

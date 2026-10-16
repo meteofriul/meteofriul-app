@@ -1,0 +1,225 @@
+{
+  "schemaVersion": 1,
+  "batchId": "ud-go-pn-enrichment-milestones-02",
+  "snapshotDate": "2026-08-31",
+  "purpose": "Ricerca di sei tappe per Gemona del Friuli, Grado e Aviano; revisione FUR e promozione sono documentate separatamente.",
+  "runtimeIntegration": false,
+  "initialTotalMilestones": 421,
+  "editorialPolicy": {
+    "sourceEvidenceRequired": true,
+    "ambiguousDatesExcluded": true,
+    "italianCopyStatus": "editorial_draft",
+    "friulianCopyStatus": "pending_assisted_review",
+    "readyForUi": false
+  },
+  "excludedClaims": [
+    {
+      "municipality": "Gemona del Friuli",
+      "claim": "Il Palazzo Comunale viene inaugurato nel 1502.",
+      "reason": "La fonte data l'avvio del rifacimento dal 1502, non il completamento o l'inaugurazione.",
+      "sourceUrl": "https://www.visitgemona.com/feel/percorsi/passeggiata-in-centro/"
+    },
+    {
+      "municipality": "Gemona del Friuli",
+      "claim": "La Cineteca del Friuli viene fondata nel 2008.",
+      "reason": "Il 2008 riguarda l'apertura dell'Archivio Cinema; la pagina distingue la nascita della Cineteca nel 1977.",
+      "sourceUrl": "https://www.visitgemona.com/feel/arte-e-cultura/la-cineteca-del-friuli/"
+    },
+    {
+      "municipality": "Grado",
+      "claim": "L'inaugurazione del ponte girevole è accertata al 14 luglio 1936.",
+      "reason": "Il Consorzio indica il 14 luglio, ma il cinegiornale Luce B0902 con l'inaugurazione reca la data del 17 giugno 1936. Si conserva soltanto l'anno comune, senza assumere che la data del cinegiornale coincida con quella della cerimonia.",
+      "sourceUrl": "https://grado.it/it/cosa-fare/arte-storia-e-cultura/la-storia-di-grado/grado-dal-1892",
+      "contradictingSourceUrl": "https://patrimonio.archivioluce.com/luce-web/detail/IL5000023897/2/l-inaugurazione-del-nuovo-ponte-girevole-che-unisce-grado-alla-terraferma.html"
+    },
+    {
+      "municipality": "Aviano",
+      "claim": "L'apparizione del 1510 è un evento storico accertato.",
+      "reason": "La fonte presenta la tradizione religiosa del luogo; la tappa usa soltanto la consacrazione documentata del 1615.",
+      "sourceUrl": "https://diocesi.concordia-pordenone.it/santuario-diocesano-madonna-del-monte-in-costa-di-aviano/"
+    },
+    {
+      "municipality": "Aviano",
+      "claim": "L'anno di fondazione del Festival del Folklore è univoco.",
+      "reason": "La pagina cita sia il 1968 sia il 1969. La tappa riguarda soltanto il passaggio alla dimensione internazionale nel 1971.",
+      "sourceUrl": "https://www.prolocoaviano.it/festival-del-folklore/"
+    }
+  ],
+  "municipalities": [
+    {
+      "istatCode": "030043",
+      "municipality": "Gemona del Friuli",
+      "province": "UD",
+      "currentMilestoneCount": 1,
+      "currentMilestoneIds": [
+        "gemona-friuli-earthquake"
+      ],
+      "decision": "source_verified_it_fur_pending",
+      "candidates": [
+        {
+          "id": "gemona-palazzo-comunale-1502",
+          "year": 1502,
+          "label": {
+            "it": "Cominciano i lavori per rifare il Palazzo Comunale",
+            "fur": null
+          },
+          "evidence": "La pagina del Comune colloca dal 1502 il rifacimento del Palazzo Comunale su progetto di Bartolomeo de Caprileis detto Bòton. Si indica l'avvio dei lavori, non l'inaugurazione.",
+          "source": {
+            "label": "Comune di Gemona del Friuli - Visit Gemona, Palazzo Comunale",
+            "type": "official_municipality",
+            "url": "https://www.visitgemona.com/feel/percorsi/passeggiata-in-centro/",
+            "checkedAt": "2026-08-31"
+          },
+          "duplicateReview": {
+            "exactDuplicate": false,
+            "relatedRecordIds": [
+              "gemona-friuli-earthquake"
+            ],
+            "note": "Architettura civica distinta dal Duomo e dal terremoto del 1976 già nel profilo. Nessun evento uguale nei cataloghi delle memorie, Ostermann, Archivio e Riti comprese le bozze."
+          }
+        },
+        {
+          "id": "gemona-archivio-cinema-2008",
+          "year": 2008,
+          "label": {
+            "it": "Si apre l’Archivio Cinema del Friuli Venezia Giulia",
+            "fur": null
+          },
+          "evidence": "La pagina comunale documenta l'apertura dell'Archivio Cinema del Friuli Venezia Giulia a Gemona nel 2008, distinguendolo dalla fondazione della Cineteca del Friuli nel 1977.",
+          "source": {
+            "label": "Comune di Gemona del Friuli - Visit Gemona, La Cineteca del Friuli",
+            "type": "official_municipality",
+            "url": "https://www.visitgemona.com/feel/arte-e-cultura/la-cineteca-del-friuli/",
+            "checkedAt": "2026-08-31"
+          },
+          "duplicateReview": {
+            "exactDuplicate": false,
+            "relatedRecordIds": [],
+            "note": "Nuovo fatto sulla conservazione cinematografica, non un'altra descrizione dei danni del 1976. Nessuna precedente scheda su questo Archivio, comprese le memorie e le ricerche pendenti."
+          }
+        }
+      ]
+    },
+    {
+      "istatCode": "031009",
+      "municipality": "Grado",
+      "province": "GO",
+      "currentMilestoneCount": 1,
+      "currentMilestoneIds": [
+        "grado-late-antique-castrum"
+      ],
+      "decision": "source_verified_it_fur_pending",
+      "candidates": [
+        {
+          "id": "grado-stazione-cura-1892",
+          "year": 1892,
+          "documentedDate": "1892-06-25",
+          "label": {
+            "it": "Grado ottiene il titolo di Azienda di cura",
+            "fur": null
+          },
+          "evidence": "Il Consorzio Grado Turismo data al 25 giugno 1892 l'ottenimento del titolo di Azienda di cura. Si conserva la denominazione storica senza trasformarla in un moderno ente amministrativo.",
+          "source": {
+            "label": "Consorzio Grado Turismo - Grado dal 1892",
+            "type": "cultural_institution",
+            "url": "https://grado.it/it/cosa-fare/arte-storia-e-cultura/la-storia-di-grado/grado-dal-1892",
+            "checkedAt": "2026-08-31"
+          },
+          "duplicateReview": {
+            "exactDuplicate": false,
+            "relatedRecordIds": [
+              "grado-late-antique-castrum"
+            ],
+            "note": "La tappa documenta lo sviluppo della località di cura, distinto dal castrum tardoantico, dai casoni lagunari e dai riti di Barbana. Nessuna precedente scheda tratta questo riconoscimento."
+          }
+        },
+        {
+          "id": "grado-ponte-girevole-1936",
+          "year": 1936,
+          "label": {
+            "it": "Viene inaugurato il ponte girevole che collega Grado alla terraferma",
+            "fur": null
+          },
+          "evidence": "Il Consorzio Grado Turismo colloca l'inaugurazione del ponte nel 1936 e ne documenta la struttura girevole. Si conserva soltanto l'anno: la data del 14 luglio riportata nella storia locale non coincide con la cronologia del cinegiornale Luce B0902, datato 17 giugno 1936.",
+          "source": {
+            "label": "Consorzio Grado Turismo - Grado dal 1892",
+            "type": "cultural_institution",
+            "url": "https://grado.it/it/cosa-fare/arte-storia-e-cultura/la-storia-di-grado/grado-dal-1892",
+            "checkedAt": "2026-08-31"
+          },
+          "supportingSources": [
+            {
+              "label": "Consorzio Grado Turismo - Le origini del collegamento alla terraferma",
+              "type": "cultural_institution",
+              "url": "https://grado.it/it/cosa-fare/arte-storia-e-cultura/curiosita/le-origini",
+              "checkedAt": "2026-08-31"
+            },
+            {
+              "label": "Archivio Luce - Giornale Luce B0902, inaugurazione del ponte girevole di Grado",
+              "type": "national_institution",
+              "url": "https://patrimonio.archivioluce.com/luce-web/detail/IL5000023897/2/l-inaugurazione-del-nuovo-ponte-girevole-che-unisce-grado-alla-terraferma.html",
+              "checkedAt": "2026-08-31"
+            }
+          ],
+          "duplicateReview": {
+            "exactDuplicate": false,
+            "relatedRecordIds": [],
+            "note": "Fatto infrastrutturale distinto dal castrum, dalla storia della cura e dall'architettura dei casoni. Nessun doppione nei cataloghi culturali o nelle memorie incluse quelle pendenti."
+          }
+        }
+      ]
+    },
+    {
+      "istatCode": "093004",
+      "municipality": "Aviano",
+      "province": "PN",
+      "currentMilestoneCount": 1,
+      "currentMilestoneIds": [
+        "aviano-century-x"
+      ],
+      "decision": "source_verified_it_fur_pending",
+      "candidates": [
+        {
+          "id": "aviano-1615-santuario-madonna-del-monte",
+          "year": 1615,
+          "label": {
+            "it": "Consacrato il Santuario della Madonna del Monte",
+            "fur": null
+          },
+          "evidence": "La Diocesi di Concordia-Pordenone documenta la consacrazione del santuario nel 1615. La narrazione religiosa dell'apparizione del 1510 non è usata come fatto storico accertato.",
+          "source": {
+            "label": "Diocesi di Concordia-Pordenone - Santuario Madonna del Monte",
+            "type": "cultural_institution",
+            "url": "https://diocesi.concordia-pordenone.it/santuario-diocesano-madonna-del-monte-in-costa-di-aviano/",
+            "checkedAt": "2026-08-31"
+          },
+          "duplicateReview": {
+            "exactDuplicate": false,
+            "relatedRecordIds": [],
+            "note": "La consacrazione del santuario aggiunge un edificio religioso distinto dal nucleo del castello del X secolo; non duplica schede dei cataloghi culturali o memorie pendenti."
+          }
+        },
+        {
+          "id": "aviano-1971-festival-folklore-internazionale",
+          "year": 1971,
+          "label": {
+            "it": "Il Festival del Folklore diventa internazionale",
+            "fur": null
+          },
+          "evidence": "La storia del festival pubblicata dalla Pro Loco Aviano indica il 1971 come passaggio alla dimensione internazionale. Non si sceglie tra le discordanti date di fondazione 1968 e 1969.",
+          "source": {
+            "label": "Pro Loco Aviano - Festival del Folklore",
+            "type": "cultural_institution",
+            "url": "https://www.prolocoaviano.it/festival-del-folklore/",
+            "checkedAt": "2026-08-31"
+          },
+          "duplicateReview": {
+            "exactDuplicate": false,
+            "relatedRecordIds": [],
+            "note": "Fatto musicale e culturale distinto dal castello e dal santuario. La tappa non costituisce un programma, un orario o un annuncio del festival attuale."
+          }
+        }
+      ]
+    }
+  ]
+}

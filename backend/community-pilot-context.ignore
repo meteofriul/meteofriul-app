@@ -1,0 +1,10 @@
+# The prepared directory is already exact-file allowlisted. Defense in depth:
+**/__pycache__/**
+**/*.pyc
+**/.env*
+**/*credentials*
+**/*token*
+**/state.sqlite3*
+**/.git/**
+**/.codex/**
+**/.dev-logs/**

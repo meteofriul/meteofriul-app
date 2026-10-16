@@ -1,0 +1,113 @@
+{
+  "schemaVersion": 1,
+  "generatedAt": "2026-07-18",
+  "purpose": "Quarantanovesimo lotto Scopri IT: pulizia dei primi quindici residui della coda editoriale. Quattordici candidati descrivono contenuti gia pubblicati con identificativi canonici diversi; Alexander Kircher viene escluso perche il legame con il territorio si limita alla nascita a Trieste. Il lotto non crea nuove memorie e lascia invariata la copertura del calendario.",
+  "policy": {
+    "readyForUi": false,
+    "furDeferred": true,
+    "dateFormat": "DD-MM",
+    "requiresFinalItalianApproval": true,
+    "excludeDeaths": true,
+    "excludeGenericPoliticalProfiles": true,
+    "excludeGenericProfessionalProfiles": true,
+    "excludeSportsOnlyProfiles": true,
+    "allowExceptionalSportsProfiles": true,
+    "rejectBirthplaceOnlyProfiles": true,
+    "rejectSemanticDuplicates": true,
+    "rejectUncertainCalendarDates": true,
+    "sourceFirst": true,
+    "publishAfterFurOnly": true,
+    "allowMultipleMemoriesPerDate": true,
+    "secondaryRequiresPrimaryAnchor": true,
+    "doNotPromoteToPrimaryForCoverageOnly": true
+  },
+  "summary": {
+    "reviewed": 15,
+    "keepDaily": 0,
+    "primary": 0,
+    "secondary": 0,
+    "hold": 0,
+    "excluded": 15,
+    "canonicalPrimaryDatesBefore": 274,
+    "canonicalPrimaryDatesAfter": 274,
+    "currentVisiblePrimaryCoverage": 269
+  },
+  "keepDaily": [],
+  "hold": [],
+  "excluded": [
+    {
+      "id": "master-fvg-03-11-Q3938038",
+      "duplicateOf": "memory-it-ready-1103-le-giornate-di-trieste-del-1953",
+      "reason": "La rivolta di Trieste del novembre 1953 e gia pubblicata come Le giornate di Trieste del 1953. Il nuovo identificativo non aggiunge un contenuto distinto."
+    },
+    {
+      "id": "master-fvg-12-10-Q15045856",
+      "duplicateOf": "memory-it-ready-1012-l-assedio-di-trieste-del-1813",
+      "reason": "L'assedio di Trieste del 1813 e gia pubblicato con la stessa data e lo stesso episodio storico."
+    },
+    {
+      "id": "master-fvg-06-08-Q757186",
+      "duplicateOf": "memory-it-ready-0806-la-battaglia-di-doberdo",
+      "reason": "La battaglia di Doberdo e gia la memoria principale del 6 agosto. Il candidato e un duplicato semantico."
+    },
+    {
+      "id": "master-fvg-15-05-Q4872513",
+      "duplicateOf": "memory-it-ready-0515-la-battaglia-di-tarvisio-del-1809",
+      "reason": "La battaglia di Tarvisio del 1809 e gia pubblicata come memoria principale del 15 maggio."
+    },
+    {
+      "id": "master-fvg-21-03-Q4872512",
+      "duplicateOf": "memory-it-ready-0321-tarvisio-nelle-campagne-napoleoniche",
+      "reason": "La battaglia di Tarvisio del 1797 e gia pubblicata nella memoria sulle campagne napoleoniche del 21 marzo."
+    },
+    {
+      "id": "master-fvg-29-04-Q28670055",
+      "duplicateOf": "memory-it-ready-0429-opicina-negli-ultimi-giorni-di-guerra",
+      "reason": "La battaglia di Opicina e gia pubblicata nella memoria sugli ultimi giorni di guerra del 29 aprile."
+    },
+    {
+      "id": "master-fvg-26-04-Q3625507",
+      "duplicateOf": "memory-history-0426-assedio-osoppo",
+      "reason": "L'assedio di Osoppo e gia pubblicato come memoria principale del 26 aprile."
+    },
+    {
+      "id": "master-fvg-19-12-Q216478",
+      "duplicateOf": "memory-review-1219-italo-svevo",
+      "reason": "La nascita di Italo Svevo e gia presente nel repertorio canonico del 19 dicembre."
+    },
+    {
+      "id": "master-fvg-02-04-Q112362",
+      "duplicateOf": "memory-review-0402-alessandro-moissi",
+      "reason": "La nascita di Alessandro Moissi e gia presente nel repertorio canonico del 2 aprile."
+    },
+    {
+      "id": "master-fvg-03-08-Q3659878",
+      "duplicateOf": "memory-it-ready-0803-carlo-stuparich-scrittura-triestina",
+      "reason": "Carlo Stuparich e gia pubblicato il 3 agosto con una scheda dedicata alla sua scrittura e alla sua esperienza di guerra."
+    },
+    {
+      "id": "master-fvg-10-04-Q274404",
+      "duplicateOf": "memory-copy-0410-claudio-magris",
+      "reason": "Claudio Magris e gia pubblicato il 10 aprile con una scheda dedicata al rapporto tra Trieste e l'Europa."
+    },
+    {
+      "id": "master-fvg-04-04-Q325308",
+      "duplicateOf": "memory-it-ready-0404-giani-stuparich-e-la-trieste-del-novecento",
+      "reason": "Giani Stuparich e gia pubblicato il 4 aprile con una scheda dedicata alla Trieste del Novecento."
+    },
+    {
+      "id": "master-fvg-18-08-Q1491020",
+      "duplicateOf": "memory-copy-0818-gaetano-kanizsa",
+      "reason": "Gaetano Kanizsa e gia pubblicato il 18 agosto con una scheda dedicata ai suoi studi sulla percezione."
+    },
+    {
+      "id": "master-fvg-26-02-Q1748033",
+      "reason": "Alexander Kircher nacque a Trieste, ma il candidato non documenta un rapporto territoriale ulteriore e significativo. Non viene promosso soltanto per aumentare la copertura del 26 febbraio."
+    },
+    {
+      "id": "master-fvg-16-02-Q3942546",
+      "duplicateOf": "memory-it-ready-0216-ruggero-timeus-trieste-e-il-novecento",
+      "reason": "Ruggero Timeus e gia pubblicato il 16 febbraio con una scheda dedicata a Trieste e al primo Novecento."
+    }
+  ]
+}

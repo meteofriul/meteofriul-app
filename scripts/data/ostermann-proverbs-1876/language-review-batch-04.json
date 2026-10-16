@@ -1,0 +1,436 @@
+{
+  "schemaVersion": 1,
+  "batchId": "ostermann-1876-language-review-04",
+  "reviewedAt": "2026-07-22",
+  "sourceDecisionFiles": [
+    "review-decisions-batch-04.json"
+  ],
+  "purpose": "Quarta e ultima revisione linguistica ed editoriale dei candidati Ostermann 1876 gia verificati sul facsimile. Non pubblica contenuti nella UI.",
+  "policy": {
+    "publish": false,
+    "rule": "Le massime generali potranno essere assegnate al calendario soltanto in una promozione separata. Una forma FUR priva di riscontro normalizzato sufficiente resta in revisione madrelingua."
+  },
+  "summary": {
+    "records": 15,
+    "languageReviewed": 15,
+    "mergeExisting": 0,
+    "needsNativeReview": 0
+  },
+  "records": [
+    {
+      "id": "ost1876-o-la-o-rompi",
+      "reviewStatus": "language_reviewed",
+      "furNormalized": "O lâ o rompi.",
+      "itFinal": "O va o si rompe.",
+      "destination": "almanac",
+      "calendarRule": {
+        "type": "general",
+        "bucket": "wisdom",
+        "fallbackAllowed": true
+      },
+      "duplicateAudit": {
+        "status": "new_distinct"
+      },
+      "evidence": [
+        {
+          "label": "Facsimile Ostermann 1876, p. PDF 147",
+          "kind": "primary"
+        },
+        {
+          "label": "Dizionari de Lenghe Furlane, voce lâ",
+          "url": "https://dizionarifurlan.eu/headword/l%C3%A2",
+          "kind": "normalized_reference"
+        }
+      ],
+      "editorialNote": "Massima generale attestata integralmente nel repertorio lessicografico; non richiama date o periodi dell'anno.",
+      "publish": false
+    },
+    {
+      "id": "ost1876-fur-dint-fur-dolor",
+      "reviewStatus": "language_reviewed",
+      "furNormalized": "Fûr il dint e vie il dolôr.",
+      "itFinal": "Tolto il dente, tolto il dolore.",
+      "destination": "almanac",
+      "calendarRule": {
+        "type": "general",
+        "bucket": "wisdom",
+        "fallbackAllowed": true
+      },
+      "duplicateAudit": {
+        "status": "new_distinct"
+      },
+      "evidence": [
+        {
+          "label": "Facsimile Ostermann 1876, p. PDF 147",
+          "kind": "primary"
+        },
+        {
+          "label": "Dizionari de Lenghe Furlane, voce fûr",
+          "url": "https://dizionarifurlan.eu/headword/f%C3%BBr",
+          "kind": "normalized_reference"
+        }
+      ],
+      "editorialNote": "La forma normalizzata attestata sostituisce il secondo fûr storico con vie; il significato resta invariato.",
+      "publish": false
+    },
+    {
+      "id": "ost1876-roste-denant-aghe",
+      "reviewStatus": "language_reviewed",
+      "furNormalized": "Bisugne fâ la roste denant che e vegni la aghe.",
+      "itFinal": "Bisogna costruire l'argine prima che arrivi l'acqua.",
+      "destination": "almanac",
+      "calendarRule": {
+        "type": "general",
+        "bucket": "wisdom",
+        "fallbackAllowed": true
+      },
+      "duplicateAudit": {
+        "status": "new_distinct"
+      },
+      "evidence": [
+        {
+          "label": "Facsimile Ostermann 1876, p. PDF 147",
+          "kind": "primary"
+        },
+        {
+          "label": "Dizionari de Lenghe Furlane, voce bisugnâ",
+          "url": "https://dizionarifurlan.eu/headword/bisugn%C3%A2",
+          "kind": "normalized_reference"
+        }
+      ],
+      "editorialNote": "Massima generale di prudenza; l'acqua e l'argine sono metafora e non una condizione meteo richiesta.",
+      "publish": false
+    },
+    {
+      "id": "ost1876-cui-cir-cjate",
+      "reviewStatus": "language_reviewed",
+      "furNormalized": "Cui che al cîr al cjate.",
+      "itFinal": "Chi cerca trova.",
+      "destination": "almanac",
+      "calendarRule": {
+        "type": "general",
+        "bucket": "wisdom",
+        "fallbackAllowed": true
+      },
+      "duplicateAudit": {
+        "status": "new_distinct"
+      },
+      "evidence": [
+        {
+          "label": "Facsimile Ostermann 1876, p. PDF 147",
+          "kind": "primary"
+        },
+        {
+          "label": "Arcidiocesi di Gorizia, testo liturgico FUR",
+          "url": "https://www.diocesigorizia.it/wp-content/uploads/sites/3/2016/01/Lettera-pastorale-FRI.pdf",
+          "kind": "normalized_reference"
+        }
+      ],
+      "editorialNote": "Formula generale breve; la costruzione normalizzata con i pronomi soggetto è attestata in un testo FUR istituzionale.",
+      "publish": false
+    },
+    {
+      "id": "ost1876-batti-par-viergi",
+      "reviewStatus": "language_reviewed",
+      "furNormalized": "Bisugne bati par che a vierzin.",
+      "itFinal": "Bisogna bussare perché aprano.",
+      "destination": "almanac",
+      "calendarRule": {
+        "type": "general",
+        "bucket": "wisdom",
+        "fallbackAllowed": true
+      },
+      "duplicateAudit": {
+        "status": "new_distinct"
+      },
+      "evidence": [
+        {
+          "label": "Facsimile Ostermann 1876, p. PDF 147",
+          "kind": "primary"
+        },
+        {
+          "label": "Dizionari de Lenghe Furlane, voce bisugnâ",
+          "url": "https://dizionarifurlan.eu/headword/bisugn%C3%A2",
+          "kind": "normalized_reference"
+        }
+      ],
+      "editorialNote": "Massima generale sull'iniziativa, verificata integralmente nel repertorio lessicografico.",
+      "publish": false
+    },
+    {
+      "id": "ost1876-prin-pensir-mior",
+      "reviewStatus": "language_reviewed",
+      "furNormalized": "Il prin pinsîr al è simpri il miôr.",
+      "itFinal": "Il primo pensiero è sempre il migliore.",
+      "destination": "almanac",
+      "calendarRule": {
+        "type": "general",
+        "bucket": "wisdom",
+        "fallbackAllowed": true
+      },
+      "duplicateAudit": {
+        "status": "new_distinct"
+      },
+      "evidence": [
+        {
+          "label": "Facsimile Ostermann 1876, p. PDF 147",
+          "kind": "primary"
+        },
+        {
+          "label": "Dizionari de Lenghe Furlane, voce prin",
+          "url": "https://dizionarifurlan.eu/headword/prin",
+          "kind": "normalized_reference"
+        }
+      ],
+      "editorialNote": "Il repertorio moderno attesta pinsîr e la costruzione completa con al è.",
+      "publish": false
+    },
+    {
+      "id": "ost1876-bati-fier-cjald",
+      "reviewStatus": "language_reviewed",
+      "furNormalized": "Bisugne bati il fier cuant che al è cjalt.",
+      "itFinal": "Bisogna battere il ferro quando è caldo.",
+      "destination": "almanac",
+      "calendarRule": {
+        "type": "general",
+        "bucket": "wisdom",
+        "fallbackAllowed": true
+      },
+      "duplicateAudit": {
+        "status": "new_distinct"
+      },
+      "evidence": [
+        {
+          "label": "Facsimile Ostermann 1876, p. PDF 147",
+          "kind": "primary"
+        },
+        {
+          "label": "Dizionari de Lenghe Furlane, voce bisugnâ",
+          "url": "https://dizionarifurlan.eu/headword/bisugn%C3%A2",
+          "kind": "normalized_reference"
+        }
+      ],
+      "editorialNote": "Massima generale verificata integralmente nel repertorio lessicografico.",
+      "publish": false
+    },
+    {
+      "id": "ost1876-nol-sa-balla-fieste",
+      "reviewStatus": "language_reviewed",
+      "furNormalized": "Cui che nol sa balâ che nol ledi su la fieste.",
+      "itFinal": "Chi non sa ballare non vada alla festa.",
+      "destination": "almanac",
+      "calendarRule": {
+        "type": "general",
+        "bucket": "wisdom",
+        "fallbackAllowed": true
+      },
+      "duplicateAudit": {
+        "status": "new_distinct"
+      },
+      "evidence": [
+        {
+          "label": "Facsimile Ostermann 1876, p. PDF 147",
+          "kind": "primary"
+        },
+        {
+          "label": "Dizionari de Lenghe Furlane, voce lâ",
+          "url": "https://dizionarifurlan.eu/headword/l%C3%A2",
+          "kind": "normalized_reference"
+        }
+      ],
+      "editorialNote": "La festa è parte della metafora e non una ricorrenza del calendario; il detto resta generale.",
+      "publish": false
+    },
+    {
+      "id": "ost1876-tal-bal-balla",
+      "reviewStatus": "language_reviewed",
+      "furNormalized": "Cuant che si è tal bal, bisugne balâ.",
+      "itFinal": "Quando si è al ballo bisogna ballare.",
+      "destination": "almanac",
+      "calendarRule": {
+        "type": "general",
+        "bucket": "wisdom",
+        "fallbackAllowed": true
+      },
+      "duplicateAudit": {
+        "status": "new_distinct"
+      },
+      "evidence": [
+        {
+          "label": "Facsimile Ostermann 1876, p. PDF 147",
+          "kind": "primary"
+        }
+      ],
+      "editorialNote": "La forma normalizzata esplicita cuant che senza cambiare il senso del proverbio verificato sul facsimile.",
+      "publish": false
+    },
+    {
+      "id": "ost1876-om-propon-dio-dispon",
+      "reviewStatus": "language_reviewed",
+      "furNormalized": "L'om al propon e Diu al dispon.",
+      "itFinal": "L'uomo propone e Dio dispone.",
+      "destination": "almanac",
+      "calendarRule": {
+        "type": "general",
+        "bucket": "wisdom",
+        "fallbackAllowed": true
+      },
+      "duplicateAudit": {
+        "status": "new_distinct"
+      },
+      "evidence": [
+        {
+          "label": "Facsimile Ostermann 1876, p. PDF 148",
+          "kind": "primary"
+        },
+        {
+          "label": "Dizionari de Lenghe Furlane, voce disponi",
+          "url": "https://dizionarifurlan.eu/headword/disponi",
+          "kind": "normalized_reference"
+        }
+      ],
+      "editorialNote": "Massima generale verificata integralmente nel repertorio lessicografico.",
+      "publish": false
+    },
+    {
+      "id": "ost1876-ogni-robe-so-viers",
+      "reviewStatus": "language_reviewed",
+      "furNormalized": "Ogni robe e va cjolte pal so viers.",
+      "itFinal": "Ogni cosa va presa per il verso giusto.",
+      "destination": "almanac",
+      "calendarRule": {
+        "type": "general",
+        "bucket": "wisdom",
+        "fallbackAllowed": true
+      },
+      "duplicateAudit": {
+        "status": "new_distinct"
+      },
+      "evidence": [
+        {
+          "label": "Facsimile Ostermann 1876, p. PDF 148",
+          "kind": "primary"
+        },
+        {
+          "label": "Dizionari de Lenghe Furlane, voce ogni",
+          "url": "https://dizionarifurlan.eu/headword/ogni",
+          "kind": "normalized_reference"
+        }
+      ],
+      "editorialNote": "Massima generale verificata integralmente nel repertorio lessicografico.",
+      "publish": false
+    },
+    {
+      "id": "ost1876-voli-paron-ingrasse-cjaval",
+      "reviewStatus": "language_reviewed",
+      "furNormalized": "Il voli dal paron al ingrasse il cjaval.",
+      "itFinal": "L'occhio del padrone ingrassa il cavallo.",
+      "destination": "almanac",
+      "calendarRule": {
+        "type": "general",
+        "bucket": "wisdom",
+        "fallbackAllowed": true
+      },
+      "duplicateAudit": {
+        "status": "new_distinct"
+      },
+      "evidence": [
+        {
+          "label": "Facsimile Ostermann 1876, p. PDF 148",
+          "kind": "primary"
+        },
+        {
+          "label": "Dizionari de Lenghe Furlane, voce voli",
+          "url": "https://dizionarifurlan.eu/headword/voli",
+          "kind": "normalized_reference"
+        }
+      ],
+      "editorialNote": "Massima generale sulla cura diretta delle proprie cose, verificata nel repertorio lessicografico.",
+      "publish": false
+    },
+    {
+      "id": "ost1876-jeve-pierd-siele",
+      "reviewStatus": "language_reviewed",
+      "furNormalized": "Cui che al jeve al piert la siele.",
+      "itFinal": "Chi si alza perde la sedia.",
+      "destination": "almanac",
+      "calendarRule": {
+        "type": "general",
+        "bucket": "wisdom",
+        "fallbackAllowed": true
+      },
+      "duplicateAudit": {
+        "status": "new_distinct"
+      },
+      "evidence": [
+        {
+          "label": "Facsimile Ostermann 1876, p. PDF 148",
+          "kind": "primary"
+        },
+        {
+          "label": "Dizionari de Lenghe Furlane, voce jevâ",
+          "url": "https://dizionarifurlan.eu/headword/jev%C3%A2",
+          "kind": "normalized_reference"
+        }
+      ],
+      "editorialNote": "Il repertorio moderno attesta anche la seconda metà del detto, che non viene incorporata in questo record per non alterare il testo selezionato.",
+      "publish": false
+    },
+    {
+      "id": "ost1876-rive-prin-mulin",
+      "reviewStatus": "language_reviewed",
+      "furNormalized": "Cui che al rive prin tal mulin al masane.",
+      "itFinal": "Chi arriva per primo al mulino macina.",
+      "destination": "almanac",
+      "calendarRule": {
+        "type": "general",
+        "bucket": "wisdom",
+        "fallbackAllowed": true
+      },
+      "duplicateAudit": {
+        "status": "new_distinct"
+      },
+      "evidence": [
+        {
+          "label": "Facsimile Ostermann 1876, p. PDF 148",
+          "kind": "primary"
+        },
+        {
+          "label": "Dizionari de Lenghe Furlane, voce prin",
+          "url": "https://dizionarifurlan.eu/headword/prin",
+          "kind": "normalized_reference"
+        }
+      ],
+      "editorialNote": "Massima generale sull'ordine di arrivo, verificata integralmente nel repertorio lessicografico.",
+      "publish": false
+    },
+    {
+      "id": "ost1876-mond-di-cui-pialu",
+      "reviewStatus": "language_reviewed",
+      "furNormalized": "Il mont al è di cui che al sa cjapâlu.",
+      "itFinal": "Il mondo è di chi sa prenderlo.",
+      "destination": "almanac",
+      "calendarRule": {
+        "type": "general",
+        "bucket": "wisdom",
+        "fallbackAllowed": true
+      },
+      "duplicateAudit": {
+        "status": "new_distinct"
+      },
+      "evidence": [
+        {
+          "label": "Facsimile Ostermann 1876, p. PDF 148",
+          "kind": "primary"
+        },
+        {
+          "label": "Dizionari de Lenghe Furlane, voce mont",
+          "url": "https://dizionarifurlan.eu/headword/mont2",
+          "kind": "normalized_reference"
+        }
+      ],
+      "editorialNote": "Il repertorio moderno attesta mont e cjapâlu; il detto resta una massima generale, non un contenuto geografico.",
+      "publish": false
+    }
+  ]
+}

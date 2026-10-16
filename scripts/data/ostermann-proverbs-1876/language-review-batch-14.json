@@ -1,0 +1,246 @@
+{
+  "schemaVersion": 1,
+  "batchId": "ostermann-1876-language-review-14",
+  "reviewedAt": "2026-08-02",
+  "sourceDecisionFiles": [
+    "review-decisions-batch-14.json"
+  ],
+  "purpose": "Quattordicesima revisione linguistica ed editoriale dei candidati Ostermann 1876 verificati sul facsimile. Non pubblica contenuti nella UI.",
+  "policy": {
+    "publish": false,
+    "rule": "La normalizzazione FUR conserva il significato attestato nel facsimile. Le quindici massime sono generali e non ricevono date, feste o stagioni artificiali."
+  },
+  "summary": {
+    "records": 15,
+    "languageReviewed": 15,
+    "mergeExisting": 0,
+    "needsNativeReview": 0
+  },
+  "records": [
+    {
+      "id": "ost1876-panze-plene-no-crot-vueide",
+      "reviewStatus": "language_reviewed",
+      "furNormalized": "Panze plene no i crôt a panze vueide.",
+      "itFinal": "La pancia piena non crede a quella vuota.",
+      "destination": "almanac",
+      "calendarRule": { "type": "general", "bucket": "wisdom", "fallbackAllowed": true },
+      "duplicateAudit": { "status": "new_distinct" },
+      "evidence": [
+        { "label": "Facsimile Ostermann 1876, p. PDF 222", "kind": "primary" },
+        { "label": "Dizionari de Lenghe Furlane, proverbio registrato alla voce panze", "kind": "secondary" }
+      ],
+      "editorialNote": "Adottata la forma normalizzata attestata dal dizionario, con il pronome dativo i e vueide.",
+      "publish": false
+    },
+    {
+      "id": "ost1876-sac-vueit-no-sta-pits",
+      "reviewStatus": "language_reviewed",
+      "furNormalized": "Un sac vueit nol sta in pîts.",
+      "itFinal": "Un sacco vuoto non sta in piedi.",
+      "destination": "almanac",
+      "calendarRule": { "type": "general", "bucket": "wisdom", "fallbackAllowed": true },
+      "duplicateAudit": { "status": "new_distinct" },
+      "evidence": [
+        { "label": "Facsimile Ostermann 1876, p. PDF 222", "kind": "primary" },
+        { "label": "Dizionari de Lenghe Furlane, sac, vueit e pît", "kind": "secondary" }
+      ],
+      "editorialNote": "Normalizzati vueit e il plurale pîts; conservata la struttura proverbiale.",
+      "publish": false
+    },
+    {
+      "id": "ost1876-ogni-cjase-so-cros",
+      "reviewStatus": "language_reviewed",
+      "furNormalized": "Ogni cjase e à la sô crôs.",
+      "itFinal": "Ogni casa ha la sua croce.",
+      "destination": "almanac",
+      "calendarRule": { "type": "general", "bucket": "wisdom", "fallbackAllowed": true },
+      "duplicateAudit": { "status": "new_distinct" },
+      "evidence": [
+        { "label": "Facsimile Ostermann 1876, p. PDF 224", "kind": "primary" },
+        { "label": "Dizionari de Lenghe Furlane, proverbio registrato alla voce cjase", "kind": "secondary" }
+      ],
+      "editorialNote": "Adottata la forma proverbiale normalizzata attestata dal dizionario.",
+      "publish": false
+    },
+    {
+      "id": "ost1876-ogni-dret-so-ruviers",
+      "reviewStatus": "language_reviewed",
+      "furNormalized": "Ogni dret il so ruviers.",
+      "itFinal": "Ogni diritto ha il suo rovescio.",
+      "destination": "almanac",
+      "calendarRule": { "type": "general", "bucket": "wisdom", "fallbackAllowed": true },
+      "duplicateAudit": { "status": "new_distinct" },
+      "evidence": [
+        { "label": "Facsimile Ostermann 1876, p. PDF 224", "kind": "primary" },
+        { "label": "Dizionari de Lenghe Furlane, proverbio registrato alla voce ruviers", "kind": "secondary" }
+      ],
+      "editorialNote": "Conservata la forma nominale breve registrata nel repertorio lessicografico.",
+      "publish": false
+    },
+    {
+      "id": "ost1876-spinis-nas-rose",
+      "reviewStatus": "language_reviewed",
+      "furNormalized": "Tra lis spinis e nas la rose.",
+      "itFinal": "Tra le spine nasce la rosa.",
+      "destination": "almanac",
+      "calendarRule": { "type": "general", "bucket": "wisdom", "fallbackAllowed": true },
+      "duplicateAudit": { "status": "new_distinct" },
+      "evidence": [
+        { "label": "Facsimile Ostermann 1876, p. PDF 225", "kind": "primary" },
+        { "label": "Dizionari de Lenghe Furlane, spine, nassi e rose", "kind": "secondary" }
+      ],
+      "editorialNote": "Aggiunto il pronome soggetto previsto dalla grafia standard; il significato resta invariato.",
+      "publish": false
+    },
+    {
+      "id": "ost1876-soreli-so-maglis",
+      "reviewStatus": "language_reviewed",
+      "furNormalized": "Ancje il soreli al à lis sôs maglis.",
+      "itFinal": "Anche il sole ha le sue macchie.",
+      "destination": "almanac",
+      "calendarRule": { "type": "general", "bucket": "wisdom", "fallbackAllowed": true },
+      "duplicateAudit": { "status": "new_distinct" },
+      "evidence": [
+        { "label": "Facsimile Ostermann 1876, p. PDF 225", "kind": "primary" },
+        { "label": "Dizionari de Lenghe Furlane, soreli e magle", "kind": "secondary" }
+      ],
+      "editorialNote": "Normalizzati soreli e il pronome soggetto al; conservata l'immagine originale.",
+      "publish": false
+    },
+    {
+      "id": "ost1876-tristis-gnovis-indenant",
+      "reviewStatus": "language_reviewed",
+      "furNormalized": "Lis tristis gnovis a van simpri indenant.",
+      "itFinal": "Le cattive notizie corrono sempre avanti.",
+      "destination": "almanac",
+      "calendarRule": { "type": "general", "bucket": "wisdom", "fallbackAllowed": true },
+      "duplicateAudit": { "status": "new_distinct" },
+      "evidence": [
+        { "label": "Facsimile Ostermann 1876, p. PDF 226", "kind": "primary" },
+        { "label": "Dizionari de Lenghe Furlane, gnove e indenant", "kind": "secondary" }
+      ],
+      "editorialNote": "Aggiunto il pronome soggetto plurale a; mantenuta la metafora del procedere in avanti.",
+      "publish": false
+    },
+    {
+      "id": "ost1876-cognos-ben-cuant-pierdut",
+      "reviewStatus": "language_reviewed",
+      "furNormalized": "No si cognòs il ben se no cuant che si lu à pierdût.",
+      "itFinal": "Si conosce il bene soltanto quando lo si è perduto.",
+      "destination": "almanac",
+      "calendarRule": { "type": "general", "bucket": "wisdom", "fallbackAllowed": true },
+      "duplicateAudit": { "status": "new_distinct" },
+      "evidence": [
+        { "label": "Facsimile Ostermann 1876, p. PDF 227", "kind": "primary" },
+        { "label": "Dizionari de Lenghe Furlane, cognossi e pierdi", "kind": "secondary" }
+      ],
+      "editorialNote": "Normalizzati cognòs, cuant e il participio pierdût; resa esplicita la congiunzione se no.",
+      "publish": false
+    },
+    {
+      "id": "ost1876-necessitat-virtut",
+      "reviewStatus": "language_reviewed",
+      "furNormalized": "Bisugne fâ di necessitât virtût.",
+      "itFinal": "Bisogna fare di necessità virtù.",
+      "destination": "almanac",
+      "calendarRule": { "type": "general", "bucket": "wisdom", "fallbackAllowed": true },
+      "duplicateAudit": { "status": "new_distinct" },
+      "evidence": [
+        { "label": "Facsimile Ostermann 1876, p. PDF 228", "kind": "primary" },
+        { "label": "Dizionari de Lenghe Furlane, fâ, necessitât e virtût", "kind": "secondary" }
+      ],
+      "editorialNote": "Normalizzati l'infinito fâ e gli accenti di necessitât e virtût.",
+      "publish": false
+    },
+    {
+      "id": "ost1876-sperance-ultime-pierdisi",
+      "reviewStatus": "language_reviewed",
+      "furNormalized": "La sperance e je l'ultime a pierdisi.",
+      "itFinal": "La speranza è l'ultima a perdersi.",
+      "destination": "almanac",
+      "calendarRule": { "type": "general", "bucket": "wisdom", "fallbackAllowed": true },
+      "duplicateAudit": { "status": "new_distinct" },
+      "evidence": [
+        { "label": "Facsimile Ostermann 1876, p. PDF 229", "kind": "primary" },
+        { "label": "Dizionari de Lenghe Furlane, sperance e pierdisi", "kind": "secondary" }
+      ],
+      "editorialNote": "Normalizzata la copula e je; mantenuta la costruzione proverbiale attestata.",
+      "publish": false
+    },
+    {
+      "id": "ost1876-poc-justizie-no-trop-pecjat",
+      "reviewStatus": "language_reviewed",
+      "furNormalized": "Miei pôc cun justizie che trop cun pecjât.",
+      "itFinal": "Meglio poco con giustizia che molto con peccato.",
+      "destination": "almanac",
+      "calendarRule": { "type": "general", "bucket": "wisdom", "fallbackAllowed": true },
+      "duplicateAudit": { "status": "new_distinct" },
+      "evidence": [
+        { "label": "Facsimile Ostermann 1876, p. PDF 229", "kind": "primary" },
+        { "label": "Dizionari de Lenghe Furlane, miei, pôc, justizie e pecjât", "kind": "secondary" }
+      ],
+      "editorialNote": "Eliminata la copula iniziale non necessaria e normalizzati gli accenti senza modificare il confronto.",
+      "publish": false
+    },
+    {
+      "id": "ost1876-soreli-scjalde-ducj",
+      "reviewStatus": "language_reviewed",
+      "furNormalized": "Il soreli al scjalde par ducj.",
+      "itFinal": "Il sole scalda per tutti.",
+      "destination": "almanac",
+      "calendarRule": { "type": "general", "bucket": "wisdom", "fallbackAllowed": true },
+      "duplicateAudit": { "status": "new_distinct" },
+      "evidence": [
+        { "label": "Facsimile Ostermann 1876, p. PDF 230", "kind": "primary" },
+        { "label": "Dizionari de Lenghe Furlane, soreli, scjaldâ e ducj", "kind": "secondary" }
+      ],
+      "editorialNote": "Normalizzati soreli e scjalde e aggiunto il pronome soggetto al.",
+      "publish": false
+    },
+    {
+      "id": "ost1876-timp-sane-ogni-plae",
+      "reviewStatus": "language_reviewed",
+      "furNormalized": "Il timp al sane ogni plae.",
+      "itFinal": "Il tempo guarisce ogni ferita.",
+      "destination": "almanac",
+      "calendarRule": { "type": "general", "bucket": "wisdom", "fallbackAllowed": true },
+      "duplicateAudit": { "status": "new_distinct" },
+      "evidence": [
+        { "label": "Facsimile Ostermann 1876, p. PDF 230", "kind": "primary" },
+        { "label": "Centro Virtual Cervantes, proverbio Il timp al sane ogni plae", "kind": "secondary" }
+      ],
+      "editorialNote": "Adottata la forma contemporanea attestata, con il pronome soggetto al.",
+      "publish": false
+    },
+    {
+      "id": "ost1876-da-timp-al-timp",
+      "reviewStatus": "language_reviewed",
+      "furNormalized": "Bisugne dâi timp al timp.",
+      "itFinal": "Bisogna dare tempo al tempo.",
+      "destination": "almanac",
+      "calendarRule": { "type": "general", "bucket": "wisdom", "fallbackAllowed": true },
+      "duplicateAudit": { "status": "new_distinct" },
+      "evidence": [
+        { "label": "Facsimile Ostermann 1876, p. PDF 230", "kind": "primary" },
+        { "label": "Dizionari de Lenghe Furlane, proverbio registrato alla voce timp", "kind": "secondary" }
+      ],
+      "editorialNote": "Adottata la forma normalizzata attestata dal dizionario, con dâi.",
+      "publish": false
+    },
+    {
+      "id": "ost1876-perdona-no-dismentea",
+      "reviewStatus": "language_reviewed",
+      "furNormalized": "Si pues perdonâ, ma no dismenteâ.",
+      "itFinal": "Si può perdonare, ma non dimenticare.",
+      "destination": "almanac",
+      "calendarRule": { "type": "general", "bucket": "wisdom", "fallbackAllowed": true },
+      "duplicateAudit": { "status": "new_distinct" },
+      "evidence": [
+        { "label": "Facsimile Ostermann 1876, p. PDF 230", "kind": "primary" },
+        { "label": "Dizionari de Lenghe Furlane, podê, perdonâ e dismenteâ", "kind": "secondary" }
+      ],
+      "editorialNote": "Normalizzato il verbo modale in pues e conservati gli infiniti perdonâ e dismenteâ.",
+      "publish": false
+    }
+  ]
+}

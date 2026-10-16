@@ -1,0 +1,83 @@
+{
+  "schemaVersion": 1,
+  "batchId": "ud-go-enrichment-milestones-02-fur-review",
+  "sourceResearchBatchId": "ud-go-enrichment-milestones-02",
+  "reviewedAt": "2026-09-01",
+  "runtimeIntegration": false,
+  "reviewMethod": "assisted_standard_reference_review",
+  "approvalBasis": "user_delegated_assisted_editorial_review",
+  "reviewer": "assistant",
+  "independentHumanReview": false,
+  "approvalNote": "Decisione editoriale assistita sotto il mandato di completamento Scopri. Le fonti ARLeF verificano lessico e modelli d'uso, non certificano queste frasi; nessuna revisione professionale indipendente né lettura frase per frase attribuita all'utente.",
+  "summary": {
+    "totalRecords": 4,
+    "approved": 4,
+    "pendingHumanReview": 0
+  },
+  "records": [
+    {
+      "id": "san-daniele-consorzio-prosciutto-1961",
+      "status": "approved",
+      "labelFur": "Al ven istituît il Consorzio del Prosciutto di San Daniele",
+      "notes": "Istituît segue il lemma ARLeF e il modello passivo già approvato nel catalogo. Consorzio del Prosciutto di San Daniele resta la denominazione ufficiale italiana dell'ente, senza crearne una traduzione istituzionale non attestata.",
+      "references": [
+        {
+          "url": "https://superdizionari.arlef.it/lemma/istituire/3610?language=it&oneshot=1&gui=fur",
+          "note": "Istituire → istituî; participio maschile istituît."
+        },
+        {
+          "url": "https://superdizionari.arlef.it/lemma/consorzio/22172?language=it&oneshot=1&gui=fur",
+          "note": "Consorzio → consorzi; la copy conserva però il nome legale italiano completo dell'ente."
+        }
+      ]
+    },
+    {
+      "id": "san-daniele-prosciutto-dop-1996",
+      "status": "approved",
+      "labelFur": "La Union europeane e ricognòs il Prosciutto di San Daniele tant che DOP",
+      "notes": "Ricognòs segue l'accezione istituzionale ARLeF; Union europeane è la forma usata nei contenuti ufficiali ARLeF. Prosciutto di San Daniele e DOP restano la denominazione protetta e la sigla ufficiale.",
+      "references": [
+        {
+          "url": "https://superdizionari.arlef.it/lemma/riconoscere/6061?language=it&oneshot=1&gui=fur",
+          "note": "Riconoscere in senso istituzionale → ricognossi; terza persona ricognòs."
+        },
+        {
+          "url": "https://arlef.it/risorsis/bandiere-dal-friul/",
+          "note": "Uso istituzionale ARLeF di Union Europeane / Union europeane."
+        }
+      ]
+    },
+    {
+      "id": "staranzano-comune-amministrativo-1848",
+      "status": "approved",
+      "labelFur": "Staranzan al devente Comun ancje sul plan aministratîf",
+      "notes": "Aministratîf è il lemma ARLeF; Staranzan è la forma già usata nel profilo. La copy conserva la distinzione della fonte fra Comune censuario e Comune sul piano amministrativo.",
+      "references": [
+        {
+          "url": "https://superdizionari.arlef.it/lemma/amministrativo/14304?language=it&oneshot=1&gui=fur",
+          "note": "Amministrativo → aministratîf."
+        }
+      ]
+    },
+    {
+      "id": "staranzano-autonomia-comunale-1907",
+      "status": "approved",
+      "labelFur": "Staranzan al si separe in maniere definitive di Monfalcon e al torne a jessi comun autonom",
+      "notes": "Separâ, in maniere definitive e il modello torne a jessi comun autonom sono già verificati nel lessico ARLeF e nel catalogo comunale. Monfalcon è il toponimo FUR consolidato.",
+      "references": [
+        {
+          "url": "https://superdizionari.arlef.it/lemma/separare/2641?language=it&oneshot=1&gui=fur",
+          "note": "Separare → separâ."
+        },
+        {
+          "url": "https://superdizionari.arlef.it/lemma/definitivo/2783?language=it&oneshot=1&gui=fur",
+          "note": "Definitivo → definitîf; nella locuzione: in maniere definitive."
+        },
+        {
+          "url": "https://superdizionari.arlef.it/lemma/autonomia/8271?language=it&oneshot=1&gui=fur",
+          "note": "Autonomia → autonomie; la frase usa il modello già approvato torne a jessi comun autonom."
+        }
+      ]
+    }
+  ]
+}

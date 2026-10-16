@@ -1,0 +1,340 @@
+import groovy.json.JsonOutput
+import groovy.json.JsonSlurper
+
+apply plugin: 'com.android.application'
+
+def meteoPlayReleaseProducingTaskName = { String taskName ->
+    def normalized = (taskName ?: '').toLowerCase(Locale.ROOT)
+    def releaseProducingVerb = [
+        'assemble',
+        'bundle',
+        'sign',
+        'package',
+        'finalize',
+        'publish'
+    ].any { normalized.contains(it) }
+    normalized.contains('release') && releaseProducingVerb
+}
+
+def meteoAndroidLocalPilotTaskName = { String taskName ->
+    (taskName ?: '').toLowerCase(Locale.ROOT).contains('localpilot')
+}
+
+def meteoReadGoogleServicesIdentity = { File servicesFile ->
+    if (!servicesFile.exists() || !servicesFile.isFile()) {
+        throw new GradleException('Play release requires app/google-services.json')
+    }
+    def payload
+    try {
+        payload = new JsonSlurper().parse(servicesFile)
+    } catch (Exception ignored) {
+        throw new GradleException('Play release google-services.json is not valid JSON')
+    }
+    def matchingClients = (payload.client ?: []).findAll {
+        it?.client_info?.android_client_info?.package_name == 'com.meteofriul.app'
+    }
+    if (matchingClients.size() != 1) {
+        throw new GradleException(
+            'Play release google-services.json must contain exactly one com.meteofriul.app client'
+        )
+    }
+    [
+        projectId: payload?.project_info?.project_id?.toString(),
+        projectNumber: payload?.project_info?.project_number?.toString(),
+        applicationId: matchingClients[0].client_info.android_client_info.package_name.toString(),
+        firebaseAppId: matchingClients[0].client_info.mobilesdk_app_id?.toString()
+    ]
+}
+
+def privateTestKeystorePropertiesFile = rootProject.file('keystore.properties')
+def privateTestKeystoreProperties = new Properties()
+def playKeystorePropertiesFile = rootProject.file('play-keystore.properties')
+def playKeystoreProperties = new Properties()
+def meteoBackgroundApiBase = (
+    project.findProperty('METEO_API_BASE') ?:
+    'https://cfweb-bcee09e---meteofriul-api-bx24xqvcda-ew.a.run.app/api'
+).toString()
+if (!(meteoBackgroundApiBase ==~ /^https:\/\/[A-Za-z0-9.-]+(?::\d+)?\/api$/)) {
+    throw new GradleException('METEO_API_BASE must be an absolute HTTPS /api endpoint')
+}
+if (privateTestKeystorePropertiesFile.exists()) {
+    privateTestKeystorePropertiesFile.withInputStream {
+        privateTestKeystoreProperties.load(it)
+    }
+}
+if (playKeystorePropertiesFile.exists()) {
+    playKeystorePropertiesFile.withInputStream {
+        playKeystoreProperties.load(it)
+    }
+}
+
+android {
+    namespace = "com.meteofriul.app"
+    compileSdk = rootProject.ext.compileSdkVersion
+    defaultConfig {
+        applicationId "com.meteofriul.app"
+        minSdkVersion rootProject.ext.minSdkVersion
+        targetSdkVersion rootProject.ext.targetSdkVersion
+        versionCode 300031
+        versionName "0.1.14"
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        buildConfigField 'String', 'METEO_API_BASE', '"' + meteoBackgroundApiBase + '"'
+        buildConfigField 'boolean', 'LOCAL_WEATHER_PILOT', 'false'
+        aaptOptions {
+             // Files and dirs to omit from the packaged assets dir, modified to accommodate modern web apps.
+             // Default: https://android.googlesource.com/platform/frameworks/base/+/282e181b58cf72b6ca770dc7ca5f91f135444502/tools/aapt/AaptAssets.cpp#61
+            ignoreAssetsPattern = '!.svn:!.git:!.ds_store:!*.scc:.*:!CVS:!thumbs.db:!picasa.ini:!*~'
+        }
+    }
+    buildFeatures {
+        buildConfig true
+    }
+    signingConfigs {
+        privateTest {
+            if (privateTestKeystorePropertiesFile.exists()) {
+                storeFile rootProject.file(privateTestKeystoreProperties['storeFile'])
+                storePassword privateTestKeystoreProperties['storePassword']
+                keyAlias privateTestKeystoreProperties['keyAlias']
+                keyPassword privateTestKeystoreProperties['keyPassword']
+            }
+        }
+        play {
+            if (playKeystorePropertiesFile.exists()) {
+                storeFile rootProject.file(playKeystoreProperties['storeFile'])
+                storePassword playKeystoreProperties['storePassword']
+                keyAlias playKeystoreProperties['keyAlias']
+                keyPassword playKeystoreProperties['keyPassword']
+            }
+        }
+    }
+    buildTypes {
+        release {
+            minifyEnabled true
+            shrinkResources true
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            ndk {
+                debugSymbolLevel 'SYMBOL_TABLE'
+            }
+            signingConfig signingConfigs.play
+        }
+        privateTest {
+            initWith release
+            matchingFallbacks = ['release']
+            debuggable false
+            versionNameSuffix '-private.4'
+            signingConfig signingConfigs.privateTest
+        }
+        localPilot {
+            initWith debug
+            matchingFallbacks = ['debug']
+            applicationIdSuffix '.localpilot'
+            versionNameSuffix '-local-pilot'
+            debuggable true
+            buildConfigField 'boolean', 'LOCAL_WEATHER_PILOT', 'true'
+        }
+    }
+}
+
+tasks.register('printPlayReleaseIdentity') {
+    group = 'verification'
+    description = 'Prints the declared Play application/version identity without producing an artifact.'
+    doLast {
+        println 'METEO_PLAY_RELEASE_IDENTITY:' + JsonOutput.toJson([
+            ApplicationId: android.defaultConfig.applicationId,
+            VersionCode: android.defaultConfig.versionCode,
+            VersionName: android.defaultConfig.versionName
+        ])
+    }
+}
+
+tasks.register('verifyPlayReleaseGuardTaskClassification') {
+    group = 'verification'
+    description = 'Behaviorally checks which task names are protected by the Play release guard.'
+    doLast {
+        [
+            assembleRelease: true,
+            bundleRelease: true,
+            signReleaseBundle: true,
+            packageReleaseBundle: true,
+            finalizeBundleReleaseResources: true,
+            publishReleaseBundle: true,
+            compileReleaseJavaWithJavac: false,
+            assembleDebug: false,
+            assembleLocalPilot: false,
+            printPlayReleaseIdentity: false,
+            verifyPlayReleaseGuardTaskClassification: false
+        ].each { taskName, expected ->
+            def actual = meteoPlayReleaseProducingTaskName(taskName)
+            if (actual != expected) {
+                throw new GradleException(
+                    "Play release guard classification mismatch for ${taskName}: " +
+                    "expected=${expected} actual=${actual}"
+                )
+            }
+        }
+    }
+}
+
+gradle.taskGraph.whenReady { graph ->
+    def localPilotRequested = graph.allTasks.any {
+        it.project == project && meteoAndroidLocalPilotTaskName(it.name)
+    }
+    def privateTestRequested = graph.allTasks.any {
+        it.project == project && it.name.toLowerCase().contains('privatetest')
+    }
+    if (privateTestRequested && !privateTestKeystorePropertiesFile.exists()) {
+        throw new GradleException(
+            'Private-test signing is not configured. Create the ignored android/keystore.properties first.'
+        )
+    }
+    if (privateTestRequested && !project.hasProperty('METEO_API_BASE')) {
+        throw new GradleException(
+            'Private-test builds require an explicit -PMETEO_API_BASE=https://<tagged-host>/api'
+        )
+    }
+    def playReleaseRequested = graph.allTasks.any {
+        it.project == project && meteoPlayReleaseProducingTaskName(it.name)
+    }
+    if (localPilotRequested && playReleaseRequested) {
+        throw new GradleException(
+            'Android local-pilot and Play release tasks are mutually exclusive.'
+        )
+    }
+    if (localPilotRequested) {
+        def markerProperty = project.findProperty(
+            'METEO_ANDROID_LOCAL_PILOT_GUARD_MARKER'
+        )?.toString()
+        def markerEnvironment = System.getenv('METEO_ANDROID_LOCAL_PILOT_GUARD_MARKER')
+        if (
+            !(markerProperty ==~ /^[0-9a-f]{64}$/) ||
+            markerProperty != markerEnvironment
+        ) {
+            throw new GradleException(
+                'Android local-pilot tasks require the protected build script marker.'
+            )
+        }
+        if (!project.hasProperty('METEO_API_BASE')) {
+            throw new GradleException(
+                'Android local-pilot builds require an explicit HTTPS -PMETEO_API_BASE.'
+            )
+        }
+    }
+    if (playReleaseRequested) {
+        def markerProperty = project.findProperty('METEO_PLAY_RELEASE_GUARD_MARKER')?.toString()
+        def markerEnvironment = System.getenv('METEO_PLAY_RELEASE_GUARD_MARKER')
+        if (
+            !(markerProperty ==~ /^[0-9a-f]{64}$/) ||
+            markerProperty != markerEnvironment
+        ) {
+            throw new GradleException(
+                'Play release-producing tasks require the protected build script marker.'
+            )
+        }
+        if (!playKeystorePropertiesFile.exists() || !playKeystorePropertiesFile.isFile()) {
+            throw new GradleException(
+                'Play signing is not configured. Create the ignored android/play-keystore.properties first.'
+            )
+        }
+        def missingSigningProperties = [
+            'storeFile',
+            'storePassword',
+            'keyAlias',
+            'keyPassword'
+        ].findAll { key ->
+            !playKeystoreProperties[key]?.toString()?.trim()
+        }
+        if (!missingSigningProperties.isEmpty()) {
+            throw new GradleException(
+                'Play signing configuration is incomplete: ' + missingSigningProperties.join(', ')
+            )
+        }
+        def resolvedPlayStoreFile = rootProject.file(
+            playKeystoreProperties['storeFile'].toString()
+        )
+        if (!resolvedPlayStoreFile.exists() || !resolvedPlayStoreFile.isFile()) {
+            throw new GradleException('Play upload keystore file does not exist.')
+        }
+        if (!project.hasProperty('METEO_API_BASE')) {
+            throw new GradleException(
+                'Play release builds require an explicit -PMETEO_API_BASE=https://<tagged-host>/api'
+            )
+        }
+        def requiredReleaseProperties = [
+            METEO_PLAY_RELEASE_EXPECTED_APPLICATION_ID: 'com.meteofriul.app',
+            METEO_PLAY_RELEASE_EXPECTED_FIREBASE_APP_ID:
+                '1:49007668366:android:725bf6f8b339177a852ddf',
+            METEO_PLAY_RELEASE_EXPECTED_FIREBASE_PROJECT: 'meteo-friul',
+            METEO_PLAY_RELEASE_EXPECTED_FIREBASE_PROJECT_NUMBER: '49007668366'
+        ]
+        requiredReleaseProperties.each { propertyName, expectedValue ->
+            def actualValue = project.findProperty(propertyName)?.toString()
+            if (actualValue != expectedValue) {
+                throw new GradleException(
+                    "Play release property ${propertyName} is missing or does not match."
+                )
+            }
+        }
+        def firebaseIdentity = meteoReadGoogleServicesIdentity(file('google-services.json'))
+        if (
+            firebaseIdentity.projectId !=
+                requiredReleaseProperties.METEO_PLAY_RELEASE_EXPECTED_FIREBASE_PROJECT ||
+            firebaseIdentity.projectNumber !=
+                requiredReleaseProperties.METEO_PLAY_RELEASE_EXPECTED_FIREBASE_PROJECT_NUMBER ||
+            firebaseIdentity.applicationId !=
+                requiredReleaseProperties.METEO_PLAY_RELEASE_EXPECTED_APPLICATION_ID ||
+            firebaseIdentity.firebaseAppId !=
+                requiredReleaseProperties.METEO_PLAY_RELEASE_EXPECTED_FIREBASE_APP_ID
+        ) {
+            throw new GradleException(
+                'Play release google-services.json does not match the approved Firebase Android app.'
+            )
+        }
+    }
+}
+
+repositories {
+    flatDir{
+        dirs '../capacitor-cordova-android-plugins/src/main/libs', 'libs'
+    }
+}
+
+dependencies {
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+    implementation "androidx.appcompat:appcompat:$androidxAppCompatVersion"
+    implementation "androidx.coordinatorlayout:coordinatorlayout:$androidxCoordinatorLayoutVersion"
+    implementation "androidx.core:core-splashscreen:$coreSplashScreenVersion"
+    implementation project(':capacitor-android')
+    testImplementation "junit:junit:$junitVersion"
+    androidTestImplementation "androidx.test.ext:junit:$androidxJunitVersion"
+    androidTestImplementation "androidx.test.espresso:espresso-core:$androidxEspressoCoreVersion"
+    implementation project(':capacitor-cordova-android-plugins')
+    implementation platform('com.google.firebase:firebase-bom:34.16.0')
+    implementation 'com.google.firebase:firebase-appcheck'
+    implementation "com.google.android.gms:play-services-location:$playServicesLocationVersion"
+    implementation "androidx.work:work-runtime:$workManagerVersion"
+    debugImplementation 'com.google.firebase:firebase-appcheck-debug'
+    releaseImplementation 'com.google.firebase:firebase-appcheck-playintegrity'
+    privateTestImplementation 'com.google.firebase:firebase-appcheck-playintegrity'
+}
+
+apply from: 'capacitor.build.gradle'
+
+try {
+    def servicesJSON = file('google-services.json')
+    if (servicesJSON.text) {
+        apply plugin: 'com.google.gms.google-services'
+    }
+} catch(Exception e) {
+    logger.info("google-services.json not found, google-services plugin not applied. Push Notifications won't work")
+}
+
+// The side-by-side local-pilot package deliberately has no Firebase Android
+// identity. Keep the production google-services.json intact and skip only the
+// generated task for this isolated build type; foreground official-alert data
+// still comes from the normal HTTPS API.
+tasks.configureEach { task ->
+    def normalized = task.name.toLowerCase(Locale.ROOT)
+    if (normalized.contains('localpilot') && normalized.contains('googleservices')) {
+        task.enabled = false
+    }
+}

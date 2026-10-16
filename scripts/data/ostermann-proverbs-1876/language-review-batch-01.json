@@ -1,0 +1,307 @@
+{
+  "schemaVersion": 1,
+  "batchId": "ostermann-1876-language-review-01",
+  "reviewedAt": "2026-07-22",
+  "sourceDecisionFiles": [
+    "review-decisions-batch-01.json"
+  ],
+  "purpose": "Prima revisione linguistica ed editoriale dei candidati Ostermann 1876 gia verificati sul facsimile. Non pubblica contenuti nella UI.",
+  "policy": {
+    "publish": false,
+    "rule": "IT e FUR revisionati non equivalgono a pubblicazione. Ogni record deve conservare una regola temporale o contestuale esplicita e superare la promozione separata nel repertorio applicativo."
+  },
+  "summary": {
+    "records": 10,
+    "languageReviewed": 9,
+    "mergeExisting": 1,
+    "needsNativeReview": 0
+  },
+  "records": [
+    {
+      "id": "ost1876-genar-febrar-marc",
+      "reviewStatus": "language_reviewed",
+      "furNormalized": "Se Zenâr nol fâs Zenâr e Fevrâr nol fâs Fevrâr, Març al fâs mâl e mâl al pense.",
+      "itFinal": "Se gennaio non fa gennaio e febbraio non fa febbraio, marzo fa male e pensa male.",
+      "destination": "almanac",
+      "calendarRule": {
+        "type": "months",
+        "months": [1, 2, 3],
+        "fallbackAllowed": false
+      },
+      "duplicateAudit": {
+        "status": "new_distinct"
+      },
+      "evidence": [
+        {
+          "label": "Facsimile Ostermann 1876, p. PDF 26",
+          "kind": "primary"
+        },
+        {
+          "label": "ARLeF, Pagjine Furlane, 9 gennaio 2025",
+          "url": "https://arlef.it/app/uploads/stampa-friulana/02_-_09-01-2025_vc-37.pdf",
+          "kind": "orthographic_reference"
+        }
+      ],
+      "editorialNote": "La forma ARLeF contemporanea scioglie i verbi storici in una resa immediatamente comprensibile. Utilizzabile soltanto tra gennaio e marzo.",
+      "publish": false
+    },
+    {
+      "id": "ost1876-sant-antoni-ore-lus",
+      "reviewStatus": "language_reviewed",
+      "furNormalized": "Sant Antoni di Zenâr, une ore biele avuâl.",
+      "itFinal": "A Sant'Antonio di gennaio, un'ora buona in più.",
+      "destination": "almanac",
+      "calendarRule": {
+        "type": "date",
+        "day": 17,
+        "month": 1,
+        "fallbackAllowed": false
+      },
+      "duplicateAudit": {
+        "status": "new_distinct"
+      },
+      "evidence": [
+        {
+          "label": "Facsimile Ostermann 1876, p. PDF 26; nota: Sono allungati i giorni",
+          "kind": "primary"
+        },
+        {
+          "label": "ARLeF, grafia ufficiale: avuâl",
+          "url": "https://arlef.it/app/uploads/page/grafie_cuadrilengacc82l_ed2017.pdf",
+          "kind": "orthographic_reference"
+        }
+      ],
+      "editorialNote": "Il testo italiano rende esplicito l'allungamento della luce. Solo per il 17 gennaio.",
+      "publish": false
+    },
+    {
+      "id": "ost1876-sante-catarine-nadal-mes",
+      "reviewStatus": "language_reviewed",
+      "furNormalized": "Da Sante Catarine a Nadâl, un mês biel avuâl.",
+      "itFinal": "Da santa Caterina a Natale, un mese esatto.",
+      "destination": "almanac",
+      "calendarRule": {
+        "type": "date",
+        "day": 25,
+        "month": 11,
+        "priorityOnDate": 1,
+        "fallbackAllowed": false
+      },
+      "duplicateAudit": {
+        "status": "new_distinct"
+      },
+      "evidence": [
+        {
+          "label": "Facsimile Ostermann 1876, p. PDF 31",
+          "kind": "primary"
+        },
+        {
+          "label": "Friuli nel Mondo, novembre 1964",
+          "url": "https://www.friulinelmondo.com/wp-content/uploads/assets/files/anni_60/132-11-1964.pdf",
+          "kind": "independent_attestation"
+        }
+      ],
+      "editorialNote": "Prima voce del 25 novembre; non deve comparire in altri giorni.",
+      "publish": false
+    },
+    {
+      "id": "ost1876-sante-catarine-fred-caretine",
+      "reviewStatus": "language_reviewed",
+      "furNormalized": "Sante Catarine e mene il frêt cu la caretine.",
+      "itFinal": "Santa Caterina porta il freddo con la carretta.",
+      "destination": "almanac",
+      "calendarRule": {
+        "type": "date",
+        "day": 25,
+        "month": 11,
+        "priorityOnDate": 2,
+        "fallbackAllowed": false
+      },
+      "duplicateAudit": {
+        "status": "new_distinct"
+      },
+      "evidence": [
+        {
+          "label": "Facsimile Ostermann 1876, p. PDF 31",
+          "kind": "primary"
+        },
+        {
+          "label": "ParemioRom, repertorio Ostermann",
+          "url": "https://stel.ub.edu/paremio-rom/es/sources/ostermann-valentino-proverbi-friulani-raccolti-dalla-viva-voce-del-popolo?page=6",
+          "kind": "normalized_reference"
+        }
+      ],
+      "editorialNote": "Seconda voce del 25 novembre, ordinata dopo il detto sul mese che separa santa Caterina da Natale.",
+      "publish": false
+    },
+    {
+      "id": "ost1876-fumate-sere-doman",
+      "reviewStatus": "language_reviewed",
+      "furNormalized": "Fumate la sere, bontimp si spere; fumate la doman, la sere al è pantan.",
+      "itFinal": "Nebbia la sera, bel tempo si spera; nebbia al mattino, la sera è fango.",
+      "destination": "almanac",
+      "calendarRule": {
+        "type": "weather_condition",
+        "phenomena": ["fog"],
+        "fallbackAllowed": false
+      },
+      "duplicateAudit": {
+        "status": "new_distinct"
+      },
+      "evidence": [
+        {
+          "label": "Facsimile Ostermann 1876, p. PDF 37",
+          "kind": "primary"
+        },
+        {
+          "label": "Dizionari de Lenghe Furlane, voce timp",
+          "url": "https://dizionarifurlan.eu/headword/timp",
+          "kind": "normalized_reference"
+        }
+      ],
+      "editorialNote": "Non è un riempitivo generale: si usa soltanto quando il contesto meteo segnala nebbia.",
+      "publish": false
+    },
+    {
+      "id": "ost1876-ploe-misdi-dut-di",
+      "reviewStatus": "language_reviewed",
+      "furNormalized": "Ploe di misdì, ploe dut il dì.",
+      "itFinal": "Pioggia di mezzogiorno, pioggia tutto il giorno.",
+      "destination": "almanac",
+      "calendarRule": {
+        "type": "weather_condition",
+        "phenomena": ["rain_midday"],
+        "fallbackAllowed": false
+      },
+      "duplicateAudit": {
+        "status": "new_distinct"
+      },
+      "evidence": [
+        {
+          "label": "Facsimile Ostermann 1876, p. PDF 37",
+          "kind": "primary"
+        },
+        {
+          "label": "ParemioRom, proverbio friulano sul mezzogiorno",
+          "url": "https://stel.ub.edu/paremio-rom/en/chronology/subcategories/day-one-day?order=body&page=7&sort=desc",
+          "kind": "normalized_reference"
+        }
+      ],
+      "editorialNote": "Mostrabile soltanto con pioggia prevista o osservata nelle ore centrali; mai come rotazione casuale.",
+      "publish": false
+    },
+    {
+      "id": "ost1876-ploe-stagion-tesaur",
+      "reviewStatus": "language_reviewed",
+      "furNormalized": "E vâl plui une ploe te sô stagjon che un tesaur busaron.",
+      "itFinal": "Vale più una pioggia nella sua stagione che un tesoro ingannevole.",
+      "destination": "almanac",
+      "calendarRule": {
+        "type": "general",
+        "bucket": "agriculture",
+        "fallbackAllowed": true
+      },
+      "duplicateAudit": {
+        "status": "new_distinct"
+      },
+      "evidence": [
+        {
+          "label": "Facsimile Ostermann 1876, p. PDF 38",
+          "kind": "primary"
+        },
+        {
+          "label": "ParemioRom, repertorio Ostermann",
+          "url": "https://stel.ub.edu/paremio-rom/en/sources/ostermann-valentino-proverbi-friulani-raccolti-dalla-viva-voce-del-popolo",
+          "kind": "normalized_reference"
+        }
+      ],
+      "editorialNote": "Detto agricolo generale; non cita una data, una festa o una stagione incompatibile con il giorno corrente.",
+      "publish": false
+    },
+    {
+      "id": "ost1876-lune-pis-marinar",
+      "reviewStatus": "merge_existing",
+      "furNormalized": "Lune sentade, marinâr in pîts; lune in pîts, marinâr sentât.",
+      "itFinal": "Luna coricata, marinaio in piedi; luna in piedi, marinaio seduto.",
+      "destination": "discover",
+      "calendarRule": {
+        "type": "moon_shape",
+        "fallbackAllowed": false
+      },
+      "mergeExistingId": "ostermann-lune-sentade",
+      "duplicateAudit": {
+        "status": "merge_existing",
+        "existingId": "ostermann-lune-sentade"
+      },
+      "evidence": [
+        {
+          "label": "Facsimile Ostermann 1876, p. PDF 38",
+          "kind": "primary"
+        },
+        {
+          "label": "Repertorio locale già curato",
+          "kind": "existing_catalogue"
+        }
+      ],
+      "editorialNote": "Non si crea un secondo proverbio. Il testo consolida il record esistente e resta fuori dalla card Luna dell'Almanacco.",
+      "publish": false
+    },
+    {
+      "id": "ost1876-vints-vin-pan",
+      "reviewStatus": "language_reviewed",
+      "furNormalized": "Siroc e tramontan a menin vin e pan; buere e garbin a cjolin pan e vin.",
+      "itFinal": "Scirocco e tramontana portano vino e pane; bora e garbino portano via pane e vino.",
+      "destination": "almanac",
+      "calendarRule": {
+        "type": "weather_condition",
+        "phenomena": ["sirocco", "tramontana", "bora", "garbino"],
+        "fallbackAllowed": false
+      },
+      "duplicateAudit": {
+        "status": "new_distinct"
+      },
+      "evidence": [
+        {
+          "label": "Facsimile Ostermann 1876, p. PDF 40",
+          "kind": "primary"
+        },
+        {
+          "label": "ParemioRom, nomi dei venti",
+          "url": "https://stel.ub.edu/paremio-rom/es/meteorolog%C3%ADa/subcategor%C3%ADas/siroco-sirocco-siroc-jaloque-xaloc-viento-del-sudeste?page=1",
+          "kind": "normalized_reference"
+        }
+      ],
+      "editorialNote": "Usabile soltanto quando il vento locale è coerente; in assenza del collegamento meteo resta in archivio.",
+      "publish": false
+    },
+    {
+      "id": "ost1876-pasche-cun-foe",
+      "reviewStatus": "language_reviewed",
+      "furNormalized": "Voie o no voie, Pasche e ven cun fuee.",
+      "itFinal": "Che si voglia o no, Pasqua arriva con le foglie.",
+      "destination": "almanac",
+      "calendarRule": {
+        "type": "movable_feast",
+        "feast": "easter",
+        "offsetDays": 0,
+        "fallbackAllowed": false
+      },
+      "duplicateAudit": {
+        "status": "new_distinct"
+      },
+      "evidence": [
+        {
+          "label": "Facsimile Ostermann 1876, p. PDF 41; nota: foe per fuee",
+          "kind": "primary"
+        },
+        {
+          "label": "Testimonianza orale pubblicata da Teche Friulane",
+          "url": "https://www.techefriulane.it/download.aspx?s=DTMI_RTIYIlDKL8dZZ-nA3pVg2vpnDcP5bsN8rbgU2cI4I71T5OhyHRoaidqg72f0",
+          "kind": "independent_attestation"
+        }
+      ],
+      "editorialNote": "La locuzione voie o no voie è attestata nell'uso moderno e la forma fuee scioglie la nota lessicale del facsimile. Solo nel giorno di Pasqua.",
+      "publish": false
+    }
+  ]
+}

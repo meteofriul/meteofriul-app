@@ -1,0 +1,185 @@
+{
+  "schemaVersion": 1,
+  "batchId": "ud-go-enrichment-milestones-02",
+  "snapshotDate": "2026-09-01",
+  "purpose": "Ricerca di quattro tappe per San Daniele del Friuli e Staranzano; revisione FUR e promozione sono documentate separatamente.",
+  "runtimeIntegration": false,
+  "initialTotalMilestones": 441,
+  "editorialPolicy": {
+    "sourceEvidenceRequired": true,
+    "ambiguousDatesExcluded": true,
+    "italianCopyStatus": "editorial_draft",
+    "friulianCopyStatus": "pending_assisted_review",
+    "readyForUi": false
+  },
+  "excludedClaims": [
+    {
+      "municipality": "San Daniele del Friuli",
+      "claim": "Il Prosciutto di San Daniele nasce nel 1961.",
+      "reason": "La fonte data al 1961 l'istituzione del Consorzio, non l'origine del prodotto.",
+      "sourceUrl": "https://prosciuttosandaniele.it/il-consorzio/il-consorzio/"
+    },
+    {
+      "municipality": "San Daniele del Friuli",
+      "claim": "Il Consorzio è il primo consorzio di salumi in Italia.",
+      "reason": "La fonte del Consorzio usa questo primato, ma la tappa conserva soltanto l'istituzione datata e non riprende una qualificazione promozionale senza un riscontro indipendente.",
+      "sourceUrl": "https://prosciuttosandaniele.it/il-consorzio/il-consorzio/"
+    },
+    {
+      "municipality": "Staranzano",
+      "claim": "Il Comune di Staranzano nasce nel 1817.",
+      "reason": "La fonte colloca la nascita del Comune nell'intervallo 1817-1820; non viene scelta arbitrariamente una singola annualità.",
+      "sourceUrl": "https://www.comune.staranzano.go.it/it/novita-76815/notizie-76816/staranzano-storia-e-territorio-del-paese-82839"
+    },
+    {
+      "municipality": "Staranzano",
+      "claim": "Staranzano viene aggregata a Monfalcone nel 1867.",
+      "reason": "La fonte data al 1867 la richiesta di aggregazione per motivi economici, ma non esplicita in quella frase la data dell'atto che la accolse.",
+      "sourceUrl": "https://www.comune.staranzano.go.it/it/novita-76815/notizie-76816/staranzano-storia-e-territorio-del-paese-82839"
+    }
+  ],
+  "editorialOmissions": [
+    {
+      "municipality": "San Daniele del Friuli",
+      "year": 1970,
+      "claim": "Lo Stato italiano riconosce il Prosciutto di San Daniele come prodotto a Denominazione di Origine con la legge n. 507.",
+      "decision": "source_verified_not_promoted",
+      "reason": "Il fatto resta documentato, ma non viene aggiunto per evitare due riconoscimenti consecutivi nella timeline: la tappa DOP del 1996 rappresenta meglio il passaggio europeo.",
+      "sourceUrl": "https://prosciuttosandaniele.it/il-consorzio/il-consorzio/"
+    }
+  ],
+  "municipalities": [
+    {
+      "istatCode": "030099",
+      "municipality": "San Daniele del Friuli",
+      "province": "UD",
+      "currentMilestoneCount": 1,
+      "currentMilestoneIds": [
+        "san-daniele-guarneriana"
+      ],
+      "decision": "source_verified_it_fur_pending",
+      "candidates": [
+        {
+          "id": "san-daniele-consorzio-prosciutto-1961",
+          "year": 1961,
+          "label": {
+            "it": "Viene istituito il Consorzio del Prosciutto di San Daniele",
+            "fur": null
+          },
+          "evidence": "Il Consorzio documenta la propria istituzione nel 1961 a opera di cittadini di San Daniele del Friuli, produttori, imprenditori e altre personalità della comunità.",
+          "source": {
+            "label": "Consorzio del Prosciutto di San Daniele - Il Consorzio",
+            "type": "cultural_institution",
+            "url": "https://prosciuttosandaniele.it/il-consorzio/il-consorzio/",
+            "checkedAt": "2026-09-01"
+          },
+          "duplicateReview": {
+            "exactDuplicate": false,
+            "relatedRecordIds": [
+              "san-daniele-guarneriana",
+              "institutional-archive-ago-osso-prosciutto"
+            ],
+            "note": "L'istituzione del Consorzio è distinta dal lascito Guarneriano e dalla scheda d'Archivio sugli aghi d'osso usati per valutare la stagionatura dei prosciutti."
+          }
+        },
+        {
+          "id": "san-daniele-prosciutto-dop-1996",
+          "year": 1996,
+          "label": {
+            "it": "L’Unione europea riconosce il Prosciutto di San Daniele come DOP",
+            "fur": null
+          },
+          "evidence": "La stessa fonte colloca nel 1996 il riconoscimento del Prosciutto di San Daniele come Denominazione di Origine Protetta da parte dell'Unione europea.",
+          "source": {
+            "label": "Consorzio del Prosciutto di San Daniele - Il Consorzio",
+            "type": "cultural_institution",
+            "url": "https://prosciuttosandaniele.it/il-consorzio/il-consorzio/",
+            "checkedAt": "2026-09-01"
+          },
+          "duplicateReview": {
+            "exactDuplicate": false,
+            "relatedRecordIds": [
+              "san-daniele-consorzio-prosciutto-1961",
+              "institutional-archive-ago-osso-prosciutto"
+            ],
+            "note": "Il riconoscimento DOP europeo è distinto dall'istituzione del Consorzio e dalla lavorazione storica raccontata nell'Archivio."
+          }
+        }
+      ]
+    },
+    {
+      "istatCode": "031023",
+      "municipality": "Staranzano",
+      "province": "GO",
+      "currentMilestoneCount": 1,
+      "currentMilestoneIds": [
+        "staranzano-isonzo-mouth-reserve"
+      ],
+      "decision": "source_verified_it_fur_pending",
+      "candidates": [
+        {
+          "id": "staranzano-comune-amministrativo-1848",
+          "year": 1848,
+          "label": {
+            "it": "Staranzano diventa Comune anche sul piano amministrativo",
+            "fur": null
+          },
+          "evidence": "La storia pubblicata dal Comune afferma che nel 1848, dopo i moti viennesi del 1848-1849, Staranzano ottenne di diventare Comune anche sul piano amministrativo.",
+          "source": {
+            "label": "Comune di Staranzano - Storia e territorio del paese",
+            "type": "official_municipality",
+            "url": "https://www.comune.staranzano.go.it/it/novita-76815/notizie-76816/staranzano-storia-e-territorio-del-paese-82839",
+            "checkedAt": "2026-09-01"
+          },
+          "supportingSources": [
+            {
+              "label": "Comune di Staranzano - PAESC",
+              "type": "official_municipality",
+              "url": "https://www.comune.staranzano.go.it/media/files/md/031023/03594_PAESC_STARANZANO_DEFINITIVO-SIGNED.PDF",
+              "checkedAt": "2026-09-01"
+            }
+          ],
+          "duplicateReview": {
+            "exactDuplicate": false,
+            "relatedRecordIds": [
+              "staranzano-autonomia-comunale-1907",
+              "staranzano-isonzo-mouth-reserve"
+            ],
+            "note": "Il riconoscimento amministrativo del 1848 precede la successiva aggregazione a Monfalcone e il recupero dell'autonomia; non coincide con la Riserva del 1996."
+          }
+        },
+        {
+          "id": "staranzano-autonomia-comunale-1907",
+          "year": 1907,
+          "label": {
+            "it": "Staranzano si separa definitivamente da Monfalcone e riacquista l'autonomia comunale",
+            "fur": null
+          },
+          "evidence": "La pagina comunale documenta nel 1907 la separazione definitiva da Monfalcone e il recupero dell'autonomia mediante decreto dell'imperatore Francesco Giuseppe.",
+          "source": {
+            "label": "Comune di Staranzano - Storia e territorio del paese",
+            "type": "official_municipality",
+            "url": "https://www.comune.staranzano.go.it/it/novita-76815/notizie-76816/staranzano-storia-e-territorio-del-paese-82839",
+            "checkedAt": "2026-09-01"
+          },
+          "supportingSources": [
+            {
+              "label": "Comune di Staranzano - PAESC",
+              "type": "official_municipality",
+              "url": "https://www.comune.staranzano.go.it/media/files/md/031023/03594_PAESC_STARANZANO_DEFINITIVO-SIGNED.PDF",
+              "checkedAt": "2026-09-01"
+            }
+          ],
+          "duplicateReview": {
+            "exactDuplicate": false,
+            "relatedRecordIds": [
+              "staranzano-comune-amministrativo-1848",
+              "staranzano-isonzo-mouth-reserve"
+            ],
+            "note": "Il recupero dell'autonomia nel 1907 è distinto dal precedente riconoscimento amministrativo e dall'istituzione della Riserva nel 1996."
+          }
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,242 @@
+{
+  "schemaVersion": 1,
+  "generatedAt": "2026-07-14",
+  "purpose": "Ventiduesimo lotto Scopri IT: nove memorie territoriali verificate, scelte dal residuo non ancora pubblicato senza abbassare la soglia editoriale. Quattro record aprono giornate prive di una memoria primaria e cinque arricchiscono giornate gia coperte come memorie secondarie. I record restano bloccati fino alla revisione FUR.",
+  "policy": {
+    "readyForUi": false,
+    "furDeferred": true,
+    "dateFormat": "DD-MM",
+    "requiresFinalItalianApproval": true,
+    "excludeDeaths": true,
+    "excludeGenericPoliticalProfiles": true,
+    "excludeGenericProfessionalProfiles": true,
+    "rejectSemanticDuplicates": true,
+    "rejectUncertainCalendarDates": true,
+    "sourceFirst": true,
+    "publishAfterFurOnly": true,
+    "allowMultipleMemoriesPerDate": true,
+    "secondaryOrderedByPriority": true
+  },
+  "summary": {
+    "keepDaily": 9,
+    "primary": 4,
+    "secondary": 5,
+    "hold": 10,
+    "excluded": 1,
+    "canonicalPrimaryDatesBefore": 203,
+    "canonicalPrimaryDatesAfter": 207,
+    "currentVisiblePrimaryCoverage": 195
+  },
+  "keepDaily": [
+    {
+      "id": "master-fvg-28-09-Q93637502",
+      "wikidataId": "Q93637502",
+      "dateIt": "28-09",
+      "year": 2001,
+      "municipality": "Cassacco",
+      "locality": "Raspano",
+      "province": "UD",
+      "canonicalCategory": "territorio",
+      "dailyRole": "secondary",
+      "priority": 72,
+      "titleIt": "La torbiera Cichinot diventa biotopo regionale",
+      "copyIt": "Il 28 settembre 2001 la Regione istituisce a Cassacco il biotopo della Torbiera Cichinot. La zona umida conserva specie rare e una preziosa traccia degli antichi bacini glaciali friulani.",
+      "sourceLabel": "Regione Autonoma Friuli Venezia Giulia",
+      "sourceUrl": "https://www.regione.fvg.it/rafvg/cms/RAFVG/ambiente-territorio/tutela-ambiente-gestione-risorse-naturali/FOGLIA214/FOGLIA24/articolo.html",
+      "sourceStatus": "pass",
+      "readyForUi": false
+    },
+    {
+      "id": "master-fvg-19-09-Q498934",
+      "wikidataId": "Q498934",
+      "dateIt": "18-09",
+      "year": 1938,
+      "municipality": "Fogliano Redipuglia",
+      "locality": "Redipuglia",
+      "province": "GO",
+      "canonicalCategory": "storia",
+      "dailyRole": "secondary",
+      "priority": 93,
+      "titleIt": "L'inaugurazione del Sacrario di Redipuglia",
+      "copyIt": "Il 18 settembre 1938 viene inaugurato a Redipuglia il grande Sacrario militare, progettato da Giovanni Greppi con Giannino Castiglioni e destinato a custodire oltre centomila caduti della Prima guerra mondiale.",
+      "sourceLabel": "Regione Autonoma Friuli Venezia Giulia - Piano paesaggistico regionale",
+      "sourceUrl": "https://webgiscarnia.regione.fvg.it/ppr/beni_culturali/2715_sacrario_militare_di_redipuglia.pdf",
+      "sourceStatus": "pass",
+      "readyForUi": false
+    },
+    {
+      "id": "master-fvg-27-02-Q1784964",
+      "wikidataId": "Q1784964",
+      "dateIt": "27-02",
+      "year": 2002,
+      "municipality": "Tarvisio",
+      "locality": "Tarvisio, Sella Nevea e Ravascletto",
+      "province": "UD",
+      "canonicalCategory": "sport",
+      "dailyRole": "secondary",
+      "priority": 70,
+      "titleIt": "I Mondiali juniores di sci sulle montagne friulane",
+      "copyIt": "Il 27 febbraio 2002 Tarvisio ospita le discese dei Mondiali juniores di sci alpino. L'edizione friulana coinvolge anche Sella Nevea, nel comune di Chiusaforte, e Ravascletto.",
+      "sourceLabel": "Federazione Internazionale Sci e Snowboard",
+      "sourceUrl": "https://www.fis-ski.com/DB/alpine-skiing/calendar-results.html?category_search=WJC&seasoncode_search=2002",
+      "sourceStatus": "pass",
+      "readyForUi": false
+    },
+    {
+      "id": "master-fvg-23-09-Q922458",
+      "wikidataId": "Q922458",
+      "dateIt": "23-09",
+      "year": 1971,
+      "municipality": "Gorizia",
+      "locality": "Gorizia",
+      "province": "GO",
+      "canonicalCategory": "sport",
+      "dailyRole": "secondary",
+      "priority": 68,
+      "titleIt": "Gli Europei di pallavolo arrivano a Gorizia",
+      "copyIt": "Il 23 settembre 1971 Gorizia ospita due gironi della fase preliminare degli Europei femminili di pallavolo. Nella giornata inaugurale l'Italia supera l'Austria per 3-0.",
+      "sourceLabel": "Confederazione Europea di Pallavolo",
+      "sourceUrl": "https://www-old.cev.eu/Competition-Area/CompetitionView.aspx?ID=300",
+      "sourceStatus": "pass",
+      "readyForUi": false
+    },
+    {
+      "id": "master-fvg-27-05-Q1477177",
+      "wikidataId": "Q1477177",
+      "dateIt": "27-05",
+      "year": 1934,
+      "municipality": "Trieste",
+      "locality": "Trieste",
+      "province": "TS",
+      "canonicalCategory": "sport",
+      "dailyRole": "primary",
+      "priority": 84,
+      "titleIt": "Trieste ospita il Mondiale di calcio del 1934",
+      "copyIt": "Il 27 maggio 1934 Trieste ospita Cecoslovacchia-Romania, unico incontro del Mondiale disputato in citta. I cecoslovacchi vincono 2-1 e proseguono il cammino fino alla finale.",
+      "sourceLabel": "FIFA",
+      "sourceUrl": "https://www.fifa.com/it/tournaments/mens/worldcup/articles/litalia-campione-in-casa-la-vittoria-del-mondiale-nel-1934-nel-segno-di",
+      "sourceStatus": "pass",
+      "readyForUi": false
+    },
+    {
+      "id": "master-fvg-31-01-Q1147461",
+      "wikidataId": "Q1147461",
+      "dateIt": "31-01",
+      "year": 1993,
+      "municipality": "Azzano Decimo",
+      "locality": "Corva",
+      "province": "PN",
+      "canonicalCategory": "sport",
+      "dailyRole": "secondary",
+      "priority": 74,
+      "titleIt": "Il mondiale di ciclocross a Corva",
+      "copyIt": "Il 31 gennaio 1993 Corva di Azzano Decimo ospita la gara professionisti dei Mondiali di ciclocross. Il francese Dominique Arnould conquista il titolo davanti a Mike Kluge e Wim de Vos.",
+      "sourceLabel": "Unione Ciclistica Internazionale",
+      "sourceUrl": "https://www.uci.org/article/all-the-podiums-in-the-history-of-the-uci-cyclo-cross-world-championships/5w1WZlPlmPNt3rPvoCfxvA",
+      "sourceStatus": "pass",
+      "readyForUi": false
+    },
+    {
+      "id": "master-fvg-18-10-Q1086620",
+      "wikidataId": "Q1086620",
+      "dateIt": "18-10",
+      "year": 1992,
+      "municipality": "Trieste",
+      "locality": "Valmaura",
+      "province": "TS",
+      "canonicalCategory": "sport",
+      "dailyRole": "primary",
+      "priority": 78,
+      "titleIt": "La prima partita allo Stadio Nereo Rocco",
+      "copyIt": "Il 18 ottobre 1992 il nuovo Stadio Nereo Rocco di Trieste ospita la sua prima partita: Triestina-Vis Pesaro, terminata 0-1. Comincia cosi la storia sportiva del principale impianto calcistico regionale.",
+      "sourceLabel": "U.S. Triestina Calcio 1918",
+      "sourceUrl": "https://www.unionetriestina.it/societa/stadio/stadio.htm",
+      "sourceStatus": "pass",
+      "readyForUi": false
+    },
+    {
+      "id": "master-fvg-22-12-Q246149",
+      "wikidataId": "Q246149",
+      "dateIt": "22-12",
+      "year": 1913,
+      "municipality": "Trieste",
+      "locality": "Trieste",
+      "province": "TS",
+      "canonicalCategory": "sport",
+      "dailyRole": "primary",
+      "priority": 88,
+      "titleIt": "Giorgio Oberweger, il primo podio olimpico italiano nei lanci",
+      "copyIt": "Il 22 dicembre 1913 nasce a Trieste Giorgio Oberweger, bronzo nel disco ai Giochi di Berlino del 1936. E la prima medaglia olimpica italiana nei lanci; in seguito guida la nazionale di atletica e lavora nella federazione internazionale.",
+      "sourceLabel": "CONI - Italia Team",
+      "sourceUrl": "https://www.coni.it/it/italia-team/olimpiadi/scheda_atleta/medagliato/38%3AGIORGIO_OBERWEGER.html",
+      "sourceStatus": "pass",
+      "readyForUi": false
+    },
+    {
+      "id": "master-fvg-19-10-Q17993373",
+      "wikidataId": "Q17993373",
+      "dateIt": "19-10",
+      "year": 1912,
+      "municipality": "Udine",
+      "locality": "Cussignacco",
+      "province": "UD",
+      "canonicalCategory": "storia",
+      "dailyRole": "primary",
+      "priority": 92,
+      "titleIt": "Mario Foschiani e la Resistenza friulana",
+      "copyIt": "Il 19 ottobre 1912 nasce a Cussignacco Mario Foschiani, operaio antifascista e combattente nelle Brigate internazionali in Spagna. Con il nome di battaglia Guerra diventa commissario della Divisione Garibaldi Carnia; catturato e torturato, viene fucilato a Udine nel 1945.",
+      "sourceLabel": "Dizionario della Resistenza in Friuli Venezia Giulia",
+      "sourceUrl": "https://www.dizionarioresistenzafvg.it/team/foschiani-mario-guerra/",
+      "sourceStatus": "pass",
+      "readyForUi": false
+    }
+  ],
+  "hold": [
+    {
+      "id": "profile-copy-0301-nico-naldini",
+      "reason": "Profilo culturale valido, ma resta sotto la soglia di rilievo generale gia stabilita per la memoria principale."
+    },
+    {
+      "id": "profile-hold-0113-enrico-paoli",
+      "reason": "Profilo importante nello scacchismo, ma troppo specialistico per la rubrica giornaliera principale."
+    },
+    {
+      "id": "profile-hold-1024-nello-cristianini",
+      "reason": "Rilievo scientifico adeguato, ma manca una fonte istituzionale per il giorno esatto di nascita."
+    },
+    {
+      "id": "master-fvg-12-03-Q15725985",
+      "reason": "I dati anagrafici di Vittorio Cramer sono conflittuali e non sostenuti da una fonte autorevole."
+    },
+    {
+      "id": "master-fvg-17-12-Q3659267",
+      "reason": "Manca una fonte istituzionale o archivistica diretta per data e vicenda di Carlo Dell'Antonio."
+    },
+    {
+      "id": "master-fvg-20-09-Q3709940",
+      "reason": "Il discorso fascista di Udine richiede una contestualizzazione storica incompatibile con una memoria breve."
+    },
+    {
+      "id": "master-fvg-06-06-Q3882196",
+      "reason": "L'omicidio di Antonio Santoro richiede una scheda storica dedicata, non una memoria breve."
+    },
+    {
+      "id": "master-fvg-15-05-Q85859453",
+      "reason": "Il 15 maggio identifica l'apertura milanese della mostra, non una data FVG verificata."
+    },
+    {
+      "id": "master-fvg-12-09-Q3744190",
+      "reason": "La data della tappa di Sistiana non e confermata da una fonte istituzionale."
+    },
+    {
+      "id": "master-fvg-27-08-Q56326594",
+      "reason": "La tragedia ferroviaria di Beano resta piu adatta all'archivio storico che alla memoria giornaliera."
+    }
+  ],
+  "excluded": [
+    {
+      "id": "master-fvg-05-02-Q17284902",
+      "reason": "Napoleone Cozzi e gia presente nel database canonico con la stessa data e lo stesso contenuto."
+    }
+  ]
+}

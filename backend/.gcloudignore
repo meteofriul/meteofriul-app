@@ -1,0 +1,11 @@
+.gcloudignore
+.git
+.gitignore
+venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+tests/
+app/events/cache/
+README.md
+requirements-dev.txt

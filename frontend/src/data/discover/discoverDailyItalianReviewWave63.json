@@ -1,0 +1,69 @@
+{
+  "schemaVersion": 1,
+  "generatedAt": "2026-07-20",
+  "purpose": "Sessantatreesimo lotto Scopri IT: una nuova Memoria principale per il 13 maggio, recuperata nella ricerca source-first sui giorni ancora scoperti. La pubblicazione resta bloccata fino alla revisione FUR.",
+  "policy": {
+    "readyForUi": false,
+    "furDeferred": true,
+    "dateFormat": "DD-MM",
+    "requiresFinalItalianApproval": true,
+    "excludeDeaths": true,
+    "excludeGenericPoliticalProfiles": true,
+    "excludeGenericProfessionalProfiles": true,
+    "excludeSportsOnlyProfiles": true,
+    "rejectBirthplaceOnlyProfiles": true,
+    "rejectSemanticDuplicates": true,
+    "rejectUncertainCalendarDates": true,
+    "requireOneCanonicalSource": true,
+    "sourceFirst": true,
+    "publishAfterFurOnly": true,
+    "allowMultipleMemoriesPerDate": true,
+    "doNotPromoteToPrimaryForCoverageOnly": true
+  },
+  "summary": {
+    "reviewed": 2,
+    "keepDaily": 1,
+    "primary": 1,
+    "secondary": 0,
+    "hold": 1,
+    "excluded": 0,
+    "canonicalPrimaryDatesBefore": 312,
+    "canonicalPrimaryDatesAfter": 313,
+    "currentVisiblePrimaryCoverage": 312
+  },
+  "keepDaily": [
+    {
+      "id": "source-gap-13-05-girolamo-ortis-1773",
+      "sourceEntityId": "comune-vito-dasio-girolamo-ortis-1773",
+      "wikidataId": "Q3768966",
+      "dateIt": "13-05",
+      "year": 1773,
+      "municipality": "Vito d'Asio",
+      "locality": "Vito d'Asio",
+      "province": "PN",
+      "canonicalCategory": "letteratura",
+      "dailyRole": "primary",
+      "priority": 94,
+      "titleIt": "Girolamo Ortis, dal Friuli al romanzo di Foscolo",
+      "copyIt": "Il 13 maggio 1773 nasce a Vito d'Asio Girolamo Ortis, studente di medicina. La sua vicenda reale ispira Ugo Foscolo nella costruzione del protagonista delle Ultime lettere di Jacopo Ortis, legando un paese della Val d'Arzino a uno dei romanzi più noti della letteratura italiana.",
+      "sourceLabel": "Comune di Vito d'Asio - La voce della Val d'Arzino",
+      "sourceUrl": "https://www.comune.vitodasio.pn.it/media/files/093049/attachment/LA_VOCE_Dic.2010_13mb.pdf",
+      "sourceStatus": "pass",
+      "readyForUi": false
+    }
+  ],
+  "hold": [
+    {
+      "id": "source-gap-10-05-assedio-aquileia-238",
+      "dateIt": "10-05",
+      "year": 238,
+      "titleIt": "L'assedio di Aquileia di Massimino il Trace",
+      "decision": "hold_exact_date_unverified",
+      "reason": "Fondazione Aquileia conferma l'assedio e l'anno 238, ma le fonti istituzionali consultate non attestano il 10 maggio. Il fatto resta adatto all'archivio storico, non alla Memoria exact-date del 10 maggio.",
+      "sourceLabel": "Fondazione Aquileia - Aquileia, città di frontiera",
+      "sourceUrl": "https://www.fondazioneaquileia.it/files/allegati/aquileia_citta_di_frontiera.pdf",
+      "readyForUi": false
+    }
+  ],
+  "excluded": []
+}

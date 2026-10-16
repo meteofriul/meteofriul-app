@@ -1,0 +1,372 @@
+{
+  "schemaVersion": 1,
+  "purpose": "Mappa di collegamento tra estratti granulari Ostermann e record gia curati in ostermannCulturalDiscover.json. Non e' letta dalla UI.",
+  "rules": [
+    "Usare questa mappa per evitare duplicazioni tra estratti nuovi e corpus curato precedente.",
+    "Un estratto puo collegarsi a piu record curati se la pagina contiene piu micro-temi.",
+    "Il collegamento non promuove automaticamente l'estratto a UI-ready.",
+    "Il testo finale resta nel corpus curato quando il record e' gia approvato."
+  ],
+  "records": [
+    {
+      "extractId": "ost-extract-031-orione-carnia",
+      "sourcePage": 31,
+      "curatedRecordIds": ["ost-0055-orione-sirio-pleiadi"],
+      "relation": "same_source_page",
+      "confidence": "medium",
+      "notes": "Estratto piu granulare su Orione dentro record curato piu ampio."
+    },
+    {
+      "extractId": "ost-extract-031-sirio-canicola",
+      "sourcePage": 31,
+      "curatedRecordIds": ["ost-0055-orione-sirio-pleiadi"],
+      "relation": "same_source_page",
+      "confidence": "medium",
+      "notes": "Estratto piu granulare su Sirio/Canicola dentro record curato piu ampio."
+    },
+    {
+      "extractId": "ost-extract-033-stelle-pronostici",
+      "sourcePage": 33,
+      "curatedRecordIds": ["ost-0031-stelle-burrasca"],
+      "relation": "same_theme",
+      "confidence": "high",
+      "notes": "Stelle e burrasca gia coperte dal corpus curato."
+    },
+    {
+      "extractId": "ost-extract-044-luna-lavori-campi",
+      "sourcePage": 44,
+      "curatedRecordIds": ["ost-0011-luna-semine", "ost-0019-luna-vendemmia-vino"],
+      "relation": "split_source_page",
+      "confidence": "high",
+      "notes": "Pagina divisa tra semine e vendemmia/vino nel corpus curato."
+    },
+    {
+      "extractId": "ost-extract-094-lessico-vento",
+      "sourcePage": 94,
+      "curatedRecordIds": ["ost-0005-lessico-venti"],
+      "relation": "same_theme",
+      "confidence": "high",
+      "notes": "Lessico dei venti gia curato."
+    },
+    {
+      "extractId": "ost-extract-097-vento-date",
+      "sourcePage": 97,
+      "curatedRecordIds": ["ost-0008-vento-aloni-neve"],
+      "relation": "same_source_page",
+      "confidence": "medium",
+      "notes": "Record curato piu ampio su vento, aloni e neve."
+    },
+    {
+      "extractId": "ost-extract-100-nubi-pioggia",
+      "sourcePage": 100,
+      "curatedRecordIds": ["ost-0001-nubi-pioggia"],
+      "relation": "same_theme",
+      "confidence": "high",
+      "notes": "Nubi e pioggia gia curati."
+    },
+    {
+      "extractId": "ost-extract-101-sole-rosso",
+      "sourcePage": 101,
+      "curatedRecordIds": ["ost-0023-gallo-sole-rosso-nebbia"],
+      "relation": "same_theme",
+      "confidence": "high",
+      "notes": "Sole rosso e nebbia gia coperti dal record su gallo e sole rosso."
+    },
+    {
+      "extractId": "ost-extract-102-colore-luna",
+      "sourcePage": 102,
+      "curatedRecordIds": ["ost-0006-colore-luna-pronostici"],
+      "relation": "same_theme",
+      "confidence": "high",
+      "notes": "Colore della luna gia curato."
+    },
+    {
+      "extractId": "ost-extract-126-grandine-temporali",
+      "sourcePage": 126,
+      "curatedRecordIds": ["ost-0007-grandine-temporale"],
+      "relation": "same_theme",
+      "confidence": "high",
+      "notes": "Tuoni, pioggia e grandine gia curati."
+    },
+    {
+      "extractId": "ost-extract-238-fuochi-san-giovanni-pietro",
+      "sourcePage": 238,
+      "curatedRecordIds": ["ost-0004-san-giovanni"],
+      "relation": "same_theme",
+      "confidence": "high",
+      "notes": "Fuochi di San Giovanni gia curati."
+    },
+    {
+      "extractId": "ost-extract-029-canicola-stagione",
+      "sourcePage": 29,
+      "curatedRecordIds": ["ost-0030-canicola-stagione"],
+      "relation": "same_theme",
+      "confidence": "high",
+      "notes": "Canicola gia curata."
+    },
+    {
+      "extractId": "ost-extract-049-primo-martedi-luna",
+      "sourcePage": 49,
+      "curatedRecordIds": ["ost-0014-proverbi-lunari-pioggia"],
+      "relation": "same_source_page",
+      "confidence": "high",
+      "notes": "Proverbi lunari e pioggia gia curati."
+    },
+    {
+      "extractId": "ost-extract-054-santi-freddo-febbraio",
+      "sourcePage": 54,
+      "curatedRecordIds": ["ost-0035-freddo-santi-temperatura"],
+      "relation": "same_theme",
+      "confidence": "high",
+      "notes": "Santi del freddo gia curati."
+    },
+    {
+      "extractId": "ost-extract-060-santi-vendemmia",
+      "sourcePage": 60,
+      "curatedRecordIds": ["ost-0032-santi-estivi-vendemmie"],
+      "relation": "same_theme",
+      "confidence": "high",
+      "notes": "Santi estivi e vendemmie gia curati."
+    },
+    {
+      "extractId": "ost-extract-061-mesais-calende",
+      "sourcePage": 61,
+      "curatedRecordIds": ["ost-0033-mesais-calende"],
+      "relation": "same_theme",
+      "confidence": "high",
+      "notes": "Mesais e calende gia curati."
+    },
+    {
+      "extractId": "ost-extract-063-san-zuan-sant-egidi",
+      "sourcePage": 63,
+      "curatedRecordIds": ["ost-0034-san-giovanni-sant-egidio"],
+      "relation": "same_theme",
+      "confidence": "high",
+      "notes": "San Giovanni e Sant'Egidio gia curati."
+    },
+    {
+      "extractId": "ost-extract-104-monti-cappello-nubi",
+      "sourcePage": 104,
+      "curatedRecordIds": ["ost-0024-monti-col-cappello", "ost-0025-rane-vacche-pioggia"],
+      "relation": "split_source_page",
+      "confidence": "high",
+      "notes": "Pagina divisa tra monti col cappello e segnali animali."
+    },
+    {
+      "extractId": "ost-extract-130-neve-pane",
+      "sourcePage": 130,
+      "curatedRecordIds": ["ost-0041-neve-abbondanza"],
+      "relation": "same_theme",
+      "confidence": "high",
+      "notes": "Sotto la neve il pane gia curato."
+    },
+    {
+      "extractId": "ost-extract-131-vespe-neve",
+      "sourcePage": 131,
+      "curatedRecordIds": ["ost-0042-vespe-neve-inverno"],
+      "relation": "same_theme",
+      "confidence": "high",
+      "notes": "Vespe e neve gia curati."
+    },
+    {
+      "extractId": "ost-extract-131-santi-neve",
+      "sourcePage": 131,
+      "curatedRecordIds": ["ost-0042-vespe-neve-inverno"],
+      "relation": "same_source_page",
+      "confidence": "medium",
+      "notes": "Stessa pagina del record curato su vespe/neve; non equivalente pieno."
+    },
+    {
+      "extractId": "ost-extract-132-neve-brina",
+      "sourcePage": 132,
+      "curatedRecordIds": ["ost-0043-brina-neve-valanghe"],
+      "relation": "same_theme",
+      "confidence": "high",
+      "notes": "Brina, neve e valanghe gia curati con cautela."
+    },
+    {
+      "extractId": "ost-extract-140-arcobaleno-primavera",
+      "sourcePage": 140,
+      "curatedRecordIds": ["ost-0044-arcobaleno-san-marco"],
+      "relation": "same_theme",
+      "confidence": "high",
+      "notes": "Primo arcobaleno di primavera gia curato."
+    },
+    {
+      "extractId": "ost-extract-040-luna-calendario-popolare",
+      "sourcePage": 40,
+      "curatedRecordIds": ["ost-0002-luna-lunari"],
+      "relation": "same_theme",
+      "confidence": "high",
+      "notes": "La luna dell'almanacco gia curata."
+    },
+    {
+      "extractId": "ost-extract-043-luna-fieno-viti-legna",
+      "sourcePage": 43,
+      "curatedRecordIds": ["ost-0009-luna-lavori-agricoli", "ost-0010-luna-settembre"],
+      "relation": "split_source_page",
+      "confidence": "high",
+      "notes": "Pagina divisa tra lavori agricoli e luna di settembre."
+    },
+    {
+      "extractId": "ost-extract-059-candelora-pasqua-ascensione",
+      "sourcePage": 59,
+      "curatedRecordIds": ["ost-0056-candelora-inverno"],
+      "relation": "same_theme",
+      "confidence": "medium",
+      "notes": "Candelora gia curata; estratto piu ampio include Pasqua e Ascensione."
+    },
+    {
+      "extractId": "ost-extract-068-fumo-midili",
+      "sourcePage": 68,
+      "curatedRecordIds": ["ost-0015-fumo-midili"],
+      "relation": "same_theme",
+      "confidence": "high",
+      "notes": "Fumo del Midili gia curato."
+    },
+    {
+      "extractId": "ost-extract-096-garbin-vento-palme",
+      "sourcePage": 96,
+      "curatedRecordIds": ["ost-0020-vento-palme-annata", "ost-0021-segni-animali-vento"],
+      "relation": "split_source_page",
+      "confidence": "high",
+      "notes": "Pagina divisa tra vento delle Palme e segni animali."
+    },
+    {
+      "extractId": "ost-extract-119-campane-temporale-grandine",
+      "sourcePage": 119,
+      "curatedRecordIds": ["ost-0037-grandine-campane-scongiuri"],
+      "relation": "same_theme",
+      "confidence": "high",
+      "notes": "Campane contro grandine gia curate come rito."
+    },
+    {
+      "extractId": "ost-extract-121-riti-grandine-nubi",
+      "sourcePage": 121,
+      "curatedRecordIds": ["ost-0038-ulivo-fiori-grandine"],
+      "relation": "same_source_page",
+      "confidence": "medium",
+      "notes": "Riti e fiori contro grandine gia curati in forma specifica."
+    },
+    {
+      "extractId": "ost-extract-122-segni-grandine-dragone",
+      "sourcePage": 122,
+      "curatedRecordIds": ["ost-0039-segni-grandine"],
+      "relation": "same_theme",
+      "confidence": "high",
+      "notes": "Segni di grandine gia curati; parte dragone resta archivio."
+    },
+    {
+      "extractId": "ost-extract-129-piante-fulmini",
+      "sourcePage": 129,
+      "curatedRecordIds": ["ost-0040-fulmine-piante-san-giovanni"],
+      "relation": "same_theme",
+      "confidence": "high",
+      "notes": "Piante e fulmine gia curati."
+    },
+    {
+      "extractId": "ost-extract-141-arcobaleno-tempo",
+      "sourcePage": 141,
+      "curatedRecordIds": ["ost-0045-arcobaleno-tempo"],
+      "relation": "same_theme",
+      "confidence": "high",
+      "notes": "Arcobaleno e tempo gia curati."
+    },
+    {
+      "extractId": "ost-extract-189-annate-erbe-funghi",
+      "sourcePage": 189,
+      "curatedRecordIds": ["ost-0049-annata-pioggia-gennaio"],
+      "relation": "same_source_page",
+      "confidence": "medium",
+      "notes": "Estratto piu ampio; record curato concentra gennaio/granaio."
+    },
+    {
+      "extractId": "ost-extract-192-vigna-santi-vendemmia",
+      "sourcePage": 192,
+      "curatedRecordIds": ["ost-0028-santi-vigna-vendemmia"],
+      "relation": "same_theme",
+      "confidence": "high",
+      "notes": "Santi della vendemmia gia curati."
+    },
+    {
+      "extractId": "ost-extract-608-san-giorgio-barnaba",
+      "sourcePage": 608,
+      "curatedRecordIds": ["ost-0050-san-giorgio-primavera", "ost-0051-san-barnaba-vite"],
+      "relation": "split_source_page",
+      "confidence": "high",
+      "notes": "Pagina divisa tra San Giorgio e San Barnaba."
+    },
+    {
+      "extractId": "ost-extract-609-ermacora-bufere",
+      "sourcePage": 609,
+      "curatedRecordIds": ["ost-0052-sant-ermacora-grandini-bufere"],
+      "relation": "same_theme",
+      "confidence": "high",
+      "notes": "Sant'Ermacora e bufere gia curati."
+    },
+    {
+      "extractId": "ost-extract-674-giochi-neve-slitte",
+      "sourcePage": 674,
+      "curatedRecordIds": ["ost-0048-palle-neve-slitte"],
+      "relation": "same_theme",
+      "confidence": "high",
+      "notes": "Giochi di neve gia curati."
+    },
+    {
+      "extractId": "ost-extract-087-feste-ore-giorno",
+      "sourcePage": 87,
+      "curatedRecordIds": ["ost-0060-ore-del-giorno"],
+      "relation": "same_theme",
+      "confidence": "high",
+      "notes": "Lessico delle ore del giorno curato come Archivio Scopri, non proverbio giornaliero."
+    },
+    {
+      "extractId": "ost-extract-057-giornate-santi",
+      "sourcePage": 57,
+      "curatedRecordIds": ["ost-0061-giornate-dei-santi"],
+      "relation": "same_theme",
+      "confidence": "high",
+      "notes": "Giornate dei santi chiuse come contesto Archivio Scopri; le singole varianti proverbiali sono gestite in Almanacco."
+    },
+    {
+      "extractId": "ost-extract-146-aloni-lunari",
+      "sourcePage": 146,
+      "curatedRecordIds": ["ost-0059-pareli-aloni-lunari"],
+      "relation": "same_theme",
+      "confidence": "high",
+      "notes": "Aloni lunari gia coperti dal record curato su pareli, paraseleni e aloni; non duplicare una nuova scheda Scopri."
+    },
+    {
+      "extractId": "ost-extract-107-pioggia-sole-streghe",
+      "sourcePage": 107,
+      "curatedRecordIds": ["ost-0026-pioggia-grandine-streghe"],
+      "relation": "adjacent_delicate_theme",
+      "confidence": "medium",
+      "notes": "Pioggia col sole, streghe e cattivi auspici appartengono allo stesso filone delicato gia coperto; evitare duplicazione in Scopri."
+    },
+    {
+      "extractId": "ost-extract-538-streghe-meteo-archive",
+      "sourcePage": 538,
+      "curatedRecordIds": ["ost-0026-pioggia-grandine-streghe"],
+      "relation": "broader_delicate_theme",
+      "confidence": "medium",
+      "notes": "Pagina ampia sui poteri attribuiti a streghe e maghi; tenere come contesto storico del record gia curato, senza nuova scheda autonoma."
+    },
+    {
+      "extractId": "ost-extract-099-nebbia-pronostici",
+      "sourcePage": 99,
+      "curatedRecordIds": ["ost-0062-nebbia-linguaggio-tempo"],
+      "relation": "same_theme",
+      "confidence": "high",
+      "notes": "Scheda Archivio Scopri chiusa sul linguaggio popolare della nebbia, senza duplicare i proverbi gia presenti in Almanacco."
+    },
+    {
+      "extractId": "ost-extract-234-erbe-buona-stagione",
+      "sourcePage": 234,
+      "curatedRecordIds": ["ost-0063-erbe-nomi-buona-stagione"],
+      "relation": "same_theme",
+      "confidence": "high",
+      "notes": "Scheda Archivio Scopri chiusa come lessico storico delle erbe, senza indicazioni mediche o pratiche."
+    }
+  ]
+}

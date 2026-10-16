@@ -1,0 +1,140 @@
+{
+  "schemaVersion": 1,
+  "batchId": "go-ts-enrichment-milestones-01",
+  "snapshotDate": "2026-09-01",
+  "purpose": "Ricerca di tre tappe per Doberdò del Lago e Sgonico; revisione FUR e promozione sono documentate separatamente.",
+  "runtimeIntegration": false,
+  "initialTotalMilestones": 438,
+  "editorialPolicy": {
+    "sourceEvidenceRequired": true,
+    "ambiguousDatesExcluded": true,
+    "italianCopyStatus": "editorial_draft",
+    "friulianCopyStatus": "pending_assisted_review",
+    "readyForUi": false
+  },
+  "excludedClaims": [
+    {
+      "municipality": "Doberdò del Lago",
+      "claim": "Il Comune di Doberdò del Lago nasce nel 1179 e Dobradan ne spiega l'etimologia.",
+      "reason": "La fonte documenta la prima menzione della località e la forma storica Dobradan, non la nascita del Comune né un'interpretazione etimologica.",
+      "sourceUrl": "https://www.comune.doberdo.go.it/it/vivere-il-comune-96560/luoghi-96561/storia-156637"
+    },
+    {
+      "municipality": "Doberdò del Lago",
+      "claim": "Nel 1524 viene fondato il Comune moderno di Doberdò.",
+      "reason": "La fonte parla della prima testimonianza scritta di una comunità istituzionalizzata e usa il termine storico sloveno župa; non lo equipara al Comune moderno.",
+      "sourceUrl": "https://www.comune.doberdo.go.it/it/vivere-il-comune-96560/luoghi-96561/storia-156637"
+    },
+    {
+      "municipality": "Sgonico",
+      "claim": "Il Comune di Sgonico inaugura la Grotta Gigante nel 1908.",
+      "reason": "Le fonti documentano l'apertura turistica del 5 luglio 1908 e attribuiscono iniziativa e lavori al Club Touristi Triestini, non al Comune.",
+      "sourceUrl": "https://catastogrotte.regione.fvg.it/scheda/2-Grotta_Gigante"
+    }
+  ],
+  "municipalities": [
+    {
+      "istatCode": "031003",
+      "municipality": "Doberdò del Lago",
+      "province": "GO",
+      "currentMilestoneCount": 1,
+      "currentMilestoneIds": [
+        "doberdo-autonomous-municipality"
+      ],
+      "decision": "source_verified_it_fur_pending",
+      "candidates": [
+        {
+          "id": "doberdo-prima-attestazione-1179",
+          "year": 1179,
+          "label": {
+            "it": "La località di Doberdò compare per la prima volta in un documento con il nome «Dobradan»",
+            "fur": null
+          },
+          "evidence": "La storia pubblicata dal Comune afferma che la località di Doberdò del Lago venne menzionata per la prima volta con il nome Dobradan in un documento del 1179.",
+          "source": {
+            "label": "Comune di Doberdò del Lago - Storia",
+            "type": "official_municipality",
+            "url": "https://www.comune.doberdo.go.it/it/vivere-il-comune-96560/luoghi-96561/storia-156637",
+            "checkedAt": "2026-09-01"
+          },
+          "duplicateReview": {
+            "exactDuplicate": false,
+            "relatedRecordIds": [
+              "doberdo-autonomous-municipality"
+            ],
+            "note": "La prima menzione della località nel 1179 è distinta dall'autonomia comunale del 1850 e dalla memoria quotidiana dedicata alla battaglia del 1916."
+          }
+        },
+        {
+          "id": "doberdo-comunita-zupa-1524",
+          "year": 1524,
+          "label": {
+            "it": "È documentata per la prima volta una comunità istituzionalizzata di Doberdò, indicata dalla fonte come župa",
+            "fur": null
+          },
+          "evidence": "La stessa pagina comunale colloca nel 1524 la prima testimonianza scritta dell'esistenza di una comunità istituzionalizzata riguardante Doberdò e conserva per essa il termine sloveno župa.",
+          "source": {
+            "label": "Comune di Doberdò del Lago - Storia",
+            "type": "official_municipality",
+            "url": "https://www.comune.doberdo.go.it/it/vivere-il-comune-96560/luoghi-96561/storia-156637",
+            "checkedAt": "2026-09-01"
+          },
+          "duplicateReview": {
+            "exactDuplicate": false,
+            "relatedRecordIds": [
+              "doberdo-prima-attestazione-1179",
+              "doberdo-autonomous-municipality"
+            ],
+            "note": "La comunità documentata nel 1524 non viene equiparata al Comune moderno e resta distinta dalla prima attestazione del luogo e dall'autonomia del 1850."
+          }
+        }
+      ]
+    },
+    {
+      "istatCode": "032005",
+      "municipality": "Sgonico",
+      "province": "TS",
+      "currentMilestoneCount": 2,
+      "currentMilestoneIds": [
+        "sgonico-carsiana-foundation",
+        "sgonico-carsiana-apertura-1978"
+      ],
+      "decision": "source_verified_it_fur_pending",
+      "candidates": [
+        {
+          "id": "sgonico-grotta-gigante-apertura-1908",
+          "year": 1908,
+          "documentedDate": "1908-07-05",
+          "label": {
+            "it": "La Grotta Gigante apre al pubblico con il percorso turistico",
+            "fur": null
+          },
+          "evidence": "Il Catasto Speleologico Regionale colloca la Grotta Gigante nel Comune di Sgonico e data l'apertura ai turisti al 5 luglio 1908; il gestore diretto documenta i lavori avviati nel 1905 e il percorso completato in circa tre anni.",
+          "source": {
+            "label": "Catasto Speleologico Regionale FVG - Grotta Gigante",
+            "type": "regional_institution",
+            "url": "https://catastogrotte.regione.fvg.it/scheda/2-Grotta_Gigante",
+            "checkedAt": "2026-09-01"
+          },
+          "supportingSources": [
+            {
+              "label": "Grotta Gigante - La scoperta",
+              "type": "cultural_institution",
+              "url": "https://www.grottagigante.it/la-scoperta/",
+              "checkedAt": "2026-09-01"
+            }
+          ],
+          "duplicateReview": {
+            "exactDuplicate": false,
+            "relatedRecordIds": [
+              "sgonico-carsiana-foundation",
+              "sgonico-carsiana-apertura-1978",
+              "local-memory-tina-jama-2024"
+            ],
+            "note": "L'apertura turistica della Grotta Gigante è distinta dalla fondazione e apertura di Carsiana e dalla scoperta di Tina Jama raccontata nella memoria locale."
+          }
+        }
+      ]
+    }
+  ]
+}

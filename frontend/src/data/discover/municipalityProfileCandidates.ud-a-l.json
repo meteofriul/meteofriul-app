@@ -1,0 +1,1916 @@
+{
+  "schemaVersion": 1,
+  "generatedAt": "2026-07-19",
+  "scope": "Comuni canonici della provincia UD dalla A alla L, esclusa Udine",
+  "profiles": [
+    {
+      "id": "municipality-profile-aiello-del-friuli",
+      "istatCode": "030001",
+      "municipality": "Aiello del Friuli",
+      "province": "UD",
+      "title": {
+        "it": "Aiello del Friuli, il paese delle meridiane",
+        "fur": "Dael, il paîs des meridianis"
+      },
+      "summary": {
+        "it": "Aiello del Friuli ha fatto delle meridiane un segno diffuso della propria identità, celebrato ogni anno con una festa nata nel 2001. Nel Cortile delle Meridiane, presso il Museo della civiltà contadina del Friuli imperiale, sono raccolti orologi solari di epoche e sistemi diversi.",
+        "fur": "A Dael lis meridianis a son deventadis un segn difondût de identitât locâl, celebrât ogni an cuntune fieste nassude tal 2001. Tal Cortîl des Meridianis, dongje dal Museu de civiltât contadine dal Friûl imperiâl, a son metûts dongje orlois solârs di epachis e sistemis diferents."
+      },
+      "milestones": [
+        {
+          "id": "aiello-del-friuli-meridian-festival",
+          "year": 2001,
+          "label": {
+            "it": "Nasce la Festa delle Meridiane",
+            "fur": "E nas la Fieste des Meridianis"
+          }
+        }
+      ],
+      "source": {
+        "label": "Comune di Aiello del Friuli - La Festa delle Meridiane",
+        "type": "official_municipality",
+        "url": "https://www.comune.aiellodelfriuli.ud.it/media/files/030001/attachment/Festa_Meridiane.pdf"
+      },
+      "languageStatus": {
+        "it": "approved",
+        "fur": "approved"
+      },
+      "editorialStatus": "reviewed",
+      "readyForUi": true,
+      "review": {
+        "itReviewedAt": "2026-07-19",
+        "method": "source_cross_check",
+        "furReviewedAt": "2026-07-19",
+        "furMethod": "linguistic_review"
+      }
+    },
+    {
+      "id": "municipality-profile-amaro",
+      "istatCode": "030002",
+      "municipality": "Amaro",
+      "province": "UD",
+      "title": {
+        "it": "Amaro, porta della Carnia",
+        "fur": "Damâr, puarte de Cjargne"
+      },
+      "summary": {
+        "it": "Amaro sorge alla confluenza del Fella nel Tagliamento, ai piedi del monte Amariana, ed è il primo paese all'ingresso della Carnia. Reperti e monete di età romana raccontano il suo antico ruolo di passaggio lungo la valle.",
+        "fur": "Damâr al è su la confluence dal Fele tal Tiliment, ai pîts dal mont Amariana, e al è il prin paîs jentrant in Cjargne. Reperz e monedis di ete romane a contin il so antîc rûl di passaç dilunc de val."
+      },
+      "milestones": [],
+      "source": {
+        "label": "PromoTurismoFVG - Amaro",
+        "type": "regional_institution",
+        "url": "https://www.turismofvg.it/amaro?LangSetCMS=it"
+      },
+      "languageStatus": {
+        "it": "approved",
+        "fur": "approved"
+      },
+      "editorialStatus": "reviewed",
+      "readyForUi": true,
+      "review": {
+        "itReviewedAt": "2026-07-19",
+        "method": "source_cross_check",
+        "furReviewedAt": "2026-07-19",
+        "furMethod": "linguistic_review"
+      }
+    },
+    {
+      "id": "municipality-profile-ampezzo",
+      "istatCode": "030003",
+      "municipality": "Ampezzo",
+      "province": "UD",
+      "title": {
+        "it": "Ampezzo, memoria della Carnia libera",
+        "fur": "Dimpeç, memorie de Cjargne libare"
+      },
+      "summary": {
+        "it": "Nel 1944 Palazzo Angelo Unfer ospitò il governo della Zona Libera della Carnia e dell'Alto Friuli. Oggi il paese conserva quella memoria accanto al Museo geologico della Carnia, che raccoglie fossili e rocce del territorio carnico.",
+        "fur": "Tal 1944 il Palaç Angelo Unfer al ospità il guvier de Zone Libare de Cjargne e dal Alt Friûl. Vuê il paîs al conserve chê memorie dongje dal Museu gjeologjic de Cjargne, che al met dongje fossii e rocjis dal teritori cjargnel."
+      },
+      "milestones": [
+        {
+          "id": "ampezzo-carnia-free-zone",
+          "year": 1944,
+          "label": {
+            "it": "Palazzo Unfer ospita il governo della Zona Libera della Carnia",
+            "fur": "Palaç Unfer al ospite il guvier de Zone Libare de Cjargne"
+          }
+        }
+      ],
+      "source": {
+        "label": "PromoTurismoFVG - Ampezzo",
+        "type": "regional_institution",
+        "url": "https://www.turismofvg.it/ampezzo"
+      },
+      "languageStatus": {
+        "it": "approved",
+        "fur": "approved"
+      },
+      "editorialStatus": "reviewed",
+      "readyForUi": true,
+      "review": {
+        "itReviewedAt": "2026-07-19",
+        "method": "source_cross_check",
+        "furReviewedAt": "2026-07-19",
+        "furMethod": "linguistic_review"
+      }
+    },
+    {
+      "id": "municipality-profile-aquileia",
+      "istatCode": "030004",
+      "municipality": "Aquileia",
+      "province": "UD",
+      "title": {
+        "it": "Aquileia, crocevia dell'antichità",
+        "fur": "Aquilee, crosere de antichitât"
+      },
+      "summary": {
+        "it": "La colonia romana di Aquileia nacque nel 181 avanti Cristo e crebbe come nodo tra il Mediterraneo e l'Europa centrale. I resti urbani e la Basilica patriarcale testimoniano insieme la grandezza imperiale e il successivo ruolo religioso della città.",
+        "fur": "La colonie romane di Aquilee e fo fondade tal 181 prin di Crist e e cressè tant che grop tra il Mediterani e la Europe centrâl. Lis olmis urbanis e la Basiliche patriarcjâl a testemonein adun la grandece imperiâl e il rûl religjôs che la citât e cjapà dopo."
+      },
+      "milestones": [
+        {
+          "id": "aquileia-roman-foundation",
+          "century": "181 a.C.",
+          "label": {
+            "it": "Fondazione della colonia romana di Aquileia",
+            "fur": "Fondazion de colonie romane di Aquilee"
+          }
+        },
+        {
+          "id": "aquileia-attila-sack",
+          "year": 452,
+          "label": {
+            "it": "La città viene saccheggiata dagli Unni di Attila",
+            "fur": "La citât e ven sacazade dai Uns di Atile"
+          }
+        }
+      ],
+      "source": {
+        "label": "Ministero della Cultura - Area archeologica e Basilica patriarcale di Aquileia",
+        "type": "cultural_institution",
+        "url": "https://unesco.cultura.gov.it/projects/archaeological-area-and-the-patriarchal-basilica-of-aquileia/"
+      },
+      "languageStatus": {
+        "it": "approved",
+        "fur": "approved"
+      },
+      "editorialStatus": "reviewed",
+      "readyForUi": true,
+      "review": {
+        "itReviewedAt": "2026-07-19",
+        "method": "source_cross_check",
+        "furReviewedAt": "2026-07-19",
+        "furMethod": "linguistic_review"
+      }
+    },
+    {
+      "id": "municipality-profile-arta-terme",
+      "istatCode": "030005",
+      "municipality": "Arta Terme",
+      "province": "UD",
+      "title": {
+        "it": "Arta Terme, l'acqua della Pudia",
+        "fur": "Darte, l'aghe de Pudia"
+      },
+      "summary": {
+        "it": "Arta Terme lega la propria identità alla fonte Pudia, un'acqua minerale solforosa conosciuta e utilizzata fin dall'antichità. Il moderno stabilimento termale continua questa vocazione nel paesaggio della valle del But.",
+        "fur": "Darte e lee la sô identitât ae font Pudia, une aghe minerâl solforose cognossude e doprade za de antichitât. Il modern stabiliment termâl al continue cheste vocazion tal paisaç de val dal Bût."
+      },
+      "milestones": [],
+      "source": {
+        "label": "PromoTurismoFVG - Terme di Arta",
+        "type": "regional_institution",
+        "url": "https://www.turismofvg.it/code/12806"
+      },
+      "languageStatus": {
+        "it": "approved",
+        "fur": "approved"
+      },
+      "editorialStatus": "reviewed",
+      "readyForUi": true,
+      "review": {
+        "itReviewedAt": "2026-07-19",
+        "method": "source_cross_check",
+        "furReviewedAt": "2026-07-19",
+        "furMethod": "linguistic_review"
+      }
+    },
+    {
+      "id": "municipality-profile-artegna",
+      "istatCode": "030006",
+      "municipality": "Artegna",
+      "province": "UD",
+      "title": {
+        "it": "Artegna, il borgo del colle di San Martino",
+        "fur": "Dartigne, il borc dal cuel di San Martin"
+      },
+      "summary": {
+        "it": "Il castello Savorgnan, detto anche castello inferiore, domina Artegna ed è il principale segno storico della comunità. Sullo stesso colle sorge la pieve di San Martino, la cui iscrizione d'ingresso reca l'anno 1005.",
+        "fur": "Il cjistiel Savorgnan, clamât ancje cjistiel inferiôr, al domine Dartigne e al è il segn storic principâl de comunitât. Sul stes cuel e je la pieve di San Martin, che la iscrizion de jentrade e puarte la date dal 1005."
+      },
+      "milestones": [
+        {
+          "id": "artegna-san-martino-inscription",
+          "year": 1005,
+          "label": {
+            "it": "L'iscrizione della pieve di San Martino reca questa data",
+            "fur": "La iscrizion de pieve di San Martin e puarte cheste date"
+          }
+        }
+      ],
+      "source": {
+        "label": "Comune di Artegna - Castello Savorgnan e pieve di San Martino",
+        "type": "official_municipality",
+        "url": "https://www.comune.artegna.ud.it/"
+      },
+      "languageStatus": {
+        "it": "approved",
+        "fur": "approved"
+      },
+      "editorialStatus": "reviewed",
+      "readyForUi": true,
+      "review": {
+        "itReviewedAt": "2026-07-19",
+        "method": "source_cross_check",
+        "furReviewedAt": "2026-07-19",
+        "furMethod": "linguistic_review"
+      }
+    },
+    {
+      "id": "municipality-profile-attimis",
+      "istatCode": "030007",
+      "municipality": "Attimis",
+      "province": "UD",
+      "title": {
+        "it": "Attimis, terra dei nove castelli",
+        "fur": "Atimis, tiere dai nûf cjistiei"
+      },
+      "summary": {
+        "it": "Attimis conserva la memoria dei nove castelli sorti lungo la via pedemontana tra Cividale e il Norico. Il Museo archeologico medioevale ne racconta la vita quotidiana e le attività produttive tra il X e il XV secolo.",
+        "fur": "Atimis al conserve la memorie dai nûf cjistiei fats sù dilunc de vie pedemontane tra Cividât e il Noric. Il Museu archeologjic medievâl al conte la lôr vite di ogni dì e lis ativitâts produtivis tra il secul X e il XV."
+      },
+      "milestones": [
+        {
+          "id": "attimis-feudal-castles",
+          "century": "X-XV",
+          "label": {
+            "it": "I castelli segnano la vita feudale della via pedemontana",
+            "fur": "I cjistiei a segnin la vite feudâl de vie pedemontane"
+          }
+        }
+      ],
+      "source": {
+        "label": "Regione FVG - Museo archeologico medioevale di Attimis",
+        "type": "regional_institution",
+        "url": "https://patrimonioculturale.regione.fvg.it/museo/?s_id=440626&s_tab=oa"
+      },
+      "languageStatus": {
+        "it": "approved",
+        "fur": "approved"
+      },
+      "editorialStatus": "reviewed",
+      "readyForUi": true,
+      "review": {
+        "itReviewedAt": "2026-07-19",
+        "method": "source_cross_check",
+        "furReviewedAt": "2026-07-19",
+        "furMethod": "linguistic_review"
+      }
+    },
+    {
+      "id": "municipality-profile-bagnaria-arsa",
+      "istatCode": "030008",
+      "municipality": "Bagnaria Arsa",
+      "province": "UD",
+      "title": {
+        "it": "Bagnaria Arsa, sulle antiche strade di Aquileia",
+        "fur": "Bagnarie, su lis antighis stradis di Aquilee"
+      },
+      "summary": {
+        "it": "Il territorio di Bagnaria Arsa si popolò intensamente in età romana presso l'incrocio delle vie dirette da Aquileia al Norico e verso Codroipo. Il nome Arsa ricorda l'incendio del paese durante i moti del 1848 e fu adottato ufficialmente nel 1867.",
+        "fur": "Il teritori di Bagnarie al fo une vore popolât in ete romane dongje dal incros des viis che di Aquilee a lavin viers il Noric e viers Codroip. Il non Arsa al ricuarde l'incendi dal paîs tai motins dal 1848 e al fo adotât in maniere uficiâl tal 1867."
+      },
+      "milestones": [
+        {
+          "id": "bagnaria-arsa-name",
+          "year": 1867,
+          "label": {
+            "it": "Il Comune assume ufficialmente il nome Bagnaria Arsa",
+            "fur": "Il Comun al cjape in maniere uficiâl il non Bagnaria Arsa"
+          }
+        }
+      ],
+      "source": {
+        "label": "Comune di Bagnaria Arsa - Storia del Comune",
+        "type": "official_municipality",
+        "url": "https://www.comune.bagnariaarsa.ud.it/vivere-il-comune/territorio/storia-del-comune/"
+      },
+      "languageStatus": {
+        "it": "approved",
+        "fur": "approved"
+      },
+      "editorialStatus": "reviewed",
+      "readyForUi": true,
+      "review": {
+        "itReviewedAt": "2026-07-19",
+        "method": "source_cross_check",
+        "furReviewedAt": "2026-07-19",
+        "furMethod": "linguistic_review"
+      }
+    },
+    {
+      "id": "municipality-profile-basiliano",
+      "istatCode": "030009",
+      "municipality": "Basiliano",
+      "province": "UD",
+      "title": {
+        "it": "Basiliano, il castelliere di Variano",
+        "fur": "Basilian, il casteliere di Varian"
+      },
+      "summary": {
+        "it": "Sul colle di San Leonardo a Variano restano le tracce di un villaggio fortificato nato nell'età del bronzo. Il castelliere fu ampliato più volte e conserva terrapieni, fossati e impronte di abitazioni che raccontano la vita protostorica della pianura friulana.",
+        "fur": "Sul cuel di San Leonard a Varian a restin lis olmis di un vilaç fortificât nassût te ete dal bronç. Il casteliere al fo slargjât plui voltis e al conserve terraplens, fossâi e improntis di cjasis che a contin la vite protostoriche de planure furlane."
+      },
+      "milestones": [],
+      "source": {
+        "label": "Regione FVG - Castelliere di Variano",
+        "type": "regional_institution",
+        "url": "https://patrimonioculturale.regione.fvg.it/sito-archeologico/?s_id=548383"
+      },
+      "languageStatus": {
+        "it": "approved",
+        "fur": "approved"
+      },
+      "editorialStatus": "reviewed",
+      "readyForUi": true,
+      "review": {
+        "itReviewedAt": "2026-07-19",
+        "method": "source_cross_check",
+        "furReviewedAt": "2026-07-19",
+        "furMethod": "linguistic_review"
+      }
+    },
+    {
+      "id": "municipality-profile-bertiolo",
+      "istatCode": "030010",
+      "municipality": "Bertiolo",
+      "province": "UD",
+      "title": {
+        "it": "Bertiolo, vino e comunità",
+        "fur": "Bertiûl, vin e comunitât"
+      },
+      "summary": {
+        "it": "A Bertiolo la cultura del vino è diventata una festa capace di coinvolgere l'intera comunità. Nel 1950 il Perdon de la Madone era il grande appuntamento di settembre; il 19 marzo dello stesso anno si tenne la prima Festa del Vino, organizzata da un comitato autonomo.",
+        "fur": "A Bertiûl la culture dal vin e je deventade une fieste buine di coinvolzi dute la comunitât. Tal 1950 il Perdon de Madone al jere il grant apontament di Setembar; ai 19 di Març dal stes an si tignì la prime Fieste dal Vin, organizade di un comitât autonom."
+      },
+      "milestones": [
+        {
+          "id": "bertiolo-first-wine-festival",
+          "year": 1950,
+          "label": {
+            "it": "Si tiene la prima Festa del Vino",
+            "fur": "Si ten la prime Fieste dal Vin"
+          }
+        }
+      ],
+      "source": {
+        "label": "Comune di Bertiolo - Cosa vedere a Bertiolo",
+        "type": "official_municipality",
+        "url": "https://www.comune.bertiolo.ud.it/vivere-il-comune/territorio/cosa-vedere-a-bertiolo/"
+      },
+      "languageStatus": {
+        "it": "approved",
+        "fur": "approved"
+      },
+      "editorialStatus": "reviewed",
+      "readyForUi": true,
+      "review": {
+        "itReviewedAt": "2026-07-19",
+        "method": "source_cross_check",
+        "furReviewedAt": "2026-07-19",
+        "furMethod": "linguistic_review"
+      }
+    },
+    {
+      "id": "municipality-profile-bicinicco",
+      "istatCode": "030011",
+      "municipality": "Bicinicco",
+      "province": "UD",
+      "title": {
+        "it": "Bicinicco, un nome dalle radici romane",
+        "fur": "Bicinins, un non cun lidrîs romanis"
+      },
+      "summary": {
+        "it": "Il nome di Bicinicco è ricondotto a Beccinius o Buccinius, probabile assegnatario romano di queste terre. Il paese è documentato nel 1031 come usque Bicinis, fu feudo dei Savorgnan fino al 1797 e divenne municipio nel 1866.",
+        "fur": "Il non di Bicinins al ven fat lâ indaûr a Beccinius o Buccinius, probabile assegnatari roman di chestis tieris. Il paîs al è documentât tal 1031 come usque Bicinis, al fo feut dai Savorgnan fintremai al 1797 e al deventà municipi tal 1866."
+      },
+      "milestones": [
+        {
+          "id": "bicinicco-municipality",
+          "year": 1866,
+          "label": {
+            "it": "Bicinicco viene eretto a municipio",
+            "fur": "Bicinins al ven costituît in municipi"
+          }
+        }
+      ],
+      "source": {
+        "label": "Comune di Bicinicco - L'identità e la storia",
+        "type": "official_municipality",
+        "url": "https://comune.bicinicco.ud.it/media/files/030011/attachment/GC_94_ALL._1_hle4CSB.pdf"
+      },
+      "languageStatus": {
+        "it": "approved",
+        "fur": "approved"
+      },
+      "editorialStatus": "reviewed",
+      "readyForUi": true,
+      "review": {
+        "itReviewedAt": "2026-07-19",
+        "method": "source_cross_check",
+        "furReviewedAt": "2026-07-19",
+        "furMethod": "linguistic_review"
+      }
+    },
+    {
+      "id": "municipality-profile-bordano",
+      "istatCode": "030012",
+      "municipality": "Bordano",
+      "province": "UD",
+      "title": {
+        "it": "Bordano, il paese delle farfalle",
+        "fur": "Bordan, il paîs des paveis"
+      },
+      "summary": {
+        "it": "A Bordano la Casa delle Farfalle è un parco naturalistico e didattico interamente dedicato alle farfalle e ai loro habitat. Il percorso riunisce serre tropicali, mostre e la collezione del Museo delle farfalle e delle falene.",
+        "fur": "A Bordan la Cjase des Paveis e je un parc naturalistic e didatic dedicât dal dut aes paveis e ai lôr habitats. Il percors al met dongje seris tropicâls, mostris e la colezion dal Museu des paveis e des falenis."
+      },
+      "milestones": [],
+      "source": {
+        "label": "Comune di Bordano - Casa delle Farfalle",
+        "type": "official_municipality",
+        "url": "https://www.comune.bordano.ud.it/it/vivere/casa-delle-farfelle"
+      },
+      "languageStatus": {
+        "it": "approved",
+        "fur": "approved"
+      },
+      "editorialStatus": "reviewed",
+      "readyForUi": true,
+      "review": {
+        "itReviewedAt": "2026-07-19",
+        "method": "source_cross_check",
+        "furReviewedAt": "2026-07-19",
+        "furMethod": "linguistic_review"
+      }
+    },
+    {
+      "id": "municipality-profile-buja",
+      "istatCode": "030013",
+      "municipality": "Buja",
+      "province": "UD",
+      "title": {
+        "it": "Buja, città dell'arte della medaglia",
+        "fur": "Buie, citât de art de medaie"
+      },
+      "summary": {
+        "it": "Buja è conosciuta come Città d'Arte della Medaglia grazie a una scuola di incisori arrivata ai vertici della Zecca dello Stato. I bujesi Pietro Giampaoli e Guerrino Mattia Monassi la guidarono consecutivamente dal 1936 al 1978, e il museo cittadino conserva questa eredità.",
+        "fur": "Buie e je cognossude come Citât de Art de Medaie gracie a une scuele di incisôrs rivade ai vertiçs de Zeche dal Stât. I buiês Pietro Giampaoli e Guerrino Mattia Monassi le guidarin un dopo chel altri dal 1936 al 1978, e il museu citadin al conserve cheste ereditât."
+      },
+      "milestones": [
+        {
+          "id": "buja-state-mint-directors",
+          "year": 1936,
+          "label": {
+            "it": "Inizia la lunga direzione bujese della Zecca dello Stato",
+            "fur": "E scomence la lungje direzion buiese de Zeche dal Stât"
+          }
+        }
+      ],
+      "source": {
+        "label": "Comune di Buja - Buja, oltre mille anni",
+        "type": "official_municipality",
+        "url": "https://www.comune.buja.ud.it/it/novita-226352/notizie-226353/buja-oltre-mille-anni-85373"
+      },
+      "languageStatus": {
+        "it": "approved",
+        "fur": "approved"
+      },
+      "editorialStatus": "reviewed",
+      "readyForUi": true,
+      "review": {
+        "itReviewedAt": "2026-07-19",
+        "method": "source_cross_check",
+        "furReviewedAt": "2026-07-19",
+        "furMethod": "linguistic_review"
+      }
+    },
+    {
+      "id": "municipality-profile-buttrio",
+      "istatCode": "030014",
+      "municipality": "Buttrio",
+      "province": "UD",
+      "title": {
+        "it": "Buttrio, una villa per la civiltà del vino",
+        "fur": "Buri, une vile pe civiltât dal vin"
+      },
+      "summary": {
+        "it": "Villa di Toppo Florio è una delle dimore patrizie che raccontano la storia di Buttrio e dei colli orientali. Passata alla Regione e poi al Comune, ospita oggi il Museo della civiltà del vino e lega il patrimonio architettonico alla vocazione vitivinicola locale.",
+        "fur": "Vile di Toppo Florio e je une des dimoris patriziis che a contin la storie di Buri e dai cuei orientâi. Passade ae Regjon e po dopo al Comun, vuê e ospite il Museu de civiltât dal vin e e lee il patrimoni architetonic ae vocazion vinicole locâl."
+      },
+      "milestones": [],
+      "source": {
+        "label": "Regione FVG - Villa di Toppo Florio",
+        "type": "regional_institution",
+        "url": "https://patrimonioculturale.regione.fvg.it/architettura/?s_id=445592&s_tab=oac"
+      },
+      "languageStatus": {
+        "it": "approved",
+        "fur": "approved"
+      },
+      "editorialStatus": "reviewed",
+      "readyForUi": true,
+      "review": {
+        "itReviewedAt": "2026-07-19",
+        "method": "source_cross_check",
+        "furReviewedAt": "2026-07-19",
+        "furMethod": "linguistic_review"
+      }
+    },
+    {
+      "id": "municipality-profile-camino-al-tagliamento",
+      "istatCode": "030015",
+      "municipality": "Camino al Tagliamento",
+      "province": "UD",
+      "title": {
+        "it": "Camino al Tagliamento, la memoria dei mulini",
+        "fur": "Cjamin dal Tiliment, la memorie dai mulins"
+      },
+      "summary": {
+        "it": "A Glaunicco il mulino documenta il rapporto secolare di Camino al Tagliamento con l'acqua e il lavoro rurale. Citato dal 1405, riforniva la Repubblica di Venezia e l'abbazia benedettina di Sesto al Reghena.",
+        "fur": "A Glaunic il mulin al documente il rapuart secolâr di Cjamin dal Tiliment cu la aghe e il lavôr rurâl. Citât dal 1405, al furnive la Republiche di Vignesie e la badie benedetine di Siest."
+      },
+      "milestones": [
+        {
+          "id": "camino-al-tagliamento-glaunicco-mill",
+          "year": 1405,
+          "label": {
+            "it": "Prima attestazione nota del molino di Glaunicco",
+            "fur": "Prime atestazion cognossude dal mulin di Glaunic"
+          }
+        }
+      ],
+      "source": {
+        "label": "Regione FVG - Molino di Glaunicco",
+        "type": "regional_institution",
+        "url": "https://patrimonioculturale.regione.fvg.it/architettura/?s_id=449224"
+      },
+      "languageStatus": {
+        "it": "approved",
+        "fur": "approved"
+      },
+      "editorialStatus": "reviewed",
+      "readyForUi": true,
+      "review": {
+        "itReviewedAt": "2026-07-19",
+        "method": "source_cross_check",
+        "furReviewedAt": "2026-07-19",
+        "furMethod": "linguistic_review"
+      }
+    },
+    {
+      "id": "municipality-profile-campoformido",
+      "istatCode": "030016",
+      "municipality": "Campoformido",
+      "province": "UD",
+      "title": {
+        "it": "Campoformido, il paese del trattato",
+        "fur": "Cjampfuarmit, il paîs dal tratât"
+      },
+      "summary": {
+        "it": "Il trattato del 17 ottobre 1797 porta il nome di Campoformido e pose fine alla Repubblica di Venezia. Il paese aveva però una vita comunitaria già medievale, quando presso San Canciano si riuniva un'assemblea ricordata nei documenti del XIII secolo.",
+        "fur": "Il tratât dai 17 di Otubar dal 1797 al puarte il non di Cjampfuarmit e al metè fin ae Republiche di Vignesie. Il paîs al veve però za une vite comunitarie medievâl, cuant che dongje di San Cançan si davuelzeve une assemblee ricuardade tai documents dal secul XIII."
+      },
+      "milestones": [
+        {
+          "id": "campoformido-treaty",
+          "year": 1797,
+          "label": {
+            "it": "Il Trattato di Campoformio pone fine alla Repubblica di Venezia",
+            "fur": "Il Tratât di Campoformio al met fin ae Republiche di Vignesie"
+          }
+        }
+      ],
+      "source": {
+        "label": "Cultura Nuova FVG - Campoformido",
+        "type": "cultural_institution",
+        "url": "https://www.culturanuova.fvg.it/comuni/campoformido/"
+      },
+      "languageStatus": {
+        "it": "approved",
+        "fur": "approved"
+      },
+      "editorialStatus": "reviewed",
+      "readyForUi": true,
+      "review": {
+        "itReviewedAt": "2026-07-19",
+        "method": "source_cross_check",
+        "furReviewedAt": "2026-07-19",
+        "furMethod": "linguistic_review"
+      }
+    },
+    {
+      "id": "municipality-profile-campolongo-tapogliano",
+      "istatCode": "030138",
+      "municipality": "Campolongo Tapogliano",
+      "province": "UD",
+      "title": {
+        "it": "Campolongo Tapogliano, due comunità riunite",
+        "fur": "Cjamplunc Tapoian, dôs comunitâts unidis"
+      },
+      "summary": {
+        "it": "Campolongo Tapogliano riunisce le comunità di Campolongo al Torre e Tapogliano. Il Comune fu istituito dalla legge regionale 1 agosto 2008, numero 8, e nacque il 1 gennaio 2009 dalla fusione dei due enti.",
+        "fur": "Cjamplunc Tapoian al unìs lis comunitâts di Cjamplunc de Tor e Tapoian. Il Comun al fo istituît de leç regjonâl numar 8 dal prin di Avost dal 2008 e al nassè ai prin di Zenâr dal 2009 de fusion dai doi ents."
+      },
+      "milestones": [
+        {
+          "id": "campolongo-tapogliano-foundation",
+          "year": 2009,
+          "label": {
+            "it": "Nasce il Comune di Campolongo Tapogliano",
+            "fur": "Al nas il Comun di Campolongo Tapogliano"
+          }
+        }
+      ],
+      "source": {
+        "label": "Gazzetta Ufficiale - Legge istitutiva di Campolongo Tapogliano",
+        "type": "regional_institution",
+        "url": "https://www.gazzettaufficiale.it/atto/regioni/caricaDettaglioAtto/originario?atto.codiceRedazionale=008R0524&atto.dataPubblicazioneGazzetta=2008-12-20"
+      },
+      "languageStatus": {
+        "it": "approved",
+        "fur": "approved"
+      },
+      "editorialStatus": "reviewed",
+      "readyForUi": true,
+      "review": {
+        "itReviewedAt": "2026-07-19",
+        "method": "source_cross_check",
+        "furReviewedAt": "2026-07-19",
+        "furMethod": "linguistic_review"
+      }
+    },
+    {
+      "id": "municipality-profile-carlino",
+      "istatCode": "030018",
+      "municipality": "Carlino",
+      "province": "UD",
+      "title": {
+        "it": "Carlino, tra fornaci romane e laguna",
+        "fur": "Cjarlins, tra fornâs romanis e lagune"
+      },
+      "summary": {
+        "it": "Il territorio di Carlino unisce campi, boschi, fiumi e il margine della laguna di Marano. Alla Chiamana gli scavi hanno portato alla luce uno dei più vasti impianti regionali per la produzione romana di ceramiche e laterizi.",
+        "fur": "Il teritori di Cjarlins al met dongje cjamps, boscs, flums e l'ôr de lagune di Maran. Te Chiamana i scavaments a àn puartât ae lûs un dai plui grancj implants regjonâi pe produzion romane di ceramichis e modons."
+      },
+      "milestones": [],
+      "source": {
+        "label": "Stella Boschi Laguna - Carlino",
+        "type": "cultural_institution",
+        "url": "https://www.stellaboschilaguna.it/it/town/carlino/"
+      },
+      "languageStatus": {
+        "it": "approved",
+        "fur": "approved"
+      },
+      "editorialStatus": "reviewed",
+      "readyForUi": true,
+      "review": {
+        "itReviewedAt": "2026-07-19",
+        "method": "source_cross_check",
+        "furReviewedAt": "2026-07-19",
+        "furMethod": "linguistic_review"
+      }
+    },
+    {
+      "id": "municipality-profile-cassacco",
+      "istatCode": "030019",
+      "municipality": "Cassacco",
+      "province": "UD",
+      "title": {
+        "it": "Cassacco, il castello sulla via antica",
+        "fur": "Cjassà, il cjistiel su la vie antighe"
+      },
+      "summary": {
+        "it": "Il castello di Cassacco domina l'abitato vicino al tracciato della via Iulia Augusta, che collegava Aquileia al Norico. La fonte comunale riferisce l'ipotesi di un precedente fortilizio romano; le prime notizie documentate sul castello risalgono al 1354.",
+        "fur": "Il cjistiel di Cjassà al domine il paîs dongje dal percors de vie Iulia Augusta, che e colegave Aquilee cul Noric. La font comunâl e riferìs la ipotesi di une fortificazion romane plui antighe; lis primis notiziis documentadis sul cjistiel a son dal 1354."
+      },
+      "milestones": [
+        {
+          "id": "cassacco-castle-first-record",
+          "year": 1354,
+          "label": {
+            "it": "Prima notizia documentaria del castello",
+            "fur": "Prime notizie documentade dal cjistiel"
+          }
+        }
+      ],
+      "source": {
+        "label": "Comune di Cassacco - Cenni storici",
+        "type": "official_municipality",
+        "url": "https://comune.cassacco.ud.it/media/files/030019/attachment/1475759620-2-1.pdf"
+      },
+      "languageStatus": {
+        "it": "approved",
+        "fur": "approved"
+      },
+      "editorialStatus": "reviewed",
+      "readyForUi": true,
+      "review": {
+        "itReviewedAt": "2026-07-19",
+        "method": "source_cross_check",
+        "furReviewedAt": "2026-07-19",
+        "furMethod": "linguistic_review"
+      }
+    },
+    {
+      "id": "municipality-profile-castions-di-strada",
+      "istatCode": "030020",
+      "municipality": "Castions di Strada",
+      "province": "UD",
+      "title": {
+        "it": "Castions di Strada, lungo la Napoleonica",
+        "fur": "Cjasteons di Strade, dilunc de Napoleoniche"
+      },
+      "summary": {
+        "it": "Castions di Strada conserva nel nome e nel territorio il legame con gli antichi assi viari della pianura friulana. In età napoleonica la via Postumia fu rettificata per collegare più rapidamente Palmanova, e quel tratto è ancora chiamato Napoleonica.",
+        "fur": "Cjasteons di Strade al conserve tal non e tal teritori il leam cui antîcs assis viaris de planure furlane. In ete napoleoniche la vie Postumie e fo dreçade par colegâ plui in curt Palme, e chel toc al è ancjemò clamât Napoleoniche."
+      },
+      "milestones": [],
+      "source": {
+        "label": "PromoTurismoFVG - Castions di Strada",
+        "type": "regional_institution",
+        "url": "https://www.turismofvg.it/castions-di-strada"
+      },
+      "languageStatus": {
+        "it": "approved",
+        "fur": "approved"
+      },
+      "editorialStatus": "reviewed",
+      "readyForUi": true,
+      "review": {
+        "itReviewedAt": "2026-07-19",
+        "method": "source_cross_check",
+        "furReviewedAt": "2026-07-19",
+        "furMethod": "linguistic_review"
+      }
+    },
+    {
+      "id": "municipality-profile-cavazzo-carnico",
+      "istatCode": "030021",
+      "municipality": "Cavazzo Carnico",
+      "province": "UD",
+      "title": {
+        "it": "Cavazzo Carnico, sentinella sul Monte Festa",
+        "fur": "Cjavaç, sentinele sul Mont Festa"
+      },
+      "summary": {
+        "it": "La fortezza di Monte Festa domina da quota 1.063 metri l'ingresso della Carnia, la Val del Lago e la confluenza tra Fella e Tagliamento. Costruita nel 1909, tra il 30 ottobre e il 6 novembre 1917 rallentò l'avanzata austro-ungarica dopo la rotta di Caporetto.",
+        "fur": "La fortece dal Mont Festa, a 1.063 metris di cuote, e domine la jentrade de Cjargne, la Val dal Lâc e la confluence tra il Fele e il Tiliment. Costruide tal 1909, tra i 30 di Otubar e i 6 di Novembar dal 1917 e ralentà la avanzade austro-ungariche dopo de rote di Cjaurêt."
+      },
+      "milestones": [
+        {
+          "id": "cavazzo-carnico-fort-construction",
+          "year": 1909,
+          "label": {
+            "it": "Viene costruita la fortezza di Monte Festa",
+            "fur": "E ven costruide la fortece dal Mont Festa"
+          }
+        }
+      ],
+      "source": {
+        "label": "Regione FVG - Fortezza di Monte Festa",
+        "type": "regional_institution",
+        "url": "https://webgiscarnia.regione.fvg.it/ppr/beni_culturali/2689_fortezza_di_monte_festa.pdf"
+      },
+      "languageStatus": {
+        "it": "approved",
+        "fur": "approved"
+      },
+      "editorialStatus": "reviewed",
+      "readyForUi": true,
+      "review": {
+        "itReviewedAt": "2026-07-19",
+        "method": "source_cross_check",
+        "furReviewedAt": "2026-07-19",
+        "furMethod": "linguistic_review"
+      }
+    },
+    {
+      "id": "municipality-profile-cercivento",
+      "istatCode": "030022",
+      "municipality": "Cercivento",
+      "province": "UD",
+      "title": {
+        "it": "Cercivento, arte e lavoro nel borgo",
+        "fur": "Çurçuvint, art e lavôr tal borc"
+      },
+      "summary": {
+        "it": "Cercivento conserva nella Fàrie di Checo un antico opificio ad acqua legato alla cultura del lavoro montano. Il percorso Una Bibbia a cielo aperto porta mosaici, affreschi e murales ispirati alle Scritture dentro le vie del borgo.",
+        "fur": "Çurçuvint al conserve te Fàrie di Checo un antîc opifici a aghe leât ae culture dal lavôr montan. Il percors «Una Bibbia a cielo aperto» al puarte mosaics, frescs e murâi ispirâts aes Scrituris tes viis dal borc."
+      },
+      "milestones": [],
+      "source": {
+        "label": "Comune di Cercivento - Patrimonio culturale",
+        "type": "official_municipality",
+        "url": "https://www.comune.cercivento.ud.it/media/files/030022/attachment/11_DUPS_2026_2028_firmato.pdf"
+      },
+      "languageStatus": {
+        "it": "approved",
+        "fur": "approved"
+      },
+      "editorialStatus": "reviewed",
+      "readyForUi": true,
+      "review": {
+        "itReviewedAt": "2026-07-19",
+        "method": "source_cross_check",
+        "furReviewedAt": "2026-07-19",
+        "furMethod": "linguistic_review"
+      }
+    },
+    {
+      "id": "municipality-profile-cervignano-del-friuli",
+      "istatCode": "030023",
+      "municipality": "Cervignano del Friuli",
+      "province": "UD",
+      "title": {
+        "it": "Cervignano del Friuli, città dell'Ausa",
+        "fur": "Çarvignan, citât de Ause"
+      },
+      "summary": {
+        "it": "Cervignano del Friuli crebbe lungo l'Ausa, fiume che tra Quattrocento e Cinquecento segnò un confine conteso tra Venezia e la Casa d'Austria. Sotto Maria Teresa e Giuseppe II il centro prosperò grazie al commercio fluviale e alle piccole manifatture.",
+        "fur": "Çarvignan al cressè dilunc de Ause, flum che tra il Cuatricent e il Cincucent al segnà un confin contendût tra Vignesie e la Cjase d'Austrie. Sot di Marie Terese e Josef II il centri al prosperà gracie al comerç fluvâl e aes piçulis manifaturis."
+      },
+      "milestones": [],
+      "source": {
+        "label": "Comune di Cervignano del Friuli - Relazione storica del territorio",
+        "type": "official_municipality",
+        "url": "https://www.comune.cervignanodelfriuli.ud.it/media/files/md/030023/cervignano_prgc_v_90_relazione_1.pdf"
+      },
+      "languageStatus": {
+        "it": "approved",
+        "fur": "approved"
+      },
+      "editorialStatus": "reviewed",
+      "readyForUi": true,
+      "review": {
+        "itReviewedAt": "2026-07-19",
+        "method": "source_cross_check",
+        "furReviewedAt": "2026-07-19",
+        "furMethod": "linguistic_review"
+      }
+    },
+    {
+      "id": "municipality-profile-chiopris-viscone",
+      "istatCode": "030024",
+      "municipality": "Chiopris-Viscone",
+      "province": "UD",
+      "title": {
+        "it": "Chiopris-Viscone, due borghi sulla via romana",
+        "fur": "Cjopris e Viscon, doi borcs su la vie romane"
+      },
+      "summary": {
+        "it": "Chiopris-Viscone è un comune sparso formato da due nuclei della pianura orientale. Viscone, citato per la prima volta nel 1020, si sviluppò lungo la strada romana che collegava Aquileia a Cividale.",
+        "fur": "Cjopris e Viscon al è un comun sparniç formât di doi nuclis de planure orientâl. Viscon, citât pe prime volte tal 1020, si svilupà dilunc de strade romane che e colegave Aquilee e Cividât."
+      },
+      "milestones": [
+        {
+          "id": "chiopris-viscone-first-mention",
+          "year": 1020,
+          "label": {
+            "it": "Prima menzione nota di Viscone",
+            "fur": "Prime menzion cognossude di Viscon"
+          }
+        }
+      ],
+      "source": {
+        "label": "Wikipedia italiana - Chiopris-Viscone",
+        "type": "wikipedia_reference",
+        "url": "https://it.wikipedia.org/wiki/Chiopris-Viscone"
+      },
+      "languageStatus": {
+        "it": "approved",
+        "fur": "approved"
+      },
+      "editorialStatus": "reviewed",
+      "readyForUi": true,
+      "review": {
+        "itReviewedAt": "2026-07-19",
+        "method": "source_cross_check",
+        "furReviewedAt": "2026-07-19",
+        "furMethod": "linguistic_review"
+      }
+    },
+    {
+      "id": "municipality-profile-chiusaforte",
+      "istatCode": "030025",
+      "municipality": "Chiusaforte",
+      "province": "UD",
+      "title": {
+        "it": "Chiusaforte, porta del Canal del Ferro",
+        "fur": "Scluse, puarte dal Cjanâl dal Fier"
+      },
+      "summary": {
+        "it": "L'attuale Chiusaforte riunisce il capoluogo e l'antico Comune di Raccolana, unificati con regio decreto nel 1928. La posizione sulla ferrovia verso l'Austria rese il territorio bersaglio di numerose incursioni aeree durante la Seconda guerra mondiale.",
+        "fur": "Scluse di vuê e met adun il cjâf-lûc e il vecjo Comun di Raccolana, unîts cuntun decret reâl tal 1928. La posizion su la ferade viers la Austrie e fasè dal teritori un obietîf di tantis incursions aeris dilunc de Seconde Vuere mondiâl."
+      },
+      "milestones": [
+        {
+          "id": "chiusaforte-raccolana-merger",
+          "year": 1928,
+          "label": {
+            "it": "Chiusaforte e Raccolana vengono riuniti in un solo Comune",
+            "fur": "Scluse e Raccolana a vegnin unidis intun sôl Comun"
+          }
+        }
+      ],
+      "source": {
+        "label": "SIUSA - Comune di Chiusaforte",
+        "type": "cultural_institution",
+        "url": "https://siusa-archivi.cultura.gov.it/cgi-bin/siusa/pagina.pl?Chiave=9028&TipoPag=prodente"
+      },
+      "languageStatus": {
+        "it": "approved",
+        "fur": "approved"
+      },
+      "editorialStatus": "reviewed",
+      "readyForUi": true,
+      "review": {
+        "itReviewedAt": "2026-07-19",
+        "method": "source_cross_check",
+        "furReviewedAt": "2026-07-19",
+        "furMethod": "linguistic_review"
+      }
+    },
+    {
+      "id": "municipality-profile-cividale-del-friuli",
+      "istatCode": "030026",
+      "municipality": "Cividale del Friuli",
+      "province": "UD",
+      "title": {
+        "it": "Cividale del Friuli, la città ducale",
+        "fur": "Cividât, la citât ducâl"
+      },
+      "summary": {
+        "it": "A Cividale del Friuli nacque il primo ducato longobardo in Italia dopo l'arrivo del popolo nel 568. Il Tempietto Longobardo e il complesso episcopale sono oggi parte del sito UNESCO che racconta i luoghi del potere longobardo.",
+        "fur": "A Cividât al nassè il prin ducât longobart in Italie dopo dal rivâ dai Longobarts tal 568. Il Templi longobart e il complès episcopâl a son vuê part dal sît UNESCO che al conte i lûcs dal podê longobart."
+      },
+      "milestones": [
+        {
+          "id": "cividale-first-lombard-duchy",
+          "year": 568,
+          "label": {
+            "it": "Cividale diventa sede del primo ducato longobardo in Italia",
+            "fur": "Cividât al devente sede dal prin ducât longobart in Italie"
+          }
+        }
+      ],
+      "source": {
+        "label": "Commissione Nazionale Italiana per l'UNESCO - I Longobardi in Italia",
+        "type": "cultural_institution",
+        "url": "https://www.unesco.it/it/unesco-vicino-a-te/siti-patrimonio-mondiale/i-longobardi-in-italia-i-luoghi-del-potere/"
+      },
+      "languageStatus": {
+        "it": "approved",
+        "fur": "approved"
+      },
+      "editorialStatus": "reviewed",
+      "readyForUi": true,
+      "review": {
+        "itReviewedAt": "2026-07-19",
+        "method": "source_cross_check",
+        "furReviewedAt": "2026-07-19",
+        "furMethod": "linguistic_review"
+      }
+    },
+    {
+      "id": "municipality-profile-codroipo",
+      "istatCode": "030027",
+      "municipality": "Codroipo",
+      "province": "UD",
+      "title": {
+        "it": "Codroipo, la storia di Villa Manin",
+        "fur": "Codroip, la storie di Vile Manin"
+      },
+      "summary": {
+        "it": "Villa Manin a Passariano lega Codroipo alla storia dell'ultimo doge di Venezia e alla permanenza di Napoleone durante le trattative del 1797. Acquistata dalla Regione nel 1969, la dimora fu riaperta al pubblico nel 1971 e divenne un grande spazio culturale.",
+        "fur": "Vile Manin a Passarian e lee Codroip ae storie dal ultin doge di Vignesie e ae permanence di Napoleon tes tratativis dal 1797. Comprade de Regjon tal 1969, la dimore e fo tornade a vierzi al public tal 1971 e e deventà un grant spazi culturâl."
+      },
+      "milestones": [
+        {
+          "id": "codroipo-villa-manin-regional-acquisition",
+          "year": 1969,
+          "label": {
+            "it": "La Regione acquista Villa Manin",
+            "fur": "La Regjon e compre Vile Manin"
+          }
+        }
+      ],
+      "source": {
+        "label": "Villa Manin - Storia",
+        "type": "regional_institution",
+        "url": "https://www.villamanin.it/storia/"
+      },
+      "languageStatus": {
+        "it": "approved",
+        "fur": "approved"
+      },
+      "editorialStatus": "reviewed",
+      "readyForUi": true,
+      "review": {
+        "itReviewedAt": "2026-07-19",
+        "method": "source_cross_check",
+        "furReviewedAt": "2026-07-19",
+        "furMethod": "linguistic_review"
+      }
+    },
+    {
+      "id": "municipality-profile-colloredo-di-monte-albano",
+      "istatCode": "030028",
+      "municipality": "Colloredo di Monte Albano",
+      "province": "UD",
+      "title": {
+        "it": "Colloredo di Monte Albano, il castello degli scrittori",
+        "fur": "Colorêt di Montalban, il cjistiel dai scritôrs"
+      },
+      "summary": {
+        "it": "Il castello di Colloredo di Monte Albano nacque nel Trecento come dimora fortificata al centro del feudo. La sua storia letteraria è legata soprattutto a Ippolito e Stanislao Nievo, che vi abitarono e scrissero.",
+        "fur": "Il cjistiel di Colorêt di Montalban al nassè tal Trescent tant che dimore fortificade tal centri dal feut. La sô storie leterarie e je leade soredut a Ippolito e Stanislao Nievo, che a steterin e a scriverin li."
+      },
+      "milestones": [
+        {
+          "id": "colloredo-castle-origins",
+          "century": "XIV",
+          "label": {
+            "it": "Nasce il nucleo trecentesco del castello",
+            "fur": "Al nas il nucli dal Trescent dal cjistiel"
+          }
+        }
+      ],
+      "source": {
+        "label": "PromoTurismoFVG - Castello di Colloredo di Monte Albano",
+        "type": "regional_institution",
+        "url": "https://www.turismofvg.it/castelli/castello-di-colloredo-di-monte-albano?LangSetCMS=it"
+      },
+      "languageStatus": {
+        "it": "approved",
+        "fur": "approved"
+      },
+      "editorialStatus": "reviewed",
+      "readyForUi": true,
+      "review": {
+        "itReviewedAt": "2026-07-19",
+        "method": "source_cross_check",
+        "furReviewedAt": "2026-07-19",
+        "furMethod": "linguistic_review"
+      }
+    },
+    {
+      "id": "municipality-profile-comeglians",
+      "istatCode": "030029",
+      "municipality": "Comeglians",
+      "province": "UD",
+      "title": {
+        "it": "Comeglians, crocevia del legname carnico",
+        "fur": "Comelians, crosere dal len cjargnel"
+      },
+      "summary": {
+        "it": "Alla confluenza di tre valli, Comeglians fu a lungo un centro di raccolta e distribuzione del legname. Oggi le sue borgate conservano palazzi e case della tradizione carnica, affiancati dall'esperienza dell'albergo diffuso.",
+        "fur": "Su la confluence di trê vals, Comelians al fo par lung timp un centri di racuelte e distribuzion dal len. Vuê lis sôs borgadis a conservin palaçs e cjasis de tradizion cjargnele, dongje de esperience dal alberc difondût."
+      },
+      "milestones": [],
+      "source": {
+        "label": "PromoTurismoFVG - Comeglians",
+        "type": "regional_institution",
+        "url": "https://www.turismofvg.it/comeglians"
+      },
+      "languageStatus": {
+        "it": "approved",
+        "fur": "approved"
+      },
+      "editorialStatus": "reviewed",
+      "readyForUi": true,
+      "review": {
+        "itReviewedAt": "2026-07-19",
+        "method": "source_cross_check",
+        "furReviewedAt": "2026-07-19",
+        "furMethod": "linguistic_review"
+      }
+    },
+    {
+      "id": "municipality-profile-corno-di-rosazzo",
+      "istatCode": "030030",
+      "municipality": "Corno di Rosazzo",
+      "province": "UD",
+      "title": {
+        "it": "Corno di Rosazzo, colline tra abbazia e vigneti",
+        "fur": "Cuar di Rosacis, cuei tra badie e vignâi"
+      },
+      "summary": {
+        "it": "Corno di Rosazzo cresce tra il torrente Corno e le colline vitate dei Colli Orientali. Nel 1135 il territorio, allora legato ai patriarchi di Aquileia, fu ceduto all'Abbazia di Rosazzo, rapporto che segnò a lungo la sua storia.",
+        "fur": "Cuar di Rosacis al cres tra il torint Cuar e i cuei plantâts a vît dai Cuei Orientâi. Tal 1135 il teritori, in chê volte leât ai patriarcjis di Aquilee, al fo cedût ae Badie di Rosacis, rapuart che al segnà par lung timp la sô storie."
+      },
+      "milestones": [
+        {
+          "id": "corno-di-rosazzo-abbey-transfer",
+          "year": 1135,
+          "label": {
+            "it": "Il territorio viene ceduto all'Abbazia di Rosazzo",
+            "fur": "Il teritori al ven cedût ae Badie di Rosacis"
+          }
+        }
+      ],
+      "source": {
+        "label": "Comune di Corno di Rosazzo - Relazione generale",
+        "type": "official_municipality",
+        "url": "https://comune.corno-di-rosazzo.ud.it/media/files/030030/attachment/Relazione_Generale.pdf"
+      },
+      "languageStatus": {
+        "it": "approved",
+        "fur": "approved"
+      },
+      "editorialStatus": "reviewed",
+      "readyForUi": true,
+      "review": {
+        "itReviewedAt": "2026-07-19",
+        "method": "source_cross_check",
+        "furReviewedAt": "2026-07-19",
+        "furMethod": "linguistic_review"
+      }
+    },
+    {
+      "id": "municipality-profile-coseano",
+      "istatCode": "030031",
+      "municipality": "Coseano",
+      "province": "UD",
+      "title": {
+        "it": "Coseano, il borgo ricostruito sul Corno",
+        "fur": "Cosean, il borc tornât a costruî sul Cuar"
+      },
+      "summary": {
+        "it": "Coseano compare nel 1202 come possesso del Patriarcato di Aquileia, raccolto attorno alla chiesa di Sant'Andrea. Dopo un grande incendio il paese fu ricostruito presso il Corno, con case fitte pensate anche come difesa dalle scorrerie.",
+        "fur": "Cosean al comparìs tal 1202 come possess dal Patriarcjât di Aquilee, metût dongje ator de glesie di Sant Andree. Dopo di un grant incendi il paîs al fo tornât a costruî dongje dal Cuar, cun cjasis fuartis pensadis ancje par difindisi des scoriadis."
+      },
+      "milestones": [
+        {
+          "id": "coseano-first-mention",
+          "year": 1202,
+          "label": {
+            "it": "Prima citazione nota di Coseano",
+            "fur": "Prime citazion cognossude di Cosean"
+          }
+        }
+      ],
+      "source": {
+        "label": "PromoTurismoFVG - Coseano",
+        "type": "regional_institution",
+        "url": "https://www.turismofvg.it/coseano"
+      },
+      "languageStatus": {
+        "it": "approved",
+        "fur": "approved"
+      },
+      "editorialStatus": "reviewed",
+      "readyForUi": true,
+      "review": {
+        "itReviewedAt": "2026-07-19",
+        "method": "source_cross_check",
+        "furReviewedAt": "2026-07-19",
+        "furMethod": "linguistic_review"
+      }
+    },
+    {
+      "id": "municipality-profile-dignano",
+      "istatCode": "030032",
+      "municipality": "Dignano",
+      "province": "UD",
+      "title": {
+        "it": "Dignano, il paese spostato dal Tagliamento",
+        "fur": "Dignan, il paîs spostât dal Tiliment"
+      },
+      "summary": {
+        "it": "L'antico abitato di Dignano sorgeva più vicino al Tagliamento, ma dopo le alluvioni del 1276 e del 1327 non fu ricostruito sulla riva. Durante la ritirata di Caporetto il paese fu quasi distrutto dai bombardamenti e perse anche il proprio archivio comunale.",
+        "fur": "Il vecjo abitât di Dignan al jere plui dongje dal Tiliment, ma dopo des montanis dal 1276 e dal 1327 nol fo tornât a costruî su la rive. Te ritirade di Cjaurêt il paîs al fo cuasi distrut dai bombardaments e al pierdè ancje il so archivi comunâl."
+      },
+      "milestones": [
+        {
+          "id": "dignano-second-medieval-flood",
+          "year": 1327,
+          "label": {
+            "it": "Una nuova alluvione porta ad abbandonare l'antico sito sulla riva",
+            "fur": "Une gnove montane e puarte a bandonâ il vecjo sît su la rive"
+          }
+        }
+      ],
+      "source": {
+        "label": "SIUSA - Comune di Dignano",
+        "type": "cultural_institution",
+        "url": "https://siusa-archivi.cultura.gov.it/cgi-bin/siusa/pagina.pl?Chiave=9053&TipoPag=prodente"
+      },
+      "languageStatus": {
+        "it": "approved",
+        "fur": "approved"
+      },
+      "editorialStatus": "reviewed",
+      "readyForUi": true,
+      "review": {
+        "itReviewedAt": "2026-07-19",
+        "method": "source_cross_check",
+        "furReviewedAt": "2026-07-19",
+        "furMethod": "linguistic_review"
+      }
+    },
+    {
+      "id": "municipality-profile-dogna",
+      "istatCode": "030033",
+      "municipality": "Dogna",
+      "province": "UD",
+      "title": {
+        "it": "Dogna, valle di frontiera",
+        "fur": "Dogne, val di confin"
+      },
+      "summary": {
+        "it": "All'inizio del Novecento Dogna era il primo paese italiano per chi scendeva dall'Impero austroungarico, con il confine posto a Pontebba. Tra il 1914 e il 1915 una nuova strada militare risalì la Val Dogna con gallerie, ricoveri e impianti destinati al fronte.",
+        "fur": "Tal imprin dal Nûfcent Dogne al jere il prin paîs talian par cui che al rivave jù dal Imperi austro-ungaric, cul confin a Pontêbe. Tra il 1914 e il 1915 une gnove strade militâr e risalì la Val Dogne cun galariis, ricoveris e implants destinâts al front."
+      },
+      "milestones": [
+        {
+          "id": "dogna-military-road",
+          "year": 1915,
+          "label": {
+            "it": "Viene completata la strada militare della Val Dogna",
+            "fur": "E ven completade la strade militâr de Val Dogne"
+          }
+        }
+      ],
+      "source": {
+        "label": "Comune di Dogna - La Prima guerra mondiale",
+        "type": "official_municipality",
+        "url": "https://comune.dogna.ud.it/it/novita-69046/notizie-69047/la-storia-72646/la-prima-guerra-mondiale-72649"
+      },
+      "languageStatus": {
+        "it": "approved",
+        "fur": "approved"
+      },
+      "editorialStatus": "reviewed",
+      "readyForUi": true,
+      "review": {
+        "itReviewedAt": "2026-07-19",
+        "method": "source_cross_check",
+        "furReviewedAt": "2026-07-19",
+        "furMethod": "linguistic_review"
+      }
+    },
+    {
+      "id": "municipality-profile-drenchia",
+      "istatCode": "030034",
+      "municipality": "Drenchia",
+      "province": "UD",
+      "title": {
+        "it": "Drenchia, trincee sul crinale del Colovrat",
+        "fur": "Drenchia, trinceis sul crinâl dal Colovrat"
+      },
+      "summary": {
+        "it": "Tra il passo Solarie e il Colovrat, Drenchia conserva una strada militare di arroccamento, caverne e resti di trincee della Prima guerra mondiale. Lungo il percorso restano anche un fontanone militare e l'ex cimitero di guerra di San Volfango.",
+        "fur": "Tra il pas Solarie e il Colovrat, Drenchia e conserve une strade militâr di arocament, cavernis e restis di trinceis de Prime Vuere mondiâl. Dilunc dal percors a restin ancje un fontanon militâr e il vecjo cimentieri di vuere di San Volfango."
+      },
+      "milestones": [],
+      "source": {
+        "label": "PromoTurismoFVG - Linea difensiva della Valle Judrio",
+        "type": "regional_institution",
+        "url": "https://www.turismofvg.it/it/gal/natura/linea-difensiva-della-valle-judrio-drenchia-1915-1918"
+      },
+      "languageStatus": {
+        "it": "approved",
+        "fur": "approved"
+      },
+      "editorialStatus": "reviewed",
+      "readyForUi": true,
+      "review": {
+        "itReviewedAt": "2026-07-19",
+        "method": "source_cross_check",
+        "furReviewedAt": "2026-07-19",
+        "furMethod": "linguistic_review"
+      }
+    },
+    {
+      "id": "municipality-profile-enemonzo",
+      "istatCode": "030035",
+      "municipality": "Enemonzo",
+      "province": "UD",
+      "title": {
+        "it": "Enemonzo, antiche radici e formaggi di Carnia",
+        "fur": "Enemonç, lidrîs antighis e formadi di Cjargne"
+      },
+      "summary": {
+        "it": "Enemonzo è uno degli insediamenti più antichi della Carnia, con reperti che risalgono all'età della pietra. La tradizione casearia resta un tratto vivo della comunità e viene celebrata ogni settembre con la festa del formaggio.",
+        "fur": "Enemonç al è un dai insediaments plui antîcs de Cjargne, cun reperz che a tornin ae ete de piere. La tradizion dal formadi e reste une part vive de comunitât e e ven celebrade ogni Setembar cu la Fieste dal Formadi."
+      },
+      "milestones": [],
+      "source": {
+        "label": "PromoTurismoFVG - Enemonzo",
+        "type": "regional_institution",
+        "url": "https://www.turismofvg.it/enemonzo?LangSetCMS=it"
+      },
+      "languageStatus": {
+        "it": "approved",
+        "fur": "approved"
+      },
+      "editorialStatus": "reviewed",
+      "readyForUi": true,
+      "review": {
+        "itReviewedAt": "2026-07-19",
+        "method": "source_cross_check",
+        "furReviewedAt": "2026-07-19",
+        "furMethod": "linguistic_review"
+      }
+    },
+    {
+      "id": "municipality-profile-faedis",
+      "istatCode": "030036",
+      "municipality": "Faedis",
+      "province": "UD",
+      "title": {
+        "it": "Faedis, castelli tra boschi e vigne",
+        "fur": "Faedis, cjistiei tra boscs e vignâi"
+      },
+      "summary": {
+        "it": "Faedis è citata attorno all'anno Mille e il suo nome richiama gli antichi boschi di faggio. I sentieri collegano il borgo ai castelli medievali di Zucco e Cuccagna, mentre i vigneti hanno nel Refosco il prodotto più rappresentativo.",
+        "fur": "Faedis al è citât ator dal an Mil e il so non al riclame i antîcs boscs di fau. I trois a coleghin il borc ai cjistiei medievâi di Zuc e Cucagne, intant che i vignâi a àn tal Refosc il prodot plui rapresentatîf."
+      },
+      "milestones": [],
+      "source": {
+        "label": "PromoTurismoFVG - Faedis",
+        "type": "regional_institution",
+        "url": "https://www.turismofvg.it/faedis"
+      },
+      "languageStatus": {
+        "it": "approved",
+        "fur": "approved"
+      },
+      "editorialStatus": "reviewed",
+      "readyForUi": true,
+      "review": {
+        "itReviewedAt": "2026-07-19",
+        "method": "source_cross_check",
+        "furReviewedAt": "2026-07-19",
+        "furMethod": "linguistic_review"
+      }
+    },
+    {
+      "id": "municipality-profile-fagagna",
+      "istatCode": "030037",
+      "municipality": "Fagagna",
+      "province": "UD",
+      "title": {
+        "it": "Fagagna, una casa per la memoria contadina",
+        "fur": "Feagne, une cjase pe memorie contadine"
+      },
+      "summary": {
+        "it": "A Fagagna la Cjase Cocèl racconta la vita quotidiana e il lavoro contadino della gente di collina tra Ottocento e metà Novecento. Il percorso comprende mulino, fucina, latteria e una sezione dedicata alla secolare tradizione locale del merletto.",
+        "fur": "A Feagne la Cjase Cocèl e conte la vite di ogni dì e il lavôr contadin de int di culine tra Votcent e metât Nûfcent. Il percors al cjape dentri mulin, forzarie, latarie e une sezion dedicade ae tradizion secolâr locâl dal merlet."
+      },
+      "milestones": [],
+      "source": {
+        "label": "PromoTurismoFVG - Museo della vita contadina Cjase Cocèl",
+        "type": "regional_institution",
+        "url": "https://www.turismofvg.it/musei/museo-della-vita-contadina-cjase-cocel"
+      },
+      "languageStatus": {
+        "it": "approved",
+        "fur": "approved"
+      },
+      "editorialStatus": "reviewed",
+      "readyForUi": true,
+      "review": {
+        "itReviewedAt": "2026-07-19",
+        "method": "source_cross_check",
+        "furReviewedAt": "2026-07-19",
+        "furMethod": "linguistic_review"
+      }
+    },
+    {
+      "id": "municipality-profile-fiumicello-villa-vicentina",
+      "istatCode": "030190",
+      "municipality": "Fiumicello Villa Vicentina",
+      "province": "UD",
+      "title": {
+        "it": "Fiumicello Villa Vicentina, dall'agro di Aquileia alla fusione del 2018",
+        "fur": "Flumisel Vile Visintine, dal agri di Aquilee ae fusion dal 2018"
+      },
+      "summary": {
+        "it": "Fiumicello Villa Vicentina è nato il 1 febbraio 2018 dalla fusione dei due Comuni che ne compongono il nome. Fiumicello nacque come borgo agricolo della colonia romana di Aquileia, mentre Villa Vicentina si sviluppò in più borghi distinti.",
+        "fur": "Flumisel Vile Visintine al è nassût ai prin di Fevrâr dal 2018 de fusion dai doi Comuns che i componin il non. Flumisel al nassè tant che borc agricui de colonie romane di Aquilee, intant che Vile Visintine si svilupà in plui borcs diferents."
+      },
+      "milestones": [
+        {
+          "id": "fiumicello-villa-vicentina-foundation",
+          "year": 2018,
+          "label": {
+            "it": "Nasce il Comune di Fiumicello Villa Vicentina",
+            "fur": "Al nas il Comun di Fiumicello Villa Vicentina"
+          }
+        }
+      ],
+      "source": {
+        "label": "Comune di Fiumicello Villa Vicentina - Cenni storici",
+        "type": "official_municipality",
+        "url": "https://fiumicellovillavicentina.mycity.it/contenuti/27333/cenni-storici"
+      },
+      "languageStatus": {
+        "it": "approved",
+        "fur": "approved"
+      },
+      "editorialStatus": "reviewed",
+      "readyForUi": true,
+      "review": {
+        "itReviewedAt": "2026-07-19",
+        "method": "source_cross_check",
+        "furReviewedAt": "2026-07-19",
+        "furMethod": "linguistic_review"
+      }
+    },
+    {
+      "id": "municipality-profile-flaibano",
+      "istatCode": "030039",
+      "municipality": "Flaibano",
+      "province": "UD",
+      "title": {
+        "it": "Flaibano, antiche tracce di San Odorico",
+        "fur": "Flaiban, antighis olmis di Sant Durì"
+      },
+      "summary": {
+        "it": "Nella zona di San Odorico, presso un antico guado del Tagliamento, sono state ritrovate sepolture a tumulo dell'età del bronzo. Nello stesso luogo una chiesa dedicata a san Odorico, fondata tra XI e XII secolo, sostituì probabilmente un precedente luogo di culto romano.",
+        "fur": "Te zone di Sant Durì, dongje di un antîc vâl dal Tiliment, a son stadis cjatadis sepulturis a tumul de ete dal bronç. Tal stes lûc une glesie dedicade a Sant Durì, fondade tra il secul XI e il XII, e sostituìs probabilmentri un precedent lûc di cult roman."
+      },
+      "milestones": [],
+      "source": {
+        "label": "Wikipedia italiana - Flaibano",
+        "type": "wikipedia_reference",
+        "url": "https://it.wikipedia.org/wiki/Flaibano"
+      },
+      "languageStatus": {
+        "it": "approved",
+        "fur": "approved"
+      },
+      "editorialStatus": "reviewed",
+      "readyForUi": true,
+      "review": {
+        "itReviewedAt": "2026-07-19",
+        "method": "source_cross_check",
+        "furReviewedAt": "2026-07-19",
+        "furMethod": "linguistic_review"
+      }
+    },
+    {
+      "id": "municipality-profile-forgaria-nel-friuli",
+      "istatCode": "030137",
+      "municipality": "Forgaria nel Friuli",
+      "province": "UD",
+      "title": {
+        "it": "Forgaria nel Friuli, il ritorno dei grifoni",
+        "fur": "Forgjarie, il ritorno dai grifons"
+      },
+      "summary": {
+        "it": "Forgaria nel Friuli condivide con Trasaghis la Riserva naturale regionale del Lago di Cornino, tra le rupi prealpine e la piana del Tagliamento. Qui il progetto di conservazione del grifone ha favorito la formazione di una colonia e ha reso l'area un riferimento per la tutela della specie nell'arco alpino.",
+        "fur": "Forgjarie e condivît cun Trasaghis la Riserve naturâl regjonâl dal Lâc di Cornin, tra lis cretis prealpinis e la plane dal Tiliment. Chi il progjet di conservazion dal grifon al à favorît la formazion di une colonie e al à fat de aree un pont di riferiment pe tutele de specie tal arc alpin."
+      },
+      "milestones": [],
+      "source": {
+        "label": "Regione FVG - Riserva naturale del Lago di Cornino",
+        "type": "regional_institution",
+        "url": "https://www.regione.fvg.it/rafvg/cms/webletter/agri_for/_19/aree_protette/articolo1"
+      },
+      "languageStatus": {
+        "it": "approved",
+        "fur": "approved"
+      },
+      "editorialStatus": "reviewed",
+      "readyForUi": true,
+      "review": {
+        "itReviewedAt": "2026-07-19",
+        "method": "source_cross_check",
+        "furReviewedAt": "2026-07-19",
+        "furMethod": "linguistic_review"
+      }
+    },
+    {
+      "id": "municipality-profile-forni-avoltri",
+      "istatCode": "030040",
+      "municipality": "Forni Avoltri",
+      "province": "UD",
+      "title": {
+        "it": "Forni Avoltri, miniere e memoria d'alta montagna",
+        "fur": "For Davôtri, minieris e memorie di alte montagne"
+      },
+      "summary": {
+        "it": "Il territorio di Forni Avoltri conserva le antiche miniere abbandonate del monte Avanza, memoria del lavoro in alta montagna. Nel centro del paese la collezione Cemùot chi èrin e la mostra sulla Grande Guerra custodiscono oggetti, fotografie e storie della comunità di confine.",
+        "fur": "Il teritori di For Davôtri al conserve lis vecjis minieris bandonadis dal mont Avanza, memorie dal lavôr in alte montagne. Tal centri dal paîs la colezion Cemùot chi èrin e la mostre su la Grande Vuere a custodissin ogjets, fotografiis e storiis de comunitât di confin."
+      },
+      "milestones": [],
+      "source": {
+        "label": "PromoTurismoFVG - Forni Avoltri",
+        "type": "regional_institution",
+        "url": "https://www.turismofvg.it/forni-avoltri?LangSetCMS=it"
+      },
+      "languageStatus": {
+        "it": "approved",
+        "fur": "approved"
+      },
+      "editorialStatus": "reviewed",
+      "readyForUi": true,
+      "review": {
+        "itReviewedAt": "2026-07-19",
+        "method": "source_cross_check",
+        "furReviewedAt": "2026-07-19",
+        "furMethod": "linguistic_review"
+      }
+    },
+    {
+      "id": "municipality-profile-forni-di-sopra",
+      "istatCode": "030041",
+      "municipality": "Forni di Sopra",
+      "province": "UD",
+      "title": {
+        "it": "Forni di Sopra, case alpine tra le Dolomiti",
+        "fur": "For Disore, cjasis alpinis tra lis Dolomitis"
+      },
+      "summary": {
+        "it": "Forni di Sopra è incorniciata dalle Dolomiti Friulane orientali, riconosciute come Patrimonio naturale UNESCO. Nel centro storico le case uniscono basamenti in pietra, parti superiori in legno, scale e ballatoi esterni, conservando la forma dell'abitare alpino.",
+        "fur": "For Disore al è incornisât des Dolomitis Furlanis orientâls, ricognossudis come Patrimoni naturâl UNESCO. Tal centri storic lis cjasis a metin dongje basaments di piere, parts superiôrs di len, scjalis e baladôrs esternis, conservant la forme dal vivi alpin."
+      },
+      "milestones": [],
+      "source": {
+        "label": "PromoTurismoFVG - Forni di Sopra",
+        "type": "regional_institution",
+        "url": "https://www.turismofvg.it/forni-di-sopra"
+      },
+      "languageStatus": {
+        "it": "approved",
+        "fur": "approved"
+      },
+      "editorialStatus": "reviewed",
+      "readyForUi": true,
+      "review": {
+        "itReviewedAt": "2026-07-19",
+        "method": "source_cross_check",
+        "furReviewedAt": "2026-07-19",
+        "furMethod": "linguistic_review"
+      }
+    },
+    {
+      "id": "municipality-profile-forni-di-sotto",
+      "istatCode": "030042",
+      "municipality": "Forni di Sotto",
+      "province": "UD",
+      "title": {
+        "it": "Forni di Sotto, l'eredità dei Forni Savorgnani",
+        "fur": "For Disot, la ereditât dai For Savorgnans"
+      },
+      "summary": {
+        "it": "Forni di Sotto condivise a lungo con Forni di Sopra l'autonomo territorio dei Forni Savorgnani, feudo della potente famiglia Savorgnan. Questo passato distingue un paese oggi immerso nella parte orientale del Parco delle Dolomiti Friulane.",
+        "fur": "For Disot al condividè par lung timp cun For Disore il teritori autonom dai For Savorgnans, feut de potente famee Savorgnan. Chest passât al distingui un paîs che vuê al è tal mieç de part orientâl dal Parc des Dolomitis Furlanis."
+      },
+      "milestones": [],
+      "source": {
+        "label": "PromoTurismoFVG - Forni di Sotto",
+        "type": "regional_institution",
+        "url": "https://www.turismofvg.it/forni-di-sotto?LangSetCMS=it"
+      },
+      "languageStatus": {
+        "it": "approved",
+        "fur": "approved"
+      },
+      "editorialStatus": "reviewed",
+      "readyForUi": true,
+      "review": {
+        "itReviewedAt": "2026-07-19",
+        "method": "source_cross_check",
+        "furReviewedAt": "2026-07-19",
+        "furMethod": "linguistic_review"
+      }
+    },
+    {
+      "id": "municipality-profile-gemona-del-friuli",
+      "istatCode": "030043",
+      "municipality": "Gemona del Friuli",
+      "province": "UD",
+      "title": {
+        "it": "Gemona del Friuli, il Duomo della rinascita",
+        "fur": "Glemone, il Domo de rinassite"
+      },
+      "summary": {
+        "it": "Il Duomo di Gemona, uno dei grandi monumenti medievali del Friuli, fu gravemente danneggiato dal terremoto del 1976. Un articolato intervento di consolidamento, ricostruzione delle parti crollate e restauro ne consentì il recupero.",
+        "fur": "Il Domo di Glemone, un dai grancj monuments medievâi dal Friûl, al fo danegjât in maniere grave dal taramot dal 1976. Un intervent articolât di consolidament, ricostruzion des parts coladis e restaur al permetè il so recuper."
+      },
+      "milestones": [
+        {
+          "id": "gemona-friuli-earthquake",
+          "year": 1976,
+          "label": {
+            "it": "Il terremoto devasta Gemona e danneggia gravemente il Duomo",
+            "fur": "Il taramot al devaste Glemone e al danegje in maniere grave il Domo"
+          }
+        }
+      ],
+      "source": {
+        "label": "Visit Gemona - Il Duomo",
+        "type": "cultural_institution",
+        "url": "https://www.visitgemona.com/feel/arte-e-cultura/duomo/"
+      },
+      "languageStatus": {
+        "it": "approved",
+        "fur": "approved"
+      },
+      "editorialStatus": "reviewed",
+      "readyForUi": true,
+      "review": {
+        "itReviewedAt": "2026-07-19",
+        "method": "source_cross_check",
+        "furReviewedAt": "2026-07-19",
+        "furMethod": "linguistic_review"
+      }
+    },
+    {
+      "id": "municipality-profile-gonars",
+      "istatCode": "030044",
+      "municipality": "Gonars",
+      "province": "UD",
+      "title": {
+        "it": "Gonars, un luogo necessario della memoria",
+        "fur": "Gonârs, un lûc necessari de memorie"
+      },
+      "summary": {
+        "it": "Dalla primavera del 1942 al settembre 1943, il campo di concentramento fascista di Gonars internò migliaia di civili provenienti soprattutto dai territori jugoslavi occupati. Nel 1973 un sacrario fu costruito nel cimitero cittadino per custodire i resti di 453 cittadini sloveni e croati morti durante l'internamento.",
+        "fur": "De Vierte dal 1942 al Setembar dal 1943, il cjamp di concentrament fassist di Gonârs al internà miârs di civîi che a vignivin soredut dai teritoris jugoslavs ocupâts. Tal 1973 al fo costruît tal cimentieri dal paîs un sacrari par custodî i restis di 453 citadins slovens e croats muarts vie pal internament."
+      },
+      "milestones": [
+        {
+          "id": "gonars-concentration-camp",
+          "year": 1942,
+          "label": {
+            "it": "Entra in funzione il campo di concentramento di Gonars",
+            "fur": "Al jentre in funzion il cjamp di concentrament di Gonârs"
+          }
+        }
+      ],
+      "source": {
+        "label": "Comune di Gonars - Il campo di concentramento 1942-1943",
+        "type": "official_municipality",
+        "url": "https://servizi-gonars.regione.fvg.it/it/turismo-51659/storia-112159/il-campo-di-concentramento-1942-1943-112172"
+      },
+      "languageStatus": {
+        "it": "approved",
+        "fur": "approved"
+      },
+      "editorialStatus": "reviewed",
+      "readyForUi": true,
+      "review": {
+        "itReviewedAt": "2026-07-19",
+        "method": "source_cross_check",
+        "furReviewedAt": "2026-07-19",
+        "furMethod": "linguistic_review"
+      }
+    },
+    {
+      "id": "municipality-profile-grimacco",
+      "istatCode": "030045",
+      "municipality": "Grimacco",
+      "province": "UD",
+      "title": {
+        "it": "Grimacco, memoria dell'alta valle del Cosizza",
+        "fur": "Grimacco, memorie de alte val dal Cosizza"
+      },
+      "summary": {
+        "it": "Grimacco custodisce nell'alta valle del Cosizza tradizioni delle Valli del Natisone e un paesaggio di borghi sparsi. Il castagno monumentale di Canalaz, vecchio di oltre quattro secoli, e la collezione Žefcjova raccontano natura e vita locale dal Seicento a oggi.",
+        "fur": "Grimacco al custodìs te alte val dal Cosizza lis tradizions des Valadis dal Nadison e un paisaç di borcs sparniçs. Il cjistignâr monumentâl di Canalaz, vieri di plui di cuatri secui, e la colezion Žefcjova a contin nature e vite locâl dal Sîscent incà."
+      },
+      "milestones": [],
+      "source": {
+        "label": "PromoTurismoFVG - Grimacco",
+        "type": "regional_institution",
+        "url": "https://www.turismofvg.it/it/gal/valli-del-natisone/grimacco?LangSetCMS=it"
+      },
+      "languageStatus": {
+        "it": "approved",
+        "fur": "approved"
+      },
+      "editorialStatus": "reviewed",
+      "readyForUi": true,
+      "review": {
+        "itReviewedAt": "2026-07-19",
+        "method": "source_cross_check",
+        "furReviewedAt": "2026-07-19",
+        "furMethod": "linguistic_review"
+      }
+    },
+    {
+      "id": "municipality-profile-latisana",
+      "istatCode": "030046",
+      "municipality": "Latisana",
+      "province": "UD",
+      "title": {
+        "it": "Latisana, il porto sul Tagliamento",
+        "fur": "Tisane, il puart sul Tiliment"
+      },
+      "summary": {
+        "it": "Latisana crebbe come porto fluviale sul Tagliamento, punto di transito per merci e legname diretti verso l'Adriatico. Dal Seicento il porto perse progressivamente importanza per l'insabbiamento della foce, il declino veneziano e l'ascesa del porto franco di Trieste.",
+        "fur": "Tisane e cressè tant che puart fluvâl sul Tiliment, pont di passaç par marcjansiis e len direts viers il Adriatic. Dal Sîscent il puart al pierdè a pôc a pôc impuartance par vie dal savalon che al jemplave la fôs, dal declin di Vignesie e de cressite dal puart franc di Triest."
+      },
+      "milestones": [],
+      "source": {
+        "label": "Comune di Latisana - Storia del porto sul Tagliamento",
+        "type": "official_municipality",
+        "url": "https://www.comune.latisana.ud.it/media/files/030046/attachment/Piano_Azione_Latisana_Relazione__18-12-10.pdf"
+      },
+      "languageStatus": {
+        "it": "approved",
+        "fur": "approved"
+      },
+      "editorialStatus": "reviewed",
+      "readyForUi": true,
+      "review": {
+        "itReviewedAt": "2026-07-19",
+        "method": "source_cross_check",
+        "furReviewedAt": "2026-07-19",
+        "furMethod": "linguistic_review"
+      }
+    },
+    {
+      "id": "municipality-profile-lauco",
+      "istatCode": "030047",
+      "municipality": "Lauco",
+      "province": "UD",
+      "title": {
+        "it": "Lauco, l'altopiano delle Tombe dai Pagans",
+        "fur": "Lauc, l'altiplen des Tombis dai Pagans"
+      },
+      "summary": {
+        "it": "Lauco si distende su un altopiano carnico sospeso sopra la valle del Tagliamento. In località Chiauians tre sepolture scavate nella roccia, note come Tombe dai Pagans, conservano una traccia probabilmente altomedievale del territorio.",
+        "fur": "Lauc si distint suntun altiplen cjargnel sospindût parsore de val dal Tiliment. In localitât Chiauians, trê sepulturis scjavadis te crete, cognossudis come Tombis dai Pagans, a conservin une olme probabilmentri altomedievâl dal teritori."
+      },
+      "milestones": [
+        {
+          "id": "lauco-rock-tombs",
+          "century": "VI-VII",
+          "label": {
+            "it": "Periodo probabile delle sepolture note come Tombe dai Pagans",
+            "fur": "Period probabil des sepulturis cognossudis come Tombis dai Pagans"
+          }
+        }
+      ],
+      "source": {
+        "label": "PromoTurismoFVG - Lauco",
+        "type": "regional_institution",
+        "url": "https://www.turismofvg.it/lauco?LangSetCMS=it"
+      },
+      "languageStatus": {
+        "it": "approved",
+        "fur": "approved"
+      },
+      "editorialStatus": "reviewed",
+      "readyForUi": true,
+      "review": {
+        "itReviewedAt": "2026-07-19",
+        "method": "source_cross_check",
+        "furReviewedAt": "2026-07-19",
+        "furMethod": "linguistic_review"
+      }
+    },
+    {
+      "id": "municipality-profile-lestizza",
+      "istatCode": "030048",
+      "municipality": "Lestizza",
+      "province": "UD",
+      "title": {
+        "it": "Lestizza, borghi dalle radici antiche",
+        "fur": "Listize, borcs cun lidrîs antighis"
+      },
+      "summary": {
+        "it": "I paesi di Lestizza compaiono nelle fonti medievali tra XII e XIV secolo: Villacaccia è attestata già nel 1145 e insieme a Lastiza in un documento del 1174. Il territorio conserva inoltre il castelliere protostorico di Galleriano, testimonianza di una frequentazione molto più antica.",
+        "fur": "I paîs di Listize a comparissin tes fonts medievâls tra il secul XII e il XIV: Villacaccia e je documentade za tal 1145 e, adun cun Lastiza, intun document dal 1174. Il teritori al conserve ancje il casteliere protostoric di Gallerian, testemoneance di une frequentazion une vore plui antighe."
+      },
+      "milestones": [
+        {
+          "id": "lestizza-first-mention",
+          "year": 1174,
+          "label": {
+            "it": "Un documento cita Villacaccia e Lastiza",
+            "fur": "Un document al cite Villacaccia e Lastiza"
+          }
+        }
+      ],
+      "source": {
+        "label": "Comune di Lestizza - Lestizza, storia di un borgo rurale",
+        "type": "official_municipality",
+        "url": "https://www.comune.lestizza.ud.it/media/files/030048/attachment/Storia_di_un_borgo_rurale_iG7KRwv.pdf"
+      },
+      "languageStatus": {
+        "it": "approved",
+        "fur": "approved"
+      },
+      "editorialStatus": "reviewed",
+      "readyForUi": true,
+      "review": {
+        "itReviewedAt": "2026-07-19",
+        "method": "source_cross_check",
+        "furReviewedAt": "2026-07-19",
+        "furMethod": "linguistic_review"
+      }
+    },
+    {
+      "id": "municipality-profile-lignano-sabbiadoro",
+      "istatCode": "030049",
+      "municipality": "Lignano Sabbiadoro",
+      "province": "UD",
+      "title": {
+        "it": "Lignano Sabbiadoro, la città a spirale",
+        "fur": "Lignan, la citât a spirâl"
+      },
+      "summary": {
+        "it": "La Lignano moderna nacque dalle bonifiche e dalla costruzione di una destinazione balneare sulla penisola tra laguna e Adriatico. Nel 1953 Marcello d'Olivo disegnò Lignano Pineta come una spirale, forma divenuta simbolo della città e inserita nello stemma comunale.",
+        "fur": "La Lignan moderne e nassè des bonifichis e de costruzion di une destinazion balneâr su la penisule tra lagune e Adriatic. Tal 1953 Marcello d'Olivo al dissegnà Lignano Pineta come une spirâl, forme deventade simbul de citât e inseride tal steme comunâl."
+      },
+      "milestones": [
+        {
+          "id": "lignano-pineta-spiral-plan",
+          "year": 1953,
+          "label": {
+            "it": "Marcello d'Olivo progetta la spirale di Lignano Pineta",
+            "fur": "Marcello d'Olivo al progjet la spirâl di Lignano Pineta"
+          }
+        },
+        {
+          "id": "lignano-municipal-autonomy",
+          "year": 1959,
+          "label": {
+            "it": "Lignano ottiene l'autonomia comunale da Latisana",
+            "fur": "Lignan al oten la autonomie comunâl di Tisane"
+          }
+        }
+      ],
+      "source": {
+        "label": "Città di Lignano Sabbiadoro - Luoghi e storia di Lignano",
+        "type": "official_municipality",
+        "url": "https://comune.lignano-sabbiadoro.ud.it/argomenti/patrimonio-culturale/luoghi-e-storia-di-lignano"
+      },
+      "languageStatus": {
+        "it": "approved",
+        "fur": "approved"
+      },
+      "editorialStatus": "reviewed",
+      "readyForUi": true,
+      "review": {
+        "itReviewedAt": "2026-07-19",
+        "method": "source_cross_check",
+        "furReviewedAt": "2026-07-19",
+        "furMethod": "linguistic_review"
+      }
+    },
+    {
+      "id": "municipality-profile-lusevera",
+      "istatCode": "030051",
+      "municipality": "Lusevera",
+      "province": "UD",
+      "title": {
+        "it": "Lusevera, grotte e cultura della valle del Torre",
+        "fur": "Lusevera, grotis e culture de val de Tor"
+      },
+      "summary": {
+        "it": "Nei paesi di Lusevera la cultura di confine emerge anche nel Pust di Micottis, con commedie nel dialetto sloveno del Torre. A Villanova delle Grotte si apre la cavità che il Comune presenta come la più lunga del Friuli.",
+        "fur": "Tai paîs di Lusevera la culture di confin e ven fûr ancje tal Pust di Micottis, cun comediis tal dialet sloven de Tor. A Villanova delle Grotte si vierç la cavitât che il Comun al presente come la plui lungje dal Friûl."
+      },
+      "milestones": [],
+      "source": {
+        "label": "Comune di Lusevera - I paesi",
+        "type": "official_municipality",
+        "url": "https://www.comune.lusevera.ud.it/vivere-il-comune/territorio/i-paesi/"
+      },
+      "languageStatus": {
+        "it": "approved",
+        "fur": "approved"
+      },
+      "editorialStatus": "reviewed",
+      "readyForUi": true,
+      "review": {
+        "itReviewedAt": "2026-07-19",
+        "method": "source_cross_check",
+        "furReviewedAt": "2026-07-19",
+        "furMethod": "linguistic_review"
+      }
+    }
+  ]
+}

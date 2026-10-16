@@ -1,0 +1,16 @@
+{
+  "schemaVersion": 1,
+  "event": "firebase-app-check-debug-tokens-revoked",
+  "recordedAtUtc": "2026-08-25T17:54:34Z",
+  "revokedAtUtc": "2026-08-25T17:54:17Z",
+  "projectId": "meteo-friul",
+  "projectNumber": "49007668366",
+  "firebaseAppId": "1:49007668366:android:725bf6f8b339177a852ddf",
+  "androidPackage": "com.meteofriul.app",
+  "playSigningCertificateSha256": "7df756136f97495ed37fd7e9bed0133a45769d5364c739bc50c134b7bada300a",
+  "maximumTokenTtlSeconds": 3600,
+  "verifiedDebugTokenCount": 0,
+  "verificationMethod": "firebase-app-check-rest-v1-paginated",
+  "playConsoleEvidenceReference": "https://play.google.com/console/u/0/developers/7317561924451916933/app/4972150571875270846/keymanagement",
+  "firebaseConsoleEvidenceReference": "https://console.firebase.google.com/project/meteo-friul/appcheck/apps; strict Play Integrity policy and zero debug tokens verified by REST read-back at 2026-08-25T17:54:17Z"
+}

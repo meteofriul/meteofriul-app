@@ -1,0 +1,95 @@
+{
+  "schemaVersion": 1,
+  "batchId": "ud-pn-enrichment-milestones-07-fur-review",
+  "sourceResearchBatchId": "ud-pn-enrichment-milestones-07",
+  "reviewedAt": "2026-09-02",
+  "runtimeIntegration": false,
+  "reviewMethod": "assisted_standard_reference_review",
+  "approvalBasis": "user_delegated_assisted_editorial_review",
+  "reviewer": "assistant",
+  "independentHumanReview": false,
+  "approvalNote": "Decisione editoriale assistita sotto il mandato di completamento Scopri. Le fonti ARLeF verificano lessico, toponimi e modelli d'uso, non certificano queste frasi; nessuna revisione professionale indipendente né lettura frase per frase attribuita all'utente.",
+  "summary": {
+    "totalRecords": 3,
+    "approved": 3,
+    "pendingHumanReview": 0
+  },
+  "records": [
+    {
+      "id": "venzone-double-defensive-walls-1258",
+      "status": "approved",
+      "labelFur": "E scomence la costruzion de dople cinte murarie di Vençon",
+      "notes": "Scomence, costruzion, dople e murarie seguono i lemmi e gli esempi ARLeF; Vençon è il toponimo repertoriato. La frase conserva l'inizio documentato del cantiere e non lo trasforma nel completamento della cinta.",
+      "references": [
+        {
+          "url": "https://superdizionari.arlef.it/ricerca?term=cominciare&language=it&gui=fur",
+          "note": "Cominciare → scomençâ; terza persona singolare scomence."
+        },
+        {
+          "url": "https://superdizionari.arlef.it/ricerca?term=costruzione&language=it&gui=fur",
+          "note": "Costruzione → costruzion."
+        },
+        {
+          "url": "https://superdizionari.arlef.it/ricerca?term=doppio&language=it&gui=fur",
+          "note": "Doppio → dopli; femminile dople."
+        },
+        {
+          "url": "https://superdizionari.arlef.it/ricerca?term=murario&language=it&gui=fur",
+          "note": "Murario → murari; l'esempio lessicografico attesta la concordanza murarie."
+        },
+        {
+          "url": "https://superdizionari.arlef.it/ricerca?term=Venzone&language=it&gui=fur",
+          "note": "Venzone → Vençon."
+        }
+      ]
+    },
+    {
+      "id": "polcenigo-turkish-incursion-1499",
+      "status": "approved",
+      "labelFur": "La incursion turche e vuaste Polcenic",
+      "notes": "Incursion, turche e vuaste seguono i lemmi ARLeF; Polcenic è il toponimo repertoriato. Vuaste rende la devastazione documentata senza aggiungere una distruzione definitiva del castello o dell'abitato.",
+      "references": [
+        {
+          "url": "https://superdizionari.arlef.it/lemma/incursione/17701?language=it&oneshot=1&gui=fur",
+          "note": "Incursione → incursion."
+        },
+        {
+          "url": "https://superdizionari.arlef.it/lemma/turco/3702?language=it&oneshot=1&gui=fur",
+          "note": "Turco → turc; femminile turche."
+        },
+        {
+          "url": "https://superdizionari.arlef.it/ricerca?term=devastare&language=it&gui=fur",
+          "note": "Devastare → vuastâ; terza persona singolare vuaste."
+        },
+        {
+          "url": "https://superdizionari.arlef.it/ricerca?term=Polcenigo&language=it&gui=fur",
+          "note": "Polcenigo → Polcenic."
+        }
+      ]
+    },
+    {
+      "id": "terzo-canale-anfora-wine-consumption",
+      "status": "approved",
+      "labelFur": "Tal abitât di Canale Anfora al è documentât il consum di vin",
+      "notes": "Abitât, documentât, consum e vin seguono i lemmi e gli esempi ARLeF. Canale Anfora resta il nome proprio del sito archeologico; la frase attesta consumo, non produzione locale o coltivazione della vite.",
+      "references": [
+        {
+          "url": "https://superdizionari.arlef.it/ricerca?term=abitato&language=it&gui=fur",
+          "note": "Abitato → abitât."
+        },
+        {
+          "url": "https://superdizionari.arlef.it/ricerca?term=documentare&language=it&gui=fur",
+          "note": "Documentare → documentâ; participio documentât."
+        },
+        {
+          "url": "https://superdizionari.arlef.it/ricerca?term=consumo&language=it&gui=fur",
+          "note": "Consumo → consum."
+        },
+        {
+          "url": "https://superdizionari.arlef.it/ricerca?term=vino&language=it&gui=fur",
+          "note": "Vino → vin."
+        }
+      ]
+    }
+  ]
+}

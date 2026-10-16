@@ -1,0 +1,31 @@
+{
+  "schemaVersion": 1,
+  "promotionId": "ud-pn-enrichment-milestones-promotion-05",
+  "researchBatchId": "ud-pn-enrichment-milestones-05",
+  "furReviewBatchId": "ud-pn-enrichment-milestones-05-fur-review",
+  "promotedAt": "2026-09-01",
+  "approvalBasis": "user_delegated_assisted_editorial_review",
+  "approvalNote": "Approvazione editoriale assistita nel mandato di completamento Scopri; non certificazione ARLeF o revisione professionale indipendente.",
+  "independentHumanReview": false,
+  "totalRecords": 6,
+  "previousTotalMilestones": 445,
+  "resultingTotalMilestones": 451,
+  "addedMilestoneCounts": {
+    "030001": 2,
+    "030026": 2,
+    "093040": 2
+  },
+  "resultingMilestoneCounts": {
+    "030001": 3,
+    "030026": 3,
+    "093040": 3
+  },
+  "recordIds": [
+    "aiello-san-carlo-fair-1816",
+    "aiello-joannis-aggregation-1931",
+    "cividale-patriarch-callisto-seat-737",
+    "cividale-archaeological-museum-founded-1817",
+    "san-quirino-incursion-church-fire-1499",
+    "san-quirino-napoleonic-district-1807"
+  ]
+}

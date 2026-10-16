@@ -1,0 +1,282 @@
+{
+  "schemaVersion": 1,
+  "batchId": "ostermann-1876-review-05",
+  "reviewedAt": "2026-07-23",
+  "source": {
+    "title": "Proverbi friulani raccolti dalla viva voce del popolo",
+    "author": "Valentino Ostermann",
+    "editionYear": 1876,
+    "catalogUrl": "https://www.techeudine.it/biblioteche-digital-furlane/proverbi-friulani-raccolti-dalla-viva-voce-del-popolo",
+    "facsimileUrl": "https://manoscrittisbhu.comune.udine.it/uploads/BDF/LO11116556.pdf"
+  },
+  "policy": {
+    "publish": false,
+    "furNormalizationAllowed": false,
+    "rule": "Il facsimile conferma il testo sorgente. La raccomandazione editoriale non equivale a pubblicazione o traduzione approvata."
+  },
+  "summary": {
+    "records": 15,
+    "promoteAfterLanguageReview": 15,
+    "needsContextOrLanguageReview": 0,
+    "secondaryVariant": 0
+  },
+  "records": [
+    {
+      "id": "ost1876-un-len-no-fas-fuc",
+      "sourceBlockIds": [
+        "ost1876-p302-b005"
+      ],
+      "pdfPage": 302,
+      "printedPage": 298,
+      "furOriginal": "Un len a nol fâs fûc.",
+      "proposedIt": "Un solo ceppo non fa fuoco.",
+      "recommendation": "promote_after_language_review",
+      "targetUse": "almanac_general",
+      "calendar": {
+        "rotation": "general_wisdom"
+      },
+      "reason": "Massima autonoma e chiaramente leggibile nel facsimile; il secondo detto del blocco resta separato.",
+      "publish": false
+    },
+    {
+      "id": "ost1876-olei-ben-no-coste-nuje",
+      "sourceBlockIds": [
+        "ost1876-p302-b006"
+      ],
+      "pdfPage": 302,
+      "printedPage": 298,
+      "furOriginal": "A olei ben nol coste nuje.",
+      "proposedIt": "Voler bene non costa nulla.",
+      "recommendation": "promote_after_language_review",
+      "targetUse": "almanac_general",
+      "calendar": {
+        "rotation": "general_wisdom"
+      },
+      "reason": "Detto breve, positivo e indipendente da data o stagione.",
+      "publish": false
+    },
+    {
+      "id": "ost1876-altris-timps-altris-usancis",
+      "sourceBlockIds": [
+        "ost1876-p302-b008"
+      ],
+      "pdfPage": 302,
+      "printedPage": 298,
+      "furOriginal": "Altris timps, altris usancis.",
+      "proposedIt": "Altri tempi, altre usanze.",
+      "recommendation": "promote_after_language_review",
+      "targetUse": "almanac_general",
+      "calendar": {
+        "rotation": "general_wisdom"
+      },
+      "reason": "Massima generale completa; la riga precedente del blocco non viene unita artificialmente.",
+      "publish": false
+    },
+    {
+      "id": "ost1876-cjamine-pis-plomp",
+      "sourceBlockIds": [
+        "ost1876-p302-b009"
+      ],
+      "pdfPage": 302,
+      "printedPage": 298,
+      "furOriginal": "Bisugne cjamine cui pîs di plomb.",
+      "proposedIt": "Bisogna camminare con i piedi di piombo.",
+      "recommendation": "promote_after_language_review",
+      "targetUse": "almanac_general",
+      "calendar": {
+        "rotation": "general_wisdom"
+      },
+      "reason": "Invito alla prudenza leggibile senza contesto aggiuntivo.",
+      "publish": false
+    },
+    {
+      "id": "ost1876-plui-fum-che-rost",
+      "sourceBlockIds": [
+        "ost1876-p303-b001"
+      ],
+      "pdfPage": 303,
+      "printedPage": 299,
+      "furOriginal": "Plui fum che no rost.",
+      "proposedIt": "Più fumo che arrosto.",
+      "recommendation": "promote_after_language_review",
+      "targetUse": "almanac_general",
+      "calendar": {
+        "rotation": "general_wisdom"
+      },
+      "reason": "Proverbio autonomo e distinto dalle due righe che lo precedono nel blocco.",
+      "publish": false
+    },
+    {
+      "id": "ost1876-nissune-gnove-buine-gnove",
+      "sourceBlockIds": [
+        "ost1876-p303-b004"
+      ],
+      "pdfPage": 303,
+      "printedPage": 299,
+      "furOriginal": "Nissune gnove, buine gnove.",
+      "proposedIt": "Nessuna notizia, buona notizia.",
+      "recommendation": "promote_after_language_review",
+      "targetUse": "almanac_general",
+      "calendar": {
+        "rotation": "general_wisdom"
+      },
+      "reason": "Prima massima autonoma del blocco; la variante pessimistica successiva non viene incorporata.",
+      "publish": false
+    },
+    {
+      "id": "ost1876-un-fior-no-fas-primevere",
+      "sourceBlockIds": [
+        "ost1876-p303-b007"
+      ],
+      "pdfPage": 303,
+      "printedPage": 299,
+      "furOriginal": "Un fior nol fas primevere.",
+      "proposedIt": "Un fiore non fa primavera.",
+      "recommendation": "promote_after_language_review",
+      "targetUse": "almanac_seasonal",
+      "calendar": {
+        "seasons": [
+          "spring"
+        ]
+      },
+      "reason": "Detto completo e noto; il richiamo esplicito alla primavera impone una selezione stagionale.",
+      "publish": false
+    },
+    {
+      "id": "ost1876-ogni-regule-so-ecezion",
+      "sourceBlockIds": [
+        "ost1876-p303-b008"
+      ],
+      "pdfPage": 303,
+      "printedPage": 299,
+      "furOriginal": "Ogni regule la sô eccezion.",
+      "proposedIt": "Ogni regola ha la sua eccezione.",
+      "recommendation": "promote_after_language_review",
+      "targetUse": "almanac_general",
+      "calendar": {
+        "rotation": "general_wisdom"
+      },
+      "reason": "Massima generale breve, autonoma e priva di vincoli temporali.",
+      "publish": false
+    },
+    {
+      "id": "ost1876-ogni-fior-so-stagion",
+      "sourceBlockIds": [
+        "ost1876-p303-b010"
+      ],
+      "pdfPage": 303,
+      "printedPage": 299,
+      "furOriginal": "Ogni fior ta sô stagion.",
+      "proposedIt": "Ogni fiore ha la sua stagione.",
+      "recommendation": "promote_after_language_review",
+      "targetUse": "almanac_general",
+      "calendar": {
+        "rotation": "general_nature"
+      },
+      "reason": "Il riferimento è al tempo proprio di ogni cosa, non a una stagione specifica dell'anno.",
+      "publish": false
+    },
+    {
+      "id": "ost1876-timp-consume-dut",
+      "sourceBlockIds": [
+        "ost1876-p304-b002"
+      ],
+      "pdfPage": 304,
+      "printedPage": 300,
+      "furOriginal": "Il timp consume dut.",
+      "proposedIt": "Il tempo consuma tutto.",
+      "recommendation": "promote_after_language_review",
+      "targetUse": "almanac_general",
+      "calendar": {
+        "rotation": "general_wisdom"
+      },
+      "reason": "Massima autonoma e distinta dai proverbi sul tempo già presenti.",
+      "publish": false
+    },
+    {
+      "id": "ost1876-fat-no-si-disfa",
+      "sourceBlockIds": [
+        "ost1876-p304-b004"
+      ],
+      "pdfPage": 304,
+      "printedPage": 300,
+      "furOriginal": "Ce ca l'è fat, l'è fat e no si po disfâ.",
+      "proposedIt": "Ciò che è fatto è fatto e non si può disfare.",
+      "recommendation": "promote_after_language_review",
+      "targetUse": "almanac_general",
+      "calendar": {
+        "rotation": "general_wisdom"
+      },
+      "reason": "Prima massima del blocco, completa e comprensibile senza la riga successiva.",
+      "publish": false
+    },
+    {
+      "id": "ost1876-di-gnot-gjats-gris",
+      "sourceBlockIds": [
+        "ost1876-p304-b006"
+      ],
+      "pdfPage": 304,
+      "printedPage": 300,
+      "furOriginal": "Di gnot ducj i gjats son grîs.",
+      "proposedIt": "Di notte tutti i gatti sono grigi.",
+      "recommendation": "promote_after_language_review",
+      "targetUse": "almanac_general",
+      "calendar": {
+        "rotation": "general_wisdom"
+      },
+      "reason": "Proverbio autonomo e noto; la seconda variante figurata del blocco resta esclusa.",
+      "publish": false
+    },
+    {
+      "id": "ost1876-vos-popul-vos-diu",
+      "sourceBlockIds": [
+        "ost1876-p304-b007"
+      ],
+      "pdfPage": 304,
+      "printedPage": 300,
+      "furOriginal": "Vôs di popul, vôs di Dio.",
+      "proposedIt": "Voce di popolo, voce di Dio.",
+      "recommendation": "promote_after_language_review",
+      "targetUse": "almanac_general",
+      "calendar": {
+        "rotation": "general_wisdom"
+      },
+      "reason": "Massima tradizionale completa, separata con certezza dalle altre righe del blocco.",
+      "publish": false
+    },
+    {
+      "id": "ost1876-ducj-sanc-ros",
+      "sourceBlockIds": [
+        "ost1876-p304-b007"
+      ],
+      "pdfPage": 304,
+      "printedPage": 300,
+      "furOriginal": "Vin ducj il sanc ros.",
+      "proposedIt": "Abbiamo tutti il sangue rosso.",
+      "recommendation": "promote_after_language_review",
+      "targetUse": "almanac_general",
+      "calendar": {
+        "rotation": "general_wisdom"
+      },
+      "reason": "Detto breve sull'uguaglianza umana, chiaramente isolabile nel facsimile.",
+      "publish": false
+    },
+    {
+      "id": "ost1876-dopo-trist-ven-bon",
+      "sourceBlockIds": [
+        "ost1876-p304-b007"
+      ],
+      "pdfPage": 304,
+      "printedPage": 300,
+      "furOriginal": "Dopo il trist ven il bon.",
+      "proposedIt": "Dopo il male viene il bene.",
+      "recommendation": "promote_after_language_review",
+      "targetUse": "almanac_general",
+      "calendar": {
+        "rotation": "general_wisdom"
+      },
+      "reason": "Massima positiva autonoma, distinta dagli altri detti presenti nello stesso blocco.",
+      "publish": false
+    }
+  ]
+}

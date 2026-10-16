@@ -1,0 +1,885 @@
+{
+  "schemaVersion": 1,
+  "purpose": "Revisione finale controllata dei primi candidati Memoria del giorno. Questo file non pubblica nulla: prepara lo staging editoriale prima di aggiornare localMemory.",
+  "generatedAt": "2026-07-09",
+  "rules": [
+    "La source review qui autorizza solo lo staging editoriale, non la pubblicazione automatica.",
+    "La pubblicazione richiede ancora FUR approvato, editorialStatus ready_for_discover e readyForUi true nel record finale.",
+    "La fonte Wikidata e' accettabile per una rubrica leggera quando conferma identita, data, luogo o profilo essenziale.",
+    "Se un contenuto richiede racconto lungo o fonte locale piu forte, resta fuori dalla Memoria del giorno.",
+    "La fonte verificata non basta per pubblicare: ogni record deve avere anche una soglia editoriale A/B/C/D e una superficie di uscita.",
+    "A=daily_primary, B=daily_secondary o archive, C=archive, D=discard. Le biografie con solo legame di nascita o notorieta generica non diventano card principale."
+  ],
+  "summary": {
+    "totalReviewed": 36,
+    "sourceOkForStaging": 36,
+    "readyForUi": 21,
+    "furApproved": 21
+  },
+  "records": [
+    {
+      "id": "memory-copy-0818-gaetano-kanizsa",
+      "decision": "source_ok_for_staging",
+      "publishDecision": "ready_for_ui",
+      "sourceReview": {
+        "checkedAt": "2026-07-08",
+        "method": "Wikidata EntityData",
+        "url": "https://www.wikidata.org/wiki/Special:EntityData/Q1491020.json",
+        "verified": ["identity", "birthDate", "birthPlace", "occupation"],
+        "note": "Entita raggiungibile; conferma Gaetano Kanizsa, nascita 18 agosto 1913, Trieste, profilo psicologo/pittore."
+      },
+      "copyReview": {
+        "it": "ok_for_editorial_staging",
+        "fur": "approved",
+        "note": "Copy IT e FUR approvate per la prima pubblicazione controllata in Scopri."
+      },
+      "editorialTriage": {
+        "rank": "A",
+        "surface": "daily_primary",
+        "userValue": "Scienza, percezione e cultura visiva: profilo forte e comprensibile anche per pubblico generale.",
+        "reason": "Figura triestina di rilievo internazionale; non e' solo una nascita locale."
+      },
+      "remainingBlockers": []
+    },
+    {
+      "id": "memory-copy-1015-giovanni-da-udine",
+      "decision": "source_ok_for_staging",
+      "publishDecision": "ready_for_ui",
+      "sourceReview": {
+        "checkedAt": "2026-07-08",
+        "method": "Wikidata EntityData",
+        "url": "https://www.wikidata.org/wiki/Special:EntityData/Q983350.json",
+        "verified": ["identity", "friulianLabel", "profile", "sitelinks"],
+        "note": "Entita raggiungibile; conferma Giovanni da Udine, profilo pittore/decoratore/architetto e presenza label FUR Zuan di Udin."
+      },
+      "copyReview": {
+        "it": "ok_for_editorial_staging",
+        "fur": "approved",
+        "note": "Copy IT e FUR approvate per la prima pubblicazione controllata in Scopri. Titolo FUR finale: Zuan di Udin."
+      },
+      "editorialTriage": {
+        "rank": "A",
+        "surface": "daily_primary",
+        "userValue": "Arte, Udine e Rinascimento: nome territoriale forte e identitario.",
+        "reason": "Figura storica riconoscibile, utile per raccontare il territorio e non solo la biografia."
+      },
+      "remainingBlockers": []
+    },
+    {
+      "id": "memory-copy-0121-tito-maniacco",
+      "decision": "source_ok_for_staging",
+      "publishDecision": "ready_for_ui",
+      "sourceReview": {
+        "checkedAt": "2026-07-08",
+        "method": "Wikidata EntityData",
+        "url": "https://www.wikidata.org/wiki/Special:EntityData/Q3991880.json",
+        "verified": ["identity", "deathDate", "birthPlace", "occupation", "friulianSitelink"],
+        "note": "Entita raggiungibile; conferma Tito Maniacco, morte 21 gennaio 2010, legame con Udine e profilo scrittore/storico."
+      },
+      "copyReview": {
+        "it": "ok_for_editorial_staging",
+        "fur": "approved",
+        "note": "Copy IT e FUR approvate per la prima pubblicazione controllata in Scopri."
+      },
+      "editorialTriage": {
+        "rank": "A",
+        "surface": "daily_primary",
+        "userValue": "Scrittura, storia e identita friulana: adatto alla rubrica principale.",
+        "reason": "Profilo culturale coerente con Meteo Friul e con la memoria del territorio."
+      },
+      "remainingBlockers": []
+    },
+    {
+      "id": "memory-copy-0615-lojze-spacal",
+      "decision": "source_ok_for_staging",
+      "publishDecision": "ready_for_ui",
+      "sourceReview": {
+        "checkedAt": "2026-07-08",
+        "method": "Wikidata EntityData",
+        "url": "https://www.wikidata.org/wiki/Special:EntityData/Q922154.json",
+        "verified": ["identity", "birthDate", "birthPlace", "occupation"],
+        "note": "Entita raggiungibile; conferma Lojze Spacal, nascita 15 giugno 1907, Trieste e profilo pittore legato al Carso/confine."
+      },
+      "copyReview": {
+        "it": "ok_for_editorial_staging",
+        "fur": "approved",
+        "note": "Copy IT e FUR approvate per la prima pubblicazione controllata in Scopri."
+      },
+      "editorialTriage": {
+        "rank": "A",
+        "surface": "daily_primary",
+        "userValue": "Carso, confine e arte: contenuto visivo e territoriale.",
+        "reason": "Il tema parla del territorio, non soltanto della notorieta personale."
+      },
+      "remainingBlockers": []
+    },
+    {
+      "id": "memory-copy-0603-giovanni-battista-bassi",
+      "decision": "source_ok_for_staging",
+      "publishDecision": "ready_for_ui",
+      "sourceReview": {
+        "checkedAt": "2026-07-08",
+        "method": "Wikidata EntityData",
+        "url": "https://www.wikidata.org/wiki/Special:EntityData/Q15921979.json",
+        "verified": ["identity", "birthDate", "birthPlace", "occupation"],
+        "note": "Entita raggiungibile; conferma Giovanni Battista Bassi, nascita 3 giugno 1792, Pordenone e profilo architetto/matematico/meteorologo."
+      },
+      "copyReview": {
+        "it": "ok_for_editorial_staging",
+        "fur": "approved",
+        "note": "Copy IT e FUR approvate per pubblicazione controllata in Scopri come memoria secondaria del giorno."
+      },
+      "editorialTriage": {
+        "rank": "B",
+        "surface": "daily_secondary",
+        "userValue": "Pordenone, architettura e storia urbana: utile come voce locale.",
+        "reason": "Buon contenuto territoriale, ma meno forte come memoria principale regionale."
+      },
+      "remainingBlockers": []
+    },
+    {
+      "id": "memory-copy-0507-gianni-bisiach",
+      "decision": "source_ok_for_staging",
+      "publishDecision": "not_ready_for_ui",
+      "sourceReview": {
+        "checkedAt": "2026-07-08",
+        "method": "Wikidata EntityData",
+        "url": "https://www.wikidata.org/wiki/Special:EntityData/Q661716.json",
+        "verified": ["identity", "birthDate", "birthPlace", "occupation"],
+        "note": "Entita raggiungibile; conferma Gianni Bisiach, nascita 7 maggio 1927, Gorizia e profilo giornalista/scrittore/regista/divulgatore."
+      },
+      "copyReview": {
+        "it": "ok_for_editorial_staging",
+        "fur": "human_review_needed",
+        "note": "Copy breve e comprensibile. FUR da validare prima della pubblicazione."
+      },
+      "editorialTriage": {
+        "rank": "C",
+        "surface": "archive",
+        "userValue": "Profilo leggibile ma non abbastanza distintivo per la card principale.",
+        "reason": "Giornalismo e divulgazione sono interessanti, ma la soglia Scopri principale deve restare piu alta."
+      },
+      "remainingBlockers": ["fur_human_review", "ready_for_discover_status", "ready_for_ui_flag"]
+    },
+    {
+      "id": "memory-copy-0504-lojzka-bratuz",
+      "decision": "source_ok_for_staging",
+      "publishDecision": "ready_for_ui",
+      "sourceReview": {
+        "checkedAt": "2026-07-08",
+        "method": "Wikidata EntityData",
+        "url": "https://www.wikidata.org/wiki/Special:EntityData/Q12795100.json",
+        "verified": ["identity", "deathDate", "birthPlace", "deathPlace", "occupation"],
+        "note": "Entita raggiungibile; conferma Lojzka Bratuz, morte 4 maggio 2019, legame con Gorizia e profilo scrittrice/accademica slovena."
+      },
+      "copyReview": {
+        "it": "ok_for_editorial_staging",
+        "fur": "approved",
+        "note": "Copy IT e FUR approvate per pubblicazione controllata in Scopri come memoria secondaria del giorno."
+      },
+      "editorialTriage": {
+        "rank": "B",
+        "surface": "daily_secondary",
+        "userValue": "Gorizia, cultura slovena e memoria di confine.",
+        "reason": "Tema molto coerente con la pluralita culturale del territorio; puo stare sotto una voce principale o in rotazione mirata."
+      },
+      "remainingBlockers": []
+    },
+    {
+      "id": "memory-copy-0429-valentin-stanic",
+      "decision": "source_ok_for_staging",
+      "publishDecision": "ready_for_ui",
+      "sourceReview": {
+        "checkedAt": "2026-07-08",
+        "method": "Wikidata EntityData",
+        "url": "https://www.wikidata.org/wiki/Special:EntityData/Q2508496.json",
+        "verified": ["identity", "deathDate", "deathPlace", "occupation"],
+        "note": "Entita raggiungibile; conferma Valentin Stanic, morte 29 aprile 1847 a Gorizia e profilo sacerdote/alpinista/poeta/docente."
+      },
+      "copyReview": {
+        "it": "ok_for_editorial_staging",
+        "fur": "approved",
+        "note": "Copy IT e FUR approvate per pubblicazione controllata in Scopri come memoria secondaria del giorno."
+      },
+      "editorialTriage": {
+        "rank": "B",
+        "surface": "daily_secondary",
+        "userValue": "Montagna, Gorizia e cultura di confine.",
+        "reason": "Buono per Scopri, ma richiede contesto per essere immediato all'utente medio."
+      },
+      "remainingBlockers": []
+    },
+    {
+      "id": "memory-copy-0412-gillo-dorfles",
+      "decision": "source_ok_for_staging",
+      "publishDecision": "not_ready_for_ui",
+      "sourceReview": {
+        "checkedAt": "2026-07-08",
+        "method": "Wikidata EntityData",
+        "url": "https://www.wikidata.org/wiki/Special:EntityData/Q2273489.json",
+        "verified": ["identity", "birthDate", "birthPlace", "occupation"],
+        "note": "Entita raggiungibile; conferma Gillo Dorfles, nascita a Trieste e profilo critico d arte/pittore/filosofo. La fonte contiene anche una data alternativa: il 12 aprile resta staging, non pubblicazione automatica."
+      },
+      "copyReview": {
+        "it": "ok_for_editorial_staging",
+        "fur": "human_review_needed",
+        "note": "Copy breve e comprensibile. FUR da validare prima della pubblicazione."
+      },
+      "editorialTriage": {
+        "rank": "B",
+        "surface": "archive",
+        "userValue": "Cultura europea e Trieste, ma legame locale da usare con misura.",
+        "reason": "Figura importante, non giornalista generico; comunque non va promossa automaticamente a memoria principale solo per nascita a Trieste."
+      },
+      "remainingBlockers": ["fur_human_review", "ready_for_discover_status", "ready_for_ui_flag"]
+    },
+    {
+      "id": "memory-copy-1005-giorgio-pressburger",
+      "decision": "source_ok_for_staging",
+      "publishDecision": "ready_for_ui",
+      "sourceReview": {
+        "checkedAt": "2026-07-08",
+        "method": "Wikidata EntityData",
+        "url": "https://www.wikidata.org/wiki/Special:EntityData/Q1008988.json",
+        "verified": ["identity", "deathDate", "deathPlace", "occupation"],
+        "note": "Entita raggiungibile; conferma Giorgio Pressburger, morte 5 ottobre 2017 a Trieste e profilo regista/scrittore/drammaturgo."
+      },
+      "copyReview": {
+        "it": "ok_for_editorial_staging",
+        "fur": "approved",
+        "note": "Copy IT e FUR approvate per pubblicazione controllata in Scopri come memoria secondaria del giorno."
+      },
+      "editorialTriage": {
+        "rank": "B",
+        "surface": "daily_secondary",
+        "userValue": "Trieste, teatro, letteratura e memoria europea.",
+        "reason": "Profilo culturale valido, adatto come seconda voce o archivio se la giornata ha un fatto piu forte."
+      },
+      "remainingBlockers": []
+    },
+    {
+      "id": "memory-copy-0120-luca-carlevarijs",
+      "decision": "source_ok_for_staging",
+      "publishDecision": "ready_for_ui",
+      "sourceReview": {
+        "checkedAt": "2026-07-08",
+        "method": "Wikidata EntityData",
+        "url": "https://www.wikidata.org/wiki/Special:EntityData/Q2704669.json",
+        "verified": ["identity", "birthDate", "birthPlace", "occupation"],
+        "note": "Entita raggiungibile; conferma Luca Carlevarijs, nascita 20 gennaio 1663 a Udine e profilo pittore. La fonte contiene anche una data alternativa di morte."
+      },
+      "copyReview": {
+        "it": "ok_for_editorial_staging",
+        "fur": "approved",
+        "note": "Copy IT e FUR approvate per pubblicazione controllata in Scopri come memoria secondaria del giorno."
+      },
+      "editorialTriage": {
+        "rank": "B",
+        "surface": "daily_secondary",
+        "userValue": "Udine, arte e vedutismo: utile come memoria culturale locale.",
+        "reason": "Profilo artistico solido, ma meno immediato come card principale regionale."
+      },
+      "remainingBlockers": []
+    },
+    {
+      "id": "memory-copy-0411-matteo-pertsch",
+      "decision": "source_ok_for_staging",
+      "publishDecision": "ready_for_ui",
+      "sourceReview": {
+        "checkedAt": "2026-07-08",
+        "method": "Wikidata EntityData",
+        "url": "https://www.wikidata.org/wiki/Special:EntityData/Q325885.json",
+        "verified": ["identity", "deathDate", "deathPlace", "occupation"],
+        "note": "Entita raggiungibile; conferma Matteo Pertsch, morte 11 aprile 1834 a Trieste e profilo architetto."
+      },
+      "copyReview": {
+        "it": "ok_for_editorial_staging",
+        "fur": "approved",
+        "note": "Copy IT e FUR approvate per pubblicazione controllata in Scopri come memoria secondaria del giorno."
+      },
+      "editorialTriage": {
+        "rank": "B",
+        "surface": "daily_secondary",
+        "userValue": "Trieste urbana, architettura e teatri: buona voce locale.",
+        "reason": "Memoria territoriale concreta, adatta come seconda voce o focus urbano."
+      },
+      "remainingBlockers": []
+    },
+    {
+      "id": "memory-copy-0616-stanislaus-joyce",
+      "decision": "source_ok_for_staging",
+      "publishDecision": "not_ready_for_ui",
+      "sourceReview": {
+        "checkedAt": "2026-07-08",
+        "method": "Wikidata EntityData",
+        "url": "https://www.wikidata.org/wiki/Special:EntityData/Q326243.json",
+        "verified": ["identity", "deathDate", "deathPlace", "occupation"],
+        "note": "Entita raggiungibile; conferma Stanislaus Joyce, morte 16 giugno 1955 a Trieste e profilo scrittore."
+      },
+      "copyReview": {
+        "it": "ok_for_editorial_staging",
+        "fur": "human_review_needed",
+        "note": "Copy IT rafforzata per archivio: sposta il fuoco da James Joyce alla Trieste di incontri e passaggi letterari."
+      },
+      "editorialTriage": {
+        "rank": "C",
+        "surface": "archive",
+        "userValue": "Trieste letteraria, ma valore principale non abbastanza autonomo.",
+        "reason": "Interessante, pero' rischia di vivere come nota derivata da James Joyce."
+      },
+      "remainingBlockers": ["fur_human_review", "ready_for_discover_status", "ready_for_ui_flag"]
+    },
+    {
+      "id": "memory-copy-0205-napoleone-cozzi",
+      "decision": "source_ok_for_staging",
+      "publishDecision": "not_ready_for_ui",
+      "sourceReview": {
+        "checkedAt": "2026-07-08",
+        "method": "Wikidata EntityData",
+        "url": "https://www.wikidata.org/wiki/Special:EntityData/Q17284902.json",
+        "verified": ["identity", "birthDate", "birthPlace", "occupation"],
+        "note": "Entita raggiungibile; conferma Napoleone Cozzi, nascita 5 febbraio 1867 a Trieste e profilo alpinista/pittore/decoratore."
+      },
+      "copyReview": {
+        "it": "ok_for_editorial_staging",
+        "fur": "human_review_needed",
+        "note": "Copy IT rafforzata per archivio: collega montagna, disegno e confine senza promuoverlo a memoria principale."
+      },
+      "editorialTriage": {
+        "rank": "C",
+        "surface": "archive",
+        "userValue": "Arte e montagna, ma ancora poco memorabile come voce giornaliera.",
+        "reason": "Non abbastanza forte per rubrica principale; puo' diventare archivio se raccontato meglio."
+      },
+      "remainingBlockers": ["fur_human_review", "ready_for_discover_status", "ready_for_ui_flag"]
+    },
+    {
+      "id": "memory-copy-0813-lella-vignelli",
+      "decision": "source_ok_for_staging",
+      "publishDecision": "not_ready_for_ui",
+      "sourceReview": {
+        "checkedAt": "2026-07-08",
+        "method": "Wikidata EntityData",
+        "url": "https://www.wikidata.org/wiki/Special:EntityData/Q6520921.json",
+        "verified": ["identity", "birthDate", "birthPlace", "occupation"],
+        "note": "Entita raggiungibile; conferma Lella Vignelli, nascita 13 agosto 1934 a Udine e profilo architetta/designer/imprenditrice. La fonte contiene anche una data alternativa di morte."
+      },
+      "copyReview": {
+        "it": "ok_for_editorial_staging",
+        "fur": "human_review_needed",
+        "note": "Copy breve, ma il legame locale e' quasi solo nascita a Udine."
+      },
+      "editorialTriage": {
+        "rank": "B",
+        "surface": "archive",
+        "userValue": "Design internazionale con nascita udinese, da usare con misura.",
+        "reason": "Figura importante, ma legame territoriale debole: non card principale automatica."
+      },
+      "remainingBlockers": ["fur_human_review", "ready_for_discover_status", "ready_for_ui_flag"]
+    },
+    {
+      "id": "memory-copy-0902-adalgiso-fior",
+      "decision": "source_ok_for_staging",
+      "publishDecision": "ready_for_ui",
+      "sourceReview": {
+        "checkedAt": "2026-07-08",
+        "method": "Wikidata EntityData",
+        "url": "https://www.wikidata.org/wiki/Special:EntityData/Q133876935.json",
+        "verified": ["identity", "deathDate", "deathPlace", "occupation"],
+        "note": "Entita raggiungibile; conferma Adalgiso Fior, morte 2 settembre 1978 a Udine e profilo poeta friulano."
+      },
+      "copyReview": {
+        "it": "ok_for_editorial_staging",
+        "fur": "approved",
+        "note": "Copy IT e FUR approvate per pubblicazione controllata in Scopri come memoria secondaria del giorno."
+      },
+      "editorialTriage": {
+        "rank": "B",
+        "surface": "daily_secondary",
+        "userValue": "Lingua friulana e memoria quotidiana: voce utile per Scopri se trattata bene.",
+        "reason": "Profilo territoriale coerente, ma da pubblicare solo con copy e FUR controllati."
+      },
+      "remainingBlockers": []
+    },
+    {
+      "id": "memory-copy-1013-marcello-de-stefano",
+      "decision": "source_ok_for_staging",
+      "publishDecision": "not_ready_for_ui",
+      "sourceReview": {
+        "checkedAt": "2026-07-08",
+        "method": "Wikidata EntityData",
+        "url": "https://www.wikidata.org/wiki/Special:EntityData/Q3845573.json",
+        "verified": ["identity", "deathDate", "occupation"],
+        "note": "Entita raggiungibile; conferma Marcello De Stefano, morte 13 ottobre 2023 e profilo regista/pittore. La data di nascita nella fonte e' incompleta, ma non e' la data usata dal record."
+      },
+      "copyReview": {
+        "it": "ok_for_editorial_staging",
+        "fur": "human_review_needed",
+        "note": "Copy breve e chiaro; valore editoriale piu adatto ad archivio che a memoria giornaliera principale."
+      },
+      "editorialTriage": {
+        "rank": "C",
+        "surface": "archive",
+        "userValue": "Arti visive e cinema, ma impatto pubblico piu debole rispetto ad altri candidati.",
+        "reason": "Non abbastanza forte per il flusso giornaliero; puo restare archivio se serve una voce udinese sulle arti."
+      },
+      "remainingBlockers": ["fur_human_review", "ready_for_discover_status", "ready_for_ui_flag"]
+    },
+    {
+      "id": "memory-copy-0820-enrico-rava",
+      "decision": "source_ok_for_staging",
+      "publishDecision": "not_ready_for_ui",
+      "sourceReview": {
+        "checkedAt": "2026-07-08",
+        "method": "Wikidata EntityData",
+        "url": "https://www.wikidata.org/wiki/Special:EntityData/Q1339427.json",
+        "verified": ["identity", "birthDate", "birthPlace", "occupation"],
+        "note": "Entita raggiungibile; conferma Enrico Rava, nascita 20 agosto 1939 a Trieste e profilo trombettista/compositore."
+      },
+      "copyReview": {
+        "it": "ok_for_editorial_staging",
+        "fur": "human_review_needed",
+        "note": "Copy comprensibile, ma il legame locale va gestito con misura."
+      },
+      "editorialTriage": {
+        "rank": "B",
+        "surface": "archive",
+        "userValue": "Figura musicale importante, con aggancio triestino.",
+        "reason": "Nome forte, ma il valore territoriale nel record dipende soprattutto dalla nascita: meglio archivio o seconda voce selettiva."
+      },
+      "remainingBlockers": ["fur_human_review", "ready_for_discover_status", "ready_for_ui_flag"]
+    },
+    {
+      "id": "memory-copy-0316-ernesto-nathan-rogers",
+      "decision": "source_ok_for_staging",
+      "publishDecision": "ready_for_ui",
+      "sourceReview": {
+        "checkedAt": "2026-07-08",
+        "method": "Wikidata EntityData",
+        "url": "https://www.wikidata.org/wiki/Special:EntityData/Q544750.json",
+        "verified": ["identity", "birthDate", "birthPlace", "occupation"],
+        "note": "Entita raggiungibile; conferma Ernesto Nathan Rogers, nascita 16 marzo 1909 a Trieste e profilo architetto/teorico."
+      },
+      "copyReview": {
+        "it": "ok_for_editorial_staging",
+        "fur": "approved",
+        "note": "Copy IT e FUR approvate per pubblicazione controllata in Scopri come memoria secondaria del giorno."
+      },
+      "editorialTriage": {
+        "rank": "B",
+        "surface": "daily_secondary",
+        "userValue": "Architettura, Trieste e Novecento europeo: tema forte se raccontato in modo semplice.",
+        "reason": "Figura importante, ma troppo specialistica per diventare primaria senza un copy piu umano."
+      },
+      "remainingBlockers": []
+    },
+    {
+      "id": "memory-copy-0409-stefan-kociancic",
+      "decision": "source_ok_for_staging",
+      "publishDecision": "ready_for_ui",
+      "sourceReview": {
+        "checkedAt": "2026-07-08",
+        "method": "Wikidata EntityData",
+        "url": "https://www.wikidata.org/wiki/Special:EntityData/Q18646312.json",
+        "verified": ["identity", "deathDate", "deathPlace", "occupation"],
+        "note": "Entita raggiungibile; conferma Stefano Kociančič/Stefan Kociancic, morte 9 aprile 1883 a Gorizia e profilo storico, traduttore e linguista."
+      },
+      "copyReview": {
+        "it": "ok_for_editorial_staging",
+        "fur": "approved",
+        "note": "Copy IT e FUR approvate per pubblicazione controllata in Scopri come memoria secondaria del giorno."
+      },
+      "editorialTriage": {
+        "rank": "B",
+        "surface": "daily_secondary",
+        "userValue": "Gorizia, lingue e confine: molto adatto alla logica territoriale di Scopri.",
+        "reason": "Buon valore culturale locale, ma resta seconda voce finche non ha copy e grafia consolidati."
+      },
+      "remainingBlockers": []
+    },
+    {
+      "id": "memory-copy-0705-flavio-paulin",
+      "decision": "source_ok_for_staging",
+      "publishDecision": "not_ready_for_ui",
+      "sourceReview": {
+        "checkedAt": "2026-07-08",
+        "method": "Wikidata EntityData",
+        "url": "https://www.wikidata.org/wiki/Special:EntityData/Q3746508.json",
+        "verified": ["identity", "birthDate", "birthPlace", "occupation"],
+        "note": "Entita raggiungibile; conferma Flavio Paulin, nascita 5 luglio 1948 a Trieste e profilo cantante/musicista/compositore."
+      },
+      "copyReview": {
+        "it": "ok_for_editorial_staging",
+        "fur": "human_review_needed",
+        "note": "Copy breve; valore piu adatto ad archivio o nota pop che a memoria giornaliera."
+      },
+      "editorialTriage": {
+        "rank": "C",
+        "surface": "archive",
+        "userValue": "Nota pop riconoscibile, ma non abbastanza significativa per la rubrica principale.",
+        "reason": "Legittimo come archivio leggero; non ha peso storico-culturale sufficiente per diventare card del giorno."
+      },
+      "remainingBlockers": ["fur_human_review", "ready_for_discover_status", "ready_for_ui_flag"]
+    },
+    {
+      "id": "memory-copy-0318-eugenio-pilutti",
+      "decision": "source_ok_for_staging",
+      "publishDecision": "not_ready_for_ui",
+      "sourceReview": {
+        "checkedAt": "2026-07-08",
+        "method": "Wikidata EntityData",
+        "url": "https://www.wikidata.org/wiki/Special:EntityData/Q104176849.json",
+        "verified": ["identity", "deathDate", "deathPlace", "occupation"],
+        "note": "Entita raggiungibile; conferma Eugenio Pilutti, morte 18 marzo 2016 a Trieste e profilo poeta/scrittore."
+      },
+      "copyReview": {
+        "it": "ok_for_editorial_staging",
+        "fur": "human_review_needed",
+        "note": "Copy IT rafforzata per archivio: chiarisce che e' una traccia minuta, non una memoria da titolo."
+      },
+      "editorialTriage": {
+        "rank": "C",
+        "surface": "archive",
+        "userValue": "Voce letteraria locale, ma ancora poco leggibile senza contesto.",
+        "reason": "Da conservare in archivio; non abbastanza forte come memoria giornaliera."
+      },
+      "remainingBlockers": ["fur_human_review", "ready_for_discover_status", "ready_for_ui_flag"]
+    },
+    {
+      "id": "memory-copy-0708-lelio-luttazzi",
+      "decision": "source_ok_for_staging",
+      "publishDecision": "not_ready_for_ui",
+      "sourceReview": {
+        "checkedAt": "2026-07-08",
+        "method": "Wikidata EntityData",
+        "url": "https://www.wikidata.org/wiki/Special:EntityData/Q3830078.json",
+        "verified": ["identity", "deathDate", "deathPlace", "occupation"],
+        "note": "Entita raggiungibile; conferma Lelio Luttazzi, morte 8 luglio 2010 a Trieste e profilo musicista/attore/uomo di spettacolo."
+      },
+      "copyReview": {
+        "it": "ok_for_editorial_staging",
+        "fur": "human_review_needed",
+        "note": "Copy comprensibile; va usato con misura per non trasformare Scopri in costume nazionale."
+      },
+      "editorialTriage": {
+        "rank": "B",
+        "surface": "archive",
+        "userValue": "Nome popolare e triestino, buono per archivio culturale.",
+        "reason": "Figura forte, ma piu spettacolo nazionale che memoria territoriale primaria."
+      },
+      "remainingBlockers": ["fur_human_review", "ready_for_discover_status", "ready_for_ui_flag"]
+    },
+    {
+      "id": "memory-copy-0706-alberto-spaini",
+      "decision": "source_ok_for_staging",
+      "publishDecision": "not_ready_for_ui",
+      "sourceReview": {
+        "checkedAt": "2026-07-08",
+        "method": "Wikidata EntityData",
+        "url": "https://www.wikidata.org/wiki/Special:EntityData/Q3608590.json",
+        "verified": ["identity", "birthPlace", "occupation"],
+        "note": "Entita raggiungibile; conferma Alberto Spaini, nascita triestina e profilo scrittore/giornalista. La fonte contiene date alternative."
+      },
+      "copyReview": {
+        "it": "ok_for_editorial_staging",
+        "fur": "human_review_needed",
+        "note": "Copy IT rafforzata per archivio; la presenza di date alternative resta motivo per non promuoverlo a memoria principale."
+      },
+      "editorialTriage": {
+        "rank": "C",
+        "surface": "archive",
+        "userValue": "Trieste letteraria, ma meno immediata e con data da trattare con cautela.",
+        "reason": "Non prioritaria; utile solo se trasformata in scheda archivio piu contestuale."
+      },
+      "remainingBlockers": ["fur_human_review", "ready_for_discover_status", "ready_for_ui_flag"]
+    },
+    {
+      "id": "memory-copy-0709-aldo-stellita",
+      "decision": "source_ok_for_staging",
+      "publishDecision": "not_ready_for_ui",
+      "sourceReview": {
+        "checkedAt": "2026-07-08",
+        "method": "Wikidata EntityData",
+        "url": "https://www.wikidata.org/wiki/Special:EntityData/Q3609332.json",
+        "verified": ["identity", "deathDate", "deathPlace", "occupation"],
+        "note": "Entita raggiungibile; conferma Aldo Stellita, morte 9 luglio 1998 a Udine e profilo musicista/bassista."
+      },
+      "copyReview": {
+        "it": "ok_for_editorial_staging",
+        "fur": "human_review_needed",
+        "note": "Copy breve; valore da archivio leggero, non da card principale."
+      },
+      "editorialTriage": {
+        "rank": "C",
+        "surface": "archive",
+        "userValue": "Memoria pop friulana, ma secondaria rispetto ai temi storici e culturali forti.",
+        "reason": "Da non promuovere come memoria principale: interesse troppo specifico."
+      },
+      "remainingBlockers": ["fur_human_review", "ready_for_discover_status", "ready_for_ui_flag"]
+    },
+    {
+      "id": "memory-copy-1111-giorgio-voghera",
+      "decision": "source_ok_for_staging",
+      "publishDecision": "not_ready_for_ui",
+      "sourceReview": {
+        "checkedAt": "2026-07-08",
+        "method": "Wikidata EntityData",
+        "url": "https://www.wikidata.org/wiki/Special:EntityData/Q2161101.json",
+        "verified": ["identity", "deathDate", "deathPlace", "occupation"],
+        "note": "Entita raggiungibile; conferma Giorgio Voghera, morte 11 novembre 1999 a Trieste e profilo scrittore."
+      },
+      "copyReview": {
+        "it": "ok_for_editorial_staging",
+        "fur": "human_review_needed",
+        "note": "Copy IT rafforzata per archivio: tono piu umano e meno biografico."
+      },
+      "editorialTriage": {
+        "rank": "B",
+        "surface": "archive",
+        "userValue": "Trieste letteraria, adatta ad archivio con contesto.",
+        "reason": "Buona voce culturale, ma non supera candidati triestini piu forti per il flusso giornaliero."
+      },
+      "remainingBlockers": ["fur_human_review", "ready_for_discover_status", "ready_for_ui_flag"]
+    },
+    {
+      "id": "memory-copy-1122-silvio-benco",
+      "decision": "source_ok_for_staging",
+      "publishDecision": "not_ready_for_ui",
+      "sourceReview": {
+        "checkedAt": "2026-07-08",
+        "method": "Wikidata EntityData",
+        "url": "https://www.wikidata.org/wiki/Special:EntityData/Q3960835.json",
+        "verified": ["identity", "birthDate", "birthPlace", "occupation"],
+        "note": "Entita raggiungibile; conferma Silvio Benco, nascita 22 novembre 1874 a Trieste e profilo scrittore/giornalista/critico letterario."
+      },
+      "copyReview": {
+        "it": "ok_for_editorial_staging",
+        "fur": "human_review_needed",
+        "note": "Copy chiaro; da usare come archivio letterario o seconda voce, non come automatico primario."
+      },
+      "editorialTriage": {
+        "rank": "B",
+        "surface": "archive",
+        "userValue": "Trieste letteraria e critica culturale, ma da non confondere con semplice lista di giornalisti.",
+        "reason": "Profilo piu solido di un nome generico, ma resta archivio per mantenere alta la soglia della rubrica."
+      },
+      "remainingBlockers": ["fur_human_review", "ready_for_discover_status", "ready_for_ui_flag"]
+    },
+    {
+      "id": "memory-copy-0225-eugenio-geiringer",
+      "decision": "source_ok_for_staging",
+      "publishDecision": "ready_for_ui",
+      "sourceReview": {
+        "checkedAt": "2026-07-08",
+        "method": "Wikidata EntityData",
+        "url": "https://www.wikidata.org/wiki/Special:EntityData/Q3059608.json",
+        "verified": ["identity", "birthDate", "birthPlace", "occupation"],
+        "note": "Entita raggiungibile; conferma Eugenio Geiringer, nascita 25 febbraio 1844 a Trieste e profilo architetto/ingegnere."
+      },
+      "copyReview": {
+        "it": "ok_for_editorial_staging",
+        "fur": "approved",
+        "note": "Copy IT e FUR approvate per pubblicazione controllata in Scopri come memoria secondaria del giorno."
+      },
+      "editorialTriage": {
+        "rank": "B",
+        "surface": "daily_secondary",
+        "userValue": "Architettura, ingegneria e Trieste urbana: utile come seconda voce localizzata.",
+        "reason": "Tema territoriale concreto, ma non abbastanza universale per card primaria."
+      },
+      "remainingBlockers": []
+    },
+    {
+      "id": "memory-copy-0325-giulio-camagni",
+      "decision": "source_ok_for_staging",
+      "publishDecision": "not_ready_for_ui",
+      "sourceReview": {
+        "checkedAt": "2026-07-08",
+        "method": "Wikidata EntityData",
+        "url": "https://www.wikidata.org/wiki/Special:EntityData/Q3769521.json",
+        "verified": ["identity", "birthDate", "birthPlace", "occupation"],
+        "note": "Entita raggiungibile; conferma Giulio Camagni, nascita 25 marzo 1973 a Udine e profilo fumettista/pittore."
+      },
+      "copyReview": {
+        "it": "ok_for_editorial_staging",
+        "fur": "human_review_needed",
+        "note": "Copy breve; voce contemporanea da archivio, non da memoria principale."
+      },
+      "editorialTriage": {
+        "rank": "C",
+        "surface": "archive",
+        "userValue": "Disegno contemporaneo con aggancio udinese, ma interesse piu specialistico.",
+        "reason": "Buono per archivio o rotazione leggera; non prioritario per copertura annuale."
+      },
+      "remainingBlockers": ["fur_human_review", "ready_for_discover_status", "ready_for_ui_flag"]
+    },
+    {
+      "id": "memory-copy-0410-claudio-magris",
+      "decision": "source_ok_for_staging",
+      "publishDecision": "ready_for_ui",
+      "sourceReview": {
+        "checkedAt": "2026-07-09",
+        "method": "Wikidata EntityData",
+        "url": "https://www.wikidata.org/wiki/Special:EntityData/Q274404.json",
+        "verified": ["identity", "birthDate", "birthPlace", "occupation"],
+        "note": "Entita tracciata dal master Accadde oggi FVG; conferma Claudio Magris, nascita 10 aprile 1939 a Trieste e profilo scrittore, saggista e germanista."
+      },
+      "copyReview": {
+        "it": "ok_for_editorial_staging",
+        "fur": "approved",
+        "note": "Copy IT e FUR approvate per pubblicazione controllata in Scopri come Memoria del giorno primary."
+      },
+      "editorialTriage": {
+        "rank": "A",
+        "surface": "daily_primary",
+        "userValue": "Letteratura, confini e cultura europea: profilo forte e comprensibile per il pubblico generale.",
+        "reason": "Figura triestina di rilievo internazionale; supera la semplice anagrafica locale."
+      },
+      "remainingBlockers": []
+    },
+    {
+      "id": "memory-copy-0304-afro-basaldella",
+      "decision": "source_ok_for_staging",
+      "publishDecision": "ready_for_ui",
+      "sourceReview": {
+        "checkedAt": "2026-07-09",
+        "method": "Wikidata EntityData",
+        "url": "https://www.wikidata.org/wiki/Special:EntityData/Q388090.json",
+        "verified": ["identity", "birthDate", "birthPlace", "occupation"],
+        "note": "Entita tracciata dal master Accadde oggi FVG; conferma Afro Basaldella, nascita 4 marzo 1912 a Udine e profilo pittore."
+      },
+      "copyReview": {
+        "it": "ok_for_editorial_staging",
+        "fur": "approved",
+        "note": "Copy IT e FUR approvate per pubblicazione controllata in Scopri come Memoria del giorno primary."
+      },
+      "editorialTriage": {
+        "rank": "A",
+        "surface": "daily_primary",
+        "userValue": "Arte del Novecento con aggancio udinese forte e immediato.",
+        "reason": "Nome artistico rilevante, non riducibile a semplice nascita locale."
+      },
+      "remainingBlockers": []
+    },
+    {
+      "id": "memory-copy-1017-carlo-michelstaedter",
+      "decision": "source_ok_for_staging",
+      "publishDecision": "ready_for_ui",
+      "sourceReview": {
+        "checkedAt": "2026-07-10",
+        "method": "Wikidata EntityData / master locale",
+        "url": "https://www.wikidata.org/wiki/Special:EntityData/Q738539.json",
+        "verified": ["identity", "deathDate", "deathPlace", "occupation"],
+        "note": "Fonte verificata dal master locale: conferma Carlo Michelstaedter, morte 17 ottobre 1910 a Gorizia e profilo scrittore, filosofo, poeta e pittore."
+      },
+      "copyReview": {
+        "it": "approved",
+        "fur": "approved",
+        "note": "Copy IT e FUR approvate per pubblicazione controllata in Scopri come Memoria del giorno primary, con tono sobrio."
+      },
+      "editorialTriage": {
+        "rank": "A",
+        "surface": "daily_primary",
+        "userValue": "Profilo culturale forte per Gorizia, filosofia e letteratura.",
+        "reason": "Figura non leggera ma rilevante: pubblicabile come memoria primaria solo con copy breve, sobrio e non celebrativo."
+      },
+      "remainingBlockers": []
+    },
+    {
+      "id": "memory-copy-0629-biagio-marin",
+      "decision": "source_ok_for_staging",
+      "publishDecision": "ready_for_ui",
+      "sourceReview": {
+        "checkedAt": "2026-07-09",
+        "method": "Wikidata EntityData",
+        "url": "https://www.wikidata.org/wiki/Special:EntityData/Q855258.json",
+        "verified": ["identity", "birthDate", "birthPlace", "occupation"],
+        "note": "Entita tracciata dal master Accadde oggi FVG; conferma Biagio Marin, nascita 29 giugno 1891 a Grado e profilo poeta e scrittore."
+      },
+      "copyReview": {
+        "it": "ok_for_editorial_staging",
+        "fur": "approved",
+        "note": "Copy IT e FUR approvate per pubblicazione controllata in Scopri come Memoria del giorno primary."
+      },
+      "editorialTriage": {
+        "rank": "A",
+        "surface": "daily_primary",
+        "userValue": "Poesia, Grado, laguna e lingua: molto coerente con Scopri.",
+        "reason": "Figura letteraria forte e territoriale; adatta a memoria primaria dopo revisione FUR."
+      },
+      "remainingBlockers": []
+    },
+    {
+      "id": "memory-copy-0826-novella-cantarutti",
+      "decision": "source_ok_for_staging",
+      "publishDecision": "ready_for_ui",
+      "sourceReview": {
+        "checkedAt": "2026-07-09",
+        "method": "Wikidata EntityData",
+        "url": "https://www.wikidata.org/wiki/Special:EntityData/Q10993506.json",
+        "verified": ["identity", "birthDate", "birthPlace", "occupation"],
+        "note": "Entita tracciata dal master Accadde oggi FVG; conferma Novella Cantarutti, nascita 26 agosto 1920 a Spilimbergo e profilo poetessa e scrittrice."
+      },
+      "copyReview": {
+        "it": "ok_for_editorial_staging",
+        "fur": "approved",
+        "note": "Copy IT e FUR approvate per pubblicazione controllata in Scopri come Memoria del giorno primary."
+      },
+      "editorialTriage": {
+        "rank": "A",
+        "surface": "daily_primary",
+        "userValue": "Lingua friulana, poesia e territorio: profilo centrale per Meteo Friul.",
+        "reason": "Alta coerenza con Scopri e con la dimensione FUR dell'app."
+      },
+      "remainingBlockers": []
+    },
+    {
+      "id": "memory-copy-1001-pierluigi-cappello",
+      "decision": "source_ok_for_staging",
+      "publishDecision": "ready_for_ui",
+      "sourceReview": {
+        "checkedAt": "2026-07-09",
+        "method": "Wikidata EntityData",
+        "url": "https://www.wikidata.org/wiki/Special:EntityData/Q3903088.json",
+        "verified": ["identity", "deathDate", "occupation"],
+        "note": "Entita tracciata dal master Accadde oggi FVG; conferma Pierluigi Cappello, morte 1 ottobre 2017 e profilo poeta."
+      },
+      "copyReview": {
+        "it": "ok_for_editorial_staging",
+        "fur": "approved",
+        "note": "Copy IT e FUR approvate per pubblicazione controllata in Scopri come Memoria del giorno primary."
+      },
+      "editorialTriage": {
+        "rank": "A",
+        "surface": "daily_primary",
+        "userValue": "Poesia contemporanea, lingua e territorio: memoria molto riconoscibile.",
+        "reason": "Figura recente ma culturalmente forte; adatta a primaria se il tono resta sobrio."
+      },
+      "remainingBlockers": []
+    },
+    {
+      "id": "memory-copy-1007-giovanni-battista-brusin",
+      "decision": "source_ok_for_staging",
+      "publishDecision": "ready_for_ui",
+      "sourceReview": {
+        "checkedAt": "2026-07-09",
+        "method": "Wikidata EntityData",
+        "url": "https://www.wikidata.org/wiki/Special:EntityData/Q15229393.json",
+        "verified": ["identity", "birthDate", "occupation"],
+        "note": "Entita tracciata dal master Accadde oggi FVG; conferma Giovanni Battista Brusin, nascita 7 ottobre 1883 e profilo storico e archeologo legato ad Aquileia."
+      },
+      "copyReview": {
+        "it": "ok_for_editorial_staging",
+        "fur": "approved",
+        "note": "Copy IT e FUR approvate per pubblicazione controllata in Scopri come memoria secondaria del giorno."
+      },
+      "editorialTriage": {
+        "rank": "B",
+        "surface": "daily_secondary",
+        "userValue": "Aquileia e archeologia: forte come seconda voce territoriale o archivio tematico.",
+        "reason": "Tema territoriale solido, ma richiede contesto per essere immediato al pubblico generale."
+      },
+      "remainingBlockers": []
+    }
+  ]
+}

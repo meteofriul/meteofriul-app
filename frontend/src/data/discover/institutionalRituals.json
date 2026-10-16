@@ -1,0 +1,1418 @@
+[
+  {
+    "id": "institutional-ritual-cidulis-cercivento",
+    "sourceId": "ritual-lead-cidulis-cercivento",
+    "section": "riti_credenze_popolari",
+    "type": "rito",
+    "recurrence": "fixed_date",
+    "dateAnchors": ["06-24"],
+    "dateRanges": [],
+    "movableDates": [],
+    "movableDateRanges": [],
+    "seasons": ["estate"],
+    "weatherTags": [],
+    "areas": ["cercivento", "carnia"],
+    "priority": 2,
+    "editorialStatus": "ready_it",
+    "languageStatus": {
+      "it": "approved",
+      "fur": "approved"
+    },
+    "title": {
+      "it": "Le cidulis di San Giovanni a Cercivento",
+      "fur": "Lis cidulis di San Zuan a Çurçuvint"
+    },
+    "text": {
+      "it": "Nella notte del 24 giugno, a Cercivento, i giovani preparavano rotelle di legno, le accendevano e le lanciavano dal pendio. La prima cidula era dedicata a San Giovanni; le altre nominavano figure e persone della comunità.",
+      "fur": "Te gnot dai 24 di Jugn, a Çurçuvint, i zovins a preparavin rotelis di len, lis impiavin e lis lançavin jù pe rive. La prime cidule e jere dedicade a San Zuan; chês altris a nomenavin figuris e personis de comunitât."
+    },
+    "appShort": {
+      "it": "A San Giovanni, dischi di legno accesi raccontavano la comunità.",
+      "fur": "A San Zuan, cidulis impiadis a contavin la comunitât."
+    },
+    "source": {
+      "label": "Teche Friulane · Pellis-Ciceri",
+      "url": "https://www.techefriulane.it/patrimonio-culturale/ricerche-etnografiche-ciceri-pellis/il-lancio-delle-cidulas-a-cercivento-in-carnia",
+      "type": "institutional_archive",
+      "confidence": "alta",
+      "note": "Rilevamento etnografico girato a Cercivento il 24 giugno 1973.",
+      "auditStatus": "source_and_scope_verified"
+    },
+    "sourceStatus": "controllato",
+    "sourceNote": "La scheda resta limitata a Cercivento; Çurçuvint è il toponimo friulano ufficiale."
+  },
+  {
+    "id": "institutional-ritual-carnival-masks",
+    "sourceId": "ritual-lead-maschere-carnevale-friuli",
+    "section": "riti_credenze_popolari",
+    "type": "rito",
+    "recurrence": "movable_range",
+    "dateAnchors": [],
+    "dateRanges": [],
+    "movableDates": [],
+    "movableDateRanges": [
+      {
+        "anchor": "easter",
+        "startOffsetDays": -52,
+        "endOffsetDays": -47
+      }
+    ],
+    "seasons": ["inverno", "primavera"],
+    "weatherTags": [],
+    "areas": ["carnia", "andreis", "grimacco"],
+    "priority": 5,
+    "editorialStatus": "ready_it",
+    "languageStatus": {
+      "it": "approved",
+      "fur": "approved"
+    },
+    "title": {
+      "it": "Le maschere del Carnevale",
+      "fur": "Lis mascaris dal Carnevâl"
+    },
+    "text": {
+      "it": "Tra Carnia, Andreis e Grimacco le maschere di Carnevale non avevano una forma unica: legno, fibre vegetali e perfino metallo davano identità a personaggi diversi. Il volto e il travestimento nascondevano chi le indossava e rendevano riconoscibile il ruolo rituale.",
+      "fur": "Tra Cjargne, Andreis e Grimàc lis mascaris di Carnevâl no vevin une forme uniche: len, fibris vegjetâls e fintremai metal a davin identitât a personaçs diferents. La muse e il mascarament a platevin cui che lis puartave e a rendevin ricognossibil il rûl rituâl."
+    },
+    "appShort": {
+      "it": "Legno, fibre e metallo davano un volto diverso a ogni comunità.",
+      "fur": "Len, fibris e metal a davin une muse diferente a ogni comunitât."
+    },
+    "source": {
+      "label": "ERPAC FVG · Maschere rituali",
+      "url": "https://patrimonioculturale.regione.fvg.it/percorso-tematico/?s_id=819757",
+      "type": "institutional_catalogue",
+      "confidence": "alta",
+      "note": "Cataloghi museali di Tolmezzo, Andreis e Grimacco; nessuna estensione a una maschera regionale unica.",
+      "auditStatus": "source_and_scope_verified"
+    },
+    "supportingSources": [
+      {
+        "label": "ARLeF · Carnevâl",
+        "url": "https://arlef.it/it/video/5-maman-2/",
+        "purpose": "lessico friulano e pluralità delle maschere locali"
+      }
+    ],
+    "sourceStatus": "controllato",
+    "sourceNote": "La finestra usa soltanto gli ultimi giorni del Carnevale, calcolati ogni anno rispetto alla Pasqua."
+  },
+  {
+    "id": "institutional-ritual-resian-carnival",
+    "sourceId": "ritual-lead-carnevale-resiano",
+    "section": "riti_credenze_popolari",
+    "type": "rito",
+    "recurrence": "movable_range",
+    "dateAnchors": [],
+    "dateRanges": [],
+    "movableDates": [],
+    "movableDateRanges": [
+      {
+        "anchor": "easter",
+        "startOffsetDays": -52,
+        "endOffsetDays": -46
+      }
+    ],
+    "seasons": ["inverno", "primavera"],
+    "weatherTags": [],
+    "areas": ["resia", "val_resia"],
+    "priority": 3,
+    "editorialStatus": "ready_it",
+    "languageStatus": {
+      "it": "approved",
+      "fur": "approved"
+    },
+    "title": {
+      "it": "Il Pust, il Carnevale resiano",
+      "fur": "Il Pust, il Carnevâl resian"
+    },
+    "text": {
+      "it": "In Val Resia il Pust unisce musica, ballo e maschere tradizionali. Le Lipe bile maškire, vestite di bianco, accompagnano il ciclo del Carnevale, che si conclude con il rogo del babaz.",
+      "fur": "Te Val Resie il Pust al unìs musiche, bal e mascaris tradizionâls. Lis Lipe bile maškire, vistidis di blanc, a compagnin il cicli dal Carnevâl, che si siere cul brusâ dal babaz."
+    },
+    "appShort": {
+      "it": "Musica, ballo e maschere bianche nel Carnevale della Val Resia.",
+      "fur": "Musiche, bal e mascaris blancjis tal Carnevâl de Val Resie."
+    },
+    "source": {
+      "label": "Ecomuseo Val Resia · Pust",
+      "url": "https://www.ecomuseovalresia.it/cultura/pust/",
+      "type": "institutional_museum",
+      "confidence": "alta",
+      "note": "Pratica viva della Val Resia; i nomi resiani sono mantenuti nella forma della fonte.",
+      "auditStatus": "source_and_scope_verified"
+    },
+    "supportingSources": [
+      {
+        "label": "ERPAC FVG · Ecomuseo Val Resia",
+        "url": "https://patrimonioculturale.regione.fvg.it/go/?id=440665",
+        "purpose": "corpus specialistico su musiche e balli del Carnevale resiano"
+      },
+      {
+        "label": "Ecomuseo Val Resia · Carnevale 2024",
+        "url": "https://www.ecomuseovalresia.it/2024/01/22/carnevale-resiano-2024/",
+        "purpose": "maschere tradizionali e conclusione con il rogo del babaz"
+      }
+    ],
+    "sourceStatus": "controllato",
+    "sourceNote": "La scheda è esclusivamente resiana e arriva fino alla chiusura rituale del Mercoledì delle Ceneri."
+  },
+  {
+    "id": "institutional-ritual-craceles-holy-week",
+    "sourceId": "ritual-lead-craceles-settimana-santa",
+    "section": "riti_credenze_popolari",
+    "type": "rito",
+    "recurrence": "movable_range",
+    "dateAnchors": [],
+    "dateRanges": [],
+    "movableDates": [],
+    "movableDateRanges": [
+      {
+        "anchor": "easter",
+        "startOffsetDays": -3,
+        "endOffsetDays": -1
+      }
+    ],
+    "seasons": ["primavera"],
+    "weatherTags": [],
+    "areas": ["andreis", "friuli_occidentale"],
+    "priority": 3,
+    "editorialStatus": "ready_it",
+    "languageStatus": {
+      "it": "approved",
+      "fur": "approved"
+    },
+    "title": {
+      "it": "Le cràceles quando tacevano le campane",
+      "fur": "Lis cràceles cuant che lis cjampanis a tasêvin"
+    },
+    "text": {
+      "it": "Ad Andreis, negli ultimi tre giorni della Settimana Santa, le grandi raganelle chiamate cràceles sostituivano il suono delle campane. Il legno riempiva così il silenzio rituale fino alla vigilia di Pasqua.",
+      "fur": "A Andreis, tai ultins trê dîs de Setemane Sante, i grancj struments di len clamâts cràceles a cjapavin il puest dal sun des cjampanis. Il lôr sun al compagnave cussì il timp rituâl fin ae vee di Pasche."
+    },
+    "appShort": {
+      "it": "Il suono del legno prendeva il posto delle campane.",
+      "fur": "Il sun dal len al cjapave il puest des cjampanis."
+    },
+    "source": {
+      "label": "ERPAC FVG · Museo di Andreis",
+      "url": "https://patrimonioculturale.regione.fvg.it/museo/?s_id=440548",
+      "type": "institutional_museum",
+      "confidence": "alta",
+      "note": "Il museo conserva grandi cràceles usate nella Settimana Santa al posto delle campane.",
+      "auditStatus": "source_and_scope_verified"
+    },
+    "supportingSources": [
+      {
+        "label": "Teche Friulane · Tradizions di îr, di vuê, di doman",
+        "url": "https://www.techefriulane.it/download.aspx?s=DTMI_RTIYIlDKL8dZZ-nA-F_M8yXZ3k_IKliCRIOXG4wqWLvUYsH5ozYrvi4qMXU0",
+        "purpose": "silenzio delle campane nei tre giorni del Triduo"
+      },
+      {
+        "label": "ARLeF · Craçulis nella Settimana Santa",
+        "url": "https://arlef.it/app/uploads/stampa-friulana/vos29c11_up.pdf",
+        "purpose": "lessico friulano e uso rituale"
+      }
+    ],
+    "sourceStatus": "controllato",
+    "sourceNote": "La formulazione locale cràceles è mantenuta; non viene presentata come unico nome usato in tutto il Friuli."
+  },
+  {
+    "id": "institutional-ritual-winter-gift-bearers",
+    "sourceId": "ritual-lead-portatori-doni-inverno",
+    "section": "riti_credenze_popolari",
+    "type": "rito",
+    "recurrence": "fixed_dates",
+    "dateAnchors": ["12-06", "12-13", "12-24", "12-25"],
+    "dateRanges": [],
+    "movableDates": [],
+    "movableDateRanges": [],
+    "seasons": ["inverno"],
+    "weatherTags": [],
+    "areas": ["fvg_cultural_areas"],
+    "priority": 7,
+    "editorialStatus": "ready_it",
+    "languageStatus": {
+      "it": "approved",
+      "fur": "approved"
+    },
+    "title": {
+      "it": "Doni d'inverno, tradizioni diverse",
+      "fur": "Dons di invier, tradizions diferentis"
+    },
+    "text": {
+      "it": "Nel tempo dei doni invernali non esisteva una sola usanza per tutto il Friuli: secondo le aree comparivano Santa Lucia, San Nicolò, l'oselin, Gesù Bambino e, più tardi, Babbo Natale. Tradizioni di provenienza diversa si sono sovrapposte nel tempo.",
+      "fur": "Tal timp dai dons di invier no esisteve une sole usance par dut il Friûl: daûr des zonis a comparivin Sante Lusie, Sant Nicolau, l'oselin, il Bambin e, plui tart, Babbo Natale. Tradizions di divignince diferente si son soreponudis cul timp."
+    },
+    "appShort": {
+      "it": "In Friuli i doni d'inverno cambiavano figura da una zona all'altra.",
+      "fur": "In Friûl i dons di invier a cambiavin figure di une zone a chê altre."
+    },
+    "source": {
+      "label": "Teche Friulane · Pratiche rituali",
+      "url": "https://www.techefriulane.it/download.aspx?s=DTMI_RTIYIlDKL8dZZ-nAyiX4ZvYu5Ez070oPw4_k-ji0MZ4kLGLSCpaweH1CD5k0",
+      "type": "scholarly_archive",
+      "confidence": "alta",
+      "note": "La ricerca distingue figure, aree culturali e provenienze senza proporre un'unica usanza regionale.",
+      "auditStatus": "source_and_scope_verified"
+    },
+    "supportingSources": [
+      {
+        "label": "ARLeF · I Krampus e Sant Nicolau",
+        "url": "https://arlef.it/video/maman-05-09-i-krampus-e-sant-nicolau/",
+        "purpose": "lessico friulano per Sant Nicolau"
+      }
+    ],
+    "sourceStatus": "controllato",
+    "sourceNote": "Scheda comparativa proposta soltanto nelle principali date dei doni di dicembre: non attribuisce tutte le figure a ogni località e non le fonde in un solo rito."
+  },
+  {
+    "id": "institutional-ritual-matajur-rogazione-maggiore",
+    "sourceId": "ritual-research-matajur-rogazione-maggiore",
+    "candidateId": "ritual-research-matajur-rogazione-maggiore",
+    "canonicalKey": "matajur-tercimonte-rogazione-maggiore-aprile25",
+    "section": "riti_credenze_popolari",
+    "type": "rito",
+    "recurrence": "fixed_date",
+    "dateAnchors": ["04-25"],
+    "dateRanges": [],
+    "movableDates": [],
+    "movableDateRanges": [],
+    "seasons": ["primavera"],
+    "weatherTags": [],
+    "areas": ["tercimonte", "matajur", "valli_del_natisone"],
+    "priority": 4,
+    "editorialStatus": "ready_it",
+    "languageStatus": { "it": "approved", "fur": "approved" },
+    "readyForUi": true,
+    "title": {
+      "it": "La rogazione fra i paesi del Matajur",
+      "fur": "La rogazion fra i paîs dal Matajur"
+    },
+    "text": {
+      "it": "Nel 2023 la rogazione maggiore del Matajur era descritta come una processione dalla chiesa di Tercimonte attraverso le comunità del monte, con soste per la preghiera e un ristoro condiviso.",
+      "fur": "Tal 2023 la rogazion maiôr dal Matajur e jere descrite come une procession de glesie di Tercimonte pes comunitâts dal Matajur, cun sostis pe preiere e par mangjâ alc adun."
+    },
+    "appShort": {
+      "it": "Nel 2023 la rogazione del Matajur era descritta con soste per la preghiera e il ristoro.",
+      "fur": "Tal 2023 la rogazion dal Matajur e jere descrite cun sostis pe preiere e par mangjâ alc adun."
+    },
+    "source": {
+      "label": "Arcidiocesi di Udine · Rogazioni",
+      "url": "https://www.diocesiudine.it/in-prossimita-della-festa-di-san-marco-tornano-gli-antichi-riti-delle-rogazioni/",
+      "type": "institutional_publication",
+      "confidence": "alta",
+      "publishedAt": "2023-04-19",
+      "checkedAt": "2026-08-31",
+      "note": "Descrizione pubblicata nel 2023 della rogazione maggiore del Matajur, legata al 25 aprile; non è un programma attuale.",
+      "rightsNote": "Testo originale di sintesi; nessuna immagine, filmato o riproduzione della fonte riutilizzata.",
+      "auditStatus": "source_and_scope_verified"
+    },
+    "sourceStatus": "controllato",
+    "sourceNote": "Memoria culturale proposta il 25 aprile, non un invito né la conferma di un evento odierno. L'annuncio del 2023 documenta la descrizione del rito, non ne prova l'effettivo svolgimento. Le aree indicano la provenienza culturale, non la posizione dell'utente; nessun orario o itinerario operativo.",
+    "languageReview": {
+      "fur": {
+        "approvalBasis": "user_delegated_assisted_editorial_review",
+        "reviewMethod": "assisted_standard_reference_review",
+        "reviewer": "assistant",
+        "independentHumanReview": false,
+        "approvedAt": "2026-08-31",
+        "approvalNote": "Decisione editoriale assistita circoscritta a queste due schede nel mandato di proseguire Scopri. Non approvazione dell'utente frase per frase, non certificazione ARLeF e non revisione professionale indipendente.",
+        "references": [
+          {
+            "url": "https://arlef.it/app/uploads/stampa-friulana/patrie_avricc82l_2024_cerce.pdf",
+            "accessMethod": "indexed_pdf_text_not_visual_audit",
+            "note": "La Patrie dal Friûl, aprile 2024, p. 7: attestazioni di Rogazion Maiôr. Periodico ospitato da ARLeF, non traduzione ufficiale della scheda; consultato il testo indicizzato, senza audit visivo del PDF."
+          },
+          {
+            "url": "https://superdizionari.arlef.it/lemma/processione/23870?language=it&oneshot=1&gui=fur",
+            "accessMethod": "direct_http_html",
+            "note": "Processione → procession; lemma letto direttamente nel contenuto HTML."
+          },
+          {
+            "url": "https://superdizionari.arlef.it/lemma/preghiera/31181?language=it&oneshot=1&gui=fur",
+            "accessMethod": "direct_http_html",
+            "note": "Preghiera → preiere; lemma letto direttamente nel contenuto HTML."
+          },
+          {
+            "url": "https://superdizionari.arlef.it/lemma/sosta/18948?language=it&oneshot=1&gui=fur",
+            "accessMethod": "direct_http_html",
+            "note": "Sosta → soste, con plurale regolare sostis; lemma letto direttamente nel contenuto HTML."
+          }
+        ]
+      }
+    }
+  },
+  {
+    "id": "institutional-ritual-missus-novena",
+    "sourceId": "ritual-research-missus-novena",
+    "candidateId": "ritual-research-missus-novena",
+    "canonicalKey": "friuli-missus-novena-natale",
+    "section": "riti_credenze_popolari",
+    "type": "rito",
+    "recurrence": "date_range",
+    "dateAnchors": [],
+    "dateRanges": ["12-15..12-17"],
+    "movableDates": [],
+    "movableDateRanges": [],
+    "seasons": ["inverno"],
+    "weatherTags": [],
+    "areas": ["arcidiocesi_udine", "comunita_di_tradizione_friulana"],
+    "priority": 4,
+    "editorialStatus": "ready_it",
+    "languageStatus": { "it": "approved", "fur": "approved" },
+    "readyForUi": true,
+    "title": {
+      "it": "Il Missus nelle nove sere prima di Natale",
+      "fur": "Il Missus tes nûf seris prime di Nadâl"
+    },
+    "text": {
+      "it": "Dal 15 al 23 dicembre, nelle comunità friulane che custodiscono questa usanza, il Missus accompagna la Novena di Natale. Si canta il racconto evangelico dell'Annunciazione.",
+      "fur": "Dai 15 ai 23 di Dicembar, tes comunitâts furlanis che a conservin cheste usance, il Missus al compagne la novene di Nadâl. Si cjante il toc dal Vanzeli de Anunciazion."
+    },
+    "appShort": {
+      "it": "Il canto dell'Annunciazione accompagna nove sere della Novena di Natale.",
+      "fur": "Il cjant de Anunciazion al compagne nûf seris de novene di Nadâl."
+    },
+    "source": {
+      "label": "Arcidiocesi di Udine · Missus",
+      "url": "https://www.diocesiudine.it/missus-est-il-canto-dellannunciazione-illumina-le-sere-della-novena-del-natale-in-friuli/",
+      "type": "institutional_publication",
+      "confidence": "alta",
+      "publishedAt": "2022-12-14",
+      "checkedAt": "2026-08-31",
+      "note": "La fonte documenta nove sere, dal 15 al 23 dicembre, e distingue la Devetica Božična delle Valli del Natisone, nella quale non si canta il Missus.",
+      "rightsNote": "Testo originale di sintesi; nessuna immagine, filmato o riproduzione della fonte riutilizzata.",
+      "auditStatus": "source_and_scope_verified"
+    },
+    "sourceStatus": "controllato",
+    "sourceNote": "La tradizione dura nove sere, dal 15 al 23 dicembre. La finestra editoriale dell'app è limitata al 15–17 dicembre, le prime tre sere, per non riproporre la stessa scheda per nove giorni. Ambito: comunità di tradizione friulana dell'Arcidiocesi di Udine; non ogni località del FVG, né la diversa Devetica Božična del Natisone. Le aree descrivono il contesto culturale, non la posizione dell'utente.",
+    "languageReview": {
+      "fur": {
+        "approvalBasis": "user_delegated_assisted_editorial_review",
+        "reviewMethod": "assisted_standard_reference_review",
+        "reviewer": "assistant",
+        "independentHumanReview": false,
+        "approvedAt": "2026-08-31",
+        "approvalNote": "Decisione editoriale assistita circoscritta a queste due schede nel mandato di proseguire Scopri. Non approvazione dell'utente frase per frase, non certificazione ARLeF e non revisione professionale indipendente.",
+        "references": [
+          {
+            "url": "https://arlef.it/app/uploads/stampa-friulana/fnm_luglio_agosto_2017.pdf",
+            "accessMethod": "indexed_pdf_text_not_visual_audit",
+            "note": "FNM, luglio–agosto 2017: novene di Nadâl e cjant dal Missus in prosa friulana ospitata da ARLeF. Consultato il testo indicizzato, senza audit visivo del PDF; non traduzione ufficiale della scheda."
+          },
+          {
+            "url": "https://arlef.it/app/uploads/stampa-friulana/vc_20-03-2019.pdf",
+            "accessMethod": "indexed_pdf_text_not_visual_audit",
+            "note": "La Vita Cattolica, 20 marzo 2019, p. 34: forma Anunciazion nel calendario in friulano. Periodico ospitato da ARLeF; consultato il testo indicizzato, senza audit visivo del PDF."
+          }
+        ]
+      }
+    }
+  },
+  {
+    "id": "institutional-ritual-titiano-madonna-neve",
+    "sourceId": "ritual-research-titiano-madonna-neve",
+    "candidateId": "ritual-research-titiano-madonna-neve",
+    "canonicalKey": "precenicco-titiano-madonna-neve-agosto5",
+    "section": "riti_credenze_popolari",
+    "type": "rito",
+    "recurrence": "fixed_date",
+    "dateAnchors": ["08-05"],
+    "dateRanges": [],
+    "movableDates": [],
+    "movableDateRanges": [],
+    "seasons": ["estate"],
+    "weatherTags": [],
+    "areas": ["precenicco", "titiano", "fiume_stella"],
+    "priority": 4,
+    "editorialStatus": "ready_it",
+    "languageStatus": { "it": "approved", "fur": "approved" },
+    "readyForUi": true,
+    "title": {
+      "it": "La Madonna della Neve sullo Stella",
+      "fur": "La Madone de Nêf sul flum Stele"
+    },
+    "text": {
+      "it": "Il 5 agosto, la statua della Madonna della Neve viene accompagnata in barca da Precenicco fino a Titiano e poi alla chiesetta. La processione rinnova il legame fra la comunità e il fiume Stella.",
+      "fur": "Ai 5 di Avost, la statue de Madone de Nêf e ven compagnade in barcje di Prissinins fin a Titiano e po ae gleseute. La procession e rinove il leam fra la comunitât e il flum Stele."
+    },
+    "appShort": {
+      "it": "Una processione sullo Stella, da Precenicco a Titiano.",
+      "fur": "Une procession sul flum Stele, di Prissinins fin a Titiano."
+    },
+    "source": {
+      "label": "Comunità Riviera Friulana · Atlante dei Luoghi",
+      "url": "https://www.atlantedeiluoghirivierafriulana.it/",
+      "type": "municipal_cultural_portal",
+      "confidence": "alta",
+      "checkedAt": "2026-08-31",
+      "note": "L'Atlante documenta la tradizione del 5 agosto: il corteo di barche raggiunge Titiano e la statua viene poi accompagnata alla chiesetta. Non è un programma attuale.",
+      "rightsNote": "Sintesi originale; nessuna immagine, filmato o riproduzione della fonte riutilizzata.",
+      "auditStatus": "source_and_scope_verified"
+    },
+    "supportingSources": [
+      {
+        "label": "STAI Stella Boschi Laguna · Precenicco",
+        "url": "https://www.stellaboschilaguna.it/it/town/precenicco/",
+        "purpose": "Conferma il 5 agosto per la festa della Beata Vergine della Neve; portale del progetto intercomunale con capofila il Comune di Muzzana del Turgnano."
+      }
+    ],
+    "sourceStatus": "controllato",
+    "sourceNote": "Ricorrenza culturale locale, proposta soltanto il 5 agosto. Le fonti attestano la tradizione, non confermano il programma o lo svolgimento dell'edizione 2026. Nessun orario, istruzione di navigazione o invito operativo; le aree indicano il contesto culturale, non la posizione dell'utente. La leggenda delle apparizioni non è presentata come fatto storico.",
+    "languageReview": {
+      "fur": {
+        "approvalBasis": "user_delegated_assisted_editorial_review",
+        "reviewMethod": "assisted_standard_reference_review",
+        "reviewer": "assistant",
+        "independentHumanReview": false,
+        "approvedAt": "2026-08-31",
+        "approvalNote": "Decisione editoriale assistita circoscritta ai due riti del lotto 03, nel mandato di proseguire Scopri. Non approvazione dell'utente frase per frase, non certificazione ARLeF e non revisione professionale indipendente.",
+        "references": [
+          {
+            "url": "https://superdizionari.arlef.it/lemma/barca/15556?language=it&oneshot=1&gui=fur",
+            "accessMethod": "direct_http_html",
+            "note": "Barca → barcje; letto direttamente il lemma HTML."
+          },
+          {
+            "url": "https://superdizionari.arlef.it/lemma/statua/57483?language=it&oneshot=1&gui=fur",
+            "accessMethod": "direct_http_html",
+            "note": "Statua → statue; letto direttamente il lemma HTML."
+          },
+          {
+            "url": "https://arlef.it/in-memoria-di-bertrando/",
+            "accessMethod": "direct_html",
+            "note": "Attestazione di gleseute in prosa ARLeF; non traduzione ufficiale di questa scheda."
+          },
+          {
+            "url": "https://arlef.it/progjets/une-acuile-in-comun/",
+            "accessMethod": "direct_html",
+            "note": "Prissinins nell'elenco ARLeF dei comuni: forma già presente nel repertorio dei toponimi dell'app. Stele è conservato dalla scheda comunale approvata di Precenicco; Titiano resta invariato."
+          }
+        ]
+      }
+    }
+  },
+  {
+    "id": "institutional-ritual-castelmonte-otto-settembre",
+    "sourceId": "ritual-research-castelmonte-otto-settembre",
+    "candidateId": "ritual-research-castelmonte-otto-settembre",
+    "canonicalKey": "castelmonte-pellegrinaggio-diocesano-settembre8",
+    "section": "riti_credenze_popolari",
+    "type": "rito",
+    "recurrence": "fixed_date",
+    "dateAnchors": ["09-08"],
+    "dateRanges": [],
+    "movableDates": [],
+    "movableDateRanges": [],
+    "seasons": ["autunno"],
+    "weatherTags": [],
+    "areas": ["castelmonte", "prepotto", "arcidiocesi_udine"],
+    "priority": 4,
+    "editorialStatus": "ready_it",
+    "languageStatus": { "it": "approved", "fur": "approved" },
+    "readyForUi": true,
+    "title": {
+      "it": "Il pellegrinaggio dell'8 settembre",
+      "fur": "Il pelegrinaç dai 8 di Setembar"
+    },
+    "text": {
+      "it": "Il pellegrinaggio diocesano dell'8 settembre a Castelmonte nasce dopo il terremoto del 1976. I fedeli salgono a piedi al santuario nella festa della Natività di Maria.",
+      "fur": "Il pelegrinaç de Glesie di Udin dai 8 di Setembar a Madone di Mont al è nassût daspò dal taramot dal 1976. I fedêi a van sù a pît al santuari, te fieste de Nativitât di Marie."
+    },
+    "appShort": {
+      "it": "Il pellegrinaggio diocesano dell'8 settembre, nato dopo il terremoto del 1976.",
+      "fur": "Il pelegrinaç de Glesie di Udin dai 8 di Setembar, nassût daspò dal taramot dal 1976."
+    },
+    "source": {
+      "label": "Arcidiocesi di Udine · Castelmonte",
+      "url": "https://www.diocesiudine.it/la-chiesa-udinese-si-affida-a-maria-in-pellegrinaggio-a-castelmonte-chiesa-giubilare/",
+      "type": "institutional_publication",
+      "confidence": "alta",
+      "publishedAt": "2025-08-28",
+      "checkedAt": "2026-08-31",
+      "note": "La fonte descrive il pellegrinaggio diocesano dell'8 settembre di ogni anno, avviato dopo il terremoto del 1976. Non data al 1976 l'origine del santuario.",
+      "rightsNote": "Sintesi originale; nessuna immagine, filmato o riproduzione della fonte riutilizzata.",
+      "auditStatus": "source_and_scope_verified"
+    },
+    "sourceStatus": "controllato",
+    "sourceNote": "Memoria del pellegrinaggio diocesano annuale dell'8 settembre, non di tutti i pellegrinaggi a Castelmonte. Il 1976 riguarda questa iniziativa della Chiesa di Udine, non la nascita del santuario. Nessun orario, itinerario operativo o conferma dell'edizione 2026; le aree descrivono l'ambito culturale e non la posizione dell'utente.",
+    "languageReview": {
+      "fur": {
+        "approvalBasis": "user_delegated_assisted_editorial_review",
+        "reviewMethod": "assisted_standard_reference_review",
+        "reviewer": "assistant",
+        "independentHumanReview": false,
+        "approvedAt": "2026-08-31",
+        "approvalNote": "Decisione editoriale assistita circoscritta ai due riti del lotto 03, nel mandato di proseguire Scopri. Non approvazione dell'utente frase per frase, non certificazione ARLeF e non revisione professionale indipendente.",
+        "references": [
+          {
+            "url": "https://superdizionari.arlef.it/lemma/pellegrinaggio/53694?language=it&oneshot=1&gui=fur",
+            "accessMethod": "direct_http_html",
+            "note": "Pellegrinaggio → pelegrinaç; letto direttamente il lemma HTML. L'ambito diocesano è espresso con de Glesie di Udin, senza introdurre un aggettivo non attestato."
+          },
+          {
+            "url": "https://superdizionari.arlef.it/lemma/santuario/58053?language=it&oneshot=1&gui=fur",
+            "accessMethod": "direct_http_html",
+            "note": "Santuario → santuari; letto direttamente il lemma HTML."
+          },
+          {
+            "url": "https://superdizionari.arlef.it/lemma/Castelmonte/71618?gui=it&language=it&oneshot=1",
+            "accessMethod": "direct_html",
+            "note": "Castelmonte → Madone di Mont; lemma HTML verificato."
+          }
+        ]
+      }
+    }
+  },
+  {
+    "id": "institutional-ritual-sappada-santa-margherita",
+    "sourceId": "ritual-research-sappada-santa-margherita",
+    "candidateId": "ritual-research-sappada-santa-margherita",
+    "canonicalKey": "sappada-santa-margherita-luglio20",
+    "section": "riti_credenze_popolari",
+    "type": "rito",
+    "recurrence": "fixed_date",
+    "dateAnchors": ["07-20"],
+    "dateRanges": [],
+    "movableDates": [],
+    "movableDateRanges": [],
+    "seasons": ["estate"],
+    "weatherTags": [],
+    "areas": ["sappada"],
+    "priority": 4,
+    "editorialStatus": "ready_it",
+    "languageStatus": { "it": "approved", "fur": "approved" },
+    "readyForUi": true,
+    "title": {
+      "it": "Santa Margherita e i coscritti",
+      "fur": "Santa Margherita e i coscrits"
+    },
+    "text": {
+      "it": "Il 20 luglio è la festa di Santa Margherita a Sappada/Plodn. Nelle processioni estive i ragazzi coscritti portano le statue dei santi e indossano cappelli ornati anche con fiori di carta preparati dalle ragazze della stessa classe.",
+      "fur": "Ai 20 di Lui e je la fieste di Santa Margherita a Sappada/Plodn. Tes processions d'istât i fantats coscrits a puartin lis statuis dai sants e a àn sù cjapiei decorâts ancje cun flôrs di cjarte preparâts des fantatis de stesse classe."
+    },
+    "appShort": {
+      "it": "A Sappada/Plodn i ragazzi coscritti portano le statue nelle processioni estive.",
+      "fur": "A Sappada/Plodn i fantats coscrits a puartin lis statuis tes processions d'istât."
+    },
+    "source": {
+      "label": "Associazione Plodar · Tradizioni di Sappada/Plodn",
+      "url": "https://www.plodn.info/tradizioni/",
+      "type": "local_cultural_association",
+      "confidence": "alta",
+      "checkedAt": "2026-08-31",
+      "note": "La sezione Estate indica Santa Margherita il 20 luglio e descrive separatamente il ruolo dei ragazzi coscritti nelle processioni estive. Non è un programma attuale.",
+      "rightsNote": "Sintesi originale; nessuna immagine, filmato o riproduzione della fonte riutilizzata.",
+      "auditStatus": "source_and_scope_verified"
+    },
+    "sourceStatus": "controllato",
+    "sourceNote": "Scheda culturale proposta soltanto il 20 luglio. Il trasporto delle statue e i cappelli sono descritti per le processioni estive, non come usanze esclusive di quella data. Plodn è il nome sappadino della fonte, mantenuto in entrambe le lingue, non una traduzione friulana. Nessun programma o orario corrente confermato; le aree indicano il contesto culturale e non la posizione dell'utente.",
+    "languageReview": {
+      "fur": {
+        "approvalBasis": "user_delegated_assisted_editorial_review",
+        "reviewMethod": "assisted_standard_reference_review",
+        "reviewer": "assistant",
+        "independentHumanReview": false,
+        "approvedAt": "2026-08-31",
+        "approvalNote": "Decisione editoriale assistita circoscritta ai due riti del lotto 04, nel mandato di proseguire Scopri. Non approvazione dell'utente frase per frase, non certificazione ARLeF e non revisione professionale indipendente.",
+        "references": [
+          {
+            "url": "https://superdizionari.arlef.it/lemma/coscritto/23969?language=it&oneshot=1&gui=fur",
+            "accessMethod": "direct_http_html",
+            "note": "Coscrit, coscrits e de stesse classe attestati nel lemma HTML; Santa Margherita resta il nome proprio della fonte."
+          },
+          {
+            "url": "https://superdizionari.arlef.it/lemma/cappello/19497?language=it&oneshot=1&gui=fur",
+            "accessMethod": "direct_http_html",
+            "note": "Cappello → cjapiel, plurale cjapiei già nel repertorio dell'app."
+          },
+          {
+            "url": "https://superdizionari.arlef.it/lemma/carta/27219?language=it&oneshot=1&gui=fur",
+            "accessMethod": "direct_http_html",
+            "note": "Carta → cjarte; lemma HTML letto direttamente."
+          },
+          {
+            "url": "https://superdizionari.arlef.it/lemma/statua/57483?language=it&oneshot=1&gui=fur",
+            "accessMethod": "direct_http_html",
+            "note": "Statua → statue; plurale regolare statuis."
+          },
+          {
+            "url": "https://superdizionari.arlef.it/lemma/indossare/31126?language=it&oneshot=1&gui=fur",
+            "accessMethod": "direct_http_html",
+            "note": "Indossare → vê sù; controllata la locuzione del testo bilingue."
+          }
+        ]
+      }
+    }
+  },
+  {
+    "id": "institutional-ritual-piano-arta-rosario",
+    "sourceId": "ritual-research-piano-arta-rosario",
+    "candidateId": "ritual-research-piano-arta-rosario",
+    "canonicalKey": "piano-arta-rosario-prima-domenica-ottobre",
+    "section": "riti_credenze_popolari",
+    "type": "rito",
+    "recurrence": "movable_date",
+    "dateAnchors": [],
+    "dateRanges": [],
+    "movableDates": [],
+    "movableDateRanges": [],
+    "nthWeekdayDates": [{ "month": 10, "weekday": 0, "ordinal": 1 }],
+    "seasons": ["autunno"],
+    "weatherTags": [],
+    "areas": ["piano_arta", "arta_terme"],
+    "priority": 4,
+    "editorialStatus": "ready_it",
+    "languageStatus": { "it": "approved", "fur": "approved" },
+    "readyForUi": true,
+    "title": {
+      "it": "Rosari e fiori a Piano d’Arta",
+      "fur": "Rosaris e flôrs a Piano d’Arta"
+    },
+    "text": {
+      "it": "A Piano d’Arta la festa del Rosario si celebra la prima domenica di ottobre. Una testimonianza del 2014 racconta il lavoro delle donne del Mercatino artigianale: rosari fatti a mano, fiori in chiesa e preparativi per la processione.",
+      "fur": "A Piano d’Arta la fieste dal Rosari e ven celebrade la prime domenie di Otubar. Une testemoneance dal 2014 e conte dal lavôr des feminis dal «Mercatino artigianale»: rosaris fats a man, flôrs in glesie e preparazion de procession."
+    },
+    "appShort": {
+      "it": "Nel racconto del 2014, rosari fatti a mano e fiori per la festa.",
+      "fur": "Te conte dal 2014, rosaris fats a man e flôrs pe fieste."
+    },
+    "source": {
+      "label": "Arcidiocesi di Udine · Piano d’Arta e il Rosario",
+      "url": "https://www.diocesiudine.it/wd-appuntamenti/piano-darta-celebra-la-madonna-del-rosario/",
+      "type": "institutional_publication",
+      "confidence": "alta",
+      "publishedAt": "2014-09-30",
+      "checkedAt": "2026-08-31",
+      "note": "La sezione La storia documenta la prima domenica di ottobre come ricorrenza annuale. Il lavoro del Mercatino artigianale è descritto nella testimonianza del 2014, non come programma attuale.",
+      "rightsNote": "Sintesi originale; nessuna immagine, filmato o riproduzione della fonte riutilizzata.",
+      "auditStatus": "source_and_scope_verified"
+    },
+    "sourceStatus": "controllato",
+    "sourceNote": "Memoria culturale proposta soltanto la prima domenica di ottobre, non per tutto il mese. I preparativi delle donne del Mercatino artigianale restano attribuiti al racconto del 2014: la fonte non conferma programmi o edizioni attuali. Nessun orario o invito operativo; le aree descrivono la provenienza culturale, non la posizione dell'utente.",
+    "languageReview": {
+      "fur": {
+        "approvalBasis": "user_delegated_assisted_editorial_review",
+        "reviewMethod": "assisted_standard_reference_review",
+        "reviewer": "assistant",
+        "independentHumanReview": false,
+        "approvedAt": "2026-08-31",
+        "approvalNote": "Decisione editoriale assistita circoscritta ai due riti del lotto 04, nel mandato di proseguire Scopri. Non approvazione dell'utente frase per frase, non certificazione ARLeF e non revisione professionale indipendente.",
+        "references": [
+          {
+            "url": "https://superdizionari.arlef.it/lemma/rosario/38567?language=it&oneshot=1&gui=fur",
+            "accessMethod": "direct_http_html",
+            "note": "Rosario → rosari; controllata la distinzione fra nome della festa e plurale rosaris."
+          },
+          {
+            "url": "https://superdizionari.arlef.it/lemma/testimonianza/7437?language=it&oneshot=1&gui=fur",
+            "accessMethod": "direct_http_html",
+            "note": "Testimonianza → testemoneance; lemma HTML letto direttamente."
+          },
+          {
+            "url": "https://superdizionari.arlef.it/ricerca?term=domenica&language=it&gui=fur",
+            "accessMethod": "direct_http_html",
+            "note": "Domenica → domenie; risultato HTML verificato. Piano d’Arta e Mercatino artigianale restano i nomi propri della fonte, senza inventare una forma friulana."
+          }
+        ]
+      }
+    }
+  },
+  {
+    "id": "institutional-ritual-pasian-prato-maria",
+    "sourceId": "ritual-research-pasian-prato-maria",
+    "candidateId": "ritual-research-pasian-prato-maria",
+    "canonicalKey": "pasian-prato-processione-mariana-maggio31",
+    "section": "riti_credenze_popolari",
+    "type": "rito",
+    "recurrence": "fixed_date",
+    "dateAnchors": [
+      "05-31"
+    ],
+    "dateRanges": [],
+    "movableDates": [],
+    "movableDateRanges": [],
+    "seasons": [
+      "primavera"
+    ],
+    "weatherTags": [],
+    "areas": [
+      "pasian_di_prato"
+    ],
+    "priority": 4,
+    "editorialStatus": "ready_it",
+    "languageStatus": {
+      "it": "approved",
+      "fur": "approved"
+    },
+    "readyForUi": true,
+    "title": {
+      "it": "La processione di fine maggio",
+      "fur": "La procession di fin Mai"
+    },
+    "text": {
+      "it": "A Pasian di Prato la processione mariana del 31 maggio riunisce le parrocchie del territorio. Il cammino a piedi collega la chiesa di San Giacomo e l’istituto «La Nostra Famiglia», a conclusione del mese dedicato a Maria.",
+      "fur": "A Pasian di Prât la procession mariane dai 31 di Mai e clame dongje lis parochiis dal teritori. Il percors a pît al coleghe la glesie di San Giacomo e l’istitût «La Nostra Famiglia», ae fin dal mês dedicât a Marie."
+    },
+    "appShort": {
+      "it": "Il 31 maggio, un cammino tra San Giacomo e «La Nostra Famiglia».",
+      "fur": "Ai 31 di Mai, un percors tra San Giacomo e «La Nostra Famiglia»."
+    },
+    "source": {
+      "label": "Arcidiocesi di Udine · Pasian di Prato e il 31 maggio",
+      "url": "https://www.diocesiudine.it/wd-appuntamenti/pasian-di-prato-con-maria-in-cammino-fino-a-la-nostra-famiglia/",
+      "type": "institutional_publication",
+      "confidence": "alta",
+      "publishedAt": "2024-05-28",
+      "checkedAt": "2026-08-31",
+      "note": "Il corpo dell'articolo indica esplicitamente il 31 maggio di ogni anno; la scheda calendario riporta invece 1 giugno 2024. La pagina dell'organizzatore del 2025 corrobora il 31 maggio. Non si ricava una regola annuale dal solo programma di un'edizione.",
+      "rightsNote": "Sintesi originale; nessuna immagine, filmato o riproduzione della fonte riutilizzata.",
+      "auditStatus": "source_and_scope_verified"
+    },
+    "supportingSources": [
+      {
+        "label": "Parrocchia di San Giacomo Apostolo · Maggio 2025",
+        "url": "https://www.parrocchiapasiandiprato.it/maggio-mese-mariano-ecco-gli-appuntamenti/",
+        "purpose": "La pagina dell'organizzatore, pubblicata il 27 aprile 2025, indica il 31 maggio e il cammino a piedi dall'istituto alla chiesa, in direzione inversa alla descrizione del 2024."
+      }
+    ],
+    "sourceStatus": "controllato",
+    "sourceNote": "Ricorrenza culturale locale proposta soltanto il 31 maggio. Si adotta la regola annuale esplicita nel testo diocesano, corroborata dalla parrocchia, non il widget discordante del 2024. Il percorso è descritto senza direzione obbligata, orari o programma corrente. Le aree indicano il contesto culturale, non la posizione dell'utente.",
+    "languageReview": {
+      "fur": {
+        "approvalBasis": "user_delegated_assisted_editorial_review",
+        "reviewMethod": "assisted_standard_reference_review",
+        "reviewer": "assistant",
+        "independentHumanReview": false,
+        "approvedAt": "2026-08-31",
+        "approvalNote": "Decisione editoriale assistita circoscritta ai due riti del lotto 05, nel mandato di proseguire Scopri. Non approvazione dell'utente frase per frase, non certificazione ARLeF e non revisione professionale indipendente.",
+        "references": [
+          {
+            "url": "https://superdizionari.arlef.it/ricerca?term=processione&language=it&gui=fur",
+            "accessMethod": "direct_http_html",
+            "note": "Processione → procession; letto il lemma HTML completo."
+          },
+          {
+            "url": "https://superdizionari.arlef.it/ricerca?term=mariano&language=it&gui=fur",
+            "accessMethod": "direct_http_html",
+            "note": "Mariano → marian; femminile mariane nel testo. Il mese mariano è attestato anche come mês de Madone."
+          },
+          {
+            "url": "https://superdizionari.arlef.it/ricerca?term=parrocchia&language=it&gui=fur",
+            "accessMethod": "direct_http_html",
+            "note": "Parochie e il plurale parochiis sono attestati nel lemma HTML."
+          },
+          {
+            "url": "https://superdizionari.arlef.it/ricerca?term=riunire&language=it&gui=fur",
+            "accessMethod": "direct_http_html",
+            "note": "Riunire → clamâ dongje, nel senso di radunare persone."
+          },
+          {
+            "url": "https://superdizionari.arlef.it/ricerca?term=cammino&language=it&gui=fur",
+            "accessMethod": "direct_http_html",
+            "note": "Il lemma descrive il cammino come percors e attesta a pît; nessun itinerario operativo nella scheda."
+          },
+          {
+            "url": "https://superdizionari.arlef.it/ricerca?term=collegare&language=it&gui=fur",
+            "accessMethod": "direct_http_html",
+            "note": "Collegare → colegâ; due luoghi collegati dal percorso, senza fissarne la direzione."
+          },
+          {
+            "url": "https://superdizionari.arlef.it/ricerca?term=conclusione&language=it&gui=fur",
+            "accessMethod": "direct_http_html",
+            "note": "Conclusione → fin, nel senso di termine; ae fin dal mês conserva il senso italiano."
+          },
+          {
+            "url": "https://superdizionari.arlef.it/ricerca?term=istituto&language=it&gui=fur",
+            "accessMethod": "direct_http_html",
+            "note": "Istituto → istitût. La Nostra Famiglia e San Giacomo restano nomi propri; Pasian di Prât è conservato dal profilo comunale già approvato."
+          }
+        ]
+      }
+    }
+  },
+  {
+    "id": "institutional-ritual-moggio-madonna-salute",
+    "sourceId": "ritual-research-moggio-madonna-salute",
+    "candidateId": "ritual-research-moggio-madonna-salute",
+    "canonicalKey": "moggio-madonna-salute-novembre21",
+    "section": "riti_credenze_popolari",
+    "type": "rito",
+    "recurrence": "fixed_date",
+    "dateAnchors": [
+      "11-21"
+    ],
+    "dateRanges": [],
+    "movableDates": [],
+    "movableDateRanges": [],
+    "seasons": [
+      "autunno"
+    ],
+    "weatherTags": [],
+    "areas": [
+      "moggio_udinese"
+    ],
+    "priority": 4,
+    "editorialStatus": "ready_it",
+    "languageStatus": {
+      "it": "approved",
+      "fur": "approved"
+    },
+    "readyForUi": true,
+    "title": {
+      "it": "La Madonna della Salute a Moggio",
+      "fur": "La Madone de Salût a Mueç"
+    },
+    "text": {
+      "it": "A Moggio Udinese, il 21 novembre si celebra la Madonna della Salute. Nella processione tradizionale, i pompieri volontari del paese portano la statua a spalla. Partecipano anche fedeli dei paesi vicini.",
+      "fur": "A Mueç, ai 21 di Novembar si celebre la Madone de Salût. Te procession tradizionâl, i pompîrs volontaris dal paîs a puartin la statue su lis spalis. A cjapin part ancje fedêi dai paîs dongje."
+    },
+    "appShort": {
+      "it": "Il 21 novembre, la statua viene portata in processione dai pompieri volontari.",
+      "fur": "Ai 21 di Novembar, i pompîrs volontaris a puartin la statue in procession."
+    },
+    "source": {
+      "label": "Arcidiocesi di Udine · Moggio e la Madonna della Salute",
+      "url": "https://www.diocesiudine.it/wd-appuntamenti/moggio-udinese-messa-e-processione-per-la-madonna-della-salute/",
+      "type": "institutional_publication",
+      "confidence": "alta",
+      "publishedAt": "2024-11-20",
+      "checkedAt": "2026-08-31",
+      "note": "Il testo descrive la ricorrenza del 21 novembre, i pompieri volontari che portano la statua a spalla e i fedeli dei paesi vicini. Il contenitore calendario indica invece 22 novembre: il testo e la testimonianza del 2022 concordano sul 21.",
+      "rightsNote": "Sintesi originale; nessuna immagine, filmato o riproduzione della fonte riutilizzata.",
+      "auditStatus": "source_and_scope_verified"
+    },
+    "supportingSources": [
+      {
+        "label": "Arcidiocesi di Udine · La processione di Moggio nel 2022",
+        "url": "https://www.diocesiudine.it/wd-appuntamenti/a-moggio-udinese-si-rinnova-la-processione-della-madonna-della-salute/",
+        "purpose": "Conferma il 21 novembre, il trasporto a spalla da parte del Corpo Pompieri volontari e la ripresa dopo la sospensione pandemica. La fonte dichiara incerte le origini."
+      }
+    ],
+    "sourceStatus": "controllato",
+    "sourceNote": "Scheda culturale proposta soltanto il 21 novembre a partire dalla ricorrenza descritta nei testi, non dai widget discordanti del 2022 e 2024. Non conferma programmi o svolgimento di edizioni attuali. Origini, ipotesi sul ritorno degli emigranti e consuetudini domestiche storiche non diventano fatti certi o un intervallo annuale. Le aree indicano il contesto culturale, non la posizione dell'utente.",
+    "languageReview": {
+      "fur": {
+        "approvalBasis": "user_delegated_assisted_editorial_review",
+        "reviewMethod": "assisted_standard_reference_review",
+        "reviewer": "assistant",
+        "independentHumanReview": false,
+        "approvedAt": "2026-08-31",
+        "approvalNote": "Decisione editoriale assistita circoscritta ai due riti del lotto 05, nel mandato di proseguire Scopri. Non approvazione dell'utente frase per frase, non certificazione ARLeF e non revisione professionale indipendente.",
+        "references": [
+          {
+            "url": "https://superdizionari.arlef.it/lemma/processione/23870?language=it&oneshot=1&gui=fur",
+            "accessMethod": "direct_http_html",
+            "note": "Processione → procession; lemma HTML letto direttamente."
+          },
+          {
+            "url": "https://superdizionari.arlef.it/lemma/pompiere/51412?language=it&oneshot=1&gui=fur",
+            "accessMethod": "direct_http_html",
+            "note": "Pompiere → pompîr; plurale pompîrs verificato."
+          },
+          {
+            "url": "https://superdizionari.arlef.it/lemma/volontario/8231?language=it&oneshot=1&gui=fur",
+            "accessMethod": "direct_http_html",
+            "note": "Volontario → volontari; plurale volontaris."
+          },
+          {
+            "url": "https://superdizionari.arlef.it/lemma/spalla/41647?language=it&oneshot=1&gui=fur",
+            "accessMethod": "direct_http_html",
+            "note": "Spalla → spale, plurale spalis; su lis spalis per il trasporto della statua."
+          },
+          {
+            "url": "https://superdizionari.arlef.it/lemma/statua/57483?language=it&oneshot=1&gui=fur",
+            "accessMethod": "direct_http_html",
+            "note": "Statua → statue; lemma HTML letto direttamente."
+          },
+          {
+            "url": "https://superdizionari.arlef.it/lemma/salute/8543?language=it&oneshot=1&gui=fur",
+            "accessMethod": "direct_http_html",
+            "note": "Salute → salût; Madone de Salût mantiene l'intitolazione religiosa."
+          },
+          {
+            "url": "https://superdizionari.arlef.it/lemma/Moggio/72562?language=it&oneshot=1&gui=fur",
+            "accessMethod": "direct_http_html",
+            "note": "Moggio → Mueç, forma già presente nel profilo comunale approvato."
+          }
+        ]
+      }
+    }
+  },
+  {
+    "id": "institutional-ritual-grado-perdon-barbana",
+    "sourceId": "ritual-research-grado-perdon-barbana",
+    "candidateId": "ritual-research-grado-perdon-barbana",
+    "canonicalKey": "grado-perdon-barbana-prima-domenica-luglio",
+    "section": "riti_credenze_popolari",
+    "type": "rito",
+    "recurrence": "movable_date",
+    "dateAnchors": [],
+    "dateRanges": [],
+    "movableDates": [],
+    "movableDateRanges": [],
+    "nthWeekdayDates": [
+      {
+        "month": 7,
+        "weekday": 0,
+        "ordinal": 1
+      }
+    ],
+    "seasons": [
+      "estate"
+    ],
+    "weatherTags": [],
+    "areas": [
+      "grado",
+      "barbana",
+      "laguna"
+    ],
+    "priority": 4,
+    "editorialStatus": "ready_it",
+    "languageStatus": {
+      "it": "approved",
+      "fur": "approved"
+    },
+    "readyForUi": true,
+    "title": {
+      "it": "Il Perdòn di Barbana",
+      "fur": "Il Perdòn di Barbana"
+    },
+    "text": {
+      "it": "La prima domenica di luglio, da Grado parte una processione di barche verso il santuario di Barbana. La comunità rinnova il voto che la tradizione lega alla pestilenza del 1237; la «Stella del Mare» porta la statua della Madonna degli Angeli.",
+      "fur": "La prime domenie di Lui, un corteu di barcjis si môf di Grau viers il santuari di Barbana. La comunitât e rinove il vôt che la tradizion e lee ae epidemie dal 1237; la «Stella del Mare» e puarte la statue de Madone dai Agnui."
+    },
+    "appShort": {
+      "it": "Un corteo di barche rinnova il voto della comunità gradese.",
+      "fur": "Un corteu di barcjis al rinove il vôt de comunitât di Grau."
+    },
+    "source": {
+      "label": "Grado Turismo · Perdòn di Barbana",
+      "url": "https://grado.it/it/eventi-ed-escursioni/grandi-eventi/sabo-grando-e-perdon-di-barbana",
+      "type": "local_tourism_consortium",
+      "confidence": "alta",
+      "checkedAt": "2026-09-01",
+      "note": "La pagina del Consorzio Grado Turismo distingue il Perdòn dal Sabo Grando e indica ogni anno la prima domenica di luglio, il corteo di barche da Grado a Barbana, la Stella del Mare e la tradizione del voto legata al 1237.",
+      "rightsNote": "Sintesi originale; nessuna immagine, filmato o riproduzione della fonte riutilizzata.",
+      "auditStatus": "source_and_scope_verified"
+    },
+    "supportingSources": [
+      {
+        "label": "PromoTurismoFVG · Santuario di Barbana",
+        "url": "https://www.turismofvg.it/it/mare/escursioni-in-barca-nella-costa-del-friuli-venezia-giulia/i-10-itinerari-in-barca-da-non-perdere/in-visita-al-santuario-di-barbana-nella-laguna-di-grado",
+        "purpose": "Conferma la prima domenica di luglio, il corteo annuale di barche da Grado a Barbana e l'origine tradizionalmente ricondotta al 1237."
+      },
+      {
+        "label": "Arcidiocesi di Gorizia · Perdòn 2022",
+        "url": "https://www.diocesigorizia.it/wd-interventi-vesc/ciascuno-di-noi-partecipa-a-disegnare-una-responsabilita-collettiva/",
+        "purpose": "Documenta la comunità di Grado che rinnova il voto e attribuisce alla tradizione l'origine del 1237."
+      }
+    ],
+    "sourceStatus": "controllato",
+    "sourceNote": "Scheda culturale proposta soltanto la prima domenica di luglio. La regola annuale viene dalla fonte, non da una singola edizione; non annuncia programmi, orari o svolgimento corrente. Il 1237 è presentato come memoria tradizionale, non come cronaca dimostrata. Il rito resta distinto dal Sabo Grando e dalla processione dei pescatori del primo maggio. La bozza locale preesistente è superata e resta non selezionabile.",
+    "languageReview": {
+      "fur": {
+        "approvalBasis": "user_delegated_assisted_editorial_review",
+        "reviewMethod": "assisted_standard_reference_review",
+        "reviewer": "assistant",
+        "independentHumanReview": false,
+        "approvedAt": "2026-09-01",
+        "approvalNote": "Decisione editoriale assistita circoscritta ai due riti del lotto 06, nel mandato di proseguire Scopri. Il titolo tradizionale viene conservato; il corpo è in friulano standard. Non approvazione dell'utente frase per frase, non certificazione ARLeF e non revisione professionale indipendente.",
+        "references": [
+          {
+            "url": "https://superdizionari.arlef.it/ricerca?term=processione&language=it&gui=fur",
+            "accessMethod": "direct_http_html",
+            "note": "Processione → procession; per il gruppo in movimento è attestato anche corteu."
+          },
+          {
+            "url": "https://superdizionari.arlef.it/ricerca?term=barca&language=it&gui=fur",
+            "accessMethod": "direct_http_html",
+            "note": "Barca → barcje; plurale barcjis."
+          },
+          {
+            "url": "https://superdizionari.arlef.it/ricerca?term=santuario&language=it&gui=fur",
+            "accessMethod": "direct_http_html",
+            "note": "Santuario → santuari. Barbana resta il nome proprio della fonte."
+          },
+          {
+            "url": "https://superdizionari.arlef.it/ricerca?term=voto&language=it&gui=fur",
+            "accessMethod": "direct_http_html",
+            "note": "Voto → vôt nel senso religioso documentato dalla fonte."
+          },
+          {
+            "url": "https://superdizionari.arlef.it/ricerca?term=epidemia&language=it&gui=fur",
+            "accessMethod": "direct_http_html",
+            "note": "Epidemia → epidemie; il testo la attribuisce alla tradizione."
+          },
+          {
+            "url": "https://superdizionari.arlef.it/ricerca?term=statua&language=it&gui=fur",
+            "accessMethod": "direct_http_html",
+            "note": "Statua → statue."
+          },
+          {
+            "url": "https://superdizionari.arlef.it/ricerca?term=luglio&language=it&gui=fur",
+            "accessMethod": "direct_http_html",
+            "note": "Luglio → Lui; domenica → domenie verificato separatamente nello stesso dizionario."
+          }
+        ]
+      }
+    }
+  },
+  {
+    "id": "institutional-ritual-fagagna-trebbiatura",
+    "sourceId": "ritual-research-fagagna-trebbiatura",
+    "candidateId": "ritual-research-fagagna-trebbiatura",
+    "canonicalKey": "fagagna-cjase-cocel-trebbiatura-seconda-domenica-luglio",
+    "section": "riti_credenze_popolari",
+    "type": "rito",
+    "recurrence": "movable_date",
+    "dateAnchors": [],
+    "dateRanges": [],
+    "movableDates": [],
+    "movableDateRanges": [],
+    "nthWeekdayDates": [
+      {
+        "month": 7,
+        "weekday": 0,
+        "ordinal": 2
+      }
+    ],
+    "seasons": [
+      "estate"
+    ],
+    "weatherTags": [],
+    "areas": [
+      "fagagna",
+      "cjase_cocel"
+    ],
+    "priority": 4,
+    "editorialStatus": "ready_it",
+    "languageStatus": {
+      "it": "approved",
+      "fur": "approved"
+    },
+    "readyForUi": true,
+    "title": {
+      "it": "La trebbiatura a Cjase Cocèl",
+      "fur": "La batidure a Cjase Cocèl"
+    },
+    "text": {
+      "it": "La seconda domenica di luglio, Cjase Cocèl fa rivivere i lavori della trebbiatura. Il frumento viene battuto con la macchina, mentre la segale viene lavorata a mano.",
+      "fur": "La seconde domenie di Lui, Cjase Cocèl e fâs rivivi i lavôrs de batidure. Il forment al ven batût cu la machine, intant che la siale e ven lavorade a man."
+    },
+    "appShort": {
+      "it": "Il museo rievoca la trebbiatura del frumento e della segale.",
+      "fur": "Il museu al fâs rivivi la batidure dal forment e de siale."
+    },
+    "source": {
+      "label": "Pro Loco Fagagna · Festa della Trebbiatura",
+      "url": "https://www.prolocofagagna.it/festa-della-rebbiatura/",
+      "type": "local_cultural_association",
+      "confidence": "alta",
+      "checkedAt": "2026-09-01",
+      "note": "La pagina dell'organizzatore indica la seconda domenica di luglio e descrive la trebbia azionata dal trattore, il frumento portato sull'aia e la battitura manuale della segale.",
+      "rightsNote": "Sintesi originale; nessuna immagine, filmato o riproduzione della fonte riutilizzata.",
+      "auditStatus": "source_and_scope_verified"
+    },
+    "supportingSources": [
+      {
+        "label": "Museo Cjase Cocèl · Iniziative annuali",
+        "url": "https://www.museocjasecocel.it/iniziative1-iniziative-annuali",
+        "purpose": "La scheda indicizzata del museo conferma la seconda domenica di luglio e distingue la trebbiatura del frumento dalla battitura manuale della segale; il percorso diretto era temporaneamente non disponibile al controllo finale."
+      },
+      {
+        "label": "Comune di Fagagna · Festa della Trebbiatura 2026",
+        "url": "https://www.comune.fagagna.ud.it/it/vivere-il-comune-29554/eventi-29556",
+        "purpose": "L'elenco eventi comunale conferma domenica 12 luglio per l'edizione 2026, coerente con la seconda domenica del mese."
+      }
+    ],
+    "sourceStatus": "controllato",
+    "sourceNote": "La scheda racconta una rievocazione museale annuale, non afferma che la pratica agricola sia proseguita senza interruzioni e non annuncia programmi o orari futuri. La seconda domenica di luglio è una regola editoriale esatta, verificata sulla fonte e sull'edizione comunale 2026. Nessuna sovrapposizione con le schede sulla vendemmia o con il profilo storico del museo.",
+    "languageReview": {
+      "fur": {
+        "approvalBasis": "user_delegated_assisted_editorial_review",
+        "reviewMethod": "assisted_standard_reference_review",
+        "reviewer": "assistant",
+        "independentHumanReview": false,
+        "approvedAt": "2026-09-01",
+        "approvalNote": "Decisione editoriale assistita circoscritta ai due riti del lotto 06, nel mandato di proseguire Scopri. Non approvazione dell'utente frase per frase, non certificazione ARLeF e non revisione professionale indipendente.",
+        "references": [
+          {
+            "url": "https://superdizionari.arlef.it/ricerca?term=trebbiatura&language=it&gui=fur",
+            "accessMethod": "direct_http_html",
+            "note": "Trebbiatura → batidure; lemma HTML verificato direttamente."
+          },
+          {
+            "url": "https://superdizionari.arlef.it/ricerca?term=frumento&language=it&gui=fur",
+            "accessMethod": "direct_http_html",
+            "note": "Frumento → forment; lemma HTML verificato direttamente."
+          },
+          {
+            "url": "https://superdizionari.arlef.it/ricerca?term=segale&language=it&gui=fur",
+            "accessMethod": "direct_http_html",
+            "note": "Segale → siale; lemma HTML verificato direttamente."
+          },
+          {
+            "url": "https://superdizionari.arlef.it/ricerca?term=macchina&language=it&gui=fur",
+            "accessMethod": "direct_http_html",
+            "note": "Macchina → machine; usato senza attribuire al presente il lavoro agricolo rievocato."
+          },
+          {
+            "url": "https://superdizionari.arlef.it/ricerca?term=lavorare&language=it&gui=fur",
+            "accessMethod": "direct_http_html",
+            "note": "Lavorare → lavorâ; lavorade conserva il valore passivo della frase italiana."
+          }
+        ]
+      }
+    }
+  },
+  {
+    "id": "institutional-ritual-pignano-immacolata",
+    "sourceId": "ritual-research-pignano-immacolata",
+    "candidateId": "ritual-research-pignano-immacolata",
+    "canonicalKey": "pignano-immacolata-processione-dicembre08",
+    "section": "riti_credenze_popolari",
+    "type": "rito",
+    "recurrence": "fixed_date",
+    "dateAnchors": [
+      "12-08"
+    ],
+    "dateRanges": [],
+    "movableDates": [],
+    "movableDateRanges": [],
+    "seasons": [
+      "inverno"
+    ],
+    "weatherTags": [],
+    "areas": [
+      "pignano",
+      "ragogna",
+      "friuli_collinare"
+    ],
+    "priority": 4,
+    "editorialStatus": "ready_it",
+    "languageStatus": {
+      "it": "approved",
+      "fur": "approved"
+    },
+    "readyForUi": true,
+    "title": {
+      "it": "La processione dell’Immacolata a Pignano",
+      "fur": "La procession de Imacolade a Pignan"
+    },
+    "text": {
+      "it": "L’8 dicembre, a Pignano, la statua dell’Immacolata viene portata in processione per le vie del borgo. La devozione è legata alla statua arrivata in chiesa nel 1904; nel 2024 la festa ha raggiunto la 120ª edizione.",
+      "fur": "Ai 8 di Dicembar, a Pignan, la statue de Imacolade e ven puartade in procession pes viis dal borc. La devozion e je leade ae statue rivade te glesie tal 1904; tal 2024 la fieste e jere ae edizion numar 120."
+    },
+    "appShort": {
+      "it": "L’8 dicembre la statua dell’Immacolata percorre in processione il borgo di Pignano.",
+      "fur": "Ai 8 di Dicembar la statue de Imacolade e ven puartade in procession pal borc di Pignan."
+    },
+    "source": {
+      "label": "Arcidiocesi di Udine · L’Immacolata a Pignano",
+      "url": "https://www.diocesiudine.it/wd-appuntamenti/a-pignano-di-ragogna-da-111-anni-si-celebra-limmacolata/",
+      "type": "institutional_publication",
+      "confidence": "alta",
+      "publishedAt": "2015-11-23",
+      "checkedAt": "2026-09-01",
+      "note": "La pubblicazione documenta l'8 dicembre, la processione per il borgo e la statua arrivata in chiesa nel 1904. Le edizioni 2024 e 2025 confermano la data; il 2024 registra la centoventesima edizione.",
+      "rightsNote": "Sintesi originale; nessuna immagine, filmato o riproduzione della fonte riutilizzata.",
+      "auditStatus": "source_and_scope_verified"
+    },
+    "supportingSources": [
+      {
+        "label": "Arcidiocesi di Udine · La 120ª edizione",
+        "url": "https://www.diocesiudine.it/wd-appuntamenti/pignano-di-ragogna-in-festa-per-limmacolata-2/",
+        "purpose": "Il corpo della pagina indica domenica 8 dicembre, Vespri e processione e documenta la centoventesima edizione. Il widget riporta il 9 dicembre e non viene usato per la regola."
+      },
+      {
+        "label": "Arcidiocesi di Udine · La processione del 2025",
+        "url": "https://www.diocesiudine.it/wd-appuntamenti/pignano-celebra-limmacolata-con-la-processione/",
+        "purpose": "Conferma anche nel 2025 l'8 dicembre e la processione con la statua per le vie di Pignano."
+      }
+    ],
+    "sourceStatus": "controllato",
+    "sourceNote": "Scheda culturale proposta soltanto l'8 dicembre. Non annuncia programmi, orari o svolgimento corrente e non fissa Borc di Sot o Borc di Sore, varianti nelle fonti annuali. Pignan è il toponimo friulano ufficiale; l'ambito indica il contesto culturale, non la posizione dell'utente. La memoria di Gemona sulla stessa data racconta un'altra tradizione e resta distinta.",
+    "languageReview": {
+      "fur": {
+        "approvalBasis": "user_delegated_assisted_editorial_review",
+        "reviewMethod": "assisted_standard_reference_review",
+        "reviewer": "assistant",
+        "independentHumanReview": false,
+        "approvedAt": "2026-09-01",
+        "approvalNote": "Decisione editoriale assistita circoscritta ai due riti del lotto 07, nel mandato di proseguire Scopri. Non approvazione dell'utente frase per frase, non certificazione ARLeF e non revisione professionale indipendente.",
+        "references": [
+          {
+            "url": "https://superdizionari.arlef.it/ricerca?term=processione&language=it&gui=fur",
+            "accessMethod": "direct_http_html",
+            "note": "Processione → procession; lemma HTML verificato direttamente."
+          },
+          {
+            "url": "https://superdizionari.arlef.it/ricerca?term=immacolato&language=it&gui=fur",
+            "accessMethod": "direct_http_html",
+            "note": "Immacolato → imacolât; il femminile sostantivato Imacolade segue la forma già approvata nel catalogo."
+          },
+          {
+            "url": "https://superdizionari.arlef.it/ricerca?term=statua&language=it&gui=fur",
+            "accessMethod": "direct_http_html",
+            "note": "Statua → statue; lemma HTML verificato direttamente."
+          },
+          {
+            "url": "https://superdizionari.arlef.it/ricerca?term=devozione&language=it&gui=fur",
+            "accessMethod": "direct_http_html",
+            "note": "Devozione → devozion nel senso religioso."
+          },
+          {
+            "url": "https://superdizionari.arlef.it/ricerca?term=chiesa&language=it&gui=fur",
+            "accessMethod": "direct_http_html",
+            "note": "Chiesa → glesie; lemma HTML verificato direttamente."
+          },
+          {
+            "url": "https://superdizionari.arlef.it/ricerca?term=borgo&language=it&gui=fur",
+            "accessMethod": "direct_http_html",
+            "note": "Borgo → borc; il testo non sceglie fra le due denominazioni annuali del percorso."
+          },
+          {
+            "url": "https://superdizionari.arlef.it/ricerca?term=dicembre&language=it&gui=fur",
+            "accessMethod": "direct_http_html",
+            "note": "Dicembre → Dicembar."
+          },
+          {
+            "url": "https://arlef.it/it/risorse/toponomastica-ufficiale/",
+            "accessMethod": "direct_http_html",
+            "note": "Pignano → Pignan e Ragogna → Ruvigne nell'elenco ufficiale regionale richiamato dalla pagina ARLeF."
+          }
+        ]
+      }
+    }
+  },
+  {
+    "id": "institutional-ritual-paularo-femenate",
+    "sourceId": "ritual-research-paularo-femenate",
+    "candidateId": "ritual-research-paularo-femenate",
+    "canonicalKey": "paularo-femenate-gennaio05",
+    "section": "riti_credenze_popolari",
+    "type": "rito",
+    "recurrence": "fixed_date",
+    "dateAnchors": [
+      "01-05"
+    ],
+    "dateRanges": [],
+    "movableDates": [],
+    "movableDateRanges": [],
+    "seasons": [
+      "inverno"
+    ],
+    "weatherTags": [],
+    "areas": [
+      "paularo",
+      "val_d_incarojo",
+      "carnia"
+    ],
+    "priority": 4,
+    "editorialStatus": "ready_it",
+    "languageStatus": {
+      "it": "approved",
+      "fur": "approved"
+    },
+    "readyForUi": true,
+    "title": {
+      "it": "La Femenàte di Paularo",
+      "fur": "La Femenàte di Paulâr"
+    },
+    "text": {
+      "it": "Il 5 gennaio, nelle borgate di Paularo, si accendono le Femenàtes: grandi strutture romboidali rivestite di ramaglie e materiali vegetali secchi. Fumo e faville venivano osservati per cercare segni sul raccolto e sull’anno nuovo.",
+      "fur": "Ai 5 di Zenâr, tes borgadis di Paulâr, si impiin lis Femenàtes: grandis struturis romboidâls cuviertis di brascjam e di materiâi vegjetâi secs. Il fum e lis faliscjis a vignivin cjalâts par cirî segns su la racuelte e sul gnûf an."
+    },
+    "appShort": {
+      "it": "Il 5 gennaio, fumo e faville delle Femenàtes diventavano segni per l’anno nuovo.",
+      "fur": "Ai 5 di Zenâr, fum e faliscjis des Femenàtes a deventavin segns pal gnûf an."
+    },
+    "source": {
+      "label": "Ecomuseo I Mistîrs · La Femenàte",
+      "url": "https://www.ecomuseomistirs.it/la-femenate/",
+      "type": "institutional_ecomuseum",
+      "confidence": "alta",
+      "checkedAt": "2026-09-01",
+      "note": "L'Ecomuseo documenta struttura, preparazione, accensione nelle borgate di Paularo il 5 gennaio e lettura rituale di fumo e faville.",
+      "rightsNote": "Sintesi originale; nessuna immagine, filmato o riproduzione della fonte riutilizzata.",
+      "auditStatus": "source_and_scope_verified"
+    },
+    "supportingSources": [
+      {
+        "label": "Museo Carnico · La Femenate a Paularo",
+        "url": "https://patrimonio.museodolom.it/items/show/5755",
+        "purpose": "Conferma il rito locale, la data del 5 gennaio, la struttura romboidale e la lettura di fumo e faville in relazione all'anno successivo."
+      },
+      {
+        "label": "Ecomuseo I Mistîrs · Eventi annuali",
+        "url": "https://www.ecomuseomistirs.it/gli-eventi/",
+        "purpose": "Indica il 5 gennaio e una Femenàte per ogni borgata, senza ricavare la regola da un singolo programma datato."
+      }
+    ],
+    "sourceStatus": "controllato",
+    "sourceNote": "Scheda culturale proposta soltanto il 5 gennaio. Il rito resta circoscritto a Paularo e non viene esteso a tutti i fuochi epifanici. La copy non tratta i segni come previsioni attendibili, non attribuisce un'origine celtica come fatto certo e non annuncia orari o programmi correnti. Le aree indicano il contesto culturale, non la posizione dell'utente.",
+    "languageReview": {
+      "fur": {
+        "approvalBasis": "user_delegated_assisted_editorial_review",
+        "reviewMethod": "assisted_standard_reference_review",
+        "reviewer": "assistant",
+        "independentHumanReview": false,
+        "approvedAt": "2026-09-01",
+        "approvalNote": "Decisione editoriale assistita circoscritta ai due riti del lotto 07, nel mandato di proseguire Scopri. Femenàte resta il nome tradizionale locale. Non approvazione dell'utente frase per frase, non certificazione ARLeF e non revisione professionale indipendente.",
+        "references": [
+          {
+            "url": "https://superdizionari.arlef.it/ricerca?term=gennaio&language=it&gui=fur",
+            "accessMethod": "direct_http_html",
+            "note": "Gennaio → Zenâr; lemma HTML verificato direttamente."
+          },
+          {
+            "url": "https://superdizionari.arlef.it/ricerca?term=borgata&language=it&gui=fur",
+            "accessMethod": "direct_http_html",
+            "note": "Borgata → borgade; plurale borgadis."
+          },
+          {
+            "url": "https://superdizionari.arlef.it/ricerca?term=accendere&language=it&gui=fur",
+            "accessMethod": "direct_http_html",
+            "note": "Accendere → impiâ nel senso di dare fuoco."
+          },
+          {
+            "url": "https://superdizionari.arlef.it/ricerca?term=struttura&language=it&gui=fur",
+            "accessMethod": "direct_http_html",
+            "note": "Struttura → struture; plurale struturis."
+          },
+          {
+            "url": "https://superdizionari.arlef.it/ricerca?term=rombo&language=it&gui=fur",
+            "accessMethod": "direct_http_html",
+            "note": "Rombo → rombe; il corpo usa l'aggettivo romboidâl per la forma documentata."
+          },
+          {
+            "url": "https://superdizionari.arlef.it/ricerca?term=ramaglia&language=it&gui=fur",
+            "accessMethod": "direct_http_html",
+            "note": "Ramaglia → brascjam."
+          },
+          {
+            "url": "https://superdizionari.arlef.it/ricerca?term=fumo&language=it&gui=fur",
+            "accessMethod": "direct_http_html",
+            "note": "Fumo → fum."
+          },
+          {
+            "url": "https://superdizionari.arlef.it/ricerca?term=favilla&language=it&gui=fur",
+            "accessMethod": "direct_http_html",
+            "note": "Favilla → faliscje; plurale faliscjis."
+          },
+          {
+            "url": "https://superdizionari.arlef.it/ricerca?term=segno&language=it&gui=fur",
+            "accessMethod": "direct_http_html",
+            "note": "Segno → segn o segnâl; la copy conserva segn nel senso di indizio rituale."
+          },
+          {
+            "url": "https://superdizionari.arlef.it/ricerca?term=raccolto&language=it&gui=fur",
+            "accessMethod": "direct_http_html",
+            "note": "Raccolto → racuelte nel senso agricolo."
+          }
+        ]
+      }
+    }
+  }
+]

@@ -1,0 +1,78 @@
+{
+  "schemaVersion": 1,
+  "generatedAt": "2026-07-18",
+  "purpose": "Cinquantatreesimo lotto Scopri IT: chiusura della coda editoriale residua ad alto punteggio. Reno Bertoia supera la soglia sportiva eccezionale e diventa approfondimento secondario dell'8 gennaio. Sara Casasola resta sospesa perche data di nascita e risultati sportivi sono confermati da due fonti ufficiali distinte che il contratto canonico non puo ancora conservare insieme. Reggie Jackson viene escluso perche il record confonde il cestista nato a Pordenone con l'omonimo giocatore di baseball.",
+  "policy": {
+    "readyForUi": false,
+    "furDeferred": true,
+    "dateFormat": "DD-MM",
+    "requiresFinalItalianApproval": true,
+    "excludeDeaths": true,
+    "excludeGenericPoliticalProfiles": true,
+    "excludeGenericProfessionalProfiles": true,
+    "excludeSportsOnlyProfiles": true,
+    "allowExceptionalSportsProfiles": true,
+    "rejectBirthplaceOnlyProfiles": true,
+    "rejectSemanticDuplicates": true,
+    "rejectUncertainCalendarDates": true,
+    "rejectInternallyInconsistentRecords": true,
+    "sourceFirst": true,
+    "publishAfterFurOnly": true,
+    "allowMultipleMemoriesPerDate": true,
+    "secondaryRequiresPrimaryAnchor": true,
+    "doNotPromoteToPrimaryForCoverageOnly": true
+  },
+  "summary": {
+    "reviewed": 3,
+    "keepDaily": 1,
+    "primary": 0,
+    "secondary": 1,
+    "hold": 1,
+    "excluded": 1,
+    "canonicalPrimaryDatesBefore": 274,
+    "canonicalPrimaryDatesAfter": 274,
+    "currentVisiblePrimaryCoverage": 269
+  },
+  "keepDaily": [
+    {
+      "id": "master-fvg-08-01-Q7313382",
+      "wikidataId": "Q7313382",
+      "dateIt": "08-01",
+      "year": 1935,
+      "municipality": "San Vito al Tagliamento",
+      "locality": "San Vito al Tagliamento",
+      "province": "PN",
+      "canonicalCategory": "sport",
+      "dailyRole": "secondary",
+      "priority": 97,
+      "titleIt": "Reno Bertoia, dal Friuli alla Major League Baseball",
+      "copyIt": "L'8 gennaio 1935 nasce a San Vito al Tagliamento Pierino \"Reno\" Bertoia. Emigrato in Canada ancora bambino, gioca dieci stagioni nella Major League Baseball e nel 1988 entra nella Canadian Baseball Hall of Fame.",
+      "sourceLabel": "Canadian Baseball Hall of Fame and Museum - Reno Bertoia",
+      "sourceUrl": "https://baseballhalloffame.ca/hall-of-famer/reno-bertoia/",
+      "sourceStatus": "pass",
+      "readyForUi": false
+    }
+  ],
+  "hold": [
+    {
+      "id": "master-fvg-29-11-Q43303860",
+      "reason": "Sara Casasola supera la soglia sportiva eccezionale, ma la data di nascita e i risultati sono documentati da due fonti ufficiali distinte. La voce resta sospesa finche il contratto canonico non puo conservare entrambe le prove senza perderne una.",
+      "evidence": [
+        {
+          "label": "Union Europeenne de Cyclisme - risultati ufficiali",
+          "url": "https://www.uec.ch/resources/resultsPastEvents/CycloCross/2015/Cyclocross_2015.pdf"
+        },
+        {
+          "label": "Federazione Ciclistica Italiana - titolo Elite",
+          "url": "https://www.federciclismo.it/articoli/ciclocross-articoli/tricolori-ciclocross-dominio-di-sara-casasola-tra-le-elite/"
+        }
+      ]
+    }
+  ],
+  "excluded": [
+    {
+      "id": "master-fvg-16-04-Q2640578",
+      "reason": "Il record attribuisce al cestista Reggie Jackson, nato a Pordenone il 16 aprile 1990, la biografia dell'omonimo giocatore di baseball noto come Mr. October. L'identita e quindi internamente incoerente e il legame territoriale residuo sarebbe soltanto il luogo di nascita."
+    }
+  ]
+}

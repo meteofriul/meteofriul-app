@@ -1,0 +1,68 @@
+{
+  "schemaVersion": 1,
+  "purpose": "Quinto lotto FUR controllato per i record Scopri gia approvati in IT. Solo questi record possono diventare visibili.",
+  "reviewedAt": "2026-07-12",
+  "summary": {
+    "totalRecords": 8,
+    "approved": 8,
+    "pendingHumanReview": 0
+  },
+  "records": [
+    {
+      "id": "memory-it-ready-0509-la-riunione-adriatica-di-sicurta",
+      "titleFur": "La Riunion Adriatiche di Sicurtât",
+      "summaryFur": "Ai 9 di Mai dal 1838 e nas a Triest la Riunion Adriatiche di Sicurtât: une olme de citât mercantîl, portuâl e assicurative dal Votcent.",
+      "status": "approved",
+      "notes": "Voce istituzionale/storica; tono breve, non aziendale."
+    },
+    {
+      "id": "memory-it-ready-0903-karel-vladimir-truhlar-poesia-e-pensiero",
+      "titleFur": "Karel Vladimir Truhlar, poesie e pinsîr",
+      "summaryFur": "Ai 3 di Setembar dal 1912 al nas a Gurize Karel Vladimir Truhlar, teolic, poet e gesuite: une vôs di confin tra culture slovene e orizont european.",
+      "status": "approved",
+      "notes": "Mantiene il taglio di confine culturale senza appesantire."
+    },
+    {
+      "id": "memory-it-ready-0728-guido-fink-sguardo-da-gorizia",
+      "titleFur": "Guido Fink, sguard di Gurize",
+      "summaryFur": "Ai 28 di Lui dal 1935 al nas a Gurize Guido Fink, scritôr, sagjist e tradutôr: une memorie par Scuvierzi, tra leterature e dialic culturâl.",
+      "status": "approved",
+      "notes": "Traduzione editoriale, non letterale, coerente con Scopri."
+    },
+    {
+      "id": "memory-it-ready-0529-giorgio-nicodemi-arte-e-musei",
+      "titleFur": "Giorgio Nicodemi, art e museus",
+      "summaryFur": "Ai 29 di Mai dal 1891 al nas a Triest Giorgio Nicodemi, museograf e scritôr d'art. Une piçule puarte viers museus, critiche e storie artistiche.",
+      "status": "approved",
+      "notes": "Copy breve, umano, adatto a una card giornaliera."
+    },
+    {
+      "id": "memory-it-ready-0221-italo-tavolato-scrittura-triestina",
+      "titleFur": "Italo Tavolato, scriture triestine",
+      "summaryFur": "Ai 21 di Fevrâr dal 1889 al nas a Triest Italo Tavolato, scritôr dal prin Nûfcent. Une vôs di tignî tal calendari culturâl de citât.",
+      "status": "approved",
+      "notes": "Tono asciutto: non carica il profilo oltre il suo peso."
+    },
+    {
+      "id": "memory-it-ready-0218-giovanni-giuseppe-cosattini-pittura-udinese",
+      "titleFur": "Giovanni Giuseppe Cosattini, piture udinese",
+      "summaryFur": "Ai 18 di Fevrâr dal 1625 al nas a Udin Giovanni Giuseppe Cosattini, pitôr. Une olme curte par ricuardâ l'art locâl dal Seicent.",
+      "status": "approved",
+      "notes": "Voce pittorica locale, sintetica."
+    },
+    {
+      "id": "memory-it-ready-0420-ramiro-meng-forme-e-citta",
+      "titleFur": "Ramiro Meng, formis e citât",
+      "summaryFur": "Ai 20 di Avrîl dal 1895 al nas a Triest Ramiro Meng, pitôr, scultôr e architet: une memorie visive tra art e spazi urban.",
+      "status": "approved",
+      "notes": "Resa compatta, coerente con il tema visuale."
+    },
+    {
+      "id": "memory-it-ready-0621-luigi-comel-disegno-e-pittura",
+      "titleFur": "Luigi Comel, dissegn e piture",
+      "summaryFur": "Ai 21 di Jugn dal 1866 al nas a Gurize Luigi Comel, pitôr e insegnant di dissegn: une memorie sobrie de culture figurative locâl.",
+      "status": "approved",
+      "notes": "Voce goriziana, breve e pubblicabile."
+    }
+  ]
+}

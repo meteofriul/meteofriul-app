@@ -1,0 +1,199 @@
+{
+  "schemaVersion": 1,
+  "batchId": "ostermann-1876-language-review-10",
+  "reviewedAt": "2026-08-02",
+  "sourceDecisionFiles": ["review-decisions-batch-10.json"],
+  "purpose": "Decima revisione linguistica ed editoriale dei candidati Ostermann 1876 verificati sul facsimile. Non pubblica contenuti nella UI.",
+  "policy": {
+    "publish": false,
+    "rule": "La normalizzazione FUR conserva il significato attestato nel facsimile. Le quindici massime sono generali e non ricevono date, feste o stagioni artificiali."
+  },
+  "summary": {
+    "records": 15,
+    "languageReviewed": 15,
+    "mergeExisting": 0,
+    "needsNativeReview": 0
+  },
+  "records": [
+    {
+      "id": "ost1876-va-lof-impare-urla",
+      "reviewStatus": "language_reviewed",
+      "furNormalized": "Cui che al va cul lôf al impare a urlâ.",
+      "itFinal": "Chi va con il lupo impara a ululare.",
+      "destination": "almanac",
+      "calendarRule": {"type": "general", "bucket": "wisdom", "fallbackAllowed": true},
+      "duplicateAudit": {"status": "new_distinct"},
+      "evidence": [{"label": "Facsimile Ostermann 1876, p. PDF 177", "kind": "primary"}, {"label": "ARLeF e Dizionari de Lenghe Furlane, lôf e grafia normalizzata", "kind": "secondary"}],
+      "editorialNote": "La forma storica lôv è ricondotta a lôf; aggiunti i pronomi soggetto della grafia standard.",
+      "publish": false
+    },
+    {
+      "id": "ost1876-mal-impare-cence-mestri",
+      "reviewStatus": "language_reviewed",
+      "furNormalized": "Il mâl si impare cence mestri.",
+      "itFinal": "Il male si impara senza maestro.",
+      "destination": "almanac",
+      "calendarRule": {"type": "general", "bucket": "wisdom", "fallbackAllowed": true},
+      "duplicateAudit": {"status": "new_distinct"},
+      "evidence": [{"label": "Facsimile Ostermann 1876, p. PDF 177", "kind": "primary"}, {"label": "Dizionari de Lenghe Furlane, lessico e grafia normalizzati", "kind": "secondary"}],
+      "editorialNote": "Mantenuta la forma proverbiale breve; mâl è normalizzato come sostantivo.",
+      "publish": false
+    },
+    {
+      "id": "ost1876-bon-consei-borse-becs",
+      "reviewStatus": "language_reviewed",
+      "furNormalized": "Ciertis voltis al vâl plui un bon consei che une borse di bêçs.",
+      "itFinal": "A volte vale più un buon consiglio di una borsa di denaro.",
+      "destination": "almanac",
+      "calendarRule": {"type": "general", "bucket": "wisdom", "fallbackAllowed": true},
+      "duplicateAudit": {"status": "new_distinct"},
+      "evidence": [{"label": "Facsimile Ostermann 1876, p. PDF 177", "kind": "primary"}, {"label": "Dizionari de Lenghe Furlane, consei e bêçs", "kind": "secondary"}],
+      "editorialNote": "Normalizzati ciertis, il pronome soggetto e il plurale bêçs.",
+      "publish": false
+    },
+    {
+      "id": "ost1876-abitudin-seconde-nature",
+      "reviewStatus": "language_reviewed",
+      "furNormalized": "La abitudin e je une seconde nature.",
+      "itFinal": "L'abitudine è una seconda natura.",
+      "destination": "almanac",
+      "calendarRule": {"type": "general", "bucket": "wisdom", "fallbackAllowed": true},
+      "duplicateAudit": {"status": "new_distinct"},
+      "evidence": [{"label": "Facsimile Ostermann 1876, p. PDF 178", "kind": "primary"}, {"label": "Dizionari de Lenghe Furlane, abitudin e nature", "kind": "secondary"}],
+      "editorialNote": "La forma italianeggiante abitudine è ricondotta ad abitudin; aggiunto il pronome soggetto.",
+      "publish": false
+    },
+    {
+      "id": "ost1876-ogni-pais-so-usance",
+      "reviewStatus": "language_reviewed",
+      "furNormalized": "Ogni paîs la sô usance, ogni cjase il so costum.",
+      "itFinal": "Ogni paese ha la sua usanza, ogni casa il suo costume.",
+      "destination": "almanac",
+      "calendarRule": {"type": "general", "bucket": "wisdom", "fallbackAllowed": true},
+      "duplicateAudit": {"status": "new_distinct"},
+      "evidence": [{"label": "Facsimile Ostermann 1876, p. PDF 178", "kind": "primary"}, {"label": "Dizionari de Lenghe Furlane, paîs, cjase, usance e costum", "kind": "secondary"}],
+      "editorialNote": "Conservato il parallelismo nominale del proverbio; normalizzati paîs e cjase.",
+      "publish": false
+    },
+    {
+      "id": "ost1876-usance-grande-sclavitud",
+      "reviewStatus": "language_reviewed",
+      "furNormalized": "La usance e je une grande sclavitût.",
+      "itFinal": "L'usanza è una grande schiavitù.",
+      "destination": "almanac",
+      "calendarRule": {"type": "general", "bucket": "wisdom", "fallbackAllowed": true},
+      "duplicateAudit": {"status": "new_distinct"},
+      "evidence": [{"label": "Facsimile Ostermann 1876, p. PDF 178", "kind": "primary"}, {"label": "Dizionari de Lenghe Furlane, usance e sclavitût", "kind": "secondary"}],
+      "editorialNote": "Aggiunto il pronome soggetto e mantenuto il contrasto netto della fonte.",
+      "publish": false
+    },
+    {
+      "id": "ost1876-scomence-poc-finis-trop",
+      "reviewStatus": "language_reviewed",
+      "furNormalized": "Si scomence cul pôc e si finìs cul trop.",
+      "itFinal": "Si comincia con poco e si finisce con troppo.",
+      "destination": "almanac",
+      "calendarRule": {"type": "general", "bucket": "wisdom", "fallbackAllowed": true},
+      "duplicateAudit": {"status": "new_distinct"},
+      "evidence": [{"label": "Facsimile Ostermann 1876, p. PDF 179", "kind": "primary"}, {"label": "Dizionari de Lenghe Furlane, scomençâ, pôc e trop", "kind": "secondary"}],
+      "editorialNote": "Mantenuto il parallelismo della fonte; normalizzata la flessione verbale.",
+      "publish": false
+    },
+    {
+      "id": "ost1876-lenghe-dint-dul",
+      "reviewStatus": "language_reviewed",
+      "furNormalized": "La lenghe e bat dulà che il dint al dûl.",
+      "itFinal": "La lingua batte dove il dente duole.",
+      "destination": "almanac",
+      "calendarRule": {"type": "general", "bucket": "wisdom", "fallbackAllowed": true},
+      "duplicateAudit": {"status": "new_distinct"},
+      "evidence": [{"label": "Facsimile Ostermann 1876, p. PDF 179", "kind": "primary"}, {"label": "Dizionari de Lenghe Furlane, lenghe, dint e dulî", "kind": "secondary"}],
+      "editorialNote": "Aggiunti i pronomi soggetto richiesti dalla grafia standard; conservata l'immagine originale.",
+      "publish": false
+    },
+    {
+      "id": "ost1876-gjambis-cur-tire",
+      "reviewStatus": "language_reviewed",
+      "furNormalized": "Lis gjambis a puartin là che il cûr al tire.",
+      "itFinal": "Le gambe portano dove il cuore tira.",
+      "destination": "almanac",
+      "calendarRule": {"type": "general", "bucket": "wisdom", "fallbackAllowed": true},
+      "duplicateAudit": {"status": "new_distinct"},
+      "evidence": [{"label": "Facsimile Ostermann 1876, p. PDF 179", "kind": "primary"}, {"label": "Dizionari de Lenghe Furlane, gjambe, cûr e tirâ", "kind": "secondary"}],
+      "editorialNote": "Aggiunti i pronomi soggetto e mantenuta la costruzione figurata.",
+      "publish": false
+    },
+    {
+      "id": "ost1876-volp-piel-vizi",
+      "reviewStatus": "language_reviewed",
+      "furNormalized": "La volp e pierd il pêl ma no il vizi.",
+      "itFinal": "La volpe perde il pelo ma non il vizio.",
+      "destination": "almanac",
+      "calendarRule": {"type": "general", "bucket": "wisdom", "fallbackAllowed": true},
+      "duplicateAudit": {"status": "new_distinct"},
+      "evidence": [{"label": "Facsimile Ostermann 1876, p. PDF 179", "kind": "primary"}, {"label": "Dizionari de Lenghe Furlane, volp, pêl e vizi", "kind": "secondary"}],
+      "editorialNote": "Aggiunto il pronome soggetto e normalizzata la grafia senza cambiare la formula tradizionale.",
+      "publish": false
+    },
+    {
+      "id": "ost1876-vizi-clame-altri",
+      "reviewStatus": "language_reviewed",
+      "furNormalized": "Un vizi al clame chel altri.",
+      "itFinal": "Un vizio chiama l'altro.",
+      "destination": "almanac",
+      "calendarRule": {"type": "general", "bucket": "wisdom", "fallbackAllowed": true},
+      "duplicateAudit": {"status": "new_distinct"},
+      "evidence": [{"label": "Facsimile Ostermann 1876, p. PDF 179", "kind": "primary"}, {"label": "Dizionari de Lenghe Furlane, vizi e clamâ", "kind": "secondary"}],
+      "editorialNote": "Aggiunto il pronome soggetto; il detto resta breve e autonomo.",
+      "publish": false
+    },
+    {
+      "id": "ost1876-mior-pleasi-scjavacasi",
+      "reviewStatus": "language_reviewed",
+      "furNormalized": "Miôr pleâsi che scjavaçâsi.",
+      "itFinal": "Meglio piegarsi che spezzarsi.",
+      "destination": "almanac",
+      "calendarRule": {"type": "general", "bucket": "wisdom", "fallbackAllowed": true},
+      "duplicateAudit": {"status": "new_distinct"},
+      "evidence": [{"label": "Facsimile Ostermann 1876, p. PDF 180", "kind": "primary"}, {"label": "Dizionari de Lenghe Furlane, pleâsi e scjavaçâsi", "kind": "secondary"}],
+      "editorialNote": "Normalizzati miôr e scjavaçâsi; il detto resta distinto dalla massima sull'albero giovane.",
+      "publish": false
+    },
+    {
+      "id": "ost1876-nissun-sort-no-vul-sinti",
+      "reviewStatus": "language_reviewed",
+      "furNormalized": "Nissun al è plui sort di cui che nol vûl sintî.",
+      "itFinal": "Nessuno è più sordo di chi non vuol sentire.",
+      "destination": "almanac",
+      "calendarRule": {"type": "general", "bucket": "wisdom", "fallbackAllowed": true},
+      "duplicateAudit": {"status": "new_distinct"},
+      "evidence": [{"label": "Facsimile Ostermann 1876, p. PDF 180", "kind": "primary"}, {"label": "Dizionari de Lenghe Furlane, sort, volê e sintî", "kind": "secondary"}],
+      "editorialNote": "La forma storica è ricondotta alla sintassi standard senza mutare il significato.",
+      "publish": false
+    },
+    {
+      "id": "ost1876-pesta-aghe-mortar",
+      "reviewStatus": "language_reviewed",
+      "furNormalized": "A pestâ aghe tal mortâr, ancje dopo siet agns e je aghe.",
+      "itFinal": "A pestare acqua nel mortaio, anche dopo sette anni resta acqua.",
+      "destination": "almanac",
+      "calendarRule": {"type": "general", "bucket": "wisdom", "fallbackAllowed": true},
+      "duplicateAudit": {"status": "new_distinct"},
+      "evidence": [{"label": "Facsimile Ostermann 1876, p. PDF 180", "kind": "primary"}, {"label": "Dizionari de Lenghe Furlane, pestâ, aghe e mortâr", "kind": "secondary"}],
+      "editorialNote": "Riunte le due righe del facsimile in una sola massima; normalizzati ancje e agns.",
+      "publish": false
+    },
+    {
+      "id": "ost1876-timp-maduris-int",
+      "reviewStatus": "language_reviewed",
+      "furNormalized": "Cul timp e madurìs la int.",
+      "itFinal": "Con il tempo matura la gente.",
+      "destination": "almanac",
+      "calendarRule": {"type": "general", "bucket": "wisdom", "fallbackAllowed": true},
+      "duplicateAudit": {"status": "new_distinct"},
+      "evidence": [{"label": "Facsimile Ostermann 1876, p. PDF 180", "kind": "primary"}, {"label": "Dizionari de Lenghe Furlane, timp, madurî e int", "kind": "secondary"}],
+      "editorialNote": "Aggiunto il pronome soggetto e normalizzata la flessione di madurî.",
+      "publish": false
+    }
+  ]
+}

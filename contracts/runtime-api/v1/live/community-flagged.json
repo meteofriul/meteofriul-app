@@ -1,0 +1,16 @@
+{
+  "ok": true,
+  "group_id": "group-rain:pordenone:496186",
+  "reason": "inaccurate",
+  "hidden": true,
+  "hidden_global": false,
+  "flag_count": 1,
+  "already_reported": false,
+  "retention_seconds": 86400,
+  "source": {
+    "id": "community_report_flags",
+    "type": "moderation_signal",
+    "verified": false,
+    "storage": "memory"
+  }
+}

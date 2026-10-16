@@ -1,0 +1,1487 @@
+{
+  "schemaVersion": 1,
+  "purpose": "Backlog editoriale Ostermann per la futura tab Scopri. Non e' letto dalla UI e non contiene copy definitivo.",
+  "primaryDestination": "discover",
+  "rules": [
+    "Ostermann viene usato prima di tutto come archivio culturale per Scopri.",
+    "Almanacco puo' usare solo teaser o singoli proverbi gia rivisti.",
+    "Nessun record di questo backlog e' pubblicabile senza revisione editoriale e FUR.",
+    "Le citazioni sorgente sono appunti di lavoro, non testo app finale."
+  ],
+  "reviewStates": {
+    "backlog_extracted": "Tema estratto dalla pagina normalizzata: utile per Scopri, non pubblicabile.",
+    "needs_source_check": "Da controllare contro pagina clean/PDF prima della scrittura finale.",
+    "ready_for_editorial_copy": "Fonte controllata e tema pronto per copy IT.",
+    "ready_for_discover": "Copy IT/FUR e fonte approvati per Scopri.",
+    "archive_only": "Da conservare come contesto, non adatto alla UI."
+  },
+  "records": [
+    {
+      "id": "ost-discover-049-luna-pioggia",
+      "sourcePage": 49,
+      "textPage": 24,
+      "section": "scopri",
+      "type": "meteo_popolare",
+      "primaryUse": "discover",
+      "secondaryUse": [
+        "almanac_luna",
+        "proverb_candidates"
+      ],
+      "title": {
+        "it": "La luna che cambia il tempo",
+        "fur": "pending_review"
+      },
+      "summary": {
+        "it": "La pagina raccoglie detti lunari su pioggia, sabato, novembre e durata del tempo nella lunazione.",
+        "fur": "pending_review"
+      },
+      "sourceLines": [
+        "Cuand ch' al plûv il prin martars di lune / No vin sech plui par chè lune.",
+        "Come che al va il prin martars di lune, a va dute la lune.",
+        "Lune di Brume mieze sute e mieze bagnade."
+      ],
+      "dateAnchors": [],
+      "seasons": [
+        "all",
+        "autumn"
+      ],
+      "weatherTags": [
+        "luna",
+        "pioggia",
+        "variabilita"
+      ],
+      "areas": [
+        "fvg"
+      ],
+      "priority": 9,
+      "editorialStatus": "backlog_extracted",
+      "source": {
+        "label": "Ostermann 1894",
+        "pdfPage": 49,
+        "textPage": 24,
+        "sourcePath": "normalized-pages/page-049.txt",
+        "verifiedAgainst": "pages/page-049.txt",
+        "auditStatus": "partial"
+      }
+    },
+    {
+      "id": "ost-discover-054-freddo-santi-invernali",
+      "sourcePage": 54,
+      "textPage": 29,
+      "section": "scopri",
+      "type": "calendario_popolare",
+      "primaryUse": "discover",
+      "secondaryUse": [
+        "almanac_santi",
+        "proverb_candidates"
+      ],
+      "title": {
+        "it": "Il freddo nel calendario dei santi",
+        "fur": "pending_review"
+      },
+      "summary": {
+        "it": "Epifania, Sant'Antonio, San Biagio, San Valentino e San Mattia diventano soglie popolari per leggere freddo, gelo e fine dell'inverno.",
+        "fur": "pending_review"
+      },
+      "sourceLines": [
+        "Epifanie il frèd s'invie.",
+        "Sant Antoni frêd di demoni.",
+        "San Valantin, l'unviar al so fin."
+      ],
+      "dateAnchors": [
+        "01-06",
+        "01-17",
+        "02-03",
+        "02-14",
+        "02-24"
+      ],
+      "seasons": [
+        "winter"
+      ],
+      "weatherTags": [
+        "freddo",
+        "ghiaccio",
+        "inverno"
+      ],
+      "areas": [
+        "fvg"
+      ],
+      "priority": 10,
+      "editorialStatus": "backlog_extracted",
+      "source": {
+        "label": "Ostermann 1894",
+        "pdfPage": 54,
+        "textPage": 29,
+        "sourcePath": "normalized-pages/page-054.txt",
+        "verifiedAgainst": "pages/page-054.txt",
+        "auditStatus": "partial"
+      }
+    },
+    {
+      "id": "ost-discover-059-candelora-venerdi-santo",
+      "sourcePage": 59,
+      "textPage": 34,
+      "section": "scopri",
+      "type": "calendario_popolare",
+      "primaryUse": "discover",
+      "secondaryUse": [
+        "almanac_teaser",
+        "proverb_candidates"
+      ],
+      "title": {
+        "it": "Candelora, Venerdi Santo e proverbi che si contraddicono",
+        "fur": "pending_review"
+      },
+      "summary": {
+        "it": "Ostermann registra detti popolari sul freddo, la pioggia e la durata del maltempo, annotando anche quando le tradizioni non concordano tra loro.",
+        "fur": "pending_review"
+      },
+      "sourceLines": [
+        "A Madone des chandelis s'a l'è nul, o sin fur, s'a l'è clar a miez unviar.",
+        "Se al plûv Vinars Sant al pluv l'an ducuant.",
+        "Se al plûv il dì di Pasche, al plovarà anche lis domeniis seguènz fin a lis Pentecostis."
+      ],
+      "dateAnchors": [
+        "02-02"
+      ],
+      "movableDates": [
+        "good_friday",
+        "easter",
+        "ascension"
+      ],
+      "seasons": [
+        "winter",
+        "spring"
+      ],
+      "weatherTags": [
+        "freddo",
+        "pioggia",
+        "maltempo"
+      ],
+      "areas": [
+        "fvg",
+        "carnia"
+      ],
+      "priority": 10,
+      "editorialStatus": "backlog_extracted",
+      "source": {
+        "label": "Ostermann 1894",
+        "pdfPage": 59,
+        "textPage": 34,
+        "sourcePath": "normalized-pages/page-059.txt",
+        "verifiedAgainst": "pages/page-059.txt",
+        "auditStatus": "needs_source_check"
+      }
+    },
+    {
+      "id": "ost-discover-060-santi-estivi-vendemmia",
+      "sourcePage": 60,
+      "textPage": 35,
+      "section": "scopri",
+      "type": "calendario_agricolo",
+      "primaryUse": "discover",
+      "secondaryUse": [
+        "proverb_candidates"
+      ],
+      "title": {
+        "it": "Santi estivi, inverno e vendemmie",
+        "fur": "pending_review"
+      },
+      "summary": {
+        "it": "Sant'Anna, San Lorenzo, San Bartolomeo e San Gorgone legano caldo, inverno e vendemmia in una lettura agricola della seconda estate.",
+        "fur": "pending_review"
+      },
+      "sourceLines": [
+        "Se il di di San Lurinz a l'è serèn / Si spere deliziós l'autun ch'al ven.",
+        "Se a San Bortolomio l'è bon timp / L'è bon timp dutis lis vendemis.",
+        "Se d'avost fumin lis monz di spes, segno di trist unviar."
+      ],
+      "dateAnchors": [
+        "07-26",
+        "08-10",
+        "08-24",
+        "09-09"
+      ],
+      "seasons": [
+        "summer",
+        "autumn"
+      ],
+      "weatherTags": [
+        "sole",
+        "vendemmia",
+        "inverno"
+      ],
+      "areas": [
+        "fvg"
+      ],
+      "priority": 9,
+      "editorialStatus": "backlog_extracted",
+      "source": {
+        "label": "Ostermann 1894",
+        "pdfPage": 60,
+        "textPage": 35,
+        "sourcePath": "normalized-pages/page-060.txt",
+        "verifiedAgainst": "pages/page-060.txt",
+        "auditStatus": "needs_source_check"
+      }
+    },
+    {
+      "id": "ost-discover-061-autunno-inverno-calende",
+      "sourcePage": 61,
+      "textPage": 36,
+      "section": "scopri",
+      "type": "calendario_popolare",
+      "primaryUse": "discover",
+      "secondaryUse": [
+        "proverb_candidates"
+      ],
+      "title": {
+        "it": "Le soglie dell'autunno e le calende",
+        "fur": "pending_review"
+      },
+      "summary": {
+        "it": "La pagina collega settembre, Ognissanti, San Martino e Santa Bibiana ai segni dell'inverno e introduce le calende come metodo popolare di previsione mensile.",
+        "fur": "pending_review"
+      },
+      "sourceLines": [
+        "Se in cheste gnot a è une biele serenade / Chative e lunge la vernade.",
+        "San Simon passat, l'unviar entrat.",
+        "Tardis a chadè lis fueis, l'è di temè un crud unviar."
+      ],
+      "dateAnchors": [
+        "09-29",
+        "10-28",
+        "11-11",
+        "12-17"
+      ],
+      "seasons": [
+        "autumn",
+        "winter"
+      ],
+      "weatherTags": [
+        "freddo",
+        "inverno",
+        "sereno"
+      ],
+      "areas": [
+        "fvg"
+      ],
+      "priority": 8,
+      "editorialStatus": "backlog_extracted",
+      "source": {
+        "label": "Ostermann 1894",
+        "pdfPage": 61,
+        "textPage": 36,
+        "sourcePath": "normalized-pages/page-061.txt",
+        "verifiedAgainst": "pages/page-061.txt",
+        "auditStatus": "needs_source_check"
+      }
+    },
+    {
+      "id": "ost-discover-063-san-zuan-sant-egidi",
+      "sourcePage": 63,
+      "textPage": 38,
+      "section": "scopri",
+      "type": "calendario_popolare",
+      "primaryUse": "discover",
+      "secondaryUse": [
+        "almanac_teaser",
+        "proverb_candidates"
+      ],
+      "title": {
+        "it": "San Giovanni e Sant'Egidio: il tempo che dura",
+        "fur": "pending_review"
+      },
+      "summary": {
+        "it": "San Giovanni e Sant'Egidio diventano giorni-spia: il tempo osservato in quelle date viene letto come segnale del mese o della stagione.",
+        "fur": "pending_review"
+      },
+      "sourceLines": [
+        "Come ch'a l'e il timp a San Zuan l'è probabil che si mantegni par un mes a lungh.",
+        "Il timp ch'al cor a San Zuan al cor dut l'an.",
+        "Sant' Egidi ti dirà ce color che il mês varà."
+      ],
+      "dateAnchors": [
+        "06-24",
+        "09-01"
+      ],
+      "seasons": [
+        "summer",
+        "autumn"
+      ],
+      "weatherTags": [
+        "stagione",
+        "pioggia",
+        "sereno"
+      ],
+      "areas": [
+        "fvg"
+      ],
+      "priority": 9,
+      "editorialStatus": "backlog_extracted",
+      "source": {
+        "label": "Ostermann 1894",
+        "pdfPage": 63,
+        "textPage": 38,
+        "sourcePath": "normalized-pages/page-063.txt",
+        "verifiedAgainst": "pages/page-063.txt",
+        "auditStatus": "needs_source_check"
+      }
+    },
+    {
+      "id": "ost-discover-094-lessico-venti",
+      "sourcePage": 94,
+      "textPage": 69,
+      "section": "scopri",
+      "type": "lessico_popolare",
+      "primaryUse": "discover",
+      "secondaryUse": [
+        "glossario",
+        "meteo_popolare"
+      ],
+      "title": {
+        "it": "Il lessico friulano del vento",
+        "fur": "pending_review"
+      },
+      "summary": {
+        "it": "Ostermann raccoglie nomi, verbi e immagini popolari per descrivere i movimenti dell'aria: dal refolo alla bufera.",
+        "fur": "pending_review"
+      },
+      "sourceLines": [
+        "I movimenti delle masse aeree dell'atmosfera si dicono: aure, bavesele, bave, zefiro, ajarin, ajar...",
+        "Il vento si dice al spire, al tire, al sofle, al sivile..."
+      ],
+      "dateAnchors": [],
+      "seasons": [
+        "all"
+      ],
+      "weatherTags": [
+        "vento",
+        "lessico"
+      ],
+      "areas": [
+        "fvg"
+      ],
+      "priority": 7,
+      "editorialStatus": "backlog_extracted",
+      "source": {
+        "label": "Ostermann 1894",
+        "pdfPage": 94,
+        "textPage": 69,
+        "sourcePath": "normalized-pages/page-094.txt",
+        "verifiedAgainst": "pages/page-094.txt",
+        "auditStatus": "needs_source_check"
+      }
+    },
+    {
+      "id": "ost-discover-096-vento-palme",
+      "sourcePage": 96,
+      "textPage": 71,
+      "section": "scopri",
+      "type": "meteo_popolare",
+      "primaryUse": "discover",
+      "secondaryUse": [
+        "proverb_candidates"
+      ],
+      "title": {
+        "it": "Il vento delle Palme",
+        "fur": "pending_review"
+      },
+      "summary": {
+        "it": "La domenica delle Palme viene descritta come giorno di osservazione del vento dominante dell'annata, insieme ai segni animali e al colore del cielo.",
+        "fur": "pending_review"
+      },
+      "sourceLines": [
+        "Garbin al lasse il timp ch'al chate.",
+        "Cuand che la buere si muv, o un, o tre, o cinch, o siet, o nuv.",
+        "Arie rosse o ch'a pisce o ch'a sofle."
+      ],
+      "movableDates": [
+        "palm_sunday"
+      ],
+      "seasons": [
+        "spring"
+      ],
+      "weatherTags": [
+        "vento",
+        "bora",
+        "cielo_rosso"
+      ],
+      "areas": [
+        "fvg"
+      ],
+      "priority": 8,
+      "editorialStatus": "backlog_extracted",
+      "source": {
+        "label": "Ostermann 1894",
+        "pdfPage": 96,
+        "textPage": 71,
+        "sourcePath": "normalized-pages/page-096.txt",
+        "verifiedAgainst": "pages/page-096.txt",
+        "auditStatus": "needs_source_check"
+      }
+    },
+    {
+      "id": "ost-discover-097-vento-aloni-rosade",
+      "sourcePage": 97,
+      "textPage": 72,
+      "section": "scopri",
+      "type": "meteo_popolare",
+      "primaryUse": "discover",
+      "secondaryUse": [
+        "proverb_candidates"
+      ],
+      "title": {
+        "it": "Vento, aloni e rugiade di marzo",
+        "fur": "pending_review"
+      },
+      "summary": {
+        "it": "La pagina lega vento, aloni lunari, santi di febbraio e rugiade di marzo a pronostici di durata e intensita del vento.",
+        "fur": "pending_review"
+      },
+      "sourceLines": [
+        "Se al svinte a San Valantin / Cuarante dis a no l'ha fin.",
+        "Se al svinte a San Grivor / In vin cuarante dis a fa rumor.",
+        "Tantis rosadis di marz tantis bueris d'avril."
+      ],
+      "dateAnchors": [
+        "02-14",
+        "03-12"
+      ],
+      "seasons": [
+        "winter",
+        "spring"
+      ],
+      "weatherTags": [
+        "vento",
+        "rugiada",
+        "luna"
+      ],
+      "areas": [
+        "fvg"
+      ],
+      "priority": 8,
+      "editorialStatus": "backlog_extracted",
+      "source": {
+        "label": "Ostermann 1894",
+        "pdfPage": 97,
+        "textPage": 72,
+        "sourcePath": "normalized-pages/page-097.txt",
+        "verifiedAgainst": "pages/page-097.txt",
+        "auditStatus": "needs_source_check"
+      }
+    },
+    {
+      "id": "ost-discover-099-nebbia-pronostici",
+      "sourcePage": 99,
+      "textPage": 74,
+      "section": "scopri",
+      "type": "meteo_popolare",
+      "primaryUse": "discover",
+      "secondaryUse": [
+        "proverb_candidates",
+        "almanac_teaser"
+      ],
+      "title": {
+        "it": "La nebbia che bagna come pioggia",
+        "fur": "pending_review"
+      },
+      "summary": {
+        "it": "La nebbia non e solo paesaggio: nella tradizione raccolta da Ostermann diventa indizio di pioggia, sereno, malessere e malinconia.",
+        "fur": "pending_review"
+      },
+      "sourceLines": [
+        "Tre fumatis fasin une ploe.",
+        "Fumate basse chel timp ch'a chate lasse.",
+        "Fumate che no si sbasse ploe lasse."
+      ],
+      "dateAnchors": [],
+      "seasons": [
+        "autumn",
+        "winter",
+        "spring"
+      ],
+      "weatherTags": [
+        "nebbia",
+        "pioggia",
+        "sereno"
+      ],
+      "areas": [
+        "fvg",
+        "bassa_friulana"
+      ],
+      "priority": 9,
+      "editorialStatus": "ready_for_editorial_copy",
+      "editorialReview": {
+        "reviewedAt": "2026-07-09",
+        "decision": "single_scopri_archive_candidate",
+        "note": "Pagina autonoma su nebbia/fumate, pronostici popolari e malinconia. Copy IT impostata nell'estratto Ostermann; non pubblicare prima di FUR approvato e decisione UI.",
+        "blockers": [
+          "fur_human_review",
+          "ready_for_ui_decision"
+        ]
+      },
+      "source": {
+        "label": "Ostermann 1894",
+        "pdfPage": 99,
+        "textPage": 74,
+        "sourcePath": "normalized-pages/page-099.txt",
+        "verifiedAgainst": "pages/page-099.txt",
+        "auditStatus": "source_verified",
+        "auditNote": "Controllata su normalized-pages/page-099.txt: righe su fumate/caligo, tre fumatis fasin une ploe, pronostici di sereno/pioggia, malinconia e nota Del Negro. Escluse dalla copy UI le affermazioni popolari su salute/malattie."
+      }
+    },
+    {
+      "id": "ost-discover-101-sole-rosso-gallo",
+      "sourcePage": 101,
+      "textPage": 76,
+      "section": "scopri",
+      "type": "meteo_popolare",
+      "primaryUse": "discover",
+      "secondaryUse": [
+        "proverb_candidates"
+      ],
+      "title": {
+        "it": "Sole rosso, galli e fumo sui monti",
+        "fur": "pending_review"
+      },
+      "summary": {
+        "it": "Animali, colore del sole e leggera nebbia all'alba diventano segnali per intuire pioggia, burrasca o bel tempo.",
+        "fur": "pending_review"
+      },
+      "sourceLines": [
+        "Cuand che il gial chante dopo miesdi / Il timp se no si cambie al sta cussi.",
+        "Il sole rosso al mattino predica pioggia per la sera.",
+        "Il sole rosso la sera pronostichi bel tempo pel domani."
+      ],
+      "dateAnchors": [],
+      "seasons": [
+        "all"
+      ],
+      "weatherTags": [
+        "sole",
+        "pioggia",
+        "burrasca",
+        "animali"
+      ],
+      "areas": [
+        "fvg"
+      ],
+      "priority": 8,
+      "editorialStatus": "backlog_extracted",
+      "source": {
+        "label": "Ostermann 1894",
+        "pdfPage": 101,
+        "textPage": 76,
+        "sourcePath": "normalized-pages/page-101.txt",
+        "verifiedAgainst": "pages/page-101.txt",
+        "auditStatus": "needs_source_check"
+      }
+    },
+    {
+      "id": "ost-discover-102-cuculo-luna-siccita",
+      "sourcePage": 102,
+      "textPage": 77,
+      "section": "scopri",
+      "type": "meteo_popolare",
+      "primaryUse": "discover",
+      "secondaryUse": [
+        "proverb_candidates",
+        "almanac_teaser"
+      ],
+      "title": {
+        "it": "Cuculo, luna colorata e sete dei campi",
+        "fur": "pending_review"
+      },
+      "summary": {
+        "it": "La pagina unisce colore della luna, canto del cuculo, siccita e date estive in una rete di segni popolari del tempo.",
+        "fur": "pending_review"
+      },
+      "sourceLines": [
+        "Se la luna ha una tinta bluastra pronostica pioggia; se rossa, vento; se bianca, bel tempo.",
+        "Cuand ch'al chante il cuch / Une di ploe e une di sut.",
+        "Dio nus uardi simpri dal sut, ma fra lis Madonis l'è pies di dut."
+      ],
+      "dateAnchors": [
+        "06-24",
+        "07-12",
+        "07-22",
+        "07-26"
+      ],
+      "seasons": [
+        "spring",
+        "summer"
+      ],
+      "weatherTags": [
+        "luna",
+        "pioggia",
+        "vento",
+        "siccita"
+      ],
+      "areas": [
+        "fvg"
+      ],
+      "priority": 9,
+      "editorialStatus": "backlog_extracted",
+      "source": {
+        "label": "Ostermann 1894",
+        "pdfPage": 102,
+        "textPage": 77,
+        "sourcePath": "normalized-pages/page-102.txt",
+        "verifiedAgainst": "pages/page-102.txt",
+        "auditStatus": "needs_source_check"
+      }
+    },
+    {
+      "id": "ost-discover-103-proverbi-generali-tempo",
+      "sourcePage": 103,
+      "textPage": 78,
+      "section": "scopri",
+      "type": "proverbi_meteo",
+      "primaryUse": "discover",
+      "secondaryUse": [
+        "almanac_proverbs"
+      ],
+      "title": {
+        "it": "Proverbi generali sul tempo",
+        "fur": "pending_review"
+      },
+      "summary": {
+        "it": "Una pagina centrale per l'archivio dei proverbi: nubi, mattina, sera, santi e regole brevi di osservazione quotidiana.",
+        "fur": "pending_review"
+      },
+      "sourceLines": [
+        "Parsore il nul l'è simpri seren.",
+        "Se si ul save la zornade, si chali la matine.",
+        "Nul lizer la sere bon timp si spere."
+      ],
+      "dateAnchors": [],
+      "seasons": [
+        "all"
+      ],
+      "weatherTags": [
+        "nubi",
+        "mattina",
+        "sera",
+        "meteo"
+      ],
+      "areas": [
+        "fvg"
+      ],
+      "priority": 10,
+      "editorialStatus": "backlog_extracted",
+      "source": {
+        "label": "Ostermann 1894",
+        "pdfPage": 103,
+        "textPage": 78,
+        "sourcePath": "normalized-pages/page-103.txt",
+        "verifiedAgainst": "pages/page-103.txt",
+        "auditStatus": "partial"
+      }
+    },
+    {
+      "id": "ost-discover-104-monti-cappello-rane",
+      "sourcePage": 104,
+      "textPage": 79,
+      "section": "scopri",
+      "type": "meteo_popolare",
+      "primaryUse": "discover",
+      "secondaryUse": [
+        "proverb_candidates",
+        "almanac_teaser"
+      ],
+      "title": {
+        "it": "Monti col cappello, rane e nubi a lana",
+        "fur": "pending_review"
+      },
+      "summary": {
+        "it": "Una pagina ricchissima di segnali visivi: cappelli sui monti, forme delle nubi, canto delle rane, vacche in movimento e cielo rosso.",
+        "fur": "pending_review"
+      },
+      "sourceLines": [
+        "Cuand che lis mons han il chapiel, met ju la falz chol su il rischiel.",
+        "Il cil l'è dut a lane, la ploe no è lontane.",
+        "Cuand che la rane chante, ploe sigure."
+      ],
+      "dateAnchors": [],
+      "seasons": [
+        "all"
+      ],
+      "weatherTags": [
+        "montagna",
+        "nubi",
+        "pioggia",
+        "animali"
+      ],
+      "areas": [
+        "fvg",
+        "carnia",
+        "prealpi"
+      ],
+      "priority": 10,
+      "editorialStatus": "backlog_extracted",
+      "source": {
+        "label": "Ostermann 1894",
+        "pdfPage": 104,
+        "textPage": 79,
+        "sourcePath": "normalized-pages/page-104.txt",
+        "verifiedAgainst": "pages/page-104.txt",
+        "auditStatus": "needs_source_check"
+      }
+    },
+    {
+      "id": "ost-discover-105-proverbi-meteo-brevi",
+      "sourcePage": 105,
+      "textPage": 80,
+      "section": "scopri",
+      "type": "proverbi_meteo",
+      "primaryUse": "discover",
+      "secondaryUse": [
+        "almanac_proverbs"
+      ],
+      "title": {
+        "it": "Detti brevi su luna, acqua e segnali del cielo",
+        "fur": "pending_review"
+      },
+      "summary": {
+        "it": "Pagina ad alta resa per proverbi brevi, molti dei quali possono diventare in futuro schede Almanacco o rotazione Scopri.",
+        "fur": "pending_review"
+      },
+      "sourceLines": [
+        "Cuand che la lune ha il cercli, ploe sigure.",
+        "Lune pelose zornade plojose.",
+        "Aghe pais e vint sut, il diaul al mene dut."
+      ],
+      "dateAnchors": [],
+      "seasons": [
+        "all"
+      ],
+      "weatherTags": [
+        "luna",
+        "pioggia",
+        "vento"
+      ],
+      "areas": [
+        "fvg"
+      ],
+      "priority": 10,
+      "editorialStatus": "backlog_extracted",
+      "source": {
+        "label": "Ostermann 1894",
+        "pdfPage": 105,
+        "textPage": 80,
+        "sourcePath": "normalized-pages/page-105.txt",
+        "verifiedAgainst": "pages/page-105.txt",
+        "auditStatus": "partial"
+      }
+    },
+    {
+      "id": "ost-discover-126-temporali-grandine",
+      "sourcePage": 126,
+      "textPage": 101,
+      "section": "scopri",
+      "type": "meteo_estremo_popolare",
+      "primaryUse": "discover",
+      "secondaryUse": [
+        "proverb_candidates"
+      ],
+      "title": {
+        "it": "Temporali, tuoni e grandine",
+        "fur": "pending_review"
+      },
+      "summary": {
+        "it": "I proverbi sulla grandine raccontano timore, difesa rituale e osservazione dei temporali prima della meteorologia moderna.",
+        "fur": "pending_review"
+      },
+      "sourceLines": [
+        "Al bruntule e po' al tempieste.",
+        "Cuand che al tone, o ploe o tempieste.",
+        "Se in Mai tempieste, nuie nus reste."
+      ],
+      "dateAnchors": [],
+      "seasons": [
+        "spring",
+        "summer"
+      ],
+      "weatherTags": [
+        "temporale",
+        "grandine",
+        "tuono"
+      ],
+      "areas": [
+        "fvg"
+      ],
+      "priority": 8,
+      "editorialStatus": "backlog_extracted",
+      "source": {
+        "label": "Ostermann 1894",
+        "pdfPage": 126,
+        "textPage": 101,
+        "sourcePath": "normalized-pages/page-126.txt",
+        "verifiedAgainst": "pages/page-126.txt",
+        "auditStatus": "needs_source_check"
+      }
+    },
+    {
+      "id": "ost-discover-130-neve-pane-pioggia-fame",
+      "sourcePage": 130,
+      "textPage": 105,
+      "section": "scopri",
+      "type": "meteo_popolare",
+      "primaryUse": "discover",
+      "secondaryUse": [
+        "proverb_candidates"
+      ],
+      "title": {
+        "it": "La neve come promessa di pane",
+        "fur": "pending_review"
+      },
+      "summary": {
+        "it": "La neve viene letta come protezione e abbondanza per i campi, in contrasto con la pioggia insistente.",
+        "fur": "pending_review"
+      },
+      "sourceLines": [
+        "Sot nev pan, sot ploe fan.",
+        "La nev porta abbondanti raccolti."
+      ],
+      "dateAnchors": [],
+      "seasons": [
+        "winter"
+      ],
+      "weatherTags": [
+        "neve",
+        "pioggia",
+        "raccolto"
+      ],
+      "areas": [
+        "fvg"
+      ],
+      "priority": 7,
+      "editorialStatus": "backlog_extracted",
+      "source": {
+        "label": "Ostermann 1894",
+        "pdfPage": 130,
+        "textPage": 105,
+        "sourcePath": "normalized-pages/page-130.txt",
+        "verifiedAgainst": "pages/page-130.txt",
+        "auditStatus": "needs_source_check"
+      }
+    },
+    {
+      "id": "ost-discover-131-neve-santi-inverno",
+      "sourcePage": 131,
+      "textPage": 106,
+      "section": "scopri",
+      "type": "calendario_popolare",
+      "primaryUse": "discover",
+      "secondaryUse": [
+        "proverb_candidates"
+      ],
+      "title": {
+        "it": "Neve, vespe e santi d'inverno",
+        "fur": "pending_review"
+      },
+      "summary": {
+        "it": "La pagina raccoglie indizi di neve, dal comportamento degli animali alle date di Santa Caterina, Sant'Andrea, Natale e San Bastiano.",
+        "fur": "pending_review"
+      },
+      "sourceLines": [
+        "Tons di marz, nev di mai.",
+        "Sante Catarine la nev a la coline, e a San Bastian la nev al mont e al plan.",
+        "La nev decembrine par tre mes a confine."
+      ],
+      "dateAnchors": [
+        "11-28",
+        "11-30",
+        "12-25",
+        "01-20"
+      ],
+      "seasons": [
+        "winter",
+        "spring"
+      ],
+      "weatherTags": [
+        "neve",
+        "freddo",
+        "animali"
+      ],
+      "areas": [
+        "fvg"
+      ],
+      "priority": 8,
+      "editorialStatus": "backlog_extracted",
+      "source": {
+        "label": "Ostermann 1894",
+        "pdfPage": 131,
+        "textPage": 106,
+        "sourcePath": "normalized-pages/page-131.txt",
+        "verifiedAgainst": "pages/page-131.txt",
+        "auditStatus": "needs_source_check"
+      }
+    },
+    {
+      "id": "ost-discover-132-neve-brina-valanghe",
+      "sourcePage": 132,
+      "textPage": 107,
+      "section": "scopri",
+      "type": "meteo_popolare",
+      "primaryUse": "discover",
+      "secondaryUse": [
+        "proverb_candidates",
+        "archivio"
+      ],
+      "title": {
+        "it": "Neve, brina e valanghe",
+        "fur": "pending_review"
+      },
+      "summary": {
+        "it": "Natale, Pasqua, Monte Pinet, prime nevicate e valanghe: una pagina da filtrare con cura per separare proverbio, credenza e racconto.",
+        "fur": "pending_review"
+      },
+      "sourceLines": [
+        "Verd di Nadal, blanch di Pasche: o viceversa.",
+        "Cuand che la nev è sul mont Pinet / Par dut il mond l'è fred.",
+        "Cuand che la prime nev ven al plan, poche nev in chel an."
+      ],
+      "dateAnchors": [
+        "12-25"
+      ],
+      "movableDates": [
+        "easter"
+      ],
+      "seasons": [
+        "winter",
+        "spring"
+      ],
+      "weatherTags": [
+        "neve",
+        "brina",
+        "freddo",
+        "montagna"
+      ],
+      "areas": [
+        "fvg",
+        "montagna"
+      ],
+      "priority": 7,
+      "editorialStatus": "backlog_extracted",
+      "source": {
+        "label": "Ostermann 1894",
+        "pdfPage": 132,
+        "textPage": 107,
+        "sourcePath": "normalized-pages/page-132.txt",
+        "verifiedAgainst": "pages/page-132.txt",
+        "auditStatus": "needs_source_check"
+      }
+    },
+    {
+      "id": "ost-discover-140-arcobaleno-annata",
+      "sourcePage": 140,
+      "textPage": 115,
+      "section": "scopri",
+      "type": "credenze_popolari",
+      "primaryUse": "discover",
+      "secondaryUse": [
+        "archivio",
+        "pillole"
+      ],
+      "title": {
+        "it": "L'arcobaleno e i colori dell'annata",
+        "fur": "pending_review"
+      },
+      "summary": {
+        "it": "Il primo arcobaleno di primavera viene letto come pronostico agricolo: verde per i foraggi, rosso per il vino, giallo per il granoturco.",
+        "fur": "pending_review"
+      },
+      "sourceLines": [
+        "Il primo arcobaleno che apparira in primavera dara il pronostico dell'annata.",
+        "Se predomina il verde si avra abbondanza di foraggi."
+      ],
+      "dateAnchors": [],
+      "seasons": [
+        "spring"
+      ],
+      "weatherTags": [
+        "arcobaleno",
+        "pioggia",
+        "sole",
+        "raccolto"
+      ],
+      "areas": [
+        "fvg",
+        "gemona"
+      ],
+      "priority": 8,
+      "editorialStatus": "backlog_extracted",
+      "source": {
+        "label": "Ostermann 1894",
+        "pdfPage": 140,
+        "textPage": 115,
+        "sourcePath": "normalized-pages/page-140.txt",
+        "verifiedAgainst": "pages/page-140.txt",
+        "auditStatus": "needs_source_check"
+      }
+    },
+    {
+      "id": "ost-discover-141-arcobaleno-tempo",
+      "sourcePage": 141,
+      "textPage": 116,
+      "section": "scopri",
+      "type": "meteo_popolare",
+      "primaryUse": "discover",
+      "secondaryUse": [
+        "proverb_candidates"
+      ],
+      "title": {
+        "it": "L'arcobaleno che annuncia pioggia o vento",
+        "fur": "pending_review"
+      },
+      "summary": {
+        "it": "L'arcobaleno puo annunciare bel tempo, tre giorni di vento o pioggia secondo posizione e momento della giornata.",
+        "fur": "pending_review"
+      },
+      "sourceLines": [
+        "Il cercli di San March la matine, ploe vizine.",
+        "L'arch di San March la doman, no ven la sere ch'a nol sei pantan."
+      ],
+      "dateAnchors": [],
+      "seasons": [
+        "spring",
+        "summer",
+        "autumn"
+      ],
+      "weatherTags": [
+        "arcobaleno",
+        "pioggia",
+        "vento"
+      ],
+      "areas": [
+        "fvg"
+      ],
+      "priority": 8,
+      "editorialStatus": "backlog_extracted",
+      "source": {
+        "label": "Ostermann 1894",
+        "pdfPage": 141,
+        "textPage": 116,
+        "sourcePath": "normalized-pages/page-141.txt",
+        "verifiedAgainst": "pages/page-141.txt",
+        "auditStatus": "needs_source_check"
+      }
+    },
+    {
+      "id": "ost-discover-189-annata-gennaio",
+      "sourcePage": 189,
+      "textPage": 164,
+      "section": "scopri",
+      "type": "calendario_agricolo",
+      "primaryUse": "discover",
+      "secondaryUse": [
+        "proverb_candidates",
+        "almanac_teaser"
+      ],
+      "title": {
+        "it": "Gennaio, pioggia e granai",
+        "fur": "pending_review"
+      },
+      "summary": {
+        "it": "La pagina ragiona sull'annata agricola: miseria, piogge, funghi, polvere di gennaio e segni di abbondanza o scarsita.",
+        "fur": "pending_review"
+      },
+      "sourceLines": [
+        "Sut di zenar, emple il granar.",
+        "Pulvin di zenar al emple il granar.",
+        "La ploe di febrar val tant che un ledamar."
+      ],
+      "dateAnchors": [
+        "01-22",
+        "01-28",
+        "02-20"
+      ],
+      "seasons": [
+        "winter",
+        "spring"
+      ],
+      "weatherTags": [
+        "pioggia",
+        "freddo",
+        "raccolto",
+        "gennaio"
+      ],
+      "areas": [
+        "fvg"
+      ],
+      "priority": 10,
+      "editorialStatus": "backlog_extracted",
+      "source": {
+        "label": "Ostermann 1894",
+        "pdfPage": 189,
+        "textPage": 164,
+        "sourcePath": "normalized-pages/page-189.txt",
+        "verifiedAgainst": "pages/page-189.txt",
+        "auditStatus": "needs_source_check"
+      }
+    },
+    {
+      "id": "ost-discover-190-marzo-aprile-annata",
+      "sourcePage": 190,
+      "textPage": 165,
+      "section": "scopri",
+      "type": "calendario_agricolo",
+      "primaryUse": "discover",
+      "secondaryUse": [
+        "almanac_proverbs"
+      ],
+      "title": {
+        "it": "Marzo, aprile e l'annata agricola",
+        "fur": "pending_review"
+      },
+      "summary": {
+        "it": "Molti proverbi di questa pagina sono gia nello staging: marzo, aprile, maggio, giugno e agosto vengono letti come indicatori di raccolto.",
+        "fur": "pending_review"
+      },
+      "sourceLines": [
+        "San Josef biel, buine anade.",
+        "Avril plojos, an bondanzos.",
+        "Mai temperat e Jugn bagnat, pan e vin in cuantitat."
+      ],
+      "dateAnchors": [
+        "03-19",
+        "08-24"
+      ],
+      "seasons": [
+        "spring",
+        "summer"
+      ],
+      "weatherTags": [
+        "pioggia",
+        "raccolto",
+        "vino",
+        "annata"
+      ],
+      "areas": [
+        "fvg"
+      ],
+      "priority": 10,
+      "editorialStatus": "backlog_extracted",
+      "source": {
+        "label": "Ostermann 1894",
+        "pdfPage": 190,
+        "textPage": 165,
+        "sourcePath": "normalized-pages/page-190.txt",
+        "verifiedAgainst": "pages/page-190.txt",
+        "auditStatus": "partial"
+      }
+    },
+    {
+      "id": "ost-discover-192-vigna-vendemmia",
+      "sourcePage": 192,
+      "textPage": 167,
+      "section": "scopri",
+      "type": "calendario_agricolo",
+      "primaryUse": "discover",
+      "secondaryUse": [
+        "proverb_candidates"
+      ],
+      "title": {
+        "it": "Vigna, pioggia e vendemmia",
+        "fur": "pending_review"
+      },
+      "summary": {
+        "it": "Sant'Urbano, San Barnaba, San Vito, Assunta e San Gorgone diventano date per parlare di vite, uva, mosto e vendemmia.",
+        "fur": "pending_review"
+      },
+      "sourceLines": [
+        "Se al pluv il di di San Barnabe, cole la ue fin che an d'e.",
+        "Ploe a San Barnaba, il vin al va.",
+        "Biel soreli a l'Assunte bondanze di vin."
+      ],
+      "dateAnchors": [
+        "06-11",
+        "06-13",
+        "06-18",
+        "08-15",
+        "09-09"
+      ],
+      "seasons": [
+        "summer",
+        "autumn"
+      ],
+      "weatherTags": [
+        "pioggia",
+        "sole",
+        "vite",
+        "vendemmia"
+      ],
+      "areas": [
+        "fvg"
+      ],
+      "priority": 10,
+      "editorialStatus": "backlog_extracted",
+      "source": {
+        "label": "Ostermann 1894",
+        "pdfPage": 192,
+        "textPage": 167,
+        "sourcePath": "normalized-pages/page-192.txt",
+        "verifiedAgainst": "pages/page-192.txt",
+        "auditStatus": "needs_source_check"
+      }
+    },
+    {
+      "id": "ost-discover-193-pasqua-fieno",
+      "sourcePage": 193,
+      "textPage": 168,
+      "section": "scopri",
+      "type": "calendario_agricolo",
+      "primaryUse": "discover",
+      "secondaryUse": [
+        "almanac_proverbs"
+      ],
+      "title": {
+        "it": "Pasqua, fieno e pioggia",
+        "fur": "pending_review"
+      },
+      "summary": {
+        "it": "Pasqua e Sant'Anacleto collegano pioggia, fieno, prato e prodotti caseari: materiale utile per Scopri, da trattare con cautela locale.",
+        "fur": "pending_review"
+      },
+      "sourceLines": [
+        "Plojose la Pasche, poch fen sul prat.",
+        "La ploe il di di Sant'Anaclet puarte trist fen in Salet."
+      ],
+      "dateAnchors": [
+        "07-15"
+      ],
+      "movableDates": [
+        "easter"
+      ],
+      "seasons": [
+        "spring",
+        "summer"
+      ],
+      "weatherTags": [
+        "pioggia",
+        "fieno",
+        "prato"
+      ],
+      "areas": [
+        "fvg",
+        "salet"
+      ],
+      "priority": 8,
+      "editorialStatus": "backlog_extracted",
+      "source": {
+        "label": "Ostermann 1894",
+        "pdfPage": 193,
+        "textPage": 168,
+        "sourcePath": "normalized-pages/page-193.txt",
+        "verifiedAgainst": "pages/page-193.txt",
+        "auditStatus": "partial"
+      }
+    },
+    {
+      "id": "ost-discover-608-san-barnaba-viti",
+      "sourcePage": 608,
+      "textPage": 583,
+      "section": "scopri",
+      "type": "santi_e_territorio",
+      "primaryUse": "discover",
+      "secondaryUse": [
+        "pillole",
+        "proverb_candidates"
+      ],
+      "title": {
+        "it": "San Barnaba e la protezione delle viti",
+        "fur": "pending_review"
+      },
+      "summary": {
+        "it": "Ostermann presenta San Barnaba come figura legata alle vendemmie e alle viti, con un proverbio sulla pioggia e la perdita dell'uva.",
+        "fur": "pending_review"
+      },
+      "sourceLines": [
+        "San Barnaba, 11/6, è lui che ci assicura abbondanti vendemmie proteggendo le viti.",
+        "Se al pluv il dì di San Barnabè / Cole la ue fin ch'an d'e."
+      ],
+      "dateAnchors": [
+        "06-11"
+      ],
+      "seasons": [
+        "summer"
+      ],
+      "weatherTags": [
+        "pioggia",
+        "vite",
+        "vendemmia"
+      ],
+      "areas": [
+        "fvg"
+      ],
+      "priority": 8,
+      "editorialStatus": "backlog_extracted",
+      "source": {
+        "label": "Ostermann 1894",
+        "pdfPage": 608,
+        "textPage": 583,
+        "sourcePath": "normalized-pages/page-608.txt",
+        "verifiedAgainst": "pages/page-608.txt",
+        "auditStatus": "needs_source_check"
+      }
+    },
+    {
+      "id": "ost-discover-609-sant-ermacora-bufere",
+      "sourcePage": 609,
+      "textPage": 584,
+      "section": "scopri",
+      "type": "santi_e_territorio",
+      "primaryUse": "discover",
+      "secondaryUse": [
+        "pillole"
+      ],
+      "title": {
+        "it": "Sant'Ermacora e la settimana delle disgrazie",
+        "fur": "pending_review"
+      },
+      "summary": {
+        "it": "La festa di Sant'Ermacora cade nel periodo di grandini e bufere: Ostermann registra l'attesa popolare di qualche malanno meteorologico.",
+        "fur": "pending_review"
+      },
+      "sourceLines": [
+        "Siccome ricorre nell'epoca delle grandini, delle bufere...",
+        "La settimana in cui ricorre il santo si chiama la settimana delle disgrazie."
+      ],
+      "dateAnchors": [
+        "07-12"
+      ],
+      "seasons": [
+        "summer"
+      ],
+      "weatherTags": [
+        "grandine",
+        "bufere",
+        "temporale"
+      ],
+      "areas": [
+        "fvg",
+        "udine",
+        "aquileia"
+      ],
+      "priority": 7,
+      "editorialStatus": "backlog_extracted",
+      "source": {
+        "label": "Ostermann 1894",
+        "pdfPage": 609,
+        "textPage": 584,
+        "sourcePath": "normalized-pages/page-609.txt",
+        "verifiedAgainst": "pages/page-609.txt",
+        "auditStatus": "needs_source_check"
+      }
+    },
+    {
+      "id": "ost-discover-674-giochi-neve-slitte",
+      "sourcePage": 674,
+      "textPage": 649,
+      "section": "scopri",
+      "type": "vita_popolare",
+      "primaryUse": "discover",
+      "secondaryUse": [
+        "archivio",
+        "pillole"
+      ],
+      "title": {
+        "it": "Giochi di neve e slitte",
+        "fur": "pending_review"
+      },
+      "summary": {
+        "it": "Una pagina piu culturale che meteorologica: pallottole di neve, slitte, ghiaccio e divertimenti invernali nel Friuli storico.",
+        "fur": "pending_review"
+      },
+      "sourceLines": [
+        "Si chate il gran solev / A fa balons di nev.",
+        "Nell'inverno c'è pure l'esercizio dello slittarsi."
+      ],
+      "dateAnchors": [],
+      "seasons": [
+        "winter"
+      ],
+      "weatherTags": [
+        "neve",
+        "ghiaccio",
+        "inverno"
+      ],
+      "areas": [
+        "fvg",
+        "udine"
+      ],
+      "priority": 5,
+      "editorialStatus": "backlog_extracted",
+      "source": {
+        "label": "Ostermann 1894",
+        "pdfPage": 674,
+        "textPage": 649,
+        "sourcePath": "normalized-pages/page-674.txt",
+        "verifiedAgainst": "pages/page-674.txt",
+        "auditStatus": "needs_source_check"
+      }
+    },
+    {
+      "id": "ost-discover-234-erbe-buona-stagione",
+      "sourcePage": 234,
+      "textPage": 209,
+      "section": "scopri",
+      "type": "erbe_e_lessico",
+      "primaryUse": "discover",
+      "secondaryUse": [
+        "archivio",
+        "stagioni"
+      ],
+      "title": {
+        "it": "Erbe, nomi locali e buona stagione",
+        "fur": "pending_review"
+      },
+      "summary": {
+        "it": "Ostermann annota nomi locali di erbe e usi popolari legati alla buona stagione: cedrina, lupino, gramigna e lessico domestico del Friuli storico.",
+        "fur": "pending_review"
+      },
+      "sourceLines": [
+        "Colle sue foglie si fanno dei the, ritenuti eccellenti calmanti.",
+        "Il frutto e' tenuto quasi l'emblema della miseria.",
+        "Al riapparire della buona stagione usano pascerne anche i cavalli signorili, per purgativo."
+      ],
+      "dateAnchors": [],
+      "seasons": [
+        "spring",
+        "summer"
+      ],
+      "weatherTags": [
+        "erbe",
+        "primavera",
+        "lessico"
+      ],
+      "areas": [
+        "fvg",
+        "basso_friuli"
+      ],
+      "priority": 5,
+      "editorialStatus": "backlog_extracted",
+      "editorialReview": {
+        "reviewedAt": "2026-07-09",
+        "decision": "hold_for_archive_copy",
+        "note": "Tema valido per Archivio Scopri, ma non pubblicabile come consiglio sulle erbe: va riscritto come racconto storico-lessicale, evitando ogni prescrizione medica o pratica.",
+        "blockers": [
+          "final_it_archive_copy",
+          "fur_human_review",
+          "avoid_health_advice_tone"
+        ]
+      },
+      "source": {
+        "label": "Ostermann 1894",
+        "pdfPage": 234,
+        "textPage": 209,
+        "sourcePath": "normalized-pages/page-234.txt",
+        "verifiedAgainst": "pages/page-234.txt",
+        "auditStatus": "normalized_checked",
+        "auditNote": "Controllata su normalized-pages/page-234.txt: Luise/erba cedrina, Luvin/lupino, Malegrame/gramigna e nota sulla buona stagione. Da usare come lessico/cultura popolare, non come indicazione pratica."
+      }
+    }
+  ]
+}

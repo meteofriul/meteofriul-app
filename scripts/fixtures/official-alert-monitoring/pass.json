@@ -1,0 +1,50 @@
+{
+  "schemaVersion": 1,
+  "identity": {
+    "activeAccount": "meteofriul@gmail.com",
+    "projectId": "meteo-friul"
+  },
+  "alertPolicies": [
+    {
+      "name": "projects/meteo-friul/alertPolicies/13826022647837543358",
+      "displayName": "Meteo Friul - job allerte ufficiali",
+      "combiner": "OR",
+      "conditions": [
+        {
+          "displayName": "Due esecuzioni fallite del job allerte in 5 ore",
+          "conditionThreshold": {
+            "filter": "resource.type=\"cloud_run_job\" AND resource.labels.job_name=\"meteofriul-official-alert-sync\" AND metric.type=\"run.googleapis.com/job/completed_execution_count\" AND metric.labels.result=\"failed\"",
+            "comparison": "COMPARISON_GT",
+            "thresholdValue": 1,
+            "duration": "0s",
+            "trigger": {
+              "count": 1
+            },
+            "aggregations": [
+              {
+                "alignmentPeriod": "18000s",
+                "perSeriesAligner": "ALIGN_SUM"
+              }
+            ]
+          }
+        }
+      ],
+      "documentation": {
+        "content": "Il job delle allerte ufficiali Meteo Friul ha fallito almeno due esecuzioni nelle ultime 5 ore. Controllare i log del job `meteofriul-official-alert-sync`; in caso di errore il push resta bloccato e lo stato precedente non viene ripubblicato come nuovo.",
+        "mimeType": "text/markdown"
+      },
+      "notificationChannels": [
+        "projects/meteo-friul/notificationChannels/11334808831344967323"
+      ],
+      "enabled": true
+    }
+  ],
+  "notificationChannels": [
+    {
+      "name": "projects/meteo-friul/notificationChannels/11334808831344967323",
+      "displayName": "Meteo Friul - notifiche operative",
+      "type": "email",
+      "enabled": true
+    }
+  ]
+}

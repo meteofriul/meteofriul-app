@@ -1,0 +1,185 @@
+{
+  "schemaVersion": 1,
+  "generatedAt": "2026-07-19",
+  "purpose": "Cinquantaquattresimo lotto Scopri IT: chiusura controllata di diciotto candidati residui. Cinque figure con rilievo storico, culturale o sportivo eccezionale diventano approfondimenti secondari di date gia coperte. Sei voci restano sospese perche una singola fonte canonica non dimostra ancora insieme data, identita e merito. Sette profili vengono esclusi perche generici, fuori soglia editoriale o fondati soltanto sulla notorieta professionale.",
+  "policy": {
+    "readyForUi": false,
+    "furDeferred": true,
+    "dateFormat": "DD-MM",
+    "requiresFinalItalianApproval": true,
+    "excludeDeaths": true,
+    "excludeGenericPoliticalProfiles": true,
+    "excludeGenericProfessionalProfiles": true,
+    "excludeSportsOnlyProfiles": true,
+    "allowExceptionalSportsProfiles": true,
+    "rejectBirthplaceOnlyProfiles": true,
+    "rejectSemanticDuplicates": true,
+    "rejectUncertainCalendarDates": true,
+    "rejectInternallyInconsistentRecords": true,
+    "requireOneCanonicalSource": true,
+    "sourceFirst": true,
+    "publishAfterFurOnly": true,
+    "allowMultipleMemoriesPerDate": true,
+    "secondaryRequiresPrimaryAnchor": true,
+    "doNotPromoteToPrimaryForCoverageOnly": true
+  },
+  "summary": {
+    "reviewed": 18,
+    "keepDaily": 5,
+    "primary": 0,
+    "secondary": 5,
+    "hold": 6,
+    "excluded": 7,
+    "canonicalPrimaryDatesBefore": 274,
+    "canonicalPrimaryDatesAfter": 274,
+    "currentVisiblePrimaryCoverage": 269
+  },
+  "keepDaily": [
+    {
+      "id": "master-fvg-03-07-Q21651754",
+      "wikidataId": "Q21651754",
+      "dateIt": "03-07",
+      "year": 1867,
+      "municipality": "Pordenone",
+      "locality": "Pordenone",
+      "province": "PN",
+      "canonicalCategory": "cultura",
+      "dailyRole": "secondary",
+      "priority": 94,
+      "titleIt": "Federico Flora e la scienza delle finanze",
+      "copyIt": "Il 3 luglio 1867 nasce a Pordenone Federico Flora. Economista e docente universitario, diventa una voce autorevole nella finanza pubblica e viene nominato socio dell'Accademia dei Lincei.",
+      "sourceLabel": "Treccani - Federico Flora",
+      "sourceUrl": "https://www.treccani.it/enciclopedia/federico-flora_%28Dizionario-Biografico%29/",
+      "sourceStatus": "pass",
+      "readyForUi": false
+    },
+    {
+      "id": "master-fvg-03-08-Q3741704",
+      "wikidataId": "Q3741704",
+      "dateIt": "03-08",
+      "year": 1941,
+      "municipality": "Udine",
+      "locality": "Udine",
+      "province": "UD",
+      "canonicalCategory": "cultura",
+      "dailyRole": "secondary",
+      "priority": 95,
+      "titleIt": "Federico Enriques e la cultura dei libri",
+      "copyIt": "Il 3 agosto 1941 nasce a Udine Federico Enriques. Per quasi cinquant'anni guida la Zanichelli e contribuisce a farne un punto di riferimento per la scuola italiana, dai vocabolari ai manuali scientifici.",
+      "sourceLabel": "Il Resto del Carlino - Federico Enriques",
+      "sourceUrl": "https://www.ilrestodelcarlino.it/bologna/cronaca/morto-federico-enriques-lztl1yy2",
+      "sourceStatus": "pass",
+      "readyForUi": false
+    },
+    {
+      "id": "master-fvg-07-05-Q3751271",
+      "wikidataId": "Q3751271",
+      "dateIt": "07-05",
+      "year": 1943,
+      "municipality": "Trieste",
+      "locality": "Trieste",
+      "province": "TS",
+      "canonicalCategory": "cultura",
+      "dailyRole": "secondary",
+      "priority": 92,
+      "titleIt": "Franco Devescovi e Martin Mystère",
+      "copyIt": "Il 7 maggio 1943 nasce a Trieste Franco Devescovi. Fumettista e pittore, attraversa una lunga carriera e diventa una delle matite più riconoscibili di Martin Mystère, lavorando anche su Zagor e Tex.",
+      "sourceLabel": "Sergio Bonelli Editore - Franco Devescovi",
+      "sourceUrl": "https://www.sergiobonelli.it/author_bonelli/franco-devescovi/",
+      "sourceStatus": "pass",
+      "readyForUi": false
+    },
+    {
+      "id": "master-fvg-01-09-Q16658024",
+      "wikidataId": "Q16658024",
+      "dateIt": "01-09",
+      "year": 1921,
+      "municipality": "Trieste",
+      "locality": "Trieste",
+      "province": "TS",
+      "canonicalCategory": "storia",
+      "dailyRole": "secondary",
+      "priority": 96,
+      "titleIt": "Ricciotti Lazzero e la memoria della deportazione",
+      "copyIt": "Il 1 settembre 1921 nasce a Trieste Ricciotti Lazzero. Giornalista e storico, studia la Repubblica Sociale Italiana, il fascismo e la deportazione; per oltre quarant'anni collabora con Simon Wiesenthal.",
+      "sourceLabel": "Lombardia Beni Culturali - Ricciotti Lazzero",
+      "sourceUrl": "https://www.lombardiabeniculturali.it/archivi/soggetti-produttori/persona/MIDC000803/",
+      "sourceStatus": "pass",
+      "readyForUi": false
+    },
+    {
+      "id": "master-fvg-11-07-Q3645735",
+      "wikidataId": "Q3645735",
+      "dateIt": "11-07",
+      "year": 1964,
+      "municipality": "Monfalcone",
+      "locality": "Monfalcone",
+      "province": "GO",
+      "canonicalCategory": "sport",
+      "dailyRole": "secondary",
+      "priority": 97,
+      "titleIt": "Bruno Dreossi, bronzo olimpico in canoa",
+      "copyIt": "L'11 luglio 1964 nasce a Monfalcone Bruno Dreossi. Ai Giochi olimpici di Barcellona 1992, in coppia con Antonio Rossi, conquista la medaglia di bronzo nel K2 500 metri.",
+      "sourceLabel": "CONI - Bruno Dreossi",
+      "sourceUrl": "https://www.coni.it/it/italia-team/olimpiadi/scheda_atleta/medagliato/226%3ABRUNO_DREOSSI.html",
+      "sourceStatus": "pass",
+      "readyForUi": false
+    }
+  ],
+  "hold": [
+    {
+      "id": "master-fvg-03-09-Q109070765",
+      "reason": "L'archivio Bemporad documenta il lavoro editoriale e scolastico di Anna Errera, ma non conferma nella stessa fonte la data esatta di nascita. La voce resta sospesa senza forzare l'unione di prove separate."
+    },
+    {
+      "id": "master-fvg-03-09-Q3619847",
+      "reason": "La fonte proposta per Antonio Mario Tamburro riguarda un'altra persona. Manca quindi una fonte diretta che confermi insieme nascita e rilievo scientifico."
+    },
+    {
+      "id": "master-fvg-07-04-Q17637150",
+      "reason": "Per Nicole Peressotti data e identita, presenze giovanili e risultati internazionali sono distribuiti tra fonti ufficiali diverse. Il contratto canonico conserva una sola fonte e la voce resta sospesa."
+    },
+    {
+      "id": "master-fvg-08-09-Q108915794",
+      "reason": "Le fonti FIDAL documentano il ruolo pionieristico e i risultati di Maria Bravin, ma non confermano nella stessa fonte la data esatta di nascita."
+    },
+    {
+      "id": "master-fvg-11-01-Q15144200",
+      "reason": "Le fonti reperite per Marina Viro non concordano sull'anno di nascita e non dimostrano un rilievo autonomo sufficiente per la rubrica. La voce resta sospesa in attesa di una fonte migliore."
+    },
+    {
+      "id": "master-fvg-12-01-Q27078123",
+      "reason": "I roster stagionali documentano Carlo Fabbricatore nella squadra, ma non provano in modo diretto il suo contributo personale alla campagna europea indicata."
+    }
+  ],
+  "excluded": [
+    {
+      "id": "master-fvg-04-06-Q87270949",
+      "reason": "Luigi Poterzio presenta soltanto un ruolo politico generico, senza un contributo storico autonomo coerente con la soglia editoriale di Scopri."
+    },
+    {
+      "id": "master-fvg-04-06-Q1110961",
+      "reason": "Ezio Riva e un profilo sportivo professionale privo di risultati eccezionali o di un impatto storico sufficiente per la rubrica."
+    },
+    {
+      "id": "master-fvg-07-05-Q330860",
+      "reason": "Ivan Rassimov e un interprete riconoscibile del cinema di genere, ma non supera la soglia riservata alle figure che hanno inciso in modo durevole sulla storia o sulla cultura regionale e nazionale."
+    },
+    {
+      "id": "master-fvg-10-06-Q3505631",
+      "reason": "Susanna Huckstep e nota come modella e personaggio televisivo, ma il profilo non possiede rilievo storico o culturale sufficiente per Scopri."
+    },
+    {
+      "id": "master-fvg-11-01-Q19361842",
+      "reason": "Pietro Schiano presenta soltanto un ruolo politico generico, senza un contributo storico autonomo coerente con la soglia editoriale di Scopri."
+    },
+    {
+      "id": "master-fvg-11-07-Q47482503",
+      "reason": "Mauro Jagodnich e un profilo sportivo privo di risultati eccezionali documentati che giustifichino una memoria giornaliera."
+    },
+    {
+      "id": "master-fvg-11-08-Q98257368",
+      "reason": "Andrea Donda e un profilo sportivo professionale contemporaneo privo di un risultato storico eccezionale o di un impatto durevole gia dimostrabile."
+    }
+  ]
+}

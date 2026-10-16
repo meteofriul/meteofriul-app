@@ -1,0 +1,1083 @@
+{
+  "schemaVersion": 1,
+  "purpose": "Coda editoriale per Accadde oggi / Memoria del giorno. Non letta dalla UI.",
+  "sourceInput": {
+    "rankedCandidates": "backend_dryrun_staging/exports/discover_daily_history_ranked_candidates.json",
+    "rankingScript": "scripts/score-fvg-daily-history-candidates.mjs",
+    "sourceDateFormat": "DD-MM",
+    "appDateFormat": "MM-DD"
+  },
+  "policy": {
+    "sourceFirst": true,
+    "readyForUiDefault": false,
+    "requiresHumanReview": true,
+    "requiresBetterSourceBeforePublication": true,
+    "allowsLightRubricAfterReview": true,
+    "lightRubricScope": "Solo contenuti a basso rischio: tradizioni, costume, cultura leggera, territorio. Copy breve e prudente.",
+    "strongSourceRequiredFor": [
+      "guerre",
+      "battaglie",
+      "assedi",
+      "disastri",
+      "tragedie",
+      "temi politici o contemporanei sensibili"
+    ],
+    "requiresItCopy": true,
+    "requiresFurCopy": true,
+    "notes": [
+      "Wikidata e' usato come indice iniziale, non come fonte finale per la copy pubblicata.",
+      "I record sensibili devono essere verificati con fonte piu solida o fonte locale prima di entrare in localMemory.json.",
+      "Le rubriche leggere possono usare fonte indice + controllo ragionevole solo se il testo e' prudente e non presenta il fatto come certezza storica forte.",
+      "sourceDayKey mantiene il formato della sorgente DD-MM; dateAnchor e' la chiave usata dall'app in formato MM-DD.",
+      "Se un giorno ha piu eventi rilevanti, uno solo diventa memoria principale; gli altri possono diventare ricorrenze secondarie brevi."
+    ]
+  },
+  "records": [
+    {
+      "id": "daily-history-candidate-0401-assedio-aquileia-238",
+      "sourceCandidateId": "wikidata-fvg-01-04-Q11794840",
+      "sourceDayKey": "01-04",
+      "dateAnchor": "04-01",
+      "dateLabel": {
+        "it": "1 aprile",
+        "fur": "1 di Avrîl"
+      },
+      "title": {
+        "it": "Assedio di Aquileia del 238",
+        "fur": "pending_review"
+      },
+      "sourceTitle": "assedio di Aquileia (238)",
+      "year": 238,
+      "place": "Aquileia",
+      "areas": [
+        "aquileia",
+        "friuli"
+      ],
+      "category": "storia",
+      "score": 64,
+      "editorialClass": "B",
+      "priority": 90,
+      "reviewStatus": "source_lead_found",
+      "editorialStatus": "candidate_for_review",
+      "languageStatus": {
+        "it": "not_started",
+        "fur": "not_started"
+      },
+      "source": {
+        "type": "wikidata_candidate",
+        "label": "Wikidata",
+        "wikidataId": "Q11794840",
+        "url": "http://www.wikidata.org/entity/Q11794840",
+        "confidence": "medium"
+      },
+      "rankingReasons": [
+        "Evento: 32 punti base",
+        "Aquileia: 14 punti luogo",
+        "Categoria storia: 22 punti",
+        "Penalita rumore: -4"
+      ],
+      "editorialNote": "Buon candidato pilota per peso storico e luogo chiave; serve fonte storica piu solida prima della copy.",
+      "readyForUi": false,
+      "sourceReview": {
+        "status": "source_lead_found",
+        "reviewedAt": "2026-07-07",
+        "checkedSources": [
+          {
+            "label": "Wikipedia - Assedio di Aquileia (238)",
+            "url": "https://it.wikipedia.org/wiki/Assedio_di_Aquileia_(238)",
+            "use": "cross_check_only"
+          },
+          {
+            "label": "Erodiano, Storia dell'impero dopo Marco Aurelio, VIII",
+            "use": "primary_source_candidate"
+          },
+          {
+            "label": "Zosimo, Storia nuova, I",
+            "use": "primary_source_candidate"
+          }
+        ],
+        "localMasterEvidence": {
+          "path": "external/fvg/accadde_oggi_fvg_completo_esteso_metadata.json",
+          "dayKey": "01-04",
+          "wikidataId": "Q11794840",
+          "wikipediaUrl": "https://it.wikipedia.org/wiki/assedio_di_Aquileia",
+          "rawExtract": "",
+          "note": "Indice locale utile per orientamento; non vale come fonte finale pubblicabile."
+        },
+        "note": "Piste fonte individuate. Il record resta non pubblicabile finche una fonte solida non viene verificata per la copy IT/FUR.",
+        "verificationAttempt": {
+          "reviewedAt": "2026-07-07",
+          "outcome": "primary_sources_not_yet_checked",
+          "attempts": [
+            {
+              "label": "Wikipedia - Assedio di Aquileia (238)",
+              "url": "https://it.wikipedia.org/wiki/Assedio_di_Aquileia_(238)",
+              "result": "cross_check_only; cita fonti primarie antiche"
+            },
+            {
+              "label": "Erodiano / Zosimo",
+              "result": "primary_source_candidate; da controllare direttamente prima della copy"
+            }
+          ],
+          "note": "Non promuovere: tema antico forte, ma prima serve controllo diretto delle fonti primarie o fonte storica moderna affidabile."
+        },
+        "verificationRetry": {
+          "retriedAt": "2026-07-07",
+          "retryOutcome": "primary_sources_still_not_directly_checked",
+          "retryAttempts": [
+            {
+              "label": "Wikipedia - Assedio di Aquileia (238)",
+              "url": "https://it.wikipedia.org/wiki/Assedio_di_Aquileia_(238)",
+              "result": "page confirms primary-source trail: Erodiano, Zosimo, Historia Augusta, Eutropio; still cross-check, not direct verification"
+            }
+          ],
+          "retryNote": "Retry eseguito: pista primaria chiara, ma serve controllo diretto di fonte primaria o fonte storica moderna. Non promuovere.",
+          "secondRetriedAt": "2026-07-07",
+          "secondRetryOutcome": "still_primary_sources_not_directly_checked",
+          "secondRetryNote": "Secondo retry largo: confermata pista Erodiano/Zosimo/Historia Augusta/Eutropio, ma non controllo diretto."
+        }
+      }
+    },
+    {
+      "id": "daily-history-candidate-1103-rivolta-trieste-1953",
+      "sourceCandidateId": "wikidata-fvg-03-11-Q3938038",
+      "sourceDayKey": "03-11",
+      "dateAnchor": "11-03",
+      "dateLabel": {
+        "it": "3 novembre",
+        "fur": "3 di Novembar"
+      },
+      "title": {
+        "it": "Rivolta di Trieste del 1953",
+        "fur": "pending_review"
+      },
+      "sourceTitle": "Rivolta di Trieste (evento del 1953)",
+      "year": 1953,
+      "place": "Trieste",
+      "areas": [
+        "trieste",
+        "friuli venezia giulia"
+      ],
+      "category": "storia",
+      "score": 64,
+      "editorialClass": "B",
+      "priority": 90,
+      "reviewStatus": "source_lead_found",
+      "editorialStatus": "candidate_for_review",
+      "languageStatus": {
+        "it": "not_started",
+        "fur": "not_started"
+      },
+      "source": {
+        "type": "wikidata_candidate",
+        "label": "Wikidata",
+        "wikidataId": "Q3938038",
+        "url": "http://www.wikidata.org/entity/Q3938038",
+        "confidence": "medium"
+      },
+      "sourceReview": {
+        "status": "source_lead_found",
+        "reviewedAt": "2026-07-07",
+        "checkedSources": [
+          {
+            "label": "Wikipedia - Rivolta di Trieste",
+            "url": "https://it.wikipedia.org/wiki/Rivolta_di_Trieste",
+            "use": "cross_check_only"
+          },
+          {
+            "label": "Michele Pigliucci, Gli ultimi martiri del Risorgimento",
+            "use": "bibliography_candidate"
+          },
+          {
+            "label": "Paolo Sardos Albertini e Piero Delbello, La Lega Nazionale e i ragazzi del '53",
+            "use": "bibliography_candidate"
+          }
+        ],
+        "localMasterEvidence": {
+          "path": "external/fvg/accadde_oggi_fvg_completo_esteso_metadata.json",
+          "dayKey": "03-11",
+          "wikidataId": "Q3938038",
+          "wikipediaUrl": "https://it.wikipedia.org/wiki/Rivolta_di_Trieste",
+          "rawExtract": "La rivolta di Trieste è la definizione data ai moti triestini del novembre 1953, che vennero duramente repressi dal \"nucleo mobile\" antisommossa della Polizia Civile alle dipendenze del Governo Militare Alleato (GMA), la forza di amministrazione militare alleata al cui vertice c'era il generale del Regno Unito Thomas Willoughby Winterton.",
+          "note": "Indice locale utile per orientamento; non vale come fonte finale pubblicabile."
+        },
+        "note": "Piste fonte individuate. Il record resta non pubblicabile finche una fonte solida non viene verificata per la copy IT/FUR.",
+        "verificationAttempt": {
+          "reviewedAt": "2026-07-07",
+          "outcome": "sensitive_topic_needs_better_source",
+          "attempts": [
+            {
+              "label": "Wikipedia - Rivolta di Trieste",
+              "url": "https://it.wikipedia.org/wiki/Rivolta_di_Trieste",
+              "result": "cross_check_only; tema sensibile contemporaneo, non sufficiente per copy pubblicabile"
+            },
+            {
+              "label": "Bibliografia Pigliucci / Lega Nazionale e ragazzi del 1953",
+              "result": "bibliography_candidate; da verificare prima della sintesi"
+            }
+          ],
+          "note": "Non promuovere: evento importante ma delicato; serve fonte storica/archivistica o istituzionale più solida e tono molto sobrio."
+        },
+        "verificationRetry": {
+          "retriedAt": "2026-07-07",
+          "retryOutcome": "still_sensitive_needs_better_source",
+          "retryAttempts": [
+            {
+              "label": "Search Comune/Archivio/Rivolta di Trieste 1953",
+              "result": "results still centered on Wikipedia and bibliography; no sufficient archival/institutional source found"
+            }
+          ],
+          "retryNote": "Retry eseguito: evento delicato, fonte finale ancora insufficiente. Non promuovere.",
+          "secondRetriedAt": "2026-07-07",
+          "secondRetryOutcome": "still_sensitive_needs_better_source",
+          "secondRetryNote": "Secondo retry largo: nessuna fonte archivistica/istituzionale sufficiente trovata; non pubblicare."
+        }
+      },
+      "rankingReasons": [
+        "Evento: 32 punti base",
+        "Trieste: 14 punti luogo",
+        "Categoria storia: 22 punti",
+        "Penalita rumore: -4"
+      ],
+      "editorialNote": "Ricorrenza contemporanea forte; serve trattamento sobrio e fonte istituzionale/storica prima della pubblicazione.",
+      "readyForUi": false
+    },
+    {
+      "id": "daily-history-candidate-0806-sesta-battaglia-isonzo-1916",
+      "sourceCandidateId": "wikidata-fvg-06-08-Q769906",
+      "sourceDayKey": "06-08",
+      "dateAnchor": "08-06",
+      "dateLabel": {
+        "it": "6 agosto",
+        "fur": "6 di Avost"
+      },
+      "title": {
+        "it": "Sesta battaglia dell'Isonzo",
+        "fur": "pending_review"
+      },
+      "sourceTitle": "sesta battaglia dell'Isonzo (battaglia della prima guerra mondiale)",
+      "year": 1916,
+      "place": "Gorizia",
+      "areas": [
+        "gorizia",
+        "isonzo",
+        "friuli venezia giulia"
+      ],
+      "category": "storia",
+      "score": 64,
+      "editorialClass": "B",
+      "priority": 85,
+      "reviewStatus": "source_lead_found",
+      "editorialStatus": "candidate_for_review",
+      "languageStatus": {
+        "it": "not_started",
+        "fur": "not_started"
+      },
+      "source": {
+        "type": "wikidata_candidate",
+        "label": "Wikidata",
+        "wikidataId": "Q769906",
+        "url": "http://www.wikidata.org/entity/Q769906",
+        "confidence": "medium"
+      },
+      "rankingReasons": [
+        "Evento: 32 punti base",
+        "Gorizia: 14 punti luogo",
+        "Categoria storia: 22 punti",
+        "Penalita rumore: -4"
+      ],
+      "editorialNote": "Tema forte ma delicato; da verificare con fonte storica e copy non bellica/sensazionalista.",
+      "readyForUi": false,
+      "sourceReview": {
+        "status": "source_lead_found",
+        "reviewedAt": "2026-07-07",
+        "checkedSources": [
+          {
+            "label": "Wikipedia - Sesta battaglia dell'Isonzo",
+            "url": "https://it.wikipedia.org/wiki/Sesta_battaglia_dell%27Isonzo",
+            "use": "cross_check_only"
+          },
+          {
+            "label": "Gianni Pieropan, Storia della grande guerra sul fronte italiano",
+            "use": "bibliography_candidate"
+          },
+          {
+            "label": "Antonio Sema, La Grande Guerra sul fronte dell'Isonzo",
+            "use": "bibliography_candidate"
+          }
+        ],
+        "localMasterEvidence": {
+          "path": "external/fvg/accadde_oggi_fvg_completo_esteso_metadata.json",
+          "dayKey": "06-08",
+          "wikidataId": "Q769906",
+          "wikipediaUrl": "https://it.wikipedia.org/wiki/sesta_battaglia_dell'Isonzo",
+          "rawExtract": "La sesta battaglia dell'Isonzo, conosciuta anche come battaglia o presa di Gorizia, fu combattuta dal 4 al 17 agosto 1916 sul fronte italiano della prima guerra mondiale, e vide contrapposti il Regio Esercito italiano al comando del generale Luigi Cadorna e l'Imperiale e regio esercito austro-ungarico al comando del generale Franz Conrad von Hötzendorf.",
+          "note": "Indice locale utile per orientamento; non vale come fonte finale pubblicabile."
+        },
+        "note": "Piste fonte individuate. Il record resta non pubblicabile finche una fonte solida non viene verificata per la copy IT/FUR.",
+        "verificationAttempt": {
+          "reviewedAt": "2026-07-07",
+          "outcome": "bibliography_only_for_now",
+          "attempts": [
+            {
+              "label": "Wikipedia - Sesta battaglia dell'Isonzo",
+              "url": "https://it.wikipedia.org/wiki/Sesta_battaglia_dell%27Isonzo",
+              "result": "cross_check_only; riporta bibliografia storica utile ma non fonte finale locale verificata"
+            },
+            {
+              "label": "Wikipedia - Gorizia, sezione Prima guerra mondiale",
+              "url": "https://it.wikipedia.org/wiki/Gorizia",
+              "result": "local_context_only; conferma contesto cittadino ma resta fonte enciclopedica"
+            }
+          ],
+          "note": "Non promuovere: candidato forte ma serve fonte storica o museale stabile e consultabile prima della copy."
+        },
+        "verificationRetry": {
+          "retriedAt": "2026-07-07",
+          "retryOutcome": "no_better_source_found",
+          "retryAttempts": [
+            {
+              "label": "Search Museo/Grande Guerra/Gorizia/Isonzo",
+              "result": "no stable museum or institutional page found in this pass; bibliographic/cross-check state unchanged"
+            }
+          ],
+          "retryNote": "Retry eseguito: candidato forte, ma serve ancora fonte storica/museale stabile. Non promuovere.",
+          "secondRetriedAt": "2026-07-07",
+          "secondRetryOutcome": "still_bibliography_only",
+          "secondRetryNote": "Secondo retry largo: Wikipedia espone bibliografia e link esterni, ma nessuna fonte museale/istituzionale finale verificata."
+        }
+      }
+    },
+    {
+      "id": "daily-history-candidate-1009-vajont-1963",
+      "sourceCandidateId": "wikidata-fvg-09-10-Q3709251",
+      "sourceDayKey": "09-10",
+      "dateAnchor": "10-09",
+      "dateLabel": {
+        "it": "9 ottobre",
+        "fur": "9 di Otubar"
+      },
+      "title": {
+        "it": "Disastro del Vajont",
+        "fur": "La gnôt dal Vajont"
+      },
+      "sourceTitle": "disastro del Vajont (disastro ambientale)",
+      "year": 1963,
+      "place": "Vajont",
+      "areas": [
+        "vajont",
+        "friuli venezia giulia"
+      ],
+      "category": "storia",
+      "score": 62,
+      "editorialClass": "B",
+      "priority": 100,
+      "reviewStatus": "source_verified_for_copy",
+      "editorialStatus": "ready_for_discover",
+      "languageStatus": {
+        "it": "approved",
+        "fur": "approved"
+      },
+      "source": {
+        "type": "wikidata_candidate",
+        "label": "Wikidata",
+        "wikidataId": "Q3709251",
+        "url": "http://www.wikidata.org/entity/Q3709251",
+        "confidence": "medium"
+      },
+      "sourceReview": {
+        "status": "source_verified_for_copy",
+        "reviewedAt": "2026-07-07",
+        "checkedSources": [
+          {
+            "label": "Visit Longarone - Percorsi della memoria",
+            "url": "https://www.visitlongarone.it/percorsi-di-memoria/",
+            "use": "official_cultural_source"
+          },
+          {
+            "label": "Visit Longarone - Storia, tradizioni e musei",
+            "url": "https://www.visitlongarone.it/storia-tradizioni-e-musei/",
+            "use": "official_cultural_source"
+          },
+          {
+            "label": "Master locale Accadde oggi FVG esteso",
+            "path": "external/fvg/accadde_oggi_fvg_completo_esteso_metadata.json",
+            "use": "source_index_with_raw_extract"
+          },
+          {
+            "label": "Wikipedia - Disastro del Vajont",
+            "url": "https://it.wikipedia.org/wiki/Disastro_del_Vajont",
+            "use": "cross_check_only"
+          },
+          {
+            "label": "Wikipedia - Erto e Casso",
+            "url": "https://it.wikipedia.org/wiki/Erto_e_Casso",
+            "use": "local_context_only"
+          }
+        ],
+        "bibliographyCandidates": [
+          "Maurizio Reberschak, Silvia Miscellaneo, Enrico Bacchetti, Vajont. La prima sentenza. L'istruttoria del giudice Mario Fabbri.",
+          "Mario Passi, Morire sul Vajont. Storia di una tragedia italiana.",
+          "Bibliografia da usare per eventuale scheda lunga o Archivio Scopri."
+        ],
+        "note": "Fonte culturale ufficiale comunale trovata: valida per preparare una bozza breve e prudente. Prima della pubblicazione servono copy IT/FUR approvate."
+      },
+      "copyDraft": {
+        "status": "approved",
+        "it": {
+          "title": "La notte del Vajont",
+          "summary": "Il 9 ottobre 1963 il disastro del Vajont segnò Longarone, Erto e Casso. Oggi i percorsi della memoria e il Museo Longarone Vajont conservano immagini, luoghi e ricordi di quella tragedia.",
+          "secondaryIntro": "Altre ricorrenze locali del giorno"
+        },
+        "fur": {
+          "title": "La gnôt dal Vajont",
+          "summary": "Ai 9 di Otubar dal 1963 la tragedie dal Vajont e à segnât Longarone, Erto e Casso. Vuê i percors de memorie e il Museu Longarone Vajont a conservin imagjinis, lûcs e ricuarts di chê tragedie.",
+          "secondaryIntro": "Altris ricorincis locâls dal dì"
+        },
+        "editorialNote": "Bozza volutamente sobria: memoria e territorio, senza dettagli sensazionalistici."
+      },
+      "dayComposition": {
+        "role": "primary",
+        "rule": "Vajont resta la memoria principale del 9 ottobre; eventuali altre voci importanti devono restare secondarie, brevi e, quando possibile, localizzate sulla localita utente.",
+        "secondarySelection": {
+          "localityFirst": true,
+          "provinceThenArea": true,
+          "doNotShowWeakFillers": true,
+          "maxVisibleSecondary": 2
+        },
+        "secondaryCandidates": [
+          {
+            "sourceCandidateId": "wikidata-fvg-09-10-Q1440917",
+            "wikidataId": "Q1440917",
+            "year": 1966,
+            "type": "Nascita",
+            "place": "Pordenone",
+            "areas": [
+              "pordenone",
+              "friuli"
+            ],
+            "province": "PN",
+            "title": "Nasce Francesco Bearzatti",
+            "category": "lingua_cultura",
+            "status": "secondary_candidate",
+            "localityRelevance": "exact_city",
+            "note": "Musicista pordenonese: possibile nota secondaria se confermata da fonte migliore."
+          },
+          {
+            "sourceCandidateId": "wikidata-fvg-09-10-Q19985097",
+            "wikidataId": "Q19985097",
+            "year": 1963,
+            "type": "Morte",
+            "place": "Erto e Casso",
+            "areas": [
+              "erto e casso",
+              "vajont",
+              "friuli"
+            ],
+            "province": "PN",
+            "title": "Muore Giancarlo Rittmeyer",
+            "category": "storia",
+            "status": "context_only_candidate",
+            "localityRelevance": "context_area",
+            "note": "Figura collegata alla tragedia del Vajont: non seconda card autonoma senza fonte e contesto adeguati."
+          }
+        ],
+        "discardedSameDayCandidates": [
+          {
+            "wikidataId": "Q19120353",
+            "title": "Elvio Ruffino",
+            "reason": "Rilevanza troppo debole per la memoria del giorno."
+          },
+          {
+            "wikidataId": "Q3935921",
+            "title": "Rinaldo Fabris",
+            "reason": "Rilevanza troppo debole per la memoria del giorno."
+          }
+        ]
+      },
+      "rankingReasons": [
+        "Evento: 32 punti base",
+        "Vajont: 6 punti luogo",
+        "Categoria storia: 22 punti",
+        "Presente nella proposta estesa: +6",
+        "Penalita rumore: -4"
+      ],
+      "editorialNote": "Candidato ad altissima rilevanza; richiede fonte autorevole e copy molto rispettosa.",
+      "readyForUi": true
+    },
+    {
+      "id": "daily-history-candidate-1012-assedio-trieste-1813",
+      "sourceCandidateId": "wikidata-fvg-12-10-Q15045856",
+      "sourceDayKey": "12-10",
+      "dateAnchor": "10-12",
+      "dateLabel": {
+        "it": "12 ottobre",
+        "fur": "12 di Otubar"
+      },
+      "title": {
+        "it": "Assedio di Trieste del 1813",
+        "fur": "pending_review"
+      },
+      "sourceTitle": "assedio di Trieste",
+      "year": 1813,
+      "place": "Trieste",
+      "areas": [
+        "trieste",
+        "friuli venezia giulia"
+      ],
+      "category": "storia",
+      "score": 64,
+      "editorialClass": "B",
+      "priority": 75,
+      "reviewStatus": "source_lead_found",
+      "editorialStatus": "candidate_for_review",
+      "languageStatus": {
+        "it": "not_started",
+        "fur": "not_started"
+      },
+      "source": {
+        "type": "wikidata_candidate",
+        "label": "Wikidata",
+        "wikidataId": "Q15045856",
+        "url": "http://www.wikidata.org/entity/Q15045856",
+        "confidence": "medium"
+      },
+      "rankingReasons": [
+        "Evento: 32 punti base",
+        "Trieste: 14 punti luogo",
+        "Categoria storia: 22 punti",
+        "Penalita rumore: -4"
+      ],
+      "editorialNote": "Buon test per eventi storici meno noti; serve controllo data/fonte prima di trasformarlo in memoria.",
+      "readyForUi": false,
+      "sourceReview": {
+        "status": "source_lead_found",
+        "reviewedAt": "2026-07-07",
+        "checkedSources": [
+          {
+            "label": "Wikipedia - Siege of Trieste (1813)",
+            "url": "https://en.wikipedia.org/wiki/Siege_of_Trieste_(1813)",
+            "use": "cross_check_only"
+          },
+          {
+            "label": "Aldo Mattei, La campagna tra Francesi e Austriaci nella Venezia Giulia ed a Trieste nel 1813",
+            "use": "bibliography_candidate"
+          },
+          {
+            "label": "George F. Nafziger, Marco Gioannini, The Defense of the Napoleonic Kingdom of Northern Italy, 1813-1814",
+            "use": "bibliography_candidate"
+          }
+        ],
+        "localMasterEvidence": {
+          "path": "external/fvg/accadde_oggi_fvg_completo_esteso_metadata.json",
+          "dayKey": "12-10",
+          "wikidataId": "Q15045856",
+          "wikipediaUrl": "https://it.wikipedia.org/wiki/assedio_di_Trieste",
+          "rawExtract": "L'assedio di Trieste si svolse tra il 12 e il 28 ottobre 1813 nell'ambito dei più vasti eventi della campagna d'Italia della guerra della sesta coalizione: la guarnigione franco-italiana della città di Trieste fu attaccata da una forza congiunta di truppe austro-britanniche al comando del feldmaresciallo Laval Nugent von Westmeath e dell'ammiraglio Thomas Fremantle, capitolando dopo un breve assedio.",
+          "note": "Indice locale utile per orientamento; non vale come fonte finale pubblicabile."
+        },
+        "note": "Piste fonte individuate. Il record resta non pubblicabile finche una fonte solida non viene verificata per la copy IT/FUR."
+      }
+    },
+    {
+      "id": "daily-history-candidate-0415-battaglia-sacile-1809",
+      "sourceCandidateId": "wikidata-fvg-15-04-Q508387",
+      "sourceDayKey": "15-04",
+      "dateAnchor": "04-15",
+      "dateLabel": {
+        "it": "15 aprile",
+        "fur": "15 di Avrîl"
+      },
+      "title": {
+        "it": "Battaglia di Sacile",
+        "fur": "pending_review"
+      },
+      "sourceTitle": "battaglia di Sacile",
+      "year": 1809,
+      "place": "Sacile",
+      "areas": [
+        "sacile",
+        "pordenone",
+        "friuli"
+      ],
+      "category": "storia",
+      "score": 64,
+      "editorialClass": "B",
+      "priority": 80,
+      "reviewStatus": "source_lead_found",
+      "editorialStatus": "candidate_for_review",
+      "languageStatus": {
+        "it": "not_started",
+        "fur": "not_started"
+      },
+      "source": {
+        "type": "wikidata_candidate",
+        "label": "Wikidata",
+        "wikidataId": "Q508387",
+        "url": "http://www.wikidata.org/entity/Q508387",
+        "confidence": "medium"
+      },
+      "rankingReasons": [
+        "Evento: 32 punti base",
+        "Sacile: 14 punti luogo",
+        "Categoria storia: 22 punti",
+        "Penalita rumore: -4"
+      ],
+      "editorialNote": "Candidato utile per copertura Pordenonese; fonte e copy da validare.",
+      "readyForUi": false,
+      "sourceReview": {
+        "status": "source_lead_found",
+        "reviewedAt": "2026-07-07",
+        "checkedSources": [
+          {
+            "label": "Wikipedia - Battaglia di Sacile",
+            "url": "https://it.wikipedia.org/wiki/Battaglia_di_Sacile",
+            "use": "cross_check_only"
+          },
+          {
+            "label": "Alessandro Fadelli, Nell'anno della battaglia ai Camolli",
+            "use": "bibliography_candidate"
+          },
+          {
+            "label": "Elio Migliorini, Sacile",
+            "use": "bibliography_candidate"
+          }
+        ],
+        "localMasterEvidence": {
+          "path": "external/fvg/accadde_oggi_fvg_completo_esteso_metadata.json",
+          "dayKey": "15-04",
+          "wikidataId": "Q508387",
+          "wikipediaUrl": "https://it.wikipedia.org/wiki/battaglia_di_Sacile",
+          "rawExtract": "",
+          "note": "Indice locale utile per orientamento; non vale come fonte finale pubblicabile."
+        },
+        "note": "Piste fonte individuate. Il record resta non pubblicabile finche una fonte solida non viene verificata per la copy IT/FUR.",
+        "verificationAttempt": {
+          "reviewedAt": "2026-07-07",
+          "outcome": "bibliography_only_for_now",
+          "attempts": [
+            {
+              "label": "Wikipedia - Battaglia di Sacile",
+              "url": "https://it.wikipedia.org/wiki/Battaglia_di_Sacile",
+              "result": "cross_check_only; bibliografia utile ma non fonte finale locale verificata"
+            }
+          ],
+          "note": "Non promuovere: servono fonte locale/storica consultabile o bibliografia verificata prima della copy."
+        },
+        "verificationRetry": {
+          "retriedAt": "2026-07-07",
+          "retryOutcome": "no_better_source_found",
+          "retryAttempts": [
+            {
+              "label": "Battaglia di Sacile - search Comune/Sacile/Camolli",
+              "result": "no stable local official source found; Wikipedia and bibliography remain only cross-check"
+            }
+          ],
+          "retryNote": "Retry eseguito: nessuna fonte locale/storica consultabile trovata. Non promuovere.",
+          "secondRetriedAt": "2026-07-07",
+          "secondRetryOutcome": "still_bibliography_only",
+          "secondRetryNote": "Secondo retry largo: resta solo bibliografia/cross-check, nessuna fonte locale finale trovata."
+        }
+      }
+    },
+    {
+      "id": "daily-history-candidate-1029-battaglia-pozzuolo-1917",
+      "sourceCandidateId": "wikidata-fvg-29-10-Q3636582",
+      "sourceDayKey": "29-10",
+      "dateAnchor": "10-29",
+      "dateLabel": {
+        "it": "29 ottobre",
+        "fur": "29 di Otubar"
+      },
+      "title": {
+        "it": "Battaglia di Pozzuolo del Friuli",
+        "fur": "pending_review"
+      },
+      "sourceTitle": "battaglia di Pozzuolo del Friuli",
+      "year": 1917,
+      "place": "Pozzuolo del Friuli",
+      "areas": [
+        "pozzuolo del friuli",
+        "udine",
+        "friuli"
+      ],
+      "category": "storia",
+      "score": 64,
+      "editorialClass": "B",
+      "priority": 80,
+      "reviewStatus": "source_lead_found",
+      "editorialStatus": "candidate_for_review",
+      "languageStatus": {
+        "it": "not_started",
+        "fur": "not_started"
+      },
+      "source": {
+        "type": "wikidata_candidate",
+        "label": "Wikidata",
+        "wikidataId": "Q3636582",
+        "url": "http://www.wikidata.org/entity/Q3636582",
+        "confidence": "medium"
+      },
+      "rankingReasons": [
+        "Evento: 32 punti base",
+        "Pozzuolo del Friuli: 6 punti luogo",
+        "Categoria storia: 22 punti",
+        "Penalita rumore: -4"
+      ],
+      "editorialNote": "Candidato storico locale forte; da validare con fonte non solo Wikidata.",
+      "readyForUi": false,
+      "sourceReview": {
+        "status": "source_lead_found",
+        "reviewedAt": "2026-07-07",
+        "checkedSources": [
+          {
+            "label": "Wikipedia - Battaglia di Pozzuolo del Friuli",
+            "url": "https://it.wikipedia.org/wiki/Battaglia_di_Pozzuolo_del_Friuli",
+            "use": "cross_check_only"
+          },
+          {
+            "label": "Esercito Italiano - La battaglia di Pozzuolo del Friuli",
+            "use": "institutional_source_lead"
+          },
+          {
+            "label": "Quirinale - medaglie al valore collegate alla battaglia",
+            "use": "institutional_source_lead"
+          }
+        ],
+        "localMasterEvidence": {
+          "path": "external/fvg/accadde_oggi_fvg_completo_esteso_metadata.json",
+          "dayKey": "29-10",
+          "wikidataId": "Q3636582",
+          "wikipediaUrl": "https://it.wikipedia.org/wiki/battaglia_di_Pozzuolo_del_Friuli",
+          "rawExtract": "La battaglia di Pozzuolo del Friuli fu una battaglia difensiva che si svolse durante la prima guerra mondiale tra il 29 e il 30 ottobre 1917 impegnando due brigate dell'esercito italiano che protessero la ritirata della 3ª Armata italiana dalle forze tedesche che cercavano di tagliarle la linea di ritirata dopo la rotta di Caporetto. Dopo due giorni di combattimento le forze italiane utilizzate nella battaglia erano quasi annientate, ma la 3ª Armata era riuscita a ritirarsi oltre il Tagliamento.",
+          "note": "Indice locale utile per orientamento; non vale come fonte finale pubblicabile."
+        },
+        "note": "Piste fonte individuate. Il record resta non pubblicabile finche una fonte solida non viene verificata per la copy IT/FUR.",
+        "verificationAttempt": {
+          "reviewedAt": "2026-07-07",
+          "outcome": "official_link_temporarily_unreachable",
+          "attempts": [
+            {
+              "label": "Esercito Italiano - La battaglia di Pozzuolo del Friuli",
+              "url": "https://www.esercito.difesa.it/storia/pagine/battaglia-pozzuolo.aspx",
+              "result": "502_bad_gateway_on_2026-07-07"
+            },
+            {
+              "label": "Wikipedia - Brigata di Cavalleria Pozzuolo del Friuli, riferimenti 3-4",
+              "url": "https://en.wikipedia.org/wiki/Cavalry_Brigade_%22Pozzuolo_del_Friuli%22",
+              "result": "confirms existence of Italian Army reference but not final source"
+            }
+          ],
+          "note": "Non promuovere: fonte ufficiale individuata ma non raggiungibile in verifica. Riprovare prima della copy."
+        },
+        "verificationRetry": {
+          "retriedAt": "2026-07-07",
+          "retryOutcome": "official_link_still_unreachable",
+          "retryAttempts": [
+            {
+              "label": "Esercito Italiano - La battaglia di Pozzuolo del Friuli",
+              "url": "https://www.esercito.difesa.it/storia/pagine/battaglia-pozzuolo.aspx",
+              "result": "502_bad_gateway_again_on_2026-07-07"
+            },
+            {
+              "label": "Cavalry Brigade Pozzuolo del Friuli - reference list",
+              "url": "https://en.wikipedia.org/wiki/Cavalry_Brigade_%22Pozzuolo_del_Friuli%22",
+              "result": "confirms Italian Army reference exists, but still not final source"
+            }
+          ],
+          "retryNote": "Retry eseguito: fonte ufficiale ancora non raggiungibile. Non promuovere.",
+          "secondRetriedAt": "2026-07-07",
+          "secondRetryOutcome": "official_link_still_unreachable",
+          "secondRetryNote": "Secondo retry largo: la fonte Esercito resta non verificabile; continuare solo se si recupera archivio o copia stabile."
+        }
+      }
+    },
+    {
+      "id": "daily-history-candidate-0515-battaglia-tarvisio-1809",
+      "sourceCandidateId": "wikidata-fvg-15-05-Q4872513",
+      "sourceDayKey": "15-05",
+      "dateAnchor": "05-15",
+      "dateLabel": {
+        "it": "15 maggio",
+        "fur": "15 di Mai"
+      },
+      "title": {
+        "it": "Battaglia di Tarvisio del 1809",
+        "fur": "pending_review"
+      },
+      "sourceTitle": "battaglia di Tarvisio",
+      "year": 1809,
+      "place": "Tarvisio",
+      "areas": [
+        "tarvisio",
+        "friuli"
+      ],
+      "category": "storia",
+      "score": 56,
+      "editorialClass": "B",
+      "priority": 70,
+      "reviewStatus": "source_lead_found",
+      "editorialStatus": "candidate_for_review",
+      "languageStatus": {
+        "it": "not_started",
+        "fur": "not_started"
+      },
+      "source": {
+        "type": "wikidata_candidate",
+        "label": "Wikidata",
+        "wikidataId": "Q4872513",
+        "url": "http://www.wikidata.org/entity/Q4872513",
+        "confidence": "medium"
+      },
+      "rankingReasons": [
+        "Evento: 32 punti base",
+        "Tarvisio: 6 punti luogo",
+        "Categoria storia: 22 punti",
+        "Penalita rumore: -4"
+      ],
+      "editorialNote": "Scelto come unico Tarvisio pilota, evitando duplicato con il 21 marzo finche non facciamo review storica.",
+      "readyForUi": false,
+      "sourceReview": {
+        "status": "source_lead_found",
+        "reviewedAt": "2026-07-07",
+        "checkedSources": [
+          {
+            "label": "Wikipedia - Battle of Tarvis (1809)",
+            "url": "https://en.wikipedia.org/wiki/Battle_of_Tarvis_(1809)",
+            "use": "cross_check_only"
+          },
+          {
+            "label": "Robert M. Epstein, Napoleon's Last Victory and the Emergence of Modern War",
+            "use": "bibliography_candidate"
+          },
+          {
+            "label": "Digby Smith, The Napoleonic Wars Data Book",
+            "use": "bibliography_candidate"
+          }
+        ],
+        "localMasterEvidence": {
+          "path": "external/fvg/accadde_oggi_fvg_completo_esteso_metadata.json",
+          "dayKey": "15-05",
+          "wikidataId": "Q4872513",
+          "wikipediaUrl": "https://it.wikipedia.org/wiki/battaglia_di_Tarvisio",
+          "rawExtract": "La voce Battaglia di Tarvisio può riferirsi a due episodi bellici:Battaglia di Tarvisio (1797) – battaglia combattuta nell'ambito delle Guerre rivoluzionarie francesi.\nBattaglia di Tarvisio (1809) – battaglia combattuta nell'ambito delle Guerre napoleoniche.",
+          "note": "Indice locale utile per orientamento; non vale come fonte finale pubblicabile."
+        },
+        "note": "Piste fonte individuate. Il record resta non pubblicabile finche una fonte solida non viene verificata per la copy IT/FUR."
+      }
+    },
+    {
+      "id": "daily-history-candidate-0316-battaglia-valvasone-1797",
+      "sourceCandidateId": "wikidata-fvg-16-03-Q2984910",
+      "sourceDayKey": "16-03",
+      "dateAnchor": "03-16",
+      "dateLabel": {
+        "it": "16 marzo",
+        "fur": "16 di Març"
+      },
+      "title": {
+        "it": "Battaglia di Valvasone",
+        "fur": "pending_review"
+      },
+      "sourceTitle": "Battaglia di Valvasone",
+      "year": 1797,
+      "place": "Tagliamento",
+      "areas": [
+        "tagliamento",
+        "friuli"
+      ],
+      "category": "storia",
+      "score": 56,
+      "editorialClass": "B",
+      "priority": 70,
+      "reviewStatus": "source_lead_found",
+      "editorialStatus": "candidate_for_review",
+      "languageStatus": {
+        "it": "not_started",
+        "fur": "not_started"
+      },
+      "source": {
+        "type": "wikidata_candidate",
+        "label": "Wikidata",
+        "wikidataId": "Q2984910",
+        "url": "http://www.wikidata.org/entity/Q2984910",
+        "confidence": "medium"
+      },
+      "rankingReasons": [
+        "Evento: 32 punti base",
+        "Tagliamento: 6 punti luogo",
+        "Categoria storia: 22 punti",
+        "Penalita rumore: -4"
+      ],
+      "editorialNote": "Candidato utile per geografia friulana ampia; servono fonte e tono divulgativo sobrio.",
+      "readyForUi": false,
+      "sourceReview": {
+        "status": "source_lead_found",
+        "reviewedAt": "2026-07-07",
+        "checkedSources": [
+          {
+            "label": "Wikipedia - Battaglia di Valvasone (1797)",
+            "url": "https://it.wikipedia.org/wiki/Battaglia_di_Valvasone_(1797)",
+            "use": "cross_check_only"
+          },
+          {
+            "label": "Comune di Sedegliano - la storia",
+            "use": "local_source_lead"
+          }
+        ],
+        "localMasterEvidence": {
+          "path": "external/fvg/accadde_oggi_fvg_completo_esteso_metadata.json",
+          "dayKey": "16-03",
+          "wikidataId": "Q2984910",
+          "wikipediaUrl": "https://it.wikipedia.org/wiki/Battaglia_di_Valvasone",
+          "rawExtract": "",
+          "note": "Indice locale utile per orientamento; non vale come fonte finale pubblicabile."
+        },
+        "note": "Piste fonte individuate. Il record resta non pubblicabile finche una fonte solida non viene verificata per la copy IT/FUR."
+      }
+    },
+    {
+      "id": "daily-history-candidate-0426-assedio-osoppo-1848",
+      "sourceCandidateId": "wikidata-fvg-26-04-Q3625507",
+      "sourceDayKey": "26-04",
+      "dateAnchor": "04-26",
+      "dateLabel": {
+        "it": "26 aprile",
+        "fur": "26 di Avrîl"
+      },
+      "title": {
+        "it": "Assedio di Osoppo",
+        "fur": "L'assedi di Osoppo"
+      },
+      "sourceTitle": "assedio di Osoppo",
+      "year": 1848,
+      "place": "Osoppo",
+      "areas": [
+        "osoppo",
+        "friuli"
+      ],
+      "category": "storia",
+      "score": 56,
+      "editorialClass": "B",
+      "priority": 75,
+      "reviewStatus": "source_verified_for_copy",
+      "editorialStatus": "ready_for_discover",
+      "languageStatus": {
+        "it": "approved",
+        "fur": "approved"
+      },
+      "source": {
+        "type": "wikidata_candidate",
+        "label": "Wikidata",
+        "wikidataId": "Q3625507",
+        "url": "http://www.wikidata.org/entity/Q3625507",
+        "confidence": "medium"
+      },
+      "sourceReview": {
+        "status": "source_verified_for_copy",
+        "reviewedAt": "2026-07-07",
+        "checkedSources": [
+          {
+            "label": "Wikipedia - Assedio di Osoppo",
+            "url": "https://it.wikipedia.org/wiki/Assedio_di_Osoppo",
+            "use": "cross_check_only"
+          },
+          {
+            "label": "Daniela Marzinotto, La rivoluzione a Venezia. Diario degli avvenimenti Marzo 1848-agosto 1849",
+            "use": "bibliography_candidate"
+          },
+          {
+            "label": "Fulvio Salimbeni, La fortezza che fermo' le giubbe bianche",
+            "use": "bibliography_candidate"
+          }
+        ],
+        "localMasterEvidence": {
+          "path": "external/fvg/accadde_oggi_fvg_completo_esteso_metadata.json",
+          "dayKey": "26-04",
+          "wikidataId": "Q3625507",
+          "wikipediaUrl": "https://it.wikipedia.org/wiki/assedio_di_Osoppo",
+          "rawExtract": "L'assedio di Osoppo, parte della prima guerra di indipendenza italiana, iniziò dopo che il 26 aprile 1848 l'esercito austriaco occupò la riva destra del fiume Tagliamento impossessandosi dei paesi di Trasaghis e Preone.",
+          "note": "Indice locale utile per orientamento; non vale come fonte finale pubblicabile."
+        },
+        "note": "Piste fonte individuate. Il record resta non pubblicabile finche una fonte solida non viene verificata per la copy IT/FUR.",
+        "verificationAttempt": {
+          "reviewedAt": "2026-07-07",
+          "outcome": "bibliography_only_for_now",
+          "attempts": [
+            {
+              "label": "Wikipedia - Assedio di Osoppo",
+              "url": "https://it.wikipedia.org/wiki/Assedio_di_Osoppo",
+              "result": "cross_check_only; riporta bibliografia Marzinotto e Salimbeni"
+            }
+          ],
+          "note": "Non promuovere: candidato buono, ma serve fonte finale consultabile e stabile prima della copy."
+        },
+        "verificationRetry": {
+          "retriedAt": "2026-07-07",
+          "retryOutcome": "partial_local_context_only",
+          "retryAttempts": [
+            {
+              "label": "Comune di Osoppo / pagina istituzionale",
+              "url": "https://www.comune.osoppo.ud.it/",
+              "result": "site requires JS; no stable content page extracted for the assedio"
+            },
+            {
+              "label": "Osoppo page context",
+              "url": "https://it.wikipedia.org/wiki/Osoppo",
+              "result": "local context mentions Risorgimento and seven months resistance, but not final publication source"
+            }
+          ],
+          "retryNote": "Retry eseguito: contesto locale utile, ma fonte finale non ancora abbastanza pulita. Non promuovere.",
+          "secondRetriedAt": "2026-07-07",
+          "secondRetryOutcome": "local_historical_source_found_date_confirmed",
+          "secondRetryNote": "Fonte storica locale trovata nel PDF Pagine Friulane 1902; data 26 aprile confermata come avvio dell'assedio tramite cross-check, mentre la fonte locale sostiene il contesto storico dell'assedio."
+        },
+        "localHistoricalSource": {
+          "label": "Pagine Friulane, anno XIV, n. 9, 30 marzo 1902 - Memorie storiche sull'assedio di Osoppo",
+          "path": "external/research/pagine_friulane_1901-1902_9-assedio Osoppo.pdf",
+          "use": "local_historical_source",
+          "extractedWith": "pypdf",
+          "pages": 16,
+          "evidence": [
+            "Titolo: Memorie storiche sull'assedio di Osoppo (24 Marzo-13 Ottobre 1848).",
+            "Nel testo: alla data del 26 aprile Licurgo Zannini assunse l'effettivo comando della fortezza."
+          ],
+          "note": "Fonte utile e forte per Osoppo, ma la memoria del giorno non va pubblicata sul 26 aprile senza scelta editoriale: la fonte inquadra l'assedio 24 marzo-13 ottobre, mentre il 26 aprile riguarda il comando Zannini/provvigionamenti."
+        },
+        "verifiedForCopyAt": "2026-07-07",
+        "verificationDecision": {
+          "status": "source_verified_for_copy",
+          "decidedAt": "2026-07-07",
+          "basis": [
+            "Pagine Friulane 1902 as local historical source for the siege context",
+            "Wikipedia page used only as date cross-check for 26 April start",
+            "PDF text also contains a 26 April passage about Licurgo Zannini taking effective command"
+          ],
+          "copyConstraint": "La copy puo usare il 26 aprile come data di avvio dell'assedio, ma deve restare sobria e citare Osoppo come memoria storica, senza dettagli militari eccessivi."
+        }
+      },
+      "rankingReasons": [
+        "Evento: 32 punti base",
+        "Osoppo: 6 punti luogo",
+        "Categoria storia: 22 punti",
+        "Penalita rumore: -4"
+      ],
+      "editorialNote": "Candidato locale chiaro; da verificare con fonte storica prima di scrivere la memoria.",
+      "readyForUi": true,
+      "copyDraft": {
+        "status": "approved",
+        "it": {
+          "title": "L'assedio di Osoppo",
+          "summary": "Il 26 aprile 1848 iniziò l'assedio di Osoppo. La fortezza friulana divenne uno dei luoghi simbolo della resistenza del 1848, ricordata anche nelle memorie storiche pubblicate da Pagine Friulane.",
+          "secondaryIntro": "Altre ricorrenze locali del giorno"
+        },
+        "fur": {
+          "title": "L'assedi di Osoppo",
+          "summary": "Ai 26 di Avrîl dal 1848 al scomençà l'assedi di Osoppo. La fuartece furlane e deventà un dai lûcs simbui de resistence dal 1848, ricuardade ancje tes memoriis storichis di Pagine Friulane.",
+          "secondaryIntro": "Altris ricorincis locâls dal dì"
+        },
+        "editorialNote": "Bozza breve: data, luogo e memoria storica. FUR da fare e fonte da citare nella scheda editoriale."
+      }
+    }
+  ]
+}

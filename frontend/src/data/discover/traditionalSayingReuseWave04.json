@@ -1,0 +1,101 @@
+{
+  "schemaVersion": 1,
+  "batchId": "traditional-saying-reuse-wave-04",
+  "snapshotDate": "2026-09-01",
+  "purpose": "Cinque detti per ampliare la varietà di Scopri con campi, usanze, responsabilità e lavoro, riusando soltanto testi IT/FUR già approvati nell'Almanacco.",
+  "readyForUi": false,
+  "authoritativeCatalog": "frontend/src/data/almanac/proverbs.json",
+  "runtimeDescriptorCatalog": "frontend/src/data/discover/traditionalSayingAlmanacReuse.json",
+  "primaryBibliographicSource": {
+    "label": "Valentino Ostermann, Proverbi friulani raccolti dalla viva voce del popolo, 1876",
+    "catalogUrl": "https://www.techeudine.it/biblioteche-digital-furlane/proverbi-friulani-raccolti-dalla-viva-voce-del-popolo",
+    "facsimileUrl": "https://manoscrittisbhu.comune.udine.it/uploads/BDF/LO11116556.pdf"
+  },
+  "editorialDecision": {
+    "basis": "user_delegated_assisted_editorial_review",
+    "scope": "reuse_existing_approved_copy_only",
+    "independentHumanReview": false,
+    "note": "Decisione assistita di riuso nel mandato di completare Scopri. Testi, grafia normalizzata e approvazioni IT/FUR restano nel catalogo Almanacco: nessuna nuova traduzione, certificazione ARLeF o approvazione dell'utente frase per frase."
+  },
+  "preservedCatalog": {
+    "records": 379,
+    "sha256Json": "fc6d44d1636cc9c3eaa6aeb7e8fefcdba88cf35f4ba51173ef52dd15176169d6"
+  },
+  "preservedDedicatedCatalog": {
+    "records": 11,
+    "sha256Json": "2815007a540341eb22de796fa0d2ecc156da9c764c0a5bf9d41c5a9e169c7f1a"
+  },
+  "preservedDescriptors": {
+    "records": 64,
+    "sha256Json": "2b689e2d09b86dd8f383a99507069d74c541a836f5f2c7b760943a7ea2d10684"
+  },
+  "temporalRule": {
+    "recurrence": "always",
+    "selectionKind": "rotation",
+    "note": "Nessuno dei cinque testi autorevoli ha ancoraggi temporali. Non si deducono mesi, stagioni, meteo osservato, cicli agricoli attuali o provenienze comunali."
+  },
+  "rules": [
+    "Il manifest non è contenuto UI e non duplica copy IT/FUR; i descrittori puntano ai proverbId autorevoli.",
+    "Riusare un proverbio in Scopri non modifica testo, calendario o selezione dell'Almanacco.",
+    "Le immagini agricole e di mestiere restano detti popolari storici, non consigli agronomici, commerciali o morali dell'app.",
+    "I cinque testi sono distinti dai settantacinque record precedenti; le affinità di tema non vengono trasformate in equivalenze.",
+    "Il credito resta Ostermann 1876 con la pagina conservata nel record autorevole."
+  ],
+  "records": [
+    {
+      "proverbId": "ost1876-nolis-panolis",
+      "theme": "campi_e_pannocchie",
+      "reason": "L'associazione popolare fra annata nuvolosa e pannocchie aggiunge un'immagine del mais. Resta osservazione storica, non previsione meteorologica o verità agronomica; non le viene assegnato un mese.",
+      "sourceReference": {
+        "citation": "Facsimile Ostermann 1876, p. PDF 40",
+        "edition": 1876,
+        "pdfPage": 40
+      },
+      "existingEditorialReviewAt": "2026-07-22"
+    },
+    {
+      "proverbId": "ost1876-altris-timps-altris-usancis",
+      "theme": "mutamento_delle_usanze",
+      "reason": "Il cambiamento delle usanze nel tempo è distinto dal detto già presente sulle usanze di ogni paese: qui l'asse è temporale, non geografico, e non giudica migliore il passato.",
+      "sourceReference": {
+        "citation": "Facsimile Ostermann 1876, p. PDF 302",
+        "edition": 1876,
+        "pdfPage": 302
+      },
+      "existingEditorialReviewAt": "2026-07-23"
+    },
+    {
+      "proverbId": "ost1876-scove-denant-puarte",
+      "theme": "responsabilita_personale",
+      "reason": "La porta di casa esprime l'attenzione alle proprie responsabilità prima di quelle altrui. È un'immagine domestica distinta dai detti su promessa, prudenza e collaborazione.",
+      "sourceReference": {
+        "citation": "Facsimile Ostermann 1876, p. PDF 244",
+        "edition": 1876,
+        "pdfPage": 244
+      },
+      "existingEditorialReviewAt": "2026-08-02"
+    },
+    {
+      "proverbId": "ost1876-pan-sudat-no-robat",
+      "theme": "lavoro_onesto",
+      "reason": "Il pane guadagnato contrapposto a quello rubato introduce il valore tradizionale del lavoro onesto. Non diventa una prescrizione sociale o un giudizio sull'utente.",
+      "sourceReference": {
+        "citation": "Facsimile Ostermann 1876, p. PDF 189",
+        "edition": 1876,
+        "pdfPage": 189
+      },
+      "existingEditorialReviewAt": "2026-08-02"
+    },
+    {
+      "proverbId": "ost1876-cite-mani",
+      "theme": "abilita_del_mestiere",
+      "reason": "Pentola e manico portano nella rotazione un'immagine concreta del saper fare artigiano. È distinta dai detti sull'imparare e non viene attribuita a un mestiere o territorio specifico.",
+      "sourceReference": {
+        "citation": "Facsimile Ostermann 1876, p. PDF 176",
+        "edition": 1876,
+        "pdfPage": 176
+      },
+      "existingEditorialReviewAt": "2026-07-25"
+    }
+  ]
+}

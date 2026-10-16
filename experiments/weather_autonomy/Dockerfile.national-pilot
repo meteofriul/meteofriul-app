@@ -1,0 +1,9 @@
+FROM python:3.13-slim
+ENV PYTHONDONTWRITEBYTECODE=1 PYTHONUNBUFFERED=1 PYTHONPATH=/app:/app/experiments/weather_autonomy
+RUN pip install --no-cache-dir --disable-pip-version-check numpy==2.5.2 eccodes==2.48.0 google-cloud-storage==3.13.1 gunicorn==23.0.0
+WORKDIR /app/experiments/weather_autonomy
+COPY experiments/weather_autonomy/ /app/experiments/weather_autonomy/
+COPY backend/app/data/italy_municipalities_2026.json /app/backend/app/data/
+RUN python national_cloud_assets.py && python -c "import national_cloud_reader, national_cloud_worker; print('National pilot imports verified')"
+USER 65532:65532
+CMD ["gunicorn", "--bind=0.0.0.0:8080", "--workers=1", "--threads=2", "--timeout=300", "--access-logfile=/dev/null", "national_cloud_reader:application"]

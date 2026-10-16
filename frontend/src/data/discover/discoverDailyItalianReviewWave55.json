@@ -1,0 +1,100 @@
+{
+  "schemaVersion": 1,
+  "generatedAt": "2026-07-19",
+  "purpose": "Cinquantacinquesimo lotto Scopri IT: verifica di quindici candidati collocati in date ancora prive di memoria principale. Nessuna voce supera la soglia editoriale: quattordici profili sportivi non documentano un risultato storico eccezionale e un profilo politico e generico. Le esclusioni impediscono di usare persone poco rilevanti soltanto per coprire il calendario.",
+  "policy": {
+    "readyForUi": false,
+    "furDeferred": true,
+    "dateFormat": "DD-MM",
+    "requiresFinalItalianApproval": true,
+    "excludeDeaths": true,
+    "excludeGenericPoliticalProfiles": true,
+    "excludeGenericProfessionalProfiles": true,
+    "excludeSportsOnlyProfiles": true,
+    "allowExceptionalSportsProfiles": true,
+    "rejectBirthplaceOnlyProfiles": true,
+    "rejectSemanticDuplicates": true,
+    "rejectUncertainCalendarDates": true,
+    "rejectInternallyInconsistentRecords": true,
+    "requireOneCanonicalSource": true,
+    "sourceFirst": true,
+    "publishAfterFurOnly": true,
+    "allowMultipleMemoriesPerDate": true,
+    "doNotPromoteToPrimaryForCoverageOnly": true
+  },
+  "summary": {
+    "reviewed": 15,
+    "keepDaily": 0,
+    "primary": 0,
+    "secondary": 0,
+    "hold": 0,
+    "excluded": 15,
+    "canonicalPrimaryDatesBefore": 274,
+    "canonicalPrimaryDatesAfter": 274,
+    "currentVisiblePrimaryCoverage": 269
+  },
+  "keepDaily": [],
+  "hold": [],
+  "excluded": [
+    {
+      "id": "master-fvg-03-10-Q64500522",
+      "reason": "Graziella Trampus presenta una carriera sportiva professionale, ma il materiale disponibile non documenta un risultato olimpico, mondiale o storico eccezionale coerente con la soglia di Scopri."
+    },
+    {
+      "id": "master-fvg-06-05-Q3611696",
+      "reason": "Alice Richter presenta una carriera sportiva professionale, ma il materiale disponibile non documenta un risultato olimpico, mondiale o storico eccezionale coerente con la soglia di Scopri."
+    },
+    {
+      "id": "master-fvg-06-10-Q3893790",
+      "reason": "Paolo Boesso presenta una carriera sportiva professionale, ma il materiale disponibile non documenta un risultato olimpico, mondiale o storico eccezionale coerente con la soglia di Scopri."
+    },
+    {
+      "id": "master-fvg-07-01-Q16573874",
+      "reason": "Luca Morassi presenta una carriera sportiva professionale, ma il materiale disponibile non documenta un risultato internazionale eccezionale o un impatto storico sufficiente per Scopri."
+    },
+    {
+      "id": "master-fvg-07-11-Q3934580",
+      "reason": "Riccardo Pieri ha svolto il ruolo di arbitro di calcio, ma il profilo non documenta un contributo storico autonomo o un primato eccezionale coerente con la soglia editoriale di Scopri."
+    },
+    {
+      "id": "master-fvg-07-11-Q18811994",
+      "reason": "Luca Gandini presenta una carriera sportiva professionale e dirigenziale, ma non un risultato storico eccezionale o un impatto durevole sufficiente per la memoria giornaliera."
+    },
+    {
+      "id": "master-fvg-08-04-Q3619595",
+      "reason": "Antonio Francescatto presenta una carriera sportiva professionale, ma il materiale disponibile non documenta un risultato olimpico, mondiale o storico eccezionale coerente con la soglia di Scopri."
+    },
+    {
+      "id": "master-fvg-09-01-Q6911387",
+      "reason": "Moreno Boer presenta una carriera sportiva professionale, ma il materiale disponibile non documenta una medaglia olimpica, mondiale o un risultato storico eccezionale sufficiente per Scopri."
+    },
+    {
+      "id": "master-fvg-09-03-Q6836868",
+      "reason": "Michele Zerial presenta una carriera sportiva professionale, ma il materiale disponibile non documenta una medaglia olimpica, mondiale o un risultato storico eccezionale sufficiente per Scopri."
+    },
+    {
+      "id": "master-fvg-09-07-Q3707143",
+      "reason": "Diego Cafagna presenta una carriera sportiva professionale, ma il materiale disponibile non documenta una medaglia olimpica, mondiale o un risultato storico eccezionale sufficiente per Scopri."
+    },
+    {
+      "id": "master-fvg-09-08-Q3701828",
+      "reason": "Daniela Sabatini presenta una carriera sportiva professionale, ma il materiale disponibile non documenta una medaglia olimpica, mondiale o un risultato storico eccezionale sufficiente per Scopri."
+    },
+    {
+      "id": "master-fvg-12-04-Q51879962",
+      "reason": "Aura Muzzo presenta una carriera sportiva professionale e internazionale, ma non un primato o risultato storico eccezionale sufficiente per diventare memoria principale di Scopri."
+    },
+    {
+      "id": "master-fvg-13-01-Q50359737",
+      "reason": "Sante Perticaro presenta soltanto un ruolo politico generico, senza un contributo storico autonomo o un intervento legislativo di rilievo coerente con la soglia di Scopri."
+    },
+    {
+      "id": "master-fvg-13-06-Q21076838",
+      "reason": "Martha Faraguna presenta una carriera sportiva professionale, ma il materiale disponibile non documenta una medaglia olimpica, mondiale o un risultato storico eccezionale sufficiente per Scopri."
+    },
+    {
+      "id": "master-fvg-13-11-Q3080872",
+      "reason": "Francesca Devetag presenta una carriera sportiva professionale, ma il materiale disponibile non documenta una medaglia olimpica, mondiale o un risultato storico eccezionale sufficiente per Scopri."
+    }
+  ]
+}

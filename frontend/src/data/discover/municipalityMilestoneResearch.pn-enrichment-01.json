@@ -1,0 +1,161 @@
+{
+  "schemaVersion": 1,
+  "batchId": "pn-enrichment-milestones-01",
+  "snapshotDate": "2026-08-31",
+  "purpose": "Lotto di ricerca non visibile in UI: quattro tappe documentate per arricchire i profili di Andreis, Cimolais e Sacile, già presenti nel catalogo.",
+  "runtimeIntegration": false,
+  "editorialPolicy": {
+    "sourceEvidenceRequired": true,
+    "ambiguousDatesExcluded": true,
+    "italianCopyStatus": "editorial_draft",
+    "friulianCopyStatus": "pending_human_review",
+    "readyForUi": false
+  },
+  "excludedClaims": [
+    {
+      "municipality": "Cimolais",
+      "claim": "Il Rifugio Pordenone viene inaugurato nel 1928.",
+      "reason": "La storia CAI data l'inaugurazione al 25 maggio 1930. PrenotaRifugi distingue la delibera del 1928, i lavori del 1929 e l'inaugurazione del 1930.",
+      "sourceUrl": "https://www.prenotarifugi.cai.it/en/detail/Rifugio%20Pordenone/?id=6000"
+    },
+    {
+      "municipality": "Cimolais",
+      "claim": "Il Rifugio Pordenone si trova nel Comune di Pordenone.",
+      "reason": "La denominazione richiama la sezione CAI; la scheda del rifugio indica il Comune di Cimolais e la Val Cimoliana.",
+      "sourceUrl": "https://caipordenone.it/strutture/rifugio-pordenone/"
+    },
+    {
+      "municipality": "Sacile",
+      "claim": "Nel 1190 Sacile diventa uno Stato indipendente.",
+      "reason": "La fonte documenta il privilegio di borghesia e le libertà comunali, non la nascita di uno Stato indipendente.",
+      "sourceUrl": "https://www.visitsacile.it/arte-storia-fede/storia/"
+    }
+  ],
+  "municipalities": [
+    {
+      "istatCode": "093001",
+      "municipality": "Andreis",
+      "province": "PN",
+      "currentMilestoneCount": 1,
+      "currentMilestoneIds": ["andreis-1949"],
+      "decision": "source_verified_it_fur_pending",
+      "candidates": [
+        {
+          "id": "andreis-museo-1981",
+          "year": 1981,
+          "label": {
+            "it": "Apre al pubblico il Museo dell'Arte e Civiltà Contadina di Andreis",
+            "fur": null
+          },
+          "evidence": "La sezione Museo etnografico della pagina dell'Ente Parco colloca l'apertura al pubblico nel luglio 1981.",
+          "source": {
+            "label": "Parco Naturale Dolomiti Friulane - Museo etnografico di Andreis",
+            "type": "regional_institution",
+            "url": "https://www.parcodolomitifriulane.it/i-paesi-del-parco/andreis/",
+            "checkedAt": "2026-08-31"
+          },
+          "duplicateReview": {
+            "exactDuplicate": false,
+            "relatedRecordIds": ["institutional-archive-pettini-osso-andreis"],
+            "note": "La scheda d'archivio racconta le collezioni e il lavoro dell'osso; questa tappa riguarda esclusivamente la data di apertura del museo. Non riprende il termine ambiguo relativo alle lavorazioni."
+          }
+        }
+      ]
+    },
+    {
+      "istatCode": "093014",
+      "municipality": "Cimolais",
+      "province": "PN",
+      "currentMilestoneCount": 1,
+      "currentMilestoneIds": ["cimolais-1902"],
+      "decision": "source_verified_it_fur_pending",
+      "candidates": [
+        {
+          "id": "cimolais-rifugio-pordenone-1930",
+          "year": 1930,
+          "documentedDate": "1930-05-25",
+          "label": {
+            "it": "Viene inaugurato il Rifugio Pordenone in Val Cimoliana",
+            "fur": null
+          },
+          "evidence": "La storia della sezione CAI Pordenone riporta il 25 maggio 1930 come data di inaugurazione del rifugio; la scheda della struttura ne conferma la collocazione a Cimolais.",
+          "source": {
+            "label": "CAI Pordenone - Storia della sezione",
+            "type": "cultural_institution",
+            "url": "https://caipordenone.it/chi-siamo/storia/",
+            "checkedAt": "2026-08-31"
+          },
+          "supportingSources": [
+            {
+              "label": "CAI Pordenone - Rifugio Pordenone",
+              "type": "cultural_institution",
+              "url": "https://caipordenone.it/strutture/rifugio-pordenone/",
+              "checkedAt": "2026-08-31"
+            },
+            {
+              "label": "Club Alpino Italiano - PrenotaRifugi, Rifugio Pordenone",
+              "type": "cultural_institution",
+              "url": "https://www.prenotarifugi.cai.it/en/detail/Rifugio%20Pordenone/?id=6000",
+              "checkedAt": "2026-08-31"
+            }
+          ],
+          "duplicateReview": {
+            "exactDuplicate": false,
+            "relatedRecordIds": [],
+            "note": "Fatto distinto dalla prima ascensione del Campanile di Val Montanaia del 1902 già presente nel profilo. Nessun dato attuale su apertura, ricettività o percorsi viene introdotto."
+          }
+        },
+        {
+          "id": "cimolais-stambecco-1985",
+          "year": 1985,
+          "label": {
+            "it": "In Val Cimoliana viene reintrodotto lo stambecco",
+            "fur": null
+          },
+          "evidence": "Nel paragrafo Val Cimoliana la pagina dell'Ente Parco data al 1985 la reintroduzione dello stambecco, con esemplari provenienti dal Gran Paradiso.",
+          "source": {
+            "label": "Parco Naturale Dolomiti Friulane - Cimolais, Val Cimoliana",
+            "type": "regional_institution",
+            "url": "https://www.parcodolomitifriulane.it/i-paesi-del-parco/cimolais/",
+            "checkedAt": "2026-08-31"
+          },
+          "duplicateReview": {
+            "exactDuplicate": false,
+            "relatedRecordIds": [],
+            "note": "Nuovo fatto naturalistico storico, non una ricorrenza né una descrizione della popolazione attuale. Non attribuisce il progetto a un ente che non fosse ancora costituito."
+          }
+        }
+      ]
+    },
+    {
+      "istatCode": "093037",
+      "municipality": "Sacile",
+      "province": "PN",
+      "currentMilestoneCount": 2,
+      "currentMilestoneIds": ["sacile-796", "sacile-1420"],
+      "decision": "source_verified_it_fur_pending",
+      "candidates": [
+        {
+          "id": "sacile-liberta-comunali-1190",
+          "year": 1190,
+          "label": {
+            "it": "Sacile ottiene il privilegio di borghesia e le libertà comunali",
+            "fur": null
+          },
+          "evidence": "Il portale turistico cittadino, nella sezione dedicata al periodo comunale, colloca nel 1190 la concessione del privilegio di borghesia, spiegato come libertà comunali.",
+          "source": {
+            "label": "Visit Sacile - Storia della città, periodo comunale",
+            "type": "official_municipality",
+            "url": "https://www.visitsacile.it/arte-storia-fede/storia/",
+            "checkedAt": "2026-08-31"
+          },
+          "duplicateReview": {
+            "exactDuplicate": false,
+            "relatedRecordIds": [],
+            "note": "Fatto distinto dalle tappe del 796 e del 1420 già presenti. Esclusi il primato regionale non necessario e la battaglia del 1809, già raccontata altrove."
+          }
+        }
+      ]
+    }
+  ]
+}

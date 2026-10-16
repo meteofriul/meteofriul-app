@@ -1,0 +1,1120 @@
+{
+  "schemaVersion": 1,
+  "generatedAt": "2026-07-19",
+  "scope": "discover_municipality_profiles_go_ts_excluding_gorizia_trieste",
+  "profiles": [
+    {
+      "id": "municipality-profile-capriva-del-friuli",
+      "istatCode": "031001",
+      "municipality": "Capriva del Friuli",
+      "province": "GO",
+      "title": {
+        "it": "Capriva del Friuli, castelli tra le vigne",
+        "fur": "Caprive, cjistiei tra i vignâi"
+      },
+      "summary": {
+        "it": "Capriva del Friuli è un paese del Collio goriziano, disteso fra colline vitate e antiche dimore. Nel suo territorio il Castello di Spessa lega il paesaggio del vino a una storia lunga secoli.",
+        "fur": "Caprive e je un paîs dal Cuei gurizan, distirât tra culinis di vignâi e antighis dimoris. Tal so teritori il Cjistiel di Spessa al lee il paisaç dal vin a une storie che e dure di secui."
+      },
+      "milestones": [],
+      "source": {
+        "label": "PromoTurismoFVG - Capriva del Friuli",
+        "type": "regional_institution",
+        "url": "https://www.turismofvg.it/capriva-del-friuli"
+      },
+      "languageStatus": {
+        "it": "approved",
+        "fur": "approved"
+      },
+      "editorialStatus": "reviewed",
+      "readyForUi": true,
+      "review": {
+        "itReviewedAt": "2026-07-19",
+        "method": "source_cross_check",
+        "furReviewedAt": "2026-07-19",
+        "furMethod": "linguistic_review"
+      }
+    },
+    {
+      "id": "municipality-profile-cormons",
+      "istatCode": "031002",
+      "municipality": "Cormons",
+      "province": "GO",
+      "title": {
+        "it": "Cormons, ai piedi del Quarin",
+        "fur": "Cormons, ai pîts dal Quarin"
+      },
+      "summary": {
+        "it": "Cormons sorge ai piedi del monte Quarin, nel punto in cui i rilievi del Collio si aprono sulla pianura. Vigneti, frutteti terrazzati e case coloniche raccontano un paesaggio modellato da una lunga cultura agricola.",
+        "fur": "Cormons al è ai pîts dal mont Quarin, tal pont dulà che i rilêfs dal Cuei si vierzin su la plane. Vignâi, frutêts a teracis e cjasis colonichis a contin un paisaç modellât di une lungje culture agricole."
+      },
+      "milestones": [],
+      "source": {
+        "label": "Comune di Cormons - Cenni storici",
+        "type": "official_municipality",
+        "url": "https://www.comune.cormons.go.it/it/novita-186354/notizie-186355/cenni-storici-15552"
+      },
+      "languageStatus": {
+        "it": "approved",
+        "fur": "approved"
+      },
+      "editorialStatus": "reviewed",
+      "readyForUi": true,
+      "review": {
+        "itReviewedAt": "2026-07-19",
+        "method": "source_cross_check",
+        "furReviewedAt": "2026-07-19",
+        "furMethod": "linguistic_review"
+      }
+    },
+    {
+      "id": "municipality-profile-doberdò-del-lago",
+      "istatCode": "031003",
+      "municipality": "Doberdò del Lago",
+      "province": "GO",
+      "title": {
+        "it": "Doberdò del Lago, il Carso e la memoria",
+        "fur": "Doberdò del Lago, il Cjars e la memorie"
+      },
+      "summary": {
+        "it": "Doberdò del Lago è l'unico comune interamente carsico del Goriziano, in un territorio di laghi, grotte e antichi castellieri. Divenne comune autonomo nel 1850 e il suo paesaggio conserva tracce profonde della Grande Guerra e della Resistenza.",
+        "fur": "Doberdò del Lago al è l'unic comun dal Gurizan dut carsic, intun teritori di lâcs, grotis e antîcs cjistilîrs. Deventât comun autonom tal 1850, il so paisaç al conserve olmis profondis de Grande Vuere e de Resistencje."
+      },
+      "milestones": [
+        {
+          "id": "doberdo-autonomous-municipality",
+          "year": 1850,
+          "label": {
+            "it": "Doberdò del Lago diventa comune autonomo",
+            "fur": "Doberdò del Lago al devente comun autonom"
+          }
+        }
+      ],
+      "source": {
+        "label": "Comune di Doberdò del Lago - Storia",
+        "type": "official_municipality",
+        "url": "https://www.comune.doberdo.go.it/it/vivere-il-comune-96560/luoghi-96561/storia-156637"
+      },
+      "languageStatus": {
+        "it": "approved",
+        "fur": "approved"
+      },
+      "editorialStatus": "reviewed",
+      "readyForUi": true,
+      "review": {
+        "itReviewedAt": "2026-07-19",
+        "method": "source_cross_check",
+        "furReviewedAt": "2026-07-19",
+        "furMethod": "linguistic_review"
+      }
+    },
+    {
+      "id": "municipality-profile-dolegna-del-collio",
+      "istatCode": "031004",
+      "municipality": "Dolegna del Collio",
+      "province": "GO",
+      "title": {
+        "it": "Dolegna del Collio, borghi lungo lo Judrio",
+        "fur": "Dolegne dal Cuei, borcs dilunc dal Judrio"
+      },
+      "summary": {
+        "it": "Dolegna del Collio raccoglie piccoli borghi rurali tra colline vitate, boschi e il corso dello Judrio. Quel fiume fu a lungo frontiera tra la Contea di Gorizia e il Lombardo-Veneto, lasciando al paese una forte identità di confine.",
+        "fur": "Dolegne dal Cuei e met adun piçui borcs rurâi tra culinis di vignâi, boscs e il cors dal Judrio. Chel flum al fo par lunc timp frontiere tra la Contee di Gurize e il Lombart-Venit, lassant al paîs une fuarte identitât di confin."
+      },
+      "milestones": [],
+      "source": {
+        "label": "Consorzio tutela vini Collio - Dolegna del Collio",
+        "type": "cultural_institution",
+        "url": "https://www.collio.it/punti-interesse-category/comuni/"
+      },
+      "languageStatus": {
+        "it": "approved",
+        "fur": "approved"
+      },
+      "editorialStatus": "reviewed",
+      "readyForUi": true,
+      "review": {
+        "itReviewedAt": "2026-07-19",
+        "method": "source_cross_check",
+        "furReviewedAt": "2026-07-19",
+        "furMethod": "linguistic_review"
+      }
+    },
+    {
+      "id": "municipality-profile-farra-d-isonzo",
+      "istatCode": "031005",
+      "municipality": "Farra d'Isonzo",
+      "province": "GO",
+      "title": {
+        "it": "Farra d'Isonzo, un paese che guarda le stelle",
+        "fur": "Fare, un paîs che al cjale lis stelis"
+      },
+      "summary": {
+        "it": "A Farra d'Isonzo l'osservatorio astronomico nacque dalla passione di sette studenti, partiti da un piccolo telescopio e da un ricovero costruito con materiali di fortuna. Da quell'esperienza è cresciuto un centro attivo nello studio degli asteroidi e nella divulgazione, diventato parte dell'identità del paese.",
+        "fur": "A Fare l'osservatori astronomic al nasè de passion di siet students, partîts di un piçul telescopi e di un ricover costruît cun materiâi di fortune. Di chê esperience al è cressût un centri atîf tal studi dai asteroits e te divulgazion, deventât part de identitât dal paîs."
+      },
+      "milestones": [],
+      "source": {
+        "label": "Circolo Culturale Astronomico di Farra d'Isonzo - La nostra storia",
+        "type": "cultural_institution",
+        "url": "https://www.ccaf.it/storia/"
+      },
+      "languageStatus": {
+        "it": "approved",
+        "fur": "approved"
+      },
+      "editorialStatus": "reviewed",
+      "readyForUi": true,
+      "review": {
+        "itReviewedAt": "2026-07-19",
+        "method": "source_cross_check",
+        "furReviewedAt": "2026-07-19",
+        "furMethod": "linguistic_review"
+      }
+    },
+    {
+      "id": "municipality-profile-fogliano-redipuglia",
+      "istatCode": "031006",
+      "municipality": "Fogliano Redipuglia",
+      "province": "GO",
+      "title": {
+        "it": "Fogliano Redipuglia, paesaggio della memoria",
+        "fur": "Fogliano Redipuglia, paisaç de memorie"
+      },
+      "summary": {
+        "it": "Il territorio di Fogliano Redipuglia porta i segni delle battaglie combattute sul Carso durante la Grande Guerra. Sulle pendici del monte Sei Busi sorge il Sacrario di Redipuglia, che custodisce i resti di 100.187 caduti ed è il maggiore sacrario militare italiano.",
+        "fur": "Il teritori di Fogliano Redipuglia al puarte i segns des bataiis combatudis sul Cjars vie pe Grande Vuere. Su lis pendicis dal mont Sei Busi al è il Sacrari di Redipuie, che al custodìs i rescj di 100.187 soldâts muarts e al è il plui grant sacrari militâr talian."
+      },
+      "milestones": [],
+      "source": {
+        "label": "Comune di Fogliano Redipuglia - Sacrario di Redipuglia",
+        "type": "official_municipality",
+        "url": "https://www.comune.foglianoredipuglia.go.it/it/vivere/sacrario-di-redipuglia"
+      },
+      "languageStatus": {
+        "it": "approved",
+        "fur": "approved"
+      },
+      "editorialStatus": "reviewed",
+      "readyForUi": true,
+      "review": {
+        "itReviewedAt": "2026-07-19",
+        "method": "source_cross_check",
+        "furReviewedAt": "2026-07-19",
+        "furMethod": "linguistic_review"
+      }
+    },
+    {
+      "id": "municipality-profile-gradisca-d-isonzo",
+      "istatCode": "031008",
+      "municipality": "Gradisca d'Isonzo",
+      "province": "GO",
+      "title": {
+        "it": "Gradisca d'Isonzo, dalla fortezza veneziana alla città asburgica",
+        "fur": "Gardiscje dal Isonç, de fuartece veneziane ae citât asburgjiche"
+      },
+      "summary": {
+        "it": "Gradisca d'Isonzo nacque come città-fortezza veneziana, protetta dalle mura erette nel 1479 contro le incursioni ottomane. Passata sotto il controllo asburgico nel 1511, vide affiancarsi alla struttura militare palazzi nobiliari ed edifici barocchi.",
+        "fur": "Gardiscje dal Isonç e nassè come citât-fuartece veneziane, protezude des muris tiradis sù tal 1479 cuintri lis incursions otomanis. Passade sot dal control asburgjic tal 1511, e viodè zontâsi ae struture militâr palaçs nobiliârs e edificis barocs."
+      },
+      "milestones": [
+        {
+          "id": "gradisca-venetian-walls",
+          "year": 1479,
+          "label": {
+            "it": "Venezia erige la cinta fortificata di Gradisca",
+            "fur": "Vignesie e tire sù la cerclade fortificade di Gardiscje"
+          }
+        },
+        {
+          "id": "gradisca-habsburg-rule",
+          "year": 1511,
+          "label": {
+            "it": "Gradisca passa sotto il controllo asburgico",
+            "fur": "Gardiscje e passe sot dal control asburgjic"
+          }
+        }
+      ],
+      "source": {
+        "label": "Comune di Gradisca d'Isonzo - La città",
+        "type": "official_municipality",
+        "url": "https://www.comune.gradiscadisonzo.go.it/it/novita-232939/avvisi-232942/la-citta-48177"
+      },
+      "languageStatus": {
+        "it": "approved",
+        "fur": "approved"
+      },
+      "editorialStatus": "reviewed",
+      "readyForUi": true,
+      "review": {
+        "itReviewedAt": "2026-07-19",
+        "method": "source_cross_check",
+        "furReviewedAt": "2026-07-19",
+        "furMethod": "linguistic_review"
+      }
+    },
+    {
+      "id": "municipality-profile-grado",
+      "istatCode": "031009",
+      "municipality": "Grado",
+      "province": "GO",
+      "title": {
+        "it": "Grado, il castrum tra laguna e mare",
+        "fur": "Grau, il castrum tra lagune e mâr"
+      },
+      "summary": {
+        "it": "Grado conserva nel centro storico l'impronta del castrum tardoantico, fortificazione sorta probabilmente nella prima metà del VI secolo. Su quel nucleo crebbe la città dei patriarchi, tra basiliche paleocristiane, campielli e calli.",
+        "fur": "Grau al conserve tal centri storic la olme dal castrum de tarde antichitât, une fortificazion nassude probabilmentri inte prime metât dal secul VI. Su chel nucli e cresè la citât dai patriarcjis, tra basilichis paleocristianis, campielli e calli."
+      },
+      "milestones": [
+        {
+          "id": "grado-late-antique-castrum",
+          "century": "VI",
+          "label": {
+            "it": "Il castrum tardoantico prende forma nel nucleo dell'attuale centro storico",
+            "fur": "Il castrum de tarde antichitât al cjape forme tal nucli dal centri storic di cumò"
+          }
+        }
+      ],
+      "source": {
+        "label": "Grado Turismo - Il Castrum",
+        "type": "cultural_institution",
+        "url": "https://grado.it/it/cosa-fare/arte-storia-e-cultura/la-citta-e-il-centro-storico/il-castrum"
+      },
+      "languageStatus": {
+        "it": "approved",
+        "fur": "approved"
+      },
+      "editorialStatus": "reviewed",
+      "readyForUi": true,
+      "review": {
+        "itReviewedAt": "2026-07-19",
+        "method": "source_cross_check",
+        "furReviewedAt": "2026-07-19",
+        "furMethod": "linguistic_review"
+      }
+    },
+    {
+      "id": "municipality-profile-mariano-del-friuli",
+      "istatCode": "031010",
+      "municipality": "Mariano del Friuli",
+      "province": "GO",
+      "title": {
+        "it": "Mariano del Friuli, il paese delle sedie",
+        "fur": "Marian, il paîs des cjadreis"
+      },
+      "summary": {
+        "it": "Mariano del Friuli è noto per un artigianato delle sedie attivo in paese fin dal Settecento. La frazione di Corona, un tempo comune autonomo, fu aggregata a Mariano nel 1928.",
+        "fur": "Marian al è cognossût par un artesanât des cjadreis atîf tal paîs za dal Setecent. La frazion di Corona, une volte comun autonom, e fo agregade a Marian tal 1928."
+      },
+      "milestones": [
+        {
+          "id": "mariano-corona-annexation",
+          "year": 1928,
+          "label": {
+            "it": "La frazione di Corona viene aggregata a Mariano del Friuli",
+            "fur": "La frazion di Corona e ven agregade a Marian"
+          }
+        }
+      ],
+      "source": {
+        "label": "Wikipedia italiana - Mariano del Friuli",
+        "type": "wikipedia_reference",
+        "url": "https://it.wikipedia.org/wiki/Mariano_del_Friuli"
+      },
+      "languageStatus": {
+        "it": "approved",
+        "fur": "approved"
+      },
+      "editorialStatus": "reviewed",
+      "readyForUi": true,
+      "review": {
+        "itReviewedAt": "2026-07-19",
+        "method": "source_cross_check",
+        "furReviewedAt": "2026-07-19",
+        "furMethod": "linguistic_review"
+      }
+    },
+    {
+      "id": "municipality-profile-medea",
+      "istatCode": "031011",
+      "municipality": "Medea",
+      "province": "GO",
+      "title": {
+        "it": "Medea, il colle dell'Ara Pacis",
+        "fur": "Migjee, il cuel de Ara Pacis"
+      },
+      "summary": {
+        "it": "Medea conobbe a lungo le contese tra il Patriarcato di Aquileia e i conti di Gorizia, fino alla distruzione del paese nel 1268. Sul colle che domina l'abitato sorge dal 1951 l'Ara Pacis Mundi, monumento dedicato ai caduti di tutte le guerre.",
+        "fur": "Migjee e fo par lunc timp tal mieç des contesis tra il Patriarcjât di Aquilee e i conts di Gurize, fintremai ae distruzion dal paîs tal 1268. Sul cuel che al domine il centri abitât si cjate, dal 1951, la Ara Pacis Mundi, monument dedicât ai muarts di dutis lis vueris."
+      },
+      "milestones": [
+        {
+          "id": "medea-destruction",
+          "year": 1268,
+          "label": {
+            "it": "Medea viene distrutta durante le lotte tra Patriarcato e conti di Gorizia",
+            "fur": "Migjee e ven distrute vie pes lotis tra il Patriarcjât e i conts di Gurize"
+          }
+        },
+        {
+          "id": "medea-ara-pacis",
+          "year": 1951,
+          "label": {
+            "it": "Sul colle viene eretta l'Ara Pacis Mundi",
+            "fur": "Sul cuel e ven tirade sù la Ara Pacis Mundi"
+          }
+        }
+      ],
+      "source": {
+        "label": "Comune di Medea - La storia",
+        "type": "official_municipality",
+        "url": "https://www.comune.medea.go.it/it/turismo-e-informazioni-7829/la-storia-17930"
+      },
+      "languageStatus": {
+        "it": "approved",
+        "fur": "approved"
+      },
+      "editorialStatus": "reviewed",
+      "readyForUi": true,
+      "review": {
+        "itReviewedAt": "2026-07-19",
+        "method": "source_cross_check",
+        "furReviewedAt": "2026-07-19",
+        "furMethod": "linguistic_review"
+      }
+    },
+    {
+      "id": "municipality-profile-monfalcone",
+      "istatCode": "031012",
+      "municipality": "Monfalcone",
+      "province": "GO",
+      "title": {
+        "it": "Monfalcone, la città dei cantieri",
+        "fur": "Monfalcon, la citât dai cjantiers"
+      },
+      "summary": {
+        "it": "Monfalcone unisce la Rocca, antico punto di controllo sulla costa, a una moderna identità industriale e portuale. Tra la fine dell'Ottocento e il Novecento i cantieri navali e la ferrovia trasformarono profondamente la città, richiamando generazioni di lavoratori.",
+        "fur": "Monfalcon al unìs la Roche, antîc pont di control su la cueste, a une identitât moderne industriâl e portuâl. Tra la fin dal Votcent e il Nûfcent i cjantiers navâi e la ferovie a trasformarin in profonditât la citât, clamant gjenerazions di lavoradôrs."
+      },
+      "milestones": [
+        {
+          "id": "monfalcone-return-to-italy",
+          "year": 1947,
+          "label": {
+            "it": "Con l'entrata in vigore del trattato di pace, Monfalcone torna all'Italia",
+            "fur": "Cu la jentrade in vore dal tratât di pâs, Monfalcon al torne ae Italie"
+          }
+        },
+        {
+          "id": "monfalcone-osimo-border-ratification",
+          "year": 1975,
+          "label": {
+            "it": "I trattati di Osimo ratificano il confine tra Italia e Jugoslavia",
+            "fur": "I tratâts di Osimo a ratifichin il confin tra Italie e Jugoslavie"
+          }
+        }
+      ],
+      "source": {
+        "label": "Comune di Monfalcone - La storia della città",
+        "type": "official_municipality",
+        "url": "https://www.comune.monfalcone.go.it/it/novita-220905/notizie-220906/territorio-la-storia-della-citta-18781"
+      },
+      "languageStatus": {
+        "it": "approved",
+        "fur": "approved"
+      },
+      "editorialStatus": "reviewed",
+      "readyForUi": true,
+      "review": {
+        "itReviewedAt": "2026-07-19",
+        "method": "source_cross_check",
+        "furReviewedAt": "2026-07-19",
+        "furMethod": "linguistic_review"
+      }
+    },
+    {
+      "id": "municipality-profile-moraro",
+      "istatCode": "031013",
+      "municipality": "Moraro",
+      "province": "GO",
+      "title": {
+        "it": "Moraro, campagna e storia goriziana",
+        "fur": "Morâr, campagne e storie gurizane"
+      },
+      "summary": {
+        "it": "Moraro conserva l'identità rurale di un piccolo paese della campagna isontina. Di probabile origine preromana, passò dal dominio longobardo al Patriarcato di Aquileia e rimase legato ai conti di Gorizia anche dopo il 1420.",
+        "fur": "Morâr al conserve la identitât rurâl di un piçul paîs de campagne dal Lusinç. Di origjin probabilmentri preromane, al passà dal domini longobart al Patriarcjât di Aquilee e al restà leât ai conts di Gurize ancje dopo dal 1420."
+      },
+      "milestones": [],
+      "source": {
+        "label": "SIUSA - Comune di Moraro",
+        "type": "cultural_institution",
+        "url": "https://siusa-archivi.cultura.gov.it/cgi-bin/siusa/pagina.pl?Chiave=9180&RicDimF=2&TipoPag=prodente"
+      },
+      "languageStatus": {
+        "it": "approved",
+        "fur": "approved"
+      },
+      "editorialStatus": "reviewed",
+      "readyForUi": true,
+      "review": {
+        "itReviewedAt": "2026-07-19",
+        "method": "source_cross_check",
+        "furReviewedAt": "2026-07-19",
+        "furMethod": "linguistic_review"
+      }
+    },
+    {
+      "id": "municipality-profile-mossa",
+      "istatCode": "031014",
+      "municipality": "Mossa",
+      "province": "GO",
+      "title": {
+        "it": "Mossa, la villa ai piedi della Vallisella",
+        "fur": "Mosse, la vile ai pîts de Vallisella"
+      },
+      "summary": {
+        "it": "Mossa si distende tra la pianura isontina e le prime colline del Collio. Nel 1587 Giovanni di Cobenzl ricevette il feudo e vi fece costruire una residenza estiva, l'attuale Villa Cobenzl-Codelli.",
+        "fur": "Mosse e je distirade tra la plane dal Lusinç e lis primis culinis dal Cuei. Tal 1587 Giovanni di Cobenzl al ricevè il feut e al fasè costruî une residence estive, la atuâl Villa Cobenzl-Codelli."
+      },
+      "milestones": [
+        {
+          "id": "mossa-cobenzl-fief",
+          "year": 1587,
+          "label": {
+            "it": "Giovanni di Cobenzl riceve il feudo di Mossa",
+            "fur": "Giovanni di Cobenzl al ricêf il feut di Mosse"
+          }
+        }
+      ],
+      "source": {
+        "label": "Patrimonio culturale FVG - Villa Cobenzl, Codelli",
+        "type": "regional_institution",
+        "url": "https://patrimonioculturale.regione.fvg.it/architettura/?s_id=447857"
+      },
+      "languageStatus": {
+        "it": "approved",
+        "fur": "approved"
+      },
+      "editorialStatus": "reviewed",
+      "readyForUi": true,
+      "review": {
+        "itReviewedAt": "2026-07-19",
+        "method": "source_cross_check",
+        "furReviewedAt": "2026-07-19",
+        "furMethod": "linguistic_review"
+      }
+    },
+    {
+      "id": "municipality-profile-romans-d-isonzo",
+      "istatCode": "031015",
+      "municipality": "Romans d'Isonzo",
+      "province": "GO",
+      "title": {
+        "it": "Romans d'Isonzo, terra dei Longobardi",
+        "fur": "Romans dal Lusinç, tiere dai Longobarts"
+      },
+      "summary": {
+        "it": "Romans d'Isonzo custodisce una delle più vaste necropoli longobarde d'Italia, scoperta nel 1986 in località San Giorgio. I reperti hanno trasformato il paese in un punto di riferimento per la memoria dell'insediamento longobardo nell'Isontino.",
+        "fur": "Romans dal Lusinç al custodìs une des plui vastis necropolis longobardis de Italie, scuvierte tal 1986 in localitât San Giorgio. I reperts a àn trasformât il paîs intun pont di riferiment pe memorie dal insediament longobart tal teritori dal Lusinç."
+      },
+      "milestones": [
+        {
+          "id": "romans-longobard-necropolis",
+          "year": 1986,
+          "label": {
+            "it": "Viene scoperta la necropoli longobarda di San Giorgio",
+            "fur": "E ven scuvierte la necropoli longobarde di San Giorgio"
+          }
+        }
+      ],
+      "source": {
+        "label": "Comune di Romans d'Isonzo - Relazione storica Casa Pasiani-Candussi",
+        "type": "official_municipality",
+        "url": "https://www.comune.romans.go.it/media/files/031015/attachment/216_Casa_Pasiani-Candussi_Relazione_storica_xJk7jNW.pdf"
+      },
+      "languageStatus": {
+        "it": "approved",
+        "fur": "approved"
+      },
+      "editorialStatus": "reviewed",
+      "readyForUi": true,
+      "review": {
+        "itReviewedAt": "2026-07-19",
+        "method": "source_cross_check",
+        "furReviewedAt": "2026-07-19",
+        "furMethod": "linguistic_review"
+      }
+    },
+    {
+      "id": "municipality-profile-ronchi-dei-legionari",
+      "istatCode": "031016",
+      "municipality": "Ronchi dei Legionari",
+      "province": "GO",
+      "title": {
+        "it": "Ronchi dei Legionari, tra memoria e aeroporto",
+        "fur": "Roncjis dai Legionaris, tra memorie e aeropuart"
+      },
+      "summary": {
+        "it": "Il nome «dei Legionari» ricorda gli uomini radunati a Ronchi per l'impresa di Fiume del 1919. Oggi il territorio ospita l'aeroporto regionale, facendo del paese una porta del Friuli Venezia Giulia.",
+        "fur": "Il non «dai Legionaris» al ricuarde i oms metûts adun a Roncjis pe imprese di Fiume dal 1919. Vuê il teritori al ospite l'aeropuart regjonâl e al fâs dal paîs une puarte dal Friûl Vignesie Julie."
+      },
+      "milestones": [
+        {
+          "id": "ronchi-fiume-expedition",
+          "year": 1919,
+          "label": {
+            "it": "Da Ronchi prende avvio l'impresa di Fiume",
+            "fur": "Di Roncjis e partìs la imprese di Fiume"
+          }
+        }
+      ],
+      "source": {
+        "label": "PromoTurismoFVG - Ronchi dei Legionari",
+        "type": "regional_institution",
+        "url": "https://www.turismofvg.it/locality/ronchi-dei-legionari"
+      },
+      "languageStatus": {
+        "it": "approved",
+        "fur": "approved"
+      },
+      "editorialStatus": "reviewed",
+      "readyForUi": true,
+      "review": {
+        "itReviewedAt": "2026-07-19",
+        "method": "source_cross_check",
+        "furReviewedAt": "2026-07-19",
+        "furMethod": "linguistic_review"
+      }
+    },
+    {
+      "id": "municipality-profile-sagrado",
+      "istatCode": "031017",
+      "municipality": "Sagrado",
+      "province": "GO",
+      "title": {
+        "it": "Sagrado, il Carso del San Michele",
+        "fur": "Segrât, il Cjars dal San Michele"
+      },
+      "summary": {
+        "it": "Sagrado si affaccia sull'Isonzo ai piedi del monte San Michele, uno dei luoghi simbolo delle battaglie del Carso. Trincee, camminamenti e caverne compongono oggi un paesaggio di memoria della Prima guerra mondiale.",
+        "fur": "Segrât al cjale sul Lusinç ai pîts dal mont San Michele, un dai lûcs simbui des bataiis dal Cjars. Trinceis, cjaminaments e cjavernis a componin vuê un paisaç di memorie de Prime Vuere mondiâl."
+      },
+      "milestones": [
+        {
+          "id": "sagrado-san-michele-monumental-zone",
+          "year": 1922,
+          "label": {
+            "it": "Il monte San Michele viene dichiarato Zona Monumentale",
+            "fur": "Il mont San Michele al ven declarât Zone Monumentâl"
+          }
+        }
+      ],
+      "source": {
+        "label": "Museo del Monte San Michele - Zona Sacra Monumentale",
+        "type": "cultural_institution",
+        "url": "https://www.museodelmontesanmichele.it/it/zona-sacra-monumentale"
+      },
+      "languageStatus": {
+        "it": "approved",
+        "fur": "approved"
+      },
+      "editorialStatus": "reviewed",
+      "readyForUi": true,
+      "review": {
+        "itReviewedAt": "2026-07-19",
+        "method": "source_cross_check",
+        "furReviewedAt": "2026-07-19",
+        "furMethod": "linguistic_review"
+      }
+    },
+    {
+      "id": "municipality-profile-san-canzian-d-isonzo",
+      "istatCode": "031018",
+      "municipality": "San Canzian d'Isonzo",
+      "province": "GO",
+      "title": {
+        "it": "San Canzian d'Isonzo, terra dei martiri",
+        "fur": "San Canzian d'Isonzo, tiere dai martars"
+      },
+      "summary": {
+        "it": "San Canzian d'Isonzo lega il proprio nome ai martiri Canzio, Canziano e Canzianilla, venerati presso l'antica Aquae Gradatae. Le scoperte archeologiche attorno alla chiesa hanno restituito la memoria di un luogo di sepoltura e pellegrinaggio già noto nel VI secolo.",
+        "fur": "San Canzian d'Isonzo al lee il so non ai martars Canzio, Canziano e Canzianilla, venerâts dongje de antighe Aquae Gradatae. Lis scuviertis archeologjichis ator de glesie a àn tornât ae memorie un lûc di sepulture e pelegrinaç za cognossût tal secul VI."
+      },
+      "milestones": [],
+      "source": {
+        "label": "Consorzio Culturale del Monfalconese - Fondo Ad Aquas Gradatas",
+        "type": "cultural_institution",
+        "url": "https://www.ccm.it/it/21969/Fondo-Ad-Aquas-Gradatas"
+      },
+      "languageStatus": {
+        "it": "approved",
+        "fur": "approved"
+      },
+      "editorialStatus": "reviewed",
+      "readyForUi": true,
+      "review": {
+        "itReviewedAt": "2026-07-19",
+        "method": "source_cross_check",
+        "furReviewedAt": "2026-07-19",
+        "furMethod": "linguistic_review"
+      }
+    },
+    {
+      "id": "municipality-profile-san-floriano-del-collio",
+      "istatCode": "031019",
+      "municipality": "San Floriano del Collio",
+      "province": "GO",
+      "title": {
+        "it": "San Floriano del Collio, un comune ritrovato",
+        "fur": "San Florean dal Cuei, un comun tornât a nassi"
+      },
+      "summary": {
+        "it": "Il Novecento di San Floriano del Collio fu segnato dai mutamenti del confine. Soppresso nel 1928, il Comune passò prima a San Martino Quisca e poi a Capriva del Friuli, fino alla ricostituzione nel 1951.",
+        "fur": "Il Nûfcent di San Florean dal Cuei al fo segnât dai mudaments dal confin. Sopress tal 1928, il Comun al passà prime a San Martino Quisca e po a Caprive, fintremai ae ricostituzion dal 1951."
+      },
+      "milestones": [
+        {
+          "id": "san-floriano-suppression",
+          "year": 1928,
+          "label": {
+            "it": "Il Comune viene soppresso e aggregato a San Martino Quisca",
+            "fur": "Il Comun al ven sopress e agregât a San Martino Quisca"
+          }
+        },
+        {
+          "id": "san-floriano-reconstitution",
+          "year": 1951,
+          "label": {
+            "it": "San Floriano del Collio viene ricostituito come comune",
+            "fur": "San Florean dal Cuei al ven ricostituît come comun"
+          }
+        }
+      ],
+      "source": {
+        "label": "Comune di San Floriano del Collio - Analisi storica della sede municipale",
+        "type": "official_municipality",
+        "url": "https://comune.sanflorianodelcollio.go.it/media/files/031019/attachment/Relazione_vulnerabilit%C3%A0.pdf"
+      },
+      "languageStatus": {
+        "it": "approved",
+        "fur": "approved"
+      },
+      "editorialStatus": "reviewed",
+      "readyForUi": true,
+      "review": {
+        "itReviewedAt": "2026-07-19",
+        "method": "source_cross_check",
+        "furReviewedAt": "2026-07-19",
+        "furMethod": "linguistic_review"
+      }
+    },
+    {
+      "id": "municipality-profile-san-lorenzo-isontino",
+      "istatCode": "031020",
+      "municipality": "San Lorenzo Isontino",
+      "province": "GO",
+      "title": {
+        "it": "San Lorenzo Isontino, il paese segnato dal fronte",
+        "fur": "San Lurinç Lisuntin, il paîs segnât dal front"
+      },
+      "summary": {
+        "it": "San Lorenzo Isontino è un paese agricolo posto fra la pianura friulana e le prime colline del Collio. Nel 1915 il fronte dell'Isonzo investì l'abitato e gran parte della popolazione fu deportata a Landegg, presso Vienna, fino ai primi mesi del 1918.",
+        "fur": "San Lurinç Lisuntin al è un paîs agricui tra la plane furlane e lis primis culinis dal Cuei. Tal 1915 il front dal Lusinç al investì il centri abitât e une grande part de popolazion e fo deportade a Landegg, dongje Viene, fint ai prins mês dal 1918."
+      },
+      "milestones": [
+        {
+          "id": "san-lorenzo-wartime-deportation",
+          "year": 1915,
+          "label": {
+            "it": "Il fronte raggiunge il paese e inizia la deportazione della popolazione a Landegg",
+            "fur": "Il front al rive tal paîs e e scomence la deportazion de popolazion a Landegg"
+          }
+        }
+      ],
+      "source": {
+        "label": "Wikipedia italiana - San Lorenzo Isontino",
+        "type": "wikipedia_reference",
+        "url": "https://it.wikipedia.org/wiki/San_Lorenzo_Isontino"
+      },
+      "languageStatus": {
+        "it": "approved",
+        "fur": "approved"
+      },
+      "editorialStatus": "reviewed",
+      "readyForUi": true,
+      "review": {
+        "itReviewedAt": "2026-07-19",
+        "method": "source_cross_check",
+        "furReviewedAt": "2026-07-19",
+        "furMethod": "linguistic_review"
+      }
+    },
+    {
+      "id": "municipality-profile-san-pier-d-isonzo",
+      "istatCode": "031021",
+      "municipality": "San Pier d'Isonzo",
+      "province": "GO",
+      "title": {
+        "it": "San Pier d'Isonzo, tracce romane in Bisiacaria",
+        "fur": "San Pier dal Lusinç, olmis romanis in Bisiacarie"
+      },
+      "summary": {
+        "it": "Nel territorio di San Pier d'Isonzo, soprattutto attorno a Cassegliano, sono emerse numerose testimonianze di età romana. Monete e frammenti ceramici, insieme a un frammento di recinto sepolcrale imperiale murato nella chiesa del paese, raccontano un insediamento antico ancora leggibile.",
+        "fur": "Tal teritori di San Pier dal Lusinç, soredut ator di Cassegliano, a son vignudis fûr tantis testemoneancis di ete romane. Monetis e tocs di ceramiche, adun cuntun toc di recint sepolcrâl imperiâl murât te glesie dal paîs, a contin un insediament antîc che si pues ancjemò lei tal teritori."
+      },
+      "milestones": [],
+      "source": {
+        "label": "Archeocarta FVG - Rinvenimenti romani a Cassegliano",
+        "type": "cultural_institution",
+        "url": "https://www.archeocartafvg.it/portfolio-articoli/san-pier-disonzo-go-fraz-cassegliano-rinvenimenti-epoca-romana-imperiale/"
+      },
+      "languageStatus": {
+        "it": "approved",
+        "fur": "approved"
+      },
+      "editorialStatus": "reviewed",
+      "readyForUi": true,
+      "review": {
+        "itReviewedAt": "2026-07-19",
+        "method": "source_cross_check",
+        "furReviewedAt": "2026-07-19",
+        "furMethod": "linguistic_review"
+      }
+    },
+    {
+      "id": "municipality-profile-savogna-d-isonzo",
+      "istatCode": "031022",
+      "municipality": "Savogna d'Isonzo",
+      "province": "GO",
+      "title": {
+        "it": "Savogna d'Isonzo, il castello di Rubbia e Trubar",
+        "fur": "Savogne dal Lusinç, il cjistiel di Rubbia e Trubar"
+      },
+      "summary": {
+        "it": "Il castello di Rubbia è uno dei luoghi storici più riconoscibili del territorio di Savogna d'Isonzo. Nel 1563 vi trovò ospitalità il predicatore protestante sloveno Primož Trubar, che poté esporre le proprie idee riformatrici alla popolazione.",
+        "fur": "Il cjistiel di Rubbia al è un dai lûcs storics plui ricognossibii dal teritori di Savogne dal Lusinç. Tal 1563 al ospità il predicjadôr protestant sloven Primož Trubar, che al podè presentâ lis sôs ideis di riforme ae popolazion."
+      },
+      "milestones": [
+        {
+          "id": "savogna-trubar-rubbia",
+          "year": 1563,
+          "label": {
+            "it": "Primož Trubar trova ospitalità al castello di Rubbia",
+            "fur": "Primož Trubar al cjate ospitalitât tal cjistiel di Rubbia"
+          }
+        }
+      ],
+      "source": {
+        "label": "FAI - Il castello di Rubbia e le sue trincee",
+        "type": "cultural_institution",
+        "url": "https://fondoambiente.it/luoghi/il-castello-di-rubbia-e-le-sue-trincee"
+      },
+      "languageStatus": {
+        "it": "approved",
+        "fur": "approved"
+      },
+      "editorialStatus": "reviewed",
+      "readyForUi": true,
+      "review": {
+        "itReviewedAt": "2026-07-19",
+        "method": "source_cross_check",
+        "furReviewedAt": "2026-07-19",
+        "furMethod": "linguistic_review"
+      }
+    },
+    {
+      "id": "municipality-profile-staranzano",
+      "istatCode": "031023",
+      "municipality": "Staranzano",
+      "province": "GO",
+      "title": {
+        "it": "Staranzano, dalla campagna alla foce dell'Isonzo",
+        "fur": "Staranzan, de campagne ae fôs dal Lusinç"
+      },
+      "summary": {
+        "it": "Staranzano unisce la campagna bisiaca agli ambienti umidi della foce dell'Isonzo. La riserva naturale regionale, istituita nel 1996, è gestita dall'associazione dei quattro Comuni interessati, con Staranzano come capofila e referente; l'Isola della Cona ne è il cuore più conosciuto.",
+        "fur": "Staranzan al unìs la campagne bisiache ai ambients umits de fôs dal Lusinç. La risierve naturâl regjonâl, istituide tal 1996, e je gjestide de associazion dai cuatri Comuns interessâts: Staranzan al vuide la associazion e al è il so pont di riferiment, intant che la Isule de Cona e je il cûr plui cognossût de risierve."
+      },
+      "milestones": [
+        {
+          "id": "staranzano-isonzo-mouth-reserve",
+          "year": 1996,
+          "label": {
+            "it": "Viene istituita la Riserva naturale regionale della Foce dell'Isonzo",
+            "fur": "E ven istituide la Risierve naturâl regjonâl de Fôs dal Lusinç"
+          }
+        }
+      ],
+      "source": {
+        "label": "Comune di Staranzano - Piano d'azione per l'energia e il clima",
+        "type": "official_municipality",
+        "url": "https://www.comune.staranzano.go.it/media/files/md/031023/03594_PAESC_STARANZANO_DEFINITIVO-SIGNED.PDF"
+      },
+      "languageStatus": {
+        "it": "approved",
+        "fur": "approved"
+      },
+      "editorialStatus": "reviewed",
+      "readyForUi": true,
+      "review": {
+        "itReviewedAt": "2026-07-19",
+        "method": "source_cross_check",
+        "furReviewedAt": "2026-07-19",
+        "furMethod": "linguistic_review"
+      }
+    },
+    {
+      "id": "municipality-profile-turriaco",
+      "istatCode": "031024",
+      "municipality": "Turriaco",
+      "province": "GO",
+      "title": {
+        "it": "Turriaco, un paese della Bisiacaria",
+        "fur": "Turriaco, un paîs de Bisiacarie"
+      },
+      "summary": {
+        "it": "Turriaco è uno dei centri della Bisiacaria e il suo nome appare per la prima volta in un documento del 1224. La parrocchiale settecentesca di San Rocco, con altare tardobarocco e soffitto affrescato, è il principale segno storico del paese.",
+        "fur": "Turriaco al è un dai centris de Bisiacarie e il so non al comparìs pe prime volte intun document dal 1224. La parochiâl dal Setecent di San Rocco, cuntun altâr dal tart baroc e il soffit frescât, e je la plui impuartante presince storiche dal paîs."
+      },
+      "milestones": [
+        {
+          "id": "turriaco-first-mention",
+          "year": 1224,
+          "label": {
+            "it": "Prima attestazione documentaria del nome Turriaco",
+            "fur": "Prime atestazion documentarie dal non Turriaco"
+          }
+        }
+      ],
+      "source": {
+        "label": "Wikipedia italiana - Turriaco",
+        "type": "wikipedia_reference",
+        "url": "https://it.wikipedia.org/wiki/Turriaco"
+      },
+      "languageStatus": {
+        "it": "approved",
+        "fur": "approved"
+      },
+      "editorialStatus": "reviewed",
+      "readyForUi": true,
+      "review": {
+        "itReviewedAt": "2026-07-19",
+        "method": "source_cross_check",
+        "furReviewedAt": "2026-07-19",
+        "furMethod": "linguistic_review"
+      }
+    },
+    {
+      "id": "municipality-profile-villesse",
+      "istatCode": "031025",
+      "municipality": "Villesse",
+      "province": "GO",
+      "title": {
+        "it": "Villesse, stazione e terra di passaggio",
+        "fur": "Vilès, stazion e tiere di passaç"
+      },
+      "summary": {
+        "it": "Villesse fu nel Medioevo legata all'Abbazia di Rosazzo e divenne una stazione delle poste venete. La sua posizione la espose alle incursioni ottomane e alle guerre fra Veneziani e Imperiali nei secoli XVI e XVII.",
+        "fur": "Vilès al fo leât tal Mediev ae Badie di Rosacis e al deventà une stazion de pueste veneziane. La sô posizion lu esponè aes incursions otomanis e aes vueris tra Venezianis e Imperiâi tai secui XVI e XVII."
+      },
+      "milestones": [],
+      "source": {
+        "label": "SIUSA - Comune di Villesse",
+        "type": "cultural_institution",
+        "url": "https://siusa-archivi.cultura.gov.it/cgi-bin/siusa/pagina.pl?Chiave=6915&RicDimF=2&TipoPag=prodente"
+      },
+      "languageStatus": {
+        "it": "approved",
+        "fur": "approved"
+      },
+      "editorialStatus": "reviewed",
+      "readyForUi": true,
+      "review": {
+        "itReviewedAt": "2026-07-19",
+        "method": "source_cross_check",
+        "furReviewedAt": "2026-07-19",
+        "furMethod": "linguistic_review"
+      }
+    },
+    {
+      "id": "municipality-profile-duino-aurisina",
+      "istatCode": "032001",
+      "municipality": "Duino Aurisina",
+      "province": "TS",
+      "title": {
+        "it": "Duino Aurisina, la pietra tra Carso e mare",
+        "fur": "Duino Aurisina, la piere tra Cjars e mâr"
+      },
+      "summary": {
+        "it": "Duino Aurisina è un territorio carsico affacciato sull'Adriatico, ricco di acque e cave di calcare frequentate fin dalla preistoria. In età romana la pietra di Aurisina fu impiegata nell'edilizia e nella scultura e trasferita verso il mare attraverso gli approdi di Canovella e Sistiana.",
+        "fur": "Duino Aurisina al è un teritori carsic viert sul Adriatic, ric di aghis e gjavis di piere di calcâr frecuentadis za de preistorie. In ete romane la piere di Aurisina e fo doprade te edilizie e te sculture e puartade viers il mâr pai puarts di Canovella e Sistiana."
+      },
+      "milestones": [],
+      "source": {
+        "label": "Treccani - Aurisina",
+        "type": "cultural_institution",
+        "url": "https://www.treccani.it/enciclopedia/aurisina_%28Enciclopedia-dell%27-Arte-Antica%29/"
+      },
+      "languageStatus": {
+        "it": "approved",
+        "fur": "approved"
+      },
+      "editorialStatus": "reviewed",
+      "readyForUi": true,
+      "review": {
+        "itReviewedAt": "2026-07-19",
+        "method": "source_cross_check",
+        "furReviewedAt": "2026-07-19",
+        "furMethod": "linguistic_review"
+      }
+    },
+    {
+      "id": "municipality-profile-monrupino",
+      "istatCode": "032002",
+      "municipality": "Monrupino",
+      "province": "TS",
+      "title": {
+        "it": "Monrupino, la rocca del Carso",
+        "fur": "Monrupino, la roche dal Cjars"
+      },
+      "summary": {
+        "it": "A Monrupino il santuario della Beata Vergine Assunta sorge con gli altri edifici sulla rocca, incastonata nella pietra carsica. La vicina Casa Carsica e il rito delle Nozze Carsiche conservano architetture, gesti e tradizioni del Carso.",
+        "fur": "A Monrupino il santuari de Beade Vergjine Assunte e i altris edificis a son su la roche, incjastrâts te piere carsiche. La vicine Cjase Carsiche e il rituâl des Nocis Carsichis a conservin architeturis, gjescj e tradizions dal Cjars."
+      },
+      "milestones": [],
+      "source": {
+        "label": "PromoTurismoFVG - Santuario di Monrupino",
+        "type": "regional_institution",
+        "url": "https://www.turismofvg.it/it/carso/santuario-di-monrupino"
+      },
+      "languageStatus": {
+        "it": "approved",
+        "fur": "approved"
+      },
+      "editorialStatus": "reviewed",
+      "readyForUi": true,
+      "review": {
+        "itReviewedAt": "2026-07-19",
+        "method": "source_cross_check",
+        "furReviewedAt": "2026-07-19",
+        "furMethod": "linguistic_review"
+      }
+    },
+    {
+      "id": "municipality-profile-muggia",
+      "istatCode": "032003",
+      "municipality": "Muggia",
+      "province": "TS",
+      "title": {
+        "it": "Muggia, un borgo dal volto veneziano",
+        "fur": "Mugle, un borc cul aspiet venezian"
+      },
+      "summary": {
+        "it": "Muggia conserva un'impronta veneziana visibile nell'architettura, nel dialetto e nelle tradizioni gastronomiche. Prima dell'anno Mille nacque il porticciolo di Borgolauro, dove nel Duecento si formò il Comune, mentre sul colle restano Muggia Vecchia e i castellieri protostorici.",
+        "fur": "Mugle e conserve une olme veneziane visibil te architeture, tal dialet e tes tradizions gastronomichis. Prime dal Mil al nasè il piçul puart di Borgolauro, dulà che tal secul XIII al cjapà forme il Comun, intant che sul cuel a restin Muggia Vecchia e i cjistilîrs protostorics."
+      },
+      "milestones": [
+        {
+          "id": "muggia-medieval-municipality",
+          "century": "XIII",
+          "label": {
+            "it": "Nel borgo portuale di Borgolauro prende forma il Comune di Muggia",
+            "fur": "Tal borc portuâl di Borgolauro al cjape forme il Comun di Mugle"
+          }
+        }
+      ],
+      "source": {
+        "label": "PromoTurismoFVG - Muggia",
+        "type": "regional_institution",
+        "url": "https://www.turismofvg.it/it/borghi/muggia?LangSetCMS=it"
+      },
+      "languageStatus": {
+        "it": "approved",
+        "fur": "approved"
+      },
+      "editorialStatus": "reviewed",
+      "readyForUi": true,
+      "review": {
+        "itReviewedAt": "2026-07-19",
+        "method": "source_cross_check",
+        "furReviewedAt": "2026-07-19",
+        "furMethod": "linguistic_review"
+      }
+    },
+    {
+      "id": "municipality-profile-san-dorligo-della-valle",
+      "istatCode": "032004",
+      "municipality": "San Dorligo della Valle",
+      "province": "TS",
+      "title": {
+        "it": "San Dorligo della Valle, la porta dell'Istria",
+        "fur": "San Dorligo della Valle, la puarte de Istrie"
+      },
+      "summary": {
+        "it": "San Dorligo della Valle unisce l'altopiano carsico alla valle del Breg, passaggio naturale verso l'Istria. In età romana strade e un acquedotto attraversavano la Val Rosandra per servire la colonia di Tergeste.",
+        "fur": "San Dorligo della Valle al unìs l'altiplan carsic ae val dal Breg, passaç naturâl viers la Istrie. In ete romane stradis e un acuedot a traviersavin la Val Rosandra par servî la colonie di Tergeste."
+      },
+      "milestones": [],
+      "source": {
+        "label": "Wikipedia italiana - San Dorligo della Valle",
+        "type": "wikipedia_reference",
+        "url": "https://it.wikipedia.org/wiki/San_Dorligo_della_Valle"
+      },
+      "languageStatus": {
+        "it": "approved",
+        "fur": "approved"
+      },
+      "editorialStatus": "reviewed",
+      "readyForUi": true,
+      "review": {
+        "itReviewedAt": "2026-07-19",
+        "method": "source_cross_check",
+        "furReviewedAt": "2026-07-19",
+        "furMethod": "linguistic_review"
+      }
+    },
+    {
+      "id": "municipality-profile-sgonico",
+      "istatCode": "032005",
+      "municipality": "Sgonico",
+      "province": "TS",
+      "title": {
+        "it": "Sgonico, il Carso raccolto in un giardino",
+        "fur": "Sgonico, il Cjars racuelt intun zardin"
+      },
+      "summary": {
+        "it": "Sgonico è un comune del Carso triestino, dove doline, pietra e vegetazione spontanea definiscono il paesaggio. Qui nel 1964 nacque il Giardino botanico Carsiana per raccogliere, conservare e raccontare la flora nei suoi ambienti naturali.",
+        "fur": "Sgonico al è un comun dal Cjars triestin, dulà che dolinis, piere e vegjetazion spontanie a definissin il paisaç. Culì, tal 1964, al nasè il Zardin botanic Carsiana par racuei, conservâ e contâ la flore tai siei ambients naturâi."
+      },
+      "milestones": [
+        {
+          "id": "sgonico-carsiana-foundation",
+          "year": 1964,
+          "label": {
+            "it": "Viene fondato il Giardino botanico Carsiana",
+            "fur": "Al ven fondât il Zardin botanic Carsiana"
+          }
+        }
+      ],
+      "source": {
+        "label": "Giardino botanico Carsiana - La storia",
+        "type": "cultural_institution",
+        "url": "https://giardinobotanicocarsiana.it/it/giardino/storia.html"
+      },
+      "languageStatus": {
+        "it": "approved",
+        "fur": "approved"
+      },
+      "editorialStatus": "reviewed",
+      "readyForUi": true,
+      "review": {
+        "itReviewedAt": "2026-07-19",
+        "method": "source_cross_check",
+        "furReviewedAt": "2026-07-19",
+        "furMethod": "linguistic_review"
+      }
+    }
+  ]
+}

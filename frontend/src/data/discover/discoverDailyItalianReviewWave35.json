@@ -1,0 +1,198 @@
+{
+  "schemaVersion": 1,
+  "generatedAt": "2026-07-16",
+  "purpose": "Trentacinquesimo lotto Scopri IT: audit editoriale di quindici candidati. Una memoria storica triestina entra come primaria e sei profili con risultati culturali o sportivi eccezionali e legami territoriali sostanziali entrano come approfondimenti secondari. Otto candidati vengono esclusi per legame limitato alla nascita, rilevanza generica o soglia storica insufficiente. La pubblicazione resta bloccata fino alla revisione FUR dei sette record selezionati.",
+  "policy": {
+    "readyForUi": false,
+    "furDeferred": true,
+    "dateFormat": "DD-MM",
+    "requiresFinalItalianApproval": true,
+    "excludeDeaths": true,
+    "excludeGenericPoliticalProfiles": true,
+    "excludeGenericProfessionalProfiles": true,
+    "excludeSportsOnlyProfiles": true,
+    "allowExceptionalSportsProfiles": true,
+    "rejectBirthplaceOnlyProfiles": true,
+    "rejectSemanticDuplicates": true,
+    "rejectUncertainCalendarDates": true,
+    "sourceFirst": true,
+    "publishAfterFurOnly": true,
+    "allowMultipleMemoriesPerDate": true,
+    "secondaryOrderedByPriority": true,
+    "doNotPromoteToPrimaryForCoverageOnly": true
+  },
+  "summary": {
+    "reviewed": 15,
+    "keepDaily": 7,
+    "primary": 1,
+    "secondary": 6,
+    "hold": 0,
+    "excluded": 8,
+    "canonicalPrimaryDatesBefore": 237,
+    "canonicalPrimaryDatesAfter": 238,
+    "currentVisiblePrimaryCoverage": 229
+  },
+  "keepDaily": [
+    {
+      "id": "master-fvg-30-01-Q2637965",
+      "wikidataId": "Q2637965",
+      "dateIt": "30-01",
+      "year": 1975,
+      "municipality": "Udine",
+      "locality": "Udine",
+      "province": "UD",
+      "canonicalCategory": "sport",
+      "dailyRole": "secondary",
+      "priority": 94,
+      "titleIt": "Giacomo Galanda, da Udine all'argento olimpico",
+      "copyIt": "Il 30 gennaio 1975 nasce a Udine Giacomo Galanda. Inizia a giocare a basket in città, diventa campione europeo con l'Italia nel 1999, capitano della Nazionale e medaglia d'argento ai Giochi olimpici di Atene 2004.",
+      "sourceLabel": "CONI e Il Nord Est - Giacomo Galanda",
+      "sourceUrl": "https://www.ilnordest.it/storie-di-sport/basket-compleanno-50-giacomo-galanda-intervista-storia-vita-carriera-iz9dv153",
+      "sourceStatus": "pass",
+      "readyForUi": false
+    },
+    {
+      "id": "master-fvg-05-04-Q441522",
+      "wikidataId": "Q441522",
+      "dateIt": "05-04",
+      "year": 1909,
+      "municipality": "Trieste",
+      "locality": "Trieste",
+      "province": "TS",
+      "canonicalCategory": "cultura",
+      "dailyRole": "secondary",
+      "priority": 91,
+      "titleIt": "Giacomo Gentilomo, dai bozzetti triestini al cinema popolare italiano",
+      "copyIt": "Il 5 aprile 1909 nasce a Trieste Giacomo Gentilomo. In città coltiva il disegno e la scenografia prima di affermarsi come regista e sceneggiatore del cinema popolare italiano del Novecento.",
+      "sourceLabel": "Treccani - Giacomo Gentilomo",
+      "sourceUrl": "https://www.treccani.it/enciclopedia/giacomo-gentilomo_%28Enciclopedia-del-Cinema%29/",
+      "sourceStatus": "pass",
+      "readyForUi": false
+    },
+    {
+      "id": "master-fvg-13-09-Q2738908",
+      "wikidataId": "Q2738908",
+      "dateIt": "13-09",
+      "year": 1978,
+      "municipality": "Savogna d'Isonzo",
+      "locality": "Gorizia",
+      "province": "GO",
+      "canonicalCategory": "sport",
+      "dailyRole": "secondary",
+      "priority": 95,
+      "titleIt": "Matej Černič, da Savogna all'argento olimpico",
+      "copyIt": "Il 13 settembre 1978 nasce a Gorizia Matej Černič. Cresciuto nella pallavolo della Polisportiva Soča di Savogna d'Isonzo, vince due titoli europei con l'Italia e l'argento olimpico ad Atene 2004.",
+      "sourceLabel": "FIPAV e Polisportiva Soča - Matej Černič",
+      "sourceUrl": "https://www.soca.it/it/kdo-smo-2/",
+      "sourceStatus": "pass",
+      "readyForUi": false
+    },
+    {
+      "id": "master-fvg-14-05-Q289457",
+      "wikidataId": "Q289457",
+      "dateIt": "14-05",
+      "year": 1978,
+      "municipality": "Gorizia",
+      "locality": "Gorizia",
+      "province": "GO",
+      "canonicalCategory": "sport",
+      "dailyRole": "secondary",
+      "priority": 97,
+      "titleIt": "Elisa Togut, da Gorizia al tetto del mondo",
+      "copyIt": "Il 14 maggio 1978 nasce a Gorizia Elisa Togut. Comincia a giocare a pallavolo a otto anni nell'U.S. Azzurra Gorizia e nel 2002 diventa campionessa mondiale con l'Italia, miglior giocatrice del torneo e autrice del punto decisivo della finale.",
+      "sourceLabel": "FIPAV Hall of Fame - Elisa Togut",
+      "sourceUrl": "https://hall-of-fame.federvolley.it/elisa-togut-0",
+      "sourceStatus": "pass",
+      "readyForUi": false
+    },
+    {
+      "id": "master-fvg-18-07-Q2518079",
+      "wikidataId": "Q2518079",
+      "dateIt": "18-07",
+      "year": 1973,
+      "municipality": "Gorizia",
+      "locality": "Gorizia",
+      "province": "GO",
+      "canonicalCategory": "sport",
+      "dailyRole": "secondary",
+      "priority": 98,
+      "titleIt": "Michele Mian, da Gorizia all'argento olimpico",
+      "copyIt": "Il 18 luglio 1973 nasce a Gorizia Michele Mian. Formatosi tra Aquileia e Gorizia, con la Nazionale di basket vince l'Europeo del 1999 e la medaglia d'argento ai Giochi olimpici di Atene 2004.",
+      "sourceLabel": "CONI - Michele Mian",
+      "sourceUrl": "https://www.coni.it/it/italia-team/olimpiadi/scheda-singola-olimpiade/scheda_atleta/medagliato/916%3AMICHELE_MIAN.html",
+      "sourceStatus": "pass",
+      "readyForUi": false
+    },
+    {
+      "id": "master-fvg-21-05-Q1396089",
+      "wikidataId": "Q1396089",
+      "dateIt": "21-05",
+      "year": 1931,
+      "municipality": "Trieste",
+      "locality": "Trieste",
+      "province": "TS",
+      "canonicalCategory": "storia",
+      "dailyRole": "primary",
+      "priority": 86,
+      "titleIt": "Fulvia Franco, una miss per la Trieste del 1948",
+      "copyIt": "Il 21 maggio 1931 nasce a Trieste Fulvia Franco. Nel 1948, negli anni del Territorio Libero di Trieste, la sua vittoria a Miss Italia supera la cronaca di costume e diventa per una parte della città un simbolo pubblico di appartenenza italiana.",
+      "sourceLabel": "Università degli Studi di Trieste - Trieste e l'immaginario del dopoguerra",
+      "sourceUrl": "https://www.openstarts.units.it/server/api/core/bitstreams/6b6e64d0-ffb2-43af-a9f2-17e36251d9bf/content",
+      "sourceStatus": "pass",
+      "readyForUi": false
+    },
+    {
+      "id": "master-fvg-22-01-Q2632675",
+      "wikidataId": "Q2632675",
+      "dateIt": "22-01",
+      "year": 1889,
+      "municipality": "Sacile",
+      "locality": "Sacile",
+      "province": "PN",
+      "canonicalCategory": "storia",
+      "dailyRole": "secondary",
+      "priority": 92,
+      "titleIt": "Giovanni Micheletto, il Conte di Sacile tra ciclismo e città",
+      "copyIt": "Il 22 gennaio 1889 nasce a Sacile Giovanni Micheletto. Campione del ciclismo dei primi del Novecento, vince il Giro d'Italia del 1912 con la squadra Atala e una tappa al Tour de France; nel dopoguerra partecipa alla vita civile della sua città.",
+      "sourceLabel": "Comune di Sacile - Giovanni Ettore Micheletto",
+      "sourceUrl": "https://www.visitsacile.it/personaggi-illustri-del-passato/giovanni-ettore-micheletto/",
+      "sourceStatus": "pass",
+      "readyForUi": false
+    }
+  ],
+  "hold": [],
+  "excluded": [
+    {
+      "id": "master-fvg-27-09-Q88004041",
+      "reason": "Profilo professionale e dirigenziale con rapporto al FVG limitato alla nascita a Trieste e senza rilevanza storico-culturale autonoma per Scopri."
+    },
+    {
+      "id": "master-fvg-30-10-Q27966382",
+      "reason": "Profilo militare e navale legato al FVG soprattutto dalla nascita; le fonti disponibili non sostengono una memoria territoriale equilibrata e sufficientemente rilevante."
+    },
+    {
+      "id": "master-fvg-15-12-Q3751383",
+      "reason": "Musicista di valore, ma trasferito presto fuori regione e con carriera e lascito istituzionale sviluppati soprattutto altrove; il legame territoriale non supera la soglia editoriale."
+    },
+    {
+      "id": "master-fvg-06-08-Q26211124",
+      "reason": "Torneo giovanile recente e ordinario: la sede udinese non basta a renderlo una memoria storica o sportiva eccezionale per Scopri."
+    },
+    {
+      "id": "master-fvg-08-06-Q55281792",
+      "reason": "Profilo politico contemporaneo generico, escluso dalla rubrica in assenza di un contributo storico o istituzionale eccezionale gia consolidato."
+    },
+    {
+      "id": "master-fvg-09-08-Q66761914",
+      "reason": "Torneo giovanile recente e ordinario: la sede udinese non basta a renderlo una memoria storica o sportiva eccezionale per Scopri."
+    },
+    {
+      "id": "master-fvg-12-06-Q1229104",
+      "reason": "Cantautore nazionale cresciuto e formato fuori regione; il rapporto con il FVG resta limitato alla nascita a Udine."
+    },
+    {
+      "id": "master-fvg-18-03-Q2070334",
+      "reason": "Atleta con legame regionale e risultati internazionali importanti, ma senza titolo mondiale o medaglia olimpica individuale o di squadra richiesti dalla soglia sportiva eccezionale della rubrica."
+    }
+  ]
+}

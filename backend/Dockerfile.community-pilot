@@ -1,0 +1,15 @@
+# Build only the allowlisted context made by package-community-cloud-context.ps1.
+FROM python:3.13-slim
+ENV PYTHONDONTWRITEBYTECODE=1 PYTHONUNBUFFERED=1 \
+    PILOT_COMMUNITY_GEOGRAPHY_PATH=/app/geography/community-geography.sqlite3
+WORKDIR /app
+COPY requirements.txt /app/requirements.txt
+RUN pip install --no-cache-dir -r /app/requirements.txt
+COPY app /app/app
+COPY geography /app/geography
+COPY tests /app/tests
+RUN python -m unittest tests.test_pilot_community_cloud_api
+RUN python -c "import sys; from app.services.pilot_community_geography import PilotCommunityGeographyCatalog; from app.services.pilot_community import PilotCommunityService; g=PilotCommunityGeographyCatalog(); assert len(g.municipalities)==7894; s=PilotCommunityService(geography=g); assert s.repository.storage_kind=='memory'; assert 'firebase_admin' not in sys.modules"
+USER 65532:65532
+EXPOSE 8080
+CMD ["python", "-m", "uvicorn", "app.pilot_community_cloud:create_cloud_app", "--factory", "--host", "0.0.0.0", "--port", "8080", "--workers", "1", "--no-access-log"]

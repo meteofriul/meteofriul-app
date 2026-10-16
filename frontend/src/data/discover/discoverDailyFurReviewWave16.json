@@ -1,0 +1,47 @@
+{
+  "schemaVersion": 1,
+  "generatedAt": "2026-07-14",
+  "purpose": "Revisione FUR del sedicesimo lotto Scopri. Tutti i record derivano dal lotto IT gia verificato e restano pubblicabili solo tramite promozione controllata.",
+  "summary": {
+    "totalRecords": 5,
+    "approved": 5,
+    "pendingHumanReview": 0
+  },
+  "records": [
+    {
+      "id": "memory-it-ready-0321-marcello-dudovich-e-l-arte-del-manifesto",
+      "status": "approved",
+      "titleFur": "Marcello Dudovich e l'art dal manifest",
+      "summaryFur": "Ai 21 di Marc dal 1878 al nas a Triest Marcello Dudovich, tra i protagoniscj de grafiche publicitarie taliane. I siei manifests a metin dongje piture, mode e comunicazion e a judin a da forme al imaginari visif dal prin Nufcent.",
+      "notes": "Traduzione sobria: manifesto resta reso come manifest, senza forzare tecnicismi grafici."
+    },
+    {
+      "id": "memory-it-ready-0412-giorgio-carmelich-e-il-futurismo-giuliano",
+      "status": "approved",
+      "titleFur": "Giorgio Carmelich e il futurisim julian",
+      "summaryFur": "Ai 12 di Avril dal 1907 al nas a Triest Giorgio Carmelich. Di zovin al partecipe ae nassite dal futurisim julian e al sperimente tra dissegn, editorie e avanguardis europeanis.",
+      "notes": "Julian mantiene il senso culturale giuliano senza appesantire la frase."
+    },
+    {
+      "id": "memory-it-ready-0616-lado-piscanc-poesia-dal-confine-orientale",
+      "status": "approved",
+      "titleFur": "Lado Piscanc, poesie dal confin orientâl",
+      "summaryFur": "Ai 16 di Jugn dal 1914 al nas a Triest Lado Piscanc, predi e poet sloven. Tai siei viers e tai siei diaris e reste la vôs di une gjenerazion segnât de vuere e des tensions dal confin orientâl.",
+      "notes": "Confine orientale resta esplicito; tono storico, non identitario forzato."
+    },
+    {
+      "id": "memory-it-ready-0121-nicolo-de-miniussi-da-trieste-a-waterloo",
+      "status": "approved",
+      "titleFur": "Nicolo de Miniussi, di Triest a Waterloo",
+      "summaryFur": "Ai 21 di Zenar dal 1788 al nas a Triest Nicolo de Miniussi, uficiâl e diplomatic cun un percors european. Al combat cuintri lis armadis napoleonichis e al partecipe a Waterloo tal stât maior di Wellington.",
+      "notes": "Waterloo e Wellington restano invariati; copy breve e storicamente neutro."
+    },
+    {
+      "id": "memory-it-ready-0616-amalia-lydia-lalli-dal-friuli-alla-resistenza",
+      "status": "approved",
+      "titleFur": "Amalia Lydia Lalli, dal Friûl ae Resistencje",
+      "summaryFur": "Ai 16 di Jugn dal 1922 e nas a Flaiban Amalia Lydia Lalli, student e stafete partigjane cul non di bataie Kyra. Il so percors al lee il Friûl ae Resistencje in Lunigiane, dulà che e ven decorade ae memorie cu la Medaie d'arint al valôr militâr.",
+      "notes": "Toponimo Flaiban e lessico resistenziale coerenti con il corpus FUR gia approvato."
+    }
+  ]
+}

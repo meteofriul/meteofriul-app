@@ -1,0 +1,16 @@
+timeout: 1200s
+options:
+  logging: CLOUD_LOGGING_ONLY
+substitutions:
+  _TAG: cams-uv-recovery-20260909-r4
+steps:
+  - name: gcr.io/cloud-builders/docker
+    args: ['pull', 'europe-west1-docker.pkg.dev/meteofriul-pilot-20260906/pilot/weather-worker:cams-uv-recovery-20260909-r3']
+  - name: gcr.io/cloud-builders/docker
+    args: ['build', '--cache-from', 'europe-west1-docker.pkg.dev/meteofriul-pilot-20260906/pilot/weather-worker:cams-uv-recovery-20260909-r3', '-f', 'experiments/weather_autonomy/Dockerfile.pilot', '-t', 'europe-west1-docker.pkg.dev/meteofriul-pilot-20260906/pilot/weather-worker:${_TAG}', '.']
+  - name: gcr.io/cloud-builders/docker
+    # Full existing recovery gate plus the authorized single UV replacement:
+    # complete reconciliation, concurrency, lost ACK, canonical/late-job fences.
+    args: ['run', '--rm', '--network=none', 'europe-west1-docker.pkg.dev/meteofriul-pilot-20260906/pilot/weather-worker:${_TAG}', 'python', '-m', 'unittest', 'test_cams_readback', 'test_cams_worker_recovery', 'test_cams_artifact_checkpoint', 'test_publish_remote_cams', 'test_retrieve_remote_cams', 'test_reconcile_cams_job', 'test_uv_cloud', 'test_uv_recovery', 'test_uv_replacement', 'test_cloud_worker', 'test_operational_diagnostics']
+images:
+  - europe-west1-docker.pkg.dev/meteofriul-pilot-20260906/pilot/weather-worker:${_TAG}

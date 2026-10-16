@@ -1,0 +1,262 @@
+{
+  "schemaVersion": 1,
+  "generatedAt": "2026-07-15",
+  "purpose": "Ventottesimo lotto Scopri IT: nove memorie selezionate da una coda debole di venticinque profili. Sono promosse soltanto figure con un contributo culturale, artistico, scientifico o territoriale documentato; tre aprono nuove giornate e sei arricchiscono giornate gia coperte. Il lotto resta bloccato fino alla revisione FUR.",
+  "policy": {
+    "readyForUi": false,
+    "furDeferred": true,
+    "dateFormat": "DD-MM",
+    "requiresFinalItalianApproval": true,
+    "excludeDeaths": true,
+    "excludeGenericPoliticalProfiles": true,
+    "excludeGenericProfessionalProfiles": true,
+    "rejectSemanticDuplicates": true,
+    "rejectUncertainCalendarDates": true,
+    "sourceFirst": true,
+    "publishAfterFurOnly": true,
+    "allowMultipleMemoriesPerDate": true,
+    "secondaryOrderedByPriority": true
+  },
+  "summary": {
+    "keepDaily": 9,
+    "primary": 3,
+    "secondary": 6,
+    "hold": 5,
+    "excluded": 11,
+    "canonicalPrimaryDatesBefore": 217,
+    "canonicalPrimaryDatesAfter": 220,
+    "currentVisiblePrimaryCoverage": 212
+  },
+  "keepDaily": [
+    {
+      "id": "master-fvg-09-02-Q52806115",
+      "wikidataId": "Q52806115",
+      "dateIt": "09-02",
+      "year": 1934,
+      "municipality": "Udine",
+      "locality": "Udine",
+      "province": "UD",
+      "canonicalCategory": "cultura",
+      "dailyRole": "primary",
+      "priority": 86,
+      "titleIt": "Emilio Mattioni e l'architettura del Friuli moderno",
+      "copyIt": "Il 9 febbraio 1934 nasce a Udine Emilio Mattioni, architetto e urbanista. Collabora con Renzo Agosto e Gianugo Polesello e contribuisce a opere pubbliche e residenziali che segnano il paesaggio friulano del secondo Novecento.",
+      "sourceLabel": "SIUSA - Emilio Mattioni",
+      "sourceUrl": "https://siusa-archivi.cultura.gov.it/cgi-bin/pagina.pl?Chiave=52842&RicProgetto=architetti&TipoPag=prodpersona",
+      "sourceStatus": "pass",
+      "readyForUi": false
+    },
+    {
+      "id": "master-fvg-18-03-Q16551309",
+      "wikidataId": "Q16551309",
+      "dateIt": "18-03",
+      "year": 1890,
+      "municipality": "Gorizia",
+      "locality": "Gorizia",
+      "province": "GO",
+      "canonicalCategory": "cultura",
+      "dailyRole": "secondary",
+      "priority": 84,
+      "titleIt": "Edoardo Del Neri, tra pittura e incisione",
+      "copyIt": "Il 18 marzo 1890 nasce a Gorizia Edoardo Del Neri, pittore, incisore e illustratore. Formatosi a Vienna, espone alla Biennale di Venezia e interpreta paesaggi e figure tra cultura goriziana, Secessione e grafica moderna.",
+      "sourceLabel": "Patrimonio culturale FVG - Edoardo Del Neri",
+      "sourceUrl": "https://patrimonioculturale.regione.fvg.it/stampa/?s_id=538189",
+      "sourceStatus": "pass",
+      "readyForUi": false
+    },
+    {
+      "id": "master-fvg-25-03-Q85110435",
+      "wikidataId": "Q85110435",
+      "dateIt": "25-03",
+      "year": 1820,
+      "municipality": "Gorizia",
+      "locality": "Gorizia",
+      "province": "GO",
+      "canonicalCategory": "cultura",
+      "dailyRole": "secondary",
+      "priority": 78,
+      "titleIt": "Giuseppe Giacomo Battig, pittore dell'Ottocento goriziano",
+      "copyIt": "Il 25 marzo 1820 nasce a Gorizia Giuseppe Giacomo Battig, pittore formatosi tra Trieste e Venezia. Autore di ritratti e pale per il duomo di Gorizia, unisce purismo e realismo nella pittura dell'Ottocento isontino.",
+      "sourceLabel": "Patrimonio culturale FVG - Giuseppe Giacomo Battig",
+      "sourceUrl": "https://patrimonioculturale.regione.fvg.it/autore/?s_id=417814",
+      "sourceStatus": "pass",
+      "readyForUi": false
+    },
+    {
+      "id": "master-fvg-25-04-Q16524813",
+      "wikidataId": "Q16524813",
+      "dateIt": "25-04",
+      "year": 1874,
+      "municipality": "Trieste",
+      "locality": "Trieste",
+      "province": "TS",
+      "canonicalCategory": "cultura",
+      "dailyRole": "primary",
+      "priority": 88,
+      "titleIt": "Alberto Colantuoni, dal teatro al Premio Viareggio",
+      "copyIt": "Il 25 aprile 1874 nasce a Trieste Alberto Colantuoni, scrittore, giornalista e drammaturgo. Autore teatrale molto popolare tra le due guerre, partecipa alla fondazione del Premio Viareggio.",
+      "sourceLabel": "Treccani - Alberto Colantuoni",
+      "sourceUrl": "https://www.treccani.it/enciclopedia/alberto-colantuoni_%28Dizionario-Biografico%29/",
+      "sourceStatus": "pass",
+      "readyForUi": false
+    },
+    {
+      "id": "master-fvg-27-05-Q3765530",
+      "wikidataId": "Q3765530",
+      "dateIt": "27-05",
+      "year": 1923,
+      "municipality": "Trieste",
+      "locality": "Trieste",
+      "province": "TS",
+      "canonicalCategory": "cultura",
+      "dailyRole": "secondary",
+      "priority": 87,
+      "titleIt": "Giorgio Kirschner e la grande musica corale",
+      "copyIt": "Il 27 maggio 1923 nasce a Trieste Giorgio Kirschner, musicista e direttore di coro. Maestro del coro al Teatro Verdi e all'Accademia Nazionale di Santa Cecilia, forma generazioni di direttori e porta la musica corale regionale sui maggiori palcoscenici.",
+      "sourceLabel": "Teatro Verdi Trieste - Il Coro",
+      "sourceUrl": "https://www.teatroverdi-trieste.com/it/teatro/il-coro/",
+      "sourceStatus": "pass",
+      "readyForUi": false
+    },
+    {
+      "id": "master-fvg-28-11-Q52156191",
+      "wikidataId": "Q52156191",
+      "dateIt": "28-11",
+      "year": 1876,
+      "municipality": "Trieste",
+      "locality": "Trieste",
+      "province": "TS",
+      "canonicalCategory": "cultura",
+      "dailyRole": "secondary",
+      "priority": 80,
+      "titleIt": "Oscar Hermann Lamb, tra Trieste e la Secessione viennese",
+      "copyIt": "Il 28 novembre 1876 nasce a Trieste Oscar Hermann Lamb, pittore formatosi tra Monaco, Roma e Vienna. La sua ricerca attraversa simbolismo e Secessione viennese, mantenendo un legame con le esposizioni e la cultura artistica triestina.",
+      "sourceLabel": "Fondazione CRTrieste - Oscar Hermann Lamb",
+      "sourceUrl": "https://www.fondazionecrtrieste.it/portfolio-item/oscar-hermann-lamb/",
+      "sourceStatus": "pass",
+      "readyForUi": false
+    },
+    {
+      "id": "master-fvg-31-10-Q3716835",
+      "wikidataId": "Q3716835",
+      "dateIt": "31-10",
+      "year": 1901,
+      "municipality": "Trieste",
+      "locality": "Trieste",
+      "province": "TS",
+      "canonicalCategory": "cultura",
+      "dailyRole": "secondary",
+      "priority": 84,
+      "titleIt": "Dyalma Stultus e l'arte triestina del Novecento",
+      "copyIt": "Il 31 ottobre 1901 nasce a Trieste Dyalma Stultus, pittore, scultore e disegnatore. Espone a Ca' Pesaro e interpreta figure e riti popolari del Carso e del Goriziano; sue opere sono conservate al Museo Revoltella.",
+      "sourceLabel": "Musei Civici di Trieste - Dyalma Stultus",
+      "sourceUrl": "https://beniculturali.comune.trieste.it/opera/?s_id=196309",
+      "sourceStatus": "pass",
+      "readyForUi": false
+    },
+    {
+      "id": "master-fvg-20-06-Q3619865",
+      "wikidataId": "Q3619865",
+      "dateIt": "20-06",
+      "year": 1880,
+      "municipality": "Cividale del Friuli",
+      "locality": "Cividale del Friuli",
+      "province": "UD",
+      "canonicalCategory": "scienza_territorio",
+      "dailyRole": "primary",
+      "priority": 88,
+      "titleIt": "Antonio Mattioni, un pioniere del volo a reazione",
+      "copyIt": "Il 20 giugno 1880 nasce a Cividale del Friuli Antonio Mattioni, progettista e sperimentatore aeronautico. Nel primo Novecento costruisce e prova un velivolo mosso da una forma pionieristica di propulsione a reazione.",
+      "sourceLabel": "Comune di Cividale del Friuli - Antonio Mattioni",
+      "sourceUrl": "https://www.comune.cividale-del-friuli.ud.it/media/files/030026/attachment/Rivista_Dicembre_2009_04_vvRaqWu.pdf",
+      "sourceStatus": "pass",
+      "readyForUi": false
+    },
+    {
+      "id": "master-fvg-22-10-Q3830532",
+      "wikidataId": "Q3830532",
+      "dateIt": "22-10",
+      "year": 1889,
+      "municipality": "Cividale del Friuli",
+      "locality": "Cividale del Friuli",
+      "province": "UD",
+      "canonicalCategory": "cultura",
+      "dailyRole": "secondary",
+      "priority": 82,
+      "titleIt": "Leone Morandini, arte e tutela di Cividale",
+      "copyIt": "Il 22 ottobre 1889 nasce a Cividale del Friuli Leone Morandini, scultore e architetto. Lavora al recupero di monumenti cittadini e realizza opere che legano mestiere artigiano, architettura e cura della memoria di Cividale.",
+      "sourceLabel": "BEWEB - Leone Morandini",
+      "sourceUrl": "https://www.beweb.chiesacattolica.it/personnes/personne/17704/Leone%2BMorandini",
+      "sourceStatus": "pass",
+      "readyForUi": false
+    }
+  ],
+  "hold": [
+    {
+      "id": "master-fvg-05-05-Q33528662",
+      "reason": "Giorgio Settala ha un profilo artistico documentato, ma il legame con il territorio dopo la nascita e ancora troppo debole per una memoria locale giornaliera."
+    },
+    {
+      "id": "master-fvg-11-03-Q3830349",
+      "reason": "Leonardo Cominotto resta un candidato artistico pordenonese, ma manca una fonte museale o biografica istituzionale sufficiente per la promozione."
+    },
+    {
+      "id": "master-fvg-17-03-Q109577542",
+      "reason": "Gianni Russian resta sospeso: la rilevanza artistica locale e la data richiedono una fonte istituzionale piu completa."
+    },
+    {
+      "id": "master-fvg-19-02-Q16622481",
+      "reason": "Vittorio Schweiger e documentato come pittore, ma le fonti reperite non bastano ancora a definire un contributo territoriale adatto alla rubrica."
+    },
+    {
+      "id": "master-fvg-04-06-Q3997458",
+      "reason": "Tranquillo Giustina resta candidato per la cultura monfalconese, ma occorre una fonte biografica autorevole prima di calendarizzarlo."
+    }
+  ],
+  "excluded": [
+    {
+      "id": "master-fvg-29-07-Q3616023",
+      "reason": "Profilo sportivo privo di un contributo storico o culturale sufficiente per la Memoria del giorno."
+    },
+    {
+      "id": "master-fvg-01-09-Q3941612",
+      "reason": "Profilo musicale e discografico contemporaneo non prioritario rispetto alla soglia storico-culturale concordata."
+    },
+    {
+      "id": "master-fvg-03-04-Q1655833",
+      "reason": "Scrittore contemporaneo non prioritario rispetto alle figure che hanno inciso sulla storia e sulla cultura regionale."
+    },
+    {
+      "id": "master-fvg-03-08-Q1528486",
+      "reason": "Pittore nato a Udine ma formatosi e attivo soprattutto in Toscana, senza un legame territoriale sufficiente per la rubrica locale."
+    },
+    {
+      "id": "master-fvg-04-11-Q3838104",
+      "reason": "Attore e scrittore contemporaneo senza una rilevanza storico-culturale sufficiente per la Memoria del giorno."
+    },
+    {
+      "id": "master-fvg-08-10-Q57303425",
+      "reason": "Musicista e compositore contemporaneo non prioritario per la rubrica giornaliera territoriale."
+    },
+    {
+      "id": "master-fvg-13-08-Q3762027",
+      "reason": "Scrittore contemporaneo senza una rilevanza storica o culturale sufficiente per la soglia editoriale concordata."
+    },
+    {
+      "id": "master-fvg-26-12-Q27078120",
+      "reason": "Scrittore e autore audiovisivo contemporaneo non prioritario per la Memoria del giorno."
+    },
+    {
+      "id": "master-fvg-11-04-Q2288149",
+      "reason": "Profilo contemporaneo privo di una rilevanza storico-culturale documentata sufficiente per la rubrica."
+    },
+    {
+      "id": "master-fvg-27-03-Q3847522",
+      "reason": "Attrice contemporanea senza una rilevanza storica o territoriale sufficiente per la Memoria del giorno."
+    },
+    {
+      "id": "master-fvg-18-07-Q18811806",
+      "reason": "Preparatore atletico e allenatore privo di un contributo storico-culturale sufficiente per la rubrica."
+    }
+  ]
+}

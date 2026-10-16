@@ -1,0 +1,60 @@
+{
+  "reviewedAt": "2026-07-23",
+  "scope": "Nove record pubblicati nel catalogo ma non idonei alla rotazione dell'Almanacco.",
+  "records": [
+    {
+      "id": "ostermann-mulinars",
+      "decision": "promote_almanac_generic",
+      "sourceEvidence": "source-lines.csv: ost1876-p114-l010",
+      "reason": "Testo breve, generico e verificato sul facsimile."
+    },
+    {
+      "id": "ostermann-ami-ducj",
+      "decision": "promote_almanac_generic",
+      "sourceEvidence": "source-lines.csv: ost1876-p116-l006",
+      "reason": "Testo breve, generico e verificato sul facsimile."
+    },
+    {
+      "id": "ostermann-barbe-mus",
+      "decision": "promote_almanac_generic",
+      "sourceEvidence": "source-lines.csv: ost1876-p056-l024",
+      "reason": "Testo breve, generico e verificato sul facsimile."
+    },
+    {
+      "id": "ostermann-mus-vene",
+      "decision": "promote_almanac_generic",
+      "sourceEvidence": "source-lines.csv: ost1876-p056-l012",
+      "reason": "Testo breve, generico e verificato sul facsimile."
+    },
+    {
+      "id": "ostermann-lune-sentade",
+      "decision": "keep_catalog_context_only",
+      "sourceEvidence": "source-lines.csv: ost1876-p038-l018-l019",
+      "reason": "Il testo e' autentico, ma l'app non conosce l'orientamento apparente della Luna necessario per mostrarlo con coerenza."
+    },
+    {
+      "id": "ostermann-candelora",
+      "decision": "hold_remove_schedule",
+      "sourceEvidence": null,
+      "reason": "Nessun riscontro testuale univoco nel facsimile 1876."
+    },
+    {
+      "id": "ostermann-marz-vile",
+      "decision": "hold_remove_schedule",
+      "sourceEvidence": null,
+      "reason": "Nessun riscontro testuale univoco nel facsimile 1876."
+    },
+    {
+      "id": "ostermann-cjargne-scure",
+      "decision": "hold_catalog_only",
+      "sourceEvidence": null,
+      "reason": "La formulazione non coincide con il testo locale riscontrato nel facsimile."
+    },
+    {
+      "id": "ostermann-san-martin",
+      "decision": "hold_remove_schedule",
+      "sourceEvidence": null,
+      "reason": "Nessun riscontro testuale univoco nel facsimile 1876."
+    }
+  ]
+}

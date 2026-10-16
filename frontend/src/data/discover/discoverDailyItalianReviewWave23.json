@@ -1,0 +1,148 @@
+{
+  "schemaVersion": 1,
+  "generatedAt": "2026-07-14",
+  "purpose": "Ventitreesimo lotto Scopri IT: quattro memorie territoriali verificate selezionate senza abbassare la soglia editoriale. Una apre una giornata priva di memoria primaria e tre arricchiscono giornate gia coperte come memorie secondarie. I record restano bloccati fino alla revisione FUR.",
+  "policy": {
+    "readyForUi": false,
+    "furDeferred": true,
+    "dateFormat": "DD-MM",
+    "requiresFinalItalianApproval": true,
+    "excludeDeaths": true,
+    "excludeGenericPoliticalProfiles": true,
+    "excludeGenericProfessionalProfiles": true,
+    "rejectSemanticDuplicates": true,
+    "rejectUncertainCalendarDates": true,
+    "sourceFirst": true,
+    "publishAfterFurOnly": true,
+    "allowMultipleMemoriesPerDate": true,
+    "secondaryOrderedByPriority": true
+  },
+  "summary": {
+    "keepDaily": 4,
+    "primary": 1,
+    "secondary": 3,
+    "hold": 5,
+    "excluded": 5,
+    "canonicalPrimaryDatesBefore": 207,
+    "canonicalPrimaryDatesAfter": 208,
+    "currentVisiblePrimaryCoverage": 199
+  },
+  "keepDaily": [
+    {
+      "id": "master-fvg-03-08-Q98848308",
+      "wikidataId": "Q98848308",
+      "dateIt": "03-08",
+      "year": 1851,
+      "municipality": "Trieste",
+      "locality": "Trieste",
+      "province": "TS",
+      "canonicalCategory": "storia",
+      "dailyRole": "secondary",
+      "priority": 82,
+      "titleIt": "Felice Venezian e l'irredentismo triestino",
+      "copyIt": "Il 3 agosto 1851 nasce a Trieste Felice Venezian, avvocato e figura centrale dell'irredentismo triestino e adriatico. Per venticinque anni siede nel Consiglio comunale e sostiene la battaglia per un'universita italiana in citta.",
+      "sourceLabel": "Treccani - Dizionario Biografico degli Italiani",
+      "sourceUrl": "https://www.treccani.it/enciclopedia/felice-venezian_%28Dizionario-Biografico%29/",
+      "sourceStatus": "pass",
+      "readyForUi": false
+    },
+    {
+      "id": "master-fvg-12-07-Q3960896",
+      "wikidataId": "Q3960896",
+      "dateIt": "12-07",
+      "year": 1907,
+      "municipality": "Fogliano Redipuglia",
+      "locality": "Redipuglia",
+      "province": "GO",
+      "canonicalCategory": "storia",
+      "dailyRole": "secondary",
+      "priority": 94,
+      "titleIt": "Silvio Marcuzzi e la Resistenza nella pianura friulana",
+      "copyIt": "Il 12 luglio 1907 nasce a Redipuglia Silvio Marcuzzi, operaio e antifascista noto come Montes. Tra gli organizzatori della Brigata Proletaria, diventa responsabile dei rifornimenti e dei GAP della pianura friulana nella Resistenza.",
+      "sourceLabel": "ANPI - Associazione Nazionale Partigiani d'Italia",
+      "sourceUrl": "https://www.anpi.it/biografia/silvio-marcuzzi",
+      "sourceStatus": "pass",
+      "readyForUi": false
+    },
+    {
+      "id": "master-fvg-02-09-Q1504682",
+      "wikidataId": "Q1504682",
+      "dateIt": "02-09",
+      "year": 1812,
+      "municipality": "Trieste",
+      "locality": "Trieste",
+      "province": "TS",
+      "canonicalCategory": "cultura",
+      "dailyRole": "primary",
+      "priority": 88,
+      "titleIt": "Giuseppe Revere, letteratura e Risorgimento",
+      "copyIt": "Il 2 settembre 1812 nasce a Trieste Giuseppe Revere, scrittore, drammaturgo e patriota del Risorgimento. Il suo Lorenzino de' Medici ottiene successo; in seguito partecipa alle Cinque Giornate di Milano e alla Repubblica Romana.",
+      "sourceLabel": "Treccani - Dizionario Biografico degli Italiani",
+      "sourceUrl": "https://www.treccani.it/enciclopedia/giuseppe-revere_%28Dizionario-Biografico%29/",
+      "sourceStatus": "pass",
+      "readyForUi": false
+    },
+    {
+      "id": "master-fvg-01-07-Q18488300",
+      "wikidataId": "Q18488300",
+      "dateIt": "01-07",
+      "year": 1893,
+      "municipality": "Gorizia",
+      "locality": "Gorizia",
+      "province": "GO",
+      "canonicalCategory": "cultura",
+      "dailyRole": "secondary",
+      "priority": 76,
+      "titleIt": "Alojzij Res tra cultura italiana e slovena",
+      "copyIt": "Il 1 luglio 1893 nasce a Gorizia Alojzij Res, scrittore e storico della letteratura. La sua attivita di studioso e mediatore culturale mette in dialogo il mondo italiano e quello sloveno.",
+      "sourceLabel": "Kamra - portale del patrimonio culturale sloveno",
+      "sourceUrl": "https://www.kamra.si/en/news/1-julija-1893-se-je-v-gorici-rodil-alojzij-res-pisatelj-kulturni-delavec-in-posrednik-ter-literarni-zgodovinar/",
+      "sourceStatus": "pass",
+      "readyForUi": false
+    }
+  ],
+  "hold": [
+    {
+      "id": "master-fvg-01-01-Q274606",
+      "reason": "Il primo gennaio non e documentato come giorno di nascita di Berengario del Friuli e puo essere un valore convenzionale del dataset."
+    },
+    {
+      "id": "master-fvg-01-01-Q1058654",
+      "reason": "Fiore dei Liberi e storicamente rilevante, ma il primo gennaio non e confermato come giorno di nascita."
+    },
+    {
+      "id": "master-fvg-01-01-Q464258",
+      "reason": "Lodovico Isolani resta sospeso: il primo gennaio non e sostenuto da una fonte per il giorno esatto di nascita."
+    },
+    {
+      "id": "master-fvg-23-10-Q3956066",
+      "reason": "Sergio Cecotti e una persona vivente: il profilo richiede una policy editoriale dedicata prima di entrare nella rubrica giornaliera."
+    },
+    {
+      "id": "master-fvg-23-12-Q18171599",
+      "reason": "Giulio Camber Barni resta destinato all'Archivio Scopri: le fonti sostengono il profilo letterario, ma non ne giustificano ancora la promozione nella memoria breve quotidiana."
+    }
+  ],
+  "excluded": [
+    {
+      "id": "master-fvg-28-10-Q21209057",
+      "reason": "Profilo militare individuale senza un impatto storico-culturale generale sufficiente per la rubrica quotidiana."
+    },
+    {
+      "id": "master-fvg-12-07-Q16576910",
+      "reason": "Profilo militare individuale sotto la soglia di rilevanza generale concordata."
+    },
+    {
+      "id": "master-fvg-01-06-Q10728662",
+      "reason": "La fonte descrive Antonio Dugoni principalmente attraverso la professione di pittore, senza documentare un rilievo sufficiente per la memoria quotidiana."
+    },
+    {
+      "id": "master-fvg-13-08-Q21289028",
+      "reason": "La fonte disponibile presenta Glauco Cambon come profilo artistico generico, sotto la soglia editoriale concordata."
+    },
+    {
+      "id": "master-fvg-01-11-Q3804679",
+      "reason": "Profilo contemporaneo vivente e circoscritto, senza sufficiente rilievo storico generale per questa rubrica."
+    }
+  ]
+}

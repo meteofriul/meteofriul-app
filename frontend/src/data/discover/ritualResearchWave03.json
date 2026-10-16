@@ -1,0 +1,99 @@
+{
+  "schemaVersion": 1,
+  "snapshotDate": "2026-08-31",
+  "purpose": "Manifest del terzo lotto di riti: due ricorrenze locali estiva e autunnale. La copy bilingue e i riferimenti linguistici sono conservati una sola volta nei record promossi di institutionalRituals.json.",
+  "readyForUi": false,
+  "runtimeCatalog": "frontend/src/data/discover/institutionalRituals.json",
+  "editorialDecision": {
+    "basis": "user_delegated_assisted_editorial_review",
+    "reviewer": "assistant",
+    "independentHumanReview": false,
+    "scope": ["ritual-research-titiano-madonna-neve", "ritual-research-castelmonte-otto-settembre"],
+    "note": "Decisione editoriale assistita nel mandato attuale di continuare Scopri, non approvazione dell'utente frase per frase e non certificazione ARLeF o revisione professionale indipendente."
+  },
+  "rules": [
+    "Il manifest e i record di ricerca restano esclusi dalla UI; la promozione è esplicita e limitata ai due promotedRecordId.",
+    "Fonti culturali e riferimenti linguistici adottati sono HTML verificati: nessun PDF è necessario alla decisione.",
+    "Le date indicano ricorrenze tradizionali documentate, non una conferma dei programmi del 2026 o di edizioni successive.",
+    "Nessun orario, istruzione di viaggio o invito operativo; le aree sono contesti culturali, non località dell'utente.",
+    "Testi di sintesi originali; nessun riuso di immagini, filmati o riproduzioni delle fonti."
+  ],
+  "records": [
+    {
+      "id": "ritual-research-titiano-madonna-neve",
+      "promotedRecordId": "institutional-ritual-titiano-madonna-neve",
+      "canonicalKey": "precenicco-titiano-madonna-neve-agosto5",
+      "rubric": "riti_credenze_popolari",
+      "reviewStatus": "promoted",
+      "readyForUi": false,
+      "promotedAt": "2026-08-31",
+      "source": {
+        "url": "https://www.atlantedeiluoghirivierafriulana.it/",
+        "section": "Chiesetta della Madonna della Neve e S.I.C. Anse dello Stella",
+        "authority": "Comunità della Riviera Friulana",
+        "accessMethod": "direct_html",
+        "checkedAt": "2026-08-31"
+      },
+      "supportingSources": [
+        {
+          "url": "https://www.stellaboschilaguna.it/it/town/precenicco/",
+          "authority": "Progetto intercomunale STAI, Comune capofila di Muzzana del Turgnano",
+          "accessMethod": "direct_html",
+          "purpose": "Conferma la festa della Beata Vergine della Neve il 5 agosto."
+        }
+      ],
+      "evidenceSummary": "L'Atlante descrive ogni 5 agosto il corteo di barche da Precenicco a Titiano e il successivo accompagnamento della statua alla chiesetta; il portale STAI conferma la data. L'Atlante documenta anche il rapporto della comunità con lo Stella.",
+      "temporalRule": { "type": "fixed_date", "date": "08-05" },
+      "editorialWindow": { "type": "fixed_date", "date": "08-05" },
+      "currentEventScheduleVerified": false,
+      "geographicScope": ["precenicco", "titiano", "fiume_stella"],
+      "scopeNote": "Ricorrenza locale, non una festa uniforme in tutto il Friuli. La barca raggiunge Titiano, non direttamente l'edificio della chiesa. Nessuna apparizione leggendaria viene presentata come fatto.",
+      "languageReview": {
+        "approvalBasis": "user_delegated_assisted_editorial_review",
+        "reviewer": "assistant",
+        "independentHumanReview": false,
+        "referencesLocation": "institutional-ritual-titiano-madonna-neve.languageReview.fur.references",
+        "notes": "Prissinins e Stele conservati dal repertorio già approvato dell'app; Prissinins attestato anche in HTML ARLeF. Titiano resta invariato. Barcje, statue e gleseute controllati su riferimenti HTML standard."
+      },
+      "duplicateReview": {
+        "status": "distinct",
+        "comparedCatalogs": ["ostermannCulturalDiscover", "institutionalRituals", "institutionalArchive", "localMemory", "municipalityProfiles"],
+        "note": "Nessun rito di Titiano presente nei quattro cataloghi culturali controllati. La scheda comunale di Precenicco riguarda i Teutonici, non la processione fluviale; il Perdòn di Barbana resta una diversa bozza di Grado."
+      }
+    },
+    {
+      "id": "ritual-research-castelmonte-otto-settembre",
+      "promotedRecordId": "institutional-ritual-castelmonte-otto-settembre",
+      "canonicalKey": "castelmonte-pellegrinaggio-diocesano-settembre8",
+      "rubric": "riti_credenze_popolari",
+      "reviewStatus": "promoted",
+      "readyForUi": false,
+      "promotedAt": "2026-08-31",
+      "source": {
+        "url": "https://www.diocesiudine.it/la-chiesa-udinese-si-affida-a-maria-in-pellegrinaggio-a-castelmonte-chiesa-giubilare/",
+        "authority": "Arcidiocesi di Udine",
+        "publishedAt": "2025-08-28",
+        "accessMethod": "direct_html",
+        "checkedAt": "2026-08-31"
+      },
+      "evidenceSummary": "L'Arcidiocesi descrive espressamente l'8 settembre di ogni anno e il pellegrinaggio diocesano voluto dopo il terremoto del 1976. La salita a piedi avviene nella festa della Natività di Maria.",
+      "temporalRule": { "type": "fixed_date", "date": "09-08" },
+      "editorialWindow": { "type": "fixed_date", "date": "09-08" },
+      "currentEventScheduleVerified": false,
+      "geographicScope": ["castelmonte", "prepotto", "arcidiocesi_udine"],
+      "scopeNote": "Il 1976 data questa iniziativa diocesana annuale, non la nascita del santuario o dei pellegrinaggi a Castelmonte in generale. Il testo visibile mantiene la distinzione in entrambe le lingue.",
+      "languageReview": {
+        "approvalBasis": "user_delegated_assisted_editorial_review",
+        "reviewer": "assistant",
+        "independentHumanReview": false,
+        "referencesLocation": "institutional-ritual-castelmonte-otto-settembre.languageReview.fur.references",
+        "notes": "Pelegrinaç, santuari e Madone di Mont verificati in HTML SuperDizionari. Il contenuto del lemma diocesano non risultava disponibile: si usa la parafrasi de Glesie di Udin, non un aggettivo non attestato."
+      },
+      "duplicateReview": {
+        "status": "distinct",
+        "comparedCatalogs": ["ostermannCulturalDiscover", "institutionalRituals", "institutionalArchive", "localMemory", "municipalityProfiles"],
+        "note": "Nessun record precedente racconta il pellegrinaggio diocesano dell'8 settembre. Le menzioni di Castelmonte nei crediti fotografici non sono schede del rito; Matajur e Bacio delle Croci hanno luoghi e calendari distinti."
+      }
+    }
+  ]
+}

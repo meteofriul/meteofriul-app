@@ -1,0 +1,535 @@
+{
+  "schemaVersion": 1,
+  "batchId": "ud-zero-milestones-01",
+  "snapshotDate": "2026-08-21",
+  "purpose": "Lotto di ricerca non visibile in UI per ampliare le tappe storiche dei primi nove Comuni UD che ne sono privi.",
+  "runtimeIntegration": false,
+  "editorialPolicy": {
+    "sourceEvidenceRequired": true,
+    "ambiguousDatesExcluded": true,
+    "duplicateAuditRequired": true,
+    "noForcedMilestoneCount": true,
+    "italianCopyStatus": "editorial_draft",
+    "friulianCopyStatus": "pending_human_review",
+    "readyForUi": false
+  },
+  "excludedClaims": [
+    {
+      "municipality": "Amaro",
+      "claim": "La chiesa di San Nicolò sarebbe già esistita nel 1350.",
+      "reason": "La fonte istituzionale presenta la data soltanto come probabile; non viene trasformata in una tappa certa."
+    },
+    {
+      "municipality": "Amaro",
+      "claim": "Il terremoto del Friuli del 6 maggio 1976.",
+      "reason": "Il fatto è già presente in Memoria del giorno e produrrebbe una duplicazione editoriale."
+    },
+    {
+      "municipality": "Arta Terme",
+      "claim": "La costruzione dello stabilimento termale progettato da Gino Valle tra il 1962 e il 1964.",
+      "reason": "La data è verificabile, ma il tema è già rappresentato dal primo stabilimento del 1870, dal cambio di nome del 1965 e dal riassunto comunale."
+    },
+    {
+      "municipality": "Basiliano",
+      "claim": "Il nome Basilianus del 1072 sarebbe la prima attestazione del paese.",
+      "reason": "L'inventario comunale chiarisce che Basilianus è un nome personale; la prima menzione della località risale al 1149."
+    },
+    {
+      "municipality": "Basiliano",
+      "claim": "Il castelliere di Variano.",
+      "reason": "Il sito archeologico è già interamente al centro del riassunto comunale e non viene duplicato senza un nuovo fatto datato."
+    },
+    {
+      "municipality": "Bordano",
+      "claim": "Il terremoto del Friuli del 6 maggio 1976.",
+      "reason": "Il fatto è già presente in Memoria del giorno e produrrebbe una duplicazione editoriale."
+    },
+    {
+      "municipality": "Bordano",
+      "claim": "Bordano compare come Comune nel 1806 o nel 1807.",
+      "reason": "Le cronologie generali e il compartimento specifico non restituiscono una data univoca; la tappa resta esclusa."
+    },
+    {
+      "municipality": "Buttrio",
+      "claim": "Paolo Diacono menzionerebbe per primo Buttrio.",
+      "reason": "SIUSA richiama la menzione senza fornire un anno; non è adatta a una tappa datata."
+    },
+    {
+      "municipality": "Buttrio",
+      "claim": "La permuta del 1660 segnerebbe il passaggio di Villa di Toppo Florio ai nuovi proprietari.",
+      "reason": "La scheda regionale presenta il collegamento proprietario come ipotetico; la data non viene promossa."
+    },
+    {
+      "municipality": "Carlino",
+      "claim": "Carlino sarebbe stato aggregato a Marano Lagunare nel 1928 o nel 1929.",
+      "reason": "Le schede archivistiche presentano uno slittamento tra provvedimento e decorrenza; il dato resta fuori finché non viene risolto su fonte normativa."
+    },
+    {
+      "municipality": "Castions di Strada",
+      "claim": "La chiesa di Santa Maria delle Grazie sarebbe stata fondata ai tempi del patriarca Paolino.",
+      "reason": "La fonte comunale non fornisce un anno preciso e documenta più ricostruzioni; non viene ricavata una data arbitraria."
+    },
+    {
+      "municipality": "Castions di Strada",
+      "claim": "Nel 967 il vescovo Liutprando avrebbe donato Castions alla Chiesa aquileiese.",
+      "reason": "La cronologia comunale non è corroborata e contrasta con SIUSA, che documenta nel 1031 la donazione di Castions da parte del patriarca di Aquileia al Capitolo aquileiese."
+    },
+    {
+      "municipality": "Castions di Strada",
+      "claim": "La chiesa di San Martino sarebbe stata ricostruita nel 1535.",
+      "reason": "La pagina comunale presenta un refuso estraneo e non è corroborata in modo univoco: un repertorio dedicato documenta invece un ampliamento nel 1525. La tappa resta in quarantena."
+    },
+    {
+      "municipality": "Cercivento",
+      "claim": "La prima citazione di Circivinz alla fine del XIII secolo.",
+      "reason": "La fonte comunale indica soltanto la fine del secolo e non un anno preciso; la tappa resta in riserva."
+    },
+    {
+      "municipality": "Cercivento",
+      "claim": "La grande frana che distrusse il paese sul finire del Seicento.",
+      "reason": "La fonte comunale non consente di fissare un anno esatto."
+    },
+    {
+      "municipality": "Cercivento",
+      "claim": "La fucilazione dei quattro Alpini del 1 luglio 1916.",
+      "reason": "Il fatto è già presente in Memoria del giorno e produrrebbe una duplicazione editoriale."
+    },
+    {
+      "municipality": "Cercivento",
+      "claim": "Il rilevamento etnografico delle cidulis del 24 giugno 1973.",
+      "reason": "La tradizione è già trattata nella rubrica Riti e credenze; il rilievo filmato resta una sovrapposizione editoriale e non una tappa autonoma."
+    },
+    {
+      "municipality": "Cervignano del Friuli",
+      "claim": "Il diploma del 912 sarebbe la prima attestazione originale del nome Cervignano.",
+      "reason": "Lo Statuto comunale precisa che il diploma è pervenuto in copia; la prima attestazione scritta originale è Castrum Cirviganum nel 1036."
+    },
+    {
+      "municipality": "Cervignano del Friuli",
+      "claim": "La nascita di Giusto Gervasutti nel 1909 e di Costantino Dardi nel 1936.",
+      "reason": "Entrambe le memorie biografiche sono già presenti in Memoria del giorno."
+    }
+  ],
+  "duplicateAudit": {
+    "status": "passed_with_thematic_overlap",
+    "exactDuplicates": 0,
+    "excludedExactDuplicates": 4,
+    "countingRule": "unique_facts_already_present_in_other_rubrics",
+    "notes": [
+      "I quattro fatti già presenti altrove sono il terremoto del 1976, la fucilazione di Cercivento, la nascita di Giusto Gervasutti e quella di Costantino Dardi; il terremoto conta una sola volta anche se escluso da due profili comunali.",
+      "La fucilazione di Cercivento del 1916 è esclusa perché già presente in Memoria del giorno; il rilevamento delle cidulis resta nella rubrica rituale.",
+      "Le terme di Arta, la Casa delle Farfalle, la Chiamana e la Fàrie di Checo sono richiamate nei rispettivi riassunti, ma le tappe promosse aggiungono fatti distinti e datati.",
+      "Le memorie di Gio Batta Morassi, Giusto Gervasutti e Costantino Dardi non coincidono con le tappe promosse.",
+      "Arta 1420 richiama la fine del potere patriarcale trattata nella Memoria del 7 giugno, mentre Amaro e Cercivento 1866 richiamano le Memorie del 12 agosto e del 3 ottobre: sono passaggi locali distinti, non duplicati.",
+      "Amaro e Buttrio condividono il contesto comunale napoleonico; Amaro e Cercivento condividono il passaggio del 1866. La ripetizione resta ammessa perché riguarda storie comunali diverse."
+    ]
+  },
+  "sourceConflicts": [
+    {
+      "municipality": "Amaro",
+      "field": "modernMunicipalityYear",
+      "selectedValue": 1807,
+      "selectedAuthority": "Decreto napoleonico n. 283 del 22 dicembre 1807 documentato da SIUSA",
+      "discardedValue": 1806,
+      "discardedAuthority": "Estremo generale di esistenza e decreto quadro del 30 marzo 1806",
+      "decision": "La tappa usa il 1807, primo compartimento che inserisce specificamente Amaro come Comune; il 1806 resta documentato come avvio generale del sistema."
+    },
+    {
+      "municipality": "Cercivento",
+      "field": "municipalityStatusVersusKingdomEntry",
+      "selectedValue": 1806,
+      "selectedAuthority": "Estremo di esistenza dell'ente comunale e collocazione nel Dipartimento di Passariano documentati da SIUSA",
+      "discardedValue": 1805,
+      "discardedAuthority": "Ingresso del territorio nel Regno d'Italia documentato separatamente da SIUSA",
+      "decision": "La tappa del 1806 riguarda esclusivamente il Comune nel sistema amministrativo napoleonico e non viene confusa con l'ingresso del territorio nel Regno d'Italia, avvenuto nel 1805."
+    },
+    {
+      "municipality": "Castions di Strada",
+      "field": "aquileianDonationYearAndAuthority",
+      "selectedValue": 1031,
+      "selectedAuthority": "SIUSA - Comune di Castions di Strada",
+      "discardedValue": 967,
+      "discardedAuthority": "Cronologia non corroborata del sito comunale",
+      "decision": "La tappa usa la donazione del 1031 da parte del patriarca di Aquileia al Capitolo aquileiese; il riferimento al vescovo Liutprando nel 967 resta escluso."
+    },
+    {
+      "municipality": "Cervignano del Friuli",
+      "field": "firstOriginalNameAttestation",
+      "selectedValue": 1036,
+      "selectedAuthority": "Statuto del Comune di Cervignano del Friuli",
+      "discardedValue": 912,
+      "discardedAuthority": "Diploma di re Berengario pervenuto in copia",
+      "decision": "Il 912 resta la prima menzione storica nota, ma la tappa dichiara con precisione la prima attestazione scritta originale del nome, datata 1036."
+    }
+  ],
+  "municipalities": [
+    {
+      "istatCode": "030002",
+      "municipality": "Amaro",
+      "province": "UD",
+      "currentMilestoneCount": 0,
+      "decision": "source_verified_it_fur_pending",
+      "candidateCountDecision": "only_two_strong_candidates_no_forcing",
+      "candidates": [
+        {
+          "id": "amaro-comune-napoleonico-1807",
+          "year": 1807,
+          "label": { "it": "Amaro compare come Comune nel compartimento napoleonico", "fur": null },
+          "evidence": "SIUSA identifica nel decreto n. 283 del 22 dicembre 1807 la prima comparsa specifica del Comune moderno di Amaro nel Cantone e Distretto di Tolmezzo.",
+          "source": {
+            "label": "SIUSA - Comune di Amaro",
+            "type": "national_institution",
+            "url": "https://siusa-archivi.cultura.gov.it/cgi-bin/siusa/pagina.pl?Chiave=8942&RicDimF=2&TipoPag=prodente"
+          }
+        },
+        {
+          "id": "amaro-regno-italia-1866",
+          "year": 1866,
+          "label": { "it": "Amaro passa al Regno d'Italia", "fur": null },
+          "evidence": "SIUSA documenta che Amaro passò all'Italia nel 1866; la tappa non attribuisce al fatto un giorno non attestato dalla fonte.",
+          "source": {
+            "label": "SIUSA - Comune di Amaro",
+            "type": "national_institution",
+            "url": "https://siusa-archivi.cultura.gov.it/cgi-bin/siusa/pagina.pl?Chiave=8942&RicDimF=2&TipoPag=prodente"
+          }
+        }
+      ]
+    },
+    {
+      "istatCode": "030005",
+      "municipality": "Arta Terme",
+      "province": "UD",
+      "currentMilestoneCount": 0,
+      "decision": "source_verified_it_fur_pending",
+      "candidates": [
+        {
+          "id": "arta-venezia-1420",
+          "year": 1420,
+          "label": { "it": "Arta passa sotto la sovranità della Repubblica di Venezia", "fur": null },
+          "evidence": "SIUSA documenta che Arta, già possesso del Patriarca di Aquileia, passò nel 1420 alla Repubblica di Venezia.",
+          "source": {
+            "label": "SIUSA - Comune di Arta Terme",
+            "type": "national_institution",
+            "url": "https://siusa-archivi.cultura.gov.it/cgi-bin/siusa/pagina.pl?Chiave=8953&RicDimF=2&TipoPag=prodente"
+          }
+        },
+        {
+          "id": "arta-primo-stabilimento-termale-1870",
+          "year": 1870,
+          "label": { "it": "Viene costruito il primo stabilimento termale di Arta", "fur": null },
+          "evidence": "Uno studio pubblicato nell'archivio istituzionale dell'Università di Udine documenta nel 1870 la costruzione del primo stabilimento termale a uso terapeutico presso la fonte.",
+          "source": {
+            "label": "Università di Udine - Geotema 60",
+            "type": "cultural_institution",
+            "url": "https://air.uniud.it/retrieve/handle/11390/1174344/382503/GEOTEMA-Arta%20terme.pdf"
+          }
+        },
+        {
+          "id": "arta-terme-denominazione-1965",
+          "year": 1965,
+          "label": { "it": "Il Comune cambia denominazione da Arta ad Arta Terme", "fur": null },
+          "evidence": "Il D.P.R. 26 giugno 1965 n. 906 cambia ufficialmente la denominazione del Comune da Arta ad Arta Terme.",
+          "source": {
+            "label": "Gazzetta Ufficiale - D.P.R. 26 giugno 1965 n. 906",
+            "type": "national_institution",
+            "url": "https://www.gazzettaufficiale.it/eli/id/1965/07/31/065U0906/sg"
+          }
+        }
+      ]
+    },
+    {
+      "istatCode": "030009",
+      "municipality": "Basiliano",
+      "province": "UD",
+      "currentMilestoneCount": 0,
+      "decision": "source_verified_it_fur_pending",
+      "candidates": [
+        {
+          "id": "basiliano-prima-menzione-1149",
+          "year": 1149,
+          "label": { "it": "Prima menzione documentaria della località di Basiliano", "fur": null },
+          "evidence": "L'inventario dell'Archivio storico comunale distingue il nome personale Basilianus del 1072 dalla prima attestazione della località, datata 1149.",
+          "source": {
+            "label": "Comune di Basiliano - Inventario dell'Archivio storico",
+            "type": "official_municipality",
+            "url": "https://www.comune.basiliano.ud.it/media/files/030009/attachment/Comune_di_Basiliano._Archivio_storico__1816-1967___Friularchivi__wPJZG4b.pdf"
+          }
+        },
+        {
+          "id": "basiliano-incendio-cortine-1411",
+          "year": 1411,
+          "label": { "it": "Le truppe di Pippo Spano incendiano le cortine di Vissandone, Blessano e Variano", "fur": null },
+          "evidence": "ERPAC trascrive il catapan di Fagagna che registra per il 5 dicembre 1411 l'incendio delle cortine di Vissandone, Blessano e Variano.",
+          "source": {
+            "label": "ERPAC FVG - Centa di Variano",
+            "type": "regional_institution",
+            "url": "https://patrimonioculturale.regione.fvg.it/complesso-archeologico/?s_id=759582"
+          }
+        },
+        {
+          "id": "basiliano-denominazione-1923",
+          "year": 1923,
+          "label": { "it": "Pasiano Schiavonesco assume la denominazione Basiliano", "fur": null },
+          "evidence": "L'inventario comunale documenta il R.D. 28 giugno 1923 n. 1626, con cui Pasiano Schiavonesco assume la denominazione Basiliano.",
+          "source": {
+            "label": "Comune di Basiliano - Inventario dell'Archivio storico",
+            "type": "official_municipality",
+            "url": "https://www.comune.basiliano.ud.it/media/files/030009/attachment/Comune_di_Basiliano._Archivio_storico__1816-1967___Friularchivi__wPJZG4b.pdf"
+          }
+        }
+      ]
+    },
+    {
+      "istatCode": "030012",
+      "municipality": "Bordano",
+      "province": "UD",
+      "currentMilestoneCount": 0,
+      "decision": "source_verified_it_fur_pending",
+      "candidates": [
+        {
+          "id": "bordano-autonomia-1822",
+          "year": 1822,
+          "label": { "it": "Bordano riacquista l'autonomia comunale", "fur": null },
+          "evidence": "SIUSA documenta che il compartimento territoriale del 1822 restituì a Bordano la dignità di Comune autonomo dopo l'aggregazione a Venzone del 1815.",
+          "source": {
+            "label": "SIUSA - Comune di Bordano",
+            "type": "national_institution",
+            "url": "https://siusa-archivi.cultura.gov.it/cgi-bin/siusa/pagina.pl?Chiave=8984&RicDimF=2&TipoPag=prodente"
+          }
+        },
+        {
+          "id": "bordano-municipio-1988",
+          "year": 1988,
+          "label": { "it": "Viene inaugurato il nuovo Municipio di Bordano", "fur": null },
+          "evidence": "SIUSA data al 1988 l'inaugurazione del nuovo Municipio costruito dopo il terremoto.",
+          "source": {
+            "label": "SIUSA - Comune di Bordano",
+            "type": "national_institution",
+            "url": "https://siusa-archivi.cultura.gov.it/cgi-bin/siusa/pagina.pl?Chiave=8984&RicDimF=2&TipoPag=prodente"
+          }
+        },
+        {
+          "id": "bordano-casa-farfalle-2003",
+          "year": 2003,
+          "label": { "it": "Apre la Casa delle Farfalle", "fur": null },
+          "evidence": "Il Consiglio regionale FVG documenta l'apertura della Casa delle Farfalle nell'aprile 2003.",
+          "source": {
+            "label": "Consiglio regionale FVG - Casa delle Farfalle di Bordano",
+            "type": "regional_institution",
+            "url": "https://www.consiglio.regione.fvg.it/pagineinterne/Portale/comunicatiStampaDettaglio.aspx?ID=258953"
+          }
+        }
+      ]
+    },
+    {
+      "istatCode": "030014",
+      "municipality": "Buttrio",
+      "province": "UD",
+      "currentMilestoneCount": 0,
+      "decision": "source_verified_it_fur_pending",
+      "candidates": [
+        {
+          "id": "buttrio-placito-1015",
+          "year": 1015,
+          "label": { "it": "È documentato il diritto al placito annuo dell'Avvocato della Chiesa aquileiese", "fur": null },
+          "evidence": "SIUSA documenta nel 1015 il diritto dell'Avvocato della Chiesa aquileiese a un placito annuo a Buttrio; la tappa non afferma che in quell'anno il placito sia stato effettivamente tenuto e non lo definisce prima attestazione del paese.",
+          "source": {
+            "label": "SIUSA - Comune di Buttrio",
+            "type": "national_institution",
+            "url": "https://siusa-archivi.cultura.gov.it/cgi-bin/siusa/pagina.pl?Chiave=8991&RicDimF=2&TipoPag=prodente"
+          }
+        },
+        {
+          "id": "buttrio-comune-napoleonico-1807",
+          "year": 1807,
+          "label": { "it": "Buttrio compare come Comune moderno nel decreto napoleonico", "fur": null },
+          "evidence": "SIUSA identifica nel decreto n. 283 del 22 dicembre 1807 la prima comparsa di Buttrio come Comune in senso moderno.",
+          "source": {
+            "label": "SIUSA - Comune di Buttrio",
+            "type": "national_institution",
+            "url": "https://siusa-archivi.cultura.gov.it/cgi-bin/siusa/pagina.pl?Chiave=8991&RicDimF=2&TipoPag=prodente"
+          }
+        },
+        {
+          "id": "buttrio-fiera-vini-1933",
+          "year": 1933,
+          "label": { "it": "Si apre la prima Fiera regionale dei vini di Buttrio", "fur": null },
+          "evidence": "La brochure istituzionale del Museo della civiltà del vino data al 7 maggio 1933 l'apertura della prima Fiera regionale dei vini di Buttrio.",
+          "source": {
+            "label": "ERPAC FVG - Museo della civiltà del vino di Buttrio",
+            "type": "regional_institution",
+            "url": "https://patrimonioculturale.regione.fvg.it/wp-content/uploads/2017/06/BUT_Brochure-museo-A5_02.pdf"
+          }
+        }
+      ]
+    },
+    {
+      "istatCode": "030018",
+      "municipality": "Carlino",
+      "province": "UD",
+      "currentMilestoneCount": 0,
+      "decision": "source_verified_it_fur_pending",
+      "candidates": [
+        {
+          "id": "carlino-prima-attestazione-1031",
+          "year": 1031,
+          "label": { "it": "Prima attestazione documentaria di Carlino", "fur": null },
+          "evidence": "SIUSA data al 1031 la prima attestazione di Carlino in una concessione del patriarca Popone d'Aquileia.",
+          "source": {
+            "label": "SIUSA - Comune di Carlino",
+            "type": "national_institution",
+            "url": "https://siusa-archivi.cultura.gov.it/cgi-bin/siusa/pagina.pl?Chiave=9007&TipoPag=prodente"
+          }
+        },
+        {
+          "id": "carlino-comune-1818",
+          "year": 1818,
+          "label": { "it": "Carlino diventa Comune con San Gervasio e Casino", "fur": null },
+          "evidence": "SIUSA documenta che nel compartimento del 1818 Carlino divenne Comune con le frazioni di San Gervasio e Casino.",
+          "source": {
+            "label": "SIUSA - Comune di Carlino",
+            "type": "national_institution",
+            "url": "https://siusa-archivi.cultura.gov.it/cgi-bin/siusa/pagina.pl?Chiave=9007&TipoPag=prodente"
+          }
+        },
+        {
+          "id": "carlino-chiamana-scoperta-1970",
+          "year": 1970,
+          "label": { "it": "Vengono individuati i resti dell'impianto produttivo romano della Chiamana", "fur": null },
+          "evidence": "ERPAC distingue il rinvenimento fortuito dell'autunno 1970, durante lavori sugli argini, dall'avvio del primo scavo archeologico nel 1971.",
+          "source": {
+            "label": "ERPAC FVG - Località Chiamana",
+            "type": "regional_institution",
+            "url": "https://patrimonioculturale.regione.fvg.it/sito-archeologico/?s_id=548529"
+          }
+        }
+      ]
+    },
+    {
+      "istatCode": "030020",
+      "municipality": "Castions di Strada",
+      "province": "UD",
+      "currentMilestoneCount": 0,
+      "decision": "source_verified_it_fur_pending",
+      "candidates": [
+        {
+          "id": "castions-capitolo-aquileia-1031",
+          "year": 1031,
+          "label": { "it": "Il patriarca di Aquileia dona Castions al Capitolo aquileiese", "fur": null },
+          "evidence": "SIUSA documenta che nel 1031 il patriarca di Aquileia donò Castions al Capitolo aquileiese; la donazione fu riconfermata nel 1046.",
+          "source": {
+            "label": "SIUSA - Comune di Castions di Strada",
+            "type": "national_institution",
+            "url": "https://siusa-archivi.cultura.gov.it/cgi-bin/siusa/pagina.pl?Chiave=9015&TipoPag=prodente"
+          }
+        },
+        {
+          "id": "castions-dipartimento-passariano-1806",
+          "year": 1806,
+          "label": { "it": "Castions viene compresa nel Dipartimento di Passariano", "fur": null },
+          "evidence": "SIUSA documenta che nel 1806 Castions di Strada venne compresa nel Dipartimento di Passariano, Distretto di Gradisca e Cantone di Palma.",
+          "source": {
+            "label": "SIUSA - Comune di Castions di Strada",
+            "type": "national_institution",
+            "url": "https://siusa-archivi.cultura.gov.it/cgi-bin/siusa/pagina.pl?Chiave=9015&TipoPag=prodente"
+          }
+        },
+        {
+          "id": "castions-morsano-strada-romana-1862",
+          "year": 1862,
+          "label": { "it": "A Morsano vengono rinvenute tracce di una strada romana", "fur": null },
+          "evidence": "Il Comune documenta il rinvenimento nel 1862, nella frazione di Morsano, di tracce attribuite a una strada romana.",
+          "source": {
+            "label": "Comune di Castions di Strada - La storia",
+            "type": "official_municipality",
+            "url": "https://www.comune.castionsdistrada.ud.it/vivere-il-comune/territorio/la-storia/"
+          }
+        }
+      ]
+    },
+    {
+      "istatCode": "030022",
+      "municipality": "Cercivento",
+      "province": "UD",
+      "currentMilestoneCount": 0,
+      "decision": "source_verified_it_fur_pending",
+      "candidates": [
+        {
+          "id": "cercivento-farie-1426",
+          "year": 1426,
+          "label": { "it": "Prima testimonianza documentaria della Fàrie di Checo", "fur": null },
+          "evidence": "Il documento di programmazione comunale data al 1426 la prima testimonianza dell'antico opificio ad acqua Fàrie di Checo.",
+          "source": {
+            "label": "Comune di Cercivento - Documento unico di programmazione",
+            "type": "official_municipality",
+            "url": "https://www.comune.cercivento.ud.it/media/files/030022/attachment/DUP2018-AggCercivento.pdf"
+          }
+        },
+        {
+          "id": "cercivento-comune-1806",
+          "year": 1806,
+          "label": { "it": "Cercivento è documentato come Comune del Dipartimento di Passariano", "fur": null },
+          "evidence": "SIUSA data al 1806 l'esistenza dell'ente comunale e colloca Cercivento nel Dipartimento di Passariano; distingue inoltre l'ingresso del territorio nel Regno d'Italia, avvenuto nel 1805.",
+          "source": {
+            "label": "SIUSA - Comune di Cercivento",
+            "type": "national_institution",
+            "url": "https://siusa-archivi.cultura.gov.it/cgi-bin/siusa/pagina.pl?Chiave=9020&TipoPag=prodente"
+          }
+        },
+        {
+          "id": "cercivento-regno-italia-1866",
+          "year": 1866,
+          "label": { "it": "Cercivento viene unito al Regno d'Italia", "fur": null },
+          "evidence": "SIUSA documenta che Cercivento rimase sotto l'Austria fino al 1866, anno della sua unione al Regno d'Italia.",
+          "source": {
+            "label": "SIUSA - Comune di Cercivento",
+            "type": "national_institution",
+            "url": "https://siusa-archivi.cultura.gov.it/cgi-bin/siusa/pagina.pl?Chiave=9020&TipoPag=prodente"
+          }
+        }
+      ]
+    },
+    {
+      "istatCode": "030023",
+      "municipality": "Cervignano del Friuli",
+      "province": "UD",
+      "currentMilestoneCount": 0,
+      "decision": "source_verified_it_fur_pending",
+      "candidates": [
+        {
+          "id": "cervignano-castrum-cirviganum-1036",
+          "year": 1036,
+          "label": { "it": "Prima attestazione originale del nome Castrum Cirviganum", "fur": null },
+          "evidence": "Lo Statuto comunale distingue il diploma del 912, pervenuto in copia, dalla prima attestazione scritta originale del nome Castrum Cirviganum nel 1036.",
+          "source": {
+            "label": "Comune di Cervignano del Friuli - Statuto comunale",
+            "type": "official_municipality",
+            "url": "https://www.comune.cervignanodelfriuli.ud.it/media/files/md/030023/Statuto_Comunale.pdf"
+          }
+        },
+        {
+          "id": "cervignano-comune-rurale-1081",
+          "year": 1081,
+          "label": { "it": "La comunità di Cervignano si costituisce come Comune rurale", "fur": null },
+          "evidence": "Lo Statuto comunale documenta nel 1081 il contratto di livello con cui la comunità cervignanese si diede la forma giuridica di Comune rurale.",
+          "source": {
+            "label": "Comune di Cervignano del Friuli - Statuto comunale",
+            "type": "official_municipality",
+            "url": "https://www.comune.cervignanodelfriuli.ud.it/media/files/md/030023/Statuto_Comunale.pdf"
+          }
+        },
+        {
+          "id": "cervignano-ferrovia-1897",
+          "year": 1897,
+          "label": { "it": "Viene inaugurata la linea ferroviaria San Giorgio-Cervignano", "fur": null },
+          "evidence": "La guida storico-artistica comunale data al 17 ottobre 1897 l'inaugurazione del tratto San Giorgio-Cervignano, che collegò la ferrovia austriaca a quella italiana.",
+          "source": {
+            "label": "Comune di Cervignano del Friuli - Territorio e cultura",
+            "type": "official_municipality",
+            "url": "https://www.comune.cervignanodelfriuli.ud.it/media/files/md/030023/209guidastorico_art.pdf"
+          }
+        }
+      ]
+    }
+  ]
+}

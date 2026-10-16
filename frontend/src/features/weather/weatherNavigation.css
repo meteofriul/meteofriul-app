@@ -1,0 +1,179 @@
+.mf-weather-route-shell {
+  display: grid;
+  gap: var(--mf-space-3);
+  min-width: 0;
+}
+
+.mf-weather-route-title {
+  color: #ffffff;
+  font-size: 2rem;
+  font-weight: 800;
+  text-shadow: 0 1px 2px rgb(6 58 96 / 45%);
+  line-height: var(--mf-line-title);
+  margin: 0;
+}
+
+.mf-weather-route-context .mf-location-context__action {
+  margin-left: 4px;
+  font-size: 0.78rem;
+}
+
+html[data-theme="dark"] .mf-weather-route-title {
+  color: #ffffff;
+}
+
+.mf-weather-section-nav {
+  background: #fff;
+  border: 1px solid var(--mf-border);
+  border-radius: var(--mf-radius-control);
+  display: grid;
+  gap: var(--mf-space-1);
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  padding: var(--mf-space-1);
+}
+
+.mf-weather-section-nav__item {
+  appearance: none;
+  background: transparent;
+  border: 1px solid transparent;
+  border-radius: calc(var(--mf-radius-control) - 4px);
+  color: var(--mf-muted);
+  cursor: pointer;
+  font: inherit;
+  font-size: var(--mf-text-sm);
+  font-weight: 800;
+  line-height: var(--mf-line-title);
+  min-height: 44px;
+  min-width: 0;
+  padding: var(--mf-space-2);
+  transition:
+    background var(--mf-motion-fast),
+    border-color var(--mf-motion-fast),
+    color var(--mf-motion-fast);
+}
+
+.mf-weather-section-nav__item.is-active {
+  background: var(--mf-blue);
+  border-color: var(--mf-blue);
+  color: var(--mf-white);
+}
+
+.mf-weather-section-nav__item:focus-visible {
+  outline: 2px solid var(--mf-blue);
+  outline-offset: 2px;
+}
+
+.mf-weather-section-nav__item.is-active:focus-visible {
+  outline-color: var(--mf-gold);
+}
+
+.mf-weather-section-nav__item:disabled {
+  cursor: not-allowed;
+  opacity: 0.45;
+}
+
+html[data-theme="dark"] .mf-weather-section-nav {
+  background: color-mix(in srgb, var(--mf-surface) 94%, var(--mf-blue) 6%);
+}
+
+@media (max-width: 360px) {
+  .mf-weather-section-nav__item {
+    font-size: 0.72rem;
+    padding-inline: var(--mf-space-1);
+  }
+}
+
+/* The pilot uses a slim glass control while preserving full-size touch targets. */
+.mf-weather-section-nav--compact {
+  gap: 4px;
+  padding: 3px;
+  border: 1px solid rgba(2, 132, 199, 0.12);
+  border-radius: 15px;
+  background: rgba(255, 255, 255, 0.85);
+  -webkit-backdrop-filter: blur(12px);
+  backdrop-filter: blur(12px);
+  box-shadow: 0 4px 16px rgba(0, 40, 80, 0.08);
+}
+
+.mf-weather-section-nav--compact .mf-weather-section-nav__item {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  min-height: 32px;
+  padding: 0 10px;
+  border-radius: 12px;
+  color: #475569;
+  font-size: 0.76rem;
+  font-weight: 850;
+  line-height: normal;
+}
+
+/* Preserve a 44px vertical hit area without changing the visible 32px cell. */
+.mf-weather-section-nav--compact .mf-weather-section-nav__item::before {
+  position: absolute;
+  inset: -6px 0;
+  content: "";
+}
+
+.mf-weather-section-nav--compact .mf-weather-section-nav__item.is-active {
+  border-color: rgba(2, 132, 199, 0.22);
+  border-top-color: rgba(255, 255, 255, 0.45);
+  background: linear-gradient(135deg, #0277b5 0%, #0369a1 100%);
+  color: #fff;
+  box-shadow: 0 4px 12px rgba(2, 132, 199, 0.24);
+  text-shadow: 0 1px 5px rgba(0, 58, 96, 0.2);
+}
+
+html[data-theme="dark"] .mf-weather-section-nav--compact {
+  border-color: rgba(255, 255, 255, 0.1);
+  background: rgba(15, 23, 42, 0.75);
+  -webkit-backdrop-filter: blur(16px);
+  backdrop-filter: blur(16px);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+}
+
+html[data-theme="dark"]
+  .mf-weather-section-nav--compact
+  .mf-weather-section-nav__item:not(.is-active) {
+  color: #94a3b8;
+}
+
+html[data-theme="dark"]
+  .mf-weather-section-nav--compact
+  .mf-weather-section-nav__item.is-active {
+  border-color: rgba(3, 105, 161, 0.35);
+  border-top-color: rgba(255, 255, 255, 0.35);
+  background: linear-gradient(135deg, #0277b5 0%, #0369a1 100%);
+  box-shadow: 0 5px 14px rgba(2, 132, 199, 0.28);
+  text-shadow: 0 1px 6px rgba(56, 189, 248, 0.22);
+}
+
+@media (hover: hover) {
+  .mf-weather-section-nav--compact
+    .mf-weather-section-nav__item:not(.is-active, :disabled):hover {
+    background: rgba(2, 132, 199, 0.06);
+    color: #334155;
+  }
+
+  html[data-theme="dark"]
+    .mf-weather-section-nav--compact
+    .mf-weather-section-nav__item:not(.is-active, :disabled):hover {
+    background: rgba(255, 255, 255, 0.06);
+    color: #cbd5e1;
+  }
+}
+
+.mf-weather-section-nav--compact
+  .mf-weather-section-nav__item:not(.is-active, :disabled):active {
+  background: rgba(2, 132, 199, 0.1);
+  color: #334155;
+}
+
+html[data-theme="dark"]
+  .mf-weather-section-nav--compact
+  .mf-weather-section-nav__item:not(.is-active, :disabled):active {
+  background: rgba(255, 255, 255, 0.06);
+  color: #cbd5e1;
+}

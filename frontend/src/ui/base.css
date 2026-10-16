@@ -1,0 +1,60 @@
+* {
+  box-sizing: border-box;
+}
+
+html {
+  --mf-safe-area-inset-top: var(--safe-area-inset-top, env(safe-area-inset-top, 0px));
+  --mf-safe-area-inset-right: var(--safe-area-inset-right, env(safe-area-inset-right, 0px));
+  --mf-safe-area-inset-bottom: var(--safe-area-inset-bottom, env(safe-area-inset-bottom, 0px));
+  --mf-safe-area-inset-left: var(--safe-area-inset-left, env(safe-area-inset-left, 0px));
+  min-width: 320px;
+  min-height: 100%;
+  background: var(--mf-app-canvas);
+  color: var(--mf-ink);
+  font-family: var(--mf-font-sans);
+  letter-spacing: 0;
+}
+
+body {
+  min-width: 320px;
+  min-height: 100vh;
+  margin: 0;
+  background:
+    linear-gradient(180deg, var(--mf-body-gradient-start) 0%, var(--mf-body-gradient-end) var(--mf-body-gradient-end-position)),
+    repeating-linear-gradient(135deg, var(--mf-body-pattern) 0 1px, transparent 1px 24px),
+    var(--mf-app-canvas);
+}
+
+html:not([data-theme="dark"]) body {
+  background:
+    linear-gradient(
+      180deg,
+      var(--mf-body-gradient-start) 0,
+      var(--mf-body-gradient-start) var(--mf-body-gradient-start-position),
+      var(--mf-body-gradient-transition) var(--mf-body-gradient-transition-position),
+      var(--mf-body-gradient-end) var(--mf-body-gradient-end-position),
+      var(--mf-body-gradient-end) 100%
+    ),
+    repeating-linear-gradient(135deg, var(--mf-body-pattern) 0 1px, transparent 1px 24px),
+    var(--mf-paper);
+}
+
+button,
+input,
+select,
+textarea {
+  font: inherit;
+  letter-spacing: 0;
+}
+
+button {
+  cursor: pointer;
+}
+
+button:disabled {
+  cursor: not-allowed;
+}
+
+#root {
+  min-height: 100vh;
+}

@@ -1,0 +1,14 @@
+**
+!experiments/
+!experiments/weather_autonomy/
+!experiments/weather_autonomy/*.py
+!experiments/weather_autonomy/production-runtime.json
+!experiments/weather_autonomy/production-cams.env.yaml
+!experiments/weather_autonomy/Dockerfile.pilot
+!experiments/weather_autonomy/local_pipeline/
+!experiments/weather_autonomy/local_pipeline/*.py
+!backend/
+!backend/app/
+!backend/app/data/
+!backend/app/data/fvg_municipalities.json
+!backend/app/data/fvg_geography.json

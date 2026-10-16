@@ -1,0 +1,246 @@
+{
+  "schemaVersion": 1,
+  "batchId": "ostermann-1876-language-review-18",
+  "reviewedAt": "2026-08-02",
+  "sourceDecisionFiles": [
+    "review-decisions-batch-18.json"
+  ],
+  "purpose": "Diciottesima revisione linguistica ed editoriale dei candidati Ostermann 1876 verificati sul facsimile. Non pubblica contenuti nella UI.",
+  "policy": {
+    "publish": false,
+    "rule": "La normalizzazione FUR conserva il significato attestato nel facsimile e adotta, quando disponibile, la forma proverbiale registrata dal Dizionari de Lenghe Furlane. Le quindici massime sono generali e non ricevono date, feste o stagioni artificiali."
+  },
+  "summary": {
+    "records": 15,
+    "languageReviewed": 15,
+    "mergeExisting": 0,
+    "needsNativeReview": 0
+  },
+  "records": [
+    {
+      "id": "ost1876-no-si-sa-mai-avonde",
+      "reviewStatus": "language_reviewed",
+      "furNormalized": "No si sa mai avonde.",
+      "itFinal": "Non si sa mai abbastanza.",
+      "destination": "almanac",
+      "calendarRule": { "type": "general", "bucket": "wisdom", "fallbackAllowed": true },
+      "duplicateAudit": { "status": "new_distinct" },
+      "evidence": [
+        { "label": "Facsimile Ostermann 1876, p. PDF 271", "kind": "primary" },
+        { "label": "Dizionari de Lenghe Furlane, proverbio registrato alla voce avonde", "kind": "secondary" }
+      ],
+      "editorialNote": "Adottata la forma normalizzata attestata integralmente dal dizionario.",
+      "publish": false
+    },
+    {
+      "id": "ost1876-ben-save-poc-di-dut",
+      "reviewStatus": "language_reviewed",
+      "furNormalized": "Al è ben savê un pôc di dut.",
+      "itFinal": "È bene sapere un po' di tutto.",
+      "destination": "almanac",
+      "calendarRule": { "type": "general", "bucket": "wisdom", "fallbackAllowed": true },
+      "duplicateAudit": { "status": "new_distinct" },
+      "evidence": [
+        { "label": "Facsimile Ostermann 1876, p. PDF 271", "kind": "primary" },
+        { "label": "Dizionari de Lenghe Furlane, lessico di savê, pôc e dut", "kind": "secondary" }
+      ],
+      "editorialNote": "Normalizzati il pronome soggetto e la grafia; mantenuta la struttura del facsimile.",
+      "publish": false
+    },
+    {
+      "id": "ost1876-plui-sa-mancul-sa",
+      "reviewStatus": "language_reviewed",
+      "furNormalized": "Cui che plui al sa mancul al sa.",
+      "itFinal": "Chi più sa, meno sa.",
+      "destination": "almanac",
+      "calendarRule": { "type": "general", "bucket": "wisdom", "fallbackAllowed": true },
+      "duplicateAudit": { "status": "new_distinct" },
+      "evidence": [
+        { "label": "Facsimile Ostermann 1876, p. PDF 271", "kind": "primary" },
+        { "label": "Dizionari de Lenghe Furlane, proverbio registrato alla voce plui", "kind": "secondary" }
+      ],
+      "editorialNote": "Adottata la forma normalizzata attestata integralmente dal dizionario.",
+      "publish": false
+    },
+    {
+      "id": "ost1876-plui-sa-plui-impara",
+      "reviewStatus": "language_reviewed",
+      "furNormalized": "Cui che plui al sa al à plui gust di imparâ.",
+      "itFinal": "Chi più sa, più desidera imparare.",
+      "destination": "almanac",
+      "calendarRule": { "type": "general", "bucket": "wisdom", "fallbackAllowed": true },
+      "duplicateAudit": { "status": "new_distinct" },
+      "evidence": [
+        { "label": "Facsimile Ostermann 1876, p. PDF 271", "kind": "primary" },
+        { "label": "Dizionari de Lenghe Furlane, proverbio registrato alla voce plui", "kind": "secondary" }
+      ],
+      "editorialNote": "Adottata la forma normalizzata attestata integralmente dal dizionario.",
+      "publish": false
+    },
+    {
+      "id": "ost1876-nissun-nas-mestri",
+      "reviewStatus": "language_reviewed",
+      "furNormalized": "Nissun nol nas mestri.",
+      "itFinal": "Nessuno nasce maestro.",
+      "destination": "almanac",
+      "calendarRule": { "type": "general", "bucket": "wisdom", "fallbackAllowed": true },
+      "duplicateAudit": { "status": "new_distinct" },
+      "evidence": [
+        { "label": "Facsimile Ostermann 1876, p. PDF 271", "kind": "primary" },
+        { "label": "Dizionari de Lenghe Furlane, lessico di nissun, nassi e mestri", "kind": "secondary" }
+      ],
+      "editorialNote": "Aggiunto il pronome soggetto negativo richiesto dalla forma normalizzata; mantenuto il senso del facsimile.",
+      "publish": false
+    },
+    {
+      "id": "ost1876-fuarce-fa-impare",
+      "reviewStatus": "language_reviewed",
+      "furNormalized": "A fuarce di fâ, si impare.",
+      "itFinal": "A forza di fare, s'impara.",
+      "destination": "almanac",
+      "calendarRule": { "type": "general", "bucket": "wisdom", "fallbackAllowed": true },
+      "duplicateAudit": { "status": "new_distinct" },
+      "evidence": [
+        { "label": "Facsimile Ostermann 1876, p. PDF 271", "kind": "primary" },
+        { "label": "Dizionari de Lenghe Furlane, proverbio registrato alla voce a fuarce di", "kind": "secondary" }
+      ],
+      "editorialNote": "Adottata la forma normalizzata attestata integralmente dal dizionario.",
+      "publish": false
+    },
+    {
+      "id": "ost1876-sa-fa-sa-comanda",
+      "reviewStatus": "language_reviewed",
+      "furNormalized": "Cui che al sa fâ al sa ancje comandâ.",
+      "itFinal": "Chi sa fare sa anche comandare.",
+      "destination": "almanac",
+      "calendarRule": { "type": "general", "bucket": "wisdom", "fallbackAllowed": true },
+      "duplicateAudit": { "status": "new_distinct" },
+      "evidence": [
+        { "label": "Facsimile Ostermann 1876, p. PDF 271", "kind": "primary" },
+        { "label": "Dizionari de Lenghe Furlane, proverbio registrato alla voce fâ", "kind": "secondary" }
+      ],
+      "editorialNote": "Adottata la forma normalizzata attestata integralmente dal dizionario.",
+      "publish": false
+    },
+    {
+      "id": "ost1876-save-no-sta-stomi",
+      "reviewStatus": "language_reviewed",
+      "furNormalized": "Il savê nol sta sul stomi.",
+      "itFinal": "Il sapere non è un peso.",
+      "destination": "almanac",
+      "calendarRule": { "type": "general", "bucket": "wisdom", "fallbackAllowed": true },
+      "duplicateAudit": { "status": "new_distinct" },
+      "evidence": [
+        { "label": "Facsimile Ostermann 1876, p. PDF 272", "kind": "primary" },
+        { "label": "Dizionari de Lenghe Furlane, lessico di savê e stomi", "kind": "secondary" }
+      ],
+      "editorialNote": "Normalizzata la grafia; il copy italiano rende in forma naturale l'immagine del facsimile.",
+      "publish": false
+    },
+    {
+      "id": "ost1876-savi-no-mai-sol",
+      "reviewStatus": "language_reviewed",
+      "furNormalized": "Il savi nol è mai sôl.",
+      "itFinal": "Il saggio non è mai solo.",
+      "destination": "almanac",
+      "calendarRule": { "type": "general", "bucket": "wisdom", "fallbackAllowed": true },
+      "duplicateAudit": { "status": "new_distinct" },
+      "evidence": [
+        { "label": "Facsimile Ostermann 1876, p. PDF 272", "kind": "primary" },
+        { "label": "Dizionari de Lenghe Furlane, lessico di savi e sôl", "kind": "secondary" }
+      ],
+      "editorialNote": "Normalizzati pronome soggetto e grafia; mantenuta la struttura del facsimile.",
+      "publish": false
+    },
+    {
+      "id": "ost1876-san-plui-doi-che-un",
+      "reviewStatus": "language_reviewed",
+      "furNormalized": "A san plui doi che un.",
+      "itFinal": "Ne sanno più due di uno.",
+      "destination": "almanac",
+      "calendarRule": { "type": "general", "bucket": "wisdom", "fallbackAllowed": true },
+      "duplicateAudit": { "status": "new_distinct" },
+      "evidence": [
+        { "label": "Facsimile Ostermann 1876, p. PDF 272", "kind": "primary" },
+        { "label": "Dizionari de Lenghe Furlane, lessico di savê e doi", "kind": "secondary" }
+      ],
+      "editorialNote": "Aggiunto il pronome soggetto plurale richiesto dalla forma normalizzata.",
+      "publish": false
+    },
+    {
+      "id": "ost1876-fevele-trop-pense-poc",
+      "reviewStatus": "language_reviewed",
+      "furNormalized": "Cui che al fevele trop al pense pôc.",
+      "itFinal": "Chi parla troppo pensa poco.",
+      "destination": "almanac",
+      "calendarRule": { "type": "general", "bucket": "wisdom", "fallbackAllowed": true },
+      "duplicateAudit": { "status": "new_distinct" },
+      "evidence": [
+        { "label": "Facsimile Ostermann 1876, p. PDF 272", "kind": "primary" },
+        { "label": "Dizionari de Lenghe Furlane, lessico di fevela, trop e pensa", "kind": "secondary" }
+      ],
+      "editorialNote": "Normalizzati i pronomi soggetto e la grafia; mantenuta la struttura del facsimile.",
+      "publish": false
+    },
+    {
+      "id": "ost1876-fale-premure-pentis",
+      "reviewStatus": "language_reviewed",
+      "furNormalized": "Cui che al fale in premure si pentìs a pôc a pôc.",
+      "itFinal": "Chi sbaglia in fretta si pente a poco a poco.",
+      "destination": "almanac",
+      "calendarRule": { "type": "general", "bucket": "wisdom", "fallbackAllowed": true },
+      "duplicateAudit": { "status": "new_distinct" },
+      "evidence": [
+        { "label": "Facsimile Ostermann 1876, p. PDF 272", "kind": "primary" },
+        { "label": "Dizionari de Lenghe Furlane, lessico di fala, premure e pentisi", "kind": "secondary" }
+      ],
+      "editorialNote": "Normalizzati il pronome soggetto, gli accenti e la punteggiatura; mantenuto il senso del facsimile.",
+      "publish": false
+    },
+    {
+      "id": "ost1876-un-fal-nas-mil",
+      "reviewStatus": "language_reviewed",
+      "furNormalized": "Di un fal ind nas mil.",
+      "itFinal": "Da un errore ne nascono mille.",
+      "destination": "almanac",
+      "calendarRule": { "type": "general", "bucket": "wisdom", "fallbackAllowed": true },
+      "duplicateAudit": { "status": "new_distinct" },
+      "evidence": [
+        { "label": "Facsimile Ostermann 1876, p. PDF 272", "kind": "primary" },
+        { "label": "Dizionari de Lenghe Furlane, proverbio registrato alla voce mil", "kind": "secondary" }
+      ],
+      "editorialNote": "Adottata la forma normalizzata attestata integralmente dal dizionario.",
+      "publish": false
+    },
+    {
+      "id": "ost1876-no-va-indenant-torne-indaur",
+      "reviewStatus": "language_reviewed",
+      "furNormalized": "Cui che nol va indenant al torne indaûr.",
+      "itFinal": "Chi non va avanti torna indietro.",
+      "destination": "almanac",
+      "calendarRule": { "type": "general", "bucket": "wisdom", "fallbackAllowed": true },
+      "duplicateAudit": { "status": "new_distinct" },
+      "evidence": [
+        { "label": "Facsimile Ostermann 1876, p. PDF 270", "kind": "primary" },
+        { "label": "Dizionari de Lenghe Furlane, proverbio registrato alla voce tornâ indaûr", "kind": "secondary" }
+      ],
+      "editorialNote": "Adottata la forma normalizzata attestata integralmente dal dizionario.",
+      "publish": false
+    },
+    {
+      "id": "ost1876-grops-vegnin-pietin",
+      "reviewStatus": "language_reviewed",
+      "furNormalized": "Ducj i grops a vegnin al pietin.",
+      "itFinal": "Tutti i nodi vengono al pettine.",
+      "destination": "almanac",
+      "calendarRule": { "type": "general", "bucket": "wisdom", "fallbackAllowed": true },
+      "duplicateAudit": { "status": "new_distinct" },
+      "evidence": [
+        { "label": "Facsimile Ostermann 1876, p. PDF 275", "kind": "primary" },
+        { "label": "Dizionari de Lenghe Furlane, proverbio registrato alla voce vignî", "kind": "secondary" }
+      ],
+      "editorialNote": "Adottata la forma normalizzata attestata integralmente dal dizionario.",
+      "publish": false
+    }
+  ]
+}

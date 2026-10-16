@@ -1,0 +1,169 @@
+{
+  "schemaVersion": 1,
+  "generatedAt": "2026-07-16",
+  "purpose": "Trentaduesimo lotto Scopri IT: audit editoriale dei primi quindici candidati rimasti nella coda. Cinque memorie superano la soglia di rilevanza e solidità della fonte; due aprono nuove giornate e tre restano approfondimenti secondari locali. Tre casi con data o inquadramento ancora insufficienti restano in attesa e sette profili generici vengono esclusi. Il lotto resta bloccato fino alla revisione FUR.",
+  "policy": {
+    "readyForUi": false,
+    "furDeferred": true,
+    "dateFormat": "DD-MM",
+    "requiresFinalItalianApproval": true,
+    "excludeDeaths": true,
+    "excludeGenericPoliticalProfiles": true,
+    "excludeGenericProfessionalProfiles": true,
+    "excludeSportsOnlyProfiles": true,
+    "rejectSemanticDuplicates": true,
+    "rejectUncertainCalendarDates": true,
+    "sourceFirst": true,
+    "publishAfterFurOnly": true,
+    "allowMultipleMemoriesPerDate": true,
+    "secondaryOrderedByPriority": true,
+    "doNotPromoteToPrimaryForCoverageOnly": true
+  },
+  "summary": {
+    "reviewed": 15,
+    "keepDaily": 5,
+    "primary": 2,
+    "secondary": 3,
+    "hold": 3,
+    "excluded": 7,
+    "canonicalPrimaryDatesBefore": 235,
+    "canonicalPrimaryDatesAfter": 237,
+    "currentVisiblePrimaryCoverage": 227
+  },
+  "keepDaily": [
+    {
+      "id": "master-fvg-23-12-Q59644055",
+      "wikidataId": "Q59644055",
+      "dateIt": "23-12",
+      "year": 1885,
+      "municipality": "Trieste",
+      "locality": "Trieste",
+      "province": "TS",
+      "canonicalCategory": "cultura",
+      "dailyRole": "secondary",
+      "priority": 93,
+      "titleIt": "Olga Brunner e un salotto per la musica europea",
+      "copyIt": "Il 23 dicembre 1885 nasce a Trieste Olga Brunner. Con il marito Ugo Levi anima a Venezia un luogo d'incontro per musicisti e letterati e raccoglie libri, manoscritti e spartiti destinati alla Fondazione Ugo e Olga Levi.",
+      "sourceLabel": "Fondazione Ugo e Olga Levi - Olga Brunner",
+      "sourceUrl": "https://www.fondazionelevi.it/en/la-fondazione/storia/",
+      "sourceStatus": "pass",
+      "readyForUi": false
+    },
+    {
+      "id": "master-fvg-24-10-Q23289264",
+      "wikidataId": "Q23289264",
+      "dateIt": "24-10",
+      "year": 1921,
+      "municipality": "Udine",
+      "locality": "Udine",
+      "province": "UD",
+      "canonicalCategory": "memoria_storica",
+      "dailyRole": "primary",
+      "priority": 86,
+      "titleIt": "Gianandrea Gropplero, dalla Resistenza alla cooperazione",
+      "copyIt": "Il 24 ottobre 1921 nasce a Udine Gianandrea Gropplero di Troppenburg. Pilota e partigiano, organizza collegamenti con i comandi alleati e guida la brigata Carlo Rosselli; nel dopoguerra lavora come ingegnere e volontario in progetti civili e umanitari.",
+      "sourceLabel": "Dizionario Biografico dei Friulani - Gianandrea Gropplero",
+      "sourceUrl": "https://www.dizionariobiograficodeifriulani.it/gropplero-di-troppenburg-gianandrea",
+      "sourceStatus": "pass",
+      "readyForUi": false
+    },
+    {
+      "id": "master-fvg-26-05-Q61655182",
+      "wikidataId": "Q61655182",
+      "dateIt": "26-05",
+      "year": 1943,
+      "municipality": "Trieste",
+      "locality": "Trieste",
+      "province": "TS",
+      "canonicalCategory": "cultura",
+      "dailyRole": "secondary",
+      "priority": 95,
+      "titleIt": "Roberto Damiani e la cultura civile di Trieste",
+      "copyIt": "Il 26 maggio 1943 nasce a Trieste Roberto Damiani. Docente di letteratura contemporanea e studioso degli autori dialettali triestini, affianca alla ricerca il teatro e l'organizzazione culturale della città.",
+      "sourceLabel": "Sistema Bibliotecario dell'Università di Trieste - Roberto Damiani",
+      "sourceUrl": "https://www.biblio.units.it/SebinaOpac/resource/roberto-damiani-un-cittadino-per-trieste/TSA0635266",
+      "sourceStatus": "pass",
+      "readyForUi": false
+    },
+    {
+      "id": "master-fvg-26-10-Q6998905",
+      "wikidataId": "Q6998905",
+      "dateIt": "26-10",
+      "year": 1940,
+      "municipality": "Udine",
+      "locality": "Udine",
+      "province": "UD",
+      "canonicalCategory": "memoria_storica",
+      "dailyRole": "secondary",
+      "priority": 98,
+      "titleIt": "Gianpaolo Tosel e le inchieste sulle Brigate Rosse",
+      "copyIt": "Il 26 ottobre 1940 nasce a Udine Gianpaolo Tosel. Magistrato e poi procuratore della Repubblica a Udine, conduce importanti inchieste sulle Brigate Rosse e sulla vicenda del rapimento e dell’omicidio di Giuseppe Taliercio.",
+      "sourceLabel": "Corriere della Sera - Gianpaolo Tosel",
+      "sourceUrl": "https://www.corriere.it/sport/calcio/serie-a/26_gennaio_06/gianpaolo-tosel-morto-giudice-sportivo-serie-a-ace962f8-5ca9-4059-ba03-f8e1def58xlk.shtml",
+      "sourceStatus": "pass",
+      "readyForUi": false
+    },
+    {
+      "id": "master-fvg-29-09-Q4003425",
+      "wikidataId": "Q4003425",
+      "dateIt": "29-09",
+      "year": 1927,
+      "municipality": "Udine",
+      "locality": "Udine",
+      "province": "UD",
+      "canonicalCategory": "cultura",
+      "dailyRole": "primary",
+      "priority": 90,
+      "titleIt": "Umberto Manfrin, il segno friulano di Tiramolla",
+      "copyIt": "Il 29 settembre 1927 nasce a Udine Umberto Manfrin, noto come Manberto. Dal 1952 lega per decenni il proprio segno a Tiramolla, crea personaggi originali e collabora con importanti testate del fumetto italiano.",
+      "sourceLabel": "Artribune - Umberto Manfrin",
+      "sourceUrl": "https://www.artribune.com/mostre-evento-arte/ingranaggi-onirici-e-circuiti-astratti/",
+      "sourceStatus": "pass",
+      "readyForUi": false
+    }
+  ],
+  "hold": [
+    {
+      "id": "master-fvg-24-01-Q110914766",
+      "reason": "La rilevanza militare e la medaglia al valor militare richiedono un inquadramento non celebrativo della guerra coloniale e una fonte anagrafica primaria per il giorno di nascita."
+    },
+    {
+      "id": "master-fvg-27-11-Q45027750",
+      "reason": "La produzione tecnica sull'artiglieria e documentata, ma il 27 novembre 1669 e Trieste non sono ancora confermati da una fonte biografica autorevole."
+    },
+    {
+      "id": "master-fvg-29-04-Q61896397",
+      "reason": "Il profilo culturale è rilevante, ma le fonti consultate indicano due diversi giorni di nascita nel mese di aprile."
+    }
+  ],
+  "excluded": [
+    {
+      "id": "master-fvg-24-05-Q27999639",
+      "reason": "Profilo giornalistico e radiofonico contemporaneo senza rilevanza storico-culturale autonoma sufficiente per Scopri."
+    },
+    {
+      "id": "master-fvg-27-10-Q3940818",
+      "reason": "Profilo quasi interamente sportivo e legato alla storia del Pisa, con rapporto territoriale limitato alla nascita a Trieste."
+    },
+    {
+      "id": "master-fvg-28-10-Q21833023",
+      "reason": "Profilo imprenditoriale e politico generico senza un contributo storico-culturale individuale abbastanza distintivo."
+    },
+    {
+      "id": "master-fvg-29-04-Q3972288",
+      "reason": "Profilo esclusivamente sportivo e privo di rilevanza storica autonoma per la rubrica."
+    },
+    {
+      "id": "master-fvg-31-01-Q3762718",
+      "reason": "Profilo giornalistico contemporaneo che non supera la soglia editoriale definita per Scopri."
+    },
+    {
+      "id": "master-fvg-31-07-Q87463491",
+      "reason": "Profilo professionale dello spettacolo senza rilevanza storico-culturale abbastanza forte per la rubrica."
+    },
+    {
+      "id": "master-fvg-28-01-Q3992736",
+      "reason": "Profilo giornalistico e politico contemporaneo escluso dalle regole editoriali già deliberate."
+    }
+  ]
+}

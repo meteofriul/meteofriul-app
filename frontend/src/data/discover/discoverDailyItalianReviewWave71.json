@@ -1,0 +1,117 @@
+{
+  "schemaVersion": 1,
+  "generatedAt": "2026-07-21",
+  "purpose": "Settantunesimo lotto Scopri IT: due nuove Memorie principali per il 27 giugno e il 7 agosto. Le fonti istituzionali documentano l'intervento di Tiziano Tessitori alla Costituente sulla denominazione Friuli-Venezia Giulia e il volo di Gabriele D'Annunzio su Trieste. Sei date restano aperte perché le ricerche disponibili restituiscono soltanto eventi occasionali, ricorrenze stagionali o fatti sotto la soglia editoriale.",
+  "policy": {
+    "readyForUi": false,
+    "furDeferred": true,
+    "dateFormat": "DD-MM",
+    "requiresFinalItalianApproval": true,
+    "excludeDeaths": true,
+    "excludeGenericPoliticalProfiles": true,
+    "excludeGenericProfessionalProfiles": true,
+    "excludeSportsOnlyProfiles": true,
+    "rejectBirthplaceOnlyProfiles": true,
+    "rejectSemanticDuplicates": true,
+    "rejectUncertainCalendarDates": true,
+    "requireOneCanonicalSource": true,
+    "sourceFirst": true,
+    "publishAfterFurOnly": true,
+    "allowMultipleMemoriesPerDate": true,
+    "doNotPromoteToPrimaryForCoverageOnly": true
+  },
+  "summary": {
+    "reviewed": 8,
+    "keepDaily": 2,
+    "primary": 2,
+    "secondary": 0,
+    "hold": 6,
+    "excluded": 0,
+    "canonicalPrimaryDatesBefore": 344,
+    "canonicalPrimaryDatesAfter": 346,
+    "currentVisiblePrimaryCoverage": 344
+  },
+  "keepDaily": [
+    {
+      "id": "source-gap-27-06-costituente-nome-friuli-venezia-giulia-1947",
+      "sourceEntityId": "consiglio-fvg-costituente-tessitori-27-giugno-1947",
+      "dateIt": "27-06",
+      "year": 1947,
+      "municipality": "Friuli Venezia Giulia",
+      "locality": "Assemblea Costituente, Roma",
+      "province": "FVG",
+      "canonicalCategory": "memoria_storica",
+      "dailyRole": "primary",
+      "priority": 99,
+      "titleIt": "Alla Costituente si afferma il nome Friuli-Venezia Giulia",
+      "copyIt": "Il 27 giugno 1947, durante l'esame delle Regioni a statuto speciale, Tiziano Tessitori interviene all'Assemblea Costituente per difendere la denominazione Friuli-Venezia Giulia. Il suo emendamento ottiene un'adesione a grande maggioranza e segna un passaggio decisivo verso la futura Regione autonoma.",
+      "sourceLabel": "Consiglio regionale del Friuli Venezia Giulia",
+      "sourceUrl": "https://www.consiglio.regione.fvg.it/pagineinterne/Portale/comunicatiStampaDettaglio.aspx?ID=781363",
+      "sourceStatus": "pass",
+      "readyForUi": false
+    },
+    {
+      "id": "source-gap-07-08-dannunzio-volo-trieste-1915",
+      "sourceEntityId": "mic-bsi-dannunzio-volo-trieste-7-agosto-1915",
+      "dateIt": "07-08",
+      "year": 1915,
+      "municipality": "Trieste",
+      "locality": "Trieste",
+      "province": "TS",
+      "canonicalCategory": "memoria_storica",
+      "dailyRole": "primary",
+      "priority": 96,
+      "titleIt": "D'Annunzio vola su Trieste e lancia bandiere e volantini",
+      "copyIt": "Il 7 agosto 1915 Gabriele D'Annunzio sorvola Trieste. Dall'aeroplano lancia bandiere italiane e volantini, poi alcune bombe contro postazioni militari: un'azione simbolica sulla città, allora parte dell'Impero austro-ungarico.",
+      "sourceLabel": "Ministero della Cultura - Biblioteca Statale Isontina",
+      "sourceUrl": "https://goriziagrandeguerra.cultura.gov.it/timeline-1915/",
+      "sourceStatus": "pass",
+      "readyForUi": false
+    }
+  ],
+  "hold": [
+    {
+      "id": "source-gap-18-05-no-strong-local-memory-wave71",
+      "dateIt": "18-05",
+      "decision": "hold_for_better_event",
+      "reason": "La ricerca istituzionale non ha restituito un fatto storico locale exact-date con rilievo sufficiente. Eventi contemporanei occasionali e profili minori restano fuori.",
+      "readyForUi": false
+    },
+    {
+      "id": "source-gap-13-06-no-distinct-local-memory-wave71",
+      "dateIt": "13-06",
+      "decision": "hold_for_better_event",
+      "reason": "Le fonti disponibili restituiscono appuntamenti contemporanei o un'altra cronaca bellica ripetitiva; nessuno dei due filoni supera la soglia della Memoria principale.",
+      "readyForUi": false
+    },
+    {
+      "id": "source-gap-30-06-no-strong-local-memory-wave71",
+      "dateIt": "30-06",
+      "decision": "hold_for_better_event",
+      "reason": "Non è emerso un fatto locale exact-date abbastanza rilevante. Atti amministrativi recenti e riconoscimenti occasionali non vengono usati per coprire il calendario.",
+      "readyForUi": false
+    },
+    {
+      "id": "source-gap-24-12-seasonal-material-wave71",
+      "dateIt": "24-12",
+      "decision": "hold_for_traditions",
+      "reason": "I materiali individuati sono legati alla vigilia e alle consuetudini natalizie: appartengono a Tradizioni, non alla Memoria storica del giorno.",
+      "readyForUi": false
+    },
+    {
+      "id": "source-gap-28-12-no-strong-local-memory-wave71",
+      "dateIt": "28-12",
+      "decision": "hold_for_better_event",
+      "reason": "Le fonti istituzionali consultate non documentano un fatto locale storico e riconoscibile per questa data. Norme recenti e dati turistici restano esclusi.",
+      "readyForUi": false
+    },
+    {
+      "id": "source-gap-29-12-no-strong-local-memory-wave71",
+      "dateIt": "29-12",
+      "decision": "hold_for_better_event",
+      "reason": "La ricerca non ha prodotto una Memoria locale exact-date con peso storico sufficiente; provvedimenti amministrativi recenti non diventano contenuto editoriale.",
+      "readyForUi": false
+    }
+  ],
+  "excluded": []
+}

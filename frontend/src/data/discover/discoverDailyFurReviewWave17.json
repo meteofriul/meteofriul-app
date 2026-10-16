@@ -1,0 +1,89 @@
+{
+  "schemaVersion": 1,
+  "generatedAt": "2026-07-14",
+  "purpose": "Revisione FUR del diciassettesimo lotto Scopri. Il lotto chiude la coda dei record con IT approvato e FUR ancora in revisione.",
+  "summary": {
+    "totalRecords": 11,
+    "approved": 11,
+    "pendingHumanReview": 0
+  },
+  "records": [
+    {
+      "id": "memory-it-ready-0703-l-osservatore-triestino-e-la-storia-della-stampa",
+      "status": "approved",
+      "titleFur": "L'Osservatore Triestino e la storie de stampe",
+      "summaryFur": "Ai 3 di Lui dal 1784 al nas a Triest L'Osservatore Triestino, gjornâl destinât a traviersâ cuasi un secul e mieç di storie citadine. Une seconde memorie dedicade ae stampe e al cont de citât.",
+      "notes": "Titolo della testata mantenuto in italiano storico; copy breve e non enciclopedico."
+    },
+    {
+      "id": "memory-it-ready-1104-elettra-trieste-citta-della-scienza",
+      "status": "approved",
+      "titleFur": "Elettra, Triest citât de sience",
+      "summaryFur": "Ai 4 di Novembar dal 1986 e ven costituide a Triest la societât Sincrotrone, all'origjin di Elettra. Al è un passaç che al rinfuarce il rûl internazionâl de citât te ricercje sientifiche.",
+      "notes": "Elettra e Sincrotrone restano nomi propri; tono istituzionale."
+    },
+    {
+      "id": "memory-it-ready-1216-la-cooperativa-lavoratori-uniti-e-i-diritti",
+      "status": "approved",
+      "titleFur": "La Cooperative Lavoradôrs Unîts e i dirits",
+      "summaryFur": "Ai 16 di Dicembar dal 1972 e nas tal ospedâl psichiatric di Triest la Cooperative Lavoradôrs Unîts. La esperience leade a Franco Basaglia e vierç une strade gnove par lavôr, inclusion e dirits.",
+      "notes": "Nome della cooperativa tradotto in forma comprensibile; Franco Basaglia invariato."
+    },
+    {
+      "id": "memory-it-ready-1026-il-ritorno-di-trieste-all-italia",
+      "status": "approved",
+      "titleFur": "Il ritorn di Triest ae Italie",
+      "summaryFur": "Ai 26 di Otubar dal 1954 Triest e torne ae aministrazion taliane dopo i acuardis sul Teritori Libar di Triest. Une date centrâl te storie contemporanie de citât e dal confin orientâl.",
+      "notes": "Termini storici resi in modo diretto; nessuna lettura politica aggiunta."
+    },
+    {
+      "id": "memory-it-ready-0628-gabriele-foschiatti-e-l-antifascismo-giuliano",
+      "status": "approved",
+      "titleFur": "Gabriele Foschiatti e l'antifassisim julian",
+      "summaryFur": "Ai 28 di Jugn dal 1889 al nas a Triest Gabriele Foschiatti, militâr, partigjan e antifassist. La sô biografie e travierse l'irredentisim, Fiume e la resistence al fassisim te Vignesie Julie.",
+      "notes": "Lessico storico sobrio; Venezia Giulia resa come Vignesie Julie."
+    },
+    {
+      "id": "memory-it-ready-0708-edo-mihevc-architettura-e-confine",
+      "status": "approved",
+      "titleFur": "Edo Mihevc, architeture e confin",
+      "summaryFur": "Ai 8 di Lui dal 1911 al nas a Triest Edo Mihevc, architet sloven cun citadinance taliane. Une seconde memorie dedicade ae architeture e ae identitât complesse dal confin.",
+      "notes": "Copy sintetico; evita sovraccarico identitario."
+    },
+    {
+      "id": "memory-it-ready-0718-geppino-micheletti-il-medico-di-vergarolla",
+      "status": "approved",
+      "titleFur": "Geppino Micheletti, il miedi di Vergarolla",
+      "summaryFur": "Ai 18 di Lui dal 1905 al nas a Triest Geppino Micheletti, miedi ricuardât pai socors prestâts dopo la strage di Vergarolla. Une memorie di cure e responsabilitât intune des pagjinis plui dolorosis dal Adriatic.",
+      "notes": "Vergarolla e Adriatico restano riconoscibili; tono rispettoso."
+    },
+    {
+      "id": "memory-it-ready-0619-nasce-il-parco-zoo-punta-verde",
+      "status": "approved",
+      "titleFur": "Al nas il Parc Zoo Punta Verde",
+      "summaryFur": "Ai 19 di Jugn dal 1979 al nas a Lignan il Parc Zoo Punta Verde, dongje lis rivis dal Tiliment. Une memorie locâl leade ae cognossince des bestiis e ae tutele de nature.",
+      "notes": "Lignano reso come Lignan; Tagliamento reso come Tiliment."
+    },
+    {
+      "id": "memory-it-ready-0516-giuseppe-caprin-storia-e-paesaggi-giuliani",
+      "status": "approved",
+      "titleFur": "Giuseppe Caprin, storie e paisaçs julians",
+      "summaryFur": "Ai 16 di Mai dal 1843 al nas a Triest Giuseppe Caprin, scritôr, editôr e studiôs de storie juliane e furlane. Lis sôs oparis a contin citâts, lagunis, planuris e Alps dal teritori.",
+      "notes": "Mantiene il doppio riferimento giuliano/friulano."
+    },
+    {
+      "id": "memory-it-ready-1130-pre-checo-placerean-e-la-lingua-friulana",
+      "status": "approved",
+      "titleFur": "Pre Checo Placerean e la lenghe furlane",
+      "summaryFur": "Ai 30 di Novembar dal 1920 al nas a Montenars Francesco Placereani, predi e tradutôr in lenghe furlane, cognossût come pre Checo Placerean. Une seconde memorie dedicade ae lenghe e ae sô trasmission.",
+      "notes": "Pre Checo Placerean mantenuto come forma identitaria."
+    },
+    {
+      "id": "memory-it-ready-0910-il-litorale-adriatico-sotto-occupazione-tedesca",
+      "status": "approved",
+      "titleFur": "Il Litorâl adriatic sot ocupazion todische",
+      "summaryFur": "Ai 10 di Setembar dal 1943 une ordenance todische e met lis provinciis di Udin, Gurize e Triest te Zone di operazions dal Litorâl adriatic. Une seconde memorie par capî l'ocupazion naziste dal confin nord-orientâl.",
+      "notes": "Denominazione storica resa in forma chiara e prudente; fonte Regione Storia FVG."
+    }
+  ]
+}

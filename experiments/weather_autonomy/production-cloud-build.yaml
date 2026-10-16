@@ -1,0 +1,12 @@
+timeout: 1200s
+options:
+  logging: CLOUD_LOGGING_ONLY
+substitutions:
+  _TAG: production-20260925-cams-readback-r2
+steps:
+  - name: gcr.io/cloud-builders/docker
+    args: ['build', '-f', 'experiments/weather_autonomy/Dockerfile.pilot', '-t', 'europe-west1-docker.pkg.dev/meteo-friul/meteofriul/weather-worker:${_TAG}', '.']
+  - name: gcr.io/cloud-builders/docker
+    args: ['run', '--rm', '--network=none', 'europe-west1-docker.pkg.dev/meteo-friul/meteofriul/weather-worker:${_TAG}', 'python', '-m', 'unittest', 'test_cloud_worker', 'test_cloud_reader', 'test_gcs_object_store', 'test_object_state_store', 'test_remote_publication_intent', 'test_retrieve_remote_cams', 'test_cams_readback', 'test_cams_worker_recovery', 'test_cams_request_plan', 'test_operational_diagnostics', 'test_production_runtime_contract', 'test_run_pilot', 'test_benchmark_icon2i', 'test_contract_v1', 'test_uv_cloud', 'test_uv_recovery', 'test_uv_replacement']
+images:
+  - europe-west1-docker.pkg.dev/meteo-friul/meteofriul/weather-worker:${_TAG}

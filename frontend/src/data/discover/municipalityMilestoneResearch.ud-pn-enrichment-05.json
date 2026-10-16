@@ -1,0 +1,294 @@
+{
+  "schemaVersion": 1,
+  "batchId": "ud-pn-enrichment-milestones-05",
+  "snapshotDate": "2026-09-01",
+  "purpose": "Ricerca di sei tappe per Aiello del Friuli, Cividale del Friuli e San Quirino; revisione FUR e promozione sono documentate separatamente.",
+  "runtimeIntegration": false,
+  "initialTotalMilestones": 445,
+  "editorialPolicy": {
+    "sourceEvidenceRequired": true,
+    "ambiguousDatesExcluded": true,
+    "italianCopyStatus": "editorial_draft",
+    "friulianCopyStatus": "pending_assisted_review",
+    "readyForUi": false
+  },
+  "excludedClaims": [
+    {
+      "municipality": "Aiello del Friuli",
+      "claim": "La Fiera di San Carlo è la festa patronale di Aiello.",
+      "reason": "La fonte comunale precisa che il patrono è Sant'Ulderico, in precedenza San Nicolò, e che San Carlo non è il patrono del paese.",
+      "sourceUrl": "https://www.comune.aiellodelfriuli.ud.it/media/files/030001/attachment/Fiera_San_Carlo.pdf"
+    },
+    {
+      "municipality": "Aiello del Friuli",
+      "claim": "La Fiera di San Carlo si tiene senza interruzioni dal 1816.",
+      "reason": "La fonte documenta l'istituzione nel 1816 e la tradizione odierna, ma la tappa non aggiunge una continuità annuale ininterrotta non dimostrata nel dettaglio.",
+      "sourceUrl": "https://www.comune.aiellodelfriuli.ud.it/media/files/030001/attachment/Fiera_San_Carlo.pdf"
+    },
+    {
+      "municipality": "Aiello del Friuli",
+      "claim": "Nel 1931 la frazione di Joannis viene unita ad Aiello.",
+      "reason": "Il censimento ISTAT collega il regio decreto alla soppressione del Comune di Joannis e alla sua aggregazione ad Aiello; la copy conserva questo status giuridico invece di chiamarlo retroattivamente frazione.",
+      "sourceUrl": "https://lipari.istat.it/digibib/Censimenti%20popolazione/censpop1931/VolumeIIIFascicoliProvinciali/IST0005870Fasc26_UDINE%2BOCRottimizz.pdf"
+    },
+    {
+      "municipality": "Cividale del Friuli",
+      "claim": "Nel 737 Callisto trasferisce direttamente da Aquileia la sede patriarcale.",
+      "reason": "La relazione comunale documenta il trasferimento a Cividale, mentre un'altra fonte comunale specifica la provenienza da Cormons; la tappa non aggiunge un'origine diversa.",
+      "sourceUrl": "https://comune.cividale-del-friuli.ud.it/media/files/md/030026/Elab.07_Relazione_illustrativa.pdf"
+    },
+    {
+      "municipality": "Cividale del Friuli",
+      "claim": "Nel 1817 viene fondato con l'attuale titolo il Museo archeologico nazionale di Cividale.",
+      "reason": "Il Ministero data al 1817 la fondazione del Museo archeologico di Cividale; la tappa non retrodata l'attuale qualifica amministrativa di Museo nazionale.",
+      "sourceUrl": "https://cultura.gov.it/luogo/museo-archeologico-nazionale-di-cividale-del-friuli"
+    },
+    {
+      "municipality": "San Quirino",
+      "claim": "L'incursione del 1499 distrugge totalmente San Quirino e provoca vittime.",
+      "reason": "SIUSA documenta che la villa fu messa a ferro e fuoco e che la chiesa venne incendiata, senza quantificare vittime né dichiarare la distruzione totale dell'abitato.",
+      "sourceUrl": "https://siusa-archivi.cultura.gov.it/cgi-bin/siusa/pagina.pl?Chiave=6979&RicDimF=2&TipoPag=prodente"
+    },
+    {
+      "municipality": "San Quirino",
+      "claim": "Il Comune di San Quirino nasce nel 1807.",
+      "reason": "SIUSA documenta nel 1807 l'inserimento nel Distretto di Pordenone del Regno d'Italia napoleonico; la comunità e i suoi ordinamenti sono più antichi e la tappa non presenta l'assetto come fondazione assoluta.",
+      "sourceUrl": "https://siusa-archivi.cultura.gov.it/cgi-bin/siusa/pagina.pl?Chiave=9327&TipoPag=prodente"
+    }
+  ],
+  "editorialOmissions": [
+    {
+      "municipality": "Aiello del Friuli",
+      "year": 2006,
+      "claim": "Iniziano gli scavi archeologici nella Centa di Joannis.",
+      "decision": "source_verified_not_promoted",
+      "reason": "L'avvio delle campagne è verificato, ma il lotto privilegia la fiera storica e la trasformazione territoriale del Comune.",
+      "sourceUrl": "https://patrimonioculturale.regione.fvg.it/sito-archeologico/?s_id=549089"
+    },
+    {
+      "municipality": "Cividale del Friuli",
+      "year": 1420,
+      "claim": "Con l'arrivo di Venezia viene istituito il Provveditorato di Cividale.",
+      "decision": "source_conflict_not_promoted",
+      "reason": "SIUSA collega il Provveditorato al 1420, mentre la relazione urbanistica comunale data al 1553 l'istituzione di un provveditore ordinario proprio; il lotto non comprime uffici e fasi diverse in una tappa ambigua.",
+      "sourceUrl": "https://siusa-archivi.cultura.gov.it/cgi-bin/siusa/pagina.pl?Chiave=9031&RicDimF=2&TipoPag=prodente"
+    },
+    {
+      "municipality": "Cividale del Friuli",
+      "year": 2011,
+      "claim": "Il complesso longobardo di Cividale entra nel patrimonio UNESCO.",
+      "decision": "source_verified_not_promoted",
+      "reason": "Il fatto è verificato ma il riconoscimento UNESCO è già richiamato nel riassunto visibile del profilo; le due nuove tappe ampliano invece la cronologia senza ripeterlo.",
+      "sourceUrl": "https://whc.unesco.org/en/list/1318/"
+    },
+    {
+      "municipality": "San Quirino",
+      "year": 1958,
+      "claim": "Esuli istriani e famiglie venete si insediano alle Villotte.",
+      "decision": "source_verified_not_promoted",
+      "reason": "La fonte istituzionale è retrospettiva e celebrativa; il lotto privilegia i due passaggi storici sostenuti dalle schede archivistiche SIUSA.",
+      "sourceUrl": "https://www.consiglio.regione.fvg.it/cms/pagine/2/arte-e-cultura/allegati/2009"
+    }
+  ],
+  "municipalities": [
+    {
+      "istatCode": "030001",
+      "municipality": "Aiello del Friuli",
+      "province": "UD",
+      "currentMilestoneCount": 1,
+      "currentMilestoneIds": [
+        "aiello-del-friuli-meridian-festival"
+      ],
+      "decision": "source_verified_it_fur_pending",
+      "candidates": [
+        {
+          "id": "aiello-san-carlo-fair-1816",
+          "year": 1816,
+          "label": {
+            "it": "Viene istituita la Fiera di San Carlo",
+            "fur": null
+          },
+          "evidence": "Il Comune documenta che la Fiera di San Carlo fu istituita nel 1816 per volontà dell'imperatore Francesco I d'Austria, che concesse ad Aiello un mercato annuale di tre giorni a partire dal 4 novembre.",
+          "source": {
+            "label": "Comune di Aiello del Friuli - La Fiera di San Carlo",
+            "type": "official_municipality",
+            "url": "https://www.comune.aiellodelfriuli.ud.it/media/files/030001/attachment/Fiera_San_Carlo.pdf",
+            "checkedAt": "2026-09-01"
+          },
+          "duplicateReview": {
+            "exactDuplicate": false,
+            "relatedRecordIds": [
+              "aiello-del-friuli-meridian-festival",
+              "aiello-joannis-aggregation-1931"
+            ],
+            "note": "La fiera istituita nel 1816 è distinta dalla Festa delle Meridiane nata nel 2001."
+          }
+        },
+        {
+          "id": "aiello-joannis-aggregation-1931",
+          "year": 1931,
+          "documentedDate": "1931-05-18",
+          "label": {
+            "it": "Il Comune di Joannis viene soppresso e aggregato ad Aiello",
+            "fur": null
+          },
+          "evidence": "Il censimento ISTAT registra che con regio decreto 18 maggio 1931 n. 648 il soppresso Comune di Joannis fu aggregato al Comune di Aiello; una pubblicazione comunale collega allo stesso anno la forma territoriale definitiva.",
+          "source": {
+            "label": "ISTAT - VII Censimento generale della popolazione, Provincia di Udine",
+            "type": "national_institution",
+            "url": "https://lipari.istat.it/digibib/Censimenti%20popolazione/censpop1931/VolumeIIIFascicoliProvinciali/IST0005870Fasc26_UDINE%2BOCRottimizz.pdf",
+            "checkedAt": "2026-09-01"
+          },
+          "supportingSources": [
+            {
+              "label": "Comune di Aiello del Friuli - Progetto di cohousing, storia locale",
+              "type": "official_municipality",
+              "url": "https://www.comune.aiellodelfriuli.ud.it/media/files/030001/attachment/Progetto_Co-housing-BROCHURE_APPARTAMENTO_A.pdf",
+              "checkedAt": "2026-09-01"
+            },
+            {
+              "label": "SIUSA - Comune di Aiello del Friuli",
+              "type": "national_institution",
+              "url": "https://siusa-archivi.cultura.gov.it/cgi-bin/siusa/pagina.pl?Chiave=8939&TipoPag=prodente",
+              "checkedAt": "2026-09-01"
+            }
+          ],
+          "duplicateReview": {
+            "exactDuplicate": false,
+            "relatedRecordIds": [
+              "aiello-del-friuli-meridian-festival",
+              "aiello-san-carlo-fair-1816"
+            ],
+            "note": "La modifica territoriale del 1931 non coincide con la storia della Festa delle Meridiane e non è presente in altri record del profilo."
+          }
+        }
+      ]
+    },
+    {
+      "istatCode": "030026",
+      "municipality": "Cividale del Friuli",
+      "province": "UD",
+      "currentMilestoneCount": 1,
+      "currentMilestoneIds": [
+        "cividale-first-lombard-duchy"
+      ],
+      "decision": "source_verified_it_fur_pending",
+      "candidates": [
+        {
+          "id": "cividale-patriarch-callisto-seat-737",
+          "year": 737,
+          "label": {
+            "it": "Il patriarca Callisto trasferisce la propria sede a Cividale",
+            "fur": null
+          },
+          "evidence": "La relazione illustrativa del Comune documenta che nel 737 il patriarca di Aquileia Callisto decise di trasferire la propria sede a Cividale.",
+          "source": {
+            "label": "Comune di Cividale del Friuli - Relazione illustrativa del PRGC",
+            "type": "official_municipality",
+            "url": "https://comune.cividale-del-friuli.ud.it/media/files/md/030026/Elab.07_Relazione_illustrativa.pdf",
+            "checkedAt": "2026-09-01"
+          },
+          "supportingSources": [
+            {
+              "label": "Comune di Cividale del Friuli - Materiale didattico sul Battistero di Callisto",
+              "type": "official_municipality",
+              "url": "https://www.comune.cividale-del-friuli.ud.it/media/files/030026/attachment/scuola_secondaria_di_secondo_grado_QzIiZAJ.pdf",
+              "checkedAt": "2026-09-01"
+            }
+          ],
+          "duplicateReview": {
+            "exactDuplicate": false,
+            "relatedRecordIds": [
+              "cividale-first-lombard-duchy",
+              "cividale-archaeological-museum-founded-1817"
+            ],
+            "note": "Il trasferimento della sede patriarcale nel 737 è distinto dall'istituzione del primo ducato longobardo nel 568."
+          }
+        },
+        {
+          "id": "cividale-archaeological-museum-founded-1817",
+          "year": 1817,
+          "label": {
+            "it": "Viene fondato il Museo archeologico di Cividale",
+            "fur": null
+          },
+          "evidence": "Il Ministero della Cultura data al 1817 la fondazione del Museo archeologico di Cividale, indicandolo come uno dei musei più antichi d'Italia.",
+          "source": {
+            "label": "Ministero della Cultura - Museo archeologico nazionale di Cividale del Friuli",
+            "type": "national_institution",
+            "url": "https://cultura.gov.it/luogo/museo-archeologico-nazionale-di-cividale-del-friuli",
+            "checkedAt": "2026-09-01"
+          },
+          "duplicateReview": {
+            "exactDuplicate": false,
+            "relatedRecordIds": [
+              "cividale-first-lombard-duchy",
+              "cividale-patriarch-callisto-seat-737"
+            ],
+            "note": "La fondazione del museo ottocentesco è distinta dalle fasi longobarda e patriarcale del profilo."
+          }
+        }
+      ]
+    },
+    {
+      "istatCode": "093040",
+      "municipality": "San Quirino",
+      "province": "PN",
+      "currentMilestoneCount": 1,
+      "currentMilestoneIds": [
+        "san-quirino-1218"
+      ],
+      "decision": "source_verified_it_fur_pending",
+      "candidates": [
+        {
+          "id": "san-quirino-incursion-church-fire-1499",
+          "year": 1499,
+          "documentedDate": "1499-09-30",
+          "label": {
+            "it": "L'incursione turca incendia San Quirino e la sua chiesa",
+            "fur": null
+          },
+          "evidence": "SIUSA documenta che il 30 settembre 1499 la villa di San Quirino fu messa a ferro e fuoco durante l'incursione turca e che anche la chiesa venne incendiata.",
+          "source": {
+            "label": "SIUSA - Parrocchia di San Quirino",
+            "type": "national_institution",
+            "url": "https://siusa-archivi.cultura.gov.it/cgi-bin/siusa/pagina.pl?Chiave=6979&RicDimF=2&TipoPag=prodente",
+            "checkedAt": "2026-09-01"
+          },
+          "duplicateReview": {
+            "exactDuplicate": false,
+            "relatedRecordIds": [
+              "san-quirino-1218",
+              "mereto-incursione-pantianicco-1499",
+              "san-quirino-napoleonic-district-1807"
+            ],
+            "note": "L'episodio di San Quirino è distinto dalla donazione templare del 1218 e dall'incursione dello stesso anno documentata a Pantianicco."
+          }
+        },
+        {
+          "id": "san-quirino-napoleonic-district-1807",
+          "year": 1807,
+          "label": {
+            "it": "San Quirino entra nel Distretto di Pordenone del Regno d'Italia napoleonico",
+            "fur": null
+          },
+          "evidence": "SIUSA documenta che nel 1807 San Quirino fu inserito nel Distretto di Pordenone, Dipartimento del Tagliamento, dopo l'istituzione del Regno d'Italia napoleonico.",
+          "source": {
+            "label": "SIUSA - Comune di San Quirino",
+            "type": "national_institution",
+            "url": "https://siusa-archivi.cultura.gov.it/cgi-bin/siusa/pagina.pl?Chiave=9327&TipoPag=prodente",
+            "checkedAt": "2026-09-01"
+          },
+          "duplicateReview": {
+            "exactDuplicate": false,
+            "relatedRecordIds": [
+              "san-quirino-1218",
+              "san-quirino-incursion-church-fire-1499"
+            ],
+            "note": "L'inserimento amministrativo napoleonico è distinto dalle vicende medievali e dall'incursione del 1499; date analoghe in altri Comuni restano storie locali separate."
+          }
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,368 @@
+{
+  "schemaVersion": 1,
+  "batchId": "ostermann-1876-language-review-05",
+  "reviewedAt": "2026-07-23",
+  "sourceDecisionFiles": [
+    "review-decisions-batch-05.json"
+  ],
+  "purpose": "Quinta revisione linguistica ed editoriale dei candidati Ostermann 1876 verificati sul facsimile. Non pubblica contenuti nella UI.",
+  "policy": {
+    "publish": false,
+    "rule": "La normalizzazione FUR conserva il significato attestato nel facsimile. I riferimenti espliciti a periodi dell'anno ricevono una regola temporale; le altre massime entrano soltanto nella rotazione generale."
+  },
+  "summary": {
+    "records": 15,
+    "languageReviewed": 15,
+    "mergeExisting": 0,
+    "needsNativeReview": 0
+  },
+  "records": [
+    {
+      "id": "ost1876-un-len-no-fas-fuc",
+      "reviewStatus": "language_reviewed",
+      "furNormalized": "Un len nol fâs fûc.",
+      "itFinal": "Un solo ceppo non fa fuoco.",
+      "destination": "almanac",
+      "calendarRule": {
+        "type": "general",
+        "bucket": "wisdom",
+        "fallbackAllowed": true
+      },
+      "duplicateAudit": {
+        "status": "new_distinct"
+      },
+      "evidence": [
+        {
+          "label": "Facsimile Ostermann 1876, p. PDF 302",
+          "kind": "primary"
+        }
+      ],
+      "editorialNote": "Normalizzazione conservativa della forma sorgente; massima generale senza riferimenti temporali.",
+      "publish": false
+    },
+    {
+      "id": "ost1876-olei-ben-no-coste-nuje",
+      "reviewStatus": "language_reviewed",
+      "furNormalized": "A volê ben nol coste nuie.",
+      "itFinal": "Voler bene non costa nulla.",
+      "destination": "almanac",
+      "calendarRule": {
+        "type": "general",
+        "bucket": "wisdom",
+        "fallbackAllowed": true
+      },
+      "duplicateAudit": {
+        "status": "new_distinct"
+      },
+      "evidence": [
+        {
+          "label": "Facsimile Ostermann 1876, p. PDF 302",
+          "kind": "primary"
+        }
+      ],
+      "editorialNote": "La grafia moderna esplicita l'infinito volê senza modificare il senso del detto.",
+      "publish": false
+    },
+    {
+      "id": "ost1876-altris-timps-altris-usancis",
+      "reviewStatus": "language_reviewed",
+      "furNormalized": "Altris timps, altris usancis.",
+      "itFinal": "Altri tempi, altre usanze.",
+      "destination": "almanac",
+      "calendarRule": {
+        "type": "general",
+        "bucket": "wisdom",
+        "fallbackAllowed": true
+      },
+      "duplicateAudit": {
+        "status": "new_distinct"
+      },
+      "evidence": [
+        {
+          "label": "Facsimile Ostermann 1876, p. PDF 302",
+          "kind": "primary"
+        }
+      ],
+      "editorialNote": "La forma normalizzata coincide sostanzialmente con la fonte ed è usabile tutto l'anno.",
+      "publish": false
+    },
+    {
+      "id": "ost1876-cjamine-pis-plomp",
+      "reviewStatus": "language_reviewed",
+      "furNormalized": "Bisugne cjaminâ cui pîts di plomp.",
+      "itFinal": "Bisogna camminare con i piedi di piombo.",
+      "destination": "almanac",
+      "calendarRule": {
+        "type": "general",
+        "bucket": "wisdom",
+        "fallbackAllowed": true
+      },
+      "duplicateAudit": {
+        "status": "new_distinct"
+      },
+      "evidence": [
+        {
+          "label": "Facsimile Ostermann 1876, p. PDF 302",
+          "kind": "primary"
+        }
+      ],
+      "editorialNote": "Normalizzati l'infinito cjaminâ e il plurale pîts; il valore figurato è generale.",
+      "publish": false
+    },
+    {
+      "id": "ost1876-plui-fum-che-rost",
+      "reviewStatus": "language_reviewed",
+      "furNormalized": "Plui fum che no rost.",
+      "itFinal": "Più fumo che arrosto.",
+      "destination": "almanac",
+      "calendarRule": {
+        "type": "general",
+        "bucket": "wisdom",
+        "fallbackAllowed": true
+      },
+      "duplicateAudit": {
+        "status": "new_distinct"
+      },
+      "evidence": [
+        {
+          "label": "Facsimile Ostermann 1876, p. PDF 303",
+          "kind": "primary"
+        }
+      ],
+      "editorialNote": "La forma sorgente è già chiara e viene mantenuta con sola punteggiatura editoriale.",
+      "publish": false
+    },
+    {
+      "id": "ost1876-nissune-gnove-buine-gnove",
+      "reviewStatus": "language_reviewed",
+      "furNormalized": "Nissune gnove, buine gnove.",
+      "itFinal": "Nessuna notizia, buona notizia.",
+      "destination": "almanac",
+      "calendarRule": {
+        "type": "general",
+        "bucket": "wisdom",
+        "fallbackAllowed": true
+      },
+      "duplicateAudit": {
+        "status": "new_distinct"
+      },
+      "evidence": [
+        {
+          "label": "Facsimile Ostermann 1876, p. PDF 303",
+          "kind": "primary"
+        }
+      ],
+      "editorialNote": "Detto autonomo, conservato nella forma attestata e distinto dalla variante che lo segue.",
+      "publish": false
+    },
+    {
+      "id": "ost1876-un-fior-no-fas-primevere",
+      "reviewStatus": "language_reviewed",
+      "furNormalized": "Un flôr nol fâs primevere.",
+      "itFinal": "Un fiore non fa primavera.",
+      "destination": "almanac",
+      "calendarRule": {
+        "type": "seasons",
+        "seasons": [
+          "spring"
+        ],
+        "fallbackAllowed": false
+      },
+      "duplicateAudit": {
+        "status": "new_distinct"
+      },
+      "evidence": [
+        {
+          "label": "Facsimile Ostermann 1876, p. PDF 303",
+          "kind": "primary"
+        }
+      ],
+      "editorialNote": "Il riferimento esplicito alla primavera limita la selezione alla stagione corrispondente.",
+      "publish": false
+    },
+    {
+      "id": "ost1876-ogni-regule-so-ecezion",
+      "reviewStatus": "language_reviewed",
+      "furNormalized": "Ogni regule e à la sô ecezion.",
+      "itFinal": "Ogni regola ha la sua eccezione.",
+      "destination": "almanac",
+      "calendarRule": {
+        "type": "general",
+        "bucket": "wisdom",
+        "fallbackAllowed": true
+      },
+      "duplicateAudit": {
+        "status": "new_distinct"
+      },
+      "evidence": [
+        {
+          "label": "Facsimile Ostermann 1876, p. PDF 303",
+          "kind": "primary"
+        }
+      ],
+      "editorialNote": "La sintassi viene resa esplicita nella grafia moderna senza cambiare la massima.",
+      "publish": false
+    },
+    {
+      "id": "ost1876-ogni-fior-so-stagion",
+      "reviewStatus": "language_reviewed",
+      "furNormalized": "Ogni flôr te sô stagjon.",
+      "itFinal": "Ogni fiore ha la sua stagione.",
+      "destination": "almanac",
+      "calendarRule": {
+        "type": "general",
+        "bucket": "nature",
+        "fallbackAllowed": true
+      },
+      "duplicateAudit": {
+        "status": "new_distinct"
+      },
+      "evidence": [
+        {
+          "label": "Facsimile Ostermann 1876, p. PDF 303",
+          "kind": "primary"
+        }
+      ],
+      "editorialNote": "Stagjon indica il tempo proprio di ogni fiore e non una stagione specifica incompatibile con il giorno.",
+      "publish": false
+    },
+    {
+      "id": "ost1876-timp-consume-dut",
+      "reviewStatus": "language_reviewed",
+      "furNormalized": "Il timp al consume dut.",
+      "itFinal": "Il tempo consuma tutto.",
+      "destination": "almanac",
+      "calendarRule": {
+        "type": "general",
+        "bucket": "wisdom",
+        "fallbackAllowed": true
+      },
+      "duplicateAudit": {
+        "status": "new_distinct"
+      },
+      "evidence": [
+        {
+          "label": "Facsimile Ostermann 1876, p. PDF 304",
+          "kind": "primary"
+        }
+      ],
+      "editorialNote": "Massima generale sul trascorrere del tempo, distinta dai detti già pubblicati.",
+      "publish": false
+    },
+    {
+      "id": "ost1876-fat-no-si-disfa",
+      "reviewStatus": "language_reviewed",
+      "furNormalized": "Ce che al è fat, al è fat e no si po disfâ.",
+      "itFinal": "Ciò che è fatto è fatto e non si può disfare.",
+      "destination": "almanac",
+      "calendarRule": {
+        "type": "general",
+        "bucket": "wisdom",
+        "fallbackAllowed": true
+      },
+      "duplicateAudit": {
+        "status": "new_distinct"
+      },
+      "evidence": [
+        {
+          "label": "Facsimile Ostermann 1876, p. PDF 304",
+          "kind": "primary"
+        }
+      ],
+      "editorialNote": "Normalizzazione sintattica conservativa; il detto resta indipendente dalla seconda riga del blocco.",
+      "publish": false
+    },
+    {
+      "id": "ost1876-di-gnot-gjats-gris",
+      "reviewStatus": "language_reviewed",
+      "furNormalized": "Di gnot ducj i gjats a son grîs.",
+      "itFinal": "Di notte tutti i gatti sono grigi.",
+      "destination": "almanac",
+      "calendarRule": {
+        "type": "general",
+        "bucket": "wisdom",
+        "fallbackAllowed": true
+      },
+      "duplicateAudit": {
+        "status": "new_distinct"
+      },
+      "evidence": [
+        {
+          "label": "Facsimile Ostermann 1876, p. PDF 304",
+          "kind": "primary"
+        }
+      ],
+      "editorialNote": "La grafia viene normalizzata mantenendo integralmente il proverbio attestato.",
+      "publish": false
+    },
+    {
+      "id": "ost1876-vos-popul-vos-diu",
+      "reviewStatus": "language_reviewed",
+      "furNormalized": "Vôs di popul, vôs di Diu.",
+      "itFinal": "Voce di popolo, voce di Dio.",
+      "destination": "almanac",
+      "calendarRule": {
+        "type": "general",
+        "bucket": "wisdom",
+        "fallbackAllowed": true
+      },
+      "duplicateAudit": {
+        "status": "new_distinct"
+      },
+      "evidence": [
+        {
+          "label": "Facsimile Ostermann 1876, p. PDF 304",
+          "kind": "primary"
+        }
+      ],
+      "editorialNote": "Normalizzato Diu; la formula tradizionale non dipende da una festa o da una data.",
+      "publish": false
+    },
+    {
+      "id": "ost1876-ducj-sanc-ros",
+      "reviewStatus": "language_reviewed",
+      "furNormalized": "O vin ducj il sanc ros.",
+      "itFinal": "Abbiamo tutti il sangue rosso.",
+      "destination": "almanac",
+      "calendarRule": {
+        "type": "general",
+        "bucket": "wisdom",
+        "fallbackAllowed": true
+      },
+      "duplicateAudit": {
+        "status": "new_distinct"
+      },
+      "evidence": [
+        {
+          "label": "Facsimile Ostermann 1876, p. PDF 304",
+          "kind": "primary"
+        }
+      ],
+      "editorialNote": "Il pronome soggetto rende completa la frase nella grafia moderna; il senso di uguaglianza resta invariato.",
+      "publish": false
+    },
+    {
+      "id": "ost1876-dopo-trist-ven-bon",
+      "reviewStatus": "language_reviewed",
+      "furNormalized": "Dopo il trist al ven il bon.",
+      "itFinal": "Dopo il male viene il bene.",
+      "destination": "almanac",
+      "calendarRule": {
+        "type": "general",
+        "bucket": "wisdom",
+        "fallbackAllowed": true
+      },
+      "duplicateAudit": {
+        "status": "new_distinct"
+      },
+      "evidence": [
+        {
+          "label": "Facsimile Ostermann 1876, p. PDF 304",
+          "kind": "primary"
+        }
+      ],
+      "editorialNote": "Detto positivo normalizzato senza vincoli stagionali o di calendario.",
+      "publish": false
+    }
+  ]
+}

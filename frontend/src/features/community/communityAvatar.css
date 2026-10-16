@@ -1,0 +1,72 @@
+.mf-community-avatar {
+  --mf-community-avatar-accent: #f2c94c;
+  --mf-community-avatar-glow: rgb(2 132 199 / 40%);
+  display: inline-grid;
+  flex: 0 0 auto;
+  place-items: center;
+  border-radius: 50%;
+  filter: drop-shadow(0 4px 7px var(--mf-community-avatar-glow));
+  overflow: visible;
+  vertical-align: middle;
+}
+
+.mf-community-avatar > svg {
+  display: block;
+  height: 100%;
+  overflow: visible;
+  width: 100%;
+}
+
+.mf-community-avatar__background {
+  stroke: rgb(255 255 255 / 32%);
+  stroke-width: 1;
+}
+
+.mf-community-avatar__pattern {
+  fill: none;
+  stroke: rgb(255 255 255 / 16%);
+  stroke-width: 1.4;
+}
+
+.mf-community-avatar__pattern-fill {
+  fill: rgb(255 255 255 / 12%);
+}
+
+.mf-community-avatar__pattern-dot {
+  fill: rgb(255 255 255 / 28%);
+}
+
+.mf-community-avatar__glyph {
+  color: #fff;
+  fill: none;
+  stroke: currentColor;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 2;
+}
+
+.mf-community-avatar__accent {
+  fill: none;
+  stroke: var(--mf-community-avatar-accent);
+}
+
+.mf-community-avatar__accent-fill {
+  fill: var(--mf-community-avatar-accent);
+  stroke: none;
+}
+
+.mf-community-avatar__rim {
+  fill: none;
+  stroke: rgb(255 255 255 / 32%);
+  stroke-width: 1.2;
+}
+
+.mf-header-profile-button__avatar .mf-community-avatar__rim {
+  stroke: rgb(255 255 255 / 92%);
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .mf-community-avatar {
+    transition: filter 180ms ease, transform 180ms ease;
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "active": true,
+  "alerts": [
+    {
+      "id": "pc-fvg-red-expired-20260624",
+      "level": "rossa",
+      "official_text": "ALLERTA ROSSA PER CRITICITA IDROGEOLOGICA",
+      "valid_to": "2026-06-24T08:00:00+02:00"
+    }
+  ],
+  "count": 1,
+  "expires_at": "2026-06-24T08:00:00+02:00",
+  "fetched_at": "2026-06-24T06:00:00+02:00",
+  "source": "Protezione Civile FVG",
+  "source_mode": "github_actions_official_page"
+}

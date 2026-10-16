@@ -1,0 +1,9 @@
+FROM python:3.13-slim
+ENV PYTHONDONTWRITEBYTECODE=1 PYTHONUNBUFFERED=1
+RUN pip install --no-cache-dir --disable-pip-version-check numpy==2.5.2 eccodes==2.48.0 ecmwf-datastores-client==0.5.3 google-cloud-storage==3.13.1 gunicorn==23.0.0
+WORKDIR /app/experiments/weather_autonomy
+COPY experiments/weather_autonomy/ /app/experiments/weather_autonomy/
+COPY backend/app/data/fvg_municipalities.json backend/app/data/fvg_geography.json /app/backend/app/data/
+RUN python -c "from local_pipeline.contract_v1 import load_catalog; import cloud_worker; import retrieve_remote_cams; import publish_remote_cams; import publish_remote_icon; load_catalog(); print('Pilot imports and catalog OK')"
+USER 65532:65532
+CMD ["python", "cloud_worker.py"]

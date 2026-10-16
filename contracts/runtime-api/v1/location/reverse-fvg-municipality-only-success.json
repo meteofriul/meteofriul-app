@@ -1,0 +1,35 @@
+{
+  "city": "Pordenone",
+  "displayName": "Pordenone",
+  "region": "Friuli Venezia Giulia",
+  "country": "Italia",
+  "countryCode": "IT",
+  "lat": 45.9567,
+  "lon": 12.6605,
+  "province": "PN",
+  "provinceName": "Pordenone",
+  "istatCode": "093033",
+  "locality": null,
+  "municipality": {
+    "name": "Pordenone",
+    "istatCode": "093033",
+    "province": "PN",
+    "provinceName": "Pordenone",
+    "source": "istat_boundaries",
+    "datasetVersion": "2026-01-01"
+  },
+  "dataPoint": {
+    "lat": 45.95689,
+    "lon": 12.66051,
+    "source": "municipality_catalog"
+  },
+  "resolution": {
+    "status": "municipality_only",
+    "municipalityResolved": true,
+    "localityCorroborated": false,
+    "matchMethod": null,
+    "distanceM": null,
+    "runnerUpDistanceM": null,
+    "boundaryDistanceM": 1378.778
+  }
+}

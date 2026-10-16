@@ -1,0 +1,16 @@
+{
+  "schemaVersion": 1,
+  "records": 914,
+  "priorities": {
+    "P1": 282,
+    "P2": 632
+  },
+  "statuses": {
+    "new_candidate_review": 812,
+    "possible_existing": 37,
+    "probable_existing": 17,
+    "sensitive_review": 8,
+    "split_or_context_review": 40
+  },
+  "rule": "Similarity only orders review. It never excludes, translates or publishes a record."
+}

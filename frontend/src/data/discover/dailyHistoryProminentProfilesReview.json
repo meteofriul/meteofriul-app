@@ -1,0 +1,827 @@
+{
+  "schemaVersion": 1,
+  "purpose": "Selezione controllata di profili illustri per Scopri. Non letto dalla UI.",
+  "generatedAt": "2026-07-11",
+  "policy": {
+    "doNotPublishFromThisFile": true,
+    "excludeDeaths": true,
+    "avoidGenericMediaProfiles": true,
+    "dateFormat": "DD-MM",
+    "requiresHumanReview": true,
+    "requiresFurReview": true,
+    "furWorkDeferredUntilItalianSelectionConfirmed": true,
+    "notes": [
+      "Dopo battaglie, assedi e grandi eventi storici, i profili personali entrano solo se hanno valore culturale, scientifico, linguistico o storico forte.",
+      "Niente elenco di giornalisti o personaggi mediatici generici: servono figure fondative, riconoscibili o molto coerenti con FVG e Friuli.",
+      "I record gia presenti in localMemory non vanno duplicati: si riusano o si migliorano nel loro percorso esistente.",
+      "Il FUR si avvia soltanto dopo la conferma della selezione editoriale italiana."
+    ]
+  },
+  "records": [
+    {
+      "id": "profile-reuse-1219-italo-svevo",
+      "wikidataId": "Q216478",
+      "dateIt": "19-12",
+      "year": "1861",
+      "type": "Nascita",
+      "place": "Trieste",
+      "category": "letteratura",
+      "batchDecision": "reuse_existing_local_memory",
+      "surface": "memory_of_the_day",
+      "rank": "A",
+      "title": "Italo Svevo",
+      "existingRecordId": "memory-review-1219-italo-svevo",
+      "reason": "Gia presente e ready_for_discover: non duplicare.",
+      "readyForUi": false
+    },
+    {
+      "id": "profile-reuse-0331-carlo-rubbia",
+      "wikidataId": "Q187199",
+      "dateIt": "31-03",
+      "year": "1934",
+      "type": "Nascita",
+      "place": "Gorizia",
+      "category": "scienza",
+      "batchDecision": "reuse_existing_local_memory",
+      "surface": "memory_of_the_day",
+      "rank": "A",
+      "title": "Carlo Rubbia",
+      "existingRecordId": "memory-review-0331-carlo-rubbia",
+      "reason": "Gia presente e ready_for_discover: Nobel e profilo scientifico forte.",
+      "readyForUi": false
+    },
+    {
+      "id": "profile-reuse-0716-graziadio-ascoli",
+      "wikidataId": "Q472212",
+      "dateIt": "16-07",
+      "year": "1829",
+      "type": "Nascita",
+      "place": "Gorizia",
+      "category": "lingua_cultura",
+      "batchDecision": "reuse_existing_local_memory",
+      "surface": "memory_of_the_day",
+      "rank": "A",
+      "title": "Graziadio Isaia Ascoli",
+      "existingRecordId": "memory-backlog-0716-graziadio-ascoli",
+      "reason": "Gia presente e ready_for_discover: figura fondativa per lingua, identita e confini culturali.",
+      "readyForUi": false
+    },
+    {
+      "id": "profile-reuse-0919-giuseppe-francescato",
+      "wikidataId": "Q24033579",
+      "dateIt": "19-09",
+      "year": "1922",
+      "type": "Nascita",
+      "place": "Udine",
+      "category": "lingua_cultura",
+      "batchDecision": "reuse_existing_local_memory",
+      "surface": "memory_of_the_day",
+      "rank": "B",
+      "title": "Giuseppe Francescato",
+      "existingRecordId": "memory-backlog-0919-giuseppe-francescato",
+      "reason": "Gia presente e ready_for_discover: coerente con lingua friulana e ricerca.",
+      "readyForUi": false
+    },
+    {
+      "id": "profile-reuse-0714-scipio-slataper",
+      "wikidataId": "Q1683317",
+      "dateIt": "14-07",
+      "year": "1888",
+      "type": "Nascita",
+      "place": "Trieste",
+      "category": "letteratura",
+      "batchDecision": "reuse_existing_local_memory",
+      "surface": "memory_of_the_day",
+      "rank": "A",
+      "title": "Scipio Slataper",
+      "existingRecordId": "memory-backlog-0714-scipio-slataper",
+      "reason": "Gia presente come copy_candidate: migliorare quel record, non crearne uno nuovo.",
+      "readyForUi": false
+    },
+    {
+      "id": "profile-upgrade-1122-jacopo-pirona",
+      "wikidataId": "Q10970739",
+      "dateIt": "22-11",
+      "year": "1789",
+      "type": "Nascita",
+      "place": "Dignano",
+      "category": "lingua_cultura",
+      "batchDecision": "upgrade_existing_local_memory",
+      "surface": "memory_of_the_day",
+      "rank": "A",
+      "title": "Jacopo Pirona",
+      "existingRecordId": "memory-draft-pirona-vocabolario",
+      "copyDraft": {
+        "it": "Il 22 novembre 1789 nasce Jacopo Pirona, abate e linguista. Il suo nome resta legato al vocabolario friulano: una memoria piccola solo in apparenza, perche riguarda la lingua di casa.",
+        "fur": "deferred_until_it_selection"
+      },
+      "source": {
+        "label": "Wikipedia / Jacopo Pirona",
+        "type": "daily_history_master_candidate",
+        "url": "https://it.wikipedia.org/wiki/Jacopo_Pirona",
+        "confidence": "medium"
+      },
+      "reviewNotes": "Record gia esistente ma ancora source_candidate: promuovere solo dopo fonte/copy finale e FUR.",
+      "readyForUi": false
+    },
+    {
+      "id": "profile-copy-1122-david-maria-turoldo",
+      "wikidataId": "Q3018369",
+      "dateIt": "22-11",
+      "year": "1916",
+      "type": "Nascita",
+      "place": "Coderno",
+      "category": "letteratura_cultura_civile",
+      "batchDecision": "evergreen_candidate_date_conflict",
+      "surface": "discover_archive",
+      "rank": "B",
+      "title": "David Maria Turoldo",
+      "copyDraft": {
+        "it": "Il 22 novembre 1916 nasce a Coderno David Maria Turoldo, poeta e voce civile del Novecento. In Scopri puo diventare un ricordo sobrio, piu culturale che celebrativo.",
+        "fur": "deferred_until_it_selection"
+      },
+      "source": {
+        "label": "Wikipedia / David Maria Turoldo",
+        "type": "daily_history_master_candidate",
+        "url": "https://it.wikipedia.org/wiki/David_Maria_Turoldo",
+        "confidence": "medium"
+      },
+      "reviewNotes": "Figura forte; le fonti riportano date di nascita discordanti. Conservare come approfondimento evergreen finche il conflitto non e' risolto.",
+      "readyForUi": false
+    },
+    {
+      "id": "profile-copy-1014-giuseppe-levi",
+      "wikidataId": "Q3770812",
+      "dateIt": "14-10",
+      "year": "1872",
+      "type": "Nascita",
+      "place": "Trieste",
+      "category": "scienza_cultura",
+      "batchDecision": "copy_candidate",
+      "surface": "memory_of_the_day",
+      "rank": "A",
+      "title": "Giuseppe Levi",
+      "copyDraft": {
+        "it": "Il 14 ottobre 1872 nasce a Trieste Giuseppe Levi, medico e scienziato. Dalla sua scuola passarono tre futuri premi Nobel: una traccia di scienza che parte anche da qui.",
+        "fur": "deferred_until_it_selection"
+      },
+      "source": {
+        "label": "Wikipedia / Giuseppe Levi",
+        "type": "daily_history_master_candidate",
+        "url": "https://it.wikipedia.org/wiki/Giuseppe_Levi",
+        "confidence": "medium"
+      },
+      "reviewNotes": "Non presentarlo come Nobel: il valore e' nella scuola scientifica e nei legami culturali.",
+      "readyForUi": false
+    },
+    {
+      "id": "profile-copy-0404-giani-stuparich",
+      "wikidataId": "Q325308",
+      "dateIt": "04-04",
+      "year": "1891",
+      "type": "Nascita",
+      "place": "Trieste",
+      "category": "letteratura",
+      "batchDecision": "copy_candidate",
+      "surface": "memory_of_the_day",
+      "rank": "A",
+      "title": "Giani Stuparich",
+      "copyDraft": {
+        "it": "Il 4 aprile 1891 nasce a Trieste Giani Stuparich, scrittore legato alla memoria della citta e del Novecento di confine.",
+        "fur": "deferred_until_it_selection"
+      },
+      "source": {
+        "label": "Wikipedia / Giani Stuparich",
+        "type": "daily_history_master_candidate",
+        "url": "https://it.wikipedia.org/wiki/Giani_Stuparich",
+        "confidence": "medium"
+      },
+      "reviewNotes": "Buon candidato letterario; evitare retorica militare non necessaria.",
+      "readyForUi": false
+    },
+    {
+      "id": "profile-copy-0115-virgilio-giotti",
+      "wikidataId": "Q2160344",
+      "dateIt": "15-01",
+      "year": "1885",
+      "type": "Nascita",
+      "place": "Trieste",
+      "category": "letteratura",
+      "batchDecision": "copy_candidate",
+      "surface": "memory_of_the_day",
+      "rank": "B",
+      "title": "Virgilio Giotti",
+      "copyDraft": {
+        "it": "Il 15 gennaio 1885 nasce a Trieste Virgilio Giotti, poeta capace di portare la voce della citta dentro una lingua letteraria intima e riconoscibile.",
+        "fur": "deferred_until_it_selection"
+      },
+      "source": {
+        "label": "Wikipedia / Virgilio Giotti",
+        "type": "daily_history_master_candidate",
+        "url": "https://it.wikipedia.org/wiki/Virgilio_Giotti",
+        "confidence": "medium"
+      },
+      "reviewNotes": "Estratto master povero: serve controllo fonte prima di promozione.",
+      "readyForUi": false
+    },
+    {
+      "id": "profile-copy-0928-mirko-basaldella",
+      "wikidataId": "Q1938259",
+      "dateIt": "28-09",
+      "year": "1910",
+      "type": "Nascita",
+      "place": "Udine",
+      "category": "arte",
+      "batchDecision": "copy_candidate",
+      "surface": "memory_of_the_day",
+      "rank": "A",
+      "title": "Mirko Basaldella",
+      "copyDraft": {
+        "it": "Il 28 settembre 1910 nasce a Udine Mirko Basaldella, scultore e pittore. Una voce dell'arte friulana entrata nel Novecento italiano.",
+        "fur": "deferred_until_it_selection"
+      },
+      "source": {
+        "label": "Wikipedia / Mirko Basaldella",
+        "type": "daily_history_master_candidate",
+        "url": "https://it.wikipedia.org/wiki/Mirko_Basaldella",
+        "confidence": "medium"
+      },
+      "reviewNotes": "Candidato forte per arte e territorio.",
+      "readyForUi": false
+    },
+    {
+      "id": "profile-copy-0125-ivan-trinko",
+      "wikidataId": "Q12791659",
+      "dateIt": "25-01",
+      "year": "1863",
+      "type": "Nascita",
+      "place": "Tercimonte",
+      "category": "lingua_confine",
+      "batchDecision": "copy_candidate",
+      "surface": "memory_of_the_day",
+      "rank": "A",
+      "title": "Ivan Trinko",
+      "copyDraft": {
+        "it": "Il 25 gennaio 1863 nasce a Tercimonte Ivan Trinko, linguista e uomo di cultura delle Valli del Natisone. Una memoria da raccontare con attenzione al confine e alle lingue.",
+        "fur": "deferred_until_it_selection"
+      },
+      "source": {
+        "label": "Wikipedia / Ivan Trinko",
+        "type": "daily_history_master_candidate",
+        "url": "https://it.wikipedia.org/wiki/Ivan_Trinko",
+        "confidence": "medium"
+      },
+      "reviewNotes": "Profilo forte ma identita slovena/di confine da trattare con precisione.",
+      "readyForUi": false
+    },
+    {
+      "id": "profile-copy-1031-andrej-budal",
+      "wikidataId": "Q4756032",
+      "dateIt": "31-10",
+      "year": "1889",
+      "type": "Nascita",
+      "place": "Sant'Andrea",
+      "category": "lingua_confine",
+      "batchDecision": "copy_candidate",
+      "surface": "memory_of_the_day",
+      "rank": "B",
+      "title": "Andrej Budal",
+      "copyDraft": {
+        "it": "Il 31 ottobre 1889 nasce Andrej Budal, scrittore e traduttore sloveno legato all'area goriziana. Una piccola memoria sul confine come luogo di lingue.",
+        "fur": "deferred_until_it_selection"
+      },
+      "source": {
+        "label": "Wikipedia / Andrej Budal",
+        "type": "daily_history_master_candidate",
+        "url": "https://it.wikipedia.org/wiki/Andrej_Budal",
+        "confidence": "medium"
+      },
+      "reviewNotes": "Verificare luogo e formulazione prima di promuovere.",
+      "readyForUi": false
+    },
+    {
+      "id": "profile-copy-0301-nico-naldini",
+      "wikidataId": "Q3876089",
+      "dateIt": "01-03",
+      "year": "1929",
+      "type": "Nascita",
+      "place": "Casarsa della Delizia",
+      "category": "letteratura",
+      "batchDecision": "discard_below_prominence_threshold",
+      "surface": "hold",
+      "rank": "hold",
+      "title": "Nico Naldini",
+      "copyDraft": {
+        "it": "Il primo marzo 1929 nasce a Casarsa Nico Naldini, scrittore e poeta. Da ricordare per il suo percorso, non solo come nome vicino a Pasolini.",
+        "fur": "deferred_until_it_selection"
+      },
+      "source": {
+        "label": "Wikipedia / Nico Naldini",
+        "type": "daily_history_master_candidate",
+        "url": "https://it.wikipedia.org/wiki/Nico_Naldini",
+        "confidence": "medium"
+      },
+      "reviewNotes": "Profilo culturale reale, ma sotto la soglia di rilievo storico concordata per la rubrica principale.",
+      "readyForUi": false
+    },
+    {
+      "id": "profile-copy-0910-leonardo-zanier",
+      "wikidataId": "Q10978897",
+      "dateIt": "10-09",
+      "year": "1935",
+      "type": "Nascita",
+      "place": "Maranzanis",
+      "category": "poesia_lavoro_emigrazione",
+      "batchDecision": "copy_candidate",
+      "surface": "memory_of_the_day",
+      "rank": "B",
+      "title": "Leonardo Zanier",
+      "copyDraft": {
+        "it": "Il 10 settembre 1935 nasce a Maranzanis Leonardo Zanier, poeta e uomo di lavoro. La sua memoria parla di Friuli, emigrazione e voce popolare.",
+        "fur": "deferred_until_it_selection"
+      },
+      "source": {
+        "label": "Wikipedia / Leonardo Zanier",
+        "type": "daily_history_master_candidate",
+        "url": "https://it.wikipedia.org/wiki/Leonardo_Zanier",
+        "confidence": "medium"
+      },
+      "reviewNotes": "Molto coerente con identita friulana; fonte/copy da rifinire.",
+      "readyForUi": false
+    },
+    {
+      "id": "profile-copy-0608-luciano-petech",
+      "wikidataId": "Q942230",
+      "dateIt": "08-06",
+      "year": "1914",
+      "type": "Nascita",
+      "place": "Trieste",
+      "category": "storia_studi",
+      "batchDecision": "copy_candidate",
+      "surface": "discover_archive",
+      "rank": "B",
+      "title": "Luciano Petech",
+      "copyDraft": {
+        "it": "L'8 giugno 1914 nasce a Trieste Luciano Petech, storico e orientalista. Non e' una memoria popolare immediata, ma puo arricchire l'archivio Scopri.",
+        "fur": "deferred_until_it_selection"
+      },
+      "source": {
+        "label": "Wikipedia / Luciano Petech",
+        "type": "daily_history_master_candidate",
+        "url": "https://it.wikipedia.org/wiki/Luciano_Petech",
+        "confidence": "medium"
+      },
+      "reviewNotes": "Meglio archivio che card giornaliera primaria.",
+      "readyForUi": false
+    },
+    {
+      "id": "profile-copy-0516-paolo-bozzi",
+      "wikidataId": "Q2050322",
+      "dateIt": "16-05",
+      "year": "1930",
+      "type": "Nascita",
+      "place": "Gorizia",
+      "category": "scienza_percezione",
+      "batchDecision": "copy_candidate",
+      "surface": "discover_archive",
+      "rank": "B",
+      "title": "Paolo Bozzi",
+      "copyDraft": {
+        "it": "Il 16 maggio 1930 nasce a Gorizia Paolo Bozzi, psicologo e filosofo della percezione. Un tema adatto all'archivio Scopri, vicino alla scienza del vedere.",
+        "fur": "deferred_until_it_selection"
+      },
+      "source": {
+        "label": "Wikipedia / Paolo Bozzi",
+        "type": "daily_history_master_candidate",
+        "url": "https://it.wikipedia.org/wiki/Paolo_Bozzi",
+        "confidence": "medium"
+      },
+      "reviewNotes": "Specialistico ma coerente; non prioritario su memoria del giorno.",
+      "readyForUi": false
+    },
+    {
+      "id": "profile-copy-0229-pietro-blaserna",
+      "wikidataId": "Q1597820",
+      "dateIt": "29-02",
+      "year": "1836",
+      "type": "Nascita",
+      "place": "Fiumicello",
+      "category": "scienza",
+      "batchDecision": "evergreen_candidate_date_conflict",
+      "surface": "discover_archive",
+      "rank": "B",
+      "title": "Pietro Blaserna",
+      "copyDraft": {
+        "it": "Il 29 febbraio 1836 nasce a Fiumicello Pietro Blaserna, fisico e uomo delle istituzioni scientifiche. Una memoria da gestire solo con regola chiara per gli anni non bisestili.",
+        "fur": "deferred_until_it_selection"
+      },
+      "source": {
+        "label": "Wikipedia / Pietro Blaserna",
+        "type": "daily_history_master_candidate",
+        "url": "https://it.wikipedia.org/wiki/Pietro_Blaserna",
+        "confidence": "medium"
+      },
+      "reviewNotes": "Profilo scientifico forte, ma le fonti riportano date di nascita discordanti. Conservare come approfondimento evergreen.",
+      "readyForUi": false
+    },
+    {
+      "id": "profile-review-1230-sergio-doplicher",
+      "wikidataId": "Q22669799",
+      "dateIt": "30-12",
+      "year": "1940",
+      "type": "Nascita",
+      "place": "Trieste",
+      "provinceCode": "TS",
+      "municipalityIstatCode": "032006",
+      "category": "scienza",
+      "batchDecision": "it_review_candidate",
+      "surface": "memory_of_the_day",
+      "rank": "A",
+      "title": "Sergio Doplicher",
+      "copyDraft": {
+        "it": "Il 30 dicembre 1940 nasce a Trieste Sergio Doplicher, fisico matematico tra i protagonisti degli studi sulle basi della teoria quantistica dei campi."
+      },
+      "source": {
+        "label": "Master Accadde oggi FVG / Wikipedia",
+        "type": "daily_history_master_candidate",
+        "url": "https://it.wikipedia.org/wiki/Sergio_Doplicher",
+        "confidence": "source_candidate"
+      },
+      "languageStatus": { "it": "draft_for_confirmation", "fur": "not_started" },
+      "reviewNotes": "Candidato IT estratto dal master; fonte e formulazione da confermare prima della promozione.",
+      "readyForUi": false
+    },
+    {
+      "id": "profile-review-0414-luigi-carnera",
+      "wikidataId": "Q542649",
+      "dateIt": "14-04",
+      "year": "1875",
+      "type": "Nascita",
+      "place": "Trieste",
+      "provinceCode": "TS",
+      "municipalityIstatCode": "032006",
+      "category": "scienza",
+      "batchDecision": "it_review_candidate",
+      "surface": "memory_of_the_day",
+      "rank": "A",
+      "title": "Luigi Carnera",
+      "copyDraft": {
+        "it": "Il 14 aprile 1875 nasce a Trieste Luigi Carnera, astronomo e matematico attivo nella ricerca europea tra Ottocento e Novecento."
+      },
+      "source": {
+        "label": "Master Accadde oggi FVG / Wikipedia",
+        "type": "daily_history_master_candidate",
+        "url": "https://it.wikipedia.org/wiki/Luigi_Carnera",
+        "confidence": "source_candidate"
+      },
+      "languageStatus": { "it": "draft_for_confirmation", "fur": "not_started" },
+      "reviewNotes": "Candidato IT estratto dal master; fonte e formulazione da confermare prima della promozione.",
+      "readyForUi": false
+    },
+    {
+      "id": "profile-review-0731-antonio-mario-radmilli",
+      "wikidataId": "Q3619846",
+      "dateIt": "31-07",
+      "year": "1922",
+      "type": "Nascita",
+      "place": "Gorizia",
+      "provinceCode": "GO",
+      "municipalityIstatCode": "031007",
+      "category": "archeologia",
+      "batchDecision": "it_review_candidate",
+      "surface": "memory_of_the_day",
+      "rank": "A",
+      "title": "Antonio Mario Radmilli",
+      "copyDraft": {
+        "it": "Il 31 luglio 1922 nasce a Gorizia Antonio Mario Radmilli, archeologo e accademico dei Lincei, figura di rilievo negli studi italiani sulla preistoria."
+      },
+      "source": {
+        "label": "Master Accadde oggi FVG / Wikipedia",
+        "type": "daily_history_master_candidate",
+        "url": "https://it.wikipedia.org/wiki/Antonio_Mario_Radmilli",
+        "confidence": "source_candidate"
+      },
+      "languageStatus": { "it": "draft_for_confirmation", "fur": "not_started" },
+      "reviewNotes": "Candidato IT estratto dal master; fonte e formulazione da confermare prima della promozione.",
+      "readyForUi": false
+    },
+    {
+      "id": "profile-review-0726-giulio-krall",
+      "wikidataId": "Q3769682",
+      "dateIt": "26-07",
+      "year": "1901",
+      "type": "Nascita",
+      "place": "Trieste",
+      "provinceCode": "TS",
+      "municipalityIstatCode": "032006",
+      "category": "scienza",
+      "batchDecision": "it_review_candidate",
+      "surface": "memory_of_the_day",
+      "rank": "B",
+      "title": "Giulio Krall",
+      "copyDraft": {
+        "it": "Il 26 luglio 1901 nasce a Trieste Giulio Krall, ingegnere e matematico, tra i protagonisti italiani della meccanica applicata del Novecento."
+      },
+      "source": {
+        "label": "Master Accadde oggi FVG / Wikipedia",
+        "type": "daily_history_master_candidate",
+        "url": "https://it.wikipedia.org/wiki/Giulio_Krall",
+        "confidence": "source_candidate"
+      },
+      "languageStatus": { "it": "draft_for_confirmation", "fur": "not_started" },
+      "reviewNotes": "Candidato IT estratto dal master; fonte e formulazione da confermare prima della promozione.",
+      "readyForUi": false
+    },
+    {
+      "id": "profile-review-1130-richard-mollier",
+      "wikidataId": "Q65825",
+      "dateIt": "30-11",
+      "year": "1863",
+      "type": "Nascita",
+      "place": "Trieste",
+      "provinceCode": "TS",
+      "municipalityIstatCode": "032006",
+      "category": "scienza",
+      "batchDecision": "it_review_candidate",
+      "surface": "memory_of_the_day",
+      "rank": "A",
+      "title": "Richard Mollier",
+      "copyDraft": {
+        "it": "Il 30 novembre 1863 nasce a Trieste Richard Mollier, fisico e ingegnere tra i pionieri della termodinamica moderna."
+      },
+      "source": {
+        "label": "Master Accadde oggi FVG / Wikipedia",
+        "type": "daily_history_master_candidate",
+        "url": "https://it.wikipedia.org/wiki/Richard_Mollier",
+        "confidence": "source_candidate"
+      },
+      "languageStatus": { "it": "draft_for_confirmation", "fur": "not_started" },
+      "reviewNotes": "Candidato IT estratto dal master; fonte e formulazione da confermare prima della promozione.",
+      "readyForUi": false
+    },
+    {
+      "id": "profile-review-0225-achille-tellini",
+      "wikidataId": "Q12345443",
+      "dateIt": "25-02",
+      "year": "1866",
+      "type": "Nascita",
+      "place": "Udine",
+      "provinceCode": "UD",
+      "municipalityIstatCode": "030129",
+      "category": "scienza_lingua",
+      "batchDecision": "it_review_candidate",
+      "surface": "memory_of_the_day",
+      "rank": "A",
+      "title": "Achille Tellini",
+      "copyDraft": {
+        "it": "Il 25 febbraio 1866 nasce a Udine Achille Tellini, naturalista, geologo e linguista impegnato nello studio e nella tutela delle lingue minoritarie del Nordest."
+      },
+      "source": {
+        "label": "Master Accadde oggi FVG / Wikipedia",
+        "type": "daily_history_master_candidate",
+        "url": "https://it.wikipedia.org/wiki/Achille_Tellini",
+        "confidence": "source_candidate"
+      },
+      "languageStatus": { "it": "draft_for_confirmation", "fur": "not_started" },
+      "reviewNotes": "Candidato IT estratto dal master; fonte e formulazione da confermare prima della promozione.",
+      "readyForUi": false
+    },
+    {
+      "id": "profile-review-0329-tarcisio-petracco",
+      "wikidataId": "Q3981102",
+      "dateIt": "29-03",
+      "year": "1910",
+      "type": "Nascita",
+      "place": "San Giorgio della Richinvelda",
+      "provinceCode": "PN",
+      "municipalityIstatCode": "093038",
+      "category": "storia_cultura_civile",
+      "batchDecision": "it_review_candidate",
+      "surface": "memory_of_the_day",
+      "rank": "A",
+      "title": "Tarcisio Petracco",
+      "copyDraft": {
+        "it": "Il 29 marzo 1910 nasce a San Giorgio della Richinvelda Tarcisio Petracco, partigiano e protagonista della mobilitazione che portò alla nascita dell'Università di Udine."
+      },
+      "source": {
+        "label": "Master Accadde oggi FVG / Wikipedia",
+        "type": "daily_history_master_candidate",
+        "url": "https://it.wikipedia.org/wiki/Tarcisio_Petracco",
+        "confidence": "source_candidate"
+      },
+      "languageStatus": { "it": "draft_for_confirmation", "fur": "not_started" },
+      "reviewNotes": "Candidato IT estratto dal master; fonte e formulazione da confermare prima della promozione.",
+      "readyForUi": false
+    },
+    {
+      "id": "profile-review-0813-fabio-conforto",
+      "wikidataId": "Q3737655",
+      "dateIt": "13-08",
+      "year": "1909",
+      "type": "Nascita",
+      "place": "Trieste",
+      "provinceCode": "TS",
+      "municipalityIstatCode": "032006",
+      "category": "scienza",
+      "batchDecision": "it_review_candidate",
+      "surface": "discover_archive",
+      "rank": "B",
+      "title": "Fabio Conforto",
+      "copyDraft": {
+        "it": "Il 13 agosto 1909 nasce a Trieste Fabio Conforto, matematico tra i rappresentanti della scuola italiana di geometria algebrica."
+      },
+      "source": {
+        "label": "Master Accadde oggi FVG / Wikipedia",
+        "type": "daily_history_master_candidate",
+        "url": "https://it.wikipedia.org/wiki/Fabio_Conforto",
+        "confidence": "source_candidate"
+      },
+      "languageStatus": { "it": "draft_for_confirmation", "fur": "not_started" },
+      "reviewNotes": "Candidato IT estratto dal master; fonte e formulazione da confermare prima della promozione.",
+      "readyForUi": false
+    },
+    {
+      "id": "profile-review-0317-bruno-pincherle",
+      "wikidataId": "Q16533960",
+      "dateIt": "17-03",
+      "year": "1903",
+      "type": "Nascita",
+      "place": "Trieste",
+      "provinceCode": "TS",
+      "municipalityIstatCode": "032006",
+      "category": "storia_scienza_civile",
+      "batchDecision": "it_review_candidate",
+      "surface": "memory_of_the_day",
+      "rank": "B",
+      "title": "Bruno Pincherle",
+      "copyDraft": {
+        "it": "Il 17 marzo 1903 nasce a Trieste Bruno Pincherle, medico, antifascista e studioso della storia della medicina."
+      },
+      "source": {
+        "label": "Master Accadde oggi FVG / Wikipedia",
+        "type": "daily_history_master_candidate",
+        "url": "https://it.wikipedia.org/wiki/Bruno_Pincherle",
+        "confidence": "source_candidate"
+      },
+      "languageStatus": { "it": "draft_for_confirmation", "fur": "not_started" },
+      "reviewNotes": "Candidato IT estratto dal master; fonte e formulazione da confermare prima della promozione.",
+      "readyForUi": false
+    },
+    {
+      "id": "profile-archive-review-0817-theodor-daubler",
+      "wikidataId": "Q1937725",
+      "dateIt": "17-08",
+      "year": "1876",
+      "type": "Nascita",
+      "place": "Trieste",
+      "provinceCode": "TS",
+      "municipalityIstatCode": "032006",
+      "category": "letteratura_europea",
+      "batchDecision": "it_archive_review_candidate",
+      "surface": "discover_archive",
+      "rank": "B",
+      "title": "Theodor Däubler",
+      "copyDraft": {
+        "it": "Il 17 agosto 1876 nasce a Trieste Theodor Däubler, poeta e scrittore austriaco legato alle avanguardie letterarie del primo Novecento."
+      },
+      "source": {
+        "label": "Master Accadde oggi FVG / Wikipedia",
+        "type": "daily_history_master_candidate",
+        "url": "https://it.wikipedia.org/wiki/Theodor_D%C3%A4ubler",
+        "confidence": "source_candidate"
+      },
+      "languageStatus": { "it": "draft_for_confirmation", "fur": "not_started" },
+      "reviewNotes": "Da valutare per Archivio Scopri, non come memoria giornaliera primaria.",
+      "readyForUi": false
+    },
+    {
+      "id": "profile-archive-review-0920-marij-kogoj",
+      "wikidataId": "Q3080044",
+      "dateIt": "20-09",
+      "year": "1892",
+      "type": "Nascita",
+      "place": "Trieste",
+      "provinceCode": "TS",
+      "municipalityIstatCode": "032006",
+      "category": "musica_cultura_slovena",
+      "batchDecision": "it_archive_review_candidate",
+      "surface": "discover_archive",
+      "rank": "B",
+      "title": "Marij Kogoj",
+      "copyDraft": {
+        "it": "Il 20 settembre 1892 nasce a Trieste Marij Kogoj, compositore sloveno formatosi nella cultura musicale europea del primo Novecento."
+      },
+      "source": {
+        "label": "Master Accadde oggi FVG / Wikipedia",
+        "type": "daily_history_master_candidate",
+        "url": "https://it.wikipedia.org/wiki/Marij_Kogoj",
+        "confidence": "source_candidate"
+      },
+      "languageStatus": { "it": "draft_for_confirmation", "fur": "not_started" },
+      "reviewNotes": "Da valutare per Archivio Scopri, non come memoria giornaliera primaria.",
+      "readyForUi": false
+    },
+    {
+      "id": "profile-archive-review-0709-spiridon-gopcevic",
+      "wikidataId": "Q89400",
+      "dateIt": "09-07",
+      "year": "1855",
+      "type": "Nascita",
+      "place": "Trieste",
+      "provinceCode": "TS",
+      "municipalityIstatCode": "032006",
+      "category": "astronomia_storia_culturale",
+      "batchDecision": "it_archive_review_candidate",
+      "surface": "discover_archive",
+      "rank": "B",
+      "title": "Spiridon Gopčević",
+      "copyDraft": {
+        "it": "Il 9 luglio 1855 nasce a Trieste Spiridon Gopčević, astronomo e autore austro-serbo noto anche con lo pseudonimo Leo Brenner."
+      },
+      "source": {
+        "label": "Master Accadde oggi FVG / Wikipedia",
+        "type": "daily_history_master_candidate",
+        "url": "https://it.wikipedia.org/wiki/Spiridon_Gop%C4%8Devi%C4%87",
+        "confidence": "source_candidate"
+      },
+      "languageStatus": { "it": "draft_for_confirmation", "fur": "not_started" },
+      "reviewNotes": "Da valutare per Archivio Scopri, non come memoria giornaliera primaria.",
+      "readyForUi": false
+    },
+    {
+      "id": "profile-hold-0222-peter-butkovic",
+      "wikidataId": "Q3900831",
+      "dateIt": "22-02",
+      "year": "1888",
+      "type": "Nascita",
+      "place": "Savogna d'Isonzo",
+      "provinceCode": "GO",
+      "municipalityIstatCode": "031022",
+      "category": "letteratura_cultura_slovena",
+      "batchDecision": "hold_source_significance",
+      "surface": "hold",
+      "rank": "hold",
+      "title": "Peter Butkovič",
+      "reason": "Il master offre una descrizione troppo breve per stabilire il peso del profilo nella selezione Scopri.",
+      "languageStatus": { "it": "not_started", "fur": "not_started" },
+      "readyForUi": false
+    },
+    {
+      "id": "profile-hold-0616-lado-piscanc",
+      "wikidataId": "Q12794563",
+      "dateIt": "16-06",
+      "year": "1914",
+      "type": "Nascita",
+      "place": "Trieste",
+      "provinceCode": "TS",
+      "municipalityIstatCode": "032006",
+      "category": "poesia_cultura_slovena",
+      "batchDecision": "hold_source_significance",
+      "surface": "hold",
+      "rank": "hold",
+      "title": "Lado Piščanc",
+      "reason": "Il legame territoriale è chiaro, ma servono una fonte e un profilo più completi prima della selezione editoriale.",
+      "languageStatus": { "it": "not_started", "fur": "not_started" },
+      "readyForUi": false
+    },
+    {
+      "id": "profile-hold-0113-enrico-paoli",
+      "wikidataId": "Q641914",
+      "dateIt": "13-01",
+      "year": "1908",
+      "type": "Nascita",
+      "place": "Trieste",
+      "provinceCode": "TS",
+      "municipalityIstatCode": "032006",
+      "category": "scacchi",
+      "batchDecision": "hold_niche_profile",
+      "surface": "hold",
+      "rank": "hold",
+      "title": "Enrico Paoli",
+      "reason": "Profilo riconosciuto nello scacchismo, ma troppo specialistico per la rubrica principale senza una decisione editoriale esplicita.",
+      "languageStatus": { "it": "not_started", "fur": "not_started" },
+      "readyForUi": false
+    },
+    {
+      "id": "profile-hold-1024-nello-cristianini",
+      "wikidataId": "Q3541702",
+      "dateIt": "24-10",
+      "year": "1968",
+      "type": "Nascita",
+      "place": "Gorizia",
+      "category": "scienza_contemporanea",
+      "batchDecision": "hold_for_living_person_review",
+      "surface": "hold",
+      "rank": "hold",
+      "title": "Nello Cristianini",
+      "reason": "Profilo contemporaneo interessante e attuale, ma vivente: serve fonte stabile e tono molto neutro prima della pubblicazione.",
+      "source": {
+        "label": "Wikipedia / Nello Cristianini",
+        "type": "daily_history_master_candidate",
+        "url": "https://it.wikipedia.org/wiki/Nello_Cristianini",
+        "confidence": "medium"
+      },
+      "readyForUi": false
+    }
+  ]
+}

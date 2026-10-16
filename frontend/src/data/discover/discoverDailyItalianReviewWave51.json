@@ -1,0 +1,112 @@
+{
+  "schemaVersion": 1,
+  "generatedAt": "2026-07-18",
+  "purpose": "Cinquantunesimo lotto Scopri IT: terza pulizia della coda residua. Undici candidati coincidono con memorie canoniche gia pubblicate; Giulio Camagni resta una vecchia bozza non pubblicabile; Francesco Piccoli e Giovanni De Lucia non superano la soglia editoriale; il record Filippo della Torre viene escluso per incoerenza cronologica e d'identita. Il lotto non crea record e non modifica la copertura.",
+  "policy": {
+    "readyForUi": false,
+    "furDeferred": true,
+    "dateFormat": "DD-MM",
+    "requiresFinalItalianApproval": true,
+    "excludeDeaths": true,
+    "excludeGenericPoliticalProfiles": true,
+    "excludeGenericProfessionalProfiles": true,
+    "excludeSportsOnlyProfiles": true,
+    "allowExceptionalSportsProfiles": true,
+    "rejectBirthplaceOnlyProfiles": true,
+    "rejectSemanticDuplicates": true,
+    "rejectUncertainCalendarDates": true,
+    "rejectInternallyInconsistentSources": true,
+    "sourceFirst": true,
+    "publishAfterFurOnly": true,
+    "allowMultipleMemoriesPerDate": true,
+    "secondaryRequiresPrimaryAnchor": true,
+    "doNotPromoteToPrimaryForCoverageOnly": true
+  },
+  "summary": {
+    "reviewed": 15,
+    "keepDaily": 0,
+    "primary": 0,
+    "secondary": 0,
+    "hold": 0,
+    "excluded": 15,
+    "canonicalPrimaryDatesBefore": 274,
+    "canonicalPrimaryDatesAfter": 274,
+    "currentVisiblePrimaryCoverage": 269
+  },
+  "keepDaily": [],
+  "hold": [],
+  "excluded": [
+    {
+      "id": "master-fvg-22-11-Q3960835",
+      "duplicateOf": "memory-copy-1122-silvio-benco",
+      "reason": "Silvio Benco e gia pubblicato il 22 novembre con una scheda dedicata alla Trieste letteraria."
+    },
+    {
+      "id": "master-fvg-25-02-Q3059608",
+      "duplicateOf": "memory-copy-0225-eugenio-geiringer",
+      "reason": "Eugenio Geiringer e gia pubblicato il 25 febbraio con una scheda dedicata alle architetture e infrastrutture di Trieste."
+    },
+    {
+      "id": "master-fvg-25-03-Q3769521",
+      "existingDraft": "memory-copy-0325-giulio-camagni",
+      "reason": "Giulio Camagni ha gia una bozza non pubblicata. Il profilo contemporaneo di fumettista e pittore non supera la soglia editoriale attuale e non viene duplicato ne promosso."
+    },
+    {
+      "id": "master-fvg-26-08-Q10993506",
+      "duplicateOf": "memory-copy-0826-novella-cantarutti",
+      "reason": "Novella Cantarutti e gia pubblicata il 26 agosto con una scheda dedicata alla poesia in lingua friulana."
+    },
+    {
+      "id": "master-fvg-03-06-Q15921979",
+      "duplicateOf": "memory-copy-0603-giovanni-battista-bassi",
+      "reason": "Giovanni Battista Bassi e gia pubblicato il 3 giugno con una scheda dedicata al suo lavoro tra architettura, matematica e meteorologia."
+    },
+    {
+      "id": "master-fvg-14-05-Q3820169",
+      "duplicateOf": "memory-it-ready-0514-l-r-johannis-immaginazione-da-sacile",
+      "reason": "L. R. Johannis e gia pubblicato il 14 maggio con una scheda dedicata alla fantascienza e a Sacile."
+    },
+    {
+      "id": "master-fvg-19-09-Q24033579",
+      "duplicateOf": "memory-backlog-0919-giuseppe-francescato",
+      "reason": "Giuseppe Francescato e gia pubblicato il 19 settembre con una scheda dedicata agli studi sulla lingua friulana."
+    },
+    {
+      "id": "master-fvg-30-12-Q22669799",
+      "duplicateOf": "memory-it-ready-1230-sergio-doplicher-e-la-fisica-matematica",
+      "reason": "Sergio Doplicher e gia pubblicato il 30 dicembre con una scheda dedicata alla fisica matematica."
+    },
+    {
+      "id": "master-fvg-01-05-Q27150629",
+      "reason": "Il record attribuisce a Filippo della Torre una nascita nel 1657 e insieme una signoria milanese iniziata nel 1263. L'incoerenza cronologica indica un'identita confluita in modo errato: il candidato viene escluso."
+    },
+    {
+      "id": "master-fvg-08-01-Q4893980",
+      "duplicateOf": "memory-it-ready-0108-bernardo-maria-de-rubeis-storia-da-cividale",
+      "reason": "Bernardo Maria De Rubeis e gia pubblicato l'8 gennaio con una scheda dedicata alla storia e a Cividale."
+    },
+    {
+      "id": "master-fvg-11-06-Q27986842",
+      "reason": "Francesco Piccoli e descritto soltanto attraverso incarichi politici a Padova. La nascita a Cividale non basta a renderlo una memoria storica rilevante per Scopri."
+    },
+    {
+      "id": "master-fvg-12-08-Q3767101",
+      "reason": "Giovanni De Lucia e descritto come attore, autore e regista; il candidato non documenta un contributo storico eccezionale ne un legame territoriale oltre la nascita a Cividale."
+    },
+    {
+      "id": "master-fvg-26-07-Q3769682",
+      "duplicateOf": "memory-it-ready-0726-giulio-krall-matematica-applicata",
+      "reason": "Giulio Krall e gia pubblicato il 26 luglio con una scheda dedicata alla matematica applicata e alla scienza delle costruzioni."
+    },
+    {
+      "id": "master-fvg-30-11-Q65825",
+      "duplicateOf": "memory-it-ready-1130-richard-mollier-e-la-termodinamica",
+      "reason": "Richard Mollier e gia pubblicato il 30 novembre con una scheda dedicata alla termodinamica."
+    },
+    {
+      "id": "master-fvg-09-07-Q89400",
+      "duplicateOf": "memory-it-ready-0709-spiridon-gopcevic-astronomia-e-scrittura",
+      "reason": "Spiridon Gopcevic e gia pubblicato il 9 luglio con una scheda dedicata all'astronomia e alla scrittura."
+    }
+  ]
+}

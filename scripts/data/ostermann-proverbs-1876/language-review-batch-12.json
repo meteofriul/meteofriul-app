@@ -1,0 +1,199 @@
+{
+  "schemaVersion": 1,
+  "batchId": "ostermann-1876-language-review-12",
+  "reviewedAt": "2026-08-02",
+  "sourceDecisionFiles": ["review-decisions-batch-12.json"],
+  "purpose": "Dodicesima revisione linguistica ed editoriale dei candidati Ostermann 1876 verificati sul facsimile. Non pubblica contenuti nella UI.",
+  "policy": {
+    "publish": false,
+    "rule": "La normalizzazione FUR conserva il significato attestato nel facsimile. Le quindici massime sono generali e non ricevono date, feste o stagioni artificiali."
+  },
+  "summary": {
+    "records": 15,
+    "languageReviewed": 15,
+    "mergeExisting": 0,
+    "needsNativeReview": 0
+  },
+  "records": [
+    {
+      "id": "ost1876-gjave-no-met-fontane-sech",
+      "reviewStatus": "language_reviewed",
+      "furNormalized": "Gjave e no met, la fontane e va al sec.",
+      "itFinal": "Se si toglie senza rimettere, la fontana si secca.",
+      "destination": "almanac",
+      "calendarRule": {"type": "general", "bucket": "wisdom", "fallbackAllowed": true},
+      "duplicateAudit": {"status": "new_distinct"},
+      "evidence": [{"label": "Facsimile Ostermann 1876, p. PDF 201", "kind": "primary"}, {"label": "ARLeF e Dizionari de Lenghe Furlane, gjavâ, meti, fontane e sec", "kind": "secondary"}],
+      "editorialNote": "Normalizzati il clitico femminile e la forma sec; conservata la struttura concreta del detto.",
+      "publish": false
+    },
+    {
+      "id": "ost1876-gotis-spessis-forin-clap",
+      "reviewStatus": "language_reviewed",
+      "furNormalized": "Gotis spessis a forin il clap.",
+      "itFinal": "Gocce frequenti forano la pietra.",
+      "destination": "almanac",
+      "calendarRule": {"type": "general", "bucket": "wisdom", "fallbackAllowed": true},
+      "duplicateAudit": {"status": "new_distinct"},
+      "evidence": [{"label": "Facsimile Ostermann 1876, p. PDF 201", "kind": "primary"}, {"label": "ARLeF e Dizionari de Lenghe Furlane, gote, dispès, forâ e clap", "kind": "secondary"}],
+      "editorialNote": "Normalizzati plurale, accordo e pronome soggetto; il senso della costanza resta invariato.",
+      "publish": false
+    },
+    {
+      "id": "ost1876-divisions-rovinin-fameis",
+      "reviewStatus": "language_reviewed",
+      "furNormalized": "Lis divisions a rovinin lis fameis.",
+      "itFinal": "Le divisioni rovinano le famiglie.",
+      "destination": "almanac",
+      "calendarRule": {"type": "general", "bucket": "wisdom", "fallbackAllowed": true},
+      "duplicateAudit": {"status": "new_distinct"},
+      "evidence": [{"label": "Facsimile Ostermann 1876, p. PDF 202", "kind": "primary"}, {"label": "Dizionari de Lenghe Furlane, division, rovinâ e famee", "kind": "secondary"}],
+      "editorialNote": "Aggiunto il pronome soggetto plurale della grafia standard.",
+      "publish": false
+    },
+    {
+      "id": "ost1876-sta-ben-no-si-movi",
+      "reviewStatus": "language_reviewed",
+      "furNormalized": "Cui che al sta ben nol si movi.",
+      "itFinal": "Chi sta bene non si muova.",
+      "destination": "almanac",
+      "calendarRule": {"type": "general", "bucket": "wisdom", "fallbackAllowed": true},
+      "duplicateAudit": {"status": "new_distinct"},
+      "evidence": [{"label": "Facsimile Ostermann 1876, p. PDF 202", "kind": "primary"}, {"label": "Dizionari de Lenghe Furlane, stâ, ben e movisi", "kind": "secondary"}],
+      "editorialNote": "Normalizzati i pronomi soggetto e la negazione senza ampliare il testo.",
+      "publish": false
+    },
+    {
+      "id": "ost1876-ogni-lavade-fruiade",
+      "reviewStatus": "language_reviewed",
+      "furNormalized": "Ogni lavade e je une fruiade.",
+      "itFinal": "Ogni lavaggio consuma.",
+      "destination": "almanac",
+      "calendarRule": {"type": "general", "bucket": "wisdom", "fallbackAllowed": true},
+      "duplicateAudit": {"status": "new_distinct"},
+      "evidence": [{"label": "Facsimile Ostermann 1876, p. PDF 203", "kind": "primary"}, {"label": "ARLeF e Dizionari de Lenghe Furlane, lavade e fruiâ", "kind": "secondary"}],
+      "editorialNote": "Conservata la forma nominale tradizionale; la resa italiana esplicita l'effetto dell'usura.",
+      "publish": false
+    },
+    {
+      "id": "ost1876-spint-poc-spint-trop",
+      "reviewStatus": "language_reviewed",
+      "furNormalized": "Cui che al spint pôc al spint trop.",
+      "itFinal": "Chi spende poco spende troppo.",
+      "destination": "almanac",
+      "calendarRule": {"type": "general", "bucket": "wisdom", "fallbackAllowed": true},
+      "duplicateAudit": {"status": "new_distinct"},
+      "evidence": [{"label": "Facsimile Ostermann 1876, p. PDF 203", "kind": "primary"}, {"label": "ARLeF e Dizionari de Lenghe Furlane, spindi, pôc e trop", "kind": "secondary"}],
+      "editorialNote": "Aggiunti i pronomi soggetto; il contrasto originale resta intatto.",
+      "publish": false
+    },
+    {
+      "id": "ost1876-poc-spes-jemple-borse",
+      "reviewStatus": "language_reviewed",
+      "furNormalized": "Pôc e dispès al jemple la borse.",
+      "itFinal": "Poco e spesso riempie la borsa.",
+      "destination": "almanac",
+      "calendarRule": {"type": "general", "bucket": "wisdom", "fallbackAllowed": true},
+      "duplicateAudit": {"status": "new_distinct"},
+      "evidence": [{"label": "Facsimile Ostermann 1876, p. PDF 204", "kind": "primary"}, {"label": "ARLeF e Dizionari de Lenghe Furlane, pôc, dispès, jemplâ e borse", "kind": "secondary"}],
+      "editorialNote": "Normalizzati dispès e la forma verbale con pronome soggetto.",
+      "publish": false
+    },
+    {
+      "id": "ost1876-no-contente-poc-pierd-trop",
+      "reviewStatus": "language_reviewed",
+      "furNormalized": "Cui che nol si contente dal pôc al pierd il trop.",
+      "itFinal": "Chi non si accontenta del poco perde il molto.",
+      "destination": "almanac",
+      "calendarRule": {"type": "general", "bucket": "wisdom", "fallbackAllowed": true},
+      "duplicateAudit": {"status": "new_distinct"},
+      "evidence": [{"label": "Facsimile Ostermann 1876, p. PDF 204", "kind": "primary"}, {"label": "Dizionari de Lenghe Furlane, contentâsi, pôc, pierdi e trop", "kind": "secondary"}],
+      "editorialNote": "Normalizzati negazione, accenti e pronomi soggetto.",
+      "publish": false
+    },
+    {
+      "id": "ost1876-umins-fasin-robe",
+      "reviewStatus": "language_reviewed",
+      "furNormalized": "I oms a fasin la robe, ma la robe no fâs i oms.",
+      "itFinal": "Gli uomini fanno la ricchezza, ma la ricchezza non fa gli uomini.",
+      "destination": "almanac",
+      "calendarRule": {"type": "general", "bucket": "wisdom", "fallbackAllowed": true},
+      "duplicateAudit": {"status": "new_distinct"},
+      "evidence": [{"label": "Facsimile Ostermann 1876, p. PDF 208", "kind": "primary"}, {"label": "ARLeF e Dizionari de Lenghe Furlane, om, robe e fâ", "kind": "secondary"}],
+      "editorialNote": "Normalizzato il plurale oms e aggiunto il pronome soggetto nella prima proposizione.",
+      "publish": false
+    },
+    {
+      "id": "ost1876-cur-content-pan-forment",
+      "reviewStatus": "language_reviewed",
+      "furNormalized": "Al vâl plui il cûr content che pan di forment.",
+      "itFinal": "Vale più un cuore contento del pane di frumento.",
+      "destination": "almanac",
+      "calendarRule": {"type": "general", "bucket": "wisdom", "fallbackAllowed": true},
+      "duplicateAudit": {"status": "new_distinct"},
+      "evidence": [{"label": "Facsimile Ostermann 1876, p. PDF 209", "kind": "primary"}, {"label": "ARLeF e Dizionari de Lenghe Furlane, valê, cûr, content e forment", "kind": "secondary"}],
+      "editorialNote": "Aggiunto il pronome soggetto verbale e conservata l'immagine rurale.",
+      "publish": false
+    },
+    {
+      "id": "ost1876-rich-no-baste-content",
+      "reviewStatus": "language_reviewed",
+      "furNormalized": "Nol baste jessi ric par jessi content.",
+      "itFinal": "Non basta essere ricchi per essere contenti.",
+      "destination": "almanac",
+      "calendarRule": {"type": "general", "bucket": "wisdom", "fallbackAllowed": true},
+      "duplicateAudit": {"status": "new_distinct"},
+      "evidence": [{"label": "Facsimile Ostermann 1876, p. PDF 209", "kind": "primary"}, {"label": "Dizionari de Lenghe Furlane, bastâ, ric e content", "kind": "secondary"}],
+      "editorialNote": "Ricondotti al singolare gli aggettivi predicativi della costruzione impersonale.",
+      "publish": false
+    },
+    {
+      "id": "ost1876-fa-come-si-pues",
+      "reviewStatus": "language_reviewed",
+      "furNormalized": "Se no si pues fâ come che si volarès, si scuen fâ come che si pues.",
+      "itFinal": "Se non si può fare come si vorrebbe, bisogna fare come si può.",
+      "destination": "almanac",
+      "calendarRule": {"type": "general", "bucket": "wisdom", "fallbackAllowed": true},
+      "duplicateAudit": {"status": "new_distinct"},
+      "evidence": [{"label": "Facsimile Ostermann 1876, p. PDF 209", "kind": "primary"}, {"label": "ARLeF e Dizionari de Lenghe Furlane, podê, volê e scugnî", "kind": "secondary"}],
+      "editorialNote": "La forma storica ores è resa con il condizionale impersonale corrente; conservata la struttura parallela.",
+      "publish": false
+    },
+    {
+      "id": "ost1876-ridade-claut-casse",
+      "reviewStatus": "language_reviewed",
+      "furNormalized": "Une ridâde e gjave un claut de casse.",
+      "itFinal": "Una risata toglie un chiodo dalla bara.",
+      "destination": "almanac",
+      "calendarRule": {"type": "general", "bucket": "wisdom", "fallbackAllowed": true},
+      "duplicateAudit": {"status": "new_distinct"},
+      "evidence": [{"label": "Facsimile Ostermann 1876, p. PDF 213", "kind": "primary"}, {"label": "ARLeF e Dizionari de Lenghe Furlane, ridâde, gjavâ, claut e casse", "kind": "secondary"}],
+      "editorialNote": "Normalizzati accento, pronome soggetto e preposizione; conservata l'immagine proverbiale.",
+      "publish": false
+    },
+    {
+      "id": "ost1876-superbie-fie-ignorance",
+      "reviewStatus": "language_reviewed",
+      "furNormalized": "La superbie e je fie de ignorance.",
+      "itFinal": "La superbia è figlia dell'ignoranza.",
+      "destination": "almanac",
+      "calendarRule": {"type": "general", "bucket": "wisdom", "fallbackAllowed": true},
+      "duplicateAudit": {"status": "new_distinct"},
+      "evidence": [{"label": "Facsimile Ostermann 1876, p. PDF 214", "kind": "primary"}, {"label": "ARLeF e Dizionari de Lenghe Furlane, superbie, fie e ignorance", "kind": "secondary"}],
+      "editorialNote": "Normalizzati il clitico femminile e la preposizione articolata storica.",
+      "publish": false
+    },
+    {
+      "id": "ost1876-dit-fat-gran-trat",
+      "reviewStatus": "language_reviewed",
+      "furNormalized": "Dal dit al fat al passe un gran trat.",
+      "itFinal": "Tra il dire e il fare c'è un lungo tratto.",
+      "destination": "almanac",
+      "calendarRule": {"type": "general", "bucket": "wisdom", "fallbackAllowed": true},
+      "duplicateAudit": {"status": "new_distinct"},
+      "evidence": [{"label": "Facsimile Ostermann 1876, p. PDF 216", "kind": "primary"}, {"label": "Dizionari de Lenghe Furlane, dî, fâ, passâ e trat", "kind": "secondary"}],
+      "editorialNote": "Aggiunto il pronome soggetto verbale e conservato il parallelismo tradizionale.",
+      "publish": false
+    }
+  ]
+}

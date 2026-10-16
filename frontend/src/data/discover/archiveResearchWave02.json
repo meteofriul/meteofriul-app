@@ -1,0 +1,1939 @@
+{
+  "schemaVersion": 1,
+  "snapshotDate": "2026-08-28",
+  "purpose": "Secondo lotto non visibile di contenuti d'archivio e cultura materiale per aumentare la varietà quotidiana di Scopri.",
+  "rules": [
+    "Il file non è importato dalla UI e nessun record è pubblicabile automaticamente.",
+    "Ogni testo italiano nasce da una fonte istituzionale verificata; i record marcati it_copy_approved hanno superato anche la revisione della copy.",
+    "Lo stato it_ready_for_fur_draft indica soltanto revisione assistita dell'italiano: non include una bozza FUR, approvazione umana o abilitazione alla UI.",
+    "Lo stato bilingual_draft_pending_review indica bozze IT/FUR complete, non approvate per la pubblicazione: restano revisione FUR, calendario e controllo duplicati.",
+    "La versione friulana richiede revisione umana. Eccezione editoriale autorizzata il 2026-08-30 soltanto per archive-research-cartoline-lignano: confronto assistito con riferimenti standard, documentato in languageReview; non certificazione ARLeF o revisione professionale indipendente.",
+    "Approvazione editoriale esplicita del 2026-08-31 per le altre nove schede del lotto, sulla base della revisione assistita e senza revisione FUR esterna: user_explicit_assisted_review_approval. La decisione non estende automaticamente l'eccezione a nuovi contenuti; è tracciata in languageReview e SCOPRI_ARCHIVE_PROMOTION_2026-08-31.md.",
+    "Immagini, filmati e riproduzioni d'archivio non vengono riutilizzati senza un diritto esplicito.",
+    "La promozione richiede controllo duplicati, regola temporale compatibile e audit IT/FUR.",
+    "Il controllo duplicati comprende il catalogo attivo e tutti i lotti di ricerca precedenti.",
+    "Un record con promotionReview resta escluso dalla UI finché remainingBlockers non è vuoto."
+  ],
+  "records": [
+    {
+      "id": "archive-research-lippa-regole-locali",
+      "rubric": "archive_traditions",
+      "canonicalKey": "san-vito-lippa-regole-locali",
+      "theme": "giochi_e_infanzia",
+      "title": {
+        "it": "Le regole della lippa potevano cambiare da paese a paese",
+        "fur": "Lis regulis de lipe a podevin cambiâ di paîs in paîs"
+      },
+      "draftCopy": {
+        "it": "Una mazza e un piccolo cilindro di legno bastavano per giocare alla lippa, da soli, in gruppo o a squadre. Alcuni punti restavano comuni, ma molti dettagli delle regole potevano cambiare secondo il luogo e la fantasia dei giocatori.",
+        "fur": "Une mace e un piçul cilindri di len a bastavin par zuiâ di lipe, di bessôi, in grup o a scuadris. Cierts ponts a restavin compagns, ma tancj detais des regulis a podevin cambiâ daûr dal lûc e de fantasie dai zuiadôrs."
+      },
+      "draftAppShort": {
+        "it": "Bastavano due pezzi di legno, ma le regole potevano cambiare da paese a paese.",
+        "fur": "A bastavin doi tocs di len, ma lis regulis a podevin cambiâ di paîs in paîs."
+      },
+      "evidenceSummary": "ERPAC descrive l'esemplare conservato dal Museo Diogene Penzi e documenta sia le forme individuali e a squadre sia la variabilità locale delle regole.",
+      "temporalRule": {
+        "type": "annual_rotation"
+      },
+      "geographicScope": [
+        "san_vito_al_tagliamento",
+        "friuli_occidentale"
+      ],
+      "source": {
+        "label": "ERPAC FVG · L'infanzia e i suoi giochi nel Museo Diogene Penzi",
+        "url": "https://patrimonioculturale.regione.fvg.it/percorso-tematico/?s_id=597653",
+        "type": "institutional_catalogue",
+        "checkedAt": "2026-08-28",
+        "rightsNote": "Le immagini e le schede degli oggetti del catalogo non sono riutilizzate."
+      },
+      "reviewStatus": "promoted",
+      "editorialStatus": "promoted_to_catalog",
+      "languageStatus": {
+        "it": "approved",
+        "fur": "approved"
+      },
+      "promotionReview": {
+        "decision": "promoted",
+        "targetRecordId": "institutional-archive-lippa-regole-locali",
+        "targetSection": "archivio_tradizioni",
+        "targetType": "vita_quotidiana",
+        "runtimeTemporal": {
+          "recurrence": "always",
+          "dateAnchors": [],
+          "dateRanges": [],
+          "movableDates": [],
+          "movableDateRanges": [],
+          "seasons": [
+            "all"
+          ],
+          "weatherTags": []
+        },
+        "remainingBlockers": [],
+        "promotedAt": "2026-08-31"
+      },
+      "furReviewNotes": [
+        "Terzo gruppo, revisione assistita del 2026-08-30: zuiâ ae lipe → zuiâ di lipe, seguendo la costruzione con di per i nomi dei giochi nel repertorio ARLeF di livello C.",
+        "Lipe conservato perché attestato nella scheda ERPAC del Museo Diogene Penzi insieme ad altre denominazioni locali; non viene presentato come unica forma friulana. Mace, cilindri, scuadris, detais e compagns confermati.",
+        "Fonte culturale ricontrollata: materiali, modalità individuale e a squadre, variabilità delle regole. IT invariato; nessuna nuova approvazione assegnata, resta fur_human_review."
+      ],
+      "duplicateReview": {
+        "status": "distinct",
+        "note": "Nessuna card attiva racconta la lippa e la variabilità locale delle sue regole."
+      },
+      "readyForUi": false,
+      "furDraftReview": {
+        "batchId": "archive-fur-review-2026-08-30-03",
+        "reviewedAt": "2026-08-30",
+        "sourceRecheckedAt": "2026-08-30",
+        "method": "assisted_standard_reference_review",
+        "status": "revised_pending_human_review",
+        "reviewDocument": "docs/operations/SCOPRI_FUR_REVIEW_2026-08-30_BATCH_03.md",
+        "references": [
+          {
+            "url": "https://patrimonioculturale.regione.fvg.it/bene-materiale/?s_id=594645",
+            "note": "Scheda ERPAC della lippa: lipe è una delle denominazioni documentate, accanto a Cibè e pindul pandul."
+          },
+          {
+            "url": "https://arlef.it/app/uploads/page/c_materiacc82i-pe-certificazion-repertori-nivel-c.pdf",
+            "note": "Repertorio ARLeF, p. 64: con i nomi dei giochi si usa la preposizione di; adottato zuiâ di lipe."
+          },
+          {
+            "url": "https://superdizionari.arlef.it/lemma/mazza/15990?language=it&oneshot=1&gui=fur",
+            "note": "Mazza → mace, nell'accezione di bastone corto usato per colpire."
+          },
+          {
+            "url": "https://superdizionari.arlef.it/lemma/cilindro/29289?language=it&oneshot=1&gui=fur",
+            "note": "Cilindro → cilindri, anche per un oggetto di tale forma."
+          },
+          {
+            "url": "https://superdizionari.arlef.it/lemma/dettaglio/31538?language=it&oneshot=1&gui=fur",
+            "note": "Dettaglio → detai; plurale detais negli esempi."
+          },
+          {
+            "url": "https://superdizionari.arlef.it/lemma/uguale/13730?language=it&oneshot=1&gui=fur",
+            "note": "Uguale → compagn; esempi con compagns."
+          },
+          {
+            "url": "https://arlef.it/app/uploads/page/b_materiacc82i-pe-certificazion-furlan-nivel-b.pdf",
+            "note": "Materiali ARLeF, p. 33: attestato il plurale scuadris."
+          }
+        ]
+      },
+      "languageReview": {
+        "fur": {
+          "approvalBasis": "user_explicit_assisted_review_approval",
+          "reviewMethod": "assisted_standard_reference_review",
+          "approvedAt": "2026-08-31",
+          "approvalNote": "Approvazione editoriale esplicita dell'utente: conferma «si procedi» alla promozione delle 17 bozze sulla base della revisione assistita, senza revisione FUR esterna. Non certificazione ARLeF né revisione professionale indipendente.",
+          "reviewDocument": "docs/operations/SCOPRI_FUR_REVIEW_2026-08-31.md",
+          "approvalDocument": "docs/operations/SCOPRI_ARCHIVE_PROMOTION_2026-08-31.md",
+          "references": [
+            {
+              "url": "https://patrimonioculturale.regione.fvg.it/bene-materiale/?s_id=594645",
+              "note": "Scheda ERPAC della lippa: lipe è una delle denominazioni documentate, accanto a Cibè e pindul pandul."
+            },
+            {
+              "url": "https://arlef.it/app/uploads/page/c_materiacc82i-pe-certificazion-repertori-nivel-c.pdf",
+              "note": "Repertorio ARLeF, p. 64: con i nomi dei giochi si usa la preposizione di; adottato zuiâ di lipe."
+            },
+            {
+              "url": "https://superdizionari.arlef.it/lemma/mazza/15990?language=it&oneshot=1&gui=fur",
+              "note": "Mazza → mace, nell'accezione di bastone corto usato per colpire."
+            },
+            {
+              "url": "https://superdizionari.arlef.it/lemma/cilindro/29289?language=it&oneshot=1&gui=fur",
+              "note": "Cilindro → cilindri, anche per un oggetto di tale forma."
+            },
+            {
+              "url": "https://superdizionari.arlef.it/lemma/dettaglio/31538?language=it&oneshot=1&gui=fur",
+              "note": "Dettaglio → detai; plurale detais negli esempi."
+            },
+            {
+              "url": "https://superdizionari.arlef.it/lemma/uguale/13730?language=it&oneshot=1&gui=fur",
+              "note": "Uguale → compagn; esempi con compagns."
+            },
+            {
+              "url": "https://arlef.it/app/uploads/page/b_materiacc82i-pe-certificazion-furlan-nivel-b.pdf",
+              "note": "Materiali ARLeF, p. 33: attestato il plurale scuadris."
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "archive-research-secchi-rame-arconcello",
+      "rubric": "archive_traditions",
+      "canonicalKey": "friuli-secchi-rame-arconcello",
+      "theme": "cultura_materiale",
+      "title": {
+        "it": "L'acqua portata con l'arconcello",
+        "fur": "La aghe puartade cul buinç"
+      },
+      "draftCopy": {
+        "it": "Nelle cucine friulane i secchi di rame conservavano l'acqua presa alla fontana, al pozzo o al fiume. Per trasportarli si usava l'arconcello, un bastone ricurvo appoggiato alle spalle, con due ganci che bilanciavano il peso.",
+        "fur": "Tes cusinis furlanis i cjaldîrs di ram a conservavin la aghe cjapade te fontane, tal poç o tal flum. Par puartâju si doprave il buinç: un arc di len metût su lis spalis, cuntun rimpin par bande par belançâ il pês."
+      },
+      "draftAppShort": {
+        "it": "L'arconcello bilanciava sulle spalle il peso di due secchi d'acqua.",
+        "fur": "Doi cjaldîrs e un arc di len par belançâ il pês de aghe."
+      },
+      "evidenceSummary": "ERPAC documenta funzione, trasporto e manutenzione dei secchi di rame e descrive l'arconcello usato per bilanciare i recipienti durante il trasporto dell'acqua.",
+      "temporalRule": {
+        "type": "annual_rotation"
+      },
+      "geographicScope": [
+        "friuli"
+      ],
+      "source": {
+        "label": "ERPAC FVG · Secchi in rame nelle cucine friulane di un tempo",
+        "url": "https://patrimonioculturale.regione.fvg.it/percorso-tematico/?s_id=821677",
+        "type": "institutional_catalogue",
+        "checkedAt": "2026-08-28",
+        "rightsNote": "Le immagini e le schede degli oggetti del catalogo non sono riutilizzate."
+      },
+      "reviewStatus": "promoted",
+      "editorialStatus": "promoted_to_catalog",
+      "languageStatus": {
+        "it": "approved",
+        "fur": "approved"
+      },
+      "promotionReview": {
+        "decision": "promoted",
+        "targetRecordId": "institutional-archive-secchi-rame-arconcello",
+        "targetSection": "archivio_tradizioni",
+        "targetType": "vita_quotidiana",
+        "runtimeTemporal": {
+          "recurrence": "always",
+          "dateAnchors": [],
+          "dateRanges": [],
+          "movableDates": [],
+          "movableDateRanges": [],
+          "seasons": [
+            "all"
+          ],
+          "weatherTags": []
+        },
+        "remainingBlockers": [],
+        "promotedAt": "2026-08-31"
+      },
+      "furReviewNotes": [
+        "Terzo gruppo, revisione assistita del 2026-08-30: FUR conservato, senza correzioni arbitrarie. Cjaldîr è il recipiente tradizionale, generalmente in rame, per portare e conservare acqua; cjaldîrs è pertinente al contesto.",
+        "Buinç attestato anche da ERPAC; rimpin è il lemma principale nel SuperDizionari e belançâ un pês è una costruzione documentata. Non sostituiti con sinonimi meno precisi.",
+        "Fonte culturale ricontrollata: acqua da fontana, pozzo o fiume e arconcello sulle spalle con ganci alle estremità. IT invariato; nessuna nuova approvazione assegnata, resta fur_human_review."
+      ],
+      "duplicateReview": {
+        "status": "distinct",
+        "note": "Il trasporto dell'acqua con secchi di rame e arconcello non è trattato nelle card attive o nel primo lotto di ricerca."
+      },
+      "readyForUi": false,
+      "furDraftReview": {
+        "batchId": "archive-fur-review-2026-08-30-03",
+        "reviewedAt": "2026-08-30",
+        "sourceRecheckedAt": "2026-08-30",
+        "method": "assisted_standard_reference_review",
+        "status": "revised_pending_human_review",
+        "reviewDocument": "docs/operations/SCOPRI_FUR_REVIEW_2026-08-30_BATCH_03.md",
+        "references": [
+          {
+            "url": "https://superdizionari.arlef.it/monolengal/cjaldîr/414649",
+            "note": "Cjaldîr: recipiente tradizionale, generalmente in rame, per trasportare e conservare acqua; attestato anche cjaldîrs."
+          },
+          {
+            "url": "https://patrimonioculturale.regione.fvg.it/fotografia/?s_id=862208",
+            "note": "La descrizione ERPAC della fontana di Tredolo attesta insieme cjaldîrs e buinç."
+          },
+          {
+            "url": "https://superdizionari.arlef.it/monolengal/rimpin/410777",
+            "note": "Rimpin è il lemma principale per gancio; rampin vi rimanda."
+          },
+          {
+            "url": "https://superdizionari.arlef.it/lemma/bilanciare/17218?language=it&oneshot=1&gui=it",
+            "note": "Bilanciare → belançâ; documentato belançâ un pês."
+          }
+        ]
+      },
+      "languageReview": {
+        "fur": {
+          "approvalBasis": "user_explicit_assisted_review_approval",
+          "reviewMethod": "assisted_standard_reference_review",
+          "approvedAt": "2026-08-31",
+          "approvalNote": "Approvazione editoriale esplicita dell'utente: conferma «si procedi» alla promozione delle 17 bozze sulla base della revisione assistita, senza revisione FUR esterna. Non certificazione ARLeF né revisione professionale indipendente.",
+          "reviewDocument": "docs/operations/SCOPRI_FUR_REVIEW_2026-08-31.md",
+          "approvalDocument": "docs/operations/SCOPRI_ARCHIVE_PROMOTION_2026-08-31.md",
+          "references": [
+            {
+              "url": "https://superdizionari.arlef.it/monolengal/cjaldîr/414649",
+              "note": "Cjaldîr: recipiente tradizionale, generalmente in rame, per trasportare e conservare acqua; attestato anche cjaldîrs."
+            },
+            {
+              "url": "https://patrimonioculturale.regione.fvg.it/fotografia/?s_id=862208",
+              "note": "La descrizione ERPAC della fontana di Tredolo attesta insieme cjaldîrs e buinç."
+            },
+            {
+              "url": "https://superdizionari.arlef.it/monolengal/rimpin/410777",
+              "note": "Rimpin è il lemma principale per gancio; rampin vi rimanda."
+            },
+            {
+              "url": "https://superdizionari.arlef.it/lemma/bilanciare/17218?language=it&oneshot=1&gui=it",
+              "note": "Bilanciare → belançâ; documentato belançâ un pês."
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "archive-research-ciavedal-alare",
+      "rubric": "archive_traditions",
+      "canonicalKey": "friuli-ciavedal-alare-focolare",
+      "theme": "cultura_materiale",
+      "title": {
+        "it": "Il ciavedâl, più di un alare",
+        "fur": "Il cjavedâl, plui di un imprest dal fogolâr"
+      },
+      "draftCopy": {
+        "it": "Il ciavedâl si diffuse nelle case friulane come alare del focolare, spesso con una costruzione e decorazioni riconoscibili. Tramandato di padre in figlio, poteva diventare anche un segno di prestigio e memoria familiare.",
+        "fur": "Il cjavedâl al jere pandût tes cjasis furlanis par tignî sù il len sul fogolâr, dispès cuntune costruzion e decorazions ricognossibilis. Passât di pari in fi, al podeve deventâ ancje un segn di lustri e di memorie familiâr."
+      },
+      "draftAppShort": {
+        "it": "L'alare del focolare poteva diventare memoria e prestigio della famiglia.",
+        "fur": "Il cjavedâl al podeve deventâ memorie e lustri de famee."
+      },
+      "evidenceSummary": "ERPAC ricostruisce diffusione, forma peculiare e valore simbolico dell'alare friulano, ricordandone anche la trasmissione familiare.",
+      "temporalRule": {
+        "type": "annual_rotation"
+      },
+      "geographicScope": [
+        "friuli"
+      ],
+      "source": {
+        "label": "ERPAC FVG · Gli alari, simbolo della civiltà contadina in Friuli",
+        "url": "https://patrimonioculturale.regione.fvg.it/percorso-tematico/?s_id=821676",
+        "type": "institutional_catalogue",
+        "checkedAt": "2026-08-28",
+        "rightsNote": "Le immagini e le schede degli alari presenti nel catalogo non sono riutilizzate."
+      },
+      "reviewStatus": "promoted",
+      "editorialStatus": "promoted_to_catalog",
+      "languageStatus": {
+        "it": "approved",
+        "fur": "approved"
+      },
+      "promotionReview": {
+        "decision": "promoted",
+        "targetRecordId": "institutional-archive-ciavedal-alare",
+        "targetSection": "archivio_tradizioni",
+        "targetType": "vita_quotidiana",
+        "runtimeTemporal": {
+          "recurrence": "always",
+          "dateAnchors": [],
+          "dateRanges": [],
+          "movableDates": [],
+          "movableDateRanges": [],
+          "seasons": [
+            "all"
+          ],
+          "weatherTags": []
+        },
+        "remainingBlockers": [],
+        "promotedAt": "2026-08-31"
+      },
+      "furReviewNotes": [
+        "Terzo gruppo, revisione assistita del 2026-08-30: eliminato alâr, aggettivo relativo alle ali e non nome dell'oggetto del focolare. Il sostantivo è cjavedâl; titolo e corpo usano una perifrasi funzionale per evitare una tautologia.",
+        "Prestiç → lustri secondo il SuperDizionari. Conservati cjavedâl, di pari in fi e ricognossibilis; la funzione di sostenere la legna è documentata dalla Società Filologica.",
+        "Fonte ERPAC ricontrollata: diffusione, forma e decorazioni, trasmissione familiare e prestigio. IT invariato; nessuna nuova approvazione assegnata, resta fur_human_review."
+      ],
+      "duplicateReview": {
+        "status": "distinct",
+        "note": "Nessuna card attiva descrive il ciavedâl come oggetto del focolare, memoria familiare e segno di prestigio."
+      },
+      "readyForUi": false,
+      "furDraftReview": {
+        "batchId": "archive-fur-review-2026-08-30-03",
+        "reviewedAt": "2026-08-30",
+        "sourceRecheckedAt": "2026-08-30",
+        "method": "assisted_standard_reference_review",
+        "status": "revised_pending_human_review",
+        "reviewDocument": "docs/operations/SCOPRI_FUR_REVIEW_2026-08-30_BATCH_03.md",
+        "references": [
+          {
+            "url": "https://superdizionari.arlef.it/lemma/alare/12906",
+            "note": "Alare, sostantivo → cjavedâl; oggetto del focolare."
+          },
+          {
+            "url": "https://superdizionari.arlef.it/lemma/alare/12907",
+            "note": "Alare, aggettivo → alâr; relativo alle ali. Non adatto a questa scheda."
+          },
+          {
+            "url": "https://superdizionari.arlef.it/lemma/prestigio/8341?language=it&oneshot=1&gui=fur",
+            "note": "Prestigio → lustri, considerazion; adottato lustri."
+          },
+          {
+            "url": "https://arte.filologicafriulana.it/cultura-materiale/alare-da-camino_43",
+            "note": "La Società Filologica denomina l'oggetto cjavedâl e ne descrive la funzione di sostegno della legna."
+          },
+          {
+            "url": "https://arlef.it/app/uploads/materiali/montagna-friulana-quaderno.pdf",
+            "note": "Materiale didattico ARLeF: cjavedâl a p. 23 e di pari in fi a p. 56."
+          },
+          {
+            "url": "https://arlef.it/app/uploads/materiali/furlan_contat.pdf",
+            "note": "Furlan Contât: ricognossibil a p. 98 e lustri simbolic a p. 114."
+          }
+        ]
+      },
+      "languageReview": {
+        "fur": {
+          "approvalBasis": "user_explicit_assisted_review_approval",
+          "reviewMethod": "assisted_standard_reference_review",
+          "approvedAt": "2026-08-31",
+          "approvalNote": "Approvazione editoriale esplicita dell'utente: conferma «si procedi» alla promozione delle 17 bozze sulla base della revisione assistita, senza revisione FUR esterna. Non certificazione ARLeF né revisione professionale indipendente.",
+          "reviewDocument": "docs/operations/SCOPRI_FUR_REVIEW_2026-08-31.md",
+          "approvalDocument": "docs/operations/SCOPRI_ARCHIVE_PROMOTION_2026-08-31.md",
+          "references": [
+            {
+              "url": "https://superdizionari.arlef.it/lemma/alare/12906",
+              "note": "Alare, sostantivo → cjavedâl; oggetto del focolare."
+            },
+            {
+              "url": "https://superdizionari.arlef.it/lemma/alare/12907",
+              "note": "Alare, aggettivo → alâr; relativo alle ali. Non adatto a questa scheda."
+            },
+            {
+              "url": "https://superdizionari.arlef.it/lemma/prestigio/8341?language=it&oneshot=1&gui=fur",
+              "note": "Prestigio → lustri, considerazion; adottato lustri."
+            },
+            {
+              "url": "https://arte.filologicafriulana.it/cultura-materiale/alare-da-camino_43",
+              "note": "La Società Filologica denomina l'oggetto cjavedâl e ne descrive la funzione di sostegno della legna."
+            },
+            {
+              "url": "https://arlef.it/app/uploads/materiali/montagna-friulana-quaderno.pdf",
+              "note": "Materiale didattico ARLeF: cjavedâl a p. 23 e di pari in fi a p. 56."
+            },
+            {
+              "url": "https://arlef.it/app/uploads/materiali/furlan_contat.pdf",
+              "note": "Furlan Contât: ricognossibil a p. 98 e lustri simbolic a p. 114."
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "archive-research-mulini-risorgive",
+      "rubric": "archive_traditions",
+      "canonicalKey": "bassa-friulana-mulini-risorgive",
+      "theme": "paesaggio_produttivo",
+      "title": {
+        "it": "I mulini lungo le risorgive",
+        "fur": "I mulins dilunc lis risultivis"
+      },
+      "draftCopy": {
+        "it": "Tra Codroipo e Aiello, la portata regolare delle acque di risorgiva favorì la costruzione di molti mulini. Alcuni sorgevano nei borghi, altri restavano isolati nelle campagne, vicino ai corsi d'acqua più adatti a muovere le attrezzature.",
+        "fur": "Tra Codroip e Dael, la puartade regolâr des aghis di risultive e favorì la costruzion di tancj mulins. Cierts a jerin tai borcs, altris a restavin isolâts tes campagnis, dongje dai cors di aghe plui adats a movi i imprescj."
+      },
+      "draftAppShort": {
+        "it": "Le acque di risorgiva alimentavano mulini nei borghi e nelle campagne della Bassa friulana.",
+        "fur": "Lis aghis di risultive a alimentavin i mulins tai borcs e tes campagnis de Basse furlane."
+      },
+      "evidenceSummary": "ERPAC propone un itinerario fra i mulini della Bassa friulana e collega la loro presenza ai corsi d'acqua e alla portata costante delle risorgive.",
+      "temporalRule": {
+        "type": "annual_rotation"
+      },
+      "geographicScope": [
+        "codroipo",
+        "bertiolo",
+        "aiello_del_friuli",
+        "bassa_friulana"
+      ],
+      "source": {
+        "label": "ERPAC FVG · Andar per mulini da Codroipo ad Aiello",
+        "url": "https://patrimonioculturale.regione.fvg.it/percorso-tematico/?s_id=819778",
+        "type": "institutional_catalogue",
+        "checkedAt": "2026-08-28",
+        "rightsNote": "Le immagini, le mappe e le schede degli edifici del catalogo non sono riutilizzate."
+      },
+      "reviewStatus": "promoted",
+      "editorialStatus": "promoted_to_catalog",
+      "languageStatus": {
+        "it": "approved",
+        "fur": "approved"
+      },
+      "duplicateReview": {
+        "status": "partial_theme_overlap",
+        "note": "Il profilo di Camino al Tagliamento ricorda i mulini locali; questa bozza tratta invece il sistema più ampio delle risorgive fra Codroipo e Aiello e richiede controllo prima della promozione."
+      },
+      "readyForUi": false,
+      "itCopyReview": {
+        "batchId": "archive-it-review-2026-08-30-01",
+        "reviewedAt": "2026-08-30",
+        "sourceRecheckedAt": "2026-08-30",
+        "method": "assisted_primary_source_review",
+        "status": "approved_for_fur_drafting",
+        "reviewDocument": "docs/operations/SCOPRI_IT_REVIEW_2026-08-30.md",
+        "references": [
+          {
+            "url": "https://patrimonioculturale.regione.fvg.it/percorso-tematico/?s_id=819778",
+            "note": "Andar per mulini da Codroipo ad Aiello: portata costante delle risorgive e collocazione degli opifici nei borghi o isolati presso i corsi d'acqua."
+          }
+        ],
+        "notes": [
+          "Corpo italiano confermato; tolto nascosti dal titolo perché non necessario alla descrizione documentata.",
+          "Non si promettono aperture, visite o un itinerario attualmente percorribile.",
+          "Tema più ampio del profilo di Camino al Tagliamento; resta il controllo di coesistenza prima della promozione."
+        ],
+        "remainingWork": [
+          "fur_draft",
+          "fur_human_review",
+          "calendar_and_duplicate_audit"
+        ]
+      },
+      "furReviewNotes": [
+        "Usati puartade e Codroip, non portade o Cudroip; alimentavin riguarda l'energia fornita dall'acqua.",
+        "Conservati i due contesti dei mulini, nei borghi e isolati in campagna, senza aperture o visite attuali.",
+        "Resta la verifica editoriale della naturalezza sintattica e della coesistenza con il profilo di Camino."
+      ],
+      "furDraftReview": {
+        "batchId": "archive-fur-review-2026-08-30-04",
+        "reviewedAt": "2026-08-30",
+        "method": "assisted_standard_reference_review",
+        "status": "drafted_pending_human_review",
+        "basedOnItReview": "archive-it-review-2026-08-30-01",
+        "reviewDocument": "docs/operations/SCOPRI_FUR_REVIEW_2026-08-30_BATCH_04.md",
+        "references": [
+          {
+            "url": "https://arlef.it/libris/aghe/",
+            "note": "Attestato lis risultivis in una presentazione istituzionale ARLeF."
+          },
+          {
+            "url": "https://dizionarifurlan.eu/headword/risultive",
+            "note": "Risultive: significato idrogeologico della risorgenza d'acqua, anche in pianura."
+          },
+          {
+            "url": "https://superdizionari.arlef.it/lemma/portata/14493",
+            "note": "Senso 8, idraulica: puartade."
+          },
+          {
+            "url": "https://superdizionari.arlef.it/lemma/mulino/49175",
+            "note": "Mulino → mulin."
+          },
+          {
+            "url": "https://superdizionari.arlef.it/lemma/lungo/13662",
+            "note": "Uso preposizionale di dilunc."
+          },
+          {
+            "url": "https://superdizionari.arlef.it/lemma/attrezzatura/2623",
+            "note": "Imprescj per l'insieme degli strumenti."
+          },
+          {
+            "url": "https://superdizionari.arlef.it/lemma/muovere/9134",
+            "note": "Movi, anche per l'acqua che aziona macchinari."
+          },
+          {
+            "url": "https://superdizionari.arlef.it/lemma/alimentare/10914",
+            "note": "Alimentâ nel senso tecnico di fornire energia al funzionamento."
+          },
+          {
+            "url": "https://arlef.it/app/uploads/page/comuni_friulanofoni.pdf#page=1",
+            "note": "Toponimi ufficiali Codroip e Dael."
+          }
+        ],
+        "remainingWork": [
+          "fur_human_review",
+          "calendar_and_duplicate_audit"
+        ]
+      },
+      "promotionReview": {
+        "decision": "promoted",
+        "targetRecordId": "institutional-archive-mulini-risorgive",
+        "targetSection": "archivio_tradizioni",
+        "targetType": "vita_quotidiana",
+        "runtimeTemporal": {
+          "recurrence": "always",
+          "dateAnchors": [],
+          "dateRanges": [],
+          "movableDates": [],
+          "movableDateRanges": [],
+          "seasons": [
+            "all"
+          ],
+          "weatherTags": []
+        },
+        "temporalInterpretation": "evergreen_archive_rotation",
+        "temporalNote": "Cultura materiale e vita quotidiana in rotazione d'archivio durante l'anno, senza attribuire una ricorrenza non documentata.",
+        "remainingBlockers": [],
+        "promotedAt": "2026-08-31"
+      },
+      "integrationReview": {
+        "batchId": "archive-integration-2026-08-30-04",
+        "reviewedAt": "2026-08-30",
+        "method": "shadow_runtime_projection",
+        "reviewDocument": "docs/operations/SCOPRI_ARCHIVE_INTEGRATION_2026-08-30.md",
+        "calendarAuditYears": [
+          2026,
+          2027,
+          2028,
+          2029,
+          2030,
+          2031
+        ],
+        "calendarAuditLanguages": [
+          "it",
+          "fur"
+        ],
+        "references": [
+          {
+            "url": "https://patrimonioculturale.regione.fvg.it/percorso-tematico/?s_id=819778",
+            "note": "Fonte culturale della regola storica; la finestra o la rotazione runtime è una scelta editoriale, non un programma di eventi."
+          }
+        ]
+      },
+      "furCopyEditReview": {
+        "reviewedAt": "2026-08-31",
+        "method": "assisted_standard_reference_review",
+        "status": "revised_pending_human_review",
+        "basedOnDraftBatch": "archive-fur-review-2026-08-30-04",
+        "reviewDocument": "docs/operations/SCOPRI_FUR_REVIEW_2026-08-31.md",
+        "scope": [
+          "title.fur",
+          "draftCopy.fur",
+          "draftAppShort.fur"
+        ],
+        "changes": [],
+        "findings": [
+          "Conservato i imprescj: articolo e plurale riscontrati, non corretti sulla base dell'italiano. Nessuna modifica a Codroip, Dael e puartade."
+        ],
+        "references": [
+          {
+            "url": "https://superdizionari.arlef.it/lemma/attrezzatura/2623?language=it&oneshot=1&gui=fur",
+            "note": "Esempio con i imprescj; plurale pertinente agli strumenti dei mulini."
+          },
+          {
+            "url": "https://arlef.it/app/uploads/2021/04/dutparfurlan_lez-12-ita-def.pdf",
+            "note": "Articolo maschile plurale i e plurali, pp. 88–90."
+          }
+        ]
+      },
+      "languageReview": {
+        "fur": {
+          "approvalBasis": "user_explicit_assisted_review_approval",
+          "reviewMethod": "assisted_standard_reference_review",
+          "approvedAt": "2026-08-31",
+          "approvalNote": "Approvazione editoriale esplicita dell'utente: conferma «si procedi» alla promozione delle 17 bozze sulla base della revisione assistita, senza revisione FUR esterna. Non certificazione ARLeF né revisione professionale indipendente.",
+          "reviewDocument": "docs/operations/SCOPRI_FUR_REVIEW_2026-08-31.md",
+          "approvalDocument": "docs/operations/SCOPRI_ARCHIVE_PROMOTION_2026-08-31.md",
+          "references": [
+            {
+              "url": "https://arlef.it/libris/aghe/",
+              "note": "Attestato lis risultivis in una presentazione istituzionale ARLeF."
+            },
+            {
+              "url": "https://dizionarifurlan.eu/headword/risultive",
+              "note": "Risultive: significato idrogeologico della risorgenza d'acqua, anche in pianura."
+            },
+            {
+              "url": "https://superdizionari.arlef.it/lemma/portata/14493",
+              "note": "Senso 8, idraulica: puartade."
+            },
+            {
+              "url": "https://superdizionari.arlef.it/lemma/mulino/49175",
+              "note": "Mulino → mulin."
+            },
+            {
+              "url": "https://superdizionari.arlef.it/lemma/lungo/13662",
+              "note": "Uso preposizionale di dilunc."
+            },
+            {
+              "url": "https://superdizionari.arlef.it/lemma/attrezzatura/2623",
+              "note": "Imprescj per l'insieme degli strumenti."
+            },
+            {
+              "url": "https://superdizionari.arlef.it/lemma/muovere/9134",
+              "note": "Movi, anche per l'acqua che aziona macchinari."
+            },
+            {
+              "url": "https://superdizionari.arlef.it/lemma/alimentare/10914",
+              "note": "Alimentâ nel senso tecnico di fornire energia al funzionamento."
+            },
+            {
+              "url": "https://arlef.it/app/uploads/page/comuni_friulanofoni.pdf#page=1",
+              "note": "Toponimi ufficiali Codroip e Dael."
+            },
+            {
+              "url": "https://superdizionari.arlef.it/lemma/attrezzatura/2623?language=it&oneshot=1&gui=fur",
+              "note": "Esempio con i imprescj; plurale pertinente agli strumenti dei mulini."
+            },
+            {
+              "url": "https://arlef.it/app/uploads/2021/04/dutparfurlan_lez-12-ita-def.pdf",
+              "note": "Articolo maschile plurale i e plurali, pp. 88–90."
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "archive-research-animali-nomi-campanacci",
+      "rubric": "archive_traditions",
+      "canonicalKey": "friuli-occidentale-animali-nomi-campanacci",
+      "theme": "vita_contadina",
+      "title": {
+        "it": "Un nome nella stalla, un suono al pascolo",
+        "fur": "Un non te stale, un sun a passon"
+      },
+      "draftCopy": {
+        "it": "Nella stalla, tavolette con i nomi segnavano il posto di cavalli e bovini. Al pascolo si mettevano campanacci agli animali da controllare, soprattutto irrequieti o dominanti: i suoni diversi aiutavano a seguirne gli spostamenti.",
+        "fur": "Te stale, breutis cui nons a segnavin il puest dai cjavai e dai bovins. A passon si metevin sampogns ai nemâi di controlâ, soredut a chei incuiets o dominants: i suns diferents a judavin a stâ daûr ai lôr moviments."
+      },
+      "draftAppShort": {
+        "it": "Tavolette nella stalla e campanacci al pascolo aiutavano a riconoscere gli animali.",
+        "fur": "Breutis te stale e sampogns a passon a judavin a cognossi i nemâi."
+      },
+      "evidenceSummary": "ERPAC documenta le tavolette con nome e posto degli animali; precisa che al pascolo i campanacci erano applicati soprattutto agli esemplari irrequieti o dominanti e che suoni diversi aiutavano a distinguerli.",
+      "temporalRule": {
+        "type": "annual_rotation"
+      },
+      "geographicScope": [
+        "san_vito_al_tagliamento",
+        "friuli_occidentale"
+      ],
+      "source": {
+        "label": "ERPAC FVG · Animali e vita contadina nel Museo Diogene Penzi",
+        "url": "https://patrimonioculturale.regione.fvg.it/percorso-tematico/?s_id=597659",
+        "type": "institutional_catalogue",
+        "checkedAt": "2026-08-28",
+        "rightsNote": "Le immagini e le schede degli oggetti del catalogo non sono riutilizzate."
+      },
+      "reviewStatus": "promoted",
+      "editorialStatus": "promoted_to_catalog",
+      "languageStatus": {
+        "it": "approved",
+        "fur": "approved"
+      },
+      "duplicateReview": {
+        "status": "distinct",
+        "note": "Nessuna card attiva racconta insieme l'identificazione degli animali in stalla e l'uso selettivo dei campanacci al pascolo."
+      },
+      "readyForUi": false,
+      "itCopyReview": {
+        "batchId": "archive-it-review-2026-08-30-01",
+        "reviewedAt": "2026-08-30",
+        "sourceRecheckedAt": "2026-08-30",
+        "method": "assisted_primary_source_review",
+        "status": "approved_for_fur_drafting",
+        "reviewDocument": "docs/operations/SCOPRI_IT_REVIEW_2026-08-30.md",
+        "references": [
+          {
+            "url": "https://patrimonioculturale.regione.fvg.it/percorso-tematico/?s_id=597659",
+            "note": "Animali e vita contadina: tavolette per cavalli e bovini e uso selettivo dei campanacci, soprattutto per animali irrequieti o dominanti."
+          }
+        ],
+        "notes": [
+          "Rimosso ogni animale: le tavolette documentate riguardano in particolare cavalli e bovini.",
+          "Esplicitato l'uso selettivo dei campanacci; non se ne attribuisce uno a tutti gli animali.",
+          "Nessuna località o pratica aggiunta oltre il contesto del Museo Diogene Penzi."
+        ],
+        "remainingWork": [
+          "fur_draft",
+          "fur_human_review",
+          "calendar_and_duplicate_audit"
+        ]
+      },
+      "furReviewNotes": [
+        "Conservato l'uso selettivo dei sampogns: animali da controllare, soprattutto irrequieti o dominanti, non tutti.",
+        "Cognossi è usato nel senso identificativo e moviments per gli spostamenti.",
+        "Nessun luogo o fatto aggiunto rispetto all'italiano. La sintassi resta soggetta alla revisione competente."
+      ],
+      "furDraftReview": {
+        "batchId": "archive-fur-review-2026-08-30-04",
+        "reviewedAt": "2026-08-30",
+        "method": "assisted_standard_reference_review",
+        "status": "drafted_pending_human_review",
+        "basedOnItReview": "archive-it-review-2026-08-30-01",
+        "reviewDocument": "docs/operations/SCOPRI_FUR_REVIEW_2026-08-30_BATCH_04.md",
+        "references": [
+          {
+            "url": "https://superdizionari.arlef.it/lemma/tavoletta/59790",
+            "note": "Breute, sensi 2 e 5; plurale breutis."
+          },
+          {
+            "url": "https://superdizionari.arlef.it/lemma/campanaccio/25905",
+            "note": "Sampogn per gli animali al pascolo; la diversa accezione cjampane riguarda il richiamo delle api."
+          },
+          {
+            "url": "https://superdizionari.arlef.it/lemma/pascolo/53428",
+            "note": "Locuzione a passon."
+          },
+          {
+            "url": "https://superdizionari.arlef.it/lemma/bovino/18330",
+            "note": "Bovin, plurale bovins."
+          },
+          {
+            "url": "https://superdizionari.arlef.it/lemma/cavallo/27989",
+            "note": "Cjaval; esempi espliciti con cjavai."
+          },
+          {
+            "url": "https://superdizionari.arlef.it/lemma/irrequieto/1371",
+            "note": "Incuiet, plurale incuiets."
+          },
+          {
+            "url": "https://superdizionari.arlef.it/lemma/dominante/33642",
+            "note": "Dominant, plurale dominants."
+          },
+          {
+            "url": "https://superdizionari.arlef.it/lemma/seguire/1417",
+            "note": "Stâ daûr, anche per seguire i movimenti senza accompagnarli."
+          },
+          {
+            "url": "https://superdizionari.arlef.it/lemma/spostamento/29531",
+            "note": "Moviment, plurale moviments."
+          },
+          {
+            "url": "https://superdizionari.arlef.it/lemma/riconoscere/6061",
+            "note": "Cognossi nel senso di identificare."
+          }
+        ],
+        "remainingWork": [
+          "fur_human_review",
+          "calendar_and_duplicate_audit"
+        ]
+      },
+      "promotionReview": {
+        "decision": "promoted",
+        "targetRecordId": "institutional-archive-animali-nomi-campanacci",
+        "targetSection": "archivio_tradizioni",
+        "targetType": "vita_quotidiana",
+        "runtimeTemporal": {
+          "recurrence": "always",
+          "dateAnchors": [],
+          "dateRanges": [],
+          "movableDates": [],
+          "movableDateRanges": [],
+          "seasons": [
+            "all"
+          ],
+          "weatherTags": []
+        },
+        "temporalInterpretation": "evergreen_archive_rotation",
+        "temporalNote": "Cultura materiale e vita quotidiana in rotazione d'archivio durante l'anno, senza attribuire una ricorrenza non documentata.",
+        "remainingBlockers": [],
+        "promotedAt": "2026-08-31"
+      },
+      "integrationReview": {
+        "batchId": "archive-integration-2026-08-30-04",
+        "reviewedAt": "2026-08-30",
+        "method": "shadow_runtime_projection",
+        "reviewDocument": "docs/operations/SCOPRI_ARCHIVE_INTEGRATION_2026-08-30.md",
+        "calendarAuditYears": [
+          2026,
+          2027,
+          2028,
+          2029,
+          2030,
+          2031
+        ],
+        "calendarAuditLanguages": [
+          "it",
+          "fur"
+        ],
+        "references": [
+          {
+            "url": "https://patrimonioculturale.regione.fvg.it/percorso-tematico/?s_id=597659",
+            "note": "Fonte culturale della regola storica; la finestra o la rotazione runtime è una scelta editoriale, non un programma di eventi."
+          }
+        ]
+      },
+      "furCopyEditReview": {
+        "reviewedAt": "2026-08-31",
+        "method": "assisted_standard_reference_review",
+        "status": "revised_pending_human_review",
+        "basedOnDraftBatch": "archive-fur-review-2026-08-30-04",
+        "reviewDocument": "docs/operations/SCOPRI_FUR_REVIEW_2026-08-31.md",
+        "scope": [
+          "title.fur",
+          "draftCopy.fur",
+          "draftAppShort.fur"
+        ],
+        "changes": [],
+        "findings": [
+          "Conservati breutis, sampogns e cognossi; l'uso selettivo dei campanacci resta esplicito, senza generalizzarlo a ogni animale."
+        ],
+        "references": [
+          {
+            "url": "https://superdizionari.arlef.it/lemma/tavoletta/59790?language=it&oneshot=1&gui=fur",
+            "note": "Breute, plurale breutis."
+          },
+          {
+            "url": "https://superdizionari.arlef.it/lemma/campanaccio/25905?language=it&oneshot=1&gui=fur",
+            "note": "Sampogn nel contesto degli animali al pascolo."
+          },
+          {
+            "url": "https://superdizionari.arlef.it/lemma/riconoscere/6061?language=it&oneshot=1&gui=fur",
+            "note": "Cognossi nel senso identificativo."
+          }
+        ]
+      },
+      "languageReview": {
+        "fur": {
+          "approvalBasis": "user_explicit_assisted_review_approval",
+          "reviewMethod": "assisted_standard_reference_review",
+          "approvedAt": "2026-08-31",
+          "approvalNote": "Approvazione editoriale esplicita dell'utente: conferma «si procedi» alla promozione delle 17 bozze sulla base della revisione assistita, senza revisione FUR esterna. Non certificazione ARLeF né revisione professionale indipendente.",
+          "reviewDocument": "docs/operations/SCOPRI_FUR_REVIEW_2026-08-31.md",
+          "approvalDocument": "docs/operations/SCOPRI_ARCHIVE_PROMOTION_2026-08-31.md",
+          "references": [
+            {
+              "url": "https://superdizionari.arlef.it/lemma/tavoletta/59790",
+              "note": "Breute, sensi 2 e 5; plurale breutis."
+            },
+            {
+              "url": "https://superdizionari.arlef.it/lemma/campanaccio/25905",
+              "note": "Sampogn per gli animali al pascolo; la diversa accezione cjampane riguarda il richiamo delle api."
+            },
+            {
+              "url": "https://superdizionari.arlef.it/lemma/pascolo/53428",
+              "note": "Locuzione a passon."
+            },
+            {
+              "url": "https://superdizionari.arlef.it/lemma/bovino/18330",
+              "note": "Bovin, plurale bovins."
+            },
+            {
+              "url": "https://superdizionari.arlef.it/lemma/cavallo/27989",
+              "note": "Cjaval; esempi espliciti con cjavai."
+            },
+            {
+              "url": "https://superdizionari.arlef.it/lemma/irrequieto/1371",
+              "note": "Incuiet, plurale incuiets."
+            },
+            {
+              "url": "https://superdizionari.arlef.it/lemma/dominante/33642",
+              "note": "Dominant, plurale dominants."
+            },
+            {
+              "url": "https://superdizionari.arlef.it/lemma/seguire/1417",
+              "note": "Stâ daûr, anche per seguire i movimenti senza accompagnarli."
+            },
+            {
+              "url": "https://superdizionari.arlef.it/lemma/spostamento/29531",
+              "note": "Moviment, plurale moviments."
+            },
+            {
+              "url": "https://superdizionari.arlef.it/lemma/riconoscere/6061",
+              "note": "Cognossi nel senso di identificare."
+            },
+            {
+              "url": "https://superdizionari.arlef.it/lemma/tavoletta/59790?language=it&oneshot=1&gui=fur",
+              "note": "Breute, plurale breutis."
+            },
+            {
+              "url": "https://superdizionari.arlef.it/lemma/campanaccio/25905?language=it&oneshot=1&gui=fur",
+              "note": "Sampogn nel contesto degli animali al pascolo."
+            },
+            {
+              "url": "https://superdizionari.arlef.it/lemma/riconoscere/6061?language=it&oneshot=1&gui=fur",
+              "note": "Cognossi nel senso identificativo."
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "archive-research-pettini-osso-andreis",
+      "rubric": "archive_traditions",
+      "canonicalKey": "andreis-pettini-osso-sedoners",
+      "theme": "artigianato_osso_legno",
+      "title": {
+        "it": "Pettini d'osso fra i sedonêrs di Andreis",
+        "fur": "Pietins di vues fra i «sedonêrs» di Andreis"
+      },
+      "draftCopy": {
+        "it": "Il Museo etnografico di Andreis conserva testimonianze dei sedonêrs, artigiani che lavoravano il legno e l'osso. Tra gli oggetti ricordati ci sono anche pettini d'osso, accanto a utensili per la vita domestica.",
+        "fur": "Il Museu etnografic di Andreis al conserve testemoneancis dai «sedonêrs», artesans che a lavoravin il len e il vues. Jenfri i ogjets ricuardâts a son ancje pietins di vues, dongje di imprescj pe vite di cjase."
+      },
+      "draftAppShort": {
+        "it": "Ad Andreis, anche i pettini d'osso raccontano l'artigianato dei sedonêrs.",
+        "fur": "A Andreis, ancje i pietins di vues a contin l'artesanât dai «sedonêrs»."
+      },
+      "evidenceSummary": "Il portale del Parco documenta le lavorazioni del legno e dell'osso e cita espressamente i pettini in osso. La stessa pagina usa il termine ambiguo «tabaccherie», che resta escluso dalla bozza finché non sarà verificato su una seconda fonte.",
+      "temporalRule": {
+        "type": "annual_rotation"
+      },
+      "geographicScope": [
+        "andreis",
+        "dolomiti_friulane"
+      ],
+      "source": {
+        "label": "Parco Naturale Dolomiti Friulane · Andreis",
+        "url": "https://www.parcodolomitifriulane.it/i-paesi-del-parco/andreis/",
+        "type": "institutional_park_portal",
+        "checkedAt": "2026-08-28",
+        "rightsNote": "Le fotografie e le riproduzioni del portale non sono riutilizzate."
+      },
+      "reviewStatus": "promoted",
+      "editorialStatus": "promoted_to_catalog",
+      "languageStatus": {
+        "it": "approved",
+        "fur": "approved"
+      },
+      "duplicateReview": {
+        "status": "partial_theme_overlap",
+        "note": "Andreis è già presente per maschere, crâceles e Federico Tavan; la lavorazione dell'osso è distinta ma richiede un controllo editoriale prima della promozione."
+      },
+      "readyForUi": false,
+      "itCopyReview": {
+        "batchId": "archive-it-review-2026-08-30-01",
+        "reviewedAt": "2026-08-30",
+        "sourceRecheckedAt": "2026-08-30",
+        "method": "assisted_primary_source_review",
+        "status": "approved_for_fur_drafting",
+        "reviewDocument": "docs/operations/SCOPRI_IT_REVIEW_2026-08-30.md",
+        "references": [
+          {
+            "url": "https://www.parcodolomitifriulane.it/i-paesi-del-parco/andreis/",
+            "note": "Portale del Parco, Andreis: Museo etnografico, sedonêrs, lavorazione del legno e dell'osso, pettini d'osso."
+          }
+        ],
+        "notes": [
+          "Eliminata la valutazione generica sulla precisione dell'artigianato.",
+          "Il termine ambiguo tabaccherie resta escluso; nessuna reinterpretazione come tabacchiere.",
+          "Oggetti distinti dai temi già trattati per Andreis; controllo di coesistenza ancora richiesto prima della promozione."
+        ],
+        "remainingWork": [
+          "fur_draft",
+          "fur_human_review",
+          "calendar_and_duplicate_audit"
+        ]
+      },
+      "furReviewNotes": [
+        "Sedonêrs resta un nome locale citato fra caporali, non viene presentato come lemma normativo per tutti gli artigiani.",
+        "Conservato Andreis, toponimo ufficiale in friulano comune.",
+        "Nessuna aggiunta sugli oggetti esclusi dalla scheda italiana; resta la revisione della fluidità del testo."
+      ],
+      "furDraftReview": {
+        "batchId": "archive-fur-review-2026-08-30-04",
+        "reviewedAt": "2026-08-30",
+        "method": "assisted_standard_reference_review",
+        "status": "drafted_pending_human_review",
+        "basedOnItReview": "archive-it-review-2026-08-30-01",
+        "reviewDocument": "docs/operations/SCOPRI_FUR_REVIEW_2026-08-30_BATCH_04.md",
+        "references": [
+          {
+            "url": "https://superdizionari.arlef.it/lemma/pettine/54047?language=it&gui=fur",
+            "note": "Pettine → pietin."
+          },
+          {
+            "url": "https://superdizionari.arlef.it/lemma/osso/50946?language=it&gui=fur",
+            "note": "Vues, anche come materiale."
+          },
+          {
+            "url": "https://superdizionari.arlef.it/lemma/artigiano/5437?language=it&gui=fur",
+            "note": "Artigiano → artesan."
+          },
+          {
+            "url": "https://superdizionari.arlef.it/lemma/artigianato/5440?language=it&gui=fur",
+            "note": "Artigianato → artesanât."
+          },
+          {
+            "url": "https://superdizionari.arlef.it/lemma/testimonianza/7437?language=it&gui=fur",
+            "note": "Testimonianza → testemoneance."
+          },
+          {
+            "url": "https://arlef.it/lenghe-e-culture/leterature/",
+            "note": "Attestato l'aggettivo etnografic."
+          },
+          {
+            "url": "https://arlef.it/app/uploads/documenti/DPReg_Toponimi_ALLEGATO.pdf",
+            "note": "Pagina 18 stampata: Andreis in friulano comune, Andrees nella forma locale."
+          },
+          {
+            "url": "https://superdizionari.arlef.it/lemma/mestolaio/48070?language=it&gui=fur",
+            "note": "Sedonâr significa mestolaio: distinto dalla denominazione locale sedonêrs della fonte culturale, senza sostituzione automatica."
+          }
+        ],
+        "remainingWork": [
+          "fur_human_review",
+          "calendar_and_duplicate_audit"
+        ]
+      },
+      "promotionReview": {
+        "decision": "promoted",
+        "targetRecordId": "institutional-archive-pettini-osso-andreis",
+        "targetSection": "archivio_tradizioni",
+        "targetType": "vita_quotidiana",
+        "runtimeTemporal": {
+          "recurrence": "always",
+          "dateAnchors": [],
+          "dateRanges": [],
+          "movableDates": [],
+          "movableDateRanges": [],
+          "seasons": [
+            "all"
+          ],
+          "weatherTags": []
+        },
+        "temporalInterpretation": "evergreen_archive_rotation",
+        "temporalNote": "Cultura materiale e vita quotidiana in rotazione d'archivio durante l'anno, senza attribuire una ricorrenza non documentata.",
+        "remainingBlockers": [],
+        "promotedAt": "2026-08-31"
+      },
+      "integrationReview": {
+        "batchId": "archive-integration-2026-08-30-04",
+        "reviewedAt": "2026-08-30",
+        "method": "shadow_runtime_projection",
+        "reviewDocument": "docs/operations/SCOPRI_ARCHIVE_INTEGRATION_2026-08-30.md",
+        "calendarAuditYears": [
+          2026,
+          2027,
+          2028,
+          2029,
+          2030,
+          2031
+        ],
+        "calendarAuditLanguages": [
+          "it",
+          "fur"
+        ],
+        "references": [
+          {
+            "url": "https://www.parcodolomitifriulane.it/i-paesi-del-parco/andreis/",
+            "note": "Fonte culturale della regola storica; la finestra o la rotazione runtime è una scelta editoriale, non un programma di eventi."
+          }
+        ]
+      },
+      "furCopyEditReview": {
+        "reviewedAt": "2026-08-31",
+        "method": "assisted_standard_reference_review",
+        "status": "revised_pending_human_review",
+        "basedOnDraftBatch": "archive-fur-review-2026-08-30-04",
+        "reviewDocument": "docs/operations/SCOPRI_FUR_REVIEW_2026-08-31.md",
+        "scope": [
+          "title.fur",
+          "draftCopy.fur",
+          "draftAppShort.fur"
+        ],
+        "changes": [],
+        "findings": [
+          "Titolo, corpo e anteprima conservati; sedonêrs resta denominazione locale tra caporali, non una sostituzione automatica del lemma mestolaio."
+        ],
+        "references": [
+          {
+            "url": "https://superdizionari.arlef.it/lemma/pettine/54047?language=it&oneshot=1&gui=fur",
+            "note": "Pietin, plurale pietins."
+          },
+          {
+            "url": "https://superdizionari.arlef.it/lemma/artigiano/5437?language=it&oneshot=1&gui=fur",
+            "note": "Artigiano → artesan."
+          },
+          {
+            "url": "https://superdizionari.arlef.it/lemma/mestolaio/48070?language=it&oneshot=1&gui=fur",
+            "note": "Sedonâr distinto dal nome locale riportato nella fonte."
+          }
+        ]
+      },
+      "languageReview": {
+        "fur": {
+          "approvalBasis": "user_explicit_assisted_review_approval",
+          "reviewMethod": "assisted_standard_reference_review",
+          "approvedAt": "2026-08-31",
+          "approvalNote": "Approvazione editoriale esplicita dell'utente: conferma «si procedi» alla promozione delle 17 bozze sulla base della revisione assistita, senza revisione FUR esterna. Non certificazione ARLeF né revisione professionale indipendente.",
+          "reviewDocument": "docs/operations/SCOPRI_FUR_REVIEW_2026-08-31.md",
+          "approvalDocument": "docs/operations/SCOPRI_ARCHIVE_PROMOTION_2026-08-31.md",
+          "references": [
+            {
+              "url": "https://superdizionari.arlef.it/lemma/pettine/54047?language=it&gui=fur",
+              "note": "Pettine → pietin."
+            },
+            {
+              "url": "https://superdizionari.arlef.it/lemma/osso/50946?language=it&gui=fur",
+              "note": "Vues, anche come materiale."
+            },
+            {
+              "url": "https://superdizionari.arlef.it/lemma/artigiano/5437?language=it&gui=fur",
+              "note": "Artigiano → artesan."
+            },
+            {
+              "url": "https://superdizionari.arlef.it/lemma/artigianato/5440?language=it&gui=fur",
+              "note": "Artigianato → artesanât."
+            },
+            {
+              "url": "https://superdizionari.arlef.it/lemma/testimonianza/7437?language=it&gui=fur",
+              "note": "Testimonianza → testemoneance."
+            },
+            {
+              "url": "https://arlef.it/lenghe-e-culture/leterature/",
+              "note": "Attestato l'aggettivo etnografic."
+            },
+            {
+              "url": "https://arlef.it/app/uploads/documenti/DPReg_Toponimi_ALLEGATO.pdf",
+              "note": "Pagina 18 stampata: Andreis in friulano comune, Andrees nella forma locale."
+            },
+            {
+              "url": "https://superdizionari.arlef.it/lemma/mestolaio/48070?language=it&gui=fur",
+              "note": "Sedonâr significa mestolaio: distinto dalla denominazione locale sedonêrs della fonte culturale, senza sostituzione automatica."
+            },
+            {
+              "url": "https://superdizionari.arlef.it/lemma/pettine/54047?language=it&oneshot=1&gui=fur",
+              "note": "Pietin, plurale pietins."
+            },
+            {
+              "url": "https://superdizionari.arlef.it/lemma/artigiano/5437?language=it&oneshot=1&gui=fur",
+              "note": "Artigiano → artesan."
+            },
+            {
+              "url": "https://superdizionari.arlef.it/lemma/mestolaio/48070?language=it&oneshot=1&gui=fur",
+              "note": "Sedonâr distinto dal nome locale riportato nella fonte."
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "archive-research-bucato-ranno",
+      "rubric": "archive_traditions",
+      "canonicalKey": "friuli-occidentale-bucato-ranno",
+      "theme": "lavoro_domestico",
+      "title": {
+        "it": "Il bucato che poteva durare giorni",
+        "fur": "La bugade che e podeve durâ dîs"
+      },
+      "draftCopy": {
+        "it": "Fare il bucato poteva richiedere più giorni. Prima si strofinavano i panni con il sapone, poi si trattavano con il ranno, acqua e cenere, lasciandoli in ammollo per una notte. Seguiva il risciacquo in acqua corrente, strofinando e battendo la biancheria sui lavatoi.",
+        "fur": "Fâ la bugade al podeve domandâ plui dîs. Prime si freave la blancjarie cul savon, po si le tratave cu la lissie, aghe e cinise, lassantle in muel par une gnot. Dopo si le resentave in aghe corinte, freantle e batintle sui lavadôrs."
+      },
+      "draftAppShort": {
+        "it": "Il bucato comprendeva una notte in ammollo nel ranno, prima del risciacquo al lavatoio.",
+        "fur": "La blancjarie e restave une gnot in muel te lissie, prime di jessi resentade tal lavadôr."
+      },
+      "evidenceSummary": "ERPAC descrive la sequenza del bucato domestico, l'ammollo notturno con acqua e cenere e il successivo risciacquo nei lavatoi.",
+      "temporalRule": {
+        "type": "annual_rotation"
+      },
+      "geographicScope": [
+        "san_vito_al_tagliamento",
+        "friuli_occidentale"
+      ],
+      "source": {
+        "label": "ERPAC FVG · I lavori femminili nel Museo Diogene Penzi",
+        "url": "https://patrimonioculturale.regione.fvg.it/percorso-tematico/?s_id=597655",
+        "type": "institutional_catalogue",
+        "checkedAt": "2026-08-28",
+        "rightsNote": "Le immagini e le schede degli oggetti del catalogo non sono riutilizzate."
+      },
+      "reviewStatus": "promoted",
+      "editorialStatus": "promoted_to_catalog",
+      "languageStatus": {
+        "it": "approved",
+        "fur": "approved"
+      },
+      "duplicateReview": {
+        "status": "partial_theme_overlap",
+        "note": "Il primo lotto cita il trasporto del bucato fra gli usi dei cesti; questa bozza descrive invece il processo di lavaggio con il ranno."
+      },
+      "readyForUi": false,
+      "itCopyReview": {
+        "batchId": "archive-it-review-2026-08-30-01",
+        "reviewedAt": "2026-08-30",
+        "sourceRecheckedAt": "2026-08-30",
+        "method": "assisted_primary_source_review",
+        "status": "approved_for_fur_drafting",
+        "reviewDocument": "docs/operations/SCOPRI_IT_REVIEW_2026-08-30.md",
+        "references": [
+          {
+            "url": "https://patrimonioculturale.regione.fvg.it/percorso-tematico/?s_id=597655",
+            "note": "I lavori femminili: lavaggio con sapone, trattamento con ranno, ammollo notturno e risciacquo in acqua corrente strofinando e battendo la biancheria."
+          }
+        ],
+        "notes": [
+          "Titolo reso non categorico: il lavoro poteva durare più giorni.",
+          "Resa esplicita la sequenza storica documentata, senza aggiungere ricette o istruzioni domestiche.",
+          "Diverso dalla scheda sui cesti: qui il tema è il lavaggio, non il trasporto del bucato."
+        ],
+        "remainingWork": [
+          "fur_draft",
+          "fur_human_review",
+          "calendar_and_duplicate_audit"
+        ]
+      },
+      "furReviewNotes": [
+        "Distinte bugade, il bucato, e lissie, la sostanza detergente; non adottata la forma lessee non riscontrata.",
+        "Conservati ordine del lavaggio, ammollo notturno e risciacquo, senza dettagli nuovi sulla preparazione.",
+        "Forme impersonali e scorrevolezza restano da validare nella revisione competente."
+      ],
+      "furDraftReview": {
+        "batchId": "archive-fur-review-2026-08-30-04",
+        "reviewedAt": "2026-08-30",
+        "method": "assisted_standard_reference_review",
+        "status": "drafted_pending_human_review",
+        "basedOnItReview": "archive-it-review-2026-08-30-01",
+        "reviewDocument": "docs/operations/SCOPRI_FUR_REVIEW_2026-08-30_BATCH_04.md",
+        "references": [
+          {
+            "url": "https://superdizionari.arlef.it/lemma/bucato/18928?language=it&gui=fur",
+            "note": "Bucato → bugade."
+          },
+          {
+            "url": "https://superdizionari.arlef.it/lemma/cenere/28320?language=it&gui=fur",
+            "note": "Cenere → cinise; esempio con lissie."
+          },
+          {
+            "url": "https://arlef.it/app/uploads/stampa-friulana/vos06c11-7.pdf",
+            "note": "La Vôs, 6 marzo 2026: attestazioni contestuali di lissie, in muel, lavadôr e resentâle."
+          },
+          {
+            "url": "https://superdizionari.arlef.it/lemma/ammollo/14375?language=it&gui=fur",
+            "note": "Ammollo → muel."
+          },
+          {
+            "url": "https://superdizionari.arlef.it/lemma/risciacquare/56007?language=it&gui=fur",
+            "note": "Risciacquare → resentâ."
+          },
+          {
+            "url": "https://superdizionari.arlef.it/lemma/strofinare/5186?language=it&gui=fur",
+            "note": "Strofinare → freâ."
+          },
+          {
+            "url": "https://superdizionari.arlef.it/lemma/lavatoio/45806?language=it&gui=fur",
+            "note": "Lavatoio → lavadôr."
+          },
+          {
+            "url": "https://superdizionari.arlef.it/lemma/giorno/19031?language=it&gui=fur",
+            "note": "Plurale dîs negli esempi."
+          }
+        ],
+        "remainingWork": [
+          "fur_human_review",
+          "calendar_and_duplicate_audit"
+        ]
+      },
+      "promotionReview": {
+        "decision": "promoted",
+        "targetRecordId": "institutional-archive-bucato-ranno",
+        "targetSection": "archivio_tradizioni",
+        "targetType": "vita_quotidiana",
+        "runtimeTemporal": {
+          "recurrence": "always",
+          "dateAnchors": [],
+          "dateRanges": [],
+          "movableDates": [],
+          "movableDateRanges": [],
+          "seasons": [
+            "all"
+          ],
+          "weatherTags": []
+        },
+        "temporalInterpretation": "evergreen_archive_rotation",
+        "temporalNote": "Cultura materiale e vita quotidiana in rotazione d'archivio durante l'anno, senza attribuire una ricorrenza non documentata.",
+        "remainingBlockers": [],
+        "promotedAt": "2026-08-31"
+      },
+      "integrationReview": {
+        "batchId": "archive-integration-2026-08-30-04",
+        "reviewedAt": "2026-08-30",
+        "method": "shadow_runtime_projection",
+        "reviewDocument": "docs/operations/SCOPRI_ARCHIVE_INTEGRATION_2026-08-30.md",
+        "calendarAuditYears": [
+          2026,
+          2027,
+          2028,
+          2029,
+          2030,
+          2031
+        ],
+        "calendarAuditLanguages": [
+          "it",
+          "fur"
+        ],
+        "references": [
+          {
+            "url": "https://patrimonioculturale.regione.fvg.it/percorso-tematico/?s_id=597655",
+            "note": "Fonte culturale della regola storica; la finestra o la rotazione runtime è una scelta editoriale, non un programma di eventi."
+          }
+        ]
+      },
+      "furCopyEditReview": {
+        "reviewedAt": "2026-08-31",
+        "method": "assisted_standard_reference_review",
+        "status": "revised_pending_human_review",
+        "basedOnDraftBatch": "archive-fur-review-2026-08-30-04",
+        "reviewDocument": "docs/operations/SCOPRI_FUR_REVIEW_2026-08-31.md",
+        "scope": [
+          "title.fur",
+          "draftCopy.fur",
+          "draftAppShort.fur"
+        ],
+        "changes": [
+          {
+            "field": "draftCopy.fur",
+            "from": "in aghe corint,",
+            "to": "in aghe corinte,",
+            "kind": "grammar",
+            "reason": "Aggettivo femminile riferito ad aghe; forma aghe corinte documentata dal GDB."
+          }
+        ],
+        "findings": [
+          "Corretta la concordanza aghe corint → aghe corinte.",
+          "Conservati si le tratave e si le resentave: si impersonale e pronome oggetto separati sono attestati nei materiali grammaticali; nessuna sostituzione con una passiva più lunga.",
+          "Conservati l'ordine delle operazioni, la notte in ammollo e i gerundi con pronome femminile riferito alla blancjarie."
+        ],
+        "references": [
+          {
+            "url": "https://superdizionari.arlef.it/lemma/corrente/3834?language=it&oneshot=1&gui=fur",
+            "note": "Aghe corinte; accordo femminile dell'aggettivo."
+          },
+          {
+            "url": "https://arlef.it/app/uploads/materiali/sff_gramm_visintin_zanello.pdf",
+            "note": "Focus grammaticale 25, p. 105: uso didattico di si le; confronto con i pronomi senza sostituzioni automatiche."
+          },
+          {
+            "url": "https://arlef.it/app/uploads/materiali/lenghe-e-culture_1-seconda_edizione_2022.pdf",
+            "note": "P. 106: il si impersonale resta distinto dai pronomi oggetto diretti."
+          },
+          {
+            "url": "https://arlef.it/app/uploads/2020/12/dutparfurlan_lez-19-ita-def.pdf",
+            "note": "Pp. 155–156: forme enclitiche e gerundi; confronto, non prescrizione di una sola variante per il si impersonale."
+          }
+        ]
+      },
+      "languageReview": {
+        "fur": {
+          "approvalBasis": "user_explicit_assisted_review_approval",
+          "reviewMethod": "assisted_standard_reference_review",
+          "approvedAt": "2026-08-31",
+          "approvalNote": "Approvazione editoriale esplicita dell'utente: conferma «si procedi» alla promozione delle 17 bozze sulla base della revisione assistita, senza revisione FUR esterna. Non certificazione ARLeF né revisione professionale indipendente.",
+          "reviewDocument": "docs/operations/SCOPRI_FUR_REVIEW_2026-08-31.md",
+          "approvalDocument": "docs/operations/SCOPRI_ARCHIVE_PROMOTION_2026-08-31.md",
+          "references": [
+            {
+              "url": "https://superdizionari.arlef.it/lemma/bucato/18928?language=it&gui=fur",
+              "note": "Bucato → bugade."
+            },
+            {
+              "url": "https://superdizionari.arlef.it/lemma/cenere/28320?language=it&gui=fur",
+              "note": "Cenere → cinise; esempio con lissie."
+            },
+            {
+              "url": "https://arlef.it/app/uploads/stampa-friulana/vos06c11-7.pdf",
+              "note": "La Vôs, 6 marzo 2026: attestazioni contestuali di lissie, in muel, lavadôr e resentâle."
+            },
+            {
+              "url": "https://superdizionari.arlef.it/lemma/ammollo/14375?language=it&gui=fur",
+              "note": "Ammollo → muel."
+            },
+            {
+              "url": "https://superdizionari.arlef.it/lemma/risciacquare/56007?language=it&gui=fur",
+              "note": "Risciacquare → resentâ."
+            },
+            {
+              "url": "https://superdizionari.arlef.it/lemma/strofinare/5186?language=it&gui=fur",
+              "note": "Strofinare → freâ."
+            },
+            {
+              "url": "https://superdizionari.arlef.it/lemma/lavatoio/45806?language=it&gui=fur",
+              "note": "Lavatoio → lavadôr."
+            },
+            {
+              "url": "https://superdizionari.arlef.it/lemma/giorno/19031?language=it&gui=fur",
+              "note": "Plurale dîs negli esempi."
+            },
+            {
+              "url": "https://superdizionari.arlef.it/lemma/corrente/3834?language=it&oneshot=1&gui=fur",
+              "note": "Aghe corinte; accordo femminile dell'aggettivo."
+            },
+            {
+              "url": "https://arlef.it/app/uploads/materiali/sff_gramm_visintin_zanello.pdf",
+              "note": "Focus grammaticale 25, p. 105: uso didattico di si le; confronto con i pronomi senza sostituzioni automatiche."
+            },
+            {
+              "url": "https://arlef.it/app/uploads/materiali/lenghe-e-culture_1-seconda_edizione_2022.pdf",
+              "note": "P. 106: il si impersonale resta distinto dai pronomi oggetto diretti."
+            },
+            {
+              "url": "https://arlef.it/app/uploads/2020/12/dutparfurlan_lez-19-ita-def.pdf",
+              "note": "Pp. 155–156: forme enclitiche e gerundi; confronto, non prescrizione di una sola variante per il si impersonale."
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "archive-research-ago-osso-prosciutto",
+      "rubric": "archive_traditions",
+      "canonicalKey": "san-daniele-ago-osso-prosciutto",
+      "theme": "mestieri_alimentari",
+      "title": {
+        "it": "Un ago d'osso per leggere il prosciutto",
+        "fur": "Une gusiele di vues par lei il persut"
+      },
+      "draftCopy": {
+        "it": "Al Museo del Territorio di San Daniele si conservano anche aghi ricavati da osso di cavallo. Servivano nei salumifici per valutare la stagionatura e le caratteristiche organolettiche dei prosciutti.",
+        "fur": "Tal Museu dal Teritori di San Denêl si conservin ancje gusielis fatis di vues di cjaval. A vignivin dopradis tes fabrichis di salams par valutâ la stagjonadure e lis carateristichis organoletichis dai persuts."
+      },
+      "draftAppShort": {
+        "it": "A San Daniele, gli aghi d'osso raccontano il lavoro di chi valutava i prosciutti.",
+        "fur": "A San Denêl, lis gusielis di vues a contin il lavôr di cui che al valutave i persuts."
+      },
+      "evidenceSummary": "La scheda ERPAC del Museo del Territorio include gli aghi in osso di cavallo fra gli strumenti storici impiegati nella lavorazione e nella valutazione dei prosciutti.",
+      "temporalRule": {
+        "type": "annual_rotation"
+      },
+      "geographicScope": [
+        "san_daniele_del_friuli",
+        "colli_friulani"
+      ],
+      "source": {
+        "label": "ERPAC FVG · Museo del Territorio di San Daniele del Friuli",
+        "url": "https://patrimonioculturale.regione.fvg.it/museo/?s_id=440505&s_tab=f",
+        "type": "institutional_museum",
+        "checkedAt": "2026-08-28",
+        "rightsNote": "Le immagini e le schede degli oggetti del museo non sono riutilizzate."
+      },
+      "reviewStatus": "promoted",
+      "editorialStatus": "promoted_to_catalog",
+      "languageStatus": {
+        "it": "approved",
+        "fur": "approved"
+      },
+      "duplicateReview": {
+        "status": "distinct",
+        "note": "Il profilo attivo di San Daniele tratta la Biblioteca Guarneriana e non gli strumenti storici della lavorazione del prosciutto."
+      },
+      "readyForUi": false,
+      "itCopyReview": {
+        "batchId": "archive-it-review-2026-08-30-01",
+        "reviewedAt": "2026-08-30",
+        "sourceRecheckedAt": "2026-08-30",
+        "method": "assisted_primary_source_review",
+        "status": "approved_for_fur_drafting",
+        "reviewDocument": "docs/operations/SCOPRI_IT_REVIEW_2026-08-30.md",
+        "references": [
+          {
+            "url": "https://patrimonioculturale.regione.fvg.it/museo/?s_id=440505&s_tab=f",
+            "note": "Scheda del Museo del Territorio: aghi in osso di cavallo impiegati nei salumifici per valutare stagionatura e caratteristiche organolettiche."
+          }
+        ],
+        "notes": [
+          "Confermati materiale, contesto professionale e funzione degli oggetti.",
+          "Leggere è una metafora editoriale; nessuna istruzione alimentare o tecnica aggiunta.",
+          "Tema distinto dal profilo di San Daniele dedicato alla Biblioteca Guarneriana."
+        ],
+        "remainingWork": [
+          "fur_draft",
+          "fur_human_review",
+          "calendar_and_duplicate_audit"
+        ]
+      },
+      "furReviewNotes": [
+        "Adottato gusiele dal GDB attuale, distinguendolo dalla forma gusele nella pubblicazione più vecchia.",
+        "Fabriche di salams è l'equivalente lessicografico di salumificio, non un cambiamento del prodotto della scheda.",
+        "Conservata la metafora del titolo senza aggiungere istruzioni tecniche o alimentari; resta la revisione linguistica prevista."
+      ],
+      "furDraftReview": {
+        "batchId": "archive-fur-review-2026-08-30-04",
+        "reviewedAt": "2026-08-30",
+        "method": "assisted_standard_reference_review",
+        "status": "drafted_pending_human_review",
+        "basedOnItReview": "archive-it-review-2026-08-30-01",
+        "reviewDocument": "docs/operations/SCOPRI_FUR_REVIEW_2026-08-30_BATCH_04.md",
+        "references": [
+          {
+            "url": "https://superdizionari.arlef.it/lemma/ago/12607?language=it&gui=fur",
+            "note": "Ago → gusiele; plurale gusielis."
+          },
+          {
+            "url": "https://superdizionari.arlef.it/lemma/osso/50946?language=it&gui=fur",
+            "note": "Osso → vues."
+          },
+          {
+            "url": "https://superdizionari.arlef.it/lemma/cavallo/27989?language=it&gui=fur",
+            "note": "Cavallo → cjaval."
+          },
+          {
+            "url": "https://superdizionari.arlef.it/lemma/stagionatura/57401?language=it&gui=fur",
+            "note": "Stagionatura → stagjonadure."
+          },
+          {
+            "url": "https://superdizionari.arlef.it/lemma/organolettico/50755?language=it&gui=fur",
+            "note": "Organoletic; esempio esplicito carateristichis organoletichis."
+          },
+          {
+            "url": "https://superdizionari.arlef.it/lemma/salumificio/58171?language=it&gui=fur",
+            "note": "Salumificio → fabriche di salams."
+          },
+          {
+            "url": "https://arlef.it/app/uploads/giochi/alcce-n-58.pdf",
+            "note": "Pagina 11: persut/persuts, stagjonadure e valutâts; per ago si segue il lemma GDB attuale gusiele, non la forma gusele del vecchio testo."
+          },
+          {
+            "url": "https://arlef.it/app/uploads/documenti/DPReg_Toponimi_ALLEGATO.pdf",
+            "note": "Pagina 149 stampata: toponimo ufficiale San Denêl."
+          }
+        ],
+        "remainingWork": [
+          "fur_human_review",
+          "calendar_and_duplicate_audit"
+        ]
+      },
+      "promotionReview": {
+        "decision": "promoted",
+        "targetRecordId": "institutional-archive-ago-osso-prosciutto",
+        "targetSection": "archivio_tradizioni",
+        "targetType": "vita_quotidiana",
+        "runtimeTemporal": {
+          "recurrence": "always",
+          "dateAnchors": [],
+          "dateRanges": [],
+          "movableDates": [],
+          "movableDateRanges": [],
+          "seasons": [
+            "all"
+          ],
+          "weatherTags": []
+        },
+        "temporalInterpretation": "evergreen_archive_rotation",
+        "temporalNote": "Cultura materiale e vita quotidiana in rotazione d'archivio durante l'anno, senza attribuire una ricorrenza non documentata.",
+        "remainingBlockers": [],
+        "promotedAt": "2026-08-31"
+      },
+      "integrationReview": {
+        "batchId": "archive-integration-2026-08-30-04",
+        "reviewedAt": "2026-08-30",
+        "method": "shadow_runtime_projection",
+        "reviewDocument": "docs/operations/SCOPRI_ARCHIVE_INTEGRATION_2026-08-30.md",
+        "calendarAuditYears": [
+          2026,
+          2027,
+          2028,
+          2029,
+          2030,
+          2031
+        ],
+        "calendarAuditLanguages": [
+          "it",
+          "fur"
+        ],
+        "references": [
+          {
+            "url": "https://patrimonioculturale.regione.fvg.it/museo/?s_id=440505&s_tab=f",
+            "note": "Fonte culturale della regola storica; la finestra o la rotazione runtime è una scelta editoriale, non un programma di eventi."
+          }
+        ]
+      },
+      "furCopyEditReview": {
+        "reviewedAt": "2026-08-31",
+        "method": "assisted_standard_reference_review",
+        "status": "revised_pending_human_review",
+        "basedOnDraftBatch": "archive-fur-review-2026-08-30-04",
+        "reviewDocument": "docs/operations/SCOPRI_FUR_REVIEW_2026-08-31.md",
+        "scope": [
+          "title.fur",
+          "draftCopy.fur",
+          "draftAppShort.fur"
+        ],
+        "changes": [],
+        "findings": [
+          "Conservati si conservin, gusielis e carateristichis organoletichis; nessuna semplificazione che trasformi salumificio in un altro luogo o prodotto."
+        ],
+        "references": [
+          {
+            "url": "https://superdizionari.arlef.it/lemma/ago/12607?language=it&oneshot=1&gui=fur",
+            "note": "Gusiele, plurale gusielis."
+          },
+          {
+            "url": "https://superdizionari.arlef.it/lemma/organolettico/50755?language=it&oneshot=1&gui=fur",
+            "note": "Esempio con carateristichis organoletichis."
+          },
+          {
+            "url": "https://superdizionari.arlef.it/lemma/salumificio/58171?language=it&oneshot=1&gui=fur",
+            "note": "Fabriche di salams."
+          }
+        ]
+      },
+      "languageReview": {
+        "fur": {
+          "approvalBasis": "user_explicit_assisted_review_approval",
+          "reviewMethod": "assisted_standard_reference_review",
+          "approvedAt": "2026-08-31",
+          "approvalNote": "Approvazione editoriale esplicita dell'utente: conferma «si procedi» alla promozione delle 17 bozze sulla base della revisione assistita, senza revisione FUR esterna. Non certificazione ARLeF né revisione professionale indipendente.",
+          "reviewDocument": "docs/operations/SCOPRI_FUR_REVIEW_2026-08-31.md",
+          "approvalDocument": "docs/operations/SCOPRI_ARCHIVE_PROMOTION_2026-08-31.md",
+          "references": [
+            {
+              "url": "https://superdizionari.arlef.it/lemma/ago/12607?language=it&gui=fur",
+              "note": "Ago → gusiele; plurale gusielis."
+            },
+            {
+              "url": "https://superdizionari.arlef.it/lemma/osso/50946?language=it&gui=fur",
+              "note": "Osso → vues."
+            },
+            {
+              "url": "https://superdizionari.arlef.it/lemma/cavallo/27989?language=it&gui=fur",
+              "note": "Cavallo → cjaval."
+            },
+            {
+              "url": "https://superdizionari.arlef.it/lemma/stagionatura/57401?language=it&gui=fur",
+              "note": "Stagionatura → stagjonadure."
+            },
+            {
+              "url": "https://superdizionari.arlef.it/lemma/organolettico/50755?language=it&gui=fur",
+              "note": "Organoletic; esempio esplicito carateristichis organoletichis."
+            },
+            {
+              "url": "https://superdizionari.arlef.it/lemma/salumificio/58171?language=it&gui=fur",
+              "note": "Salumificio → fabriche di salams."
+            },
+            {
+              "url": "https://arlef.it/app/uploads/giochi/alcce-n-58.pdf",
+              "note": "Pagina 11: persut/persuts, stagjonadure e valutâts; per ago si segue il lemma GDB attuale gusiele, non la forma gusele del vecchio testo."
+            },
+            {
+              "url": "https://arlef.it/app/uploads/documenti/DPReg_Toponimi_ALLEGATO.pdf",
+              "note": "Pagina 149 stampata: toponimo ufficiale San Denêl."
+            },
+            {
+              "url": "https://superdizionari.arlef.it/lemma/ago/12607?language=it&oneshot=1&gui=fur",
+              "note": "Gusiele, plurale gusielis."
+            },
+            {
+              "url": "https://superdizionari.arlef.it/lemma/organolettico/50755?language=it&oneshot=1&gui=fur",
+              "note": "Esempio con carateristichis organoletichis."
+            },
+            {
+              "url": "https://superdizionari.arlef.it/lemma/salumificio/58171?language=it&oneshot=1&gui=fur",
+              "note": "Fabriche di salams."
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "archive-research-teche-racconti-popolari",
+      "rubric": "archive_traditions",
+      "canonicalKey": "friuli-teche-racconti-popolari",
+      "theme": "memoria_orale",
+      "title": {
+        "it": "Un archivio di oltre 2.300 racconti",
+        "fur": "Un archivi di plui di 2.300 raconts"
+      },
+      "draftCopy": {
+        "it": "Teche Friulane riunisce in formato digitale oltre 2.300 racconti raccolti dalla viva voce degli informatori: leggende, fiabe, testi sacri e profani e filastrocche, trascritti nelle diverse varianti linguistiche locali.",
+        "fur": "L'archivi Teche Friulane al met dongje in formât digjitâl plui di 2.300 raconts racuelts de vive vôs dai informadôrs: liendis, flabis, tescj sacris e profans e filastrocjis, trascrits tes diviersis variantis linguistichis locâls."
+      },
+      "draftAppShort": {
+        "it": "Oltre 2.300 racconti conservano voci e varianti linguistiche del territorio.",
+        "fur": "Plui di 2.300 raconts a conservin vôs e variantis linguistichis dal teritori."
+      },
+      "evidenceSummary": "La biblioteca digitale di Teche Friulane dichiara oltre 2.300 racconti di tradizione orale e consente di ricercarli anche per zona di raccolta.",
+      "temporalRule": {
+        "type": "annual_rotation"
+      },
+      "geographicScope": [
+        "friuli"
+      ],
+      "source": {
+        "label": "Teche Friulane · Racconti popolari friulani",
+        "url": "https://www.techefriulane.it/biblioteca-digitale/racconti-popolari",
+        "type": "institutional_archive",
+        "checkedAt": "2026-08-28",
+        "rightsNote": "Non ripubblicare racconti, trascrizioni o riproduzioni senza una verifica specifica dei diritti."
+      },
+      "reviewStatus": "promoted",
+      "editorialStatus": "promoted_to_catalog",
+      "languageStatus": {
+        "it": "approved",
+        "fur": "approved"
+      },
+      "promotionReview": {
+        "decision": "promoted",
+        "targetRecordId": "institutional-archive-teche-racconti-popolari",
+        "targetSection": "archivio_tradizioni",
+        "targetType": "archivio",
+        "runtimeTemporal": {
+          "recurrence": "always",
+          "dateAnchors": [],
+          "dateRanges": [],
+          "movableDates": [],
+          "movableDateRanges": [],
+          "seasons": [
+            "all"
+          ],
+          "weatherTags": []
+        },
+        "remainingBlockers": [],
+        "promotedAt": "2026-08-31"
+      },
+      "furReviewNotes": [
+        "Terzo gruppo, revisione assistita del 2026-08-30: leiendis → liendis, plurale documentato di liende. Reso esplicito il soggetto L'archivi per un accordo non ambiguo con il nome proprio Teche Friulane.",
+        "Informadôr confermato nell'accezione linguistica di informante; conservati informadôrs, filastrocjis, racuelts e trascrits, questi ultimi concordati con raconts.",
+        "Il 2026-08-30 la pagina ufficiale dichiara ancora più di 2.300 racconti: dato della fonte, non conteggio effettuato dall'app, da ricontrollare prima della promozione. IT invariato; nessuna nuova approvazione assegnata, resta fur_human_review."
+      ],
+      "duplicateReview": {
+        "status": "distinct",
+        "note": "La bozza racconta l'archivio della tradizione orale come patrimonio e non riproduce uno dei racconti conservati."
+      },
+      "readyForUi": false,
+      "furDraftReview": {
+        "batchId": "archive-fur-review-2026-08-30-03",
+        "reviewedAt": "2026-08-30",
+        "sourceRecheckedAt": "2026-08-30",
+        "method": "assisted_standard_reference_review",
+        "status": "revised_pending_human_review",
+        "reviewDocument": "docs/operations/SCOPRI_FUR_REVIEW_2026-08-30_BATCH_03.md",
+        "references": [
+          {
+            "url": "https://superdizionari.arlef.it/lemma/leggenda/45910?language=it&oneshot=1&gui=fur",
+            "note": "Leggenda → liende; gli esempi attestano il plurale liendis."
+          },
+          {
+            "url": "https://superdizionari.arlef.it/lemma/informante/42396",
+            "note": "Informante, accezione linguistica → informadôr; conservato informadôrs."
+          },
+          {
+            "url": "https://superdizionari.arlef.it/lemma/filastrocca/26346?language=it&oneshot=1&gui=fur",
+            "note": "Filastrocca → filastrocje, naine; conservato il plurale regolare filastrocjis."
+          },
+          {
+            "url": "https://superdizionari.arlef.it/lemma/trascrivere/4824?language=it&oneshot=1&gui=fur",
+            "note": "Trascrivere → trascrivi; concordanza plurale con i racconti."
+          },
+          {
+            "url": "https://arlef.it/app/uploads/page/pgjpl-2021-2025-fur.pdf",
+            "note": "Piano di politica linguistica, p. 24: attestato tescj ... trascrits."
+          },
+          {
+            "url": "https://arlef.it/app/uploads/stampa-friulana/fdj-31-01-2026.pdf",
+            "note": "Testo della Società Filologica ospitato da ARLeF: attestato materiâi racuelts. Non è una certificazione della card."
+          }
+        ]
+      },
+      "languageReview": {
+        "fur": {
+          "approvalBasis": "user_explicit_assisted_review_approval",
+          "reviewMethod": "assisted_standard_reference_review",
+          "approvedAt": "2026-08-31",
+          "approvalNote": "Approvazione editoriale esplicita dell'utente: conferma «si procedi» alla promozione delle 17 bozze sulla base della revisione assistita, senza revisione FUR esterna. Non certificazione ARLeF né revisione professionale indipendente.",
+          "reviewDocument": "docs/operations/SCOPRI_FUR_REVIEW_2026-08-31.md",
+          "approvalDocument": "docs/operations/SCOPRI_ARCHIVE_PROMOTION_2026-08-31.md",
+          "references": [
+            {
+              "url": "https://superdizionari.arlef.it/lemma/leggenda/45910?language=it&oneshot=1&gui=fur",
+              "note": "Leggenda → liende; gli esempi attestano il plurale liendis."
+            },
+            {
+              "url": "https://superdizionari.arlef.it/lemma/informante/42396",
+              "note": "Informante, accezione linguistica → informadôr; conservato informadôrs."
+            },
+            {
+              "url": "https://superdizionari.arlef.it/lemma/filastrocca/26346?language=it&oneshot=1&gui=fur",
+              "note": "Filastrocca → filastrocje, naine; conservato il plurale regolare filastrocjis."
+            },
+            {
+              "url": "https://superdizionari.arlef.it/lemma/trascrivere/4824?language=it&oneshot=1&gui=fur",
+              "note": "Trascrivere → trascrivi; concordanza plurale con i racconti."
+            },
+            {
+              "url": "https://arlef.it/app/uploads/page/pgjpl-2021-2025-fur.pdf",
+              "note": "Piano di politica linguistica, p. 24: attestato tescj ... trascrits."
+            },
+            {
+              "url": "https://arlef.it/app/uploads/stampa-friulana/fdj-31-01-2026.pdf",
+              "note": "Testo della Società Filologica ospitato da ARLeF: attestato materiâi racuelts. Non è una certificazione della card."
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "archive-research-cartoline-lignano",
+      "rubric": "archive_traditions",
+      "canonicalKey": "lignano-cartoline-vacanze-1904-1960",
+      "theme": "memoria_balneare",
+      "title": {
+        "it": "Lignano raccontata dalle cartoline",
+        "fur": "Lis cartulinis a contin Lignan"
+      },
+      "draftCopy": {
+        "it": "Un percorso ERPAC raccoglie cartoline illustrate di Lignano datate dal 1904 al 1960. Nel loro insieme documentano la crescita della località balneare e i cambiamenti del paesaggio, delle vacanze e della società.",
+        "fur": "Un percors ERPAC al met dongje cartulinis ilustradis di Lignan datadis dal 1904 al 1960. Tal lôr insiemi a documentin la cressite de localitât balneâr e i cambiaments dal paisaç, des vacancis e de societât."
+      },
+      "draftAppShort": {
+        "it": "Le cartoline dal 1904 al 1960 raccontano la trasformazione balneare di Lignano.",
+        "fur": "Lis cartulinis dal 1904 al 1960 a contin la trasformazion balneâr di Lignan."
+      },
+      "evidenceSummary": "Il percorso ERPAC presenta le cartoline illustrate come documenti delle trasformazioni sociali e urbanistiche di Lignano fra il 1904 e il 1960.",
+      "temporalRule": {
+        "type": "seasonal_range",
+        "seasons": [
+          "estate"
+        ]
+      },
+      "geographicScope": [
+        "lignano_sabbiadoro"
+      ],
+      "source": {
+        "label": "ERPAC FVG · Vacanze a Lignano. Non solo saluti.",
+        "url": "https://patrimonioculturale.regione.fvg.it/percorso-tematico/?s_id=597660",
+        "type": "institutional_catalogue",
+        "checkedAt": "2026-08-28",
+        "rightsNote": "Le cartoline e le immagini del catalogo non sono riutilizzate."
+      },
+      "reviewStatus": "promoted",
+      "editorialStatus": "promoted_to_catalog",
+      "languageStatus": {
+        "it": "approved",
+        "fur": "approved"
+      },
+      "promotionReview": {
+        "decision": "promoted",
+        "targetRecordId": "institutional-archive-cartoline-lignano",
+        "targetSection": "archivio_tradizioni",
+        "targetType": "archivio",
+        "runtimeTemporal": {
+          "recurrence": "seasonal",
+          "dateAnchors": [],
+          "dateRanges": [],
+          "movableDates": [],
+          "movableDateRanges": [],
+          "seasons": [
+            "estate"
+          ],
+          "weatherTags": []
+        },
+        "remainingBlockers": [],
+        "promotedAt": "2026-08-30"
+      },
+      "furReviewNotes": [
+        "Revisione assistita del 2026-08-30: corretto a contìn in a contin; riscontrati cartuline/cartulinis, Lignan e balneâr nei riferimenti elencati in languageReview.",
+        "Titolo riformulato in Lis cartulinis a contin Lignan per evitare l'accordo ellittico di Lignan contade; scelta redazionale, non dichiarazione che la forma precedente fosse certamente errata.",
+        "Superato il precedente blocco solo per questa scheda, sulla base dell'approvazione editoriale condizionata dell'utente; non è stata ottenuta una certificazione istituzionale."
+      ],
+      "duplicateReview": {
+        "status": "partial_theme_overlap",
+        "note": "Il profilo attivo di Lignano racconta il piano urbano a spirale; questa bozza usa invece le cartoline come documento della trasformazione balneare e sociale."
+      },
+      "readyForUi": false,
+      "languageReview": {
+        "fur": {
+          "approvalBasis": "user_conditional_standard_reference_review",
+          "reviewMethod": "assisted_standard_reference_review",
+          "approvedAt": "2026-08-30",
+          "approvalNote": "Approvazione editoriale condizionata dell'utente dopo confronto con riferimenti del friulano standard e della grafia ufficiale. Non certificazione ARLeF né revisione professionale indipendente.",
+          "reviewDocument": "docs/operations/SCOPRI_FUR_REVIEW_2026-08-30.md",
+          "references": [
+            {
+              "url": "https://superdizionari.arlef.it/lemma/cartolina/27364?language=it&oneshot=1&gui=it",
+              "note": "SuperDizionari ARLeF: cartuline; plurale regolare cartulinis."
+            },
+            {
+              "url": "https://arlef.it/sul-troi-des-contis/",
+              "note": "Prosa ARLeF: terza persona plurale a contin, senza accento."
+            },
+            {
+              "url": "https://arlef.it/lenghe-e-culture/friul-storie-e-culture/",
+              "note": "Prosa ARLeF: Lignan e balneâr."
+            }
+          ]
+        }
+      }
+    }
+  ]
+}

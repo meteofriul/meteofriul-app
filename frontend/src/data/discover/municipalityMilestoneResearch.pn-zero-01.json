@@ -1,0 +1,269 @@
+{
+  "schemaVersion": 1,
+  "batchId": "pn-zero-milestones-01",
+  "snapshotDate": "2026-08-21",
+  "purpose": "Lotto di ricerca non visibile in UI per ampliare le tappe storiche dei primi cinque Comuni PN che ne sono privi.",
+  "runtimeIntegration": false,
+  "editorialPolicy": {
+    "sourceEvidenceRequired": true,
+    "ambiguousDatesExcluded": true,
+    "italianCopyStatus": "editorial_draft",
+    "friulianCopyStatus": "pending_human_review",
+    "readyForUi": false
+  },
+  "excludedClaims": [
+    {
+      "municipality": "Fanna",
+      "claim": "Il santuario di Madonna di Strada risalirebbe all'891 a.C.",
+      "reason": "La pagina comunale riporta una data incongruente; l'inventario della Soprintendenza archivistica documenta invece il santuario nel 981."
+    },
+    {
+      "municipality": "Tramonti di Sotto",
+      "claim": "La diga di Redona sarebbe stata completata nel 1952.",
+      "reason": "La data è stata trovata soltanto su una fonte divulgativa non istituzionale e resta fuori dal lotto finché non viene corroborata."
+    }
+  ],
+  "municipalities": [
+    {
+      "istatCode": "093016",
+      "municipality": "Clauzetto",
+      "province": "PN",
+      "currentMilestoneCount": 0,
+      "decision": "source_verified_it_fur_pending",
+      "candidates": [
+        {
+          "id": "clauzetto-campanile-1732",
+          "year": 1732,
+          "label": {
+            "it": "Viene realizzato il campanile della parrocchiale di San Giacomo",
+            "fur": null
+          },
+          "evidence": "La pagina comunale data al 1732 la realizzazione dell'imponente campanile esterno.",
+          "source": {
+            "label": "Comune di Clauzetto - La parrocchiale di San Giacomo",
+            "type": "official_municipality",
+            "url": "https://www.comune.clauzetto.pn.it/it/vivere-il-comune-39571/luoghi-39572/la-parrocchiale-di-san-giacomo-116638"
+          }
+        },
+        {
+          "id": "clauzetto-rito-preziosissimo-sangue-1757",
+          "year": 1757,
+          "label": {
+            "it": "Viene istituito il rito del Preziosissimo Sangue",
+            "fur": null
+          },
+          "evidence": "La pagina comunale indica che il rito fu istituito nel 1757 sotto il pievano don Antonio Cavalutti.",
+          "source": {
+            "label": "Comune di Clauzetto - La parrocchiale di San Giacomo",
+            "type": "official_municipality",
+            "url": "https://www.comune.clauzetto.pn.it/it/vivere-il-comune-39571/luoghi-39572/la-parrocchiale-di-san-giacomo-116638"
+          }
+        },
+        {
+          "id": "clauzetto-grotta-tempio-speleologo-1968",
+          "year": 1968,
+          "label": {
+            "it": "La Grotta della Madonna diventa Tempio Nazionale dello Speleologo",
+            "fur": null
+          },
+          "evidence": "Il Comune indica che la Grotta della Madonna è Tempio Nazionale dello Speleologo dal 1968.",
+          "source": {
+            "label": "Comune di Clauzetto - Le Grotte di Pradis",
+            "type": "official_municipality",
+            "url": "https://www.comune.clauzetto.pn.it/it/vivere-il-comune-39571/luoghi-39572/le-grotte-di-pradis-39821"
+          }
+        }
+      ]
+    },
+    {
+      "istatCode": "093020",
+      "municipality": "Fanna",
+      "province": "PN",
+      "currentMilestoneCount": 0,
+      "decision": "source_verified_it_fur_pending",
+      "candidates": [
+        {
+          "id": "fanna-madonna-di-strada-981",
+          "year": 981,
+          "label": {
+            "it": "Un diploma di Ottone 2° ricorda il santuario di Madonna di Strada",
+            "fur": null
+          },
+          "evidence": "L'introduzione storico-istituzionale dell'archivio comunale cita il diploma imperiale di Ottone II del 12 gennaio 981.",
+          "source": {
+            "label": "Soprintendenza archivistica FVG - Archivio storico del Comune di Fanna",
+            "type": "national_institution",
+            "url": "https://sa-fvg.cultura.gov.it/fileadmin/inventari/archivi_comunali/Comune_di_Fanna._Archivio_storico__1866-1961_._Inventario__Maela_Pivetta__2003_.pdf"
+          }
+        },
+        {
+          "id": "fanna-cavasso-separazione-1584",
+          "year": 1584,
+          "label": {
+            "it": "L'abitato viene diviso nei paesi di Fanna e Cavasso",
+            "fur": null
+          },
+          "evidence": "L'inventario della Soprintendenza indica che nel 1584 l'abitato fu diviso nei due paesi di Fanna e Cavasso.",
+          "source": {
+            "label": "Soprintendenza archivistica FVG - Archivio storico del Comune di Fanna",
+            "type": "national_institution",
+            "url": "https://sa-fvg.cultura.gov.it/fileadmin/inventari/archivi_comunali/Comune_di_Fanna._Archivio_storico__1866-1961_._Inventario__Maela_Pivetta__2003_.pdf"
+          }
+        },
+        {
+          "id": "fanna-vittorio-cadel-1884",
+          "year": 1884,
+          "label": {
+            "it": "Nasce a Fanna il poeta e pittore Vittorio Cadel",
+            "fur": null
+          },
+          "evidence": "Il Dizionario Biografico dei Friulani registra la nascita di Vittorio Cadel a Fanna nel 1884.",
+          "source": {
+            "label": "Dizionario Biografico dei Friulani - Vittorio Cadel",
+            "type": "cultural_institution",
+            "url": "https://www.dizionariobiograficodeifriulani.it/cadel-vittorio"
+          }
+        }
+      ]
+    },
+    {
+      "istatCode": "093026",
+      "municipality": "Meduno",
+      "province": "PN",
+      "currentMilestoneCount": 0,
+      "decision": "source_verified_it_fur_pending",
+      "candidates": [
+        {
+          "id": "meduno-castello-1136",
+          "year": 1136,
+          "label": {
+            "it": "A questa data vengono ricondotti i resti del castello di Meduno",
+            "fur": null
+          },
+          "evidence": "La scheda territoriale del Consorzio NIP data al 1136 i resti del castello presso San Martino.",
+          "source": {
+            "label": "Consorzio NIP - Meduno, dai Celti al Risorgimento",
+            "type": "local_public_institution",
+            "url": "https://www.consorzionip.it/il-territorio/meduno/"
+          }
+        },
+        {
+          "id": "meduno-moti-navarons-1864",
+          "year": 1864,
+          "label": {
+            "it": "Navarons diventa il centro dei moti mazziniani friulani",
+            "fur": null
+          },
+          "evidence": "La scheda del Consorzio NIP e l'Ecomuseo collocano a Navarons nell'ottobre 1864 l'azione guidata da Antonio Andreuzzi.",
+          "source": {
+            "label": "Consorzio NIP - Meduno, dai Celti al Risorgimento",
+            "type": "local_public_institution",
+            "url": "https://www.consorzionip.it/il-territorio/meduno/"
+          }
+        }
+      ]
+    },
+    {
+      "istatCode": "093045",
+      "municipality": "Tramonti di Sopra",
+      "province": "PN",
+      "currentMilestoneCount": 0,
+      "decision": "source_verified_it_fur_pending",
+      "candidates": [
+        {
+          "id": "tramonti-di-sopra-fornaci-xvi",
+          "century": "XVI",
+          "label": {
+            "it": "Nell'area si diffondono le fornaci per la produzione della calce",
+            "fur": null
+          },
+          "evidence": "Il percorso storico dell'Ecomuseo colloca dal XVI secolo la costruzione di numerose fornaci da calce nell'area.",
+          "source": {
+            "label": "Ecomuseo Lis Aganis - Sentiero delle calcinaie",
+            "type": "cultural_institution",
+            "url": "https://www.ecomuseolisaganis.it/bfiles/percorsi%20di%20pietra/Dep_%20Tramonti%20di%20Sopra.pdf"
+          }
+        },
+        {
+          "id": "tramonti-di-sopra-chiesa-valdese-1880",
+          "year": 1880,
+          "label": {
+            "it": "Si stabilisce a Tramonti di Sopra la Chiesa valdese",
+            "fur": null
+          },
+          "evidence": "L'Ente Parco data al 1880 l'insediamento della Chiesa valdese per iniziativa di universitari tramontini a Padova.",
+          "source": {
+            "label": "Parco Naturale Dolomiti Friulane - Tramonti di Sopra",
+            "type": "regional_institution",
+            "url": "https://www.parcodolomitifriulane.it/i-paesi-del-parco/tramonti-di-sopra/"
+          }
+        },
+        {
+          "id": "tramonti-di-sopra-ultima-fornace-1954",
+          "year": 1954,
+          "label": {
+            "it": "Si spegne l'ultima fornace da calce di Tramonti di Sopra",
+            "fur": null
+          },
+          "evidence": "L'Ecomuseo indica che l'ultima fornace della valle a spegnersi fu quella di Tramonti di Sopra nel 1954.",
+          "source": {
+            "label": "Ecomuseo Lis Aganis - Sentiero delle calcinaie",
+            "type": "cultural_institution",
+            "url": "https://www.ecomuseolisaganis.it/bfiles/percorsi%20di%20pietra/Dep_%20Tramonti%20di%20Sopra.pdf"
+          }
+        }
+      ]
+    },
+    {
+      "istatCode": "093046",
+      "municipality": "Tramonti di Sotto",
+      "province": "PN",
+      "currentMilestoneCount": 0,
+      "decision": "source_verified_it_fur_pending",
+      "candidates": [
+        {
+          "id": "tramonti-di-sotto-necropoli-vi-vii",
+          "century": "VI-VII d.C.",
+          "label": {
+            "it": "I reperti della necropoli documentano la comunità altomedievale",
+            "fur": null
+          },
+          "evidence": "Il catalogo regionale data al 500-699 d.C. i reperti rinvenuti presso la chiesa di Santa Maria.",
+          "source": {
+            "label": "ERPAC - Reperti della necropoli di Tramonti di Sotto",
+            "type": "regional_institution",
+            "url": "https://patrimonioculturale.regione.fvg.it/reperto-archeologico/?s_id=551748"
+          }
+        },
+        {
+          "id": "tramonti-di-sotto-pieve-fine-xv",
+          "century": "fine XV",
+          "label": {
+            "it": "Viene costruita la Pieve di Santa Maria Maggiore su una struttura precedente",
+            "fur": null
+          },
+          "evidence": "Il sito ufficiale Val Tramontina descrive la pieve come edificio della fine del Quattrocento costruito su una struttura preesistente.",
+          "source": {
+            "label": "Sito ufficiale Val Tramontina - Tramonti di Sotto",
+            "type": "local_public_institution",
+            "url": "https://valtramontina.it/2022/03/03/tramonti-di-sotto/"
+          }
+        },
+        {
+          "id": "tramonti-di-sotto-affreschi-inizio-xvi",
+          "century": "inizio XVI",
+          "label": {
+            "it": "Il coro della pieve viene decorato con il ciclo di affreschi",
+            "fur": null
+          },
+          "evidence": "Il sito ufficiale Val Tramontina attribuisce a Giampietro da Spilimbergo il ciclo del coro, databile ai primi del XVI secolo.",
+          "source": {
+            "label": "Sito ufficiale Val Tramontina - Tramonti di Sotto",
+            "type": "local_public_institution",
+            "url": "https://valtramontina.it/2022/03/03/tramonti-di-sotto/"
+          }
+        }
+      ]
+    }
+  ]
+}

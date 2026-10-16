@@ -1,0 +1,426 @@
+{
+  "schemaVersion": 1,
+  "batchId": "ostermann-1876-language-review-06",
+  "reviewedAt": "2026-07-23",
+  "sourceDecisionFiles": [
+    "review-decisions-batch-06.json"
+  ],
+  "purpose": "Sesta revisione linguistica ed editoriale dei candidati Ostermann 1876 verificati sul facsimile. Non pubblica contenuti nella UI.",
+  "policy": {
+    "publish": false,
+    "rule": "La normalizzazione FUR conserva il significato attestato nel facsimile. Le quindici massime sono generali e non ricevono date o stagioni artificiali."
+  },
+  "summary": {
+    "records": 15,
+    "languageReviewed": 15,
+    "mergeExisting": 0,
+    "needsNativeReview": 0
+  },
+  "records": [
+    {
+      "id": "ost1876-ducj-sintin-orelis",
+      "reviewStatus": "language_reviewed",
+      "furNormalized": "Ducj a sintin cu lis lôr orelis.",
+      "itFinal": "Tutti ascoltano con le proprie orecchie.",
+      "destination": "almanac",
+      "calendarRule": {
+        "type": "general",
+        "bucket": "wisdom",
+        "fallbackAllowed": true
+      },
+      "duplicateAudit": {
+        "status": "new_distinct"
+      },
+      "evidence": [
+        {
+          "label": "Facsimile Ostermann 1876, p. PDF 305",
+          "kind": "primary"
+        },
+        {
+          "label": "Dizionari de Lenghe Furlane, grafia normalizzata",
+          "kind": "secondary"
+        }
+      ],
+      "editorialNote": "Normalizzazione conservativa del soggetto plurale e del nome orelis; massima generale.",
+      "publish": false
+    },
+    {
+      "id": "ost1876-ognidun-mangje-bocje",
+      "reviewStatus": "language_reviewed",
+      "furNormalized": "Ognidun al mangje cu la sô bocje.",
+      "itFinal": "Ognuno mangia con la propria bocca.",
+      "destination": "almanac",
+      "calendarRule": {
+        "type": "general",
+        "bucket": "wisdom",
+        "fallbackAllowed": true
+      },
+      "duplicateAudit": {
+        "status": "new_distinct"
+      },
+      "evidence": [
+        {
+          "label": "Facsimile Ostermann 1876, p. PDF 305",
+          "kind": "primary"
+        },
+        {
+          "label": "Dizionari de Lenghe Furlane, proverbio attestato",
+          "kind": "secondary"
+        }
+      ],
+      "editorialNote": "La forma moderna è attestata integralmente nel repertorio lessicografico.",
+      "publish": false
+    },
+    {
+      "id": "ost1876-ognidun-viot-siei-voi",
+      "reviewStatus": "language_reviewed",
+      "furNormalized": "Ognidun al viôt cui siei vôi.",
+      "itFinal": "Ognuno vede con i propri occhi.",
+      "destination": "almanac",
+      "calendarRule": {
+        "type": "general",
+        "bucket": "wisdom",
+        "fallbackAllowed": true
+      },
+      "duplicateAudit": {
+        "status": "new_distinct"
+      },
+      "evidence": [
+        {
+          "label": "Facsimile Ostermann 1876, p. PDF 305",
+          "kind": "primary"
+        },
+        {
+          "label": "Dizionari de Lenghe Furlane, grafia normalizzata",
+          "kind": "secondary"
+        }
+      ],
+      "editorialNote": "Normalizzazione del soggetto e del pronome atono, senza alterare il significato.",
+      "publish": false
+    },
+    {
+      "id": "ost1876-aghe-corinte-no-puarte-sporcjetat",
+      "reviewStatus": "language_reviewed",
+      "furNormalized": "La aghe corinte no puarte sporcjetât.",
+      "itFinal": "L'acqua corrente non porta sporcizia.",
+      "destination": "almanac",
+      "calendarRule": {
+        "type": "general",
+        "bucket": "nature",
+        "fallbackAllowed": true
+      },
+      "duplicateAudit": {
+        "status": "new_distinct"
+      },
+      "evidence": [
+        {
+          "label": "Facsimile Ostermann 1876, p. PDF 305",
+          "kind": "primary"
+        },
+        {
+          "label": "Dizionari de Lenghe Furlane, proverbio attestato",
+          "kind": "secondary"
+        }
+      ],
+      "editorialNote": "Forma moderna attestata integralmente; immagine naturale valida durante tutto l'anno.",
+      "publish": false
+    },
+    {
+      "id": "ost1876-fat-mont-po-disfalu",
+      "reviewStatus": "language_reviewed",
+      "furNormalized": "Cui che al à fat il mont al po disfâlu.",
+      "itFinal": "Chi ha fatto il mondo può disfarlo.",
+      "destination": "almanac",
+      "calendarRule": {
+        "type": "general",
+        "bucket": "wisdom",
+        "fallbackAllowed": true
+      },
+      "duplicateAudit": {
+        "status": "new_distinct"
+      },
+      "evidence": [
+        {
+          "label": "Facsimile Ostermann 1876, p. PDF 305",
+          "kind": "primary"
+        },
+        {
+          "label": "Dizionari de Lenghe Furlane, proverbio attestato",
+          "kind": "secondary"
+        }
+      ],
+      "editorialNote": "Forma moderna attestata integralmente nel repertorio lessicografico.",
+      "publish": false
+    },
+    {
+      "id": "ost1876-ogni-di-ven-gnot",
+      "reviewStatus": "language_reviewed",
+      "furNormalized": "Ogni dì e ven gnot.",
+      "itFinal": "Ogni giorno viene la notte.",
+      "destination": "almanac",
+      "calendarRule": {
+        "type": "general",
+        "bucket": "wisdom",
+        "fallbackAllowed": true
+      },
+      "duplicateAudit": {
+        "status": "new_distinct"
+      },
+      "evidence": [
+        {
+          "label": "Facsimile Ostermann 1876, p. PDF 305",
+          "kind": "primary"
+        },
+        {
+          "label": "Dizionari de Lenghe Furlane, proverbio attestato",
+          "kind": "secondary"
+        }
+      ],
+      "editorialNote": "Forma moderna attestata integralmente; nessun vincolo con una giornata specifica.",
+      "publish": false
+    },
+    {
+      "id": "ost1876-pazience-maride-frari",
+      "reviewStatus": "language_reviewed",
+      "furNormalized": "Cu la pazience si maride un frari.",
+      "itFinal": "Con la pazienza si sposa anche un frate.",
+      "destination": "almanac",
+      "calendarRule": {
+        "type": "general",
+        "bucket": "wisdom",
+        "fallbackAllowed": true
+      },
+      "duplicateAudit": {
+        "status": "new_distinct"
+      },
+      "evidence": [
+        {
+          "label": "Facsimile Ostermann 1876, p. PDF 305",
+          "kind": "primary"
+        },
+        {
+          "label": "Dizionari de Lenghe Furlane, lessico e grafia normalizzati",
+          "kind": "secondary"
+        }
+      ],
+      "editorialNote": "Normalizzazione conservativa del presente gnomico; il valore è figurato e generale.",
+      "publish": false
+    },
+    {
+      "id": "ost1876-vul-ledi-nol-vul-mandi",
+      "reviewStatus": "language_reviewed",
+      "furNormalized": "Cui che al vûl che al ledi; cui che nol vûl che al mandi.",
+      "itFinal": "Chi vuole vada; chi non vuole mandi.",
+      "destination": "almanac",
+      "calendarRule": {
+        "type": "general",
+        "bucket": "wisdom",
+        "fallbackAllowed": true
+      },
+      "duplicateAudit": {
+        "status": "new_distinct"
+      },
+      "evidence": [
+        {
+          "label": "Facsimile Ostermann 1876, p. PDF 305",
+          "kind": "primary"
+        },
+        {
+          "label": "Dizionari de Lenghe Furlane, proverbio attestato",
+          "kind": "secondary"
+        }
+      ],
+      "editorialNote": "Forma moderna attestata integralmente nel repertorio lessicografico.",
+      "publish": false
+    },
+    {
+      "id": "ost1876-ogni-trop-masse",
+      "reviewStatus": "language_reviewed",
+      "furNormalized": "Ogni trop al è masse.",
+      "itFinal": "Ogni eccesso è di troppo.",
+      "destination": "almanac",
+      "calendarRule": {
+        "type": "general",
+        "bucket": "wisdom",
+        "fallbackAllowed": true
+      },
+      "duplicateAudit": {
+        "status": "new_distinct"
+      },
+      "evidence": [
+        {
+          "label": "Facsimile Ostermann 1876, p. PDF 306",
+          "kind": "primary"
+        },
+        {
+          "label": "Dizionari de Lenghe Furlane, proverbio attestato",
+          "kind": "secondary"
+        }
+      ],
+      "editorialNote": "Forma moderna attestata integralmente e preferita alla variante più lunga del blocco.",
+      "publish": false
+    },
+    {
+      "id": "ost1876-bez-po-spindi",
+      "reviewStatus": "language_reviewed",
+      "furNormalized": "Cui che al à bêçs al po spindi.",
+      "itFinal": "Chi ha denaro può spendere.",
+      "destination": "almanac",
+      "calendarRule": {
+        "type": "general",
+        "bucket": "wisdom",
+        "fallbackAllowed": true
+      },
+      "duplicateAudit": {
+        "status": "new_distinct"
+      },
+      "evidence": [
+        {
+          "label": "Facsimile Ostermann 1876, p. PDF 306",
+          "kind": "primary"
+        },
+        {
+          "label": "Dizionari de Lenghe Furlane, lessico e grafia normalizzati",
+          "kind": "secondary"
+        }
+      ],
+      "editorialNote": "Normalizzazione conservativa di bêçs e spindi; scelta la variante esplicita del blocco.",
+      "publish": false
+    },
+    {
+      "id": "ost1876-len-sec-cjape-prin",
+      "reviewStatus": "language_reviewed",
+      "furNormalized": "Un len sec al cjape plui prest che no un vert.",
+      "itFinal": "Un legno secco prende fuoco prima di uno verde.",
+      "destination": "almanac",
+      "calendarRule": {
+        "type": "general",
+        "bucket": "nature",
+        "fallbackAllowed": true
+      },
+      "duplicateAudit": {
+        "status": "new_distinct"
+      },
+      "evidence": [
+        {
+          "label": "Facsimile Ostermann 1876, p. PDF 306",
+          "kind": "primary"
+        },
+        {
+          "label": "Dizionari de Lenghe Furlane, proverbio attestato",
+          "kind": "secondary"
+        }
+      ],
+      "editorialNote": "Forma moderna attestata integralmente; il riferimento al legno è generale, non stagionale.",
+      "publish": false
+    },
+    {
+      "id": "ost1876-acuile-no-pie-moscjis",
+      "reviewStatus": "language_reviewed",
+      "furNormalized": "La acuile no pie moscjis.",
+      "itFinal": "L'aquila non acchiappa mosche.",
+      "destination": "almanac",
+      "calendarRule": {
+        "type": "general",
+        "bucket": "wisdom",
+        "fallbackAllowed": true
+      },
+      "duplicateAudit": {
+        "status": "new_distinct"
+      },
+      "evidence": [
+        {
+          "label": "Facsimile Ostermann 1876, p. PDF 306",
+          "kind": "primary"
+        },
+        {
+          "label": "Dizionari de Lenghe Furlane, proverbio attestato",
+          "kind": "secondary"
+        }
+      ],
+      "editorialNote": "Forma moderna attestata integralmente nel repertorio lessicografico.",
+      "publish": false
+    },
+    {
+      "id": "ost1876-farine-no-buine-ostiis",
+      "reviewStatus": "language_reviewed",
+      "furNormalized": "Ogni farine no je buine par fâ ostiis.",
+      "itFinal": "Non ogni farina è buona per fare ostie.",
+      "destination": "almanac",
+      "calendarRule": {
+        "type": "general",
+        "bucket": "wisdom",
+        "fallbackAllowed": true
+      },
+      "duplicateAudit": {
+        "status": "new_distinct"
+      },
+      "evidence": [
+        {
+          "label": "Facsimile Ostermann 1876, p. PDF 306",
+          "kind": "primary"
+        },
+        {
+          "label": "Dizionari de Lenghe Furlane, proverbio attestato",
+          "kind": "secondary"
+        }
+      ],
+      "editorialNote": "Forma moderna attestata integralmente; il valore è figurato e non liturgico.",
+      "publish": false
+    },
+    {
+      "id": "ost1876-come-che-ven",
+      "reviewStatus": "language_reviewed",
+      "furNormalized": "Come che al ven, al ven.",
+      "itFinal": "Come viene, viene.",
+      "destination": "almanac",
+      "calendarRule": {
+        "type": "general",
+        "bucket": "wisdom",
+        "fallbackAllowed": true
+      },
+      "duplicateAudit": {
+        "status": "new_distinct"
+      },
+      "evidence": [
+        {
+          "label": "Facsimile Ostermann 1876, p. PDF 307",
+          "kind": "primary"
+        },
+        {
+          "label": "Dizionari de Lenghe Furlane, lessico e grafia normalizzati",
+          "kind": "secondary"
+        }
+      ],
+      "editorialNote": "La congiunzione storica cu è resa con che; il costrutto resta volutamente colloquiale.",
+      "publish": false
+    },
+    {
+      "id": "ost1876-dut-a-un-fin",
+      "reviewStatus": "language_reviewed",
+      "furNormalized": "Dut al à un fin.",
+      "itFinal": "Tutto ha una fine.",
+      "destination": "almanac",
+      "calendarRule": {
+        "type": "general",
+        "bucket": "wisdom",
+        "fallbackAllowed": true
+      },
+      "duplicateAudit": {
+        "status": "new_distinct"
+      },
+      "evidence": [
+        {
+          "label": "Facsimile Ostermann 1876, p. PDF 307",
+          "kind": "primary"
+        },
+        {
+          "label": "Dizionari de Lenghe Furlane, lessico e grafia normalizzati",
+          "kind": "secondary"
+        }
+      ],
+      "editorialNote": "Normalizzazione conservativa del pronome atono e della forma verbale; massima generale.",
+      "publish": false
+    }
+  ]
+}

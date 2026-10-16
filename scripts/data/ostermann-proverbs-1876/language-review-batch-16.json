@@ -1,0 +1,246 @@
+{
+  "schemaVersion": 1,
+  "batchId": "ostermann-1876-language-review-16",
+  "reviewedAt": "2026-08-02",
+  "sourceDecisionFiles": [
+    "review-decisions-batch-16.json"
+  ],
+  "purpose": "Sedicesima revisione linguistica ed editoriale dei candidati Ostermann 1876 verificati sul facsimile. Non pubblica contenuti nella UI.",
+  "policy": {
+    "publish": false,
+    "rule": "La normalizzazione FUR conserva il significato attestato nel facsimile e, dove disponibile, adotta la forma proverbiale registrata dal Dizionari de Lenghe Furlane. Le quindici massime sono generali e non ricevono date, feste o stagioni artificiali."
+  },
+  "summary": {
+    "records": 15,
+    "languageReviewed": 15,
+    "mergeExisting": 0,
+    "needsNativeReview": 0
+  },
+  "records": [
+    {
+      "id": "ost1876-conseiti-trops-scielg-miei",
+      "reviewStatus": "language_reviewed",
+      "furNormalized": "Conseiti cun trops e po sielç ce che al va miei.",
+      "itFinal": "Chiedi consiglio a molti e poi scegli ciò che va meglio.",
+      "destination": "almanac",
+      "calendarRule": { "type": "general", "bucket": "wisdom", "fallbackAllowed": true },
+      "duplicateAudit": { "status": "new_distinct" },
+      "evidence": [
+        { "label": "Facsimile Ostermann 1876, p. PDF 241", "kind": "primary" },
+        { "label": "Dizionari de Lenghe Furlane, proverbio registrato alla voce lâ", "kind": "secondary" }
+      ],
+      "editorialNote": "Adottata la forma normalizzata attestata integralmente dal dizionario.",
+      "publish": false
+    },
+    {
+      "id": "ost1876-fevele-doman",
+      "reviewStatus": "language_reviewed",
+      "furNormalized": "Ce che tu âs di fevelâ usgnot, fevele doman.",
+      "itFinal": "Ciò che devi dire stasera, dillo domani.",
+      "destination": "almanac",
+      "calendarRule": { "type": "general", "bucket": "wisdom", "fallbackAllowed": true },
+      "duplicateAudit": { "status": "new_distinct" },
+      "evidence": [
+        { "label": "Facsimile Ostermann 1876, p. PDF 241", "kind": "primary" },
+        { "label": "Dizionari de Lenghe Furlane, fevelâ, usgnot e doman", "kind": "secondary" }
+      ],
+      "editorialNote": "Normalizzati la congiunzione ce che, il verbo fevelâ e gli accenti, senza cambiare la struttura del detto.",
+      "publish": false
+    },
+    {
+      "id": "ost1876-pecjat-no-pecjador",
+      "reviewStatus": "language_reviewed",
+      "furNormalized": "Si dîs il pecjât ma no il pecjadôr.",
+      "itFinal": "Si dice il peccato, non il peccatore.",
+      "destination": "almanac",
+      "calendarRule": { "type": "general", "bucket": "wisdom", "fallbackAllowed": true },
+      "duplicateAudit": { "status": "new_distinct" },
+      "evidence": [
+        { "label": "Facsimile Ostermann 1876, p. PDF 241", "kind": "primary" },
+        { "label": "Dizionari de Lenghe Furlane, proverbio registrato alla voce dî", "kind": "secondary" }
+      ],
+      "editorialNote": "Adottata la forma normalizzata attestata integralmente dal dizionario.",
+      "publish": false
+    },
+    {
+      "id": "ost1876-vue-dis-ai-falat",
+      "reviewStatus": "language_reviewed",
+      "furNormalized": "Cui che vuê al dîs: o ai falât, al è plui savi di îr.",
+      "itFinal": "Chi oggi dice \"ho sbagliato\" è più saggio di ieri.",
+      "destination": "almanac",
+      "calendarRule": { "type": "general", "bucket": "wisdom", "fallbackAllowed": true },
+      "duplicateAudit": { "status": "new_distinct" },
+      "evidence": [
+        { "label": "Facsimile Ostermann 1876, p. PDF 241", "kind": "primary" },
+        { "label": "Dizionari de Lenghe Furlane, proverbio registrato alle voci dî e plui", "kind": "secondary" }
+      ],
+      "editorialNote": "Adottata la forma normalizzata attestata integralmente dal dizionario.",
+      "publish": false
+    },
+    {
+      "id": "ost1876-cjacaris-no-jemple-panze",
+      "reviewStatus": "language_reviewed",
+      "furNormalized": "Cu lis cjacaris no si jemple la panze.",
+      "itFinal": "Con le chiacchiere non si riempie la pancia.",
+      "destination": "almanac",
+      "calendarRule": { "type": "general", "bucket": "wisdom", "fallbackAllowed": true },
+      "duplicateAudit": { "status": "new_distinct" },
+      "evidence": [
+        { "label": "Facsimile Ostermann 1876, p. PDF 242", "kind": "primary" },
+        { "label": "Dizionari de Lenghe Furlane, proverbio registrato alla voce cjacare", "kind": "secondary" }
+      ],
+      "editorialNote": "Adottata la forma normalizzata attestata integralmente dal dizionario.",
+      "publish": false
+    },
+    {
+      "id": "ost1876-no-di-tac-fin-sac",
+      "reviewStatus": "language_reviewed",
+      "furNormalized": "No stâ mai dî tac fin che nol è tal sac.",
+      "itFinal": "Non dire gatto finché non è nel sacco.",
+      "destination": "almanac",
+      "calendarRule": { "type": "general", "bucket": "wisdom", "fallbackAllowed": true },
+      "duplicateAudit": { "status": "new_distinct" },
+      "evidence": [
+        { "label": "Facsimile Ostermann 1876, p. PDF 242", "kind": "primary" },
+        { "label": "Dizionari de Lenghe Furlane, proverbio registrato alla voce dî", "kind": "secondary" }
+      ],
+      "editorialNote": "Adottata la forma normalizzata attestata integralmente dal dizionario.",
+      "publish": false
+    },
+    {
+      "id": "ost1876-predi-fale-altar",
+      "reviewStatus": "language_reviewed",
+      "furNormalized": "Al fale ancje il predi sul altâr.",
+      "itFinal": "Sbaglia anche il prete sull'altare.",
+      "destination": "almanac",
+      "calendarRule": { "type": "general", "bucket": "wisdom", "fallbackAllowed": true },
+      "duplicateAudit": { "status": "new_distinct" },
+      "evidence": [
+        { "label": "Facsimile Ostermann 1876, p. PDF 243", "kind": "primary" },
+        { "label": "Dizionari de Lenghe Furlane, falâ, predi e altâr", "kind": "secondary" }
+      ],
+      "editorialNote": "Normalizzati l'accento di altâr e la grafia; mantenuta la variante lineare scelta dal facsimile.",
+      "publish": false
+    },
+    {
+      "id": "ost1876-promet-altris-paie-se",
+      "reviewStatus": "language_reviewed",
+      "furNormalized": "Cui che al promet pai altris al paie par se.",
+      "itFinal": "Chi promette per gli altri paga per sé.",
+      "destination": "almanac",
+      "calendarRule": { "type": "general", "bucket": "wisdom", "fallbackAllowed": true },
+      "duplicateAudit": { "status": "new_distinct" },
+      "evidence": [
+        { "label": "Facsimile Ostermann 1876, p. PDF 243", "kind": "primary" },
+        { "label": "Dizionari de Lenghe Furlane, proverbio registrato alla voce altri", "kind": "secondary" }
+      ],
+      "editorialNote": "Adottata la forma normalizzata attestata integralmente dal dizionario.",
+      "publish": false
+    },
+    {
+      "id": "ost1876-scove-denant-puarte",
+      "reviewStatus": "language_reviewed",
+      "furNormalized": "Scove denant de tô puarte.",
+      "itFinal": "Spazza davanti alla tua porta.",
+      "destination": "almanac",
+      "calendarRule": { "type": "general", "bucket": "wisdom", "fallbackAllowed": true },
+      "duplicateAudit": { "status": "new_distinct" },
+      "evidence": [
+        { "label": "Facsimile Ostermann 1876, p. PDF 244", "kind": "primary" },
+        { "label": "Dizionari de Lenghe Furlane, proverbio registrato alla voce denant", "kind": "secondary" }
+      ],
+      "editorialNote": "Adottata la forma normalizzata attestata integralmente dal dizionario.",
+      "publish": false
+    },
+    {
+      "id": "ost1876-lasse-disin-fas-ben",
+      "reviewStatus": "language_reviewed",
+      "furNormalized": "Lasse che a disin ce che a vuelin e fâs ce che al va ben.",
+      "itFinal": "Lascia che dicano ciò che vogliono e fa' ciò che è giusto.",
+      "destination": "almanac",
+      "calendarRule": { "type": "general", "bucket": "wisdom", "fallbackAllowed": true },
+      "duplicateAudit": { "status": "new_distinct" },
+      "evidence": [
+        { "label": "Facsimile Ostermann 1876, p. PDF 246", "kind": "primary" },
+        { "label": "Dizionari de Lenghe Furlane, proverbio registrato alla voce dî", "kind": "secondary" }
+      ],
+      "editorialNote": "Adottata la forma normalizzata attestata integralmente dal dizionario.",
+      "publish": false
+    },
+    {
+      "id": "ost1876-maraveis-tre-dis",
+      "reviewStatus": "language_reviewed",
+      "furNormalized": "Dutis lis maraveis a durin trê dîs.",
+      "itFinal": "Tutte le meraviglie durano tre giorni.",
+      "destination": "almanac",
+      "calendarRule": { "type": "general", "bucket": "wisdom", "fallbackAllowed": true },
+      "duplicateAudit": { "status": "new_distinct" },
+      "evidence": [
+        { "label": "Facsimile Ostermann 1876, p. PDF 247", "kind": "primary" },
+        { "label": "Dizionari de Lenghe Furlane, maravee, durâ e trê dîs", "kind": "secondary" }
+      ],
+      "editorialNote": "Aggiunto il pronome soggetto a e normalizzati il plurale maraveis e gli accenti.",
+      "publish": false
+    },
+    {
+      "id": "ost1876-amis-public-corez-segret",
+      "reviewStatus": "language_reviewed",
+      "furNormalized": "Ten sù i amîs in public, coreziju in segret.",
+      "itFinal": "Sostieni gli amici in pubblico, correggili in privato.",
+      "destination": "almanac",
+      "calendarRule": { "type": "general", "bucket": "wisdom", "fallbackAllowed": true },
+      "duplicateAudit": { "status": "new_distinct" },
+      "evidence": [
+        { "label": "Facsimile Ostermann 1876, p. PDF 248", "kind": "primary" },
+        { "label": "Dizionari de Lenghe Furlane, tignî sù, amì, public, corezi e segret", "kind": "secondary" }
+      ],
+      "editorialNote": "Normalizzati il plurale amîs e il pronome oggetto di coreziju; conservata la struttura parallela.",
+      "publish": false
+    },
+    {
+      "id": "ost1876-no-di-ce-no-sa-ciert",
+      "reviewStatus": "language_reviewed",
+      "furNormalized": "No bisugne mai dî ce che no si sa di ciert.",
+      "itFinal": "Non dire ciò che non sai con certezza.",
+      "destination": "almanac",
+      "calendarRule": { "type": "general", "bucket": "wisdom", "fallbackAllowed": true },
+      "duplicateAudit": { "status": "new_distinct" },
+      "evidence": [
+        { "label": "Facsimile Ostermann 1876, p. PDF 248", "kind": "primary" },
+        { "label": "Dizionari de Lenghe Furlane, proverbio registrato alle voci bisugnâ e dî", "kind": "secondary" }
+      ],
+      "editorialNote": "Adottata la forma normalizzata attestata integralmente dal dizionario.",
+      "publish": false
+    },
+    {
+      "id": "ost1876-cjacaris-lungjis-gnot-curte",
+      "reviewStatus": "language_reviewed",
+      "furNormalized": "Lis cjacaris lungjis a fasin la gnot curte.",
+      "itFinal": "Le lunghe chiacchiere accorciano la notte.",
+      "destination": "almanac",
+      "calendarRule": { "type": "general", "bucket": "wisdom", "fallbackAllowed": true },
+      "duplicateAudit": { "status": "new_distinct" },
+      "evidence": [
+        { "label": "Facsimile Ostermann 1876, p. PDF 249", "kind": "primary" },
+        { "label": "Dizionari de Lenghe Furlane, proverbio registrato alla voce cjacare", "kind": "secondary" }
+      ],
+      "editorialNote": "Adottata la forma normalizzata attestata integralmente dal dizionario.",
+      "publish": false
+    },
+    {
+      "id": "ost1876-vizi-vistit-virtut",
+      "reviewStatus": "language_reviewed",
+      "furNormalized": "Nuje nol fâs tant mâl come il vizi vistît di virtût.",
+      "itFinal": "Nulla fa tanto male quanto il vizio vestito da virtù.",
+      "destination": "almanac",
+      "calendarRule": { "type": "general", "bucket": "wisdom", "fallbackAllowed": true },
+      "duplicateAudit": { "status": "new_distinct" },
+      "evidence": [
+        { "label": "Facsimile Ostermann 1876, p. PDF 250", "kind": "primary" },
+        { "label": "Dizionari de Lenghe Furlane, nuie, fâ, mâl, vizi e virtût", "kind": "secondary" }
+      ],
+      "editorialNote": "Aggiunto il pronome negativo nol e normalizzati gli accenti di fâs, mâl, vistît e virtût.",
+      "publish": false
+    }
+  ]
+}

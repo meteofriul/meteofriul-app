@@ -1,0 +1,374 @@
+{
+  "schemaVersion": 1,
+  "purpose": "Matrice batch dei 16 candidati forti Accadde oggi FVG. Non letta dalla UI.",
+  "sourceInput": {
+    "rankedCandidates": "backend_dryrun_staging/exports/discover_daily_history_ranked_candidates.json",
+    "sourceDateFormat": "DD-MM",
+    "appDateFormat": "MM-DD"
+  },
+  "policy": {
+    "reviewInBatch": true,
+    "doNotPublishFromThisFile": true,
+    "mainMemoryOnlyWhenReadable": true,
+    "localSecondaryAllowed": true,
+    "notes": [
+      "Questo file serve a decidere il lavoro editoriale in blocco.",
+      "I record ready_for_copy non sono ancora pubblicati: devono entrare in localMemory.json solo dopo FUR e review.",
+      "I duplicati tematici restano in hold finche non scegliamo quale variante raccontare."
+    ]
+  },
+  "records": [
+    {
+      "sourceCandidateId": "wikidata-fvg-01-01-Q20182522",
+      "sourceDayKey": "01-01",
+      "dateAnchor": "01-01",
+      "title": "Patriarcato di Grado",
+      "year": 570,
+      "place": "Grado",
+      "province": "GO",
+      "score": 56,
+      "batchStatus": "archive_candidate",
+      "surface": "archive_or_context",
+      "reason": "Tema importante ma troppo istituzionale/strutturale per una memoria giornaliera immediata."
+    },
+    {
+      "sourceCandidateId": "wikidata-fvg-01-04-Q11794840",
+      "sourceDayKey": "01-04",
+      "dateAnchor": "04-01",
+      "title": "Assedio di Aquileia del 238",
+      "year": 238,
+      "place": "Aquileia",
+      "province": "UD",
+      "score": 64,
+      "batchStatus": "source_lead_found",
+      "surface": "main_memory_candidate",
+      "sourceLeads": [
+        {
+          "label": "Wikipedia - Assedio di Aquileia (238)",
+          "url": "https://it.wikipedia.org/wiki/Assedio_di_Aquileia_(238)",
+          "use": "cross_check_only"
+        },
+        {
+          "label": "Erodiano, Storia dell'impero dopo Marco Aurelio, VIII",
+          "use": "primary_source_candidate"
+        },
+        {
+          "label": "Zosimo, Storia nuova, I",
+          "use": "primary_source_candidate"
+        }
+      ],
+      "reason": "Candidato forte: serve fonte storica solida e copy breve."
+    },
+    {
+      "sourceCandidateId": "wikidata-fvg-03-11-Q3938038",
+      "sourceDayKey": "03-11",
+      "dateAnchor": "11-03",
+      "title": "Rivolta di Trieste del 1953",
+      "year": 1953,
+      "place": "Trieste",
+      "province": "TS",
+      "score": 64,
+      "batchStatus": "source_lead_found",
+      "surface": "main_memory_candidate",
+      "sourceLeads": [
+        {
+          "label": "Wikipedia - Rivolta di Trieste",
+          "url": "https://it.wikipedia.org/wiki/Rivolta_di_Trieste",
+          "use": "cross_check_only"
+        },
+        {
+          "label": "Michele Pigliucci, Gli ultimi martiri del Risorgimento",
+          "use": "bibliography_candidate"
+        },
+        {
+          "label": "Paolo Sardos Albertini e Piero Delbello, La Lega Nazionale e i ragazzi del '53",
+          "use": "bibliography_candidate"
+        }
+      ],
+      "reason": "Candidato forte ma delicato: serve fonte storica/istituzionale e tono sobrio."
+    },
+    {
+      "sourceCandidateId": "wikidata-fvg-06-08-Q769906",
+      "sourceDayKey": "06-08",
+      "dateAnchor": "08-06",
+      "title": "Sesta battaglia dell'Isonzo",
+      "year": 1916,
+      "place": "Gorizia",
+      "province": "GO",
+      "score": 64,
+      "batchStatus": "source_lead_found",
+      "surface": "main_memory_candidate",
+      "sourceLeads": [
+        {
+          "label": "Wikipedia - Sesta battaglia dell'Isonzo",
+          "url": "https://it.wikipedia.org/wiki/Sesta_battaglia_dell%27Isonzo",
+          "use": "cross_check_only"
+        },
+        {
+          "label": "Gianni Pieropan, Storia della grande guerra sul fronte italiano",
+          "use": "bibliography_candidate"
+        },
+        {
+          "label": "Antonio Sema, La Grande Guerra sul fronte dell'Isonzo",
+          "use": "bibliography_candidate"
+        }
+      ],
+      "reason": "Forte per memoria storica regionale; da trattare senza enfasi bellica."
+    },
+    {
+      "sourceCandidateId": "wikidata-fvg-09-10-Q3709251",
+      "sourceDayKey": "09-10",
+      "dateAnchor": "10-09",
+      "title": "Disastro del Vajont",
+      "year": 1963,
+      "place": "Vajont",
+      "province": "PN",
+      "score": 62,
+      "batchStatus": "ready_for_copy",
+      "surface": "main_memory_candidate",
+      "linkedCandidateId": "daily-history-candidate-1009-vajont-1963",
+      "reason": "Fonte culturale ufficiale comunale trovata; manca FUR/review e promozione controllata."
+    },
+    {
+      "sourceCandidateId": "wikidata-fvg-12-10-Q15045856",
+      "sourceDayKey": "12-10",
+      "dateAnchor": "10-12",
+      "title": "Assedio di Trieste del 1813",
+      "year": 1813,
+      "place": "Trieste",
+      "province": "TS",
+      "score": 64,
+      "batchStatus": "source_lead_found",
+      "surface": "main_memory_candidate",
+      "sourceLeads": [
+        {
+          "label": "Wikipedia - Siege of Trieste (1813)",
+          "url": "https://en.wikipedia.org/wiki/Siege_of_Trieste_(1813)",
+          "use": "cross_check_only"
+        },
+        {
+          "label": "Aldo Mattei, La campagna tra Francesi e Austriaci nella Venezia Giulia ed a Trieste nel 1813",
+          "use": "bibliography_candidate"
+        },
+        {
+          "label": "George F. Nafziger, Marco Gioannini, The Defense of the Napoleonic Kingdom of Northern Italy, 1813-1814",
+          "use": "bibliography_candidate"
+        }
+      ],
+      "reason": "Buon candidato storico, da verificare con fonte non solo Wikidata."
+    },
+    {
+      "sourceCandidateId": "wikidata-fvg-13-03-Q3014934",
+      "sourceDayKey": "13-03",
+      "dateAnchor": "03-13",
+      "title": "Daniele Dolfin",
+      "year": 1762,
+      "place": "Udine",
+      "province": "UD",
+      "score": 56,
+      "batchStatus": "local_secondary_candidate",
+      "surface": "secondary_or_archive",
+      "reason": "Rilevante per Udine/storia religiosa, ma non prima scelta come memoria principale."
+    },
+    {
+      "sourceCandidateId": "wikidata-fvg-15-04-Q508387",
+      "sourceDayKey": "15-04",
+      "dateAnchor": "04-15",
+      "title": "Battaglia di Sacile",
+      "year": 1809,
+      "place": "Sacile",
+      "province": "PN",
+      "score": 64,
+      "batchStatus": "source_lead_found",
+      "surface": "main_memory_candidate",
+      "sourceLeads": [
+        {
+          "label": "Wikipedia - Battaglia di Sacile",
+          "url": "https://it.wikipedia.org/wiki/Battaglia_di_Sacile",
+          "use": "cross_check_only"
+        },
+        {
+          "label": "Alessandro Fadelli, Nell'anno della battaglia ai Camolli",
+          "use": "bibliography_candidate"
+        },
+        {
+          "label": "Elio Migliorini, Sacile",
+          "use": "bibliography_candidate"
+        }
+      ],
+      "reason": "Buon candidato pordenonese; serve fonte storica e copy leggibile."
+    },
+    {
+      "sourceCandidateId": "wikidata-fvg-15-05-Q4872513",
+      "sourceDayKey": "15-05",
+      "dateAnchor": "05-15",
+      "title": "Battaglia di Tarvisio del 1809",
+      "year": 1809,
+      "place": "Tarvisio",
+      "province": "UD",
+      "score": 56,
+      "batchStatus": "source_lead_found",
+      "surface": "main_memory_candidate",
+      "sourceLeads": [
+        {
+          "label": "Wikipedia - Battle of Tarvis (1809)",
+          "url": "https://en.wikipedia.org/wiki/Battle_of_Tarvis_(1809)",
+          "use": "cross_check_only"
+        },
+        {
+          "label": "Robert M. Epstein, Napoleon's Last Victory and the Emergence of Modern War",
+          "use": "bibliography_candidate"
+        },
+        {
+          "label": "Digby Smith, The Napoleonic Wars Data Book",
+          "use": "bibliography_candidate"
+        }
+      ],
+      "reason": "Candidato montano utile; scegliere con cautela rispetto all'altro Tarvisio."
+    },
+    {
+      "sourceCandidateId": "wikidata-fvg-16-03-Q2984910",
+      "sourceDayKey": "16-03",
+      "dateAnchor": "03-16",
+      "title": "Battaglia di Valvasone",
+      "year": 1797,
+      "place": "Tagliamento",
+      "province": "PN",
+      "score": 56,
+      "batchStatus": "source_lead_found",
+      "surface": "main_memory_candidate",
+      "sourceLeads": [
+        {
+          "label": "Wikipedia - Battaglia di Valvasone (1797)",
+          "url": "https://it.wikipedia.org/wiki/Battaglia_di_Valvasone_(1797)",
+          "use": "cross_check_only"
+        },
+        {
+          "label": "Comune di Sedegliano - la storia",
+          "use": "local_source_lead"
+        }
+      ],
+      "reason": "Candidato territoriale, ma serve fonte e racconto sintetico non militare."
+    },
+    {
+      "sourceCandidateId": "wikidata-fvg-21-03-Q4872512",
+      "sourceDayKey": "21-03",
+      "dateAnchor": "03-21",
+      "title": "Battaglia di Tarvisio del 1797",
+      "year": 1797,
+      "place": "Tarvisio",
+      "province": "UD",
+      "score": 56,
+      "batchStatus": "hold_duplicate_theme",
+      "surface": "hold",
+      "reason": "Secondo candidato Tarvisio: sospeso finche non scegliamo quale episodio raccontare."
+    },
+    {
+      "sourceCandidateId": "wikidata-fvg-21-10-Q30005102",
+      "sourceDayKey": "21-10",
+      "dateAnchor": "10-21",
+      "title": "Giovanni di Moravia",
+      "year": 1394,
+      "place": "Udine",
+      "province": "UD",
+      "score": 56,
+      "batchStatus": "local_secondary_candidate",
+      "surface": "secondary_or_archive",
+      "reason": "Possibile nota locale udinese, non memoria principale senza contesto migliore."
+    },
+    {
+      "sourceCandidateId": "wikidata-fvg-26-04-Q3625507",
+      "sourceDayKey": "26-04",
+      "dateAnchor": "04-26",
+      "title": "Assedio di Osoppo",
+      "year": 1848,
+      "place": "Osoppo",
+      "province": "UD",
+      "score": 56,
+      "batchStatus": "ready_for_copy",
+      "surface": "main_memory_candidate",
+      "sourceLeads": [
+        {
+          "label": "Wikipedia - Assedio di Osoppo",
+          "url": "https://it.wikipedia.org/wiki/Assedio_di_Osoppo",
+          "use": "cross_check_only"
+        },
+        {
+          "label": "Daniela Marzinotto, La rivoluzione a Venezia. Diario degli avvenimenti Marzo 1848-agosto 1849",
+          "use": "bibliography_candidate"
+        },
+        {
+          "label": "Fulvio Salimbeni, La fortezza che fermo' le giubbe bianche",
+          "use": "bibliography_candidate"
+        }
+      ],
+      "reason": "Fonte storica locale Pagine Friulane trovata; data 26 aprile confermata come avvio dell'assedio tramite cross-check. Manca copy FUR/review e promozione controllata.",
+      "linkedCandidateId": "daily-history-candidate-0426-assedio-osoppo-1848"
+    },
+    {
+      "sourceCandidateId": "wikidata-fvg-29-04-Q28670055",
+      "sourceDayKey": "29-04",
+      "dateAnchor": "04-29",
+      "title": "Battaglia di Opicina",
+      "year": 1945,
+      "place": "Opicina",
+      "province": "TS",
+      "score": 56,
+      "batchStatus": "source_lead_found",
+      "surface": "main_memory_candidate",
+      "sourceLeads": [
+        {
+          "label": "Wikipedia - Battaglia di Opicina",
+          "url": "https://it.wikipedia.org/wiki/Battaglia_di_Opicina",
+          "use": "cross_check_only"
+        },
+        {
+          "label": "Fonti Resistenza/Venezia Giulia da verificare prima della copy",
+          "use": "source_search_needed"
+        }
+      ],
+      "reason": "Tema potenzialmente importante; serve controllo fonte e sensibilita storica."
+    },
+    {
+      "sourceCandidateId": "wikidata-fvg-29-07-Q21235600",
+      "sourceDayKey": "29-07",
+      "dateAnchor": "07-29",
+      "title": "Assedio di Aquileia del 388",
+      "year": 388,
+      "place": "Aquileia",
+      "province": "UD",
+      "score": 64,
+      "batchStatus": "hold_duplicate_theme",
+      "surface": "hold",
+      "reason": "Secondo candidato Aquileia: sospeso finche non scegliamo quale assedio usare come memoria principale."
+    },
+    {
+      "sourceCandidateId": "wikidata-fvg-29-10-Q3636582",
+      "sourceDayKey": "29-10",
+      "dateAnchor": "10-29",
+      "title": "Battaglia di Pozzuolo del Friuli",
+      "year": 1917,
+      "place": "Pozzuolo del Friuli",
+      "province": "UD",
+      "score": 64,
+      "batchStatus": "source_lead_found",
+      "surface": "main_memory_candidate",
+      "sourceLeads": [
+        {
+          "label": "Wikipedia - Battaglia di Pozzuolo del Friuli",
+          "url": "https://it.wikipedia.org/wiki/Battaglia_di_Pozzuolo_del_Friuli",
+          "use": "cross_check_only"
+        },
+        {
+          "label": "Esercito Italiano - La battaglia di Pozzuolo del Friuli",
+          "use": "institutional_source_lead"
+        },
+        {
+          "label": "Quirinale - medaglie al valore collegate alla battaglia",
+          "use": "institutional_source_lead"
+        }
+      ],
+      "reason": "Candidato locale forte; serve fonte autorevole e tono commemorativo sobrio."
+    }
+  ]
+}

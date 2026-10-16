@@ -1,0 +1,13 @@
+**
+!experiments/
+!experiments/weather_autonomy/
+!experiments/weather_autonomy/*.py
+!experiments/weather_autonomy/Dockerfile.national-pilot
+!experiments/weather_autonomy/local_pipeline/
+!experiments/weather_autonomy/local_pipeline/*.py
+!experiments/weather_autonomy/national-assets/
+!experiments/weather_autonomy/national-assets/forecast-points.json
+!backend/
+!backend/app/
+!backend/app/data/
+!backend/app/data/italy_municipalities_2026.json

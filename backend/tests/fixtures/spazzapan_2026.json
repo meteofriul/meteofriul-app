@@ -1,0 +1,1189 @@
+{
+  "surfaces": {
+    "events": {
+      "articles": [
+        {
+          "id": 618890,
+          "title": "Nuovo paesaggio. Incontro con Damiano Gullì dalla triennale di Milano",
+          "full_url": "/eventi-collaterali-ottobre-174329",
+          "start_event_date": "2026-10-14 00:00:00",
+          "end_event_date": "2026-10-14 00:00:00",
+          "published_date": "2026-10-02 10:31:00"
+        },
+        {
+          "id": 285613,
+          "title": "Mario Palli / Studio Visit",
+          "full_url": "/giornata-del-contemporaneo-2026-75485",
+          "start_event_date": "2026-10-10 00:00:00",
+          "end_event_date": "2026-10-10 00:00:00",
+          "published_date": "2026-10-02 10:31:00"
+        },
+        {
+          "id": 616198,
+          "title": "FVG70.03 - Sergio Pausig",
+          "full_url": "/donazione-sergio-pausig-172996",
+          "start_event_date": "2026-09-11 00:00:00",
+          "end_event_date": "2026-10-11 00:00:00",
+          "published_date": "2026-09-03 10:31:00"
+        }
+      ]
+    },
+    "event_category": {
+      "id": 14038,
+      "articles": [
+        {
+          "id": 84819,
+          "title": "Mario Palli / Studio Visit",
+          "full_url": "/giornata-del-contemporaneo-2026-75485",
+          "published_date": "2026-10-02T10:31:00",
+          "modified": "2026-10-05T13:44:44",
+          "start_event_date_formatted": "2026-10-10T00:00:00",
+          "end_event_date_formatted": "2026-10-10T00:00:00",
+          "published": true,
+          "intro": "Sabato 10 ottobre, ore 11.00 -16.30 - 18.00\nGradisca d'Isonzo"
+        },
+        {
+          "id": 233611,
+          "title": "Nuovo paesaggio. Incontro con Damiano Gullì dalla triennale di Milano",
+          "full_url": "/eventi-collaterali-ottobre-174329",
+          "published_date": "2026-10-02T10:31:00",
+          "modified": "2026-10-09T11:52:48",
+          "start_event_date_formatted": "2026-10-14T00:00:00",
+          "end_event_date_formatted": "2026-10-14T00:00:00",
+          "published": true,
+          "intro": "Mercoledì 14 ottobre, ore 18.00,\nVia Marziano Ciotti 51"
+        }
+      ]
+    },
+    "current_exhibitions": {
+      "id": 16101,
+      "articles": [
+        {
+          "id": 232607,
+          "title": "FVG70.03 - Sergio Pausig",
+          "full_url": "/fvg7003-sergio-pausig-173388",
+          "published_date": "2026-09-10T10:00:00",
+          "modified": "2026-10-05T10:30:25",
+          "start_event_date_formatted": "2026-06-27T00:00:00",
+          "end_event_date_formatted": "2027-01-15T00:00:00",
+          "published": true
+        },
+        {
+          "id": 232202,
+          "title": "FVG70.02 – Nuovi modelli di ricerca",
+          "full_url": "/fvg7002-nuovi-modelli-di-ricerca-173006",
+          "published_date": "2026-07-23T10:00:00",
+          "modified": "2026-09-03T13:55:17",
+          "start_event_date_formatted": "2026-06-27T00:00:00",
+          "end_event_date_formatted": "2027-01-15T00:00:00",
+          "published": true
+        },
+        {
+          "id": 229043,
+          "title": "Progetto Together/Insieme",
+          "full_url": "/progetto-togetherinsieme-170074",
+          "published_date": "2026-06-19T10:00:00",
+          "modified": "2026-09-03T12:35:34",
+          "start_event_date_formatted": null,
+          "end_event_date_formatted": null,
+          "published": true
+        },
+        {
+          "id": 229146,
+          "title": "Progetto FVG Settanta. Arti visive in Friuli Venezia Giulia negli anni ’70",
+          "full_url": "/fvg-settanta-170166",
+          "published_date": "2026-06-19T10:00:00",
+          "modified": "2026-09-15T10:21:07",
+          "start_event_date_formatted": null,
+          "end_event_date_formatted": null,
+          "published": true
+        }
+      ]
+    },
+    "exhibitions": {
+      "id": 13346,
+      "articles": [
+        {
+          "id": 232607,
+          "title": "FVG70.03 - Sergio Pausig",
+          "full_url": "/fvg7003-sergio-pausig-173388",
+          "published_date": "2026-09-10T10:00:00",
+          "modified": "2026-10-05T10:30:25",
+          "start_event_date_formatted": "2026-06-27T00:00:00",
+          "end_event_date_formatted": "2027-01-15T00:00:00",
+          "published": true
+        },
+        {
+          "id": 232202,
+          "title": "FVG70.02 – Nuovi modelli di ricerca",
+          "full_url": "/fvg7002-nuovi-modelli-di-ricerca-173006",
+          "published_date": "2026-07-23T10:00:00",
+          "modified": "2026-09-03T13:55:17",
+          "start_event_date_formatted": "2026-06-27T00:00:00",
+          "end_event_date_formatted": "2027-01-15T00:00:00",
+          "published": true
+        },
+        {
+          "id": 229043,
+          "title": "Progetto Together/Insieme",
+          "full_url": "/progetto-togetherinsieme-170074",
+          "published_date": "2026-06-19T10:00:00",
+          "modified": "2026-09-03T12:35:34",
+          "start_event_date_formatted": null,
+          "end_event_date_formatted": null,
+          "published": true
+        },
+        {
+          "id": 229146,
+          "title": "Progetto FVG Settanta. Arti visive in Friuli Venezia Giulia negli anni ’70",
+          "full_url": "/fvg-settanta-170166",
+          "published_date": "2026-06-19T10:00:00",
+          "modified": "2026-09-15T10:21:07",
+          "start_event_date_formatted": null,
+          "end_event_date_formatted": null,
+          "published": true
+        },
+        {
+          "id": 134335,
+          "title": "\"Confini. Meje. Borders\"",
+          "full_url": "/confini-108406",
+          "published_date": "2024-02-27T12:48:09",
+          "modified": "2024-03-05T10:23:51",
+          "start_event_date_formatted": null,
+          "end_event_date_formatted": null,
+          "published": true
+        },
+        {
+          "id": 121574,
+          "title": "Confini. Medje. Borders. Una mostra di Alessandra Lazzaris",
+          "full_url": "/confini-medje-borders-una-mostra-di-alessandra-lazzaris-97239",
+          "published_date": "2024-02-27T12:46:47",
+          "modified": "2025-11-04T11:46:39",
+          "start_event_date_formatted": null,
+          "end_event_date_formatted": null,
+          "published": true
+        },
+        {
+          "id": 115755,
+          "title": "\"Confini. Medje. Borders\" - Alessandra Lazzaris",
+          "full_url": "/confini-medje-borders-92441",
+          "published_date": "2024-02-27T12:29:14",
+          "modified": "2024-02-27T12:28:15",
+          "start_event_date_formatted": null,
+          "end_event_date_formatted": null,
+          "published": true
+        }
+      ]
+    },
+    "news": {
+      "id": 15922,
+      "articles": [
+        {
+          "id": 84819,
+          "title": "Mario Palli / Studio Visit",
+          "full_url": "/giornata-del-contemporaneo-2026-75485",
+          "published_date": "2026-10-02T10:31:00",
+          "modified": "2026-10-05T13:44:44",
+          "start_event_date_formatted": "2026-10-10T00:00:00",
+          "end_event_date_formatted": "2026-10-10T00:00:00",
+          "published": true
+        },
+        {
+          "id": 233611,
+          "title": "Nuovo paesaggio. Incontro con Damiano Gullì dalla triennale di Milano",
+          "full_url": "/eventi-collaterali-ottobre-174329",
+          "published_date": "2026-10-02T10:31:00",
+          "modified": "2026-10-09T11:52:48",
+          "start_event_date_formatted": "2026-10-14T00:00:00",
+          "end_event_date_formatted": "2026-10-14T00:00:00",
+          "published": true
+        },
+        {
+          "id": 232171,
+          "title": "Eventi collaterali di ottobre",
+          "full_url": "/fvg7002-eventi-collaterali-di-ottobre-172985",
+          "published_date": "2026-10-02T08:59:00",
+          "modified": "2026-10-02T12:03:50",
+          "start_event_date_formatted": "2026-07-23T00:00:00",
+          "end_event_date_formatted": "2026-11-29T00:00:00",
+          "published": true
+        },
+        {
+          "id": 233615,
+          "title": "Mario Palli / Studio Visit",
+          "full_url": "/progetto-fvg70-174332",
+          "published_date": "2026-10-01T08:10:00",
+          "modified": "2026-10-05T10:44:36",
+          "start_event_date_formatted": null,
+          "end_event_date_formatted": null,
+          "published": true
+        },
+        {
+          "id": 233446,
+          "title": "Conferenza \"Le eccellenze creative del Friuli Venezia Giulia negli anni Settanta\"",
+          "full_url": "/progetto-fvg70-174170",
+          "published_date": "2026-09-30T08:10:00",
+          "modified": "2026-09-30T14:39:19",
+          "start_event_date_formatted": null,
+          "end_event_date_formatted": null,
+          "published": true
+        },
+        {
+          "id": 232609,
+          "title": "Galleria Sagittaria/Mercati culturali di Pordenone",
+          "full_url": "/progetto-fvg70-173389",
+          "published_date": "2026-09-16T08:10:00",
+          "modified": "2026-09-30T14:40:15",
+          "start_event_date_formatted": null,
+          "end_event_date_formatted": null,
+          "published": true
+        },
+        {
+          "id": 232598,
+          "title": "Scultura pubblica in FVG negli anni Settanta",
+          "full_url": "/fvg7002-eventi-collaterali-di-settembre-173382",
+          "published_date": "2026-09-14T08:10:00",
+          "modified": "2026-09-21T09:30:32",
+          "start_event_date_formatted": null,
+          "end_event_date_formatted": null,
+          "published": true
+        },
+        {
+          "id": 232558,
+          "title": "Plurima. Una nuova idea di galleria negli anni Settanta",
+          "full_url": "/progetto-fvg70-173344",
+          "published_date": "2026-09-12T08:10:00",
+          "modified": "2026-09-14T13:59:32",
+          "start_event_date_formatted": null,
+          "end_event_date_formatted": null,
+          "published": true
+        },
+        {
+          "id": 232257,
+          "title": "FVG70.03 - Sergio Pausig",
+          "full_url": "/progetto-fvg70-173057",
+          "published_date": "2026-09-04T08:10:00",
+          "modified": "2026-09-07T16:15:16",
+          "start_event_date_formatted": null,
+          "end_event_date_formatted": null,
+          "published": true
+        },
+        {
+          "id": 233567,
+          "title": "Eventi collaterali di settembre",
+          "full_url": "/fvg7002-eventi-collaterali-di-settembre-174288",
+          "published_date": "2026-09-01T08:59:00",
+          "modified": "2026-10-02T12:02:02",
+          "start_event_date_formatted": "2026-07-23T00:00:00",
+          "end_event_date_formatted": "2026-11-29T00:00:00",
+          "published": true
+        },
+        {
+          "id": 232059,
+          "title": "Mostra FVG70.02. Nuovi modelli di ricerca",
+          "full_url": "/progetto-fvg70-172891",
+          "published_date": "2026-09-01T08:10:00",
+          "modified": "2026-09-01T11:53:02",
+          "start_event_date_formatted": null,
+          "end_event_date_formatted": null,
+          "published": true
+        },
+        {
+          "id": 232093,
+          "title": "Eventi collaterali a FVG70",
+          "full_url": "/progetto-fvg70-172921",
+          "published_date": "2026-09-01T08:10:00",
+          "modified": "2026-09-01T14:50:47",
+          "start_event_date_formatted": null,
+          "end_event_date_formatted": null,
+          "published": true
+        },
+        {
+          "id": 232062,
+          "title": "Domenica al museo",
+          "full_url": "/domenica-al-museo-172892",
+          "published_date": "2026-08-28T08:10:00",
+          "modified": "2026-09-01T11:57:33",
+          "start_event_date_formatted": null,
+          "end_event_date_formatted": null,
+          "published": true
+        },
+        {
+          "id": 231926,
+          "title": "Didattica Erpac FVG 2026/27",
+          "full_url": "/didattica-2026-27-172773",
+          "published_date": "2026-08-27T08:10:00",
+          "modified": "2026-08-27T14:06:30",
+          "start_event_date_formatted": null,
+          "end_event_date_formatted": null,
+          "published": true
+        },
+        {
+          "id": 230747,
+          "title": "Domenica al museo",
+          "full_url": "/domenica-al-museo-171663",
+          "published_date": "2026-07-29T08:10:00",
+          "modified": "2026-07-29T09:14:58",
+          "start_event_date_formatted": null,
+          "end_event_date_formatted": null,
+          "published": true
+        },
+        {
+          "id": 230286,
+          "title": "Mostra FVG70.02. Nuovi modelli di ricerca",
+          "full_url": "/progetto-fvg70-171205",
+          "published_date": "2026-07-17T08:10:00",
+          "modified": "2026-07-17T11:20:19",
+          "start_event_date_formatted": null,
+          "end_event_date_formatted": null,
+          "published": true
+        },
+        {
+          "id": 229566,
+          "title": "Domenica al museo",
+          "full_url": "/domenica-al-museo-170544",
+          "published_date": "2026-07-01T08:10:00",
+          "modified": "2026-07-01T09:59:55",
+          "start_event_date_formatted": null,
+          "end_event_date_formatted": null,
+          "published": true
+        },
+        {
+          "id": 228878,
+          "title": "Visita guidata con Antonio Cattaruzza",
+          "full_url": "/visita-guidata-cattaruzza-169916",
+          "published_date": "2026-06-16T10:10:00",
+          "modified": "2026-07-01T10:00:24",
+          "start_event_date_formatted": null,
+          "end_event_date_formatted": null,
+          "published": true
+        },
+        {
+          "id": 228329,
+          "title": "Nuova selezione dalla collezione Cattaruzza",
+          "full_url": "/nuova-selezione-dalla-collezione-cattaruzza-169393",
+          "published_date": "2026-06-08T10:10:00",
+          "modified": "2026-07-01T10:00:41",
+          "start_event_date_formatted": null,
+          "end_event_date_formatted": null,
+          "published": true
+        },
+        {
+          "id": 228095,
+          "title": "Presentazione volume \"Marcello Mascherini e Biagio Marin. Fra arte e lettere\"",
+          "full_url": "/marcello-mascherini-e-biagio-marin-fra-arte-e-lettere-169173",
+          "published_date": "2026-06-04T10:10:00",
+          "modified": "2026-06-04T10:19:29",
+          "start_event_date_formatted": null,
+          "end_event_date_formatted": null,
+          "published": true
+        },
+        {
+          "id": 227895,
+          "title": "Progetto Animal Among Animals",
+          "full_url": "/progetto-aaa-168987",
+          "published_date": "2026-05-29T10:10:00",
+          "modified": "2026-05-29T12:21:24",
+          "start_event_date_formatted": null,
+          "end_event_date_formatted": null,
+          "published": true
+        },
+        {
+          "id": 227906,
+          "title": "Flowers. Naturae, connessioni tra terra e arte",
+          "full_url": "/mostra-flowers-in-arrivo-168996",
+          "published_date": "2026-05-27T10:10:00",
+          "modified": "2026-05-29T12:40:54",
+          "start_event_date_formatted": null,
+          "end_event_date_formatted": null,
+          "published": true
+        },
+        {
+          "id": 227559,
+          "title": "Presentazione progetto Naturae. Connessioni tra terra e arte",
+          "full_url": "/progetto-naturae-168668",
+          "published_date": "2026-05-23T10:10:00",
+          "modified": "2026-05-25T10:38:13",
+          "start_event_date_formatted": null,
+          "end_event_date_formatted": null,
+          "published": true
+        },
+        {
+          "id": 226799,
+          "title": "Chiusura temporanea per disallestimento",
+          "full_url": "/chiusura-per-disallestimento-167931",
+          "published_date": "2026-05-13T13:30:03",
+          "modified": "2026-05-13T13:29:06",
+          "start_event_date_formatted": null,
+          "end_event_date_formatted": null,
+          "published": true
+        },
+        {
+          "id": 226795,
+          "title": "Finissage delle mostre ",
+          "full_url": "/finissage-mostre-167929",
+          "published_date": "2026-05-13T10:10:00",
+          "modified": "2026-05-13T13:30:16",
+          "start_event_date_formatted": null,
+          "end_event_date_formatted": null,
+          "published": true
+        },
+        {
+          "id": 226836,
+          "title": "Mostra \"FLOWERS\" in arrivo",
+          "full_url": "/flowers-mostra-in-arrivo-167963",
+          "published_date": "2026-05-12T10:10:00",
+          "modified": "2026-05-13T13:27:57",
+          "start_event_date_formatted": null,
+          "end_event_date_formatted": null,
+          "published": true
+        },
+        {
+          "id": 226791,
+          "title": "Visita guidata alla mostra \"Un secolo di disegno italiano\"",
+          "full_url": "/visita-guidata-mostra-un-secolo-di-disegno-167927",
+          "published_date": "2026-05-08T10:10:00",
+          "modified": "2026-05-12T11:36:13",
+          "start_event_date_formatted": null,
+          "end_event_date_formatted": null,
+          "published": true
+        },
+        {
+          "id": 225999,
+          "title": "Domenica in Galleria",
+          "full_url": "/domenica-ingresso-gratuito-167190",
+          "published_date": "2026-04-24T10:10:00",
+          "modified": "2026-04-24T13:31:29",
+          "start_event_date_formatted": null,
+          "end_event_date_formatted": null,
+          "published": true
+        },
+        {
+          "id": 224365,
+          "title": "Visita guidata alla mostra \"Un secolo di disegno italiano\"",
+          "full_url": "/visita-guidata-mostra-un-secolo-di-disegno-165692",
+          "published_date": "2026-03-24T10:10:00",
+          "modified": "2026-03-24T12:30:55",
+          "start_event_date_formatted": null,
+          "end_event_date_formatted": null,
+          "published": true
+        },
+        {
+          "id": 223968,
+          "title": "Il disegno come pensiero",
+          "full_url": "/il-disegno-come-pensiero-165338",
+          "published_date": "2026-03-17T10:10:00",
+          "modified": "2026-03-17T11:28:45",
+          "start_event_date_formatted": null,
+          "end_event_date_formatted": null,
+          "published": true
+        },
+        {
+          "id": 223520,
+          "title": "DODEKAFONIJA - Variazioni_2 / Variacije_2",
+          "full_url": "/dodekafonija-dal-13-marzo-164925",
+          "published_date": "2026-03-09T10:10:00",
+          "modified": "2026-05-19T15:15:11",
+          "start_event_date_formatted": null,
+          "end_event_date_formatted": null,
+          "published": true
+        },
+        {
+          "id": 223183,
+          "title": "Chiusura temporanea per disallestimento mostra",
+          "full_url": "/chiusura-per-disallestimento-164613",
+          "published_date": "2026-03-02T10:10:00",
+          "modified": "2026-03-09T13:25:00",
+          "start_event_date_formatted": null,
+          "end_event_date_formatted": null,
+          "published": true
+        },
+        {
+          "id": 222936,
+          "title": "Un secolo di disegno italiano",
+          "full_url": "/proroga-mostra-un-secolo-di-disegno-italiano-164407",
+          "published_date": "2026-02-26T10:10:00",
+          "modified": "2026-05-19T15:13:53",
+          "start_event_date_formatted": null,
+          "end_event_date_formatted": null,
+          "published": true
+        },
+        {
+          "id": 222709,
+          "title": "Gli Artisti del progetto Together/Insieme allo Spazio Grom di Trieste",
+          "full_url": "/gli-artisti-del-progetto-togetherinsieme-allo-spazio-grom-di-trieste-164191",
+          "published_date": "2026-02-22T10:00:00",
+          "modified": "2026-02-26T12:07:38",
+          "start_event_date_formatted": null,
+          "end_event_date_formatted": null,
+          "published": true
+        },
+        {
+          "id": 222918,
+          "title": "Inserimento nell'archivio RAAM di AMACI",
+          "full_url": "/archivio-raam-amaci-164393",
+          "published_date": "2026-02-16T10:10:00",
+          "modified": "2026-02-26T12:34:50",
+          "start_event_date_formatted": null,
+          "end_event_date_formatted": null,
+          "published": true
+        },
+        {
+          "id": 222932,
+          "title": "Inedita selezione di opere in esposizione",
+          "full_url": "/selezione-temporanea-in-sala-patuna-164405",
+          "published_date": "2026-02-12T10:10:00",
+          "modified": "2026-02-26T13:06:48",
+          "start_event_date_formatted": null,
+          "end_event_date_formatted": null,
+          "published": true
+        },
+        {
+          "id": 222123,
+          "title": "Inedita selezione di opere in esposizione",
+          "full_url": "/selezione-temporanea-in-sala-patuna-163642",
+          "published_date": "2026-02-12T10:10:00",
+          "modified": "2026-02-26T12:27:18",
+          "start_event_date_formatted": null,
+          "end_event_date_formatted": null,
+          "published": true
+        },
+        {
+          "id": 222202,
+          "title": "Evento collaterale alla mostra Giuseppe Zigaina in dialogo \"Zigaina e Pasolini alla Spazzapan\"",
+          "full_url": "/zigaina-e-pasolini-alla-spazzapan-con-vanja-strukelj-163716",
+          "published_date": "2026-02-11T11:02:12",
+          "modified": "2026-02-11T12:02:04",
+          "start_event_date_formatted": null,
+          "end_event_date_formatted": null,
+          "published": true
+        },
+        {
+          "id": 221801,
+          "title": "Visite Guidate alla Galleria Spazzapan con William Cortes Casarubbios",
+          "full_url": "/visite-guidate-settimanali-alla-galleria-spazzapan-con-william-cortes-casarubbios-163334",
+          "published_date": "2026-02-03T12:29:00",
+          "modified": "2026-02-05T11:49:42",
+          "start_event_date_formatted": null,
+          "end_event_date_formatted": null,
+          "published": true
+        },
+        {
+          "id": 221645,
+          "title": "Evento collaterale alla mostra \"Zigaina in dialogo\"  ",
+          "full_url": "/zigaina-scrittore-tre-libri-tre-lingue-un-unico-dialogo-163200",
+          "published_date": "2026-01-30T13:31:38",
+          "modified": "2026-01-30T13:54:37",
+          "start_event_date_formatted": null,
+          "end_event_date_formatted": null,
+          "published": true
+        },
+        {
+          "id": 221631,
+          "title": "Torna l’appuntamento \"Domenica al museo\"",
+          "full_url": "/domenica-al-museo-163189",
+          "published_date": "2026-01-30T12:11:32",
+          "modified": "2026-01-30T12:38:07",
+          "start_event_date_formatted": null,
+          "end_event_date_formatted": null,
+          "published": true
+        },
+        {
+          "id": 221394,
+          "title": "Evento collaterale “Zigaina e Mascherini, un sodalizio tra artisti”",
+          "full_url": "/evento-collaterale-zigaina-e-mascherini-un-sodalizio-tra-artisti-162969",
+          "published_date": "2026-01-23T13:57:42",
+          "modified": "2026-01-23T14:02:56",
+          "start_event_date_formatted": null,
+          "end_event_date_formatted": null,
+          "published": true
+        },
+        {
+          "id": 220656,
+          "title": "Visite guidate alle mostre “Zigaina in dialogo” e “Un secolo di disegno italiano”    ",
+          "full_url": "/visite-guidate-alle-mostre-zigaina-in-dialogo-e-un-secolo-di-disegno-italiano-162250",
+          "published_date": "2026-01-09T10:01:05",
+          "modified": "2026-01-19T14:02:16",
+          "start_event_date_formatted": null,
+          "end_event_date_formatted": null,
+          "published": true
+        },
+        {
+          "id": 218917,
+          "title": "Torna l’appuntamento \"Domenica al museo\"",
+          "full_url": "/prima-domenica-del-mese-ingresso-gratuito-alla-galleria-spazzapan-160573",
+          "published_date": "2025-12-05T11:44:00",
+          "modified": "2025-12-05T14:28:16",
+          "start_event_date_formatted": null,
+          "end_event_date_formatted": null,
+          "published": true
+        },
+        {
+          "id": 217932,
+          "title": "Pop Society. Musica, immaginario e trasformazioni sociali negli anni '80",
+          "full_url": "/pop-society-159658",
+          "published_date": "2025-11-24T13:49:37",
+          "modified": "2025-11-27T14:31:11",
+          "start_event_date_formatted": null,
+          "end_event_date_formatted": null,
+          "published": true
+        },
+        {
+          "id": 215729,
+          "title": " Proiezione video \"A brene vierte\"",
+          "full_url": "/proiezione-video-a-brene-vierte-157534",
+          "published_date": "2025-10-27T12:00:26",
+          "modified": "2025-10-28T12:21:10",
+          "start_event_date_formatted": null,
+          "end_event_date_formatted": null,
+          "published": true
+        },
+        {
+          "id": 214185,
+          "title": " La Galleria Regionale d’Arte contemporanea “Luigi Spazzapan” aderisce alla XXI Giornata del Contemporaneo",
+          "full_url": "/xxi-giornata-del-contemporaneo-156190",
+          "published_date": "2025-10-02T13:15:05",
+          "modified": "2025-10-02T13:45:44",
+          "start_event_date_formatted": null,
+          "end_event_date_formatted": null,
+          "published": true
+        },
+        {
+          "id": 212967,
+          "title": "Riapre la Galleria Spazzapan con una mostra su Zigaina e una sul disegno italiano.",
+          "full_url": "/riapre-la-galleria-spazzapan-con-una-mostra-su-zigaina-e-una-sul-disegno-italiano-155110",
+          "published_date": "2025-09-15T11:30:32",
+          "modified": "2025-11-04T10:28:23",
+          "start_event_date_formatted": null,
+          "end_event_date_formatted": null,
+          "published": true
+        },
+        {
+          "id": 187914,
+          "title": "L’arte contemporanea del Friuli Venezia Giulia in mostra a Bologna",
+          "full_url": "/together-larte-contemporanea-del-friuli-venezia-giulia-a-bologna-138626",
+          "published_date": "2025-01-22T09:37:00",
+          "modified": "2026-03-02T09:55:36",
+          "start_event_date_formatted": null,
+          "end_event_date_formatted": null,
+          "published": true
+        },
+        {
+          "id": 187014,
+          "title": "La Galleria Regionale d'Arte contemporanea Luigi Spazzapan entra a far parte dell’Amaci",
+          "full_url": "/la-galleria-darte-spazzapan-di-gradisca-disonzo-entra-a-far-parte-dellamaci-138027",
+          "published_date": "2025-01-14T10:26:56",
+          "modified": "2025-08-20T13:44:49",
+          "start_event_date_formatted": null,
+          "end_event_date_formatted": null,
+          "published": true
+        },
+        {
+          "id": 173229,
+          "title": " Chiusura  temporanea della Galleria d'Arte Spazzapan ",
+          "full_url": "/si-informa-che-la-galleria-darte-spazzapan-rimarra-chiusa-dal-20-ottobre-2024-fino-a-data-da-definirsi-per-lavori-di-adeguamento-132483",
+          "published_date": "2024-10-15T11:24:12",
+          "modified": "2024-10-16T11:19:27",
+          "start_event_date_formatted": null,
+          "end_event_date_formatted": null,
+          "published": true
+        },
+        {
+          "id": 171161,
+          "title": "Visavì Dance Festival 2024 ",
+          "full_url": "/visavi-dance-festival-2024-132206",
+          "published_date": "2024-10-10T12:23:09",
+          "modified": "2024-10-10T12:32:38",
+          "start_event_date_formatted": null,
+          "end_event_date_formatted": null,
+          "published": true
+        },
+        {
+          "id": 170961,
+          "title": "Ventesima Giornata del Contemporaneo ",
+          "full_url": "/ventesima-giornata-del-contemporaneo_-132191",
+          "published_date": "2024-10-10T10:47:56",
+          "modified": "2024-10-10T10:52:38",
+          "start_event_date_formatted": null,
+          "end_event_date_formatted": null,
+          "published": true
+        },
+        {
+          "id": 160355,
+          "title": "Simposio n.2_ iscrizioni aperte",
+          "full_url": "/simposio-n2_-iscrizioni-aperte-128381",
+          "published_date": "2024-08-27T10:22:08",
+          "modified": "2024-08-27T12:09:24",
+          "start_event_date_formatted": null,
+          "end_event_date_formatted": null,
+          "published": true
+        },
+        {
+          "id": 159610,
+          "title": "Arte Cinema_Città: Manhattan",
+          "full_url": "/arte-cinema_citta-manhattan-127837",
+          "published_date": "2024-08-19T08:52:09",
+          "modified": "2024-08-19T11:10:39",
+          "start_event_date_formatted": null,
+          "end_event_date_formatted": null,
+          "published": true
+        },
+        {
+          "id": 156838,
+          "title": "Together/insieme ———— Simposio n.2",
+          "full_url": "/togetherinsieme-simposio-n2-125954",
+          "published_date": "2024-08-01T12:09:18",
+          "modified": "2024-08-01T12:20:42",
+          "start_event_date_formatted": null,
+          "end_event_date_formatted": null,
+          "published": true
+        },
+        {
+          "id": 156833,
+          "title": "Rassegna: Arte Cinema_ Città 2024",
+          "full_url": "/installazione-sonora-river-chants-124972/rassegna-arte-cinema_-citta-2024-125949",
+          "published_date": "2024-08-01T11:43:41",
+          "modified": "2024-08-01T12:03:59",
+          "start_event_date_formatted": null,
+          "end_event_date_formatted": null,
+          "published": true
+        },
+        {
+          "id": 155266,
+          "title": "Installazione sonora \"River Chants\"",
+          "full_url": "/installazione-sonora-river-chants-124972",
+          "published_date": "2024-07-16T14:12:00",
+          "modified": "2025-11-04T11:43:30",
+          "start_event_date_formatted": null,
+          "end_event_date_formatted": null,
+          "published": true
+        },
+        {
+          "id": 151164,
+          "title": "Progetto “Relazioni d’arte: Sedmach - Serse”",
+          "full_url": "/progetto-relazioni-darte-sedmach-serse-121939",
+          "published_date": "2024-06-17T10:32:59",
+          "modified": "2024-06-17T10:38:46",
+          "start_event_date_formatted": null,
+          "end_event_date_formatted": null,
+          "published": true
+        },
+        {
+          "id": 140528,
+          "title": "Buon compleanno “Vigne Museum” ",
+          "full_url": "/buon-compleanno-vigne-museum-113702",
+          "published_date": "2024-04-05T11:19:00",
+          "modified": "2024-05-06T11:44:27",
+          "start_event_date_formatted": null,
+          "end_event_date_formatted": null,
+          "published": true
+        },
+        {
+          "id": 139217,
+          "title": "“You are beautiful. Riuso creativo degli spazi dimenticati” ",
+          "full_url": "/you-are-beautiful-riuso-creativo-degli-spazi-dimenticati-di-francesca-agostinelli-112488",
+          "published_date": "2024-03-26T13:22:40",
+          "modified": "2024-04-16T12:55:36",
+          "start_event_date_formatted": null,
+          "end_event_date_formatted": null,
+          "published": true
+        },
+        {
+          "id": 139163,
+          "title": "Festività pasquali",
+          "full_url": "/festivita-pasquali-112450",
+          "published_date": "2024-03-26T09:33:50",
+          "modified": "2024-05-06T11:21:48",
+          "start_event_date_formatted": null,
+          "end_event_date_formatted": null,
+          "published": true
+        },
+        {
+          "id": 134334,
+          "title": "\"Confini. Meje. Borders\" - tavola rotonda e inaugurazione mostra",
+          "full_url": "/confini-108405",
+          "published_date": "2024-02-27T12:09:00",
+          "modified": "2024-03-05T10:24:34",
+          "start_event_date_formatted": null,
+          "end_event_date_formatted": null,
+          "published": true
+        },
+        {
+          "id": 132781,
+          "title": "Presentazione del libro \"Dizionario Fontana\"",
+          "full_url": "/presentazione-del-libro-dizionario-fontana-107009",
+          "published_date": "2024-02-19T11:05:59",
+          "modified": "2024-02-19T11:22:01",
+          "start_event_date_formatted": null,
+          "end_event_date_formatted": null,
+          "published": true
+        },
+        {
+          "id": 126864,
+          "title": "Lavori di adeguamento strutturale",
+          "full_url": "/visavi-meets-art-101847",
+          "published_date": "2024-02-15T10:49:37",
+          "modified": "2024-02-15T10:48:38",
+          "start_event_date_formatted": null,
+          "end_event_date_formatted": null,
+          "published": true
+        },
+        {
+          "id": 127751,
+          "title": "Festività natalizie",
+          "full_url": "/visavi-meets-art-102598",
+          "published_date": "2023-12-20T13:30:00",
+          "modified": "2023-12-21T11:06:02",
+          "start_event_date_formatted": null,
+          "end_event_date_formatted": null,
+          "published": true
+        },
+        {
+          "id": 126664,
+          "title": "Conferenza stampa di presentazione della nuova convenzione 2023",
+          "full_url": "/visavi-meets-art-101684",
+          "published_date": "2023-12-04T10:30:00",
+          "modified": "2023-12-05T13:55:42",
+          "start_event_date_formatted": null,
+          "end_event_date_formatted": null,
+          "published": true
+        },
+        {
+          "id": 120289,
+          "title": "Visavì meets Art",
+          "full_url": "/giornata-del-contemporaneo-96274",
+          "published_date": "2023-10-12T10:30:00",
+          "modified": "2023-10-12T12:46:26",
+          "start_event_date_formatted": null,
+          "end_event_date_formatted": null,
+          "published": true
+        },
+        {
+          "id": 119861,
+          "title": "Giornata del Contemporaneo",
+          "full_url": "/chiusura-al-pubblico-della-galleria-spazzapan-95928",
+          "published_date": "2023-10-06T10:30:00",
+          "modified": "2023-10-06T11:39:54",
+          "start_event_date_formatted": null,
+          "end_event_date_formatted": null,
+          "published": true
+        },
+        {
+          "id": 119632,
+          "title": "Chiusura al pubblico della Galleria Spazzapan",
+          "full_url": "/prorogata-la-mostra-la-dolce-attesa-95739",
+          "published_date": "2023-10-03T10:30:00",
+          "modified": "2023-10-04T09:02:49",
+          "start_event_date_formatted": null,
+          "end_event_date_formatted": null,
+          "published": true
+        },
+        {
+          "id": 117865,
+          "title": "Prorogata la mostra La dolce attesa",
+          "full_url": "/arte-cinema-animazione-94277",
+          "published_date": "2023-09-27T10:30:00",
+          "modified": "2023-09-27T11:44:14",
+          "start_event_date_formatted": null,
+          "end_event_date_formatted": null,
+          "published": true
+        },
+        {
+          "id": 117864,
+          "title": "Visita guidata alla mostra La dolce attesa",
+          "full_url": "/visita-guidata-alla-mostra-la-dolce-attesa-94276",
+          "published_date": "2023-09-12T11:46:28",
+          "modified": "2023-09-12T11:46:54",
+          "start_event_date_formatted": null,
+          "end_event_date_formatted": null,
+          "published": true
+        },
+        {
+          "id": 115745,
+          "title": "Arte Cinema. Video-ritratti d’artista - “Marina Abramović – The Artist Is Present\" di Matthew Akers",
+          "full_url": "/arte-cinema-video-ritratti-dartista-marina-abramovic-the-artist-is-present-di-matthew-akers-92431",
+          "published_date": "2023-08-22T10:42:57",
+          "modified": "2023-08-22T10:44:34",
+          "start_event_date_formatted": null,
+          "end_event_date_formatted": null,
+          "published": true
+        },
+        {
+          "id": 114522,
+          "title": "Galleria Spazzapan aperta a Ferragosto",
+          "full_url": "/galleria-spazzapan-aperta-a-ferragosto-91189",
+          "published_date": "2023-08-10T08:45:15",
+          "modified": "2023-08-10T08:45:10",
+          "start_event_date_formatted": null,
+          "end_event_date_formatted": null,
+          "published": true
+        },
+        {
+          "id": 112145,
+          "title": "Annullata la proiezione di Frida di Julie Taymor prevista per giovedì 3 agosto",
+          "full_url": "/annullata-la-proiezione-di-frida-di-julie-taymor-88930",
+          "published_date": "2023-08-03T12:33:24",
+          "modified": "2023-08-03T12:36:23",
+          "start_event_date_formatted": null,
+          "end_event_date_formatted": null,
+          "published": true
+        },
+        {
+          "id": 108770,
+          "title": "Arte Cinema Animazione",
+          "full_url": "/arte-cinema-animazione-88190",
+          "published_date": "2023-07-26T10:50:14",
+          "modified": "2023-07-26T10:57:51",
+          "start_event_date_formatted": null,
+          "end_event_date_formatted": null,
+          "published": true
+        },
+        {
+          "id": 106240,
+          "title": "Concluso il primo Simposio organizzato nell’ambito del progetto Together/insieme",
+          "full_url": "/presentata-la-nuova-esperienza-virtuale-alla-galleria-spazzapan-86156",
+          "published_date": "2023-07-10T23:59:00",
+          "modified": "2023-07-11T13:05:10",
+          "start_event_date_formatted": null,
+          "end_event_date_formatted": null,
+          "published": true
+        },
+        {
+          "id": 233851,
+          "title": "Nuovo paesaggio. Incontro con Damiano Gullì dalla triennale di Milano",
+          "full_url": "/eventi-collaterali-di-ottobre-174559",
+          "published_date": "2026-10-09T08:10:00",
+          "modified": "2026-10-09T11:55:07",
+          "published": true,
+          "intro": "Mercoledì 14 ottobre, ore 18.00, Via Marziano Ciotti 51"
+        }
+      ]
+    },
+    "historical_plural": {
+      "id": 16102,
+      "articles": [
+        {
+          "id": 121574,
+          "title": "Confini. Medje. Borders. Una mostra di Alessandra Lazzaris",
+          "full_url": "/confini-medje-borders-una-mostra-di-alessandra-lazzaris-97239",
+          "published_date": "2024-02-27T12:46:47",
+          "modified": "2025-11-04T11:45:06",
+          "start_event_date_formatted": null,
+          "end_event_date_formatted": null,
+          "published": true
+        }
+      ]
+    }
+  },
+  "pages": {
+    "mario": {
+      "id": 75485,
+      "attribute": {
+        "published": true,
+        "title": "Mario Palli / Studio Visit",
+        "preview_image": "/media/files/erpac_spazzapan/previews/L1050531_Mario_Palli_-_Trasparenze_in_chiaro_1979_Galleri_5cRY1dJ.jpg.1800x1350_q85_crop.jpg",
+        "start_event_date_formatted": "2026-10-10T00:00:00",
+        "end_event_date_formatted": "2026-10-10T00:00:00"
+      },
+      "modules": [
+        {
+          "module_type": "event",
+          "title": "Mario Palli / Studio Visit",
+          "intro": "Sabato 10 ottobre, ore 11.00 -16.30 - 18.00\nGradisca d'Isonzo",
+          "description": "La visita del 10 ottobre 2026 si svolge nello studio di Mario Palli a Gradisca d’Isonzo. La Galleria è il punto di ritrovo.",
+          "start_event_date": "2026-10-10 00:00:00",
+          "end_event_date": "2026-10-10 00:00:00",
+          "preview_image": "/media/files/erpac_spazzapan/previews/L1050531_Mario_Palli_-_Trasparenze_in_chiaro_1979_Galleri_5cRY1dJ.jpg.1800x1350_q85_crop.jpg"
+        }
+      ]
+    },
+    "paesaggio": {
+      "id": 174329,
+      "attribute": {
+        "published": true,
+        "title": "Nuovo paesaggio. Incontro con Damiano Gullì dalla triennale di Milano",
+        "preview_image": "/media/files/erpac_spazzapan/previews/gull%C3%AC.jpg.1800x1350_q85_crop.jpg",
+        "start_event_date_formatted": "2026-10-14T00:00:00",
+        "end_event_date_formatted": "2026-10-14T00:00:00"
+      },
+      "modules": [
+        {
+          "module_type": "event",
+          "title": "Nuovo paesaggio. Incontro con Damiano Gullì dalla triennale di Milano",
+          "intro": "Mercoledì 14 ottobre, ore 18.00,\nVia Marziano Ciotti 51",
+          "description": "<p>Dalla Triennale Milano, Damiano Gullì incontra il pubblico alla Galleria Spazzapan di Gradisca d’Isonzo mercoledì 14 ottobre alle ore 18:00. L’incontro esplora l’arte e lo spazio pubblico nel percorso FVG70, con riferimenti alle ricerche e ai luoghi dell’arte contemporanea in Friuli Venezia Giulia.</p>",
+          "start_event_date": "2026-10-14 00:00:00",
+          "end_event_date": "2026-10-14 00:00:00",
+          "preview_image": "/media/files/erpac_spazzapan/previews/gull%C3%AC.jpg.1800x1350_q85_crop.jpg"
+        }
+      ]
+    },
+    "pausig_event": {
+      "id": 172996,
+      "attribute": {
+        "published": true,
+        "title": "FVG70.03 - Sergio Pausig",
+        "preview_image": "/media/files/erpac_spazzapan/previews/preview_image_top_jio4Clq.1800x1350_q85_crop.png",
+        "start_event_date_formatted": "2026-09-11T00:00:00",
+        "end_event_date_formatted": "2026-10-11T00:00:00"
+      },
+      "modules": [
+        {
+          "module_type": "event",
+          "title": "FVG70.03 - Sergio Pausig",
+          "intro": "Fino all'11 ottobre\nvia Marziano Ciotti 51, Gradisca d'Isonzo",
+          "description": "",
+          "start_event_date": "2026-09-11 00:00:00",
+          "end_event_date": "2026-10-11 00:00:00",
+          "preview_image": "/media/files/erpac_spazzapan/previews/preview_image_top_jio4Clq.1800x1350_q85_crop.png"
+        }
+      ]
+    },
+    "pausig_exhibition": {
+      "id": 173388,
+      "attribute": {
+        "published": true,
+        "title": "FVG70.03 - Sergio Pausig",
+        "preview_image": "/media/files/erpac_spazzapan/previews/le_jardin_de_Palerme_pausig_coV9E81.jpg.1800x1350_q85_crop.jpg",
+        "start_event_date_formatted": "2026-06-27T00:00:00",
+        "end_event_date_formatted": "2027-01-15T00:00:00"
+      },
+      "modules": [
+        {
+          "module_type": "content",
+          "title": "FVG70.03 - Sergio Pausig",
+          "intro": "Dall' 11 settembre all'11 ottobre 2026",
+          "description": "L’esposizione presenta un percorso di opere e documenti di Sergio Pausig. La selezione sarà visitabile fino all’11 ottobre 2026.",
+          "start_event_date": "",
+          "end_event_date": "",
+          "preview_image": "/media/files/erpac_spazzapan/previews/le_jardin_de_Palerme_pausig_coV9E81.jpg.1800x1350_q85_crop.jpg"
+        }
+      ]
+    },
+    "fvg7002_exhibition": {
+      "id": 173006,
+      "attribute": {
+        "published": true,
+        "title": "FVG70.02 – Nuovi modelli di ricerca",
+        "preview_image": "/media/files/erpac_spazzapan/previews/preview_image_top_cxjHaIZ.1800x1350_q85_crop.png",
+        "start_event_date_formatted": "2026-06-27T00:00:00",
+        "end_event_date_formatted": "2027-01-15T00:00:00"
+      },
+      "modules": [
+        {
+          "module_type": "content",
+          "title": "FVG70.02 – Nuovi modelli di ricerca",
+          "intro": "Dal 23 luglio al 29 novembre 2026",
+          "description": "",
+          "start_event_date": "",
+          "end_event_date": "",
+          "preview_image": "/media/files/erpac_spazzapan/previews/preview_image_top_cxjHaIZ.1800x1350_q85_crop.png"
+        }
+      ]
+    },
+    "fvg7002_news": {
+      "id": 172985,
+      "attribute": {
+        "published": true,
+        "title": "Eventi collaterali di ottobre",
+        "preview_image": "/media/files/erpac_spazzapan/previews/preview_image_top_D1Kwv61.1800x1350_q85_crop.png",
+        "start_event_date_formatted": "2026-07-23T00:00:00",
+        "end_event_date_formatted": "2026-11-29T00:00:00"
+      },
+      "modules": [
+        {
+          "module_type": "content",
+          "title": "Eventi collaterali di ottobre",
+          "intro": "FVG70.02 - Nuovi modelli di ricerca",
+          "description": "",
+          "start_event_date": "",
+          "end_event_date": "",
+          "preview_image": "/media/files/erpac_spazzapan/previews/preview_image_top_D1Kwv61.1800x1350_q85_crop.png"
+        },
+        {
+          "module_type": "latest_events",
+          "title": "",
+          "intro": "",
+          "description": "",
+          "start_event_date": "",
+          "end_event_date": ""
+        },
+        {
+          "module_type": "event",
+          "title": "FVG70.02 – Nuovi modelli di ricerca",
+          "intro": "Dal 23 luglio al 29 novembre 2026,\nvia Marziano Ciotti 51, Gradisca d'Isonzo",
+          "description": "La seconda tappa presenta opere e documenti sulle ricerche artistiche regionali degli anni Settanta. Il percorso è organizzato per temi e città e ricostruisce i legami tra artisti, luoghi e istituzioni. La mostra include materiali d’archivio e opere esposte nelle sale della Galleria Spazzapan.",
+          "start_event_date": "2026-07-23 00:00:00",
+          "end_event_date": "2026-11-29 00:00:00",
+          "preview_image": "/media/files/erpac_spazzapan/previews/preview_image_top_lLaBmUy.1800x1350_q85_crop.png"
+        },
+        {
+          "module_type": "gallery",
+          "title": "",
+          "intro": "",
+          "description": "",
+          "start_event_date": "",
+          "end_event_date": ""
+        }
+      ]
+    },
+    "fvg_settanta": {
+      "id": 170166,
+      "attribute": {
+        "published": true,
+        "title": "Progetto FVG Settanta. Arti visive in Friuli Venezia Giulia negli anni ’70",
+        "preview_image": "/media/files/erpac_spazzapan/previews/preview_image_top_JOw9xzJ_7H8Nfbm.1800x1350_q85_crop.png",
+        "start_event_date_formatted": "2026-06-27T00:00:00",
+        "end_event_date_formatted": "2027-01-15T00:00:00"
+      },
+      "modules": [
+        {
+          "module_type": "event",
+          "title": "Progetto FVG Settanta. Arti visive in Friuli Venezia Giulia negli anni ’70",
+          "intro": "Fino al 15 gennaio 2027,\nGalleria Regionale d'Arte contemporanea L.Spazzapan, Gradisca d'Isonzo",
+          "description": "",
+          "start_event_date": "2026-06-27 00:00:00",
+          "end_event_date": "2027-01-15 00:00:00",
+          "preview_image": "/media/files/erpac_spazzapan/previews/preview_image_top_JOw9xzJ_7H8Nfbm.1800x1350_q85_crop.png"
+        },
+        {
+          "module_type": "accordion",
+          "title": "",
+          "intro": "",
+          "description": "",
+          "start_event_date": "",
+          "end_event_date": ""
+        },
+        {
+          "module_type": "gallery",
+          "title": "",
+          "intro": "",
+          "description": "",
+          "start_event_date": "",
+          "end_event_date": ""
+        }
+      ]
+    },
+    "together": {
+      "id": 170074,
+      "attribute": {
+        "published": true,
+        "title": "Progetto Together/Insieme",
+        "preview_image": "/media/files/erpac_spazzapan/previews/Screenshot_2026-06-22_141237.png.1800x1350_q85_crop.png",
+        "start_event_date_formatted": null,
+        "end_event_date_formatted": null
+      },
+      "modules": [
+        {
+          "module_type": "event",
+          "title": "Progetto Together/Insieme",
+          "intro": "Galleria Regionale d'Arte contemporanea L.Spazzapan, Gradisca d'Isonzo",
+          "description": "",
+          "start_event_date": "",
+          "end_event_date": "",
+          "preview_image": "/media/files/erpac_spazzapan/previews/Screenshot_2026-06-22_141237.png.1800x1350_q85_crop.png"
+        }
+      ]
+    }
+  }
+}

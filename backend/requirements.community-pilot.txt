@@ -1,0 +1,12 @@
+# Existing backend runtime pins; no Firebase default app is installed or used.
+fastapi==0.136.1
+pydantic==2.13.3
+requests==2.33.1
+tzdata==2026.4
+uvicorn[standard]==0.46.0
+# Verified against the official PyPI release pages on 2026-09-21.
+google-cloud-firestore==2.31.0
+google-cloud-storage==3.14.1
+firebase-admin==7.5.0
+# Only used by the image's offline API contract check.
+httpx==0.28.1
