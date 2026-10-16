@@ -151,3 +151,42 @@ Il difetto è corretto e verificato nel modulo/API; il collaudo del nuovo APK
 sul telefono rimane **NON VERIFICATO** fino all'installazione autorizzata.
 La matrice Android 15/16, gesti, tablet e multi-window e i limiti Firebase
 rimangono quelli dichiarati sopra; nessuna promozione a main, AAB, Play o deploy.
+
+## Collaudo autorizzato TEST PR1.3: regressione bollettino risolta
+
+Artefatto installato e verificato sul Galaxy A52, Android 14 / API 34:
+commit `fc6fd1621b25304f62017fbf3bcfa77f608d58de`, versione
+`0.1.14-local-pilot-r8-pr1.3`, APK minificata R8 SHA-256
+`d44c01b969ce5588985b720b3da32077c07cb84f5c525c92de7fab29c6be6cc9`.
+
+**PR1-TEST-01 risolto nel caso verificato sul dispositivo.** Nella WebView
+della APK installata, una sostituzione temporanea di localStorage solo in
+memoria ha riprodotto la precondizione del difetto: località salvata assente,
+coordinate iniziali null e nessuna cache del bollettino. Sono rimaste attive
+la lingua e l'onboarding esistenti: non si tratta di una reinstallazione
+pulita o di un azzeramento dei dati. La richiesta normale e quella forzata
+hanno usato `weather/forecast?city=Udine` senza lat/lon e ottenuto HTTP 200
+reali, senza cache HTTP o service worker. Sintesi Home e testo ufficiale
+OSMER visibili. Archivio reale identico durante la prova; sostituzione
+temporanea rimossa e sessione normale ripristinata.
+
+PASS anche avvio normale/a freddo, cambio giorno del bollettino,
+sospensione/ripresa, mappa CARTO con 12 tessere valide, lista Eventi senza
+avviso di catalogo incompleto e bridge nativi App/lettura permessi.
+Undici valori persistenti di preferenze, identità e località recenti
+rimangono identici; nessuna chiave rimossa. Le normali letture aggiornano
+cache e timestamp. Metadati e hash delle APK ufficiale e TEST invariati;
+nessuna cancellazione dati, disinstallazione, modifica permessi o scrittura
+nell'app ufficiale. Nessun crash/ANR osservato nei controlli acquisiti.
+
+Insets e assenza di overflow verificati nelle viste ispezionate su Android 14
+in portrait con navigazione a tre pulsanti. API barre di sistema invariate;
+nessuna nuova certificazione delle chiamate transitive. R8 esercitato
+sull'artefatto esatto nei percorsi provati. Android 15/16, gesti, tablet,
+multi-window, rotazione fisica e GPS restano non verificati; limite Firebase
+e push invariato. Nessun AAB, Play, deploy, merge o promozione.
+
+Rapporto e schermate locali ignorati da Git:
+`build/android-test/2026-10-16/PR1-fc6fd162-TEST-runtime.json` e
+`build/android-test/2026-10-16/runtime-fc6fd162/`.
+Telefono lasciato sulla Home TEST con Udine e preferenze preesistenti.
