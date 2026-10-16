@@ -1,0 +1,86 @@
+[
+  {
+    "displayName": "ICON2I freshness - fvg",
+    "enabled": false,
+    "combiner": "OR",
+    "severity": "CRITICAL",
+    "notificationChannels": [],
+    "alertStrategy": {
+      "notificationPrompts": [
+        "OPENED",
+        "CLOSED"
+      ],
+      "notificationChannelStrategy": []
+    },
+    "documentation": {
+      "mimeType": "text/markdown",
+      "content": "Chiusura tecnica non significa rientro verificato. Richiedere una nuova verifica completa e telemetria coerente. Cause e tentativi HTTP nei log event=icon2i_freshness_check. Completare canali email/mobile e promemoria 21600s prima dell'attivazione."
+    },
+    "conditions": [
+      {
+        "displayName": "fvg",
+        "conditionPrometheusQueryLanguage": {
+          "query": "max by (product) (last_over_time(custom_googleapis_com:meteofriul_icon2i_critical_active{monitored_resource=\"global\",project_id=\"meteo-friul\",product=\"fvg\"}[120m])) == 1",
+          "duration": "0s",
+          "evaluationInterval": "60s"
+        }
+      }
+    ]
+  },
+  {
+    "displayName": "ICON2I freshness - national",
+    "enabled": false,
+    "combiner": "OR",
+    "severity": "CRITICAL",
+    "notificationChannels": [],
+    "alertStrategy": {
+      "notificationPrompts": [
+        "OPENED",
+        "CLOSED"
+      ],
+      "notificationChannelStrategy": []
+    },
+    "documentation": {
+      "mimeType": "text/markdown",
+      "content": "Chiusura tecnica non significa rientro verificato. Richiedere una nuova verifica completa e telemetria coerente. Cause e tentativi HTTP nei log event=icon2i_freshness_check. Completare canali email/mobile e promemoria 21600s prima dell'attivazione."
+    },
+    "conditions": [
+      {
+        "displayName": "national",
+        "conditionPrometheusQueryLanguage": {
+          "query": "max by (product) (last_over_time(custom_googleapis_com:meteofriul_icon2i_critical_active{monitored_resource=\"global\",project_id=\"meteo-friul\",product=\"national\"}[120m])) == 1",
+          "duration": "0s",
+          "evaluationInterval": "60s"
+        }
+      }
+    ]
+  },
+  {
+    "displayName": "ICON2I freshness - telemetry",
+    "enabled": false,
+    "combiner": "OR",
+    "severity": "CRITICAL",
+    "notificationChannels": [],
+    "alertStrategy": {
+      "notificationPrompts": [
+        "OPENED",
+        "CLOSED"
+      ],
+      "notificationChannelStrategy": []
+    },
+    "documentation": {
+      "mimeType": "text/markdown",
+      "content": "Chiusura tecnica non significa rientro verificato. Richiedere una nuova verifica completa e telemetria coerente. Cause e tentativi HTTP nei log event=icon2i_freshness_check. Completare canali email/mobile e promemoria 21600s prima dell'attivazione."
+    },
+    "conditions": [
+      {
+        "displayName": "telemetry",
+        "conditionPrometheusQueryLanguage": {
+          "query": "max(absent_over_time(custom_googleapis_com:meteofriul_icon2i_check_state{monitored_resource=\"global\",project_id=\"meteo-friul\",product=\"fvg\"}[90m]) or absent_over_time(custom_googleapis_com:meteofriul_icon2i_critical_active{monitored_resource=\"global\",project_id=\"meteo-friul\",product=\"fvg\"}[90m]) or absent_over_time(custom_googleapis_com:meteofriul_icon2i_check_completed{monitored_resource=\"global\",project_id=\"meteo-friul\",product=\"fvg\"}[90m]) or absent_over_time(custom_googleapis_com:meteofriul_icon2i_check_state{monitored_resource=\"global\",project_id=\"meteo-friul\",product=\"national\"}[90m]) or absent_over_time(custom_googleapis_com:meteofriul_icon2i_critical_active{monitored_resource=\"global\",project_id=\"meteo-friul\",product=\"national\"}[90m]) or absent_over_time(custom_googleapis_com:meteofriul_icon2i_check_completed{monitored_resource=\"global\",project_id=\"meteo-friul\",product=\"national\"}[90m])) == 1",
+          "duration": "0s",
+          "evaluationInterval": "60s"
+        }
+      }
+    ]
+  }
+]

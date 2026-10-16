@@ -1,0 +1,44 @@
+[
+  {
+    "type": "custom.googleapis.com/meteofriul/icon2i/check_state",
+    "metricKind": "GAUGE",
+    "valueType": "INT64",
+    "unit": "1",
+    "displayName": "ICON2I check_state",
+    "labels": [
+      {
+        "key": "product",
+        "valueType": "STRING",
+        "description": "fvg or national"
+      }
+    ]
+  },
+  {
+    "type": "custom.googleapis.com/meteofriul/icon2i/critical_active",
+    "metricKind": "GAUGE",
+    "valueType": "INT64",
+    "unit": "1",
+    "displayName": "ICON2I critical_active",
+    "labels": [
+      {
+        "key": "product",
+        "valueType": "STRING",
+        "description": "fvg or national"
+      }
+    ]
+  },
+  {
+    "type": "custom.googleapis.com/meteofriul/icon2i/check_completed",
+    "metricKind": "GAUGE",
+    "valueType": "INT64",
+    "unit": "1",
+    "displayName": "ICON2I check_completed",
+    "labels": [
+      {
+        "key": "product",
+        "valueType": "STRING",
+        "description": "fvg or national"
+      }
+    ]
+  }
+]

@@ -1,0 +1,313 @@
+{
+  "source_sha": "35b31aef93281880f3b5e8729d5a1061d7304389",
+  "build_id": "c261aacd-841b-4327-b54b-7a4e71e46192",
+  "image_digest": "sha256:db0160d88a9397ca7789fe62750158dfb424212feb7e9f8abba6bfc1cbd5db80",
+  "execution": {
+    "name": "projects/meteo-friul/locations/europe-west1/jobs/meteofriul-icon2i-freshness/executions/meteofriul-icon2i-freshness-hxlg7",
+    "startTime": "2026-10-16T05:41:09.071886Z",
+    "completionTime": "2026-10-16T05:41:50.384616Z",
+    "succeededCount": 1,
+    "conditions": [
+      {
+        "type": "Started",
+        "state": "CONDITION_SUCCEEDED",
+        "message": "Started deployed execution in 29.08s.",
+        "lastTransitionTime": "2026-10-16T05:41:35.705125Z"
+      },
+      {
+        "type": "Completed",
+        "state": "CONDITION_SUCCEEDED",
+        "message": "Execution completed successfully in 41.31s.",
+        "lastTransitionTime": "2026-10-16T05:41:50.384616Z"
+      },
+      {
+        "type": "ContainerReady",
+        "state": "CONDITION_SUCCEEDED",
+        "message": "Imported container image in 1.77s.",
+        "lastTransitionTime": "2026-10-16T05:41:06.528846Z"
+      },
+      {
+        "type": "ResourcesAvailable",
+        "state": "CONDITION_SUCCEEDED",
+        "message": "Provisioned imported containers.",
+        "lastTransitionTime": "2026-10-16T05:41:06.619867Z"
+      }
+    ]
+  },
+  "products": {
+    "fvg": {
+      "scheduled_slot_utc": "2026-10-16T05:40:00.000000Z",
+      "observed_at": "2026-10-16T05:41:43.281046Z",
+      "complete": true,
+      "check_state": 0,
+      "critical_active": 0,
+      "check_completed": 1,
+      "run_age_hours": 17.69535584611111,
+      "future_samples": 55,
+      "publication_time_verified": false,
+      "source_run_id": "20261015T120000Z",
+      "objects_checked": 216,
+      "metric_status": {
+        "check_completed": "confirmed",
+        "check_state": "confirmed",
+        "critical_active": "confirmed"
+      },
+      "state_generation": "1792129305382384"
+    },
+    "national": {
+      "scheduled_slot_utc": "2026-10-16T05:40:00.000000Z",
+      "observed_at": "2026-10-16T05:41:45.489009Z",
+      "complete": true,
+      "check_state": 0,
+      "critical_active": 0,
+      "check_completed": 1,
+      "run_age_hours": 17.695969169166666,
+      "future_samples": 55,
+      "publication_time_verified": false,
+      "source_run_id": "20261015T120000Z",
+      "objects_checked": 644,
+      "metric_status": {
+        "check_completed": "confirmed",
+        "check_state": "confirmed",
+        "critical_active": "confirmed"
+      },
+      "state_generation": "1792129307787442"
+    }
+  },
+  "metric_series": [
+    {
+      "metric": {
+        "labels": {
+          "product": "fvg"
+        },
+        "type": "custom.googleapis.com/meteofriul/icon2i/check_state"
+      },
+      "resource": {
+        "type": "global",
+        "labels": {
+          "project_id": "meteo-friul"
+        }
+      },
+      "metricKind": "GAUGE",
+      "valueType": "INT64",
+      "points": [
+        {
+          "interval": {
+            "startTime": "2026-10-16T05:41:43.281046Z",
+            "endTime": "2026-10-16T05:41:43.281046Z"
+          },
+          "value": {
+            "int64Value": "0"
+          }
+        }
+      ]
+    },
+    {
+      "metric": {
+        "labels": {
+          "product": "national"
+        },
+        "type": "custom.googleapis.com/meteofriul/icon2i/check_state"
+      },
+      "resource": {
+        "type": "global",
+        "labels": {
+          "project_id": "meteo-friul"
+        }
+      },
+      "metricKind": "GAUGE",
+      "valueType": "INT64",
+      "points": [
+        {
+          "interval": {
+            "startTime": "2026-10-16T05:41:45.489009Z",
+            "endTime": "2026-10-16T05:41:45.489009Z"
+          },
+          "value": {
+            "int64Value": "0"
+          }
+        }
+      ]
+    },
+    {
+      "metric": {
+        "labels": {
+          "product": "fvg"
+        },
+        "type": "custom.googleapis.com/meteofriul/icon2i/critical_active"
+      },
+      "resource": {
+        "type": "global",
+        "labels": {
+          "project_id": "meteo-friul"
+        }
+      },
+      "metricKind": "GAUGE",
+      "valueType": "INT64",
+      "points": [
+        {
+          "interval": {
+            "startTime": "2026-10-16T05:41:43.281046Z",
+            "endTime": "2026-10-16T05:41:43.281046Z"
+          },
+          "value": {
+            "int64Value": "0"
+          }
+        }
+      ]
+    },
+    {
+      "metric": {
+        "labels": {
+          "product": "national"
+        },
+        "type": "custom.googleapis.com/meteofriul/icon2i/critical_active"
+      },
+      "resource": {
+        "type": "global",
+        "labels": {
+          "project_id": "meteo-friul"
+        }
+      },
+      "metricKind": "GAUGE",
+      "valueType": "INT64",
+      "points": [
+        {
+          "interval": {
+            "startTime": "2026-10-16T05:41:45.489009Z",
+            "endTime": "2026-10-16T05:41:45.489009Z"
+          },
+          "value": {
+            "int64Value": "0"
+          }
+        }
+      ]
+    },
+    {
+      "metric": {
+        "labels": {
+          "product": "fvg"
+        },
+        "type": "custom.googleapis.com/meteofriul/icon2i/check_completed"
+      },
+      "resource": {
+        "type": "global",
+        "labels": {
+          "project_id": "meteo-friul"
+        }
+      },
+      "metricKind": "GAUGE",
+      "valueType": "INT64",
+      "points": [
+        {
+          "interval": {
+            "startTime": "2026-10-16T05:41:43.281046Z",
+            "endTime": "2026-10-16T05:41:43.281046Z"
+          },
+          "value": {
+            "int64Value": "1"
+          }
+        }
+      ]
+    },
+    {
+      "metric": {
+        "labels": {
+          "product": "national"
+        },
+        "type": "custom.googleapis.com/meteofriul/icon2i/check_completed"
+      },
+      "resource": {
+        "type": "global",
+        "labels": {
+          "project_id": "meteo-friul"
+        }
+      },
+      "metricKind": "GAUGE",
+      "valueType": "INT64",
+      "points": [
+        {
+          "interval": {
+            "startTime": "2026-10-16T05:41:45.489009Z",
+            "endTime": "2026-10-16T05:41:45.489009Z"
+          },
+          "value": {
+            "int64Value": "1"
+          }
+        }
+      ]
+    }
+  ],
+  "scope": {
+    "jobs": {
+      "preexisting_unchanged": true,
+      "changed": [],
+      "new": [
+        "projects/meteo-friul/locations/europe-west1/jobs/meteofriul-icon2i-freshness"
+      ]
+    },
+    "services": {
+      "preexisting_unchanged": true,
+      "changed": [],
+      "new": []
+    },
+    "scheduler_unchanged": true,
+    "old_policies_unchanged": true,
+    "meteo-friul-weather-data": {
+      "existing_bindings_unchanged": true,
+      "monitor_bindings": [
+        {
+          "role": "projects/meteo-friul/roles/icon2iFreshnessDataRead",
+          "members": [
+            "serviceAccount:icon2i-freshness-monitor@meteo-friul.iam.gserviceaccount.com"
+          ],
+          "condition": {
+            "expression": "resource.name == 'projects/_/buckets/meteo-friul-weather-data' || resource.name.startsWith('projects/_/buckets/meteo-friul-weather-data/objects/pilot/weather/v1/icon2i/') || resource.name.startsWith('projects/_/buckets/meteo-friul-weather-data/objects/pilot/weather/v2/icon2i/')",
+            "title": "icon2i_freshness_scope",
+            "description": "Dedicated monitor scope only"
+          }
+        }
+      ]
+    },
+    "meteo-friul-weather-state": {
+      "existing_bindings_unchanged": true,
+      "monitor_bindings": [
+        {
+          "role": "projects/meteo-friul/roles/icon2iFreshnessStateWrite",
+          "members": [
+            "serviceAccount:icon2i-freshness-monitor@meteo-friul.iam.gserviceaccount.com"
+          ],
+          "condition": {
+            "expression": "resource.name == 'projects/_/buckets/meteo-friul-weather-state/objects/monitoring/icon2i-freshness/v1/fvg.json' || resource.name == 'projects/_/buckets/meteo-friul-weather-state/objects/monitoring/icon2i-freshness/v1/national.json'",
+            "title": "icon2i_freshness_scope",
+            "description": "Dedicated monitor scope only"
+          }
+        }
+      ]
+    }
+  },
+  "email": {
+    "policy": "projects/meteo-friul/alertPolicies/17329223989625799110",
+    "alert": "projects/meteo-friul/alerts/0.odvt3g7mi5vv",
+    "opened_at": "2026-10-16T05:45:06Z",
+    "recipient": "info@meteofriul.it",
+    "user_receipt_confirmation": "confirmed_by_user_in_chat",
+    "reset_at": "2026-10-16T05:47:07.704244Z",
+    "disabled": true,
+    "final_alert_state": "OPEN",
+    "final_alert_close_time": null,
+    "checked_at": "2026-10-16T05:52:23.786616Z",
+    "subsequent_check": {
+      "checked_at": "2026-10-16T06:46:38Z",
+      "state": "CLOSED",
+      "closeTime": "2026-10-16T05:53:49Z"
+    }
+  },
+  "scheduler_created": false,
+  "dispatcher_created": false,
+  "production_policies_created": false,
+  "job_execution_count": 1,
+  "job_default_args": [
+    "--help"
+  ]
+}

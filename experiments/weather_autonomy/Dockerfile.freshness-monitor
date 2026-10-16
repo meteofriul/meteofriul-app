@@ -1,0 +1,12 @@
+FROM python:3.13-slim
+ENV PYTHONDONTWRITEBYTECODE=1 PYTHONUNBUFFERED=1 ICON2I_MONITOR_ALLOW_CLOUD=0
+RUN pip install --no-cache-dir --disable-pip-version-check google-auth==2.58.1 requests==2.33.1 uvicorn==0.46.0
+WORKDIR /app/experiments/weather_autonomy
+COPY experiments/weather_autonomy/freshness_monitor/ ./freshness_monitor/
+COPY experiments/weather_autonomy/local_pipeline/ ./local_pipeline/
+COPY experiments/weather_autonomy/national_cloud_assets.py experiments/weather_autonomy/national_cloud_publication.py experiments/weather_autonomy/national_cloud_lazy_reader.py experiments/weather_autonomy/serve_national_bundle_v2.py experiments/weather_autonomy/national_catalog.py ./
+COPY backend/app/data/fvg_municipalities.json backend/app/data/fvg_geography.json backend/app/data/italy_municipalities_2026.json /app/backend/app/data/
+USER 65532:65532
+# Deliberately inert: activation requires reviewed image, IAM and explicit opt-in.
+ENTRYPOINT ["python", "-m", "freshness_monitor"]
+CMD ["--help"]
