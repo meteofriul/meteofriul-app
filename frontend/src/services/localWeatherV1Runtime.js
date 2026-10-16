@@ -1,3 +1,4 @@
+import { camsContinuityFromEvidence, CAMS_CONTINUITY_HOURS } from "./camsContinuityPolicy";
 import { readCachedIconLatest, sha256Hex } from "./weatherV1Client";
 import {
   LOCAL_WEATHER_V1_CATALOG,
@@ -42,6 +43,15 @@ const LEGACY_BUNDLE_CACHE_SPECS = Object.freeze([
 const AUTONOMOUS_PRIMARY_SOURCE = "icon2i_local_pilot";
 const AUTONOMOUS_MODE = "local_contract_v1";
 const CAMS_USABLE_AGE_MS = 30 * HOUR_MS;
+function camsContinuityForBundle(bundle) {
+  const current = camsContinuityFromEvidence(bundle?.current);
+  const forecast = camsContinuityFromEvidence(bundle?.forecast);
+  return current && forecast && current.release_sha256 === forecast.release_sha256
+    && current.source_run_id === forecast.source_run_id ? current : null;
+}
+function camsUsableAgeMs(bundle) {
+  return camsContinuityForBundle(bundle) ? CAMS_CONTINUITY_HOURS * HOUR_MS : CAMS_USABLE_AGE_MS;
+}
 const MAX_VERIFY_WINDOW_MS = 10 * 60 * 1000;
 const EXPECTED_CATALOG_VERSION = LOCAL_WEATHER_V1_CATALOG.version;
 const EXPECTED_CATALOG_SHA256 = LOCAL_WEATHER_V1_CATALOG.sha256;
@@ -381,7 +391,7 @@ function readVerifiedCamsHourlyCache(bundle) {
 }
 
 function camsRunFreshness(cache, current) {
-  return current <= Date.parse(cache.fresh_until_utc) ? "fresh" : "stale";
+  return current <= Math.min(Date.parse(cache.fresh_until_utc), Date.parse(cache.run_utc) + 24 * HOUR_MS) ? "fresh" : "stale";
 }
 
 function decorateCamsState(value, { currentSample, freshness }) {
@@ -415,7 +425,7 @@ function withCachedCamsSample(bundle, cache, sample, current) {
   const currentSample = current >= timestamp
     && current - timestamp < CURRENT_SAMPLE_MAX_LAG_MS
     && current <= usableUntil
-    && current - runAt <= CAMS_USABLE_AGE_MS;
+    && current - runAt <= camsUsableAgeMs(bundle);
   const freshness = camsRunFreshness(cache, current);
   const pollenVariables = new Map(cache.pollen_variables.map(variable => [variable.id, variable]));
   const currentValue = decorateCamsState(bundle.current, { currentSample, freshness });
@@ -460,7 +470,7 @@ function retainLastKnownCams(bundle, current) {
   if (!Number.isFinite(validAt) || current < validAt) return bundle;
   const currentSample = current - validAt < CURRENT_SAMPLE_MAX_LAG_MS
     && Number.isFinite(runAt)
-    && current - runAt <= CAMS_USABLE_AGE_MS;
+    && current - runAt <= camsUsableAgeMs(bundle);
   if (currentSample) return bundle;
   const freshness = currentSample && bundle.current.data_quality.cams_status === "fresh" ? "fresh" : "stale";
   const currentValue = decorateCamsState(bundle.current, { currentSample, freshness });
@@ -486,9 +496,29 @@ function reselectRetainedCams(bundle, current) {
   if (!camsFamilyProvenance(bundle)
     || bundle?.current?.source?.cams?.status !== "available"
     || bundle?.current?.pollen_data?.status !== "experimental_model_snapshot") return bundle;
+  const continuity = camsContinuityForBundle(bundle);
+  const claimed = [bundle.current, bundle.forecast].some(value =>
+    value?.source?.cams?.evidence?.stages?.latest?.freshness?.continuity);
+  if (claimed && !continuity) return withoutCams(bundle, { code: "CONTINUITY_MISMATCH" });
+  if (continuity && current > Date.parse(continuity.usable_until)) {
+    return withoutCams(bundle, { code: "EXPIRED" });
+  }
   const cache = readVerifiedCamsHourlyCache(bundle);
-  if (!cache) return retainLastKnownCams(bundle, current);
+  if (!cache) {
+    if (!continuity) return retainLastKnownCams(bundle, current);
+    const validAt = Date.parse(bundle.current.data_quality.cams_valid_at_utc);
+    if (!Number.isFinite(validAt) || current - validAt >= CURRENT_SAMPLE_MAX_LAG_MS) {
+      return withoutCams(bundle, { code: "CURRENT_SAMPLE_UNAVAILABLE" });
+    }
+    const freshness = current <= Date.parse(continuity.fresh_until) ? "fresh" : "stale";
+    const currentValue = decorateCamsState(bundle.current, { currentSample: true, freshness });
+    currentValue.pollen_data = { ...currentValue.pollen_data, freshness, sample_status: "current" };
+    return { ...bundle, current: currentValue,
+      forecast: decorateCamsState(bundle.forecast, { currentSample: true, freshness }) };
+  }
   const sample = cache.samples.findLast(row => Date.parse(row.valid_at_utc) <= current);
+  if (continuity && (!sample || current - Date.parse(sample.valid_at_utc) >= CURRENT_SAMPLE_MAX_LAG_MS
+    || current > Date.parse(cache.usable_until_utc))) return withoutCams(bundle, { code: "CURRENT_SAMPLE_UNAVAILABLE" });
   return sample ? withCachedCamsSample(bundle, cache, sample, current) : retainLastKnownCams(bundle, current);
 }
 
@@ -726,7 +756,7 @@ function hasUsableCams(bundle, now) {
     && [current, runAt, validAt].every(Number.isFinite)
     && current >= runAt
     && current >= validAt
-    && current - runAt <= CAMS_USABLE_AGE_MS
+    && current - runAt <= camsUsableAgeMs(bundle)
     && current - validAt < CURRENT_SAMPLE_MAX_LAG_MS;
 }
 
@@ -749,7 +779,7 @@ function prepareIncomingBundle(incoming, now, location) {
   if (!prepared || !hasRetainableCams(prepared, now) || hasUsableCams(prepared, now)) return prepared;
   const current = clockMilliseconds(now);
   const runAt = Date.parse(prepared.current.data_quality.cams_run_utc);
-  return current - runAt > CAMS_USABLE_AGE_MS
+  return current - runAt > camsUsableAgeMs(prepared)
     ? withoutExpiredCandidateCams(prepared)
     : prepared;
 }
@@ -916,6 +946,19 @@ function preferredCamsBundle(current, candidate, now) {
   if (right.camsRun !== left.camsRun) return right.camsRun > left.camsRun ? candidate : current;
   if (right.camsValid !== left.camsValid) return right.camsValid > left.camsValid ? candidate : current;
   const candidateHourlyCache = readVerifiedCamsHourlyCache(candidate);
+  const candidateContinuity = camsContinuityForBundle(candidate);
+  if (candidateContinuity && !camsContinuityForBundle(current) && candidateHourlyCache
+    && right.camsRunId === left.camsRunId
+    && right.camsRevision === left.camsRevision
+    && camsFamilyEvidenceIdentity(current) === camsFamilyEvidenceIdentity(candidate)
+    && Date.parse(candidateHourlyCache.fresh_until_utc) === Date.parse(candidateContinuity.fresh_until)
+    && Date.parse(candidateHourlyCache.usable_until_utc) === Date.parse(candidateContinuity.usable_until)) {
+    // A legacy client can cache this same family without its optional policy.
+    // Migrate the verified proof and hourly series together even when the run
+    // and selected sample are unchanged; retain the already selected ICON.
+    // The caller commits this entire CAMS domain through the atomic cache path.
+    return withCamsFrom(current, candidate);
+  }
   if (!readVerifiedCamsHourlyCache(current) && candidateHourlyCache
     && right.camsRunId === left.camsRunId
     && right.camsRevision === left.camsRevision

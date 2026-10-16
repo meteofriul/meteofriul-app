@@ -349,6 +349,7 @@ function deliveryEvidence(result) {
     path: result.path,
     etag: result.etag,
     freshness: result.freshness,
+    ...(result.familyRelease ? { family_release: result.familyRelease, family_release_published_at: result.familyReleasePublishedAt } : {}),
     from_cache: result.fromCache === true,
     network_fallback: result.networkFallback === true,
     fallback_reason: result.fallbackReason || null,
@@ -728,8 +729,8 @@ function buildCamsHourlyCache(camsState, istatCode) {
       catalog_sha256: pollenDocument.catalog.sha256,
       run_utc: pollenDocument.run_at,
       generated_at_utc: pollenDocument.generated_at,
-      fresh_until_utc: pollenDocument.freshness.fresh_until,
-      usable_until_utc: pollenDocument.freshness.usable_until,
+      fresh_until_utc: camsState.result.freshness?.freshUntil || pollenDocument.freshness.fresh_until,
+      usable_until_utc: camsState.result.freshness?.usableUntil || pollenDocument.freshness.usable_until,
       pollen_variables: pollenVariables,
       samples,
     });
@@ -1066,6 +1067,7 @@ export async function fetchLocalWeatherV1CamsSupplement(
     force = false,
     onCamsFamilyLatest,
     camsTimeoutMs = LOCAL_WEATHER_V1_CAMS_TIMEOUT_MS,
+    camsContinuity = true,
     clientFactory = createWeatherV1Client,
   } = {},
 ) {
@@ -1079,7 +1081,7 @@ export async function fetchLocalWeatherV1CamsSupplement(
     fail("INVALID_CONFIG", "onCamsFamilyLatest deve essere una funzione");
   }
   const client = clientFactory({
-    baseUrl, fetchImpl, storage, now: clock, force,
+    baseUrl, fetchImpl, storage, now: clock, force, camsContinuity,
     catalog: LOCAL_WEATHER_V1_CATALOG,
     istatCodes: LOCAL_WEATHER_V1_ISTAT_CODES,
   });
@@ -1101,8 +1103,8 @@ export async function fetchLocalWeatherV1CamsSupplement(
     pollen_data: state.pollen,
     air_quality_data: state.air || null,
     cams_hourly_cache: buildCamsHourlyCache(state, istatCode),
-    fresh_until_utc: state.result?.document?.freshness?.fresh_until || null,
-    usable_until_utc: state.result?.document?.freshness?.usable_until || null,
+    fresh_until_utc: state.result?.freshness?.freshUntil || state.result?.document?.freshness?.fresh_until || null,
+    usable_until_utc: state.result?.freshness?.usableUntil || state.result?.document?.freshness?.usable_until || null,
     diagnostic: state.diagnostic,
   };
 }
@@ -1122,6 +1124,7 @@ export async function fetchLocalWeatherV1Bundle(
     onCamsFamilyLatest,
     retainedIconBundle,
     camsTimeoutMs = LOCAL_WEATHER_V1_CAMS_TIMEOUT_MS,
+    camsContinuity = true,
     clientFactory = createWeatherV1Client,
   } = {},
 ) {
@@ -1151,6 +1154,7 @@ export async function fetchLocalWeatherV1Bundle(
     fetchImpl,
     storage,
     now: clock,
+    camsContinuity,
     catalog: LOCAL_WEATHER_V1_CATALOG,
     istatCodes: LOCAL_WEATHER_V1_ISTAT_CODES,
     force,

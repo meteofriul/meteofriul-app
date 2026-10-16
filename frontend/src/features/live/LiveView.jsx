@@ -1032,6 +1032,7 @@ export function CommunityReportForm({
   onManagedUpdate,
 }) {
   const pilotRules = isDefinitiveAppExperience() || isLocalCommunityPilot();
+  const simplifiedRules = isLocalCommunityPilot();
   const pendingIntent = pilotRules && !simulationOnly ? readPilotPendingOperations({ storage: personalStorage })[0] : null;
   const [selectedTypeId, setSelectedTypeId] = useState(() => pendingIntent?.typeId || managedReport?.typeId || correctionReport?.typeId || "");
   const [pendingEdit, setPendingEdit] = useState(() => {
@@ -1043,6 +1044,7 @@ export function CommunityReportForm({
     return null;
   });
   const [submitState, setSubmitState] = useState({ status: "idle", text: "" });
+  const [review, setReview] = useState(null);
   const [isUndoing, setUndoing] = useState(false);
   const [expiredUndoKey, setExpiredUndoKey] = useState("");
   const [locationState, setLocationState] = useState({
@@ -1091,7 +1093,7 @@ export function CommunityReportForm({
   const editDescription = pendingEdit?.withdrawn ? copy.reportEditReplacementPending
     : pendingEdit?.uncertain ? copy.reportEditPending : copy.reportEditBody;
   const nearbyMatches = useMemo(() => (
-    !managedReport && !correctionReport && !replacementToken && isLocationReady && selectedTypeId
+    !simplifiedRules && !managedReport && !correctionReport && !replacementToken && isLocationReady && selectedTypeId
       ? findNearbyMatchingCommunityGroups(activeGroups, {
         coords: locationState.data.coords,
         maxDistanceKm,
@@ -1102,6 +1104,7 @@ export function CommunityReportForm({
       : []
   ), [
     activeGroups,
+    simplifiedRules,
     ignoredMatchGroupIds,
     isLocationReady,
     locationState.data,
@@ -1313,6 +1316,12 @@ export function CommunityReportForm({
     }
 
     if (["own", "voted"].includes(nearbyMatchState)) return;
+    if (simplifiedRules && !review) {
+      setReview({ typeId: selectedTypeId, place: locationState.data.selectedPlace,
+        istatCode: locationState.data.istatCode });
+      setSubmitState({ status: "idle", text: "" });
+      return;
+    }
 
     if (managedReport) {
       // Never silently turn a correction into a withdrawal when the 5-minute
@@ -1371,6 +1380,11 @@ export function CommunityReportForm({
             submissionLocation = canKeepSelectedPlace
               ? { ...refreshedLocation, selectedPlace: previouslySelectedPlace }
               : refreshedLocation;
+            if (simplifiedRules && review && submissionLocation.istatCode !== review.istatCode) {
+              setReview(null);
+              setLocationState({ data: submissionLocation, status: "ready", text: copy.reportLocationReady });
+              return { ok: false, reason: "review_location_changed" };
+            }
             setLocationState({
               data: submissionLocation,
               status: "ready",
@@ -1412,6 +1426,7 @@ export function CommunityReportForm({
       };
     }
     if (result?.locationVerificationFailed) {
+      setReview(null);
       setLocationState({
         data: null,
         status: "error",
@@ -1553,7 +1568,7 @@ export function CommunityReportForm({
       <div className="mf-live-report-form__header">
         {!isCenteredReceipt ? <div>
           <strong id={sheet ? reportTitleId : undefined}>
-            {isSuccess ? copy.reportSuccessTitle : managedReport ? copy.reportEditTitle : correctionReport ? "Correggi osservazione" : copy.reportQuestion}
+            {isSuccess ? copy.reportSuccessTitle : review ? copy.reportReviewTitle : managedReport ? copy.reportEditTitle : correctionReport ? "Correggi osservazione" : copy.reportQuestion}
           </strong>
           <span id={sheet ? reportDescriptionId : undefined}>
             {isSuccess ? successDescription : managedReport ? editDescription : correctionReport ? "Puoi correggere fenomeno e Comune entro 5 minuti. La posizione viene verificata con il GPS." : replacementToken ? "Sostituzione senza attesa. Il nuovo invio conta nei limiti di 4/60 minuti e 12/24 ore." : copy.reportBody}
@@ -1642,6 +1657,17 @@ export function CommunityReportForm({
                 {successExpiryLabel ? <small>{successExpiryLabel}</small> : null}
               </>
             )}
+          </div>
+        ) : review ? (
+          <div className="mf-live-report-review" aria-live="polite">
+            <strong>{copy.reportReviewSummary.replace("{type}", copy.reportTypes[review.typeId]).replace("{place}", review.place)}</strong>
+            <p>{copy.reportReviewReplacement}</p>
+            <p>{copy.reportExpires}</p>
+            {submitState.text ? <p className="mf-live-report-feedback" role="status">{submitState.text}</p> : null}
+            <AppButton type="button" variant="secondary" disabled={isSubmitting}
+              onClick={() => { setReview(null); setSubmitState({ status: "idle", text: "" }); }}>
+              {copy.reportReviewBack}
+            </AppButton>
           </div>
         ) : (
           <>
@@ -1843,7 +1869,7 @@ export function CommunityReportForm({
                 : nearbyMatch
                   ? copy.confirmationAction
                   : managedReport ? editSubmitLabel
-                    : correctionReport ? "Conferma correzione" : copy.reportSubmit}
+                    : correctionReport ? "Conferma correzione" : simplifiedRules && !review ? copy.reportReviewContinue : copy.reportSubmit}
           </AppButton>
         )}
         {pilotStyle && !isSuccess && !["own", "voted"].includes(nearbyMatchState) ? (
@@ -2034,6 +2060,7 @@ function CommunityPanel({
   );
   const [isReportFormOpen, setReportFormOpen] = useState(false);
   const pilotRules = isDefinitiveAppExperience() || isLocalCommunityPilot();
+  const simplifiedRules = isLocalCommunityPilot();
   const [editingReport, setEditingReport] = useState(null);
   const [managedReport, setManagedReport] = useState(null);
   const [replacement, setReplacement] = useState(() => pilotRules && !reportingSimulation ? readPilotReplacement({ storage: personalStorage }) : null);
@@ -2048,6 +2075,7 @@ function CommunityPanel({
     model: sourceModel,
   }));
   const [confirmationStatuses, setConfirmationStatuses] = useState({});
+  const [confirmationMessages, setConfirmationMessages] = useState({});
   const [inferredOwnGroupIds, setInferredOwnGroupIds] = useState([]);
   const [pendingMapFocus, setPendingMapFocus] = useState(false);
   const [pendingConfirmation, setPendingConfirmation] = useState(null);
@@ -2193,11 +2221,11 @@ function CommunityPanel({
     };
   }, [personalState, readPersonalState]);
 
-  const performReportConfirmation = async ({ expiresAt, groupId, vote }) => {
+  const performReportConfirmation = async ({ expiresAt, groupId, vote, reportIds }) => {
     if (
       !onReportConfirm
       || getOwnCommunityReport(personalState, groupId)
-      || getCommunityVote(personalState, groupId) === "no"
+      || getCommunityVote(personalState, groupId, simplifiedRules ? reportIds : undefined) === "no"
     ) {
       return { ok: false, reason: "unavailable" };
     }
@@ -2206,11 +2234,15 @@ function CommunityPanel({
     const result = await onReportConfirm(groupId, vote, {
       acceptedTerms: true,
       policyVersion: COMMUNITY_GUIDELINES_POLICY_VERSION,
+      reportIds,
     });
     setConfirmationStatuses((current) => ({
       ...current,
       [groupId]: result?.ok ? "success" : "error",
     }));
+    setConfirmationMessages((current) => ({ ...current, [groupId]: result?.ok ? ""
+      : result?.reason === "vote_location_required" ? model.copy.confirmGpsRequired
+        : result?.detail?.message || model.copy.confirmError }));
 
     if (result?.ok) {
       const returnedCounts = result.confirmations || result.group?.confirmations;
@@ -2232,13 +2264,14 @@ function CommunityPanel({
           expiresAt,
           groupId,
           vote: result.vote || vote,
+          reportIds,
         },
         { storage: personalStorage },
       );
       if (Math.max(0, Number(result.confirmations?.no) || 0) >= 3) {
         nextPersonalState = rememberCommunityMapWithdrawal(
           nextPersonalState,
-          { expiresAt, groupId },
+          { expiresAt, groupId, reportIds },
           { storage: personalStorage },
         );
       }
@@ -2258,7 +2291,7 @@ function CommunityPanel({
       || model.markers
         .flatMap((marker) => marker.phenomena || [marker])
         .find((item) => item.groupId === groupId);
-    const command = { expiresAt: entry?.expiresAt, groupId, vote };
+    const command = { expiresAt: entry?.expiresAt, groupId, vote, reportIds: [...(entry?.reportIds || [])] };
 
     if (!hasCommunityGuidelinesConsent(
       COMMUNITY_GUIDELINES_POLICY_VERSION,
@@ -2389,16 +2422,17 @@ function CommunityPanel({
     <CommunityMap
       confirmationCountsByGroup={confirmationCountsByGroup}
       confirmationStatuses={confirmationStatuses}
+      confirmationMessages={confirmationMessages}
       copy={model.copy}
       immersive={immersive}
       inferredOwnGroupIds={inferredOwnGroupIds}
       markers={mapMarkers}
       onConfirm={allowCommunityMutations ? requestReportConfirmation : undefined}
-      onUpdate={allowCommunityMutations && onReportUpdate ? updateOwnReport : undefined}
-      onWithdraw={allowCommunityMutations && onReportWithdraw ? withdrawOwnReport : undefined}
-      onCorrect={pilotRules && allowCommunityMutations ? correctOwnReport : undefined}
-      onEdit={pilotRules && compactLayout && allowCommunityMutations ? manageOwnReport : undefined}
-      onReplace={pilotRules && allowCommunityMutations && onReportWithdraw ? replaceOwnReport : undefined}
+      onUpdate={!simplifiedRules && allowCommunityMutations && onReportUpdate ? updateOwnReport : undefined}
+      onWithdraw={!simplifiedRules && allowCommunityMutations && onReportWithdraw ? withdrawOwnReport : undefined}
+      onCorrect={!simplifiedRules && pilotRules && allowCommunityMutations ? correctOwnReport : undefined}
+      onEdit={!simplifiedRules && pilotRules && compactLayout && allowCommunityMutations ? manageOwnReport : undefined}
+      onReplace={!simplifiedRules && pilotRules && allowCommunityMutations && onReportWithdraw ? replaceOwnReport : undefined}
       personalState={personalState}
       theme={theme}
     />
@@ -2407,10 +2441,10 @@ function CommunityPanel({
     <CommunityReportForm
       activeGroups={activeGroups}
       copy={model.copy}
-      correctionReport={editingReport}
-      managedReport={managedReport}
+      correctionReport={simplifiedRules ? null : editingReport}
+      managedReport={simplifiedRules ? null : managedReport}
       onManagedUpdate={allowCommunityMutations && onReportUpdate ? updateOwnReport : undefined}
-      replacementToken={!editingReport ? replacement?.token || "" : ""}
+      replacementToken={!simplifiedRules && !editingReport ? replacement?.token || "" : ""}
       dialogId={reportSheetId}
       locations={model.reportLocations}
       maxDistanceKm={model.maxDistanceKm}
@@ -2427,10 +2461,10 @@ function CommunityPanel({
         ));
       }}
       onSubmit={reportSubmit}
-      onUndo={reportingPreview ? undefined : onReportUndo}
+      onUndo={reportingPreview || simplifiedRules ? undefined : onReportUndo}
       onViewMap={viewCommunityMap}
       options={model.reportOptions}
-      pendingReportUndo={reportingPreview ? null : pendingReportUndo}
+      pendingReportUndo={reportingPreview || simplifiedRules ? null : pendingReportUndo}
       personalStorage={personalStorage}
       personalState={personalState}
       pilotStyle={compactLayout}
@@ -2441,7 +2475,7 @@ function CommunityPanel({
       ttlLabel={model.ttlLabel}
     />
   ) : null;
-  const pendingUpdateRecovery = allowCommunityMutations && pendingReportUpdate ? (
+  const pendingUpdateRecovery = !simplifiedRules && allowCommunityMutations && pendingReportUpdate ? (
     <CommunityPendingUpdateRecovery
       compact={compactLayout}
       copy={model.copy}
@@ -2486,6 +2520,7 @@ function CommunityPanel({
             communityCopy={model.copy}
             confirmationCountsByGroup={confirmationCountsByGroup}
             confirmationStatuses={confirmationStatuses}
+      confirmationMessages={confirmationMessages}
             inferredOwnGroupIds={inferredOwnGroupIds}
             inline
             key={webcamModel?.supported === false ? "webcams-disabled" : "webcams-enabled"}
@@ -2500,11 +2535,11 @@ function CommunityPanel({
             onReportRequest={reportingEnabled && reportSubmit
               ? () => setReportFormOpen(true)
               : undefined}
-            onUpdate={allowCommunityMutations && onReportUpdate ? updateOwnReport : undefined}
-            onWithdraw={allowCommunityMutations && onReportWithdraw ? withdrawOwnReport : undefined}
-            onCorrect={pilotRules && allowCommunityMutations ? correctOwnReport : undefined}
-            onEdit={pilotRules && allowCommunityMutations ? manageOwnReport : undefined}
-            onReplace={pilotRules && allowCommunityMutations && onReportWithdraw ? replaceOwnReport : undefined}
+            onUpdate={!simplifiedRules && allowCommunityMutations && onReportUpdate ? updateOwnReport : undefined}
+            onWithdraw={!simplifiedRules && allowCommunityMutations && onReportWithdraw ? withdrawOwnReport : undefined}
+            onCorrect={!simplifiedRules && pilotRules && allowCommunityMutations ? correctOwnReport : undefined}
+            onEdit={!simplifiedRules && pilotRules && allowCommunityMutations ? manageOwnReport : undefined}
+            onReplace={!simplifiedRules && pilotRules && allowCommunityMutations && onReportWithdraw ? replaceOwnReport : undefined}
             personalState={personalState}
             radarModel={radarModel}
             reportUnavailableText={reportingUnavailableText}
@@ -2674,7 +2709,7 @@ function CommunityPanel({
               const ownExpiry = ownReport
                 ? getOwnReportExpiryLabel(model.copy, ownReport.expiresAt)
                 : "";
-              const vote = getCommunityVote(personalState, item.groupId);
+              const vote = getCommunityVote(personalState, item.groupId, isLocalCommunityPilot() ? item.reportIds || [] : undefined);
               const confirmationStatus = confirmationStatuses[item.groupId] || "idle";
               const votingLocked = vote === "no";
 

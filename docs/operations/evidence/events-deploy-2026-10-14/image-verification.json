@@ -1,0 +1,15 @@
+{
+  "image": "europe-west1-docker.pkg.dev/meteo-friul/meteofriul/events-worker@sha256:7e78c5ce2ecc39fa28a5666ca8680c8d0302a4b3c534579109739ed7e62bf672",
+  "config_digest": "sha256:67253d33c3c72cfedc4483bda01181bc7acddec156ebc9ea81bdcc4fd6e28336",
+  "revision_label": "f7fe8e9696f5b61a54fda27617ec99834993f8b4",
+  "os": "linux",
+  "architecture": "amd64",
+  "entrypoint": [
+    "python",
+    "-m",
+    "app.events.pilot_cloud"
+  ],
+  "user": "65532:65532",
+  "manifest_digest_verified": true,
+  "config_digest_verified": true
+}

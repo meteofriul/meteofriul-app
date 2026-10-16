@@ -1,0 +1,63 @@
+{
+  "checked_at": "2026-10-14T19:36:38.082555+00:00",
+  "read_only": true,
+  "inventories": {
+    "current_exhibitions": {
+      "url": "https://galleriaspazzapan.regione.fvg.it/core/categories/erpac_spazzapan/it/16101/",
+      "expected_ids": [
+        229043,
+        229146,
+        232202,
+        232607
+      ],
+      "actual_ids": [
+        229043,
+        229146,
+        232202
+      ],
+      "added_ids": [],
+      "removed_ids": [
+        232607
+      ],
+      "new_rows": []
+    },
+    "exhibitions": {
+      "url": "https://galleriaspazzapan.regione.fvg.it/core/categories/erpac_spazzapan/it/13346/",
+      "expected_ids": [
+        115755,
+        121574,
+        134335,
+        229043,
+        229146,
+        232202,
+        232607
+      ],
+      "actual_ids": [
+        115755,
+        121574,
+        134335,
+        229043,
+        229146,
+        232202,
+        232607
+      ],
+      "added_ids": [],
+      "removed_ids": [],
+      "new_rows": []
+    },
+    "event_category": {
+      "url": "https://galleriaspazzapan.regione.fvg.it/core/categories/erpac_spazzapan/it/14038/",
+      "expected_ids": [
+        84819,
+        233611
+      ],
+      "actual_ids": [
+        84819,
+        233611
+      ],
+      "added_ids": [],
+      "removed_ids": [],
+      "new_rows": []
+    }
+  }
+}

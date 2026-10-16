@@ -59,7 +59,8 @@ def publish(client, *, project, adapters=None, retry_failed=False):
     registered_adapters = source_adapters(project) if adapters is None else None
     if retry_failed:
         failed = {name for name, batch in (previous or {}).get('sources', {}).items()
-                  if isinstance(batch, dict) and batch.get('status') != 'fresh'}
+                  if isinstance(batch, dict)
+                  and batch.get('status') not in {'fresh', 'partial'}}
         selected_adapters = {name: adapter for name, adapter in registered_adapters.items()
                              if name in failed}
         if not selected_adapters:
@@ -78,13 +79,18 @@ def publish(client, *, project, adapters=None, retry_failed=False):
             selected_adapters['TurismoFVG'] = partial(
                 collect_regional_window_verified, previous_control,
                 previous_batch=(previous or {}).get('sources', {}).get('TurismoFVG'))
+        if 'Pordenonelegge' in selected_adapters:
+            from .pilot_pordenonelegge import collect_pordenonelegge
+            selected_adapters['Pordenonelegge'] = partial(
+                collect_pordenonelegge,
+                previous_batch=(previous or {}).get('sources', {}).get('Pordenonelegge'))
     source_timeouts = {name: budget for name, budget in
                        (("TurismoFVG", 360), ("Paesi in Festa", 90),
                         ("SagreFVG", 60), ("Pordenonelegge", 20),
                         ("Pordenone Pensa", 25),
                         ("Le Giornate del Cinema Muto", 30),
                         ("Azalea", 20), ("CSS Udine", 20),
-                        ("Teatro Verdi Pordenone", 50),
+                        ("Teatro Verdi Pordenone", 60),
                         ("Teatro Verdi Trieste", 25),
                         ("Villa Manin", 65),
                         ("Magazzino delle Idee", 30),
@@ -106,21 +112,33 @@ def publish(client, *, project, adapters=None, retry_failed=False):
                      'failure_tag': ('quarantined_cards' if batch['status'] == 'partial' else
                                      (batch.get('last_attempt_error_type') or 'source_error')
                                      if batch['status'] != 'fresh' else None),
-                     'review_count': len(batch.get('review_required', [])),
-                     'verification': (batch.get('verification') if batch['status'] in {'fresh', 'partial'}
-                                      else batch.get('last_attempt_verification')) or {}}
+                     'review_count': (len(batch.get('review_required', []))
+                                      if batch['status'] in {'fresh', 'partial'}
+                                      else batch.get('last_attempt_review_count', 0)),
+                     'pending_count': (len(batch.get('detail_candidates', []))
+                                       if batch['status'] in {'fresh', 'partial'}
+                                       else batch.get('last_attempt_pending_count', 0)),
+                     'detail_diagnostics': list(((
+                         batch.get('detail_diagnostics') if batch['status'] in {'fresh', 'partial'}
+                         else batch.get('last_attempt_detail_diagnostics')) or {}).values())[:30],
+                     'verification': {
+                         key: value for key, value in ((
+                             batch.get('verification') if batch['status'] in {'fresh', 'partial'}
+                             else batch.get('last_attempt_verification')) or {}).items()
+                         if key in {'collection_mode', 'source_complete', 'records_scanned',
+                                    'review_count', 'cards_total', 'quarantine_count',
+                                    'pending', 'ambiguous', 'within_budget', 'detail_health'}},
+                     'review_issues': [
+                         {'url': item.get('url'), 'reason': item.get('reason'),
+                          **({'reasons': item['reasons']} if item.get('reasons') else {})}
+                         for item in ((batch.get('review_required')
+                                       if batch['status'] in {'fresh', 'partial'}
+                                       else batch.get('last_attempt_issues')) or [])[:30]
+                         if isinstance(item, dict)]}
               for name, batch in catalog['sources'].items()}
     incomplete = [name for name in selected_adapters
-                  if name in {'TurismoFVG', 'Azalea', 'CSS Udine', 'Pordenone Pensa',
-                              'Teatro Verdi Pordenone', 'Teatro Verdi Trieste',
-                              'Paesi in Festa', 'SagreFVG', 'Villa Manin',
-                              'Magazzino delle Idee', 'MESS',
-                              'Galleria Spazzapan',
-                              'Pordenonelegge', 'Le Giornate del Cinema Muto',
-                              'Barcolana'}
-                  and catalog['sources'].get(name, {}).get('status') != 'fresh'
-                  and not (name == 'Paesi in Festa' and
-                           catalog['sources'].get(name, {}).get('status') == 'partial')]
+                  if catalog['sources'].get(name, {}).get('status')
+                  not in {'fresh', 'partial'}]
     if incomplete:
         # The catalog retains the last verified source data and detail progress,
         # but the scheduled job must not appear successful after a partial run.
@@ -128,6 +146,7 @@ def publish(client, *, project, adapters=None, retry_failed=False):
         print(json.dumps({'event_source_verification': report}, ensure_ascii=False), flush=True)
         raise RuntimeError('event source verification failed: ' + ', '.join(sorted(incomplete)))
     watch_failures = []
+    candidate_watch_alerts = []
     if adapters is None and not retry_failed:
         monitored_at = catalog.get('attempted_at') or datetime.now(timezone.utc).isoformat()
         monitor_status = {}
@@ -138,8 +157,10 @@ def publish(client, *, project, adapters=None, retry_failed=False):
             monitor_status['Palazzo Attems'] = {
                 'status': 'unverified', 'tag': 'upstream_unavailable',
                 'checked_at': monitored_at}
-            watch_failures.append('Palazzo Attems inventory watch unavailable: '
-                                  + type(exc).__name__ + ': ' + str(exc))
+            candidate_watch_alerts.append({
+                'monitor': 'Palazzo Attems', 'status': 'unverified',
+                'reason': 'upstream_unavailable',
+                'exception_type': type(exc).__name__})
         else:
             monitor_status['Palazzo Attems'] = {
                 'status': 'review_required' if changes else 'checked',
@@ -152,15 +173,19 @@ def publish(client, *, project, adapters=None, retry_failed=False):
                 'known_blockers': len(attems['blockers']),
                 'changes': changes}}, ensure_ascii=False), flush=True)
             if changes:
-                watch_failures.append('Palazzo Attems inventory changed: ' + ', '.join(changes))
+                candidate_watch_alerts.append({
+                    'monitor': 'Palazzo Attems', 'status': 'review_required',
+                    'change_count': len(changes), 'changes': changes[:10]})
         try:
             girofvg = collect_girofvg_watch(datetime.now(ZoneInfo('Europe/Rome')).date())
         except Exception as exc:
             monitor_status['GiroFVG'] = {
                 'status': 'unverified', 'tag': 'upstream_unavailable',
                 'checked_at': monitored_at}
-            watch_failures.append('GiroFVG discovery watch unavailable: '
-                                  + type(exc).__name__ + ': ' + str(exc))
+            candidate_watch_alerts.append({
+                'monitor': 'GiroFVG', 'status': 'unverified',
+                'reason': 'upstream_unavailable',
+                'exception_type': type(exc).__name__})
         else:
             monitor_status['GiroFVG'] = {
                 'status': 'review_required' if girofvg['changes'] else 'checked',
@@ -174,7 +199,10 @@ def publish(client, *, project, adapters=None, retry_failed=False):
                 'known_page_errors': girofvg['known_page_errors'],
                 'changes': girofvg['changes']}}, ensure_ascii=False), flush=True)
             if girofvg['changes']:
-                watch_failures.append('GiroFVG has changed event candidates requiring review')
+                candidate_watch_alerts.append({
+                    'monitor': 'GiroFVG', 'status': 'review_required',
+                    'change_count': len(girofvg['changes']),
+                    'changes': girofvg['changes'][:10]})
         annual_name = 'TurismoFVG annual inventory'
         previous_annual = ((previous or {}).get('monitors') or {}).get(annual_name)
         local_today = datetime.now(ZoneInfo('Europe/Rome')).date()
@@ -210,6 +238,13 @@ def publish(client, *, project, adapters=None, retry_failed=False):
             monitor_status[annual_name] = previous_annual
         catalog['monitors'] = monitor_status
     _save_catalog(blob, generation, catalog)
+    if candidate_watch_alerts:
+        # A dedicated log alert reports candidate-site changes independently
+        # of the publication result for the fifteen approved sources.
+        print(json.dumps({'severity': 'WARNING',
+                          'event': 'event_candidate_watch_alert',
+                          'alerts': candidate_watch_alerts},
+                         ensure_ascii=False), flush=True)
     if watch_failures:
         raise RuntimeError(' | '.join(watch_failures))
     return report

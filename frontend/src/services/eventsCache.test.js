@@ -36,7 +36,7 @@ describe("events cache", () => {
   it("builds location and cache keys from city or location objects", () => {
     expect(getEventsLocationKey("Pordenone")).toBe("pordenone|city|city");
     expect(getEventsCacheKey({ city: "Cordenons", lat: 45.98361, lon: 12.70038 }, FULL_EVENTS_LIMIT)).toBe(
-      "eventsCache:v12:cordenons|45.9836|12.7004:100",
+      "eventsCache:v13:cordenons|45.9836|12.7004:100",
     );
   });
 
@@ -46,6 +46,7 @@ describe("events cache", () => {
     expect(payload).toEqual({
       schemaVersion: EVENTS_CACHE_SCHEMA_VERSION,
       contractVersion: null,
+      catalogHealth: null,
       events: [{ id: "e1" }],
       total: 1,
     });

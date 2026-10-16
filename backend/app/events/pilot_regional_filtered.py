@@ -254,8 +254,13 @@ def fetch_year_resilient(start, end, *, get=requests.get, max_workers=16):
             and totals is not None and totals.group(1) != totals.group(2))
         if not changed_total and message != 'TurismoFVG changed result total or page size':
             raise
+    # A rolling window can stay below the normal 512-result partition
+    # threshold while its count changes during parallel page reads. Force
+    # smaller dated windows on this retry, then require their exact union to
+    # match a stable full-window snapshot.
     return fetch_year_partitioned(start, end, get=get,
-                                  max_workers=max_workers)
+                                  max_workers=max_workers,
+                                  result_limit=128)
 
 
 def collect_filtered(*, today=None, get=requests.get, max_years=5):

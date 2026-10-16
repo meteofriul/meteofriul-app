@@ -1,0 +1,67 @@
+{
+  "snapshot": "2026-10-15T14:26:55.958729+00:00",
+  "source_status": "fresh",
+  "verification": {
+    "collection_mode": "reconciled-spazzapan-event-exhibition-news",
+    "source_complete": true,
+    "event_api_count": 4,
+    "event_inventory_ids": [
+      285613,
+      616198,
+      618890,
+      619735
+    ],
+    "event_category_count": 3,
+    "current_exhibition_count": 3,
+    "current_exhibition_ids": [
+      229043,
+      229146,
+      232202
+    ],
+    "archived_exhibitions": [
+      {
+        "source_id": "232607",
+        "url": "https://galleriaspazzapan.regione.fvg.it/it/fvg7003-sergio-pausig-173388",
+        "start_date": "2026-09-11",
+        "end_date": "2026-10-11",
+        "date_evidence": "Dall' 11 settembre all'11 ottobre 2026"
+      }
+    ],
+    "exhibition_count": 7,
+    "historical_plural_count": 1,
+    "news_count": 79,
+    "retired_news_ids": [
+      232257
+    ],
+    "reviewed_2026_news": 45,
+    "verified_distinct_current": 5,
+    "projected_count": 2,
+    "review_count": 0,
+    "active_count": 2
+  },
+  "previous_source_status": "stale",
+  "events": [
+    {
+      "source_id": "232202",
+      "title": "FVG70.02 – Nuovi modelli di ricerca",
+      "start_date": "2026-07-23",
+      "end_date": "2026-11-29",
+      "has_excerpt": true
+    },
+    {
+      "source_id": "234126",
+      "title": "Tra internazionalismo e Genius loci: artisti degli anni '70 oltre i confini",
+      "start_date": "2026-10-28",
+      "end_date": "2026-10-28",
+      "has_excerpt": false
+    }
+  ],
+  "api_http": 200,
+  "api_snapshot": "2026-10-15T14:26:55.958729+00:00",
+  "api_total_in_area": 312,
+  "cors_android": "https://localhost",
+  "archived_pausig_absent": true,
+  "active_cards_preserved": true,
+  "persisted_source_proof_verified": true,
+  "cloud_writes": false
+}

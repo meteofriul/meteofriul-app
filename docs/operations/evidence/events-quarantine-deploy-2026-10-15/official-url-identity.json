@@ -1,0 +1,32 @@
+[
+  {
+    "old_url": "https://www.turismofvg.it/eventi/samrrimenti-e-rinvenimenti",
+    "current_url": "https://www.turismofvg.it/eventi/smarrimenti-e-rinvenimenti",
+    "already_in_baseline": true,
+    "http_status": 200,
+    "official_title": "Smarrimenti e rinvenimenti",
+    "matching_metadata": {
+      "date_full": "mercoledì 21 ottobre 2026",
+      "event_city": "Udine",
+      "venue": "Sala Tito Maniacco",
+      "official_site": "https://www.sbhu.it/eventi/smarrimenti-e-rinvenimenti/"
+    },
+    "identical_description_sha256": "74ab96ef84199019ac18b50ad54ba22efbb124e5b0caf904fcca22daf7c1a803",
+    "http_redirect": false
+  },
+  {
+    "old_url": "https://www.turismofvg.it/eventi/teatro-pasolini-digger",
+    "current_url": "https://www.turismofvg.it/eventi/digger-506889",
+    "already_in_baseline": true,
+    "http_status": 200,
+    "official_title": "Digger",
+    "matching_metadata": {
+      "date_full": "domenica 25 ottobre 2026 - lunedì 26 ottobre 2026",
+      "event_city": "Cervignano del Friuli",
+      "venue": "Teatro Pasolini in Piazza Indipendenza, 34 Cervignano del Friuli",
+      "official_site": "https://www.teatropasolini.it/evento/naza/"
+    },
+    "identical_description_sha256": "5978614a8edf99b34e028386d318fabdfb7a7f0791b9fdfc9f3e00decd06394d",
+    "http_redirect": false
+  }
+]

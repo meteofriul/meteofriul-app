@@ -4,6 +4,7 @@ import {
   isLocalWeatherPilot,
 } from "./localWeatherPilot";
 import { API_BASE } from "./apiConfig";
+import { ANDROID_LOOPBACK_ONLY_BUILD } from "./localOnlyBuild";
 import { getTerritoryKind, isFvgLocation } from "../domain/scope/productScope";
 import {
   WEATHER_PROVIDERS,
@@ -11,7 +12,7 @@ import {
   resolveWeatherProviderPolicy,
 } from "./weatherProviderPolicy";
 
-export const PRODUCTION_WEATHER_V1_BASE_URL = "https://meteofriul-weather-49007668366.europe-west1.run.app";
+export const PRODUCTION_WEATHER_V1_BASE_URL = ANDROID_LOOPBACK_ONLY_BUILD ? "" : "https://meteofriul-weather-49007668366.europe-west1.run.app";
 
 // ICON/CAMS is the only weather provider in the official application. An
 // explicit build variable may still repeat this choice, but cannot silently

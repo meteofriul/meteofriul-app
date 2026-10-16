@@ -1,7 +1,7 @@
 import unittest
 from copy import deepcopy
 from datetime import date, datetime, timedelta
-from app.events.pilot_pordenonelegge import parse_programme
+from app.events.pilot_pordenonelegge import collect_pordenonelegge, parse_programme
 from app.events.pilot_catalog import merge_collection, query_catalog, PILOT_PROJECT
 from app.events.pilot_source_policy import gate_batch
 
@@ -26,6 +26,35 @@ def page(cards, *, year=2026, days=("2026-09-16",)):
 
 
 class PordenoneleggeTests(unittest.TestCase):
+    def test_official_home_redirect_closes_only_a_verified_past_edition(self):
+        days = tuple((date(2026, 9, 16) + timedelta(days=index)).isoformat()
+                     for index in range(5))
+        prior = parse_programme(page(''.join(card(day=day) for day in days),
+                                     days=days))
+        class Redirect:
+            status_code = 302
+            headers = {'Location': '/'}
+            def __enter__(self):
+                return self
+            def __exit__(self, *args):
+                return False
+            def raise_for_status(self):
+                return None
+        get = lambda *args, **kwargs: Redirect()
+        today = date(2026, 10, 13)
+        closed = collect_pordenonelegge(
+            get=get, today=today, previous_batch={'verification': prior['verification']})
+        self.assertEqual(gate_batch(
+            'Pordenonelegge', closed, today=today,
+            previous_batch={'verification': prior['verification']})['status'], 'ok')
+        self.assertEqual(closed['events'], [])
+        again = collect_pordenonelegge(
+            get=get, today=today, previous_batch={'verification': closed['verification']})
+        self.assertEqual(gate_batch(
+            'Pordenonelegge', again, today=today,
+            previous_batch={'verification': closed['verification']})['status'], 'ok')
+        with self.assertRaises(ValueError):
+            collect_pordenonelegge(get=get, today=today)
     def test_facts_and_access_preserved(self):
         event = parse_programme(page(card()))["events"][0]
         self.assertEqual(event["title"], "Un incontro & libri")
@@ -40,12 +69,19 @@ class PordenoneleggeTests(unittest.TestCase):
         self.assertEqual(len(parse_programme(page(card()*2 + card("11:00")))["events"]), 2)
 
     def test_unknown_place_not_assigned_to_pordenone(self):
-        self.assertIsNone(parse_programme(page(card(city="Sede ignota")))["events"][0]["lat"])
+        batch = parse_programme(page(card(city="Sede ignota")))
+        self.assertEqual(batch["events"], [])
+        self.assertEqual(batch["review_required"][0]["reason"],
+                         "municipality_not_resolved")
 
     def test_invalid_date_and_time_rejected(self):
-        for html in (card(day=""), card(day="2026-02-30"), card(day="2027-09-16"), card(hour="25:00")):
+        for html in (card(day=""), card(day="2026-02-30"), card(day="2027-09-16")):
             with self.assertRaises(ValueError):
                 parse_programme(page(html))
+        invalid_time = parse_programme(page(card(hour="25:00")))
+        self.assertEqual(invalid_time["status"], "error")
+        self.assertEqual(invalid_time["review_required"][0]["reason"],
+                         "invalid_programme_time")
 
     def test_bad_link_rejected(self):
         with self.assertRaises(ValueError):
@@ -109,7 +145,7 @@ class PordenoneleggeTests(unittest.TestCase):
             card(day=days[0]).replace('Riservato alle scuole', 'Incontro annullato')
             + ''.join(card(day=day) for day in days[1:]), days=days))
         self.assertEqual(gate_batch('Pordenonelegge', changed,
-                                    today=date(2026, 9, 15))['status'], 'error')
+                                    today=date(2026, 9, 15))['status'], 'partial')
         wrong_day = deepcopy(batch)
         wrong_day['events'][0]['start_date'] = days[1]
         self.assertEqual(gate_batch('Pordenonelegge', wrong_day,

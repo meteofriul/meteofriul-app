@@ -1,0 +1,310 @@
+{
+  "directory": ".tmp/quarantine-audit-2026-10-15",
+  "files": [
+    {
+      "name": "01.html",
+      "bytes": 56908,
+      "sha256": "76a327edc3728180c7edf2782ae08059e202e858f0392bff4325ac1217aec2ce"
+    },
+    {
+      "name": "01.txt",
+      "bytes": 1767,
+      "sha256": "e037723aa4c4aade523f400f9c68fb27a84a4ae83ba2c3281ebe26b4ee4ae884"
+    },
+    {
+      "name": "02.html",
+      "bytes": 61132,
+      "sha256": "12a5b0fab566a0fa0a71111cdcfbb0d28ac16bc18b6e4ba549767268f29f6fae"
+    },
+    {
+      "name": "02.txt",
+      "bytes": 2552,
+      "sha256": "dd57616e289ba533bb6d7761f6c4493d8eac77effcd3967024f59d5759c607a5"
+    },
+    {
+      "name": "03.html",
+      "bytes": 63367,
+      "sha256": "7ccbe63b68f604d9d8c4e202eb3b8ef1001ffcc155d7ebef492c2882361822ec"
+    },
+    {
+      "name": "03.txt",
+      "bytes": 2870,
+      "sha256": "8378ab0c9975af8db73d5fe1e2dcb149c9f9d8db6f7aa5118162c9e885a27740"
+    },
+    {
+      "name": "04.html",
+      "bytes": 60999,
+      "sha256": "53b74c3384a45884829b487c8d105883050255b34e677689891c9c4dfc809d0d"
+    },
+    {
+      "name": "04.txt",
+      "bytes": 2145,
+      "sha256": "fc04dcd7594f571b3c8de61a0213de54548bbe808474da3e7f5a0175dfb03dd3"
+    },
+    {
+      "name": "05.html",
+      "bytes": 3407,
+      "sha256": "fc54c8264d9a4cd2c6ade46a048cb1084ff5c48350aa0898a311999cfd321da4"
+    },
+    {
+      "name": "05.txt",
+      "bytes": 186,
+      "sha256": "dd9547779af5c7bcf2c9b130f2900f1af8fbbeea8e8c50173c82df6c1bdbbec2"
+    },
+    {
+      "name": "06-poster.jpg",
+      "bytes": 54855,
+      "sha256": "8de96c479f1aed5e3716123d24bccd5a00b30244f3f875ddeee4dd873389588a"
+    },
+    {
+      "name": "06.html",
+      "bytes": 58578,
+      "sha256": "5dc5b2e6273e886b0203a5ef13213a92ef33cee0ed5bcc7d18ba2cd38fe1c521"
+    },
+    {
+      "name": "06.txt",
+      "bytes": 1600,
+      "sha256": "d2234feeea8ac325c11cc70137dab85b980ee59d635a9899f2f37c3372ec9191"
+    },
+    {
+      "name": "07.html",
+      "bytes": 64500,
+      "sha256": "11fe17a797b964d19e4c43a2c183feb991b01c4513e2a7ffdfd63576220f237c"
+    },
+    {
+      "name": "07.txt",
+      "bytes": 3022,
+      "sha256": "20df5db363635ef83de30e3ae4f7a14a30e80b121845dbd88235da4042fa6945"
+    },
+    {
+      "name": "08.html",
+      "bytes": 3407,
+      "sha256": "fc54c8264d9a4cd2c6ade46a048cb1084ff5c48350aa0898a311999cfd321da4"
+    },
+    {
+      "name": "08.txt",
+      "bytes": 186,
+      "sha256": "dd9547779af5c7bcf2c9b130f2900f1af8fbbeea8e8c50173c82df6c1bdbbec2"
+    },
+    {
+      "name": "09.html",
+      "bytes": 3407,
+      "sha256": "fc54c8264d9a4cd2c6ade46a048cb1084ff5c48350aa0898a311999cfd321da4"
+    },
+    {
+      "name": "09.txt",
+      "bytes": 186,
+      "sha256": "dd9547779af5c7bcf2c9b130f2900f1af8fbbeea8e8c50173c82df6c1bdbbec2"
+    },
+    {
+      "name": "10.html",
+      "bytes": 70718,
+      "sha256": "5daa9d8a55ade86a7993c1e7b16096940b84823e5b0a099cac5adfcfc6c19d1c"
+    },
+    {
+      "name": "10.txt",
+      "bytes": 2544,
+      "sha256": "5c649fe504fed883535143b3bf280dc23360308e915d2052e12b4ba412266210"
+    },
+    {
+      "name": "11.html",
+      "bytes": 58126,
+      "sha256": "94c5ebb19c9caa1e3056cbc74445d969ce72fdd079a7a9e40f51c29255c28e44"
+    },
+    {
+      "name": "11.txt",
+      "bytes": 1608,
+      "sha256": "51f37dd4d718c3afe52b7c87af8a35bd4d39eef1ee57705acdeb0e012b8a4c89"
+    },
+    {
+      "name": "12.html",
+      "bytes": 57820,
+      "sha256": "82cd32178eb6592234b00358fa60c7de90e46fc252288ff1f2e4bfa3df57390d"
+    },
+    {
+      "name": "12.txt",
+      "bytes": 1563,
+      "sha256": "fca8cf2ccff376d51274d42f31df905f00cbe54ccd23bf6f7b4e71275fe04d74"
+    },
+    {
+      "name": "13.html",
+      "bytes": 57934,
+      "sha256": "bf826acbd4553de90d63de14d4256c6f589f09f9be898816d555c79096fd185d"
+    },
+    {
+      "name": "13.txt",
+      "bytes": 1544,
+      "sha256": "71a3ad98df972184b5159e3047bb80b2dd63ca272c8a74d40b37991eed1a06d4"
+    },
+    {
+      "name": "14.html",
+      "bytes": 56959,
+      "sha256": "9a38dc636b2868799940528f0d4f39313a2b05ba0cdc5c2c2d3a7f7f230040c3"
+    },
+    {
+      "name": "14.txt",
+      "bytes": 1502,
+      "sha256": "2adde85d0fbb357b1e95b82e1e394b7f566937321e554d52bc5faa7072c3b73f"
+    },
+    {
+      "name": "15.html",
+      "bytes": 48870,
+      "sha256": "ceacddfcba50b13e4d75cbf4d275d2095013ee67b33d4241d70de1ac149373b8"
+    },
+    {
+      "name": "15.txt",
+      "bytes": 5992,
+      "sha256": "117b6b1141baa05028971607aa2e3bbedc03f2a6b983134c9d2b25472f62c347"
+    },
+    {
+      "name": "16.html",
+      "bytes": 116210,
+      "sha256": "4ce5ae79acd3f5e1f50ae0b005d7580445e14c6b8ed5628aeab337d8535c3c2c"
+    },
+    {
+      "name": "16.txt",
+      "bytes": 6165,
+      "sha256": "a91809c1707f6ba8ce005e304a8dee5cec86dd23cffd3e2906594a5db537c1ee"
+    },
+    {
+      "name": "17.html",
+      "bytes": 195202,
+      "sha256": "be762240aaaaae75fe9e23dd5d77c8977d85933659baac6ea98e8b23929f1429"
+    },
+    {
+      "name": "17.txt",
+      "bytes": 1983,
+      "sha256": "e940bd680aa04523c391e8e7ae70d4461ca4d86e9277245b515623cd12093f03"
+    },
+    {
+      "name": "18.html",
+      "bytes": 195023,
+      "sha256": "a9a15efa808342a7995c4231f15d282c81f499d7e3c176e2789887e6a8a02abb"
+    },
+    {
+      "name": "18.txt",
+      "bytes": 1985,
+      "sha256": "1827dba456303cf88cba59e9076d1f350943dd55f8aed2d6a454b5868efe0d99"
+    },
+    {
+      "name": "analyze_pages.py",
+      "bytes": 2090,
+      "sha256": "6b3d435409e7c7f8016d77c397718cc477334d418aa20d7c3e560be93d4e4833"
+    },
+    {
+      "name": "biblioteca-austriaca.txt",
+      "bytes": 17278,
+      "sha256": "72c68d90b4f012e7528ef2ffc3d2c5d6eca094ff8af60acc2639523102c21798"
+    },
+    {
+      "name": "catalog-baseline.json",
+      "bytes": 2921215,
+      "sha256": "2bc9d1e3a59f81f6a323426d313f53a1f9d01a5ebe3bdceccc683a783bbe7cb5"
+    },
+    {
+      "name": "check_replacements.py",
+      "bytes": 2101,
+      "sha256": "8932b8b845b74fa8d6bf7b9d6f13c6c5afff904a85ec3cd428116d795e4d9fde"
+    },
+    {
+      "name": "control-baseline.json",
+      "bytes": 4433132,
+      "sha256": "30046bf6fd64b670d687734c3c12d9e00471261acf7aa23ca55ecc339ad4ca95"
+    },
+    {
+      "name": "fetch_pages.py",
+      "bytes": 2741,
+      "sha256": "75235ec1901590f2106463d7a4918d45ff1be5fda111f673fd42780ea83a6deb"
+    },
+    {
+      "name": "fetch_supplementary.py",
+      "bytes": 1909,
+      "sha256": "1d69fc9806015050911c71fc0714e0503df0f0791222252228df0db3c8bb875f"
+    },
+    {
+      "name": "friuli-lang.html",
+      "bytes": 3407,
+      "sha256": "fc54c8264d9a4cd2c6ade46a048cb1084ff5c48350aa0898a311999cfd321da4"
+    },
+    {
+      "name": "friuli-official.html",
+      "bytes": 225631,
+      "sha256": "2db5316f7292d2b60dbcb99ce7271d3873bc0355b5d4074724bd8735f2e17728"
+    },
+    {
+      "name": "inventory.json",
+      "bytes": 3752,
+      "sha256": "0a90257a7fba1b1273fe6ef634f07e66a39389d94a430ba945bcd3c3e70ca052"
+    },
+    {
+      "name": "lipizer-new.html",
+      "bytes": 59223,
+      "sha256": "de94777e0204dc84fc31786fe1be03e3627895fd9b8a3e0a0960fa96c9e0a85a"
+    },
+    {
+      "name": "live-pages.json",
+      "bytes": 31147,
+      "sha256": "b959baf823f161c0d183f0c8831a181c9273a35fc60fc51cc9dc22af74cf486e"
+    },
+    {
+      "name": "memory-new.html",
+      "bytes": 61913,
+      "sha256": "3188eef00dba1dcc528c5388597c34d8b41e44186e369e465133eb39c65f1f75"
+    },
+    {
+      "name": "page-analysis.json",
+      "bytes": 49294,
+      "sha256": "4d998013d74e59db4ae1322b483301fcb924fcf3e6cb8cc9cb992f1b37e78459"
+    },
+    {
+      "name": "pnpensa-post.txt",
+      "bytes": 27300,
+      "sha256": "b8a50fc0ff52fc11a3fdb11b13cb11be9393350d6d29dcea37a57c947347bbdc"
+    },
+    {
+      "name": "recovery-experiments.json",
+      "bytes": 5591,
+      "sha256": "b32601d0eb42bc70c9fe1054cfeef828a50cfd0a3922ea5d4fed966075d5fc2a"
+    },
+    {
+      "name": "replacement-checks.json",
+      "bytes": 4000,
+      "sha256": "f8cb7caea25f81aae19cada45909fea7256dac35e75da55b92c892fe60ef6be3"
+    },
+    {
+      "name": "sagre-17.txt",
+      "bytes": 12512,
+      "sha256": "e1c75564e1538648f0552e84b45ac73a104b9ffc8ede11dcf8ec3cd3dba71b23"
+    },
+    {
+      "name": "sagre-18.txt",
+      "bytes": 12902,
+      "sha256": "be4cd2101551e238c7ef711df0c9ef47d37eee456c2a11261949dfc2243c1526"
+    },
+    {
+      "name": "sitemap-current.json",
+      "bytes": 365555,
+      "sha256": "3fcbf405a5ef83554773123c96d26657326523883f73e4cd0fc5190c531ee8a3"
+    },
+    {
+      "name": "smarrimenti-organizer.txt",
+      "bytes": 13230,
+      "sha256": "565b2fe1e34efe0edfc6e293424c460368fff366b46a1c210631787d7678add0"
+    },
+    {
+      "name": "supplementary.json",
+      "bytes": 4817,
+      "sha256": "27e1bf8a8e8d6799f4dea970e6eacd0ce96122e76b096f2021fcbdeaa6ce8d1e"
+    },
+    {
+      "name": "verify_recovery_candidates.py",
+      "bytes": 5319,
+      "sha256": "ce31dda29beb043c4527b756c6eee41caa2e65c9573bd6067fc037b01eea02b3"
+    },
+    {
+      "name": "write_audit.py",
+      "bytes": 16523,
+      "sha256": "d4d341e3e041939707b0e7cb479451a166ab6893c49dbb72986f101f80cf7a3b"
+    }
+  ]
+}

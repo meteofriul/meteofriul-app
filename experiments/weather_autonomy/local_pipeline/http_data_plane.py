@@ -127,7 +127,7 @@ def _request_object_key(raw_target: str) -> str:
         len(segments) == 7
         and segments[2:5] == ["families", "cams", "runs"]
         and _RUN_ID.fullmatch(segments[5]) is not None
-        and segments[6] == "release.json"
+        and segments[6] in {"release.json", "continuity.json"}
     )
     if is_cams_family_latest or is_cams_family_release:
         return "/".join(segments)

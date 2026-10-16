@@ -1,0 +1,68 @@
+
+> meteo-friul-ui-3@0.1.14 test:release-guard
+> node --test scripts/runtime-api-binding.node-tests.mjs scripts/carto-basemap-guard.node-tests.mjs scripts/assert-version-parity.node-tests.mjs
+
+TAP version 13
+# Subtest: current frontend and Android release versions match
+ok 1 - current frontend and Android release versions match
+  ---
+  duration_ms: 98.9497
+  type: 'test'
+  ...
+# Subtest: rejects a stale frontend version
+ok 2 - rejects a stale frontend version
+  ---
+  duration_ms: 0.9588
+  type: 'test'
+  ...
+# Subtest: rejects a stale lockfile version
+ok 3 - rejects a stale lockfile version
+  ---
+  duration_ms: 0.4655
+  type: 'test'
+  ...
+# Subtest: rejects an ambiguous Android version
+ok 4 - rejects an ambiguous Android version
+  ---
+  duration_ms: 0.3128
+  type: 'test'
+  ...
+# Subtest: requires a non-placeholder CARTO client key for official builds
+ok 5 - requires a non-placeholder CARTO client key for official builds
+  ---
+  duration_ms: 3.7869
+  type: 'test'
+  ...
+# Subtest: requires CARTO and both attributions while rejecting direct OSM tiles
+ok 6 - requires CARTO and both attributions while rejecting direct OSM tiles
+  ---
+  duration_ms: 65.7546
+  type: 'test'
+  ...
+# Subtest: accepts only the tagged Cloud Run HTTPS /api endpoint
+ok 7 - accepts only the tagged Cloud Run HTTPS /api endpoint
+  ---
+  duration_ms: 3.0643
+  type: 'test'
+  ...
+# Subtest: keeps Web and Android release variables mutually exclusive
+ok 8 - keeps Web and Android release variables mutually exclusive
+  ---
+  duration_ms: 1.138
+  type: 'test'
+  ...
+# Subtest: requires the expected API in the generated entry bundle
+ok 9 - requires the expected API in the generated entry bundle
+  ---
+  duration_ms: 99.674
+  type: 'test'
+  ...
+1..9
+# tests 9
+# suites 0
+# pass 9
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 593.7343

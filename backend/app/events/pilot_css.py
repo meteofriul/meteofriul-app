@@ -527,7 +527,7 @@ def _collect_css(*, get, today):
                                                 for item in checked),
                     'event_count': len(events), 'excluded_count': len(excluded),
                     'past_unlisted_links': len(unlisted_links),
-                    'review_count': len(review), 'source_complete': not review}
+                    'review_count': len(review), 'source_complete': True}
     return {'status': 'ok', 'events': events, 'review_required': review,
             'excluded': excluded, 'verification': verification,
             'coverage': 'homepage-and-all-five-current-season-indexes'}

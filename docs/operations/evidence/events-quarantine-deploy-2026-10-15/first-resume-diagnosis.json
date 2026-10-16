@@ -1,0 +1,21 @@
+{
+  "failed_execution": "meteofriul-events-refresh-qjnd2",
+  "verified_version": 10,
+  "attempt_version": 11,
+  "inventory": 1336,
+  "saved_results": 1296,
+  "resumable_successful_results": 1289,
+  "pending": 40,
+  "review_results": 7,
+  "verified_checkpoint_preserved": true,
+  "detail_health": {
+    "schema": "turismofvg-detail-health-v1",
+    "structured_reads": 1296,
+    "failed_reads": 0,
+    "quarantined_reads": 0,
+    "retained_refreshes": 0,
+    "pending": 40,
+    "stop_reason": "budget_reserve",
+    "health_witness_required": true
+  }
+}

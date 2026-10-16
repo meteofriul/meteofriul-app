@@ -1,0 +1,286 @@
+{
+  "text": "Trascina per aggiornare\nPordenone\nPrevisioni\nBollettino\nTempo reale\nTerritorio\n© OpenStreetMap © CARTO\n\nNessuna segnalazione recente sulla mappa.\n\nMappa\nSegnalazioni\nWebcam\nRecenti\nUltime 48 ore\nPioggia\nPordenone · 31 min fa · 1 segnalazione\nAttiva\nTemporale\nPordenone · 24 ore fa · 1 segnalazione\nScaduta\nPioggia\nPordenone · 24 ore fa · 1 segnalazione\nScaduta\nPioggia\nPordenone · 46 ore fa · 1 segnalazione\nScaduta\n\nHai visto le segnalazioni delle ultime 48 ore.\n\nSegnala meteo\nPioggia\nPordenone · Segnalata 31 min fa\n\nSentinella Meteo:\nCjampane dal Cîl\n\nConfermo\n1\nNon c’è più\n1",
+  "screen": {
+    "scenario": "final-not-anymore-success",
+    "geometry": {
+      "viewport": {
+        "w": 412,
+        "h": 915,
+        "dpr": 2.625
+      },
+      "insets": {
+        "top": 51.81,
+        "right": 0,
+        "bottom": 24,
+        "left": 0
+      },
+      "scrollWidth": 412,
+      "shell": "dark",
+      "buttons": [
+        {
+          "label": "Apri impostazioni",
+          "x": 356.19049072265625,
+          "y": 59.80952453613281,
+          "w": 44,
+          "h": 44,
+          "bottom": 103.80952453613281,
+          "right": 400.19049072265625
+        },
+        {
+          "label": "Previsioni",
+          "x": 15.7619047164917,
+          "y": 169.57142639160156,
+          "w": 124.2202377319336,
+          "h": 32,
+          "bottom": 201.57142639160156,
+          "right": 139.9821424484253
+        },
+        {
+          "label": "Bollettino",
+          "x": 143.98214721679688,
+          "y": 169.57142639160156,
+          "w": 124.2202377319336,
+          "h": 32,
+          "bottom": 201.57142639160156,
+          "right": 268.20238494873047
+        },
+        {
+          "label": "Tempo reale",
+          "x": 272.202392578125,
+          "y": 169.57142639160156,
+          "w": 124.2261962890625,
+          "h": 32,
+          "bottom": 201.57142639160156,
+          "right": 396.4285888671875
+        },
+        {
+          "label": "Radar",
+          "x": 344.66668701171875,
+          "y": 228.85714721679688,
+          "w": 44,
+          "h": 44,
+          "bottom": 272.8571472167969,
+          "right": 388.66668701171875
+        },
+        {
+          "label": "Webcam sulla mappa · 35",
+          "x": 344.66668701171875,
+          "y": 283.8571472167969,
+          "w": 44,
+          "h": 44,
+          "bottom": 327.8571472167969,
+          "right": 388.66668701171875
+        },
+        {
+          "label": "Centra la mappa sulla località selezionata",
+          "x": 344.66668701171875,
+          "y": 338.8571472167969,
+          "w": 44,
+          "h": 44,
+          "bottom": 382.8571472167969,
+          "right": 388.66668701171875
+        },
+        {
+          "label": "Mostra meno",
+          "x": 187.09524536132812,
+          "y": 382.4107360839844,
+          "w": 38,
+          "h": 4,
+          "bottom": 386.4107360839844,
+          "right": 225.09524536132812
+        },
+        {
+          "label": "Mappa",
+          "x": 23.5238094329834,
+          "y": 390.4107360839844,
+          "w": 121.71428680419922,
+          "h": 44,
+          "bottom": 434.4107360839844,
+          "right": 145.23809623718262
+        },
+        {
+          "label": "Segnalazioni",
+          "x": 145.23809814453125,
+          "y": 390.4107360839844,
+          "w": 121.71428680419922,
+          "h": 44,
+          "bottom": 434.4107360839844,
+          "right": 266.95238494873047
+        },
+        {
+          "label": "Webcam",
+          "x": 266.952392578125,
+          "y": 390.4107360839844,
+          "w": 121.71428680419922,
+          "h": 44,
+          "bottom": 434.4107360839844,
+          "right": 388.6666793823242
+        },
+        {
+          "label": "Recenti",
+          "x": 25.5238094329834,
+          "y": 439.1726379394531,
+          "w": 284.86309814453125,
+          "h": 28,
+          "bottom": 467.1726379394531,
+          "right": 310.38690757751465
+        },
+        {
+          "label": "PioggiaPordenone · 31 min fa · 1 segnalazioneAttiva",
+          "x": 25.5238094329834,
+          "y": 473.1726379394531,
+          "w": 361.1428527832031,
+          "h": 60,
+          "bottom": 533.1726379394531,
+          "right": 386.6666622161865
+        },
+        {
+          "label": "TemporalePordenone · 24 ore fa · 1 segnalazioneScaduta",
+          "x": 25.5238094329834,
+          "y": 540.172607421875,
+          "w": 361.1428527832031,
+          "h": 60,
+          "bottom": 600.172607421875,
+          "right": 386.6666622161865
+        },
+        {
+          "label": "PioggiaPordenone · 24 ore fa · 1 segnalazioneScaduta",
+          "x": 25.5238094329834,
+          "y": 607.172607421875,
+          "w": 361.1428527832031,
+          "h": 60,
+          "bottom": 667.172607421875,
+          "right": 386.6666622161865
+        },
+        {
+          "label": "PioggiaPordenone · 46 ore fa · 1 segnalazioneScaduta",
+          "x": 25.5238094329834,
+          "y": 674.172607421875,
+          "w": 361.1428527832031,
+          "h": 60,
+          "bottom": 734.172607421875,
+          "right": 386.6666622161865
+        },
+        {
+          "label": "Segnala meteo",
+          "x": 23.5238094329834,
+          "y": 733.5238037109375,
+          "w": 365.1428527832031,
+          "h": 48,
+          "bottom": 781.5238037109375,
+          "right": 388.6666622161865
+        },
+        {
+          "label": "Condividi",
+          "x": 274.9047546386719,
+          "y": 420.4285888671875,
+          "w": 40,
+          "h": 40,
+          "bottom": 460.4285888671875,
+          "right": 314.9047546386719
+        },
+        {
+          "label": "Chiudi dettaglio segnalazione",
+          "x": 326.9047546386719,
+          "y": 420.4285888671875,
+          "w": 40,
+          "h": 40,
+          "bottom": 460.4285888671875,
+          "right": 366.9047546386719
+        },
+        {
+          "label": "Confermo. Conferme: 1",
+          "x": 45.28571701049805,
+          "y": 543.952392578125,
+          "w": 156.8095245361328,
+          "h": 46,
+          "bottom": 589.952392578125,
+          "right": 202.09524154663086
+        },
+        {
+          "label": "Non c’è più. Non c’è più: 1",
+          "x": 210.09524536132812,
+          "y": 543.952392578125,
+          "w": 156.8095245361328,
+          "h": 46,
+          "bottom": 589.952392578125,
+          "right": 366.90476989746094
+        },
+        {
+          "label": "Home",
+          "x": 18.761905670166016,
+          "y": 814.797607421875,
+          "w": 90.66667175292969,
+          "h": 57.48809814453125,
+          "bottom": 872.2857055664062,
+          "right": 109.4285774230957
+        },
+        {
+          "label": "Meteo",
+          "x": 113.42857360839844,
+          "y": 814.797607421875,
+          "w": 90.66667175292969,
+          "h": 57.48809814453125,
+          "bottom": 872.2857055664062,
+          "right": 204.09524536132812
+        },
+        {
+          "label": "Eventi: 57 eventi oggi",
+          "x": 208.09524536132812,
+          "y": 814.797607421875,
+          "w": 90.66667175292969,
+          "h": 57.48809814453125,
+          "bottom": 872.2857055664062,
+          "right": 298.7619171142578
+        },
+        {
+          "label": "Scopri",
+          "x": 302.76190185546875,
+          "y": 814.797607421875,
+          "w": 90.66667175292969,
+          "h": 57.48809814453125,
+          "bottom": 872.2857055664062,
+          "right": 393.42857360839844
+        }
+      ]
+    },
+    "detail": {
+      "theme": "dark",
+      "nav": {
+        "x": 12,
+        "y": 808.0357055664062,
+        "w": 388.19049072265625,
+        "h": 71.01190948486328,
+        "bottom": 879.0476150512695,
+        "right": 400.19049072265625
+      },
+      "header": {
+        "x": 12,
+        "y": 51.80952453613281,
+        "w": 388.19049072265625,
+        "h": 68,
+        "bottom": 119.80952453613281,
+        "right": 400.19049072265625
+      },
+      "bodyScrollHeight": 915,
+      "bodyClientHeight": 915,
+      "dialogs": [
+        {
+          "text": "Pioggia\nPordenone · Segnalata 31 min fa\n\nSentinella Meteo:\nCjampane dal Cîl\n\nConfermo\n1\nNon c’è più\n1",
+          "rect": {
+            "x": 27.5238094329834,
+            "y": 400.66668701171875,
+            "w": 357.1428527832031,
+            "h": 207.04762268066406,
+            "bottom": 607.7143096923828,
+            "right": 384.6666622161865
+          }
+        }
+      ],
+      "content": "Trascina per aggiornare\nPordenone\nPrevisioni\nBollettino\nTempo reale\nTerritorio\n© OpenStreetMap © CARTO\n\nNessuna segnalazione recente sulla mappa.\n\nMappa\nSegnalazioni\nWebcam\nRecenti\nUltime 48 ore\nPioggia\nPordenone · 31 min fa · 1 segnalazione\nAttiva\nTemporale\nPordenone · 24 ore fa · 1 segnalazione\nScaduta\nPioggia\nPordenone · 24 ore fa · 1 segnalazione\nScaduta\nPioggia\nPordenone · 46 ore fa · 1 segnalazione\nScaduta\n\nHai visto le segnalazioni delle ultime 48 ore.\n\nSegnala meteo\nPioggia\nPordenone · S"
+    },
+    "screenshot": "35-final-not-anymore-success.png",
+    "horizontalFit": true,
+    "navigationFits": true
+  }
+}

@@ -11,6 +11,7 @@ import {
 export const ANDROID_LOCAL_PILOT_API_BASE = "http://127.0.0.1:8781";
 export const ANDROID_LOCAL_PILOT_NATIONAL_API_BASE = "http://127.0.0.1:8782";
 export const ANDROID_LOCAL_PILOT_COMMUNITY_API_BASE = "http://127.0.0.1:8783/api";
+export const ANDROID_LOCAL_PILOT_EVENTS_API_BASE = "http://127.0.0.1:8784/api";
 export const ANDROID_LOCAL_PILOT_APPLICATION_ID = "com.meteofriul.app.localpilot";
 const OFFICIAL_EVENTS_API_BASE = "https://meteofriul-events-49007668366.europe-west1.run.app/api";
 const MARKER = /^[0-9a-f]{64}$/u;
@@ -70,7 +71,8 @@ export function assertAndroidLocalPilotEnvironment({ env = {}, expectedApiBase, 
   return expected;
 }
 
-export function assertAndroidLocalPilotBundle({ buildDirectory, expectedApiBase, cloud = false, community = false } = {}) {
+export function assertAndroidLocalPilotBundle({ buildDirectory, expectedApiBase, cloud = false, community = false, eventsLocal = false } = {}) {
+  if (eventsLocal && (cloud || !community)) throw new Error("android_local_events_requires_local_community");
   const weatherBase = cloud ? ANDROID_CLOUD_WEATHER_PILOT_API_BASE : ANDROID_LOCAL_PILOT_API_BASE;
   const nationalBase = cloud ? ANDROID_CLOUD_WEATHER_NATIONAL_API_BASE : ANDROID_LOCAL_PILOT_NATIONAL_API_BASE;
   const communityBase = cloud ? CLOUD_COMMUNITY_PILOT_API_BASE : ANDROID_LOCAL_PILOT_COMMUNITY_API_BASE;
@@ -102,9 +104,9 @@ export function assertAndroidLocalPilotBundle({ buildDirectory, expectedApiBase,
     }
     for (const match of source.matchAll(loopbackPattern)) loopbackUrls.add(match[0].replace(/\/$/u, ""));
   }
-  // Local previews and protected development builds read the same official
-  // Events catalogue as production. Keep this exact binding, never a wildcard.
-  const allowedCloudUrls = new Set([expected, OFFICIAL_EVENTS_API_BASE]);
+  // The explicit Events candidate must use loopback, with no public fallback.
+  // Other TEST builds retain the exact official binding, never a wildcard.
+  const allowedCloudUrls = new Set(eventsLocal ? [expected] : [expected, OFFICIAL_EVENTS_API_BASE]);
   if (cloud) {
     allowedCloudUrls.add(weatherBase);
     allowedCloudUrls.add(nationalBase);
@@ -123,6 +125,12 @@ export function assertAndroidLocalPilotBundle({ buildDirectory, expectedApiBase,
       throw new Error("android_local_pilot_community_loopback_missing");
     }
   }
+  if (eventsLocal) {
+    allowedLoopbacks.add(ANDROID_LOCAL_PILOT_EVENTS_API_BASE);
+    if (!loopbackUrls.has(ANDROID_LOCAL_PILOT_EVENTS_API_BASE)) {
+      throw new Error("android_local_pilot_events_loopback_missing");
+    }
+  }
   if ([...loopbackUrls].some((url) => !allowedLoopbacks.has(url))) {
     throw new Error("android_local_pilot_contains_unexpected_loopback");
   }
@@ -132,6 +140,7 @@ export function assertAndroidLocalPilotBundle({ buildDirectory, expectedApiBase,
     localWeatherApiBase: weatherBase,
     nationalWeatherApiBase: nationalBase,
     officialApiBase: expected,
+    eventsApiBase: eventsLocal ? ANDROID_LOCAL_PILOT_EVENTS_API_BASE : OFFICIAL_EVENTS_API_BASE,
   };
 }
 
@@ -175,8 +184,8 @@ export function assertAndroidLocalPilotSourceIsolation({ frontendRoot } = {}) {
   ) throw new Error("android_local_pilot_manifest_contract_invalid");
   if (
     !localNetworkSecurity.includes('<base-config cleartextTrafficPermitted="false"')
-    || !localNetworkSecurity.includes('<domain>localhost</domain>')
-    || !localNetworkSecurity.includes('<domain>127.0.0.1</domain>')
+    || !localNetworkSecurity.includes('<domain includeSubdomains="false">localhost</domain>')
+    || !localNetworkSecurity.includes('<domain includeSubdomains="false">127.0.0.1</domain>')
   ) throw new Error("android_local_pilot_network_policy_invalid");
   if (
     !gradle.includes("applicationIdSuffix '.localpilot'")
@@ -219,6 +228,7 @@ function runCli() {
     expectedApiBase,
     cloud: process.env.METEO_PILOT_WEATHER_CLOUD === "1",
     community: process.env.METEO_PILOT_COMMUNITY_LOCAL === "1",
+    eventsLocal: process.env.METEO_PILOT_EVENTS_LOCAL === "1",
   });
   process.stdout.write(
     `Android local pilot verificato: ${result.localWeatherApiBase}; meteo nazionale: ${result.nationalWeatherApiBase || "disabilitato"}; API ufficiale: ${result.officialApiBase}\n`,

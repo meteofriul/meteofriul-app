@@ -70,12 +70,29 @@ class MessLaboratoriesTests(unittest.TestCase):
         self.assertEqual(gate_batch('MESS', unattributed,
                                     today=date(2026, 10, 7))['status'], 'error')
 
-    def test_missing_day_or_new_typo_stops_source(self):
+    def test_bad_session_is_quarantined_but_missing_programme_row_stops_source(self):
         programme, museums = pages()
         index = programme['modules'][1]['list'][1]
         index['description'] = index['description'].replace('28 novenbre', '28 nuvenbre')
-        with self.assertRaisesRegex(ValueError, 'unreadable|unrecognised'):
-            parse_laboratories(programme, museums, today=date(2026, 10, 7))
+        quarantined = parse_laboratories(programme, museums,
+                                         today=date(2026, 10, 7))
+        self.assertEqual(len(quarantined['events']), 15)
+        self.assertEqual(quarantined['review_required'][0]['source_id'],
+                         'mess-laboratori-2026-38546-2026-11-28')
+        news, regional = news_pages()
+        news_events, proof = parse_news(news, regional, today=date(2026, 10, 7))
+        quarantined['verification']['laboratory_count'] = len(quarantined['events'])
+        quarantined['events'].extend(news_events)
+        quarantined['verification'].update(proof)
+        quarantined['verification']['projected_count'] = len(quarantined['events'])
+        self.assertEqual(gate_batch('MESS', quarantined,
+                                    today=date(2026, 10, 7),
+                                    previous_batch=complete_batch())['status'], 'partial')
+        wrong_identity = deepcopy(quarantined)
+        wrong_identity['review_required'][0]['url'] = (
+            'https://mess.regione.fvg.it/it/didattica-museale-171043#laboratorio-29')
+        self.assertEqual(gate_batch('MESS', wrong_identity,
+                                    today=date(2026, 10, 7))['status'], 'error')
         programme, museums = pages()
         index = programme['modules'][1]['list'][1]
         index['description'] = index['description'].replace('28 novenbre', '28 novembre')
@@ -111,13 +128,27 @@ class MessLaboratoriesTests(unittest.TestCase):
         self.assertTrue(all(event.get('description_excerpt') for event in events))
         changed = deepcopy(news)
         changed['articles'][0]['modified'] = '2026-10-07T12:00:00'
-        with self.assertRaisesRegex(ValueError, 'changed MESS news'):
-            parse_news(changed, regional, today=date(2026, 10, 7))
+        kept, proof = parse_news(changed, regional, today=date(2026, 10, 7))
+        self.assertEqual(len(kept), 2)
+        self.assertEqual(proof['news_review_required'][0]['source_id'],
+                         'mess-news-233061')
+        programme, museums = pages()
+        batch = parse_laboratories(programme, museums, today=date(2026, 10, 7))
+        batch['verification']['laboratory_count'] = len(batch['events'])
+        batch['events'].extend(kept)
+        batch['review_required'].extend(proof.pop('news_review_required'))
+        batch['verification'].update(proof)
+        batch['verification']['projected_count'] = len(batch['events'])
+        self.assertEqual(gate_batch('MESS', batch, today=date(2026, 10, 7),
+                                    previous_batch=complete_batch())['status'],
+                         'partial')
         changed = deepcopy(regional)
         changed[REVIEWED_ACTIVE_NEWS[232542]['regional_url']]['date_full'] = (
             '12 settembre 2025 - 31 ottobre 2025')
-        with self.assertRaisesRegex(ValueError, 'dates disagree'):
-            parse_news(news, changed, today=date(2026, 10, 7))
+        kept, proof = parse_news(news, changed, today=date(2026, 10, 7))
+        self.assertEqual(len(kept), 2)
+        self.assertEqual(proof['news_review_required'][0]['source_id'],
+                         'mess-news-232542')
         changed = deepcopy(news)
         changed['articles'].append({**changed['articles'][0],
                                     'id': 999999, 'modified': '2026-10-07T12:00:00'})
@@ -174,6 +205,20 @@ class MessLaboratoriesTests(unittest.TestCase):
         self.assertEqual(udine['active_session_count'], 1)
         self.assertEqual(udine['image'], 'https://www.turismofvg.it/cover.jpg')
         self.assertTrue(udine['description_excerpt'])
+
+    def test_completed_2026_programme_can_close_without_active_cards(self):
+        today = date(2027, 1, 1)
+        programme, museums = pages()
+        batch = parse_laboratories(programme, museums, today=today)
+        news, regional = news_pages()
+        news_events, proof = parse_news(news, regional, today=today)
+        batch['verification']['laboratory_count'] = len(batch['events'])
+        batch['events'].extend(news_events)
+        batch['review_required'].extend(proof.pop('news_review_required'))
+        batch['verification'].update(proof)
+        batch['verification']['projected_count'] = len(batch['events'])
+        self.assertEqual(batch['events'], [])
+        self.assertEqual(gate_batch('MESS', batch, today=today)['status'], 'ok')
 
 
 if __name__ == '__main__':

@@ -164,3 +164,15 @@ Rischi da trattare come stop, non come motivo per ritentare automaticamente:
 metadati pubblici parziali, cambio di schema/licenza/host, timeout ambiguo del POST,
 job duplicati, file o hash discordanti, output esistenti, download incompleto e GRIB
 non conforme. Nessun passaggio di questo runbook pubblica dati o cambia l'app.
+
+
+### Vincoli ADS divisi per variabile
+
+Il catalogo ADS puo separare le 22 variabili aria dalle 6 variabili pollini in
+righe distinte. Il gate ammette questa partizione solo se le variabili richieste
+sono complete e disgiunte: ogni riga deve selezionare la stessa data, ensemble,
+livello 0, forecast e 00:00, e deve contenere autonomamente tutti i lead 0..96.
+Non si combinano modelli, livelli, orari o orizzonti incompleti per inventare
+una copertura. Sovrapposizioni, variabili mancanti e selezioni malformate restano
+bloccanti. Il piano risultante mantiene una sola richiesta di 28 x 97 campi,
+la stessa area FVG e gli hash dei documenti pubblici originali.

@@ -74,7 +74,8 @@ $expectedPolicyKeys = @(
     "icon-national-failures",
     "icon-national-last-success",
     "cams-failures",
-    "events-failures"
+    "events-failures",
+    "events-candidate-watch"
 )
 $actualPolicyKeys = @($config.policies | ForEach-Object policyKey)
 Assert-Contract ($actualPolicyKeys.Count -eq $expectedPolicyKeys.Count) (
@@ -208,6 +209,10 @@ Assert-Contract (-not $envSource.Contains("PUSH_OFFICIAL_ALERTS_MODE")) (
 Assert-Contract ($monitoringSource.Contains('[ValidateSet("Audit", "Apply")]')) (
     "sync monitoring deve essere fail-safe in Audit"
 )
+Assert-Contract ($monitoringSource.Contains('[string]$PolicyKey') -and
+    $monitoringSource.Contains('monitoring_policy_key_not_found')) (
+    "sync monitoring deve consentire un aggiornamento mirato a una policy"
+)
 Assert-Contract ($monitoringSource.Contains('notificationChannels')) (
     "policy monitoring senza canale"
 )
@@ -274,5 +279,19 @@ foreach ($policy in $schedulerPolicies) {
         "rate limit scheduler troppo aggressivo per $($policy.policyKey)"
     )
 }
+$eventsWatchPolicy = @(
+    $config.policies | Where-Object policyKey -CEQ "events-candidate-watch"
+)
+Assert-Contract ($eventsWatchPolicy.Count -eq 1) (
+    "allarme separato dei siti Eventi candidati mancante"
+)
+Assert-Contract (
+    [string]$eventsWatchPolicy[0].conditionType -ceq "job_log_match" -and
+    [string]$eventsWatchPolicy[0].logEvent -ceq "event_candidate_watch_alert" -and
+    [int]$eventsWatchPolicy[0].notificationRateLimitSeconds -ge 3600
+) "allarme candidati Eventi senza filtro o limite di notifica"
+Assert-Contract ($monitoringSource.Contains('jsonPayload.event=')) (
+    "monitoring senza filtro del log strutturato dei candidati Eventi"
+)
 
 Write-Output "PASS production job operations contracts"

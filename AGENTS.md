@@ -30,6 +30,9 @@
 
 ## Android release quality standard
 
+- Product orientation policy: smartphones use portrait only, with no rotation
+  setting in the app. Keep large displays (smallest width >= 600 dp) and
+  multi-window adaptive; do not impose a global portrait manifest lock.
 - For every Android release, follow the mandatory Android checks in
   [the Play runbook](docs/operations/PLAY_AAB_RUNBOOK.md#controlli-android-obbligatori-per-ogni-release).
 - Always assess all four areas: edge-to-edge/insets, deprecated system-bar

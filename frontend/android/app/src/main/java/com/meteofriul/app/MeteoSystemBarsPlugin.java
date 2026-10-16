@@ -2,6 +2,7 @@ package com.meteofriul.app;
 
 import android.app.Activity;
 import android.content.res.Configuration;
+import android.os.Build;
 import android.view.View;
 import android.view.Window;
 import android.webkit.WebView;
@@ -109,7 +110,8 @@ public final class MeteoSystemBarsPlugin extends Plugin {
     private void refreshSystemBars() {
         final Activity activity = getActivity();
         if (activity == null) return;
-        activity.runOnUiThread(() -> {
+        // Run after Capacitor has dispatched its own configuration hooks.
+        activity.getWindow().getDecorView().post(() -> {
             if (insetHost == null) return;
             applyTheme(activity, darkTheme);
             requestEdgeToEdgeInsets();
@@ -161,15 +163,26 @@ public final class MeteoSystemBarsPlugin extends Plugin {
         });
     }
 
+    static boolean usesLightNavigationSurface(Activity activity) {
+        // Android 15 can retain dark navigation buttons in system day mode even
+        // when light icons are requested. Pair a light app-owned surface with
+        // an explicit dark-icon request, including gesture navigation.
+        return Build.VERSION.SDK_INT == Build.VERSION_CODES.VANILLA_ICE_CREAM
+            && (activity.getResources().getConfiguration().uiMode
+                & Configuration.UI_MODE_NIGHT_MASK) == Configuration.UI_MODE_NIGHT_NO;
+    }
+
     static void applyTheme(Activity activity, boolean darkTheme) {
         final Window window = activity.getWindow();
         final int statusBarColor = ContextCompat.getColor(
             activity,
             darkTheme ? R.color.system_status_bar_dark : R.color.system_status_bar_light
         );
+        final boolean lightNavigation = usesLightNavigationSurface(activity);
         final int navigationBarColor = ContextCompat.getColor(
             activity,
-            darkTheme ? R.color.system_navigation_bar_dark : R.color.system_navigation_bar_light
+            lightNavigation ? R.color.system_navigation_bar_android15_day
+                : darkTheme ? R.color.system_navigation_bar_dark : R.color.system_navigation_bar_light
         );
         final ProtectionLayout protection = activity.findViewById(R.id.meteo_system_bar_protection);
         if (protection != null) {
@@ -186,8 +199,8 @@ public final class MeteoSystemBarsPlugin extends Plugin {
             window,
             window.getDecorView()
         );
-        // Both app themes use dark blue system-bar surfaces; keep their icons light.
+        // The status surface stays navy; navigation icons match its chosen surface.
         controller.setAppearanceLightStatusBars(false);
-        controller.setAppearanceLightNavigationBars(false);
+        controller.setAppearanceLightNavigationBars(lightNavigation);
     }
 }

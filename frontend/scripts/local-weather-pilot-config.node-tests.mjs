@@ -1,4 +1,15 @@
 import test from "node:test";
+
+test("local Events is restricted to the protected Community Android TEST", () => {
+  const options = { command: "build", mode: "android-local-pilot", androidBuildMarker: "b".repeat(64),
+    community: true, eventsLocal: true };
+  assert.equal(localWeatherPilotConfig(options).define["import.meta.env.VITE_LOCAL_EVENTS_API_BASE"],
+    JSON.stringify("http://127.0.0.1:8784/api"));
+  assert.throws(() => localWeatherPilotConfig({ ...options, community: false }), /local_events_requires/);
+  assert.throws(() => localWeatherPilotConfig({ ...options, cloud: true }), /local_events_requires/);
+  assert.throws(() => localWeatherPilotConfig({ ...options, mode: "android" }), /local_events_requires/);
+  assert.throws(() => localWeatherPilotConfig({ ...options, command: "serve", mode: "local-pilot" }), /local_events_requires/);
+});
 import assert from "node:assert/strict";
 import {
   ANDROID_LOCAL_WEATHER_PILOT_API_BASE,

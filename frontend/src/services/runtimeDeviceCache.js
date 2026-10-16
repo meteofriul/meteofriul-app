@@ -1,5 +1,5 @@
 import { clearBulletinDeviceCache } from "./bulletinCache";
-import { clearEventsCache } from "./eventsCache";
+import { clearEventsCache, EVENTS_CACHE_PREFIX } from "./eventsCache";
 import { clearLiveDeviceCache } from "./liveCache";
 import { clearLocalConditionsDeviceCache } from "./localConditionsCache";
 import { clearLocalWeatherV1MemoryCache } from "./localWeatherV1Runtime";
@@ -21,6 +21,7 @@ export const RUNTIME_DEVICE_CACHE_PREFIXES = Object.freeze([
   "communityV2:v1:liveCommunityReports:v1:",
   "eventsCache:v12:",
   "eventsCache:v12:pilot-programmes-v2:",
+  `${EVENTS_CACHE_PREFIX}:`,
   "localCommunityPilot:v1:liveCommunityReports:v1:",
   "locationReverseCache:v3:",
   "meteofriul:national-weather-v2:",

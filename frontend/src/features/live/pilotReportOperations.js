@@ -49,6 +49,7 @@ export function readPilotReplacement({ storage } = {}) {
 }
 
 export function getPilotMutationFeedback(result) {
+  if (result?.retired) return "La vecchia azione non è stata applicata. Ora puoi inviare una nuova osservazione con Segnala.";
   if (result?.replacementPhase === "withdrawal" && result?.uncertain) {
     return "La risposta al ritiro non è arrivata. Verifica l’esito prima di continuare: nessun nuovo invio è stato avviato.";
   }
@@ -63,7 +64,7 @@ export function getPilotMutationFeedback(result) {
   if (/quota.*(hour|60)|hour.*(quota|limit)/.test(code)) return `Hai raggiunto il limite di 4 osservazioni negli ultimi 60 minuti.${wait}`;
   if (/quota.*(day|24)|daily.*(quota|limit)/.test(code)) return `Hai raggiunto il limite di 12 osservazioni nelle ultime 24 ore.${wait}`;
   if (/already_recent|duplicate/.test(code)) return "Hai già segnalato questo fenomeno in questo Comune. Puoi aggiornare l’osservazione esistente.";
-  if (/interval|cooldown/.test(code)) return `Attendi almeno 2 minuti tra due nuove osservazioni.${wait}`;
+  if (/interval|cooldown/.test(code)) return `Attendi almeno 3 minuti tra due nuove osservazioni.${wait}`;
   if (/correction.*(expired|window)/.test(code)) return "Sono trascorsi i 5 minuti disponibili per correggere questa osservazione.";
   if (/location|municipality|gps/.test(code)) return "Verifica il GPS: la posizione deve essere compatibile con il Comune dell’osservazione.";
   if (/replacement/.test(code)) return "La sostituzione senza attesa non è disponibile. Restano validi i normali limiti di invio.";
@@ -96,7 +97,11 @@ function acceptedResult(operation, response, storage) {
     correctionUntil: response.correction_until ?? response.report.correctionUntil,
     replacementAvailable: response.replacement_available ?? response.report.replacementAvailable,
   } : null;
-  const personal = readCommunityPersonalState({ storage });
+  let personal = readCommunityPersonalState({ storage });
+  // Only retire local receipts after the server accepted the atomic replacement.
+  for (const replacedId of response.replaced_report_ids || []) {
+    personal = withdrawCommunityReport(personal, replacedId, { storage });
+  }
   if (report && Number(report.expiresAt || report.expires_at) <= Date.now()) expireCommunityReport(personal, report.id, { storage });
   else if (operation.kind === "create") rememberCommunityReport(personal, report, { storage });
   else if (operation.kind === "correct") refreshCommunityReportReceipt(personal, report, { storage });
@@ -116,6 +121,7 @@ function acceptedResult(operation, response, storage) {
     replacementToken: response.replacement_token || null,
     operationId: operation.operationId, idempotentReplay: Boolean(response.idempotent_replay),
     cooldownUntil: response.cooldown_until,
+    replacedReportIds: response.replaced_report_ids || [],
     expired: Boolean(report && Number(report.expiresAt || report.expires_at) <= Date.now()),
   };
 }
@@ -131,6 +137,15 @@ export async function reconcilePilotReportOperation(operation, {
     if (!clientId) return { ok: false, reason: "persistent_identity_required" };
     const result = await resolver({ clientId, operationId: operation.operationId });
     if (result?.status === "accepted") return acceptedResult(operation, result.result, resolvedStorage);
+    if (result?.status === "not_found" && result.rules_version === "community-reports-v3"
+      && operation.kind !== "create") {
+      // Only the new server can retire an unapplied legacy intent. Never drop
+      // an uncertain creation, a receipt, or an operation on a network error.
+      const state = readState(resolvedStorage);
+      state.pending = state.pending.filter((item) => item.operationId !== operation.operationId);
+      writeState(state, resolvedStorage);
+      return { ok: false, retired: true, reason: "new_observation_required" };
+    }
     // A request may still be in flight. Keep its ID even when not found yet.
     return { ok: false, reason: "pending_operation", uncertain: true, notFound: result?.status === "not_found" };
   } catch { return { ok: false, reason: "request_failed", uncertain: true }; }

@@ -102,7 +102,7 @@ describe("liveViewCopy", () => {
     expect(copy.reportAnonymousSource).toBe("Fonte anonima · {alias}");
     expect(copy.reportTermsBody).toContain("circa 60 minuti");
     expect(copy.reportTermsBody).toContain("anonime");
-    expect(copy.reportTermsBody).toContain("smentirle");
+    expect(copy.reportTermsBody).toContain("indicare che il fenomeno è terminato");
     expect(copy.reportPreciseLocationNotice).toBe(
       "Le coordinate precise vengono usate temporaneamente per verificare il Comune; sulla mappa compare solo una posizione approssimata.",
     );
@@ -139,7 +139,7 @@ describe("liveViewCopy", () => {
     expect(copy.reportAnonymousSource).toBe("Font anonime · {alias}");
     expect(copy.reportTermsBody).toContain("cirche 60 minûts");
     expect(copy.reportTermsBody).toContain("anonimis");
-    expect(copy.reportTermsBody).toContain("smentî");
+    expect(copy.reportTermsBody).toContain("indicâ che il fenomen nol è plui");
     expect(copy.reportPreciseLocationNotice).toContain("coordenadis precisis");
     expect(copy.reportPreciseLocationNotice).toContain("posizion aproximative");
     expect(copy.reportGpsDenied).toContain("browser o dal dispositîf");
@@ -167,9 +167,9 @@ describe("liveViewCopy", () => {
     expect(italian.communityRecentSummaryMany).toBe("{count} segnalazioni recenti");
     expect(italian.communityUpdatedMinutesAgo).toContain("{minutes}");
     expect(italian.confirmationRecentMany).toBe("{count} conferme recenti");
-    expect(italian.confirmationAction).toBe("Lo vedo anch’io");
+    expect(italian.confirmationAction).toBe("Confermo");
     expect(italian.confirmationActions.rain)
-      .toEqual({ yes: "Piove ancora", no: "Non piove più" });
+      .toEqual({ yes: "Confermo", no: "Non c’è più" });
     expect(Object.keys(italian.confirmationActions)).toEqual([
       "rain",
       "storm",
@@ -185,13 +185,13 @@ describe("liveViewCopy", () => {
       expect(actions.yes).toBeTruthy();
       expect(actions.no).toBeTruthy();
     });
-    expect(italian.confirmationEndedAction).toBe("Smentisci");
+    expect(italian.confirmationEndedAction).toBe("Non c’è più");
     expect(italian.confirmationDone).toBe("Hai confermato");
-    expect(italian.denialCountOne).toBe("1 smentita");
-    expect(italian.denialCountMany).toBe("{count} smentite");
-    expect(italian.denialDone).toBe("Hai smentito");
+    expect(italian.denialCountOne).toBe("1 voto: non c’è più");
+    expect(italian.denialCountMany).toBe("{count} voti: non c’è più");
+    expect(italian.denialDone).toBe("Hai indicato che non c’è più");
     expect(italian.denialExplanation)
-      .toBe("La nascondi dalla tua mappa. Con 3 smentite viene rimossa dalla mappa per tutti.");
+      .toBe("La nascondi dalla tua mappa. Con 3 voti “Non c’è più” viene rimossa dalla mappa per tutti.");
     expect(italian.denialMapRemoved).toBe("Rimossa dalla mappa");
     expect(italian.confirmationConsentSubmit).toBe("Accetta e invia");
     expect(italian.ownReportExpiresIn).toContain("{minutes}");
@@ -234,18 +234,18 @@ describe("liveViewCopy", () => {
     expect(friulian.communityRecentSummaryMany).toBe("{count} segnalazions resintis");
     expect(friulian.communityUpdatedMinutesAgo).toContain("{minutes}");
     expect(friulian.confirmationRecentMany).toContain("{count}");
-    expect(friulian.confirmationAction).toBe("Lu viôt ancje jo");
+    expect(friulian.confirmationAction).toBe("O confermi");
     expect(friulian.confirmationActions.rain)
-      .toEqual({ yes: "Al plûf ancjemò", no: "Nol plûf plui" });
+      .toEqual({ yes: "O confermi", no: "Nol è plui" });
     expect(friulian.confirmationActions.unknown)
-      .toEqual({ yes: "Lu viôt ancje jo", no: "No lu viôt plui" });
-    expect(friulian.confirmationEndedAction).toBe("O smentìs");
+      .toEqual({ yes: "O confermi", no: "Nol è plui" });
+    expect(friulian.confirmationEndedAction).toBe("Nol è plui");
     expect(friulian.confirmationDone).toBe("Tu âs confermât");
-    expect(friulian.denialCountOne).toBe("1 smentide");
-    expect(friulian.denialCountMany).toBe("{count} smentidis");
-    expect(friulian.denialDone).toBe("Tu âs smentît");
+    expect(friulian.denialCountOne).toBe("1 vôt: nol è plui");
+    expect(friulian.denialCountMany).toBe("{count} vôts: nol è plui");
+    expect(friulian.denialDone).toBe("Tu âs indicât che nol è plui");
     expect(friulian.denialExplanation)
-      .toBe("Tu le platis de tô mape. Cun 3 smentidis e ven gjavade de mape par ducj.");
+      .toBe("Tu le platis de tô mape. Cun 3 vôts “Nol è plui” e ven gjavade de mape par ducj.");
     expect(friulian.denialMapRemoved).toBe("Gjavad de mape");
     expect(friulian.confirmationConsentSubmit).toBe("Acete e invie");
     expect(friulian.ownReportExpiresIn).toContain("{minutes}");

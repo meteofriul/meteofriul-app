@@ -161,9 +161,7 @@ function EventsQuickCard({ copy, events, onOpen }) {
       onOpen={onOpen}
     >
       <div className="mf-home-quick-events">
-        {events?.available === false ? (
-          <p>{events.message}</p>
-        ) : featuredEvent ? (
+        {events?.available === false ? null : featuredEvent ? (
           <>
             <div
               className={`mf-home-quick-events__banner${hasImage ? " mf-home-quick-events__banner--image" : " mf-home-quick-events__banner--fallback"}`}
@@ -192,20 +190,15 @@ function EventsQuickCard({ copy, events, onOpen }) {
             <p>{featuredEvent.title}</p>
             <small>{[featuredEvent.dateLabel, featuredEvent.location].filter(Boolean).join(" · ")}</small>
           </>
-        ) : events?.message ? (
-          <>
-            <div className="mf-home-quick-events__count">
-              <strong>{events?.countValue ?? "0"}</strong>
-              <span>{events?.countCaption || copy.eventsCountCaption}</span>
-            </div>
-            <p>{events.message}</p>
-          </>
-        ) : (
+        ) : events?.isUnavailable ? null : (
           <div className="mf-home-quick-events__count">
             <strong>{events?.countValue ?? "0"}</strong>
             <span>{events?.countCaption || copy.eventsCountCaption}</span>
           </div>
         )}
+        {events?.message ? (
+          <div className="mf-home-quick-events__status" role="status">{events.message}</div>
+        ) : null}
       </div>
     </HomeQuickCard>
   );

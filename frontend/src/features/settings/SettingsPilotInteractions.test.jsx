@@ -179,12 +179,12 @@ it("shows the authoritative submission total and rank without progression copy",
   });
   expect(reputation.textContent).toBe("🏆Vuaite dal Timp·7pt");
   expect(reputation.getAttribute("aria-label"))
-    .toBe("Rango Vuaite dal Timp: 7 punti convalidati. Segnalazioni convalidate: 8. Segnalazioni in attesa: 2");
+    .toBe("Rango Vuaite dal Timp: 7 punti convalidati. Confermate: 8. Segnalazioni in attesa: 2");
   expect(stats.textContent).not.toContain("Contributi oggi");
-  expect(stats.textContent).toContain("Segnalazioni totali: 12");
+  expect(stats.textContent).toContain("Inviate: 12");
   expect(stats.textContent).not.toContain("Mancano");
-  expect(values).toHaveLength(2);
-  expect(values.map((value) => value.textContent)).toEqual(["7", "12"]);
+  expect(values).toHaveLength(3);
+  expect(values.map((value) => value.textContent)).toEqual(["7", "12", "8"]);
 });
 
 it("does not turn local activity into points when reputation loading fails", async () => {
@@ -203,7 +203,7 @@ it("does not turn local activity into points when reputation loading fails", asy
   const stats = container.querySelector(".mf-settings-identity__stats");
 
   expect(stats.textContent).toContain("Rango non disponibile");
-  expect(stats.textContent).toContain("Segnalazioni totali: —");
+  expect(stats.textContent).toContain("Inviate: —");
   expect(stats.textContent).not.toContain("Contributi oggi");
   expect(stats.textContent).not.toContain("0 pt");
 });

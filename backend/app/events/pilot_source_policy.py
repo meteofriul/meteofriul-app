@@ -28,6 +28,20 @@ APPROVED_SOURCES = {
 }
 
 
+def _review_urls(batch):
+    """A partial batch must identify each quarantined page exactly once."""
+    reviews = batch.get('review_required') or []
+    if not isinstance(reviews, list):
+        return None
+    urls = [item.get('url') for item in reviews if isinstance(item, dict)
+            and isinstance(item.get('reason'), str) and item['reason']]
+    if (len(urls) != len(reviews) or any(not isinstance(url, str) or not url
+                                         for url in urls)
+            or len(set(urls)) != len(urls)):
+        return None
+    return set(urls)
+
+
 def cinema_muto_batch_verified(batch, *, previous_batch=None):
     """Reconcile the official page inventory with every timed HTML widget."""
     proof = batch.get('verification')
@@ -52,12 +66,15 @@ def cinema_muto_batch_verified(batch, *, previous_batch=None):
         previous_edition = previous_proof.get('edition_id')
         if previous_edition is not None and int(previous_edition) > edition:
             return False
+        prior_count = (previous_proof.get('records_scanned')
+                       or previous_proof.get('parsed_count'))
         same_edition = (previous_edition == str(edition)
-                        and isinstance(previous_proof.get('parsed_count'), int)
-                        and previous_proof['parsed_count'] > 0)
+                        and isinstance(prior_count, int) and prior_count > 0)
         if same_edition and (previous_proof.get('start_date') != first.isoformat()
                              or previous_proof.get('end_date') != last.isoformat()
-                             or proof['parsed_count'] < previous_proof['parsed_count'] * 0.9):
+                             or (proof['records_scanned']
+                                 if previous_proof.get('records_scanned')
+                                 else proof['parsed_count']) < prior_count * 0.9):
             return False
         events = batch['events']
         if not isinstance(events, list) or any(not isinstance(event, dict) for event in events):
@@ -75,11 +92,32 @@ def cinema_muto_batch_verified(batch, *, previous_batch=None):
                 and proof['sitemap_page_count'] == len(days)
                 and proof['records_scanned'] == sum(item['widgets_scanned'] for item in days)
                 and proof['parsed_count'] == sum(item['slots_parsed'] for item in days)
-                and proof['records_scanned'] == proof['parsed_count'] + len(days)
+                and proof['records_scanned']
+                    == proof['parsed_count'] + proof['review_count'] + len(days)
                 and proof['parsed_count'] == len(events)
-                and not batch.get('review_required')
-                and all(item['slots_parsed'] >= 1
-                        and item['widgets_scanned'] == item['slots_parsed'] + 1
+                and proof['review_count'] == len(batch.get('review_required') or [])
+                and proof['review_count'] == sum(
+                    item['slots_reviewed'] for item in days)
+                and proof['parsed_count'] > 0
+                and len({item.get('source_id') for item in batch.get('review_required') or []})
+                    == proof['review_count']
+                and all(isinstance(item, dict)
+                        and item.get('reason') in {
+                            'invalid_calendar_time', 'venue_without_title',
+                            'preopening_title_missing', 'unknown_calendar_venue',
+                            'incomplete_or_changed_slot', 'duplicate_programme_slot'}
+                        and item.get('source_id') not in {
+                            event.get('source_id') for event in events}
+                        and any(item.get('url') == day['url']
+                                and re.fullmatch(
+                                    re.escape(day['date']) + r'-\d+',
+                                    item.get('source_id') or '')
+                                for day in days)
+                        for item in batch.get('review_required') or [])
+                and all(item['slots_parsed'] >= 0
+                        and item['slots_reviewed'] >= 0
+                        and item['widgets_scanned']
+                            == item['slots_parsed'] + item['slots_reviewed'] + 1
                         and urlsplit(item['url']).scheme == 'https'
                         and urlsplit(item['url']).hostname == 'www.giornatedelcinemamuto.it'
                         and urlsplit(item['url']).path == f"/calendario-{date.fromisoformat(item['date']):%d%m%y}/"
@@ -87,6 +125,9 @@ def cinema_muto_batch_verified(batch, *, previous_batch=None):
                         for item in days)
                 and all(sum(event.get('start_date') == item['date'] for event in events)
                         == item['slots_parsed'] for item in days)
+                and all(sum(review.get('url') == item['url']
+                            for review in batch.get('review_required') or [])
+                        == item['slots_reviewed'] for item in days)
                 and all(event.get('source') == 'Le Giornate del Cinema Muto'
                         and event.get('programme_id') == f'giornate-del-cinema-muto-{edition}'
                         and event.get('programme_start_date') == first.isoformat()
@@ -102,23 +143,47 @@ def cinema_muto_batch_verified(batch, *, previous_batch=None):
         return False
 
 
-def pordenonelegge_batch_verified(batch, *, previous_batch=None):
+def pordenonelegge_batch_verified(batch, *, previous_batch=None, today=None):
     """Check the complete-programme heading, day tabs and every parsed card."""
     proof = batch.get('verification')
     if not isinstance(proof, dict):
         return False
+    if proof.get('collection_mode') == 'closed-verified-edition':
+        prior = (previous_batch or {}).get('verification') or {}
+        try:
+            prior_end = prior.get('end_date') or prior.get('prior_end_date')
+            prior_count = prior.get('parsed_count') or prior.get('prior_parsed_count')
+            return (today is not None
+                    and prior.get('collection_mode') in {
+                        'complete-official-programme', 'closed-verified-edition'}
+                    and prior.get('edition_id') == proof.get('edition_id')
+                    and prior_end == proof.get('prior_end_date')
+                    and date.fromisoformat(prior_end) < today
+                    and isinstance(prior_count, int) and prior_count > 0
+                    and proof.get('prior_parsed_count') == prior_count
+                    and proof.get('as_of_date') == today.isoformat()
+                    and proof.get('redirect_target', '').rstrip('/')
+                        == 'https://www.pordenonelegge.it'
+                    and proof.get('source_complete') is True
+                    and batch.get('events') == []
+                    and not batch.get('review_required'))
+        except (TypeError, ValueError):
+            return False
     days = proof.get('tab_dates') or []
     counts = proof.get('day_counts') or {}
+    duplicates = proof.get('duplicate_by_day') or {}
     numeric = ('records_scanned', 'parsed_count', 'duplicate_count', 'review_count')
     if (proof.get('collection_mode') != 'complete-official-programme'
             or not isinstance(days, list) or not all(isinstance(day, str) for day in days)
             or not 3 <= len(days) <= 10 or len(days) != len(set(days))
             or not isinstance(counts, dict)
-            or set(counts) != set(days)
+            or set(counts) != set(days) or set(duplicates) != set(days)
             or any(not isinstance(proof.get(key), int) or isinstance(proof[key], bool)
                    or proof[key] < 0 for key in numeric)
             or any(not isinstance(count, int) or isinstance(count, bool) or count < 1
-                   for count in counts.values())):
+                   for count in counts.values())
+            or any(not isinstance(count, int) or isinstance(count, bool) or count < 0
+                   for count in duplicates.values())):
         return False
     try:
         parsed_days = [date.fromisoformat(day) for day in days]
@@ -142,13 +207,28 @@ def pordenonelegge_batch_verified(batch, *, previous_batch=None):
                 and proof['end_date'] == days[-1]
                 and proof['records_scanned'] == sum(counts.values())
                 == proof['parsed_count'] + proof['duplicate_count'] + proof['review_count']
-                and proof['duplicate_count'] == proof['review_count'] == 0
+                and proof['duplicate_count'] == sum(duplicates.values())
+                and proof['review_count'] == len(batch.get('review_required') or [])
                 and proof['parsed_count'] == len(batch.get('events', []))
-                and not batch.get('review_required')
+                and proof['parsed_count'] > 0
+                and len({item.get('source_id') for item in
+                         batch.get('review_required') or []})
+                    == proof['review_count']
+                and all(isinstance(item, dict)
+                        and item.get('reason') in {
+                            'invalid_programme_time', 'missing_title_or_venue',
+                            'schedule_change_requires_review',
+                            'municipality_not_resolved'}
+                        and item.get('date') in days
+                        and re.fullmatch(r'https://www\.pordenonelegge\.it/eventi/[^?#]+',
+                                         item.get('url') or '')
+                        for item in batch.get('review_required') or [])
                 and all(isinstance(event, dict) for event in batch['events'])
-                and {event.get('start_date') for event in batch['events']} == set(days)
+                and {event.get('start_date') for event in batch['events']} <= set(days)
                 and all(sum(event.get('start_date') == day for event in batch['events'])
-                        == counts[day] for day in days)
+                        + sum(item.get('date') == day for item in
+                              batch.get('review_required') or [])
+                        + duplicates[day] == counts[day] for day in days)
                 and all(event.get('source') == 'Pordenonelegge'
                         and event.get('programme_id') == f'pordenonelegge-{edition}'
                         and event.get('programme_start_date') == days[0]
@@ -191,7 +271,13 @@ def sagrefvg_batch_verified(batch, *, today):
                     == verification['past_count'] + verification['active_count']
                        + verification['review_count']
                 and verification['active_count'] == len(batch.get('events', []))
-                and verification['review_count'] == len(batch.get('review_required') or []) == 0
+                and verification['review_count'] == len(batch.get('review_required') or [])
+                and all(isinstance(item, dict)
+                        and isinstance(item.get('url'), str)
+                        and item.get('url', '').startswith('https://sagrefvg.it/')
+                        and isinstance(item.get('reason'), str)
+                        and item['reason']
+                        for item in batch.get('review_required') or [])
                 and all(not event.get('image') or
                         event['image'].startswith('https://sagrefvg.it/wp-content/uploads/'
                                                   + event['start_date'][:4] + '/')
@@ -317,7 +403,7 @@ def turismofvg_batch_verified(batch, *, today, previous_batch=None):
     verification = batch.get('verification') or {}
     if verification.get('collection_mode') == 'verified-rolling-45-day-window':
         try:
-            from .pilot_regional_checkpoint import decode_control
+            from .pilot_regional_checkpoint import decode_control, resumable_details
             from .pilot_regional_year_control import summary as control_summary
             from .pilot_regional_verified import (job_results_fresh,
                                                   known_future_evidence,
@@ -342,6 +428,14 @@ def turismofvg_batch_verified(batch, *, today, previous_batch=None):
             previous_control = (decode_control(previous_batch['control_checkpoint'])
                                 if previous_batch and previous_batch.get('control_checkpoint')
                                 else None)
+            from .pilot_regional_health import detail_health, detail_health_verified
+            if (not detail_health_verified(control, previous_control=previous_control, today=today,
+                    resumed_results=resumable_details(control, previous_batch, today=today))
+                    or verification.get('detail_health') != detail_health(control)
+                    or batch.get('detail_diagnostics') != control.get('detail_diagnostics')
+                    or batch.get('detail_candidates')
+                    or (not display['cards'] and (display['review'] or display['quarantined']))):
+                return False
             prior_entries = (previous_control or {}).get('entries') or {}
             prior_index = ((previous_control or {}).get('sitemap_index')
                            or {url: entry.get('sitemap_lastmod')
@@ -403,9 +497,14 @@ def turismofvg_batch_verified(batch, *, today, previous_batch=None):
                         == len(set(sitemap_index) & selected)
                     and control['calendar_pages'] == sum(
                         segment['pages'] for segment in segments)
-                    and stats['source_complete'] is True
-                    and display['source_complete'] is True
-                    and not display['quarantined'] and not display['review']
+                    and stats['inventory_complete'] is True
+                    and display['inventory_complete'] is True
+                    and verification['quarantine_count']
+                        == len({item['url'] for item in
+                                display['quarantined'] + display['review']})
+                    and _review_urls(batch)
+                        == {item['url'] for item in
+                            display['quarantined'] + display['review']}
                     and verification['as_of_date'] == today.isoformat()
                     and verification['window_end'] == end.isoformat()
                     and verification['source_complete'] is True
@@ -424,7 +523,8 @@ def turismofvg_batch_verified(batch, *, today, previous_batch=None):
                     and verification['cards_total'] == len(display['cards'])
                     and batch.get('events') == display['cards']
                     and job_results_fresh(control, today=today)
-                    and not batch.get('review_required'))
+                    and not _review_urls(batch) & {
+                        item.get('url') for item in display['cards']})
         except (AttributeError, KeyError, TypeError, ValueError):
             return False
     if verification.get('collection_mode') == 'complete-annual-year-control':
@@ -617,7 +717,8 @@ def azalea_batch_verified(batch, *, today, previous_batch=None):
             or not 1 <= proof['sitemap_event_urls'] <= 1000
             or not isinstance(proof.get('sitemap_unlisted_delta_checked'), int)
             or not 0 <= proof['sitemap_unlisted_delta_checked'] <= 50
-            or proof.get('review_count') != 0 or batch.get('review_required')):
+            or proof.get('review_count') != len(batch.get('review_required') or [])
+            or _review_urls(batch) is None):
         return False
     try:
         from .pilot_azalea import trusted_event_url
@@ -643,6 +744,10 @@ def azalea_batch_verified(batch, *, today, previous_batch=None):
         if pages[0]['new_urls'] != pages[0]['cards']:
             return False
         included = set()
+        reviewed = _review_urls(batch)
+        if reviewed != {url for url, status in checked.items()
+                        if status == 'review_required'}:
+            return False
         for url, item in by_url.items():
             if not trusted_event_url(url) or not item['title'] or not item['city']:
                 return False
@@ -659,6 +764,8 @@ def azalea_batch_verified(batch, *, today, previous_batch=None):
             elif disposition == 'past':
                 if day >= today:
                     return False
+            elif disposition == 'review_required':
+                pass
             else:
                 return False
         events = batch['events']
@@ -714,7 +821,8 @@ def css_batch_verified(batch, *, today, previous_batch=None):
             or not isinstance(pages, list) or len(pages) != 6
             or not isinstance(listings, list) or not 1 <= len(listings) <= 250
             or not isinstance(details, list) or len(details) != len(listings)
-            or proof.get('review_count') != 0 or batch.get('review_required')):
+            or proof.get('review_count') != len(batch.get('review_required') or [])
+            or _review_urls(batch) is None):
         return False
     try:
         from .pilot_css import BASE, SEASON_PATHS, trusted_event_url
@@ -739,16 +847,21 @@ def css_batch_verified(batch, *, today, previous_batch=None):
             return False
         allowed_exclusions = {'past', 'season_umbrella', 'dates_not_defined',
                               'municipality_not_fixed'}
+        reviewed = _review_urls(batch)
+        if reviewed != {url for url, status in checked.items()
+                        if status == 'review_required'}:
+            return False
         included = {url for url, disposition in checked.items()
                     if disposition == 'included'}
         if (proof['included_detail_urls'] != len(included)
-                or len(batch['excluded']) != len(listings) - len(included)
-                or {item['url'] for item in batch['excluded']} != set(listed) - included):
+                or len(batch['excluded']) != len(listings) - len(included) - len(reviewed)
+                or {item['url'] for item in batch['excluded']}
+                   != set(listed) - included - reviewed):
             return False
         for url, item in listed.items():
             if (not trusted_event_url(url) or not item['title']
                     or not item['schedule'] or not item['venue']
-                    or checked[url] not in allowed_exclusions | {'included'}):
+                    or checked[url] not in allowed_exclusions | {'included', 'review_required'}):
                 return False
         for item in batch['excluded']:
             if item['reason'] != checked[item['url']]:
@@ -785,6 +898,7 @@ def css_batch_verified(batch, *, today, previous_batch=None):
                     for event in events}
         for old in previous:
             if (date.fromisoformat(old['start_date']) >= today
+                    and old['url'] not in reviewed
                     and (old['url'], old['start_date'],
                          engine.normalize_for_search(old['event_city'])) not in new_exact
                     and (engine.normalize_for_search(old['title']),
@@ -807,7 +921,8 @@ def pnpensa_batch_verified(batch, *, today, previous_batch=None):
             or not isinstance(posts, list) or not posts
             or not isinstance(pages, list) or not pages
             or not isinstance(details, list) or len(details) != len(posts)
-            or proof.get('review_count') != 0 or batch.get('review_required')):
+            or proof.get('review_count') != len(batch.get('review_required') or [])
+            or _review_urls(batch) is None):
         return False
     try:
         from .pilot_pnpensa import trusted_page_url, trusted_post_url
@@ -828,8 +943,14 @@ def pnpensa_batch_verified(batch, *, today, previous_batch=None):
                 or any(not trusted_page_url(url) for url in page_urls)
                 or len(checked) != len(posts) or set(checked) != urls
                 or any(not trusted_post_url(url) for url in urls)
-                or any(value not in {'included', 'past', 'no_defined_event_date'}
+                or any(value not in {'included', 'past', 'no_defined_event_date',
+                                     'review_required'}
                        for value in checked.values())):
+            return False
+        reviewed = _review_urls(batch)
+        if reviewed != ({url for url, status in checked.items()
+                         if status == 'review_required'}
+                        | (reviewed & page_urls)):
             return False
         included = {url for url, value in checked.items() if value == 'included'}
         events = batch['events']
@@ -856,6 +977,7 @@ def pnpensa_batch_verified(batch, *, today, previous_batch=None):
                     for event in events}
         for old in previous:
             if (date.fromisoformat(old['start_date']) >= today
+                    and old['url'] not in reviewed
                     and (old['url'], old['start_date'], old['event_city']) not in new_keys):
                 return False
         return True
@@ -880,7 +1002,8 @@ def verdi_pordenone_batch_verified(batch, *, today, previous_batch=None):
             or not isinstance(season_urls, list)
             or not isinstance(season_terms, list) or not 1 <= len(season_terms) <= 3
             or not isinstance(details, list) or not details
-            or proof.get('review_count') != 0 or batch.get('review_required')):
+            or proof.get('review_count') != len(batch.get('review_required') or [])
+            or _review_urls(batch) is None):
         return False
     try:
         from .pilot_verdi_pordenone import BASE
@@ -910,11 +1033,16 @@ def verdi_pordenone_batch_verified(batch, *, today, previous_batch=None):
                 or any(not re.fullmatch(
                     r'https://teatroverdipordenone\.it/spettacolo/[^/]+/', url)
                     for url in all_urls)
-                or any(value not in {'included', 'past'} for value in checked.values())
+                or any(value not in {'included', 'past', 'review_required'}
+                       for value in checked.values())
                 or any(url not in listed for url, status in checked.items()
                        if status == 'included')):
             return False
         included = {url for url, value in checked.items() if value == 'included'}
+        reviewed = _review_urls(batch)
+        if reviewed != {url for url, value in checked.items()
+                        if value == 'review_required'}:
+            return False
         events = batch['events']
         if ({event['url'] for event in events} != included
                 or events != sorted(events, key=lambda item: (
@@ -938,6 +1066,7 @@ def verdi_pordenone_batch_verified(batch, *, today, previous_batch=None):
                      event['event_city']) for event in events}
         for old in (previous_batch or {}).get('events') or []:
             if (date.fromisoformat(old['start_date']) >= today
+                    and old['url'] not in reviewed
                     and (old['url'], old['start_date'], old.get('time'),
                          old['event_city']) not in new_keys):
                 return False
@@ -961,7 +1090,8 @@ def verdi_trieste_batch_verified(batch, *, today, previous_batch=None):
             or not isinstance(season, list) or not 1 <= len(season) <= 300
             or not isinstance(terms, list) or not 1 <= len(terms) <= 3
             or not isinstance(details, list) or not details
-            or proof.get('review_count') != 0 or batch.get('review_required')):
+            or proof.get('review_count') != len(batch.get('review_required') or [])
+            or _review_urls(batch) is None):
         return False
     try:
         if (listed != sorted(set(listed)) or season != sorted(set(season))
@@ -986,8 +1116,13 @@ def verdi_trieste_batch_verified(batch, *, today, previous_batch=None):
         for row in calendar:
             dates = row['future_dates']
             if (not isinstance(dates, list) or dates != sorted(set(dates))
-                    or dates != detail_by_url[row['url']]['future_dates']):
+                    or (detail_by_url[row['url']]['disposition'] != 'review_required'
+                        and dates != detail_by_url[row['url']]['future_dates'])):
                 return False
+        reviewed = _review_urls(batch)
+        if reviewed != {row['url'] for row in details
+                        if row['disposition'] == 'review_required'}:
+            return False
         events = batch['events']
         if events != sorted(events, key=lambda item: (
                 item['start_date'], item.get('time') or '', item['event_city'],
@@ -997,6 +1132,10 @@ def verdi_trieste_batch_verified(batch, *, today, previous_batch=None):
             url = row['url']
             matching = [event for event in events if event['url'] == url]
             dates = sorted({event['start_date'] for event in matching})
+            if row['disposition'] == 'review_required':
+                if row['future_dates'] or row['future_slot_count'] or matching:
+                    return False
+                continue
             if (row['disposition'] not in {'included', 'past'}
                     or row['future_dates'] != dates
                     or row['future_slot_count'] != len(matching)
@@ -1024,6 +1163,7 @@ def verdi_trieste_batch_verified(batch, *, today, previous_batch=None):
         for old in (previous_batch or {}).get('events') or []:
             key = (old['url'], old['start_date'], old.get('time'))
             if (old['start_date'] >= today.isoformat()
+                    and old['url'] not in reviewed
                     and (key not in seen if old.get('time') else
                          (old['url'], old['start_date']) not in seen_dates)):
                 return False
@@ -1038,7 +1178,9 @@ def villa_manin_batch_verified(batch, *, today, previous_batch=None):
             'year_archive_count', 'calendar_cards', 'historical_card_conflicts',
             'active_records', 'inactive_records', 'rejected_records',
             'rejected_past_cards', 'rejected_outside_current_surfaces',
-            'review_count', 'detail_pages_checked',
+            'rejected_review_count',
+            'review_count', 'detail_pages_checked', 'detail_verified_count',
+            'active_review_count',
             'projected_count')
     if (proof.get('collection_mode') != 'complete-villa-manin-api-calendar-year-archive'
             or proof.get('source_complete') is not True
@@ -1051,11 +1193,15 @@ def villa_manin_batch_verified(batch, *, today, previous_batch=None):
     previous_events = (previous_batch or {}).get('events', [])
     if not isinstance(previous_events, list):
         return False
+    reviewed = _review_urls(batch)
+    if reviewed is None or proof['review_count'] != len(reviewed):
+        return False
     current_keys = {(event.get('url'), event.get('start_date')) for event in events}
     for old in previous_events:
         if not isinstance(old, dict):
             return False
-        if old.get('end_date', old.get('start_date', '')) >= today.isoformat() and (
+        if (old.get('end_date', old.get('start_date', '')) >= today.isoformat()
+                and old.get('url') not in reviewed) and (
                 old.get('url'), old.get('start_date')) not in current_keys:
             return False
     from .sources.villa_manin import is_trusted_villa_manin_event_url, is_trusted_villa_manin_image_url
@@ -1068,11 +1214,18 @@ def villa_manin_batch_verified(batch, *, today, previous_batch=None):
             and proof['records_scanned'] == proof['active_records']
                 + proof['inactive_records'] + proof['rejected_records']
             and proof['rejected_records'] == proof['rejected_past_cards']
-                + proof['rejected_outside_current_surfaces']
-            and proof['review_count'] == len(batch.get('review_required') or []) == 0
-            and proof['detail_pages_checked'] == proof['active_records']
+                + proof['rejected_outside_current_surfaces'] + proof['rejected_review_count']
+            and proof['rejected_review_count'] <= proof['review_count']
+            and proof['review_count'] == len(batch.get('review_required') or [])
+            and proof['active_records'] == proof['detail_verified_count']
+                + proof['active_review_count']
+            and proof['detail_verified_count'] <= proof['detail_pages_checked']
+                <= proof['active_records']
             and proof['projected_count'] == len(events)
-            and proof['active_records'] <= len(events)
+            and proof['detail_verified_count'] <= len(events)
+            and not reviewed & {event.get('url') for event in events}
+            and all(isinstance(url, str) and
+                    is_trusted_villa_manin_event_url(url) for url in reviewed)
             and len(current_keys) == len(events)
             and all(event.get('source') == 'Villa Manin'
                     and event.get('event_city') == 'Codroipo'
@@ -1101,6 +1254,9 @@ def magazzino_batch_verified(batch, *, today, previous_batch=None):
     previous = (previous_batch or {}).get('events', [])
     if not isinstance(events, list) or not isinstance(previous, list):
         return False
+    reviewed = _review_urls(batch)
+    if reviewed is None or proof['review_count'] != len(reviewed):
+        return False
     current_keys = {(event.get('url'), event.get('start_date')) for event in events
                     if isinstance(event, dict)}
     if len(current_keys) != len(events):
@@ -1108,7 +1264,8 @@ def magazzino_batch_verified(batch, *, today, previous_batch=None):
     for old in previous:
         if not isinstance(old, dict):
             return False
-        if old.get('end_date', old.get('start_date', '')) >= today.isoformat() and (
+        if (old.get('end_date', old.get('start_date', '')) >= today.isoformat()
+                and old.get('url') not in reviewed) and (
                 old.get('url'), old.get('start_date')) not in current_keys:
             return False
     from .pilot_magazzino import event_url, image_url
@@ -1121,10 +1278,15 @@ def magazzino_batch_verified(batch, *, today, previous_batch=None):
             and 1 <= proof['event_list_urls'] <= proof['records_scanned']
             and 1 <= proof['exhibition_urls'] <= proof['records_scanned']
             and proof['exhibition_dates_checked'] <= proof['active_count']
+                + proof['review_count']
             and proof['records_scanned'] == proof['archived']
                 + proof['current_past'] + proof['active_count']
+                + proof['review_count']
             and proof['active_count'] == proof['detail_count'] == len(events)
-            and proof['review_count'] == len(batch.get('review_required') or []) == 0
+            and proof['review_count'] == len(batch.get('review_required') or [])
+            and reviewed is not None
+            and not reviewed & {event.get('url') for event in events}
+            and all(event_url(url) == url for url in reviewed)
             and all(isinstance(event, dict)
                     and event.get('source') == 'Magazzino delle Idee'
                     and event.get('event_city') == 'Trieste'
@@ -1138,26 +1300,75 @@ def magazzino_batch_verified(batch, *, today, previous_batch=None):
 
 
 def spazzapan_batch_verified(batch, *, today, previous_batch=None):
-    """Require all reviewed surfaces and each distinct active detail."""
+    """Reconcile each active detail against the complete official inventory."""
+    from .pilot_spazzapan import (BASE, SOURCE, EXHIBITION_PAGES, EXPECTED_INVENTORIES,
+                                  OCTOBER_28_EVENT, REVIEWED_EXHIBITION_PERIODS,
+                                  EXHIBITION_NEWS_IDS)
     proof = batch.get('verification') or {}
     events = batch.get('events')
+    reviews = batch.get('review_required')
+    event_ids = proof.get('event_inventory_ids')
+    if (not isinstance(event_ids, list) or any(type(value) is not int for value in event_ids)
+            or len(set(event_ids)) != len(event_ids)
+            or set(event_ids) not in (EXPECTED_INVENTORIES['events'],
+                                     EXPECTED_INVENTORIES['events'] | {OCTOBER_28_EVENT['api_id']})):
+        return False
+    additional_announced = OCTOBER_28_EVENT['api_id'] in event_ids
+    current_ids = proof.get('current_exhibition_ids')
+    archived = proof.get('archived_exhibitions')
+    if (not isinstance(current_ids, list)
+            or any(type(value) is not int for value in current_ids)
+            or len(set(current_ids)) != len(current_ids)
+            or not isinstance(archived, list)
+            or any(not isinstance(item, dict) for item in archived)):
+        return False
+    archived_ids = set()
+    paths = {str(value): path for path, value in EXHIBITION_PAGES.items()}
+    for item in archived:
+        source_id = item.get('source_id')
+        if not isinstance(source_id, str) or source_id not in paths:
+            return False
+        period = REVIEWED_EXHIBITION_PERIODS.get(int(source_id))
+        if period is None:
+            return False
+        start, end, intro = period
+        if (source_id in archived_ids or end >= today.isoformat()
+                or item.get('url') != BASE + '/it' + paths[source_id]
+                or item.get('start_date') != start or item.get('end_date') != end
+                or item.get('date_evidence') != intro):
+            return False
+        archived_ids.add(source_id)
+    if ({str(value) for value in current_ids} & archived_ids
+            or {str(value) for value in current_ids} | archived_ids != set(paths)):
+        return False
+    retired_news_ids = proof.get('retired_news_ids')
+    if (not isinstance(retired_news_ids, list)
+            or any(type(value) is not int for value in retired_news_ids)
+            or len(set(retired_news_ids)) != len(retired_news_ids)
+            or any(str(EXHIBITION_NEWS_IDS.get(value)) not in archived_ids
+                   for value in retired_news_ids)):
+        return False
     if (proof.get('collection_mode') != 'reconciled-spazzapan-event-exhibition-news'
             or proof.get('source_complete') is not True
-            or proof.get('event_api_count') != 3
-            or proof.get('event_category_count') != 2
-            or proof.get('current_exhibition_count') != 4
+            or proof.get('event_api_count') != len(event_ids)
+            or proof.get('event_category_count') != 2 + int(additional_announced)
+            or proof.get('current_exhibition_count') != len(current_ids)
             or proof.get('exhibition_count') != 7
             or proof.get('historical_plural_count') != 1
             or not isinstance(proof.get('news_count'), int)
-            or proof['news_count'] < 78
-            or proof.get('reviewed_2026_news') != 44
-            or proof.get('verified_distinct_current') != 4
+            or proof['news_count'] < 78 - len(retired_news_ids) + (2 if additional_announced else 0)
+            or proof.get('reviewed_2026_news') != 44 - len(retired_news_ids) + (2 if additional_announced else 0)
+            or proof.get('verified_distinct_current') != 4 + int(additional_announced)
             or not isinstance(events, list)
             or any(not isinstance(event, dict) for event in events)
             or proof.get('projected_count') != len(events)
-            or batch.get('review_required')):
+            or not isinstance(reviews, list)
+            or _review_urls(batch) is None
+            or not isinstance(proof.get('active_count'), int)
+            or not isinstance(proof.get('review_count'), int)
+            or proof['review_count'] != len(reviews)
+            or proof['active_count'] != len(events) + len(reviews)):
         return False
-    from .pilot_spazzapan import BASE, SOURCE
     expected = {
         '232202': ('/it/fvg7002-eventi-collaterali-di-ottobre-172985',
                    '2026-07-23', '2026-11-29', True),
@@ -1168,9 +1379,29 @@ def spazzapan_batch_verified(batch, *, today, previous_batch=None):
         '233611': ('/it/eventi-collaterali-ottobre-174329',
                    '2026-10-14', '2026-10-14', True),
     }
+    if additional_announced:
+        extra = OCTOBER_28_EVENT
+        expected[str(extra['source_id'])] = ('/it' + extra['path'], extra['date'], extra['date'], False)
     active = {key for key, (_, _, end, _) in expected.items()
               if end >= today.isoformat()}
-    if {str(event.get('source_id')) for event in events if isinstance(event, dict)} != active:
+    included = {str(event.get('source_id')) for event in events}
+    reviewed = {str(item.get('source_id')) for item in reviews
+                if isinstance(item, dict)}
+    if (proof['active_count'] != len(active)
+            or len(included) != len(events)
+            or len(reviewed) != len(reviews)
+            or included & reviewed
+            or included | reviewed != active
+            or (active and not events)
+            or any(not isinstance(item, dict)
+                   or str(item.get('source_id')) not in active
+                   or item.get('url') != BASE + expected[str(item['source_id'])][0]
+                   or item.get('reason') not in {
+                       'event_detail_requires_review',
+                       'exhibition_detail_requires_review'}
+                   or not isinstance(item.get('detail'), str)
+                   or not item['detail']
+                   for item in reviews)):
         return False
     for event in events:
         path, start, end, needs_excerpt = expected[str(event['source_id'])]
@@ -1196,32 +1427,38 @@ def spazzapan_batch_verified(batch, *, today, previous_batch=None):
                      or 'a breve ulteriori dettagli' in
                      event['description_excerpt'].casefold())):
             return False
+        if event['source_id'] == str(OCTOBER_28_EVENT['source_id']) and event.get('time') != '18:00':
+            return False
         if not needs_excerpt and event.get('description_excerpt'):
             return False
     previous = (previous_batch or {}).get('events') or []
     current = {(event['source_id'], event['start_date']) for event in events}
     return all(isinstance(old, dict) and
                (old.get('end_date', '') < today.isoformat() or
+                str(old.get('source_id')) in reviewed or
                 (old.get('source_id'), old.get('start_date')) in current)
                for old in previous)
 
 
 def mess_batch_verified(batch, *, today, previous_batch=None):
-    """Require the complete programme and a reviewed news inventory."""
+    """Reconcile every programme slot and the reviewed news inventory."""
     proof = batch.get('verification') or {}
     events = batch.get('events')
     previous = (previous_batch or {}).get('events') or []
     if (proof.get('collection_mode') != 'complete-mess-programme-and-news'
             or proof.get('source_complete') is not True
             or proof.get('declared_laboratories') != 36
-            or proof.get('parsed_laboratories') != 36
+            or not isinstance(proof.get('parsed_laboratories'), int)
+            or not isinstance(proof.get('reviewed_laboratories'), int)
+            or proof['parsed_laboratories'] + proof['reviewed_laboratories'] != 36
             or proof.get('museum_locations') != 18
             or proof.get('two_sessions_per_museum') is not True
             or proof.get('news_category_id') != 18221
             or not isinstance(proof.get('news_records'), int)
             or proof['news_records'] < 51
             or proof.get('reviewed_2026_news') != 24
-            or proof.get('unresolved_news') != 0
+            or not isinstance(proof.get('unresolved_news'), int)
+            or not 0 <= proof['unresolved_news'] <= 3
             or not isinstance(events, list) or not isinstance(previous, list)
             or proof.get('projected_count') != len(events)
             or not isinstance(proof.get('laboratory_count'), int)
@@ -1229,11 +1466,80 @@ def mess_batch_verified(batch, *, today, previous_batch=None):
             or proof.get('corroborated_exhibitions') !=
                len(events) - proof['laboratory_count']
             or not 0 <= proof['corroborated_exhibitions'] <= 3
-            or len(events) > 39 or batch.get('review_required')):
+            or len(events) > 39
+            or _review_urls(batch) is None
+            or not isinstance(proof.get('slot_records'), list)
+            or len(proof['slot_records']) != 36):
         return False
     from .pilot_programmes import reviewed_programme_metadata
-    from .pilot_mess import PROGRAMME_URL, BASE, REVIEWED_ACTIVE_NEWS
+    from .pilot_mess import (PROGRAMME_URL, BASE, REVIEWED_ACTIVE_NEWS,
+                             REVIEWED_LABORATORY_SLOTS_2026)
+
+    slots = proof['slot_records']
+    active_slots = [item for item in slots
+                    if isinstance(item, dict)
+                    and isinstance(item.get('date'), str)
+                    and item['date'] >= today.isoformat()]
+    if (any(not isinstance(item, dict)
+            or item.get('slot') != index
+            or item.get('date') != day
+            or item.get('museum_id') != museum_id
+            or not isinstance(item.get('parsed'), bool)
+            or item.get('disposition') not in (
+                {'past'} if day < today.isoformat()
+                else {'included', 'review_required'})
+            or (day >= today.isoformat()
+                and item['parsed'] != (item['disposition'] == 'included'))
+            for index, (item, (day, museum_id)) in enumerate(
+                zip(slots, REVIEWED_LABORATORY_SLOTS_2026), 1))
+            or sum(item['parsed'] for item in slots)
+               != proof['parsed_laboratories']
+            or sum(item['disposition'] == 'included' for item in slots)
+               != proof['laboratory_count']
+            or sum(item['disposition'] == 'review_required' for item in slots)
+               != proof.get('active_laboratory_review_count')
+            or (active_slots and all(item.get('disposition') == 'review_required'
+                                     for item in active_slots))):
+        return False
+    reviews = batch.get('review_required') or []
+    lab_reviews = [item for item in reviews if isinstance(item, dict)
+                   and item.get('reason') == 'laboratory_requires_review']
+    news_reviews = [item for item in reviews if isinstance(item, dict)
+                    and item.get('reason') == 'news_exhibition_requires_review']
+    expected_reviews = {
+        (PROGRAMME_URL + '#laboratorio-' + str(item['slot']),
+         f'mess-laboratori-2026-{item["museum_id"]}-{item["date"]}',
+         item['slot'])
+        for item in slots if item['disposition'] == 'review_required'}
+    if (len(reviews) != len(lab_reviews) + len(news_reviews)
+            or len(lab_reviews) != len(expected_reviews)
+            or {(item.get('url'), item.get('source_id'), item.get('slot'))
+                for item in lab_reviews} != expected_reviews
+            or any(not isinstance(item, dict)
+                   or item.get('reason') != 'laboratory_requires_review'
+                   or not isinstance(item.get('detail'), str)
+                   or not item['detail'] for item in lab_reviews)):
+        return False
+    active_news = {article_id: item for article_id, item in
+                   REVIEWED_ACTIVE_NEWS.items()
+                   if item['end'] >= today.isoformat()}
+    if (not events and (active_news or any(
+            item['date'] >= today.isoformat() for item in slots))):
+        return False
+    expected_news_reviews = {
+        (BASE + '/it' + active_news[article_id]['path'],
+         f'mess-news-{article_id}') for article_id in active_news}
+    if (proof['unresolved_news'] != len(news_reviews)
+            or len(news_reviews) != len({item.get('source_id')
+                                          for item in news_reviews})
+            or any((item.get('url'), item.get('source_id'))
+                   not in expected_news_reviews
+                   or not isinstance(item.get('detail'), str)
+                   or not item['detail'] for item in news_reviews)):
+        return False
     seen = set()
+    included_slots = set()
+    included_news = set()
     laboratories = news = 0
     for event in events:
         if not isinstance(event, dict) or event.get('source') != 'MESS':
@@ -1259,8 +1565,18 @@ def mess_batch_verified(batch, *, today, previous_batch=None):
                     or not event.get('description_excerpt')
                     or not event.get('description_checked_at')):
                 return False
+            included_news.add(article_id)
         else:
             laboratories += 1
+            slot = event.get('programme_slot')
+            if (not isinstance(slot, int) or not 1 <= slot <= 36
+                    or slots[slot - 1]['disposition'] != 'included'
+                    or event.get('start_date') != slots[slot - 1]['date']
+                    or event.get('source_id') !=
+                    f'mess-laboratori-2026-{slots[slot - 1]["museum_id"]}-{slots[slot - 1]["date"]}'
+                    or slot in included_slots):
+                return False
+            included_slots.add(slot)
             if (event.get('url') != PROGRAMME_URL
                 or event.get('description_source_name') != 'MESS'
                 or event.get('description_source_url') != PROGRAMME_URL
@@ -1270,12 +1586,21 @@ def mess_batch_verified(batch, *, today, previous_batch=None):
                 return False
         seen.add(identity)
     if (laboratories != proof['laboratory_count']
-            or news != proof['corroborated_exhibitions']):
+            or included_slots != {item['slot'] for item in slots
+                                  if item['disposition'] == 'included'}
+            or news != proof['corroborated_exhibitions']
+            or len(included_news) != news
+            or included_news & {int(item['source_id'].split('-')[-1])
+                                for item in news_reviews}
+            or included_news | {int(item['source_id'].split('-')[-1])
+                                for item in news_reviews} != set(active_news)):
         return False
+    reviewed_ids = {item['source_id'] for item in reviews}
     for old in previous:
         if (not isinstance(old, dict)
                 or old.get('start_date', '') >= today.isoformat()
-                and (old.get('source_id'), old.get('start_date')) not in seen):
+                and (old.get('source_id'), old.get('start_date')) not in seen
+                and old.get('source_id') not in reviewed_ids):
             return False
     return True
 
@@ -1441,7 +1766,7 @@ def gate_batch(source, batch, *, today, previous_batch=None):
     if source == 'SagreFVG' and not sagrefvg_batch_verified(batch, today=today):
         return {**batch, 'status': 'error', 'error_type': 'source_verification_failed'}
     if source == 'Pordenonelegge' and not pordenonelegge_batch_verified(
-            batch, previous_batch=previous_batch):
+            batch, previous_batch=previous_batch, today=today):
         return {**batch, 'status': 'error', 'error_type': 'source_verification_failed'}
     if source == 'Le Giornate del Cinema Muto' and not cinema_muto_batch_verified(
             batch, previous_batch=previous_batch):
@@ -1451,6 +1776,7 @@ def gate_batch(source, batch, *, today, previous_batch=None):
         return {**batch, 'status': 'error', 'error_type': 'source_verification_failed'}
     accepted, review = [], list(batch.get('review_required', []))
     serious_exclusions = 0
+    isolated_exclusion = None
     for event in batch.get('events', []):
         reasons = validate_candidate(event, today=today) if isinstance(event, dict) else ['invalid_record']
         if isinstance(event, dict) and event.get('source') != source:
@@ -1458,7 +1784,9 @@ def gate_batch(source, batch, *, today, previous_batch=None):
         if reasons:
             if reasons != ['past_event']:
                 serious_exclusions += 1
+                isolated_exclusion = event if isinstance(event, dict) else None
                 review.append({'url': event.get('url') if isinstance(event, dict) else None,
+                               'source_id': event.get('source_id') if isinstance(event, dict) else None,
                                'reason': 'publication_gate', 'reasons': sorted(set(reasons))})
         else:
             accepted.append(event)
@@ -1468,11 +1796,32 @@ def gate_batch(source, batch, *, today, previous_batch=None):
                                'Paesi in Festa', 'SagreFVG',
                                'Pordenonelegge', 'Le Giornate del Cinema Muto',
                                'Barcolana'}
-    paesi_partial = source == 'Paesi in Festa' and bool(review)
-    strict_failure = ((strict_source and serious_exclusions and source != 'Paesi in Festa')
-                      or (source == 'Paesi in Festa' and paesi_partial and not accepted))
+    partial = bool(review)
+    # Source-specific inventory verification already passed. One identifiable
+    # malformed card can be quarantined without concealing a parser-wide loss.
+    # Multiple unexpected exclusions or an empty accepted set remain fatal.
+    isolated_url = (isolated_exclusion or {}).get('url')
+    isolated_identity = (isolated_exclusion or {}).get('source_id')
+    isolated_url_unique = sum(
+        isinstance(event, dict) and event.get('url') == isolated_url
+        for event in batch.get('events', [])) == 1
+    duplicate_review = any(
+        isinstance(item, dict) and item.get('url') == isolated_url
+        and (not isolated_identity or not item.get('source_id')
+             or item.get('source_id') == isolated_identity)
+        for item in batch.get('review_required', []))
+    safe_single_card = bool(
+        serious_exclusions == 1 and accepted
+        and isinstance(isolated_url, str) and isolated_url
+        and urlsplit(isolated_url).scheme == 'https'
+        and urlsplit(isolated_url).hostname
+            == urlsplit(APPROVED_SOURCES[source]).hostname
+        and (isolated_url_unique or isolated_identity)
+        and not duplicate_review
+        and isolated_exclusion.get('source') == source)
+    strict_failure = bool(strict_source and serious_exclusions and not safe_single_card)
     return {**batch, 'status': ('error' if strict_failure else
-                              'partial' if paesi_partial else 'ok'),
+                              'partial' if partial else 'ok'),
             'error_type': 'publication_gate_exclusions' if strict_failure else batch.get('error_type'),
             'events': accepted, 'review_required': review,
             'publication_gate': {'input_count': len(batch.get('events', [])), 'accepted_count': len(accepted),

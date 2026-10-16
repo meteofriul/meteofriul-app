@@ -125,10 +125,10 @@ describe("community map moderation actions", () => {
     );
 
     expect(markup).toContain(`aria-label="${copy.reportManageContent}"`);
-    expect(markup).toContain("Piove ancora");
-    expect(markup).toContain("Non piove più");
-    expect(markup).toContain('aria-label="Piove ancora. Conferme: 1"');
-    expect(markup).toContain('aria-label="Non piove più. Smentite: 0"');
+    expect(markup).toContain("Confermo");
+    expect(markup).toContain("Non c’è più");
+    expect(markup).toContain('aria-label="Confermo. Conferme: 1"');
+    expect(markup).toContain('aria-label="Non c’è più. Non c’è più: 0"');
     expect(markup).toContain("lucide-thumbs-up");
     expect(markup).toContain("lucide-thumbs-down");
     expect(markup).toContain("mf-live-community-map__confirm-count");
@@ -157,10 +157,10 @@ describe("community map moderation actions", () => {
     );
 
     expect(markup).toContain("mf-live-community-map__confirm-actions");
-    expect(markup).toContain("Piove ancora");
-    expect(markup).toContain("Non piove più");
-    expect(markup).toContain('aria-label="Piove ancora. Conferme: 1"');
-    expect(markup).toContain('aria-label="Non piove più. Smentite: 1"');
+    expect(markup).toContain("Confermo");
+    expect(markup).toContain("Non c’è più");
+    expect(markup).toContain('aria-label="Confermo. Conferme: 1"');
+    expect(markup).toContain('aria-label="Non c’è più. Non c’è più: 1"');
     expect(markup).not.toContain("mf-live-community-map__denial-explanation");
     expect(markup).not.toContain("mf-live-community-map__confirmation-summary");
     expect(markup).not.toContain("mf-live-community-map__denial-status");
@@ -194,7 +194,7 @@ describe("community map moderation actions", () => {
     );
 
     expect(markup).toContain(copy.ownReportLabel);
-    expect(markup).not.toContain("Piove ancora");
+    expect(markup).not.toContain("Confermo");
     expect(markup).not.toContain(copy.reportManageContent);
   });
 

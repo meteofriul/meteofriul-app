@@ -288,6 +288,7 @@ class ContractV1Publisher:
         *,
         prefix: str = "weather/v1",
         max_cas_attempts: int = 16,
+        cams_continuity: bool = False,
     ) -> None:
         if not all(
             hasattr(object_store, operation)
@@ -302,6 +303,9 @@ class ContractV1Publisher:
         self.catalog = catalog
         self.prefix = _normalize_prefix(prefix)
         self.max_cas_attempts = max_cas_attempts
+        if type(cams_continuity) is not bool:
+            raise TypeError("cams_continuity must be boolean")
+        self.cams_continuity = cams_continuity
 
     def provider_root(self, provider: str) -> str:
         return f"{self.prefix}/{_provider(provider)}"
@@ -1293,6 +1297,18 @@ class ContractV1Publisher:
             release_body,
             self._cams_family_release_metadata(release, release_body),
         )
+        # Write the optional policy BEFORE exposing this new family. Idempotent
+        # reads of an already-active legacy family above never add a retroactive
+        # extension. Failed/concurrent publications leave an unreachable sidecar.
+        if self.cams_continuity:
+            from .cams_continuity import build_cams_continuity, continuity_key
+            policy = build_cams_continuity(release, release_body)
+            policy_body = canonical_json_bytes(policy)
+            self._write_immutable(
+                continuity_key(source_run_id, self.prefix), policy_body,
+                {"kind": policy["kind"], "source_run_id": source_run_id,
+                 "sha256": hashlib.sha256(policy_body).hexdigest()},
+            )
         release_descriptor = self._cams_family_release_descriptor(
             release,
             release_body,

@@ -443,3 +443,27 @@ describe("communityPersonalState", () => {
     )).toBe(0);
   });
 });
+
+
+describe("observation-bound votes", () => {
+  it("does not transfer a cached vote or map withdrawal when a group ID is reused", () => {
+    const storage = createStorage();
+    const options = { now: 1000, storage };
+    let state = rememberCommunityVote({}, {
+      groupId: "rain:001:hour", reportIds: ["old-report"], vote: "no", expiresAt: 60000,
+    }, options);
+    rememberCommunityMapWithdrawal(state, {
+      groupId: "rain:001:hour", reportIds: ["old-report"], expiresAt: 60000,
+    }, options);
+    state = readCommunityPersonalState(options);
+    expect(getCommunityVote(state, "rain:001:hour", ["old-report"])).toBe("no");
+    expect(getCommunityVote(state, "rain:001:hour", ["new-report"])).toBe("");
+    expect(hasRememberedCommunityMapWithdrawal(state, "rain:001:hour", ["new-report"])).toBe(false);
+    const legacy = { votes: [{ groupId: "rain:001:hour", vote: "no" }] };
+    expect(getCommunityVote(legacy, "rain:001:hour", ["new-report"])).toBe("");
+    state = rememberCommunityVote(state, {
+      groupId: "rain:001:hour", reportIds: ["new-report"], vote: "yes", expiresAt: 70000,
+    }, options);
+    expect(getCommunityVote(state, "rain:001:hour", ["new-report"])).toBe("yes");
+  });
+});

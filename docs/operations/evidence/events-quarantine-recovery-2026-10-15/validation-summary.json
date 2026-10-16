@@ -1,0 +1,50 @@
+{
+  "candidate_commit": "f39c223cc2f2a0a00c8cf8ca2c105d82c1f33078",
+  "branch": "codex/events-quarantine-recovery",
+  "verified_at": "2026-10-15T16:03:08.132181+00:00",
+  "main_unchanged": "5a68de5dc1607105f921d4d2b731170f1a8a0446",
+  "canonical_checkout_unchanged": "696cf0f5ae1e13bdbdc1b046c0f9b071872d21de",
+  "tests": {
+    "focused": {
+      "run": 117,
+      "failures": 0,
+      "errors": 0
+    },
+    "backend": {
+      "command": "python -m unittest discover -s tests -q",
+      "run": 1838,
+      "passed": 1837,
+      "skipped": 1,
+      "failures": 0,
+      "errors": 0,
+      "seconds": 57.267,
+      "skip_reason": "optional local ISTAT pilot artifact has not been built",
+      "skip_location": "backend/tests/test_pilot_community_geography.py:145",
+      "existing_warning": "FCM Message.token deprecation; unrelated to Events"
+    }
+  },
+  "all_backend_python_compiles": true,
+  "diff_check": true,
+  "recovered": 9,
+  "previous_regional_cards_unchanged": 1316,
+  "main_modified": false,
+  "cloud_modified": false,
+  "apk_or_play_modified": false,
+  "github_push": false,
+  "full_live_collection_run": false,
+  "detail_inspection_version": 12,
+  "annual_inspection_version": 11,
+  "local_log": ".tmp\\quarantine-audit-2026-10-15\\backend-tests-final.log",
+  "local_log_sha256": "26855f9bcdde4f6eaa0c738acca1679346b557d00d0e910734473e5f77efc643",
+  "candidate_files": {
+    "backend/app/events/pilot_details.py": "bfcb17e970d07c1b59327a606ad8cb346d0786d35d28484f10e7e200a2478079",
+    "backend/app/events/pilot_regional_display_audit.py": "fe1ad05a54287a31e9ad4927dc769fb2e8bd676249008a04c74e2c55557db39f",
+    "backend/app/events/pilot_regional_forward_audit.py": "61c871649a182b82d0d7ea3ea603465bba47ab0cb797ac4cf485264e81370cd2",
+    "backend/app/events/pilot_regional_identity.py": "f10156a1d6c17649034195d6993c1a0c009ff1524d6863f76d7921c503ad030c",
+    "backend/app/events/pilot_regional_year_control.py": "af15df21d8cc924f74a3bafc44e69c5c1f796ce612423c29cc0aea28feb1eedd",
+    "backend/app/events/pilot_sagrefvg.py": "dab69ddb54e03213dc90a2dbf7a519ee73afed5247b9a55288bb897e63310ed2",
+    "backend/app/events/pilot_schedule.py": "2c45f53cb9fc04f7a88cadff4907e5cd76bfabb717393d8709876cc579fc89b4",
+    "backend/tests/fixtures/events_quarantine_october_15_2026.json": "bcbe706985228f93234369973540c58bc81fc4194ca95e3cd650fbe721ff01cc",
+    "backend/tests/test_pilot_quarantine_recovery.py": "4602e5801284026e755fcd2c4a91f313b94dd7a157efc1e20bb4b7d3b57624b8"
+  }
+}

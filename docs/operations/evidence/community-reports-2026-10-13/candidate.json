@@ -1,0 +1,34 @@
+{
+  "candidate_commit": "650e55d495c9a11f48a721a9d4bc6ecdbae1e047",
+  "branch": "codex/community-reports-simplification",
+  "artifact": ".tmp/community-rules-evidence/meteofriul-community-rules-test-final.apk",
+  "sha256": "51a84441020c86aa84f9ecc086148b38d7207e03b18871240551897f82e0ecb6",
+  "application_id": "com.meteofriul.app.localpilot",
+  "version_name": "0.1.14-local-pilot",
+  "version_code": 300031,
+  "target_sdk": 36,
+  "community_api_base": "http://127.0.0.1:8783/api",
+  "build": "localPilot debug, non minified",
+  "final_targeted_frontend_tests": 159,
+  "android_runtime_tested": [
+    "API 35",
+    "API 36"
+  ],
+  "runtime_scope": "GPS, invio, voti, conteggi, sostituzione, storico; barre e rotazione con rilievi aperti",
+  "open_findings": [
+    "API 35: contrasto tre tasti con sistema chiaro",
+    "API 35/36: pannello segnalazioni tagliato in orizzontale",
+    "Icone status bar temporaneamente scure dopo cambio configurazione API 35/36"
+  ],
+  "not_verified": [
+    "Android precedente a 15",
+    "telefono reale",
+    "tablet e multi-window",
+    "runtime release minificata/R8"
+  ],
+  "phone_installed": false,
+  "main_promoted": false,
+  "production_deployed": false,
+  "github_pushed": false,
+  "aab_generated": false
+}

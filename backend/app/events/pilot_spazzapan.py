@@ -31,6 +31,7 @@ DETAILS = {
     'fvg7002_news': 172985,
     'fvg_settanta': 170166,
     'together': 170074,
+    'genius': 174822,
 }
 EXPECTED_INVENTORIES = {
     'events': {618890, 285613, 616198},
@@ -65,6 +66,17 @@ REVIEWED_NEWS_2026 = {
     220656: '2026-01-19T14:02:16',
 }
 REVIEWED_HISTORICAL_UPDATE = {187914: '2026-03-02T09:55:36'}
+# Added on 15 October. Both announcements refer to the same timed event.
+OCTOBER_28_EVENT = {
+    'api_id': 619735, 'source_id': 234126, 'duplicate_id': 234129,
+    'path': '/eventi-collaterali-ottobre-174822',
+    'duplicate_path': '/eventi-collaterali-di-ottobre-174824',
+    'title': "Tra internazionalismo e Genius loci: artisti degli anni '70 oltre i confini",
+    'date': '2026-10-28',
+}
+REVIEWED_ADDITIONAL_NEWS = {
+    234126: '2026-10-15T11:19:35', 234129: '2026-10-15T11:32:52',
+}
 EVENT_PAGES = {
     '/eventi-collaterali-ottobre-174329': ('2026-10-14', '2026-10-14'),
     '/giornata-del-contemporaneo-2026-75485': ('2026-10-10', '2026-10-10'),
@@ -76,11 +88,24 @@ EXHIBITION_PAGES = {
     '/progetto-togetherinsieme-170074': 229043,
     '/fvg-settanta-170166': 229146,
 }
+# These periods were reconciled against the exhibition prose and event module.
+# The generic CMS dates describe the umbrella project, not these exhibitions.
+REVIEWED_EXHIBITION_PERIODS = {
+    232607: ('2026-09-11', '2026-10-11', "Dall' 11 settembre all'11 ottobre 2026"),
+    232202: ('2026-07-23', '2026-11-29', 'Dal 23 luglio al 29 novembre 2026'),
+}
+EXHIBITION_NEWS_IDS = {232257: 232607, 232171: 232202}
+DETAIL_END_DATES = {
+    'mario': '2026-10-10', 'paesaggio': '2026-10-14',
+    'pausig_event': '2026-10-11', 'pausig_exhibition': '2026-10-11',
+    'fvg7002_exhibition': '2026-11-29', 'fvg7002_news': '2026-11-29',
+    'genius': OCTOBER_28_EVENT['date'],
+}
 KNOWN_WRONG_EXHIBITION_DATES = ('2026-06-27', '2027-01-15')
 
 
 def _text(value):
-    return engine.clean_event_text(value).strip()
+    return engine.clean_event_text(value or '').strip()
 
 
 def _date(value):
@@ -102,52 +127,83 @@ def _rows(payload, *, category_id=None):
     return articles
 
 
-def _inventory(surfaces):
+def _inventory(surfaces, *, today):
     categories = {'event_category': 14038, 'current_exhibitions': 16101,
                   'exhibitions': 13346, 'news': 15922,
                   'historical_plural': 16102}
     rows = {name: _rows(surfaces.get(name), category_id=categories.get(name))
             for name in SURFACES}
+    extra = OCTOBER_28_EVENT
+    additional_announced = (
+        extra['api_id'] in {row['id'] for row in rows['events']}
+        or extra['source_id'] in {row['id'] for row in rows['event_category']}
+        or bool(set(REVIEWED_ADDITIONAL_NEWS) & {row['id'] for row in rows['news']}))
     for name, expected in EXPECTED_INVENTORIES.items():
-        if {row['id'] for row in rows[name]} != expected:
+        if additional_announced:
+            expected = expected | ({extra['api_id']} if name == 'events' else
+                                   {extra['source_id']} if name == 'event_category' else set())
+        actual = {row['id'] for row in rows[name]}
+        expired = {article_id for article_id, (_, end, _) in
+                   REVIEWED_EXHIBITION_PERIODS.items() if _date(end) < today}
+        allowed_missing = expired if name == 'current_exhibitions' else set()
+        if actual - expected or (expected - actual) - allowed_missing:
             raise ValueError('Spazzapan ' + name + ' inventory changed')
     events = {item['full_url']: item for item in rows['events']}
-    if (set(events) != set(EVENT_PAGES)
+    event_paths = set(EVENT_PAGES) | ({extra['path']} if additional_announced else set())
+    if (set(events) != event_paths
             or {item['full_url'] for item in rows['event_category']}
-                != set(EVENT_PAGES) - {'/donazione-sergio-pausig-172996'}):
+                != event_paths - {'/donazione-sergio-pausig-172996'}
+            or (additional_announced and
+                (events[extra['path']]['id'] != extra['api_id']
+                 or not set(REVIEWED_ADDITIONAL_NEWS) <= {row['id'] for row in rows['news']}
+                 or next(row for row in rows['event_category']
+                         if row['full_url'] == extra['path'])['id'] != extra['source_id']))):
         raise ValueError('Spazzapan event lists disagree')
-    for path, (start, end) in EVENT_PAGES.items():
-        if (_date(events[path].get('start_event_date')),
-                _date(events[path].get('end_event_date'))) != (
-                    date.fromisoformat(start), date.fromisoformat(end)):
-            raise ValueError('Spazzapan event API dates changed')
     current = {item['full_url']: item for item in rows['current_exhibitions']}
-    if (set(current) != set(EXHIBITION_PAGES)
-            or not set(current) <= {item['full_url'] for item in rows['exhibitions']}
-            or any(current[path]['id'] != article_id
+    archived = {item['full_url']: item for item in rows['exhibitions']}
+    if (len(current) != len(rows['current_exhibitions'])
+            or len(archived) != len(rows['exhibitions'])
+            or not set(current) <= set(EXHIBITION_PAGES)
+            or not set(EXHIBITION_PAGES) <= set(archived)
+            or any(archived[path]['id'] != article_id
+                   or archived[path].get('published') is not True
+                   or (path in current and (current[path]['id'] != article_id
+                       or current[path].get('published') is not True))
                    for path, article_id in EXHIBITION_PAGES.items())):
         raise ValueError('Spazzapan exhibition lists disagree')
-    for path in list(EXHIBITION_PAGES)[:2]:
-        listed = current[path]
-        structured = (_date(listed.get('start_event_date_formatted')),
-                      _date(listed.get('end_event_date_formatted')))
-        allowed = {tuple(date.fromisoformat(value)
-                         for value in KNOWN_WRONG_EXHIBITION_DATES),
-                   (date(2026, 9, 11), date(2026, 10, 11))
-                   if listed['id'] == 232607 else
-                   (date(2026, 7, 23), date(2026, 11, 29))}
-        if structured not in allowed:
-            raise ValueError('Spazzapan exhibition structured dates changed')
+    archived_exhibitions = []
+    for path, article_id in EXHIBITION_PAGES.items():
+        if path in current:
+            continue
+        start, end, intro = REVIEWED_EXHIBITION_PERIODS[article_id]
+        row = archived[path]
+        structured = (_date(row.get('start_event_date_formatted')),
+                      _date(row.get('end_event_date_formatted')))
+        if (_text(row.get('intro')) != intro or structured not in {
+                tuple(map(_date, KNOWN_WRONG_EXHIBITION_DATES)),
+                (_date(start), _date(end))}):
+            raise ValueError('Spazzapan archived exhibition period changed')
+        archived_exhibitions.append({
+            'source_id': str(article_id), 'url': BASE + '/it' + path,
+            'start_date': start, 'end_date': end, 'date_evidence': intro,
+        })
     if ({item['id'] for item in rows['historical_plural']} != {121574}
             or any(item.get('published_date', '')[:4] != '2024'
                    for item in rows['historical_plural'])):
         raise ValueError('Spazzapan historical category changed')
-    return rows
+    return rows, archived_exhibitions
 
 
-def _news_review(rows):
-    if not 78 <= len(rows) <= 200 or not set(REVIEWED_NEWS_2026) <= {row['id'] for row in rows}:
+def _news_review(rows, *, archived_exhibitions):
+    present = {row['id'] for row in rows}
+    archived_ids = {int(item['source_id']) for item in archived_exhibitions}
+    retired = {news_id for news_id, exhibition_id in EXHIBITION_NEWS_IDS.items()
+               if exhibition_id in archived_ids and news_id not in present}
+    if (not 78 - len(retired) <= len(rows) <= 200
+            or not set(REVIEWED_NEWS_2026) - retired <= present):
         raise ValueError('Spazzapan news inventory incomplete')
+    changed_active = set()
+    reviewed = REVIEWED_NEWS_2026 | REVIEWED_ADDITIONAL_NEWS
     for row in rows:
         if row.get('published') is not True:
             raise ValueError('Spazzapan news publication changed')
@@ -157,12 +213,15 @@ def _news_review(rows):
         except (KeyError, TypeError, ValueError):
             raise ValueError('Spazzapan news date metadata invalid') from None
         if published.year == 2026:
-            if REVIEWED_NEWS_2026.get(row['id']) != row['modified']:
-                raise ValueError('new or changed Spazzapan news requires review')
+            if reviewed.get(row['id']) != row['modified']:
+                if row['id'] in {84819, 233611, 233851} | set(REVIEWED_ADDITIONAL_NEWS):
+                    changed_active.add(row['id'])
+                else:
+                    raise ValueError('new or changed Spazzapan news requires review')
         elif published.year > 2026 or (modified.year >= 2026 and
                 REVIEWED_HISTORICAL_UPDATE.get(row['id']) != row['modified']):
             raise ValueError('unreviewed Spazzapan news edition')
-    return {row['id']: row for row in rows}
+    return {row['id']: row for row in rows}, changed_active, sorted(retired)
 
 
 def _detail(pages, key, *, title=None):
@@ -219,6 +278,7 @@ def _event(*, source_id, title, path, start, end, venue, evidence,
         'location_confidence': 'municipality',
         'date_evidence_kind': 'event_schedule', 'date_evidence': evidence,
         'schedule_kind': 'period' if start != end else 'single',
+        **({'opening_days_status': 'unknown'} if start != end else {}),
         'is_real': True, 'image': _image(image_path),
         **attributed_excerpt(description, source_name=SOURCE,
                              source_url=url, title=title),
@@ -227,112 +287,222 @@ def _event(*, source_id, title, path, start, end, venue, evidence,
 
 
 def parse_spazzapan(surfaces, pages, *, today):
-    rows = _inventory(surfaces)
-    news = _news_review(rows['news'])
+    rows, archived_exhibitions = _inventory(surfaces, today=today)
+    news, changed_news, retired_news_ids = _news_review(
+        rows['news'], archived_exhibitions=archived_exhibitions)
     events = []
+    review_required = []
+    additional_announced = OCTOBER_28_EVENT['api_id'] in {row['id'] for row in rows['events']}
     for key, title, path, venue in (
             ('mario', 'Mario Palli / Studio Visit',
              '/giornata-del-contemporaneo-2026-75485', 'Studio di Mario Palli'),
             ('paesaggio', 'Nuovo paesaggio. Incontro con Damiano Gullì dalla triennale di Milano',
              '/eventi-collaterali-ottobre-174329',
              "Galleria Regionale d'Arte contemporanea Luigi Spazzapan")):
-        page = _detail(pages, key, title=title)
-        module = _module(page, 'event', title=title)
-        start, end = (date.fromisoformat(value) for value in EVENT_PAGES[path])
-        if (_date(module.get('start_event_date')),
-                _date(module.get('end_event_date'))) != (start, end):
-            raise ValueError('Spazzapan detail event dates disagree')
-        article = next(item for item in rows['event_category']
-                       if item['full_url'] == path)
-        if (article['id'] not in news or _text(article['title']) != title
-                or _text(module.get('intro')) != _text(article.get('intro'))):
-            raise ValueError('Spazzapan event category/news mismatch')
-        intro, prose = _text(module.get('intro')), _text(module.get('description'))
-        if key == 'mario':
-            if ('10 ottobre 2026' not in prose
-                    or 'studio di Mario Palli' not in prose
-                    or 'Gradisca' not in prose):
-                raise ValueError('Spazzapan Mario date or studio missing')
-            excerpt = prose
-        else:
-            duplicate = news[233851]
-            if (duplicate.get('full_url') != '/eventi-collaterali-di-ottobre-174559'
-                    or _text(duplicate.get('title')) != title
-                    or _text(duplicate.get('intro')) != intro):
-                raise ValueError('Spazzapan duplicate news does not match event')
-            if ('14 ottobre' not in intro or 'ore 18.00' not in intro
-                    or 'Via Marziano Ciotti 51' not in intro
-                    or 'Damiano Gullì' not in prose or len(prose) < 200):
-                raise ValueError('Spazzapan Paesaggio date/venue changed')
-            excerpt = prose
-        event = _event(source_id=article['id'], title=title, path=path,
-                       start=start, end=end, venue=venue,
-                       evidence=intro + ' · API Eventi 2026',
-                       description=excerpt,
-                       image_path=page['attribute'].get('preview_image'),
-                       today=today)
-        if event:
-            if key == 'paesaggio':
-                event['time'] = '18:00'
+        if date.fromisoformat(EVENT_PAGES[path][1]) < today:
+            continue
+        try:
+            if changed_news & ({84819} if key == 'mario' else {233611, 233851}):
+                raise ValueError('Spazzapan active news record changed')
+            listed = next(item for item in rows['events'] if item['full_url'] == path)
+            expected_api = tuple(date.fromisoformat(value) for value in EVENT_PAGES[path])
+            if (_date(listed.get('start_event_date')),
+                    _date(listed.get('end_event_date'))) != expected_api:
+                raise ValueError('Spazzapan event API dates changed')
+            page = _detail(pages, key, title=title)
+            module = _module(page, 'event', title=title)
+            start, end = (date.fromisoformat(value) for value in EVENT_PAGES[path])
+            if (_date(module.get('start_event_date')),
+                    _date(module.get('end_event_date'))) != (start, end):
+                raise ValueError('Spazzapan detail event dates disagree')
+            article = next(item for item in rows['event_category']
+                           if item['full_url'] == path)
+            if (article['id'] not in news or _text(article['title']) != title
+                    or _text(module.get('intro')) != _text(article.get('intro'))):
+                raise ValueError('Spazzapan event category/news mismatch')
+            intro, prose = _text(module.get('intro')), _text(module.get('description'))
+            if key == 'mario':
+                if ('10 ottobre 2026' not in prose
+                        or 'studio di Mario Palli' not in prose
+                        or 'Gradisca' not in prose):
+                    raise ValueError('Spazzapan Mario date or studio missing')
+                excerpt = prose
+            else:
+                duplicate = news[233851]
+                if (duplicate.get('full_url') != '/eventi-collaterali-di-ottobre-174559'
+                        or _text(duplicate.get('title')) != title
+                        or _text(duplicate.get('intro')) != intro):
+                    raise ValueError('Spazzapan duplicate news does not match event')
+                if ('14 ottobre' not in intro or 'ore 18.00' not in intro
+                        or 'Via Marziano Ciotti 51' not in intro
+                        or 'Damiano Gullì' not in prose or len(prose) < 200):
+                    raise ValueError('Spazzapan Paesaggio date/venue changed')
+                excerpt = prose
+            event = _event(source_id=article['id'], title=title, path=path,
+                           start=start, end=end, venue=venue,
+                           evidence=intro + ' · API Eventi 2026',
+                           description=excerpt,
+                           image_path=page['attribute'].get('preview_image'),
+                           today=today)
+            if event:
+                if key == 'paesaggio':
+                    event['time'] = '18:00'
+                events.append(event)
+
+        except ValueError as error:
+            if str(error) == 'Spazzapan municipality unresolved':
+                raise
+            review_required.append({
+                'url': BASE + '/it' + path,
+                'source_id': '84819' if key == 'mario' else '233611',
+                'reason': 'event_detail_requires_review',
+                'detail': str(error),
+            })
+
+    if date(2026, 10, 11) >= today:
+        try:
+            listed = next(item for item in rows['events']
+                          if item['full_url'] == '/donazione-sergio-pausig-172996')
+            if (_date(listed.get('start_event_date')),
+                    _date(listed.get('end_event_date'))) != (
+                        date(2026, 9, 11), date(2026, 10, 11)):
+                raise ValueError('Spazzapan Pausig event API dates changed')
+            listed_exhibition = next(item for item in rows['current_exhibitions']
+                                     if item['id'] == 232607)
+            structured = (_date(listed_exhibition.get('start_event_date_formatted')),
+                          _date(listed_exhibition.get('end_event_date_formatted')))
+            if structured not in {
+                    tuple(date.fromisoformat(value)
+                          for value in KNOWN_WRONG_EXHIBITION_DATES),
+                    (date(2026, 9, 11), date(2026, 10, 11))}:
+                raise ValueError('Spazzapan Pausig exhibition dates changed')
+            pausig_event = _detail(pages, 'pausig_event', title='FVG70.03 - Sergio Pausig')
+            pausig_exhibition = _detail(pages, 'pausig_exhibition',
+                                        title='FVG70.03 - Sergio Pausig')
+            _exhibition_attribute_dates(pausig_exhibition,
+                                        (date(2026, 9, 11), date(2026, 10, 11)))
+            event_module = _module(pausig_event, 'event', title='FVG70.03 - Sergio Pausig')
+            exhibit_module = _module(pausig_exhibition, 'content',
+                                     title='FVG70.03 - Sergio Pausig')
+            pausig_start, pausig_end = date(2026, 9, 11), date(2026, 10, 11)
+            if ((_date(event_module.get('start_event_date')),
+                 _date(event_module.get('end_event_date'))) != (pausig_start, pausig_end)
+                    or '11 settembre' not in _text(exhibit_module.get('intro'))
+                    or '11 ottobre 2026' not in _text(exhibit_module.get('intro'))
+                    or 'via Marziano Ciotti 51' not in _text(event_module.get('intro'))
+                    or 'all’11 ottobre 2026' not in _text(exhibit_module.get('description'))):
+                raise ValueError('Spazzapan Pausig detail date/venue mismatch')
+            event = _event(source_id=232607, title='FVG70.03 - Sergio Pausig',
+                           path='/fvg7003-sergio-pausig-173388',
+                           start=pausig_start, end=pausig_end,
+                           venue='Sala Patuna, Galleria Spazzapan',
+                           evidence=_text(exhibit_module.get('intro')),
+                           description=exhibit_module.get('description'),
+                           image_path=pausig_exhibition['attribute'].get('preview_image'),
+                           today=today)
+            if event:
+                events.append(event)
+
+        except ValueError as error:
+            if str(error) == 'Spazzapan municipality unresolved':
+                raise
+            review_required.append({
+                'url': BASE + '/it/fvg7003-sergio-pausig-173388',
+                'source_id': '232607',
+                'reason': 'exhibition_detail_requires_review',
+                'detail': str(error),
+            })
+
+    if date(2026, 11, 29) >= today:
+        try:
+            listed_exhibition = next(item for item in rows['current_exhibitions']
+                                     if item['id'] == 232202)
+            structured = (_date(listed_exhibition.get('start_event_date_formatted')),
+                          _date(listed_exhibition.get('end_event_date_formatted')))
+            if structured not in {
+                    tuple(date.fromisoformat(value)
+                          for value in KNOWN_WRONG_EXHIBITION_DATES),
+                    (date(2026, 7, 23), date(2026, 11, 29))}:
+                raise ValueError('Spazzapan FVG70.02 exhibition dates changed')
+            fvg7002 = _detail(pages, 'fvg7002_exhibition',
+                              title='FVG70.02 – Nuovi modelli di ricerca')
+            _exhibition_attribute_dates(fvg7002,
+                                        (date(2026, 7, 23), date(2026, 11, 29)))
+            fvg7002_news = _detail(pages, 'fvg7002_news',
+                                   title='Eventi collaterali di ottobre')
+            placeholder = _module(fvg7002, 'content',
+                                  title='FVG70.02 – Nuovi modelli di ricerca')
+            full = _module(fvg7002_news, 'event')
+            full_intro = _text(full.get('intro'))
+            fvg_start, fvg_end = date(2026, 7, 23), date(2026, 11, 29)
+            if ((_date(full.get('start_event_date')),
+                 _date(full.get('end_event_date'))) != (fvg_start, fvg_end)
+                    or '23 luglio' not in full_intro
+                    or '29 novembre 2026' not in full_intro
+                    or "Gradisca d'Isonzo" not in full_intro
+                    or 'via Marziano Ciotti 51' not in full_intro
+                    or '23 luglio' not in _text(placeholder.get('intro'))
+                    or '29 novembre 2026' not in _text(placeholder.get('intro'))
+                    or len(_text(full.get('description'))) < 200):
+                raise ValueError('Spazzapan FVG70.02 detail date/venue mismatch')
+            event = _event(source_id=232202,
+                           title='FVG70.02 – Nuovi modelli di ricerca',
+                           path='/fvg7002-eventi-collaterali-di-ottobre-172985',
+                           start=fvg_start, end=fvg_end,
+                           venue='Galleria Spazzapan', evidence=full_intro,
+                           description=full.get('description'),
+                           image_path=full.get('preview_image'), today=today)
+            if event:
+                events.append(event)
+
+        except ValueError as error:
+            if str(error) == 'Spazzapan municipality unresolved':
+                raise
+            review_required.append({
+                'url': BASE + '/it/fvg7002-eventi-collaterali-di-ottobre-172985',
+                'source_id': '232202',
+                'reason': 'exhibition_detail_requires_review',
+                'detail': str(error),
+            })
+
+    if additional_announced and _date(OCTOBER_28_EVENT['date']) >= today:
+        extra = OCTOBER_28_EVENT
+        try:
+            if changed_news & set(REVIEWED_ADDITIONAL_NEWS):
+                raise ValueError('Spazzapan active news record changed')
+            page = _detail(pages, 'genius', title=extra['title'])
+            module = _module(page, 'event', title=extra['title'])
+            listed = next(row for row in rows['events'] if row['id'] == extra['api_id'])
+            article = next(row for row in rows['event_category'] if row['id'] == extra['source_id'])
+            primary, duplicate = news[extra['source_id']], news[extra['duplicate_id']]
+            intro = _text(module.get('intro'))
+            day = _date(extra['date'])
+            if (any((_date(item.get('start_event_date')), _date(item.get('end_event_date')))
+                    != (day, day) for item in (module, listed))
+                    or any(_text(item.get('title')) != extra['title']
+                           or _text(item.get('intro')) != intro
+                           for item in (listed, article, primary, duplicate))
+                    or primary.get('full_url') != extra['path']
+                    or duplicate.get('full_url') != extra['duplicate_path']
+                    or intro != 'Mercoledì 28 ottobre, ore 18.00, Via Marziano Ciotti 51'):
+                raise ValueError('Spazzapan October 28 date/venue or duplicate mismatch')
+            # The current module contains only a flyer. The CMS attribute still
+            # carries copied October 14 prose: it must never become an excerpt.
+            if _text(module.get('description')):
+                raise ValueError('Spazzapan October 28 prose requires review')
+            event = _event(source_id=extra['source_id'], title=extra['title'],
+                           path=extra['path'], start=day, end=day,
+                           venue='Galleria Spazzapan', evidence=intro + ' · API Eventi 2026',
+                           image_path=module.get('preview_image'), today=today)
+            event['time'] = '18:00'
             events.append(event)
-
-    pausig_event = _detail(pages, 'pausig_event', title='FVG70.03 - Sergio Pausig')
-    pausig_exhibition = _detail(pages, 'pausig_exhibition',
-                                title='FVG70.03 - Sergio Pausig')
-    _exhibition_attribute_dates(pausig_exhibition,
-                                (date(2026, 9, 11), date(2026, 10, 11)))
-    event_module = _module(pausig_event, 'event', title='FVG70.03 - Sergio Pausig')
-    exhibit_module = _module(pausig_exhibition, 'content',
-                             title='FVG70.03 - Sergio Pausig')
-    pausig_start, pausig_end = date(2026, 9, 11), date(2026, 10, 11)
-    if ((_date(event_module.get('start_event_date')),
-         _date(event_module.get('end_event_date'))) != (pausig_start, pausig_end)
-            or '11 settembre' not in _text(exhibit_module.get('intro'))
-            or '11 ottobre 2026' not in _text(exhibit_module.get('intro'))
-            or 'via Marziano Ciotti 51' not in _text(event_module.get('intro'))
-            or 'all’11 ottobre 2026' not in _text(exhibit_module.get('description'))):
-        raise ValueError('Spazzapan Pausig detail date/venue mismatch')
-    event = _event(source_id=232607, title='FVG70.03 - Sergio Pausig',
-                   path='/fvg7003-sergio-pausig-173388',
-                   start=pausig_start, end=pausig_end,
-                   venue='Sala Patuna, Galleria Spazzapan',
-                   evidence=_text(exhibit_module.get('intro')),
-                   description=exhibit_module.get('description'),
-                   image_path=pausig_exhibition['attribute'].get('preview_image'),
-                   today=today)
-    if event:
-        events.append(event)
-
-    fvg7002 = _detail(pages, 'fvg7002_exhibition',
-                      title='FVG70.02 – Nuovi modelli di ricerca')
-    _exhibition_attribute_dates(fvg7002,
-                                (date(2026, 7, 23), date(2026, 11, 29)))
-    fvg7002_news = _detail(pages, 'fvg7002_news',
-                           title='Eventi collaterali di ottobre')
-    placeholder = _module(fvg7002, 'content',
-                          title='FVG70.02 – Nuovi modelli di ricerca')
-    full = _module(fvg7002_news, 'event')
-    full_intro = _text(full.get('intro'))
-    fvg_start, fvg_end = date(2026, 7, 23), date(2026, 11, 29)
-    if ((_date(full.get('start_event_date')),
-         _date(full.get('end_event_date'))) != (fvg_start, fvg_end)
-            or '23 luglio' not in full_intro
-            or '29 novembre 2026' not in full_intro
-            or "Gradisca d'Isonzo" not in full_intro
-            or 'via Marziano Ciotti 51' not in full_intro
-            or '23 luglio' not in _text(placeholder.get('intro'))
-            or '29 novembre 2026' not in _text(placeholder.get('intro'))
-            or len(_text(full.get('description'))) < 200):
-        raise ValueError('Spazzapan FVG70.02 detail date/venue mismatch')
-    event = _event(source_id=232202,
-                   title='FVG70.02 – Nuovi modelli di ricerca',
-                   path='/fvg7002-eventi-collaterali-di-ottobre-172985',
-                   start=fvg_start, end=fvg_end,
-                   venue='Galleria Spazzapan', evidence=full_intro,
-                   description=full.get('description'),
-                   image_path=full.get('preview_image'), today=today)
-    if event:
-        events.append(event)
+        except ValueError as error:
+            if str(error) == 'Spazzapan municipality unresolved':
+                raise
+            review_required.append({
+                'url': BASE + '/it' + extra['path'], 'source_id': str(extra['source_id']),
+                'reason': 'event_detail_requires_review', 'detail': str(error),
+            })
 
     umbrella = _detail(pages, 'fvg_settanta')
     together = _detail(pages, 'together')
@@ -347,18 +517,30 @@ def parse_spazzapan(surfaces, pages, *, today):
 
     events.sort(key=lambda item: (item['start_date'], item['title']))
     return {
-        'status': 'ok', 'events': events, 'review_required': [],
+        'status': 'ok', 'events': events, 'review_required': review_required,
         'verification': {
             'collection_mode': 'reconciled-spazzapan-event-exhibition-news',
             'source_complete': True, 'event_api_count': len(rows['events']),
+            'event_inventory_ids': sorted(row['id'] for row in rows['events']),
             'event_category_count': len(rows['event_category']),
             'current_exhibition_count': len(rows['current_exhibitions']),
+            'current_exhibition_ids': sorted(row['id'] for row in rows['current_exhibitions']),
+            'archived_exhibitions': archived_exhibitions,
             'exhibition_count': len(rows['exhibitions']),
             'historical_plural_count': len(rows['historical_plural']),
             'news_count': len(rows['news']),
-            'reviewed_2026_news': len(REVIEWED_NEWS_2026),
-            'verified_distinct_current': 4,
+            'retired_news_ids': retired_news_ids,
+            'reviewed_2026_news': (len(REVIEWED_NEWS_2026) - len(retired_news_ids)
+                                   + (2 if additional_announced else 0)),
+            'verified_distinct_current': 4 + int(additional_announced),
             'projected_count': len(events),
+            'review_count': len(review_required),
+            'active_count': sum(end >= today.isoformat() for _, _, end in (
+                ('84819', None, '2026-10-10'),
+                ('233611', None, '2026-10-14'),
+                ('232607', None, '2026-10-11'),
+                ('232202', None, '2026-11-29'))) + int(
+                    additional_announced and _date(OCTOBER_28_EVENT['date']) >= today),
         },
         'coverage': 'official-events-current-exhibitions-news-and-details',
     }
@@ -367,9 +549,8 @@ def parse_spazzapan(surfaces, pages, *, today):
 def collect_spazzapan(*, get=requests.get, today=None):
     today = today or datetime.now(ZoneInfo('Europe/Rome')).date()
     urls = {name: API_ROOT + path for name, path in SURFACES.items()}
-    urls.update({name: API_ROOT + f'page/erpac_spazzapan/{page_id}/it/'
-                 for name, page_id in DETAILS.items()})
-    trusted = set(urls.values())
+    trusted = set(urls.values()) | {
+        API_ROOT + f'page/erpac_spazzapan/{page_id}/it/' for page_id in DETAILS.values()}
 
     def fetch(url):
         if url not in trusted:
@@ -387,7 +568,13 @@ def collect_spazzapan(*, get=requests.get, today=None):
         return json.loads(b''.join(chunks))
 
     with ThreadPoolExecutor(max_workers=8) as pool:
-        payloads = dict(zip(urls, pool.map(fetch, urls.values())))
-    surfaces = {name: payloads[name] for name in SURFACES}
-    pages = {name: payloads[name] for name in DETAILS}
+        surfaces = dict(zip(urls, pool.map(fetch, urls.values())))
+        rows, _ = _inventory(surfaces, today=today)
+        additional_announced = OCTOBER_28_EVENT['api_id'] in {row['id'] for row in rows['events']}
+        active_details = {
+            name: API_ROOT + f'page/erpac_spazzapan/{page_id}/it/'
+            for name, page_id in DETAILS.items()
+            if (name != 'genius' or additional_announced)
+            and (name not in DETAIL_END_DATES or _date(DETAIL_END_DATES[name]) >= today)}
+        pages = dict(zip(active_details, pool.map(fetch, active_details.values())))
     return parse_spazzapan(surfaces, pages, today=today)

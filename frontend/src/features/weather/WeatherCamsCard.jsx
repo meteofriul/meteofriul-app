@@ -81,7 +81,7 @@ function AirValues({ air, fields, language }) {
   })}</dl>;
 }
 
-function AirCard({ air, detailMode = false, language, lastKnownLabel, runAt, sampleStatus }) {
+function AirCard({ air, continuityLabel, detailMode = false, language, lastKnownLabel, runAt, sampleStatus }) {
   const fur = language === "fur";
   const validLabel = formatTimestamp(air?.valid_at);
   const resolvedRunAt = runAt || air?.run_at;
@@ -90,8 +90,8 @@ function AirCard({ air, detailMode = false, language, lastKnownLabel, runAt, sam
       <h2>{fur ? "Cualitât de arie" : "Qualità dell’aria"}</h2>
       <p>{fur ? "Concentrazions previodudis dal model" : "Concentrazioni previste da modello"}</p>
     </div></header>
-    {air && sampleStatus === "last_known" ? (
-      <p className="mf-weather-cams-card__status" role="status">{lastKnownLabel}</p>
+    {air && (sampleStatus === "last_known" || continuityLabel) ? (
+      <p className="mf-weather-cams-card__status" role="status">{sampleStatus === "last_known" ? lastKnownLabel : continuityLabel}</p>
     ) : null}
     {air ? <><AirValues air={air} fields={AIR_FIELDS} language={language} />
       </> : <p>{fur ? "Dâts de arie no disponibii" : "Dati dell’aria non disponibili"}</p>}
@@ -145,7 +145,7 @@ function PollenCard({ copy, detailMode = false, language, model }) {
     </header>
 
     <p className="mf-weather-cams-card__status" role={model.pollenSampleStatus === "last_known" ? "status" : undefined}>
-      {model.pollenSampleStatus === "last_known" ? model.pollenLastKnownLabel : model.note}
+      {model.pollenSampleStatus === "last_known" ? model.pollenLastKnownLabel : model.continuityLabel || model.note}
     </p>
 
     {model.status === "available" && model.values.length ? (
@@ -176,7 +176,7 @@ function PollenCard({ copy, detailMode = false, language, model }) {
 export function WeatherCamsCard({ detailMode = false, language = "it", model, section = "all" }) {
   if (!model) return null;
   const copy = COPY[language === "fur" ? "fur" : "it"];
-  const airCard = <AirCard air={model.air} detailMode={detailMode} language={language} lastKnownLabel={model.airLastKnownLabel}
+  const airCard = <AirCard air={model.air} continuityLabel={model.continuityLabel} detailMode={detailMode} language={language} lastKnownLabel={model.airLastKnownLabel}
     runAt={model.runAt} sampleStatus={model.airSampleStatus} />;
   const pollenCard = <PollenCard copy={copy} detailMode={detailMode} language={language} model={model} />;
 

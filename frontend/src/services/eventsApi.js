@@ -3,11 +3,13 @@ import { getDateTimeFormatter } from "../domain/dateTimeFormatters.js";
 import { isLocalWeatherPilot } from "./localWeatherPilot";
 import { getLocationMunicipalityName } from "../domain/geo/locationIdentity";
 import { projectPilotProgrammeCards } from "./pilotProgrammeProjection";
+import { readEventsCatalogHealth } from "./eventsCatalogHealth";
 
-export const PRODUCTION_EVENTS_API = "https://meteofriul-events-49007668366.europe-west1.run.app/api";
+const LOCAL_EVENTS_API = import.meta.env.VITE_LOCAL_EVENTS_API_BASE || "";
+export const PRODUCTION_EVENTS_API = LOCAL_EVENTS_API ? "" : "https://meteofriul-events-49007668366.europe-west1.run.app/api";
 // Compatibility export for the local-pilot UI. It now resolves to the same
 // official catalogue as production; the retired pilot project is never read.
-export const PILOT_EVENTS_API = PRODUCTION_EVENTS_API;
+export const PILOT_EVENTS_API = LOCAL_EVENTS_API || PRODUCTION_EVENTS_API;
 export const LOCAL_PILOT_EVENTS_API = "/__pilot-events/api";
 export const HOME_EVENTS_LIMIT = 8;
 export const FULL_EVENTS_LIMIT = 100;
@@ -88,7 +90,9 @@ export function buildLocalEventDetailUrl(event, { apiBase = resolveEventsApiBase
 
 export function normalizeLocalEventsPayload(payload, { retry = 0 } = {}) {
   const events = Array.isArray(payload?.events) ? payload.events : [];
-  const cacheStatus = payload?.cache?.status || null;
+  const catalogHealth = readEventsCatalogHealth(payload);
+  const isDegraded = catalogHealth?.status === "degraded";
+  const cacheStatus = isDegraded ? "degraded" : payload?.cache?.status || null;
   const contractVersion = String(payload?.cache?.event_contract_version || "").trim() || null;
   const isRefreshing = cacheStatus === "refreshing" && events.length === 0;
   const isPartial = cacheStatus === "partial";
@@ -98,6 +102,8 @@ export function normalizeLocalEventsPayload(payload, { retry = 0 } = {}) {
     total: events.length,
     cacheStatus,
     contractVersion,
+    catalogHealth,
+    isDegraded,
     isRefreshing,
     isPartial,
     shouldRetry: (isRefreshing || isPartial) && retry < EVENTS_REFRESH_MAX_RETRIES,
@@ -178,7 +184,10 @@ async function loadLocalEventsSnapshot(url, { apiBase, fetchImpl }) {
         ? `dal ${dateLabel(event.start_date)} al ${dateLabel(event.end_date)}` : dateLabel(event.start_date)),
     }));
     payload.total = payload.events.length;
-    payload.cache = { status: "ready", event_contract_version: "pilot-events-v2-programmes" };
+    payload.cache = {
+      status: readEventsCatalogHealth(payload)?.status === "degraded" ? "degraded" : "ready",
+      event_contract_version: "pilot-events-v2-programmes",
+    };
   }
   return payload;
 }

@@ -22,7 +22,8 @@
     "test:local-pilot-guard": "node --test scripts/local-weather-pilot-config.node-tests.mjs",
     "test:android-local-pilot-guard": "node --test scripts/android-local-pilot-guard.node-tests.mjs",
     "lint": "eslint .",
-    "test:dependency-security": "node --test scripts/dependency-security.node-tests.mjs"
+    "test:dependency-security": "node --test scripts/dependency-security.node-tests.mjs",
+    "test:events-pipeline": "node --test scripts/events-schedule-pipeline.node-tests.mjs"
   },
   "dependencies": {
     "@capacitor/android": "8.5.1",

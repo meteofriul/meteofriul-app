@@ -1,0 +1,36 @@
+{
+  "reports": [
+    {
+      "id": "community-1887cda53baf2014",
+      "typeId": "snow",
+      "groupId": "group-snow:093033:497753",
+      "createdAt": 1791914262643,
+      "expiresAt": 1791917862643
+    },
+    {
+      "id": "community-20f68e18a3fae277",
+      "typeId": "hail",
+      "groupId": "group-hail:093033:497753",
+      "createdAt": 1791913532126,
+      "expiresAt": 1791917132126
+    }
+  ],
+  "groups": [
+    {
+      "id": "group-snow:093033:497753",
+      "typeId": "snow",
+      "confirmations": {
+        "yes": 0,
+        "no": 0
+      }
+    },
+    {
+      "id": "group-hail:093033:497753",
+      "typeId": "hail",
+      "confirmations": {
+        "yes": 1,
+        "no": 1
+      }
+    }
+  ]
+}

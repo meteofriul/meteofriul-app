@@ -16,10 +16,16 @@ import {
 import { useCallback, useEffect, useId, useMemo, useRef, useState } from "react";
 import { usePilotBackHandler } from "../../app/usePilotBackHandler";
 import { isAndroidCapacitorRuntime } from "../../services/apiConfig";
-import { isLocalCommunityPilot } from "../../services/localCommunityPilot";
+import { isLocalCommunityPilot, isLocalCommunityDevelopmentRuntime } from "../../services/localCommunityPilot";
 import { isDefinitiveAppExperience } from "../../services/localWeatherPilot";
 import { AppIconButton } from "../../ui/components/AppIconButton";
 import { CommunityMapPhenomenon } from "./CommunityMap";
+import { CommunityHistory } from "./CommunityHistory";
+import { buildCommunityRecentItems } from "./communityRecentReports";
+import { useCommunityRecentReports } from "./useCommunityRecentReports";
+import { CommunityRecentHistoryRow, CommunityHistoryDetail } from "./CommunityRecentHistoryRow";
+import { CommunityRecentPagination } from "./CommunityRecentPagination";
+import "./communityRecentReports.css";
 import {
   buildCommunitySharePayload,
   consumeCommunityReportShareTarget,
@@ -444,6 +450,7 @@ export function TerritoryImmersiveMap({
   communityCopy,
   confirmationCountsByGroup = {},
   confirmationStatuses = {},
+  confirmationMessages = {},
   inferredOwnGroupIds = [],
   inline = false,
   language = "it",
@@ -477,6 +484,7 @@ export function TerritoryImmersiveMap({
 }) {
   const copy = getCopy(language);
   const pilotPresentation = isDefinitiveAppExperience() || isLocalCommunityPilot();
+  const recentListEnabled = isLocalCommunityDevelopmentRuntime();
   const basemap = useMemo(
     () => getTerritoryBasemapConfig(undefined, { theme }),
     [theme],
@@ -544,6 +552,7 @@ export function TerritoryImmersiveMap({
   const officialAlertSource = String(
     officialAlert?.sourceLabel || officialAlert?.meta || "Protezione Civile FVG",
   ).trim();
+  const [showHistory, setShowHistory] = useState(false);
   const allReports = useMemo(() => {
     const source = reportItems.length
       ? reportItems
@@ -552,6 +561,13 @@ export function TerritoryImmersiveMap({
       (first, second) => Number(second.createdAt || 0) - Number(first.createdAt || 0),
     );
   }, [markers, reportItems]);
+  const recentHistory = useCommunityRecentReports({
+    enabled: recentListEnabled && panelMode === "reports", location,
+    refreshKey: JSON.stringify(allReports.map((report) => [report.id, report.reportIds,
+      report.createdAt, report.expiresAt, report.confirmations])),
+  });
+  const recentItems = recentListEnabled
+    ? buildCommunityRecentItems(recentHistory.reports, allReports, recentHistory.now) : [];
   const sharedReportUnavailable = Boolean(
     sharedReportId
       && sharedReportLoadSettled
@@ -653,6 +669,9 @@ export function TerritoryImmersiveMap({
     ? allReports.find((report) => report.id === selectedFeature.id) ||
       markers.find((marker) => marker.id === selectedFeature.id) || null
     : null;
+  const selectedHistory = selectedFeature?.kind === "history"
+    ? recentItems.find((report) => report.recentKind === "history" && report.id === selectedFeature.id) || null
+    : null;
   const selectedPhenomena = selectedCommunity?.phenomena || (
     selectedCommunity ? [selectedCommunity] : []
   );
@@ -674,10 +693,10 @@ export function TerritoryImmersiveMap({
     ? confirmationStatuses[selectedPrimaryPhenomenon.groupId] || "idle"
     : "idle";
   const selectedCommunityVote = selectedPrimaryPhenomenon
-    ? getCommunityVote(personalState, selectedPrimaryPhenomenon.groupId)
+    ? getCommunityVote(personalState, selectedPrimaryPhenomenon.groupId, isLocalCommunityPilot() ? selectedPrimaryPhenomenon.reportIds || [] : undefined)
     : "";
   const selectedCommunityStatusLabel = selectedCommunityConfirmationStatus === "error"
-    ? communityCopy.confirmError
+    ? confirmationMessages[selectedPrimaryPhenomenon?.groupId] || communityCopy.confirmError
     : selectedCommunityConfirmationStatus === "success"
       ? selectedCommunityVote === "no"
         ? communityCopy.denialDone
@@ -708,7 +727,7 @@ export function TerritoryImmersiveMap({
       { animate: false },
     );
   }, [map, selectedCommunity]);
-  const hasDetail = Boolean(selectedCommunity || selectedWebcam || alertOpen);
+  const hasDetail = Boolean(selectedCommunity || selectedHistory || selectedWebcam || alertOpen);
   const shareAnnouncement = shareState === "copied"
     ? copy.shareCopied
     : shareState === "shared"
@@ -727,7 +746,8 @@ export function TerritoryImmersiveMap({
           : copy.share;
   const shareSucceeded = ["copied", "shared"].includes(shareState);
   const ShareIcon = shareSucceeded ? Check : Share2;
-  const browseItems = panelMode === "reports" ? allReports : activeWebcamPlaceGroups;
+  const browseItems = panelMode === "reports"
+    ? recentListEnabled ? recentItems : allReports : activeWebcamPlaceGroups;
   const browsePreviewLimit = 1;
   const compactWebcamBrowse = panelMode === "webcams" && !browseExpanded;
   const visibleBrowseItems = browseExpanded
@@ -735,10 +755,13 @@ export function TerritoryImmersiveMap({
     : compactWebcamBrowse
       ? []
       : browseItems.slice(0, browsePreviewLimit);
-  const canExpandBrowse = panelMode === "webcams"
+  const canExpandBrowse = recentListEnabled && panelMode === "reports"
+    ? browseItems.length > browsePreviewLimit || Boolean(recentHistory.next)
+    : panelMode === "webcams"
     ? browseItems.length > 0
     : browseItems.length > browsePreviewLimit;
-  const dockBrowseHandleEnabled = panelMode !== "map" && browseExpanded;
+  const dockBrowseHandleEnabled = panelMode !== "map" && (browseExpanded
+    || (recentListEnabled && panelMode === "reports" && canExpandBrowse));
   const hasChildSurface = hasDetail || Boolean(expandedClusterId) || panelMode !== "map";
   const fallbackPositions = useMemo(() => ({
     community: buildFallbackPositions(markers),
@@ -1271,6 +1294,8 @@ export function TerritoryImmersiveMap({
   useEffect(() => {
     const isMissing = selectedFeature?.kind === "community"
       ? !selectedCommunity
+      : selectedFeature?.kind === "history"
+        ? !selectedHistory
       : selectedFeature?.kind === "webcam"
         ? !selectedWebcam
         : false;
@@ -1282,7 +1307,7 @@ export function TerritoryImmersiveMap({
       setSelectedFeature(null);
     }, 0);
     return () => globalThis.clearTimeout?.(timeoutId);
-  }, [selectedCommunity, selectedFeature?.kind, selectedWebcam]);
+  }, [selectedCommunity, selectedFeature?.kind, selectedHistory, selectedWebcam]);
 
   useEffect(() => {
     if (!expandedClusterId) return undefined;
@@ -1502,6 +1527,7 @@ export function TerritoryImmersiveMap({
         "mf-territory-map",
         inline ? "mf-territory-map--inline" : "mf-live-community-map--immersive",
         inline && panelMode !== "map" ? "mf-territory-map--panel-open" : "",
+        recentListEnabled ? "mf-territory-map--recent-list" : "",
         inline && panelMode !== "map" && browseExpanded
           ? "mf-territory-map--panel-expanded"
           : "",
@@ -1510,6 +1536,7 @@ export function TerritoryImmersiveMap({
           && panelMode === "reports"
           && !browseExpanded
           && visibleBrowseItems.length === 0
+          && !recentListEnabled
           ? "mf-territory-map--reports-empty"
           : "",
         inline && radarEnabled && panelMode === "map"
@@ -1931,11 +1958,20 @@ export function TerritoryImmersiveMap({
           >
             <header>
               <span>
-                <strong>{panelMode === "reports"
-                  ? communityCopy.territoryRecentReportsTitle
-                  : communityCopy.territoryWebcamsTitle}</strong>
+                {recentListEnabled && panelMode === "reports" ? (
+                  <button className="mf-recent-list-toggle" type="button"
+                    aria-controls={browseListId} aria-expanded={browseExpanded}
+                    onClick={() => setBrowseExpanded((current) => !current)}>
+                    <strong>{communityCopy.recentTitle}</strong>
+                    {browseExpanded ? <ChevronUp aria-hidden="true" size={16} />
+                      : <ChevronRight aria-hidden="true" size={16} />}
+                  </button>
+                ) : <strong>{panelMode === "reports"
+                  ? showHistory ? communityCopy.historyTitle : communityCopy.territoryRecentReportsTitle
+                  : communityCopy.territoryWebcamsTitle}</strong>}
               </span>
-              {canExpandBrowse ? (
+              {recentListEnabled && panelMode === "reports" ? <small>{communityCopy.recentWindow}</small> : null}
+              {canExpandBrowse && !(recentListEnabled && panelMode === "reports") ? (
                 <button
                   aria-controls={browseListId}
                   aria-expanded={browseExpanded}
@@ -1953,6 +1989,14 @@ export function TerritoryImmersiveMap({
               ) : null}
             </header>
 
+            {panelMode === "reports" && isLocalCommunityPilot() && !recentListEnabled ? (
+              <div className="mf-territory-map__webcam-groups mf-community-history-navigation" aria-label={communityCopy.historyNavigation}>
+                <button type="button" aria-pressed={!showHistory} className={!showHistory ? "is-active" : undefined}
+                  onClick={() => setShowHistory(false)}>{communityCopy.territoryRecentReportsTitle}</button>
+                <button type="button" aria-pressed={showHistory} className={showHistory ? "is-active" : undefined}
+                  onClick={() => { setShowHistory(true); setBrowseExpanded(true); }}>{communityCopy.historyTitle}</button>
+              </div>
+            ) : null}
             {panelMode === "webcams" && availableWebcamGroups.length ? (
               <div
                 aria-label={communityCopy.webcamAreaLabel}
@@ -1980,9 +2024,19 @@ export function TerritoryImmersiveMap({
               className="mf-territory-map__browse-list"
               hidden={compactWebcamBrowse}
               id={browseListId}
+              onScroll={recentListEnabled && panelMode === "reports" && browseExpanded ? (event) => {
+                const list = event.currentTarget;
+                if (list.scrollHeight - list.scrollTop - list.clientHeight < 100) recentHistory.loadMore();
+              } : undefined}
             >
-              {compactWebcamBrowse ? null : panelMode === "reports" ? (
+              {panelMode === "reports" && showHistory ? (
+                <CommunityHistory key={`${location?.istatCode || ""}:${location?.lat}:${location?.lon}`}
+                  location={location} copy={communityCopy} language={language} />
+              ) : compactWebcamBrowse ? null : panelMode === "reports" ? (
                 visibleBrowseItems.length ? visibleBrowseItems.map((report) => {
+                  if (report.recentKind === "history") return <CommunityRecentHistoryRow
+                    key={report.recentKey} report={report} copy={communityCopy} language={language} now={recentHistory.now}
+                    onOpen={(event) => selectFeature("history", report.id, event.currentTarget, { preservePanel: true })} />;
                   const Icon = PILOT_LIVE_REPORT_ICONS[report.typeId] || MapPin;
                   const denialLabel = getCommunityDenialLabel(
                     communityCopy,
@@ -2012,7 +2066,8 @@ export function TerritoryImmersiveMap({
                           report.timeLabel,
                           report.countLabel,
                         ].filter(Boolean).join(" · ")}</small>
-                        {denialLabel || withdrawalLabel ? (
+                        {recentListEnabled ? <small>{communityCopy.recentStates.active}</small> : null}
+                        {!recentListEnabled && (denialLabel || withdrawalLabel) ? (
                           <small className="mf-territory-map__browse-denial-status">
                             {[denialLabel, withdrawalLabel].filter(Boolean).join(" · ")}
                           </small>
@@ -2021,7 +2076,7 @@ export function TerritoryImmersiveMap({
                       <ChevronRight aria-hidden="true" size={17} />
                     </button>
                   );
-                }) : (
+                }) : recentListEnabled ? null : (
                   <p>{getCommunityAvailabilityMessage(
                     communityAvailability,
                     communityCopy,
@@ -2071,6 +2126,18 @@ export function TerritoryImmersiveMap({
                   </button>
                 );
               }) : <p>{communityCopy.webcamUnavailableBody}</p>}
+              {recentListEnabled && panelMode === "reports" ? <>
+                {recentHistory.status === "loading" && (!visibleBrowseItems.length || browseExpanded)
+                  ? <p role="status">{communityCopy.historyLoading}</p> : null}
+                {recentHistory.status === "error" ? <button className="mf-recent-list-retry" type="button"
+                  onClick={recentHistory.retry}>{communityCopy.historyError}</button> : null}
+                {recentHistory.status === "ready" && !visibleBrowseItems.length
+                  ? <p>{communityCopy.historyEmpty}</p> : null}
+                {browseExpanded && recentHistory.status === "ready" && recentHistory.next
+                  ? <CommunityRecentPagination loadMore={recentHistory.loadMore} /> : null}
+                {browseExpanded && recentHistory.status === "ready" && !recentHistory.next && visibleBrowseItems.length
+                  ? <p>{communityCopy.recentEnd}</p> : null}
+              </> : null}
             </div>
           </section>
         ) : null}
@@ -2178,6 +2245,9 @@ export function TerritoryImmersiveMap({
         </div>
       ) : null}
 
+      {selectedHistory ? <CommunityHistoryDetail report={selectedHistory} copy={communityCopy}
+        language={language} now={recentHistory.now} detailRef={detailRef} onClose={() => closeSelectedFeature()} /> : null}
+
       {selectedCommunity ? (
         <div className={inline ? "mf-territory-map__detail-layer" : undefined}>
           <div
@@ -2276,7 +2346,7 @@ export function TerritoryImmersiveMap({
             <div className="mf-live-community-map__phenomena">
               {selectedPhenomena.map((phenomenon) => {
                 const status = confirmationStatuses[phenomenon.groupId] || "idle";
-                const vote = getCommunityVote(personalState, phenomenon.groupId);
+                const vote = getCommunityVote(personalState, phenomenon.groupId, isLocalCommunityPilot() ? phenomenon.reportIds || [] : undefined);
                 const storedOwnReport = getOwnCommunityReport(personalState, phenomenon.groupId);
                 const ownReport = storedOwnReport || (
                   inferredOwnGroupIds.includes(phenomenon.groupId)
@@ -2289,6 +2359,7 @@ export function TerritoryImmersiveMap({
                     compactVoting={inline && pilotPresentation}
                     confirmationCounts={confirmationCountsByGroup[phenomenon.groupId]}
                     confirmationStatus={status}
+                    confirmationError={confirmationMessages[phenomenon.groupId]}
                     confirmationVote={vote}
                     copy={communityCopy}
                     hideConfirmationDetails={inline}

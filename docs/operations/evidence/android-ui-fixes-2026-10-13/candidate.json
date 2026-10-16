@@ -1,0 +1,21 @@
+{
+  "date": "2026-10-13",
+  "branch": "codex/community-reports-simplification",
+  "build_commit": "6209e8990588c7f7ed97cdabc63d819d777c850d",
+  "equivalent_code_commit": "c845fcd147105090d5a37b8c14b143519de84e45",
+  "apk_local": ".tmp/android-ui-fixes/meteofriul-community-ui-test.apk",
+  "sha256": "542b36e5a142012502a55a41e589706455813fbec4c41ad72f56c4684deb537f",
+  "package": "com.meteofriul.app.localpilot",
+  "version_name": "0.1.14-local-pilot",
+  "version_code": 300031,
+  "target_sdk": 36,
+  "minified": false,
+  "main_unchanged": "5a68de5dc1607105f921d4d2b731170f1a8a0446",
+  "phone_installed": false,
+  "published": false,
+  "community_api": "http://127.0.0.1:8783/api",
+  "residual_finding": "API35 image: three-button icons remain dark with system light, independently reproduced with native probe",
+  "probe_sha256": "a417964f29dbd01ec9e7c03aa88aef499ccb179122edea024bced762684b6e8c",
+  "frontend_tests_passed": 133,
+  "release_guard_tests_passed": 9
+}

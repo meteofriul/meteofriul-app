@@ -2287,3 +2287,85 @@ describe("weather v1 local client", () => {
     });
   });
 });
+
+
+describe("additive CAMS 36-hour continuity", () => {
+  function setup({ nowHours = 33, enabled = true, missing = null, mutate, storage = memoryStorage() } = {}) {
+    const family = buildCamsFamilyArtifacts();
+    const grant = { schema_version: 1, kind: "meteofriul.weather.cams_continuity",
+      policy_id: "cams_continuity_36h_v1", source_run_id: RUN_ID, catalog: CATALOG,
+      release_sha256: family.latest.latest.release_sha256,
+      release_json_bytes: family.latest.latest.release_json_bytes,
+      issued_at: family.release.published_at, run_at: RUN_AT,
+      fresh_until: isoAt(24), usable_until: isoAt(36), current_sample_max_lag_minutes: 60 };
+    mutate?.(grant);
+    const objects = new Map([
+      ["families/cams/latest.json", family.latestBody],
+      [`families/cams/runs/${RUN_ID}/release.json`, family.releaseBody],
+      [`families/cams/runs/${RUN_ID}/continuity.json`, canonicalJsonStringify(grant)],
+      ...["core", "pollen"].flatMap(role => {
+        const provider = role === "core" ? "cams_europe" : "cams_europe_pollen";
+        return [[`${provider}/runs/${RUN_ID}/manifest.json`, family[role].manifestBody],
+          [`${provider}/runs/${RUN_ID}/municipalities/${TARGET}.json`, family[role].payloadBody]];
+      }),
+    ]);
+    const state = { offline: false, nowHours, missing };
+    const fetchImpl = vi.fn(async url => {
+      if (state.offline) throw new TypeError("offline");
+      const path = url.split("/weather/v1/")[1];
+      if (path.endsWith("continuity.json") && state.missing) return jsonResponse("", { status: state.missing });
+      return objects.has(path) ? jsonResponse(objects.get(path)) : jsonResponse("", { status: 404 });
+    });
+    const client = createWeatherV1Client({ baseUrl: "http://127.0.0.1:8787", fetchImpl,
+      catalog: CATALOG, istatCodes: CODES, storage, camsContinuity: enabled,
+      now: () => Date.parse(RUN_AT) + state.nowHours * HOUR_MS });
+    async function read() {
+      const latest = await client.camsPollen.fetchLatest();
+      const manifest = await client.camsPollen.fetchManifest(latest);
+      return client.camsPollen.fetchMunicipality(manifest, TARGET);
+    }
+    return { read, client, state, fetchImpl, storage, grant };
+  }
+  it.each([[24,"fresh"], [24+1/HOUR_MS,"stale"], [30,"stale"], [33,"stale"], [36,"stale"]])(
+    "keeps native sample and 24h freshness at %s hours", async (nowHours, status) => {
+      const h = setup({ nowHours }); const result = await h.read();
+      expect(result.freshness).toMatchObject({ status, freshUntil: isoAt(24), usableUntil: isoAt(36), continuity: h.grant });
+      expect(result.document.freshness.usable_until).toBe(isoAt(30));
+      expect(result.document.run_at).toBe(RUN_AT);
+    });
+  it("fails closed immediately after 36h", async () => {
+    await expect(setup({ nowHours: 36+1/HOUR_MS }).read()).rejects.toMatchObject({ code: "EXPIRED" });
+  });
+  it("leaves legacy clients at 30h without requesting the additive document", async () => {
+    const h = setup({ enabled: false, nowHours: 30 });
+    expect((await h.read()).freshness.usableUntil).toBe(isoAt(30));
+    expect(h.fetchImpl.mock.calls.some(([url]) => url.endsWith("continuity.json"))).toBe(false);
+    h.state.nowHours = 30+1/HOUR_MS;
+    await expect(h.read()).rejects.toMatchObject({ code: "EXPIRED" });
+  });
+  it.each([400,404,503])("falls back only to the v1 limit on HTTP %s", async missing => {
+    const h = setup({ missing, nowHours: 30 });
+    expect((await h.read()).freshness.usableUntil).toBe(isoAt(30));
+    h.state.nowHours = 33;
+    await expect(h.read()).rejects.toMatchObject({ code: "EXPIRED" });
+  });
+  it.each(["release_sha256","source_run_id","issued_at","fresh_until","usable_until","catalog"])(
+    "rejects a modified %s grant", async field => {
+      const h = setup({ mutate: doc => { doc[field] = "invalid"; } });
+      await expect(h.read()).rejects.toMatchObject({ code: "CONTINUITY_MISMATCH" });
+    });
+  it("revalidates a cached grant offline and expires it without rejuvenating the run", async () => {
+    const h = setup({ nowHours: 24 }); await h.read();
+    h.state.offline = true; h.state.nowHours = 33;
+    expect((await h.read()).freshness.status).toBe("stale");
+    h.state.nowHours = 36+1/HOUR_MS;
+    await expect(h.read()).rejects.toMatchObject({ code: "EXPIRED" });
+  });
+  it("discards a previously cached grant when the reader returns 404", async () => {
+    const h = setup({ nowHours: 24 }); await h.read();
+    h.state.missing = 404; h.state.nowHours = 33;
+    await expect(h.read()).rejects.toMatchObject({ code: "EXPIRED" });
+    h.state.offline = true;
+    await expect(h.read()).rejects.toMatchObject({ code: "TRANSPORT_FAILURE" });
+  });
+});

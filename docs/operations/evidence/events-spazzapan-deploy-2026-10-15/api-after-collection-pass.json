@@ -1,0 +1,128 @@
+{
+  "checked_at": "2026-10-15T14:34:07.475927+00:00",
+  "snapshot": "2026-10-15T14:26:55.958729+00:00",
+  "places": {
+    "Pordenone": {
+      "total": 338,
+      "pages": [
+        100,
+        100,
+        100,
+        38
+      ],
+      "identical_full_payloads": true,
+      "events_sha256": "65ab801951e3f6b1ce3674171c321e0439a6791ba7b74de771387f6ce9e690bd",
+      "sources_visible": {
+        "TurismoFVG": 236,
+        "Azalea": 1,
+        "Teatro Verdi Pordenone": 88,
+        "Paesi in Festa": 7,
+        "SagreFVG": 6
+      },
+      "source_failure_tags": {
+        "TurismoFVG": "quarantined_cards",
+        "CSS Udine": "quarantined_cards",
+        "Pordenone Pensa": "quarantined_cards",
+        "SagreFVG": "quarantined_cards"
+      }
+    },
+    "Udine": {
+      "total": 454,
+      "pages": [
+        100,
+        100,
+        100,
+        100,
+        54
+      ],
+      "identical_full_payloads": true,
+      "events_sha256": "aeaa6ceeb69dee7318c3f85a472bfb2c8c54043a0b636259fbe3f0ec0e2f12dd",
+      "sources_visible": {
+        "TurismoFVG": 327,
+        "MESS": 5,
+        "Azalea": 5,
+        "CSS Udine": 108,
+        "SagreFVG": 7,
+        "Paesi in Festa": 2
+      },
+      "source_failure_tags": {
+        "TurismoFVG": "quarantined_cards",
+        "CSS Udine": "quarantined_cards",
+        "Pordenone Pensa": "quarantined_cards",
+        "SagreFVG": "quarantined_cards"
+      }
+    },
+    "Trieste": {
+      "total": 271,
+      "pages": [
+        100,
+        100,
+        71
+      ],
+      "identical_full_payloads": true,
+      "events_sha256": "2d0a4d75a6d23fdbf5d8a47d8a9c8c249fdea7040923dc6d6fc52504e256ca8b",
+      "sources_visible": {
+        "TurismoFVG": 200,
+        "Teatro Verdi Trieste": 69,
+        "Barcolana": 1,
+        "MESS": 1
+      },
+      "source_failure_tags": {
+        "TurismoFVG": "quarantined_cards",
+        "CSS Udine": "quarantined_cards",
+        "Pordenone Pensa": "quarantined_cards",
+        "SagreFVG": "quarantined_cards"
+      }
+    },
+    "Gorizia": {
+      "total": 196,
+      "pages": [
+        100,
+        96
+      ],
+      "identical_full_payloads": true,
+      "events_sha256": "d0e5e65c8212817933f73c3435ebfa7aee01e062547401283aac18ce82a99f54",
+      "sources_visible": {
+        "TurismoFVG": 190,
+        "MESS": 2,
+        "Galleria Spazzapan": 2,
+        "Paesi in Festa": 1,
+        "SagreFVG": 1
+      },
+      "source_failure_tags": {
+        "TurismoFVG": "quarantined_cards",
+        "CSS Udine": "quarantined_cards",
+        "Pordenone Pensa": "quarantined_cards",
+        "SagreFVG": "quarantined_cards"
+      }
+    },
+    "Tolmezzo": {
+      "total": 74,
+      "pages": [
+        74
+      ],
+      "identical_full_payloads": true,
+      "events_sha256": "ae28a6f6d50d86130e3fddb6a4a8a3d524001dd7371d631817e6a452002fcacf",
+      "sources_visible": {
+        "TurismoFVG": 70,
+        "MESS": 2,
+        "SagreFVG": 2
+      },
+      "source_failure_tags": {
+        "TurismoFVG": "quarantined_cards",
+        "CSS Udine": "quarantined_cards",
+        "Pordenone Pensa": "quarantined_cards",
+        "SagreFVG": "quarantined_cards"
+      }
+    }
+  },
+  "health": {
+    "status": 200,
+    "body": {
+      "service": "pilot-events"
+    }
+  },
+  "snapshot_conflict_http": 409,
+  "candidate_commit": "223422e1045dafa0ddc32316bd6ed6ea510aa1ea",
+  "cloud_mutations": false
+}

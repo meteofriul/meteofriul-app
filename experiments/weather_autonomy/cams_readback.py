@@ -13,7 +13,7 @@ from urllib.request import Request, build_opener, HTTPRedirectHandler
 
 FAMILY = 'weather/v1/families/cams/latest.json'
 UV = 'weather/v1/uv/latest.json'
-_KEY = re.compile(r'weather/v1/(?:uv/latest\.json|families/cams/(?:latest\.json|runs/\d{8}T\d{6}Z/release\.json)|cams_europe(?:_pollen)?/runs/\d{8}T\d{6}Z/(?:manifest\.json|municipalities/\d{6}\.json))\Z')
+_KEY = re.compile(r'weather/v1/(?:uv/latest\.json|families/cams/(?:latest\.json|runs/\d{8}T\d{6}Z/(?:release|continuity)\.json)|cams_europe(?:_pollen)?/runs/\d{8}T\d{6}Z/(?:manifest\.json|municipalities/\d{6}\.json))\Z')
 _RUN_APP_HOST = re.compile(r'[a-z][a-z0-9-]*\.europe-west1\.run\.app\Z')
 
 
@@ -80,7 +80,7 @@ def verify_uv(data, expected_run, fetch=fetch_public):
     return {'readback_sha256': hashlib.sha256(before).hexdigest()}
 
 
-def verify_cams(data, expected_run, fetch=fetch_public):
+def verify_cams(data, expected_run, fetch=fetch_public, *, require_continuity=False):
     before = data.get(FAMILY).body
     pointer = _same(data, FAMILY, fetch)
     latest = pointer['latest']
@@ -89,6 +89,11 @@ def verify_cams(data, expected_run, fetch=fetch_public):
     release = _same(data, 'weather/v1/families/cams/' + latest['release_path'], fetch)
     if release['source_run_id'] != expected_run:
         raise ReadbackPending('public_cams_release_mismatch')
+    if require_continuity:
+        from local_pipeline.cams_continuity import continuity_key, validate_cams_continuity
+        from local_pipeline.contract_v1 import canonical_json_bytes
+        policy = _same(data, continuity_key(expected_run), fetch)
+        validate_cams_continuity(policy, release, canonical_json_bytes(release))
     for role, provider in [('core', 'cams_europe'), ('pollen', 'cams_europe_pollen')]:
         component = release['components'][role]
         # Family releases carry a full manifest_key; manifest_path belongs to

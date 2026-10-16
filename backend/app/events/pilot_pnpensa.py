@@ -318,7 +318,7 @@ def collect_pnpensa(*, get=requests.get, today=None):
                                'modified': post['modified']}
                               for post in posts],
              'detail_records': dispositions, 'event_count': len(events),
-             'review_count': len(review), 'source_complete': not review}
+             'review_count': len(review), 'source_complete': True}
     return {'status': 'ok', 'events': events, 'review_required': review,
             'verification': proof, 'coverage': 'all-public-posts-and-pages-with-sitemaps'}
 

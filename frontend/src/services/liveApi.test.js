@@ -13,6 +13,7 @@ import {
   LIVE_REPORT_SESSION_CLIENT_ID_KEY,
   deleteCommunityReport,
   fetchCommunityReputation,
+  fetchCommunityHistory,
   fetchCommunityReports,
   fetchLiveWebcams,
   getOrCreateLiveReportClientId,
@@ -33,6 +34,29 @@ function response(payload, { headers = {}, ok = true, status = 200 } = {}) {
 }
 
 describe("live api", () => {
+  it.each([false, true])("sends the history cursor and grouping=%s without leaking locality into the URL", async (grouped) => {
+    vi.stubEnv("VITE_COMMUNITY_V2_ENABLED", "1");
+    const fetchImpl = vi.fn().mockResolvedValue(response({ reports: [], next_cursor: null }));
+    try {
+      await fetchCommunityHistory({ location: { istatCode: "093033" }, clientId: "test-reader",
+        cursor: { createdAt: 1234, id: "last-row" }, grouped }, { fetchImpl, appCheckTokenProvider: async () => "" });
+      expect(fetchImpl.mock.calls[0][0]).toMatch(/\/community\/history$/);
+      expect(JSON.parse(fetchImpl.mock.calls[0][1].body)).toEqual({ client_id: "test-reader",
+        offset: 0, radius_km: 30, istat_code: "093033", before_created_at: 1234, before_id: "last-row",
+        ...(grouped ? { grouped: true } : {}) });
+    } finally { vi.unstubAllEnvs(); }
+  });
+
+  it("cancels a live request when its caller changes locality or unmounts", async () => {
+    const controller = new AbortController();
+    const fetchImpl = vi.fn((_url, { signal }) => new Promise((_resolve, reject) => {
+      signal.addEventListener("abort", () => reject(new DOMException("Cancelled", "AbortError")));
+    }));
+    const pending = fetchCommunityReports({ fetchImpl, signal: controller.signal });
+    controller.abort();
+    await expect(pending).rejects.toMatchObject({ name: "AbortError" });
+    expect(fetchImpl.mock.calls[0][1].signal.aborted).toBe(true);
+  });
   it("uses the dedicated webcam and community endpoints", async () => {
     const fetchImpl = vi.fn()
       .mockResolvedValueOnce(response(webcamsSuccessFixture))

@@ -79,6 +79,20 @@ class CinemaMutoTests(unittest.TestCase):
 
         return days, pages, calls, get
 
+    def test_bad_slot_is_quarantined_without_hiding_other_slots(self):
+        days, pages, _, _ = self.fixture()
+        pages[calendar_url(days[1])] += (
+            '<div class="siteorigin-widget-tinymce textwidget">'
+            '<p><strong>25:00</strong> - PROIEZIONE DI PROVA</p></div>')
+        batch = collect_cinema_muto(
+            get=lambda url, **_: FakeResponse(pages[url]))
+        gated = gate_batch('Le Giornate del Cinema Muto', batch,
+                           today=days[0])
+        self.assertEqual(gated['status'], 'partial')
+        self.assertEqual(len(gated['events']), 5)
+        self.assertEqual(gated['review_required'][0]['reason'],
+                         'invalid_calendar_time')
+
     def test_sitemap_to_calendar_to_single_card(self):
         days, _, calls, get = self.fixture()
         batch = collect_cinema_muto(get=get)

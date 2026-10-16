@@ -94,6 +94,7 @@ _SAFE_MESSAGES = frozenset({
     "Decoded CAMS archive is not the complete 215x28x97 matrix",
     "CAMS decode analysis does not confirm 215x28x97 coverage",
     "CAMS constraints do not contain one unambiguous surface ensemble row",
+    "CAMS constraints do not contain unambiguous complete surface ensemble coverage",
     "CAMS catalogue sanity status is not available",
     "CAMS catalogue is explicitly disabled",
     "exception details withheld; inspect the typed error and local source location",

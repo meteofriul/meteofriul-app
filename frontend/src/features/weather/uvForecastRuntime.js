@@ -1,8 +1,9 @@
 import { startCapacitorAppResumeRuntime } from "../../services/capacitorAppResume";
 import { getLocalWeatherPilotApiBase, isLocalWeatherPilot } from "../../services/localWeatherPilot";
+import { ANDROID_LOOPBACK_ONLY_BUILD } from "../../services/localOnlyBuild";
 import { isValidUvDocument, isVerifiedUvDocument } from "./uvForecast";
 
-export const UV_FORECAST_URL = "https://meteofriul-weather-49007668366.europe-west1.run.app/weather/v1/uv/latest.json";
+export const UV_FORECAST_URL = ANDROID_LOOPBACK_ONLY_BUILD ? "" : "https://meteofriul-weather-49007668366.europe-west1.run.app/weather/v1/uv/latest.json";
 export const UV_CACHE_KEY = "meteofriul:uv:v1";
 export const UV_CANDIDATE_CACHE_KEY = `${UV_CACHE_KEY}:candidate`;
 export const UV_REFRESH_INTERVAL_MS = 15 * 60 * 1000;
@@ -130,11 +131,12 @@ export function subscribeToUvForecast(onChange, {
     pending = request;
     request.timeout = timerApi.setTimeout(() => fail(request, "timeout"), UV_REQUEST_TIMEOUT_MS);
     try {
-      // Only the browser preview uses the local bridge; Android and the cache
-      // retain the canonical cloud URL.
-      const requestUrl = import.meta.env.DEV === true && isLocalWeatherPilot()
+      // The guarded PC-connected TEST uses local UV too; public builds keep
+      // their canonical endpoint and cache identity.
+      const requestUrl = (import.meta.env.DEV === true || ANDROID_LOOPBACK_ONLY_BUILD) && isLocalWeatherPilot()
         ? `${getLocalWeatherPilotApiBase()}/weather/v1/uv/latest.json`
         : UV_FORECAST_URL;
+      if (!requestUrl) throw new Error("local_weather_runtime_required");
       const response = await fetchImpl(requestUrl, { signal: request.controller.signal, cache: "no-store" });
       if (!response?.ok) throw new Error("unavailable");
       const document = await response.json();

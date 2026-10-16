@@ -1,0 +1,28 @@
+{
+  "catalog_sha256": "a02be83c617047a76d46b161fb8e0d9a50c67caa397b9ff8b94ca1e2f7048c09",
+  "pages": [
+    {
+      "offset": 0,
+      "status": "200 OK",
+      "source_ids": [
+        "232202"
+      ],
+      "total": 2,
+      "next_offset": 1,
+      "cors": "https://localhost"
+    },
+    {
+      "offset": 1,
+      "status": "200 OK",
+      "source_ids": [
+        "234126"
+      ],
+      "total": 2,
+      "next_offset": null,
+      "cors": "https://localhost"
+    }
+  ],
+  "wrong_snapshot": "409 Conflict",
+  "production_writes": false,
+  "scope": "local WSGI with local catalog loader"
+}

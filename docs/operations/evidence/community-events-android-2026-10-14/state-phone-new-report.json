@@ -1,0 +1,36 @@
+[
+  {
+    "created_at": 1791998858.317569,
+    "expires_at": 1792002458.317569,
+    "history_episode_id": "community-059fac3469ee11be",
+    "id": "community-059fac3469ee11be",
+    "type_id": "rain",
+    "reputation": {
+      "points": 2,
+      "total_reports": 2,
+      "validated_reports": 2
+    },
+    "confirmation": {
+      "map_withdrawn": false,
+      "no": 1,
+      "yes": 1
+    }
+  },
+  {
+    "created_at": 1791999930.698953,
+    "expires_at": 1792003530.698953,
+    "history_episode_id": "community-48a727f4126fc1bd",
+    "id": "community-48a727f4126fc1bd",
+    "type_id": "storm",
+    "reputation": {
+      "points": 1,
+      "total_reports": 2,
+      "validated_reports": 1
+    },
+    "confirmation": {
+      "map_withdrawn": false,
+      "no": 0,
+      "yes": 0
+    }
+  }
+]

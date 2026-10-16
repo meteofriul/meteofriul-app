@@ -7,8 +7,8 @@ import { isLocalWeatherPilot } from "./localWeatherPilot";
 import { FULL_EVENTS_LIMIT, getEventsRequestLimit, HOME_EVENTS_LIMIT } from "./eventsApi";
 import { readJsonCacheEntry, removeJsonCache, writeJsonCache } from "./jsonCache";
 
-export const EVENTS_CACHE_PREFIX = "eventsCache:v12";
-export const EVENTS_CACHE_SCHEMA_VERSION = "canonical-events-v2";
+export const EVENTS_CACHE_PREFIX = "eventsCache:v13";
+export const EVENTS_CACHE_SCHEMA_VERSION = "canonical-events-v3-health";
 export const EVENTS_DEVICE_CACHE_MAX_AGE_MS = 48 * 60 * 60 * 1000;
 
 export function getEventsLocationKey(locationOrCity) {
@@ -40,12 +40,13 @@ export function isUsableEventsCache(value) {
   return value?.schemaVersion === EVENTS_CACHE_SCHEMA_VERSION && Array.isArray(value.events);
 }
 
-export function createEventsCachePayload(events, contractVersion = null) {
+export function createEventsCachePayload(events, contractVersion = null, catalogHealth = null) {
   const normalizedEvents = Array.isArray(events) ? events : [];
 
   return {
     schemaVersion: EVENTS_CACHE_SCHEMA_VERSION,
     contractVersion: String(contractVersion || "").trim() || null,
+    catalogHealth,
     events: normalizedEvents,
     total: normalizedEvents.length,
   };
@@ -148,11 +149,11 @@ export function readEventsCacheEntry(locationOrCity, limit, { storage, now } = {
 export function writeEventsCache(
   locationOrCity,
   events,
-  { contractVersion = null, limit = FULL_EVENTS_LIMIT, storage, now } = {},
+  { contractVersion = null, catalogHealth = null, limit = FULL_EVENTS_LIMIT, storage, now } = {},
 ) {
   const written = writeJsonCache(
     getEventsCacheKey(locationOrCity, limit),
-    createEventsCachePayload(events, contractVersion),
+    createEventsCachePayload(events, contractVersion, catalogHealth),
     { storage, now },
   );
   const legacyKey = getLegacyEventsCacheKey(locationOrCity, limit);

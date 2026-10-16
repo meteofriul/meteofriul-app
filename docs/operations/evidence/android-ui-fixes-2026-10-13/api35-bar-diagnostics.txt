@@ -1,0 +1,8 @@
+API35 app TEST: system requests light icons, launcher applies background override.
+SystemUI:
+mHasLightNavigationBar=false
+setScrimState() scrimState=UNLOCKED scrimBehindAlpha=0.0 scrimInFrontColor=GradientColors(ffdad9e0, ff2a4174) forceForScrim=false scrimColorIsLight=true mHasLightNavigationBar=false mBouncerVisible=false mForceDarkForScrim=false mForceLightForScrim=false timestamp=1791918369034
+Launcher:
+mTaskbarNavButtonDarkIntensity=0.0
+mOnTaskbarBackgroundNavButtonColorOverride=1.0
+mOnBackgroundNavButtonColorOverrideMultiplier=1.0

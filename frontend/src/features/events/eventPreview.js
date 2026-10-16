@@ -194,10 +194,15 @@ function getMonogram(title) {
 
 export function buildEventPreviewModel(event) {
   const descriptionData = getDescriptionData(event);
+  const civilTime = (value) => typeof value === "string"
+    && /^(?:[01]\d|2[0-3]):[0-5]\d(?::[0-5]\d)?$/.test(value) ? value : "";
+  const startTime = civilTime(event?.raw?.time || event?.raw?.start_time);
+  const endTime = civilTime(event?.raw?.end_time);
   return {
     category: event?.category || "other",
     categoryLabel: cleanText(event?.categoryLabel),
     dateLabel: cleanText(event?.dateChip?.accessibleLabel || event?.date),
+    timeLabel: startTime ? `${startTime}${endTime ? `–${endTime}` : ""}` : "",
     ...descriptionData,
     directionsUrl: getDirectionsUrl(event),
     image: getSafeHttpsUrl(event?.image) || (String(event?.image || "").startsWith("/") ? event.image : ""),

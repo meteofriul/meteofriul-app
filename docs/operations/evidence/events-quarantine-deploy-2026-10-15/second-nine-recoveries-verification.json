@@ -1,0 +1,202 @@
+{
+  "execution": "meteofriul-events-refresh-sjf4v",
+  "snapshot": "2026-10-15T16:41:55.959581+00:00",
+  "expected": 9,
+  "verified_events": 9,
+  "newly_published": 7,
+  "already_present_under_current_url": 2,
+  "all_visible_in_public_api": true,
+  "candidate_commit": "c7f8579cb23b836b6c0be3ab4f8f8a8211798d9c",
+  "events": [
+    {
+      "url": "https://www.turismofvg.it/eventi/giro-del-mondo-in-80-libri-nero-come-il-mare-di-charlotta-meconaghy",
+      "original_quarantined_url": "https://www.turismofvg.it/eventi/giro-del-mondo-in-80-libri-nero-come-il-mare-di-charlotta-meconaghy",
+      "outcome": "newly_published",
+      "source": "TurismoFVG",
+      "title": "Giro del Mondo in 80 libri - \"Nero come il mare \" di Charlotta Meconaghy",
+      "event_city": "Moggio Udinese",
+      "start_date": "2026-10-16",
+      "end_date": "2026-10-16",
+      "previously_quarantined": true,
+      "now_in_catalog": true,
+      "now_visible_in_api": true,
+      "api_records": 1,
+      "api_pages_checked": 1
+    },
+    {
+      "url": "https://www.turismofvg.it/eventi/libri-a-merenda",
+      "original_quarantined_url": "https://www.turismofvg.it/eventi/libri-a-merenda",
+      "outcome": "newly_published",
+      "source": "TurismoFVG",
+      "title": "Libri a merenda",
+      "event_city": "Moggio Udinese",
+      "start_date": "2026-10-16",
+      "end_date": "2026-10-16",
+      "previously_quarantined": true,
+      "now_in_catalog": true,
+      "now_visible_in_api": true,
+      "api_records": 1,
+      "api_pages_checked": 1
+    },
+    {
+      "url": "https://www.turismofvg.it/eventi/il-volto-della-passione-la-s-sindone-come-specchio-del-vangelo",
+      "original_quarantined_url": "https://www.turismofvg.it/eventi/il-volto-della-passione-la-s-sindone-come-specchio-del-vangelo",
+      "outcome": "newly_published",
+      "source": "TurismoFVG",
+      "title": "Il volto della Passione: la S.Sindone come specchio del Vangelo",
+      "event_city": "Moggio Udinese",
+      "start_date": "2026-10-17",
+      "end_date": "2026-10-17",
+      "previously_quarantined": true,
+      "now_in_catalog": true,
+      "now_visible_in_api": true,
+      "api_records": 1,
+      "api_pages_checked": 1
+    },
+    {
+      "url": "https://www.turismofvg.it/eventi/campagna-amica-tour-fvg",
+      "original_quarantined_url": "https://www.turismofvg.it/eventi/campagna-amica-tour-fvg",
+      "outcome": "newly_published",
+      "source": "TurismoFVG",
+      "title": "Campagna Amica Tour FVG",
+      "event_city": "Trieste",
+      "start_date": "2026-10-18",
+      "end_date": "2026-10-18",
+      "previously_quarantined": true,
+      "now_in_catalog": true,
+      "now_visible_in_api": true,
+      "api_records": 1,
+      "api_pages_checked": 1
+    },
+    {
+      "url": "https://www.turismofvg.it/eventi/giangiacomo-feltrinelli-rivoluzione-permanente",
+      "original_quarantined_url": "https://www.turismofvg.it/eventi/giangiacomo-feltrinelli-rivoluzione-permanente",
+      "outcome": "newly_published",
+      "source": "TurismoFVG",
+      "title": "Giangiacomo Feltrinelli - Rivoluzione permanente",
+      "event_city": "Moggio Udinese",
+      "start_date": "2026-10-18",
+      "end_date": "2026-10-18",
+      "previously_quarantined": true,
+      "now_in_catalog": true,
+      "now_visible_in_api": true,
+      "api_records": 1,
+      "api_pages_checked": 1
+    },
+    {
+      "url": "https://www.turismofvg.it/eventi/smarrimenti-e-rinvenimenti",
+      "original_quarantined_url": "https://www.turismofvg.it/eventi/samrrimenti-e-rinvenimenti",
+      "outcome": "already_present_under_current_url",
+      "source": "TurismoFVG",
+      "title": "Smarrimenti e rinvenimenti",
+      "event_city": "Udine",
+      "start_date": "2026-10-21",
+      "end_date": "2026-10-21",
+      "previously_quarantined": true,
+      "now_in_catalog": true,
+      "now_visible_in_api": true,
+      "api_records": 1,
+      "api_pages_checked": 1
+    },
+    {
+      "url": "https://www.turismofvg.it/eventi/digger-506889",
+      "original_quarantined_url": "https://www.turismofvg.it/eventi/teatro-pasolini-digger",
+      "outcome": "already_present_under_current_url",
+      "source": "TurismoFVG",
+      "title": "Digger",
+      "event_city": "Cervignano del Friuli",
+      "start_date": "2026-10-25",
+      "end_date": "2026-10-26",
+      "previously_quarantined": true,
+      "now_in_catalog": true,
+      "now_visible_in_api": true,
+      "api_records": 1,
+      "api_pages_checked": 1
+    },
+    {
+      "url": "https://sagrefvg.it/sagre/san-quirino-pn-50a-sagra-della-madonna-della-salute-duplicate-1/",
+      "original_quarantined_url": "https://sagrefvg.it/sagre/san-quirino-pn-50a-sagra-della-madonna-della-salute-duplicate-1/",
+      "outcome": "newly_published",
+      "source": "SagreFVG",
+      "title": "51ª Sagra della Madonna della Salute",
+      "event_city": "San Quirino",
+      "start_date": "2026-10-14",
+      "end_date": "2026-10-18",
+      "previously_quarantined": true,
+      "now_in_catalog": true,
+      "now_visible_in_api": true,
+      "api_records": 1,
+      "api_pages_checked": 1
+    },
+    {
+      "url": "https://sagrefvg.it/sagre/tribil-superiore-ud-burnjak-2025-festa-delle-castagne-duplicate-1/",
+      "original_quarantined_url": "https://sagrefvg.it/sagre/tribil-superiore-ud-burnjak-2025-festa-delle-castagne-duplicate-1/",
+      "outcome": "newly_published",
+      "source": "SagreFVG",
+      "title": "Burnjak 2026 / Festa delle Castagne",
+      "event_city": "Stregna",
+      "start_date": "2026-10-18",
+      "end_date": "2026-10-18",
+      "previously_quarantined": true,
+      "now_in_catalog": true,
+      "now_visible_in_api": true,
+      "api_records": 1,
+      "api_pages_checked": 1
+    }
+  ],
+  "previous_review_count": 18,
+  "remaining_review_count": 9,
+  "remaining_reviews": [
+    {
+      "url": "https://www.turismofvg.it/eventi/ciclo-autunnale-dell-associazione-biblioteca-austriaca",
+      "reason": "detail_identity_or_schedule_requires_review"
+    },
+    {
+      "url": "https://www.turismofvg.it/eventi/1976-2026-50-anni-dal-terremoto",
+      "reason": "possible_schedule_change"
+    },
+    {
+      "url": "https://www.turismofvg.it/eventi/decora-la-tua-zucca",
+      "reason": "possible_schedule_change"
+    },
+    {
+      "url": "https://www.turismofvg.it/eventi/l-occasione-del-borgo-mercatino-di-borgo-san-sergio-478799",
+      "reason": "possible_schedule_change"
+    },
+    {
+      "url": "https://www.turismofvg.it/eventi/l-occasione-del-borgo-mercatino-di-borgo-san-sergio-478797",
+      "reason": "possible_schedule_change"
+    },
+    {
+      "url": "https://www.turismofvg.it/eventi/inaugurazione-mostra-una-terra-una-storia-504353",
+      "reason": "detail_identity_or_schedule_requires_review"
+    },
+    {
+      "url": "https://www.turismofvg.it/eventi/autunno-musicale-2026",
+      "reason": "detail_not_resolved"
+    },
+    {
+      "url": "https://www.cssudine.it/stagione-contatto/2026/2940/itinerari-nel-teatro-contemporaneoterza-edizione",
+      "reason": "ambiguous schedule"
+    },
+    {
+      "url": "https://www.pnpensa.it/abc-educazione-finanziaria-2026-appuntamenti-sulle-assicurazioni-pordenone-ottobre-novembre/",
+      "reason": "additional future date needs session extraction"
+    }
+  ],
+  "new_unexpected_review_urls": [
+    "https://www.pnpensa.it/abc-educazione-finanziaria-2026-appuntamenti-sulle-assicurazioni-pordenone-ottobre-novembre/",
+    "https://www.turismofvg.it/eventi/decora-la-tua-zucca",
+    "https://www.turismofvg.it/eventi/l-occasione-del-borgo-mercatino-di-borgo-san-sergio-478797",
+    "https://www.turismofvg.it/eventi/l-occasione-del-borgo-mercatino-di-borgo-san-sergio-478799"
+  ],
+  "expected_remaining_no_longer_in_review": [
+    "https://www.pnpensa.it/torna-labc-delleducazione-finanziaria-cinque-appuntamenti-sulle-assicurazioni-dal-27-ottobre/",
+    "https://www.turismofvg.it/eventi/il-segno-della-memoria",
+    "https://www.turismofvg.it/eventi/stagione-concertistica-elena-lipizer-2026-2027-latino-mediterraneo-da-bach-a-morricone",
+    "https://www.turismofvg.it/eventi/stagione-teatrale-2026-2027-friuli-1976-voci-dalla-terra"
+  ],
+  "capuozzo_still_quarantined": true,
+  "inspection_version": 11,
+  "cloud_writes": false
+}

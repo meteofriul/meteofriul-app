@@ -26,6 +26,16 @@ beforeEach(() => { vi.useFakeTimers(); vi.setSystemTime(NOW); vi.mocked(isLocalC
 afterEach(() => { vi.useRealTimers(); });
 
 describe("pilot durable operations", () => {
+  it.each(["create", "correct"])("retires only unapplied legacy intents, preserving uncertain %s", async (kind) => {
+    const storage = createCommunityReportPreviewMemoryStorage();
+    const sender = vi.fn().mockRejectedValue(new Error("offline"));
+    await performPilotReportOperation(kind, intent, options(storage, sender));
+    const pending = readPilotPendingOperations({ storage })[0];
+    const resolver = vi.fn().mockResolvedValue({ status: "not_found", rules_version: "community-reports-v3" });
+    const result = await reconcilePilotReportOperation(pending, options(storage, sender, resolver));
+    expect(Boolean(result.retired)).toBe(kind !== "create");
+    expect(readPilotPendingOperations({ storage })).toHaveLength(kind === "create" ? 1 : 0);
+  });
   it("recovers a lost accepted create response without posting another contribution", async () => {
     const storage = createCommunityReportPreviewMemoryStorage();
     const sender = vi.fn().mockRejectedValue(new Error("network timeout"));
@@ -155,9 +165,9 @@ describe("pilot durable operations", () => {
     expect(updater).not.toHaveBeenCalled();
   });
 
-  it("keeps a corrected or replacement marker hidden for whoever denied its ancestor", () => {
+  it("does not transfer a previous phenomenon denial to a new observation", () => {
     const entry = { groupId: "wind-pordenone", lineageGroupIds: ["rain-pordenone"], expiresAt: NOW + 3_600_000, confirmations: { no: 1 } };
-    expect(isCommunityGroupHiddenFromMap(entry, { votes: [{ groupId: "rain-pordenone", vote: "no" }] })).toBe(true);
+    expect(isCommunityGroupHiddenFromMap(entry, { votes: [{ groupId: "rain-pordenone", vote: "no" }] })).toBe(false);
     expect(isCommunityGroupHiddenFromMap(entry, { votes: [] })).toBe(false);
     vi.mocked(isLocalCommunityPilot).mockReturnValue(false);
     expect(isCommunityGroupHiddenFromMap(entry, { votes: [{ groupId: "rain-pordenone", vote: "no" }] })).toBe(false);

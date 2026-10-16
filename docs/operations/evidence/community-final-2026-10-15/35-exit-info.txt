@@ -1,0 +1,68 @@
+ACTIVITY MANAGER PROCESS EXIT INFO (dumpsys activity exit-info)
+Last Timestamp of Persistence Into Persistent Storage: 2026-10-15 18:30:52.327
+  package: com.meteofriul.app.localpilot
+    Historical Process Exit for uid=10210
+        ApplicationExitInfo #0:
+          timestamp=2026-10-15 18:31:01.813 pid=7393 realUid=99007 packageUid=10210 definingUid=10151 user=0
+          process=com.google.android.webview:sandboxed_process0:org.chromium.content.app.SandboxedProcessService0:0 reason=1 (EXIT_SELF) subreason=17 (ISOLATED NOT NEEDED) status=0
+          importance=300 pss=0.00 rss=0.00 description=isolated not needed state=empty trace=null
+        ApplicationExitInfo #1:
+          timestamp=2026-10-15 18:31:01.628 pid=7347 realUid=10210 packageUid=10210 definingUid=10210 user=0
+          process=com.meteofriul.app.localpilot reason=10 (USER REQUESTED) subreason=21 (FORCE STOP) status=0
+          importance=100 pss=0.00 rss=198MB description=stop com.meteofriul.app.localpilot due to from pid 7537 state=empty trace=null
+        ApplicationExitInfo #2:
+          timestamp=2026-10-15 18:30:15.267 pid=7153 realUid=99006 packageUid=10210 definingUid=10151 user=0
+          process=com.google.android.webview:sandboxed_process0:org.chromium.content.app.SandboxedProcessService0:0 reason=13 (OTHER KILLS BY SYSTEM) subreason=17 (ISOLATED NOT NEEDED) status=0
+          importance=300 pss=0.00 rss=0.00 description=isolated not needed state=empty trace=null
+        ApplicationExitInfo #3:
+          timestamp=2026-10-15 18:30:15.189 pid=7115 realUid=10210 packageUid=10210 definingUid=10210 user=0
+          process=com.meteofriul.app.localpilot reason=10 (USER REQUESTED) subreason=21 (FORCE STOP) status=0
+          importance=100 pss=0.00 rss=186MB description=stop com.meteofriul.app.localpilot due to from pid 7332 state=empty trace=null
+        ApplicationExitInfo #4:
+          timestamp=2026-10-15 18:28:55.193 pid=6778 realUid=99005 packageUid=10210 definingUid=10151 user=0
+          process=com.google.android.webview:sandboxed_process0:org.chromium.content.app.SandboxedProcessService0:0 reason=1 (EXIT_SELF) subreason=17 (ISOLATED NOT NEEDED) status=0
+          importance=300 pss=0.00 rss=149MB description=isolated not needed state=empty trace=null
+        ApplicationExitInfo #5:
+          timestamp=2026-10-15 18:28:54.729 pid=6700 realUid=10210 packageUid=10210 definingUid=10210 user=0
+          process=com.meteofriul.app.localpilot reason=10 (USER REQUESTED) subreason=21 (FORCE STOP) status=0
+          importance=100 pss=0.00 rss=180MB description=stop com.meteofriul.app.localpilot due to from pid 7103 state=empty trace=null
+        ApplicationExitInfo #6:
+          timestamp=2026-10-15 18:26:17.828 pid=6028 realUid=99004 packageUid=10210 definingUid=10151 user=0
+          process=com.google.android.webview:sandboxed_process0:org.chromium.content.app.SandboxedProcessService0:0 reason=13 (OTHER KILLS BY SYSTEM) subreason=17 (ISOLATED NOT NEEDED) status=0
+          importance=300 pss=0.00 rss=173MB description=isolated not needed state=empty trace=null
+        ApplicationExitInfo #7:
+          timestamp=2026-10-15 18:26:17.477 pid=5989 realUid=10210 packageUid=10210 definingUid=10210 user=0
+          process=com.meteofriul.app.localpilot reason=10 (USER REQUESTED) subreason=21 (FORCE STOP) status=0
+          importance=100 pss=0.00 rss=205MB description=stop com.meteofriul.app.localpilot due to from pid 6687 state=empty trace=null
+        ApplicationExitInfo #8:
+          timestamp=2026-10-15 18:18:25.298 pid=5826 realUid=99003 packageUid=10210 definingUid=10151 user=0
+          process=com.google.android.webview:sandboxed_process0:org.chromium.content.app.SandboxedProcessService0:0 reason=13 (OTHER KILLS BY SYSTEM) subreason=17 (ISOLATED NOT NEEDED) status=0
+          importance=300 pss=0.00 rss=0.00 description=isolated not needed state=empty trace=null
+        ApplicationExitInfo #9:
+          timestamp=2026-10-15 18:18:25.092 pid=5785 realUid=10210 packageUid=10210 definingUid=10210 user=0
+          process=com.meteofriul.app.localpilot reason=10 (USER REQUESTED) subreason=21 (FORCE STOP) status=0
+          importance=100 pss=0.00 rss=0.00 description=stop com.meteofriul.app.localpilot due to from pid 5967 state=empty trace=null
+        ApplicationExitInfo #10:
+          timestamp=2026-10-15 18:17:26.185 pid=5623 realUid=99002 packageUid=10210 definingUid=10151 user=0
+          process=com.google.android.webview:sandboxed_process0:org.chromium.content.app.SandboxedProcessService0:0 reason=1 (EXIT_SELF) subreason=17 (ISOLATED NOT NEEDED) status=0
+          importance=300 pss=0.00 rss=0.00 description=isolated not needed state=empty trace=null
+        ApplicationExitInfo #11:
+          timestamp=2026-10-15 18:17:25.928 pid=5593 realUid=10210 packageUid=10210 definingUid=10210 user=0
+          process=com.meteofriul.app.localpilot reason=10 (USER REQUESTED) subreason=21 (FORCE STOP) status=0
+          importance=100 pss=0.00 rss=0.00 description=stop com.meteofriul.app.localpilot due to from pid 5768 state=empty trace=null
+        ApplicationExitInfo #12:
+          timestamp=2026-10-15 18:16:43.134 pid=4468 realUid=99001 packageUid=10210 definingUid=10151 user=0
+          process=com.google.android.webview:sandboxed_process0:org.chromium.content.app.SandboxedProcessService0:0 reason=1 (EXIT_SELF) subreason=17 (ISOLATED NOT NEEDED) status=0
+          importance=300 pss=0.00 rss=0.00 description=isolated not needed state=empty trace=null
+        ApplicationExitInfo #13:
+          timestamp=2026-10-15 18:16:42.876 pid=4405 realUid=10210 packageUid=10210 definingUid=10210 user=0
+          process=com.meteofriul.app.localpilot reason=10 (USER REQUESTED) subreason=21 (FORCE STOP) status=0
+          importance=100 pss=0.00 rss=0.00 description=stop com.meteofriul.app.localpilot due to from pid 5568 state=empty trace=null
+        ApplicationExitInfo #14:
+          timestamp=2026-10-15 18:10:12.113 pid=4035 realUid=99000 packageUid=10210 definingUid=10151 user=0
+          process=com.google.android.webview:sandboxed_process0:org.chromium.content.app.SandboxedProcessService0:0 reason=1 (EXIT_SELF) subreason=17 (ISOLATED NOT NEEDED) status=0
+          importance=300 pss=0.00 rss=0.00 description=isolated not needed state=empty trace=null
+        ApplicationExitInfo #15:
+          timestamp=2026-10-15 18:10:11.327 pid=3933 realUid=10210 packageUid=10210 definingUid=10210 user=0
+          process=com.meteofriul.app.localpilot reason=16 (PACKAGE UPDATED) subreason=0 (UNKNOWN) status=0
+          importance=100 pss=0.00 rss=0.00 description=stop com.meteofriul.app.localpilot due to installPackageLI state=empty trace=null

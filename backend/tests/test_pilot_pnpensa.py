@@ -51,8 +51,10 @@ class Response:
         yield self.body
 
 
-def fixture(*, missing_sitemap=False):
-    sitemap_urls = [URL] if missing_sitemap else [URL, PAST_URL]
+def fixture(*, missing_sitemap=False, posts=None):
+    posts = posts or [POST, PAST]
+    sitemap_urls = [posts[0]['link']] if missing_sitemap else [
+        post['link'] for post in posts]
     xml = ('<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">' +
            ''.join(f'<url><loc>{url}</loc></url>' for url in sitemap_urls) +
            '</urlset>').encode()
@@ -64,8 +66,9 @@ def fixture(*, missing_sitemap=False):
     page_xml = ('<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">'
                 '<url><loc>https://www.pnpensa.it/</loc></url></urlset>').encode()
     pages = {SITEMAP: Response(xml),
-             api_url: Response(json.dumps([POST, PAST]).encode(),
-                               {'X-WP-Total': '2', 'X-WP-TotalPages': '1'}),
+             api_url: Response(json.dumps(posts).encode(),
+                               {'X-WP-Total': str(len(posts)),
+                                'X-WP-TotalPages': '1'}),
              PAGE_SITEMAP: Response(page_xml),
              page_api_url: Response(json.dumps([page]).encode(),
                                     {'X-WP-Total': '1', 'X-WP-TotalPages': '1'})}
@@ -97,6 +100,33 @@ class PordenonePensaAuditTests(unittest.TestCase):
         updated['content']['rendered'] += '<p>Il secondo incontro sarà il 3 novembre.</p>'
         with self.assertRaisesRegex(ValueError, 'additional future date'):
             classify_post(updated, today=date(2026, 10, 7))
+
+    def test_reviewed_article_keeps_other_verified_card_live(self):
+        changed = copy.deepcopy(POST)
+        changed['content']['rendered'] += '<p>Il secondo incontro sarà il 3 novembre.</p>'
+        valid = copy.deepcopy(POST)
+        valid['id'] = 3
+        valid['link'] = 'https://www.pnpensa.it/abc-finanza-verificata-2026/'
+        batch = fixture(posts=[changed, PAST, valid])
+        gated = gate_batch('Pordenone Pensa', batch,
+                           today=date(2026, 10, 7))
+        self.assertEqual(gated['status'], 'partial')
+        self.assertEqual([event['url'] for event in gated['events']], [valid['link']])
+        self.assertEqual(gated['review_required'][0]['url'], URL)
+        damaged = copy.deepcopy(batch)
+        damaged['verification']['sitemap_count'] -= 1
+        self.assertEqual(gate_batch('Pordenone Pensa', damaged,
+                                    today=date(2026, 10, 7))['status'], 'error')
+
+    def test_only_future_article_can_be_quarantined_with_empty_catalog(self):
+        changed = copy.deepcopy(POST)
+        changed['content']['rendered'] += '<p>Il secondo incontro sarà il 3 novembre.</p>'
+        batch = fixture(posts=[changed, PAST])
+        gated = gate_batch('Pordenone Pensa', batch,
+                           today=date(2026, 10, 7))
+        self.assertEqual(gated['status'], 'partial')
+        self.assertEqual(gated['events'], [])
+        self.assertEqual(gated['review_required'][0]['url'], URL)
 
     def test_past_article_with_new_future_date_requires_review(self):
         updated = copy.deepcopy(PAST)

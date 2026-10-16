@@ -1,0 +1,68 @@
+ACTIVITY MANAGER PROCESS EXIT INFO (dumpsys activity exit-info)
+Last Timestamp of Persistence Into Persistent Storage: 2026-10-15 20:39:46.098
+  package: com.meteofriul.app.localpilot
+    Historical Process Exit for uid=10756
+        ApplicationExitInfo #0:
+          timestamp=2026-10-15 20:39:49.331 pid=31999 realUid=99756 packageUid=10756 definingUid=10249 user=0
+          process=com.google.android.webview:sandboxed_process0:org.chromium.content.app.SandboxedProcessService0:0 reason=13 (OTHER KILLS BY SYSTEM) subreason=17 (ISOLATED NOT NEEDED) status=0
+          importance=300 pss=85MB rss=152MB description=isolated not needed state=empty trace=null
+        ApplicationExitInfo #1:
+          timestamp=2026-10-15 20:39:49.299 pid=31882 realUid=10756 packageUid=10756 definingUid=10756 user=0
+          process=com.meteofriul.app.localpilot reason=10 (USER REQUESTED) subreason=21 (FORCE STOP) status=0
+          importance=100 pss=143MB rss=219MB description=stop com.meteofriul.app.localpilot due to from pid 8045 state=71 bytes trace=null
+        ApplicationExitInfo #2:
+          timestamp=2026-10-15 20:10:32.302 pid=27387 realUid=99754 packageUid=10756 definingUid=10249 user=0
+          process=com.google.android.webview:sandboxed_process0:org.chromium.content.app.SandboxedProcessService0:0 reason=13 (OTHER KILLS BY SYSTEM) subreason=17 (ISOLATED NOT NEEDED) status=0
+          importance=300 pss=85MB rss=152MB description=isolated not needed state=empty trace=null
+        ApplicationExitInfo #3:
+          timestamp=2026-10-15 20:10:32.292 pid=27256 realUid=10756 packageUid=10756 definingUid=10756 user=0
+          process=com.meteofriul.app.localpilot reason=16 (PACKAGE UPDATED) subreason=0 (UNKNOWN) status=0
+          importance=100 pss=137MB rss=225MB description=stop com.meteofriul.app.localpilot due to installPackageLI state=71 bytes trace=null
+        ApplicationExitInfo #4:
+          timestamp=2026-10-15 19:46:29.404 pid=23962 realUid=99752 packageUid=10756 definingUid=10249 user=0
+          process=com.google.android.webview:sandboxed_process0:org.chromium.content.app.SandboxedProcessService0:0 reason=13 (OTHER KILLS BY SYSTEM) subreason=17 (ISOLATED NOT NEEDED) status=0
+          importance=300 pss=66MB rss=133MB description=isolated not needed state=empty trace=null
+        ApplicationExitInfo #5:
+          timestamp=2026-10-15 19:46:29.394 pid=23792 realUid=10756 packageUid=10756 definingUid=10756 user=0
+          process=com.meteofriul.app.localpilot reason=16 (PACKAGE UPDATED) subreason=0 (UNKNOWN) status=0
+          importance=100 pss=158MB rss=249MB description=stop com.meteofriul.app.localpilot due to installPackageLI state=71 bytes trace=null
+        ApplicationExitInfo #6:
+          timestamp=2026-10-14 19:54:03.109 pid=14197 realUid=99604 packageUid=10756 definingUid=10249 user=0
+          process=com.google.android.webview:sandboxed_process0:org.chromium.content.app.SandboxedProcessService0:0 reason=10 (USER REQUESTED) subreason=22 (REMOVE TASK) status=0
+          importance=400 pss=92MB rss=137MB description=remove task state=empty trace=null
+        ApplicationExitInfo #7:
+          timestamp=2026-10-14 19:54:03.105 pid=14141 realUid=10756 packageUid=10756 definingUid=10756 user=0
+          process=com.meteofriul.app.localpilot reason=10 (USER REQUESTED) subreason=22 (REMOVE TASK) status=0
+          importance=400 pss=135MB rss=175MB description=remove task state=71 bytes trace=null
+        ApplicationExitInfo #8:
+          timestamp=2026-10-14 19:40:33.929 pid=13655 realUid=10756 packageUid=10756 definingUid=10756 user=0
+          process=com.meteofriul.app.localpilot reason=3 (LOW_MEMORY) subreason=0 (UNKNOWN) status=0
+          importance=400 pss=0,00 rss=0,00 description=null state=empty trace=null
+        ApplicationExitInfo #9:
+          timestamp=2026-10-14 19:40:29.482 pid=13134 realUid=99603 packageUid=10756 definingUid=10249 user=0
+          process=com.google.android.webview:sandboxed_process0:org.chromium.content.app.SandboxedProcessService0:0 reason=13 (OTHER KILLS BY SYSTEM) subreason=17 (ISOLATED NOT NEEDED) status=0
+          importance=300 pss=0,00 rss=0,00 description=isolated not needed state=empty trace=null
+        ApplicationExitInfo #10:
+          timestamp=2026-10-14 19:40:29.472 pid=13060 realUid=10756 packageUid=10756 definingUid=10756 user=0
+          process=com.meteofriul.app.localpilot reason=16 (PACKAGE UPDATED) subreason=0 (UNKNOWN) status=0
+          importance=100 pss=160MB rss=242MB description=stop com.meteofriul.app.localpilot due to installPackageLI state=71 bytes trace=null
+        ApplicationExitInfo #11:
+          timestamp=2026-10-14 19:40:11.251 pid=12632 realUid=99602 packageUid=10756 definingUid=10249 user=0
+          process=com.google.android.webview:sandboxed_process0:org.chromium.content.app.SandboxedProcessService0:0 reason=13 (OTHER KILLS BY SYSTEM) subreason=17 (ISOLATED NOT NEEDED) status=0
+          importance=300 pss=0,00 rss=0,00 description=isolated not needed state=empty trace=null
+        ApplicationExitInfo #12:
+          timestamp=2026-10-14 19:40:11.242 pid=12595 realUid=10756 packageUid=10756 definingUid=10756 user=0
+          process=com.meteofriul.app.localpilot reason=10 (USER REQUESTED) subreason=21 (FORCE STOP) status=0
+          importance=100 pss=171MB rss=256MB description=stop com.meteofriul.app.localpilot due to from pid 13025 state=71 bytes trace=null
+        ApplicationExitInfo #13:
+          timestamp=2026-10-13 22:23:00.412 pid=2822 realUid=99440 packageUid=10756 definingUid=10249 user=0
+          process=com.google.android.webview:sandboxed_process0:org.chromium.content.app.SandboxedProcessService0:0 reason=10 (USER REQUESTED) subreason=22 (REMOVE TASK) status=0
+          importance=400 pss=73MB rss=143MB description=remove task state=empty trace=null
+        ApplicationExitInfo #14:
+          timestamp=2026-10-13 22:23:00.409 pid=2601 realUid=10756 packageUid=10756 definingUid=10756 user=0
+          process=com.meteofriul.app.localpilot reason=10 (USER REQUESTED) subreason=22 (REMOVE TASK) status=0
+          importance=400 pss=179MB rss=275MB description=remove task state=71 bytes trace=null
+        ApplicationExitInfo #15:
+          timestamp=2026-10-13 22:05:36.738 pid=28845 realUid=99439 packageUid=10756 definingUid=10249 user=0
+          process=com.google.android.webview:sandboxed_process0:org.chromium.content.app.SandboxedProcessService0:0 reason=13 (OTHER KILLS BY SYSTEM) subreason=17 (ISOLATED NOT NEEDED) status=0
+          importance=300 pss=48MB rss=118MB description=isolated not needed state=empty trace=null

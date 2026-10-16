@@ -28,6 +28,7 @@ from app.contracts.live import (
     CommunityReputationRequest,
 )
 from app.repositories.community import CommunityRepositoryUnavailable
+from app.services.community_reports import CommunityReportsService, CommunityReportVote, CommunityHistoryQuery
 from app.services.community import CommunityServiceError
 from app.services.pilot_community import (
     PilotCommunityObservationUpdate, PilotCommunityReportCorrection,
@@ -255,6 +256,10 @@ def create_app(*, service, installations=None, budget=None, public_mode=False,
     def reports_by_coordinates(command: ReportQuery):
         return service.get_scoped_reports(**command.model_dump())
 
+    @app.post("/api/community/history")
+    def history(command: CommunityHistoryQuery):
+        return service.get_history(command)
+
     @app.post("/api/community/resolve")
     def resolve(command: PilotCommunityResolve):
         return service.resolve_location(command)
@@ -280,7 +285,7 @@ def create_app(*, service, installations=None, budget=None, public_mode=False,
         return service.delete_report(report_id, command, client_host="enrolled-cloud-pilot")
 
     @app.post("/api/community/reports/{group_id}/confirmation")
-    def confirm(group_id: str, command: CommunityReportConfirmationCreate):
+    def confirm(group_id: str, command: CommunityReportVote):
         result = service.confirm_report(group_id, command, client_host="enrolled-cloud-pilot")
         payload = result.model_dump(mode="json", exclude_none=True)
         payload["group"] = service.public_payload(result.group)
@@ -323,7 +328,7 @@ def create_cloud_app():
                 app = firebase_admin.initialize_app()
             return app_check.verify_token(token, app=app)
 
-        return create_app(service=PilotCommunityService(geography=geography, repository=repository),
+        return create_app(service=CommunityReportsService(geography=geography, repository=repository),
                           public_mode=True, app_check_verifier=verify, allowed_app_ids=allowed)
-    return create_app(service=PilotCommunityService(geography=geography, repository=repository),
+    return create_app(service=CommunityReportsService(geography=geography, repository=repository),
                       installations=EnrolledInstallations(firestore_client))

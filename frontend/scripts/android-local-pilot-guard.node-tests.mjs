@@ -10,6 +10,7 @@ import { updateAndroid } from "@capacitor/cli/dist/android/update.js";
 import {
   ANDROID_LOCAL_PILOT_API_BASE,
   ANDROID_LOCAL_PILOT_COMMUNITY_API_BASE,
+  ANDROID_LOCAL_PILOT_EVENTS_API_BASE,
   ANDROID_LOCAL_PILOT_NATIONAL_API_BASE,
   ANDROID_LOCAL_PILOT_APPLICATION_ID,
   assertAndroidLocalPilotBundle,
@@ -63,6 +64,21 @@ function createBuild(bundleSource) {
   writeFileSync(join(directory, "assets", "main.js"), bundleSource);
   return directory;
 }
+
+test("local Events candidate requires exact loopback and rejects the public Events fallback", () => {
+  const directory = createBuild([EXPECTED_API, ANDROID_LOCAL_PILOT_API_BASE,
+    ANDROID_LOCAL_PILOT_NATIONAL_API_BASE, ANDROID_LOCAL_PILOT_COMMUNITY_API_BASE].join("\n"));
+  const options = { buildDirectory: directory, expectedApiBase: EXPECTED_API, community: true, eventsLocal: true };
+  try {
+    assert.throws(() => assertAndroidLocalPilotBundle(options), /events_loopback_missing/);
+    writeFileSync(join(directory, "assets", "events.js"), ANDROID_LOCAL_PILOT_EVENTS_API_BASE);
+    assert.equal(assertAndroidLocalPilotBundle(options).eventsApiBase, ANDROID_LOCAL_PILOT_EVENTS_API_BASE);
+    assert.throws(() => assertAndroidLocalPilotBundle({ ...options, eventsLocal: false }), /unexpected_loopback/);
+    assert.throws(() => assertAndroidLocalPilotBundle({ ...options, cloud: true }), /requires_local_community/);
+    writeFileSync(join(directory, "assets", "public.js"), 'https://meteofriul-events-49007668366.europe-west1.run.app/api');
+    assert.throws(() => assertAndroidLocalPilotBundle(options), /unexpected_official_api/);
+  } finally { rmSync(directory, { recursive: true, force: true }); }
+});
 
 test("requires a one-run marker, the tagged HTTPS API and no release contamination", () => {
   const env = {
@@ -126,6 +142,7 @@ test("requires the regional and national loopbacks and the official HTTPS API", 
       localWeatherApiBase: ANDROID_LOCAL_PILOT_API_BASE,
       nationalWeatherApiBase: ANDROID_LOCAL_PILOT_NATIONAL_API_BASE,
       officialApiBase: EXPECTED_API,
+      eventsApiBase: "https://meteofriul-events-49007668366.europe-west1.run.app/api",
     });
     assert.throws(() => assertAndroidLocalPilotBundle({
       buildDirectory: wrongLoopback,

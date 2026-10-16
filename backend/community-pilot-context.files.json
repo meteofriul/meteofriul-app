@@ -21,6 +21,7 @@
     ["backend/app/jobs/seed_community_v2.py", "app/jobs/seed_community_v2.py"],
     ["backend/app/services/__init__.py", "app/services/__init__.py"],
     ["backend/app/services/community.py", "app/services/community.py"],
+    ["backend/app/services/community_reports.py", "app/services/community_reports.py"],
     ["backend/app/services/pilot_community.py", "app/services/pilot_community.py"],
     ["backend/app/services/pilot_community_geography.py", "app/services/pilot_community_geography.py"],
     ["backend/app/services/fvg_geography.py", "app/services/fvg_geography.py"],

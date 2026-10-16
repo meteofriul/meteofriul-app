@@ -163,7 +163,7 @@ function withVerifiedCamsHourlyCache(value, hourCount = 31) {
   return value;
 }
 
-function withVerifiedCamsHourlyCacheV2(value, hourCount = 97) {
+function withVerifiedCamsHourlyCacheV2(value, hourCount = 97, usableHours = 96) {
   const run = Date.parse(value.current.data_quality.cams_run_utc);
   const samples = Array.from({ length: hourCount }, (_, index) => ({
     valid_at_utc: new Date(run + index * HOUR_MS).toISOString().replace(".000Z", "Z"),
@@ -180,7 +180,7 @@ function withVerifiedCamsHourlyCacheV2(value, hourCount = 97) {
     run_utc: value.current.data_quality.cams_run_utc,
     generated_at_utc: new Date(run + 2 * HOUR_MS).toISOString(),
     fresh_until_utc: new Date(run + 24 * HOUR_MS).toISOString(),
-    usable_until_utc: new Date(run + 96 * HOUR_MS).toISOString(),
+    usable_until_utc: new Date(run + usableHours * HOUR_MS).toISOString(),
     pollen_variables: TEST_POLLEN_VARIABLES.map(([id, uiKey]) => ({
       id,
       ui_key: uiKey,
@@ -3226,5 +3226,158 @@ describe("local weather v1 runtime", () => {
     expect(required.current.data_quality.cams_status).toBe("fresh");
     expect(bundleFetcher).toHaveBeenCalledTimes(2);
     publishCams(enriched);
+  });
+});
+
+
+describe("persisted CAMS 36h continuity", () => {
+  function continuous(value) {
+    const doc = { schema_version: 1, kind: "meteofriul.weather.cams_continuity",
+      policy_id: "cams_continuity_36h_v1", source_run_id: "20260903T000000Z", catalog: CATALOG,
+      release_sha256: "a".repeat(64), release_json_bytes: 1024,
+      issued_at: "2026-09-03T02:00:00Z", run_at: RUN_AT,
+      fresh_until: "2026-09-04T00:00:00Z", usable_until: "2026-09-04T12:00:00Z",
+      current_sample_max_lag_minutes: 60 };
+    for (const part of [value.current,value.forecast]) {
+      const stages = part.source.cams.evidence.stages;
+      stages.latest.family_release = { source_run_id: doc.source_run_id,
+        release_path: `runs/${doc.source_run_id}/release.json`, release_sha256: doc.release_sha256,
+        release_json_bytes: doc.release_json_bytes };
+      stages.latest.family_release_published_at = doc.issued_at;
+      for (const stage of Object.values(stages)) stage.freshness = {
+        freshUntil: doc.fresh_until, usableUntil: doc.usable_until, continuity: doc };
+    }
+    return value;
+  }
+  it.each([24, 24+1/HOUR_MS, 30+1/HOUR_MS, 33, 36, 36+1/HOUR_MS])(
+    "reopens offline at %s hours, with native hourly selection and strict cutoff", async hours => {
+      let time = Date.parse(VALID_AT); const now = () => time;
+      const value = continuous(withVerifiedCamsHourlyCacheV2(bundle({ hourCount: 62 })));
+      const storage = memoryStorage(); const baseUrl = `/continuity-${hours}`;
+      await fetchLocalWeatherV1RuntimeBundle("Pordenone", options(vi.fn().mockResolvedValue(value), now, { storage, baseUrl }));
+      time = Date.parse(RUN_AT) + hours * HOUR_MS;
+      const reopened = readLocalWeatherV1PersistedBundle("Pordenone", { baseUrl, storage: { ...storage }, now });
+      expect(reopened).not.toBeNull();
+      if (hours > 36) {
+        expect(reopened.current.source.cams.status).toBe("unavailable");
+        expect(reopened.current.air_quality_data).toBeNull();
+        expect(reopened.current.pollen_data.values).toEqual({});
+      } else {
+        expect(reopened.current.data_quality).toMatchObject({ cams_status: hours <= 24 ? "fresh" : "stale", cams_sample_status: "current", cams_run_utc: RUN_AT });
+        expect(Date.parse(reopened.current.air_quality_data.valid_at)).toBe(Date.parse(RUN_AT) + Math.floor(hours)*HOUR_MS);
+        expect(reopened.current.air_quality_data.values.ozone).toBeCloseTo(100 + Math.floor(hours) + CAMS_AIR_FIELDS.indexOf("ozone")/10);
+      }
+    });
+  it("does not keep a fresh label across 24h or invent the next sample when the hourly cache is missing", async () => {
+    const time = Date.parse(RUN_AT) + 24*HOUR_MS + 1;
+    const value = continuous(bundle({ runAt: "2026-09-04T00:00:00Z", validAt: "2026-09-04T00:00:00Z", camsValidAt: "2026-09-04T00:00:00Z" }));
+    const storage = memoryStorage(); const baseUrl = "/continuity-without-series";
+    const result = await fetchLocalWeatherV1RuntimeBundle("Pordenone", options(vi.fn().mockResolvedValue(value), () => time, { baseUrl, storage }));
+    expect(result.current.data_quality).toMatchObject({ cams_status: "stale", cams_sample_status: "current" });
+    const reopened = readLocalWeatherV1PersistedBundle("Pordenone", { baseUrl, storage: { ...storage }, now: () => time + HOUR_MS });
+    expect(reopened.current.source.cams.status).toBe("unavailable");
+  });
+  it("cannot extend validity from a cache timestamp alone", async () => {
+    const value = withVerifiedCamsHourlyCacheV2(bundle({ hourCount: 62 }));
+    const time = Date.parse(RUN_AT) + 33*HOUR_MS;
+    const result = await fetchLocalWeatherV1RuntimeBundle("Pordenone", options(vi.fn().mockResolvedValue(value), () => time));
+    expect(result.current.source.cams.status).toBe("unavailable");
+  });
+  it("rejects broken binding in the continuity evidence", async () => {
+    const value = continuous(withVerifiedCamsHourlyCacheV2(bundle({ hourCount: 62 })));
+    value.current.source.cams.evidence.stages.latest.family_release.release_sha256 = "b".repeat(64);
+    const result = await fetchLocalWeatherV1RuntimeBundle("Pordenone", options(vi.fn().mockResolvedValue(value), () => Date.parse(VALID_AT)));
+    expect(result.current.data_quality.cams_diagnostic.code).toBe("CONTINUITY_MISMATCH");
+  });
+
+  function migrationBundles() {
+    return {
+      legacy: withVerifiedCamsHourlyCacheV2(bundle({ hourCount: 62 }), 97, 30),
+      candidate: continuous(withVerifiedCamsHourlyCacheV2(bundle({ hourCount: 62 }), 97, 36)),
+    };
+  }
+  it.each([true, false])("continuity migration preserves the grant and series with legacy cache=%s", async hasSeries => {
+    let time = Date.parse(VALID_AT);
+    const now = () => time;
+    const { legacy, candidate } = migrationBundles();
+    if (!hasSeries) delete legacy.current.cams_hourly_cache;
+    const storage = memoryStorage();
+    const baseUrl = `/continuity-migration-${hasSeries}`;
+    const fetcher = vi.fn().mockResolvedValueOnce(legacy).mockResolvedValueOnce(candidate);
+    const opts = options(fetcher, now, { storage, baseUrl, force: true });
+    const before = await fetchLocalWeatherV1RuntimeBundle("Pordenone", opts);
+    const upgraded = await fetchLocalWeatherV1RuntimeBundle("Pordenone", opts);
+    expect(fetcher).toHaveBeenCalledTimes(2);
+    for (const value of [upgraded.current, upgraded.forecast]) {
+      expect(value.source.cams.evidence.stages.latest.freshness.continuity.policy_id).toBe("cams_continuity_36h_v1");
+      expect(value.data_quality.cams_run_utc).toBe(RUN_AT);
+      expect(value.data_quality.cams_valid_at_utc).toBe(VALID_AT);
+    }
+    expect(Date.parse(upgraded.current.cams_hourly_cache.usable_until_utc)).toBe(Date.parse(RUN_AT) + 36*HOUR_MS);
+    expect(upgraded.current.temperature).toBe(before.current.temperature);
+    expect(upgraded.current.hourly_forecast).toEqual(before.current.hourly_forecast);
+    if (hasSeries) {
+      expect(upgraded.current.air_quality_data.values).toEqual(before.current.air_quality_data.values);
+      expect(upgraded.current.pollen_data.values).toEqual(before.current.pollen_data.values);
+    }
+    for (const hours of [24, 33, 36, 36+1/HOUR_MS]) {
+      time = Date.parse(RUN_AT) + hours*HOUR_MS;
+      const reopened = readLocalWeatherV1PersistedBundle("Pordenone", { baseUrl, storage: { ...storage }, now });
+      expect(reopened).not.toBeNull();
+      if (hours > 36) {
+        expect(reopened.current.source.cams.status).toBe("unavailable");
+        expect(reopened.current.air_quality_data).toBeNull();
+      } else {
+        expect(reopened.current.data_quality).toMatchObject({ cams_sample_status: "current", cams_status: hours <= 24 ? "fresh" : "stale" });
+        expect(Date.parse(reopened.current.air_quality_data.valid_at)).toBe(Date.parse(RUN_AT) + hours*HOUR_MS);
+      }
+    }
+  });
+  it("continuity migration does not lose the grant to a subsequent legacy response", async () => {
+    const { legacy, candidate } = migrationBundles();
+    const now = () => Date.parse(VALID_AT);
+    const storage = memoryStorage(); const baseUrl = "/continuity-migration-no-downgrade";
+    const opts = options(vi.fn().mockResolvedValueOnce(candidate).mockResolvedValueOnce(legacy), now, { storage, baseUrl, force: true });
+    await fetchLocalWeatherV1RuntimeBundle("Pordenone", opts);
+    const retained = await fetchLocalWeatherV1RuntimeBundle("Pordenone", opts);
+    expect(retained.current.source.cams.evidence.stages.latest.freshness.continuity).toBeDefined();
+    const reopened = readLocalWeatherV1PersistedBundle("Pordenone", { baseUrl, storage: { ...storage }, now: () => Date.parse(RUN_AT)+33*HOUR_MS });
+    expect(reopened.current.data_quality.cams_sample_status).toBe("current");
+  });
+  it.each(["identity", "invalid-proof", "short-series"])("continuity migration rejects %s", async reason => {
+    const { legacy, candidate } = migrationBundles();
+    if (reason === "identity") {
+      candidate.current.source.cams.evidence.stages.latest.etag = '"another-family"';
+    } else if (reason === "invalid-proof") {
+      candidate.current.source.cams.evidence.stages.latest.family_release.release_sha256 = "b".repeat(64);
+    } else {
+      withVerifiedCamsHourlyCacheV2(candidate, 97, 30);
+    }
+    const now = () => Date.parse(VALID_AT);
+    const storage = memoryStorage(); const baseUrl = `/continuity-migration-reject-${reason}`;
+    const opts = options(vi.fn().mockResolvedValueOnce(legacy).mockResolvedValueOnce(candidate), now, { storage, baseUrl, force: true });
+    await fetchLocalWeatherV1RuntimeBundle("Pordenone", opts);
+    const retained = await fetchLocalWeatherV1RuntimeBundle("Pordenone", opts);
+    expect(retained.current.source.cams.evidence.stages.latest.freshness?.continuity).toBeUndefined();
+    const reopened = readLocalWeatherV1PersistedBundle("Pordenone", { baseUrl, storage: { ...storage }, now: () => Date.parse(RUN_AT)+33*HOUR_MS });
+    expect(reopened.current.data_quality.cams_sample_status).toBe("last_known");
+  });
+  it("continuity migration leaves the legacy generation intact when staging fails", async () => {
+    const { legacy, candidate } = migrationBundles();
+    const now = () => Date.parse(VALID_AT);
+    const storage = memoryStorage(); const baseUrl = "/continuity-migration-write-failure";
+    const opts = options(vi.fn().mockResolvedValueOnce(legacy).mockResolvedValueOnce(candidate), now, { storage, baseUrl, force: true });
+    await fetchLocalWeatherV1RuntimeBundle("Pordenone", opts);
+    const key = getLocalWeatherV1BundleCacheKey("Pordenone", { baseUrl });
+    const write = storage.setItem.getMockImplementation();
+    storage.setItem.mockImplementation((target, value) => {
+      if (target.startsWith(`${key}:candidate`)) throw new Error("staging interrupted");
+      return write(target, value);
+    });
+    const retained = await fetchLocalWeatherV1RuntimeBundle("Pordenone", opts);
+    expect(retained.current.source.cams.evidence.stages.latest.freshness?.continuity).toBeUndefined();
+    const reopened = readLocalWeatherV1PersistedBundle("Pordenone", { baseUrl, storage: { ...storage }, now });
+    expect(reopened.current.source.cams.evidence.stages.latest.freshness?.continuity).toBeUndefined();
+    expect(Date.parse(reopened.current.cams_hourly_cache.usable_until_utc)).toBe(Date.parse(RUN_AT)+30*HOUR_MS);
   });
 });

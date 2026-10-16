@@ -1,4 +1,5 @@
 import { countIconFutureHours } from "./iconForecastWindow";
+import { validateCamsContinuity } from "./camsContinuityPolicy";
 
 const SCHEMA_VERSION = 1;
 const CATALOG_VERSION = "istat-2026-irdat-2006-representative-points-v1";
@@ -37,6 +38,8 @@ const RAW_CACHE_SLOT_IDS = new Set([
   "latest:0",
   "release:0",
   "release:1",
+  "continuity:0",
+  "continuity:1",
   "manifest:0",
   "manifest:1",
   "municipality:0",
@@ -652,12 +655,14 @@ function normalizeIconWindowPolicy(value) {
   return Object.freeze({ ...value });
 }
 
-function assessFreshness(document, provider, now, iconWindowPolicy = null) {
+function assessFreshness(document, provider, now, iconWindowPolicy = null, continuity = null) {
   const current = clockMilliseconds(now);
   const validFrom = parseUtc(document.valid_from, "valid_from", { onHour: true });
   const validTo = parseUtc(document.valid_to, "valid_to", { onHour: true });
   const freshUntil = parseUtc(document.freshness.fresh_until, "fresh_until");
-  const usableUntil = parseUtc(document.freshness.usable_until, "usable_until");
+  const usableUntil = continuity
+    ? Math.min(parseUtc(continuity.usable_until, "continuity.usable_until"), validTo)
+    : parseUtc(document.freshness.usable_until, "usable_until");
   const localPolicy = provider === WEATHER_V1_PROVIDERS.ICON2I ? iconWindowPolicy : null;
   const required = localPolicy?.minimumFutureHours ?? PROVIDER_CONTRACTS[provider].freshness.requiredFutureHours;
   const remaining = (validTo - current) / HOUR_MS;
@@ -673,7 +678,8 @@ function assessFreshness(document, provider, now, iconWindowPolicy = null) {
     freshUntil: document.freshness.fresh_until,
     usableUntil: localPolicy
       ? iso(validTo - (required - 1) * HOUR_MS)
-      : document.freshness.usable_until,
+      : continuity ? iso(usableUntil) : document.freshness.usable_until,
+    ...(continuity ? { continuity } : {}),
     ...(localPolicy ? {
       availableFutureHours,
       maximumFutureHours: localPolicy.maximumFutureHours,
@@ -682,7 +688,7 @@ function assessFreshness(document, provider, now, iconWindowPolicy = null) {
   });
 }
 
-function assessLatestFreshness(latest, provider, now) {
+function assessLatestFreshness(latest, provider, now, continuity = null) {
   const contract = PROVIDER_CONTRACTS[provider];
   const runAt = latest.latest.run_at;
   const run = parseUtc(runAt, "latest.latest.run_at", { onHour: true });
@@ -695,6 +701,8 @@ function assessLatestFreshness(latest, provider, now) {
     },
     provider,
     now,
+    null,
+    continuity,
   );
 }
 
@@ -1506,6 +1514,7 @@ class ConditionalJsonTransport {
 
   cacheKind(path) {
     if (path === "latest.json") return "latest";
+    if (/^runs\/\d{8}T\d{6}Z\/continuity\.json$/.test(path)) return "continuity";
     if (/^runs\/\d{8}T\d{6}Z\/release\.json$/.test(path)) return "release";
     if (/^runs\/\d{8}T\d{6}Z\/manifest\.json$/.test(path)) return "manifest";
     if (/^runs\/\d{8}T\d{6}Z\/municipalities\/\d{6}\.json$/.test(path)) {
@@ -1518,7 +1527,7 @@ class ConditionalJsonTransport {
     if (kind === "latest") return ["latest:0"];
     const count = kind === "manifest"
       ? CACHE_MANIFEST_SLOTS
-      : kind === "release"
+      : kind === "release" || kind === "continuity"
         ? CACHE_RELEASE_SLOTS
         : CACHE_MUNICIPALITY_SLOTS;
     return Array.from({ length: count }, (_, index) => `${kind}:${index}`);
@@ -1528,6 +1537,7 @@ class ConditionalJsonTransport {
     return [
       ...this.slotIds("latest"),
       ...this.slotIds("release"),
+      ...this.slotIds("continuity"),
       ...this.slotIds("manifest"),
       ...this.slotIds("municipality"),
     ];
@@ -1661,7 +1671,7 @@ class ConditionalJsonTransport {
 
   maximumBytes(kind) {
     if (kind === "latest") return MAX_LATEST_BYTES;
-    if (kind === "release") return MAX_RELEASE_BYTES;
+    if (kind === "release" || kind === "continuity") return MAX_RELEASE_BYTES;
     if (kind === "manifest") return MAX_MANIFEST_BYTES;
     return MAX_PAYLOAD_BYTES;
   }
@@ -1770,7 +1780,7 @@ class ConditionalJsonTransport {
       WEATHER_V1_PROVIDERS.CAMS_EUROPE_POLLEN,
     ]) {
       const index = this.readIndex(provider);
-      for (const kind of ["release", "manifest", "municipality"]) {
+      for (const kind of ["release", "continuity", "manifest", "municipality"]) {
         for (const record of this.scanKind(provider, kind, index)) {
           const match = /^runs\/(\d{8}T\d{6}Z)\//.exec(record.path);
           if (!match || !disabled.has(match[1])) continue;
@@ -1787,12 +1797,13 @@ class ConditionalJsonTransport {
     const records = [
       ...this.scanKind(provider, "latest", index),
       ...this.scanKind(provider, "release", index),
+      ...this.scanKind(provider, "continuity", index),
       ...this.scanKind(provider, "manifest", index),
       ...this.scanKind(provider, "municipality", index),
     ];
     let total = records.reduce((sum, record) => sum + record.body_bytes, 0);
     if (total <= CACHE_BODY_BUDGET_BYTES) return;
-    const kindPriority = { municipality: 0, manifest: 1, release: 2, latest: 3 };
+    const kindPriority = { municipality: 0, manifest: 1, release: 2, continuity: 2, latest: 3 };
     const candidates = records
       .filter(({ slotId }) => slotId !== protectedSlotId)
       .sort((left, right) => {
@@ -2386,7 +2397,7 @@ function assertCamsContextEnabled(context) {
   }
 }
 
-function validateCamsMemberSnapshot({ latest, release, provider, role, catalog, now }) {
+function validateCamsMemberSnapshot({ latest, release, provider, role, catalog, now, continuity }) {
   const component = release.components[role];
   const runAt = runAtFor(component.source_run_id, `CAMS ${role}`);
   const synthetic = validateLatest(
@@ -2413,13 +2424,13 @@ function validateCamsMemberSnapshot({ latest, release, provider, role, catalog, 
   return Object.freeze({
     component,
     document: synthetic,
-    freshness: assessLatestFreshness(synthetic, provider, now),
+    freshness: assessLatestFreshness(synthetic, provider, now, continuity),
     provider,
     role,
   });
 }
 
-function validateCamsFamilyMembers(latest, release, catalog, now) {
+function validateCamsFamilyMembers(latest, release, catalog, now, continuity = null) {
   const current = clockMilliseconds(now);
   const snapshotClock = () => current;
   return Object.freeze(Object.fromEntries(
@@ -2432,6 +2443,7 @@ function validateCamsFamilyMembers(latest, release, catalog, now) {
         role,
         catalog,
         now: snapshotClock,
+        continuity,
       }),
     ]),
   ));
@@ -2444,13 +2456,13 @@ function camsMemberLatestFromFamily({ family, provider, role, catalog }) {
     fail("FAMILY_CONTEXT_REQUIRED", "snapshot CAMS privo del contesto familiare verificato");
   }
   const synthetic = validateLatest(member.document, provider, catalog);
-  const token = result(
+  const token = Object.freeze({ ...result(
     synthetic,
     family,
     `${CAMS_FAMILY_SCOPE}/${family.document.latest.release_path}#${role}`,
     member.freshness,
     family.cachePersisted,
-  );
+  ), familyRelease: family.document.latest, familyReleasePublishedAt: family.release.published_at });
   const context = Object.freeze({
     family,
     component: member.component,
@@ -2464,7 +2476,38 @@ function camsMemberLatestFromFamily({ family, provider, role, catalog }) {
   return token;
 }
 
-function createCamsFamilyClient({ catalog, now, transport }) {
+async function readCamsContinuity({ latest, release, transport, signal, catalog }) {
+  const path = `runs/${release.source_run_id}/continuity.json`;
+  let loaded;
+  try {
+    loaded = await transport.request(CAMS_FAMILY_SCOPE, path, signal);
+  } catch (error) {
+    // Old readers reject the unknown path (400); legacy/new readers without an
+    // opt-in publication return 404. A temporary miss can use only the 30h v1
+    // contract. A validated cached sidecar is handled by the transport itself.
+    if (!error?.aborted && (error?.code === "TRANSPORT_FAILURE"
+      || error?.code === "HTTP_ERROR" && ([400,404,408,429].includes(error.httpStatus) || error.httpStatus >= 500))) {
+      if ([400,404].includes(error.httpStatus)) transport.discard(CAMS_FAMILY_SCOPE, path);
+      return null;
+    }
+    transport.discard(CAMS_FAMILY_SCOPE, path);
+    throw error;
+  }
+  try {
+    const { document } = parseCanonicalJson(loaded.bytes, 4096, "CAMS continuity");
+    validateCamsContinuity(document, {
+      runId: release.source_run_id, releaseSha256: latest.latest.release_sha256,
+      releaseJsonBytes: latest.latest.release_json_bytes, issuedAt: release.published_at, catalog,
+    });
+    loaded.commit();
+    return deepFreeze(document);
+  } catch (error) {
+    transport.discard(CAMS_FAMILY_SCOPE, path);
+    fail("CONTINUITY_MISMATCH", "policy di continuita CAMS non verificabile", error);
+  }
+}
+
+function createCamsFamilyClient({ catalog, now, transport, camsContinuity }) {
   const latestPath = "latest.json";
   const state = transport.camsFamilyState();
   const fetchLatest = async (signal, onFamilyLatest) => {
@@ -2520,7 +2563,9 @@ function createCamsFamilyClient({ catalog, now, transport }) {
       if (release.source_run_id !== descriptor.source_run_id) {
         fail("RUN_MISMATCH", "release CAMS non coincide col run indicato da family latest");
       }
-      const members = validateCamsFamilyMembers(latest, release, catalog, now);
+      const continuity = camsContinuity
+        ? await readCamsContinuity({ latest, release, transport, signal, catalog }) : null;
+      const members = validateCamsFamilyMembers(latest, release, catalog, now, continuity);
 
       // The immutable release is persisted first. A crash between these two
       // writes can leave an unreachable release, never a latest pointer whose
@@ -2536,6 +2581,7 @@ function createCamsFamilyClient({ catalog, now, transport }) {
       const family = Object.freeze({
         document: deepFreeze(latest),
         release: deepFreeze(release),
+        continuity,
         path: `${CAMS_FAMILY_SCOPE}/${latestPath}`,
         releasePath: `${CAMS_FAMILY_SCOPE}/${releasePath}`,
         etag: latestLoaded.etag,
@@ -2657,7 +2703,7 @@ function createCamsMemberClient({ provider, catalog, istatCodes, now, transport,
         if (manifest.source_run_id !== descriptor.source_run_id || manifest.run_at !== latest.latest.run_at) {
           fail("RUN_MISMATCH", "manifest non coincide col run CAMS rilasciato atomicamente");
         }
-        const freshness = assessFreshness(manifest, provider, now);
+        const freshness = assessFreshness(manifest, provider, now, null, context.family.continuity);
         assertCamsContextEnabled(context);
         const cachePersisted = loaded.commit();
         const manifestResult = result(manifest, loaded, path, freshness, cachePersisted);
@@ -2703,7 +2749,7 @@ function createCamsMemberClient({ provider, catalog, istatCodes, now, transport,
         }
         const parsed = parseCanonicalJson(loaded.bytes, MAX_PAYLOAD_BYTES, `${provider} payload ${istatCode}`);
         const payload = validatePayload(parsed.document, provider, catalog, istatCode, manifest);
-        const freshness = assessFreshness(payload, provider, now);
+        const freshness = assessFreshness(payload, provider, now, null, context.family.continuity);
         assertCamsContextEnabled(context);
         const cachePersisted = loaded.commit();
         return result(payload, loaded, path, freshness, cachePersisted);
@@ -2749,8 +2795,10 @@ export function createWeatherV1Client({
   force = false,
   iconWindowPolicy = null,
   readPrefetchedObject = null,
+  camsContinuity = false,
 } = {}) {
   validateDependencies(fetchImpl, now, force);
+  if (typeof camsContinuity !== "boolean") fail("INVALID_CONFIG", "camsContinuity deve essere booleano");
   if (readPrefetchedObject !== null && typeof readPrefetchedObject !== "function") {
     fail("INVALID_CONFIG", "lettura prefetch weather v1 non valida");
   }
@@ -2768,6 +2816,7 @@ export function createWeatherV1Client({
     catalog: normalized.catalog,
     now,
     transport,
+    camsContinuity,
   });
   return Object.freeze({
     icon2i: createProviderClient({

@@ -486,6 +486,6 @@ class CommunityReputationResponse(BaseModel):
     validated_reports: int = Field(ge=0)
     pending_reports: int = Field(ge=0)
     rank: CommunityReputationRank
-    max_daily_awards: int = Field(gt=0)
+    max_daily_awards: int | None = Field(default=None, gt=0)
     retention_seconds: int = Field(gt=0)
     source: CommunitySource

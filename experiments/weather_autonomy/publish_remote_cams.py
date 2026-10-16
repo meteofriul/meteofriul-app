@@ -132,7 +132,7 @@ def save_remote_cams_decoded(*, paths, state_store):
     return prepared
 
 
-def publish_remote_cams(*, paths, published_at, state_store, data_store, prepared=None):
+def publish_remote_cams(*, paths, published_at, state_store, data_store, prepared=None, cams_continuity=False):
     if state_store is data_store:
         raise ValueError("private state and data stores must be separate")
     catalog = load_catalog()
@@ -146,7 +146,7 @@ def publish_remote_cams(*, paths, published_at, state_store, data_store, prepare
     ))
     return commit_prepared_cams_lifecycle(
         prepared=prepared, catalog=catalog, state_store=ObjectStateStore(state_store),
-        publisher=ContractV1Publisher(data_store, catalog),
+        publisher=ContractV1Publisher(data_store, catalog, cams_continuity=cams_continuity),
         owner_id="cams-cloud-" + uuid4().hex,
         published_at=resolved.intent.published_at,
     )

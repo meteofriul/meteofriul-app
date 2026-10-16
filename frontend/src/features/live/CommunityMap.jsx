@@ -1,3 +1,4 @@
+import { isLocalCommunityPilot } from "../../services/localCommunityPilot";
 import {
   ArrowLeft,
   Check,
@@ -316,6 +317,7 @@ export function CommunityMapPhenomenon({
   confirmationCounts = null,
   confirmationEndedActionLabel,
   confirmationStatus = "idle",
+  confirmationError = "",
   confirmationVote = "",
   copy,
   hideConfirmationDetails = false,
@@ -810,6 +812,11 @@ export function CommunityMapPhenomenon({
               </span>
             </button>
           </div>
+          {hideConfirmationDetails && confirmationStatus === "error" ? (
+            <small role="status" className="mf-live-community-map__confirmation-summary">
+              {confirmationError || copy.confirmError}
+            </small>
+          ) : null}
           {!hideConfirmationDetails ? (
             <>
               <small className="mf-live-community-map__denial-explanation">
@@ -820,7 +827,7 @@ export function CommunityMapPhenomenon({
                 className="mf-live-community-map__confirmation-summary"
               >
                 {confirmationStatus === "error"
-                  ? copy.confirmError
+                  ? confirmationError || copy.confirmError
                   : confirmationStatus === "success"
                     ? votingLocked
                       ? copy.denialDone
@@ -853,6 +860,7 @@ export function CommunityMapPhenomenon({
 export function CommunityMap({
   confirmationCountsByGroup = {},
   confirmationStatuses = {},
+  confirmationMessages = {},
   copy,
   immersive = false,
   inferredOwnGroupIds = [],
@@ -1160,7 +1168,7 @@ export function CommunityMap({
           <div className="mf-live-community-map__phenomena">
             {(selectedMarker.phenomena || [selectedMarker]).map((phenomenon) => {
               const confirmationStatus = confirmationStatuses[phenomenon.groupId] || "idle";
-              const confirmationVote = getCommunityVote(personalState, phenomenon.groupId);
+              const confirmationVote = getCommunityVote(personalState, phenomenon.groupId, isLocalCommunityPilot() ? phenomenon.reportIds || [] : undefined);
               const storedOwnReport = getOwnCommunityReport(personalState, phenomenon.groupId);
               const ownReport = storedOwnReport || (
                 inferredOwnGroupIds.includes(phenomenon.groupId)
@@ -1176,6 +1184,7 @@ export function CommunityMap({
                 <CommunityMapPhenomenon
                   confirmationCounts={confirmationCountsByGroup[phenomenon.groupId]}
                   confirmationStatus={confirmationStatus}
+                  confirmationError={confirmationMessages[phenomenon.groupId]}
                   confirmationVote={confirmationVote}
                   copy={copy}
                   key={`${phenomenon.groupId || phenomenon.id}:${ownReport?.reportId || "guest"}`}

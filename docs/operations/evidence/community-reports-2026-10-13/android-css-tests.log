@@ -1,0 +1,12 @@
+
+> meteo-friul-ui-3@0.1.14 test
+> vitest run --configLoader native src/services/nativeSystemBars.test.js src/ui/shellChromeCss.test.js src/ui/safeAreaCss.test.js src/ui/layout/layoutCss.test.js
+
+
+ RUN  v4.1.9 F:/proggetto Meteo Friul App/meteo FRIUL/frontend
+
+
+ Test Files  4 passed (4)
+      Tests  19 passed (19)
+   Start at  19:01:13
+   Duration  1.89s (transform 1.80s, setup 0ms, import 2.28s, tests 979ms, environment 1ms)

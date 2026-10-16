@@ -184,3 +184,14 @@ it("leaves the non-detail legacy footer and copy unchanged", () => {
   expect(document.body.textContent).not.toContain("Stima modellistica su griglia");
   expect(document.body.textContent).not.toContain("Modello matematico a larga scala");
 });
+
+
+it("shows the waiting update label on both CAMS cards while preserving run and validity", () => {
+  const continuityLabel = "Previsione della corsa precedente · aggiornamento in attesa";
+  const document = renderDocument(<WeatherCamsCard detailMode model={{ ...DETAIL_MODEL, continuityLabel,
+    validAt: "2026-09-15T09:00:00Z", air: { ...DETAIL_MODEL.air, valid_at: "2026-09-15T09:00:00Z" } }} />);
+  expect([...document.querySelectorAll(".mf-weather-cams-card__status")].map(row => row.textContent))
+    .toEqual([continuityLabel, continuityLabel]);
+  expect(document.body.textContent).toContain("14/09");
+  expect(document.body.textContent).not.toContain("Ultimo dato verificato");
+});

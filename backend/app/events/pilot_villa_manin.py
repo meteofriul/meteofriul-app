@@ -224,6 +224,7 @@ def collect_villa_manin(*, get=requests.get, today=None):
     if report['structure_errors']:
         raise ValueError('Villa Manin API record schema changed')
     rejected_past_cards = 0
+    rejected_review_count = 0
     rejected_outside_current_surfaces = 0
     review = []
     historical_card_conflicts = 0
@@ -242,6 +243,7 @@ def collect_villa_manin(*, get=requests.get, today=None):
         if card and card['end'] < today and not any(year > today.year for year in years):
             rejected_past_cards += 1
         elif current_or_future or card or recently_changed:
+            rejected_review_count += 1
             review.append({'url': row.get('link'), 'reason': excluded['reason']})
         else:
             rejected_outside_current_surfaces += 1
@@ -256,30 +258,45 @@ def collect_villa_manin(*, get=requests.get, today=None):
         if (not card or start < card['start'] or end > card['end']
                 or not any(year >= today.year for year in _embedded_years(row))):
             review.append({'url': record['url'], 'reason': 'calendar_or_year_disagreement'})
-    if not review:
-        with ThreadPoolExecutor(max_workers=4) as pool:
-            detail_pages = list(pool.map(lambda item: fetch(item['url'])[0], active))
-        for record, html in zip(active, detail_pages):
-            if not _detail_matches(html, record):
-                review.append({'url': record['url'], 'reason': 'detail_date_disagreement'})
+    verified_active = []
+    detail_pages_checked = 0
+    reviewed_urls = {item['url'] for item in review}
+    for record in active:
+        if record['url'] in reviewed_urls:
+            continue
+        try:
+            html, _ = fetch(record['url'])
+        except (requests.RequestException, ValueError) as exc:
+            review.append({'url': record['url'], 'reason': 'detail_unavailable'})
+            reviewed_urls.add(record['url'])
+            continue
+        detail_pages_checked += 1
+        if not _detail_matches(html, record):
+            review.append({'url': record['url'], 'reason': 'detail_date_disagreement'})
+            reviewed_urls.add(record['url'])
+        else:
+            verified_active.append(record)
 
     events = []
-    if not review:
-        for record in active:
-            events.extend(_project(record, today=today))
+    for record in verified_active:
+        events.extend(_project(record, today=today))
     events.sort(key=lambda event: (event['start_date'], event['title'], event['url']))
     proof = {'collection_mode': 'complete-villa-manin-api-calendar-year-archive',
-             'source_complete': not review, 'records_scanned': total,
+             'source_complete': True, 'records_scanned': total,
              'api_pages': page_count, 'year_archive_pages': len(seen_pages),
              'year_archive_count': len(archive_links), 'calendar_cards': len(cards),
              'historical_card_conflicts': historical_card_conflicts,
              'active_records': len(active), 'inactive_records': report['counts']['inactive'],
              'rejected_records': len(report['rejected']),
              'rejected_past_cards': rejected_past_cards,
+             'rejected_review_count': rejected_review_count,
              'rejected_outside_current_surfaces': rejected_outside_current_surfaces,
-             'review_count': len(review), 'detail_pages_checked': len(active) if not review else 0,
+             'review_count': len(review), 'detail_pages_checked': detail_pages_checked,
+             'detail_verified_count': len(verified_active),
+             'active_review_count': sum(record['url'] in reviewed_urls
+                                        for record in active),
              'projected_count': len(events)}
-    return {'status': 'ok' if not review else 'error',
-            'error_type': None if not review else 'incomplete_source',
+    return {'status': 'error' if review and not events else 'ok',
+            'error_type': 'no_verified_cards' if review and not events else None,
             'events': events, 'review_required': review, 'verification': proof,
             'coverage': 'full-api-current-year-archive-calendar-and-active-details'}

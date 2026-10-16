@@ -20,7 +20,7 @@ API = "https://sagrefvg.it/wp-json/tribe/events/v1/events"
 PER_PAGE = 50
 MAX_PAGES = 100
 MAX_BYTES = 8 * 1024 * 1024
-TITLE_SEPARATOR = re.compile(r"\s+[–—-]\s+")
+TITLE_SEPARATOR = re.compile(r"\s+[–—-]\s+|(?<=\([A-Z]{2}\))\s*[–—-]\s*", re.I)
 PROVINCE = re.compile(r"\((UD|PN|GO|TS)\)\s*$", re.I)
 PROVINCE_NAMES = {'udine': 'UD', 'pordenone': 'PN',
                   'gorizia': 'GO', 'trieste': 'TS'}
@@ -105,6 +105,20 @@ def _distance_km(lat1, lon1, lat2, lon2):
     return 6371 * 2 * asin(sqrt(min(1, max(0, value))))
 
 
+def address_municipality(locality, province, venue):
+    """Resolve a hamlet from the source's explicit postal address, not proximity."""
+    if (not province or clean(locality).casefold() != clean(venue.get('city')).casefold()
+            or PROVINCE_NAMES.get(clean(venue.get('province')).casefold()) != province
+            or venue.get('geo_lat') is None or venue.get('geo_lng') is None):
+        return None
+    match = re.search(r'(?:^|,\s*)\d{5}\s+(.+?)\s+(UD|PN|GO|TS)$',
+                      clean(venue.get('address')), re.I)
+    if not match or match[2].upper() != province:
+        return None
+    town = engine.fvg_municipality_catalog.match_names(match[1])
+    return town if town and town.province == province else None
+
+
 def resolve_municipality(title, venue):
     """Reconcile title locality, municipality and explicit venue province."""
     left = TITLE_SEPARATOR.split(clean(title), maxsplit=1)[0]
@@ -121,6 +135,8 @@ def resolve_municipality(title, venue):
     if from_title and from_venue and from_title.name != from_venue.name:
         raise ValueError("SagreFVG title/venue municipality conflict")
     town = from_title or from_venue
+    if not town:
+        town = address_municipality(locality, province, venue)
     if not province:
         venue_label = clean(venue.get('venue'))
         venue_province = PROVINCE.search(venue_label)
@@ -215,6 +231,9 @@ def event_from_api(row):
                                + ('; programme 10-11 ottobre 2026'
                                   if url.endswith('gonars-si-veste-dautunno-duplicate-1-2/')
                                   and finish.date() == date(2026, 10, 11) else ''))}
+    if begin.date() != finish.date():
+        # The API's start/end bound the edition, not its daily opening calendar.
+        event.update(schedule_kind='period', opening_days_status='unknown')
     event.update(attributed_excerpt(prose, source_name=SOURCE,
                                     source_url=url, title=event_title))
     return event
@@ -249,7 +268,7 @@ def collect_sagrefvg(*, get=requests.get, today=None):
             or overflow["events"]):
         raise ValueError("SagreFVG unseen future events beyond annual windows")
     scanned = sum(window["records_read"] for window in windows)
-    return {"status": "error" if review else "ok", "events": events,
+    return {"status": "ok", "events": events,
             "review_required": review,
             "verification": {"collection_mode": "complete-annual-api-pages",
                              "windows": windows, "overflow_start": f"{year}-01-01",

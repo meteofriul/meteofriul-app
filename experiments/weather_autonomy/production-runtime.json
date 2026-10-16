@@ -8,12 +8,20 @@
       "cloud_run_job": "meteofriul-cams",
       "cloud_scheduler_job": "meteofriul-cams-refresh",
       "environment_file": "production-cams.env.yaml",
-      "schedule": "0 10,15,20 * * *",
+      "schedule": "0 9,10,11,15,20 * * *",
       "time_zone": "Etc/UTC",
       "environment": {
         "WEATHER_PUBLIC_BASE_URL": "https://meteofriul-weather-49007668366.europe-west1.run.app",
         "WEATHER_UV_UTC_HOURS": "15,20"
-      }
+      },
+      "task_timeout_seconds": 1200,
+      "max_retries": 0,
+      "recovery_budget_seconds": 900,
+      "ads_wait_seconds": 120,
+      "regional_pass_reserve_seconds": 480,
+      "uv_pass_reserve_seconds": 180,
+      "full_forecast_deadline_utc": "10:00",
+      "scheduler_retry_count": 0
     }
   }
 }

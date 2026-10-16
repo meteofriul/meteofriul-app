@@ -94,9 +94,11 @@ class CamsWorkerRecoveryTests(TestCase):
              patch('cams_readback.verify_uv', side_effect=ReadbackPending('public_reader_not_current')), \
              self.assertRaises(RuntimeError):
             self.run_worker(budget=1)
-        last = json.loads(self.output.getvalue().splitlines()[-1])
+        rows = [json.loads(line) for line in self.output.getvalue().splitlines()]
+        last = [row for row in rows if 'components' in row][-1]
         self.assertEqual(last['components']['uv']['reason_code'], 'readback_pending')
-        self.assertEqual(last['retry_after_seconds'], 60)
+        self.assertIsNone(last['retry_after_seconds'])
+        self.assertEqual(rows[-1]['reason_code'], 'execution_budget_exhausted')
 
     def test_regional_result_is_persisted_before_uv_crash(self):
         with patch('cloud_worker._cams_region_step', return_value=VERIFIED), \
@@ -144,8 +146,8 @@ class CamsWorkerRecoveryTests(TestCase):
             self.run_worker(wait=wait, clock=lambda: elapsed[0])
         cli.assert_not_called()
         acquisition.assert_not_called()
-        self.assertEqual(metadata.call_count, 3)
-        self.assertEqual(pauses, [60, 180])
+        self.assertEqual(metadata.call_count, 4)
+        self.assertEqual(pauses, [30, 60, 120])
         self.assertLess(elapsed[0], 480)
         uv.assert_called_once()
         verify_uv.assert_called_once()
@@ -182,7 +184,7 @@ class CamsWorkerRecoveryTests(TestCase):
         def pending(**kwargs):
             plan, raw, digest = load_verified_request_plan(kwargs['request_plan_path'])
             seen_plans.append((plan['run_date'], raw, digest))
-            self.assertEqual(kwargs['max_wait'], 45)
+            self.assertEqual(kwargs['max_wait'], 120)
             return {'safe_reason': 'ADS wait budget reached; job saved for explicit resume, not resubmitted'}
 
         with patch('cams_request_plan.fetch_verified_metadata', side_effect=[
@@ -192,12 +194,12 @@ class CamsWorkerRecoveryTests(TestCase):
              patch('cams_readback.verify_uv', return_value={}), self.assertRaises(RuntimeError):
             self.run_worker(wait=wait, clock=lambda: elapsed[0])
         self.assertEqual(metadata.call_count, 2)
-        self.assertEqual(acquisition.call_count, 2)
-        self.assertEqual(len(seen_plans), 2)
-        self.assertEqual(seen_plans[0], seen_plans[1])
+        self.assertEqual(acquisition.call_count, 3)
+        self.assertEqual(len(seen_plans), 3)
+        self.assertTrue(all(p == seen_plans[0] for p in seen_plans))
         self.assertEqual(self.state.get('state/plans/cams/2026-09-09.json').body, seen_plans[0][1])
         uv.assert_called_once()
-        last = json.loads(self.output.getvalue().splitlines()[-1])
+        last = [json.loads(line) for line in self.output.getvalue().splitlines() if 'components' in json.loads(line)][-1]
         self.assertFalse(last['complete'])
         self.assertEqual(last['components']['air']['status'], 'remote_pending')
 
@@ -223,6 +225,6 @@ class CamsWorkerRecoveryTests(TestCase):
         metadata.assert_called_once()
         acquisition.assert_not_called()
         uv.assert_called_once()
-        last = json.loads(self.output.getvalue().splitlines()[-1])
+        last = [json.loads(line) for line in self.output.getvalue().splitlines() if 'components' in json.loads(line)][-1]
         self.assertFalse(last['complete'])
         self.assertEqual(last['components']['air']['status'], 'manual_review')

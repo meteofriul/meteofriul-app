@@ -3,6 +3,8 @@ import { getPilotMutationFeedback } from "./pilotReportOperations";
 
 export function getReportFeedback(copy, result) {
   if (result?.ok) return copy.reportSuccess;
+  if (result?.reason === "review_location_changed") return copy.reportReviewLocationChanged;
+  if (result?.reason === "vote_location_required") return copy.confirmGpsRequired;
   if (isLocalCommunityPilot() && (result?.code || result?.detail?.code || result?.uncertain || ["pending_operation", "persistent_identity_required"].includes(result?.reason))) {
     return getPilotMutationFeedback(result);
   }

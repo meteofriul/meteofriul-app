@@ -180,8 +180,8 @@ def parse_day(html, *, day, url, metadata):
             or not any(tag == "title" and re.search(rf"Calendario\s+{day.year}\b", text, re.I)
                        for tag, text in page.headings)):
         raise ValueError("calendar heading disagrees with URL")
-    events, ignored = [], []
-    for lines in page.widgets:
+    events, ignored, review = [], [], []
+    for widget_index, lines in enumerate(page.widgets, start=1):
         if not lines:
             continue
         match = SLOT.fullmatch(lines[0])
@@ -189,32 +189,43 @@ def parse_day(html, *, day, url, metadata):
             ignored.append(lines)
             continue
         hour, end_hour, first = match.groups()
+        source_id = f"{day.isoformat()}-{widget_index}"
         if (int(hour[:2]) > 23 or int(hour[3:]) > 59
                 or (end_hour and (int(end_hour[:2]) > 23 or int(end_hour[3:]) > 59
                                   or end_hour <= hour))):
-            raise ValueError("invalid calendar time")
+            review.append({'url': url, 'source_id': source_id,
+                           'reason': 'invalid_calendar_time'})
+            continue
         if first in VENUES:
             city, venue = VENUES[first]
             if len(lines) < 2:
-                raise ValueError("venue without programme title")
+                review.append({'url': url, 'source_id': source_id,
+                               'reason': 'venue_without_title'})
+                continue
             title = lines[1]
             if title.lower().startswith("evento di pre-apertura"):
                 if len(lines) < 3:
-                    raise ValueError("pre-opening film missing")
+                    review.append({'url': url, 'source_id': source_id,
+                                   'reason': 'preopening_title_missing'})
+                    continue
                 title = lines[2]
             place = f"{city}, {venue}"
         else:
             if re.match(r"^(teatro|palace|auditorium)\b", first, re.I):
-                raise ValueError(f"unknown calendar venue: {first}")
+                review.append({'url': url, 'source_id': source_id,
+                               'reason': 'unknown_calendar_venue'})
+                continue
             city, venue, title, place = "Pordenone", None, first, "Pordenone"
         town = engine.fvg_municipality_catalog.match_names(city)
         if not title or not town or schedule_notice(*lines):
-            raise ValueError("incomplete or changed programme slot")
+            review.append({'url': url, 'source_id': source_id,
+                           'reason': 'incomplete_or_changed_slot'})
+            continue
         access = next((line for line in lines[1:4]
                        if "prenotazione obbligatoria" in line.lower()
                        or "ingresso gratuito" in line.lower()), "")
         event = {**programme_session_metadata(metadata), "source": SOURCE,
-                 "source_id": f"{day.isoformat()}-{len(events)+1}", "url": url,
+                 "source_id": source_id, "url": url,
                  "title": title, "start_date": day.isoformat(), "end_date": day.isoformat(),
                  "time": hour, "date_evidence_kind": "event_schedule",
                  "date_evidence": f"{day.isoformat()} {hour}", "event_city": city,
@@ -229,13 +240,20 @@ def parse_day(html, *, day, url, metadata):
         events.append(event)
     if (len(ignored) != 1 or ignored[0][0].upper() != heading
             or any(SLOT.fullmatch(line) for line in ignored[0][1:])
-            or not events):
+            or not events and not review):
         raise ValueError("unclassified calendar widget")
-    identities = {(event["start_date"], event["time"], event["title"], event["place"])
-                  for event in events}
-    if len(identities) != len(events):
-        raise ValueError("duplicate programme slot")
-    return events, {"widgets_scanned": len(page.widgets), "slots_parsed": len(events)}
+    unique, identities = [], set()
+    for event in events:
+        identity = (event["start_date"], event["time"], event["title"], event["place"])
+        if identity in identities:
+            review.append({'url': url, 'source_id': event['source_id'],
+                           'reason': 'duplicate_programme_slot'})
+        else:
+            identities.add(identity)
+            unique.append(event)
+    return unique, review, {"widgets_scanned": len(page.widgets),
+                            "slots_parsed": len(unique),
+                            "slots_reviewed": len(review)}
 
 
 def _read(get, url, *, limit):
@@ -261,13 +279,16 @@ def collect_cinema_muto(*, get=requests.get):
     cover = edition_cover(home_html, year=main_start.year)
     if cover:
         metadata["image"] = cover
-    events, days = [], []
+    events, days, review = [], [], []
     for day, url in pages:
-        parsed, proof = parse_day(_read(get, url, limit=1024 * 1024),
-                                  day=day, url=url, metadata=metadata)
+        parsed, issues, proof = parse_day(_read(get, url, limit=1024 * 1024),
+                                          day=day, url=url, metadata=metadata)
         events.extend(parsed)
+        review.extend(issues)
         days.append({"date": day.isoformat(), "url": url, **proof})
-    return {"status": "ok", "events": events, "review_required": [],
+    return {"status": "ok" if events else "error",
+            "error_type": None if events else "no_verified_cards",
+            "events": events, "review_required": review,
             "coverage": "official-html-calendar-pages-in-page-sitemap",
             "verification": {"collection_mode": "complete-official-html-calendar",
                              "edition_id": str(main_start.year),
@@ -277,4 +298,5 @@ def collect_cinema_muto(*, get=requests.get):
                              "end_date": pages[-1][0].isoformat(),
                              "sitemap_page_count": len(pages),
                              "records_scanned": sum(day["widgets_scanned"] for day in days),
-                             "parsed_count": len(events), "days": days}}
+                             "parsed_count": len(events),
+                             "review_count": len(review), "days": days}}

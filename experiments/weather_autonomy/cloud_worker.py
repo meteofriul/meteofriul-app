@@ -1,10 +1,11 @@
 """Weather acquisition/publication entrypoint. No scheduler is created here.
 
-Two ICON and four CAMS UTC slots/day bound new dispatches.
+Two ICON slots and four CAMS diagnostic buckets group durable outcomes.
+CAMS has five scheduled checks; its daily ADS identity prevents new submissions.
 ICON task retries reuse an authenticated durable publication checkpoint when present.
 Durable ADS records prevent duplicate submission across separate slots.
 """
-from datetime import datetime, timezone
+from datetime import datetime, timedelta, timezone
 import json
 import os
 import re
@@ -12,6 +13,11 @@ from pathlib import Path
 from tempfile import TemporaryDirectory
 from time import sleep, monotonic
 from uuid import uuid4
+from cams_runtime import (
+    ADS_WAIT_SECONDS, RECOVERY_DELAYS as CAMS_RECOVERY_DELAYS,
+    RECOVERY_BUDGET_SECONDS as CAMS_RECOVERY_BUDGET_SECONDS,
+    source_deferral, retry_reserve,
+)
 
 from google.cloud import storage
 from local_pipeline.gcs_object_store import GCSObjectStore
@@ -64,8 +70,15 @@ def _cams_region_step(state, data, now):
             # before skipping acquisition, then check the actual public reader.
             family = ContractV1Publisher(data, load_catalog()).read_verified_cams_family_latest()
             current = family['latest']['source_run_id']
+            from local_pipeline.cams_continuity import continuity_key
+            try:
+                data.head(continuity_key(current))
+                continuity_present = True
+            except ObjectNotFound:
+                continuity_present = False
             return {'status': 'verified', 'source_run_id': current,
-                    'reason_code': 'existing_family_verified', **verify_cams(data, current)}
+                    'reason_code': 'existing_family_verified', **verify_cams(data, current,
+                        **({'require_continuity': True} if continuity_present else {}))}
     except ObjectNotFound:
         pass
     published_at = now.strftime("%Y-%m-%dT%H:%M:%SZ")
@@ -97,7 +110,7 @@ def _cams_region_step(state, data, now):
                 plan_path.write_bytes(saved_plan)
         with phase("acquisition", provider="cams", run_date=day):
             report = retrieve_remote_cams(credentials_path=Path("/secrets/ads/credentials"),
-                request_plan_path=plan_path, scratch=root, state_store=state, max_wait=45)
+                request_plan_path=plan_path, scratch=root, state_store=state, max_wait=ADS_WAIT_SECONDS)
         if report.get("status") != "downloaded_pending_decode_validation":
             emit("publication_result", provider="cams", run_date=day,
                  status="pending", reason_code="acquisition_not_completed",
@@ -117,16 +130,15 @@ def _cams_region_step(state, data, now):
                 decoded_report.write_bytes(report_bytes)
             prepared = save_remote_cams_decoded(paths=paths, state_store=state)
             save_remote_cams_prepared(paths=paths, state_store=state, prepared=prepared)
+        continuity = os.environ.get("WEATHER_CAMS_CONTINUITY_ENABLED", "0") == "1"
         with phase("publication", provider="cams", run_date=day):
             publish_remote_cams(paths=paths, prepared=prepared,
-                published_at=published_at, state_store=state, data_store=data)
+                published_at=published_at, state_store=state, data_store=data,
+                **({"cams_continuity": True} if continuity else {}))
         emit("publication_result", provider="cams", status="published", run_date=day)
         return {'status': 'verified', 'source_run_id': run_id,
-                'reason_code': 'new_family_verified', **verify_cams(data, run_id)}
-
-
-CAMS_RECOVERY_DELAYS = (60, 180, 300)
-CAMS_RECOVERY_BUDGET_SECONDS = 480  # Existing Cloud Run timeout is 600 s.
+                'reason_code': 'new_family_verified', **verify_cams(data, run_id,
+                    **({'require_continuity': True} if continuity else {}))}
 
 
 def _cams_uv_policy(now):
@@ -236,11 +248,15 @@ def _run_cams(state, data, now, *, budget=CAMS_RECOVERY_BUDGET_SECONDS,
     started = clock()
     for attempt in range(len(CAMS_RECOVERY_DELAYS) + 1):
         # Regional failure must not suppress UV, nor vice versa.
-        if outcomes['air']['status'] not in ('verified', 'manual_review', 'permanent_failure'):
+        if outcomes['air']['status'] not in ('verified', 'source_pending', 'manual_review', 'permanent_failure'):
             try:
                 result = _cams_region_step(state, data, now)
             except Exception as error:
                 result = _cams_failure(error)
+                observed_now = now + timedelta(seconds=max(0, clock() - started))
+                deferred = source_deferral(error, observed_now)
+                if deferred is not None:
+                    result.update(deferred)
             result.setdefault('source_run_id', now.strftime('%Y%m%dT000000Z'))
             outcomes['air'] = dict(result)
             outcomes['pollen'] = dict(result)  # Same atomic release, explicit separate outcomes.
@@ -259,16 +275,27 @@ def _run_cams(state, data, now, *, budget=CAMS_RECOVERY_BUDGET_SECONDS,
             _persist_cams_outcome(state, slot, outcomes)
         if all(item['status'] in ('verified', 'disabled') for item in outcomes.values()):
             return outcomes
-        pending = any(item['status'] not in ('verified', 'disabled', 'manual_review', 'permanent_failure')
-                      for item in outcomes.values())
-        if not pending:
+        if (outcomes['air']['status'] == 'source_pending'
+                and outcomes['uv']['status'] in ('verified', 'disabled')):
+            # A successful probe is explicitly NOT a complete publication.
+            # Keep the last family and its original freshness metadata intact.
+            emit('publication_result', provider='cams', status='deferred',
+                 reason_code='source_not_ready_before_deadline', severity='WARNING')
+            return outcomes
+        reserve = retry_reserve(outcomes)
+        if not reserve:
             break
         delay = CAMS_RECOVERY_DELAYS[min(attempt, len(CAMS_RECOVERY_DELAYS)-1)]
-        _persist_cams_outcome(state, slot, outcomes, retry_after=delay)
-        # Leave room for a new pass. No frequency/configuration changes and no
-        # long-lived 50-minute task. Artifacts survive even a hard task timeout.
-        if attempt == len(CAMS_RECOVERY_DELAYS) or clock() - started + delay + 60 >= budget:
+        # Reserve the entire regional pass (ADS wait + decode + publication +
+        # readback), plus UV when needed. The 1200 s task has a further 300 s
+        # margin beyond this 900 s retry budget; checkpoints survive hard stops.
+        reason = ('retry_limit_reached' if attempt == len(CAMS_RECOVERY_DELAYS) else
+                  'execution_budget_exhausted' if clock() - started + delay + reserve >= budget else None)
+        if reason:
+            emit('cams_recovery_stopped', provider='cams', status='pending',
+                 reason_code=reason, retryable=True, severity='WARNING')
             break
+        _persist_cams_outcome(state, slot, outcomes, retry_after=delay)
         wait(delay)
     raise RuntimeError('CAMS components not all verified; see persisted component outcomes')
 

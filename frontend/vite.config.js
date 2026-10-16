@@ -31,6 +31,7 @@ export default defineConfig(({ command, mode }) => {
     androidBuildMarker: process.env.METEO_ANDROID_LOCAL_PILOT_GUARD_MARKER,
     cloud: process.env.METEO_PILOT_WEATHER_CLOUD === "1",
     community: process.env.METEO_PILOT_COMMUNITY_LOCAL === "1",
+    eventsLocal: process.env.METEO_PILOT_EVENTS_LOCAL === "1",
     nationalCloud: process.env.METEO_PILOT_NATIONAL_CLOUD === "1",
     stable: process.env.METEO_PILOT_STABLE_FRONTEND === "1",
     testNow: process.env.VITE_LOCAL_WEATHER_PILOT_NOW ?? pilotEnv.VITE_LOCAL_WEATHER_PILOT_NOW,

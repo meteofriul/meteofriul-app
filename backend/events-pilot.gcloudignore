@@ -7,6 +7,10 @@
 !backend/tests/test_attems_audit.py
 !backend/tests/fixtures/
 !backend/tests/fixtures/spazzapan_2026.json
+!backend/tests/fixtures/spazzapan_october_15_2026.json
+!backend/tests/fixtures/events_quarantine_october_15_2026.json
+!backend/tests/fixtures/mess_laboratori_2026.json
+!backend/tests/fixtures/mess_notizie_2026.json
 !backend/Dockerfile.events-pilot
 !backend/events-pilot-build.yaml
 **/__pycache__/**

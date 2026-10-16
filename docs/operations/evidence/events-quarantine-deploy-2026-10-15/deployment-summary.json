@@ -1,0 +1,87 @@
+{
+  "candidate_commit": "2a2a5f106b8185fd9a8f773b64552b20253df7a4",
+  "branch": "codex/events-quarantine-recovery",
+  "image": "europe-west1-docker.pkg.dev/meteo-friul/meteofriul/events-worker@sha256:529d93d115de05ff8d6039d09545d2d2e9da5fd87ace227b22f4be6e7b0c296b",
+  "recovery_rules_commit": "f39c223cc2f2a0a00c8cf8ca2c105d82c1f33078",
+  "resume_fix_commit": "c7f8579cb23b836b6c0be3ab4f8f8a8211798d9c",
+  "build_id": "8a55ce2d-7af7-4acb-8073-009bedfebaff",
+  "build_status": "SUCCESS",
+  "container_tests_passed": 483,
+  "container_test_counts": [
+    476,
+    7
+  ],
+  "backend_local_tests": {
+    "total": 1845,
+    "passed": 1844,
+    "skipped": 1,
+    "failed": 0
+  },
+  "api_revision": "meteofriul-events-00018-2vz",
+  "api_traffic": [
+    {
+      "latestRevision": true,
+      "percent": 100,
+      "revisionName": "meteofriul-events-00018-2vz"
+    }
+  ],
+  "job_generation": 42,
+  "execution": "meteofriul-events-refresh-fqld9",
+  "execution_requests": 3,
+  "full_cycle_completed": true,
+  "duration_seconds": 284.292938,
+  "previous_executions": [
+    {
+      "execution": "meteofriul-events-refresh-qjnd2",
+      "job_success": false,
+      "acceptance_success": false,
+      "reason": "regional_budget_and_unused_partial_checkpoint"
+    },
+    {
+      "execution": "meteofriul-events-refresh-sjf4v",
+      "job_success": true,
+      "acceptance_success": false,
+      "reason": "three_weather_contingency_false_positives"
+    }
+  ],
+  "snapshot": "2026-10-15T17:07:52.543611+00:00",
+  "catalog_generation": "1792084328436869",
+  "raw_event_count": 1715,
+  "publishable_sources": 15,
+  "failed_sources": [],
+  "quarantines_before": 18,
+  "quarantines_after": 6,
+  "target_events_visible": 9,
+  "newly_recovered_target_cards": 7,
+  "target_events_already_present_under_equivalent_url": 2,
+  "weather_regressions_restored": 3,
+  "resume_verified": {
+    "eligible_saved_results": 1289,
+    "reused_unchanged_results": 1289,
+    "new_reads": 47,
+    "full_independent_publication_gate": true
+  },
+  "runtime_invariants": {
+    "time": "2026-10-15T17:14:07.561409+00:00",
+    "image": "europe-west1-docker.pkg.dev/meteo-friul/meteofriul/events-worker@sha256:529d93d115de05ff8d6039d09545d2d2e9da5fd87ace227b22f4be6e7b0c296b",
+    "only_images_changed": true,
+    "scheduler_unchanged": true,
+    "main_unchanged": true,
+    "no_active_executions": true
+  },
+  "build_context_sha256": "da05cde7dd7b45ebe969aa7da426d47cf7b5f816e8ca403634b02d5b2b9e7706",
+  "initial_image": "europe-west1-docker.pkg.dev/meteo-friul/meteofriul/events-worker@sha256:df00ef24aea6d6548a36be4a145db23a147972a2f3b4951d925ce708fe62cab1",
+  "previous_image": "europe-west1-docker.pkg.dev/meteo-friul/meteofriul/events-worker@sha256:d66acfd960b1f0604b28e776243541333a3cb2d29526110dcff9fbf06970ad6e",
+  "main_commit": "5a68de5dc1607105f921d4d2b731170f1a8a0446",
+  "canonical_checkout_commit": "696cf0f5ae1e13bdbdc1b046c0f9b071872d21de",
+  "workspace_cleanliness": {
+    "canonical": "PASS",
+    "candidate": "PASS"
+  },
+  "main_changed": false,
+  "apk_changed": false,
+  "play_changed": false,
+  "github_pushed": false,
+  "monitoring_policies_changed": false,
+  "manual_catalog_changes": false
+}

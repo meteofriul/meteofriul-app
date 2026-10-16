@@ -1,5 +1,6 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { isDefinitiveAppExperience } from "../../services/localWeatherPilot";
+import { registerPilotBackHandler } from "../../services/pilotBackNavigation";
 
 import {
   AlertTriangle,
@@ -10,6 +11,7 @@ import {
   Eraser,
   ExternalLink,
   HeartHandshake,
+  Info,
   Languages,
   Loader2,
   MapPin,
@@ -18,6 +20,7 @@ import {
   Pencil,
   RefreshCw,
   ShieldCheck,
+  X,
 } from "lucide-react";
 
 import { DEFAULT_NOTIFICATION_PREFERENCES } from "../../app/notificationPreferences";
@@ -81,13 +84,20 @@ const COPY = {
       system: "Sistema",
     },
     profile: {
-      totalReports: "Segnalazioni totali: {count}",
+      totalReports: "Inviate: {count}",
       aliasChanged: "Nuovo alias: {alias}",
       changeAlias: "Cambia alias",
       label: "Profilo community anonimo",
       localAlias: "Sentinella Meteo",
       pendingReports: "Segnalazioni in attesa: {count}",
       pointsAbbreviation: "pt",
+      rulesTitle: "Sentinelle, alias e punti",
+      closeHelp: "Chiudi informazioni",
+      sentinelsHelp: <>Le <strong>Sentinelle Meteo</strong> sono le persone che condividono ciò che osservano nella propria zona.</>,
+      aliasHelp: <>Il tuo <strong>alias</strong> è un nome di fantasia in friulano, accompagnato da un’icona. Compare sulle tue segnalazioni e puoi cambiarlo senza perdere punti o storico.</>,
+      observersHelp: "Nelle schede, le icone rappresentano chi ha inviato le osservazioni. Toccale per leggere tutti gli alias.",
+      rulesSubtitle: "Inviate, Confermate e Punti",
+      rulesBody: "Inviate: ogni osservazione accettata. Confermate: quelle convalidate da un’altra installazione, anche senza premio. Un punto per segnalazione convalidata; per lo stesso fenomeno e Comune, 3 ore dall’ultimo punto. Nessun tetto giornaliero ai punti. Tranquillo e il solo voto non danno punti. I ranghi sono estetici e cambiano a 5 e 15 punti.",
       privacy: "Senza registrazione • Nome ed email non richiesti",
       rankDetail: "Rango {rank}: {points} punti convalidati",
       rankUnavailable: "Rango non disponibile",
@@ -96,7 +106,7 @@ const COPY = {
         novice: "Osservadôr dal Cîl",
         sentinel: "Sentinele dal Teritori",
       },
-      validatedReports: "Segnalazioni convalidate: {count}",
+      validatedReports: "Confermate: {count}",
     },
     rows: {
       activeCity: ["Località", "Udine"],
@@ -218,7 +228,14 @@ const COPY = {
       system: "Sisteme",
     },
     profile: {
-      totalReports: "Segnalazions totâls: {count}",
+      totalReports: "Mandadis: {count}",
+      rulesTitle: "Sentinelis, alias e ponts",
+      closeHelp: "Siere informazions",
+      sentinelsHelp: <>Lis <strong>Sentinelis Meteo</strong> a son lis personis che a condividin ce che a osservin te lôr zone.</>,
+      aliasHelp: <>Il to <strong>alias</strong> al è un non di fantasie in furlan, compagnât di une icone. Al comparìs su lis tôs segnalazions e tu puedis cambiâlu cence pierdi ponts o storic.</>,
+      observersHelp: "Tes schedis, lis iconis a rapresentin cui che al à mandât lis osservazions. Selezione lis iconis par lei ducj i alias.",
+      rulesSubtitle: "Mandadis, Confermadis e Ponts",
+      rulesBody: "Mandadis: ogni osservazion acetade. Confermadis: chês convalidadis di une altre instalazion, ancje cence premi. Un pont par segnalazion convalidade; pal stes fenomen e Comun, 3 oris dal ultin pont. Nissun limit zornaliêr ai ponts. Trancuil e il sôl vôt no dan ponts. I rancs a son estetics e a cambiin a 5 e 15 ponts.",
       aliasChanged: "Gnûf alias: {alias}",
       changeAlias: "Cambie alias",
       label: "Profîl community anonim",
@@ -233,7 +250,7 @@ const COPY = {
         novice: "Osservadôr dal Cîl",
         sentinel: "Sentinele dal Teritori",
       },
-      validatedReports: "Segnalazions convalidadis: {count}",
+      validatedReports: "Confermadis: {count}",
     },
     rows: {
       backgroundLocation: {
@@ -474,6 +491,17 @@ function PilotIdentityCard({
   reputation,
   totalReports,
 }) {
+  const helpDialog = useRef(null);
+  const [helpOpen, setHelpOpen] = useState(false);
+
+  useEffect(() => {
+    if (!helpOpen) return undefined;
+    return registerPilotBackHandler(() => {
+      helpDialog.current?.close();
+      setHelpOpen(false);
+    });
+  }, [helpOpen]);
+
   return (
     <section
       aria-labelledby="mf-settings-community-alias"
@@ -496,15 +524,54 @@ function PilotIdentityCard({
             <RefreshCw aria-hidden="true" size={18} strokeWidth={2.35} />
           </button>
         </span>
-        <span className="mf-settings-identity__privacy">
-          <ShieldCheck aria-hidden="true" size={13} strokeWidth={2.35} />
-          {copy.privacy}
-        </span>
       </span>
       <span className="mf-settings-identity__stats">
         <PilotReputationStat copy={copy} reputation={reputation} />
         <PilotIdentityStat count={totalReports} template={copy.totalReports} />
+        {reputation?.validatedReports != null ? <PilotIdentityStat count={reputation.validatedReports} template={copy.validatedReports} /> : null}
+        <button
+          aria-label={copy.rulesTitle}
+          aria-haspopup="dialog"
+          className="mf-settings-identity__info"
+          onClick={() => {
+            helpDialog.current?.showModal();
+            setHelpOpen(true);
+          }}
+          title={copy.rulesTitle}
+          type="button"
+        >
+          <Info aria-hidden="true" size={20} />
+        </button>
       </span>
+      <dialog
+        aria-labelledby="mf-settings-community-help-title"
+        className="mf-settings-community-help"
+        onClose={() => setHelpOpen(false)}
+        ref={helpDialog}
+      >
+        <header>
+          <h2 id="mf-settings-community-help-title">{copy.rulesTitle}</h2>
+          <button
+            aria-label={copy.closeHelp}
+            className="mf-settings-community-help__close"
+            onClick={() => helpDialog.current?.close()}
+            type="button"
+          >
+            <X aria-hidden="true" size={22} />
+          </button>
+        </header>
+        <div className="mf-settings-community-help__body">
+          <p>{copy.sentinelsHelp}</p>
+          <p>{copy.aliasHelp}</p>
+          <p>{copy.observersHelp}</p>
+          <p className="mf-settings-identity__privacy">
+            <ShieldCheck aria-hidden="true" size={15} />
+            {copy.privacy}
+          </p>
+          <h3>{copy.rulesSubtitle}</h3>
+          <p>{copy.rulesBody}</p>
+        </div>
+      </dialog>
       {notice ? (
         <span
           aria-live="polite"

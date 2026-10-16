@@ -385,9 +385,9 @@ describe("LiveView", () => {
     expect(markup).toContain("Ultime segnalazioni");
     expect(markup).toContain("1 conferma recente");
     expect(markup).toContain("mf-live-community-item__deny");
-    expect(markup).toContain("Smentisci");
+    expect(markup).toContain("Non c’è più");
     expect(markup).toContain(
-      "La nascondi dalla tua mappa. Con 3 smentite viene rimossa dalla mappa per tutti.",
+      "La nascondi dalla tua mappa. Con 3 voti “Non c’è più” viene rimossa dalla mappa per tutti.",
     );
     expect(markup).not.toContain('aria-label="Gestisci contenuto"');
     expect(markup).not.toContain("mf-live-community-item__flag");

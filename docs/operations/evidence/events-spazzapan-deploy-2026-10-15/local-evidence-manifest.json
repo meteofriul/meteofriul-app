@@ -1,0 +1,480 @@
+{
+  "directory": ".tmp/spazzapan-deploy-2026-10-15/deployment",
+  "files": [
+    {
+      "name": "account.json",
+      "bytes": 224,
+      "sha256": "08a8c64cffe2777bca453a8392b6a5dc6e8d2792ca36ac0a0261fa82140b5dee"
+    },
+    {
+      "name": "account.stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "api-after-collection-pass.json",
+      "bytes": 3476,
+      "sha256": "d83ca70c2ee61d7e9688b29c457ecf466956703361a3873a076ae28037fab856"
+    },
+    {
+      "name": "api-before-collection-pass.json",
+      "bytes": 3702,
+      "sha256": "238a04cde2818cde0ea22a902caaf335d4e688f0512d86ff6bd978033dd1c431"
+    },
+    {
+      "name": "build-latest.json",
+      "bytes": 4024,
+      "sha256": "44d884197043e00b20c98f695b22a0db56eba1ce043674354a8562be5c4d5dad"
+    },
+    {
+      "name": "build-latest.stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "build-logs.json",
+      "bytes": 193127,
+      "sha256": "5ea4738f28f8887696dc59565df702482fdc6330a8d64bed93fdc05688d8fd0f"
+    },
+    {
+      "name": "build-logs.stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "build-logs.txt",
+      "bytes": 27852,
+      "sha256": "aee87c05bd2fb7eff5b3d607f2e0c766e9ae68cbeed5f538ab1d9ab32ba3954b"
+    },
+    {
+      "name": "build-submit-intent.json",
+      "bytes": 109,
+      "sha256": "aebf0ffdc91057a6d0a696e52aa59cc5473617906bd12b987bac2bddab8b87e0"
+    },
+    {
+      "name": "build-submitted.json",
+      "bytes": 1846,
+      "sha256": "08acfa1ac1b223285c2c6ecc6c1c0fe00874f54c3e4044afdb50891a9654c807"
+    },
+    {
+      "name": "build-submitted.stderr.txt",
+      "bytes": 560,
+      "sha256": "12e71dc39e074f26c828aad0261c12aba13c0edbd8bcfca78d865ffba0053e4f"
+    },
+    {
+      "name": "catalog-after.json",
+      "bytes": 2921215,
+      "sha256": "2bc9d1e3a59f81f6a323426d313f53a1f9d01a5ebe3bdceccc683a783bbe7cb5"
+    },
+    {
+      "name": "catalog-after.stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "catalog-before.json",
+      "bytes": 2781272,
+      "sha256": "89b99286da3e35082665541abe4b29d52df6bf9c7ee3ef26a53b6a4cea12fe94"
+    },
+    {
+      "name": "catalog-before.stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "catalog-meta-after.json",
+      "bytes": 670,
+      "sha256": "f8ad38cfe79805ffbe6542c747e3d511c163f6473f989e3b57ab7aca27bf0fbe"
+    },
+    {
+      "name": "catalog-meta-after.stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "catalog-meta-before.json",
+      "bytes": 670,
+      "sha256": "3a9583d8681e379fe9f9108c9ded6256cfcd984054224b251da5463ff30c602a"
+    },
+    {
+      "name": "catalog-meta-before.stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "cycle-analysis.json",
+      "bytes": 8256,
+      "sha256": "1d17219f866bed7670b93c140ac01a0f5ac1327e438e2088dda0fb5880a61fbb"
+    },
+    {
+      "name": "deploy-api-invariants.json",
+      "bytes": 220,
+      "sha256": "9924182b15b574958c88496791eb9a63f9352347b4211926e26de366dacf6fa9"
+    },
+    {
+      "name": "deploy-job-invariants.json",
+      "bytes": 220,
+      "sha256": "9924182b15b574958c88496791eb9a63f9352347b4211926e26de366dacf6fa9"
+    },
+    {
+      "name": "execution-intent.json",
+      "bytes": 100,
+      "sha256": "c8e43adb94c6f598cb2205bba68e793d0ed1f2d86800ac293693ce365117fd60"
+    },
+    {
+      "name": "execution-latest.json",
+      "bytes": 4074,
+      "sha256": "d3b46d22207cc798484753164a04467b7fb4955d270ac387735d9c5589d55593"
+    },
+    {
+      "name": "execution-latest.stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "execution-logs.json",
+      "bytes": 23025,
+      "sha256": "02b200d0b5dae0082e1789eba1fd8acaee30afcdce82bac23493f0dfcbd8577d"
+    },
+    {
+      "name": "execution-logs.stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "execution-started.json",
+      "bytes": 3092,
+      "sha256": "a177fd2ec0a79c673bb45476033c282b2a9386057eb0019f535c254ee99b74f6"
+    },
+    {
+      "name": "execution-started.stderr.txt",
+      "bytes": 334,
+      "sha256": "e7599db532ac33dc35de3ea016083b64e4e08ec9b06620a134fbcd747f1b19e4"
+    },
+    {
+      "name": "executions-before.json",
+      "bytes": 44153,
+      "sha256": "10fbc90ea578946fa980bc3adad1ffbebe74c1294dcba2930e75b353ea11e937"
+    },
+    {
+      "name": "executions-before.stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "executions-final.json",
+      "bytes": 44064,
+      "sha256": "6fbc55247db998f98ad56bc764d13098382909439b0199487400d7e8b905900c"
+    },
+    {
+      "name": "executions-final.stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "executions-post-deploy-api.json",
+      "bytes": 44153,
+      "sha256": "10fbc90ea578946fa980bc3adad1ffbebe74c1294dcba2930e75b353ea11e937"
+    },
+    {
+      "name": "executions-post-deploy-api.stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "executions-post-deploy-job.json",
+      "bytes": 44153,
+      "sha256": "10fbc90ea578946fa980bc3adad1ffbebe74c1294dcba2930e75b353ea11e937"
+    },
+    {
+      "name": "executions-post-deploy-job.stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "executions-pre-deploy-api.json",
+      "bytes": 44153,
+      "sha256": "10fbc90ea578946fa980bc3adad1ffbebe74c1294dcba2930e75b353ea11e937"
+    },
+    {
+      "name": "executions-pre-deploy-api.stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "executions-pre-deploy-job.json",
+      "bytes": 44153,
+      "sha256": "10fbc90ea578946fa980bc3adad1ffbebe74c1294dcba2930e75b353ea11e937"
+    },
+    {
+      "name": "executions-pre-deploy-job.stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "executions-pre-execute.json",
+      "bytes": 44153,
+      "sha256": "10fbc90ea578946fa980bc3adad1ffbebe74c1294dcba2930e75b353ea11e937"
+    },
+    {
+      "name": "executions-pre-execute.stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "final-invariants.json",
+      "bytes": 328,
+      "sha256": "9c59d1c3ddbf5d6de1bac36b08080d6c6b23243354995d76c0ff724e30d2d3ca"
+    },
+    {
+      "name": "image-verification.json",
+      "bytes": 542,
+      "sha256": "2607d43c2367c6f3a7990f44e069ad0428d0641ef22df2cd9bcd7a7d7b36099b"
+    },
+    {
+      "name": "job-before.json",
+      "bytes": 3105,
+      "sha256": "6a7f0a64833afcd13f5841ca18bb37cd5da7799a4cf69afc557734fac8b6b0c6"
+    },
+    {
+      "name": "job-before.stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "job-final.json",
+      "bytes": 3108,
+      "sha256": "42ee2d6a24b35783085a60c521f5cfee8cba2485e18df2fa84648c5dd1f9fc91"
+    },
+    {
+      "name": "job-final.stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "job-post-deploy-api.json",
+      "bytes": 3105,
+      "sha256": "6a7f0a64833afcd13f5841ca18bb37cd5da7799a4cf69afc557734fac8b6b0c6"
+    },
+    {
+      "name": "job-post-deploy-api.stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "job-post-deploy-job.json",
+      "bytes": 3105,
+      "sha256": "085e4ad878638f0ce950310e56f404ebf943248cc46b9269f4bbb63b0d871334"
+    },
+    {
+      "name": "job-post-deploy-job.stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "job-pre-deploy-api.json",
+      "bytes": 3105,
+      "sha256": "6a7f0a64833afcd13f5841ca18bb37cd5da7799a4cf69afc557734fac8b6b0c6"
+    },
+    {
+      "name": "job-pre-deploy-api.stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "job-pre-deploy-job.json",
+      "bytes": 3105,
+      "sha256": "6a7f0a64833afcd13f5841ca18bb37cd5da7799a4cf69afc557734fac8b6b0c6"
+    },
+    {
+      "name": "job-pre-deploy-job.stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "job-pre-execute.json",
+      "bytes": 3105,
+      "sha256": "085e4ad878638f0ce950310e56f404ebf943248cc46b9269f4bbb63b0d871334"
+    },
+    {
+      "name": "job-pre-execute.stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "job-update.json",
+      "bytes": 3105,
+      "sha256": "085e4ad878638f0ce950310e56f404ebf943248cc46b9269f4bbb63b0d871334"
+    },
+    {
+      "name": "job-update.stderr.txt",
+      "bytes": 267,
+      "sha256": "1320f19a742fbf8fff9ae0b67f118bde4c380e8e8df1a11df6823b347dc65083"
+    },
+    {
+      "name": "post-cycle-observations.json",
+      "bytes": 3666,
+      "sha256": "00d22c674f1bf2a407b48286a41b6ef047c6c89cbc1a559728960deb09743f99"
+    },
+    {
+      "name": "preflight.json",
+      "bytes": 201,
+      "sha256": "b5b753afe0a97ddfb7a5c31b2efd877ace701b8db9182055a720203230b125ad"
+    },
+    {
+      "name": "scheduler-before.json",
+      "bytes": 1081,
+      "sha256": "8a9377511cc7ed6e9ffe746e3fe5378fb2c8f4e2dbe49690229f8f2b273ca215"
+    },
+    {
+      "name": "scheduler-before.stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "scheduler-final.json",
+      "bytes": 1081,
+      "sha256": "8a9377511cc7ed6e9ffe746e3fe5378fb2c8f4e2dbe49690229f8f2b273ca215"
+    },
+    {
+      "name": "scheduler-final.stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "scheduler-post-deploy-api.json",
+      "bytes": 1081,
+      "sha256": "8a9377511cc7ed6e9ffe746e3fe5378fb2c8f4e2dbe49690229f8f2b273ca215"
+    },
+    {
+      "name": "scheduler-post-deploy-api.stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "scheduler-post-deploy-job.json",
+      "bytes": 1081,
+      "sha256": "8a9377511cc7ed6e9ffe746e3fe5378fb2c8f4e2dbe49690229f8f2b273ca215"
+    },
+    {
+      "name": "scheduler-post-deploy-job.stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "scheduler-pre-deploy-api.json",
+      "bytes": 1081,
+      "sha256": "8a9377511cc7ed6e9ffe746e3fe5378fb2c8f4e2dbe49690229f8f2b273ca215"
+    },
+    {
+      "name": "scheduler-pre-deploy-api.stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "scheduler-pre-deploy-job.json",
+      "bytes": 1081,
+      "sha256": "8a9377511cc7ed6e9ffe746e3fe5378fb2c8f4e2dbe49690229f8f2b273ca215"
+    },
+    {
+      "name": "scheduler-pre-deploy-job.stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "scheduler-pre-execute.json",
+      "bytes": 1081,
+      "sha256": "8a9377511cc7ed6e9ffe746e3fe5378fb2c8f4e2dbe49690229f8f2b273ca215"
+    },
+    {
+      "name": "scheduler-pre-execute.stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "service-before.json",
+      "bytes": 4490,
+      "sha256": "ba011e6fbe93e0a0d1e1888c23a3687c21f9b935b063b3a09e9bd7ae7b58c292"
+    },
+    {
+      "name": "service-before.stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "service-final.json",
+      "bytes": 4490,
+      "sha256": "914451b19f42ebd8802fc0ec3f1eb8bf38fd409a5af931c8c19072a2dba63b62"
+    },
+    {
+      "name": "service-final.stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "service-post-deploy-api.json",
+      "bytes": 4490,
+      "sha256": "914451b19f42ebd8802fc0ec3f1eb8bf38fd409a5af931c8c19072a2dba63b62"
+    },
+    {
+      "name": "service-post-deploy-api.stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "service-post-deploy-job.json",
+      "bytes": 4490,
+      "sha256": "914451b19f42ebd8802fc0ec3f1eb8bf38fd409a5af931c8c19072a2dba63b62"
+    },
+    {
+      "name": "service-post-deploy-job.stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "service-pre-deploy-api.json",
+      "bytes": 4490,
+      "sha256": "ba011e6fbe93e0a0d1e1888c23a3687c21f9b935b063b3a09e9bd7ae7b58c292"
+    },
+    {
+      "name": "service-pre-deploy-api.stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "service-pre-deploy-job.json",
+      "bytes": 4490,
+      "sha256": "914451b19f42ebd8802fc0ec3f1eb8bf38fd409a5af931c8c19072a2dba63b62"
+    },
+    {
+      "name": "service-pre-deploy-job.stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "service-pre-execute.json",
+      "bytes": 4490,
+      "sha256": "914451b19f42ebd8802fc0ec3f1eb8bf38fd409a5af931c8c19072a2dba63b62"
+    },
+    {
+      "name": "service-pre-execute.stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "service-update.json",
+      "bytes": 4553,
+      "sha256": "ff2887ba116fa90c5d8a330aaf01594efd2474248e89c18b815befa8f7f4a4df"
+    },
+    {
+      "name": "service-update.stderr.txt",
+      "bytes": 443,
+      "sha256": "cc724dc83e42ac775ea5a86f7df833757a6696f7ed9ae8fe942d6376ce1a6ad9"
+    },
+    {
+      "name": "spazzapan-verification.json",
+      "bytes": 1861,
+      "sha256": "0b915c66ecbb087a6335cdf082ee7a4909d5a636446a0b74c60cdc49d80a6bcb"
+    }
+  ]
+}

@@ -1,3 +1,4 @@
+import { camsContinuityFromEvidence } from "../../services/camsContinuityPolicy";
 import { getLocationDisplayName } from "../../domain/geo/locationDisplayName";
 import { readWeatherNumber } from "../../domain/weather/normalizedWeather";
 import { buildBulletinLocalViewModel } from "../bulletin/bulletinLocalViewModel";
@@ -19,6 +20,7 @@ const RETAINABLE_PRESENTATION_FIELDS = Object.freeze([
 const COPY = {
   it: {
     camsAvailable: "Concentrazioni modellistiche disponibili",
+    camsContinuity: "Previsione della corsa precedente · aggiornamento in attesa",
     camsHeading: "Pollini",
     camsLastVerified: "Ultimo dato verificato",
     camsPending: "Dati pollinici in caricamento",
@@ -45,6 +47,7 @@ const COPY = {
   },
   fur: {
     camsAvailable: "Concentrazions di model disponibii",
+    camsContinuity: "Prevision de corse precedente · in spiete dal inzornament",
     camsHeading: "Polins",
     camsLastVerified: "Ultin dât verificât",
     camsPending: "Dâts sui polins in cjariament",
@@ -421,6 +424,8 @@ function buildCamsModel(localWeather, weatherState, copy) {
 
   return {
     heading: copy.camsHeading,
+    continuityLabel: status === "available" && quality.cams_status === "stale"
+      && !familyLastKnown && camsContinuityFromEvidence(rawCurrent) ? copy.camsContinuity : "",
     air,
     airLastKnownLabel: lastKnownLabel(airSampleStatus, air?.valid_at || quality.cams_valid_at_utc),
     airSampleStatus,

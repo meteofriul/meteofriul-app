@@ -12,8 +12,9 @@ import requests
 from . import engine
 from .pilot_schedule import NOTICE_PATTERN, schedule_notice
 from .pilot_excerpt import attributed_excerpt, remove_cross_page_duplicates
+from .pilot_regional_identity import corroborated_title_repair, month_label
 
-DETAIL_INSPECTION_VERSION = 11
+DETAIL_INSPECTION_VERSION = 12
 
 
 def confirmed_rescheduled_single_date(description, date_text, listing_days):
@@ -339,6 +340,11 @@ def promote_candidate(candidate, metadata):
     elif date_occurrences:
         start, end = (date.fromisoformat(date_occurrences[0]),
                       date.fromisoformat(date_occurrences[-1]))
+    label = month_label(date_text)
+    if label and listing_occurrences:
+        if any((date.fromisoformat(day).year, date.fromisoformat(day).month) != label
+               for day in listing_occurrences):
+            return None
     if not start and listing_occurrences:
         start, end = (date.fromisoformat(listing_occurrences[0]),
                       date.fromisoformat(listing_occurrences[-1]))
@@ -362,7 +368,9 @@ def promote_candidate(candidate, metadata):
                      or (len(prefix) >= 30 and detail_title.startswith(prefix))
                      or (candidate.get('discovery_kind') == 'filtered_calendar'
                          and len(series) >= 13 and detail_title.startswith(series)))
-    if not title_matches:
+    title_repair = (corroborated_title_repair(candidate, metadata, start, end or start)
+                    if not title_matches else None)
+    if not title_matches and not title_repair:
         hint_start, _ = engine.parse_event_date_range(candidate.get('date_hint') or '')
         translated_highlight = (english_date and candidate.get('discovery_kind') == 'highlight'
                                 and hint_start == start)
@@ -389,6 +397,7 @@ def promote_candidate(candidate, metadata):
                 map_point if map_point else locality[:2] if locality else (None, None))
     return {**candidate, 'title': (candidate.get('title') if page_title == normalized_title
                                   else metadata.get('detail_title') or candidate.get('title')),
+            **({'title_reconciliation': title_repair} if title_repair else {}),
             'start_date': occurrences[0] if occurrences else start.isoformat(),
             'end_date': occurrences[-1] if occurrences else (end or start).isoformat(),
             'schedule_kind': 'occurrences' if occurrences else ('interval' if end and end != start else 'single'),

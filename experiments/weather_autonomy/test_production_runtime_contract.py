@@ -16,9 +16,23 @@ class ProductionRuntimeContractTests(TestCase):
         self.assertEqual(cams['cloud_run_job'], 'meteofriul-cams')
         self.assertEqual(cams['cloud_scheduler_job'], 'meteofriul-cams-refresh')
         self.assertEqual(cams['environment_file'], 'production-cams.env.yaml')
-        # 10 UTC publishes the regional family. UV is requested only after its
-        # observed availability window; 20 UTC remains the recovery pass.
-        self.assertEqual(cams['schedule'], '0 10,15,20 * * *')
+        # ADS advertises full horizon at 08:30 UTC; ECMWF guarantees it by
+        # 10 UTC. Probe at 09, retry at 10/11, preserve both UV windows.
+        from cams_runtime import (SCHEDULE_HOURS_UTC, TASK_TIMEOUT_SECONDS,
+            RECOVERY_BUDGET_SECONDS, ADS_WAIT_SECONDS, REGIONAL_PASS_RESERVE_SECONDS,
+            UV_PASS_RESERVE_SECONDS)
+        self.assertEqual(cams['schedule'], '0 ' + ','.join(map(str, SCHEDULE_HOURS_UTC)) + ' * * *')
+        self.assertEqual(SCHEDULE_HOURS_UTC, (9, 10, 11, 15, 20))
+        self.assertEqual(cams['task_timeout_seconds'], TASK_TIMEOUT_SECONDS)
+        self.assertEqual(cams['recovery_budget_seconds'], RECOVERY_BUDGET_SECONDS)
+        self.assertEqual(cams['ads_wait_seconds'], ADS_WAIT_SECONDS)
+        self.assertEqual(cams['regional_pass_reserve_seconds'], REGIONAL_PASS_RESERVE_SECONDS)
+        self.assertEqual(cams['uv_pass_reserve_seconds'], UV_PASS_RESERVE_SECONDS)
+        self.assertGreaterEqual(TASK_TIMEOUT_SECONDS - RECOVERY_BUDGET_SECONDS, 300)
+        self.assertGreaterEqual(REGIONAL_PASS_RESERVE_SECONDS - ADS_WAIT_SECONDS, 300)
+        self.assertLess(TASK_TIMEOUT_SECONDS, 3600)
+        self.assertEqual(cams['max_retries'], 0)
+        self.assertEqual(cams['scheduler_retry_count'], 0)
         self.assertEqual(cams['time_zone'], 'Etc/UTC')
         self.assertEqual(
             cams['environment']['WEATHER_PUBLIC_BASE_URL'],

@@ -1,0 +1,43 @@
+{
+  "codeCommit": "d72329509c1a423b887659086c67e15361364ccf",
+  "mainBefore": "cab4871e8fe4f61014b0c9f8eb7d82b6b4b7ad0c",
+  "artifact": {
+    "path": "build/android-test/2026-10-15/MeteoFriul-TEST-d7232950-R8.apk",
+    "sha256": "181e526d88e683190387e7d05dec1fd651d2e85ba9b1e3cf431991a267a6a352",
+    "size": 75207782,
+    "installedPhoneSha256": "181e526d88e683190387e7d05dec1fd651d2e85ba9b1e3cf431991a267a6a352"
+  },
+  "fullRuntimeEvidence": {
+    "path": "build/android-test/2026-10-15/runtime-evidence.zip",
+    "sha256": "6f231ce8dfafc21677bb72d455192c94f49a968aff3a587a5968bd73a3023564",
+    "note": "Includes all per-case screenshots referenced by JSON. Representative images also versioned alongside this manifest."
+  },
+  "scope": {
+    "cloudDeploy": false,
+    "play": false,
+    "aab": false,
+    "github": false,
+    "realPhoneUpdate": "explicitly authorized TEST only"
+  },
+  "matrix": {
+    "phone": {
+      "themes": 6,
+      "horizontalOverflow": 0,
+      "minimumBarPixelContrast": 8.06
+    },
+    "35": {
+      "themes": 12,
+      "horizontalOverflow": 0,
+      "minimumBarPixelContrast": 8.76,
+      "geometryCases": 22,
+      "geometryFailures": []
+    },
+    "36": {
+      "themes": 12,
+      "horizontalOverflow": 0,
+      "minimumBarPixelContrast": 13.05,
+      "geometryCases": 53,
+      "geometryFailures": []
+    }
+  }
+}

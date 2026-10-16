@@ -99,6 +99,7 @@ function AirSummary({ copy, model }) {
     <span className="mf-weather-environment-badge-row">
       <span className="mf-weather-environment-badge"><i aria-hidden="true" />{model.airSampleStatus === "last_known" ? copy.airLastKnown : copy.airData}</span>
     </span>
+    {model.continuityLabel ? <span className="mf-weather-environment-secondary">{model.continuityLabel}</span> : null}
   </>;
 }
 
@@ -122,6 +123,7 @@ function PollenSummary({ copy, model }) {
     <span className="mf-weather-environment-badge-row">
       <span className="mf-weather-environment-badge"><i aria-hidden="true" />{model?.pollenSampleStatus === "last_known" ? copy.airLastKnown : copy.pollenModel}</span>
     </span>
+    {model.continuityLabel ? <span className="mf-weather-environment-secondary">{model.continuityLabel}</span> : null}
   </>;
 }
 

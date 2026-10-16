@@ -1,0 +1,574 @@
+{
+  "execution": "meteofriul-events-refresh-qjnd2",
+  "completed": false,
+  "condition": {
+    "lastTransitionTime": "2026-10-15T16:23:59.548928Z",
+    "message": "Task meteofriul-events-refresh-qjnd2-task0 failed with exit code: 1 and message: The container exited with an error.",
+    "reason": "NonZeroExitCode",
+    "status": "False",
+    "type": "Completed"
+  },
+  "started_at": "2026-10-15T16:15:46.290847Z",
+  "completed_at": "2026-10-15T16:23:59.548928Z",
+  "duration_seconds": 493.258081,
+  "full_cycle_all_15_attempted": true,
+  "snapshot": "2026-10-15T16:15:55.739266+00:00",
+  "catalog_generation": "1792081436931349",
+  "catalog_bytes": 3833849,
+  "catalog_sha256": "e3bfc258b445846d2ab2d9f5a5cc4e1d87525dfdd2139ba4edd00379c48d3c9c",
+  "sources": {
+    "TurismoFVG": {
+      "status": "stale",
+      "events": 1316,
+      "quarantined": 14,
+      "error_type": "incomplete_source",
+      "exception": null,
+      "error_detail": null
+    },
+    "Pordenonelegge": {
+      "status": "fresh",
+      "events": 0,
+      "quarantined": 0,
+      "error_type": null,
+      "exception": null,
+      "error_detail": null
+    },
+    "Azalea": {
+      "status": "fresh",
+      "events": 7,
+      "quarantined": 0,
+      "error_type": null,
+      "exception": null,
+      "error_detail": null
+    },
+    "CSS Udine": {
+      "status": "partial",
+      "events": 155,
+      "quarantined": 1,
+      "error_type": null,
+      "exception": null,
+      "error_detail": null
+    },
+    "Pordenone Pensa": {
+      "status": "partial",
+      "events": 0,
+      "quarantined": 1,
+      "error_type": null,
+      "exception": null,
+      "error_detail": null
+    },
+    "Teatro Verdi Pordenone": {
+      "status": "fresh",
+      "events": 88,
+      "quarantined": 0,
+      "error_type": null,
+      "exception": null,
+      "error_detail": null
+    },
+    "Teatro Verdi Trieste": {
+      "status": "fresh",
+      "events": 69,
+      "quarantined": 0,
+      "error_type": null,
+      "exception": null,
+      "error_detail": null
+    },
+    "Le Giornate del Cinema Muto": {
+      "status": "fresh",
+      "events": 0,
+      "quarantined": 0,
+      "error_type": null,
+      "exception": null,
+      "error_detail": null
+    },
+    "Paesi in Festa": {
+      "status": "fresh",
+      "events": 17,
+      "quarantined": 0,
+      "error_type": null,
+      "exception": null,
+      "error_detail": null
+    },
+    "SagreFVG": {
+      "status": "fresh",
+      "events": 27,
+      "quarantined": 0,
+      "error_type": null,
+      "exception": null,
+      "error_detail": null
+    },
+    "Villa Manin": {
+      "status": "fresh",
+      "events": 4,
+      "quarantined": 0,
+      "error_type": null,
+      "exception": null,
+      "error_detail": null
+    },
+    "Magazzino delle Idee": {
+      "status": "fresh",
+      "events": 0,
+      "quarantined": 0,
+      "error_type": null,
+      "exception": null,
+      "error_detail": null
+    },
+    "MESS": {
+      "status": "fresh",
+      "events": 17,
+      "quarantined": 0,
+      "error_type": null,
+      "exception": null,
+      "error_detail": null
+    },
+    "Galleria Spazzapan": {
+      "status": "fresh",
+      "events": 2,
+      "quarantined": 0,
+      "error_type": null,
+      "exception": null,
+      "error_detail": null
+    },
+    "Barcolana": {
+      "status": "fresh",
+      "events": 1,
+      "quarantined": 0,
+      "error_type": null,
+      "exception": null,
+      "error_detail": null
+    }
+  },
+  "monitors": {
+    "Palazzo Attems": {
+      "status": "review_required",
+      "source_complete": false,
+      "checked_at": "2026-10-15T14:26:55.958729+00:00"
+    },
+    "GiroFVG": {
+      "status": "review_required",
+      "source_complete": false,
+      "checked_at": "2026-10-15T14:26:55.958729+00:00"
+    },
+    "TurismoFVG annual inventory": {
+      "status": "checked",
+      "source_complete": true,
+      "checked_at": "2026-10-12T04:00:40.511589+00:00",
+      "calendar_cards": 2272,
+      "calendar_pages": 444,
+      "missing_window_count": 0
+    }
+  },
+  "source_status_counts": {
+    "stale": 1,
+    "fresh": 12,
+    "partial": 2
+  },
+  "raw_event_count": 1703,
+  "publishable_sources": 14,
+  "failed_sources": [
+    "TurismoFVG"
+  ],
+  "quarantined_count": 2,
+  "turismofvg": {
+    "last_attempt_verification": {
+      "collection_mode": "verified-rolling-45-day-window",
+      "as_of_date": "2026-10-15",
+      "window_end": "2026-11-29",
+      "source_complete": false,
+      "within_budget": true,
+      "index_fingerprint": "36123c426db2aedd779d3f48ff3d5cba1398908bdb8c4f51542417ae6dd093ff",
+      "calendar_pages": 207,
+      "inventory_urls": 1336,
+      "sitemap_total_urls": 2419,
+      "sitemap_selected_urls": 1236,
+      "prior_detail_count": 16,
+      "carried_prior_count": 26,
+      "known_future_count": 167,
+      "calendar_segments": [
+        {
+          "start": "2026-10-15",
+          "end": "2026-11-29",
+          "declared_results": 1648,
+          "cards_seen": 1648,
+          "pages": 207
+        }
+      ],
+      "pending": 40,
+      "ambiguous": 0,
+      "review_required": 7,
+      "detail_health": {
+        "schema": "turismofvg-detail-health-v1",
+        "structured_reads": 1296,
+        "failed_reads": 0,
+        "quarantined_reads": 0,
+        "retained_refreshes": 0,
+        "pending": 40,
+        "stop_reason": "budget_reserve",
+        "health_witness_required": true
+      }
+    },
+    "last_attempt_detail_diagnostics": {
+      "https://www.turismofvg.it/eventi/whalefall-nella-balena": {
+        "url": "https://www.turismofvg.it/eventi/whalefall-nella-balena",
+        "phase": "budget",
+        "reason": "not_attempted_budget",
+        "count": 0,
+        "http_status": null,
+        "checked_at": "2026-10-15T16:21:14.202500+00:00",
+        "disposition": "pending"
+      },
+      "https://www.turismofvg.it/eventi/xxii-concorso-mostra-di-creativita-femminile-2026-muggia": {
+        "url": "https://www.turismofvg.it/eventi/xxii-concorso-mostra-di-creativita-femminile-2026-muggia",
+        "phase": "budget",
+        "reason": "not_attempted_budget",
+        "count": 0,
+        "http_status": null,
+        "checked_at": "2026-10-15T16:21:14.202500+00:00",
+        "disposition": "pending"
+      },
+      "https://www.turismofvg.it/eventi/xiii-convegno-nazionale-amd-associazione-medici-diabetologi": {
+        "url": "https://www.turismofvg.it/eventi/xiii-convegno-nazionale-amd-associazione-medici-diabetologi",
+        "phase": "budget",
+        "reason": "not_attempted_budget",
+        "count": 0,
+        "http_status": null,
+        "checked_at": "2026-10-15T16:21:14.202500+00:00",
+        "disposition": "pending"
+      },
+      "https://www.turismofvg.it/eventi/voltapagina-presenta-le-verita-pericolose-505362": {
+        "url": "https://www.turismofvg.it/eventi/voltapagina-presenta-le-verita-pericolose-505362",
+        "phase": "budget",
+        "reason": "not_attempted_budget",
+        "count": 0,
+        "http_status": null,
+        "checked_at": "2026-10-15T16:21:14.202500+00:00",
+        "disposition": "pending"
+      },
+      "https://www.turismofvg.it/eventi/​​​​​​​iii-edizione-che-cura-che-fa-il-festival-che-cura-cicatrici-trame-di-comunita": {
+        "url": "https://www.turismofvg.it/eventi/​​​​​​​iii-edizione-che-cura-che-fa-il-festival-che-cura-cicatrici-trame-di-comunita",
+        "phase": "budget",
+        "reason": "not_attempted_budget",
+        "count": 0,
+        "http_status": null,
+        "checked_at": "2026-10-15T16:21:14.202500+00:00",
+        "disposition": "pending"
+      },
+      "https://www.turismofvg.it/eventi/wildwood-i-segreti-del-bosco-proibito": {
+        "url": "https://www.turismofvg.it/eventi/wildwood-i-segreti-del-bosco-proibito",
+        "phase": "budget",
+        "reason": "not_attempted_budget",
+        "count": 0,
+        "http_status": null,
+        "checked_at": "2026-10-15T16:21:14.202500+00:00",
+        "disposition": "pending"
+      },
+      "https://www.turismofvg.it/events20/details/378945": {
+        "url": "https://www.turismofvg.it/events20/details/378945",
+        "phase": "budget",
+        "reason": "not_attempted_budget",
+        "count": 0,
+        "http_status": null,
+        "checked_at": "2026-10-15T16:21:14.202500+00:00",
+        "disposition": "pending"
+      },
+      "https://www.turismofvg.it/eventi/workshop-viabilita-forestale-progettazione-realizzazione-gestione-tecnica-e-amministrativa": {
+        "url": "https://www.turismofvg.it/eventi/workshop-viabilita-forestale-progettazione-realizzazione-gestione-tecnica-e-amministrativa",
+        "phase": "budget",
+        "reason": "not_attempted_budget",
+        "count": 0,
+        "http_status": null,
+        "checked_at": "2026-10-15T16:21:14.202500+00:00",
+        "disposition": "pending"
+      },
+      "https://www.turismofvg.it/eventi/vos-storie-di-musica-in-friuli-cantate-e-raccontate-storiis-di-musichis-in-friul-cjantadis-e-contadis": {
+        "url": "https://www.turismofvg.it/eventi/vos-storie-di-musica-in-friuli-cantate-e-raccontate-storiis-di-musichis-in-friul-cjantadis-e-contadis",
+        "phase": "budget",
+        "reason": "not_attempted_budget",
+        "count": 0,
+        "http_status": null,
+        "checked_at": "2026-10-15T16:21:14.202500+00:00",
+        "disposition": "pending"
+      },
+      "https://www.turismofvg.it/eventi/xxiii-giornata-nazionale-del-trekking-urbano-a-cividale-del-friuli-san-francesco-1226-2026-sulle-tracce-dell-essenziale": {
+        "url": "https://www.turismofvg.it/eventi/xxiii-giornata-nazionale-del-trekking-urbano-a-cividale-del-friuli-san-francesco-1226-2026-sulle-tracce-dell-essenziale",
+        "phase": "budget",
+        "reason": "not_attempted_budget",
+        "count": 0,
+        "http_status": null,
+        "checked_at": "2026-10-15T16:21:14.202500+00:00",
+        "disposition": "pending"
+      },
+      "https://www.turismofvg.it/events20/details/378959": {
+        "url": "https://www.turismofvg.it/events20/details/378959",
+        "phase": "budget",
+        "reason": "not_attempted_budget",
+        "count": 0,
+        "http_status": null,
+        "checked_at": "2026-10-15T16:21:14.202500+00:00",
+        "disposition": "pending"
+      },
+      "https://www.turismofvg.it/events20/details/375682": {
+        "url": "https://www.turismofvg.it/events20/details/375682",
+        "phase": "budget",
+        "reason": "not_attempted_budget",
+        "count": 0,
+        "http_status": null,
+        "checked_at": "2026-10-15T16:21:14.202500+00:00",
+        "disposition": "pending"
+      },
+      "https://www.turismofvg.it/eventi/zemja-ma-terra-mia": {
+        "url": "https://www.turismofvg.it/eventi/zemja-ma-terra-mia",
+        "phase": "budget",
+        "reason": "not_attempted_budget",
+        "count": 0,
+        "http_status": null,
+        "checked_at": "2026-10-15T16:21:14.202500+00:00",
+        "disposition": "pending"
+      },
+      "https://www.turismofvg.it/eventi/workshop-sull-antico-egitto": {
+        "url": "https://www.turismofvg.it/eventi/workshop-sull-antico-egitto",
+        "phase": "budget",
+        "reason": "not_attempted_budget",
+        "count": 0,
+        "http_status": null,
+        "checked_at": "2026-10-15T16:21:14.202500+00:00",
+        "disposition": "pending"
+      },
+      "https://www.turismofvg.it/eventi/wtt-youth-contender-lignano-2026": {
+        "url": "https://www.turismofvg.it/eventi/wtt-youth-contender-lignano-2026",
+        "phase": "budget",
+        "reason": "not_attempted_budget",
+        "count": 0,
+        "http_status": null,
+        "checked_at": "2026-10-15T16:21:14.202500+00:00",
+        "disposition": "pending"
+      },
+      "https://www.turismofvg.it/eventi/x-giornata-nazionale-camminata-tra-gli-olivi": {
+        "url": "https://www.turismofvg.it/eventi/x-giornata-nazionale-camminata-tra-gli-olivi",
+        "phase": "budget",
+        "reason": "not_attempted_budget",
+        "count": 0,
+        "http_status": null,
+        "checked_at": "2026-10-15T16:21:14.202500+00:00",
+        "disposition": "pending"
+      },
+      "https://www.turismofvg.it/events20/details/379077": {
+        "url": "https://www.turismofvg.it/events20/details/379077",
+        "phase": "budget",
+        "reason": "not_attempted_budget",
+        "count": 0,
+        "http_status": null,
+        "checked_at": "2026-10-15T16:21:14.202500+00:00",
+        "disposition": "pending"
+      },
+      "https://www.turismofvg.it/events20/details/379076": {
+        "url": "https://www.turismofvg.it/events20/details/379076",
+        "phase": "budget",
+        "reason": "not_attempted_budget",
+        "count": 0,
+        "http_status": null,
+        "checked_at": "2026-10-15T16:21:14.202500+00:00",
+        "disposition": "pending"
+      },
+      "https://www.turismofvg.it/events20/details/379080": {
+        "url": "https://www.turismofvg.it/events20/details/379080",
+        "phase": "budget",
+        "reason": "not_attempted_budget",
+        "count": 0,
+        "http_status": null,
+        "checked_at": "2026-10-15T16:21:14.202500+00:00",
+        "disposition": "pending"
+      },
+      "https://www.turismofvg.it/eventi/xiv-rassegna-organistica-giovani-note-d-organo": {
+        "url": "https://www.turismofvg.it/eventi/xiv-rassegna-organistica-giovani-note-d-organo",
+        "phase": "budget",
+        "reason": "not_attempted_budget",
+        "count": 0,
+        "http_status": null,
+        "checked_at": "2026-10-15T16:21:14.202500+00:00",
+        "disposition": "pending"
+      },
+      "https://www.turismofvg.it/eventi/xiii-biennale-d-arte-arte-di-credere-opere-di-safet-zec": {
+        "url": "https://www.turismofvg.it/eventi/xiii-biennale-d-arte-arte-di-credere-opere-di-safet-zec",
+        "phase": "budget",
+        "reason": "not_attempted_budget",
+        "count": 0,
+        "http_status": null,
+        "checked_at": "2026-10-15T16:21:14.202500+00:00",
+        "disposition": "pending"
+      },
+      "https://www.turismofvg.it/events20/details/379079": {
+        "url": "https://www.turismofvg.it/events20/details/379079",
+        "phase": "budget",
+        "reason": "not_attempted_budget",
+        "count": 0,
+        "http_status": null,
+        "checked_at": "2026-10-15T16:21:14.202500+00:00",
+        "disposition": "pending"
+      },
+      "https://www.turismofvg.it/eventi/workshop-di-macrame": {
+        "url": "https://www.turismofvg.it/eventi/workshop-di-macrame",
+        "phase": "budget",
+        "reason": "not_attempted_budget",
+        "count": 0,
+        "http_status": null,
+        "checked_at": "2026-10-15T16:21:14.202500+00:00",
+        "disposition": "pending"
+      },
+      "https://www.turismofvg.it/eventi/xxii-congresso-post-industriale": {
+        "url": "https://www.turismofvg.it/eventi/xxii-congresso-post-industriale",
+        "phase": "budget",
+        "reason": "not_attempted_budget",
+        "count": 0,
+        "http_status": null,
+        "checked_at": "2026-10-15T16:21:14.202500+00:00",
+        "disposition": "pending"
+      },
+      "https://www.turismofvg.it/events20/details/379141": {
+        "url": "https://www.turismofvg.it/events20/details/379141",
+        "phase": "budget",
+        "reason": "not_attempted_budget",
+        "count": 0,
+        "http_status": null,
+        "checked_at": "2026-10-15T16:21:14.202500+00:00",
+        "disposition": "pending"
+      },
+      "https://www.turismofvg.it/eventi/zoncross-2026": {
+        "url": "https://www.turismofvg.it/eventi/zoncross-2026",
+        "phase": "budget",
+        "reason": "not_attempted_budget",
+        "count": 0,
+        "http_status": null,
+        "checked_at": "2026-10-15T16:21:14.202500+00:00",
+        "disposition": "pending"
+      },
+      "https://www.turismofvg.it/eventi/voodootheque": {
+        "url": "https://www.turismofvg.it/eventi/voodootheque",
+        "phase": "budget",
+        "reason": "not_attempted_budget",
+        "count": 0,
+        "http_status": null,
+        "checked_at": "2026-10-15T16:21:14.202500+00:00",
+        "disposition": "pending"
+      },
+      "https://www.turismofvg.it/events20/details/379074": {
+        "url": "https://www.turismofvg.it/events20/details/379074",
+        "phase": "budget",
+        "reason": "not_attempted_budget",
+        "count": 0,
+        "http_status": null,
+        "checked_at": "2026-10-15T16:21:14.202500+00:00",
+        "disposition": "pending"
+      },
+      "https://www.turismofvg.it/events20/details/377187": {
+        "url": "https://www.turismofvg.it/events20/details/377187",
+        "phase": "budget",
+        "reason": "not_attempted_budget",
+        "count": 0,
+        "http_status": null,
+        "checked_at": "2026-10-15T16:21:14.202500+00:00",
+        "disposition": "pending"
+      },
+      "https://www.turismofvg.it/events20/details/379303": {
+        "url": "https://www.turismofvg.it/events20/details/379303",
+        "phase": "budget",
+        "reason": "not_attempted_budget",
+        "count": 0,
+        "http_status": null,
+        "checked_at": "2026-10-15T16:21:14.202500+00:00",
+        "disposition": "pending"
+      },
+      "https://www.turismofvg.it/eventi/wunderkammer-venite-alla-danza": {
+        "url": "https://www.turismofvg.it/eventi/wunderkammer-venite-alla-danza",
+        "phase": "budget",
+        "reason": "not_attempted_budget",
+        "count": 0,
+        "http_status": null,
+        "checked_at": "2026-10-15T16:21:14.202500+00:00",
+        "disposition": "pending"
+      },
+      "https://www.turismofvg.it/events20/details/379082": {
+        "url": "https://www.turismofvg.it/events20/details/379082",
+        "phase": "budget",
+        "reason": "not_attempted_budget",
+        "count": 0,
+        "http_status": null,
+        "checked_at": "2026-10-15T16:21:14.202500+00:00",
+        "disposition": "pending"
+      },
+      "https://www.turismofvg.it/eventi/xxii-concorso-mostra-di-creativita-femminile-2026-premiazioni-ed-esposizione": {
+        "url": "https://www.turismofvg.it/eventi/xxii-concorso-mostra-di-creativita-femminile-2026-premiazioni-ed-esposizione",
+        "phase": "budget",
+        "reason": "not_attempted_budget",
+        "count": 0,
+        "http_status": null,
+        "checked_at": "2026-10-15T16:21:14.202500+00:00",
+        "disposition": "pending"
+      },
+      "https://www.turismofvg.it/eventi/xilomonsters-espansione-xilogenetica-e-mostrificazione-del-paesaggio": {
+        "url": "https://www.turismofvg.it/eventi/xilomonsters-espansione-xilogenetica-e-mostrificazione-del-paesaggio",
+        "phase": "budget",
+        "reason": "not_attempted_budget",
+        "count": 0,
+        "http_status": null,
+        "checked_at": "2026-10-15T16:21:14.202500+00:00",
+        "disposition": "pending"
+      },
+      "https://www.turismofvg.it/eventi/xilomonsters": {
+        "url": "https://www.turismofvg.it/eventi/xilomonsters",
+        "phase": "budget",
+        "reason": "not_attempted_budget",
+        "count": 0,
+        "http_status": null,
+        "checked_at": "2026-10-15T16:21:14.202500+00:00",
+        "disposition": "pending"
+      },
+      "https://www.turismofvg.it/eventi/wunderkammer-festival-chimera": {
+        "url": "https://www.turismofvg.it/eventi/wunderkammer-festival-chimera",
+        "phase": "budget",
+        "reason": "not_attempted_budget",
+        "count": 0,
+        "http_status": null,
+        "checked_at": "2026-10-15T16:21:14.202500+00:00",
+        "disposition": "pending"
+      },
+      "https://www.turismofvg.it/events20/details/379296": {
+        "url": "https://www.turismofvg.it/events20/details/379296",
+        "phase": "budget",
+        "reason": "not_attempted_budget",
+        "count": 0,
+        "http_status": null,
+        "checked_at": "2026-10-15T16:21:14.202500+00:00",
+        "disposition": "pending"
+      },
+      "https://www.turismofvg.it/eventi/wunderkammer-alltid-densamme": {
+        "url": "https://www.turismofvg.it/eventi/wunderkammer-alltid-densamme",
+        "phase": "budget",
+        "reason": "not_attempted_budget",
+        "count": 0,
+        "http_status": null,
+        "checked_at": "2026-10-15T16:21:14.202500+00:00",
+        "disposition": "pending"
+      },
+      "https://www.turismofvg.it/events20/details/379078": {
+        "url": "https://www.turismofvg.it/events20/details/379078",
+        "phase": "budget",
+        "reason": "not_attempted_budget",
+        "count": 0,
+        "http_status": null,
+        "checked_at": "2026-10-15T16:21:14.202500+00:00",
+        "disposition": "pending"
+      },
+      "https://www.turismofvg.it/eventi/xxiii-giornata-nazionale-del-trekking-urbano-palmanova": {
+        "url": "https://www.turismofvg.it/eventi/xxiii-giornata-nazionale-del-trekking-urbano-palmanova",
+        "phase": "budget",
+        "reason": "not_attempted_budget",
+        "count": 0,
+        "http_status": null,
+        "checked_at": "2026-10-15T16:21:14.202500+00:00",
+        "disposition": "pending"
+      }
+    },
+    "last_attempt_checkpoint_saved": true
+  }
+}

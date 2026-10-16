@@ -1,8 +1,9 @@
 import { isLocalWeatherPilot } from "./localWeatherPilot";
+import { ANDROID_LOOPBACK_ONLY_BUILD } from "./localOnlyBuild";
 
 const BROWSER_BASE = "/__local-community/api";
 const ANDROID_BASE = "http://127.0.0.1:8783/api";
-export const PRODUCTION_COMMUNITY_API_BASE = "https://meteofriul-community-49007668366.europe-west1.run.app/api";
+export const PRODUCTION_COMMUNITY_API_BASE = ANDROID_LOOPBACK_ONLY_BUILD ? "" : "https://meteofriul-community-49007668366.europe-west1.run.app/api";
 // Kept as a compatibility export for protected local-pilot build tooling.
 // Cloud Community now always uses the official public service.
 export const CLOUD_COMMUNITY_PILOT_API_BASE = PRODUCTION_COMMUNITY_API_BASE;
@@ -28,6 +29,7 @@ export function getLocalCommunityPilotApiBase() {
   if (isLocalCommunityDevelopmentRuntime()) {
     return import.meta.env.VITE_LOCAL_COMMUNITY_PILOT_API_BASE;
   }
+  if (ANDROID_LOOPBACK_ONLY_BUILD) throw new Error("local_community_runtime_required");
   return String(import.meta.env.VITE_COMMUNITY_API_BASE || PRODUCTION_COMMUNITY_API_BASE).replace(/\/+$/, "");
 }
 

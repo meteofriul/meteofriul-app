@@ -18,6 +18,7 @@ from app.contracts.live import (
     CommunityReportConfirmationCreate,
     CommunityReportFlagCreate, CommunityReputationRequest,
 )
+from app.services.community_reports import CommunityReportsService, CommunityReportVote, CommunityHistoryQuery
 from app.services.community import CommunityServiceError
 from app.repositories.community import CommunityRepositoryUnavailable
 from app.services.pilot_community import (
@@ -39,7 +40,7 @@ def create_app(*, service: PilotCommunityService | None = None, port: int = 8783
                health_kind: str = PILOT_KIND, health_project: str | None = None,
                health_check=None) -> FastAPI:
     app = FastAPI(title="Meteo Friul local Community pilot", docs_url=None, redoc_url=None, openapi_url=None)
-    app.state.community = service or PilotCommunityService()
+    app.state.community = service or CommunityReportsService()
     app.add_middleware(
         CORSMiddleware, allow_origins=sorted(ALLOWED_ORIGINS),
         allow_methods=["GET", "POST", "PATCH", "DELETE", "OPTIONS"],
@@ -110,6 +111,15 @@ def create_app(*, service: PilotCommunityService | None = None, port: int = 8783
     ):
         return app.state.community.get_scoped_reports(istat_code=istat_code, lat=lat, lon=lon, radius_km=radius_km)
 
+    @app.post("/api/community/history")
+    def history(command: CommunityHistoryQuery):
+        return app.state.community.get_history(command)
+
+    @app.post("/api/community/reports/query")
+    def reports_by_coordinates(command: CommunityHistoryQuery):
+        return app.state.community.get_scoped_reports(istat_code=command.istat_code, lat=command.lat,
+                                                      lon=command.lon, radius_km=command.radius_km)
+
     @app.post("/api/community/resolve")
     def resolve(command: PilotCommunityResolve):
         return app.state.community.resolve_location(command)
@@ -137,7 +147,7 @@ def create_app(*, service: PilotCommunityService | None = None, port: int = 8783
         return app.state.community.delete_report(report_id, command, client_host="loopback-pilot")
 
     @app.post("/api/community/reports/{group_id}/confirmation")
-    def confirm(group_id: str, command: CommunityReportConfirmationCreate):
+    def confirm(group_id: str, command: CommunityReportVote):
         result = app.state.community.confirm_report(group_id, command, client_host="loopback-pilot")
         payload = result.model_dump(mode="json", exclude_none=True)
         payload["group"] = app.state.community.public_payload(result.group)
@@ -174,7 +184,7 @@ def main() -> None:
     repository = PilotSQLiteCommunityRepository(args.state_path)
     import uvicorn
     try:
-        uvicorn.run(create_app(service=PilotCommunityService(geography=geography, repository=repository), port=args.port),
+        uvicorn.run(create_app(service=CommunityReportsService(geography=geography, repository=repository), port=args.port),
                     host=args.host, port=args.port, access_log=False)
     finally:
         repository.close()
