@@ -1,0 +1,71 @@
+METEO FRIUL - RIALLINEAMENTO DEL REPOSITORY PUBBLICO
+16 ottobre 2026
+
+Perimetro
+Recupero dei contenuti gia approvati nel precedente main locale, senza
+importare la cronologia del vecchio repository. Conservati separati i lavori
+non integrati: compatibilita cloud Community, mercati/mercatini e altri rami.
+Nessun deploy, build Android, APK/AAB o installazione incluso.
+
+Ricostruzione
+- Unico root pubblico: a70d3c68c8ee21f8d7938e931d5443af15574248.
+- Base approvata recuperata: 2f931e49074b7576748b06adac765adf42f5e8e4.
+- Le differenze rispetto al precedente snapshot corrispondono a 98 commit
+  storici, inclusi merge, e 469 percorsi. E' stato trasferito il contenuto,
+  non quei commit.
+- Recupero: 3abd68e3907457c1a64acd4cacc6b9e5ba8f29be.
+- Monitor bonificato: b7b39c804beb2a4d7fbbd34e33fdd7162716c7e0.
+- Correzioni dipendenze conservate dal commit pubblico b4a059603a0d05db6af0608b2df2722f61499a98.
+  Il package.json mantiene sia test:events-pipeline sia test:dependency-security.
+- Codice recuperato: CAMS/continuita/cache/contrasto, Eventi EV-01--EV-05,
+  Segnalazioni e correzioni native/UI gia approvate.
+- Confronto del contenuto finale con il main approvato: nessuna differenza
+  inattesa. Le sole differenze sono monitor, sette file del lavoro dipendenze,
+  collegamenti storici al repository old e bonifica delle evidenze R8.
+
+Privacy e conservazione
+Backup privato verificato prima delle modifiche. Conservati tutti gli altri
+250 riferimenti locali controllati e i rispettivi lavori; nessuna nuova
+cronologia importata nel ramo pubblico.
+Bonificati due percorsi personali nel rapporto del monitor prima del commit.
+Nello ZIP R8 e stata bonificata soltanto configuration.txt (72 sostituzioni);
+mapping.txt, resources.txt, seeds.txt e usage.txt sono rimasti identici.
+Aggiornato SHA256SUMS.txt per l'archivio pubblico bonificato:
+e1aeab0871a96e12dfbae796dbf11d1ad786fbb573cc5934b88e0a73571a7078
+L'archivio originale resta nel backup privato; le identita degli APK storici
+non vengono cambiate dalla bonifica della copia documentale.
+
+Ricontrollati 3415 file candidati e nove voci decompresse degli archivi:
+nessuna occorrenza residua degli identificativi privati noti.
+Le 111 immagini recuperate coincidono byte per byte con quelle gia sottoposte
+a OCR; riesame OCR, metadati EXIF e revisione visiva completati senza nuovi
+elementi personali individuati. Le schermate mostrano alias di test e
+localita comunali, non credenziali.
+Gitleaks con scansione degli archivi: 47 risultati gia revisionati
+(configurazioni pubbliche o falsi positivi), nessun nuovo risultato.
+Il controllo pre-push e stato esteso agli ZIP e agli archivi annidati;
+sei casi significativi superati, inclusi dati compressi e archivi corrotti.
+Il controllo reale della candidata ha superato i vincoli sul root pubblico,
+sulla cronologia, sugli identificativi privati e sullo scanner dei segreti.
+Questi controlli non rappresentano una garanzia assoluta contro ogni possibile
+dato sensibile: descrivono esattamente scansioni e verifiche eseguite.
+
+Verifiche ripetute sul codice ricostruito
+- Frontend: 4932 test passati, 13 saltati previsti; 546 file passati, 5 saltati.
+- Backend: 1891 test eseguiti, 1890 passati e uno saltato previsto.
+- Dipendenze Node: 5 passati.
+- Pipeline Eventi: 2 passati.
+- Guardie statiche release/local pilot/Android local pilot: 9 + 11 + 7 passati.
+- ESLint, build Web e controllo canonico: passati.
+- npm audit e pip-audit: zero vulnerabilita note alla data del controllo.
+- Monitor e reader/CAMS: 207 test passati, zero errori e zero skip; 1008.729 s.
+  Promtool reale 3.5.0 verificato tramite SHA-256; quattro scenari e 17
+  valutazioni PromQL. Accesso cloud disabilitato, dati simulati/locali.
+- Nessun nuovo collaudo Android runtime: i collaudi storici non certificano
+  l'aggiornamento Capacitor 8.5.1 nella candidata riallineata.
+
+Promozione
+La candidata aggiorna la PR #1. La promozione a main resta soggetta alla
+regola AGENTS.md sui test pertinenti e sui controlli su dispositivo reale.
+I test locali e la CI non sostituiscono il collaudo Android richiesto.
+L'aggiornamento del codice non aggiorna automaticamente le app installate.

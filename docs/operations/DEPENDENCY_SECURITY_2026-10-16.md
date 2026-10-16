@@ -66,3 +66,24 @@ Compilazione, lint e CI sono registrati nella pull request. Il collaudo su dispo
 La patch Capacitor scelta è 8.5.1 per limitare il cambio alla correzione di sicurezza e alle piccole correzioni Core/CLI correlate, senza importare le modifiche SystemBars di 8.5.2. Target/compile SDK 36, AGP/Gradle, gestione insets, orientamento e R8 non cambiano. I contratti Android automatici non sostituiscono la verifica runtime: edge-to-edge/insets, API delle barre, orientamento/grandi schermi e build minificata restano da ricontrollare sulla candidata da distribuire secondo il [runbook Play](PLAY_AAB_RUNBOOK.md#controlli-android-obbligatori-per-ogni-release).
 
 Gli avvisi GitHub del branch predefinito possono restare aperti finché la correzione non viene promossa a `main`. Non confondere l’assenza di vulnerabilità nel branch della correzione con la chiusura degli avvisi sulla base pubblicata.
+
+## Riallineamento con il lavoro approvato del 16 ottobre
+
+La verifica iniziale documentata sopra si riferisce al solo snapshot pubblico del
+13 ottobre. Dopo il confronto con le chat e il main locale approvato, la PR
+recupera anche CAMS, Eventi, Segnalazioni e le correzioni Android/UI già integrate,
+senza importare la vecchia cronologia. Le correzioni delle dipendenze rimangono
+identiche; package.json conserva anche lo script test:events-pipeline.
+
+Sul codice riallineato b7b39c804beb2a4d7fbbd34e33fdd7162716c7e0:
+4.932 test frontend passati (13 skip previsti), 1.891 test backend eseguiti
+(un solo skip previsto), 207 test monitor/reader/CAMS passati senza skip,
+5 test dipendenze, 2 pipeline Eventi e 27 guardie statiche passati.
+Lint, build Web, controllo canonico, npm audit e pip-audit superati;
+zero vulnerabilità note nei due audit. La scansione dei contenuti e degli
+archivi non introduce nuovi risultati Gitleaks rispetto ai 47 già revisionati.
+
+Non sono state ripetute build o prove Android: quelle della prima verifica
+non vengono attribuite alla candidata riallineata. Restano validi il gate
+di promozione e le autorizzazioni separate descritti sopra.
+[Rapporto del riallineamento e della bonifica](PUBLIC_REPOSITORY_ALIGNMENT_2026-10-16.txt).

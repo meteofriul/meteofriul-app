@@ -1,5 +1,12 @@
 # Verifica locale del monitor ICON-2I con il main aggiornato
 
+> **Stato successivo: riallineamento pubblico del 16 ottobre 2026.** Le sezioni
+> sottostanti conservano le verifiche storiche sulle rispettive basi. La nuova
+> candidata recupera il main approvato completo, inclusa CAMS a 36 ore, e mantiene
+> le correzioni delle dipendenze. Sono stati ripetuti 207 test del monitor e dei
+> contratti condivisi, senza errori o skip e con promtool reale. Nessun nuovo
+> deploy o collaudo Android. Vedere il [rapporto corrente](PUBLIC_REPOSITORY_ALIGNMENT_2026-10-16.txt).
+
 ## Aggiornamento per il main ricostruito — 16 ottobre 2026, 10:25 UTC
 
 **Esito sulla nuova base: 170 test superati, nessun errore e nessuno skip**, incluso promtool reale. Il codice del monitor rimane identico alla versione precedentemente verificata.
