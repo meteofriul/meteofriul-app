@@ -3,8 +3,9 @@
 La prima APK della PR #1 (`47661e20`) è stata collaudata sul Galaxy A52 con
 Android 14. Il collaudo ha individuato errori di configurazione API/CARTO,
 duplicati nella ricerca comuni e una richiesta CAMS non supportata dal reader
-pubblicato. Questa revisione prepara una nuova APK, senza installazione,
-promozione, AAB, Play o deploy.
+pubblicato. Questa revisione ha preparato una nuova APK, successivamente installata con
+autorizzazione esplicita. Il collaudo runtime del 16 ottobre è riportato sotto;
+nessuna promozione, AAB, Play o deploy.
 
 ## Correzioni e configurazione
 
@@ -62,12 +63,63 @@ possono usare il colore deciso dal sistema.
 Le quattro aree Android restano distinte: test automatici su barre/inset e
 orientamento superati; nessuna modifica ai setter delle barre o al manifest
 di orientamento; minificazione/resource shrinking verificati nel build.
-Il runtime della **nuova** APK, inclusi launcher, splash e Home, resta da
-collaudare dopo l'autorizzazione del proprietario. Non si riusano come PASS
-le prove del precedente artefatto. Android 15/16, gesti, tablet e multi-window
-non sono certificati per questa candidata. Nessuna dichiarazione di rilascio pronto.
+Il runtime della nuova APK è stato collaudato sul Galaxy A52 dopo
+l'autorizzazione del proprietario; esiti e limiti sono riportati sotto. Non si
+riusano come PASS le prove del precedente artefatto. Android 15/16, gesti,
+tablet e multi-window non sono certificati. Nessuna dichiarazione di rilascio pronto.
 
 Prima di installare: verificare hash e firma, confrontare lo stato dei tre
 pacchetti, chiedere conferma e aggiornare esclusivamente `localpilot` con
 `adb install -r`. Non disinstallare o cancellare dati di alcuna TEST né dell'app
 ufficiale. I servizi locali e ADB reverse restano necessari per questa variante.
+
+## Collaudo runtime del 16 ottobre 2026
+
+Candidata `4f37c49c4bae701cd6b3cde934ef82a06e56208c`, pacchetto
+`com.meteofriul.app.localpilot`, versione `0.1.14-local-pilot-r8-pr1.2`:
+SHA-256 APK `ddd9fa43fa767b3fabbf142ca8e73cdaddc64414d4fd4cf52bf665899f9d9597`.
+Galaxy A52 SM-A525F, Android 14/API 34, 1080×2400 pixel, densità 420,
+viewport 411×914 CSS, tre tasti, sistema scuro, WebView 155.0.8059.43.
+L'APK minificata installata corrisponde all'artefatto verificato; nessuna nuova build.
+
+| Scenario | Esito | Evidenza locale |
+| --- | --- | --- |
+| Launcher, splash aperto dall'icona, marchio Home/Settings arancioni | PASS | `02-launcher.png`, `launcher-cold-1.png`, `14-final-home.png`, `12-settings-light.png` |
+| CARTO, ricerca comuni e tastiera | PASS | `08-carto-map.png`, `map-runtime.json`, `05-pordenone-search.png` |
+| Eventi iniziali senza GPS, lista, filtri e dettaglio; avviso tecnico assente | PASS | `map-runtime.json`, `09-events.png`, `10-event-detail.png`, `15-events-filter.png` |
+| ICON-2I, CAMS, UV, webcam e Scopri | PASS nei percorsi eseguiti | `07-weather.png`, `11-discover.png`, `ui-actions.jsonl`, `weather-requests.jsonl` |
+| Bollettino con comune esplicitamente selezionato | PASS | `bulletin-reproduction.json`, `14-final-home.png` |
+| Bollettino alla prima configurazione con coordinate mancanti | FAIL | `01-home.png`, `map-runtime.json`, `bulletin-reproduction.json` |
+| Tema chiaro/scuro, tastiera, scorrimento e barre sul telefono | PASS nei percorsi eseguiti | `05-pordenone-search.png`, `12-settings-light.png`, `13-settings-bottom.png` |
+| Background/ripresa, reload WebView e riavvio a freddo | PASS | `state-before-lifecycle.json`, `state-after-resume.json`, `state-after-reload.json`, `state-after-final-cold.json`, `state-final.json` |
+| Bridge App/permessi e stabilità R8 | PASS nei percorsi eseguiti; nessun crash/ANR osservato | `native-bridge-result.json`, `native-final.json` |
+| Android 15/16, gesti, tablet, multi-window e rotazione fisica | NON VERIFICATO | Matrice non completata; nessuna equivalenza dichiarata |
+| Push end-to-end e posizione GPS/background | NON VERIFICATO | `localPilot` non ha identità Firebase Android; permessi rimasti non concessi |
+
+**Difetto aperto PR1-TEST-01:** `bulletinApi.js` converte `lat: null` e
+`lon: null` con `Number()`, producendo `lat=0&lon=0`. La richiesta iniziale
+di Udine restituisce HTTP 503 (`official_forecast_unavailable`); la stessa
+richiesta senza coordinate oppure con `46.0693,13.23715` restituisce HTTP 200.
+La selezione manuale di un comune aggira il problema. Il difetto non è stato
+corretto in questa attività di collaudo e impedisce di dichiarare la candidata pronta.
+
+Il proprietario ha confermato di avere reimpostato la TEST durante la pausa:
+la ricomparsa dell'onboarding e l'assenza delle vecchie preferenze sono attese.
+Le preferenze impostate durante questa prova hanno hash identico nei cinque
+controlli del ciclo di vita. App ufficiale e APK TEST hanno mantenuto versioni,
+hash dei componenti APK, date e inode dei dati; nessuna lettura integrale dei
+dati privati dell'app ufficiale. La vecchia TEST era già assente prima della prova.
+
+Area API deprecate: nessuna modifica al codice o alla toolchain; valutazione
+statica precedente mantenuta, senza certificare eliminate le chiamate AndroidX
+di compatibilità o risolti avvisi Play. Area orientamento: layout verticale
+osservato e policy nativa portrait sul telefono; rotazione fisica e adattività
+su schermi grandi non verificate. Queste limitazioni non sono trasformate in PASS.
+
+Evidenze private durevoli in `build/android-test/2026-10-16/runtime-4f37c49c/`;
+resoconti e inventario hash degli screenshot in `PR1-4f37c49c-TEST-runtime.json`
+e `.txt` nella cartella superiore. File esclusi dal Git: contengono schermate
+del dispositivo. Chiave CARTO oscurata nei log; seriale e alias esclusi da questo
+documento. Nessun deploy, AAB, Play, merge, reinstallazione, cancellazione dati
+o pubblicazione di segnalazioni. Servizi locali riavviati conservando SQLite;
+telefono lasciato sulla Home con Udine, Italiano e tema Sistema.
