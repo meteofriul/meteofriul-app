@@ -6,7 +6,8 @@ param(
     [switch]$Minified,
     [switch]$WeatherCloud,
     [switch]$CommunityPilot,
-    [switch]$EventsLocal
+    [switch]$EventsLocal,
+    [switch]$CamsContinuity
 )
 
 Set-StrictMode -Version Latest
@@ -52,6 +53,17 @@ function Get-NormalizedTaggedApiBase([string]$Value) {
 }
 
 $normalizedApiBase = Get-NormalizedTaggedApiBase $ApiBase
+# Reject retired tags before producing an APK. Check the same origin as WebView.
+foreach ($endpoint in @('/healthz', '/weather/official-alerts')) {
+    $response = Invoke-WebRequest -Uri ($normalizedApiBase + $endpoint) -Headers @{Origin='https://localhost'} -TimeoutSec 30
+    if ($response.StatusCode -ne 200 -or
+        $response.Headers['Content-Type'] -notmatch 'application/json' -or
+        $response.Headers['Access-Control-Allow-Origin'] -cne 'https://localhost') {
+        throw "Android TEST API preflight failed: $endpoint"
+    }
+}
+& node (Join-Path $frontendRoot 'scripts/carto-basemap-guard.mjs') --mode android-local-pilot
+if ($LASTEXITCODE -ne 0) { throw 'Android TEST CARTO configuration is missing or invalid.' }
 $normalizedWeatherTestNow = ([string]$WeatherTestNow).Trim()
 if ($normalizedWeatherTestNow) {
     $parsedWeatherTestNow = [datetimeoffset]::MinValue
@@ -82,7 +94,7 @@ if (-not (Test-Path -LiteralPath $androidSdk -PathType Container)) {
 
 # Refuse a pilot APK whose launcher diverges from the user-approved image.
 # Read-only check: never regenerate assets as a side effect of a build.
-& (Join-Path $PSScriptRoot 'package-pilot-launcher-layers.ps1') -CheckOnly
+& (Join-Path $PSScriptRoot 'package-pilot-launcher-layers.ps1') -CheckOnly -TestOrange
 
 $buildDirectory = [IO.Path]::GetFullPath((Join-Path $env:TEMP (
     "meteofriul-android-local-pilot-" + [Guid]::NewGuid().ToString("N")
@@ -99,6 +111,7 @@ $guardMarker = -join ((1..32) | ForEach-Object { '{0:x2}' -f (Get-Random -Maximu
 $managedEnvironment = @(
     "VITE_API_BASE",
     "VITE_ANDROID_API_BASE",
+    "VITE_CAMS_CONTINUITY_ENABLED",
     "VITE_LOCAL_WEATHER_PILOT",
     "VITE_LOCAL_WEATHER_PILOT_NOW",
     "VITE_LOCAL_WEATHER_NATIONAL_ENABLED",
@@ -128,6 +141,9 @@ try {
     Remove-Item Env:VITE_LOCAL_WEATHER_NATIONAL_API_BASE -ErrorAction SilentlyContinue
     Remove-Item Env:METEO_PLAY_RELEASE_GUARD_MARKER -ErrorAction SilentlyContinue
     $env:VITE_ANDROID_API_BASE = $normalizedApiBase
+    # The current public reader supports the original 30h contract. The 36h
+    # extension is opt-in only when its hash-bound sidecar is published.
+    $env:VITE_CAMS_CONTINUITY_ENABLED = if ($CamsContinuity) { '1' } else { '0' }
     $env:ORG_GRADLE_PROJECT_METEO_LOCAL_PILOT_MINIFIED = if ($Minified) { "true" } else { "false" }
     $env:METEO_PILOT_WEATHER_CLOUD = if ($WeatherCloud) { "1" } else { "0" }
     $env:METEO_PILOT_COMMUNITY_LOCAL = if ($CommunityPilot) { "1" } else { "0" }
@@ -170,6 +186,9 @@ try {
             --outDir $buildDirectory `
             --emptyOutDir
         if ($LASTEXITCODE -ne 0) { throw "Android local-pilot Web build failed." }
+
+        & node (Join-Path $frontendRoot 'scripts/carto-basemap-guard.mjs') --mode android-local-pilot --build-dir $buildDirectory
+        if ($LASTEXITCODE -ne 0) { throw 'Android TEST CARTO bundle guard failed.' }
 
         & node $guardScript `
             --build-dir $buildDirectory `

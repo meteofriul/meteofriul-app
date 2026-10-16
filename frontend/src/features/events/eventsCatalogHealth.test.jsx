@@ -83,18 +83,19 @@ describe("EV-04 catalog health from API through cache and UI", () => {
         const model = buildEventsViewModel(state, viewOptions);
         const home = buildHomeEventsViewModel(state, viewOptions);
         const expected = language === "it" ? "Catalogo incompleto" : "Catalic incomplet";
-        expect(model.message).toContain(expected);
-        expect(home.message).toContain(expected);
+        expect(model.message).not.toContain(expected);
+        expect(home.message).not.toContain(expected);
         expect(model.message).not.toBe(model.copy.loadingBody);
-        expect(renderToStaticMarkup(<EventsView model={model} language={language} />)).toContain(expected);
-        expect(renderToStaticMarkup(<HomeEventsTeaser events={home} />)).toContain(expected);
+        expect(renderToStaticMarkup(<EventsView model={model} language={language} />)).not.toContain(expected);
+        expect(renderToStaticMarkup(<HomeEventsTeaser events={home} />)).not.toContain(expected);
         if (!events.length) {
           const html = renderToStaticMarkup(<EventsView model={model} language={language} />);
           expect(html).not.toContain(model.copy.emptyTitle);
         }
         const offlineModel = buildEventsViewModel(offline, viewOptions);
-        expect(offlineModel.message).toContain(expected);
-        expect(offlineModel.message).toContain(language === "it" ? "salvati" : "salvâts");
+        expect(offlineModel.message).not.toContain(expected);
+        if (events.length) expect(offlineModel.message).toContain(language === "it" ? "salvati" : "salvâts");
+        else expect(offlineModel.message).toContain(model.copy.unavailableTitle);
       }
     });
 
@@ -192,7 +193,7 @@ describe("EV-04 catalog health from API through cache and UI", () => {
       const byTitle = Object.fromEntries(model.items.map((item) => [item.title, item]));
       expect(state.catalogHealth.sourceStatus["Galleria Spazzapan"]).toBe("fresh");
       expect(state.shouldRetry).toBe(false);
-      expect(model.message).toContain("Catalogo incompleto");
+      expect(model.message).not.toContain("Catalogo incompleto");
       expect(byTitle.Barbacan.timeCategory).toBe("next");
       expect(byTitle.Barbacan.scheduleLabel).toBe("Giornate di apertura da verificare");
       expect(byTitle["Memorie riflesse"].raw.start_date).toBeNull();
@@ -204,7 +205,7 @@ describe("EV-04 catalog health from API through cache and UI", () => {
           copy={model.copy} onClose={() => {}} />);
         expect(html).toContain(expected);
       }
-      expect(renderToStaticMarkup(<EventsView model={model} />)).toContain("Catalogo incompleto");
+      expect(renderToStaticMarkup(<EventsView model={model} />)).not.toContain("Catalogo incompleto");
     }
   });
 });

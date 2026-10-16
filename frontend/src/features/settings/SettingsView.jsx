@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from "react";
+import { getDefinitiveBrandMark } from "../../services/brandMark";
 import { isDefinitiveAppExperience } from "../../services/localWeatherPilot";
 import { registerPilotBackHandler } from "../../services/pilotBackNavigation";
 
@@ -656,7 +657,7 @@ function ProductLink({ copy }) {
         alt=""
         className="mf-settings-product-link__icon"
         height="48"
-        src={isDefinitiveAppExperience() ? "/brand/pilot-r4/meteo-eventi-friul-mark-192.png" : "/branding/icon_launcher_any_mf-r5-20260927-192.png"}
+        src={isDefinitiveAppExperience() ? getDefinitiveBrandMark() : "/branding/icon_launcher_any_mf-r5-20260927-192.png"}
         width="48"
       />
       <span className="mf-settings-product-link__body">

@@ -50,15 +50,16 @@ describe.each(["it", "fur"])("EV-04 runtime Home and Events availability (%s)", 
     { label: "degraded online", health: degraded, saved: false },
     { label: "degraded offline", health: degraded, saved: true },
     { label: "complete offline", health: complete, saved: true },
-  ])("keeps the featured event and its warning in the real Home: $label", async ({ health, saved }) => {
+  ])("keeps available events without catalogue diagnostics: $label", async ({ health, saved }) => {
     const data = payload([event], health);
     const state = await loadHomeEvents(location, { storage: storageWith(data), now: () => now.getTime(),
       eventsFetcher: saved ? offline : async () => data });
     const { home } = renderSurfaces(state, language);
     expect(home.textContent).toContain(event.title);
     const warning = home.querySelector('[role="status"]');
-    expect(warning).not.toBeNull();
-    if (health === degraded) expect(warning.textContent).toContain(copy.degradedTitle);
+    expect(home.textContent).not.toContain(copy.degradedTitle);
+    if (!saved) expect(warning).toBeNull();
+    else expect(warning).not.toBeNull();
     if (saved) expect(warning.textContent).toMatch(language === "it" ? /salvati/ : /salv[aâ]ts/);
     expect(home.querySelector(".mf-home-quick-events__count")).toBeNull();
   });
@@ -89,15 +90,16 @@ describe.each(["it", "fur"])("EV-04 runtime Home and Events availability (%s)", 
     }
   });
 
-  it.each([false, true])("preserves degraded empty diagnostics (offline=%s)", async (saved) => {
+  it.each([false, true])("uses a neutral unavailable state for incomplete empty results (offline=%s)", async (saved) => {
     const data = payload([], degraded);
     const state = await loadEventsData(location, { storage: storageWith(data), now: () => now.getTime(),
       eventsFetcher: saved ? offline : async () => data });
     for (const surface of Object.values(renderSurfaces(state, language))) {
-      expect(surface.textContent).toContain(copy.degradedTitle);
-      expect(surface.textContent).toContain(copy.degradedEmptyBody);
+      expect(surface.textContent).not.toContain(copy.degradedTitle);
+      expect(surface.textContent).not.toContain(copy.degradedEmptyBody);
+      expect(surface.textContent).toContain(copy.unavailableTitle);
       expect(surface.textContent).not.toContain(copy.emptyBody);
-      if (saved) expect(surface.textContent).toContain(copy.savedCatalogBody);
+      expect(state.catalogHealth).toEqual(degraded);
     }
   });
 

@@ -4,6 +4,7 @@ import { isLocalWeatherPilot } from "./localWeatherPilot";
 import { getLocationMunicipalityName } from "../domain/geo/locationIdentity";
 import { projectPilotProgrammeCards } from "./pilotProgrammeProjection";
 import { readEventsCatalogHealth } from "./eventsCatalogHealth";
+import { FIXED_FVG_PLACES } from "../data/fvgPlaces";
 
 const LOCAL_EVENTS_API = import.meta.env.VITE_LOCAL_EVENTS_API_BASE || "";
 export const PRODUCTION_EVENTS_API = LOCAL_EVENTS_API ? "" : "https://meteofriul-events-49007668366.europe-west1.run.app/api";
@@ -63,8 +64,20 @@ export function buildLocalEventsUrl(
     if (!Number.isInteger(radius) || radius < 5 || radius > 50 || radius % 5 !== 0) throw new Error("Raggio eventi non valido");
     params.set("radius", String(radius));
   }
-  const lat = coerceFiniteNumber(eventLocation.lat);
-  const lon = coerceFiniteNumber(eventLocation.lon);
+  let lat = coerceFiniteNumber(eventLocation.lat);
+  let lon = coerceFiniteNumber(eventLocation.lon);
+  if ((lat === null || lon === null) && isPilotEventsApiBase(apiBase)) {
+    // A fresh installation has a named placeholder municipality, not GPS.
+    // Use its checked catalogue point only for the event-radius query.
+    const istat = String(eventLocation.municipality?.istatCode || eventLocation.istatCode || "");
+    const municipality = /^\d{6}$/u.test(istat)
+      ? Object.values(FIXED_FVG_PLACES).find((place) => place.istatCode === istat)
+      : null;
+    if (municipality) {
+      lat = coerceFiniteNumber(municipality.latitude);
+      lon = coerceFiniteNumber(municipality.longitude);
+    }
+  }
 
   if (lat !== null && lon !== null) {
     params.set("lat", String(lat));

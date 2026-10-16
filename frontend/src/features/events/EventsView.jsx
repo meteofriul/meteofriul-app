@@ -521,8 +521,8 @@ function EmptyEvents({ copy, isLoading, isDegraded, isUnavailable, tab }) {
       <span aria-hidden="true">
         <Frown size={34} strokeWidth={2.15} />
       </span>
-      <strong>{isLoading ? copy.loadingTitle : isDegraded ? copy.degradedTitle : isUnavailable ? copy.unavailableTitle : tab === "today" ? copy.emptyTodayTitle : copy.emptyTitle}</strong>
-      <p>{isLoading ? copy.loadingBody : isDegraded ? copy.degradedEmptyBody : isUnavailable ? copy.unavailableBody : copy.emptyBody}</p>
+      <strong>{isLoading ? copy.loadingTitle : isDegraded || isUnavailable ? copy.unavailableTitle : tab === "today" ? copy.emptyTodayTitle : copy.emptyTitle}</strong>
+      <p>{isLoading ? copy.loadingBody : isDegraded || isUnavailable ? copy.unavailableBody : copy.emptyBody}</p>
     </div>
   );
 }

@@ -191,11 +191,13 @@ export function getEventsViewCopy(language) {
 export function getDegradedEventsMessage(state, { language = "it", hasItems = false } = {}) {
   if (state?.catalogHealth?.status !== "degraded") return "";
   const copy = getEventsViewCopy(language);
-  return [
-    state.fromCache ? copy.savedCatalogBody : "",
-    copy.degradedTitle + ".",
-    hasItems ? copy.degradedBody : copy.degradedEmptyBody,
-  ].filter(Boolean).join(" ");
+  // Source health remains in the data/cache for diagnostics and eligibility.
+  // Readers see available events, without internal catalogue audit messages.
+  if (!hasItems) return `${copy.unavailableTitle}. ${copy.unavailableBody}`;
+  if (state.fromCache && state.error) {
+    return language === "fur" ? "O mostri i evenis salvâts." : "Mostro gli eventi salvati.";
+  }
+  return "";
 }
 
 export function getEventsDateFallbackLabel(language) {

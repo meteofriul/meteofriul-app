@@ -17,6 +17,15 @@ import {
 } from "./locationSearch";
 
 describe("location search", () => {
+  it("deduplicates the same ISTAT municipality across differently named catalogues", () => {
+    const local = getLocalFvgLocationResults("Udine");
+    const udine = local.find((place) => place.istatCode === "030129");
+    const remote = { ...udine, admin1: "Friuli-Venezia Giulia", providerId: "030129",
+      provider: "national_icon2i_pilot_catalog", latitude: 46.06, longitude: 13.23 };
+    const results = mergeLocationResults(local, [remote], { query: "Udine" });
+    expect(results.filter((place) => place.istatCode === "030129")).toEqual([udine]);
+    expect(mergeLocationResults([udine], [{ ...remote, istatCode: "030130" }])).toHaveLength(2);
+  });
   it("finds local FVG places without calling the network", () => {
     const results = getLocalFvgLocationResults("tarv");
 

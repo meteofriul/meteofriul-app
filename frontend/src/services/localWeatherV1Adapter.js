@@ -1067,7 +1067,7 @@ export async function fetchLocalWeatherV1CamsSupplement(
     force = false,
     onCamsFamilyLatest,
     camsTimeoutMs = LOCAL_WEATHER_V1_CAMS_TIMEOUT_MS,
-    camsContinuity = true,
+    camsContinuity = import.meta.env.VITE_CAMS_CONTINUITY_ENABLED !== "0",
     clientFactory = createWeatherV1Client,
   } = {},
 ) {
@@ -1124,7 +1124,7 @@ export async function fetchLocalWeatherV1Bundle(
     onCamsFamilyLatest,
     retainedIconBundle,
     camsTimeoutMs = LOCAL_WEATHER_V1_CAMS_TIMEOUT_MS,
-    camsContinuity = true,
+    camsContinuity = import.meta.env.VITE_CAMS_CONTINUITY_ENABLED !== "0",
     clientFactory = createWeatherV1Client,
   } = {},
 ) {
