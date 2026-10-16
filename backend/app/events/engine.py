@@ -2130,6 +2130,15 @@ def merge_duplicate_event_data(primary: dict, secondary: dict) -> dict:
         if not merged.get(key) and secondary.get(key):
             merged[key] = secondary.get(key)
 
+    # Source preference is not evidence of daily opening. Keep uncertainty
+    # from either record unless the chosen source explicitly verifies daily
+    # openings; explicit occurrences remain the authoritative calendar.
+    if (not merged.get("occurrences")
+            and primary.get("opening_days_status") != "daily"
+            and any(event.get("opening_days_status") == "unknown"
+                    for event in (primary, secondary))):
+        merged["opening_days_status"] = "unknown"
+
     location_confidence_score = {
         "none": 0,
         "city_text": 1,

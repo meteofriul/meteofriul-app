@@ -1,0 +1,28 @@
+ACTIVITY MANAGER PROCESS EXIT INFO (dumpsys activity exit-info)
+Last Timestamp of Persistence Into Persistent Storage: 2026-10-15 17:58:43.243
+  package: com.meteofriul.app.localpilot
+    Historical Process Exit for uid=10217
+        ApplicationExitInfo #0:
+          timestamp=2026-10-15 17:46:41.339 pid=4968 realUid=99000 packageUid=10217 definingUid=10167 user=0
+          process=com.google.android.webview:sandboxed_process0:org.chromium.content.app.SandboxedProcessService0:0 reason=13 (OTHER KILLS BY SYSTEM) subreason=17 (ISOLATED NOT NEEDED) status=0
+          importance=300 pss=0.00 rss=0.00 description=isolated not needed state=empty trace=null
+        ApplicationExitInfo #1:
+          timestamp=2026-10-15 17:46:41.296 pid=4853 realUid=10217 packageUid=10217 definingUid=10217 user=0
+          process=com.meteofriul.app.localpilot reason=16 (PACKAGE UPDATED) subreason=0 (UNKNOWN) status=0
+          importance=100 pss=0.00 rss=0.00 description=stop com.meteofriul.app.localpilot due to installPackageLI state=empty trace=null
+        ApplicationExitInfo #2:
+          timestamp=2026-10-15 17:38:23.178 pid=4299 realUid=10217 packageUid=10217 definingUid=10217 user=0
+          process=com.meteofriul.app.localpilot reason=6 (ANR) subreason=0 (UNKNOWN) status=0
+          importance=400 pss=0.00 rss=0.00 description=bg anr: Process ProcessRecord{7c13718 4299:com.meteofriul.app.localpilot/u0a217} failed to complete startup state=empty trace=/data/system/procexitstore/anr_2026-10-15-17-38-14-930.gz
+        ApplicationExitInfo #3:
+          timestamp=2026-10-15 17:37:12.432 pid=4211 realUid=10217 packageUid=10217 definingUid=10217 user=0
+          process=com.meteofriul.app.localpilot reason=7 (INITIALIZATION FAILURE) subreason=0 (UNKNOWN) status=0
+          importance=1000 pss=0.00 rss=0.00 description=start timeout state=empty trace=null
+        ApplicationExitInfo #4:
+          timestamp=2026-10-15 17:35:01.557 pid=3576 realUid=10217 packageUid=10217 definingUid=10217 user=0
+          process=com.meteofriul.app.localpilot reason=6 (ANR) subreason=0 (UNKNOWN) status=0
+          importance=400 pss=0.00 rss=0.00 description=bg anr: Process ProcessRecord{bda9f01 3576:com.meteofriul.app.localpilot/u0a217} failed to complete startup state=empty trace=/data/system/procexitstore/anr_2026-10-15-17-34-49-087.gz
+        ApplicationExitInfo #5:
+          timestamp=2026-10-13 19:20:54.297 pid=2877 realUid=10217 packageUid=10217 definingUid=10217 user=0
+          process=com.meteofriul.app.localpilot reason=16 (PACKAGE UPDATED) subreason=0 (UNKNOWN) status=0
+          importance=400 pss=0.00 rss=0.00 description=stop com.meteofriul.app.localpilot due to installPackageLI state=empty trace=null

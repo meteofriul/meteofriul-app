@@ -1505,8 +1505,9 @@ html[data-theme="dark"] .mf-weather-environment-sheet .mf-weather-cams-card__foo
 }
 
 .mf-weather-cams-card__values > div {
-  background: #fff;
-  border: 1px solid #dce5eb;
+  background: var(--mf-neutral-surface);
+  border: 1px solid var(--mf-neutral-border);
+  color: var(--mf-ink);
   position: relative;
   border-radius: 10px;
   min-width: 0;

@@ -16,6 +16,13 @@ def meteoPlayReleaseProducingTaskName = { String taskName ->
     normalized.contains('release') && releaseProducingVerb
 }
 
+// Opt-in release-equivalent shrinking for the isolated TEST package.
+def meteoLocalPilotMinifiedValue = providers.gradleProperty('METEO_LOCAL_PILOT_MINIFIED').getOrElse('false')
+if (!(meteoLocalPilotMinifiedValue in ['true', 'false'])) {
+    throw new GradleException('METEO_LOCAL_PILOT_MINIFIED must be true or false')
+}
+def meteoLocalPilotMinified = meteoLocalPilotMinifiedValue == 'true'
+
 def meteoAndroidLocalPilotTaskName = { String taskName ->
     (taskName ?: '').toLowerCase(Locale.ROOT).contains('localpilot')
 }
@@ -128,10 +135,44 @@ android {
             initWith debug
             matchingFallbacks = ['debug']
             applicationIdSuffix '.localpilot'
-            versionNameSuffix '-local-pilot'
+            versionNameSuffix '-local-pilot-pr1.3'
             debuggable true
             buildConfigField 'boolean', 'LOCAL_WEATHER_PILOT', 'true'
+            if (meteoLocalPilotMinified) {
+                debuggable false
+                minifyEnabled true
+                shrinkResources true
+                proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+                ndk { debugSymbolLevel 'SYMBOL_TABLE' }
+                versionNameSuffix '-local-pilot-r8-pr1.3'
+            }
         }
+    }
+}
+
+tasks.register('verifyLocalPilotBuildMode') {
+    group = 'verification'
+    description = 'Checks the resolved TEST optimization mode and package/signing isolation.'
+    doLast {
+        def pilot = android.buildTypes.getByName('localPilot')
+        def production = android.buildTypes.getByName('release')
+        if (pilot.applicationIdSuffix != '.localpilot' || pilot.signingConfig != android.signingConfigs.debug) {
+            throw new GradleException('Local TEST package or signing isolation changed')
+        }
+        if (pilot.minifyEnabled != meteoLocalPilotMinified ||
+            pilot.shrinkResources != meteoLocalPilotMinified ||
+            pilot.debuggable == meteoLocalPilotMinified) {
+            throw new GradleException('Local TEST optimization mode does not match the requested mode')
+        }
+        if (!production.minifyEnabled || !production.shrinkResources || production.debuggable) {
+            throw new GradleException('Production optimization configuration changed')
+        }
+        println 'METEO_LOCAL_PILOT_MINIFIED:' + meteoLocalPilotMinified
+    }
+}
+tasks.configureEach { task ->
+    if (task.name == 'preLocalPilotBuild') {
+        task.dependsOn('verifyLocalPilotBuildMode')
     }
 }
 

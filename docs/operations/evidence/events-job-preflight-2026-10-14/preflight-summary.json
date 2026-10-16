@@ -1,0 +1,312 @@
+{
+  "checked_at": "2026-10-14T19:05:18.791493+00:00",
+  "project": "meteo-friul",
+  "region": "europe-west1",
+  "candidate_commit": "f7fe8e9696f5b61a54fda27617ec99834993f8b4",
+  "main_unchanged": "5a68de5dc1607105f921d4d2b731170f1a8a0446",
+  "candidate_events_identical_to_android_test": true,
+  "cloud_mutations": false,
+  "job": {
+    "name": "meteofriul-events-refresh",
+    "generation": 37,
+    "image": "europe-west1-docker.pkg.dev/meteo-friul/meteofriul/events-worker@sha256:b3f437dfd2d802e0ea1110edf43df9c9d2f8c0eaa17bb5b7780e58fdf0462891"
+  },
+  "api": {
+    "service": "meteofriul-events",
+    "revision": "meteofriul-events-00013-zpm",
+    "image": "europe-west1-docker.pkg.dev/meteo-friul/meteofriul/events-worker@sha256:b3f437dfd2d802e0ea1110edf43df9c9d2f8c0eaa17bb5b7780e58fdf0462891",
+    "traffic": [
+      {
+        "latestRevision": true,
+        "percent": 100,
+        "revisionName": "meteofriul-events-00013-zpm"
+      }
+    ]
+  },
+  "scheduler": {
+    "state": "ENABLED",
+    "schedule": "0 4 * * *",
+    "timezone": "Etc/UTC"
+  },
+  "latest_execution": {
+    "name": "meteofriul-events-refresh-d6zqm",
+    "started_at": "2026-10-14T04:00:09.485483Z",
+    "completed_at": "2026-10-14T04:07:13.934491Z",
+    "conditions": [
+      {
+        "lastTransitionTime": "2026-10-14T04:07:13.934491Z",
+        "message": "Task meteofriul-events-refresh-d6zqm-task0 failed with exit code: 1 and message: The container exited with an error.",
+        "reason": "NonZeroExitCode",
+        "status": "False",
+        "type": "Completed"
+      }
+    ]
+  },
+  "catalog": {
+    "snapshot": "2026-10-14T04:00:26.735899+00:00",
+    "generation": "1791950831552254",
+    "sha256": "b674d6192ebae9301684d6cd80477cd7f2295250b5b367a33470ccb5cd574cce",
+    "sources": {
+      "TurismoFVG": {
+        "status": "partial",
+        "events": 1220,
+        "review": 3,
+        "error_type": null,
+        "exception": null
+      },
+      "Pordenonelegge": {
+        "status": "fresh",
+        "events": 0,
+        "review": 0,
+        "error_type": null,
+        "exception": null
+      },
+      "Azalea": {
+        "status": "fresh",
+        "events": 7,
+        "review": 0,
+        "error_type": null,
+        "exception": null
+      },
+      "CSS Udine": {
+        "status": "partial",
+        "events": 156,
+        "review": 1,
+        "error_type": null,
+        "exception": null
+      },
+      "Pordenone Pensa": {
+        "status": "partial",
+        "events": 0,
+        "review": 1,
+        "error_type": null,
+        "exception": null
+      },
+      "Teatro Verdi Pordenone": {
+        "status": "fresh",
+        "events": 88,
+        "review": 0,
+        "error_type": null,
+        "exception": null
+      },
+      "Teatro Verdi Trieste": {
+        "status": "fresh",
+        "events": 70,
+        "review": 0,
+        "error_type": null,
+        "exception": null
+      },
+      "Le Giornate del Cinema Muto": {
+        "status": "fresh",
+        "events": 0,
+        "review": 0,
+        "error_type": null,
+        "exception": null
+      },
+      "Paesi in Festa": {
+        "status": "fresh",
+        "events": 17,
+        "review": 0,
+        "error_type": null,
+        "exception": null
+      },
+      "SagreFVG": {
+        "status": "partial",
+        "events": 14,
+        "review": 1,
+        "error_type": null,
+        "exception": null
+      },
+      "Villa Manin": {
+        "status": "fresh",
+        "events": 4,
+        "review": 0,
+        "error_type": null,
+        "exception": null
+      },
+      "Magazzino delle Idee": {
+        "status": "stale",
+        "events": 0,
+        "review": 0,
+        "error_type": "adapter_exception",
+        "exception": "ReadTimeout"
+      },
+      "MESS": {
+        "status": "fresh",
+        "events": 17,
+        "review": 0,
+        "error_type": null,
+        "exception": null
+      },
+      "Galleria Spazzapan": {
+        "status": "fresh",
+        "events": 2,
+        "review": 0,
+        "error_type": null,
+        "exception": null
+      },
+      "Barcolana": {
+        "status": "fresh",
+        "events": 1,
+        "review": 0,
+        "error_type": null,
+        "exception": null
+      }
+    }
+  },
+  "local_tests": {
+    "environment": "Windows Python 3.13, exact f7fe8e96 package; not a container build",
+    "pilot_tests": 421,
+    "attems_tests": 7,
+    "result": "PASS"
+  },
+  "api_comparison": {
+    "checked_at": "2026-10-14T19:03:10.523737+00:00",
+    "snapshot": "2026-10-14T04:00:26.735899+00:00",
+    "places": {
+      "Pordenone": {
+        "total": 306,
+        "pages": [
+          100,
+          100,
+          100,
+          6
+        ],
+        "identical_full_payloads": true,
+        "events_sha256": "92c781b6c7c5d76866447538fe0e852d6c40d215b3d7c63215f0769c7f6498da",
+        "sources_visible": {
+          "TurismoFVG": 204,
+          "Azalea": 1,
+          "Teatro Verdi Pordenone": 88,
+          "Paesi in Festa": 7,
+          "SagreFVG": 6
+        },
+        "source_failure_tags": {
+          "TurismoFVG": "quarantined_cards",
+          "CSS Udine": "quarantined_cards",
+          "Pordenone Pensa": "quarantined_cards",
+          "SagreFVG": "quarantined_cards",
+          "Magazzino delle Idee": "adapter_exception"
+        }
+      },
+      "Udine": {
+        "total": 431,
+        "pages": [
+          100,
+          100,
+          100,
+          100,
+          31
+        ],
+        "identical_full_payloads": true,
+        "events_sha256": "50285858a39935cc98c60a08be2b8ec0d108fa3d4ef78260a2fad38878b30c6f",
+        "sources_visible": {
+          "TurismoFVG": 306,
+          "MESS": 5,
+          "Azalea": 5,
+          "CSS Udine": 109,
+          "SagreFVG": 4,
+          "Paesi in Festa": 2
+        },
+        "source_failure_tags": {
+          "TurismoFVG": "quarantined_cards",
+          "CSS Udine": "quarantined_cards",
+          "Pordenone Pensa": "quarantined_cards",
+          "SagreFVG": "quarantined_cards",
+          "Magazzino delle Idee": "adapter_exception"
+        }
+      },
+      "Trieste": {
+        "total": 264,
+        "pages": [
+          100,
+          100,
+          64
+        ],
+        "identical_full_payloads": true,
+        "events_sha256": "cdb086bd30d853968cc53918bb7c5ee56acad47667133e9b018de076e8bc8811",
+        "sources_visible": {
+          "TurismoFVG": 192,
+          "Teatro Verdi Trieste": 70,
+          "Barcolana": 1,
+          "MESS": 1
+        },
+        "source_failure_tags": {
+          "TurismoFVG": "quarantined_cards",
+          "CSS Udine": "quarantined_cards",
+          "Pordenone Pensa": "quarantined_cards",
+          "SagreFVG": "quarantined_cards",
+          "Magazzino delle Idee": "adapter_exception"
+        }
+      },
+      "Gorizia": {
+        "total": 184,
+        "pages": [
+          100,
+          84
+        ],
+        "identical_full_payloads": true,
+        "events_sha256": "6c0aafc991c5d11822248d6b6af2b6f50587ed400bccb2e75cb3eacf5eb8fe4d",
+        "sources_visible": {
+          "TurismoFVG": 179,
+          "MESS": 2,
+          "Galleria Spazzapan": 2,
+          "Paesi in Festa": 1
+        },
+        "source_failure_tags": {
+          "TurismoFVG": "quarantined_cards",
+          "CSS Udine": "quarantined_cards",
+          "Pordenone Pensa": "quarantined_cards",
+          "SagreFVG": "quarantined_cards",
+          "Magazzino delle Idee": "adapter_exception"
+        }
+      },
+      "Tolmezzo": {
+        "total": 72,
+        "pages": [
+          72
+        ],
+        "identical_full_payloads": true,
+        "events_sha256": "6e74272ac88d20ebb002c6aa48d2813ade01530e0e4041bc4b9a5fbbc4ffb94a",
+        "sources_visible": {
+          "TurismoFVG": 69,
+          "MESS": 2,
+          "SagreFVG": 1
+        },
+        "source_failure_tags": {
+          "TurismoFVG": "quarantined_cards",
+          "CSS Udine": "quarantined_cards",
+          "Pordenone Pensa": "quarantined_cards",
+          "SagreFVG": "quarantined_cards",
+          "Magazzino delle Idee": "adapter_exception"
+        }
+      }
+    },
+    "health": {
+      "status": 200,
+      "body": {
+        "service": "pilot-events"
+      }
+    },
+    "snapshot_conflict_http": 409,
+    "unchanged_adapters": {
+      "backend/app/events/pilot_azalea.py": "56b91a5bcc878e34ec3a41809bfdb74654c38d1f9807f5e9c438fcca5a688bc1",
+      "backend/app/events/pilot_spazzapan.py": "633ffc4a6db38f62e95f8fccbf269511e68fe9e3b3217b3948c40c370f5701b1",
+      "backend/app/events/pilot_magazzino.py": "54f9a73cad4e3b730d44c51b7893d6901ba655a47f9fd3cdabd4ead2e4543959"
+    },
+    "cloud_mutations": false
+  },
+  "package": {
+    "planned_image_tag": "europe-west1-docker.pkg.dev/meteo-friul/meteofriul/events-worker:detail-isolation-f7fe8e96-20261014",
+    "archive": "events-f7fe8e96-build-context.tar.gz",
+    "bytes": 2016524,
+    "sha256": "58ccb2f9a24312eca52392277820e9b81a2cd6dd84148a1092eb175ae8a7fb02",
+    "cloud_build_submitted": false
+  },
+  "remaining_steps": [
+    "Build candidate image with container tests",
+    "Deploy API and job using verified immutable digest with runtime invariants",
+    "Run one authorized complete collection and inspect catalog, logs and API",
+    "No main merge or Android release implied"
+  ]
+}

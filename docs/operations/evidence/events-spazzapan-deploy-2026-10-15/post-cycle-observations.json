@@ -1,0 +1,115 @@
+{
+  "snapshot": "2026-10-15T14:26:55.958729+00:00",
+  "before_quarantined_count": 13,
+  "after_quarantined_count": 18,
+  "added_review_items": [
+    {
+      "source": "TurismoFVG",
+      "url": "https://www.turismofvg.it/eventi/ciclo-autunnale-dell-associazione-biblioteca-austriaca",
+      "reason": "detail_identity_or_schedule_requires_review"
+    },
+    {
+      "source": "TurismoFVG",
+      "url": "https://www.turismofvg.it/eventi/il-segno-della-memoria",
+      "reason": "listed_detail_http_404"
+    },
+    {
+      "source": "TurismoFVG",
+      "url": "https://www.turismofvg.it/eventi/samrrimenti-e-rinvenimenti",
+      "reason": "detail_identity_or_schedule_requires_review"
+    },
+    {
+      "source": "TurismoFVG",
+      "url": "https://www.turismofvg.it/eventi/stagione-concertistica-elena-lipizer-2026-2027-latino-mediterraneo-da-bach-a-morricone",
+      "reason": "listed_detail_http_404"
+    },
+    {
+      "source": "TurismoFVG",
+      "url": "https://www.turismofvg.it/eventi/stagione-teatrale-2026-2027-friuli-1976-voci-dalla-terra",
+      "reason": "listed_detail_http_404"
+    },
+    {
+      "source": "TurismoFVG",
+      "url": "https://www.turismofvg.it/eventi/teatro-pasolini-digger",
+      "reason": "detail_identity_or_schedule_requires_review"
+    }
+  ],
+  "removed_review_items": [
+    {
+      "source": "TurismoFVG",
+      "url": "https://www.turismofvg.it/eventi/l-occasione-del-borgo-mercatino-di-borgo-san-sergio-478799",
+      "reason": "date_bounds_not_explicit"
+    }
+  ],
+  "candidate_watch_logs": [
+    {
+      "timestamp": "2026-10-15T14:32:22.369173Z",
+      "palazzo_attems_watch": {
+        "changes": [
+          "detail_changed:165450",
+          "detail_changed:174290",
+          "detail_changed:174454",
+          "detail_changed:174560",
+          "event_inventory_changed",
+          "new_review_required"
+        ],
+        "current_exhibition_count": 1,
+        "event_api_count": 30,
+        "known_blockers": 5,
+        "source_complete": false
+      }
+    },
+    {
+      "timestamp": "2026-10-15T14:32:57.005966Z",
+      "girofvg_watch": {
+        "category_pages_expected": 90,
+        "category_pages_read": 89,
+        "changes": [
+          {
+            "modified": "2026-10-12T02:38:08Z",
+            "reason": "new_or_changed_category_article",
+            "url": "https://www.girofvg.com/barcolana-trieste-regata-2026"
+          }
+        ],
+        "known_page_errors": [
+          "https://www.girofvg.com/fiere-e-mostre?start=168"
+        ],
+        "sitemap_urls": 12297,
+        "source_complete": false
+      }
+    },
+    {
+      "timestamp": "2026-10-15T14:32:57.228050Z",
+      "alerts": [
+        {
+          "change_count": 6,
+          "changes": [
+            "detail_changed:165450",
+            "detail_changed:174290",
+            "detail_changed:174454",
+            "detail_changed:174560",
+            "event_inventory_changed",
+            "new_review_required"
+          ],
+          "monitor": "Palazzo Attems",
+          "status": "review_required"
+        },
+        {
+          "change_count": 1,
+          "changes": [
+            {
+              "modified": "2026-10-12T02:38:08Z",
+              "reason": "new_or_changed_category_article",
+              "url": "https://www.girofvg.com/barcolana-trieste-regata-2026"
+            }
+          ],
+          "monitor": "GiroFVG",
+          "status": "review_required"
+        }
+      ],
+      "event": "event_candidate_watch_alert"
+    }
+  ],
+  "annual_monitor_carried_forward": true,
+  "container_exit_zero": true
+}

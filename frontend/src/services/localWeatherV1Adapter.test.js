@@ -309,6 +309,18 @@ describe("local weather v1 adapter", () => {
     expect(fixture.camsEurope.fetchMunicipality).toHaveBeenCalledWith(expect.anything(), ISTAT, expect.anything());
   });
 
+  it.each(["0", "1"])("honours the reader continuity capability flag (%s)", async (flag) => {
+    vi.stubEnv("VITE_CAMS_CONTINUITY_ENABLED", flag);
+    try {
+      const fixture = pairedCamsFixtureClientFactory();
+      await fetchLocalWeatherV1CamsSupplement({ city: "Pordenone", municipality: { istatCode: ISTAT } },
+        { now: () => Date.parse(NOW), storage: storage(), clientFactory: fixture.factory });
+      expect(fixture.factory).toHaveBeenCalledWith(expect.objectContaining({ camsContinuity: flag === "1" }));
+    } finally {
+      vi.unstubAllEnvs();
+    }
+  });
+
   it("fails the separate CAMS channel closed for unsupported or mismatched municipalities", async () => {
     const fixture = pairedCamsFixtureClientFactory();
     await expect(fetchLocalWeatherV1CamsSupplement({ municipality: { istatCode: "058091" } }, {

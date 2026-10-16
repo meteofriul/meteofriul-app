@@ -48,6 +48,9 @@ jobs:
       - name: Test release API guard
         run: npm run test:release-guard
 
+      - name: Test dependency security and compatibility
+        run: npm run test:dependency-security
+
       - name: Lint frontend
         run: npm run lint
 

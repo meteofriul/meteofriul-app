@@ -1,4 +1,5 @@
 import { describe, expect, it, vi } from "vitest";
+import { DEFAULT_APP_LOCATION } from "../app/appLocation";
 
 import {
   buildBulletinForecastUrl,
@@ -15,6 +16,59 @@ function jsonResponse(payload, { ok = true } = {}) {
 }
 
 describe("bulletin api", () => {
+  it("loads the first-run bulletin by municipality without inventing coordinates", async () => {
+    const initialLocation = structuredClone(DEFAULT_APP_LOCATION);
+    const forecast = { official: { it: { forecasts: [{ text: "Sole" }] } } };
+    const fetchImpl = vi.fn(async (url) => jsonResponse(forecast, {
+      ok: !new URL(url, "https://localhost").searchParams.has("lat"),
+    }));
+
+    await expect(fetchBulletinPayload(initialLocation, {
+      apiBase: "/api",
+      fetchImpl,
+      includeAlerts: false,
+      force: true,
+      now: () => 123,
+    })).resolves.toMatchObject({ city: "Udine", forecast });
+    expect(fetchImpl).toHaveBeenCalledExactlyOnceWith(
+      "/api/weather/forecast?city=Udine&_=123",
+      { cache: "no-store" },
+    );
+    expect(initialLocation).toEqual(DEFAULT_APP_LOCATION);
+    expect(initialLocation).toMatchObject({ lat: null, lon: null });
+  });
+
+  it.each([
+    { label: "null", value: null },
+    { label: "undefined", value: undefined },
+    { label: "empty string", value: "" },
+    { label: "whitespace", value: "  " },
+    { label: "boolean", value: false },
+    { label: "array", value: [] },
+    { label: "object", value: {} },
+    { label: "NaN", value: NaN },
+    { label: "Infinity", value: Infinity },
+  ])(
+    "omits the coordinate pair when either value is missing or invalid ($label)",
+    ({ value }) => {
+      for (const coordinates of [{ lat: value, lon: 13.23715 }, { lat: 46.0693, lon: value }]) {
+        expect(buildBulletinForecastUrl({ city: "Udine", ...coordinates }, { apiBase: "/api" }))
+          .toBe("/api/weather/forecast?city=Udine");
+      }
+    },
+  );
+
+  it.each([
+    [46.0693, 13.23715, "46.0693", "13.23715"],
+    ["46.0693", "13.23715", "46.0693", "13.23715"],
+    [0, 13.23715, "0", "13.23715"],
+    [46.0693, 0, "46.0693", "0"],
+  ])("preserves explicitly provided finite coordinates (%s, %s)", (lat, lon, expectedLat, expectedLon) => {
+    const url = new URL(buildBulletinForecastUrl({ city: "Udine", lat, lon }, { apiBase: "/api" }), "https://localhost");
+    expect(url.searchParams.get("lat")).toBe(expectedLat);
+    expect(url.searchParams.get("lon")).toBe(expectedLon);
+  });
+
   it("builds separate forecast and alert URLs", () => {
     const location = {
       city: "Fontanafredda",

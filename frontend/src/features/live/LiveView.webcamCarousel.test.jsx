@@ -1134,17 +1134,17 @@ it("keeps pilot report cards focused on voting, share and close without moderati
   expect(detail.querySelector(".mf-live-community-map__confirmation-summary")).toBeNull();
   expect(detail.querySelector(".mf-live-community-map__denial-status")).toBeNull();
   expect(confirmButton.querySelector(".mf-live-community-map__confirm-label")?.textContent)
-    .toBe("Piove ancora");
+    .toBe("Confermo");
   expect(confirmButton.querySelector(".mf-live-community-map__confirm-count")?.textContent)
     .toBe("2");
-  expect(confirmButton.getAttribute("aria-label")).toBe("Piove ancora. Conferme: 2");
+  expect(confirmButton.getAttribute("aria-label")).toBe("Confermo. Conferme: 2");
   expect(confirmButton.querySelector(".lucide-thumbs-up")).not.toBeNull();
   expect(confirmButton.getAttribute("aria-pressed")).toBe("false");
   expect(denyButton.querySelector(".mf-live-community-map__confirm-label")?.textContent)
-    .toBe("Non piove più");
+    .toBe("Non c’è più");
   expect(denyButton.querySelector(".mf-live-community-map__confirm-count")?.textContent)
     .toBe("0");
-  expect(denyButton.getAttribute("aria-label")).toBe("Non piove più. Smentite: 0");
+  expect(denyButton.getAttribute("aria-label")).toBe("Non c’è più. Non c’è più: 0");
   expect(denyButton.querySelector(".lucide-thumbs-down")).not.toBeNull();
   expect(denyButton.getAttribute("aria-pressed")).toBe("false");
   expect([...confirmationActions.children]).toEqual([confirmButton, denyButton]);
@@ -1286,7 +1286,7 @@ it("updates the visible confirmation count from the authoritative vote response"
   expect(onReportConfirm).toHaveBeenCalledTimes(1);
   expect(confirmButton.querySelector(".mf-live-community-map__confirm-count")?.textContent)
     .toBe("3");
-  expect(confirmButton.getAttribute("aria-label")).toBe("Piove ancora. Conferme: 3");
+  expect(confirmButton.getAttribute("aria-label")).toBe("Confermo. Conferme: 3");
   expect(confirmButton.getAttribute("aria-pressed")).toBe("true");
 
   const denyButton = workspace.querySelector(

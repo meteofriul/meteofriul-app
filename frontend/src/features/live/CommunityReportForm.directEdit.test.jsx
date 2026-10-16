@@ -6,9 +6,16 @@ import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
 
 vi.mock("../../services/localCommunityPilot", async (importOriginal) => ({
   ...await importOriginal(),
-  isLocalCommunityPilot: vi.fn(() => true),
+  isLocalCommunityPilot: vi.fn(() => false),
 }));
 
+vi.mock("../../services/localWeatherPilot", async (importOriginal) => ({
+  ...await importOriginal(),
+  isDefinitiveAppExperience: vi.fn(() => true),
+}));
+
+// Compatibility coverage for the retired editor in the legacy runtime.
+// The national community no longer exposes these actions.
 import { getLiveViewCopy } from "../../copy/liveViewCopy";
 import { CommunityReportForm } from "./LiveView";
 import { rememberCommunityGuidelinesConsent } from "./communityGuidelinesConsent";

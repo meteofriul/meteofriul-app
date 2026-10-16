@@ -1261,12 +1261,16 @@ function Set-SelectedArtifactMetadata {
 function Assert-IconClockWindow {
   $now = Get-PilotClockNow
   $iconStart = [datetimeoffset]::Parse($ExpectedIconRunAtUtc)
-  $iconEnd = [datetimeoffset]::Parse($IconUsableUntilUtc)
+  # The pilot uses ICON_FORECAST_WINDOW_POLICY (12 real future hourly rows),
+  # independently of the unchanged v1 manifest's legacy 48-hour window.
+  $iconEnd = [datetimeoffset]::Parse($ExpectedIconValidToUtc)
+  $firstFutureHour = [math]::Ceiling($now.ToUnixTimeMilliseconds() / 3600000.0) * 3600000.0
+  $futureHours = [math]::Floor(($iconEnd.ToUnixTimeMilliseconds() - $firstFutureHour) / 3600000.0) + 1
   if ($now -lt $iconStart) {
     throw "Lo snapshot ICON selezionato non e ancora valido rispetto all'orologio UTC."
   }
-  if ($now -gt $iconEnd) {
-    throw "Lo snapshot ICON selezionato e scaduto per il client locale (utilizzabile fino a $IconUsableUntilUtc)."
+  if ($futureHours -lt 12) {
+    throw "Lo snapshot ICON selezionato non copre le 12 ore future richieste dal client pilota."
   }
 }
 
@@ -1289,7 +1293,7 @@ function Write-CamsClockStatus {
     Write-Warning "CAMS non e ancora valido; ICON puo comunque essere provato senza fallback Open-Meteo."
     return
   }
-  Write-Warning "CAMS e oltre la finestra client e sara degradato; ICON resta disponibile fino a $IconUsableUntilUtc, senza fallback Open-Meteo."
+  Write-Warning "CAMS e oltre la finestra v1 di 30 ore. Il client puo usare fino a 36 ore solo con la policy continuity verificata; altrimenti resta degradato. ICON richiede almeno 12 ore future native."
 }
 
 function Convert-RoundTripUtc {

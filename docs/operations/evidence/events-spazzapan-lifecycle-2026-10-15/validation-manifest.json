@@ -1,0 +1,58 @@
+{
+  "candidate_commit": "223422e1045dafa0ddc32316bd6ed6ea510aa1ea",
+  "checked_at": "2026-10-15T14:09:27.511994+00:00",
+  "tests": {
+    "pilot": {
+      "ran": 720,
+      "passed": 719,
+      "skipped": 1,
+      "skip": "optional local ISTAT pilot artifact has not been built (Community geography)"
+    },
+    "spazzapan": {
+      "ran": 23,
+      "passed": 23
+    },
+    "attems": {
+      "ran": 7,
+      "passed": 7
+    }
+  },
+  "committed_files": {
+    "backend/Dockerfile.events-pilot": "22a83669464962ad1905d6c4730dad8e76941dc9d6a5bc0af8ff086e4eebe8f7",
+    "backend/app/events/pilot_source_policy.py": "0fa456ee3593ee19431685e8c9b58bfad94945aaa1c15220bc59d0c2c24f1a6f",
+    "backend/app/events/pilot_spazzapan.py": "da6356bf637a8afba4b898e21166bf5e991c5496d93c73d05e2cc6d6479b27a4",
+    "backend/tests/fixtures/spazzapan_2026.json": "d758c11590db2080a60aab5d07b21092c26df0d7a7d27d4d2406889bcbd2a3e5",
+    "backend/tests/fixtures/spazzapan_october_15_2026.json": "e591f603316df4554cfb9b29f0ea58cad00ea0b0a38eddbe5110b887d7229ab9",
+    "backend/tests/test_pilot_spazzapan.py": "c71ab98bb7b23c43952caeb9ad1d1e45318e99a4f07bbfa8641402ceab5651ad"
+  },
+  "local_evidence": {
+    "pilot-tests-final.log": {
+      "sha256": "a297ecafb828dccf4779a8e14bad88636736b85109200c7c0450d6fdf88d0061",
+      "bytes": 123647
+    },
+    "attems-tests-final.log": {
+      "sha256": "e9f891e4422d01d58f4b67352183f57ef3da592709b5711d3c2fd26088478abd",
+      "bytes": 1227
+    },
+    "live-evidence.json": {
+      "sha256": "bd241f79c52b6fe9115b6597c64447b3ade3c5959465871254f33fd6ef7719ac",
+      "bytes": 631870
+    },
+    "live-job-catalog.json": {
+      "sha256": "a02be83c617047a76d46b161fb8e0d9a50c67caa397b9ff8b94ca1e2f7048c09",
+      "bytes": 3283
+    },
+    "live-job-final.log": {
+      "sha256": "2c1916bd719b6bf3de054c25dd679a4dd6c0b28572356649e1956b52af2f1bd2",
+      "bytes": 1741
+    },
+    "live-api-result.json": {
+      "sha256": "fc50a84c423dd8dd78826b8a5bbdabbbc61b056d90fbb0e3ed4d510a35b7033d",
+      "bytes": 2707
+    },
+    "verify_spazzapan_job.py": {
+      "sha256": "d20d261d192c3cae5944e8c7684495f3aa08051a7275504560e2762f2ef1bd6b",
+      "bytes": 4585
+    }
+  }
+}

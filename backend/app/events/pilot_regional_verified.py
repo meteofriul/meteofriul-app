@@ -4,7 +4,7 @@ import time
 from zoneinfo import ZoneInfo
 
 from .pilot_regional_display_audit import create_year_display_audit
-from .pilot_regional_filtered import fetch_year_partitioned
+from .pilot_regional_filtered import fetch_year_partitioned, fetch_year_resilient
 from .pilot_regional_historical import resolve_historical_years
 from .pilot_regional_sitemap import discover_detail_urls
 from .pilot_regional_sitemap_audit import fetch_detail
@@ -189,7 +189,8 @@ def collect_regional_verified(previous_control=None, *, today=None,
     stats = summary(control)
     within_budget = time.monotonic() <= deadline
     fresh_details = job_results_fresh(control, today=today)
-    complete = stats['source_complete'] and fresh_details
+    complete = (stats['source_complete'] and not stats['ambiguous']
+                and not stats['review_required'] and fresh_details)
     verification = {'collection_mode': 'complete-annual-year-control',
                     'as_of_date': today.isoformat(),
                     'index_fingerprint': control['index_fingerprint'],
@@ -226,14 +227,15 @@ def collect_regional_verified(previous_control=None, *, today=None,
 
 def collect_regional_window_verified(previous_control=None, previous_batch=None,
                                      *, today=None,
-                                     fetch_calendar=fetch_year_partitioned,
+                                     fetch_calendar=fetch_year_resilient,
                                      fetch_sitemap=discover_detail_urls,
                                      fetch_html=None, max_seconds=335):
     """Verify the next 45 days, including active events and sitemap changes.
 
     The first run may inspect the full sitemap. Later runs use the saved
     control to inspect only dated cards, still-active URLs and changed sitemap
-    entries. Every listed detail in the window must pass before publication.
+    entries. Each detail is accounted for; isolated failures require healthy
+    current detail evidence before the verified cards can be published.
     """
     today = today or datetime.now(ZoneInfo('Europe/Rome')).date()
     if not isinstance(today, date) or not 30 <= max_seconds <= 335:
@@ -329,14 +331,29 @@ def collect_regional_window_verified(previous_control=None, previous_batch=None,
         if _result_within_age(result, today=today, now=now)
     }}
 
+    # Resume successful reads without trusting the failed attempt's inventory,
+    # sitemap index, active-card carry or distant-event evidence.
+    from .pilot_regional_checkpoint import resumable_details
+    resumed = resumable_details(control, previous_batch, today=today, now=now)
+    for url, result in resumed.items():
+        retained = control['results'].get(url)
+        if (retained is None or datetime.fromisoformat(result['checked_at'])
+                > datetime.fromisoformat(retained['checked_at'])):
+            control['results'][url] = result
+
     def detail(url):
         return fetch_html(url) if fetch_html is not None else fetch_detail(url)
 
+    from .pilot_regional_health import (detail_health, detail_health_verified,
+        has_read_failures, pending_details, settle_detail_failures, structured_reads)
     refreshed = set()
+    fallbacks = {}
+    control['detail_observations'] = {}
     while time.monotonic() < deadline - 20:
         pending = [url for url in control['entries']
                    if url not in control['results']
-                   and control['attempts'].get(url, {}).get('count', 0) < 3]
+                   and control['attempts'].get(url, {}).get('count', 0) < 3
+                   and control['attempts'].get(url, {}).get('retryable', True)]
         if not pending:
             if set(control['results']) != set(control['entries']):
                 break
@@ -356,16 +373,39 @@ def collect_regional_window_verified(previous_control=None, previous_batch=None,
                 break
             due.sort(reverse=True)
             chosen = {url for _, url in due[:48]}
+            fallbacks.update({url: control['results'][url] for url in chosen})
             control = {**control, 'results': {
                 url: result for url, result in control['results'].items()
                 if url not in chosen}}
         updated = inspect_batch(control, batch_size=48, max_workers=16,
-                                fetch_html=detail)
+                                fetch_html=detail, record_health=True)
         if (updated['results'] == control['results']
                 and updated['attempts'] == control['attempts']):
             raise RuntimeError('TurismoFVG window inspection made no progress')
         refreshed.update(set(updated['results']) - set(control['results']))
         control = updated
+    # When every attempted read failed, a recent cached card alone is not proof
+    # that the provider currently serves details. Probe up to three distinct
+    # verified pages within the existing time budget, preserving their evidence.
+    if has_read_failures(control) and not structured_reads(control):
+        probes = sorted(url for url, result in control['results'].items()
+                        if result.get('status') == 'detail_aligned'
+                        and url not in control['detail_observations'])[:3]
+        for url in probes:
+            if structured_reads(control) or time.monotonic() >= deadline - 20:
+                break
+            fallbacks.setdefault(url, control['results'][url])
+            probe = {**control, 'results': {u: r for u, r in control['results'].items() if u != url}}
+            # Restrict this health probe to its chosen URL; do not retry other pending URLs.
+            blocked = {u: {**r, 'retryable': False} for u, r in control['attempts'].items()}
+            updated = inspect_batch({**probe, 'attempts': blocked}, batch_size=1,
+                                    max_workers=1, fetch_html=detail, record_health=True)
+            updated['attempts'] = {**control['attempts'],
+                                   **{u: r for u, r in updated['attempts'].items() if u == url}}
+            control = updated
+    stop_reason = ('budget_reserve' if time.monotonic() >= deadline - 20 else
+                   'detail_failures' if control['attempts'] else 'complete')
+    control = settle_detail_failures(control, fallbacks, today=today, stop_reason=stop_reason)
     if (set(control['results']) == set(control['entries'])
             and not control['attempts'] and time.monotonic() < deadline - 20):
         control = reconcile_same_edition_duplicates(control)
@@ -386,7 +426,10 @@ def collect_regional_window_verified(previous_control=None, previous_batch=None,
     }
     stats = summary(control)
     within_budget = time.monotonic() <= deadline
-    complete = stats['source_complete'] and job_results_fresh(control, today=today)
+    healthy = detail_health_verified(control, previous_control=basis, today=today,
+                                     resumed_results=resumed)
+    complete = (stats['inventory_complete'] and job_results_fresh(control, today=today)
+                and healthy)
     verification = {'collection_mode': 'verified-rolling-45-day-window',
                     'as_of_date': today.isoformat(),
                     'window_end': window_end.isoformat(),
@@ -403,23 +446,40 @@ def collect_regional_window_verified(previous_control=None, previous_batch=None,
                     'calendar_segments': segments,
                     'pending': stats['pending'],
                     'ambiguous': stats['ambiguous'],
-                    'review_required': stats['review_required']}
+                    'review_required': stats['review_required'],
+                    'detail_health': detail_health(control)}
     if not complete or not within_budget:
         return {'status': 'error', 'error_type': 'incomplete_source',
                 'year_control': control, 'verification': verification,
+                'detail_candidates': pending_details(control),
+                'detail_diagnostics': control['detail_diagnostics'],
                 'events': [], 'review_required': [
                     {'url': url, 'reason': result.get('reason')}
                     for url, result in control['results'].items()
                     if result.get('status') in {'ambiguous', 'review_required'}]}
     display = create_year_display_audit(control, today=today)
-    if not display['source_complete'] or display['quarantined'] or display['review']:
+    if (not display['inventory_complete']
+            or (not display['cards'] and (display['review'] or display['quarantined']))):
         return {'status': 'error', 'error_type': 'source_verification_failed',
                 'year_control': control, 'verification': verification,
+                'detail_candidates': pending_details(control),
+                'detail_diagnostics': control['detail_diagnostics'],
                 'events': [], 'review_required': display['review'] + display['quarantined']}
+    issues = display['quarantined'] + display['review']
+    if any(not isinstance(item, dict) or not item.get('url') for item in issues):
+        return {'status': 'error', 'error_type': 'invalid_quarantine',
+                'year_control': control, 'verification': verification,
+                'events': [], 'review_required': issues}
+    quarantined = {item['url']: {'url': item['url'],
+                                'reason': item.get('reason') or item.get('status')
+                                          or 'detail_requires_review'}
+                   for item in issues}
     verification['cards_total'] = len(display['cards'])
     verification['cards_with_preview'] = sum(
         bool(card.get('description_excerpt')) for card in display['cards'])
+    verification['quarantine_count'] = len(quarantined)
     return {'status': 'ok', 'events': display['cards'],
             'year_control': control, 'verification': verification,
+            'detail_candidates': [], 'detail_diagnostics': control['detail_diagnostics'],
             'coverage': 'regional-rolling-calendar-sitemap-delta-and-details-verified',
-            'review_required': []}
+            'review_required': list(quarantined.values())}

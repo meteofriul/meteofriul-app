@@ -1,10 +1,11 @@
 import { Capacitor, registerPlugin } from "@capacitor/core";
+import { ANDROID_LOOPBACK_ONLY_BUILD } from "./localOnlyBuild";
 
 import { isAndroidCapacitorRuntime } from "./apiConfig";
 import { getLocalWeatherPilotTestNow, isLocalWeatherPilot } from "./localWeatherPilot";
 
 export const PILOT_WEATHER_PREFETCH_PLUGIN = "PilotWeatherPrefetch";
-export const PILOT_WEATHER_PREFETCH_API_BASE = "https://meteofriul-weather-49007668366.europe-west1.run.app";
+export const PILOT_WEATHER_PREFETCH_API_BASE = ANDROID_LOOPBACK_ONLY_BUILD ? "" : "https://meteofriul-weather-49007668366.europe-west1.run.app";
 export const PILOT_WEATHER_PREFETCH_READ_TIMEOUT_MS = 500;
 const CONFIGURE_TIMEOUT_MS = 1000;
 const HASH = /^[a-f0-9]{64}$/;

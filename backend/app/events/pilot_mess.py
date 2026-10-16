@@ -23,6 +23,28 @@ MONTHS = {'agosto': 8, 'settembre': 9, 'ottobre': 10,
 # The 2026 HTML spells this one month "novenbre".  This is a reviewed typo,
 # not permission to guess an unrecognised month in a future programme.
 MONTH_TYPO = {'novenbre': 11}
+# Reviewed 2026 programme slots. A malformed label can be quarantined by its
+# position without assigning a guessed date or museum to a published event.
+REVIEWED_LABORATORY_SLOTS_2026 = (
+    ('2026-08-01', 38554), ('2026-08-02', 38553),
+    ('2026-08-07', 38557), ('2026-08-13', 38548),
+    ('2026-08-20', 38543), ('2026-08-21', 38557),
+    ('2026-08-22', 38553), ('2026-08-29', 38546),
+    ('2026-09-01', 38549), ('2026-09-05', 38554),
+    ('2026-09-11', 38551), ('2026-09-12', 38548),
+    ('2026-09-13', 38549), ('2026-09-18', 38547),
+    ('2026-09-19', 38543), ('2026-09-25', 38551),
+    ('2026-09-28', 38560), ('2026-10-02', 38547),
+    ('2026-10-03', 38560), ('2026-10-04', 38556),
+    ('2026-10-10', 38555), ('2026-10-11', 38544),
+    ('2026-10-17', 38558), ('2026-10-18', 38550),
+    ('2026-10-24', 38552), ('2026-10-25', 38556),
+    ('2026-11-14', 38558), ('2026-11-15', 38550),
+    ('2026-11-22', 38545), ('2026-11-28', 38546),
+    ('2026-11-29', 38545), ('2026-12-06', 38559),
+    ('2026-12-12', 38552), ('2026-12-13', 38559),
+    ('2026-12-19', 38555), ('2026-12-20', 38544),
+)
 VENUE_ALIASES = {
     'museo di storia contadina di fontanabona': 38554,
     'museo della cantieristica': 38560,
@@ -136,6 +158,8 @@ def _programme_rows(payload):
     if not declared or not year_match or 'due appuntamenti per ogni museo' not in _plain(information):
         raise ValueError('MESS programme count or year missing')
     year = int(year_match[1])
+    if year != 2026 or len(REVIEWED_LABORATORY_SLOTS_2026) != 36:
+        raise ValueError('unreviewed MESS programme edition')
     candidates = [(item.get('description') or '') for item in accordion[0]['list']
                   if isinstance(item, dict) and '<li' in (item.get('description') or '')]
     if len(candidates) != 1:
@@ -146,31 +170,40 @@ def _programme_rows(payload):
         raise ValueError('MESS dated programme count differs from declaration')
     rows = []
     for index, match in enumerate(matches):
+        expected_date, expected_museum_id = REVIEWED_LABORATORY_SLOTS_2026[index]
         label = _plain(match[1])
-        parsed = re.fullmatch(r'(\d{1,2})\s+([a-z]+)\s*/\s*(.+?)\s+-\s+(.+)',
-                              label, re.I)
-        if not parsed:
-            raise ValueError('unreadable MESS laboratory label: ' + label[:120])
-        month_text = parsed[2].casefold()
-        if month_text in MONTH_TYPO:
-            if (year, int(parsed[1]), month_text) != (2026, 28, 'novenbre'):
-                raise ValueError('unreviewed MESS month typo')
-            month = MONTH_TYPO[month_text]
-        else:
-            month = MONTHS.get(month_text)
-        if not month:
-            raise ValueError('unrecognised MESS laboratory month')
-        day = date(year, month, int(parsed[1]))
-        following = html[match.end():matches[index + 1].start()
-                         if index + 1 < len(matches) else len(html)]
-        paragraph = re.search(r'<p\b[^>]*>(.*?)</p>', following, re.I | re.S)
-        description = _plain(paragraph[1]) if paragraph else ''
-        if not description or len(description) < 40 or '\ufffd' in description:
-            raise ValueError('MESS laboratory description missing')
-        rows.append({'date': day, 'title': _plain(parsed[3]),
-                     'venue_label': _plain(parsed[4]),
-                     'description': description, 'date_evidence': label})
-    dates = [row['date'] for row in rows]
+        try:
+            parsed = re.fullmatch(r'(\d{1,2})\s+([a-z]+)\s*/\s*(.+?)\s+-\s+(.+)',
+                                  label, re.I)
+            if not parsed:
+                raise ValueError('unreadable MESS laboratory label')
+            month_text = parsed[2].casefold()
+            if month_text in MONTH_TYPO:
+                if (year, int(parsed[1]), month_text) != (2026, 28, 'novenbre'):
+                    raise ValueError('unreviewed MESS month typo')
+                month = MONTH_TYPO[month_text]
+            else:
+                month = MONTHS.get(month_text)
+            if not month:
+                raise ValueError('unrecognised MESS laboratory month')
+            day = date(year, month, int(parsed[1]))
+            if day.isoformat() != expected_date:
+                raise ValueError('MESS laboratory slot date changed')
+            following = html[match.end():matches[index + 1].start()
+                             if index + 1 < len(matches) else len(html)]
+            paragraph = re.search(r'<p\b[^>]*>(.*?)</p>', following, re.I | re.S)
+            description = _plain(paragraph[1]) if paragraph else ''
+            if not description or len(description) < 40:
+                raise ValueError('MESS laboratory description missing')
+            rows.append({'slot': index + 1, 'museum_id': expected_museum_id,
+                         'date': day, 'title': _plain(parsed[3]),
+                         'venue_label': _plain(parsed[4]),
+                         'description': description, 'date_evidence': label})
+        except (TypeError, ValueError) as error:
+            rows.append({'slot': index + 1, 'museum_id': expected_museum_id,
+                         'date': date.fromisoformat(expected_date),
+                         'review_reason': str(error)})
+    dates = [date.fromisoformat(day) for day, _ in REVIEWED_LABORATORY_SLOTS_2026]
     if (dates != sorted(dates) or len(set(dates)) != 36
             or dates[0] != date(year, 8, 1) or dates[-1] != date(year, 12, 20)):
         raise ValueError('MESS programme date range inconsistent')
@@ -181,22 +214,46 @@ def parse_laboratories(programme, museums_page, *, today):
     rows, programme_html, year = _programme_rows(programme)
     museums = _museum_locations(museums_page, programme_html)
     by_key = {item['key']: item for item in museums.values()}
-    by_id = {item['id']: [] for item in museums.values()}
-    for row in rows:
-        key = _key(row['venue_label'])
-        museum = museums.get(VENUE_ALIASES[key]) if key in VENUE_ALIASES else by_key.get(key)
-        if not museum:
-            raise ValueError('MESS programme museum unresolved: ' + row['venue_label'])
-        row['museum'] = museum
-        by_id[museum['id']].append(row)
-    if len(by_id) != 18 or any(len(items) != 2 for items in by_id.values()):
+    expected_by_id = {item['id']: [] for item in museums.values()}
+    for day, museum_id in REVIEWED_LABORATORY_SLOTS_2026:
+        if museum_id not in expected_by_id:
+            raise ValueError('MESS reviewed museum missing from map')
+        expected_by_id[museum_id].append(day)
+    if (len(expected_by_id) != 18
+            or any(len(days) != 2 for days in expected_by_id.values())):
         raise ValueError('MESS two-session-per-museum check failed')
+    review_required, slot_records = [], []
+    for row in rows:
+        reason = row.get('review_reason')
+        if not reason:
+            key = _key(row['venue_label'])
+            museum = (museums.get(VENUE_ALIASES[key])
+                      if key in VENUE_ALIASES else by_key.get(key))
+            if not museum or museum['id'] != row['museum_id']:
+                reason = 'MESS programme museum unresolved or changed'
+            else:
+                row['museum'] = museum
+        active = row['date'] >= today
+        disposition = ('past' if not active else
+                       'review_required' if reason else 'included')
+        slot_records.append({'slot': row['slot'],
+                             'date': row['date'].isoformat(),
+                             'museum_id': row['museum_id'],
+                             'parsed': not bool(reason),
+                             'disposition': disposition})
+        if reason and active:
+            review_required.append({
+                'url': PROGRAMME_URL + '#laboratorio-' + str(row['slot']),
+                'source_id': f'mess-laboratori-{year}-{row["museum_id"]}-{row["date"].isoformat()}',
+                'reason': 'laboratory_requires_review', 'detail': reason,
+                'slot': row['slot'],
+            })
     events = []
     for row in rows:
-        if row['date'] < today:
+        if row['date'] < today or 'museum' not in row:
             continue
         museum = row['museum']
-        span = by_id[museum['id']]
+        span = expected_by_id[museum['id']]
         programme_id = f'mess-laboratori-{year}-{museum["id"]}'
         title = row['title']
         event = {
@@ -212,11 +269,12 @@ def parse_laboratories(programme, museums_page, *, today):
             'date_evidence': row['date_evidence'] + f' · edizione {year}',
             'schedule_kind': 'explicit_occurrence', 'is_real': True,
             'series_id': 'mess-laboratori', 'programme_id': programme_id,
+            'programme_slot': row['slot'],
             'programme_role': 'session', 'edition_id': str(year),
             'programme_title': 'Laboratori MESS · ' + museum['name'],
             'programme_url': PROGRAMME_URL,
-            'programme_start_date': span[0]['date'].isoformat(),
-            'programme_end_date': span[-1]['date'].isoformat(),
+            'programme_start_date': span[0],
+            'programme_end_date': span[-1],
             'programme_city': museum['city'],
             'programme_place_label': museum['city'],
             'programme_is_multi_place': False,
@@ -228,10 +286,13 @@ def parse_laboratories(programme, museums_page, *, today):
         }
         events.append(event)
     return {'status': 'ok', 'events': events,
-            'review_required': [],
+            'review_required': review_required,
             'verification': {'collection_mode': 'complete-mess-programme-and-news',
                              'edition_year': year, 'declared_laboratories': 36,
-                             'parsed_laboratories': len(rows),
+                             'parsed_laboratories': sum('museum' in row for row in rows),
+                             'reviewed_laboratories': sum('museum' not in row for row in rows),
+                             'active_laboratory_review_count': len(review_required),
+                             'slot_records': slot_records,
                              'museum_locations': len(museums),
                              'two_sessions_per_museum': True,
                              'projected_count': len(events),
@@ -252,6 +313,7 @@ def parse_news(category, regional_details, *, today):
     by_id = {article['id']: article for article in articles}
     if not set(REVIEWED_NEWS_2026) <= set(by_id):
         raise ValueError('reviewed MESS news disappeared')
+    changed_active = set()
     for article in articles:
         try:
             published = date.fromisoformat(str(article['published_date'])[:10])
@@ -260,69 +322,85 @@ def parse_news(category, regional_details, *, today):
             raise ValueError('MESS news date metadata invalid') from None
         if published.year == 2026:
             if REVIEWED_NEWS_2026.get(article['id']) != article['modified']:
-                raise ValueError('new or changed MESS news requires date review')
+                if article['id'] in REVIEWED_ACTIVE_NEWS:
+                    changed_active.add(article['id'])
+                else:
+                    raise ValueError('new or changed MESS news requires date review')
         elif ((published.year < 2026 and modified.year >= 2026
                and REVIEWED_HISTORICAL_UPDATES.get(article['id']) != article['modified'])
               or published.year > 2026):
             raise ValueError('unreviewed MESS news edition')
     events = []
+    review_required = []
     for article_id, proof in REVIEWED_ACTIVE_NEWS.items():
         article = by_id[article_id]
         if date.fromisoformat(proof['end']) < today:
             continue
-        if (article.get('full_url') != proof['path']
-                or not article.get('title') or not article.get('description')
-                or article.get('published') is not True):
-            raise ValueError('MESS exhibition identity changed')
-        intro = _plain(article.get('intro')).casefold()
-        detail_text = _plain(article['description']).casefold()
-        if (proof['city'].casefold() not in intro + ' ' + detail_text
-                or proof['venue'].casefold() not in intro
-                or any(value not in intro for value in proof['intro_dates'])):
-            raise ValueError('MESS exhibition dates or venue changed')
-        regional = regional_details.get(proof['regional_url'])
-        if not isinstance(regional, dict):
-            raise ValueError('MESS exhibition corroboration missing')
-        start, end = engine.parse_event_date_range(regional.get('date_full') or '')
-        if (not start or not end
-                or (start.isoformat(), end.isoformat()) != (proof['start'], proof['end'])
-                or _key(regional.get('event_city')) != _key(proof['city'])):
-            raise ValueError('MESS and TurismoFVG exhibition dates disagree')
-        paragraphs = [_plain(item) for item in re.findall(
-            r'<p\b[^>]*>(.*?)</p>', str(article['description']), re.I | re.S)]
-        prose = next((item for item in paragraphs
-                      if proof['excerpt_marker'] in item.casefold()
-                      and len(item) >= 80 and '\ufffd' not in item), '')
-        if not prose:
-            raise ValueError('MESS exhibition preview text changed')
-        image_path = article.get('preview_image') or ''
-        if not re.fullmatch(r'/media/files/erpac_mess/previews/[a-zA-Z0-9_.-]+', image_path):
-            raise ValueError('MESS exhibition image missing or untrusted')
-        town = engine.fvg_municipality_catalog.match_names(proof['city'])
-        if not town:
-            raise ValueError('MESS exhibition municipality unknown')
-        url = BASE + '/it' + proof['path']
-        title = _plain(article['title'])
-        events.append({
-            'source': SOURCE, 'source_id': f'mess-news-{article_id}',
-            'title': title, 'url': url,
-            'start_date': proof['start'], 'end_date': proof['end'],
-            'event_city': proof['city'], 'venue': proof['venue'],
-            'place': proof['venue'] + ', ' + proof['city'],
-            'lat': town.latitude, 'lon': town.longitude,
-            'location_confidence': 'municipality',
-            'image': BASE + image_path,
-            'date_evidence_kind': 'event_schedule',
-            'date_evidence': _plain(article['intro']) + ' · ' + regional['date_full'],
-            'schedule_kind': 'period', 'is_real': True,
-            'mess_content_kind': 'news_exhibition',
-            **attributed_excerpt(prose, source_name=SOURCE,
-                                 source_url=url, title=title),
-        })
+        try:
+            if article_id in changed_active:
+                raise ValueError('MESS active news record changed')
+            if (article.get('full_url') != proof['path']
+                    or not article.get('title') or not article.get('description')
+                    or article.get('published') is not True):
+                raise ValueError('MESS exhibition identity changed')
+            intro = _plain(article.get('intro')).casefold()
+            detail_text = _plain(article['description']).casefold()
+            if (proof['city'].casefold() not in intro + ' ' + detail_text
+                    or proof['venue'].casefold() not in intro
+                    or any(value not in intro for value in proof['intro_dates'])):
+                raise ValueError('MESS exhibition dates or venue changed')
+            regional = regional_details.get(proof['regional_url'])
+            if not isinstance(regional, dict):
+                raise ValueError('MESS exhibition corroboration missing')
+            start, end = engine.parse_event_date_range(regional.get('date_full') or '')
+            if (not start or not end
+                    or (start.isoformat(), end.isoformat()) != (proof['start'], proof['end'])
+                    or _key(regional.get('event_city')) != _key(proof['city'])):
+                raise ValueError('MESS and TurismoFVG exhibition dates disagree')
+            paragraphs = [_plain(item) for item in re.findall(
+                r'<p\b[^>]*>(.*?)</p>', str(article['description']), re.I | re.S)]
+            prose = next((item for item in paragraphs
+                          if proof['excerpt_marker'] in item.casefold()
+                          and len(item) >= 80 and '\ufffd' not in item), '')
+            if not prose:
+                raise ValueError('MESS exhibition preview text changed')
+            image_path = article.get('preview_image') or ''
+            if not re.fullmatch(r'/media/files/erpac_mess/previews/[a-zA-Z0-9_.-]+', image_path):
+                raise ValueError('MESS exhibition image missing or untrusted')
+            town = engine.fvg_municipality_catalog.match_names(proof['city'])
+            if not town:
+                raise ValueError('MESS exhibition municipality unknown')
+            url = BASE + '/it' + proof['path']
+            title = _plain(article['title'])
+            events.append({
+                'source': SOURCE, 'source_id': f'mess-news-{article_id}',
+                'title': title, 'url': url,
+                'start_date': proof['start'], 'end_date': proof['end'],
+                'event_city': proof['city'], 'venue': proof['venue'],
+                'place': proof['venue'] + ', ' + proof['city'],
+                'lat': town.latitude, 'lon': town.longitude,
+                'location_confidence': 'municipality',
+                'image': BASE + image_path,
+                'date_evidence_kind': 'event_schedule',
+                'date_evidence': _plain(article['intro']) + ' · ' + regional['date_full'],
+                'schedule_kind': 'period', 'is_real': True,
+                'mess_content_kind': 'news_exhibition',
+                **attributed_excerpt(prose, source_name=SOURCE,
+                                     source_url=url, title=title),
+            })
+        except (TypeError, ValueError) as error:
+            review_required.append({
+                'url': BASE + '/it' + proof['path'],
+                'source_id': f'mess-news-{article_id}',
+                'reason': 'news_exhibition_requires_review',
+                'detail': str(error),
+            })
+
     return events, {'news_category_id': 18221, 'news_records': len(articles),
                     'reviewed_2026_news': len(REVIEWED_NEWS_2026),
                     'corroborated_exhibitions': len(events),
-                    'unresolved_news': 0}
+                    'unresolved_news': len(review_required),
+                    'news_review_required': review_required}
 
 
 def collect_mess(*, get=requests.get, today=None):
@@ -348,14 +426,32 @@ def collect_mess(*, get=requests.get, today=None):
     programme = json.loads(fetch(PROGRAMME_API))
     museums = json.loads(fetch(MUSEUM_API))
     news = json.loads(fetch(NEWS_API))
+
+    def fetch_regional(url):
+        try:
+            return fetch(url)
+        except (requests.RequestException, ValueError):
+            return None
+
     with ThreadPoolExecutor(max_workers=3) as pool:
-        details = list(pool.map(fetch, regional_urls))
-    regional = {url: engine.extract_turismofvg_detail_metadata(
-        body.decode('utf-8', errors='replace')) for url, body in zip(regional_urls, details)}
+        details = list(pool.map(fetch_regional, regional_urls))
+
+    def parse_regional(body):
+        if body is None:
+            return None
+        try:
+            return engine.extract_turismofvg_detail_metadata(
+                body.decode('utf-8', errors='replace'))
+        except (TypeError, ValueError):
+            return None
+
+    regional = {url: parse_regional(body)
+                for url, body in zip(regional_urls, details)}
     batch = parse_laboratories(programme, museums, today=today)
     news_events, news_proof = parse_news(news, regional, today=today)
     batch['verification']['laboratory_count'] = len(batch['events'])
     batch['events'].extend(news_events)
+    batch['review_required'].extend(news_proof.pop('news_review_required'))
     batch['verification'].update(news_proof)
     batch['verification']['projected_count'] = len(batch['events'])
     batch['coverage'] = 'official-laboratories-museums-news-and-regional-date-corroboration'

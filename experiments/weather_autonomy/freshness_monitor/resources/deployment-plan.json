@@ -1,0 +1,107 @@
+{
+  "status": "LOCAL_REVIEW_ONLY_NOT_APPLIED",
+  "project": "meteo-friul",
+  "region": "europe-west1",
+  "job": {
+    "name": "meteofriul-icon2i-freshness",
+    "command": [
+      "python",
+      "-m",
+      "freshness_monitor"
+    ],
+    "argsViaOverridesOnly": true,
+    "imageDefaultArgs": [
+      "--help"
+    ],
+    "cpu": "1",
+    "memory": "512Mi",
+    "taskCount": 1,
+    "parallelism": 1,
+    "timeout": "120s",
+    "maxRetries": 0,
+    "cloudOptInDefault": false,
+    "totalApplicationBudgetSeconds": 110,
+    "collectionBudgetSeconds": 75,
+    "perProductCollectionBudgetSeconds": 35
+  },
+  "dispatcher": {
+    "name": "meteofriul-icon2i-freshness-dispatch",
+    "private": true,
+    "minInstances": 0,
+    "maxInstances": 1,
+    "cpu": "1",
+    "memory": "256Mi",
+    "billing": "request-based",
+    "concurrency": 8,
+    "timeout": "20s",
+    "command": [
+      "python",
+      "-m",
+      "freshness_monitor.dispatcher"
+    ],
+    "args": [
+      "--serve",
+      "--cloud"
+    ],
+    "cloudOptInDefault": false,
+    "path": "/dispatch",
+    "launchAttemptsPerDelivery": 1,
+    "sourceTimestampOffsetLimitSeconds": 120,
+    "deduplication": "monitor CAS/outbox per product and original slot"
+  },
+  "scheduler": {
+    "name": "projects/meteo-friul/locations/europe-west1/jobs/meteofriul-icon2i-freshness",
+    "target": "private dispatcher /dispatch (URL after deployment)",
+    "authentication": "OIDC; audience is dispatcher service base URL",
+    "body": {},
+    "schedule": "10,40 * * * *",
+    "timeZone": "UTC",
+    "retryCount": 0,
+    "maxRetryDuration": "0s",
+    "attemptDeadline": "30s",
+    "activationRequiresSeparateAuthorization": true
+  },
+  "transitionGraceSeconds": {
+    "fvg": 60,
+    "national": 60
+  },
+  "graceRationale": "30s verified reader cache + 30s initial request/propagation allowance; validate at activation.",
+  "state": {
+    "bucket": "meteo-friul-weather-state",
+    "prefix": "monitoring/icon2i-freshness/v1/"
+  },
+  "data": {
+    "bucket": "meteo-friul-weather-data",
+    "readOnly": true
+  },
+  "permissions": {
+    "weather": [
+      "storage.objects.get",
+      "storage.objects.list"
+    ],
+    "stateTwoObjectsOnly": [
+      "storage.objects.get",
+      "storage.objects.create",
+      "storage.objects.delete"
+    ],
+    "monitoring": [
+      "monitoring.timeSeries.create",
+      "monitoring.timeSeries.list"
+    ],
+    "dispatcherOnMonitorJobOnly": [
+      "run.jobs.run",
+      "run.jobs.runWithOverrides"
+    ],
+    "schedulerOnDispatcherOnly": [
+      "run.routes.invoke"
+    ]
+  },
+  "pending": [
+    "authorize image/build and activation",
+    "verify private IAM and observed Scheduler header through deployed dispatcher",
+    "measure grace, dispatcher cost and runtime",
+    "configure email/mobile channels and 6h renotification",
+    "verify log retention for 14 days plus review margin",
+    "verify live policies, IAM scope and notification delivery"
+  ]
+}

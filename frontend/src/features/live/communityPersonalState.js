@@ -114,6 +114,16 @@ function normalizeReportExpirations(expirations, now) {
   return [...byReport.values()];
 }
 
+function voteTargets(reportIds) {
+  return Array.isArray(reportIds)
+    ? { reportIds: [...new Set(reportIds.map(normalizeText).filter(Boolean))] } : {};
+}
+
+function matchesVoteTargets(entry, reportIds) {
+  return !Array.isArray(reportIds)
+    || reportIds.some((id) => entry?.reportIds?.includes(id));
+}
+
 function normalizeVotes(votes, now) {
   const byGroup = new Map();
 
@@ -133,6 +143,7 @@ function normalizeVotes(votes, now) {
       expiresAt,
       groupId,
       vote: value,
+      ...voteTargets(vote?.reportIds),
     });
   });
 
@@ -149,7 +160,7 @@ function normalizeMapWithdrawals(withdrawals, now) {
 
     const current = byGroup.get(groupId);
     if (!current || current.expiresAt < expiresAt) {
-      byGroup.set(groupId, { expiresAt, groupId });
+      byGroup.set(groupId, { expiresAt, groupId, ...voteTargets(withdrawal?.reportIds) });
     }
   });
 
@@ -414,7 +425,7 @@ export function withdrawCommunityReport(
 
 export function rememberCommunityVote(
   state,
-  { expiresAt, groupId, vote },
+  { expiresAt, groupId, vote, reportIds },
   { now = Date.now(), storage } = {},
 ) {
   const resolvedStorage = resolveStorage(storage);
@@ -444,6 +455,7 @@ export function rememberCommunityVote(
         expiresAt: normalizeExpiry(expiresAt, numericNow),
         groupId: normalizedGroupId,
         vote: normalizedVote,
+        ...voteTargets(reportIds),
       },
     ],
   }, numericNow);
@@ -453,7 +465,7 @@ export function rememberCommunityVote(
 
 export function rememberCommunityMapWithdrawal(
   state,
-  { expiresAt, groupId },
+  { expiresAt, groupId, reportIds },
   { now = Date.now(), storage } = {},
 ) {
   const resolvedStorage = resolveStorage(storage);
@@ -465,10 +477,11 @@ export function rememberCommunityMapWithdrawal(
   const nextState = normalizeState({
     ...currentState,
     mapWithdrawals: [
-      ...currentState.mapWithdrawals,
+      ...currentState.mapWithdrawals.filter((entry) => entry.groupId !== normalizedGroupId || matchesVoteTargets(entry, reportIds)),
       {
         expiresAt: normalizeExpiry(expiresAt, numericNow),
         groupId: normalizedGroupId,
+        ...voteTargets(reportIds),
       },
     ],
   }, numericNow);
@@ -485,15 +498,15 @@ export function getOwnCommunityReports(state, groupId) {
   return (state?.reports || []).filter((report) => report.groupId === normalizedGroupId);
 }
 
-export function getCommunityVote(state, groupId) {
+export function getCommunityVote(state, groupId, reportIds) {
   const normalizedGroupId = normalizeText(groupId);
-  return (state?.votes || []).find((vote) => vote.groupId === normalizedGroupId)?.vote || "";
+  return (state?.votes || []).find((vote) => vote.groupId === normalizedGroupId && matchesVoteTargets(vote, reportIds))?.vote || "";
 }
 
-export function hasRememberedCommunityMapWithdrawal(state, groupId) {
+export function hasRememberedCommunityMapWithdrawal(state, groupId, reportIds) {
   const normalizedGroupId = normalizeText(groupId);
   return (state?.mapWithdrawals || []).some(
-    (withdrawal) => withdrawal.groupId === normalizedGroupId,
+    (withdrawal) => withdrawal.groupId === normalizedGroupId && matchesVoteTargets(withdrawal, reportIds),
   );
 }
 

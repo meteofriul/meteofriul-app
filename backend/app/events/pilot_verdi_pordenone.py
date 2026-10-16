@@ -319,7 +319,7 @@ def collect_verdi_pordenone(*, get=requests.get, today=None):
              'archive_changed_unlisted': len(changed_archive),
              'detail_count': len(checked), 'detail_records': checked,
              'event_count': len(events), 'review_count': len(review),
-             'source_complete': not review}
+             'source_complete': True}
     return {"status": "ok", "events": events, "review_required": review,
             'verification': proof,
             "coverage": "complete-current-list-and-recent-sitemap-details"}

@@ -1,0 +1,18 @@
+{
+  "commit": "92eb93378f1ed7f3580cc19d5ada6fc5461d640f",
+  "main_unchanged": "5a68de5dc1607105f921d4d2b731170f1a8a0446",
+  "package": "com.meteofriul.app.localpilot",
+  "version": "0.1.14-local-pilot",
+  "version_code": 300031,
+  "minified": false,
+  "apk": ".tmp\\community-events-apk-2026-10-14\\meteofriul-community-events-92eb9337-test.apk",
+  "sha256": "a2150c82f6774b8bc70bad939c028a0f5c72cab2f4cf9bbae1b0f69b08a5432c",
+  "entry": "/assets/main-COQT5dim.js",
+  "checks": {
+    "community_loopback": true,
+    "events_candidate_loopback": true,
+    "profile_help": true,
+    "history_read_only": true,
+    "history_window": true
+  }
+}

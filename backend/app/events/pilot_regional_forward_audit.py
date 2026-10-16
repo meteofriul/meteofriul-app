@@ -14,6 +14,7 @@ from . import engine
 from .pilot_details import (enrich_details, english_provider_date_range,
                             german_provider_date_range)
 from .pilot_excerpt import clean_excerpt_text
+from .pilot_regional_identity import month_calendar_prose_conflict
 from .pilot_regional_sitemap_audit import (AUDIT_SCHEMA, classify_detail,
                                            fetch_detail, write_snapshot)
 from .pilot_source_policy import validate_candidate
@@ -24,7 +25,7 @@ MONTH_NAMES = 'gennaio febbraio marzo aprile maggio giugno luglio agosto settemb
 EVENT_FIELDS = ('url', 'title', 'event_city', 'lat', 'lon', 'listed_municipalities',
                 'location_confidence', 'location_source_url', 'start_date', 'end_date',
                 'schedule_kind', 'occurrences', 'verified_programme_occurrences',
-                'confirmed_reschedule',
+                'confirmed_reschedule', 'title_reconciliation',
                 'time', 'venue', 'place',
                 'provider_categories', 'date_evidence', 'description_excerpt',
                 'description_source_name', 'description_source_url',
@@ -122,6 +123,11 @@ def inspect_candidate(candidate, html, *, today):
         return {'status': 'review_required', 'reason': 'detail_not_inspected',
                 'detail_status': detail['status']}
     event = events[0]
+    if month_calendar_prose_conflict(
+            detail.get('date_full'), engine.extract_turismofvg_description(html) or '',
+            candidate.get('listing_occurrences') or []):
+        return {'status': 'review_required', 'reason': 'month_calendar_prose_conflict',
+                'detail_status': detail['status']}
     problems = validate_candidate(event, today=today)
     if problems:
         return {'status': 'review_required', 'reason': 'publication_gate',

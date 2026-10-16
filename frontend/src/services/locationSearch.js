@@ -115,6 +115,13 @@ function getMatchScore(key, place, cleanQuery) {
 }
 
 function getPlaceIdentity(place) {
+  // ISTAT identifies the municipality across local and national catalogues;
+  // display names, region punctuation and provider ids are not its identity.
+  const municipalityCode = String(place?.istatCode || place?.istat_code || "").trim();
+  const municipalityCountry = String(place?.countryCode || place?.country_code || "IT").toUpperCase();
+  if (municipalityCountry === "IT" && /^\d{6}$/u.test(municipalityCode)) {
+    return `IT|istat:${municipalityCode}`;
+  }
   const name = normalizeText(place?.name);
   const country = normalizeText(
     place?.countryCode

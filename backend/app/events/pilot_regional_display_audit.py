@@ -13,6 +13,7 @@ import re
 from . import engine
 from .pilot_details import english_provider_date_range, german_provider_date_range
 from .pilot_regional_forward_audit import FORWARD_AUDIT_SCHEMA
+from .pilot_regional_identity import single_month_calendar_day
 from .pilot_regional_semantic_audit import SCHEMA as SEMANTIC_SCHEMA
 from .pilot_regional_discrepancy_audit import SCHEMA as DISCREPANCY_SCHEMA
 from .pilot_regional_sitemap_cards import SCHEMA as SITEMAP_CARDS_SCHEMA
@@ -143,6 +144,10 @@ def create_display_audit(forward, semantic, *, today, discrepancy=None,
             start = None
         else:
             start, end = display_dates(date_text)
+        exact_calendar_day = single_month_calendar_day(listing, date_text, event)
+        if not start and exact_calendar_day:
+            start = end = exact_calendar_day
+            date_text = programme_date_label([exact_calendar_day])
         month_only = False
         if not start and event.get('month_schedule_verified'):
             match = re.fullmatch(r'\s*(' + '|'.join(MONTH_LABELS)
@@ -222,6 +227,13 @@ def create_display_audit(forward, semantic, *, today, discrepancy=None,
                 'explicit_dates' if verified_days or calendar_days else 'month' if month_only else
                 'recurring' if recurrence else 'single' if start == end
                 else 'explicit_dates' if discrete else 'period')
+        # Only an inspected programme/date row proves individual opening days.
+        # Listing badges and the endpoints of a period are not that programme.
+        occurrences = ([day.isoformat() for day in verified_days or calendar_days]
+                       or discrete)
+        opening_days_status = (
+            'daily' if result.get('schedule_interpretation')
+                == 'inauguration_and_daily_opening_until_end' else 'unknown')
         town = resolve_turismofvg_municipality(event.get('event_city'))
         source_point = (event.get('lat'), event.get('lon'))
         places = event.get('listed_municipalities') or []
@@ -257,6 +269,10 @@ def create_display_audit(forward, semantic, *, today, discrepancy=None,
                            if calendar_days else event.get('date_label')
                            if month_range else date_text),
             'schedule_kind': kind,
+            **({'occurrences': occurrences} if occurrences else {}),
+            **({'opening_days_status': opening_days_status}
+               if kind in {'period', 'recurring', 'month'} and not occurrences else {}),
+            **{key: event[key] for key in ('time', 'end_time') if event.get(key)},
             **({'date_precision': 'month'} if month_range else {}),
             'date_evidence_kind': 'event_schedule',
             'date_evidence': (', '.join(day.isoformat() for day in verified_days)
@@ -339,9 +355,10 @@ def create_year_display_audit(control, *, today):
     accepted = {'detail_aligned', 'past_event', 'non_event',
                 'non_event_experience', 'excluded_current_year',
                 'duplicate_detail'}
-    audit['source_complete'] = (control.get('inspection_version') == INSPECTION_VERSION
-                                and not audit['review']
+    audit['inventory_complete'] = (control.get('inspection_version') == INSPECTION_VERSION
                                 and not control.get('removed_future_urls')
+                                and set(statuses) <= accepted | {'ambiguous', 'review_required'})
+    audit['source_complete'] = (audit['inventory_complete'] and not audit['review']
                                 and set(statuses) <= accepted)
     audit['quarantined'] = [
         {'url': url, 'status': result.get('status'), 'reason': result.get('reason')}

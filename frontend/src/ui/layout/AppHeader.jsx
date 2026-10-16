@@ -1,4 +1,5 @@
 import { Languages, Settings, UserRound } from "lucide-react";
+import { getDefinitiveBrandMark } from "../../services/brandMark";
 
 import { AppIconButton } from "../components/AppIconButton";
 import { isDefinitiveAppExperience } from "../../services/localWeatherPilot";
@@ -37,7 +38,7 @@ export function AppHeader({
         aria-label={friulora ? undefined : `${copy.brand.first} ${copy.brand.second}`}
       >
         <span className="mf-brand-mark" aria-hidden="true">
-          <img alt="" src={friulora ? "/brand/pilot-r4/meteo-eventi-friul-mark-192.png" : "/brand/logo-eagle-mark.webp"} />
+          <img alt="" src={friulora ? getDefinitiveBrandMark() : "/brand/logo-eagle-mark.webp"} />
         </span>
         <span className="mf-brand-copy">
           {friulora ? (

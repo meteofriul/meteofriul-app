@@ -68,12 +68,15 @@ describe("balanced app canvas chrome", () => {
       "WindowCompat.enableEdgeToEdge(getWindow())",
     );
     expect(productionConfig.plugins.SystemBars.style).toBe("DARK");
+    // The localPilot source set replaces the synced Capacitor config. Both
+    // must keep light icons, including Capacitor's configuration-change hook.
+    expect(pilotConfig.plugins.SystemBars.style).toBe("DARK");
     expect(systemBars).not.toMatch(/\bset(?:StatusBarColor|NavigationBarColor|NavigationBarDividerColor|StatusBarContrastEnforced)\s*\(/);
     expect(systemBars).toContain("new ColorProtection(WindowInsetsCompat.Side.TOP, statusBarColor)");
     expect(systemBars).toContain("new ColorProtection(WindowInsetsCompat.Side.BOTTOM, navigationBarColor)");
     expect(systemBars).toContain("ViewCompat.setOnApplyWindowInsetsListener");
     expect(systemBars).toContain("--safe-area-inset-top");
     expect(systemBars).toContain("controller.setAppearanceLightStatusBars(false)");
-    expect(systemBars).toContain("controller.setAppearanceLightNavigationBars(false)");
+    expect(systemBars).toContain("controller.setAppearanceLightNavigationBars(lightNavigation)");
   });
 });

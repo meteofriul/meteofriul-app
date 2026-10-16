@@ -9,6 +9,7 @@ from .pilot_regional_checkpoint import encode_control
 
 PILOT_PROJECT = os.environ.get("EVENTS_CLOUD_PROJECT", "meteofriul-pilot-20260906")
 RADII = tuple(range(5, 51, 5))
+MAX_SOURCE_AGE_SECONDS = 48 * 3600
 
 
 def failure_diagnostics(result, collected_at):
@@ -20,6 +21,7 @@ def failure_diagnostics(result, collected_at):
         'last_attempt_exception_type': result.get('exception_type'),
         'last_attempt_error_detail': result.get('error_detail'),
         'last_attempt_verification': deepcopy(result.get('verification', {})),
+        'last_attempt_detail_diagnostics': deepcopy(result.get('detail_diagnostics', {})),
         'last_attempt_review_count': len(reviews),
         'last_attempt_pending_count': len(pending),
         'last_attempt_issues': [
@@ -42,8 +44,7 @@ def merge_collection(project, previous, results, collected_at):
         checkpoint = (encode_control(result['year_control'])
                       if name == 'TurismoFVG' and isinstance(result.get('year_control'), dict)
                       else None)
-        publishable = (result.get("status") == "ok" or
-                       name == 'Paesi in Festa' and result.get("status") == "partial")
+        publishable = result.get("status") in {"ok", "partial"}
         if publishable and isinstance(result.get("events"), list):
             sources[name] = {"events": deepcopy(result["events"]), "updated_at": collected_at,
                              "status": ("partial" if result.get("status") == "partial" else "fresh"),
@@ -54,6 +55,7 @@ def merge_collection(project, previous, results, collected_at):
             sources[name]['publication_gate'] = deepcopy(result.get('publication_gate', {}))
             sources[name]['rejected_dates'] = result.get('rejected_dates', 0)
             sources[name]['detail_candidates'] = deepcopy(result.get('detail_candidates', []))
+            sources[name]['detail_diagnostics'] = deepcopy(result.get('detail_diagnostics', {}))
             sources[name]['verification'] = deepcopy(result.get('verification', {}))
             if checkpoint:
                 sources[name]['control_checkpoint'] = checkpoint
@@ -69,7 +71,9 @@ def merge_collection(project, previous, results, collected_at):
             sources[name].update(failure_diagnostics(result, collected_at))
             if isinstance(result.get('detail_cache'), dict):
                 sources[name].setdefault('detail_cache', {}).update(deepcopy(result['detail_cache']))
-            if checkpoint and not keep_verified_window_checkpoint:
+            if checkpoint and keep_verified_window_checkpoint:
+                sources[name]['last_attempt_control_checkpoint'] = checkpoint
+            elif checkpoint:
                 sources[name]['control_checkpoint'] = checkpoint
         else:
             sources[name] = {"events": [], "updated_at": None, "status": "unavailable",
@@ -98,6 +102,24 @@ def project_named_sagra(event):
     return {**event, 'category': 'sagra', 'category_label': 'Sagra / festa locale'}
 
 
+def source_age_failure(batch, *, now):
+    """Share the existing visibility age limits with public catalog diagnostics."""
+    try:
+        if not isinstance(batch.get('updated_at'), str):
+            return 'source_timestamp_invalid'
+        updated = datetime.fromisoformat(batch['updated_at'].replace('Z', '+00:00'))
+        if updated.tzinfo is None:
+            return 'source_timestamp_invalid'
+        age = (now - updated).total_seconds()
+    except (ValueError, TypeError):
+        return 'source_timestamp_invalid'
+    if age < 0:
+        return 'source_timestamp_future'
+    if age > MAX_SOURCE_AGE_SECONDS:
+        return 'source_expired'
+    return None
+
+
 def query_catalog(catalog, lat, lon, radius=20, *, now=None):
     """Distances are straight-line; unknown positions never qualify as nearby."""
     lat, lon = coordinate(lat, 90), coordinate(lon, 180)
@@ -110,25 +132,25 @@ def query_catalog(catalog, lat, lon, radius=20, *, now=None):
     selected, unknown = [], 0
     seen = set()
     for source_name, batch in catalog.get("sources", {}).items():
-        if batch.get('status') != 'fresh' and not (
-                source_name == 'Paesi in Festa' and batch.get('status') == 'partial'):
+        if batch.get('status') not in {'fresh', 'partial'}:
             # Failed batches retain their last verified snapshot for diagnosis
             # and a later source-only retry, but none of those events are live.
             continue
-        try:
-            if not isinstance(batch.get("updated_at"), str):
-                continue
-            updated = datetime.fromisoformat(batch["updated_at"].replace("Z", "+00:00"))
-            age = (now - updated).total_seconds()
-            if not 0 <= age <= 48 * 3600:
-                continue
-        except (ValueError, TypeError, KeyError):
+        if source_age_failure(batch, now=now):
             continue
         for event in batch.get("events", []):
             try:
-                start = date.fromisoformat(event["start_date"])
-                end = date.fromisoformat(event.get("end_date") or event["start_date"])
-                if end < start or end < today:
+                end_only = (event.get('source') == 'TurismoFVG'
+                            and event.get('schedule_kind') == 'end_only')
+                if end_only:
+                    if event.get('start_date') is not None or event.get('occurrences'):
+                        continue
+                    start = None
+                    end = date.fromisoformat(event['end_date'])
+                else:
+                    start = date.fromisoformat(event["start_date"])
+                    end = date.fromisoformat(event.get("end_date") or event["start_date"])
+                if (start is not None and end < start) or end < today:
                     continue
                 occurrences = event.get("occurrences") or []
                 if occurrences and not any(date.fromisoformat(d) >= today for d in occurrences):

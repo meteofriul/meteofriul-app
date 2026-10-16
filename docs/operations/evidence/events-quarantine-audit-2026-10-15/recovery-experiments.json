@@ -1,0 +1,170 @@
+{
+  "baseline_snapshot": "2026-10-15T14:26:55.958729+00:00",
+  "diagnostic_only": true,
+  "runtime_code_modified": false,
+  "cloud_writes": false,
+  "recoverable_with_reviewed_normalization": 9,
+  "regional_before": 1316,
+  "regional_after": 1323,
+  "preexisting_regional_cards_preserved": true,
+  "cancelled_event_still_quarantined": true,
+  "experiments": [
+    {
+      "number": 1,
+      "normalization": "weather condition accepts casodi typo",
+      "status": "review_required",
+      "reason": "possible_schedule_change"
+    },
+    {
+      "number": 2,
+      "normalization": "weather condition accepts casodi typo",
+      "status": "detail_aligned",
+      "reason": "listing_detail_identity_and_date_bounds_match"
+    },
+    {
+      "number": 11,
+      "normalization": "resolve one exact official calendar date within labelled month/year",
+      "date": "2026-10-18",
+      "status": "detail_aligned"
+    },
+    {
+      "number": 12,
+      "normalization": "resolve one exact official calendar date within labelled month/year",
+      "date": "2026-10-16",
+      "status": "detail_aligned"
+    },
+    {
+      "number": 13,
+      "normalization": "resolve one exact official calendar date within labelled month/year",
+      "date": "2026-10-17",
+      "status": "detail_aligned"
+    },
+    {
+      "number": 14,
+      "normalization": "resolve one exact official calendar date within labelled month/year",
+      "date": "2026-10-16",
+      "status": "detail_aligned"
+    },
+    {
+      "number": 7,
+      "normalization": "reviewed candidate/detail title correspondence",
+      "previous_title": "Samrrimenti e rinvenimenti",
+      "detail_title": "Smarrimenti e rinvenimenti",
+      "status": "detail_aligned"
+    },
+    {
+      "number": 10,
+      "normalization": "reviewed candidate/detail title correspondence",
+      "previous_title": "Teatro Pasolini: Digger",
+      "detail_title": "Digger",
+      "status": "detail_aligned"
+    },
+    {
+      "number": 17,
+      "normalization": "province separator spacing",
+      "status": "valid_event"
+    },
+    {
+      "number": 18,
+      "normalization": "source-verified hamlet parent Stregna",
+      "status": "valid_event"
+    }
+  ],
+  "candidate_cards": [
+    {
+      "url": "https://www.turismofvg.it/eventi/giro-del-mondo-in-80-libri-nero-come-il-mare-di-charlotta-meconaghy",
+      "title": "Giro del Mondo in 80 libri - \"Nero come il mare \" di Charlotta Meconaghy",
+      "start_date": "2026-10-16",
+      "end_date": "2026-10-16",
+      "event_city": "Moggio Udinese",
+      "date_label": "16 ottobre 2026",
+      "schedule_kind": "single"
+    },
+    {
+      "url": "https://www.turismofvg.it/eventi/libri-a-merenda",
+      "title": "Libri a merenda",
+      "start_date": "2026-10-16",
+      "end_date": "2026-10-16",
+      "event_city": "Moggio Udinese",
+      "date_label": "16 ottobre 2026",
+      "schedule_kind": "single"
+    },
+    {
+      "url": "https://www.turismofvg.it/eventi/il-volto-della-passione-la-s-sindone-come-specchio-del-vangelo",
+      "title": "Il volto della Passione: la S.Sindone come specchio del Vangelo",
+      "start_date": "2026-10-17",
+      "end_date": "2026-10-17",
+      "event_city": "Moggio Udinese",
+      "date_label": "17 ottobre 2026",
+      "schedule_kind": "single"
+    },
+    {
+      "url": "https://www.turismofvg.it/eventi/campagna-amica-tour-fvg",
+      "title": "Campagna Amica Tour FVG",
+      "start_date": "2026-10-18",
+      "end_date": "2026-10-18",
+      "event_city": "Trieste",
+      "date_label": "domenica 18 ottobre 2026",
+      "schedule_kind": "single"
+    },
+    {
+      "url": "https://www.turismofvg.it/eventi/giangiacomo-feltrinelli-rivoluzione-permanente",
+      "title": "Giangiacomo Feltrinelli - Rivoluzione permanente",
+      "start_date": "2026-10-18",
+      "end_date": "2026-10-18",
+      "event_city": "Moggio Udinese",
+      "date_label": "18 ottobre 2026",
+      "schedule_kind": "single"
+    },
+    {
+      "url": "https://www.turismofvg.it/eventi/samrrimenti-e-rinvenimenti",
+      "title": "Smarrimenti e rinvenimenti",
+      "start_date": "2026-10-21",
+      "end_date": "2026-10-21",
+      "event_city": "Udine",
+      "date_label": "mercoledì 21 ottobre 2026",
+      "schedule_kind": "single"
+    },
+    {
+      "url": "https://www.turismofvg.it/eventi/teatro-pasolini-digger",
+      "title": "Digger",
+      "start_date": "2026-10-25",
+      "end_date": "2026-10-26",
+      "event_city": "Cervignano del Friuli",
+      "date_label": "domenica 25 ottobre 2026 - lunedì 26 ottobre 2026",
+      "schedule_kind": "period"
+    },
+    {
+      "url": "https://sagrefvg.it/sagre/san-quirino-pn-50a-sagra-della-madonna-della-salute-duplicate-1/",
+      "title": "51ª Sagra della Madonna della Salute",
+      "start_date": "2026-10-14",
+      "end_date": "2026-10-18",
+      "event_city": "San Quirino",
+      "place": "San Quirino",
+      "lat": 46.0326362,
+      "lon": 12.6762483
+    },
+    {
+      "url": "https://sagrefvg.it/sagre/tribil-superiore-ud-burnjak-2025-festa-delle-castagne-duplicate-1/",
+      "title": "Burnjak 2026 / Festa delle Castagne",
+      "start_date": "2026-10-18",
+      "end_date": "2026-10-18",
+      "event_city": "Stregna",
+      "place": "Tribil Superiore",
+      "lat": 46.1413638,
+      "lon": 13.6186628
+    }
+  ],
+  "remaining_unimplemented": [
+    3,
+    4,
+    6,
+    15,
+    16
+  ],
+  "remaining_unreachable": [
+    5,
+    8,
+    9
+  ]
+}

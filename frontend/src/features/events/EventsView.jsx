@@ -1,6 +1,7 @@
 import {
   CalendarDays,
   ChevronRight,
+  Clock,
   ExternalLink,
   Frown,
   Landmark,
@@ -242,6 +243,12 @@ export function EventPreviewPanel({
             <p>
               <CalendarDays aria-hidden="true" size={17} strokeWidth={2.15} />
               <span>{preview.dateLabel}</span>
+            </p>
+          ) : null}
+          {preview.timeLabel && !(event.occurrences?.length > 1) ? (
+            <p data-testid="event-preview-time">
+              <Clock aria-hidden="true" size={17} strokeWidth={2.15} />
+              <span>{preview.timeLabel}</span>
             </p>
           ) : null}
           {festivalDates ? (
@@ -508,14 +515,14 @@ export function EventCard({ copy, event, imagePriority = false, onOpen, showCate
   );
 }
 
-function EmptyEvents({ copy, isLoading, tab }) {
+function EmptyEvents({ copy, isLoading, isDegraded, isUnavailable, tab }) {
   return (
-    <div className="mf-events-empty" role={isLoading ? "status" : undefined} aria-live={isLoading ? "polite" : undefined}>
+    <div className="mf-events-empty" role={isLoading || isDegraded || isUnavailable ? "status" : undefined}>
       <span aria-hidden="true">
         <Frown size={34} strokeWidth={2.15} />
       </span>
-      <strong>{isLoading ? copy.loadingTitle : tab === "today" ? copy.emptyTodayTitle : copy.emptyTitle}</strong>
-      <p>{isLoading ? copy.loadingBody : copy.emptyBody}</p>
+      <strong>{isLoading ? copy.loadingTitle : isDegraded || isUnavailable ? copy.unavailableTitle : tab === "today" ? copy.emptyTodayTitle : copy.emptyTitle}</strong>
+      <p>{isLoading ? copy.loadingBody : isDegraded || isUnavailable ? copy.unavailableBody : copy.emptyBody}</p>
     </div>
   );
 }
@@ -588,7 +595,7 @@ export function EventsView({
       className="mf-tab-page--events"
       language={language}
       title={copy.viewTitle}
-      titleMeta={titleMode !== "hidden" && totalCount ? (
+      titleMeta={titleMode !== "hidden" && !model.isUnavailable && totalCount ? (
         <span aria-label={filteredCountLabel} className="mf-events-title-count" title={filteredCountLabel}>
           {totalCount}
         </span>
@@ -605,7 +612,7 @@ export function EventsView({
             {onRadiusChange ? <EventsRadiusSelect radius={radius} onChange={onRadiusChange} language={language} /> : null}
           </div>
           {model.message ? (
-            <div className="mf-events-hero__meta">
+            <div className="mf-events-hero__meta" role="status">
               <p>{model.message}</p>
             </div>
           ) : null}
@@ -700,7 +707,7 @@ export function EventsView({
               ) : null}
             </>
           ) : (
-            <EmptyEvents copy={copy} tab={effectiveTab} />
+            <EmptyEvents copy={copy} isDegraded={model.isDegraded} isUnavailable={model.isUnavailable} tab={effectiveTab} />
           )}
         </section>
       </div>

@@ -235,10 +235,24 @@
       "conditionDisplayName": "Esecuzione fallita del job Eventi",
       "alignmentPeriodSeconds": 7200,
       "failedExecutionThreshold": 1,
-      "documentation": "Il job Eventi `meteofriul-events-refresh` ha terminato l'esecuzione giornaliera con errore. Controllare le fonti e verificare che il catalogo completo precedente sia rimasto disponibile.",
+      "documentation": "Il job Eventi `meteofriul-events-refresh` ha terminato l'esecuzione con errore. Controllare esito, log e generazione del catalogo: le fonti riuscite possono essere state aggiornate, mentre i lotti falliti conservano la copia precedente per diagnosi ma sono esclusi dall'API. Verificare anche i monitor; non presumere che il catalogo completo precedente sia ancora visibile.",
       "labels": {
         "service": "events",
         "threshold": "one-in-2h"
+      }
+    },
+    {
+      "policyKey": "events-candidate-watch",
+      "conditionType": "job_log_match",
+      "jobName": "meteofriul-events-refresh",
+      "logEvent": "event_candidate_watch_alert",
+      "displayName": "Meteo Friul - revisione fonti Eventi candidate",
+      "conditionDisplayName": "Palazzo Attems o GiroFVG richiedono revisione",
+      "notificationRateLimitSeconds": 3600,
+      "documentation": "Il controllo dei siti candidati Palazzo Attems o GiroFVG ha trovato una variazione o non ha potuto verificare il sito. Il catalogo delle 15 fonti pubblicate può essere stato aggiornato correttamente. Controllare il log strutturato `event_candidate_watch_alert` e lo stato `monitors` del catalogo; non interpretare questo avviso come un fallimento del job Eventi.",
+      "labels": {
+        "service": "events-candidates",
+        "threshold": "candidate-review"
       }
     }
   ]

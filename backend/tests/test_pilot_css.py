@@ -162,7 +162,7 @@ class CSSAuditTests(unittest.TestCase):
         wrong = fixture(DETAIL.replace('9 e 10 ottobre', '11 ottobre'))
         self.assertEqual(len(wrong['review_required']), 1)
         self.assertEqual(gate_batch('CSS Udine', wrong,
-                                    today=date(2026, 10, 7))['status'], 'error')
+                                    today=date(2026, 10, 7))['status'], 'partial')
         good = fixture()
         prior = copy.deepcopy(good['events'][0])
         prior['start_date'] = prior['end_date'] = '2026-10-11'

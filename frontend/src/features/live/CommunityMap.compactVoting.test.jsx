@@ -61,8 +61,8 @@ describe("pilot compact community voting", () => {
   }
 
   describe.each([
-    ["it", "Conferma", "Smentisci"],
-    ["fur", "Conferme", "Smentìs"],
+    ["it", "Confermo", "Non c’è più"],
+    ["fur", "O confermi", "Nol è plui"],
   ])("universal labels in %s", (language, yesLabel, noLabel) => {
     it.each(REPORT_TYPES)("uses the same two labels for %s", async (typeId) => {
       await render({ language, typeId });
@@ -85,8 +85,8 @@ describe("pilot compact community voting", () => {
 
   it("preserves exact visible and accessible counts and the selected confirmation", async () => {
     await render({ confirmationCounts: { no: 3, yes: 12 }, confirmationVote: "yes" });
-    expect(voteButton("yes").getAttribute("aria-label")).toBe("Conferma. Conferme: 12");
-    expect(voteButton("no").getAttribute("aria-label")).toBe("Smentisci. Smentite: 3");
+    expect(voteButton("yes").getAttribute("aria-label")).toBe("Confermo. Conferme: 12");
+    expect(voteButton("no").getAttribute("aria-label")).toBe("Non c’è più. Non c’è più: 3");
     expect(voteButton("yes").getAttribute("aria-pressed")).toBe("true");
     expect(voteButton("no").getAttribute("aria-pressed")).toBe("false");
     expect(voteButton("yes").querySelector(".mf-live-community-map__confirm-count")?.textContent)
@@ -101,8 +101,8 @@ describe("pilot compact community voting", () => {
 
   it("keeps localized accessible count labels in Friulian", async () => {
     await render({ language: "fur" });
-    expect(voteButton("yes").getAttribute("aria-label")).toBe("Conferme. Confermis: 7");
-    expect(voteButton("no").getAttribute("aria-label")).toBe("Smentìs. Smentidis: 2");
+    expect(voteButton("yes").getAttribute("aria-label")).toBe("O confermi. Confermis: 7");
+    expect(voteButton("no").getAttribute("aria-label")).toBe("Nol è plui. Nol è plui: 2");
   });
 
   it.each(["yes", "no"])("dispatches the unchanged %s action with its exact group and trigger", async (vote) => {
@@ -123,10 +123,16 @@ describe("pilot compact community voting", () => {
     expect(onConfirm).not.toHaveBeenCalled();
   });
 
+  it("shows a GPS error even in the compact card that hides confirmation details", async () => {
+    await render({ hideConfirmationDetails: true, confirmationStatus: "error", confirmationError: "Attiva il GPS e riprova." });
+    expect(container.querySelector('[role="status"]').textContent).toBe("Attiva il GPS e riprova.");
+    expect(container.querySelector(".mf-live-community-map__denial-explanation")).toBeNull();
+  });
+
   it("preserves the denial lock and pressed state without changing the short labels", async () => {
     await render({ confirmationStatus: "success", confirmationVote: "no" });
-    expect(voteLabel("yes")).toBe("Conferma");
-    expect(voteLabel("no")).toBe("Smentisci");
+    expect(voteLabel("yes")).toBe("Confermo");
+    expect(voteLabel("no")).toBe("Non c’è più");
     expect(voteButton("yes").getAttribute("aria-pressed")).toBe("false");
     expect(voteButton("no").getAttribute("aria-pressed")).toBe("true");
     expect(voteButton("yes").disabled).toBe(true);

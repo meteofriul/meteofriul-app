@@ -1,0 +1,177 @@
+{
+  "verified_at": "2026-10-16T07:42:52.925682+00:00",
+  "project": "meteo-friul",
+  "region": "europe-west1",
+  "branch": "codex/icon2i-freshness-monitor",
+  "dispatcher_commit": "2b194f6277f9b4ca0d8f83ca2f62af5cde94bf5b",
+  "dispatcher_image": "europe-west1-docker.pkg.dev/meteo-friul/meteofriul/icon2i-freshness@sha256:d5ac59bfd989b535915bc14eb9cea69188fbee811de7b5d2a24382b14ca8a017",
+  "dispatcher_build_id": "5c061b60-7dd9-441c-8b57-c3b77697b840",
+  "worker_commit": "35b31aef93281880f3b5e8729d5a1061d7304389",
+  "worker_image": "europe-west1-docker.pkg.dev/meteo-friul/meteofriul/icon2i-freshness@sha256:db0160d88a9397ca7789fe62750158dfb424212feb7e9f8abba6bfc1cbd5db80",
+  "source_scope_check": {
+    "changed_packaged_files": [
+      "experiments/weather_autonomy/freshness_monitor/dispatcher.py"
+    ],
+    "same_packaged_paths": true,
+    "monitor_worker_unchanged": true
+  },
+  "local_tests": {
+    "passed": 64,
+    "duration_seconds": 14.716
+  },
+  "initial_failure": {
+    "scheduled_slot_utc": "2026-10-16T07:10:00Z",
+    "http_status": 400,
+    "cause": "Scheduler sends short job name; original relay required full resource name",
+    "job_started": false
+  },
+  "manual_diagnostic": {
+    "received_at": "2026-10-16T07:14:11.300966Z",
+    "job_started": false,
+    "purpose": "Observe real Scheduler metadata, not prove automatic execution"
+  },
+  "first_successful_automatic": {
+    "planned_slot_utc": "2026-10-16T07:40:00.000000Z",
+    "original_scheduler_header": "2026-10-16T00:40:00.711959-07:00",
+    "dispatcher_received_at": "2026-10-16T07:40:03.340998Z",
+    "scheduler_job_received": "meteofriul-icon2i-freshness",
+    "scheduler_attempt_scheduled_time": "2026-10-16T07:40:01.553246Z",
+    "scheduler_pre_delivery_schedule_time": "2026-10-16T07:40:00.711959Z",
+    "job_slot_log": {
+      "basis": "scheduler_header",
+      "event": "icon2i_freshness_slot",
+      "scheduled_slot_utc": "2026-10-16T07:40:00.000000Z",
+      "scheduler_schedule_time": "2026-10-16T00:40:00.711959-07:00"
+    },
+    "execution_name": "projects/meteo-friul/locations/europe-west1/jobs/meteofriul-icon2i-freshness/executions/meteofriul-icon2i-freshness-zcwrn",
+    "created_at": "2026-10-16T07:40:04.704412Z",
+    "started_at": "2026-10-16T07:40:07.228537Z",
+    "completed_at": "2026-10-16T07:40:49.464012Z",
+    "metrics_confirmed": 6,
+    "products": {
+      "fvg": {
+        "check_state": 0,
+        "critical_active": 0,
+        "check_completed": 1,
+        "run_age_hours": 7.677888331666666,
+        "future_samples": 65,
+        "publication_time_verified": true,
+        "publication": {
+          "at": "2026-10-16T06:03:52.384000Z",
+          "basis": "observed_run_change",
+          "generation": "1792130632372453",
+          "source_run_id": "20261016T000000Z"
+        },
+        "publication_age_hours": 1.6133372205555556,
+        "last_verified": {
+          "generation": "1792130632372453",
+          "last_at": "2026-10-19T00:00:00Z",
+          "run_at": "2026-10-16T00:00:00Z",
+          "source_run_id": "20261016T000000Z",
+          "time_created": "2026-10-16T06:03:52.384000Z",
+          "verified_at": "2026-10-16T07:40:40.397994Z"
+        },
+        "causes": []
+      },
+      "national": {
+        "check_state": 0,
+        "critical_active": 0,
+        "check_completed": 1,
+        "run_age_hours": 7.678624533055556,
+        "future_samples": 65,
+        "publication_time_verified": true,
+        "publication": {
+          "at": "2026-10-16T06:04:23.697000Z",
+          "basis": "observed_run_change",
+          "generation": "1792130663686046",
+          "source_run_id": "20261016T000000Z"
+        },
+        "publication_age_hours": 1.605375366388889,
+        "last_verified": {
+          "generation": "1792130663686046",
+          "last_at": "2026-10-19T00:00:00.000000Z",
+          "run_at": "2026-10-16T00:00:00Z",
+          "source_run_id": "20261016T000000Z",
+          "time_created": "2026-10-16T06:04:23.697000Z",
+          "verified_at": "2026-10-16T07:40:43.048319Z"
+        },
+        "causes": []
+      }
+    },
+    "verified_at": "2026-10-16T07:42:11.944002+00:00"
+  },
+  "scheduler": {
+    "name": "projects/meteo-friul/locations/europe-west1/jobs/meteofriul-icon2i-freshness",
+    "state": "ENABLED",
+    "schedule": "10,40 * * * *",
+    "timeZone": "UTC",
+    "lastAttemptTime": "2026-10-16T07:40:01.553246Z",
+    "scheduleTime": "2026-10-16T08:10:00.711959Z",
+    "attemptDeadline": "30s",
+    "retryConfig": {
+      "maxRetryDuration": "0s",
+      "minBackoffDuration": "5s",
+      "maxBackoffDuration": "3600s",
+      "maxDoublings": 5
+    },
+    "status": {}
+  },
+  "policies": [
+    {
+      "name": "projects/meteo-friul/alertPolicies/8522206169610857782",
+      "displayName": "ICON2I freshness - fvg",
+      "enabled": true,
+      "query_result": {
+        "resultType": "vector",
+        "result": []
+      }
+    },
+    {
+      "name": "projects/meteo-friul/alertPolicies/17358382305278768094",
+      "displayName": "ICON2I freshness - national",
+      "enabled": true,
+      "query_result": {
+        "resultType": "vector",
+        "result": []
+      }
+    },
+    {
+      "name": "projects/meteo-friul/alertPolicies/602951789070907305",
+      "displayName": "ICON2I freshness - telemetry",
+      "enabled": true,
+      "query_result": {
+        "resultType": "vector",
+        "result": []
+      }
+    }
+  ],
+  "scope_checks": {
+    "jobs": {
+      "preexisting_unchanged": true,
+      "changed": [],
+      "added": []
+    },
+    "services": {
+      "preexisting_unchanged": true,
+      "changed": [],
+      "added": [
+        "projects/meteo-friul/locations/europe-west1/services/meteofriul-icon2i-freshness-dispatch"
+      ]
+    },
+    "existing_schedulers_unchanged": true,
+    "existing_policies_unchanged": true,
+    "project_iam_unchanged": true,
+    "dispatcher_private": true
+  },
+  "saved_queries": [
+    "icon2i-freshness-attention",
+    "icon2i-freshness-indeterminate",
+    "icon2i-freshness-http"
+  ],
+  "log_retention_days": 30,
+  "email": "info@meteofriul.it",
+  "email_receipt_confirmed_by_owner": true,
+  "github_writes": false,
+  "github_ci": false,
+  "main_promoted": false
+}

@@ -1,10 +1,11 @@
 """Read-only pilot Eventi HTTP service; no scraping on requests."""
 import json
+from datetime import datetime, timezone
 import os
 from threading import Lock
 from time import monotonic
 from urllib.parse import parse_qs
-from .pilot_catalog import PILOT_PROJECT, query_catalog
+from .pilot_catalog import PILOT_PROJECT, query_catalog, source_age_failure
 from .pilot_cloud import BUCKET, KEY, MAX_BYTES
 
 _cache = None
@@ -59,7 +60,8 @@ def application(environ, start_response):
         else:
             try:
                 catalog = load_catalog()
-                payload = query_catalog(catalog, lat, lon, radius)
+                now = datetime.now(timezone.utc)
+                payload = query_catalog(catalog, lat, lon, radius, now=now)
                 payload['total'] = len(payload['events'])
                 payload['events'] = payload['events'][offset:offset+limit]
                 payload['next_offset'] = offset+limit if offset+limit < payload['total'] else None
@@ -70,12 +72,17 @@ def application(environ, start_response):
                     start_response(status, headers)
                     return [data]
                 payload['source_status'] = {name: batch['status'] for name, batch in catalog['sources'].items()}
-                payload['source_failure_tags'] = {
-                    name: ('quarantined_cards' if batch['status'] == 'partial'
-                           else batch.get('last_attempt_error_type') or 'source_error')
-                    for name, batch in catalog['sources'].items()
-                    if batch['status'] != 'fresh'
-                }
+                payload['source_updated_at'] = {
+                    name: batch.get('updated_at') for name, batch in catalog['sources'].items()}
+                payload['source_failure_tags'] = {}
+                for name, batch in catalog['sources'].items():
+                    if batch['status'] in {'fresh', 'partial'}:
+                        tag = source_age_failure(batch, now=now) or (
+                            'quarantined_cards' if batch['status'] == 'partial' else None)
+                    else:
+                        tag = batch.get('last_attempt_error_type') or 'source_error'
+                    if tag:
+                        payload['source_failure_tags'][name] = tag
                 payload['catalog_status'] = (
                     'degraded' if payload['source_failure_tags'] else 'complete')
                 payload['monitor_status'] = catalog.get('monitors') or {}

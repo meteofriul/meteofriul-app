@@ -64,6 +64,7 @@ async function fetchJson(
     body,
     fetchImpl = globalThis.fetch,
     method = "GET",
+    signal,
     timeoutMs = LIVE_COMMUNITY_TIMEOUT_MS,
   } = {},
 ) {
@@ -72,6 +73,9 @@ async function fetchJson(
   }
 
   const controller = new AbortController();
+  const abort = () => controller.abort();
+  if (signal?.aborted) abort();
+  else signal?.addEventListener("abort", abort, { once: true });
   const timeoutId = globalThis.setTimeout?.(() => controller.abort(), timeoutMs);
 
   try {
@@ -107,11 +111,13 @@ async function fetchJson(
     return payload;
   } catch (error) {
     if (error?.name === "AbortError") {
+      if (signal?.aborted) throw error;
       throw new Error("Endpoint live non raggiungibile entro il tempo previsto", { cause: error });
     }
 
     throw error;
   } finally {
+    signal?.removeEventListener("abort", abort);
     if (timeoutId !== undefined) globalThis.clearTimeout?.(timeoutId);
   }
 }
@@ -210,7 +216,7 @@ export function postCommunityReport(
 }
 
 export function postCommunityReportConfirmation(
-  { acceptedTerms, clientId, groupId, policyVersion, vote },
+  { acceptedTerms, clientId, groupId, policyVersion, vote, coords, ageMs, reportIds },
   options = {},
 ) {
   return fetchMutationJson(`/community/reports/${encodeURIComponent(groupId)}/confirmation`, {
@@ -219,10 +225,28 @@ export function postCommunityReportConfirmation(
       client_id: clientId,
       policy_version: policyVersion,
       vote,
+      ...(isLocalCommunityPilot() ? {
+        lat: coords?.lat, lon: coords?.lon, accuracy_m: coords?.accuracyM,
+        age_ms: ageMs, report_ids: reportIds || [],
+      } : {}),
     },
     method: "POST",
     timeoutMs: LIVE_REPORT_TIMEOUT_MS,
     ...options,
+  });
+}
+
+export function fetchCommunityHistory({ location, clientId, offset = 0, cursor = null, grouped = false }, options = {}) {
+  const scope = new URLSearchParams(getLocalCommunityReadScope(location));
+  if (!scope.size) return Promise.reject(new Error("Seleziona una località per lo storico."));
+  return fetchMutationJson("/community/history", {
+    method: "POST", timeoutMs: LIVE_COMMUNITY_TIMEOUT_MS, ...options,
+    body: { client_id: clientId, offset, radius_km: 30,
+      ...(grouped ? { grouped: true } : {}),
+      ...(cursor ? { before_created_at: cursor.createdAt, before_id: cursor.id } : {}),
+      ...(scope.has("istat_code") ? { istat_code: scope.get("istat_code") }
+        : { lat: Number(scope.get("lat")), lon: Number(scope.get("lon")) }),
+    },
   });
 }
 

@@ -37,11 +37,15 @@ export function localWeatherPilotConfig({
   testNow,
   cloud = false,
   community = false,
+  eventsLocal = false,
   nationalCloud = false,
   stable = false,
 } = {}) {
   const requestedDev = ["local-pilot", BROWSER_CLOUD_WEATHER_PILOT_MODE].includes(mode);
   const requestedAndroid = mode === ANDROID_LOCAL_WEATHER_PILOT_MODE;
+  if (eventsLocal && (!requestedAndroid || !community || cloud)) {
+    throw new Error("local_events_requires_protected_local_community_android_build");
+  }
   const stableBuild = stable && requestedDev && command === "build";
   if (cloud && !requestedAndroid) throw new Error("cloud_weather_requires_protected_android_pilot");
   if (nationalCloud && ((command !== "serve" && !stableBuild) || mode !== "local-pilot")) {
@@ -90,6 +94,7 @@ export function localWeatherPilotConfig({
   return {
     enabled,
     define: {
+      "import.meta.env.VITE_LOCAL_EVENTS_API_BASE": JSON.stringify(eventsLocal ? "http://127.0.0.1:8784/api" : ""),
       "import.meta.env.VITE_ANDROID_LOCAL_WEATHER_PILOT": JSON.stringify(requestedAndroid ? "1" : "0"),
       "import.meta.env.VITE_LOCAL_WEATHER_PILOT": JSON.stringify(enabled ? "1" : "0"),
       "import.meta.env.VITE_LOCAL_WEATHER_PILOT_API_BASE": JSON.stringify(runtimeApiBase),

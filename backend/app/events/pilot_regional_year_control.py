@@ -33,7 +33,7 @@ from .pilot_regional_year_recovery import (recover_current_year_detail,
 
 
 SCHEMA = 'turismofvg-current-year-control-v1'
-INSPECTION_VERSION = 10
+INSPECTION_VERSION = 11
 REFRESH_DAYS = {'detail_aligned': 1, 'past_event': 30,
                 'non_event': 30, 'non_event_experience': 30}
 
@@ -519,7 +519,7 @@ def _recheck_stale_calendar_badges(candidate, html, *, today):
 
 
 def inspect_batch(snapshot, *, batch_size=24, max_workers=3,
-                  fetch_html=fetch_detail, now=None):
+                  fetch_html=fetch_detail, now=None, record_health=False):
     if (snapshot.get('schema') != SCHEMA or not 1 <= batch_size <= 256
             or not 1 <= max_workers <= 16):
         raise ValueError('invalid TurismoFVG year-control batch')
@@ -530,8 +530,10 @@ def inspect_batch(snapshot, *, batch_size=24, max_workers=3,
         raise ValueError('year-control progress outside inventory')
     today = date.fromisoformat(snapshot['as_of_date'])
     now = now or datetime.now(timezone.utc)
+    observations = dict(snapshot.get('detail_observations') or {})
     todo = sorted((url for url in entries if url not in results
-                   and attempts.get(url, {}).get('count', 0) < 3),
+                   and attempts.get(url, {}).get('count', 0) < 3
+                   and attempts.get(url, {}).get('retryable', True)),
                   key=lambda url: (attempts.get(url, {}).get('count', 0),
                                    entries[url]['kind'] != 'calendar', url))[:batch_size]
     for url in todo:
@@ -542,35 +544,66 @@ def inspect_batch(snapshot, *, batch_size=24, max_workers=3,
                                 'reason': detail.get('reason'),
                                 'checked_at': now.isoformat()}
             except Exception as exc:
-                attempts[url] = {'count': attempts.get(url, {}).get('count', 0) + 1,
-                                 'last_error_type': type(exc).__name__}
+                if record_health:
+                    from .pilot_regional_health import failure_attempt
+                    attempts[url] = failure_attempt(attempts.get(url, {}), exc,
+                                                    phase='inventory', now=now)
+                    observations[url] = {'outcome': 'failure', 'signature': entries[url]['signature'],
+                                         'checked_at': now.isoformat(), 'attempt': dict(attempts[url])}
+                else:
+                    attempts[url] = {'count': attempts.get(url, {}).get('count', 0) + 1,
+                                     'last_error_type': type(exc).__name__}
     with ThreadPoolExecutor(max_workers=max_workers) as executor:
         futures = {executor.submit(fetch_html, url): url for url in todo
                    if engine.is_trusted_turismofvg_event_url(url)}
         for future in as_completed(futures):
             url = futures[future]
+            phase = 'fetch'
+            checked = datetime.now(timezone.utc) if record_health else now
             try:
-                results[url] = inspect_item(url, entries[url], future.result(),
-                                            today=today, now=now)
+                html = future.result()
+                phase = 'parse'
+                result = inspect_item(url, entries[url], html, today=today, now=checked)
+                if record_health:
+                    from .pilot_regional_health import detail_observation
+                    observations[url] = detail_observation(html, entries[url], result, now=checked)
+                results[url] = result
                 attempts.pop(url, None)
             except requests.HTTPError as exc:
                 response = exc.response
-                if response is not None and response.status_code in {404, 410}:
+                if phase == 'fetch' and response is not None and response.status_code in {404, 410}:
                     results[url] = {'status': 'review_required'
                                     if entries[url]['kind'] in {'calendar', 'prior_detail'}
                                     else 'non_event',
                                     'reason': f'listed_detail_http_{response.status_code}'
                                     if entries[url]['kind'] in {'calendar', 'prior_detail'}
                                     else f'detail_http_{response.status_code}',
-                                    'checked_at': now.isoformat()}
+                                    'checked_at': checked.isoformat()}
                     attempts.pop(url, None)
+                    if record_health:
+                        observations[url] = {'outcome': 'missing', 'http_status': response.status_code,
+                                             'signature': entries[url]['signature'],
+                                             'checked_at': checked.isoformat()}
+                else:
+                    if record_health:
+                        from .pilot_regional_health import failure_attempt
+                        attempts[url] = failure_attempt(attempts.get(url, {}), exc, phase=phase, now=checked)
+                    else:
+                        attempts[url] = {'count': attempts.get(url, {}).get('count', 0) + 1,
+                                         'last_error_type': type(exc).__name__}
+            except Exception as exc:
+                if record_health:
+                    from .pilot_regional_health import failure_attempt
+                    attempts[url] = failure_attempt(attempts.get(url, {}), exc, phase=phase, now=checked)
                 else:
                     attempts[url] = {'count': attempts.get(url, {}).get('count', 0) + 1,
                                      'last_error_type': type(exc).__name__}
-            except Exception as exc:
-                attempts[url] = {'count': attempts.get(url, {}).get('count', 0) + 1,
-                                 'last_error_type': type(exc).__name__}
-    return {**snapshot, 'results': results, 'attempts': attempts}
+            if record_health and url in attempts:
+                observations[url] = {'outcome': 'failure', 'signature': entries[url]['signature'],
+                                     'checked_at': checked.isoformat(), 'attempt': dict(attempts[url])}
+
+    return {**snapshot, 'results': results, 'attempts': attempts,
+            **({'detail_observations': observations} if record_health else {})}
 
 
 def summary(snapshot):
@@ -593,6 +626,16 @@ def summary(snapshot):
             'replaced_urls': len(snapshot.get('replaced_urls') or {}),
             'removed_future_urls': len(snapshot.get('removed_future_urls') or []),
             'historical_lookup_failures': len(snapshot.get('historical_lookup_failures') or {}),
+            'inventory_complete': (snapshot.get('inspection_version') == INSPECTION_VERSION
+                                and len(results) == len(entries)
+                                and not snapshot['attempts']
+                                and not snapshot.get('removed_future_urls')
+                                and all(item.get('detail_description_sha256')
+                                        for item in results.values()
+                                        if item.get('reason') ==
+                                        'exact_historical_calendar_card')
+                                and all(item.get('status') in counts
+                                        for item in results.values())),
             'source_complete': (snapshot.get('inspection_version') == INSPECTION_VERSION
                                 and len(results) == len(entries)
                                 and not snapshot['attempts']

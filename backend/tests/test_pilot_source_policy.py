@@ -1,5 +1,6 @@
 import unittest
 from datetime import date
+from unittest.mock import patch
 from app.events.pilot_source_policy import validate_candidate, APPROVED_SOURCES, gate_batch
 from app.events.pilot_pordenonelegge import parse_programme
 from app.events.pilot_cinema_muto import collect_cinema_muto
@@ -167,6 +168,40 @@ class SourcePolicyTests(unittest.TestCase):
             result = gate_batch(source, batch, today=date(2026,9,6))
             self.assertEqual(result['events'], [])
             self.assertIn('invalid_time', result['review_required'][0]['reasons'])
+
+    @patch('app.events.pilot_source_policy.azalea_batch_verified', return_value=True)
+    def test_one_identifiable_generic_exclusion_is_quarantined(self, verified):
+        valid = self.candidate(url='https://www.azalea.it/eventi/valid/')
+        invalid = self.candidate(url='https://www.azalea.it/eventi/invalid/',
+                                 time='25:00')
+        result = gate_batch('Azalea', {'status': 'ok', 'events': [valid, invalid]},
+                            today=date(2026, 9, 6))
+        self.assertEqual(result['status'], 'partial')
+        self.assertEqual(result['events'], [valid])
+        self.assertEqual(result['review_required'][0]['url'], invalid['url'])
+        self.assertEqual(result['publication_gate']['excluded_count'], 1)
+
+    @patch('app.events.pilot_source_policy.azalea_batch_verified', return_value=True)
+    def test_generic_exclusion_still_blocks_systemic_or_untraceable_failures(
+            self, verified):
+        valid = self.candidate(url='https://www.azalea.it/eventi/valid/')
+        invalid = self.candidate(url='https://www.azalea.it/eventi/invalid/',
+                                 time='25:00')
+        cases = (
+            [invalid],
+            [valid, invalid, self.candidate(
+                url='https://www.azalea.it/eventi/other-invalid/', time='25:00')],
+            [valid, self.candidate(url='https://wrong.example/eventi/bad/',
+                                   time='25:00')],
+            [valid, self.candidate(url=valid['url'], time='25:00')],
+        )
+        for events in cases:
+            with self.subTest(events=events):
+                result = gate_batch('Azalea', {'status': 'ok', 'events': events},
+                                    today=date(2026, 9, 6))
+                self.assertEqual(result['status'], 'error')
+                self.assertEqual(result['error_type'],
+                                 'publication_gate_exclusions')
 
     def test_turismofvg_needs_complete_batch_proof(self):
         event = self.candidate(source='TurismoFVG',

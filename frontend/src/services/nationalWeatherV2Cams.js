@@ -50,7 +50,7 @@ function withCams(bundle, supplement, status = supplement?.status || "unavailabl
   };
   const decorate = value => ({
     ...value,
-    source: { ...value.source, cams: source },
+    source: { ...value.source, cams: { ...source, catalog: available ? supplement.catalog : null } },
     model_support: { ...value.model_support, cams: available },
     data_quality: {
       ...value.data_quality,

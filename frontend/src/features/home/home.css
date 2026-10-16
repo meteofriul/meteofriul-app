@@ -527,6 +527,16 @@ html[data-theme="dark"] .mf-home-quick-forecast__moon {
   z-index: 1;
 }
 
+/* Availability messages must remain readable in full, unlike event titles. */
+.mf-home-quick-events__status {
+  color: var(--mf-ink);
+  font-size: var(--mf-text-xs);
+  font-weight: 600;
+  line-height: 1.35;
+  margin-top: 8px;
+  overflow-wrap: anywhere;
+}
+
 .mf-home-quick-events__count {
   align-items: baseline;
   display: flex;

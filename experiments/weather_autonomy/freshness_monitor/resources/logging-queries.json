@@ -1,0 +1,14 @@
+[
+  {
+    "displayName": "ICON2I - Attenzione eta e copertura",
+    "query": "resource.type=\"cloud_run_job\"\nresource.labels.project_id=\"meteo-friul\"\nresource.labels.job_name=\"meteofriul-icon2i-freshness\"\njsonPayload.event=\"icon2i_freshness_check\"\n(jsonPayload.causes=\"run_age_attention\" OR jsonPayload.causes=\"coverage_attention\")"
+  },
+  {
+    "displayName": "ICON2I - Indeterminati ultimi sei slot",
+    "query": "resource.type=\"cloud_run_job\"\nresource.labels.project_id=\"meteo-friul\"\nresource.labels.job_name=\"meteofriul-icon2i-freshness\"\njsonPayload.event=\"icon2i_freshness_check\"\n(jsonPayload.check_state=3 OR jsonPayload.indeterminate_count_last6>0)"
+  },
+  {
+    "displayName": "ICON2I - Confronti HTTP",
+    "query": "resource.type=\"cloud_run_job\"\nresource.labels.project_id=\"meteo-friul\"\nresource.labels.job_name=\"meteofriul-icon2i-freshness\"\njsonPayload.event=\"icon2i_freshness_check\"\n(jsonPayload.http_comparison.ordinary.result:* OR jsonPayload.http_comparison.resolve.ordinary.result:*)"
+  }
+]

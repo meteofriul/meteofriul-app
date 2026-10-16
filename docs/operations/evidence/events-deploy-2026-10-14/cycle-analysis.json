@@ -1,0 +1,289 @@
+{
+  "execution": "meteofriul-events-refresh-7bds5",
+  "completed": false,
+  "condition": {
+    "lastTransitionTime": "2026-10-14T19:33:47.225956Z",
+    "message": "Task meteofriul-events-refresh-7bds5-task0 failed with exit code: 1 and message: The container exited with an error.",
+    "reason": "NonZeroExitCode",
+    "status": "False",
+    "type": "Completed"
+  },
+  "started_at": "2026-10-14T19:26:24.660467Z",
+  "completed_at": "2026-10-14T19:33:47.225956Z",
+  "duration_seconds": 442.565489,
+  "full_cycle_all_15_attempted": true,
+  "snapshot": "2026-10-14T19:26:54.991503+00:00",
+  "catalog_generation": "1792006423455620",
+  "catalog_bytes": 2871231,
+  "catalog_sha256": "b8cb30b13f2b62cb514b57a8348ce18a199424e711ebef10c849951546cf7c50",
+  "sources": {
+    "TurismoFVG": {
+      "status": "partial",
+      "events": 1263,
+      "quarantined": 15,
+      "error_type": null,
+      "exception": null,
+      "error_detail": null
+    },
+    "Pordenonelegge": {
+      "status": "fresh",
+      "events": 0,
+      "quarantined": 0,
+      "error_type": null,
+      "exception": null,
+      "error_detail": null
+    },
+    "Azalea": {
+      "status": "fresh",
+      "events": 7,
+      "quarantined": 0,
+      "error_type": null,
+      "exception": null,
+      "error_detail": null
+    },
+    "CSS Udine": {
+      "status": "partial",
+      "events": 156,
+      "quarantined": 1,
+      "error_type": null,
+      "exception": null,
+      "error_detail": null
+    },
+    "Pordenone Pensa": {
+      "status": "partial",
+      "events": 0,
+      "quarantined": 1,
+      "error_type": null,
+      "exception": null,
+      "error_detail": null
+    },
+    "Teatro Verdi Pordenone": {
+      "status": "fresh",
+      "events": 88,
+      "quarantined": 0,
+      "error_type": null,
+      "exception": null,
+      "error_detail": null
+    },
+    "Teatro Verdi Trieste": {
+      "status": "fresh",
+      "events": 70,
+      "quarantined": 0,
+      "error_type": null,
+      "exception": null,
+      "error_detail": null
+    },
+    "Le Giornate del Cinema Muto": {
+      "status": "fresh",
+      "events": 0,
+      "quarantined": 0,
+      "error_type": null,
+      "exception": null,
+      "error_detail": null
+    },
+    "Paesi in Festa": {
+      "status": "fresh",
+      "events": 17,
+      "quarantined": 0,
+      "error_type": null,
+      "exception": null,
+      "error_detail": null
+    },
+    "SagreFVG": {
+      "status": "partial",
+      "events": 23,
+      "quarantined": 2,
+      "error_type": null,
+      "exception": null,
+      "error_detail": null
+    },
+    "Villa Manin": {
+      "status": "fresh",
+      "events": 4,
+      "quarantined": 0,
+      "error_type": null,
+      "exception": null,
+      "error_detail": null
+    },
+    "Magazzino delle Idee": {
+      "status": "fresh",
+      "events": 0,
+      "quarantined": 0,
+      "error_type": null,
+      "exception": null,
+      "error_detail": null
+    },
+    "MESS": {
+      "status": "fresh",
+      "events": 17,
+      "quarantined": 0,
+      "error_type": null,
+      "exception": null,
+      "error_detail": null
+    },
+    "Galleria Spazzapan": {
+      "status": "stale",
+      "events": 2,
+      "quarantined": 0,
+      "error_type": "adapter_exception",
+      "exception": "ValueError",
+      "error_detail": "Spazzapan current_exhibitions inventory changed"
+    },
+    "Barcolana": {
+      "status": "fresh",
+      "events": 1,
+      "quarantined": 0,
+      "error_type": null,
+      "exception": null,
+      "error_detail": null
+    }
+  },
+  "monitors": {
+    "Palazzo Attems": {
+      "status": "review_required",
+      "source_complete": false,
+      "checked_at": "2026-10-13T09:40:04.618654+00:00"
+    },
+    "GiroFVG": {
+      "status": "review_required",
+      "source_complete": false,
+      "checked_at": "2026-10-13T09:40:04.618654+00:00"
+    },
+    "TurismoFVG annual inventory": {
+      "status": "checked",
+      "source_complete": true,
+      "checked_at": "2026-10-12T04:00:40.511589+00:00",
+      "calendar_cards": 2272,
+      "calendar_pages": 444,
+      "missing_window_count": 0
+    }
+  },
+  "source_status_counts": {
+    "partial": 4,
+    "fresh": 10,
+    "stale": 1
+  },
+  "raw_event_count": 1648,
+  "publishable_sources": 14,
+  "failed_sources": [
+    "Galleria Spazzapan"
+  ],
+  "quarantined_count": 19,
+  "turismofvg": {
+    "verification": {
+      "collection_mode": "verified-rolling-45-day-window",
+      "as_of_date": "2026-10-14",
+      "window_end": "2026-11-28",
+      "source_complete": true,
+      "within_budget": true,
+      "index_fingerprint": "64a670d570cb30b93fc7712500fcb25de265aa8518337ec8d6a753a4ed081cb4",
+      "calendar_pages": 199,
+      "inventory_urls": 1282,
+      "sitemap_total_urls": 2393,
+      "sitemap_selected_urls": 1204,
+      "prior_detail_count": 10,
+      "carried_prior_count": 27,
+      "known_future_count": 178,
+      "calendar_segments": [
+        {
+          "start": "2026-10-14",
+          "end": "2026-11-28",
+          "declared_results": 1584,
+          "cards_seen": 1584,
+          "pages": 199
+        }
+      ],
+      "pending": 0,
+      "ambiguous": 0,
+      "review_required": 10,
+      "detail_health": {
+        "schema": "turismofvg-detail-health-v1",
+        "structured_reads": 682,
+        "failed_reads": 0,
+        "quarantined_reads": 0,
+        "retained_refreshes": 0,
+        "pending": 0,
+        "stop_reason": "complete",
+        "health_witness_required": false
+      },
+      "cards_total": 1263,
+      "cards_with_preview": 1171,
+      "quarantine_count": 15
+    },
+    "detail_health": {
+      "schema": "turismofvg-detail-health-v1",
+      "structured_reads": 682,
+      "failed_reads": 0,
+      "quarantined_reads": 0,
+      "retained_refreshes": 0,
+      "pending": 0,
+      "stop_reason": "complete",
+      "health_witness_required": false
+    },
+    "detail_diagnostics": {},
+    "checkpoint_health_verified": true,
+    "diagnostics_persisted": true,
+    "review_required": [
+      {
+        "url": "https://www.turismofvg.it/eventi/concorso-internazionale-citta-di-porcia-e-concorso-pianistico-internazionale",
+        "reason": "detail_identity_or_schedule_requires_review"
+      },
+      {
+        "url": "https://www.turismofvg.it/eventi/festa-di-halloween-506677",
+        "reason": "listed_detail_http_404"
+      },
+      {
+        "url": "https://www.turismofvg.it/eventi/campagna-amica-tour-fvg",
+        "reason": "possible_schedule_change"
+      },
+      {
+        "url": "https://www.turismofvg.it/eventi/1976-2026-50-anni-dal-terremoto",
+        "reason": "possible_schedule_change"
+      },
+      {
+        "url": "https://www.turismofvg.it/eventi/autunno-musicale-2026",
+        "reason": "detail_not_resolved"
+      },
+      {
+        "url": "https://www.turismofvg.it/eventi/insieme-skupaj",
+        "reason": "listed_detail_http_404"
+      },
+      {
+        "url": "https://www.turismofvg.it/eventi/italia-settanta-la-creativita-come-antidoto-arte-moda-design-eventi-collaterali-502715",
+        "reason": "listed_detail_http_404"
+      },
+      {
+        "url": "https://www.turismofvg.it/eventi/inaugurazione-mostra-una-terra-una-storia-504353",
+        "reason": "detail_identity_or_schedule_requires_review"
+      },
+      {
+        "url": "https://www.turismofvg.it/eventi/la-libia-di-marcello-dudovich-e-i-capolavori-di-marcello-dudovich",
+        "reason": "detail_identity_or_schedule_requires_review"
+      },
+      {
+        "url": "https://www.turismofvg.it/eventi/una-sfinge-l-attrae-massimiliano-d-asburgo-e-le-collezioni-egizie-tra-trieste-e-vienna",
+        "reason": "detail_identity_or_schedule_requires_review"
+      },
+      {
+        "url": "https://www.turismofvg.it/eventi/giangiacomo-feltrinelli-rivoluzione-permanente",
+        "reason": "date_bounds_not_explicit"
+      },
+      {
+        "url": "https://www.turismofvg.it/eventi/giro-del-mondo-in-80-libri-nero-come-il-mare-di-charlotta-meconaghy",
+        "reason": "date_bounds_not_explicit"
+      },
+      {
+        "url": "https://www.turismofvg.it/eventi/il-volto-della-passione-la-s-sindone-come-specchio-del-vangelo",
+        "reason": "date_bounds_not_explicit"
+      },
+      {
+        "url": "https://www.turismofvg.it/eventi/l-occasione-del-borgo-mercatino-di-borgo-san-sergio-478799",
+        "reason": "date_bounds_not_explicit"
+      },
+      {
+        "url": "https://www.turismofvg.it/eventi/libri-a-merenda",
+        "reason": "date_bounds_not_explicit"
+      }
+    ]
+  }
+}

@@ -52,7 +52,8 @@ public class EdgeToEdgeInstrumentedTest {
             assertEquals("WebView must draw behind the status bar", 0, position[1]);
             assertEquals("No native and CSS double bottom inset", decor.getHeight(), web.getHeight());
             assertFalse(WindowCompat.getInsetsController(activity.getWindow(), decor).isAppearanceLightStatusBars());
-            assertFalse(WindowCompat.getInsetsController(activity.getWindow(), decor).isAppearanceLightNavigationBars());
+            assertEquals(MeteoSystemBarsPlugin.usesLightNavigationSurface(activity),
+                WindowCompat.getInsetsController(activity.getWindow(), decor).isAppearanceLightNavigationBars());
         });
         assertRealSafeArea();
     }

@@ -231,6 +231,84 @@ class PublicMetadataTests(unittest.TestCase):
             validate_documents(documents)
 
 
+class PartitionedConstraintsTests(unittest.TestCase):
+    def documents(self):
+        documents = public_metadata_documents()
+        base = documents["constraints"][0]
+        air, pollen = deepcopy(base), deepcopy(base)
+        air["variable"] = [v for v in base["variable"] if not v.endswith("_pollen")]
+        pollen["variable"] = [v for v in base["variable"] if v.endswith("_pollen")]
+        pollen["date"] = ["2025-05-04/" + TEST_DATE]
+        documents["constraints"] = [air, pollen]
+        return documents
+
+    def test_air_and_pollen_partitions_produce_exact_original_request(self):
+        documents = self.documents()
+        evidence = validate_documents(documents)
+        plan = cams.build_request_plan(TEST_DATE, metadata_evidence=evidence)
+        self.assertEqual(plan["request_groups"], valid_plan()["request_groups"])
+        self.assertEqual(plan["counts"]["requested_fields"], 28 * 97)
+        self.assertEqual(evidence["validated_selection"]["date"], [TEST_DATE])
+        self.assertTrue(cams.encode_request_plan(plan))
+        documents["constraints"].reverse()
+        self.assertEqual(validate_documents(documents), evidence)
+
+    def test_missing_air_or_pollen_variable_is_rejected(self):
+        for index in (0, 1):
+            with self.subTest(index=index):
+                documents = self.documents()
+                documents["constraints"][index]["variable"].pop()
+                with self.assertRaises(cams.PublicMetadataUnavailable) as raised:
+                    validate_documents(documents)
+                self.assertEqual(error_fields(raised.exception)["error_summary"],
+                                 "CAMS constraints do not contain unambiguous complete surface ensemble coverage")
+
+    def test_partitions_cannot_borrow_different_model_date_or_level(self):
+        for key, value in (("model", ["chimere"]), ("date", ["2026-09-03"]),
+                           ("level", ["50"]), ("type", ["analysis"]), ("time", ["01:00"])):
+            with self.subTest(key=key):
+                documents = self.documents()
+                documents["constraints"][1][key] = value
+                with self.assertRaises(cams.PublicMetadataUnavailable):
+                    validate_documents(documents)
+
+    def test_every_partition_requires_all_97_leads(self):
+        for index in (0, 1):
+            with self.subTest(index=index):
+                documents = self.documents()
+                documents["constraints"][index]["leadtime_hour"].remove("48")
+                with self.assertRaises(cams.PublicMetadataUnavailable) as raised:
+                    validate_documents(documents)
+                self.assertEqual(error_fields(raised.exception)["reason_code"], "constraints_incomplete_leads")
+
+    def test_overlapping_variable_partitions_remain_ambiguous(self):
+        documents = self.documents()
+        documents["constraints"][0]["variable"].append(documents["constraints"][1]["variable"][0])
+        with self.assertRaises(cams.PublicMetadataUnavailable) as raised:
+            validate_documents(documents)
+        self.assertEqual(error_fields(raised.exception)["reason_code"], "constraints_multiple_compatible_rows")
+
+    def test_complete_row_plus_partial_duplicate_remains_ambiguous(self):
+        documents = self.documents()
+        documents["constraints"].append(public_metadata_documents()["constraints"][0])
+        with self.assertRaises(cams.PublicMetadataUnavailable):
+            validate_documents(documents)
+
+    def test_malformed_partition_is_rejected(self):
+        documents = self.documents()
+        documents["constraints"][1]["variable"].append(documents["constraints"][1]["variable"][0])
+        with self.assertRaises(cams.PublicMetadataError):
+            validate_documents(documents)
+
+    def test_unrelated_model_rows_do_not_create_false_overlap(self):
+        documents = self.documents()
+        other = deepcopy(documents["constraints"][0])
+        other["model"] = ["chimere"]
+        documents["constraints"].append(other)
+        evidence = validate_documents(documents)
+        self.assertEqual(len(evidence["validated_selection"]["variable"]), 28)
+
+
 class PublicMetadataDiagnosticTests(unittest.TestCase):
     def rejected(self, documents, error_type=cams.PublicMetadataUnavailable):
         output = io.StringIO()

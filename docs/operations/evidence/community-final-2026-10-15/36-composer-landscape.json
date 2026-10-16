@@ -1,0 +1,782 @@
+{
+  "composer": {
+    "scenario": "final-tablet-composer",
+    "geometry": {
+      "viewport": {
+        "w": 1280,
+        "h": 800,
+        "dpr": 2
+      },
+      "insets": {
+        "top": 28,
+        "right": 0,
+        "bottom": 32,
+        "left": 72.5
+      },
+      "scrollWidth": 1280,
+      "shell": "light",
+      "buttons": [
+        {
+          "label": "Apri impostazioni",
+          "x": 820,
+          "y": 36.6953125,
+          "w": 44,
+          "h": 44,
+          "bottom": 80.6953125,
+          "right": 864
+        },
+        {
+          "label": "Previsioni",
+          "x": 476.5,
+          "y": 147.3984375,
+          "w": 125.1640625,
+          "h": 32,
+          "bottom": 179.3984375,
+          "right": 601.6640625
+        },
+        {
+          "label": "Bollettino",
+          "x": 605.6640625,
+          "y": 147.3984375,
+          "w": 125.1640625,
+          "h": 32,
+          "bottom": 179.3984375,
+          "right": 730.828125
+        },
+        {
+          "label": "Tempo reale",
+          "x": 734.828125,
+          "y": 147.3984375,
+          "w": 125.1640625,
+          "h": 32,
+          "bottom": 179.3984375,
+          "right": 859.9921875
+        },
+        {
+          "label": "Pioggia · Pordenone · 52 min fa · 1 segnalazione",
+          "x": 645.5,
+          "y": 410.3984375,
+          "w": 46,
+          "h": 46,
+          "bottom": 456.3984375,
+          "right": 691.5
+        },
+        {
+          "label": "Radar",
+          "x": 808,
+          "y": 207.3984375,
+          "w": 44,
+          "h": 44,
+          "bottom": 251.3984375,
+          "right": 852
+        },
+        {
+          "label": "Webcam sulla mappa · 35",
+          "x": 808,
+          "y": 262.3984375,
+          "w": 44,
+          "h": 44,
+          "bottom": 306.3984375,
+          "right": 852
+        },
+        {
+          "label": "Centra la mappa sulla località selezionata",
+          "x": 808,
+          "y": 317.3984375,
+          "w": 44,
+          "h": 44,
+          "bottom": 361.3984375,
+          "right": 852
+        },
+        {
+          "label": "Mappa",
+          "x": 484.5,
+          "y": 555,
+          "w": 122.5,
+          "h": 48,
+          "bottom": 603,
+          "right": 607
+        },
+        {
+          "label": "Segnalazioni",
+          "x": 607,
+          "y": 555,
+          "w": 122.5,
+          "h": 48,
+          "bottom": 603,
+          "right": 729.5
+        },
+        {
+          "label": "Webcam",
+          "x": 729.5,
+          "y": 555,
+          "w": 122.5,
+          "h": 48,
+          "bottom": 603,
+          "right": 852
+        },
+        {
+          "label": "Segnala meteo",
+          "x": 484.5,
+          "y": 617,
+          "w": 367.5,
+          "h": 48,
+          "bottom": 665,
+          "right": 852
+        },
+        {
+          "label": "Home",
+          "x": 479.5,
+          "y": 691.03125,
+          "w": 91.375,
+          "h": 57.96875,
+          "bottom": 749,
+          "right": 570.875
+        },
+        {
+          "label": "Meteo",
+          "x": 574.875,
+          "y": 691.03125,
+          "w": 91.375,
+          "h": 57.96875,
+          "bottom": 749,
+          "right": 666.25
+        },
+        {
+          "label": "Eventi: 57 eventi oggi",
+          "x": 670.25,
+          "y": 691.03125,
+          "w": 91.375,
+          "h": 57.96875,
+          "bottom": 749,
+          "right": 761.625
+        },
+        {
+          "label": "Scopri",
+          "x": 765.625,
+          "y": 691.03125,
+          "w": 91.375,
+          "h": 57.96875,
+          "bottom": 749,
+          "right": 857
+        },
+        {
+          "label": "",
+          "x": 0,
+          "y": 0,
+          "w": 1280,
+          "h": 800,
+          "bottom": 800,
+          "right": 1280
+        },
+        {
+          "label": "Chiudi segnalazione",
+          "x": 865.25,
+          "y": 109.171875,
+          "w": 44,
+          "h": 44,
+          "bottom": 153.171875,
+          "right": 909.25
+        },
+        {
+          "label": "Pioggia",
+          "x": 423.25,
+          "y": 178.171875,
+          "w": 239.5,
+          "h": 50,
+          "bottom": 228.171875,
+          "right": 662.75
+        },
+        {
+          "label": "Temporale",
+          "x": 669.75,
+          "y": 178.171875,
+          "w": 239.5,
+          "h": 50,
+          "bottom": 228.171875,
+          "right": 909.25
+        },
+        {
+          "label": "Neve",
+          "x": 423.25,
+          "y": 235.171875,
+          "w": 239.5,
+          "h": 50,
+          "bottom": 285.171875,
+          "right": 662.75
+        },
+        {
+          "label": "Grandine",
+          "x": 669.75,
+          "y": 235.171875,
+          "w": 239.5,
+          "h": 50,
+          "bottom": 285.171875,
+          "right": 909.25
+        },
+        {
+          "label": "Nebbia",
+          "x": 423.25,
+          "y": 292.171875,
+          "w": 239.5,
+          "h": 50,
+          "bottom": 342.171875,
+          "right": 662.75
+        },
+        {
+          "label": "Vento forte",
+          "x": 669.75,
+          "y": 292.171875,
+          "w": 239.5,
+          "h": 50,
+          "bottom": 342.171875,
+          "right": 909.25
+        },
+        {
+          "label": "Ghiaccio",
+          "x": 423.25,
+          "y": 349.171875,
+          "w": 239.5,
+          "h": 50,
+          "bottom": 399.171875,
+          "right": 662.75
+        },
+        {
+          "label": "Situazione tranquilla",
+          "x": 669.75,
+          "y": 349.171875,
+          "w": 239.5,
+          "h": 50,
+          "bottom": 399.171875,
+          "right": 909.25
+        },
+        {
+          "label": "Continua",
+          "x": 423.25,
+          "y": 618.9765625,
+          "w": 486,
+          "h": 44,
+          "bottom": 662.9765625,
+          "right": 909.25
+        }
+      ]
+    },
+    "detail": {
+      "theme": "light",
+      "nav": {
+        "x": 472.5,
+        "y": 684.03125,
+        "w": 391.5,
+        "h": 71.96875,
+        "bottom": 756,
+        "right": 864
+      },
+      "header": {
+        "x": 472.5,
+        "y": 28,
+        "w": 391.5,
+        "h": 69.3984375,
+        "bottom": 97.3984375,
+        "right": 864
+      },
+      "bodyScrollHeight": 800,
+      "bodyClientHeight": 800,
+      "dialogs": [
+        {
+          "text": "Cosa vedi?\nSegnala il meteo attuale nella tua zona.\nPioggia\nTemporale\nNeve\nGrandine\nNebbia\nVento forte\nGhiaccio\nSituazio",
+          "rect": {
+            "x": 406.25,
+            "y": 92.171875,
+            "w": 520,
+            "h": 611.6484375,
+            "bottom": 703.8203125,
+            "right": 926.25
+          }
+        }
+      ],
+      "content": "Trascina per aggiornare\nPordenone\nPrevisioni\nBollettino\nTempo reale\nTerritorio\n© OpenStreetMap © CARTO\nMappa\nSegnalazioni\nWebcam\nSegnala meteo"
+    },
+    "screenshot": "36-final-tablet-composer.png",
+    "horizontalFit": true,
+    "navigationFits": true
+  },
+  "text": "Cosa vedi?\nSegnala il meteo attuale nella tua zona.\nPioggia\nTemporale\nNeve\nGrandine\nNebbia\nVento forte\nGhiaccio\nSituazione tranquilla\nStai segnalando da Pordenone\nPosizione rilevata dal GPS\nPosizione approssimata a tutela della tua privacy.\n\nLe coordinate precise vengono usate temporaneamente per verificare il Comune; sulla mappa compare solo una posizione approssimata.\n\nRimarrà visibile sulla mappa per 60 minuti\n\nContinua\nIn caso di situazioni critiche o pericoli immediati contatta il 112.",
+  "review": {
+    "scenario": "final-tablet-review",
+    "geometry": {
+      "viewport": {
+        "w": 1280,
+        "h": 800,
+        "dpr": 2
+      },
+      "insets": {
+        "top": 28,
+        "right": 0,
+        "bottom": 32,
+        "left": 72.5
+      },
+      "scrollWidth": 1280,
+      "shell": "light",
+      "buttons": [
+        {
+          "label": "Apri impostazioni",
+          "x": 820,
+          "y": 36.6953125,
+          "w": 44,
+          "h": 44,
+          "bottom": 80.6953125,
+          "right": 864
+        },
+        {
+          "label": "Previsioni",
+          "x": 476.5,
+          "y": 147.3984375,
+          "w": 125.1640625,
+          "h": 32,
+          "bottom": 179.3984375,
+          "right": 601.6640625
+        },
+        {
+          "label": "Bollettino",
+          "x": 605.6640625,
+          "y": 147.3984375,
+          "w": 125.1640625,
+          "h": 32,
+          "bottom": 179.3984375,
+          "right": 730.828125
+        },
+        {
+          "label": "Tempo reale",
+          "x": 734.828125,
+          "y": 147.3984375,
+          "w": 125.1640625,
+          "h": 32,
+          "bottom": 179.3984375,
+          "right": 859.9921875
+        },
+        {
+          "label": "Pioggia · Pordenone · 52 min fa · 1 segnalazione",
+          "x": 645.5,
+          "y": 410.3984375,
+          "w": 46,
+          "h": 46,
+          "bottom": 456.3984375,
+          "right": 691.5
+        },
+        {
+          "label": "Radar",
+          "x": 808,
+          "y": 207.3984375,
+          "w": 44,
+          "h": 44,
+          "bottom": 251.3984375,
+          "right": 852
+        },
+        {
+          "label": "Webcam sulla mappa · 35",
+          "x": 808,
+          "y": 262.3984375,
+          "w": 44,
+          "h": 44,
+          "bottom": 306.3984375,
+          "right": 852
+        },
+        {
+          "label": "Centra la mappa sulla località selezionata",
+          "x": 808,
+          "y": 317.3984375,
+          "w": 44,
+          "h": 44,
+          "bottom": 361.3984375,
+          "right": 852
+        },
+        {
+          "label": "Mappa",
+          "x": 484.5,
+          "y": 555,
+          "w": 122.5,
+          "h": 48,
+          "bottom": 603,
+          "right": 607
+        },
+        {
+          "label": "Segnalazioni",
+          "x": 607,
+          "y": 555,
+          "w": 122.5,
+          "h": 48,
+          "bottom": 603,
+          "right": 729.5
+        },
+        {
+          "label": "Webcam",
+          "x": 729.5,
+          "y": 555,
+          "w": 122.5,
+          "h": 48,
+          "bottom": 603,
+          "right": 852
+        },
+        {
+          "label": "Segnala meteo",
+          "x": 484.5,
+          "y": 617,
+          "w": 367.5,
+          "h": 48,
+          "bottom": 665,
+          "right": 852
+        },
+        {
+          "label": "Home",
+          "x": 479.5,
+          "y": 691.03125,
+          "w": 91.375,
+          "h": 57.96875,
+          "bottom": 749,
+          "right": 570.875
+        },
+        {
+          "label": "Meteo",
+          "x": 574.875,
+          "y": 691.03125,
+          "w": 91.375,
+          "h": 57.96875,
+          "bottom": 749,
+          "right": 666.25
+        },
+        {
+          "label": "Eventi: 57 eventi oggi",
+          "x": 670.25,
+          "y": 691.03125,
+          "w": 91.375,
+          "h": 57.96875,
+          "bottom": 749,
+          "right": 761.625
+        },
+        {
+          "label": "Scopri",
+          "x": 765.625,
+          "y": 691.03125,
+          "w": 91.375,
+          "h": 57.96875,
+          "bottom": 749,
+          "right": 857
+        },
+        {
+          "label": "",
+          "x": 0,
+          "y": 0,
+          "w": 1280,
+          "h": 800,
+          "bottom": 800,
+          "right": 1280
+        },
+        {
+          "label": "Chiudi segnalazione",
+          "x": 865.25,
+          "y": 200.890625,
+          "w": 44,
+          "h": 44,
+          "bottom": 244.890625,
+          "right": 909.25
+        },
+        {
+          "label": "Torna alla scelta",
+          "x": 427.25,
+          "y": 438.265625,
+          "w": 478,
+          "h": 44,
+          "bottom": 482.265625,
+          "right": 905.25
+        },
+        {
+          "label": "Conferma e invia",
+          "x": 423.25,
+          "y": 527.265625,
+          "w": 486,
+          "h": 44,
+          "bottom": 571.265625,
+          "right": 909.25
+        }
+      ]
+    },
+    "detail": {
+      "theme": "light",
+      "nav": {
+        "x": 472.5,
+        "y": 684.03125,
+        "w": 391.5,
+        "h": 71.96875,
+        "bottom": 756,
+        "right": 864
+      },
+      "header": {
+        "x": 472.5,
+        "y": 28,
+        "w": 391.5,
+        "h": 69.3984375,
+        "bottom": 97.3984375,
+        "right": 864
+      },
+      "bodyScrollHeight": 800,
+      "bodyClientHeight": 800,
+      "dialogs": [
+        {
+          "text": "Controlla e invia\nSegnala il meteo attuale nella tua zona.\nStai segnalando Pioggia a Pordenone.\n\nLa nuova osservazione s",
+          "rect": {
+            "x": 406.25,
+            "y": 183.890625,
+            "w": 520,
+            "h": 428.21875,
+            "bottom": 612.109375,
+            "right": 926.25
+          }
+        }
+      ],
+      "content": "Trascina per aggiornare\nPordenone\nPrevisioni\nBollettino\nTempo reale\nTerritorio\n© OpenStreetMap © CARTO\nMappa\nSegnalazioni\nWebcam\nSegnala meteo"
+    },
+    "screenshot": "36-final-tablet-review.png",
+    "horizontalFit": true,
+    "navigationFits": true
+  },
+  "reviewText": "Controlla e invia\nSegnala il meteo attuale nella tua zona.\nStai segnalando Pioggia a Pordenone.\n\nLa nuova osservazione sostituisce la tua precedente, se ancora attiva. La precedente resta nello storico.\n\nRimarrà visibile sulla mappa per 60 minuti\n\nTorna alla scelta\nConferma e invia\nIn caso di situazioni critiche o pericoli immediati contatta il 112.",
+  "reverse": {
+    "scenario": "final-tablet-review-reverse",
+    "geometry": {
+      "viewport": {
+        "w": 1280,
+        "h": 800,
+        "dpr": 2
+      },
+      "insets": {
+        "top": 28,
+        "right": 72.5,
+        "bottom": 32,
+        "left": 0
+      },
+      "scrollWidth": 1280,
+      "shell": "light",
+      "buttons": [
+        {
+          "label": "Apri impostazioni",
+          "x": 763.5,
+          "y": 36.6953125,
+          "w": 44,
+          "h": 44,
+          "bottom": 80.6953125,
+          "right": 807.5
+        },
+        {
+          "label": "Previsioni",
+          "x": 420,
+          "y": 147.3984375,
+          "w": 125.1640625,
+          "h": 32,
+          "bottom": 179.3984375,
+          "right": 545.1640625
+        },
+        {
+          "label": "Bollettino",
+          "x": 549.1640625,
+          "y": 147.3984375,
+          "w": 125.1640625,
+          "h": 32,
+          "bottom": 179.3984375,
+          "right": 674.328125
+        },
+        {
+          "label": "Tempo reale",
+          "x": 678.328125,
+          "y": 147.3984375,
+          "w": 125.1640625,
+          "h": 32,
+          "bottom": 179.3984375,
+          "right": 803.4921875
+        },
+        {
+          "label": "Pioggia · Pordenone · 52 min fa · 1 segnalazione",
+          "x": 589,
+          "y": 410.3984375,
+          "w": 46,
+          "h": 46,
+          "bottom": 456.3984375,
+          "right": 635
+        },
+        {
+          "label": "Radar",
+          "x": 689,
+          "y": 207.3984375,
+          "w": 44,
+          "h": 44,
+          "bottom": 251.3984375,
+          "right": 733
+        },
+        {
+          "label": "Webcam sulla mappa · 35",
+          "x": 689,
+          "y": 262.3984375,
+          "w": 44,
+          "h": 44,
+          "bottom": 306.3984375,
+          "right": 733
+        },
+        {
+          "label": "Centra la mappa sulla località selezionata",
+          "x": 689,
+          "y": 317.3984375,
+          "w": 44,
+          "h": 44,
+          "bottom": 361.3984375,
+          "right": 733
+        },
+        {
+          "label": "Mappa",
+          "x": 428,
+          "y": 555,
+          "w": 122.5,
+          "h": 48,
+          "bottom": 603,
+          "right": 550.5
+        },
+        {
+          "label": "Segnalazioni",
+          "x": 550.5,
+          "y": 555,
+          "w": 122.5,
+          "h": 48,
+          "bottom": 603,
+          "right": 673
+        },
+        {
+          "label": "Webcam",
+          "x": 673,
+          "y": 555,
+          "w": 122.5,
+          "h": 48,
+          "bottom": 603,
+          "right": 795.5
+        },
+        {
+          "label": "Segnala meteo",
+          "x": 428,
+          "y": 617,
+          "w": 367.5,
+          "h": 48,
+          "bottom": 665,
+          "right": 795.5
+        },
+        {
+          "label": "Home",
+          "x": 423,
+          "y": 691.03125,
+          "w": 91.375,
+          "h": 57.96875,
+          "bottom": 749,
+          "right": 514.375
+        },
+        {
+          "label": "Meteo",
+          "x": 518.375,
+          "y": 691.03125,
+          "w": 91.375,
+          "h": 57.96875,
+          "bottom": 749,
+          "right": 609.75
+        },
+        {
+          "label": "Eventi: 57 eventi oggi",
+          "x": 613.75,
+          "y": 691.03125,
+          "w": 91.375,
+          "h": 57.96875,
+          "bottom": 749,
+          "right": 705.125
+        },
+        {
+          "label": "Scopri",
+          "x": 709.125,
+          "y": 691.03125,
+          "w": 91.375,
+          "h": 57.96875,
+          "bottom": 749,
+          "right": 800.5
+        },
+        {
+          "label": "",
+          "x": 0,
+          "y": 0,
+          "w": 1280,
+          "h": 800,
+          "bottom": 800,
+          "right": 1280
+        },
+        {
+          "label": "Chiudi segnalazione",
+          "x": 812.75,
+          "y": 200.890625,
+          "w": 44,
+          "h": 44,
+          "bottom": 244.890625,
+          "right": 856.75
+        },
+        {
+          "label": "Torna alla scelta",
+          "x": 374.75,
+          "y": 438.265625,
+          "w": 478,
+          "h": 44,
+          "bottom": 482.265625,
+          "right": 852.75
+        },
+        {
+          "label": "Conferma e invia",
+          "x": 370.75,
+          "y": 527.265625,
+          "w": 486,
+          "h": 44,
+          "bottom": 571.265625,
+          "right": 856.75
+        }
+      ]
+    },
+    "detail": {
+      "theme": "light",
+      "nav": {
+        "x": 416,
+        "y": 684.03125,
+        "w": 391.5,
+        "h": 71.96875,
+        "bottom": 756,
+        "right": 807.5
+      },
+      "header": {
+        "x": 416,
+        "y": 28,
+        "w": 391.5,
+        "h": 69.3984375,
+        "bottom": 97.3984375,
+        "right": 807.5
+      },
+      "bodyScrollHeight": 800,
+      "bodyClientHeight": 800,
+      "dialogs": [
+        {
+          "text": "Controlla e invia\nSegnala il meteo attuale nella tua zona.\nStai segnalando Pioggia a Pordenone.\n\nLa nuova osservazione s",
+          "rect": {
+            "x": 353.75,
+            "y": 183.890625,
+            "w": 520,
+            "h": 428.21875,
+            "bottom": 612.109375,
+            "right": 873.75
+          }
+        }
+      ],
+      "content": "Trascina per aggiornare\nPordenone\nPrevisioni\nBollettino\nTempo reale\nTerritorio\n© OpenStreetMap © CARTO\nMappa\nSegnalazioni\nWebcam\nSegnala meteo"
+    },
+    "screenshot": "36-final-tablet-review-reverse.png",
+    "horizontalFit": true,
+    "navigationFits": true
+  },
+  "reverseText": "Controlla e invia\nSegnala il meteo attuale nella tua zona.\nStai segnalando Pioggia a Pordenone.\n\nLa nuova osservazione sostituisce la tua precedente, se ancora attiva. La precedente resta nello storico.\n\nRimarrà visibile sulla mappa per 60 minuti\n\nTorna alla scelta\nConferma e invia\nIn caso di situazioni critiche o pericoli immediati contatta il 112."
+}

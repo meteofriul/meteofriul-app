@@ -1,0 +1,113 @@
+/* Approved recent-list UX, enabled only by the local Community TEST runtime. */
+.mf-app-main--territory-fit .mf-weather-route-shell:has(.mf-territory-map--recent-list) {
+  min-height: 0;
+}
+.mf-live-community-map-layer--inline.mf-live-territory-workspace
+  .mf-territory-map--recent-list .mf-territory-map__dock--expanded .mf-territory-map__browse-list {
+  scrollbar-width: thin;
+}
+.mf-territory-map--recent-list:has(.mf-recent-list-toggle) {
+  --mf-territory-map-dock-preview-height: 216px;
+}
+.mf-recent-list-sentinel {
+  height: 1px;
+}
+.mf-recent-list-retry {
+  min-height: 44px;
+  padding: 6px;
+  border: 0;
+  background: transparent;
+  color: var(--mf-ink);
+  font: inherit;
+  font-size: .72rem;
+  cursor: pointer;
+}
+.mf-territory-map--recent-list .mf-territory-map__dock:has(.mf-recent-list-toggle) {
+  gap: 4px;
+  padding-bottom: 8px;
+}
+.mf-territory-map--recent-list .mf-territory-map__dock:has(.mf-recent-list-toggle) .mf-territory-map__navigation,
+.mf-territory-map--recent-list .mf-territory-map__dock:has(.mf-recent-list-toggle) .mf-territory-map__navigation button {
+  min-height: 44px;
+}
+.mf-territory-map--recent-list .mf-territory-map__browse-sheet:has(.mf-recent-list-toggle) {
+  gap: 5px;
+}
+.mf-territory-map--recent-list .mf-territory-map__browse-sheet > header:has(.mf-recent-list-toggle) {
+  min-height: 28px;
+}
+.mf-territory-map--recent-list .mf-territory-map__browse-sheet > header:has(.mf-recent-list-toggle) > span {
+  flex: 1;
+}
+.mf-territory-map--recent-list .mf-territory-map__browse-sheet:has(.mf-recent-list-toggle) .mf-territory-map__browse-item {
+  grid-template-columns: 36px minmax(0, 1fr) auto;
+  min-height: 60px;
+  padding-block: 4px;
+}
+.mf-territory-map--recent-list .mf-territory-map__browse-sheet:has(.mf-recent-list-toggle) .mf-territory-map__browse-item > span:first-child {
+  width: 34px;
+  height: 34px;
+  border-radius: 10px;
+}
+.mf-recent-list-toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  width: 100%;
+  min-height: 28px;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: var(--mf-ink);
+  font: inherit;
+  cursor: pointer;
+}
+.mf-recent-list-toggle:focus-visible {
+  outline: 2px solid var(--mf-blue);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+.mf-territory-map--recent-list .mf-territory-map__browse-sheet > header > small {
+  color: var(--mf-muted);
+  font-size: .7rem;
+}
+.mf-community-history-detail__meta {
+  display: grid;
+  gap: 4px;
+  margin: 0;
+  color: var(--mf-muted);
+  font-size: .76rem;
+}
+.mf-community-history-detail__counts {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 8px;
+  margin: 0;
+}
+.mf-community-history-detail__counts > div {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 6px;
+  padding: 12px 10px;
+  border: 1px solid var(--mf-border);
+  border-radius: 12px;
+  color: var(--mf-ink);
+}
+.mf-community-history-detail__counts dt {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: .76rem;
+  font-weight: 750;
+}
+.mf-community-history-detail__counts dd {
+  margin: 0;
+  font-size: .9rem;
+  font-weight: 850;
+}
+.mf-community-history-detail__notice {
+  margin: 0;
+  color: var(--mf-muted);
+  font-size: .72rem;
+}

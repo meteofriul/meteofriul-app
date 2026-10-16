@@ -1,0 +1,12 @@
+
+> meteo-friul-ui-3@0.1.14 test
+> vitest run --configLoader native src/copy/liveViewCopy.test.js src/features/live/CommunityHistory.test.jsx src/features/live/CommunityMap.compactVoting.test.jsx src/features/live/CommunityReportForm.submitLocation.test.jsx src/features/live/liveCss.test.js src/features/live/TerritoryImmersiveMap.integration.test.jsx src/features/live/TerritoryImmersiveMap.viewed.test.jsx
+
+
+ RUN  v4.1.9 F:/proggetto Meteo Friul App/meteo FRIUL/frontend
+
+
+ Test Files  7 passed (7)
+      Tests  159 passed (159)
+   Start at  19:52:59
+   Duration  19.89s (transform 4.36s, setup 0ms, import 9.58s, tests 7.02s, environment 67.42s)

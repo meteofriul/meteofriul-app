@@ -88,6 +88,7 @@ import * as localCommunityPilot from "../../services/localCommunityPilot";
 import { getLiveViewCopy } from "../../copy/liveViewCopy";
 import { TerritoryImmersiveMap } from "./TerritoryImmersiveMap";
 import * as localWeatherPilot from "../../services/localWeatherPilot";
+import * as liveApi from "../../services/liveApi";
 
 const NOW = new Date("2026-09-15T15:00:00Z");
 const EMPTY_EDIT_FIXTURE_ITEMS = Object.freeze([]);
@@ -423,6 +424,78 @@ describe("pilot unified territory map integration", () => {
       ".mf-live-community-map-layer--inline.mf-live-territory-workspace",
     );
   }
+
+  it("uses real 48-hour records in TEST while preserving compact, expandable and live-detail UX", async () => {
+    vi.spyOn(localCommunityPilot, "isLocalCommunityPilot").mockReturnValue(true);
+    vi.spyOn(localCommunityPilot, "isLocalCommunityDevelopmentRuntime").mockReturnValue(true);
+    vi.spyOn(liveApi, "getPersistentLiveReportClientId").mockReturnValue("test-reader");
+    vi.spyOn(liveApi, "fetchCommunityHistory").mockResolvedValue({ reports: [{
+      id: "old-observation", typeId: "wind", place: "Pordenone", mine: true, point: true,
+      count: 3, confirmations: { yes: 4, no: 1 },
+      status: "expired", createdAt: NOW.getTime() - 7_200_000, expiresAt: NOW.getTime() - 3_600_000,
+    }], next_cursor: null });
+    await renderPilot({ modelOptions: { multiple: true }, onReportSubmit: vi.fn(),
+      onReportConfirm: vi.fn(), reportingEnabled: true });
+    const workspace = getWorkspace();
+    expect(liveApi.fetchCommunityHistory).not.toHaveBeenCalled();
+    await click(workspace.querySelector('[data-territory-tab="reports"]'));
+    const dock = workspace.querySelector(".mf-territory-map__dock");
+    const list = dock.querySelector(".mf-territory-map__browse-list");
+    expect(list.querySelectorAll(".mf-territory-map__browse-item")).toHaveLength(1);
+    expect(dock.querySelector(".mf-community-history-navigation")).toBeNull();
+    expect(dock.textContent).toContain("Ultime 48 ore");
+    await click(dock.querySelector(".mf-recent-list-toggle"));
+    expect(dock.classList.contains("mf-territory-map__dock--expanded")).toBe(true);
+    const historyRow = list.querySelector('[data-history-id="old-observation"]');
+    expect(historyRow.textContent).toContain("1 punto ottenuto");
+    expect(historyRow.textContent).toContain("3 segnalazioni");
+    expect(historyRow.textContent).toContain("2 ore fa");
+    expect(list.textContent).toContain("Hai visto le segnalazioni delle ultime 48 ore.");
+    const windRow = [...list.querySelectorAll("button:not([data-history-id])")]
+      .find((button) => button.textContent.includes("Vento forte"));
+    expect(windRow.textContent).toContain("Attiva");
+    expect(list.textContent).not.toContain("Non c’è più");
+    expect(list.querySelector(".mf-territory-map__browse-denial-status")).toBeNull();
+    await click(windRow);
+    const detail = workspace.querySelector(".mf-territory-map__detail-layer");
+    expect(detail).toBeTruthy();
+    expect(detail.querySelector(".mf-live-community-map__confirm-button--no")?.textContent)
+      .toContain("Non c’è più");
+    expect(detail.querySelector(".mf-live-community-map__confirm-button--no .mf-live-community-map__confirm-count")?.textContent)
+      .toBe("1");
+    await click(workspace.querySelector(".mf-territory-map__report-close"));
+    expect(dock.classList.contains("mf-territory-map__dock--expanded")).toBe(true);
+    await click(historyRow);
+    const historyDetail = workspace.querySelector(".mf-community-history-detail");
+    expect(historyDetail.textContent).toContain("Non si può più votare");
+    expect([...historyDetail.querySelectorAll("dd")].map((node) => node.textContent)).toEqual(["4", "1"]);
+    expect(historyDetail.querySelectorAll("button")).toHaveLength(1); // Close only; no voting actions.
+    await click(historyDetail.querySelector("button"));
+    expect(dock.classList.contains("mf-territory-map__dock--expanded")).toBe(true);
+    await click(dock.querySelector(".mf-territory-map__dock-grabber"));
+    expect(list.querySelectorAll(".mf-territory-map__browse-item")).toHaveLength(1);
+  });
+
+  it("opens the real history without active reports and automatically loads more at the scroll boundary", async () => {
+    vi.spyOn(localCommunityPilot, "isLocalCommunityPilot").mockReturnValue(true);
+    vi.spyOn(localCommunityPilot, "isLocalCommunityDevelopmentRuntime").mockReturnValue(true);
+    vi.spyOn(liveApi, "getPersistentLiveReportClientId").mockReturnValue("test-reader");
+    const row = { id: "first", typeId: "rain", place: "Pordenone", status: "expired",
+      createdAt: NOW.getTime() - 7_200_000, expiresAt: NOW.getTime() - 3_600_000 };
+    const cursor = { id: row.id, createdAt: row.createdAt };
+    vi.spyOn(liveApi, "fetchCommunityHistory").mockResolvedValueOnce({ reports: [row], next_cursor: cursor })
+      .mockResolvedValueOnce({ reports: [{ ...row, id: "second", createdAt: row.createdAt - 1000 }], next_cursor: null });
+    await renderPilot({ modelOptions: { community: false } });
+    const workspace = getWorkspace();
+    await click(workspace.querySelector('[data-territory-tab="reports"]'));
+    expect(workspace.querySelector(".mf-territory-map--reports-empty")).toBeNull();
+    expect(workspace.textContent).not.toContain("Mostra altre");
+    await click(workspace.querySelector(".mf-recent-list-toggle"));
+    await act(async () => workspace.querySelector(".mf-territory-map__browse-list")
+      .dispatchEvent(new Event("scroll", { bubbles: true })));
+    expect(liveApi.fetchCommunityHistory.mock.calls[1][0].cursor).toEqual(cursor);
+    expect(workspace.querySelectorAll("button[data-history-id]")).toHaveLength(2);
+  });
 
   it("opens an owned report editor directly and closes the map detail without restoring marker focus", async () => {
     vi.spyOn(localCommunityPilot, "isLocalCommunityPilot").mockReturnValue(true);
@@ -1021,9 +1094,9 @@ describe("pilot unified territory map integration", () => {
     expect(detail.textContent).not.toContain("Riferito al Comune");
     expect(detail.textContent).not.toContain("segnalazione recente");
     expect(detail.querySelector(".mf-live-community-map__confirm-button--yes")?.getAttribute("aria-label"))
-      .toBe("Conferma. Conferme: 2");
+      .toBe("Confermo. Conferme: 2");
     expect(detail.querySelector(".mf-live-community-map__confirm-button--no")?.getAttribute("aria-label"))
-      .toBe("Smentisci. Smentite: 0");
+      .toBe("Non c’è più. Non c’è più: 0");
     expect(identities).toBeTruthy();
     expect(identities.querySelector(".mf-territory-map__report-community-identities-label")?.textContent)
       .toBe("Sentinella Meteo:");
@@ -1138,9 +1211,9 @@ describe("pilot unified territory map integration", () => {
     expect(detail.textContent).not.toContain("Riferito al Comune");
     expect(detail.textContent).not.toContain("segnalazioni recenti");
     expect(detail.querySelector(".mf-live-community-map__confirm-button--yes")?.textContent)
-      .toContain("Conferma");
+      .toContain("Confermo");
     expect(detail.querySelector(".mf-live-community-map__confirm-button--no")?.textContent)
-      .toContain("Smentisci");
+      .toContain("Non c’è più");
   });
 
   it("keeps original reports distinct from confirmation and denial vote counts", async () => {
@@ -1167,11 +1240,11 @@ describe("pilot unified territory map integration", () => {
     expect(status.textContent).toContain("2 segnalazioni recenti");
     expect(status.textContent).toContain("Riferito al Comune");
     expect(detail.querySelector(".mf-live-community-map__confirm-button--yes")?.textContent)
-      .toContain("Vento ancora forte");
+      .toContain("Confermo");
     expect(detail.querySelector(".mf-live-community-map__confirm-button--yes .mf-live-community-map__confirm-count")?.textContent)
       .toBe("1");
     expect(detail.querySelector(".mf-live-community-map__confirm-button--no")?.textContent)
-      .toContain("Vento diminuito");
+      .toContain("Non c’è più");
     expect(detail.querySelector(".mf-live-community-map__confirm-button--no .mf-live-community-map__confirm-count")?.textContent)
       .toBe("1");
     expect(detail.textContent).not.toContain("Fonti anonime");

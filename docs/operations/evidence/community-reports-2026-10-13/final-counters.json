@@ -1,0 +1,45 @@
+[
+  {
+    "report_id": "community-1887cda53baf2014",
+    "phenomenon": "snow",
+    "active": true,
+    "reputation": {
+      "points": 1,
+      "total_reports": 2,
+      "updated_at": "2026-10-13 17:57:42.643019+00:00",
+      "validated_reports": 1
+    },
+    "history_actions": [
+      "active"
+    ]
+  },
+  {
+    "report_id": "community-20f68e18a3fae277",
+    "phenomenon": "hail",
+    "active": true,
+    "reputation": {
+      "points": 1,
+      "total_reports": 1,
+      "updated_at": "2026-10-13 18:01:33.723632+00:00",
+      "validated_reports": 1
+    },
+    "history_actions": [
+      "active"
+    ]
+  },
+  {
+    "report_id": "community-812f37489b9b4485",
+    "phenomenon": "hail",
+    "active": false,
+    "reputation": {
+      "points": 1,
+      "total_reports": 2,
+      "updated_at": "2026-10-13 17:57:42.643019+00:00",
+      "validated_reports": 1
+    },
+    "history_actions": [
+      "active",
+      "replaced"
+    ]
+  }
+]

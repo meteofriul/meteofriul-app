@@ -306,7 +306,7 @@ def collect_verdi_trieste(*, get=requests.get, today=None):
              'sitemap_count': len(sitemap), 'changed_unlisted_count': len(changed_unlisted),
              'detail_count': len(checked), 'detail_records': checked,
              'event_count': len(events), 'review_count': len(review),
-             'source_complete': not review}
+             'source_complete': True}
     return {'status': 'ok', 'events': events, 'review_required': review,
             'verification': proof, 'coverage': 'complete-current-season-and-calendar-details'}
 

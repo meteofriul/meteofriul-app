@@ -6,6 +6,7 @@ import {
   getEventsDateChipMonthLabel,
   getEventsTimeTabLabel,
   getEventsViewCopy,
+  getDegradedEventsMessage,
 } from "../../copy/eventsViewCopy";
 import { getLocationDisplayName } from "../../domain/geo/locationDisplayName";
 import { getDateTimeFormatter } from "../../domain/dateTimeFormatters.js";
@@ -613,8 +614,19 @@ export function buildEventRecord(event, { language = "it", location = null, now 
   const date = event?.date || event?.date_label || event?.dateLabel || event?.start_date || "";
   const endOnlyRange = event?.schedule_kind === "end_only"
     ? parseEventDateRange(date, { now }) : null;
-  const monthRangeStatus = (() => {
-    if (event?.schedule_kind !== "month_range") return null;
+  // Older catalogues can omit the marker, including after a preferred
+  // source replaced a regional duplicate. These periods only prove bounds.
+  const scheduleSources = [event?.source, ...(Array.isArray(event?.alternate_sources) ? event.alternate_sources : [])];
+  const legacyUnverifiedPeriod = (
+    scheduleSources.includes("TurismoFVG")
+      && ["period", "recurring", "month"].includes(event?.schedule_kind)
+  ) || (scheduleSources.some((source) => ["SagreFVG", "Galleria Spazzapan"].includes(source))
+    && event?.start_date && event?.end_date && event.start_date !== event.end_date);
+  const openingDaysUnknown = !event?.occurrences?.length
+    && (event?.opening_days_status === "unknown"
+      || (!event?.opening_days_status && legacyUnverifiedPeriod));
+  const boundedRangeStatus = (() => {
+    if (event?.schedule_kind !== "month_range" && !openingDaysUnknown) return null;
     const start = event?.start_date;
     const end = event?.end_date;
     if (!/^\d{4}-\d{2}-\d{2}$/.test(start || "") || !/^\d{4}-\d{2}-\d{2}$/.test(end || "")) return "outside";
@@ -649,6 +661,8 @@ export function buildEventRecord(event, { language = "it", location = null, now 
     dateChip: formatEventDateChip(date, language, { now }),
     scheduleLabel: occurrenceDates.length
       ? `${language === "fur" ? "Zornadis" : "Giornate"}: ${occurrenceDates.map(day => formatEventCivilDate(day, { day: "numeric", month: "short" })).join(" · ")}`
+      : openingDaysUnknown
+      ? language === "fur" ? "Zornadis di vierzidure di verificâ" : "Giornate di apertura da verificare"
       : "",
     excerpt,
     id: event?.id || event?.url || event?.title || "",
@@ -657,7 +671,7 @@ export function buildEventRecord(event, { language = "it", location = null, now 
     location: normalizeUiText(getEventLocationLabel(event, { language, location })),
     raw: event,
     source: getSourceLabel(event?.source),
-    timeCategory: monthRangeStatus || (event?.schedule_kind === "end_only"
+    timeCategory: boundedRangeStatus || (event?.schedule_kind === "end_only"
       ? endOnlyRange?.end >= startOfDay(now) ? "next" : "outside"
       : event?.preview_outside_window
       ? "next"
@@ -685,10 +699,12 @@ export function buildEventsViewModel(
   const hasItems = eventRecords.length > 0;
   const isLoading = Boolean(dataState.isRefreshing && !hasItems);
   const message = (() => {
+    const degraded = getDegradedEventsMessage(dataState, { language: languageKey, hasItems });
+    if (degraded) return degraded;
     if (isLoading) return copy.loadingBody;
     if (dataState.error && hasItems) return languageKey === "fur" ? "O mostri i evenis salvats." : "Mostro gli eventi salvati.";
     if (dataState.isPartial || dataState.shouldRetry) return copy.loadingBody;
-    if (dataState.error && !hasItems) return copy.emptyBody;
+    if (dataState.error && !hasItems) return copy.unavailableBody;
     return "";
   })();
 
@@ -702,6 +718,8 @@ export function buildEventsViewModel(
     error: dataState.error || null,
     hasLocation: Boolean(location?.city),
     isLoading,
+    isUnavailable: Boolean(dataState.error && !hasItems),
+    isDegraded: dataState.catalogHealth?.status === "degraded",
     items: eventRecords,
     locationLabel: getLocationDisplayName(location, languageKey),
     message,

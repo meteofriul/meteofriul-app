@@ -1,0 +1,4 @@
+127.0.0.1 - - [14/Oct/2026 17:59:05] "GET /api/local/events?city=Pordenone&limit=100&radius=20&lat=45.95689&lon=12.66051 HTTP/1.1" 200 119008
+127.0.0.1 - - [14/Oct/2026 17:59:05] "GET /api/local/events?city=Pordenone&limit=100&radius=20&lat=45.95689&lon=12.66051&offset=100&snapshot=2026-10-14T15%3A45%3A13.846290%2B00%3A00 HTTP/1.1" 200 117738
+127.0.0.1 - - [14/Oct/2026 17:59:05] "GET /api/local/events?city=Pordenone&limit=100&radius=20&lat=45.95689&lon=12.66051&offset=200&snapshot=2026-10-14T15%3A45%3A13.846290%2B00%3A00 HTTP/1.1" 200 126747
+127.0.0.1 - - [14/Oct/2026 17:59:05] "GET /api/local/events?city=Pordenone&limit=100&radius=20&lat=45.95689&lon=12.66051&offset=300&snapshot=2026-10-14T15%3A45%3A13.846290%2B00%3A00 HTTP/1.1" 200 21007

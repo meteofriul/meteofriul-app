@@ -1,5 +1,10 @@
 [CmdletBinding()]
-param([switch]$CheckOnly)
+param([switch]$CheckOnly, [switch]$TestOrange)
+
+if ($TestOrange) {
+    & (Join-Path $PSScriptRoot 'package-pilot-test-orange.ps1') -CheckOnly:$CheckOnly
+    return
+}
 
 $ErrorActionPreference = 'Stop'
 Set-StrictMode -Version Latest

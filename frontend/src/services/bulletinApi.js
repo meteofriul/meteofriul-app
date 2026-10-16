@@ -5,6 +5,13 @@ function getLocationCity(location) {
   return getLocationMunicipalityName(location);
 }
 
+function parseCoordinate(value) {
+  if (typeof value === "string") {
+    return value.trim() === "" ? NaN : Number(value);
+  }
+  return typeof value === "number" ? value : NaN;
+}
+
 function buildLocationQuery(location) {
   const city = String(getLocationCity(location) || "").trim();
 
@@ -13,8 +20,8 @@ function buildLocationQuery(location) {
   }
 
   const params = new URLSearchParams({ city });
-  const lat = typeof location === "object" ? Number(location?.lat) : NaN;
-  const lon = typeof location === "object" ? Number(location?.lon) : NaN;
+  const lat = parseCoordinate(location?.lat);
+  const lon = parseCoordinate(location?.lon);
 
   if (Number.isFinite(lat) && Number.isFinite(lon)) {
     params.set("lat", String(lat));

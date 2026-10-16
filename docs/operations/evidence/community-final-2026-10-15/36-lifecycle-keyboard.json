@@ -1,0 +1,719 @@
+{
+  "keyboardOpen": {
+    "scenario": "final-keyboard-open",
+    "geometry": {
+      "viewport": {
+        "w": 412,
+        "h": 578,
+        "dpr": 2.625
+      },
+      "insets": {
+        "top": 51.81,
+        "right": 0,
+        "bottom": 0,
+        "left": 0
+      },
+      "scrollWidth": 412,
+      "shell": "light",
+      "profile": "SENTINELLA METEO\nCjampane dal Cîl\n🏆\nOsservadôr dal Cîl\n·\n2\npt\nInviate: 2\nConfermate: 2",
+      "buttons": [
+        {
+          "label": "Indietro",
+          "x": 12,
+          "y": 130.2083282470703,
+          "w": 44,
+          "h": 44,
+          "bottom": 174.2083282470703,
+          "right": 56
+        },
+        {
+          "label": "Cambia alias",
+          "x": 343.4285888671875,
+          "y": 219.02381896972656,
+          "w": 44,
+          "h": 44,
+          "bottom": 263.02381896972656,
+          "right": 387.4285888671875
+        },
+        {
+          "label": "Sentinelle, alias e punti",
+          "x": 343.4285888671875,
+          "y": 275.78570556640625,
+          "w": 44,
+          "h": 44,
+          "bottom": 319.78570556640625,
+          "right": 387.4285888671875
+        },
+        {
+          "label": "Italiano",
+          "x": 242.1904754638672,
+          "y": 391.7857360839844,
+          "w": 67.23809814453125,
+          "h": 36,
+          "bottom": 427.7857360839844,
+          "right": 309.42857360839844
+        },
+        {
+          "label": "Furlan",
+          "x": 313.4285888671875,
+          "y": 391.7857360839844,
+          "w": 67.23809814453125,
+          "h": 36,
+          "bottom": 427.7857360839844,
+          "right": 380.66668701171875
+        },
+        {
+          "label": "Chiaro",
+          "x": 186.1904754638672,
+          "y": 456.0714416503906,
+          "w": 62.154762268066406,
+          "h": 36,
+          "bottom": 492.0714416503906,
+          "right": 248.3452377319336
+        },
+        {
+          "label": "Scuro",
+          "x": 252.34524536132812,
+          "y": 456.0714416503906,
+          "w": 62.16071701049805,
+          "h": 36,
+          "bottom": 492.0714416503906,
+          "right": 314.5059623718262
+        },
+        {
+          "label": "Sistema",
+          "x": 318.5059509277344,
+          "y": 456.0714416503906,
+          "w": 62.16071701049805,
+          "h": 36,
+          "bottom": 492.0714416503906,
+          "right": 380.6666679382324
+        },
+        {
+          "label": "Cambia",
+          "x": 345.4285888671875,
+          "y": 515.5952758789062,
+          "w": 40,
+          "h": 40,
+          "bottom": 555.5952758789062,
+          "right": 385.4285888671875
+        },
+        {
+          "label": "Attiva Posizione",
+          "x": 337.4285888671875,
+          "y": 579.9761962890625,
+          "w": 48,
+          "h": 28,
+          "bottom": 607.9761962890625,
+          "right": 385.4285888671875
+        },
+        {
+          "label": "Disattiva Allerte",
+          "x": 337.4285888671875,
+          "y": 688.5952758789062,
+          "w": 48,
+          "h": 28,
+          "bottom": 716.5952758789062,
+          "right": 385.4285888671875
+        },
+        {
+          "label": "Disattiva Avvisi",
+          "x": 337.4285888671875,
+          "y": 746.9761962890625,
+          "w": 48,
+          "h": 28,
+          "bottom": 774.9761962890625,
+          "right": 385.4285888671875
+        },
+        {
+          "label": "Svuota",
+          "x": 345.4285888671875,
+          "y": 1009.7142944335938,
+          "w": 40,
+          "h": 40,
+          "bottom": 1049.7142944335938,
+          "right": 385.4285888671875
+        },
+        {
+          "label": "Home",
+          "x": 18.761905670166016,
+          "y": 502.0357360839844,
+          "w": 90.66667175292969,
+          "h": 57.48809814453125,
+          "bottom": 559.5238342285156,
+          "right": 109.4285774230957
+        },
+        {
+          "label": "Meteo",
+          "x": 113.42857360839844,
+          "y": 502.0357360839844,
+          "w": 90.66667175292969,
+          "h": 57.48809814453125,
+          "bottom": 559.5238342285156,
+          "right": 204.09524536132812
+        },
+        {
+          "label": "Eventi: 57 eventi oggi",
+          "x": 208.09524536132812,
+          "y": 502.0357360839844,
+          "w": 90.66667175292969,
+          "h": 57.48809814453125,
+          "bottom": 559.5238342285156,
+          "right": 298.7619171142578
+        },
+        {
+          "label": "Scopri",
+          "x": 302.76190185546875,
+          "y": 502.0357360839844,
+          "w": 90.66667175292969,
+          "h": 57.48809814453125,
+          "bottom": 559.5238342285156,
+          "right": 393.42857360839844
+        },
+        {
+          "label": "Chiudi",
+          "x": 0,
+          "y": 0,
+          "w": 412.19049072265625,
+          "h": 578.2857055664062,
+          "bottom": 578.2857055664062,
+          "right": 412.19049072265625
+        },
+        {
+          "label": "Chiudi",
+          "x": 343.4285888671875,
+          "y": 268.53570556640625,
+          "w": 44,
+          "h": 44,
+          "bottom": 312.53570556640625,
+          "right": 387.4285888671875
+        },
+        {
+          "label": "Cancella ricerca",
+          "x": 37.52381134033203,
+          "y": 381.71429443359375,
+          "w": 28,
+          "h": 28,
+          "bottom": 409.71429443359375,
+          "right": 65.52381134033203
+        },
+        {
+          "label": "Pasiano di Pordenone (PN)Friuli Venezia Giulia · Italia",
+          "x": 25.5238094329834,
+          "y": 427.23809814453125,
+          "w": 349.1428527832031,
+          "h": 54,
+          "bottom": 481.23809814453125,
+          "right": 374.6666622161865
+        },
+        {
+          "label": "Prata di Pordenone (PN)Friuli Venezia Giulia · Italia",
+          "x": 25.5238094329834,
+          "y": 490.76190185546875,
+          "w": 349.1428527832031,
+          "h": 54,
+          "bottom": 544.7619018554688,
+          "right": 374.6666622161865
+        }
+      ]
+    },
+    "detail": {
+      "theme": "light",
+      "nav": {
+        "x": 12,
+        "y": 495.2738037109375,
+        "w": 388.19049072265625,
+        "h": 71.01190948486328,
+        "bottom": 566.2857131958008,
+        "right": 400.19049072265625
+      },
+      "header": {
+        "x": 12,
+        "y": 51.80952453613281,
+        "w": 388.19049072265625,
+        "h": 66.39881134033203,
+        "bottom": 118.20833587646484,
+        "right": 400.19049072265625
+      },
+      "bodyScrollHeight": 578,
+      "bodyClientHeight": 578,
+      "dialogs": [
+        {
+          "text": "METEO LOCALE\nCambia localita\n\nLocalita attiva: Pordenone\n\nPasiano di Pordenone (PN)\nFriuli Venezia Giulia · Italia\nPrata",
+          "rect": {
+            "x": 0,
+            "y": 0,
+            "w": 412.19049072265625,
+            "h": 578.2857055664062,
+            "bottom": 578.2857055664062,
+            "right": 412.19049072265625
+          }
+        }
+      ],
+      "content": "Trascina per aggiornare\nImpostazioni\nImpostazioni\nSENTINELLA METEO\nCjampane dal Cîl\n🏆\nOsservadôr dal Cîl\n·\n2\npt\nInviate: 2\nConfermate: 2\nPreferenze generali\nLingua\nItaliano\nFurlan\nTema\nChiaro\nScuro\nSistema\nLocalità predefinita\nPordenone (PN)\nPosizione\nNon rilevata\nNotifiche\nAllerte\nAvvisi\n\nCollegamento non riuscito. Riproveremo automaticamente.\n\nInfo e progetto\nMeteo Friûl\nmeteofriul.it\nInformativa privacy, fonti e crediti\nDati, permessi, contenuti e immagini\nCache\nSvuota\nSostieni Meteo Friûl\nA"
+    },
+    "screenshot": "36-final-keyboard-open.png",
+    "horizontalFit": true,
+    "navigationFits": true
+  },
+  "keyboardShown": true,
+  "keyboardClosed": {
+    "scenario": "final-keyboard-closed",
+    "geometry": {
+      "viewport": {
+        "w": 412,
+        "h": 915,
+        "dpr": 2.625
+      },
+      "insets": {
+        "top": 51.81,
+        "right": 0,
+        "bottom": 24,
+        "left": 0
+      },
+      "scrollWidth": 412,
+      "shell": "light",
+      "profile": "SENTINELLA METEO\nCjampane dal Cîl\n🏆\nOsservadôr dal Cîl\n·\n2\npt\nInviate: 2\nConfermate: 2",
+      "buttons": [
+        {
+          "label": "Indietro",
+          "x": 12,
+          "y": 130.2083282470703,
+          "w": 44,
+          "h": 44,
+          "bottom": 174.2083282470703,
+          "right": 56
+        },
+        {
+          "label": "Cambia alias",
+          "x": 343.4285888671875,
+          "y": 219.02381896972656,
+          "w": 44,
+          "h": 44,
+          "bottom": 263.02381896972656,
+          "right": 387.4285888671875
+        },
+        {
+          "label": "Sentinelle, alias e punti",
+          "x": 343.4285888671875,
+          "y": 275.78570556640625,
+          "w": 44,
+          "h": 44,
+          "bottom": 319.78570556640625,
+          "right": 387.4285888671875
+        },
+        {
+          "label": "Italiano",
+          "x": 242.1904754638672,
+          "y": 391.7857360839844,
+          "w": 67.23809814453125,
+          "h": 36,
+          "bottom": 427.7857360839844,
+          "right": 309.42857360839844
+        },
+        {
+          "label": "Furlan",
+          "x": 313.4285888671875,
+          "y": 391.7857360839844,
+          "w": 67.23809814453125,
+          "h": 36,
+          "bottom": 427.7857360839844,
+          "right": 380.66668701171875
+        },
+        {
+          "label": "Chiaro",
+          "x": 186.1904754638672,
+          "y": 456.0714416503906,
+          "w": 62.154762268066406,
+          "h": 36,
+          "bottom": 492.0714416503906,
+          "right": 248.3452377319336
+        },
+        {
+          "label": "Scuro",
+          "x": 252.34524536132812,
+          "y": 456.0714416503906,
+          "w": 62.16071701049805,
+          "h": 36,
+          "bottom": 492.0714416503906,
+          "right": 314.5059623718262
+        },
+        {
+          "label": "Sistema",
+          "x": 318.5059509277344,
+          "y": 456.0714416503906,
+          "w": 62.16071701049805,
+          "h": 36,
+          "bottom": 492.0714416503906,
+          "right": 380.6666679382324
+        },
+        {
+          "label": "Cambia",
+          "x": 345.4285888671875,
+          "y": 515.5952758789062,
+          "w": 40,
+          "h": 40,
+          "bottom": 555.5952758789062,
+          "right": 385.4285888671875
+        },
+        {
+          "label": "Attiva Posizione",
+          "x": 337.4285888671875,
+          "y": 579.9761962890625,
+          "w": 48,
+          "h": 28,
+          "bottom": 607.9761962890625,
+          "right": 385.4285888671875
+        },
+        {
+          "label": "Disattiva Allerte",
+          "x": 337.4285888671875,
+          "y": 688.5952758789062,
+          "w": 48,
+          "h": 28,
+          "bottom": 716.5952758789062,
+          "right": 385.4285888671875
+        },
+        {
+          "label": "Disattiva Avvisi",
+          "x": 337.4285888671875,
+          "y": 746.9761962890625,
+          "w": 48,
+          "h": 28,
+          "bottom": 774.9761962890625,
+          "right": 385.4285888671875
+        },
+        {
+          "label": "Svuota",
+          "x": 345.4285888671875,
+          "y": 1009.7142944335938,
+          "w": 40,
+          "h": 40,
+          "bottom": 1049.7142944335938,
+          "right": 385.4285888671875
+        },
+        {
+          "label": "Home",
+          "x": 18.761905670166016,
+          "y": 814.797607421875,
+          "w": 90.66667175292969,
+          "h": 57.48809814453125,
+          "bottom": 872.2857055664062,
+          "right": 109.4285774230957
+        },
+        {
+          "label": "Meteo",
+          "x": 113.42857360839844,
+          "y": 814.797607421875,
+          "w": 90.66667175292969,
+          "h": 57.48809814453125,
+          "bottom": 872.2857055664062,
+          "right": 204.09524536132812
+        },
+        {
+          "label": "Eventi: 57 eventi oggi",
+          "x": 208.09524536132812,
+          "y": 814.797607421875,
+          "w": 90.66667175292969,
+          "h": 57.48809814453125,
+          "bottom": 872.2857055664062,
+          "right": 298.7619171142578
+        },
+        {
+          "label": "Scopri",
+          "x": 302.76190185546875,
+          "y": 814.797607421875,
+          "w": 90.66667175292969,
+          "h": 57.48809814453125,
+          "bottom": 872.2857055664062,
+          "right": 393.42857360839844
+        },
+        {
+          "label": "Chiudi",
+          "x": 0,
+          "y": 0,
+          "w": 412.19049072265625,
+          "h": 915.047607421875,
+          "bottom": 915.047607421875,
+          "right": 412.19049072265625
+        },
+        {
+          "label": "Chiudi",
+          "x": 343.4285888671875,
+          "y": 603.4880981445312,
+          "w": 44,
+          "h": 44,
+          "bottom": 647.4880981445312,
+          "right": 387.4285888671875
+        },
+        {
+          "label": "Cancella ricerca",
+          "x": 346.66668701171875,
+          "y": 697.2380981445312,
+          "w": 28,
+          "h": 28,
+          "bottom": 725.2380981445312,
+          "right": 374.66668701171875
+        },
+        {
+          "label": "Pasiano di Pordenone (PN)Friuli Venezia Giulia · Italia",
+          "x": 25.5238094329834,
+          "y": 752,
+          "w": 349.1428527832031,
+          "h": 54,
+          "bottom": 806,
+          "right": 374.6666622161865
+        },
+        {
+          "label": "Prata di Pordenone (PN)Friuli Venezia Giulia · Italia",
+          "x": 25.5238094329834,
+          "y": 815.5238037109375,
+          "w": 349.1428527832031,
+          "h": 54,
+          "bottom": 869.5238037109375,
+          "right": 374.6666622161865
+        }
+      ]
+    },
+    "detail": {
+      "theme": "light",
+      "nav": {
+        "x": 12,
+        "y": 808.0357055664062,
+        "w": 388.19049072265625,
+        "h": 71.01190948486328,
+        "bottom": 879.0476150512695,
+        "right": 400.19049072265625
+      },
+      "header": {
+        "x": 12,
+        "y": 51.80952453613281,
+        "w": 388.19049072265625,
+        "h": 66.39881134033203,
+        "bottom": 118.20833587646484,
+        "right": 400.19049072265625
+      },
+      "bodyScrollHeight": 915,
+      "bodyClientHeight": 915,
+      "dialogs": [
+        {
+          "text": "METEO LOCALE\nCambia localita\n\nLocalita attiva: Pordenone\n\nPasiano di Pordenone (PN)\nFriuli Venezia Giulia · Italia\nPrata",
+          "rect": {
+            "x": 0,
+            "y": 0,
+            "w": 412.19049072265625,
+            "h": 915.047607421875,
+            "bottom": 915.047607421875,
+            "right": 412.19049072265625
+          }
+        }
+      ],
+      "content": "Trascina per aggiornare\nImpostazioni\nImpostazioni\nSENTINELLA METEO\nCjampane dal Cîl\n🏆\nOsservadôr dal Cîl\n·\n2\npt\nInviate: 2\nConfermate: 2\nPreferenze generali\nLingua\nItaliano\nFurlan\nTema\nChiaro\nScuro\nSistema\nLocalità predefinita\nPordenone (PN)\nPosizione\nNon rilevata\nNotifiche\nAllerte\nAvvisi\n\nCollegamento non riuscito. Riproveremo automaticamente.\n\nInfo e progetto\nMeteo Friûl\nmeteofriul.it\nInformativa privacy, fonti e crediti\nDati, permessi, contenuti e immagini\nCache\nSvuota\nSostieni Meteo Friûl\nA"
+    },
+    "screenshot": "36-final-keyboard-closed.png",
+    "horizontalFit": true,
+    "navigationFits": true
+  },
+  "resumeProfilePreserved": true,
+  "reloadProfilePreserved": true,
+  "reload": {
+    "scenario": "final-reload",
+    "geometry": {
+      "viewport": {
+        "w": 412,
+        "h": 915,
+        "dpr": 2.625
+      },
+      "insets": {
+        "top": 51.81,
+        "right": 0,
+        "bottom": 24,
+        "left": 0
+      },
+      "scrollWidth": 412,
+      "shell": "light",
+      "profile": "SENTINELLA METEO\nCjampane dal Cîl\n🏆\nOsservadôr dal Cîl\n·\n2\npt\nInviate: 2\nConfermate: 2",
+      "buttons": [
+        {
+          "label": "Indietro",
+          "x": 12,
+          "y": 130.2083282470703,
+          "w": 44,
+          "h": 44,
+          "bottom": 174.2083282470703,
+          "right": 56
+        },
+        {
+          "label": "Cambia alias",
+          "x": 343.4285888671875,
+          "y": 219.02381896972656,
+          "w": 44,
+          "h": 44,
+          "bottom": 263.02381896972656,
+          "right": 387.4285888671875
+        },
+        {
+          "label": "Sentinelle, alias e punti",
+          "x": 343.4285888671875,
+          "y": 275.78570556640625,
+          "w": 44,
+          "h": 44,
+          "bottom": 319.78570556640625,
+          "right": 387.4285888671875
+        },
+        {
+          "label": "Italiano",
+          "x": 242.1904754638672,
+          "y": 391.7857360839844,
+          "w": 67.23809814453125,
+          "h": 36,
+          "bottom": 427.7857360839844,
+          "right": 309.42857360839844
+        },
+        {
+          "label": "Furlan",
+          "x": 313.4285888671875,
+          "y": 391.7857360839844,
+          "w": 67.23809814453125,
+          "h": 36,
+          "bottom": 427.7857360839844,
+          "right": 380.66668701171875
+        },
+        {
+          "label": "Chiaro",
+          "x": 186.1904754638672,
+          "y": 456.0714416503906,
+          "w": 62.154762268066406,
+          "h": 36,
+          "bottom": 492.0714416503906,
+          "right": 248.3452377319336
+        },
+        {
+          "label": "Scuro",
+          "x": 252.34524536132812,
+          "y": 456.0714416503906,
+          "w": 62.16071701049805,
+          "h": 36,
+          "bottom": 492.0714416503906,
+          "right": 314.5059623718262
+        },
+        {
+          "label": "Sistema",
+          "x": 318.5059509277344,
+          "y": 456.0714416503906,
+          "w": 62.16071701049805,
+          "h": 36,
+          "bottom": 492.0714416503906,
+          "right": 380.6666679382324
+        },
+        {
+          "label": "Cambia",
+          "x": 345.4285888671875,
+          "y": 515.5952758789062,
+          "w": 40,
+          "h": 40,
+          "bottom": 555.5952758789062,
+          "right": 385.4285888671875
+        },
+        {
+          "label": "Attiva Posizione",
+          "x": 337.4285888671875,
+          "y": 579.9761962890625,
+          "w": 48,
+          "h": 28,
+          "bottom": 607.9761962890625,
+          "right": 385.4285888671875
+        },
+        {
+          "label": "Disattiva Allerte",
+          "x": 337.4285888671875,
+          "y": 688.5952758789062,
+          "w": 48,
+          "h": 28,
+          "bottom": 716.5952758789062,
+          "right": 385.4285888671875
+        },
+        {
+          "label": "Disattiva Avvisi",
+          "x": 337.4285888671875,
+          "y": 746.9761962890625,
+          "w": 48,
+          "h": 28,
+          "bottom": 774.9761962890625,
+          "right": 385.4285888671875
+        },
+        {
+          "label": "Svuota",
+          "x": 345.4285888671875,
+          "y": 1009.7142944335938,
+          "w": 40,
+          "h": 40,
+          "bottom": 1049.7142944335938,
+          "right": 385.4285888671875
+        },
+        {
+          "label": "Home",
+          "x": 18.761905670166016,
+          "y": 814.797607421875,
+          "w": 90.66667175292969,
+          "h": 57.48809814453125,
+          "bottom": 872.2857055664062,
+          "right": 109.4285774230957
+        },
+        {
+          "label": "Meteo",
+          "x": 113.42857360839844,
+          "y": 814.797607421875,
+          "w": 90.66667175292969,
+          "h": 57.48809814453125,
+          "bottom": 872.2857055664062,
+          "right": 204.09524536132812
+        },
+        {
+          "label": "Eventi: 57 eventi oggi",
+          "x": 208.09524536132812,
+          "y": 814.797607421875,
+          "w": 90.66667175292969,
+          "h": 57.48809814453125,
+          "bottom": 872.2857055664062,
+          "right": 298.7619171142578
+        },
+        {
+          "label": "Scopri",
+          "x": 302.76190185546875,
+          "y": 814.797607421875,
+          "w": 90.66667175292969,
+          "h": 57.48809814453125,
+          "bottom": 872.2857055664062,
+          "right": 393.42857360839844
+        }
+      ]
+    },
+    "detail": {
+      "theme": "light",
+      "nav": {
+        "x": 12,
+        "y": 808.0357055664062,
+        "w": 388.19049072265625,
+        "h": 71.01190948486328,
+        "bottom": 879.0476150512695,
+        "right": 400.19049072265625
+      },
+      "header": {
+        "x": 12,
+        "y": 51.80952453613281,
+        "w": 388.19049072265625,
+        "h": 66.39881134033203,
+        "bottom": 118.20833587646484,
+        "right": 400.19049072265625
+      },
+      "bodyScrollHeight": 915,
+      "bodyClientHeight": 915,
+      "dialogs": [],
+      "content": "Trascina per aggiornare\nImpostazioni\nImpostazioni\nSENTINELLA METEO\nCjampane dal Cîl\n🏆\nOsservadôr dal Cîl\n·\n2\npt\nInviate: 2\nConfermate: 2\nPreferenze generali\nLingua\nItaliano\nFurlan\nTema\nChiaro\nScuro\nSistema\nLocalità predefinita\nPordenone (PN)\nPosizione\nNon rilevata\nNotifiche\nAllerte\nAvvisi\n\nCollegamento non riuscito. Riproveremo automaticamente.\n\nInfo e progetto\nMeteo Friûl\nmeteofriul.it\nInformativa privacy, fonti e crediti\nDati, permessi, contenuti e immagini\nCache\nSvuota\nSostieni Meteo Friûl\nA"
+    },
+    "screenshot": "36-final-reload.png",
+    "horizontalFit": true,
+    "navigationFits": true
+  }
+}

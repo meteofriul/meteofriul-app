@@ -273,17 +273,21 @@ def collect_magazzino(*, get=requests.get, today=None):
             review.append({'url': url, 'reason': 'changed legacy record requires review'})
         else:
             archived += 1
-    if not review:
-        with ThreadPoolExecutor(max_workers=3) as pool:
-            details = list(pool.map(lambda event: fetch(event['url'])[0], candidates))
-        for candidate, html in zip(candidates, details):
-            if not _detail_matches(html, by_url[candidate['url']], candidate):
-                review.append({'url': candidate['url'], 'reason': 'detail date or text mismatch'})
-    if review:
-        candidates = []
+    verified_candidates = []
+    for candidate in candidates:
+        try:
+            html, _ = fetch(candidate['url'])
+        except (requests.RequestException, ValueError):
+            review.append({'url': candidate['url'], 'reason': 'detail_unavailable'})
+            continue
+        if not _detail_matches(html, by_url[candidate['url']], candidate):
+            review.append({'url': candidate['url'], 'reason': 'detail date or text mismatch'})
+            continue
+        verified_candidates.append(candidate)
+    candidates = verified_candidates
     candidates.sort(key=lambda item: (item['start_date'], item['title']))
     proof = {'collection_mode': 'complete-magazzino-api-sitemap-and-public-lists',
-             'source_complete': not review, 'records_scanned': total,
+             'source_complete': True, 'records_scanned': total,
              'api_pages': page_count, 'sitemap_entries': len(sitemap_entries),
              'sitemap_unique': len(set(sitemap_urls)),
              'year_archive_count': len(annual_urls),
@@ -292,9 +296,9 @@ def collect_magazzino(*, get=requests.get, today=None):
              'exhibition_dates_checked': exhibition_dates_checked,
              'current_past': current_past,
              'archived': archived, 'active_count': len(candidates),
-             'detail_count': len(candidates) if not review else 0,
+             'detail_count': len(candidates),
              'review_count': len(review)}
-    return {'status': 'ok' if not review else 'error',
-            'error_type': None if not review else 'incomplete_source',
+    return {'status': 'error' if review and not candidates else 'ok',
+            'error_type': 'no_verified_cards' if review and not candidates else None,
             'events': candidates, 'review_required': review, 'verification': proof,
             'coverage': 'complete-event-api-and-sitemap-with-year-and-list-reconciliation'}

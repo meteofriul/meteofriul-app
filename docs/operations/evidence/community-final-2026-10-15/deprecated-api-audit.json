@@ -1,0 +1,52 @@
+{
+  "candidate": "d72329509c1a423b887659086c67e15361364ccf",
+  "dependencyVersions": {
+    "androidx.core": "1.17.0",
+    "androidx.activity": "1.11.0",
+    "androidx.appcompat": "1.7.1"
+  },
+  "calls": [
+    {
+      "dex": "classes.dex",
+      "class": "j3.a",
+      "originalClass": "com.google.android.gms.common.wrappers.InstantApps",
+      "method": "r",
+      "instruction": "1005ac: 6e20 2209 1400                         |0026: invoke-virtual {v4, v1}, Landroid/view/Window;.setStatusBarColor:(I)V // method@0922"
+    },
+    {
+      "dex": "classes.dex",
+      "class": "j3.a",
+      "originalClass": "com.google.android.gms.common.wrappers.InstantApps",
+      "method": "r",
+      "instruction": "1005b2: 6e20 2009 1400                         |0029: invoke-virtual {v4, v1}, Landroid/view/Window;.setNavigationBarColor:(I)V // method@0920"
+    }
+  ],
+  "mergedMethodMapping": [
+    "1:3:void androidx.core.view.WindowCompat.enableEdgeToEdge(android.view.Window):152:152 -> r",
+    "4:6:void androidx.core.view.WindowCompat.enableEdgeToEdge(android.view.Window):156:156 -> r",
+    "7:14:void androidx.core.view.WindowCompat.setDecorFitsSystemWindows(android.view.Window,boolean):123:123 -> r",
+    "7:14:void androidx.core.view.WindowCompat.enableEdgeToEdge(android.view.Window):158 -> r",
+    "15:20:void androidx.core.view.WindowCompat.setDecorFitsSystemWindows(android.view.Window,boolean):124:124 -> r",
+    "15:20:void androidx.core.view.WindowCompat.enableEdgeToEdge(android.view.Window):158 -> r",
+    "21:24:void androidx.core.view.WindowCompat.setDecorFitsSystemWindows(android.view.Window,boolean):126:126 -> r",
+    "21:24:void androidx.core.view.WindowCompat.enableEdgeToEdge(android.view.Window):158 -> r",
+    "25:28:void androidx.core.view.WindowCompat$Api16Impl.setDecorFitsSystemWindows(android.view.Window,boolean):188:188 -> r",
+    "25:28:void androidx.core.view.WindowCompat.setDecorFitsSystemWindows(android.view.Window,boolean):128 -> r",
+    "25:28:void androidx.core.view.WindowCompat.enableEdgeToEdge(android.view.Window):158 -> r",
+    "29:34:void androidx.core.view.WindowCompat$Api16Impl.setDecorFitsSystemWindows(android.view.Window,boolean):189:189 -> r",
+    "29:34:void androidx.core.view.WindowCompat.setDecorFitsSystemWindows(android.view.Window,boolean):128 -> r",
+    "29:34:void androidx.core.view.WindowCompat.enableEdgeToEdge(android.view.Window):158 -> r",
+    "35:38:void androidx.core.view.WindowCompat$Api16Impl.setDecorFitsSystemWindows(android.view.Window,boolean):190:190 -> r",
+    "35:38:void androidx.core.view.WindowCompat.setDecorFitsSystemWindows(android.view.Window,boolean):128 -> r",
+    "35:38:void androidx.core.view.WindowCompat.enableEdgeToEdge(android.view.Window):158 -> r",
+    "39:41:void androidx.core.view.WindowCompat.enableEdgeToEdge(android.view.Window):159:159 -> r",
+    "42:53:void androidx.core.view.WindowCompat.enableEdgeToEdge(android.view.Window):160:160 -> r",
+    "54:57:void androidx.core.view.WindowCompat.enableEdgeToEdge(android.view.Window):165:165 -> r",
+    "58:63:void androidx.core.view.WindowCompat.enableEdgeToEdge(android.view.Window):166:166 -> r",
+    "64:66:void androidx.core.view.WindowCompat.enableEdgeToEdge(android.view.Window):167:167 -> r",
+    "67:73:void androidx.core.view.WindowCompat.enableEdgeToEdge(android.view.Window):168:168 -> r",
+    "74:76:void androidx.core.view.WindowCompat.enableEdgeToEdge(android.view.Window):172:172 -> r",
+    "77:80:void androidx.core.view.WindowCompat.enableEdgeToEdge(android.view.Window):173:173 -> r"
+  ],
+  "attribution": "Entrambe le chiamate residue provengono da androidx.core.view.WindowCompat.enableEdgeToEdge, core 1.17.0. R8 ha spostato il metodo in j3.a.r: il solo nome della classe originale InstantApps non identifica il chiamante sorgente."
+}

@@ -259,8 +259,9 @@ export function createHomeEventsState(
   {
     fromCache = false,
     loadedLimit = HOME_EVENTS_LIMIT,
-    cacheStatus = null,
-    contractVersion = null,
+    catalogHealth = payload?.catalogHealth || null,
+    cacheStatus = catalogHealth?.status === "degraded" ? "degraded" : null,
+    contractVersion = payload?.contractVersion || null,
     isRefreshing = false,
     isPartial = false,
     retry = 0,
@@ -271,12 +272,15 @@ export function createHomeEventsState(
   const events = Array.isArray(payload?.events) ? payload.events : [];
 
   return {
-    status: error ? fromCache ? "stale" : "error" : fromCache ? "cache" : "fresh",
+    status: error ? fromCache ? "stale" : "error"
+      : catalogHealth?.status === "degraded" ? "degraded" : fromCache ? "cache" : "fresh",
     items: events,
     total: Number(payload?.total || events.length),
     loadedLimit,
     cacheStatus,
     contractVersion,
+    catalogHealth,
+    isDegraded: catalogHealth?.status === "degraded",
     isRefreshing,
     isPartial,
     retry,
@@ -500,6 +504,7 @@ export async function loadHomeEvents(
       eventsCacheWriter(location, eventsPayload.events, {
         ...cacheOptions,
         contractVersion: eventsPayload.contractVersion,
+        catalogHealth: eventsPayload.catalogHealth,
         limit: FULL_EVENTS_LIMIT,
       });
     }
@@ -508,6 +513,7 @@ export async function loadHomeEvents(
       eventsCacheWriter(location, eventsPayload.events, {
         ...cacheOptions,
         contractVersion: eventsPayload.contractVersion,
+        catalogHealth: eventsPayload.catalogHealth,
         limit: FULL_EVENTS_LIMIT,
       });
     }

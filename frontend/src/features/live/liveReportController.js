@@ -843,6 +843,8 @@ export async function confirmLiveCommunityReport(
     confirmationPoster = postCommunityReportConfirmation,
     persistentClientIdResolver = getPersistentLiveReportClientId,
     policyVersion = "",
+    reportIds = [],
+    locationResolver = locateLiveCommunityReport,
   } = {},
 ) {
   const normalizedGroupId = String(groupId || "").trim();
@@ -858,19 +860,28 @@ export async function confirmLiveCommunityReport(
   }
 
   try {
-    const clientId = normalizedVote === "no"
+    const nationalRules = isLocalCommunityPilot();
+    const clientId = nationalRules || normalizedVote === "no"
       ? persistentClientIdResolver()
       : clientIdResolver();
-    if (normalizedVote === "no" && !clientId) {
+    if ((nationalRules || normalizedVote === "no") && !clientId) {
       return { ok: false, reason: "persistent_identity_required" };
     }
 
+    let location;
+    if (nationalRules) {
+      location = await locationResolver({ requireCurrent: true });
+      if (!location?.ok) return { ...location, ok: false, reason: "vote_location_required" };
+      if (!reportIds.length) return { ok: false, reason: "observation_changed" };
+    }
     const response = await confirmationPoster({
       acceptedTerms,
       clientId,
       groupId: normalizedGroupId,
       policyVersion,
       vote: normalizedVote,
+      ...(nationalRules ? { coords: location.coords,
+        ageMs: Math.max(0, Date.now() - location.locatedAt), reportIds } : {}),
     });
 
     return {

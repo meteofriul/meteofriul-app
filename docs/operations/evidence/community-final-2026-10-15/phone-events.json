@@ -1,0 +1,394 @@
+{
+  "text": "METEO FRIÛL\nMETEO\nFRI\nU\nL\nMeteo ed eventi per il tempo libero\nTrascina per aggiornare\nEventi\nPordenone\nOggi\n9+\nWeekend\n9+\nProssimi\n9+\nTutti\nFeste e sagre\nGusto\nMercati\nCultura\nConvegni\nMusica\nSport\nFamiglia\nAltro\nGiovanni Veronesi a Cinemazero\n\nPordenone\n\n15\nOTT\nCultura\nMessa 154° Anniversario Truppe Alpine\n\nPordenone\n\n15\nOTT\nCultura\nPota Boyz - Stand Up Comedy e Impro\n\nPordenone\n\n15\nOTT\nCultura\nIl dono del mito\n\nPordenone\n\n15\nOTT\nConvegni\nPresentazione del libro \"Passi d'inchiostro\"\n\nPordenone\n\n15\nOTT\nConvegni\nIl ritorno di Tobia\n\nPorcia · ~3,5 km\n\n15\nOTT\nMusica\nChe Cura che Fa\n\nPrata di Pordenone · ~8,9 km\n\n15\nOTT\nConvegni\nIII Edizione Che cura che fa - Il festival che cura: Cicatrici: trame di comunità\n\nPrata di Pordenone · ~8,9 km\n\n15\nOTT\nEvento\nLetture animate per giovani naturalisti dai 4 ai 10 anni\n\nPordenone\n\n15\nOTT\n20\nDIC\nFamiglia\nMì go talent\n\nPordenone e altre località\n\n15\nOTT\n25\nOTT\nConvegni\nLe Luci della Serenissima\n\nCaneva · ~16 km\n\n15\nOTT\nConvegni\nLe stagioni nell'arte\n\nPordenone\n\n4\nOTT\n29\nNOV\nMusica\n51ª Sagra della Madonna della Salute\n\nSan Quirino · 8,5 km\n\n14\nOTT\n18\nOTT\nSagra / festa locale\nMatilda, mi racconti una storia?\n\nPordenone\n\n3\nSET\n10\nDIC\nFamiglia\n43ª Sagra delle Castagne\n\nPrata di Pordenone · 7,6 km\n\n15\nOTT\n28\nOTT\nSagra / festa locale\nLa bellezza salvata\n\nPordenone\n\n6\nMAG\n25\nOTT\nCultura\n16 / 57\nMostra altri\nHome\nMeteo\n57\nEventi\nScopri\nCULTURA\nGiovanni Veronesi a Cinemazero\n\n15 ottobre 2026\n\nCinemazero · Pordenone\n\nGiovedì 15 ottobre alle 19.00 il regista Giovanni Veronesi sarà a Cinemazero per presentare al pubblico Dio ride, film di chiusura, fuori Concorso, dell’83.\n\nFonte: TurismoFVG\n\nPagina dell'evento\nIndicazioni",
+  "screen": {
+    "scenario": "final-event-detail",
+    "geometry": {
+      "viewport": {
+        "w": 411,
+        "h": 914,
+        "dpr": 2.625
+      },
+      "insets": {
+        "top": 33.524,
+        "right": 0,
+        "bottom": 48,
+        "left": 0
+      },
+      "scrollWidth": 411,
+      "shell": "dark",
+      "buttons": [
+        {
+          "label": "Apri impostazioni",
+          "x": 355.4285888671875,
+          "y": 41.52381134033203,
+          "w": 44,
+          "h": 44,
+          "bottom": 85.52381134033203,
+          "right": 399.4285888671875
+        },
+        {
+          "label": "Oggi 9+",
+          "x": 15.7619047164917,
+          "y": 151.2857208251953,
+          "w": 123.96428680419922,
+          "h": 32,
+          "bottom": 183.2857208251953,
+          "right": 139.72619152069092
+        },
+        {
+          "label": "Weekend 9+",
+          "x": 143.7261962890625,
+          "y": 151.2857208251953,
+          "w": 123.9702377319336,
+          "h": 32,
+          "bottom": 183.2857208251953,
+          "right": 267.6964340209961
+        },
+        {
+          "label": "Prossimi 9+",
+          "x": 271.6964416503906,
+          "y": 151.2857208251953,
+          "w": 123.96428680419922,
+          "h": 32,
+          "bottom": 183.2857208251953,
+          "right": 395.66072845458984
+        },
+        {
+          "label": "Tutti",
+          "x": 13,
+          "y": 196.04762268066406,
+          "w": 51.369049072265625,
+          "h": 36,
+          "bottom": 232.04762268066406,
+          "right": 64.36904907226562
+        },
+        {
+          "label": "Feste e sagre",
+          "x": 71.36904907226562,
+          "y": 196.04762268066406,
+          "w": 112.18452453613281,
+          "h": 36,
+          "bottom": 232.04762268066406,
+          "right": 183.55357360839844
+        },
+        {
+          "label": "Gusto",
+          "x": 190.55357360839844,
+          "y": 196.04762268066406,
+          "w": 70.73809814453125,
+          "h": 36,
+          "bottom": 232.04762268066406,
+          "right": 261.2916717529297
+        },
+        {
+          "label": "Mercati",
+          "x": 268.2916564941406,
+          "y": 196.04762268066406,
+          "w": 80.5952377319336,
+          "h": 36,
+          "bottom": 232.04762268066406,
+          "right": 348.8868942260742
+        },
+        {
+          "label": "Cultura",
+          "x": 355.88690185546875,
+          "y": 196.04762268066406,
+          "w": 78.63095092773438,
+          "h": 36,
+          "bottom": 232.04762268066406,
+          "right": 434.5178527832031
+        },
+        {
+          "label": "Convegni",
+          "x": 441.5178527832031,
+          "y": 196.04762268066406,
+          "w": 90.2202377319336,
+          "h": 36,
+          "bottom": 232.04762268066406,
+          "right": 531.7380905151367
+        },
+        {
+          "label": "Musica",
+          "x": 538.7380981445312,
+          "y": 196.04762268066406,
+          "w": 78.39286041259766,
+          "h": 36,
+          "bottom": 232.04762268066406,
+          "right": 617.1309585571289
+        },
+        {
+          "label": "Sport",
+          "x": 624.1309814453125,
+          "y": 196.04762268066406,
+          "w": 68.89286041259766,
+          "h": 36,
+          "bottom": 232.04762268066406,
+          "right": 693.0238418579102
+        },
+        {
+          "label": "Famiglia",
+          "x": 700.0238037109375,
+          "y": 196.04762268066406,
+          "w": 85.375,
+          "h": 36,
+          "bottom": 232.04762268066406,
+          "right": 785.3988037109375
+        },
+        {
+          "label": "Altro",
+          "x": 792.3988037109375,
+          "y": 196.04762268066406,
+          "w": 65.54762268066406,
+          "h": 36,
+          "bottom": 232.04762268066406,
+          "right": 857.9464263916016
+        },
+        {
+          "label": "Giovanni Veronesi a Cinemazero - apri dettagli evento",
+          "x": 12.7619047164917,
+          "y": 250.8095245361328,
+          "w": 385.9047546386719,
+          "h": 106,
+          "bottom": 356.8095245361328,
+          "right": 398.6666593551636
+        },
+        {
+          "label": "Messa 154° Anniversario Truppe Alpine - apri dettagli evento",
+          "x": 12.7619047164917,
+          "y": 366.3333435058594,
+          "w": 385.9047546386719,
+          "h": 109.44047546386719,
+          "bottom": 475.77381896972656,
+          "right": 398.6666593551636
+        },
+        {
+          "label": "Pota Boyz - Stand Up Comedy e Impro - apri dettagli evento",
+          "x": 12.7619047164917,
+          "y": 485.2976379394531,
+          "w": 385.9047546386719,
+          "h": 109.44047546386719,
+          "bottom": 594.7381134033203,
+          "right": 398.6666593551636
+        },
+        {
+          "label": "Il dono del mito - apri dettagli evento",
+          "x": 12.7619047164917,
+          "y": 604.2619018554688,
+          "w": 385.9047546386719,
+          "h": 106,
+          "bottom": 710.2619018554688,
+          "right": 398.6666593551636
+        },
+        {
+          "label": "Presentazione del libro \"Passi d'inchiostro\" - apri dettagli evento",
+          "x": 12.7619047164917,
+          "y": 719.7857055664062,
+          "w": 385.9047546386719,
+          "h": 109.44047546386719,
+          "bottom": 829.2261810302734,
+          "right": 398.6666593551636
+        },
+        {
+          "label": "Il ritorno di Tobia - apri dettagli evento",
+          "x": 12.7619047164917,
+          "y": 838.75,
+          "w": 385.9047546386719,
+          "h": 106,
+          "bottom": 944.75,
+          "right": 398.6666593551636
+        },
+        {
+          "label": "Che Cura che Fa - apri dettagli evento",
+          "x": 12.7619047164917,
+          "y": 954.2738037109375,
+          "w": 385.9047546386719,
+          "h": 106,
+          "bottom": 1060.2738037109375,
+          "right": 398.6666593551636
+        },
+        {
+          "label": "III Edizione Che cura che fa - Il festival che cura: Cicatrici: trame di comunità - apri dettagli evento",
+          "x": 12.7619047164917,
+          "y": 1069.797607421875,
+          "w": 385.9047546386719,
+          "h": 109.44047546386719,
+          "bottom": 1179.2380828857422,
+          "right": 398.6666593551636
+        },
+        {
+          "label": "Letture animate per giovani naturalisti dai 4 ai 10 anni - apri dettagli evento",
+          "x": 12.7619047164917,
+          "y": 1188.761962890625,
+          "w": 385.9047546386719,
+          "h": 109.44047546386719,
+          "bottom": 1298.2024383544922,
+          "right": 398.6666593551636
+        },
+        {
+          "label": "Mì go talent - apri dettagli evento",
+          "x": 12.7619047164917,
+          "y": 1307.7261962890625,
+          "w": 385.9047546386719,
+          "h": 106,
+          "bottom": 1413.7261962890625,
+          "right": 398.6666593551636
+        },
+        {
+          "label": "Le Luci della Serenissima - apri dettagli evento",
+          "x": 12.7619047164917,
+          "y": 1423.25,
+          "w": 385.9047546386719,
+          "h": 106,
+          "bottom": 1529.25,
+          "right": 398.6666593551636
+        },
+        {
+          "label": "Le stagioni nell'arte - apri dettagli evento",
+          "x": 12.7619047164917,
+          "y": 1538.7738037109375,
+          "w": 385.9047546386719,
+          "h": 106,
+          "bottom": 1644.7738037109375,
+          "right": 398.6666593551636
+        },
+        {
+          "label": "51ª Sagra della Madonna della Salute - apri dettagli evento",
+          "x": 12.7619047164917,
+          "y": 1654.297607421875,
+          "w": 385.9047546386719,
+          "h": 106,
+          "bottom": 1760.297607421875,
+          "right": 398.6666593551636
+        },
+        {
+          "label": "Matilda, mi racconti una storia? - apri dettagli evento",
+          "x": 12.7619047164917,
+          "y": 1769.8214111328125,
+          "w": 385.9047546386719,
+          "h": 106,
+          "bottom": 1875.8214111328125,
+          "right": 398.6666593551636
+        },
+        {
+          "label": "43ª Sagra delle Castagne - apri dettagli evento",
+          "x": 12.7619047164917,
+          "y": 1885.34521484375,
+          "w": 385.9047546386719,
+          "h": 106,
+          "bottom": 1991.34521484375,
+          "right": 398.6666593551636
+        },
+        {
+          "label": "La bellezza salvata - apri dettagli evento",
+          "x": 12.7619047164917,
+          "y": 2000.869140625,
+          "w": 385.9047546386719,
+          "h": 106,
+          "bottom": 2106.869140625,
+          "right": 398.6666593551636
+        },
+        {
+          "label": "16 / 57Mostra altri",
+          "x": 12,
+          "y": 2115.631103515625,
+          "w": 387.4285888671875,
+          "h": 48,
+          "bottom": 2163.631103515625,
+          "right": 399.4285888671875
+        },
+        {
+          "label": "Home",
+          "x": 18.761905670166016,
+          "y": 790.0357055664062,
+          "w": 90.47618865966797,
+          "h": 57.48809814453125,
+          "bottom": 847.5238037109375,
+          "right": 109.23809432983398
+        },
+        {
+          "label": "Meteo",
+          "x": 113.23809814453125,
+          "y": 790.0357055664062,
+          "w": 90.47618865966797,
+          "h": 57.48809814453125,
+          "bottom": 847.5238037109375,
+          "right": 203.71428680419922
+        },
+        {
+          "label": "Eventi: 57 eventi oggi",
+          "x": 207.71429443359375,
+          "y": 790.0357055664062,
+          "w": 90.47618865966797,
+          "h": 57.48809814453125,
+          "bottom": 847.5238037109375,
+          "right": 298.1904830932617
+        },
+        {
+          "label": "Scopri",
+          "x": 302.19049072265625,
+          "y": 790.0357055664062,
+          "w": 90.47618865966797,
+          "h": 57.48809814453125,
+          "bottom": 847.5238037109375,
+          "right": 392.6666793823242
+        },
+        {
+          "label": "Chiudi dettagli evento",
+          "x": 0,
+          "y": 0,
+          "w": 411.4285888671875,
+          "h": 914.2857055664062,
+          "bottom": 914.2857055664062,
+          "right": 411.4285888671875
+        },
+        {
+          "label": "Chiudi dettagli evento",
+          "x": 346.66668701171875,
+          "y": 117.6547622680664,
+          "w": 38,
+          "h": 38,
+          "bottom": 155.6547622680664,
+          "right": 384.66668701171875
+        }
+      ]
+    },
+    "detail": {
+      "theme": "dark",
+      "nav": {
+        "x": 12,
+        "y": 783.2738037109375,
+        "w": 387.4285888671875,
+        "h": 71.01190948486328,
+        "bottom": 854.2857131958008,
+        "right": 399.4285888671875
+      },
+      "header": {
+        "x": 12,
+        "y": 33.52381134033203,
+        "w": 387.4285888671875,
+        "h": 68,
+        "bottom": 101.52381134033203,
+        "right": 399.4285888671875
+      },
+      "bodyScrollHeight": 914,
+      "bodyClientHeight": 914,
+      "dialogs": [
+        {
+          "text": "CULTURA\nGiovanni Veronesi a Cinemazero\n\n15 ottobre 2026\n\nCinemazero · Pordenone\n\nGiovedì 15 ottobre alle 19.00 il regist",
+          "rect": {
+            "x": 14,
+            "y": 104.89286041259766,
+            "w": 383.4285888671875,
+            "h": 690.0238037109375,
+            "bottom": 794.9166641235352,
+            "right": 397.4285888671875
+          }
+        }
+      ],
+      "content": "Trascina per aggiornare\nEventi\nPordenone\nOggi\n9+\nWeekend\n9+\nProssimi\n9+\nTutti\nFeste e sagre\nGusto\nMercati\nCultura\nConvegni\nMusica\nSport\nFamiglia\nAltro\nGiovanni Veronesi a Cinemazero\n\nPordenone\n\n15\nOTT\nCultura\nMessa 154° Anniversario Truppe Alpine\n\nPordenone\n\n15\nOTT\nCultura\nPota Boyz - Stand Up Comedy e Impro\n\nPordenone\n\n15\nOTT\nCultura\nIl dono del mito\n\nPordenone\n\n15\nOTT\nConvegni\nPresentazione del libro \"Passi d'inchiostro\"\n\nPordenone\n\n15\nOTT\nConvegni\nIl ritorno di Tobia\n\nPorcia · ~3,5 km\n\n15\nOTT"
+    },
+    "screenshot": "phone-final-event-detail.png",
+    "horizontalFit": true,
+    "navigationFits": true
+  }
+}

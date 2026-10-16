@@ -81,7 +81,8 @@ export function HomeEventsTeaser({ events, onOpen }) {
             </div>
             <HomeEventVisual event={featuredEvent} />
           </>
-        ) : events.message ? <p className="mf-home-events__message">{events.message}</p> : null}
+        ) : null}
+        {events.message ? <p className="mf-home-events__message" role="status">{events.message}</p> : null}
       </HomeTeaserCard>
     </section>
   );

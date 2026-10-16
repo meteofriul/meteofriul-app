@@ -95,6 +95,45 @@ class VillaManinPilotTests(unittest.TestCase):
         self.assertEqual(batch['verification']['review_count'], 1)
         self.assertEqual(batch['events'], [])
 
+    def mixed_rejected_batch(self):
+        good = record()
+        bad = record(event_url=BASE + '/evento/da-chiarire/', heading='Prossimamente')
+        bad['id'] = 28251
+        listing = card() + card(bad['link']).replace('post-28250', 'post-28251')
+        archive = ''.join(f'<a href="{row["link"]}">Evento</a>' for row in (good, bad))
+        get_page = fake_get(good, listing=listing, archive=archive)
+
+        def get(url, **kwargs):
+            if '/wp-json/' in url:
+                return Response(json.dumps([good, bad]),
+                                {'X-WP-Total': '2', 'X-WP-TotalPages': '1'})
+            return get_page(url, **kwargs)
+        return collect_villa_manin(get=get, today=self.today)
+
+    def test_rejected_current_card_does_not_block_verified_card(self):
+        batch = self.mixed_rejected_batch()
+        self.assertEqual(batch['status'], 'ok')
+        self.assertEqual(len(batch['review_required']), 1)
+        accepted = gate_batch('Villa Manin', batch, today=self.today)
+        self.assertEqual(accepted['status'], 'partial')
+        self.assertEqual([event['url'] for event in accepted['events']], [EVENT])
+        self.assertEqual(accepted['review_required'][0]['url'],
+                         BASE + '/evento/da-chiarire/')
+
+    def test_rejected_review_count_must_reconcile_with_inventory(self):
+        for wrong_count in (0, 2, -1, True):
+            with self.subTest(wrong_count=wrong_count):
+                batch = self.mixed_rejected_batch()
+                batch['verification']['rejected_review_count'] = wrong_count
+                self.assertEqual(gate_batch('Villa Manin', batch, today=self.today)['status'],
+                                 'error')
+
+    def test_rejected_card_requires_identified_review(self):
+        batch = self.mixed_rejected_batch()
+        batch['review_required'] = []
+        batch['verification']['review_count'] = 0
+        self.assertEqual(gate_batch('Villa Manin', batch, today=self.today)['status'], 'error')
+
     def test_detail_date_disagreement_stops_source(self):
         batch = collect_villa_manin(get=fake_get(
             record(), detail='<h1>Famiglie al Museo</h1><h2>Domenica 12 Ottobre</h2>'),

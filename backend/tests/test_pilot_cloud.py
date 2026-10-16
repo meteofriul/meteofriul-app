@@ -3,7 +3,7 @@ import unittest
 from datetime import date
 from unittest.mock import Mock, patch
 
-from app.events.pilot_catalog import PILOT_PROJECT
+from app.events.pilot_catalog import PILOT_PROJECT, merge_collection
 from app.events.pilot_cloud import annual_watch_due, publish
 from app.events.pilot_regional_checkpoint import encode_control
 from app.events.pilot_sources import source_adapters
@@ -80,13 +80,13 @@ class CloudPublicationTests(unittest.TestCase):
                           'Pordenone Pensa': 25,
                           'Le Giornate del Cinema Muto': 30,
                           'Azalea': 20, 'CSS Udine': 20,
-                          'Teatro Verdi Pordenone': 50,
+                          'Teatro Verdi Pordenone': 60,
                           'Teatro Verdi Trieste': 25,
                           'Villa Manin': 65,
                           'Magazzino delle Idee': 30,
                           'MESS': 10, 'Galleria Spazzapan': 10,
                           'Barcolana': 35})
-        self.assertEqual(sum(collect.call_args.kwargs['source_timeouts'].values()), 850)
+        self.assertEqual(sum(collect.call_args.kwargs['source_timeouts'].values()), 860)
         blob.upload_from_string.assert_called_once()
         attems_audit.assert_called_once()
         attems_changes.assert_called_once_with(attems_audit.return_value)
@@ -131,7 +131,7 @@ class CloudPublicationTests(unittest.TestCase):
     @patch('app.events.pilot_cloud.attems_watch_changes', return_value=[])
     @patch('app.events.pilot_cloud.collect_attems_audit')
     @patch('app.events.pilot_cloud.collect')
-    def test_girofvg_new_candidate_stops_job_without_publishing_a_card(
+    def test_girofvg_new_candidate_is_logged_without_failing_publication(
             self, collect, attems_audit, attems_changes):
         client, blob = self.client()
         collect.return_value = {'schema': 'pilot-events-v1', 'sources': {
@@ -140,15 +140,22 @@ class CloudPublicationTests(unittest.TestCase):
                                      'current_exhibition_count': 1, 'blockers': []}
         self.giro_watch.return_value['changes'] = [
             {'reason': 'new_or_changed_active_card', 'url': 'https://www.girofvg.com/new'}]
-        with self.assertRaisesRegex(RuntimeError, 'GiroFVG has changed event candidates'):
+        with patch('builtins.print') as output:
             publish(client, project=PILOT_PROJECT)
         self.assertNotIn('GiroFVG', collect.return_value['sources'])
         blob.upload_from_string.assert_called_once()
+        saved = json.loads(blob.upload_from_string.call_args.args[0])
+        self.assertEqual(saved['monitors']['GiroFVG']['status'], 'review_required')
+        alerts = [json.loads(call.args[0]) for call in output.call_args_list
+                  if 'event_candidate_watch_alert' in call.args[0]]
+        self.assertEqual(len(alerts), 1)
+        self.assertEqual(alerts[0]['alerts'][0]['monitor'], 'GiroFVG')
+        self.assertEqual(alerts[0]['alerts'][0]['change_count'], 1)
 
     @patch('app.events.pilot_cloud.attems_watch_changes', return_value=['event_inventory_changed'])
     @patch('app.events.pilot_cloud.collect_attems_audit')
     @patch('app.events.pilot_cloud.collect')
-    def test_palazzo_watch_detects_new_event_after_catalog_is_saved(
+    def test_palazzo_watch_detects_new_event_without_failing_publication(
             self, collect, attems_audit, attems_changes):
         client, blob = self.client()
         collect.return_value = {'schema': 'pilot-events-v1', 'sources': {
@@ -156,9 +163,35 @@ class CloudPublicationTests(unittest.TestCase):
         }}
         attems_audit.return_value = {'source_complete': False, 'event_api_count': 28,
                                      'current_exhibition_count': 1, 'blockers': []}
-        with self.assertRaisesRegex(RuntimeError, 'Palazzo Attems inventory changed'):
+        with patch('builtins.print') as output:
             publish(client, project=PILOT_PROJECT)
         blob.upload_from_string.assert_called_once()
+        saved = json.loads(blob.upload_from_string.call_args.args[0])
+        self.assertEqual(saved['monitors']['Palazzo Attems']['status'],
+                         'review_required')
+        self.assertTrue(any('event_candidate_watch_alert' in call.args[0]
+                            for call in output.call_args_list))
+
+    @patch('app.events.pilot_cloud.attems_watch_changes', return_value=[])
+    @patch('app.events.pilot_cloud.collect_attems_audit')
+    @patch('app.events.pilot_cloud.collect')
+    def test_candidate_watch_unavailable_has_separate_alert(
+            self, collect, attems_audit, attems_changes):
+        client, blob = self.client()
+        collect.return_value = {'schema': 'pilot-events-v1', 'sources': {
+            name: {'status': 'fresh', 'events': []} for name in APPROVED_SOURCES}}
+        attems_audit.return_value = {'source_complete': False,
+                                     'event_api_count': 27,
+                                     'current_exhibition_count': 1,
+                                     'blockers': []}
+        self.giro_watch.side_effect = TimeoutError('probe timed out')
+        with patch('builtins.print') as output:
+            publish(client, project=PILOT_PROJECT)
+        saved = json.loads(blob.upload_from_string.call_args.args[0])
+        self.assertEqual(saved['monitors']['GiroFVG']['status'], 'unverified')
+        alerts = [json.loads(call.args[0]) for call in output.call_args_list
+                  if 'event_candidate_watch_alert' in call.args[0]]
+        self.assertEqual(alerts[0]['alerts'][0]['exception_type'], 'TimeoutError')
 
     @patch('app.events.pilot_cloud.collect')
     def test_partial_source_is_saved_as_stale_and_job_fails(self, collect):
@@ -175,6 +208,57 @@ class CloudPublicationTests(unittest.TestCase):
         saved = json.loads(blob.upload_from_string.call_args.args[0])
         self.assertEqual(saved['sources']['TurismoFVG']['status'], 'stale')
         self.assertEqual(saved['sources']['TurismoFVG']['events'][0]['title'], 'Ultimo valido')
+
+    @patch('app.events.pilot_cloud.collect')
+    def test_failed_report_uses_latest_issues_instead_of_retained_snapshot(self, collect):
+        old_review = {'url': 'https://www.villamanin.it/evento/old/', 'reason': 'old_issue'}
+        previous = merge_collection(PILOT_PROJECT, None, {'Villa Manin': {
+            'status': 'partial', 'events': [{'title': 'Last verified'}],
+            'review_required': [old_review]}}, '2026-10-12T04:00:00Z')
+        reviews = [
+            {'url': 'https://www.villamanin.it/evento/new-a/', 'reason': 'publication_gate',
+             'reasons': ['invalid_dates'], 'detail': 'private diagnostic'},
+            {'url': 'https://www.villamanin.it/evento/new-b/', 'reason': 'detail_unavailable'}]
+        pending = {'url': 'https://www.villamanin.it/evento/pending/',
+                   'review_reason': 'pending_detail', 'detail': 'private diagnostic'}
+        for prior in (previous, None):
+            with self.subTest(previous=prior is not None):
+                client, blob = self.client()
+                collect.return_value = merge_collection(PILOT_PROJECT, prior, {'Villa Manin': {
+                    'status': 'error', 'error_type': 'source_verification_failed',
+                    'review_required': reviews, 'detail_candidates': [pending],
+                    'verification': {'review_count': 2}}}, '2026-10-13T04:00:00Z')
+                with patch('builtins.print') as output:
+                    with self.assertRaisesRegex(RuntimeError, 'Villa Manin'):
+                        publish(client, project=PILOT_PROJECT, adapters={'Villa Manin': object()})
+                report = json.loads(output.call_args.args[0])['event_source_verification']['Villa Manin']
+                self.assertEqual(report['review_count'], 2)
+                self.assertEqual(report['pending_count'], 1)
+                self.assertEqual(report['verification']['review_count'], 2)
+                self.assertEqual([issue['url'] for issue in report['review_issues']],
+                                 [item['url'] for item in reviews + [pending]])
+                self.assertEqual(report['review_issues'][0]['reasons'], ['invalid_dates'])
+                self.assertNotIn('private diagnostic', json.dumps(report))
+                if prior:
+                    saved = json.loads(blob.upload_from_string.call_args.args[0])
+                    self.assertEqual(saved['sources']['Villa Manin']['review_required'], [old_review])
+
+    @patch('app.events.pilot_cloud.collect')
+    def test_recovered_report_uses_current_review_and_drops_failed_attempt(self, collect):
+        client, blob = self.client()
+        failed = merge_collection(PILOT_PROJECT, None, {'Villa Manin': {
+            'status': 'error', 'review_required': [{'url': 'old', 'reason': 'old_issue'}]}},
+            '2026-10-12T04:00:00Z')
+        current = {'url': 'https://www.villamanin.it/evento/current/', 'reason': 'detail_conflict'}
+        collect.return_value = merge_collection(PILOT_PROJECT, failed, {'Villa Manin': {
+            'status': 'partial', 'events': [{'title': 'Verified'}],
+            'review_required': [current], 'verification': {'review_count': 1}}},
+            '2026-10-13T04:00:00Z')
+        report = publish(client, project=PILOT_PROJECT, adapters={'Villa Manin': object()})['Villa Manin']
+        self.assertEqual(report['review_count'], 1)
+        self.assertEqual(report['pending_count'], 0)
+        self.assertEqual(report['review_issues'], [current])
+        self.assertEqual(report['failure_tag'], 'quarantined_cards')
 
     @patch('app.events.pilot_cloud.collect')
     def test_all_failed_sources_publish_failure_tags_and_fail_job(self, collect):
@@ -365,6 +449,26 @@ class CloudPublicationTests(unittest.TestCase):
         }}
         publish(client, project=PILOT_PROJECT,
                 adapters={'Paesi in Festa': object(), 'Azalea': object()})
+        blob.upload_from_string.assert_called_once()
+
+    @patch('app.events.pilot_cloud.collect')
+    def test_verified_partial_sources_do_not_fail_job(self, collect):
+        client, blob = self.client()
+        collect.return_value = {'schema': 'pilot-events-v1', 'sources': {
+            'TurismoFVG': {'status': 'partial', 'events': [{'title': 'Valido'}],
+                           'review_required': [{'url': 'https://www.turismofvg.it/eventi/bad',
+                                                'reason': 'schedule_change'}],
+                           'verification': {'source_complete': True, 'review_count': 1}},
+            'Pordenone Pensa': {'status': 'partial', 'events': [{'title': 'Valido'}],
+                                'review_required': [{'url': 'https://www.pnpensa.it/bad/',
+                                                     'reason': 'additional_date'}],
+                                'verification': {'source_complete': True, 'review_count': 1}},
+        }}
+        report = publish(client, project=PILOT_PROJECT,
+                         adapters={'TurismoFVG': object(),
+                                   'Pordenone Pensa': object()})
+        self.assertEqual(report['TurismoFVG']['failure_tag'], 'quarantined_cards')
+        self.assertEqual(report['Pordenone Pensa']['published_count'], 1)
         blob.upload_from_string.assert_called_once()
 
     @patch('app.events.pilot_cloud.collect')

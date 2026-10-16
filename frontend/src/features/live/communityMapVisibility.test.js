@@ -125,6 +125,7 @@ describe("community map visibility", () => {
     })).toEqual([{
       expiresAt: withdrawn.expiresAt,
       groupId: withdrawn.groupId,
+      reportIds: withdrawn.reportIds,
     }]);
   });
 });

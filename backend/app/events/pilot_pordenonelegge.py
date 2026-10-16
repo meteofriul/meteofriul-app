@@ -1,9 +1,10 @@
 """Read-only festival adapter; deliberately absent from the shared beta registry."""
-from datetime import date, time
+from datetime import date, datetime, time
 from html.parser import HTMLParser
 from urllib.parse import parse_qs, urljoin, urlsplit
 import re
 import requests
+from zoneinfo import ZoneInfo
 from . import engine
 from .pilot_schedule import schedule_notice
 from .pilot_programmes import pordenonelegge_edition, programme_session_metadata
@@ -103,32 +104,48 @@ def parse_programme(html):
     metadata = pordenonelegge_edition(days[0], days[-1])
     day_counts = {day.isoformat(): raw_days.count(day) for day in days}
     events, seen, review = [], set(), []
-    for raw in parser.records:
+    duplicate_by_day = {day.isoformat(): 0 for day in days}
+    for record_index, raw in enumerate(parser.records, start=1):
         record = {k: " ".join(v.split()) for k, v in raw.items()}
         parsed_day = date.fromisoformat(record["start_date"])
         day = parsed_day.isoformat()
-        hour = time.fromisoformat(record.get("time", "")).strftime("%H:%M")
         url = urlsplit(record.get("url", ""))
         if url.scheme != "https" or url.hostname != "www.pordenonelegge.it" or not url.path.startswith("/eventi/"):
             raise ValueError("invalid event link")
+        try:
+            hour = time.fromisoformat(record.get("time", "")).strftime("%H:%M")
+        except ValueError:
+            review.append({'url': record['url'], 'source_id': f'{day}-{record_index}',
+                           'date': day, 'reason': 'invalid_programme_time'})
+            continue
         if not record.get("title") or not record.get("place"):
-            raise ValueError("missing title or venue")
+            review.append({'url': record['url'], 'source_id': f'{day}-{record_index}',
+                           'date': day, 'reason': 'missing_title_or_venue'})
+            continue
         if schedule_notice(record.get('title'), record.get('access_notes'), record.get('place'), record.get('time')):
-            review.append({'url': record.get('url'), 'source_id': record.get('source_id'), 'reason': 'schedule_change_requires_review'})
+            review.append({'url': record['url'], 'source_id': f'{day}-{record_index}',
+                           'date': day, 'reason': 'schedule_change_requires_review'})
             continue
         identity = (record["url"], record["title"], day, hour, record["place"])
         if identity in seen:
+            duplicate_by_day[day] += 1
             continue
         seen.add(identity)
         city = record["place"].split(",", 1)[0].strip()
         town = engine.fvg_municipality_catalog.match_names(city)
+        if not town:
+            review.append({'url': record['url'], 'source_id': f'{day}-{record_index}',
+                           'date': day, 'reason': 'municipality_not_resolved'})
+            continue
         events.append({**record, **programme_session_metadata(metadata),
                        "start_date": day, "end_date": day, "time": hour,
                        "date_evidence_kind": "event_schedule", "date_evidence": day + ' ' + hour,
                        "event_city": city, "source": "Pordenonelegge", "is_real": True,
                        "lat": town.latitude if town else None, "lon": town.longitude if town else None,
                        "location_confidence": "municipality" if town else "unknown"})
-    return {"status": "ok", "events": events, "review_required": review,
+    return {"status": "ok" if events else "error",
+            "error_type": None if events else "no_verified_cards",
+            "events": events, "review_required": review,
             "coverage": "complete-programme-listing-not-detail-pages",
             "verification": {"collection_mode": "complete-official-programme",
                              "edition_id": str(year),
@@ -139,12 +156,34 @@ def parse_programme(html):
                              "records_scanned": len(parser.records),
                              "parsed_count": len(events),
                              "duplicate_count": len(parser.records) - len(events) - len(review),
+                             "duplicate_by_day": duplicate_by_day,
                              "review_count": len(review)}}
 
 
-def collect_pordenonelegge(*, get=requests.get):
+def collect_pordenonelegge(*, get=requests.get, today=None, previous_batch=None):
     # One complete-programme request; no per-event requests or account access.
+    today = today or datetime.now(ZoneInfo('Europe/Rome')).date()
     with get(URL, timeout=(4, 20), stream=True, allow_redirects=False) as response:
+        prior = (previous_batch or {}).get('verification') or {}
+        if response.status_code in {301, 302}:
+            target = urljoin(URL, response.headers.get('Location') or '')
+            prior_end = prior.get('end_date') or prior.get('prior_end_date')
+            prior_count = prior.get('parsed_count') or prior.get('prior_parsed_count')
+            if (target.rstrip('/') == 'https://www.pordenonelegge.it'
+                    and prior.get('collection_mode') in {
+                        'complete-official-programme', 'closed-verified-edition'}
+                    and prior_end and date.fromisoformat(prior_end) < today
+                    and isinstance(prior_count, int) and prior_count > 0):
+                return {'status': 'ok', 'events': [], 'review_required': [],
+                        'verification': {
+                            'collection_mode': 'closed-verified-edition',
+                            'edition_id': prior['edition_id'],
+                            'prior_end_date': prior_end,
+                            'prior_parsed_count': prior_count,
+                            'redirect_target': target,
+                            'as_of_date': today.isoformat(),
+                            'source_complete': True},
+                        'coverage': 'closed-official-programme-after-verified-edition'}
         response.raise_for_status()
         if response.status_code != 200:
             raise ValueError("unexpected programme response")

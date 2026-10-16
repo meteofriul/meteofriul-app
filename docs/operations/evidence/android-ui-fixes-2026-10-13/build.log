@@ -1,0 +1,315 @@
+PASS: 5 icone notifica r3 verificate per build pilota e ufficiale.
+Pacchetto launcher-082026 verificato: 41 asset approvati.
+Supplemento web 082026-r2 verificato: 2 asset approvati.
+Archivio 082026 verificato soltanto: nessuna icona con scritte viene copiata nel runtime Web o Android.
+Launcher Android ufficiale gestito dal pacchetto launcher-r4; PWA gestita da package-web-pwa-icons.ps1.
+L'asset Google Play resta esterno alla build e non viene copiato nel runtime.
+PASS: launcher-r4 uses the darker references across pilot and official adaptive/legacy launchers, native splash and Home/Settings mark; notification r3 is synchronized; PWA is packaged independently; Play and beta assets remain unchanged.
+PASS: 16 launcher-r4 assets verified; pilot and official launchers, native splash and Home/Settings mark synchronized from the darker references; notification r3 verified separately; PWA, Play and beta assets preserved.
+√ Updating Android plugins in 17.06ms
+[info] Found 5 Capacitor plugins for android:
+       @capacitor/app@8.1.1
+       @capacitor/app-launcher@8.0.1
+       @capacitor/geolocation@8.2.2
+       @capacitor/push-notifications@8.1.2
+       @capacitor/share@8.0.2
+√ update android in 410.46ms
+[info] Update finished in 0.42s
+vite v8.0.16 building client environment for android-local-pilot...
+[2K
+transforming...✓ 2107 modules transformed.
+rendering chunks...
+computing gzip size...
+C:/Users/LOCAL_USER/AppData/Local/Temp/meteofriul-android-local-pilot-a3ffbe6f7269483485738229a21ab79d/index.html                                  1.31 kB │ gzip:   0.58 kB
+C:/Users/LOCAL_USER/AppData/Local/Temp/meteofriul-android-local-pilot-a3ffbe6f7269483485738229a21ab79d/assets/thunderstorms-hail-B2jPijLp.svg      4.36 kB │ gzip:   1.52 kB
+C:/Users/LOCAL_USER/AppData/Local/Temp/meteofriul-android-local-pilot-a3ffbe6f7269483485738229a21ab79d/assets/snow-SeJ44jEB.svg                    9.96 kB │ gzip:   3.32 kB
+C:/Users/LOCAL_USER/AppData/Local/Temp/meteofriul-android-local-pilot-a3ffbe6f7269483485738229a21ab79d/assets/sleet-BaE8v8BU.svg                  11.19 kB │ gzip:   3.42 kB
+C:/Users/LOCAL_USER/AppData/Local/Temp/meteofriul-android-local-pilot-a3ffbe6f7269483485738229a21ab79d/assets/main-Cz0Dls0h.css                  483.94 kB │ gzip:  79.26 kB
+C:/Users/LOCAL_USER/AppData/Local/Temp/meteofriul-android-local-pilot-a3ffbe6f7269483485738229a21ab79d/assets/index.esm-CIWX8_XI.js                0.12 kB │ gzip:   0.13 kB
+C:/Users/LOCAL_USER/AppData/Local/Temp/meteofriul-android-local-pilot-a3ffbe6f7269483485738229a21ab79d/assets/web-uJuC_Ti1.js                      0.19 kB │ gzip:   0.17 kB
+C:/Users/LOCAL_USER/AppData/Local/Temp/meteofriul-android-local-pilot-a3ffbe6f7269483485738229a21ab79d/assets/web-CKP2UfLW.js                      0.36 kB │ gzip:   0.24 kB
+C:/Users/LOCAL_USER/AppData/Local/Temp/meteofriul-android-local-pilot-a3ffbe6f7269483485738229a21ab79d/assets/web-ChJ9mlz9.js                      0.84 kB │ gzip:   0.39 kB
+C:/Users/LOCAL_USER/AppData/Local/Temp/meteofriul-android-local-pilot-a3ffbe6f7269483485738229a21ab79d/assets/web-1nci99oS.js                      2.08 kB │ gzip:   0.85 kB
+C:/Users/LOCAL_USER/AppData/Local/Temp/meteofriul-android-local-pilot-a3ffbe6f7269483485738229a21ab79d/assets/index.esm-BrA0QakW.js               15.58 kB │ gzip:   5.19 kB
+C:/Users/LOCAL_USER/AppData/Local/Temp/meteofriul-android-local-pilot-a3ffbe6f7269483485738229a21ab79d/assets/index.esm-DA8gwP5f.js               24.49 kB │ gzip:   8.06 kB
+C:/Users/LOCAL_USER/AppData/Local/Temp/meteofriul-android-local-pilot-a3ffbe6f7269483485738229a21ab79d/assets/index.esm-DsUkD-D0.js               27.35 kB │ gzip:   8.21 kB
+C:/Users/LOCAL_USER/AppData/Local/Temp/meteofriul-android-local-pilot-a3ffbe6f7269483485738229a21ab79d/assets/leaflet-src-DI5QOTVb.js            148.81 kB │ gzip:  43.38 kB
+C:/Users/LOCAL_USER/AppData/Local/Temp/meteofriul-android-local-pilot-a3ffbe6f7269483485738229a21ab79d/assets/main-Baz48sw-.js                 4,021.09 kB │ gzip: 932.63 kB
+
+[INEFFECTIVE_DYNAMIC_IMPORT] src/features/almanac/AlmanacView.jsx is dynamically imported by src/app/AppRoutes.jsx but also statically imported by src/features/weather/WeatherEnvironmentOverview.jsx, dynamic import will not move module into another chunk.
+
+[plugin builtin:vite-reporter]
+(!) Some chunks are larger than 500 kB after minification. Consider:
+- Using dynamic import() to code-split the application
+- Use build.rolldownOptions.output.codeSplitting to improve chunking: https://rolldown.rs/reference/OutputOptions.codeSplitting
+- Adjust chunk size limit for this warning via build.chunkSizeWarningLimit.
+[PLUGIN_TIMINGS] Your build spent significant time in plugins. Here is a breakdown:
+  - vite:prepare-out-dir (35%)
+  - vite:asset (32%)
+  - vite:css (10%)
+  - vite:worker (9%)
+  - vite:css-post (9%)
+See https://rolldown.rs/options/checks#plugintimings for more details.
+
+✓ built in 13.53s
+Android local pilot verificato: http://127.0.0.1:8781; meteo nazionale: http://127.0.0.1:8782; API ufficiale: https://play-b6fbe4d---meteofriul-api-bx24xqvcda-ew.a.run.app/api
+
+	  *File supplementare		  148817	F:\proggetto Meteo Friul App\meteo FRIUL\frontend\android\app\src\localPilot\assets\public\assets\leaflet-src-BcODRhQi.js
+	  *File supplementare		   3.8 m	F:\proggetto Meteo Friul App\meteo FRIUL\frontend\android\app\src\localPilot\assets\public\assets\main-BGSN-Q00.js
+	  *File supplementare		  483746	F:\proggetto Meteo Friul App\meteo FRIUL\frontend\android\app\src\localPilot\assets\public\assets\main-nN7Y-sPE.css
+	  *File supplementare		     843	F:\proggetto Meteo Friul App\meteo FRIUL\frontend\android\app\src\localPilot\assets\public\assets\web-CvzW56bF.js
+	  *File supplementare		     364	F:\proggetto Meteo Friul App\meteo FRIUL\frontend\android\app\src\localPilot\assets\public\assets\web-CXMKeKP0.js
+	  *File supplementare		     195	F:\proggetto Meteo Friul App\meteo FRIUL\frontend\android\app\src\localPilot\assets\public\assets\web-D1Iz2iDY.js
+	  *File supplementare		    2086	F:\proggetto Meteo Friul App\meteo FRIUL\frontend\android\app\src\localPilot\assets\public\assets\web-DUtsIm1k.js
+Starting a Gradle Daemon (subsequent builds will be faster)
+
+> Configure project :app
+WARNING: Using flatDir should be avoided because it doesn't support any meta-data formats.
+
+> Configure project :capacitor-cordova-android-plugins
+WARNING: Using flatDir should be avoided because it doesn't support any meta-data formats.
+
+> Task :app:preBuild UP-TO-DATE
+> Task :app:preLocalPilotBuild UP-TO-DATE
+> Task :app:mergeLocalPilotNativeDebugMetadata NO-SOURCE
+> Task :app:generateLocalPilotBuildConfig UP-TO-DATE
+> Task :app:javaPreCompileLocalPilot UP-TO-DATE
+> Task :capacitor-android:preBuild UP-TO-DATE
+> Task :capacitor-android:preDebugBuild UP-TO-DATE
+> Task :capacitor-android:writeDebugAarMetadata UP-TO-DATE
+> Task :capacitor-app:preBuild UP-TO-DATE
+> Task :capacitor-app:preDebugBuild UP-TO-DATE
+> Task :capacitor-app:writeDebugAarMetadata UP-TO-DATE
+> Task :capacitor-app-launcher:preBuild UP-TO-DATE
+> Task :capacitor-app-launcher:preDebugBuild UP-TO-DATE
+> Task :capacitor-app-launcher:writeDebugAarMetadata UP-TO-DATE
+> Task :capacitor-cordova-android-plugins:preBuild UP-TO-DATE
+> Task :capacitor-cordova-android-plugins:preDebugBuild UP-TO-DATE
+> Task :capacitor-geolocation:preBuild UP-TO-DATE
+> Task :capacitor-geolocation:preDebugBuild UP-TO-DATE
+> Task :capacitor-geolocation:writeDebugAarMetadata UP-TO-DATE
+> Task :capacitor-push-notifications:preBuild UP-TO-DATE
+> Task :capacitor-push-notifications:preDebugBuild UP-TO-DATE
+> Task :capacitor-push-notifications:writeDebugAarMetadata UP-TO-DATE
+> Task :capacitor-share:preBuild UP-TO-DATE
+> Task :capacitor-share:preDebugBuild UP-TO-DATE
+> Task :capacitor-cordova-android-plugins:writeDebugAarMetadata
+> Task :capacitor-share:writeDebugAarMetadata UP-TO-DATE
+> Task :app:checkLocalPilotAarMetadata UP-TO-DATE
+> Task :capacitor-android:processDebugNavigationResources UP-TO-DATE
+> Task :capacitor-app:processDebugNavigationResources UP-TO-DATE
+> Task :capacitor-app-launcher:processDebugNavigationResources UP-TO-DATE
+> Task :capacitor-cordova-android-plugins:processDebugNavigationResources
+> Task :capacitor-geolocation:processDebugNavigationResources UP-TO-DATE
+> Task :capacitor-push-notifications:processDebugNavigationResources UP-TO-DATE
+> Task :capacitor-share:processDebugNavigationResources UP-TO-DATE
+> Task :app:processLocalPilotNavigationResources UP-TO-DATE
+> Task :app:compileLocalPilotNavigationResources UP-TO-DATE
+> Task :app:generateLocalPilotResValues UP-TO-DATE
+> Task :app:processLocalPilotGoogleServices SKIPPED
+> Task :capacitor-android:generateDebugResValues UP-TO-DATE
+> Task :capacitor-android:generateDebugResources UP-TO-DATE
+> Task :capacitor-android:packageDebugResources UP-TO-DATE
+> Task :capacitor-app:generateDebugResValues UP-TO-DATE
+> Task :capacitor-app:generateDebugResources UP-TO-DATE
+> Task :capacitor-app:packageDebugResources UP-TO-DATE
+> Task :capacitor-app-launcher:generateDebugResValues UP-TO-DATE
+> Task :capacitor-app-launcher:generateDebugResources UP-TO-DATE
+> Task :capacitor-app-launcher:packageDebugResources UP-TO-DATE
+> Task :capacitor-cordova-android-plugins:generateDebugResValues
+> Task :capacitor-cordova-android-plugins:generateDebugResources
+> Task :capacitor-cordova-android-plugins:packageDebugResources
+> Task :capacitor-geolocation:generateDebugResValues UP-TO-DATE
+> Task :capacitor-geolocation:generateDebugResources UP-TO-DATE
+> Task :capacitor-geolocation:packageDebugResources UP-TO-DATE
+> Task :capacitor-push-notifications:generateDebugResValues UP-TO-DATE
+> Task :capacitor-push-notifications:generateDebugResources UP-TO-DATE
+> Task :capacitor-push-notifications:packageDebugResources UP-TO-DATE
+> Task :capacitor-share:generateDebugResValues UP-TO-DATE
+> Task :capacitor-share:generateDebugResources UP-TO-DATE
+> Task :capacitor-share:packageDebugResources UP-TO-DATE
+> Task :app:mapLocalPilotSourceSetPaths UP-TO-DATE
+> Task :app:generateLocalPilotResources UP-TO-DATE
+> Task :app:mergeLocalPilotResources UP-TO-DATE
+> Task :app:packageLocalPilotResources UP-TO-DATE
+> Task :app:parseLocalPilotLocalResources UP-TO-DATE
+> Task :app:createLocalPilotCompatibleScreenManifests UP-TO-DATE
+> Task :app:extractDeepLinksLocalPilot UP-TO-DATE
+> Task :capacitor-android:extractDeepLinksDebug UP-TO-DATE
+> Task :capacitor-android:processDebugManifest UP-TO-DATE
+> Task :capacitor-app:extractDeepLinksDebug UP-TO-DATE
+> Task :capacitor-app:processDebugManifest UP-TO-DATE
+> Task :capacitor-app-launcher:extractDeepLinksDebug UP-TO-DATE
+> Task :capacitor-app-launcher:processDebugManifest UP-TO-DATE
+> Task :capacitor-cordova-android-plugins:extractDeepLinksDebug
+> Task :capacitor-geolocation:extractDeepLinksDebug UP-TO-DATE
+> Task :capacitor-geolocation:processDebugManifest UP-TO-DATE
+> Task :capacitor-push-notifications:extractDeepLinksDebug UP-TO-DATE
+> Task :capacitor-push-notifications:processDebugManifest UP-TO-DATE
+> Task :capacitor-share:extractDeepLinksDebug UP-TO-DATE
+> Task :capacitor-share:processDebugManifest UP-TO-DATE
+> Task :capacitor-android:compileDebugLibraryResources UP-TO-DATE
+> Task :capacitor-android:parseDebugLocalResources UP-TO-DATE
+> Task :capacitor-android:generateDebugRFile UP-TO-DATE
+> Task :capacitor-app:compileDebugLibraryResources UP-TO-DATE
+> Task :capacitor-app:parseDebugLocalResources UP-TO-DATE
+> Task :capacitor-app:generateDebugRFile UP-TO-DATE
+> Task :capacitor-app-launcher:compileDebugLibraryResources UP-TO-DATE
+> Task :capacitor-app-launcher:parseDebugLocalResources UP-TO-DATE
+> Task :capacitor-app-launcher:generateDebugRFile UP-TO-DATE
+> Task :capacitor-cordova-android-plugins:processDebugManifest
+> Task :capacitor-cordova-android-plugins:compileDebugLibraryResources
+> Task :app:processLocalPilotMainManifest UP-TO-DATE
+> Task :app:processLocalPilotManifest UP-TO-DATE
+> Task :app:processLocalPilotManifestForPackage UP-TO-DATE
+> Task :capacitor-geolocation:compileDebugLibraryResources UP-TO-DATE
+> Task :capacitor-geolocation:parseDebugLocalResources UP-TO-DATE
+> Task :capacitor-geolocation:generateDebugRFile UP-TO-DATE
+> Task :capacitor-push-notifications:compileDebugLibraryResources UP-TO-DATE
+> Task :capacitor-push-notifications:parseDebugLocalResources UP-TO-DATE
+> Task :capacitor-push-notifications:generateDebugRFile UP-TO-DATE
+> Task :capacitor-share:compileDebugLibraryResources UP-TO-DATE
+> Task :capacitor-share:parseDebugLocalResources UP-TO-DATE
+> Task :capacitor-share:generateDebugRFile UP-TO-DATE
+> Task :capacitor-android:javaPreCompileDebug UP-TO-DATE
+> Task :capacitor-cordova-android-plugins:parseDebugLocalResources
+> Task :capacitor-android:compileDebugJavaWithJavac UP-TO-DATE
+> Task :capacitor-android:bundleLibCompileToJarDebug UP-TO-DATE
+> Task :capacitor-app:javaPreCompileDebug UP-TO-DATE
+> Task :capacitor-app:compileDebugJavaWithJavac UP-TO-DATE
+> Task :capacitor-app:bundleLibCompileToJarDebug UP-TO-DATE
+> Task :capacitor-cordova-android-plugins:generateDebugRFile
+> Task :capacitor-app-launcher:javaPreCompileDebug UP-TO-DATE
+> Task :app:processLocalPilotResources UP-TO-DATE
+> Task :capacitor-app-launcher:compileDebugJavaWithJavac UP-TO-DATE
+> Task :capacitor-app-launcher:bundleLibCompileToJarDebug UP-TO-DATE
+> Task :capacitor-geolocation:checkKotlinGradlePluginConfigurationErrors SKIPPED
+> Task :capacitor-cordova-android-plugins:javaPreCompileDebug
+> Task :capacitor-geolocation:compileDebugKotlin UP-TO-DATE
+> Task :capacitor-cordova-android-plugins:compileDebugJavaWithJavac NO-SOURCE
+> Task :capacitor-geolocation:javaPreCompileDebug UP-TO-DATE
+> Task :capacitor-geolocation:compileDebugJavaWithJavac NO-SOURCE
+> Task :capacitor-geolocation:bundleLibCompileToJarDebug UP-TO-DATE
+> Task :capacitor-push-notifications:javaPreCompileDebug UP-TO-DATE
+> Task :capacitor-cordova-android-plugins:bundleLibCompileToJarDebug
+> Task :capacitor-push-notifications:compileDebugJavaWithJavac UP-TO-DATE
+> Task :capacitor-push-notifications:bundleLibCompileToJarDebug UP-TO-DATE
+> Task :capacitor-share:javaPreCompileDebug UP-TO-DATE
+> Task :capacitor-share:compileDebugJavaWithJavac UP-TO-DATE
+> Task :capacitor-share:bundleLibCompileToJarDebug UP-TO-DATE
+> Task :app:compileLocalPilotJavaWithJavac UP-TO-DATE
+> Task :app:mergeLocalPilotShaders UP-TO-DATE
+> Task :app:compileLocalPilotShaders NO-SOURCE
+> Task :app:generateLocalPilotAssets UP-TO-DATE
+> Task :capacitor-android:mergeDebugShaders UP-TO-DATE
+> Task :capacitor-android:compileDebugShaders NO-SOURCE
+> Task :capacitor-android:generateDebugAssets UP-TO-DATE
+> Task :capacitor-android:mergeDebugAssets UP-TO-DATE
+> Task :capacitor-app:mergeDebugShaders UP-TO-DATE
+> Task :capacitor-app:compileDebugShaders NO-SOURCE
+> Task :capacitor-app:generateDebugAssets UP-TO-DATE
+> Task :capacitor-app:mergeDebugAssets UP-TO-DATE
+> Task :capacitor-app-launcher:mergeDebugShaders UP-TO-DATE
+> Task :capacitor-app-launcher:compileDebugShaders NO-SOURCE
+> Task :capacitor-app-launcher:generateDebugAssets UP-TO-DATE
+> Task :capacitor-app-launcher:mergeDebugAssets UP-TO-DATE
+> Task :capacitor-cordova-android-plugins:mergeDebugShaders
+> Task :capacitor-cordova-android-plugins:compileDebugShaders NO-SOURCE
+> Task :capacitor-cordova-android-plugins:generateDebugAssets UP-TO-DATE
+> Task :capacitor-cordova-android-plugins:mergeDebugAssets
+> Task :capacitor-geolocation:mergeDebugShaders UP-TO-DATE
+> Task :capacitor-geolocation:compileDebugShaders NO-SOURCE
+> Task :capacitor-geolocation:generateDebugAssets UP-TO-DATE
+> Task :capacitor-geolocation:mergeDebugAssets UP-TO-DATE
+> Task :capacitor-push-notifications:mergeDebugShaders UP-TO-DATE
+> Task :capacitor-push-notifications:compileDebugShaders NO-SOURCE
+> Task :capacitor-push-notifications:generateDebugAssets UP-TO-DATE
+> Task :capacitor-push-notifications:mergeDebugAssets UP-TO-DATE
+> Task :capacitor-share:mergeDebugShaders UP-TO-DATE
+> Task :capacitor-share:compileDebugShaders NO-SOURCE
+> Task :capacitor-share:generateDebugAssets UP-TO-DATE
+> Task :capacitor-share:mergeDebugAssets UP-TO-DATE
+> Task :app:mergeLocalPilotAssets
+> Task :app:compressLocalPilotAssets
+> Task :app:checkLocalPilotDuplicateClasses UP-TO-DATE
+> Task :app:desugarLocalPilotFileDependencies UP-TO-DATE
+> Task :app:mergeExtDexLocalPilot UP-TO-DATE
+> Task :capacitor-app:bundleLibRuntimeToDirDebug UP-TO-DATE
+> Task :capacitor-app-launcher:bundleLibRuntimeToDirDebug UP-TO-DATE
+> Task :capacitor-geolocation:bundleLibRuntimeToDirDebug UP-TO-DATE
+> Task :capacitor-push-notifications:bundleLibRuntimeToDirDebug UP-TO-DATE
+> Task :capacitor-share:bundleLibRuntimeToDirDebug UP-TO-DATE
+> Task :capacitor-android:bundleLibRuntimeToDirDebug UP-TO-DATE
+> Task :capacitor-app:bundleLibRuntimeToJarDebug UP-TO-DATE
+> Task :capacitor-cordova-android-plugins:bundleLibRuntimeToDirDebug
+> Task :capacitor-app-launcher:bundleLibRuntimeToJarDebug UP-TO-DATE
+> Task :capacitor-geolocation:bundleLibRuntimeToJarDebug UP-TO-DATE
+> Task :capacitor-push-notifications:bundleLibRuntimeToJarDebug UP-TO-DATE
+> Task :capacitor-share:bundleLibRuntimeToJarDebug UP-TO-DATE
+> Task :capacitor-android:bundleLibRuntimeToJarDebug UP-TO-DATE
+> Task :capacitor-cordova-android-plugins:bundleLibRuntimeToJarDebug
+> Task :app:dexBuilderLocalPilot UP-TO-DATE
+> Task :app:processLocalPilotJavaRes NO-SOURCE
+> Task :capacitor-android:processDebugJavaRes NO-SOURCE
+> Task :capacitor-app:processDebugJavaRes NO-SOURCE
+> Task :capacitor-app-launcher:processDebugJavaRes NO-SOURCE
+> Task :capacitor-cordova-android-plugins:processDebugJavaRes NO-SOURCE
+> Task :capacitor-geolocation:processDebugJavaRes UP-TO-DATE
+> Task :capacitor-push-notifications:processDebugJavaRes NO-SOURCE
+> Task :capacitor-share:processDebugJavaRes NO-SOURCE
+> Task :app:mergeLocalPilotJavaResource UP-TO-DATE
+> Task :app:mergeLibDexLocalPilot UP-TO-DATE
+> Task :app:mergeLocalPilotGlobalSynthetics UP-TO-DATE
+> Task :app:mergeProjectDexLocalPilot UP-TO-DATE
+> Task :app:mergeLocalPilotJniLibFolders UP-TO-DATE
+> Task :capacitor-android:mergeDebugJniLibFolders UP-TO-DATE
+> Task :capacitor-android:mergeDebugNativeLibs NO-SOURCE
+> Task :capacitor-android:copyDebugJniLibsProjectOnly UP-TO-DATE
+> Task :capacitor-app:mergeDebugJniLibFolders UP-TO-DATE
+> Task :capacitor-app:mergeDebugNativeLibs NO-SOURCE
+> Task :capacitor-app:copyDebugJniLibsProjectOnly UP-TO-DATE
+> Task :capacitor-app-launcher:mergeDebugJniLibFolders UP-TO-DATE
+> Task :capacitor-app-launcher:mergeDebugNativeLibs NO-SOURCE
+> Task :capacitor-app-launcher:copyDebugJniLibsProjectOnly UP-TO-DATE
+> Task :capacitor-cordova-android-plugins:mergeDebugJniLibFolders
+> Task :capacitor-cordova-android-plugins:mergeDebugNativeLibs NO-SOURCE
+> Task :capacitor-geolocation:mergeDebugJniLibFolders UP-TO-DATE
+> Task :capacitor-cordova-android-plugins:copyDebugJniLibsProjectOnly
+> Task :capacitor-geolocation:mergeDebugNativeLibs NO-SOURCE
+> Task :capacitor-geolocation:copyDebugJniLibsProjectOnly UP-TO-DATE
+> Task :capacitor-push-notifications:mergeDebugJniLibFolders UP-TO-DATE
+> Task :capacitor-push-notifications:mergeDebugNativeLibs NO-SOURCE
+> Task :capacitor-push-notifications:copyDebugJniLibsProjectOnly UP-TO-DATE
+> Task :capacitor-share:mergeDebugJniLibFolders UP-TO-DATE
+> Task :capacitor-share:mergeDebugNativeLibs NO-SOURCE
+> Task :capacitor-share:copyDebugJniLibsProjectOnly UP-TO-DATE
+> Task :app:mergeLocalPilotNativeLibs UP-TO-DATE
+> Task :app:stripLocalPilotDebugSymbols UP-TO-DATE
+> Task :app:validateSigningLocalPilot UP-TO-DATE
+> Task :app:writeLocalPilotAppMetadata UP-TO-DATE
+> Task :app:writeLocalPilotSigningConfigVersions UP-TO-DATE
+> Task :app:packageLocalPilot
+> Task :app:createLocalPilotApkListingFileRedirect UP-TO-DATE
+> Task :app:assembleLocalPilot
+
+[Incubating] Problems report is available at: file:///F:/proggetto%20Meteo%20Friul%20App/meteo%20FRIUL/frontend/android/build/reports/problems/problems-report.html
+
+Deprecated Gradle features were used in this build, making it incompatible with Gradle 9.0.
+
+You can use '--warning-mode all' to show the individual deprecation warnings and determine if they come from your own scripts or plugins.
+
+For more on this, please refer to https://docs.gradle.org/8.14.3/userguide/command_line_interface.html#sec:command_line_warnings in the Gradle documentation.
+
+BUILD SUCCESSFUL in 41s
+170 actionable tasks: 21 executed, 149 up-to-date
+
+ApiBase                : https://play-b6fbe4d---meteofriul-api-bx24xqvcda-ew.a.run.app/api
+Apk                    : F:\proggetto Meteo Friul App\meteo FRIUL\frontend\android\app\build\outputs\apk\localPilot\app-localPilot.apk
+ApkSha256              : 542b36e5a142012502a55a41e589706455813fbec4c41ad72f56c4684deb537f
+ApplicationId          : com.meteofriul.app.localpilot
+LocalWeatherApiBase    : http://127.0.0.1:8781
+NationalWeatherApiBase : http://127.0.0.1:8782
+CommunityApiBase       : http://127.0.0.1:8783/api (SQLite locale, adb reverse tcp:8783 tcp:8783)
+WeatherTestNow         : 2026-09-04T12:00:00Z
+NextStep               : Collega il telefono, esegui adb reverse tcp:8781 tcp:8781, adb reverse tcp:8782 tcp:8782 e adb reverse tcp:8783 tcp:8783, poi installa questo APK.
+Published              : False

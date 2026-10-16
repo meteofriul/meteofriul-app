@@ -5,11 +5,14 @@ RUN pip install --no-cache-dir requests==2.32.5 pydantic==2.12.5 tzdata==2026.3 
 COPY backend/app /app/app
 COPY backend/tests/test_pilot_catalog.py backend/tests/test_pilot_collection.py backend/tests/test_pilot_event_coverage.py backend/tests/test_pilot_regional.py backend/tests/test_pilot_pordenonelegge.py backend/tests/test_pilot_source_policy.py backend/tests/test_pilot_azalea.py backend/tests/test_pilot_dedupe.py backend/tests/test_pilot_verdi_pordenone.py backend/tests/test_pilot_new_programmes.py /app/tests/
 COPY backend/tests/test_pilot_comparison.py backend/tests/test_pilot_detail_calendar.py backend/tests/test_pilot_detail_rows.py backend/tests/test_pilot_details.py backend/tests/test_pilot_discovery.py backend/tests/test_pilot_excerpt.py backend/tests/test_pilot_progressive_events.py backend/tests/test_pilot_schedule.py backend/tests/test_pilot_source_registry.py /app/tests/
-COPY backend/tests/test_pilot_http.py /app/tests/
+COPY backend/tests/test_pilot_http.py backend/tests/test_pilot_catalog_health.py backend/tests/test_pilot_event_schedule_contract.py backend/tests/test_pilot_opening_days.py /app/tests/
 COPY backend/tests/test_pilot_cloud.py /app/tests/
 COPY backend/tests/test_pilot_css.py /app/tests/
 COPY backend/tests/test_pilot_spazzapan.py backend/tests/test_pilot_regional_year_exclusions.py /app/tests/
+COPY backend/tests/test_pilot_mess.py /app/tests/
 COPY backend/tests/fixtures/spazzapan_2026.json /app/tests/fixtures/
+COPY backend/tests/fixtures/spazzapan_october_15_2026.json /app/tests/fixtures/
+COPY backend/tests/fixtures/mess_laboratori_2026.json backend/tests/fixtures/mess_notizie_2026.json /app/tests/fixtures/
 COPY backend/tests/test_pilot_girofvg_watch.py /app/tests/
 COPY backend/tests/test_pilot_anteprima_watch.py /app/tests/
 COPY backend/tests/test_pilot_pnpensa.py /app/tests/
@@ -18,6 +21,9 @@ COPY backend/tests/test_pilot_villa_manin.py /app/tests/
 COPY backend/tests/test_pilot_magazzino.py /app/tests/
 COPY backend/tests/test_attems_audit.py /app/tests/
 COPY backend/tests/test_pilot_regional_filtered.py backend/tests/test_pilot_regional_year_control.py backend/tests/test_pilot_regional_historical.py backend/tests/test_pilot_regional_display_audit.py backend/tests/test_pilot_regional_verified.py /app/tests/
+COPY backend/tests/test_pilot_regional_failure_isolation.py /app/tests/
+COPY backend/tests/test_pilot_quarantine_recovery.py backend/tests/test_pilot_regional_forward_audit.py backend/tests/test_pilot_sagrefvg.py /app/tests/
+COPY backend/tests/fixtures/events_quarantine_october_15_2026.json /app/tests/fixtures/
 RUN python -m unittest discover -s tests -p 'test_pilot_*.py'
 RUN python -m unittest discover -s tests -p 'test_attems_audit.py'
 USER 65532:65532

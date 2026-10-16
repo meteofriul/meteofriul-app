@@ -189,3 +189,23 @@ foreach ($arguments in @(
   Assert-Contract $rejected "unsafe cloud-preview flag combination rejected before lifecycle work"
 }
 Write-Output "PASS: start-local-weather-pilot cloud/offline contract complete"
+
+# Exercise the clock guard, without launching processes or changing artifacts.
+$clockGuard = $launcherAst.Find({ param($node)
+  $node -is [Management.Automation.Language.FunctionDefinitionAst] -and $node.Name -ceq "Assert-IconClockWindow"
+}, $true)
+Invoke-Expression $clockGuard.Extent.Text
+function Get-PilotClockNow { return $script:camsPolicyTestNow }
+$ExpectedIconRunAtUtc = "2026-09-04T00:00:00Z"
+$ExpectedIconValidToUtc = "2026-09-07T00:00:00Z"
+foreach ($hour in @(24, 33, 36, 61)) {
+  $script:camsPolicyTestNow = [datetimeoffset]::Parse($ExpectedIconRunAtUtc).AddHours($hour)
+  Assert-IconClockWindow
+  Assert-Contract $true "pilot accepts unchanged ICON hourly window at run+$hour h"
+}
+foreach ($instant in @("2026-09-03T23:59:59Z", "2026-09-06T13:00:01Z")) {
+  $script:camsPolicyTestNow = [datetimeoffset]::Parse($instant)
+  $rejected = $false
+  try { Assert-IconClockWindow } catch { $rejected = $true }
+  Assert-Contract $rejected "pilot rejects insufficient/future ICON at $instant"
+}

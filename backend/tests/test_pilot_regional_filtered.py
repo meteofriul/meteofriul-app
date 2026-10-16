@@ -164,7 +164,8 @@ class FilteredRegionalTests(unittest.TestCase):
         partitioned.return_value = {'declared_results': 2467}
         self.assertEqual(fetch_year_resilient(start, end, max_workers=8),
                          partitioned.return_value)
-        partitioned.assert_called_once()
+        partitioned.assert_called_once_with(
+            start, end, get=requests.get, max_workers=8, result_limit=128)
 
         partitioned.reset_mock()
         year.side_effect = ValueError(

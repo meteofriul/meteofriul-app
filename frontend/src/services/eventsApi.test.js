@@ -1,4 +1,6 @@
 import { describe, expect, it, vi } from "vitest";
+import { DEFAULT_APP_LOCATION } from "../app/appLocation";
+import { getLocalFvgLocationResults } from "./locationSearch";
 
 import {
   buildLocalEventDetailUrl,
@@ -16,6 +18,14 @@ import {
 } from "./eventsApi";
 
 describe("events api service", () => {
+  it("uses the verified municipality point for a fresh-install placeholder without changing it", () => {
+    const before = structuredClone(DEFAULT_APP_LOCATION);
+    const params = new URL(buildLocalEventsUrl(DEFAULT_APP_LOCATION, { apiBase: PILOT_EVENTS_API })).searchParams;
+    const udine = getLocalFvgLocationResults("Udine").find((place) => place.istatCode === "030129");
+    expect(Number(params.get("lat"))).toBe(udine.latitude);
+    expect(Number(params.get("lon"))).toBe(udine.longitude);
+    expect(DEFAULT_APP_LOCATION).toEqual(before);
+  });
   it("shares a complete in-flight pilot snapshot and allows a fresh load afterward", async () => {
     let resolveFirstPage;
     const fetchImpl = vi.fn()

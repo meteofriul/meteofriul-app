@@ -24,8 +24,9 @@ function readBestEventsCache(location, options = {}) {
 export function createEventsDataState(
   payload,
   {
-    cacheStatus = null,
-    contractVersion = null,
+    catalogHealth = payload?.catalogHealth || null,
+    cacheStatus = catalogHealth?.status === "degraded" ? "degraded" : null,
+    contractVersion = payload?.contractVersion || null,
     error = null,
     fromCache = false,
     isPartial = false,
@@ -40,6 +41,8 @@ export function createEventsDataState(
   return {
     cacheStatus,
     contractVersion,
+    catalogHealth,
+    isDegraded: catalogHealth?.status === "degraded",
     error: error ? getErrorMessage(error) : null,
     fromCache,
     isPartial,
@@ -52,13 +55,15 @@ export function createEventsDataState(
       ? fromCache
         ? "stale"
         : "error"
-      : isRefreshing
-        ? "refreshing"
-        : isPartial
-          ? "partial"
-          : fromCache
-            ? "cache"
-            : "fresh",
+      : catalogHealth?.status === "degraded"
+        ? "degraded"
+        : isRefreshing
+          ? "refreshing"
+          : isPartial
+            ? "partial"
+            : fromCache
+              ? "cache"
+              : "fresh",
     total: Number(payload?.total || events.length),
   };
 }
@@ -158,6 +163,7 @@ export async function loadEventsData(
       eventsCacheWriter(location, payload.events, {
         ...cacheOptions,
         contractVersion: payload.contractVersion,
+        catalogHealth: payload.catalogHealth,
         limit: FULL_EVENTS_LIMIT,
       });
     }
@@ -166,6 +172,7 @@ export async function loadEventsData(
       eventsCacheWriter(location, payload.events, {
         ...cacheOptions,
         contractVersion: payload.contractVersion,
+        catalogHealth: payload.catalogHealth,
         limit: FULL_EVENTS_LIMIT,
       });
     }

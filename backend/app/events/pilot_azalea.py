@@ -274,7 +274,7 @@ def collect_azalea(*, get=requests.get, today=None):
                     'review_count': len(reviewed),
                     'sitemap_event_urls': len(sitemap),
                     'sitemap_unlisted_delta_checked': len(unlisted_delta),
-                    'source_complete': not reviewed}
+                    'source_complete': True}
     return {'status': 'ok', 'events': events, 'review_required': reviewed,
             'verification': verification,
             'coverage': 'official-upcoming-archive-and-every-detail'}

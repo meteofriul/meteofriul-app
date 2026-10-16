@@ -11,6 +11,7 @@ from pathlib import Path
 
 from app.pilot_community import create_app
 from app.repositories.pilot_community_cloud import PILOT_PROJECT, PilotCloudCommunityRepository
+from app.services.community_reports import CommunityReportsService, CommunityReportVote, CommunityHistoryQuery
 from app.services.pilot_community import PilotCommunityService
 from app.services.pilot_community_geography import PilotCommunityGeographyCatalog
 
@@ -39,7 +40,7 @@ def create_loopback_cloud_app(*, project: str, port: int = 8783,
             pass
 
     return create_app(
-        service=PilotCommunityService(geography=geography, repository=repository), port=port,
+        service=CommunityReportsService(geography=geography, repository=repository), port=port,
         health_kind=LOOPBACK_CLOUD_KIND, health_project=PILOT_PROJECT,
         health_check=check_cloud_store,
     )

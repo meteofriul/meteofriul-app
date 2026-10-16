@@ -1,0 +1,100 @@
+{
+  "recorded_at": "2026-10-15T14:35:25.240759+00:00",
+  "authorization": "Owner explicitly authorized job and API deployment plus one complete cycle; main/APK/Play excluded.",
+  "commit": "223422e1045dafa0ddc32316bd6ed6ea510aa1ea",
+  "image": "europe-west1-docker.pkg.dev/meteo-friul/meteofriul/events-worker@sha256:df00ef24aea6d6548a36be4a145db23a147972a2f3b4951d925ce708fe62cab1",
+  "build": {
+    "id": "b3812cc3-6409-4884-9b83-25dd9c42d3c7",
+    "status": "SUCCESS",
+    "finish_time": "2026-10-15T14:19:18.751699Z",
+    "container_test_counts": [
+      436,
+      7
+    ],
+    "total_passed": 443,
+    "log_url": "https://console.cloud.google.com/cloud-build/builds;region=europe-west1/b3812cc3-6409-4884-9b83-25dd9c42d3c7?project=49007668366"
+  },
+  "previous_image": "europe-west1-docker.pkg.dev/meteo-friul/meteofriul/events-worker@sha256:7e78c5ce2ecc39fa28a5666ca8680c8d0302a4b3c534579109739ed7e62bf672",
+  "api_revision": "meteofriul-events-00015-j69",
+  "api_traffic": [
+    {
+      "latestRevision": true,
+      "percent": 100,
+      "revisionName": "meteofriul-events-00015-j69"
+    }
+  ],
+  "job_generation": 39,
+  "execution": "meteofriul-events-refresh-qklc5",
+  "full_cycle_completed_successfully": true,
+  "duration_seconds": 383.275782,
+  "snapshot": "2026-10-15T14:26:55.958729+00:00",
+  "catalog_generation": "1792074777181765",
+  "catalog_sha256": "2bc9d1e3a59f81f6a323426d313f53a1f9d01a5ebe3bdceccc683a783bbe7cb5",
+  "catalog_bytes": 2921215,
+  "all_15_sources_attempted": true,
+  "publishable_sources": 15,
+  "failed_sources": [],
+  "raw_event_count": 1700,
+  "quarantined_count": 18,
+  "api_places": {
+    "Pordenone": {
+      "total": 338,
+      "pages": [
+        100,
+        100,
+        100,
+        38
+      ],
+      "identical_full_payloads": true
+    },
+    "Udine": {
+      "total": 454,
+      "pages": [
+        100,
+        100,
+        100,
+        100,
+        54
+      ],
+      "identical_full_payloads": true
+    },
+    "Trieste": {
+      "total": 271,
+      "pages": [
+        100,
+        100,
+        71
+      ],
+      "identical_full_payloads": true
+    },
+    "Gorizia": {
+      "total": 196,
+      "pages": [
+        100,
+        96
+      ],
+      "identical_full_payloads": true
+    },
+    "Tolmezzo": {
+      "total": 74,
+      "pages": [
+        74
+      ],
+      "identical_full_payloads": true
+    }
+  },
+  "runtime_invariants": {
+    "time": "2026-10-15T14:33:36.745501+00:00",
+    "image": "europe-west1-docker.pkg.dev/meteo-friul/meteofriul/events-worker@sha256:df00ef24aea6d6548a36be4a145db23a147972a2f3b4951d925ce708fe62cab1",
+    "only_images_changed": true,
+    "scheduler_unchanged": true,
+    "main_unchanged": true,
+    "no_active_executions": true
+  },
+  "execution_requests_this_deployment": 1,
+  "main_commit": "5a68de5dc1607105f921d4d2b731170f1a8a0446",
+  "github_pushed": false,
+  "apk_changed": false,
+  "play_changed": false,
+  "monitor_policies_changed": false
+}

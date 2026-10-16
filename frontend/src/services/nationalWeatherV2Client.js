@@ -3,9 +3,10 @@ import {
   getLocationMunicipalityName,
 } from "../domain/geo/locationIdentity";
 import { sha256Hex } from "./weatherV1Client";
+import { ANDROID_LOOPBACK_ONLY_BUILD } from "./localOnlyBuild";
 
 const CONTRACT = "weather/v2/icon2i";
-const OFFICIAL_CLOUD_BASE = "https://meteofriul-national-weather-49007668366.europe-west1.run.app";
+const OFFICIAL_CLOUD_BASE = ANDROID_LOOPBACK_ONLY_BUILD ? "" : "https://meteofriul-national-weather-49007668366.europe-west1.run.app";
 const RESOLUTION_KIND = "meteofriul.weather.icon.national.local_pilot_resolution";
 const BLOCK_KIND = "meteofriul.weather.icon.national.block";
 const ISTAT = /^\d{6}$/u;

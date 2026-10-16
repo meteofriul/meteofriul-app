@@ -1,5 +1,7 @@
 package com.meteofriul.app;
 
+import android.content.pm.ActivityInfo;
+import android.content.res.Configuration;
 import android.os.Bundle;
 import android.view.View;
 import android.webkit.WebView;
@@ -22,6 +24,7 @@ public class MainActivity extends BridgeActivity {
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
+        applyPreferredOrientation(getResources().getConfiguration());
         registerPlugin(MeteoFirebaseAppCheckPlugin.class);
         registerPlugin(MeteoBackgroundLocationPlugin.class);
         registerPlugin(MeteoNotificationSettingsPlugin.class);
@@ -39,6 +42,26 @@ public class MainActivity extends BridgeActivity {
 
         if (FirebaseApp.getApps(this).isEmpty()) return;
         PilotAppCheckProviderInstaller.install();
+    }
+
+    @Override
+    public void onConfigurationChanged(Configuration newConfig) {
+        super.onConfigurationChanged(newConfig);
+        applyPreferredOrientation(newConfig);
+    }
+
+    private void applyPreferredOrientation(Configuration configuration) {
+        // Product choice: phones use the portrait layout. Large displays and
+        // multi-window stay adaptive, including when a foldable changes size.
+        int smallestWidth = configuration.smallestScreenWidthDp;
+        boolean portraitPhone = smallestWidth > 0 && smallestWidth < 600
+            && !isInMultiWindowMode();
+        int orientation = portraitPhone
+            ? ActivityInfo.SCREEN_ORIENTATION_PORTRAIT
+            : ActivityInfo.SCREEN_ORIENTATION_UNSPECIFIED;
+        if (getRequestedOrientation() != orientation) {
+            setRequestedOrientation(orientation);
+        }
     }
 
     private void registerLaunchDismissal() {

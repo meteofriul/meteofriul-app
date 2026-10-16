@@ -60,7 +60,7 @@ it("uses three compact definitive groups without technical diagnostics", () => {
   expect(html).toContain('aria-label="Cambia alias"');
   expect(html).toContain("Rango non disponibile");
   expect(html).not.toContain("Contributi oggi:");
-  expect(html).toMatch(/Segnalazioni totali: <strong class="mf-settings-identity__stat-value">0<\/strong>/);
+  expect(html).toMatch(/Inviate: <strong class="mf-settings-identity__stat-value">0<\/strong>/);
   expect(html.indexOf("mf-settings-identity"))
     .toBeLessThan(html.indexOf("mf-settings-panel mf-settings-panel--pilot-group"));
   expect(html).toContain("Preferenze generali");
@@ -181,9 +181,9 @@ it("localizes the compact pilot groups in Furlan", () => {
   expect(html).toContain("Sentinele Meteo");
   expect(html).toContain("Cence regjistrazion • Non e e-mail no coventin");
   expect(html).toContain("Ranc no disponibil");
-  expect(html).toContain("Segnalazions totâls:");
+  expect(html).toContain("Mandadis:");
   expect(html).toContain('aria-label="Cambie alias"');
-  expect(html).toContain("Notifichis");
+  expect(html).toContain("Avîs");
   expect(html).toContain("Informazions e progjet");
   expect(html).toContain('aria-label="Lenghe"');
   expect(html).toContain(">Italian</button>");

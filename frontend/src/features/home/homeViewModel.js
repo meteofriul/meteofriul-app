@@ -18,7 +18,7 @@ import {
   getWindUnitLabel,
 } from "../../domain/weather/unitFormats";
 import { getDailySummaryCopy } from "../../copy/dailySummaryCopy";
-import { getEventsViewCopy } from "../../copy/eventsViewCopy";
+import { getEventsViewCopy, getDegradedEventsMessage } from "../../copy/eventsViewCopy";
 import {
   getEventWeatherFit,
   getHomeWeatherFitScoreDelta,
@@ -830,7 +830,9 @@ export function buildHomeEventsViewModel(
         || (languageKey === "fur" ? "cheste localitât" : "questa località");
       return eventsCopy.fvgOnlyBody.replace("{location}", locationLabel);
     }
-    if (eventsState.error && !hasItems) return eventsCopy.emptyBody || copy.eventsError;
+    const degraded = getDegradedEventsMessage(eventsState, { language: languageKey, hasItems });
+    if (degraded) return degraded;
+    if (eventsState.error && !hasItems) return `${eventsCopy.unavailableTitle}. ${eventsCopy.unavailableBody}`;
     if (eventsState.error && hasItems) return copy.eventsStale;
     if (eventsState.isRefreshing && !hasItems) return eventsCopy.loadingBody || copy.eventsRefreshing;
     if (eventsState.isPartial || eventsState.shouldRetry) return copy.eventsRefreshing;
@@ -858,6 +860,8 @@ export function buildHomeEventsViewModel(
     cacheStatus: eventsState.cacheStatus || null,
     isRefreshing: Boolean(eventsState.isRefreshing),
     isPartial: Boolean(eventsState.isPartial),
+    isDegraded: eventsState.catalogHealth?.status === "degraded",
+    isUnavailable: Boolean(eventsState.error && !hasItems),
     shouldRetry: Boolean(eventsState.shouldRetry),
     error: eventsState.error || null,
     message,
@@ -950,7 +954,7 @@ export function buildHomeViewModel(homeData = {}, options = {}) {
     sceneMode: isOutsideFvg ? "neutral" : "regional",
     locationLabel: dailyCopy.locationLabel,
     summaryFallback: dailyCopy.currentSummaryFallback,
-    status: weather.error && !weather.icon ? "error" : weather.isStale || events.error ? "degraded" : "ready",
+    status: weather.error && !weather.icon ? "error" : weather.isStale || events.error || events.isDegraded ? "degraded" : "ready",
     weather,
     localMetrics: buildHomeLocalMetricsViewModel(homeData.localWeather, { language }),
     hourly,

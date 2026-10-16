@@ -1,0 +1,497 @@
+[
+  {
+    "scenario": "final-split-live-bottom",
+    "geometry": {
+      "viewport": {
+        "w": 412,
+        "h": 454,
+        "dpr": 2.625
+      },
+      "insets": {
+        "top": 51.81,
+        "right": 0,
+        "bottom": 0,
+        "left": 0
+      },
+      "scrollWidth": 412,
+      "shell": "dark",
+      "buttons": [
+        {
+          "label": "Apri impostazioni",
+          "x": 356.19049072265625,
+          "y": 59.80952453613281,
+          "w": 44,
+          "h": 44,
+          "bottom": 103.80952453613281,
+          "right": 400.19049072265625
+        },
+        {
+          "label": "Previsioni",
+          "x": 15.7619047164917,
+          "y": -149.6666717529297,
+          "w": 124.2202377319336,
+          "h": 32,
+          "bottom": -117.66667175292969,
+          "right": 139.9821424484253
+        },
+        {
+          "label": "Bollettino",
+          "x": 143.98214721679688,
+          "y": -149.6666717529297,
+          "w": 124.2202377319336,
+          "h": 32,
+          "bottom": -117.66667175292969,
+          "right": 268.20238494873047
+        },
+        {
+          "label": "Tempo reale",
+          "x": 272.202392578125,
+          "y": -149.6666717529297,
+          "w": 124.2261962890625,
+          "h": 32,
+          "bottom": -117.66667175292969,
+          "right": 396.4285888671875
+        },
+        {
+          "label": "Pioggia · Pordenone · 27 min fa · 1 segnalazione",
+          "x": 182.52381896972656,
+          "y": 96.61904907226562,
+          "w": 46,
+          "h": 46,
+          "bottom": 142.61904907226562,
+          "right": 228.52381896972656
+        },
+        {
+          "label": "Radar",
+          "x": 344.66668701171875,
+          "y": -90.38095092773438,
+          "w": 44,
+          "h": 44,
+          "bottom": -46.380950927734375,
+          "right": 388.66668701171875
+        },
+        {
+          "label": "Webcam sulla mappa · 35",
+          "x": 344.66668701171875,
+          "y": -35.38095474243164,
+          "w": 44,
+          "h": 44,
+          "bottom": 8.61904525756836,
+          "right": 388.66668701171875
+        },
+        {
+          "label": "Centra la mappa sulla località selezionata",
+          "x": 344.66668701171875,
+          "y": 19.619047164916992,
+          "w": 44,
+          "h": 44,
+          "bottom": 63.61904716491699,
+          "right": 388.66668701171875
+        },
+        {
+          "label": "Mostra meno",
+          "x": 187.09524536132812,
+          "y": -39.66666793823242,
+          "w": 38,
+          "h": 4,
+          "bottom": -35.66666793823242,
+          "right": 225.09524536132812
+        },
+        {
+          "label": "Mappa",
+          "x": 23.5238094329834,
+          "y": -31.666667938232422,
+          "w": 121.71428680419922,
+          "h": 44,
+          "bottom": 12.333332061767578,
+          "right": 145.23809623718262
+        },
+        {
+          "label": "Segnalazioni",
+          "x": 145.23809814453125,
+          "y": -31.666667938232422,
+          "w": 121.71428680419922,
+          "h": 44,
+          "bottom": 12.333332061767578,
+          "right": 266.95238494873047
+        },
+        {
+          "label": "Webcam",
+          "x": 266.952392578125,
+          "y": -31.666667938232422,
+          "w": 121.71428680419922,
+          "h": 44,
+          "bottom": 12.333332061767578,
+          "right": 388.6666793823242
+        },
+        {
+          "label": "Recenti",
+          "x": 25.5238094329834,
+          "y": 17.095237731933594,
+          "w": 284.86309814453125,
+          "h": 28,
+          "bottom": 45.095237731933594,
+          "right": 310.38690757751465
+        },
+        {
+          "label": "PioggiaPordenone · 27 min fa · 1 segnalazioneAttiva",
+          "x": 25.5238094329834,
+          "y": 51.095237731933594,
+          "w": 361.1428527832031,
+          "h": 60,
+          "bottom": 111.0952377319336,
+          "right": 386.6666622161865
+        },
+        {
+          "label": "TemporalePordenone · 24 ore fa · 1 segnalazioneScaduta",
+          "x": 25.5238094329834,
+          "y": 118.0952377319336,
+          "w": 361.1428527832031,
+          "h": 60,
+          "bottom": 178.0952377319336,
+          "right": 386.6666622161865
+        },
+        {
+          "label": "PioggiaPordenone · 24 ore fa · 1 segnalazioneScaduta",
+          "x": 25.5238094329834,
+          "y": 185.09524536132812,
+          "w": 361.1428527832031,
+          "h": 60,
+          "bottom": 245.09524536132812,
+          "right": 386.6666622161865
+        },
+        {
+          "label": "PioggiaPordenone · 46 ore fa · 1 segnalazioneScaduta",
+          "x": 25.5238094329834,
+          "y": 252.09524536132812,
+          "w": 361.1428527832031,
+          "h": 60,
+          "bottom": 312.0952453613281,
+          "right": 386.6666622161865
+        },
+        {
+          "label": "Segnala meteo",
+          "x": 23.5238094329834,
+          "y": 280.5714416503906,
+          "w": 365.1428527832031,
+          "h": 48,
+          "bottom": 328.5714416503906,
+          "right": 388.6666622161865
+        },
+        {
+          "label": "Home",
+          "x": 18.761905670166016,
+          "y": 377.8452453613281,
+          "w": 90.66667175292969,
+          "h": 57.48809814453125,
+          "bottom": 435.3333435058594,
+          "right": 109.4285774230957
+        },
+        {
+          "label": "Meteo",
+          "x": 113.42857360839844,
+          "y": 377.8452453613281,
+          "w": 90.66667175292969,
+          "h": 57.48809814453125,
+          "bottom": 435.3333435058594,
+          "right": 204.09524536132812
+        },
+        {
+          "label": "Eventi: 57 eventi oggi",
+          "x": 208.09524536132812,
+          "y": 377.8452453613281,
+          "w": 90.66667175292969,
+          "h": 57.48809814453125,
+          "bottom": 435.3333435058594,
+          "right": 298.7619171142578
+        },
+        {
+          "label": "Scopri",
+          "x": 302.76190185546875,
+          "y": 377.8452453613281,
+          "w": 90.66667175292969,
+          "h": 57.48809814453125,
+          "bottom": 435.3333435058594,
+          "right": 393.42857360839844
+        }
+      ]
+    },
+    "detail": {
+      "theme": "dark",
+      "nav": {
+        "x": 12,
+        "y": 371.0833435058594,
+        "w": 388.19049072265625,
+        "h": 71.01190948486328,
+        "bottom": 442.09525299072266,
+        "right": 400.19049072265625
+      },
+      "header": {
+        "x": 12,
+        "y": 51.80952453613281,
+        "w": 388.19049072265625,
+        "h": 68,
+        "bottom": 119.80952453613281,
+        "right": 400.19049072265625
+      },
+      "bodyScrollHeight": 454,
+      "bodyClientHeight": 454,
+      "dialogs": [],
+      "content": "Trascina per aggiornare\nPordenone\nPrevisioni\nBollettino\nTempo reale\nTerritorio\n© OpenStreetMap © CARTO\nMappa\nSegnalazioni\nWebcam\nRecenti\nUltime 48 ore\nPioggia\nPordenone · 27 min fa · 1 segnalazione\nAttiva\nTemporale\nPordenone · 24 ore fa · 1 segnalazione\nScaduta\nPioggia\nPordenone · 24 ore fa · 1 segnalazione\nScaduta\nPioggia\nPordenone · 46 ore fa · 1 segnalazione\nScaduta\n\nHai visto le segnalazioni delle ultime 48 ore.\n\nSegnala meteo"
+    },
+    "screenshot": "35-final-split-live-bottom.png",
+    "horizontalFit": true,
+    "navigationFits": true,
+    "submit": {
+      "top": 280.5714416503906,
+      "bottom": 328.5714416503906,
+      "navTop": 371.0833435058594,
+      "accessible": true
+    }
+  },
+  {
+    "scenario": "final-split-resized",
+    "geometry": {
+      "viewport": {
+        "w": 412,
+        "h": 454,
+        "dpr": 2.625
+      },
+      "insets": {
+        "top": 51.81,
+        "right": 0,
+        "bottom": 0,
+        "left": 0
+      },
+      "scrollWidth": 412,
+      "shell": "dark",
+      "buttons": [
+        {
+          "label": "Apri impostazioni",
+          "x": 356.19049072265625,
+          "y": 59.80952453613281,
+          "w": 44,
+          "h": 44,
+          "bottom": 103.80952453613281,
+          "right": 400.19049072265625
+        },
+        {
+          "label": "Previsioni",
+          "x": 15.7619047164917,
+          "y": -149.6666717529297,
+          "w": 124.2202377319336,
+          "h": 32,
+          "bottom": -117.66667175292969,
+          "right": 139.9821424484253
+        },
+        {
+          "label": "Bollettino",
+          "x": 143.98214721679688,
+          "y": -149.6666717529297,
+          "w": 124.2202377319336,
+          "h": 32,
+          "bottom": -117.66667175292969,
+          "right": 268.20238494873047
+        },
+        {
+          "label": "Tempo reale",
+          "x": 272.202392578125,
+          "y": -149.6666717529297,
+          "w": 124.2261962890625,
+          "h": 32,
+          "bottom": -117.66667175292969,
+          "right": 396.4285888671875
+        },
+        {
+          "label": "Pioggia · Pordenone · 27 min fa · 1 segnalazione",
+          "x": 182.52381896972656,
+          "y": 96.61904907226562,
+          "w": 46,
+          "h": 46,
+          "bottom": 142.61904907226562,
+          "right": 228.52381896972656
+        },
+        {
+          "label": "Radar",
+          "x": 344.66668701171875,
+          "y": -90.38095092773438,
+          "w": 44,
+          "h": 44,
+          "bottom": -46.380950927734375,
+          "right": 388.66668701171875
+        },
+        {
+          "label": "Webcam sulla mappa · 35",
+          "x": 344.66668701171875,
+          "y": -35.38095474243164,
+          "w": 44,
+          "h": 44,
+          "bottom": 8.61904525756836,
+          "right": 388.66668701171875
+        },
+        {
+          "label": "Centra la mappa sulla località selezionata",
+          "x": 344.66668701171875,
+          "y": 19.619047164916992,
+          "w": 44,
+          "h": 44,
+          "bottom": 63.61904716491699,
+          "right": 388.66668701171875
+        },
+        {
+          "label": "Mostra meno",
+          "x": 187.09524536132812,
+          "y": -39.66666793823242,
+          "w": 38,
+          "h": 4,
+          "bottom": -35.66666793823242,
+          "right": 225.09524536132812
+        },
+        {
+          "label": "Mappa",
+          "x": 23.5238094329834,
+          "y": -31.666667938232422,
+          "w": 121.71428680419922,
+          "h": 44,
+          "bottom": 12.333332061767578,
+          "right": 145.23809623718262
+        },
+        {
+          "label": "Segnalazioni",
+          "x": 145.23809814453125,
+          "y": -31.666667938232422,
+          "w": 121.71428680419922,
+          "h": 44,
+          "bottom": 12.333332061767578,
+          "right": 266.95238494873047
+        },
+        {
+          "label": "Webcam",
+          "x": 266.952392578125,
+          "y": -31.666667938232422,
+          "w": 121.71428680419922,
+          "h": 44,
+          "bottom": 12.333332061767578,
+          "right": 388.6666793823242
+        },
+        {
+          "label": "Recenti",
+          "x": 25.5238094329834,
+          "y": 17.095237731933594,
+          "w": 284.86309814453125,
+          "h": 28,
+          "bottom": 45.095237731933594,
+          "right": 310.38690757751465
+        },
+        {
+          "label": "PioggiaPordenone · 27 min fa · 1 segnalazioneAttiva",
+          "x": 25.5238094329834,
+          "y": 51.095237731933594,
+          "w": 361.1428527832031,
+          "h": 60,
+          "bottom": 111.0952377319336,
+          "right": 386.6666622161865
+        },
+        {
+          "label": "TemporalePordenone · 24 ore fa · 1 segnalazioneScaduta",
+          "x": 25.5238094329834,
+          "y": 118.0952377319336,
+          "w": 361.1428527832031,
+          "h": 60,
+          "bottom": 178.0952377319336,
+          "right": 386.6666622161865
+        },
+        {
+          "label": "PioggiaPordenone · 24 ore fa · 1 segnalazioneScaduta",
+          "x": 25.5238094329834,
+          "y": 185.09524536132812,
+          "w": 361.1428527832031,
+          "h": 60,
+          "bottom": 245.09524536132812,
+          "right": 386.6666622161865
+        },
+        {
+          "label": "PioggiaPordenone · 46 ore fa · 1 segnalazioneScaduta",
+          "x": 25.5238094329834,
+          "y": 252.09524536132812,
+          "w": 361.1428527832031,
+          "h": 60,
+          "bottom": 312.0952453613281,
+          "right": 386.6666622161865
+        },
+        {
+          "label": "Segnala meteo",
+          "x": 23.5238094329834,
+          "y": 280.5714416503906,
+          "w": 365.1428527832031,
+          "h": 48,
+          "bottom": 328.5714416503906,
+          "right": 388.6666622161865
+        },
+        {
+          "label": "Home",
+          "x": 18.761905670166016,
+          "y": 377.8452453613281,
+          "w": 90.66667175292969,
+          "h": 57.48809814453125,
+          "bottom": 435.3333435058594,
+          "right": 109.4285774230957
+        },
+        {
+          "label": "Meteo",
+          "x": 113.42857360839844,
+          "y": 377.8452453613281,
+          "w": 90.66667175292969,
+          "h": 57.48809814453125,
+          "bottom": 435.3333435058594,
+          "right": 204.09524536132812
+        },
+        {
+          "label": "Eventi: 57 eventi oggi",
+          "x": 208.09524536132812,
+          "y": 377.8452453613281,
+          "w": 90.66667175292969,
+          "h": 57.48809814453125,
+          "bottom": 435.3333435058594,
+          "right": 298.7619171142578
+        },
+        {
+          "label": "Scopri",
+          "x": 302.76190185546875,
+          "y": 377.8452453613281,
+          "w": 90.66667175292969,
+          "h": 57.48809814453125,
+          "bottom": 435.3333435058594,
+          "right": 393.42857360839844
+        }
+      ]
+    },
+    "detail": {
+      "theme": "dark",
+      "nav": {
+        "x": 12,
+        "y": 371.0833435058594,
+        "w": 388.19049072265625,
+        "h": 71.01190948486328,
+        "bottom": 442.09525299072266,
+        "right": 400.19049072265625
+      },
+      "header": {
+        "x": 12,
+        "y": 51.80952453613281,
+        "w": 388.19049072265625,
+        "h": 68,
+        "bottom": 119.80952453613281,
+        "right": 400.19049072265625
+      },
+      "bodyScrollHeight": 454,
+      "bodyClientHeight": 454,
+      "dialogs": [],
+      "content": "Trascina per aggiornare\nPordenone\nPrevisioni\nBollettino\nTempo reale\nTerritorio\n© OpenStreetMap © CARTO\nMappa\nSegnalazioni\nWebcam\nRecenti\nUltime 48 ore\nPioggia\nPordenone · 27 min fa · 1 segnalazione\nAttiva\nTemporale\nPordenone · 24 ore fa · 1 segnalazione\nScaduta\nPioggia\nPordenone · 24 ore fa · 1 segnalazione\nScaduta\nPioggia\nPordenone · 46 ore fa · 1 segnalazione\nScaduta\n\nHai visto le segnalazioni delle ultime 48 ore.\n\nSegnala meteo"
+    },
+    "screenshot": "35-final-split-resized.png",
+    "horizontalFit": true,
+    "navigationFits": true,
+    "selectionPreserved": true
+  }
+]

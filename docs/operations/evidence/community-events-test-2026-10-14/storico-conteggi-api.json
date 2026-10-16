@@ -1,0 +1,113 @@
+{
+  "reports": [
+    {
+      "id": "community-4869934ab3b4b798",
+      "typeId": "rain",
+      "place": "Pordenone",
+      "istatCode": "093033",
+      "createdAt": 1791921719543,
+      "expiresAt": 1791925319543,
+      "status": "expired",
+      "mine": false,
+      "count": 1,
+      "confirmations": {
+        "yes": 1,
+        "no": 0
+      }
+    },
+    {
+      "id": "community-1887cda53baf2014",
+      "typeId": "snow",
+      "place": "Pordenone",
+      "istatCode": "093033",
+      "createdAt": 1791914262643,
+      "expiresAt": 1791917862643,
+      "status": "expired",
+      "mine": false,
+      "count": 1,
+      "confirmations": {
+        "yes": 0,
+        "no": 0
+      }
+    },
+    {
+      "id": "community-20f68e18a3fae277",
+      "typeId": "hail",
+      "place": "Pordenone",
+      "istatCode": "093033",
+      "createdAt": 1791913532126,
+      "expiresAt": 1791917132126,
+      "status": "expired",
+      "mine": false,
+      "count": 1,
+      "confirmations": {
+        "yes": 1,
+        "no": 1
+      }
+    },
+    {
+      "id": "community-812f37489b9b4485",
+      "typeId": "hail",
+      "place": "Pordenone",
+      "istatCode": "093033",
+      "createdAt": 1791911628130,
+      "expiresAt": 1791915228130,
+      "status": "replaced",
+      "mine": false,
+      "count": 1,
+      "confirmations": {
+        "yes": 1,
+        "no": 0
+      }
+    },
+    {
+      "id": "community-edd30c4ed85cee8d",
+      "typeId": "storm",
+      "place": "Pordenone",
+      "istatCode": "093033",
+      "createdAt": 1791908553136,
+      "expiresAt": 1791912153136,
+      "status": "expired",
+      "mine": false,
+      "count": 1,
+      "confirmations": {
+        "yes": 0,
+        "no": 0
+      }
+    },
+    {
+      "id": "community-7f8d4a8ac82e7238",
+      "typeId": "wind",
+      "place": "Pordenone",
+      "istatCode": "093033",
+      "createdAt": 1791908165441,
+      "expiresAt": 1791911765441,
+      "status": "expired",
+      "mine": false,
+      "count": 1,
+      "confirmations": {
+        "yes": 1,
+        "no": 0
+      }
+    },
+    {
+      "id": "community-3aec85524dbe51a8",
+      "typeId": "rain",
+      "place": "Pordenone",
+      "istatCode": "093033",
+      "createdAt": 1791908165011,
+      "expiresAt": 1791911765011,
+      "status": "replaced",
+      "mine": false,
+      "count": 1,
+      "confirmations": {
+        "yes": 1,
+        "no": 0
+      }
+    }
+  ],
+  "next_offset": null,
+  "next_cursor": null,
+  "history_seconds": 172800,
+  "generated_at": 1791997338435
+}

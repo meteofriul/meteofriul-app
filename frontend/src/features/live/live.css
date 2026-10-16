@@ -1268,6 +1268,18 @@ html[data-theme="dark"] .mf-live-webcam-picker__options button.is-active {
   min-height: 0;
 }
 
+/* In short native windows the fixed app chrome leaves less room than the
+   expanded dock needs. Keep its controls in the scrollable page instead of
+   squeezing the map until the top of the dock is clipped. */
+@media (max-height: 600px) {
+  .mf-app-shell.is-native-android.is-definitive-app
+    .mf-app-main--territory-fit > .mf-weather-route-shell {
+    grid-template-rows: auto auto minmax(440px, 1fr);
+    height: auto;
+    min-height: 100%;
+  }
+}
+
 .mf-live-community-map-layer--inline.mf-live-territory-workspace {
   position: relative;
   z-index: 0;
@@ -1347,6 +1359,12 @@ html[data-theme="dark"] .mf-live-webcam-picker__options button.is-active {
 
 .mf-live-community-map-layer--inline .mf-territory-map--reports-empty:not(.mf-territory-map--panel-expanded) {
   --mf-territory-map-dock-height: 220px;
+}
+
+/* Keep the added history switch and the existing report preview visible together. */
+.mf-live-community-map-layer--inline
+  .mf-territory-map--panel-open:not(.mf-territory-map--panel-expanded):has(.mf-community-history-navigation) {
+  --mf-territory-map-dock-height: calc(var(--mf-territory-map-dock-preview-height) + 42px);
 }
 
 .mf-live-community-map-layer--inline .mf-territory-map .leaflet-control-attribution {
@@ -2186,6 +2204,12 @@ html[data-theme="dark"] .mf-territory-map__report-unavailable {
   border: 1px solid rgba(2, 132, 199, 0.12);
   border-radius: 8px;
   background: rgba(255, 255, 255, 0.58);
+}
+
+.mf-live-community-map-layer--pilot
+  .mf-territory-map__report-community-status--identity-only
+  .mf-territory-map__report-community-list {
+  grid-column: 1 / -1;
 }
 
 .mf-territory-map__report-community-list[hidden] {
@@ -7485,6 +7509,11 @@ html[data-theme="dark"]
 }
 
 .mf-live-community-map-layer--inline.mf-live-territory-workspace
+  .mf-territory-map__dock .mf-territory-map__browse-sheet--compact:has(> .mf-community-history-navigation) {
+  grid-template-rows: auto auto minmax(0, 1fr);
+}
+
+.mf-live-community-map-layer--inline.mf-live-territory-workspace
   .mf-territory-map__browse-sheet > header {
   display: flex;
   align-items: center;
@@ -8227,3 +8256,37 @@ html[data-theme="dark"]
       0 4px 12px rgba(3, 49, 78, 0.2);
   }
 }
+.mf-live-report-review {
+  display: grid;
+  gap: 16px;
+  padding: 16px 4px;
+  color: var(--mf-ink);
+}
+.mf-live-report-review > strong { font-size: 1.15rem; line-height: 1.5; }
+.mf-live-report-review > p { margin: 0; line-height: 1.6; color: var(--mf-muted); }
+.mf-community-history { display: grid; gap: 10px; width: 100%; }
+.mf-community-history > p { font-size: .8rem; line-height: 1.5; color: var(--mf-muted); }
+.mf-community-history > .mf-territory-map__browse-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px;
+  border: 1px solid var(--mf-border);
+  border-radius: 12px;
+  background: var(--mf-surface);
+  color: var(--mf-ink);
+}
+.mf-community-history > article > span:first-child { color: var(--mf-browse-item-color, var(--mf-blue-700)); }
+.mf-community-history > article > span:nth-child(2) { display: grid; gap: 4px; }
+.mf-community-history > article strong { font-size: .85rem; }
+.mf-community-history > article small { font-size: .75rem; line-height: 1.5; color: var(--mf-muted); }
+.mf-community-history > button {
+  min-height: 44px;
+  padding: 10px;
+  border: 1px solid var(--mf-border);
+  border-radius: 10px;
+  color: var(--mf-ink);
+  background: var(--mf-surface);
+}
+.mf-settings-community-rules { grid-column: 1 / -1; font-size: .75rem; line-height: 1.6; color: var(--mf-muted); }
+.mf-settings-community-rules summary { cursor: pointer; }

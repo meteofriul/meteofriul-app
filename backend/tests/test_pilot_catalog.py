@@ -180,6 +180,19 @@ class PilotCatalogTests(unittest.TestCase):
         self.assertEqual([item['url'] for item in visible], [good['url']])
         self.assertEqual(visible[0]['source_status'], 'partial')
 
+    def test_partial_is_visible_for_any_verified_source(self):
+        good = {'title': 'Sagra verificata', 'source': 'SagreFVG',
+                'url': 'https://sagrefvg.it/sagris/good/',
+                'start_date': '2026-09-07', 'end_date': '2026-09-08',
+                'lat': 46, 'lon': 13}
+        catalog = merge_collection(PILOT_PROJECT, None, {'SagreFVG': {
+            'status': 'partial', 'events': [good],
+            'review_required': [{'url': 'https://sagrefvg.it/sagris/bad/',
+                                 'reason': 'invalid_date'}]}}, NOW)
+        self.assertEqual(catalog['sources']['SagreFVG']['status'], 'partial')
+        self.assertEqual([event['url'] for event in
+                          query_catalog(catalog, 46, 13)['events']], [good['url']])
+
     def test_failed_source_can_recover_without_recollecting_other_sources(self):
         day = '2026-09-07'
         primary = {'title': 'Festa', 'source': 'Paesi in Festa', 'url': 'https://example.test/a',

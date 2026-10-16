@@ -27,11 +27,10 @@ export function isCommunityGroupHiddenFromMap(
   const groupId = String(entry?.groupId || entry?.group_id || "").trim();
   if (!groupId) return isMapWithdrawn(entry);
 
-  const protectedGroups = isLocalCommunityPilot() && Array.isArray(entry?.lineageGroupIds)
-    ? [groupId, ...entry.lineageGroupIds] : [groupId];
+  const reportIds = isLocalCommunityPilot() ? entry.reportIds || [] : undefined;
   return isMapWithdrawn(entry)
-    || protectedGroups.some((id) => getCommunityVote(personalState, id) === "no"
-      || hasRememberedCommunityMapWithdrawal(personalState, id));
+    || getCommunityVote(personalState, groupId, reportIds) === "no"
+    || hasRememberedCommunityMapWithdrawal(personalState, groupId, reportIds);
 }
 
 export function filterCommunityMapMarkers(
@@ -110,10 +109,10 @@ export function getAcquiredCommunityMapWithdrawals(model, personalState) {
       !groupId
       || seen.has(groupId)
       || !isMapWithdrawn(entry)
-      || hasRememberedCommunityMapWithdrawal(personalState, groupId)
+      || hasRememberedCommunityMapWithdrawal(personalState, groupId, isLocalCommunityPilot() ? entry.reportIds || [] : undefined)
     ) return [];
 
     seen.add(groupId);
-    return [{ expiresAt: entry.expiresAt || entry.expires_at, groupId }];
+    return [{ expiresAt: entry.expiresAt || entry.expires_at, groupId, ...(entry.reportIds ? { reportIds: entry.reportIds } : {}) }];
   });
 }

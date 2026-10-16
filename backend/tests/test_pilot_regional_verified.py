@@ -84,6 +84,33 @@ class VerifiedRegionalJobTests(unittest.TestCase):
         recovered = self.collect(previous_control=recovered_control)
         self.assertEqual(recovered['status'], 'ok')
 
+    def test_rolling_window_quarantines_one_detail_without_losing_other_cards(self):
+        bad_url = self.url + '-senza-data'
+        def calendar(start, end, *, max_workers):
+            return {'start': start.isoformat(), 'end': end.isoformat(),
+                    'declared_results': 2, 'cards_seen': 2, 'pages': 1,
+                    'cards': [
+                        {'url': url, 'title': 'Festa di prova', 'place': 'Udine',
+                         'badge_date': '2026-10-10'}
+                        for url in (self.url, bad_url)]}
+        batch = collect_regional_window_verified(
+            today=self.today, fetch_calendar=calendar,
+            fetch_sitemap=lambda: {'status': 'ok', 'unique_urls': 2,
+                                   'detail_urls': [
+                                       {'url': url, 'lastmod': '2026-10-05'}
+                                       for url in (self.url, bad_url)]},
+            fetch_html=lambda url: (self.html(url) if url == self.url
+                                    else '<h1>Festa di prova</h1>'))
+        self.assertEqual(batch['status'], 'ok')
+        gated = gate_batch('TurismoFVG', batch, today=self.today)
+        self.assertEqual(gated['status'], 'partial')
+        self.assertEqual([event['url'] for event in gated['events']], [self.url])
+        self.assertEqual(gated['review_required'][0]['url'], bad_url)
+        damaged = deepcopy(batch)
+        damaged['year_control']['calendar_segments'][0]['declared_results'] = 3
+        self.assertEqual(gate_batch('TurismoFVG', damaged,
+                                    today=self.today)['status'], 'error')
+
     def test_checkpoint_rejects_corruption(self):
         with self.assertRaises(ValueError):
             decode_control({'schema': 'turismofvg-year-control-checkpoint-v1',

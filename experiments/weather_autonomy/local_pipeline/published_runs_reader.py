@@ -1012,7 +1012,32 @@ class PublishedRunsObjectReader:
             raise ObjectNotFound(key)
         return snapshot
 
+    def _continuity_object(self, key: str) -> StoredObject:
+        from .cams_continuity import KEY_PATTERN, validate_cams_continuity
+        match = KEY_PATTERN.fullmatch(key)
+        if not match:
+            raise ObjectNotFound(key)
+        release_key = key.removesuffix("continuity.json") + "release.json"
+        # Use the existing verified family allow-list, including revocations.
+        snapshot = self._authorized_snapshot(release_key)
+        release_object = snapshot.pinned_objects[release_key]
+        stored = self._reader.get(key)
+        if len(stored.body) > 4096:
+            raise PublishedRunsReaderError("CAMS continuity is oversized")
+        value = _decode_canonical(stored, "CAMS continuity")
+        try:
+            validate_cams_continuity(value, json.loads(release_object.body), release_object.body)
+        except ContractError as error:
+            raise PublishedRunsReaderError("CAMS continuity is invalid") from error
+        # A revocation or pointer change while reading the sidecar must win.
+        after = self._authorized_snapshot(release_key)
+        if after.latest.body != snapshot.latest.body:
+            raise ObjectNotFound(key)
+        return stored
+
     def head(self, key: str) -> ObjectHead:
+        if key.endswith("/continuity.json"):
+            return self._continuity_object(key).head
         snapshot = self._authorized_snapshot(key)
         pinned = snapshot.pinned_objects.get(key)
         if pinned is not None:
@@ -1024,6 +1049,8 @@ class PublishedRunsObjectReader:
         return head
 
     def get(self, key: str) -> StoredObject:
+        if key.endswith("/continuity.json"):
+            return self._continuity_object(key)
         snapshot = self._authorized_snapshot(key)
         pinned = snapshot.pinned_objects.get(key)
         if pinned is not None:

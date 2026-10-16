@@ -1,0 +1,1714 @@
+{
+  "files": [
+    {
+      "path": ".tmp/quarantine-deploy-2026-10-15/account-before.json",
+      "bytes": 224,
+      "sha256": "08a8c64cffe2777bca453a8392b6a5dc6e8d2792ca36ac0a0261fa82140b5dee"
+    },
+    {
+      "path": ".tmp/quarantine-deploy-2026-10-15/analyze_cycle.py",
+      "bytes": 4651,
+      "sha256": "2025ef69f9485348bd4a0e2336c8144e0264a86ac715d810388ad2183749821d"
+    },
+    {
+      "path": ".tmp/quarantine-deploy-2026-10-15/build-baseline-before.json",
+      "bytes": 4024,
+      "sha256": "44d884197043e00b20c98f695b22a0db56eba1ce043674354a8562be5c4d5dad"
+    },
+    {
+      "path": ".tmp/quarantine-deploy-2026-10-15/candidate-manifest.json",
+      "bytes": 40755,
+      "sha256": "dd15852c29b93520b342f9cfaab723465c551009b8d6dd443f056a6e40699876"
+    },
+    {
+      "path": ".tmp/quarantine-deploy-2026-10-15/catalog-before.json",
+      "bytes": 2921215,
+      "sha256": "2bc9d1e3a59f81f6a323426d313f53a1f9d01a5ebe3bdceccc683a783bbe7cb5"
+    },
+    {
+      "path": ".tmp/quarantine-deploy-2026-10-15/catalog-meta-before.json",
+      "bytes": 670,
+      "sha256": "f8ad38cfe79805ffbe6542c747e3d511c163f6473f989e3b57ab7aca27bf0fbe"
+    },
+    {
+      "path": ".tmp/quarantine-deploy-2026-10-15/compare_catalogs.py",
+      "bytes": 1515,
+      "sha256": "f6ae8dc2aa210e662c0e2b600eb4393fe8951f048cb91a7058cab405639d3e46"
+    },
+    {
+      "path": ".tmp/quarantine-deploy-2026-10-15/deploy_candidate.py",
+      "bytes": 12527,
+      "sha256": "76f0e28bec9ed1ab68e60253362b0f60ea14c18555c8ea58f9beb3793bc9a0af"
+    },
+    {
+      "path": ".tmp/quarantine-deploy-2026-10-15/deployment/account.json",
+      "bytes": 224,
+      "sha256": "08a8c64cffe2777bca453a8392b6a5dc6e8d2792ca36ac0a0261fa82140b5dee"
+    },
+    {
+      "path": ".tmp/quarantine-deploy-2026-10-15/deployment/account.stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": ".tmp/quarantine-deploy-2026-10-15/deployment/api-before-collection-pass.json",
+      "bytes": 3476,
+      "sha256": "d486f7faa2f4a9fbd5ca05d5eef5a7a9beeb4f95eb2ec75e050e4648b0977599"
+    },
+    {
+      "path": ".tmp/quarantine-deploy-2026-10-15/deployment/build-latest.json",
+      "bytes": 4024,
+      "sha256": "5e6bea33aada790bffe3a8c9d78e1ce2743917d811ada10233c37818e5f66ca3"
+    },
+    {
+      "path": ".tmp/quarantine-deploy-2026-10-15/deployment/build-latest.stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": ".tmp/quarantine-deploy-2026-10-15/deployment/build-logs.json",
+      "bytes": 199449,
+      "sha256": "cce9f5898b1305cc537f674641da76487d0bd38a2711f9064072e7ce50790c8b"
+    },
+    {
+      "path": ".tmp/quarantine-deploy-2026-10-15/deployment/build-logs.stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": ".tmp/quarantine-deploy-2026-10-15/deployment/build-logs.txt",
+      "bytes": 28586,
+      "sha256": "9278bd8cf82213e14c823f984af7939713e38cd989f1602a4c9796fc18eae9ab"
+    },
+    {
+      "path": ".tmp/quarantine-deploy-2026-10-15/deployment/build-submit-intent.json",
+      "bytes": 109,
+      "sha256": "59b5f349fa5c0da360a3017735809753ef43be157f26dfc01f72b10f218a84c2"
+    },
+    {
+      "path": ".tmp/quarantine-deploy-2026-10-15/deployment/build-submitted.json",
+      "bytes": 1846,
+      "sha256": "afcde956ae702350b2bb63820c72ced7f0e8be4c204b8e24b7d421bdfd9dee58"
+    },
+    {
+      "path": ".tmp/quarantine-deploy-2026-10-15/deployment/build-submitted.stderr.txt",
+      "bytes": 561,
+      "sha256": "2ebc50b48c199da73748f20cfceefe91c54313bf5f023f6e87cc78436156fa9e"
+    },
+    {
+      "path": ".tmp/quarantine-deploy-2026-10-15/deployment/catalog-after.json",
+      "bytes": 3833849,
+      "sha256": "e3bfc258b445846d2ab2d9f5a5cc4e1d87525dfdd2139ba4edd00379c48d3c9c"
+    },
+    {
+      "path": ".tmp/quarantine-deploy-2026-10-15/deployment/catalog-after.stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": ".tmp/quarantine-deploy-2026-10-15/deployment/catalog-before.json",
+      "bytes": 2921215,
+      "sha256": "2bc9d1e3a59f81f6a323426d313f53a1f9d01a5ebe3bdceccc683a783bbe7cb5"
+    },
+    {
+      "path": ".tmp/quarantine-deploy-2026-10-15/deployment/catalog-before.stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": ".tmp/quarantine-deploy-2026-10-15/deployment/catalog-meta-after.json",
+      "bytes": 670,
+      "sha256": "1d3a1cba4cbf469d602c31fe783d52de7ecae463d5ef36bf9b2f3e0dfcd33d12"
+    },
+    {
+      "path": ".tmp/quarantine-deploy-2026-10-15/deployment/catalog-meta-after.stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": ".tmp/quarantine-deploy-2026-10-15/deployment/catalog-meta-before.json",
+      "bytes": 670,
+      "sha256": "f8ad38cfe79805ffbe6542c747e3d511c163f6473f989e3b57ab7aca27bf0fbe"
+    },
+    {
+      "path": ".tmp/quarantine-deploy-2026-10-15/deployment/catalog-meta-before.stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": ".tmp/quarantine-deploy-2026-10-15/deployment/cycle-analysis.json",
+      "bytes": 21555,
+      "sha256": "f9a3f22544d40d8e20c0f6531c3acbc20ff0a5bca12a88d6d845e433c7a6862a"
+    },
+    {
+      "path": ".tmp/quarantine-deploy-2026-10-15/deployment/deploy-api-invariants.json",
+      "bytes": 220,
+      "sha256": "db6e92dce64cb75bf51e1232f517a7c67fbefaeeb83f51afe5fbeb97ee22ad10"
+    },
+    {
+      "path": ".tmp/quarantine-deploy-2026-10-15/deployment/deploy-job-invariants.json",
+      "bytes": 220,
+      "sha256": "db6e92dce64cb75bf51e1232f517a7c67fbefaeeb83f51afe5fbeb97ee22ad10"
+    },
+    {
+      "path": ".tmp/quarantine-deploy-2026-10-15/deployment/execution-intent.json",
+      "bytes": 100,
+      "sha256": "d015bb51e605b244a6d7339f77f5290f698c55e962dea00ef138211f22f39c22"
+    },
+    {
+      "path": ".tmp/quarantine-deploy-2026-10-15/deployment/execution-latest.json",
+      "bytes": 4189,
+      "sha256": "fe8cec9150cd54f6f48c77312cb70b404c2f279443f7ccc2e61c3582284966c2"
+    },
+    {
+      "path": ".tmp/quarantine-deploy-2026-10-15/deployment/execution-latest.stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": ".tmp/quarantine-deploy-2026-10-15/deployment/execution-logs.json",
+      "bytes": 39099,
+      "sha256": "1740c61bf022df9751365fda05b8c202b98371e4179c11486d387831a58175b4"
+    },
+    {
+      "path": ".tmp/quarantine-deploy-2026-10-15/deployment/execution-logs.stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": ".tmp/quarantine-deploy-2026-10-15/deployment/execution-started.json",
+      "bytes": 3092,
+      "sha256": "93acdb85b8781a856bb13c0768fee4a4bc6edb6418f73e49ea927f4408b674a9"
+    },
+    {
+      "path": ".tmp/quarantine-deploy-2026-10-15/deployment/execution-started.stderr.txt",
+      "bytes": 334,
+      "sha256": "dc302f1f7a73b145880e533c7c12994626dec4582f2744e6cc32b4e02a217cb7"
+    },
+    {
+      "path": ".tmp/quarantine-deploy-2026-10-15/deployment/executions-before.json",
+      "bytes": 44064,
+      "sha256": "6fbc55247db998f98ad56bc764d13098382909439b0199487400d7e8b905900c"
+    },
+    {
+      "path": ".tmp/quarantine-deploy-2026-10-15/deployment/executions-before.stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": ".tmp/quarantine-deploy-2026-10-15/deployment/executions-post-deploy-api.json",
+      "bytes": 44064,
+      "sha256": "6fbc55247db998f98ad56bc764d13098382909439b0199487400d7e8b905900c"
+    },
+    {
+      "path": ".tmp/quarantine-deploy-2026-10-15/deployment/executions-post-deploy-api.stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": ".tmp/quarantine-deploy-2026-10-15/deployment/executions-post-deploy-job.json",
+      "bytes": 44064,
+      "sha256": "6fbc55247db998f98ad56bc764d13098382909439b0199487400d7e8b905900c"
+    },
+    {
+      "path": ".tmp/quarantine-deploy-2026-10-15/deployment/executions-post-deploy-job.stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": ".tmp/quarantine-deploy-2026-10-15/deployment/executions-pre-deploy-api.json",
+      "bytes": 44064,
+      "sha256": "6fbc55247db998f98ad56bc764d13098382909439b0199487400d7e8b905900c"
+    },
+    {
+      "path": ".tmp/quarantine-deploy-2026-10-15/deployment/executions-pre-deploy-api.stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": ".tmp/quarantine-deploy-2026-10-15/deployment/executions-pre-deploy-job.json",
+      "bytes": 44064,
+      "sha256": "6fbc55247db998f98ad56bc764d13098382909439b0199487400d7e8b905900c"
+    },
+    {
+      "path": ".tmp/quarantine-deploy-2026-10-15/deployment/executions-pre-deploy-job.stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": ".tmp/quarantine-deploy-2026-10-15/deployment/executions-pre-execute.json",
+      "bytes": 44064,
+      "sha256": "6fbc55247db998f98ad56bc764d13098382909439b0199487400d7e8b905900c"
+    },
+    {
+      "path": ".tmp/quarantine-deploy-2026-10-15/deployment/executions-pre-execute.stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": ".tmp/quarantine-deploy-2026-10-15/deployment/image-verification.json",
+      "bytes": 542,
+      "sha256": "3a7a5e4e3b523063707709d0d058b6899e062742015e0136ff94de89e23df062"
+    },
+    {
+      "path": ".tmp/quarantine-deploy-2026-10-15/deployment/job-before.json",
+      "bytes": 3108,
+      "sha256": "42ee2d6a24b35783085a60c521f5cfee8cba2485e18df2fa84648c5dd1f9fc91"
+    },
+    {
+      "path": ".tmp/quarantine-deploy-2026-10-15/deployment/job-before.stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": ".tmp/quarantine-deploy-2026-10-15/deployment/job-post-deploy-api.json",
+      "bytes": 3108,
+      "sha256": "42ee2d6a24b35783085a60c521f5cfee8cba2485e18df2fa84648c5dd1f9fc91"
+    },
+    {
+      "path": ".tmp/quarantine-deploy-2026-10-15/deployment/job-post-deploy-api.stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": ".tmp/quarantine-deploy-2026-10-15/deployment/job-post-deploy-job.json",
+      "bytes": 3108,
+      "sha256": "3509bcccfa08f167a20358dc86923c240d4054f475f371e9cef852b23b515a53"
+    },
+    {
+      "path": ".tmp/quarantine-deploy-2026-10-15/deployment/job-post-deploy-job.stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": ".tmp/quarantine-deploy-2026-10-15/deployment/job-pre-deploy-api.json",
+      "bytes": 3108,
+      "sha256": "42ee2d6a24b35783085a60c521f5cfee8cba2485e18df2fa84648c5dd1f9fc91"
+    },
+    {
+      "path": ".tmp/quarantine-deploy-2026-10-15/deployment/job-pre-deploy-api.stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": ".tmp/quarantine-deploy-2026-10-15/deployment/job-pre-deploy-job.json",
+      "bytes": 3108,
+      "sha256": "42ee2d6a24b35783085a60c521f5cfee8cba2485e18df2fa84648c5dd1f9fc91"
+    },
+    {
+      "path": ".tmp/quarantine-deploy-2026-10-15/deployment/job-pre-deploy-job.stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": ".tmp/quarantine-deploy-2026-10-15/deployment/job-pre-execute.json",
+      "bytes": 3108,
+      "sha256": "3509bcccfa08f167a20358dc86923c240d4054f475f371e9cef852b23b515a53"
+    },
+    {
+      "path": ".tmp/quarantine-deploy-2026-10-15/deployment/job-pre-execute.stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": ".tmp/quarantine-deploy-2026-10-15/deployment/job-update.json",
+      "bytes": 3108,
+      "sha256": "3509bcccfa08f167a20358dc86923c240d4054f475f371e9cef852b23b515a53"
+    },
+    {
+      "path": ".tmp/quarantine-deploy-2026-10-15/deployment/job-update.stderr.txt",
+      "bytes": 267,
+      "sha256": "1320f19a742fbf8fff9ae0b67f118bde4c380e8e8df1a11df6823b347dc65083"
+    },
+    {
+      "path": ".tmp/quarantine-deploy-2026-10-15/deployment/preflight.json",
+      "bytes": 201,
+      "sha256": "84b442cd8fa1d696d1007355b5f34da5d392647ce32eabf4dbf683d12f4fe449"
+    },
+    {
+      "path": ".tmp/quarantine-deploy-2026-10-15/deployment/resume-diagnosis.json",
+      "bytes": 572,
+      "sha256": "f5aa2c9156e3bf5f8881a19ab77ef4cc354af72a7d50ffd9f500b435c7e644ea"
+    },
+    {
+      "path": ".tmp/quarantine-deploy-2026-10-15/deployment/scheduler-before.json",
+      "bytes": 1081,
+      "sha256": "8a9377511cc7ed6e9ffe746e3fe5378fb2c8f4e2dbe49690229f8f2b273ca215"
+    },
+    {
+      "path": ".tmp/quarantine-deploy-2026-10-15/deployment/scheduler-before.stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": ".tmp/quarantine-deploy-2026-10-15/deployment/scheduler-post-deploy-api.json",
+      "bytes": 1081,
+      "sha256": "8a9377511cc7ed6e9ffe746e3fe5378fb2c8f4e2dbe49690229f8f2b273ca215"
+    },
+    {
+      "path": ".tmp/quarantine-deploy-2026-10-15/deployment/scheduler-post-deploy-api.stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": ".tmp/quarantine-deploy-2026-10-15/deployment/scheduler-post-deploy-job.json",
+      "bytes": 1081,
+      "sha256": "8a9377511cc7ed6e9ffe746e3fe5378fb2c8f4e2dbe49690229f8f2b273ca215"
+    },
+    {
+      "path": ".tmp/quarantine-deploy-2026-10-15/deployment/scheduler-post-deploy-job.stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": ".tmp/quarantine-deploy-2026-10-15/deployment/scheduler-pre-deploy-api.json",
+      "bytes": 1081,
+      "sha256": "8a9377511cc7ed6e9ffe746e3fe5378fb2c8f4e2dbe49690229f8f2b273ca215"
+    },
+    {
+      "path": ".tmp/quarantine-deploy-2026-10-15/deployment/scheduler-pre-deploy-api.stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": ".tmp/quarantine-deploy-2026-10-15/deployment/scheduler-pre-deploy-job.json",
+      "bytes": 1081,
+      "sha256": "8a9377511cc7ed6e9ffe746e3fe5378fb2c8f4e2dbe49690229f8f2b273ca215"
+    },
+    {
+      "path": ".tmp/quarantine-deploy-2026-10-15/deployment/scheduler-pre-deploy-job.stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": ".tmp/quarantine-deploy-2026-10-15/deployment/scheduler-pre-execute.json",
+      "bytes": 1081,
+      "sha256": "8a9377511cc7ed6e9ffe746e3fe5378fb2c8f4e2dbe49690229f8f2b273ca215"
+    },
+    {
+      "path": ".tmp/quarantine-deploy-2026-10-15/deployment/scheduler-pre-execute.stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": ".tmp/quarantine-deploy-2026-10-15/deployment/service-before.json",
+      "bytes": 4490,
+      "sha256": "914451b19f42ebd8802fc0ec3f1eb8bf38fd409a5af931c8c19072a2dba63b62"
+    },
+    {
+      "path": ".tmp/quarantine-deploy-2026-10-15/deployment/service-before.stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": ".tmp/quarantine-deploy-2026-10-15/deployment/service-post-deploy-api.json",
+      "bytes": 4490,
+      "sha256": "7bb17dd3b2aad8690b073e2ed8f1c29b2f8ed590d2a2b5347b5b178014f70df2"
+    },
+    {
+      "path": ".tmp/quarantine-deploy-2026-10-15/deployment/service-post-deploy-api.stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": ".tmp/quarantine-deploy-2026-10-15/deployment/service-post-deploy-job.json",
+      "bytes": 4490,
+      "sha256": "7bb17dd3b2aad8690b073e2ed8f1c29b2f8ed590d2a2b5347b5b178014f70df2"
+    },
+    {
+      "path": ".tmp/quarantine-deploy-2026-10-15/deployment/service-post-deploy-job.stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": ".tmp/quarantine-deploy-2026-10-15/deployment/service-pre-deploy-api.json",
+      "bytes": 4490,
+      "sha256": "914451b19f42ebd8802fc0ec3f1eb8bf38fd409a5af931c8c19072a2dba63b62"
+    },
+    {
+      "path": ".tmp/quarantine-deploy-2026-10-15/deployment/service-pre-deploy-api.stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": ".tmp/quarantine-deploy-2026-10-15/deployment/service-pre-deploy-job.json",
+      "bytes": 4490,
+      "sha256": "7bb17dd3b2aad8690b073e2ed8f1c29b2f8ed590d2a2b5347b5b178014f70df2"
+    },
+    {
+      "path": ".tmp/quarantine-deploy-2026-10-15/deployment/service-pre-deploy-job.stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": ".tmp/quarantine-deploy-2026-10-15/deployment/service-pre-execute.json",
+      "bytes": 4490,
+      "sha256": "7bb17dd3b2aad8690b073e2ed8f1c29b2f8ed590d2a2b5347b5b178014f70df2"
+    },
+    {
+      "path": ".tmp/quarantine-deploy-2026-10-15/deployment/service-pre-execute.stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": ".tmp/quarantine-deploy-2026-10-15/deployment/service-update.json",
+      "bytes": 4553,
+      "sha256": "ab3f54bdfdcd3a3de29766f54568b4f6cf9835d52829fe08bfcd0769c5d5c04f"
+    },
+    {
+      "path": ".tmp/quarantine-deploy-2026-10-15/deployment/service-update.stderr.txt",
+      "bytes": 423,
+      "sha256": "f6eed8818a61df9ca306ca46cc50ac4bd33d576c8716ff723424731eb0162002"
+    },
+    {
+      "path": ".tmp/quarantine-deploy-2026-10-15/events-d8fce73f-build-context.tar.gz",
+      "bytes": 2041858,
+      "sha256": "d84a34b7447581d01f8510c2c58a7b58f27899b98cecbf18edb4aef208d6655e"
+    },
+    {
+      "path": ".tmp/quarantine-deploy-2026-10-15/events-d8fce73f-source.zip",
+      "bytes": 2616424,
+      "sha256": "4278b89295aaa98d3e249152ac3550a2b16229c3b9512c00e88f3571010f88e2"
+    },
+    {
+      "path": ".tmp/quarantine-deploy-2026-10-15/executions-before.json",
+      "bytes": 22098,
+      "sha256": "d90e794643a7eaf5b8b6d1a92044cecada4eefd17abf719276389556f8d310aa"
+    },
+    {
+      "path": ".tmp/quarantine-deploy-2026-10-15/inspect_cloud.py",
+      "bytes": 2161,
+      "sha256": "d370f094e23604278434b9103b659a0c8ebc4f65b6feb18703fc860c9bc8df05"
+    },
+    {
+      "path": ".tmp/quarantine-deploy-2026-10-15/job-before.json",
+      "bytes": 3108,
+      "sha256": "42ee2d6a24b35783085a60c521f5cfee8cba2485e18df2fa84648c5dd1f9fc91"
+    },
+    {
+      "path": ".tmp/quarantine-deploy-2026-10-15/packaged-attems-tests.log",
+      "bytes": 101,
+      "sha256": "ee1286267ef142e413e6b03c9295730c4b7d7f623f4e88a3a9044e2c7d4fe638"
+    },
+    {
+      "path": ".tmp/quarantine-deploy-2026-10-15/packaged-pilot-tests.log",
+      "bytes": 7303,
+      "sha256": "7d22d84907d1a3a9fa7696b963c8570069aa89a3e843d601d1622bd2bed3dff2"
+    },
+    {
+      "path": ".tmp/quarantine-deploy-2026-10-15/prepare_candidate.py",
+      "bytes": 3122,
+      "sha256": "ecb39798aad4e8cc4f08266d88ae8029e1fd7b523d2eaa4b0cc454e64cf212c0"
+    },
+    {
+      "path": ".tmp/quarantine-deploy-2026-10-15/resume-full-backend.log",
+      "bytes": 7634,
+      "sha256": "6d241aa9564099634c2abceabbe0b5cc35cd742b2ca12dc7f34c315fdd0a112e"
+    },
+    {
+      "path": ".tmp/quarantine-deploy-2026-10-15/resume-tests-final.log",
+      "bytes": 8059,
+      "sha256": "1986799315612115c341d2ab6215b8b24bdcfa12c36f1aa2698f5d116121490f"
+    },
+    {
+      "path": ".tmp/quarantine-deploy-2026-10-15/resume-tests.log",
+      "bytes": 8891,
+      "sha256": "b1e32742a46a2d7e38328112aa63d5581d7a5636c0dc55d96928f06587dbf92e"
+    },
+    {
+      "path": ".tmp/quarantine-deploy-2026-10-15/scheduler-before.json",
+      "bytes": 1081,
+      "sha256": "8a9377511cc7ed6e9ffe746e3fe5378fb2c8f4e2dbe49690229f8f2b273ca215"
+    },
+    {
+      "path": ".tmp/quarantine-deploy-2026-10-15/service-before.json",
+      "bytes": 4490,
+      "sha256": "914451b19f42ebd8802fc0ec3f1eb8bf38fd409a5af931c8c19072a2dba63b62"
+    },
+    {
+      "path": ".tmp/quarantine-deploy-2026-10-15/verify_compatibility.py",
+      "bytes": 3462,
+      "sha256": "b44a0daa95f3213cd179594785a7692071329f1c45daeafc2c5b39d70c75e79a"
+    },
+    {
+      "path": ".tmp/quarantine-deploy-2026-10-15/verify_image.py",
+      "bytes": 2074,
+      "sha256": "07600bb055898f2c05044e113d38084a7fc7d5918f3029cb369c01fd3656df38"
+    },
+    {
+      "path": ".tmp/quarantine-deploy-2026-10-15/verify_recoveries.py",
+      "bytes": 5791,
+      "sha256": "e6c0fcd16f6777fd384aed9dcddde481782e9b544c6ee6bf891228f00917cb88"
+    },
+    {
+      "path": ".tmp/quarantine-deploy-2026-10-15/verify_spazzapan.py",
+      "bytes": 3092,
+      "sha256": "adfad7c59e9a0d4f23b370c9ec583f33ce2a4a529f95695cffeddcb07771f66f"
+    },
+    {
+      "path": ".tmp/quarantine-resume-deploy-2026-10-15/analyze_cycle.py",
+      "bytes": 5414,
+      "sha256": "8da82d0a13309169ba27256674e852886ce9049b75095e39532b05b53839dcc5"
+    },
+    {
+      "path": ".tmp/quarantine-resume-deploy-2026-10-15/candidate-manifest.json",
+      "bytes": 40755,
+      "sha256": "342ceb5fc72885adb137e1e524b74157dcc5b5f18e72f2c4fb4bb69655d6ada5"
+    },
+    {
+      "path": ".tmp/quarantine-resume-deploy-2026-10-15/catalog-before.json",
+      "bytes": 3833849,
+      "sha256": "e3bfc258b445846d2ab2d9f5a5cc4e1d87525dfdd2139ba4edd00379c48d3c9c"
+    },
+    {
+      "path": ".tmp/quarantine-resume-deploy-2026-10-15/compare_catalogs.py",
+      "bytes": 1568,
+      "sha256": "789960620accb6cd52394765fe5e6aa940c3064c19e1753cf963d986a8601fcd"
+    },
+    {
+      "path": ".tmp/quarantine-resume-deploy-2026-10-15/deploy_candidate.py",
+      "bytes": 12527,
+      "sha256": "785ac4ef497b9747e69b247196234d283599301b88f3de58e4847bd0dfd79684"
+    },
+    {
+      "path": ".tmp/quarantine-resume-deploy-2026-10-15/deployment/account.json",
+      "bytes": 224,
+      "sha256": "08a8c64cffe2777bca453a8392b6a5dc6e8d2792ca36ac0a0261fa82140b5dee"
+    },
+    {
+      "path": ".tmp/quarantine-resume-deploy-2026-10-15/deployment/account.stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": ".tmp/quarantine-resume-deploy-2026-10-15/deployment/api-after-collection-pass.json",
+      "bytes": 3266,
+      "sha256": "39592c452424d345fe27f0d8e6e41ead548f6e398a3b7d76e1d454d8fe9b410b"
+    },
+    {
+      "path": ".tmp/quarantine-resume-deploy-2026-10-15/deployment/api-before-collection-pass.json",
+      "bytes": 3032,
+      "sha256": "36d0c0354098525b3b3a9a01a732a45adcfa3519229719ef6c558055bfe1176c"
+    },
+    {
+      "path": ".tmp/quarantine-resume-deploy-2026-10-15/deployment/build-latest.json",
+      "bytes": 4024,
+      "sha256": "63a8cd0b93c2aef33ea71867efd16684e4440a6516805307da8159550b1967d7"
+    },
+    {
+      "path": ".tmp/quarantine-resume-deploy-2026-10-15/deployment/build-latest.stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": ".tmp/quarantine-resume-deploy-2026-10-15/deployment/build-logs.json",
+      "bytes": 198991,
+      "sha256": "61a1dd7b606371728423afd44c47e0ea40f7a4297caef0ef68fef67ece94cdc8"
+    },
+    {
+      "path": ".tmp/quarantine-resume-deploy-2026-10-15/deployment/build-logs.stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": ".tmp/quarantine-resume-deploy-2026-10-15/deployment/build-logs.txt",
+      "bytes": 28622,
+      "sha256": "031dce74f3131a07d7e673312eb21d6251f9cbc9490070c05a4b9375cac34177"
+    },
+    {
+      "path": ".tmp/quarantine-resume-deploy-2026-10-15/deployment/build-submit-intent.json",
+      "bytes": 109,
+      "sha256": "9b5812ef5f1c2199de27afbe11ff14ed186ae55ad2911bf19e7891fedef9e495"
+    },
+    {
+      "path": ".tmp/quarantine-resume-deploy-2026-10-15/deployment/build-submitted.json",
+      "bytes": 1846,
+      "sha256": "65f9e89d7e622f680b6ae62d01fe920ddcfc800aaffb0b7085577419ca904134"
+    },
+    {
+      "path": ".tmp/quarantine-resume-deploy-2026-10-15/deployment/build-submitted.stderr.txt",
+      "bytes": 568,
+      "sha256": "cb2d147941a8029ba7149ebf9e3d766a01c6322c252aa0399d399456ebb96a67"
+    },
+    {
+      "path": ".tmp/quarantine-resume-deploy-2026-10-15/deployment/catalog-after.json",
+      "bytes": 2865585,
+      "sha256": "1253f1ca4312f396e84eaf59bc6ab921114bfdfc02ca14d17c9c7b8eabc73d48"
+    },
+    {
+      "path": ".tmp/quarantine-resume-deploy-2026-10-15/deployment/catalog-after.stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": ".tmp/quarantine-resume-deploy-2026-10-15/deployment/catalog-before.json",
+      "bytes": 3833849,
+      "sha256": "e3bfc258b445846d2ab2d9f5a5cc4e1d87525dfdd2139ba4edd00379c48d3c9c"
+    },
+    {
+      "path": ".tmp/quarantine-resume-deploy-2026-10-15/deployment/catalog-before.stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": ".tmp/quarantine-resume-deploy-2026-10-15/deployment/catalog-diff.json",
+      "bytes": 9942,
+      "sha256": "8336b6c0d87faf13728e95b83625eea77a69921230bc4583c3b919b3fed3d756"
+    },
+    {
+      "path": ".tmp/quarantine-resume-deploy-2026-10-15/deployment/catalog-meta-after.json",
+      "bytes": 670,
+      "sha256": "911c6271581209f9cee05276fbfb15c817bb4f41d0f68afdb1969265f1a3ceb9"
+    },
+    {
+      "path": ".tmp/quarantine-resume-deploy-2026-10-15/deployment/catalog-meta-after.stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": ".tmp/quarantine-resume-deploy-2026-10-15/deployment/catalog-meta-before.json",
+      "bytes": 670,
+      "sha256": "1d3a1cba4cbf469d602c31fe783d52de7ecae463d5ef36bf9b2f3e0dfcd33d12"
+    },
+    {
+      "path": ".tmp/quarantine-resume-deploy-2026-10-15/deployment/catalog-meta-before.stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": ".tmp/quarantine-resume-deploy-2026-10-15/deployment/cycle-analysis.json",
+      "bytes": 7274,
+      "sha256": "cae0cc34c00b1f93749b282b3cbce36e448b27247ab3f151eac72f8526678a58"
+    },
+    {
+      "path": ".tmp/quarantine-resume-deploy-2026-10-15/deployment/deploy-api-invariants.json",
+      "bytes": 220,
+      "sha256": "e5554191b1538fa0088234475f28d58c9e2f8b7fcaef186e2ab09f9802b59abc"
+    },
+    {
+      "path": ".tmp/quarantine-resume-deploy-2026-10-15/deployment/deploy-job-invariants.json",
+      "bytes": 220,
+      "sha256": "e5554191b1538fa0088234475f28d58c9e2f8b7fcaef186e2ab09f9802b59abc"
+    },
+    {
+      "path": ".tmp/quarantine-resume-deploy-2026-10-15/deployment/execution-intent.json",
+      "bytes": 100,
+      "sha256": "bb43cb1763700a9947b208beed0fe055937af450c83e48299d242e15b2e173ce"
+    },
+    {
+      "path": ".tmp/quarantine-resume-deploy-2026-10-15/deployment/execution-latest.json",
+      "bytes": 4073,
+      "sha256": "c2d43c7a0c7b5a113a558b3b5c24405bc132d19d67d269b325ba32ef6bcaafb1"
+    },
+    {
+      "path": ".tmp/quarantine-resume-deploy-2026-10-15/deployment/execution-latest.stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": ".tmp/quarantine-resume-deploy-2026-10-15/deployment/execution-logs.json",
+      "bytes": 21230,
+      "sha256": "c5d37d747c4e31ddb4a7fa77173d4ca6ddb92e0f5b80e177d73ab4b99fecb5df"
+    },
+    {
+      "path": ".tmp/quarantine-resume-deploy-2026-10-15/deployment/execution-logs.stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": ".tmp/quarantine-resume-deploy-2026-10-15/deployment/execution-started.json",
+      "bytes": 3092,
+      "sha256": "fddb74108f7a84df83e510dfd92468bc395161b154cadc473f82460089a22dde"
+    },
+    {
+      "path": ".tmp/quarantine-resume-deploy-2026-10-15/deployment/execution-started.stderr.txt",
+      "bytes": 334,
+      "sha256": "2730007496e175a141136f88d481681ff7581f8e056e93c739b786de70860439"
+    },
+    {
+      "path": ".tmp/quarantine-resume-deploy-2026-10-15/deployment/executions-before.json",
+      "bytes": 43975,
+      "sha256": "c4e2cb8f27c6993241844979937eb7c5434a3e2677234c29f146ff04ac56f4b0"
+    },
+    {
+      "path": ".tmp/quarantine-resume-deploy-2026-10-15/deployment/executions-before.stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": ".tmp/quarantine-resume-deploy-2026-10-15/deployment/executions-final.json",
+      "bytes": 43935,
+      "sha256": "882804c118d6dc5447bee0a7620a81c62d3f281ace76a733073ea49fb235bd9d"
+    },
+    {
+      "path": ".tmp/quarantine-resume-deploy-2026-10-15/deployment/executions-final.stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": ".tmp/quarantine-resume-deploy-2026-10-15/deployment/executions-post-deploy-api.json",
+      "bytes": 43975,
+      "sha256": "c4e2cb8f27c6993241844979937eb7c5434a3e2677234c29f146ff04ac56f4b0"
+    },
+    {
+      "path": ".tmp/quarantine-resume-deploy-2026-10-15/deployment/executions-post-deploy-api.stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": ".tmp/quarantine-resume-deploy-2026-10-15/deployment/executions-post-deploy-job.json",
+      "bytes": 43975,
+      "sha256": "c4e2cb8f27c6993241844979937eb7c5434a3e2677234c29f146ff04ac56f4b0"
+    },
+    {
+      "path": ".tmp/quarantine-resume-deploy-2026-10-15/deployment/executions-post-deploy-job.stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": ".tmp/quarantine-resume-deploy-2026-10-15/deployment/executions-pre-deploy-api.json",
+      "bytes": 43975,
+      "sha256": "c4e2cb8f27c6993241844979937eb7c5434a3e2677234c29f146ff04ac56f4b0"
+    },
+    {
+      "path": ".tmp/quarantine-resume-deploy-2026-10-15/deployment/executions-pre-deploy-api.stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": ".tmp/quarantine-resume-deploy-2026-10-15/deployment/executions-pre-deploy-job.json",
+      "bytes": 43975,
+      "sha256": "c4e2cb8f27c6993241844979937eb7c5434a3e2677234c29f146ff04ac56f4b0"
+    },
+    {
+      "path": ".tmp/quarantine-resume-deploy-2026-10-15/deployment/executions-pre-deploy-job.stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": ".tmp/quarantine-resume-deploy-2026-10-15/deployment/executions-pre-execute.json",
+      "bytes": 43975,
+      "sha256": "c4e2cb8f27c6993241844979937eb7c5434a3e2677234c29f146ff04ac56f4b0"
+    },
+    {
+      "path": ".tmp/quarantine-resume-deploy-2026-10-15/deployment/executions-pre-execute.stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": ".tmp/quarantine-resume-deploy-2026-10-15/deployment/final-invariants.json",
+      "bytes": 328,
+      "sha256": "d007e9614032cc8276063493d3714c89670c04bc6db5ad18b2ec1ce06a8ec9f4"
+    },
+    {
+      "path": ".tmp/quarantine-resume-deploy-2026-10-15/deployment/image-verification.json",
+      "bytes": 542,
+      "sha256": "deae98e613cad1bfabba86069d8e46a0582058306e2490fcbb66d49f68599bfc"
+    },
+    {
+      "path": ".tmp/quarantine-resume-deploy-2026-10-15/deployment/job-before.json",
+      "bytes": 3105,
+      "sha256": "b38843f4aa2dea7a00066c571322fff12a2845212c7f8e6937f35bd0f9cdff23"
+    },
+    {
+      "path": ".tmp/quarantine-resume-deploy-2026-10-15/deployment/job-before.stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": ".tmp/quarantine-resume-deploy-2026-10-15/deployment/job-final.json",
+      "bytes": 3108,
+      "sha256": "346ebbd60dd1a7ed41574f9fcfffcb9f80e5af2af456c379d14eb2ca5c6da0a1"
+    },
+    {
+      "path": ".tmp/quarantine-resume-deploy-2026-10-15/deployment/job-final.stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": ".tmp/quarantine-resume-deploy-2026-10-15/deployment/job-post-deploy-api.json",
+      "bytes": 3105,
+      "sha256": "b38843f4aa2dea7a00066c571322fff12a2845212c7f8e6937f35bd0f9cdff23"
+    },
+    {
+      "path": ".tmp/quarantine-resume-deploy-2026-10-15/deployment/job-post-deploy-api.stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": ".tmp/quarantine-resume-deploy-2026-10-15/deployment/job-post-deploy-job.json",
+      "bytes": 3105,
+      "sha256": "76efb0cc2b692783c03542ebf207cc6a17a3d4072c75cb1efa4ee637e0c0d7b9"
+    },
+    {
+      "path": ".tmp/quarantine-resume-deploy-2026-10-15/deployment/job-post-deploy-job.stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": ".tmp/quarantine-resume-deploy-2026-10-15/deployment/job-pre-deploy-api.json",
+      "bytes": 3105,
+      "sha256": "b38843f4aa2dea7a00066c571322fff12a2845212c7f8e6937f35bd0f9cdff23"
+    },
+    {
+      "path": ".tmp/quarantine-resume-deploy-2026-10-15/deployment/job-pre-deploy-api.stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": ".tmp/quarantine-resume-deploy-2026-10-15/deployment/job-pre-deploy-job.json",
+      "bytes": 3105,
+      "sha256": "b38843f4aa2dea7a00066c571322fff12a2845212c7f8e6937f35bd0f9cdff23"
+    },
+    {
+      "path": ".tmp/quarantine-resume-deploy-2026-10-15/deployment/job-pre-deploy-job.stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": ".tmp/quarantine-resume-deploy-2026-10-15/deployment/job-pre-execute.json",
+      "bytes": 3105,
+      "sha256": "76efb0cc2b692783c03542ebf207cc6a17a3d4072c75cb1efa4ee637e0c0d7b9"
+    },
+    {
+      "path": ".tmp/quarantine-resume-deploy-2026-10-15/deployment/job-pre-execute.stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": ".tmp/quarantine-resume-deploy-2026-10-15/deployment/job-update.json",
+      "bytes": 3105,
+      "sha256": "76efb0cc2b692783c03542ebf207cc6a17a3d4072c75cb1efa4ee637e0c0d7b9"
+    },
+    {
+      "path": ".tmp/quarantine-resume-deploy-2026-10-15/deployment/job-update.stderr.txt",
+      "bytes": 267,
+      "sha256": "1320f19a742fbf8fff9ae0b67f118bde4c380e8e8df1a11df6823b347dc65083"
+    },
+    {
+      "path": ".tmp/quarantine-resume-deploy-2026-10-15/deployment/new-quarantine-verified-context.json",
+      "bytes": 1539,
+      "sha256": "0e2e03ea7992910f2be4c16510c97176f6dcc21d861baca6133108cd4bae9f1e"
+    },
+    {
+      "path": ".tmp/quarantine-resume-deploy-2026-10-15/deployment/nine-recoveries-verification.json",
+      "bytes": 8424,
+      "sha256": "28360689c281ed2aed7eb38532556723b6927c161965c21255db22974b282077"
+    },
+    {
+      "path": ".tmp/quarantine-resume-deploy-2026-10-15/deployment/official-url-drift.json",
+      "bytes": 12990,
+      "sha256": "82988ff334d22beb6d3b0ff483107caeeefe3339801ce1e47b6fd2cb28f8cc64"
+    },
+    {
+      "path": ".tmp/quarantine-resume-deploy-2026-10-15/deployment/official-url-identity.json",
+      "bytes": 1348,
+      "sha256": "0831ffa68ad22deaadf812c6fc6c12211c11386ed3f550275b96d7b9ee2b8324"
+    },
+    {
+      "path": ".tmp/quarantine-resume-deploy-2026-10-15/deployment/preflight.json",
+      "bytes": 201,
+      "sha256": "bf6078a269de84cfcf43188f3676f6e4902b02ca1de8c82c6a2b4335ef4defd3"
+    },
+    {
+      "path": ".tmp/quarantine-resume-deploy-2026-10-15/deployment/scheduler-before.json",
+      "bytes": 1081,
+      "sha256": "8a9377511cc7ed6e9ffe746e3fe5378fb2c8f4e2dbe49690229f8f2b273ca215"
+    },
+    {
+      "path": ".tmp/quarantine-resume-deploy-2026-10-15/deployment/scheduler-before.stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": ".tmp/quarantine-resume-deploy-2026-10-15/deployment/scheduler-final.json",
+      "bytes": 1081,
+      "sha256": "8a9377511cc7ed6e9ffe746e3fe5378fb2c8f4e2dbe49690229f8f2b273ca215"
+    },
+    {
+      "path": ".tmp/quarantine-resume-deploy-2026-10-15/deployment/scheduler-final.stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": ".tmp/quarantine-resume-deploy-2026-10-15/deployment/scheduler-post-deploy-api.json",
+      "bytes": 1081,
+      "sha256": "8a9377511cc7ed6e9ffe746e3fe5378fb2c8f4e2dbe49690229f8f2b273ca215"
+    },
+    {
+      "path": ".tmp/quarantine-resume-deploy-2026-10-15/deployment/scheduler-post-deploy-api.stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": ".tmp/quarantine-resume-deploy-2026-10-15/deployment/scheduler-post-deploy-job.json",
+      "bytes": 1081,
+      "sha256": "8a9377511cc7ed6e9ffe746e3fe5378fb2c8f4e2dbe49690229f8f2b273ca215"
+    },
+    {
+      "path": ".tmp/quarantine-resume-deploy-2026-10-15/deployment/scheduler-post-deploy-job.stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": ".tmp/quarantine-resume-deploy-2026-10-15/deployment/scheduler-pre-deploy-api.json",
+      "bytes": 1081,
+      "sha256": "8a9377511cc7ed6e9ffe746e3fe5378fb2c8f4e2dbe49690229f8f2b273ca215"
+    },
+    {
+      "path": ".tmp/quarantine-resume-deploy-2026-10-15/deployment/scheduler-pre-deploy-api.stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": ".tmp/quarantine-resume-deploy-2026-10-15/deployment/scheduler-pre-deploy-job.json",
+      "bytes": 1081,
+      "sha256": "8a9377511cc7ed6e9ffe746e3fe5378fb2c8f4e2dbe49690229f8f2b273ca215"
+    },
+    {
+      "path": ".tmp/quarantine-resume-deploy-2026-10-15/deployment/scheduler-pre-deploy-job.stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": ".tmp/quarantine-resume-deploy-2026-10-15/deployment/scheduler-pre-execute.json",
+      "bytes": 1081,
+      "sha256": "8a9377511cc7ed6e9ffe746e3fe5378fb2c8f4e2dbe49690229f8f2b273ca215"
+    },
+    {
+      "path": ".tmp/quarantine-resume-deploy-2026-10-15/deployment/scheduler-pre-execute.stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": ".tmp/quarantine-resume-deploy-2026-10-15/deployment/service-before.json",
+      "bytes": 4490,
+      "sha256": "7bb17dd3b2aad8690b073e2ed8f1c29b2f8ed590d2a2b5347b5b178014f70df2"
+    },
+    {
+      "path": ".tmp/quarantine-resume-deploy-2026-10-15/deployment/service-before.stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": ".tmp/quarantine-resume-deploy-2026-10-15/deployment/service-final.json",
+      "bytes": 4490,
+      "sha256": "aefa5b02448c19cb7a5380add33bf6eaae3248f987d92a35c7d576516ed3516d"
+    },
+    {
+      "path": ".tmp/quarantine-resume-deploy-2026-10-15/deployment/service-final.stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": ".tmp/quarantine-resume-deploy-2026-10-15/deployment/service-post-deploy-api.json",
+      "bytes": 4490,
+      "sha256": "aefa5b02448c19cb7a5380add33bf6eaae3248f987d92a35c7d576516ed3516d"
+    },
+    {
+      "path": ".tmp/quarantine-resume-deploy-2026-10-15/deployment/service-post-deploy-api.stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": ".tmp/quarantine-resume-deploy-2026-10-15/deployment/service-post-deploy-job.json",
+      "bytes": 4490,
+      "sha256": "aefa5b02448c19cb7a5380add33bf6eaae3248f987d92a35c7d576516ed3516d"
+    },
+    {
+      "path": ".tmp/quarantine-resume-deploy-2026-10-15/deployment/service-post-deploy-job.stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": ".tmp/quarantine-resume-deploy-2026-10-15/deployment/service-pre-deploy-api.json",
+      "bytes": 4490,
+      "sha256": "7bb17dd3b2aad8690b073e2ed8f1c29b2f8ed590d2a2b5347b5b178014f70df2"
+    },
+    {
+      "path": ".tmp/quarantine-resume-deploy-2026-10-15/deployment/service-pre-deploy-api.stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": ".tmp/quarantine-resume-deploy-2026-10-15/deployment/service-pre-deploy-job.json",
+      "bytes": 4490,
+      "sha256": "aefa5b02448c19cb7a5380add33bf6eaae3248f987d92a35c7d576516ed3516d"
+    },
+    {
+      "path": ".tmp/quarantine-resume-deploy-2026-10-15/deployment/service-pre-deploy-job.stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": ".tmp/quarantine-resume-deploy-2026-10-15/deployment/service-pre-execute.json",
+      "bytes": 4490,
+      "sha256": "aefa5b02448c19cb7a5380add33bf6eaae3248f987d92a35c7d576516ed3516d"
+    },
+    {
+      "path": ".tmp/quarantine-resume-deploy-2026-10-15/deployment/service-pre-execute.stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": ".tmp/quarantine-resume-deploy-2026-10-15/deployment/service-update.json",
+      "bytes": 4553,
+      "sha256": "e102248ad18bc65b26d2ecb4832693baa05c3b78292ae5e91a7473ddb6ebbb6d"
+    },
+    {
+      "path": ".tmp/quarantine-resume-deploy-2026-10-15/deployment/service-update.stderr.txt",
+      "bytes": 484,
+      "sha256": "cbc200a72fc8710f52cf9154dcc137e572141e55c494255f9e9caf1d156f048e"
+    },
+    {
+      "path": ".tmp/quarantine-resume-deploy-2026-10-15/deployment/spazzapan-verification.json",
+      "bytes": 1861,
+      "sha256": "851021ef7e368600ca851e75fd3f06727d0c71dfd23f295f7b08bcf08d267dd9"
+    },
+    {
+      "path": ".tmp/quarantine-resume-deploy-2026-10-15/deployment/weather-regression-replay.json",
+      "bytes": 1268,
+      "sha256": "b5ef6e68ee430cdf7706c6f7aba2d9f455104d20ce0417b5a93715273740b264"
+    },
+    {
+      "path": ".tmp/quarantine-resume-deploy-2026-10-15/events-c7f8579c-build-context.tar.gz",
+      "bytes": 2044154,
+      "sha256": "8e7612d6f8c00f37e9a10cde2dbefeaa65c4f439d36796a1aea5db645bb5851d"
+    },
+    {
+      "path": ".tmp/quarantine-resume-deploy-2026-10-15/events-c7f8579c-source.zip",
+      "bytes": 102175838,
+      "sha256": "5abb6d27d299acb80d29af4480e3f2b0904b516d7101a15160724bd8627be00f"
+    },
+    {
+      "path": ".tmp/quarantine-resume-deploy-2026-10-15/inspect_cloud.py",
+      "bytes": 2161,
+      "sha256": "d370f094e23604278434b9103b659a0c8ebc4f65b6feb18703fc860c9bc8df05"
+    },
+    {
+      "path": ".tmp/quarantine-resume-deploy-2026-10-15/job-before.json",
+      "bytes": 3108,
+      "sha256": "3509bcccfa08f167a20358dc86923c240d4054f475f371e9cef852b23b515a53"
+    },
+    {
+      "path": ".tmp/quarantine-resume-deploy-2026-10-15/prepare_candidate.py",
+      "bytes": 3122,
+      "sha256": "9c46d27c7e2fffc9673b49590f8c448cbe28b999be7778b1c9af051a6b9aa0aa"
+    },
+    {
+      "path": ".tmp/quarantine-resume-deploy-2026-10-15/scheduler-before.json",
+      "bytes": 1081,
+      "sha256": "8a9377511cc7ed6e9ffe746e3fe5378fb2c8f4e2dbe49690229f8f2b273ca215"
+    },
+    {
+      "path": ".tmp/quarantine-resume-deploy-2026-10-15/service-before.json",
+      "bytes": 4490,
+      "sha256": "7bb17dd3b2aad8690b073e2ed8f1c29b2f8ed590d2a2b5347b5b178014f70df2"
+    },
+    {
+      "path": ".tmp/quarantine-resume-deploy-2026-10-15/verify_compatibility.py",
+      "bytes": 3462,
+      "sha256": "cb9bed48b8fdd6217045b40fed58c16c7909b3fa9ceb0cf4764b4d756b26d928"
+    },
+    {
+      "path": ".tmp/quarantine-resume-deploy-2026-10-15/verify_image.py",
+      "bytes": 2074,
+      "sha256": "344573828c6a3b00c766869acb549afe042784c041dffd39d443020d46af5553"
+    },
+    {
+      "path": ".tmp/quarantine-resume-deploy-2026-10-15/verify_recoveries.py",
+      "bytes": 6984,
+      "sha256": "5aed8622000bb1998ae65b311000f95f028127d4973a191d6ccce80157cc00db"
+    },
+    {
+      "path": ".tmp/quarantine-resume-deploy-2026-10-15/verify_spazzapan.py",
+      "bytes": 3092,
+      "sha256": "adfad7c59e9a0d4f23b370c9ec583f33ce2a4a529f95695cffeddcb07771f66f"
+    },
+    {
+      "path": ".tmp/quarantine-resume-deploy-2026-10-15/weather-full-backend.log",
+      "bytes": 7634,
+      "sha256": "80bb0f6d7acd635e526e4e8742f039fa32c13f58e9486f07bf9df296baac0fb4"
+    },
+    {
+      "path": ".tmp/quarantine-final-deploy-2026-10-15/analyze_cycle.py",
+      "bytes": 5414,
+      "sha256": "8da82d0a13309169ba27256674e852886ce9049b75095e39532b05b53839dcc5"
+    },
+    {
+      "path": ".tmp/quarantine-final-deploy-2026-10-15/candidate-manifest.json",
+      "bytes": 40755,
+      "sha256": "73b91cbfc14c2316466e9054c28d8dbc456874aafa915f903291d1b273333dfd"
+    },
+    {
+      "path": ".tmp/quarantine-final-deploy-2026-10-15/catalog-before.json",
+      "bytes": 2865585,
+      "sha256": "1253f1ca4312f396e84eaf59bc6ab921114bfdfc02ca14d17c9c7b8eabc73d48"
+    },
+    {
+      "path": ".tmp/quarantine-final-deploy-2026-10-15/compare_catalogs.py",
+      "bytes": 1568,
+      "sha256": "789960620accb6cd52394765fe5e6aa940c3064c19e1753cf963d986a8601fcd"
+    },
+    {
+      "path": ".tmp/quarantine-final-deploy-2026-10-15/deploy_candidate.py",
+      "bytes": 12527,
+      "sha256": "61156f30baa2fce7b43b2d209be3bef7a6d7d3f18622a8072b5adcc9469eed6c"
+    },
+    {
+      "path": ".tmp/quarantine-final-deploy-2026-10-15/deployment/account.json",
+      "bytes": 224,
+      "sha256": "08a8c64cffe2777bca453a8392b6a5dc6e8d2792ca36ac0a0261fa82140b5dee"
+    },
+    {
+      "path": ".tmp/quarantine-final-deploy-2026-10-15/deployment/account.stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": ".tmp/quarantine-final-deploy-2026-10-15/deployment/api-after-collection-pass.json",
+      "bytes": 3266,
+      "sha256": "f576c19ef2039873e343810d587a4f4e35d9f787b28f896cac74e8b96c2826f0"
+    },
+    {
+      "path": ".tmp/quarantine-final-deploy-2026-10-15/deployment/api-before-collection-pass.json",
+      "bytes": 3266,
+      "sha256": "8bd8b9658ae1e2de740fefa6224920edd22260d6aa86c4e7b1662db2470a4b2c"
+    },
+    {
+      "path": ".tmp/quarantine-final-deploy-2026-10-15/deployment/build-latest.json",
+      "bytes": 4024,
+      "sha256": "5da41d51e8527ccb06ff9b3c74a5a7b6e6f900d2b8c7ded1ea26522da7589379"
+    },
+    {
+      "path": ".tmp/quarantine-final-deploy-2026-10-15/deployment/build-latest.stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": ".tmp/quarantine-final-deploy-2026-10-15/deployment/build-logs.json",
+      "bytes": 199839,
+      "sha256": "a2332b8909ac5f5afa9e06a7d5e583a4c39f03ac27193e6d52feb65868ddfba3"
+    },
+    {
+      "path": ".tmp/quarantine-final-deploy-2026-10-15/deployment/build-logs.stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": ".tmp/quarantine-final-deploy-2026-10-15/deployment/build-logs.txt",
+      "bytes": 28773,
+      "sha256": "3b1c47b39b4b21c0aad982fabbb115fe6fc172a4b36e063ab8af904e93e6f2e1"
+    },
+    {
+      "path": ".tmp/quarantine-final-deploy-2026-10-15/deployment/build-submit-intent.json",
+      "bytes": 109,
+      "sha256": "6889c604568a563abadcf7901af5b3f9b303cf019140a8691d1c77b7999b525e"
+    },
+    {
+      "path": ".tmp/quarantine-final-deploy-2026-10-15/deployment/build-submitted.json",
+      "bytes": 1846,
+      "sha256": "d8875327dd3b19954ce83fb1c7dccb605576d5c8f6b8cf06a533167e0ff3b474"
+    },
+    {
+      "path": ".tmp/quarantine-final-deploy-2026-10-15/deployment/build-submitted.stderr.txt",
+      "bytes": 567,
+      "sha256": "0291fff281720683fd3e201fcaf5474db136a652a0ccea9476becf7124b2a8dd"
+    },
+    {
+      "path": ".tmp/quarantine-final-deploy-2026-10-15/deployment/catalog-after.json",
+      "bytes": 2863385,
+      "sha256": "4cecfaeadc84d1a52fb614f143c7278a0e06c90ab6eae4ee45c21021ed0f27fc"
+    },
+    {
+      "path": ".tmp/quarantine-final-deploy-2026-10-15/deployment/catalog-after.stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": ".tmp/quarantine-final-deploy-2026-10-15/deployment/catalog-before.json",
+      "bytes": 2865585,
+      "sha256": "1253f1ca4312f396e84eaf59bc6ab921114bfdfc02ca14d17c9c7b8eabc73d48"
+    },
+    {
+      "path": ".tmp/quarantine-final-deploy-2026-10-15/deployment/catalog-before.stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": ".tmp/quarantine-final-deploy-2026-10-15/deployment/catalog-diff.json",
+      "bytes": 8954,
+      "sha256": "323a2b8c680ddd9a24b4176a0073cac4610b5631e8d0d96b99e3c38703ec37af"
+    },
+    {
+      "path": ".tmp/quarantine-final-deploy-2026-10-15/deployment/catalog-meta-after.json",
+      "bytes": 670,
+      "sha256": "7dee71c9bee9ac77c6c0880960ff75c049b99f1da5393ee921190aa10efd5db9"
+    },
+    {
+      "path": ".tmp/quarantine-final-deploy-2026-10-15/deployment/catalog-meta-after.stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": ".tmp/quarantine-final-deploy-2026-10-15/deployment/catalog-meta-before.json",
+      "bytes": 670,
+      "sha256": "911c6271581209f9cee05276fbfb15c817bb4f41d0f68afdb1969265f1a3ceb9"
+    },
+    {
+      "path": ".tmp/quarantine-final-deploy-2026-10-15/deployment/catalog-meta-before.stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": ".tmp/quarantine-final-deploy-2026-10-15/deployment/cycle-analysis.json",
+      "bytes": 6777,
+      "sha256": "c978f501ebe4c9ac6613e34fcf42e322e66dbb658e5ab4d968f9d4de59162c35"
+    },
+    {
+      "path": ".tmp/quarantine-final-deploy-2026-10-15/deployment/deploy-api-invariants.json",
+      "bytes": 220,
+      "sha256": "a54de0d6fc63809829a40a107e6664e9411eb21e102c1f8f76526ae9af10e93e"
+    },
+    {
+      "path": ".tmp/quarantine-final-deploy-2026-10-15/deployment/deploy-job-invariants.json",
+      "bytes": 220,
+      "sha256": "a54de0d6fc63809829a40a107e6664e9411eb21e102c1f8f76526ae9af10e93e"
+    },
+    {
+      "path": ".tmp/quarantine-final-deploy-2026-10-15/deployment/execution-intent.json",
+      "bytes": 100,
+      "sha256": "839ab1373851346066094381d2549bcbbd8282c1b9a461ea7f9ff1aa753fbe04"
+    },
+    {
+      "path": ".tmp/quarantine-final-deploy-2026-10-15/deployment/execution-latest.json",
+      "bytes": 4074,
+      "sha256": "5e6d8c88997f4ad245142d52422669f44c8b8a51fe19569d819fd32a897e46bc"
+    },
+    {
+      "path": ".tmp/quarantine-final-deploy-2026-10-15/deployment/execution-latest.stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": ".tmp/quarantine-final-deploy-2026-10-15/deployment/execution-logs.json",
+      "bytes": 14537,
+      "sha256": "80e26d945685750bf2e21dd96b56a91424ad6a7224c3425818b15a3e13b26c30"
+    },
+    {
+      "path": ".tmp/quarantine-final-deploy-2026-10-15/deployment/execution-logs.stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": ".tmp/quarantine-final-deploy-2026-10-15/deployment/execution-started.json",
+      "bytes": 3092,
+      "sha256": "3f128512c721572a85aabde267b47af02d98221304c13f0311e90a9cce436653"
+    },
+    {
+      "path": ".tmp/quarantine-final-deploy-2026-10-15/deployment/execution-started.stderr.txt",
+      "bytes": 334,
+      "sha256": "b0cac746c7efa5f000a8d5e55140369f81718865cbedbe5f5b925a70f792f355"
+    },
+    {
+      "path": ".tmp/quarantine-final-deploy-2026-10-15/deployment/executions-before.json",
+      "bytes": 43935,
+      "sha256": "882804c118d6dc5447bee0a7620a81c62d3f281ace76a733073ea49fb235bd9d"
+    },
+    {
+      "path": ".tmp/quarantine-final-deploy-2026-10-15/deployment/executions-before.stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": ".tmp/quarantine-final-deploy-2026-10-15/deployment/executions-final.json",
+      "bytes": 43826,
+      "sha256": "3685baa80e2aac4223aac0e214898b14eac838183dc2980680757d16d68e0cbd"
+    },
+    {
+      "path": ".tmp/quarantine-final-deploy-2026-10-15/deployment/executions-final.stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": ".tmp/quarantine-final-deploy-2026-10-15/deployment/executions-post-deploy-api.json",
+      "bytes": 43935,
+      "sha256": "882804c118d6dc5447bee0a7620a81c62d3f281ace76a733073ea49fb235bd9d"
+    },
+    {
+      "path": ".tmp/quarantine-final-deploy-2026-10-15/deployment/executions-post-deploy-api.stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": ".tmp/quarantine-final-deploy-2026-10-15/deployment/executions-post-deploy-job.json",
+      "bytes": 43935,
+      "sha256": "882804c118d6dc5447bee0a7620a81c62d3f281ace76a733073ea49fb235bd9d"
+    },
+    {
+      "path": ".tmp/quarantine-final-deploy-2026-10-15/deployment/executions-post-deploy-job.stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": ".tmp/quarantine-final-deploy-2026-10-15/deployment/executions-pre-deploy-api.json",
+      "bytes": 43935,
+      "sha256": "882804c118d6dc5447bee0a7620a81c62d3f281ace76a733073ea49fb235bd9d"
+    },
+    {
+      "path": ".tmp/quarantine-final-deploy-2026-10-15/deployment/executions-pre-deploy-api.stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": ".tmp/quarantine-final-deploy-2026-10-15/deployment/executions-pre-deploy-job.json",
+      "bytes": 43935,
+      "sha256": "882804c118d6dc5447bee0a7620a81c62d3f281ace76a733073ea49fb235bd9d"
+    },
+    {
+      "path": ".tmp/quarantine-final-deploy-2026-10-15/deployment/executions-pre-deploy-job.stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": ".tmp/quarantine-final-deploy-2026-10-15/deployment/executions-pre-execute.json",
+      "bytes": 43935,
+      "sha256": "882804c118d6dc5447bee0a7620a81c62d3f281ace76a733073ea49fb235bd9d"
+    },
+    {
+      "path": ".tmp/quarantine-final-deploy-2026-10-15/deployment/executions-pre-execute.stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": ".tmp/quarantine-final-deploy-2026-10-15/deployment/final-invariants.json",
+      "bytes": 328,
+      "sha256": "6f487c73edacbcc38ac8288cf7da5746ad39dfd11b28c2a091c02f372a50d524"
+    },
+    {
+      "path": ".tmp/quarantine-final-deploy-2026-10-15/deployment/image-verification.json",
+      "bytes": 542,
+      "sha256": "60ea948af6e093b99bc9e8ffe39e0d10bdeab3e3fd22406749c97b903513037b"
+    },
+    {
+      "path": ".tmp/quarantine-final-deploy-2026-10-15/deployment/job-before.json",
+      "bytes": 3108,
+      "sha256": "346ebbd60dd1a7ed41574f9fcfffcb9f80e5af2af456c379d14eb2ca5c6da0a1"
+    },
+    {
+      "path": ".tmp/quarantine-final-deploy-2026-10-15/deployment/job-before.stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": ".tmp/quarantine-final-deploy-2026-10-15/deployment/job-final.json",
+      "bytes": 3108,
+      "sha256": "2b55d08eb2d845c8e643d332b7da1ef2647d4dd9f16b23023bbc301c3894c5f9"
+    },
+    {
+      "path": ".tmp/quarantine-final-deploy-2026-10-15/deployment/job-final.stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": ".tmp/quarantine-final-deploy-2026-10-15/deployment/job-post-deploy-api.json",
+      "bytes": 3108,
+      "sha256": "346ebbd60dd1a7ed41574f9fcfffcb9f80e5af2af456c379d14eb2ca5c6da0a1"
+    },
+    {
+      "path": ".tmp/quarantine-final-deploy-2026-10-15/deployment/job-post-deploy-api.stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": ".tmp/quarantine-final-deploy-2026-10-15/deployment/job-post-deploy-job.json",
+      "bytes": 3108,
+      "sha256": "fe158bed48099b6c8dc97f70b9374f59a4976ee6bbd4e3f6bf66a14f2e3f4d5e"
+    },
+    {
+      "path": ".tmp/quarantine-final-deploy-2026-10-15/deployment/job-post-deploy-job.stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": ".tmp/quarantine-final-deploy-2026-10-15/deployment/job-pre-deploy-api.json",
+      "bytes": 3108,
+      "sha256": "346ebbd60dd1a7ed41574f9fcfffcb9f80e5af2af456c379d14eb2ca5c6da0a1"
+    },
+    {
+      "path": ".tmp/quarantine-final-deploy-2026-10-15/deployment/job-pre-deploy-api.stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": ".tmp/quarantine-final-deploy-2026-10-15/deployment/job-pre-deploy-job.json",
+      "bytes": 3108,
+      "sha256": "346ebbd60dd1a7ed41574f9fcfffcb9f80e5af2af456c379d14eb2ca5c6da0a1"
+    },
+    {
+      "path": ".tmp/quarantine-final-deploy-2026-10-15/deployment/job-pre-deploy-job.stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": ".tmp/quarantine-final-deploy-2026-10-15/deployment/job-pre-execute.json",
+      "bytes": 3108,
+      "sha256": "fe158bed48099b6c8dc97f70b9374f59a4976ee6bbd4e3f6bf66a14f2e3f4d5e"
+    },
+    {
+      "path": ".tmp/quarantine-final-deploy-2026-10-15/deployment/job-pre-execute.stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": ".tmp/quarantine-final-deploy-2026-10-15/deployment/job-update.json",
+      "bytes": 3108,
+      "sha256": "fe158bed48099b6c8dc97f70b9374f59a4976ee6bbd4e3f6bf66a14f2e3f4d5e"
+    },
+    {
+      "path": ".tmp/quarantine-final-deploy-2026-10-15/deployment/job-update.stderr.txt",
+      "bytes": 267,
+      "sha256": "1320f19a742fbf8fff9ae0b67f118bde4c380e8e8df1a11df6823b347dc65083"
+    },
+    {
+      "path": ".tmp/quarantine-final-deploy-2026-10-15/deployment/nine-recoveries-verification.json",
+      "bytes": 8040,
+      "sha256": "93588ec4c389087835564c030a9f5a1c7a3cdb4cf0547e11368154a22b36637a"
+    },
+    {
+      "path": ".tmp/quarantine-final-deploy-2026-10-15/deployment/official-url-identity.json",
+      "bytes": 1348,
+      "sha256": "0831ffa68ad22deaadf812c6fc6c12211c11386ed3f550275b96d7b9ee2b8324"
+    },
+    {
+      "path": ".tmp/quarantine-final-deploy-2026-10-15/deployment/preflight.json",
+      "bytes": 201,
+      "sha256": "5fa3a728d1e97815852172cb6da6256262e14495e5cca5bae51e4f25a15a4b7d"
+    },
+    {
+      "path": ".tmp/quarantine-final-deploy-2026-10-15/deployment/scheduler-before.json",
+      "bytes": 1081,
+      "sha256": "8a9377511cc7ed6e9ffe746e3fe5378fb2c8f4e2dbe49690229f8f2b273ca215"
+    },
+    {
+      "path": ".tmp/quarantine-final-deploy-2026-10-15/deployment/scheduler-before.stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": ".tmp/quarantine-final-deploy-2026-10-15/deployment/scheduler-final.json",
+      "bytes": 1081,
+      "sha256": "8a9377511cc7ed6e9ffe746e3fe5378fb2c8f4e2dbe49690229f8f2b273ca215"
+    },
+    {
+      "path": ".tmp/quarantine-final-deploy-2026-10-15/deployment/scheduler-final.stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": ".tmp/quarantine-final-deploy-2026-10-15/deployment/scheduler-post-deploy-api.json",
+      "bytes": 1081,
+      "sha256": "8a9377511cc7ed6e9ffe746e3fe5378fb2c8f4e2dbe49690229f8f2b273ca215"
+    },
+    {
+      "path": ".tmp/quarantine-final-deploy-2026-10-15/deployment/scheduler-post-deploy-api.stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": ".tmp/quarantine-final-deploy-2026-10-15/deployment/scheduler-post-deploy-job.json",
+      "bytes": 1081,
+      "sha256": "8a9377511cc7ed6e9ffe746e3fe5378fb2c8f4e2dbe49690229f8f2b273ca215"
+    },
+    {
+      "path": ".tmp/quarantine-final-deploy-2026-10-15/deployment/scheduler-post-deploy-job.stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": ".tmp/quarantine-final-deploy-2026-10-15/deployment/scheduler-pre-deploy-api.json",
+      "bytes": 1081,
+      "sha256": "8a9377511cc7ed6e9ffe746e3fe5378fb2c8f4e2dbe49690229f8f2b273ca215"
+    },
+    {
+      "path": ".tmp/quarantine-final-deploy-2026-10-15/deployment/scheduler-pre-deploy-api.stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": ".tmp/quarantine-final-deploy-2026-10-15/deployment/scheduler-pre-deploy-job.json",
+      "bytes": 1081,
+      "sha256": "8a9377511cc7ed6e9ffe746e3fe5378fb2c8f4e2dbe49690229f8f2b273ca215"
+    },
+    {
+      "path": ".tmp/quarantine-final-deploy-2026-10-15/deployment/scheduler-pre-deploy-job.stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": ".tmp/quarantine-final-deploy-2026-10-15/deployment/scheduler-pre-execute.json",
+      "bytes": 1081,
+      "sha256": "8a9377511cc7ed6e9ffe746e3fe5378fb2c8f4e2dbe49690229f8f2b273ca215"
+    },
+    {
+      "path": ".tmp/quarantine-final-deploy-2026-10-15/deployment/scheduler-pre-execute.stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": ".tmp/quarantine-final-deploy-2026-10-15/deployment/service-before.json",
+      "bytes": 4490,
+      "sha256": "aefa5b02448c19cb7a5380add33bf6eaae3248f987d92a35c7d576516ed3516d"
+    },
+    {
+      "path": ".tmp/quarantine-final-deploy-2026-10-15/deployment/service-before.stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": ".tmp/quarantine-final-deploy-2026-10-15/deployment/service-final.json",
+      "bytes": 4490,
+      "sha256": "97dc1ec1d48f51a4d5dc8e7099370f6662877b087b2545dcf8c10017e76f2925"
+    },
+    {
+      "path": ".tmp/quarantine-final-deploy-2026-10-15/deployment/service-final.stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": ".tmp/quarantine-final-deploy-2026-10-15/deployment/service-post-deploy-api.json",
+      "bytes": 4490,
+      "sha256": "97dc1ec1d48f51a4d5dc8e7099370f6662877b087b2545dcf8c10017e76f2925"
+    },
+    {
+      "path": ".tmp/quarantine-final-deploy-2026-10-15/deployment/service-post-deploy-api.stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": ".tmp/quarantine-final-deploy-2026-10-15/deployment/service-post-deploy-job.json",
+      "bytes": 4490,
+      "sha256": "97dc1ec1d48f51a4d5dc8e7099370f6662877b087b2545dcf8c10017e76f2925"
+    },
+    {
+      "path": ".tmp/quarantine-final-deploy-2026-10-15/deployment/service-post-deploy-job.stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": ".tmp/quarantine-final-deploy-2026-10-15/deployment/service-pre-deploy-api.json",
+      "bytes": 4490,
+      "sha256": "aefa5b02448c19cb7a5380add33bf6eaae3248f987d92a35c7d576516ed3516d"
+    },
+    {
+      "path": ".tmp/quarantine-final-deploy-2026-10-15/deployment/service-pre-deploy-api.stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": ".tmp/quarantine-final-deploy-2026-10-15/deployment/service-pre-deploy-job.json",
+      "bytes": 4490,
+      "sha256": "97dc1ec1d48f51a4d5dc8e7099370f6662877b087b2545dcf8c10017e76f2925"
+    },
+    {
+      "path": ".tmp/quarantine-final-deploy-2026-10-15/deployment/service-pre-deploy-job.stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": ".tmp/quarantine-final-deploy-2026-10-15/deployment/service-pre-execute.json",
+      "bytes": 4490,
+      "sha256": "97dc1ec1d48f51a4d5dc8e7099370f6662877b087b2545dcf8c10017e76f2925"
+    },
+    {
+      "path": ".tmp/quarantine-final-deploy-2026-10-15/deployment/service-pre-execute.stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": ".tmp/quarantine-final-deploy-2026-10-15/deployment/service-update.json",
+      "bytes": 4553,
+      "sha256": "0985774f6b9c6cbb64ab571b7293c22820e032910c66c5a9c8bfb51b6a6dffb5"
+    },
+    {
+      "path": ".tmp/quarantine-final-deploy-2026-10-15/deployment/service-update.stderr.txt",
+      "bytes": 966,
+      "sha256": "fb1c2b1b390f7ead5523cf1b9458ad453a707ef920a856d82432af3b46c4fdf3"
+    },
+    {
+      "path": ".tmp/quarantine-final-deploy-2026-10-15/deployment/spazzapan-verification.json",
+      "bytes": 1861,
+      "sha256": "830b78c9d8c5188dcbcd549d6117a0769edef53ec6b3eafa1743d90b3f33f494"
+    },
+    {
+      "path": ".tmp/quarantine-final-deploy-2026-10-15/deployment/weather-regression-verification.json",
+      "bytes": 1120,
+      "sha256": "abe0ccf6dc6d69b1d4dd05f943ad0ce9779cda1e4e68ed5ebb88b208d263da3d"
+    },
+    {
+      "path": ".tmp/quarantine-final-deploy-2026-10-15/events-2a2a5f10-build-context.tar.gz",
+      "bytes": 2044474,
+      "sha256": "da05cde7dd7b45ebe969aa7da426d47cf7b5f816e8ca403634b02d5b2b9e7706"
+    },
+    {
+      "path": ".tmp/quarantine-final-deploy-2026-10-15/events-2a2a5f10-source.zip",
+      "bytes": 102176263,
+      "sha256": "dea830607d78a211f4feadaea0925cc9dbd2471877f20da9a050b4662539b9c7"
+    },
+    {
+      "path": ".tmp/quarantine-final-deploy-2026-10-15/inspect_cloud.py",
+      "bytes": 2161,
+      "sha256": "d370f094e23604278434b9103b659a0c8ebc4f65b6feb18703fc860c9bc8df05"
+    },
+    {
+      "path": ".tmp/quarantine-final-deploy-2026-10-15/job-before.json",
+      "bytes": 3108,
+      "sha256": "346ebbd60dd1a7ed41574f9fcfffcb9f80e5af2af456c379d14eb2ca5c6da0a1"
+    },
+    {
+      "path": ".tmp/quarantine-final-deploy-2026-10-15/prepare_candidate.py",
+      "bytes": 3122,
+      "sha256": "0e0bfb862045e8458e4d4ae24ba46371ec41524e53bff7a940e6b1410c727b4c"
+    },
+    {
+      "path": ".tmp/quarantine-final-deploy-2026-10-15/scheduler-before.json",
+      "bytes": 1081,
+      "sha256": "8a9377511cc7ed6e9ffe746e3fe5378fb2c8f4e2dbe49690229f8f2b273ca215"
+    },
+    {
+      "path": ".tmp/quarantine-final-deploy-2026-10-15/service-before.json",
+      "bytes": 4490,
+      "sha256": "aefa5b02448c19cb7a5380add33bf6eaae3248f987d92a35c7d576516ed3516d"
+    },
+    {
+      "path": ".tmp/quarantine-final-deploy-2026-10-15/validate_record.py",
+      "bytes": 939,
+      "sha256": "f1f10fafbda0c28f949032f2680910dbd8c8fd76648bc1f527a8065b50c542e4"
+    },
+    {
+      "path": ".tmp/quarantine-final-deploy-2026-10-15/verify_compatibility.py",
+      "bytes": 3462,
+      "sha256": "66cdf26470d44482828fad0e0efdd69363e89f2ccae7429f602551704def3e5b"
+    },
+    {
+      "path": ".tmp/quarantine-final-deploy-2026-10-15/verify_image.py",
+      "bytes": 2074,
+      "sha256": "06e9db8732b9134c150b86c452f4d24de0af9ffb65284e13152f2ee40ada7f9a"
+    },
+    {
+      "path": ".tmp/quarantine-final-deploy-2026-10-15/verify_recoveries.py",
+      "bytes": 7287,
+      "sha256": "f35319120cf2dcbb0f61e4b4e02756e6389584ea7eb1bc920bad6e9116723f4b"
+    },
+    {
+      "path": ".tmp/quarantine-final-deploy-2026-10-15/verify_spazzapan.py",
+      "bytes": 3092,
+      "sha256": "adfad7c59e9a0d4f23b370c9ec583f33ce2a4a529f95695cffeddcb07771f66f"
+    },
+    {
+      "path": ".tmp/quarantine-final-deploy-2026-10-15/verify_weather.py",
+      "bytes": 1584,
+      "sha256": "7142fe5c32e33aeb4bf45f67fda0ab52ec9c703cf3f22a244b801c29d8791e71"
+    }
+  ]
+}

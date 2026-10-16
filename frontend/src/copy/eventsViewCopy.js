@@ -25,6 +25,12 @@ export const EVENTS_VIEW_COPY = {
     emptyTodayTitle: "Nessun evento verificato in zona",
     emptyTitle: "Nessun evento verificato",
     emptyBody: "Mostriamo solo eventi con fonte e data affidabili.",
+    unavailableTitle: "Eventi non disponibili",
+    unavailableBody: "Non riesco ad aggiornare gli eventi. Riprova quando la connessione è disponibile.",
+    degradedTitle: "Catalogo incompleto",
+    degradedBody: "Alcune fonti non sono disponibili o hanno eventi ancora da verificare.",
+    degradedEmptyBody: "Non possiamo confermare l'assenza di eventi in zona: alcune fonti non sono disponibili o sono incomplete.",
+    savedCatalogBody: "Mostro i dati salvati; la disponibilità delle fonti può essere cambiata.",
     fvgOnlyTitle: "Eventi disponibili solo in FVG",
     fvgOnlyBody: "La località attiva è {location}. Gli eventi coprono soltanto il Friuli Venezia Giulia e non vengono associati a località fuori regione.",
   },
@@ -54,6 +60,12 @@ export const EVENTS_VIEW_COPY = {
     emptyTodayTitle: "Nissun eveni verificât in zone",
     emptyTitle: "Nissun eveni verificât",
     emptyBody: "Mostrin dome evenis cun font e date afidabils.",
+    unavailableTitle: "Evenis no disponibii",
+    unavailableBody: "No rivin a inzornâ i evenis. Torne a provâ cuant che la conession e je disponibile.",
+    degradedTitle: "Catalic incomplet",
+    degradedBody: "Cualchi font no je disponibile o e à evenis ancjemò di verificâ.",
+    degradedEmptyBody: "No podìn confermâ che no sedin evenis in zone: cualchi font no je disponibile o e je incomplete.",
+    savedCatalogBody: "O mostri i dâts salvâts; la disponibilitât des fonts e pues jessi cambiade.",
     fvgOnlyTitle: "Evenis disponibii dome in FVG",
     fvgOnlyBody: "La localitât ative e je {location}. I evenis a cuvierzin dome il Friûl Vignesie Julie e no vegnin associâts a localitâts fûr regjon.",
   },
@@ -174,6 +186,18 @@ function getEventsLanguageKey(language) {
 
 export function getEventsViewCopy(language) {
   return EVENTS_VIEW_COPY[language] || EVENTS_VIEW_COPY.it;
+}
+
+export function getDegradedEventsMessage(state, { language = "it", hasItems = false } = {}) {
+  if (state?.catalogHealth?.status !== "degraded") return "";
+  const copy = getEventsViewCopy(language);
+  // Source health remains in the data/cache for diagnostics and eligibility.
+  // Readers see available events, without internal catalogue audit messages.
+  if (!hasItems) return `${copy.unavailableTitle}. ${copy.unavailableBody}`;
+  if (state.fromCache && state.error) {
+    return language === "fur" ? "O mostri i evenis salvâts." : "Mostro gli eventi salvati.";
+  }
+  return "";
 }
 
 export function getEventsDateFallbackLabel(language) {

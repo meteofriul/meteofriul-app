@@ -1,0 +1,65 @@
+{
+  "baseline_commit": "0928e7d6",
+  "as_of_date": "2026-10-15",
+  "runtime_rules_used": true,
+  "input_data_modified": false,
+  "network_used": false,
+  "cloud_writes": false,
+  "before": 1316,
+  "after": 1323,
+  "added_regional_urls": [
+    "https://www.turismofvg.it/eventi/campagna-amica-tour-fvg",
+    "https://www.turismofvg.it/eventi/giangiacomo-feltrinelli-rivoluzione-permanente",
+    "https://www.turismofvg.it/eventi/giro-del-mondo-in-80-libri-nero-come-il-mare-di-charlotta-meconaghy",
+    "https://www.turismofvg.it/eventi/il-volto-della-passione-la-s-sindone-come-specchio-del-vangelo",
+    "https://www.turismofvg.it/eventi/libri-a-merenda",
+    "https://www.turismofvg.it/eventi/samrrimenti-e-rinvenimenti",
+    "https://www.turismofvg.it/eventi/teatro-pasolini-digger"
+  ],
+  "added_sagre_urls": [
+    "https://sagrefvg.it/sagre/san-quirino-pn-50a-sagra-della-madonna-della-salute-duplicate-1/",
+    "https://sagrefvg.it/sagre/tribil-superiore-ud-burnjak-2025-festa-delle-castagne-duplicate-1/"
+  ],
+  "removed_urls": [],
+  "changed_existing_cards": [],
+  "remaining_regional_review": [],
+  "remaining_regional_quarantine": [
+    {
+      "url": "https://www.turismofvg.it/eventi/1976-2026-50-anni-dal-terremoto",
+      "status": "review_required",
+      "reason": "possible_schedule_change"
+    },
+    {
+      "url": "https://www.turismofvg.it/eventi/ciclo-autunnale-dell-associazione-biblioteca-austriaca",
+      "status": "review_required",
+      "reason": "detail_identity_or_schedule_requires_review"
+    },
+    {
+      "url": "https://www.turismofvg.it/eventi/autunno-musicale-2026",
+      "status": "review_required",
+      "reason": "detail_not_resolved"
+    },
+    {
+      "url": "https://www.turismofvg.it/eventi/il-segno-della-memoria",
+      "status": "review_required",
+      "reason": "listed_detail_http_404"
+    },
+    {
+      "url": "https://www.turismofvg.it/eventi/inaugurazione-mostra-una-terra-una-storia-504353",
+      "status": "review_required",
+      "reason": "detail_identity_or_schedule_requires_review"
+    },
+    {
+      "url": "https://www.turismofvg.it/eventi/stagione-teatrale-2026-2027-friuli-1976-voci-dalla-terra",
+      "status": "review_required",
+      "reason": "listed_detail_http_404"
+    },
+    {
+      "url": "https://www.turismofvg.it/eventi/stagione-concertistica-elena-lipizer-2026-2027-latino-mediterraneo-da-bach-a-morricone",
+      "status": "review_required",
+      "reason": "listed_detail_http_404"
+    }
+  ],
+  "note": "Frozen checkpoint replay with 11 readable regional details; not a fresh full collection. Old inspection version deliberately retained.",
+  "candidate_commit": "f39c223cc2f2a0a00c8cf8ca2c105d82c1f33078"
+}

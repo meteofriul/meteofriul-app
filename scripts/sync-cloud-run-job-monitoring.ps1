@@ -3,9 +3,9 @@ param(
     [ValidateSet("Audit", "Apply")]
     [string]$Mode = "Audit",
 
-    [string]$ConfigPath = (
-        Join-Path $PSScriptRoot "cloud-run-job-monitoring-policies.json"
-    ),
+    [string]$ConfigPath,
+
+    [string]$PolicyKey,
 
     [string]$ExpectedAccount = "meteofriul@gmail.com",
 
@@ -14,6 +14,9 @@ param(
 
 $ErrorActionPreference = "Stop"
 Set-StrictMode -Version Latest
+if (-not $ConfigPath) {
+    $ConfigPath = Join-Path $PSScriptRoot "cloud-run-job-monitoring-policies.json"
+}
 
 function Resolve-MonitoringGcloud {
     if ($GcloudPath) {
@@ -136,6 +139,16 @@ function New-DesiredMonitoringPolicy {
                 [string]$Definition.jobName + '" AND severity>=ERROR'
             )
         }
+    } elseif ($conditionType -ceq "job_log_match") {
+        $condition.conditionMatchedLog = [ordered]@{
+            filter = (
+                'resource.type="cloud_run_job" AND ' +
+                'resource.labels.job_name="' +
+                [string]$Definition.jobName + '" AND ' +
+                'jsonPayload.event="' +
+                [string]$Definition.logEvent + '"'
+            )
+        }
     } else {
         throw "monitoring_condition_type_invalid: $conditionType"
     }
@@ -160,7 +173,7 @@ function New-DesiredMonitoringPolicy {
             @("OPENED", "CLOSED")
         } else { @("OPENED") }
     }
-    if ($conditionType -ceq "scheduler_log_failure") {
+    if ($conditionType -in @("scheduler_log_failure", "job_log_match")) {
         $rateLimitSeconds = [int](Get-MonitoringPropertyValue `
             $Definition "notificationRateLimitSeconds" 3600)
         $alertStrategy.notificationRateLimit = [ordered]@{
@@ -330,6 +343,14 @@ $duplicateNames = @(
     $definitions | Group-Object displayName | Where-Object Count -ne 1
 )
 if ($duplicateNames.Count -gt 0) { throw "monitoring_config_duplicate_name" }
+if ($PolicyKey) {
+    $definitions = @($definitions | Where-Object {
+        [string]$_.policyKey -ceq $PolicyKey
+    })
+    if ($definitions.Count -ne 1) {
+        throw "monitoring_policy_key_not_found: $PolicyKey"
+    }
+}
 foreach ($definition in $definitions) {
     if ([string]$definition.policyKey -cnotmatch '^[a-z][a-z0-9-]{0,62}$') {
         throw "monitoring_policy_key_invalid"
@@ -356,16 +377,20 @@ foreach ($definition in $definitions) {
         if ($duration -lt 60 -or $duration % 60 -ne 0) {
             throw "monitoring_success_window_duration_invalid"
         }
-    } elseif ($conditionType -ceq "scheduler_log_failure") {
+    } elseif ($conditionType -in @("scheduler_log_failure", "job_log_match")) {
         $rateLimit = [int](Get-MonitoringPropertyValue `
             $definition "notificationRateLimitSeconds" 3600)
         if ($rateLimit -lt 300 -or $rateLimit % 60 -ne 0) {
             throw "monitoring_notification_rate_limit_invalid"
         }
+        if ($conditionType -ceq "job_log_match" -and
+            [string]$definition.logEvent -cnotmatch '^[a-z][a-z0-9_]{0,62}$') {
+            throw "monitoring_log_event_invalid"
+        }
     } else {
         throw "monitoring_condition_type_invalid: $conditionType"
     }
-    if ($conditionType -cne "scheduler_log_failure") {
+    if ($conditionType -notin @("scheduler_log_failure", "job_log_match")) {
         $alignment = [int]$definition.alignmentPeriodSeconds
         if (
             $alignment -lt 60 -or $alignment -gt 90000 -or

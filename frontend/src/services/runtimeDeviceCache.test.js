@@ -57,6 +57,8 @@ describe("runtime device cache", () => {
       [getEventsCacheKey(location, FULL_EVENTS_LIMIT)]: "{}",
       [getEventsCacheKey(location, HOME_EVENTS_LIMIT)]: "{}",
       "eventsCache:v12:roma|istat|058091:100": "{}",
+      [getEventsCacheKey({ city: "Tolmezzo" }, FULL_EVENTS_LIMIT)]: "{}",
+      "eventsCache:v13:pilot-programmes-v2:udine|city|city:100": "{}",
       [LIVE_COMMUNITY_CACHE_KEY]: "{}",
       [LIVE_WEBCAM_CACHE_KEY]: "{}",
       "bulletinLocalConditionsCache:v1:pordenone|city|city": "{}",
@@ -77,7 +79,7 @@ describe("runtime device cache", () => {
     const result = await clearRuntimeDeviceCaches(location, { storage });
 
     expect(result.ok).toBe(true);
-    expect(result.storage.removed).toBe(17);
+    expect(result.storage.removed).toBe(19);
     expect(storage.removeItem).toHaveBeenCalledWith(getWeatherCacheKey(location));
     expect(storage.removeItem).toHaveBeenCalledWith(getEventsCacheKey(location, FULL_EVENTS_LIMIT));
     expect(storage.removeItem).toHaveBeenCalledWith(getEventsCacheKey(location, HOME_EVENTS_LIMIT));

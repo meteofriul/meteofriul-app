@@ -75,7 +75,7 @@ describe("pilot settings CSS", () => {
     expect(refreshSurface).toContain("width: 36px");
     expect(ruleFrom(css, ".mf-settings-identity__refresh:active::before"))
       .toContain("transform: scale(0.94)");
-    expect(stat).toContain("background: #f8fafc");
+    expect(stat).toContain("background: transparent");
     expect(stat).toContain("color: #475569");
     expect(statValue).toContain("color: #0369a1");
     expect(statValue).toContain("font-size: 0.74rem");

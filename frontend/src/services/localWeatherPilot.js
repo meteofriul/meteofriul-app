@@ -1,4 +1,5 @@
 import { isAndroidCapacitorRuntime } from "./apiConfig";
+import { ANDROID_LOOPBACK_ONLY_BUILD } from "./localOnlyBuild";
 
 const LOOPBACK_HOSTS = new Set(["127.0.0.1", "localhost", "[::1]", "::1"]);
 const DEV_LOCAL_WEATHER_PILOT_MODE = "local-pilot";
@@ -9,7 +10,7 @@ const DEV_LOCAL_WEATHER_PILOT_MODES = new Set([
 ]);
 const ANDROID_LOCAL_WEATHER_PILOT_MODE = "android-local-pilot";
 const CANONICAL_UTC_SECONDS = /^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}Z$/u;
-export const PRODUCTION_NATIONAL_WEATHER_API_BASE = "https://meteofriul-national-weather-49007668366.europe-west1.run.app";
+export const PRODUCTION_NATIONAL_WEATHER_API_BASE = ANDROID_LOOPBACK_ONLY_BUILD ? "" : "https://meteofriul-national-weather-49007668366.europe-west1.run.app";
 
 export function resolveLocalWeatherPilot({
   androidBuildFlag,

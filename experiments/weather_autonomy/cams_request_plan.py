@@ -322,7 +322,9 @@ def _validate_catalogue(catalogue, run_date):
         if start <= run_date <= end:
             covered = True
     if not covered:
-        raise PublicMetadataUnavailable("Requested CAMS date is outside catalogue coverage")
+        error = PublicMetadataUnavailable("Requested CAMS date is outside catalogue coverage")
+        attach_error_fields(error, reason_code="catalogue_date_unavailable", run_date=run_date)
+        raise error
 
     links = catalogue.get("links")
     if not isinstance(links, list):
@@ -383,7 +385,9 @@ def _validate_form(form, run_date, area):
     if minimum > maximum:
         raise PublicMetadataError("Public form date range is inverted")
     if not minimum <= run_date <= maximum:
-        raise PublicMetadataUnavailable("Requested CAMS date is outside the public form")
+        error = PublicMetadataUnavailable("Requested CAMS date is outside the public form")
+        attach_error_fields(error, reason_code="form_date_unavailable", run_date=run_date)
+        raise error
 
     area_field = named.get("area")
     if not isinstance(area_field, dict) or area_field.get("type") != "GeographicExtentWidget":
@@ -479,27 +483,37 @@ def _validate_constraints(constraints, run_date, *, metadata_sha256=None):
         # A constraint row describes selectable values, not a mandatory request
         # containing every listed value.  The live ADS row can therefore expose
         # all surface models while our explicit request selects only ensemble.
-        # Accept the row only when every requested singleton/set is selectable;
+        # Accept only rows selecting every requested singleton and some variables;
         # the eventual plan still emits the exact narrow 28x97 request below.
         requested_subset_is_selectable = (
             {"ensemble"} <= set(row["model"])
             and {"0"} <= set(row["level"])
             and {"forecast"} <= set(row["type"])
             and {"00:00"} <= set(row["time"])
-            and set(EXPECTED_VARIABLE_IDS) <= set(row["variable"])
+            and bool(set(EXPECTED_VARIABLE_IDS) & set(row["variable"]))
         )
         if requested_subset_is_selectable:
             compatible.append(row)
             diagnostic["compatible_rows"] += 1
-    if len(compatible) != 1:
-        reason = ("constraints_multiple_compatible_rows" if len(compatible) > 1 else
+    # ADS may partition air and pollen into disjoint variable rows. Each row
+    # must independently select the same model/date/level/time/type and all
+    # 97 leads; a union of unrelated dimensions must never imply availability.
+    covered = set()
+    overlapping = False
+    for row in compatible:
+        requested_variables = set(row["variable"]) & set(EXPECTED_VARIABLE_IDS)
+        overlapping |= bool(covered & requested_variables)
+        covered.update(requested_variables)
+    if overlapping or covered != set(EXPECTED_VARIABLE_IDS):
+        reason = ("constraints_multiple_compatible_rows" if overlapping else
                   "constraints_no_date_rows" if diagnostic["date_rows"] == 0 else
                   "constraints_no_compatible_rows")
         raise failed(PublicMetadataUnavailable(
-            "CAMS constraints do not contain one unambiguous surface ensemble row"
+            "CAMS constraints do not contain unambiguous complete surface ensemble coverage"
         ), reason)
-    leads = compatible[0]["leadtime_hour"]
-    available_requested_leads = set(leads) & set(EXPECTED_LEADS)
+    available_requested_leads = set(EXPECTED_LEADS)
+    for row in compatible:
+        available_requested_leads.intersection_update(row["leadtime_hour"])
     numeric = [int(value) for value in available_requested_leads if value.isdigit()]
     maximum = max(numeric) if numeric else None
     diagnostic.update(leadcount=len(available_requested_leads), maxlead=maximum,
@@ -512,7 +526,7 @@ def _validate_constraints(constraints, run_date, *, metadata_sha256=None):
     emit("weather_public_metadata_validation", **diagnostic,
          status="passed", reason_code="constraints_validated", validation_status="passed")
     return {
-        "date": list(compatible[0]["date"]),
+        "date": list(compatible[0]["date"]) if len(compatible) == 1 else [run_date],
         "model": ["ensemble"],
         "level": ["0"],
         "type": ["forecast"],

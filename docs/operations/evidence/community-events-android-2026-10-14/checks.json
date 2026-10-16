@@ -1,0 +1,110 @@
+{
+  "date": "2026-10-14",
+  "candidate": "92eb93378f1ed7f3580cc19d5ada6fc5461d640f",
+  "main_unchanged": "5a68de5dc1607105f921d4d2b731170f1a8a0446",
+  "events_candidate": "f7fe8e9696f5b61a54fda27617ec99834993f8b4",
+  "automated": {
+    "frontend_unique_pass": 229,
+    "backend_unique_pass": 220,
+    "release_guards_pass": 9,
+    "android_localpilot_guards_pass": 7,
+    "canonical_cleanliness": "PASS",
+    "r8_contracts": "PASS",
+    "gradle_tasks_success": 170,
+    "new_app_deprecated_system_bar_setters": 0
+  },
+  "phone": {
+    "model": "SM-A525F",
+    "android": "14",
+    "api": 34,
+    "resolution": "1080x2400",
+    "density": 420,
+    "webview": "155.0.8059.43",
+    "navigation": "three buttons",
+    "theme_app": "system",
+    "theme_system": "dark",
+    "install_method": "adb install -r, explicitly authorized",
+    "installed_apk_sha256": "a2150c82f6774b8bc70bad939c028a0f5c72cab2f4cf9bbae1b0f69b08a5432c",
+    "packages": {
+      "com.meteofriul.app": {
+        "before": [
+          "versionCode=300031 minSdk=24 targetSdk=36",
+          "versionName=0.1.14",
+          "lastUpdateTime=2026-10-12 18:08:56"
+        ],
+        "after": [
+          "versionCode=300031 minSdk=24 targetSdk=36",
+          "versionName=0.1.14",
+          "lastUpdateTime=2026-10-12 18:08:56"
+        ],
+        "unchanged": true
+      },
+      "com.meteofriul.app.tester": {
+        "before": [
+          "versionCode=300031 minSdk=24 targetSdk=36",
+          "versionName=0.1.14-tester",
+          "lastUpdateTime=2026-10-12 16:46:26"
+        ],
+        "after": [
+          "versionCode=300031 minSdk=24 targetSdk=36",
+          "versionName=0.1.14-tester",
+          "lastUpdateTime=2026-10-12 16:46:26"
+        ],
+        "unchanged": true
+      },
+      "com.meteofriul.app.localpilot": {
+        "before": [
+          "versionCode=300031 minSdk=24 targetSdk=36",
+          "versionName=0.1.14-local-pilot",
+          "lastUpdateTime=2026-10-13 21:51:40"
+        ],
+        "after": [
+          "versionCode=300031 minSdk=24 targetSdk=36",
+          "versionName=0.1.14-local-pilot",
+          "lastUpdateTime=2026-10-14 19:40:29"
+        ],
+        "unchanged": false
+      }
+    },
+    "profile_after_update": {
+      "sent": 1,
+      "confirmed": 1,
+      "points": 1
+    },
+    "profile_after_new_report": {
+      "sent": 2,
+      "confirmed": 1,
+      "points": 1
+    },
+    "profile_after_external_confirmation_and_reopen": {
+      "sent": 2,
+      "confirmed": 2,
+      "points": 2
+    }
+  },
+  "crash_check": {
+    "api35-crash.txt": {
+      "method": "last 100 lines of crash buffer, not a complete crash/ANR audit",
+      "test_package_found": false,
+      "other_log_entries_present": true
+    },
+    "api36-crash.txt": {
+      "method": "last 100 lines of crash buffer, not a complete crash/ANR audit",
+      "test_package_found": false,
+      "other_log_entries_present": false
+    },
+    "phone-crash-local.txt": {
+      "method": "last 100 lines of crash buffer, not a complete crash/ANR audit",
+      "test_package_found": false,
+      "other_log_entries_present": true
+    }
+  },
+  "production_ready": false,
+  "open": [
+    "Android 15 light-system three-button contrast FAIL",
+    "Full Android runtime matrix incomplete",
+    "Minified runtime not tested",
+    "Azalea and Spazzapan rejected by same-day Events collection",
+    "CI remote not run; no GitHub push"
+  ]
+}

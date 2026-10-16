@@ -3,13 +3,17 @@ param(
     [Parameter(Mandatory = $true)]
     [string]$ApiBase,
     [string]$WeatherTestNow,
+    [switch]$Minified,
     [switch]$WeatherCloud,
-    [switch]$CommunityPilot
+    [switch]$CommunityPilot,
+    [switch]$EventsLocal,
+    [switch]$CamsContinuity
 )
 
 Set-StrictMode -Version Latest
 $ErrorActionPreference = "Stop"
 if ($WeatherCloud -and $WeatherTestNow) { throw "La pilota cloud richiede l'orario reale, senza WeatherTestNow." }
+if ($EventsLocal -and (-not $CommunityPilot -or $WeatherCloud)) { throw "EventsLocal richiede CommunityPilot locale." }
 
 $workspaceRoot = [IO.Path]::GetFullPath((Split-Path -Parent $PSScriptRoot))
 $frontendRoot = Join-Path $workspaceRoot "frontend"
@@ -49,6 +53,17 @@ function Get-NormalizedTaggedApiBase([string]$Value) {
 }
 
 $normalizedApiBase = Get-NormalizedTaggedApiBase $ApiBase
+# Reject retired tags before producing an APK. Check the same origin as WebView.
+foreach ($endpoint in @('/healthz', '/weather/official-alerts')) {
+    $response = Invoke-WebRequest -Uri ($normalizedApiBase + $endpoint) -Headers @{Origin='https://localhost'} -TimeoutSec 30
+    if ($response.StatusCode -ne 200 -or
+        $response.Headers['Content-Type'] -notmatch 'application/json' -or
+        $response.Headers['Access-Control-Allow-Origin'] -cne 'https://localhost') {
+        throw "Android TEST API preflight failed: $endpoint"
+    }
+}
+& node (Join-Path $frontendRoot 'scripts/carto-basemap-guard.mjs') --mode android-local-pilot
+if ($LASTEXITCODE -ne 0) { throw 'Android TEST CARTO configuration is missing or invalid.' }
 $normalizedWeatherTestNow = ([string]$WeatherTestNow).Trim()
 if ($normalizedWeatherTestNow) {
     $parsedWeatherTestNow = [datetimeoffset]::MinValue
@@ -79,7 +94,7 @@ if (-not (Test-Path -LiteralPath $androidSdk -PathType Container)) {
 
 # Refuse a pilot APK whose launcher diverges from the user-approved image.
 # Read-only check: never regenerate assets as a side effect of a build.
-& (Join-Path $PSScriptRoot 'package-pilot-launcher-layers.ps1') -CheckOnly
+& (Join-Path $PSScriptRoot 'package-pilot-launcher-layers.ps1') -CheckOnly -TestOrange
 
 $buildDirectory = [IO.Path]::GetFullPath((Join-Path $env:TEMP (
     "meteofriul-android-local-pilot-" + [Guid]::NewGuid().ToString("N")
@@ -96,12 +111,15 @@ $guardMarker = -join ((1..32) | ForEach-Object { '{0:x2}' -f (Get-Random -Maximu
 $managedEnvironment = @(
     "VITE_API_BASE",
     "VITE_ANDROID_API_BASE",
+    "VITE_CAMS_CONTINUITY_ENABLED",
     "VITE_LOCAL_WEATHER_PILOT",
     "VITE_LOCAL_WEATHER_PILOT_NOW",
     "VITE_LOCAL_WEATHER_NATIONAL_ENABLED",
     "VITE_LOCAL_WEATHER_NATIONAL_API_BASE",
+    "ORG_GRADLE_PROJECT_METEO_LOCAL_PILOT_MINIFIED",
     "METEO_PILOT_WEATHER_CLOUD",
     "METEO_PILOT_COMMUNITY_LOCAL",
+    "METEO_PILOT_EVENTS_LOCAL",
     "VITE_LOCAL_COMMUNITY_PILOT_ENABLED",
     "VITE_LOCAL_COMMUNITY_PILOT_API_BASE",
     "METEO_ANDROID_LOCAL_PILOT_GUARD_MARKER",
@@ -123,8 +141,13 @@ try {
     Remove-Item Env:VITE_LOCAL_WEATHER_NATIONAL_API_BASE -ErrorAction SilentlyContinue
     Remove-Item Env:METEO_PLAY_RELEASE_GUARD_MARKER -ErrorAction SilentlyContinue
     $env:VITE_ANDROID_API_BASE = $normalizedApiBase
+    # The current public reader supports the original 30h contract. The 36h
+    # extension is opt-in only when its hash-bound sidecar is published.
+    $env:VITE_CAMS_CONTINUITY_ENABLED = if ($CamsContinuity) { '1' } else { '0' }
+    $env:ORG_GRADLE_PROJECT_METEO_LOCAL_PILOT_MINIFIED = if ($Minified) { "true" } else { "false" }
     $env:METEO_PILOT_WEATHER_CLOUD = if ($WeatherCloud) { "1" } else { "0" }
     $env:METEO_PILOT_COMMUNITY_LOCAL = if ($CommunityPilot) { "1" } else { "0" }
+    $env:METEO_PILOT_EVENTS_LOCAL = if ($EventsLocal) { "1" } else { "0" }
     Remove-Item Env:VITE_LOCAL_COMMUNITY_PILOT_ENABLED -ErrorAction SilentlyContinue
     Remove-Item Env:VITE_LOCAL_COMMUNITY_PILOT_API_BASE -ErrorAction SilentlyContinue
     if ($normalizedWeatherTestNow) {
@@ -163,6 +186,9 @@ try {
             --outDir $buildDirectory `
             --emptyOutDir
         if ($LASTEXITCODE -ne 0) { throw "Android local-pilot Web build failed." }
+
+        & node (Join-Path $frontendRoot 'scripts/carto-basemap-guard.mjs') --mode android-local-pilot --build-dir $buildDirectory
+        if ($LASTEXITCODE -ne 0) { throw 'Android TEST CARTO bundle guard failed.' }
 
         & node $guardScript `
             --build-dir $buildDirectory `
@@ -227,8 +253,17 @@ $packageLine = $badging | Select-Object -First 1
 if ($packageLine -notmatch "package: name='com\.meteofriul\.app\.localpilot'") {
     throw "Android local-pilot package identity is not isolated."
 }
-if (-not ($badging | Select-String -SimpleMatch "application-debuggable")) {
-    throw "Android local-pilot APK is not debuggable."
+$apkDebuggable = [bool]($badging | Select-String -SimpleMatch "application-debuggable")
+if ($apkDebuggable -eq $Minified.IsPresent) {
+    throw "Android local-pilot APK debug mode differs from the requested optimization mode."
+}
+if ($Minified) {
+    foreach ($artifactName in @('mapping.txt', 'configuration.txt', 'resources.txt')) {
+        $artifactPath = Join-Path $androidRoot "app/build/outputs/mapping/localPilot/$artifactName"
+        if (-not (Test-Path -LiteralPath $artifactPath) -or (Get-Item -LiteralPath $artifactPath).Length -eq 0) {
+            throw "Minified TEST artifact is missing: $artifactName"
+        }
+    }
 }
 
 Add-Type -AssemblyName System.IO.Compression.FileSystem
@@ -259,13 +294,18 @@ $apkSha256 = (Get-FileHash -LiteralPath $apk -Algorithm SHA256).Hash.ToLowerInva
     ApiBase = $normalizedApiBase
     Apk = $apk
     ApkSha256 = $apkSha256
+    Minified = $Minified.IsPresent
+    Debuggable = $apkDebuggable
     ApplicationId = "com.meteofriul.app.localpilot"
+    EventsApiBase = if ($EventsLocal) { "http://127.0.0.1:8784/api (catalogo candidato locale, adb reverse tcp:8784 tcp:8784)" } else { "https://meteofriul-events-49007668366.europe-west1.run.app/api" }
     LocalWeatherApiBase = if ($WeatherCloud) { "https://meteofriul-weather-49007668366.europe-west1.run.app" } else { "http://127.0.0.1:8781" }
     NationalWeatherApiBase = if ($WeatherCloud) { "https://meteofriul-national-weather-49007668366.europe-west1.run.app" } else { "http://127.0.0.1:8782" }
     CommunityApiBase = if ($CommunityPilot) { if ($WeatherCloud) { "https://meteofriul-community-49007668366.europe-west1.run.app/api (servizio ufficiale; le scritture richiedono App Check)" } else { "http://127.0.0.1:8783/api (SQLite locale, adb reverse tcp:8783 tcp:8783)" } } else { $null }
     WeatherTestNow = if ($normalizedWeatherTestNow) { $normalizedWeatherTestNow } else { $null }
     NextStep = if ($WeatherCloud) {
         "Installa solo il package localpilot; il meteo usa HTTPS senza adb reverse."
+    } elseif ($EventsLocal) {
+        "Per la TEST usa adb reverse delle porte 8781, 8782, 8783 e 8784. Installa solo il package localpilot dopo autorizzazione."
     } elseif ($CommunityPilot) {
         "Collega il telefono, esegui adb reverse tcp:8781 tcp:8781, adb reverse tcp:8782 tcp:8782 e adb reverse tcp:8783 tcp:8783, poi installa questo APK."
     } else {
