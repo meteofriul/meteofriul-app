@@ -20,6 +20,7 @@ from app.repositories.pilot_community_cloud import (
 )
 from app.repositories.pilot_community_sqlite import PilotSQLiteCommunityRepository
 from tests import test_pilot_community_sqlite as sqlite_tests
+from tests import test_community_cloud_compatibility as compatibility_tests
 
 
 class FakeSnapshot:
@@ -147,6 +148,56 @@ class CloudFixtures:
     service = sqlite_tests.PilotCommunitySQLiteTests.service
     create_command = sqlite_tests.PilotCommunitySQLiteTests.create_command
     update_command = sqlite_tests.PilotCommunitySQLiteTests.update_command
+
+
+class CommunityCompatibilityCloudTests(unittest.TestCase):
+    """Run real protocol services through immutable snapshots and pointer CAS."""
+
+    def setUp(self):
+        self.flow = compatibility_tests.CommunityCloudCompatibilityTests()
+        self.flow.setUp()
+        self.cloud = FakeCloud()
+        PilotCloudCommunityRepository.seed(firestore_client=self.cloud, storage_client=self.cloud,
+                                          state=PilotMemoryCommunityRepository()._snapshot_state())
+        self.repositories = []
+        self.addCleanup(lambda: [repo.close() for repo in self.repositories])
+        self.reconnect()
+
+    def reconnect(self):
+        repo = PilotCloudCommunityRepository(firestore_client=self.cloud, storage_client=self.cloud)
+        self.repositories.append(repo)
+        self.flow.connect(repo)
+
+    def test_restart_preserves_mixed_protocol_awards_history_and_downgrade_protection(self):
+        old = self.flow.create()
+        self.flow.vote(old)
+        self.flow.now += 180
+        upgraded = self.flow.create(kind="wind", new=True)
+        self.flow.vote(upgraded, new=True)
+        self.reconnect()
+        self.assertEqual(2, self.flow.reputation()["points"])
+        self.assertEqual(2, self.flow.reputation()["total_reports"])
+        self.flow.vote(upgraded, expected=426)
+        self.flow.post("reports", self.flow.create_command("author", "hail"), expected=426)
+        rows = self.flow.post("history", {"client_id": "author", "istat_code": "093033"}, new=True)["reports"]
+        self.assertEqual({old["report"]["id"], upgraded["report"]["id"]}, {row["id"] for row in rows})
+
+    def test_uncertain_upgrade_commit_reconciles_without_a_second_submission_or_point(self):
+        old = self.flow.create()
+        self.flow.vote(old)
+        self.flow.now += 180
+        command = self.flow.create_command("author", "wind")
+        # _charge_request commits once before the actual report transaction.
+        self.cloud.fail_after_commit_on_update = self.cloud.updates + 2
+        self.flow.post("reports", command, new=True, expected=503)
+        self.cloud.fail_after_commit_on_update = None
+        self.reconnect()
+        replay = self.flow.post("reports", command, new=True)
+        self.assertTrue(replay["idempotent_replay"])
+        self.assertEqual(2, self.flow.reputation()["total_reports"])
+        self.assertEqual(1, self.flow.reputation()["points"])
+        self.flow.vote(replay, new=True)
+        self.assertEqual(2, self.flow.reputation()["points"])
 
 
 class PilotCommunityCloudRepositoryTests(CloudFixtures, unittest.TestCase):

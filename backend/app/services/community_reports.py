@@ -266,20 +266,7 @@ class CommunityReportsService(PilotCommunityService):
         with self.repository.transaction():
             now = self.now()
             self._check_rate("confirm", CONFIRM_GLOBAL_WINDOW_LIMIT, CONFIRM_GLOBAL_WINDOW_SECONDS)
-            members, _ = self.repository.list_group_reports(group_id, now)
-            members = [item for item in members if not item.get("moderation_hidden")]
-            if not members or self.repository.get_group_moderation(group_id, now).get("hidden"):
-                raise CommunityServiceError(404, {"code": "community_observation_not_active", "message": "Segnalazione non più attiva."})
-            if set(command.report_ids) != {item["id"] for item in members}:
-                raise CommunityServiceError(409, {"code": "community_observation_changed", "message": "Le osservazioni sono cambiate. Aggiorna la mappa prima di votare."})
-            owner = self._client_key("community-report", command.client_id)
-            self._require_source_allowed(owner, now)
-            if any(item["owner_key"] == owner for item in members):
-                raise CommunityServiceError(403, {"code": "community_self_confirmation_not_allowed", "message": "Non puoi confermare la tua osservazione."})
-            resolved = self.resolve_location(PilotCommunityResolve(
-                lat=command.lat, lon=command.lon, accuracy_m=command.accuracy_m, age_ms=command.age_ms))
-            if members[0]["istat_code"] not in {item["istatCode"] for item in resolved["nearbyPlaces"]}:
-                raise CommunityServiceError(403, {"code": "community_vote_location_mismatch", "message": "La posizione non è compatibile con il Comune della segnalazione."})
+            members = self._confirmation_members(group_id, command, now)
             state = self.repository.get_confirmation(group_id)
             votes = state.setdefault("votes", {})
             voter = self._client_key("community-report-confirmation", command.client_id)
@@ -303,6 +290,26 @@ class CommunityReportsService(PilotCommunityService):
                 confirmations=ConfirmationCounts(yes=state.get("yes", 0), no=state.get("no", 0)),
                 group=group, source=CommunitySource(id="community_report_confirmations",
                 type="crowd_signal", verified=False, storage=self.repository.storage_kind))
+
+    def _confirmation_members(self, group_id, command, now):
+        """Check the observed content and location inside the caller's transaction."""
+        if command.lat is None or command.lon is None:
+            raise CommunityServiceError(400, {"code": "community_fresh_gps_required", "message": "Rileva la posizione per votare."})
+        members, _ = self.repository.list_group_reports(group_id, now)
+        members = [item for item in members if not item.get("moderation_hidden")]
+        if not members or self.repository.get_group_moderation(group_id, now).get("hidden"):
+            raise CommunityServiceError(404, {"code": "community_observation_not_active", "message": "Segnalazione non più attiva."})
+        if set(command.report_ids) != {item["id"] for item in members}:
+            raise CommunityServiceError(409, {"code": "community_observation_changed", "message": "Le osservazioni sono cambiate. Aggiorna la mappa prima di votare."})
+        owner = self._client_key("community-report", command.client_id)
+        self._require_source_allowed(owner, now)
+        if any(item["owner_key"] == owner for item in members):
+            raise CommunityServiceError(403, {"code": "community_self_confirmation_not_allowed", "message": "Non puoi confermare la tua osservazione."})
+        resolved = self.resolve_location(PilotCommunityResolve(
+            lat=command.lat, lon=command.lon, accuracy_m=command.accuracy_m, age_ms=command.age_ms))
+        if members[0]["istat_code"] not in {item["istatCode"] for item in resolved["nearbyPlaces"]}:
+            raise CommunityServiceError(403, {"code": "community_vote_location_mismatch", "message": "La posizione non è compatibile con il Comune della segnalazione."})
+        return members
 
     @staticmethod
     def _reputation_rank(points):

@@ -1,8 +1,7 @@
-"""Private, enrolled-device Community service for the separate pilot project.
+"""Community Cloud API: public App Check or private enrolled-device mode.
 
-No shared Firebase app, published application, or self-registration endpoint.
-The bearer is provisioned into the pilot's Android no-backup directory, never
-compiled into an APK. Its server-side digest is bound to the existing client ID.
+Public deployments retain the published client's unversioned contract during
+the v3 rollout. Both protocols use the same atomic repository and auth checks.
 """
 from __future__ import annotations
 
@@ -11,6 +10,7 @@ from datetime import datetime, timezone
 import hashlib
 import hmac
 import json
+import logging
 import os
 import re
 import threading
@@ -29,6 +29,10 @@ from app.contracts.live import (
 )
 from app.repositories.community import CommunityRepositoryUnavailable
 from app.services.community_reports import CommunityReportsService, CommunityReportVote, CommunityHistoryQuery
+from app.services.community_compatibility import (
+    CloudCommunityReportsService, LegacyCommunityService, RULES_HEADER,
+    LEGACY_RULES_VERSION, RULES_VERSION, require_app_update,
+)
 from app.services.community import CommunityServiceError
 from app.services.pilot_community import (
     PilotCommunityObservationUpdate, PilotCommunityReportCorrection,
@@ -88,7 +92,8 @@ class IngressBudget:
     """Bound reads/auth work as well as writes; business ledgers stay durable.
 
     This extra per-instance limiter is not the durable anti-abuse ledger. Cloud
-    Run is additionally deployed at max one instance and low concurrency.
+    Run may scale across instances; the repository transaction protects the
+    shared business ledgers independently of this per-instance ingress limit.
     """
     def __init__(self, clock=time.monotonic):
         self.clock = clock
@@ -129,16 +134,30 @@ def _error(status, code, message, *, origin=None):
                         headers=headers)
 
 
-def create_app(*, service, installations=None, budget=None, public_mode=False,
-               app_check_verifier=None, allowed_app_ids=frozenset()) -> FastAPI:
+def create_app(*, service, legacy_service=None, installations=None, budget=None, public_mode=False,
+               app_check_verifier=None, allowed_app_ids=frozenset(), v3_writes_enabled=True) -> FastAPI:
     app = FastAPI(title="Meteo Friul private Community pilot", docs_url=None,
                   redoc_url=None, openapi_url=None)
     limiter = budget or IngressBudget()
     allowed_origins = PUBLIC_ORIGINS if public_mode else frozenset({"https://localhost"})
     app.add_middleware(CORSMiddleware, allow_origins=sorted(allowed_origins),
                        allow_methods=["GET", "POST", "PATCH", "DELETE", "OPTIONS"],
-                       allow_headers=["content-type", "authorization", INSTALLATION_HEADER, APP_CHECK_HEADER],
-                       expose_headers=["retry-after"], allow_credentials=False)
+                       allow_headers=["content-type", "authorization", INSTALLATION_HEADER, APP_CHECK_HEADER, RULES_HEADER],
+                       expose_headers=["retry-after", RULES_HEADER], allow_credentials=False)
+
+    def selected_service(request):
+        if legacy_service is not None and request.headers.get(RULES_HEADER) != RULES_VERSION:
+            return legacy_service
+        return service
+
+    def writable_service(request):
+        active = selected_service(request)
+        if active is service and not v3_writes_enabled:
+            raise CommunityServiceError(503, {
+                "code": "community_v3_rollout_pending",
+                "message": "Le nuove segnalazioni non sono ancora disponibili. Riprova più tardi.",
+            })
+        return active
 
     @app.middleware("http")
     async def isolation(request: Request, call_next):
@@ -151,6 +170,8 @@ def create_app(*, service, installations=None, budget=None, public_mode=False,
             return reject(403, "pilot_origin_rejected", "Origine non autorizzata.")
         if request.method == "OPTIONS":
             return await call_next(request)
+        if request.headers.get(RULES_HEADER, "") not in {"", LEGACY_RULES_VERSION, RULES_VERSION}:
+            return reject(426, "community_protocol_unsupported", "Aggiorna Meteo Friûl per usare le segnalazioni.")
         if request.url.path == "/api/community/health" and request.method == "GET":
             return await call_next(request)
         if not limiter.accept("ingress", 240):
@@ -222,6 +243,7 @@ def create_app(*, service, installations=None, budget=None, public_mode=False,
         response = await call_next(request)
         response.headers["Cache-Control"] = "no-store"
         response.headers["X-Meteo-Community"] = "cloud-public-v2" if public_mode else "cloud-private"
+        response.headers[RULES_HEADER] = LEGACY_RULES_VERSION if selected_service(request) is legacy_service else RULES_VERSION
         return response
 
     @app.exception_handler(CommunityServiceError)
@@ -232,6 +254,16 @@ def create_app(*, service, installations=None, budget=None, public_mode=False,
 
     @app.exception_handler(CommunityRepositoryUnavailable)
     async def storage_error(_request, _exception):
+        # Exceptions can carry private snapshot paths or payload fragments.
+        # Log only class names, never bodies, coordinates, identities or tokens.
+        causes, seen, current = [], set(), _exception
+        while current is not None and id(current) not in seen and len(causes) < 5:
+            seen.add(id(current))
+            causes.append(type(current).__name__)
+            current = current.__cause__
+        logging.getLogger(__name__).error(json.dumps({
+            "event": "community_storage_unavailable", "cause_types": causes,
+        }))
         return _error(503, "community_storage_unavailable", "Il servizio segnalazioni non è disponibile. Riprova tra poco.")
 
     @app.exception_handler(RequestValidationError)
@@ -246,58 +278,65 @@ def create_app(*, service, installations=None, budget=None, public_mode=False,
     def health():
         return {"ok": True, "kind": "meteofriul.community.cloud.v2", "project": PILOT_PROJECT,
                 "storage": service.repository.storage_kind, "scope": "IT", "published": public_mode,
-                "enrollment_required": not public_mode, "app_check": public_mode}
+                "enrollment_required": not public_mode, "app_check": public_mode,
+                "default_rules": LEGACY_RULES_VERSION if legacy_service is not None else RULES_VERSION,
+                "v3_writes_enabled": v3_writes_enabled,
+                "supported_rules": [LEGACY_RULES_VERSION, RULES_VERSION] if legacy_service is not None else [RULES_VERSION]}
 
     @app.get("/api/community/reports")
-    def reports(istat_code: str = Query(pattern=r"^\d{6}$")):
-        return service.get_scoped_reports(istat_code=istat_code)
+    def reports(request: Request, istat_code: str = Query(pattern=r"^\d{6}$")):
+        return selected_service(request).get_scoped_reports(istat_code=istat_code)
 
     @app.post("/api/community/reports/query")
-    def reports_by_coordinates(command: ReportQuery):
-        return service.get_scoped_reports(**command.model_dump())
+    def reports_by_coordinates(request: Request, command: ReportQuery):
+        return selected_service(request).get_scoped_reports(**command.model_dump())
 
     @app.post("/api/community/history")
-    def history(command: CommunityHistoryQuery):
-        return service.get_history(command)
+    def history(request: Request, command: CommunityHistoryQuery):
+        active = selected_service(request)
+        if active is legacy_service:
+            require_app_update()
+        return active.get_history(command)
 
     @app.post("/api/community/resolve")
-    def resolve(command: PilotCommunityResolve):
-        return service.resolve_location(command)
+    def resolve(request: Request, command: PilotCommunityResolve):
+        return selected_service(request).resolve_location(command)
 
     @app.post("/api/community/reports")
-    def create(command: PilotCommunityReportCreate):
-        return service.create_report(command, client_host="enrolled-cloud-pilot")
+    def create(request: Request, command: PilotCommunityReportCreate):
+        return writable_service(request).create_report(command, client_host="enrolled-cloud-pilot")
 
     @app.patch("/api/community/reports/{report_id}")
-    def update(report_id: str, command: PilotCommunityObservationUpdate):
-        return service.update_observation(report_id, command, client_host="enrolled-cloud-pilot")
+    def update(request: Request, report_id: str, command: PilotCommunityObservationUpdate):
+        return writable_service(request).update_observation(report_id, command, client_host="enrolled-cloud-pilot")
 
     @app.post("/api/community/reports/{report_id}/correction")
-    def correct(report_id: str, command: PilotCommunityReportCorrection):
-        return service.correct_observation(report_id, command, client_host="enrolled-cloud-pilot")
+    def correct(request: Request, report_id: str, command: PilotCommunityReportCorrection):
+        return writable_service(request).correct_observation(report_id, command, client_host="enrolled-cloud-pilot")
 
     @app.post("/api/community/operations/{operation_id}")
-    def operation(operation_id: str, command: PilotOperation):
-        return service.operation_status(operation_id, command)
+    def operation(request: Request, operation_id: str, command: PilotOperation):
+        return selected_service(request).operation_status(operation_id, command)
 
     @app.delete("/api/community/reports/{report_id}")
-    def withdraw(report_id: str, command: PilotCommunityReportDelete):
-        return service.delete_report(report_id, command, client_host="enrolled-cloud-pilot")
+    def withdraw(request: Request, report_id: str, command: PilotCommunityReportDelete):
+        return writable_service(request).delete_report(report_id, command, client_host="enrolled-cloud-pilot")
 
     @app.post("/api/community/reports/{group_id}/confirmation")
-    def confirm(group_id: str, command: CommunityReportVote):
-        result = service.confirm_report(group_id, command, client_host="enrolled-cloud-pilot")
+    def confirm(request: Request, group_id: str, command: CommunityReportVote):
+        active = writable_service(request)
+        result = active.confirm_report(group_id, command, client_host="enrolled-cloud-pilot")
         payload = result.model_dump(mode="json", exclude_none=True)
-        payload["group"] = service.public_payload(result.group)
+        payload["group"] = active.public_payload(result.group)
         return payload
 
     @app.post("/api/community/reports/{group_id}/flags")
-    def flag(group_id: str, command: CommunityReportFlagCreate):
-        return service.flag_report_group(group_id, command, client_host="enrolled-cloud-pilot")
+    def flag(request: Request, group_id: str, command: CommunityReportFlagCreate):
+        return selected_service(request).flag_report_group(group_id, command, client_host="enrolled-cloud-pilot")
 
     @app.post("/api/community/reputation")
-    def reputation(command: CommunityReputationRequest):
-        return service.get_reputation(command, client_host="enrolled-cloud-pilot")
+    def reputation(request: Request, command: CommunityReputationRequest):
+        return selected_service(request).get_reputation(command, client_host="enrolled-cloud-pilot")
 
     return app
 
@@ -328,7 +367,10 @@ def create_cloud_app():
                 app = firebase_admin.initialize_app()
             return app_check.verify_token(token, app=app)
 
-        return create_app(service=CommunityReportsService(geography=geography, repository=repository),
-                          public_mode=True, app_check_verifier=verify, allowed_app_ids=allowed)
+        legacy = LegacyCommunityService(geography=geography, repository=repository)
+        current = CloudCommunityReportsService(legacy_service=legacy, geography=geography, repository=repository)
+        return create_app(service=current, legacy_service=legacy,
+                          public_mode=True, app_check_verifier=verify, allowed_app_ids=allowed,
+                          v3_writes_enabled=os.environ.get("COMMUNITY_V3_WRITES_ENABLED", "0") == "1")
     return create_app(service=CommunityReportsService(geography=geography, repository=repository),
                       installations=EnrolledInstallations(firestore_client))
