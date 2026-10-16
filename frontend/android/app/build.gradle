@@ -135,7 +135,7 @@ android {
             initWith debug
             matchingFallbacks = ['debug']
             applicationIdSuffix '.localpilot'
-            versionNameSuffix '-local-pilot-pr1.2'
+            versionNameSuffix '-local-pilot-pr1.3'
             debuggable true
             buildConfigField 'boolean', 'LOCAL_WEATHER_PILOT', 'true'
             if (meteoLocalPilotMinified) {
@@ -144,7 +144,7 @@ android {
                 shrinkResources true
                 proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
                 ndk { debugSymbolLevel 'SYMBOL_TABLE' }
-                versionNameSuffix '-local-pilot-r8-pr1.2'
+                versionNameSuffix '-local-pilot-r8-pr1.3'
             }
         }
     }

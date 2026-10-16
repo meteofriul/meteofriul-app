@@ -123,3 +123,31 @@ del dispositivo. Chiave CARTO oscurata nei log; seriale e alias esclusi da quest
 documento. Nessun deploy, AAB, Play, merge, reinstallazione, cancellazione dati
 o pubblicazione di segnalazioni. Servizi locali riavviati conservando SQLite;
 telefono lasciato sulla Home con Udine, Italiano e tema Sistema.
+
+## Revisione TEST PR1.3: bollettino al primo avvio
+
+La successiva revisione `0.1.14-local-pilot-r8-pr1.3` corregge nel codice
+PR1-TEST-01: la richiesta include latitudine e longitudine solo quando entrambe
+sono numeri finiti o stringhe numeriche non vuote. Valori mancanti, vuoti o di
+altro tipo non vengono convertiti in zero; gli zeri esplicitamente forniti
+restano validi. Senza coordinate il bollettino usa il nome del comune, come
+previsto dall'API. La località iniziale e le preferenze non vengono modificate.
+
+Il test con `DEFAULT_APP_LOCATION` e richiesta di aggiornamento forzato
+riproduceva il rifiuto del bollettino prima della correzione e ora passa.
+I controlli coprono anche una sola coordinata mancante, valori non validi,
+coordinate numeriche/stringa e zero esplicito. Suite mirata bollettino,
+località, Home, allerte e contratti UI Android: **120 PASS in 13 file**.
+Il modulo corretto, eseguito con la vera località iniziale contro l'API attiva,
+ha prodotto `weather/forecast?city=Udine`, HTTP 200, CORS valido e contenuto
+ufficiale presente, senza modificare la località. Evidenza locale:
+`build/android-test/2026-10-16/PR1-pr1.3-first-run-live.json`.
+
+La nuova APK mantiene package, firma TEST, version code, branding arancione
+e servizi della PR1.2. Preparazione e verifiche dell'artefatto non autorizzano
+l'installazione: è richiesta una nuova conferma esplicita del proprietario.
+I dati della TEST installata e l'app ufficiale non vengono toccati dalla build.
+Il difetto è corretto e verificato nel modulo/API; il collaudo del nuovo APK
+sul telefono rimane **NON VERIFICATO** fino all'installazione autorizzata.
+La matrice Android 15/16, gesti, tablet e multi-window e i limiti Firebase
+rimangono quelli dichiarati sopra; nessuna promozione a main, AAB, Play o deploy.
