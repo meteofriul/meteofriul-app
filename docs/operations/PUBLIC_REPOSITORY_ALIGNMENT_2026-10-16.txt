@@ -69,3 +69,15 @@ La candidata aggiorna la PR #1. La promozione a main resta soggetta alla
 regola AGENTS.md sui test pertinenti e sui controlli su dispositivo reale.
 I test locali e la CI non sostituiscono il collaudo Android richiesto.
 L'aggiornamento del codice non aggiorna automaticamente le app installate.
+
+Verifica successiva allo scanner GitHub
+GitHub ha segnalato una chiave Maps nella fixture HTML Eventi. La stessa
+chiave e pubblicata nell iframe della pagina TurismoFVG della Biblioteca
+Austriaca, verificata con risposta HTTP 200, senza usare la chiave. Non e
+una credenziale privata Meteo Friul. Le sei occorrenze sono state sostituite
+con PUBLIC_SOURCE_MAPS_KEY_REMOVED, poiche non servono ai test. Il valore
+non e riportato nei rapporti. La segnalazione resta classificata e non e
+stata chiusa manualmente; i commit precedenti conservano la configurazione
+pubblica della fonte. La chiave Firebase pubblica gia verificata resta
+invariata. Il presente controllo non dichiara assenti tutti gli avvisi GitHub.
+I 15 test che consumano la fixture bonificata sono stati ripetuti: tutti passati.
