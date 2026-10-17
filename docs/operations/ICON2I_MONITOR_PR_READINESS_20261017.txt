@@ -1,0 +1,87 @@
+MONITOR ICON-2I — STATO PER LA PR DEL 17 OTTOBRE 2026
+
+Ambito
+PR del solo monitor verso main ac3ed0ec4e69c6fbd10531de759c1486c8e989a0.
+Il commit che aggiunge questo verbale identifica il candidato consolidato.
+Il ramo codex/icon2i-monitor-timeout e stato riallineato alla main pubblica
+pulita conservando un backup privato del ramo precedente. Nessuna vecchia
+cronologia privata importata. La sintesi serale resta su un ramo separato.
+
+Correzione e identita runtime
+Le attese del socket non limitavano la durata totale di una risposta lenta.
+Il trasporto interrompibile impone scadenze assolute, include credenziali e
+cancellazione e limita i documenti; la raccolta termina entro il secondo 75
+per riservare 35 secondi a stato e telemetria nel budget applicativo di 110 s.
+Timeout pubblico/API configurabili 15/5 s; Cloud Run resta a 120 s.
+Le scritture non confermate non producono zeri o heartbeat di successo fittizi.
+
+Il contenuto runtime coincide byte per byte con la sorgente distribuita
+5d8aaf38ee465d64a980de79e03dc77cf5d55e62 e con quella collaudata nel container.
+La preparazione della PR aggiunge CI e riferimenti documentali, non runtime.
+Immagine distribuita:
+sha256:69b85d3014f35b78af15967fed72f76483d29b113234924216c418635b805d16.
+Dispatcher privato: meteofriul-icon2i-freshness-dispatch-00004-cv5.
+La PR non distribuisce nuovamente le correzioni e non modifica le policy cloud.
+
+Collaudi
+Ripetuti sul ramo riallineato: 82 test Windows/Python 3.13 in 28,681 secondi,
+nessun test saltato. Inclusi socket sintetici, scadenze, cancellazione,
+limiti byte, budget di raccolta, persistenza/telemetria e semantica PromQL.
+Promtool 3.5.0 Windows verificato con SHA256:
+626674d5a047f2fd862a9c8678596b890a6824c76d31c33bcd6af93c1e3429d9.
+Controllo di pulizia del workspace superato.
+
+Il primo collaudo Linux e documentato in
+ICON2I_MONITOR_LINUX_COLLAUDO_20261017.txt e relativo JSON: 82 test e sette
+scenari aggiuntivi, picco 138,39 MiB e scenario estremo di 112,886 s container.
+Il successivo collaudo prima del deploy e documentato nella sezione
+VERIFICHE PRE-DEPLOY di JOB_FIX_DEPLOYMENT_20261017.txt: stessa suite e scenari,
+picco 135,81 MiB, scenario estremo di 109,957 s applicativi e 112,753 s container.
+Entrambi hanno usato rete esterna disabilitata, 1 CPU/512 MiB (dispatcher 256),
+senza OOM o processi figli residui e con durata totale entro 120 s.
+Il collaudo di pressione del container non e stato ripetuto durante la
+preparazione della PR; le misure sopra provengono dalle due esecuzioni distinte.
+
+CI
+Il job backend esistente ora installa promtool 3.5.0 Linux amd64 da GitHub
+Prometheus, verifica il digest dell'archivio e avvia tutti i test del monitor.
+SHA256 archivio: e811827af26d822afb09a4f28314f61b618b12cff5369835a67f674d8b46f39a.
+La presenza dell'eseguibile e obbligatoria prima della suite: la prova PromQL
+non puo essere saltata per assenza di PROMTOOL. Il cloud resta disabilitato.
+Trigger, permessi, concorrenza e numero dei job invariati; nessun cron aggiunto.
+Si aggiungono il download verificato (circa 121 MB) e la suite al solo job
+backend gia previsto. Non si avvia una seconda CI manuale. L'esito sul commit
+pubblicato va verificato nei check della PR; non sostituisce il collaudo cloud.
+
+Cicli naturali e allarmi
+Il primo slot verificato sulla nuova immagine e il 17/10 alle 15:10 UTC,
+17:10 Europe/Rome; durata 52,540 s, stato e sei metriche riconciliati.
+Nuova lettura del 17/10 alle 17:41 UTC: verificati anche gli slot 16:40,
+17:10 e 17:40 UTC (18:40, 19:10, 19:40 italiane), rispettivamente in
+58,612 / 50,334 / 52,456 s. Per ogni slot: Scheduler, nuova revisione/digest,
+entrambi i prodotti sani e sei metriche 0/0/1 ai timestamp dei log; stato
+persistito corrente coerente con l'ultimo slot. Nessun job avviato a mano.
+Verifica integrale: 21 policy attive, 11 Scheduler abilitati, IAM invariati.
+Restano attive anche le due vecchie policy ICON senza successi.
+
+Accettazione residua
+Le due settimane di osservazione partono dal 17/10 alle 15:10 UTC e terminano
+non prima del 31/10 alle 15:10 UTC (16:10 Europe/Rome dopo il cambio ora).
+Restano console mobile/promemoria, incidenti reali 90/120 minuti e grazia
+durante una pubblicazione reale. Un ciclo verde non certifica l'assenza di
+falsi positivi futuri. Il nuovo timeout non accelera il cold start del reader.
+La riserva consente tentativi di scrittura; non garantisce la disponibilita
+di Storage/Monitoring. La policy di assenza telemetria resta necessaria.
+
+Separazione dalla sintesi serale
+Il ramo codex/evening-delivery-reliability non e incluso. Il suo primo ciclo
+naturale dopo la correzione e previsto il 17/10 alle 20:45 Europe/Rome; la
+relativa verifica e il verbale saranno separati. Il rapporto storico comune
+JOB_FIX_DEPLOYMENT_20261017.txt documenta il deploy gia avvenuto di entrambi:
+non autorizza ne implica l'integrazione della sintesi serale in questa PR.
+
+Conservazione
+Main, ramo serale e altri rami preservati; chiavi, dati e artefatti locali
+non trasferiti nel repository. Nessun merge in main, build Android, AAB,
+operazione Play, deploy o ritiro policy durante la preparazione della PR.
+Le evidenze grezze, i log e il backup rimangono privati.

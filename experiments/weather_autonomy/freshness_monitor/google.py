@@ -9,7 +9,8 @@ import json
 import os
 import re
 from urllib.parse import quote
-from .collect import BudgetExpired, Object, Unavailable
+from .collect import Object, Unavailable
+from .http import Transport, PUBLIC_DOCUMENT_BYTES, PUBLIC_TIMEOUT_SECONDS, API_TIMEOUT_SECONDS
 from .contracts import MAX_DOCUMENT, ROOTS
 from .core import METRIC_PREFIX, METRICS, PRODUCTS, instant, stamp
 from .runner import Conflict, Rejected
@@ -27,45 +28,19 @@ def json_bytes(value):
     return json.dumps(value, sort_keys=True, separators=(",", ":"), allow_nan=False).encode()
 
 
-class Transport:
-    def __init__(self, session):
-        self.session = session
-
-    def request(self, method, url, budget, *, maximum=MAX_DOCUMENT, **kwargs):
-        budget.remaining()
-        try:
-            response = self.session.request(method, url, timeout=budget.remaining(5),
-                                            allow_redirects=False, stream=True, **kwargs)
-            with response:
-                chunks, count = [], 0
-                for chunk in response.iter_content(65536):
-                    budget.remaining()
-                    count += len(chunk)
-                    if count > maximum:
-                        raise ValueError("response byte limit exceeded")
-                    chunks.append(chunk)
-                return response.status_code, b"".join(chunks), dict(response.headers)
-        except (BudgetExpired, ValueError):
-            raise
-        except Exception as error:
-            # Avoid leaking auth/header/url details from underlying exceptions.
-            raise Unavailable("transport request failed: " + type(error).__name__, transient=True) from None
-
-    def read_json(self, url, budget, **kwargs):
-        status, body, _ = self.request("GET", url, budget, **kwargs)
-        if status not in (200,):
-            raise Unavailable("Google read HTTP " + str(status), transient=status in (408, 429) or status >= 500)
-        return json.loads(body)
-
-
 class PublicHTTP:
-    def __init__(self, transport):
-        self.transport = transport
+    def __init__(self, transport, *, timeout_seconds=PUBLIC_TIMEOUT_SECONDS):
+        self.transport, self.timeout_seconds = transport, timeout_seconds
 
     def get(self, url, headers, budget):
-        status, body, response_headers = self.transport.request("GET", url, budget, headers=headers)
+        # Absolute request deadline, including startup and cancellation. Public
+        # pointer/resolver JSON gets a smaller byte cap than manifests and lists.
+        status, body, response_headers = self.transport.request(
+            "GET", url, budget, headers=headers, timeout_seconds=self.timeout_seconds,
+            maximum=PUBLIC_DOCUMENT_BYTES)
         if status in (408, 429) or status >= 500:
-            raise Unavailable("reader HTTP " + str(status), transient=True)
+            raise Unavailable("reader HTTP " + str(status), transient=True,
+                              failure_kind="http_status")
         # Only safe, useful headers are logged.
         allowed = {"cache-control", "age", "etag", "content-type", "content-encoding", "vary"}
         return {"status": status, "body": body,
@@ -216,14 +191,9 @@ class Metrics:
             raise Unavailable("Monitoring write outcome uncertain")
 
 
-def transports():
-    """No credentials, token refresh or network until cloud mode is opted into."""
+def transports(*, api_timeout_seconds=API_TIMEOUT_SECONDS):
+    """Lazy isolated sessions: all credential discovery/network has a deadline."""
     if os.environ.get("ICON2I_MONITOR_ALLOW_CLOUD") != "1":
         raise ValueError("cloud mode disabled")
-    import google.auth
-    from google.auth.transport.requests import AuthorizedSession
-    import requests
-    credentials, _ = google.auth.default(scopes=["https://www.googleapis.com/auth/cloud-platform"])
-    authorized = AuthorizedSession(credentials, max_refresh_attempts=0, refresh_timeout=5)
-    # Public readers must never receive Google credentials.
-    return Transport(authorized), Transport(requests.Session())
+    return (Transport("authorized", timeout_seconds=api_timeout_seconds),
+            Transport("public", timeout_seconds=api_timeout_seconds))

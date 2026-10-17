@@ -1,0 +1,8 @@
+# Test-only layer over the unmodified production image. Never pushed.
+FROM prom/prometheus:v3.5.0 AS prometheus
+FROM icon2i-monitor-runtime:local
+COPY --from=prometheus /bin/promtool /usr/local/bin/promtool
+COPY . /validation/
+ENV PROMTOOL=/usr/local/bin/promtool
+ENTRYPOINT ["python", "/validation/experiments/weather_autonomy/monitor_container_probe.py"]
+CMD ["unit"]

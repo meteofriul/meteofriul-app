@@ -1,0 +1,59 @@
+MONITOR ICON-2I: CORREZIONE LOCALE DEL TIMEOUT - 17 OTTOBRE 2026
+
+NOTA DI LETTURA: questo verbale descrive la fase indicata nella sua data.
+Per lo stato successivo di deploy, cicli naturali e PR del solo monitor vedere
+ICON2I_MONITOR_PR_READINESS_20261017.txt.
+
+AGGIORNAMENTO SUCCESSIVO DEL 17 OTTOBRE 2026
+Il solo aumento a 15 secondi non interrompeva le risposte a goccia di Requests.
+Il rapporto ICON2I_MONITOR_DEADLINE_FIX_20261017.txt documenta la correzione
+successiva della scadenza assoluta, dei limiti in byte e della riserva per
+stato/metriche. Questo rapporto conserva i risultati della prima correzione;
+non costituisce da solo un via libera al deploy.
+
+Ramo: codex/icon2i-monitor-timeout
+Base: main 565aa8165bf36c7d47cb97491e1ecb1219e89ab7.
+Il commit che introduce questo rapporto identifica il candidato.
+Stato: verificato localmente, non pubblicato e non distribuito.
+
+EVIDENZA
+Nei sette controlli FVG del 16 ottobre con http_pointer_unreadable,
+il servizio avviava una nuova istanza. I log server riportavano HTTP 200,
+con primo tentativo di 9,87-11,35 secondi e secondo di 5,06-6,72 secondi.
+Il client aveva un timeout per richiesta di 5 secondi. Il controllo successivo
+era completo e regolare. La diagnosi di timeout deriva dalla correlazione
+fra tempi, avvii e codice: i vecchi log non conservavano il sottotipo di errore.
+
+CORREZIONE
+Timeout richieste pubbliche FVG/nazionali portato da 5 a 15 secondi.
+Le API Google conservano 5 secondi. Restano invariati un solo nuovo tentativo,
+il budget di 35 secondi per prodotto, 75 per raccolta, 110 per runner e 120
+per job. Il timeout di requests e' un limite di attesa della rete; i controlli
+del budget esistente restano attivi prima/durante/dopo la lettura.
+La diagnostica aggiunge il numero di tentativi e categorie fisse:
+timeout, connection, transport, http_status, unavailable.
+Nessuna stringa grezza dell'eccezione, URL o credenziale viene aggiunta ai log.
+Errori persistenti restano critici; budget esaurito resta indeterminato e non
+certifica un recupero. Nessuna variazione di soglie, notifiche o pianificazioni.
+
+VALIDAZIONE
+Windows, Python 3.13, chiamate di rete simulate; nessun job cloud avviato.
+python -B -m unittest discover -s experiments/weather_autonomy -p 'test_freshness_monitor*.py'
+Esito finale: 71 test, tutti riusciti, nessuno saltato.
+PROMTOOL impostato sull'eseguibile locale verificato con SHA-256:
+626674d5a047f2fd862a9c8678596b890a6824c76d31c33bcd6af93c1e3429d9.
+Include quattro scenari PromQL con 17 valutazioni: apertura, recupero,
+assenza telemetria e bootstrap. Include cold start di 11,4 secondi,
+due letture nazionali da 12 secondi, timeout persistente, HTTP 403/503,
+errore connessione, budget residuo e limite API Google invariato.
+
+PRODUZIONE E LAVORO RIMANENTE
+Ricontrollo cloud in sola lettura il 17 ottobre alle 12:25:38 UTC:
+21 policy attive, 2 prove sintetiche gia' disabilitate, 11 Scheduler abilitati.
+Configurazione di tutte le policy e degli Scheduler identica all'inizio audit.
+Non sono stati modificati dati meteo, destinatari o traffico di produzione.
+Il codice in produzione e' ancora quello precedente: gli avvisi possono
+continuare finche' questa correzione non viene distribuita separatamente.
+Mancano distribuzione autorizzata e verifica dei successivi cicli cloud,
+incluso avvio a freddo. Le prove locali non certificano questo esito remoto.
+Nessun merge, push, deploy, build Android, AAB o operazione Play eseguiti.

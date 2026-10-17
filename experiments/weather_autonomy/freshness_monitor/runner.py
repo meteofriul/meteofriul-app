@@ -51,13 +51,15 @@ def validate_state(value, product):
 
 
 class Runner:
-    def __init__(self, state, metrics, collector, *, now, budget, emit):
+    def __init__(self, state, metrics, collector, *, now, budget, emit, collection_budget=None):
         self.state, self.metrics, self.collector = state, metrics, collector
         self.now, self.budget, self.emit = now, budget, emit
+        self.collection_budget = collection_budget if collection_budget is not None else budget
 
-    def read(self, product):
-        self.budget.remaining()
-        version, value = self.state.read(product, self.budget)
+    def read(self, product, *, budget=None):
+        current_budget = self.budget if budget is None else budget
+        current_budget.remaining()
+        version, value = self.state.read(product, current_budget)
         validate_state(value, product)
         return version, value
 
@@ -175,7 +177,7 @@ class Runner:
         for product in PRODUCTS:
             try:
                 require_active_slot(planned_slot, self.now())
-                _, old = self.read(product)
+                _, old = self.read(product, budget=self.collection_budget)
                 if not old or slot(old["scheduled_slot_utc"]) < slot(planned_slot):
                     observations[product] = self.collector.collect(product)
             except (Unavailable, BudgetExpired, ValueError) as error:

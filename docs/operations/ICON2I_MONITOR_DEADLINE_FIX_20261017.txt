@@ -1,0 +1,135 @@
+MONITOR ICON-2I: SCADENZA ASSOLUTA E RISERVA TELEMETRIA - 17 OTTOBRE 2026
+
+NOTA DI LETTURA: questo verbale descrive la fase indicata nella sua data.
+Per lo stato successivo di deploy, cicli naturali e PR del solo monitor vedere
+ICON2I_MONITOR_PR_READINESS_20261017.txt.
+
+AGGIORNAMENTO SUCCESSIVO: il collaudo Linux e' documentato in
+ICON2I_MONITOR_LINUX_COLLAUDO_20261017.txt. Le prove locali di questo rapporto
+restano storiche; non e' stato eseguito alcun deploy.
+
+STATO E IDENTITA
+Monitor operativo, accettazione incompleta. Correzioni completate e verificate
+localmente; non distribuite. Ramo codex/icon2i-monitor-timeout, base main
+565aa8165bf36c7d47cb97491e1ecb1219e89ab7. Questo intervento segue il commit
+800c17687ddf1898f763b1e4d8f640c5d2e48f55; il commit che introduce questo rapporto
+identifica il nuovo candidato. Il precedente rapporto
+ICON2I_MONITOR_TIMEOUT_FIX_20261017.txt resta una registrazione storica.
+
+DIFETTO CONFERMATO
+Requests limita l'attesa del socket, non il tempo totale della risposta.
+Una precedente prova locale con corpo lento ha richiesto 0,707 secondi a fronte
+di un budget di 0,25 secondi. I controlli cooperativi prima e dopo una chiamata
+bloccante non bastavano. Se Cloud Run termina il job a 120 secondi, lo slot puo'
+non avere stato o metriche; non diventa automaticamente indeterminato.
+
+I sette episodi FVG correlati agli avvii di nuove istanze restano evidenza di
+latenza reale del reader: primi tentativi 9,87-11,35 secondi. Portare il limite
+del monitor a 15 secondi consente di osservare la risposta ma non accelera l'app.
+Non sono stati cambiati min-instances, costi fissi o configurazioni del reader.
+
+CORREZIONE
+Le risposte sono lette in streaming con blocchi fino a 4096 byte, controllo
+del tempo trascorso e limite sia della dimensione dichiarata sia dei byte
+realmente ricevuti/decompressi: 64 KiB per puntatori e resolver pubblici,
+2 MiB per manifesti, liste, stato e altre risposte Google. Il limite piccolo
+riguarda soltanto questi documenti di controllo, non i payload previsionali.
+
+Il controllo fra blocchi non interrompe da solo attese di DNS, intestazioni,
+credenziali o un singolo blocco lento. Per questo tutte le operazioni di rete
+sono eseguite in un processo figlio interrompibile, riutilizzato in sequenza.
+Il supervisore non esegue richieste ne' inizializzazione delle credenziali.
+Alla scadenza termina il processo e scarta la connessione. Due processi separano
+il trasporto pubblico da quello autenticato. Nessuna nuova dipendenza Python.
+La chiusura del processo ha fino a 0,2 secondi, gia' sottratti al tempo della
+richiesta: non prende tempo dalla riserva di stato e metriche.
+
+La stessa protezione copre metadati e corpi Storage, aggiornamenti condizionali
+dello stato e richieste Monitoring, inclusa la preparazione delle credenziali.
+Nessun retry automatico del trasporto: le letture conservano al massimo un
+ritentativo controllato dal chiamante; POST e scritture dall'esito incerto
+conservano le regole preesistenti di riconciliazione, senza reinvio cieco.
+Il dispatcher chiude il proprio trasporto dopo l'unico tentativo di avvio.
+
+PARAMETRI E BUDGET
+- ICON2I_PUBLIC_HTTP_TIMEOUT_SECONDS: default 15, intervallo 1..15 secondi.
+  Override esplicito: --public-http-timeout-seconds.
+- ICON2I_API_HTTP_TIMEOUT_SECONDS: default 5, intervallo 1..5 secondi.
+  Override esplicito: --api-http-timeout-seconds.
+Le variabili d'ambiente funzionano anche con gli argomenti sovrascritti dal
+dispatcher. Valori non finiti o fuori intervallo sono rifiutati prima delle
+credenziali. I limiti effettivi sono registrati in un evento senza segreti.
+Gli estremi superiori richiedono una nuova revisione del budget per essere alzati.
+
+Tre letture HTTP pubbliche ordinarie fra i due prodotti, ciascuna con un
+ritentativo da 15 secondi, richiederebbero da sole 3 x 2 x 15 = 90 secondi.
+Diagnostica, ricostruzione snapshot e Storage aumenterebbero ulteriormente
+il caso peggiore. Non si promette quindi di completare ogni operazione:
+- budget applicativo 110 secondi, limite Cloud Run 120 secondi invariato;
+- raccolta e letture iniziali dello stato entro il secondo 75 applicativo;
+- massimo 35 secondi per prodotto, sempre limitato dalla scadenza della raccolta;
+- almeno 35 secondi riservati alla fase finale di stato e telemetria;
+- i 10 secondi esterni restano margine di avvio/uscita, da verificare nel container.
+
+All'esaurimento della raccolta si registra l'incertezza, conservando eventuali
+criticita' gia' provate o precedenti. La riserva consente i tentativi di
+persistenza, non garantisce che Storage/Monitoring accettino scritture se sono
+indisponibili. Stato illeggibile/corrotto e persistenza fallita non producono
+zeri o heartbeat fittizi: resta indispensabile la policy di assenza telemetria.
+
+VALIDAZIONE LOCALE
+Windows, Python 3.13. Comando:
+python -B -m unittest discover -s experiments/weather_autonomy -p 'test_freshness_monitor*.py'
+Esito finale: 82 test riusciti, nessuno saltato, 26,580 secondi.
+Promtool locale verificato con SHA-256:
+626674d5a047f2fd862a9c8678596b890a6824c76d31c33bcd6af93c1e3429d9.
+
+Oltre alle regressioni esistenti e alle prove PromQL, socket loopback reali
+verificano risposte a goccia, intestazioni bloccate, cancellazione del processo,
+limiti dichiarati/reali/decompressi, recupero con nuovo processo e POST incerto
+eseguito una volta. Sono coperti anche inizializzazione credenziali bloccata,
+fallimento dell'avvio del processo e letture Storage lente.
+Con stato e metriche in memoria disponibili, il caso di raccolta lenta registra
+tutte e sei le metriche, check_state=3 e check_completed=1 per entrambi i
+prodotti, mantenendo il critical_active=1 precedente del FVG e la riserva.
+Sono verificati anche configurazione ambiente/CLI e chiusura dei trasporti.
+
+Queste prove non sono un collaudo Linux/Cloud Run. Non e' disponibile un runtime
+Docker/WSL utilizzabile nella sessione. Prima del deploy occorre verificare
+l'immagine Linux Python 3.13, UID 65532, avvio/terminazione dei processi, consumo
+di memoria entro 512 MiB per il job e 256 MiB per l'eventuale dispatcher,
+tempi end-to-end e margine rispetto ai 120 secondi. Nessun costo cloud nuovo.
+
+ACCETTAZIONE E PASSI SUCCESSIVI
+Il monitor e' quello di freschezza della specifica, attivato il 16 ottobre
+alle 07:40 UTC. Avvio reale, letture, stato, sei metriche e ricezione delle
+email sintetiche di apertura/chiusura sono documentati nei rapporti di collaudo
+e attivazione del 16 ottobre. L'accettazione completa resta aperta:
+- casi rari di concorrenza, duplicati e riconciliazione coperti localmente;
+- assenza reale delle serie e ordine degli incidenti a 90/120 minuti non collaudati;
+- grazia di transizione durante una pubblicazione reale da misurare;
+- canale console mobile e promemoria da verificare con il titolare;
+- osservazione dei falsi positivi, parametri e costi per 14 giorni da completare.
+
+La nuova finestra di osservazione parte dal primo slot automatico verificato
+dopo il deploy delle correzioni. Registrare anche ora del deploy, digest immagine
+e parametri effettivi. I campioni precedenti restano conservati separatamente
+e non concorrono ai 14 giorni della nuova configurazione.
+
+La correzione separata della sintesi serale resta sul ramo
+codex/evening-delivery-reliability, commit b5f65e7b26097ad7d0141e80348c5323b77ccf1c.
+Distinguere un errore FCM di configurazione da un token disattivato non ripara
+la configurazione: un'eventuale ricorrenza dopo deploy richiedera' diagnosi.
+
+Il titolare ha confermato esplicitamente: solo correzioni e test locali, niente
+deploy o ritiro policy. Un'eventuale autorizzazione futura sara' separata. Le due policy
+ancora attive sono "Meteo Friul - ICON nazionale senza successi" e
+"Meteo Friul - ICON FVG senza successi". La sovrapposizione va rimossa solo dopo
+verifica della copertura sostitutiva; non dimostra che abbiano causato le sette
+coppie di email, associate invece al nuovo monitor.
+
+Ultima verifica cloud in sola lettura: 17 ottobre 12:25:38 UTC, 21 policy attive,
+2 prove sintetiche gia' disabilitate, 11 Scheduler abilitati; configurazioni
+invariate rispetto all'inizio audit. In questo intervento nessun push, merge,
+deploy, ritiro policy, build Android, AAB o operazione Play. Dati, traffico,
+chiavi locali e rami indipendenti preservati.

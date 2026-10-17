@@ -6,9 +6,12 @@ from .core import empty_comparison, instant, stamp
 
 
 class Unavailable(Exception):
-    def __init__(self, reason, *, transient=False):
+    def __init__(self, reason, *, transient=False, failure_kind="unavailable"):
         super().__init__(reason)
         self.transient = transient
+        # Fixed categories only: never put exception text, URLs or tokens in logs.
+        self.failure_kind = (failure_kind if failure_kind in
+            {"timeout", "connection", "transport", "http_status"} else "unavailable")
 
 
 class BudgetExpired(Exception):
@@ -16,14 +19,22 @@ class BudgetExpired(Exception):
 
 
 class Budget:
-    def __init__(self, seconds=75, clock=time.monotonic):
-        self.clock, self.end = clock, clock() + seconds
+    def __init__(self, seconds=75, clock=time.monotonic, *, deadline=None):
+        self.clock = clock
+        self.end = clock() + seconds if deadline is None else deadline
 
     def remaining(self, maximum=5):
         left = self.end - self.clock()
         if left <= 0:
             raise BudgetExpired()
         return min(left, maximum)
+
+    def child(self, seconds, *, reserve=0):
+        now = self.clock()
+        deadline = min(now + seconds, self.end - reserve)
+        if deadline <= now:
+            raise BudgetExpired()
+        return Budget(clock=self.clock, deadline=deadline)
 
 
 @dataclass(frozen=True)
@@ -67,14 +78,16 @@ class Collector:
     def request(self, product, path, entry, *, diagnostic=False, resolver=False):
         request_headers = headers(product, diagnostic=diagnostic, resolver=resolver)
         entry.update({"result": "unreadable", "requested_at": stamp(self.now()),
-                      "headers": request_headers})
+                      "headers": request_headers, "attempts": 0})
+        def fetch():
+            entry["attempts"] += 1
+            return self.http.get(c.BASES[product] + path, request_headers, self.budget)
         try:
-            response = self.call(lambda: self.http.get(
-                c.BASES[product] + path, request_headers, self.budget))
+            response = self.call(fetch)
             entry.update({"status": response["status"], "received_at": stamp(self.now()),
                           "response_headers": response.get("headers", {})})
             if response["status"] != 200:
-                raise Unavailable("HTTP response without a usable body")
+                raise Unavailable("HTTP response without a usable body", failure_kind="http_status")
             value = c.decode(response["body"])
             c.http_identity(product, value, resolver=resolver)
             entry.update({"result": "coherent", "source_run_id":
@@ -84,14 +97,15 @@ class Collector:
         except (ValueError, KeyError, TypeError):
             entry["result"] = "incompatible"
             return None
-        except Unavailable:
+        except Unavailable as error:
             entry["result"] = "unreadable"
+            entry["failure_kind"] = error.failure_kind
             return None
 
     def collect(self, product):
         parent = self.budget
         try:
-            self.budget = Budget(parent.remaining(35), clock=parent.clock)
+            self.budget = parent.child(35)
             return self._collect(product)
         except BudgetExpired:
             return {"complete": False, "indeterminate": True, "critical_causes": [],
