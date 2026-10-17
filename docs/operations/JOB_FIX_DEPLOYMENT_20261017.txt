@@ -1,0 +1,101 @@
+DISTRIBUZIONE CORREZIONI MONITOR E SINTESI SERALE - 17 OTTOBRE 2026
+
+Stato: deploy completato, cicli programmati della nuova versione ancora da verificare.
+Autorizzazione: distribuire le due correzioni e verificare i cicli naturali;
+conservare tutte le policy, incluse le due precedenti senza successi.
+Nessun merge, push Git, build Android, AAB o Play.
+
+ARTEFATTI E DESTINAZIONI
+Progetto meteo-friul, regione europe-west1.
+Monitor: sorgente 5d8aaf38ee465d64a980de79e03dc77cf5d55e62
+(runtime identico a eccf10932e278673565b6db0b6300eccfd227e3e).
+Build: 00722f65-8c75-4eca-a22a-69db4ef1044f
+Immagine: europe-west1-docker.pkg.dev/meteo-friul/meteofriul/icon2i-freshness@sha256:69b85d3014f35b78af15967fed72f76483d29b113234924216c418635b805d16
+Job meteofriul-icon2i-freshness: generazione 2, Ready.
+Dispatcher meteofriul-icon2i-freshness-dispatch: generazione 4, Ready.
+Revisione: meteofriul-icon2i-freshness-dispatch-00004-cv5
+Traffico 100% sulla nuova revisione del dispatcher privato; stesso URL e IAM.
+
+Sintesi serale: patch b5f65e7b26097ad7d0141e80348c5323b77ccf1c.
+Build: d32ca0bf-a838-4297-862c-5b476e3aef23
+Immagine: europe-west1-docker.pkg.dev/meteo-friul/meteofriul/backend@sha256:68ce70252ae27a33a5bbd628984727fc993a9be09295777d945108441bf773c5
+Job meteofriul-evening-forecast: generazione 6, Ready.
+L'immagine deriva esattamente dalla precedente produzione e sostituisce solo:
+app/jobs/send_evening_forecast.py, app/push/fcm.py,
+app/services/evening_forecast_delivery.py, app/services/morning_forecast_delivery.py.
+Il controllo preventivo ha rilevato la sola costante non utilizzata
+DEFAULT_ANDROID_NATIONAL_ALERT_CHANNEL presente nella base Git ma assente
+nel file FCM di produzione: l'overlay conserva questa assenza. Nessun altro
+file o pacchetto dell'immagine di produzione e' stato sostituito.
+I quattro file sono stati confrontati con i rispettivi predecessori prima del build.
+L'archivio privato conserva Dockerfile, file applicati e manifest SHA-256.
+
+VERIFICHE PRE-DEPLOY
+Monitor: 82 test unitari Linux, nessuno saltato, e 7 scenari runtime.
+Container senza rete esterna, 1 CPU, 512 MiB; dispatcher 256 MiB;
+filesystem di sola lettura, utente 65532, nessun privilegio aggiuntivo.
+Picco memoria aggregata del monitor: 135.81 MiB; nessun OOM.
+Scadenza pubblica: 14.816 s;
+scadenza API: 4.808 s.
+Raccolta limitata a 74.814 s;
+riserva residua 35.186 s;
+sei metriche scritte nello scenario di riserva.
+Caso di budget totale esaurito: app 109.957 s,
+container 112.753 s, entro 120 s.
+In quel guasto simulato la persistenza parziale e' dichiarata fallita (exit 1),
+senza falso heartbeat completo. Le sei scritture non sono garantibili se
+Storage o Monitoring restano indisponibili; la policy di assenza resta necessaria.
+Nessun processo figlio residuo negli otto scenari.
+Sintesi serale: 104 test Linux sull'immagine finale, nessuno saltato,
+senza rete, con le stesse dipendenze gia' presenti in produzione.
+Pulizia workspace verificata su entrambi i rami, prima della consegna.
+
+CONFIGURAZIONE E PROTEZIONI CONSERVATE
+Monitor: timeout pubblici/API espliciti 15/5 s, budget app 110 s,
+raccolta 75 s, riserva telemetria 35 s; Cloud Run invariato a 120 s,
+1 CPU, 512 MiB, un task, zero retry automatici.
+Dispatcher invariato a 20 s, 1 CPU, 256 MiB, massimo una istanza.
+Sintesi serale invariata a 300 s, 1 CPU, 512 MiB, zero retry automatici.
+Policy: confronto integrale invariato; 21 attive e 2 test gia' disabilitate.
+Restano attive sia ICON nazionale senza successi sia ICON FVG senza successi.
+Tutti gli 11 Scheduler restano abilitati, con configurazioni invariate.
+Gli IAM dei tre target sono invariati. Nessuna nuova istanza minima o spesa fissa.
+Stati, dati, segreti e destinatari non sono stati cancellati o reimpostati.
+Nessuna esecuzione manuale e nessuna notifica di prova.
+
+CICLI PROGRAMMATI E OSSERVAZIONE
+Scheduler monitor: 10,40 * * * * UTC.
+La corsa delle 14:40 UTC / 16:40 italiane (meteofriul-icon2i-freshness-2wjj2)
+era gia' partita con il VECCHIO digest db0160d88a93 e dispatcher 00003-hhf.
+E' terminata con successo e sei metriche, ma NON verifica la correzione.
+Primo slot utile atteso: 15:10 UTC / 17:10 italiane del 17 ottobre.
+Follow-up una tantum alle 17:15: verifica-monitor-dopo-correzione-scadenze.
+Sintesi serale: 45 20 * * * Europe/Rome; prossimo ciclo 20:45 italiane.
+Follow-up una tantum alle 20:55: verifica-sintesi-serale-e-cicli-monitor.
+Entrambi controllano soltanto; nessun avvio manuale o mutazione cloud.
+Richiedono il PC acceso e l'app desktop in esecuzione.
+Le due settimane di osservazione partono dal primo slot della nuova versione
+verificato, ancora da registrare. Campioni precedenti tenuti separati.
+Non sono conclusi il collaudo mobile della console, promemoria, cicli reali
+90/120 minuti e grazia durante una pubblicazione vera.
+Un ciclo riuscito non dimostra assenza di falsi positivi futuri e il timeout
+non riduce la latenza reale di avvio a freddo del reader.
+Se FCM riporta errori di configurazione, la causa resta da indagare:
+la nuova classificazione non la risolve automaticamente.
+
+TRACCIABILITA' E ROLLBACK
+Configurazioni complete, IAM, log, manifest e archivi sono conservati
+nella cartella privata ignorata .tmp/job-alert-audit-20261017 del workspace.
+Le tre copie sorgente temporanee caricate su Storage per queste build
+sono state eliminate con controllo di generazione; archivi locali preservati.
+Immagini precedenti conservate per rollback, non eseguito:
+monitor sha256:db0160d88a9397ca7789fe62750158dfb424212feb7e9f8abba6bfc1cbd5db80
+dispatcher sha256:d5ac59bfd989b535915bc14eb9cea69188fbee811de7b5d2a24382b14ca8a017
+serale sha256:7af9d579cdc135b1823e226ae99aec7fb3ec93276d5aa0af80910923b363fe04
+Rollback: ripristinare template/env dal backup, non soltanto il tag;
+verificare la versione corrente prima di intervenire. Nessun rollback automatico.
+Un 503 dell'API di deploy del monitor e' stato riconciliato in lettura:
+vecchia generazione ancora presente; il successivo update condizionato da etag
+e' riuscito. Nessun retry di invio FCM o di esecuzione del job e' stato introdotto.
+Rami codex/icon2i-monitor-timeout e codex/evening-delivery-reliability separati;
+main invariato a 565aa8165bf36c7d47cb97491e1ecb1219e89ab7.
