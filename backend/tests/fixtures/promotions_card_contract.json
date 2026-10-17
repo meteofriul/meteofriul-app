@@ -1,0 +1,705 @@
+{
+  "now": "2026-09-26T10:00:00+00:00",
+  "adminState": {
+    "adsEnabled": true,
+    "placementEnabled": {
+      "home": true,
+      "events": true,
+      "discover": true
+    },
+    "placementRotationIntervals": {
+      "discover": 120,
+      "events": 120,
+      "home": 120
+    },
+    "sessionMinutes": 2,
+    "maxAdsPerDay": 2,
+    "maxAdvertiserPerDay": 1,
+    "issuer": {},
+    "campaigns": [
+      {
+        "id": "synthetic-sponsor",
+        "status": "active",
+        "businessName": "Attivita sintetica",
+        "businessAddress": "Indirizzo sintetico 7",
+        "city": "Comune sintetico",
+        "category": "Categoria sintetica",
+        "title": "Titolo sintetico",
+        "description": "Descrizione sintetica",
+        "cardDetails": [
+          "city"
+        ],
+        "ctaLabel": "Scopri",
+        "destinationUrl": "https://example.test/offer",
+        "imageUrl": "https://example.test/creative.webp",
+        "placements": [
+          "home",
+          "events",
+          "discover"
+        ],
+        "placementAssignments": {
+          "home": {
+            "cardNumber": 1,
+            "mode": "rotation"
+          },
+          "events": {
+            "cardNumber": 1,
+            "mode": "rotation"
+          },
+          "discover": {
+            "cardNumber": 1,
+            "mode": "rotation"
+          }
+        },
+        "scheduleMode": "period",
+        "startDate": "2026-09-01",
+        "endDate": "2026-09-30",
+        "maxPerDay": 3,
+        "invoiceNumber": "SYNTHETIC-PRIVATE-INVOICE",
+        "contactEmail": "private-contact@example.test",
+        "internalNotes": "SYNTHETIC-PRIVATE-NOTE"
+      }
+    ]
+  },
+  "cases": [
+    {
+      "name": "legacy-defaults",
+      "legacy014Visible": true,
+      "catalog": {
+        "schemaVersion": 2,
+        "enabled": true,
+        "revision": 1,
+        "generatedAt": "2026-09-26T10:00:00+00:00",
+        "maxAgeSeconds": 300,
+        "timezone": "Europe/Rome",
+        "placements": [
+          "discover",
+          "events",
+          "home"
+        ],
+        "placementRotationIntervals": {
+          "discover": 120,
+          "events": 120,
+          "home": 120
+        },
+        "rotationIntervalSeconds": 120,
+        "maxRotationCampaigns": 5,
+        "dailyCap": 2,
+        "campaigns": [
+          {
+            "id": "synthetic-sponsor",
+            "advertiserId": "cf6c783dae7ff21e8862",
+            "advertiserDailyCap": 1,
+            "campaignDailyCap": 3,
+            "enabled": true,
+            "image": "https://example.test/creative.webp",
+            "location": "Comune sintetico",
+            "businessAddress": "",
+            "category": "",
+            "title": "Attivita sintetica",
+            "headline": "Titolo sintetico",
+            "text": "Descrizione sintetica",
+            "visibleFields": [
+              "businessName",
+              "city",
+              "title",
+              "description"
+            ],
+            "ctaLabel": "Scopri",
+            "url": "https://example.test/offer",
+            "placements": [
+              "home",
+              "events",
+              "discover"
+            ],
+            "placementAssignments": {
+              "home": {
+                "cardNumber": 1,
+                "mode": "rotation"
+              },
+              "events": {
+                "cardNumber": 1,
+                "mode": "rotation"
+              },
+              "discover": {
+                "cardNumber": 1,
+                "mode": "rotation"
+              }
+            },
+            "deliveryMode": "all_selected",
+            "bookingMode": "rotation",
+            "scheduleMode": "period",
+            "activeMonth": "",
+            "startsAt": "2026-09-01",
+            "endsAt": "2026-09-30",
+            "startTime": "",
+            "endTime": "",
+            "activeDates": []
+          }
+        ]
+      }
+    },
+    {
+      "name": "all-selected",
+      "selection": [
+        "businessName",
+        "category",
+        "address",
+        "city",
+        "title",
+        "description"
+      ],
+      "legacy014Visible": true,
+      "catalog": {
+        "schemaVersion": 2,
+        "enabled": true,
+        "revision": 1,
+        "generatedAt": "2026-09-26T10:00:00+00:00",
+        "maxAgeSeconds": 300,
+        "timezone": "Europe/Rome",
+        "placements": [
+          "discover",
+          "events",
+          "home"
+        ],
+        "placementRotationIntervals": {
+          "discover": 120,
+          "events": 120,
+          "home": 120
+        },
+        "rotationIntervalSeconds": 120,
+        "maxRotationCampaigns": 5,
+        "dailyCap": 2,
+        "campaigns": [
+          {
+            "id": "synthetic-sponsor",
+            "advertiserId": "cf6c783dae7ff21e8862",
+            "advertiserDailyCap": 1,
+            "campaignDailyCap": 3,
+            "enabled": true,
+            "image": "https://example.test/creative.webp",
+            "location": "Comune sintetico",
+            "businessAddress": "Indirizzo sintetico 7",
+            "category": "Categoria sintetica",
+            "title": "Attivita sintetica",
+            "headline": "Titolo sintetico",
+            "text": "Descrizione sintetica",
+            "visibleFields": [
+              "businessName",
+              "category",
+              "address",
+              "city",
+              "title",
+              "description"
+            ],
+            "ctaLabel": "Scopri",
+            "url": "https://example.test/offer",
+            "placements": [
+              "home",
+              "events",
+              "discover"
+            ],
+            "placementAssignments": {
+              "home": {
+                "cardNumber": 1,
+                "mode": "rotation"
+              },
+              "events": {
+                "cardNumber": 1,
+                "mode": "rotation"
+              },
+              "discover": {
+                "cardNumber": 1,
+                "mode": "rotation"
+              }
+            },
+            "deliveryMode": "all_selected",
+            "bookingMode": "rotation",
+            "scheduleMode": "period",
+            "activeMonth": "",
+            "startsAt": "2026-09-01",
+            "endsAt": "2026-09-30",
+            "startTime": "",
+            "endTime": "",
+            "activeDates": []
+          }
+        ]
+      }
+    },
+    {
+      "name": "name-and-description",
+      "selection": [
+        "businessName",
+        "description"
+      ],
+      "legacy014Visible": true,
+      "catalog": {
+        "schemaVersion": 2,
+        "enabled": true,
+        "revision": 1,
+        "generatedAt": "2026-09-26T10:00:00+00:00",
+        "maxAgeSeconds": 300,
+        "timezone": "Europe/Rome",
+        "placements": [
+          "discover",
+          "events",
+          "home"
+        ],
+        "placementRotationIntervals": {
+          "discover": 120,
+          "events": 120,
+          "home": 120
+        },
+        "rotationIntervalSeconds": 120,
+        "maxRotationCampaigns": 5,
+        "dailyCap": 2,
+        "campaigns": [
+          {
+            "id": "synthetic-sponsor",
+            "advertiserId": "cf6c783dae7ff21e8862",
+            "advertiserDailyCap": 1,
+            "campaignDailyCap": 3,
+            "enabled": true,
+            "image": "https://example.test/creative.webp",
+            "location": "",
+            "businessAddress": "",
+            "category": "",
+            "title": "Attivita sintetica",
+            "headline": "",
+            "text": "Descrizione sintetica",
+            "visibleFields": [
+              "businessName",
+              "description"
+            ],
+            "ctaLabel": "Scopri",
+            "url": "https://example.test/offer",
+            "placements": [
+              "home",
+              "events",
+              "discover"
+            ],
+            "placementAssignments": {
+              "home": {
+                "cardNumber": 1,
+                "mode": "rotation"
+              },
+              "events": {
+                "cardNumber": 1,
+                "mode": "rotation"
+              },
+              "discover": {
+                "cardNumber": 1,
+                "mode": "rotation"
+              }
+            },
+            "deliveryMode": "all_selected",
+            "bookingMode": "rotation",
+            "scheduleMode": "period",
+            "activeMonth": "",
+            "startsAt": "2026-09-01",
+            "endsAt": "2026-09-30",
+            "startTime": "",
+            "endTime": "",
+            "activeDates": []
+          }
+        ]
+      }
+    },
+    {
+      "name": "hidden-business-name",
+      "selection": [
+        "city",
+        "category",
+        "description"
+      ],
+      "legacy014Visible": false,
+      "catalog": {
+        "schemaVersion": 2,
+        "enabled": true,
+        "revision": 1,
+        "generatedAt": "2026-09-26T10:00:00+00:00",
+        "maxAgeSeconds": 300,
+        "timezone": "Europe/Rome",
+        "placements": [
+          "discover",
+          "events",
+          "home"
+        ],
+        "placementRotationIntervals": {
+          "discover": 120,
+          "events": 120,
+          "home": 120
+        },
+        "rotationIntervalSeconds": 120,
+        "maxRotationCampaigns": 5,
+        "dailyCap": 2,
+        "campaigns": [
+          {
+            "id": "synthetic-sponsor",
+            "advertiserId": "cf6c783dae7ff21e8862",
+            "advertiserDailyCap": 1,
+            "campaignDailyCap": 3,
+            "enabled": true,
+            "image": "https://example.test/creative.webp",
+            "location": "Comune sintetico",
+            "businessAddress": "",
+            "category": "Categoria sintetica",
+            "title": "",
+            "headline": "",
+            "text": "Descrizione sintetica",
+            "visibleFields": [
+              "city",
+              "category",
+              "description"
+            ],
+            "ctaLabel": "Scopri",
+            "url": "https://example.test/offer",
+            "placements": [
+              "home",
+              "events",
+              "discover"
+            ],
+            "placementAssignments": {
+              "home": {
+                "cardNumber": 1,
+                "mode": "rotation"
+              },
+              "events": {
+                "cardNumber": 1,
+                "mode": "rotation"
+              },
+              "discover": {
+                "cardNumber": 1,
+                "mode": "rotation"
+              }
+            },
+            "deliveryMode": "all_selected",
+            "bookingMode": "rotation",
+            "scheduleMode": "period",
+            "activeMonth": "",
+            "startsAt": "2026-09-01",
+            "endsAt": "2026-09-30",
+            "startTime": "",
+            "endTime": "",
+            "activeDates": []
+          }
+        ]
+      }
+    },
+    {
+      "name": "hidden-description",
+      "selection": [
+        "businessName",
+        "city",
+        "title"
+      ],
+      "legacy014Visible": false,
+      "catalog": {
+        "schemaVersion": 2,
+        "enabled": true,
+        "revision": 1,
+        "generatedAt": "2026-09-26T10:00:00+00:00",
+        "maxAgeSeconds": 300,
+        "timezone": "Europe/Rome",
+        "placements": [
+          "discover",
+          "events",
+          "home"
+        ],
+        "placementRotationIntervals": {
+          "discover": 120,
+          "events": 120,
+          "home": 120
+        },
+        "rotationIntervalSeconds": 120,
+        "maxRotationCampaigns": 5,
+        "dailyCap": 2,
+        "campaigns": [
+          {
+            "id": "synthetic-sponsor",
+            "advertiserId": "cf6c783dae7ff21e8862",
+            "advertiserDailyCap": 1,
+            "campaignDailyCap": 3,
+            "enabled": true,
+            "image": "https://example.test/creative.webp",
+            "location": "Comune sintetico",
+            "businessAddress": "",
+            "category": "",
+            "title": "Attivita sintetica",
+            "headline": "Titolo sintetico",
+            "text": "",
+            "visibleFields": [
+              "businessName",
+              "city",
+              "title"
+            ],
+            "ctaLabel": "Scopri",
+            "url": "https://example.test/offer",
+            "placements": [
+              "home",
+              "events",
+              "discover"
+            ],
+            "placementAssignments": {
+              "home": {
+                "cardNumber": 1,
+                "mode": "rotation"
+              },
+              "events": {
+                "cardNumber": 1,
+                "mode": "rotation"
+              },
+              "discover": {
+                "cardNumber": 1,
+                "mode": "rotation"
+              }
+            },
+            "deliveryMode": "all_selected",
+            "bookingMode": "rotation",
+            "scheduleMode": "period",
+            "activeMonth": "",
+            "startsAt": "2026-09-01",
+            "endsAt": "2026-09-30",
+            "startTime": "",
+            "endTime": "",
+            "activeDates": []
+          }
+        ]
+      }
+    },
+    {
+      "name": "headline-only",
+      "selection": [
+        "title"
+      ],
+      "legacy014Visible": false,
+      "catalog": {
+        "schemaVersion": 2,
+        "enabled": true,
+        "revision": 1,
+        "generatedAt": "2026-09-26T10:00:00+00:00",
+        "maxAgeSeconds": 300,
+        "timezone": "Europe/Rome",
+        "placements": [
+          "discover",
+          "events",
+          "home"
+        ],
+        "placementRotationIntervals": {
+          "discover": 120,
+          "events": 120,
+          "home": 120
+        },
+        "rotationIntervalSeconds": 120,
+        "maxRotationCampaigns": 5,
+        "dailyCap": 2,
+        "campaigns": [
+          {
+            "id": "synthetic-sponsor",
+            "advertiserId": "cf6c783dae7ff21e8862",
+            "advertiserDailyCap": 1,
+            "campaignDailyCap": 3,
+            "enabled": true,
+            "image": "https://example.test/creative.webp",
+            "location": "",
+            "businessAddress": "",
+            "category": "",
+            "title": "",
+            "headline": "Titolo sintetico",
+            "text": "",
+            "visibleFields": [
+              "title"
+            ],
+            "ctaLabel": "Scopri",
+            "url": "https://example.test/offer",
+            "placements": [
+              "home",
+              "events",
+              "discover"
+            ],
+            "placementAssignments": {
+              "home": {
+                "cardNumber": 1,
+                "mode": "rotation"
+              },
+              "events": {
+                "cardNumber": 1,
+                "mode": "rotation"
+              },
+              "discover": {
+                "cardNumber": 1,
+                "mode": "rotation"
+              }
+            },
+            "deliveryMode": "all_selected",
+            "bookingMode": "rotation",
+            "scheduleMode": "period",
+            "activeMonth": "",
+            "startsAt": "2026-09-01",
+            "endsAt": "2026-09-30",
+            "startTime": "",
+            "endTime": "",
+            "activeDates": []
+          }
+        ]
+      }
+    },
+    {
+      "name": "details-only",
+      "selection": [
+        "category",
+        "address"
+      ],
+      "legacy014Visible": false,
+      "catalog": {
+        "schemaVersion": 2,
+        "enabled": true,
+        "revision": 1,
+        "generatedAt": "2026-09-26T10:00:00+00:00",
+        "maxAgeSeconds": 300,
+        "timezone": "Europe/Rome",
+        "placements": [
+          "discover",
+          "events",
+          "home"
+        ],
+        "placementRotationIntervals": {
+          "discover": 120,
+          "events": 120,
+          "home": 120
+        },
+        "rotationIntervalSeconds": 120,
+        "maxRotationCampaigns": 5,
+        "dailyCap": 2,
+        "campaigns": [
+          {
+            "id": "synthetic-sponsor",
+            "advertiserId": "cf6c783dae7ff21e8862",
+            "advertiserDailyCap": 1,
+            "campaignDailyCap": 3,
+            "enabled": true,
+            "image": "https://example.test/creative.webp",
+            "location": "",
+            "businessAddress": "Indirizzo sintetico 7",
+            "category": "Categoria sintetica",
+            "title": "",
+            "headline": "",
+            "text": "",
+            "visibleFields": [
+              "category",
+              "address"
+            ],
+            "ctaLabel": "Scopri",
+            "url": "https://example.test/offer",
+            "placements": [
+              "home",
+              "events",
+              "discover"
+            ],
+            "placementAssignments": {
+              "home": {
+                "cardNumber": 1,
+                "mode": "rotation"
+              },
+              "events": {
+                "cardNumber": 1,
+                "mode": "rotation"
+              },
+              "discover": {
+                "cardNumber": 1,
+                "mode": "rotation"
+              }
+            },
+            "deliveryMode": "all_selected",
+            "bookingMode": "rotation",
+            "scheduleMode": "period",
+            "activeMonth": "",
+            "startsAt": "2026-09-01",
+            "endsAt": "2026-09-30",
+            "startTime": "",
+            "endTime": "",
+            "activeDates": []
+          }
+        ]
+      }
+    },
+    {
+      "name": "name-only-empty-hidden-text",
+      "selection": [
+        "businessName"
+      ],
+      "emptyHiddenText": true,
+      "legacy014Visible": false,
+      "catalog": {
+        "schemaVersion": 2,
+        "enabled": true,
+        "revision": 1,
+        "generatedAt": "2026-09-26T10:00:00+00:00",
+        "maxAgeSeconds": 300,
+        "timezone": "Europe/Rome",
+        "placements": [
+          "discover",
+          "events",
+          "home"
+        ],
+        "placementRotationIntervals": {
+          "discover": 120,
+          "events": 120,
+          "home": 120
+        },
+        "rotationIntervalSeconds": 120,
+        "maxRotationCampaigns": 5,
+        "dailyCap": 2,
+        "campaigns": [
+          {
+            "id": "synthetic-sponsor",
+            "advertiserId": "cf6c783dae7ff21e8862",
+            "advertiserDailyCap": 1,
+            "campaignDailyCap": 3,
+            "enabled": true,
+            "image": "https://example.test/creative.webp",
+            "location": "",
+            "businessAddress": "",
+            "category": "",
+            "title": "Attivita sintetica",
+            "headline": "",
+            "text": "",
+            "visibleFields": [
+              "businessName"
+            ],
+            "ctaLabel": "Scopri",
+            "url": "https://example.test/offer",
+            "placements": [
+              "home",
+              "events",
+              "discover"
+            ],
+            "placementAssignments": {
+              "home": {
+                "cardNumber": 1,
+                "mode": "rotation"
+              },
+              "events": {
+                "cardNumber": 1,
+                "mode": "rotation"
+              },
+              "discover": {
+                "cardNumber": 1,
+                "mode": "rotation"
+              }
+            },
+            "deliveryMode": "all_selected",
+            "bookingMode": "rotation",
+            "scheduleMode": "period",
+            "activeMonth": "",
+            "startsAt": "2026-09-01",
+            "endsAt": "2026-09-30",
+            "startTime": "",
+            "endTime": "",
+            "activeDates": []
+          }
+        ]
+      }
+    }
+  ]
+}

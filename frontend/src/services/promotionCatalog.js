@@ -10,6 +10,9 @@ export const PROMOTION_CATALOG_SCHEMA_VERSION = 2;
 export const PROMOTION_ROTATION_INTERVAL_SECONDS = 120;
 export const PROMOTION_MAX_ROTATION_CAMPAIGNS = 5;
 export const PROMOTION_PLACEMENTS = Object.freeze(["home", "events", "discover"]);
+export const PROMOTION_VISIBLE_FIELDS = Object.freeze([
+  "businessName", "category", "address", "city", "title", "description",
+]);
 export const PROMOTION_ROTATION_INTERVAL_OPTIONS = Object.freeze([30, 60, 120, 300]);
 export const PROMOTION_PLACEMENT_ROTATION_INTERVALS = Object.freeze({
   discover: PROMOTION_ROTATION_INTERVAL_SECONDS,
@@ -101,7 +104,26 @@ function normalizeCampaign(value) {
   const advertiserId = String(value.advertiserId || "").trim().slice(0, 120);
   const title = String(value.title || "").trim().slice(0, 80);
   const text = String(value.text || "").trim().slice(0, 180);
-  if (!id || !url || !image || !advertiserId || !title || !text || !placements.length) {
+  const headline = String(value.headline || "").trim().slice(0, 80);
+  const location = String(value.location || "").trim().slice(0, 120);
+  const category = String(value.category || "").trim().slice(0, 120);
+  const businessAddress = String(value.businessAddress || "").trim().slice(0, 240);
+  const hasSelectedFields = Array.isArray(value.visibleFields);
+  const selectedFields = hasSelectedFields
+    ? [...new Set(value.visibleFields.filter(field => PROMOTION_VISIBLE_FIELDS.includes(field)))]
+    : PROMOTION_VISIBLE_FIELDS.filter(field => ({
+      businessName: title, category, address: businessAddress,
+      city: location, title: headline, description: text,
+    })[field]);
+  const visibleText = {
+    businessName: title, category, address: businessAddress,
+    city: location, title: headline, description: text,
+  };
+  if (
+    !id || !url || !image || !advertiserId || !placements.length
+    || (!hasSelectedFields && (!title || !text))
+    || !selectedFields.some(field => visibleText[field])
+  ) {
     return null;
   }
   return {
@@ -109,8 +131,8 @@ function normalizeCampaign(value) {
     advertiserId,
     bookingMode: assignmentModes.length === 1 ? assignmentModes[0] : "mixed",
     campaignDailyCap: Math.max(1, finiteInteger(value.campaignDailyCap, 1)),
-    category: String(value.category || "").trim().slice(0, 120),
-    businessAddress: String(value.businessAddress || "").trim().slice(0, 240),
+    category,
+    businessAddress,
     ctaLabel: String(value.ctaLabel || "").trim().slice(0, 50),
     activeDates: Array.isArray(value.activeDates)
       ? value.activeDates.map(item => String(item || "").trim()).filter(Boolean).slice(0, 366)
@@ -124,8 +146,8 @@ function normalizeCampaign(value) {
     endsAt: String(value.endsAt || "").trim().slice(0, 40),
     id,
     image,
-    headline: String(value.headline || "").trim().slice(0, 80),
-    location: String(value.location || "").trim().slice(0, 120),
+    headline,
+    location,
     placementAssignments,
     placements,
     scheduleMode: ["days", "month"].includes(value.scheduleMode) ? value.scheduleMode : "period",
@@ -133,6 +155,7 @@ function normalizeCampaign(value) {
     startsAt: String(value.startsAt || "").trim().slice(0, 40),
     text,
     title,
+    visibleFields: selectedFields,
     url,
   };
 }

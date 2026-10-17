@@ -36,12 +36,13 @@ invoice or internal-note fields.
 - `PUT /api/admin/promotions/state`: Firebase `adsAdmin` state replacement with
   `expectedRevision` conflict protection and transactional availability check.
 
-The public catalog is an additive, backward-compatible `schemaVersion: 2`
-contract. It declares `Europe/Rome`, the three supported placements, a
-120-second client rotation interval and a maximum of three simultaneous
-rotation campaigns per placement. Version 1 clients keep using the unchanged
-campaign fields and continue to render Home; version 2 clients also render
-Events and Discover. A client must fail closed on a schema version newer than
+The public catalog uses `schemaVersion: 2`. The optional `visibleFields`
+extension preserves legacy payloads, but Android 0.1.14 compatibility depends
+on the selected text fields; see the compatibility section below. It declares
+`Europe/Rome`, three supported placements, per-placement rotation intervals
+(120 seconds by default; allowed values 30, 60, 120 and 300) and a maximum of
+five simultaneous rotation campaigns per placement. A client must fail closed
+on a schema version newer than
 the maximum it supports. The public campaign keeps `scheduleMode`,
 `activeMonth`, date bounds, selected dates and optional `startTime`/`endTime`
 so a cached client can also stop a card exactly at its Rome-time boundary.
@@ -49,6 +50,60 @@ so a cached client can also stop a card exactly at its Rome-time boundary.
 The switch order is: global switch, placement switch, active campaign, valid
 schedule. All four conditions must pass. Pausing a campaign changes its status
 without deleting private data, images, metrics or billing information.
+
+## Selected card text and Android 0.1.14 compatibility
+
+The admin campaign accepts `cardVisibleFields`, an ordered list drawn from
+`businessName`, `category`, `address`, `city`, `title` and `description`.
+Duplicates and unknown entries are removed. An explicit empty selection is
+invalid for an active campaign. Without a list, legacy defaults apply:
+`businessName`, the selected legacy `cardDetails`, `title`, `description`.
+The explicit selection takes precedence over `cardDetails`.
+
+| Admin field | Public campaign field |
+| --- | --- |
+| `businessName` | `title` |
+| `category` | `category` |
+| `address` (value from `businessAddress`) | `businessAddress` |
+| `city` | `location` |
+| `title` | `headline` |
+| `description` | `text` |
+
+The public response includes `visibleFields` and replaces each unselected
+text value with an empty string. It does not return hidden texts as legacy
+fallbacks. This is a text-display contract, not an anonymization mechanism:
+the public creative, destination URL and existing advertiser grouping ID remain
+part of the campaign. Contact, invoice and internal-note fields stay private.
+At least one selected text must be nonempty. A selected headline or description
+must have its value; either may be empty when hidden. Existing active-campaign
+requirements for business name, city, HTTPS image/URL and placement still apply.
+
+The updated client accepts cards with any valid nonempty text selection and
+renders only selected rows in Home, Events and Discover, including accessible
+names. The advertising label and CTA remain visible. A visible headline gets
+the primary text hierarchy; without it, the business/location row remains
+primary. Catalog refresh, cache expiry, campaign IDs, rotation and aggregate
+impression/open events keep their existing contracts.
+
+**Android 0.1.14 requires both public `title` and `text`.** It ignores
+`visibleFields` and silently drops a campaign if either required value is
+empty. Therefore a campaign remains compatible only with `businessName` and
+`description` selected and populated. Optional fields can be hidden safely;
+unrestricted selection requires an updated Android client. The API does not
+enforce this rollout restriction: it also serves newer clients. Before any
+future production rollout, verify the active panel selections and preserve
+both required fields while supporting 0.1.14, or complete a separate client
+upgrade plan. Do not describe the unrestricted contract as fully compatible.
+
+Automated evidence uses synthetic API responses shared by backend tests and
+both client normalizers, including an unchanged excerpt from 0.1.14. It covers
+admin/public separation, all 63 nonempty selections, legacy acceptance,
+current rendering and offline cache expiry. This is not a physical-device or
+minified Android release test. See
+`SPONSOR_CARD_RECOVERY_20261017.txt` for the candidate verification record.
+
+Sponsor retention, closure, erasure and document-lifecycle work are excluded
+from this recovery. The separate `INSERZIONI` repository is unchanged.
 
 ## Availability contract
 
@@ -64,10 +119,10 @@ without deleting private data, images, metrics or billing information.
   `paused` campaigns do reserve, independently of the global and placement
   switches.
 - An exclusive reservation cannot overlap any other reservation on the same
-  page. Rotation allows at most three simultaneous sponsors and cannot overlap
+  page. Rotation allows at most five simultaneous sponsors and cannot overlap
   an exclusive reservation.
-- Only one card is visible in each placement at a time. When two or three
-  rotation campaigns are available, the client advances every two minutes;
+- Only one card is visible in each placement at a time. When two to five
+  rotation campaigns are available, the client advances at the configured interval;
   this does not change the five-minute catalog refresh or the daily caps.
 - Every write rereads the current state, checks revision and availability, and
   writes the new revision in one Firestore transaction. Conflicts return HTTP

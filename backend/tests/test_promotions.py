@@ -177,6 +177,9 @@ class PromotionServiceTests(unittest.TestCase):
         self.assertEqual(public_campaign["location"], "Pordenone")
         self.assertEqual(public_campaign["businessAddress"], "")
         self.assertEqual(public_campaign["category"], "")
+        self.assertEqual(public_campaign["visibleFields"], [
+            "businessName", "city", "title", "description",
+        ])
         self.assertEqual(public_campaign["scheduleMode"], "period")
         self.assertEqual(public_campaign["activeMonth"], "")
         self.assertEqual(public_campaign["startsAt"], "2026-09-01")
@@ -199,6 +202,38 @@ class PromotionServiceTests(unittest.TestCase):
         visible = build_public_catalog(sanitize_admin_state(state), revision=2, now=NOW)["campaigns"][0]
         self.assertEqual(visible["category"], "Marketing, comunicazione e media")
         self.assertEqual(visible["businessAddress"], "Via Roma 12")
+
+    def test_selected_card_text_is_public_and_hidden_text_is_not_leaked(self):
+        state = enabled_state()
+        campaign = state["campaigns"][0]
+        campaign["cardVisibleFields"] = ["city", "category", "description"]
+        campaign["cardDetails"] = ["address"]  # Older field cannot override the new selection.
+        public = build_public_catalog(sanitize_admin_state(state), revision=3, now=NOW)["campaigns"][0]
+
+        self.assertEqual(public["visibleFields"], ["city", "category", "description"])
+        self.assertEqual(public["title"], "")
+        self.assertEqual(public["headline"], "")
+        self.assertEqual(public["location"], "Pordenone")
+        self.assertEqual(public["category"], "Salone")
+        self.assertEqual(public["businessAddress"], "")
+        self.assertEqual(public["text"], "Un trattamento pensato per i tuoi capelli.")
+
+    def test_hidden_title_and_description_can_be_empty_but_visible_content_is_required(self):
+        state = enabled_state()
+        campaign = state["campaigns"][0]
+        campaign.update(cardVisibleFields=["businessName"], title="", description="")
+        sanitized = sanitize_admin_state(state)
+        public = build_public_catalog(sanitized, revision=4, now=NOW)["campaigns"][0]
+        self.assertEqual(public["visibleFields"], ["businessName"])
+        self.assertEqual(public["headline"], "")
+        self.assertEqual(public["text"], "")
+
+        campaign["cardVisibleFields"] = []
+        with self.assertRaises(PromotionValidationError):
+            sanitize_admin_state(state)
+        campaign["cardVisibleFields"] = ["title"]
+        with self.assertRaises(PromotionValidationError):
+            sanitize_admin_state(state)
 
     def test_legacy_campaigns_gain_exclusive_full_day_defaults(self):
         campaign = active_campaign()
