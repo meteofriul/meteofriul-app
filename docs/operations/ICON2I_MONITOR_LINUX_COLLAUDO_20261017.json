@@ -1,0 +1,238 @@
+{
+  "candidateCommit": "eccf10932e278673565b6db0b6300eccfd227e3e",
+  "buildId": "1e9666e5-f732-4801-9086-88dfb018ad78",
+  "buildStatus": "SUCCESS",
+  "startedAt": "2026-10-17T14:15:55.238279730Z",
+  "finishedAt": "2026-10-17T14:21:32.809709Z",
+  "buildSeconds": 337.571,
+  "logUrl": "https://console.cloud.google.com/cloud-build/builds;region=europe-west1/1e9666e5-f732-4801-9086-88dfb018ad78?project=49007668366",
+  "sourceSha256": "f54afea8b12f541382511e34a94e69c9ac4c45c9eac3d85569cbfa3f4b09589b",
+  "sourceFiles": 65,
+  "images": {
+    "RUNTIME_IMAGE": "sha256:dd58b2ede7c55b08fab6afee96459660a4f9ca24fcaeaa04eb08ff1f04f5bb64 {\"org.opencontainers.image.revision\":\"eccf10932e278673565b6db0b6300eccfd227e3e\"}",
+    "TEST_IMAGE": "sha256:3bd863821c24cd44bfcc9eab1506695bdb8626f5012be1e7dadeafdba26d8eeb",
+    "BASE_IMAGE": "[\"python@sha256:70729b46c69b4f1e97c4822c1af3df53a1476cf5ddc6c087c0c10bc3a5678c2f\"]",
+    "PROMTOOL_IMAGE": "[\"prom/prometheus@sha256:63805ebb8d2b3920190daf1cb14a60871b16fd38bed42b857a3182bc621f4996\"]"
+  },
+  "cases": {
+    "unit": {
+      "memory": {
+        "cgroup": 1,
+        "cpu_period": "100000",
+        "cpu_quota": "100000",
+        "failcnt": 0,
+        "limit_bytes": 536870912,
+        "peak_bytes": 137265152,
+        "peak_mib": 130.91
+      },
+      "passed": true,
+      "platform": "linux",
+      "probe_seconds": 35.064,
+      "python": "3.13.16",
+      "remaining_children": 0,
+      "scenario": "unit",
+      "skipped": 0,
+      "tests": 82,
+      "uid": 65532,
+      "container_seconds": 36.2
+    },
+    "healthy": {
+      "application_seconds": 7.203,
+      "collection_seconds": 3.589,
+      "exit_code": 0,
+      "http_calls": 103,
+      "memory": {
+        "cgroup": 1,
+        "cpu_period": "100000",
+        "cpu_quota": "100000",
+        "failcnt": 0,
+        "limit_bytes": 536870912,
+        "peak_bytes": 131055616,
+        "peak_mib": 124.98
+      },
+      "metric_writes": 6,
+      "passed": true,
+      "platform": "linux",
+      "probe_seconds": 8.871,
+      "python": "3.13.16",
+      "remaining_children": 0,
+      "scenario": "healthy",
+      "uid": 65532,
+      "container_seconds": 10.011
+    },
+    "cold_start": {
+      "application_seconds": 30.016,
+      "collection_seconds": 26.403,
+      "exit_code": 0,
+      "http_calls": 103,
+      "memory": {
+        "cgroup": 1,
+        "cpu_period": "100000",
+        "cpu_quota": "100000",
+        "failcnt": 0,
+        "limit_bytes": 536870912,
+        "peak_bytes": 130060288,
+        "peak_mib": 124.04
+      },
+      "metric_writes": 6,
+      "passed": true,
+      "platform": "linux",
+      "probe_seconds": 31.684,
+      "python": "3.13.16",
+      "remaining_children": 0,
+      "scenario": "cold_start",
+      "uid": 65532,
+      "container_seconds": 32.784
+    },
+    "limits": {
+      "google_deadline_seconds": 4.807,
+      "memory": {
+        "cgroup": 1,
+        "cpu_period": "100000",
+        "cpu_quota": "100000",
+        "failcnt": 0,
+        "limit_bytes": 536870912,
+        "peak_bytes": 98934784,
+        "peak_mib": 94.35
+      },
+      "passed": true,
+      "platform": "linux",
+      "probe_seconds": 21.278,
+      "public_deadline_seconds": 14.813,
+      "python": "3.13.16",
+      "remaining_children": 0,
+      "scenario": "limits",
+      "uid": 65532,
+      "container_seconds": 22.394
+    },
+    "memory_caps": {
+      "google_accepted_bytes": 2097152,
+      "memory": {
+        "cgroup": 1,
+        "cpu_period": "100000",
+        "cpu_quota": "100000",
+        "failcnt": 0,
+        "limit_bytes": 536870912,
+        "peak_bytes": 145113088,
+        "peak_mib": 138.39
+      },
+      "passed": true,
+      "platform": "linux",
+      "probe_seconds": 4.695,
+      "public_accepted_bytes": 2097152,
+      "python": "3.13.16",
+      "remaining_children": 0,
+      "scenario": "memory_caps",
+      "uid": 65532,
+      "container_seconds": 5.784
+    },
+    "collection_reserve": {
+      "application_seconds": 78.384,
+      "collection_seconds": 74.813,
+      "exit_code": 0,
+      "http_calls": 94,
+      "memory": {
+        "cgroup": 1,
+        "cpu_period": "100000",
+        "cpu_quota": "100000",
+        "failcnt": 0,
+        "limit_bytes": 536870912,
+        "peak_bytes": 129814528,
+        "peak_mib": 123.8
+      },
+      "metric_writes": 6,
+      "passed": true,
+      "platform": "linux",
+      "probe_seconds": 80.039,
+      "python": "3.13.16",
+      "remaining_children": 0,
+      "reserve_remaining_at_persistence_seconds": 35.187,
+      "scenario": "collection_reserve",
+      "uid": 65532,
+      "container_seconds": 81.217
+    },
+    "total_deadline": {
+      "application_seconds": 109.96,
+      "collection_seconds": 74.813,
+      "exit_code": 1,
+      "http_calls": 46,
+      "memory": {
+        "cgroup": 1,
+        "cpu_period": "100000",
+        "cpu_quota": "100000",
+        "failcnt": 0,
+        "limit_bytes": 536870912,
+        "peak_bytes": 131870720,
+        "peak_mib": 125.76
+      },
+      "metric_writes": 2,
+      "partial_persistence_explicitly_failed": true,
+      "passed": true,
+      "platform": "linux",
+      "probe_seconds": 111.667,
+      "python": "3.13.16",
+      "remaining_children": 0,
+      "scenario": "total_deadline",
+      "uid": 65532,
+      "container_seconds": 112.886
+    },
+    "dispatcher": {
+      "dispatch_status": 202,
+      "memory": {
+        "cgroup": 1,
+        "cpu_period": "100000",
+        "cpu_quota": "100000",
+        "failcnt": 0,
+        "limit_bytes": 268435456,
+        "peak_bytes": 100077568,
+        "peak_mib": 95.44
+      },
+      "passed": true,
+      "platform": "linux",
+      "probe_seconds": 3.731,
+      "python": "3.13.16",
+      "remaining_children": 0,
+      "scenario": "dispatcher",
+      "synthetic_launches": 1,
+      "uid": 65532,
+      "container_seconds": 4.885
+    }
+  },
+  "productionChecks": {
+    "policyConfigurationUnchanged": true,
+    "schedulerConfigurationUnchanged": true,
+    "jobTemplateUnchanged": true,
+    "dispatcherTemplateAndTrafficUnchanged": true,
+    "activePolicies": 21,
+    "enabledSchedulers": 11
+  },
+  "checkedAt": "2026-10-17T14:22:02.696900+00:00",
+  "firstAttempt": {
+    "buildId": "88561166-2da0-4f4e-b426-96c88c24ba1d",
+    "status": "FAILURE",
+    "seconds": 169.244,
+    "cause": "Synthetic initial state delay plus worker initialization exceeded the request deadline; probe corrected, runtime code unchanged."
+  },
+  "computeCostEstimateUsdBeforeFreeTier": 0.054,
+  "computeCostBasis": "Conservative e2-standard-2 list price 0.006 USD/min; not invoice, excludes minor storage/logging.",
+  "temporarySourcesDeleted": [
+    {
+      "object": "icon2i-monitor-linux-test/c2b0e1a1edf144ec85ca958ce1fca5f1/source.tgz",
+      "generation": "1792246111375068",
+      "deleted": true
+    },
+    {
+      "object": "icon2i-monitor-linux-test/b837540df6214e59a24251520748e708/source.tgz",
+      "generation": "1792246553467712",
+      "deleted": true
+    }
+  ],
+  "imagesPublished": false,
+  "deploy": false,
+  "merge": false,
+  "limitations": [
+    "Synthetic loopback Storage/Monitoring/readers and anonymous credentials; no real Google API health test.",
+    "Docker Linux with CPU/memory caps is not the Cloud Run sandbox or its ADC/metadata endpoint.",
+    "Full monitor operational acceptance and observation remain incomplete."
+  ]
+}

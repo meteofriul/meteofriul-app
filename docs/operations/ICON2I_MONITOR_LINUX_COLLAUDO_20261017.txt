@@ -1,0 +1,122 @@
+MONITOR ICON-2I: COLLAUDO NEL CONTAINER LINUX - 17 OTTOBRE 2026
+
+ESITO E PERIMETRO
+Collaudo Linux superato: otto scenari, inclusi gli 82 test di regressione,
+nessun test saltato, nessun esaurimento di memoria, nessun processo worker
+rimasto attivo alla conclusione. Solo test: nessun deploy, push Git, merge,
+ritiro policy, AAB o operazione Play. Produzione e allarmi preservati.
+
+Sul PC non erano presenti Docker, Podman o distribuzioni WSL. Il collaudo e'
+stato eseguito in Cloud Build, usando l'account di build preesistente, senza
+modifiche IAM. I container di test avevano rete esterna disabilitata,
+filesystem radice in sola lettura, nessun volume/credenziale dell'host,
+capabilities rimosse e no-new-privileges. Le sole risposte HTTP provenivano
+da peer sintetici loopback nello stesso container; nessun reader di produzione
+e' stato interrogato. Anche le scritture simulate di stato e metriche erano
+interamente in memoria nel peer sintetico.
+
+IDENTITA'
+Codice runtime candidato: eccf10932e278673565b6db0b6300eccfd227e3e.
+Ramo: codex/icon2i-monitor-timeout. Nessuna modifica al codice runtime durante
+questo collaudo: sono aggiunti soltanto banco di prova e documentazione.
+Build riuscita: 1e9666e5-f732-4801-9086-88dfb018ad78.
+Inizio UTC: 2026-10-17T14:15:55.238279730Z. Fine UTC: 2026-10-17T14:21:32.809709Z.
+Durata complessiva della build: 337.571 secondi.
+Sorgente minimo: 65 file verificati, archivio SHA-256
+f54afea8b12f541382511e34a94e69c9ac4c45c9eac3d85569cbfa3f4b09589b.
+Immagine runtime locale alla build: sha256:dd58b2ede7c55b08fab6afee96459660a4f9ca24fcaeaa04eb08ff1f04f5bb64.
+Immagine con soli strumenti/test aggiunti: sha256:3bd863821c24cd44bfcc9eab1506695bdb8626f5012be1e7dadeafdba26d8eeb.
+Base risolta: ["python@sha256:70729b46c69b4f1e97c4822c1af3df53a1476cf5ddc6c087c0c10bc3a5678c2f"].
+Promtool risolto: ["prom/prometheus@sha256:63805ebb8d2b3920190daf1cb14a60871b16fd38bed42b857a3182bc621f4996"].
+Python 3.13.16, Linux, UID 65532, quota 1 CPU,
+512 MiB per il monitor e 256 MiB per il dispatcher, swap disabilitato.
+Nessuna immagine e' stata pubblicata. Le immagini erano effimere del worker;
+un futuro artefatto di distribuzione dovra' avere identita' e verifica proprie.
+
+MISURE
+Le durate totali sono ricavate da StartedAt/FinishedAt del container Docker:
+includono avvio Python, import, fixture, esecuzione e uscita. La memoria e'
+il massimo del cgroup dell'intero container, inclusi processi figli, peer
+sintetico, cataloghi reali e cache di pagina; non il solo RSS del padre.
+Memoria e CPU imposte sono state rilette sia da Docker sia dal cgroup.
+
+Suite di regressione (82 test): 36.200s totali, picco 130.91 MiB, limite 512 MiB; PASS.
+Ciclo regolare: 10.011s totali, picco 124.98 MiB, limite 512 MiB; PASS.
+Reader con ritardi iniziali di 11,4s: 32.784s totali, picco 124.04 MiB, limite 512 MiB; PASS.
+Risposte a goccia, limiti 15s/5s: 22.394s totali, picco 94.35 MiB, limite 512 MiB; PASS.
+Stress risposte interne da 2 MiB: 5.784s totali, picco 138.39 MiB, limite 512 MiB; PASS.
+Esaurimento raccolta a 75s: 81.217s totali, picco 123.80 MiB, limite 512 MiB; PASS.
+Raccolta e persistenza rallentate: 112.886s totali, picco 125.76 MiB, limite 512 MiB; PASS.
+Avvio sintetico tramite dispatcher: 4.885s totali, picco 95.44 MiB, limite 256 MiB; PASS.
+
+Scadenza assoluta pubblica misurata: 14.813s;
+API Google simulata: 4.807s. Le chiamate
+includono l'avvio del worker e riservano la chiusura entro il limite.
+Lo stress da 2 MiB riguarda il trasporto interno; il PublicHTTP applicativo
+mantiene il tetto di 64 KiB, verificato dalla suite anche su corpi decompressi.
+
+Nella prova di riserva, la raccolta termina a 74.813s;
+restano 35.187s del budget applicativo.
+Tutte le sei metriche sono registrate e confermate: check_state=3 e
+check_completed=1 per entrambi i prodotti, critical_active=1 precedente FVG
+conservato. Il ciclo applicativo termina a 78.384s.
+
+Con anche la persistenza rallentata, il budget applicativo termina a
+109.960s. Il monitor restituisce intenzionalmente errore
+(exit 1), senza fingere la conferma delle scritture incomplete. Il container
+di collaudo certifica questo esito atteso e termina a 112.886s,
+prima del limite 120s: margine misurato 7.114s.
+In questo scenario il peer riceve 2 delle 6 metriche previste; l'esito resta
+fallito. Il precedente critico resta conservato. La riserva rende possibili i tentativi
+di scrittura, non garantisce la disponibilita' di Storage o Monitoring.
+
+TENTATIVO PRECEDENTE E COSTO
+Prima build: 88561166-2da0-4f4e-b426-96c88c24ba1d, fallita nel banco di prova.
+I primi cinque scenari erano riusciti. Un ritardo sintetico iniziale di 4s,
+sommato agli import del worker, superava gia' il limite API di 5s: lo scenario
+non raggiungeva la raccolta che intendeva misurare. Corretto soltanto il banco:
+2s per le letture iniziali dello stato e 3s per i dati, mantenendo lente le
+risposte pubbliche. Una prova Windows preliminare ha raggiunto 74,802s di
+raccolta e confermato sei metriche, poi tutti gli scenari Linux sono stati
+rieseguiti con successo. Il runtime eccf109 e' rimasto identico.
+
+Stima conservativa del calcolo delle due build, prima di eventuali franchigie:
+circa 0.054 USD, alla tariffa di riferimento
+0,006 USD/minuto per e2-standard-2 e minuti arrotondati. Non e' un consuntivo;
+Storage temporaneo e log non sono inclusi. I due archivi sorgente temporanei
+sono stati rimossi dal bucket con controllo della generation; copie e hash
+restano conservati nell'audit locale privato. Nessun costo di servizio continuo.
+
+CONFRONTO PRODUZIONE
+Verifica finale in sola lettura: 2026-10-17T14:22:02.696900+00:00.
+21 policy attive e 11 Scheduler abilitati.
+Configurazioni di policy e Scheduler, template del job del monitor,
+template e traffico del dispatcher invariati rispetto a prima dei test.
+Le due vecchie policy senza successi restano attive per istruzione del titolare.
+
+RIPRODUZIONE E LIMITI
+Su un host Linux con Docker, usare il contesto minimo descritto nel manifest:
+docker build -f experiments/weather_autonomy/Dockerfile.freshness-monitor -t icon2i-monitor-runtime:local .
+docker build -f experiments/weather_autonomy/Dockerfile.freshness-monitor-test -t icon2i-monitor-test:local .
+bash experiments/weather_autonomy/freshness-monitor-container-test.sh
+Il Dockerfile di test copia il contesto: usare esclusivamente un'esportazione
+minima pulita, mai un workspace contenente chiavi o file locali ignorati.
+
+Questo e' un collaudo Linux Docker, non un'esecuzione del job Cloud Run.
+Storage, Monitoring e lettori sono simulati; AuthorizedSession usa credenziali
+anonime di test. Non certifica ADC/metadata server o sandbox Cloud Run,
+latenza/disponibilita' dei servizi reali, consegna delle notifiche, grazia
+durante una vera pubblicazione o costo operativo dei 14 giorni.
+Gli 82 test comprendono anche PromQL offline, non il ciclo reale a 90/120 minuti.
+
+La precedente riserva sul runtime Linux e' chiusa nel perimetro sopra indicato.
+Il monitor resta operativo con accettazione complessiva incompleta e correzioni
+non distribuite. I 14 giorni della nuova osservazione non sono iniziati:
+partiranno dal primo ciclo automatico verificato dopo un futuro deploy autorizzato.
+
+RIFERIMENTI
+Rapporto precedente: ICON2I_MONITOR_DEADLINE_FIX_20261017.txt.
+Evidenza strutturata: ICON2I_MONITOR_LINUX_COLLAUDO_20261017.json.
+Build: https://console.cloud.google.com/cloud-build/builds;region=europe-west1/1e9666e5-f732-4801-9086-88dfb018ad78?project=49007668366
+https://cloud.google.com/build/pricing
+https://docs.docker.com/engine/containers/resource_constraints/
