@@ -3,6 +3,24 @@ import groovy.json.JsonSlurper
 
 apply plugin: 'com.android.application'
 
+// Isolated Android Community QA build. No production Firebase configuration is accepted.
+def communityQaRequested = gradle.startParameter.taskNames.any { it.toLowerCase(Locale.ROOT).contains('communityqa') }
+def communityQaConfig = null
+if (communityQaRequested) {
+    def configPath = project.findProperty('METEO_COMMUNITY_QA_CONFIG')?.toString()
+    if (!configPath || System.getenv('METEO_COMMUNITY_QA_BUILD') != '1') throw new GradleException('Community QA protected builder required')
+    communityQaConfig = new JsonSlurper().parse(new File(configPath))
+    if (communityQaConfig.projectId != 'meteofriul-comm-qa-261016' || communityQaConfig.projectNumber != '445478488139' ||
+        communityQaConfig.packageName != 'com.meteofriul.app.communityqa' || !(communityQaConfig.appId ==~ /^1:445478488139:android:[0-9a-f]+$/)) {
+        throw new GradleException('Community QA Firebase identity mismatch')
+    }
+    if (gradle.startParameter.taskNames.any { it.toLowerCase(Locale.ROOT).contains('release') || it.toLowerCase(Locale.ROOT).contains('localpilot') || it.toLowerCase(Locale.ROOT).contains('privatetest') || it.toLowerCase(Locale.ROOT).contains('bundle') || it.toLowerCase(Locale.ROOT).contains('install') }) {
+        throw new GradleException('Community QA build cannot produce bundles, install or mix other variants')
+    }
+    if (project.findProperty('METEO_API_BASE') != 'https://community-qa.invalid/api') throw new GradleException('Community QA API binding mismatch')
+}
+
+
 def meteoPlayReleaseProducingTaskName = { String taskName ->
     def normalized = (taskName ?: '').toLowerCase(Locale.ROOT)
     def releaseProducingVerb = [
@@ -96,6 +114,12 @@ android {
     buildFeatures {
         buildConfig true
     }
+    sourceSets {
+        communityQa {
+            java.srcDirs = ['src/debug/java']
+            res.srcDirs = ['build/generated/communityQa/res']
+        }
+    }
     signingConfigs {
         privateTest {
             if (privateTestKeystorePropertiesFile.exists()) {
@@ -130,6 +154,27 @@ android {
             debuggable false
             versionNameSuffix '-private.4'
             signingConfig signingConfigs.privateTest
+        }
+        communityQa {
+            initWith debug
+            matchingFallbacks = ['debug']
+            applicationIdSuffix '.communityqa'
+            versionNameSuffix '-community-qa.2'
+            debuggable false
+            minifyEnabled true
+            shrinkResources true
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            buildConfigField 'boolean', 'LOCAL_WEATHER_PILOT', 'true'
+            resValue 'string', 'app_name', 'Meteo Friûl Community QA'
+            resValue 'string', 'title_activity_main', 'Meteo Friûl Community QA'
+            resValue 'string', 'package_name', 'com.meteofriul.app.communityqa'
+            resValue 'string', 'custom_url_scheme', 'com.meteofriul.app.communityqa'
+            if (communityQaConfig != null) {
+                resValue 'string', 'google_app_id', communityQaConfig.appId
+                resValue 'string', 'google_api_key', communityQaConfig.apiKey
+                resValue 'string', 'gcm_defaultSenderId', communityQaConfig.projectNumber
+                resValue 'string', 'project_id', communityQaConfig.projectId
+            }
         }
         localPilot {
             initWith debug
@@ -217,6 +262,25 @@ tasks.register('verifyPlayReleaseGuardTaskClassification') {
 }
 
 gradle.taskGraph.whenReady { graph ->
+    // Check resolved tasks too: Gradle abbreviations and aggregate tasks must
+    // not bypass the explicit QA builder or mix package variants.
+    def qaTasks = graph.allTasks.findAll {
+        it.project == project && it.name.toLowerCase(Locale.ROOT).contains('communityqa')
+    }
+    if (!qaTasks.isEmpty()) {
+        if (!communityQaRequested || communityQaConfig == null) {
+            throw new GradleException('Community QA resolved tasks require the protected explicit builder')
+        }
+        def unsafeQaGraph = graph.allTasks.any {
+            if (it.project != project) return false
+            def name = it.name.toLowerCase(Locale.ROOT)
+            name.contains('install') || name.contains('bundle') ||
+                ['release', 'localpilot', 'privatetest', 'debug'].any { name.contains(it) }
+        }
+        if (unsafeQaGraph) {
+            throw new GradleException('Community QA resolved tasks cannot install, bundle or mix variants')
+        }
+    }
     def localPilotRequested = graph.allTasks.any {
         it.project == project && meteoAndroidLocalPilotTaskName(it.name)
     }
@@ -353,6 +417,7 @@ dependencies {
     implementation 'com.google.firebase:firebase-appcheck'
     implementation "com.google.android.gms:play-services-location:$playServicesLocationVersion"
     implementation "androidx.work:work-runtime:$workManagerVersion"
+    communityQaImplementation 'com.google.firebase:firebase-appcheck-debug'
     debugImplementation 'com.google.firebase:firebase-appcheck-debug'
     releaseImplementation 'com.google.firebase:firebase-appcheck-playintegrity'
     privateTestImplementation 'com.google.firebase:firebase-appcheck-playintegrity'
@@ -375,7 +440,7 @@ try {
 // still comes from the normal HTTPS API.
 tasks.configureEach { task ->
     def normalized = task.name.toLowerCase(Locale.ROOT)
-    if (normalized.contains('localpilot') && normalized.contains('googleservices')) {
+    if ((normalized.contains('localpilot') || normalized.contains('communityqa')) && normalized.contains('googleservices')) {
         task.enabled = false
     }
 }

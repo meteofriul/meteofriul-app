@@ -1,3 +1,7 @@
+Aggiornamento del 17 ottobre 2026: gli esiti cloud e Android successivi sono
+consolidati in COMMUNITY_COMPATIBILITY_ACCEPTANCE_2026-10-17.txt. Il testo
+seguente conserva il perimetro e i risultati della sessione storica.
+
 # Segnalazioni: compatibilità e preparazione Cloud Run
 
 > Resoconto storico del 15 ottobre 2026. Il contenuto è stato recuperato il

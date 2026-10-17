@@ -1,0 +1,131 @@
+COMMUNITY 0.1.14 — COMPATIBILITA E COLLAUDO DEL 17 OTTOBRE 2026
+
+Esito e ambito
+Compatibilita funzionale verificata in ambiente cloud isolato e da Android QA.
+Questo verbale consolida le prove dopo il recupero sulla storia pubblica pulita.
+Non autorizza merge, distribuzione del backend, nuove scritture v3 o release Play.
+Le evidenze grezze sono private: qui non si pubblicano chiavi, token, seriali,
+identificativi sintetici persistenti, screenshot del telefono o log utenti.
+
+Identita dei candidati
+Base main: 565aa8165bf36c7d47cb97491e1ecb1219e89ab7.
+Runtime cloud: 81a2610d98ae967822a3b536d859de3645dbccdb.
+Immagine cloud: sha256:05cf7f1b3b0d3e1ccf9f232df26d6b0f45ccbd837c3f309ac9bfef975f62ae18.
+Archivio sorgente: 1df1e61bf078f5dc1df20fc2b4dd61914b34a6541290b05cc19b7aff257e07ba.
+Il commit d4147564cd44d8af5b215ff79bdb38883fe15648 aggiunge policy e verbale privacy,
+senza cambiare il runtime collaudato. Una sola radice pubblica; vecchia cronologia
+non importata. Ramo di lavoro: codex/community-compatibility-clean.
+
+Comportamento
+Il client pubblicato 0.1.14 senza header mantiene il contratto legacy. Il nuovo
+client indica community-reports-v3. Entrambi condividono identita, archivio,
+quote, ricevute e reputazione; nessun reset di punti o dati. Le nuove conferme
+richiedono GPS valido e contenuti osservati; il vecchio voto su gruppi v3 riceve
+426. Replay, concorrenza e upgrade non devono generare invii o premi duplicati.
+La configurazione iniziale mantiene COMMUNITY_V3_WRITES_ENABLED=0.
+
+Prove locali e cloud
+- Recupero su main pulita: 188 test backend e 54 sotto-casi, 45 frontend,
+  31 test del pacchetto isolato, lint e controllo allowlist/hash superati.
+- Cloud reale: 31 test nel container e 83 verifiche HTTP. Provati legacy,
+  v3 disattivato/attivato, gruppi misti, GPS, quote, modifiche/ritiro,
+  persistenza, risposta scartata e riconciliazione, congelamento delle scritture.
+- Concorrenza su due istanze distinte: conflitti atomici attesi seguiti da replay
+  senza doppio invio/premio; zero errori storage inattesi nei casi positivi.
+- Token reali: valido ammesso; mancante/invalido/progetto errato respinti;
+  app non ammessa respinta. Follow-up: token autentico accettato prima della
+  scadenza naturale, poi 401 su entrambi i protocolli; token fresco 200.
+  Firma, verifier e orologio non alterati. Consumo anti-replay del token non provato.
+- Privacy: URL con query respinta compariva nei log HTTP del provider, pur non
+  comparendo nei log applicativi. Esclusione provata nel solo QA dopo propagazione;
+  nove richieste finali assenti dai log HTTP, controlli applicativi e metriche
+  disponibili. Nessuna cancellazione retroattiva o applicazione in produzione.
+Dettagli: COMMUNITY_LOG_PRIVACY.md e relativo riepilogo JSON del 17 ottobre.
+
+Android dedicato: attivita completata e limite Play Integrity
+La precedente nota "le prove cloud non certificano Play Integrity dell'app"
+e stata affrontata con due prove distinte, che non vanno confuse:
+1. Ufficiale 0.1.14 installata da Play, Galaxy A52 Android 14: osservazione
+   autorizzata senza contributi sintetici o modifica delle impostazioni.
+   Log del processo e metriche temporali mostrano uno scambio Play Integrity
+   riuscito; registrazione push accettata con App Check in enforcement.
+   Metriche aggregate, non verdetto grezzo o token estratto. Community pubblica
+   leggibile; il profilo non ha richiesto reputazione, coerentemente con assenza
+   di identita Community preesistente. Non e un rifiuto App Check.
+2. App separata Community QA sullo stesso telefono: token ottenuto dal plugin
+   Firebase Android e verificato dal backend candidato; il ponte locale aggiunge
+   soltanto IAM Cloud Run e inoltra invariato App Check. Provider debug solo QA.
+   Cinque controlli iniziali e due cicli completi 16/16, il secondo dopo riapertura.
+   Reputazione legacy e v3 coerenti, assenza/token invalido 401, vecchio voto su
+   v3 426, replay e conferme ripetute senza duplicati. SettingsView reale e snapshot
+   QA concordano: 1 report, 1 conferma, 1 premio, 1 punto anche dopo riapertura.
+
+Conclusione: percorso Android autenticato verso il candidato verificato in QA;
+Play Integrity dell'ufficiale osservato sui servizi attuali. NON eseguito un
+singolo percorso completo APK ufficiale Play -> backend candidato. Il provider
+debug QA non certifica l'autenticita Play dell'ufficiale. Il limite resta esplicito
+per il futuro rollout e non e sostituito dalle letture pubbliche della Community.
+
+APK QA e correzione grafica
+Package separato com.meteofriul.app.communityqa, versionCode 300031.
+QA.1: 0.1.14-community-qa.1; SHA256
+f22fd91627a0ce86f40a63422074d77a877ff9945eea071a838d0011802d275f.
+QA.2: 0.1.14-community-qa.2; SHA256
+6b94762609bf13320a7043da538dcf9676b21efa83e04ba1365c1d1789bac8f3.
+APK minificate con R8 e resource shrinking, non debuggable, firma verificata
+SDK 24-36. GPS/background location, notifiche e boot receiver assenti.
+QA.1 ha mostrato il titolo sotto la barra di stato. QA.2 usa gli inset nativi
+tramite le variabili CSS condivise: 19 test e otto verifiche di layout passati.
+Aggiornamento QA.2 autorizzato con install -r: titolo visibile al primo avvio e
+dopo riapertura; bordo barra a y=88, titolo da y=139, spazio libero 51 px.
+Nessun crash rilevato nel percorso controllato. Il collaudo backend resta quello
+QA.1; QA.2 ha corretto solo il layout e la preparazione degli asset.
+
+Conservazione e chiusura
+Ufficiale e TEST PR1.3 invariate per versioni, hash APK e date di installazione.
+Aggiornamento QA.2 con UID, prima installazione e inode dati invariati; nessun
+clear/uninstall. Dati privati delle app non estratti o confrontati byte per byte.
+Produzione: configurazione, revisione, traffico e permessi invariati nelle prove;
+zero contributi sintetici o copie di dati reali. Runtime QA ritirato, account
+temporanei disabilitati, app Firebase/chiavi/token di prova revocati, ponte PC
+chiuso. Dati sintetici ed evidenze conservati secondo il piano; QA installata
+ma offline. Una nuova sessione cloud richiede risorse/configurazione autorizzate.
+
+Sorgenti QA consolidati e riproducibilita
+frontend/qa/community contiene l'ingresso del collaudo; riusa adapter App Check,
+liveApi e SettingsView reali. Manifest, configurazione Capacitor e variante
+communityQa sono separati da release e localPilot. Il builder e
+scripts/build-android-community-qa.py; non installa e non genera bundle Play.
+La configurazione privata JSON richiede projectId, projectNumber, packageName,
+appId, apiKey e deve riferirsi esclusivamente al progetto QA approvato.
+Conservarla fuori Git o in .tmp; anche l'output deve essere privato/ignorato.
+Esempio locale, con configurazione QA valida gia predisposta:
+  python scripts/build-android-community-qa.py --config .tmp/qa-config.json --output .tmp/qa-apk
+Occorrono dipendenze frontend, SDK Android e JDK del progetto. Nessuna credenziale
+e inclusa nei sorgenti; i valori della sessione conclusa sono revocati.
+L'app usa soltanto il ponte locale 127.0.0.1:8788, da predisporre separatamente
+verso il backend QA privato autorizzato. Nessun fallback verso la produzione.
+
+Nel consolidamento sono stati rafforzati i controlli senza modificare la UI:
+- Vite non carica file env, directory pubblica generica o variabili VITE_* ereditate.
+  Il builder della APK gia provata eliminava tali variabili; ora anche l'ingresso
+  Vite diretto le isola. Un test costruisce il bundle con valori sentinella e
+  verifica destinazioni, assenza di configurazione Firebase reale e sourcemap.
+- Verifica dei task Gradle risolti oltre ai nomi richiesti, per bloccare abbreviazioni,
+  installazioni, bundle e commistioni con altre varianti; test in dry-run senza APK.
+- Configurazioni e output dentro il checkout sono ammessi soltanto se ignorati
+  e non tracciati; asset generati QA esclusi da Git.
+La CI frontend esegue npm run test:android-community-qa-guard con i trigger
+preesistenti; nessuna nuova pianificazione o estensione dei branch trigger.
+
+Quattro aree Android e accettazione residua
+Insets: difetto QA corretto sul Galaxy A52 Android 14.
+API barre obsolete: nessuna modifica nativa/toolchain, warning preesistenti
+non dichiarati risolti. Orientamento: portrait osservato; Android 15/16,
+grandi schermi e multi-window non ricollaudati. R8: percorso QA minificato
+verificato su telefono, non tutti i percorsi dell'app pubblica.
+Non e un'approvazione di release Android. Restano separati il rollout del backend,
+la privacy dei log reali, lo smoke test della configurazione pubblica, l'attivazione
+delle scritture v3 e una futura distribuzione del client. Non eseguiti soak di
+48 ore, carico reale, preflight browser attraverso IAM privato o interruzioni TCP
+indotte. Il 503 storico di produzione non e dichiarato risolto da prove isolate.

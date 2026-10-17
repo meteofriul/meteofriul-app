@@ -51,6 +51,9 @@ jobs:
       - name: Test dependency security and compatibility
         run: npm run test:dependency-security
 
+      - name: Test isolated Android Community QA build
+        run: npm run test:android-community-qa-guard
+
       - name: Lint frontend
         run: npm run lint
 
