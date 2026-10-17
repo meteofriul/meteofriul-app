@@ -1,0 +1,98 @@
+{
+  "schema": "meteofriul.community.qa-privacy-expiry.v1",
+  "date": "2026-10-17",
+  "status": "PASS_FOR_QA_FOLLOWUP_SCOPE",
+  "runtime_source_commit": "81a2610d98ae967822a3b536d859de3645dbccdb",
+  "runtime_image_digest": "sha256:05cf7f1b3b0d3e1ccf9f232df26d6b0f45ccbd837c3f309ac9bfef975f62ae18",
+  "new_cloud_builds": 0,
+  "http_requests": 43,
+  "log_fixture_records": 18,
+  "safe_diagnostic_controls": 3,
+  "expiry": {
+    "provider": "Firebase QA debug exchange, limitedUse=true",
+    "ttl_seconds": 300,
+    "signature_verified_before_expiry": true,
+    "same_token_accepted_before_expiry": [
+      200,
+      200
+    ],
+    "same_token_after_natural_expiry": [
+      401,
+      401
+    ],
+    "fresh_token_afterwards": [
+      200,
+      200
+    ],
+    "protocols": [
+      "legacy 0.1.14",
+      "community-reports-v3"
+    ],
+    "confirmed_exception": "ExpiredSignatureError",
+    "server_seconds_beyond_exp": 59.0,
+    "clock_or_verifier_modified": false,
+    "replay_consumption_tested": false
+  },
+  "logging": {
+    "scope": "One QA project and service; no ancestor or additional export sinks",
+    "excluded_log": "run.googleapis.com/requests",
+    "baseline_fixture_cases_stored": 6,
+    "settled_fixture_cases_stored": [
+      "application-control",
+      "other-service-control"
+    ],
+    "final_real_request_cases": 9,
+    "final_raw_request_logs_found": 0,
+    "safe_diagnostic_control_visible": true,
+    "application_logs_visible": true,
+    "native_request_count_and_latency_metrics_visible": true,
+    "last_log_check_utc": "2026-10-17T08:01:20.806391+00:00",
+    "propagation_observed": true,
+    "existing_logs_deleted": false,
+    "provider_initial_processing_prevented": false
+  },
+  "production": {
+    "service_configuration_unchanged": true,
+    "project_and_bucket_iam_unchanged": true,
+    "data_accesses": 0,
+    "test_requests": 0
+  },
+  "cleanup": {
+    "qa_service_and_job_removed": true,
+    "qa_accounts_disabled": true,
+    "firebase_app_and_debug_registration_removed": true,
+    "api_key_revoked": true,
+    "local_encrypted_tokens_removed": true,
+    "qa_pointer_archived_and_removed": true,
+    "evidence_object_retention_days": 7,
+    "qa_exclusion_retained": true
+  },
+  "remaining_out_of_scope": [
+    "Applying log policy in production",
+    "Android Play Integrity and official APK end-to-end authentication",
+    "Real browser preflight through private Cloud Run IAM",
+    "Long-running retention/load tests"
+  ],
+  "local_checks": [
+    "3 unit tests for policy scope, invalid input and name boundaries",
+    "Canonical workspace cleanliness",
+    "Generated exclusion filter equals the cloud-tested filter"
+  ],
+  "evidence_sha256": {
+    "http-start.json": "38bd9c254bb95e8e50813e17ff15ee12b782c3f91ec8f3fea32b4f33d91b2f1e",
+    "http-finish.json": "7de1312ab0cb15dca45554d4cf1e8d9970e328ad538818fcf98d2ea4362f2e73",
+    "expiry-state.json": "65cedb2bda990572da9bf46be256e79a851e1f865254748d3bc98e068f45816d",
+    "routing-baseline.json": "88d88ef4a2b798c29974ac59461d458684adfe54cacba0d969d67ca30eed1b87",
+    "routing-verification.json": "fa303e2f2599a5ccdfdffa6369acb0aa436038b244a5538b027761133edd0f45",
+    "observability-immediate.json": "0c8b168db65db5070e64a7112f201c5b1dfb97a2858a51edac7f6576a21b65cc",
+    "observability-settled.json": "f30c5d16fc08b0331b699eba96628de9966230db67283b65a98cb2aeec5193d1",
+    "observability-verification.json": "1a22d5c8ff6f522a6ff5b880d910442ddaceb53d23a9cff52d522b99d73f01f9",
+    "privacy-live-initial.json": "2d262a361cbe75d63054960da8b06050a758b2ca1f0310ffe2c8c3678276db10",
+    "privacy-live-settled.json": "bb55a1eca6518f80bccc41b15a8e70e795a51f43ef3262f10965b581bf4d4a81",
+    "privacy-live-final.json": "9a34c7664766a1ee8fba2ef0158398903b02bb55977842742f98b1e978a335e1",
+    "privacy-exclusion.json": "022b1d747e623bee9753e6dc20409690afd4cf807b2db757253cb9cf971eebf1",
+    "final-audit.json": "4c939cff90f8cc8bd73327e25292bb013786d3752027f23b3b1f2cf5045ad46c",
+    "firebase-cleanup.json": "215cca40b76b3994cd9c9eca8aa10f5b467ac1bd9a9a87972e9c3850d856ec79",
+    "native-metrics-final.json": "d551615a3872b3eb06e3feaf749f64f8875c12de3bc0194809245a5ad9e09516"
+  }
+}
