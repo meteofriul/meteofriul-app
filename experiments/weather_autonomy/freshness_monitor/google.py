@@ -31,10 +31,10 @@ class Transport:
     def __init__(self, session):
         self.session = session
 
-    def request(self, method, url, budget, *, maximum=MAX_DOCUMENT, **kwargs):
+    def request(self, method, url, budget, *, maximum=MAX_DOCUMENT, timeout_seconds=5, **kwargs):
         budget.remaining()
         try:
-            response = self.session.request(method, url, timeout=budget.remaining(5),
+            response = self.session.request(method, url, timeout=budget.remaining(timeout_seconds),
                                             allow_redirects=False, stream=True, **kwargs)
             with response:
                 chunks, count = [], 0
@@ -49,7 +49,12 @@ class Transport:
             raise
         except Exception as error:
             # Avoid leaking auth/header/url details from underlying exceptions.
-            raise Unavailable("transport request failed: " + type(error).__name__, transient=True) from None
+            error_types = {cls.__name__ for cls in type(error).__mro__}
+            failure_kind = ("timeout" if error_types & {"Timeout", "TimeoutError"}
+                            else "connection" if "ConnectionError" in error_types
+                            else "transport")
+            raise Unavailable("transport request failed", transient=True,
+                              failure_kind=failure_kind) from None
 
     def read_json(self, url, budget, **kwargs):
         status, body, _ = self.request("GET", url, budget, **kwargs)
@@ -63,9 +68,14 @@ class PublicHTTP:
         self.transport = transport
 
     def get(self, url, headers, budget):
-        status, body, response_headers = self.transport.request("GET", url, budget, headers=headers)
+        # Public Cloud Run readers may need ~12 seconds for a cold start.
+        # Google APIs keep 5 seconds; the 35s product/75s collection budgets
+        # and the single retry still bound this read and persistent failures.
+        status, body, response_headers = self.transport.request(
+            "GET", url, budget, headers=headers, timeout_seconds=15)
         if status in (408, 429) or status >= 500:
-            raise Unavailable("reader HTTP " + str(status), transient=True)
+            raise Unavailable("reader HTTP " + str(status), transient=True,
+                              failure_kind="http_status")
         # Only safe, useful headers are logged.
         allowed = {"cache-control", "age", "etag", "content-type", "content-encoding", "vary"}
         return {"status": status, "body": body,
