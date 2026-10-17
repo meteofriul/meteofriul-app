@@ -231,30 +231,37 @@ html[data-theme="dark"] .mf-home-promotion {
 
 .mf-home-promotion__body > strong {
   color: var(--mf-ink);
-  font-size: 0.98rem;
-  line-height: 1.18;
+  font-size: 1rem;
+  line-height: 1.2;
   overflow-wrap: anywhere;
+}
+
+.mf-home-promotion__body--with-headline > strong {
+  font-size: 0.82rem;
+  font-weight: 700;
+  line-height: 1.25;
 }
 
 .mf-home-promotion__details {
   color: var(--mf-muted);
-  font-size: 0.69rem;
-  line-height: 1.25;
+  font-size: 0.73rem;
+  line-height: 1.3;
   overflow-wrap: anywhere;
 }
 
 .mf-home-promotion__headline {
   color: var(--mf-ink-soft, var(--mf-ink));
-  font-size: 0.79rem;
-  font-weight: 750;
+  font-size: 1rem;
+  font-weight: 800;
   line-height: 1.2;
+  overflow-wrap: anywhere;
 }
 
 .mf-home-promotion__text {
   color: var(--mf-muted);
   display: -webkit-box;
-  font-size: 0.76rem;
-  line-height: 1.25;
+  font-size: 0.82rem;
+  line-height: 1.3;
   overflow: hidden;
   -webkit-box-orient: vertical;
   -webkit-line-clamp: 2;
@@ -264,7 +271,7 @@ html[data-theme="dark"] .mf-home-promotion {
   align-items: center;
   color: var(--mf-blue-700);
   display: inline-flex;
-  font-size: 0.75rem;
+  font-size: 0.79rem;
   font-weight: 850;
   gap: 5px;
 }

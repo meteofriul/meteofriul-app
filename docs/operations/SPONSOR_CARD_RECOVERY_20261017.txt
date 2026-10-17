@@ -1,0 +1,63 @@
+CARD SPONSOR E CONTRATTO API - RECUPERO LOCALE DEL 17 OTTOBRE 2026
+
+Ramo: codex/sponsor-card-compatibility.
+Base pubblica main: 9bbdddea74f44d8510c23034898d437ad380d6bb.
+Il commit che introduce questo verbale identifica il candidato verificato.
+Solo recupero selettivo di modifiche e test, senza vecchi antenati Git.
+
+CONTENUTO
+Recuperati scelta dei testi della card, proiezione pubblica dei campi scelti,
+gerarchia tipografica e nomi accessibili in Home, Eventi e Scopri. Il contratto
+opzionale categoria/indirizzo era gia' in main: questa modifica aggiunge la
+selezione esplicita cardVisibleFields/visibleFields. Backend, frontend e test
+sono stati portati come patch; nessun merge dei vecchi rami.
+Il contratto implementato e' documentato in PROMOTIONS_CONTROL_PLANE.md.
+PROMOTIONS_APP_ADMIN_CONTRACT.md e' identificato come proposta storica.
+Nessuna modifica a retention, chiusura rapporti sponsor, cancellazioni,
+migrazioni, regole Storage/Firestore o al repository separato INSERZIONI.
+
+COMPATIBILITA' 0.1.14: CONDIZIONATA
+Il normalizzatore originale della 0.1.14 e' conservato come fixture di test,
+senza import di runtime, cache, trasporto HTTP o metadati personali. L'estratto
+ha SHA-256 f09758da72335e113c7d7acc062d6178ed3f38a92ee18cd7b06d7f4486997b5e.
+La 0.1.14 richiede title e text pubblici non vuoti: corrispondono al nome
+dell'attivita' e alla descrizione. Se uno e' nascosto, scarta la card.
+Questo limite e' riprodotto, non risolto modificando l'APK gia' installata.
+Il client aggiornato accetta selezioni diverse, compresa una sola riga valida.
+I testi nascosti non vengono ripubblicati per far accettare la card al client
+vecchio. I dati privati amministrativi non compaiono nei payload pubblici.
+L'identificativo di raggruppamento inserzionista resta quello preesistente:
+nascondere un testo non rende anonimi immagine, destinazione o campagna.
+
+Prima di una futura distribuzione verificare le selezioni attive nel pannello:
+nome attivita' e descrizione devono restare selezionati e compilati finche'
+si sostiene la 0.1.14. L'API permette selezioni per client nuovi e non impone
+questa restrizione operativa. La liberta' completa richiede un aggiornamento
+Android dedicato. Non dichiarare compatibilita' completa o prontezza al deploy.
+
+TEST RIPETUTI
+Windows, Node 22.17.1, npm 10.9.2, Python 3.13; dipendenze da lockfile.
+- Backend mirato: 32 test passati, inclusi roundtrip PUT admin / GET pubblico
+  per 8 casi sintetici condivisi con i test dei client e tutte le 63 selezioni
+  non vuote; dati privati esclusi, identita' campagne preservata, nessuna
+  selezione vuota accettata per una campagna attiva.
+- Frontend mirato: 39 test passati; payload API negli 8 casi contro client
+  originale e aggiornato, rendering dei tre posizionamenti, cache/offline,
+  scadenza e lettura dei vecchi cataloghi privi di visibleFields.
+- Backend completo: 1929 test conteggiati in 135,422 s, zero fallimenti/errori,
+  un solo skip per l'artefatto ISTAT locale opzionale assente.
+- Frontend completo: 4980 test passati, 13 saltati in 5 file live, 148,58 s.
+  Restano non eseguiti i controlli live di meteo locale, aria, fallback ICON,
+  nazionale v2 e tempi reali; nessuno e' spacciato per risolto.
+- ESLint passato. Build Web Vite e service worker autonomo passati in una
+  directory temporanea, senza configurazioni private. Avviso preesistente
+  sui chunk oltre 500 kB non bloccante.
+
+LIMITI E CONSEGNA
+Nessun nuovo collaudo visivo sul telefono, APK, test release minificata o Play
+Integrity. La verifica del markup non certifica il layout sul dispositivo.
+Non sono stati interrogati o modificati i dati sponsor di produzione.
+CI remota non avviata; nessuna PR, push, merge, AAB, Play o deploy.
+I successivi controlli privacy e di preservazione sono registrati nel verbale
+locale non versionato prima della consegna. Non copiare chiavi, log grezzi,
+configurazioni o artefatti locali nel repository.

@@ -273,6 +273,19 @@ def _card_details(value: Any) -> list[str]:
     ))
 
 
+def _card_visible_fields(value: Any, legacy_details: list[str]) -> list[str]:
+    if not isinstance(value, list):
+        return list(dict.fromkeys([
+            "businessName", *legacy_details, "title", "description",
+        ]))
+    allowed = {"businessName", "category", "address", "city", "title", "description"}
+    return list(dict.fromkeys(
+        str(item).strip()
+        for item in value
+        if str(item).strip() in allowed
+    ))
+
+
 def _sanitize_campaign(value: Any) -> dict[str, Any]:
     if not isinstance(value, dict):
         raise PromotionValidationError("promotion_campaign_invalid")
@@ -327,6 +340,9 @@ def _sanitize_campaign(value: Any) -> dict[str, Any]:
     end_minutes = _time_to_minutes(end_time, fallback=MINUTES_PER_DAY)
     if end_minutes <= start_minutes:
         raise PromotionValidationError("promotion_time_period_invalid")
+    visible_fields = _card_visible_fields(
+        value.get("cardVisibleFields"), _card_details(value.get("cardDetails"))
+    )
     campaign.update({
         "id": campaign_id,
         "status": status,
@@ -336,7 +352,10 @@ def _sanitize_campaign(value: Any) -> dict[str, Any]:
         "category": _bounded_text(value.get("category"), 120),
         "title": _bounded_text(value.get("title"), 80),
         "description": _bounded_text(value.get("description"), 180),
-        "cardDetails": _card_details(value.get("cardDetails")),
+        "cardDetails": [
+            field for field in visible_fields if field in {"category", "address", "city"}
+        ],
+        "cardVisibleFields": visible_fields,
         "ctaLabel": _bounded_text(value.get("ctaLabel"), 50) or "Scopri l’attività",
         "destinationUrl": _https_url(value.get("destinationUrl")),
         "imageUrl": _https_url(value.get("imageUrl")),
@@ -370,12 +389,24 @@ def _sanitize_campaign(value: Any) -> dict[str, Any]:
         required = (
             campaign["businessName"],
             campaign["city"],
-            campaign["title"],
-            campaign["description"],
             campaign["destinationUrl"],
             campaign["imageUrl"],
         )
-        if not all(required) or not campaign["placements"]:
+        visible_text = {
+            "businessName": campaign["businessName"],
+            "category": campaign["category"],
+            "address": campaign["businessAddress"],
+            "city": campaign["city"],
+            "title": campaign["title"],
+            "description": campaign["description"],
+        }
+        if (
+            not all(required)
+            or not campaign["placements"]
+            or not any(visible_text[field] for field in visible_fields)
+            or ("title" in visible_fields and not campaign["title"])
+            or ("description" in visible_fields and not campaign["description"])
+        ):
             raise PromotionValidationError("promotion_active_campaign_incomplete")
     return campaign
 
@@ -821,7 +852,7 @@ def build_public_catalog(
                 assignment["mode"]
                 for assignment in placement_assignments.values()
             }
-            visible_details = set(campaign.get("cardDetails") or [])
+            visible_fields = set(campaign.get("cardVisibleFields") or [])
             campaigns.append({
                 "id": campaign["id"],
                 "advertiserId": hashlib.sha256(
@@ -831,18 +862,19 @@ def build_public_catalog(
                 "campaignDailyCap": campaign["maxPerDay"],
                 "enabled": True,
                 "image": campaign["imageUrl"],
-                "location": campaign["city"] if "city" in visible_details else "",
+                "location": campaign["city"] if "city" in visible_fields else "",
                 "businessAddress": (
                     campaign["businessAddress"]
-                    if "address" in visible_details else ""
+                    if "address" in visible_fields else ""
                 ),
                 "category": (
                     campaign["category"]
-                    if "category" in visible_details else ""
+                    if "category" in visible_fields else ""
                 ),
-                "title": campaign["businessName"],
-                "headline": campaign["title"],
-                "text": campaign["description"],
+                "title": campaign["businessName"] if "businessName" in visible_fields else "",
+                "headline": campaign["title"] if "title" in visible_fields else "",
+                "text": campaign["description"] if "description" in visible_fields else "",
+                "visibleFields": campaign["cardVisibleFields"],
                 "ctaLabel": campaign["ctaLabel"],
                 "url": campaign["destinationUrl"],
                 "placements": placements,
