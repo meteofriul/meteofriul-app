@@ -31,12 +31,16 @@ Promtool 3.5.0 Windows verificato con SHA256:
 626674d5a047f2fd862a9c8678596b890a6824c76d31c33bcd6af93c1e3429d9.
 Controllo di pulizia del workspace superato.
 
-Il precedente collaudo Linux resta quello documentato in
+Il primo collaudo Linux e documentato in
 ICON2I_MONITOR_LINUX_COLLAUDO_20261017.txt e relativo JSON: 82 test e sette
-scenari aggiuntivi, rete esterna disabilitata, 1 CPU/512 MiB (dispatcher 256),
-picco 135,81 MiB, nessun OOM o processo figlio residuo. Scenario estremo:
-109,957 s applicativi, 112,753 s container, entro 120 s. Non e stato ripetuto
-il collaudo di pressione del container durante la preparazione della PR.
+scenari aggiuntivi, picco 138,39 MiB e scenario estremo di 112,886 s container.
+Il successivo collaudo prima del deploy e documentato nella sezione
+VERIFICHE PRE-DEPLOY di JOB_FIX_DEPLOYMENT_20261017.txt: stessa suite e scenari,
+picco 135,81 MiB, scenario estremo di 109,957 s applicativi e 112,753 s container.
+Entrambi hanno usato rete esterna disabilitata, 1 CPU/512 MiB (dispatcher 256),
+senza OOM o processi figli residui e con durata totale entro 120 s.
+Il collaudo di pressione del container non e stato ripetuto durante la
+preparazione della PR; le misure sopra provengono dalle due esecuzioni distinte.
 
 CI
 Il job backend esistente ora installa promtool 3.5.0 Linux amd64 da GitHub
