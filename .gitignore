@@ -71,3 +71,6 @@ tmp/
 .agents/
 .codex/
 .codex-remote-attachments/
+
+# Generated isolated QA Web assets
+frontend/android/app/src/communityQa/assets/public/

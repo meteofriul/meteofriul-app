@@ -22,6 +22,7 @@
     ["backend/app/services/__init__.py", "app/services/__init__.py"],
     ["backend/app/services/community.py", "app/services/community.py"],
     ["backend/app/services/community_reports.py", "app/services/community_reports.py"],
+    ["backend/app/services/community_compatibility.py", "app/services/community_compatibility.py"],
     ["backend/app/services/pilot_community.py", "app/services/pilot_community.py"],
     ["backend/app/services/pilot_community_geography.py", "app/services/pilot_community_geography.py"],
     ["backend/app/services/fvg_geography.py", "app/services/fvg_geography.py"],
@@ -34,6 +35,7 @@
     ["backend/app/data/fvg_municipalities.json", "app/data/fvg_municipalities.json"],
     ["backend/app/data/fvg_geography.json", "app/data/fvg_geography.json"],
     ["backend/tests/__init__.py", "tests/__init__.py"],
-    ["backend/tests/test_pilot_community_cloud_api.py", "tests/test_pilot_community_cloud_api.py"]
+    ["backend/tests/test_pilot_community_cloud_api.py", "tests/test_pilot_community_cloud_api.py"],
+    ["backend/tests/test_community_cloud_compatibility.py", "tests/test_community_cloud_compatibility.py"]
   ]
 }

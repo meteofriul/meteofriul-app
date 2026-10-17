@@ -1,0 +1,70 @@
+Aggiornamento del 17 ottobre 2026: gli esiti cloud e Android successivi sono
+consolidati in COMMUNITY_COMPATIBILITY_ACCEPTANCE_2026-10-17.txt. Il testo
+seguente conserva il perimetro e i risultati della sessione storica.
+
+METEO FRIUL — RECUPERO COMPATIBILITA COMMUNITY
+16 ottobre 2026
+
+Ambito
+Recupero locale su codex/community-compatibility-clean dalla main pubblica
+565aa8165bf36c7d47cb97491e1ecb1219e89ab7. Unica radice pubblica attesa:
+a70d3c68c8ee21f8d7938e931d5443af15574248.
+
+Sono stati trasferiti i contenuti di 21 file del ramo storico
+codex/community-cloud-compatibility, punta 22a15ac41640192efd39ad3336a5e1295a0b1386,
+rispetto alla sua base 70f1cbb152b3caa518846b06ae05034b87c72316.
+Nessun commit storico e stato importato e non e stato effettuato un merge.
+I file interessati sulla nuova main coincidevano con la base del lavoro:
+applicazione senza conflitti. Codice, test e configurazioni recuperati identici
+all'originale; aggiunti soltanto questo verbale e una nota al documento storico.
+Le dipendenze aggiornate e tutte le altre correzioni della PR #1 restano invariate.
+
+Comportamento recuperato
+- App pubblicata 0.1.14 senza header: operazioni legacy mantenute.
+- Client v3: header di protocollo, GPS e contenuto osservato obbligatori.
+- Conferme vecchie su contenuto v3 respinte con richiesta di aggiornamento.
+- Archivio, identita, punti, quote e ricevute condivisi; nessun azzeramento.
+- Protezione dal doppio premio e dal ritorno alle vecchie regole dopo upgrade.
+- Diagnostica storage limitata ai tipi degli errori, senza payload privati.
+- Configurazione iniziale mantiene COMMUNITY_V3_WRITES_ENABLED=0.
+
+Verifiche ripetute sulla nuova base
+1. Backend: 188 test e 54 sotto-casi superati, nessun test saltato.
+   Moduli: test_community_cloud_compatibility, test_community_reports_rules,
+   test_community_reputation, test_pilot_community, test_pilot_community_sqlite,
+   test_pilot_community_cloud, test_pilot_community_cloud_api,
+   test_pilot_community_cloud_loopback, test_pilot_community_rule_boundaries,
+   test_community_b05_regressions.
+   Comando: python -m pytest -q -p no:cacheprovider sui dieci file indicati.
+2. Frontend: 45 test in 3 file superati con Vitest 4.1.12 e configLoader native:
+   localCommunityPilot.test.js, liveApi.test.js, localOnlyBuild.test.js.
+   Dipendenze installate dal package-lock di main in un node_modules separato,
+   senza script di installazione. Nessuna copia di chiavi o file .env.
+3. ESLint mirato su liveApi.js e localCommunityPilot.test.js: superato.
+4. Pacchetto isolato: 31 unittest superati dal contesto allowlist, senza usare
+   il backend del checkout per gli import. Test cloud API e compatibilita.
+5. Allowlist: 35 file e hash dell'archivio verificati uno per uno. Unico input
+   ignorato: geografia pubblica con SHA-256 fissato nel manifest. Verificati
+   7894 comuni, repository in memoria e nessuna inizializzazione Firebase.
+6. Sintassi PowerShell dello script di preparazione: superata.
+7. Diff e controllo canonical-workspace-cleanliness: superati; 3455 file
+   tracciati. Geografia e dipendenze locali restano escluse da Git.
+
+Il controllo include richieste nel formato letto dalla 0.1.14, invio/conferma,
+correzione/ritiro/sostituzione, GPS v3, identita App Check simulata, replay,
+quote, nessun doppio premio, rollback, concorrenza fra connessioni SQLite,
+riavvio e riconciliazione di una risposta persa dopo il commit.
+
+Limiti
+Servizi cloud e App Check sono simulati; SQLite e dati di test sono temporanei.
+Nessuna scrittura su archivi utenti, servizi pubblici o telefono.
+Non sono stati ricontrollati la revisione cloud attuale o il 503 storico.
+Nessuna immagine Docker e stata costruita. L'archivio verificato e una prova
+del contesto sorgente, non una candidata cloud pronta alla distribuzione.
+Il collaudo cloud separato e la sequenza descritta nel documento storico
+restano necessari prima di coordinare backend e client pubblici.
+
+Il runtime Python emette un avviso di deprecazione sull'adattatore httpx di
+Starlette TestClient; i test passano. Non e stato nascosto o corretto modificando
+le dipendenze in questo recupero. Nessuna nuova build o prova Android inclusa.
+Nessun merge, push, CI GitHub, AAB, Play o deploy autorizzato/eseguito qui.

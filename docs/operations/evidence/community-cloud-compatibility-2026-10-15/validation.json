@@ -1,0 +1,45 @@
+{
+  "schema": "meteofriul.community-compatibility-validation.v1",
+  "date": "2026-10-15",
+  "baselineMain": "29357c3afcca083bada6c3ab4cb7c0e03f8b6817",
+  "publishedApk": {
+    "version": "0.1.14",
+    "versionCode": 300031,
+    "installer": "com.android.vending",
+    "sha256": "2dc09e3b85ade5caaeb84354eccf37458f3b05539df53026af82adcb543dada2"
+  },
+  "liveRevision": "meteofriul-community-00002-tt2",
+  "liveImageDigest": "europe-west1-docker.pkg.dev/meteo-friul/meteofriul/community@sha256:6b1476afcf5d9f2633d54231d3ceca192b4027ad6afb9e37552fcc80f1cf2fb6",
+  "backend": {
+    "tests": 123,
+    "subtests": 36,
+    "result": "pass",
+    "log": "backend-tests.txt"
+  },
+  "frontend": {
+    "command": "npm test -- src/services/localCommunityPilot.test.js src/services/liveApi.test.js src/services/localOnlyBuild.test.js",
+    "files": 3,
+    "tests": 45,
+    "result": "pass"
+  },
+  "lint": {
+    "command": "npx eslint src/services/liveApi.js src/services/localCommunityPilot.test.js",
+    "result": "pass"
+  },
+  "runtimeEnvironmentComparison": "Only added variable: COMMUNITY_V3_WRITES_ENABLED=0; existing storage/auth/hosts match live revision",
+  "live503": {
+    "observedAtUtc": "2026-10-15T19:26:09.875627Z",
+    "successfulRecheckAtUtc": "2026-10-15T19:26:42.4278875Z",
+    "cause": "not determined",
+    "candidateDeployed": false
+  },
+  "scope": {
+    "githubWritten": false,
+    "githubCiStarted": false,
+    "mainChanged": false,
+    "apkInstalled": false,
+    "aabGenerated": false,
+    "cloudBuildStarted": false,
+    "cloudDeployed": false
+  }
+}

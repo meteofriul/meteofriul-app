@@ -6,12 +6,14 @@ steps:
       - -ceu
       - |
         test "$PROJECT_ID" = "meteo-friul"
-        docker build -f Dockerfile -t "${_IMAGE_URI}:${_IMAGE_TAG}" .
+        [[ "${_SOURCE_COMMIT}" =~ ^[0-9a-f]{40}$ ]]
+        docker build --build-arg SOURCE_COMMIT="${_SOURCE_COMMIT}" -f Dockerfile -t "${_IMAGE_URI}:${_IMAGE_TAG}" .
 images:
   - '${_IMAGE_URI}:${_IMAGE_TAG}'
 substitutions:
   _IMAGE_URI: europe-west1-docker.pkg.dev/meteo-friul/meteofriul/community
   _IMAGE_TAG: preflight
+  _SOURCE_COMMIT: required
 options:
   logging: CLOUD_LOGGING_ONLY
 timeout: 900s

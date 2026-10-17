@@ -156,9 +156,12 @@ class PrivatePilotApiTests(unittest.TestCase):
 
     def test_storage_failure_does_not_report_success(self):
         self.service.get_scoped_reports.side_effect = CommunityRepositoryUnavailable("private")
-        response = self.client.get("/api/community/reports?istat_code=093033", headers=self.headers)
+        with self.assertLogs("app.pilot_community_cloud", level="ERROR") as logs:
+            response = self.client.get("/api/community/reports?istat_code=093033", headers=self.headers)
         self.assertEqual(response.status_code, 503)
         self.assertEqual(response.json()["detail"]["code"], "community_storage_unavailable")
+        self.assertNotIn("private", " ".join(logs.output))
+        self.assertIn("CommunityRepositoryUnavailable", " ".join(logs.output))
 
     def test_preflight_is_narrow_and_requires_no_token(self):
         response = self.client.options("/api/community/reports", headers={

@@ -5,6 +5,9 @@ import {
   deleteCommunityReport,
   fetchCommunityReports,
   postCommunityReport,
+  postCommunityReportConfirmation,
+  fetchCommunityHistory,
+  fetchLiveWebcams,
   updateLocalCommunityReport,
   withdrawLocalCommunityReport,
 } from "./liveApi";
@@ -47,6 +50,28 @@ beforeEach(activate);
 afterEach(() => { vi.restoreAllMocks(); vi.unstubAllEnvs(); vi.unstubAllGlobals(); });
 
 describe("isolated national community pilot", () => {
+  it("opts cloud reads and writes into v3 without changing the loopback or webcam contract", async () => {
+    const fetchImpl = vi.fn(async () => ({ ok: true, json: async () => ({ ok: true }) }));
+    const appCheckTokenProvider = vi.fn(async () => "approved-token");
+    await fetchCommunityReports({ communityLocation: pordenone, fetchImpl });
+    expect(fetchImpl.mock.calls[0][1].headers["X-Meteo-Community-Rules"]).toBeUndefined();
+    vi.stubEnv("MODE", "production");
+    vi.stubEnv("PROD", true);
+    vi.stubEnv("VITE_LOCAL_COMMUNITY_PILOT_ENABLED", "0");
+    await fetchCommunityReports({ communityLocation: pordenone, fetchImpl });
+    await postCommunityReportConfirmation({ clientId: "witness", groupId: "group-v3-rain:093033:1",
+      acceptedTerms: true, vote: "yes", coords: { lat: 45.9567, lon: 12.6605, accuracyM: 10 },
+      ageMs: 10, reportIds: ["observation-1"] }, { fetchImpl, appCheckTokenProvider });
+    await fetchCommunityHistory({ clientId: "reader", location: pordenone }, { fetchImpl, appCheckTokenProvider });
+    for (const [, request] of fetchImpl.mock.calls.slice(1)) {
+      expect(request.headers["X-Meteo-Community-Rules"]).toBe("community-reports-v3");
+    }
+    expect(fetchImpl.mock.calls[2][1].headers["X-Firebase-AppCheck"]).toBe("approved-token");
+    expect(JSON.parse(fetchImpl.mock.calls[2][1].body)).toMatchObject({ age_ms: 10, report_ids: ["observation-1"] });
+    await fetchLiveWebcams({ fetchImpl });
+    expect(fetchImpl.mock.calls.at(-1)[1].headers?.["X-Meteo-Community-Rules"]).toBeUndefined();
+  });
+
   it("requires the exact mode, loopback and owned endpoint", () => {
     expect(isLocalCommunityPilot()).toBe(true);
     for (const mode of ["production", "android", "cloudflare", "development", "local-pilot-cloud"]) {

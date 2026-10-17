@@ -86,6 +86,9 @@ async function fetchJson(
     }
 
     const localCommunity = isLocalCommunityPilot() && path.startsWith("/community/");
+    if (localCommunity && !isLocalCommunityDevelopmentRuntime()) {
+      headers["X-Meteo-Community-Rules"] = "community-reports-v3";
+    }
     if (isLocalCommunityDevelopmentRuntime() && localCommunity) {
       headers[LOCAL_COMMUNITY_PILOT_HEADER] = "local-only";
     }
