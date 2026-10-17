@@ -9,15 +9,17 @@ from collections.abc import Mapping
 from dataclasses import replace
 from datetime import date, datetime, timedelta, timezone
 from functools import lru_cache
+from time import sleep
 from typing import Any
 
 from app.infrastructure.firebase import get_firestore_client
 from app.push.fcm import FirebaseCloudMessagingSender
-from app.repositories.push import PushDeviceRepository
+from app.repositories.push import PushDeviceRepository, PushRepositoryUnavailable
 from app.services.fvg_geography import FvgLocality
 from app.services.local_notice_delivery import (
     LocalNoticeDeliveryConfig,
     LocalNoticeDeliveryConfigurationError,
+    LocalNoticeDeliveryTarget,
 )
 from app.services.location import Municipality
 from app.services.morning_forecast_delivery import (
@@ -387,6 +389,36 @@ class EveningForecastDeliveryService(MorningForecastDeliveryService):
     notification_ttl_seconds = EVENING_FORECAST_TTL_SECONDS
     collapse_key = "mf-evening-forecast"
     notification_tag = "mf-evening-forecast"
+    invalid_target_is_retirement = True
+
+    def _claim(
+        self,
+        target: LocalNoticeDeliveryTarget,
+        *,
+        signature: str,
+        now: datetime,
+    ) -> Any:
+        try:
+            return super()._claim(target, signature=signature, now=now)
+        except PushRepositoryUnavailable as error:
+            # Retry only typed transient storage errors, never permission or
+            # validation failures. This happens before any FCM send.
+            from google.api_core.exceptions import (
+                Aborted,
+                DeadlineExceeded,
+                ServiceUnavailable,
+            )
+
+            cause = error.__cause__
+            if not isinstance(cause, (Aborted, DeadlineExceeded, ServiceUnavailable)):
+                raise
+        sleep(0.2)
+        claim = super()._claim(target, signature=signature, now=self._current_time())
+        if not claim.claimed and claim.state in {"sending", "delivery_in_progress"}:
+            # An earlier commit may have succeeded despite losing its reply.
+            # Without ownership proof, neither send again nor report recovery.
+            raise PushRepositoryUnavailable("evening_claim_confirmation_uncertain")
+        return claim
 
     def _forecast_date(self, current: datetime) -> date:
         return current.astimezone(FVG_ZONE).date() + timedelta(days=1)

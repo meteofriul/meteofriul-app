@@ -79,6 +79,7 @@ class MorningForecastDeliveryResult:
     in_progress: int = 0
     retry_scheduled: int = 0
     opted_out: int = 0
+    retired_targets: int = 0
     duplicate_targets: int = 0
     security_failed: int = 0
     device_failed: int = 0
@@ -102,6 +103,7 @@ class MorningForecastDeliveryResult:
             "in_progress": self.in_progress,
             "retry_scheduled": self.retry_scheduled,
             "opted_out": self.opted_out,
+            "retired_targets": self.retired_targets,
             "duplicate_targets": self.duplicate_targets,
             "security_failed": self.security_failed,
             "device_failed": self.device_failed,
@@ -314,6 +316,7 @@ class MorningForecastDeliveryService:
     notification_ttl_seconds = MORNING_FORECAST_TTL_SECONDS
     collapse_key = "mf-morning-forecast"
     notification_tag = "mf-morning-forecast"
+    invalid_target_is_retirement = False
 
     def __init__(
         self,
@@ -573,7 +576,12 @@ class MorningForecastDeliveryService:
             return statuses, 0
         try:
             outcomes = self._send_batch(messages)
-        except (FcmConfigurationError, FcmSenderUnavailable):
+        except FcmConfigurationError:
+            outcomes = [
+                FcmBatchOutcome(error_code="fcm_configuration_error")
+                for _ in messages
+            ]
+        except FcmSenderUnavailable:
             outcomes = [
                 FcmBatchOutcome(error_code="fcm_sender_unavailable")
                 for _ in messages
@@ -619,16 +627,23 @@ class MorningForecastDeliveryService:
                     statuses[index] = "device_failed_unconfirmed"
                     continue
                 if outcome.error_code == "fcm_token_invalid":
-                    self._device_repository.disable_device(
+                    disabled = self._device_repository.disable_device(
                         device_id=str(target.device.get("device_id") or ""),
                         expected_target_kind=target.target_kind,
                         expected_target_hash=target.target_hash,
                         reason="fcm_token_invalid",
                         now=finish_time,
                     )
+                    if self.invalid_target_is_retirement:
+                        statuses[index] = (
+                            "retired_target" if disabled else "device_failed_unconfirmed"
+                        )
+                        continue
                 statuses[index] = "device_failed"
             except PushRepositoryUnavailable:
-                statuses[index] = "device_failed_unconfirmed"
+                statuses[index] = (
+                    "sent_unconfirmed" if outcome.success else "device_failed_unconfirmed"
+                )
         return statuses, 1
 
     def run(self) -> MorningForecastDeliveryResult:
@@ -726,7 +741,7 @@ class MorningForecastDeliveryService:
             grouped.setdefault(target.group_key, []).append(target)
 
         evaluated = attempted = sent = sent_unconfirmed = deduplicated = 0
-        in_progress = retry_scheduled = opted_out = 0
+        in_progress = retry_scheduled = opted_out = retired_targets = 0
         device_failed = storage_failed = source_failed = delivery_batches = 0
         successful_group = False
         local_date = self._forecast_date(current)
@@ -775,6 +790,7 @@ class MorningForecastDeliveryService:
                     sent_unconfirmed += 1
                     storage_failed += 1
                     failed += 1
+                    failed_group_keys.add(group_key)
                 elif status == "deduplicated":
                     deduplicated += 1
                     successful_group = True
@@ -786,6 +802,9 @@ class MorningForecastDeliveryService:
                     successful_group = True
                 elif status == "opted_out":
                     opted_out += 1
+                    successful_group = True
+                elif status == "retired_target":
+                    retired_targets += 1
                     successful_group = True
                 elif status == "security_failed":
                     security_failed += 1
@@ -814,6 +833,8 @@ class MorningForecastDeliveryService:
             status = "retry_scheduled"
         elif opted_out:
             status = "opted_out"
+        elif retired_targets:
+            status = "retired_targets"
         else:
             status = "no_forecast"
 
@@ -831,6 +852,7 @@ class MorningForecastDeliveryService:
             in_progress=in_progress,
             retry_scheduled=retry_scheduled,
             opted_out=opted_out,
+            retired_targets=retired_targets,
             duplicate_targets=duplicate_targets,
             security_failed=security_failed,
             device_failed=device_failed,

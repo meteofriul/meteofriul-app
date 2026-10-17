@@ -132,10 +132,7 @@ class FirebaseCloudMessagingSender:
         firebase_exceptions: Any,
         messaging: Any,
     ) -> str:
-        if isinstance(
-            error,
-            (messaging.UnregisteredError, messaging.SenderIdMismatchError),
-        ):
+        if isinstance(error, messaging.UnregisteredError):
             return "fcm_token_invalid"
         if isinstance(
             error,
@@ -145,6 +142,7 @@ class FirebaseCloudMessagingSender:
                 firebase_exceptions.PermissionDeniedError,
                 firebase_exceptions.UnauthenticatedError,
                 messaging.ThirdPartyAuthError,
+                messaging.SenderIdMismatchError,
             ),
         ):
             return "fcm_configuration_error"
@@ -163,10 +161,7 @@ class FirebaseCloudMessagingSender:
             raise FcmConfigurationError("fcm_configuration_error") from error
         except FcmSendError:
             raise
-        except (
-            messaging.UnregisteredError,
-            messaging.SenderIdMismatchError,
-        ) as error:
+        except messaging.UnregisteredError as error:
             raise FcmTokenInvalid("fcm_token_invalid") from error
         except (
             firebase_exceptions.FailedPreconditionError,
@@ -174,6 +169,7 @@ class FirebaseCloudMessagingSender:
             firebase_exceptions.PermissionDeniedError,
             firebase_exceptions.UnauthenticatedError,
             messaging.ThirdPartyAuthError,
+            messaging.SenderIdMismatchError,
         ) as error:
             raise FcmConfigurationError("fcm_configuration_error") from error
         except (
@@ -231,6 +227,7 @@ class FirebaseCloudMessagingSender:
             firebase_exceptions.PermissionDeniedError,
             firebase_exceptions.UnauthenticatedError,
             messaging.ThirdPartyAuthError,
+            messaging.SenderIdMismatchError,
         ) as error:
             raise FcmConfigurationError("fcm_configuration_error") from error
         except (

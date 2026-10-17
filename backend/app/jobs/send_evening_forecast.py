@@ -25,6 +25,7 @@ _SUCCESS_STATUSES = frozenset(
         "in_progress",
         "retry_scheduled",
         "opted_out",
+        "retired_targets",
     }
 )
 
@@ -44,6 +45,7 @@ def _failure_summary(status: str) -> dict[str, int | str]:
         "in_progress": 0,
         "retry_scheduled": 0,
         "opted_out": 0,
+        "retired_targets": 0,
         "duplicate_targets": 0,
         "security_failed": 0,
         "device_failed": 0,

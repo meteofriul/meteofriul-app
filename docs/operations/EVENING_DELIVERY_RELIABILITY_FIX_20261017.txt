@@ -1,0 +1,76 @@
+SINTESI SERALE: AFFIDABILITA' E CLASSIFICAZIONE ERRORI - 17 OTTOBRE 2026
+
+Ramo: codex/evening-delivery-reliability
+Base: main 565aa8165bf36c7d47cb97491e1ecb1219e89ab7.
+Il commit che introduce questo rapporto identifica il candidato.
+Stato: verificato localmente, non pubblicato e non distribuito.
+
+EVIDENZA E LIMITI DELLA DIAGNOSI
+14 ottobre: 31 invii registrati riusciti su 31.
+15 ottobre: 36 su 37; storage_failed=1 e sent_unconfirmed=0.
+16 ottobre: 39 su 41; due esiti outbox failed_invalid_token/fcm_token_invalid.
+Il controllo outbox ha proiettato solo campi tecnici di stato, date e tentativi,
+senza leggere token o campi personali dei dispositivi. Evidenze grezze private
+escluse dal ramo; qui sono riportati solo conteggi aggregati.
+Il vecchio sender classificava insieme UnregisteredError e SenderIdMismatchError:
+non e' possibile attribuire retroattivamente i due casi alla sola scadenza token.
+La causa precisa dell'errore di archiviazione del 15 ottobre non e' conservata
+nei log disponibili. Non viene dichiarata accertata o risolta in produzione.
+
+CORREZIONI
+1. Solo per la sintesi serale, un target riconosciuto non registrato da FCM,
+   con esito outbox confermato e disattivazione confermata sul medesimo hash,
+   viene contato in retired_targets. Non incrementa sent e non simula una
+   consegna. Se questi sono gli unici esiti, status=retired_targets e failed=0.
+   Disattivazione incerta, target cambiato o archiviazione fallita restano errori.
+   Nessuna disattivazione viene aggiunta rispetto al comportamento precedente:
+   cambia il conteggio della disattivazione gia' prevista e confermata.
+2. SenderIdMismatchError ora rimane errore di configurazione, nel singolo
+   invio e nel batch. Non causa il ritiro del target. Questa classificazione
+   corretta e' condivisa con le altre notifiche che usano il sender FCM.
+3. La sola prenotazione serale prima dell'invio viene ritentata una volta,
+   dopo 0,2 secondi, se la causa diretta e' Aborted, DeadlineExceeded o
+   ServiceUnavailable di Google. Errori di permessi o sconosciuti non vengono
+   ritentati. Il secondo tentativo usa gli stessi controlli di identita',
+   preferenze, posizione e deduplicazione della transazione originale.
+4. Una risposta persa dopo il possibile commit, seguita da claim in corso,
+   resta errore senza inviare una notifica o certificare un recupero.
+   Nessun nuovo tentativo di FCM dopo un invio o della conferma successiva.
+5. Se FCM ha accettato l'invio ma l'archiviazione fallisce, il conteggio
+   e' sent_unconfirmed + storage_failed, con il gruppo correttamente fallito.
+   Un errore di configurazione a livello batch conserva failed_configuration.
+
+ALLARMI
+Guasti di sorgente, sicurezza, configurazione, FCM transitorio, archiviazione
+e disattivazione non confermata continuano a produrre failed>0 e job fallito.
+Le policy, le soglie e le email non sono state modificate o silenziate.
+Il comportamento storico sui token invalidi del job mattutino resta invariato;
+un test lo verifica esplicitamente, poiche' la classe base e' condivisa.
+Ricontrollo cloud in sola lettura il 17 ottobre alle 12:25:38 UTC:
+21 policy attive, 2 prove sintetiche gia' disabilitate, 11 Scheduler abilitati.
+Configurazioni identiche all'inizio dell'audit.
+
+VALIDAZIONE
+Windows, Python 3.13, Firestore/FCM simulati; nessuna notifica reale inviata.
+Da backend: python -B -m unittest discover -s tests
+Esito finale: 1903 test, nessun errore o fallimento, 1 skip per l'artefatto
+ISTAT locale opzionale non presente. Questo controllo geografico non e'
+certificato dalla presente prova. Restano gli avvisi preesistenti dei pacchetti
+Starlette/httpx e Firebase Message.token; non sono errori dei test.
+Le nuove regressioni coprono successi misti a target ritirati, solo ritiri,
+rotazione target, conferme perse, storage transitorio/permanente, permessi,
+claim incerto, invio accettato con conferma persa e configurazione FCM errata.
+
+PRODUZIONE E LAVORO RIMANENTE
+Nessun dato di produzione riscritto, token disattivato, retry cloud o invio
+manuale effettuato durante questo lavoro. Gli allarmi restano attivi.
+Occorre un'autorizzazione separata alla distribuzione. Dopo di essa verificare
+un ciclo programmato, conteggi degli esiti e assenza di invii duplicati.
+L'errore storico di archiviazione va ricontrollato: il recupero aggiunto copre
+solo le cause transitorie riconosciute, non tutte le possibili cause di storage.
+La chiusura dell'allarme su finestra temporale non prova da sola il recupero.
+Nessun merge, push, deploy, build Android, AAB o operazione Play eseguiti.
+
+RIFERIMENTI TECNICI
+https://firebase.google.com/docs/cloud-messaging/manage-tokens
+https://firebase.google.com/docs/cloud-messaging/error-codes
