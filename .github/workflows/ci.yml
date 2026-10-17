@@ -87,6 +87,29 @@ jobs:
       - name: Compile backend
         run: python -m compileall -q app
 
+      - name: Install verified promtool for monitor tests
+        working-directory: .
+        shell: bash
+        run: |
+          set -euo pipefail
+          archive="$RUNNER_TEMP/prometheus-3.5.0.linux-amd64.tar.gz"
+          curl --fail --location --silent --show-error --retry 3 --connect-timeout 10 --max-time 120 \
+            --output "$archive" https://github.com/prometheus/prometheus/releases/download/v3.5.0/prometheus-3.5.0.linux-amd64.tar.gz
+          echo "e811827af26d822afb09a4f28314f61b618b12cff5369835a67f674d8b46f39a  $archive" | sha256sum --check --strict
+          tar -xzf "$archive" --directory "$RUNNER_TEMP" prometheus-3.5.0.linux-amd64/promtool
+          promtool="$RUNNER_TEMP/prometheus-3.5.0.linux-amd64/promtool"
+          "$promtool" --version
+          echo "PROMTOOL=$promtool" >> "$GITHUB_ENV"
+
+      - name: Test ICON-2I monitor and PromQL policies
+        working-directory: .
+        shell: bash
+        env:
+          ICON2I_MONITOR_ALLOW_CLOUD: "0"
+        run: |
+          test -x "$PROMTOOL"
+          python -B -m unittest discover -s experiments/weather_autonomy -p 'test_freshness_monitor*.py' -v
+
   hosting-preview-tool:
     runs-on: windows-latest
     timeout-minutes: 15

@@ -1,5 +1,9 @@
 MONITOR ICON-2I: CORREZIONE LOCALE DEL TIMEOUT - 17 OTTOBRE 2026
 
+NOTA DI LETTURA: questo verbale descrive la fase indicata nella sua data.
+Per lo stato successivo di deploy, cicli naturali e PR del solo monitor vedere
+ICON2I_MONITOR_PR_READINESS_20261017.txt.
+
 AGGIORNAMENTO SUCCESSIVO DEL 17 OTTOBRE 2026
 Il solo aumento a 15 secondi non interrompeva le risposte a goccia di Requests.
 Il rapporto ICON2I_MONITOR_DEADLINE_FIX_20261017.txt documenta la correzione
