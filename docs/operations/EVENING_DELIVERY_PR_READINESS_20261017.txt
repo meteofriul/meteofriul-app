@@ -1,0 +1,87 @@
+SINTESI SERALE: CANDIDATO PR E CICLO VERIFICATO - 17 OTTOBRE 2026
+
+Ramo: codex/evening-delivery-reliability.
+Base pubblica: main 06c0635de5f0f36684be81b316aa13a15f11f3f3.
+Commit runtime dopo riallineamento: d6cc881fb516cb3f7e7e78e7369af526bd3e203e.
+Il commit che introduce questo verbale identifica il candidato documentato.
+Stato: pronto per PR e CI completa; nessun merge o nuovo deploy in questa fase.
+
+CONTENUTO E SEPARAZIONE
+I quattro file runtime e i test di regressione sono identici alla correzione
+originale b5f65e7b26097ad7d0141e80348c5323b77ccf1c. Il ramo e' stato
+riallineato a main senza importare cronologia privata. Il rapporto comune
+JOB_FIX_DEPLOYMENT_20261017.txt gia' presente in main resta invariato.
+Le modifiche del monitor sono gia' nella base e non fanno parte del diff PR.
+
+Un token FCM Unregistered conta come retired_targets soltanto dopo conferma
+outbox e disattivazione confermata del medesimo target. Non incrementa sent.
+SenderIdMismatch resta un errore di configurazione, senza ritiro del target.
+La prenotazione serale prima dell'invio ammette un solo ritentativo, dopo 0,2 s,
+per Aborted, DeadlineExceeded o ServiceUnavailable come causa diretta.
+Permessi, errori sconosciuti e claim incerti restano fallimenti; nessun nuovo
+tentativo FCM dopo un invio accettato. La conferma persa dopo l'accettazione
+produce sent_unconfirmed e storage_failed, e il gruppo resta fallito.
+
+La classificazione FCM e alcune registrazioni degli esiti sono condivise con
+altre notifiche. Il conteggio benigno retired_targets e il retry del claim sono
+abilitati solo per la sera; il comportamento mattutino sui token invalidi
+rimane fallito, verificato da una regressione dedicata.
+
+TEST DEL CANDIDATO
+Windows, Python 3.13, servizi simulati: python -B -m unittest discover -s tests -v.
+1924 test in 55.862 s: nessun errore o fallimento; un solo skip per
+l'artefatto ISTAT locale opzionale assente. Il relativo controllo geografico
+non e' certificato. Inclusi test serali, mattutini, sender FCM e nuovi casi su
+ritiri confermati/incerti, rotazione target, configurazione, claim e conferme
+perse. Nessuna notifica reale inviata dai test.
+Pulizia del workspace verificata: nessun segreto, output generato o riferimento
+attivo a workspace storici tracciato. Controllo privacy richiesto prima del push
+sull'intera cronologia raggiungibile e confronto con i valori privati locali.
+La CI completa standard viene richiesta tramite PR verso main; il suo esito
+e' consultabile nei check della PR sul commit pubblicato, senza modificare i
+trigger o avviare una seconda esecuzione manuale.
+
+PROVA LINUX E DISTRIBUZIONE PRECEDENTI
+104 test Linux passati, zero skip, sull'immagine finale gia' distribuita;
+container isolato senza rete, 1 CPU e 512 MiB. Non ripetuti in questa fase.
+Build: d32ca0bf-a838-4297-862c-5b476e3aef23.
+Digest: sha256:68ce70252ae27a33a5bbd628984727fc993a9be09295777d945108441bf773c5.
+La distribuzione precedente ha applicato solo i quattro file corretti alla
+vecchia immagine di produzione. Il file FCM di quella base non conteneva la
+costante preesistente DEFAULT_ANDROID_NATIONAL_ALERT_CHANNEL: l'overlay ne
+ha conservato l'assenza. Il ramo mantiene la costante di main. Non si dichiara
+che l'intero backend di produzione coincida con main o con questo candidato.
+
+CICLO NATURALE VERIFICATO
+Job meteofriul-evening-forecast, europe-west1, 17 ottobre ore 20:45 Europe/Rome
+(18:45 UTC), schedule 45 20 * * *. Esecuzione meteofriul-evening-forecast-975tq.
+Origine Scheduler riconciliata con avvio, identita' del chiamante e HTTP 200;
+digest effettivo uguale a quello sopra, un task, nessun retry del task.
+Inizio 18:45:11.222372Z; termine 18:46:56.139335Z.
+Durata esecuzione 104,916963 s; dallo slot 116,139335 s; limite job 300 s.
+44 destinatari eleggibili e tentati, 14 gruppi, 14 batch:
+sent=42; retired_targets=2; failed=0; failed_groups=0;
+sent_unconfirmed=0; storage_failed=0; security_failed=0; device_failed=0;
+source_failed=0; in_progress=0; retry_scheduled=0; duplicate_targets=0.
+Outbox proiettata sui soli campi tecnici: 42 sent e 2
+failed_invalid_token/fcm_token_invalid, tutti con attempt_count=1.
+La metrica di completamento conferma un'esecuzione riuscita; nessun errore
+di configurazione osservato. Riconciliazione conclusa alle 19:02 UTC.
+Le 21 policy attive, incluse le due storiche, gli 11 Scheduler e gli IAM
+risultavano invariati al controllo. Nessuna policy ritirata o silenziata.
+
+LIMITI E PRIVACY
+FCM accettato non prova la visualizzazione su ogni telefono. Non risultano
+retry o tentativi outbox duplicati nel ciclo; non e' una certificazione di
+consegna esattamente una volta in ogni condizione. Un ciclo riuscito non prova
+tutti i futuri recuperi transitori, che sono coperti da test simulati.
+I due casi del 16 ottobre non sono riclassificabili retroattivamente; la causa
+puntuale del precedente errore storage resta non accertata.
+Il repository conserva solo codice, test sintetici e aggregati tecnici.
+Log grezzi, token, identificativi dispositivi, configurazioni private e backup
+restano esclusi. Chiavi, dati, artefatti locali e altri rami sono preservati.
+Nessun merge, nuovo deploy, invio manuale, APK, AAB o operazione Play.
+
+RIFERIMENTI INTERNI
+EVENING_DELIVERY_RELIABILITY_FIX_20261017.txt: diagnosi e verifica locali iniziali.
+JOB_FIX_DEPLOYMENT_20261017.txt: verbale storico della distribuzione autorizzata.
