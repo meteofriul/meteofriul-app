@@ -4,7 +4,8 @@ from unittest.mock import Mock
 
 from freshness_monitor.collect import Budget, Collector
 from freshness_monitor.core import evaluate
-from freshness_monitor.google import PublicHTTP, Transport
+from freshness_monitor.google import PublicHTTP
+from freshness_monitor.http import SessionTransport as Transport
 from test_freshness_monitor import Fixture, NOW
 
 

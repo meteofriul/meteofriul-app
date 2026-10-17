@@ -25,12 +25,16 @@ def emit(record):
 
 class JobLauncher:
     """One launch attempt per delivery; no retry after an uncertain POST."""
-    def __init__(self, transport):
-        self.transport = transport
+    def __init__(self, transport, *, owns_transport=False):
+        self.transport, self.owns_transport = transport, owns_transport
 
     def launch(self, planned, source_time):
-        status, body, _ = self.transport.request("POST", RUN_URL, Budget(10),
-            maximum=65536, json=job_overrides(planned, source_time))
+        try:
+            status, body, _ = self.transport.request("POST", RUN_URL, Budget(10),
+                maximum=65536, json=job_overrides(planned, source_time))
+        finally:
+            if self.owns_transport:
+                self.transport.close()
         if status != 200:
             raise Unavailable("job launch rejected or uncertain")
         try:
@@ -46,7 +50,7 @@ class JobLauncher:
 
 def cloud_launcher():
     auth, _ = transports()
-    return JobLauncher(auth)
+    return JobLauncher(auth, owns_transport=True)
 
 
 class Application:
