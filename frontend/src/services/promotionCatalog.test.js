@@ -108,6 +108,28 @@ describe("promotion catalog", () => {
       startTime: "08:00",
       startsAt: "2026-09-20",
     });
+    expect(catalog.campaigns[0].visibleFields).toEqual([
+      "businessName", "category", "address", "city", "description",
+    ]);
+  });
+
+  it("keeps an explicitly selected text layout even without name or description", () => {
+    const campaign = {
+      ...remoteCatalog.campaigns[0],
+      title: "",
+      text: "",
+      headline: "Tagli su misura",
+      visibleFields: ["title", "title", "unsupported"],
+    };
+    const normalized = normalizePromotionCatalog({ ...remoteCatalog, campaigns: [campaign] });
+    expect(normalized.enabled).toBe(true);
+    expect(normalized.campaigns[0].visibleFields).toEqual(["title"]);
+
+    const invalid = normalizePromotionCatalog({
+      ...remoteCatalog,
+      campaigns: [{ ...campaign, visibleFields: ["businessName"] }],
+    });
+    expect(invalid).toMatchObject({ enabled: false, campaigns: [] });
   });
 
   it("defaults every missing or invalid placement interval to 120 seconds", () => {

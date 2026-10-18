@@ -1,7 +1,7 @@
 import { ExternalLink, Megaphone } from "lucide-react";
 import { useEffect, useMemo, useRef, useState } from "react";
 
-import { recordPromotionEvent } from "../../services/promotionCatalog";
+import { PROMOTION_VISIBLE_FIELDS, recordPromotionEvent } from "../../services/promotionCatalog";
 
 import {
   PROMOTION_ROTATION_INTERVAL_MS,
@@ -94,17 +94,29 @@ export function PromotionPlacementCard({ campaigns, language = "it", now, placem
 
   if (!campaign) return null;
 
-  const titleId = `promotion-${placement}-${campaign.id}-title`;
+  const visibleFields = new Set(Array.isArray(campaign.visibleFields)
+    ? campaign.visibleFields : PROMOTION_VISIBLE_FIELDS);
+  const primaryLine = [
+    visibleFields.has("businessName") ? campaign.title : "",
+    visibleFields.has("city") ? campaign.location : "",
+  ].filter(Boolean).join(" · ");
+  const details = [
+    visibleFields.has("category") ? campaign.category : "",
+    visibleFields.has("address") ? campaign.businessAddress : "",
+  ].filter(Boolean);
+  const headline = visibleFields.has("title") ? campaign.headline : "";
+  const description = visibleFields.has("description") ? campaign.text : "";
+  const accessibleText = primaryLine || details.join(" · ") || headline || description || copy.label;
   return (
     <article
-      aria-labelledby={titleId}
+      aria-label={`${copy.label}: ${accessibleText}`}
       className={`mf-home-promotion mf-promotion-card mf-promotion-card--${placement}`}
       data-promotion-id={campaign.id}
       data-promotion-placement={placement}
       ref={cardRef}
     >
       <a
-        aria-label={`${campaign.ctaLabel || copy.action}: ${campaign.title}`}
+        aria-label={`${campaign.ctaLabel || copy.action}: ${accessibleText}`}
         className="mf-home-promotion__link"
         href={campaign.url}
         onClick={() => {
@@ -120,16 +132,12 @@ export function PromotionPlacementCard({ campaigns, language = "it", now, placem
             </span>
           )}
         </span>
-        <span className="mf-home-promotion__body">
+        <span className={`mf-home-promotion__body${headline ? " mf-home-promotion__body--with-headline" : ""}`}>
           <span className="mf-home-promotion__label">{copy.label}</span>
-          <strong id={titleId}>
-            {campaign.title}{campaign.location ? ` · ${campaign.location}` : ""}
-          </strong>
-          {campaign.category || campaign.businessAddress ? (
-            <span className="mf-home-promotion__details">{[campaign.category, campaign.businessAddress].filter(Boolean).join(" · ")}</span>
-          ) : null}
-          {campaign.headline ? <span className="mf-home-promotion__headline">{campaign.headline}</span> : null}
-          <span className="mf-home-promotion__text">{campaign.text}</span>
+          {primaryLine ? <strong>{primaryLine}</strong> : null}
+          {details.length ? <span className="mf-home-promotion__details">{details.join(" · ")}</span> : null}
+          {headline ? <span className="mf-home-promotion__headline">{headline}</span> : null}
+          {description ? <span className="mf-home-promotion__text">{description}</span> : null}
           <span className="mf-home-promotion__cta">
             {campaign.ctaLabel || copy.action}<ExternalLink aria-hidden="true" size={15} strokeWidth={2.2} />
           </span>

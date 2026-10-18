@@ -1,7 +1,10 @@
 # Contratto proposto tra app e pannello promozioni
 
-Questo documento definisce il confine di integrazione. Non modifica né assume
-la struttura del progetto separato `F:\proggetto Meteo Friul App\INSERZIONI`.
+Questo documento conserva la proposta iniziale di integrazione; i campi e i
+comportamenti proposti sotto non certificano la loro implementazione.
+Il contratto implementato, inclusa la compatibilità condizionata con Android
+0.1.14, è in [Promotions control plane](PROMOTIONS_CONTROL_PLANE.md).
+Non modifica la struttura del repository separato `INSERZIONI`.
 
 ## Responsabilità
 
