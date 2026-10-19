@@ -1,0 +1,170 @@
+{
+  "apiVersion": "run.googleapis.com/v1",
+  "kind": "Execution",
+  "metadata": {
+    "annotations": {
+      "run.googleapis.com/client-name": "gcloud",
+      "run.googleapis.com/client-version": "570.0.0",
+      "run.googleapis.com/creator": "meteofriul@gmail.com",
+      "run.googleapis.com/execution-environment": "gen2",
+      "run.googleapis.com/lastModifier": "meteofriul@gmail.com",
+      "run.googleapis.com/operation-id": "2cf76506-56c3-4b2b-80b2-66ffc35e8081"
+    },
+    "creationTimestamp": "2026-10-19T18:10:35.243871Z",
+    "generation": 1,
+    "labels": {
+      "client.knative.dev/nonce": "qep_hok_rad",
+      "cloud.googleapis.com/location": "europe-west1",
+      "delivery": "dry-run",
+      "phase": "consumer-qa",
+      "run.googleapis.com/job": "meteofriul-local-notice-tolerance-qa",
+      "run.googleapis.com/jobGeneration": "1",
+      "run.googleapis.com/jobResourceVersion": "1792433242359371",
+      "run.googleapis.com/jobUid": "0bf60c62-b5c8-4fc2-93f1-d3d7fae97b2c",
+      "workstream": "icon-tolerance"
+    },
+    "name": "meteofriul-local-notice-tolerance-qa-vcgqj",
+    "namespace": "49007668366",
+    "ownerReferences": [
+      {
+        "apiVersion": "serving.knative.dev/v1",
+        "blockOwnerDeletion": true,
+        "controller": true,
+        "kind": "Job",
+        "name": "meteofriul-local-notice-tolerance-qa",
+        "uid": "0bf60c62-b5c8-4fc2-93f1-d3d7fae97b2c"
+      }
+    ],
+    "resourceVersion": "AAZeNXEUzek",
+    "selfLink": "/apis/run.googleapis.com/v1/namespaces/49007668366/executions/meteofriul-local-notice-tolerance-qa-vcgqj",
+    "uid": "6b712b40-942e-48c0-9dc5-5726c936d672"
+  },
+  "spec": {
+    "parallelism": 1,
+    "taskCount": 1,
+    "template": {
+      "spec": {
+        "containers": [
+          {
+            "args": [
+              "-m",
+              "app.jobs.send_local_weather_notices"
+            ],
+            "command": [
+              "python"
+            ],
+            "env": [
+              {
+                "name": "FIREBASE_PROJECT_ID",
+                "value": "meteo-friul"
+              },
+              {
+                "name": "COMMUNITY_STORAGE",
+                "value": "firestore"
+              },
+              {
+                "name": "METEOFRIUL_OPEN_METEO_ENABLED",
+                "value": "0"
+              },
+              {
+                "name": "LOCAL_NOTICE_DELIVERY_MODE",
+                "value": "dry_run"
+              },
+              {
+                "name": "LOCAL_NOTICE_RETENTION_DAYS",
+                "value": "14"
+              },
+              {
+                "name": "LOCAL_NOTICE_SOURCE_TIMEOUT_SECONDS",
+                "value": "30"
+              },
+              {
+                "name": "LOCAL_NOTICE_ICON_BASE_URL",
+                "value": "https://meteofriul-weather-49007668366.europe-west1.run.app/weather/v1/icon2i/"
+              },
+              {
+                "name": "LOCAL_NOTICE_NATIONAL_ICON_BASE_URL",
+                "value": "https://meteofriul-national-weather-49007668366.europe-west1.run.app/weather/v2/icon2i/"
+              },
+              {
+                "name": "PUSH_PILOT_MAX_DEVICES",
+                "value": "200"
+              },
+              {
+                "name": "PUSH_PILOT_ENROLLMENT_MODE",
+                "value": "play_beta"
+              },
+              {
+                "name": "LOCAL_NOTICE_ENROLLMENT_MODE",
+                "value": "play_beta"
+              },
+              {
+                "name": "PUSH_ENROLLMENT_GENERATION",
+                "value": "play-beta-v1"
+              },
+              {
+                "name": "PUSH_APP_CHECK_ANDROID_APP_IDS",
+                "value": "1:49007668366:android:725bf6f8b339177a852ddf"
+              },
+              {
+                "name": "PUSH_APP_CHECK_WEB_APP_IDS",
+                "value": "1:49007668366:web:a848e70da40a12eb852ddf"
+              },
+              {
+                "name": "PUSH_PLAY_BETA_MIN_VERSION_CODE",
+                "value": "300029"
+              },
+              {
+                "name": "LOCAL_NOTICE_ICON_ACCUMULATION_SIDECAR_ENABLED",
+                "value": "true"
+              }
+            ],
+            "image": "europe-west1-docker.pkg.dev/meteo-friul/meteofriul/backend@sha256:48d293f2d2ea2a0b5f1416e82be4b59ee95a86857a79b79822b6ee8ae5d71ca1",
+            "resources": {
+              "limits": {
+                "cpu": "1",
+                "memory": "512Mi"
+              }
+            }
+          }
+        ],
+        "maxRetries": 0,
+        "serviceAccountName": "meteofriul-notice-qa@meteo-friul.iam.gserviceaccount.com",
+        "timeoutSeconds": "300"
+      }
+    }
+  },
+  "status": {
+    "completionTime": "2026-10-19T18:11:21.950233Z",
+    "conditions": [
+      {
+        "lastTransitionTime": "2026-10-19T18:11:21.950233Z",
+        "message": "Execution completed successfully in 39.44s.",
+        "status": "True",
+        "type": "Completed"
+      },
+      {
+        "lastTransitionTime": "2026-10-19T18:10:39.468415Z",
+        "message": "Provisioned imported containers.",
+        "status": "True",
+        "type": "ResourcesAvailable"
+      },
+      {
+        "lastTransitionTime": "2026-10-19T18:11:12.653501Z",
+        "message": "Started deployed execution in 33.18s.",
+        "status": "True",
+        "type": "Started"
+      },
+      {
+        "lastTransitionTime": "2026-10-19T18:10:39.374490Z",
+        "message": "Imported container image in 4.13s.",
+        "status": "True",
+        "type": "ContainerReady"
+      }
+    ],
+    "logUri": "https://console.cloud.google.com/logs/viewer?project=meteo-friul&advancedFilter=resource.type%3D%22cloud_run_job%22%0Aresource.labels.job_name%3D%22meteofriul-local-notice-tolerance-qa%22%0Aresource.labels.location%3D%22europe-west1%22%0Alabels.%22run.googleapis.com/execution_name%22%3D%22meteofriul-local-notice-tolerance-qa-vcgqj%22",
+    "observedGeneration": 1,
+    "startTime": "2026-10-19T18:10:42.507066Z",
+    "succeededCount": 1
+  }
+}

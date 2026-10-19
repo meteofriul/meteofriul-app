@@ -1,0 +1,891 @@
+{
+  "stage": "01-readers",
+  "base_commit": "8497e773b1613312bb952236d72c074e22a7b1c6",
+  "reviewed_commit": "5e04343a27716c9c42a65d2a45aea0f628bbb9d8",
+  "stage_tree": "555630d578aea12fa0f659f718b28bff292bfaa1",
+  "patch_sha256": "7e26e3b74c32da97387369cec2c1abaff60f3c78935db0bf7d126e1e14cd1f83",
+  "image_tag": "europe-west1-docker.pkg.dev/meteo-friul/meteofriul/weather-worker:icon-tolerance-readers-20261019-5e04343a",
+  "writers_unchanged": true,
+  "files": [
+    {
+      "path": "backend/app/data/fvg_geography.json",
+      "sha256": "0475c1b1fc309e5e38ab536ae4b32cd04d11550168b871d8b95bbbe5f16512e9",
+      "bytes": 3447533
+    },
+    {
+      "path": "backend/app/data/fvg_municipalities.json",
+      "sha256": "06ced5bedc823365b38d83d2be93bd1bf5102ec97b2e5ba4f91c9f5ae5975a57",
+      "bytes": 54909
+    },
+    {
+      "path": "experiments/weather_autonomy/Dockerfile.pilot",
+      "sha256": "f22f969f39a444401905b15906e359091cfa90381355d1111e409a0fc2f400f3",
+      "bytes": 733
+    },
+    {
+      "path": "experiments/weather_autonomy/audit_icon2i_rain.py",
+      "sha256": "f1703907842370a62aff54c6adbff8afb091d540409e9ee134e2a1ed94f919ab",
+      "bytes": 10515
+    },
+    {
+      "path": "experiments/weather_autonomy/audit_uv_sample.py",
+      "sha256": "4c81d3c52d6fa88210a78fd800da960a42407aa719d8d37e642b731b3df74a7d",
+      "bytes": 1872
+    },
+    {
+      "path": "experiments/weather_autonomy/benchmark_icon2i.py",
+      "sha256": "699c7c1c03c293902a1d5bc6b091357ca73c18182b2a7f954acbf8faa8ed5d58",
+      "bytes": 20221
+    },
+    {
+      "path": "experiments/weather_autonomy/benchmark_national_icon_bundle.py",
+      "sha256": "e9da7c1da8bb96b353ea6f2fa3b00b85f7899008c60b36b7b7762ae8435f7313",
+      "bytes": 20689
+    },
+    {
+      "path": "experiments/weather_autonomy/benchmark_national_icon_real.py",
+      "sha256": "85ba5d7c695693009c0da3ddf4517a7eae51996e83d06e6ca4ec88461c98045a",
+      "bytes": 44488
+    },
+    {
+      "path": "experiments/weather_autonomy/cams_local_lifecycle.py",
+      "sha256": "24334fdf38d1551a5473e3c6e16b7b2d07b814b1a6004855c88e7ad29b010619",
+      "bytes": 4196
+    },
+    {
+      "path": "experiments/weather_autonomy/cams_readback.py",
+      "sha256": "95db0a15ebc5beb9cde0b7c7d4778e876e54da189ea9b7329591ab7dde96d020",
+      "bytes": 5327
+    },
+    {
+      "path": "experiments/weather_autonomy/cams_request_plan.py",
+      "sha256": "292a74fafd428d8aab037703a8f90b2a9ce19434b801de43adadcf617b5f1195",
+      "bytes": 41032
+    },
+    {
+      "path": "experiments/weather_autonomy/cams_runtime.py",
+      "sha256": "ae4f81789d974ff5849438d02121ebc45e7f0e5cfa243e3602761e21cb8ff6c5",
+      "bytes": 2423
+    },
+    {
+      "path": "experiments/weather_autonomy/cams_test_fixtures.py",
+      "sha256": "21fe3a72d4a5127741fe0889b39d1a1049c7c4cb3d29ddbff0ec46283cec7a0c",
+      "bytes": 6079
+    },
+    {
+      "path": "experiments/weather_autonomy/cloud_reader.py",
+      "sha256": "51dddb51411851695f1bb12ab3019babc159b571f3f79b788f089910c762d1c3",
+      "bytes": 7080
+    },
+    {
+      "path": "experiments/weather_autonomy/cloud_worker.py",
+      "sha256": "5c863c0ef9ff9d572a857b5dc435b5319f4246de01a150c49c709ef45ec65283",
+      "bytes": 30804
+    },
+    {
+      "path": "experiments/weather_autonomy/configure_pilot_reader_iam.py",
+      "sha256": "109a6eb93f9647d6061fd684a4bf27376b5851274ed0fd33586e1b2fa751786b",
+      "bytes": 711
+    },
+    {
+      "path": "experiments/weather_autonomy/configure_pilot_worker_iam.py",
+      "sha256": "942407e78e21c91e00705253ca9cb217bc5ea78fbc423ef0cd80e6c2c0f1f843",
+      "bytes": 2691
+    },
+    {
+      "path": "experiments/weather_autonomy/configure_uv_iam.py",
+      "sha256": "227f960692403fc1feae3652ee7937cf511ebd81114ba94b2c5c843847e2a42c",
+      "bytes": 1001
+    },
+    {
+      "path": "experiments/weather_autonomy/decode_cams.py",
+      "sha256": "a91eb3e014c12c163d26d372da1d2bb584a6d6265b215c9d0e09b7c81a9f1df4",
+      "bytes": 27316
+    },
+    {
+      "path": "experiments/weather_autonomy/decode_cams_region.py",
+      "sha256": "d5070d804ed608cd0b4858fc680eeb8ce5840958476a6f20cdfac690a11a29e2",
+      "bytes": 31019
+    },
+    {
+      "path": "experiments/weather_autonomy/fetch_uv_sample.py",
+      "sha256": "c3c357225921546e22a35222d7e71d6afb36e0b47f6fa67e6feeb53446c97111",
+      "bytes": 2392
+    },
+    {
+      "path": "experiments/weather_autonomy/freshness_monitor/__init__.py",
+      "sha256": "a8e1ad24c2b639870126e59f7367caab7e6551ba7de8ba86730e675eb9f3308d",
+      "bytes": 69
+    },
+    {
+      "path": "experiments/weather_autonomy/freshness_monitor/__main__.py",
+      "sha256": "185311c398b26805dc750e2b13c850990e113a8149b005f32222e304a0fd7159",
+      "bytes": 4507
+    },
+    {
+      "path": "experiments/weather_autonomy/freshness_monitor/collect.py",
+      "sha256": "f62ac117f37a494ec5fc30881f43ca5f0b4f425185afc912959a036141f66daa",
+      "bytes": 13838
+    },
+    {
+      "path": "experiments/weather_autonomy/freshness_monitor/contracts.py",
+      "sha256": "524d2502cbeb17e0cb26a484eabd7621843c904c67d8ee00ed5026b355c57d81",
+      "bytes": 6356
+    },
+    {
+      "path": "experiments/weather_autonomy/freshness_monitor/core.py",
+      "sha256": "aa805c9f8caf9a71d1c7377c1bb5fe092d2c2cc9027fc107b657f86592d2a9e6",
+      "bytes": 6662
+    },
+    {
+      "path": "experiments/weather_autonomy/freshness_monitor/definitions.py",
+      "sha256": "5faf807af776f237bb8834b8698edfefb946a025f4396c0ad9701147a97b1b7f",
+      "bytes": 7686
+    },
+    {
+      "path": "experiments/weather_autonomy/freshness_monitor/dispatcher.py",
+      "sha256": "d1b72751166367b7328d59eb852b44f543d330440847bf963469077a4d72d785",
+      "bytes": 8130
+    },
+    {
+      "path": "experiments/weather_autonomy/freshness_monitor/google.py",
+      "sha256": "14524f90277b19fe9092f280ae3bbb0ab04242221c3813b8ea6865fcd7b4387d",
+      "bytes": 9133
+    },
+    {
+      "path": "experiments/weather_autonomy/freshness_monitor/http.py",
+      "sha256": "7f0da1b7601cf421aee3e8db31e7694a98a4c33091d058b928aefb4be89524c1",
+      "bytes": 10165
+    },
+    {
+      "path": "experiments/weather_autonomy/freshness_monitor/runner.py",
+      "sha256": "9946b629d830ed0facd39d005998851495e0002a2a91a4f717f278b49de48810",
+      "bytes": 9395
+    },
+    {
+      "path": "experiments/weather_autonomy/freshness_monitor/schedule.py",
+      "sha256": "35936ae9a89889a7b15ca27520cb62ba7690c50b81d2d20cdf47c414f4ffff67",
+      "bytes": 2569
+    },
+    {
+      "path": "experiments/weather_autonomy/icon_semantics.py",
+      "sha256": "255ba6664deca83d6d7c6685df12580569e2fa9ac3432dbe33f185c5775974f5",
+      "bytes": 7123
+    },
+    {
+      "path": "experiments/weather_autonomy/local_app_adapter.py",
+      "sha256": "441a640560b212509f488f7a20319f1a2808f47f25c41d102ad081a8ea3cd7ce",
+      "bytes": 22857
+    },
+    {
+      "path": "experiments/weather_autonomy/local_pipeline/__init__.py",
+      "sha256": "4b4548768be9aacf326f391c8fbb62327243eb05b4df2252e24010b0a3e3f996",
+      "bytes": 60
+    },
+    {
+      "path": "experiments/weather_autonomy/local_pipeline/accumulation_tolerance.py",
+      "sha256": "a29bbcb88b4b6b2678adebfbd95e751e719948422304008f13948b90799d402b",
+      "bytes": 4649
+    },
+    {
+      "path": "experiments/weather_autonomy/local_pipeline/authoritative_catalog.py",
+      "sha256": "c203ddb7ef4614b082318693c4b7ba9a0f8f568b8829f2708fd729e376b6ccc7",
+      "bytes": 22403
+    },
+    {
+      "path": "experiments/weather_autonomy/local_pipeline/cams_artifact_checkpoint.py",
+      "sha256": "0f07fccf75ae1fab7c301234e0ac50e5c3153fdc76f4fdae893bce392acc9e02",
+      "bytes": 9069
+    },
+    {
+      "path": "experiments/weather_autonomy/local_pipeline/cams_continuity.py",
+      "sha256": "04812cf23d919ff49dcb33f6e6fbb522033886758303f6d66b65a5734d91fa23",
+      "bytes": 2164
+    },
+    {
+      "path": "experiments/weather_autonomy/local_pipeline/cams_lifecycle.py",
+      "sha256": "348586a639eec5efc7dc4c48d1792bd09f93c69771f16175694f57b37267f8a8",
+      "bytes": 47870
+    },
+    {
+      "path": "experiments/weather_autonomy/local_pipeline/contract_publisher.py",
+      "sha256": "f114dd0fd03ef1e272c3cce7a5f9cf3c64db83d5ab9c1da2b8fbb4b7e8cc154d",
+      "bytes": 91826
+    },
+    {
+      "path": "experiments/weather_autonomy/local_pipeline/contract_v1.py",
+      "sha256": "970e08ecd218d4c92e0988feb839c6e3f9b977f841d6c86cdf55859d0ddcbc4c",
+      "bytes": 59341
+    },
+    {
+      "path": "experiments/weather_autonomy/local_pipeline/contracts.py",
+      "sha256": "f50461485fafb2e26476849d40a180dc5a61fb01679e9d0feb256195c31aaf2f",
+      "bytes": 4382
+    },
+    {
+      "path": "experiments/weather_autonomy/local_pipeline/gcs_object_store.py",
+      "sha256": "9a6f845c10857f9b668af1b1528ec99ed76289139047d43418b76f6243d38ea6",
+      "bytes": 9284
+    },
+    {
+      "path": "experiments/weather_autonomy/local_pipeline/http_data_plane.py",
+      "sha256": "ae0ccb06aa628bd46e135d52952b9d368ca793bf9dde35b03f0e7095ea5b282e",
+      "bytes": 14655
+    },
+    {
+      "path": "experiments/weather_autonomy/local_pipeline/icon_accumulation_sidecar.py",
+      "sha256": "77d819ab543fee4a003c167cec3d9fdb266344277f3e548dd6754be58995162b",
+      "bytes": 3165
+    },
+    {
+      "path": "experiments/weather_autonomy/local_pipeline/icon_checkpoint.py",
+      "sha256": "3f47769661ed3b5a6c378fb7abf2933d0b6c766aab659a01a27781444f8f6eb4",
+      "bytes": 6408
+    },
+    {
+      "path": "experiments/weather_autonomy/local_pipeline/icon_quality.py",
+      "sha256": "8f157719ab22daa2a7676cd2e35fd649eed3aedd12e7ee167fa34dad3ff0a444",
+      "bytes": 9916
+    },
+    {
+      "path": "experiments/weather_autonomy/local_pipeline/job_entrypoints.py",
+      "sha256": "b4d84ebb451908e3f474745816cba0ab6704d3514df1e2b298708903125578fb",
+      "bytes": 22089
+    },
+    {
+      "path": "experiments/weather_autonomy/local_pipeline/job_outcomes.py",
+      "sha256": "9d07539021e9c00c966fdf60613a7e58ba620d53263a6a4bf9da45000bc9c046",
+      "bytes": 6216
+    },
+    {
+      "path": "experiments/weather_autonomy/local_pipeline/job_runtime.py",
+      "sha256": "47ff206908e1183eb684499bd9ffabbc175d5988d61c77bcad284815a17d7109",
+      "bytes": 14689
+    },
+    {
+      "path": "experiments/weather_autonomy/local_pipeline/local_scheduler.py",
+      "sha256": "48dd9b56586b049e66fc3edb4680de9f3f51052d12ae587b1cc954873d7591e5",
+      "bytes": 43208
+    },
+    {
+      "path": "experiments/weather_autonomy/local_pipeline/national_forecast_points.py",
+      "sha256": "69c4e04c20aa14e7a4b5d4d6793b2ad2d716f6a1e3cd00adad4671e0fadc9e91",
+      "bytes": 37238
+    },
+    {
+      "path": "experiments/weather_autonomy/local_pipeline/national_icon_bundle.py",
+      "sha256": "e3fd8ed0e651fa337862501500bc51824259096cc785fe8addc914dc4e1ab6b9",
+      "bytes": 44863
+    },
+    {
+      "path": "experiments/weather_autonomy/local_pipeline/object_state_store.py",
+      "sha256": "166e117f7a53c323b60d25800785c23b19bd8adebd23674926dc400788eeb6f8",
+      "bytes": 4353
+    },
+    {
+      "path": "experiments/weather_autonomy/local_pipeline/object_store_ports.py",
+      "sha256": "19133968735e85b4e283d8645e427a9c67057289e40f9d521d83bc7b69c8c43e",
+      "bytes": 1285
+    },
+    {
+      "path": "experiments/weather_autonomy/local_pipeline/operational_diagnostics.py",
+      "sha256": "a08c7159266fdad6c06e8e148f178cc40751bd5d709abeeb7f7642900219d49a",
+      "bytes": 11860
+    },
+    {
+      "path": "experiments/weather_autonomy/local_pipeline/publication_intent.py",
+      "sha256": "9ee5c78755c0392bc8bc53c59ecf8eff189816e870c26a37ed266b6104b1228d",
+      "bytes": 15072
+    },
+    {
+      "path": "experiments/weather_autonomy/local_pipeline/published_runs_reader.py",
+      "sha256": "92a01213e6c75f5d5e8edb956791e27f459199535024e1e3c578ef1e972c6b49",
+      "bytes": 46024
+    },
+    {
+      "path": "experiments/weather_autonomy/local_pipeline/publisher.py",
+      "sha256": "d10fbd969c1c55e49eff9afba0069d1e4b137d0905bcc20f1b6ddd5744b44a7c",
+      "bytes": 28320
+    },
+    {
+      "path": "experiments/weather_autonomy/local_pipeline/remote_publication_intent.py",
+      "sha256": "7029d61e87ec2c7e3e73873d32c864cd209ffd943e6fae02bc9c9ddb1ef8c6e1",
+      "bytes": 2287
+    },
+    {
+      "path": "experiments/weather_autonomy/local_pipeline/s3_object_store.py",
+      "sha256": "e3c5edca4442d5788c4d748da8604b19f738e923f00c0562f2cf01940ede797d",
+      "bytes": 4962
+    },
+    {
+      "path": "experiments/weather_autonomy/local_pipeline/snapshot_materializer.py",
+      "sha256": "7c9a9371e48ac6f04b82a7681846cc9202d30b6364fc2753b72a28b9952713ab",
+      "bytes": 28274
+    },
+    {
+      "path": "experiments/weather_autonomy/local_pipeline/sqlite_object_store.py",
+      "sha256": "2ccec0e332c88c68e35808c44893b27b13efeaf9215e96543503264e3c05623a",
+      "bytes": 15706
+    },
+    {
+      "path": "experiments/weather_autonomy/local_pipeline/sqlite_read_only_object_store.py",
+      "sha256": "a5ad7f291097813df3e5e9ab198b20f66190b272e7163f36589ac1111134bd28",
+      "bytes": 6308
+    },
+    {
+      "path": "experiments/weather_autonomy/local_pipeline/sqlite_state.py",
+      "sha256": "bb053fc67823e491d8a44de8419e8ebdfdf03c1b61f2200b826a9b2219547404",
+      "bytes": 28145
+    },
+    {
+      "path": "experiments/weather_autonomy/local_pipeline/test_authoritative_catalog.py",
+      "sha256": "e39bfdda98f0aec78a5c818c7b07fb560a8170d5a515f968f93c9bf2ac1dd1af",
+      "bytes": 6851
+    },
+    {
+      "path": "experiments/weather_autonomy/local_pipeline/test_sqlite_state.py",
+      "sha256": "7f48c74235b837b64e5267f9f0f5a4e310c1b2a1932465b8576af4a7152b9f4e",
+      "bytes": 18611
+    },
+    {
+      "path": "experiments/weather_autonomy/monitor_container_probe.py",
+      "sha256": "7926f6ad8cc84030a4ae7079f5b240fcb8d5c362a4dbc91abfb5e9927b45baa4",
+      "bytes": 17296
+    },
+    {
+      "path": "experiments/weather_autonomy/municipal_seat_reconciliation.py",
+      "sha256": "bc2b16a00ac12877f74b46fb5fff9543ea58af5057561b7f3245c137ee58ae7c",
+      "bytes": 48068
+    },
+    {
+      "path": "experiments/weather_autonomy/national_catalog.py",
+      "sha256": "3be1b7f1d4f9534dbc9f1d796af5fc4a669dddaddf4a869ad0520b8a41d2d7fb",
+      "bytes": 39329
+    },
+    {
+      "path": "experiments/weather_autonomy/national_cloud_assets.py",
+      "sha256": "9e0f5db5c4e2adbe1059fab995a4b40b5b715fde5b0e661cd1de6ffc602d5baa",
+      "bytes": 2494
+    },
+    {
+      "path": "experiments/weather_autonomy/national_cloud_lazy_reader.py",
+      "sha256": "5c255cba6474cc344fb0a3bae54e1bbef9c83df649900ac86d2c0c4fea1f84c3",
+      "bytes": 9499
+    },
+    {
+      "path": "experiments/weather_autonomy/national_cloud_publication.py",
+      "sha256": "62176ab967ef851247834e9d633388ef97693d377b0baa925bc80fb1f3dfc038",
+      "bytes": 9648
+    },
+    {
+      "path": "experiments/weather_autonomy/national_cloud_reader.py",
+      "sha256": "cb0509b43e3bc15c311281ef0e9001adfa029e52f842498ff7534d1ecfc81f55",
+      "bytes": 8233
+    },
+    {
+      "path": "experiments/weather_autonomy/national_cloud_seed.py",
+      "sha256": "2ddf45b42615496591d980a4f4f16465ae67f3b3ad85bdc5d9f0d674aa38f04a",
+      "bytes": 4078
+    },
+    {
+      "path": "experiments/weather_autonomy/national_cloud_worker.py",
+      "sha256": "341d291e257f3baeb3f1023f1132e087dfb79edbcfd562561dc5302382740a02",
+      "bytes": 8283
+    },
+    {
+      "path": "experiments/weather_autonomy/pilot_policy.py",
+      "sha256": "d0679f399df1d2efe140fd996272b7f70cefa1d5b4d8063ec47c7e648d8d3e00",
+      "bytes": 14477
+    },
+    {
+      "path": "experiments/weather_autonomy/probe_icon2i.py",
+      "sha256": "a737a7ec9015d5697e365b908aceb954985a04f624eaa4dab237c934e37b8f98",
+      "bytes": 14400
+    },
+    {
+      "path": "experiments/weather_autonomy/process_memory.py",
+      "sha256": "ee2ea84e30928a124a93d7f400703036314ee65ac324ba2949cf0cf0bd590965",
+      "bytes": 4082
+    },
+    {
+      "path": "experiments/weather_autonomy/production-cams.env.yaml",
+      "sha256": "5804fd795d299ec0ffd98c9048cb074d59fd1cbd12c36c1a8916be10cc126dab",
+      "bytes": 382
+    },
+    {
+      "path": "experiments/weather_autonomy/production-runtime.json",
+      "sha256": "e2b5dac811638d975cd46c26f76d38ee37eda0ec1582ee3d7192c225301448de",
+      "bytes": 894
+    },
+    {
+      "path": "experiments/weather_autonomy/profile_pilot_delivery.py",
+      "sha256": "c75e71a63e1c3f4c3436e45495e545f6546e14da59e1242bca5d59e733120063",
+      "bytes": 13035
+    },
+    {
+      "path": "experiments/weather_autonomy/publish_remote_cams.py",
+      "sha256": "3cd4d783be664dfcbff0a236091f18d9f3a4ef8fec992f4983748e4013bcc4b5",
+      "bytes": 8996
+    },
+    {
+      "path": "experiments/weather_autonomy/publish_remote_icon.py",
+      "sha256": "bd04608c78c9699011e25bd29a2913acd65e6a15fe3bb13b3ba9687d977742e7",
+      "bytes": 2599
+    },
+    {
+      "path": "experiments/weather_autonomy/publish_snapshots_v1.py",
+      "sha256": "a48d8fb227edf5930ff7c918c4c766224db7afe6067f7affeb3009027e38af1e",
+      "bytes": 6054
+    },
+    {
+      "path": "experiments/weather_autonomy/reconcile_cams_job.py",
+      "sha256": "79c0ffeb5b362f0b050de0b9b2e244b768a09a37b77ff40933d5cb06334c118c",
+      "bytes": 17408
+    },
+    {
+      "path": "experiments/weather_autonomy/resolve_istat_capoluogo_points.py",
+      "sha256": "c9de8e91f57fc9cfa3712ba814adfa9f26037c5a65081c71192970faeeb12189",
+      "bytes": 58165
+    },
+    {
+      "path": "experiments/weather_autonomy/retrieve_cams.py",
+      "sha256": "6587d049992cd626b3b3ac1f022cf409d3779990dc0232efd42070a191b7c249",
+      "bytes": 31478
+    },
+    {
+      "path": "experiments/weather_autonomy/retrieve_remote_cams.py",
+      "sha256": "6f173dbb90ed8cf51649109995ded7e9b030af9b6d9a123bc8d842f25993aa6d",
+      "bytes": 9730
+    },
+    {
+      "path": "experiments/weather_autonomy/run_cams_job.py",
+      "sha256": "8b0704b7e5871091fe9a24a1b4ca27746854be0fc04be0daeff70c59ca85dc65",
+      "bytes": 10206
+    },
+    {
+      "path": "experiments/weather_autonomy/run_compressed_schedule.py",
+      "sha256": "67fd894e65064c69099a3f050ae4e0336e3282041e14e6631076af9b668a7400",
+      "bytes": 53917
+    },
+    {
+      "path": "experiments/weather_autonomy/run_icon_job.py",
+      "sha256": "c76c312af323a539f5586a4119a283fc9eba9cc3cd001b9a07f9bfba0429c995",
+      "bytes": 7835
+    },
+    {
+      "path": "experiments/weather_autonomy/run_pilot.py",
+      "sha256": "0e5931267a91ba5be56d01ee5516b23da88c63504e9cf3d6a4c330051bb90b5c",
+      "bytes": 53938
+    },
+    {
+      "path": "experiments/weather_autonomy/serve_contract_v1.py",
+      "sha256": "35c9c7455746d5447176fa97760828582c290fd3c9b59fb87e5ea265c2fe2434",
+      "bytes": 24558
+    },
+    {
+      "path": "experiments/weather_autonomy/serve_local_app.py",
+      "sha256": "0edad725a88ef6ca446fc689bebf96b90a810972240b23a315e6ab8594d3c07d",
+      "bytes": 9225
+    },
+    {
+      "path": "experiments/weather_autonomy/serve_national_bundle_v2.py",
+      "sha256": "5ba1cabc3dcb506bfa2bdd9aa4f589a4c06d8ba8c4c3b20040c428a085511b59",
+      "bytes": 40731
+    },
+    {
+      "path": "experiments/weather_autonomy/serve_pilot.py",
+      "sha256": "ec805155377e2e55f7928e5245deb6d17ccf5cd0fd04d3835f986731fd7c1aa8",
+      "bytes": 7911
+    },
+    {
+      "path": "experiments/weather_autonomy/serve_published_contract_v1.py",
+      "sha256": "bc7da38923e6b1de2391e865089fd1291b95f997095ea2f2fb12c954478646b3",
+      "bytes": 6089
+    },
+    {
+      "path": "experiments/weather_autonomy/smoke_gcs_lease.py",
+      "sha256": "2c1397e5ecd804937e8c25094d17f0c0f30492f7c1c5f4bccc9a957fb2e9f302",
+      "bytes": 1819
+    },
+    {
+      "path": "experiments/weather_autonomy/smoke_gcs_pilot.py",
+      "sha256": "db8761753c46b66fc7c4e3cc2941eb7d422e1e79894d1ed0f6bd451ed8a2d3f5",
+      "bytes": 1671
+    },
+    {
+      "path": "experiments/weather_autonomy/submit_uv_pilot.py",
+      "sha256": "793ff9da0d85416677ea7071ca4d727cff672e8abe9b610bb2b1cea6200f3f15",
+      "bytes": 3348
+    },
+    {
+      "path": "experiments/weather_autonomy/test_benchmark_icon2i.py",
+      "sha256": "a9d725c57ef403a316741864bf3cbff9c877094e6686d14244bf87f0f9f43329",
+      "bytes": 32598
+    },
+    {
+      "path": "experiments/weather_autonomy/test_benchmark_national_icon_real.py",
+      "sha256": "3034e8c64af3f32dd86f235c9cc09bce37b515279a38369b3b882ce22aff9be7",
+      "bytes": 19291
+    },
+    {
+      "path": "experiments/weather_autonomy/test_cams_artifact_checkpoint.py",
+      "sha256": "05617720351249c7f8adbf16d7e949e42609ecb192c7ca08293f63a6f8335e3e",
+      "bytes": 6527
+    },
+    {
+      "path": "experiments/weather_autonomy/test_cams_availability.py",
+      "sha256": "76da7a83ded74e749041dd35ce6c9a67f314ff5ffa29c1c8e5275ba0617f77b0",
+      "bytes": 9874
+    },
+    {
+      "path": "experiments/weather_autonomy/test_cams_continuity.py",
+      "sha256": "128274fdb7ffc4092c7b0a34abcd491cf842177cffc0af87111e4f944673cd28",
+      "bytes": 9847
+    },
+    {
+      "path": "experiments/weather_autonomy/test_cams_local_lifecycle.py",
+      "sha256": "03cdddbd530426be52311beaa62b61820ee00309702171203190c1115b720686",
+      "bytes": 20965
+    },
+    {
+      "path": "experiments/weather_autonomy/test_cams_readback.py",
+      "sha256": "b097c1ab8fde96aa4308c9c96b26d4663576cdb0ac4810b9792fdae513f4e624",
+      "bytes": 4877
+    },
+    {
+      "path": "experiments/weather_autonomy/test_cams_request_plan.py",
+      "sha256": "2265d63f3c8302eff74ed5f91ae491cd3169d0f9e3de61ff760d953bc8b08e70",
+      "bytes": 25050
+    },
+    {
+      "path": "experiments/weather_autonomy/test_cams_worker_recovery.py",
+      "sha256": "d979907894fc08ab8fcc10848041710ef45e90bbe2b818449915e95a01b329fe",
+      "bytes": 12859
+    },
+    {
+      "path": "experiments/weather_autonomy/test_cloud_reader.py",
+      "sha256": "2bb3719d598a4e022f93598b9c343a99734b9d6e475429d0a46d9bead89d1d21",
+      "bytes": 1899
+    },
+    {
+      "path": "experiments/weather_autonomy/test_cloud_worker.py",
+      "sha256": "07bb79a80a13e3249e4040d9deed62d5556adc3979ae9c59598573916159799f",
+      "bytes": 20462
+    },
+    {
+      "path": "experiments/weather_autonomy/test_contract_publisher.py",
+      "sha256": "9a88865e03fcaca23a5080557da16efbc53bb84475cea4247c50017606123460",
+      "bytes": 60787
+    },
+    {
+      "path": "experiments/weather_autonomy/test_contract_v1.py",
+      "sha256": "f1294d0b97135f996de64157e187ade578399349e474227fecdaab7535d0f188",
+      "bytes": 16545
+    },
+    {
+      "path": "experiments/weather_autonomy/test_decode_cams.py",
+      "sha256": "912b3b83098a81667cd71d7b33a9891351c8cb160fe43214b4e3061d9d543a08",
+      "bytes": 10983
+    },
+    {
+      "path": "experiments/weather_autonomy/test_decode_cams_region.py",
+      "sha256": "74543731b3b67f5c918485942754245dc8d31731cc6dfad1e67db6a37bbbc359",
+      "bytes": 9723
+    },
+    {
+      "path": "experiments/weather_autonomy/test_freshness_monitor.py",
+      "sha256": "478bdd3f8dbc6c7d56f2e20704ac3018de21e0e310491e2e9dbab39ea98ea27d",
+      "bytes": 30137
+    },
+    {
+      "path": "experiments/weather_autonomy/test_freshness_monitor_deadline.py",
+      "sha256": "6e47a12a8c0b6601b8a0c036ff11700f2453f9490633727973c65a8df73f1fd4",
+      "bytes": 11800
+    },
+    {
+      "path": "experiments/weather_autonomy/test_freshness_monitor_dispatcher.py",
+      "sha256": "8c040bc950cf426b426e3ba7ed25cb10452bf5bb7cdddac4792aca9fc24a8768",
+      "bytes": 16791
+    },
+    {
+      "path": "experiments/weather_autonomy/test_freshness_monitor_package.py",
+      "sha256": "184950bcada42053d67d4e33c850ce6af191c02260e2628bd42fa8792d094d6e",
+      "bytes": 3065
+    },
+    {
+      "path": "experiments/weather_autonomy/test_freshness_monitor_policies.py",
+      "sha256": "a2f806c59b3f7e532127b7cec0138e7fbf015c52312624a93561f4cfce2ab19e",
+      "bytes": 5210
+    },
+    {
+      "path": "experiments/weather_autonomy/test_freshness_monitor_transport.py",
+      "sha256": "6c5dc6fea7ee33dd064dcffadde3364220d4134e9b6b5e1b4a5070f932baf0e3",
+      "bytes": 4705
+    },
+    {
+      "path": "experiments/weather_autonomy/test_gcs_object_store.py",
+      "sha256": "c97af2acbc10f8fbc241122cdc8d9e935919eceec61fc02a93817a9a1673d72f",
+      "bytes": 6466
+    },
+    {
+      "path": "experiments/weather_autonomy/test_http_data_plane.py",
+      "sha256": "17aa569ee0854970f711707989bbc2337e5c9d75a0b9fe5f0ff7d1bb37e36a93",
+      "bytes": 22378
+    },
+    {
+      "path": "experiments/weather_autonomy/test_icon_accumulation_sidecar.py",
+      "sha256": "06b0e71f98e1645f459f00b791b0199dd5610951abe878f88d8ecff0bf7fae85",
+      "bytes": 8525
+    },
+    {
+      "path": "experiments/weather_autonomy/test_icon_checkpoint.py",
+      "sha256": "1812750dc0a415970b761e2407ef6b3194ac40a399bac576117da0b9c7288a3d",
+      "bytes": 6246
+    },
+    {
+      "path": "experiments/weather_autonomy/test_icon_publication_recovery.py",
+      "sha256": "503666e4345f3b9dc625a8fbd1ce1a09efff31ac8f2ba15123e054794d46acee",
+      "bytes": 15074
+    },
+    {
+      "path": "experiments/weather_autonomy/test_icon_quality.py",
+      "sha256": "ed6bd4c3662858736f477a6f6563b91c04e52b0efa19378ad44b4a152104d29c",
+      "bytes": 5858
+    },
+    {
+      "path": "experiments/weather_autonomy/test_icon_semantics.py",
+      "sha256": "683f129f81dd3f1ac54816deaaa3d38ed9fa3ab5c812edd8f26bc84a24c81e80",
+      "bytes": 6907
+    },
+    {
+      "path": "experiments/weather_autonomy/test_job_entrypoints.py",
+      "sha256": "4921b464c96398d2fd26b6b93febad0bb60a459154a2e38202bbbb263a0f8e6d",
+      "bytes": 23309
+    },
+    {
+      "path": "experiments/weather_autonomy/test_job_runners.py",
+      "sha256": "903bea3bc59f06c572013fde9d04d2aa5b919174bc5e199a4109839521cad371",
+      "bytes": 32042
+    },
+    {
+      "path": "experiments/weather_autonomy/test_job_runtime.py",
+      "sha256": "b22b6d785fbac10d134ba98b7e8fd04906076a8862889369ae2e774fb68cf973",
+      "bytes": 18377
+    },
+    {
+      "path": "experiments/weather_autonomy/test_local_app_adapter.py",
+      "sha256": "6d39862605a96966530c98241c77b3db7258ffab29d1012dbce2feda63386a3e",
+      "bytes": 9058
+    },
+    {
+      "path": "experiments/weather_autonomy/test_local_publication.py",
+      "sha256": "ed389980437b0fd853c2edd72d8c2b66d7f2ef1b870ff71e5915912504a66e50",
+      "bytes": 14766
+    },
+    {
+      "path": "experiments/weather_autonomy/test_local_scheduler.py",
+      "sha256": "68a09fd9d1f88d02d9fc4840c0ef09487f2c971a7915e36e874190714ddbd431",
+      "bytes": 21100
+    },
+    {
+      "path": "experiments/weather_autonomy/test_municipal_seat_reconciliation.py",
+      "sha256": "fd13f990f31e43d0aaa37c05580b7401fcc6d7d0efcdb298467a6a48ededb72d",
+      "bytes": 23128
+    },
+    {
+      "path": "experiments/weather_autonomy/test_national_catalog.py",
+      "sha256": "d86f37d57e797fe2ed845311132bbb2410e9c10261a61f2b1fd053630eeb9f87",
+      "bytes": 4931
+    },
+    {
+      "path": "experiments/weather_autonomy/test_national_cloud.py",
+      "sha256": "e655f6ddc80e5e207ff4498e09ff841474680c58844cb0fd0c6dc55e701e273b",
+      "bytes": 14557
+    },
+    {
+      "path": "experiments/weather_autonomy/test_national_forecast_points.py",
+      "sha256": "d55a4b316812fa530876092bf73ac37ea2185f6225403119aa55c1cd388f0799",
+      "bytes": 21251
+    },
+    {
+      "path": "experiments/weather_autonomy/test_national_icon_bundle.py",
+      "sha256": "24698ac5ff2993fd3157e30448ba15a223373531c60dd80caf822d86e53f770f",
+      "bytes": 15671
+    },
+    {
+      "path": "experiments/weather_autonomy/test_object_state_store.py",
+      "sha256": "1b142664721ebb24351f02f1cfc82df2b405e55f889a423f82801adf6a70f6c2",
+      "bytes": 3511
+    },
+    {
+      "path": "experiments/weather_autonomy/test_operational_diagnostics.py",
+      "sha256": "05fc7683aa6a856e919998faec14cd84a7f3cee536a1dfb7ae6a7d5eae6f7c22",
+      "bytes": 5895
+    },
+    {
+      "path": "experiments/weather_autonomy/test_pilot_policy.py",
+      "sha256": "df4af726a465148c0c571524e491314d6e23992e23477e5c02f81a23e3ca7036",
+      "bytes": 18017
+    },
+    {
+      "path": "experiments/weather_autonomy/test_probe_icon2i.py",
+      "sha256": "ac1abe84ac5ba791bc6e1945885b0cf87cdd0398fbcf196d35edcb513c0ded9a",
+      "bytes": 7932
+    },
+    {
+      "path": "experiments/weather_autonomy/test_process_memory.py",
+      "sha256": "eb8aa54a6c7cda9385512580eaab4ca5b5f6baf1210010ed33a07216c402d26f",
+      "bytes": 5803
+    },
+    {
+      "path": "experiments/weather_autonomy/test_production_runtime_contract.py",
+      "sha256": "c24d51944e91c364e4c435e14451409228f7090f605d609fcd18c39279aee67a",
+      "bytes": 3047
+    },
+    {
+      "path": "experiments/weather_autonomy/test_profile_pilot_delivery.py",
+      "sha256": "efed82e5b988b91c3bd10c5a036a58907b0b354dfc8ce4ef4eda4fc3f9b5d9cc",
+      "bytes": 8395
+    },
+    {
+      "path": "experiments/weather_autonomy/test_publication_intent.py",
+      "sha256": "51a47a4f6466feeff6b704c18dcb0bb8d602f11069db357289ece1ddb0230df0",
+      "bytes": 8963
+    },
+    {
+      "path": "experiments/weather_autonomy/test_publish_remote_cams.py",
+      "sha256": "8a9d2259596544a4169814a2d77e2918f125afc4fab2d94d6ec6038eaebd5cd9",
+      "bytes": 13648
+    },
+    {
+      "path": "experiments/weather_autonomy/test_publish_snapshots_v1.py",
+      "sha256": "5952b63e560d89db0233cb620b56e8db2b25236bf79857c7a99b3bebce6d6734",
+      "bytes": 4313
+    },
+    {
+      "path": "experiments/weather_autonomy/test_published_runs_reader.py",
+      "sha256": "f96b7d287f37df6c06c4821c7115a9ef547ce61c517bb2a66e1543f61bd576fc",
+      "bytes": 56342
+    },
+    {
+      "path": "experiments/weather_autonomy/test_reconcile_cams_job.py",
+      "sha256": "7e700c8671647d58fcf4f941700151fdc153f96a607cae0d70d14ab3ad2b104f",
+      "bytes": 34447
+    },
+    {
+      "path": "experiments/weather_autonomy/test_remote_publication_intent.py",
+      "sha256": "25f16a80859c4617ef76050cfcf33f37bc05312c63c8a21abd292ca3628dc586",
+      "bytes": 3397
+    },
+    {
+      "path": "experiments/weather_autonomy/test_resolve_istat_capoluogo_points.py",
+      "sha256": "240e0d568dcd5ce076946bbeff58e1531b03c98127767540424dd54cf67b3817",
+      "bytes": 25129
+    },
+    {
+      "path": "experiments/weather_autonomy/test_retrieve_cams.py",
+      "sha256": "f53bc634935ea3ecdf975e7c768b227a3654ab3bd1aa7dca9f80e0d97bf976a8",
+      "bytes": 32431
+    },
+    {
+      "path": "experiments/weather_autonomy/test_retrieve_remote_cams.py",
+      "sha256": "ea5eadb7b7131884d67963c0ba26d3c32d7921caef702c1729bc19f86f563904",
+      "bytes": 6349
+    },
+    {
+      "path": "experiments/weather_autonomy/test_run_compressed_schedule.py",
+      "sha256": "85c92f96e22e3acae27b395678c7fef162fc41b95314df892842516cdfa40d24",
+      "bytes": 15067
+    },
+    {
+      "path": "experiments/weather_autonomy/test_run_pilot.py",
+      "sha256": "6ad32dd479d220506bffaa0014657247dfd1af2443a82fb3c8d0e54f3a6b7df2",
+      "bytes": 57345
+    },
+    {
+      "path": "experiments/weather_autonomy/test_s3_object_store.py",
+      "sha256": "5c50b646cc32706883e72774cee281664a1ea5493c665c1d47aecaab0b415ad1",
+      "bytes": 3577
+    },
+    {
+      "path": "experiments/weather_autonomy/test_serve_contract_v1.py",
+      "sha256": "31580b67465797f6c9066f2982373a8a738f373af405f9eb6d2f3df716a19790",
+      "bytes": 27169
+    },
+    {
+      "path": "experiments/weather_autonomy/test_serve_local_app.py",
+      "sha256": "12f6c666316215c40c0dba0991ab83ec7215edb259ebdaf5332dce983e38aa0f",
+      "bytes": 6185
+    },
+    {
+      "path": "experiments/weather_autonomy/test_serve_national_bundle_v2.py",
+      "sha256": "29e2f6736bca7837bbe072c1199f4fa07eafd100df706d9dc3a716ca50574bef",
+      "bytes": 17180
+    },
+    {
+      "path": "experiments/weather_autonomy/test_serve_pilot.py",
+      "sha256": "499a24a55c9e5e685a37902dc8c3d06010f1f897baeefbc244cfad6e5c2bbf5e",
+      "bytes": 34362
+    },
+    {
+      "path": "experiments/weather_autonomy/test_serve_published_contract_v1.py",
+      "sha256": "213e87c2c6c2828c6fdaf0cbb45ea1aceea0a2787f2c293e4574f4337764274f",
+      "bytes": 7275
+    },
+    {
+      "path": "experiments/weather_autonomy/test_snapshot_materializer.py",
+      "sha256": "3498e11bbddcb297086bb67a53a63cb2d174fe0c30fe8ee42fc58cae1e36d4e3",
+      "bytes": 10201
+    },
+    {
+      "path": "experiments/weather_autonomy/test_sqlite_read_only_object_store.py",
+      "sha256": "7f0d6c7748c23e592d9300e2a0b99e53755512d4efe226978fa818c656e962fd",
+      "bytes": 3586
+    },
+    {
+      "path": "experiments/weather_autonomy/test_thermal_comfort.py",
+      "sha256": "85396a72956419970629c206cd93b95245f64e37966918da8002d5290dc34b01",
+      "bytes": 9433
+    },
+    {
+      "path": "experiments/weather_autonomy/test_uv_cloud.py",
+      "sha256": "b6e25a73f391ee61616364d23113e9271aae8042c25da99addc767e0d3a0e25f",
+      "bytes": 882
+    },
+    {
+      "path": "experiments/weather_autonomy/test_uv_conversion.py",
+      "sha256": "1d9a88c29e2ff94050ec16288e55420ddf18f0a8816340c3243dce8e65cbd280",
+      "bytes": 758
+    },
+    {
+      "path": "experiments/weather_autonomy/test_uv_recovery.py",
+      "sha256": "47a6d37be70d08267df79b176493eb5c9dd3860abc94b59ab7d215b58ac01e83",
+      "bytes": 21067
+    },
+    {
+      "path": "experiments/weather_autonomy/test_uv_replacement.py",
+      "sha256": "892f786160cf0ef0527d662895e21e4631870984132b294e291b8145e079e9d7",
+      "bytes": 17947
+    },
+    {
+      "path": "experiments/weather_autonomy/thermal_comfort.py",
+      "sha256": "aba00aaa48e7d2fc85723cd95cef4ea2f82b58d9ca8b6b0031ab247f3251052b",
+      "bytes": 10277
+    },
+    {
+      "path": "experiments/weather_autonomy/uv_attempts.py",
+      "sha256": "986863c89b64f5fef3c56f574bb9908a3f3b7b20b59e3d42f76a51d83a5f3517",
+      "bytes": 15515
+    },
+    {
+      "path": "experiments/weather_autonomy/uv_cloud.py",
+      "sha256": "be6175c6bc7fb6a556977d73733dc3e52fc4ee6166c72ca81058b5481cddfd1c",
+      "bytes": 30173
+    },
+    {
+      "path": "experiments/weather_autonomy/uv_conversion.py",
+      "sha256": "737190e011a3cf5901a0574bd77ce0fb97ca0252bbb36f3158bdf921c1544b4d",
+      "bytes": 880
+    }
+  ]
+}

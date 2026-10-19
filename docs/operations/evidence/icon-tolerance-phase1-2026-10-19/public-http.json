@@ -1,0 +1,29 @@
+{
+  "url": "https://meteofriul-weather-49007668366.europe-west1.run.app",
+  "run": "20261019T000000Z",
+  "documents_verified": 215,
+  "documents_fetched_this_check": 3,
+  "previously_verified_documents_reused": 212,
+  "legacy_clients": [
+    {
+      "reader": "2f02c8ba",
+      "public_documents_accepted": 215,
+      "enriched_document_rejected": true
+    },
+    {
+      "reader": "8497e773",
+      "public_documents_accepted": 215,
+      "enriched_document_rejected": true
+    }
+  ],
+  "same_run_as_before": true,
+  "same_manifest_and_sample_bytes": true,
+  "cors_android": true,
+  "conditional_get_304": true,
+  "head_200": true,
+  "preflight_204": true,
+  "sidecar_route_404_expected_until_producer_activation": true,
+  "cams_family_integrity": true,
+  "healthz_platform_404_also_observed_on_previous_revision": true,
+  "acquisition_or_publication_performed": false
+}

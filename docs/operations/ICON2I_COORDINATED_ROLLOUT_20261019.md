@@ -1,4 +1,11 @@
-# Passaggio coordinato ICON-2I — preparazione locale
+# Passaggio coordinato ICON-2I — piano e stato operativo
+
+> **Stato operativo aggiornato, 19 ottobre 2026:** fase 01 HTTP pubblicata e rollback compatibile pronto.
+> Verificate app installata e letture FVG/nazionali. Fase 02 QA completata senza invii.
+> Fase 03: produttore aggiornato; verifica della nuova corsa attesa il 20 ottobre alle 08:00 italiane.
+> Dettagli: [deploy produttore e controlli ancora pendenti](ICON2I_TOLERANCE_PHASE3_DEPLOY_20261019.md).
+> Dettagli fase 02: [job QA e prova reale](ICON2I_TOLERANCE_PHASE2_QA_20261019.md).
+> Dettagli: [verbale di distribuzione fase 01](ICON2I_TOLERANCE_PHASE1_DEPLOY_20261019.md).
 
 
 > **Revisione successiva: compatibilità delle app installate.** Il piano sotto
@@ -6,10 +13,15 @@
 > la [revisione con metadato separato](ICON2I_INSTALLED_APP_COMPATIBILITY_20261019.md)
 > mantiene pubblico il formato precedente e aggiunge il percorso per i job.
 > Il kit aggiornato include questa revisione locale; hash e sorgenti non
-> coincidono più con i tre alberi Git storici. Serve anche aggiornare il
-> servizio HTTP, mentre aggiornare tutte le app non è più un prerequisito.
+> coincidono più con i tre alberi Git storici. Il servizio HTTP è stato aggiornato
+> nella fase 01; aggiornare tutte le app non è un prerequisito.
 
-Stato al 19 ottobre 2026: tre commit tecnici creati nel ramo
+## Preparazione locale originaria — storico
+
+Questa sezione conserva la preparazione precedente ai deploy. Lo stato operativo
+aggiornato è nel riepilogo iniziale e nella sequenza server più sotto.
+
+Alla preparazione del 19 ottobre 2026: tre commit tecnici creati nel ramo
 `codex/local-notice-icon2i-analysis`, base `main` `8497e773b1613312bb952236d72c074e22a7b1c6`.
 Preparazione locale completata; nessuna promozione a main, immagine cloud,
 AAB, push Git, deploy, esecuzione cloud o invio reale in questo passaggio.
@@ -86,32 +98,37 @@ Quella APK include modifiche UI del ramo TEST ed è l'artefatto realmente
 provato; non è una build di questo ramo dei job. Push e background restano
 esclusi per scelta del proprietario; Community isolata QA, nessun invio.
 
-La TEST ha letto i dati reali del formato attuale. Il nuovo formato è verificato
-offline, non ancora su una corsa pubblicata. Prima di cambiare i documenti
-condivisi, censire e rendere compatibili tutti i lettori distribuiti, comprese
-app installate e validatori. Il vecchio client rifiuta chiavi aggiuntive.
-La TEST da sola non chiude questo requisito; Android 15/16 e altri dispositivi
-non sono stati collaudati. Nessun aggiornamento Android viene generato qui.
+La compatibilità è ottenuta mantenendo il formato pubblico v1 e pubblicando
+le prove delle tolleranze in file separati. I vecchi client rifiutano chiavi
+aggiuntive, che quindi non vengono inserite nei documenti letti dalle app.
+La fase 01 ha verificato i lettori storici e l'app ufficiale già installata;
+la fase 03 ha ricontrollato i 215 documenti FVG correnti e sei località nazionali.
+La verifica sui dati della prima nuova corsa resta aperta. Android 15/16 e altri
+dispositivi non sono stati collaudati; nessun aggiornamento Android è stato generato.
 
-## Passaggio server, soltanto dopo autorizzazione
+## Sequenza server e stato di avanzamento
 
-1. Rilevare immagini/configurazioni/policy effettive; archiviare il riferimento
-   di partenza. Distribuire i lettori compatibili e conservare un'immagine di
-   rollback costruita dalla fase 01. Il suo digest va registrato prima della 03.
-2. Preparare il job distinto `meteofriul-local-notice-tolerance-qa` dalla fase 02:
+1. **Fase 01 eseguita:** lettore HTTP compatibile distribuito, configurazioni
+   iniziali conservate e immagine di rollback compatibile identificata con digest.
+   Riscontri e verifica dell'app installata nel verbale della fase 01.
+2. **Fase 02 eseguita:** creato `meteofriul-local-notice-tolerance-qa`,
    entrypoint `python -m app.jobs.send_local_weather_notices`,
-   `LOCAL_NOTICE_DELIVERY_MODE=dry_run`, nessuno scheduler aggiunto. Il nome è
-   proposto, non una risorsa già creata. Stabilire coorte autorizzata, credenziali
-   e destinazione audit, poi rileggere la configurazione applicata.
-   Non usare `deploy-local-notice-job.ps1`: configura `send` e lo scheduler operativo.
-   `dry_run` può scrivere l'audit; non equivale a sola lettura. Non basta un
-   esito `no_eligible_device`: occorre almeno un punto canonico valutato e zero invii.
-3. Attivare la fase 03 su una nuova corsa ICON, senza riscrivere oggetti,
-   manifest o checkpoint immutabili già pubblicati. Verificare prove e contatori.
-4. Confrontare il candidato senza invii con la baseline sugli stessi punti,
-   ore e `source_run_id`. Registrare candidati cambiati, tolleranze utilizzate,
-   non valutabili per causa e denominatori; verificare zero invii e nessuna
-   prenotazione di consegna. Solo dopo approvare gli invii del nuovo consumatore.
+   `LOCAL_NOTICE_DELIVERY_MODE=dry_run`, nessuno scheduler cloud dedicato.
+   La prova reale ha valutato 16 dispositivi su sei punti canonici, senza invii
+   né prenotazioni. L'audit usa `local_notice_pilot_runs`, distinguendo modalità
+   e identificativo di tentativo; `dry_run` può scrivere l'audit.
+   Non usare `deploy-local-notice-job.ps1` per questo QA: configura `send`.
+3. **Fase 03 distribuita, nuova corsa da verificare:** aggiornata solo
+   l'immagine di `meteofriul-icon`; altri job e scheduler invariati.
+   La corsa corrente non è stata riscritta. Prima acquisizione ordinaria
+   prevista il 20 ottobre alle 08:00 `Europe/Rome`, poi verifica di prove,
+   contatori, checkpoint e compatibilità delle app sulla nuova corsa.
+4. **Confronto ancora da eseguire:** candidato senza invii e baseline sugli
+   stessi punti, ore e `source_run_id`. Registrare candidati cambiati,
+   tolleranze utilizzate, non valutabili per causa e denominatori; verificare
+   zero invii e nessuna prenotazione. Il follow-up è previsto alle 08:20 e,
+   se necessario, alle 09:20 del 20 ottobre. Gli invii del nuovo consumatore
+   richiedono successiva autorizzazione, dopo questi controlli.
 
 La fase 02 modifica anche codice condiviso dai riepiloghi mattutino e serale:
 mantengono il rifiuto dei dati incompleti, senza usare la tolleranza per
@@ -123,8 +140,9 @@ L'inventario locale `scripts/cloud-run-job-monitoring-policies.json` contiene
 `local-notice-failures` (due fallimenti in 4 ore) e `local-notice-last-success`
 (nessun successo per 3 ore). Lo script di sincronizzazione usa
 `run.googleapis.com/job/completed_execution_count` filtrando `result`.
-Quindi esiste una dipendenza configurata dall'esito del job. Le policy live
-non sono state interrogate né modificate in questa preparazione.
+Quindi esiste una dipendenza configurata dall'esito del job. Nella fase 02
+sono state lette le 23 policy live senza modificarle: gli allarmi degli avvisi
+locali filtrano il nome del job operativo e non includono il QA.
 
 Gli exit code restano invariati: `data_degraded`, `partial`, errori di sorgente
 e rifiuti non diventano successi. Un eventuale passaggio del solo parziale a 0
@@ -146,6 +164,6 @@ non sommare retry come nuove corse e non contare i dispositivi come punti distin
   riscrivere dati per forzare un ripristino.
 - Consumatore: in caso di problemi fermare gli invii candidati e conservare
   diagnostica e dati. Non ripristinare silenziosamente il null trasformato in zero.
-- Immagini, digest, configurazioni effettive e prova della nuova corsa sono
-  ancora da raccogliere nel passaggio server autorizzato. Le caselle pendenti
-  nel manifest non vengono presentate come verifiche già svolte.
+- Immagini, digest e configurazioni effettive sono registrati nei verbali
+  delle fasi 01–03. La prova sulla nuova corsa e il confronto senza invii
+  restano pendenti; non vengono presentati come verifiche già svolte.

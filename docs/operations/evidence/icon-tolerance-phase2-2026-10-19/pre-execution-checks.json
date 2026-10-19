@@ -1,0 +1,17 @@
+{
+  "job": "meteofriul-local-notice-tolerance-qa",
+  "image": "europe-west1-docker.pkg.dev/meteo-friul/meteofriul/backend@sha256:48d293f2d2ea2a0b5f1416e82be4b59ee95a86857a79b79822b6ee8ae5d71ca1",
+  "mode": "dry_run",
+  "sidecar_enabled": true,
+  "cohort": "existing_play_beta_eligible_devices",
+  "service_account": "meteofriul-notice-qa@meteo-friul.iam.gserviceaccount.com",
+  "roles": [
+    "roles/datastore.user"
+  ],
+  "no_messaging_permissions": true,
+  "no_scheduler": true,
+  "operational_job_specs_unchanged": 12,
+  "audit_collection": "local_notice_pilot_runs",
+  "audit_isolation": "mode=dry_run; unique per-execution attempt_id included in document id; retention 14 days",
+  "execution_start_bound_utc": "2026-10-19T18:10:30.904918Z"
+}

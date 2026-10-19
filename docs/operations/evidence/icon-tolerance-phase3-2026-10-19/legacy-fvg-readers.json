@@ -1,0 +1,23 @@
+{
+  "source_run_id": "20261019T120000Z",
+  "new_run": false,
+  "public_documents_verified": 215,
+  "sidecars_verified": 0,
+  "sidecar_state_counts": {},
+  "legacy_clients": [
+    {
+      "reader": "2f02c8ba",
+      "public_documents_accepted": 215,
+      "enriched_document_rejected": true
+    },
+    {
+      "reader": "8497e773",
+      "public_documents_accepted": 215,
+      "enriched_document_rejected": true
+    }
+  ],
+  "old_manifest_unchanged": true,
+  "android_cors": true,
+  "network_actions": "GET only",
+  "sends": 0
+}
