@@ -18,6 +18,7 @@ from .publication_intent import (
     _record_from_document, _strict_json,
 )
 from .sqlite_object_store import ObjectNotFound, PreconditionFailed
+from .icon_quality import validate_source_quality
 
 MAX_COMPRESSED_BYTES = 16 * 1024**2
 MAX_EXPANDED_BYTES = 64 * 1024**2
@@ -29,6 +30,7 @@ class IconCheckpoint:
     prepared: PreparedIconPublication
     intent: PublicationIntent
     sha256: str
+    source_quality: dict | None = None
 
 
 def checkpoint_key(slot):
@@ -46,14 +48,19 @@ def _validate(prepared, intent, catalog):
                           object_bodies=prepared.documents)
 
 
-def encode_checkpoint(*, slot, prepared, intent, catalog):
+def encode_checkpoint(*, slot, prepared, intent, catalog, source_quality=None):
     checkpoint_key(slot)
     _validate(prepared, intent, catalog)
-    raw = canonical_json_bytes({
-        "schema_version": 1, "kind": "meteofriul.icon.publication_checkpoint", "slot": slot,
+    envelope = {
+        "schema_version": 1 if source_quality is None else 2, "kind": "meteofriul.icon.publication_checkpoint", "slot": slot,
         "intent": intent.as_document(), "manifest": prepared.manifest_bytes.decode("utf-8"),
         "documents": {key: value.decode("utf-8") for key, value in prepared.documents.items()},
-    })
+    }
+    if source_quality is not None:
+        validate_source_quality(source_quality, source_run_id=intent.source_run_id)
+        envelope["source_quality"] = source_quality
+        envelope["source_quality_sha256"] = hashlib.sha256(canonical_json_bytes(source_quality)).hexdigest()
+    raw = canonical_json_bytes(envelope)
     if len(raw) > MAX_EXPANDED_BYTES:
         raise PublicationIntentCorruption("ICON checkpoint expanded size exceeds limit")
     compressed = gzip.compress(raw, compresslevel=6, mtime=0)
@@ -72,9 +79,12 @@ def decode_checkpoint(body, *, slot, catalog):
         if len(raw) > MAX_EXPANDED_BYTES:
             raise PublicationIntentCorruption("ICON checkpoint expanded size exceeds limit")
         value = _strict_json(raw)
-        if (not isinstance(value, dict) or set(value) != {
-                "schema_version", "kind", "slot", "intent", "manifest", "documents"}
-                or value["schema_version"] != 1
+        version = value.get("schema_version") if isinstance(value, dict) else None
+        expected_keys = {"schema_version", "kind", "slot", "intent", "manifest", "documents"}
+        if version == 2:
+            expected_keys |= {"source_quality", "source_quality_sha256"}
+        if (not isinstance(value, dict) or set(value) != expected_keys
+                or version not in {1, 2}
                 or value["kind"] != "meteofriul.icon.publication_checkpoint"
                 or value["slot"] != slot or canonical_json_bytes(value) != raw
                 or not isinstance(value["manifest"], str)
@@ -89,9 +99,14 @@ def decode_checkpoint(body, *, slot, catalog):
             manifest_bytes=value["manifest"].encode("utf-8"),
         )
         _validate(prepared, intent, catalog)
+        source_quality = value.get("source_quality")
+        if version == 2:
+            validate_source_quality(source_quality, source_run_id=intent.source_run_id)
+            if hashlib.sha256(canonical_json_bytes(source_quality)).hexdigest() != value["source_quality_sha256"]:
+                raise ValueError("ICON quality fingerprint mismatch")
     except (OSError, EOFError, UnicodeError, TypeError, ValueError) as error:
         raise PublicationIntentCorruption("ICON checkpoint cannot be authenticated") from error
-    return IconCheckpoint(prepared, intent, hashlib.sha256(body).hexdigest())
+    return IconCheckpoint(prepared, intent, hashlib.sha256(body).hexdigest(), source_quality)
 
 
 def read_checkpoint(store, *, slot, catalog):
@@ -104,8 +119,8 @@ def read_checkpoint(store, *, slot, catalog):
     return decode_checkpoint(stored.body, slot=slot, catalog=catalog)
 
 
-def save_checkpoint(store, *, slot, prepared, intent, catalog):
-    body = encode_checkpoint(slot=slot, prepared=prepared, intent=intent, catalog=catalog)
+def save_checkpoint(store, *, slot, prepared, intent, catalog, source_quality=None):
+    body = encode_checkpoint(slot=slot, prepared=prepared, intent=intent, catalog=catalog, source_quality=source_quality)
     try:
         store.put(checkpoint_key(slot), body, content_type="application/gzip")
     except PreconditionFailed:
