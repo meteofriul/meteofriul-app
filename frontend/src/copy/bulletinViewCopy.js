@@ -15,7 +15,7 @@ export const BULLETIN_VIEW_COPY = {
     headingPrefix: "Previsioni per ",
     emissionTimeConnector: "alle",
     areaLabels: {
-      general: "Generale giornata",
+      general: "Situazione generale",
       mountain: "Montagna",
       highPlain: "Alta pianura",
       lowPlain: "Bassa pianura",

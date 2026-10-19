@@ -96,7 +96,7 @@ function buildModel({ language = "it" } = {}) {
 
 describe("WeatherForecastView", () => {
   it.each([
-    ["it", "Dati meteo in arrivo", "Mostreremo le previsioni appena il dato verificato sarà disponibile."],
+    ["it", "Dati meteo in arrivo", "Le previsioni saranno mostrate appena i dati saranno disponibili."],
     ["fur", "Dâts meteo in rivade", "O mostrarìn lis previsions a pene che il dât verificât al sarà disponibil."],
   ])("renders verified-data loading copy in %s", (language, title, body) => {
     const markup = renderToStaticMarkup(<WeatherForecastView language={language} model={null} />);

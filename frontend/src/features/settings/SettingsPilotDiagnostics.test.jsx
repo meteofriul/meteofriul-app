@@ -64,7 +64,7 @@ it("uses three compact definitive groups without technical diagnostics", () => {
   expect(html.indexOf("mf-settings-identity"))
     .toBeLessThan(html.indexOf("mf-settings-panel mf-settings-panel--pilot-group"));
   expect(html).toContain("Preferenze generali");
-  expect(html).toContain("Info e progetto");
+  expect(html).toContain("Informazioni sul progetto");
   expect(html).toContain('aria-label="Lingua"');
   expect(html).toContain('aria-pressed="true" class="mf-settings-segment is-active" type="button">Italiano');
   expect(html).toContain('aria-pressed="false" class="mf-settings-segment" type="button">Furlan');

@@ -9,7 +9,7 @@ export const APP_SHELL_COPY = {
     languageLabel: "Cambia lingua IT/FUR",
     languageTitle: "Cambia lingua",
     dataWaitTitle: "Home pronta, dati in arrivo",
-    dataWaitDetail: "La schermata resta visibile mentre scarico i dati aggiornati.",
+    dataWaitDetail: "La schermata resta visibile durante il caricamento dei dati aggiornati.",
     officialAlertTitle: "Allerta ufficiale",
     officialAlertSource: "Fonte: Protezione Civile FVG",
     officialAlertNavigationLabel: "Apri nel bollettino",

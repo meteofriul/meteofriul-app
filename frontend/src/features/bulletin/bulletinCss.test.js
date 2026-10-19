@@ -16,9 +16,9 @@ describe("story bulletin day tabs", () => {
     const tabRule = readRule(".mf-bulletin-view--story .mf-bulletin-tabs .mf-tab");
 
     expect(scrollerRule).toContain("overflow-x: auto");
-    expect(rowRule).toContain("width: max-content");
-    expect(tabRule).toContain("flex: 0 0 auto");
-    expect(tabRule).toContain("width: max-content");
+    expect(rowRule).toContain("grid-auto-columns: minmax(7em, 1fr)");
+    expect(rowRule).toContain("grid-auto-flow: column");
+    expect(tabRule).toContain("width: 100%");
   });
 });
 

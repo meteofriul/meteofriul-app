@@ -301,7 +301,7 @@ describe("SettingsView", () => {
     );
 
     expect(html).toContain("Allerte per Roma");
-    expect(html).toContain("Non segue la posizione GPS");
+    expect(html).toContain("non alla posizione GPS");
     expect(html).toContain('aria-label="Attiva Allerte per Roma"');
     expect(html).toMatch(/aria-checked="false" aria-label="Attiva Allerte per Roma"/);
     expect(html).not.toContain("Disponibili solo in Friuli Venezia Giulia");

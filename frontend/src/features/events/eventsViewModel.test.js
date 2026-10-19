@@ -288,7 +288,7 @@ describe("events view model", () => {
 
     expect(model.countLabel).toBe("12 eventi");
     expect(model.locationLabel).toBe("Pordenone");
-    expect(model.message).toBe("Resto in attesa delle fonti verificate.");
+    expect(model.message).toBe("Caricamento degli eventi dalle fonti verificate.");
     expect(model.tabs.map((tab) => tab.id)).toEqual(["today", "weekend", "next"]);
     expect(model.items[0]).toMatchObject({
       category: "cultura",

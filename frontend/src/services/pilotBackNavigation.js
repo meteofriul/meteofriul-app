@@ -16,6 +16,7 @@ export function createPilotBackNavigation({
   let listener = null;
   let transition = null;
   let revision = 0;
+  let exiting = false;
 
   const allowed = () => (typeof enabled === "function" ? enabled() : enabled) === true
     && isAndroidCapacitorRuntime(capacitor)
@@ -24,7 +25,20 @@ export function createPilotBackNavigation({
   const wantsListener = () => allowed() && Boolean(activeOverlay() || page);
 
   function handleBack(event = {}) {
-    const action = allowed() ? (activeOverlay()?.onBack || page?.onBack) : null;
+    const overlay = allowed() ? activeOverlay() : null;
+    if (allowed() && !overlay && page?.atRoot) {
+      if (!page.canExit()) return;
+      // Capacitor's default consumes Back at the root without closing the app.
+      // Only exit after all dialogs and the app's route history are exhausted.
+      if (!exiting) {
+        exiting = true;
+        void Promise.resolve().then(() => app.exitApp()).catch(() => {
+          // A bridge failure must leave the app usable and allow another press.
+        }).finally(() => { exiting = false; });
+      }
+      return;
+    }
+    const action = allowed() ? (overlay?.onBack || page?.onBack) : null;
     if (action) {
       // An active overlay owns this press even when busy or its close is refused.
       // Never fall through to the page after closing a dialog with the same press.
@@ -81,9 +95,9 @@ export function createPilotBackNavigation({
         void reconcile();
       };
     },
-    setPageHandler(onBack) {
+    setPageHandler(onBack, { atRoot = false, canExit = () => true } = {}) {
       if (!allowed()) return () => {};
-      const entry = typeof onBack === "function" ? { onBack } : null;
+      const entry = typeof onBack === "function" ? { onBack, atRoot, canExit } : null;
       page = entry;
       void reconcile();
       return () => {
@@ -104,6 +118,6 @@ export function registerPilotBackHandler(onBack, options) {
   return pilotBackNavigation.registerOverlay(onBack, options);
 }
 
-export function setPilotBackPageHandler(onBack) {
-  return pilotBackNavigation.setPageHandler(onBack);
+export function setPilotBackPageHandler(onBack, options) {
+  return pilotBackNavigation.setPageHandler(onBack, options);
 }
