@@ -145,7 +145,8 @@ describe("community report submit location verification", () => {
     expect(dialog.querySelector(".mf-live-report-location__copy strong")?.textContent)
       .toBe(copy.reportGpsApproximate);
   });
-  it("keeps the existing form and requires a review before sending", async () => {
+  it.each(["it", "fur"])("keeps the choice when %s review is declined without sending", async language => {
+    copy = getLiveViewCopy(language);
     const onLocate = vi.fn().mockResolvedValue(currentLocation);
     const onSubmit = vi.fn().mockResolvedValue({ ok: true });
     await renderForm({ onLocate, onSubmit });
@@ -154,8 +155,14 @@ describe("community report submit location verification", () => {
     await act(async () => dialog.querySelector(".mf-live-report-submit").click());
     expect(onSubmit).not.toHaveBeenCalled();
     expect(dialog.querySelector(".mf-live-report-review").textContent).toContain("Pordenone");
-    expect(dialog.textContent).toContain(copy.reportReviewReplacement);
-    await act(async () => dialog.querySelector(".mf-live-report-review button").click());
+    expect(dialog.querySelector(".mf-live-report-review").textContent).toContain(copy.reportTypes.rain);
+    expect(dialog.textContent).toContain(copy.reportReviewDuration);
+    expect(dialog.textContent).not.toContain(copy.reportReviewReplacement);
+    expect(dialog.querySelector(".mf-live-report-submit").textContent).toBe(copy.reportReviewSend);
+    const decline = [...dialog.querySelectorAll("button")]
+      .find(button => button.textContent.trim() === copy.reportReviewBack);
+    expect(decline).toBeDefined();
+    await act(async () => decline.click());
     expect(dialog.querySelector(".mf-live-report-option--rain").getAttribute("aria-pressed")).toBe("true");
     expect(onSubmit).not.toHaveBeenCalled();
   });

@@ -31,9 +31,9 @@ describe("pilot municipality marker identity", () => {
   it("describes national test reporting without changing ordinary FVG copy", () => {
     expect(buildLiveViewModel({}, { now }).copy).toMatchObject({
       reportBody: "Segnala il meteo attuale nella tua zona.",
-      reportExpires: "Rimarrà visibile sulla mappa per 60 minuti",
+      reportExpires: "Rimarrà visibile sulla mappa per 60 minuti.",
       reportLocationRadius: "Posizione approssimata a tutela della tua privacy.",
-      reportSafety: "In caso di situazioni critiche o pericoli immediati contatta il 112.",
+      reportSafety: "In caso di situazioni critiche o pericoli immediati, contatta il 112.",
     });
     vi.mocked(isLocalCommunityPilot).mockReturnValue(false);
     expect(buildLiveViewModel({}, { now }).copy).toMatchObject({
