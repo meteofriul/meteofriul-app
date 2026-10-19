@@ -226,7 +226,15 @@ class IconLocalNoticeSource:
         now: Callable[[], datetime] = lambda: datetime.now(timezone.utc),
         base_url: str | None = None,
         forecast_hours: int = LOCAL_NOTICE_FORECAST_HOURS,
+        accumulation_sidecar: bool | None = None,
     ) -> None:
+        configured_sidecar = os.getenv('LOCAL_NOTICE_ICON_ACCUMULATION_SIDECAR_ENABLED', 'false').lower()
+        if configured_sidecar not in {'true', 'false'}:
+            raise ValueError('local_notice_icon_sidecar_flag_invalid')
+        self._accumulation_sidecar = (configured_sidecar == 'true' if accumulation_sidecar is None
+                                      else accumulation_sidecar)
+        if type(self._accumulation_sidecar) is not bool:
+            raise ValueError('local_notice_icon_sidecar_flag_invalid')
         self._session = session or requests.Session()
         self._timeout_seconds = _bounded_source_timeout(timeout_seconds)
         self._now = now
@@ -248,7 +256,7 @@ class IconLocalNoticeSource:
         self._run_index: tuple[str, dict[str, Any]] | None = None
         self._run_index_error_code: str | None = None
 
-    def _get_json(self, path: str) -> dict[str, Any]:
+    def _get_json(self, path: str, *, with_body: bool = False) -> Any:
         response = _request_with_timeout_retry(
             self._session,
             urljoin(self._base_url, path),
@@ -260,7 +268,7 @@ class IconLocalNoticeSource:
             raise LocalNoticeSourceUnavailable("source_invalid_json") from error
         if not isinstance(payload, dict):
             raise LocalNoticeSourceUnavailable("source_invalid_payload")
-        return payload
+        return (payload, getattr(response, "content", None)) if with_body else payload
 
     def _get_run_index(self) -> tuple[str, dict[str, Any]]:
         if self._run_index is not None:
@@ -372,7 +380,7 @@ class IconLocalNoticeSource:
         ):
             raise LocalNoticeSourceUnavailable("source_invalid_manifest")
 
-        payload = self._get_json(path)
+        payload, weather_body = self._get_json(path, with_body=True)
         payload_municipality = payload.get("municipality")
         if (
             payload.get("provider") != SOURCE_ID
@@ -383,6 +391,28 @@ class IconLocalNoticeSource:
         ):
             raise LocalNoticeSourceUnavailable("source_invalid_municipality")
 
+        evidence_status = 'disabled'
+        rows = payload.get('hourly')
+        if not isinstance(rows, list):
+            raise LocalNoticeSourceUnavailable('source_invalid_hourly')
+        # Public input never authorizes inline tolerance, even with the flag off.
+        for row in rows:
+            if isinstance(row, dict):
+                row.pop('accumulation_quality', None)
+        if self._accumulation_sidecar:
+            from app.weather.local_notice_sidecar import attach_evidence, MAX_BYTES
+            try:
+                evidence, evidence_body = self._get_json(
+                    path.replace('/municipalities/', '/accumulation-quality/'), with_body=True)
+                if not isinstance(evidence_body, bytes) or not 1 <= len(evidence_body) <= MAX_BYTES:
+                    raise ValueError('sidecar size invalid')
+                payload = attach_evidence(payload, weather_body, descriptor, evidence)
+                evidence_status = 'verified'
+            except LocalNoticeSourceUnavailable:
+                evidence_status = 'unavailable'
+            except (KeyError, TypeError, ValueError):
+                evidence_status = 'invalid'
+            # Ordinary nulls remain null; independent phenomena can still run.
         model_point = payload_municipality.get("model_point")
         quality_issues: list[dict[str, str]] = []
         hourly = self._adapt_hourly(payload, fetched_at=fetched_at, quality_issues=quality_issues)
@@ -396,6 +426,7 @@ class IconLocalNoticeSource:
             "hourly_units": {**EXPECTED_HOURLY_UNITS, "native_weather_code": "wmo code"},
             "hourly": hourly,
             "source_quality_issues": quality_issues,
+            "accumulation_evidence_status": evidence_status,
             "requested_location": requested_location,
             "model_location": model_point if isinstance(model_point, dict) else {},
             "source_run_id": source_run_id,

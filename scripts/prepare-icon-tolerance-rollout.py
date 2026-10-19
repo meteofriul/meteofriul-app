@@ -26,6 +26,11 @@ STAGES = (
         "experiments/weather_autonomy/local_pipeline/icon_checkpoint.py",
         "experiments/weather_autonomy/local_pipeline/icon_quality.py",
         "experiments/weather_autonomy/test_icon_quality.py",
+        "experiments/weather_autonomy/local_pipeline/icon_accumulation_sidecar.py",
+        "experiments/weather_autonomy/local_pipeline/contract_publisher.py",
+        "experiments/weather_autonomy/local_pipeline/published_runs_reader.py",
+        "experiments/weather_autonomy/local_pipeline/http_data_plane.py",
+        "experiments/weather_autonomy/test_icon_accumulation_sidecar.py",
     )),
     ("02-notice-consumer", (
         "backend/app/repositories/local_notice_shadow.py",
@@ -35,6 +40,8 @@ STAGES = (
         "backend/app/services/morning_forecast_delivery.py",
         "backend/app/weather/local_notice_shadow.py",
         "backend/app/weather/local_notice_source.py",
+        "backend/app/weather/local_notice_sidecar.py",
+        "backend/tests/test_local_notice_sidecar.py",
         "backend/app/weather/local_notice_quality.py",
         "backend/app/weather/local_notice_tolerance.py",
         "backend/app/weather/local_notice_thresholds.py",
@@ -149,7 +156,7 @@ def main():
         "status": "prepared_locally_not_authorized_for_deployment",
         "source_head": git("rev-parse", "HEAD").decode().strip(),
         "selected_sources_match_head": not bool(git("status", "--porcelain", "--", *all_paths).strip()),
-        "ordered_patches_apply": True, "reader_stage_writers_unchanged": True,
+        "ordered_patches_apply": True, "reader_stage_acquisition_files_unchanged": True,
         "real_git_index_untouched": True, "stages": inventory,
         "test_app": {"require_service_parity_with_release": True, "weather_mode": "real_cloud_services",
                      "android_variant": "fullTest", "android_package": "com.meteofriul.app.localpilot",
@@ -160,13 +167,13 @@ def main():
                                            "Community UI with explicitly simulated reports if enabled"],
                      "synthetic_data_scope": "offline software checks and isolated Community QA only; weather/events are real reads",
                      "cloud_data_shared": True, "runtime_verified_by_this_command": False, "apk_built_by_this_command": False},
-        "release_gates_pending": ["new-format real-run validation; TEST .5 has only exercised the existing published format", "all shared-data clients compatible",
+        "release_gates_pending": ["new-format real-run validation; TEST .5 has only exercised the existing published format", "public v1 remains compatible; sidecar HTTP reader deployed before producer",
                                   "separate dry-run consumer and monitoring review", "checkpoint-compatible rollback image",
                                   "new source run after coordinated writer activation", "explicit release authorization"],
     }
     (output / "manifest.json").write_text(json.dumps(manifest, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
     print(json.dumps({"output": str(output), "stages": len(inventory), "files": len(all_paths),
-                      "ordered_patches_apply": True, "reader_stage_writers_unchanged": True}))
+                      "ordered_patches_apply": True, "reader_stage_acquisition_files_unchanged": True}))
 
 
 if __name__ == "__main__":

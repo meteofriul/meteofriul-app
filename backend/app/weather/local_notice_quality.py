@@ -25,6 +25,7 @@ DEPENDENCIES = {
 }
 STORM_SUPPORT = ("rain", "showers", "precipitation", "precipitation_probability")
 RESOLUTION_REASONS = frozenset({"positive_within_encoding_resolution", "negative_within_encoding_resolution"})
+EVIDENCE_STATES = ('disabled', 'verified', 'unavailable', 'invalid')
 STATES = frozenset({"evaluated_no_candidate", "evaluated_with_candidate", "not_evaluable"})
 VARIABLES = frozenset(NUMERIC_RANGES) | {
     "temperature_c", "apparent_temperature_c", "wind_gust_max_m_s", "precipitation_mm",
@@ -102,6 +103,8 @@ def sanitize_quality(value):
     raw_reasons = value.get("reasons")
     return {
         "schema_version": SCHEMA, "source_run_id": run_identity(value.get("source_run_id")),
+        "accumulation_evidence_status": (value.get('accumulation_evidence_status')
+            if value.get('accumulation_evidence_status') in EVIDENCE_STATES else 'disabled'),
         "state": "not_evaluable" if blocked == len(KINDS) else "partial" if blocked else "evaluable",
         "gate": "per_phenomenon", "evaluations_expected": 1,
         "evaluations_not_possible": int(blocked == len(KINDS)),
@@ -177,6 +180,7 @@ def evaluation_quality(snapshot, slots, errors, *, failure=None):
             reasons_truncated=len(reasons) > MAX_REASONS)
     return sanitize_quality({
         "schema_version": SCHEMA, "source_run_id": snapshot.get("source_run_id"),
+        "accumulation_evidence_status": snapshot.get('accumulation_evidence_status'),
         "phenomena": phenomena,
         "reasons": [dict(at=t, variable=v, reason=r) for t, v, r in sorted(details)[:MAX_REASONS]],
         "reasons_truncated": len(details) > MAX_REASONS,
@@ -205,6 +209,8 @@ class QualityCounter:
                 causes.update({(r["variable"], r["reason"]) for r in q["reasons"]})
             runs.append({
                 "source_run_id": run, "evaluations_expected": len(items),
+                "accumulation_evidence": {state: sum(q['accumulation_evidence_status'] == state for _, q in items)
+                                          for state in EVIDENCE_STATES},
                 "evaluations_not_possible": len(blocked),
                 "evaluations_partial": len(degraded) - len(blocked),
                 "evaluations_degraded": len(degraded),

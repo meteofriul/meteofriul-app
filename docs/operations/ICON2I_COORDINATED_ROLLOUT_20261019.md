@@ -1,5 +1,14 @@
 # Passaggio coordinato ICON-2I — preparazione locale
 
+
+> **Revisione successiva: compatibilità delle app installate.** Il piano sotto
+> documenta i commit originari. Non attivare la fase 03 di quei commit da sola:
+> la [revisione con metadato separato](ICON2I_INSTALLED_APP_COMPATIBILITY_20261019.md)
+> mantiene pubblico il formato precedente e aggiunge il percorso per i job.
+> Il kit aggiornato include questa revisione locale; hash e sorgenti non
+> coincidono più con i tre alberi Git storici. Serve anche aggiornare il
+> servizio HTTP, mentre aggiornare tutte le app non è più un prerequisito.
+
 Stato al 19 ottobre 2026: tre commit tecnici creati nel ramo
 `codex/local-notice-icon2i-analysis`, base `main` `8497e773b1613312bb952236d72c074e22a7b1c6`.
 Preparazione locale completata; nessuna promozione a main, immagine cloud,

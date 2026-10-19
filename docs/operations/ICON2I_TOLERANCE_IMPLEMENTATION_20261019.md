@@ -1,5 +1,9 @@
 # ICON-2I: contratto di tolleranza integrato in locale
 
+> Aggiornamento: la nuova [separazione per compatibilità](ICON2I_INSTALLED_APP_COMPATIBILITY_20261019.md)
+> conserva le prove fuori dal documento pubblico. Il formato arricchito descritto
+> sotto resta interno al checkpoint e al consumatore, non viene inviato alle app.
+
 19 ottobre 2026, ramo `codex/local-notice-icon2i-analysis`, base `main`
 `8497e773b1613312bb952236d72c074e22a7b1c6`. L'implementazione descritta
 qui è ora salvata nei tre commit del [passaggio coordinato](ICON2I_COORDINATED_ROLLOUT_20261019.md),
