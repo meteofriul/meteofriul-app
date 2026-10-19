@@ -2,15 +2,20 @@
 
 ## Stato
 
-Preparazione locale completata sul ramo `codex/forecast-themes-main`, esteso
-all'allineamento delle modifiche dell'app approvate dal proprietario.
-La base resta `main` a `6bd4216964ad81f7dcd20d478cde7b0db5ba442c`.
+Preparazione e verifica della TEST sul telefono completate sul ramo
+`codex/forecast-themes-main`, esteso all'allineamento delle modifiche dell'app
+approvate dal proprietario. Promozione locale a main autorizzata dopo i controlli
+superati, mediante fast-forward dalla base
+`6bd4216964ad81f7dcd20d478cde7b0db5ba442c`.
 La sorgente TEST consultata è `e7c27181296bfed82f4c44f2d527d773963248b5`.
 Il candidato applicativo integrato è `bbef86141066c2e34abf8ac7ebf838909ef36c20`.
 
-Nessuna promozione a `main`, push, build Android/AAB, installazione, deploy,
-esecuzione di job o invio. La TEST e il checkout di `main` non sono stati modificati.
-Le approvazioni del proprietario restano valide: il recupero non riapre le scelte UI.
+Aggiornata soltanto la TEST sul Galaxy A52 a `0.1.14-full-test.6` / `300037`,
+con dati preservati. Esito e identità dell'APK nel
+[verbale sul telefono](APP_INTEGRATED_TEST_DEVICE_20261019.md).
+Nessun push, AAB, deploy, esecuzione di job o invio reale. La configurazione
+speciale della TEST resta fuori dalla promozione. Le approvazioni del proprietario
+restano valide: il recupero non riapre le scelte UI.
 
 ## Cosa viene recuperato
 
@@ -81,18 +86,19 @@ Riepilogo riproducibile, elenco dei test e identità del codice:
 Le precedenti verifiche visive della TEST in italiano/friulano restano evidenze
 di quella sorgente. La build Full TEST.5 già controllata sul Galaxy A52 includeva
 il fix FVG, ma non i nuovi temi delle previsioni. Non è una prova del candidato
-integrato in questo ramo. Non sono state ripetute prove browser o telefono in
-questo intervento; non sono stati avviati emulatori o test cloud.
+integrato in questo ramo. Nel primo intervento di preparazione non erano state
+ripetute prove browser o telefono. La verifica successiva autorizzata del candidato
+integrato è ora completata nel [verbale sul telefono](APP_INTEGRATED_TEST_DEVICE_20261019.md),
+con una nuova TEST.6; non sono stati avviati emulatori o test cloud.
 
 ## Ordine del prossimo passaggio
 
-1. Verificare il candidato integrato sul telefono con artefatto e sorgente
-   identificati, senza ripetere l'approvazione delle scelte grafiche. Controllare
-   almeno Indietro/uscita, No/Sì e ricevuta simulata, previsioni IT/FUR nei due
-   temi, refresh FVG ed Eventi. I vincoli sulle installazioni restano applicabili.
-2. Dopo i controlli pertinenti, promuovere il ramo a main. Oggi è un discendente
-   diretto della base e il passaggio può essere fast-forward. Se main cambia,
-   ricontrollare prima le nuove differenze e l'integrazione.
+1. Completato: candidato identificato, nuova TEST.6 installata con autorizzazione,
+   Indietro/uscita, No/Sì e ricevuta simulata, previsioni IT/FUR nei due temi,
+   aggiornamento FVG, nazionale ed Eventi verificati sul Galaxy.
+2. Controlli pertinenti superati: promozione locale del ramo a main autorizzata
+   tramite fast-forward. Verificare pulizia e discendenza immediatamente prima
+   del passaggio; le configurazioni speciali TEST sono escluse.
 3. Push, build di rilascio/AAB e pubblicazione restano azioni successive distinte.
    Per un rilascio valgono [AGENTS.md](../../AGENTS.md) e il
    [runbook Android](PLAY_AAB_RUNBOOK.md#controlli-android-obbligatori-per-ogni-release).

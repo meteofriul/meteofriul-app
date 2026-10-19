@@ -1,0 +1,229 @@
+{
+  "date": "2026-10-19",
+  "scope": "Owner-authorized TEST update and local main promotion; no release",
+  "baseMain": "6bd4216964ad81f7dcd20d478cde7b0db5ba442c",
+  "candidateSource": "b0135d51c2a5b2560afa4fe9d7896134fd972511",
+  "applicationCommit": "bbef86141066c2e34abf8ac7ebf838909ef36c20",
+  "testScaffoldSource": "e7c27181296bfed82f4c44f2d527d773963248b5",
+  "artifact": {
+    "packageName": "com.meteofriul.app.localpilot",
+    "versionName": "0.1.14-full-test.6",
+    "versionCode": 300037,
+    "apkSha256": "87b0873959057d32d1c4322fdd986cf0576b361758fa8473268a3baa23ee887b",
+    "certificateSha256": "4801ec985589d0c1195da9c8194136b4bdd49227dbd28712b26f45e795bbefca"
+  },
+  "device": {
+    "model": "Samsung Galaxy A52 SM-A525F",
+    "android": 14,
+    "api": 34,
+    "pixels": "1080x2400",
+    "densityDpi": 420,
+    "navigation": "three buttons",
+    "webview": "com.google.android.webview 155.0.8059.43",
+    "rendererChanged": false
+  },
+  "installation": {
+    "method": "adb install -r",
+    "success": true,
+    "appDataPreserved": true,
+    "originalPreferencesRestored": true,
+    "officialAppUnchanged": true,
+    "notificationsGranted": false,
+    "backgroundLocationGranted": false
+  },
+  "checks": {
+    "forecastItalianLightDark": "PASS",
+    "forecastFriulianLightDark": "PASS",
+    "dayHourMatchingSelection": "PASS",
+    "bulletinFullDayNamesAndHorizontalScroll": "PASS",
+    "communityNoReturnsToChoice": "PASS",
+    "communityConfirmationAndReceiptItFur": "PASS (in-memory simulation)",
+    "androidBackOverlayAndHomeExit": "PASS",
+    "relaunchAndPreferences": "PASS",
+    "fvgUdineCached02To14Run": "PASS",
+    "fvgPordenone14Run": "PASS",
+    "nationalRome14Run": "PASS",
+    "camsUdineAirDetail": "PASS",
+    "realEventsCatalogue": "PASS (separate QA sponsor remains synthetic)",
+    "fatalSignaturesIn601PidLogLines": 0,
+    "mergedManifestResizable": true,
+    "mergedManifestPortraitLock": false,
+    "minifiedApk": "PASS",
+    "targetedFrontendTests": 808,
+    "additionalInsetsAndBarsTests": 7,
+    "releaseGuardTests": 9,
+    "eslint": "PASS",
+    "r8Contract": "PASS",
+    "diff": "PASS"
+  },
+  "limits": [
+    "Android 15/16, gestures, tablets, multi-window and full release matrix not tested in this task.",
+    "National UV/air/pollen were unavailable and labelled as unavailable; forecast itself worked.",
+    "Udine displayed the existing last-valid-values continuity notice after updating to 14:00.",
+    "Storage quota failure is covered by local regression tests, not injected into phone storage.",
+    "Official Play app was preserved, not rebuilt or tested as the new candidate.",
+    "No real Community transaction or notification send; no emulator/cloud test, AAB, deploy or push.",
+    "No remote CI run without a push; this is local promotion only."
+  ],
+  "archiveDirectory": "release-artifacts/android-play/full-test-integration-20261019",
+  "archiveFiles": {
+    "meteofriul-full-test.6-300037.apk": {
+      "sha256": "87b0873959057d32d1c4322fdd986cf0576b361758fa8473268a3baa23ee887b",
+      "bytes": 74040684
+    },
+    "native-libraries.json": {
+      "sha256": "081339c4abcee9ea139111432a9c57ea46104f0a68bd50476a2d3529596c8eec",
+      "bytes": 499
+    },
+    "phone-and-build-evidence.zip": {
+      "sha256": "edba3e6b8a072519529d3d37902bfeca7601f9b11457f2ec3c9e7b945cbcc9a4",
+      "bytes": 24945117
+    },
+    "r8-mapping.zip": {
+      "sha256": "1dc93909ca2f7c6448f7e051cacfc9f7d460dc9b3e89e354c328d7b4fd7bac83",
+      "bytes": 1669197
+    }
+  },
+  "evidence": {
+    "bulletin-fur-last-day.png": {
+      "sha256": "ead2b99d145d71a2818e329130f45ac30b54879bb3fbbd134f139692497ec9eb",
+      "bytes": 1025593
+    },
+    "bulletin-fur-last-day.xml": {
+      "sha256": "53c462e75a73b22788310414ce7a0facaa09ea734a300a62545c2a6996dc9155",
+      "bytes": 20315
+    },
+    "bulletin-it-light.png": {
+      "sha256": "4199e8e0f7977818132ed3d115aa815c0b09305ef9b0e10baf4c50000bb12efe",
+      "bytes": 1138445
+    },
+    "bulletin-it-light.xml": {
+      "sha256": "9c3df39a77449aeb1c05bff519c99f9061b4e550bde29c270ffcb12a3f8af204",
+      "bytes": 20364
+    },
+    "cams-udine-air.png": {
+      "sha256": "ebde6a398f94b25e2cd2629384f41e27327cccc10e58adb56fa415ba5be4cc5e",
+      "bytes": 432179
+    },
+    "cams-udine-air.xml": {
+      "sha256": "db5d8ed2995fcf8948c0fc62cda1a1b98dfc7f374200fbc4e8127ca8eb298b34",
+      "bytes": 11909
+    },
+    "community-confirm-fur-dark.png": {
+      "sha256": "c3568ce043c5d18b47aedae19cd4fa50dcc6c7617905e1174a82a62d492a80b6",
+      "bytes": 409895
+    },
+    "community-confirm-fur-dark.xml": {
+      "sha256": "07838d82a62779f31a34efa63326f096d297d56aaf0ebceda8dc5fc482ab4cb6",
+      "bytes": 7486
+    },
+    "community-confirm-it-light.png": {
+      "sha256": "79e594ace9194d6d580810c8f544414f0ec1386fb81db51d172eea902ce03481",
+      "bytes": 456981
+    },
+    "community-confirm-it-light.xml": {
+      "sha256": "1c9fcf9c81d13958dffc559cdbd169ebf8d198973ada47db3498832332968610",
+      "bytes": 7489
+    },
+    "community-no-fur.png": {
+      "sha256": "25a77c5919c882c70d5f75f78731af692eb8a2ff6678eeb6bd3f2093b999c0e5",
+      "bytes": 469686
+    },
+    "community-no-fur.xml": {
+      "sha256": "c8d136ba009a89fe150813c534a06cb8a243b6424f45fd3b258d098221a44299",
+      "bytes": 12005
+    },
+    "community-success-fur-dark.png": {
+      "sha256": "87617aca092de4553db8ac035dbb3326a058f9f42c4c2126f02b4d3b28d45458",
+      "bytes": 366393
+    },
+    "community-success-fur-dark.xml": {
+      "sha256": "1fa49bcf262c0892de35bc243dd8eebb4535fe6da51f2a25f4cd07be647c10be",
+      "bytes": 8534
+    },
+    "community-success-it-light.png": {
+      "sha256": "a200c22d11cb981be328f1c75e9ec3ecd16dc3235adc7977980a8db3e786f39e",
+      "bytes": 401570
+    },
+    "community-success-it-light.xml": {
+      "sha256": "9d849f556e4ed6186a7f40f9c7c1c0d1f60853c05f79fb4bf0a273403999af00",
+      "bytes": 8530
+    },
+    "events-real-loaded.png": {
+      "sha256": "5206f1b267f8575e25cd6d0ebfe56e323161d4af4d3076f1c11434595d224fbb",
+      "bytes": 682270
+    },
+    "events-real-loaded.xml": {
+      "sha256": "e8d7cdd4da9e9cd9c6054e9e4257123d1d5c90d191bc545ef04cd1f36bc5f43a",
+      "bytes": 26659
+    },
+    "forecast-fur-dark.png": {
+      "sha256": "fccc21decf7853f9e1acc99a186983e8a0257a9f7759c29f360239adca69f6d1",
+      "bytes": 370174
+    },
+    "forecast-fur-dark.xml": {
+      "sha256": "9446479ca8cf5d3ef77713b6768034459cf6aaa3bfada006d05b53517c7e5765",
+      "bytes": 84214
+    },
+    "forecast-fur-light.png": {
+      "sha256": "90d57e5b30bd5bc5aa428ad94a477b83244e9d4e2666c64650f33262c6d1853c",
+      "bytes": 484733
+    },
+    "forecast-fur-light.xml": {
+      "sha256": "9446479ca8cf5d3ef77713b6768034459cf6aaa3bfada006d05b53517c7e5765",
+      "bytes": 84214
+    },
+    "forecast-it-dark-selected.png": {
+      "sha256": "29dc4ba4c316c2164a10f4da6b864cbd3478c974a419f61409a1096fa5aac55a",
+      "bytes": 376355
+    },
+    "forecast-it-dark-selected.xml": {
+      "sha256": "34952c7717ed83bc490c9a98bebfa03294541ca0a9e5a242965d840fc571dabb",
+      "bytes": 84259
+    },
+    "forecast-it-light-selected.png": {
+      "sha256": "8f6445c1893bee0729cb0cc5d8def9a4ea479856f577361d05302fe5f65292c1",
+      "bytes": 489114
+    },
+    "forecast-it-light-selected.xml": {
+      "sha256": "34952c7717ed83bc490c9a98bebfa03294541ca0a9e5a242965d840fc571dabb",
+      "bytes": 84259
+    },
+    "forecast-roma-settled.png": {
+      "sha256": "b35624097baf325c288bd1e41d6fda229bd583bd298fc936fd8e086e0a54bd20",
+      "bytes": 488395
+    },
+    "forecast-roma-settled.xml": {
+      "sha256": "1e120eee2d9432ff1362fd05a27c27c44496f39adcfeb06be3d139505a40e132",
+      "bytes": 85528
+    },
+    "forecast-udine-light.png": {
+      "sha256": "822782cc6541c9acb945b101608bb9092c942cfdb6afd3a680211dfb21a317d8",
+      "bytes": 455859
+    },
+    "forecast-udine-light.xml": {
+      "sha256": "7cafab7b15be5633eccd565d7fe2176f10168ffec1fbfe089f1b92861fdf2c8f",
+      "bytes": 75683
+    },
+    "forecast-udine-refreshed.png": {
+      "sha256": "321f634f05bda6942f9a1a439e906f59e7901ca201a5d7939df259a6d5ea6815",
+      "bytes": 456339
+    },
+    "forecast-udine-refreshed.xml": {
+      "sha256": "b68af539f7d80f5d329b22c693cb94103c7374aedfba22c0e0853cf048ffeb27",
+      "bytes": 85618
+    },
+    "home-relaunch-settled.png": {
+      "sha256": "0beb1a3a2f2230927bd1015f914e47432f6088340abecf11a38b6b5a3a364a70",
+      "bytes": 950020
+    },
+    "home-relaunch-settled.xml": {
+      "sha256": "2ad60f91f97297c55adb60e7a61596b282c579c96d9e2f54c7bdbfa891146d88",
+      "bytes": 33516
+    },
+    "source-provenance.json": {
+      "sha256": "19d8d62d57d236f40536d9685e15a276e77cd089fac82601f461a88ab9d01ff4",
+      "bytes": 16294
+    }
+  }
+}

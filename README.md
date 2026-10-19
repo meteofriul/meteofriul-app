@@ -19,6 +19,13 @@ Stato, ordine delle fasi e rollback sono nel
 [piano coordinato](docs/operations/ICON2I_COORDINATED_ROLLOUT_20261019.md),
 con le evidenze nel [verbale del produttore](docs/operations/ICON2I_TOLERANCE_PHASE3_DEPLOY_20261019.md).
 
+**App — verifica locale del 19 ottobre 2026:** il candidato integrato con testi
+IT/FUR, Indietro Android, conferma/ricevuta Community, aggiornamento FVG e nuovi
+temi delle previsioni ha superato le verifiche sulla TEST `.6` (`300037`) del
+Galaxy A52. È pronto per l'allineamento a main locale; le impostazioni speciali
+della TEST restano escluse. Nessuna nuova AAB, pubblicazione o attivazione degli
+invii. Evidenze e limiti nel [verbale sul telefono](docs/operations/APP_INTEGRATED_TEST_DEVICE_20261019.md).
+
 [Apri l'app web](https://meteofriul.app) ·
 [Sostieni il progetto](https://ko-fi.com/meteofriul)
 

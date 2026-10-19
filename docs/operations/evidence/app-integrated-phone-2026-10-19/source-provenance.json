@@ -1,0 +1,301 @@
+{
+  "candidate": "b0135d51c2a5b2560afa4fe9d7896134fd972511",
+  "testScaffold": "e7c27181296bfed82f4c44f2d527d773963248b5",
+  "overlays": [
+    "android/launcher-assets/pilot-test-orange-v2/android/res/drawable-nodpi/splash_logo.png",
+    "android/launcher-assets/pilot-test-orange-v2/android/res/drawable/pilot_launcher_background.xml",
+    "android/launcher-assets/pilot-test-orange-v2/android/res/mipmap-anydpi-v26/ic_launcher.xml",
+    "android/launcher-assets/pilot-test-orange-v2/android/res/mipmap-anydpi-v26/ic_launcher_round.xml",
+    "android/launcher-assets/pilot-test-orange-v2/android/res/mipmap-anydpi-v33/ic_launcher.xml",
+    "android/launcher-assets/pilot-test-orange-v2/android/res/mipmap-anydpi-v33/ic_launcher_round.xml",
+    "android/launcher-assets/pilot-test-orange-v2/android/res/mipmap-hdpi/ic_launcher_foreground.png",
+    "android/launcher-assets/pilot-test-orange-v2/android/res/mipmap-hdpi/ic_launcher_monochrome.png",
+    "android/launcher-assets/pilot-test-orange-v2/android/res/mipmap-mdpi/ic_launcher_foreground.png",
+    "android/launcher-assets/pilot-test-orange-v2/android/res/mipmap-mdpi/ic_launcher_monochrome.png",
+    "android/launcher-assets/pilot-test-orange-v2/android/res/mipmap-xhdpi/ic_launcher_foreground.png",
+    "android/launcher-assets/pilot-test-orange-v2/android/res/mipmap-xhdpi/ic_launcher_monochrome.png",
+    "android/launcher-assets/pilot-test-orange-v2/android/res/mipmap-xxhdpi/ic_launcher_foreground.png",
+    "android/launcher-assets/pilot-test-orange-v2/android/res/mipmap-xxhdpi/ic_launcher_monochrome.png",
+    "android/launcher-assets/pilot-test-orange-v2/android/res/mipmap-xxxhdpi/ic_launcher_foreground.png",
+    "android/launcher-assets/pilot-test-orange-v2/android/res/mipmap-xxxhdpi/ic_launcher_monochrome.png",
+    "android/launcher-assets/pilot-test-orange-v2/android/res/values-night/colors.xml",
+    "android/launcher-assets/pilot-test-orange-v2/android/res/values/colors.xml",
+    "android/launcher-assets/pilot-test-orange-v2/inventory.json",
+    "android/launcher-assets/pilot-test-orange-v2/web/brand/pilot-test-orange-v2/mark.svg",
+    "config/qa/full-test.profile.json",
+    "frontend/android/app/build.gradle",
+    "frontend/android/app/full-test.gradle",
+    "frontend/android/app/src/fullTest/AndroidManifest.xml",
+    "frontend/android/app/src/fullTest/java/com/meteofriul/app/FullTestApplication.java",
+    "frontend/android/app/src/localPilot/res/drawable/pilot_launcher_background.xml",
+    "frontend/android/app/src/localPilot/res/values-night/colors.xml",
+    "frontend/android/app/src/localPilot/res/values/colors.xml",
+    "frontend/android/app/src/main/java/com/meteofriul/app/location/MeteoBackgroundLocationScheduler.java",
+    "frontend/android/app/src/main/java/com/meteofriul/app/location/MeteoBackgroundLocationStore.java",
+    "frontend/android/app/src/main/java/com/meteofriul/app/location/MeteoBackgroundLocationWorker.java",
+    "frontend/android/app/src/main/java/com/meteofriul/app/location/MeteoBackgroundWeatherScheduler.java",
+    "frontend/android/app/src/main/java/com/meteofriul/app/location/MeteoBackgroundWeatherStore.java",
+    "frontend/android/app/src/main/java/com/meteofriul/app/location/MeteoBackgroundWeatherWorker.java",
+    "frontend/android/app/src/main/java/com/meteofriul/app/location/MeteoGeofenceReceiver.java",
+    "frontend/public/brand/pilot-test-orange-v2/mark.svg",
+    "frontend/qa/full-test/firebaseWebAppCheckDisabled.js",
+    "frontend/qa/full-test/index.html",
+    "frontend/qa/full-test/main.js",
+    "frontend/qa/full-test/storage.js",
+    "frontend/scripts/full-test-qa-bundle-guard.mjs",
+    "frontend/scripts/full-test-qa-config.mjs",
+    "frontend/scripts/full-test-qa.node-tests.mjs",
+    "frontend/src/services/brandMark.js",
+    "frontend/src/services/eventsApi.js",
+    "frontend/src/services/eventsCache.js",
+    "frontend/src/services/fullTestQaCapabilities.js",
+    "frontend/src/services/localCommunityPilot.js",
+    "frontend/vite.full-test-qa.config.js",
+    "scripts/build_full_test_qa.py",
+    "scripts/full_test_qa.py",
+    "scripts/package-pilot-test-orange.ps1"
+  ],
+  "applicationFiles": [
+    {
+      "path": "frontend/src/app/App.jsx",
+      "candidate": "6219cc5b8ca26cc9d1b6917c5aef6e0f0bcf7d18b52f64486a2c8b6a1f65a1d4",
+      "packaged": "ea55f12d3ba58535a3a82954a3d81de2bbbd0db88da67c9590d3677a21d7ab5a"
+    },
+    {
+      "path": "frontend/src/app/AppRoutes.test.jsx",
+      "candidate": "7a7702bfb422bb28ce563983260a72144b771ce71be2ee1dd4c94b4b04c88160",
+      "packaged": "7a7702bfb422bb28ce563983260a72144b771ce71be2ee1dd4c94b4b04c88160"
+    },
+    {
+      "path": "frontend/src/copy/appShellCopy.js",
+      "candidate": "c5f07573800ee4bc01e12342d9ddd3883d7a8439e2612147cd9ed1d605913406",
+      "packaged": "c5f07573800ee4bc01e12342d9ddd3883d7a8439e2612147cd9ed1d605913406"
+    },
+    {
+      "path": "frontend/src/copy/bulletinViewCopy.js",
+      "candidate": "9574d40de972f1709e1dafcd6c66e7a6540feac0bbaf1179b5e958388e032398",
+      "packaged": "9574d40de972f1709e1dafcd6c66e7a6540feac0bbaf1179b5e958388e032398"
+    },
+    {
+      "path": "frontend/src/copy/discoverCopy.js",
+      "candidate": "873a8f63326cbfb81a22417db21067f2a918d3e350b1babe496f1031ba9a2e8d",
+      "packaged": "873a8f63326cbfb81a22417db21067f2a918d3e350b1babe496f1031ba9a2e8d"
+    },
+    {
+      "path": "frontend/src/copy/eventsViewCopy.js",
+      "candidate": "9678a1030d3ac84d0c1751833b88861005e636df2e64b44345762efe0f87f96d",
+      "packaged": "9678a1030d3ac84d0c1751833b88861005e636df2e64b44345762efe0f87f96d"
+    },
+    {
+      "path": "frontend/src/copy/liveViewCopy.js",
+      "candidate": "e53ddedb0ce763bb7c47c3e8d69b812719b73c120bbc95da342c32e42a3b37f5",
+      "packaged": "e53ddedb0ce763bb7c47c3e8d69b812719b73c120bbc95da342c32e42a3b37f5"
+    },
+    {
+      "path": "frontend/src/copy/liveViewCopy.test.js",
+      "candidate": "cc8a3d76a434f6d761ee1049cabffc9b6c1f4ea78e20cc925e91b8660c67d7e1",
+      "packaged": "cc8a3d76a434f6d761ee1049cabffc9b6c1f4ea78e20cc925e91b8660c67d7e1"
+    },
+    {
+      "path": "frontend/src/copy/locationSelectorCopy.js",
+      "candidate": "14ac06a6747e9af4191ebf96ff1ed39624e272edb69232527f5fb99436dda12b",
+      "packaged": "14ac06a6747e9af4191ebf96ff1ed39624e272edb69232527f5fb99436dda12b"
+    },
+    {
+      "path": "frontend/src/copy/locationSelectorCopy.test.js",
+      "candidate": "4c2b10ac9487fc43141bb46d642326e4f722dde07a1f04542b3f480c0f106dca",
+      "packaged": "4c2b10ac9487fc43141bb46d642326e4f722dde07a1f04542b3f480c0f106dca"
+    },
+    {
+      "path": "frontend/src/features/bulletin/bulletin.css",
+      "candidate": "c02d5addca795d76cac5c0a1eedc9da48517f0d60a4e9d76a3e6fa0c2e5af76f",
+      "packaged": "c02d5addca795d76cac5c0a1eedc9da48517f0d60a4e9d76a3e6fa0c2e5af76f"
+    },
+    {
+      "path": "frontend/src/features/bulletin/bulletinCss.test.js",
+      "candidate": "4d50a1632ff208758bf00c477bd65aa8ec3f6adb1188b016e43219b0818b40d5",
+      "packaged": "4d50a1632ff208758bf00c477bd65aa8ec3f6adb1188b016e43219b0818b40d5"
+    },
+    {
+      "path": "frontend/src/features/events/eventsViewModel.test.js",
+      "candidate": "d39a9b0efec842ce8e6a571bd4a6b1b91daa4b90a6bcf941210bbc91ca604093",
+      "packaged": "d39a9b0efec842ce8e6a571bd4a6b1b91daa4b90a6bcf941210bbc91ca604093"
+    },
+    {
+      "path": "frontend/src/features/live/CommunityReportForm.submitLocation.test.jsx",
+      "candidate": "b8627fee3ae12116e8b8029fc80001ec99d7a332f01e22cab12947536fe3090f",
+      "packaged": "b8627fee3ae12116e8b8029fc80001ec99d7a332f01e22cab12947536fe3090f"
+    },
+    {
+      "path": "frontend/src/features/live/LiveView.jsx",
+      "candidate": "0af9deb1c55f7a9f4fcf8ffe907a25383d311b120b8d7ae6b2120a77c72b2d3c",
+      "packaged": "0af9deb1c55f7a9f4fcf8ffe907a25383d311b120b8d7ae6b2120a77c72b2d3c"
+    },
+    {
+      "path": "frontend/src/features/live/LiveView.pilotCompactLayout.test.jsx",
+      "candidate": "5f5598f441717865f1f0e5ad85829aa8f7f5f939d99fb40304ccd529f11f0c2b",
+      "packaged": "5f5598f441717865f1f0e5ad85829aa8f7f5f939d99fb40304ccd529f11f0c2b"
+    },
+    {
+      "path": "frontend/src/features/live/LiveView.webcamCarousel.test.jsx",
+      "candidate": "6df64785eeb2ba7aa608004af36a15a5705b641682c7775b3c1ff66f089882ba",
+      "packaged": "6df64785eeb2ba7aa608004af36a15a5705b641682c7775b3c1ff66f089882ba"
+    },
+    {
+      "path": "frontend/src/features/live/live.css",
+      "candidate": "9a49fc9b6934e1630a5a132ef843e413fecce058c785479651e828c66a7506f3",
+      "packaged": "9a49fc9b6934e1630a5a132ef843e413fecce058c785479651e828c66a7506f3"
+    },
+    {
+      "path": "frontend/src/features/live/liveCss.test.js",
+      "candidate": "708dfdf9ff0132216cc25689680e5e26441ec7afbbd65797391d62193fb0c2e5",
+      "packaged": "708dfdf9ff0132216cc25689680e5e26441ec7afbbd65797391d62193fb0c2e5"
+    },
+    {
+      "path": "frontend/src/features/live/liveViewModel.js",
+      "candidate": "3cdb608a69e16a43d903a166c35f78944fcbe8dca37d318707a36096d8696592",
+      "packaged": "3cdb608a69e16a43d903a166c35f78944fcbe8dca37d318707a36096d8696592"
+    },
+    {
+      "path": "frontend/src/features/live/liveViewModel.pilotMunicipalities.test.js",
+      "candidate": "00b2741a95fd2d3847df68157b57190065170d4e34ec3223759a5d51a43e7da8",
+      "packaged": "00b2741a95fd2d3847df68157b57190065170d4e34ec3223759a5d51a43e7da8"
+    },
+    {
+      "path": "frontend/src/features/settings/SettingsPilotDiagnostics.test.jsx",
+      "candidate": "07c84b977c05f0bfe4724387c8b6f4687929ae1dc908cf16b96cc71f11ac7814",
+      "packaged": "07c84b977c05f0bfe4724387c8b6f4687929ae1dc908cf16b96cc71f11ac7814"
+    },
+    {
+      "path": "frontend/src/features/settings/SettingsView.jsx",
+      "candidate": "0497b5c04b503abd38d991f1cea5ba1b6b1efcdab9c1d887cb5cefad81092e5c",
+      "packaged": "0497b5c04b503abd38d991f1cea5ba1b6b1efcdab9c1d887cb5cefad81092e5c"
+    },
+    {
+      "path": "frontend/src/features/settings/SettingsView.test.jsx",
+      "candidate": "2a64f1c40c489474bf938a6bd9b10270fb8bca55459347f5faff5ff41c938409",
+      "packaged": "2a64f1c40c489474bf938a6bd9b10270fb8bca55459347f5faff5ff41c938409"
+    },
+    {
+      "path": "frontend/src/features/weather/ForecastMeteoconIcon.jsx",
+      "candidate": "612be74bbec64ca5acb009e892cf5b3aaf556663338098c5567fdad983b817db",
+      "packaged": "612be74bbec64ca5acb009e892cf5b3aaf556663338098c5567fdad983b817db"
+    },
+    {
+      "path": "frontend/src/features/weather/WeatherForecastView.jsx",
+      "candidate": "466334ddc90e06217e64f9f78e42ed1edaf15516ed8dd54375cbe6005d761e40",
+      "packaged": "466334ddc90e06217e64f9f78e42ed1edaf15516ed8dd54375cbe6005d761e40"
+    },
+    {
+      "path": "frontend/src/features/weather/WeatherForecastView.pilotLayout.test.jsx",
+      "candidate": "cb9d764067888e23553593c676eed08430aab697ddc912bcffbea5cc32259489",
+      "packaged": "cb9d764067888e23553593c676eed08430aab697ddc912bcffbea5cc32259489"
+    },
+    {
+      "path": "frontend/src/features/weather/WeatherForecastView.test.jsx",
+      "candidate": "d0825cc12ea141eb090a73dffb143be85cede357bf36ac443745a218440cb7f6",
+      "packaged": "d0825cc12ea141eb090a73dffb143be85cede357bf36ac443745a218440cb7f6"
+    },
+    {
+      "path": "frontend/src/features/weather/WeatherHourlyForecast.jsx",
+      "candidate": "bf035f5ba9043f1715e54ecd0bd6ebb0fd722c457a60a4318955069fee417db3",
+      "packaged": "bf035f5ba9043f1715e54ecd0bd6ebb0fd722c457a60a4318955069fee417db3"
+    },
+    {
+      "path": "frontend/src/features/weather/icons/LICENSE.txt",
+      "candidate": "0bb04b55d4216d6d984b2fa1a008a1fb64ba363fe7da163c4f661d41bf0b1e44",
+      "packaged": "0bb04b55d4216d6d984b2fa1a008a1fb64ba363fe7da163c4f661d41bf0b1e44"
+    },
+    {
+      "path": "frontend/src/features/weather/icons/drizzle-dark.svg",
+      "candidate": "2872f7b404861381d05e81ec99fdff32b6b286707c2b22c619026ffdfcc12bfb",
+      "packaged": "2872f7b404861381d05e81ec99fdff32b6b286707c2b22c619026ffdfcc12bfb"
+    },
+    {
+      "path": "frontend/src/features/weather/icons/extreme-rain-dark.svg",
+      "candidate": "42e318b89dc058584a844b16252c57046896b2a5e4b50ace78b7ea24d2db9be0",
+      "packaged": "42e318b89dc058584a844b16252c57046896b2a5e4b50ace78b7ea24d2db9be0"
+    },
+    {
+      "path": "frontend/src/features/weather/icons/rain-dark.svg",
+      "candidate": "d9aaf6c651cf6228cee48d9e9b5865e885fd140e79b7e49838714bb9b5c3a6a0",
+      "packaged": "d9aaf6c651cf6228cee48d9e9b5865e885fd140e79b7e49838714bb9b5c3a6a0"
+    },
+    {
+      "path": "frontend/src/features/weather/icons/sleet-dark.svg",
+      "candidate": "eac791dad4fc3d07a34ed20a861c34923a9f80ba1291d8fb0310dd59b2108728",
+      "packaged": "eac791dad4fc3d07a34ed20a861c34923a9f80ba1291d8fb0310dd59b2108728"
+    },
+    {
+      "path": "frontend/src/features/weather/weatherForecast.css",
+      "candidate": "7f0ab58fc7f763686f5b2ad7e7033fc6bb844d309e35fc7c4a76b11fc077d5b4",
+      "packaged": "7f0ab58fc7f763686f5b2ad7e7033fc6bb844d309e35fc7c4a76b11fc077d5b4"
+    },
+    {
+      "path": "frontend/src/features/weather/weatherForecastCss.test.js",
+      "candidate": "ba469fffca20c6bef8b9d131af699cd1e4da138cb0406cc100c7e7c4cc4d199d",
+      "packaged": "ba469fffca20c6bef8b9d131af699cd1e4da138cb0406cc100c7e7c4cc4d199d"
+    },
+    {
+      "path": "frontend/src/features/weather/weatherForecastViewModel.js",
+      "candidate": "fcba5d602aca6514042d6abdac1caf8a67c4fb29bbc422f2e4ed5aacbd8e742b",
+      "packaged": "fcba5d602aca6514042d6abdac1caf8a67c4fb29bbc422f2e4ed5aacbd8e742b"
+    },
+    {
+      "path": "frontend/src/features/weather/weatherForecastViewModel.test.js",
+      "candidate": "8fe1e6350a89991fe73339ef4ba2cb0b328a2cbec437853b7e9cbef76d5a40fb",
+      "packaged": "8fe1e6350a89991fe73339ef4ba2cb0b328a2cbec437853b7e9cbef76d5a40fb"
+    },
+    {
+      "path": "frontend/src/features/weather/weatherNavigationCss.test.js",
+      "candidate": "7119fa9d59cc44329bb62cb98e645ad20e1704d82efd7f1f8297c3ba6a9a96b9",
+      "packaged": "7119fa9d59cc44329bb62cb98e645ad20e1704d82efd7f1f8297c3ba6a9a96b9"
+    },
+    {
+      "path": "frontend/src/services/localWeatherV1Runtime.js",
+      "candidate": "9cf33b834d95e9c3c242d5eeb398639029057463598f5ca6564dd1075d5884e9",
+      "packaged": "9cf33b834d95e9c3c242d5eeb398639029057463598f5ca6564dd1075d5884e9"
+    },
+    {
+      "path": "frontend/src/services/localWeatherV1Runtime.test.js",
+      "candidate": "fdf964d9f610fce5ba18598d012a501cb317d9b8f6a3e27d0604da9da45b57e7",
+      "packaged": "fdf964d9f610fce5ba18598d012a501cb317d9b8f6a3e27d0604da9da45b57e7"
+    },
+    {
+      "path": "frontend/src/services/pilotBackNavigation.js",
+      "candidate": "fe881ab41e928480147c0e26c9aa1f5c20e27e437d1910d69aa4ba8442d3881b",
+      "packaged": "fe881ab41e928480147c0e26c9aa1f5c20e27e437d1910d69aa4ba8442d3881b"
+    },
+    {
+      "path": "frontend/src/services/pilotBackNavigation.test.js",
+      "candidate": "58c35da0cddbb3bf15d0e6b8a21a58c201bd144c948d42e1d24a394c37c6bc0c",
+      "packaged": "58c35da0cddbb3bf15d0e6b8a21a58c201bd144c948d42e1d24a394c37c6bc0c"
+    },
+    {
+      "path": "frontend/src/services/weatherV1Client.js",
+      "candidate": "5c9bf5bff62ecb671691788e8542ba247d60b68daccf24eed3625a6f18cda3de",
+      "packaged": "5c9bf5bff62ecb671691788e8542ba247d60b68daccf24eed3625a6f18cda3de"
+    },
+    {
+      "path": "frontend/src/services/weatherV1Client.test.js",
+      "candidate": "416b801aa73df6eb54f70c49d379a2e009f62316781ea39bc71b7c7e1edbc619",
+      "packaged": "416b801aa73df6eb54f70c49d379a2e009f62316781ea39bc71b7c7e1edbc619"
+    },
+    {
+      "path": "frontend/src/ui/layout/layoutCss.test.js",
+      "candidate": "a38b3d28c6f8be847866c6fb24ee12a68a7fa79b446a6aae291f7390e15e5ef2",
+      "packaged": "a38b3d28c6f8be847866c6fb24ee12a68a7fa79b446a6aae291f7390e15e5ef2"
+    },
+    {
+      "path": "frontend/src/ui/neutralSurfaces.css",
+      "candidate": "9767dad2faca3804591f84eca675ccaf4c6c733aa52f8164c6a5795c2d6fbf90",
+      "packaged": "9767dad2faca3804591f84eca675ccaf4c6c733aa52f8164c6a5795c2d6fbf90"
+    }
+  ],
+  "additionalQaAdaptations": [
+    "App.jsx: QA national capability only; candidate Back and notification code retained",
+    "communityReportPreview.js: existing in-memory preview enabled only in Full TEST",
+    "qa/full-test/main.js: select in-memory preview and reject non-read fetch requests"
+  ],
+  "candidateNativeCodeChanged": false
+}
