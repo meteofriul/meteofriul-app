@@ -1,0 +1,24 @@
+{
+  "source_run_id": "20261017T120000Z",
+  "istat_code": "093022",
+  "source_document_sha256": "67178057e022e4a8a76656c5b9126058b04fc46021f6812c64700e8581d71a87",
+  "provenance": "Exact hourly row from previously saved icon-fontanafredda-20261017T120000Z.json; no new acquisition.",
+  "row": {
+    "apparent_temperature_c": 16.227,
+    "cloud_cover_pct": 44.822,
+    "condition": {"icon_key": "MostlySunny", "native_code": 1, "native_label_it": "Poco nuvoloso", "native_status": "valid", "scene_key": "partly", "semantic_key": "mostly_sunny", "text_key": "conditionMostlySunny"},
+    "interval_end": "2026-10-18T08:00:00Z",
+    "interval_start": "2026-10-18T07:00:00Z",
+    "liquid_rain_mm": 0.0,
+    "precipitation_mm": null,
+    "pressure_msl_hpa": 1020.731,
+    "quality_flags": ["SNOW_GSP:positive_within_encoding_resolution", "TOT_PREC:positive_within_encoding_resolution"],
+    "relative_humidity_pct": 85.649,
+    "snow_water_equivalent_mm": null,
+    "temperature_c": 15.397,
+    "valid_at": "2026-10-18T08:00:00Z",
+    "wind_from_degrees": 240.215,
+    "wind_gust_max_m_s": 0.915,
+    "wind_speed_m_s": 0.147
+  }
+}

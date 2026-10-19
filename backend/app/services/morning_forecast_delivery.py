@@ -218,22 +218,27 @@ def build_morning_forecast_body(
     rows: list[dict[str, Any]] = []
     for index, value in enumerate(series["time"]):
         forecast_at = _forecast_time(value)
+        if forecast_at is None:
+            return ""
+        if forecast_at.date() != current_local.date() or forecast_at < current_local - timedelta(hours=1):
+            continue
         temperature = _finite_number(series["temperature_2m"][index])
         precipitation = _finite_number(series["precipitation"][index])
         rain = _finite_number(series["rain"][index])
         showers = _finite_number(series["showers"][index])
         weather_code = _finite_number(series["weather_code"][index])
         if (
-            forecast_at is None
-            or temperature is None
+            temperature is None
             or precipitation is None
             or rain is None
             or showers is None
             or weather_code is None
-            or forecast_at.date() != current_local.date()
-            or forecast_at < current_local - timedelta(hours=1)
+            or min(precipitation, rain, showers) < 0
+            or not weather_code.is_integer()
+            or not 0 <= weather_code <= 99
         ):
-            continue
+            # Never describe a day as dry after discarding its unknown hours.
+            return ""
         rows.append(
             {
                 "time": forecast_at,

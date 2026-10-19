@@ -171,7 +171,7 @@ class ShadowContractTests(unittest.TestCase):
         self.assertEqual(result["status"], "rejected")
         self.assertIn("insufficient_future_slots", result["validation_errors"])
 
-    def test_null_or_out_of_range_hourly_values_are_rejected(self):
+    def test_null_or_out_of_range_values_block_only_dependent_phenomena(self):
         null_snapshot = build_snapshot()
         null_snapshot["hourly"]["rain"][1] = None
         invalid_probability = build_snapshot()
@@ -180,13 +180,14 @@ class ShadowContractTests(unittest.TestCase):
         null_result = evaluate(null_snapshot)
         range_result = evaluate(invalid_probability)
 
-        self.assertEqual(null_result["status"], "rejected")
-        self.assertIn("invalid_hourly_value:rain", null_result["validation_errors"])
-        self.assertEqual(range_result["status"], "rejected")
-        self.assertIn(
-            "hourly_value_out_of_range:precipitation_probability",
-            range_result["validation_errors"],
-        )
+        for result, reason in ((null_result, "missing"), (range_result, "out_of_range")):
+            self.assertEqual(result["status"], "partial_evaluation")
+            self.assertEqual(result["validation_errors"], [])
+            outcome = result["data_quality"]["phenomena"]["rain"]
+            self.assertEqual(outcome["state"], "not_evaluable")
+            self.assertIn(reason, [r["reason"] for r in outcome["reasons"]])
+            self.assertEqual(result["data_quality"]["phenomena"]["wind"]["state"], "evaluated_no_candidate")
+
 
 
 class ShadowThresholdTests(unittest.TestCase):

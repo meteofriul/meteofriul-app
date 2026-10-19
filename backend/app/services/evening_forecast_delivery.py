@@ -188,6 +188,10 @@ def _tomorrow_rows(
     rows: list[dict[str, Any]] = []
     for index, value in enumerate(series["time"]):
         forecast_at = _forecast_time(value)
+        if forecast_at is None:
+            return []
+        if forecast_at.date() != forecast_date:
+            continue
         precipitation = _finite_number(series["precipitation"][index])
         rain = _finite_number(series["rain"][index])
         showers = _finite_number(series["showers"][index])
@@ -195,9 +199,7 @@ def _tomorrow_rows(
         weather_code = _finite_number(series["weather_code"][index])
         wind_gust = _finite_number(series["wind_gusts_10m"][index])
         if (
-            forecast_at is None
-            or forecast_at.date() != forecast_date
-            or precipitation is None
+            precipitation is None
             or rain is None
             or showers is None
             or snowfall is None
@@ -207,7 +209,8 @@ def _tomorrow_rows(
             or not weather_code.is_integer()
             or not 0 <= weather_code <= 99
         ):
-            continue
+            # Missing in-scope hours cannot become a reassuring daily summary.
+            return []
         rows.append(
             {
                 "time": forecast_at,

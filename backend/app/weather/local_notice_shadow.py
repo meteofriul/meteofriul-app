@@ -9,12 +9,19 @@ sent directly.
 from __future__ import annotations
 
 import hashlib
-from datetime import datetime, timedelta
+import math
+from datetime import datetime, timedelta, timezone
 from typing import Any, Mapping, Sequence
 
 from app.services.location import LocationCatalog, Municipality
 from app.services.fvg_geography import FvgLocality
 from app.weather.timezone_support import FVG_TIMEZONE, get_fvg_timezone
+from app.weather.local_notice_quality import evaluation_quality, run_identity
+from app.weather.local_notice_thresholds import (
+    RAIN_ACCUMULATION_THRESHOLD_MM, RAIN_MINIMUM_HOURLY_AMOUNT_MM,
+    RAIN_WINDOW_HOURS, RAIN_PROBABILITY_THRESHOLD_PERCENT, STORM_WEATHER_CODES,
+    SNOW_ACCUMULATION_THRESHOLD_CM, SNOW_WINDOW_HOURS, SNOW_PROBABILITY_THRESHOLD_PERCENT,
+)
 
 
 SCHEMA_VERSION = "local-weather-shadow.v1"
@@ -28,15 +35,7 @@ FORECAST_EVALUATION_HORIZON = timedelta(hours=6)
 NOTICE_MAX_LEAD_TIME = timedelta(hours=1)
 CANONICAL_COORDINATE_TOLERANCE = 0.0001
 
-RAIN_ACCUMULATION_THRESHOLD_MM = 15.0
-RAIN_MINIMUM_HOURLY_AMOUNT_MM = 5.0
-RAIN_WINDOW_HOURS = 3
-RAIN_PROBABILITY_THRESHOLD_PERCENT = 70.0
-STORM_WEATHER_CODES = frozenset({95, 96, 99})
 MODERATE_OR_HEAVY_SNOW_CODES = frozenset({73, 75, 86})
-SNOW_ACCUMULATION_THRESHOLD_CM = 2.0
-SNOW_WINDOW_HOURS = 3
-SNOW_PROBABILITY_THRESHOLD_PERCENT = 70.0
 FREEZING_PRECIPITATION_CODES = frozenset({56, 57, 66, 67})
 WIND_GUST_THRESHOLD_KMH = 70.0
 HEAT_TEMPERATURE_THRESHOLD_C = 35.0
@@ -75,11 +74,12 @@ def _clean(value: Any) -> str:
 
 
 def _as_float(value: Any) -> float | None:
-    if value is None or isinstance(value, bool):
+    if isinstance(value, bool) or not isinstance(value, (int, float)):
         return None
     try:
-        return float(value)
-    except (TypeError, ValueError):
+        result = float(value)
+        return result if math.isfinite(result) else None
+    except OverflowError:
         return None
 
 
@@ -91,7 +91,7 @@ def _as_weather_code(value: Any) -> int | None:
 
 
 def _iso(value: datetime) -> str:
-    return value.isoformat(timespec="minutes")
+    return value.astimezone(FVG_ZONE).isoformat(timespec="minutes")
 
 
 def _parse_aware_datetime(value: Any) -> datetime | None:
@@ -112,7 +112,7 @@ def _parse_hourly_datetime(value: Any) -> datetime | None:
         return None
     if parsed.tzinfo is None:
         parsed = parsed.replace(tzinfo=FVG_ZONE)
-    return parsed.astimezone(FVG_ZONE)
+    return parsed.astimezone(timezone.utc)
 
 
 def resolve_canonical_municipality(
@@ -261,6 +261,17 @@ def _snapshot_contract_errors(
             elif expected_length is not None and len(values) != expected_length:
                 errors.append(f"hourly_length_mismatch:{field}")
 
+    if isinstance(hourly, Mapping) and "native_weather_code" in hourly:
+        native = hourly["native_weather_code"]
+        if not isinstance(native, list) or len(native) != expected_length:
+            errors.append("hourly_length_mismatch:native_weather_code")
+        if not isinstance(units, Mapping) or units.get("native_weather_code") != "wmo code":
+            errors.append("invalid_unit:native_weather_code")
+    if isinstance(hourly, Mapping) and "accumulation_quality" in hourly:
+        quality = hourly["accumulation_quality"]
+        if not isinstance(quality, list) or len(quality) != expected_length:
+            errors.append("hourly_length_mismatch:accumulation_quality")
+
     return list(dict.fromkeys(errors)), fetched_at
 
 
@@ -281,7 +292,7 @@ def _build_slots(
             break
 
     slots: list[dict[str, Any]] = []
-    local_now = now.astimezone(FVG_ZONE)
+    local_now = now.astimezone(timezone.utc)
     horizon_end = local_now + FORECAST_EVALUATION_HORIZON
     for index, event_at in enumerate(parsed_times):
         if event_at < local_now or event_at > horizon_end:
@@ -291,6 +302,11 @@ def _build_slots(
             for field in REQUIRED_HOURLY_FIELDS
             if field != "time"
         }
+        # Legacy snapshots have only the old combined code. A present but missing
+        # native code must never fall back to an amount-derived clear/rain code.
+        values["native_weather_code"] = hourly.get("native_weather_code", hourly["weather_code"])[index]
+        if "accumulation_quality" in hourly:
+            values["accumulation_quality"] = hourly["accumulation_quality"][index]
         slots.append({"event_at": event_at, **values})
     return slots, errors
 
@@ -300,7 +316,7 @@ def _future_slot_contract_errors(
     *,
     now: datetime,
 ) -> list[str]:
-    """Reject incomplete or implausible hourly data instead of reporting no event."""
+    """Validate shared time coverage; numeric availability is per phenomenon."""
 
     if len(slots) < MIN_FUTURE_SLOTS:
         return ["insufficient_future_slots"]
@@ -314,30 +330,6 @@ def _future_slot_contract_errors(
         for left, right in zip(slots, slots[1:])
     ):
         errors.append("future_slots_not_hourly")
-
-    numeric_ranges = {
-        "temperature_2m": (-100.0, 70.0),
-        "apparent_temperature": (-100.0, 80.0),
-        "precipitation_probability": (0.0, 100.0),
-        "precipitation": (0.0, 500.0),
-        "rain": (0.0, 500.0),
-        "showers": (0.0, 500.0),
-        "snowfall": (0.0, 100.0),
-        "wind_gusts_10m": (0.0, 500.0),
-    }
-    for slot in slots:
-        for field, (minimum, maximum) in numeric_ranges.items():
-            value = _as_float(slot.get(field))
-            if value is None:
-                errors.append(f"invalid_hourly_value:{field}")
-            elif value < minimum or value > maximum:
-                errors.append(f"hourly_value_out_of_range:{field}")
-
-        weather_code = _as_weather_code(slot.get("weather_code"))
-        if weather_code is None:
-            errors.append("invalid_hourly_value:weather_code")
-        elif weather_code < 0 or weather_code > 99:
-            errors.append("hourly_value_out_of_range:weather_code")
 
     return list(dict.fromkeys(errors))
 
@@ -410,23 +402,23 @@ def _storm_candidate(
     slots: Sequence[dict[str, Any]],
 ) -> dict[str, Any] | None:
     for index, slot in enumerate(slots):
-        code = _as_weather_code(slot.get("weather_code"))
+        code = _as_weather_code(slot.get("native_weather_code"))
         if code in STORM_WEATHER_CODES:
             adjacent_storm_slot = any(
                 abs(other_index - index) == 1
                 and abs(other_slot["event_at"] - slot["event_at"])
                 == timedelta(hours=1)
-                and _as_weather_code(other_slot.get("weather_code"))
+                and _as_weather_code(other_slot.get("native_weather_code"))
                 in STORM_WEATHER_CODES
                 for other_index, other_slot in enumerate(slots)
             )
-            probability = _as_float(slot.get("precipitation_probability")) or 0.0
+            probability = _as_float(slot.get("precipitation_probability"))
             liquid_precipitation = (
-                (_as_float(slot.get("rain")) or 0.0)
-                + (_as_float(slot.get("showers")) or 0.0)
+                _as_float(slot.get("rain"))
+                + _as_float(slot.get("showers"))
             )
             probability_and_liquid = (
-                probability >= RAIN_PROBABILITY_THRESHOLD_PERCENT
+                probability is not None and probability >= RAIN_PROBABILITY_THRESHOLD_PERCENT
                 and liquid_precipitation > 0.0
             )
             corroborated = probability_and_liquid
@@ -474,19 +466,19 @@ def _rain_candidate(
 ) -> dict[str, Any] | None:
     for window in _consecutive_windows(slots, RAIN_WINDOW_HOURS):
         amounts = [
-            (_as_float(slot.get("rain")) or 0.0)
-            + (_as_float(slot.get("showers")) or 0.0)
+            _as_float(slot.get("rain"))
+            + _as_float(slot.get("showers"))
             for slot in window
         ]
         probabilities = [
-            _as_float(slot.get("precipitation_probability")) or 0.0
+            _as_float(slot.get("precipitation_probability"))
             for slot in window
         ]
         total = sum(amounts)
         intense_slot_probabilities = [
             probability
             for amount, probability in zip(amounts, probabilities, strict=True)
-            if amount >= RAIN_MINIMUM_HOURLY_AMOUNT_MM
+            if amount >= RAIN_MINIMUM_HOURLY_AMOUNT_MM and probability is not None
         ]
         peak_probability = (
             max(intense_slot_probabilities) if intense_slot_probabilities else 0.0
@@ -534,7 +526,7 @@ def _ice_candidate(
     slots: Sequence[dict[str, Any]],
 ) -> dict[str, Any] | None:
     for slot in slots:
-        code = _as_weather_code(slot.get("weather_code"))
+        code = _as_weather_code(slot.get("native_weather_code"))
         if code in FREEZING_PRECIPITATION_CODES:
             return _candidate(
                 municipality=municipality,
@@ -573,11 +565,11 @@ def _snow_candidate(
     )
     accumulation_trigger = None
     for window in _consecutive_windows(slots, SNOW_WINDOW_HOURS):
-        total = sum(_as_float(slot.get("snowfall")) or 0.0 for slot in window)
+        total = sum(_as_float(slot.get("snowfall")) for slot in window)
         probabilities = [
-            _as_float(slot.get("precipitation_probability")) or 0.0
+            _as_float(slot.get("precipitation_probability"))
             for slot in window
-            if (_as_float(slot.get("snowfall")) or 0.0) > 0.0
+            if _as_float(slot.get("snowfall")) > 0.0 and _as_float(slot.get("precipitation_probability")) is not None
         ]
         peak_probability = max(probabilities) if probabilities else 0.0
         if (
@@ -758,14 +750,13 @@ def _partition_notice_window(
     heat evidence remains available.  Only the notice onset is restricted.
     """
 
-    local_now = now.astimezone(FVG_ZONE)
     eligible: list[dict[str, Any]] = []
     deferred: list[dict[str, Any]] = []
     for candidate in candidates:
         event_at = _parse_aware_datetime(candidate.get("event_at"))
         if event_at is None:
             continue
-        lead = event_at.astimezone(FVG_ZONE) - local_now
+        lead = event_at.astimezone(timezone.utc) - now.astimezone(timezone.utc)
         if timedelta(0) <= lead <= NOTICE_MAX_LEAD_TIME:
             eligible.append(candidate)
             continue
@@ -879,28 +870,35 @@ def evaluate_local_notice_shadow(
             "fetched_at": _iso(fetched_at.astimezone(FVG_ZONE)) if fetched_at else "",
             "timezone": _clean(snapshot.get("timezone")) if isinstance(snapshot, Mapping) else "",
             "eligible_slots": len(slots),
+            "source_run_id": run_identity(snapshot.get("source_run_id")) if isinstance(snapshot, Mapping) else "unresolved",
         },
         "validation_errors": list(dict.fromkeys(errors)),
+        "data_quality": evaluation_quality(snapshot, slots, errors),
     }
     if errors:
         return {**base, "status": "rejected", "candidates": [], "observations": []}
 
-    heat_candidate, observations = _heat_candidate_and_observations(
-        municipality,
-        slots,
-    )
-    detected_candidates = [
-        candidate
-        for candidate in (
-            _storm_candidate(municipality, slots),
-            _ice_candidate(municipality, slots),
-            _snow_candidate(municipality, slots),
-            _wind_candidate(municipality, slots),
-            _rain_candidate(municipality, slots),
-            heat_candidate,
-        )
-        if candidate is not None
-    ]
+    quality = base["data_quality"]
+    from app.weather.local_notice_tolerance import prepare_notice_slots
+    slots = prepare_notice_slots(slots)
+    detected_candidates, observations = [], []
+    detectors = {"storm": _storm_candidate, "ice": _ice_candidate, "snow": _snow_candidate,
+                 "wind": _wind_candidate, "rain": _rain_candidate}
+    for kind, outcome in quality["phenomena"].items():
+        if outcome["state"] == "not_evaluable":
+            continue
+        if kind == "heat":
+            candidate, heat_observations = _heat_candidate_and_observations(municipality, slots)
+            observations.extend(heat_observations)
+        else:
+            candidate = detectors[kind](municipality, slots)
+        if candidate is not None:
+            outcome["state"] = "evaluated_with_candidate"
+            if outcome.get("uses_operational_tolerance"):
+                candidate["evidence"].append({"metric": "operational_accumulation_tolerance",
+                    "policy": "icon-accumulation-tolerance.v1", "fields": outcome["tolerance_used"],
+                    "not_a_certified_error_bound": True})
+            detected_candidates.append(candidate)
     candidates, deferred_observations = _partition_notice_window(
         detected_candidates,
         now=evaluation_now,
@@ -929,7 +927,9 @@ def evaluate_local_notice_shadow(
             }
     return {
         **base,
-        "status": "candidates" if candidates else "no_candidate",
+        "status": ("not_evaluable" if quality["state"] == "not_evaluable" else
+                   "partial_evaluation" if quality["state"] == "partial" else
+                   "candidates" if candidates else "no_candidate"),
         "candidates": candidates,
         "observations": observations,
     }

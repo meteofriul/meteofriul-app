@@ -734,6 +734,8 @@ class LocalNoticeDeliveryServiceTests(unittest.TestCase):
         self.assertEqual(result.eligible_devices, 2)
         self.assertEqual(result.evaluated, 2)
         self.assertEqual(result.candidates, 1)
+        self.assertEqual(result.data_quality['evaluations_expected'], 1)
+        self.assertEqual(result.data_quality['evaluations_not_possible'], 0)
         self.assertEqual(result.attempted, 2)
         self.assertEqual(len(source.calls), 1)
         self.assertEqual(repository.claims, [])
@@ -813,6 +815,10 @@ class LocalNoticeDeliveryServiceTests(unittest.TestCase):
         self.assertEqual(result.failed, 1)
         self.assertEqual(result.attempted, 1)
         self.assertEqual(len(source.calls), 2)
+        self.assertEqual(result.data_quality['evaluations_expected'], 2)
+        self.assertEqual(result.data_quality['evaluations_not_possible'], 1)
+        self.assertEqual(result.data_quality['by_source_run'][0]['causes'], [
+            {'variable': 'source', 'reason': 'source_unavailable', 'evaluations': 1}])
 
     def test_group_audit_failure_does_not_block_other_canonical_points(self):
         locality_device = device(

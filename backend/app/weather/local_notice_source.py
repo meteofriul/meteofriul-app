@@ -30,6 +30,7 @@ from app.weather.local_notice_shadow import (
     SOURCE_ID,
     canonical_weather_request,
 )
+from app.weather.local_notice_quality import missing_reason, utc_stamp
 
 
 ICON_LOCAL_NOTICE_BASE_URL_ENV = "LOCAL_NOTICE_ICON_BASE_URL"
@@ -132,39 +133,86 @@ def _request_with_timeout_retry(
 def _number(value: Any) -> float | None:
     if isinstance(value, bool) or not isinstance(value, (int, float)):
         return None
-    numeric = float(value)
+    try:
+        numeric = float(value)
+    except OverflowError:
+        return None
     return numeric if math.isfinite(numeric) else None
 
 
-def _nonnegative(value: Any, *, default: float = 0.0) -> float:
+def _nonnegative(value: Any) -> float | None:
+    """Keep unavailable/invalid measurements unavailable, including accumulations."""
     numeric = _number(value)
-    if numeric is None:
-        return default
-    if numeric < 0:
-        raise LocalNoticeSourceUnavailable("source_invalid_hourly_value")
-    return numeric
+    return numeric if numeric is not None and numeric >= 0 else None
 
 
-def _weather_code(*, rain_mm: float, snow_cm: float, native_code: Any) -> int:
-    # Preserve explicit hazardous ICON/WMO semantics before deriving a
-    # conservative precipitation class from amounts.  Replacing 95/96 or the
-    # freezing codes with generic rain would silently disable those notices.
-    if native_code in {56, 57, 66, 67, 73, 75, 86, 95, 96, 99}:
-        return int(native_code)
-    if snow_cm >= 1.0:
-        return 73
-    # ICON interpolation can leave floating-point residues around 1e-16.
-    # Treat only measurable amounts as precipitation; otherwise a warm,
-    # dry hour could be mislabeled as snow or rain in user-facing copy.
-    if snow_cm > 0.1:
-        return 71
-    if rain_mm >= 7.5:
-        return 65
-    if rain_mm >= 2.5:
-        return 63
-    if rain_mm > 0.1:
-        return 61
-    return int(native_code) if native_code in {0, 1, 2, 3} else 3
+def _weather_code(*, rain_mm: float | None, snow_cm: float | None, native_code: Any) -> int | None:
+    from app.weather.local_notice_tolerance import combined_weather_code
+    return combined_weather_code(rain_mm=rain_mm, snow_cm=snow_cm, native_code=native_code)
+
+
+def _adapt_icon_row(row: dict[str, Any], valid_at: datetime) -> tuple[dict[str, Any], list[dict[str, str]]]:
+    """Adapt one real hourly slot without replacing, skipping or summing missing data."""
+    from app.weather.local_notice_tolerance import read_quality, SNOW_WATER_RATIO
+    quality = row.get("accumulation_quality")
+    # Validate against the original JSON: a string/bool/absent key must not become
+    # an eligible null after numeric adaptation. Keep invalid proof explicit.
+    if "accumulation_quality" in row and read_quality(quality, row) is None:
+        quality = {}
+    temperature = _number(row.get("temperature_c"))
+    apparent = _number(row.get("apparent_temperature_c"))
+    gust = _nonnegative(row.get("wind_gust_max_m_s"))
+    rain = _nonnegative(row.get("liquid_rain_mm"))
+    snow_swe = _nonnegative(row.get("snow_water_equivalent_mm"))
+    snow = snow_swe * SNOW_WATER_RATIO / 10 if snow_swe is not None else None
+    precipitation = _nonnegative(row.get("precipitation_mm"))
+    condition = row.get("condition")
+    native_code = condition.get("native_code") if isinstance(condition, dict) else None
+    native_number = _number(native_code)
+    native_valid = (native_number is not None and native_number.is_integer() and 0 <= native_number <= 99
+                    and condition.get("native_status", "valid") == "valid")
+    native_code = int(native_number) if native_valid else None
+    adapted = {
+        "time": valid_at.astimezone(ZoneInfo(FVG_TIMEZONE)).isoformat(timespec="minutes"),
+        "temperature_2m": temperature, "apparent_temperature": apparent,
+        "precipitation_probability": None if precipitation is None else 100.0 if precipitation > 0 else 0.0,
+        "precipitation": precipitation, "rain": rain,
+        # Liquid rain already includes convective rain: do not count it twice.
+        "showers": 0.0 if rain is not None else None, "snowfall": snow,
+        **({"accumulation_quality": quality} if "accumulation_quality" in row else {}),
+        "native_weather_code": native_code,
+        "weather_code": _weather_code(rain_mm=rain, snow_cm=snow, native_code=native_code),
+        "wind_gusts_10m": gust * 3.6 if gust is not None else None,
+    }
+    fields = {
+        "temperature_2m": ("temperature_c", ()),
+        "apparent_temperature": ("apparent_temperature_c", ()),
+        "wind_gusts_10m": ("wind_gust_max_m_s", ()),
+        "rain": ("liquid_rain_mm", ("RAIN_CON", "RAIN_GSP")),
+        "snowfall": ("snow_water_equivalent_mm", ("SNOW_CON", "SNOW_GSP")),
+        "precipitation": ("precipitation_mm", ("TOT_PREC",)),
+    }
+    issues = []
+    flags = row.get("quality_flags")
+    flags = flags if isinstance(flags, list) else []
+    for field, (variable, native_fields) in fields.items():
+        if adapted[field] is not None:
+            continue
+        reasons = [flag.split(":", 1)[1] for flag in flags if isinstance(flag, str)
+                   and ":" in flag and flag.split(":", 1)[0] in native_fields
+                   and flag.split(":", 1)[1] in {"positive_within_encoding_resolution", "negative_within_encoding_resolution", "no_previous_interval", "invalid"}]
+        if field == "apparent_temperature" and "invalid_T_Td_for_RH_no_clipping" in flags:
+            reasons.append("invalid_T_Td_for_RH_no_clipping")
+        if field == "wind_gusts_10m" and "gust_previous_hour_unavailable" in flags:
+            reasons.append("gust_previous_hour_unavailable")
+        issues.extend(dict(at=utc_stamp(valid_at), field=field, variable=variable, reason=reason)
+                      for reason in sorted(set(reasons or [missing_reason(row.get(variable))])))
+    for field, dependencies in {"precipitation_probability": ("precipitation",), "showers": ("rain",), "weather_code": ("rain", "snowfall")}.items():
+        if adapted[field] is None:
+            issues.extend({**issue, "field": field} for issue in list(issues) if issue["field"] in dependencies)
+    if native_code is None:
+        issues.append(dict(at=utc_stamp(valid_at), field="native_weather_code", variable="native_weather_code", reason="invalid"))
+    return adapted, issues
 
 
 class IconLocalNoticeSource:
@@ -264,6 +312,7 @@ class IconLocalNoticeSource:
         payload: dict[str, Any],
         *,
         fetched_at: datetime,
+        quality_issues: list[dict[str, str]] | None = None,
     ) -> dict[str, list[Any]]:
         rows = payload.get("hourly")
         if not isinstance(rows, list):
@@ -276,54 +325,26 @@ class IconLocalNoticeSource:
             try:
                 valid_at = datetime.fromisoformat(
                     str(row.get("valid_at", "")).replace("Z", "+00:00")
-                ).astimezone(timezone.utc)
+                )
+                if valid_at.tzinfo is None:
+                    raise ValueError("Missing timezone")
+                valid_at = valid_at.astimezone(timezone.utc)
             except (TypeError, ValueError):
                 raise LocalNoticeSourceUnavailable("source_invalid_hourly_time") from None
             if valid_at < fetched_at:
                 continue
 
-            temperature = _number(row.get("temperature_c"))
-            apparent = _number(row.get("apparent_temperature_c"))
-            gust_m_s = _number(row.get("wind_gust_max_m_s"))
-            if temperature is None or apparent is None or gust_m_s is None or gust_m_s < 0:
-                continue
-            rain = _nonnegative(row.get("liquid_rain_mm"))
-            snow_cm = _nonnegative(row.get("snow_water_equivalent_mm"))
-            precipitation = _nonnegative(
-                row.get("precipitation_mm"),
-                default=rain + snow_cm,
-            )
-            condition = row.get("condition")
-            native_code = condition.get("native_code") if isinstance(condition, dict) else None
-            adapted.append(
-                {
-                    "time": valid_at.astimezone(ZoneInfo(FVG_TIMEZONE)).isoformat(
-                        timespec="minutes"
-                    ),
-                    "temperature_2m": temperature,
-                    "apparent_temperature": apparent,
-                    # ICON 2I is deterministic. This binary compatibility field
-                    # means predicted/not predicted; it is not an ensemble POP.
-                    "precipitation_probability": 100.0 if precipitation > 0 else 0.0,
-                    "precipitation": precipitation,
-                    "rain": rain,
-                    "showers": 0.0,
-                    "snowfall": snow_cm,
-                    "weather_code": _weather_code(
-                        rain_mm=rain,
-                        snow_cm=snow_cm,
-                        native_code=native_code,
-                    ),
-                    "wind_gusts_10m": gust_m_s * 3.6,
-                }
-            )
+            converted, issues = _adapt_icon_row(row, valid_at)
+            adapted.append(converted)
+            if quality_issues is not None:
+                quality_issues.extend(issues)
             if len(adapted) >= self._forecast_hours:
                 break
         if len(adapted) < 3:
             raise LocalNoticeSourceUnavailable("source_insufficient_future_hours")
         return {
-            field: [row[field] for row in adapted]
-            for field in REQUIRED_HOURLY_FIELDS
+            field: [row.get(field) for row in adapted]
+            for field in (*REQUIRED_HOURLY_FIELDS, "native_weather_code", "accumulation_quality")
         }
 
     def fetch(
@@ -363,6 +384,8 @@ class IconLocalNoticeSource:
             raise LocalNoticeSourceUnavailable("source_invalid_municipality")
 
         model_point = payload_municipality.get("model_point")
+        quality_issues: list[dict[str, str]] = []
+        hourly = self._adapt_hourly(payload, fetched_at=fetched_at, quality_issues=quality_issues)
         return {
             "source": SOURCE_ID,
             "fetched_at": fetched_at.isoformat(timespec="seconds"),
@@ -370,8 +393,9 @@ class IconLocalNoticeSource:
             "utc_offset_seconds": int(
                 fetched_at.astimezone(ZoneInfo(FVG_TIMEZONE)).utcoffset().total_seconds()
             ),
-            "hourly_units": dict(EXPECTED_HOURLY_UNITS),
-            "hourly": self._adapt_hourly(payload, fetched_at=fetched_at),
+            "hourly_units": {**EXPECTED_HOURLY_UNITS, "native_weather_code": "wmo code"},
+            "hourly": hourly,
+            "source_quality_issues": quality_issues,
             "requested_location": requested_location,
             "model_location": model_point if isinstance(model_point, dict) else {},
             "source_run_id": source_run_id,
@@ -386,6 +410,8 @@ def _national_interval(series: list[Any], index: int) -> float | None:
         return None
     current = _nonnegative(series[index])
     previous = _nonnegative(series[index - 1])
+    if current is None or previous is None:
+        return None
     delta = current - previous
     return max(0.0, delta) if delta >= -0.001 else current
 
@@ -600,12 +626,8 @@ class NationalIconLocalNoticeSource:
             precipitation = _national_interval(
                 values["total_precipitation_mm"], index
             )
-            if precipitation is None or any(
-                value is None for value in (*rain_parts, *snow_parts)
-            ):
-                continue
-            rain = sum(float(value) for value in rain_parts)
-            snow = sum(float(value) for value in snow_parts)
+            rain = sum(rain_parts) if all(value is not None for value in rain_parts) else None
+            snow = sum(snow_parts) if all(value is not None for value in snow_parts) else None
             temperature = temperature_k - 273.15
             adapted.append(
                 {
@@ -615,12 +637,13 @@ class NationalIconLocalNoticeSource:
                     "temperature_2m": temperature,
                     "apparent_temperature": temperature,
                     "precipitation_probability": (
-                        100.0 if precipitation > 0 else 0.0
+                        None if precipitation is None else 100.0 if precipitation > 0 else 0.0
                     ),
                     "precipitation": precipitation,
                     "rain": rain,
-                    "showers": 0.0,
+                    "showers": 0.0 if rain is not None else None,
                     "snowfall": snow,
+                    "native_weather_code": native_code,
                     "weather_code": _weather_code(
                         rain_mm=rain,
                         snow_cm=snow,
@@ -635,7 +658,7 @@ class NationalIconLocalNoticeSource:
             raise LocalNoticeSourceUnavailable("source_insufficient_future_hours")
         return {
             field: [row[field] for row in adapted]
-            for field in REQUIRED_HOURLY_FIELDS
+            for field in (*REQUIRED_HOURLY_FIELDS, "native_weather_code")
         }
 
     def fetch(
@@ -703,7 +726,7 @@ class NationalIconLocalNoticeSource:
                 .utcoffset()
                 .total_seconds()
             ),
-            "hourly_units": dict(EXPECTED_HOURLY_UNITS),
+            "hourly_units": {**EXPECTED_HOURLY_UNITS, "native_weather_code": "wmo code"},
             "hourly": self._adapt_national_hourly(
                 times, cell, fetched_at=fetched_at
             ),
