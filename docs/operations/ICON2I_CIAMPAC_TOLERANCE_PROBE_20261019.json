@@ -1,0 +1,384 @@
+{
+  "kind": "isolated_operational_tolerance_probe_not_production",
+  "run": "2026101900",
+  "point": {
+    "name": "Canazei (Ciampac)",
+    "station": "T0403",
+    "station_elevation_m": 2150,
+    "requested_latitude": 46.445989,
+    "requested_longitude": 11.769081,
+    "model_grid_elevation_m": null,
+    "note": "Station point, not the municipality representative or app forecast point."
+  },
+  "snow_water_ratio": "fixed 10:1; 1 mm SWE numerically equals 1 cm snow",
+  "guarantee": "operational tolerance only; not a certified error interval",
+  "notification_calls": 0,
+  "windows": [
+    {
+      "leads": [
+        1,
+        2,
+        3
+      ],
+      "strict_contract_available": false,
+      "proposed_experimental_decision": "evaluated_without_candidate",
+      "contains_tolerated_resolution": true,
+      "rows": [
+        {
+          "lead": 1,
+          "snow_components": [
+            {
+              "value_mm": 0.0,
+              "raw_increment_mm": 0.0,
+              "status": "valid",
+              "uncertainty_mm": 0.0,
+              "packing_errors_mm": [
+                1.1754943508222875e-38,
+                1.1754943508222875e-38
+              ]
+            },
+            {
+              "value_mm": null,
+              "raw_increment_mm": 9.58292750707912e-11,
+              "status": "positive_within_encoding_resolution",
+              "uncertainty_mm": 1.52587890625e-05,
+              "packing_errors_mm": [
+                1.1754943508222875e-38,
+                7.62939453125347e-06
+              ]
+            }
+          ],
+          "snow": {
+            "state": "resolution_tolerance_verified",
+            "value_mm": null,
+            "known_component_sum_mm": 0.0,
+            "unquantified_components": 1,
+            "resolution_budget_mm": 1.52587890625e-05,
+            "tolerance_mm": 0.02,
+            "usable_under_operational_tolerance": true,
+            "reasons": []
+          },
+          "total_precipitation_component": {
+            "value_mm": null,
+            "raw_increment_mm": 8.058097478169657e-08,
+            "status": "positive_within_encoding_resolution",
+            "uncertainty_mm": 0.001953125,
+            "packing_errors_mm": [
+              1.1754943508222875e-38,
+              0.0009765625000035527
+            ]
+          },
+          "total_precipitation_guard": {
+            "state": "resolution_tolerance_verified",
+            "value_mm": null,
+            "known_component_sum_mm": 0.0,
+            "unquantified_components": 1,
+            "resolution_budget_mm": 0.001953125,
+            "tolerance_mm": 0.1,
+            "usable_under_operational_tolerance": true,
+            "reasons": []
+          },
+          "precipitation_probability": null,
+          "native_weather_code": 2
+        },
+        {
+          "lead": 2,
+          "snow_components": [
+            {
+              "value_mm": 0.0,
+              "raw_increment_mm": 0.0,
+              "status": "valid",
+              "uncertainty_mm": 0.0,
+              "packing_errors_mm": [
+                1.1754943508222875e-38,
+                1.1754943508222875e-38
+              ]
+            },
+            {
+              "value_mm": null,
+              "raw_increment_mm": 1.7416623698807143e-15,
+              "status": "positive_within_encoding_resolution",
+              "uncertainty_mm": 7.62939453125e-05,
+              "packing_errors_mm": [
+                7.62939453125347e-06,
+                3.051757812500347e-05
+              ]
+            }
+          ],
+          "snow": {
+            "state": "resolution_tolerance_verified",
+            "value_mm": null,
+            "known_component_sum_mm": 0.0,
+            "unquantified_components": 1,
+            "resolution_budget_mm": 7.62939453125e-05,
+            "tolerance_mm": 0.02,
+            "usable_under_operational_tolerance": true,
+            "reasons": []
+          },
+          "total_precipitation_component": {
+            "value_mm": 0.0,
+            "raw_increment_mm": 0.0,
+            "status": "valid",
+            "uncertainty_mm": 0.00390625,
+            "packing_errors_mm": [
+              0.0009765625000035527,
+              0.0009765625000035527
+            ]
+          },
+          "total_precipitation_guard": {
+            "state": "known_zero",
+            "value_mm": 0.0,
+            "known_component_sum_mm": 0.0,
+            "unquantified_components": 0,
+            "resolution_budget_mm": 0.0,
+            "tolerance_mm": 0.1,
+            "usable_under_operational_tolerance": true,
+            "reasons": []
+          },
+          "precipitation_probability": 0,
+          "native_weather_code": 1
+        },
+        {
+          "lead": 3,
+          "snow_components": [
+            {
+              "value_mm": 0.0,
+              "raw_increment_mm": 0.0,
+              "status": "valid",
+              "uncertainty_mm": 0.0,
+              "packing_errors_mm": [
+                1.1754943508222875e-38,
+                1.1754943508222875e-38
+              ]
+            },
+            {
+              "value_mm": null,
+              "raw_increment_mm": 5.134781488891349e-16,
+              "status": "positive_within_encoding_resolution",
+              "uncertainty_mm": 0.0001220703125,
+              "packing_errors_mm": [
+                3.051757812500347e-05,
+                3.051757812500347e-05
+              ]
+            }
+          ],
+          "snow": {
+            "state": "resolution_tolerance_verified",
+            "value_mm": null,
+            "known_component_sum_mm": 0.0,
+            "unquantified_components": 1,
+            "resolution_budget_mm": 0.0001220703125,
+            "tolerance_mm": 0.02,
+            "usable_under_operational_tolerance": true,
+            "reasons": []
+          },
+          "total_precipitation_component": {
+            "value_mm": 0.0,
+            "raw_increment_mm": 0.0,
+            "status": "valid",
+            "uncertainty_mm": 0.00390625,
+            "packing_errors_mm": [
+              0.0009765625000035527,
+              0.0009765625000035527
+            ]
+          },
+          "total_precipitation_guard": {
+            "state": "known_zero",
+            "value_mm": 0.0,
+            "known_component_sum_mm": 0.0,
+            "unquantified_components": 0,
+            "resolution_budget_mm": 0.0,
+            "tolerance_mm": 0.1,
+            "usable_under_operational_tolerance": true,
+            "reasons": []
+          },
+          "precipitation_probability": 0,
+          "native_weather_code": 1
+        }
+      ]
+    },
+    {
+      "leads": [
+        12,
+        13,
+        14
+      ],
+      "strict_contract_available": true,
+      "proposed_experimental_decision": "evaluated_without_candidate",
+      "contains_tolerated_resolution": false,
+      "rows": [
+        {
+          "lead": 12,
+          "snow_components": [
+            {
+              "value_mm": 0.0,
+              "raw_increment_mm": 0.0,
+              "status": "valid",
+              "uncertainty_mm": 0.0,
+              "packing_errors_mm": [
+                1.1754943508222875e-38,
+                1.1754943508222875e-38
+              ]
+            },
+            {
+              "value_mm": 0.0,
+              "raw_increment_mm": 0.0,
+              "status": "valid",
+              "uncertainty_mm": 0.0001220703125,
+              "packing_errors_mm": [
+                3.051757812500347e-05,
+                3.051757812500347e-05
+              ]
+            }
+          ],
+          "snow": {
+            "state": "known_zero",
+            "value_mm": 0.0,
+            "known_component_sum_mm": 0.0,
+            "unquantified_components": 0,
+            "resolution_budget_mm": 0.0,
+            "tolerance_mm": 0.02,
+            "usable_under_operational_tolerance": true,
+            "reasons": []
+          },
+          "total_precipitation_component": {
+            "value_mm": 0.0,
+            "raw_increment_mm": 0.0,
+            "status": "valid",
+            "uncertainty_mm": 0.015625,
+            "packing_errors_mm": [
+              0.003906250000003553,
+              0.003906250000003553
+            ]
+          },
+          "total_precipitation_guard": {
+            "state": "known_zero",
+            "value_mm": 0.0,
+            "known_component_sum_mm": 0.0,
+            "unquantified_components": 0,
+            "resolution_budget_mm": 0.0,
+            "tolerance_mm": 0.1,
+            "usable_under_operational_tolerance": true,
+            "reasons": []
+          },
+          "precipitation_probability": 0,
+          "native_weather_code": 1
+        },
+        {
+          "lead": 13,
+          "snow_components": [
+            {
+              "value_mm": 0.0,
+              "raw_increment_mm": 0.0,
+              "status": "valid",
+              "uncertainty_mm": 0.0,
+              "packing_errors_mm": [
+                1.1754943508222875e-38,
+                1.1754943508222875e-38
+              ]
+            },
+            {
+              "value_mm": 0.0,
+              "raw_increment_mm": 0.0,
+              "status": "valid",
+              "uncertainty_mm": 0.0001220703125,
+              "packing_errors_mm": [
+                3.051757812500347e-05,
+                3.051757812500347e-05
+              ]
+            }
+          ],
+          "snow": {
+            "state": "known_zero",
+            "value_mm": 0.0,
+            "known_component_sum_mm": 0.0,
+            "unquantified_components": 0,
+            "resolution_budget_mm": 0.0,
+            "tolerance_mm": 0.02,
+            "usable_under_operational_tolerance": true,
+            "reasons": []
+          },
+          "total_precipitation_component": {
+            "value_mm": 0.0,
+            "raw_increment_mm": 0.0,
+            "status": "valid",
+            "uncertainty_mm": 0.015625,
+            "packing_errors_mm": [
+              0.003906250000003553,
+              0.003906250000003553
+            ]
+          },
+          "total_precipitation_guard": {
+            "state": "known_zero",
+            "value_mm": 0.0,
+            "known_component_sum_mm": 0.0,
+            "unquantified_components": 0,
+            "resolution_budget_mm": 0.0,
+            "tolerance_mm": 0.1,
+            "usable_under_operational_tolerance": true,
+            "reasons": []
+          },
+          "precipitation_probability": 0,
+          "native_weather_code": 3
+        },
+        {
+          "lead": 14,
+          "snow_components": [
+            {
+              "value_mm": 0.0,
+              "raw_increment_mm": 0.0,
+              "status": "valid",
+              "uncertainty_mm": 0.0,
+              "packing_errors_mm": [
+                1.1754943508222875e-38,
+                1.1754943508222875e-38
+              ]
+            },
+            {
+              "value_mm": 0.0,
+              "raw_increment_mm": 0.0,
+              "status": "valid",
+              "uncertainty_mm": 0.0001220703125,
+              "packing_errors_mm": [
+                3.051757812500347e-05,
+                3.051757812500347e-05
+              ]
+            }
+          ],
+          "snow": {
+            "state": "known_zero",
+            "value_mm": 0.0,
+            "known_component_sum_mm": 0.0,
+            "unquantified_components": 0,
+            "resolution_budget_mm": 0.0,
+            "tolerance_mm": 0.02,
+            "usable_under_operational_tolerance": true,
+            "reasons": []
+          },
+          "total_precipitation_component": {
+            "value_mm": 0.0,
+            "raw_increment_mm": 0.0,
+            "status": "valid",
+            "uncertainty_mm": 0.015625,
+            "packing_errors_mm": [
+              0.003906250000003553,
+              0.003906250000003553
+            ]
+          },
+          "total_precipitation_guard": {
+            "state": "known_zero",
+            "value_mm": 0.0,
+            "known_component_sum_mm": 0.0,
+            "unquantified_components": 0,
+            "resolution_budget_mm": 0.0,
+            "tolerance_mm": 0.1,
+            "usable_under_operational_tolerance": true,
+            "reasons": []
+          },
+          "precipitation_probability": 0,
+          "native_weather_code": 2
+        }
+      ]
+    }
+  ]
+}
