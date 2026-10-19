@@ -1137,13 +1137,7 @@ class OutputSafetyTests(unittest.TestCase):
         snapshot = snapshot_fixture()
         pilot.write_new(self.source, snapshot)
         source_bytes = self.source.read_bytes()
-        minimal_payload = {
-            "schema_version": 1, "status": "partial_pilot_not_production",
-            "generated_at_utc": pilot.iso(RUN_TIME+timedelta(hours=12)), "run_utc": pilot.iso(RUN_TIME),
-            "metrics": dict(snapshot["metrics"]), "validation": {"status": "fresh", "usable": True},
-            "quality_flag_counts": {}, "capabilities": [],
-            "municipalities": [{"id": p["slug"]} for p in snapshot["points"]],
-        }
+        minimal_payload = pilot.derive(snapshot)
         with patch.object(pilot, "acquire") as acquire, patch.object(pilot, "derive", return_value=minimal_payload), patch("process_memory.process_memory_bytes", return_value={"peak_working_set_bytes": 100}), patch("builtins.print"):
             report = self.call(source_path=None, replay=self.source)
         acquire.assert_not_called()
@@ -1153,6 +1147,8 @@ class OutputSafetyTests(unittest.TestCase):
         self.assertEqual(report["payload_bytes"], self.payload.stat().st_size)
         self.assertEqual(report["payload_sha256"], hashlib.sha256(self.payload.read_bytes()).hexdigest())
         self.assertEqual(report["source_snapshot_sha256"], hashlib.sha256(source_bytes).hexdigest())
+        self.assertEqual(report["source_quality"]["source_snapshot_sha256"], report["source_snapshot_sha256"])
+        self.assertEqual(json.loads(self.report.read_text())["source_quality"], report["source_quality"])
         self.assertEqual(report["municipalities"], 215)
         self.assertEqual(len(report["single_municipality_sizes"]), 215)
         self.assertEqual(json.loads(self.report.read_text())["payload_sha256"], report["payload_sha256"])

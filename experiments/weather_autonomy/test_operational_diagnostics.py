@@ -9,6 +9,20 @@ from local_pipeline.operational_diagnostics import attach_error_fields, emit, er
 
 
 class OperationalDiagnosticsTests(unittest.TestCase):
+    def test_tolerance_denominators_and_guard_reasons_survive_safe_logging(self):
+        fields = {f"quality_tolerance_{metric}_{field}": 15
+                  for field in ("precipitation", "rain", "snow") for metric in ("expected", "verified")}
+        fields.update({f"quality_guard_{field}_{reason}": 3
+                       for field in ("precipitation", "rain", "snow")
+                       for reason in ("resolution_metadata_missing", "resolution_budget_exceeded", "missing_or_invalid_accumulation")})
+        output = io.StringIO()
+        with redirect_stdout(output):
+            emit("source_quality", source_run_id="20261019T000000Z", **fields, quality_private_token="secret")
+        record = json.loads(output.getvalue())
+        self.assertEqual({key: record.get(key) for key in fields}, fields)
+        self.assertEqual(record['source_run_id'], '20261019T000000Z')
+        self.assertNotIn('secret', output.getvalue())
+
     def test_phase_records_success_and_resets_context(self):
         output = io.StringIO()
         with redirect_stdout(output):
