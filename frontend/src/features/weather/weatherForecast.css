@@ -1735,6 +1735,9 @@ html[data-theme="dark"] .mf-weather-environment-sheet .mf-weather-cams-card__foo
   display: flex;
   gap: 6px;
   min-width: 0;
+  overflow-x: auto;
+  overscroll-behavior-x: contain;
+  scroll-padding-inline: 2px;
 }
 
 .mf-weather-day-picker button {
@@ -1746,12 +1749,12 @@ html[data-theme="dark"] .mf-weather-environment-sheet .mf-weather-cams-card__foo
   color: var(--mf-ink);
   cursor: pointer;
   display: grid;
-  flex: 1;
+  flex: 1 0 max-content;
   gap: 3px;
   justify-items: center;
   min-height: 44px;
-  min-width: 0;
-  padding: 9px 4px 8px;
+  min-width: 108px;
+  padding: 9px 10px 8px;
 }
 
 .mf-weather-hourly-card--ribbon .mf-weather-day-picker button[aria-pressed="true"] {
@@ -1779,8 +1782,6 @@ html[data-theme="dark"] .mf-weather-environment-sheet .mf-weather-cams-card__foo
 .mf-weather-day-picker button > strong {
   font-size: 0.875rem;
   line-height: 1.15;
-  overflow: hidden;
-  text-overflow: ellipsis;
   white-space: nowrap;
   width: 100%;
 }
@@ -1980,46 +1981,6 @@ html:not([data-theme="dark"]) .mf-weather-hour-sheet .mf-weather-chart {
   width: 40px;
 }
 
-html[data-theme="dark"] .mf-weather-day-picker button {
-  background: #18273e;
-  border-color: rgba(255, 255, 255, 0.08);
-}
-
-html[data-theme="dark"] .mf-weather-hourly-card--ribbon .mf-weather-day-picker button[aria-pressed="true"] {
-  background: linear-gradient(135deg, #38bdf8, #0284c7);
-  border-color: #0284c7;
-  color: var(--mf-white);
-}
-
-html[data-theme="dark"] .mf-weather-hour-ribbon {
-  background:
-    radial-gradient(circle at 92% 5%, rgb(19 137 201 / 36%), transparent 34%),
-    linear-gradient(140deg, #173965, #091d3d);
-  border-color: rgb(142 219 255 / 32%);
-}
-
-html[data-theme="dark"] .mf-weather-hour-ribbon__icon-frame {
-  background: transparent;
-  border: 0;
-  box-shadow: none;
-}
-
-html[data-theme="dark"] .mf-weather-hour-ribbon__icon-frame[data-phase="night"] {
-  background: transparent;
-  border: 0;
-}
-
-html[data-theme="dark"] .mf-weather-hour-ribbon > button:not([aria-pressed="true"]) :is(.mf-weather-hour-ribbon__moon, .mf-weather-hour-ribbon__night-crescent) {
-  color: #bae6fd;
-  filter: drop-shadow(0 0 5px rgb(56 189 248 / 0.36));
-  stroke: #f8fafc;
-}
-
-html[data-theme="dark"] .mf-weather-hour-ribbon > button[aria-pressed="true"] {
-  background: rgb(255 255 255 / 0.16);
-  border-color: rgb(255 255 255 / 0.42);
-}
-
 @media (max-width: 360px) {
   .mf-weather-hourly-card--ribbon {
     padding-inline: 12px;
@@ -2042,7 +2003,7 @@ html[data-theme="dark"] .mf-weather-hour-ribbon > button[aria-pressed="true"] {
 
   .mf-weather-day-picker button {
     border-radius: 14px;
-    padding-inline: 3px;
+    padding-inline: 8px;
   }
 
   .mf-weather-day-picker .mf-home-meteocon-icon {
@@ -2053,4 +2014,127 @@ html[data-theme="dark"] .mf-weather-hour-ribbon > button[aria-pressed="true"] {
   .mf-weather-hour-ribbon > button {
     flex-basis: 68px;
   }
+}
+
+.mf-weather-hourly-card--ribbon {
+  --forecast-tile: #edf6fa;
+  --forecast-border: #c3dce9;
+  --forecast-ink: #10364e;
+  --forecast-ribbon: #f3f8fb;
+  --forecast-ribbon-border: #d3e5ee;
+  --forecast-hover: #deeff8;
+  --forecast-selected-glow: rgb(19 127 179 / 16%);
+  --forecast-selected-border: #137fb3;
+  --forecast-icon-filter: drop-shadow(0 1px 1px rgb(4 51 85 / 22%)) saturate(1.3) contrast(1.12);
+  --forecast-time: #254c64;
+  --forecast-muted: #577184;
+  --forecast-rain: #006395;
+  --forecast-moon: #4c90c0;
+  --forecast-moon-filter: drop-shadow(0 1px 1px rgb(4 51 85 / 20%));
+  --forecast-moon-stroke: #245c84;
+}
+
+html[data-theme="dark"] .mf-weather-hourly-card--ribbon {
+  --forecast-tile: #1e3047;
+  --forecast-border: #384d65;
+  --forecast-ink: #f1f5f9;
+  --forecast-ribbon: #1e3047;
+  --forecast-ribbon-border: #384d65;
+  --forecast-hover: #28435c;
+  --forecast-selected-glow: rgb(125 211 252 / 14%);
+  --forecast-selected-border: #7dd3fc;
+  --forecast-icon-filter: drop-shadow(0 1px 1px rgb(0 0 0 / 20%));
+  --forecast-time: #cbd5e1;
+  --forecast-muted: #bac8d8;
+  --forecast-rain: #7dd3fc;
+  --forecast-moon: #bae6fd;
+  --forecast-moon-filter: drop-shadow(0 1px 2px rgb(0 0 0 / 20%));
+  --forecast-moon-stroke: #e0f2fe;
+}
+
+/* Both themes share the same geometry and selection; only the palette changes. */
+.mf-weather-hourly-card.mf-weather-hourly-card--ribbon .mf-weather-day-picker {
+  display: grid;
+  grid-auto-columns: minmax(0, 1fr);
+  grid-auto-flow: column;
+}
+
+.mf-weather-hourly-card.mf-weather-hourly-card--ribbon .mf-weather-day-picker button {
+  min-width: 0;
+  padding-inline: 4px;
+}
+
+.mf-weather-hourly-card.mf-weather-hourly-card--ribbon :is(.mf-weather-day-picker, .mf-weather-hour-ribbon) > button {
+  background: var(--forecast-tile);
+  border: 1px solid var(--forecast-border);
+  border-radius: 14px;
+  box-shadow: none;
+  color: var(--forecast-ink);
+}
+
+.mf-weather-hourly-card.mf-weather-hourly-card--ribbon .mf-weather-hour-ribbon {
+  background: var(--forecast-ribbon);
+  border-color: var(--forecast-ribbon-border);
+  color: var(--forecast-ink);
+  gap: 6px;
+  padding: 4px;
+}
+
+.mf-weather-hourly-card.mf-weather-hourly-card--ribbon :is(.mf-weather-day-picker, .mf-weather-hour-ribbon) > button:hover {
+  background: var(--forecast-hover);
+}
+
+.mf-weather-hourly-card.mf-weather-hourly-card--ribbon :is(.mf-weather-day-picker, .mf-weather-hour-ribbon) > button[aria-pressed="true"],
+.mf-weather-hourly-card.mf-weather-hourly-card--ribbon .mf-weather-hour-ribbon[data-has-selection="false"] > button[aria-current="time"] {
+  background: var(--forecast-tile);
+  border: 1px solid var(--forecast-selected-border);
+  /* One border pixel plus one inset pixel keeps the outline at 2px without resizing. */
+  box-shadow:
+    inset 0 0 0 1px var(--forecast-selected-border),
+    inset 0 0 6px 1px var(--forecast-selected-glow);
+  color: var(--forecast-ink);
+}
+
+.mf-weather-hourly-card.mf-weather-hourly-card--ribbon :is(.mf-weather-day-picker, .mf-weather-hour-ribbon) .mf-home-meteocon-icon {
+  background: transparent;
+  border: 0;
+  border-radius: 0;
+  filter: var(--forecast-icon-filter);
+}
+
+.mf-weather-hourly-card.mf-weather-hourly-card--ribbon .mf-weather-hour-ribbon strong {
+  color: var(--forecast-ink);
+}
+
+.mf-weather-hourly-card.mf-weather-hourly-card--ribbon .mf-weather-hour-ribbon time {
+  color: var(--forecast-time);
+}
+
+.mf-weather-hourly-card.mf-weather-hourly-card--ribbon .mf-weather-hour-ribbon small {
+  color: var(--forecast-muted);
+  font-size: 0.75rem;
+  font-weight: 500;
+}
+
+.mf-weather-hourly-card.mf-weather-hourly-card--ribbon .mf-weather-hour-ribbon small[data-wet="true"] {
+  color: var(--forecast-rain);
+  font-weight: 800;
+}
+
+.mf-weather-hourly-card.mf-weather-hourly-card--ribbon .mf-weather-hour-ribbon :is(.mf-weather-hour-ribbon__moon, .mf-weather-hour-ribbon__night-crescent) {
+  color: var(--forecast-moon);
+  filter: var(--forecast-moon-filter);
+  stroke: var(--forecast-moon-stroke);
+}
+
+.mf-weather-icon--dark {
+  display: none;
+}
+
+html[data-theme="dark"] .mf-weather-icon--light {
+  display: none;
+}
+
+html[data-theme="dark"] .mf-weather-icon--dark {
+  display: block;
 }

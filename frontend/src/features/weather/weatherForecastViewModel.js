@@ -144,7 +144,7 @@ function formatDateTime(value) {
   }).format(date);
 }
 
-function formatDayLabel(value, language) {
+function formatDayLabel(value, language, { month: monthStyle = "short", weekdayOnly = false } = {}) {
   const date = new Date(value);
   if (!Number.isFinite(date.getTime())) return "";
   if (language === "fur") {
@@ -153,13 +153,15 @@ function formatDayLabel(value, language) {
     const [year, month, day] = localDate.split("-").map(Number);
     const weekday = new Date(Date.UTC(year, month - 1, day)).getUTCDay();
     const weekdays = ["Domenie", "Lunis", "Martars", "Miercus", "Joibe", "Vinars", "Sabide"];
-    const months = ["zen", "fev", "mar", "avr", "mai", "jug", "lui", "avo", "set", "otu", "nov", "dic"];
+    if (weekdayOnly) return weekdays[weekday];
+    const months = monthStyle === "long"
+      ? ["zenâr", "fevrâr", "març", "avrîl", "mai", "jugn", "lui", "avost", "setembar", "otubar", "novembar", "dicembar"]
+      : ["zen", "fev", "mar", "avr", "mai", "jug", "lui", "avo", "set", "otu", "nov", "dic"];
     return `${weekdays[weekday]} ${day} ${months[month - 1]}`;
   }
   const locale = "it-IT";
   const label = new Intl.DateTimeFormat(locale, {
-    day: "numeric",
-    month: "short",
+    ...(weekdayOnly ? {} : { day: "numeric", month: monthStyle }),
     timeZone: TIME_ZONE,
     weekday: "long",
   }).format(date);
@@ -280,7 +282,15 @@ function buildHourlyGroups(items, { language, referenceDateKey }) {
         : dateKey === tomorrowKey
           ? copy.tomorrow
           : formatDayLabel(item.timestamp, language);
-      group = { dateKey, label: groupLabel, items: [] };
+      group = {
+        dateKey,
+        label: groupLabel,
+        shortLabel: dateKey === referenceDateKey || dateKey === tomorrowKey
+          ? groupLabel
+          : formatDayLabel(item.timestamp, language, { weekdayOnly: true }),
+        dateLabel: formatDayLabel(item.timestamp, language, { month: "long" }),
+        items: [],
+      };
       byDate.set(dateKey, group);
       groups.push(group);
     }
@@ -576,7 +586,7 @@ export function buildWeatherForecastViewModel(weatherState, {
       compactRunLabel: formatCompactRunLabel(header.runAt, referenceDateKey),
       compactSourceLabel: `${header.sourceTypeLabel} ${header.source}`.trim(),
       locationTitle,
-      dateLabel: formatDayLabel(now, languageKey),
+      dateLabel: formatDayLabel(now, languageKey, { month: "long" }),
       dateKey: referenceDateKey,
     },
     hourly: items.length

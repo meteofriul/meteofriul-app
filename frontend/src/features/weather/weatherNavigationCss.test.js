@@ -75,10 +75,10 @@ describe("weather route context CSS", () => {
 
   it("uses the calmer selected colors only in dark Meteo", () => {
     const darkTab = ruleFrom(neutralCss, 'html[data-theme="dark"] .mf-app-shell.is-definitive-app .mf-weather-route-shell .mf-weather-section-nav--compact .mf-weather-section-nav__item.is-active');
-    const darkDay = ruleFrom(neutralCss, 'html[data-theme="dark"] .mf-app-shell.is-definitive-app .mf-weather-route-shell .mf-weather-hourly-card--ribbon .mf-weather-day-picker button[aria-pressed="true"]');
+
     expect(darkTab).toContain("background: linear-gradient(135deg, #0277b5, #0369a1)");
-    expect(darkDay).toContain("background: linear-gradient(135deg, #087db7, #0474aa)");
-    expect(darkDay).toContain("color: #fff");
+    expect(neutralCss).not.toContain('.mf-weather-day-picker button[aria-pressed="true"]');
+    expect(darkTab).toContain("color: #fff");
     expect(neutralCss).toContain('html:not([data-theme="dark"]) .mf-app-shell.is-definitive-app :is(');
     expect(neutralCss).toContain("background: var(--mf-definitive-gradient)");
   });

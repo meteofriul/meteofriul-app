@@ -67,14 +67,14 @@ describe("weather forecast mobile list CSS", () => {
     expect(rule(".mf-weather-hour-ribbon__precipitation--empty")).toContain("visibility: hidden");
   });
 
-  it("uses one continuous navy ribbon without secondary icon tiles", () => {
+  it("keeps coloured weather icons without secondary icon tiles", () => {
     const day = rule(".mf-weather-day-picker button");
     const ribbon = rule(".mf-weather-hour-ribbon");
     const dayIconContrast = rule('.mf-weather-day-picker button:not([aria-pressed="true"]) .mf-home-meteocon-icon');
     const iconFrame = rule(".mf-weather-hour-ribbon__icon-frame");
     const ribbonIcon = rule(".mf-weather-hour-ribbon__icon-frame .mf-home-meteocon-icon");
     const nightFrame = rule('.mf-weather-hour-ribbon__icon-frame[data-phase="night"]');
-    const darkRibbon = rule('html[data-theme="dark"] .mf-weather-hour-ribbon');
+    const darkPalette = rule('html[data-theme="dark"] .mf-weather-hourly-card--ribbon');
 
     expect(day).toContain("background: color-mix(in srgb, var(--mf-blue-050) 58%, #ffffff)");
     expect(ribbon).toContain("linear-gradient(140deg, #173965, #091d3d)");
@@ -93,8 +93,8 @@ describe("weather forecast mobile list CSS", () => {
     expect(ribbonIcon).not.toContain("invert(");
     expect(nightFrame).toContain("background: transparent");
     expect(nightFrame).toContain("border: 0");
-    expect(darkRibbon).toContain("linear-gradient(140deg, #173965, #091d3d)");
-    expect(darkRibbon).toContain("border-color: rgb(142 219 255 / 32%)");
+    expect(darkPalette).toContain("--forecast-tile: #1e3047");
+    expect(darkPalette).toContain("--forecast-ribbon: #1e3047");
   });
 
   it("balances ribbon text hierarchy and marks the current hour accessibly", () => {
@@ -133,8 +133,8 @@ describe("weather forecast mobile list CSS", () => {
     const activeDay = rule(
       '.mf-weather-hourly-card--ribbon .mf-weather-day-picker button[aria-pressed="true"]',
     );
-    const darkActiveDay = rule(
-      'html[data-theme="dark"] .mf-weather-hourly-card--ribbon .mf-weather-day-picker button[aria-pressed="true"]',
+    const darkPalette = rule(
+      'html[data-theme="dark"] .mf-weather-hourly-card--ribbon',
     );
     const activeDayIcon = rule(
       '.mf-weather-hourly-card--ribbon .mf-weather-day-picker button[aria-pressed="true"] .mf-home-meteocon-icon',
@@ -146,7 +146,7 @@ describe("weather forecast mobile list CSS", () => {
     expect(day).toContain("border-radius: 16px");
     expect(day).toContain("min-height: 44px");
     expect(rule(".mf-weather-day-picker button > strong")).toContain("white-space: nowrap");
-    expect(rule(".mf-weather-day-picker button > strong")).toContain("text-overflow: ellipsis");
+    expect(rule(".mf-weather-day-picker button > strong")).not.toContain("text-overflow: ellipsis");
     expect(activeDay).toContain("background: linear-gradient(135deg, #38bdf8, #0284c7)");
     expect(activeDay).toContain("border-top: 1.5px solid rgb(255 255 255 / 0.45)");
     expect(activeDay).toContain("box-shadow: 0 6px 16px rgb(2 132 199 / 0.35)");
@@ -155,7 +155,8 @@ describe("weather forecast mobile list CSS", () => {
     expect(activeDayIcon).toContain("saturate(1.08)");
     expect(activeDayIcon).not.toContain("brightness(0)");
     expect(activeDayIcon).not.toContain("invert(");
-    expect(darkActiveDay).toContain("background: linear-gradient(135deg, #38bdf8, #0284c7)");
+    expect(darkPalette).toContain("--forecast-selected-glow: rgb(125 211 252 / 14%)");
+    expect(darkPalette).toContain("--forecast-selected-border: #7dd3fc");
     expect(rule(".mf-weather-day-picker button:focus-visible,\n.mf-weather-hour-ribbon > button:focus-visible"))
       .toContain("outline: 3px solid var(--mf-focus)");
   });

@@ -113,7 +113,6 @@ html:not([data-theme="dark"]) .mf-app-shell.is-definitive-app :is(
   .mf-weather-section-nav__item.is-active,
   .mf-events-category-scroll button.is-active,
   .mf-bulletin-view--story .mf-bulletin-tabs .mf-tab.is-active,
-  .mf-weather-hourly-card--ribbon .mf-weather-day-picker button[aria-pressed="true"],
   .mf-settings-segment.is-active,
   .mf-bottom-nav-item.is-active
 ) {
@@ -133,28 +132,11 @@ html:not([data-theme="dark"]) .mf-app-shell.is-definitive-app .mf-events-time-ta
   color: var(--mf-definitive-navy);
 }
 
-/* Keep the Meteocon artwork coloured and legible against the navy day tile,
-   without adding a second tile around the icon. */
-html:not([data-theme="dark"]) .mf-app-shell.is-definitive-app .mf-weather-hourly-card--ribbon .mf-weather-day-picker button[aria-pressed="true"] .mf-home-meteocon-icon {
-  background: transparent;
-  border: 0;
-  border-radius: 0;
-  filter: drop-shadow(0 1px 2px rgb(0 0 0 / 38%));
-}
-
 /* Approved Meteo selection: calmer blue in dark mode only. */
 html[data-theme="dark"] .mf-app-shell.is-definitive-app .mf-weather-route-shell .mf-weather-section-nav--compact .mf-weather-section-nav__item.is-active {
   background: linear-gradient(135deg, #0277b5, #0369a1);
   border-color: rgb(142 219 255 / 45%);
   border-top-color: rgb(255 255 255 / 45%);
   box-shadow: 0 4px 12px rgb(2 132 199 / 24%);
-  color: #fff;
-}
-
-html[data-theme="dark"] .mf-app-shell.is-definitive-app .mf-weather-route-shell .mf-weather-hourly-card--ribbon .mf-weather-day-picker button[aria-pressed="true"] {
-  background: linear-gradient(135deg, #087db7, #0474aa);
-  border-color: rgb(142 219 255 / 55%);
-  border-top-color: rgb(255 255 255 / 55%);
-  box-shadow: 0 6px 16px rgb(2 132 199 / 28%);
   color: #fff;
 }

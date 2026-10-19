@@ -147,7 +147,7 @@ describe("WeatherForecastView pilot forecast-card layout", () => {
     expect(environment.querySelector("dialog")).toBeNull();
   });
 
-  it("keeps future day labels compact without losing their full accessible name", () => {
+  it("shows weekday-only cards while keeping the full date accessible", () => {
     pilotHarness.enabled.mockReturnValue(true);
     const model = buildModel();
     const future = {
@@ -158,7 +158,7 @@ describe("WeatherForecastView pilot forecast-card layout", () => {
     model.hourly.items = [model.hourly.items[0], future];
     model.hourly.groups = [
       { dateKey: "2026-09-14", label: "Oggi", items: [model.hourly.items[0]] },
-      { dateKey: "2026-09-16", label: "Mercoledì 16 set", items: [future] },
+      { dateKey: "2026-09-16", label: "Mercoledì 16 set", shortLabel: "Mercoledì", dateLabel: "Mercoledì 16 settembre", items: [future] },
     ];
     model.hourly.summaries.push({
       dateKey: "2026-09-16",
@@ -169,9 +169,9 @@ describe("WeatherForecastView pilot forecast-card layout", () => {
 
     const document = renderDocument(model);
     const buttons = document.querySelectorAll(".mf-weather-day-picker button");
-    expect(buttons[1].querySelector("strong")?.textContent).toBe("Mer 16 set");
-    expect(buttons[1].getAttribute("aria-label")).toBe("Mercoledì 16 set 13° / 24°");
-    expect(buttons[1].querySelector("strong")?.getAttribute("title")).toBe("Mercoledì 16 set");
+    expect(buttons[1].querySelector("strong")?.textContent).toBe("Mercoledì");
+    expect(buttons[1].getAttribute("aria-label")).toBe("Mercoledì 16 settembre 13° / 24°");
+    expect(buttons[1].querySelector("strong")?.getAttribute("title")).toBe("Mercoledì 16 settembre");
   });
 
   it("makes every ribbon night explicit while reserving the large moon for clear sky", () => {

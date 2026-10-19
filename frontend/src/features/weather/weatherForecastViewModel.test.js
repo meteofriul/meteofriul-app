@@ -87,6 +87,9 @@ describe("weather forecast view model", () => {
       language: "fur", location: LOCATION, now,
     });
     expect(model.hourly.groups.map(({ label }) => label)).toEqual(["Vuê", "Doman", "Miercus 9 set"]);
+    expect(model.hourly.groups.map(({ shortLabel }) => shortLabel)).toEqual(["Vuê", "Doman", "Miercus"]);
+    expect(model.hourly.groups[2].dateLabel).toBe("Miercus 9 setembar");
+    expect(model.header.dateLabel).toBe("Lunis 7 setembar");
   });
   it("builds a continuous grouped list and honest Oggi/Domani summaries", () => {
     const model = buildWeatherForecastViewModel(buildState(), {
@@ -102,6 +105,9 @@ describe("weather forecast view model", () => {
     });
     expect(model.hourly.items).toHaveLength(48);
     expect(model.hourly.groups.map(({ label }) => label)).toEqual(["Oggi", "Domani", "Martedì 1 set"]);
+    expect(model.hourly.groups.map(({ shortLabel }) => shortLabel)).toEqual(["Oggi", "Domani", "Martedì"]);
+    expect(model.hourly.groups[2].dateLabel).toBe("Martedì 1 settembre");
+    expect(model.header.dateLabel).toBe("Domenica 30 agosto");
     expect(model.hourly.summaries[0]).toMatchObject({
       id: "today",
       label: "Oggi",

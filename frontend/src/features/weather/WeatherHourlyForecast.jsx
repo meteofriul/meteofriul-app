@@ -14,6 +14,7 @@ import { isDefinitiveAppExperience } from "../../services/localWeatherPilot";
 import { registerPilotBackHandler } from "../../services/pilotBackNavigation";
 
 import { HomeMeteoconIcon } from "../home/HomeMeteoconIcon";
+import { ForecastMeteoconIcon } from "./ForecastMeteoconIcon";
 import { WeatherForecastCardHeader } from "./WeatherForecastHeader";
 import { WeatherForecastCharts } from "./WeatherForecastCharts";
 import { buildThreeHourForecast } from "./threeHourForecast";
@@ -55,14 +56,6 @@ const COPY = {
   },
 };
 const EMPTY_ITEMS = Object.freeze([]);
-
-function compactDayPickerLabel(value) {
-  const label = String(value || "").trim();
-  const [weekday, ...date] = label.split(/\s+/u);
-  if (!weekday || date.length === 0) return label;
-  const compactWeekday = Array.from(weekday.replace(/\.$/u, "")).slice(0, 3).join("");
-  return `${compactWeekday} ${date.join(" ")}`;
-}
 
 function getSlotKey(slot, index) {
   return slot?.timestamp || `${slot?.dateKey || ""}-${slot?.time || index}`;
@@ -264,13 +257,16 @@ export function PilotHourlyForecast({ cardHeader = null, model, language = "it" 
         const summary = model.summaries?.find(item => item.dateKey === group.dateKey);
         const minimum = summary?.fullDayMinTemperature || summary?.minTemperature || "—";
         const maximum = summary?.fullDayMaxTemperature || summary?.maxTemperature || "—";
-        return <button key={group.dateKey} type="button" aria-label={`${group.label} ${minimum} / ${maximum}`} aria-pressed={active.dateKey === group.dateKey} onClick={() => {
+        const dayLabel = group.shortLabel || group.label;
+        const dateLabel = group.dateLabel || group.label;
+        const accessibleLabel = dateLabel.startsWith(dayLabel) ? dateLabel : `${dayLabel}, ${dateLabel}`;
+        return <button key={group.dateKey} type="button" aria-label={`${accessibleLabel} ${minimum} / ${maximum}`} aria-pressed={active.dateKey === group.dateKey} onClick={() => {
           setDay(group.dateKey);
           const first = Array.from(ribbon.current?.children || []).find(node => node.dataset.day === group.dateKey);
           if (first) ribbon.current.scrollTo({ left: ribbon.current.scrollLeft + first.getBoundingClientRect().left - ribbon.current.getBoundingClientRect().left, behavior: "smooth" });
         }}>
-          <strong title={group.label}>{compactDayPickerLabel(group.label)}</strong>
-          {summary?.icon ? <HomeMeteoconIcon icon={summary.icon} size={30} /> : null}
+          <strong title={dateLabel}>{dayLabel}</strong>
+          {summary?.icon ? <ForecastMeteoconIcon icon={summary.icon} size={30} /> : null}
           <span>{minimum} / {maximum}</span>
         </button>;
       })}
@@ -287,6 +283,7 @@ export function PilotHourlyForecast({ cardHeader = null, model, language = "it" 
         const isClearNight = isNight && slot.icon?.type === "ClearNight";
         const isCurrent = slot.timestamp === items[0]?.timestamp;
         const precipitation = slot.details?.precipitation;
+        const hasPrecipitation = Number.isFinite(slot.values?.precipitation) && slot.values.precipitation > 0;
 
         return <button type="button" data-day={slot.dateKey} key={slot.timestamp} aria-current={isCurrent ? "time" : undefined} aria-pressed={highlightedKey === slot.timestamp} aria-haspopup="dialog" aria-label={`${groups.find(group => group.dateKey === slot.dateKey)?.label || slot.dateKey} · ${slot.time} · ${slot.conditionLabel} · ${slot.temperature}`} onClick={event => { opener.current = event.currentTarget; setHighlightedKey(slot.timestamp); setSelectedKey(slot.timestamp); }}>
           <time dateTime={slot.timestamp}>{slot.time}</time>
@@ -308,11 +305,12 @@ export function PilotHourlyForecast({ cardHeader = null, model, language = "it" 
                 fill="currentColor"
                 size={28}
               />
-            ) : <HomeMeteoconIcon icon={slot.icon} size={42} />}
+            ) : <ForecastMeteoconIcon icon={slot.icon} size={42} />}
           </span>
           <strong>{slot.temperature}</strong>
           <small
             aria-hidden={precipitation ? undefined : "true"}
+            data-wet={hasPrecipitation ? "true" : undefined}
             className={precipitation ? undefined : "mf-weather-hour-ribbon__precipitation--empty"}
           >{precipitation || "\u00a0"}</small>
         </button>;
