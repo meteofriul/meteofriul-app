@@ -1,6 +1,7 @@
 import { describe, expect, it, vi } from "vitest";
 import {
   WeatherV1ClientError,
+  writeWeatherV1CacheValue,
   canonicalJsonStringify,
   createWeatherV1Client,
   readCachedIconLatest,
@@ -2411,5 +2412,77 @@ describe("additive CAMS 36-hour continuity", () => {
     await expect(h.read()).rejects.toMatchObject({ code: "EXPIRED" });
     h.state.offline = true;
     await expect(h.read()).rejects.toMatchObject({ code: "TRANSPORT_FAILURE" });
+  });
+});
+
+
+describe("origin quota recovery", () => {
+  it.each(["", "isolated-scope:"])("only releases same-endpoint raw municipality slots in storage scope %j", namespace => {
+    const values = new Map();
+    let capacity = Infinity;
+    const original = {
+      get length() { return values.size; },
+      key: index => [...values.keys()][index] ?? null,
+      getItem: key => values.get(key) ?? null,
+      setItem(key, value) {
+        const size = [...values].reduce((sum, [k, v]) => sum + (k === key ? 0 : k.length + v.length), 0);
+        if (size + key.length + value.length > capacity) throw new DOMException("full", "QuotaExceededError");
+        values.set(key, value);
+      },
+      removeItem: key => values.delete(key),
+    };
+    const baseUrl = "https://weather.example.test";
+    const prefix = `meteofriul:weather-v1:v4:${sha256Hex(baseUrl).slice(0, 16)}:`;
+    const storage = {
+      getItem: key => original.getItem(`${namespace}${key}`),
+      setItem: (key, value) => original.setItem(`${namespace}${key}`, value),
+      removeItem: key => original.removeItem(`${namespace}${key}`),
+    };
+    const keep = {
+      [`${prefix}icon2i:latest:0`]: "authoritative-pointer",
+      [`${prefix}cams_europe:manifest:0`]: "manifest",
+      [`${prefix}families/cams:latest:0`]: "revocations",
+      "meteofriul:weather-v1:bundle:v4:active": "active-bundle",
+      "mfTheme": "dark",
+      "meteofriul:weather-v1:v4:otherendpoint:icon2i:municipality:0": "other-endpoint",
+    };
+    for (const [key, value] of Object.entries(keep)) storage.setItem(key, value);
+    const outsideScopeKey = `${namespace ? "" : "another-scope:"}${prefix}cams_europe:municipality:0`;
+    original.setItem(outsideScopeKey, "other-scope-must-stay");
+    storage.setItem(`${prefix}cams_europe:municipality:0`, "x".repeat(4000));
+    storage.setItem(`${prefix}icon2i:municipality:0`, "small-snapshot");
+    capacity = [...values].reduce((sum, [key, value]) => sum + key.length + value.length, 0);
+    writeWeatherV1CacheValue(storage, "new-candidate", "n".repeat(1000), baseUrl);
+    expect(storage.getItem("new-candidate")).toHaveLength(1000);
+    expect(storage.getItem(`${prefix}cams_europe:municipality:0`)).toBeNull();
+    expect(storage.getItem(`${prefix}icon2i:municipality:0`)).toBe("small-snapshot");
+    expect(original.getItem(outsideScopeKey)).toBe("other-scope-must-stay");
+    for (const [key, value] of Object.entries(keep)) expect(storage.getItem(key)).toBe(value);
+  });
+
+  it.each(["SecurityError", "QuotaExceededError"])("keeps active data when recovery is unavailable: %s", name => {
+    const baseUrl = "/quota-failure";
+    const rawKey = `meteofriul:weather-v1:v4:${sha256Hex(baseUrl).slice(0, 16)}:icon2i:municipality:0`;
+    const error = new DOMException("blocked", name);
+    const storage = {
+      setItem: vi.fn(() => { throw error; }),
+      getItem: vi.fn(key => key === rawKey ? "keep" : null),
+      removeItem: vi.fn(() => { throw new Error("removal blocked"); }),
+    };
+    expect(() => writeWeatherV1CacheValue(storage, "candidate", "new", baseUrl)).toThrow(error);
+    expect(storage.getItem(rawKey)).toBe("keep");
+    expect(storage.removeItem).toHaveBeenCalledTimes(name === "QuotaExceededError" ? 1 : 0);
+  });
+
+  it("never removes the raw slot currently being replaced", () => {
+    const baseUrl = "/quota-protected-slot";
+    const key = `meteofriul:weather-v1:v4:${sha256Hex(baseUrl).slice(0, 16)}:icon2i:municipality:0`;
+    const storage = {
+      setItem: vi.fn(() => { throw new DOMException("full", "QuotaExceededError"); }),
+      getItem: vi.fn(candidate => candidate === key ? "previous-verified-bytes" : null),
+      removeItem: vi.fn(),
+    };
+    expect(() => writeWeatherV1CacheValue(storage, key, "replacement", baseUrl)).toThrow("full");
+    expect(storage.removeItem).not.toHaveBeenCalled();
   });
 });

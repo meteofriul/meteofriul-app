@@ -1,5 +1,5 @@
 import { camsContinuityFromEvidence, CAMS_CONTINUITY_HOURS } from "./camsContinuityPolicy";
-import { readCachedIconLatest, sha256Hex } from "./weatherV1Client";
+import { readCachedIconLatest, sha256Hex, writeWeatherV1CacheValue } from "./weatherV1Client";
 import {
   LOCAL_WEATHER_V1_CATALOG,
   LOCAL_WEATHER_V1_ISTAT_CODES,
@@ -2381,7 +2381,7 @@ function writePersistedBundle(
   };
   const serialized = JSON.stringify(targetRecord);
   const candidateKey = `${key}:candidate`;
-  const saveCandidate = () => target.setItem(candidateKey, serialized);
+  const saveCandidate = () => writeWeatherV1CacheValue(target, candidateKey, serialized, baseUrl);
   try {
     saveCandidate();
   } catch (error) {
@@ -2410,7 +2410,7 @@ function writePersistedBundle(
   } catch {
     return false;
   }
-  const commit = () => target.setItem(key, serialized);
+  const commit = () => writeWeatherV1CacheValue(target, key, serialized, baseUrl);
   try {
     commit();
   } catch (error) {
@@ -2897,6 +2897,12 @@ export async function fetchLocalWeatherV1RuntimeBundle(
     clearEntry();
   };
   const receiveSupplement = (bundle) => {
+    // A fast CAMS response must be rebased against the newly committed ICON,
+    // not the previous run which was active when this request began.
+    if (!entry.initialSettled) {
+      entry.earlySupplement = bundle;
+      return;
+    }
     try {
       if (entry.supplementFailure) return;
       const rebased = rebaseDeferredCamsSupplement(
@@ -2972,14 +2978,15 @@ export async function fetchLocalWeatherV1RuntimeBundle(
   const request = Promise.resolve()
     .then(() => bundleFetcher(location, fetchOptions))
     .then((bundle) => {
-      entry.sourceSucceeded = true;
-      return selectVerifiedBundle(
+      const selected = selectVerifiedBundle(
         retainedKey,
         verificationKey,
         bundle,
         location,
         bundleCacheOptions,
       );
+      entry.sourceSucceeded = true;
+      return selected;
     })
     .catch((error) => {
       if (!permitsRetainedFallback(error)) {
@@ -2997,7 +3004,16 @@ export async function fetchLocalWeatherV1RuntimeBundle(
     .finally(() => {
       entry.initialSettled = true;
       if (!deferCams || !entry.sourceSucceeded) clearEntry();
-      else if (entry.supplementSettled) globalThis.setTimeout(dispatchSupplement, 0);
+      else if (entry.earlySupplement) {
+        const supplement = entry.earlySupplement;
+        entry.earlySupplement = null;
+        try { receiveSupplement(supplement); }
+        catch (error) {
+          for (const callback of entry.failureCallbacks) safelyNotify(callback, error);
+          entry.failureCallbacks.clear();
+          clearEntry();
+        }
+      } else if (entry.supplementSettled) globalThis.setTimeout(dispatchSupplement, 0);
     });
   entry.promise = request;
   inFlight.set(key, entry);
