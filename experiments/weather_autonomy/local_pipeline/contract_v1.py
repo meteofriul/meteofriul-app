@@ -777,7 +777,14 @@ def _validate_common_payload(
 
 
 def _validate_icon_hour(row: Any, expected_time: datetime, run: datetime) -> None:
-    _exact_keys(row, _ICON_HOURLY_KEYS, "ICON hourly row")
+    extra = {"accumulation_quality"} if isinstance(row, Mapping) and "accumulation_quality" in row else set()
+    _exact_keys(row, _ICON_HOURLY_KEYS | extra, "ICON hourly row")
+    if extra:
+        from .accumulation_tolerance import validate_accumulation_quality
+        try:
+            validate_accumulation_quality(row["accumulation_quality"], row)
+        except (ValueError, TypeError, KeyError) as error:
+            raise ContractError("invalid ICON accumulation quality") from error
     valid = _parse_utc(row["valid_at"], "ICON valid_at", on_hour=True)
     if valid != expected_time:
         raise ContractError("ICON hourly timeline is not consecutive")

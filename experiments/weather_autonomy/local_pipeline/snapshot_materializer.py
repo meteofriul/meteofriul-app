@@ -412,6 +412,8 @@ def materialize_icon_documents(
                     ),
                     "condition": build_icon_condition(native_code),
                     "quality_flags": flags,
+                    **({"accumulation_quality": source["accumulation_quality"]}
+                       if "accumulation_quality" in source else {}),
                 }
             )
         payload = build_icon_payload(

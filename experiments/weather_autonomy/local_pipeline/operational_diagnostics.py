@@ -37,7 +37,20 @@ _FIELDS = frozenset({
     "compatible_rows", "date_rows", "leadcount", "maxlead", "metadata_sha256",
     "constraints_rows", "missing_model_rows", "missing_level_rows", "missing_type_rows",
     "missing_time_rows", "missing_variable_rows", "missing_variable_count", "missing_lead_count",
-})
+    "quality_available", "quality_reason", "quality_sha256", "raw_diagnostic_samples", "diagnostic_samples_truncated",
+    "quality_municipality_hours", "quality_municipalities", "quality_grid_hours",
+    "quality_humidity_anomaly_rows", "quality_humidity_anomaly_grid_hours",
+    "quality_null_precipitation", "quality_null_rain", "quality_null_snow",
+    "quality_resolution_null_precipitation", "quality_resolution_null_rain", "quality_resolution_null_snow",
+}) | frozenset(
+    f"quality_tolerance_{metric}_{field}"
+    for field in ("precipitation", "rain", "snow")
+    for metric in ("expected", "verified")
+) | frozenset(
+    f"quality_guard_{field}_{reason}"
+    for field in ("precipitation", "rain", "snow")
+    for reason in ("resolution_metadata_missing", "resolution_budget_exceeded", "missing_or_invalid_accumulation")
+)
 _SAFE_MESSAGES = frozenset({
     "CAMS artifact storage integrity failed", "CAMS artifact immutable conflict",
     "CAMS artifact descriptor is invalid", "CAMS artifact checkpoint is incomplete",

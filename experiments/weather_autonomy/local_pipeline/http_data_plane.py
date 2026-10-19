@@ -158,7 +158,13 @@ def _request_object_key(raw_target: str) -> str:
         and segments[6].endswith(".json")
         and _ISTAT_CODE.fullmatch(segments[6][:-5]) is not None
     )
-    if not (is_latest or is_manifest or is_municipality):
+    is_icon_quality = (
+        provider == 'icon2i' and len(segments) == 7 and segments[3] == 'runs'
+        and _RUN_ID.fullmatch(segments[4]) is not None
+        and segments[5] == 'accumulation-quality' and segments[6].endswith('.json')
+        and _ISTAT_CODE.fullmatch(segments[6][:-5]) is not None
+    )
+    if not (is_latest or is_manifest or is_municipality or is_icon_quality):
         raise ValueError("object_path_not_allowed")
     return "/".join(segments)
 

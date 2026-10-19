@@ -21,7 +21,10 @@ from cloud_worker import (
 RUN = '20260908T000000Z'
 NOW = datetime(2026, 9, 8, 6, tzinfo=timezone.utc)
 PREPARED = SimpleNamespace(source_run_id=RUN, documents={'093033': b'{}'}, input_fingerprint_sha256='a' * 64)
-CHECKPOINT = SimpleNamespace(intent=SimpleNamespace(source_run_id=RUN), prepared=PREPARED)
+QUALITY = dict(schema_version='icon2i-source-quality.v1', source_run_id=RUN, source_snapshot_sha256='c'*64,
+               counts=dict(municipality_hours=215*73, municipalities=215), anomaly_samples=[], near_saturation_controls=[],
+               sampling=dict(anomaly_samples_truncated=False))
+CHECKPOINT = SimpleNamespace(intent=SimpleNamespace(source_run_id=RUN), prepared=PREPARED, source_quality=QUALITY)
 PUBLISHED = JobResult(JobKind.ICON, 'published', 'publication_committed', source_run_id=RUN,
                       published_providers=('icon2i',))
 
@@ -34,7 +37,7 @@ class WorkerTests(TestCase):
             with patch.dict(os.environ, {'GOOGLE_CLOUD_PROJECT': PROJECT}), \
                     patch('cloud_worker.storage.Client'), \
                     patch('cloud_worker.GCSObjectStore', side_effect=[state, data]), \
-                    patch('run_pilot.run_outputs'), \
+                    patch('run_pilot.run_outputs', return_value={'source_quality': QUALITY}), \
                     patch('local_pipeline.job_entrypoints.prepare_icon_publication', return_value=PREPARED), \
                     patch('local_pipeline.icon_checkpoint.save_checkpoint', return_value=CHECKPOINT), \
                     patch('cloud_worker._publish_icon_checkpoint', return_value=JobResult(
@@ -88,7 +91,7 @@ class WorkerTests(TestCase):
             with patch.dict(os.environ, {"GOOGLE_CLOUD_PROJECT": PROJECT}), \
                     patch("cloud_worker.storage.Client"), \
                     patch("cloud_worker.GCSObjectStore", side_effect=[state, data, state, data]), \
-                    patch("run_pilot.run_outputs") as acquire, \
+                    patch('run_pilot.run_outputs', return_value={'source_quality': QUALITY}) as acquire, \
                     patch('local_pipeline.job_entrypoints.prepare_icon_publication', return_value=PREPARED), \
                     patch('local_pipeline.icon_checkpoint.save_checkpoint', return_value=CHECKPOINT), \
                     patch('publish_remote_icon.recover_remote_icon', return_value=PUBLISHED), \
@@ -118,7 +121,7 @@ class IconRecoveryWorkerTests(TestCase):
     def test_explicit_recovery_never_claims_or_acquires(self):
         with patch.dict(os.environ, {'PILOT_ICON_RECOVER_RUN_ID': RUN}), \
                 patch.object(self.state, 'put') as put, \
-                patch('run_pilot.run_outputs') as acquire, \
+                patch('run_pilot.run_outputs', return_value={'source_quality': QUALITY}) as acquire, \
                 patch('publish_remote_icon.recover_remote_icon', return_value=PUBLISHED) as recover:
             self.assertEqual(_run_icon(self.state, self.data, NOW), PUBLISHED)
             put.assert_not_called()
@@ -150,7 +153,7 @@ class IconRecoveryWorkerTests(TestCase):
 
     def test_legacy_claim_without_checkpoint_never_reacquires(self):
         self.state.put('state/dispatch/icon/20260908-am.json', b'{}', content_type='application/json')
-        with patch('run_pilot.run_outputs') as acquire:
+        with patch('run_pilot.run_outputs', return_value={'source_quality': QUALITY}) as acquire:
             result = _run_icon(self.state, self.data, NOW)
             self.assertEqual(result.reason_code, 'slot_already_claimed')
             acquire.assert_not_called()
@@ -159,7 +162,7 @@ class IconRecoveryWorkerTests(TestCase):
         with patch('local_pipeline.icon_checkpoint.read_checkpoint', side_effect=[None, CHECKPOINT]), \
                 patch('local_pipeline.icon_checkpoint.save_checkpoint', return_value=CHECKPOINT), \
                 patch('local_pipeline.job_entrypoints.prepare_icon_publication', return_value=PREPARED), \
-                patch('run_pilot.run_outputs') as acquire, \
+                patch('run_pilot.run_outputs', return_value={'source_quality': QUALITY}) as acquire, \
                 patch('cloud_worker._publish_icon_checkpoint', side_effect=[KeyboardInterrupt(), PUBLISHED]) as publish:
             with self.assertRaises(KeyboardInterrupt):
                 _run_icon(self.state, self.data, NOW)
@@ -169,8 +172,22 @@ class IconRecoveryWorkerTests(TestCase):
             self.assertEqual(publish.call_count, 2)
             self.state.get('state/dispatch/icon/20260908-am.json')  # Claim is never deleted.
 
+    def test_quality_reaches_actual_stdout_on_resume_without_acquisition(self):
+        output = StringIO()
+        with patch('local_pipeline.icon_checkpoint.read_checkpoint', return_value=CHECKPOINT), \
+                patch('run_pilot.run_outputs') as acquire, \
+                patch('cloud_worker._publish_icon_checkpoint', return_value=PUBLISHED), redirect_stdout(output):
+            self.assertEqual(_run_icon(self.state, self.data, NOW), PUBLISHED)
+        acquire.assert_not_called()
+        record = next(json.loads(line) for line in output.getvalue().splitlines() if json.loads(line).get('event') == 'source_quality')
+        self.assertTrue(record['quality_available'])
+        self.assertEqual(record['quality_municipality_hours'], 15695)
+        self.assertEqual(record['source_run_id'], RUN)
+        self.assertEqual(len(record['quality_sha256']), 64)
+        self.assertNotIn('anomaly_samples', record)
+
     def test_kill_before_checkpoint_allows_same_execution_task_retry(self):
-        with patch('run_pilot.run_outputs', side_effect=[KeyboardInterrupt(), None]) as acquire, \
+        with patch('run_pilot.run_outputs', side_effect=[KeyboardInterrupt(), {'source_quality': QUALITY}]) as acquire, \
                 patch('local_pipeline.job_entrypoints.prepare_icon_publication', return_value=PREPARED), \
                 patch('local_pipeline.icon_checkpoint.save_checkpoint', return_value=CHECKPOINT), \
                 patch('cloud_worker._publish_icon_checkpoint', return_value=PUBLISHED):
@@ -184,7 +201,7 @@ class IconRecoveryWorkerTests(TestCase):
         failure = JobResult(JobKind.ICON, 'retryable_failure', 'remote_storage_temporary_failure',
                             source_run_id=RUN, metrics={'http_status': 503})
         with patch('local_pipeline.icon_checkpoint.read_checkpoint', return_value=CHECKPOINT), \
-                patch('run_pilot.run_outputs') as acquire, \
+                patch('run_pilot.run_outputs', return_value={'source_quality': QUALITY}) as acquire, \
                 patch('cloud_worker._publish_icon_checkpoint', return_value=failure) as publish, \
                 patch('cloud_worker.sleep') as sleep:
             with self.assertRaises(RuntimeError):
@@ -199,7 +216,7 @@ class IconRecoveryWorkerTests(TestCase):
     def test_hard_error_stays_blocked_without_reacquisition_or_retry(self):
         failure = JobResult(JobKind.ICON, 'manual_review', 'verified_pipeline_invariant_failed', source_run_id=RUN)
         with patch('local_pipeline.icon_checkpoint.read_checkpoint', return_value=CHECKPOINT), \
-                patch('run_pilot.run_outputs') as acquire, \
+                patch('run_pilot.run_outputs', return_value={'source_quality': QUALITY}) as acquire, \
                 patch('cloud_worker._publish_icon_checkpoint', return_value=failure) as publish:
             for attempt in ['0', '1']:
                 with patch.dict(os.environ, {'CLOUD_RUN_TASK_ATTEMPT': attempt}), self.assertRaises(RuntimeError):
@@ -210,13 +227,13 @@ class IconRecoveryWorkerTests(TestCase):
     def test_corrupt_checkpoint_never_falls_back_to_acquisition(self):
         self.state.put('state/dispatch/icon/20260908-am/checkpoint.json.gz', b'not-gzip',
                        content_type='application/gzip')
-        with patch('run_pilot.run_outputs') as acquire, self.assertRaises(RuntimeError):
+        with patch('run_pilot.run_outputs', return_value={'source_quality': QUALITY}) as acquire, self.assertRaises(RuntimeError):
             _run_icon(self.state, self.data, NOW)
         acquire.assert_not_called()
 
     def test_checkpoint_precedes_intent_and_publication(self):
         calls = []
-        with patch('run_pilot.run_outputs'), \
+        with patch('run_pilot.run_outputs', return_value={'source_quality': QUALITY}), \
                 patch('local_pipeline.job_entrypoints.prepare_icon_publication', return_value=PREPARED), \
                 patch('local_pipeline.icon_checkpoint.save_checkpoint',
                       side_effect=lambda *a, **kw: calls.append('checkpoint') or CHECKPOINT), \
@@ -231,7 +248,7 @@ class IconRecoveryWorkerTests(TestCase):
                        canonical_json_bytes(PUBLISHED.as_document()), content_type='application/json')
         revoked = JobResult(JobKind.ICON, 'no_op', 'newer_run_already_active', source_run_id=RUN)
         with patch('publish_remote_icon.recover_remote_icon', return_value=revoked) as recover, \
-                patch('run_pilot.run_outputs') as acquire:
+                patch('run_pilot.run_outputs', return_value={'source_quality': QUALITY}) as acquire:
             result = _run_icon(self.state, self.data, NOW)
             self.assertEqual(result, revoked)
             recover.assert_called_once()

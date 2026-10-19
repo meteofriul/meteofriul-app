@@ -1,5 +1,6 @@
 import { countIconFutureHours } from "./iconForecastWindow";
 import { validateCamsContinuity } from "./camsContinuityPolicy";
+import { isValidIconAccumulationQuality } from "./iconAccumulationQuality";
 
 const SCHEMA_VERSION = 1;
 const CATALOG_VERSION = "istat-2026-irdat-2006-representative-points-v1";
@@ -1081,7 +1082,11 @@ function validateIconPayload(value, run) {
     fail("COVERAGE_MISMATCH", "payload ICON deve avere 73 campioni orari");
   }
   value.hourly.forEach((row, lead) => {
-    exactKeys(row, ICON_HOURLY_KEYS, `ICON.hourly.${lead}`);
+    const hasAccumulationQuality = isRecord(row) && Object.prototype.hasOwnProperty.call(row, "accumulation_quality");
+    exactKeys(row, hasAccumulationQuality ? [...ICON_HOURLY_KEYS, "accumulation_quality"] : ICON_HOURLY_KEYS, `ICON.hourly.${lead}`);
+    if (hasAccumulationQuality && !isValidIconAccumulationQuality(row.accumulation_quality, row)) {
+      fail("INVALID_DOCUMENT", "ICON accumulation_quality non valido");
+    }
     const expectedTime = iso(run + lead * HOUR_MS);
     if (row.valid_at !== expectedTime) fail("COVERAGE_MISMATCH", "timeline ICON non consecutiva");
     if (lead === 0) {

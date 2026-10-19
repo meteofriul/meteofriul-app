@@ -480,6 +480,7 @@ def _run_icon_result(state, data, now):
     from local_pipeline.contract_v1 import ICON_PROVIDER, load_catalog, canonical_json_bytes
     from local_pipeline.contract_publisher import ContractV1Publisher
     from local_pipeline.icon_checkpoint import read_checkpoint, save_checkpoint
+    from local_pipeline.icon_quality import quality_log_summary, validate_source_quality
     from local_pipeline.job_entrypoints import prepare_icon_publication
     from local_pipeline.job_outcomes import JobKind, JobResult
     from local_pipeline.publication_intent import PublicationIntent, PublicationIntentConflict
@@ -520,7 +521,7 @@ def _run_icon_result(state, data, now):
             with TemporaryDirectory(prefix="meteofriul-icon-") as scratch:
                 root = Path(scratch)
                 with phase("acquisition", provider="icon"):
-                    run_outputs(
+                    acquisition_report = run_outputs(
                         source_path=root / "source.json",
                         payload_path=root / "payload.json",
                         report_path=root / "report.json",
@@ -530,17 +531,21 @@ def _run_icon_result(state, data, now):
                     prepared = prepare_icon_publication(payload=root / "payload.json", report=root / "report.json",
                                                         catalog=catalog)
                 source_run_id = prepared.source_run_id
+                source_quality = acquisition_report["source_quality"]
+                validate_source_quality(source_quality, source_run_id=source_run_id)
                 emit("validation_result", provider="icon", source_run_id=source_run_id, status="validated",
                      validated_count=len(prepared.documents))
                 intent = PublicationIntent(JobKind.ICON, source_run_id, now.strftime("%Y-%m-%dT%H:%M:%SZ"),
                                            prepared.input_fingerprint_sha256)
                 # Freeze all resumable bytes atomically BEFORE creating the publication intent.
                 checkpoint = _retry_icon_publication(lambda: save_checkpoint(state, slot=slot, prepared=prepared,
-                    intent=intent, catalog=catalog), source_run_id=source_run_id)
+                    intent=intent, catalog=catalog, source_quality=source_quality), source_run_id=source_run_id)
         if isinstance(checkpoint, JobResult):
             result = checkpoint
         else:
             source_run_id = checkpoint.intent.source_run_id
+            emit("source_quality", provider="icon", source_run_id=source_run_id,
+                 **quality_log_summary(getattr(checkpoint, "source_quality", None)))
             result = _retry_icon_publication(lambda: _publish_icon_checkpoint(checkpoint, state=state, data=data,
                                               catalog=catalog), source_run_id=source_run_id)
     except Exception as error:

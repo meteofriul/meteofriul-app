@@ -699,6 +699,50 @@ describe("optional native weather-v1 staging read port", () => {
 });
 
 describe("weather v1 local client", () => {
+  function accumulationQuality(row) {
+    return {
+      schema_version: "icon-accumulation-tolerance.v1",
+      fields: Object.fromEntries([
+        ["precipitation_mm", 0.1, "mm"], ["liquid_rain_mm", 0.1, "mm"],
+        ["snow_water_equivalent_mm", 0.02, "mm_swe"],
+      ].map(([field, tolerance, unit]) => [field, {
+        state: row[field] === null ? "resolution_tolerance_verified" : row[field] === 0 ? "known_zero" : "quantified",
+        unit, known_component_sum_mm: row[field] ?? 0,
+        unquantified_components: row[field] === null ? 1 : 0,
+        resolution_budget_mm: row[field] === null ? 0.001 : 0,
+        tolerance_mm: tolerance, reason: null,
+      }])),
+    };
+  }
+
+  it("legge vecchi documenti e il contratto additivo senza riempire i null dell'app", async () => {
+    for (const extension of [false, true]) {
+      const artifacts = buildArtifacts("icon2i", { mutatePayload: (document) => {
+        const row = document.hourly[1];
+        row.snow_water_equivalent_mm = null;
+        if (extension) row.accumulation_quality = accumulationQuality(row);
+      } });
+      const { payload } = await fetchChain("icon2i", harness(), artifacts);
+      expect(payload.document.hourly[1].snow_water_equivalent_mm).toBeNull();
+      expect(payload.document.hourly[1].precipitation_mm).toBe(0);
+      expect(payload.document.hourly[1].accumulation_quality).toEqual(artifacts.payload.hourly[1].accumulation_quality);
+    }
+  });
+
+  it.each([
+    ["unit", "cm"], ["tolerance_mm", 2], ["resolution_budget_mm", 1],
+    ["known_component_sum_mm", false], ["unquantified_components", true],
+    ["state", {}], ["reason", "guessed"],
+  ])("rifiuta la prova di tolleranza invalida: %s", async (key, value) => {
+    const artifacts = buildArtifacts("icon2i", { mutatePayload: (document) => {
+      const row = document.hourly[1];
+      row.snow_water_equivalent_mm = null;
+      row.accumulation_quality = accumulationQuality(row);
+      row.accumulation_quality.fields.snow_water_equivalent_mm[key] = value;
+    } });
+    await expect(fetchChain("icon2i", harness(), artifacts)).rejects.toMatchObject({ code: "INVALID_DOCUMENT" });
+  });
+
   it("il bootstrap legge il latest raw verificato e le revoche senza rete ne vincolo di freshness", async () => {
     const warm = harness({ iconWindowPolicy: ICON_FORECAST_WINDOW_POLICY });
     const artifacts = buildArtifacts("icon2i", {

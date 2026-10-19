@@ -268,6 +268,12 @@ class Decoder:
         try:
             ec.codes_set(handle, "stepUnits", 1)
             meta = {key: ec.codes_get(handle, key) for key in META_KEYS}
+            # Optional ecCodes diagnostic; absence never changes the decoded value.
+            try:
+                packing_error = ec.codes_get(handle, "packingError")
+                meta["packingError"] = float(packing_error) if math.isfinite(packing_error) else None
+            except Exception:
+                meta["packingError"] = None
             validate_contract(meta, field, run, step)
             if field in ACCUM_FIELDS:
                 meta["encoding_quantum_mm"] = accumulation_quantum(meta)
@@ -836,6 +842,7 @@ def rounded(value, digits=3):
 
 def derive(snapshot, now=None):
     from icon_semantics import icon_condition, pilot_capabilities
+    from local_pipeline.accumulation_tolerance import build_accumulation_quality
     validate_snapshot(snapshot)
     now = now or datetime.now(timezone.utc)
     raw, times = snapshot["raw"], snapshot["times_utc"]
@@ -871,6 +878,10 @@ def derive(snapshot, now=None):
             def component_total(fields):
                 parts = [intervals[f]["value_mm"] for f in fields]
                 return sum(parts) if all(value is not None for value in parts) else None
+            packing_errors = {field: [raw[field]["metadata"][step-1].get("packingError"),
+                                      raw[field]["metadata"][step].get("packingError")]
+                              for field in ACCUM_FIELDS} if step else {}
+            accumulation_quality = build_accumulation_quality(intervals, packing_errors)
             cloud = values["CLCT"]
             if not 0 <= cloud <= 100:
                 cloud = None
@@ -893,7 +904,8 @@ def derive(snapshot, now=None):
                 snow_water_equivalent_previous_hour_mm=component_total(("SNOW_CON", "SNOW_GSP")),
                 graupel_water_equivalent_previous_hour_mm=intervals["GRAU_GSP"]["value_mm"],
                 precipitation_probability_pct=None, visibility_m=None,
-                precipitation_encoding=intervals, quality_flags=flags)
+                precipitation_encoding=intervals, quality_flags=flags,
+                accumulation_quality=accumulation_quality)
             hourly.append(row)
             issues.update(flags)
         past = [row for row in hourly if datetime.fromisoformat(row["valid_at_utc"].replace("Z", "+00:00")) <= now]
@@ -984,9 +996,12 @@ def run_outputs(*, source_path, payload_path, report_path, run=None, replay=None
         one = compact_json(dict(shared, municipalities=[town]))
         town_sizes.append(dict(id=town["id"], json_bytes=len(one), gzip_bytes=len(gzip.compress(one, compresslevel=6, mtime=0))))
     source = replay or source_path
+    from local_pipeline.icon_quality import build_source_quality
+    source_sha256 = hashlib.sha256(source.read_bytes()).hexdigest()
+    source_quality = build_source_quality(snapshot, payload, source_sha256=source_sha256)
     report = dict(status=payload["status"], execution_mode=payload["metrics"]["execution_mode"],
         generated_at_utc=payload["generated_at_utc"], run_utc=payload["run_utc"],
-        source_snapshot_sha256=hashlib.sha256(source.read_bytes()).hexdigest(),
+        source_snapshot_sha256=source_sha256, source_quality=source_quality,
         catalog_sha256=snapshot["catalog_sha256"], grid_hash=snapshot["grid_hash"],
         metrics=dict(payload["metrics"], total_including_serialization_and_artifact_write_seconds=time.perf_counter()-started,
                      final_peak_working_set_bytes=process_memory_bytes()["peak_working_set_bytes"]),

@@ -4,7 +4,7 @@ from __future__ import annotations
 
 import os
 from collections.abc import Mapping
-from dataclasses import dataclass
+from dataclasses import dataclass, field
 from datetime import datetime, timezone
 from functools import lru_cache
 from typing import Any, Callable
@@ -34,6 +34,7 @@ from app.weather.local_notice_source import (
     LocalNoticeSourceUnavailable,
     MAX_LOCAL_NOTICE_SOURCE_TIMEOUT_SECONDS,
 )
+from app.weather.local_notice_quality import QualityCounter, evaluation_quality
 
 
 LOCAL_NOTICE_SHADOW_MODE_ENV = "LOCAL_NOTICE_SHADOW_MODE"
@@ -137,8 +138,9 @@ class LocalNoticeShadowRunResult:
     rejected: int = 0
     persisted: int = 0
     failed: int = 0
+    data_quality: dict[str, Any] = field(default_factory=lambda: QualityCounter().summary())
 
-    def summary(self) -> dict[str, int | str]:
+    def summary(self) -> dict[str, Any]:
         return {
             "status": self.status,
             "eligible_municipalities": self.eligible_municipalities,
@@ -147,6 +149,7 @@ class LocalNoticeShadowRunResult:
             "rejected": self.rejected,
             "persisted": self.persisted,
             "failed": self.failed,
+            "data_quality": self.data_quality,
         }
 
 
@@ -168,6 +171,7 @@ def _source_failure_evaluation(*, now: datetime) -> dict[str, Any]:
         "validation_errors": [],
         "candidates": [],
         "observations": [],
+        "data_quality": evaluation_quality({}, [], [], failure="source_unavailable"),
     }
 
 
@@ -278,8 +282,11 @@ class LocalNoticeShadowService:
         try:
             snapshot = self._source.fetch(municipality, locality)
         except LocalNoticeSourceUnavailable as error:
+            failure = _source_failure_evaluation(now=current)
+            quality = QualityCounter()
+            quality.add((municipality.istat_code, locality.id if locality else ""), failure["data_quality"])
             self._shadow_repository.save_run(
-                evaluation=_source_failure_evaluation(now=current),
+                evaluation=failure,
                 municipality=municipality,
                 now=current,
                 retention_days=self._config.retention_days,
@@ -290,6 +297,7 @@ class LocalNoticeShadowService:
                 eligible_municipalities=1,
                 persisted=1,
                 failed=1,
+                data_quality=quality.summary(),
             )
 
         evaluation = evaluate_local_notice_shadow(
@@ -325,14 +333,18 @@ class LocalNoticeShadowService:
         )
         candidate_count = len(candidates)
         rejected = int(evaluation.get("status") == "rejected")
+        quality = QualityCounter()
+        quality.add((municipality.istat_code, locality.id if locality else ""), evaluation.get("data_quality"))
+        status = evaluation.get("status")
         return LocalNoticeShadowRunResult(
-            status="rejected" if rejected else "completed",
+            status=status if status in {"rejected", "partial_evaluation", "not_evaluable"} else "completed",
             eligible_municipalities=1,
             evaluated=1,
             candidates=candidate_count,
             rejected=rejected + invalid_targets,
             persisted=1,
             failed=rejected,
+            data_quality=quality.summary(),
         )
 
 

@@ -1012,6 +1012,31 @@ class PublishedRunsObjectReader:
             raise ObjectNotFound(key)
         return snapshot
 
+    def _icon_quality_object(self, key: str) -> StoredObject:
+        from .icon_accumulation_sidecar import KEY_PATTERN, validate_sidecar
+        match = KEY_PATTERN.fullmatch(key)
+        if not match:
+            raise ObjectNotFound(key)
+        weather_key = key.replace('/accumulation-quality/', '/municipalities/')
+        snapshot = self._authorized_snapshot(weather_key)
+        weather = self.get(weather_key)
+        if hashlib.sha256(weather.body).hexdigest() != snapshot.payload_descriptors[weather_key][1]:
+            raise PublishedRunsReaderError('ICON weather body hash mismatch')
+        stored = self._reader.get(key)
+        try:
+            if (stored.content_type != 'application/json'
+                    or stored.byte_length != len(stored.body)
+                    or stored.sha256 != hashlib.sha256(stored.body).hexdigest()):
+                raise ContractError('sidecar storage integrity failed')
+            validate_sidecar(stored.body, weather.body)
+        except (ContractError, ValueError, TypeError) as error:
+            raise PublishedRunsReaderError('ICON accumulation evidence is invalid') from error
+        # A revoked/unpublished run must never be exposed via this extra route.
+        after = self._authorized_snapshot(weather_key)
+        if after.latest.body != snapshot.latest.body:
+            raise ObjectNotFound(key)
+        return stored
+
     def _continuity_object(self, key: str) -> StoredObject:
         from .cams_continuity import KEY_PATTERN, validate_cams_continuity
         match = KEY_PATTERN.fullmatch(key)
@@ -1036,6 +1061,8 @@ class PublishedRunsObjectReader:
         return stored
 
     def head(self, key: str) -> ObjectHead:
+        if '/accumulation-quality/' in key:
+            return self._icon_quality_object(key).head
         if key.endswith("/continuity.json"):
             return self._continuity_object(key).head
         snapshot = self._authorized_snapshot(key)
@@ -1049,6 +1076,8 @@ class PublishedRunsObjectReader:
         return head
 
     def get(self, key: str) -> StoredObject:
+        if '/accumulation-quality/' in key:
+            return self._icon_quality_object(key)
         if key.endswith("/continuity.json"):
             return self._continuity_object(key)
         snapshot = self._authorized_snapshot(key)

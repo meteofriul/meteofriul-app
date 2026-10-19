@@ -15,7 +15,7 @@ precondition.  The module performs no network, cloud or application I/O.
 
 from __future__ import annotations
 
-from dataclasses import dataclass
+from dataclasses import dataclass, field
 from datetime import datetime
 import hashlib
 import json
@@ -199,6 +199,7 @@ class _Candidate:
     payload_bodies: dict[str, bytes]
     manifest: dict[str, Any]
     manifest_body: bytes
+    quality_bodies: dict[str, bytes] = field(default_factory=dict)
 
 
 @dataclass(frozen=True)
@@ -493,12 +494,30 @@ class ContractV1Publisher:
             )
         except ContractError as error:
             raise InvalidContractPublication("run bundle fails contract-v1 validation") from error
+        quality_bodies = {}
+        if normalized_provider == ICON_PROVIDER:
+            from .icon_accumulation_sidecar import split_document
+            for istat_code, body in bodies.items():
+                public, evidence = split_document(body)
+                bodies[istat_code] = public
+                if evidence is not None:
+                    quality_bodies[istat_code] = evidence
+            if quality_bodies:
+                # Never add keys to the manifest consumed by installed clients.
+                normalized_manifest['objects'] = {
+                    code: build_object_descriptor(provider=ICON_PROVIDER,
+                        source_run_id=normalized_manifest['source_run_id'],
+                        istat_code=code, payload=body, catalog=self.catalog)
+                    for code, body in bodies.items()
+                }
+                manifest_body = canonical_json_bytes(normalized_manifest)
         return _Candidate(
             provider=normalized_provider,
             source_run_id=normalized_manifest["source_run_id"],
             payload_bodies=bodies,
             manifest=normalized_manifest,
             manifest_body=manifest_body,
+            quality_bodies=quality_bodies,
         )
 
     def _read_manifest_by_run(
@@ -712,7 +731,16 @@ class ContractV1Publisher:
                 f"run {source_run_id} cannot replace high-water run {high_water}"
             )
 
+    def _quality_key(self, candidate, istat_code):
+        return f"{self.provider_root(ICON_PROVIDER)}/runs/{candidate.source_run_id}/accumulation-quality/{istat_code}.json"
+
     def _verify_stored_candidate(self, candidate: _Candidate) -> None:
+        for code, expected in candidate.quality_bodies.items():
+            stored = self.store.get(self._quality_key(candidate, code))
+            if (stored.body != expected or stored.byte_length != len(expected)
+                    or stored.sha256 != hashlib.sha256(expected).hexdigest()
+                    or stored.content_type != _JSON_CONTENT_TYPE):
+                raise ContractPublicationVerificationError('ICON sidecar read-back failed')
         with phase("stored_run_verification", provider=candidate.provider, source_run_id=candidate.source_run_id):
             manifest, body, _stored = self._read_manifest_by_run(
                 candidate.provider,
@@ -725,6 +753,11 @@ class ContractV1Publisher:
             )
 
     def _stage_candidate(self, candidate: _Candidate) -> ContractStageResult:
+        # All evidence is durable and verified before the public manifest/latest.
+        for code, body in candidate.quality_bodies.items():
+            self._write_immutable(self._quality_key(candidate, code), body,
+                                  {'kind': 'icon-accumulation-sidecar.v1',
+                                   'source_run_id': candidate.source_run_id, 'istat_code': code})
         payload_keys: list[str] = []
         reused_payloads = 0
         for istat_code in self.catalog.istat_codes:
@@ -1776,6 +1809,42 @@ class ContractV1Publisher:
         stage = self._stage_candidate(candidate)
         return self._commit_staged_candidate(candidate, stage, published_at=published_at)
 
+    def _authenticate_projected_intent(self, manifest, expected_hash):
+        """Recover the checkpoint fingerprint from public bytes plus sidecars.
+
+        A different or missing proof changes that fingerprint and cannot authorize
+        recovery. No immutable object is created or overwritten by this path.
+        """
+        from .icon_accumulation_sidecar import validate_sidecar
+        originals = {}
+        original_manifest = json.loads(canonical_json_bytes(manifest))
+        for code in self.catalog.istat_codes:
+            public = self.store.get(self.payload_key(ICON_PROVIDER, manifest['source_run_id'], code))
+            value = json.loads(public.body)
+            key = f"{self.provider_root(ICON_PROVIDER)}/runs/{manifest['source_run_id']}/accumulation-quality/{code}.json"
+            try:
+                sidecar = self.store.get(key)
+            except ObjectNotFound:
+                originals[code] = public.body
+            else:
+                if (sidecar.content_type != _JSON_CONTENT_TYPE
+                        or sidecar.byte_length != len(sidecar.body)
+                        or sidecar.sha256 != hashlib.sha256(sidecar.body).hexdigest()):
+                    raise ContractPublicationVerificationError('invalid recovery evidence')
+                evidence = validate_sidecar(sidecar.body, public.body)
+                for row, item in zip(value['hourly'], evidence['hourly']):
+                    if item['accumulation_quality'] is not None:
+                        row['accumulation_quality'] = item['accumulation_quality']
+                originals[code] = canonical_json_bytes(value)
+        original_manifest['objects'] = {
+            code: build_object_descriptor(provider=ICON_PROVIDER,
+                source_run_id=manifest['source_run_id'], istat_code=code,
+                payload=body, catalog=self.catalog) for code, body in originals.items()
+        }
+        if hashlib.sha256(canonical_json_bytes(original_manifest)).hexdigest() != expected_hash:
+            raise ImmutableContractConflict('public projection differs from frozen ICON intent')
+        return self._candidate(ICON_PROVIDER, originals, original_manifest)
+
     def publish_existing_run(
         self,
         provider: str,
@@ -1809,14 +1878,15 @@ class ContractV1Publisher:
             manifest, body, stored = self._read_manifest_by_run(
                 provider, source_run_id, verify_payloads=False
             )
-            if (
-                hashlib.sha256(body).hexdigest() != expected_manifest_sha256
-                or stored.sha256 != expected_manifest_sha256
-                or stored.byte_length != len(body)
-            ):
-                error = ImmutableContractConflict("stored manifest differs from publication intent")
-                attach_error_fields(error, object_key=manifest_key)
-                raise error
+            candidate = None
+            if hashlib.sha256(body).hexdigest() != expected_manifest_sha256:
+                candidate = self._authenticate_projected_intent(manifest, expected_manifest_sha256)
+                if candidate.manifest_body != body:
+                    raise ImmutableContractConflict('recovered projection differs from stored manifest')
+                self._verify_stored_candidate(candidate)
+            if (stored.sha256 != hashlib.sha256(body).hexdigest()
+                    or stored.byte_length != len(body)):
+                raise ContractPublicationVerificationError('stored recovery manifest integrity failed')
             verified_manifest, verified_body, verified_stored = self._read_manifest_by_run(
                 provider, source_run_id, verify_payloads=True
             )
@@ -1827,7 +1897,7 @@ class ContractV1Publisher:
                 error = ImmutableContractConflict("recovery manifest changed during verification")
                 attach_error_fields(error, object_key=manifest_key)
                 raise error
-        candidate = _Candidate(provider, source_run_id, {}, manifest, body)
+        candidate = candidate or _Candidate(provider, source_run_id, {}, manifest, body)
         stage = ContractStageResult(
             provider=provider,
             source_run_id=source_run_id,
@@ -1836,7 +1906,7 @@ class ContractV1Publisher:
             manifest_key=manifest_key,
             manifest_etag=stored.etag,
             manifest_json_bytes=len(body),
-            manifest_sha256=expected_manifest_sha256,
+            manifest_sha256=hashlib.sha256(body).hexdigest(),
             reused_payload_count=EXPECTED_MUNICIPALITIES,
             manifest_reused=True,
         )

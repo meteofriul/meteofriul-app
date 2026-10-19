@@ -9,6 +9,7 @@ from datetime import datetime, timedelta, timezone
 from typing import Any, Callable, Mapping
 
 from app.services.location import Municipality
+from app.weather.local_notice_quality import run_identity, sanitize_quality
 
 
 LOCAL_NOTICE_SHADOW_COLLECTION = "local_notice_shadow_runs"
@@ -170,7 +171,9 @@ def build_sanitized_shadow_record(
             "fetched_at": str(snapshot.get("fetched_at") or "")[:80],
             "timezone": str(snapshot.get("timezone") or "")[:80],
             "eligible_slots": int(snapshot.get("eligible_slots") or 0),
+            "source_run_id": run_identity(snapshot.get("source_run_id")),
         },
+        "data_quality": sanitize_quality(evaluation.get("data_quality")),
         "validation_errors": validation_errors,
         "candidate_count": len(candidates),
         "candidates": candidates,

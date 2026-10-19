@@ -1,0 +1,213 @@
+{
+  "schema_version": 1,
+  "date": "2026-10-19",
+  "status": "sidecar_revision_committed_locally_not_deployed",
+  "branch": "codex/local-notice-icon2i-analysis",
+  "base_commit": "8497e773b1613312bb952236d72c074e22a7b1c6",
+  "local_verification": {
+    "scope": "historical_before_sidecar_revision",
+    "reader_stage": {
+      "tests": 48,
+      "result": "passed",
+      "isolated_stage": true,
+      "writers_unchanged": true
+    },
+    "consumer_stage": {
+      "tests": 183,
+      "result": "passed",
+      "isolated_stage": true,
+      "writers_unchanged": true
+    },
+    "producer_and_prototype": {
+      "tests": 216,
+      "result": "passed"
+    },
+    "socket_connections_blocked": true,
+    "counts_are_suite_executions_not_unique_tests": true,
+    "workspace_cleanliness": "passed",
+    "diff_json_links_and_commit_order": "passed"
+  },
+  "test_app": {
+    "branch": "codex/full-test-qa",
+    "reader_commit": "b25ddfe7",
+    "refresh_commit": "1b9dbad9",
+    "version": "0.1.14-full-test.5",
+    "version_code": 300036,
+    "apk_sha256": "de6161527de039660f65f924888aa39108adb1e35a11bb9006ce14b81c2932a1",
+    "new_public_format_runtime_verified": false,
+    "other_installed_clients_verified": false
+  },
+  "candidate_job_specification_only": {
+    "planned_name": "meteofriul-local-notice-tolerance-qa",
+    "created": false,
+    "image_source_commit": null,
+    "image_digest": null,
+    "entrypoint": [
+      "python",
+      "-m",
+      "app.jobs.send_local_weather_notices"
+    ],
+    "environment_overrides": {
+      "LOCAL_NOTICE_DELIVERY_MODE": "dry_run",
+      "LOCAL_NOTICE_ICON_ACCUMULATION_SIDECAR_ENABLED": "true"
+    },
+    "scheduler": null,
+    "production_job_replaced": false,
+    "production_deploy_script_allowed_for_candidate": false,
+    "audit_writes_possible": true,
+    "required_readback": [
+      "distinct_job_identity",
+      "pinned_image_digest",
+      "mode_dry_run",
+      "explicit_authorized_cohort",
+      "audit_destination_and_permissions",
+      "no_scheduler_target",
+      "no_delivery_claims_or_real_sends"
+    ],
+    "acceptance": [
+      "at_least_one_canonical_point_evaluated",
+      "sent_equals_zero",
+      "denominator_and_reason_per_phenomenon",
+      "quality_guard_reasons_visible",
+      "comparison_with_baseline_on_same_run_and_times"
+    ]
+  },
+  "monitoring": {
+    "local_policy_inventory_checked": true,
+    "live_policy_inventory_checked_this_turn": false,
+    "policies_dependent_on_job_result": [
+      "local-notice-failures",
+      "local-notice-last-success"
+    ],
+    "exit_codes_changed": false,
+    "data_degraded_exit_code": 1,
+    "quality_rate_alert_deployed": false,
+    "aggregation_key": "source_run_id",
+    "retry_logs_are_not_new_runs": true
+  },
+  "rollback": {
+    "producer_compatible_source_commit": null,
+    "compatible_image_digest": null,
+    "schema_2_must_remain_readable": true,
+    "public_objects_must_not_be_rewritten": true,
+    "consumer_response_to_failure": "disable candidate sends; preserve diagnostics; never restore null-to-zero",
+    "source_requirement": "updated stage 01, including sidecar projection/recovery and checkpoint 1/2 reader"
+  },
+  "release_gates_pending": [
+    "sidecar_revision_promotion_review",
+    "sidecar_http_reader_and_compatible_rollback_ready",
+    "legacy_public_format_verified_on_new_real_run",
+    "live_job_and_policy_readback",
+    "compatible_rollback_image_built_and_pinned",
+    "explicit_deploy_authorization",
+    "candidate_job_verified_without_sends",
+    "new_source_run_with_quality_evidence",
+    "post_publication_comparison_before_authorizing_production_sends"
+  ],
+  "production_mutations_performed": [],
+  "historical_ordered_commits": [
+    {
+      "stage": "01-readers",
+      "commit": "91913ad3ead9657952aed8a5414ecfb082b96a91"
+    },
+    {
+      "stage": "02-notice-consumer",
+      "commit": "2daa9b6d1e268c820ad41ba931784a232d4e2d87"
+    },
+    {
+      "stage": "03-producer",
+      "commit": "d855e53df6ca8babc49a25325eb9043df29c89bc"
+    }
+  ],
+  "historical_ordered_patch_verification": {
+    "result": "exact_match_to_each_commit_tree",
+    "packages": [
+      {
+        "stage": "01-readers",
+        "commit": "91913ad3ead9657952aed8a5414ecfb082b96a91",
+        "tree": "26b8af3a662adb3ee61c8f1c80eb10304ce871df",
+        "patch_sha256": "5a59acea586b11e682cfa24e09d5296730b2236c7f1fea7e39c5e69d745760e4",
+        "files": 8
+      },
+      {
+        "stage": "02-notice-consumer",
+        "commit": "2daa9b6d1e268c820ad41ba931784a232d4e2d87",
+        "tree": "7aa8220480c02b181446a4e6f860ffdd80214bec",
+        "patch_sha256": "7297e6a5131cbfabdcac984bb7201535e203feb80232159f03f2c9d9dd47a030",
+        "files": 17
+      },
+      {
+        "stage": "03-producer",
+        "commit": "d855e53df6ca8babc49a25325eb9043df29c89bc",
+        "tree": "9a38fd6895e85fd9b3a88578c5800e70c0f8138a",
+        "patch_sha256": "1ab9dd6c7883175de5105142c04efa6cf4bedb8cc0dfe72d6771cffe179cee46",
+        "files": 10
+      }
+    ]
+  },
+  "installed_app_compatibility": {
+    "public_format": "unchanged_weather_v1",
+    "evidence_schema": "icon-accumulation-sidecar.v1",
+    "http_reader_update_required": true,
+    "installed_app_update_required_for_this_contract": false,
+    "local_checks": {
+      "publisher_readers_worker_checkpoint": {
+        "tests": 101,
+        "seconds": 1166.78,
+        "result": "passed"
+      },
+      "consumer_and_summaries": {
+        "tests": 75,
+        "seconds": 18.443,
+        "result": "passed"
+      },
+      "isolated_reader_stage_recovery": {
+        "tests": 2,
+        "seconds": 44.584,
+        "result": "passed"
+      }
+    },
+    "cloud_runtime_verified": false,
+    "legacy_client_checks": [
+      {
+        "commit": "2f02c8ba2216127b73d06e41334e888b88508f71",
+        "source_sha256": "652e449eaf74316ab022824c9209a1c68a3d68930ad0c1e32cdf14a92f04b0bb",
+        "public_documents_accepted": 215,
+        "enriched_document_rejected": true
+      },
+      {
+        "commit": "8497e773b1613312bb952236d72c074e22a7b1c6",
+        "source_sha256": "859290a63905248a38494149adb2e8b253f9b1efe1bcd204960b004a82c96653",
+        "public_documents_accepted": 215,
+        "enriched_document_rejected": true
+      }
+    ],
+    "network_connections_blocked": true,
+    "checks_overlap_do_not_sum_as_unique": true,
+    "canonical_workspace_cleanliness": "passed",
+    "syntax_diff_links_and_source_hashes": "passed",
+    "ordered_kit": {
+      "snapshot_timing": "validated_before_compatibility_commit",
+      "files": 42,
+      "phases": 3,
+      "patches_apply": true,
+      "acquisition_files_unchanged_in_reader_stage": true,
+      "source_head": "a79e878aeb58cadb8925fe37645c3727617cf22b",
+      "source_includes_uncommitted_changes": true,
+      "patches": [
+        {
+          "stage": "01-readers",
+          "sha256": "7e26e3b74c32da97387369cec2c1abaff60f3c78935db0bf7d126e1e14cd1f83"
+        },
+        {
+          "stage": "02-notice-consumer",
+          "sha256": "42d5fc92484b824f9f34c00e2a46ba3f29fdb923b700f3551f8ef41bea2b1b8d"
+        },
+        {
+          "stage": "03-producer",
+          "sha256": "1ab9dd6c7883175de5105142c04efa6cf4bedb8cc0dfe72d6771cffe179cee46"
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,89 @@
+PROVA LOCALE DEL CONTRATTO DI TOLLERANZA — CIAMPAC, 19 OTTOBRE 2026
+
+Esito: il caso reale esercita il recupero dei null per risoluzione, non un
+avviso di nevicata rilevante. Nessuna modifica al produttore o al consumatore
+di produzione; nessun invio, job cloud, deploy, push, build Android o emulatore.
+Il prototipo è isolato in experiments/weather_autonomy/probe_snow_tolerance.py.
+
+LOCALITA E OSSERVAZIONE
+Meteotrentino, stazione T0403 Canazei (Ciampac), quota 2150 m:
+coordinate ufficiali 46.445989 N, 11.769081 E.
+Ultima misura salvata: 2026-10-19T12:45:00+01, ossia 11:45 UTC / 13:45 CEST.
+Il sensore riporta HS 5 cm, temperatura 10.9 °C, precipitazione 0.0 mm.
+E una lettura automatica: indica manto al suolo, non neve in caduta. Non è
+stata acquisita una verifica fotografica indipendente del manto.
+Fonte: https://dati.meteotrentino.it/service.asmx/datiRealtimeUnaStazione?stazione=T0403&h=3
+Coordinate: https://dati.meteotrentino.it/service.asmx/listaStazioniGeoJson
+
+CAMPIONE ORIGINALE
+Corsa ICON-2I 2026101900; 30 messaggi GRIB selezionati tramite HTTP Range:
+SNOW_CON, SNOW_GSP, TOT_PREC ai lead 0,1,2,3,11,12,13,14;
+WW ai lead 1,2,3,12,13,14. Sono state percorse le lunghezze dei messaggi,
+senza presumere dimensione costante. Trasferimento GRIB, intestazioni comprese:
+23.172.340 byte (22.10 MiB), entro il tetto dichiarato di 25 MiB.
+Decoder ECMWF ecCodes 2.50.0 per Windows estratto in .tmp, senza installazione
+globale. Download separato decoder e findlibs: 7.566.986 byte, hash PyPI verificati.
+Indici e osservazioni sono ulteriori piccoli documenti pubblici, separati dal
+tetto GRIB. Nessun file nazionale completo scaricato e nessun servizio avviato.
+
+Cella più vicina alla stazione: indice 485108, 46.44 N / 11.775 E,
+distanza 0.806 km. Quota del terreno della cella non verificata: non si assume
+che coincida con 2150 m. Non è il punto amministrativo né la cella pubblicata
+dall'app per Canazei; questi punti non vengono confusi nel confronto.
+Il campione congelato contiene metadati, valori, URL, offset e SHA-256 originali.
+Q, packingError, identità della corsa, lead e valori sono stati ricontrollati
+offline sugli stessi GRIB. Gli estremi del dominio sono ricalcolati dai valori
+decodificati, non ripresi da statistiche transitorie in cache.
+
+CONFRONTO
+Terna 00–03 UTC (02–05 CEST), incrementi terminanti ai lead 1,2,3:
+- Regola stretta: neve non valutabile, perché SNOW_GSP è null per risoluzione
+  in tutte e tre le ore; anche TOT_PREC è null nella prima ora.
+- Contratto sperimentale: tolleranza verificata per il campo neve finale.
+  Il maggiore budget orario dei passi è 0.0001221 mm SWE, sotto 0.02 mm SWE/h.
+  Per TOT_PREC, il budget della prima ora è 0.001953125 mm, sotto 0.1 mm/h.
+- Il valore pubblicabile resta null e mantiene lo stato di tolleranza;
+  la componente convettiva nota, pari a zero, resta distinta e conservata.
+  L'indicatore deterministico nella prima ora resta null, mai trasformato in 0.
+- Nel prototipo: evaluated_without_candidate con flag di tolleranza.
+  Nessuna componente quantificata supera le soglie e WW è 2,1,1;
+  non si attiva nemmeno il codice derivato da almeno 1 cm di neve.
+  L'indicatore ignoto non serve per escludere il ramo il cui accumulo, secondo
+  l'approssimazione operativa scelta, non raggiunge la soglia.
+
+Terna 11–14 UTC (13–16 CEST), incrementi terminanti ai lead 12,13,14:
+- Accumuli decodificati invariati: incremento esattamente zero, non null.
+- Entrambe le regole: valutabile senza candidato neve; WW è 1,3,2.
+- Nessuna tolleranza applicata a questi zeri noti.
+
+LIMITI DEL RISULTATO
+La guardia somma Q precedente e corrente solo per le componenti non
+quantificabili e applica un budget unico al campo finale. packingError viene
+conservato e ne viene verificata la presenza, senza presentare Q o la sua
+somma come limite certificato dell'errore. E una tolleranza operativa.
+Rapporto neve/acqua fisso dichiarato 10:1: 1 mm SWE equivale numericamente a
+1 cm di neve. La stima non è una misura dell'altezza del manto.
+Il prototipo non prova invio, deduplicazione o tempestività del job. Mantiene
+l'ordine delle ore e legge WW per l'ora precedente; non simula nuove notifiche.
+La ricerca secondaria nei punti alpini dei messaggi già scaricati non ha
+trovato codici nevosi nelle tre ore attuali esaminate. Non è una prova di
+assenza di neve su tutte le Alpi o a ogni quota.
+
+VERIFICA E RIPRODUCIBILITA
+Nove controlli locali: campione reale congelato; zero; null per risoluzione;
+componenti miste; budget finale delle due componenti; metadati assenti e
+valori invalidi; superamento tolleranza; soglie/indicatore; codici meteo.
+Comando dalla directory experiments/weather_autonomy:
+python -B -m unittest test_probe_snow_tolerance -v
+Replay offline:
+python -B probe_snow_tolerance.py fixtures/ciampac-snow-tolerance-20261019.json risultato.json
+Risultato salvato: docs/operations/ICON2I_CIAMPAC_TOLERANCE_PROBE_20261019.json
+
+CONCLUSIONE OPERATIVA
+La prova dimostra su dati veri il recupero di una terna bloccata da quantità
+non quantificabili e la conservazione dello zero autentico. Non dimostra
+ancora che una nevicata rilevante generi correttamente un candidato: occorre
+un episodio reale con accumulo o codice neve significativo. Non autorizza
+il rilascio. Restano la modifica coordinata produttore/contratto/consumatore,
+la diagnostica della guardia, la verifica delle policy sugli exit code e
+l'ordine lettore compatibile prima dello scrittore.

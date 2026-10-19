@@ -6,7 +6,7 @@ import os
 import re
 import uuid
 from collections.abc import Mapping
-from dataclasses import dataclass
+from dataclasses import dataclass, field
 from datetime import datetime, timedelta, timezone
 from functools import lru_cache
 from typing import Any, Callable
@@ -62,6 +62,7 @@ from app.weather.local_notice_source import (
     MAX_LOCAL_NOTICE_SOURCE_TIMEOUT_SECONDS,
     RoutedIconLocalNoticeSource,
 )
+from app.weather.local_notice_quality import QualityCounter, evaluation_quality
 
 
 LOCAL_NOTICE_DELIVERY_MODE_ENV = "LOCAL_NOTICE_DELIVERY_MODE"
@@ -318,10 +319,12 @@ class LocalNoticeDeliveryResult:
     storage_failed: int = 0
     audit_failed: int = 0
     source_failed: int = 0
+    data_degraded_groups: int = 0
     pages_processed: int = 0
     delivery_batches: int = 0
+    data_quality: dict[str, Any] = field(default_factory=lambda: QualityCounter().summary())
 
-    def summary(self) -> dict[str, int | str]:
+    def summary(self) -> dict[str, Any]:
         return {
             "status": self.status,
             "eligible_devices": self.eligible_devices,
@@ -346,8 +349,10 @@ class LocalNoticeDeliveryResult:
             "storage_failed": self.storage_failed,
             "audit_failed": self.audit_failed,
             "source_failed": self.source_failed,
+            "data_degraded_groups": self.data_degraded_groups,
             "pages_processed": self.pages_processed,
             "delivery_batches": self.delivery_batches,
+            "data_quality": self.data_quality,
         }
 
 
@@ -1263,6 +1268,8 @@ class LocalNoticeDeliveryService:
         selected_kinds: set[str] = set()
         outcomes: list[str] = []
         delivery_batches = 0
+        quality_counter = QualityCounter()
+        data_degraded_groups = 0
 
         for group_key in sorted(grouped):
             group_targets = grouped[group_key]
@@ -1274,9 +1281,12 @@ class LocalNoticeDeliveryService:
                 snapshot = self._source.fetch(municipality, locality)
             except LocalNoticeSourceUnavailable as error:
                 error_time = self._current_time()
+                failure_evaluation = _source_failure_evaluation(now=error_time)
+                failure_evaluation["data_quality"] = evaluation_quality({}, [], [], failure="source_unavailable")
+                quality_counter.add(group_key, failure_evaluation["data_quality"])
                 try:
                     self._audit(
-                        evaluation=_source_failure_evaluation(now=error_time),
+                        evaluation=failure_evaluation,
                         municipality=municipality,
                         locality=locality,
                         now=error_time,
@@ -1295,6 +1305,7 @@ class LocalNoticeDeliveryService:
                 continue
             except Exception:
                 outcomes.append("source_error")
+                quality_counter.add(group_key, evaluation_quality({}, [], [], failure="source_error"))
                 source_failed += 1
                 failed += 1
                 failed_group_keys.add(group_key)
@@ -1311,6 +1322,7 @@ class LocalNoticeDeliveryService:
                 )
             except Exception:
                 outcomes.append("detector_error")
+                quality_counter.add(group_key, evaluation_quality(snapshot, [], [], failure="detector_error"))
                 source_failed += 1
                 failed += 1
                 failed_group_keys.add(group_key)
@@ -1323,10 +1335,14 @@ class LocalNoticeDeliveryService:
                 or not isinstance(group_candidates, list)
             ):
                 outcomes.append("detector_contract_invalid")
+                quality_counter.add(group_key, evaluation_quality(snapshot, [], [], failure="detector_contract_invalid"))
                 source_failed += 1
                 failed += 1
                 failed_group_keys.add(group_key)
                 continue
+            quality_counter.add(group_key, evaluation.get("data_quality"))
+            data_degraded = evaluation.get("status") in {"partial_evaluation", "not_evaluable"}
+            data_degraded_groups += int(data_degraded)
             candidates_total += len(group_candidates)
             if evaluation.get("status") == "rejected":
                 try:
@@ -1367,7 +1383,8 @@ class LocalNoticeDeliveryService:
                 )
             )
             if not promotable:
-                group_status = "no_candidate" if not group_candidates else "not_eligible"
+                group_status = (evaluation["status"] if data_degraded else
+                                "no_candidate" if not group_candidates else "not_eligible")
                 try:
                     self._audit(
                         evaluation=evaluation,
@@ -1559,6 +1576,10 @@ class LocalNoticeDeliveryService:
                 status = "sent_unconfirmed"
             else:
                 status = "failed"
+        elif data_degraded_groups:
+            # Deliberately absent from the job's success statuses until the
+            # pre-release monitoring-policy check authorizes the exit change.
+            status = "data_degraded"
         elif self._config.mode == "dry_run" and attempted:
             status = "dry_run"
         elif sent:
@@ -1602,8 +1623,10 @@ class LocalNoticeDeliveryService:
             storage_failed=storage_failed,
             audit_failed=audit_failed,
             source_failed=source_failed,
+            data_degraded_groups=data_degraded_groups,
             pages_processed=pages_processed,
             delivery_batches=delivery_batches,
+            data_quality=quality_counter.summary(),
         )
 
 
