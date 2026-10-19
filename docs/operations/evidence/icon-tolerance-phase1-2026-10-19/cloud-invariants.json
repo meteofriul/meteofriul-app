@@ -1,0 +1,22 @@
+{
+  "reader_runtime_except_image_unchanged": true,
+  "reader_iam_unchanged": true,
+  "jobs_unchanged": 12,
+  "schedulers_unchanged": 11,
+  "traffic": [
+    {
+      "percent": 100,
+      "revisionName": "meteofriul-weather-tol1-20261019",
+      "tag": "tolerance-phase1",
+      "url": "https://tolerance-phase1---meteofriul-weather-bx24xqvcda-ew.a.run.app"
+    }
+  ],
+  "image_digest": "europe-west1-docker.pkg.dev/meteo-friul/meteofriul/weather-worker@sha256:3be1d207321e8ea0cee07466c9ac29fcec230ba4e10b3267647fa8f0cb2315a6",
+  "national_revision": "meteofriul-national-weather-00002-fkt",
+  "national_last_created": "2026-09-23T22:08:05.579608Z",
+  "error_log_count": 0,
+  "android_requests": 6,
+  "android_statuses": [
+    304
+  ]
+}

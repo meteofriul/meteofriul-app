@@ -1,0 +1,2700 @@
+{
+  "stage": "02-notice-consumer",
+  "base_commit": "8497e773b1613312bb952236d72c074e22a7b1c6",
+  "reviewed_commit": "5e04343a27716c9c42a65d2a45aea0f628bbb9d8",
+  "stage_tree": "053a661b1769237840fef2071188ee9c0f9fa7dc",
+  "patches": [
+    {
+      "stage": "01-readers",
+      "sha256": "7e26e3b74c32da97387369cec2c1abaff60f3c78935db0bf7d126e1e14cd1f83"
+    },
+    {
+      "stage": "02-notice-consumer",
+      "sha256": "42d5fc92484b824f9f34c00e2a46ba3f29fdb923b700f3551f8ef41bea2b1b8d"
+    }
+  ],
+  "image_tag": "europe-west1-docker.pkg.dev/meteo-friul/meteofriul/backend:icon-tolerance-consumer-20261019-5e04343a",
+  "producer_files_unchanged": true,
+  "files": [
+    {
+      "path": "backend/app/__init__.py",
+      "sha256": "9dd7cc89b54d2d99a023e96c4d57c82a1a4e90034c7ea8c2a18880e17bd3fa0c",
+      "bytes": 39
+    },
+    {
+      "path": "backend/app/api/__init__.py",
+      "sha256": "91a71aff4bd3390524cba41ba5284ae26d52d957909f8b364c0014752d5c2d2c",
+      "bytes": 26
+    },
+    {
+      "path": "backend/app/api/events.py",
+      "sha256": "30fed878b826ae196f50b1398352893c3b61a51d05196b969260d7fbe0018ce6",
+      "bytes": 2480
+    },
+    {
+      "path": "backend/app/api/live.py",
+      "sha256": "3c50213c9983795496b85abfb5c294069e2b389afa8ef734a1b30b18f50b2709",
+      "bytes": 5970
+    },
+    {
+      "path": "backend/app/api/location.py",
+      "sha256": "8eff4738a601a47c69848e4ae0cfff6cf89edec71f35531136cb77fd395b3569",
+      "bytes": 3774
+    },
+    {
+      "path": "backend/app/api/promotions.py",
+      "sha256": "6c587ab6081fce6ca8acbdc13f05e59f78060aae526d6fc49350896f4aefc357",
+      "bytes": 5676
+    },
+    {
+      "path": "backend/app/api/push.py",
+      "sha256": "849d4f58888d27e3976c23430b5dd70bc0d6110a3f95c20b0a1ab711546e706e",
+      "bytes": 6697
+    },
+    {
+      "path": "backend/app/api/weather.py",
+      "sha256": "07fbfb9c6a01d73508feccc1bf3521110b0f3c93593f8770be58ad97ccfd9634",
+      "bytes": 7338
+    },
+    {
+      "path": "backend/app/api/webcam_admin.py",
+      "sha256": "9bed96b62f6bee50fd14be66ff26ce4316d39ad66d3e3bf2787811a4400cc7d7",
+      "bytes": 3305
+    },
+    {
+      "path": "backend/app/contracts/__init__.py",
+      "sha256": "5cfb4aca9cee1cde525fbc1b6f30094cbb519fe2ab6aecd43969b823dc8c74fa",
+      "bytes": 45
+    },
+    {
+      "path": "backend/app/contracts/events.py",
+      "sha256": "22a56445be21ad3f54dcacaa524e882a4a3523b8a5da827db5b5463e3a27e681",
+      "bytes": 1856
+    },
+    {
+      "path": "backend/app/contracts/live.py",
+      "sha256": "2888e8b08db7bee49239209f3e403fc49a262037071afdb103e1c62376b96ac7",
+      "bytes": 13308
+    },
+    {
+      "path": "backend/app/contracts/location.py",
+      "sha256": "ce9ca81b0aee5f74e8f8f34fc6c4c2e3c4ae7db8dbdcb7facc608fca75fcd993",
+      "bytes": 3232
+    },
+    {
+      "path": "backend/app/contracts/push.py",
+      "sha256": "9659618bcf39c312e623e6026a61f892c9400605f5713cbe8f8176dc0919fb1a",
+      "bytes": 6590
+    },
+    {
+      "path": "backend/app/contracts/weather.py",
+      "sha256": "d748a312d9e85505ab054ecd75b86f7e65cb0612fb0faa940799110b79daf66e",
+      "bytes": 4883
+    },
+    {
+      "path": "backend/app/data/fvg_geography.json",
+      "sha256": "0475c1b1fc309e5e38ab536ae4b32cd04d11550168b871d8b95bbbe5f16512e9",
+      "bytes": 3447533
+    },
+    {
+      "path": "backend/app/data/fvg_municipalities.json",
+      "sha256": "06ced5bedc823365b38d83d2be93bd1bf5102ec97b2e5ba4f91c9f5ae5975a57",
+      "bytes": 54909
+    },
+    {
+      "path": "backend/app/data/italy_municipalities_2026.json",
+      "sha256": "41457bb6db0745c791976e20310e9c28338121298b5447143ae83af899c37644",
+      "bytes": 3729963
+    },
+    {
+      "path": "backend/app/data/official_alert_zone_catalog.json",
+      "sha256": "c1d80e344293f828f9450551f56c404cb3106cfc89c3cef2617a72351ea75740",
+      "bytes": 1311599
+    },
+    {
+      "path": "backend/app/data/webcams_active.json",
+      "sha256": "8e77b37799049672427cd2ba976548810de793bd1bdd85cea584f2f22debf0e4",
+      "bytes": 27385
+    },
+    {
+      "path": "backend/app/data/webcams_candidates.json",
+      "sha256": "2611fe6ded37f366fe86581bb49184871353903354a2df795766fabe0e7e4c0a",
+      "bytes": 2450
+    },
+    {
+      "path": "backend/app/data/webcams_suspended.json",
+      "sha256": "2f109fc9258b7cdd20606c8d12dce13ffed564f580608b3afee18ade6cb95a07",
+      "bytes": 1717
+    },
+    {
+      "path": "backend/app/events/__init__.py",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "backend/app/events/audit.py",
+      "sha256": "b891e4a97e38393f4d3d5cebf9ed61fbce09d2d651821a9e036cc2758f1ac3c9",
+      "bytes": 40790
+    },
+    {
+      "path": "backend/app/events/engine.py",
+      "sha256": "07b4e77b944cbc4ec17b01dc4368b84f8ae3d6fa95fb9d1da02bc3d992bed842",
+      "bytes": 215429
+    },
+    {
+      "path": "backend/app/events/guarded_feed.py",
+      "sha256": "f274955f47fe028ccfb80fb400ba698a54cc09c35e86abc18eb8550d43601404",
+      "bytes": 2446
+    },
+    {
+      "path": "backend/app/events/http_client.py",
+      "sha256": "4bbab3875944a2a07195111103ecea21aec1fac4940e7ff05231387862a1a43c",
+      "bytes": 1402
+    },
+    {
+      "path": "backend/app/events/pilot_anteprima_watch.py",
+      "sha256": "8df91f512681185e350f6dc22be6be8ee3b153334d5f74e5d25b2f6c758f0e70",
+      "bytes": 8271
+    },
+    {
+      "path": "backend/app/events/pilot_attems_audit.py",
+      "sha256": "09df67101da16508ab0895abdb4513176f1123da67c61283361dc0b3990ac528",
+      "bytes": 21069
+    },
+    {
+      "path": "backend/app/events/pilot_azalea.py",
+      "sha256": "56b91a5bcc878e34ec3a41809bfdb74654c38d1f9807f5e9c438fcca5a688bc1",
+      "bytes": 13384
+    },
+    {
+      "path": "backend/app/events/pilot_azalea_sitemap_baseline.json",
+      "sha256": "7315a9bfffed348d0941fbbce7016f47e59a5f47cc350ca5ba0ac14fc7d58afd",
+      "bytes": 19686
+    },
+    {
+      "path": "backend/app/events/pilot_barcolana.py",
+      "sha256": "2e2ff46d95d7717bdf90a074d88d7c79388702bd939d4e1706f7b6ac063b2c0d",
+      "bytes": 25007
+    },
+    {
+      "path": "backend/app/events/pilot_catalog.py",
+      "sha256": "0d0f6eb19eec612d646c5b0e2bad3b09a156b1bc6c8894f6be4bf6a17dec9b6c",
+      "bytes": 10914
+    },
+    {
+      "path": "backend/app/events/pilot_cinema_muto.py",
+      "sha256": "60f818dee335b554870b2aaa5734b3b934e79a6b7349837b4f302de0e37e9f28",
+      "bytes": 13494
+    },
+    {
+      "path": "backend/app/events/pilot_cloud.py",
+      "sha256": "e0786383744d00b39e786016cb3ed38299978fb7ff81af316ffa89f3c9e21559",
+      "bytes": 14835
+    },
+    {
+      "path": "backend/app/events/pilot_collection.py",
+      "sha256": "2ea5c589873619f9603050e36a81798bae47e2be2b60bca570508f7ebc3f9302",
+      "bytes": 3513
+    },
+    {
+      "path": "backend/app/events/pilot_comparison.py",
+      "sha256": "07dfb88d5a352bc8eeca7624d2bf95021333938dc71b6f522c0fa9c36fd3d26a",
+      "bytes": 5019
+    },
+    {
+      "path": "backend/app/events/pilot_css.py",
+      "sha256": "e25cef3c3e91cf02b56083fceb9f033fd4d3387c1a8f850da5da2eeb06024fc1",
+      "bytes": 24509
+    },
+    {
+      "path": "backend/app/events/pilot_dedupe.py",
+      "sha256": "8a5a64dda7f9abcec1ce3912e1725e210b262e28e077f747cef79777feb08344",
+      "bytes": 26216
+    },
+    {
+      "path": "backend/app/events/pilot_details.py",
+      "sha256": "bfcb17e970d07c1b59327a606ad8cb346d0786d35d28484f10e7e200a2478079",
+      "bytes": 36618
+    },
+    {
+      "path": "backend/app/events/pilot_discovery.py",
+      "sha256": "2492ea929599b2f8129e71ecd2ca54d0e34724f973919def8ada9788ab3b29b0",
+      "bytes": 1686
+    },
+    {
+      "path": "backend/app/events/pilot_eventifvg_audit.py",
+      "sha256": "6d596771a156ce494b35c3a66a77d109687cd4e27a86ed6c46b8d1340416b882",
+      "bytes": 7289
+    },
+    {
+      "path": "backend/app/events/pilot_excerpt.py",
+      "sha256": "b27f5835c26752e24b9f8edfc14f8ff2676d4cc0daa72890db3df6e1e3336bcd",
+      "bytes": 3719
+    },
+    {
+      "path": "backend/app/events/pilot_girofvg_baseline_2026.json",
+      "sha256": "1d6dbc77e2884059026f6b7791555a7f1ea34c05ec670efd894b46ae6b7e2be4",
+      "bytes": 27346
+    },
+    {
+      "path": "backend/app/events/pilot_girofvg_watch.py",
+      "sha256": "42185a9f87cf7aeb6ccb4f81c7d48d97cbb7a62b71141727093f1e9495b45881",
+      "bytes": 14246
+    },
+    {
+      "path": "backend/app/events/pilot_http.py",
+      "sha256": "9eb5423c15f2f7b7649175dc1cb9fe10c13ce2bf3987846bc13562501c1b2ed4",
+      "bytes": 4893
+    },
+    {
+      "path": "backend/app/events/pilot_magazzino.py",
+      "sha256": "54f9a73cad4e3b730d44c51b7893d6901ba655a47f9fd3cdabd4ead2e4543959",
+      "bytes": 14500
+    },
+    {
+      "path": "backend/app/events/pilot_mess.py",
+      "sha256": "d5b8334a5b1430d3834efb53ed68fe764edb325dc60b51a52f9d2369a327a9d9",
+      "bytes": 23485
+    },
+    {
+      "path": "backend/app/events/pilot_paesiinfesta.py",
+      "sha256": "03064a41a553f42724fb09fdcc48400416b33f5a431bc5765b2f4087ed9d2dad",
+      "bytes": 36993
+    },
+    {
+      "path": "backend/app/events/pilot_pnpensa.py",
+      "sha256": "40aace4413858702f7ab07180658714cd0894c9f663e98e13989a1677f0eb579",
+      "bytes": 15522
+    },
+    {
+      "path": "backend/app/events/pilot_pordenonelegge.py",
+      "sha256": "34abe3ba125aed5cd3c5122167d973d34e1efb52e76ee103b65ec15935a9a805",
+      "bytes": 10930
+    },
+    {
+      "path": "backend/app/events/pilot_probe.py",
+      "sha256": "7b59656aa3c6b699ddf85ce50000db547d9e09c7bda8194fba6c6707062dd272",
+      "bytes": 1491
+    },
+    {
+      "path": "backend/app/events/pilot_programmes.py",
+      "sha256": "0b7555804abd09f5cf026ca53fcc417ea49598cf66a4a9e3ae6a0d4be82f3cc6",
+      "bytes": 22162
+    },
+    {
+      "path": "backend/app/events/pilot_proloco_watch.py",
+      "sha256": "d51a99577cf4652b3886d1bc315a184082485af552662adf16928e6122786920",
+      "bytes": 7443
+    },
+    {
+      "path": "backend/app/events/pilot_regional.py",
+      "sha256": "1f6349e813aa52c5db3bbd210d7a5da5fc2655a30af6471303318f27fe047965",
+      "bytes": 6064
+    },
+    {
+      "path": "backend/app/events/pilot_regional_annual_watch.py",
+      "sha256": "4ec1e58f99f6d1021afe493f146a6c74541ebf87d3dbf00c95eb7e0d81ba75b8",
+      "bytes": 3057
+    },
+    {
+      "path": "backend/app/events/pilot_regional_checkpoint.py",
+      "sha256": "a7ea0b9991a663a2dcae1028eea7803d5efd381df242c968bc6bdc09e4e70bef",
+      "bytes": 3804
+    },
+    {
+      "path": "backend/app/events/pilot_regional_discrepancy_audit.py",
+      "sha256": "3370a9ae7c886b46fea965673adfee2bfd645077de65070e55c333760a7d6f61",
+      "bytes": 13295
+    },
+    {
+      "path": "backend/app/events/pilot_regional_display_audit.py",
+      "sha256": "d630c5891b6b172883e91cbdfb64d8fc16486526f4dc9488e46aee78c402d72d",
+      "bytes": 24274
+    },
+    {
+      "path": "backend/app/events/pilot_regional_filtered.py",
+      "sha256": "95666bcbf2a98b5e9103f53139dda4bb85176bcdf0a7436ce3b312191a688384",
+      "bytes": 14166
+    },
+    {
+      "path": "backend/app/events/pilot_regional_forward_audit.py",
+      "sha256": "61c871649a182b82d0d7ea3ea603465bba47ab0cb797ac4cf485264e81370cd2",
+      "bytes": 19370
+    },
+    {
+      "path": "backend/app/events/pilot_regional_health.py",
+      "sha256": "b7c5eff65c214574c64dd44e350bced098a465205db21bb96e30b392714cbb26",
+      "bytes": 10779
+    },
+    {
+      "path": "backend/app/events/pilot_regional_historical.py",
+      "sha256": "eb593e4762f3447744550a8ba842ae945389c1fb6d15c1932e0f629fa2bbd13d",
+      "bytes": 6165
+    },
+    {
+      "path": "backend/app/events/pilot_regional_identity.py",
+      "sha256": "f10156a1d6c17649034195d6993c1a0c009ff1524d6863f76d7921c503ad030c",
+      "bytes": 4925
+    },
+    {
+      "path": "backend/app/events/pilot_regional_index.py",
+      "sha256": "62c6425ed455b854ee65ab92969fc7f5641adf53ebe4b805db5f410fbcf2a273",
+      "bytes": 3019
+    },
+    {
+      "path": "backend/app/events/pilot_regional_local_preview.py",
+      "sha256": "2d873f0a90fab892da4f679cb79687580ad958f88255a62954a2e755611ba833",
+      "bytes": 10614
+    },
+    {
+      "path": "backend/app/events/pilot_regional_location.py",
+      "sha256": "f50939a6a126f42eb34468ac4b9ff166113c7084c9580864cc6dc53a02c80927",
+      "bytes": 3336
+    },
+    {
+      "path": "backend/app/events/pilot_regional_lookback.py",
+      "sha256": "9e0fca49603e8c33dadf63df7297946958c19c7d7e8075f53e4b88d271fe81c4",
+      "bytes": 4728
+    },
+    {
+      "path": "backend/app/events/pilot_regional_reconcile.py",
+      "sha256": "151525c57bd8b8711407bd04d3ed925cb65e2bdf59d248d2327a6bc1247ee756",
+      "bytes": 10674
+    },
+    {
+      "path": "backend/app/events/pilot_regional_semantic_audit.py",
+      "sha256": "fc31dd0ea29d68ddde98b0358dcbd68638742c37670bd240d0436263aa6a117b",
+      "bytes": 17680
+    },
+    {
+      "path": "backend/app/events/pilot_regional_sitemap.py",
+      "sha256": "09f39773b64b15a1b4ac07d3d740940644dab97ce17909c92257f5a2b4555960",
+      "bytes": 3002
+    },
+    {
+      "path": "backend/app/events/pilot_regional_sitemap_audit.py",
+      "sha256": "df6bd520bc66b837836cccdb140941e4ab9fb4034d30b20eed8f399bfa24aba3",
+      "bytes": 12763
+    },
+    {
+      "path": "backend/app/events/pilot_regional_sitemap_cards.py",
+      "sha256": "8ff75de3ee82ad98fa9a59a7d5930b7a5f75fbcb456a81669b3f0e8e3817d3a0",
+      "bytes": 5341
+    },
+    {
+      "path": "backend/app/events/pilot_regional_verified.py",
+      "sha256": "882c8a98ccf14449ffdffbee9af53d3ddd2162a2b0dbc14d4f2aca20071c1f49",
+      "bytes": 25446
+    },
+    {
+      "path": "backend/app/events/pilot_regional_year_control.py",
+      "sha256": "af15df21d8cc924f74a3bafc44e69c5c1f796ce612423c29cc0aea28feb1eedd",
+      "bytes": 39063
+    },
+    {
+      "path": "backend/app/events/pilot_regional_year_exclusions.py",
+      "sha256": "0ccd36eb31ab0a2f1afbd82fec97addb65396a19161907725630dd2b0e6b32ad",
+      "bytes": 4929
+    },
+    {
+      "path": "backend/app/events/pilot_regional_year_recovery.py",
+      "sha256": "6047dc26d1daf31f381696f05b7279169c45ff320110f8402034728e2ef12351",
+      "bytes": 23662
+    },
+    {
+      "path": "backend/app/events/pilot_sagrefvg.py",
+      "sha256": "c95f7fc29dfd52db197b472b47251377a983c6a12b45abb4f5f7cf2c7e78962d",
+      "bytes": 13788
+    },
+    {
+      "path": "backend/app/events/pilot_schedule.py",
+      "sha256": "bd3b87f86fe7b15b1c5895f37141450b37d18d18f37c7dacc2e5d5ae87a5c4cc",
+      "bytes": 3140
+    },
+    {
+      "path": "backend/app/events/pilot_source_policy.py",
+      "sha256": "274d51b3bfb3689524c20812158811efaa5624048b0a954e3332cb87f0bed5b6",
+      "bytes": 104120
+    },
+    {
+      "path": "backend/app/events/pilot_source_probe.py",
+      "sha256": "ce930cac05521223d95b04b0b429f1ee4d53c6b45a58546dbae9ff956745a853",
+      "bytes": 1594
+    },
+    {
+      "path": "backend/app/events/pilot_sources.py",
+      "sha256": "a711f5dd0ce8382bcbfb1301873fa0569431639bd421e2d40880eebc1d89401d",
+      "bytes": 1691
+    },
+    {
+      "path": "backend/app/events/pilot_spazzapan.py",
+      "sha256": "2c6219020873fb102944f66fd3032e06c092f812059e1b217ee432e1f8a30526",
+      "bytes": 30388
+    },
+    {
+      "path": "backend/app/events/pilot_verdi_pordenone.py",
+      "sha256": "8c29747a25ba547e20ec1585ae1680594a295fb14f1b4ded8864cf9e0caa23b8",
+      "bytes": 16442
+    },
+    {
+      "path": "backend/app/events/pilot_verdi_trieste.py",
+      "sha256": "437c9b8eeee31e93125ff29d7e27c7ec4b1db22394c8fd36407515febdcb0d6c",
+      "bytes": 16893
+    },
+    {
+      "path": "backend/app/events/pilot_villa_manin.py",
+      "sha256": "626a27972de56f8abf3480a8876bd1c8a89aa57291ed60f6b9997569497eb854",
+      "bytes": 13888
+    },
+    {
+      "path": "backend/app/events/source_pipeline.py",
+      "sha256": "305cb084cc1eba18fd60a1c0f074831a0dd1693383faf0c7ad4bf424a6b26006",
+      "bytes": 8774
+    },
+    {
+      "path": "backend/app/events/sources/__init__.py",
+      "sha256": "1562fe0a2cfe826f3c5a42c811df0ac79cc87e9550171f04da0c9b711959a577",
+      "bytes": 60
+    },
+    {
+      "path": "backend/app/events/sources/erpac.py",
+      "sha256": "6c80a35d7ef1ac2f9109b8417f7beead537bbfeafdcb9849a33070221affd8fd",
+      "bytes": 42042
+    },
+    {
+      "path": "backend/app/events/sources/villa_manin.py",
+      "sha256": "b16a87d5894c17533da7f382e581e753363029e0d2f2a23a55467cde264ac2c9",
+      "bytes": 25208
+    },
+    {
+      "path": "backend/app/infrastructure/__init__.py",
+      "sha256": "17d37e6c289f81f9645cd25b03b5a0ccb30a1b4268e703adbaec0c9e625e9359",
+      "bytes": 56
+    },
+    {
+      "path": "backend/app/infrastructure/ads_admin_auth.py",
+      "sha256": "cc936bdf95a355410303a39454123b454d09ef66421e2fdb2e42680a91344d03",
+      "bytes": 2953
+    },
+    {
+      "path": "backend/app/infrastructure/app_check.py",
+      "sha256": "d3ef394d3c2b19e98acaae29e56cb6af2c5fa492614ac80a358c80bf9240da6f",
+      "bytes": 9970
+    },
+    {
+      "path": "backend/app/infrastructure/firebase.py",
+      "sha256": "90eba2828185203bf9912eb837dbada761cb8f7b75be10c0d320d2f1f594aea0",
+      "bytes": 4172
+    },
+    {
+      "path": "backend/app/infrastructure/open_meteo_policy.py",
+      "sha256": "f75800f1992fef51e0ec37b74516dc887d05ec66f80d196287c2c58417893dff",
+      "bytes": 3325
+    },
+    {
+      "path": "backend/app/infrastructure/webcam_admin_auth.py",
+      "sha256": "22d480ca6ff65f42200d2fb133d3730dff549838696f8ff7a372dc436c42be32",
+      "bytes": 3016
+    },
+    {
+      "path": "backend/app/jobs/__init__.py",
+      "sha256": "d28a4ee64777e79b4a3320cc8d4487f9ddbd54f7295dd7054e78bd5cabbfc0ed",
+      "bytes": 66
+    },
+    {
+      "path": "backend/app/jobs/control_event_source_publication.py",
+      "sha256": "5d26f82a4bf227248d3c34e477f8f6889c0a3be08cee267c6e80f83431807bc5",
+      "bytes": 6144
+    },
+    {
+      "path": "backend/app/jobs/dry_run_national_official_alerts.py",
+      "sha256": "a30202cc6adfbeea086be913ba12c197318e568710bd012d75cb3d3561daed87",
+      "bytes": 2852
+    },
+    {
+      "path": "backend/app/jobs/emit_community_moderation_digest.py",
+      "sha256": "f0e0186f9de966b63486f9f357fc2f99867136f837da32db920f4cdec6ea886d",
+      "bytes": 8419
+    },
+    {
+      "path": "backend/app/jobs/run_local_notice_shadow.py",
+      "sha256": "fcdbcfcb498145d0edb51a356b76bb64756a6cbb8e9acc5ad31a6114dfecc468",
+      "bytes": 1396
+    },
+    {
+      "path": "backend/app/jobs/seed_community_v2.py",
+      "sha256": "d68c70f8d10fb19e53564a3a8ea909cb879dc3ee4c3df3679ea39ca1417fe74c",
+      "bytes": 896
+    },
+    {
+      "path": "backend/app/jobs/send_evening_forecast.py",
+      "sha256": "ae6def83910961ac03ec822bbf5f4ebae87c6b8f33ecb9079a21eee69b6db311",
+      "bytes": 2048
+    },
+    {
+      "path": "backend/app/jobs/send_local_weather_notices.py",
+      "sha256": "73e32e1cb67f83b840d45805e7c1c26df870a6de3f5f0f06e13ce251577e3c15",
+      "bytes": 2251
+    },
+    {
+      "path": "backend/app/jobs/send_morning_forecast.py",
+      "sha256": "f9654e0f689ea6c14d16b94767b612402defd9d9a07ebd0040c61347f2cc0c78",
+      "bytes": 1989
+    },
+    {
+      "path": "backend/app/jobs/send_national_official_alerts.py",
+      "sha256": "4d62d234702a8882fcfc498b66fef0e053274abbfad6f69cfd84e34c3d176ecb",
+      "bytes": 1399
+    },
+    {
+      "path": "backend/app/jobs/send_push_pilot_test.py",
+      "sha256": "5b81352640a98eb9964e396059241f09687c77dd6d1e5b0b8db5a37865a2273b",
+      "bytes": 1071
+    },
+    {
+      "path": "backend/app/jobs/sync_event_sources.py",
+      "sha256": "845a2be407a6ac9f6ec0f7d5f2033b9affccb1b3b12c28b07757ca8cc6b899ef",
+      "bytes": 1764
+    },
+    {
+      "path": "backend/app/jobs/sync_national_official_alerts.py",
+      "sha256": "26a5b0676323c0ad1ab7d21dd9f297ed6da91f4d9744f0bef3b2e56de50bb7ee",
+      "bytes": 1961
+    },
+    {
+      "path": "backend/app/jobs/sync_official_alerts.py",
+      "sha256": "f57fb7c797edb8e7156952153ea34272f8689602669e41b56290f96c0a729f0d",
+      "bytes": 3161
+    },
+    {
+      "path": "backend/app/main.py",
+      "sha256": "2a1d982e1fe48c730cabdf7b81a57d7773ed0b08cd46288cd1df4d6ebf00a027",
+      "bytes": 3069
+    },
+    {
+      "path": "backend/app/pilot_community.py",
+      "sha256": "64dc49ae36b2b990699eaea5d479853d43dce16e4facf61fb7d2a6407e4607da",
+      "bytes": 9517
+    },
+    {
+      "path": "backend/app/pilot_community_cloud.py",
+      "sha256": "32922c5a488b07ebedb4e8f65de9a544722d86353464ae66a41d23c583fa9ad5",
+      "bytes": 19063
+    },
+    {
+      "path": "backend/app/pilot_community_cloud_loopback.py",
+      "sha256": "938f2159b342340a1648c5e3e7e4efaa6de466b2dc6f4c72fb08cff541c28a42",
+      "bytes": 3238
+    },
+    {
+      "path": "backend/app/pilot_owner_credentials.py",
+      "sha256": "cc66077982e738081a10c99479deacc37b3c4880cde7381680f317ca60991f35",
+      "bytes": 4215
+    },
+    {
+      "path": "backend/app/push/__init__.py",
+      "sha256": "9d1ce9ca0c25635917535c6181736d5798d0234685c7f1705c4a2e911fb3c230",
+      "bytes": 50
+    },
+    {
+      "path": "backend/app/push/fcm.py",
+      "sha256": "33139ebc45b5e3012e65a85128b3cc884c324cea4f5a242107b939ae59036faf",
+      "bytes": 9309
+    },
+    {
+      "path": "backend/app/repositories/__init__.py",
+      "sha256": "32f9225f44ab2884769b571ea9598c560c250cf4ef20a4e11ef679ae106f46ff",
+      "bytes": 44
+    },
+    {
+      "path": "backend/app/repositories/community.py",
+      "sha256": "7ebecfd53ffcc6db85811e699ffd529fb1da8f1822178fd925ea63625af4789c",
+      "bytes": 108496
+    },
+    {
+      "path": "backend/app/repositories/event_sources.py",
+      "sha256": "57b1692a2b7f794a8b7b8c71710d97ff0eb635a0a58c58c6b0609da1a5cbf977",
+      "bytes": 5417
+    },
+    {
+      "path": "backend/app/repositories/local_notice_delivery.py",
+      "sha256": "c48ea514c62ab67ac0040d6b18340b45a04366ae9a7c2360d362cff6df8eed7d",
+      "bytes": 5570
+    },
+    {
+      "path": "backend/app/repositories/local_notice_shadow.py",
+      "sha256": "b7eb183947c2c13a1ea5f8b0fc7370cd2ff070f4093edda509b51239579323a2",
+      "bytes": 8736
+    },
+    {
+      "path": "backend/app/repositories/national_alert_delivery.py",
+      "sha256": "24ee85e70f5215566ca48a53ea0328783d421b6458765caf8579484c11af1ca4",
+      "bytes": 10430
+    },
+    {
+      "path": "backend/app/repositories/national_official_alerts.py",
+      "sha256": "407cd93689e3474c63760fb03cbe9d321aa17bb295fd53c981ab4aea3a8be5a6",
+      "bytes": 5236
+    },
+    {
+      "path": "backend/app/repositories/official_alerts.py",
+      "sha256": "7e3e8cc4d38e83b6daad709311f9a5de88718f73b2f4f770406fe51858362480",
+      "bytes": 5010
+    },
+    {
+      "path": "backend/app/repositories/pilot_community.py",
+      "sha256": "1372fa51f2f7b064b8d247f98e64bf01347ffc2bad7871dd4a0db01a2d4df7d5",
+      "bytes": 22370
+    },
+    {
+      "path": "backend/app/repositories/pilot_community_cloud.py",
+      "sha256": "587d618bdf4bc13b5d284d04c576e09a643817c528a90a9741dcd20229a8a058",
+      "bytes": 11414
+    },
+    {
+      "path": "backend/app/repositories/pilot_community_sqlite.py",
+      "sha256": "82017911da945b8fb644b23145373ce7934724bc3bffcbf92efd8f1724e00425",
+      "bytes": 10299
+    },
+    {
+      "path": "backend/app/repositories/push.py",
+      "sha256": "989a05445be31c46fa8d23e9613d0fd54c83dd29aae999402a7cd3b41bbae71c",
+      "bytes": 57758
+    },
+    {
+      "path": "backend/app/services/__init__.py",
+      "sha256": "e480b2f03a9b20473ccb3047ba2bed125e2b1a05a70f3f38edca7d1ba76d656a",
+      "bytes": 43
+    },
+    {
+      "path": "backend/app/services/community.py",
+      "sha256": "b6042f6731d1f6bbfd0e8c79fe611d90e4b0a4595a996a7f6ce7a7485f036b3e",
+      "bytes": 52773
+    },
+    {
+      "path": "backend/app/services/community_compatibility.py",
+      "sha256": "6c4062c6522f0680af75e7176f14e86407177a2fded7d780dbffcf2ee8e468b6",
+      "bytes": 6640
+    },
+    {
+      "path": "backend/app/services/community_moderation_digest.py",
+      "sha256": "a0e56fb4da92e869ed3a1c97c7c2a99fee7f980ef72a685d035aeec8e955adf4",
+      "bytes": 32817
+    },
+    {
+      "path": "backend/app/services/community_moderation_logging.py",
+      "sha256": "3a03440641017b51c3fcd43c10ba12761c5a8f915c8b23946cf3d7b392440c75",
+      "bytes": 9369
+    },
+    {
+      "path": "backend/app/services/community_reports.py",
+      "sha256": "6260eb856e6506b163d7e1324bf57e2e62052c6cd25067b35e53e81b9be96020",
+      "bytes": 23575
+    },
+    {
+      "path": "backend/app/services/dpc_national_source.py",
+      "sha256": "b53b3a087e8a0a4799fa49adb94ae71c805f2548059b589c5daa310b5be48a3b",
+      "bytes": 7935
+    },
+    {
+      "path": "backend/app/services/evening_forecast_delivery.py",
+      "sha256": "150d52deecb0f7439770bc1ac417fab73e77549127987c6f9ee7ace6aaaa3ef2",
+      "bytes": 17081
+    },
+    {
+      "path": "backend/app/services/event_sources.py",
+      "sha256": "15280c5da605dcf9aa00629e12ede939706aac1102e24d00d4815269c16557aa",
+      "bytes": 23719
+    },
+    {
+      "path": "backend/app/services/events.py",
+      "sha256": "09f30e2187ffbfbbc77e3afc865f22ce7f583fe3c96fb4da83a5987e533f3a26",
+      "bytes": 5031
+    },
+    {
+      "path": "backend/app/services/fvg_geography.py",
+      "sha256": "f716ab02d06f592029ac17ce0820bbf1c25489b0491d40fab85aa5cfa9bdb9d1",
+      "bytes": 17367
+    },
+    {
+      "path": "backend/app/services/local_notice_delivery.py",
+      "sha256": "1a03f146735723eacad5c7a5791562e897f00a586a5a20b26b9f32b1fd1fe7f7",
+      "bytes": 65483
+    },
+    {
+      "path": "backend/app/services/local_notice_shadow.py",
+      "sha256": "35a006214b6f7efe49f184cf14236c441d22e02845c3fad544f4de2504e17a50",
+      "bytes": 13750
+    },
+    {
+      "path": "backend/app/services/location.py",
+      "sha256": "4428f09cf5d187692c8087771ed7c70c7d2e7f1d5c02822fc1ea33ea1ed50430",
+      "bytes": 32669
+    },
+    {
+      "path": "backend/app/services/morning_forecast_delivery.py",
+      "sha256": "7458f6fc34b4d3bba4bb438378f12c7b25f831bcf007ac4782e7ae863ecd05ad",
+      "bytes": 34777
+    },
+    {
+      "path": "backend/app/services/national_alert_delivery.py",
+      "sha256": "85a95c265c98be2d96f92c7e10a556e122c5f6fae4534d1b081936dd1349b872",
+      "bytes": 17240
+    },
+    {
+      "path": "backend/app/services/national_alert_push_dry_run.py",
+      "sha256": "240fc6648209dddf6be736567525a4179cd7a03dd8a2a50337356575ea21c811",
+      "bytes": 11788
+    },
+    {
+      "path": "backend/app/services/national_municipalities.py",
+      "sha256": "95a3ed405a473f945e03d5d323c4b858f795d7260f5732e1a7af4198c9f520eb",
+      "bytes": 14331
+    },
+    {
+      "path": "backend/app/services/national_official_alerts.py",
+      "sha256": "16513df36f92e378239e374aa20bc0445c55dd27764ca78faa1342021193fd58",
+      "bytes": 10590
+    },
+    {
+      "path": "backend/app/services/national_official_alerts_state.py",
+      "sha256": "a3af2cc6d7b216f1e3cbda56e6e63911930aa3ff76705de682d19c31822ee33d",
+      "bytes": 8417
+    },
+    {
+      "path": "backend/app/services/notice_municipalities.py",
+      "sha256": "26d0b9f12ea0352478ccda74e38926a86bd2182c742522d01a7b594900d7b11e",
+      "bytes": 1337
+    },
+    {
+      "path": "backend/app/services/official_alert_sources.py",
+      "sha256": "9683e49ec0e89c8a8e08a9f41f1030ea3e70ce8f26562cab23251d2d725c1b3f",
+      "bytes": 84209
+    },
+    {
+      "path": "backend/app/services/official_alert_zone_catalog.py",
+      "sha256": "c4462c210a4c8a91bea2f341710e5fea2f6754527b877d529bc0ce63c6554990",
+      "bytes": 14071
+    },
+    {
+      "path": "backend/app/services/official_alerts.py",
+      "sha256": "73774cce7a46afb2c0a7c12f783686dd93a5a40236d479305515786bc5463f03",
+      "bytes": 9007
+    },
+    {
+      "path": "backend/app/services/pilot_community.py",
+      "sha256": "b76f168a57d511b7c344baddfd782c27137093ed8b108c9b3b5aa1abfaf51f6e",
+      "bytes": 48211
+    },
+    {
+      "path": "backend/app/services/pilot_community_geography.py",
+      "sha256": "d541bad7884b461bc3eb7bc6e266ab40c646cab4feafe3704b39747002199a2c",
+      "bytes": 14076
+    },
+    {
+      "path": "backend/app/services/promotions.py",
+      "sha256": "b8939af7ce7916b86e34090674e0737e8f6ac33fa30de37548c1df158b24dc05",
+      "bytes": 45572
+    },
+    {
+      "path": "backend/app/services/push.py",
+      "sha256": "28ef8ea8cf08de94ddb22ec46f7e192f123a08cc937a4b943f3cdce8b43f1374",
+      "bytes": 53525
+    },
+    {
+      "path": "backend/app/services/push_version_policy.py",
+      "sha256": "21dcc4bdc4d1535c64a0bbdfcdc2874d484f7f4bbb76f441aceec5d45fa895f7",
+      "bytes": 1529
+    },
+    {
+      "path": "backend/app/services/site_import.py",
+      "sha256": "92204223629d76b4994e46cc7a7e9acbe2c84a4097b6a7a8f408f02abf152508",
+      "bytes": 17525
+    },
+    {
+      "path": "backend/app/services/territory_policy.py",
+      "sha256": "8e1232f4a752b807d5468b9896a53a593f692175edc59f5be86af00886aacbd7",
+      "bytes": 2982
+    },
+    {
+      "path": "backend/app/services/verified_municipality_search.py",
+      "sha256": "45b86124ccee0e809a2e46a665f5b1c339834776490d9958a1c67af88d800fe3",
+      "bytes": 2912
+    },
+    {
+      "path": "backend/app/services/weather.py",
+      "sha256": "f7ab0503af1f63466bc3b7a349c0e2ce2e37b032cd8c664bc2b80f82f4347ff1",
+      "bytes": 6159
+    },
+    {
+      "path": "backend/app/services/webcam_controls.py",
+      "sha256": "22c16b83ac2f768aa0f322fd5f57acf06fd8119c1fd3f351c7f5617ac1c39f37",
+      "bytes": 15180
+    },
+    {
+      "path": "backend/app/services/webcam_health.py",
+      "sha256": "d3ba99dd7722077ef72074964642f12c3809e723f8dd246e11740567dbb7855c",
+      "bytes": 16777
+    },
+    {
+      "path": "backend/app/services/webcams.py",
+      "sha256": "d550c32ef124ffda6151aa69bf5866e90690a99de64acd041fed065115c30160",
+      "bytes": 26979
+    },
+    {
+      "path": "backend/app/weather/__init__.py",
+      "sha256": "889a04c7d5be14f7c382dcd1e216716d42e496e1f74b9888d873ec9381bd0015",
+      "bytes": 68
+    },
+    {
+      "path": "backend/app/weather/alerts_engine.py",
+      "sha256": "24b692ede6da313bf18c57b0cc26936749fbcbfcfb6cd0ca43ef0d785eb1fdf0",
+      "bytes": 32513
+    },
+    {
+      "path": "backend/app/weather/arpa_osmer_risks.py",
+      "sha256": "faae9fa6e3a3631a3cfa71608543b37b30c7c33b951f2609c67a4dccdfb2cae4",
+      "bytes": 31099
+    },
+    {
+      "path": "backend/app/weather/current_engine.py",
+      "sha256": "5e64f2e8e2c8fcbebc9832aeb739ab801162581053c2a47d7f6bb529e1cea633",
+      "bytes": 20229
+    },
+    {
+      "path": "backend/app/weather/dpc_national_alerts.py",
+      "sha256": "40072207beeec9905e815510e1c9825051d1b837b5f282819256cedc09a770ee",
+      "bytes": 10186
+    },
+    {
+      "path": "backend/app/weather/dpc_national_zone_snapshot.py",
+      "sha256": "51f24e8284ea42bbe2e5589ca0a786c4e3beab5319cf5251248ca2d49879a30e",
+      "bytes": 16798
+    },
+    {
+      "path": "backend/app/weather/forecast_engine.py",
+      "sha256": "22d9bad63a77a79fc8196ead110ffc06822571c5063bb6a08f2c19ec03376626",
+      "bytes": 83827
+    },
+    {
+      "path": "backend/app/weather/local_notice_quality.py",
+      "sha256": "b0860e44607095dc45cbd849d9271cfb5981b64e2d0aac5a7f9c81542473b6b4",
+      "bytes": 13111
+    },
+    {
+      "path": "backend/app/weather/local_notice_shadow.py",
+      "sha256": "a49f1317a0682f0279cb7fb7f9f42288f0059c1685f1e0366ce5978066739af3",
+      "bytes": 34353
+    },
+    {
+      "path": "backend/app/weather/local_notice_sidecar.py",
+      "sha256": "c0cf42c97c44f6b43b7526525b53518cdac3e99b3e459cdd54a903a3fe534352",
+      "bytes": 1980
+    },
+    {
+      "path": "backend/app/weather/local_notice_source.py",
+      "sha256": "eab4bf0de03c113443e767b461be19103327e233636586db3ebbf44a6ebfc9b6",
+      "bytes": 35593
+    },
+    {
+      "path": "backend/app/weather/local_notice_thresholds.py",
+      "sha256": "3403aabb0aeaeb7f0b0d8ed4d79f84a0fa0cc5141b93d21ea9174cbced83f7ab",
+      "bytes": 373
+    },
+    {
+      "path": "backend/app/weather/local_notice_tolerance.py",
+      "sha256": "bfbb7eb5cc72556e644f5e90f6b079d849c9614541c000db95fea108d49f6ec8",
+      "bytes": 7747
+    },
+    {
+      "path": "backend/app/weather/official_telegram_alerts.py",
+      "sha256": "985813160fc75256264c71f793d2206a4e86e4933d1a0c799fae85f859897234",
+      "bytes": 24534
+    },
+    {
+      "path": "backend/app/weather/osmer_interpreter.py",
+      "sha256": "05d1f5f421d7e03872e3eb7a243ce401e29fffda155817b5dbc8f7045d6e765f",
+      "bytes": 3751
+    },
+    {
+      "path": "backend/app/weather/parser_osmer.py",
+      "sha256": "546f75a29fa4131eca52fd021c3a696e9afc530259ee72ad6a7692f7d696a834",
+      "bytes": 16582
+    },
+    {
+      "path": "backend/app/weather/radar_engine.py",
+      "sha256": "e583047d3723ba6022eb2644987168ded76100b8a01e9479c40f684ca9add32b",
+      "bytes": 7821
+    },
+    {
+      "path": "backend/app/weather/timezone_support.py",
+      "sha256": "227098c8dafa9c6fae736b8630344515cd56190be42289eda2034822213329fe",
+      "bytes": 4242
+    },
+    {
+      "path": "backend/requirements.txt",
+      "sha256": "1bf5fd2bfda2bb90c610fd6ed62fc78c6fe1e2a8084145e277458b5badec4ed9",
+      "bytes": 114
+    },
+    {
+      "path": "backend/tests/__init__.py",
+      "sha256": "5be1bbb9b1a3231f54da6b9d10d3a6753acf899f571ab9796e07b9ad36df001e",
+      "bytes": 26
+    },
+    {
+      "path": "backend/tests/fixtures/erpac_magazzino_event.json",
+      "sha256": "e1f204fe1c6d5f6f6361507e2d8d6707f5736d6d5f3d67b95efa38f4a0ea15d8",
+      "bytes": 452
+    },
+    {
+      "path": "backend/tests/fixtures/events_quarantine_october_15_2026.json",
+      "sha256": "b673adc09e6f4c85dfff63b8c9da9392e8a159efc67b22a3b9e9cd490dac8f4e",
+      "bytes": 61857
+    },
+    {
+      "path": "backend/tests/fixtures/icon_fontanafredda_missing_accumulation.json",
+      "sha256": "b49c0dec69dd6930a30cc4db1f61d5533affddc9f005f8f27824835b36e9f68e",
+      "bytes": 1124
+    },
+    {
+      "path": "backend/tests/fixtures/mess_laboratori_2026.json",
+      "sha256": "7f1638d4c64cbe3c77147ea0b2a6ffe1b2221573c18293e8a8f2e1681cd4fa26",
+      "bytes": 11240
+    },
+    {
+      "path": "backend/tests/fixtures/mess_notizie_2026.json",
+      "sha256": "2a6519cbc598368cc01dcb218e3eefe7cce08bc5842265a837f9059acdce09ec",
+      "bytes": 24814
+    },
+    {
+      "path": "backend/tests/fixtures/promotions_card_contract.json",
+      "sha256": "2ff4b0661e4239ffef0e0c38aaee0a20cc3ec4ab8750243cc2c50eb8da058ac5",
+      "bytes": 19509
+    },
+    {
+      "path": "backend/tests/fixtures/spazzapan_2026.json",
+      "sha256": "d758c11590db2080a60aab5d07b21092c26df0d7a7d27d4d2406889bcbd2a3e5",
+      "bytes": 47580
+    },
+    {
+      "path": "backend/tests/fixtures/spazzapan_october_15_2026.json",
+      "sha256": "e591f603316df4554cfb9b29f0ea58cad00ea0b0a38eddbe5110b887d7229ab9",
+      "bytes": 3457
+    },
+    {
+      "path": "backend/tests/fixtures/villa_manin_events.json",
+      "sha256": "4eded854c8184c1a751fc7a6438f37afa1a83810eb2c2dfd440e3d187752c194",
+      "bytes": 3850
+    },
+    {
+      "path": "backend/tests/ordinary_weather_contract_structural_audit_diagnostic.py",
+      "sha256": "ffc1b6db37efe90184ddacdd25555140c90b11023885dc1f7fa71c93e79504e1",
+      "bytes": 1710
+    },
+    {
+      "path": "backend/tests/social_geo_structural_audit_diagnostic.py",
+      "sha256": "7534e58743d0fb6c8e7097df16a42ae5ccc27f7914b27d374565759d8cd37c4b",
+      "bytes": 34360
+    },
+    {
+      "path": "backend/tests/test_alerts_engine.py",
+      "sha256": "15bb7cebffaf9cd32795bc36d682b1d19f94bdd6dcb400ac5591e66877095001",
+      "bytes": 14140
+    },
+    {
+      "path": "backend/tests/test_android_community_qa_builder.py",
+      "sha256": "9038c62a3d7d20213f9892ffa0fb361102f875f141a40ede9541d9ee877506de",
+      "bytes": 2841
+    },
+    {
+      "path": "backend/tests/test_arpa_osmer_risks.py",
+      "sha256": "b74049ab36643da750bc54b92e0620e7070669e49421b49a3d6eb07e72c6f4be",
+      "bytes": 18031
+    },
+    {
+      "path": "backend/tests/test_attems_audit.py",
+      "sha256": "01724a75c2b46796a4c98ec492c9602c852a321e686b7de24e6235978ab54375",
+      "bytes": 7379
+    },
+    {
+      "path": "backend/tests/test_build_official_alert_zone_catalog.py",
+      "sha256": "0898bfa34ca017659b45cb9ee92bfdc26520445e48378b48afe3cf4bbb667fb8",
+      "bytes": 2344
+    },
+    {
+      "path": "backend/tests/test_check_webcams_tool.py",
+      "sha256": "79bea4aee50b2be84ac4a84b271e990ee686cb082bea67a4c53ec65585c2d5da",
+      "bytes": 2934
+    },
+    {
+      "path": "backend/tests/test_community_b05_regressions.py",
+      "sha256": "8e524caf2f6f5baf932198e2ef3085136e6e332d8e7c0bd3c33c860f9dd23a82",
+      "bytes": 2000
+    },
+    {
+      "path": "backend/tests/test_community_cloud_compatibility.py",
+      "sha256": "a1cb37133d5f1a5e9a54bca2f6049eedfd5080f6e1f24f7af9d61b452a83cbb4",
+      "bytes": 15891
+    },
+    {
+      "path": "backend/tests/test_community_moderation_digest.py",
+      "sha256": "251de9dc380dc69e0eee5004630f704c5f517ba610e2837f9e3b8d3308f3772d",
+      "bytes": 20364
+    },
+    {
+      "path": "backend/tests/test_community_moderation_live_smoke.py",
+      "sha256": "1e5f2402ec9f8a420453529a67dd215ede960b0ee6305a02f40e02c7f29304ac",
+      "bytes": 46776
+    },
+    {
+      "path": "backend/tests/test_community_moderation_logging.py",
+      "sha256": "523a60dc529e7408716360f0d74a420a4eb95b259596ab082789279e04ad6838",
+      "bytes": 4579
+    },
+    {
+      "path": "backend/tests/test_community_moderation_tool.py",
+      "sha256": "0c6891dd0659f5101f6416abcd56ca5eee8ebf663def1d1f79e68cc80c45c356",
+      "bytes": 27373
+    },
+    {
+      "path": "backend/tests/test_community_reports_rules.py",
+      "sha256": "521a64dc03a6a524bdb81f2b762be398980d1aac5edd9fe296aef40031f8dc3f",
+      "bytes": 19357
+    },
+    {
+      "path": "backend/tests/test_community_repository.py",
+      "sha256": "683a432698952ad9389944bae45970373d6de3fd6519061c43852ba7afbbac49",
+      "bytes": 62478
+    },
+    {
+      "path": "backend/tests/test_community_reputation.py",
+      "sha256": "ecca6ee0cee62080d0cd1b831b65f2b889f26dbad2ac0a88bfbcf3dc814b3854",
+      "bytes": 14316
+    },
+    {
+      "path": "backend/tests/test_community_service.py",
+      "sha256": "d77dee457b1806865d2f69c77882a8c200a8d0644bebafa95767e6535b31be44",
+      "bytes": 55565
+    },
+    {
+      "path": "backend/tests/test_community_ttl_evidence_seed.py",
+      "sha256": "b81262de789c2e63662ba8f342d84b7ee9b9e4fa95ad0a6c454212c4f5a972ec",
+      "bytes": 14331
+    },
+    {
+      "path": "backend/tests/test_control_event_source_publication_job.py",
+      "sha256": "aef196059413c63137f7c64829714023e431744a20c1fcd1419e0047e973dedd",
+      "bytes": 3879
+    },
+    {
+      "path": "backend/tests/test_dependency_security.py",
+      "sha256": "424ef77ebb98d9aabbb5a136a89ee52b8be66117b859de04dd2e4df7b49d47d5",
+      "bytes": 1666
+    },
+    {
+      "path": "backend/tests/test_dpc_national_alerts.py",
+      "sha256": "79e02f2adc570a2a933d65c974def7de8f51c659b369083524ddd910b813d7ef",
+      "bytes": 6222
+    },
+    {
+      "path": "backend/tests/test_dpc_national_source.py",
+      "sha256": "7120fe87fe0b4cab072457ed7624a4bdeb8dd97db7687e93dee533882abfc596",
+      "bytes": 4430
+    },
+    {
+      "path": "backend/tests/test_dpc_national_zone_snapshot.py",
+      "sha256": "35a1cf3bb1746468e07c9637e2f128e939ee4088753feb9ca1797107963448d5",
+      "bytes": 8142
+    },
+    {
+      "path": "backend/tests/test_dry_run_national_official_alerts_job.py",
+      "sha256": "c71bf8bd75fb21555550c071270f788e4fe53c862b222b99634b62815659041a",
+      "bytes": 3170
+    },
+    {
+      "path": "backend/tests/test_emit_community_moderation_digest_job.py",
+      "sha256": "9b898a14ffba3271be758c9c105bea8d352348bca103df8e641edce02310fa76",
+      "bytes": 10029
+    },
+    {
+      "path": "backend/tests/test_erpac_source.py",
+      "sha256": "26bee85c43334c98d7dd85e0df4efe54286871cc64ae2507aa6b8b10c00efd3e",
+      "bytes": 22446
+    },
+    {
+      "path": "backend/tests/test_evening_forecast_delivery.py",
+      "sha256": "bc323f8a62b560cf69aa26d05de101e5d8532bcf41e00abf012e335902a1c7e2",
+      "bytes": 14486
+    },
+    {
+      "path": "backend/tests/test_evening_forecast_reliability.py",
+      "sha256": "65dcedeefb7d44e388b55d86da2ee2516ab371178ef8be2444d3d164067d1462",
+      "bytes": 10297
+    },
+    {
+      "path": "backend/tests/test_event_explicit_days.py",
+      "sha256": "76c19f9e76ebb6f1e043e1d816df936087ce0beef3272edb5a9ae5b3558b3d21",
+      "bytes": 1633
+    },
+    {
+      "path": "backend/tests/test_event_source_audit.py",
+      "sha256": "27cf04869252714b3ed16593c13629874c2b5a65c95d772f9f75a3c3f38f585b",
+      "bytes": 37203
+    },
+    {
+      "path": "backend/tests/test_event_source_automation.py",
+      "sha256": "5a41bf44bd204bb57df427cad990757e56a5120d6923da78d63663c8a176f82d",
+      "bytes": 15067
+    },
+    {
+      "path": "backend/tests/test_event_source_http.py",
+      "sha256": "84f057aada54fb7245bf4f9bff8e07d86c9569bbe3ce78bc791da48ba76ee49e",
+      "bytes": 3068
+    },
+    {
+      "path": "backend/tests/test_event_source_state_repository.py",
+      "sha256": "f1b6643ad3e95088a795ef684467875c0bfb6650ba0689fddb8eb76d0d7a5736",
+      "bytes": 2520
+    },
+    {
+      "path": "backend/tests/test_events_api.py",
+      "sha256": "d944218b03d9c6ba03b5a50ba1cc7b7762e868d680b579f3a26bd36998940fe5",
+      "bytes": 3327
+    },
+    {
+      "path": "backend/tests/test_events_engine.py",
+      "sha256": "5ca0cf947fba35c53133dc4766a2cc87a8192fdeddec2788d44f00bfc42e20ba",
+      "bytes": 52483
+    },
+    {
+      "path": "backend/tests/test_events_service.py",
+      "sha256": "014206e040a6237e9581f38a96a06f046c24d708687e599d4c6bbc1319cf8f7f",
+      "bytes": 4793
+    },
+    {
+      "path": "backend/tests/test_firebase_infrastructure.py",
+      "sha256": "bd90f3c670031e9c2312b02831bc2b0d8df063d5bd55f3a7ed5118a3c6be7fc7",
+      "bytes": 4933
+    },
+    {
+      "path": "backend/tests/test_forecast_engine.py",
+      "sha256": "612d9aff21ca65bb158b1e2fcb9a8bce89e8a993d27d8236d0a79207a72c4d1a",
+      "bytes": 11769
+    },
+    {
+      "path": "backend/tests/test_fvg_geography.py",
+      "sha256": "be8d48c3c865253b42de157419502820b95c4fda08adcb191b93324544a71e92",
+      "bytes": 9787
+    },
+    {
+      "path": "backend/tests/test_guarded_event_feed.py",
+      "sha256": "169bfae5a64de7ddd853dc152031617d19b0ea8f18699ba8a5f047bd5b2c0087",
+      "bytes": 3813
+    },
+    {
+      "path": "backend/tests/test_install_pilot_cloud_apk.py",
+      "sha256": "e0bf81bfbd0f9965ab167ba0ecbd41e1b2a0e6dbb2579bf386251ebc29b825cb",
+      "bytes": 5092
+    },
+    {
+      "path": "backend/tests/test_live_api.py",
+      "sha256": "c927876b2b63e4a515fdadc4b690e79cd0f836641248a325f3e771741039a63f",
+      "bytes": 16514
+    },
+    {
+      "path": "backend/tests/test_local_notice_delivery_outbox.py",
+      "sha256": "b93341c4ee0a30be76057251e926d1b71697c1e381b8ed5bcf34d5f509272663",
+      "bytes": 12725
+    },
+    {
+      "path": "backend/tests/test_local_notice_delivery_repository.py",
+      "sha256": "cd7791ad725fb0a157d92eca77bdac22446fcc60c0dea1033f1ae9312135e63f",
+      "bytes": 8704
+    },
+    {
+      "path": "backend/tests/test_local_notice_delivery_service.py",
+      "sha256": "bcf48cbcc1b87023147a65454403daccc130eaa3e3bfc02cf0804be0c5071a14",
+      "bytes": 53542
+    },
+    {
+      "path": "backend/tests/test_local_notice_missing_data.py",
+      "sha256": "c33afda06a043a7fdcb0650e9676d029dacee70e536a33669b9accad15c525dc",
+      "bytes": 11215
+    },
+    {
+      "path": "backend/tests/test_local_notice_per_phenomenon.py",
+      "sha256": "ce37159736c146046f7cb4faff171c7613532cd13505127f5d14fbf273e34404",
+      "bytes": 10118
+    },
+    {
+      "path": "backend/tests/test_local_notice_shadow.py",
+      "sha256": "a2dcda137cc210a20c17a82d47a56c47a7d32614f7b0a2e98c39dda6f708a72a",
+      "bytes": 15947
+    },
+    {
+      "path": "backend/tests/test_local_notice_shadow_repository.py",
+      "sha256": "61de1f6fe3f0b4498f61ca9710976faf0b4f95916c8129c0e363feac96a1236d",
+      "bytes": 7501
+    },
+    {
+      "path": "backend/tests/test_local_notice_shadow_service.py",
+      "sha256": "310f841edc2377e8a7d75aa22e20f20c81dfe1500593e238c668cc4f166f63e7",
+      "bytes": 11228
+    },
+    {
+      "path": "backend/tests/test_local_notice_sidecar.py",
+      "sha256": "502f41ba5e4e9c91d907b54cb2cfbeda415ec54a3829932a8a71f908904b8a78",
+      "bytes": 6511
+    },
+    {
+      "path": "backend/tests/test_local_notice_source.py",
+      "sha256": "e55a0679a0584b08c53ac299f4dd132762dc91100e5c2cbbbffc8abaac1f5ba3",
+      "bytes": 21298
+    },
+    {
+      "path": "backend/tests/test_local_notice_tolerance.py",
+      "sha256": "575ad432c3a975a4dfb1b5de5c7539b1d6d7ea8a1fce162acf8ac884254b5570",
+      "bytes": 13105
+    },
+    {
+      "path": "backend/tests/test_location_api.py",
+      "sha256": "db42b2fcd5f9515a1722e62d5f5eb72b6ecdccadc377281580096ff401bb34ea",
+      "bytes": 10669
+    },
+    {
+      "path": "backend/tests/test_location_service.py",
+      "sha256": "da3c126b81044160f1abcab609c061c00a6eece85d2cd9f3ad528ae2338d1177",
+      "bytes": 24603
+    },
+    {
+      "path": "backend/tests/test_morning_forecast_delivery.py",
+      "sha256": "918ff0d7a21075ade1e6bea20db6086180bbe690755e64bd9a2991eec5b51e6f",
+      "bytes": 11122
+    },
+    {
+      "path": "backend/tests/test_national_alert_delivery.py",
+      "sha256": "51db3e0fffd9d013bab0466e35e51902f8082266cb86ec44067bdb2bf1e52418",
+      "bytes": 14503
+    },
+    {
+      "path": "backend/tests/test_national_alert_push_dry_run.py",
+      "sha256": "19b1cf669675cf724e81d51f103d20622906a2f161e8312b912b737d1b80b1cc",
+      "bytes": 6142
+    },
+    {
+      "path": "backend/tests/test_national_municipality_catalog.py",
+      "sha256": "fd4b59499216272231906aeb8cc8dc139d5ed197d963f5060e52edafd75731ec",
+      "bytes": 5808
+    },
+    {
+      "path": "backend/tests/test_national_official_alerts.py",
+      "sha256": "1721dea03e0b65acbeecc8a77a79e42528f54bf36741281a2b604806a95eb4b7",
+      "bytes": 5270
+    },
+    {
+      "path": "backend/tests/test_national_official_alerts_api.py",
+      "sha256": "65551052de8c7e09ef502fd9e54c4c6e368bac9377e7b6f845b392cd8f0161ae",
+      "bytes": 3305
+    },
+    {
+      "path": "backend/tests/test_national_official_alerts_state.py",
+      "sha256": "6534ceee0051cec7dff85fedce6db480fb23d69272bbd8f5e86605f1e59148e8",
+      "bytes": 7585
+    },
+    {
+      "path": "backend/tests/test_official_alert_sources.py",
+      "sha256": "03752e1d8872ed42dc16ef06d08c7fb44ed2549168e0fef260082e45d0459f55",
+      "bytes": 90909
+    },
+    {
+      "path": "backend/tests/test_official_alert_zone_catalog.py",
+      "sha256": "7f0dc44e9e5c9623ff98d877b5ce7d5dc6baf61b2d3790e728d55983dff1ef1f",
+      "bytes": 3629
+    },
+    {
+      "path": "backend/tests/test_official_alerts_state.py",
+      "sha256": "6f75b878d7b56cc203ee44eb67fec0bcf795689d90283d42aaa054b3f72f70b2",
+      "bytes": 15181
+    },
+    {
+      "path": "backend/tests/test_official_telegram_alerts.py",
+      "sha256": "45d45ab14c93ea9b0383bab322c180e627e547c7dff537ae6086932a92a27adb",
+      "bytes": 33881
+    },
+    {
+      "path": "backend/tests/test_open_meteo_policy.py",
+      "sha256": "033c196963d4b630d1b8108b54bf8041f7581bbce799566afb3e98d26ebf15a4",
+      "bytes": 2615
+    },
+    {
+      "path": "backend/tests/test_pilot_anteprima_watch.py",
+      "sha256": "b3107a396a076317c85e93b39ca612f1009d84cabd0c2bffe414396f1c52b38a",
+      "bytes": 6027
+    },
+    {
+      "path": "backend/tests/test_pilot_azalea.py",
+      "sha256": "1e08d51cd2168c03bb9d24264b12aec92ee9f9536eaa0a648f65ebd9334244b8",
+      "bytes": 7156
+    },
+    {
+      "path": "backend/tests/test_pilot_barcolana.py",
+      "sha256": "245573b24b70973b0b51e07065e0623cebfc535842f0c79f63133b7a42708e43",
+      "bytes": 17580
+    },
+    {
+      "path": "backend/tests/test_pilot_catalog.py",
+      "sha256": "05f3568fe571d2b7e2b0390c1833ab9fe49d829ab6edaac567be6fe0c58901b8",
+      "bytes": 28069
+    },
+    {
+      "path": "backend/tests/test_pilot_catalog_health.py",
+      "sha256": "c2122b54e4f55b5f1debf2bc31f7ef3869dee86ef7649a7a6fda4f7c392118c9",
+      "bytes": 4171
+    },
+    {
+      "path": "backend/tests/test_pilot_cinema_muto.py",
+      "sha256": "ef6ae01342e20e6983f9296046b61eb33a9baf895b264233328074030489d548",
+      "bytes": 12402
+    },
+    {
+      "path": "backend/tests/test_pilot_cloud.py",
+      "sha256": "c9bb9346a9e9d20a83bae556205b896d444e2e9420ac39f84d686b22e13e3fc1",
+      "bytes": 29395
+    },
+    {
+      "path": "backend/tests/test_pilot_cloud_admin.py",
+      "sha256": "faab65e35077e23723d714f02ac29c320cf3095352c8e3e4e818b459c3f31409",
+      "bytes": 6236
+    },
+    {
+      "path": "backend/tests/test_pilot_collection.py",
+      "sha256": "5b56be21c702671873e73bdb579e08471d4dca3795013c9b8a6eb67aae122bc0",
+      "bytes": 4753
+    },
+    {
+      "path": "backend/tests/test_pilot_community.py",
+      "sha256": "3f59d1c623fc713d97ca774665bdbe16f49c093be657c8bcf6d69a30e98135df",
+      "bytes": 53913
+    },
+    {
+      "path": "backend/tests/test_pilot_community_cloud.py",
+      "sha256": "1961c549b71c896ccdfcf0659690bde6a01e66b117a0da36310fe0199395b326",
+      "bytes": 21258
+    },
+    {
+      "path": "backend/tests/test_pilot_community_cloud_api.py",
+      "sha256": "aca689e5f3fc3f88ac15166e4a35af8ece37c6021940b94043d9bdf8404cf320",
+      "bytes": 11679
+    },
+    {
+      "path": "backend/tests/test_pilot_community_cloud_loopback.py",
+      "sha256": "82a0b4bf681b0082eda80646a7bb60b17e36f08bd4521a2d32a6e27b2513ea3d",
+      "bytes": 7596
+    },
+    {
+      "path": "backend/tests/test_pilot_community_geography.py",
+      "sha256": "50eaf7e4035c12b497c6b2f5477457a19f09214941775294590cb271bb610576",
+      "bytes": 8871
+    },
+    {
+      "path": "backend/tests/test_pilot_community_rule_boundaries.py",
+      "sha256": "7f0ecc2cf58480d65d9a0c6522e496701cc736ed0b0fbd3c06b1519b6ffdc50c",
+      "bytes": 9962
+    },
+    {
+      "path": "backend/tests/test_pilot_community_sqlite.py",
+      "sha256": "739358d3e9607c3d3991b883c591a7c791699f3cb615b8c21c273cfff1fbde33",
+      "bytes": 22852
+    },
+    {
+      "path": "backend/tests/test_pilot_comparison.py",
+      "sha256": "7a95cef6f1c289d732be9c168dc7f9a6ac6bcfd91b96163bcc9c5ffa4b274bf7",
+      "bytes": 2041
+    },
+    {
+      "path": "backend/tests/test_pilot_css.py",
+      "sha256": "efe711f1b8fb9ede098141edd47d708b334f59ca079e1c08ec671ffcec1ce8c9",
+      "bytes": 9233
+    },
+    {
+      "path": "backend/tests/test_pilot_dedupe.py",
+      "sha256": "0f078cfdea09f3b973d890e930859fb3bf4f546f4031b6d526fd229dac279e57",
+      "bytes": 18519
+    },
+    {
+      "path": "backend/tests/test_pilot_detail_calendar.py",
+      "sha256": "87ab79f39b2b1d72e1b4e92a206dc01365b7dd14039ef87f29678b896a0df6e2",
+      "bytes": 3051
+    },
+    {
+      "path": "backend/tests/test_pilot_detail_rows.py",
+      "sha256": "e0440e475bd5220b2004acf0b927fd470206dab5cf76c10d8f8de728ec3240fe",
+      "bytes": 1260
+    },
+    {
+      "path": "backend/tests/test_pilot_details.py",
+      "sha256": "e94a1ca187cdd9d2afd6aa9c3c1acb0c4d21f772ff58bc05a24ab318f5f625a6",
+      "bytes": 33212
+    },
+    {
+      "path": "backend/tests/test_pilot_discovery.py",
+      "sha256": "4dd0a1621c5e666fb32ba132c1c33bf685348a1e81900dc98563d16aeee22705",
+      "bytes": 1269
+    },
+    {
+      "path": "backend/tests/test_pilot_event_coverage.py",
+      "sha256": "1d09bb3bfa0191551dd3c14552c16a5403960a819e7bc5674d6db8bd793f9617",
+      "bytes": 975
+    },
+    {
+      "path": "backend/tests/test_pilot_event_schedule_contract.py",
+      "sha256": "f49c025f4440c79ca2d4de2b77bd2d6fa419a526887a4d22377362923adbea1c",
+      "bytes": 11287
+    },
+    {
+      "path": "backend/tests/test_pilot_eventifvg_audit.py",
+      "sha256": "9550d49e2f881f39f38b1f81deda7921c5eded854e72359183e03402faa13815",
+      "bytes": 3042
+    },
+    {
+      "path": "backend/tests/test_pilot_excerpt.py",
+      "sha256": "f30e2d8657b5d1b3d91e81444bea7af81384f444de1dae9f24bc5ad721c90f20",
+      "bytes": 2845
+    },
+    {
+      "path": "backend/tests/test_pilot_girofvg_watch.py",
+      "sha256": "8ebc52979e76eab87c2ff0ef38b5789535b2c6bd90b98094cb59efb69d4b33a6",
+      "bytes": 7662
+    },
+    {
+      "path": "backend/tests/test_pilot_http.py",
+      "sha256": "8913639d42eaff60f887017e94c6fb4954dc5ddb707e321c448a0f83e7800d12",
+      "bytes": 8558
+    },
+    {
+      "path": "backend/tests/test_pilot_magazzino.py",
+      "sha256": "793c542707f6adf9f90d7d9a5031129fb1f79de85402b7154634baf64ec1d9de",
+      "bytes": 6244
+    },
+    {
+      "path": "backend/tests/test_pilot_mess.py",
+      "sha256": "e16a3a95b3f7f5cbd4d4f9c2d21a2da7f765527b65bb7cd070b62daff7807686",
+      "bytes": 11966
+    },
+    {
+      "path": "backend/tests/test_pilot_new_programmes.py",
+      "sha256": "32b5b40589bfd9729bcade81ad0533db4a72a8316b64b3caf316ec568f21ee5c",
+      "bytes": 7175
+    },
+    {
+      "path": "backend/tests/test_pilot_opening_days.py",
+      "sha256": "72f6316a346250389ea81a13f029824a9248f586d0afde863f89f1c7eb418f86",
+      "bytes": 5573
+    },
+    {
+      "path": "backend/tests/test_pilot_paesiinfesta.py",
+      "sha256": "7fe1d4e2c00d71c2ad4fdca4f03f325c0f66dc2eb9b84ef547c6cb07d50df5eb",
+      "bytes": 19919
+    },
+    {
+      "path": "backend/tests/test_pilot_pnpensa.py",
+      "sha256": "2d7cfd6f366243c79ec94ee8dcecdaea2f74ed7fdc182281d85e000593962a82",
+      "bytes": 8295
+    },
+    {
+      "path": "backend/tests/test_pilot_pordenonelegge.py",
+      "sha256": "fc8b695f4a7e4a3b8fb638276c097ddfc87036e30b2f762c5d4173fe66648539",
+      "bytes": 9934
+    },
+    {
+      "path": "backend/tests/test_pilot_progressive_events.py",
+      "sha256": "08b436eb9c61d001715e63972f036a604f95889da4cb3fb9c96b486396f6c63c",
+      "bytes": 1711
+    },
+    {
+      "path": "backend/tests/test_pilot_proloco_watch.py",
+      "sha256": "975d2e4c4b1f3fecc73015e42ce88088c4d78537ebc2998329cd571ef899b82d",
+      "bytes": 3050
+    },
+    {
+      "path": "backend/tests/test_pilot_quarantine_recovery.py",
+      "sha256": "4782fc183db67e26175704aa305e3b44166e58eb9cbea7c8751e613d992cabe6",
+      "bytes": 13115
+    },
+    {
+      "path": "backend/tests/test_pilot_regional.py",
+      "sha256": "2798806d69657d5e99b3b90278123dd39e4e910d3b4b3ed663b3717355504c1e",
+      "bytes": 8514
+    },
+    {
+      "path": "backend/tests/test_pilot_regional_annual_watch.py",
+      "sha256": "3944198cff9b050be6833068c09efa98c754b34f9aa3330f38946a505c953498",
+      "bytes": 1352
+    },
+    {
+      "path": "backend/tests/test_pilot_regional_discrepancy_audit.py",
+      "sha256": "83468ce6d984a59c6d68c54f94740ff5827cdd29ddf27a607d232e3657daf588",
+      "bytes": 4616
+    },
+    {
+      "path": "backend/tests/test_pilot_regional_display_audit.py",
+      "sha256": "794b7a594a6630286bb0ac58e4e88d9bc79cc733df9cd12334bcc80feda98b9d",
+      "bytes": 22170
+    },
+    {
+      "path": "backend/tests/test_pilot_regional_failure_isolation.py",
+      "sha256": "c8897ba5f17cbfa94dcd0afa5524ce3f55e470962d8dc72194e67daef64f5316",
+      "bytes": 24631
+    },
+    {
+      "path": "backend/tests/test_pilot_regional_filtered.py",
+      "sha256": "8bedc1b9d4c8540ca0df29a360cc656287e69d6a8b810a30944b8b1fed4f3b33",
+      "bytes": 10264
+    },
+    {
+      "path": "backend/tests/test_pilot_regional_forward_audit.py",
+      "sha256": "b75aeb049e4764ae11d0ed8902f5a06f084cc7eceab48e6fd6edfc357e6998a8",
+      "bytes": 11905
+    },
+    {
+      "path": "backend/tests/test_pilot_regional_historical.py",
+      "sha256": "5eb28b6f9065d36b97ea4940b9764327b42a7a9edcf7c19145bfdd5b48db92ab",
+      "bytes": 5136
+    },
+    {
+      "path": "backend/tests/test_pilot_regional_index.py",
+      "sha256": "f589aadc2a4e02423b44e7a76bf7012249748dc8fd09c7946093097e652c1e02",
+      "bytes": 3578
+    },
+    {
+      "path": "backend/tests/test_pilot_regional_local_preview.py",
+      "sha256": "7f355a416867ad1aae43756e53276e676644c76e2dcf348b7c4cb6154e19548c",
+      "bytes": 5710
+    },
+    {
+      "path": "backend/tests/test_pilot_regional_location.py",
+      "sha256": "60f15fc5f0e86e768cc59a3d7af94dfb4c689aa78a36e29d6e7ad5e61f53398f",
+      "bytes": 1942
+    },
+    {
+      "path": "backend/tests/test_pilot_regional_lookback.py",
+      "sha256": "e8b50625d9bdbd1f36a48a5926ea20e683daf9be5258798722a8bdbabd99562b",
+      "bytes": 2735
+    },
+    {
+      "path": "backend/tests/test_pilot_regional_reconcile.py",
+      "sha256": "e723f6e4ba7277e0b8ec9409a27d35461137d7a8a161fb2739578ea97f0e9379",
+      "bytes": 6101
+    },
+    {
+      "path": "backend/tests/test_pilot_regional_semantic_audit.py",
+      "sha256": "55e0673d301fcfd148805fa8feaf950e3e3f2c438b77777c9528f543da75f16f",
+      "bytes": 7982
+    },
+    {
+      "path": "backend/tests/test_pilot_regional_sitemap.py",
+      "sha256": "3ed660d000ce1eed83536256553017292183df6ded4beae1d5a8ee05904d2385",
+      "bytes": 1801
+    },
+    {
+      "path": "backend/tests/test_pilot_regional_sitemap_audit.py",
+      "sha256": "8b30f7ee8af50cb67f6e73598c55abaf55cb13e50f5101248df4cd50ce4d1163",
+      "bytes": 10422
+    },
+    {
+      "path": "backend/tests/test_pilot_regional_sitemap_cards.py",
+      "sha256": "d4f7aedded47a95bc831eccb55031fd219abb90608d1cf35d570c35412a00aab",
+      "bytes": 2828
+    },
+    {
+      "path": "backend/tests/test_pilot_regional_verified.py",
+      "sha256": "1958927b7fbc74c906c2f9c05b3646727ada54412e373dd8b09acd65477545c3",
+      "bytes": 18362
+    },
+    {
+      "path": "backend/tests/test_pilot_regional_year_control.py",
+      "sha256": "f83ce1219dfc136f9156c1e86d2c6f7d4725046db17b78091e496260e9e7df92",
+      "bytes": 23250
+    },
+    {
+      "path": "backend/tests/test_pilot_regional_year_exclusions.py",
+      "sha256": "da6ca74340ed3cd4ef9dee58f50cb6a83d40cc637d5a87953b004207bdf9aa4b",
+      "bytes": 4923
+    },
+    {
+      "path": "backend/tests/test_pilot_regional_year_recovery.py",
+      "sha256": "dcb330d80528518a981a9ad4b5d8241cb6b3345a60725401ca1f17b608780f58",
+      "bytes": 14097
+    },
+    {
+      "path": "backend/tests/test_pilot_sagrefvg.py",
+      "sha256": "84542e7906e93c1635e711b3e2db8bd2b854e3e657969ea2902743338a8db5fc",
+      "bytes": 8177
+    },
+    {
+      "path": "backend/tests/test_pilot_schedule.py",
+      "sha256": "fbe90d7d04e3e06cd550a8e8d2426b87fb7156a2ffd797a234e1e0fba303e725",
+      "bytes": 3653
+    },
+    {
+      "path": "backend/tests/test_pilot_security.py",
+      "sha256": "81b0ceabb9a2ade7c00d6cbfab1a86e124be3993ca2d2fced327f0008ecdbc77",
+      "bytes": 15756
+    },
+    {
+      "path": "backend/tests/test_pilot_source_policy.py",
+      "sha256": "9cceedd04c97401cde5ad87bcbd9fa896128fb5bff16df644a6b5e972b9e94da",
+      "bytes": 15474
+    },
+    {
+      "path": "backend/tests/test_pilot_source_registry.py",
+      "sha256": "f579afc6e4a7e7651757236eae426a7a2e8da5503409b7fa467b3f9ba8f72e97",
+      "bytes": 1316
+    },
+    {
+      "path": "backend/tests/test_pilot_spazzapan.py",
+      "sha256": "c71ab98bb7b23c43952caeb9ad1d1e45318e99a4f07bbfa8641402ceab5651ad",
+      "bytes": 23489
+    },
+    {
+      "path": "backend/tests/test_pilot_verdi_pordenone.py",
+      "sha256": "09a9fb8d2b8cb884ec85d8db59f23f60bb85fdd101c0a7400e7b2d86006ee05b",
+      "bytes": 7857
+    },
+    {
+      "path": "backend/tests/test_pilot_verdi_trieste_verified.py",
+      "sha256": "3914bdb83c075ed4f021d782baa574b19eb3b1ba24f8889f5132c503f1b8193d",
+      "bytes": 5974
+    },
+    {
+      "path": "backend/tests/test_pilot_villa_manin.py",
+      "sha256": "b3c536d83c3cc0efd2c7bdaaf9f298aff353da0d71037f8bca475bcac66d929d",
+      "bytes": 8435
+    },
+    {
+      "path": "backend/tests/test_promotions.py",
+      "sha256": "49e4d0d7f28b1893aea8d228c268c15ceffb4373ef59b250ad1b939a90c2f1ac",
+      "bytes": 28054
+    },
+    {
+      "path": "backend/tests/test_promotions_card_contract.py",
+      "sha256": "f2980f0ccf923f0fcc5c3d2953c58802f5444e31b50027d17b0e398432bdd5f2",
+      "bytes": 4668
+    },
+    {
+      "path": "backend/tests/test_push_api.py",
+      "sha256": "ff7c31d6288e5855a4c3a738b78dd26010c9a8b43d7501e3d9ee334443f40275",
+      "bytes": 29351
+    },
+    {
+      "path": "backend/tests/test_push_fcm.py",
+      "sha256": "464b4e207301c53251d86287b4be8d135175e962462ced9152074bf39668aed0",
+      "bytes": 9724
+    },
+    {
+      "path": "backend/tests/test_push_repository.py",
+      "sha256": "572963ba9689ef869b4d8205015e392a001254b29466607ea4d03b05ed351414",
+      "bytes": 52160
+    },
+    {
+      "path": "backend/tests/test_push_service.py",
+      "sha256": "0ebe713af6cb12505ad9e23a7cf99bb93ba1aa10b788b9ddc1207fe64747e9f7",
+      "bytes": 81967
+    },
+    {
+      "path": "backend/tests/test_push_version_policy.py",
+      "sha256": "14689d5d3fda326158e77090fbd5e64fd2f0d832ba3ed5aed3402382b2d3b018",
+      "bytes": 2927
+    },
+    {
+      "path": "backend/tests/test_run_local_notice_shadow_job.py",
+      "sha256": "0cf5cd5353257a13de3a98f29e760ad877ae1a23f17da0b9f5257132351faade",
+      "bytes": 3894
+    },
+    {
+      "path": "backend/tests/test_send_evening_forecast_job.py",
+      "sha256": "091a2d34679898b4d8b197eefba4c5a9474153a9c5d0cf273279b0fc9e849860",
+      "bytes": 3292
+    },
+    {
+      "path": "backend/tests/test_send_local_weather_notices_job.py",
+      "sha256": "5be43123ddf3fe80584144d1fd9bd3d2d10675c835f927ebffdefed16f7faec2",
+      "bytes": 4587
+    },
+    {
+      "path": "backend/tests/test_send_morning_forecast_job.py",
+      "sha256": "2d93bca0bce89c8d10fa73a0a36e9fdfb66b15d46599fba07a92b168fe5580c1",
+      "bytes": 3292
+    },
+    {
+      "path": "backend/tests/test_send_national_official_alerts_job.py",
+      "sha256": "db1e8ef91e087d2e0f8ece5d72cd59cee1c183c1d28d07ad88d8622fd91d9c2b",
+      "bytes": 2134
+    },
+    {
+      "path": "backend/tests/test_send_push_pilot_test_job.py",
+      "sha256": "805bb5dc01fca13a70f3666a5e5953d0f2bb1b1eeafe90a1ca391f3044974909",
+      "bytes": 1921
+    },
+    {
+      "path": "backend/tests/test_set_ads_admin_claim_tool.py",
+      "sha256": "0deda03c4b2fa3d34a8f53ef26838952302132a33cd24f3f82e76cedb922fb0f",
+      "bytes": 648
+    },
+    {
+      "path": "backend/tests/test_set_webcam_admin_claim_tool.py",
+      "sha256": "29e15fbb1cf04fad424629003183b9d09751ea81dd3af47f7260f9258324ce16",
+      "bytes": 933
+    },
+    {
+      "path": "backend/tests/test_site_import.py",
+      "sha256": "fd640dd8e4835e5cc63329621cad54cc0e17e8dfffdf6ce775b8fa546c0e8467",
+      "bytes": 4611
+    },
+    {
+      "path": "backend/tests/test_sync_event_sources_job.py",
+      "sha256": "19e9e6240f450a4654a5e249bf75dfd61c11d3befc27fdaae8cb27fcd161bcd3",
+      "bytes": 4016
+    },
+    {
+      "path": "backend/tests/test_sync_national_official_alerts_job.py",
+      "sha256": "995bde28baf34a03053218f7ca6c9928c3536b2ff32db6a6caa2ee60575bb6d1",
+      "bytes": 4908
+    },
+    {
+      "path": "backend/tests/test_sync_official_alerts_job.py",
+      "sha256": "729906d2f16dc2f93a6d432d7acb1b0cdb77650e94feec3b458f67d994be7236",
+      "bytes": 10833
+    },
+    {
+      "path": "backend/tests/test_sync_official_alerts_workflow.py",
+      "sha256": "12fabb2643cdada06248741d92bfed023aa4d28fdce6109ad911d3216a877cb3",
+      "bytes": 1112
+    },
+    {
+      "path": "backend/tests/test_territory_policy.py",
+      "sha256": "22c7420b02d16448b1018888547fd176ed7cc40b2796bba6389d61cf043dc68c",
+      "bytes": 2158
+    },
+    {
+      "path": "backend/tests/test_verified_municipality_search.py",
+      "sha256": "ce3b32c8de2a7de1d549cfc08891ac47e09fe7d351774cbbe644206e332f492a",
+      "bytes": 2571
+    },
+    {
+      "path": "backend/tests/test_villa_manin_source.py",
+      "sha256": "3ad00803961b8e80a067f9ebbebf92996b3447be4aa3fa4875f0221b5e3cff11",
+      "bytes": 16243
+    },
+    {
+      "path": "backend/tests/test_weather_api.py",
+      "sha256": "c7d72c80bad4f34e4860fe6d2dbc1351b345d3a5664fbc182b9d56b69d81d9e3",
+      "bytes": 15355
+    },
+    {
+      "path": "backend/tests/test_weather_current_engine.py",
+      "sha256": "7c2c84835bc3eea2c05816d1fa18bafe86b38ad038fcb7e25eda3316f33efd9f",
+      "bytes": 12839
+    },
+    {
+      "path": "backend/tests/test_weather_radar_engine.py",
+      "sha256": "44cab32905ce7a5c189790e5116ecb748ad57ae4d3e4f04c254ea09c9a00f429",
+      "bytes": 6008
+    },
+    {
+      "path": "backend/tests/test_weather_service.py",
+      "sha256": "360c94b2305a023f252bd222b54ccd184cc0171079ead8562fadf152e9bec346",
+      "bytes": 2374
+    },
+    {
+      "path": "backend/tests/test_webcam_admin_api.py",
+      "sha256": "2d27a2fb199da83ba9780811801a0de073c009a3825b4a4d1007d4b50b300339",
+      "bytes": 7902
+    },
+    {
+      "path": "backend/tests/test_webcam_catalog.py",
+      "sha256": "d7a5417ab277da2afa5cfa85bb10ef28c5090970b2ebf10e362df9da06130093",
+      "bytes": 51642
+    },
+    {
+      "path": "backend/tests/test_webcam_controls.py",
+      "sha256": "c21b4301363a83876fe0256ef10cc75c92aeaa1776f1cc38c039ee73990bc0bf",
+      "bytes": 8054
+    },
+    {
+      "path": "backend/tests/test_webcam_health.py",
+      "sha256": "dfb53915812ed0a62d0157dd5f3a7e7a088e35c45ba5a884cb225d11972a90a7",
+      "bytes": 20533
+    },
+    {
+      "path": "backend/tests/test_webcam_service.py",
+      "sha256": "8e429c43f8f64f742755a7fc899c9eb4abfc774b72d640fda2a5e34e3f110dd7",
+      "bytes": 20804
+    },
+    {
+      "path": "backend/tests/weather_stale_cache_structural_audit_diagnostic.py",
+      "sha256": "34d5c6e5767ecd58f458c5e2f220cf3725005b7d4fa607147b1682004da355ac",
+      "bytes": 1888
+    },
+    {
+      "path": "experiments/weather_autonomy/audit_icon2i_rain.py",
+      "sha256": "f1703907842370a62aff54c6adbff8afb091d540409e9ee134e2a1ed94f919ab",
+      "bytes": 10515
+    },
+    {
+      "path": "experiments/weather_autonomy/audit_uv_sample.py",
+      "sha256": "4c81d3c52d6fa88210a78fd800da960a42407aa719d8d37e642b731b3df74a7d",
+      "bytes": 1872
+    },
+    {
+      "path": "experiments/weather_autonomy/benchmark_icon2i.py",
+      "sha256": "699c7c1c03c293902a1d5bc6b091357ca73c18182b2a7f954acbf8faa8ed5d58",
+      "bytes": 20221
+    },
+    {
+      "path": "experiments/weather_autonomy/benchmark_national_icon_bundle.py",
+      "sha256": "e9da7c1da8bb96b353ea6f2fa3b00b85f7899008c60b36b7b7762ae8435f7313",
+      "bytes": 20689
+    },
+    {
+      "path": "experiments/weather_autonomy/benchmark_national_icon_real.py",
+      "sha256": "85ba5d7c695693009c0da3ddf4517a7eae51996e83d06e6ca4ec88461c98045a",
+      "bytes": 44488
+    },
+    {
+      "path": "experiments/weather_autonomy/cams_local_lifecycle.py",
+      "sha256": "24334fdf38d1551a5473e3c6e16b7b2d07b814b1a6004855c88e7ad29b010619",
+      "bytes": 4196
+    },
+    {
+      "path": "experiments/weather_autonomy/cams_readback.py",
+      "sha256": "95db0a15ebc5beb9cde0b7c7d4778e876e54da189ea9b7329591ab7dde96d020",
+      "bytes": 5327
+    },
+    {
+      "path": "experiments/weather_autonomy/cams_request_plan.py",
+      "sha256": "292a74fafd428d8aab037703a8f90b2a9ce19434b801de43adadcf617b5f1195",
+      "bytes": 41032
+    },
+    {
+      "path": "experiments/weather_autonomy/cams_runtime.py",
+      "sha256": "ae4f81789d974ff5849438d02121ebc45e7f0e5cfa243e3602761e21cb8ff6c5",
+      "bytes": 2423
+    },
+    {
+      "path": "experiments/weather_autonomy/cams_test_fixtures.py",
+      "sha256": "21fe3a72d4a5127741fe0889b39d1a1049c7c4cb3d29ddbff0ec46283cec7a0c",
+      "bytes": 6079
+    },
+    {
+      "path": "experiments/weather_autonomy/cloud_reader.py",
+      "sha256": "51dddb51411851695f1bb12ab3019babc159b571f3f79b788f089910c762d1c3",
+      "bytes": 7080
+    },
+    {
+      "path": "experiments/weather_autonomy/cloud_worker.py",
+      "sha256": "5c863c0ef9ff9d572a857b5dc435b5319f4246de01a150c49c709ef45ec65283",
+      "bytes": 30804
+    },
+    {
+      "path": "experiments/weather_autonomy/configure_pilot_reader_iam.py",
+      "sha256": "109a6eb93f9647d6061fd684a4bf27376b5851274ed0fd33586e1b2fa751786b",
+      "bytes": 711
+    },
+    {
+      "path": "experiments/weather_autonomy/configure_pilot_worker_iam.py",
+      "sha256": "942407e78e21c91e00705253ca9cb217bc5ea78fbc423ef0cd80e6c2c0f1f843",
+      "bytes": 2691
+    },
+    {
+      "path": "experiments/weather_autonomy/configure_uv_iam.py",
+      "sha256": "227f960692403fc1feae3652ee7937cf511ebd81114ba94b2c5c843847e2a42c",
+      "bytes": 1001
+    },
+    {
+      "path": "experiments/weather_autonomy/decode_cams.py",
+      "sha256": "a91eb3e014c12c163d26d372da1d2bb584a6d6265b215c9d0e09b7c81a9f1df4",
+      "bytes": 27316
+    },
+    {
+      "path": "experiments/weather_autonomy/decode_cams_region.py",
+      "sha256": "d5070d804ed608cd0b4858fc680eeb8ce5840958476a6f20cdfac690a11a29e2",
+      "bytes": 31019
+    },
+    {
+      "path": "experiments/weather_autonomy/fetch_uv_sample.py",
+      "sha256": "c3c357225921546e22a35222d7e71d6afb36e0b47f6fa67e6feeb53446c97111",
+      "bytes": 2392
+    },
+    {
+      "path": "experiments/weather_autonomy/fixtures/ciampac-snow-tolerance-20261019.json",
+      "sha256": "2c690c8116d9dc5be29a4a03413661f16be832ccc0dab7cd9d6c948f2fafb2cf",
+      "bytes": 49918
+    },
+    {
+      "path": "experiments/weather_autonomy/freshness_monitor/__init__.py",
+      "sha256": "a8e1ad24c2b639870126e59f7367caab7e6551ba7de8ba86730e675eb9f3308d",
+      "bytes": 69
+    },
+    {
+      "path": "experiments/weather_autonomy/freshness_monitor/__main__.py",
+      "sha256": "185311c398b26805dc750e2b13c850990e113a8149b005f32222e304a0fd7159",
+      "bytes": 4507
+    },
+    {
+      "path": "experiments/weather_autonomy/freshness_monitor/collect.py",
+      "sha256": "f62ac117f37a494ec5fc30881f43ca5f0b4f425185afc912959a036141f66daa",
+      "bytes": 13838
+    },
+    {
+      "path": "experiments/weather_autonomy/freshness_monitor/contracts.py",
+      "sha256": "524d2502cbeb17e0cb26a484eabd7621843c904c67d8ee00ed5026b355c57d81",
+      "bytes": 6356
+    },
+    {
+      "path": "experiments/weather_autonomy/freshness_monitor/core.py",
+      "sha256": "aa805c9f8caf9a71d1c7377c1bb5fe092d2c2cc9027fc107b657f86592d2a9e6",
+      "bytes": 6662
+    },
+    {
+      "path": "experiments/weather_autonomy/freshness_monitor/definitions.py",
+      "sha256": "5faf807af776f237bb8834b8698edfefb946a025f4396c0ad9701147a97b1b7f",
+      "bytes": 7686
+    },
+    {
+      "path": "experiments/weather_autonomy/freshness_monitor/dispatcher.py",
+      "sha256": "d1b72751166367b7328d59eb852b44f543d330440847bf963469077a4d72d785",
+      "bytes": 8130
+    },
+    {
+      "path": "experiments/weather_autonomy/freshness_monitor/google.py",
+      "sha256": "14524f90277b19fe9092f280ae3bbb0ab04242221c3813b8ea6865fcd7b4387d",
+      "bytes": 9133
+    },
+    {
+      "path": "experiments/weather_autonomy/freshness_monitor/http.py",
+      "sha256": "7f0da1b7601cf421aee3e8db31e7694a98a4c33091d058b928aefb4be89524c1",
+      "bytes": 10165
+    },
+    {
+      "path": "experiments/weather_autonomy/freshness_monitor/runner.py",
+      "sha256": "9946b629d830ed0facd39d005998851495e0002a2a91a4f717f278b49de48810",
+      "bytes": 9395
+    },
+    {
+      "path": "experiments/weather_autonomy/freshness_monitor/schedule.py",
+      "sha256": "35936ae9a89889a7b15ca27520cb62ba7690c50b81d2d20cdf47c414f4ffff67",
+      "bytes": 2569
+    },
+    {
+      "path": "experiments/weather_autonomy/icon_semantics.py",
+      "sha256": "255ba6664deca83d6d7c6685df12580569e2fa9ac3432dbe33f185c5775974f5",
+      "bytes": 7123
+    },
+    {
+      "path": "experiments/weather_autonomy/local_app_adapter.py",
+      "sha256": "441a640560b212509f488f7a20319f1a2808f47f25c41d102ad081a8ea3cd7ce",
+      "bytes": 22857
+    },
+    {
+      "path": "experiments/weather_autonomy/local_pipeline/__init__.py",
+      "sha256": "4b4548768be9aacf326f391c8fbb62327243eb05b4df2252e24010b0a3e3f996",
+      "bytes": 60
+    },
+    {
+      "path": "experiments/weather_autonomy/local_pipeline/accumulation_tolerance.py",
+      "sha256": "a29bbcb88b4b6b2678adebfbd95e751e719948422304008f13948b90799d402b",
+      "bytes": 4649
+    },
+    {
+      "path": "experiments/weather_autonomy/local_pipeline/authoritative_catalog.py",
+      "sha256": "c203ddb7ef4614b082318693c4b7ba9a0f8f568b8829f2708fd729e376b6ccc7",
+      "bytes": 22403
+    },
+    {
+      "path": "experiments/weather_autonomy/local_pipeline/cams_artifact_checkpoint.py",
+      "sha256": "0f07fccf75ae1fab7c301234e0ac50e5c3153fdc76f4fdae893bce392acc9e02",
+      "bytes": 9069
+    },
+    {
+      "path": "experiments/weather_autonomy/local_pipeline/cams_continuity.py",
+      "sha256": "04812cf23d919ff49dcb33f6e6fbb522033886758303f6d66b65a5734d91fa23",
+      "bytes": 2164
+    },
+    {
+      "path": "experiments/weather_autonomy/local_pipeline/cams_lifecycle.py",
+      "sha256": "348586a639eec5efc7dc4c48d1792bd09f93c69771f16175694f57b37267f8a8",
+      "bytes": 47870
+    },
+    {
+      "path": "experiments/weather_autonomy/local_pipeline/contract_publisher.py",
+      "sha256": "f114dd0fd03ef1e272c3cce7a5f9cf3c64db83d5ab9c1da2b8fbb4b7e8cc154d",
+      "bytes": 91826
+    },
+    {
+      "path": "experiments/weather_autonomy/local_pipeline/contract_v1.py",
+      "sha256": "970e08ecd218d4c92e0988feb839c6e3f9b977f841d6c86cdf55859d0ddcbc4c",
+      "bytes": 59341
+    },
+    {
+      "path": "experiments/weather_autonomy/local_pipeline/contracts.py",
+      "sha256": "f50461485fafb2e26476849d40a180dc5a61fb01679e9d0feb256195c31aaf2f",
+      "bytes": 4382
+    },
+    {
+      "path": "experiments/weather_autonomy/local_pipeline/gcs_object_store.py",
+      "sha256": "9a6f845c10857f9b668af1b1528ec99ed76289139047d43418b76f6243d38ea6",
+      "bytes": 9284
+    },
+    {
+      "path": "experiments/weather_autonomy/local_pipeline/http_data_plane.py",
+      "sha256": "ae0ccb06aa628bd46e135d52952b9d368ca793bf9dde35b03f0e7095ea5b282e",
+      "bytes": 14655
+    },
+    {
+      "path": "experiments/weather_autonomy/local_pipeline/icon_accumulation_sidecar.py",
+      "sha256": "77d819ab543fee4a003c167cec3d9fdb266344277f3e548dd6754be58995162b",
+      "bytes": 3165
+    },
+    {
+      "path": "experiments/weather_autonomy/local_pipeline/icon_checkpoint.py",
+      "sha256": "3f47769661ed3b5a6c378fb7abf2933d0b6c766aab659a01a27781444f8f6eb4",
+      "bytes": 6408
+    },
+    {
+      "path": "experiments/weather_autonomy/local_pipeline/icon_quality.py",
+      "sha256": "8f157719ab22daa2a7676cd2e35fd649eed3aedd12e7ee167fa34dad3ff0a444",
+      "bytes": 9916
+    },
+    {
+      "path": "experiments/weather_autonomy/local_pipeline/job_entrypoints.py",
+      "sha256": "b4d84ebb451908e3f474745816cba0ab6704d3514df1e2b298708903125578fb",
+      "bytes": 22089
+    },
+    {
+      "path": "experiments/weather_autonomy/local_pipeline/job_outcomes.py",
+      "sha256": "9d07539021e9c00c966fdf60613a7e58ba620d53263a6a4bf9da45000bc9c046",
+      "bytes": 6216
+    },
+    {
+      "path": "experiments/weather_autonomy/local_pipeline/job_runtime.py",
+      "sha256": "47ff206908e1183eb684499bd9ffabbc175d5988d61c77bcad284815a17d7109",
+      "bytes": 14689
+    },
+    {
+      "path": "experiments/weather_autonomy/local_pipeline/local_scheduler.py",
+      "sha256": "48dd9b56586b049e66fc3edb4680de9f3f51052d12ae587b1cc954873d7591e5",
+      "bytes": 43208
+    },
+    {
+      "path": "experiments/weather_autonomy/local_pipeline/national_forecast_points.py",
+      "sha256": "69c4e04c20aa14e7a4b5d4d6793b2ad2d716f6a1e3cd00adad4671e0fadc9e91",
+      "bytes": 37238
+    },
+    {
+      "path": "experiments/weather_autonomy/local_pipeline/national_icon_bundle.py",
+      "sha256": "e3fd8ed0e651fa337862501500bc51824259096cc785fe8addc914dc4e1ab6b9",
+      "bytes": 44863
+    },
+    {
+      "path": "experiments/weather_autonomy/local_pipeline/object_state_store.py",
+      "sha256": "166e117f7a53c323b60d25800785c23b19bd8adebd23674926dc400788eeb6f8",
+      "bytes": 4353
+    },
+    {
+      "path": "experiments/weather_autonomy/local_pipeline/object_store_ports.py",
+      "sha256": "19133968735e85b4e283d8645e427a9c67057289e40f9d521d83bc7b69c8c43e",
+      "bytes": 1285
+    },
+    {
+      "path": "experiments/weather_autonomy/local_pipeline/operational_diagnostics.py",
+      "sha256": "a08c7159266fdad6c06e8e148f178cc40751bd5d709abeeb7f7642900219d49a",
+      "bytes": 11860
+    },
+    {
+      "path": "experiments/weather_autonomy/local_pipeline/publication_intent.py",
+      "sha256": "9ee5c78755c0392bc8bc53c59ecf8eff189816e870c26a37ed266b6104b1228d",
+      "bytes": 15072
+    },
+    {
+      "path": "experiments/weather_autonomy/local_pipeline/published_runs_reader.py",
+      "sha256": "92a01213e6c75f5d5e8edb956791e27f459199535024e1e3c578ef1e972c6b49",
+      "bytes": 46024
+    },
+    {
+      "path": "experiments/weather_autonomy/local_pipeline/publisher.py",
+      "sha256": "d10fbd969c1c55e49eff9afba0069d1e4b137d0905bcc20f1b6ddd5744b44a7c",
+      "bytes": 28320
+    },
+    {
+      "path": "experiments/weather_autonomy/local_pipeline/remote_publication_intent.py",
+      "sha256": "7029d61e87ec2c7e3e73873d32c864cd209ffd943e6fae02bc9c9ddb1ef8c6e1",
+      "bytes": 2287
+    },
+    {
+      "path": "experiments/weather_autonomy/local_pipeline/s3_object_store.py",
+      "sha256": "e3c5edca4442d5788c4d748da8604b19f738e923f00c0562f2cf01940ede797d",
+      "bytes": 4962
+    },
+    {
+      "path": "experiments/weather_autonomy/local_pipeline/snapshot_materializer.py",
+      "sha256": "7c9a9371e48ac6f04b82a7681846cc9202d30b6364fc2753b72a28b9952713ab",
+      "bytes": 28274
+    },
+    {
+      "path": "experiments/weather_autonomy/local_pipeline/sqlite_object_store.py",
+      "sha256": "2ccec0e332c88c68e35808c44893b27b13efeaf9215e96543503264e3c05623a",
+      "bytes": 15706
+    },
+    {
+      "path": "experiments/weather_autonomy/local_pipeline/sqlite_read_only_object_store.py",
+      "sha256": "a5ad7f291097813df3e5e9ab198b20f66190b272e7163f36589ac1111134bd28",
+      "bytes": 6308
+    },
+    {
+      "path": "experiments/weather_autonomy/local_pipeline/sqlite_state.py",
+      "sha256": "bb053fc67823e491d8a44de8419e8ebdfdf03c1b61f2200b826a9b2219547404",
+      "bytes": 28145
+    },
+    {
+      "path": "experiments/weather_autonomy/local_pipeline/test_authoritative_catalog.py",
+      "sha256": "e39bfdda98f0aec78a5c818c7b07fb560a8170d5a515f968f93c9bf2ac1dd1af",
+      "bytes": 6851
+    },
+    {
+      "path": "experiments/weather_autonomy/local_pipeline/test_sqlite_state.py",
+      "sha256": "7f48c74235b837b64e5267f9f0f5a4e310c1b2a1932465b8576af4a7152b9f4e",
+      "bytes": 18611
+    },
+    {
+      "path": "experiments/weather_autonomy/monitor_container_probe.py",
+      "sha256": "7926f6ad8cc84030a4ae7079f5b240fcb8d5c362a4dbc91abfb5e9927b45baa4",
+      "bytes": 17296
+    },
+    {
+      "path": "experiments/weather_autonomy/municipal_seat_reconciliation.py",
+      "sha256": "bc2b16a00ac12877f74b46fb5fff9543ea58af5057561b7f3245c137ee58ae7c",
+      "bytes": 48068
+    },
+    {
+      "path": "experiments/weather_autonomy/national_catalog.py",
+      "sha256": "3be1b7f1d4f9534dbc9f1d796af5fc4a669dddaddf4a869ad0520b8a41d2d7fb",
+      "bytes": 39329
+    },
+    {
+      "path": "experiments/weather_autonomy/national_cloud_assets.py",
+      "sha256": "9e0f5db5c4e2adbe1059fab995a4b40b5b715fde5b0e661cd1de6ffc602d5baa",
+      "bytes": 2494
+    },
+    {
+      "path": "experiments/weather_autonomy/national_cloud_lazy_reader.py",
+      "sha256": "5c255cba6474cc344fb0a3bae54e1bbef9c83df649900ac86d2c0c4fea1f84c3",
+      "bytes": 9499
+    },
+    {
+      "path": "experiments/weather_autonomy/national_cloud_publication.py",
+      "sha256": "62176ab967ef851247834e9d633388ef97693d377b0baa925bc80fb1f3dfc038",
+      "bytes": 9648
+    },
+    {
+      "path": "experiments/weather_autonomy/national_cloud_reader.py",
+      "sha256": "cb0509b43e3bc15c311281ef0e9001adfa029e52f842498ff7534d1ecfc81f55",
+      "bytes": 8233
+    },
+    {
+      "path": "experiments/weather_autonomy/national_cloud_seed.py",
+      "sha256": "2ddf45b42615496591d980a4f4f16465ae67f3b3ad85bdc5d9f0d674aa38f04a",
+      "bytes": 4078
+    },
+    {
+      "path": "experiments/weather_autonomy/national_cloud_worker.py",
+      "sha256": "341d291e257f3baeb3f1023f1132e087dfb79edbcfd562561dc5302382740a02",
+      "bytes": 8283
+    },
+    {
+      "path": "experiments/weather_autonomy/pilot_policy.py",
+      "sha256": "d0679f399df1d2efe140fd996272b7f70cefa1d5b4d8063ec47c7e648d8d3e00",
+      "bytes": 14477
+    },
+    {
+      "path": "experiments/weather_autonomy/probe_icon2i.py",
+      "sha256": "a737a7ec9015d5697e365b908aceb954985a04f624eaa4dab237c934e37b8f98",
+      "bytes": 14400
+    },
+    {
+      "path": "experiments/weather_autonomy/process_memory.py",
+      "sha256": "ee2ea84e30928a124a93d7f400703036314ee65ac324ba2949cf0cf0bd590965",
+      "bytes": 4082
+    },
+    {
+      "path": "experiments/weather_autonomy/profile_pilot_delivery.py",
+      "sha256": "c75e71a63e1c3f4c3436e45495e545f6546e14da59e1242bca5d59e733120063",
+      "bytes": 13035
+    },
+    {
+      "path": "experiments/weather_autonomy/publish_remote_cams.py",
+      "sha256": "3cd4d783be664dfcbff0a236091f18d9f3a4ef8fec992f4983748e4013bcc4b5",
+      "bytes": 8996
+    },
+    {
+      "path": "experiments/weather_autonomy/publish_remote_icon.py",
+      "sha256": "bd04608c78c9699011e25bd29a2913acd65e6a15fe3bb13b3ba9687d977742e7",
+      "bytes": 2599
+    },
+    {
+      "path": "experiments/weather_autonomy/publish_snapshots_v1.py",
+      "sha256": "a48d8fb227edf5930ff7c918c4c766224db7afe6067f7affeb3009027e38af1e",
+      "bytes": 6054
+    },
+    {
+      "path": "experiments/weather_autonomy/reconcile_cams_job.py",
+      "sha256": "79c0ffeb5b362f0b050de0b9b2e244b768a09a37b77ff40933d5cb06334c118c",
+      "bytes": 17408
+    },
+    {
+      "path": "experiments/weather_autonomy/resolve_istat_capoluogo_points.py",
+      "sha256": "c9de8e91f57fc9cfa3712ba814adfa9f26037c5a65081c71192970faeeb12189",
+      "bytes": 58165
+    },
+    {
+      "path": "experiments/weather_autonomy/retrieve_cams.py",
+      "sha256": "6587d049992cd626b3b3ac1f022cf409d3779990dc0232efd42070a191b7c249",
+      "bytes": 31478
+    },
+    {
+      "path": "experiments/weather_autonomy/retrieve_remote_cams.py",
+      "sha256": "6f173dbb90ed8cf51649109995ded7e9b030af9b6d9a123bc8d842f25993aa6d",
+      "bytes": 9730
+    },
+    {
+      "path": "experiments/weather_autonomy/run_cams_job.py",
+      "sha256": "8b0704b7e5871091fe9a24a1b4ca27746854be0fc04be0daeff70c59ca85dc65",
+      "bytes": 10206
+    },
+    {
+      "path": "experiments/weather_autonomy/run_compressed_schedule.py",
+      "sha256": "67fd894e65064c69099a3f050ae4e0336e3282041e14e6631076af9b668a7400",
+      "bytes": 53917
+    },
+    {
+      "path": "experiments/weather_autonomy/run_icon_job.py",
+      "sha256": "c76c312af323a539f5586a4119a283fc9eba9cc3cd001b9a07f9bfba0429c995",
+      "bytes": 7835
+    },
+    {
+      "path": "experiments/weather_autonomy/run_pilot.py",
+      "sha256": "0e5931267a91ba5be56d01ee5516b23da88c63504e9cf3d6a4c330051bb90b5c",
+      "bytes": 53938
+    },
+    {
+      "path": "experiments/weather_autonomy/serve_contract_v1.py",
+      "sha256": "35c9c7455746d5447176fa97760828582c290fd3c9b59fb87e5ea265c2fe2434",
+      "bytes": 24558
+    },
+    {
+      "path": "experiments/weather_autonomy/serve_local_app.py",
+      "sha256": "0edad725a88ef6ca446fc689bebf96b90a810972240b23a315e6ab8594d3c07d",
+      "bytes": 9225
+    },
+    {
+      "path": "experiments/weather_autonomy/serve_national_bundle_v2.py",
+      "sha256": "5ba1cabc3dcb506bfa2bdd9aa4f589a4c06d8ba8c4c3b20040c428a085511b59",
+      "bytes": 40731
+    },
+    {
+      "path": "experiments/weather_autonomy/serve_pilot.py",
+      "sha256": "ec805155377e2e55f7928e5245deb6d17ccf5cd0fd04d3835f986731fd7c1aa8",
+      "bytes": 7911
+    },
+    {
+      "path": "experiments/weather_autonomy/serve_published_contract_v1.py",
+      "sha256": "bc7da38923e6b1de2391e865089fd1291b95f997095ea2f2fb12c954478646b3",
+      "bytes": 6089
+    },
+    {
+      "path": "experiments/weather_autonomy/smoke_gcs_lease.py",
+      "sha256": "2c1397e5ecd804937e8c25094d17f0c0f30492f7c1c5f4bccc9a957fb2e9f302",
+      "bytes": 1819
+    },
+    {
+      "path": "experiments/weather_autonomy/smoke_gcs_pilot.py",
+      "sha256": "db8761753c46b66fc7c4e3cc2941eb7d422e1e79894d1ed0f6bd451ed8a2d3f5",
+      "bytes": 1671
+    },
+    {
+      "path": "experiments/weather_autonomy/submit_uv_pilot.py",
+      "sha256": "793ff9da0d85416677ea7071ca4d727cff672e8abe9b610bb2b1cea6200f3f15",
+      "bytes": 3348
+    },
+    {
+      "path": "experiments/weather_autonomy/test_benchmark_icon2i.py",
+      "sha256": "a9d725c57ef403a316741864bf3cbff9c877094e6686d14244bf87f0f9f43329",
+      "bytes": 32598
+    },
+    {
+      "path": "experiments/weather_autonomy/test_benchmark_national_icon_real.py",
+      "sha256": "3034e8c64af3f32dd86f235c9cc09bce37b515279a38369b3b882ce22aff9be7",
+      "bytes": 19291
+    },
+    {
+      "path": "experiments/weather_autonomy/test_cams_artifact_checkpoint.py",
+      "sha256": "05617720351249c7f8adbf16d7e949e42609ecb192c7ca08293f63a6f8335e3e",
+      "bytes": 6527
+    },
+    {
+      "path": "experiments/weather_autonomy/test_cams_availability.py",
+      "sha256": "76da7a83ded74e749041dd35ce6c9a67f314ff5ffa29c1c8e5275ba0617f77b0",
+      "bytes": 9874
+    },
+    {
+      "path": "experiments/weather_autonomy/test_cams_continuity.py",
+      "sha256": "128274fdb7ffc4092c7b0a34abcd491cf842177cffc0af87111e4f944673cd28",
+      "bytes": 9847
+    },
+    {
+      "path": "experiments/weather_autonomy/test_cams_local_lifecycle.py",
+      "sha256": "03cdddbd530426be52311beaa62b61820ee00309702171203190c1115b720686",
+      "bytes": 20965
+    },
+    {
+      "path": "experiments/weather_autonomy/test_cams_readback.py",
+      "sha256": "b097c1ab8fde96aa4308c9c96b26d4663576cdb0ac4810b9792fdae513f4e624",
+      "bytes": 4877
+    },
+    {
+      "path": "experiments/weather_autonomy/test_cams_request_plan.py",
+      "sha256": "2265d63f3c8302eff74ed5f91ae491cd3169d0f9e3de61ff760d953bc8b08e70",
+      "bytes": 25050
+    },
+    {
+      "path": "experiments/weather_autonomy/test_cams_worker_recovery.py",
+      "sha256": "d979907894fc08ab8fcc10848041710ef45e90bbe2b818449915e95a01b329fe",
+      "bytes": 12859
+    },
+    {
+      "path": "experiments/weather_autonomy/test_cloud_reader.py",
+      "sha256": "2bb3719d598a4e022f93598b9c343a99734b9d6e475429d0a46d9bead89d1d21",
+      "bytes": 1899
+    },
+    {
+      "path": "experiments/weather_autonomy/test_cloud_worker.py",
+      "sha256": "07bb79a80a13e3249e4040d9deed62d5556adc3979ae9c59598573916159799f",
+      "bytes": 20462
+    },
+    {
+      "path": "experiments/weather_autonomy/test_contract_publisher.py",
+      "sha256": "9a88865e03fcaca23a5080557da16efbc53bb84475cea4247c50017606123460",
+      "bytes": 60787
+    },
+    {
+      "path": "experiments/weather_autonomy/test_contract_v1.py",
+      "sha256": "f1294d0b97135f996de64157e187ade578399349e474227fecdaab7535d0f188",
+      "bytes": 16545
+    },
+    {
+      "path": "experiments/weather_autonomy/test_decode_cams.py",
+      "sha256": "912b3b83098a81667cd71d7b33a9891351c8cb160fe43214b4e3061d9d543a08",
+      "bytes": 10983
+    },
+    {
+      "path": "experiments/weather_autonomy/test_decode_cams_region.py",
+      "sha256": "74543731b3b67f5c918485942754245dc8d31731cc6dfad1e67db6a37bbbc359",
+      "bytes": 9723
+    },
+    {
+      "path": "experiments/weather_autonomy/test_freshness_monitor.py",
+      "sha256": "478bdd3f8dbc6c7d56f2e20704ac3018de21e0e310491e2e9dbab39ea98ea27d",
+      "bytes": 30137
+    },
+    {
+      "path": "experiments/weather_autonomy/test_freshness_monitor_deadline.py",
+      "sha256": "6e47a12a8c0b6601b8a0c036ff11700f2453f9490633727973c65a8df73f1fd4",
+      "bytes": 11800
+    },
+    {
+      "path": "experiments/weather_autonomy/test_freshness_monitor_dispatcher.py",
+      "sha256": "8c040bc950cf426b426e3ba7ed25cb10452bf5bb7cdddac4792aca9fc24a8768",
+      "bytes": 16791
+    },
+    {
+      "path": "experiments/weather_autonomy/test_freshness_monitor_package.py",
+      "sha256": "184950bcada42053d67d4e33c850ce6af191c02260e2628bd42fa8792d094d6e",
+      "bytes": 3065
+    },
+    {
+      "path": "experiments/weather_autonomy/test_freshness_monitor_policies.py",
+      "sha256": "a2f806c59b3f7e532127b7cec0138e7fbf015c52312624a93561f4cfce2ab19e",
+      "bytes": 5210
+    },
+    {
+      "path": "experiments/weather_autonomy/test_freshness_monitor_transport.py",
+      "sha256": "6c5dc6fea7ee33dd064dcffadde3364220d4134e9b6b5e1b4a5070f932baf0e3",
+      "bytes": 4705
+    },
+    {
+      "path": "experiments/weather_autonomy/test_gcs_object_store.py",
+      "sha256": "c97af2acbc10f8fbc241122cdc8d9e935919eceec61fc02a93817a9a1673d72f",
+      "bytes": 6466
+    },
+    {
+      "path": "experiments/weather_autonomy/test_http_data_plane.py",
+      "sha256": "17aa569ee0854970f711707989bbc2337e5c9d75a0b9fe5f0ff7d1bb37e36a93",
+      "bytes": 22378
+    },
+    {
+      "path": "experiments/weather_autonomy/test_icon_accumulation_sidecar.py",
+      "sha256": "06b0e71f98e1645f459f00b791b0199dd5610951abe878f88d8ecff0bf7fae85",
+      "bytes": 8525
+    },
+    {
+      "path": "experiments/weather_autonomy/test_icon_checkpoint.py",
+      "sha256": "1812750dc0a415970b761e2407ef6b3194ac40a399bac576117da0b9c7288a3d",
+      "bytes": 6246
+    },
+    {
+      "path": "experiments/weather_autonomy/test_icon_publication_recovery.py",
+      "sha256": "503666e4345f3b9dc625a8fbd1ce1a09efff31ac8f2ba15123e054794d46acee",
+      "bytes": 15074
+    },
+    {
+      "path": "experiments/weather_autonomy/test_icon_quality.py",
+      "sha256": "ed6bd4c3662858736f477a6f6563b91c04e52b0efa19378ad44b4a152104d29c",
+      "bytes": 5858
+    },
+    {
+      "path": "experiments/weather_autonomy/test_icon_semantics.py",
+      "sha256": "683f129f81dd3f1ac54816deaaa3d38ed9fa3ab5c812edd8f26bc84a24c81e80",
+      "bytes": 6907
+    },
+    {
+      "path": "experiments/weather_autonomy/test_job_entrypoints.py",
+      "sha256": "4921b464c96398d2fd26b6b93febad0bb60a459154a2e38202bbbb263a0f8e6d",
+      "bytes": 23309
+    },
+    {
+      "path": "experiments/weather_autonomy/test_job_runners.py",
+      "sha256": "903bea3bc59f06c572013fde9d04d2aa5b919174bc5e199a4109839521cad371",
+      "bytes": 32042
+    },
+    {
+      "path": "experiments/weather_autonomy/test_job_runtime.py",
+      "sha256": "b22b6d785fbac10d134ba98b7e8fd04906076a8862889369ae2e774fb68cf973",
+      "bytes": 18377
+    },
+    {
+      "path": "experiments/weather_autonomy/test_local_app_adapter.py",
+      "sha256": "6d39862605a96966530c98241c77b3db7258ffab29d1012dbce2feda63386a3e",
+      "bytes": 9058
+    },
+    {
+      "path": "experiments/weather_autonomy/test_local_publication.py",
+      "sha256": "ed389980437b0fd853c2edd72d8c2b66d7f2ef1b870ff71e5915912504a66e50",
+      "bytes": 14766
+    },
+    {
+      "path": "experiments/weather_autonomy/test_local_scheduler.py",
+      "sha256": "68a09fd9d1f88d02d9fc4840c0ef09487f2c971a7915e36e874190714ddbd431",
+      "bytes": 21100
+    },
+    {
+      "path": "experiments/weather_autonomy/test_municipal_seat_reconciliation.py",
+      "sha256": "fd13f990f31e43d0aaa37c05580b7401fcc6d7d0efcdb298467a6a48ededb72d",
+      "bytes": 23128
+    },
+    {
+      "path": "experiments/weather_autonomy/test_national_catalog.py",
+      "sha256": "d86f37d57e797fe2ed845311132bbb2410e9c10261a61f2b1fd053630eeb9f87",
+      "bytes": 4931
+    },
+    {
+      "path": "experiments/weather_autonomy/test_national_cloud.py",
+      "sha256": "e655f6ddc80e5e207ff4498e09ff841474680c58844cb0fd0c6dc55e701e273b",
+      "bytes": 14557
+    },
+    {
+      "path": "experiments/weather_autonomy/test_national_forecast_points.py",
+      "sha256": "d55a4b316812fa530876092bf73ac37ea2185f6225403119aa55c1cd388f0799",
+      "bytes": 21251
+    },
+    {
+      "path": "experiments/weather_autonomy/test_national_icon_bundle.py",
+      "sha256": "24698ac5ff2993fd3157e30448ba15a223373531c60dd80caf822d86e53f770f",
+      "bytes": 15671
+    },
+    {
+      "path": "experiments/weather_autonomy/test_object_state_store.py",
+      "sha256": "1b142664721ebb24351f02f1cfc82df2b405e55f889a423f82801adf6a70f6c2",
+      "bytes": 3511
+    },
+    {
+      "path": "experiments/weather_autonomy/test_operational_diagnostics.py",
+      "sha256": "05fc7683aa6a856e919998faec14cd84a7f3cee536a1dfb7ae6a7d5eae6f7c22",
+      "bytes": 5895
+    },
+    {
+      "path": "experiments/weather_autonomy/test_pilot_policy.py",
+      "sha256": "df4af726a465148c0c571524e491314d6e23992e23477e5c02f81a23e3ca7036",
+      "bytes": 18017
+    },
+    {
+      "path": "experiments/weather_autonomy/test_probe_icon2i.py",
+      "sha256": "ac1abe84ac5ba791bc6e1945885b0cf87cdd0398fbcf196d35edcb513c0ded9a",
+      "bytes": 7932
+    },
+    {
+      "path": "experiments/weather_autonomy/test_process_memory.py",
+      "sha256": "eb8aa54a6c7cda9385512580eaab4ca5b5f6baf1210010ed33a07216c402d26f",
+      "bytes": 5803
+    },
+    {
+      "path": "experiments/weather_autonomy/test_production_runtime_contract.py",
+      "sha256": "c24d51944e91c364e4c435e14451409228f7090f605d609fcd18c39279aee67a",
+      "bytes": 3047
+    },
+    {
+      "path": "experiments/weather_autonomy/test_profile_pilot_delivery.py",
+      "sha256": "efed82e5b988b91c3bd10c5a036a58907b0b354dfc8ce4ef4eda4fc3f9b5d9cc",
+      "bytes": 8395
+    },
+    {
+      "path": "experiments/weather_autonomy/test_publication_intent.py",
+      "sha256": "51a47a4f6466feeff6b704c18dcb0bb8d602f11069db357289ece1ddb0230df0",
+      "bytes": 8963
+    },
+    {
+      "path": "experiments/weather_autonomy/test_publish_remote_cams.py",
+      "sha256": "8a9d2259596544a4169814a2d77e2918f125afc4fab2d94d6ec6038eaebd5cd9",
+      "bytes": 13648
+    },
+    {
+      "path": "experiments/weather_autonomy/test_publish_snapshots_v1.py",
+      "sha256": "5952b63e560d89db0233cb620b56e8db2b25236bf79857c7a99b3bebce6d6734",
+      "bytes": 4313
+    },
+    {
+      "path": "experiments/weather_autonomy/test_published_runs_reader.py",
+      "sha256": "f96b7d287f37df6c06c4821c7115a9ef547ce61c517bb2a66e1543f61bd576fc",
+      "bytes": 56342
+    },
+    {
+      "path": "experiments/weather_autonomy/test_reconcile_cams_job.py",
+      "sha256": "7e700c8671647d58fcf4f941700151fdc153f96a607cae0d70d14ab3ad2b104f",
+      "bytes": 34447
+    },
+    {
+      "path": "experiments/weather_autonomy/test_remote_publication_intent.py",
+      "sha256": "25f16a80859c4617ef76050cfcf33f37bc05312c63c8a21abd292ca3628dc586",
+      "bytes": 3397
+    },
+    {
+      "path": "experiments/weather_autonomy/test_resolve_istat_capoluogo_points.py",
+      "sha256": "240e0d568dcd5ce076946bbeff58e1531b03c98127767540424dd54cf67b3817",
+      "bytes": 25129
+    },
+    {
+      "path": "experiments/weather_autonomy/test_retrieve_cams.py",
+      "sha256": "f53bc634935ea3ecdf975e7c768b227a3654ab3bd1aa7dca9f80e0d97bf976a8",
+      "bytes": 32431
+    },
+    {
+      "path": "experiments/weather_autonomy/test_retrieve_remote_cams.py",
+      "sha256": "ea5eadb7b7131884d67963c0ba26d3c32d7921caef702c1729bc19f86f563904",
+      "bytes": 6349
+    },
+    {
+      "path": "experiments/weather_autonomy/test_run_compressed_schedule.py",
+      "sha256": "85c92f96e22e3acae27b395678c7fef162fc41b95314df892842516cdfa40d24",
+      "bytes": 15067
+    },
+    {
+      "path": "experiments/weather_autonomy/test_run_pilot.py",
+      "sha256": "6ad32dd479d220506bffaa0014657247dfd1af2443a82fb3c8d0e54f3a6b7df2",
+      "bytes": 57345
+    },
+    {
+      "path": "experiments/weather_autonomy/test_s3_object_store.py",
+      "sha256": "5c50b646cc32706883e72774cee281664a1ea5493c665c1d47aecaab0b415ad1",
+      "bytes": 3577
+    },
+    {
+      "path": "experiments/weather_autonomy/test_serve_contract_v1.py",
+      "sha256": "31580b67465797f6c9066f2982373a8a738f373af405f9eb6d2f3df716a19790",
+      "bytes": 27169
+    },
+    {
+      "path": "experiments/weather_autonomy/test_serve_local_app.py",
+      "sha256": "12f6c666316215c40c0dba0991ab83ec7215edb259ebdaf5332dce983e38aa0f",
+      "bytes": 6185
+    },
+    {
+      "path": "experiments/weather_autonomy/test_serve_national_bundle_v2.py",
+      "sha256": "29e2f6736bca7837bbe072c1199f4fa07eafd100df706d9dc3a716ca50574bef",
+      "bytes": 17180
+    },
+    {
+      "path": "experiments/weather_autonomy/test_serve_pilot.py",
+      "sha256": "499a24a55c9e5e685a37902dc8c3d06010f1f897baeefbc244cfad6e5c2bbf5e",
+      "bytes": 34362
+    },
+    {
+      "path": "experiments/weather_autonomy/test_serve_published_contract_v1.py",
+      "sha256": "213e87c2c6c2828c6fdaf0cbb45ea1aceea0a2787f2c293e4574f4337764274f",
+      "bytes": 7275
+    },
+    {
+      "path": "experiments/weather_autonomy/test_snapshot_materializer.py",
+      "sha256": "3498e11bbddcb297086bb67a53a63cb2d174fe0c30fe8ee42fc58cae1e36d4e3",
+      "bytes": 10201
+    },
+    {
+      "path": "experiments/weather_autonomy/test_sqlite_read_only_object_store.py",
+      "sha256": "7f0d6c7748c23e592d9300e2a0b99e53755512d4efe226978fa818c656e962fd",
+      "bytes": 3586
+    },
+    {
+      "path": "experiments/weather_autonomy/test_thermal_comfort.py",
+      "sha256": "85396a72956419970629c206cd93b95245f64e37966918da8002d5290dc34b01",
+      "bytes": 9433
+    },
+    {
+      "path": "experiments/weather_autonomy/test_uv_cloud.py",
+      "sha256": "b6e25a73f391ee61616364d23113e9271aae8042c25da99addc767e0d3a0e25f",
+      "bytes": 882
+    },
+    {
+      "path": "experiments/weather_autonomy/test_uv_conversion.py",
+      "sha256": "1d9a88c29e2ff94050ec16288e55420ddf18f0a8816340c3243dce8e65cbd280",
+      "bytes": 758
+    },
+    {
+      "path": "experiments/weather_autonomy/test_uv_recovery.py",
+      "sha256": "47a6d37be70d08267df79b176493eb5c9dd3860abc94b59ab7d215b58ac01e83",
+      "bytes": 21067
+    },
+    {
+      "path": "experiments/weather_autonomy/test_uv_replacement.py",
+      "sha256": "892f786160cf0ef0527d662895e21e4631870984132b294e291b8145e079e9d7",
+      "bytes": 17947
+    },
+    {
+      "path": "experiments/weather_autonomy/thermal_comfort.py",
+      "sha256": "aba00aaa48e7d2fc85723cd95cef4ea2f82b58d9ca8b6b0031ab247f3251052b",
+      "bytes": 10277
+    },
+    {
+      "path": "experiments/weather_autonomy/uv_attempts.py",
+      "sha256": "986863c89b64f5fef3c56f574bb9908a3f3b7b20b59e3d42f76a51d83a5f3517",
+      "bytes": 15515
+    },
+    {
+      "path": "experiments/weather_autonomy/uv_cloud.py",
+      "sha256": "be6175c6bc7fb6a556977d73733dc3e52fc4ee6166c72ca81058b5481cddfd1c",
+      "bytes": 30173
+    },
+    {
+      "path": "experiments/weather_autonomy/uv_conversion.py",
+      "sha256": "737190e011a3cf5901a0574bd77ce0fb97ca0252bbb36f3158bdf921c1544b4d",
+      "bytes": 880
+    }
+  ]
+}

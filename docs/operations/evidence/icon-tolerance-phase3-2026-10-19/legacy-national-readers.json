@@ -1,0 +1,130 @@
+{
+  "service": "https://meteofriul-national-weather-49007668366.europe-west1.run.app",
+  "read_only": true,
+  "sample_not_full_country": true,
+  "cases": [
+    {
+      "city": "Milano",
+      "province": "MI",
+      "istat": "015146",
+      "run": "20261019T120000Z",
+      "hours": 73,
+      "block_sha256": "5f190c725b1c0569c68a2dfc52eeaab5a2c29503a9d740e332d62b6e7876772b"
+    },
+    {
+      "city": "Canazei",
+      "province": "TN",
+      "istat": "022039",
+      "run": "20261019T120000Z",
+      "hours": 73,
+      "block_sha256": "e77cf7fc8f2dc8bdecb56fb9220dbcdf57308c926e87bb59aebf7b3f87cbf3a8"
+    },
+    {
+      "city": "Roma",
+      "province": "RM",
+      "istat": "058091",
+      "run": "20261019T120000Z",
+      "hours": 73,
+      "block_sha256": "dec7b99cb7d6cf6eac2cd6860bff20c619d5d58ea01d3b524c695cf550919eb4"
+    },
+    {
+      "city": "Napoli",
+      "province": "NA",
+      "istat": "063049",
+      "run": "20261019T120000Z",
+      "hours": 73,
+      "block_sha256": "8613d34bca285c164ee2fe8f758f2a242873124f85d052f718feddaf24c1b638"
+    },
+    {
+      "city": "Palermo",
+      "province": "PA",
+      "istat": "082053",
+      "run": "20261019T120000Z",
+      "hours": 73,
+      "block_sha256": "45226609f4bd5f24bea59552ee340062692adc48fbe183f766b425f4f1d1e91b"
+    },
+    {
+      "city": "Cagliari",
+      "province": "CA",
+      "istat": "118006",
+      "run": "20261019T120000Z",
+      "hours": 73,
+      "block_sha256": "2c08f948513f505086c3d6a1fca9d31b6bb99399ccbdbd64b4bfe29c525b2287"
+    }
+  ],
+  "legacy_clients": [
+    {
+      "reader": "2f02c8ba",
+      "accepted": [
+        {
+          "city": "Milano",
+          "hours": 12,
+          "days": 4
+        },
+        {
+          "city": "Canazei",
+          "hours": 12,
+          "days": 4
+        },
+        {
+          "city": "Roma",
+          "hours": 12,
+          "days": 4
+        },
+        {
+          "city": "Napoli",
+          "hours": 12,
+          "days": 4
+        },
+        {
+          "city": "Palermo",
+          "hours": 12,
+          "days": 4
+        },
+        {
+          "city": "Cagliari",
+          "hours": 12,
+          "days": 4
+        }
+      ]
+    },
+    {
+      "reader": "8497e773",
+      "accepted": [
+        {
+          "city": "Milano",
+          "hours": 12,
+          "days": 4
+        },
+        {
+          "city": "Canazei",
+          "hours": 12,
+          "days": 4
+        },
+        {
+          "city": "Roma",
+          "hours": 12,
+          "days": 4
+        },
+        {
+          "city": "Napoli",
+          "hours": 12,
+          "days": 4
+        },
+        {
+          "city": "Palermo",
+          "hours": 12,
+          "days": 4
+        },
+        {
+          "city": "Cagliari",
+          "hours": 12,
+          "days": 4
+        }
+      ]
+    }
+  ],
+  "manifest_and_index_integrity": true,
+  "cors_android": true,
+  "national_service_deployed": false
+}

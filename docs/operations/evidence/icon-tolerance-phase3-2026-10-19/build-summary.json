@@ -1,0 +1,12 @@
+{
+  "build_id": "7d127b81-6075-43f0-a938-2ba48aee623f",
+  "status": "SUCCESS",
+  "image": "europe-west1-docker.pkg.dev/meteo-friul/meteofriul/weather-worker@sha256:b8719b7f26c355115ded47e282e19f8011ff270e0d0107a831526879155ac2f2",
+  "local_test_count": 198,
+  "local_passed": 197,
+  "local_failed": 1,
+  "local_failure": "CAMS synchronization wait(20); rerun unchanged in Linux image",
+  "local_test_seconds": 1275.205,
+  "cloud_tests_log": "F:\\proggetto Meteo Friul App\\meteo FRIUL\\.tmp\\icon-tolerance-phase3-20261019\\build-final.log",
+  "new_run_verification": "pending"
+}

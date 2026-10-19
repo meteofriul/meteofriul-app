@@ -1,0 +1,14 @@
+{
+  "operational_jobs_unchanged": 12,
+  "only_added_job": "meteofriul-local-notice-tolerance-qa",
+  "schedulers_unchanged": 11,
+  "qa_no_direct_invoker_binding": true,
+  "qa_roles": [
+    "roles/datastore.user"
+  ],
+  "other_project_iam_bindings_unchanged": true,
+  "weather_http_phase1_still_100_percent": true,
+  "producer_image_unchanged": true,
+  "morning_evening_job_images_unchanged": true,
+  "no_sends_enabled": true
+}

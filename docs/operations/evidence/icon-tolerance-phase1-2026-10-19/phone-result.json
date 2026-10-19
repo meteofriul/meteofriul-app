@@ -1,0 +1,19 @@
+{
+  "package": "com.meteofriul.app",
+  "version_name": "0.1.14",
+  "version_code": 300031,
+  "device": "SM-A525F",
+  "android": 14,
+  "all_installed_apk_hashes_unchanged": true,
+  "install_update_times_unchanged": true,
+  "pordenone_current_hourly_cams_visible": true,
+  "roma_current_and_tomorrow_hourly_visible": true,
+  "national_roma_device_http_200_confirmed": true,
+  "android_national_request_count": 3,
+  "automatic_location_and_original_pordenone_restored": true,
+  "notice_switch_never_toggled": true,
+  "no_fatal_errors_in_last_600_app_log_lines": true,
+  "bounded_log_only": true,
+  "no_installation_no_aab_no_emulator": true,
+  "known_limit": "Outside FVG UV, air and pollen unavailable by existing installed-client coverage."
+}

@@ -1,0 +1,37 @@
+{
+  "stage": "02-notice-consumer",
+  "status": "qa_deployed_manual_execution_verified_no_sends",
+  "reviewed_main": "5e04343a27716c9c42a65d2a45aea0f628bbb9d8",
+  "job": "meteofriul-local-notice-tolerance-qa",
+  "execution": "meteofriul-local-notice-tolerance-qa-vcgqj",
+  "execution_completed_utc": "2026-10-19T18:11:21.950233Z",
+  "image": "europe-west1-docker.pkg.dev/meteo-friul/meteofriul/backend@sha256:48d293f2d2ea2a0b5f1416e82be4b59ee95a86857a79b79822b6ee8ae5d71ca1",
+  "build_id": "8b1cc80d-b281-40e4-9ada-3b8de41db66e",
+  "local_tests": 201,
+  "container_tests": 201,
+  "same_suite_not_distinct_tests": true,
+  "build_log_sha256": "3a36ba9b03f664262261b872134b334cd92b6ebb7fa581b03aad3f55c31b1f95",
+  "delivery_mode": "dry_run",
+  "sidecar_enabled": true,
+  "scheduler_created": false,
+  "runtime_service_account": "meteofriul-notice-qa@meteo-friul.iam.gserviceaccount.com",
+  "runtime_project_roles": [
+    "roles/datastore.user"
+  ],
+  "messaging_role_granted": false,
+  "audit_collection": "local_notice_pilot_runs",
+  "audit_mode": "dry_run",
+  "audit_attempt_ids": [
+    "00f8ec999ddf45a9bf86606324641a0f"
+  ],
+  "raw_evidence_directory": "F:\\proggetto Meteo Friul App\\meteo FRIUL\\.tmp\\icon-tolerance-phase2-20261019",
+  "producer_updated": false,
+  "operational_notice_job_updated": false,
+  "morning_evening_jobs_updated": false,
+  "push_enabled": false,
+  "aab_generated": false,
+  "source_run_id": "20261019T120000Z",
+  "evidence_verified_points": 0,
+  "evidence_unavailable_points": 6,
+  "next_stage": "producer_on_new_run_then_repeat_qa_and_compare_before_operational_sends"
+}

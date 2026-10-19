@@ -4,16 +4,25 @@ Meteo Friûl è un'app indipendente dedicata al Friuli-Venezia Giulia. Riunisce
 meteo locale, bollettino regionale, allerte ufficiali, radar, webcam, eventi e
 contenuti culturali; l'interfaccia è disponibile in italiano e friulano.
 
-> Stato del repository aggiornato al 29 settembre 2026. Web e Android sono
+> Riepilogo delle release verificato al 29 settembre 2026. Web e Android sono
 > allineati alla versione `0.1.8`; la Web App è pubblicata su
 > `meteofriul.app`, mentre Android `0.1.8` (`300025`) è disponibile nel test
 > interno Google Play. La release Android usa R8 ed è stata verificata sul
 > telefono owner con App Check/Play Integrity e notifiche FCM.
 
+**Job meteo ICON-2I — 19 ottobre 2026:** il lettore HTTP compatibile e il
+produttore sono aggiornati. Il nuovo consumatore degli avvisi resta nel job QA
+senza invii; i job di invio operativi sono invariati. La verifica delle
+tolleranze sulla prima nuova corsa è ancora incompleta: corsa attesa il
+20 ottobre alle 08:00 italiane, controllo previsto alle 08:20 (09:20 se necessario).
+Stato, ordine delle fasi e rollback sono nel
+[piano coordinato](docs/operations/ICON2I_COORDINATED_ROLLOUT_20261019.md),
+con le evidenze nel [verbale del produttore](docs/operations/ICON2I_TOLERANCE_PHASE3_DEPLOY_20261019.md).
+
 [Apri l'app web](https://meteofriul.app) ·
 [Sostieni il progetto](https://ko-fi.com/meteofriul)
 
-## Stato attuale
+## Canali — riepilogo del 29 settembre 2026
 
 | Canale | Stato |
 | --- | --- |

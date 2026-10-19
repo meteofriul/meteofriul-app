@@ -1,0 +1,114 @@
+{
+  "attempted": 0,
+  "audit_failed": 0,
+  "candidates": 0,
+  "data_degraded_groups": 0,
+  "data_quality": {
+    "by_source_run": [
+      {
+        "accumulation_evidence": {
+          "disabled": 0,
+          "invalid": 0,
+          "unavailable": 6,
+          "verified": 0
+        },
+        "causes": [],
+        "evaluations_degraded": 0,
+        "evaluations_expected": 6,
+        "evaluations_not_possible": 0,
+        "evaluations_partial": 0,
+        "evaluations_with_tolerance": 0,
+        "municipalities_degraded": 0,
+        "municipalities_expected": 6,
+        "municipalities_not_evaluable": 0,
+        "phenomena": {
+          "heat": {
+            "evaluated_no_candidate": 6,
+            "evaluated_with_candidate": 0,
+            "expected": 6,
+            "not_evaluable": 0,
+            "only_resolution": 0,
+            "other_or_mixed": 0,
+            "with_operational_tolerance": 0
+          },
+          "ice": {
+            "evaluated_no_candidate": 6,
+            "evaluated_with_candidate": 0,
+            "expected": 6,
+            "not_evaluable": 0,
+            "only_resolution": 0,
+            "other_or_mixed": 0,
+            "with_operational_tolerance": 0
+          },
+          "rain": {
+            "evaluated_no_candidate": 6,
+            "evaluated_with_candidate": 0,
+            "expected": 6,
+            "not_evaluable": 0,
+            "only_resolution": 0,
+            "other_or_mixed": 0,
+            "with_operational_tolerance": 0
+          },
+          "snow": {
+            "evaluated_no_candidate": 6,
+            "evaluated_with_candidate": 0,
+            "expected": 6,
+            "not_evaluable": 0,
+            "only_resolution": 0,
+            "other_or_mixed": 0,
+            "with_operational_tolerance": 0
+          },
+          "storm": {
+            "evaluated_no_candidate": 6,
+            "evaluated_with_candidate": 0,
+            "expected": 6,
+            "not_evaluable": 0,
+            "only_resolution": 0,
+            "other_or_mixed": 0,
+            "with_operational_tolerance": 0
+          },
+          "wind": {
+            "evaluated_no_candidate": 6,
+            "evaluated_with_candidate": 0,
+            "expected": 6,
+            "not_evaluable": 0,
+            "only_resolution": 0,
+            "other_or_mixed": 0,
+            "with_operational_tolerance": 0
+          }
+        },
+        "source_run_id": "20261019T120000Z"
+      }
+    ],
+    "evaluations_degraded": 0,
+    "evaluations_expected": 6,
+    "evaluations_not_possible": 0,
+    "evaluations_partial": 0,
+    "evaluations_with_tolerance": 0,
+    "gate": "per_phenomenon",
+    "schema_version": "local-notice-quality.v2",
+    "scope": "canonical_point_per_job_execution"
+  },
+  "deduplicated": 0,
+  "delivery_batches": 0,
+  "device_failed": 0,
+  "duplicate_targets": 0,
+  "eligible_devices": 16,
+  "evaluated": 16,
+  "expired": 0,
+  "failed": 0,
+  "failed_groups": 0,
+  "groups": 6,
+  "in_progress": 0,
+  "opted_out": 0,
+  "pages_processed": 1,
+  "persisted": 6,
+  "retry_scheduled": 0,
+  "security_failed": 0,
+  "selected_kind": "",
+  "sent": 0,
+  "sent_unconfirmed": 0,
+  "source_failed": 0,
+  "status": "no_candidate",
+  "storage_failed": 0
+}

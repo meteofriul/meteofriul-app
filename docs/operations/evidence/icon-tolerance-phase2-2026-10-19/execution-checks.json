@@ -1,0 +1,17 @@
+{
+  "execution": "meteofriul-local-notice-tolerance-qa-vcgqj",
+  "status": "no_candidate",
+  "evaluated": 16,
+  "groups": 6,
+  "sent": 0,
+  "delivery_batches": 0,
+  "audit_records": 6,
+  "outbox_mutations_during_qa": 0,
+  "start_bound_utc": "2026-10-19T18:10:30.904918Z",
+  "audit_attempt_ids": [
+    "00f8ec999ddf45a9bf86606324641a0f"
+  ],
+  "source_failed": 0,
+  "failed": 0,
+  "producer_not_activated": true
+}
