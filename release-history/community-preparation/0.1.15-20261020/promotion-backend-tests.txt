@@ -1,0 +1,7 @@
+...........................{"event": "community_storage_unavailable", "cause_types": ["CommunityRepositoryUnavailable"]}
+.......{"event": "community_storage_unavailable", "cause_types": ["CommunityRepositoryUnavailable", "TimeoutError"]}
+...........................................................................................................................................
+----------------------------------------------------------------------
+Ran 173 tests in 22.544s
+
+OK

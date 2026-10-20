@@ -159,6 +159,32 @@ della nuova revisione e il percorso reale Play Integrity della 0.1.15 restano
 da eseguire. L'app pubblicata non è stata modificata o reinstallata; sono state
 verificate le sue richieste in regressione e le letture pubbliche attuali.
 Non si attribuisce a queste prove la chiusura del 503 isolato del 15 ottobre.
-`main` e GitHub restano invariati; il ramo è salvato localmente per la successiva
-revisione/promozione. Eventi, FCM, ICON e gli altri lavori mantengono le proprie
-attestazioni e gli eventuali punti aperti separati.
+Alla chiusura della preparazione `main` e GitHub erano invariati. La successiva
+verifica per la promozione locale è registrata sotto. Eventi, FCM, ICON e gli
+altri lavori mantengono le proprie attestazioni e gli eventuali punti aperti separati.
+
+
+## Ultimi controlli per la promozione locale su main
+
+Il 20 ottobre il proprietario ha autorizzato la promozione locale, senza push
+né operazioni di rilascio. Candidato ricontrollato:
+`013f694649f5f3e372ac8b90d05806a3e1003a68`, discendente diretto della baseline
+`5cbcd35ca88088220ff167b299cb4353ebdaf6d4`; non occorre risolvere conflitti.
+
+Ripetuti con esito PASS: 173 test backend, 33 test del pacchetto isolato
+(sottoinsieme), 3 test privacy, sintassi, pulizia, diff, hash dell'archivio e
+byte delle evidenze salvate in Git. Le prove confermano le operazioni legacy,
+la lettura dei gruppi misti e il blocco compatibile senza perdita di ricevute
+oppure punti. Rimane il requisito di aggiornamento per votare un gruppo v3.
+
+Nessuna differenza in `backend/app`, frontend, configurazione di produzione,
+Dockerfile o dipendenze runtime rispetto a `main`. Il collaudo reale precedente
+mantiene il proprio perimetro; nessuna nuova prova Android o cloud viene
+attribuita a questa promozione di preparazione, script e regressioni.
+L'archivio pronto resta quello del sorgente `05a4fcc6`, con hash invariato:
+il commit documentale finale non richiede una nuova immagine.
+
+[Attestazione dei controlli](../../release-history/community-preparation/0.1.15-20261020/promotion-checks.json).
+Procedura autorizzata: fast-forward locale del ramo verificato su `main`,
+poi verifica dei riferimenti e dello stato pulito. Il remote resta fermo e la CI
+non viene avviata. La promozione non attiva v3 e non distribuisce il backend.
