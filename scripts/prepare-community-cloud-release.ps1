@@ -1,6 +1,7 @@
 param(
   [Parameter(Mandatory = $true)][string]$ExpectedCurrentRevision,
-  [Parameter(Mandatory = $true)][string]$ExpectedCurrentImageDigest
+  [Parameter(Mandatory = $true)][string]$ExpectedCurrentImageDigest,
+  [string]$GeographyPath
 )
 
 # Local preparation only. This script has no gcloud, GitHub or deployment calls.
@@ -28,7 +29,7 @@ if ($CommunityRuntimeEnv -notmatch '(?m)^COMMUNITY_V3_WRITES_ENABLED: "0"\s*$') 
 & (Join-Path $PSHOME 'pwsh.exe') -NoProfile -File (Join-Path $PSScriptRoot 'test-canonical-workspace-cleanliness.ps1') | Out-Host
 if ($LASTEXITCODE -ne 0) { throw 'Canonical cleanliness failed.' }
 
-$CommunityPreparedContext = & (Join-Path $PSScriptRoot 'package-community-cloud-context.ps1') | ConvertFrom-Json
+$CommunityPreparedContext = & (Join-Path $PSScriptRoot 'package-community-cloud-context.ps1') -GeographyPath $GeographyPath | ConvertFrom-Json
 # Require every packaged source to be committed, even if unrelated user files
 # are untracked. Ignored geography is the sole explicitly pinned exception.
 $CommunityAllowlist = Get-Content -LiteralPath (Join-Path $CommunityReleaseRoot 'backend/community-pilot-context.files.json') -Raw | ConvertFrom-Json
@@ -44,6 +45,15 @@ $CommunityArchive = Join-Path $CommunityOutput 'source.tar.gz'
 & tar.exe -czf $CommunityArchive -C $CommunityPreparedContext.ContextPath .
 if ($LASTEXITCODE -ne 0) { throw 'Cannot archive the allowlisted context.' }
 Copy-Item -LiteralPath (Join-Path $CommunityReleaseRoot 'backend/community-production.env.yaml') -Destination (Join-Path $CommunityOutput 'runtime.env.yaml')
+# Activation and compatible rollback use the same image, storage and identities.
+# These are local plans only. Never restore an old snapshot or a legacy-only
+# image after the first accepted v3 operation.
+$CommunityActivationEnv = $CommunityRuntimeEnv -replace '(?m)^COMMUNITY_V3_WRITES_ENABLED: "0"\r?$', 'COMMUNITY_V3_WRITES_ENABLED: "1"'
+if ($CommunityActivationEnv -notmatch '(?m)^COMMUNITY_V3_WRITES_ENABLED: "1"\s*$') {
+  throw 'Cannot prepare the explicit v3 activation configuration.'
+}
+$CommunityActivationEnv | Set-Content -LiteralPath (Join-Path $CommunityOutput 'activation.env.yaml') -Encoding utf8
+Copy-Item -LiteralPath (Join-Path $CommunityOutput 'runtime.env.yaml') -Destination (Join-Path $CommunityOutput 'rollback-compatible.env.yaml')
 $CommunityValidationService = 'meteofriul-community-validation'
 $CommunityValidationHost = "$CommunityValidationService-49007668366.europe-west1.run.app"
 $CommunityValidationPointer = "compat-validation-$CommunityShortCommit"
@@ -58,7 +68,7 @@ if ($CommunityValidationEnv -match '(?m)^COMMUNITY_POINTER_DOCUMENT: current\s*$
 }
 $CommunityValidationEnv | Set-Content -LiteralPath (Join-Path $CommunityOutput 'validation.env.yaml') -Encoding utf8
 $CommunityManifest = [ordered]@{
-  Schema = 'meteofriul.community-release-preparation.v1'
+  Schema = 'meteofriul.community-release-preparation.v2'
   PreparedAtUtc = $CommunityStamp
   SourceCommit = $CommunitySourceCommit
   Branch = $CommunityReleaseBranch
@@ -73,6 +83,13 @@ $CommunityManifest = [ordered]@{
   Archive = $CommunityArchive
   ArchiveSha256 = (Get-FileHash -LiteralPath $CommunityArchive -Algorithm SHA256).Hash.ToLowerInvariant()
   RuntimeEnvSha256 = (Get-FileHash -LiteralPath (Join-Path $CommunityOutput 'runtime.env.yaml') -Algorithm SHA256).Hash.ToLowerInvariant()
+  ActivationEnvSha256 = (Get-FileHash -LiteralPath (Join-Path $CommunityOutput 'activation.env.yaml') -Algorithm SHA256).Hash.ToLowerInvariant()
+  Rollback = @{
+    Mode = 'freeze-v3-writes-on-compatible-runtime'
+    EnvSha256 = (Get-FileHash -LiteralPath (Join-Path $CommunityOutput 'rollback-compatible.env.yaml') -Algorithm SHA256).Hash.ToLowerInvariant()
+    CompatibleImageRequired = $true
+    RestoreOldDataSnapshot = $false
+  }
   Validation = @{
     Service = $CommunityValidationService
     Host = $CommunityValidationHost
