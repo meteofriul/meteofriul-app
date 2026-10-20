@@ -606,13 +606,15 @@ def parse_civil_protection_widget_alerts(text: str) -> list[dict]:
         item = group["item"]
         zone_levels = group["zone_levels"]
         actionable_levels = {level for level in zone_levels.values() if level != "verde"}
-        if len(actionable_levels) > 1:
-            # A single level cannot describe distinct positive severities safely.
-            raise OfficialAlertsParserError("mixed_widget_alert_levels")
-        level = next(iter(actionable_levels), "verde")
+        ranked_levels = [
+            value for value in ("nera", "rossa", "arancione", "gialla")
+            if value in actionable_levels
+        ]
+        mixed_levels = len(ranked_levels) > 1
+        level = ranked_levels[0] if ranked_levels else "verde"
         zones = sorted(
             zone for zone, zone_level in zone_levels.items()
-            if zone_level == level
+            if zone_level != "verde" or not actionable_levels
         )
         title = str(item.get("title") or "").strip()
         official_text = str(item.get("description") or "").strip()
@@ -625,6 +627,30 @@ def parse_civil_protection_widget_alerts(text: str) -> list[dict]:
         else:
             area = ", ".join(f"zona {zone}" for zone in zones)
 
+        bodies = {}
+        for language in ("it", "fur"):
+            if mixed_levels:
+                # The widget supplies severities per zone, not risks per zone.
+                # Do not assign every textual risk to every severity/zone.
+                bodies[language] = " ".join(
+                    build_official_alert_push_body(
+                        value, [], time_window if index == 0 else "",
+                        ", ".join(
+                            f"zona {zone}" for zone in sorted(zone_levels)
+                            if zone_levels[zone] == value
+                        ), language,
+                    )
+                    for index, value in enumerate(ranked_levels)
+                )
+            else:
+                bodies[language] = build_official_alert_push_body(
+                    level, risks, time_window, area, language
+                )
+        # Existing clients use mixed_levels and the official text to avoid
+        # attributing the regional maximum to all affected zones.
+        if mixed_levels:
+            area = ""
+
         valid_from, valid_from_label = parse_widget_alert_datetime(item.get("dt_start"))
         valid_to, valid_to_label = parse_widget_alert_datetime(item.get("dt_end"))
 
@@ -633,6 +659,9 @@ def parse_civil_protection_widget_alerts(text: str) -> list[dict]:
                 "id": normalize_for_search(title or official_text).replace(" ", "-"),
                 "title": title,
                 "level": level,
+                "levels": ranked_levels or ["verde"],
+                "mixed_levels": mixed_levels,
+                "zone_levels": dict(sorted(zone_levels.items())),
                 "risks": risks,
                 "severity": "",
                 "category": "Meteorologica" if str(item.get("type") or "").upper() == "METEO" else str(item.get("type") or ""),
@@ -648,12 +677,9 @@ def parse_civil_protection_widget_alerts(text: str) -> list[dict]:
                 "source": PROTEZIONE_CIVILE_ALERTS_SOURCE,
                 "source_mode": "official_widget",
                 "push_title": "Meteo Friul",
-                "push_body": build_official_alert_push_body(level, risks, time_window, area),
+                "push_body": bodies["it"],
                 "push_title_i18n": {"it": "Meteo Friul", "fur": "Meteo Friul"},
-                "push_body_i18n": {
-                    "it": build_official_alert_push_body(level, risks, time_window, area, "it"),
-                    "fur": build_official_alert_push_body(level, risks, time_window, area, "fur"),
-                },
+                "push_body_i18n": bodies,
             }
         )
 

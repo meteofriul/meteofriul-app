@@ -1,0 +1,14 @@
+{
+  "time": "2026-10-20T16:56:49.872325+02:00",
+  "packages_unchanged": true,
+  "methods": {
+    "GET": 65,
+    "OPTIONS": 5
+  },
+  "blocked_requests": [],
+  "app_exceptions": [],
+  "notification_permission": "default",
+  "front_end": [
+    "http://127.0.0.1:5176/assets/main-CJxLHnmY.js"
+  ]
+}

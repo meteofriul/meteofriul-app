@@ -4,11 +4,21 @@ Meteo Friûl è un'app indipendente dedicata al Friuli-Venezia Giulia. Riunisce
 meteo locale, bollettino regionale, allerte ufficiali, radar, webcam, eventi e
 contenuti culturali; l'interfaccia è disponibile in italiano e friulano.
 
-> Riepilogo delle release verificato al 29 settembre 2026. Web e Android sono
-> allineati alla versione `0.1.8`; la Web App è pubblicata su
-> `meteofriul.app`, mentre Android `0.1.8` (`300025`) è disponibile nel test
-> interno Google Play. La release Android usa R8 ed è stata verificata sul
-> telefono owner con App Check/Play Integrity e notifiche FCM.
+> Stato Web verificato il 20 ottobre 2026: il sito pubblico espone `0.1.14`,
+> ma non contiene ancora tutte le modifiche approvate nella TEST e integrate
+> in `main`. È in preparazione il candidato Web dalla stessa base Android;
+> preparazione e pubblicazione sono fasi distinte.
+>
+> La Web App deve seguire la release Android: è anche il canale per chi usa
+> iPhone dal browser. Il [percorso di allineamento Web/Android](docs/operations/WEB_ANDROID_RELEASE_PARITY.md)
+> richiede sorgenti e funzionalità coerenti, oltre alla verifica Safari/iPhone.
+
+**Web — verifica locale del 20 ottobre 2026:** candidata verificata su Brave
+del Galaxy, incluse le correzioni a Indietro nel dettaglio Eventi e al doppio
+comando di cancellazione nella ricerca. Superati 56 test mirati e i controlli
+italiano/chiaro e friulano/scuro. Commit e integrazione locale autorizzati;
+nessuna pubblicazione. Evidenze e limiti nel
+[verbale Web sul Galaxy](docs/operations/WEB_APP_BROWSER_FIXES_20261020.md).
 
 **Job meteo ICON-2I — 19 ottobre 2026:** il lettore HTTP compatibile e il
 produttore sono aggiornati. Il nuovo consumatore degli avvisi resta nel job QA
@@ -22,21 +32,21 @@ con le evidenze nel [verbale del produttore](docs/operations/ICON2I_TOLERANCE_PH
 **App — verifica locale del 19 ottobre 2026:** il candidato integrato con testi
 IT/FUR, Indietro Android, conferma/ricevuta Community, aggiornamento FVG e nuovi
 temi delle previsioni ha superato le verifiche sulla TEST `.6` (`300037`) del
-Galaxy A52. È pronto per l'allineamento a main locale; le impostazioni speciali
+Galaxy A52. È stato integrato in main locale; le impostazioni speciali
 della TEST restano escluse. Nessuna nuova AAB, pubblicazione o attivazione degli
 invii. Evidenze e limiti nel [verbale sul telefono](docs/operations/APP_INTEGRATED_TEST_DEVICE_20261019.md).
 
 [Apri l'app web](https://meteofriul.app) ·
 [Sostieni il progetto](https://ko-fi.com/meteofriul)
 
-## Canali — riepilogo del 29 settembre 2026
+## Canali — Web verificato il 20 ottobre 2026, storico Play indicato separatamente
 
 | Canale | Stato |
 | --- | --- |
-| Web | Versione `0.1.8` pubblicata da Cloudflare Pages su `meteofriul.app` |
+| Web | `0.1.14` pubblicata su `meteofriul.app`; aggiornamento dalla base approvata in preparazione, non ancora pubblicato |
 | API | FastAPI su Cloud Run, chiamata direttamente via HTTPS da Web e Android |
-| Android | Capacitor 8, release `0.1.8` (`versionCode 300025`) minificata e ottimizzata con R8 |
-| Google Play | Release `0.1.8` (`300025`) pubblicata nel test interno e verificata sul telefono owner |
+| Android | Base approvata in main, verificata con TEST `.6` (`300037`); prossima AAB non generata |
+| Google Play | Storico al 29 settembre: `0.1.8` (`300025`) nel test interno; stato corrente della Console non ricontrollato in questa preparazione Web |
 | Landing `meteofriul.it` | Gestita e distribuita da un progetto separato |
 | Push | Generazione `play-beta-v1`, App Check in enforce, Android/Web abilitati e lotti Firestore/FCM da 200 elementi |
 | Sintesi mattutina | Una notifica quotidiana alle 07:30 `Europe/Rome`, con apertura diretta del Bollettino |

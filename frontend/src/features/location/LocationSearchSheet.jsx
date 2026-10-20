@@ -339,18 +339,20 @@ export function LocationSearchSheet({
             placeholder={copy.placeholder}
             type="search"
           />
-          {showSpinner ? <Loader2 aria-hidden="true" className="mf-location-search__spinner" size={16} /> : null}
-          {query ? (
-            <button
-              aria-label={copy.clearSearch}
-              className="mf-location-search__clear"
-              disabled={selectionBusy}
-              onClick={handleClearSearch}
-              type="button"
-            >
-              <X aria-hidden="true" size={16} strokeWidth={2.35} />
-            </button>
-          ) : null}
+          <div className="mf-location-search__actions">
+            {showSpinner ? <Loader2 aria-hidden="true" className="mf-location-search__spinner" size={16} /> : null}
+            {query ? (
+              <button
+                aria-label={copy.clearSearch}
+                className="mf-location-search__clear"
+                disabled={selectionBusy}
+                onClick={handleClearSearch}
+                type="button"
+              >
+                <X aria-hidden="true" size={16} strokeWidth={2.35} />
+              </button>
+            ) : null}
+          </div>
         </div>
 
         {selectionFeedback.status !== "idle" ? (

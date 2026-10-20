@@ -1,0 +1,1187 @@
+{
+  "url": "http://127.0.0.1:5176/?tab=weather",
+  "ua": "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/155.0.0.0 Mobile Safari/537.36",
+  "viewport": {
+    "width": 411,
+    "height": 728,
+    "pageWidth": 411,
+    "dpr": 2.625
+  },
+  "text": "METEO FRIÛL\nMETEO\nFRI\nU\nL\nMeteo e events pal timp libar\nTire ju par inzornâ\nUdin\nPrevisions\nBoletin\nTimp reâl\nTimp\nMartars 20 otubar\nModel ICON-2I · 19/10 · 14:00\nVuê\n15° / 20°\nDoman\n16° / 20°\nJoibe\n11° / 16°\n16:00\n20°\n0 mm\n17:00\n19°\n0 mm\n18:00\n19°\n0 mm\n19:00\n18°\n0 mm\n20:00\n17°\n0 mm\n21:00\n17°\n0 mm\n22:00\n17°\n0 mm\n23:00\n17°\n0,0 mm\n00:00\n16°\n0,1 mm\n01:00\n16°\n0,9 mm\n02:00\n16°\n0,8 mm\n03:00\n16°\n0,5 mm\n04:00\n16°\n05:00\n17°\n0,4 mm\n06:00\n17°\n0,3 mm\n07:00\n17°\n3 mm\n08:00\n17°\n10 mm\n09:00\n17°\n6 mm\n10:00\n17°\n20 mm\n11:00\n18°\n0,0 mm\n12:00\n19°\n1 mm\n13:00\n19°\n1 mm\n14:00\n18°\n2 mm\n15:00\n19°\n1,0 mm\n16:00\n20°\n0 mm\n17:00\n19°\n18:00\n18°\n0 mm\n19:00\n18°\n0 mm\n20:00\n17°\n0 mm\n21:00\n17°\n0 mm\n22:00\n17°\n0 mm\n23:00\n17°\n0 mm\n00:00\n16°\n21 mm\n01:00\n15°\n0,3 mm\n02:00\n16°\n03:00\n15°\n04:00\n15°\n0 mm\n05:00\n15°\n06:00\n15°\n0 mm\n07:00\n15°\n08:00\n13°\n4 mm\n09:00\n11°\n8 mm\n10:00\n11°\n13 mm\n11:00\n13°\n0,3 mm\n12:00\n13°\n0,2 mm\n13:00\n12°\n0,1 mm\n14:00\n12°\n4 mm\nSoreli e Lune\n10h 43m\nLus dal dì\nAlbe 07:30\nTramont 18:13\nPrin cuart\nIndiç UV\n\nPrevision no disponibile\n\nCualitât de arie\n\nDâts de arie no disponibii\n\nPolins\n\nDâts sui polins no disponibii\n\nCjase\nTimp\n4\nEvenis\nScuvierç",
+  "dialogs": [],
+  "days": [
+    {
+      "text": "Vuê\n15° / 20°",
+      "aria": "Vuê, Martars 20 otubar 15° / 20°",
+      "selected": "true",
+      "bounds": {
+        "x": 28.761905670166016,
+        "y": 234.32142639160156,
+        "w": 113.96428680419922,
+        "h": 97
+      },
+      "scrollWidth": 112,
+      "clientWidth": 112,
+      "border": "0.761905px solid rgb(19, 127, 179)",
+      "shadow": "rgb(19, 127, 179) 0px 0px 0px 1px inset, rgba(19, 127, 179, 0.16) 0px 0px 6px 1px inset",
+      "background": "rgb(237, 246, 250) none repeat scroll 0% 0% / auto padding-box border-box",
+      "color": "rgb(16, 54, 78)",
+      "font": "16px Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", sans-serif"
+    },
+    {
+      "text": "Doman\n16° / 20°",
+      "aria": "Doman, Miercus 21 otubar 16° / 20°",
+      "selected": "false",
+      "bounds": {
+        "x": 148.7261962890625,
+        "y": 234.32142639160156,
+        "w": 113.9702377319336,
+        "h": 97
+      },
+      "scrollWidth": 112,
+      "clientWidth": 112,
+      "border": "0.761905px solid rgb(195, 220, 233)",
+      "shadow": "none",
+      "background": "rgb(237, 246, 250) none repeat scroll 0% 0% / auto padding-box border-box",
+      "color": "rgb(16, 54, 78)",
+      "font": "16px Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", sans-serif"
+    },
+    {
+      "text": "Joibe\n11° / 16°",
+      "aria": "Joibe 22 otubar 11° / 16°",
+      "selected": "false",
+      "bounds": {
+        "x": 268.6964416503906,
+        "y": 234.32142639160156,
+        "w": 113.96428680419922,
+        "h": 97
+      },
+      "scrollWidth": 112,
+      "clientWidth": 112,
+      "border": "0.761905px solid rgb(195, 220, 233)",
+      "shadow": "none",
+      "background": "rgb(237, 246, 250) none repeat scroll 0% 0% / auto padding-box border-box",
+      "color": "rgb(16, 54, 78)",
+      "font": "16px Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", sans-serif"
+    }
+  ],
+  "selectedHours": [],
+  "buttons": [
+    {
+      "text": "",
+      "aria": "Vierç impostazions",
+      "selected": null,
+      "bounds": {
+        "x": 355.4285888671875,
+        "y": 24,
+        "w": 44,
+        "h": 44
+      },
+      "scrollWidth": 44,
+      "clientWidth": 44,
+      "border": "0px none rgb(2, 132, 199)",
+      "shadow": "none",
+      "background": "rgba(0, 0, 0, 0) none repeat scroll 0px 0px / auto padding-box border-box",
+      "color": "rgb(2, 132, 199)",
+      "font": "16px Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", sans-serif"
+    },
+    {
+      "text": "Previsions",
+      "aria": null,
+      "selected": null,
+      "bounds": {
+        "x": 15.7619047164917,
+        "y": 133.76190185546875,
+        "w": 123.96428680419922,
+        "h": 32
+      },
+      "scrollWidth": 122,
+      "clientWidth": 122,
+      "border": "0.761905px solid rgba(142, 219, 255, 0.45)",
+      "shadow": "rgba(9, 29, 61, 0.2) 0px 5px 14px 0px",
+      "background": "radial-gradient(circle at 92% 5%, rgba(19, 137, 201, 0.36), rgba(0, 0, 0, 0) 34%) repeat scroll 0% 0% / auto padding-box border-box, rgba(0, 0, 0, 0) linear-gradient(140deg, rgb(23, 57, 101), rgb(9, 29, 61)) repeat scroll 0% 0% / auto padding-box border-box",
+      "color": "rgb(255, 255, 255)",
+      "font": "850 12.16px Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", sans-serif"
+    },
+    {
+      "text": "Boletin",
+      "aria": null,
+      "selected": null,
+      "bounds": {
+        "x": 143.7261962890625,
+        "y": 133.76190185546875,
+        "w": 123.9702377319336,
+        "h": 32
+      },
+      "scrollWidth": 122,
+      "clientWidth": 122,
+      "border": "0.761905px solid rgba(0, 0, 0, 0)",
+      "shadow": "none",
+      "background": "rgba(0, 0, 0, 0) none repeat scroll 0px 0px / auto padding-box border-box",
+      "color": "rgb(71, 85, 105)",
+      "font": "850 12.16px Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", sans-serif"
+    },
+    {
+      "text": "Timp reâl",
+      "aria": null,
+      "selected": null,
+      "bounds": {
+        "x": 271.6964416503906,
+        "y": 133.76190185546875,
+        "w": 123.96428680419922,
+        "h": 32
+      },
+      "scrollWidth": 122,
+      "clientWidth": 122,
+      "border": "0.761905px solid rgba(0, 0, 0, 0)",
+      "shadow": "none",
+      "background": "rgba(0, 0, 0, 0) none repeat scroll 0px 0px / auto padding-box border-box",
+      "color": "rgb(71, 85, 105)",
+      "font": "850 12.16px Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", sans-serif"
+    },
+    {
+      "text": "Vuê\n15° / 20°",
+      "aria": "Vuê, Martars 20 otubar 15° / 20°",
+      "selected": "true",
+      "bounds": {
+        "x": 28.761905670166016,
+        "y": 234.32142639160156,
+        "w": 113.96428680419922,
+        "h": 97
+      },
+      "scrollWidth": 112,
+      "clientWidth": 112,
+      "border": "0.761905px solid rgb(19, 127, 179)",
+      "shadow": "rgb(19, 127, 179) 0px 0px 0px 1px inset, rgba(19, 127, 179, 0.16) 0px 0px 6px 1px inset",
+      "background": "rgb(237, 246, 250) none repeat scroll 0% 0% / auto padding-box border-box",
+      "color": "rgb(16, 54, 78)",
+      "font": "16px Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", sans-serif"
+    },
+    {
+      "text": "Doman\n16° / 20°",
+      "aria": "Doman, Miercus 21 otubar 16° / 20°",
+      "selected": "false",
+      "bounds": {
+        "x": 148.7261962890625,
+        "y": 234.32142639160156,
+        "w": 113.9702377319336,
+        "h": 97
+      },
+      "scrollWidth": 112,
+      "clientWidth": 112,
+      "border": "0.761905px solid rgb(195, 220, 233)",
+      "shadow": "none",
+      "background": "rgb(237, 246, 250) none repeat scroll 0% 0% / auto padding-box border-box",
+      "color": "rgb(16, 54, 78)",
+      "font": "16px Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", sans-serif"
+    },
+    {
+      "text": "Joibe\n11° / 16°",
+      "aria": "Joibe 22 otubar 11° / 16°",
+      "selected": "false",
+      "bounds": {
+        "x": 268.6964416503906,
+        "y": 234.32142639160156,
+        "w": 113.96428680419922,
+        "h": 97
+      },
+      "scrollWidth": 112,
+      "clientWidth": 112,
+      "border": "0.761905px solid rgb(195, 220, 233)",
+      "shadow": "none",
+      "background": "rgb(237, 246, 250) none repeat scroll 0% 0% / auto padding-box border-box",
+      "color": "rgb(16, 54, 78)",
+      "font": "16px Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", sans-serif"
+    },
+    {
+      "text": "16:00\n20°\n0 mm",
+      "aria": "Vuê · 16:00 · Cuviert · 20°",
+      "selected": "false",
+      "bounds": {
+        "x": 31.619049072265625,
+        "y": 350.0833435058594,
+        "w": 74,
+        "h": 116
+      },
+      "scrollWidth": 72,
+      "clientWidth": 72,
+      "border": "0.761905px solid rgb(19, 127, 179)",
+      "shadow": "rgb(19, 127, 179) 0px 0px 0px 1px inset, rgba(19, 127, 179, 0.16) 0px 0px 6px 1px inset",
+      "background": "rgb(237, 246, 250) none repeat scroll 0% 0% / auto padding-box border-box",
+      "color": "rgb(16, 54, 78)",
+      "font": "16px Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", sans-serif"
+    },
+    {
+      "text": "17:00\n19°\n0 mm",
+      "aria": "Vuê · 17:00 · Cuviert · 19°",
+      "selected": "false",
+      "bounds": {
+        "x": 111.61904907226562,
+        "y": 350.0833435058594,
+        "w": 74,
+        "h": 116
+      },
+      "scrollWidth": 72,
+      "clientWidth": 72,
+      "border": "0.761905px solid rgb(195, 220, 233)",
+      "shadow": "none",
+      "background": "rgb(237, 246, 250) none repeat scroll 0% 0% / auto padding-box border-box",
+      "color": "rgb(16, 54, 78)",
+      "font": "16px Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", sans-serif"
+    },
+    {
+      "text": "18:00\n19°\n0 mm",
+      "aria": "Vuê · 18:00 · Cuviert · 19°",
+      "selected": "false",
+      "bounds": {
+        "x": 191.61904907226562,
+        "y": 350.0833435058594,
+        "w": 74,
+        "h": 116
+      },
+      "scrollWidth": 72,
+      "clientWidth": 72,
+      "border": "0.761905px solid rgb(195, 220, 233)",
+      "shadow": "none",
+      "background": "rgb(237, 246, 250) none repeat scroll 0% 0% / auto padding-box border-box",
+      "color": "rgb(16, 54, 78)",
+      "font": "16px Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", sans-serif"
+    },
+    {
+      "text": "19:00\n18°\n0 mm",
+      "aria": "Vuê · 19:00 · Cuviert · 18°",
+      "selected": "false",
+      "bounds": {
+        "x": 271.6190490722656,
+        "y": 350.0833435058594,
+        "w": 74,
+        "h": 116
+      },
+      "scrollWidth": 72,
+      "clientWidth": 72,
+      "border": "0.761905px solid rgb(195, 220, 233)",
+      "shadow": "none",
+      "background": "rgb(237, 246, 250) none repeat scroll 0% 0% / auto padding-box border-box",
+      "color": "rgb(16, 54, 78)",
+      "font": "16px Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", sans-serif"
+    },
+    {
+      "text": "20:00\n17°\n0 mm",
+      "aria": "Vuê · 20:00 · Cuviert · 17°",
+      "selected": "false",
+      "bounds": {
+        "x": 351.6190490722656,
+        "y": 350.0833435058594,
+        "w": 74,
+        "h": 116
+      },
+      "scrollWidth": 72,
+      "clientWidth": 72,
+      "border": "0.761905px solid rgb(195, 220, 233)",
+      "shadow": "none",
+      "background": "rgb(237, 246, 250) none repeat scroll 0% 0% / auto padding-box border-box",
+      "color": "rgb(16, 54, 78)",
+      "font": "16px Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", sans-serif"
+    },
+    {
+      "text": "21:00\n17°\n0 mm",
+      "aria": "Vuê · 21:00 · Cuviert · 17°",
+      "selected": "false",
+      "bounds": {
+        "x": 431.6190490722656,
+        "y": 350.0833435058594,
+        "w": 74,
+        "h": 116
+      },
+      "scrollWidth": 72,
+      "clientWidth": 72,
+      "border": "0.761905px solid rgb(195, 220, 233)",
+      "shadow": "none",
+      "background": "rgb(237, 246, 250) none repeat scroll 0% 0% / auto padding-box border-box",
+      "color": "rgb(16, 54, 78)",
+      "font": "16px Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", sans-serif"
+    },
+    {
+      "text": "22:00\n17°\n0 mm",
+      "aria": "Vuê · 22:00 · Cuviert · 17°",
+      "selected": "false",
+      "bounds": {
+        "x": 511.6190490722656,
+        "y": 350.0833435058594,
+        "w": 74,
+        "h": 116
+      },
+      "scrollWidth": 72,
+      "clientWidth": 72,
+      "border": "0.761905px solid rgb(195, 220, 233)",
+      "shadow": "none",
+      "background": "rgb(237, 246, 250) none repeat scroll 0% 0% / auto padding-box border-box",
+      "color": "rgb(16, 54, 78)",
+      "font": "16px Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", sans-serif"
+    },
+    {
+      "text": "23:00\n17°\n0,0 mm",
+      "aria": "Vuê · 23:00 · Cuviert · 17°",
+      "selected": "false",
+      "bounds": {
+        "x": 591.6190795898438,
+        "y": 350.0833435058594,
+        "w": 74,
+        "h": 116
+      },
+      "scrollWidth": 72,
+      "clientWidth": 72,
+      "border": "0.761905px solid rgb(195, 220, 233)",
+      "shadow": "none",
+      "background": "rgb(237, 246, 250) none repeat scroll 0% 0% / auto padding-box border-box",
+      "color": "rgb(16, 54, 78)",
+      "font": "16px Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", sans-serif"
+    },
+    {
+      "text": "00:00\n16°\n0,1 mm",
+      "aria": "Doman · 00:00 · Pluie · 16°",
+      "selected": "false",
+      "bounds": {
+        "x": 671.6190795898438,
+        "y": 350.0833435058594,
+        "w": 74,
+        "h": 116
+      },
+      "scrollWidth": 72,
+      "clientWidth": 72,
+      "border": "0.761905px solid rgb(195, 220, 233)",
+      "shadow": "none",
+      "background": "rgb(237, 246, 250) none repeat scroll 0% 0% / auto padding-box border-box",
+      "color": "rgb(16, 54, 78)",
+      "font": "16px Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", sans-serif"
+    },
+    {
+      "text": "01:00\n16°\n0,9 mm",
+      "aria": "Doman · 01:00 · Pluie · 16°",
+      "selected": "false",
+      "bounds": {
+        "x": 751.6190795898438,
+        "y": 350.0833435058594,
+        "w": 74,
+        "h": 116
+      },
+      "scrollWidth": 72,
+      "clientWidth": 72,
+      "border": "0.761905px solid rgb(195, 220, 233)",
+      "shadow": "none",
+      "background": "rgb(237, 246, 250) none repeat scroll 0% 0% / auto padding-box border-box",
+      "color": "rgb(16, 54, 78)",
+      "font": "16px Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", sans-serif"
+    },
+    {
+      "text": "02:00\n16°\n0,8 mm",
+      "aria": "Doman · 02:00 · Pluie · 16°",
+      "selected": "false",
+      "bounds": {
+        "x": 831.6190795898438,
+        "y": 350.0833435058594,
+        "w": 74,
+        "h": 116
+      },
+      "scrollWidth": 72,
+      "clientWidth": 72,
+      "border": "0.761905px solid rgb(195, 220, 233)",
+      "shadow": "none",
+      "background": "rgb(237, 246, 250) none repeat scroll 0% 0% / auto padding-box border-box",
+      "color": "rgb(16, 54, 78)",
+      "font": "16px Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", sans-serif"
+    },
+    {
+      "text": "03:00\n16°\n0,5 mm",
+      "aria": "Doman · 03:00 · Pluie · 16°",
+      "selected": "false",
+      "bounds": {
+        "x": 911.6190795898438,
+        "y": 350.0833435058594,
+        "w": 74,
+        "h": 116
+      },
+      "scrollWidth": 72,
+      "clientWidth": 72,
+      "border": "0.761905px solid rgb(195, 220, 233)",
+      "shadow": "none",
+      "background": "rgb(237, 246, 250) none repeat scroll 0% 0% / auto padding-box border-box",
+      "color": "rgb(16, 54, 78)",
+      "font": "16px Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", sans-serif"
+    },
+    {
+      "text": "04:00\n16°",
+      "aria": "Doman · 04:00 · Cuviert · 16°",
+      "selected": "false",
+      "bounds": {
+        "x": 991.6190795898438,
+        "y": 350.0833435058594,
+        "w": 74,
+        "h": 116
+      },
+      "scrollWidth": 72,
+      "clientWidth": 72,
+      "border": "0.761905px solid rgb(195, 220, 233)",
+      "shadow": "none",
+      "background": "rgb(237, 246, 250) none repeat scroll 0% 0% / auto padding-box border-box",
+      "color": "rgb(16, 54, 78)",
+      "font": "16px Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", sans-serif"
+    },
+    {
+      "text": "05:00\n17°\n0,4 mm",
+      "aria": "Doman · 05:00 · Pluie · 17°",
+      "selected": "false",
+      "bounds": {
+        "x": 1071.6190185546875,
+        "y": 350.0833435058594,
+        "w": 74,
+        "h": 116
+      },
+      "scrollWidth": 72,
+      "clientWidth": 72,
+      "border": "0.761905px solid rgb(195, 220, 233)",
+      "shadow": "none",
+      "background": "rgb(237, 246, 250) none repeat scroll 0% 0% / auto padding-box border-box",
+      "color": "rgb(16, 54, 78)",
+      "font": "16px Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", sans-serif"
+    },
+    {
+      "text": "06:00\n17°\n0,3 mm",
+      "aria": "Doman · 06:00 · Pluie · 17°",
+      "selected": "false",
+      "bounds": {
+        "x": 1151.6190185546875,
+        "y": 350.0833435058594,
+        "w": 74,
+        "h": 116
+      },
+      "scrollWidth": 72,
+      "clientWidth": 72,
+      "border": "0.761905px solid rgb(195, 220, 233)",
+      "shadow": "none",
+      "background": "rgb(237, 246, 250) none repeat scroll 0% 0% / auto padding-box border-box",
+      "color": "rgb(16, 54, 78)",
+      "font": "16px Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", sans-serif"
+    },
+    {
+      "text": "07:00\n17°\n3 mm",
+      "aria": "Doman · 07:00 · Pluie · 17°",
+      "selected": "false",
+      "bounds": {
+        "x": 1231.6190185546875,
+        "y": 350.0833435058594,
+        "w": 74,
+        "h": 116
+      },
+      "scrollWidth": 72,
+      "clientWidth": 72,
+      "border": "0.761905px solid rgb(195, 220, 233)",
+      "shadow": "none",
+      "background": "rgb(237, 246, 250) none repeat scroll 0% 0% / auto padding-box border-box",
+      "color": "rgb(16, 54, 78)",
+      "font": "16px Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", sans-serif"
+    },
+    {
+      "text": "08:00\n17°\n10 mm",
+      "aria": "Doman · 08:00 · Pluie · 17°",
+      "selected": "false",
+      "bounds": {
+        "x": 1311.6190185546875,
+        "y": 350.0833435058594,
+        "w": 74,
+        "h": 116
+      },
+      "scrollWidth": 72,
+      "clientWidth": 72,
+      "border": "0.761905px solid rgb(195, 220, 233)",
+      "shadow": "none",
+      "background": "rgb(237, 246, 250) none repeat scroll 0% 0% / auto padding-box border-box",
+      "color": "rgb(16, 54, 78)",
+      "font": "16px Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", sans-serif"
+    },
+    {
+      "text": "09:00\n17°\n6 mm",
+      "aria": "Doman · 09:00 · Pluie · 17°",
+      "selected": "false",
+      "bounds": {
+        "x": 1391.6190185546875,
+        "y": 350.0833435058594,
+        "w": 74,
+        "h": 116
+      },
+      "scrollWidth": 72,
+      "clientWidth": 72,
+      "border": "0.761905px solid rgb(195, 220, 233)",
+      "shadow": "none",
+      "background": "rgb(237, 246, 250) none repeat scroll 0% 0% / auto padding-box border-box",
+      "color": "rgb(16, 54, 78)",
+      "font": "16px Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", sans-serif"
+    },
+    {
+      "text": "10:00\n17°\n20 mm",
+      "aria": "Doman · 10:00 · Pluie abondante · 17°",
+      "selected": "false",
+      "bounds": {
+        "x": 1471.6190185546875,
+        "y": 350.0833435058594,
+        "w": 74,
+        "h": 116
+      },
+      "scrollWidth": 72,
+      "clientWidth": 72,
+      "border": "0.761905px solid rgb(195, 220, 233)",
+      "shadow": "none",
+      "background": "rgb(237, 246, 250) none repeat scroll 0% 0% / auto padding-box border-box",
+      "color": "rgb(16, 54, 78)",
+      "font": "16px Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", sans-serif"
+    },
+    {
+      "text": "11:00\n18°\n0,0 mm",
+      "aria": "Doman · 11:00 · Cuviert · 18°",
+      "selected": "false",
+      "bounds": {
+        "x": 1551.6190185546875,
+        "y": 350.0833435058594,
+        "w": 74,
+        "h": 116
+      },
+      "scrollWidth": 72,
+      "clientWidth": 72,
+      "border": "0.761905px solid rgb(195, 220, 233)",
+      "shadow": "none",
+      "background": "rgb(237, 246, 250) none repeat scroll 0% 0% / auto padding-box border-box",
+      "color": "rgb(16, 54, 78)",
+      "font": "16px Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", sans-serif"
+    },
+    {
+      "text": "12:00\n19°\n1 mm",
+      "aria": "Doman · 12:00 · Pluie · 19°",
+      "selected": "false",
+      "bounds": {
+        "x": 1631.6190185546875,
+        "y": 350.0833435058594,
+        "w": 74,
+        "h": 116
+      },
+      "scrollWidth": 72,
+      "clientWidth": 72,
+      "border": "0.761905px solid rgb(195, 220, 233)",
+      "shadow": "none",
+      "background": "rgb(237, 246, 250) none repeat scroll 0% 0% / auto padding-box border-box",
+      "color": "rgb(16, 54, 78)",
+      "font": "16px Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", sans-serif"
+    },
+    {
+      "text": "13:00\n19°\n1 mm",
+      "aria": "Doman · 13:00 · Pluie · 19°",
+      "selected": "false",
+      "bounds": {
+        "x": 1711.6190185546875,
+        "y": 350.0833435058594,
+        "w": 74,
+        "h": 116
+      },
+      "scrollWidth": 72,
+      "clientWidth": 72,
+      "border": "0.761905px solid rgb(195, 220, 233)",
+      "shadow": "none",
+      "background": "rgb(237, 246, 250) none repeat scroll 0% 0% / auto padding-box border-box",
+      "color": "rgb(16, 54, 78)",
+      "font": "16px Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", sans-serif"
+    },
+    {
+      "text": "14:00\n18°\n2 mm",
+      "aria": "Doman · 14:00 · Pluie · 18°",
+      "selected": "false",
+      "bounds": {
+        "x": 1791.619140625,
+        "y": 350.0833435058594,
+        "w": 74,
+        "h": 116
+      },
+      "scrollWidth": 72,
+      "clientWidth": 72,
+      "border": "0.761905px solid rgb(195, 220, 233)",
+      "shadow": "none",
+      "background": "rgb(237, 246, 250) none repeat scroll 0% 0% / auto padding-box border-box",
+      "color": "rgb(16, 54, 78)",
+      "font": "16px Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", sans-serif"
+    },
+    {
+      "text": "15:00\n19°\n1,0 mm",
+      "aria": "Doman · 15:00 · Pluie · 19°",
+      "selected": "false",
+      "bounds": {
+        "x": 1871.619140625,
+        "y": 350.0833435058594,
+        "w": 74,
+        "h": 116
+      },
+      "scrollWidth": 72,
+      "clientWidth": 72,
+      "border": "0.761905px solid rgb(195, 220, 233)",
+      "shadow": "none",
+      "background": "rgb(237, 246, 250) none repeat scroll 0% 0% / auto padding-box border-box",
+      "color": "rgb(16, 54, 78)",
+      "font": "16px Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", sans-serif"
+    },
+    {
+      "text": "16:00\n20°\n0 mm",
+      "aria": "Doman · 16:00 · Cuviert · 20°",
+      "selected": "false",
+      "bounds": {
+        "x": 1951.619140625,
+        "y": 350.0833435058594,
+        "w": 74,
+        "h": 116
+      },
+      "scrollWidth": 72,
+      "clientWidth": 72,
+      "border": "0.761905px solid rgb(195, 220, 233)",
+      "shadow": "none",
+      "background": "rgb(237, 246, 250) none repeat scroll 0% 0% / auto padding-box border-box",
+      "color": "rgb(16, 54, 78)",
+      "font": "16px Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", sans-serif"
+    },
+    {
+      "text": "17:00\n19°",
+      "aria": "Doman · 17:00 · Cuviert · 19°",
+      "selected": "false",
+      "bounds": {
+        "x": 2031.619140625,
+        "y": 350.0833435058594,
+        "w": 74,
+        "h": 116
+      },
+      "scrollWidth": 72,
+      "clientWidth": 72,
+      "border": "0.761905px solid rgb(195, 220, 233)",
+      "shadow": "none",
+      "background": "rgb(237, 246, 250) none repeat scroll 0% 0% / auto padding-box border-box",
+      "color": "rgb(16, 54, 78)",
+      "font": "16px Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", sans-serif"
+    },
+    {
+      "text": "18:00\n18°\n0 mm",
+      "aria": "Doman · 18:00 · Poc nul · 18°",
+      "selected": "false",
+      "bounds": {
+        "x": 2111.619140625,
+        "y": 350.0833435058594,
+        "w": 74,
+        "h": 116
+      },
+      "scrollWidth": 72,
+      "clientWidth": 72,
+      "border": "0.761905px solid rgb(195, 220, 233)",
+      "shadow": "none",
+      "background": "rgb(237, 246, 250) none repeat scroll 0% 0% / auto padding-box border-box",
+      "color": "rgb(16, 54, 78)",
+      "font": "16px Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", sans-serif"
+    },
+    {
+      "text": "19:00\n18°\n0 mm",
+      "aria": "Doman · 19:00 · Cuviert · 18°",
+      "selected": "false",
+      "bounds": {
+        "x": 2191.619140625,
+        "y": 350.0833435058594,
+        "w": 74,
+        "h": 116
+      },
+      "scrollWidth": 72,
+      "clientWidth": 72,
+      "border": "0.761905px solid rgb(195, 220, 233)",
+      "shadow": "none",
+      "background": "rgb(237, 246, 250) none repeat scroll 0% 0% / auto padding-box border-box",
+      "color": "rgb(16, 54, 78)",
+      "font": "16px Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", sans-serif"
+    },
+    {
+      "text": "20:00\n17°\n0 mm",
+      "aria": "Doman · 20:00 · Cuviert · 17°",
+      "selected": "false",
+      "bounds": {
+        "x": 2271.619140625,
+        "y": 350.0833435058594,
+        "w": 74,
+        "h": 116
+      },
+      "scrollWidth": 72,
+      "clientWidth": 72,
+      "border": "0.761905px solid rgb(195, 220, 233)",
+      "shadow": "none",
+      "background": "rgb(237, 246, 250) none repeat scroll 0% 0% / auto padding-box border-box",
+      "color": "rgb(16, 54, 78)",
+      "font": "16px Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", sans-serif"
+    },
+    {
+      "text": "21:00\n17°\n0 mm",
+      "aria": "Doman · 21:00 · Cuviert · 17°",
+      "selected": "false",
+      "bounds": {
+        "x": 2351.619140625,
+        "y": 350.0833435058594,
+        "w": 74,
+        "h": 116
+      },
+      "scrollWidth": 72,
+      "clientWidth": 72,
+      "border": "0.761905px solid rgb(195, 220, 233)",
+      "shadow": "none",
+      "background": "rgb(237, 246, 250) none repeat scroll 0% 0% / auto padding-box border-box",
+      "color": "rgb(16, 54, 78)",
+      "font": "16px Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", sans-serif"
+    },
+    {
+      "text": "22:00\n17°\n0 mm",
+      "aria": "Doman · 22:00 · Cuviert · 17°",
+      "selected": "false",
+      "bounds": {
+        "x": 2431.619140625,
+        "y": 350.0833435058594,
+        "w": 74,
+        "h": 116
+      },
+      "scrollWidth": 72,
+      "clientWidth": 72,
+      "border": "0.761905px solid rgb(195, 220, 233)",
+      "shadow": "none",
+      "background": "rgb(237, 246, 250) none repeat scroll 0% 0% / auto padding-box border-box",
+      "color": "rgb(16, 54, 78)",
+      "font": "16px Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", sans-serif"
+    },
+    {
+      "text": "23:00\n17°\n0 mm",
+      "aria": "Doman · 23:00 · Cuviert · 17°",
+      "selected": "false",
+      "bounds": {
+        "x": 2511.619140625,
+        "y": 350.0833435058594,
+        "w": 74,
+        "h": 116
+      },
+      "scrollWidth": 72,
+      "clientWidth": 72,
+      "border": "0.761905px solid rgb(195, 220, 233)",
+      "shadow": "none",
+      "background": "rgb(237, 246, 250) none repeat scroll 0% 0% / auto padding-box border-box",
+      "color": "rgb(16, 54, 78)",
+      "font": "16px Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", sans-serif"
+    },
+    {
+      "text": "00:00\n16°\n21 mm",
+      "aria": "Joibe 22 otu · 00:00 · Pluie abondante · 16°",
+      "selected": "false",
+      "bounds": {
+        "x": 2591.619140625,
+        "y": 350.0833435058594,
+        "w": 74,
+        "h": 116
+      },
+      "scrollWidth": 72,
+      "clientWidth": 72,
+      "border": "0.761905px solid rgb(195, 220, 233)",
+      "shadow": "none",
+      "background": "rgb(237, 246, 250) none repeat scroll 0% 0% / auto padding-box border-box",
+      "color": "rgb(16, 54, 78)",
+      "font": "16px Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", sans-serif"
+    },
+    {
+      "text": "01:00\n15°\n0,3 mm",
+      "aria": "Joibe 22 otu · 01:00 · Pluie · 15°",
+      "selected": "false",
+      "bounds": {
+        "x": 2671.619140625,
+        "y": 350.0833435058594,
+        "w": 74,
+        "h": 116
+      },
+      "scrollWidth": 72,
+      "clientWidth": 72,
+      "border": "0.761905px solid rgb(195, 220, 233)",
+      "shadow": "none",
+      "background": "rgb(237, 246, 250) none repeat scroll 0% 0% / auto padding-box border-box",
+      "color": "rgb(16, 54, 78)",
+      "font": "16px Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", sans-serif"
+    },
+    {
+      "text": "02:00\n16°",
+      "aria": "Joibe 22 otu · 02:00 · Cuviert · 16°",
+      "selected": "false",
+      "bounds": {
+        "x": 2751.619140625,
+        "y": 350.0833435058594,
+        "w": 74,
+        "h": 116
+      },
+      "scrollWidth": 72,
+      "clientWidth": 72,
+      "border": "0.761905px solid rgb(195, 220, 233)",
+      "shadow": "none",
+      "background": "rgb(237, 246, 250) none repeat scroll 0% 0% / auto padding-box border-box",
+      "color": "rgb(16, 54, 78)",
+      "font": "16px Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", sans-serif"
+    },
+    {
+      "text": "03:00\n15°",
+      "aria": "Joibe 22 otu · 03:00 · Poc nul · 15°",
+      "selected": "false",
+      "bounds": {
+        "x": 2831.619140625,
+        "y": 350.0833435058594,
+        "w": 74,
+        "h": 116
+      },
+      "scrollWidth": 72,
+      "clientWidth": 72,
+      "border": "0.761905px solid rgb(195, 220, 233)",
+      "shadow": "none",
+      "background": "rgb(237, 246, 250) none repeat scroll 0% 0% / auto padding-box border-box",
+      "color": "rgb(16, 54, 78)",
+      "font": "16px Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", sans-serif"
+    },
+    {
+      "text": "04:00\n15°\n0 mm",
+      "aria": "Joibe 22 otu · 04:00 · Poc nul · 15°",
+      "selected": "false",
+      "bounds": {
+        "x": 2911.619140625,
+        "y": 350.0833435058594,
+        "w": 74,
+        "h": 116
+      },
+      "scrollWidth": 72,
+      "clientWidth": 72,
+      "border": "0.761905px solid rgb(195, 220, 233)",
+      "shadow": "none",
+      "background": "rgb(237, 246, 250) none repeat scroll 0% 0% / auto padding-box border-box",
+      "color": "rgb(16, 54, 78)",
+      "font": "16px Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", sans-serif"
+    },
+    {
+      "text": "05:00\n15°",
+      "aria": "Joibe 22 otu · 05:00 · Cuviert · 15°",
+      "selected": "false",
+      "bounds": {
+        "x": 2991.619140625,
+        "y": 350.0833435058594,
+        "w": 74,
+        "h": 116
+      },
+      "scrollWidth": 72,
+      "clientWidth": 72,
+      "border": "0.761905px solid rgb(195, 220, 233)",
+      "shadow": "none",
+      "background": "rgb(237, 246, 250) none repeat scroll 0% 0% / auto padding-box border-box",
+      "color": "rgb(16, 54, 78)",
+      "font": "16px Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", sans-serif"
+    },
+    {
+      "text": "06:00\n15°\n0 mm",
+      "aria": "Joibe 22 otu · 06:00 · Cuviert · 15°",
+      "selected": "false",
+      "bounds": {
+        "x": 3071.619140625,
+        "y": 350.0833435058594,
+        "w": 74,
+        "h": 116
+      },
+      "scrollWidth": 72,
+      "clientWidth": 72,
+      "border": "0.761905px solid rgb(195, 220, 233)",
+      "shadow": "none",
+      "background": "rgb(237, 246, 250) none repeat scroll 0% 0% / auto padding-box border-box",
+      "color": "rgb(16, 54, 78)",
+      "font": "16px Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", sans-serif"
+    },
+    {
+      "text": "07:00\n15°",
+      "aria": "Joibe 22 otu · 07:00 · Cuviert · 15°",
+      "selected": "false",
+      "bounds": {
+        "x": 3151.619140625,
+        "y": 350.0833435058594,
+        "w": 74,
+        "h": 116
+      },
+      "scrollWidth": 72,
+      "clientWidth": 72,
+      "border": "0.761905px solid rgb(195, 220, 233)",
+      "shadow": "none",
+      "background": "rgb(237, 246, 250) none repeat scroll 0% 0% / auto padding-box border-box",
+      "color": "rgb(16, 54, 78)",
+      "font": "16px Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", sans-serif"
+    },
+    {
+      "text": "08:00\n13°\n4 mm",
+      "aria": "Joibe 22 otu · 08:00 · Pluie · 13°",
+      "selected": "false",
+      "bounds": {
+        "x": 3231.619140625,
+        "y": 350.0833435058594,
+        "w": 74,
+        "h": 116
+      },
+      "scrollWidth": 72,
+      "clientWidth": 72,
+      "border": "0.761905px solid rgb(195, 220, 233)",
+      "shadow": "none",
+      "background": "rgb(237, 246, 250) none repeat scroll 0% 0% / auto padding-box border-box",
+      "color": "rgb(16, 54, 78)",
+      "font": "16px Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", sans-serif"
+    },
+    {
+      "text": "09:00\n11°\n8 mm",
+      "aria": "Joibe 22 otu · 09:00 · Pluie · 11°",
+      "selected": "false",
+      "bounds": {
+        "x": 3311.619140625,
+        "y": 350.0833435058594,
+        "w": 74,
+        "h": 116
+      },
+      "scrollWidth": 72,
+      "clientWidth": 72,
+      "border": "0.761905px solid rgb(195, 220, 233)",
+      "shadow": "none",
+      "background": "rgb(237, 246, 250) none repeat scroll 0% 0% / auto padding-box border-box",
+      "color": "rgb(16, 54, 78)",
+      "font": "16px Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", sans-serif"
+    },
+    {
+      "text": "10:00\n11°\n13 mm",
+      "aria": "Joibe 22 otu · 10:00 · Pluie abondante · 11°",
+      "selected": "false",
+      "bounds": {
+        "x": 3391.619140625,
+        "y": 350.0833435058594,
+        "w": 74,
+        "h": 116
+      },
+      "scrollWidth": 72,
+      "clientWidth": 72,
+      "border": "0.761905px solid rgb(195, 220, 233)",
+      "shadow": "none",
+      "background": "rgb(237, 246, 250) none repeat scroll 0% 0% / auto padding-box border-box",
+      "color": "rgb(16, 54, 78)",
+      "font": "16px Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", sans-serif"
+    },
+    {
+      "text": "11:00\n13°\n0,3 mm",
+      "aria": "Joibe 22 otu · 11:00 · Pluie · 13°",
+      "selected": "false",
+      "bounds": {
+        "x": 3471.619140625,
+        "y": 350.0833435058594,
+        "w": 74,
+        "h": 116
+      },
+      "scrollWidth": 72,
+      "clientWidth": 72,
+      "border": "0.761905px solid rgb(195, 220, 233)",
+      "shadow": "none",
+      "background": "rgb(237, 246, 250) none repeat scroll 0% 0% / auto padding-box border-box",
+      "color": "rgb(16, 54, 78)",
+      "font": "16px Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", sans-serif"
+    },
+    {
+      "text": "12:00\n13°\n0,2 mm",
+      "aria": "Joibe 22 otu · 12:00 · Pluie · 13°",
+      "selected": "false",
+      "bounds": {
+        "x": 3551.619140625,
+        "y": 350.0833435058594,
+        "w": 74,
+        "h": 116
+      },
+      "scrollWidth": 72,
+      "clientWidth": 72,
+      "border": "0.761905px solid rgb(195, 220, 233)",
+      "shadow": "none",
+      "background": "rgb(237, 246, 250) none repeat scroll 0% 0% / auto padding-box border-box",
+      "color": "rgb(16, 54, 78)",
+      "font": "16px Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", sans-serif"
+    },
+    {
+      "text": "13:00\n12°\n0,1 mm",
+      "aria": "Joibe 22 otu · 13:00 · Pluie · 12°",
+      "selected": "false",
+      "bounds": {
+        "x": 3631.619140625,
+        "y": 350.0833435058594,
+        "w": 74,
+        "h": 116
+      },
+      "scrollWidth": 72,
+      "clientWidth": 72,
+      "border": "0.761905px solid rgb(195, 220, 233)",
+      "shadow": "none",
+      "background": "rgb(237, 246, 250) none repeat scroll 0% 0% / auto padding-box border-box",
+      "color": "rgb(16, 54, 78)",
+      "font": "16px Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", sans-serif"
+    },
+    {
+      "text": "14:00\n12°\n4 mm",
+      "aria": "Joibe 22 otu · 14:00 · Pluie · 12°",
+      "selected": "false",
+      "bounds": {
+        "x": 3711.619140625,
+        "y": 350.0833435058594,
+        "w": 74,
+        "h": 116
+      },
+      "scrollWidth": 72,
+      "clientWidth": 72,
+      "border": "0.761905px solid rgb(195, 220, 233)",
+      "shadow": "none",
+      "background": "rgb(237, 246, 250) none repeat scroll 0% 0% / auto padding-box border-box",
+      "color": "rgb(16, 54, 78)",
+      "font": "16px Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", sans-serif"
+    },
+    {
+      "text": "Soreli e Lune\n10h 43m\nLus dal dì\nAlbe 07:30\nTramont 18:13\nPrin cuart",
+      "aria": "Vierç i detais: Soreli e Lune",
+      "selected": null,
+      "bounds": {
+        "x": 12,
+        "y": 495.6071472167969,
+        "w": 188.71429443359375,
+        "h": 190
+      },
+      "scrollWidth": 187,
+      "clientWidth": 187,
+      "border": "0.761905px solid rgba(6, 58, 96, 0.14)",
+      "shadow": "rgba(6, 58, 96, 0.08) 0px 8px 20px 0px",
+      "background": "rgb(255, 255, 255) none repeat scroll 0% 0% / auto padding-box border-box",
+      "color": "rgb(9, 42, 67)",
+      "font": "16px Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", sans-serif"
+    },
+    {
+      "text": "Indiç UV\n\nPrevision no disponibile",
+      "aria": "Vierç i detais: Indiç UV",
+      "selected": null,
+      "bounds": {
+        "x": 210.71429443359375,
+        "y": 495.6071472167969,
+        "w": 188.71429443359375,
+        "h": 190
+      },
+      "scrollWidth": 187,
+      "clientWidth": 187,
+      "border": "0.761905px solid rgba(6, 58, 96, 0.14)",
+      "shadow": "rgba(6, 58, 96, 0.08) 0px 8px 20px 0px",
+      "background": "rgb(255, 255, 255) none repeat scroll 0% 0% / auto padding-box border-box",
+      "color": "rgb(9, 42, 67)",
+      "font": "16px Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", sans-serif"
+    },
+    {
+      "text": "Cualitât de arie\n\nDâts de arie no disponibii",
+      "aria": "Vierç i detais: Cualitât de arie",
+      "selected": null,
+      "bounds": {
+        "x": 12,
+        "y": 695.607177734375,
+        "w": 188.71429443359375,
+        "h": 190
+      },
+      "scrollWidth": 187,
+      "clientWidth": 187,
+      "border": "0.761905px solid rgba(6, 58, 96, 0.14)",
+      "shadow": "rgba(6, 58, 96, 0.08) 0px 8px 20px 0px",
+      "background": "rgb(255, 255, 255) none repeat scroll 0% 0% / auto padding-box border-box",
+      "color": "rgb(9, 42, 67)",
+      "font": "16px Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", sans-serif"
+    },
+    {
+      "text": "Polins\n\nDâts sui polins no disponibii",
+      "aria": "Vierç i detais: Polins",
+      "selected": null,
+      "bounds": {
+        "x": 210.71429443359375,
+        "y": 695.607177734375,
+        "w": 188.71429443359375,
+        "h": 190
+      },
+      "scrollWidth": 187,
+      "clientWidth": 187,
+      "border": "0.761905px solid rgba(6, 58, 96, 0.14)",
+      "shadow": "rgba(6, 58, 96, 0.08) 0px 8px 20px 0px",
+      "background": "rgb(255, 255, 255) none repeat scroll 0% 0% / auto padding-box border-box",
+      "color": "rgb(9, 42, 67)",
+      "font": "16px Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", sans-serif"
+    },
+    {
+      "text": "Cjase",
+      "aria": null,
+      "selected": null,
+      "bounds": {
+        "x": 18.761905670166016,
+        "y": 652.5119018554688,
+        "w": 90.47618865966797,
+        "h": 57.48809814453125
+      },
+      "scrollWidth": 89,
+      "clientWidth": 89,
+      "border": "0.761905px solid rgba(0, 0, 0, 0)",
+      "shadow": "none",
+      "background": "rgba(0, 0, 0, 0) none repeat scroll 0px 0px / auto padding-box border-box",
+      "color": "rgb(64, 86, 106)",
+      "font": "800 10.88px / 11.968px Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", sans-serif"
+    },
+    {
+      "text": "Timp",
+      "aria": null,
+      "selected": null,
+      "bounds": {
+        "x": 113.23809814453125,
+        "y": 652.5119018554688,
+        "w": 90.47618865966797,
+        "h": 57.48809814453125
+      },
+      "scrollWidth": 89,
+      "clientWidth": 89,
+      "border": "0.761905px solid rgba(142, 219, 255, 0.45)",
+      "shadow": "rgba(9, 29, 61, 0.2) 0px 5px 14px 0px",
+      "background": "radial-gradient(circle at 92% 5%, rgba(19, 137, 201, 0.36), rgba(0, 0, 0, 0) 34%) repeat scroll 0% 0% / auto padding-box border-box, rgba(0, 0, 0, 0) linear-gradient(140deg, rgb(23, 57, 101), rgb(9, 29, 61)) repeat scroll 0% 0% / auto padding-box border-box",
+      "color": "rgb(255, 255, 255)",
+      "font": "800 10.88px / 11.968px Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", sans-serif"
+    },
+    {
+      "text": "4\nEvenis",
+      "aria": "Evenis: 4 evenis vuê",
+      "selected": null,
+      "bounds": {
+        "x": 207.71429443359375,
+        "y": 652.5119018554688,
+        "w": 90.47618865966797,
+        "h": 57.48809814453125
+      },
+      "scrollWidth": 89,
+      "clientWidth": 89,
+      "border": "0.761905px solid rgba(0, 0, 0, 0)",
+      "shadow": "none",
+      "background": "rgba(0, 0, 0, 0) none repeat scroll 0px 0px / auto padding-box border-box",
+      "color": "rgb(64, 86, 106)",
+      "font": "800 10.88px / 11.968px Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", sans-serif"
+    },
+    {
+      "text": "Scuvierç",
+      "aria": null,
+      "selected": null,
+      "bounds": {
+        "x": 302.19049072265625,
+        "y": 652.5119018554688,
+        "w": 90.47618865966797,
+        "h": 57.48809814453125
+      },
+      "scrollWidth": 89,
+      "clientWidth": 89,
+      "border": "0.761905px solid rgba(0, 0, 0, 0)",
+      "shadow": "none",
+      "background": "rgba(0, 0, 0, 0) none repeat scroll 0px 0px / auto padding-box border-box",
+      "color": "rgb(64, 86, 106)",
+      "font": "800 10.88px / 11.968px Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", sans-serif"
+    }
+  ]
+}

@@ -1,0 +1,1557 @@
+[
+  {
+    "event": "allowed",
+    "method": "GET",
+    "url": "http://127.0.0.1:5176/",
+    "time": 1792503670.1425972
+  },
+  {
+    "event": "response",
+    "status": 200,
+    "url": "http://127.0.0.1:5176/"
+  },
+  {
+    "event": "allowed",
+    "method": "GET",
+    "url": "http://127.0.0.1:5176/assets/main-Bu79RhWT.js",
+    "time": 1792503670.344484
+  },
+  {
+    "event": "allowed",
+    "method": "GET",
+    "url": "http://127.0.0.1:5176/assets/main-BGywgFOP.css",
+    "time": 1792503670.345383
+  },
+  {
+    "event": "response",
+    "status": 200,
+    "url": "http://127.0.0.1:5176/assets/main-Bu79RhWT.js"
+  },
+  {
+    "event": "response",
+    "status": 200,
+    "url": "http://127.0.0.1:5176/assets/main-BGywgFOP.css"
+  },
+  {
+    "event": "allowed",
+    "method": "GET",
+    "url": "http://127.0.0.1:5176/brand/pilot-r4/meteo-eventi-friul-mark-192.png",
+    "time": 1792503671.1662533
+  },
+  {
+    "event": "response",
+    "status": 200,
+    "url": "http://127.0.0.1:5176/brand/pilot-r4/meteo-eventi-friul-mark-192.png"
+  },
+  {
+    "event": "allowed",
+    "method": "GET",
+    "url": "http://127.0.0.1:5176/assets/index.esm-DsUkD-D0.js",
+    "time": 1792503671.2610128
+  },
+  {
+    "event": "allowed",
+    "method": "GET",
+    "url": "http://127.0.0.1:5176/assets/index.esm-DA8gwP5f.js",
+    "time": 1792503671.2614508
+  },
+  {
+    "event": "allowed",
+    "method": "OPTIONS",
+    "url": "https://meteofriul-community-49007668366.europe-west1.run.app/api/community/reports",
+    "time": 1792503671.3701074
+  },
+  {
+    "event": "allowed",
+    "method": "GET",
+    "url": "https://meteofriul-weather-49007668366.europe-west1.run.app/weather/v1/families/cams/latest.json",
+    "time": 1792503671.372757
+  },
+  {
+    "event": "allowed",
+    "method": "GET",
+    "url": "https://meteofriul-weather-49007668366.europe-west1.run.app/weather/v1/icon2i/latest.json",
+    "time": 1792503671.3761942
+  },
+  {
+    "event": "allowed",
+    "method": "GET",
+    "url": "https://play-b6fbe4d---meteofriul-api-bx24xqvcda-ew.a.run.app/api/weather/official-alerts",
+    "time": 1792503671.37815
+  },
+  {
+    "event": "response",
+    "status": 200,
+    "url": "http://127.0.0.1:5176/assets/index.esm-DsUkD-D0.js"
+  },
+  {
+    "event": "response",
+    "status": 200,
+    "url": "http://127.0.0.1:5176/assets/index.esm-DA8gwP5f.js"
+  },
+  {
+    "event": "allowed",
+    "method": "GET",
+    "url": "http://127.0.0.1:5176/manifest.webmanifest",
+    "time": 1792503671.4655023
+  },
+  {
+    "event": "allowed",
+    "method": "GET",
+    "url": "http://127.0.0.1:5176/favicon-mf-r4-20260927.ico",
+    "time": 1792503671.504822
+  },
+  {
+    "event": "allowed",
+    "method": "GET",
+    "url": "http://127.0.0.1:5176/apple-touch-icon-mf-r5-20260927.png",
+    "time": 1792503671.5054367
+  },
+  {
+    "event": "response",
+    "status": 200,
+    "url": "http://127.0.0.1:5176/manifest.webmanifest"
+  },
+  {
+    "event": "response",
+    "status": 200,
+    "url": "http://127.0.0.1:5176/favicon-mf-r4-20260927.ico"
+  },
+  {
+    "event": "allowed",
+    "method": "GET",
+    "url": "http://127.0.0.1:5176/branding/icon_launcher_maskable_mf-r5-20260927-512.png",
+    "time": 1792503671.544609
+  },
+  {
+    "event": "response",
+    "status": 200,
+    "url": "http://127.0.0.1:5176/apple-touch-icon-mf-r5-20260927.png"
+  },
+  {
+    "event": "response",
+    "status": 200,
+    "url": "http://127.0.0.1:5176/branding/icon_launcher_maskable_mf-r5-20260927-512.png"
+  },
+  {
+    "event": "response",
+    "status": 403,
+    "url": "https://meteofriul-community-49007668366.europe-west1.run.app/api/community/reports"
+  },
+  {
+    "event": "network_error",
+    "type": "Fetch",
+    "error": "net::ERR_FAILED",
+    "cors": {
+      "corsError": "PreflightMissingAllowOriginHeader",
+      "failedParameter": ""
+    }
+  },
+  {
+    "event": "network_error",
+    "type": "Fetch",
+    "error": "net::ERR_FAILED",
+    "cors": {
+      "corsError": "MissingAllowOriginHeader",
+      "failedParameter": ""
+    }
+  },
+  {
+    "event": "response",
+    "status": 200,
+    "url": "https://meteofriul-weather-49007668366.europe-west1.run.app/weather/v1/families/cams/latest.json"
+  },
+  {
+    "event": "response",
+    "status": 200,
+    "url": "https://meteofriul-weather-49007668366.europe-west1.run.app/weather/v1/icon2i/latest.json"
+  },
+  {
+    "event": "allowed",
+    "method": "GET",
+    "url": "https://meteofriul-weather-49007668366.europe-west1.run.app/weather/v1/families/cams/runs/20261019T000000Z/release.json",
+    "time": 1792503672.0278108
+  },
+  {
+    "event": "allowed",
+    "method": "GET",
+    "url": "https://meteofriul-weather-49007668366.europe-west1.run.app/weather/v1/icon2i/runs/20261019T120000Z/manifest.json",
+    "time": 1792503672.0486612
+  },
+  {
+    "event": "allowed",
+    "method": "GET",
+    "url": "http://127.0.0.1:5176/assets/index.esm-CIWX8_XI.js",
+    "time": 1792503672.1170323
+  },
+  {
+    "event": "response",
+    "status": 200,
+    "url": "https://meteofriul-weather-49007668366.europe-west1.run.app/weather/v1/families/cams/runs/20261019T000000Z/release.json"
+  },
+  {
+    "event": "allowed",
+    "method": "GET",
+    "url": "https://meteofriul-weather-49007668366.europe-west1.run.app/weather/v1/families/cams/runs/20261019T000000Z/continuity.json",
+    "time": 1792503672.1332548
+  },
+  {
+    "event": "response",
+    "status": 200,
+    "url": "https://meteofriul-weather-49007668366.europe-west1.run.app/weather/v1/icon2i/runs/20261019T120000Z/manifest.json"
+  },
+  {
+    "event": "response",
+    "status": 200,
+    "url": "http://127.0.0.1:5176/assets/index.esm-CIWX8_XI.js"
+  },
+  {
+    "event": "allowed",
+    "method": "GET",
+    "url": "https://meteofriul-weather-49007668366.europe-west1.run.app/weather/v1/icon2i/runs/20261019T120000Z/municipalities/030129.json",
+    "time": 1792503672.1739364
+  },
+  {
+    "event": "response",
+    "status": 404,
+    "url": "https://meteofriul-weather-49007668366.europe-west1.run.app/weather/v1/families/cams/runs/20261019T000000Z/continuity.json"
+  },
+  {
+    "event": "response",
+    "status": 200,
+    "url": "https://meteofriul-weather-49007668366.europe-west1.run.app/weather/v1/icon2i/runs/20261019T120000Z/municipalities/030129.json"
+  },
+  {
+    "event": "response",
+    "status": 200,
+    "url": "data:image/svg+xml,%3csvg%20viewBox='0%200%20128%20128'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%3e%3cg%20id='overcast'%20clip-path='url(%23clip0_1858_8153)'%3e%3cg%20id='Sky'%3e%3cg%20id='Clouds'%3e%3cg%20id='Secondary%20Cloud'%3e%3cpath%20id='Cloud'%20d='M83.8392%2048.6934C86.2444%2044.9584%2091.2146%2043.529%2095.3177%2045.1768C99.3609%2046.8006%20101.814%2051.1888%20100.71%2055.4365L100.54%2056.0898L101.215%2056.0615C104.496%2055.924%20107.5%2058.4646%20107.5%2061.7744C107.5%2064.9759%20104.669%2067.4999%20101.489%2067.5H74.9769C71.7679%2067.5008%2068.8449%2065.1182%2068.5287%2061.9072C68.2136%2058.7068%2070.6168%2055.8414%2073.764%2055.2705L74.2552%2055.1816L74.1674%2054.6904C73.7734%2052.4931%2074.8117%2050.2493%2076.6849%2049.0273C78.6105%2047.7713%2081.177%2047.7069%2083.1683%2048.8564L83.5814%2049.0938L83.8392%2048.6934Z'%20fill='url(%23paint0_linear_1858_8153)'%20stroke='%2394A3B8'%20stroke-miterlimit='10'/%3e%3canimateTransform%20attributeName='transform'%20type='translate'%20values='0%20-3;0%200;0%20-3'%20dur='3s'%20begin='0s'%20repeatCount='indefinite'%20calcMode='spline'%20keySplines='.42%200%20.58%201;%20.42%200%20.58%201'/%3e%3c/g%3e%3cg%20id='Cloud_2'%3e%3cpath%20id='Cloud_3'%20d='M55.2623%2048.4746C60.1227%2040.6111%2070.2975%2037.38%2078.8151%2040.9434C87.3214%2044.5023%2092.138%2054.0026%2089.903%2062.9648L89.7418%2063.6143L90.4108%2063.585C97.4203%2063.2791%20103.5%2068.9917%20103.5%2076.0283C103.5%2082.8395%2097.7717%2088.4997%2090.9772%2088.5H37.9537C31.1275%2088.5018%2025.2029%2083.1709%2024.5592%2076.3604C23.9158%2069.5518%2028.7369%2063.2124%2035.443%2061.9453L35.9264%2061.8535L35.8424%2061.3691C35.0256%2056.6239%2037.1258%2051.7168%2041.1051%2049.0127C45.0951%2046.3014%2050.4459%2046.1537%2054.5797%2048.6396L55.0026%2048.8945L55.2623%2048.4746Z'%20fill='url(%23paint1_linear_1858_8153)'%20stroke='%23E6EFFC'%20stroke-miterlimit='10'/%3e%3canimateTransform%20attributeName='transform'%20type='translate'%20values='0%200;0%20-3;0%200'%20dur='3s'%20begin='0s'%20repeatCount='indefinite'%20calcMode='spline'%20keySplines='.42%200%20.58%201;%20.42%200%20.58%201'/%3e%3c/g%3e%3c/g%3e%3c/g%3e%3c/g%3e%3cdefs%3e%3clinearGradient%20id='paint0_linear_1858_8153'%20x1='88.0002'%20y1='44'%20x2='88.0002'%20y2='68'%20gradientUnits='userSpaceOnUse'%3e%3cstop%20stop-color='%23B0BCCD'/%3e%3cstop%20offset='1'%20stop-color='%2394A3B8'/%3e%3c/linearGradient%3e%3clinearGradient%20id='paint1_linear_1858_8153'%20x1='64.0008'%20y1='39'%20x2='64.0008'%20y2='89'%20gradientUnits='userSpaceOnUse'%3e%3cstop%20stop-color='%23F3F7FE'/%3e%3cstop%20offset='1'%20stop-color='%23E6EFFC'/%3e%3c/linearGradient%3e%3cclipPath%20id='clip0_1858_8153'%3e%3crect%20width='128'%20height='128'%20fill='white'/%3e%3c/clipPath%3e%3c/defs%3e%3c/svg%3e"
+  },
+  {
+    "event": "response",
+    "status": 200,
+    "url": "data:image/svg+xml,%3csvg%20viewBox='0%200%20128%20128'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%3e%3cg%20id='rain'%20clip-path='url(%23clip0_1858_8370)'%3e%3cg%20id='Sky'%3e%3cg%20id='Clouds'%3e%3cg%20id='Cloud'%3e%3cpath%20id='Cloud_2'%20d='M55.2623%2048.4746C60.1227%2040.6111%2070.2975%2037.38%2078.8151%2040.9434C87.3214%2044.5023%2092.138%2054.0026%2089.903%2062.9648L89.7418%2063.6143L90.4108%2063.585C97.4203%2063.2791%20103.5%2068.9917%20103.5%2076.0283C103.5%2082.8395%2097.7717%2088.4997%2090.9772%2088.5H37.9537C31.1275%2088.5018%2025.2029%2083.1709%2024.5592%2076.3604C23.9158%2069.5518%2028.7369%2063.2124%2035.443%2061.9453L35.9264%2061.8535L35.8424%2061.3691C35.0256%2056.6239%2037.1258%2051.7168%2041.1051%2049.0127C45.0951%2046.3014%2050.4459%2046.1537%2054.5797%2048.6396L55.0026%2048.8945L55.2623%2048.4746Z'%20fill='url(%23paint0_linear_1858_8370)'%20stroke='%23E6EFFC'%20stroke-miterlimit='10'/%3e%3c/g%3e%3canimateTransform%20attributeName='transform'%20type='translate'%20values='0%200;0%20-3;0%200'%20dur='3s'%20begin='0s'%20repeatCount='indefinite'%20calcMode='spline'%20keySplines='.42%200%20.58%201;%20.42%200%20.58%201'/%3e%3c/g%3e%3c/g%3e%3cg%20id='Precipitation'%3e%3cg%20id='Raindrops'%3e%3cpath%20id='Raindrop%201'%20d='M52%2083V95'%20stroke='%230A5AD4'%20stroke-width='4'%20stroke-linecap='round'%3e%3canimateTransform%20attributeName='transform'%20type='translate'%20values='0%200;0%2020'%20dur='1s'%20begin='0s'%20repeatCount='indefinite'%20calcMode='spline'%20keySplines='.42%200%201%201'/%3e%3canimate%20attributeName='opacity'%20values='0;1;1;0'%20dur='1s'%20begin='0s'%20repeatCount='indefinite'%20keyTimes='0;0.15;0.85;1'/%3e%3c/path%3e%3cpath%20id='Raindrop%202'%20d='M64%2083V95'%20stroke='%230A5AD4'%20stroke-width='4'%20stroke-linecap='round'%20opacity='0'%3e%3canimateTransform%20attributeName='transform'%20type='translate'%20values='0%200;0%2020'%20dur='1s'%20begin='0.4s'%20repeatCount='indefinite'%20calcMode='spline'%20keySplines='.42%200%201%201'/%3e%3canimate%20attributeName='opacity'%20values='0;1;1;0'%20dur='1s'%20begin='0.4s'%20repeatCount='indefinite'%20keyTimes='0;0.15;0.85;1'/%3e%3c/path%3e%3cpath%20id='Raindrop%203'%20d='M76%2083V95'%20stroke='%230A5AD4'%20stroke-width='4'%20stroke-linecap='round'%20opacity='0'%3e%3canimateTransform%20attributeName='transform'%20type='translate'%20values='0%200;0%2020'%20dur='1s'%20begin='0.8s'%20repeatCount='indefinite'%20calcMode='spline'%20keySplines='.42%200%201%201'/%3e%3canimate%20attributeName='opacity'%20values='0;1;1;0'%20dur='1s'%20begin='0.8s'%20repeatCount='indefinite'%20keyTimes='0;0.15;0.85;1'/%3e%3c/path%3e%3c/g%3e%3c/g%3e%3c/g%3e%3cdefs%3e%3clinearGradient%20id='paint0_linear_1858_8370'%20x1='64.0008'%20y1='39'%20x2='64.0008'%20y2='89'%20gradientUnits='userSpaceOnUse'%3e%3cstop%20stop-color='%23F3F7FE'/%3e%3cstop%20offset='1'%20stop-color='%23E6EFFC'/%3e%3c/linearGradient%3e%3cclipPath%20id='clip0_1858_8370'%3e%3crect%20width='128'%20height='128'%20fill='white'/%3e%3c/clipPath%3e%3c/defs%3e%3c/svg%3e"
+  },
+  {
+    "event": "response",
+    "status": 200,
+    "url": "data:image/svg+xml,%3c!--%20@meteocons/svg%200.1.0,%20Bas%20Milius%20(MIT;%20see%20LICENSE.txt).%20Only%20raindrop%20strokes%20changed%20to%20%237DD3FC%20for%20dark%20forecast%20surfaces.%20--%3e%3csvg%20viewBox='0%200%20128%20128'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%3e%3cg%20id='rain'%20clip-path='url(%23clip0_1858_8370)'%3e%3cg%20id='Sky'%3e%3cg%20id='Clouds'%3e%3cg%20id='Cloud'%3e%3cpath%20id='Cloud_2'%20d='M55.2623%2048.4746C60.1227%2040.6111%2070.2975%2037.38%2078.8151%2040.9434C87.3214%2044.5023%2092.138%2054.0026%2089.903%2062.9648L89.7418%2063.6143L90.4108%2063.585C97.4203%2063.2791%20103.5%2068.9917%20103.5%2076.0283C103.5%2082.8395%2097.7717%2088.4997%2090.9772%2088.5H37.9537C31.1275%2088.5018%2025.2029%2083.1709%2024.5592%2076.3604C23.9158%2069.5518%2028.7369%2063.2124%2035.443%2061.9453L35.9264%2061.8535L35.8424%2061.3691C35.0256%2056.6239%2037.1258%2051.7168%2041.1051%2049.0127C45.0951%2046.3014%2050.4459%2046.1537%2054.5797%2048.6396L55.0026%2048.8945L55.2623%2048.4746Z'%20fill='url(%23paint0_linear_1858_8370)'%20stroke='%23E6EFFC'%20stroke-miterlimit='10'/%3e%3c/g%3e%3canimateTransform%20attributeName='transform'%20type='translate'%20values='0%200;0%20-3;0%200'%20dur='3s'%20begin='0s'%20repeatCount='indefinite'%20calcMode='spline'%20keySplines='.42%200%20.58%201;%20.42%200%20.58%201'/%3e%3c/g%3e%3c/g%3e%3cg%20id='Precipitation'%3e%3cg%20id='Raindrops'%3e%3cpath%20id='Raindrop%201'%20d='M52%2083V95'%20stroke='%237DD3FC'%20stroke-width='4'%20stroke-linecap='round'%3e%3canimateTransform%20attributeName='transform'%20type='translate'%20values='0%200;0%2020'%20dur='1s'%20begin='0s'%20repeatCount='indefinite'%20calcMode='spline'%20keySplines='.42%200%201%201'/%3e%3canimate%20attributeName='opacity'%20values='0;1;1;0'%20dur='1s'%20begin='0s'%20repeatCount='indefinite'%20keyTimes='0;0.15;0.85;1'/%3e%3c/path%3e%3cpath%20id='Raindrop%202'%20d='M64%2083V95'%20stroke='%237DD3FC'%20stroke-width='4'%20stroke-linecap='round'%20opacity='0'%3e%3canimateTransform%20attributeName='transform'%20type='translate'%20values='0%200;0%2020'%20dur='1s'%20begin='0.4s'%20repeatCount='indefinite'%20calcMode='spline'%20keySplines='.42%200%201%201'/%3e%3canimate%20attributeName='opacity'%20values='0;1;1;0'%20dur='1s'%20begin='0.4s'%20repeatCount='indefinite'%20keyTimes='0;0.15;0.85;1'/%3e%3c/path%3e%3cpath%20id='Raindrop%203'%20d='M76%2083V95'%20stroke='%237DD3FC'%20stroke-width='4'%20stroke-linecap='round'%20opacity='0'%3e%3canimateTransform%20attributeName='transform'%20type='translate'%20values='0%200;0%2020'%20dur='1s'%20begin='0.8s'%20repeatCount='indefinite'%20calcMode='spline'%20keySplines='.42%200%201%201'/%3e%3canimate%20attributeName='opacity'%20values='0;1;1;0'%20dur='1s'%20begin='0.8s'%20repeatCount='indefinite'%20keyTimes='0;0.15;0.85;1'/%3e%3c/path%3e%3c/g%3e%3c/g%3e%3c/g%3e%3cdefs%3e%3clinearGradient%20id='paint0_linear_1858_8370'%20x1='64.0008'%20y1='39'%20x2='64.0008'%20y2='89'%20gradientUnits='userSpaceOnUse'%3e%3cstop%20stop-color='%23F3F7FE'/%3e%3cstop%20offset='1'%20stop-color='%23E6EFFC'/%3e%3c/linearGradient%3e%3cclipPath%20id='clip0_1858_8370'%3e%3crect%20width='128'%20height='128'%20fill='white'/%3e%3c/clipPath%3e%3c/defs%3e%3c/svg%3e"
+  },
+  {
+    "event": "response",
+    "status": 200,
+    "url": "data:image/svg+xml,%3csvg%20viewBox='0%200%20128%20128'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%3e%3cg%20id='overcast-night'%20clip-path='url(%23clip0_1858_8272)'%3e%3cg%20id='Sky'%3e%3cg%20id='Moon'%3e%3cpath%20id='Moon_2'%20d='M35.1152%2034.5947C33.3777%2043.1625%2040.7532%2051.2141%2049.3135%2050.7832C47.6732%2055.8338%2042.8891%2059.4999%2037.2178%2059.5C30.188%2059.5%2024.5002%2053.8786%2024.5%2046.959C24.5%2040.7451%2029.0879%2035.5838%2035.1152%2034.5947Z'%20fill='url(%23paint0_linear_1858_8272)'%20stroke='%2372B9D5'%20stroke-linecap='round'%20stroke-linejoin='round'/%3e%3canimateTransform%20attributeName='transform'%20type='rotate'%20values='-6%2036.9%2047.0;6%2036.9%2047.0;-6%2036.9%2047.0'%20dur='3s'%20begin='0s'%20repeatCount='indefinite'%20calcMode='spline'%20keySplines='.42%200%20.58%201;%20.42%200%20.58%201'/%3e%3c/g%3e%3cg%20id='Clouds'%3e%3cg%20id='Secondary%20Cloud'%3e%3cpath%20id='Cloud'%20d='M83.8392%2048.6934C86.2444%2044.9584%2091.2146%2043.529%2095.3177%2045.1768C99.3609%2046.8006%20101.814%2051.1888%20100.71%2055.4365L100.54%2056.0898L101.215%2056.0615C104.496%2055.924%20107.5%2058.4646%20107.5%2061.7744C107.5%2064.9759%20104.669%2067.4999%20101.489%2067.5H74.9769C71.7679%2067.5008%2068.8449%2065.1182%2068.5287%2061.9072C68.2136%2058.7068%2070.6168%2055.8414%2073.764%2055.2705L74.2552%2055.1816L74.1674%2054.6904C73.7734%2052.4931%2074.8117%2050.2493%2076.6849%2049.0273C78.6105%2047.7713%2081.177%2047.7069%2083.1683%2048.8564L83.5814%2049.0938L83.8392%2048.6934Z'%20fill='url(%23paint1_linear_1858_8272)'%20stroke='%2394A3B8'%20stroke-miterlimit='10'/%3e%3canimateTransform%20attributeName='transform'%20type='translate'%20values='0%20-3;0%200;0%20-3'%20dur='3s'%20begin='0s'%20repeatCount='indefinite'%20calcMode='spline'%20keySplines='.42%200%20.58%201;%20.42%200%20.58%201'/%3e%3c/g%3e%3cg%20id='Cloud_2'%3e%3cpath%20id='Cloud_3'%20d='M55.2623%2048.4746C60.1227%2040.6111%2070.2975%2037.38%2078.8151%2040.9434C87.3214%2044.5023%2092.138%2054.0026%2089.903%2062.9648L89.7418%2063.6143L90.4108%2063.585C97.4203%2063.2791%20103.5%2068.9917%20103.5%2076.0283C103.5%2082.8395%2097.7717%2088.4997%2090.9772%2088.5H37.9537C31.1275%2088.5018%2025.2029%2083.1709%2024.5592%2076.3604C23.9158%2069.5518%2028.7369%2063.2124%2035.443%2061.9453L35.9264%2061.8535L35.8424%2061.3691C35.0256%2056.6239%2037.1258%2051.7168%2041.1051%2049.0127C45.0951%2046.3014%2050.4459%2046.1537%2054.5797%2048.6396L55.0026%2048.8945L55.2623%2048.4746Z'%20fill='url(%23paint2_linear_1858_8272)'%20stroke='%23E6EFFC'%20stroke-miterlimit='10'/%3e%3canimateTransform%20attributeName='transform'%20type='translate'%20values='0%200;0%20-3;0%200'%20dur='3s'%20begin='0s'%20repeatCount='indefinite'%20calcMode='spline'%20keySplines='.42%200%20.58%201;%20.42%200%20.58%201'/%3e%3c/g%3e%3c/g%3e%3c/g%3e%3c/g%3e%3cdefs%3e%3clinearGradient%20id='paint0_linear_1858_8272'%20x1='37'%20y1='34'%20x2='37'%20y2='60'%20gradientUnits='userSpaceOnUse'%3e%3cstop%20stop-color='%2386C3DB'/%3e%3cstop%20offset='1'%20stop-color='%2372B9D5'/%3e%3c/linearGradient%3e%3clinearGradient%20id='paint1_linear_1858_8272'%20x1='88.0002'%20y1='44'%20x2='88.0002'%20y2='68'%20gradientUnits='userSpaceOnUse'%3e%3cstop%20stop-color='%23B0BCCD'/%3e%3cstop%20offset='1'%20stop-color='%2394A3B8'/%3e%3c/linearGradient%3e%3clinearGradient%20id='paint2_linear_1858_8272'%20x1='64.0008'%20y1='39'%20x2='64.0008'%20y2='89'%20gradientUnits='userSpaceOnUse'%3e%3cstop%20stop-color='%23F3F7FE'/%3e%3cstop%20offset='1'%20stop-color='%23E6EFFC'/%3e%3c/linearGradient%3e%3cclipPath%20id='clip0_1858_8272'%3e%3crect%20width='128'%20height='128'%20fill='white'/%3e%3c/clipPath%3e%3c/defs%3e%3c/svg%3e"
+  },
+  {
+    "event": "response",
+    "status": 200,
+    "url": "data:image/svg+xml,%3csvg%20viewBox='0%200%20128%20128'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%3e%3cg%20id='extreme-rain'%20clip-path='url(%23clip0_1858_8382)'%3e%3cg%20id='Sky'%3e%3cg%20id='Clouds'%3e%3cg%20id='Secondary%20Cloud'%3e%3cpath%20id='Cloud'%20d='M83.8392%2048.6934C86.2444%2044.9584%2091.2146%2043.529%2095.3177%2045.1768C99.3609%2046.8006%20101.814%2051.1888%20100.71%2055.4365L100.54%2056.0898L101.215%2056.0615C104.496%2055.924%20107.5%2058.4646%20107.5%2061.7744C107.5%2064.9759%20104.669%2067.4999%20101.489%2067.5H74.9769C71.7679%2067.5008%2068.8449%2065.1182%2068.5287%2061.9072C68.2136%2058.7068%2070.6168%2055.8414%2073.764%2055.2705L74.2552%2055.1816L74.1674%2054.6904C73.7734%2052.4931%2074.8117%2050.2493%2076.6849%2049.0273C78.6105%2047.7713%2081.177%2047.7069%2083.1683%2048.8564L83.5814%2049.0938L83.8392%2048.6934Z'%20fill='url(%23paint0_linear_1858_8382)'%20stroke='%2394A3B8'%20stroke-miterlimit='10'/%3e%3canimateTransform%20attributeName='transform'%20type='translate'%20values='0%20-3;0%200;0%20-3'%20dur='3s'%20begin='0s'%20repeatCount='indefinite'%20calcMode='spline'%20keySplines='.42%200%20.58%201;%20.42%200%20.58%201'/%3e%3c/g%3e%3cg%20id='Cloud_2'%3e%3cpath%20id='Cloud_3'%20d='M55.2623%2048.4746C60.1227%2040.6111%2070.2975%2037.38%2078.8151%2040.9434C87.3214%2044.5023%2092.138%2054.0026%2089.903%2062.9648L89.7418%2063.6143L90.4108%2063.585C97.4203%2063.2791%20103.5%2068.9917%20103.5%2076.0283C103.5%2082.8395%2097.7717%2088.4997%2090.9772%2088.5H37.9537C31.1275%2088.5018%2025.2029%2083.1709%2024.5592%2076.3604C23.9158%2069.5518%2028.7369%2063.2124%2035.443%2061.9453L35.9264%2061.8535L35.8424%2061.3691C35.0256%2056.6239%2037.1258%2051.7168%2041.1051%2049.0127C45.0951%2046.3014%2050.4459%2046.1537%2054.5797%2048.6396L55.0026%2048.8945L55.2623%2048.4746Z'%20fill='url(%23paint1_linear_1858_8382)'%20stroke='%2364748B'%20stroke-miterlimit='10'/%3e%3canimateTransform%20attributeName='transform'%20type='translate'%20values='0%200;0%20-3;0%200'%20dur='3s'%20begin='0s'%20repeatCount='indefinite'%20calcMode='spline'%20keySplines='.42%200%20.58%201;%20.42%200%20.58%201'/%3e%3c/g%3e%3c/g%3e%3c/g%3e%3cg%20id='Precipitation'%3e%3cg%20id='Raindrops'%3e%3cpath%20id='Raindrop%201'%20d='M52%2083V95'%20stroke='%230A5AD4'%20stroke-width='4'%20stroke-linecap='round'%3e%3canimateTransform%20attributeName='transform'%20type='translate'%20values='0%200;0%2020'%20dur='1s'%20begin='0s'%20repeatCount='indefinite'%20calcMode='spline'%20keySplines='.42%200%201%201'/%3e%3canimate%20attributeName='opacity'%20values='0;1;1;0'%20dur='1s'%20begin='0s'%20repeatCount='indefinite'%20keyTimes='0;0.15;0.85;1'/%3e%3c/path%3e%3cpath%20id='Raindrop%202'%20d='M64%2083V95'%20stroke='%230A5AD4'%20stroke-width='4'%20stroke-linecap='round'%20opacity='0'%3e%3canimateTransform%20attributeName='transform'%20type='translate'%20values='0%200;0%2020'%20dur='1s'%20begin='0.4s'%20repeatCount='indefinite'%20calcMode='spline'%20keySplines='.42%200%201%201'/%3e%3canimate%20attributeName='opacity'%20values='0;1;1;0'%20dur='1s'%20begin='0.4s'%20repeatCount='indefinite'%20keyTimes='0;0.15;0.85;1'/%3e%3c/path%3e%3cpath%20id='Raindrop%203'%20d='M76%2083V95'%20stroke='%230A5AD4'%20stroke-width='4'%20stroke-linecap='round'%20opacity='0'%3e%3canimateTransform%20attributeName='transform'%20type='translate'%20values='0%200;0%2020'%20dur='1s'%20begin='0.8s'%20repeatCount='indefinite'%20calcMode='spline'%20keySplines='.42%200%201%201'/%3e%3canimate%20attributeName='opacity'%20values='0;1;1;0'%20dur='1s'%20begin='0.8s'%20repeatCount='indefinite'%20keyTimes='0;0.15;0.85;1'/%3e%3c/path%3e%3c/g%3e%3c/g%3e%3c/g%3e%3cdefs%3e%3clinearGradient%20id='paint0_linear_1858_8382'%20x1='88.0002'%20y1='44'%20x2='88.0002'%20y2='68'%20gradientUnits='userSpaceOnUse'%3e%3cstop%20stop-color='%23B0BCCD'/%3e%3cstop%20offset='1'%20stop-color='%2394A3B8'/%3e%3c/linearGradient%3e%3clinearGradient%20id='paint1_linear_1858_8382'%20x1='64.0008'%20y1='39'%20x2='64.0008'%20y2='89'%20gradientUnits='userSpaceOnUse'%3e%3cstop%20stop-color='%237C8CA2'/%3e%3cstop%20offset='1'%20stop-color='%2364748B'/%3e%3c/linearGradient%3e%3cclipPath%20id='clip0_1858_8382'%3e%3crect%20width='128'%20height='128'%20fill='white'/%3e%3c/clipPath%3e%3c/defs%3e%3c/svg%3e"
+  },
+  {
+    "event": "response",
+    "status": 200,
+    "url": "data:image/svg+xml,%3c!--%20@meteocons/svg%200.1.0,%20Bas%20Milius%20(MIT;%20see%20LICENSE.txt).%20Only%20raindrop%20strokes%20changed%20to%20%237DD3FC%20for%20dark%20forecast%20surfaces.%20--%3e%3csvg%20viewBox='0%200%20128%20128'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%3e%3cg%20id='extreme-rain'%20clip-path='url(%23clip0_1858_8382)'%3e%3cg%20id='Sky'%3e%3cg%20id='Clouds'%3e%3cg%20id='Secondary%20Cloud'%3e%3cpath%20id='Cloud'%20d='M83.8392%2048.6934C86.2444%2044.9584%2091.2146%2043.529%2095.3177%2045.1768C99.3609%2046.8006%20101.814%2051.1888%20100.71%2055.4365L100.54%2056.0898L101.215%2056.0615C104.496%2055.924%20107.5%2058.4646%20107.5%2061.7744C107.5%2064.9759%20104.669%2067.4999%20101.489%2067.5H74.9769C71.7679%2067.5008%2068.8449%2065.1182%2068.5287%2061.9072C68.2136%2058.7068%2070.6168%2055.8414%2073.764%2055.2705L74.2552%2055.1816L74.1674%2054.6904C73.7734%2052.4931%2074.8117%2050.2493%2076.6849%2049.0273C78.6105%2047.7713%2081.177%2047.7069%2083.1683%2048.8564L83.5814%2049.0938L83.8392%2048.6934Z'%20fill='url(%23paint0_linear_1858_8382)'%20stroke='%2394A3B8'%20stroke-miterlimit='10'/%3e%3canimateTransform%20attributeName='transform'%20type='translate'%20values='0%20-3;0%200;0%20-3'%20dur='3s'%20begin='0s'%20repeatCount='indefinite'%20calcMode='spline'%20keySplines='.42%200%20.58%201;%20.42%200%20.58%201'/%3e%3c/g%3e%3cg%20id='Cloud_2'%3e%3cpath%20id='Cloud_3'%20d='M55.2623%2048.4746C60.1227%2040.6111%2070.2975%2037.38%2078.8151%2040.9434C87.3214%2044.5023%2092.138%2054.0026%2089.903%2062.9648L89.7418%2063.6143L90.4108%2063.585C97.4203%2063.2791%20103.5%2068.9917%20103.5%2076.0283C103.5%2082.8395%2097.7717%2088.4997%2090.9772%2088.5H37.9537C31.1275%2088.5018%2025.2029%2083.1709%2024.5592%2076.3604C23.9158%2069.5518%2028.7369%2063.2124%2035.443%2061.9453L35.9264%2061.8535L35.8424%2061.3691C35.0256%2056.6239%2037.1258%2051.7168%2041.1051%2049.0127C45.0951%2046.3014%2050.4459%2046.1537%2054.5797%2048.6396L55.0026%2048.8945L55.2623%2048.4746Z'%20fill='url(%23paint1_linear_1858_8382)'%20stroke='%2364748B'%20stroke-miterlimit='10'/%3e%3canimateTransform%20attributeName='transform'%20type='translate'%20values='0%200;0%20-3;0%200'%20dur='3s'%20begin='0s'%20repeatCount='indefinite'%20calcMode='spline'%20keySplines='.42%200%20.58%201;%20.42%200%20.58%201'/%3e%3c/g%3e%3c/g%3e%3c/g%3e%3cg%20id='Precipitation'%3e%3cg%20id='Raindrops'%3e%3cpath%20id='Raindrop%201'%20d='M52%2083V95'%20stroke='%237DD3FC'%20stroke-width='4'%20stroke-linecap='round'%3e%3canimateTransform%20attributeName='transform'%20type='translate'%20values='0%200;0%2020'%20dur='1s'%20begin='0s'%20repeatCount='indefinite'%20calcMode='spline'%20keySplines='.42%200%201%201'/%3e%3canimate%20attributeName='opacity'%20values='0;1;1;0'%20dur='1s'%20begin='0s'%20repeatCount='indefinite'%20keyTimes='0;0.15;0.85;1'/%3e%3c/path%3e%3cpath%20id='Raindrop%202'%20d='M64%2083V95'%20stroke='%237DD3FC'%20stroke-width='4'%20stroke-linecap='round'%20opacity='0'%3e%3canimateTransform%20attributeName='transform'%20type='translate'%20values='0%200;0%2020'%20dur='1s'%20begin='0.4s'%20repeatCount='indefinite'%20calcMode='spline'%20keySplines='.42%200%201%201'/%3e%3canimate%20attributeName='opacity'%20values='0;1;1;0'%20dur='1s'%20begin='0.4s'%20repeatCount='indefinite'%20keyTimes='0;0.15;0.85;1'/%3e%3c/path%3e%3cpath%20id='Raindrop%203'%20d='M76%2083V95'%20stroke='%237DD3FC'%20stroke-width='4'%20stroke-linecap='round'%20opacity='0'%3e%3canimateTransform%20attributeName='transform'%20type='translate'%20values='0%200;0%2020'%20dur='1s'%20begin='0.8s'%20repeatCount='indefinite'%20calcMode='spline'%20keySplines='.42%200%201%201'/%3e%3canimate%20attributeName='opacity'%20values='0;1;1;0'%20dur='1s'%20begin='0.8s'%20repeatCount='indefinite'%20keyTimes='0;0.15;0.85;1'/%3e%3c/path%3e%3c/g%3e%3c/g%3e%3c/g%3e%3cdefs%3e%3clinearGradient%20id='paint0_linear_1858_8382'%20x1='88.0002'%20y1='44'%20x2='88.0002'%20y2='68'%20gradientUnits='userSpaceOnUse'%3e%3cstop%20stop-color='%23B0BCCD'/%3e%3cstop%20offset='1'%20stop-color='%2394A3B8'/%3e%3c/linearGradient%3e%3clinearGradient%20id='paint1_linear_1858_8382'%20x1='64.0008'%20y1='39'%20x2='64.0008'%20y2='89'%20gradientUnits='userSpaceOnUse'%3e%3cstop%20stop-color='%237C8CA2'/%3e%3cstop%20offset='1'%20stop-color='%2364748B'/%3e%3c/linearGradient%3e%3cclipPath%20id='clip0_1858_8382'%3e%3crect%20width='128'%20height='128'%20fill='white'/%3e%3c/clipPath%3e%3c/defs%3e%3c/svg%3e"
+  },
+  {
+    "event": "response",
+    "status": 200,
+    "url": "data:image/svg+xml,%3csvg%20viewBox='0%200%20128%20128'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%3e%3cg%20id='partly-cloudy-day'%20clip-path='url(%23clip0_1858_8241)'%3e%3cg%20id='Sky'%3e%3cg%20id='Sun'%3e%3ccircle%20id='Core'%20cx='39'%20cy='51'%20r='8.5'%20fill='url(%23paint0_linear_1858_8241)'%20stroke='%23F8AF18'/%3e%3cg%20id='Rays'%3e%3cpath%20d='M37.6875%2031.3125C37.6875%2030.5876%2038.2751%2030%2039%2030C39.7249%2030%2040.3125%2030.5876%2040.3125%2031.3125V37.4375C40.3125%2038.1624%2039.7249%2038.75%2039%2038.75C38.2751%2038.75%2037.6875%2038.1624%2037.6875%2037.4375V31.3125Z'%20fill='%23F8AF18'/%3e%3cpath%20d='M51.9931%2036.1508C52.5056%2035.6382%2053.3367%2035.6382%2053.8492%2036.1508C54.3618%2036.6633%2054.3618%2037.4943%2053.8492%2038.0069L49.5182%2042.3379C49.0056%2042.8505%2048.1746%2042.8505%2047.6621%2042.3379C47.1495%2041.8254%2047.1495%2040.9944%2047.6621%2040.4818L51.9931%2036.1508Z'%20fill='%23F8AF18'/%3e%3cpath%20d='M58.6875%2049.6875C59.4124%2049.6875%2060%2050.2751%2060%2051C60%2051.7249%2059.4124%2052.3125%2058.6875%2052.3125H52.5625C51.8376%2052.3125%2051.25%2051.7249%2051.25%2051C51.25%2050.2751%2051.8376%2049.6875%2052.5625%2049.6875H58.6875Z'%20fill='%23F8AF18'/%3e%3cpath%20d='M53.8492%2063.9931C54.3618%2064.5057%2054.3618%2065.3367%2053.8492%2065.8492C53.3367%2066.3618%2052.5056%2066.3618%2051.9931%2065.8492L47.6621%2061.5182C47.1495%2061.0057%2047.1495%2060.1746%2047.6621%2059.6621C48.1746%2059.1495%2049.0057%2059.1495%2049.5182%2059.6621L53.8492%2063.9931Z'%20fill='%23F8AF18'/%3e%3cpath%20d='M37.6875%2064.5625C37.6875%2063.8376%2038.2751%2063.25%2039%2063.25C39.7249%2063.25%2040.3125%2063.8376%2040.3125%2064.5625V70.6875C40.3125%2071.4124%2039.7249%2072%2039%2072C38.2751%2072%2037.6875%2071.4124%2037.6875%2070.6875V64.5625Z'%20fill='%23F8AF18'/%3e%3cpath%20d='M28.4818%2059.6621C28.9943%2059.1495%2029.8254%2059.1495%2030.3379%2059.6621C30.8505%2060.1746%2030.8505%2061.0056%2030.3379%2061.5182L26.0069%2065.8492C25.4943%2066.3618%2024.6633%2066.3618%2024.1508%2065.8492C23.6382%2065.3367%2023.6382%2064.5056%2024.1508%2063.9931L28.4818%2059.6621Z'%20fill='%23F8AF18'/%3e%3cpath%20d='M25.4375%2049.6875C26.1624%2049.6875%2026.75%2050.2751%2026.75%2051C26.75%2051.7249%2026.1624%2052.3125%2025.4375%2052.3125H19.3125C18.5876%2052.3125%2018%2051.7249%2018%2051C18%2050.2751%2018.5876%2049.6875%2019.3125%2049.6875H25.4375Z'%20fill='%23F8AF18'/%3e%3cpath%20d='M30.3379%2040.4818C30.8505%2040.9944%2030.8505%2041.8254%2030.3379%2042.3379C29.8254%2042.8505%2028.9944%2042.8505%2028.4818%2042.3379L24.1508%2038.0069C23.6382%2037.4944%2023.6382%2036.6633%2024.1508%2036.1508C24.6633%2035.6382%2025.4944%2035.6382%2026.0069%2036.1508L30.3379%2040.4818Z'%20fill='%23F8AF18'/%3e%3canimateTransform%20attributeName='transform'%20type='rotate'%20values='0%2039.0%2051.0;360%2039.0%2051.0'%20dur='6s'%20begin='0s'%20repeatCount='indefinite'/%3e%3c/g%3e%3c/g%3e%3cg%20id='Clouds'%3e%3cg%20id='Cloud'%3e%3cpath%20id='Cloud_2'%20d='M55.2623%2048.4746C60.1227%2040.6111%2070.2975%2037.38%2078.8151%2040.9434C87.3214%2044.5023%2092.138%2054.0026%2089.903%2062.9648L89.7418%2063.6143L90.4108%2063.585C97.4203%2063.2791%20103.5%2068.9917%20103.5%2076.0283C103.5%2082.8395%2097.7717%2088.4997%2090.9772%2088.5H37.9537C31.1275%2088.5018%2025.2029%2083.1709%2024.5592%2076.3604C23.9158%2069.5518%2028.7369%2063.2124%2035.443%2061.9453L35.9264%2061.8535L35.8424%2061.3691C35.0256%2056.6239%2037.1258%2051.7168%2041.1051%2049.0127C45.0951%2046.3014%2050.4459%2046.1537%2054.5797%2048.6396L55.0026%2048.8945L55.2623%2048.4746Z'%20fill='url(%23paint1_linear_1858_8241)'%20stroke='%23E6EFFC'%20stroke-miterlimit='10'/%3e%3c/g%3e%3canimateTransform%20attributeName='transform'%20type='translate'%20values='0%200;0%20-3;0%200'%20dur='3s'%20begin='0s'%20repeatCount='indefinite'%20calcMode='spline'%20keySplines='.42%200%20.58%201;%20.42%200%20.58%201'/%3e%3c/g%3e%3c/g%3e%3c/g%3e%3cdefs%3e%3clinearGradient%20id='paint0_linear_1858_8241'%20x1='39'%20y1='42'%20x2='39'%20y2='60'%20gradientUnits='userSpaceOnUse'%3e%3cstop%20stop-color='%23FBBF24'/%3e%3cstop%20offset='1'%20stop-color='%23F8AF18'/%3e%3c/linearGradient%3e%3clinearGradient%20id='paint1_linear_1858_8241'%20x1='64.0008'%20y1='39'%20x2='64.0008'%20y2='89'%20gradientUnits='userSpaceOnUse'%3e%3cstop%20stop-color='%23F3F7FE'/%3e%3cstop%20offset='1'%20stop-color='%23E6EFFC'/%3e%3c/linearGradient%3e%3cclipPath%20id='clip0_1858_8241'%3e%3crect%20width='128'%20height='128'%20fill='white'/%3e%3c/clipPath%3e%3c/defs%3e%3c/svg%3e"
+  },
+  {
+    "event": "response",
+    "status": 200,
+    "url": "data:image/svg+xml,%3csvg%20viewBox='0%200%20128%20128'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%3e%3cg%20id='partly-cloudy-night'%20clip-path='url(%23clip0_1858_8252)'%3e%3cg%20id='Sky'%3e%3cg%20id='Moon'%3e%3cpath%20id='Moon_2'%20d='M35.1152%2034.5947C33.3777%2043.1625%2040.7532%2051.2141%2049.3135%2050.7832C47.6732%2055.8338%2042.8891%2059.4999%2037.2178%2059.5C30.188%2059.5%2024.5002%2053.8786%2024.5%2046.959C24.5%2040.7451%2029.0879%2035.5838%2035.1152%2034.5947Z'%20fill='url(%23paint0_linear_1858_8252)'%20stroke='%2372B9D5'%20stroke-linecap='round'%20stroke-linejoin='round'/%3e%3canimateTransform%20attributeName='transform'%20type='rotate'%20values='-6%2036.9%2047.0;6%2036.9%2047.0;-6%2036.9%2047.0'%20dur='3s'%20begin='0s'%20repeatCount='indefinite'%20calcMode='spline'%20keySplines='.42%200%20.58%201;%20.42%200%20.58%201'/%3e%3c/g%3e%3cg%20id='Clouds'%3e%3cg%20id='Cloud'%3e%3cpath%20id='Cloud_2'%20d='M55.2623%2048.4746C60.1227%2040.6111%2070.2975%2037.38%2078.8151%2040.9434C87.3214%2044.5023%2092.138%2054.0026%2089.903%2062.9648L89.7418%2063.6143L90.4108%2063.585C97.4203%2063.2791%20103.5%2068.9917%20103.5%2076.0283C103.5%2082.8395%2097.7717%2088.4997%2090.9772%2088.5H37.9537C31.1275%2088.5018%2025.2029%2083.1709%2024.5592%2076.3604C23.9158%2069.5518%2028.7369%2063.2124%2035.443%2061.9453L35.9264%2061.8535L35.8424%2061.3691C35.0256%2056.6239%2037.1258%2051.7168%2041.1051%2049.0127C45.0951%2046.3014%2050.4459%2046.1537%2054.5797%2048.6396L55.0026%2048.8945L55.2623%2048.4746Z'%20fill='url(%23paint1_linear_1858_8252)'%20stroke='%23E6EFFC'%20stroke-miterlimit='10'/%3e%3c/g%3e%3canimateTransform%20attributeName='transform'%20type='translate'%20values='0%200;0%20-3;0%200'%20dur='3s'%20begin='0s'%20repeatCount='indefinite'%20calcMode='spline'%20keySplines='.42%200%20.58%201;%20.42%200%20.58%201'/%3e%3c/g%3e%3c/g%3e%3c/g%3e%3cdefs%3e%3clinearGradient%20id='paint0_linear_1858_8252'%20x1='37'%20y1='34'%20x2='37'%20y2='60'%20gradientUnits='userSpaceOnUse'%3e%3cstop%20stop-color='%2386C3DB'/%3e%3cstop%20offset='1'%20stop-color='%2372B9D5'/%3e%3c/linearGradient%3e%3clinearGradient%20id='paint1_linear_1858_8252'%20x1='64.0008'%20y1='39'%20x2='64.0008'%20y2='89'%20gradientUnits='userSpaceOnUse'%3e%3cstop%20stop-color='%23F3F7FE'/%3e%3cstop%20offset='1'%20stop-color='%23E6EFFC'/%3e%3c/linearGradient%3e%3cclipPath%20id='clip0_1858_8252'%3e%3crect%20width='128'%20height='128'%20fill='white'/%3e%3c/clipPath%3e%3c/defs%3e%3c/svg%3e"
+  },
+  {
+    "event": "allowed",
+    "method": "GET",
+    "url": "https://meteofriul-weather-49007668366.europe-west1.run.app/weather/v1/uv/latest.json",
+    "time": 1792503673.0434566
+  },
+  {
+    "event": "response",
+    "status": 200,
+    "url": "https://meteofriul-weather-49007668366.europe-west1.run.app/weather/v1/uv/latest.json"
+  },
+  {
+    "event": "allowed",
+    "method": "OPTIONS",
+    "url": "https://meteofriul-community-49007668366.europe-west1.run.app/api/community/reports",
+    "time": 1792503790.142675
+  },
+  {
+    "event": "response",
+    "status": 403,
+    "url": "https://meteofriul-community-49007668366.europe-west1.run.app/api/community/reports"
+  },
+  {
+    "event": "network_error",
+    "type": "Fetch",
+    "error": "net::ERR_FAILED",
+    "cors": {
+      "corsError": "PreflightMissingAllowOriginHeader",
+      "failedParameter": ""
+    }
+  },
+  {
+    "event": "allowed",
+    "method": "GET",
+    "url": "https://meteofriul-weather-49007668366.europe-west1.run.app/weather/v1/uv/latest.json",
+    "time": 1792503808.1925714
+  },
+  {
+    "event": "allowed",
+    "method": "OPTIONS",
+    "url": "https://meteofriul-community-49007668366.europe-west1.run.app/api/community/reports",
+    "time": 1792503808.2138672
+  },
+  {
+    "event": "response",
+    "status": 403,
+    "url": "https://meteofriul-community-49007668366.europe-west1.run.app/api/community/reports"
+  },
+  {
+    "event": "network_error",
+    "type": "Fetch",
+    "error": "net::ERR_FAILED",
+    "cors": {
+      "corsError": "PreflightMissingAllowOriginHeader",
+      "failedParameter": ""
+    }
+  },
+  {
+    "event": "response",
+    "status": 200,
+    "url": "https://meteofriul-weather-49007668366.europe-west1.run.app/weather/v1/uv/latest.json"
+  },
+  {
+    "event": "allowed",
+    "method": "OPTIONS",
+    "url": "https://meteofriul-community-49007668366.europe-west1.run.app/api/community/reports",
+    "time": 1792503825.2756228
+  },
+  {
+    "event": "response",
+    "status": 403,
+    "url": "https://meteofriul-community-49007668366.europe-west1.run.app/api/community/reports"
+  },
+  {
+    "event": "network_error",
+    "type": "Fetch",
+    "error": "net::ERR_FAILED",
+    "cors": {
+      "corsError": "PreflightMissingAllowOriginHeader",
+      "failedParameter": ""
+    }
+  },
+  {
+    "event": "allowed",
+    "method": "OPTIONS",
+    "url": "https://meteofriul-community-49007668366.europe-west1.run.app/api/community/reports",
+    "time": 1792503825.5643044
+  },
+  {
+    "event": "response",
+    "status": 403,
+    "url": "https://meteofriul-community-49007668366.europe-west1.run.app/api/community/reports"
+  },
+  {
+    "event": "network_error",
+    "type": "Fetch",
+    "error": "net::ERR_FAILED",
+    "cors": {
+      "corsError": "PreflightMissingAllowOriginHeader",
+      "failedParameter": ""
+    }
+  },
+  {
+    "event": "allowed",
+    "method": "GET",
+    "url": "https://meteofriul-weather-49007668366.europe-west1.run.app/weather/v1/uv/latest.json",
+    "time": 1792503848.3028603
+  },
+  {
+    "event": "allowed",
+    "method": "OPTIONS",
+    "url": "https://meteofriul-community-49007668366.europe-west1.run.app/api/community/reports",
+    "time": 1792503848.327034
+  },
+  {
+    "event": "response",
+    "status": 403,
+    "url": "https://meteofriul-community-49007668366.europe-west1.run.app/api/community/reports"
+  },
+  {
+    "event": "network_error",
+    "type": "Fetch",
+    "error": "net::ERR_FAILED",
+    "cors": {
+      "corsError": "PreflightMissingAllowOriginHeader",
+      "failedParameter": ""
+    }
+  },
+  {
+    "event": "response",
+    "status": 200,
+    "url": "https://meteofriul-weather-49007668366.europe-west1.run.app/weather/v1/uv/latest.json"
+  },
+  {
+    "event": "allowed",
+    "method": "OPTIONS",
+    "url": "https://meteofriul-community-49007668366.europe-west1.run.app/api/community/reports",
+    "time": 1792503880.3066666
+  },
+  {
+    "event": "response",
+    "status": 403,
+    "url": "https://meteofriul-community-49007668366.europe-west1.run.app/api/community/reports"
+  },
+  {
+    "event": "network_error",
+    "type": "Fetch",
+    "error": "net::ERR_FAILED",
+    "cors": {
+      "corsError": "PreflightMissingAllowOriginHeader",
+      "failedParameter": ""
+    }
+  },
+  {
+    "event": "allowed",
+    "method": "OPTIONS",
+    "url": "https://meteofriul-community-49007668366.europe-west1.run.app/api/community/reports",
+    "time": 1792503894.042225
+  },
+  {
+    "event": "allowed",
+    "method": "GET",
+    "url": "https://meteofriul-events-49007668366.europe-west1.run.app/api/local/events",
+    "time": 1792503894.0686722
+  },
+  {
+    "event": "response",
+    "status": 403,
+    "url": "https://meteofriul-community-49007668366.europe-west1.run.app/api/community/reports"
+  },
+  {
+    "event": "network_error",
+    "type": "Fetch",
+    "error": "net::ERR_FAILED",
+    "cors": {
+      "corsError": "PreflightMissingAllowOriginHeader",
+      "failedParameter": ""
+    }
+  },
+  {
+    "event": "response",
+    "status": 200,
+    "url": "https://meteofriul-events-49007668366.europe-west1.run.app/api/local/events"
+  },
+  {
+    "event": "allowed",
+    "method": "GET",
+    "url": "https://meteofriul-events-49007668366.europe-west1.run.app/api/local/events",
+    "time": 1792503895.0733638
+  },
+  {
+    "event": "response",
+    "status": 200,
+    "url": "https://meteofriul-events-49007668366.europe-west1.run.app/api/local/events"
+  },
+  {
+    "event": "allowed",
+    "method": "GET",
+    "url": "https://meteofriul-events-49007668366.europe-west1.run.app/api/local/events",
+    "time": 1792503895.4753716
+  },
+  {
+    "event": "response",
+    "status": 200,
+    "url": "https://meteofriul-events-49007668366.europe-west1.run.app/api/local/events"
+  },
+  {
+    "event": "allowed",
+    "method": "GET",
+    "url": "https://meteofriul-events-49007668366.europe-west1.run.app/api/local/events",
+    "time": 1792503896.0079546
+  },
+  {
+    "event": "response",
+    "status": 200,
+    "url": "https://meteofriul-events-49007668366.europe-west1.run.app/api/local/events"
+  },
+  {
+    "event": "allowed",
+    "method": "GET",
+    "url": "https://meteofriul-events-49007668366.europe-west1.run.app/api/local/events",
+    "time": 1792503896.425029
+  },
+  {
+    "event": "response",
+    "status": 200,
+    "url": "https://meteofriul-events-49007668366.europe-west1.run.app/api/local/events"
+  },
+  {
+    "event": "allowed",
+    "method": "GET",
+    "url": "https://play-b6fbe4d---meteofriul-api-bx24xqvcda-ew.a.run.app/api/promotions/catalog",
+    "time": 1792503897.2320335
+  },
+  {
+    "event": "allowed",
+    "method": "GET",
+    "url": "https://www.turismofvg.it/proxyvfs.axd/main,thumb/r378336",
+    "time": 1792503897.27397
+  },
+  {
+    "event": "allowed",
+    "method": "GET",
+    "url": "https://www.turismofvg.it/proxyvfs.axd/main,thumb/r378414",
+    "time": 1792503897.274416
+  },
+  {
+    "event": "allowed",
+    "method": "GET",
+    "url": "https://www.turismofvg.it/proxyvfs.axd/main,thumb/r356656",
+    "time": 1792503897.2747724
+  },
+  {
+    "event": "allowed",
+    "method": "GET",
+    "url": "https://www.turismofvg.it/proxyvfs.axd/main,thumb/r378977",
+    "time": 1792503897.275122
+  },
+  {
+    "event": "response",
+    "status": 200,
+    "url": "https://www.turismofvg.it/proxyvfs.axd/main,thumb/r378977"
+  },
+  {
+    "event": "response",
+    "status": 200,
+    "url": "https://www.turismofvg.it/proxyvfs.axd/main,thumb/r378336"
+  },
+  {
+    "event": "response",
+    "status": 200,
+    "url": "https://www.turismofvg.it/proxyvfs.axd/main,thumb/r378414"
+  },
+  {
+    "event": "response",
+    "status": 200,
+    "url": "https://www.turismofvg.it/proxyvfs.axd/main,thumb/r356656"
+  },
+  {
+    "event": "network_error",
+    "type": "Fetch",
+    "error": "net::ERR_FAILED",
+    "cors": {
+      "corsError": "MissingAllowOriginHeader",
+      "failedParameter": ""
+    }
+  },
+  {
+    "event": "allowed",
+    "method": "GET",
+    "url": "http://127.0.0.1:5176/__phone_verification_start__",
+    "time": 1792503922.5586257
+  },
+  {
+    "event": "response",
+    "status": 404,
+    "url": "http://127.0.0.1:5176/__phone_verification_start__"
+  },
+  {
+    "event": "allowed",
+    "method": "GET",
+    "url": "http://127.0.0.1:5176/",
+    "time": 1792503943.7696517
+  },
+  {
+    "event": "response",
+    "status": 200,
+    "url": "http://127.0.0.1:5176/"
+  },
+  {
+    "event": "allowed",
+    "method": "GET",
+    "url": "http://127.0.0.1:5176/assets/main-Bu79RhWT.js",
+    "time": 1792503943.9367757
+  },
+  {
+    "event": "allowed",
+    "method": "GET",
+    "url": "http://127.0.0.1:5176/assets/main-BGywgFOP.css",
+    "time": 1792503943.9373322
+  },
+  {
+    "event": "response",
+    "status": 200,
+    "url": "http://127.0.0.1:5176/assets/main-BGywgFOP.css"
+  },
+  {
+    "event": "response",
+    "status": 200,
+    "url": "http://127.0.0.1:5176/assets/main-Bu79RhWT.js"
+  },
+  {
+    "event": "allowed",
+    "method": "GET",
+    "url": "http://127.0.0.1:5176/brand/pilot-r4/meteo-eventi-friul-mark-192.png",
+    "time": 1792503944.8078952
+  },
+  {
+    "event": "response",
+    "status": 200,
+    "url": "data:image/svg+xml,%3csvg%20viewBox='0%200%20128%20128'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%3e%3cg%20id='overcast'%20clip-path='url(%23clip0_1858_8153)'%3e%3cg%20id='Sky'%3e%3cg%20id='Clouds'%3e%3cg%20id='Secondary%20Cloud'%3e%3cpath%20id='Cloud'%20d='M83.8392%2048.6934C86.2444%2044.9584%2091.2146%2043.529%2095.3177%2045.1768C99.3609%2046.8006%20101.814%2051.1888%20100.71%2055.4365L100.54%2056.0898L101.215%2056.0615C104.496%2055.924%20107.5%2058.4646%20107.5%2061.7744C107.5%2064.9759%20104.669%2067.4999%20101.489%2067.5H74.9769C71.7679%2067.5008%2068.8449%2065.1182%2068.5287%2061.9072C68.2136%2058.7068%2070.6168%2055.8414%2073.764%2055.2705L74.2552%2055.1816L74.1674%2054.6904C73.7734%2052.4931%2074.8117%2050.2493%2076.6849%2049.0273C78.6105%2047.7713%2081.177%2047.7069%2083.1683%2048.8564L83.5814%2049.0938L83.8392%2048.6934Z'%20fill='url(%23paint0_linear_1858_8153)'%20stroke='%2394A3B8'%20stroke-miterlimit='10'/%3e%3canimateTransform%20attributeName='transform'%20type='translate'%20values='0%20-3;0%200;0%20-3'%20dur='3s'%20begin='0s'%20repeatCount='indefinite'%20calcMode='spline'%20keySplines='.42%200%20.58%201;%20.42%200%20.58%201'/%3e%3c/g%3e%3cg%20id='Cloud_2'%3e%3cpath%20id='Cloud_3'%20d='M55.2623%2048.4746C60.1227%2040.6111%2070.2975%2037.38%2078.8151%2040.9434C87.3214%2044.5023%2092.138%2054.0026%2089.903%2062.9648L89.7418%2063.6143L90.4108%2063.585C97.4203%2063.2791%20103.5%2068.9917%20103.5%2076.0283C103.5%2082.8395%2097.7717%2088.4997%2090.9772%2088.5H37.9537C31.1275%2088.5018%2025.2029%2083.1709%2024.5592%2076.3604C23.9158%2069.5518%2028.7369%2063.2124%2035.443%2061.9453L35.9264%2061.8535L35.8424%2061.3691C35.0256%2056.6239%2037.1258%2051.7168%2041.1051%2049.0127C45.0951%2046.3014%2050.4459%2046.1537%2054.5797%2048.6396L55.0026%2048.8945L55.2623%2048.4746Z'%20fill='url(%23paint1_linear_1858_8153)'%20stroke='%23E6EFFC'%20stroke-miterlimit='10'/%3e%3canimateTransform%20attributeName='transform'%20type='translate'%20values='0%200;0%20-3;0%200'%20dur='3s'%20begin='0s'%20repeatCount='indefinite'%20calcMode='spline'%20keySplines='.42%200%20.58%201;%20.42%200%20.58%201'/%3e%3c/g%3e%3c/g%3e%3c/g%3e%3c/g%3e%3cdefs%3e%3clinearGradient%20id='paint0_linear_1858_8153'%20x1='88.0002'%20y1='44'%20x2='88.0002'%20y2='68'%20gradientUnits='userSpaceOnUse'%3e%3cstop%20stop-color='%23B0BCCD'/%3e%3cstop%20offset='1'%20stop-color='%2394A3B8'/%3e%3c/linearGradient%3e%3clinearGradient%20id='paint1_linear_1858_8153'%20x1='64.0008'%20y1='39'%20x2='64.0008'%20y2='89'%20gradientUnits='userSpaceOnUse'%3e%3cstop%20stop-color='%23F3F7FE'/%3e%3cstop%20offset='1'%20stop-color='%23E6EFFC'/%3e%3c/linearGradient%3e%3cclipPath%20id='clip0_1858_8153'%3e%3crect%20width='128'%20height='128'%20fill='white'/%3e%3c/clipPath%3e%3c/defs%3e%3c/svg%3e"
+  },
+  {
+    "event": "response",
+    "status": 200,
+    "url": "data:image/svg+xml,%3csvg%20viewBox='0%200%20128%20128'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%3e%3cg%20id='rain'%20clip-path='url(%23clip0_1858_8370)'%3e%3cg%20id='Sky'%3e%3cg%20id='Clouds'%3e%3cg%20id='Cloud'%3e%3cpath%20id='Cloud_2'%20d='M55.2623%2048.4746C60.1227%2040.6111%2070.2975%2037.38%2078.8151%2040.9434C87.3214%2044.5023%2092.138%2054.0026%2089.903%2062.9648L89.7418%2063.6143L90.4108%2063.585C97.4203%2063.2791%20103.5%2068.9917%20103.5%2076.0283C103.5%2082.8395%2097.7717%2088.4997%2090.9772%2088.5H37.9537C31.1275%2088.5018%2025.2029%2083.1709%2024.5592%2076.3604C23.9158%2069.5518%2028.7369%2063.2124%2035.443%2061.9453L35.9264%2061.8535L35.8424%2061.3691C35.0256%2056.6239%2037.1258%2051.7168%2041.1051%2049.0127C45.0951%2046.3014%2050.4459%2046.1537%2054.5797%2048.6396L55.0026%2048.8945L55.2623%2048.4746Z'%20fill='url(%23paint0_linear_1858_8370)'%20stroke='%23E6EFFC'%20stroke-miterlimit='10'/%3e%3c/g%3e%3canimateTransform%20attributeName='transform'%20type='translate'%20values='0%200;0%20-3;0%200'%20dur='3s'%20begin='0s'%20repeatCount='indefinite'%20calcMode='spline'%20keySplines='.42%200%20.58%201;%20.42%200%20.58%201'/%3e%3c/g%3e%3c/g%3e%3cg%20id='Precipitation'%3e%3cg%20id='Raindrops'%3e%3cpath%20id='Raindrop%201'%20d='M52%2083V95'%20stroke='%230A5AD4'%20stroke-width='4'%20stroke-linecap='round'%3e%3canimateTransform%20attributeName='transform'%20type='translate'%20values='0%200;0%2020'%20dur='1s'%20begin='0s'%20repeatCount='indefinite'%20calcMode='spline'%20keySplines='.42%200%201%201'/%3e%3canimate%20attributeName='opacity'%20values='0;1;1;0'%20dur='1s'%20begin='0s'%20repeatCount='indefinite'%20keyTimes='0;0.15;0.85;1'/%3e%3c/path%3e%3cpath%20id='Raindrop%202'%20d='M64%2083V95'%20stroke='%230A5AD4'%20stroke-width='4'%20stroke-linecap='round'%20opacity='0'%3e%3canimateTransform%20attributeName='transform'%20type='translate'%20values='0%200;0%2020'%20dur='1s'%20begin='0.4s'%20repeatCount='indefinite'%20calcMode='spline'%20keySplines='.42%200%201%201'/%3e%3canimate%20attributeName='opacity'%20values='0;1;1;0'%20dur='1s'%20begin='0.4s'%20repeatCount='indefinite'%20keyTimes='0;0.15;0.85;1'/%3e%3c/path%3e%3cpath%20id='Raindrop%203'%20d='M76%2083V95'%20stroke='%230A5AD4'%20stroke-width='4'%20stroke-linecap='round'%20opacity='0'%3e%3canimateTransform%20attributeName='transform'%20type='translate'%20values='0%200;0%2020'%20dur='1s'%20begin='0.8s'%20repeatCount='indefinite'%20calcMode='spline'%20keySplines='.42%200%201%201'/%3e%3canimate%20attributeName='opacity'%20values='0;1;1;0'%20dur='1s'%20begin='0.8s'%20repeatCount='indefinite'%20keyTimes='0;0.15;0.85;1'/%3e%3c/path%3e%3c/g%3e%3c/g%3e%3c/g%3e%3cdefs%3e%3clinearGradient%20id='paint0_linear_1858_8370'%20x1='64.0008'%20y1='39'%20x2='64.0008'%20y2='89'%20gradientUnits='userSpaceOnUse'%3e%3cstop%20stop-color='%23F3F7FE'/%3e%3cstop%20offset='1'%20stop-color='%23E6EFFC'/%3e%3c/linearGradient%3e%3cclipPath%20id='clip0_1858_8370'%3e%3crect%20width='128'%20height='128'%20fill='white'/%3e%3c/clipPath%3e%3c/defs%3e%3c/svg%3e"
+  },
+  {
+    "event": "response",
+    "status": 200,
+    "url": "data:image/svg+xml,%3c!--%20@meteocons/svg%200.1.0,%20Bas%20Milius%20(MIT;%20see%20LICENSE.txt).%20Only%20raindrop%20strokes%20changed%20to%20%237DD3FC%20for%20dark%20forecast%20surfaces.%20--%3e%3csvg%20viewBox='0%200%20128%20128'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%3e%3cg%20id='rain'%20clip-path='url(%23clip0_1858_8370)'%3e%3cg%20id='Sky'%3e%3cg%20id='Clouds'%3e%3cg%20id='Cloud'%3e%3cpath%20id='Cloud_2'%20d='M55.2623%2048.4746C60.1227%2040.6111%2070.2975%2037.38%2078.8151%2040.9434C87.3214%2044.5023%2092.138%2054.0026%2089.903%2062.9648L89.7418%2063.6143L90.4108%2063.585C97.4203%2063.2791%20103.5%2068.9917%20103.5%2076.0283C103.5%2082.8395%2097.7717%2088.4997%2090.9772%2088.5H37.9537C31.1275%2088.5018%2025.2029%2083.1709%2024.5592%2076.3604C23.9158%2069.5518%2028.7369%2063.2124%2035.443%2061.9453L35.9264%2061.8535L35.8424%2061.3691C35.0256%2056.6239%2037.1258%2051.7168%2041.1051%2049.0127C45.0951%2046.3014%2050.4459%2046.1537%2054.5797%2048.6396L55.0026%2048.8945L55.2623%2048.4746Z'%20fill='url(%23paint0_linear_1858_8370)'%20stroke='%23E6EFFC'%20stroke-miterlimit='10'/%3e%3c/g%3e%3canimateTransform%20attributeName='transform'%20type='translate'%20values='0%200;0%20-3;0%200'%20dur='3s'%20begin='0s'%20repeatCount='indefinite'%20calcMode='spline'%20keySplines='.42%200%20.58%201;%20.42%200%20.58%201'/%3e%3c/g%3e%3c/g%3e%3cg%20id='Precipitation'%3e%3cg%20id='Raindrops'%3e%3cpath%20id='Raindrop%201'%20d='M52%2083V95'%20stroke='%237DD3FC'%20stroke-width='4'%20stroke-linecap='round'%3e%3canimateTransform%20attributeName='transform'%20type='translate'%20values='0%200;0%2020'%20dur='1s'%20begin='0s'%20repeatCount='indefinite'%20calcMode='spline'%20keySplines='.42%200%201%201'/%3e%3canimate%20attributeName='opacity'%20values='0;1;1;0'%20dur='1s'%20begin='0s'%20repeatCount='indefinite'%20keyTimes='0;0.15;0.85;1'/%3e%3c/path%3e%3cpath%20id='Raindrop%202'%20d='M64%2083V95'%20stroke='%237DD3FC'%20stroke-width='4'%20stroke-linecap='round'%20opacity='0'%3e%3canimateTransform%20attributeName='transform'%20type='translate'%20values='0%200;0%2020'%20dur='1s'%20begin='0.4s'%20repeatCount='indefinite'%20calcMode='spline'%20keySplines='.42%200%201%201'/%3e%3canimate%20attributeName='opacity'%20values='0;1;1;0'%20dur='1s'%20begin='0.4s'%20repeatCount='indefinite'%20keyTimes='0;0.15;0.85;1'/%3e%3c/path%3e%3cpath%20id='Raindrop%203'%20d='M76%2083V95'%20stroke='%237DD3FC'%20stroke-width='4'%20stroke-linecap='round'%20opacity='0'%3e%3canimateTransform%20attributeName='transform'%20type='translate'%20values='0%200;0%2020'%20dur='1s'%20begin='0.8s'%20repeatCount='indefinite'%20calcMode='spline'%20keySplines='.42%200%201%201'/%3e%3canimate%20attributeName='opacity'%20values='0;1;1;0'%20dur='1s'%20begin='0.8s'%20repeatCount='indefinite'%20keyTimes='0;0.15;0.85;1'/%3e%3c/path%3e%3c/g%3e%3c/g%3e%3c/g%3e%3cdefs%3e%3clinearGradient%20id='paint0_linear_1858_8370'%20x1='64.0008'%20y1='39'%20x2='64.0008'%20y2='89'%20gradientUnits='userSpaceOnUse'%3e%3cstop%20stop-color='%23F3F7FE'/%3e%3cstop%20offset='1'%20stop-color='%23E6EFFC'/%3e%3c/linearGradient%3e%3cclipPath%20id='clip0_1858_8370'%3e%3crect%20width='128'%20height='128'%20fill='white'/%3e%3c/clipPath%3e%3c/defs%3e%3c/svg%3e"
+  },
+  {
+    "event": "response",
+    "status": 200,
+    "url": "data:image/svg+xml,%3csvg%20viewBox='0%200%20128%20128'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%3e%3cg%20id='overcast-night'%20clip-path='url(%23clip0_1858_8272)'%3e%3cg%20id='Sky'%3e%3cg%20id='Moon'%3e%3cpath%20id='Moon_2'%20d='M35.1152%2034.5947C33.3777%2043.1625%2040.7532%2051.2141%2049.3135%2050.7832C47.6732%2055.8338%2042.8891%2059.4999%2037.2178%2059.5C30.188%2059.5%2024.5002%2053.8786%2024.5%2046.959C24.5%2040.7451%2029.0879%2035.5838%2035.1152%2034.5947Z'%20fill='url(%23paint0_linear_1858_8272)'%20stroke='%2372B9D5'%20stroke-linecap='round'%20stroke-linejoin='round'/%3e%3canimateTransform%20attributeName='transform'%20type='rotate'%20values='-6%2036.9%2047.0;6%2036.9%2047.0;-6%2036.9%2047.0'%20dur='3s'%20begin='0s'%20repeatCount='indefinite'%20calcMode='spline'%20keySplines='.42%200%20.58%201;%20.42%200%20.58%201'/%3e%3c/g%3e%3cg%20id='Clouds'%3e%3cg%20id='Secondary%20Cloud'%3e%3cpath%20id='Cloud'%20d='M83.8392%2048.6934C86.2444%2044.9584%2091.2146%2043.529%2095.3177%2045.1768C99.3609%2046.8006%20101.814%2051.1888%20100.71%2055.4365L100.54%2056.0898L101.215%2056.0615C104.496%2055.924%20107.5%2058.4646%20107.5%2061.7744C107.5%2064.9759%20104.669%2067.4999%20101.489%2067.5H74.9769C71.7679%2067.5008%2068.8449%2065.1182%2068.5287%2061.9072C68.2136%2058.7068%2070.6168%2055.8414%2073.764%2055.2705L74.2552%2055.1816L74.1674%2054.6904C73.7734%2052.4931%2074.8117%2050.2493%2076.6849%2049.0273C78.6105%2047.7713%2081.177%2047.7069%2083.1683%2048.8564L83.5814%2049.0938L83.8392%2048.6934Z'%20fill='url(%23paint1_linear_1858_8272)'%20stroke='%2394A3B8'%20stroke-miterlimit='10'/%3e%3canimateTransform%20attributeName='transform'%20type='translate'%20values='0%20-3;0%200;0%20-3'%20dur='3s'%20begin='0s'%20repeatCount='indefinite'%20calcMode='spline'%20keySplines='.42%200%20.58%201;%20.42%200%20.58%201'/%3e%3c/g%3e%3cg%20id='Cloud_2'%3e%3cpath%20id='Cloud_3'%20d='M55.2623%2048.4746C60.1227%2040.6111%2070.2975%2037.38%2078.8151%2040.9434C87.3214%2044.5023%2092.138%2054.0026%2089.903%2062.9648L89.7418%2063.6143L90.4108%2063.585C97.4203%2063.2791%20103.5%2068.9917%20103.5%2076.0283C103.5%2082.8395%2097.7717%2088.4997%2090.9772%2088.5H37.9537C31.1275%2088.5018%2025.2029%2083.1709%2024.5592%2076.3604C23.9158%2069.5518%2028.7369%2063.2124%2035.443%2061.9453L35.9264%2061.8535L35.8424%2061.3691C35.0256%2056.6239%2037.1258%2051.7168%2041.1051%2049.0127C45.0951%2046.3014%2050.4459%2046.1537%2054.5797%2048.6396L55.0026%2048.8945L55.2623%2048.4746Z'%20fill='url(%23paint2_linear_1858_8272)'%20stroke='%23E6EFFC'%20stroke-miterlimit='10'/%3e%3canimateTransform%20attributeName='transform'%20type='translate'%20values='0%200;0%20-3;0%200'%20dur='3s'%20begin='0s'%20repeatCount='indefinite'%20calcMode='spline'%20keySplines='.42%200%20.58%201;%20.42%200%20.58%201'/%3e%3c/g%3e%3c/g%3e%3c/g%3e%3c/g%3e%3cdefs%3e%3clinearGradient%20id='paint0_linear_1858_8272'%20x1='37'%20y1='34'%20x2='37'%20y2='60'%20gradientUnits='userSpaceOnUse'%3e%3cstop%20stop-color='%2386C3DB'/%3e%3cstop%20offset='1'%20stop-color='%2372B9D5'/%3e%3c/linearGradient%3e%3clinearGradient%20id='paint1_linear_1858_8272'%20x1='88.0002'%20y1='44'%20x2='88.0002'%20y2='68'%20gradientUnits='userSpaceOnUse'%3e%3cstop%20stop-color='%23B0BCCD'/%3e%3cstop%20offset='1'%20stop-color='%2394A3B8'/%3e%3c/linearGradient%3e%3clinearGradient%20id='paint2_linear_1858_8272'%20x1='64.0008'%20y1='39'%20x2='64.0008'%20y2='89'%20gradientUnits='userSpaceOnUse'%3e%3cstop%20stop-color='%23F3F7FE'/%3e%3cstop%20offset='1'%20stop-color='%23E6EFFC'/%3e%3c/linearGradient%3e%3cclipPath%20id='clip0_1858_8272'%3e%3crect%20width='128'%20height='128'%20fill='white'/%3e%3c/clipPath%3e%3c/defs%3e%3c/svg%3e"
+  },
+  {
+    "event": "response",
+    "status": 200,
+    "url": "data:image/svg+xml,%3csvg%20viewBox='0%200%20128%20128'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%3e%3cg%20id='extreme-rain'%20clip-path='url(%23clip0_1858_8382)'%3e%3cg%20id='Sky'%3e%3cg%20id='Clouds'%3e%3cg%20id='Secondary%20Cloud'%3e%3cpath%20id='Cloud'%20d='M83.8392%2048.6934C86.2444%2044.9584%2091.2146%2043.529%2095.3177%2045.1768C99.3609%2046.8006%20101.814%2051.1888%20100.71%2055.4365L100.54%2056.0898L101.215%2056.0615C104.496%2055.924%20107.5%2058.4646%20107.5%2061.7744C107.5%2064.9759%20104.669%2067.4999%20101.489%2067.5H74.9769C71.7679%2067.5008%2068.8449%2065.1182%2068.5287%2061.9072C68.2136%2058.7068%2070.6168%2055.8414%2073.764%2055.2705L74.2552%2055.1816L74.1674%2054.6904C73.7734%2052.4931%2074.8117%2050.2493%2076.6849%2049.0273C78.6105%2047.7713%2081.177%2047.7069%2083.1683%2048.8564L83.5814%2049.0938L83.8392%2048.6934Z'%20fill='url(%23paint0_linear_1858_8382)'%20stroke='%2394A3B8'%20stroke-miterlimit='10'/%3e%3canimateTransform%20attributeName='transform'%20type='translate'%20values='0%20-3;0%200;0%20-3'%20dur='3s'%20begin='0s'%20repeatCount='indefinite'%20calcMode='spline'%20keySplines='.42%200%20.58%201;%20.42%200%20.58%201'/%3e%3c/g%3e%3cg%20id='Cloud_2'%3e%3cpath%20id='Cloud_3'%20d='M55.2623%2048.4746C60.1227%2040.6111%2070.2975%2037.38%2078.8151%2040.9434C87.3214%2044.5023%2092.138%2054.0026%2089.903%2062.9648L89.7418%2063.6143L90.4108%2063.585C97.4203%2063.2791%20103.5%2068.9917%20103.5%2076.0283C103.5%2082.8395%2097.7717%2088.4997%2090.9772%2088.5H37.9537C31.1275%2088.5018%2025.2029%2083.1709%2024.5592%2076.3604C23.9158%2069.5518%2028.7369%2063.2124%2035.443%2061.9453L35.9264%2061.8535L35.8424%2061.3691C35.0256%2056.6239%2037.1258%2051.7168%2041.1051%2049.0127C45.0951%2046.3014%2050.4459%2046.1537%2054.5797%2048.6396L55.0026%2048.8945L55.2623%2048.4746Z'%20fill='url(%23paint1_linear_1858_8382)'%20stroke='%2364748B'%20stroke-miterlimit='10'/%3e%3canimateTransform%20attributeName='transform'%20type='translate'%20values='0%200;0%20-3;0%200'%20dur='3s'%20begin='0s'%20repeatCount='indefinite'%20calcMode='spline'%20keySplines='.42%200%20.58%201;%20.42%200%20.58%201'/%3e%3c/g%3e%3c/g%3e%3c/g%3e%3cg%20id='Precipitation'%3e%3cg%20id='Raindrops'%3e%3cpath%20id='Raindrop%201'%20d='M52%2083V95'%20stroke='%230A5AD4'%20stroke-width='4'%20stroke-linecap='round'%3e%3canimateTransform%20attributeName='transform'%20type='translate'%20values='0%200;0%2020'%20dur='1s'%20begin='0s'%20repeatCount='indefinite'%20calcMode='spline'%20keySplines='.42%200%201%201'/%3e%3canimate%20attributeName='opacity'%20values='0;1;1;0'%20dur='1s'%20begin='0s'%20repeatCount='indefinite'%20keyTimes='0;0.15;0.85;1'/%3e%3c/path%3e%3cpath%20id='Raindrop%202'%20d='M64%2083V95'%20stroke='%230A5AD4'%20stroke-width='4'%20stroke-linecap='round'%20opacity='0'%3e%3canimateTransform%20attributeName='transform'%20type='translate'%20values='0%200;0%2020'%20dur='1s'%20begin='0.4s'%20repeatCount='indefinite'%20calcMode='spline'%20keySplines='.42%200%201%201'/%3e%3canimate%20attributeName='opacity'%20values='0;1;1;0'%20dur='1s'%20begin='0.4s'%20repeatCount='indefinite'%20keyTimes='0;0.15;0.85;1'/%3e%3c/path%3e%3cpath%20id='Raindrop%203'%20d='M76%2083V95'%20stroke='%230A5AD4'%20stroke-width='4'%20stroke-linecap='round'%20opacity='0'%3e%3canimateTransform%20attributeName='transform'%20type='translate'%20values='0%200;0%2020'%20dur='1s'%20begin='0.8s'%20repeatCount='indefinite'%20calcMode='spline'%20keySplines='.42%200%201%201'/%3e%3canimate%20attributeName='opacity'%20values='0;1;1;0'%20dur='1s'%20begin='0.8s'%20repeatCount='indefinite'%20keyTimes='0;0.15;0.85;1'/%3e%3c/path%3e%3c/g%3e%3c/g%3e%3c/g%3e%3cdefs%3e%3clinearGradient%20id='paint0_linear_1858_8382'%20x1='88.0002'%20y1='44'%20x2='88.0002'%20y2='68'%20gradientUnits='userSpaceOnUse'%3e%3cstop%20stop-color='%23B0BCCD'/%3e%3cstop%20offset='1'%20stop-color='%2394A3B8'/%3e%3c/linearGradient%3e%3clinearGradient%20id='paint1_linear_1858_8382'%20x1='64.0008'%20y1='39'%20x2='64.0008'%20y2='89'%20gradientUnits='userSpaceOnUse'%3e%3cstop%20stop-color='%237C8CA2'/%3e%3cstop%20offset='1'%20stop-color='%2364748B'/%3e%3c/linearGradient%3e%3cclipPath%20id='clip0_1858_8382'%3e%3crect%20width='128'%20height='128'%20fill='white'/%3e%3c/clipPath%3e%3c/defs%3e%3c/svg%3e"
+  },
+  {
+    "event": "response",
+    "status": 200,
+    "url": "data:image/svg+xml,%3c!--%20@meteocons/svg%200.1.0,%20Bas%20Milius%20(MIT;%20see%20LICENSE.txt).%20Only%20raindrop%20strokes%20changed%20to%20%237DD3FC%20for%20dark%20forecast%20surfaces.%20--%3e%3csvg%20viewBox='0%200%20128%20128'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%3e%3cg%20id='extreme-rain'%20clip-path='url(%23clip0_1858_8382)'%3e%3cg%20id='Sky'%3e%3cg%20id='Clouds'%3e%3cg%20id='Secondary%20Cloud'%3e%3cpath%20id='Cloud'%20d='M83.8392%2048.6934C86.2444%2044.9584%2091.2146%2043.529%2095.3177%2045.1768C99.3609%2046.8006%20101.814%2051.1888%20100.71%2055.4365L100.54%2056.0898L101.215%2056.0615C104.496%2055.924%20107.5%2058.4646%20107.5%2061.7744C107.5%2064.9759%20104.669%2067.4999%20101.489%2067.5H74.9769C71.7679%2067.5008%2068.8449%2065.1182%2068.5287%2061.9072C68.2136%2058.7068%2070.6168%2055.8414%2073.764%2055.2705L74.2552%2055.1816L74.1674%2054.6904C73.7734%2052.4931%2074.8117%2050.2493%2076.6849%2049.0273C78.6105%2047.7713%2081.177%2047.7069%2083.1683%2048.8564L83.5814%2049.0938L83.8392%2048.6934Z'%20fill='url(%23paint0_linear_1858_8382)'%20stroke='%2394A3B8'%20stroke-miterlimit='10'/%3e%3canimateTransform%20attributeName='transform'%20type='translate'%20values='0%20-3;0%200;0%20-3'%20dur='3s'%20begin='0s'%20repeatCount='indefinite'%20calcMode='spline'%20keySplines='.42%200%20.58%201;%20.42%200%20.58%201'/%3e%3c/g%3e%3cg%20id='Cloud_2'%3e%3cpath%20id='Cloud_3'%20d='M55.2623%2048.4746C60.1227%2040.6111%2070.2975%2037.38%2078.8151%2040.9434C87.3214%2044.5023%2092.138%2054.0026%2089.903%2062.9648L89.7418%2063.6143L90.4108%2063.585C97.4203%2063.2791%20103.5%2068.9917%20103.5%2076.0283C103.5%2082.8395%2097.7717%2088.4997%2090.9772%2088.5H37.9537C31.1275%2088.5018%2025.2029%2083.1709%2024.5592%2076.3604C23.9158%2069.5518%2028.7369%2063.2124%2035.443%2061.9453L35.9264%2061.8535L35.8424%2061.3691C35.0256%2056.6239%2037.1258%2051.7168%2041.1051%2049.0127C45.0951%2046.3014%2050.4459%2046.1537%2054.5797%2048.6396L55.0026%2048.8945L55.2623%2048.4746Z'%20fill='url(%23paint1_linear_1858_8382)'%20stroke='%2364748B'%20stroke-miterlimit='10'/%3e%3canimateTransform%20attributeName='transform'%20type='translate'%20values='0%200;0%20-3;0%200'%20dur='3s'%20begin='0s'%20repeatCount='indefinite'%20calcMode='spline'%20keySplines='.42%200%20.58%201;%20.42%200%20.58%201'/%3e%3c/g%3e%3c/g%3e%3c/g%3e%3cg%20id='Precipitation'%3e%3cg%20id='Raindrops'%3e%3cpath%20id='Raindrop%201'%20d='M52%2083V95'%20stroke='%237DD3FC'%20stroke-width='4'%20stroke-linecap='round'%3e%3canimateTransform%20attributeName='transform'%20type='translate'%20values='0%200;0%2020'%20dur='1s'%20begin='0s'%20repeatCount='indefinite'%20calcMode='spline'%20keySplines='.42%200%201%201'/%3e%3canimate%20attributeName='opacity'%20values='0;1;1;0'%20dur='1s'%20begin='0s'%20repeatCount='indefinite'%20keyTimes='0;0.15;0.85;1'/%3e%3c/path%3e%3cpath%20id='Raindrop%202'%20d='M64%2083V95'%20stroke='%237DD3FC'%20stroke-width='4'%20stroke-linecap='round'%20opacity='0'%3e%3canimateTransform%20attributeName='transform'%20type='translate'%20values='0%200;0%2020'%20dur='1s'%20begin='0.4s'%20repeatCount='indefinite'%20calcMode='spline'%20keySplines='.42%200%201%201'/%3e%3canimate%20attributeName='opacity'%20values='0;1;1;0'%20dur='1s'%20begin='0.4s'%20repeatCount='indefinite'%20keyTimes='0;0.15;0.85;1'/%3e%3c/path%3e%3cpath%20id='Raindrop%203'%20d='M76%2083V95'%20stroke='%237DD3FC'%20stroke-width='4'%20stroke-linecap='round'%20opacity='0'%3e%3canimateTransform%20attributeName='transform'%20type='translate'%20values='0%200;0%2020'%20dur='1s'%20begin='0.8s'%20repeatCount='indefinite'%20calcMode='spline'%20keySplines='.42%200%201%201'/%3e%3canimate%20attributeName='opacity'%20values='0;1;1;0'%20dur='1s'%20begin='0.8s'%20repeatCount='indefinite'%20keyTimes='0;0.15;0.85;1'/%3e%3c/path%3e%3c/g%3e%3c/g%3e%3c/g%3e%3cdefs%3e%3clinearGradient%20id='paint0_linear_1858_8382'%20x1='88.0002'%20y1='44'%20x2='88.0002'%20y2='68'%20gradientUnits='userSpaceOnUse'%3e%3cstop%20stop-color='%23B0BCCD'/%3e%3cstop%20offset='1'%20stop-color='%2394A3B8'/%3e%3c/linearGradient%3e%3clinearGradient%20id='paint1_linear_1858_8382'%20x1='64.0008'%20y1='39'%20x2='64.0008'%20y2='89'%20gradientUnits='userSpaceOnUse'%3e%3cstop%20stop-color='%237C8CA2'/%3e%3cstop%20offset='1'%20stop-color='%2364748B'/%3e%3c/linearGradient%3e%3cclipPath%20id='clip0_1858_8382'%3e%3crect%20width='128'%20height='128'%20fill='white'/%3e%3c/clipPath%3e%3c/defs%3e%3c/svg%3e"
+  },
+  {
+    "event": "response",
+    "status": 200,
+    "url": "data:image/svg+xml,%3csvg%20viewBox='0%200%20128%20128'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%3e%3cg%20id='partly-cloudy-day'%20clip-path='url(%23clip0_1858_8241)'%3e%3cg%20id='Sky'%3e%3cg%20id='Sun'%3e%3ccircle%20id='Core'%20cx='39'%20cy='51'%20r='8.5'%20fill='url(%23paint0_linear_1858_8241)'%20stroke='%23F8AF18'/%3e%3cg%20id='Rays'%3e%3cpath%20d='M37.6875%2031.3125C37.6875%2030.5876%2038.2751%2030%2039%2030C39.7249%2030%2040.3125%2030.5876%2040.3125%2031.3125V37.4375C40.3125%2038.1624%2039.7249%2038.75%2039%2038.75C38.2751%2038.75%2037.6875%2038.1624%2037.6875%2037.4375V31.3125Z'%20fill='%23F8AF18'/%3e%3cpath%20d='M51.9931%2036.1508C52.5056%2035.6382%2053.3367%2035.6382%2053.8492%2036.1508C54.3618%2036.6633%2054.3618%2037.4943%2053.8492%2038.0069L49.5182%2042.3379C49.0056%2042.8505%2048.1746%2042.8505%2047.6621%2042.3379C47.1495%2041.8254%2047.1495%2040.9944%2047.6621%2040.4818L51.9931%2036.1508Z'%20fill='%23F8AF18'/%3e%3cpath%20d='M58.6875%2049.6875C59.4124%2049.6875%2060%2050.2751%2060%2051C60%2051.7249%2059.4124%2052.3125%2058.6875%2052.3125H52.5625C51.8376%2052.3125%2051.25%2051.7249%2051.25%2051C51.25%2050.2751%2051.8376%2049.6875%2052.5625%2049.6875H58.6875Z'%20fill='%23F8AF18'/%3e%3cpath%20d='M53.8492%2063.9931C54.3618%2064.5057%2054.3618%2065.3367%2053.8492%2065.8492C53.3367%2066.3618%2052.5056%2066.3618%2051.9931%2065.8492L47.6621%2061.5182C47.1495%2061.0057%2047.1495%2060.1746%2047.6621%2059.6621C48.1746%2059.1495%2049.0057%2059.1495%2049.5182%2059.6621L53.8492%2063.9931Z'%20fill='%23F8AF18'/%3e%3cpath%20d='M37.6875%2064.5625C37.6875%2063.8376%2038.2751%2063.25%2039%2063.25C39.7249%2063.25%2040.3125%2063.8376%2040.3125%2064.5625V70.6875C40.3125%2071.4124%2039.7249%2072%2039%2072C38.2751%2072%2037.6875%2071.4124%2037.6875%2070.6875V64.5625Z'%20fill='%23F8AF18'/%3e%3cpath%20d='M28.4818%2059.6621C28.9943%2059.1495%2029.8254%2059.1495%2030.3379%2059.6621C30.8505%2060.1746%2030.8505%2061.0056%2030.3379%2061.5182L26.0069%2065.8492C25.4943%2066.3618%2024.6633%2066.3618%2024.1508%2065.8492C23.6382%2065.3367%2023.6382%2064.5056%2024.1508%2063.9931L28.4818%2059.6621Z'%20fill='%23F8AF18'/%3e%3cpath%20d='M25.4375%2049.6875C26.1624%2049.6875%2026.75%2050.2751%2026.75%2051C26.75%2051.7249%2026.1624%2052.3125%2025.4375%2052.3125H19.3125C18.5876%2052.3125%2018%2051.7249%2018%2051C18%2050.2751%2018.5876%2049.6875%2019.3125%2049.6875H25.4375Z'%20fill='%23F8AF18'/%3e%3cpath%20d='M30.3379%2040.4818C30.8505%2040.9944%2030.8505%2041.8254%2030.3379%2042.3379C29.8254%2042.8505%2028.9944%2042.8505%2028.4818%2042.3379L24.1508%2038.0069C23.6382%2037.4944%2023.6382%2036.6633%2024.1508%2036.1508C24.6633%2035.6382%2025.4944%2035.6382%2026.0069%2036.1508L30.3379%2040.4818Z'%20fill='%23F8AF18'/%3e%3canimateTransform%20attributeName='transform'%20type='rotate'%20values='0%2039.0%2051.0;360%2039.0%2051.0'%20dur='6s'%20begin='0s'%20repeatCount='indefinite'/%3e%3c/g%3e%3c/g%3e%3cg%20id='Clouds'%3e%3cg%20id='Cloud'%3e%3cpath%20id='Cloud_2'%20d='M55.2623%2048.4746C60.1227%2040.6111%2070.2975%2037.38%2078.8151%2040.9434C87.3214%2044.5023%2092.138%2054.0026%2089.903%2062.9648L89.7418%2063.6143L90.4108%2063.585C97.4203%2063.2791%20103.5%2068.9917%20103.5%2076.0283C103.5%2082.8395%2097.7717%2088.4997%2090.9772%2088.5H37.9537C31.1275%2088.5018%2025.2029%2083.1709%2024.5592%2076.3604C23.9158%2069.5518%2028.7369%2063.2124%2035.443%2061.9453L35.9264%2061.8535L35.8424%2061.3691C35.0256%2056.6239%2037.1258%2051.7168%2041.1051%2049.0127C45.0951%2046.3014%2050.4459%2046.1537%2054.5797%2048.6396L55.0026%2048.8945L55.2623%2048.4746Z'%20fill='url(%23paint1_linear_1858_8241)'%20stroke='%23E6EFFC'%20stroke-miterlimit='10'/%3e%3c/g%3e%3canimateTransform%20attributeName='transform'%20type='translate'%20values='0%200;0%20-3;0%200'%20dur='3s'%20begin='0s'%20repeatCount='indefinite'%20calcMode='spline'%20keySplines='.42%200%20.58%201;%20.42%200%20.58%201'/%3e%3c/g%3e%3c/g%3e%3c/g%3e%3cdefs%3e%3clinearGradient%20id='paint0_linear_1858_8241'%20x1='39'%20y1='42'%20x2='39'%20y2='60'%20gradientUnits='userSpaceOnUse'%3e%3cstop%20stop-color='%23FBBF24'/%3e%3cstop%20offset='1'%20stop-color='%23F8AF18'/%3e%3c/linearGradient%3e%3clinearGradient%20id='paint1_linear_1858_8241'%20x1='64.0008'%20y1='39'%20x2='64.0008'%20y2='89'%20gradientUnits='userSpaceOnUse'%3e%3cstop%20stop-color='%23F3F7FE'/%3e%3cstop%20offset='1'%20stop-color='%23E6EFFC'/%3e%3c/linearGradient%3e%3cclipPath%20id='clip0_1858_8241'%3e%3crect%20width='128'%20height='128'%20fill='white'/%3e%3c/clipPath%3e%3c/defs%3e%3c/svg%3e"
+  },
+  {
+    "event": "response",
+    "status": 200,
+    "url": "data:image/svg+xml,%3csvg%20viewBox='0%200%20128%20128'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%3e%3cg%20id='partly-cloudy-night'%20clip-path='url(%23clip0_1858_8252)'%3e%3cg%20id='Sky'%3e%3cg%20id='Moon'%3e%3cpath%20id='Moon_2'%20d='M35.1152%2034.5947C33.3777%2043.1625%2040.7532%2051.2141%2049.3135%2050.7832C47.6732%2055.8338%2042.8891%2059.4999%2037.2178%2059.5C30.188%2059.5%2024.5002%2053.8786%2024.5%2046.959C24.5%2040.7451%2029.0879%2035.5838%2035.1152%2034.5947Z'%20fill='url(%23paint0_linear_1858_8252)'%20stroke='%2372B9D5'%20stroke-linecap='round'%20stroke-linejoin='round'/%3e%3canimateTransform%20attributeName='transform'%20type='rotate'%20values='-6%2036.9%2047.0;6%2036.9%2047.0;-6%2036.9%2047.0'%20dur='3s'%20begin='0s'%20repeatCount='indefinite'%20calcMode='spline'%20keySplines='.42%200%20.58%201;%20.42%200%20.58%201'/%3e%3c/g%3e%3cg%20id='Clouds'%3e%3cg%20id='Cloud'%3e%3cpath%20id='Cloud_2'%20d='M55.2623%2048.4746C60.1227%2040.6111%2070.2975%2037.38%2078.8151%2040.9434C87.3214%2044.5023%2092.138%2054.0026%2089.903%2062.9648L89.7418%2063.6143L90.4108%2063.585C97.4203%2063.2791%20103.5%2068.9917%20103.5%2076.0283C103.5%2082.8395%2097.7717%2088.4997%2090.9772%2088.5H37.9537C31.1275%2088.5018%2025.2029%2083.1709%2024.5592%2076.3604C23.9158%2069.5518%2028.7369%2063.2124%2035.443%2061.9453L35.9264%2061.8535L35.8424%2061.3691C35.0256%2056.6239%2037.1258%2051.7168%2041.1051%2049.0127C45.0951%2046.3014%2050.4459%2046.1537%2054.5797%2048.6396L55.0026%2048.8945L55.2623%2048.4746Z'%20fill='url(%23paint1_linear_1858_8252)'%20stroke='%23E6EFFC'%20stroke-miterlimit='10'/%3e%3c/g%3e%3canimateTransform%20attributeName='transform'%20type='translate'%20values='0%200;0%20-3;0%200'%20dur='3s'%20begin='0s'%20repeatCount='indefinite'%20calcMode='spline'%20keySplines='.42%200%20.58%201;%20.42%200%20.58%201'/%3e%3c/g%3e%3c/g%3e%3c/g%3e%3cdefs%3e%3clinearGradient%20id='paint0_linear_1858_8252'%20x1='37'%20y1='34'%20x2='37'%20y2='60'%20gradientUnits='userSpaceOnUse'%3e%3cstop%20stop-color='%2386C3DB'/%3e%3cstop%20offset='1'%20stop-color='%2372B9D5'/%3e%3c/linearGradient%3e%3clinearGradient%20id='paint1_linear_1858_8252'%20x1='64.0008'%20y1='39'%20x2='64.0008'%20y2='89'%20gradientUnits='userSpaceOnUse'%3e%3cstop%20stop-color='%23F3F7FE'/%3e%3cstop%20offset='1'%20stop-color='%23E6EFFC'/%3e%3c/linearGradient%3e%3cclipPath%20id='clip0_1858_8252'%3e%3crect%20width='128'%20height='128'%20fill='white'/%3e%3c/clipPath%3e%3c/defs%3e%3c/svg%3e"
+  },
+  {
+    "event": "response",
+    "status": 200,
+    "url": "http://127.0.0.1:5176/brand/pilot-r4/meteo-eventi-friul-mark-192.png"
+  },
+  {
+    "event": "allowed",
+    "method": "GET",
+    "url": "https://play-b6fbe4d---meteofriul-api-bx24xqvcda-ew.a.run.app/api/weather/official-alerts",
+    "time": 1792503944.9165952
+  },
+  {
+    "event": "allowed",
+    "method": "GET",
+    "url": "http://127.0.0.1:5176/assets/index.esm-DsUkD-D0.js",
+    "time": 1792503944.916999
+  },
+  {
+    "event": "allowed",
+    "method": "GET",
+    "url": "http://127.0.0.1:5176/assets/index.esm-DA8gwP5f.js",
+    "time": 1792503944.9258022
+  },
+  {
+    "event": "allowed",
+    "method": "GET",
+    "url": "https://meteofriul-weather-49007668366.europe-west1.run.app/weather/v1/uv/latest.json",
+    "time": 1792503944.9261665
+  },
+  {
+    "event": "allowed",
+    "method": "OPTIONS",
+    "url": "https://meteofriul-community-49007668366.europe-west1.run.app/api/community/reports",
+    "time": 1792503944.9613001
+  },
+  {
+    "event": "response",
+    "status": 200,
+    "url": "http://127.0.0.1:5176/assets/index.esm-DA8gwP5f.js"
+  },
+  {
+    "event": "response",
+    "status": 200,
+    "url": "http://127.0.0.1:5176/assets/index.esm-DsUkD-D0.js"
+  },
+  {
+    "event": "allowed",
+    "method": "GET",
+    "url": "http://127.0.0.1:5176/manifest.webmanifest",
+    "time": 1792503945.1218975
+  },
+  {
+    "event": "response",
+    "status": 403,
+    "url": "https://meteofriul-community-49007668366.europe-west1.run.app/api/community/reports"
+  },
+  {
+    "event": "network_error",
+    "type": "Fetch",
+    "error": "net::ERR_FAILED",
+    "cors": {
+      "corsError": "PreflightMissingAllowOriginHeader",
+      "failedParameter": ""
+    }
+  },
+  {
+    "event": "response",
+    "status": 200,
+    "url": "http://127.0.0.1:5176/manifest.webmanifest"
+  },
+  {
+    "event": "allowed",
+    "method": "GET",
+    "url": "http://127.0.0.1:5176/branding/icon_launcher_maskable_mf-r5-20260927-512.png",
+    "time": 1792503945.2017367
+  },
+  {
+    "event": "response",
+    "status": 200,
+    "url": "https://meteofriul-weather-49007668366.europe-west1.run.app/weather/v1/uv/latest.json"
+  },
+  {
+    "event": "allowed",
+    "method": "GET",
+    "url": "http://127.0.0.1:5176/assets/index.esm-CIWX8_XI.js",
+    "time": 1792503945.2121549
+  },
+  {
+    "event": "response",
+    "status": 200,
+    "url": "http://127.0.0.1:5176/branding/icon_launcher_maskable_mf-r5-20260927-512.png"
+  },
+  {
+    "event": "response",
+    "status": 200,
+    "url": "http://127.0.0.1:5176/assets/index.esm-CIWX8_XI.js"
+  },
+  {
+    "event": "network_error",
+    "type": "Fetch",
+    "error": "net::ERR_FAILED",
+    "cors": {
+      "corsError": "MissingAllowOriginHeader",
+      "failedParameter": ""
+    }
+  },
+  {
+    "event": "allowed",
+    "method": "GET",
+    "url": "https://play-b6fbe4d---meteofriul-api-bx24xqvcda-ew.a.run.app/api/promotions/catalog",
+    "time": 1792503962.819249
+  },
+  {
+    "event": "allowed",
+    "method": "GET",
+    "url": "https://meteofriul-events-49007668366.europe-west1.run.app/api/local/events",
+    "time": 1792503962.8238628
+  },
+  {
+    "event": "allowed",
+    "method": "OPTIONS",
+    "url": "https://meteofriul-community-49007668366.europe-west1.run.app/api/community/reports",
+    "time": 1792503962.8468096
+  },
+  {
+    "event": "allowed",
+    "method": "GET",
+    "url": "https://www.turismofvg.it/proxyvfs.axd/main,thumb/r378336",
+    "time": 1792503962.8835528
+  },
+  {
+    "event": "allowed",
+    "method": "GET",
+    "url": "https://www.turismofvg.it/proxyvfs.axd/main,thumb/r378414",
+    "time": 1792503962.8852272
+  },
+  {
+    "event": "allowed",
+    "method": "GET",
+    "url": "https://www.turismofvg.it/proxyvfs.axd/main,thumb/r356656",
+    "time": 1792503962.8874755
+  },
+  {
+    "event": "allowed",
+    "method": "GET",
+    "url": "https://www.turismofvg.it/proxyvfs.axd/main,thumb/r378977",
+    "time": 1792503962.8878858
+  },
+  {
+    "event": "response",
+    "status": 403,
+    "url": "https://meteofriul-community-49007668366.europe-west1.run.app/api/community/reports"
+  },
+  {
+    "event": "response",
+    "status": 200,
+    "url": "https://www.turismofvg.it/proxyvfs.axd/main,thumb/r378336"
+  },
+  {
+    "event": "response",
+    "status": 200,
+    "url": "https://www.turismofvg.it/proxyvfs.axd/main,thumb/r356656"
+  },
+  {
+    "event": "response",
+    "status": 200,
+    "url": "https://www.turismofvg.it/proxyvfs.axd/main,thumb/r378414"
+  },
+  {
+    "event": "response",
+    "status": 200,
+    "url": "https://www.turismofvg.it/proxyvfs.axd/main,thumb/r378977"
+  },
+  {
+    "event": "network_error",
+    "type": "Fetch",
+    "error": "net::ERR_FAILED",
+    "cors": {
+      "corsError": "PreflightMissingAllowOriginHeader",
+      "failedParameter": ""
+    }
+  },
+  {
+    "event": "network_error",
+    "type": "Fetch",
+    "error": "net::ERR_FAILED",
+    "cors": {
+      "corsError": "MissingAllowOriginHeader",
+      "failedParameter": ""
+    }
+  },
+  {
+    "event": "response",
+    "status": 200,
+    "url": "https://meteofriul-events-49007668366.europe-west1.run.app/api/local/events"
+  },
+  {
+    "event": "allowed",
+    "method": "GET",
+    "url": "https://meteofriul-events-49007668366.europe-west1.run.app/api/local/events",
+    "time": 1792503963.5667686
+  },
+  {
+    "event": "response",
+    "status": 200,
+    "url": "https://meteofriul-events-49007668366.europe-west1.run.app/api/local/events"
+  },
+  {
+    "event": "allowed",
+    "method": "GET",
+    "url": "https://meteofriul-events-49007668366.europe-west1.run.app/api/local/events",
+    "time": 1792503964.003686
+  },
+  {
+    "event": "response",
+    "status": 200,
+    "url": "https://meteofriul-events-49007668366.europe-west1.run.app/api/local/events"
+  },
+  {
+    "event": "allowed",
+    "method": "GET",
+    "url": "https://meteofriul-events-49007668366.europe-west1.run.app/api/local/events",
+    "time": 1792503964.4046147
+  },
+  {
+    "event": "response",
+    "status": 200,
+    "url": "https://meteofriul-events-49007668366.europe-west1.run.app/api/local/events"
+  },
+  {
+    "event": "allowed",
+    "method": "GET",
+    "url": "https://meteofriul-events-49007668366.europe-west1.run.app/api/local/events",
+    "time": 1792503964.7985299
+  },
+  {
+    "event": "response",
+    "status": 200,
+    "url": "https://meteofriul-events-49007668366.europe-west1.run.app/api/local/events"
+  },
+  {
+    "event": "allowed",
+    "method": "GET",
+    "url": "http://127.0.0.1:5176/__phone_verification_start__",
+    "time": 1792503987.364155
+  },
+  {
+    "event": "response",
+    "status": 404,
+    "url": "http://127.0.0.1:5176/__phone_verification_start__"
+  },
+  {
+    "event": "allowed",
+    "method": "GET",
+    "url": "http://127.0.0.1:5176/",
+    "time": 1792504012.6978936
+  },
+  {
+    "event": "response",
+    "status": 200,
+    "url": "http://127.0.0.1:5176/"
+  },
+  {
+    "event": "allowed",
+    "method": "GET",
+    "url": "http://127.0.0.1:5176/assets/main-Bu79RhWT.js",
+    "time": 1792504012.8731694
+  },
+  {
+    "event": "allowed",
+    "method": "GET",
+    "url": "http://127.0.0.1:5176/assets/main-BGywgFOP.css",
+    "time": 1792504012.873601
+  },
+  {
+    "event": "response",
+    "status": 200,
+    "url": "http://127.0.0.1:5176/assets/main-BGywgFOP.css"
+  },
+  {
+    "event": "response",
+    "status": 200,
+    "url": "http://127.0.0.1:5176/assets/main-Bu79RhWT.js"
+  },
+  {
+    "event": "allowed",
+    "method": "GET",
+    "url": "http://127.0.0.1:5176/brand/pilot-r4/meteo-eventi-friul-mark-192.png",
+    "time": 1792504013.5155187
+  },
+  {
+    "event": "response",
+    "status": 200,
+    "url": "data:image/svg+xml,%3csvg%20viewBox='0%200%20128%20128'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%3e%3cg%20id='overcast'%20clip-path='url(%23clip0_1858_8153)'%3e%3cg%20id='Sky'%3e%3cg%20id='Clouds'%3e%3cg%20id='Secondary%20Cloud'%3e%3cpath%20id='Cloud'%20d='M83.8392%2048.6934C86.2444%2044.9584%2091.2146%2043.529%2095.3177%2045.1768C99.3609%2046.8006%20101.814%2051.1888%20100.71%2055.4365L100.54%2056.0898L101.215%2056.0615C104.496%2055.924%20107.5%2058.4646%20107.5%2061.7744C107.5%2064.9759%20104.669%2067.4999%20101.489%2067.5H74.9769C71.7679%2067.5008%2068.8449%2065.1182%2068.5287%2061.9072C68.2136%2058.7068%2070.6168%2055.8414%2073.764%2055.2705L74.2552%2055.1816L74.1674%2054.6904C73.7734%2052.4931%2074.8117%2050.2493%2076.6849%2049.0273C78.6105%2047.7713%2081.177%2047.7069%2083.1683%2048.8564L83.5814%2049.0938L83.8392%2048.6934Z'%20fill='url(%23paint0_linear_1858_8153)'%20stroke='%2394A3B8'%20stroke-miterlimit='10'/%3e%3canimateTransform%20attributeName='transform'%20type='translate'%20values='0%20-3;0%200;0%20-3'%20dur='3s'%20begin='0s'%20repeatCount='indefinite'%20calcMode='spline'%20keySplines='.42%200%20.58%201;%20.42%200%20.58%201'/%3e%3c/g%3e%3cg%20id='Cloud_2'%3e%3cpath%20id='Cloud_3'%20d='M55.2623%2048.4746C60.1227%2040.6111%2070.2975%2037.38%2078.8151%2040.9434C87.3214%2044.5023%2092.138%2054.0026%2089.903%2062.9648L89.7418%2063.6143L90.4108%2063.585C97.4203%2063.2791%20103.5%2068.9917%20103.5%2076.0283C103.5%2082.8395%2097.7717%2088.4997%2090.9772%2088.5H37.9537C31.1275%2088.5018%2025.2029%2083.1709%2024.5592%2076.3604C23.9158%2069.5518%2028.7369%2063.2124%2035.443%2061.9453L35.9264%2061.8535L35.8424%2061.3691C35.0256%2056.6239%2037.1258%2051.7168%2041.1051%2049.0127C45.0951%2046.3014%2050.4459%2046.1537%2054.5797%2048.6396L55.0026%2048.8945L55.2623%2048.4746Z'%20fill='url(%23paint1_linear_1858_8153)'%20stroke='%23E6EFFC'%20stroke-miterlimit='10'/%3e%3canimateTransform%20attributeName='transform'%20type='translate'%20values='0%200;0%20-3;0%200'%20dur='3s'%20begin='0s'%20repeatCount='indefinite'%20calcMode='spline'%20keySplines='.42%200%20.58%201;%20.42%200%20.58%201'/%3e%3c/g%3e%3c/g%3e%3c/g%3e%3c/g%3e%3cdefs%3e%3clinearGradient%20id='paint0_linear_1858_8153'%20x1='88.0002'%20y1='44'%20x2='88.0002'%20y2='68'%20gradientUnits='userSpaceOnUse'%3e%3cstop%20stop-color='%23B0BCCD'/%3e%3cstop%20offset='1'%20stop-color='%2394A3B8'/%3e%3c/linearGradient%3e%3clinearGradient%20id='paint1_linear_1858_8153'%20x1='64.0008'%20y1='39'%20x2='64.0008'%20y2='89'%20gradientUnits='userSpaceOnUse'%3e%3cstop%20stop-color='%23F3F7FE'/%3e%3cstop%20offset='1'%20stop-color='%23E6EFFC'/%3e%3c/linearGradient%3e%3cclipPath%20id='clip0_1858_8153'%3e%3crect%20width='128'%20height='128'%20fill='white'/%3e%3c/clipPath%3e%3c/defs%3e%3c/svg%3e"
+  },
+  {
+    "event": "response",
+    "status": 200,
+    "url": "data:image/svg+xml,%3csvg%20viewBox='0%200%20128%20128'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%3e%3cg%20id='rain'%20clip-path='url(%23clip0_1858_8370)'%3e%3cg%20id='Sky'%3e%3cg%20id='Clouds'%3e%3cg%20id='Cloud'%3e%3cpath%20id='Cloud_2'%20d='M55.2623%2048.4746C60.1227%2040.6111%2070.2975%2037.38%2078.8151%2040.9434C87.3214%2044.5023%2092.138%2054.0026%2089.903%2062.9648L89.7418%2063.6143L90.4108%2063.585C97.4203%2063.2791%20103.5%2068.9917%20103.5%2076.0283C103.5%2082.8395%2097.7717%2088.4997%2090.9772%2088.5H37.9537C31.1275%2088.5018%2025.2029%2083.1709%2024.5592%2076.3604C23.9158%2069.5518%2028.7369%2063.2124%2035.443%2061.9453L35.9264%2061.8535L35.8424%2061.3691C35.0256%2056.6239%2037.1258%2051.7168%2041.1051%2049.0127C45.0951%2046.3014%2050.4459%2046.1537%2054.5797%2048.6396L55.0026%2048.8945L55.2623%2048.4746Z'%20fill='url(%23paint0_linear_1858_8370)'%20stroke='%23E6EFFC'%20stroke-miterlimit='10'/%3e%3c/g%3e%3canimateTransform%20attributeName='transform'%20type='translate'%20values='0%200;0%20-3;0%200'%20dur='3s'%20begin='0s'%20repeatCount='indefinite'%20calcMode='spline'%20keySplines='.42%200%20.58%201;%20.42%200%20.58%201'/%3e%3c/g%3e%3c/g%3e%3cg%20id='Precipitation'%3e%3cg%20id='Raindrops'%3e%3cpath%20id='Raindrop%201'%20d='M52%2083V95'%20stroke='%230A5AD4'%20stroke-width='4'%20stroke-linecap='round'%3e%3canimateTransform%20attributeName='transform'%20type='translate'%20values='0%200;0%2020'%20dur='1s'%20begin='0s'%20repeatCount='indefinite'%20calcMode='spline'%20keySplines='.42%200%201%201'/%3e%3canimate%20attributeName='opacity'%20values='0;1;1;0'%20dur='1s'%20begin='0s'%20repeatCount='indefinite'%20keyTimes='0;0.15;0.85;1'/%3e%3c/path%3e%3cpath%20id='Raindrop%202'%20d='M64%2083V95'%20stroke='%230A5AD4'%20stroke-width='4'%20stroke-linecap='round'%20opacity='0'%3e%3canimateTransform%20attributeName='transform'%20type='translate'%20values='0%200;0%2020'%20dur='1s'%20begin='0.4s'%20repeatCount='indefinite'%20calcMode='spline'%20keySplines='.42%200%201%201'/%3e%3canimate%20attributeName='opacity'%20values='0;1;1;0'%20dur='1s'%20begin='0.4s'%20repeatCount='indefinite'%20keyTimes='0;0.15;0.85;1'/%3e%3c/path%3e%3cpath%20id='Raindrop%203'%20d='M76%2083V95'%20stroke='%230A5AD4'%20stroke-width='4'%20stroke-linecap='round'%20opacity='0'%3e%3canimateTransform%20attributeName='transform'%20type='translate'%20values='0%200;0%2020'%20dur='1s'%20begin='0.8s'%20repeatCount='indefinite'%20calcMode='spline'%20keySplines='.42%200%201%201'/%3e%3canimate%20attributeName='opacity'%20values='0;1;1;0'%20dur='1s'%20begin='0.8s'%20repeatCount='indefinite'%20keyTimes='0;0.15;0.85;1'/%3e%3c/path%3e%3c/g%3e%3c/g%3e%3c/g%3e%3cdefs%3e%3clinearGradient%20id='paint0_linear_1858_8370'%20x1='64.0008'%20y1='39'%20x2='64.0008'%20y2='89'%20gradientUnits='userSpaceOnUse'%3e%3cstop%20stop-color='%23F3F7FE'/%3e%3cstop%20offset='1'%20stop-color='%23E6EFFC'/%3e%3c/linearGradient%3e%3cclipPath%20id='clip0_1858_8370'%3e%3crect%20width='128'%20height='128'%20fill='white'/%3e%3c/clipPath%3e%3c/defs%3e%3c/svg%3e"
+  },
+  {
+    "event": "response",
+    "status": 200,
+    "url": "data:image/svg+xml,%3c!--%20@meteocons/svg%200.1.0,%20Bas%20Milius%20(MIT;%20see%20LICENSE.txt).%20Only%20raindrop%20strokes%20changed%20to%20%237DD3FC%20for%20dark%20forecast%20surfaces.%20--%3e%3csvg%20viewBox='0%200%20128%20128'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%3e%3cg%20id='rain'%20clip-path='url(%23clip0_1858_8370)'%3e%3cg%20id='Sky'%3e%3cg%20id='Clouds'%3e%3cg%20id='Cloud'%3e%3cpath%20id='Cloud_2'%20d='M55.2623%2048.4746C60.1227%2040.6111%2070.2975%2037.38%2078.8151%2040.9434C87.3214%2044.5023%2092.138%2054.0026%2089.903%2062.9648L89.7418%2063.6143L90.4108%2063.585C97.4203%2063.2791%20103.5%2068.9917%20103.5%2076.0283C103.5%2082.8395%2097.7717%2088.4997%2090.9772%2088.5H37.9537C31.1275%2088.5018%2025.2029%2083.1709%2024.5592%2076.3604C23.9158%2069.5518%2028.7369%2063.2124%2035.443%2061.9453L35.9264%2061.8535L35.8424%2061.3691C35.0256%2056.6239%2037.1258%2051.7168%2041.1051%2049.0127C45.0951%2046.3014%2050.4459%2046.1537%2054.5797%2048.6396L55.0026%2048.8945L55.2623%2048.4746Z'%20fill='url(%23paint0_linear_1858_8370)'%20stroke='%23E6EFFC'%20stroke-miterlimit='10'/%3e%3c/g%3e%3canimateTransform%20attributeName='transform'%20type='translate'%20values='0%200;0%20-3;0%200'%20dur='3s'%20begin='0s'%20repeatCount='indefinite'%20calcMode='spline'%20keySplines='.42%200%20.58%201;%20.42%200%20.58%201'/%3e%3c/g%3e%3c/g%3e%3cg%20id='Precipitation'%3e%3cg%20id='Raindrops'%3e%3cpath%20id='Raindrop%201'%20d='M52%2083V95'%20stroke='%237DD3FC'%20stroke-width='4'%20stroke-linecap='round'%3e%3canimateTransform%20attributeName='transform'%20type='translate'%20values='0%200;0%2020'%20dur='1s'%20begin='0s'%20repeatCount='indefinite'%20calcMode='spline'%20keySplines='.42%200%201%201'/%3e%3canimate%20attributeName='opacity'%20values='0;1;1;0'%20dur='1s'%20begin='0s'%20repeatCount='indefinite'%20keyTimes='0;0.15;0.85;1'/%3e%3c/path%3e%3cpath%20id='Raindrop%202'%20d='M64%2083V95'%20stroke='%237DD3FC'%20stroke-width='4'%20stroke-linecap='round'%20opacity='0'%3e%3canimateTransform%20attributeName='transform'%20type='translate'%20values='0%200;0%2020'%20dur='1s'%20begin='0.4s'%20repeatCount='indefinite'%20calcMode='spline'%20keySplines='.42%200%201%201'/%3e%3canimate%20attributeName='opacity'%20values='0;1;1;0'%20dur='1s'%20begin='0.4s'%20repeatCount='indefinite'%20keyTimes='0;0.15;0.85;1'/%3e%3c/path%3e%3cpath%20id='Raindrop%203'%20d='M76%2083V95'%20stroke='%237DD3FC'%20stroke-width='4'%20stroke-linecap='round'%20opacity='0'%3e%3canimateTransform%20attributeName='transform'%20type='translate'%20values='0%200;0%2020'%20dur='1s'%20begin='0.8s'%20repeatCount='indefinite'%20calcMode='spline'%20keySplines='.42%200%201%201'/%3e%3canimate%20attributeName='opacity'%20values='0;1;1;0'%20dur='1s'%20begin='0.8s'%20repeatCount='indefinite'%20keyTimes='0;0.15;0.85;1'/%3e%3c/path%3e%3c/g%3e%3c/g%3e%3c/g%3e%3cdefs%3e%3clinearGradient%20id='paint0_linear_1858_8370'%20x1='64.0008'%20y1='39'%20x2='64.0008'%20y2='89'%20gradientUnits='userSpaceOnUse'%3e%3cstop%20stop-color='%23F3F7FE'/%3e%3cstop%20offset='1'%20stop-color='%23E6EFFC'/%3e%3c/linearGradient%3e%3cclipPath%20id='clip0_1858_8370'%3e%3crect%20width='128'%20height='128'%20fill='white'/%3e%3c/clipPath%3e%3c/defs%3e%3c/svg%3e"
+  },
+  {
+    "event": "response",
+    "status": 200,
+    "url": "data:image/svg+xml,%3csvg%20viewBox='0%200%20128%20128'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%3e%3cg%20id='overcast-night'%20clip-path='url(%23clip0_1858_8272)'%3e%3cg%20id='Sky'%3e%3cg%20id='Moon'%3e%3cpath%20id='Moon_2'%20d='M35.1152%2034.5947C33.3777%2043.1625%2040.7532%2051.2141%2049.3135%2050.7832C47.6732%2055.8338%2042.8891%2059.4999%2037.2178%2059.5C30.188%2059.5%2024.5002%2053.8786%2024.5%2046.959C24.5%2040.7451%2029.0879%2035.5838%2035.1152%2034.5947Z'%20fill='url(%23paint0_linear_1858_8272)'%20stroke='%2372B9D5'%20stroke-linecap='round'%20stroke-linejoin='round'/%3e%3canimateTransform%20attributeName='transform'%20type='rotate'%20values='-6%2036.9%2047.0;6%2036.9%2047.0;-6%2036.9%2047.0'%20dur='3s'%20begin='0s'%20repeatCount='indefinite'%20calcMode='spline'%20keySplines='.42%200%20.58%201;%20.42%200%20.58%201'/%3e%3c/g%3e%3cg%20id='Clouds'%3e%3cg%20id='Secondary%20Cloud'%3e%3cpath%20id='Cloud'%20d='M83.8392%2048.6934C86.2444%2044.9584%2091.2146%2043.529%2095.3177%2045.1768C99.3609%2046.8006%20101.814%2051.1888%20100.71%2055.4365L100.54%2056.0898L101.215%2056.0615C104.496%2055.924%20107.5%2058.4646%20107.5%2061.7744C107.5%2064.9759%20104.669%2067.4999%20101.489%2067.5H74.9769C71.7679%2067.5008%2068.8449%2065.1182%2068.5287%2061.9072C68.2136%2058.7068%2070.6168%2055.8414%2073.764%2055.2705L74.2552%2055.1816L74.1674%2054.6904C73.7734%2052.4931%2074.8117%2050.2493%2076.6849%2049.0273C78.6105%2047.7713%2081.177%2047.7069%2083.1683%2048.8564L83.5814%2049.0938L83.8392%2048.6934Z'%20fill='url(%23paint1_linear_1858_8272)'%20stroke='%2394A3B8'%20stroke-miterlimit='10'/%3e%3canimateTransform%20attributeName='transform'%20type='translate'%20values='0%20-3;0%200;0%20-3'%20dur='3s'%20begin='0s'%20repeatCount='indefinite'%20calcMode='spline'%20keySplines='.42%200%20.58%201;%20.42%200%20.58%201'/%3e%3c/g%3e%3cg%20id='Cloud_2'%3e%3cpath%20id='Cloud_3'%20d='M55.2623%2048.4746C60.1227%2040.6111%2070.2975%2037.38%2078.8151%2040.9434C87.3214%2044.5023%2092.138%2054.0026%2089.903%2062.9648L89.7418%2063.6143L90.4108%2063.585C97.4203%2063.2791%20103.5%2068.9917%20103.5%2076.0283C103.5%2082.8395%2097.7717%2088.4997%2090.9772%2088.5H37.9537C31.1275%2088.5018%2025.2029%2083.1709%2024.5592%2076.3604C23.9158%2069.5518%2028.7369%2063.2124%2035.443%2061.9453L35.9264%2061.8535L35.8424%2061.3691C35.0256%2056.6239%2037.1258%2051.7168%2041.1051%2049.0127C45.0951%2046.3014%2050.4459%2046.1537%2054.5797%2048.6396L55.0026%2048.8945L55.2623%2048.4746Z'%20fill='url(%23paint2_linear_1858_8272)'%20stroke='%23E6EFFC'%20stroke-miterlimit='10'/%3e%3canimateTransform%20attributeName='transform'%20type='translate'%20values='0%200;0%20-3;0%200'%20dur='3s'%20begin='0s'%20repeatCount='indefinite'%20calcMode='spline'%20keySplines='.42%200%20.58%201;%20.42%200%20.58%201'/%3e%3c/g%3e%3c/g%3e%3c/g%3e%3c/g%3e%3cdefs%3e%3clinearGradient%20id='paint0_linear_1858_8272'%20x1='37'%20y1='34'%20x2='37'%20y2='60'%20gradientUnits='userSpaceOnUse'%3e%3cstop%20stop-color='%2386C3DB'/%3e%3cstop%20offset='1'%20stop-color='%2372B9D5'/%3e%3c/linearGradient%3e%3clinearGradient%20id='paint1_linear_1858_8272'%20x1='88.0002'%20y1='44'%20x2='88.0002'%20y2='68'%20gradientUnits='userSpaceOnUse'%3e%3cstop%20stop-color='%23B0BCCD'/%3e%3cstop%20offset='1'%20stop-color='%2394A3B8'/%3e%3c/linearGradient%3e%3clinearGradient%20id='paint2_linear_1858_8272'%20x1='64.0008'%20y1='39'%20x2='64.0008'%20y2='89'%20gradientUnits='userSpaceOnUse'%3e%3cstop%20stop-color='%23F3F7FE'/%3e%3cstop%20offset='1'%20stop-color='%23E6EFFC'/%3e%3c/linearGradient%3e%3cclipPath%20id='clip0_1858_8272'%3e%3crect%20width='128'%20height='128'%20fill='white'/%3e%3c/clipPath%3e%3c/defs%3e%3c/svg%3e"
+  },
+  {
+    "event": "response",
+    "status": 200,
+    "url": "data:image/svg+xml,%3csvg%20viewBox='0%200%20128%20128'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%3e%3cg%20id='extreme-rain'%20clip-path='url(%23clip0_1858_8382)'%3e%3cg%20id='Sky'%3e%3cg%20id='Clouds'%3e%3cg%20id='Secondary%20Cloud'%3e%3cpath%20id='Cloud'%20d='M83.8392%2048.6934C86.2444%2044.9584%2091.2146%2043.529%2095.3177%2045.1768C99.3609%2046.8006%20101.814%2051.1888%20100.71%2055.4365L100.54%2056.0898L101.215%2056.0615C104.496%2055.924%20107.5%2058.4646%20107.5%2061.7744C107.5%2064.9759%20104.669%2067.4999%20101.489%2067.5H74.9769C71.7679%2067.5008%2068.8449%2065.1182%2068.5287%2061.9072C68.2136%2058.7068%2070.6168%2055.8414%2073.764%2055.2705L74.2552%2055.1816L74.1674%2054.6904C73.7734%2052.4931%2074.8117%2050.2493%2076.6849%2049.0273C78.6105%2047.7713%2081.177%2047.7069%2083.1683%2048.8564L83.5814%2049.0938L83.8392%2048.6934Z'%20fill='url(%23paint0_linear_1858_8382)'%20stroke='%2394A3B8'%20stroke-miterlimit='10'/%3e%3canimateTransform%20attributeName='transform'%20type='translate'%20values='0%20-3;0%200;0%20-3'%20dur='3s'%20begin='0s'%20repeatCount='indefinite'%20calcMode='spline'%20keySplines='.42%200%20.58%201;%20.42%200%20.58%201'/%3e%3c/g%3e%3cg%20id='Cloud_2'%3e%3cpath%20id='Cloud_3'%20d='M55.2623%2048.4746C60.1227%2040.6111%2070.2975%2037.38%2078.8151%2040.9434C87.3214%2044.5023%2092.138%2054.0026%2089.903%2062.9648L89.7418%2063.6143L90.4108%2063.585C97.4203%2063.2791%20103.5%2068.9917%20103.5%2076.0283C103.5%2082.8395%2097.7717%2088.4997%2090.9772%2088.5H37.9537C31.1275%2088.5018%2025.2029%2083.1709%2024.5592%2076.3604C23.9158%2069.5518%2028.7369%2063.2124%2035.443%2061.9453L35.9264%2061.8535L35.8424%2061.3691C35.0256%2056.6239%2037.1258%2051.7168%2041.1051%2049.0127C45.0951%2046.3014%2050.4459%2046.1537%2054.5797%2048.6396L55.0026%2048.8945L55.2623%2048.4746Z'%20fill='url(%23paint1_linear_1858_8382)'%20stroke='%2364748B'%20stroke-miterlimit='10'/%3e%3canimateTransform%20attributeName='transform'%20type='translate'%20values='0%200;0%20-3;0%200'%20dur='3s'%20begin='0s'%20repeatCount='indefinite'%20calcMode='spline'%20keySplines='.42%200%20.58%201;%20.42%200%20.58%201'/%3e%3c/g%3e%3c/g%3e%3c/g%3e%3cg%20id='Precipitation'%3e%3cg%20id='Raindrops'%3e%3cpath%20id='Raindrop%201'%20d='M52%2083V95'%20stroke='%230A5AD4'%20stroke-width='4'%20stroke-linecap='round'%3e%3canimateTransform%20attributeName='transform'%20type='translate'%20values='0%200;0%2020'%20dur='1s'%20begin='0s'%20repeatCount='indefinite'%20calcMode='spline'%20keySplines='.42%200%201%201'/%3e%3canimate%20attributeName='opacity'%20values='0;1;1;0'%20dur='1s'%20begin='0s'%20repeatCount='indefinite'%20keyTimes='0;0.15;0.85;1'/%3e%3c/path%3e%3cpath%20id='Raindrop%202'%20d='M64%2083V95'%20stroke='%230A5AD4'%20stroke-width='4'%20stroke-linecap='round'%20opacity='0'%3e%3canimateTransform%20attributeName='transform'%20type='translate'%20values='0%200;0%2020'%20dur='1s'%20begin='0.4s'%20repeatCount='indefinite'%20calcMode='spline'%20keySplines='.42%200%201%201'/%3e%3canimate%20attributeName='opacity'%20values='0;1;1;0'%20dur='1s'%20begin='0.4s'%20repeatCount='indefinite'%20keyTimes='0;0.15;0.85;1'/%3e%3c/path%3e%3cpath%20id='Raindrop%203'%20d='M76%2083V95'%20stroke='%230A5AD4'%20stroke-width='4'%20stroke-linecap='round'%20opacity='0'%3e%3canimateTransform%20attributeName='transform'%20type='translate'%20values='0%200;0%2020'%20dur='1s'%20begin='0.8s'%20repeatCount='indefinite'%20calcMode='spline'%20keySplines='.42%200%201%201'/%3e%3canimate%20attributeName='opacity'%20values='0;1;1;0'%20dur='1s'%20begin='0.8s'%20repeatCount='indefinite'%20keyTimes='0;0.15;0.85;1'/%3e%3c/path%3e%3c/g%3e%3c/g%3e%3c/g%3e%3cdefs%3e%3clinearGradient%20id='paint0_linear_1858_8382'%20x1='88.0002'%20y1='44'%20x2='88.0002'%20y2='68'%20gradientUnits='userSpaceOnUse'%3e%3cstop%20stop-color='%23B0BCCD'/%3e%3cstop%20offset='1'%20stop-color='%2394A3B8'/%3e%3c/linearGradient%3e%3clinearGradient%20id='paint1_linear_1858_8382'%20x1='64.0008'%20y1='39'%20x2='64.0008'%20y2='89'%20gradientUnits='userSpaceOnUse'%3e%3cstop%20stop-color='%237C8CA2'/%3e%3cstop%20offset='1'%20stop-color='%2364748B'/%3e%3c/linearGradient%3e%3cclipPath%20id='clip0_1858_8382'%3e%3crect%20width='128'%20height='128'%20fill='white'/%3e%3c/clipPath%3e%3c/defs%3e%3c/svg%3e"
+  },
+  {
+    "event": "response",
+    "status": 200,
+    "url": "data:image/svg+xml,%3c!--%20@meteocons/svg%200.1.0,%20Bas%20Milius%20(MIT;%20see%20LICENSE.txt).%20Only%20raindrop%20strokes%20changed%20to%20%237DD3FC%20for%20dark%20forecast%20surfaces.%20--%3e%3csvg%20viewBox='0%200%20128%20128'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%3e%3cg%20id='extreme-rain'%20clip-path='url(%23clip0_1858_8382)'%3e%3cg%20id='Sky'%3e%3cg%20id='Clouds'%3e%3cg%20id='Secondary%20Cloud'%3e%3cpath%20id='Cloud'%20d='M83.8392%2048.6934C86.2444%2044.9584%2091.2146%2043.529%2095.3177%2045.1768C99.3609%2046.8006%20101.814%2051.1888%20100.71%2055.4365L100.54%2056.0898L101.215%2056.0615C104.496%2055.924%20107.5%2058.4646%20107.5%2061.7744C107.5%2064.9759%20104.669%2067.4999%20101.489%2067.5H74.9769C71.7679%2067.5008%2068.8449%2065.1182%2068.5287%2061.9072C68.2136%2058.7068%2070.6168%2055.8414%2073.764%2055.2705L74.2552%2055.1816L74.1674%2054.6904C73.7734%2052.4931%2074.8117%2050.2493%2076.6849%2049.0273C78.6105%2047.7713%2081.177%2047.7069%2083.1683%2048.8564L83.5814%2049.0938L83.8392%2048.6934Z'%20fill='url(%23paint0_linear_1858_8382)'%20stroke='%2394A3B8'%20stroke-miterlimit='10'/%3e%3canimateTransform%20attributeName='transform'%20type='translate'%20values='0%20-3;0%200;0%20-3'%20dur='3s'%20begin='0s'%20repeatCount='indefinite'%20calcMode='spline'%20keySplines='.42%200%20.58%201;%20.42%200%20.58%201'/%3e%3c/g%3e%3cg%20id='Cloud_2'%3e%3cpath%20id='Cloud_3'%20d='M55.2623%2048.4746C60.1227%2040.6111%2070.2975%2037.38%2078.8151%2040.9434C87.3214%2044.5023%2092.138%2054.0026%2089.903%2062.9648L89.7418%2063.6143L90.4108%2063.585C97.4203%2063.2791%20103.5%2068.9917%20103.5%2076.0283C103.5%2082.8395%2097.7717%2088.4997%2090.9772%2088.5H37.9537C31.1275%2088.5018%2025.2029%2083.1709%2024.5592%2076.3604C23.9158%2069.5518%2028.7369%2063.2124%2035.443%2061.9453L35.9264%2061.8535L35.8424%2061.3691C35.0256%2056.6239%2037.1258%2051.7168%2041.1051%2049.0127C45.0951%2046.3014%2050.4459%2046.1537%2054.5797%2048.6396L55.0026%2048.8945L55.2623%2048.4746Z'%20fill='url(%23paint1_linear_1858_8382)'%20stroke='%2364748B'%20stroke-miterlimit='10'/%3e%3canimateTransform%20attributeName='transform'%20type='translate'%20values='0%200;0%20-3;0%200'%20dur='3s'%20begin='0s'%20repeatCount='indefinite'%20calcMode='spline'%20keySplines='.42%200%20.58%201;%20.42%200%20.58%201'/%3e%3c/g%3e%3c/g%3e%3c/g%3e%3cg%20id='Precipitation'%3e%3cg%20id='Raindrops'%3e%3cpath%20id='Raindrop%201'%20d='M52%2083V95'%20stroke='%237DD3FC'%20stroke-width='4'%20stroke-linecap='round'%3e%3canimateTransform%20attributeName='transform'%20type='translate'%20values='0%200;0%2020'%20dur='1s'%20begin='0s'%20repeatCount='indefinite'%20calcMode='spline'%20keySplines='.42%200%201%201'/%3e%3canimate%20attributeName='opacity'%20values='0;1;1;0'%20dur='1s'%20begin='0s'%20repeatCount='indefinite'%20keyTimes='0;0.15;0.85;1'/%3e%3c/path%3e%3cpath%20id='Raindrop%202'%20d='M64%2083V95'%20stroke='%237DD3FC'%20stroke-width='4'%20stroke-linecap='round'%20opacity='0'%3e%3canimateTransform%20attributeName='transform'%20type='translate'%20values='0%200;0%2020'%20dur='1s'%20begin='0.4s'%20repeatCount='indefinite'%20calcMode='spline'%20keySplines='.42%200%201%201'/%3e%3canimate%20attributeName='opacity'%20values='0;1;1;0'%20dur='1s'%20begin='0.4s'%20repeatCount='indefinite'%20keyTimes='0;0.15;0.85;1'/%3e%3c/path%3e%3cpath%20id='Raindrop%203'%20d='M76%2083V95'%20stroke='%237DD3FC'%20stroke-width='4'%20stroke-linecap='round'%20opacity='0'%3e%3canimateTransform%20attributeName='transform'%20type='translate'%20values='0%200;0%2020'%20dur='1s'%20begin='0.8s'%20repeatCount='indefinite'%20calcMode='spline'%20keySplines='.42%200%201%201'/%3e%3canimate%20attributeName='opacity'%20values='0;1;1;0'%20dur='1s'%20begin='0.8s'%20repeatCount='indefinite'%20keyTimes='0;0.15;0.85;1'/%3e%3c/path%3e%3c/g%3e%3c/g%3e%3c/g%3e%3cdefs%3e%3clinearGradient%20id='paint0_linear_1858_8382'%20x1='88.0002'%20y1='44'%20x2='88.0002'%20y2='68'%20gradientUnits='userSpaceOnUse'%3e%3cstop%20stop-color='%23B0BCCD'/%3e%3cstop%20offset='1'%20stop-color='%2394A3B8'/%3e%3c/linearGradient%3e%3clinearGradient%20id='paint1_linear_1858_8382'%20x1='64.0008'%20y1='39'%20x2='64.0008'%20y2='89'%20gradientUnits='userSpaceOnUse'%3e%3cstop%20stop-color='%237C8CA2'/%3e%3cstop%20offset='1'%20stop-color='%2364748B'/%3e%3c/linearGradient%3e%3cclipPath%20id='clip0_1858_8382'%3e%3crect%20width='128'%20height='128'%20fill='white'/%3e%3c/clipPath%3e%3c/defs%3e%3c/svg%3e"
+  },
+  {
+    "event": "response",
+    "status": 200,
+    "url": "data:image/svg+xml,%3csvg%20viewBox='0%200%20128%20128'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%3e%3cg%20id='partly-cloudy-day'%20clip-path='url(%23clip0_1858_8241)'%3e%3cg%20id='Sky'%3e%3cg%20id='Sun'%3e%3ccircle%20id='Core'%20cx='39'%20cy='51'%20r='8.5'%20fill='url(%23paint0_linear_1858_8241)'%20stroke='%23F8AF18'/%3e%3cg%20id='Rays'%3e%3cpath%20d='M37.6875%2031.3125C37.6875%2030.5876%2038.2751%2030%2039%2030C39.7249%2030%2040.3125%2030.5876%2040.3125%2031.3125V37.4375C40.3125%2038.1624%2039.7249%2038.75%2039%2038.75C38.2751%2038.75%2037.6875%2038.1624%2037.6875%2037.4375V31.3125Z'%20fill='%23F8AF18'/%3e%3cpath%20d='M51.9931%2036.1508C52.5056%2035.6382%2053.3367%2035.6382%2053.8492%2036.1508C54.3618%2036.6633%2054.3618%2037.4943%2053.8492%2038.0069L49.5182%2042.3379C49.0056%2042.8505%2048.1746%2042.8505%2047.6621%2042.3379C47.1495%2041.8254%2047.1495%2040.9944%2047.6621%2040.4818L51.9931%2036.1508Z'%20fill='%23F8AF18'/%3e%3cpath%20d='M58.6875%2049.6875C59.4124%2049.6875%2060%2050.2751%2060%2051C60%2051.7249%2059.4124%2052.3125%2058.6875%2052.3125H52.5625C51.8376%2052.3125%2051.25%2051.7249%2051.25%2051C51.25%2050.2751%2051.8376%2049.6875%2052.5625%2049.6875H58.6875Z'%20fill='%23F8AF18'/%3e%3cpath%20d='M53.8492%2063.9931C54.3618%2064.5057%2054.3618%2065.3367%2053.8492%2065.8492C53.3367%2066.3618%2052.5056%2066.3618%2051.9931%2065.8492L47.6621%2061.5182C47.1495%2061.0057%2047.1495%2060.1746%2047.6621%2059.6621C48.1746%2059.1495%2049.0057%2059.1495%2049.5182%2059.6621L53.8492%2063.9931Z'%20fill='%23F8AF18'/%3e%3cpath%20d='M37.6875%2064.5625C37.6875%2063.8376%2038.2751%2063.25%2039%2063.25C39.7249%2063.25%2040.3125%2063.8376%2040.3125%2064.5625V70.6875C40.3125%2071.4124%2039.7249%2072%2039%2072C38.2751%2072%2037.6875%2071.4124%2037.6875%2070.6875V64.5625Z'%20fill='%23F8AF18'/%3e%3cpath%20d='M28.4818%2059.6621C28.9943%2059.1495%2029.8254%2059.1495%2030.3379%2059.6621C30.8505%2060.1746%2030.8505%2061.0056%2030.3379%2061.5182L26.0069%2065.8492C25.4943%2066.3618%2024.6633%2066.3618%2024.1508%2065.8492C23.6382%2065.3367%2023.6382%2064.5056%2024.1508%2063.9931L28.4818%2059.6621Z'%20fill='%23F8AF18'/%3e%3cpath%20d='M25.4375%2049.6875C26.1624%2049.6875%2026.75%2050.2751%2026.75%2051C26.75%2051.7249%2026.1624%2052.3125%2025.4375%2052.3125H19.3125C18.5876%2052.3125%2018%2051.7249%2018%2051C18%2050.2751%2018.5876%2049.6875%2019.3125%2049.6875H25.4375Z'%20fill='%23F8AF18'/%3e%3cpath%20d='M30.3379%2040.4818C30.8505%2040.9944%2030.8505%2041.8254%2030.3379%2042.3379C29.8254%2042.8505%2028.9944%2042.8505%2028.4818%2042.3379L24.1508%2038.0069C23.6382%2037.4944%2023.6382%2036.6633%2024.1508%2036.1508C24.6633%2035.6382%2025.4944%2035.6382%2026.0069%2036.1508L30.3379%2040.4818Z'%20fill='%23F8AF18'/%3e%3canimateTransform%20attributeName='transform'%20type='rotate'%20values='0%2039.0%2051.0;360%2039.0%2051.0'%20dur='6s'%20begin='0s'%20repeatCount='indefinite'/%3e%3c/g%3e%3c/g%3e%3cg%20id='Clouds'%3e%3cg%20id='Cloud'%3e%3cpath%20id='Cloud_2'%20d='M55.2623%2048.4746C60.1227%2040.6111%2070.2975%2037.38%2078.8151%2040.9434C87.3214%2044.5023%2092.138%2054.0026%2089.903%2062.9648L89.7418%2063.6143L90.4108%2063.585C97.4203%2063.2791%20103.5%2068.9917%20103.5%2076.0283C103.5%2082.8395%2097.7717%2088.4997%2090.9772%2088.5H37.9537C31.1275%2088.5018%2025.2029%2083.1709%2024.5592%2076.3604C23.9158%2069.5518%2028.7369%2063.2124%2035.443%2061.9453L35.9264%2061.8535L35.8424%2061.3691C35.0256%2056.6239%2037.1258%2051.7168%2041.1051%2049.0127C45.0951%2046.3014%2050.4459%2046.1537%2054.5797%2048.6396L55.0026%2048.8945L55.2623%2048.4746Z'%20fill='url(%23paint1_linear_1858_8241)'%20stroke='%23E6EFFC'%20stroke-miterlimit='10'/%3e%3c/g%3e%3canimateTransform%20attributeName='transform'%20type='translate'%20values='0%200;0%20-3;0%200'%20dur='3s'%20begin='0s'%20repeatCount='indefinite'%20calcMode='spline'%20keySplines='.42%200%20.58%201;%20.42%200%20.58%201'/%3e%3c/g%3e%3c/g%3e%3c/g%3e%3cdefs%3e%3clinearGradient%20id='paint0_linear_1858_8241'%20x1='39'%20y1='42'%20x2='39'%20y2='60'%20gradientUnits='userSpaceOnUse'%3e%3cstop%20stop-color='%23FBBF24'/%3e%3cstop%20offset='1'%20stop-color='%23F8AF18'/%3e%3c/linearGradient%3e%3clinearGradient%20id='paint1_linear_1858_8241'%20x1='64.0008'%20y1='39'%20x2='64.0008'%20y2='89'%20gradientUnits='userSpaceOnUse'%3e%3cstop%20stop-color='%23F3F7FE'/%3e%3cstop%20offset='1'%20stop-color='%23E6EFFC'/%3e%3c/linearGradient%3e%3cclipPath%20id='clip0_1858_8241'%3e%3crect%20width='128'%20height='128'%20fill='white'/%3e%3c/clipPath%3e%3c/defs%3e%3c/svg%3e"
+  },
+  {
+    "event": "response",
+    "status": 200,
+    "url": "data:image/svg+xml,%3csvg%20viewBox='0%200%20128%20128'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%3e%3cg%20id='partly-cloudy-night'%20clip-path='url(%23clip0_1858_8252)'%3e%3cg%20id='Sky'%3e%3cg%20id='Moon'%3e%3cpath%20id='Moon_2'%20d='M35.1152%2034.5947C33.3777%2043.1625%2040.7532%2051.2141%2049.3135%2050.7832C47.6732%2055.8338%2042.8891%2059.4999%2037.2178%2059.5C30.188%2059.5%2024.5002%2053.8786%2024.5%2046.959C24.5%2040.7451%2029.0879%2035.5838%2035.1152%2034.5947Z'%20fill='url(%23paint0_linear_1858_8252)'%20stroke='%2372B9D5'%20stroke-linecap='round'%20stroke-linejoin='round'/%3e%3canimateTransform%20attributeName='transform'%20type='rotate'%20values='-6%2036.9%2047.0;6%2036.9%2047.0;-6%2036.9%2047.0'%20dur='3s'%20begin='0s'%20repeatCount='indefinite'%20calcMode='spline'%20keySplines='.42%200%20.58%201;%20.42%200%20.58%201'/%3e%3c/g%3e%3cg%20id='Clouds'%3e%3cg%20id='Cloud'%3e%3cpath%20id='Cloud_2'%20d='M55.2623%2048.4746C60.1227%2040.6111%2070.2975%2037.38%2078.8151%2040.9434C87.3214%2044.5023%2092.138%2054.0026%2089.903%2062.9648L89.7418%2063.6143L90.4108%2063.585C97.4203%2063.2791%20103.5%2068.9917%20103.5%2076.0283C103.5%2082.8395%2097.7717%2088.4997%2090.9772%2088.5H37.9537C31.1275%2088.5018%2025.2029%2083.1709%2024.5592%2076.3604C23.9158%2069.5518%2028.7369%2063.2124%2035.443%2061.9453L35.9264%2061.8535L35.8424%2061.3691C35.0256%2056.6239%2037.1258%2051.7168%2041.1051%2049.0127C45.0951%2046.3014%2050.4459%2046.1537%2054.5797%2048.6396L55.0026%2048.8945L55.2623%2048.4746Z'%20fill='url(%23paint1_linear_1858_8252)'%20stroke='%23E6EFFC'%20stroke-miterlimit='10'/%3e%3c/g%3e%3canimateTransform%20attributeName='transform'%20type='translate'%20values='0%200;0%20-3;0%200'%20dur='3s'%20begin='0s'%20repeatCount='indefinite'%20calcMode='spline'%20keySplines='.42%200%20.58%201;%20.42%200%20.58%201'/%3e%3c/g%3e%3c/g%3e%3c/g%3e%3cdefs%3e%3clinearGradient%20id='paint0_linear_1858_8252'%20x1='37'%20y1='34'%20x2='37'%20y2='60'%20gradientUnits='userSpaceOnUse'%3e%3cstop%20stop-color='%2386C3DB'/%3e%3cstop%20offset='1'%20stop-color='%2372B9D5'/%3e%3c/linearGradient%3e%3clinearGradient%20id='paint1_linear_1858_8252'%20x1='64.0008'%20y1='39'%20x2='64.0008'%20y2='89'%20gradientUnits='userSpaceOnUse'%3e%3cstop%20stop-color='%23F3F7FE'/%3e%3cstop%20offset='1'%20stop-color='%23E6EFFC'/%3e%3c/linearGradient%3e%3cclipPath%20id='clip0_1858_8252'%3e%3crect%20width='128'%20height='128'%20fill='white'/%3e%3c/clipPath%3e%3c/defs%3e%3c/svg%3e"
+  },
+  {
+    "event": "response",
+    "status": 200,
+    "url": "http://127.0.0.1:5176/brand/pilot-r4/meteo-eventi-friul-mark-192.png"
+  },
+  {
+    "event": "allowed",
+    "method": "GET",
+    "url": "https://play-b6fbe4d---meteofriul-api-bx24xqvcda-ew.a.run.app/api/weather/official-alerts",
+    "time": 1792504013.9010031
+  },
+  {
+    "event": "allowed",
+    "method": "GET",
+    "url": "http://127.0.0.1:5176/assets/index.esm-DsUkD-D0.js",
+    "time": 1792504013.9126577
+  },
+  {
+    "event": "allowed",
+    "method": "GET",
+    "url": "http://127.0.0.1:5176/assets/index.esm-DA8gwP5f.js",
+    "time": 1792504013.9130576
+  },
+  {
+    "event": "allowed",
+    "method": "GET",
+    "url": "https://meteofriul-weather-49007668366.europe-west1.run.app/weather/v1/uv/latest.json",
+    "time": 1792504013.9464078
+  },
+  {
+    "event": "allowed",
+    "method": "OPTIONS",
+    "url": "https://meteofriul-community-49007668366.europe-west1.run.app/api/community/reports",
+    "time": 1792504013.9992752
+  },
+  {
+    "event": "response",
+    "status": 403,
+    "url": "https://meteofriul-community-49007668366.europe-west1.run.app/api/community/reports"
+  },
+  {
+    "event": "allowed",
+    "method": "GET",
+    "url": "http://127.0.0.1:5176/manifest.webmanifest",
+    "time": 1792504014.175201
+  },
+  {
+    "event": "response",
+    "status": 200,
+    "url": "http://127.0.0.1:5176/assets/index.esm-DsUkD-D0.js"
+  },
+  {
+    "event": "response",
+    "status": 200,
+    "url": "http://127.0.0.1:5176/assets/index.esm-DA8gwP5f.js"
+  },
+  {
+    "event": "network_error",
+    "type": "Fetch",
+    "error": "net::ERR_FAILED",
+    "cors": {
+      "corsError": "PreflightMissingAllowOriginHeader",
+      "failedParameter": ""
+    }
+  },
+  {
+    "event": "response",
+    "status": 200,
+    "url": "http://127.0.0.1:5176/manifest.webmanifest"
+  },
+  {
+    "event": "network_error",
+    "type": "Fetch",
+    "error": "net::ERR_FAILED",
+    "cors": {
+      "corsError": "MissingAllowOriginHeader",
+      "failedParameter": ""
+    }
+  },
+  {
+    "event": "response",
+    "status": 200,
+    "url": "https://meteofriul-weather-49007668366.europe-west1.run.app/weather/v1/uv/latest.json"
+  },
+  {
+    "event": "allowed",
+    "method": "GET",
+    "url": "http://127.0.0.1:5176/branding/icon_launcher_maskable_mf-r5-20260927-512.png",
+    "time": 1792504014.267199
+  },
+  {
+    "event": "response",
+    "status": 200,
+    "url": "http://127.0.0.1:5176/branding/icon_launcher_maskable_mf-r5-20260927-512.png"
+  },
+  {
+    "event": "allowed",
+    "method": "GET",
+    "url": "http://127.0.0.1:5176/assets/index.esm-CIWX8_XI.js",
+    "time": 1792504014.4220815
+  },
+  {
+    "event": "response",
+    "status": 200,
+    "url": "http://127.0.0.1:5176/assets/index.esm-CIWX8_XI.js"
+  },
+  {
+    "event": "allowed",
+    "method": "OPTIONS",
+    "url": "https://meteofriul-community-49007668366.europe-west1.run.app/api/community/reports",
+    "time": 1792504021.2568927
+  },
+  {
+    "event": "response",
+    "status": 403,
+    "url": "https://meteofriul-community-49007668366.europe-west1.run.app/api/community/reports"
+  },
+  {
+    "event": "network_error",
+    "type": "Fetch",
+    "error": "net::ERR_FAILED",
+    "cors": {
+      "corsError": "PreflightMissingAllowOriginHeader",
+      "failedParameter": ""
+    }
+  },
+  {
+    "event": "allowed",
+    "method": "OPTIONS",
+    "url": "https://meteofriul-community-49007668366.europe-west1.run.app/api/community/reports",
+    "time": 1792504030.6623101
+  },
+  {
+    "event": "response",
+    "status": 403,
+    "url": "https://meteofriul-community-49007668366.europe-west1.run.app/api/community/reports"
+  },
+  {
+    "event": "network_error",
+    "type": "Fetch",
+    "error": "net::ERR_FAILED",
+    "cors": {
+      "corsError": "PreflightMissingAllowOriginHeader",
+      "failedParameter": ""
+    }
+  },
+  {
+    "event": "allowed",
+    "method": "GET",
+    "url": "https://play-b6fbe4d---meteofriul-api-bx24xqvcda-ew.a.run.app/api/location/search",
+    "time": 1792504055.2093942
+  },
+  {
+    "event": "allowed",
+    "method": "GET",
+    "url": "https://play-b6fbe4d---meteofriul-api-bx24xqvcda-ew.a.run.app/api/location/municipalities/search",
+    "time": 1792504055.2100809
+  },
+  {
+    "event": "network_error",
+    "type": "Fetch",
+    "error": "net::ERR_FAILED",
+    "cors": {
+      "corsError": "MissingAllowOriginHeader",
+      "failedParameter": ""
+    }
+  },
+  {
+    "event": "network_error",
+    "type": "Fetch",
+    "error": "net::ERR_FAILED",
+    "cors": {
+      "corsError": "MissingAllowOriginHeader",
+      "failedParameter": ""
+    }
+  },
+  {
+    "event": "allowed",
+    "method": "OPTIONS",
+    "url": "https://meteofriul-community-49007668366.europe-west1.run.app/api/community/reports",
+    "time": 1792504109.2328062
+  },
+  {
+    "event": "allowed",
+    "method": "GET",
+    "url": "https://meteofriul-weather-49007668366.europe-west1.run.app/weather/v1/families/cams/latest.json",
+    "time": 1792504109.2362447
+  },
+  {
+    "event": "allowed",
+    "method": "OPTIONS",
+    "url": "https://meteofriul-weather-49007668366.europe-west1.run.app/weather/v1/icon2i/latest.json",
+    "time": 1792504109.2390864
+  },
+  {
+    "event": "response",
+    "status": 403,
+    "url": "https://meteofriul-community-49007668366.europe-west1.run.app/api/community/reports"
+  },
+  {
+    "event": "response",
+    "status": 204,
+    "url": "https://meteofriul-weather-49007668366.europe-west1.run.app/weather/v1/icon2i/latest.json"
+  },
+  {
+    "event": "allowed",
+    "method": "GET",
+    "url": "https://meteofriul-weather-49007668366.europe-west1.run.app/weather/v1/icon2i/latest.json",
+    "time": 1792504109.4507911
+  },
+  {
+    "event": "network_error",
+    "type": "Fetch",
+    "error": "net::ERR_FAILED",
+    "cors": {
+      "corsError": "PreflightMissingAllowOriginHeader",
+      "failedParameter": ""
+    }
+  },
+  {
+    "event": "response",
+    "status": 200,
+    "url": "https://meteofriul-weather-49007668366.europe-west1.run.app/weather/v1/families/cams/latest.json"
+  },
+  {
+    "event": "allowed",
+    "method": "GET",
+    "url": "https://meteofriul-weather-49007668366.europe-west1.run.app/weather/v1/families/cams/runs/20261019T000000Z/release.json",
+    "time": 1792504109.5605228
+  },
+  {
+    "event": "response",
+    "status": 200,
+    "url": "https://meteofriul-weather-49007668366.europe-west1.run.app/weather/v1/families/cams/runs/20261019T000000Z/release.json"
+  },
+  {
+    "event": "allowed",
+    "method": "GET",
+    "url": "https://meteofriul-weather-49007668366.europe-west1.run.app/weather/v1/families/cams/runs/20261019T000000Z/continuity.json",
+    "time": 1792504109.6694682
+  },
+  {
+    "event": "response",
+    "status": 304,
+    "url": "https://meteofriul-weather-49007668366.europe-west1.run.app/weather/v1/icon2i/latest.json"
+  },
+  {
+    "event": "network_error",
+    "type": "Fetch",
+    "error": "net::ERR_ABORTED",
+    "cors": null
+  },
+  {
+    "event": "allowed",
+    "method": "GET",
+    "url": "https://meteofriul-weather-49007668366.europe-west1.run.app/weather/v1/icon2i/runs/20261019T120000Z/municipalities/093033.json",
+    "time": 1792504109.9312701
+  },
+  {
+    "event": "response",
+    "status": 404,
+    "url": "https://meteofriul-weather-49007668366.europe-west1.run.app/weather/v1/families/cams/runs/20261019T000000Z/continuity.json"
+  },
+  {
+    "event": "response",
+    "status": 200,
+    "url": "https://meteofriul-weather-49007668366.europe-west1.run.app/weather/v1/icon2i/runs/20261019T120000Z/municipalities/093033.json"
+  },
+  {
+    "event": "allowed",
+    "method": "GET",
+    "url": "https://meteofriul-weather-49007668366.europe-west1.run.app/weather/v1/uv/latest.json",
+    "time": 1792504110.3212595
+  },
+  {
+    "event": "response",
+    "status": 200,
+    "url": "data:image/svg+xml,%3csvg%20viewBox='0%200%20128%20128'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%3e%3cg%20id='fog'%20clip-path='url(%23clip0_1858_9374)'%3e%3cg%20id='Sky'%3e%3cg%20id='Clouds'%3e%3cg%20id='Cloud'%3e%3cpath%20id='Cloud_2'%20d='M55.2623%2048.4746C60.1227%2040.6111%2070.2975%2037.38%2078.8151%2040.9434C87.3214%2044.5023%2092.138%2054.0026%2089.903%2062.9648L89.7418%2063.6143L90.4108%2063.585C97.4203%2063.2791%20103.5%2068.9917%20103.5%2076.0283C103.5%2082.8395%2097.7717%2088.4997%2090.9772%2088.5H37.9537C31.1275%2088.5018%2025.2029%2083.1709%2024.5592%2076.3604C23.9158%2069.5518%2028.7369%2063.2124%2035.443%2061.9453L35.9264%2061.8535L35.8424%2061.3691C35.0256%2056.6239%2037.1258%2051.7168%2041.1051%2049.0127C45.0951%2046.3014%2050.4459%2046.1537%2054.5797%2048.6396L55.0026%2048.8945L55.2623%2048.4746Z'%20fill='url(%23paint0_linear_1858_9374)'%20stroke='%23E6EFFC'%20stroke-miterlimit='10'/%3e%3c/g%3e%3canimateTransform%20attributeName='transform'%20type='translate'%20values='0%200;0%20-3;0%200'%20dur='3s'%20begin='0s'%20repeatCount='indefinite'%20calcMode='spline'%20keySplines='.42%200%20.58%201;%20.42%200%20.58%201'/%3e%3c/g%3e%3c/g%3e%3cg%20id='Precipitation'%3e%3cpath%20id='Line%202'%20d='M40%2095H88'%20stroke='%23E2E8F0'%20stroke-width='3'%20stroke-miterlimit='10'%20stroke-linecap='round'%3e%3canimateTransform%20attributeName='transform'%20type='translate'%20values='0%200;3%200;0%200'%20dur='3s'%20begin='0s'%20repeatCount='indefinite'%20calcMode='spline'%20keySplines='.42%200%20.58%201;%20.42%200%20.58%201'/%3e%3c/path%3e%3cpath%20id='Line%201'%20d='M40%20103H88'%20stroke='%23E2E8F0'%20stroke-width='3'%20stroke-miterlimit='10'%20stroke-linecap='round'%3e%3canimateTransform%20attributeName='transform'%20type='translate'%20values='0%200;3%200;0%200'%20dur='3s'%20begin='0.2s'%20repeatCount='indefinite'%20calcMode='spline'%20keySplines='.42%200%20.58%201;%20.42%200%20.58%201'/%3e%3c/path%3e%3c/g%3e%3c/g%3e%3cdefs%3e%3clinearGradient%20id='paint0_linear_1858_9374'%20x1='64.0008'%20y1='39'%20x2='64.0008'%20y2='89'%20gradientUnits='userSpaceOnUse'%3e%3cstop%20stop-color='%23F3F7FE'/%3e%3cstop%20offset='1'%20stop-color='%23E6EFFC'/%3e%3c/linearGradient%3e%3cclipPath%20id='clip0_1858_9374'%3e%3crect%20width='128'%20height='128'%20fill='white'/%3e%3c/clipPath%3e%3c/defs%3e%3c/svg%3e"
+  },
+  {
+    "event": "allowed",
+    "method": "OPTIONS",
+    "url": "https://meteofriul-community-49007668366.europe-west1.run.app/api/community/reports",
+    "time": 1792504110.3564553
+  },
+  {
+    "event": "response",
+    "status": 403,
+    "url": "https://meteofriul-community-49007668366.europe-west1.run.app/api/community/reports"
+  },
+  {
+    "event": "response",
+    "status": 200,
+    "url": "https://meteofriul-weather-49007668366.europe-west1.run.app/weather/v1/uv/latest.json"
+  },
+  {
+    "event": "network_error",
+    "type": "Fetch",
+    "error": "net::ERR_FAILED",
+    "cors": {
+      "corsError": "PreflightMissingAllowOriginHeader",
+      "failedParameter": ""
+    }
+  },
+  {
+    "event": "allowed",
+    "method": "GET",
+    "url": "https://meteofriul-weather-49007668366.europe-west1.run.app/weather/v1/families/cams/latest.json",
+    "time": 1792504145.840629
+  },
+  {
+    "event": "allowed",
+    "method": "GET",
+    "url": "https://meteofriul-weather-49007668366.europe-west1.run.app/weather/v1/icon2i/latest.json",
+    "time": 1792504145.8409948
+  },
+  {
+    "event": "allowed",
+    "method": "OPTIONS",
+    "url": "https://meteofriul-community-49007668366.europe-west1.run.app/api/community/reports",
+    "time": 1792504145.8461072
+  },
+  {
+    "event": "allowed",
+    "method": "GET",
+    "url": "https://play-b6fbe4d---meteofriul-api-bx24xqvcda-ew.a.run.app/api/weather/official-alerts",
+    "time": 1792504145.8476863
+  },
+  {
+    "event": "response",
+    "status": 403,
+    "url": "https://meteofriul-community-49007668366.europe-west1.run.app/api/community/reports"
+  },
+  {
+    "event": "network_error",
+    "type": "Fetch",
+    "error": "net::ERR_FAILED",
+    "cors": {
+      "corsError": "PreflightMissingAllowOriginHeader",
+      "failedParameter": ""
+    }
+  },
+  {
+    "event": "response",
+    "status": 200,
+    "url": "https://meteofriul-weather-49007668366.europe-west1.run.app/weather/v1/families/cams/latest.json"
+  },
+  {
+    "event": "allowed",
+    "method": "GET",
+    "url": "https://meteofriul-weather-49007668366.europe-west1.run.app/weather/v1/families/cams/runs/20261019T000000Z/release.json",
+    "time": 1792504146.0309944
+  },
+  {
+    "event": "response",
+    "status": 200,
+    "url": "https://meteofriul-weather-49007668366.europe-west1.run.app/weather/v1/icon2i/latest.json"
+  },
+  {
+    "event": "allowed",
+    "method": "GET",
+    "url": "https://meteofriul-weather-49007668366.europe-west1.run.app/weather/v1/icon2i/runs/20261019T120000Z/manifest.json",
+    "time": 1792504146.134316
+  },
+  {
+    "event": "response",
+    "status": 200,
+    "url": "https://meteofriul-weather-49007668366.europe-west1.run.app/weather/v1/families/cams/runs/20261019T000000Z/release.json"
+  },
+  {
+    "event": "allowed",
+    "method": "GET",
+    "url": "https://meteofriul-weather-49007668366.europe-west1.run.app/weather/v1/families/cams/runs/20261019T000000Z/continuity.json",
+    "time": 1792504146.1547394
+  },
+  {
+    "event": "response",
+    "status": 200,
+    "url": "https://meteofriul-weather-49007668366.europe-west1.run.app/weather/v1/icon2i/runs/20261019T120000Z/manifest.json"
+  },
+  {
+    "event": "allowed",
+    "method": "GET",
+    "url": "https://meteofriul-weather-49007668366.europe-west1.run.app/weather/v1/icon2i/runs/20261019T120000Z/municipalities/093033.json",
+    "time": 1792504146.2664545
+  },
+  {
+    "event": "response",
+    "status": 404,
+    "url": "https://meteofriul-weather-49007668366.europe-west1.run.app/weather/v1/families/cams/runs/20261019T000000Z/continuity.json"
+  },
+  {
+    "event": "response",
+    "status": 200,
+    "url": "https://meteofriul-weather-49007668366.europe-west1.run.app/weather/v1/icon2i/runs/20261019T120000Z/municipalities/093033.json"
+  },
+  {
+    "event": "network_error",
+    "type": "Fetch",
+    "error": "net::ERR_FAILED",
+    "cors": {
+      "corsError": "MissingAllowOriginHeader",
+      "failedParameter": ""
+    }
+  },
+  {
+    "event": "allowed",
+    "method": "GET",
+    "url": "http://127.0.0.1:5176/",
+    "time": 1792504180.317334
+  },
+  {
+    "event": "response",
+    "status": 200,
+    "url": "http://127.0.0.1:5176/"
+  },
+  {
+    "event": "allowed",
+    "method": "GET",
+    "url": "http://127.0.0.1:5176/assets/main-Bu79RhWT.js",
+    "time": 1792504180.4711435
+  },
+  {
+    "event": "allowed",
+    "method": "GET",
+    "url": "http://127.0.0.1:5176/assets/main-BGywgFOP.css",
+    "time": 1792504180.471852
+  },
+  {
+    "event": "response",
+    "status": 200,
+    "url": "http://127.0.0.1:5176/assets/main-Bu79RhWT.js"
+  },
+  {
+    "event": "response",
+    "status": 200,
+    "url": "http://127.0.0.1:5176/assets/main-BGywgFOP.css"
+  },
+  {
+    "event": "allowed",
+    "method": "GET",
+    "url": "http://127.0.0.1:5176/brand/pilot-r4/meteo-eventi-friul-mark-192.png",
+    "time": 1792504180.794349
+  },
+  {
+    "event": "response",
+    "status": 200,
+    "url": "data:image/svg+xml,%3csvg%20viewBox='0%200%20128%20128'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%3e%3cg%20id='overcast'%20clip-path='url(%23clip0_1858_8153)'%3e%3cg%20id='Sky'%3e%3cg%20id='Clouds'%3e%3cg%20id='Secondary%20Cloud'%3e%3cpath%20id='Cloud'%20d='M83.8392%2048.6934C86.2444%2044.9584%2091.2146%2043.529%2095.3177%2045.1768C99.3609%2046.8006%20101.814%2051.1888%20100.71%2055.4365L100.54%2056.0898L101.215%2056.0615C104.496%2055.924%20107.5%2058.4646%20107.5%2061.7744C107.5%2064.9759%20104.669%2067.4999%20101.489%2067.5H74.9769C71.7679%2067.5008%2068.8449%2065.1182%2068.5287%2061.9072C68.2136%2058.7068%2070.6168%2055.8414%2073.764%2055.2705L74.2552%2055.1816L74.1674%2054.6904C73.7734%2052.4931%2074.8117%2050.2493%2076.6849%2049.0273C78.6105%2047.7713%2081.177%2047.7069%2083.1683%2048.8564L83.5814%2049.0938L83.8392%2048.6934Z'%20fill='url(%23paint0_linear_1858_8153)'%20stroke='%2394A3B8'%20stroke-miterlimit='10'/%3e%3canimateTransform%20attributeName='transform'%20type='translate'%20values='0%20-3;0%200;0%20-3'%20dur='3s'%20begin='0s'%20repeatCount='indefinite'%20calcMode='spline'%20keySplines='.42%200%20.58%201;%20.42%200%20.58%201'/%3e%3c/g%3e%3cg%20id='Cloud_2'%3e%3cpath%20id='Cloud_3'%20d='M55.2623%2048.4746C60.1227%2040.6111%2070.2975%2037.38%2078.8151%2040.9434C87.3214%2044.5023%2092.138%2054.0026%2089.903%2062.9648L89.7418%2063.6143L90.4108%2063.585C97.4203%2063.2791%20103.5%2068.9917%20103.5%2076.0283C103.5%2082.8395%2097.7717%2088.4997%2090.9772%2088.5H37.9537C31.1275%2088.5018%2025.2029%2083.1709%2024.5592%2076.3604C23.9158%2069.5518%2028.7369%2063.2124%2035.443%2061.9453L35.9264%2061.8535L35.8424%2061.3691C35.0256%2056.6239%2037.1258%2051.7168%2041.1051%2049.0127C45.0951%2046.3014%2050.4459%2046.1537%2054.5797%2048.6396L55.0026%2048.8945L55.2623%2048.4746Z'%20fill='url(%23paint1_linear_1858_8153)'%20stroke='%23E6EFFC'%20stroke-miterlimit='10'/%3e%3canimateTransform%20attributeName='transform'%20type='translate'%20values='0%200;0%20-3;0%200'%20dur='3s'%20begin='0s'%20repeatCount='indefinite'%20calcMode='spline'%20keySplines='.42%200%20.58%201;%20.42%200%20.58%201'/%3e%3c/g%3e%3c/g%3e%3c/g%3e%3c/g%3e%3cdefs%3e%3clinearGradient%20id='paint0_linear_1858_8153'%20x1='88.0002'%20y1='44'%20x2='88.0002'%20y2='68'%20gradientUnits='userSpaceOnUse'%3e%3cstop%20stop-color='%23B0BCCD'/%3e%3cstop%20offset='1'%20stop-color='%2394A3B8'/%3e%3c/linearGradient%3e%3clinearGradient%20id='paint1_linear_1858_8153'%20x1='64.0008'%20y1='39'%20x2='64.0008'%20y2='89'%20gradientUnits='userSpaceOnUse'%3e%3cstop%20stop-color='%23F3F7FE'/%3e%3cstop%20offset='1'%20stop-color='%23E6EFFC'/%3e%3c/linearGradient%3e%3cclipPath%20id='clip0_1858_8153'%3e%3crect%20width='128'%20height='128'%20fill='white'/%3e%3c/clipPath%3e%3c/defs%3e%3c/svg%3e"
+  },
+  {
+    "event": "response",
+    "status": 200,
+    "url": "data:image/svg+xml,%3csvg%20viewBox='0%200%20128%20128'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%3e%3cg%20id='rain'%20clip-path='url(%23clip0_1858_8370)'%3e%3cg%20id='Sky'%3e%3cg%20id='Clouds'%3e%3cg%20id='Cloud'%3e%3cpath%20id='Cloud_2'%20d='M55.2623%2048.4746C60.1227%2040.6111%2070.2975%2037.38%2078.8151%2040.9434C87.3214%2044.5023%2092.138%2054.0026%2089.903%2062.9648L89.7418%2063.6143L90.4108%2063.585C97.4203%2063.2791%20103.5%2068.9917%20103.5%2076.0283C103.5%2082.8395%2097.7717%2088.4997%2090.9772%2088.5H37.9537C31.1275%2088.5018%2025.2029%2083.1709%2024.5592%2076.3604C23.9158%2069.5518%2028.7369%2063.2124%2035.443%2061.9453L35.9264%2061.8535L35.8424%2061.3691C35.0256%2056.6239%2037.1258%2051.7168%2041.1051%2049.0127C45.0951%2046.3014%2050.4459%2046.1537%2054.5797%2048.6396L55.0026%2048.8945L55.2623%2048.4746Z'%20fill='url(%23paint0_linear_1858_8370)'%20stroke='%23E6EFFC'%20stroke-miterlimit='10'/%3e%3c/g%3e%3canimateTransform%20attributeName='transform'%20type='translate'%20values='0%200;0%20-3;0%200'%20dur='3s'%20begin='0s'%20repeatCount='indefinite'%20calcMode='spline'%20keySplines='.42%200%20.58%201;%20.42%200%20.58%201'/%3e%3c/g%3e%3c/g%3e%3cg%20id='Precipitation'%3e%3cg%20id='Raindrops'%3e%3cpath%20id='Raindrop%201'%20d='M52%2083V95'%20stroke='%230A5AD4'%20stroke-width='4'%20stroke-linecap='round'%3e%3canimateTransform%20attributeName='transform'%20type='translate'%20values='0%200;0%2020'%20dur='1s'%20begin='0s'%20repeatCount='indefinite'%20calcMode='spline'%20keySplines='.42%200%201%201'/%3e%3canimate%20attributeName='opacity'%20values='0;1;1;0'%20dur='1s'%20begin='0s'%20repeatCount='indefinite'%20keyTimes='0;0.15;0.85;1'/%3e%3c/path%3e%3cpath%20id='Raindrop%202'%20d='M64%2083V95'%20stroke='%230A5AD4'%20stroke-width='4'%20stroke-linecap='round'%20opacity='0'%3e%3canimateTransform%20attributeName='transform'%20type='translate'%20values='0%200;0%2020'%20dur='1s'%20begin='0.4s'%20repeatCount='indefinite'%20calcMode='spline'%20keySplines='.42%200%201%201'/%3e%3canimate%20attributeName='opacity'%20values='0;1;1;0'%20dur='1s'%20begin='0.4s'%20repeatCount='indefinite'%20keyTimes='0;0.15;0.85;1'/%3e%3c/path%3e%3cpath%20id='Raindrop%203'%20d='M76%2083V95'%20stroke='%230A5AD4'%20stroke-width='4'%20stroke-linecap='round'%20opacity='0'%3e%3canimateTransform%20attributeName='transform'%20type='translate'%20values='0%200;0%2020'%20dur='1s'%20begin='0.8s'%20repeatCount='indefinite'%20calcMode='spline'%20keySplines='.42%200%201%201'/%3e%3canimate%20attributeName='opacity'%20values='0;1;1;0'%20dur='1s'%20begin='0.8s'%20repeatCount='indefinite'%20keyTimes='0;0.15;0.85;1'/%3e%3c/path%3e%3c/g%3e%3c/g%3e%3c/g%3e%3cdefs%3e%3clinearGradient%20id='paint0_linear_1858_8370'%20x1='64.0008'%20y1='39'%20x2='64.0008'%20y2='89'%20gradientUnits='userSpaceOnUse'%3e%3cstop%20stop-color='%23F3F7FE'/%3e%3cstop%20offset='1'%20stop-color='%23E6EFFC'/%3e%3c/linearGradient%3e%3cclipPath%20id='clip0_1858_8370'%3e%3crect%20width='128'%20height='128'%20fill='white'/%3e%3c/clipPath%3e%3c/defs%3e%3c/svg%3e"
+  },
+  {
+    "event": "response",
+    "status": 200,
+    "url": "data:image/svg+xml,%3c!--%20@meteocons/svg%200.1.0,%20Bas%20Milius%20(MIT;%20see%20LICENSE.txt).%20Only%20raindrop%20strokes%20changed%20to%20%237DD3FC%20for%20dark%20forecast%20surfaces.%20--%3e%3csvg%20viewBox='0%200%20128%20128'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%3e%3cg%20id='rain'%20clip-path='url(%23clip0_1858_8370)'%3e%3cg%20id='Sky'%3e%3cg%20id='Clouds'%3e%3cg%20id='Cloud'%3e%3cpath%20id='Cloud_2'%20d='M55.2623%2048.4746C60.1227%2040.6111%2070.2975%2037.38%2078.8151%2040.9434C87.3214%2044.5023%2092.138%2054.0026%2089.903%2062.9648L89.7418%2063.6143L90.4108%2063.585C97.4203%2063.2791%20103.5%2068.9917%20103.5%2076.0283C103.5%2082.8395%2097.7717%2088.4997%2090.9772%2088.5H37.9537C31.1275%2088.5018%2025.2029%2083.1709%2024.5592%2076.3604C23.9158%2069.5518%2028.7369%2063.2124%2035.443%2061.9453L35.9264%2061.8535L35.8424%2061.3691C35.0256%2056.6239%2037.1258%2051.7168%2041.1051%2049.0127C45.0951%2046.3014%2050.4459%2046.1537%2054.5797%2048.6396L55.0026%2048.8945L55.2623%2048.4746Z'%20fill='url(%23paint0_linear_1858_8370)'%20stroke='%23E6EFFC'%20stroke-miterlimit='10'/%3e%3c/g%3e%3canimateTransform%20attributeName='transform'%20type='translate'%20values='0%200;0%20-3;0%200'%20dur='3s'%20begin='0s'%20repeatCount='indefinite'%20calcMode='spline'%20keySplines='.42%200%20.58%201;%20.42%200%20.58%201'/%3e%3c/g%3e%3c/g%3e%3cg%20id='Precipitation'%3e%3cg%20id='Raindrops'%3e%3cpath%20id='Raindrop%201'%20d='M52%2083V95'%20stroke='%237DD3FC'%20stroke-width='4'%20stroke-linecap='round'%3e%3canimateTransform%20attributeName='transform'%20type='translate'%20values='0%200;0%2020'%20dur='1s'%20begin='0s'%20repeatCount='indefinite'%20calcMode='spline'%20keySplines='.42%200%201%201'/%3e%3canimate%20attributeName='opacity'%20values='0;1;1;0'%20dur='1s'%20begin='0s'%20repeatCount='indefinite'%20keyTimes='0;0.15;0.85;1'/%3e%3c/path%3e%3cpath%20id='Raindrop%202'%20d='M64%2083V95'%20stroke='%237DD3FC'%20stroke-width='4'%20stroke-linecap='round'%20opacity='0'%3e%3canimateTransform%20attributeName='transform'%20type='translate'%20values='0%200;0%2020'%20dur='1s'%20begin='0.4s'%20repeatCount='indefinite'%20calcMode='spline'%20keySplines='.42%200%201%201'/%3e%3canimate%20attributeName='opacity'%20values='0;1;1;0'%20dur='1s'%20begin='0.4s'%20repeatCount='indefinite'%20keyTimes='0;0.15;0.85;1'/%3e%3c/path%3e%3cpath%20id='Raindrop%203'%20d='M76%2083V95'%20stroke='%237DD3FC'%20stroke-width='4'%20stroke-linecap='round'%20opacity='0'%3e%3canimateTransform%20attributeName='transform'%20type='translate'%20values='0%200;0%2020'%20dur='1s'%20begin='0.8s'%20repeatCount='indefinite'%20calcMode='spline'%20keySplines='.42%200%201%201'/%3e%3canimate%20attributeName='opacity'%20values='0;1;1;0'%20dur='1s'%20begin='0.8s'%20repeatCount='indefinite'%20keyTimes='0;0.15;0.85;1'/%3e%3c/path%3e%3c/g%3e%3c/g%3e%3c/g%3e%3cdefs%3e%3clinearGradient%20id='paint0_linear_1858_8370'%20x1='64.0008'%20y1='39'%20x2='64.0008'%20y2='89'%20gradientUnits='userSpaceOnUse'%3e%3cstop%20stop-color='%23F3F7FE'/%3e%3cstop%20offset='1'%20stop-color='%23E6EFFC'/%3e%3c/linearGradient%3e%3cclipPath%20id='clip0_1858_8370'%3e%3crect%20width='128'%20height='128'%20fill='white'/%3e%3c/clipPath%3e%3c/defs%3e%3c/svg%3e"
+  },
+  {
+    "event": "response",
+    "status": 200,
+    "url": "data:image/svg+xml,%3csvg%20viewBox='0%200%20128%20128'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%3e%3cg%20id='overcast-night'%20clip-path='url(%23clip0_1858_8272)'%3e%3cg%20id='Sky'%3e%3cg%20id='Moon'%3e%3cpath%20id='Moon_2'%20d='M35.1152%2034.5947C33.3777%2043.1625%2040.7532%2051.2141%2049.3135%2050.7832C47.6732%2055.8338%2042.8891%2059.4999%2037.2178%2059.5C30.188%2059.5%2024.5002%2053.8786%2024.5%2046.959C24.5%2040.7451%2029.0879%2035.5838%2035.1152%2034.5947Z'%20fill='url(%23paint0_linear_1858_8272)'%20stroke='%2372B9D5'%20stroke-linecap='round'%20stroke-linejoin='round'/%3e%3canimateTransform%20attributeName='transform'%20type='rotate'%20values='-6%2036.9%2047.0;6%2036.9%2047.0;-6%2036.9%2047.0'%20dur='3s'%20begin='0s'%20repeatCount='indefinite'%20calcMode='spline'%20keySplines='.42%200%20.58%201;%20.42%200%20.58%201'/%3e%3c/g%3e%3cg%20id='Clouds'%3e%3cg%20id='Secondary%20Cloud'%3e%3cpath%20id='Cloud'%20d='M83.8392%2048.6934C86.2444%2044.9584%2091.2146%2043.529%2095.3177%2045.1768C99.3609%2046.8006%20101.814%2051.1888%20100.71%2055.4365L100.54%2056.0898L101.215%2056.0615C104.496%2055.924%20107.5%2058.4646%20107.5%2061.7744C107.5%2064.9759%20104.669%2067.4999%20101.489%2067.5H74.9769C71.7679%2067.5008%2068.8449%2065.1182%2068.5287%2061.9072C68.2136%2058.7068%2070.6168%2055.8414%2073.764%2055.2705L74.2552%2055.1816L74.1674%2054.6904C73.7734%2052.4931%2074.8117%2050.2493%2076.6849%2049.0273C78.6105%2047.7713%2081.177%2047.7069%2083.1683%2048.8564L83.5814%2049.0938L83.8392%2048.6934Z'%20fill='url(%23paint1_linear_1858_8272)'%20stroke='%2394A3B8'%20stroke-miterlimit='10'/%3e%3canimateTransform%20attributeName='transform'%20type='translate'%20values='0%20-3;0%200;0%20-3'%20dur='3s'%20begin='0s'%20repeatCount='indefinite'%20calcMode='spline'%20keySplines='.42%200%20.58%201;%20.42%200%20.58%201'/%3e%3c/g%3e%3cg%20id='Cloud_2'%3e%3cpath%20id='Cloud_3'%20d='M55.2623%2048.4746C60.1227%2040.6111%2070.2975%2037.38%2078.8151%2040.9434C87.3214%2044.5023%2092.138%2054.0026%2089.903%2062.9648L89.7418%2063.6143L90.4108%2063.585C97.4203%2063.2791%20103.5%2068.9917%20103.5%2076.0283C103.5%2082.8395%2097.7717%2088.4997%2090.9772%2088.5H37.9537C31.1275%2088.5018%2025.2029%2083.1709%2024.5592%2076.3604C23.9158%2069.5518%2028.7369%2063.2124%2035.443%2061.9453L35.9264%2061.8535L35.8424%2061.3691C35.0256%2056.6239%2037.1258%2051.7168%2041.1051%2049.0127C45.0951%2046.3014%2050.4459%2046.1537%2054.5797%2048.6396L55.0026%2048.8945L55.2623%2048.4746Z'%20fill='url(%23paint2_linear_1858_8272)'%20stroke='%23E6EFFC'%20stroke-miterlimit='10'/%3e%3canimateTransform%20attributeName='transform'%20type='translate'%20values='0%200;0%20-3;0%200'%20dur='3s'%20begin='0s'%20repeatCount='indefinite'%20calcMode='spline'%20keySplines='.42%200%20.58%201;%20.42%200%20.58%201'/%3e%3c/g%3e%3c/g%3e%3c/g%3e%3c/g%3e%3cdefs%3e%3clinearGradient%20id='paint0_linear_1858_8272'%20x1='37'%20y1='34'%20x2='37'%20y2='60'%20gradientUnits='userSpaceOnUse'%3e%3cstop%20stop-color='%2386C3DB'/%3e%3cstop%20offset='1'%20stop-color='%2372B9D5'/%3e%3c/linearGradient%3e%3clinearGradient%20id='paint1_linear_1858_8272'%20x1='88.0002'%20y1='44'%20x2='88.0002'%20y2='68'%20gradientUnits='userSpaceOnUse'%3e%3cstop%20stop-color='%23B0BCCD'/%3e%3cstop%20offset='1'%20stop-color='%2394A3B8'/%3e%3c/linearGradient%3e%3clinearGradient%20id='paint2_linear_1858_8272'%20x1='64.0008'%20y1='39'%20x2='64.0008'%20y2='89'%20gradientUnits='userSpaceOnUse'%3e%3cstop%20stop-color='%23F3F7FE'/%3e%3cstop%20offset='1'%20stop-color='%23E6EFFC'/%3e%3c/linearGradient%3e%3cclipPath%20id='clip0_1858_8272'%3e%3crect%20width='128'%20height='128'%20fill='white'/%3e%3c/clipPath%3e%3c/defs%3e%3c/svg%3e"
+  },
+  {
+    "event": "response",
+    "status": 200,
+    "url": "data:image/svg+xml,%3csvg%20viewBox='0%200%20128%20128'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%3e%3cg%20id='fog'%20clip-path='url(%23clip0_1858_9374)'%3e%3cg%20id='Sky'%3e%3cg%20id='Clouds'%3e%3cg%20id='Cloud'%3e%3cpath%20id='Cloud_2'%20d='M55.2623%2048.4746C60.1227%2040.6111%2070.2975%2037.38%2078.8151%2040.9434C87.3214%2044.5023%2092.138%2054.0026%2089.903%2062.9648L89.7418%2063.6143L90.4108%2063.585C97.4203%2063.2791%20103.5%2068.9917%20103.5%2076.0283C103.5%2082.8395%2097.7717%2088.4997%2090.9772%2088.5H37.9537C31.1275%2088.5018%2025.2029%2083.1709%2024.5592%2076.3604C23.9158%2069.5518%2028.7369%2063.2124%2035.443%2061.9453L35.9264%2061.8535L35.8424%2061.3691C35.0256%2056.6239%2037.1258%2051.7168%2041.1051%2049.0127C45.0951%2046.3014%2050.4459%2046.1537%2054.5797%2048.6396L55.0026%2048.8945L55.2623%2048.4746Z'%20fill='url(%23paint0_linear_1858_9374)'%20stroke='%23E6EFFC'%20stroke-miterlimit='10'/%3e%3c/g%3e%3canimateTransform%20attributeName='transform'%20type='translate'%20values='0%200;0%20-3;0%200'%20dur='3s'%20begin='0s'%20repeatCount='indefinite'%20calcMode='spline'%20keySplines='.42%200%20.58%201;%20.42%200%20.58%201'/%3e%3c/g%3e%3c/g%3e%3cg%20id='Precipitation'%3e%3cpath%20id='Line%202'%20d='M40%2095H88'%20stroke='%23E2E8F0'%20stroke-width='3'%20stroke-miterlimit='10'%20stroke-linecap='round'%3e%3canimateTransform%20attributeName='transform'%20type='translate'%20values='0%200;3%200;0%200'%20dur='3s'%20begin='0s'%20repeatCount='indefinite'%20calcMode='spline'%20keySplines='.42%200%20.58%201;%20.42%200%20.58%201'/%3e%3c/path%3e%3cpath%20id='Line%201'%20d='M40%20103H88'%20stroke='%23E2E8F0'%20stroke-width='3'%20stroke-miterlimit='10'%20stroke-linecap='round'%3e%3canimateTransform%20attributeName='transform'%20type='translate'%20values='0%200;3%200;0%200'%20dur='3s'%20begin='0.2s'%20repeatCount='indefinite'%20calcMode='spline'%20keySplines='.42%200%20.58%201;%20.42%200%20.58%201'/%3e%3c/path%3e%3c/g%3e%3c/g%3e%3cdefs%3e%3clinearGradient%20id='paint0_linear_1858_9374'%20x1='64.0008'%20y1='39'%20x2='64.0008'%20y2='89'%20gradientUnits='userSpaceOnUse'%3e%3cstop%20stop-color='%23F3F7FE'/%3e%3cstop%20offset='1'%20stop-color='%23E6EFFC'/%3e%3c/linearGradient%3e%3cclipPath%20id='clip0_1858_9374'%3e%3crect%20width='128'%20height='128'%20fill='white'/%3e%3c/clipPath%3e%3c/defs%3e%3c/svg%3e"
+  },
+  {
+    "event": "response",
+    "status": 200,
+    "url": "http://127.0.0.1:5176/brand/pilot-r4/meteo-eventi-friul-mark-192.png"
+  },
+  {
+    "event": "allowed",
+    "method": "GET",
+    "url": "https://play-b6fbe4d---meteofriul-api-bx24xqvcda-ew.a.run.app/api/weather/official-alerts",
+    "time": 1792504181.1191127
+  },
+  {
+    "event": "allowed",
+    "method": "GET",
+    "url": "https://meteofriul-weather-49007668366.europe-west1.run.app/weather/v1/uv/latest.json",
+    "time": 1792504181.1244237
+  },
+  {
+    "event": "allowed",
+    "method": "GET",
+    "url": "http://127.0.0.1:5176/assets/index.esm-DsUkD-D0.js",
+    "time": 1792504181.139992
+  },
+  {
+    "event": "allowed",
+    "method": "GET",
+    "url": "http://127.0.0.1:5176/assets/index.esm-DA8gwP5f.js",
+    "time": 1792504181.145712
+  },
+  {
+    "event": "allowed",
+    "method": "OPTIONS",
+    "url": "https://meteofriul-community-49007668366.europe-west1.run.app/api/community/reports",
+    "time": 1792504181.1464725
+  },
+  {
+    "event": "response",
+    "status": 200,
+    "url": "http://127.0.0.1:5176/assets/index.esm-DsUkD-D0.js"
+  },
+  {
+    "event": "response",
+    "status": 200,
+    "url": "http://127.0.0.1:5176/assets/index.esm-DA8gwP5f.js"
+  },
+  {
+    "event": "allowed",
+    "method": "GET",
+    "url": "http://127.0.0.1:5176/manifest.webmanifest",
+    "time": 1792504181.2667131
+  },
+  {
+    "event": "response",
+    "status": 403,
+    "url": "https://meteofriul-community-49007668366.europe-west1.run.app/api/community/reports"
+  },
+  {
+    "event": "allowed",
+    "method": "GET",
+    "url": "http://127.0.0.1:5176/assets/index.esm-CIWX8_XI.js",
+    "time": 1792504181.3056524
+  },
+  {
+    "event": "network_error",
+    "type": "Fetch",
+    "error": "net::ERR_FAILED",
+    "cors": {
+      "corsError": "PreflightMissingAllowOriginHeader",
+      "failedParameter": ""
+    }
+  },
+  {
+    "event": "response",
+    "status": 200,
+    "url": "http://127.0.0.1:5176/manifest.webmanifest"
+  },
+  {
+    "event": "response",
+    "status": 200,
+    "url": "http://127.0.0.1:5176/assets/index.esm-CIWX8_XI.js"
+  },
+  {
+    "event": "allowed",
+    "method": "GET",
+    "url": "http://127.0.0.1:5176/branding/icon_launcher_maskable_mf-r5-20260927-512.png",
+    "time": 1792504181.356719
+  },
+  {
+    "event": "response",
+    "status": 200,
+    "url": "http://127.0.0.1:5176/branding/icon_launcher_maskable_mf-r5-20260927-512.png"
+  },
+  {
+    "event": "response",
+    "status": 200,
+    "url": "https://meteofriul-weather-49007668366.europe-west1.run.app/weather/v1/uv/latest.json"
+  },
+  {
+    "event": "network_error",
+    "type": "Fetch",
+    "error": "net::ERR_FAILED",
+    "cors": {
+      "corsError": "MissingAllowOriginHeader",
+      "failedParameter": ""
+    }
+  },
+  {
+    "event": "allowed",
+    "method": "GET",
+    "url": "http://127.0.0.1:5176/__phone_verification_start__",
+    "time": 1792504397.500548
+  },
+  {
+    "event": "response",
+    "status": 404,
+    "url": "http://127.0.0.1:5176/__phone_verification_start__"
+  }
+]

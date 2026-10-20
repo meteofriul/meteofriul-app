@@ -1,0 +1,971 @@
+[
+  {
+    "event": "allowed",
+    "method": "GET",
+    "url": "http://127.0.0.1:5176/__webfix_navigation_start__",
+    "time": 1792507873.0282712
+  },
+  {
+    "event": "response",
+    "status": 404,
+    "url": "http://127.0.0.1:5176/__webfix_navigation_start__"
+  },
+  {
+    "event": "allowed",
+    "method": "GET",
+    "url": "http://127.0.0.1:5176/",
+    "time": 1792507874.9973164
+  },
+  {
+    "event": "response",
+    "status": 200,
+    "url": "http://127.0.0.1:5176/"
+  },
+  {
+    "event": "allowed",
+    "method": "GET",
+    "url": "http://127.0.0.1:5176/assets/main-CJxLHnmY.js",
+    "time": 1792507875.2580197
+  },
+  {
+    "event": "allowed",
+    "method": "GET",
+    "url": "http://127.0.0.1:5176/assets/main-BE0yK-t0.css",
+    "time": 1792507875.2585042
+  },
+  {
+    "event": "response",
+    "status": 200,
+    "url": "http://127.0.0.1:5176/assets/main-CJxLHnmY.js"
+  },
+  {
+    "event": "response",
+    "status": 200,
+    "url": "http://127.0.0.1:5176/assets/main-BE0yK-t0.css"
+  },
+  {
+    "event": "allowed",
+    "method": "GET",
+    "url": "http://127.0.0.1:5176/brand/pilot-r4/meteo-eventi-friul-mark-192.png",
+    "time": 1792507876.8901434
+  },
+  {
+    "event": "response",
+    "status": 200,
+    "url": "http://127.0.0.1:5176/brand/pilot-r4/meteo-eventi-friul-mark-192.png"
+  },
+  {
+    "event": "allowed",
+    "method": "GET",
+    "url": "http://127.0.0.1:5176/assets/index.esm-DsUkD-D0.js",
+    "time": 1792507877.1317482
+  },
+  {
+    "event": "allowed",
+    "method": "GET",
+    "url": "https://meteofriul-events-49007668366.europe-west1.run.app/api/local/events",
+    "time": 1792507877.1701064
+  },
+  {
+    "event": "allowed",
+    "method": "GET",
+    "url": "http://127.0.0.1:5176/manifest.webmanifest",
+    "time": 1792507877.1712325
+  },
+  {
+    "event": "allowed",
+    "method": "GET",
+    "url": "https://play-b6fbe4d---meteofriul-api-bx24xqvcda-ew.a.run.app/api/weather/official-alerts",
+    "time": 1792507877.1723664
+  },
+  {
+    "event": "allowed",
+    "method": "GET",
+    "url": "http://127.0.0.1:5176/assets/index.esm-DA8gwP5f.js",
+    "time": 1792507877.179776
+  },
+  {
+    "event": "response",
+    "status": 200,
+    "url": "http://127.0.0.1:5176/assets/index.esm-DsUkD-D0.js"
+  },
+  {
+    "event": "allowed",
+    "method": "OPTIONS",
+    "url": "https://meteofriul-community-49007668366.europe-west1.run.app/api/community/reports",
+    "time": 1792507877.2313116
+  },
+  {
+    "event": "response",
+    "status": 200,
+    "url": "http://127.0.0.1:5176/assets/index.esm-DA8gwP5f.js"
+  },
+  {
+    "event": "response",
+    "status": 200,
+    "url": "http://127.0.0.1:5176/manifest.webmanifest"
+  },
+  {
+    "event": "allowed",
+    "method": "GET",
+    "url": "http://127.0.0.1:5176/branding/icon_launcher_maskable_mf-r5-20260927-512.png",
+    "time": 1792507877.3214228
+  },
+  {
+    "event": "allowed",
+    "method": "GET",
+    "url": "http://127.0.0.1:5176/assets/index.esm-CIWX8_XI.js",
+    "time": 1792507877.3775382
+  },
+  {
+    "event": "response",
+    "status": 200,
+    "url": "http://127.0.0.1:5176/branding/icon_launcher_maskable_mf-r5-20260927-512.png"
+  },
+  {
+    "event": "response",
+    "status": 200,
+    "url": "http://127.0.0.1:5176/assets/index.esm-CIWX8_XI.js"
+  },
+  {
+    "event": "response",
+    "status": 403,
+    "url": "https://meteofriul-community-49007668366.europe-west1.run.app/api/community/reports"
+  },
+  {
+    "event": "network_error",
+    "type": "Fetch",
+    "error": "net::ERR_FAILED",
+    "cors": {
+      "corsError": "PreflightMissingAllowOriginHeader",
+      "failedParameter": ""
+    }
+  },
+  {
+    "event": "network_error",
+    "type": "Fetch",
+    "error": "net::ERR_FAILED",
+    "cors": {
+      "corsError": "MissingAllowOriginHeader",
+      "failedParameter": ""
+    }
+  },
+  {
+    "event": "response",
+    "status": 200,
+    "url": "https://meteofriul-events-49007668366.europe-west1.run.app/api/local/events"
+  },
+  {
+    "event": "allowed",
+    "method": "GET",
+    "url": "https://meteofriul-events-49007668366.europe-west1.run.app/api/local/events",
+    "time": 1792507883.3076234
+  },
+  {
+    "event": "response",
+    "status": 200,
+    "url": "https://meteofriul-events-49007668366.europe-west1.run.app/api/local/events"
+  },
+  {
+    "event": "allowed",
+    "method": "GET",
+    "url": "https://meteofriul-events-49007668366.europe-west1.run.app/api/local/events",
+    "time": 1792507883.6254725
+  },
+  {
+    "event": "response",
+    "status": 200,
+    "url": "https://meteofriul-events-49007668366.europe-west1.run.app/api/local/events"
+  },
+  {
+    "event": "allowed",
+    "method": "GET",
+    "url": "https://meteofriul-events-49007668366.europe-west1.run.app/api/local/events",
+    "time": 1792507883.8703547
+  },
+  {
+    "event": "response",
+    "status": 200,
+    "url": "https://meteofriul-events-49007668366.europe-west1.run.app/api/local/events"
+  },
+  {
+    "event": "allowed",
+    "method": "GET",
+    "url": "https://play-b6fbe4d---meteofriul-api-bx24xqvcda-ew.a.run.app/api/promotions/catalog",
+    "time": 1792507884.6435182
+  },
+  {
+    "event": "allowed",
+    "method": "GET",
+    "url": "https://www.turismofvg.it/proxyvfs.axd/main,thumb/r378554",
+    "time": 1792507884.6772962
+  },
+  {
+    "event": "allowed",
+    "method": "GET",
+    "url": "https://www.turismofvg.it/proxyvfs.axd/main,thumb/r378590",
+    "time": 1792507884.6782563
+  },
+  {
+    "event": "allowed",
+    "method": "GET",
+    "url": "https://www.turismofvg.it/proxyvfs.axd/main,thumb/r378587",
+    "time": 1792507884.6786811
+  },
+  {
+    "event": "network_error",
+    "type": "Fetch",
+    "error": "net::ERR_FAILED",
+    "cors": {
+      "corsError": "MissingAllowOriginHeader",
+      "failedParameter": ""
+    }
+  },
+  {
+    "event": "response",
+    "status": 200,
+    "url": "https://www.turismofvg.it/proxyvfs.axd/main,thumb/r378587"
+  },
+  {
+    "event": "response",
+    "status": 200,
+    "url": "https://www.turismofvg.it/proxyvfs.axd/main,thumb/r378590"
+  },
+  {
+    "event": "response",
+    "status": 200,
+    "url": "https://www.turismofvg.it/proxyvfs.axd/main,thumb/r378554"
+  },
+  {
+    "event": "allowed",
+    "method": "GET",
+    "url": "https://www.turismofvg.it/proxyvfs.axd/main,thumb/r379581",
+    "time": 1792507886.1107311
+  },
+  {
+    "event": "response",
+    "status": 200,
+    "url": "https://www.turismofvg.it/proxyvfs.axd/main,thumb/r379581"
+  },
+  {
+    "event": "allowed",
+    "method": "GET",
+    "url": "https://play-b6fbe4d---meteofriul-api-bx24xqvcda-ew.a.run.app/api/promotions/catalog",
+    "time": 1792507969.1231878
+  },
+  {
+    "event": "allowed",
+    "method": "GET",
+    "url": "https://play-b6fbe4d---meteofriul-api-bx24xqvcda-ew.a.run.app/api/weather/official-alerts",
+    "time": 1792507969.1730309
+  },
+  {
+    "event": "allowed",
+    "method": "GET",
+    "url": "https://meteofriul-events-49007668366.europe-west1.run.app/api/local/events",
+    "time": 1792507969.1749275
+  },
+  {
+    "event": "allowed",
+    "method": "GET",
+    "url": "https://meteofriul-weather-49007668366.europe-west1.run.app/weather/v1/families/cams/latest.json",
+    "time": 1792507969.178642
+  },
+  {
+    "event": "allowed",
+    "method": "OPTIONS",
+    "url": "https://meteofriul-community-49007668366.europe-west1.run.app/api/community/reports",
+    "time": 1792507969.215419
+  },
+  {
+    "event": "allowed",
+    "method": "GET",
+    "url": "https://www.turismofvg.it/proxyvfs.axd/main,thumb/r374918",
+    "time": 1792507969.218924
+  },
+  {
+    "event": "response",
+    "status": 403,
+    "url": "https://meteofriul-community-49007668366.europe-west1.run.app/api/community/reports"
+  },
+  {
+    "event": "network_error",
+    "type": "Fetch",
+    "error": "net::ERR_FAILED",
+    "cors": {
+      "corsError": "PreflightMissingAllowOriginHeader",
+      "failedParameter": ""
+    }
+  },
+  {
+    "event": "response",
+    "status": 200,
+    "url": "https://meteofriul-weather-49007668366.europe-west1.run.app/weather/v1/families/cams/latest.json"
+  },
+  {
+    "event": "allowed",
+    "method": "GET",
+    "url": "https://meteofriul-weather-49007668366.europe-west1.run.app/weather/v1/families/cams/runs/20261019T000000Z/release.json",
+    "time": 1792507969.5310175
+  },
+  {
+    "event": "response",
+    "status": 200,
+    "url": "https://www.turismofvg.it/proxyvfs.axd/main,thumb/r374918"
+  },
+  {
+    "event": "network_error",
+    "type": "Fetch",
+    "error": "net::ERR_FAILED",
+    "cors": {
+      "corsError": "MissingAllowOriginHeader",
+      "failedParameter": ""
+    }
+  },
+  {
+    "event": "response",
+    "status": 200,
+    "url": "https://meteofriul-weather-49007668366.europe-west1.run.app/weather/v1/families/cams/runs/20261019T000000Z/release.json"
+  },
+  {
+    "event": "allowed",
+    "method": "GET",
+    "url": "https://meteofriul-weather-49007668366.europe-west1.run.app/weather/v1/families/cams/runs/20261019T000000Z/continuity.json",
+    "time": 1792507969.6215296
+  },
+  {
+    "event": "response",
+    "status": 404,
+    "url": "https://meteofriul-weather-49007668366.europe-west1.run.app/weather/v1/families/cams/runs/20261019T000000Z/continuity.json"
+  },
+  {
+    "event": "response",
+    "status": 200,
+    "url": "https://meteofriul-events-49007668366.europe-west1.run.app/api/local/events"
+  },
+  {
+    "event": "allowed",
+    "method": "GET",
+    "url": "https://meteofriul-events-49007668366.europe-west1.run.app/api/local/events",
+    "time": 1792507969.8273804
+  },
+  {
+    "event": "response",
+    "status": 200,
+    "url": "https://meteofriul-events-49007668366.europe-west1.run.app/api/local/events"
+  },
+  {
+    "event": "allowed",
+    "method": "GET",
+    "url": "https://meteofriul-events-49007668366.europe-west1.run.app/api/local/events",
+    "time": 1792507970.076054
+  },
+  {
+    "event": "network_error",
+    "type": "Fetch",
+    "error": "net::ERR_FAILED",
+    "cors": {
+      "corsError": "MissingAllowOriginHeader",
+      "failedParameter": ""
+    }
+  },
+  {
+    "event": "response",
+    "status": 200,
+    "url": "https://meteofriul-events-49007668366.europe-west1.run.app/api/local/events"
+  },
+  {
+    "event": "allowed",
+    "method": "GET",
+    "url": "https://meteofriul-events-49007668366.europe-west1.run.app/api/local/events",
+    "time": 1792507970.3141239
+  },
+  {
+    "event": "response",
+    "status": 200,
+    "url": "https://meteofriul-events-49007668366.europe-west1.run.app/api/local/events"
+  },
+  {
+    "event": "allowed",
+    "method": "GET",
+    "url": "http://127.0.0.1:5176/__webfix_navigation_start__",
+    "time": 1792507992.6187243
+  },
+  {
+    "event": "response",
+    "status": 404,
+    "url": "http://127.0.0.1:5176/__webfix_navigation_start__"
+  },
+  {
+    "event": "allowed",
+    "method": "GET",
+    "url": "http://127.0.0.1:5176/",
+    "time": 1792508030.0070505
+  },
+  {
+    "event": "response",
+    "status": 200,
+    "url": "http://127.0.0.1:5176/"
+  },
+  {
+    "event": "allowed",
+    "method": "GET",
+    "url": "http://127.0.0.1:5176/assets/main-CJxLHnmY.js",
+    "time": 1792508030.201555
+  },
+  {
+    "event": "allowed",
+    "method": "GET",
+    "url": "http://127.0.0.1:5176/assets/main-BE0yK-t0.css",
+    "time": 1792508030.2021127
+  },
+  {
+    "event": "response",
+    "status": 200,
+    "url": "http://127.0.0.1:5176/assets/main-BE0yK-t0.css"
+  },
+  {
+    "event": "response",
+    "status": 200,
+    "url": "http://127.0.0.1:5176/assets/main-CJxLHnmY.js"
+  },
+  {
+    "event": "allowed",
+    "method": "GET",
+    "url": "http://127.0.0.1:5176/brand/pilot-r4/meteo-eventi-friul-mark-192.png",
+    "time": 1792508031.2129219
+  },
+  {
+    "event": "allowed",
+    "method": "GET",
+    "url": "https://www.turismofvg.it/proxyvfs.axd/main,thumb/r378554",
+    "time": 1792508031.2141986
+  },
+  {
+    "event": "allowed",
+    "method": "GET",
+    "url": "https://www.turismofvg.it/proxyvfs.axd/main,thumb/r378590",
+    "time": 1792508031.2146094
+  },
+  {
+    "event": "allowed",
+    "method": "GET",
+    "url": "https://www.turismofvg.it/proxyvfs.axd/main,thumb/r378587",
+    "time": 1792508031.217057
+  },
+  {
+    "event": "allowed",
+    "method": "GET",
+    "url": "https://www.turismofvg.it/proxyvfs.axd/main,thumb/r379581",
+    "time": 1792508031.2174225
+  },
+  {
+    "event": "allowed",
+    "method": "GET",
+    "url": "https://www.turismofvg.it/proxyvfs.axd/main,thumb/r374918",
+    "time": 1792508031.255844
+  },
+  {
+    "event": "allowed",
+    "method": "GET",
+    "url": "https://play-b6fbe4d---meteofriul-api-bx24xqvcda-ew.a.run.app/api/promotions/catalog",
+    "time": 1792508031.2656872
+  },
+  {
+    "event": "allowed",
+    "method": "GET",
+    "url": "https://play-b6fbe4d---meteofriul-api-bx24xqvcda-ew.a.run.app/api/weather/official-alerts",
+    "time": 1792508031.3583834
+  },
+  {
+    "event": "allowed",
+    "method": "GET",
+    "url": "https://meteofriul-events-49007668366.europe-west1.run.app/api/local/events",
+    "time": 1792508031.366958
+  },
+  {
+    "event": "response",
+    "status": 200,
+    "url": "https://www.turismofvg.it/proxyvfs.axd/main,thumb/r378590"
+  },
+  {
+    "event": "response",
+    "status": 200,
+    "url": "https://www.turismofvg.it/proxyvfs.axd/main,thumb/r379581"
+  },
+  {
+    "event": "response",
+    "status": 200,
+    "url": "https://www.turismofvg.it/proxyvfs.axd/main,thumb/r378554"
+  },
+  {
+    "event": "response",
+    "status": 200,
+    "url": "https://www.turismofvg.it/proxyvfs.axd/main,thumb/r378587"
+  },
+  {
+    "event": "response",
+    "status": 200,
+    "url": "http://127.0.0.1:5176/brand/pilot-r4/meteo-eventi-friul-mark-192.png"
+  },
+  {
+    "event": "response",
+    "status": 200,
+    "url": "https://www.turismofvg.it/proxyvfs.axd/main,thumb/r374918"
+  },
+  {
+    "event": "allowed",
+    "method": "GET",
+    "url": "http://127.0.0.1:5176/assets/index.esm-DsUkD-D0.js",
+    "time": 1792508031.3779366
+  },
+  {
+    "event": "allowed",
+    "method": "GET",
+    "url": "http://127.0.0.1:5176/assets/index.esm-DA8gwP5f.js",
+    "time": 1792508031.3785512
+  },
+  {
+    "event": "allowed",
+    "method": "OPTIONS",
+    "url": "https://meteofriul-community-49007668366.europe-west1.run.app/api/community/reports",
+    "time": 1792508031.388053
+  },
+  {
+    "event": "response",
+    "status": 200,
+    "url": "http://127.0.0.1:5176/assets/index.esm-DsUkD-D0.js"
+  },
+  {
+    "event": "response",
+    "status": 200,
+    "url": "http://127.0.0.1:5176/assets/index.esm-DA8gwP5f.js"
+  },
+  {
+    "event": "allowed",
+    "method": "GET",
+    "url": "http://127.0.0.1:5176/manifest.webmanifest",
+    "time": 1792508031.4401684
+  },
+  {
+    "event": "response",
+    "status": 200,
+    "url": "http://127.0.0.1:5176/manifest.webmanifest"
+  },
+  {
+    "event": "allowed",
+    "method": "GET",
+    "url": "http://127.0.0.1:5176/branding/icon_launcher_maskable_mf-r5-20260927-512.png",
+    "time": 1792508031.481708
+  },
+  {
+    "event": "response",
+    "status": 403,
+    "url": "https://meteofriul-community-49007668366.europe-west1.run.app/api/community/reports"
+  },
+  {
+    "event": "response",
+    "status": 200,
+    "url": "http://127.0.0.1:5176/branding/icon_launcher_maskable_mf-r5-20260927-512.png"
+  },
+  {
+    "event": "allowed",
+    "method": "GET",
+    "url": "http://127.0.0.1:5176/assets/index.esm-CIWX8_XI.js",
+    "time": 1792508031.6530762
+  },
+  {
+    "event": "network_error",
+    "type": "Fetch",
+    "error": "net::ERR_FAILED",
+    "cors": {
+      "corsError": "PreflightMissingAllowOriginHeader",
+      "failedParameter": ""
+    }
+  },
+  {
+    "event": "network_error",
+    "type": "Fetch",
+    "error": "net::ERR_FAILED",
+    "cors": {
+      "corsError": "MissingAllowOriginHeader",
+      "failedParameter": ""
+    }
+  },
+  {
+    "event": "response",
+    "status": 200,
+    "url": "http://127.0.0.1:5176/assets/index.esm-CIWX8_XI.js"
+  },
+  {
+    "event": "response",
+    "status": 200,
+    "url": "https://meteofriul-events-49007668366.europe-west1.run.app/api/local/events"
+  },
+  {
+    "event": "allowed",
+    "method": "GET",
+    "url": "https://meteofriul-events-49007668366.europe-west1.run.app/api/local/events",
+    "time": 1792508031.9988132
+  },
+  {
+    "event": "network_error",
+    "type": "Fetch",
+    "error": "net::ERR_FAILED",
+    "cors": {
+      "corsError": "MissingAllowOriginHeader",
+      "failedParameter": ""
+    }
+  },
+  {
+    "event": "response",
+    "status": 200,
+    "url": "https://meteofriul-events-49007668366.europe-west1.run.app/api/local/events"
+  },
+  {
+    "event": "allowed",
+    "method": "GET",
+    "url": "https://meteofriul-events-49007668366.europe-west1.run.app/api/local/events",
+    "time": 1792508032.2206075
+  },
+  {
+    "event": "response",
+    "status": 200,
+    "url": "https://meteofriul-events-49007668366.europe-west1.run.app/api/local/events"
+  },
+  {
+    "event": "allowed",
+    "method": "GET",
+    "url": "https://meteofriul-events-49007668366.europe-west1.run.app/api/local/events",
+    "time": 1792508032.437857
+  },
+  {
+    "event": "response",
+    "status": 200,
+    "url": "https://meteofriul-events-49007668366.europe-west1.run.app/api/local/events"
+  },
+  {
+    "event": "allowed",
+    "method": "GET",
+    "url": "https://play-b6fbe4d---meteofriul-api-bx24xqvcda-ew.a.run.app/api/location/search",
+    "time": 1792508074.7234628
+  },
+  {
+    "event": "allowed",
+    "method": "GET",
+    "url": "https://play-b6fbe4d---meteofriul-api-bx24xqvcda-ew.a.run.app/api/location/municipalities/search",
+    "time": 1792508074.7254026
+  },
+  {
+    "event": "network_error",
+    "type": "Fetch",
+    "error": "net::ERR_FAILED",
+    "cors": {
+      "corsError": "MissingAllowOriginHeader",
+      "failedParameter": ""
+    }
+  },
+  {
+    "event": "network_error",
+    "type": "Fetch",
+    "error": "net::ERR_FAILED",
+    "cors": {
+      "corsError": "MissingAllowOriginHeader",
+      "failedParameter": ""
+    }
+  },
+  {
+    "event": "allowed",
+    "method": "OPTIONS",
+    "url": "https://meteofriul-community-49007668366.europe-west1.run.app/api/community/reports",
+    "time": 1792508118.7592325
+  },
+  {
+    "event": "response",
+    "status": 403,
+    "url": "https://meteofriul-community-49007668366.europe-west1.run.app/api/community/reports"
+  },
+  {
+    "event": "network_error",
+    "type": "Fetch",
+    "error": "net::ERR_FAILED",
+    "cors": {
+      "corsError": "PreflightMissingAllowOriginHeader",
+      "failedParameter": ""
+    }
+  },
+  {
+    "event": "allowed",
+    "method": "GET",
+    "url": "https://play-b6fbe4d---meteofriul-api-bx24xqvcda-ew.a.run.app/api/location/search",
+    "time": 1792508120.6196997
+  },
+  {
+    "event": "allowed",
+    "method": "GET",
+    "url": "https://play-b6fbe4d---meteofriul-api-bx24xqvcda-ew.a.run.app/api/location/municipalities/search",
+    "time": 1792508120.6202886
+  },
+  {
+    "event": "network_error",
+    "type": "Fetch",
+    "error": "net::ERR_FAILED",
+    "cors": {
+      "corsError": "MissingAllowOriginHeader",
+      "failedParameter": ""
+    }
+  },
+  {
+    "event": "network_error",
+    "type": "Fetch",
+    "error": "net::ERR_FAILED",
+    "cors": {
+      "corsError": "MissingAllowOriginHeader",
+      "failedParameter": ""
+    }
+  },
+  {
+    "event": "allowed",
+    "method": "GET",
+    "url": "https://play-b6fbe4d---meteofriul-api-bx24xqvcda-ew.a.run.app/api/promotions/catalog",
+    "time": 1792508157.0826933
+  },
+  {
+    "event": "allowed",
+    "method": "GET",
+    "url": "https://meteofriul-events-49007668366.europe-west1.run.app/api/local/events",
+    "time": 1792508157.1000648
+  },
+  {
+    "event": "allowed",
+    "method": "OPTIONS",
+    "url": "https://meteofriul-community-49007668366.europe-west1.run.app/api/community/reports",
+    "time": 1792508157.12228
+  },
+  {
+    "event": "allowed",
+    "method": "GET",
+    "url": "https://www.turismofvg.it/proxyvfs.axd/main,thumb/r378554",
+    "time": 1792508157.1241114
+  },
+  {
+    "event": "allowed",
+    "method": "GET",
+    "url": "https://www.turismofvg.it/proxyvfs.axd/main,thumb/r378590",
+    "time": 1792508157.1244857
+  },
+  {
+    "event": "allowed",
+    "method": "GET",
+    "url": "https://www.turismofvg.it/proxyvfs.axd/main,thumb/r378587",
+    "time": 1792508157.12481
+  },
+  {
+    "event": "allowed",
+    "method": "GET",
+    "url": "https://www.turismofvg.it/proxyvfs.axd/main,thumb/r379581",
+    "time": 1792508157.1257126
+  },
+  {
+    "event": "allowed",
+    "method": "GET",
+    "url": "https://www.turismofvg.it/proxyvfs.axd/main,thumb/r374918",
+    "time": 1792508157.1271071
+  },
+  {
+    "event": "response",
+    "status": 403,
+    "url": "https://meteofriul-community-49007668366.europe-west1.run.app/api/community/reports"
+  },
+  {
+    "event": "response",
+    "status": 200,
+    "url": "https://www.turismofvg.it/proxyvfs.axd/main,thumb/r378554"
+  },
+  {
+    "event": "response",
+    "status": 200,
+    "url": "https://www.turismofvg.it/proxyvfs.axd/main,thumb/r378590"
+  },
+  {
+    "event": "response",
+    "status": 200,
+    "url": "https://www.turismofvg.it/proxyvfs.axd/main,thumb/r378587"
+  },
+  {
+    "event": "response",
+    "status": 200,
+    "url": "https://www.turismofvg.it/proxyvfs.axd/main,thumb/r379581"
+  },
+  {
+    "event": "response",
+    "status": 200,
+    "url": "https://www.turismofvg.it/proxyvfs.axd/main,thumb/r374918"
+  },
+  {
+    "event": "network_error",
+    "type": "Fetch",
+    "error": "net::ERR_FAILED",
+    "cors": {
+      "corsError": "PreflightMissingAllowOriginHeader",
+      "failedParameter": ""
+    }
+  },
+  {
+    "event": "response",
+    "status": 200,
+    "url": "https://meteofriul-events-49007668366.europe-west1.run.app/api/local/events"
+  },
+  {
+    "event": "allowed",
+    "method": "GET",
+    "url": "https://meteofriul-events-49007668366.europe-west1.run.app/api/local/events",
+    "time": 1792508157.9274836
+  },
+  {
+    "event": "network_error",
+    "type": "Fetch",
+    "error": "net::ERR_FAILED",
+    "cors": {
+      "corsError": "MissingAllowOriginHeader",
+      "failedParameter": ""
+    }
+  },
+  {
+    "event": "response",
+    "status": 200,
+    "url": "https://meteofriul-events-49007668366.europe-west1.run.app/api/local/events"
+  },
+  {
+    "event": "allowed",
+    "method": "GET",
+    "url": "https://meteofriul-events-49007668366.europe-west1.run.app/api/local/events",
+    "time": 1792508158.1815772
+  },
+  {
+    "event": "response",
+    "status": 200,
+    "url": "https://meteofriul-events-49007668366.europe-west1.run.app/api/local/events"
+  },
+  {
+    "event": "allowed",
+    "method": "GET",
+    "url": "https://meteofriul-events-49007668366.europe-west1.run.app/api/local/events",
+    "time": 1792508158.4301684
+  },
+  {
+    "event": "response",
+    "status": 200,
+    "url": "https://meteofriul-events-49007668366.europe-west1.run.app/api/local/events"
+  },
+  {
+    "event": "allowed",
+    "method": "OPTIONS",
+    "url": "https://meteofriul-community-49007668366.europe-west1.run.app/api/community/reports",
+    "time": 1792508274.1317434
+  },
+  {
+    "event": "response",
+    "status": 403,
+    "url": "https://meteofriul-community-49007668366.europe-west1.run.app/api/community/reports"
+  },
+  {
+    "event": "allowed",
+    "method": "GET",
+    "url": "https://play-b6fbe4d---meteofriul-api-bx24xqvcda-ew.a.run.app/api/promotions/catalog",
+    "time": 1792508274.352268
+  },
+  {
+    "event": "allowed",
+    "method": "GET",
+    "url": "https://meteofriul-events-49007668366.europe-west1.run.app/api/local/events",
+    "time": 1792508274.3729634
+  },
+  {
+    "event": "network_error",
+    "type": "Fetch",
+    "error": "net::ERR_FAILED",
+    "cors": {
+      "corsError": "PreflightMissingAllowOriginHeader",
+      "failedParameter": ""
+    }
+  },
+  {
+    "event": "network_error",
+    "type": "Fetch",
+    "error": "net::ERR_FAILED",
+    "cors": {
+      "corsError": "MissingAllowOriginHeader",
+      "failedParameter": ""
+    }
+  },
+  {
+    "event": "response",
+    "status": 200,
+    "url": "https://meteofriul-events-49007668366.europe-west1.run.app/api/local/events"
+  },
+  {
+    "event": "allowed",
+    "method": "GET",
+    "url": "https://meteofriul-events-49007668366.europe-west1.run.app/api/local/events",
+    "time": 1792508274.9549677
+  },
+  {
+    "event": "response",
+    "status": 200,
+    "url": "https://meteofriul-events-49007668366.europe-west1.run.app/api/local/events"
+  },
+  {
+    "event": "allowed",
+    "method": "GET",
+    "url": "https://meteofriul-events-49007668366.europe-west1.run.app/api/local/events",
+    "time": 1792508275.1916976
+  },
+  {
+    "event": "response",
+    "status": 200,
+    "url": "https://meteofriul-events-49007668366.europe-west1.run.app/api/local/events"
+  },
+  {
+    "event": "allowed",
+    "method": "GET",
+    "url": "https://meteofriul-events-49007668366.europe-west1.run.app/api/local/events",
+    "time": 1792508275.4198105
+  },
+  {
+    "event": "response",
+    "status": 200,
+    "url": "https://meteofriul-events-49007668366.europe-west1.run.app/api/local/events"
+  },
+  {
+    "event": "allowed",
+    "method": "OPTIONS",
+    "url": "https://meteofriul-community-49007668366.europe-west1.run.app/api/community/reports",
+    "time": 1792508331.3860629
+  },
+  {
+    "event": "response",
+    "status": 403,
+    "url": "https://meteofriul-community-49007668366.europe-west1.run.app/api/community/reports"
+  },
+  {
+    "event": "network_error",
+    "type": "Fetch",
+    "error": "net::ERR_FAILED",
+    "cors": {
+      "corsError": "PreflightMissingAllowOriginHeader",
+      "failedParameter": ""
+    }
+  },
+  {
+    "event": "allowed",
+    "method": "GET",
+    "url": "http://127.0.0.1:5176/__phone_verification_start__",
+    "time": 1792508531.4007883
+  },
+  {
+    "event": "response",
+    "status": 404,
+    "url": "http://127.0.0.1:5176/__phone_verification_start__"
+  }
+]

@@ -908,7 +908,7 @@ class OfficialAlertReconciliationTests(unittest.TestCase):
         )
         self.assertEqual(
             previous["alerts"][0]["corroboration"]["revision_hash_schema"],
-            "runtime-v2",
+            "runtime-v3",
         )
 
         expired_at = datetime(2026, 8, 21, 22, 5, tzinfo=timezone.utc)

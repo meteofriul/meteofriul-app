@@ -122,6 +122,26 @@
   outline: 0;
 }
 
+/* Keep the accessible app clear button; Chromium/WebKit must not add a second one. */
+.mf-location-search input::-webkit-search-cancel-button,
+.mf-location-search input::-webkit-search-decoration {
+  -webkit-appearance: none;
+  appearance: none;
+  display: none;
+}
+
+/* Spinner and clear share the final grid cell, including while the keyboard is open. */
+.mf-location-search__actions {
+  align-items: center;
+  display: flex;
+  flex-wrap: nowrap;
+  gap: var(--mf-space-2);
+}
+
+.mf-location-search__actions > * {
+  flex-shrink: 0;
+}
+
 .mf-location-search input::placeholder {
   color: var(--mf-soft);
 }

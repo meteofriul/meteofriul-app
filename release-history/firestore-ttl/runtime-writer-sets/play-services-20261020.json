@@ -1,0 +1,75 @@
+{
+  "schemaVersion": "firestore-push-ttl-live-writer-set-v1",
+  "projectId": "meteo-friul",
+  "serviceRegion": "europe-west1",
+  "releaseApiTag": "play-b6fbe4d",
+  "pushRepositorySha256": "989a05445be31c46fa8d23e9613d0fd54c83dd29aae999402a7cd3b41bbae71c",
+  "targets": {
+    "serviceDefault": "europe-west1-docker.pkg.dev/meteo-friul/meteofriul/backend@sha256:3e5c601420311bbd4d724758d1c00900b10392cf1d893b5eeef268a469d025b6",
+    "releaseApi": "europe-west1-docker.pkg.dev/meteo-friul/cloud-run-source-deploy/meteofriul-api@sha256:5522b4cfc15076a9f93e838e3643b35e1aa5ad4ce0bf5bca4851997ea94c2ae8",
+    "jobs": [
+      {
+        "name": "meteofriul-official-alert-sync",
+        "region": "europe-west8",
+        "imageDigest": "europe-west1-docker.pkg.dev/meteo-friul/meteofriul/backend@sha256:1f5171ad3e07748ac7fa8e3a8d1764458ee3ab4a3f4c4b78e8275925fa621d7f"
+      },
+      {
+        "name": "meteofriul-local-notice",
+        "region": "europe-west1",
+        "imageDigest": "europe-west1-docker.pkg.dev/meteo-friul/meteofriul/backend@sha256:7af9d579cdc135b1823e226ae99aec7fb3ec93276d5aa0af80910923b363fe04"
+      },
+      {
+        "name": "meteofriul-morning-forecast",
+        "region": "europe-west1",
+        "imageDigest": "europe-west1-docker.pkg.dev/meteo-friul/meteofriul/backend@sha256:7af9d579cdc135b1823e226ae99aec7fb3ec93276d5aa0af80910923b363fe04"
+      },
+      {
+        "name": "meteofriul-evening-forecast",
+        "region": "europe-west1",
+        "imageDigest": "europe-west1-docker.pkg.dev/meteo-friul/meteofriul/backend@sha256:68ce70252ae27a33a5bbd628984727fc993a9be09295777d945108441bf773c5"
+      }
+    ]
+  },
+  "images": [
+    {
+      "imageDigest": "europe-west1-docker.pkg.dev/meteo-friul/meteofriul/backend@sha256:3e5c601420311bbd4d724758d1c00900b10392cf1d893b5eeef268a469d025b6",
+      "sourceCommit": "b6fbe4d91d8e52d1f5a015c64c2e878b2643597b",
+      "cloudBuildId": "714f0fb6-87b0-41dd-a469-d0772c77049d",
+      "cloudBuildRegion": "europe-west1",
+      "cloudBuildSourceArchiveSha256Base64": "6OUrC5iJmrBEbvYOrwCmcZA7fQSDuNloscD6R90WXTM=",
+      "sourceArchivePushRepositorySha256": "989a05445be31c46fa8d23e9613d0fd54c83dd29aae999402a7cd3b41bbae71c"
+    },
+    {
+      "imageDigest": "europe-west1-docker.pkg.dev/meteo-friul/meteofriul/backend@sha256:7af9d579cdc135b1823e226ae99aec7fb3ec93276d5aa0af80910923b363fe04",
+      "sourceCommit": "56f94e1f9f4d54f9459c410898287b00e28b435c",
+      "cloudBuildId": "6b2bc110-0ddb-4bec-96b3-1046a6c89e75",
+      "cloudBuildRegion": "europe-west1",
+      "cloudBuildSourceArchiveSha256Base64": "tW7eakMVJw79dOmP-lLds1MWErkWWM13IRHLJ4_pMw8=",
+      "sourceArchivePushRepositorySha256": "989a05445be31c46fa8d23e9613d0fd54c83dd29aae999402a7cd3b41bbae71c"
+    },
+    {
+      "imageDigest": "europe-west1-docker.pkg.dev/meteo-friul/meteofriul/backend@sha256:1f5171ad3e07748ac7fa8e3a8d1764458ee3ab4a3f4c4b78e8275925fa621d7f",
+      "sourceCommit": "0a398fa6c28caf24586f25e7147b56f6b0e76408",
+      "cloudBuildId": "79a08742-4661-478a-b2e6-60e242372c41",
+      "cloudBuildRegion": "global",
+      "cloudBuildSourceArchiveSha256Base64": "_elev6zKmTg4X2TU17G548AXmZ9TIeLh3SV4JOtV7-c=",
+      "sourceArchivePushRepositorySha256": "989a05445be31c46fa8d23e9613d0fd54c83dd29aae999402a7cd3b41bbae71c"
+    },
+    {
+      "imageDigest": "europe-west1-docker.pkg.dev/meteo-friul/cloud-run-source-deploy/meteofriul-api@sha256:5522b4cfc15076a9f93e838e3643b35e1aa5ad4ce0bf5bca4851997ea94c2ae8",
+      "sourceCommit": "599aea2f8a3b1e7e65af2b43e77bb54e4637c96e",
+      "cloudBuildId": "4f68bd0e-6494-4caa-9be2-90d60d36a92b",
+      "cloudBuildRegion": "europe-west1",
+      "cloudBuildSourceArchiveSha256Base64": "syLA6Yh7wVHnAJCdMsA0_OPLv0RAVxZGJtRMKk9R5N4=",
+      "sourceArchivePushRepositorySha256": "989a05445be31c46fa8d23e9613d0fd54c83dd29aae999402a7cd3b41bbae71c"
+    },
+    {
+      "imageDigest": "europe-west1-docker.pkg.dev/meteo-friul/meteofriul/backend@sha256:68ce70252ae27a33a5bbd628984727fc993a9be09295777d945108441bf773c5",
+      "sourceCommit": "b5f65e7b26097ad7d0141e80348c5323b77ccf1c",
+      "cloudBuildId": "d32ca0bf-a838-4297-862c-5b476e3aef23",
+      "cloudBuildRegion": "europe-west1",
+      "cloudBuildSourceArchiveSha256Base64": "rq8M2BUxETvRAE1NPrOcTZRbzCyzGbJEI_UAAlAfTRo=",
+      "sourceArchivePushRepositorySha256": "989a05445be31c46fa8d23e9613d0fd54c83dd29aae999402a7cd3b41bbae71c"
+    }
+  ]
+}

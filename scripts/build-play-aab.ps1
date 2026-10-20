@@ -24,6 +24,10 @@ param(
 
     [string]$ExpectedUploadCertificateSha256,
 
+    [string]$ExpectedImageDigest,
+
+    [string]$BackendEvidencePath,
+
     [string]$GcloudPath
 )
 
@@ -1412,6 +1416,8 @@ $releaseApiState = Invoke-ReleaseApiPreflight `
     -ApiBase $normalizedApiBase `
     -ExpectedRevision $ExpectedRevision `
     -ExpectedBackendCommit $ExpectedBackendCommit `
+    -ExpectedImageDigest $ExpectedImageDigest `
+    -BackendEvidencePath $BackendEvidencePath `
     -GcloudPath $GcloudPath
 $firestoreTtlState = Assert-FirestorePushTtlGate `
     -AuditScriptPath $firestoreTtlAuditScript `
@@ -1701,6 +1707,8 @@ $releaseApiState = Invoke-ReleaseApiPreflight `
     -ApiBase $normalizedApiBase `
     -ExpectedRevision $ExpectedRevision `
     -ExpectedBackendCommit $ExpectedBackendCommit `
+    -ExpectedImageDigest $ExpectedImageDigest `
+    -BackendEvidencePath $BackendEvidencePath `
     -GcloudPath $GcloudPath
 $finalGitState = Assert-PlayReleaseWorkspaceUnchanged `
     -RepositoryRoot $workspaceRoot `

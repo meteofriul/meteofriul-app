@@ -370,9 +370,32 @@ Assert-True `
     -Condition ($androidBuildScriptSource -notmatch '(?im)^\s*Copy-Item\b[^\r\n]*\s-Force(?:\s|$)') `
     -Message "Lo script APK contiene ancora una sovrascrittura forzata."
 
+# Parse the guarded build without executing it or creating any package.
+$parseTokens = $null
+$parseErrors = $null
+$buildAst = [System.Management.Automation.Language.Parser]::ParseFile(
+    (Join-Path $PSScriptRoot "build-play-aab.ps1"), [ref]$parseTokens, [ref]$parseErrors
+)
+Assert-Equal @($parseErrors).Count 0 "Lo script AAB contiene errori di sintassi."
+$checks = @($buildAst.FindAll({
+    param($node)
+    $node -is [System.Management.Automation.Language.CommandAst] -and
+    $node.GetCommandName() -ceq "Invoke-ReleaseApiPreflight"
+}, $true))
+Assert-Equal $checks.Count 2 "Servono i controlli API prima e dopo la build."
+foreach ($check in $checks) {
+    $parameters = @($check.CommandElements | Where-Object {
+        $_ -is [System.Management.Automation.Language.CommandParameterAst]
+    } | ForEach-Object { $_.ParameterName })
+    foreach ($required in @("ExpectedBackendCommit", "ExpectedImageDigest", "BackendEvidencePath")) {
+        Assert-True ($required -cin $parameters) "Attestazione $required non passata al controllo API."
+    }
+}
+
 [PSCustomObject]@{
     CommitMismatch = "PASS"
     ConfigurationRevisionEvidence = "PASS"
+    GuardedBuildEvidenceForwarding = "PASS"
     AndroidVersionHistory = "PASS"
     AndroidSigningHistory = "PASS"
     AndroidPersistentHistory = "PASS"
