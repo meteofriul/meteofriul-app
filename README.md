@@ -13,6 +13,13 @@ contenuti culturali; l'interfaccia è disponibile in italiano e friulano.
 > iPhone dal browser. Il [percorso di allineamento Web/Android](docs/operations/WEB_ANDROID_RELEASE_PARITY.md)
 > richiede sorgenti e funzionalità coerenti, oltre alla verifica Safari/iPhone.
 
+**Web — verifica locale del 20 ottobre 2026:** candidata verificata su Brave
+del Galaxy, incluse le correzioni a Indietro nel dettaglio Eventi e al doppio
+comando di cancellazione nella ricerca. Superati 56 test mirati e i controlli
+italiano/chiaro e friulano/scuro. Commit e integrazione locale autorizzati;
+nessuna pubblicazione. Evidenze e limiti nel
+[verbale Web sul Galaxy](docs/operations/WEB_APP_BROWSER_FIXES_20261020.md).
+
 **Job meteo ICON-2I — 19 ottobre 2026:** il lettore HTTP compatibile e il
 produttore sono aggiornati. Il nuovo consumatore degli avvisi resta nel job QA
 senza invii; i job di invio operativi sono invariati. La verifica delle

@@ -1,0 +1,45 @@
+{
+  "recorded_at": "2026-10-20T15:50:39.650951+02:00",
+  "frontend_commit": "bf304281aa9851369687c2dd646b8bd473c0b23d",
+  "browser": "Brave 1.97.59",
+  "device": "Galaxy A52 SM-A525F Android 14 API34",
+  "archive_sha256": "e81b04aaaeefdf3c7ab8356cfc31557be77ba00f7bcfb4a56d818b59a5ff32fa",
+  "served_files": [
+    {
+      "file": "index.html",
+      "sha256": "5401381ec25bbe9c32a1f28864a3ce4e282ce9bc8ce3ce3979e97bae19bf46a5",
+      "matches_archive": true
+    },
+    {
+      "file": "assets/main-Bu79RhWT.js",
+      "sha256": "6c1632b64e3e165ff23ca4fb2feae435f05d39cb0c048a8387b60b432c76d91e",
+      "matches_archive": true
+    },
+    {
+      "file": "assets/main-BGywgFOP.css",
+      "sha256": "7d2f73c7dbbfd4fa46f5ba756eadbffca7e731a5e5ec95d9cea4b0c207e8d1c5",
+      "matches_archive": true
+    }
+  ],
+  "packages_unchanged": {
+    "com.meteofriul.app": true,
+    "com.meteofriul.app.localpilot": true,
+    "com.android.chrome": true
+  },
+  "request_methods": {
+    "GET": 91,
+    "OPTIONS": 18
+  },
+  "blocked_requests": [],
+  "app_exceptions": [],
+  "final_state": {
+    "url": "http://127.0.0.1:5176/?tab=weather",
+    "notificationPermission": "default",
+    "text": "METEO FRIÛL\nMETEO\nFRI\nU\nL\nMeteo ed eventi per il tempo libero\nTrascina per aggiornare\nPordenone\nPrevisioni\nBollettino\nTempo reale\nMeteo\nMartedì 20 ottobre\nModello ICON-2I · 19/10 · 14:00\nOggi\n15° / 20°\nDomani\n16° / 20°\nGiovedì\n12° / 17°\n16:00\n19°\n0 mm\n17:00\n19°\n0 mm\n18:00\n18°\n0 mm\n19:00\n18°\n0 mm\n20:00\n18°\n0,1 mm\n21:00\n17°\n0 mm\n22:00\n17°\n0,5 mm\n23:00\n17°\n0,8 mm\n00:00\n17°\n1 mm\n01:00\n16°\n7 mm\n02:00\n16°\n0,9 mm\n03:00\n16°\n1 mm\n04:00\n16°\n5 mm\n05:00\n16°\n5 mm\n06:00\n16°\n9 mm\n07:00\n16°\n8 mm\n08:00\n17°\n5 mm\n09:00\n17°\n4 mm\n10:00\n18°\n0 mm\n11:00\n18°\n1,0 mm\n12:00\n18°\n0,6 mm\n13:00\n18°\n8 mm\n14:00\n18°\n0,5 mm\n15:00\n19°\n0 mm\n16:00\n20°\n0 mm\n17:00\n20°\n0 mm\n18:00\n20°\n0 mm\n19:00\n19°\n20:00\n18°\n0 mm\n21:00\n17°\n0 mm\n22:00\n17°\n23:00\n17°\n0 mm\n00:00\n17°\n0 mm\n01:00\n16°\n02:00\n16°\n03:00\n15°\n04:00\n15°\n0 mm\n05:00\n15°\n06:00\n15°\n0 mm\n07:00\n13°\n0,0 mm\n08:00\n13°\n09:00\n12°\n5 mm\n10:00\n12°\n2 mm\n11:00\n12°\n0,6 mm\n12:00\n12°\n0,9 mm\n13:00\n12°\n0,8 mm\n14:00\n12°\n2 mm\nSole e Luna\n10h 43m\nLuce del giorno\nAlba 07:32\nTramonto 18:15\nPrimo quarto\nIndice UV\n1,1\nBasso\nPicco 1,6 · 14:00\n14:00\n15:00\n07:00\n19:00\nQualità dell’aria\n\nDati dell’aria non disponibili\n\nPollini\n\nDati pollinici non disponibili\n\nHome\nMeteo\nEventi\nScopri",
+    "viewport": {
+      "width": 411,
+      "height": 728,
+      "scrollWidth": 411
+    }
+  }
+}

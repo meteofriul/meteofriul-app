@@ -1,0 +1,467 @@
+{
+  "url": "http://127.0.0.1:5176/?tab=events",
+  "ua": "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/155.0.0.0 Mobile Safari/537.36",
+  "viewport": {
+    "width": 411,
+    "height": 728,
+    "pageWidth": 411,
+    "dpr": 2.625
+  },
+  "text": "METEO FRIÛL\nMETEO\nFRI\nU\nL\nMeteo e events pal timp libar\nTire ju par inzornâ\nImpostazions\nImpostazions\nSENTINELE METEO\nCjampane dal Cîl\nRanc no disponibil\nMandadis: 0\nPreferencis gjenerâls\nLenghe\nItalian\nFurlan\nTeme\nClâr\nScûr\nSisteme\nLocalitât predefinide\nPordenon (PN)\nPosizion\nNo ative\nNotifichis\nAlertis\nAvîs\n\nAutorize lis notifichis par ricevi Alertis e Avîs su chest dispositîf.\n\nAutorize lis notifichis\nInformazions e progjet\nMeteo Friûl\nmeteofriul.it\nInformative su la privacy, fonts e credits\nDâts, permès, contignûts e imagjins\nCache\nNete\nSosten Meteo Friûl\nJude Meteo Friûl a restâ atîf, afidabil e inzornât.\nVersion 0.1.14 · Web\nCjase\nTimp\n6\nEvenis\nScuvierç\nMETEO LOCAL\nCambie localitat\n\nLocalitat ative: Pordenon\n\nFontanefrede (PN)\nFriuli Venezia Giulia · Italia",
+  "dialogs": [
+    {
+      "text": "METEO LOCAL\nCambie localitat\n\nLocalitat ative: Pordenon\n\nFontanefrede (PN)\nFriuli Venezia Giulia · Italia",
+      "aria": null,
+      "selected": null,
+      "bounds": {
+        "x": 0,
+        "y": 0,
+        "w": 411.4285888671875,
+        "h": 728.7619018554688
+      },
+      "scrollWidth": 411,
+      "clientWidth": 411,
+      "border": "0px none rgb(244, 248, 252)",
+      "shadow": "none",
+      "background": "rgba(0, 0, 0, 0) none repeat scroll 0% 0% / auto padding-box border-box",
+      "color": "rgb(244, 248, 252)",
+      "font": "16px Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", sans-serif"
+    }
+  ],
+  "days": [],
+  "selectedHours": [],
+  "buttons": [
+    {
+      "text": "",
+      "aria": "Indaûr",
+      "selected": null,
+      "bounds": {
+        "x": 12,
+        "y": 94.39881134033203,
+        "w": 44,
+        "h": 44
+      },
+      "scrollWidth": 42,
+      "clientWidth": 42,
+      "border": "0.761905px solid rgba(255, 255, 255, 0.2)",
+      "shadow": "rgba(0, 0, 0, 0.18) 0px 4px 14px 0px",
+      "background": "rgba(255, 255, 255, 0.1) none repeat scroll 0% 0% / auto padding-box border-box",
+      "color": "rgb(244, 248, 252)",
+      "font": "750 14px Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", sans-serif"
+    },
+    {
+      "text": "",
+      "aria": "Cambie alias",
+      "selected": null,
+      "bounds": {
+        "x": 342.66668701171875,
+        "y": 183.21429443359375,
+        "w": 44,
+        "h": 44
+      },
+      "scrollWidth": 44,
+      "clientWidth": 44,
+      "border": "0px none rgb(139, 211, 255)",
+      "shadow": "none",
+      "background": "rgba(0, 0, 0, 0) none repeat scroll 0px 0px / auto padding-box border-box",
+      "color": "rgb(139, 211, 255)",
+      "font": "16px Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", sans-serif"
+    },
+    {
+      "text": "",
+      "aria": "Sentinelis, alias e ponts",
+      "selected": null,
+      "bounds": {
+        "x": 342.66668701171875,
+        "y": 239.9761962890625,
+        "w": 44,
+        "h": 44
+      },
+      "scrollWidth": 44,
+      "clientWidth": 44,
+      "border": "0px none rgb(139, 211, 255)",
+      "shadow": "none",
+      "background": "rgba(0, 0, 0, 0) none repeat scroll 0px 0px / auto padding-box border-box",
+      "color": "rgb(139, 211, 255)",
+      "font": "16px Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", sans-serif"
+    },
+    {
+      "text": "",
+      "aria": "Siere informazions",
+      "selected": null,
+      "bounds": {
+        "x": 0,
+        "y": 0,
+        "w": 0,
+        "h": 0
+      },
+      "scrollWidth": 0,
+      "clientWidth": 0,
+      "border": "0px none rgb(139, 211, 255)",
+      "shadow": "none",
+      "background": "rgba(0, 0, 0, 0) none repeat scroll 0px 0px / auto padding-box border-box",
+      "color": "rgb(139, 211, 255)",
+      "font": "16px Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", sans-serif"
+    },
+    {
+      "text": "Italian",
+      "aria": null,
+      "selected": "false",
+      "bounds": {
+        "x": 241.42857360839844,
+        "y": 355.9761962890625,
+        "w": 67.23809814453125,
+        "h": 36
+      },
+      "scrollWidth": 66,
+      "clientWidth": 66,
+      "border": "0.761905px solid rgba(0, 0, 0, 0)",
+      "shadow": "none",
+      "background": "rgba(0, 0, 0, 0) none repeat scroll 0px 0px / auto padding-box border-box",
+      "color": "rgb(183, 199, 216)",
+      "font": "750 11.2px Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", sans-serif"
+    },
+    {
+      "text": "Furlan",
+      "aria": null,
+      "selected": "true",
+      "bounds": {
+        "x": 312.66668701171875,
+        "y": 355.9761962890625,
+        "w": 67.23809814453125,
+        "h": 36
+      },
+      "scrollWidth": 66,
+      "clientWidth": 66,
+      "border": "0.761905px solid rgba(255, 255, 255, 0.42)",
+      "shadow": "rgba(0, 0, 0, 0.22) 0px 10px 24px 0px",
+      "background": "rgb(56, 169, 244) none repeat scroll 0% 0% / auto padding-box border-box",
+      "color": "rgb(8, 33, 58)",
+      "font": "750 11.2px Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", sans-serif"
+    },
+    {
+      "text": "Clâr",
+      "aria": null,
+      "selected": "false",
+      "bounds": {
+        "x": 185.42857360839844,
+        "y": 420.26190185546875,
+        "w": 62.154762268066406,
+        "h": 36
+      },
+      "scrollWidth": 61,
+      "clientWidth": 61,
+      "border": "0.761905px solid rgba(0, 0, 0, 0)",
+      "shadow": "none",
+      "background": "rgba(0, 0, 0, 0) none repeat scroll 0px 0px / auto padding-box border-box",
+      "color": "rgb(183, 199, 216)",
+      "font": "750 11.2px Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", sans-serif"
+    },
+    {
+      "text": "Scûr",
+      "aria": null,
+      "selected": "true",
+      "bounds": {
+        "x": 251.58334350585938,
+        "y": 420.26190185546875,
+        "w": 62.16071701049805,
+        "h": 36
+      },
+      "scrollWidth": 61,
+      "clientWidth": 61,
+      "border": "0.761905px solid rgba(255, 255, 255, 0.42)",
+      "shadow": "rgba(0, 0, 0, 0.22) 0px 10px 24px 0px",
+      "background": "rgb(56, 169, 244) none repeat scroll 0% 0% / auto padding-box border-box",
+      "color": "rgb(8, 33, 58)",
+      "font": "750 11.2px Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", sans-serif"
+    },
+    {
+      "text": "Sisteme",
+      "aria": null,
+      "selected": "false",
+      "bounds": {
+        "x": 317.7440490722656,
+        "y": 420.26190185546875,
+        "w": 62.16071701049805,
+        "h": 36
+      },
+      "scrollWidth": 61,
+      "clientWidth": 61,
+      "border": "0.761905px solid rgba(0, 0, 0, 0)",
+      "shadow": "none",
+      "background": "rgba(0, 0, 0, 0) none repeat scroll 0px 0px / auto padding-box border-box",
+      "color": "rgb(183, 199, 216)",
+      "font": "750 11.2px Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", sans-serif"
+    },
+    {
+      "text": "",
+      "aria": "Cambie",
+      "selected": null,
+      "bounds": {
+        "x": 344.66668701171875,
+        "y": 479.7857360839844,
+        "w": 40,
+        "h": 40
+      },
+      "scrollWidth": 42,
+      "clientWidth": 40,
+      "border": "0px none rgb(139, 211, 255)",
+      "shadow": "none",
+      "background": "rgba(0, 0, 0, 0) none repeat scroll 0px 0px / auto padding-box border-box",
+      "color": "rgb(139, 211, 255)",
+      "font": "16px Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", sans-serif"
+    },
+    {
+      "text": "",
+      "aria": "Ative Posizion",
+      "selected": null,
+      "bounds": {
+        "x": 336.66668701171875,
+        "y": 544.1666870117188,
+        "w": 48,
+        "h": 28
+      },
+      "scrollWidth": 48,
+      "clientWidth": 46,
+      "border": "0.761905px solid color(srgb 0.72549 0.843137 1 / 0.125412)",
+      "shadow": "none",
+      "background": "color(srgb 0.20502 0.303529 0.4) none repeat scroll 0% 0% / auto padding-box border-box",
+      "color": "rgb(0, 0, 0)",
+      "font": "16px Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", sans-serif"
+    },
+    {
+      "text": "",
+      "aria": "Disative Alertis",
+      "selected": null,
+      "bounds": {
+        "x": 336.66668701171875,
+        "y": 652.7857055664062,
+        "w": 48,
+        "h": 28
+      },
+      "scrollWidth": 48,
+      "clientWidth": 46,
+      "border": "0.761905px solid rgb(56, 169, 244)",
+      "shadow": "none",
+      "background": "rgb(56, 169, 244) none repeat scroll 0% 0% / auto padding-box border-box",
+      "color": "rgb(0, 0, 0)",
+      "font": "16px Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", sans-serif"
+    },
+    {
+      "text": "",
+      "aria": "Disative Avîs",
+      "selected": null,
+      "bounds": {
+        "x": 336.66668701171875,
+        "y": 711.1666870117188,
+        "w": 48,
+        "h": 28
+      },
+      "scrollWidth": 48,
+      "clientWidth": 46,
+      "border": "0.761905px solid rgb(56, 169, 244)",
+      "shadow": "none",
+      "background": "rgb(56, 169, 244) none repeat scroll 0% 0% / auto padding-box border-box",
+      "color": "rgb(0, 0, 0)",
+      "font": "16px Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", sans-serif"
+    },
+    {
+      "text": "Autorize lis notifichis",
+      "aria": null,
+      "selected": null,
+      "bounds": {
+        "x": 26.761905670166016,
+        "y": 805.1428833007812,
+        "w": 144.61904907226562,
+        "h": 40
+      },
+      "scrollWidth": 143,
+      "clientWidth": 143,
+      "border": "0.761905px solid rgb(56, 169, 244)",
+      "shadow": "none",
+      "background": "rgba(0, 0, 0, 0) none repeat scroll 0px 0px / auto padding-box border-box",
+      "color": "rgb(8, 33, 58)",
+      "font": "800 12px Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", sans-serif"
+    },
+    {
+      "text": "",
+      "aria": "Nete",
+      "selected": null,
+      "bounds": {
+        "x": 344.66668701171875,
+        "y": 1033.90478515625,
+        "w": 40,
+        "h": 40
+      },
+      "scrollWidth": 42,
+      "clientWidth": 40,
+      "border": "0px none rgb(139, 211, 255)",
+      "shadow": "none",
+      "background": "rgba(0, 0, 0, 0) none repeat scroll 0px 0px / auto padding-box border-box",
+      "color": "rgb(139, 211, 255)",
+      "font": "16px Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", sans-serif"
+    },
+    {
+      "text": "Cjase",
+      "aria": null,
+      "selected": null,
+      "bounds": {
+        "x": 18.761905670166016,
+        "y": 652.5119018554688,
+        "w": 90.47618865966797,
+        "h": 57.48809814453125
+      },
+      "scrollWidth": 89,
+      "clientWidth": 89,
+      "border": "0.761905px solid rgba(242, 201, 76, 0.58)",
+      "shadow": "rgba(0, 0, 0, 0.24) 0px 10px 24px 0px",
+      "background": "rgba(0, 0, 0, 0) linear-gradient(rgba(56, 169, 244, 0.22) 0%, rgba(8, 33, 58, 0.76) 100%) repeat scroll 0% 0% / auto padding-box border-box",
+      "color": "rgb(244, 248, 252)",
+      "font": "800 10.88px / 11.968px Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", sans-serif"
+    },
+    {
+      "text": "Timp",
+      "aria": null,
+      "selected": null,
+      "bounds": {
+        "x": 113.23809814453125,
+        "y": 652.5119018554688,
+        "w": 90.47618865966797,
+        "h": 57.48809814453125
+      },
+      "scrollWidth": 89,
+      "clientWidth": 89,
+      "border": "0.761905px solid rgba(0, 0, 0, 0)",
+      "shadow": "none",
+      "background": "rgba(0, 0, 0, 0) none repeat scroll 0px 0px / auto padding-box border-box",
+      "color": "rgb(183, 199, 216)",
+      "font": "800 10.88px / 11.968px Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", sans-serif"
+    },
+    {
+      "text": "6\nEvenis",
+      "aria": "Evenis: 6 evenis vuê",
+      "selected": null,
+      "bounds": {
+        "x": 207.71429443359375,
+        "y": 652.5119018554688,
+        "w": 90.47618865966797,
+        "h": 57.48809814453125
+      },
+      "scrollWidth": 89,
+      "clientWidth": 89,
+      "border": "0.761905px solid rgba(0, 0, 0, 0)",
+      "shadow": "none",
+      "background": "rgba(0, 0, 0, 0) none repeat scroll 0px 0px / auto padding-box border-box",
+      "color": "rgb(183, 199, 216)",
+      "font": "800 10.88px / 11.968px Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", sans-serif"
+    },
+    {
+      "text": "Scuvierç",
+      "aria": null,
+      "selected": null,
+      "bounds": {
+        "x": 302.19049072265625,
+        "y": 652.5119018554688,
+        "w": 90.47618865966797,
+        "h": 57.48809814453125
+      },
+      "scrollWidth": 89,
+      "clientWidth": 89,
+      "border": "0.761905px solid rgba(0, 0, 0, 0)",
+      "shadow": "none",
+      "background": "rgba(0, 0, 0, 0) none repeat scroll 0px 0px / auto padding-box border-box",
+      "color": "rgb(183, 199, 216)",
+      "font": "800 10.88px / 11.968px Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", sans-serif"
+    },
+    {
+      "text": "",
+      "aria": "Siere",
+      "selected": null,
+      "bounds": {
+        "x": 0,
+        "y": 0,
+        "w": 411.4285888671875,
+        "h": 728.7619018554688
+      },
+      "scrollWidth": 411,
+      "clientWidth": 411,
+      "border": "0px none rgb(0, 0, 0)",
+      "shadow": "none",
+      "background": "rgba(0, 0, 0, 0.52) none repeat scroll 0% 0% / auto padding-box border-box",
+      "color": "rgb(0, 0, 0)",
+      "font": "16px Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", sans-serif"
+    },
+    {
+      "text": "",
+      "aria": "Siere",
+      "selected": null,
+      "bounds": {
+        "x": 342.66668701171875,
+        "y": 492.7261962890625,
+        "w": 44,
+        "h": 44
+      },
+      "scrollWidth": 42,
+      "clientWidth": 42,
+      "border": "0.761905px solid rgba(185, 215, 255, 0.16)",
+      "shadow": "none",
+      "background": "rgba(255, 255, 255, 0.06) none repeat scroll 0% 0% / auto padding-box border-box",
+      "color": "rgb(139, 211, 255)",
+      "font": "16px Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", sans-serif"
+    },
+    {
+      "text": "",
+      "aria": "Cir comun",
+      "selected": null,
+      "bounds": {
+        "x": 63.52381134033203,
+        "y": 590.1428833007812,
+        "w": 250.38095092773438,
+        "h": 20.666667938232422
+      },
+      "scrollWidth": 250,
+      "clientWidth": 250,
+      "border": "0px none rgb(244, 248, 252)",
+      "shadow": "none",
+      "background": "rgba(0, 0, 0, 0) none repeat scroll 0px 0px / auto padding-box border-box",
+      "color": "rgb(244, 248, 252)",
+      "font": "800 16px Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", sans-serif"
+    },
+    {
+      "text": "",
+      "aria": "Nete ricercje",
+      "selected": null,
+      "bounds": {
+        "x": 345.9047546386719,
+        "y": 586.4761962890625,
+        "w": 28,
+        "h": 28
+      },
+      "scrollWidth": 26,
+      "clientWidth": 26,
+      "border": "0.761905px solid rgba(0, 115, 207, 0.14)",
+      "shadow": "none",
+      "background": "rgba(56, 169, 244, 0.16) none repeat scroll 0% 0% / auto padding-box border-box",
+      "color": "rgb(139, 211, 255)",
+      "font": "16px Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", sans-serif"
+    },
+    {
+      "text": "Fontanefrede (PN)\nFriuli Venezia Giulia · Italia",
+      "aria": null,
+      "selected": null,
+      "bounds": {
+        "x": 25.5238094329834,
+        "y": 641.2380981445312,
+        "w": 348.3809509277344,
+        "h": 54
+      },
+      "scrollWidth": 348,
+      "clientWidth": 348,
+      "border": "0px none rgb(244, 248, 252)",
+      "shadow": "none",
+      "background": "rgba(0, 0, 0, 0) none repeat scroll 0px 0px / auto padding-box border-box",
+      "color": "rgb(244, 248, 252)",
+      "font": "16px Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", sans-serif"
+    }
+  ]
+}

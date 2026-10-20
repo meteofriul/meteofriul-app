@@ -1,0 +1,124 @@
+{
+  "date": "2026-10-20",
+  "environment": "Galaxy A52 Android 14, Brave 1.97.59",
+  "scope": "Local Web candidate: Event detail Back and search clear; IT/light, FUR/dark",
+  "candidate_zip_sha256": "bc46313b9448aa4e987468d871d069a2ac4134bb2dba28f0e13a21b363e87cee",
+  "files": [
+    {
+      "path": "01-event-open-light-it.json",
+      "bytes": 19487,
+      "sha256": "6c28f8769a6ddcf2ff59b728f61afe83f39e111e007c4b934b9fc265e03cf5b4"
+    },
+    {
+      "path": "01-event-open-light-it.png",
+      "bytes": 1139852,
+      "sha256": "da30e4c02fefc7572ce25bd698554c432cb9a98a9eab2ae44fb607b5e3178cdf"
+    },
+    {
+      "path": "02-event-after-back-light-it.json",
+      "bytes": 17000,
+      "sha256": "568a1db45908b5dfc18f6e2fed292e4a44324c0b340d86ed8ef7f721059edc1a"
+    },
+    {
+      "path": "02-event-after-back-light-it.png",
+      "bytes": 883948,
+      "sha256": "a5c16b3ff180e15b35831faf704e4e9b3ee20f62bc0c1215fa09bfceaf1302e1"
+    },
+    {
+      "path": "03-search-light-it-loading-keyboard.json",
+      "bytes": 16959,
+      "sha256": "4f9049a6c5974baeeca72f12741a6dd64954086823299577144a66bb7f3f3cad"
+    },
+    {
+      "path": "03-search-light-it-loading-keyboard.png",
+      "bytes": 284062,
+      "sha256": "d39e9e13abfbca9f10ba12bb9bc0570143a6cb03072376f31b69d2daf233c62a"
+    },
+    {
+      "path": "04-search-dark-fur-loading-keyboard.json",
+      "bytes": 16505,
+      "sha256": "9ed788020c6d6c5e231a011e7f9096823f7bccce846af83a87284f3323936c4a"
+    },
+    {
+      "path": "04-search-dark-fur-loading-keyboard.png",
+      "bytes": 280849,
+      "sha256": "80487faccbf17a1fb1208eb9b5d4e7bd612024a722ebd1aab74ec929affae3fb"
+    },
+    {
+      "path": "05-event-open-dark-fur.json",
+      "bytes": 18843,
+      "sha256": "200277af740a27ef38a1afe2fbaa095261387f76383fa44b391b0c06ae24f25f"
+    },
+    {
+      "path": "05-event-open-dark-fur.png",
+      "bytes": 1109602,
+      "sha256": "b50c415603bb1b1f1efae6d2d68642f226b9d0e753d33d45667468b99f9f7a9a"
+    },
+    {
+      "path": "06-event-after-back-dark-fur.json",
+      "bytes": 16386,
+      "sha256": "7336de517aa9bf1bda20f0f1c3607a08e461d3006d5cb4a3c245f99e7359fad1"
+    },
+    {
+      "path": "06-event-after-back-dark-fur.png",
+      "bytes": 757353,
+      "sha256": "3ddd5ad3c91c16f7792296932297ba51820e8f58b53cb84e7ae90c65d84d2b58"
+    },
+    {
+      "path": "07-final-events-it.json",
+      "bytes": 17031,
+      "sha256": "f3fc7571964abb9dd0213e2b1619b519c52124a0dcc59d302c69529b738bf88b"
+    },
+    {
+      "path": "07-final-events-it.png",
+      "bytes": 885795,
+      "sha256": "852adf16e7b02e17317edfa6467e91a41596299ac94b53386909b8b3a9b8e8c7"
+    },
+    {
+      "path": "03-search-light-it-checks.json",
+      "bytes": 978,
+      "sha256": "d16778572cae761ce6c952ef406093c735dc42031161aaa1fc314f9e1068673e"
+    },
+    {
+      "path": "04-search-dark-fur-checks.json",
+      "bytes": 980,
+      "sha256": "306575e26455659a26d50b5a33bb7994b9f9d57a83b8a97a242c9bbac8d61cde"
+    },
+    {
+      "path": "back-checks-it.json",
+      "bytes": 359,
+      "sha256": "4e9759d55ee8a05c5ba478481378ffa84f8a24b12ad744073e4ed8f1b8897225"
+    },
+    {
+      "path": "back-checks-fur.json",
+      "bytes": 93,
+      "sha256": "a4d8c1c853ae78a7af159a9db476d1981fb41dc15dc8b9624d25fd1daa240378"
+    },
+    {
+      "path": "manual-close-checks.json",
+      "bytes": 283,
+      "sha256": "1530c2723b43ee6764cff08196bb30beaf1126f6a136eac42b30824a32d8dd1d"
+    },
+    {
+      "path": "packages-before.json",
+      "bytes": 803,
+      "sha256": "0427f6800926a2da9d71fe60794d8071db65b8f19d22d98044959c0cae8b927d"
+    },
+    {
+      "path": "packages-after.json",
+      "bytes": 803,
+      "sha256": "0427f6800926a2da9d71fe60794d8071db65b8f19d22d98044959c0cae8b927d"
+    },
+    {
+      "path": "verification-summary.json",
+      "bytes": 294,
+      "sha256": "1fb632d7a57cafc874d4dd97654fa8338d3022e1483462f1a2d51ad9de043fc0"
+    },
+    {
+      "path": "network-events.json",
+      "bytes": 25530,
+      "sha256": "c69d5568e08f64b107976c3eea5d131dbaee72b5c1314521795aad0069f257f3"
+    }
+  ],
+  "text_serialization": "JSON UTF-8 LF for Git; values unchanged. Original capture bytes remain in the corresponding local release-artifacts archive."
+}

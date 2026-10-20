@@ -1,0 +1,467 @@
+{
+  "url": "http://127.0.0.1:5176/?tab=weather&theme=light",
+  "ua": "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/155.0.0.0 Mobile Safari/537.36",
+  "viewport": {
+    "width": 411,
+    "height": 728,
+    "pageWidth": 411,
+    "dpr": 2.625
+  },
+  "text": "METEO FRIÛL\nMETEO\nFRI\nU\nL\nMeteo e events pal timp libar\nTire ju par inzornâ\nEvenis\nUdin\nVuê\n4\nFin set.\n9+\nProssims\n9+\nDucj\nSagris\nGust\nMarcjats\nCulture\nConvegnis\nMusiche\nSport\nFamee\nAltri\nOra delle storie 0-3\n\nUdin\n\n20\nOTU\nFamee\nOra delle storie 4-6\n\nUdin\n\n20\nOTU\nFamee\nMonet. Una vita a colori\n\nUdin\n\n20\nOTU\nCulture\nRilke, Bachmann, Jelinek: letteratura, poesia, teatro e cinema\n\nUdin\n\n20\nOTU\nCulture\nCjase\nTimp\n4\nEvenis\nScuvierç\nCULTURE\nMonet. Una vita a colori\n\n20 OTU 2026\n\nTeatro Nuovo Giovanni da Udine · Udine\n\nl nuovo emozionante spettacolo, di e con Marco Goldin, dedicato alla vita e ai capolavori di Claude Monet, tra parole, musica del compositore pianista Remo Anzovino e…\n\nFont: TurismoFVG\n\nPagjine dal eveniment\nIndicazions",
+  "dialogs": [
+    {
+      "text": "CULTURE\nMonet. Una vita a colori\n\n20 OTU 2026\n\nTeatro Nuovo Giovanni da Udine · Udine\n\nl nuovo emozionante spettacolo, di e con Marco Goldin, dedicato alla vita e ai capolavori di Claude Monet, tra parole, musica del compositore pianista Remo Anzovino e…\n\nFont: TurismoFVG\n\nPagjine dal eveniment\nIndicazions",
+      "aria": "Detais dal eveniment",
+      "selected": null,
+      "bounds": {
+        "x": 14,
+        "y": 38.56547546386719,
+        "w": 383.4285888671875,
+        "h": 655.625
+      },
+      "scrollWidth": 382,
+      "clientWidth": 382,
+      "border": "0.761905px solid rgba(6, 58, 96, 0.14)",
+      "shadow": "rgba(6, 58, 96, 0.09) 0px 10px 24px 0px",
+      "background": "rgb(255, 255, 255) none repeat scroll 0% 0% / auto padding-box border-box",
+      "color": "rgb(9, 42, 67)",
+      "font": "16px Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", sans-serif"
+    }
+  ],
+  "days": [],
+  "selectedHours": [],
+  "buttons": [
+    {
+      "text": "",
+      "aria": "Vierç impostazions",
+      "selected": null,
+      "bounds": {
+        "x": 355.4285888671875,
+        "y": 24,
+        "w": 44,
+        "h": 44
+      },
+      "scrollWidth": 44,
+      "clientWidth": 44,
+      "border": "0px none rgb(2, 132, 199)",
+      "shadow": "none",
+      "background": "rgba(0, 0, 0, 0) none repeat scroll 0px 0px / auto padding-box border-box",
+      "color": "rgb(2, 132, 199)",
+      "font": "16px Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", sans-serif"
+    },
+    {
+      "text": "Vuê\n4",
+      "aria": "Vuê 4",
+      "selected": "true",
+      "bounds": {
+        "x": 15.7619047164917,
+        "y": 133.76190185546875,
+        "w": 123.96428680419922,
+        "h": 32
+      },
+      "scrollWidth": 122,
+      "clientWidth": 122,
+      "border": "0.761905px solid rgba(142, 219, 255, 0.45)",
+      "shadow": "rgba(9, 29, 61, 0.2) 0px 5px 14px 0px",
+      "background": "radial-gradient(circle at 92% 5%, rgba(19, 137, 201, 0.36), rgba(0, 0, 0, 0) 34%) repeat scroll 0% 0% / auto padding-box border-box, rgba(0, 0, 0, 0) linear-gradient(140deg, rgb(23, 57, 101), rgb(9, 29, 61)) repeat scroll 0% 0% / auto padding-box border-box",
+      "color": "rgb(255, 255, 255)",
+      "font": "850 12.16px Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", sans-serif"
+    },
+    {
+      "text": "Fin set.\n9+",
+      "aria": "Fin set. 9+",
+      "selected": "false",
+      "bounds": {
+        "x": 143.7261962890625,
+        "y": 133.76190185546875,
+        "w": 123.9702377319336,
+        "h": 32
+      },
+      "scrollWidth": 122,
+      "clientWidth": 122,
+      "border": "0.761905px solid rgba(0, 0, 0, 0)",
+      "shadow": "none",
+      "background": "rgba(0, 0, 0, 0) none repeat scroll 0px 0px / auto padding-box border-box",
+      "color": "rgb(71, 85, 105)",
+      "font": "850 12.16px Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", sans-serif"
+    },
+    {
+      "text": "Prossims\n9+",
+      "aria": "Prossims 9+",
+      "selected": "false",
+      "bounds": {
+        "x": 271.6964416503906,
+        "y": 133.76190185546875,
+        "w": 123.96428680419922,
+        "h": 32
+      },
+      "scrollWidth": 122,
+      "clientWidth": 122,
+      "border": "0.761905px solid rgba(0, 0, 0, 0)",
+      "shadow": "none",
+      "background": "rgba(0, 0, 0, 0) none repeat scroll 0px 0px / auto padding-box border-box",
+      "color": "rgb(71, 85, 105)",
+      "font": "850 12.16px Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", sans-serif"
+    },
+    {
+      "text": "Ducj",
+      "aria": null,
+      "selected": "true",
+      "bounds": {
+        "x": 13,
+        "y": 178.52381896972656,
+        "w": 49.85714340209961,
+        "h": 36
+      },
+      "scrollWidth": 48,
+      "clientWidth": 48,
+      "border": "0.761905px solid rgba(142, 219, 255, 0.45)",
+      "shadow": "rgba(9, 29, 61, 0.2) 0px 5px 14px 0px",
+      "background": "radial-gradient(circle at 92% 5%, rgba(19, 137, 201, 0.36), rgba(0, 0, 0, 0) 34%) repeat scroll 0% 0% / auto padding-box border-box, rgba(0, 0, 0, 0) linear-gradient(140deg, rgb(23, 57, 101), rgb(9, 29, 61)) repeat scroll 0% 0% / auto padding-box border-box",
+      "color": "rgb(255, 255, 255)",
+      "font": "900 12.16px Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", sans-serif"
+    },
+    {
+      "text": "Sagris",
+      "aria": null,
+      "selected": "false",
+      "bounds": {
+        "x": 69.85714721679688,
+        "y": 178.52381896972656,
+        "w": 73.76786041259766,
+        "h": 36
+      },
+      "scrollWidth": 72,
+      "clientWidth": 72,
+      "border": "0.761905px solid rgb(203, 213, 225)",
+      "shadow": "rgba(15, 76, 129, 0.06) 0px 2px 7px 0px",
+      "background": "rgba(255, 255, 255, 0.76) none repeat scroll 0% 0% / auto padding-box border-box",
+      "color": "rgb(51, 65, 85)",
+      "font": "900 12.16px Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", sans-serif"
+    },
+    {
+      "text": "Gust",
+      "aria": null,
+      "selected": "false",
+      "bounds": {
+        "x": 150.625,
+        "y": 178.52381896972656,
+        "w": 64.08333587646484,
+        "h": 36
+      },
+      "scrollWidth": 63,
+      "clientWidth": 63,
+      "border": "0.761905px solid rgb(203, 213, 225)",
+      "shadow": "rgba(15, 76, 129, 0.06) 0px 2px 7px 0px",
+      "background": "rgba(255, 255, 255, 0.76) none repeat scroll 0% 0% / auto padding-box border-box",
+      "color": "rgb(51, 65, 85)",
+      "font": "900 12.16px Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", sans-serif"
+    },
+    {
+      "text": "Marcjats",
+      "aria": null,
+      "selected": "false",
+      "bounds": {
+        "x": 221.70834350585938,
+        "y": 178.52381896972656,
+        "w": 86.60714721679688,
+        "h": 36
+      },
+      "scrollWidth": 85,
+      "clientWidth": 85,
+      "border": "0.761905px solid rgb(203, 213, 225)",
+      "shadow": "rgba(15, 76, 129, 0.06) 0px 2px 7px 0px",
+      "background": "rgba(255, 255, 255, 0.76) none repeat scroll 0% 0% / auto padding-box border-box",
+      "color": "rgb(51, 65, 85)",
+      "font": "900 12.16px Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", sans-serif"
+    },
+    {
+      "text": "Culture",
+      "aria": null,
+      "selected": "false",
+      "bounds": {
+        "x": 315.31549072265625,
+        "y": 178.52381896972656,
+        "w": 78.86309814453125,
+        "h": 36
+      },
+      "scrollWidth": 77,
+      "clientWidth": 77,
+      "border": "0.761905px solid rgb(203, 213, 225)",
+      "shadow": "rgba(15, 76, 129, 0.06) 0px 2px 7px 0px",
+      "background": "rgba(255, 255, 255, 0.76) none repeat scroll 0% 0% / auto padding-box border-box",
+      "color": "rgb(51, 65, 85)",
+      "font": "900 12.16px Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", sans-serif"
+    },
+    {
+      "text": "Convegnis",
+      "aria": null,
+      "selected": "false",
+      "bounds": {
+        "x": 401.1785888671875,
+        "y": 178.52381896972656,
+        "w": 96.45238494873047,
+        "h": 36
+      },
+      "scrollWidth": 95,
+      "clientWidth": 95,
+      "border": "0.761905px solid rgb(203, 213, 225)",
+      "shadow": "rgba(15, 76, 129, 0.06) 0px 2px 7px 0px",
+      "background": "rgba(255, 255, 255, 0.76) none repeat scroll 0% 0% / auto padding-box border-box",
+      "color": "rgb(51, 65, 85)",
+      "font": "900 12.16px Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", sans-serif"
+    },
+    {
+      "text": "Musiche",
+      "aria": null,
+      "selected": "false",
+      "bounds": {
+        "x": 504.6309509277344,
+        "y": 178.52381896972656,
+        "w": 85.41667175292969,
+        "h": 36
+      },
+      "scrollWidth": 84,
+      "clientWidth": 84,
+      "border": "0.761905px solid rgb(203, 213, 225)",
+      "shadow": "rgba(15, 76, 129, 0.06) 0px 2px 7px 0px",
+      "background": "rgba(255, 255, 255, 0.76) none repeat scroll 0% 0% / auto padding-box border-box",
+      "color": "rgb(51, 65, 85)",
+      "font": "900 12.16px Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", sans-serif"
+    },
+    {
+      "text": "Sport",
+      "aria": null,
+      "selected": "false",
+      "bounds": {
+        "x": 597.047607421875,
+        "y": 178.52381896972656,
+        "w": 68.89286041259766,
+        "h": 36
+      },
+      "scrollWidth": 67,
+      "clientWidth": 67,
+      "border": "0.761905px solid rgb(203, 213, 225)",
+      "shadow": "rgba(15, 76, 129, 0.06) 0px 2px 7px 0px",
+      "background": "rgba(255, 255, 255, 0.76) none repeat scroll 0% 0% / auto padding-box border-box",
+      "color": "rgb(51, 65, 85)",
+      "font": "900 12.16px Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", sans-serif"
+    },
+    {
+      "text": "Famee",
+      "aria": null,
+      "selected": "false",
+      "bounds": {
+        "x": 672.9404907226562,
+        "y": 178.52381896972656,
+        "w": 75.14286041259766,
+        "h": 36
+      },
+      "scrollWidth": 74,
+      "clientWidth": 74,
+      "border": "0.761905px solid rgb(203, 213, 225)",
+      "shadow": "rgba(15, 76, 129, 0.06) 0px 2px 7px 0px",
+      "background": "rgba(255, 255, 255, 0.76) none repeat scroll 0% 0% / auto padding-box border-box",
+      "color": "rgb(51, 65, 85)",
+      "font": "900 12.16px Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", sans-serif"
+    },
+    {
+      "text": "Altri",
+      "aria": null,
+      "selected": "false",
+      "bounds": {
+        "x": 755.0833740234375,
+        "y": 178.52381896972656,
+        "w": 62.27381134033203,
+        "h": 36
+      },
+      "scrollWidth": 61,
+      "clientWidth": 61,
+      "border": "0.761905px solid rgb(203, 213, 225)",
+      "shadow": "rgba(15, 76, 129, 0.06) 0px 2px 7px 0px",
+      "background": "rgba(255, 255, 255, 0.76) none repeat scroll 0% 0% / auto padding-box border-box",
+      "color": "rgb(51, 65, 85)",
+      "font": "900 12.16px Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", sans-serif"
+    },
+    {
+      "text": "",
+      "aria": "Ora delle storie 0-3 - vierç i detais dal eveniment",
+      "selected": null,
+      "bounds": {
+        "x": 12.7619047164917,
+        "y": 233.2857208251953,
+        "w": 385.9047546386719,
+        "h": 106
+      },
+      "scrollWidth": 386,
+      "clientWidth": 386,
+      "border": "0px none rgb(0, 90, 150)",
+      "shadow": "none",
+      "background": "rgba(0, 0, 0, 0) none repeat scroll 0px 0px / auto padding-box border-box",
+      "color": "rgb(0, 90, 150)",
+      "font": "16px Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", sans-serif"
+    },
+    {
+      "text": "",
+      "aria": "Ora delle storie 4-6 - vierç i detais dal eveniment",
+      "selected": null,
+      "bounds": {
+        "x": 12.7619047164917,
+        "y": 348.8095397949219,
+        "w": 385.9047546386719,
+        "h": 106
+      },
+      "scrollWidth": 386,
+      "clientWidth": 386,
+      "border": "0px none rgb(0, 90, 150)",
+      "shadow": "none",
+      "background": "rgba(0, 0, 0, 0) none repeat scroll 0px 0px / auto padding-box border-box",
+      "color": "rgb(0, 90, 150)",
+      "font": "16px Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", sans-serif"
+    },
+    {
+      "text": "",
+      "aria": "Monet. Una vita a colori - vierç i detais dal eveniment",
+      "selected": null,
+      "bounds": {
+        "x": 12.7619047164917,
+        "y": 464.3333435058594,
+        "w": 385.9047546386719,
+        "h": 106
+      },
+      "scrollWidth": 386,
+      "clientWidth": 386,
+      "border": "0px none rgb(0, 90, 150)",
+      "shadow": "none",
+      "background": "rgba(0, 0, 0, 0) none repeat scroll 0px 0px / auto padding-box border-box",
+      "color": "rgb(0, 90, 150)",
+      "font": "16px Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", sans-serif"
+    },
+    {
+      "text": "",
+      "aria": "Rilke, Bachmann, Jelinek: letteratura, poesia, teatro e cinema - vierç i detais dal eveniment",
+      "selected": null,
+      "bounds": {
+        "x": 12.7619047164917,
+        "y": 579.857177734375,
+        "w": 385.9047546386719,
+        "h": 109.44047546386719
+      },
+      "scrollWidth": 386,
+      "clientWidth": 386,
+      "border": "0px none rgb(0, 90, 150)",
+      "shadow": "none",
+      "background": "rgba(0, 0, 0, 0) none repeat scroll 0px 0px / auto padding-box border-box",
+      "color": "rgb(0, 90, 150)",
+      "font": "16px Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", sans-serif"
+    },
+    {
+      "text": "Cjase",
+      "aria": null,
+      "selected": null,
+      "bounds": {
+        "x": 18.761905670166016,
+        "y": 652.5119018554688,
+        "w": 90.47618865966797,
+        "h": 57.48809814453125
+      },
+      "scrollWidth": 89,
+      "clientWidth": 89,
+      "border": "0.761905px solid rgba(0, 0, 0, 0)",
+      "shadow": "none",
+      "background": "rgba(0, 0, 0, 0) none repeat scroll 0px 0px / auto padding-box border-box",
+      "color": "rgb(64, 86, 106)",
+      "font": "800 10.88px / 11.968px Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", sans-serif"
+    },
+    {
+      "text": "Timp",
+      "aria": null,
+      "selected": null,
+      "bounds": {
+        "x": 113.23809814453125,
+        "y": 652.5119018554688,
+        "w": 90.47618865966797,
+        "h": 57.48809814453125
+      },
+      "scrollWidth": 89,
+      "clientWidth": 89,
+      "border": "0.761905px solid rgba(0, 0, 0, 0)",
+      "shadow": "none",
+      "background": "rgba(0, 0, 0, 0) none repeat scroll 0px 0px / auto padding-box border-box",
+      "color": "rgb(64, 86, 106)",
+      "font": "800 10.88px / 11.968px Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", sans-serif"
+    },
+    {
+      "text": "4\nEvenis",
+      "aria": "Evenis: 4 evenis vuê",
+      "selected": null,
+      "bounds": {
+        "x": 207.71429443359375,
+        "y": 652.5119018554688,
+        "w": 90.47618865966797,
+        "h": 57.48809814453125
+      },
+      "scrollWidth": 89,
+      "clientWidth": 89,
+      "border": "0.761905px solid rgba(142, 219, 255, 0.45)",
+      "shadow": "rgba(9, 29, 61, 0.2) 0px 5px 14px 0px",
+      "background": "radial-gradient(circle at 92% 5%, rgba(19, 137, 201, 0.36), rgba(0, 0, 0, 0) 34%) repeat scroll 0% 0% / auto padding-box border-box, rgba(0, 0, 0, 0) linear-gradient(140deg, rgb(23, 57, 101), rgb(9, 29, 61)) repeat scroll 0% 0% / auto padding-box border-box",
+      "color": "rgb(255, 255, 255)",
+      "font": "800 10.88px / 11.968px Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", sans-serif"
+    },
+    {
+      "text": "Scuvierç",
+      "aria": null,
+      "selected": null,
+      "bounds": {
+        "x": 302.19049072265625,
+        "y": 652.5119018554688,
+        "w": 90.47618865966797,
+        "h": 57.48809814453125
+      },
+      "scrollWidth": 89,
+      "clientWidth": 89,
+      "border": "0.761905px solid rgba(0, 0, 0, 0)",
+      "shadow": "none",
+      "background": "rgba(0, 0, 0, 0) none repeat scroll 0px 0px / auto padding-box border-box",
+      "color": "rgb(64, 86, 106)",
+      "font": "800 10.88px / 11.968px Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", sans-serif"
+    },
+    {
+      "text": "",
+      "aria": "Siere i detais dal eveniment",
+      "selected": null,
+      "bounds": {
+        "x": 0,
+        "y": 0,
+        "w": 411.4285888671875,
+        "h": 728.7619018554688
+      },
+      "scrollWidth": 411,
+      "clientWidth": 411,
+      "border": "0px none rgb(0, 0, 0)",
+      "shadow": "none",
+      "background": "rgba(3, 20, 35, 0.62) none repeat scroll 0% 0% / auto padding-box border-box",
+      "color": "rgb(0, 0, 0)",
+      "font": "16px Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", sans-serif"
+    },
+    {
+      "text": "",
+      "aria": "Siere i detais dal eveniment",
+      "selected": null,
+      "bounds": {
+        "x": 346.66668701171875,
+        "y": 51.3273811340332,
+        "w": 38,
+        "h": 38
+      },
+      "scrollWidth": 36,
+      "clientWidth": 36,
+      "border": "0.761905px solid color(srgb 0.0235294 0.227451 0.376471 / 0.186588)",
+      "shadow": "none",
+      "background": "color(srgb 0.847059 0.917647 0.952941 / 0.92) none repeat scroll 0% 0% / auto padding-box border-box",
+      "color": "rgb(9, 42, 67)",
+      "font": "16px Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", sans-serif"
+    }
+  ]
+}

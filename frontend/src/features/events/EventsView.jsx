@@ -18,6 +18,7 @@ import {
 import { Fragment, useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { createPortal } from "react-dom";
 import { usePilotBackHandler } from "../../app/usePilotBackHandler";
+import { useBrowserDialogBack } from "../../app/useBrowserDialogBack";
 
 import { TabPage } from "../../ui/layout/TabPage";
 import { LocationContext } from "../../ui/components/LocationContext";
@@ -323,6 +324,7 @@ function needsTurismoFvgDetail(event) {
 
 function EventPreviewDialog({ copy, event, onClose }) {
   usePilotBackHandler(onClose);
+  useBrowserDialogBack(onClose);
   const closeButtonRef = useRef(null);
   const panelRef = useRef(null);
   const [imageBroken, setImageBroken] = useState(false);

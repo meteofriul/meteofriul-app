@@ -1,0 +1,467 @@
+{
+  "url": "http://127.0.0.1:5176/?tab=weather",
+  "ua": "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/155.0.0.0 Mobile Safari/537.36",
+  "viewport": {
+    "width": 411,
+    "height": 728,
+    "pageWidth": 411,
+    "dpr": 2.625
+  },
+  "text": "METEO FRIÛL\nMETEO\nFRI\nU\nL\nMeteo ed eventi per il tempo libero\nTrascina per aggiornare\nImpostazioni\nImpostazioni\nSENTINELLA METEO\nCjampane dal Cîl\nRango non disponibile\nInviate: 0\nPreferenze generali\nLingua\nItaliano\nFurlan\nTema\nChiaro\nScuro\nSistema\nLocalità predefinita\nUdine (UD)\nPosizione\nNon rilevata\nNotifiche\nAllerte\nAvvisi\n\nAutorizza le notifiche per ricevere Allerte e Avvisi su questo dispositivo.\n\nAutorizza notifiche\nInformazioni sul progetto\nMeteo Friûl\nmeteofriul.it\nInformativa privacy, fonti e crediti\nDati, permessi, contenuti e immagini\nCache\nSvuota\nSostieni Meteo Friûl\nAiuta Meteo Friûl a restare attiva, affidabile e aggiornata.\nVersione 0.1.14 · Web\nHome\nMeteo\n4\nEventi\nScopri\nMETEO LOCALE\nCambia localita\n\nLocalita attiva: Udine\n\nRomans d'Isonzo (GO)\nFriuli Venezia Giulia · Italia",
+  "dialogs": [
+    {
+      "text": "METEO LOCALE\nCambia localita\n\nLocalita attiva: Udine\n\nRomans d'Isonzo (GO)\nFriuli Venezia Giulia · Italia",
+      "aria": null,
+      "selected": null,
+      "bounds": {
+        "x": 0,
+        "y": 0,
+        "w": 411.4285888671875,
+        "h": 728.7619018554688
+      },
+      "scrollWidth": 411,
+      "clientWidth": 411,
+      "border": "0px none rgb(9, 42, 67)",
+      "shadow": "none",
+      "background": "rgba(0, 0, 0, 0) none repeat scroll 0% 0% / auto padding-box border-box",
+      "color": "rgb(9, 42, 67)",
+      "font": "16px Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", sans-serif"
+    }
+  ],
+  "days": [],
+  "selectedHours": [],
+  "buttons": [
+    {
+      "text": "",
+      "aria": "Indietro",
+      "selected": null,
+      "bounds": {
+        "x": 12,
+        "y": 94.39881134033203,
+        "w": 44,
+        "h": 44
+      },
+      "scrollWidth": 42,
+      "clientWidth": 42,
+      "border": "0.761905px solid rgba(255, 255, 255, 0.72)",
+      "shadow": "rgba(0, 40, 80, 0.08) 0px 4px 14px 0px",
+      "background": "rgba(255, 255, 255, 0.86) none repeat scroll 0% 0% / auto padding-box border-box",
+      "color": "rgb(6, 58, 96)",
+      "font": "750 14px Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", sans-serif"
+    },
+    {
+      "text": "",
+      "aria": "Cambia alias",
+      "selected": null,
+      "bounds": {
+        "x": 342.66668701171875,
+        "y": 183.21429443359375,
+        "w": 44,
+        "h": 44
+      },
+      "scrollWidth": 44,
+      "clientWidth": 44,
+      "border": "0px none rgb(2, 132, 199)",
+      "shadow": "none",
+      "background": "rgba(0, 0, 0, 0) none repeat scroll 0px 0px / auto padding-box border-box",
+      "color": "rgb(2, 132, 199)",
+      "font": "16px Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", sans-serif"
+    },
+    {
+      "text": "",
+      "aria": "Sentinelle, alias e punti",
+      "selected": null,
+      "bounds": {
+        "x": 342.66668701171875,
+        "y": 239.9761962890625,
+        "w": 44,
+        "h": 44
+      },
+      "scrollWidth": 44,
+      "clientWidth": 44,
+      "border": "0px none rgb(7, 91, 145)",
+      "shadow": "none",
+      "background": "rgba(0, 0, 0, 0) none repeat scroll 0px 0px / auto padding-box border-box",
+      "color": "rgb(7, 91, 145)",
+      "font": "16px Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", sans-serif"
+    },
+    {
+      "text": "",
+      "aria": "Chiudi informazioni",
+      "selected": null,
+      "bounds": {
+        "x": 0,
+        "y": 0,
+        "w": 0,
+        "h": 0
+      },
+      "scrollWidth": 0,
+      "clientWidth": 0,
+      "border": "0px none rgb(7, 91, 145)",
+      "shadow": "none",
+      "background": "rgba(0, 0, 0, 0) none repeat scroll 0px 0px / auto padding-box border-box",
+      "color": "rgb(7, 91, 145)",
+      "font": "16px Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", sans-serif"
+    },
+    {
+      "text": "Italiano",
+      "aria": null,
+      "selected": "true",
+      "bounds": {
+        "x": 241.42857360839844,
+        "y": 355.9761962890625,
+        "w": 67.23809814453125,
+        "h": 36
+      },
+      "scrollWidth": 66,
+      "clientWidth": 66,
+      "border": "0.761905px solid rgba(142, 219, 255, 0.45)",
+      "shadow": "rgba(9, 29, 61, 0.2) 0px 5px 14px 0px",
+      "background": "radial-gradient(circle at 92% 5%, rgba(19, 137, 201, 0.36), rgba(0, 0, 0, 0) 34%) repeat scroll 0% 0% / auto padding-box border-box, rgba(0, 0, 0, 0) linear-gradient(140deg, rgb(23, 57, 101), rgb(9, 29, 61)) repeat scroll 0% 0% / auto padding-box border-box",
+      "color": "rgb(255, 255, 255)",
+      "font": "750 11.2px Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", sans-serif"
+    },
+    {
+      "text": "Furlan",
+      "aria": null,
+      "selected": "false",
+      "bounds": {
+        "x": 312.66668701171875,
+        "y": 355.9761962890625,
+        "w": 67.23809814453125,
+        "h": 36
+      },
+      "scrollWidth": 66,
+      "clientWidth": 66,
+      "border": "0.761905px solid rgba(0, 0, 0, 0)",
+      "shadow": "none",
+      "background": "rgba(0, 0, 0, 0) none repeat scroll 0px 0px / auto padding-box border-box",
+      "color": "rgb(64, 86, 106)",
+      "font": "750 11.2px Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", sans-serif"
+    },
+    {
+      "text": "Chiaro",
+      "aria": null,
+      "selected": "true",
+      "bounds": {
+        "x": 185.42857360839844,
+        "y": 420.26190185546875,
+        "w": 62.154762268066406,
+        "h": 36
+      },
+      "scrollWidth": 61,
+      "clientWidth": 61,
+      "border": "0.761905px solid rgba(142, 219, 255, 0.45)",
+      "shadow": "rgba(9, 29, 61, 0.2) 0px 5px 14px 0px",
+      "background": "radial-gradient(circle at 92% 5%, rgba(19, 137, 201, 0.36), rgba(0, 0, 0, 0) 34%) repeat scroll 0% 0% / auto padding-box border-box, rgba(0, 0, 0, 0) linear-gradient(140deg, rgb(23, 57, 101), rgb(9, 29, 61)) repeat scroll 0% 0% / auto padding-box border-box",
+      "color": "rgb(255, 255, 255)",
+      "font": "750 11.2px Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", sans-serif"
+    },
+    {
+      "text": "Scuro",
+      "aria": null,
+      "selected": "false",
+      "bounds": {
+        "x": 251.58334350585938,
+        "y": 420.26190185546875,
+        "w": 62.16071701049805,
+        "h": 36
+      },
+      "scrollWidth": 61,
+      "clientWidth": 61,
+      "border": "0.761905px solid rgba(0, 0, 0, 0)",
+      "shadow": "none",
+      "background": "rgba(0, 0, 0, 0) none repeat scroll 0px 0px / auto padding-box border-box",
+      "color": "rgb(64, 86, 106)",
+      "font": "750 11.2px Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", sans-serif"
+    },
+    {
+      "text": "Sistema",
+      "aria": null,
+      "selected": "false",
+      "bounds": {
+        "x": 317.7440490722656,
+        "y": 420.26190185546875,
+        "w": 62.16071701049805,
+        "h": 36
+      },
+      "scrollWidth": 61,
+      "clientWidth": 61,
+      "border": "0.761905px solid rgba(0, 0, 0, 0)",
+      "shadow": "none",
+      "background": "rgba(0, 0, 0, 0) none repeat scroll 0px 0px / auto padding-box border-box",
+      "color": "rgb(64, 86, 106)",
+      "font": "750 11.2px Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", sans-serif"
+    },
+    {
+      "text": "",
+      "aria": "Cambia",
+      "selected": null,
+      "bounds": {
+        "x": 344.66668701171875,
+        "y": 479.7857360839844,
+        "w": 40,
+        "h": 40
+      },
+      "scrollWidth": 42,
+      "clientWidth": 40,
+      "border": "0px none rgb(7, 91, 145)",
+      "shadow": "none",
+      "background": "rgba(0, 0, 0, 0) none repeat scroll 0px 0px / auto padding-box border-box",
+      "color": "rgb(7, 91, 145)",
+      "font": "16px Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", sans-serif"
+    },
+    {
+      "text": "",
+      "aria": "Attiva Posizione",
+      "selected": null,
+      "bounds": {
+        "x": 336.66668701171875,
+        "y": 544.1666870117188,
+        "w": 48,
+        "h": 28
+      },
+      "scrollWidth": 48,
+      "clientWidth": 46,
+      "border": "0.761905px solid color(srgb 0.0235294 0.227451 0.376471 / 0.186588)",
+      "shadow": "none",
+      "background": "color(srgb 0.704 0.778353 0.824) none repeat scroll 0% 0% / auto padding-box border-box",
+      "color": "rgb(0, 0, 0)",
+      "font": "16px Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", sans-serif"
+    },
+    {
+      "text": "",
+      "aria": "Disattiva Allerte",
+      "selected": null,
+      "bounds": {
+        "x": 336.66668701171875,
+        "y": 652.7857055664062,
+        "w": 48,
+        "h": 28
+      },
+      "scrollWidth": 48,
+      "clientWidth": 46,
+      "border": "0.761905px solid rgb(0, 90, 150)",
+      "shadow": "none",
+      "background": "rgb(0, 90, 150) none repeat scroll 0% 0% / auto padding-box border-box",
+      "color": "rgb(0, 0, 0)",
+      "font": "16px Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", sans-serif"
+    },
+    {
+      "text": "",
+      "aria": "Disattiva Avvisi",
+      "selected": null,
+      "bounds": {
+        "x": 336.66668701171875,
+        "y": 711.1666870117188,
+        "w": 48,
+        "h": 28
+      },
+      "scrollWidth": 48,
+      "clientWidth": 46,
+      "border": "0.761905px solid rgb(0, 90, 150)",
+      "shadow": "none",
+      "background": "rgb(0, 90, 150) none repeat scroll 0% 0% / auto padding-box border-box",
+      "color": "rgb(0, 0, 0)",
+      "font": "16px Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", sans-serif"
+    },
+    {
+      "text": "Autorizza notifiche",
+      "aria": null,
+      "selected": null,
+      "bounds": {
+        "x": 26.761905670166016,
+        "y": 823.7380981445312,
+        "w": 132.23214721679688,
+        "h": 40
+      },
+      "scrollWidth": 131,
+      "clientWidth": 131,
+      "border": "0.761905px solid rgb(0, 90, 150)",
+      "shadow": "none",
+      "background": "rgba(0, 0, 0, 0) none repeat scroll 0px 0px / auto padding-box border-box",
+      "color": "rgb(6, 58, 96)",
+      "font": "800 12px Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", sans-serif"
+    },
+    {
+      "text": "",
+      "aria": "Svuota",
+      "selected": null,
+      "bounds": {
+        "x": 344.66668701171875,
+        "y": 1052.5,
+        "w": 40,
+        "h": 40
+      },
+      "scrollWidth": 42,
+      "clientWidth": 40,
+      "border": "0px none rgb(7, 91, 145)",
+      "shadow": "none",
+      "background": "rgba(0, 0, 0, 0) none repeat scroll 0px 0px / auto padding-box border-box",
+      "color": "rgb(7, 91, 145)",
+      "font": "16px Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", sans-serif"
+    },
+    {
+      "text": "Home",
+      "aria": null,
+      "selected": null,
+      "bounds": {
+        "x": 18.761905670166016,
+        "y": 652.5119018554688,
+        "w": 90.47618865966797,
+        "h": 57.48809814453125
+      },
+      "scrollWidth": 89,
+      "clientWidth": 89,
+      "border": "0.761905px solid rgba(142, 219, 255, 0.45)",
+      "shadow": "rgba(9, 29, 61, 0.2) 0px 5px 14px 0px",
+      "background": "radial-gradient(circle at 92% 5%, rgba(19, 137, 201, 0.36), rgba(0, 0, 0, 0) 34%) repeat scroll 0% 0% / auto padding-box border-box, rgba(0, 0, 0, 0) linear-gradient(140deg, rgb(23, 57, 101), rgb(9, 29, 61)) repeat scroll 0% 0% / auto padding-box border-box",
+      "color": "rgb(255, 255, 255)",
+      "font": "800 10.88px / 11.968px Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", sans-serif"
+    },
+    {
+      "text": "Meteo",
+      "aria": null,
+      "selected": null,
+      "bounds": {
+        "x": 113.23809814453125,
+        "y": 652.5119018554688,
+        "w": 90.47618865966797,
+        "h": 57.48809814453125
+      },
+      "scrollWidth": 89,
+      "clientWidth": 89,
+      "border": "0.761905px solid rgba(0, 0, 0, 0)",
+      "shadow": "none",
+      "background": "rgba(0, 0, 0, 0) none repeat scroll 0px 0px / auto padding-box border-box",
+      "color": "rgb(64, 86, 106)",
+      "font": "800 10.88px / 11.968px Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", sans-serif"
+    },
+    {
+      "text": "4\nEventi",
+      "aria": "Eventi: 4 eventi oggi",
+      "selected": null,
+      "bounds": {
+        "x": 207.71429443359375,
+        "y": 652.5119018554688,
+        "w": 90.47618865966797,
+        "h": 57.48809814453125
+      },
+      "scrollWidth": 89,
+      "clientWidth": 89,
+      "border": "0.761905px solid rgba(0, 0, 0, 0)",
+      "shadow": "none",
+      "background": "rgba(0, 0, 0, 0) none repeat scroll 0px 0px / auto padding-box border-box",
+      "color": "rgb(64, 86, 106)",
+      "font": "800 10.88px / 11.968px Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", sans-serif"
+    },
+    {
+      "text": "Scopri",
+      "aria": null,
+      "selected": null,
+      "bounds": {
+        "x": 302.19049072265625,
+        "y": 652.5119018554688,
+        "w": 90.47618865966797,
+        "h": 57.48809814453125
+      },
+      "scrollWidth": 89,
+      "clientWidth": 89,
+      "border": "0.761905px solid rgba(0, 0, 0, 0)",
+      "shadow": "none",
+      "background": "rgba(0, 0, 0, 0) none repeat scroll 0px 0px / auto padding-box border-box",
+      "color": "rgb(64, 86, 106)",
+      "font": "800 10.88px / 11.968px Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", sans-serif"
+    },
+    {
+      "text": "",
+      "aria": "Chiudi",
+      "selected": null,
+      "bounds": {
+        "x": 0,
+        "y": 0,
+        "w": 411.4285888671875,
+        "h": 728.7619018554688
+      },
+      "scrollWidth": 411,
+      "clientWidth": 411,
+      "border": "0px none rgb(0, 0, 0)",
+      "shadow": "none",
+      "background": "rgba(3, 25, 45, 0.32) none repeat scroll 0% 0% / auto padding-box border-box",
+      "color": "rgb(0, 0, 0)",
+      "font": "16px Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", sans-serif"
+    },
+    {
+      "text": "",
+      "aria": "Chiudi",
+      "selected": null,
+      "bounds": {
+        "x": 342.66668701171875,
+        "y": 482.5357360839844,
+        "w": 44,
+        "h": 44
+      },
+      "scrollWidth": 42,
+      "clientWidth": 42,
+      "border": "0.761905px solid rgba(6, 58, 96, 0.24)",
+      "shadow": "none",
+      "background": "rgb(216, 234, 243) none repeat scroll 0% 0% / auto padding-box border-box",
+      "color": "rgb(7, 91, 145)",
+      "font": "16px Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", sans-serif"
+    },
+    {
+      "text": "",
+      "aria": "Cerca comune",
+      "selected": null,
+      "bounds": {
+        "x": 73.52381134033203,
+        "y": 567.047607421875,
+        "w": 276.3809509277344,
+        "h": 20.666667938232422
+      },
+      "scrollWidth": 276,
+      "clientWidth": 276,
+      "border": "0px none rgb(9, 42, 67)",
+      "shadow": "none",
+      "background": "rgba(0, 0, 0, 0) none repeat scroll 0px 0px / auto padding-box border-box",
+      "color": "rgb(9, 42, 67)",
+      "font": "800 16px Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", sans-serif"
+    },
+    {
+      "text": "",
+      "aria": "Cancella ricerca",
+      "selected": null,
+      "bounds": {
+        "x": 37.52381134033203,
+        "y": 595.7142944335938,
+        "w": 28,
+        "h": 28
+      },
+      "scrollWidth": 26,
+      "clientWidth": 26,
+      "border": "0.761905px solid rgba(0, 115, 207, 0.14)",
+      "shadow": "none",
+      "background": "rgb(191, 220, 235) none repeat scroll 0% 0% / auto padding-box border-box",
+      "color": "rgb(7, 91, 145)",
+      "font": "16px Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", sans-serif"
+    },
+    {
+      "text": "Romans d'Isonzo (GO)\nFriuli Venezia Giulia · Italia",
+      "aria": null,
+      "selected": null,
+      "bounds": {
+        "x": 25.5238094329834,
+        "y": 641.2380981445312,
+        "w": 348.3809509277344,
+        "h": 54
+      },
+      "scrollWidth": 348,
+      "clientWidth": 348,
+      "border": "0px none rgb(9, 42, 67)",
+      "shadow": "none",
+      "background": "rgba(0, 0, 0, 0) none repeat scroll 0px 0px / auto padding-box border-box",
+      "color": "rgb(9, 42, 67)",
+      "font": "16px Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", sans-serif"
+    }
+  ]
+}

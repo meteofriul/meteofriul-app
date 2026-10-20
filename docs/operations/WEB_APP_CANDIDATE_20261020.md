@@ -2,10 +2,15 @@
 
 ## Esito
 
-Anteprima Web compilata e conservata, non pubblicata. Sorgenti frontend
-invariati rispetto a main `bf304281aa9851369687c2dd646b8bd473c0b23d`:
-la base già verificata su Galaxy con TEST `.6`, escluse le impostazioni TEST.
-Ramo di preparazione: `codex/web-android-parity`.
+Anteprima Web compilata e conservata, non pubblicata. La prima candidata
+usa i sorgenti frontend di main `bf304281aa9851369687c2dd646b8bd473c0b23d`,
+già verificati su Galaxy con TEST `.6`, escluse le impostazioni TEST.
+La riverifica ha aggiunto due correzioni Web locali, incluse nella consegna approvata:
+Indietro nel dettaglio Eventi e comando di cancellazione nella ricerca.
+Entrambe passano su Brave del Galaxy; [verbale e nuova candidata](WEB_APP_BROWSER_FIXES_20261020.md).
+Ramo di preparazione: `codex/web-android-parity`; main di partenza `bf304281`.
+Commit e promozione locale autorizzati dal proprietario dopo il collaudo;
+la pubblicazione rimane separata.
 
 La pubblicazione resta da autorizzare e completare: mancano il legame verificato
 fra la revisione API corrente e il suo commit sorgente, e il collaudo Safari
@@ -76,6 +81,22 @@ non chiude la verifica della nuova corsa delle tolleranze attesa separatamente.
 Qualità dell'aria e pollini mostravano «non disponibili»: registrato il risultato,
 non dichiarato risolto il dato ambientale. Notifiche non autorizzate nel browser,
 nessun click su invio Community, nessuna modifica delle preferenze cloud.
+
+## Verifica reale Galaxy aggiunta il 20 ottobre
+
+Verificata questa stessa candidata su **Brave 1.97.59 / Galaxy A52 Android 14**,
+con autorizzazione del proprietario dopo aver constatato che Chrome è disattivato.
+Passano previsioni FVG, refresh, temi chiaro/scuro, IT/FUR, persistenza e catalogo
+Eventi. Screenshot e misure sono ora archiviati nel
+[verbale Galaxy](WEB_APP_GALAXY_VERIFICATION_20261020.md).
+
+Restano incompleti i servizi nazionali e Community dall'origine locale, e
+Safari/iPhone. La prima verifica aveva rilevato l'uscita dalla candidata con
+Indietro nel dettaglio Eventi e il doppio comando di cancellazione nella ricerca.
+Entrambi sono stati corretti nella candidata successiva e riverificati sul
+telefono in italiano/chiaro e friulano/scuro, con 56 test locali superati:
+[correzioni, artefatto aggiornato ed evidenze](WEB_APP_BROWSER_FIXES_20261020.md).
+Nessuna installazione, AAB, invio, push o deploy.
 
 ## Binding API da chiudere prima della pubblicazione
 
