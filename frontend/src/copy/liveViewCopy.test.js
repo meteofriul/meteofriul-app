@@ -198,10 +198,10 @@ describe("liveViewCopy", () => {
     expect(italian.communityDailyAlias).toBe("Sentinella Meteo · {alias}");
     expect(italian.communityContributionToday).toContain("{count}");
     expect(italian.communityMatchMany).toContain("{phenomenon}");
-    expect(italian.reportSuccessReceipt).toBe("Segnalazione inviata!");
+    expect(italian.reportSuccessReceipt).toBe("Grazie per la segnalazione!");
     expect(italian.reportSuccessBody)
-      .toBe("Ottimo lavoro, sentinella! Grazie: ora chi è nei dintorni sa cosa aspettarsi.");
-    expect(italian.reportSuccessIdentityLabel).toBe("Inviata come:");
+      .toBe("Il tuo contributo aiuta la community a rimanere aggiornata.");
+    expect(italian.reportSuccessIdentityLabel).toBe("Inviata da:");
     expect(italian.reportSuccessMap).toBe("Vedi sulla mappa");
     expect(italian.reportUpdateDone).toBe("Aggiornato");
     expect(italian.reportUpdateRetryHint).toBe("Esito non confermato");
@@ -252,10 +252,10 @@ describe("liveViewCopy", () => {
     expect(friulian.communityDailyAlias).toBe("Sentinele Meteo · {alias}");
     expect(friulian.communityContributionToday).toContain("{count}");
     expect(friulian.communityMatchMany).toContain("{phenomenon}");
-    expect(friulian.reportSuccessReceipt).toBe("Segnalazion inviade!");
+    expect(friulian.reportSuccessReceipt).toBe("Graciis pe segnalazion!");
     expect(friulian.reportSuccessBody)
-      .toBe("Biel lavôr, sentinele! Graciis: cumò chei che a son chi dongje a san ce spietâsi.");
-    expect(friulian.reportSuccessIdentityLabel).toBe("Inviade come:");
+      .toBe("Il to contribût al jude la comunitât a restâ inzornade.");
+    expect(friulian.reportSuccessIdentityLabel).toBe("Inviade di:");
     expect(friulian.reportSuccessMap).toBe("Viôt su la mape");
     expect(friulian.reportUpdateDone).toBe("Inzornade");
     expect(friulian.reportUpdateRetryHint).toBe("Esit no confermât");

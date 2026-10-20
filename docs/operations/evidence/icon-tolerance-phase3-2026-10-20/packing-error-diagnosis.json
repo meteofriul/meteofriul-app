@@ -1,0 +1,225 @@
+{
+  "kind": "offline_diagnosis_not_live_replay",
+  "deployed_source_sha256": "7900ee52879eb3777832419f76c712f27542eeb67950bf6aca5defc04be1c2ca",
+  "network_access": false,
+  "new_source_acquisition": false,
+  "production_source_modified": false,
+  "field_cases": [
+    {
+      "field": "T_2M",
+      "packingError": null,
+      "old_metadata_accepted": true,
+      "new_metadata_accepted": false,
+      "error": "Checkpoint metadata is invalid"
+    },
+    {
+      "field": "T_2M",
+      "packingError": 0.0005,
+      "old_metadata_accepted": true,
+      "new_metadata_accepted": false,
+      "error": "Checkpoint metadata is invalid"
+    },
+    {
+      "field": "TD_2M",
+      "packingError": null,
+      "old_metadata_accepted": true,
+      "new_metadata_accepted": false,
+      "error": "Checkpoint metadata is invalid"
+    },
+    {
+      "field": "TD_2M",
+      "packingError": 0.0005,
+      "old_metadata_accepted": true,
+      "new_metadata_accepted": false,
+      "error": "Checkpoint metadata is invalid"
+    },
+    {
+      "field": "U_10M",
+      "packingError": null,
+      "old_metadata_accepted": true,
+      "new_metadata_accepted": false,
+      "error": "Checkpoint metadata is invalid"
+    },
+    {
+      "field": "U_10M",
+      "packingError": 0.0005,
+      "old_metadata_accepted": true,
+      "new_metadata_accepted": false,
+      "error": "Checkpoint metadata is invalid"
+    },
+    {
+      "field": "V_10M",
+      "packingError": null,
+      "old_metadata_accepted": true,
+      "new_metadata_accepted": false,
+      "error": "Checkpoint metadata is invalid"
+    },
+    {
+      "field": "V_10M",
+      "packingError": 0.0005,
+      "old_metadata_accepted": true,
+      "new_metadata_accepted": false,
+      "error": "Checkpoint metadata is invalid"
+    },
+    {
+      "field": "CLCT",
+      "packingError": null,
+      "old_metadata_accepted": true,
+      "new_metadata_accepted": false,
+      "error": "Checkpoint metadata is invalid"
+    },
+    {
+      "field": "CLCT",
+      "packingError": 0.0005,
+      "old_metadata_accepted": true,
+      "new_metadata_accepted": false,
+      "error": "Checkpoint metadata is invalid"
+    },
+    {
+      "field": "PMSL",
+      "packingError": null,
+      "old_metadata_accepted": true,
+      "new_metadata_accepted": false,
+      "error": "Checkpoint metadata is invalid"
+    },
+    {
+      "field": "PMSL",
+      "packingError": 0.0005,
+      "old_metadata_accepted": true,
+      "new_metadata_accepted": false,
+      "error": "Checkpoint metadata is invalid"
+    },
+    {
+      "field": "TOT_PREC",
+      "packingError": null,
+      "old_metadata_accepted": true,
+      "new_metadata_accepted": false,
+      "error": "Checkpoint metadata is invalid"
+    },
+    {
+      "field": "TOT_PREC",
+      "packingError": 0.0005,
+      "old_metadata_accepted": true,
+      "new_metadata_accepted": false,
+      "error": "Checkpoint metadata is invalid"
+    },
+    {
+      "field": "WW",
+      "packingError": null,
+      "old_metadata_accepted": true,
+      "new_metadata_accepted": false,
+      "error": "Checkpoint metadata is invalid"
+    },
+    {
+      "field": "WW",
+      "packingError": 0.0005,
+      "old_metadata_accepted": true,
+      "new_metadata_accepted": false,
+      "error": "Checkpoint metadata is invalid"
+    },
+    {
+      "field": "RAIN_CON",
+      "packingError": null,
+      "old_metadata_accepted": true,
+      "new_metadata_accepted": false,
+      "error": "Checkpoint metadata is invalid"
+    },
+    {
+      "field": "RAIN_CON",
+      "packingError": 0.0005,
+      "old_metadata_accepted": true,
+      "new_metadata_accepted": false,
+      "error": "Checkpoint metadata is invalid"
+    },
+    {
+      "field": "RAIN_GSP",
+      "packingError": null,
+      "old_metadata_accepted": true,
+      "new_metadata_accepted": false,
+      "error": "Checkpoint metadata is invalid"
+    },
+    {
+      "field": "RAIN_GSP",
+      "packingError": 0.0005,
+      "old_metadata_accepted": true,
+      "new_metadata_accepted": false,
+      "error": "Checkpoint metadata is invalid"
+    },
+    {
+      "field": "SNOW_CON",
+      "packingError": null,
+      "old_metadata_accepted": true,
+      "new_metadata_accepted": false,
+      "error": "Checkpoint metadata is invalid"
+    },
+    {
+      "field": "SNOW_CON",
+      "packingError": 0.0005,
+      "old_metadata_accepted": true,
+      "new_metadata_accepted": false,
+      "error": "Checkpoint metadata is invalid"
+    },
+    {
+      "field": "SNOW_GSP",
+      "packingError": null,
+      "old_metadata_accepted": true,
+      "new_metadata_accepted": false,
+      "error": "Checkpoint metadata is invalid"
+    },
+    {
+      "field": "SNOW_GSP",
+      "packingError": 0.0005,
+      "old_metadata_accepted": true,
+      "new_metadata_accepted": false,
+      "error": "Checkpoint metadata is invalid"
+    },
+    {
+      "field": "GRAU_GSP",
+      "packingError": null,
+      "old_metadata_accepted": true,
+      "new_metadata_accepted": false,
+      "error": "Checkpoint metadata is invalid"
+    },
+    {
+      "field": "GRAU_GSP",
+      "packingError": 0.0005,
+      "old_metadata_accepted": true,
+      "new_metadata_accepted": false,
+      "error": "Checkpoint metadata is invalid"
+    },
+    {
+      "field": "VMAX_10M",
+      "packingError": null,
+      "old_metadata_accepted": true,
+      "new_metadata_accepted": false,
+      "error": "Checkpoint metadata is invalid"
+    },
+    {
+      "field": "VMAX_10M",
+      "packingError": 0.0005,
+      "old_metadata_accepted": true,
+      "new_metadata_accepted": false,
+      "error": "Checkpoint metadata is invalid"
+    }
+  ],
+  "decoder_to_checkpoint_cases": [
+    {
+      "packingError_provider_mode": "available",
+      "real_decoder_used": true,
+      "decoded_messages": 73,
+      "points_per_message": 215,
+      "checkpoint_error": "Checkpoint metadata is invalid",
+      "checkpoint_write_attempted": false
+    },
+    {
+      "packingError_provider_mode": "absent",
+      "real_decoder_used": true,
+      "decoded_messages": 73,
+      "points_per_message": 215,
+      "checkpoint_error": "Checkpoint metadata is invalid",
+      "checkpoint_write_attempted": false
+    }
+  ],
+  "conclusion": "Decoder always adds packingError but checkpoint validator forbids it; first complete field cannot be saved.",
+  "cloud_evidence_limit": "Cloud logs suppress the inner exception; exact historical innermost failure cannot be read back. The deployed defect is deterministic and matches early acquisition failure before the first field-completed log."
+}

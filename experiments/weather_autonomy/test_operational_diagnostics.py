@@ -90,6 +90,40 @@ class OperationalDiagnosticsTests(unittest.TestCase):
                 self.assertEqual(fields["municipality_code"], "093033")
                 self.assertEqual(fields["stage"], "publication_recovery_validation")
 
+    def test_icon_field_checkpoint_reports_safe_inner_location_and_reason(self):
+        import run_pilot as pilot
+        from test_run_pilot import snapshot_fixture
+
+        field = "T_2M"
+        for key, value, reason in (
+            ("unexpected_diagnostic", 1, "Checkpoint metadata is invalid"),
+            ("packingError", -0.001, "Checkpoint packing error is invalid"),
+        ):
+            with self.subTest(key=key):
+                fixture = snapshot_fixture()
+                data = fixture["raw"][field]
+                data["metadata"][0][key] = value
+                record = pilot._with_checkpoint_integrity(dict(
+                    schema_version=pilot.CHECKPOINT_SCHEMA_VERSION,
+                    kind="icon_extracted_field_checkpoint", intent_sha256="d" * 64,
+                    run=fixture["run"], field=field, url=data["url"],
+                    grid_hash=fixture["grid_hash"], grid_points=fixture["grid_points"], data=data))
+                output = io.StringIO()
+                with redirect_stdout(output), self.assertRaises(ValueError):
+                    with phase("acquisition", provider="icon"):
+                        pilot._validate_field_checkpoint(record, intent_sha="d" * 64,
+                            field=field, run=fixture["run"], url=data["url"], points=fixture["points"])
+                # assertRaises clears exception tracebacks; inspect the actual
+                # emitted record, captured while the original trace is intact.
+                fields = next(json.loads(line) for line in output.getvalue().splitlines()
+                              if json.loads(line)["event"] == "phase_failed")
+                self.assertEqual(fields["error_summary"], reason)
+                self.assertEqual(fields["failure_file"], "run_pilot.py")
+                self.assertEqual(fields["failure_function"], "_validate_field_checkpoint")
+                self.assertGreater(fields["failure_line"], 0)
+                self.assertEqual(fields["stage"], "acquisition")
+                self.assertNotIn(data["url"], output.getvalue())
+
     def test_safe_inner_cause_is_not_lost_when_publication_wraps_it(self):
         try:
             try:

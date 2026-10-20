@@ -1,0 +1,897 @@
+[
+  {
+    "path": "Dockerfile",
+    "size": 269,
+    "sha256": "7b019d1a2aff15e9b9624b0cfb639c65a1cfc18357fca83d0ad448bf92fb5220"
+  },
+  {
+    "path": "requirements.txt",
+    "size": 114,
+    "sha256": "1bf5fd2bfda2bb90c610fd6ed62fc78c6fe1e2a8084145e277458b5badec4ed9"
+  },
+  {
+    "path": "app/main.py",
+    "size": 3069,
+    "sha256": "2a1d982e1fe48c730cabdf7b81a57d7773ed0b08cd46288cd1df4d6ebf00a027"
+  },
+  {
+    "path": "app/pilot_community.py",
+    "size": 8957,
+    "sha256": "4a80317b23eeab42e60fe10c32e826c112043edef97de9a526e4e399b31bdfb4"
+  },
+  {
+    "path": "app/pilot_community_cloud.py",
+    "size": 15992,
+    "sha256": "aa49f0debd1bbd367481496a2c35b450d87bb8a9f8ae64cd73a2476c89f726eb"
+  },
+  {
+    "path": "app/pilot_community_cloud_loopback.py",
+    "size": 3125,
+    "sha256": "032e9e9f3745fcc8b46a29ae6d74659ecdf5b09b2fe3525eea9e3a5ce6ad9de9"
+  },
+  {
+    "path": "app/pilot_owner_credentials.py",
+    "size": 4215,
+    "sha256": "cc66077982e738081a10c99479deacc37b3c4880cde7381680f317ca60991f35"
+  },
+  {
+    "path": "app/__init__.py",
+    "size": 39,
+    "sha256": "9dd7cc89b54d2d99a023e96c4d57c82a1a4e90034c7ea8c2a18880e17bd3fa0c"
+  },
+  {
+    "path": "app/api/events.py",
+    "size": 2480,
+    "sha256": "30fed878b826ae196f50b1398352893c3b61a51d05196b969260d7fbe0018ce6"
+  },
+  {
+    "path": "app/api/live.py",
+    "size": 5970,
+    "sha256": "3c50213c9983795496b85abfb5c294069e2b389afa8ef734a1b30b18f50b2709"
+  },
+  {
+    "path": "app/api/location.py",
+    "size": 3774,
+    "sha256": "8eff4738a601a47c69848e4ae0cfff6cf89edec71f35531136cb77fd395b3569"
+  },
+  {
+    "path": "app/api/promotions.py",
+    "size": 9894,
+    "sha256": "f3682644ddf38c392893bfe3e59d88d56401bede46ad74c37e99a8174c88b784"
+  },
+  {
+    "path": "app/api/push.py",
+    "size": 6697,
+    "sha256": "849d4f58888d27e3976c23430b5dd70bc0d6110a3f95c20b0a1ab711546e706e"
+  },
+  {
+    "path": "app/api/weather.py",
+    "size": 7338,
+    "sha256": "07fbfb9c6a01d73508feccc1bf3521110b0f3c93593f8770be58ad97ccfd9634"
+  },
+  {
+    "path": "app/api/webcam_admin.py",
+    "size": 3305,
+    "sha256": "9bed96b62f6bee50fd14be66ff26ce4316d39ad66d3e3bf2787811a4400cc7d7"
+  },
+  {
+    "path": "app/api/__init__.py",
+    "size": 26,
+    "sha256": "91a71aff4bd3390524cba41ba5284ae26d52d957909f8b364c0014752d5c2d2c"
+  },
+  {
+    "path": "app/contracts/events.py",
+    "size": 1856,
+    "sha256": "22a56445be21ad3f54dcacaa524e882a4a3523b8a5da827db5b5463e3a27e681"
+  },
+  {
+    "path": "app/contracts/live.py",
+    "size": 13287,
+    "sha256": "7642d1ac856f610b679e679a92dc4067a558f3c2cba14c73dccbff5cedf58196"
+  },
+  {
+    "path": "app/contracts/location.py",
+    "size": 3232,
+    "sha256": "ce9ca81b0aee5f74e8f8f34fc6c4c2e3c4ae7db8dbdcb7facc608fca75fcd993"
+  },
+  {
+    "path": "app/contracts/push.py",
+    "size": 6590,
+    "sha256": "9659618bcf39c312e623e6026a61f892c9400605f5713cbe8f8176dc0919fb1a"
+  },
+  {
+    "path": "app/contracts/weather.py",
+    "size": 4883,
+    "sha256": "d748a312d9e85505ab054ecd75b86f7e65cb0612fb0faa940799110b79daf66e"
+  },
+  {
+    "path": "app/contracts/__init__.py",
+    "size": 45,
+    "sha256": "5cfb4aca9cee1cde525fbc1b6f30094cbb519fe2ab6aecd43969b823dc8c74fa"
+  },
+  {
+    "path": "app/data/fvg_geography.json",
+    "size": 3447533,
+    "sha256": "0475c1b1fc309e5e38ab536ae4b32cd04d11550168b871d8b95bbbe5f16512e9"
+  },
+  {
+    "path": "app/data/fvg_municipalities.json",
+    "size": 54909,
+    "sha256": "06ced5bedc823365b38d83d2be93bd1bf5102ec97b2e5ba4f91c9f5ae5975a57"
+  },
+  {
+    "path": "app/data/italy_municipalities_2026.json",
+    "size": 3729963,
+    "sha256": "41457bb6db0745c791976e20310e9c28338121298b5447143ae83af899c37644"
+  },
+  {
+    "path": "app/data/official_alert_zone_catalog.json",
+    "size": 1379075,
+    "sha256": "c5d07b9891b20f29b493215d34aee9475d4e5b24f593d1b9747a1dd207a2be59"
+  },
+  {
+    "path": "app/data/webcams_active.json",
+    "size": 27385,
+    "sha256": "8e77b37799049672427cd2ba976548810de793bd1bdd85cea584f2f22debf0e4"
+  },
+  {
+    "path": "app/data/webcams_candidates.json",
+    "size": 2450,
+    "sha256": "2611fe6ded37f366fe86581bb49184871353903354a2df795766fabe0e7e4c0a"
+  },
+  {
+    "path": "app/data/webcams_suspended.json",
+    "size": 1717,
+    "sha256": "2f109fc9258b7cdd20606c8d12dce13ffed564f580608b3afee18ade6cb95a07"
+  },
+  {
+    "path": "app/events/audit.py",
+    "size": 40790,
+    "sha256": "b891e4a97e38393f4d3d5cebf9ed61fbce09d2d651821a9e036cc2758f1ac3c9"
+  },
+  {
+    "path": "app/events/engine.py",
+    "size": 215008,
+    "sha256": "70ee2328c7a022f17b7ba5a6eeb98ed763991717e074f4ef0490a96da21f2f12"
+  },
+  {
+    "path": "app/events/guarded_feed.py",
+    "size": 2446,
+    "sha256": "f274955f47fe028ccfb80fb400ba698a54cc09c35e86abc18eb8550d43601404"
+  },
+  {
+    "path": "app/events/http_client.py",
+    "size": 1402,
+    "sha256": "4bbab3875944a2a07195111103ecea21aec1fac4940e7ff05231387862a1a43c"
+  },
+  {
+    "path": "app/events/pilot_anteprima_watch.py",
+    "size": 8271,
+    "sha256": "8df91f512681185e350f6dc22be6be8ee3b153334d5f74e5d25b2f6c758f0e70"
+  },
+  {
+    "path": "app/events/pilot_attems_audit.py",
+    "size": 20843,
+    "sha256": "d53a97cd5bf95c712b0711407f525da97eb32c2d5641d95b1923964dd01a4640"
+  },
+  {
+    "path": "app/events/pilot_azalea.py",
+    "size": 13392,
+    "sha256": "9bb43f4c9f45cf59c94b86b5977cbc2fd081906065b384eeede8b01af16f1dde"
+  },
+  {
+    "path": "app/events/pilot_azalea_sitemap_baseline.json",
+    "size": 19927,
+    "sha256": "c80813f0d69a2b0d722184c165bb32604c4fe009ef66e1b857b6dc20bbce01a2"
+  },
+  {
+    "path": "app/events/pilot_barcolana.py",
+    "size": 25007,
+    "sha256": "2e2ff46d95d7717bdf90a074d88d7c79388702bd939d4e1706f7b6ac063b2c0d"
+  },
+  {
+    "path": "app/events/pilot_catalog.py",
+    "size": 9155,
+    "sha256": "1a294947bc39014a4c621c39fda126e609909c9fe65c43d3154481308f6b959d"
+  },
+  {
+    "path": "app/events/pilot_cinema_muto.py",
+    "size": 12433,
+    "sha256": "a36373ccfb0c54705f65767f09097c92b449540d6cc582c3ab59c0ed89a93018"
+  },
+  {
+    "path": "app/events/pilot_cloud.py",
+    "size": 12704,
+    "sha256": "969cd13cf424c52bd3673beaa897571d52867752fb0c7d4eac357985fb6fc8a0"
+  },
+  {
+    "path": "app/events/pilot_collection.py",
+    "size": 3513,
+    "sha256": "2ea5c589873619f9603050e36a81798bae47e2be2b60bca570508f7ebc3f9302"
+  },
+  {
+    "path": "app/events/pilot_comparison.py",
+    "size": 5019,
+    "sha256": "07dfb88d5a352bc8eeca7624d2bf95021333938dc71b6f522c0fa9c36fd3d26a"
+  },
+  {
+    "path": "app/events/pilot_css.py",
+    "size": 24515,
+    "sha256": "bf0404c7d88bc3303337ba9a0bf0ff824ebedeb3214292a2adeea34b077f50a2"
+  },
+  {
+    "path": "app/events/pilot_dedupe.py",
+    "size": 26216,
+    "sha256": "8a5a64dda7f9abcec1ce3912e1725e210b262e28e077f747cef79777feb08344"
+  },
+  {
+    "path": "app/events/pilot_details.py",
+    "size": 36070,
+    "sha256": "b4a0529375bb98bc1bb9c22978771014b49f860d4fdfc622088a171dc02d0681"
+  },
+  {
+    "path": "app/events/pilot_discovery.py",
+    "size": 1686,
+    "sha256": "2492ea929599b2f8129e71ecd2ca54d0e34724f973919def8ada9788ab3b29b0"
+  },
+  {
+    "path": "app/events/pilot_eventifvg_audit.py",
+    "size": 7289,
+    "sha256": "6d596771a156ce494b35c3a66a77d109687cd4e27a86ed6c46b8d1340416b882"
+  },
+  {
+    "path": "app/events/pilot_excerpt.py",
+    "size": 3719,
+    "sha256": "b27f5835c26752e24b9f8edfc14f8ff2676d4cc0daa72890db3df6e1e3336bcd"
+  },
+  {
+    "path": "app/events/pilot_girofvg_baseline_2026.json",
+    "size": 27703,
+    "sha256": "5c1a359f43c16aa4aaaf4b1c8e288043d4b53e00cec27a4294ba5466304cbd2c"
+  },
+  {
+    "path": "app/events/pilot_girofvg_watch.py",
+    "size": 14246,
+    "sha256": "42185a9f87cf7aeb6ccb4f81c7d48d97cbb7a62b71141727093f1e9495b45881"
+  },
+  {
+    "path": "app/events/pilot_http.py",
+    "size": 4349,
+    "sha256": "cbf45573d92f6d1d8512900ad87183e39b5dabc77a104644b351063486f2ce4a"
+  },
+  {
+    "path": "app/events/pilot_magazzino.py",
+    "size": 14376,
+    "sha256": "292c7076fce29b468b99bf83afba1eff49ada19f1e7416a939c31de4b1638404"
+  },
+  {
+    "path": "app/events/pilot_mess.py",
+    "size": 18742,
+    "sha256": "ed91bd4dddc5e4ca716acc6a3c3c47e1ed4170a314099001b93e68cac28ded06"
+  },
+  {
+    "path": "app/events/pilot_paesiinfesta.py",
+    "size": 36189,
+    "sha256": "0713cc50fad37d565b260b1e91c581d41d7b7bcf05cb3f1942e5d993508882ce"
+  },
+  {
+    "path": "app/events/pilot_pnpensa.py",
+    "size": 15528,
+    "sha256": "b79560809d0b50cf96934f72925788cf57d9cf6b410421e7584a3ebcbf7e49fd"
+  },
+  {
+    "path": "app/events/pilot_pordenonelegge.py",
+    "size": 8540,
+    "sha256": "ef89096d6ebe63f7912412a84e9416ea2f488e4cb775e8ae90f1b04bd3e90443"
+  },
+  {
+    "path": "app/events/pilot_probe.py",
+    "size": 1491,
+    "sha256": "7b59656aa3c6b699ddf85ce50000db547d9e09c7bda8194fba6c6707062dd272"
+  },
+  {
+    "path": "app/events/pilot_programmes.py",
+    "size": 22162,
+    "sha256": "0b7555804abd09f5cf026ca53fcc417ea49598cf66a4a9e3ae6a0d4be82f3cc6"
+  },
+  {
+    "path": "app/events/pilot_proloco_watch.py",
+    "size": 7272,
+    "sha256": "1faa9bf075fff1b4240ac423217f6607128663636d33e0cac3f2d0dfa35d37ea"
+  },
+  {
+    "path": "app/events/pilot_regional.py",
+    "size": 6064,
+    "sha256": "1f6349e813aa52c5db3bbd210d7a5da5fc2655a30af6471303318f27fe047965"
+  },
+  {
+    "path": "app/events/pilot_regional_checkpoint.py",
+    "size": 2171,
+    "sha256": "6b42bc9a3dd4ff043fdc72d89fffb8640b6f84b452d2a50d32cfe9033195d5f8"
+  },
+  {
+    "path": "app/events/pilot_regional_discrepancy_audit.py",
+    "size": 13295,
+    "sha256": "3370a9ae7c886b46fea965673adfee2bfd645077de65070e55c333760a7d6f61"
+  },
+  {
+    "path": "app/events/pilot_regional_display_audit.py",
+    "size": 22823,
+    "sha256": "1606ef900ca9452be588b26836758a774f00be047f1948bb191b24b31c51d78e"
+  },
+  {
+    "path": "app/events/pilot_regional_filtered.py",
+    "size": 13850,
+    "sha256": "78cbd35e8dba30d7f02355b5d8b2f1b264f0713b0b246527f93ea226d8017c35"
+  },
+  {
+    "path": "app/events/pilot_regional_forward_audit.py",
+    "size": 18957,
+    "sha256": "f6df03cbe075ba5d1e039f1f809287d36b9975d2d6c711bd4e7d3f46808b3537"
+  },
+  {
+    "path": "app/events/pilot_regional_historical.py",
+    "size": 6165,
+    "sha256": "eb593e4762f3447744550a8ba842ae945389c1fb6d15c1932e0f629fa2bbd13d"
+  },
+  {
+    "path": "app/events/pilot_regional_index.py",
+    "size": 3019,
+    "sha256": "62c6425ed455b854ee65ab92969fc7f5641adf53ebe4b805db5f410fbcf2a273"
+  },
+  {
+    "path": "app/events/pilot_regional_local_preview.py",
+    "size": 10614,
+    "sha256": "2d873f0a90fab892da4f679cb79687580ad958f88255a62954a2e755611ba833"
+  },
+  {
+    "path": "app/events/pilot_regional_location.py",
+    "size": 3336,
+    "sha256": "f50939a6a126f42eb34468ac4b9ff166113c7084c9580864cc6dc53a02c80927"
+  },
+  {
+    "path": "app/events/pilot_regional_lookback.py",
+    "size": 4728,
+    "sha256": "9e0fca49603e8c33dadf63df7297946958c19c7d7e8075f53e4b88d271fe81c4"
+  },
+  {
+    "path": "app/events/pilot_regional_reconcile.py",
+    "size": 10674,
+    "sha256": "151525c57bd8b8711407bd04d3ed925cb65e2bdf59d248d2327a6bc1247ee756"
+  },
+  {
+    "path": "app/events/pilot_regional_semantic_audit.py",
+    "size": 17680,
+    "sha256": "fc31dd0ea29d68ddde98b0358dcbd68638742c37670bd240d0436263aa6a117b"
+  },
+  {
+    "path": "app/events/pilot_regional_sitemap.py",
+    "size": 3002,
+    "sha256": "09f39773b64b15a1b4ac07d3d740940644dab97ce17909c92257f5a2b4555960"
+  },
+  {
+    "path": "app/events/pilot_regional_sitemap_audit.py",
+    "size": 12763,
+    "sha256": "df6bd520bc66b837836cccdb140941e4ab9fb4034d30b20eed8f399bfa24aba3"
+  },
+  {
+    "path": "app/events/pilot_regional_sitemap_cards.py",
+    "size": 5341,
+    "sha256": "8ff75de3ee82ad98fa9a59a7d5930b7a5f75fbcb456a81669b3f0e8e3817d3a0"
+  },
+  {
+    "path": "app/events/pilot_regional_verified.py",
+    "size": 8196,
+    "sha256": "51c3b24652b0e5c137c288e360931d61826364c7392660e27f4a7a1b0f28e939"
+  },
+  {
+    "path": "app/events/pilot_regional_year_control.py",
+    "size": 34147,
+    "sha256": "c67e0d330aced9db617f0a1fb66fb2fce6fa222ea5e2ef4fc75f6758134f24de"
+  },
+  {
+    "path": "app/events/pilot_regional_year_exclusions.py",
+    "size": 4929,
+    "sha256": "0ccd36eb31ab0a2f1afbd82fec97addb65396a19161907725630dd2b0e6b32ad"
+  },
+  {
+    "path": "app/events/pilot_regional_year_recovery.py",
+    "size": 23662,
+    "sha256": "6047dc26d1daf31f381696f05b7279169c45ff320110f8402034728e2ef12351"
+  },
+  {
+    "path": "app/events/pilot_sagrefvg.py",
+    "size": 12759,
+    "sha256": "65ed84bbd67a85c2bf18273f1ce3a008744ff8e4406c200813f77fd1522aef50"
+  },
+  {
+    "path": "app/events/pilot_schedule.py",
+    "size": 1907,
+    "sha256": "7b7c3d749334f7d67b20494b32bb329689f5c69c020fa75e791a9f3a02d24f56"
+  },
+  {
+    "path": "app/events/pilot_sources.py",
+    "size": 1691,
+    "sha256": "a711f5dd0ce8382bcbfb1301873fa0569431639bd421e2d40880eebc1d89401d"
+  },
+  {
+    "path": "app/events/pilot_source_policy.py",
+    "size": 76227,
+    "sha256": "d7e29609890aa8e29337b52619d3695e1d89d0b93eabc63ddbf828108f607b9b"
+  },
+  {
+    "path": "app/events/pilot_source_probe.py",
+    "size": 1594,
+    "sha256": "ce930cac05521223d95b04b0b429f1ee4d53c6b45a58546dbae9ff956745a853"
+  },
+  {
+    "path": "app/events/pilot_spazzapan.py",
+    "size": 18987,
+    "sha256": "3e1af215cd5db838bc9a7124fc571c204a12402ae19e3a40212d2d1464957d52"
+  },
+  {
+    "path": "app/events/pilot_verdi_pordenone.py",
+    "size": 16448,
+    "sha256": "21711b310bba8b51f1e8465f1711b2a55da6c612129b46f1e85317fa1248d880"
+  },
+  {
+    "path": "app/events/pilot_verdi_trieste.py",
+    "size": 16899,
+    "sha256": "63397c5d8efec8e8a34b7ec112dcbc1083b38eff2dc635f3ad433a341c1bff63"
+  },
+  {
+    "path": "app/events/pilot_villa_manin.py",
+    "size": 13202,
+    "sha256": "08ef3494f384161d49ea71cf1c199930e7a5a96f46974c85621a7374f79573f3"
+  },
+  {
+    "path": "app/events/source_pipeline.py",
+    "size": 8881,
+    "sha256": "547cae15f33e8eaf865d4011166a77d4d6ba22ff29bcd76e3f6dbc725faeb6a6"
+  },
+  {
+    "path": "app/events/__init__.py",
+    "size": 0,
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "path": "app/events/sources/erpac.py",
+    "size": 42042,
+    "sha256": "6c80a35d7ef1ac2f9109b8417f7beead537bbfeafdcb9849a33070221affd8fd"
+  },
+  {
+    "path": "app/events/sources/villa_manin.py",
+    "size": 25208,
+    "sha256": "b16a87d5894c17533da7f382e581e753363029e0d2f2a23a55467cde264ac2c9"
+  },
+  {
+    "path": "app/events/sources/__init__.py",
+    "size": 60,
+    "sha256": "1562fe0a2cfe826f3c5a42c811df0ac79cc87e9550171f04da0c9b711959a577"
+  },
+  {
+    "path": "app/infrastructure/ads_admin_auth.py",
+    "size": 2953,
+    "sha256": "cc936bdf95a355410303a39454123b454d09ef66421e2fdb2e42680a91344d03"
+  },
+  {
+    "path": "app/infrastructure/app_check.py",
+    "size": 9970,
+    "sha256": "d3ef394d3c2b19e98acaae29e56cb6af2c5fa492614ac80a358c80bf9240da6f"
+  },
+  {
+    "path": "app/infrastructure/firebase.py",
+    "size": 4172,
+    "sha256": "90eba2828185203bf9912eb837dbada761cb8f7b75be10c0d320d2f1f594aea0"
+  },
+  {
+    "path": "app/infrastructure/open_meteo_policy.py",
+    "size": 3325,
+    "sha256": "f75800f1992fef51e0ec37b74516dc887d05ec66f80d196287c2c58417893dff"
+  },
+  {
+    "path": "app/infrastructure/webcam_admin_auth.py",
+    "size": 3016,
+    "sha256": "22d480ca6ff65f42200d2fb133d3730dff549838696f8ff7a372dc436c42be32"
+  },
+  {
+    "path": "app/infrastructure/__init__.py",
+    "size": 56,
+    "sha256": "17d37e6c289f81f9645cd25b03b5a0ccb30a1b4268e703adbaec0c9e625e9359"
+  },
+  {
+    "path": "app/jobs/control_event_source_publication.py",
+    "size": 6144,
+    "sha256": "5d26f82a4bf227248d3c34e477f8f6889c0a3be08cee267c6e80f83431807bc5"
+  },
+  {
+    "path": "app/jobs/dry_run_national_official_alerts.py",
+    "size": 2852,
+    "sha256": "a30202cc6adfbeea086be913ba12c197318e568710bd012d75cb3d3561daed87"
+  },
+  {
+    "path": "app/jobs/emit_community_moderation_digest.py",
+    "size": 8419,
+    "sha256": "f0e0186f9de966b63486f9f357fc2f99867136f837da32db920f4cdec6ea886d"
+  },
+  {
+    "path": "app/jobs/run_local_notice_shadow.py",
+    "size": 1396,
+    "sha256": "fcdbcfcb498145d0edb51a356b76bb64756a6cbb8e9acc5ad31a6114dfecc468"
+  },
+  {
+    "path": "app/jobs/seed_community_v2.py",
+    "size": 896,
+    "sha256": "d68c70f8d10fb19e53564a3a8ea909cb879dc3ee4c3df3679ea39ca1417fe74c"
+  },
+  {
+    "path": "app/jobs/send_evening_forecast.py",
+    "size": 1991,
+    "sha256": "e9c3e0a86ccf7ebeb3b2a3a9db12fe1797be0f9792d1fee60a41cfaa3e8ce750"
+  },
+  {
+    "path": "app/jobs/send_local_weather_notices.py",
+    "size": 2251,
+    "sha256": "73e32e1cb67f83b840d45805e7c1c26df870a6de3f5f0f06e13ce251577e3c15"
+  },
+  {
+    "path": "app/jobs/send_morning_forecast.py",
+    "size": 1989,
+    "sha256": "f9654e0f689ea6c14d16b94767b612402defd9d9a07ebd0040c61347f2cc0c78"
+  },
+  {
+    "path": "app/jobs/send_national_official_alerts.py",
+    "size": 1399,
+    "sha256": "4d62d234702a8882fcfc498b66fef0e053274abbfad6f69cfd84e34c3d176ecb"
+  },
+  {
+    "path": "app/jobs/send_push_pilot_test.py",
+    "size": 1071,
+    "sha256": "5b81352640a98eb9964e396059241f09687c77dd6d1e5b0b8db5a37865a2273b"
+  },
+  {
+    "path": "app/jobs/sync_event_sources.py",
+    "size": 1764,
+    "sha256": "845a2be407a6ac9f6ec0f7d5f2033b9affccb1b3b12c28b07757ca8cc6b899ef"
+  },
+  {
+    "path": "app/jobs/sync_national_official_alerts.py",
+    "size": 1961,
+    "sha256": "26a5b0676323c0ad1ab7d21dd9f297ed6da91f4d9744f0bef3b2e56de50bb7ee"
+  },
+  {
+    "path": "app/jobs/sync_official_alerts.py",
+    "size": 3161,
+    "sha256": "f57fb7c797edb8e7156952153ea34272f8689602669e41b56290f96c0a729f0d"
+  },
+  {
+    "path": "app/jobs/__init__.py",
+    "size": 66,
+    "sha256": "d28a4ee64777e79b4a3320cc8d4487f9ddbd54f7295dd7054e78bd5cabbfc0ed"
+  },
+  {
+    "path": "app/push/fcm.py",
+    "size": 9310,
+    "sha256": "83d0145a9d46e4df773f6c54afc5867d1f148e1d1e3f04c6e8b6917a63f91c5b"
+  },
+  {
+    "path": "app/push/__init__.py",
+    "size": 50,
+    "sha256": "9d1ce9ca0c25635917535c6181736d5798d0234685c7f1705c4a2e911fb3c230"
+  },
+  {
+    "path": "app/repositories/community.py",
+    "size": 108496,
+    "sha256": "7ebecfd53ffcc6db85811e699ffd529fb1da8f1822178fd925ea63625af4789c"
+  },
+  {
+    "path": "app/repositories/event_sources.py",
+    "size": 5417,
+    "sha256": "57b1692a2b7f794a8b7b8c71710d97ff0eb635a0a58c58c6b0609da1a5cbf977"
+  },
+  {
+    "path": "app/repositories/local_notice_delivery.py",
+    "size": 5570,
+    "sha256": "c48ea514c62ab67ac0040d6b18340b45a04366ae9a7c2360d362cff6df8eed7d"
+  },
+  {
+    "path": "app/repositories/local_notice_shadow.py",
+    "size": 8512,
+    "sha256": "2ea5bf6d19a9df25d77cba57f6ab7c56ea5301ef1c89b61fcf61941d91f05f37"
+  },
+  {
+    "path": "app/repositories/national_alert_delivery.py",
+    "size": 10430,
+    "sha256": "24ee85e70f5215566ca48a53ea0328783d421b6458765caf8579484c11af1ca4"
+  },
+  {
+    "path": "app/repositories/national_official_alerts.py",
+    "size": 5236,
+    "sha256": "407cd93689e3474c63760fb03cbe9d321aa17bb295fd53c981ab4aea3a8be5a6"
+  },
+  {
+    "path": "app/repositories/official_alerts.py",
+    "size": 5010,
+    "sha256": "7e3e8cc4d38e83b6daad709311f9a5de88718f73b2f4f770406fe51858362480"
+  },
+  {
+    "path": "app/repositories/pilot_community.py",
+    "size": 22370,
+    "sha256": "1372fa51f2f7b064b8d247f98e64bf01347ffc2bad7871dd4a0db01a2d4df7d5"
+  },
+  {
+    "path": "app/repositories/pilot_community_cloud.py",
+    "size": 11414,
+    "sha256": "587d618bdf4bc13b5d284d04c576e09a643817c528a90a9741dcd20229a8a058"
+  },
+  {
+    "path": "app/repositories/pilot_community_sqlite.py",
+    "size": 10299,
+    "sha256": "82017911da945b8fb644b23145373ce7934724bc3bffcbf92efd8f1724e00425"
+  },
+  {
+    "path": "app/repositories/push.py",
+    "size": 57758,
+    "sha256": "989a05445be31c46fa8d23e9613d0fd54c83dd29aae999402a7cd3b41bbae71c"
+  },
+  {
+    "path": "app/repositories/__init__.py",
+    "size": 44,
+    "sha256": "32f9225f44ab2884769b571ea9598c560c250cf4ef20a4e11ef679ae106f46ff"
+  },
+  {
+    "path": "app/services/community.py",
+    "size": 52773,
+    "sha256": "b6042f6731d1f6bbfd0e8c79fe611d90e4b0a4595a996a7f6ce7a7485f036b3e"
+  },
+  {
+    "path": "app/services/community_moderation_digest.py",
+    "size": 32817,
+    "sha256": "a0e56fb4da92e869ed3a1c97c7c2a99fee7f980ef72a685d035aeec8e955adf4"
+  },
+  {
+    "path": "app/services/community_moderation_logging.py",
+    "size": 9369,
+    "sha256": "3a03440641017b51c3fcd43c10ba12761c5a8f915c8b23946cf3d7b392440c75"
+  },
+  {
+    "path": "app/services/dpc_national_source.py",
+    "size": 7935,
+    "sha256": "b53b3a087e8a0a4799fa49adb94ae71c805f2548059b589c5daa310b5be48a3b"
+  },
+  {
+    "path": "app/services/evening_forecast_delivery.py",
+    "size": 15656,
+    "sha256": "83f48c0b4310c97205600b20cfc1fd138429641aad6f7ab26e3bc87e7ab9b2e2"
+  },
+  {
+    "path": "app/services/events.py",
+    "size": 5031,
+    "sha256": "09f30e2187ffbfbbc77e3afc865f22ce7f583fe3c96fb4da83a5987e533f3a26"
+  },
+  {
+    "path": "app/services/event_sources.py",
+    "size": 23719,
+    "sha256": "15280c5da605dcf9aa00629e12ede939706aac1102e24d00d4815269c16557aa"
+  },
+  {
+    "path": "app/services/fvg_geography.py",
+    "size": 17367,
+    "sha256": "f716ab02d06f592029ac17ce0820bbf1c25489b0491d40fab85aa5cfa9bdb9d1"
+  },
+  {
+    "path": "app/services/local_notice_delivery.py",
+    "size": 63864,
+    "sha256": "8bc3c04da58862e7b4075032e78cef76f450ea644a1614f8b05ab7d11944aedb"
+  },
+  {
+    "path": "app/services/local_notice_shadow.py",
+    "size": 12935,
+    "sha256": "9a6062e021799ef09199499f179c55194a85ce3426feca9293a6400ce5297d7a"
+  },
+  {
+    "path": "app/services/location.py",
+    "size": 32669,
+    "sha256": "4428f09cf5d187692c8087771ed7c70c7d2e7f1d5c02822fc1ea33ea1ed50430"
+  },
+  {
+    "path": "app/services/morning_forecast_delivery.py",
+    "size": 33589,
+    "sha256": "f051ecd41c39b3d00c3e3eddd8a23a2643c4ce1779f5ae23e11ecb3fba610fd5"
+  },
+  {
+    "path": "app/services/national_alert_delivery.py",
+    "size": 17240,
+    "sha256": "85a95c265c98be2d96f92c7e10a556e122c5f6fae4534d1b081936dd1349b872"
+  },
+  {
+    "path": "app/services/national_alert_push_dry_run.py",
+    "size": 11788,
+    "sha256": "240fc6648209dddf6be736567525a4179cd7a03dd8a2a50337356575ea21c811"
+  },
+  {
+    "path": "app/services/national_municipalities.py",
+    "size": 14331,
+    "sha256": "95a3ed405a473f945e03d5d323c4b858f795d7260f5732e1a7af4198c9f520eb"
+  },
+  {
+    "path": "app/services/national_official_alerts.py",
+    "size": 10590,
+    "sha256": "16513df36f92e378239e374aa20bc0445c55dd27764ca78faa1342021193fd58"
+  },
+  {
+    "path": "app/services/national_official_alerts_state.py",
+    "size": 8417,
+    "sha256": "a3af2cc6d7b216f1e3cbda56e6e63911930aa3ff76705de682d19c31822ee33d"
+  },
+  {
+    "path": "app/services/notice_municipalities.py",
+    "size": 1337,
+    "sha256": "26d0b9f12ea0352478ccda74e38926a86bd2182c742522d01a7b594900d7b11e"
+  },
+  {
+    "path": "app/services/official_alerts.py",
+    "size": 9007,
+    "sha256": "73774cce7a46afb2c0a7c12f783686dd93a5a40236d479305515786bc5463f03"
+  },
+  {
+    "path": "app/services/official_alert_sources.py",
+    "size": 84209,
+    "sha256": "9683e49ec0e89c8a8e08a9f41f1030ea3e70ce8f26562cab23251d2d725c1b3f"
+  },
+  {
+    "path": "app/services/official_alert_zone_catalog.py",
+    "size": 14071,
+    "sha256": "c4462c210a4c8a91bea2f341710e5fea2f6754527b877d529bc0ce63c6554990"
+  },
+  {
+    "path": "app/services/pilot_community.py",
+    "size": 48211,
+    "sha256": "b76f168a57d511b7c344baddfd782c27137093ed8b108c9b3b5aa1abfaf51f6e"
+  },
+  {
+    "path": "app/services/pilot_community_geography.py",
+    "size": 14076,
+    "sha256": "d541bad7884b461bc3eb7bc6e266ab40c646cab4feafe3704b39747002199a2c"
+  },
+  {
+    "path": "app/services/promotions.py",
+    "size": 62098,
+    "sha256": "3febc49b544d95b069bc6acd2966a7dbf86c5124c4dd63967083adb7581f016c"
+  },
+  {
+    "path": "app/services/promotion_closure.py",
+    "size": 18128,
+    "sha256": "7a20539782ed6128757cb4a28d5d91f1fd4a42191459284afe59d99d9c593791"
+  },
+  {
+    "path": "app/services/promotion_data_erasure.py",
+    "size": 3456,
+    "sha256": "f62129fd0790bcbfdb86b088260929784ed94092403fd1b7a9b6c10677da63d6"
+  },
+  {
+    "path": "app/services/promotion_retention.py",
+    "size": 21110,
+    "sha256": "353d92b8a8b826663c5b8f60631171e66d88bbcd0bac0ef31125b2d2082a3ea7"
+  },
+  {
+    "path": "app/services/push.py",
+    "size": 53525,
+    "sha256": "28ef8ea8cf08de94ddb22ec46f7e192f123a08cc937a4b943f3cdce8b43f1374"
+  },
+  {
+    "path": "app/services/push_version_policy.py",
+    "size": 1529,
+    "sha256": "21dcc4bdc4d1535c64a0bbdfcdc2874d484f7f4bbb76f441aceec5d45fa895f7"
+  },
+  {
+    "path": "app/services/site_import.py",
+    "size": 17526,
+    "sha256": "d180687ff7c9615ef8e262baa116b6fe0f705d5df7970f29beb8a8986cf16a99"
+  },
+  {
+    "path": "app/services/territory_policy.py",
+    "size": 2982,
+    "sha256": "8e1232f4a752b807d5468b9896a53a593f692175edc59f5be86af00886aacbd7"
+  },
+  {
+    "path": "app/services/verified_municipality_search.py",
+    "size": 2912,
+    "sha256": "45b86124ccee0e809a2e46a665f5b1c339834776490d9958a1c67af88d800fe3"
+  },
+  {
+    "path": "app/services/weather.py",
+    "size": 6159,
+    "sha256": "f7ab0503af1f63466bc3b7a349c0e2ce2e37b032cd8c664bc2b80f82f4347ff1"
+  },
+  {
+    "path": "app/services/webcams.py",
+    "size": 26979,
+    "sha256": "d550c32ef124ffda6151aa69bf5866e90690a99de64acd041fed065115c30160"
+  },
+  {
+    "path": "app/services/webcam_controls.py",
+    "size": 15180,
+    "sha256": "22c16b83ac2f768aa0f322fd5f57acf06fd8119c1fd3f351c7f5617ac1c39f37"
+  },
+  {
+    "path": "app/services/webcam_health.py",
+    "size": 16777,
+    "sha256": "d3ba99dd7722077ef72074964642f12c3809e723f8dd246e11740567dbb7855c"
+  },
+  {
+    "path": "app/services/__init__.py",
+    "size": 43,
+    "sha256": "e480b2f03a9b20473ccb3047ba2bed125e2b1a05a70f3f38edca7d1ba76d656a"
+  },
+  {
+    "path": "app/weather/alerts_engine.py",
+    "size": 32513,
+    "sha256": "24b692ede6da313bf18c57b0cc26936749fbcbfcfb6cd0ca43ef0d785eb1fdf0"
+  },
+  {
+    "path": "app/weather/arpa_osmer_risks.py",
+    "size": 31099,
+    "sha256": "faae9fa6e3a3631a3cfa71608543b37b30c7c33b951f2609c67a4dccdfb2cae4"
+  },
+  {
+    "path": "app/weather/current_engine.py",
+    "size": 20229,
+    "sha256": "5e64f2e8e2c8fcbebc9832aeb739ab801162581053c2a47d7f6bb529e1cea633"
+  },
+  {
+    "path": "app/weather/dpc_national_alerts.py",
+    "size": 10186,
+    "sha256": "40072207beeec9905e815510e1c9825051d1b837b5f282819256cedc09a770ee"
+  },
+  {
+    "path": "app/weather/dpc_national_zone_snapshot.py",
+    "size": 16798,
+    "sha256": "51f24e8284ea42bbe2e5589ca0a786c4e3beab5319cf5251248ca2d49879a30e"
+  },
+  {
+    "path": "app/weather/forecast_engine.py",
+    "size": 83827,
+    "sha256": "22d9bad63a77a79fc8196ead110ffc06822571c5063bb6a08f2c19ec03376626"
+  },
+  {
+    "path": "app/weather/local_notice_shadow.py",
+    "size": 32970,
+    "sha256": "4ada7258d1384b24fb755a2c0ae07f48b8d3959c71e990d460b72059437463d6"
+  },
+  {
+    "path": "app/weather/local_notice_source.py",
+    "size": 30913,
+    "sha256": "b179927a8f27e18e3d65953ca376ce3368834d1f4bb9b174439322357a6fde9e"
+  },
+  {
+    "path": "app/weather/official_telegram_alerts.py",
+    "size": 24534,
+    "sha256": "985813160fc75256264c71f793d2206a4e86e4933d1a0c799fae85f859897234"
+  },
+  {
+    "path": "app/weather/osmer_interpreter.py",
+    "size": 3751,
+    "sha256": "05d1f5f421d7e03872e3eb7a243ce401e29fffda155817b5dbc8f7045d6e765f"
+  },
+  {
+    "path": "app/weather/parser_osmer.py",
+    "size": 16582,
+    "sha256": "546f75a29fa4131eca52fd021c3a696e9afc530259ee72ad6a7692f7d696a834"
+  },
+  {
+    "path": "app/weather/radar_engine.py",
+    "size": 7821,
+    "sha256": "e583047d3723ba6022eb2644987168ded76100b8a01e9479c40f684ca9add32b"
+  },
+  {
+    "path": "app/weather/timezone_support.py",
+    "size": 4242,
+    "sha256": "227098c8dafa9c6fae736b8630344515cd56190be42289eda2034822213329fe"
+  },
+  {
+    "path": "app/weather/__init__.py",
+    "size": 68,
+    "sha256": "889a04c7d5be14f7c382dcd1e216716d42e496e1f74b9888d873ec9381bd0015"
+  }
+]

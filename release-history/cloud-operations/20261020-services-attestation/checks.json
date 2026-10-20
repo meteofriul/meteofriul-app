@@ -1,0 +1,33 @@
+{
+  "recordedAt": "2026-10-20T17:11:23.215056+00:00",
+  "branch": "codex/release-services-readiness",
+  "baseMain": "c45ba45d68eec19bec3103f8b832db9a31ab9b05",
+  "alertFixCommit": "c5c46675",
+  "attestationsCommit": "56069cc1",
+  "tests": {
+    "backend": {
+      "passed": 195,
+      "command": "python -m unittest tests.test_alerts_engine tests.test_official_alert_sources tests.test_mixed_widget_alerts tests.test_official_alerts_state tests.test_sync_official_alerts_workflow tests.test_sync_official_alerts_job tests.test_arpa_osmer_risks tests.test_push_service"
+    },
+    "powershell": {
+      "release-api-preflight.tests.ps1": "PASS",
+      "firestore-push-ttl-live-writer-set.contract.tests.ps1": "PASS",
+      "firestore-push-ttl-audit.contract.tests.ps1": "PASS"
+    }
+  },
+  "readOnlyLiveChecks": {
+    "apiPreflight": "PASS",
+    "pushTtl": "PASS",
+    "publicWidgetAndArpaLocalReconciliation": "PASS"
+  },
+  "cloudMutations": false,
+  "manualCloudExecutions": 0,
+  "sendsByThisWork": 0,
+  "appArtifactsGenerated": 0,
+  "limitations": [
+    "FVG correction not deployed",
+    "Android runtime/release matrix not performed by this work",
+    "No promotion to main or Git push",
+    "Writer attestation describes deployed images, not the new local alert code"
+  ]
+}

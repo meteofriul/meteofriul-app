@@ -1,0 +1,128 @@
+{
+  "verified_at_utc": "2026-10-20T09:07:59.988633+00:00",
+  "fvg_run": "20261019T120000Z",
+  "fvg_manifest_sha256": "0aa79142499aeac4e4c85b88dd902e04b3d2704964b6519b7c3b105539519add",
+  "fvg_publication_unchanged": true,
+  "fvg_documents_reread": 3,
+  "fvg_all_215_legacy_checks_reused_from_same_immutable_manifest": [
+    {
+      "reader": "2f02c8ba",
+      "public_documents_accepted": 215,
+      "enriched_document_rejected": true
+    },
+    {
+      "reader": "8497e773",
+      "public_documents_accepted": 215,
+      "enriched_document_rejected": true
+    }
+  ],
+  "national_cases_reread": [
+    {
+      "city": "Milano",
+      "source_run_id": "20261020T000000Z",
+      "same_legacy_validated_block": true
+    },
+    {
+      "city": "Canazei",
+      "source_run_id": "20261020T000000Z",
+      "same_legacy_validated_block": true
+    },
+    {
+      "city": "Roma",
+      "source_run_id": "20261020T000000Z",
+      "same_legacy_validated_block": true
+    },
+    {
+      "city": "Napoli",
+      "source_run_id": "20261020T000000Z",
+      "same_legacy_validated_block": true
+    },
+    {
+      "city": "Palermo",
+      "source_run_id": "20261020T000000Z",
+      "same_legacy_validated_block": true
+    },
+    {
+      "city": "Cagliari",
+      "source_run_id": "20261020T000000Z",
+      "same_legacy_validated_block": true
+    }
+  ],
+  "national_legacy_checks_reused_from_identical_blocks": [
+    {
+      "reader": "2f02c8ba",
+      "accepted": [
+        {
+          "city": "Milano",
+          "hours": 12,
+          "days": 4
+        },
+        {
+          "city": "Canazei",
+          "hours": 12,
+          "days": 4
+        },
+        {
+          "city": "Roma",
+          "hours": 12,
+          "days": 4
+        },
+        {
+          "city": "Napoli",
+          "hours": 12,
+          "days": 4
+        },
+        {
+          "city": "Palermo",
+          "hours": 12,
+          "days": 4
+        },
+        {
+          "city": "Cagliari",
+          "hours": 12,
+          "days": 4
+        }
+      ]
+    },
+    {
+      "reader": "8497e773",
+      "accepted": [
+        {
+          "city": "Milano",
+          "hours": 12,
+          "days": 4
+        },
+        {
+          "city": "Canazei",
+          "hours": 12,
+          "days": 4
+        },
+        {
+          "city": "Roma",
+          "hours": 12,
+          "days": 4
+        },
+        {
+          "city": "Napoli",
+          "hours": 12,
+          "days": 4
+        },
+        {
+          "city": "Palermo",
+          "hours": 12,
+          "days": 4
+        },
+        {
+          "city": "Cagliari",
+          "hours": 12,
+          "days": 4
+        }
+      ]
+    }
+  ],
+  "android_cors": true,
+  "new_run_verification": "pending",
+  "network_actions": "GET only",
+  "manual_producer_executions": 0,
+  "manual_qa_executions": 0
+}

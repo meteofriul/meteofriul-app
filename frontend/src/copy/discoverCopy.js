@@ -57,7 +57,7 @@ export const DISCOVER_TYPE_LABELS = {
 export const DISCOVER_COPY = {
   it: {
     change: "Cambia",
-    changeLocationLabel: "Cambia localita",
+    changeLocationLabel: "Cambia località",
     languageLabel: "Cambia lingua IT/FUR",
     focus: "In evidenza",
     municipalitySectionTitle: "Comune del giorno",

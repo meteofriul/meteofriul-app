@@ -737,7 +737,16 @@ def _pcr_panel_corroborates_metadata_alert(
         return False
     if expected_zones != {zone for zone, level in levels.items() if level > 0}:
         return False
-    if any(level != expected_level for zone, level in levels.items() if zone in expected_zones):
+    zone_levels = alert.get("zone_levels")
+    if zone_levels is not None:
+        if not isinstance(zone_levels, dict) or set(zone_levels) != set(levels):
+            return False
+        expected = {zone: _LEVEL_VALUE.get(value) for zone, value in zone_levels.items()}
+        if expected != levels or max(levels.values()) != expected_level:
+            return False
+    elif alert.get("mixed_levels") or any(
+        level != expected_level for zone, level in levels.items() if zone in expected_zones
+    ):
         return False
     return _pcr_panel_matches_alert_window(panel, alert)
 
@@ -756,7 +765,7 @@ def _pcr_panel_document_url(
     return urls[0] if len(urls) == 1 else None
 
 
-STRUCTURED_CORROBORATION_REVISION_SCHEMA = "runtime-v2"
+STRUCTURED_CORROBORATION_REVISION_SCHEMA = "runtime-v3"
 
 
 def _legacy_structured_corroboration_revision_hash(
@@ -790,6 +799,7 @@ def _structured_corroboration_revision_hash(
     *,
     identity: tuple[int, int],
     pcr_revision: str,
+    schema: str = STRUCTURED_CORROBORATION_REVISION_SCHEMA,
 ) -> str:
     """Bind a structured two-source decision to its complete runtime meaning.
 
@@ -816,7 +826,8 @@ def _structured_corroboration_revision_hash(
     return hashlib.sha256(
         json.dumps(
             {
-                "schema": STRUCTURED_CORROBORATION_REVISION_SCHEMA,
+                "schema": schema,
+                **({"zone_levels": alert.get("zone_levels")} if schema == "runtime-v3" else {}),
                 "identity": [year, number],
                 "id": alert.get("id"),
                 "event_id": alert.get("event_id"),
@@ -1200,11 +1211,15 @@ def _persisted_structured_corroboration_kind(
 
     schema = str(corroboration.get("revision_hash_schema") or "").strip()
     try:
-        if schema == STRUCTURED_CORROBORATION_REVISION_SCHEMA:
+        if schema in (STRUCTURED_CORROBORATION_REVISION_SCHEMA, "runtime-v2"):
+            # v2 did not bind a zone map. Never accept an injected map under it.
+            if schema == "runtime-v2" and "zone_levels" in alert:
+                return None
             expected_revision_hash = _structured_corroboration_revision_hash(
                 alert,
                 identity=identity,
                 pcr_revision=pcr_revision,
+                schema=schema,
             )
             kind = "current"
         elif not schema:

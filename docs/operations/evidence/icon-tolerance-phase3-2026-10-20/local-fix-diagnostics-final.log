@@ -1,0 +1,15 @@
+test_errors_never_call_untrusted_str_and_log_only_controlled_message (test_operational_diagnostics.OperationalDiagnosticsTests.test_errors_never_call_untrusted_str_and_log_only_controlled_message) ... ok
+test_icon_field_checkpoint_reports_safe_inner_location_and_reason (test_operational_diagnostics.OperationalDiagnosticsTests.test_icon_field_checkpoint_reports_safe_inner_location_and_reason) ... ok
+test_icon_recovery_failures_keep_readable_controlled_reasons (test_operational_diagnostics.OperationalDiagnosticsTests.test_icon_recovery_failures_keep_readable_controlled_reasons) ... ok
+test_innermost_failed_stage_survives_outer_context_and_system_exit (test_operational_diagnostics.OperationalDiagnosticsTests.test_innermost_failed_stage_survives_outer_context_and_system_exit) ... ok
+test_logging_failure_does_not_change_success_or_replace_original_error (test_operational_diagnostics.OperationalDiagnosticsTests.test_logging_failure_does_not_change_success_or_replace_original_error) ... ok
+test_phase_records_success_and_resets_context (test_operational_diagnostics.OperationalDiagnosticsTests.test_phase_records_success_and_resets_context) ... ok
+test_safe_inner_cause_is_not_lost_when_publication_wraps_it (test_operational_diagnostics.OperationalDiagnosticsTests.test_safe_inner_cause_is_not_lost_when_publication_wraps_it) ... ok
+test_sensitive_unknown_fields_urls_absolute_paths_and_nested_data_are_dropped (test_operational_diagnostics.OperationalDiagnosticsTests.test_sensitive_unknown_fields_urls_absolute_paths_and_nested_data_are_dropped) ... ok
+test_tolerance_denominators_and_guard_reasons_survive_safe_logging (test_operational_diagnostics.OperationalDiagnosticsTests.test_tolerance_denominators_and_guard_reasons_survive_safe_logging) ... ok
+test_unknown_inner_run_does_not_erase_verified_outer_run_context (test_operational_diagnostics.OperationalDiagnosticsTests.test_unknown_inner_run_does_not_erase_verified_outer_run_context) ... ok
+
+----------------------------------------------------------------------
+Ran 10 tests in 0.177s
+
+OK

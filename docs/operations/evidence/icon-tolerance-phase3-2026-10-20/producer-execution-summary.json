@@ -1,0 +1,42 @@
+{
+  "metadata": {
+    "name": "meteofriul-icon-x26c6",
+    "creationTimestamp": "2026-10-20T06:00:45.240739Z"
+  },
+  "image": "europe-west1-docker.pkg.dev/meteo-friul/meteofriul/weather-worker@sha256:b8719b7f26c355115ded47e282e19f8011ff270e0d0107a831526879155ac2f2",
+  "status": {
+    "completionTime": "2026-10-20T06:03:42.916705Z",
+    "conditions": [
+      {
+        "lastTransitionTime": "2026-10-20T06:03:42.916705Z",
+        "message": "Task meteofriul-icon-x26c6-task0 failed with exit code: 1 and message: The container exited with an error.",
+        "reason": "NonZeroExitCode",
+        "status": "False",
+        "type": "Completed"
+      },
+      {
+        "lastTransitionTime": "2026-10-20T06:00:57.060427Z",
+        "message": "Provisioned imported containers.",
+        "status": "True",
+        "type": "ResourcesAvailable"
+      },
+      {
+        "lastTransitionTime": "2026-10-20T06:01:34.827187Z",
+        "message": "Started deployed execution in 37.76s.",
+        "status": "True",
+        "type": "Started"
+      },
+      {
+        "lastTransitionTime": "2026-10-20T06:00:56.956515Z",
+        "message": "Imported container image in 11.71s.",
+        "status": "True",
+        "type": "ContainerReady"
+      }
+    ],
+    "failedCount": 1,
+    "logUri": "https://console.cloud.google.com/logs/viewer?project=meteo-friul&advancedFilter=resource.type%3D%22cloud_run_job%22%0Aresource.labels.job_name%3D%22meteofriul-icon%22%0Aresource.labels.location%3D%22europe-west1%22%0Alabels.%22run.googleapis.com/execution_name%22%3D%22meteofriul-icon-x26c6%22",
+    "observedGeneration": 1,
+    "retriedCount": 1,
+    "startTime": "2026-10-20T06:01:00.432524Z"
+  }
+}

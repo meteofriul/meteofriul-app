@@ -1,0 +1,579 @@
+{
+  "entries": [
+    {
+      "timestamp": "2026-10-20T18:03:14.729257Z",
+      "severity": "ERROR"
+    },
+    {
+      "timestamp": "2026-10-20T18:03:08.483006Z",
+      "severity": "WARNING",
+      "textPayload": "Container called exit(1)."
+    },
+    {
+      "timestamp": "2026-10-20T18:03:08.399530Z",
+      "severity": "ERROR",
+      "textPayload": "Traceback (most recent call last):\n  File \"/app/experiments/weather_autonomy/cloud_worker.py\", line 569, in <module>\n    run(os.environ.get(\"WEATHER_PROVIDER\", os.environ.get(\"PILOT_PROVIDER\")))\n    ~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/app/experiments/weather_autonomy/cloud_worker.py\", line 48, in run\n    return _run(provider)\n  File \"/app/experiments/weather_autonomy/cloud_worker.py\", line 57, in _run\n    return _run_icon(state, data, now)\n  File \"/app/experiments/weather_autonomy/cloud_worker.py\", line 445, in _run_icon\n    return _finish_icon(_run_icon_result(state, data, now))\n  File \"/app/experiments/weather_autonomy/cloud_worker.py\", line 367, in _finish_icon\n    raise RuntimeError(\"ICON publication did not complete; inspect structured status\")\nRuntimeError: ICON publication did not complete; inspect structured status"
+    },
+    {
+      "timestamp": "2026-10-20T18:03:08.398014Z",
+      "severity": "ERROR",
+      "jsonPayload": {
+        "error_type": "RuntimeError",
+        "failure_file": "cloud_worker.py",
+        "elapsed_seconds": 1.311,
+        "failure_function": "_finish_icon",
+        "status": "failed",
+        "stage": "worker",
+        "error_summary": "exception details withheld; inspect the typed error and local source location",
+        "event": "phase_failed",
+        "timestamp": "2026-10-20T18:03:08.397+00:00",
+        "provider": "icon",
+        "failure_line": 367
+      }
+    },
+    {
+      "timestamp": "2026-10-20T18:03:08.397957Z",
+      "severity": "INFO",
+      "jsonPayload": {
+        "stage": "validation",
+        "failure_file": "snapshot_materializer.py",
+        "provider": "icon",
+        "event": "publication_result",
+        "failure_function": "_read_bounded",
+        "timestamp": "2026-10-20T18:03:08.397+00:00",
+        "failure_line": 80,
+        "job": "icon",
+        "status": "manual_review",
+        "error_type": "SnapshotMaterializationError",
+        "error_summary": "exception details withheld; inspect the typed error and local source location",
+        "retryable": false,
+        "reason_code": "verified_pipeline_invariant_failed"
+      }
+    },
+    {
+      "timestamp": "2026-10-20T18:03:07.087510Z",
+      "severity": "INFO",
+      "jsonPayload": {
+        "timestamp": "2026-10-20T18:03:07.086+00:00",
+        "stage": "worker",
+        "status": "started",
+        "provider": "icon",
+        "event": "phase_started"
+      }
+    },
+    {
+      "timestamp": "2026-10-20T18:02:41.263030Z",
+      "severity": "WARNING",
+      "textPayload": "Container called exit(1)."
+    },
+    {
+      "timestamp": "2026-10-20T18:02:41.138574Z",
+      "severity": "ERROR",
+      "textPayload": "Traceback (most recent call last):\n  File \"/app/experiments/weather_autonomy/cloud_worker.py\", line 569, in <module>\n    run(os.environ.get(\"WEATHER_PROVIDER\", os.environ.get(\"PILOT_PROVIDER\")))\n    ~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/app/experiments/weather_autonomy/cloud_worker.py\", line 48, in run\n    return _run(provider)\n  File \"/app/experiments/weather_autonomy/cloud_worker.py\", line 57, in _run\n    return _run_icon(state, data, now)\n  File \"/app/experiments/weather_autonomy/cloud_worker.py\", line 445, in _run_icon\n    return _finish_icon(_run_icon_result(state, data, now))\n  File \"/app/experiments/weather_autonomy/cloud_worker.py\", line 367, in _finish_icon\n    raise RuntimeError(\"ICON publication did not complete; inspect structured status\")\nRuntimeError: ICON publication did not complete; inspect structured status"
+    },
+    {
+      "timestamp": "2026-10-20T18:02:41.136972Z",
+      "severity": "ERROR",
+      "jsonPayload": {
+        "event": "phase_failed",
+        "error_type": "RuntimeError",
+        "failure_line": 367,
+        "error_summary": "exception details withheld; inspect the typed error and local source location",
+        "timestamp": "2026-10-20T18:02:41.136+00:00",
+        "status": "failed",
+        "stage": "worker",
+        "failure_function": "_finish_icon",
+        "provider": "icon",
+        "failure_file": "cloud_worker.py",
+        "elapsed_seconds": 1.293
+      }
+    },
+    {
+      "timestamp": "2026-10-20T18:02:41.136953Z",
+      "severity": "INFO",
+      "jsonPayload": {
+        "stage": "validation",
+        "failure_file": "snapshot_materializer.py",
+        "event": "publication_result",
+        "reason_code": "verified_pipeline_invariant_failed",
+        "error_type": "SnapshotMaterializationError",
+        "provider": "icon",
+        "failure_line": 80,
+        "job": "icon",
+        "retryable": false,
+        "failure_function": "_read_bounded",
+        "timestamp": "2026-10-20T18:02:41.136+00:00",
+        "error_summary": "exception details withheld; inspect the typed error and local source location",
+        "status": "manual_review"
+      }
+    },
+    {
+      "timestamp": "2026-10-20T18:02:39.844979Z",
+      "severity": "INFO",
+      "jsonPayload": {
+        "timestamp": "2026-10-20T18:02:39.843+00:00",
+        "provider": "icon",
+        "status": "started",
+        "event": "phase_started",
+        "stage": "worker"
+      }
+    },
+    {
+      "timestamp": "2026-10-20T18:02:16.831159Z",
+      "severity": "WARNING",
+      "textPayload": "Container called exit(1)."
+    },
+    {
+      "timestamp": "2026-10-20T18:02:16.695059Z",
+      "severity": "ERROR",
+      "textPayload": "Traceback (most recent call last):\n  File \"/app/experiments/weather_autonomy/cloud_worker.py\", line 569, in <module>\n    run(os.environ.get(\"WEATHER_PROVIDER\", os.environ.get(\"PILOT_PROVIDER\")))\n    ~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/app/experiments/weather_autonomy/cloud_worker.py\", line 48, in run\n    return _run(provider)\n  File \"/app/experiments/weather_autonomy/cloud_worker.py\", line 57, in _run\n    return _run_icon(state, data, now)\n  File \"/app/experiments/weather_autonomy/cloud_worker.py\", line 445, in _run_icon\n    return _finish_icon(_run_icon_result(state, data, now))\n  File \"/app/experiments/weather_autonomy/cloud_worker.py\", line 367, in _finish_icon\n    raise RuntimeError(\"ICON publication did not complete; inspect structured status\")\nRuntimeError: ICON publication did not complete; inspect structured status"
+    },
+    {
+      "timestamp": "2026-10-20T18:02:16.693718Z",
+      "severity": "ERROR",
+      "jsonPayload": {
+        "failure_line": 367,
+        "error_summary": "exception details withheld; inspect the typed error and local source location",
+        "status": "failed",
+        "timestamp": "2026-10-20T18:02:16.692+00:00",
+        "failure_function": "_finish_icon",
+        "error_type": "RuntimeError",
+        "event": "phase_failed",
+        "provider": "icon",
+        "failure_file": "cloud_worker.py",
+        "elapsed_seconds": 83.187,
+        "stage": "worker"
+      }
+    },
+    {
+      "timestamp": "2026-10-20T18:02:16.693697Z",
+      "severity": "INFO",
+      "jsonPayload": {
+        "event": "publication_result",
+        "error_summary": "exception details withheld; inspect the typed error and local source location",
+        "error_type": "SnapshotMaterializationError",
+        "reason_code": "verified_pipeline_invariant_failed",
+        "provider": "icon",
+        "failure_file": "snapshot_materializer.py",
+        "retryable": false,
+        "stage": "validation",
+        "status": "manual_review",
+        "failure_line": 80,
+        "failure_function": "_read_bounded",
+        "job": "icon",
+        "timestamp": "2026-10-20T18:02:16.692+00:00"
+      }
+    },
+    {
+      "timestamp": "2026-10-20T18:02:16.620382Z",
+      "severity": "ERROR",
+      "jsonPayload": {
+        "status": "failed",
+        "failure_function": "_read_bounded",
+        "failure_file": "snapshot_materializer.py",
+        "timestamp": "2026-10-20T18:02:16.619+00:00",
+        "elapsed_seconds": 0.004,
+        "provider": "icon",
+        "event": "phase_failed",
+        "failure_line": 80,
+        "stage": "validation",
+        "error_summary": "exception details withheld; inspect the typed error and local source location",
+        "error_type": "SnapshotMaterializationError"
+      }
+    },
+    {
+      "timestamp": "2026-10-20T18:02:16.616892Z",
+      "severity": "INFO",
+      "jsonPayload": {
+        "event": "phase_started",
+        "provider": "icon",
+        "timestamp": "2026-10-20T18:02:16.615+00:00",
+        "status": "started",
+        "stage": "validation"
+      }
+    },
+    {
+      "timestamp": "2026-10-20T18:02:16.616876Z",
+      "severity": "INFO",
+      "jsonPayload": {
+        "provider": "icon",
+        "stage": "acquisition",
+        "status": "completed",
+        "elapsed_seconds": 56.153,
+        "timestamp": "2026-10-20T18:02:16.615+00:00",
+        "event": "phase_completed"
+      }
+    },
+    {
+      "timestamp": "2026-10-20T18:02:16.564443Z",
+      "textPayload": "}"
+    },
+    {
+      "timestamp": "2026-10-20T18:02:16.564437Z",
+      "textPayload": "  }"
+    },
+    {
+      "timestamp": "2026-10-20T18:02:16.564432Z",
+      "textPayload": "    \"SNOW_GSP:positive_within_encoding_resolution\": 9"
+    },
+    {
+      "timestamp": "2026-10-20T18:02:16.564427Z",
+      "textPayload": "    \"TOT_PREC:negative_within_encoding_resolution\": 70,"
+    },
+    {
+      "timestamp": "2026-10-20T18:02:16.564423Z",
+      "textPayload": "    \"RAIN_GSP:negative_within_encoding_resolution\": 59,"
+    },
+    {
+      "timestamp": "2026-10-20T18:02:16.564418Z",
+      "textPayload": "    \"RAIN_CON:negative_within_encoding_resolution\": 6,"
+    },
+    {
+      "timestamp": "2026-10-20T18:02:16.564413Z",
+      "textPayload": "    \"invalid_T_Td_for_RH_no_clipping\": 43,"
+    },
+    {
+      "timestamp": "2026-10-20T18:02:16.564408Z",
+      "textPayload": "    \"RAIN_CON:positive_within_encoding_resolution\": 26,"
+    },
+    {
+      "timestamp": "2026-10-20T18:02:16.564404Z",
+      "textPayload": "    \"TOT_PREC:positive_within_encoding_resolution\": 993,"
+    },
+    {
+      "timestamp": "2026-10-20T18:02:16.564399Z",
+      "textPayload": "    \"RAIN_GSP:positive_within_encoding_resolution\": 973,"
+    },
+    {
+      "timestamp": "2026-10-20T18:02:16.564394Z",
+      "textPayload": "    \"GRAU_GSP:positive_within_encoding_resolution\": 12456,"
+    },
+    {
+      "timestamp": "2026-10-20T18:02:16.564388Z",
+      "textPayload": "    \"gust_previous_hour_unavailable\": 215,"
+    },
+    {
+      "timestamp": "2026-10-20T18:02:16.564383Z",
+      "textPayload": "    \"TOT_PREC:no_previous_interval\": 215,"
+    },
+    {
+      "timestamp": "2026-10-20T18:02:16.564379Z",
+      "textPayload": "    \"SNOW_GSP:no_previous_interval\": 215,"
+    },
+    {
+      "timestamp": "2026-10-20T18:02:16.564374Z",
+      "textPayload": "    \"SNOW_CON:no_previous_interval\": 215,"
+    },
+    {
+      "timestamp": "2026-10-20T18:02:16.564369Z",
+      "textPayload": "    \"RAIN_GSP:no_previous_interval\": 215,"
+    },
+    {
+      "timestamp": "2026-10-20T18:02:16.564364Z",
+      "textPayload": "    \"RAIN_CON:no_previous_interval\": 215,"
+    },
+    {
+      "timestamp": "2026-10-20T18:02:16.564360Z",
+      "textPayload": "    \"GRAU_GSP:no_previous_interval\": 215,"
+    },
+    {
+      "timestamp": "2026-10-20T18:02:16.564354Z",
+      "textPayload": "  \"quality_flag_counts\": {"
+    },
+    {
+      "timestamp": "2026-10-20T18:02:16.564349Z",
+      "textPayload": "  },"
+    },
+    {
+      "timestamp": "2026-10-20T18:02:16.564345Z",
+      "textPayload": "    \"usable\": true"
+    },
+    {
+      "timestamp": "2026-10-20T18:02:16.564340Z",
+      "textPayload": "    \"reason\": \"complete_window_from_fresh_run\","
+    },
+    {
+      "timestamp": "2026-10-20T18:02:16.564336Z",
+      "textPayload": "    \"run_age_hours\": 6.036173879166667,"
+    },
+    {
+      "timestamp": "2026-10-20T18:02:16.564331Z",
+      "textPayload": "    \"coverage_hours\": 65.96382612083333,"
+    },
+    {
+      "timestamp": "2026-10-20T18:02:16.564326Z",
+      "textPayload": "    \"status\": \"fresh\","
+    },
+    {
+      "timestamp": "2026-10-20T18:02:16.564321Z",
+      "textPayload": "  \"validation\": {"
+    },
+    {
+      "timestamp": "2026-10-20T18:02:16.564317Z",
+      "textPayload": "  \"payload_gzip_bytes\": 1761951,"
+    },
+    {
+      "timestamp": "2026-10-20T18:02:16.564310Z",
+      "textPayload": "  \"payload_bytes\": 34601901,"
+    },
+    {
+      "timestamp": "2026-10-20T18:02:16.564305Z",
+      "textPayload": "  },"
+    },
+    {
+      "timestamp": "2026-10-20T18:02:16.564300Z",
+      "textPayload": "    \"final_peak_working_set_bytes\": 318066688"
+    },
+    {
+      "timestamp": "2026-10-20T18:02:16.564295Z",
+      "textPayload": "    \"total_including_serialization_and_artifact_write_seconds\": 55.97166837900001,"
+    },
+    {
+      "timestamp": "2026-10-20T18:02:16.564290Z",
+      "textPayload": "    \"size_scope\": \"Payload before adding size metrics; exact artifact sizes are in report\","
+    },
+    {
+      "timestamp": "2026-10-20T18:02:16.564285Z",
+      "textPayload": "    \"gzip_bytes\": 1761877,"
+    },
+    {
+      "timestamp": "2026-10-20T18:02:16.564281Z",
+      "textPayload": "    \"json_bytes\": 34601772,"
+    },
+    {
+      "timestamp": "2026-10-20T18:02:16.564276Z",
+      "textPayload": "    \"total_seconds\": 52.38263148,"
+    },
+    {
+      "timestamp": "2026-10-20T18:02:16.564271Z",
+      "textPayload": "    \"execution_mode\": \"live_integrated\","
+    },
+    {
+      "timestamp": "2026-10-20T18:02:16.564267Z",
+      "textPayload": "    \"derive_seconds\": 2.7532030710000015,"
+    },
+    {
+      "timestamp": "2026-10-20T18:02:16.564262Z",
+      "textPayload": "    \"peak_working_set_bytes\": 206626816,"
+    },
+    {
+      "timestamp": "2026-10-20T18:02:16.564256Z",
+      "textPayload": "    \"acquisition_seconds\": 49.411102091,"
+    },
+    {
+      "timestamp": "2026-10-20T18:02:16.564251Z",
+      "textPayload": "    \"duplicate_decoded_messages\": 0,"
+    },
+    {
+      "timestamp": "2026-10-20T18:02:16.564235Z",
+      "textPayload": "    \"unique_decoded_messages\": 1022,"
+    },
+    {
+      "timestamp": "2026-10-20T18:02:16.564230Z",
+      "textPayload": "    \"grid_mapping_builds\": 1,"
+    },
+    {
+      "timestamp": "2026-10-20T18:02:16.564225Z",
+      "textPayload": "    \"mapping_seconds\": 0.02214479100000233,"
+    },
+    {
+      "timestamp": "2026-10-20T18:02:16.564220Z",
+      "textPayload": "    ],"
+    },
+    {
+      "timestamp": "2026-10-20T18:02:16.564215Z",
+      "textPayload": "      \"VMAX_10M\""
+    },
+    {
+      "timestamp": "2026-10-20T18:02:16.564210Z",
+      "textPayload": "      \"GRAU_GSP\","
+    },
+    {
+      "timestamp": "2026-10-20T18:02:16.564206Z",
+      "textPayload": "      \"SNOW_GSP\","
+    },
+    {
+      "timestamp": "2026-10-20T18:02:16.564201Z",
+      "textPayload": "      \"SNOW_CON\","
+    },
+    {
+      "timestamp": "2026-10-20T18:02:16.564197Z",
+      "textPayload": "      \"RAIN_GSP\","
+    },
+    {
+      "timestamp": "2026-10-20T18:02:16.564192Z",
+      "textPayload": "      \"RAIN_CON\","
+    },
+    {
+      "timestamp": "2026-10-20T18:02:16.564188Z",
+      "textPayload": "      \"WW\","
+    },
+    {
+      "timestamp": "2026-10-20T18:02:16.564183Z",
+      "textPayload": "      \"TOT_PREC\","
+    },
+    {
+      "timestamp": "2026-10-20T18:02:16.564178Z",
+      "textPayload": "      \"PMSL\","
+    },
+    {
+      "timestamp": "2026-10-20T18:02:16.564174Z",
+      "textPayload": "      \"CLCT\","
+    },
+    {
+      "timestamp": "2026-10-20T18:02:16.564170Z",
+      "textPayload": "      \"V_10M\","
+    },
+    {
+      "timestamp": "2026-10-20T18:02:16.564165Z",
+      "textPayload": "      \"U_10M\","
+    },
+    {
+      "timestamp": "2026-10-20T18:02:16.564161Z",
+      "textPayload": "      \"TD_2M\","
+    },
+    {
+      "timestamp": "2026-10-20T18:02:16.564157Z",
+      "textPayload": "      \"T_2M\","
+    },
+    {
+      "timestamp": "2026-10-20T18:02:16.564152Z",
+      "textPayload": "    \"newly_acquired_fields\": ["
+    },
+    {
+      "timestamp": "2026-10-20T18:02:16.564147Z",
+      "textPayload": "    \"resumed_fields\": [],"
+    },
+    {
+      "timestamp": "2026-10-20T18:02:16.564143Z",
+      "textPayload": "    \"source_field_decode_seconds\": 10.33936537299995,"
+    },
+    {
+      "timestamp": "2026-10-20T18:02:16.564139Z",
+      "textPayload": "    \"source_field_download_seconds\": 24.543696767999442,"
+    },
+    {
+      "timestamp": "2026-10-20T18:02:16.564134Z",
+      "textPayload": "    \"source_field_downloaded_bytes\": 1176976228,"
+    },
+    {
+      "timestamp": "2026-10-20T18:02:16.564129Z",
+      "textPayload": "    \"current_execution_metrics_scope\": \"This invocation, including discovery listings; resumed field bodies are not counted again.\","
+    },
+    {
+      "timestamp": "2026-10-20T18:02:16.564124Z",
+      "textPayload": "    \"decode_seconds\": 10.33936537299995,"
+    },
+    {
+      "timestamp": "2026-10-20T18:02:16.564119Z",
+      "textPayload": "    \"download_seconds\": 25.056355722999434,"
+    },
+    {
+      "timestamp": "2026-10-20T18:02:16.564115Z",
+      "textPayload": "    \"http_get_requests\": 30,"
+    },
+    {
+      "timestamp": "2026-10-20T18:02:16.564110Z",
+      "textPayload": "    \"downloaded_bytes\": 1176989740,"
+    },
+    {
+      "timestamp": "2026-10-20T18:02:16.564104Z",
+      "textPayload": "  \"metrics\": {"
+    },
+    {
+      "timestamp": "2026-10-20T18:02:16.564099Z",
+      "textPayload": "  \"run_utc\": \"2026-10-20T12:00:00Z\","
+    },
+    {
+      "timestamp": "2026-10-20T18:02:16.564093Z",
+      "textPayload": "  \"execution_mode\": \"live_integrated\","
+    },
+    {
+      "timestamp": "2026-10-20T18:02:16.564072Z",
+      "textPayload": "{"
+    },
+    {
+      "timestamp": "2026-10-20T18:02:09.897360Z",
+      "textPayload": "VMAX_10M: 73 messages, 84.567 MB, download 1.52s, decode 0.67s"
+    },
+    {
+      "timestamp": "2026-10-20T18:02:07.287194Z",
+      "textPayload": "GRAU_GSP: 73 messages, 83.409 MB, download 1.53s, decode 0.68s"
+    },
+    {
+      "timestamp": "2026-10-20T18:02:04.647070Z",
+      "textPayload": "SNOW_GSP: 73 messages, 83.409 MB, download 1.52s, decode 0.76s"
+    },
+    {
+      "timestamp": "2026-10-20T18:02:01.968162Z",
+      "textPayload": "SNOW_CON: 73 messages, 83.409 MB, download 1.86s, decode 0.68s"
+    },
+    {
+      "timestamp": "2026-10-20T18:01:59.063024Z",
+      "textPayload": "RAIN_GSP: 73 messages, 83.409 MB, download 1.63s, decode 0.70s"
+    },
+    {
+      "timestamp": "2026-10-20T18:01:56.290238Z",
+      "textPayload": "RAIN_CON: 73 messages, 83.409 MB, download 1.77s, decode 0.67s"
+    },
+    {
+      "timestamp": "2026-10-20T18:01:53.475478Z",
+      "textPayload": "WW: 73 messages, 84.565 MB, download 2.16s, decode 0.58s"
+    },
+    {
+      "timestamp": "2026-10-20T18:01:50.365093Z",
+      "textPayload": "TOT_PREC: 73 messages, 83.409 MB, download 2.18s, decode 0.72s"
+    },
+    {
+      "timestamp": "2026-10-20T18:01:47.026426Z",
+      "textPayload": "PMSL: 73 messages, 84.565 MB, download 2.46s, decode 0.62s"
+    },
+    {
+      "timestamp": "2026-10-20T18:01:43.528068Z",
+      "textPayload": "CLCT: 73 messages, 84.565 MB, download 1.61s, decode 0.66s"
+    },
+    {
+      "timestamp": "2026-10-20T18:01:40.837438Z",
+      "textPayload": "V_10M: 73 messages, 84.565 MB, download 1.56s, decode 0.72s"
+    },
+    {
+      "timestamp": "2026-10-20T18:01:38.076684Z",
+      "textPayload": "U_10M: 73 messages, 84.565 MB, download 1.31s, decode 0.71s"
+    },
+    {
+      "timestamp": "2026-10-20T18:01:35.597362Z",
+      "textPayload": "TD_2M: 73 messages, 84.565 MB, download 1.36s, decode 0.77s"
+    },
+    {
+      "timestamp": "2026-10-20T18:01:32.904435Z",
+      "textPayload": "T_2M: 73 messages, 84.565 MB, download 2.07s, decode 1.39s"
+    },
+    {
+      "timestamp": "2026-10-20T18:01:28.961922Z",
+      "textPayload": "Integrated run 2026102012: 14 fields, 73 times, 215 towns, budget 1310720000 bytes"
+    },
+    {
+      "timestamp": "2026-10-20T18:01:20.464066Z",
+      "severity": "INFO",
+      "jsonPayload": {
+        "status": "started",
+        "timestamp": "2026-10-20T18:01:20.462+00:00",
+        "stage": "acquisition",
+        "event": "phase_started",
+        "provider": "icon"
+      }
+    },
+    {
+      "timestamp": "2026-10-20T18:00:53.507674Z",
+      "severity": "INFO",
+      "jsonPayload": {
+        "event": "phase_started",
+        "timestamp": "2026-10-20T18:00:53.505+00:00",
+        "stage": "worker",
+        "status": "started",
+        "provider": "icon"
+      }
+    }
+  ],
+  "more": false
+}

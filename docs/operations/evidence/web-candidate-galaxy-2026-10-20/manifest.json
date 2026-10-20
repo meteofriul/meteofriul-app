@@ -1,0 +1,163 @@
+{
+  "created_at": "2026-10-20T15:53:41.059973+02:00",
+  "source_frontend": "bf304281aa9851369687c2dd646b8bd473c0b23d",
+  "browser": "Brave 1.97.59 on real Galaxy A52 Android 14",
+  "files": [
+    {
+      "path": "03-weather-light-it.png",
+      "bytes": 505676,
+      "sha256": "68305b8d610127cd1c85462ee2146f19b92f440de51e915d0daa2f76328ae832"
+    },
+    {
+      "path": "05-weather-selected-light-it.json",
+      "bytes": 45425,
+      "sha256": "81098d69ac8f019cbe2e2f63b2bb3fcbd5204919099874ef6c638c7748353a45"
+    },
+    {
+      "path": "05-weather-selected-light-it.png",
+      "bytes": 377420,
+      "sha256": "f9f4b65d271964f01d60ca6b6a17fa220629a1cffbbc11fa68e694d0d939b4bc"
+    },
+    {
+      "path": "06-weather-dark-it.json",
+      "bytes": 43240,
+      "sha256": "00a186adfed2e6f0238651fa920f594be1ff0b2b7660e8528c879b83640db5e7"
+    },
+    {
+      "path": "06-weather-dark-it.png",
+      "bytes": 374955,
+      "sha256": "16bce69ebd19770236564cc6c6ac7aa064cc3301ee83fcda75164e38d293ed5b"
+    },
+    {
+      "path": "08-weather-selected-dark-fur.json",
+      "bytes": 44852,
+      "sha256": "0ea62b2c02ce1685cf8672274bcd567f9efea3c66b9a2633d69111aba964f7da"
+    },
+    {
+      "path": "08-weather-selected-dark-fur.png",
+      "bytes": 298510,
+      "sha256": "9afe2d33e10dbbfa11b4978f477cde8ed61385753329759de752d38b0676a19a"
+    },
+    {
+      "path": "09-after-android-back.json",
+      "bytes": 43766,
+      "sha256": "0cae50c3f9b8d88098de2496586306f11bd9b668183f66029d40f13b80682bd2"
+    },
+    {
+      "path": "09-after-android-back.png",
+      "bytes": 367468,
+      "sha256": "c7f7b8e0ebb46f73f7aacbf273e7432d6361dd907ffa56d082fe1bbde8f74d9b"
+    },
+    {
+      "path": "11-events-fur.json",
+      "bytes": 15470,
+      "sha256": "3aa9c0b0882ee30edb415fea980fd94171bce7f9d7b55ccc9432bf3fc2c51ba5"
+    },
+    {
+      "path": "11-events-fur.png",
+      "bytes": 832216,
+      "sha256": "fc1637ddc618a7444e4d77b541f2b9ad2cac385c4008d96eb7e40718c5a60f10"
+    },
+    {
+      "path": "12-event-detail-fur.json",
+      "bytes": 17995,
+      "sha256": "690316094c1ecbf22ceb15ddd3aa605b1d5a3491bc12aad089f5b23ed12a4a3d"
+    },
+    {
+      "path": "12-event-detail-fur.png",
+      "bytes": 1067074,
+      "sha256": "b57c02f5dc2b53443f53d251cd42d2417a8c1e1cc2525ef09c90490e64b9c4f7"
+    },
+    {
+      "path": "13-weather-light-fur-reload.json",
+      "bytes": 43380,
+      "sha256": "c169b07ba95a61ea10c3d895b448d7ffc7f9e2431d2dbff0290fe8f99fa374c3"
+    },
+    {
+      "path": "13-weather-light-fur-reload.png",
+      "bytes": 505833,
+      "sha256": "59c9d99035288e18fee999731ead244f67afddaad1dd7eb7def5823cfeba5b42"
+    },
+    {
+      "path": "14-national-search-keyboard.json",
+      "bytes": 16934,
+      "sha256": "ee3c24ccdffa61ad99f3383735c8498d6fbe2761a14fa7b2ba3066465acf7fd1"
+    },
+    {
+      "path": "14-national-search-keyboard.png",
+      "bytes": 275382,
+      "sha256": "6231fc5984ca988e10d537b7646ac966d94c14880c5dd84ffa10fab40c55ef48"
+    },
+    {
+      "path": "15-national-search-unavailable.json",
+      "bytes": 16935,
+      "sha256": "4ab56c37f7bc52363c2d7f4d987533e83a9f5bc336cacb720ad0887350e96df0"
+    },
+    {
+      "path": "15-national-search-unavailable.png",
+      "bytes": 452145,
+      "sha256": "f1168e9d64eaa3e53b5893cbb68b53b51ef153f5df357cac1fa2b937a8af482b"
+    },
+    {
+      "path": "16-pordenone-light-it.json",
+      "bytes": 43554,
+      "sha256": "cc9e8976af3d5ca7ed3ded641ceb48d8a9f76c5efc0b9f92a16e4ce1e24a01ab"
+    },
+    {
+      "path": "16-pordenone-light-it.png",
+      "bytes": 515330,
+      "sha256": "efdb62b0c6ad52fdf1570ed34971023288b64a453c6ee3339010c692f1620177"
+    },
+    {
+      "path": "17-scroll-environment.json",
+      "bytes": 43516,
+      "sha256": "6fe8f9f96a5275fce8f5dec3590b6593df2009c76800a762acc1b9aa1bc5224a"
+    },
+    {
+      "path": "17-scroll-environment.png",
+      "bytes": 468021,
+      "sha256": "fdd85867c4b24b5433241eacf72fdbe754b9b5b9575e61685d1febc528148d2c"
+    },
+    {
+      "path": "18-final-pordenone-reload.json",
+      "bytes": 43554,
+      "sha256": "cc9e8976af3d5ca7ed3ded641ceb48d8a9f76c5efc0b9f92a16e4ce1e24a01ab"
+    },
+    {
+      "path": "18-final-pordenone-reload.png",
+      "bytes": 516384,
+      "sha256": "f79ce17b46b2be91d48be82a786541164f2e8be968291871b1c4de5768edf246"
+    },
+    {
+      "path": "after-refresh.json",
+      "bytes": 4967,
+      "sha256": "abff614a7a6ffa6cfded29ccc7c28a81341ca862a866b4310cfd10d53b3aebf3"
+    },
+    {
+      "path": "before-refresh.json",
+      "bytes": 1753,
+      "sha256": "db14c60355c305a669ad9a9b4787006be9e0fde72f854dd9041a9b0b7371d826"
+    },
+    {
+      "path": "network-events.json",
+      "bytes": 142782,
+      "sha256": "f8564cef0d735dabfcd10418b736a77d0f57f6067bd98c47fcfb778af77378e0"
+    },
+    {
+      "path": "packages-after.json",
+      "bytes": 803,
+      "sha256": "73ee6a5959984af43d5afbd9a10d23950f2895d0aab4995dd60d958fbb01dfe6"
+    },
+    {
+      "path": "packages-before.json",
+      "bytes": 609,
+      "sha256": "e30d869467b35d3b2918ceb16f30571f51fab9aa7ecfba623e3b16d21b3bc4b5"
+    },
+    {
+      "path": "verification-summary.json",
+      "bytes": 2699,
+      "sha256": "6074201c3440c038d3b6996f6c04fe356dd0ece75ac92864f2a970fb00a55ca7"
+    }
+  ],
+  "text_serialization": "JSON UTF-8 LF for Git; values unchanged. Original capture bytes remain in the corresponding local release-artifacts archive."
+}

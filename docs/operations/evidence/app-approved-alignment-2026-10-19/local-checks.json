@@ -1,0 +1,328 @@
+{
+  "date": "2026-10-19",
+  "scope": "local preparation only",
+  "base_main": "6bd4216964ad81f7dcd20d478cde7b0db5ba442c",
+  "source_test": "e7c27181296bfed82f4c44f2d527d773963248b5",
+  "candidate": "bbef86141066c2e34abf8ac7ebf838909ef36c20",
+  "branch": "codex/forecast-themes-main",
+  "commits": [
+    {
+      "group": "forecast-themes",
+      "commit": "3b120ba678e751fd0b88401979342519b5a38d54",
+      "files": 15
+    },
+    {
+      "group": "copy-back",
+      "commit": "2ec1a4b7496e6d17907caeacb7a06dac9a39ea8e",
+      "files": 18
+    },
+    {
+      "group": "community",
+      "commit": "c2b80e1cd7b40c26faa5c59d5595b22ed3e425d1",
+      "files": 10
+    },
+    {
+      "group": "fvg-refresh",
+      "commit": "bbef86141066c2e34abf8ac7ebf838909ef36c20",
+      "files": 4
+    }
+  ],
+  "runtime": {
+    "node": "v22.17.1",
+    "vitest": "4.1.12",
+    "configLoader": "native",
+    "maxWorkers": 1
+  },
+  "checks": {
+    "tests": {
+      "files": 46,
+      "tests": 808,
+      "status": "passed",
+      "workers": 1,
+      "configLoader": "native"
+    },
+    "eslint": "passed",
+    "diff": "passed",
+    "canonicalCleanliness": "passed"
+  },
+  "first_pass": {
+    "passed": 806,
+    "failed": 1,
+    "total": 807,
+    "reason": "obsolete confirmation text and button selector in existing test"
+  },
+  "rerun": {
+    "file": "src/features/live/CommunityReportForm.submitLocation.test.jsx",
+    "passed": 6,
+    "failed": 0,
+    "runtime_changes": false
+  },
+  "test_files": [
+    {
+      "path": "src/app/App.manualRefreshEpisode.test.jsx",
+      "passed": 8,
+      "status": "passed"
+    },
+    {
+      "path": "src/app/AppRoutes.deferredCamsLifecycle.test.jsx",
+      "passed": 2,
+      "status": "passed"
+    },
+    {
+      "path": "src/app/AppRoutes.refreshNavigation.test.jsx",
+      "passed": 11,
+      "status": "passed"
+    },
+    {
+      "path": "src/app/AppRoutes.test.jsx",
+      "passed": 27,
+      "status": "passed"
+    },
+    {
+      "path": "src/app/AppRoutes.weatherSwipe.test.jsx",
+      "passed": 14,
+      "status": "passed"
+    },
+    {
+      "path": "src/app/usePilotBackHandler.test.js",
+      "passed": 2,
+      "status": "passed"
+    },
+    {
+      "path": "src/copy/appShellCopy.test.js",
+      "passed": 3,
+      "status": "passed"
+    },
+    {
+      "path": "src/copy/bulletinViewCopy.test.js",
+      "passed": 5,
+      "status": "passed"
+    },
+    {
+      "path": "src/copy/discoverCopy.test.js",
+      "passed": 5,
+      "status": "passed"
+    },
+    {
+      "path": "src/copy/eventsViewCopy.test.js",
+      "passed": 6,
+      "status": "passed"
+    },
+    {
+      "path": "src/copy/liveViewCopy.test.js",
+      "passed": 5,
+      "status": "passed"
+    },
+    {
+      "path": "src/copy/locationSelectorCopy.test.js",
+      "passed": 4,
+      "status": "passed"
+    },
+    {
+      "path": "src/features/bulletin/bulletinCss.test.js",
+      "passed": 3,
+      "status": "passed"
+    },
+    {
+      "path": "src/features/bulletin/BulletinView.test.jsx",
+      "passed": 7,
+      "status": "passed"
+    },
+    {
+      "path": "src/features/events/eventsViewModel.test.js",
+      "passed": 36,
+      "status": "passed"
+    },
+    {
+      "path": "src/features/live/CommunityReportForm.directEdit.test.jsx",
+      "passed": 15,
+      "status": "passed"
+    },
+    {
+      "path": "src/features/live/CommunityReportForm.locationCopy.test.jsx",
+      "passed": 14,
+      "status": "passed"
+    },
+    {
+      "path": "src/features/live/CommunityReportForm.submitLocation.test.jsx",
+      "passed": 6,
+      "status": "passed"
+    },
+    {
+      "path": "src/features/live/communityReportPreview.test.js",
+      "passed": 12,
+      "status": "passed"
+    },
+    {
+      "path": "src/features/live/liveCss.test.js",
+      "passed": 58,
+      "status": "passed"
+    },
+    {
+      "path": "src/features/live/liveReportIcons.test.jsx",
+      "passed": 4,
+      "status": "passed"
+    },
+    {
+      "path": "src/features/live/liveReportSubmission.test.js",
+      "passed": 3,
+      "status": "passed"
+    },
+    {
+      "path": "src/features/live/LiveView.pilotCompactLayout.test.jsx",
+      "passed": 3,
+      "status": "passed"
+    },
+    {
+      "path": "src/features/live/LiveView.webcamCarousel.test.jsx",
+      "passed": 27,
+      "status": "passed"
+    },
+    {
+      "path": "src/features/live/liveViewModel.pilotMunicipalities.test.js",
+      "passed": 7,
+      "status": "passed"
+    },
+    {
+      "path": "src/features/settings/SettingsPilotDiagnostics.test.jsx",
+      "passed": 7,
+      "status": "passed"
+    },
+    {
+      "path": "src/features/settings/SettingsPilotInteractions.test.jsx",
+      "passed": 9,
+      "status": "passed"
+    },
+    {
+      "path": "src/features/settings/SettingsView.notificationLocationIndependence.test.jsx",
+      "passed": 4,
+      "status": "passed"
+    },
+    {
+      "path": "src/features/settings/SettingsView.test.jsx",
+      "passed": 50,
+      "status": "passed"
+    },
+    {
+      "path": "src/features/weather/weatherForecastCss.test.js",
+      "passed": 16,
+      "status": "passed"
+    },
+    {
+      "path": "src/features/weather/WeatherForecastView.pilotLayout.test.jsx",
+      "passed": 6,
+      "status": "passed"
+    },
+    {
+      "path": "src/features/weather/WeatherForecastView.test.jsx",
+      "passed": 11,
+      "status": "passed"
+    },
+    {
+      "path": "src/features/weather/weatherForecastViewModel.test.js",
+      "passed": 19,
+      "status": "passed"
+    },
+    {
+      "path": "src/features/weather/WeatherHourlyForecast.test.jsx",
+      "passed": 3,
+      "status": "passed"
+    },
+    {
+      "path": "src/features/weather/weatherNavigationCss.test.js",
+      "passed": 3,
+      "status": "passed"
+    },
+    {
+      "path": "src/services/eventsApi.test.js",
+      "passed": 21,
+      "status": "passed"
+    },
+    {
+      "path": "src/services/eventsCache.test.js",
+      "passed": 9,
+      "status": "passed"
+    },
+    {
+      "path": "src/services/eventsLocalEndpoint.test.js",
+      "passed": 2,
+      "status": "passed"
+    },
+    {
+      "path": "src/services/localWeatherV1Adapter.test.js",
+      "passed": 38,
+      "status": "passed"
+    },
+    {
+      "path": "src/services/localWeatherV1Runtime.camsRecovery.test.js",
+      "passed": 6,
+      "status": "passed"
+    },
+    {
+      "path": "src/services/localWeatherV1Runtime.generation.test.js",
+      "passed": 5,
+      "status": "passed"
+    },
+    {
+      "path": "src/services/localWeatherV1Runtime.revocation.test.js",
+      "passed": 15,
+      "status": "passed"
+    },
+    {
+      "path": "src/services/localWeatherV1Runtime.test.js",
+      "passed": 124,
+      "status": "passed"
+    },
+    {
+      "path": "src/services/pilotBackNavigation.test.js",
+      "passed": 17,
+      "status": "passed"
+    },
+    {
+      "path": "src/services/weatherV1Client.test.js",
+      "passed": 144,
+      "status": "passed"
+    },
+    {
+      "path": "src/ui/layout/layoutCss.test.js",
+      "passed": 12,
+      "status": "passed"
+    }
+  ],
+  "isolation": {
+    "frontend_files": 47,
+    "identical_to_test": 44,
+    "adapted": [
+      "frontend/src/app/App.jsx",
+      "frontend/src/services/weatherV1Client.test.js",
+      "frontend/src/features/live/CommunityReportForm.submitLocation.test.jsx"
+    ],
+    "unchanged_scopes": [
+      ".github",
+      "backend",
+      "config",
+      "experiments",
+      "scripts",
+      "frontend/android",
+      "frontend/qa",
+      "frontend/scripts",
+      "frontend/public",
+      "frontend/package.json",
+      "frontend/package-lock.json",
+      "frontend/vite.config.js",
+      "frontend/capacitor.config.json",
+      "frontend/src/services/eventsApi.js",
+      "frontend/src/services/eventsCache.js",
+      "frontend/src/services/localCommunityPilot.js",
+      "frontend/src/services/brandMark.js",
+      "frontend/src/services/iconAccumulationQuality.js"
+    ]
+  },
+  "limits": [
+    "No Android artifact built or installed",
+    "No AAB, push, deploy, jobs or sends",
+    "No emulator or cloud tests",
+    "No new browser or real-device evidence on the integrated candidate",
+    "main and TEST source refs unchanged"
+  ]
+}

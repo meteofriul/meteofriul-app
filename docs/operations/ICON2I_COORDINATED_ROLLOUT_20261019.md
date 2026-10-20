@@ -1,5 +1,13 @@
 # Passaggio coordinato ICON-2I — piano e stato operativo
 
+> Aggiornamento 20 ottobre, ore 11:06 italiane: correzione del checkpoint
+> distribuita al solo produttore, immagine verificata con 123 test passati.
+> Previsioni correnti ancora leggibili dai vecchi client. La nuova corsa e
+> il QA restano da verificare: prossima esecuzione ordinaria alle 20:00,
+> follow-up serale riattivato con massimo due controlli nella data odierna.
+> Invii del nuovo consumatore non attivati; nessuna AAB o push Git.
+> [Verbale e istruzioni aggiornati](ICON2I_CHECKPOINT_METADATA_DEPLOY_20261020.md).
+
 > **Stato operativo aggiornato, 19 ottobre 2026:** fase 01 HTTP pubblicata e rollback compatibile pronto.
 > Verificate app installata e letture FVG/nazionali. Fase 02 QA completata senza invii.
 > Fase 03: produttore aggiornato; verifica della nuova corsa attesa il 20 ottobre alle 08:00 italiane.
@@ -118,17 +126,20 @@ dispositivi non sono stati collaudati; nessun aggiornamento Android è stato gen
    né prenotazioni. L'audit usa `local_notice_pilot_runs`, distinguendo modalità
    e identificativo di tentativo; `dry_run` può scrivere l'audit.
    Non usare `deploy-local-notice-job.ps1` per questo QA: configura `send`.
-3. **Fase 03 distribuita, nuova corsa da verificare:** aggiornata solo
-   l'immagine di `meteofriul-icon`; altri job e scheduler invariati.
-   La corsa corrente non è stata riscritta. Prima acquisizione ordinaria
-   prevista il 20 ottobre alle 08:00 `Europe/Rome`, poi verifica di prove,
-   contatori, checkpoint e compatibilità delle app sulla nuova corsa.
-4. **Confronto ancora da eseguire:** candidato senza invii e baseline sugli
-   stessi punti, ore e `source_run_id`. Registrare candidati cambiati,
-   tolleranze utilizzate, non valutabili per causa e denominatori; verificare
-   zero invii e nessuna prenotazione. Il follow-up è previsto alle 08:20 e,
-   se necessario, alle 09:20 del 20 ottobre. Gli invii del nuovo consumatore
-   richiedono successiva autorizzazione, dopo questi controlli.
+3. **Fase 03 corretta e ridistribuita:** il job ordinario del 20 ottobre alle
+   08:00 si e fermato prima di pubblicare. Il difetto del checkpoint e corretto
+   nel commit `9ef1410e` e l'immagine `e72f606f...` e distribuita al produttore.
+   Altri job, HTTP e scheduler invariati; esito terminale e dati conservati.
+4. **Nuova corsa e confronto pendenti:** attendere il job ordinario delle
+   20:00, senza acquisizioni manuali. Il follow-up serale e riattivato.
+   Prima verificare checkpoint schema 2, source_quality, 215 letture legacy
+   e sidecar validi; poi un solo QA dry_run e confronto locale sugli stessi
+   punti, ore e source_run_id. Contare candidati cambiati, tolleranze e
+   non valutabili per causa/denominatore, verificando zero invii e prenotazioni
+   attribuibili al QA. Nessun dato vecchio vale come prova della nuova corsa.
+   Il [verbale correttivo](ICON2I_CHECKPOINT_METADATA_DEPLOY_20261020.md)
+   identifica gli script e le nuove evidenze. Gli invii del nuovo consumatore
+   richiedono una successiva autorizzazione dopo questi controlli.
 
 La fase 02 modifica anche codice condiviso dai riepiloghi mattutino e serale:
 mantengono il rifiuto dei dati incompleti, senza usare la tolleranza per

@@ -205,16 +205,10 @@ describe("pilot header branding CSS", () => {
     expect(neutralCss).toContain("background: var(--mf-definitive-badge)");
   });
 
-  it("keeps the selected daily Meteocon visible without an icon tile", () => {
-    const selectedDayIcon = ruleFrom(
-      neutralCss,
-      'html:not([data-theme="dark"]) .mf-app-shell.is-definitive-app .mf-weather-hourly-card--ribbon .mf-weather-day-picker button[aria-pressed="true"] .mf-home-meteocon-icon',
-    );
-
-    expect(selectedDayIcon).toContain("background: transparent");
-    expect(selectedDayIcon).toContain("border: 0");
-    expect(selectedDayIcon).toContain("border-radius: 0");
-    expect(selectedDayIcon).toContain("filter: drop-shadow");
+  it("lets light forecasts own their selection instead of inheriting navy navigation", () => {
+    const navySelections = neutralCss.match(/html:not\(\[data-theme="dark"\]\) \.mf-app-shell\.is-definitive-app :is\(([^)]+)\)/)?.[1];
+    expect(navySelections).toContain(".mf-bottom-nav-item.is-active");
+    expect(navySelections).not.toContain(".mf-weather-day-picker");
   });
 
   it("anchors alert and count badges to opposite corners of the navigation icon", () => {

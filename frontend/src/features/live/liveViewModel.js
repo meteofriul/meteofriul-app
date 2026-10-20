@@ -820,11 +820,11 @@ export function buildLiveViewModel(
       ? "Posizion aproximade a tutele de tô riservatece."
       : "Posizione approssimata a tutela della tua privacy.";
     copy.reportExpires = language === "fur"
-      ? "E restarà visibile su la mape par 60 minûts"
-      : "Rimarrà visibile sulla mappa per 60 minuti";
+      ? "E restarà visibile su la mape par 60 minûts."
+      : "Rimarrà visibile sulla mappa per 60 minuti.";
     copy.reportSafety = language === "fur"
-      ? "In câs di situazions critichis o pericui imediâts clame il 112."
-      : "In caso di situazioni critiche o pericoli immediati contatta il 112.";
+      ? "In câs di situazions critichis o pericui imediâts, clame il 112."
+      : "In caso di situazioni critiche o pericoli immediati, contatta il 112.";
     copy.liveSheetDisclaimer = language === "fur"
       ? "Segnalazions di prove no validâts. Par alertis consulte la Protezion Civîl e lis fonts uficiâls de tô regjon."
       : "Segnalazioni di prova non validate. Per allerte consulta la Protezione Civile e le fonti ufficiali della tua regione.";

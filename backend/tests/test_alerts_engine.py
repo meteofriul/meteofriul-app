@@ -133,10 +133,20 @@ class OfficialAlertsEngineTests(unittest.TestCase):
         data = json.loads(payload[payload.index("(") + 1 : -2])
         data["alerts"][2]["level"] = 2
 
-        with self.assertRaises(alerts_engine.OfficialAlertsParserError):
-            alerts_engine.parse_civil_protection_widget_alerts(
-                f"pcrfvgit_widget_setup({json.dumps(data)});"
-            )
+        alert = alerts_engine.parse_civil_protection_widget_alerts(
+            f"pcrfvgit_widget_setup({json.dumps(data)});"
+        )[0]
+        self.assertEqual(alert["level"], "arancione")
+        self.assertTrue(alert["mixed_levels"])
+        self.assertEqual(alert["levels"], ["arancione", "gialla"])
+        self.assertEqual(alert["zone_levels"], {
+            "FVG-A": "verde", "FVG-B": "gialla",
+            "FVG-C": "arancione", "FVG-D": "gialla",
+        })
+        self.assertEqual(alert["area"], "")
+        self.assertIn("Allerta arancione. zona FVG-C.", alert["push_body"])
+        self.assertIn("Allerta gialla. zona FVG-B, zona FVG-D.", alert["push_body"])
+        self.assertNotIn("FVG-A", alert["push_body"])
 
     def test_conflicting_or_incomplete_zone_metadata_fails_closed(self):
         payload = mixed_green_yellow_widget()

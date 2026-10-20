@@ -7,9 +7,9 @@ import { WeatherHourlyForecast } from "./WeatherHourlyForecast";
 
 const COPY = {
   it: {
-    loadingBody: "Mostreremo le previsioni appena il dato verificato sarà disponibile.",
+    loadingBody: "Le previsioni saranno mostrate appena i dati saranno disponibili.",
     loadingTitle: "Dati meteo in arrivo",
-    unavailableBody: "Non ci sono ore future verificate da mostrare in questo momento.",
+    unavailableBody: "Al momento non sono disponibili previsioni per le prossime ore.",
     unavailableTitle: "Previsioni non disponibili",
   },
   fur: {

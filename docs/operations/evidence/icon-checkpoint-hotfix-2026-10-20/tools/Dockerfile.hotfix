@@ -1,0 +1,4 @@
+FROM europe-west1-docker.pkg.dev/meteo-friul/meteofriul/weather-worker@sha256:b8719b7f26c355115ded47e282e19f8011ff270e0d0107a831526879155ac2f2
+COPY experiments/weather_autonomy/ /app/experiments/weather_autonomy/
+COPY backend/app/data/fvg_municipalities.json backend/app/data/fvg_geography.json /app/backend/app/data/
+LABEL io.meteofriul.fix="icon-field-checkpoint-metadata" io.meteofriul.commit="9ef1410e71e95a8b31fa54ba5b5543d0b68aa12a"

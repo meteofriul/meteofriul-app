@@ -1,0 +1,228 @@
+[
+  {
+    "timestamp": "2026-10-20T06:01:52.778575Z",
+    "severity": "INFO",
+    "jsonPayload": {
+      "event": "phase_started",
+      "provider": "icon",
+      "stage": "worker",
+      "status": "started",
+      "timestamp": "2026-10-20T06:01:52.776+00:00"
+    },
+    "task_attempt": "0"
+  },
+  {
+    "timestamp": "2026-10-20T06:02:19.058713Z",
+    "severity": "INFO",
+    "jsonPayload": {
+      "event": "phase_started",
+      "provider": "icon",
+      "stage": "acquisition",
+      "status": "started",
+      "timestamp": "2026-10-20T06:02:19.057+00:00"
+    },
+    "task_attempt": "0"
+  },
+  {
+    "timestamp": "2026-10-20T06:02:25.696917Z",
+    "textPayload": "Integrated run 2026102000: 14 fields, 73 times, 215 towns, budget 1310720000 bytes",
+    "task_attempt": "0"
+  },
+  {
+    "timestamp": "2026-10-20T06:02:28.287185Z",
+    "severity": "ERROR",
+    "jsonPayload": {
+      "elapsed_seconds": 9.228,
+      "error_summary": "exception details withheld; inspect the typed error and local source location",
+      "error_type": "ValueError",
+      "event": "phase_failed",
+      "failure_file": "cloud_worker.py",
+      "failure_function": "_run_icon_result",
+      "failure_line": 524,
+      "provider": "icon",
+      "stage": "acquisition",
+      "status": "failed",
+      "timestamp": "2026-10-20T06:02:28.285+00:00"
+    },
+    "task_attempt": "0"
+  },
+  {
+    "timestamp": "2026-10-20T06:02:28.373733Z",
+    "severity": "INFO",
+    "jsonPayload": {
+      "error_summary": "exception details withheld; inspect the typed error and local source location",
+      "error_type": "ValueError",
+      "event": "publication_result",
+      "failure_file": "cloud_worker.py",
+      "failure_function": "_run_icon_result",
+      "failure_line": 524,
+      "job": "icon",
+      "provider": "icon",
+      "reason_code": "unexpected_internal_failure",
+      "retryable": false,
+      "stage": "acquisition",
+      "status": "manual_review",
+      "timestamp": "2026-10-20T06:02:28.372+00:00"
+    },
+    "task_attempt": "0"
+  },
+  {
+    "timestamp": "2026-10-20T06:02:28.373815Z",
+    "severity": "ERROR",
+    "jsonPayload": {
+      "elapsed_seconds": 35.596,
+      "error_summary": "exception details withheld; inspect the typed error and local source location",
+      "error_type": "RuntimeError",
+      "event": "phase_failed",
+      "failure_file": "cloud_worker.py",
+      "failure_function": "_finish_icon",
+      "failure_line": 367,
+      "provider": "icon",
+      "stage": "worker",
+      "status": "failed",
+      "timestamp": "2026-10-20T06:02:28.372+00:00"
+    },
+    "task_attempt": "0"
+  },
+  {
+    "timestamp": "2026-10-20T06:02:28.375327Z",
+    "severity": "ERROR",
+    "textPayload": "Traceback (most recent call last):\n  File \"/app/experiments/weather_autonomy/cloud_worker.py\", line 569, in <module>\n    run(os.environ.get(\"WEATHER_PROVIDER\", os.environ.get(\"PILOT_PROVIDER\")))\n    ~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/app/experiments/weather_autonomy/cloud_worker.py\", line 48, in run\n    return _run(provider)\n  File \"/app/experiments/weather_autonomy/cloud_worker.py\", line 57, in _run\n    return _run_icon(state, data, now)\n  File \"/app/experiments/weather_autonomy/cloud_worker.py\", line 445, in _run_icon\n    return _finish_icon(_run_icon_result(state, data, now))\n  File \"/app/experiments/weather_autonomy/cloud_worker.py\", line 367, in _finish_icon\n    raise RuntimeError(\"ICON publication did not complete; inspect structured status\")\nRuntimeError: ICON publication did not complete; inspect structured status",
+    "task_attempt": "0"
+  },
+  {
+    "timestamp": "2026-10-20T06:02:28.539648Z",
+    "severity": "WARNING",
+    "textPayload": "Container called exit(1).",
+    "task_attempt": "0"
+  },
+  {
+    "timestamp": "2026-10-20T06:03:08.178848Z",
+    "severity": "INFO",
+    "jsonPayload": {
+      "event": "phase_started",
+      "provider": "icon",
+      "stage": "worker",
+      "status": "started",
+      "timestamp": "2026-10-20T06:03:08.177+00:00"
+    },
+    "task_attempt": "1"
+  },
+  {
+    "timestamp": "2026-10-20T06:03:09.596132Z",
+    "severity": "INFO",
+    "jsonPayload": {
+      "error_summary": "exception details withheld; inspect the typed error and local source location",
+      "error_type": "ValueError",
+      "event": "publication_result",
+      "failure_file": "cloud_worker.py",
+      "failure_function": "_run_icon_result",
+      "failure_line": 524,
+      "job": "icon",
+      "provider": "icon",
+      "reason_code": "unexpected_internal_failure",
+      "retryable": false,
+      "stage": "acquisition",
+      "status": "manual_review",
+      "timestamp": "2026-10-20T06:03:09.594+00:00"
+    },
+    "task_attempt": "1"
+  },
+  {
+    "timestamp": "2026-10-20T06:03:09.596576Z",
+    "severity": "ERROR",
+    "jsonPayload": {
+      "elapsed_seconds": 1.418,
+      "error_summary": "exception details withheld; inspect the typed error and local source location",
+      "error_type": "RuntimeError",
+      "event": "phase_failed",
+      "failure_file": "cloud_worker.py",
+      "failure_function": "_finish_icon",
+      "failure_line": 367,
+      "provider": "icon",
+      "stage": "worker",
+      "status": "failed",
+      "timestamp": "2026-10-20T06:03:09.594+00:00"
+    },
+    "task_attempt": "1"
+  },
+  {
+    "timestamp": "2026-10-20T06:03:09.598402Z",
+    "severity": "ERROR",
+    "textPayload": "Traceback (most recent call last):\n  File \"/app/experiments/weather_autonomy/cloud_worker.py\", line 569, in <module>\n    run(os.environ.get(\"WEATHER_PROVIDER\", os.environ.get(\"PILOT_PROVIDER\")))\n    ~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/app/experiments/weather_autonomy/cloud_worker.py\", line 48, in run\n    return _run(provider)\n  File \"/app/experiments/weather_autonomy/cloud_worker.py\", line 57, in _run\n    return _run_icon(state, data, now)\n  File \"/app/experiments/weather_autonomy/cloud_worker.py\", line 445, in _run_icon\n    return _finish_icon(_run_icon_result(state, data, now))\n  File \"/app/experiments/weather_autonomy/cloud_worker.py\", line 367, in _finish_icon\n    raise RuntimeError(\"ICON publication did not complete; inspect structured status\")\nRuntimeError: ICON publication did not complete; inspect structured status",
+    "task_attempt": "1"
+  },
+  {
+    "timestamp": "2026-10-20T06:03:09.767365Z",
+    "severity": "WARNING",
+    "textPayload": "Container called exit(1).",
+    "task_attempt": "1"
+  },
+  {
+    "timestamp": "2026-10-20T06:03:37.476129Z",
+    "severity": "INFO",
+    "jsonPayload": {
+      "event": "phase_started",
+      "provider": "icon",
+      "stage": "worker",
+      "status": "started",
+      "timestamp": "2026-10-20T06:03:37.472+00:00"
+    },
+    "task_attempt": "2"
+  },
+  {
+    "timestamp": "2026-10-20T06:03:38.817616Z",
+    "severity": "INFO",
+    "jsonPayload": {
+      "error_summary": "exception details withheld; inspect the typed error and local source location",
+      "error_type": "ValueError",
+      "event": "publication_result",
+      "failure_file": "cloud_worker.py",
+      "failure_function": "_run_icon_result",
+      "failure_line": 524,
+      "job": "icon",
+      "provider": "icon",
+      "reason_code": "unexpected_internal_failure",
+      "retryable": false,
+      "stage": "acquisition",
+      "status": "manual_review",
+      "timestamp": "2026-10-20T06:03:38.815+00:00"
+    },
+    "task_attempt": "2"
+  },
+  {
+    "timestamp": "2026-10-20T06:03:38.817659Z",
+    "severity": "ERROR",
+    "jsonPayload": {
+      "elapsed_seconds": 1.344,
+      "error_summary": "exception details withheld; inspect the typed error and local source location",
+      "error_type": "RuntimeError",
+      "event": "phase_failed",
+      "failure_file": "cloud_worker.py",
+      "failure_function": "_finish_icon",
+      "failure_line": 367,
+      "provider": "icon",
+      "stage": "worker",
+      "status": "failed",
+      "timestamp": "2026-10-20T06:03:38.815+00:00"
+    },
+    "task_attempt": "2"
+  },
+  {
+    "timestamp": "2026-10-20T06:03:38.820128Z",
+    "severity": "ERROR",
+    "textPayload": "Traceback (most recent call last):\n  File \"/app/experiments/weather_autonomy/cloud_worker.py\", line 569, in <module>\n    run(os.environ.get(\"WEATHER_PROVIDER\", os.environ.get(\"PILOT_PROVIDER\")))\n    ~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/app/experiments/weather_autonomy/cloud_worker.py\", line 48, in run\n    return _run(provider)\n  File \"/app/experiments/weather_autonomy/cloud_worker.py\", line 57, in _run\n    return _run_icon(state, data, now)\n  File \"/app/experiments/weather_autonomy/cloud_worker.py\", line 445, in _run_icon\n    return _finish_icon(_run_icon_result(state, data, now))\n  File \"/app/experiments/weather_autonomy/cloud_worker.py\", line 367, in _finish_icon\n    raise RuntimeError(\"ICON publication did not complete; inspect structured status\")\nRuntimeError: ICON publication did not complete; inspect structured status",
+    "task_attempt": "2"
+  },
+  {
+    "timestamp": "2026-10-20T06:03:38.991509Z",
+    "severity": "WARNING",
+    "textPayload": "Container called exit(1).",
+    "task_attempt": "2"
+  },
+  {
+    "timestamp": "2026-10-20T06:03:43.878157Z",
+    "severity": "ERROR",
+    "task_attempt": null
+  }
+]

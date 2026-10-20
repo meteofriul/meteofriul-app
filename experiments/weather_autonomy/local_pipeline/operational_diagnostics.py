@@ -29,7 +29,7 @@ _FIELDS = frozenset({
     "reason_code", "error_type", "cause_type", "error_summary", "cause_summary",
     "http_status", "retryable", "failure_file", "failure_function", "failure_line",
     "validation_status", "publication_status", "acquisition_status", "payload_count", "validated_count",
-    "municipality_count",
+    "municipality_count", "artifact_kind", "observed_bytes", "limit_bytes",
     "reused_payload_count", "manifest_reused", "latest_updated", "attempt",
     "retry_after_seconds", "elapsed_seconds", "duration_seconds", "exit_code",
     "expected_count", "actual_count", "core_stage_idempotent", "pollen_stage_idempotent",
@@ -81,6 +81,10 @@ _SAFE_MESSAGES = frozenset({
     "stored run payloads fail contract-v1 validation", "latest manifest path is not canonical",
     "stored manifest differs from publication intent", "recovery manifest changed during verification",
     "recovery manifest SHA-256 is invalid", "publication-only recovery is ICON-only",
+    "Checkpoint metadata is invalid", "Checkpoint packing error is invalid",
+    "ICON payload exceeds its local size bound", "ICON JSON exceeds its local size bound",
+    "ICON report exceeds its local size bound", "CAMS payload exceeds its local size bound",
+    "CAMS report exceeds its local size bound",
     "invalid ICON checkpoint slot", "ICON checkpoint differs from publication intent",
     "ICON checkpoint expanded size exceeds limit", "ICON checkpoint compressed size exceeds limit",
     "invalid ICON checkpoint size", "invalid ICON checkpoint envelope",
@@ -189,7 +193,7 @@ def error_fields(error):
         while trace is not None:
             filename = trace.tb_frame.f_code.co_filename.replace("\\", "/")
             if "/local_pipeline/" in filename or filename.endswith((
-                "/cloud_worker.py", "/cams_request_plan.py", "/retrieve_cams.py", "/publish_remote_icon.py",
+                "/cloud_worker.py", "/run_pilot.py", "/cams_request_plan.py", "/retrieve_cams.py", "/publish_remote_icon.py",
             )):
                 result.update(failure_file=filename.rsplit("/", 1)[-1],
                               failure_function=trace.tb_frame.f_code.co_name,

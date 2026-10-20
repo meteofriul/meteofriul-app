@@ -13,7 +13,7 @@ describe("locationSelectorCopy", () => {
 
     expect(copy.settings).toBe("Impostazioni");
     expect(copy.location).toBe("Località");
-    expect(copy.searchLoading).toBe("Sto cercando località aggiornate...");
+    expect(copy.searchLoading).toBe("Ricerca delle località in corso...");
     expect(copy.deviceName).toBe("Nome dispositivo");
     expect(copy.infoValue).toBe("Trasparenza");
     expect(copy.infoText).toContain("riferimento meteo ufficiale");

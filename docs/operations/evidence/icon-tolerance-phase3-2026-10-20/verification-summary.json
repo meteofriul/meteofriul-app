@@ -1,0 +1,81 @@
+{
+  "recorded_at": "2026-10-20T08:25:03.741242+00:00",
+  "status": "incomplete_producer_failed_requires_decision",
+  "project": "meteo-friul",
+  "region": "europe-west1",
+  "operator_account": "meteofriul@gmail.com",
+  "execution": "meteofriul-icon-x26c6",
+  "created_at": "2026-10-20T06:00:45.240739Z",
+  "completed_at": "2026-10-20T06:03:42.916705Z",
+  "completed_condition": {
+    "lastTransitionTime": "2026-10-20T06:03:42.916705Z",
+    "message": "Task meteofriul-icon-x26c6-task0 failed with exit code: 1 and message: The container exited with an error.",
+    "reason": "NonZeroExitCode",
+    "status": "False",
+    "type": "Completed"
+  },
+  "image": "europe-west1-docker.pkg.dev/meteo-friul/meteofriul/weather-worker@sha256:b8719b7f26c355115ded47e282e19f8011ff270e0d0107a831526879155ac2f2",
+  "expected_digest_matches": true,
+  "source_selected_in_log": "2026102000",
+  "published_fvg_run": "20261019T120000Z",
+  "checkpoint_present": false,
+  "source_quality_events": 0,
+  "new_tolerance_metadata_verified": false,
+  "http_required_new_run_result": "blocked_by_assertion_before_215_document_check",
+  "qa_executed": false,
+  "qa_submission_present": false,
+  "comparison": {
+    "status": "not_run_new_source_unavailable",
+    "changed_candidates": null,
+    "tolerances_used": null,
+    "unavailable_by_cause": null,
+    "denominators": null
+  },
+  "qa_attributable_sends": 0,
+  "qa_attributable_reservations": 0,
+  "zero_basis": "QA not submitted; not an audit of unrelated operational sends",
+  "fvg_legacy": {
+    "previous_215_document_check_reused": true,
+    "same_immutable_manifest_confirmed": true,
+    "fresh_readbacks": 3,
+    "only_previous_run": true
+  },
+  "national_sample": {
+    "cities": 6,
+    "source_run": "20261020T000000Z",
+    "legacy_readers": [
+      "2f02c8ba",
+      "8497e773"
+    ],
+    "full_country": false
+  },
+  "phone": {
+    "adb_devices": [],
+    "runtime_visual_check": "not_possible_no_connected_device"
+  },
+  "followup_status": "PAUSED",
+  "mutations": {
+    "manual_acquisition": false,
+    "qa_submission": false,
+    "deploy": false,
+    "scheduler_change": false,
+    "cloud_object_rewrite": false,
+    "git_push": false,
+    "aab": false,
+    "emulator": false,
+    "phone_install": false,
+    "app_preferences": false
+  },
+  "cause_limit": "ValueError in acquisition, exception message withheld; cloud_worker.py:524 is outer run_outputs call, not established root cause",
+  "local_diagnosis": {
+    "confirmed_defect": "Decoder adds packingError; field checkpoint exact-key validator rejects it.",
+    "introduced_by_commit": "d855e53d",
+    "main_same_as_deployed": true,
+    "old_metadata_accepted_fields": 14,
+    "new_metadata_rejected_cases": 28,
+    "unmodified_decoder_to_checkpoint_reproductions": 2,
+    "network_access": false,
+    "production_fix_applied": false,
+    "historical_inner_cloud_exception": "not observable in retained logs; deterministic defect consistent with timing and stage"
+  }
+}

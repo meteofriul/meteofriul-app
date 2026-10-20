@@ -1,6 +1,7 @@
 import {
   ArrowRight,
   Camera,
+  Check,
   ChevronDown,
   ChevronUp,
   Clock,
@@ -17,6 +18,8 @@ import {
   Send,
   ShieldCheck,
   Smile,
+  ThumbsDown,
+  ThumbsUp,
   Undo2,
   UsersRound,
   X,
@@ -1527,6 +1530,7 @@ export function CommunityReportForm({
       ? "Correzione salvata. La scadenza resta invariata."
       : copy.reportSuccessBody;
   const SuccessReportIcon = PILOT_LIVE_REPORT_ICONS[successItem?.typeId] || Radio;
+  const ReviewReportIcon = PILOT_LIVE_REPORT_ICONS[review?.typeId] || Radio;
   const successHasIdentity = isPilotReportSuccess && Boolean(
     getItemCommunityIdentityPreview(successItem, {
       limit: 1,
@@ -1558,6 +1562,7 @@ export function CommunityReportForm({
         sheet ? "mf-live-report-form--sheet" : "",
         pilotStyle ? "mf-live-report-form--pilot" : "",
         isCenteredReceipt ? "mf-live-report-form--receipt" : "",
+        review && !isSuccess ? "mf-live-report-form--review" : "",
       ].filter(Boolean).join(" ")}
       id={sheet ? reportDialogId : undefined}
       onSubmit={handleSubmit}
@@ -1570,18 +1575,20 @@ export function CommunityReportForm({
           <strong id={sheet ? reportTitleId : undefined}>
             {isSuccess ? copy.reportSuccessTitle : review ? copy.reportReviewTitle : managedReport ? copy.reportEditTitle : correctionReport ? "Correggi osservazione" : copy.reportQuestion}
           </strong>
-          <span id={sheet ? reportDescriptionId : undefined}>
+          {!review ? <span id={sheet ? reportDescriptionId : undefined}>
             {isSuccess ? successDescription : managedReport ? editDescription : correctionReport ? "Puoi correggere fenomeno e Comune entro 5 minuti. La posizione viene verificata con il GPS." : replacementToken ? "Sostituzione senza attesa. Il nuovo invio conta nei limiti di 4/60 minuti e 12/24 ore." : copy.reportBody}
-          </span>
+          </span> : null}
         </div> : null}
-        <AppIconButton
-          ariaLabel={copy.reportClose}
-          disabled={isSubmitting}
-          icon={X}
-          onClick={() => {
-            if (!submissionInFlightRef.current) onCloseRef.current();
-          }}
-        />
+        {!review || isSuccess ? (
+          <AppIconButton
+            ariaLabel={copy.reportClose}
+            disabled={isSubmitting}
+            icon={X}
+            onClick={() => {
+              if (!submissionInFlightRef.current) onCloseRef.current();
+            }}
+          />
+        ) : null}
       </div>
       <div className="mf-live-report-form__body">
         {isSuccess ? (
@@ -1593,7 +1600,7 @@ export function CommunityReportForm({
             tabIndex={-1}
           >
             <span aria-hidden="true" className="mf-live-report-success__icon">
-              <Heart fill="currentColor" size={26} strokeWidth={2.1} />
+              {isPilotReportSuccess ? <Check size={28} strokeWidth={2.7} /> : <Heart fill="currentColor" size={26} strokeWidth={2.1} />}
             </span>
             {isPilotReportSuccess ? (
               <>
@@ -1659,15 +1666,16 @@ export function CommunityReportForm({
             )}
           </div>
         ) : review ? (
-          <div className="mf-live-report-review" aria-live="polite">
-            <strong>{copy.reportReviewSummary.replace("{type}", copy.reportTypes[review.typeId]).replace("{place}", review.place)}</strong>
-            <p>{copy.reportReviewReplacement}</p>
-            <p>{copy.reportExpires}</p>
+          <div className="mf-live-report-review" aria-live="polite" id={sheet ? reportDescriptionId : undefined}>
+            <div className="mf-live-report-review__phenomenon">
+              <span className={`mf-live-report-review__icon mf-live-report-option--${review.typeId}`} aria-hidden="true">
+                <ReviewReportIcon size={28} strokeWidth={2.35} />
+              </span>
+              <strong>{copy.reportTypes[review.typeId]}</strong>
+            </div>
+            <span className="mf-live-report-review__place">{review.place}</span>
+            <p className="mf-live-report-review__duration">{copy.reportReviewDuration}</p>
             {submitState.text ? <p className="mf-live-report-feedback" role="status">{submitState.text}</p> : null}
-            <AppButton type="button" variant="secondary" disabled={isSubmitting}
-              onClick={() => { setReview(null); setSubmitState({ status: "idle", text: "" }); }}>
-              {copy.reportReviewBack}
-            </AppButton>
           </div>
         ) : (
           <>
@@ -1840,7 +1848,13 @@ export function CommunityReportForm({
           </>
         )}
       </div>
-      <div className="mf-live-report-form__footer">
+      <div className={`mf-live-report-form__footer${review && !isSuccess ? " mf-live-report-form__footer--review" : ""}`}>
+        {review && !isSuccess ? (
+          <AppButton type="button" variant="ghost" disabled={isSubmitting} icon={ThumbsDown}
+            onClick={() => { setReview(null); setSubmitState({ status: "idle", text: "" }); }}>
+            {copy.reportReviewBack}
+          </AppButton>
+        ) : null}
         {isSuccess || ["own", "voted"].includes(nearbyMatchState) ? (
           <AppButton
             className="mf-live-report-map-action"
@@ -1857,7 +1871,7 @@ export function CommunityReportForm({
           <AppButton
             className="mf-live-report-submit"
             disabled={previewOnly || !selectedTypeId || !isLocationReady || !hasAcceptedTerms || isSubmitting || canUndo || editIntent === "unavailable" || (editIntent === "update" && !onManagedUpdate)}
-            icon={nearbyMatch ? UsersRound : Send}
+            icon={nearbyMatch ? UsersRound : review ? ThumbsUp : Send}
             type="submit"
           >
             {previewOnly
@@ -1869,10 +1883,10 @@ export function CommunityReportForm({
                 : nearbyMatch
                   ? copy.confirmationAction
                   : managedReport ? editSubmitLabel
-                    : correctionReport ? "Conferma correzione" : simplifiedRules && !review ? copy.reportReviewContinue : copy.reportSubmit}
+                    : correctionReport ? "Conferma correzione" : review ? copy.reportReviewSend : simplifiedRules ? copy.reportReviewContinue : copy.reportSubmit}
           </AppButton>
         )}
-        {pilotStyle && !isSuccess && !["own", "voted"].includes(nearbyMatchState) ? (
+        {(pilotStyle || review) && !isSuccess && !["own", "voted"].includes(nearbyMatchState) ? (
           <small className="mf-live-report-safety">{copy.reportSafety}</small>
         ) : null}
         {canUndo ? (
@@ -1894,7 +1908,7 @@ export function CommunityReportForm({
   if (!sheet) return form;
 
   const layer = (
-    <div className="mf-live-report-layer">
+    <div className={`mf-live-report-layer${review && !isSuccess ? " mf-live-report-layer--review" : ""}`}>
       <button
         aria-hidden="true"
         className="mf-live-report-layer__backdrop"

@@ -140,9 +140,9 @@ const HOME_VIEW_MODEL_COPY = {
     officialAlertSingleLabel: "Allerta ufficiale",
     officialAlertMultipleLabel: "allerte ufficiali",
     officialAlertSeverityLabels: {
-      yellow: "Allerta gialla",
-      orange: "Allerta arancione",
-      red: "Allerta rossa",
+      yellow: "Allerta gialla in FVG",
+      orange: "Allerta arancione in FVG",
+      red: "Allerta rossa in FVG",
     },
     officialAlertPhenomenonLabels: {
       cold: "Allerta freddo",
@@ -229,6 +229,11 @@ const HOME_VIEW_MODEL_COPY = {
     alertsLabel: "Avîs uficiâi",
     officialAlertSingleLabel: "Alerte ufici\u00e2l",
     officialAlertMultipleLabel: "alertis ufici\u00e2ls",
+    officialAlertSeverityLabels: {
+      yellow: "Alerte zale in FVG",
+      orange: "Alerte narançon in FVG",
+      red: "Alerte rosse in FVG",
+    },
   },
 };
 

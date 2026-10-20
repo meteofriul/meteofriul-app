@@ -3381,3 +3381,66 @@ describe("persisted CAMS 36h continuity", () => {
     expect(Date.parse(reopened.current.cams_hourly_cache.usable_until_utc)).toBe(Date.parse(RUN_AT)+30*HOUR_MS);
   });
 });
+
+it("keeps a newer ICON run when CAMS completes before the initial bundle commit", async () => {
+  const now = () => Date.parse("2026-09-03T10:15:00Z");
+  const baseUrl = "/early-cams-new-icon";
+  const storage = memoryStorage();
+  await fetchLocalWeatherV1RuntimeBundle("Pordenone", options(
+    vi.fn().mockResolvedValue(bundle()), now, { baseUrl, storage, force: true },
+  ));
+  const newerRun = "2026-09-03T06:00:00Z";
+  const onCamsUpdate = vi.fn();
+  const incoming = bundle({ runAt: newerRun, temperature: 24 });
+  const fetcher = vi.fn(async (_location, fetchOptions) => {
+    fetchOptions.onCamsUpdate(incoming);
+    return bundle({ runAt: newerRun, temperature: 24, camsStatus: "pending" });
+  });
+  const result = await fetchLocalWeatherV1RuntimeBundle("Pordenone", options(
+    fetcher, now, { baseUrl, storage, force: true, deferCams: true, onCamsUpdate },
+  ));
+  expect(result.current.data_quality.run_utc).toBe(newerRun);
+  await vi.waitFor(() => expect(onCamsUpdate).toHaveBeenCalledOnce());
+  expect(onCamsUpdate.mock.calls[0][0].current.data_quality.run_utc).toBe(newerRun);
+  expect(onCamsUpdate.mock.calls[0][0].current.temperature).toBe(24);
+  expect(readLocalWeatherV1PersistedBundle("Pordenone", { baseUrl, storage, now })
+    .current.data_quality.run_utc).toBe(newerRun);
+});
+
+it("reclaims downloadable raw snapshots to commit a new ICON run without clearing the active bundle", async () => {
+  const now = () => Date.parse("2026-09-03T10:15:00Z");
+  const baseUrl = "/raw-quota-new-icon";
+  const storage = memoryStorage({ preferences: "keep", "legacy:weather": "keep" });
+  await fetchLocalWeatherV1RuntimeBundle("Pordenone", options(
+    vi.fn().mockResolvedValue(bundle()), now, { baseUrl, storage, force: true },
+  ));
+  const rawPrefix = `meteofriul:weather-v1:v4:${weatherV1Client.sha256Hex(baseUrl).slice(0, 16)}:`;
+  const rawKey = `${rawPrefix}cams_europe:municipality:0`;
+  storage.values.set(rawKey, "x".repeat(200_000));
+  storage.values.set(`${rawPrefix}cams_europe:manifest:0`, "keep-manifest");
+  const size = () => [...storage.values].reduce((total, [key, value]) => total + key.length + value.length, 0);
+  const capacity = size() + 100;
+  const originalSetItem = storage.setItem.getMockImplementation();
+  storage.setItem.mockImplementation((key, value) => {
+    const previousSize = storage.values.has(key) ? key.length + storage.values.get(key).length : 0;
+    if (size() - previousSize + key.length + value.length > capacity) {
+      throw new DOMException("storage full", "QuotaExceededError");
+    }
+    originalSetItem(key, value);
+  });
+  const newerRun = "2026-09-03T06:00:00Z";
+  const result = await fetchLocalWeatherV1RuntimeBundle("Pordenone", options(
+    vi.fn().mockResolvedValue(bundle({ runAt: newerRun, temperature: 24 })), now,
+    { baseUrl, storage, force: true },
+  ));
+  expect(result.current.data_quality.run_utc).toBe(newerRun);
+  expect(result.current.cache?.runtime_fallback).not.toBe(true);
+  expect(storage.getItem(rawKey)).toBeNull();
+  expect(storage.getItem(`${rawPrefix}cams_europe:manifest:0`)).toBe("keep-manifest");
+  expect(storage.getItem("preferences")).toBe("keep");
+  expect(storage.getItem("legacy:weather")).toBe("keep");
+  const activeKey = getLocalWeatherV1BundleCacheKey("Pordenone", { baseUrl });
+  expect(storage.removeItem.mock.calls.some(([key]) => key === activeKey)).toBe(false);
+  expect(readLocalWeatherV1PersistedBundle("Pordenone", { baseUrl, storage, now })
+    .current.data_quality.run_utc).toBe(newerRun);
+});

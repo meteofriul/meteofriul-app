@@ -1,0 +1,39 @@
+{
+  "schemaVersion": "release-backend-image-evidence-v1",
+  "recordedAt": "2026-10-20T17:05:49.665516+00:00",
+  "sourceCommit": "599aea2f8a3b1e7e65af2b43e77bb54e4637c96e",
+  "expectedImageDigest": "europe-west1-docker.pkg.dev/meteo-friul/cloud-run-source-deploy/meteofriul-api@sha256:5522b4cfc15076a9f93e838e3643b35e1aa5ad4ce0bf5bca4851997ea94c2ae8",
+  "cloudBuildResultImageDigest": "europe-west1-docker.pkg.dev/meteo-friul/cloud-run-source-deploy/meteofriul-api@sha256:5522b4cfc15076a9f93e838e3643b35e1aa5ad4ce0bf5bca4851997ea94c2ae8",
+  "cloudBuildStatus": "SUCCESS",
+  "cloudBuildId": "4f68bd0e-6494-4caa-9be2-90d60d36a92b",
+  "cloudBuildRegion": "europe-west1",
+  "projectId": "meteo-friul",
+  "account": "meteofriul@gmail.com",
+  "revision": "meteofriul-api-00251-jow",
+  "apiTag": "play-b6fbe4d",
+  "sourceProvenance": {
+    "resolvedStorageSource": {
+      "bucket": "run-sources-meteo-friul-europe-west1",
+      "object": "services/meteofriul-api/1791726142.217432-57082d17b6cf4185926b16dbcb547d17.zip",
+      "generation": "1791726150612023"
+    },
+    "fileHashes": {
+      "gs://run-sources-meteo-friul-europe-west1/services/meteofriul-api/1791726142.217432-57082d17b6cf4185926b16dbcb547d17.zip#1791726150612023": {
+        "fileHash": [
+          {
+            "type": "MD5",
+            "value": "fEACDHyPqfoRopTBSOjwQQ=="
+          },
+          {
+            "type": "SHA256",
+            "value": "syLA6Yh7wVHnAJCdMsA0/OPLv0RAVxZGJtRMKk9R5N4="
+          }
+        ]
+      }
+    }
+  },
+  "verification": "All files copied into the runtime and Dockerfile match Git after CRLF normalization",
+  "runtimeFilesCompared": 179,
+  "comparisonScope": "Every file under app/, requirements.txt and Dockerfile; exact Git bytes after CRLF to LF; no extra runtime Git files. Build context extras are not copied by Dockerfile.",
+  "deployedDuringThisVerification": false
+}

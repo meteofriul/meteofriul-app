@@ -761,13 +761,16 @@ export default function App() {
   }, [settingsReturnTab]);
 
   useEffect(() => {
-    if (!isDefinitiveAppExperience() || activeTab === "home") return undefined;
+    if (!isDefinitiveAppExperience()) return undefined;
     return setPilotBackPageHandler(() => {
       if (reportSubmissionLockedRef.current) return;
       const nextTab = pilotRouteHistoryRef.current.back();
       setPilotWhyId("");
       setActiveTab(nextTab);
       if (nextTab !== "settings") setSettingsReturnTab(nextTab);
+    }, {
+      atRoot: activeTab === "home",
+      canExit: () => !reportSubmissionLockedRef.current,
     });
   }, [activeTab]);
 

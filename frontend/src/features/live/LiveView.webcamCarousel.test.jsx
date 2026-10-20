@@ -854,7 +854,7 @@ it("shows a compact pilot receipt and lets its author undo the submitted report"
   expect(success).not.toBeNull();
   expect(success.classList.contains("mf-live-report-success--pilot-receipt")).toBe(true);
   expect(success.querySelector(".mf-live-report-success__title")?.textContent)
-    .toBe("Segnalazione inviata!");
+    .toBe("Grazie per la segnalazione!");
   expect(success.querySelector(".mf-live-report-success__description")?.textContent)
     .toBe(model.copy.reportSuccessBody);
   expect(container.querySelector(".mf-live-report-form--receipt")).not.toBeNull();
@@ -869,7 +869,7 @@ it("shows a compact pilot receipt and lets its author undo the submitted report"
   expect(summary.querySelector(".mf-live-report-success__place")?.textContent)
     .toBe("Pordenone");
   expect(success.querySelector(".mf-live-report-success__identity-label")?.textContent)
-    .toBe("Inviata come:");
+    .toBe("Inviata da:");
   const identityInline = success.querySelector(".mf-live-report-success__identity-inline");
   expect(identityInline?.textContent).toContain(identity.alias);
   expect(identityInline?.querySelector('.mf-community-avatar[data-subject="acuile"]'))
@@ -975,7 +975,7 @@ it.each([
   expect(header.querySelectorAll("button")).toHaveLength(1);
   expect(header.querySelector("button")?.getAttribute("aria-label")).toBe(copy.reportClose);
   expect(success.querySelector(".mf-live-report-success__identity-label")?.textContent)
-    .toBe(language === "fur" ? "Inviade come:" : "Inviata come:");
+    .toBe(language === "fur" ? "Inviade di:" : "Inviata da:");
   expect(success.querySelector(".mf-live-report-success__identity-inline")?.textContent)
     .toContain(identity.alias);
   expect(success.querySelector(".mf-live-report-success__place")?.textContent)

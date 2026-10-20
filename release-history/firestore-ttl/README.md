@@ -21,3 +21,11 @@ comprende API standard, tag API Play e quattro job raggiunti dagli Scheduler.
 Ogni digest distinto ha prova Cloud Build, archivio sorgente e SHA-256 di
 `backend/app/repositories/push.py`; non e' richiesta una sola immagine per
 tutti i writer. Il file del set va aggiunto una volta a Git e mai riscritto.
+
+Il set verificato il 20 ottobre 2026 è
+`runtime-writer-sets/play-services-20261020.json`. Aggiorna le attestazioni del
+tag API Play e del job serale già distribuiti; non dichiara distribuita la nuova
+correzione delle allerte FVG. Le prove sono in
+`../cloud-operations/20261020-services-attestation/`. La copia originale locale
+dell'archivio serale coincide con lo SHA-256 di Cloud Build, anche se l'oggetto
+temporaneo cloud è stato rimosso.

@@ -11,3 +11,9 @@
 # e non sottoporlo ai controlli testuali del diff.
 android/launcher-assets/approved-082026/inventario-approvati.csv binary
 android/launcher-assets/approved-web-shortcut-082026-r2/inventario-sha256.csv binary
+
+# Preserve the exact bytes of the ICON size-fix evidence and its saved hashes.
+docs/operations/evidence/icon-checkpoint-hotfix-2026-10-20/evening-check/** -text whitespace=trailing-space,space-before-tab,cr-at-eol
+docs/operations/evidence/icon-payload-limit-2026-10-20/** -text whitespace=trailing-space,space-before-tab,cr-at-eol
+# Blank context lines in an archived unified diff contain one required space.
+docs/operations/evidence/icon-payload-limit-2026-10-20/runtime.patch -whitespace

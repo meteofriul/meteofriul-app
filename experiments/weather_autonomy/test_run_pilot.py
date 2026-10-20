@@ -351,7 +351,7 @@ class FakeCheckpointDecoder:
         self.seen.add(identity)
         self.seconds += 0.001
         value = float(step) if field in pilot.ACCUM_FIELDS else 293.15
-        return [value] * len(self.points), metadata(field, step, run=run)
+        return [value] * len(self.points), metadata(field, step, run=run, packingError=0.0005)
 
 
 def consume_transport_and_return_messages(chunks, expected_count=73):
@@ -533,6 +533,45 @@ class CheckpointAcquisitionTests(unittest.TestCase):
         self.assertEqual(snapshot["metrics"]["source_field_downloaded_bytes"], 14_000)
         self.assertEqual(snapshot["metrics"]["unique_decoded_messages"], 14 * 73)
         pilot.validate_snapshot(snapshot)
+
+    def test_legacy_fields_without_packing_error_resume_without_rewriting(self):
+        self.seed_complete_checkpoint()
+        original = {}
+        for path in (self.checkpoint / "fields").glob("*.json"):
+            record = json.loads(path.read_text(encoding="utf-8"))
+            for meta in record["data"]["metadata"]:
+                meta.pop("packingError")
+            record.pop("checkpoint_sha256")
+            encoded = pilot._canonical_bytes(pilot._with_checkpoint_integrity(record))
+            path.write_bytes(encoded)
+            original[path.name] = encoded
+        reader = FakeAcquisitionReader(self.listing)
+        snapshot = self.acquire(reader, FakeCheckpointDecoder(self.points, fail_field="T_2M"))
+        self.assertEqual(reader.downloaded_fields, [])
+        self.assertEqual(snapshot["metrics"]["resumed_fields"], list(pilot.CONTRACTS))
+        self.assertTrue(all("packingError" not in meta for data in snapshot["raw"].values()
+                            for meta in data["metadata"]))
+        self.assertEqual({path.name: path.read_bytes() for path in
+                          (self.checkpoint / "fields").glob("*.json")}, original)
+
+    def test_invalid_packing_error_or_unknown_metadata_fails_before_reuse(self):
+        self.seed_complete_checkpoint()
+        path = self.checkpoint / "fields" / "T_2M.json"
+        original = json.loads(path.read_text(encoding="utf-8"))
+        cases = [("packingError", value) for value in (-0.001, True, False, "0.001", [], {}, 10**400)]
+        cases.append(("unexpected_diagnostic", 0.001))
+        for key, value in cases:
+            with self.subTest(key=key, value=value):
+                record = copy.deepcopy(original)
+                record["data"]["metadata"][12][key] = value
+                record.pop("checkpoint_sha256")
+                encoded = pilot._canonical_bytes(pilot._with_checkpoint_integrity(record))
+                path.write_bytes(encoded)
+                reader = FakeAcquisitionReader(self.listing)
+                with self.assertRaises(ValueError):
+                    self.acquire(reader, FakeCheckpointDecoder(self.points))
+                self.assertEqual(reader.downloaded_fields, [])
+                self.assertEqual(path.read_bytes(), encoded)
 
     def test_tampered_field_fails_closed_without_redownload_or_overwrite(self):
         self.seed_complete_checkpoint()
@@ -808,6 +847,45 @@ class DecoderTests(unittest.TestCase):
         self.ec.codes_get_elements.assert_called_once_with(self.handle, "values", [0, 1])
         self.assertEqual(self.ec.codes_release.call_count, 2)
         self.assertEqual(len(self.decoder.seen), 2)
+
+    def test_real_decoder_metadata_survives_checkpoint_save_and_read(self):
+        # Keep Decoder.decode real: mocking it hid the packingError regression.
+        for field in pilot.CONTRACTS:
+            for packing_error in (0.0, 0.0005, None):
+                with self.subTest(field=field, packing_error=packing_error):
+                    self.setUp()
+                    values, metas = [], []
+                    for step in range(73):
+                        self.meta = metadata(field, step, packingError=packing_error)
+                        value, meta = self.decoder.decode(b"synthetic-grib", field, RUN, step)
+                        values.append(value)
+                        metas.append(meta)
+                    data = dict(url="https://example.invalid/unused.grib", values=values, metadata=metas,
+                                downloaded_bytes=1000, sha256="c" * 64,
+                                network_seconds=0.1, decode_seconds=0.01)
+                    kwargs = dict(intent_sha="d" * 64, field=field, run=RUN,
+                                  url=data["url"], points=self.points)
+                    with tempfile.TemporaryDirectory(prefix="icon-field-metadata-") as directory:
+                        root = Path(directory)
+                        pilot._save_field_checkpoint(root, decoder=self.decoder, data=data, **kwargs)
+                        restored = pilot._load_field_checkpoint(root, **kwargs)
+                    self.assertEqual(restored["data"], data)
+                    self.assertEqual([meta["packingError"] for meta in restored["data"]["metadata"]],
+                                     [packing_error] * 73)
+                    self.assertEqual(self.ec.codes_release.call_count, 73)
+
+    def test_missing_or_invalid_optional_packing_error_stays_unavailable(self):
+        missing = object()
+        for value in (missing, None, -0.001, True, False, "0.001", [], {},
+                      float("nan"), float("inf"), -float("inf"), 10**400):
+            with self.subTest(value=value):
+                self.setUp()
+                if value is not missing:
+                    self.meta["packingError"] = value
+                values, meta = self.decoder.decode(b"synthetic-grib", "T_2M", RUN, 1)
+                self.assertEqual(values, [293.15, 294.15])
+                self.assertIsNone(meta["packingError"])
+                self.ec.codes_release.assert_called_once_with(self.handle)
 
     def test_duplicate_identity_rejected_before_redecode(self):
         self.decoder.decode(b"fake", "T_2M", RUN, 1)

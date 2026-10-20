@@ -1,0 +1,82 @@
+{
+  "checked_at": "2026-10-20T18:27:42.279050+00:00",
+  "execution": "meteofriul-icon-knbcb",
+  "status": "failed",
+  "state": {
+    "checkpoint.json.gz": {
+      "path": "pilot/state/dispatch/icon/20261020-pm/checkpoint.json.gz",
+      "http_status": 404
+    },
+    "outcome.json": {
+      "path": "pilot/state/dispatch/icon/20261020-pm/outcome.json",
+      "http_status": 200,
+      "generation": "1792519336682208",
+      "size": "525",
+      "updated": "2026-10-20T18:02:16.686Z",
+      "value": {
+        "job": "icon",
+        "kind": "meteofriul.weather.job_result",
+        "metrics": {
+          "error_summary": "exception details withheld; inspect the typed error and local source location",
+          "error_type": "SnapshotMaterializationError",
+          "failure_file": "snapshot_materializer.py",
+          "failure_function": "_read_bounded",
+          "failure_line": 80,
+          "provider": "icon",
+          "stage": "validation"
+        },
+        "published_providers": [],
+        "reason_code": "verified_pipeline_invariant_failed",
+        "retry_after_seconds": null,
+        "retryable": false,
+        "schema_version": 1,
+        "source_run_id": null,
+        "status": "manual_review"
+      }
+    }
+  },
+  "source_quality_events": 0,
+  "log_pagination_complete": true,
+  "latest": {
+    "manifest_json_bytes": 36111,
+    "manifest_path": "runs/20261019T120000Z/manifest.json",
+    "manifest_sha256": "0aa79142499aeac4e4c85b88dd902e04b3d2704964b6519b7c3b105539519add",
+    "run_at": "2026-10-19T12:00:00Z",
+    "source_run_id": "20261019T120000Z"
+  },
+  "fvg_samples": [
+    {
+      "istat": "093033",
+      "sha256": "ac751276a0f96a6714226246f1a6c758e4dbd4baeaa9fba7fa68f46abf41e7dc",
+      "verified": true
+    },
+    {
+      "istat": "030129",
+      "sha256": "11430be26ed9093e0715704a2825c38e9289da4399a3cebaebb12738cea08c3c",
+      "verified": true
+    },
+    {
+      "istat": "031008",
+      "sha256": "482ab8c97b603966689f01dc7482b0a7ebc580214cfb30c0aeab19447774bbe6",
+      "verified": true
+    }
+  ],
+  "legacy_validation_reused": [
+    {
+      "reader": "2f02c8ba",
+      "public_documents_accepted": 215,
+      "enriched_document_rejected": true
+    },
+    {
+      "reader": "8497e773",
+      "public_documents_accepted": 215,
+      "enriched_document_rejected": true
+    }
+  ],
+  "new_run_verification": "blocked; no new publication",
+  "qa_executed": false,
+  "qa_sends": 0,
+  "qa_reservations": 0,
+  "limitation": "No new data/sidecar or QA; legacy checks refer only to identical old immutable manifest.",
+  "national": "Independent; prior 09:07 UTC readback retained, not rerun in this check."
+}

@@ -1332,6 +1332,49 @@ export function clearWeatherV1ClientMemoryCache({ storage = null } = {}) {
   return true;
 }
 
+// Raw municipality snapshots are downloadable duplicates of the validated
+// display bundle. Under origin-wide localStorage pressure, release these before
+// sacrificing the active forecast. Never touch pointers/revocations, display
+// bundles, preferences, another endpoint or another TEST storage namespace.
+export function writeWeatherV1CacheValue(storage, key, value, baseUrl) {
+  const scope = sha256Hex(String(baseUrl || "").replace(/\/+$/, "")).slice(0, 16);
+  const candidates = [];
+  for (const provider of ["icon2i", "cams_europe", "cams_europe_pollen"]) {
+    for (let slot = 0; slot < CACHE_MUNICIPALITY_SLOTS; slot += 1) {
+      const candidate = `${CACHE_PREFIX}:${scope}:${provider}:municipality:${slot}`;
+      if (candidate !== key) candidates.push(candidate);
+    }
+  }
+  for (;;) {
+    try {
+      storage.setItem(key, value);
+      return;
+    } catch (error) {
+      if (error?.name !== "QuotaExceededError" && error?.code !== 22 && error?.code !== 1014) throw error;
+      // Largest first frees room with the fewest removals. Only persisted bytes
+      // count; the bounded in-memory cache can still serve in-flight readers.
+      let removable = null;
+      let largest = 0;
+      for (const candidate of candidates) {
+        let bytes;
+        try { bytes = storage.getItem(candidate); } catch { continue; }
+        if (typeof bytes === "string" && bytes.length > largest) {
+          removable = candidate;
+          largest = bytes.length;
+        }
+      }
+      if (!removable) throw error;
+      candidates.splice(candidates.indexOf(removable), 1);
+      try {
+        storage.removeItem(removable);
+        if (storage.getItem(removable) !== null) throw error;
+      } catch { throw error; }
+      // Raw indexes repair absent slots on the next read; writing an index
+      // here would consume the space just recovered or recursively evict.
+    }
+  }
+}
+
 function header(response, name) {
   if (!response?.headers || typeof response.headers.get !== "function") {
     fail("INVALID_RESPONSE", "risposta fetch senza headers");
@@ -1574,7 +1617,7 @@ class ConditionalJsonTransport {
     this.volatileCache.tombstones.delete(key);
     if (!this.storage) return false;
     try {
-      this.storage.setItem(key, value);
+      writeWeatherV1CacheValue(this.storage, key, value, this.baseUrl);
       return true;
     } catch {
       return false;

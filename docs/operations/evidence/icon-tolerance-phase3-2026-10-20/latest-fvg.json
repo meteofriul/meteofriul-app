@@ -1,0 +1,27 @@
+{
+  "catalog": {
+    "municipality_count": 215,
+    "sha256": "d5cb6f9efdf10151caa0508b07ed910488db01dc29de45b293ac9eb05652eca4",
+    "version": "istat-2026-irdat-2006-representative-points-v1"
+  },
+  "disabled_run_ids": [],
+  "kind": "meteofriul.weather.latest",
+  "latest": {
+    "manifest_json_bytes": 36111,
+    "manifest_path": "runs/20261019T120000Z/manifest.json",
+    "manifest_sha256": "0aa79142499aeac4e4c85b88dd902e04b3d2704964b6519b7c3b105539519add",
+    "run_at": "2026-10-19T12:00:00Z",
+    "source_run_id": "20261019T120000Z"
+  },
+  "previous": {
+    "manifest_json_bytes": 36111,
+    "manifest_path": "runs/20261019T000000Z/manifest.json",
+    "manifest_sha256": "6deb453791bb4db7dd03b6689f88662e254e687ef172ddb443c2004b1918f07f",
+    "run_at": "2026-10-19T00:00:00Z",
+    "source_run_id": "20261019T000000Z"
+  },
+  "provider": "icon2i",
+  "published_at": "2026-10-19T18:00:17Z",
+  "revision": 83,
+  "schema_version": 1
+}

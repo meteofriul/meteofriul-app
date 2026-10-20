@@ -216,11 +216,11 @@ describe("pilot Community dark palette", () => {
     expect(declarationsFor(`${mapRoot} .mf-live-community-own-report__withdraw-error`)).toEqual({});
   });
 
-  it("gives only the pilot report receipt heart its flat pink treatment", () => {
+  it("gives only the pilot report receipt checkmark its approved green treatment", () => {
     expect(declarationsFor(`${receiptRoot} .mf-live-report-success--pilot-receipt .mf-live-report-success__icon`))
       .toEqual({
-        background: "var(--mf-community-heart-bg)",
-        color: "var(--mf-community-heart)",
+        background: "rgba(34, 197, 94, 0.16)",
+        color: "#86efac",
         "box-shadow": "none",
       });
   });
@@ -235,17 +235,20 @@ describe("pilot Community dark palette", () => {
     ["receipt modal", "#0b2742"],
     ["community map base", "#0a2b3d"],
     ["community map rendered popup", "#1a263b"],
-  ])("keeps composited text and heart contrast readable on the real %s surface", (_name, surface) => {
+  ])("keeps composited text and success icon contrast readable on the real %s surface", (_name, surface) => {
     // Read every proposed foreground/fill from CSS; only the real opaque
     // parent surfaces are fixtures. Composite in sRGB before linearizing.
     const base = color(surface);
     const card = composite(color(tokens["--mf-community-card-bg"]), base);
     const aliasPill = composite(color(tokens["--mf-community-alias-bg"]), card);
-    const heartBackground = composite(color(tokens["--mf-community-heart-bg"]), base);
+    const successIcon = declarationsFor(
+      `${receiptRoot} .mf-live-report-success--pilot-receipt .mf-live-report-success__icon`,
+    );
+    const successBackground = composite(color(successIcon.background), base);
     expect(contrast(color(tokens["--mf-community-secondary"]), base)).toBeGreaterThanOrEqual(4.5);
     expect(contrast(color(tokens["--mf-community-secondary"]), card)).toBeGreaterThanOrEqual(4.5);
     expect(contrast(color(tokens["--mf-community-alias-text"]), aliasPill)).toBeGreaterThanOrEqual(4.5);
-    expect(contrast(color(tokens["--mf-community-heart"]), heartBackground)).toBeGreaterThanOrEqual(3);
+    expect(contrast(color(successIcon.color), successBackground)).toBeGreaterThanOrEqual(3);
     for (const action of ["action", "danger", "neutral"]) {
       const actionBackground = composite(color(tokens[`--mf-community-${action}-bg`]), card);
       expect(contrast(color(tokens[`--mf-community-${action}-text`]), actionBackground), action)

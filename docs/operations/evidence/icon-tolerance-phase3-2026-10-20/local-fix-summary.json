@@ -1,0 +1,62 @@
+{
+  "status": "local_fix_verified_not_deployed",
+  "branch": "codex/icon2i-checkpoint-metadata",
+  "base_commit": "bf304281aa9851369687c2dd646b8bd473c0b23d",
+  "tests": {
+    "before_fix": {
+      "test_methods": 5,
+      "failed_subtests": 5,
+      "error_subtests": 44,
+      "expected_failure": true,
+      "log_sha256": "41c92dc435d0388929878e400f8aaa06aa4e3a01f0bcf15a41b86ce5b35dd872"
+    },
+    "initial_suite": {
+      "phase": "after_fix",
+      "python": "3.13.5",
+      "modules": [
+        "test_run_pilot",
+        "test_operational_diagnostics",
+        "test_accumulation_tolerance",
+        "test_icon_quality",
+        "test_icon_checkpoint"
+      ],
+      "tests": 123,
+      "failures": 1,
+      "errors": 1,
+      "skipped": 0,
+      "seconds": 84.115,
+      "success": false,
+      "network": "blocked"
+    },
+    "targeted_final": {
+      "phase": "diagnostic_test_correction",
+      "tests": 10,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "seconds": 0.197,
+      "success": true,
+      "network": "blocked",
+      "production_code_changed_since_suite": false
+    },
+    "distinct_tests_with_final_passing_result": 123,
+    "test_only_correction": "assertRaises clears the exception traceback; new diagnostic regression now checks phase_failed record captured before that cleanup. Production code unchanged between runs."
+  },
+  "candidate_source_sha256": {
+    "experiments/weather_autonomy/run_pilot.py": "6b7b57f77382c5d2572eedb6ac9c99d974426c024a59c01904ff25822b0c4937",
+    "experiments/weather_autonomy/local_pipeline/operational_diagnostics.py": "b4f55a5c8e60f29aefef1fcc77ee968c9f726a9ab554568716553eaec2b9cb8e",
+    "experiments/weather_autonomy/test_run_pilot.py": "a8f8a6122a9caaedfd4d443a893c6a1db22653dabdc41119d56ff80e2395f73f",
+    "experiments/weather_autonomy/test_operational_diagnostics.py": "314200a1e818baf91bfde2e86ac26b5ea1b5dc811df772e289418a881fe779f3"
+  },
+  "network": "blocked during test execution",
+  "limits": [
+    "ecCodes external interface simulated; production Decoder.decode executed unchanged by tests",
+    "No live GRIB acquisition or real source run",
+    "No image build or deploy",
+    "No main promotion, push, AAB, phone installation or sends"
+  ],
+  "field_checkpoint_schema": "1, optional packingError; old checkpoints remain readable unchanged",
+  "cloud_checkpoint_schemas": "1 and 2 unchanged and covered by local tests",
+  "followup": "remains PAUSED",
+  "hash_serialization": "Repository text uses LF; raw cloud responses remain preserved in the original private evidence directory."
+}

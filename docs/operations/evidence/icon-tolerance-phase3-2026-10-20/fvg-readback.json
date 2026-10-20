@@ -1,0 +1,42 @@
+{
+  "source_run_id": "20261019T120000Z",
+  "old_run_only": true,
+  "old_manifest_unchanged": true,
+  "municipality_readback": [
+    {
+      "istat": "093033",
+      "sha256": "ac751276a0f96a6714226246f1a6c758e4dbd4baeaa9fba7fa68f46abf41e7dc",
+      "bytes": 57225
+    },
+    {
+      "istat": "030129",
+      "sha256": "11430be26ed9093e0715704a2825c38e9289da4399a3cebaebb12738cea08c3c",
+      "bytes": 57310
+    },
+    {
+      "istat": "093022",
+      "sha256": "3f7df0aeaeec1bb2f83d2bbdb64cf4ff59079526fc6646835dd60f387773eeae",
+      "bytes": 57114
+    }
+  ],
+  "slot_objects": [
+    {
+      "name": "pilot/state/dispatch/icon/20261020-am.json",
+      "generation": "1792476116600787",
+      "size": "80"
+    },
+    {
+      "name": "pilot/state/dispatch/icon/20261020-am/acquisition-attempt-0.json",
+      "generation": "1792476116682421",
+      "size": "2"
+    },
+    {
+      "name": "pilot/state/dispatch/icon/20261020-am/outcome.json",
+      "generation": "1792476148360759",
+      "size": "496"
+    }
+  ],
+  "checkpoint_present": false,
+  "qa_not_started": true,
+  "storage_prefix": "pilot/state/dispatch/icon/20261020-am"
+}

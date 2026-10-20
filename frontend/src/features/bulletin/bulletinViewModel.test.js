@@ -545,7 +545,7 @@ describe("bulletin view model", () => {
 
     expect(model.alert).toMatchObject({
       count: 1,
-      label: "Allerta gialla",
+      label: "Allerta gialla in FVG",
       level: "yellow",
       meta: "Protezione Civile FVG",
       tone: "yellow",
@@ -572,7 +572,7 @@ describe("bulletin view model", () => {
 
     expect(alert).toMatchObject({
       action: { anchor: "official-alerts", tab: "bulletin" },
-      label: "Alerte naranzon",
+      label: "Alerte narançon in FVG",
       languageNotice: "Test uficiâl in talian - FUR in revision",
       meta: "Protezion Civîl FVG",
       tone: "orange",
@@ -656,7 +656,7 @@ describe("bulletin view model", () => {
     });
 
     expect(model.alert).toMatchObject({
-      label: "Allerta rossa",
+      label: "Allerta rossa in FVG",
       level: "red",
       text: "Allerta rossa per temporali.",
       validityLabel: "Valida fino alle 14:00 del 3 agosto",
@@ -686,10 +686,10 @@ describe("bulletin view model", () => {
 
     expect(buildOfficialAlertPresentation(payload, {
       now: new Date("2026-08-03T09:59:59.999+02:00"),
-    })).toMatchObject({ label: "Allerta rossa", validityLabel: "Valida fino alle 10:00 del 3 agosto" });
+    })).toMatchObject({ label: "Allerta rossa in FVG", validityLabel: "Valida fino alle 10:00 del 3 agosto" });
     expect(buildOfficialAlertPresentation(payload, {
       now: new Date("2026-08-03T10:00:00+02:00"),
-    })).toMatchObject({ label: "Allerta gialla", validityLabel: "Valida fino alle 12:00 del 3 agosto" });
+    })).toMatchObject({ label: "Allerta gialla in FVG", validityLabel: "Valida fino alle 12:00 del 3 agosto" });
     expect(buildOfficialAlertPresentation(payload, {
       now: new Date("2026-08-03T12:00:00+02:00"),
     })).toBeNull();
@@ -722,7 +722,7 @@ describe("bulletin view model", () => {
     });
 
     expect(model.alert).toMatchObject({
-      label: "Allerta gialla",
+      label: "Allerta gialla in FVG",
       level: "yellow",
       text: "Allerta gialla per PIOGGIA.",
       validityLabel: "Valida fino alle 14:00 del 3 agosto",

@@ -424,7 +424,7 @@ describe("AppRoutes weather section navigation", () => {
     expect(navigation).toMatch(/<button[^>]*aria-current="page"[^>]*>Previsioni<\/button>/);
     expect(markup).toContain('class="mf-tab-page mf-tab-page--weather"');
     expect(markup).toContain("Dati meteo in arrivo");
-    expect(markup).toContain("Mostreremo le previsioni appena il dato verificato sarà disponibile.");
+    expect(markup).toContain("Le previsioni saranno mostrate appena i dati saranno disponibili.");
   });
 
   it.each([

@@ -7,7 +7,7 @@ const ANDROID = { isNativePlatform: () => true, getPlatform: () => "android" };
 function setup(overrides = {}) {
   let back;
   const remove = vi.fn(async () => {});
-  const app = { addListener: vi.fn(async (event, callback) => {
+  const app = { exitApp: vi.fn(async () => {}), addListener: vi.fn(async (event, callback) => {
     expect(event).toBe("backButton");
     back = callback;
     return { remove };
@@ -31,7 +31,7 @@ describe("Android Back ownership", () => {
   ])("never registers or changes Back in %s", async (_name, options) => {
     const { controller, app } = setup(options);
     controller.registerOverlay(vi.fn());
-    controller.setPageHandler(vi.fn());
+    controller.setPageHandler(vi.fn(), { atRoot: true });
     await controller.whenSettled();
     expect(app.addListener).not.toHaveBeenCalled();
   });
@@ -44,7 +44,7 @@ describe("Android Back ownership", () => {
 
     let back;
     const page = vi.fn();
-    const app = { addListener: vi.fn(async (event, callback) => {
+    const app = { exitApp: vi.fn(async () => {}), addListener: vi.fn(async (event, callback) => {
       expect(event).toBe("backButton");
       back = callback;
       return { remove: vi.fn(async () => {}) };
@@ -63,7 +63,58 @@ describe("Android Back ownership", () => {
     expect(page).toHaveBeenCalledOnce();
   });
 
-  it("leaves Home without overlays to the native default", async () => {
+  it("exits from Home even when the WebView has browser history", async () => {
+    const { controller, app, press, history } = setup();
+    const page = vi.fn();
+    controller.setPageHandler(page, { atRoot: true });
+    await controller.whenSettled();
+    press({ canGoBack: true });
+    press({ canGoBack: true });
+    await vi.waitFor(() => expect(app.exitApp).toHaveBeenCalledOnce());
+    expect(history.back).not.toHaveBeenCalled();
+    expect(page).not.toHaveBeenCalled();
+  });
+
+  it("closes an overlay on Home before a separate press can exit", async () => {
+    const { controller, app, press } = setup();
+    controller.setPageHandler(vi.fn(), { atRoot: true });
+    const close = vi.fn(() => stop());
+    const stop = controller.registerOverlay(close);
+    await controller.whenSettled();
+    press();
+    await controller.whenSettled();
+    expect(close).toHaveBeenCalledOnce();
+    expect(app.exitApp).not.toHaveBeenCalled();
+    press();
+    await vi.waitFor(() => expect(app.exitApp).toHaveBeenCalledOnce());
+  });
+
+  it("keeps Home open while a report submission is locked, using the current lock", async () => {
+    const { controller, app, press } = setup();
+    let locked = false;
+    controller.setPageHandler(vi.fn(), { atRoot: true, canExit: () => !locked });
+    await controller.whenSettled();
+    locked = true;
+    press();
+    await Promise.resolve();
+    expect(app.exitApp).not.toHaveBeenCalled();
+    locked = false;
+    press();
+    await vi.waitFor(() => expect(app.exitApp).toHaveBeenCalledOnce());
+  });
+
+  it("allows another exit attempt after a rejected native bridge call", async () => {
+    const { controller, app, press } = setup();
+    app.exitApp.mockRejectedValueOnce(new Error("bridge unavailable"));
+    controller.setPageHandler(vi.fn(), { atRoot: true });
+    await controller.whenSettled();
+    press();
+    await vi.waitFor(() => expect(app.exitApp).toHaveBeenCalledOnce());
+    press();
+    await vi.waitFor(() => expect(app.exitApp).toHaveBeenCalledTimes(2));
+  });
+
+  it("leaves an unowned page to the native default", async () => {
     const { controller, app } = setup();
     controller.setPageHandler(null);
     await controller.whenSettled();

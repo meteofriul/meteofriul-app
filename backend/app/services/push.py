@@ -478,6 +478,10 @@ def _canonical_alert(alert: dict[str, Any]) -> dict[str, Any]:
         "valid_from": str(alert.get("valid_from") or "").strip(),
         "valid_to": str(alert.get("valid_to") or "").strip(),
     }
+    # Preserve existing signatures for uniform alerts. A redistribution of
+    # mixed severities is a material change even with the same regional maximum.
+    if alert.get("mixed_levels") is True and isinstance(alert.get("zone_levels"), dict):
+        canonical["zone_levels"] = dict(sorted(alert["zone_levels"].items()))
     # The corroboration revision hash binds source and observation time. It is
     # evidence for the current snapshot, not a stable notification identity.
     return canonical

@@ -1,0 +1,124 @@
+{
+  "observed_at": "2026-10-20T18:14:17.379928+00:00",
+  "runs": {
+    "icon": [
+      {
+        "name": "projects/meteo-friul/locations/europe-west1/jobs/meteofriul-icon/executions/meteofriul-icon-knbcb",
+        "startTime": "2026-10-20T18:00:13.189208Z",
+        "completionTime": "2026-10-20T18:03:14.096557Z",
+        "failedCount": 1,
+        "completed": [
+          {
+            "type": "Completed",
+            "state": "CONDITION_FAILED",
+            "message": "Task meteofriul-icon-knbcb-task0 failed with exit code: 1 and message: The container exited with an error.",
+            "lastTransitionTime": "2026-10-20T18:03:14.096557Z",
+            "executionReason": "NON_ZERO_EXIT_CODE"
+          }
+        ],
+        "images": [
+          "europe-west1-docker.pkg.dev/meteo-friul/meteofriul/weather-worker@sha256:e72f606ffe1feec5f1c108f945ec5dbce43cfebef3d69913fc72c11b04cbcae2"
+        ]
+      },
+      {
+        "name": "projects/meteo-friul/locations/europe-west1/jobs/meteofriul-icon/executions/meteofriul-icon-x26c6",
+        "startTime": "2026-10-20T06:01:00.432524Z",
+        "completionTime": "2026-10-20T06:03:42.916705Z",
+        "failedCount": 1,
+        "completed": [
+          {
+            "type": "Completed",
+            "state": "CONDITION_FAILED",
+            "message": "Task meteofriul-icon-x26c6-task0 failed with exit code: 1 and message: The container exited with an error.",
+            "lastTransitionTime": "2026-10-20T06:03:42.916705Z",
+            "executionReason": "NON_ZERO_EXIT_CODE"
+          }
+        ],
+        "images": [
+          "europe-west1-docker.pkg.dev/meteo-friul/meteofriul/weather-worker@sha256:b8719b7f26c355115ded47e282e19f8011ff270e0d0107a831526879155ac2f2"
+        ]
+      },
+      {
+        "name": "projects/meteo-friul/locations/europe-west1/jobs/meteofriul-icon/executions/meteofriul-icon-p7cp9",
+        "startTime": "2026-10-19T18:00:08.494528Z",
+        "completionTime": "2026-10-19T18:02:44.279049Z",
+        "succeededCount": 1,
+        "completed": [
+          {
+            "type": "Completed",
+            "state": "CONDITION_SUCCEEDED",
+            "message": "Execution completed successfully in 2m35.78s.",
+            "lastTransitionTime": "2026-10-19T18:02:44.279049Z"
+          }
+        ],
+        "images": [
+          "europe-west1-docker.pkg.dev/meteo-friul/meteofriul/weather-worker@sha256:b8f625008b04a9f6f98687a56fe8668795374af48eec10902d1772795d57f4cc"
+        ]
+      }
+    ],
+    "fvg-alerts": [
+      {
+        "name": "projects/meteo-friul/locations/europe-west8/jobs/meteofriul-official-alert-sync/executions/meteofriul-official-alert-sync-6c75p",
+        "startTime": "2026-10-20T18:00:05.198780Z",
+        "completionTime": "2026-10-20T18:00:15.615639Z",
+        "failedCount": 1,
+        "completed": [
+          {
+            "type": "Completed",
+            "state": "CONDITION_FAILED",
+            "message": "Task meteofriul-official-alert-sync-6c75p-task0 failed with exit code: 1 and message: The container exited with an error.",
+            "lastTransitionTime": "2026-10-20T18:00:15.615639Z",
+            "executionReason": "NON_ZERO_EXIT_CODE"
+          }
+        ],
+        "images": [
+          "europe-west1-docker.pkg.dev/meteo-friul/meteofriul/backend@sha256:1f5171ad3e07748ac7fa8e3a8d1764458ee3ab4a3f4c4b78e8275925fa621d7f"
+        ]
+      },
+      {
+        "name": "projects/meteo-friul/locations/europe-west8/jobs/meteofriul-official-alert-sync/executions/meteofriul-official-alert-sync-9pptm",
+        "startTime": "2026-10-20T16:00:27.137362Z",
+        "completionTime": "2026-10-20T16:00:37.349302Z",
+        "failedCount": 1,
+        "completed": [
+          {
+            "type": "Completed",
+            "state": "CONDITION_FAILED",
+            "message": "Task meteofriul-official-alert-sync-9pptm-task0 failed with exit code: 1 and message: The container exited with an error.",
+            "lastTransitionTime": "2026-10-20T16:00:37.349302Z",
+            "executionReason": "NON_ZERO_EXIT_CODE"
+          }
+        ],
+        "images": [
+          "europe-west1-docker.pkg.dev/meteo-friul/meteofriul/backend@sha256:1f5171ad3e07748ac7fa8e3a8d1764458ee3ab4a3f4c4b78e8275925fa621d7f"
+        ]
+      },
+      {
+        "name": "projects/meteo-friul/locations/europe-west8/jobs/meteofriul-official-alert-sync/executions/meteofriul-official-alert-sync-jq9dq",
+        "startTime": "2026-10-20T14:00:59.071152Z",
+        "completionTime": "2026-10-20T14:01:11.337298Z",
+        "failedCount": 1,
+        "completed": [
+          {
+            "type": "Completed",
+            "state": "CONDITION_FAILED",
+            "message": "Task meteofriul-official-alert-sync-jq9dq-task0 failed with exit code: 1 and message: The container exited with an error.",
+            "lastTransitionTime": "2026-10-20T14:01:11.337298Z",
+            "executionReason": "NON_ZERO_EXIT_CODE"
+          }
+        ],
+        "images": [
+          "europe-west1-docker.pkg.dev/meteo-friul/meteofriul/backend@sha256:1f5171ad3e07748ac7fa8e3a8d1764458ee3ab4a3f4c4b78e8275925fa621d7f"
+        ]
+      }
+    ]
+  },
+  "icon_latest": {
+    "manifest_json_bytes": 36111,
+    "manifest_path": "runs/20261019T120000Z/manifest.json",
+    "manifest_sha256": "0aa79142499aeac4e4c85b88dd902e04b3d2704964b6519b7c3b105539519add",
+    "run_at": "2026-10-19T12:00:00Z",
+    "source_run_id": "20261019T120000Z"
+  },
+  "actions": "Metadata/log/public-document reads only; no executions or mutations."
+}

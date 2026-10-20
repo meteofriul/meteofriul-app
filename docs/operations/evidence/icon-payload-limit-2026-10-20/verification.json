@@ -1,0 +1,58 @@
+{
+  "base_commit": "c8aa724dfae311d004f072010f59a0eb30d26b15",
+  "branch": "codex/icon2i-checkpoint-metadata",
+  "uncommitted": true,
+  "verified_source_files": [
+    {
+      "path": "experiments/weather_autonomy/local_pipeline/snapshot_materializer.py",
+      "sha256": "cbf529e3b73092e141f1ea722af36582f178baa20074d527400c82c96512c4da"
+    },
+    {
+      "path": "experiments/weather_autonomy/local_pipeline/operational_diagnostics.py",
+      "sha256": "43b1ff38ea36d217a49f38cb7e419aa7642b434230776e4b9329a8d6786b4e05"
+    },
+    {
+      "path": "experiments/weather_autonomy/test_icon_snapshot_limits.py",
+      "sha256": "a25ae314091072f5f5bc3e34198bdd2eef55950c8b8a72adcee95197c921ed93"
+    }
+  ],
+  "tests": 183,
+  "failures": 0,
+  "errors": 0,
+  "skips": 0,
+  "observed_failed_payload_bytes": 34601901,
+  "old_limit_bytes": 33554432,
+  "new_limit_bytes": 67108864,
+  "pipeline_probe": {
+    "before_padding_bytes": 37183656,
+    "checkpoint_expanded_bytes": 26460979,
+    "checkpoint_gzip_bytes": 640325,
+    "checkpoint_schema": 2,
+    "hours": 73,
+    "largest_enriched_document_bytes": 124099,
+    "memory": {
+      "peak_working_set_bytes": 217579520,
+      "working_set_bytes": 160821248
+    },
+    "municipalities": 215,
+    "old_limit_reproduced": true,
+    "payload_bytes": 37183656,
+    "regression": "synthetic_full_catalog_not_failed_live_payload",
+    "repeat_latest_changed": false,
+    "sidecars_verified": 215,
+    "storage": "memory_only",
+    "tolerance_verified": 15552
+  },
+  "constraints": {
+    "local_only": true,
+    "network_blocked_in_tests": true,
+    "storage_in_memory": true,
+    "cloud_runtime_verified": false,
+    "failed_live_payload_replayed": false,
+    "aab": false,
+    "installs": false,
+    "push": false,
+    "deploy": false,
+    "sends": false
+  }
+}
