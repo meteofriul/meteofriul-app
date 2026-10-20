@@ -410,7 +410,7 @@ try {
             throw "runtime_writer_set_live_fixture_mix_forbidden"
         }
         if (-not $RuntimeWriterSetContractPath) {
-            $RuntimeWriterSetContractPath = Join-Path $repositoryRoot "release-history\firestore-ttl\runtime-writer-sets\play-0.1.13-20261009.json"
+            $RuntimeWriterSetContractPath = Join-Path $repositoryRoot "release-history\firestore-ttl\runtime-writer-sets\play-services-20261020.json"
         }
         if (-not (Test-Path -LiteralPath $RuntimeWriterSetContractPath -PathType Leaf)) {
             throw "runtime_writer_set_contract_missing"

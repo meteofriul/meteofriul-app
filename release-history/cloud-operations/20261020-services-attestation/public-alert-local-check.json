@@ -1,0 +1,236 @@
+{
+  "checkedAt": "2026-10-20T17:01:59.807274+00:00",
+  "mode": "local in-memory reconciliation; captured public widget + live public ARPA GET; Telegram omitted",
+  "observations": {
+    "fetched_at": "2026-10-20T17:01:59+00:00",
+    "widget": {
+      "source_mode": "official_widget",
+      "alerts": [
+        {
+          "id": "allerta-regionale-30-del-2026",
+          "title": "ALLERTA REGIONALE 30 DEL 2026",
+          "level": "arancione",
+          "levels": [
+            "arancione",
+            "gialla"
+          ],
+          "mixed_levels": true,
+          "zone_levels": {
+            "FVG-A": "arancione",
+            "FVG-B": "arancione",
+            "FVG-C": "gialla",
+            "FVG-D": "verde"
+          },
+          "risks": [
+            "idrogeologico",
+            "idraulico",
+            "costiero"
+          ],
+          "severity": "",
+          "category": "Meteorologica",
+          "area": "",
+          "zones": [
+            "FVG-A",
+            "FVG-B",
+            "FVG-C"
+          ],
+          "valid_from_label": "21/10/2026 - 00:00",
+          "valid_to_label": "22/10/2026 - 06:00",
+          "valid_from": "2026-10-21T00:00:00+02:00",
+          "valid_to": "2026-10-22T06:00:00+02:00",
+          "time_window": "00:00 21/10-06:00 22/10",
+          "official_text": "DALLE 00:00 DEL 21/10 ALLE 06:00 DEL 22/10 ALLERTA ARANCIONE IDROGEOLOGICA SULLE ZONE FVG-A e FVG-B, IN PARTICOLARE IN AREA MONTANA; ALLERTA GIALLA IDROGEOLOGICA E GIALLA IDRAULICA COSTIERA SULLA ZONA FVG-C PER POSSIBILE ACQUA ALTA E MAREGGIATE.",
+          "pdf_url": "https://pianiemergenza.protezionecivile.fvg.it/alerts/30_2026.pdf",
+          "source": {
+            "id": "protezione_civile_fvg_alerts",
+            "name": "Protezione Civile FVG",
+            "type": "official_alert_source",
+            "url": "https://www.protezionecivile.fvg.it/it/allerte"
+          },
+          "source_mode": "official_widget",
+          "push_title": "Meteo Friul",
+          "push_body": "Dalle 00:00 del 21/10 alle 06:00 del 22/10. Allerta arancione. zona FVG-A, zona FVG-B. Allerta gialla. zona FVG-C.",
+          "push_title_i18n": {
+            "it": "Meteo Friul",
+            "fur": "Meteo Friul"
+          },
+          "push_body_i18n": {
+            "it": "Dalle 00:00 del 21/10 alle 06:00 del 22/10. Allerta arancione. zona FVG-A, zona FVG-B. Allerta gialla. zona FVG-C.",
+            "fur": "Des 00:00 dai 21/10 aes 06:00 dai 22/10. Alerte naranç. zone FVG-A, zone FVG-B. Alerte zale. zone FVG-C."
+          }
+        }
+      ],
+      "can_confirm_inactive": false
+    },
+    "html": null,
+    "telegram": {
+      "alerts": [],
+      "can_confirm_inactive": false
+    },
+    "arpa_pcr": {
+      "status": "available",
+      "source": {
+        "id": "arpa_osmer_risks_page",
+        "name": "ARPA FVG OSMER · Rischi meteorologici",
+        "url": "https://www.meteo.fvg.it/rischi_meteo.php?ln="
+      },
+      "source_mode": "raw_official_page",
+      "source_timing": {
+        "fetched_at": "2026-10-20T17:01:59+00:00",
+        "http_date": "2026-10-20T17:02:00+00:00",
+        "last_modified": null,
+        "age_seconds": null,
+        "cache_max_age_seconds": 3600,
+        "source_observed_at": "2026-10-20T17:02:00+00:00",
+        "source_timestamp_kind": "http_date",
+        "comparable_to_external_events": true
+      },
+      "pcr": {
+        "status": "active",
+        "explicit": true,
+        "marker": "recognized_active_panel",
+        "alerts": [
+          {
+            "headline": "PCR - Allerta dalle ore 00:00 di mercoledì alle ore 06:00 di giovedì",
+            "start_time": "00:00",
+            "start_weekday": "mercoledì",
+            "end_time": "06:00",
+            "end_weekday": "giovedì",
+            "zone_levels": [
+              {
+                "zone": "FVG-A",
+                "level": 2
+              },
+              {
+                "zone": "FVG-B",
+                "level": 2
+              },
+              {
+                "zone": "FVG-C",
+                "level": 1
+              },
+              {
+                "zone": "FVG-D",
+                "level": 0
+              }
+            ],
+            "map_url": "https://www.meteo.fvg.it/mappa_zone_allerta.php?cont&dim=320&z=2,2,1,0",
+            "detail_url": "https://www.protezionecivile.fvg.it/allerte",
+            "document_urls": [
+              "https://pianiemergenza.protezionecivile.fvg.it/alerts/30_2026.pdf"
+            ],
+            "revision": "936089975211481b4cdef53a0c18547db9e1018e013623d0f352047a5b21cbff"
+          }
+        ],
+        "can_confirm_inactive": false,
+        "revision": "e39c655b679af7d8b86c3e635b54cb9b2bd549e78a3dd95b0a9b61aa30d296d7"
+      },
+      "can_confirm_pcr_inactive": false,
+      "revision": "e39c655b679af7d8b86c3e635b54cb9b2bd549e78a3dd95b0a9b61aa30d296d7"
+    },
+    "failures": []
+  },
+  "result": {
+    "active": true,
+    "count": 1,
+    "alerts": [
+      {
+        "id": "allerta-regionale-30-2026",
+        "title": "ALLERTA REGIONALE 30 DEL 2026",
+        "level": "arancione",
+        "levels": [
+          "arancione",
+          "gialla"
+        ],
+        "mixed_levels": true,
+        "zone_levels": {
+          "FVG-A": "arancione",
+          "FVG-B": "arancione",
+          "FVG-C": "gialla",
+          "FVG-D": "verde"
+        },
+        "risks": [
+          "idrogeologico",
+          "idraulico",
+          "costiero"
+        ],
+        "severity": "",
+        "category": "Meteorologica",
+        "area": "",
+        "zones": [
+          "FVG-A",
+          "FVG-B",
+          "FVG-C"
+        ],
+        "valid_from_label": "21/10/2026 - 00:00",
+        "valid_to_label": "22/10/2026 - 06:00",
+        "valid_from": "2026-10-21T00:00:00+02:00",
+        "valid_to": "2026-10-22T06:00:00+02:00",
+        "time_window": "00:00 21/10-06:00 22/10",
+        "official_text": "DALLE 00:00 DEL 21/10 ALLE 06:00 DEL 22/10 ALLERTA ARANCIONE IDROGEOLOGICA SULLE ZONE FVG-A e FVG-B, IN PARTICOLARE IN AREA MONTANA; ALLERTA GIALLA IDROGEOLOGICA E GIALLA IDRAULICA COSTIERA SULLA ZONA FVG-C PER POSSIBILE ACQUA ALTA E MAREGGIATE.",
+        "pdf_url": "https://pianiemergenza.protezionecivile.fvg.it/alerts/30_2026.pdf",
+        "source": {
+          "id": "protezione_civile_fvg_alerts",
+          "name": "Protezione Civile FVG",
+          "type": "official_alert_source",
+          "url": "https://www.protezionecivile.fvg.it/it/allerte"
+        },
+        "source_mode": "official_fvg_widget_arpa_corroborated",
+        "push_title": "Meteo Friul",
+        "push_body": "Dalle 00:00 del 21/10 alle 06:00 del 22/10. Allerta arancione. zona FVG-A, zona FVG-B. Allerta gialla. zona FVG-C.",
+        "push_title_i18n": {
+          "it": "Meteo Friul",
+          "fur": "Meteo Friul"
+        },
+        "push_body_i18n": {
+          "it": "Dalle 00:00 del 21/10 alle 06:00 del 22/10. Allerta arancione. zona FVG-A, zona FVG-B. Allerta gialla. zona FVG-C.",
+          "fur": "Des 00:00 dai 21/10 aes 06:00 dai 22/10. Alerte naranç. zone FVG-A, zone FVG-B. Alerte zale. zone FVG-C."
+        },
+        "event_id": "allerta-regionale-30-2026",
+        "alert_number": 30,
+        "alert_year": 2026,
+        "metadata_document_url": "https://pianiemergenza.protezionecivile.fvg.it/alerts/30_2026.pdf",
+        "corroborated_at": "2026-10-20T17:01:59+00:00",
+        "corroboration": {
+          "method": "official_fvg_widget_arpa",
+          "identity": "2026:30",
+          "pcr_revision": "e39c655b679af7d8b86c3e635b54cb9b2bd549e78a3dd95b0a9b61aa30d296d7",
+          "revision_hash_schema": "runtime-v3"
+        },
+        "revision_hash": "d1894144c3b5a65fe8bc75ddcbb687e715277b4a83bef92f76bb59846291143f"
+      }
+    ],
+    "source": {
+      "id": "protezione_civile_fvg_alerts",
+      "name": "Protezione Civile FVG",
+      "type": "official_alert_source",
+      "url": "https://www.protezionecivile.fvg.it/it/allerte"
+    },
+    "source_mode": "official_fvg_widget_arpa_corroborated",
+    "fetched_at": "2026-10-20T17:01:59+00:00",
+    "expires_at": "2026-10-22T06:00:00+02:00",
+    "cache": {
+      "status": "fresh",
+      "ttl_seconds": 600,
+      "verification": {
+        "widget": {
+          "status": "active",
+          "observed_at": "2026-10-20T17:01:59+00:00",
+          "event_signature": "1328e73fe038ba6271ff41b664622bad101aba6b2c16fe461240a6155e08d272"
+        },
+        "arpa_pcr": {
+          "status": "active",
+          "observed_at": "2026-10-20T17:01:59+00:00",
+          "revision": "e39c655b679af7d8b86c3e635b54cb9b2bd549e78a3dd95b0a9b61aa30d296d7",
+          "document_urls": [
+            "https://pianiemergenza.protezionecivile.fvg.it/alerts/30_2026.pdf"
+          ],
+          "document_membership_complete": true
+        }
+      }
+    }
+  },
+  "writes": 0,
+  "sends": 0,
+  "manualCloudExecutions": 0
+}

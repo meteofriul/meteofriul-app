@@ -181,6 +181,16 @@ pwsh -NoProfile -File .\scripts\build-play-aab.ps1 `
   -ExpectedBundletoolSha256 "<sha256-del-jar>"
 ```
 
+Per una revisione il cui nome non contiene il commit, lo script accetta anche
+`-ExpectedImageDigest` e `-BackendEvidencePath`, sempre insieme. Non si tratta
+di una deroga: entrambi i preflight verificano la stessa revisione, digest,
+commit attestato e stato Ready. L'attestazione del tag `play-b6fbe4d` verificata
+il 20 ottobre è
+[`api-backend.json`](../../release-history/cloud-operations/20261020-services-attestation/api-backend.json):
+revisione `meteofriul-api-00251-jow`, sorgenti runtime equivalenti al commit
+`599aea2f8a3b1e7e65af2b43e77bb54e4637c96e`. Rileggere lo stato live prima della
+build: questa prova non autorizza a usare il digest per una revisione diversa.
+
 Solo per la prima build senza un'evidenza Play accettata, aggiungere
 `-ExpectedUploadCertificateSha256 "<sha256-upload-key>"`. Il valore `0` per
 `-ExpectedLatestPlayVersionCode` è valido solo se la Console conferma che non

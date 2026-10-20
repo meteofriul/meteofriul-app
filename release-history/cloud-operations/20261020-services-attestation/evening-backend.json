@@ -1,0 +1,156 @@
+{
+  "schemaVersion": "release-overlay-image-evidence-v1",
+  "recordedAt": "2026-10-20T17:05:49.665516+00:00",
+  "sourceCommit": "b5f65e7b26097ad7d0141e80348c5323b77ccf1c",
+  "imageDigest": "europe-west1-docker.pkg.dev/meteo-friul/meteofriul/backend@sha256:68ce70252ae27a33a5bbd628984727fc993a9be09295777d945108441bf773c5",
+  "cloudBuildId": "d32ca0bf-a838-4297-862c-5b476e3aef23",
+  "cloudBuildRegion": "europe-west1",
+  "cloudBuildStatus": "SUCCESS",
+  "sourceProvenance": {
+    "resolvedStorageSource": {
+      "bucket": "run-sources-meteo-friul-europe-west1",
+      "object": "job-fix-deployment/95c4347b12a9451c9d1514c170824dba/source.tgz",
+      "generation": "1792247765304384"
+    },
+    "fileHashes": {
+      "gs://run-sources-meteo-friul-europe-west1/job-fix-deployment/95c4347b12a9451c9d1514c170824dba/source.tgz#1792247765304384": {
+        "fileHash": [
+          {
+            "type": "MD5",
+            "value": "ch1IDglnQnrqhPQucHpYHw=="
+          },
+          {
+            "type": "SHA256",
+            "value": "rq8M2BUxETvRAE1NPrOcTZRbzCyzGbJEI/UAAlAfTRo="
+          }
+        ]
+      }
+    }
+  },
+  "sourceRecovery": "Original local .tgz, SHA256 equals immutable Cloud Build provenance; cloud temporary object returns 404.",
+  "parentBuildId": "6b2bc110-0ddb-4bec-96b3-1046a6c89e75",
+  "parentImage": "europe-west1-docker.pkg.dev/meteo-friul/meteofriul/backend@sha256:7af9d579cdc135b1823e226ae99aec7fb3ec93276d5aa0af80910923b363fe04",
+  "sourceArchivePushRepositorySha256": "989a05445be31c46fa8d23e9613d0fd54c83dd29aae999402a7cd3b41bbae71c",
+  "pushWriter": "Inherited unchanged from pinned parent; none of the four COPY instructions replaces repositories/push.py.",
+  "overlay": {
+    "candidate": "b5f65e7b26097ad7d0141e80348c5323b77ccf1c",
+    "files": [
+      {
+        "path": "parent-manifest.json",
+        "bytes": 18928,
+        "sha256": "74d2928da5d9499b253819293b3dd369229f8407c5eb9ae5529e3b3f40bb2473",
+        "trackedSource": false
+      },
+      {
+        "path": "check_parent.py",
+        "bytes": 633,
+        "sha256": "6fc7152a8ee9e24f1e438739243989583584a8ad607048a369e68162c0ce9f5f",
+        "trackedSource": false
+      },
+      {
+        "path": "backend/app/jobs/send_evening_forecast.py",
+        "bytes": 2048,
+        "sha256": "ae6def83910961ac03ec822bbf5f4ebae87c6b8f33ecb9079a21eee69b6db311",
+        "trackedSource": true
+      },
+      {
+        "path": "backend/app/push/fcm.py",
+        "bytes": 9235,
+        "sha256": "392930da0148d7b4f17759a2f15ee5469843e4e3a617a137b30e73036fbcb8bd",
+        "trackedSource": false,
+        "transformation": "remove unrelated national channel constant; apply only approved FCM error classification patch"
+      },
+      {
+        "path": "backend/app/services/evening_forecast_delivery.py",
+        "bytes": 16964,
+        "sha256": "c7f198ab7a9a33de9ae62a55ac5e6b1c9e0a6fed4aac8b2c3b00f41e52bb5342",
+        "trackedSource": true
+      },
+      {
+        "path": "backend/app/services/morning_forecast_delivery.py",
+        "bytes": 34532,
+        "sha256": "8c600aebe55ca2306ca36ed82a8ed1b918272f9e070e0a1b255c288c9cc34fb2",
+        "trackedSource": true
+      },
+      {
+        "path": "backend/tests/test_evening_forecast_reliability.py",
+        "bytes": 10297,
+        "sha256": "65dcedeefb7d44e388b55d86da2ee2516ab371178ef8be2444d3d164067d1462",
+        "trackedSource": true
+      },
+      {
+        "path": "backend/tests/test_evening_forecast_delivery.py",
+        "bytes": 14486,
+        "sha256": "bc323f8a62b560cf69aa26d05de101e5d8532bcf41e00abf012e335902a1c7e2",
+        "trackedSource": true
+      },
+      {
+        "path": "backend/tests/test_morning_forecast_delivery.py",
+        "bytes": 11122,
+        "sha256": "918ff0d7a21075ade1e6bea20db6086180bbe690755e64bd9a2991eec5b51e6f",
+        "trackedSource": true
+      },
+      {
+        "path": "backend/tests/test_push_fcm.py",
+        "bytes": 9724,
+        "sha256": "464b4e207301c53251d86287b4be8d135175e962462ced9152074bf39668aed0",
+        "trackedSource": true
+      },
+      {
+        "path": "backend/tests/test_send_evening_forecast_job.py",
+        "bytes": 3292,
+        "sha256": "091a2d34679898b4d8b197eefba4c5a9474153a9c5d0cf273279b0fc9e849860",
+        "trackedSource": true
+      },
+      {
+        "path": "backend/tests/test_send_morning_forecast_job.py",
+        "bytes": 3292,
+        "sha256": "2d93bca0bce89c8d10fa73a0a36e9fdfb66b15d46599fba07a92b168fe5580c1",
+        "trackedSource": true
+      },
+      {
+        "path": "backend/tests/test_push_repository.py",
+        "bytes": 52160,
+        "sha256": "572963ba9689ef869b4d8205015e392a001254b29466607ea4d03b05ed351414",
+        "trackedSource": true
+      },
+      {
+        "path": "backend/tests/test_local_notice_delivery_repository.py",
+        "bytes": 8704,
+        "sha256": "cd7791ad725fb0a157d92eca77bdac22446fcc60c0dea1033f1ae9312135e63f",
+        "trackedSource": true
+      },
+      {
+        "path": "backend/tests/test_local_notice_delivery_outbox.py",
+        "bytes": 12725,
+        "sha256": "b93341c4ee0a30be76057251e926d1b71697c1e381b8ed5bcf34d5f509272663",
+        "trackedSource": true
+      },
+      {
+        "path": "Dockerfile.deploy",
+        "bytes": 559,
+        "sha256": "be5fcabac44a9cadfce37ef3f910e50e5537fe0b3a09b55ab5fe93193fc8e6e1",
+        "trackedSource": false
+      },
+      {
+        "path": "Dockerfile.test",
+        "bytes": 133,
+        "sha256": "feb872b6e12a9bba628817d40e81c0a92112635062291e1637c8a345364ffd43",
+        "trackedSource": false
+      },
+      {
+        "path": "run_tests.py",
+        "bytes": 825,
+        "sha256": "0c108fae4b6b0de16e9bbc22952475f9fe5e87040f2ecffcceb1d73a745067b7",
+        "trackedSource": false
+      }
+    ],
+    "productionOverlay": {
+      "baseImage": "europe-west1-docker.pkg.dev/meteo-friul/meteofriul/backend@sha256:7af9d579cdc135b1823e226ae99aec7fb3ec93276d5aa0af80910923b363fe04",
+      "change": "Apply four-file fix, preserving absence of unused national-channel constant in production",
+      "fcmBaseSha256": "20023bc9d19319945a838cdb1b8755fd1bffe1b6db8f60f93924e663f43522b6"
+    }
+  },
+  "verification": "Every archive file matches the preserved context; tracked files match candidate Git; fcm.py differs only by removal of the declared unused national channel constant.",
+  "deployedDuringThisVerification": false
+}
