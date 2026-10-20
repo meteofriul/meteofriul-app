@@ -280,7 +280,7 @@ describe("home view model", () => {
     });
 
     expect(weather.alertCount).toBe(1);
-    expect(weather.alertsLabel).toBe("Allerta gialla");
+    expect(weather.alertsLabel).toBe("Allerta gialla in FVG");
     expect(weather.alertSummary).toMatchObject({ level: "yellow", tone: "yellow" });
   });
 
@@ -327,39 +327,49 @@ describe("home view model", () => {
     expect(staleWeather.alertSummary).toBeNull();
   });
 
-  it("uses the official alert color level as the preferred compact label", () => {
+  it.each([
+    ["it", "Allerta gialla in FVG", "Allerta arancione in FVG", "Allerta rossa in FVG"],
+    ["fur", "Alerte zale in FVG", "Alerte narançon in FVG", "Alerte rosse in FVG"],
+  ])("uses the regional color label in %s", (language, yellowLabel, orangeLabel, redLabel) => {
     const yellowWeather = buildHomeWeatherViewModel({
       officialAlerts: [{ id: "yellow-alert", level: "yellow" }],
-    });
+    }, { language });
 
-    expect(yellowWeather.alertsLabel).toBe("Allerta gialla");
+    expect(yellowWeather.alertsLabel).toBe(yellowLabel);
     expect(yellowWeather.alertSummary).toMatchObject({ level: "yellow", tone: "yellow" });
 
     const orangeWeather = buildHomeWeatherViewModel({
       officialAlerts: [{ id: "orange-alert", level: "arancione" }],
-    });
+    }, { language });
 
-    expect(orangeWeather.alertsLabel).toBe("Allerta arancione");
+    expect(orangeWeather.alertsLabel).toBe(orangeLabel);
     expect(orangeWeather.alertSummary).toMatchObject({ level: "orange", tone: "orange" });
 
     const redWeather = buildHomeWeatherViewModel({
       officialAlerts: [{ id: "red-alert", severity: "rossa" }],
-    });
+    }, { language });
 
-    expect(redWeather.alertsLabel).toBe("Allerta rossa");
+    expect(redWeather.alertsLabel).toBe(redLabel);
     expect(redWeather.alertSummary).toMatchObject({ level: "red", tone: "red" });
   });
 
-  it("uses the highest official alert color when multiple alerts are present", () => {
+  it.each([
+    ["it", "Allerta arancione in FVG"],
+    ["fur", "Alerte narançon in FVG"],
+  ])("keeps the highest regional level and bulletin action in %s", (language, label) => {
     const weather = buildHomeWeatherViewModel({
       officialAlerts: [
         { id: "yellow-alert", level: "yellow" },
         { id: "orange-alert", level: "orange" },
       ],
-    });
+    }, { language });
 
-    expect(weather.alertsLabel).toBe("Allerta arancione");
-    expect(weather.alertSummary).toMatchObject({ level: "orange", tone: "orange" });
+    expect(weather.alertsLabel).toBe(label);
+    expect(weather.alertSummary).toMatchObject({
+      action: { anchor: "official-alerts", tab: "bulletin", type: "tab-anchor" },
+      level: "orange",
+      tone: "orange",
+    });
   });
 
   it("uses a short phenomenon label instead of verbose official alert text", () => {
@@ -1216,7 +1226,7 @@ describe("home view model", () => {
 
   it("passes the detailed official-alert presentation through without mixing it into OSMER", () => {
     const officialAlert = {
-      label: "Allerta arancione",
+      label: "Allerta arancione in FVG",
       meta: "Protezione Civile FVG",
       text: "Temporali forti sulla regione.",
       validityLabel: "Valida fino alle 18:00",
