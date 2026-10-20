@@ -9,7 +9,7 @@ continuare fino a un deploy autorizzato. Nessuna generazione AAB, installazione,
 push Git, modifica cloud, esecuzione manuale di job o invio effettuato.
 
 Base `main`: `c45ba45d68eec19bec3103f8b832db9a31ab9b05`.
-Ramo locale: `codex/release-services-readiness`; main non viene promosso.
+Ramo di preparazione: `codex/release-services-readiness`. In questa prima fase main non era stato promosso; vedere aggiornamento seguente.
 
 - `c5c46675`: correzione allerte e regressioni.
 - `56069cc1`: attestazioni append-only e collegamento al preflight protetto.
@@ -101,8 +101,25 @@ Nuovo set:
 Descrive le immagini attive, **non** dichiara distribuito il fix FVG.
 Ogni deploy successivo che cambia un digest richiede una nuova attestazione.
 
-Prima di pubblicare la correzione: revisione/promozione del ramo, CI dopo
+Prima di pubblicare la correzione: CI dopo
 un push autorizzato, preparazione del rollback compatibile e deploy separatamente
 autorizzato; verifica successiva delle corse ordinarie senza forzare invii.
 Queste prove non sostituiscono la matrice Android della candidata minificata
 né autorizzano AAB, caricamento Play o pubblicazione Web.
+
+## Promozione locale su main autorizzata
+
+Il 20 ottobre 2026 i tre commit `c5c46675`, `56069cc1` e `aa8a89c4` sono
+stati portati su main con fast-forward dalla base `c45ba45d`, senza conflitti.
+Prima della promozione sono stati rieseguiti: 195 test Python, contratti del
+preflight API e del set/audit push TTL, verifica di pulizia del workspace e
+`git diff --check`. Tutti superati. Nessun cambiamento a frontend o pacchetti:
+le prove su telefono non sono applicabili a questa promozione solo backend,
+attestazioni e strumenti di preparazione; la matrice Android resta da svolgere
+sulla futura candidata di release.
+
+Le attestazioni JSON restano immutate, con la loro singola aggiunta originale
+in Git. Le prove LIVE sono quelle già registrate nella fase precedente: questa
+promozione non esegue nuove verifiche cloud. CI remota rinviata al futuro push
+autorizzato. Nessuna AAB, installazione, push, deploy o invio; la correzione
+operativa del job FVG resta da distribuire separatamente.
