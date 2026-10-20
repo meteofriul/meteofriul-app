@@ -1,0 +1,40 @@
+{
+  "prepared_at_utc": "2026-10-20T20:36:26.026843+00:00",
+  "status": "prepared-not-deployed",
+  "source_commit": "05a4fcc69969c259163eaad9bca4a4f234384e81",
+  "base_main": "5cbcd35ca88088220ff167b299cb4353ebdaf6d4",
+  "release_candidate_preparation_branch": "codex/release-0.1.15",
+  "backend_unittest": {
+    "result": "PASS",
+    "tests": 173,
+    "network": false
+  },
+  "packaged_unittest": {
+    "result": "PASS",
+    "tests": 33,
+    "subset_of_backend": true,
+    "network": false
+  },
+  "log_privacy_unittest": {
+    "result": "PASS",
+    "tests": 3,
+    "network": false
+  },
+  "package_verification": "PASS",
+  "powershell_syntax": "PASS",
+  "canonical_cleanliness": "PASS",
+  "production_legacy_public_read": "PASS",
+  "production_legacy_preflight_android_web": "PASS",
+  "production_v3_preflight_android_web": "BLOCKED_400_EXPECTED_ON_OLD_REVISION",
+  "production_log_exclusion": "NOT_APPLIED",
+  "new_candidate_cloud_build": "NOT_RUN",
+  "new_candidate_cloud_runtime": "NOT_DEPLOYED",
+  "official_0_1_15_play_integrity_end_to_end": "NOT_RUN",
+  "manual_reports": 0,
+  "manual_notifications": 0,
+  "installations": 0,
+  "aab_generated": false,
+  "push": false,
+  "deploy": false,
+  "main_changed": false
+}

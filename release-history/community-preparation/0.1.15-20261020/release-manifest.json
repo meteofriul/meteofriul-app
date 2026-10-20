@@ -1,0 +1,41 @@
+{
+  "Schema": "meteofriul.community-release-preparation.v2",
+  "PreparedAtUtc": "20261020T203606Z",
+  "SourceCommit": "05a4fcc69969c259163eaad9bca4a4f234384e81",
+  "Branch": "codex/community-0.1.15-preparation",
+  "Project": "meteo-friul",
+  "Region": "europe-west1",
+  "Service": "meteofriul-community",
+  "ExpectedCurrentRevision": "meteofriul-community-00002-tt2",
+  "ExpectedCurrentImageDigest": "europe-west1-docker.pkg.dev/meteo-friul/meteofriul/community@sha256:6b1476afcf5d9f2633d54231d3ceca192b4027ad6afb9e37552fcc80f1cf2fb6",
+  "CandidateImage": "europe-west1-docker.pkg.dev/meteo-friul/meteofriul/community:compat-05a4fcc6",
+  "ArchiveSha256": "8bf83ee888b6e9521a63ad98519d451a724a6b93118f6b77100769fd1c6add43",
+  "RuntimeEnvSha256": "ab47b11ae1f47d11ea95562215c864c8168d9327f6f69b12b4310727d7c5022c",
+  "ActivationEnvSha256": "2dda015a4e78133f85c3126d3ae7d588d0bb3e7f90836fec79ba5705fa4427c3",
+  "Rollback": {
+    "EnvSha256": "ab47b11ae1f47d11ea95562215c864c8168d9327f6f69b12b4310727d7c5022c",
+    "CompatibleImageRequired": true,
+    "Mode": "freeze-v3-writes-on-compatible-runtime",
+    "RestoreOldDataSnapshot": false
+  },
+  "Validation": {
+    "EnvSha256": "7705f266ad3b3d14d5fc8a5bab50b825955f7709eecac4947b2fe616d9093695",
+    "Host": "meteofriul-community-validation-49007668366.europe-west1.run.app",
+    "SnapshotPrefix": "community/v2/validation/05a4fcc6/snapshots/",
+    "Initialized": false,
+    "Service": "meteofriul-community-validation",
+    "StatePointer": "community_state_v2/compat-validation-05a4fcc6",
+    "Deployed": false
+  },
+  "Files": 35,
+  "GeographySha256": "1eb9e8dd66759b36a8d1dc59da824493e43c500428ce875127ed863691ce006e",
+  "DefaultProtocol": "community-pilot-national-safety-v2",
+  "V3WritesEnabled": false,
+  "CloudBuildStarted": false,
+  "Deployed": false,
+  "TrafficChanged": false,
+  "LocalArchiveRelativePath": "build/community-cloud/05a4fcc6-20261020T203606Z/source.tar.gz",
+  "LocalManifestRelativePath": "build/community-cloud/05a4fcc6-20261020T203606Z/release-manifest.json",
+  "ArchiveVersioned": false,
+  "CandidateImageIsUnbuiltTag": true
+}
