@@ -157,6 +157,16 @@ def accumulation_reference_mm(meta):
     return result
 
 
+def _valid_packing_error(value):
+    """Optional encoding error must be finite and nonnegative, never a default zero."""
+    if isinstance(value, bool) or not isinstance(value, (int, float)):
+        return False
+    try:
+        return math.isfinite(value) and value >= 0
+    except OverflowError:
+        return False
+
+
 def stream_messages(chunks, expected_count=73):
     """Decode framing across arbitrary network chunks, bounded to one message."""
     buffer = bytearray()
@@ -271,7 +281,7 @@ class Decoder:
             # Optional ecCodes diagnostic; absence never changes the decoded value.
             try:
                 packing_error = ec.codes_get(handle, "packingError")
-                meta["packingError"] = float(packing_error) if math.isfinite(packing_error) else None
+                meta["packingError"] = float(packing_error) if _valid_packing_error(packing_error) else None
             except Exception:
                 meta["packingError"] = None
             validate_contract(meta, field, run, step)
@@ -663,8 +673,13 @@ def _validate_field_checkpoint(record, *, intent_sha, field, run, url, points):
     number_of_points = None
     for step, (values, meta) in enumerate(zip(data["values"], data["metadata"], strict=True)):
         expected_meta_keys = set(META_KEYS) | ({"encoding_quantum_mm"} if field in ACCUM_FIELDS else set())
-        if not isinstance(meta, dict) or set(meta) != expected_meta_keys:
+        # Older field checkpoints omit packingError. Accept that one optional
+        # key without relaxing the required metadata or allowing unknown keys.
+        if not isinstance(meta, dict) or set(meta) - {"packingError"} != expected_meta_keys:
             raise ValueError("Checkpoint metadata is invalid")
+        packing_error = meta.get("packingError")
+        if packing_error is not None and not _valid_packing_error(packing_error):
+            raise ValueError("Checkpoint packing error is invalid")
         validate_contract(meta, field, run, step)
         if meta["md5GridSection"] != grid_hash:
             raise ValueError("Checkpoint grid hash changed")

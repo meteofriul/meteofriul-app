@@ -1,0 +1,74 @@
+{
+  "kind": "storage#objects",
+  "items": [
+    {
+      "kind": "storage#object",
+      "id": "meteo-friul-weather-state/pilot/state/dispatch/icon/20261020-am.json/1792476116600787",
+      "selfLink": "https://www.googleapis.com/storage/v1/b/meteo-friul-weather-state/o/pilot%2Fstate%2Fdispatch%2Ficon%2F20261020-am.json",
+      "mediaLink": "https://storage.googleapis.com/download/storage/v1/b/meteo-friul-weather-state/o/pilot%2Fstate%2Fdispatch%2Ficon%2F20261020-am.json?generation=1792476116600787&alt=media",
+      "name": "pilot/state/dispatch/icon/20261020-am.json",
+      "bucket": "meteo-friul-weather-state",
+      "generation": "1792476116600787",
+      "metageneration": "1",
+      "contentType": "application/json",
+      "storageClass": "STANDARD",
+      "size": "80",
+      "md5Hash": "zw/jhZvjsyEOjzlVnsB/zQ==",
+      "crc32c": "+xzXxQ==",
+      "etag": "CNOPy/H1x5cDEAE=",
+      "timeCreated": "2026-10-20T06:01:56.605Z",
+      "updated": "2026-10-20T06:01:56.605Z",
+      "timeStorageClassUpdated": "2026-10-20T06:01:56.605Z",
+      "timeFinalized": "2026-10-20T06:01:56.605Z",
+      "metadata": {
+        "mf-sha256": "425cbb9cbd2e99c8d57f9da878623e29b879c69a8203e4dbd548c9e5cee29393"
+      }
+    },
+    {
+      "kind": "storage#object",
+      "id": "meteo-friul-weather-state/pilot/state/dispatch/icon/20261020-am/acquisition-attempt-0.json/1792476116682421",
+      "selfLink": "https://www.googleapis.com/storage/v1/b/meteo-friul-weather-state/o/pilot%2Fstate%2Fdispatch%2Ficon%2F20261020-am%2Facquisition-attempt-0.json",
+      "mediaLink": "https://storage.googleapis.com/download/storage/v1/b/meteo-friul-weather-state/o/pilot%2Fstate%2Fdispatch%2Ficon%2F20261020-am%2Facquisition-attempt-0.json?generation=1792476116682421&alt=media",
+      "name": "pilot/state/dispatch/icon/20261020-am/acquisition-attempt-0.json",
+      "bucket": "meteo-friul-weather-state",
+      "generation": "1792476116682421",
+      "metageneration": "1",
+      "contentType": "application/json",
+      "storageClass": "STANDARD",
+      "size": "2",
+      "md5Hash": "mZFLkyvTelC5g8XnyQrpOw==",
+      "crc32c": "KXvQqg==",
+      "etag": "CLWN0PH1x5cDEAE=",
+      "timeCreated": "2026-10-20T06:01:56.686Z",
+      "updated": "2026-10-20T06:01:56.686Z",
+      "timeStorageClassUpdated": "2026-10-20T06:01:56.686Z",
+      "timeFinalized": "2026-10-20T06:01:56.686Z",
+      "metadata": {
+        "mf-sha256": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a"
+      }
+    },
+    {
+      "kind": "storage#object",
+      "id": "meteo-friul-weather-state/pilot/state/dispatch/icon/20261020-am/outcome.json/1792476148360759",
+      "selfLink": "https://www.googleapis.com/storage/v1/b/meteo-friul-weather-state/o/pilot%2Fstate%2Fdispatch%2Ficon%2F20261020-am%2Foutcome.json",
+      "mediaLink": "https://storage.googleapis.com/download/storage/v1/b/meteo-friul-weather-state/o/pilot%2Fstate%2Fdispatch%2Ficon%2F20261020-am%2Foutcome.json?generation=1792476148360759&alt=media",
+      "name": "pilot/state/dispatch/icon/20261020-am/outcome.json",
+      "bucket": "meteo-friul-weather-state",
+      "generation": "1792476148360759",
+      "metageneration": "1",
+      "contentType": "application/json",
+      "storageClass": "STANDARD",
+      "size": "496",
+      "md5Hash": "l/+fASGPFfGj+rD5e3162w==",
+      "crc32c": "JjdGuQ==",
+      "etag": "CLfM3YD2x5cDEAE=",
+      "timeCreated": "2026-10-20T06:02:28.366Z",
+      "updated": "2026-10-20T06:02:28.366Z",
+      "timeStorageClassUpdated": "2026-10-20T06:02:28.366Z",
+      "timeFinalized": "2026-10-20T06:02:28.366Z",
+      "metadata": {
+        "mf-sha256": "3eb759ba6ec0c4d170ab7a167c8d41988e988a96e9ec2a8e0ecabbd663392120"
+      }
+    }
+  ]
+}

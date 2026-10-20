@@ -1,0 +1,20 @@
+{
+  "job": "icon",
+  "kind": "meteofriul.weather.job_result",
+  "metrics": {
+    "error_summary": "exception details withheld; inspect the typed error and local source location",
+    "error_type": "ValueError",
+    "failure_file": "cloud_worker.py",
+    "failure_function": "_run_icon_result",
+    "failure_line": 524,
+    "provider": "icon",
+    "stage": "acquisition"
+  },
+  "published_providers": [],
+  "reason_code": "unexpected_internal_failure",
+  "retry_after_seconds": null,
+  "retryable": false,
+  "schema_version": 1,
+  "source_run_id": null,
+  "status": "manual_review"
+}

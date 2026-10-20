@@ -81,6 +81,7 @@ _SAFE_MESSAGES = frozenset({
     "stored run payloads fail contract-v1 validation", "latest manifest path is not canonical",
     "stored manifest differs from publication intent", "recovery manifest changed during verification",
     "recovery manifest SHA-256 is invalid", "publication-only recovery is ICON-only",
+    "Checkpoint metadata is invalid", "Checkpoint packing error is invalid",
     "invalid ICON checkpoint slot", "ICON checkpoint differs from publication intent",
     "ICON checkpoint expanded size exceeds limit", "ICON checkpoint compressed size exceeds limit",
     "invalid ICON checkpoint size", "invalid ICON checkpoint envelope",
@@ -189,7 +190,7 @@ def error_fields(error):
         while trace is not None:
             filename = trace.tb_frame.f_code.co_filename.replace("\\", "/")
             if "/local_pipeline/" in filename or filename.endswith((
-                "/cloud_worker.py", "/cams_request_plan.py", "/retrieve_cams.py", "/publish_remote_icon.py",
+                "/cloud_worker.py", "/run_pilot.py", "/cams_request_plan.py", "/retrieve_cams.py", "/publish_remote_icon.py",
             )):
                 result.update(failure_file=filename.rsplit("/", 1)[-1],
                               failure_function=trace.tb_frame.f_code.co_name,

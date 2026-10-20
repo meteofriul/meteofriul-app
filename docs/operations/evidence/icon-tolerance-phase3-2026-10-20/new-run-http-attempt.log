@@ -1,0 +1,5 @@
+Traceback (most recent call last):
+  File "F:\proggetto Meteo Friul App\meteo FRIUL\.tmp\verify_icon_phase3_http.py", line 16, in <module>
+    if args.require_new:assert new,'New source run is not published yet: do not execute QA'
+                               ^^^
+AssertionError: New source run is not published yet: do not execute QA

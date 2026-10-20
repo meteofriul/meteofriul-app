@@ -1,5 +1,15 @@
 # Passaggio coordinato ICON-2I — piano e stato operativo
 
+> Aggiornamento 20 ottobre: la prima corsa ordinaria del produttore aggiornato
+> e fallita prima della pubblicazione. Il nuovo metadato `packingError` veniva
+> rifiutato dal checkpoint locale. La correzione e verificata sul ramo
+> `codex/icon2i-checkpoint-metadata`, ma non ancora distribuita. Il QA sulla
+> nuova corsa resta bloccato e il follow-up e in pausa. Prima di proseguire
+> serve distribuire la correzione con autorizzazione separata, conservando
+> gli oggetti immutabili e poi verificando una nuova corsa. Vedere il
+> [verbale aggiornato](ICON2I_TOLERANCE_PHASE3_DEPLOY_20261019.md).
+
+
 > **Stato operativo aggiornato, 19 ottobre 2026:** fase 01 HTTP pubblicata e rollback compatibile pronto.
 > Verificate app installata e letture FVG/nazionali. Fase 02 QA completata senza invii.
 > Fase 03: produttore aggiornato; verifica della nuova corsa attesa il 20 ottobre alle 08:00 italiane.
@@ -118,17 +128,19 @@ dispositivi non sono stati collaudati; nessun aggiornamento Android è stato gen
    né prenotazioni. L'audit usa `local_notice_pilot_runs`, distinguendo modalità
    e identificativo di tentativo; `dry_run` può scrivere l'audit.
    Non usare `deploy-local-notice-job.ps1` per questo QA: configura `send`.
-3. **Fase 03 distribuita, nuova corsa da verificare:** aggiornata solo
-   l'immagine di `meteofriul-icon`; altri job e scheduler invariati.
-   La corsa corrente non è stata riscritta. Prima acquisizione ordinaria
-   prevista il 20 ottobre alle 08:00 `Europe/Rome`, poi verifica di prove,
-   contatori, checkpoint e compatibilità delle app sulla nuova corsa.
-4. **Confronto ancora da eseguire:** candidato senza invii e baseline sugli
-   stessi punti, ore e `source_run_id`. Registrare candidati cambiati,
-   tolleranze utilizzate, non valutabili per causa e denominatori; verificare
-   zero invii e nessuna prenotazione. Il follow-up è previsto alle 08:20 e,
-   se necessario, alle 09:20 del 20 ottobre. Gli invii del nuovo consumatore
-   richiedono successiva autorizzazione, dopo questi controlli.
+3. **Fase 03 distribuita, prima nuova corsa fallita:** il job ordinario
+   del 20 ottobre alle 08:00 `Europe/Rome` si e fermato prima di pubblicare.
+   Il difetto del checkpoint locale e corretto e verificato sul ramo
+   `codex/icon2i-checkpoint-metadata`; l'immagine cloud non e ancora aggiornata.
+   Dopo un deploy separatamente autorizzato, verificare una nuova corsa senza
+   cancellare esiti terminali o riscrivere gli oggetti immutabili.
+4. **Confronto bloccato sulla nuova corsa:** finche manca la nuova pubblicazione
+   non eseguire il QA e non usare i vecchi dati come prova delle tolleranze.
+   Il follow-up e in pausa. Dopo 215 letture legacy e sidecar validi,
+   confrontare candidato senza invii e baseline sugli stessi punti, ore e
+   `source_run_id`: candidati cambiati, tolleranze utilizzate, non valutabili
+   per causa e denominatori, zero invii e prenotazioni. Gli invii del nuovo
+   consumatore richiedono successiva autorizzazione dopo questi controlli.
 
 La fase 02 modifica anche codice condiviso dai riepiloghi mattutino e serale:
 mantengono il rifiuto dei dati incompleti, senza usare la tolleranza per
