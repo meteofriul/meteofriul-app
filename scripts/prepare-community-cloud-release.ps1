@@ -21,6 +21,7 @@ if ($ExpectedCurrentRevision -notmatch '^meteofriul-community-[a-z0-9-]+$' -or
   throw 'Supply the verified Community production revision and immutable image digest.'
 }
 $CommunityRuntimeEnv = Get-Content -LiteralPath (Join-Path $CommunityReleaseRoot 'backend/community-production.env.yaml') -Raw
+$CommunityRuntimeEnv = $CommunityRuntimeEnv.Replace("`r`n", "`n").TrimEnd([char[]]"`r`n") + "`n"
 if ($CommunityRuntimeEnv -notmatch '(?m)^COMMUNITY_V3_WRITES_ENABLED: "0"\s*$') {
   throw 'The initial candidate must keep v3 writes disabled.'
 }
@@ -44,7 +45,7 @@ New-Item -ItemType Directory -Path $CommunityOutput | Out-Null
 $CommunityArchive = Join-Path $CommunityOutput 'source.tar.gz'
 & tar.exe -czf $CommunityArchive -C $CommunityPreparedContext.ContextPath .
 if ($LASTEXITCODE -ne 0) { throw 'Cannot archive the allowlisted context.' }
-Copy-Item -LiteralPath (Join-Path $CommunityReleaseRoot 'backend/community-production.env.yaml') -Destination (Join-Path $CommunityOutput 'runtime.env.yaml')
+[IO.File]::WriteAllText((Join-Path $CommunityOutput 'runtime.env.yaml'), $CommunityRuntimeEnv, [Text.UTF8Encoding]::new($false))
 # Activation and compatible rollback use the same image, storage and identities.
 # These are local plans only. Never restore an old snapshot or a legacy-only
 # image after the first accepted v3 operation.
@@ -52,7 +53,7 @@ $CommunityActivationEnv = $CommunityRuntimeEnv -replace '(?m)^COMMUNITY_V3_WRITE
 if ($CommunityActivationEnv -notmatch '(?m)^COMMUNITY_V3_WRITES_ENABLED: "1"\s*$') {
   throw 'Cannot prepare the explicit v3 activation configuration.'
 }
-$CommunityActivationEnv | Set-Content -LiteralPath (Join-Path $CommunityOutput 'activation.env.yaml') -Encoding utf8
+[IO.File]::WriteAllText((Join-Path $CommunityOutput 'activation.env.yaml'), $CommunityActivationEnv, [Text.UTF8Encoding]::new($false))
 Copy-Item -LiteralPath (Join-Path $CommunityOutput 'runtime.env.yaml') -Destination (Join-Path $CommunityOutput 'rollback-compatible.env.yaml')
 $CommunityValidationService = 'meteofriul-community-validation'
 $CommunityValidationHost = "$CommunityValidationService-49007668366.europe-west1.run.app"
@@ -66,7 +67,7 @@ if ($CommunityValidationEnv -match '(?m)^COMMUNITY_POINTER_DOCUMENT: current\s*$
     $CommunityValidationEnv -notmatch "(?m)^COMMUNITY_POINTER_DOCUMENT: $CommunityValidationPointer\s*$") {
   throw 'Validation must never use the production state pointer.'
 }
-$CommunityValidationEnv | Set-Content -LiteralPath (Join-Path $CommunityOutput 'validation.env.yaml') -Encoding utf8
+[IO.File]::WriteAllText((Join-Path $CommunityOutput 'validation.env.yaml'), $CommunityValidationEnv, [Text.UTF8Encoding]::new($false))
 $CommunityManifest = [ordered]@{
   Schema = 'meteofriul.community-release-preparation.v2'
   PreparedAtUtc = $CommunityStamp
