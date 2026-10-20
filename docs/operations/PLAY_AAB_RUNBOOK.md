@@ -5,6 +5,18 @@ variante TEST installabile in parallelo. **Build, caricamento nel test interno e
 promozione in produzione sono tre autorizzazioni distinte.** Una fase conclusa
 non autorizza automaticamente la successiva.
 
+## Allineamento con la Web App
+
+Ogni aggiornamento Android include il candidato Web dalla stessa base frontend
+approvata, secondo il [runbook Web/Android](WEB_ANDROID_RELEASE_PARITY.md).
+La Web App è anche il canale iPhone: verificare testi IT/FUR, temi, meteo FVG e
+nazionale, Eventi e Community, oltre a Safari e alla modalità Aggiungi a Home.
+Registrare i due commit/artefatti e la versione effettivamente pubblicata per
+ciascun canale. Non dichiarare il rilascio coordinato concluso lasciando il
+sito sulla vecchia UI. Eventuali differenze di piattaforma o pubblicazioni
+scaglionate devono essere esplicite e approvate; non attivare automaticamente
+invii o servizi nativi per ottenere una parità soltanto nominale.
+
 ## Controlli Android obbligatori per ogni release
 
 Questi controlli sono parte della procedura standard, anche quando Play non

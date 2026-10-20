@@ -28,6 +28,23 @@
 - Never generate or upload a Play AAB without the user's explicit
   authorization.
 
+## Web and Android release parity
+
+- The Web app is the supported browser experience for iPhone users while no
+  native Apple app exists. Keep its approved UI, languages, weather, events,
+  Community and data contracts aligned with the official Android release.
+- Prepare Web and Android from the same approved frontend commit, without TEST
+  branding, fixtures, loopback endpoints or TEST-only service exclusions.
+- Every Android release must include a Web parity review and publication plan;
+  matching version numbers alone do not prove matching code or behavior.
+- Record Web artifact hashes, source commit, endpoint bindings, deployed state,
+  browser checks and remaining Safari/iPhone checks in the release evidence.
+- Verify Safari on a real iPhone (browser and Add to Home Screen) before claiming
+  iPhone compatibility. Desktop resizing does not replace that check.
+- Follow [the Web parity runbook](docs/operations/WEB_ANDROID_RELEASE_PARITY.md).
+  Web preparation, Web publication, AAB generation and Play publication remain
+  separate actions requiring their respective authorization.
+
 ## Android release quality standard
 
 - Product orientation policy: smartphones use portrait only, with no rotation
