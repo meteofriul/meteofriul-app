@@ -38,3 +38,16 @@ di ritrovare il codice equivalente nella cronologia pubblicabile.
 
 Il controllo sulla corsa ICON reale resta incompleto; nessuna AAB,
 installazione, distribuzione o attivazione degli invii fa parte di questo push.
+
+## Correzione del test emersa nella CI della PR
+
+Il primo run CI della PR 8 (`39479702733`) ha rilevato un'aspettativa obsoleta
+in `communityDarkPalette.test.js`: attendeva il cuore rosa, mentre la ricevuta
+approvata usa già una spunta verde. Il test viene allineato allo stile approvato
+e il controllo del contrasto legge ora i colori effettivi della spunta dal CSS.
+Non cambia alcun componente, stile o comportamento dell'app.
+
+Verifica locale: 51 test passati in `communityDarkPalette.test.js` e
+`LiveView.webcamCarousel.test.jsx`, tramite `npm test --` e caricamento nativo
+della configurazione. Dipendenze già presenti riutilizzate; nessuna installazione.
+La CI viene rieseguita sul commit aggiornato prima del merge.
