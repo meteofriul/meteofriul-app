@@ -1,0 +1,14 @@
+{
+  "Account": "meteofriul@gmail.com",
+  "ApiBase": "https://play-b6fbe4d---meteofriul-api-bx24xqvcda-ew.a.run.app/api",
+  "ApiTag": "play-b6fbe4d",
+  "BackendCommit": "599aea2f8a3b1e7e65af2b43e77bb54e4637c96e",
+  "BackendCommitBinding": "verified-image-evidence",
+  "BackendEvidencePath": "C:\\Users\\LOCAL_USER\\.codex\\worktrees\\release-services-readiness\\meteo FRIUL\\release-history\\cloud-operations\\20261020-services-attestation\\api-backend.json",
+  "Health": "ok",
+  "ImageDigest": "europe-west1-docker.pkg.dev/meteo-friul/cloud-run-source-deploy/meteofriul-api@sha256:5522b4cfc15076a9f93e838e3643b35e1aa5ad4ce0bf5bca4851997ea94c2ae8",
+  "ProjectId": "meteo-friul",
+  "Region": "europe-west1",
+  "Revision": "meteofriul-api-00251-jow",
+  "Service": "meteofriul-api"
+}
