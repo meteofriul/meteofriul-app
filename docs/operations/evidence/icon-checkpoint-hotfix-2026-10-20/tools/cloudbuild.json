@@ -1,0 +1,33 @@
+{
+  "timeout": "900s",
+  "options": {
+    "logging": "CLOUD_LOGGING_ONLY"
+  },
+  "steps": [
+    {
+      "name": "gcr.io/cloud-builders/docker",
+      "args": [
+        "build",
+        "-f",
+        "Dockerfile.hotfix",
+        "-t",
+        "europe-west1-docker.pkg.dev/meteo-friul/meteofriul/weather-worker:icon-checkpoint-fix-20261020-9ef1410e",
+        "."
+      ]
+    },
+    {
+      "name": "gcr.io/cloud-builders/docker",
+      "args": [
+        "run",
+        "--rm",
+        "--network=none",
+        "europe-west1-docker.pkg.dev/meteo-friul/meteofriul/weather-worker:icon-checkpoint-fix-20261020-9ef1410e",
+        "python",
+        "checkpoint_fix_verify.py"
+      ]
+    }
+  ],
+  "images": [
+    "europe-west1-docker.pkg.dev/meteo-friul/meteofriul/weather-worker:icon-checkpoint-fix-20261020-9ef1410e"
+  ]
+}

@@ -1,0 +1,11 @@
+{
+  "id": "verifica-tolleranze-icon-sulla-nuova-corsa",
+  "status": "ACTIVE",
+  "rrule": "FREQ=DAILY;BYHOUR=20,21;BYMINUTE=20;BYSECOND=0;COUNT=2",
+  "updated_at": 1792487410465,
+  "only_local_date": "2026-10-20",
+  "max_evening_checks": 2,
+  "stop_on_completion_or_action_required": true,
+  "unbounded_schedule_rejected_by_automatic_review": true,
+  "bounded_schedule_update_succeeded": true
+}

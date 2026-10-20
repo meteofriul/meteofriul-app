@@ -1,0 +1,14 @@
+{
+  "verified_at_utc": "2026-10-20T09:06:44.414681+00:00",
+  "producer": "meteofriul-icon",
+  "new_image": "europe-west1-docker.pkg.dev/meteo-friul/meteofriul/weather-worker@sha256:e72f606ffe1feec5f1c108f945ec5dbce43cfebef3d69913fc72c11b04cbcae2",
+  "compatible_rollback": "europe-west1-docker.pkg.dev/meteo-friul/meteofriul/weather-worker@sha256:3be1d207321e8ea0cee07466c9ac29fcec230ba4e10b3267647fa8f0cb2315a6",
+  "other_jobs_unchanged": 12,
+  "schedulers_unchanged": 11,
+  "http_unchanged": true,
+  "only_image_changed": true,
+  "qa_mode": "dry_run",
+  "manual_executions": 0,
+  "next_scheduler_utc": "2026-10-20T18:00:00Z",
+  "new_run_validation": "pending"
+}

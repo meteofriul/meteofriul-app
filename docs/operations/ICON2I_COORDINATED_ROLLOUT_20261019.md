@@ -1,14 +1,12 @@
 # Passaggio coordinato ICON-2I — piano e stato operativo
 
-> Aggiornamento 20 ottobre: la prima corsa ordinaria del produttore aggiornato
-> e fallita prima della pubblicazione. Il nuovo metadato `packingError` veniva
-> rifiutato dal checkpoint locale. La correzione e verificata sul ramo
-> `codex/icon2i-checkpoint-metadata`, ma non ancora distribuita. Il QA sulla
-> nuova corsa resta bloccato e il follow-up e in pausa. Prima di proseguire
-> serve distribuire la correzione con autorizzazione separata, conservando
-> gli oggetti immutabili e poi verificando una nuova corsa. Vedere il
-> [verbale aggiornato](ICON2I_TOLERANCE_PHASE3_DEPLOY_20261019.md).
-
+> Aggiornamento 20 ottobre, ore 11:06 italiane: correzione del checkpoint
+> distribuita al solo produttore, immagine verificata con 123 test passati.
+> Previsioni correnti ancora leggibili dai vecchi client. La nuova corsa e
+> il QA restano da verificare: prossima esecuzione ordinaria alle 20:00,
+> follow-up serale riattivato con massimo due controlli nella data odierna.
+> Invii del nuovo consumatore non attivati; nessuna AAB o push Git.
+> [Verbale e istruzioni aggiornati](ICON2I_CHECKPOINT_METADATA_DEPLOY_20261020.md).
 
 > **Stato operativo aggiornato, 19 ottobre 2026:** fase 01 HTTP pubblicata e rollback compatibile pronto.
 > Verificate app installata e letture FVG/nazionali. Fase 02 QA completata senza invii.
@@ -128,19 +126,20 @@ dispositivi non sono stati collaudati; nessun aggiornamento Android è stato gen
    né prenotazioni. L'audit usa `local_notice_pilot_runs`, distinguendo modalità
    e identificativo di tentativo; `dry_run` può scrivere l'audit.
    Non usare `deploy-local-notice-job.ps1` per questo QA: configura `send`.
-3. **Fase 03 distribuita, prima nuova corsa fallita:** il job ordinario
-   del 20 ottobre alle 08:00 `Europe/Rome` si e fermato prima di pubblicare.
-   Il difetto del checkpoint locale e corretto e verificato sul ramo
-   `codex/icon2i-checkpoint-metadata`; l'immagine cloud non e ancora aggiornata.
-   Dopo un deploy separatamente autorizzato, verificare una nuova corsa senza
-   cancellare esiti terminali o riscrivere gli oggetti immutabili.
-4. **Confronto bloccato sulla nuova corsa:** finche manca la nuova pubblicazione
-   non eseguire il QA e non usare i vecchi dati come prova delle tolleranze.
-   Il follow-up e in pausa. Dopo 215 letture legacy e sidecar validi,
-   confrontare candidato senza invii e baseline sugli stessi punti, ore e
-   `source_run_id`: candidati cambiati, tolleranze utilizzate, non valutabili
-   per causa e denominatori, zero invii e prenotazioni. Gli invii del nuovo
-   consumatore richiedono successiva autorizzazione dopo questi controlli.
+3. **Fase 03 corretta e ridistribuita:** il job ordinario del 20 ottobre alle
+   08:00 si e fermato prima di pubblicare. Il difetto del checkpoint e corretto
+   nel commit `9ef1410e` e l'immagine `e72f606f...` e distribuita al produttore.
+   Altri job, HTTP e scheduler invariati; esito terminale e dati conservati.
+4. **Nuova corsa e confronto pendenti:** attendere il job ordinario delle
+   20:00, senza acquisizioni manuali. Il follow-up serale e riattivato.
+   Prima verificare checkpoint schema 2, source_quality, 215 letture legacy
+   e sidecar validi; poi un solo QA dry_run e confronto locale sugli stessi
+   punti, ore e source_run_id. Contare candidati cambiati, tolleranze e
+   non valutabili per causa/denominatore, verificando zero invii e prenotazioni
+   attribuibili al QA. Nessun dato vecchio vale come prova della nuova corsa.
+   Il [verbale correttivo](ICON2I_CHECKPOINT_METADATA_DEPLOY_20261020.md)
+   identifica gli script e le nuove evidenze. Gli invii del nuovo consumatore
+   richiedono una successiva autorizzazione dopo questi controlli.
 
 La fase 02 modifica anche codice condiviso dai riepiloghi mattutino e serale:
 mantengono il rifiuto dei dati incompleti, senza usare la tolleranza per

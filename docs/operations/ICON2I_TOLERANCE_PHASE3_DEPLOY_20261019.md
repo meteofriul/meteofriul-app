@@ -1,9 +1,11 @@
-# Tolleranze ICON-2I: produttore aggiornato, verifica nuova corsa bloccata
+# Tolleranze ICON-2I: produttore corretto, nuova corsa da verificare
 
-**Aggiornamento 20 ottobre:** la prima esecuzione ordinaria con il produttore nuovo
-e fallita durante l'acquisizione. Nessuna nuova corsa FVG pubblicata; verifica
-delle tolleranze incompleta e follow-up in pausa. Dettagli nell'esito in fondo.
-Le sezioni datate 19 ottobre descrivono il deploy e il piano originario.
+**Aggiornamento 20 ottobre, ore 11:06 italiane:** dopo il fallimento mattutino,
+la correzione del checkpoint e stata distribuita al solo produttore.
+La verifica delle tolleranze resta incompleta, in attesa della corsa ordinaria
+delle 20:00. Follow-up serale riattivato, nessun invio autorizzato.
+Vedere il [verbale del deploy correttivo](ICON2I_CHECKPOINT_METADATA_DEPLOY_20261020.md).
+Le sezioni seguenti conservano cronologicamente deploy, diagnosi e prove precedenti.
 
 19 ottobre 2026. Il solo job `meteofriul-icon` è stato aggiornato con il
 produttore della fase 03. **La verifica reale delle tolleranze è ancora

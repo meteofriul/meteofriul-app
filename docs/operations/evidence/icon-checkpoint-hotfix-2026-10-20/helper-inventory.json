@@ -1,0 +1,67 @@
+[
+  {
+    "path": ".tmp/icon_hotfix_common.py",
+    "sha256": "eb50ba65518f7e0dd116abb505e03d19d2aa19cb0c8898ad887cf0d408c37285",
+    "archived_path": "tools/icon_hotfix_common.py",
+    "archived_sha256": "ff4d9a4f810ccce5de654e07a262916056555a38a2ce3c2ae0760506afa0f5d1",
+    "line_endings": "LF",
+    "normalization": "LF; Windows profile name redacted; original source hash retained"
+  },
+  {
+    "path": ".tmp/deploy_icon_hotfix.py",
+    "sha256": "c0257ec20d154f867fdf97dc90329105c7ea0e8e7c789cf2e94ac68e74aecc97",
+    "archived_path": "tools/deploy_icon_hotfix.py",
+    "archived_sha256": "65688f3707638baa9356431de5b9d12f51010e90282d7f409ce856a3c09ad090",
+    "line_endings": "LF"
+  },
+  {
+    "path": ".tmp/readback_icon_hotfix.py",
+    "sha256": "026a7d0c4bd5477921f8cf78d2db16bddb1cc1f71609c498ea9276d8933b5aca",
+    "archived_path": "tools/readback_icon_hotfix.py",
+    "archived_sha256": "6f19ed6d5f2d9cef6349deb7b2cf433e0b120bb1ed82aceeb6c8ba5e47b51c74",
+    "line_endings": "LF"
+  },
+  {
+    "path": ".tmp/verify_icon_hotfix_http.py",
+    "sha256": "c765d6d1a7343401c9b9fedff9bc7b37c8aba5c20c4c54a7bb714b9d7bd378f8",
+    "archived_path": "tools/verify_icon_hotfix_http.py",
+    "archived_sha256": "c765d6d1a7343401c9b9fedff9bc7b37c8aba5c20c4c54a7bb714b9d7bd378f8",
+    "line_endings": "LF"
+  },
+  {
+    "path": ".tmp/execute_icon_hotfix_qa.py",
+    "sha256": "30338106dfe81f19199e1dbc4258b606aa88b37c5d860e7fd83163e700838c4d",
+    "archived_path": "tools/execute_icon_hotfix_qa.py",
+    "archived_sha256": "30338106dfe81f19199e1dbc4258b606aa88b37c5d860e7fd83163e700838c4d",
+    "line_endings": "LF"
+  },
+  {
+    "path": ".tmp/read_icon_hotfix_results.py",
+    "sha256": "40d4628317929e2362b734394d396426d40a34cb1396b13bb5e619ac0eadbde2",
+    "archived_path": "tools/read_icon_hotfix_results.py",
+    "archived_sha256": "37291550d587e17d2fe9f7528003d60adc8fc8e54e5954e1da0fcd6999b22fdb",
+    "line_endings": "LF",
+    "normalization": "LF; final blank line removed; original hash retained"
+  },
+  {
+    "path": ".tmp/icon-checkpoint-hotfix-20261020/cloudbuild.json",
+    "sha256": "55e3b7a0c99eb93952fae04d130c119bd386219c84c006fe58fcbea4adc904d4",
+    "archived_path": "tools/cloudbuild.json",
+    "archived_sha256": "55e3b7a0c99eb93952fae04d130c119bd386219c84c006fe58fcbea4adc904d4",
+    "line_endings": "LF"
+  },
+  {
+    "path": ".tmp/icon-checkpoint-hotfix-20261020/context/Dockerfile.hotfix",
+    "sha256": "8d01e850b1000e17ece137c9d55e0db1bb1bb4d3a9014adafd330073c8d7e1b8",
+    "archived_path": "tools/Dockerfile.hotfix",
+    "archived_sha256": "8d01e850b1000e17ece137c9d55e0db1bb1bb4d3a9014adafd330073c8d7e1b8",
+    "line_endings": "LF"
+  },
+  {
+    "path": ".tmp/icon-checkpoint-hotfix-20261020/context/experiments/weather_autonomy/checkpoint_fix_verify.py",
+    "sha256": "4195732a341f7bd7e14fd76b2bad797e5a5a8cb8493012aeb327c36b88a200ac",
+    "archived_path": "tools/checkpoint_fix_verify.py",
+    "archived_sha256": "4195732a341f7bd7e14fd76b2bad797e5a5a8cb8493012aeb327c36b88a200ac",
+    "line_endings": "LF"
+  }
+]

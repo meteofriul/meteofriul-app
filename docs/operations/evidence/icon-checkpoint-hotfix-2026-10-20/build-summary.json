@@ -1,0 +1,34 @@
+{
+  "id": "7d210639-1ba9-4e85-8ec5-f5e278a3cae2",
+  "status": "SUCCESS",
+  "startTime": "2026-10-20T09:01:33.511646354Z",
+  "finishTime": "2026-10-20T09:02:53.559008Z",
+  "results": {
+    "buildStepImages": [
+      "sha256:f772ab459889c67835bd959c2b9e9351f2c0752c4f989710ecda20c229f0733e",
+      "sha256:f772ab459889c67835bd959c2b9e9351f2c0752c4f989710ecda20c229f0733e"
+    ],
+    "buildStepOutputs": [
+      "",
+      ""
+    ],
+    "images": [
+      {
+        "artifactRegistryPackage": "projects/meteo-friul/locations/europe-west1/repositories/meteofriul/packages/weather-worker/versions/sha256:e72f606ffe1feec5f1c108f945ec5dbce43cfebef3d69913fc72c11b04cbcae2",
+        "digest": "sha256:e72f606ffe1feec5f1c108f945ec5dbce43cfebef3d69913fc72c11b04cbcae2",
+        "name": "europe-west1-docker.pkg.dev/meteo-friul/meteofriul/weather-worker:icon-checkpoint-fix-20261020-9ef1410e",
+        "pushTiming": {
+          "endTime": "2026-10-20T09:02:53.296939409Z",
+          "startTime": "2026-10-20T09:02:51.073593587Z"
+        }
+      }
+    ]
+  },
+  "test_methods": 123,
+  "test_failures": 0,
+  "test_errors": 0,
+  "test_skips": 0,
+  "network_during_tests": "blocked",
+  "real_provider_grib_decoding_tested": false,
+  "eccodes_runtime_api": "2.50.0"
+}
