@@ -1,0 +1,93 @@
+diff --git a/experiments/weather_autonomy/local_pipeline/operational_diagnostics.py b/experiments/weather_autonomy/local_pipeline/operational_diagnostics.py
+index 778225dd..a41053ac 100644
+--- a/experiments/weather_autonomy/local_pipeline/operational_diagnostics.py
++++ b/experiments/weather_autonomy/local_pipeline/operational_diagnostics.py
+@@ -29,7 +29,7 @@ _FIELDS = frozenset({
+     "reason_code", "error_type", "cause_type", "error_summary", "cause_summary",
+     "http_status", "retryable", "failure_file", "failure_function", "failure_line",
+     "validation_status", "publication_status", "acquisition_status", "payload_count", "validated_count",
+-    "municipality_count",
++    "municipality_count", "artifact_kind", "observed_bytes", "limit_bytes",
+     "reused_payload_count", "manifest_reused", "latest_updated", "attempt",
+     "retry_after_seconds", "elapsed_seconds", "duration_seconds", "exit_code",
+     "expected_count", "actual_count", "core_stage_idempotent", "pollen_stage_idempotent",
+@@ -82,6 +82,9 @@ _SAFE_MESSAGES = frozenset({
+     "stored manifest differs from publication intent", "recovery manifest changed during verification",
+     "recovery manifest SHA-256 is invalid", "publication-only recovery is ICON-only",
+     "Checkpoint metadata is invalid", "Checkpoint packing error is invalid",
++    "ICON payload exceeds its local size bound", "ICON JSON exceeds its local size bound",
++    "ICON report exceeds its local size bound", "CAMS payload exceeds its local size bound",
++    "CAMS report exceeds its local size bound",
+     "invalid ICON checkpoint slot", "ICON checkpoint differs from publication intent",
+     "ICON checkpoint expanded size exceeds limit", "ICON checkpoint compressed size exceeds limit",
+     "invalid ICON checkpoint size", "invalid ICON checkpoint envelope",
+diff --git a/experiments/weather_autonomy/local_pipeline/snapshot_materializer.py b/experiments/weather_autonomy/local_pipeline/snapshot_materializer.py
+index f41acf27..fabc8159 100644
+--- a/experiments/weather_autonomy/local_pipeline/snapshot_materializer.py
++++ b/experiments/weather_autonomy/local_pipeline/snapshot_materializer.py
+@@ -19,6 +19,8 @@ from pathlib import Path
+ from typing import Any, Mapping
+ import zipfile
+ 
++from .operational_diagnostics import attach_error_fields
++
+ from .contract_v1 import (
+     CATALOG_VERSION,
+     CAMS_POLLEN_PROVIDER,
+@@ -50,7 +52,10 @@ DEFAULT_CAMS_PAYLOAD = ROOT / "cams_fvg_payload_20260903.json"
+ DEFAULT_CAMS_REPORT = ROOT / "cams_fvg_decode_report_20260903.json"
+ 
+ ICON_ARCHIVE_MEMBER = "pilot.json"
+-MAX_ICON_JSON_BYTES = 32 * 1024 * 1024
++# Full 215x73 snapshots include per-hour accumulation provenance. The
++# 2026-10-20 run produced 34,601,901 bytes, beyond the legacy 32 MiB cap.
++# Keep a finite 64 MiB input cap; checkpoint and per-object limits are separate.
++MAX_ICON_JSON_BYTES = 64 * 1024 * 1024
+ MAX_CAMS_JSON_BYTES = 64 * 1024 * 1024
+ EXPECTED_CAMS_VARIABLES = 28
+ EXPECTED_ICON_HOURS = 73
+@@ -71,14 +76,27 @@ def _read_json_bytes(raw: bytes, label: str) -> dict[str, Any]:
+     return value
+ 
+ 
++def _size_error(label: str, observed: int, maximum: int) -> SnapshotMaterializationError:
++    return attach_error_fields(
++        SnapshotMaterializationError(f"{label} exceeds its local size bound"),
++        artifact_kind=label.lower().replace(" ", "_"),
++        observed_bytes=observed,
++        limit_bytes=maximum,
++    )
++
++
+ def _read_bounded(path: Path, maximum: int, label: str) -> bytes:
+     path = Path(path)
+     if not path.is_file():
+         raise SnapshotMaterializationError(f"{label} is missing")
+     size = path.stat().st_size
+     if not 1 <= size <= maximum:
+-        raise SnapshotMaterializationError(f"{label} exceeds its local size bound")
+-    raw = path.read_bytes()
++        raise _size_error(label, size, maximum)
++    # Bound the actual read too: the file can grow after stat().
++    with path.open("rb") as stream:
++        raw = stream.read(maximum + 1)
++    if len(raw) > maximum:
++        raise _size_error(label, len(raw), maximum)
+     if len(raw) != size:
+         raise SnapshotMaterializationError(f"{label} changed while it was read")
+     return raw
+@@ -130,11 +148,13 @@ def load_verified_icon_snapshot(
+                     raise SnapshotMaterializationError("ICON archive member set is unexpected")
+                 info = archive.getinfo(ICON_ARCHIVE_MEMBER)
+                 if not 1 <= info.file_size <= MAX_ICON_JSON_BYTES:
+-                    raise SnapshotMaterializationError("ICON JSON exceeds its local size bound")
++                    raise _size_error("ICON JSON", info.file_size, MAX_ICON_JSON_BYTES)
+                 with archive.open(info) as stream:
+                     icon_raw = stream.read(MAX_ICON_JSON_BYTES + 1)
+         except (OSError, zipfile.BadZipFile, KeyError) as error:
+             raise SnapshotMaterializationError("ICON archive cannot be read") from error
++        if len(icon_raw) > MAX_ICON_JSON_BYTES:
++            raise _size_error("ICON JSON", len(icon_raw), MAX_ICON_JSON_BYTES)
+         if len(icon_raw) != info.file_size:
+             raise SnapshotMaterializationError("ICON archive member is truncated")
+     else:

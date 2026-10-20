@@ -1,0 +1,25 @@
+test_enriched_215_by_73_reaches_checkpoint_publication_and_legacy_read (test_icon_snapshot_limits.FullIconSnapshotLimitRegression.test_enriched_215_by_73_reaches_checkpoint_publication_and_legacy_read) ... {"event":"phase_started","provider":"icon","severity":"INFO","source_run_id":"20260903T000000Z","stage":"icon_validation","status":"started","timestamp":"2026-10-20T18:39:18.271+00:00"}
+{"elapsed_seconds":2.188,"event":"phase_completed","provider":"icon","severity":"INFO","source_run_id":"20260903T000000Z","stage":"icon_validation","status":"completed","timestamp":"2026-10-20T18:39:20.459+00:00"}
+{"event":"phase_started","provider":"icon","severity":"INFO","source_run_id":"20260903T000000Z","stage":"icon_publication","status":"started","timestamp":"2026-10-20T18:39:20.460+00:00"}
+{"event":"phase_started","provider":"icon2i","severity":"INFO","source_run_id":"20260903T000000Z","stage":"stored_run_verification","status":"started","timestamp":"2026-10-20T18:39:26.024+00:00"}
+{"elapsed_seconds":1.838,"event":"phase_completed","provider":"icon2i","severity":"INFO","source_run_id":"20260903T000000Z","stage":"stored_run_verification","status":"completed","timestamp":"2026-10-20T18:39:27.862+00:00"}
+{"elapsed_seconds":7.413,"event":"phase_completed","provider":"icon","severity":"INFO","source_run_id":"20260903T000000Z","stage":"icon_publication","status":"completed","timestamp":"2026-10-20T18:39:27.873+00:00"}
+{"event":"phase_started","provider":"icon","severity":"INFO","source_run_id":"20260903T000000Z","stage":"icon_validation","status":"started","timestamp":"2026-10-20T18:39:29.072+00:00"}
+{"elapsed_seconds":2.214,"event":"phase_completed","provider":"icon","severity":"INFO","source_run_id":"20260903T000000Z","stage":"icon_validation","status":"completed","timestamp":"2026-10-20T18:39:31.286+00:00"}
+{"event":"phase_started","provider":"icon","severity":"INFO","source_run_id":"20260903T000000Z","stage":"icon_publication","status":"started","timestamp":"2026-10-20T18:39:31.287+00:00"}
+{"event":"phase_started","provider":"icon2i","severity":"INFO","source_run_id":"20260903T000000Z","stage":"stored_run_verification","status":"started","timestamp":"2026-10-20T18:39:36.560+00:00"}
+{"elapsed_seconds":1.808,"event":"phase_completed","provider":"icon2i","severity":"INFO","source_run_id":"20260903T000000Z","stage":"stored_run_verification","status":"completed","timestamp":"2026-10-20T18:39:38.368+00:00"}
+{"elapsed_seconds":7.09,"event":"phase_completed","provider":"icon","severity":"INFO","source_run_id":"20260903T000000Z","stage":"icon_publication","status":"completed","timestamp":"2026-10-20T18:39:38.376+00:00"}
+{"before_padding_bytes": 37183656, "checkpoint_expanded_bytes": 26460979, "checkpoint_gzip_bytes": 640325, "checkpoint_schema": 2, "hours": 73, "largest_enriched_document_bytes": 124099, "memory": {"peak_working_set_bytes": 217579520, "working_set_bytes": 160821248}, "municipalities": 215, "old_limit_reproduced": true, "payload_bytes": 37183656, "regression": "synthetic_full_catalog_not_failed_live_payload", "repeat_latest_changed": false, "sidecars_verified": 215, "storage": "memory_only", "tolerance_verified": 15552}
+ok
+test_diagnostics_explain_size_without_disclosing_paths (test_icon_snapshot_limits.IconSnapshotLimitTests.test_diagnostics_explain_size_without_disclosing_paths) ... ok
+test_exact_limit_and_one_byte_over_remain_bounded_for_both_formats (test_icon_snapshot_limits.IconSnapshotLimitTests.test_exact_limit_and_one_byte_over_remain_bounded_for_both_formats) ... ok
+test_hash_run_and_envelope_checks_are_not_bypassed (test_icon_snapshot_limits.IconSnapshotLimitTests.test_hash_run_and_envelope_checks_are_not_bypassed) ... ok
+test_observed_size_is_rejected_before_and_read_after_json_and_zip (test_icon_snapshot_limits.IconSnapshotLimitTests.test_observed_size_is_rejected_before_and_read_after_json_and_zip) ... ok
+test_read_is_bounded_even_if_file_grows_after_stat (test_icon_snapshot_limits.IconSnapshotLimitTests.test_read_is_bounded_even_if_file_grows_after_stat) ... ok
+test_zero_length_report_limit_and_changed_file_still_rejected (test_icon_snapshot_limits.IconSnapshotLimitTests.test_zero_length_report_limit_and_changed_file_still_rejected) ... ok
+
+----------------------------------------------------------------------
+Ran 7 tests in 47.521s
+
+OK

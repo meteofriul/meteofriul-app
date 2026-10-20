@@ -1,10 +1,12 @@
 # ICON-2I: deploy della correzione del checkpoint, 20 ottobre 2026
 
-**Produttore corretto e aggiornato; verifica della nuova corsa ancora incompleta.**
-Deploy verificato alle 09:06 UTC / 11:06 Europe/Rome. La prossima esecuzione
-ordinaria resta il 20 ottobre alle **18:00 UTC / 20:00 italiane**. Non e stata
-avviata un'acquisizione manuale e l'esito terminale dello slot mattutino
-`20261020-am` non e stato alterato.
+**Verifica serale fallita: nuova corsa non pubblicata, tolleranze ancora non verificate.**
+L'esecuzione ordinaria delle 18:00 UTC / 20:00 italiane ha raggiunto un limite
+di dimensione nella validazione. Il deploy delle 09:06 UTC resta quello
+documentato sotto; nessun nuovo deploy o acquisizione manuale è stato eseguito.
+Il solo esito serale non autorizzava la promozione; la successiva correzione
+locale, i 183 test e l'autorizzazione al passaggio su main sono documentati
+nel [verbale del limite](ICON2I_PAYLOAD_LIMIT_FIX_20261020.md).
 
 ## Artefatto e verifica prima del deploy
 
@@ -117,3 +119,52 @@ identificativi fissati: archiviarle non autorizza a rieseguire build, deploy
 o QA. Il follow-up usa ancora gli originali canonici previsti sopra.
 Il controllo di questa conservazione riguarda JSON, sintassi, link e hash;
 non ripete i test meteo e non completa la prova sulla nuova corsa.
+
+
+## Esito della verifica serale del 20 ottobre
+
+L'esecuzione `meteofriul-icon-knbcb` (18:00:13–18:03:14 UTC) usa il digest
+atteso `e72f606f…`, ma termina con exit 1. L'acquisizione della corsa
+`2026102012` è completa; la validazione fallisce in `snapshot_materializer.py`,
+`_read_bounded`, riga 80: `SnapshotMaterializationError`,
+`verified_pipeline_invariant_failed`, stato terminale `manual_review`.
+I retry leggono lo stesso fallimento, senza una seconda acquisizione.
+
+I log riportano `payload_bytes=34601901`, maggiore di
+`MAX_ICON_JSON_BYTES=33554432` (32 MiB). Il superamento è dimostrato dal log;
+il messaggio sanitizzato non identifica il file. Non è stata corretta qui
+la gestione del limite e non sono stati scaricati nuovi dati grezzi.
+
+Alle 18:27 UTC: checkpoint serale assente (404 al percorso con prefisso
+effettivo `pilot`), outcome terminale presente e non retryable, nessun evento
+`source_quality` nei 107 log letti con paginazione completa. Nessun oggetto
+immutabile, outcome o scheduler è stato alterato per tentare il recupero.
+
+Latest resta `20261019T120000Z`. Il comando HTTP con `--require-new`
+termina prima del QA con «New source run is not published yet: do not execute QA».
+**Nessun QA eseguito**, nessun invio o prenotazione del QA. Riletti manifest e
+Pordenone/Udine/Gradisca con hash invariati: i due client storici restano
+verificati sui 215 documenti di quel manifest, non sui dati nuovi.
+La verifica nazionale resta quella delle 09:07 UTC; nessuna nuova prova
+visiva o installazione sul telefono.
+
+Evidenze: [readback finale](evidence/icon-checkpoint-hotfix-2026-10-20/evening-check/icon-final-readback.json),
+[log completi](evidence/icon-checkpoint-hotfix-2026-10-20/evening-check/icon-complete-logs.json).
+Al momento del riscontro il passo successivo era correggere localmente la
+dimensione e verificarla (esito nella sezione seguente); il deploy resta
+un'autorizzazione separata.
+Non riaprire lo slot terminale e non dichiarare chiusa la verifica tolleranze.
+
+La revisione automatica ha rifiutato la rimozione del follow-up perché manca
+una richiesta esplicita dell'utente per eliminarlo. L'automazione resta
+invariata; nessuna modifica diretta ai file di automazione ha aggirato il blocco.
+
+
+## Correzione locale successiva del limite
+
+Preparata e verificata la [correzione locale del limite payload](ICON2I_PAYLOAD_LIMIT_FIX_20261020.md):
+64 MiB, lettura limitata e diagnostica esplicita. 183 test passati;
+il caso completo sintetico da 37,2 MB supera validazione, checkpoint e
+pubblicazione locale per 215 comuni. Non è il grezzo della corsa fallita.
+Nessun deploy o nuova verifica cloud: l'esito operativo serale sopra resta
+fallito e la verifica delle tolleranze sulla nuova corsa resta incompleta.

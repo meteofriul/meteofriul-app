@@ -1,0 +1,25 @@
+{
+  "modules": [
+    "test_run_pilot",
+    "test_operational_diagnostics",
+    "test_accumulation_tolerance",
+    "test_icon_quality",
+    "test_icon_checkpoint",
+    "test_icon_accumulation_sidecar",
+    "test_job_entrypoints",
+    "test_cloud_worker"
+  ],
+  "tests": 176,
+  "success": true,
+  "failures": 0,
+  "errors": 0,
+  "skips": 0,
+  "python": "3.13.5 (tags/v3.13.5:6cb20a2, Jun 11 2025, 16:15:46) [MSC v.1943 64 bit (AMD64)]",
+  "network": "socket connections blocked",
+  "memory": {
+    "working_set_bytes": 161800192,
+    "peak_working_set_bytes": 266248192
+  },
+  "cloud_executions": 0,
+  "deployments": 0
+}

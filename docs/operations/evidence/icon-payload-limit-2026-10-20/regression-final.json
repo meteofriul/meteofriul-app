@@ -1,0 +1,18 @@
+{
+  "modules": [
+    "test_icon_snapshot_limits"
+  ],
+  "tests": 7,
+  "success": true,
+  "failures": 0,
+  "errors": 0,
+  "skips": 0,
+  "python": "3.13.5 (tags/v3.13.5:6cb20a2, Jun 11 2025, 16:15:46) [MSC v.1943 64 bit (AMD64)]",
+  "network": "socket connections blocked",
+  "memory": {
+    "working_set_bytes": 60391424,
+    "peak_working_set_bytes": 217579520
+  },
+  "cloud_executions": 0,
+  "deployments": 0
+}
