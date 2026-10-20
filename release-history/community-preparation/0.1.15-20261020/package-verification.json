@@ -1,0 +1,220 @@
+{
+  "status": "PASS",
+  "source_commit": "05a4fcc69969c259163eaad9bca4a4f234384e81",
+  "archive_sha256": "8bf83ee888b6e9521a63ad98519d451a724a6b93118f6b77100769fd1c6add43",
+  "archive_files": 35,
+  "all_archive_members_match_allowlist_and_hash": true,
+  "baseline_env_unchanged_except_added_v3_off": true,
+  "activation_changes_only_v3_flag": true,
+  "compatible_rollback_equals_initial_runtime": true,
+  "validation_storage_is_separate": true,
+  "previous_qa_source": "81a2610d98ae967822a3b536d859de3645dbccdb",
+  "source_comparison": [
+    {
+      "source": "backend/Dockerfile.community-pilot",
+      "same_normalized_lf": true,
+      "qa_sha256_lf": "6a481345cb3c1ffaea3b3ad6cf8937e64dbaef19482998458bdba289c2a1ae67",
+      "candidate_sha256_lf": "6a481345cb3c1ffaea3b3ad6cf8937e64dbaef19482998458bdba289c2a1ae67"
+    },
+    {
+      "source": "backend/requirements.community-pilot.txt",
+      "same_normalized_lf": true,
+      "qa_sha256_lf": "6ac4fcb3933fef81bada4677be28c618f74dd6bf1fcf3d9697a9507cbd1f9028",
+      "candidate_sha256_lf": "6ac4fcb3933fef81bada4677be28c618f74dd6bf1fcf3d9697a9507cbd1f9028"
+    },
+    {
+      "source": "backend/community-pilot-build.yaml",
+      "same_normalized_lf": true,
+      "qa_sha256_lf": "3bf313d5255b94563da63ade75e1abaa91674aef86717c1a2e462cd02eda9fc5",
+      "candidate_sha256_lf": "3bf313d5255b94563da63ade75e1abaa91674aef86717c1a2e462cd02eda9fc5"
+    },
+    {
+      "source": "backend/community-pilot-context.ignore",
+      "same_normalized_lf": true,
+      "qa_sha256_lf": "eb40b72b6ed6b2539f739e61b9a5ddc7e82b0ffffeb0b27fe5b7a3e2f0f126ae",
+      "candidate_sha256_lf": "eb40b72b6ed6b2539f739e61b9a5ddc7e82b0ffffeb0b27fe5b7a3e2f0f126ae"
+    },
+    {
+      "source": "backend/community-pilot-context.ignore",
+      "same_normalized_lf": true,
+      "qa_sha256_lf": "eb40b72b6ed6b2539f739e61b9a5ddc7e82b0ffffeb0b27fe5b7a3e2f0f126ae",
+      "candidate_sha256_lf": "eb40b72b6ed6b2539f739e61b9a5ddc7e82b0ffffeb0b27fe5b7a3e2f0f126ae"
+    },
+    {
+      "source": "backend/app/__init__.py",
+      "same_normalized_lf": true,
+      "qa_sha256_lf": "9dd7cc89b54d2d99a023e96c4d57c82a1a4e90034c7ea8c2a18880e17bd3fa0c",
+      "candidate_sha256_lf": "9dd7cc89b54d2d99a023e96c4d57c82a1a4e90034c7ea8c2a18880e17bd3fa0c"
+    },
+    {
+      "source": "backend/app/pilot_community_cloud.py",
+      "same_normalized_lf": true,
+      "qa_sha256_lf": "32922c5a488b07ebedb4e8f65de9a544722d86353464ae66a41d23c583fa9ad5",
+      "candidate_sha256_lf": "32922c5a488b07ebedb4e8f65de9a544722d86353464ae66a41d23c583fa9ad5"
+    },
+    {
+      "source": "backend/app/contracts/__init__.py",
+      "same_normalized_lf": true,
+      "qa_sha256_lf": "5cfb4aca9cee1cde525fbc1b6f30094cbb519fe2ab6aecd43969b823dc8c74fa",
+      "candidate_sha256_lf": "5cfb4aca9cee1cde525fbc1b6f30094cbb519fe2ab6aecd43969b823dc8c74fa"
+    },
+    {
+      "source": "backend/app/contracts/live.py",
+      "same_normalized_lf": true,
+      "qa_sha256_lf": "2888e8b08db7bee49239209f3e403fc49a262037071afdb103e1c62376b96ac7",
+      "candidate_sha256_lf": "2888e8b08db7bee49239209f3e403fc49a262037071afdb103e1c62376b96ac7"
+    },
+    {
+      "source": "backend/app/contracts/location.py",
+      "same_normalized_lf": true,
+      "qa_sha256_lf": "ce9ca81b0aee5f74e8f8f34fc6c4c2e3c4ae7db8dbdcb7facc608fca75fcd993",
+      "candidate_sha256_lf": "ce9ca81b0aee5f74e8f8f34fc6c4c2e3c4ae7db8dbdcb7facc608fca75fcd993"
+    },
+    {
+      "source": "backend/app/repositories/__init__.py",
+      "same_normalized_lf": true,
+      "qa_sha256_lf": "32f9225f44ab2884769b571ea9598c560c250cf4ef20a4e11ef679ae106f46ff",
+      "candidate_sha256_lf": "32f9225f44ab2884769b571ea9598c560c250cf4ef20a4e11ef679ae106f46ff"
+    },
+    {
+      "source": "backend/app/repositories/community.py",
+      "same_normalized_lf": true,
+      "qa_sha256_lf": "7ebecfd53ffcc6db85811e699ffd529fb1da8f1822178fd925ea63625af4789c",
+      "candidate_sha256_lf": "7ebecfd53ffcc6db85811e699ffd529fb1da8f1822178fd925ea63625af4789c"
+    },
+    {
+      "source": "backend/app/repositories/pilot_community.py",
+      "same_normalized_lf": true,
+      "qa_sha256_lf": "1372fa51f2f7b064b8d247f98e64bf01347ffc2bad7871dd4a0db01a2d4df7d5",
+      "candidate_sha256_lf": "1372fa51f2f7b064b8d247f98e64bf01347ffc2bad7871dd4a0db01a2d4df7d5"
+    },
+    {
+      "source": "backend/app/repositories/pilot_community_sqlite.py",
+      "same_normalized_lf": true,
+      "qa_sha256_lf": "82017911da945b8fb644b23145373ce7934724bc3bffcbf92efd8f1724e00425",
+      "candidate_sha256_lf": "82017911da945b8fb644b23145373ce7934724bc3bffcbf92efd8f1724e00425"
+    },
+    {
+      "source": "backend/app/repositories/pilot_community_cloud.py",
+      "same_normalized_lf": true,
+      "qa_sha256_lf": "587d618bdf4bc13b5d284d04c576e09a643817c528a90a9741dcd20229a8a058",
+      "candidate_sha256_lf": "587d618bdf4bc13b5d284d04c576e09a643817c528a90a9741dcd20229a8a058"
+    },
+    {
+      "source": "backend/app/jobs/seed_community_v2.py",
+      "same_normalized_lf": true,
+      "qa_sha256_lf": "d68c70f8d10fb19e53564a3a8ea909cb879dc3ee4c3df3679ea39ca1417fe74c",
+      "candidate_sha256_lf": "d68c70f8d10fb19e53564a3a8ea909cb879dc3ee4c3df3679ea39ca1417fe74c"
+    },
+    {
+      "source": "backend/app/services/__init__.py",
+      "same_normalized_lf": true,
+      "qa_sha256_lf": "e480b2f03a9b20473ccb3047ba2bed125e2b1a05a70f3f38edca7d1ba76d656a",
+      "candidate_sha256_lf": "e480b2f03a9b20473ccb3047ba2bed125e2b1a05a70f3f38edca7d1ba76d656a"
+    },
+    {
+      "source": "backend/app/services/community.py",
+      "same_normalized_lf": true,
+      "qa_sha256_lf": "b6042f6731d1f6bbfd0e8c79fe611d90e4b0a4595a996a7f6ce7a7485f036b3e",
+      "candidate_sha256_lf": "b6042f6731d1f6bbfd0e8c79fe611d90e4b0a4595a996a7f6ce7a7485f036b3e"
+    },
+    {
+      "source": "backend/app/services/community_reports.py",
+      "same_normalized_lf": true,
+      "qa_sha256_lf": "6260eb856e6506b163d7e1324bf57e2e62052c6cd25067b35e53e81b9be96020",
+      "candidate_sha256_lf": "6260eb856e6506b163d7e1324bf57e2e62052c6cd25067b35e53e81b9be96020"
+    },
+    {
+      "source": "backend/app/services/community_compatibility.py",
+      "same_normalized_lf": true,
+      "qa_sha256_lf": "6c4062c6522f0680af75e7176f14e86407177a2fded7d780dbffcf2ee8e468b6",
+      "candidate_sha256_lf": "6c4062c6522f0680af75e7176f14e86407177a2fded7d780dbffcf2ee8e468b6"
+    },
+    {
+      "source": "backend/app/services/pilot_community.py",
+      "same_normalized_lf": true,
+      "qa_sha256_lf": "b76f168a57d511b7c344baddfd782c27137093ed8b108c9b3b5aa1abfaf51f6e",
+      "candidate_sha256_lf": "b76f168a57d511b7c344baddfd782c27137093ed8b108c9b3b5aa1abfaf51f6e"
+    },
+    {
+      "source": "backend/app/services/pilot_community_geography.py",
+      "same_normalized_lf": true,
+      "qa_sha256_lf": "d541bad7884b461bc3eb7bc6e266ab40c646cab4feafe3704b39747002199a2c",
+      "candidate_sha256_lf": "d541bad7884b461bc3eb7bc6e266ab40c646cab4feafe3704b39747002199a2c"
+    },
+    {
+      "source": "backend/app/services/fvg_geography.py",
+      "same_normalized_lf": true,
+      "qa_sha256_lf": "f716ab02d06f592029ac17ce0820bbf1c25489b0491d40fab85aa5cfa9bdb9d1",
+      "candidate_sha256_lf": "f716ab02d06f592029ac17ce0820bbf1c25489b0491d40fab85aa5cfa9bdb9d1"
+    },
+    {
+      "source": "backend/app/services/location.py",
+      "same_normalized_lf": true,
+      "qa_sha256_lf": "4428f09cf5d187692c8087771ed7c70c7d2e7f1d5c02822fc1ea33ea1ed50430",
+      "candidate_sha256_lf": "4428f09cf5d187692c8087771ed7c70c7d2e7f1d5c02822fc1ea33ea1ed50430"
+    },
+    {
+      "source": "backend/app/services/national_municipalities.py",
+      "same_normalized_lf": true,
+      "qa_sha256_lf": "95a3ed405a473f945e03d5d323c4b858f795d7260f5732e1a7af4198c9f520eb",
+      "candidate_sha256_lf": "95a3ed405a473f945e03d5d323c4b858f795d7260f5732e1a7af4198c9f520eb"
+    },
+    {
+      "source": "backend/app/services/territory_policy.py",
+      "same_normalized_lf": true,
+      "qa_sha256_lf": "8e1232f4a752b807d5468b9896a53a593f692175edc59f5be86af00886aacbd7",
+      "candidate_sha256_lf": "8e1232f4a752b807d5468b9896a53a593f692175edc59f5be86af00886aacbd7"
+    },
+    {
+      "source": "backend/app/weather/__init__.py",
+      "same_normalized_lf": true,
+      "qa_sha256_lf": "889a04c7d5be14f7c382dcd1e216716d42e496e1f74b9888d873ec9381bd0015",
+      "candidate_sha256_lf": "889a04c7d5be14f7c382dcd1e216716d42e496e1f74b9888d873ec9381bd0015"
+    },
+    {
+      "source": "backend/app/weather/timezone_support.py",
+      "same_normalized_lf": true,
+      "qa_sha256_lf": "227098c8dafa9c6fae736b8630344515cd56190be42289eda2034822213329fe",
+      "candidate_sha256_lf": "227098c8dafa9c6fae736b8630344515cd56190be42289eda2034822213329fe"
+    },
+    {
+      "source": "backend/app/data/italy_municipalities_2026.json",
+      "same_normalized_lf": true,
+      "qa_sha256_lf": "41457bb6db0745c791976e20310e9c28338121298b5447143ae83af899c37644",
+      "candidate_sha256_lf": "41457bb6db0745c791976e20310e9c28338121298b5447143ae83af899c37644"
+    },
+    {
+      "source": "backend/app/data/fvg_municipalities.json",
+      "same_normalized_lf": true,
+      "qa_sha256_lf": "06ced5bedc823365b38d83d2be93bd1bf5102ec97b2e5ba4f91c9f5ae5975a57",
+      "candidate_sha256_lf": "06ced5bedc823365b38d83d2be93bd1bf5102ec97b2e5ba4f91c9f5ae5975a57"
+    },
+    {
+      "source": "backend/app/data/fvg_geography.json",
+      "same_normalized_lf": true,
+      "qa_sha256_lf": "0475c1b1fc309e5e38ab536ae4b32cd04d11550168b871d8b95bbbe5f16512e9",
+      "candidate_sha256_lf": "0475c1b1fc309e5e38ab536ae4b32cd04d11550168b871d8b95bbbe5f16512e9"
+    },
+    {
+      "source": "backend/tests/__init__.py",
+      "same_normalized_lf": true,
+      "qa_sha256_lf": "5be1bbb9b1a3231f54da6b9d10d3a6753acf899f571ab9796e07b9ad36df001e",
+      "candidate_sha256_lf": "5be1bbb9b1a3231f54da6b9d10d3a6753acf899f571ab9796e07b9ad36df001e"
+    },
+    {
+      "source": "backend/tests/test_pilot_community_cloud_api.py",
+      "same_normalized_lf": true,
+      "qa_sha256_lf": "aca689e5f3fc3f88ac15166e4a35af8ece37c6021940b94043d9bdf8404cf320",
+      "candidate_sha256_lf": "aca689e5f3fc3f88ac15166e4a35af8ece37c6021940b94043d9bdf8404cf320"
+    },
+    {
+      "source": "backend/tests/test_community_cloud_compatibility.py",
+      "same_normalized_lf": false,
+      "qa_sha256_lf": "a1cb37133d5f1a5e9a54bca2f6049eedfd5080f6e1f24f7af9d61b452a83cbb4",
+      "candidate_sha256_lf": "9f6ca29f19c5a8c5580b73b5c3b33bea861f77130ebe15b2b29515ed2026b58a"
+    }
+  ],
+  "image_built": false,
+  "deployed": false
+}

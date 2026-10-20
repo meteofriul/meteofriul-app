@@ -1,3 +1,5 @@
+Preparazione corrente per la 0.1.15: [pacchetto, compatibilità e ordine del passaggio](COMMUNITY_0.1.15_RELEASE_PREPARATION_20261020.md).
+
 Aggiornamento del 17 ottobre 2026: gli esiti cloud e Android successivi sono
 consolidati in COMMUNITY_COMPATIBILITY_ACCEPTANCE_2026-10-17.txt. Il testo
 seguente conserva il perimetro e i risultati della sessione storica.

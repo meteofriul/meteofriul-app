@@ -1,0 +1,29 @@
+{
+  "checked_at_utc": "2026-10-20T20:42:01.991753+00:00",
+  "status": "verified-for-local-fast-forward",
+  "candidate_commit": "013f694649f5f3e372ac8b90d05806a3e1003a68",
+  "main_before": "5cbcd35ca88088220ff167b299cb4353ebdaf6d4",
+  "backend_tests": 173,
+  "packaged_tests": 33,
+  "packaged_tests_are_subset": true,
+  "privacy_tests": 3,
+  "runtime_frontend_production_config_delta_from_main": false,
+  "archive_sha256": "8bf83ee888b6e9521a63ad98519d451a724a6b93118f6b77100769fd1c6add43",
+  "checks": {
+    "evidence_git_hashes": "PASS",
+    "package_allowlist_hashes_env": "PASS",
+    "powershell_syntax": "PASS",
+    "canonical_cleanliness": "PASS",
+    "diff": "PASS"
+  },
+  "promotion_method": "git merge --ff-only codex/community-0.1.15-preparation",
+  "remote_ci": "not-triggered-no-push",
+  "native_runtime_retest": "not-run-no-runtime-change",
+  "new_cloud_verification": "not-run-no-deploy",
+  "aab": false,
+  "installations": 0,
+  "manual_reports": 0,
+  "manual_notifications": 0,
+  "push": false,
+  "deploy": false
+}

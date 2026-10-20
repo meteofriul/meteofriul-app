@@ -255,6 +255,66 @@ class CommunityCloudCompatibilityTests(unittest.TestCase):
         self.post("history", {"client_id": "reader", "istat_code": "093033"}, new=True)
         self.assertEqual(1, len(self.repository._reports))
 
+    def test_v3_preflight_and_read_contract_cover_android_and_public_web_origins(self):
+        origins = ("https://localhost", "https://meteofriul.app", "https://www.meteofriul.app",
+                   "https://meteofriul.it", "https://www.meteofriul.it")
+        for origin in origins:
+            with self.subTest(origin=origin):
+                response = self.client.options("/api/community/reports", headers={
+                    "Origin": origin, "Access-Control-Request-Method": "POST",
+                    "Access-Control-Request-Headers": RULES_HEADER + ",x-firebase-appcheck,content-type"})
+                self.assertEqual(200, response.status_code)
+                self.assertEqual(origin, response.headers["Access-Control-Allow-Origin"])
+                self.assertIn(RULES_HEADER.lower(), response.headers["Access-Control-Allow-Headers"].lower())
+                response = self.client.get("/api/community/reports?istat_code=093033",
+                    headers={"Origin": origin, RULES_HEADER: RULES_VERSION})
+                self.assertEqual(200, response.status_code)
+                self.assertEqual(origin, response.headers["Access-Control-Allow-Origin"])
+                self.assertEqual(RULES_VERSION, response.json()["contract"]["schema_version"])
+        self.verifier.assert_not_called()  # Preflight and public reads need no bypass token.
+
+    def test_compatible_freeze_after_v3_write_preserves_durable_data_and_legacy_operations(self):
+        with TemporaryDirectory() as directory:
+            database = Path(directory) / "state.sqlite3"
+            repo = PilotSQLiteCommunityRepository(database)
+            self.connect(repo)
+            command = self.create_command("author")
+            accepted = self.post("reports", command, new=True)
+            self.vote(accepted, new=True)
+            before = self.reputation()
+            repo.close()
+            repo = PilotSQLiteCommunityRepository(database)
+            try:
+                self.connect(repo)
+                self.client = TestClient(create_app(service=self.current, legacy_service=self.legacy,
+                    public_mode=True, v3_writes_enabled=False, app_check_verifier=self.verifier,
+                    allowed_app_ids={"approved-app"}),
+                    base_url="https://pilot-community-335641913741.europe-west1.run.app")
+                health = self.client.get("/api/community/health").json()
+                self.assertFalse(health["v3_writes_enabled"])
+                self.assertEqual(LEGACY_RULES_VERSION, health["default_rules"])
+                self.assertEqual([LEGACY_RULES_VERSION, RULES_VERSION], health["supported_rules"])
+                for new in (False, True):
+                    feed = self.client.get("/api/community/reports?istat_code=093033", headers=self.headers(new))
+                    self.assertEqual(200, feed.status_code)
+                    self.assertEqual(1, len(feed.json()["map_groups"]))
+                receipt = self.post("operations/" + command["operation_id"], {"client_id": "author"}, new=True)
+                self.assertEqual("accepted", receipt["status"])
+                self.assertEqual(accepted["report"]["id"], receipt["result"]["report"]["id"])
+                self.post("reports", self.create_command("new-owner"), new=True, expected=503)
+                self.vote(accepted, owner="next-witness", new=True, expected=503)
+                for action in ("update", "correction", "withdraw", "replace"):
+                    with self.subTest(action=action):
+                        self.edit(accepted, action, new=True, expected=503)
+                self.assertEqual(before, self.reputation())
+                self.post("reports", self.create_command("author"), expected=426)
+                old = self.create("legacy-owner", kind="wind")
+                self.vote(old, owner="legacy-witness")
+                self.assertEqual(1, self.reputation("legacy-owner", new=False)["points"])
+                self.assertEqual(2, len(self.repository._reports))
+            finally:
+                repo.close()
+
     def test_new_three_hour_reward_window_respects_the_last_legacy_point(self):
         old = self.create()
         self.vote(old)
