@@ -32,6 +32,7 @@ DETAILS = {
     'fvg_settanta': 170166,
     'together': 170074,
     'genius': 174822,
+    'brene': 174928,
 }
 EXPECTED_INVENTORIES = {
     'events': {618890, 285613, 616198},
@@ -77,6 +78,18 @@ OCTOBER_28_EVENT = {
 REVIEWED_ADDITIONAL_NEWS = {
     234126: '2026-10-15T11:19:35', 234129: '2026-10-15T11:32:52',
 }
+# Published in News only: cross-checked against the content module on 21 October.
+# CMS publication dates are not used as the appointment date.
+NEWS_EVENTS = {
+    234240: {
+        'key': 'brene', 'path': '/a-brene-vierte-174928',
+        'title': '"A brene vierte" presentazione del catalogo',
+        'date': '2026-10-21', 'time': '18:00',
+        'intro': 'Mercoledì 21 ottobre, ore 18.00, Via Marziano Ciotti 51',
+        'modified': '2026-10-19T12:36:32',
+        'page_modified': '2026-10-19T12:36:16',
+    },
+}
 EVENT_PAGES = {
     '/eventi-collaterali-ottobre-174329': ('2026-10-14', '2026-10-14'),
     '/giornata-del-contemporaneo-2026-75485': ('2026-10-10', '2026-10-10'),
@@ -100,6 +113,7 @@ DETAIL_END_DATES = {
     'pausig_event': '2026-10-11', 'pausig_exhibition': '2026-10-11',
     'fvg7002_exhibition': '2026-11-29', 'fvg7002_news': '2026-11-29',
     'genius': OCTOBER_28_EVENT['date'],
+    'brene': NEWS_EVENTS[234240]['date'],
 }
 KNOWN_WRONG_EXHIBITION_DATES = ('2026-06-27', '2027-01-15')
 
@@ -203,7 +217,8 @@ def _news_review(rows, *, archived_exhibitions):
             or not set(REVIEWED_NEWS_2026) - retired <= present):
         raise ValueError('Spazzapan news inventory incomplete')
     changed_active = set()
-    reviewed = REVIEWED_NEWS_2026 | REVIEWED_ADDITIONAL_NEWS
+    reviewed = (REVIEWED_NEWS_2026 | REVIEWED_ADDITIONAL_NEWS
+                | {key: item['modified'] for key, item in NEWS_EVENTS.items()})
     for row in rows:
         if row.get('published') is not True:
             raise ValueError('Spazzapan news publication changed')
@@ -214,7 +229,7 @@ def _news_review(rows, *, archived_exhibitions):
             raise ValueError('Spazzapan news date metadata invalid') from None
         if published.year == 2026:
             if reviewed.get(row['id']) != row['modified']:
-                if row['id'] in {84819, 233611, 233851} | set(REVIEWED_ADDITIONAL_NEWS):
+                if row['id'] in {84819, 233611, 233851} | set(REVIEWED_ADDITIONAL_NEWS) | set(NEWS_EVENTS):
                     changed_active.add(row['id'])
                 else:
                     raise ValueError('new or changed Spazzapan news requires review')
@@ -504,6 +519,43 @@ def parse_spazzapan(surfaces, pages, *, today):
                 'reason': 'event_detail_requires_review', 'detail': str(error),
             })
 
+    news_event_ids = sorted(set(NEWS_EVENTS) & set(news))
+    for source_id in news_event_ids:
+        extra = NEWS_EVENTS[source_id]
+        day = _date(extra['date'])
+        if day < today:
+            continue
+        try:
+            if source_id in changed_news:
+                raise ValueError('Spazzapan reviewed news revision changed')
+            article = news[source_id]
+            page = _detail(pages, extra['key'], title=extra['title'])
+            module = _module(page, 'content', title=extra['title'])
+            intro, prose = _text(module.get('intro')), _text(module.get('description'))
+            if (article.get('full_url') != extra['path']
+                    or page['attribute'].get('full_url') != extra['path']
+                    or page['attribute'].get('modified') != extra['page_modified']
+                    or _text(article.get('title')) != extra['title']
+                    or _text(article.get('intro')) != extra['intro']
+                    or intro != extra['intro']
+                    or '21 ottobre 2026 alle ore 18' not in prose
+                    or 'Spazzapan di Gradisca' not in prose
+                    or 'presenter' not in prose or len(prose) < 200
+                    or module.get('start_event_date') or module.get('end_event_date')):
+                raise ValueError('Spazzapan news appointment date/venue/detail changed')
+            event = _event(source_id=source_id, title=extra['title'], path=extra['path'],
+                           start=day, end=day, venue='Galleria Spazzapan',
+                           evidence=intro + ' · dettaglio ufficiale: 21 ottobre 2026',
+                           description=prose, image_path=module.get('preview_image'), today=today)
+            event['time'] = extra['time']
+            events.append(event)
+        except ValueError as error:
+            if str(error) == 'Spazzapan municipality unresolved':
+                raise
+            review_required.append({'url': BASE + '/it' + extra['path'],
+                                    'source_id': str(source_id),
+                                    'reason': 'event_detail_requires_review', 'detail': str(error)})
+
     umbrella = _detail(pages, 'fvg_settanta')
     together = _detail(pages, 'together')
     if (not _text(umbrella['attribute'].get('title')).startswith('Progetto FVG Settanta')
@@ -529,10 +581,11 @@ def parse_spazzapan(surfaces, pages, *, today):
             'exhibition_count': len(rows['exhibitions']),
             'historical_plural_count': len(rows['historical_plural']),
             'news_count': len(rows['news']),
+            'news_event_ids': news_event_ids,
             'retired_news_ids': retired_news_ids,
             'reviewed_2026_news': (len(REVIEWED_NEWS_2026) - len(retired_news_ids)
-                                   + (2 if additional_announced else 0)),
-            'verified_distinct_current': 4 + int(additional_announced),
+                                   + (2 if additional_announced else 0) + len(news_event_ids)),
+            'verified_distinct_current': 4 + int(additional_announced) + len(news_event_ids),
             'projected_count': len(events),
             'review_count': len(review_required),
             'active_count': sum(end >= today.isoformat() for _, _, end in (
@@ -540,7 +593,8 @@ def parse_spazzapan(surfaces, pages, *, today):
                 ('233611', None, '2026-10-14'),
                 ('232607', None, '2026-10-11'),
                 ('232202', None, '2026-11-29'))) + int(
-                    additional_announced and _date(OCTOBER_28_EVENT['date']) >= today),
+                    additional_announced and _date(OCTOBER_28_EVENT['date']) >= today) + sum(
+                        _date(NEWS_EVENTS[key]['date']) >= today for key in news_event_ids),
         },
         'coverage': 'official-events-current-exhibitions-news-and-details',
     }
@@ -575,6 +629,7 @@ def collect_spazzapan(*, get=requests.get, today=None):
             name: API_ROOT + f'page/erpac_spazzapan/{page_id}/it/'
             for name, page_id in DETAILS.items()
             if (name != 'genius' or additional_announced)
-            and (name not in DETAIL_END_DATES or _date(DETAIL_END_DATES[name]) >= today)}
+            and (name not in DETAIL_END_DATES or _date(DETAIL_END_DATES[name]) >= today)
+            and (name != 'brene' or any(row['id'] == 234240 for row in rows['news']))}
         pages = dict(zip(active_details, pool.map(fetch, active_details.values())))
     return parse_spazzapan(surfaces, pages, today=today)

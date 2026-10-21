@@ -1,0 +1,112 @@
+{
+  "date": "2026-10-21",
+  "base_main": "057f3e816432107451ff45ab5d7a72f50b074505",
+  "branch": "codex/events-source-reliability",
+  "state": "local_changes_only_not_deployed",
+  "source_sha256": {
+    "backend/app/events/http_client.py": "c8d03a9a29e5d226ab541eef5baeba1e7e64e2bdeff38a4c74bd8d14b2954afd",
+    "backend/app/events/pilot_barcolana.py": "2e85e0bf4e610c68676b51d7a8df28d97b2ec5a8f399774a26ab87d63e6bbb5e",
+    "backend/app/events/pilot_cinema_muto.py": "8e0f3b14a7bc14c6a23191c5f00507a5d14603dc097470016f1a11e091e65c41",
+    "backend/app/events/pilot_spazzapan.py": "413d9469fa72234479b7280122aebcf40163539a95173a6d9400cf63a8c8d299",
+    "backend/app/events/pilot_source_policy.py": "823b45d9d424a5dfb4f4462448edf4e92e904ced572465a57e7b4cb40fca8e5e",
+    "backend/tests/test_event_source_http.py": "3625a26a3453933c99c9a2ccde33e51b09595155be9dc5394cbf7564ef9fd67a",
+    "backend/tests/test_event_sources_october21.py": "7784cf1a2b5e0ae1552b8cf390d3d0efabaad95c951f2c709660a14641405394",
+    "backend/tests/fixtures/spazzapan_october_21_2026.json": "490c026ec7d56e09f03ace642c0a6ecfd31b3ef32892583950373d9f747b9cd0",
+    "backend/Dockerfile.events-pilot": "4e8dbae0ce08db12746791a78632e153e63fe6df9b7c06c59bfc806020bcc409"
+  },
+  "offline_checks": {
+    "source_regression": {
+      "passed": 78,
+      "subtests": 61
+    },
+    "catalog_policy_collection": {
+      "passed": 64,
+      "subtests": 12
+    },
+    "distinct_tests_passed": 142,
+    "network": "socket.connect and create_connection blocked"
+  },
+  "public_read_check": {
+    "date": "2026-10-21",
+    "action": "public HTTP GET only; parse and gate local; no publishing",
+    "requests": 12,
+    "elapsed_seconds": 3.59,
+    "gate": "ok",
+    "cards": [
+      {
+        "source_id": "232202",
+        "date": "2026-07-23",
+        "time": null
+      },
+      {
+        "source_id": "234240",
+        "date": "2026-10-21",
+        "time": "18:00"
+      },
+      {
+        "source_id": "234126",
+        "date": "2026-10-28",
+        "time": "18:00"
+      }
+    ],
+    "reviews": [],
+    "verification": {
+      "collection_mode": "reconciled-spazzapan-event-exhibition-news",
+      "source_complete": true,
+      "event_api_count": 4,
+      "event_inventory_ids": [
+        285613,
+        616198,
+        618890,
+        619735
+      ],
+      "event_category_count": 3,
+      "current_exhibition_count": 3,
+      "current_exhibition_ids": [
+        229043,
+        229146,
+        232202
+      ],
+      "archived_exhibitions": [
+        {
+          "source_id": "232607",
+          "url": "https://galleriaspazzapan.regione.fvg.it/it/fvg7003-sergio-pausig-173388",
+          "start_date": "2026-09-11",
+          "end_date": "2026-10-11",
+          "date_evidence": "Dall' 11 settembre all'11 ottobre 2026"
+        }
+      ],
+      "exhibition_count": 7,
+      "historical_plural_count": 1,
+      "news_count": 80,
+      "news_event_ids": [
+        234240
+      ],
+      "retired_news_ids": [
+        232257
+      ],
+      "reviewed_2026_news": 46,
+      "verified_distinct_current": 6,
+      "projected_count": 3,
+      "review_count": 0,
+      "active_count": 3
+    }
+  },
+  "raw_public_read_sha256": "acec9b4b481594f88e88b10b09e467b2172945192c58da9b2bf5007e285c81f9",
+  "raw_public_read_local_path": ".tmp/job-recovery-20261021/meteofriul-spazzapan-live-20261021.json",
+  "limitations": [
+    "No ordinary cloud execution of the changed code yet",
+    "Timeout recovery checked with synthetic transport failures, not a live provider outage",
+    "Barcolana 35s and Cinema Muto 30s outer source budgets remain unchanged",
+    "Unreviewed future Spazzapan news still requires a new review"
+  ],
+  "mutations": {
+    "cloud": false,
+    "publishing": false,
+    "manual_sends": false,
+    "aab": false,
+    "installations": false,
+    "push": false
+  },
+  "source_hash_encoding": "Git blob bytes (LF), independent of Windows checkout line endings"
+}

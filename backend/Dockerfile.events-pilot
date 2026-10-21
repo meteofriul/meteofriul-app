@@ -24,7 +24,10 @@ COPY backend/tests/test_pilot_regional_filtered.py backend/tests/test_pilot_regi
 COPY backend/tests/test_pilot_regional_failure_isolation.py /app/tests/
 COPY backend/tests/test_pilot_quarantine_recovery.py backend/tests/test_pilot_regional_forward_audit.py backend/tests/test_pilot_sagrefvg.py /app/tests/
 COPY backend/tests/fixtures/events_quarantine_october_15_2026.json /app/tests/fixtures/
+COPY backend/tests/test_event_source_http.py backend/tests/test_event_sources_october21.py backend/tests/test_pilot_barcolana.py /app/tests/
+COPY backend/tests/fixtures/spazzapan_october_21_2026.json /app/tests/fixtures/
 RUN python -m unittest discover -s tests -p 'test_pilot_*.py'
+RUN python -m unittest discover -s tests -p 'test_event_source*.py'
 RUN python -m unittest discover -s tests -p 'test_attems_audit.py'
 USER 65532:65532
 ENTRYPOINT ["python", "-m", "app.events.pilot_cloud"]

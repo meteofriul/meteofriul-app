@@ -69,6 +69,17 @@ class EventSourceHttpTests(unittest.TestCase):
         self.assertEqual(get.call_count, 2)
         sleep.assert_called_once()
 
+    def test_http_error_without_response_keeps_status_and_closes_before_retry(self):
+        failure = Mock(status_code=503)
+        failure.raise_for_status.side_effect = requests.HTTPError('503')
+        success = Mock()
+        get = Mock(side_effect=[failure, success])
+        result = http_client.get_with_single_transient_retry(get, 'https://example.test', sleep=Mock())
+        self.assertIs(result, success)
+        failure.close.assert_called_once()
+        success.close.assert_not_called()
+        self.assertEqual(get.call_count, 2)
+
     def test_non_transient_http_status_is_not_retried(self):
         for status_code in (400, 401, 403, 404, 422):
             with self.subTest(status_code=status_code):
