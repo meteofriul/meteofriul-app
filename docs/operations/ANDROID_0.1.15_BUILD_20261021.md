@@ -131,3 +131,15 @@ nuovo evento `abandoned`; non viene eliminata né riutilizzata. La candidata
 resta 0.1.15 e passa al codice **300033**. La copia completa è stata ripristinata:
 import `idb`, build Web Android in cartella temporanea, binding API e Carto PASS
 prima della nuova riserva. Nessuna dipendenza dichiarata o toolchain aggiornata.
+
+
+### Correzione del retry nel builder
+
+Il tentativo 300033 si è fermato prima della riserva: il builder bloccava anche
+il nome 0.1.15 della riserva abbandonata senza bundle. La guardia è stata corretta
+solo per questo caso: nome riutilizzabile dopo evento di abbandono validato e
+assenza di manifesto AAB, codice sempre nuovo e maggiore. Sono mantenuti i
+blocchi per codice riutilizzato, riserva aperta, bundle esistente e conflitti
+nel ledger. La regola è documentata nel runbook e coperta da regressioni su
+entrambi i controlli di versione e sulla lettura del ledger. Le guardie di
+firma, TTL e provenienza non cambiano. 300033 non era stato ancora riservato.

@@ -4,7 +4,7 @@ Questa directory e' il registro append-only della procedura protetta
 `scripts/build-play-aab.ps1`. Contiene tre tipi di record, tutti immutabili:
 
 - `*.reservation.json`: riserva `versionCode` e `versionName` prima della
-  compilazione. Una build fallita non libera la versione;
+  compilazione. Una build fallita non libera il codice;
 - `*.release.json`: identifica l'AAB costruito, ancora nello stato
   `built-not-uploaded`. Non afferma che Play Console lo abbia visto o accettato;
 - `*.evidence.json`: registra successivamente `play-accepted`, `abandoned` o
@@ -15,8 +15,8 @@ il [vademecum operativo](../../docs/operations/PLAY_AAB_RUNBOOK.md).
 
 Ogni candidato deve avere un `versionCode` maggiore sia del massimo presente
 in questo registro e nella cronologia privata, sia dell'ultimo valore osservato
-in Play Console. Una versione riservata, costruita o abbandonata non viene mai
-riutilizzata.
+in Play Console. Un codice riservato, costruito o abbandonato non viene mai
+riutilizzato.
 
 L'AAB firmato viene copiato senza sovrascrittura in
 `release-artifacts/android-play/`, fuori da `frontend/android/app/build`. La
@@ -57,3 +57,9 @@ presente nel worktree, aggiunto da un solo commit e non deve comparire in alcun
 commit successivo come modifica, rinomina, copia o cancellazione. In questo
 modo anche una vecchia evidenza `play-accepted` non può essere riscritta per
 sostituire silenziosamente il certificato upload fidato.
+
+
+Un tentativo abbandonato **senza manifesto AAB** può essere ripetuto con lo stesso
+nome visualizzato e un codice maggiore, conservando riserva ed evento precedenti.
+La regola non permette mai di riutilizzare un codice né di cambiare un artefatto
+esistente. Una riserva ancora aperta o una versione già costruita blocca il nome.

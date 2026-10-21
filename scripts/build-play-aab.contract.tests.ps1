@@ -399,6 +399,7 @@ foreach ($functionName in @(
 }
 
 Import-Module $securityModule -Force
+Import-Module (Join-Path $PSScriptRoot "release-api-preflight.psm1") -Force
 Import-Module $communityTtlEvidenceModule -Force
 Import-Module $communityTtlAuditModule -Force
 $expectedCommunityApiBase = (
@@ -1455,6 +1456,65 @@ $payload = [ordered]@{
             -LatestConsoleVersionCode 13 `
             -ExistingVersions $ledger.AllVersions
     } 'release_android_play_version_not_incremented'
+
+    # Retry only the display name of a validated abandoned, unbuilt reservation.
+    Assert-PlayCandidateVersion -CandidateVersionCode 13 -CandidateVersionName '1.0.2' `
+        -LatestConsoleVersionCode 10 -ExistingVersions $ledger.AllVersions | Out-Null
+    Assert-AndroidReleaseVersionHistory -CandidateVersionCode 13 -CandidateVersionName '1.0.2' `
+        -ExistingReleases $ledger.AllVersions | Out-Null
+    Assert-ThrowsCode {
+        Assert-PlayCandidateVersion -CandidateVersionCode 12 -CandidateVersionName '1.0.2' `
+            -LatestConsoleVersionCode 10 -ExistingVersions $ledger.AllVersions
+    } 'release_android_play_candidate_version_reserved'
+    Assert-ThrowsCode {
+        Assert-AndroidReleaseVersionHistory -CandidateVersionCode 12 -CandidateVersionName '1.0.2' `
+            -ExistingReleases $ledger.AllVersions
+    } 'release_android_version_already_exists'
+    Assert-ThrowsCode {
+        Assert-PlayCandidateVersion -CandidateVersionCode 13 -CandidateVersionName '1.0.0' `
+            -LatestConsoleVersionCode 10 -ExistingVersions $ledger.AllVersions
+    } 'release_android_play_candidate_version_reserved'
+
+    $retry13 = Join-Path $ledgerDirectory 'meteofriul-13-1.0.2.reservation.json'
+    Write-NewPlayJsonFile -Path $retry13 -Payload ([ordered]@{
+        Kind = 'play-version-reservation'; Status = 'reserved'
+        VersionCode = 13; VersionName = '1.0.2'
+    }) | Out-Null
+    $retryLedger = Read-PlayReleaseLedger -Directory $ledgerDirectory
+    Assert-True ($retryLedger.MaxReservedVersionCode -eq 13) 'Retry must preserve maximum code.'
+    Assert-ThrowsCode {
+        Assert-PlayCandidateVersion -CandidateVersionCode 14 -CandidateVersionName '1.0.2' `
+            -LatestConsoleVersionCode 10 -ExistingVersions $retryLedger.AllVersions
+    } 'release_android_play_candidate_version_reserved'
+    Assert-ThrowsCode {
+        Assert-AndroidReleaseVersionHistory -CandidateVersionCode 14 -CandidateVersionName '1.0.2' `
+            -ExistingReleases $retryLedger.AllVersions
+    } 'release_android_version_already_exists'
+    # Removing the terminal proof makes two open reservations conflict again.
+    $abandoned12Bytes = [IO.File]::ReadAllBytes($abandoned12)
+    Remove-Item -LiteralPath $abandoned12
+    Assert-ThrowsCode { Read-PlayReleaseLedger -Directory $ledgerDirectory } `
+        'release_android_play_version_name_conflict'
+    [IO.File]::WriteAllBytes($abandoned12, $abandoned12Bytes)
+    Remove-Item -LiteralPath $retry13
+    # Even an abandoned version cannot retry its name once a bundle exists.
+    $built12 = Join-Path $ledgerDirectory 'meteofriul-12-1.0.2.release.json'
+    Write-NewPlayJsonFile -Path $built12 -Payload ([ordered]@{
+        Target = 'android-play'; Status = 'built-not-uploaded'
+        VersionCode = 12; VersionName = '1.0.2'
+        UploadCertificateSha256 = $certificateA; AabSha256 = $aabHash
+    }) | Out-Null
+    $builtLedger = Read-PlayReleaseLedger -Directory $ledgerDirectory
+    Assert-ThrowsCode {
+        Assert-PlayCandidateVersion -CandidateVersionCode 13 -CandidateVersionName '1.0.2' `
+            -LatestConsoleVersionCode 10 -ExistingVersions $builtLedger.AllVersions
+    } 'release_android_play_candidate_version_reserved'
+    Assert-ThrowsCode {
+        Assert-AndroidReleaseVersionHistory -CandidateVersionCode 13 -CandidateVersionName '1.0.2' `
+            -ExistingReleases $builtLedger.AllVersions
+    } 'release_android_version_already_exists'
+    Remove-Item -LiteralPath $built12
+    $ledger = Read-PlayReleaseLedger -Directory $ledgerDirectory
 
     Assert-ThrowsCode {
         Resolve-PlayUploadCertificateTrust `

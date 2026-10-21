@@ -1,3 +1,6 @@
+
+Prima di qualsiasi tentativo, applicare le [regole obbligatorie di preparazione e recupero](ANDROID_BUILD_PREVENTION_RULES.md). Coprono dipendenze, provenienza storica, riserve e retry; valgono anche quando si riprende una release già avviata.
+
 # Procedura operativa per la AAB Google Play
 
 Questa procedura prepara la variante ufficiale `com.meteofriul.app`, non la
@@ -251,3 +254,16 @@ Alla fine di ogni fase riferire: commit sorgente e PR incluse; versione e
 esiste; stato esatto (`non costruita`, `built-not-uploaded`, `play-accepted` o
 `abandoned`); blocco e **prossima azione che richiede conferma**. Non chiamare
 «pronta per Play» una build finché questi dati non coincidono.
+
+
+### Retry dopo fallimento prima del bundle
+
+Il versionCode riservato non si riutilizza mai. Se il ledger contiene un evento
+`abandoned` valido e nessun manifesto di AAB per quel codice, un nuovo tentativo
+può conservare il solo versionName usando un codice strettamente maggiore di
+tutti i codici locali e di quello osservato in Console. Il ledger deriva questa
+condizione dalle prove validate; non esiste un parametro di bypass del builder.
+Riserve aperte, bundle già costruiti (anche abbandonati) e versioni accettate
+mantengono il blocco sul nome. Firma, provenienza, TTL e immutabilità restano
+invariati. La distinzione tra codice monotono e nome visualizzato è descritta
+nella [documentazione Android](https://developer.android.com/studio/publish/versioning).

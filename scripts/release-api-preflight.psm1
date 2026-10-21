@@ -403,7 +403,10 @@ function Assert-AndroidReleaseVersionHistory {
             throw "release_android_existing_artifact_invalid: path=$existingPath"
         }
 
-        if ($existingCode -eq $CandidateVersionCode -or $existingName -eq $candidateName) {
+        $retryableName = Get-ObjectPropertyValue -InputObject $release -Name "RetryableVersionName"
+        $canRetryName = $retryableName -is [bool] -and $retryableName -eq $true
+        if ($existingCode -eq $CandidateVersionCode -or
+            ($existingName -eq $candidateName -and -not $canRetryName)) {
             throw "release_android_version_already_exists: versionCode=$CandidateVersionCode versionName=$candidateName path=$existingPath"
         }
 

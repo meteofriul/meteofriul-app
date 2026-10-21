@@ -1,3 +1,6 @@
+
+**Prima di preparare una release Android:** leggere le [regole obbligatorie di preparazione e recupero dagli errori](docs/operations/ANDROID_BUILD_PREVENTION_RULES.md), insieme al [runbook Play](docs/operations/PLAY_AAB_RUNBOOK.md).
+
 # Meteo Friûl
 
 Meteo Friûl è un'app indipendente dedicata al Friuli-Venezia Giulia. Riunisce

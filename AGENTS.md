@@ -1,3 +1,8 @@
+
+## Mandatory release preparation
+
+- Before preparing dependencies, changing a release version or starting the Play builder, read [the mandatory build prevention rules](docs/operations/ANDROID_BUILD_PREVENTION_RULES.md). They apply to every resumed release attempt too. Never copy dependencies with recursive exclusions for build/dist/lib, use cross-worktree node_modules junctions for release builds, or consume a version before the dependency and provenance preflight.
+
 # Meteo Friûl workspace instructions
 
 ## Canonical workspace
