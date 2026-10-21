@@ -2,7 +2,7 @@
 
 Prima di qualsiasi tentativo, applicare le [regole obbligatorie di preparazione e recupero](ANDROID_BUILD_PREVENTION_RULES.md). Coprono dipendenze, provenienza storica, riserve e retry; valgono anche quando si riprende una release già avviata.
 
-
+[Stato della release corrente e rilievi aperti](RELEASE_0.1.15_STATUS_20261021.md).
 
 Questa procedura prepara la variante ufficiale `com.meteofriul.app`, non la
 variante TEST installabile in parallelo. **Build, caricamento nel test interno e
@@ -258,6 +258,9 @@ esiste; stato esatto (`non costruita`, `built-not-uploaded`, `play-accepted` o
 
 
 ### Retry dopo fallimento prima del bundle
+
+La regola seguente è implementata sul ramo release 0.1.15; la sola promozione
+di queste istruzioni su main non distribuisce la modifica al builder.
 
 Il versionCode riservato non si riutilizza mai. Se il ledger contiene un evento
 `abandoned` valido e nessun manifesto di AAB per quel codice, un nuovo tentativo

@@ -5,6 +5,12 @@ avviare il builder**, anche se il lavoro riprende dopo una pausa. Integra il
 [runbook Play](PLAY_AAB_RUNBOOK.md); non sostituisce i suoi gate. Le regole
 seguenti derivano dagli errori della preparazione 0.1.15 del 21 ottobre 2026.
 
+> Stato 21 ottobre: le correzioni dei preflight e del retry già usate per 300033
+> sono conservate nel ramo `codex/release-0.1.15`, ancora da promuovere.
+> Queste linee guida possono essere aggiornate su main senza distribuire quelle
+> correzioni. Il controllo automatico del file Capacitor mancante resta da
+> implementare. Consultare lo [stato corrente](RELEASE_0.1.15_STATUS_20261021.md).
+
 ## 1. Fissare il perimetro prima dei comandi
 
 - Usare il ramo release dedicato e allinearlo al main verificato. Annotare
@@ -101,14 +107,28 @@ distribuito dai pacchetti. In questa release escludere `build` aveva rimosso
 - Dopo successo confrontare AAB, hash, firma, manifesto, package, versione,
   binding e mapping R8. Archiviare senza sovrascrivere; registrare
   `built-not-uploaded` finché Play non ha accettato il file.
+- La copia dei soli asset Web e `cap update android` **non sostituiscono** la
+  preparazione della configurazione nativa. Prima di dichiarare valido il
+  bundle, verificare dentro l'AAB `base/assets/capacitor.config.json`, JSON valido
+  e corrispondenza con la configurazione approvata del checkout, oltre al registro
+  plugin. Controllare anche le risorse native caricate per nome a runtime e
+  chiudere eventuali errori `config.xml is missing` sulla release minificata.
+  Non accettare il fallback silenzioso ai default e non correggere l'artefatto
+  già firmato a mano. Questo è un requisito: il nuovo gate automatico deve ancora
+  essere implementato dopo il rilievo 300033, non è dichiarato già operativo.
+- Per attestare la conservazione delle preferenze attraverso un aggiornamento,
+  acquisire lo stato prima e subito dopo l'aggiornamento autorizzato, prima di
+  azioni che lo possano cambiare. Distinguere permessi Android, servizio Posizione
+  del sistema e interruttori dell'app. Due letture entrambe successive al Play
+  update verificano soltanto la sessione; non certificano la migrazione.
 - CI verde e compilazione non dimostrano il funzionamento sul telefono. Indicare
   separatamente test automatici, verifiche statiche e prove runtime mancanti.
   Non dichiarare risolte le quattro aree Android del runbook senza evidenze.
 
 ## Evidenze di applicazione
 
-Il [verbale 0.1.15](ANDROID_0.1.15_BUILD_20261021.md) conserva errori,
-correzioni e limiti. I contratti in `scripts/build-play-aab.contract.tests.ps1`
+Il [verbale 0.1.15](https://github.com/meteofriul/meteofriul-app/blob/codex/release-0.1.15/docs/operations/ANDROID_0.1.15_BUILD_20261021.md) conserva errori,
+correzioni e limiti. I contratti del ramo release in `scripts/build-play-aab.contract.tests.ps1`
 coprono il retry del solo nome, il blocco dei codici già riservati, le riserve
 aperte e i bundle esistenti. Le guide devono restare collegate da README,
 AGENTS.md e runbook; aggiornarle quando emerge una nuova causa verificata.

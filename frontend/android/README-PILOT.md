@@ -19,9 +19,12 @@ the pilot checks.
 ## Identity and runtime
 
 - Application ID: `com.meteofriul.app`
-- Owner/Google Play release version: `0.1.8`
-- Version code: `300025` (accepted in the Google Play internal test and
-  verified on the owner device)
+- Last production observation (21 October 2026): `0.1.14` / `300031`.
+- Owner-only internal Play test: `0.1.15` / `300033`. Tested on Galaxy Android 14;
+  native packaging defect and other open findings block release promotion.
+- Source and artifact identity, branch differences and missing coverage:
+  [current release status](../../docs/operations/RELEASE_0.1.15_STATUS_20261021.md).
+  Documentation on main does not change its runtime version.
 - Web origin inside the WebView: `https://localhost`
 - API base: nuovo endpoint Cloud Run tagged, fornito esplicitamente alla build
   tramite `VITE_ANDROID_API_BASE`; non usare il fallback web pubblico
@@ -30,7 +33,7 @@ the pilot checks.
   consent, an exit geofence plus WorkManager checks scheduled with Android's
   15-minute minimum keep the local notice target fresh while closed, without
   a permanent foreground service; Android may defer periodic work
-- Orientation: portrait only; sensor rotation never switches the app to landscape
+- Orientation: portrait on full-screen phones; displays >=600 dp and multi-window remain adaptive
 - Launch screen: Friuli blue background with the launcher icon centered; no dark WebView flash
 - Ko-fi: opened outside the app via an Android intent
 - App Check: custom plugin `MeteoFirebaseAppCheck`; debug provider in debug

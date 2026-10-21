@@ -1,5 +1,13 @@
 # Registro immutabile Android Google Play
 
+**Stato del 21 ottobre:** 300032 è abbandonata senza bundle; 300033 / 0.1.15
+è accettata nel test interno, con verifica del dispositivo e rilievi aperti.
+I relativi record immutabili sono conservati sul
+[ramo release](https://github.com/meteofriul/meteofriul-app/tree/codex/release-0.1.15/release-history/android-play)
+finché la release non viene promossa. Prima di una nuova riserva considerarli
+anche se il checkout di main non contiene ancora quei file.
+[Stato e limiti](../../docs/operations/RELEASE_0.1.15_STATUS_20261021.md).
+
 Questa directory e' il registro append-only della procedura protetta
 `scripts/build-play-aab.ps1`. Contiene tre tipi di record, tutti immutabili:
 
@@ -59,6 +67,7 @@ modo anche una vecchia evidenza `play-accepted` non può essere riscritta per
 sostituire silenziosamente il certificato upload fidato.
 
 
+La modifica del builder che segue è sul ramo release, ancora da promuovere.
 Un tentativo abbandonato **senza manifesto AAB** può essere ripetuto con lo stesso
 nome visualizzato e un codice maggiore, conservando riserva ed evento precedenti.
 La regola non permette mai di riutilizzare un codice né di cambiare un artefatto

@@ -1,0 +1,307 @@
+{
+  "schema_version": 1,
+  "observed_at_utc": "2026-10-21T16:16:38.183470+00:00",
+  "assessment": "HOLD_NATIVE_CONFIGURATION_DEFECT",
+  "production_ready": false,
+  "application_id": "com.meteofriul.app",
+  "version_name": "0.1.15",
+  "version_code": 300033,
+  "aab_sha256": "cb461c8e5e6fddd05407214a507e151e02e8041f403d9346c364bbe0174ba019",
+  "source_commit": "f82503e4daabc283a5caf77b49e7cf58439abf61",
+  "documentation_base_commit": "5c73770a0a0363e737f64641fd8781410dc972d3",
+  "environment": {
+    "model": "Samsung Galaxy A52 (SM-A525F)",
+    "android": "14",
+    "api": 34,
+    "target_sdk": 36,
+    "installer": "com.android.vending",
+    "navigation": "three_buttons",
+    "resolution": "1080x2400",
+    "density_dpi": 420,
+    "webview": "com.google.android.webview 155.0.8059.43",
+    "system_theme": "dark",
+    "app_themes_checked": [
+      "light",
+      "dark"
+    ],
+    "languages_checked": [
+      "it",
+      "fur"
+    ],
+    "physical_rotation_tested": false
+  },
+  "installed_apk_hashes": {
+    "base.apk": "4257f5231c63f8f379a24aeb38fc2e4abb434d1246b314c4ba18d797dd4613ae",
+    "split_config.arm64_v8a.apk": "5bb0a51fbc18489a841c752543869aa25cd8346e20f1198981acf5256f419d21",
+    "split_config.it.apk": "b12faa78bb72d6ceca89e79daafd11cd9ed522fdaef010944ee5ea00e9a45e0e",
+    "split_config.xxhdpi.apk": "183d8676fe64593713f5499b8bfdbe71e929e1a4701d185e45e5eecac4824bc6"
+  },
+  "preservation": {
+    "package": true,
+    "versionCode": true,
+    "versionName": true,
+    "firstInstallTime": true,
+    "lastUpdateTime": true,
+    "installerPackageName": true,
+    "permissions": true,
+    "apkHashes": true,
+    "size": true,
+    "density": true,
+    "navigationMode": true,
+    "systemNightMode": true,
+    "accelerometerRotation": true,
+    "userRotation": true,
+    "webview": true
+  },
+  "sponsors": {
+    "checkedAt": "2026-10-21T16:16:37.0220079Z",
+    "enabled": false,
+    "campaignCount": 0,
+    "revision": 117
+  },
+  "findings": [
+    {
+      "id": "NATIVE-CONFIG-01",
+      "severity": "release_blocker",
+      "status": "OPEN",
+      "summary": "AAB lacks base/assets/capacitor.config.json; running app logs FileNotFoundException. Source requests SystemBars insetsHandling disable; missing config falls back to css.",
+      "evidence": "artifact-runtime-audit.json",
+      "effect": "Defaults differ from source; interaction with custom safe-area handler is a risk, not an observed API34 visual failure.",
+      "related_log": "Cordova res/xml/config.xml lookup also fails. Its cause and runtime relevance require a separate check; resource shrinking is not proven as the cause."
+    },
+    {
+      "id": "BULLETIN-MAP-01",
+      "severity": "visual",
+      "status": "OPEN",
+      "summary": "Rain drops overlap the 1000m temperature badge in the bulletin map, visible in both themes."
+    },
+    {
+      "id": "LOCATION-UPDATE-01",
+      "severity": "investigation_required",
+      "status": "OPEN",
+      "summary": "Owner saw location disabled inside the app immediately after the Play update and before agent tests.",
+      "source": "Owner clarification in conversation, after the initial device report.",
+      "cause": "Not established. Manual Rome selection occurred later and cannot explain an observation before tests. No demonstrated link to missing Capacitor config.",
+      "scope": "Do not claim app location preference survived the Play update based on Android permission checks."
+    }
+  ],
+  "tests": [
+    {
+      "id": "play_identity",
+      "status": "PASS",
+      "evidence": [
+        "before.json",
+        "final.json"
+      ],
+      "scope": "Official 0.1.15 / 300033, installer com.android.vending, non-debuggable release; user performed the update."
+    },
+    {
+      "id": "launch_resume_exit",
+      "status": "PASS",
+      "evidence": [
+        "weather-after-background.png",
+        "exit-check.json",
+        "final-home-loaded.png"
+      ],
+      "scope": "Launch, warm resume with selected forecast preserved, Android Back from explicit Home exits, relaunch works."
+    },
+    {
+      "id": "weather_light_dark_it_fur",
+      "status": "PASS",
+      "evidence": [
+        "weather-light-it.png",
+        "weather-dark-selected.png",
+        "weather-dark-fur.png",
+        "weather-light-fur.png"
+      ],
+      "scope": "Observed day/hour selection, equal day cards, visible rain amounts, full weekday names; does not certify every translation."
+    },
+    {
+      "id": "weather_hour_detail",
+      "status": "PASS",
+      "evidence": [
+        "weather-dark-rain-selected.png"
+      ],
+      "scope": "Hourly modal and charts load; Android Back dismisses it."
+    },
+    {
+      "id": "fvg_national",
+      "status": "PASS",
+      "evidence": [
+        "weather-tomorrow.png",
+        "national-rome.png"
+      ],
+      "scope": "Pordenone and Rome forecasts load. National UV/CAMS unavailable in this contract; no new regression established."
+    },
+    {
+      "id": "official_alert",
+      "status": "PASS_WITH_VISUAL_FINDING",
+      "evidence": [
+        "alert-map-detail.png",
+        "bulletin-linked-it.png",
+        "bulletin-dark-fur.png"
+      ],
+      "scope": "Regional orange summary, validity and zone detail shown; navigation to bulletin works. Map altitude badge has icon overlap."
+    },
+    {
+      "id": "community_confirmation",
+      "status": "PASS_SCOPED",
+      "evidence": [
+        "report-confirm-it.png",
+        "report-confirm-fur.png",
+        "report-back-choice-fur.png",
+        "community-it-final.png"
+      ],
+      "scope": "Choice and confirmation in both languages, No returns to choice, Back cancels; no submission. Post-send success is NOT_VERIFIED."
+    },
+    {
+      "id": "events",
+      "status": "PASS",
+      "evidence": [
+        "events-fur.png",
+        "event-detail-fur.png",
+        "events-after-android-back.png"
+      ],
+      "scope": "Real catalog and detail load; Android Back returns to list."
+    },
+    {
+      "id": "location_search",
+      "status": "PASS",
+      "evidence": [
+        "location-search-filled.png",
+        "location-restore-search.png"
+      ],
+      "scope": "One field clear control plus separate dialog close; keyboard layout works. Rome selected then original locality restored."
+    },
+    {
+      "id": "auxiliary_weather",
+      "status": "PASS",
+      "evidence": [
+        "weather-auxiliary.png",
+        "air-detail.png",
+        "pollen-detail.png"
+      ],
+      "scope": "FVG air and pollen details, Sun/Moon and UV rendered. This is a device data-display check, not a new backend job attestation."
+    },
+    {
+      "id": "webcam",
+      "status": "PASS",
+      "evidence": [
+        "webcams-expanded.png",
+        "webcam-sacile.png"
+      ],
+      "scope": "Catalog and timestamped Sacile image loaded."
+    },
+    {
+      "id": "discover_and_sponsors",
+      "status": "PASS",
+      "evidence": [
+        "discover-it.png",
+        "discover-bottom.png",
+        "sponsors.json"
+      ],
+      "scope": "Discover loads. Sponsor configuration remains disabled, zero campaigns, revision 117."
+    },
+    {
+      "id": "preferences_and_permissions",
+      "status": "PASS_SESSION_ONLY",
+      "evidence": [
+        "settings-before.xml",
+        "preservation.json",
+        "settings-restored.png",
+        "final.json"
+      ],
+      "scope": "The 16 before/after comparisons cover this test session, both after the Play update. Android permission grants are distinct from app automatic-location preference. UI choices were restored relative to the first agent observation, not certified against pre-update state."
+    },
+    {
+      "id": "crash_log",
+      "status": "PASS_SCOPED",
+      "evidence": [
+        "log-summary.json"
+      ],
+      "scope": "No fatal exception/signal, ANR or uncaught JavaScript error in captured app log. Nonfatal native configuration errors remain."
+    },
+    {
+      "id": "native_configuration",
+      "status": "FAIL",
+      "evidence": [
+        "artifact-runtime-audit.json"
+      ],
+      "scope": "AAB lacks base/assets/capacitor.config.json; running app logs FileNotFoundException. Source requests SystemBars insetsHandling disable; missing config falls back to css."
+    },
+    {
+      "id": "android_15_16_gestures_large_screens",
+      "status": "NOT_VERIFIED",
+      "evidence": [],
+      "scope": "Only Galaxy Android 14, three-button navigation; no emulators, gesture setting changes, tablets or multi-window tests."
+    },
+    {
+      "id": "writes_push_long_background",
+      "status": "NOT_VERIFIED",
+      "evidence": [],
+      "scope": "No Community send/vote/withdrawal, manual push, fresh notification delivery or long background tracking experiment."
+    },
+    {
+      "id": "location_preference_across_play_update",
+      "status": "NOT_VERIFIED_WITH_REPORTED_ISSUE",
+      "evidence": [
+        "before.json",
+        "settings-before.xml",
+        "settings-restored.xml",
+        "final.json"
+      ],
+      "scope": "Owner reports app location off immediately after updating, before tests. Existing evidence begins later and has no pre-update preference baseline."
+    }
+  ],
+  "log_errors": {
+    "missingCapacitorConfig": 1,
+    "missingConfigXml": 2
+  },
+  "artifact_config_audit": [
+    {
+      "file": "meteofriul-300028-0.1.11.aab",
+      "bytes": 72803404,
+      "sha256": "a2dbab0482450c7f91ad7357559a1e1e8f774394549212afc84a80729e06982c",
+      "capacitorConfigPresent": true,
+      "capacitorPluginsPresent": true,
+      "configXmlOriginalNamePresent": true
+    },
+    {
+      "file": "meteofriul-300033-0.1.15.aab",
+      "bytes": 72859275,
+      "sha256": "cb461c8e5e6fddd05407214a507e151e02e8041f403d9346c364bbe0174ba019",
+      "capacitorConfigPresent": false,
+      "capacitorPluginsPresent": true,
+      "configXmlOriginalNamePresent": false
+    }
+  ],
+  "evidence_archive": "release-artifacts/android-play/verification-300033-20261021",
+  "evidence_index_sha256": "0022fb8cfd7085ab69892e70048957332674652728e35613eca00940f20171d9",
+  "evidence_file_count": 112,
+  "actions": {
+    "agent_installations": 0,
+    "aab_builds": 0,
+    "manual_notifications": 0,
+    "community_submissions": 0,
+    "deploys": 0,
+    "pushes": 0,
+    "main_promotions": 0,
+    "emulators": 0
+  },
+  "remaining": [
+    "Fix packaging and add artifact checks before any new separately authorized AAB. Do not replace or rebuild 300033.",
+    "Repeat device checks on corrected signed release; close missing-resource errors without masking logs.",
+    "Android 15/16, gesture navigation, large displays/multi-window and write/delivery paths remain unverified.",
+    "Investigate LOCATION-UPDATE-01 and measure app location preference immediately before/after the next separately authorized update; current permission comparison does not close it."
+  ],
+  "preservation_scope": "After-update test-session comparison only; no pre-update state was captured.",
+  "user_followup": {
+    "recorded_at_utc": "2026-10-21T16:28:48.709637+00:00",
+    "observation": "Owner saw location disabled inside the app immediately after the Play update and before agent tests.",
+    "app_toggle_persistence_across_update": "NOT_VERIFIED_WITH_REPORTED_ISSUE",
+    "cause": "UNKNOWN",
+    "later_agent_evidence": "First settings hierarchy already shows Disattiva Posizione / Attiva anche ad app chiusa; the transition from the owner observation is not documented.",
+    "evidence_unchanged": true,
+    "new_device_actions": 0
+  }
+}

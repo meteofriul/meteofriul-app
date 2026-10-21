@@ -1,5 +1,9 @@
 # 0.1.15 — allineamento a main e preflight del bundle interno
 
+> Verbale cronologico: le sezioni iniziali descrivono la preparazione.
+> Stato attuale, verifica Play/Galaxy e rilievi aperti sono nel
+> [riepilogo corrente](RELEASE_0.1.15_STATUS_20261021.md).
+
 21 ottobre 2026. Il proprietario autorizza la generazione della AAB ufficiale,
 non il caricamento su Play, installazioni, nuovi deploy o invii manuali.
 Il canale previsto è il test interno riservato al proprietario; la restrizione
@@ -259,3 +263,32 @@ non costituisce una deroga ai controlli richiesti per promuovere il codice.
 
 Dettagli nella [ricevuta del test interno](../../release-history/android-preparation/0.1.15-20261021/play-internal-verification.json).
 Screenshot e letture complete restano nelle evidenze locali ignorate.
+
+## Verifica della nuova installazione Play — 21 ottobre, ore 18
+
+Il proprietario ha aggiornato dal Play Store. La verifica sul Galaxy A52 con
+Android 14 ha esercitato il vero pacchetto release 300033: previsioni FVG e
+nazionali, temi/lingue, Eventi, conferma Community senza invio, allerta,
+ricerca, Indietro e ritorno dal background. Nessun crash rilevato; sponsor
+disattivati e preferenze ripristinate.
+
+**La promozione resta sospesa:** il bundle non contiene `capacitor.config.json`
+e l'app segnala l'assenza a runtime, usando valori predefiniti diversi da quelli
+del progetto. È presente anche un errore di lettura della risorsa Cordova
+`config.xml`, da approfondire. Le prove API 34 riuscite non risolvono questi
+difetti né sostituiscono Android 15/16, gesti e schermi grandi.
+
+Esiti, prove e rilievo grafico sulla mappa sono nel
+[verbale dispositivo](ANDROID_0.1.15_DEVICE_CHECK_20261021.md) e nella
+[ricevuta](../../release-history/android-preparation/0.1.15-20261021/device-verification.json).
+Nessuna nuova build, installazione, invio, pubblicazione o promozione Git.
+
+### Rettifica sulla conservazione della posizione
+
+Il proprietario segnala che l'interruttore Posizione dell'app risultava spento
+subito dopo l'aggiornamento, prima dei test dell'agente. La conservazione dei
+permessi Android misurata durante la sessione non dimostra la conservazione
+della preferenza dell'app nel passaggio di versione. Il rilievo
+`LOCATION-UPDATE-01` resta aperto nel [verbale dispositivo](ANDROID_0.1.15_DEVICE_CHECK_20261021.md),
+con causa non determinata; non è spiegato dalla successiva scelta di Roma
+durante i test. Nessuna nuova azione sul telefono per questa rettifica.
