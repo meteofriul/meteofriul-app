@@ -1,0 +1,231 @@
+{
+  "checked_at": "2026-10-21T19:12:02.858591+00:00",
+  "target": "notices",
+  "result": {
+    "execution": "meteofriul-local-notice-46tlr",
+    "created": "2026-10-21T19:00:04.843762Z",
+    "completion": "2026-10-21T19:00:52.456932Z",
+    "succeeded": 1,
+    "failed": 0,
+    "image": "europe-west1-docker.pkg.dev/meteo-friul/meteofriul/backend@sha256:3b0cac97d0bbf533916b74ec24fd632f5fbc9f54c2266746a85fb31613aa8f74",
+    "scheduler_success_evidence": true,
+    "summaries": [
+      {
+        "duplicate_targets": 0,
+        "audit_failed": 0,
+        "attempted": 0,
+        "evaluated": 18,
+        "persisted": 7,
+        "expired": 0,
+        "pages_processed": 1,
+        "delivery_batches": 0,
+        "eligible_devices": 18,
+        "failed_groups": 0,
+        "security_failed": 0,
+        "groups": 7,
+        "selected_kind": "",
+        "storage_failed": 0,
+        "data_degraded_groups": 0,
+        "deduplicated": 0,
+        "data_quality": {
+          "evaluations_partial": 0,
+          "evaluations_degraded": 0,
+          "evaluations_expected": 7,
+          "by_source_run": [
+            {
+              "source_run_id": "20261021T120000Z",
+              "causes": [],
+              "accumulation_evidence": {
+                "disabled": 0,
+                "unavailable": 0,
+                "invalid": 0,
+                "verified": 7
+              },
+              "phenomena": {
+                "ice": {
+                  "only_resolution": 0,
+                  "evaluated_no_candidate": 7,
+                  "evaluated_with_candidate": 0,
+                  "with_operational_tolerance": 0,
+                  "other_or_mixed": 0,
+                  "not_evaluable": 0,
+                  "expected": 7
+                },
+                "rain": {
+                  "other_or_mixed": 0,
+                  "only_resolution": 0,
+                  "expected": 7,
+                  "evaluated_with_candidate": 1,
+                  "with_operational_tolerance": 7,
+                  "evaluated_no_candidate": 6,
+                  "not_evaluable": 0
+                },
+                "heat": {
+                  "expected": 7,
+                  "not_evaluable": 0,
+                  "only_resolution": 0,
+                  "evaluated_no_candidate": 7,
+                  "other_or_mixed": 0,
+                  "with_operational_tolerance": 0,
+                  "evaluated_with_candidate": 0
+                },
+                "wind": {
+                  "expected": 7,
+                  "not_evaluable": 0,
+                  "evaluated_no_candidate": 7,
+                  "other_or_mixed": 0,
+                  "evaluated_with_candidate": 0,
+                  "only_resolution": 0,
+                  "with_operational_tolerance": 0
+                },
+                "storm": {
+                  "evaluated_no_candidate": 7,
+                  "only_resolution": 0,
+                  "with_operational_tolerance": 0,
+                  "not_evaluable": 0,
+                  "other_or_mixed": 0,
+                  "evaluated_with_candidate": 0,
+                  "expected": 7
+                },
+                "snow": {
+                  "not_evaluable": 0,
+                  "other_or_mixed": 0,
+                  "only_resolution": 0,
+                  "evaluated_no_candidate": 7,
+                  "expected": 7,
+                  "evaluated_with_candidate": 0,
+                  "with_operational_tolerance": 7
+                }
+              },
+              "evaluations_with_tolerance": 7,
+              "municipalities_degraded": 0,
+              "evaluations_expected": 7,
+              "municipalities_not_evaluable": 0,
+              "evaluations_partial": 0,
+              "municipalities_expected": 7,
+              "evaluations_degraded": 0,
+              "evaluations_not_possible": 0
+            }
+          ],
+          "evaluations_not_possible": 0,
+          "gate": "per_phenomenon",
+          "scope": "canonical_point_per_job_execution",
+          "schema_version": "local-notice-quality.v2",
+          "evaluations_with_tolerance": 7
+        },
+        "sent": 0,
+        "opted_out": 0,
+        "retry_scheduled": 0,
+        "device_failed": 0,
+        "candidates": 0,
+        "sent_unconfirmed": 0,
+        "source_failed": 0,
+        "in_progress": 0,
+        "failed": 0,
+        "status": "no_candidate"
+      }
+    ],
+    "state": "verified",
+    "quality_available": true,
+    "tolerances_exercised": true,
+    "phenomena": [
+      {
+        "source_run_id": "20261021T120000Z",
+        "phenomena": {
+          "ice": {
+            "only_resolution": 0,
+            "evaluated_no_candidate": 7,
+            "evaluated_with_candidate": 0,
+            "with_operational_tolerance": 0,
+            "other_or_mixed": 0,
+            "not_evaluable": 0,
+            "expected": 7
+          },
+          "rain": {
+            "other_or_mixed": 0,
+            "only_resolution": 0,
+            "expected": 7,
+            "evaluated_with_candidate": 1,
+            "with_operational_tolerance": 7,
+            "evaluated_no_candidate": 6,
+            "not_evaluable": 0
+          },
+          "heat": {
+            "expected": 7,
+            "not_evaluable": 0,
+            "only_resolution": 0,
+            "evaluated_no_candidate": 7,
+            "other_or_mixed": 0,
+            "with_operational_tolerance": 0,
+            "evaluated_with_candidate": 0
+          },
+          "wind": {
+            "expected": 7,
+            "not_evaluable": 0,
+            "evaluated_no_candidate": 7,
+            "other_or_mixed": 0,
+            "evaluated_with_candidate": 0,
+            "only_resolution": 0,
+            "with_operational_tolerance": 0
+          },
+          "storm": {
+            "evaluated_no_candidate": 7,
+            "only_resolution": 0,
+            "with_operational_tolerance": 0,
+            "not_evaluable": 0,
+            "other_or_mixed": 0,
+            "evaluated_with_candidate": 0,
+            "expected": 7
+          },
+          "snow": {
+            "not_evaluable": 0,
+            "other_or_mixed": 0,
+            "only_resolution": 0,
+            "evaluated_no_candidate": 7,
+            "expected": 7,
+            "evaluated_with_candidate": 0,
+            "with_operational_tolerance": 7
+          }
+        },
+        "causes": [],
+        "accumulation_evidence": {
+          "disabled": 0,
+          "unavailable": 0,
+          "invalid": 0,
+          "verified": 7
+        }
+      }
+    ],
+    "detail_verified_at": "2026-10-21T19:15:20.324810+00:00",
+    "verification_details": {
+      "sidecar_flag_in_actual_execution": true,
+      "audit_records_reconciled": 7,
+      "phenomenon_evaluations": 42,
+      "not_evaluable": 0,
+      "tolerance_fields_by_detector": {
+        "rain": [
+          "liquid_rain_mm",
+          "precipitation_mm"
+        ],
+        "snow": [
+          "liquid_rain_mm",
+          "precipitation_mm"
+        ]
+      },
+      "snow_water_equivalent_tolerance_exercised": false,
+      "deferred_candidates": [
+        {
+          "municipality_istat": "093013",
+          "kind": "rain",
+          "event_at": "2026-10-21T23:00+02:00",
+          "lead_minutes": 119,
+          "maximum_lead_minutes": 60,
+          "reason": "onset_beyond_notice_window"
+        }
+      ],
+      "delivery_in_this_run_tested": false
+    }
+  },
+  "manual_execution": false,
+  "cloud_mutation": false
+}

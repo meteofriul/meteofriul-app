@@ -12,6 +12,7 @@ import re
 import requests
 
 from . import engine
+from .http_client import read_with_single_transient_retry
 from .pilot_programmes import cinema_muto_edition, programme_session_metadata
 from .pilot_schedule import schedule_notice
 
@@ -257,17 +258,20 @@ def parse_day(html, *, day, url, metadata):
 
 
 def _read(get, url, *, limit):
-    with get(url, timeout=(4, 12), stream=True, allow_redirects=False) as response:
-        response.raise_for_status()
-        if response.status_code != 200:
-            raise ValueError("unexpected calendar response")
-        chunks, size = [], 0
-        for chunk in response.iter_content(65536):
-            size += len(chunk)
-            if size > limit:
-                raise ValueError("calendar response too large")
-            chunks.append(chunk)
-        return b"".join(chunks).decode("utf-8-sig")
+    def read():
+        with get(url, timeout=(4, 12), stream=True, allow_redirects=False) as response:
+            response.raise_for_status()
+            if response.status_code != 200:
+                raise ValueError("unexpected calendar response")
+            chunks, size = [], 0
+            for chunk in response.iter_content(65536):
+                size += len(chunk)
+                if size > limit:
+                    raise ValueError("calendar response too large")
+                chunks.append(chunk)
+            return b"".join(chunks).decode("utf-8-sig")
+
+    return read_with_single_transient_retry(read)
 
 
 def collect_cinema_muto(*, get=requests.get):
