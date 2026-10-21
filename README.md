@@ -2,8 +2,6 @@
 
 **Prima di preparare una release Android:** leggere le [regole obbligatorie di preparazione e recupero dagli errori](docs/operations/ANDROID_BUILD_PREVENTION_RULES.md), insieme al [runbook Play](docs/operations/PLAY_AAB_RUNBOOK.md).
 
-
-
 Meteo Friûl è un'app indipendente dedicata al Friuli-Venezia Giulia. Riunisce
 meteo locale, bollettino regionale, allerte ufficiali, radar, webcam, eventi e
 contenuti culturali; l'interfaccia è disponibile in italiano e friulano.
@@ -43,14 +41,14 @@ invii. Evidenze e limiti nel [verbale sul telefono](docs/operations/APP_INTEGRAT
 [Apri l'app web](https://meteofriul.app) ·
 [Sostieni il progetto](https://ko-fi.com/meteofriul)
 
-## Canali — Web verificato il 20 ottobre 2026, storico Play indicato separatamente
+## Canali — Web verificato il 20 ottobre, candidata Android e Console il 21 ottobre 2026
 
 | Canale | Stato |
 | --- | --- |
 | Web | `0.1.14` pubblicata su `meteofriul.app`; aggiornamento dalla base approvata in preparazione, non ancora pubblicato |
 | API | FastAPI su Cloud Run, chiamata direttamente via HTTPS da Web e Android |
-| Android | Base approvata in main, verificata con TEST `.6` (`300037`); prossima AAB non generata |
-| Google Play | Storico al 29 settembre: `0.1.8` (`300025`) nel test interno; stato corrente della Console non ricontrollato in questa preparazione Web |
+| Android | AAB ufficiale `0.1.15` (`300033`) generata dalla base allineata a main; firmata e archiviata, non caricata o installata. [Verbale](docs/operations/ANDROID_0.1.15_BUILD_20261021.md) |
+| Google Play | Console riletta il 21 ottobre: `0.1.14` (`300031`) ultima caricata; test interno attivo con una sola lista da un utente. `0.1.15` non caricata |
 | Landing `meteofriul.it` | Gestita e distribuita da un progetto separato |
 | Push | Generazione `play-beta-v1`, App Check in enforce, Android/Web abilitati e lotti Firestore/FCM da 200 elementi |
 | Sintesi mattutina | Una notifica quotidiana alle 07:30 `Europe/Rome`, con apertura diretta del Bollettino |

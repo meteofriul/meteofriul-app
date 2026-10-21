@@ -1,0 +1,212 @@
+{
+  "captured_at": "2026-10-21T15:39:47.7616483Z",
+  "run_id": 39626085533,
+  "url": "https://github.com/meteofriul/meteofriul-app/actions/runs/39626085533",
+  "source_commit": "f82503e4daabc283a5caf77b49e7cf58439abf61",
+  "status": "completed",
+  "conclusion": "success",
+  "jobs": [
+    {
+      "name": "backend",
+      "status": "in_progress",
+      "conclusion": null,
+      "steps": [
+        {
+          "name": "Set up job",
+          "status": "completed",
+          "conclusion": "success"
+        },
+        {
+          "name": "Checkout",
+          "status": "completed",
+          "conclusion": "success"
+        },
+        {
+          "name": "Set up Python",
+          "status": "completed",
+          "conclusion": "success"
+        },
+        {
+          "name": "Install backend dependencies",
+          "status": "completed",
+          "conclusion": "success"
+        },
+        {
+          "name": "Test backend",
+          "status": "completed",
+          "conclusion": "success"
+        },
+        {
+          "name": "Compile backend",
+          "status": "completed",
+          "conclusion": "success"
+        },
+        {
+          "name": "Install verified promtool for monitor tests",
+          "status": "completed",
+          "conclusion": "success"
+        },
+        {
+          "name": "Test ICON-2I monitor and PromQL policies",
+          "status": "completed",
+          "conclusion": "success"
+        },
+        {
+          "name": "Post Set up Python",
+          "status": "completed",
+          "conclusion": "success"
+        },
+        {
+          "name": "Post Checkout",
+          "status": "completed",
+          "conclusion": "success"
+        },
+        {
+          "name": "Complete job",
+          "status": "completed",
+          "conclusion": "success"
+        }
+      ]
+    },
+    {
+      "name": "hosting-preview-tool",
+      "status": "completed",
+      "conclusion": "success",
+      "steps": [
+        {
+          "name": "Set up job",
+          "status": "completed",
+          "conclusion": "success"
+        },
+        {
+          "name": "Checkout",
+          "status": "completed",
+          "conclusion": "success"
+        },
+        {
+          "name": "Set up Java",
+          "status": "completed",
+          "conclusion": "success"
+        },
+        {
+          "name": "Set up Node.js",
+          "status": "completed",
+          "conclusion": "success"
+        },
+        {
+          "name": "Install frontend dependencies",
+          "status": "completed",
+          "conclusion": "success"
+        },
+        {
+          "name": "Build web assets for Android release contracts",
+          "status": "completed",
+          "conclusion": "success"
+        },
+        {
+          "name": "Sync Android project for release contracts",
+          "status": "completed",
+          "conclusion": "success"
+        },
+        {
+          "name": "Test Hosting preview deployment guardrails",
+          "status": "completed",
+          "conclusion": "success"
+        },
+        {
+          "name": "Post Set up Node.js",
+          "status": "completed",
+          "conclusion": "success"
+        },
+        {
+          "name": "Post Set up Java",
+          "status": "completed",
+          "conclusion": "success"
+        },
+        {
+          "name": "Post Checkout",
+          "status": "completed",
+          "conclusion": "success"
+        },
+        {
+          "name": "Complete job",
+          "status": "completed",
+          "conclusion": "success"
+        }
+      ]
+    },
+    {
+      "name": "frontend",
+      "status": "completed",
+      "conclusion": "success",
+      "steps": [
+        {
+          "name": "Set up job",
+          "status": "completed",
+          "conclusion": "success"
+        },
+        {
+          "name": "Checkout",
+          "status": "completed",
+          "conclusion": "success"
+        },
+        {
+          "name": "Set up Node.js",
+          "status": "completed",
+          "conclusion": "success"
+        },
+        {
+          "name": "Install frontend dependencies",
+          "status": "completed",
+          "conclusion": "success"
+        },
+        {
+          "name": "Test frontend",
+          "status": "completed",
+          "conclusion": "success"
+        },
+        {
+          "name": "Test release API guard",
+          "status": "completed",
+          "conclusion": "success"
+        },
+        {
+          "name": "Test dependency security and compatibility",
+          "status": "completed",
+          "conclusion": "success"
+        },
+        {
+          "name": "Test isolated Android Community QA build",
+          "status": "completed",
+          "conclusion": "success"
+        },
+        {
+          "name": "Lint frontend",
+          "status": "completed",
+          "conclusion": "success"
+        },
+        {
+          "name": "Build frontend",
+          "status": "completed",
+          "conclusion": "success"
+        },
+        {
+          "name": "Post Set up Node.js",
+          "status": "completed",
+          "conclusion": "success"
+        },
+        {
+          "name": "Post Checkout",
+          "status": "completed",
+          "conclusion": "success"
+        },
+        {
+          "name": "Complete job",
+          "status": "completed",
+          "conclusion": "success"
+        }
+      ]
+    }
+  ],
+  "limitation": "GitHub Actions still reports backend job/check in_progress despite every backend step completed successfully and overall workflow completed/success. No duplicate CI run started."
+}

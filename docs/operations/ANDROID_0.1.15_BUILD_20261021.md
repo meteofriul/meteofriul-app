@@ -32,8 +32,9 @@ sarà fissata nella riserva e nel manifesto immutabile del bundle.
 ## Servizi e sponsor
 
 API ufficiale invariata: tag `play-b6fbe4d`, revisione
-`meteofriul-api-00251-jow`, sorgente attestata
-`599aea2f8a3b1e7e65af2b43e77bb54e4637c96e`.
+`meteofriul-api-00251-jow`, sorgente originale attestata
+`e180b87abe5dac022034881ea4eb1ca60a0d4e78`, equivalente dopo la pulizia Git
+a `599aea2f8a3b1e7e65af2b43e77bb54e4637c96e` (prova descritta sotto).
 Il builder verifica nuovamente binding live, digest, salute, TTL e attestazioni.
 
 Community compatibile v2/v3 già attiva: vedere il
@@ -62,7 +63,7 @@ né cambia sender, destinatari o configurazioni.
 | Edge-to-edge e inset | 19 test in quattro suite UI/system bars passati; codice allineato a main | NON VERIFICATA su Android 15/16, gesti/tre tasti, temi, cutout, tastiera, ripresa |
 | API system bar deprecate | Nessun setter deprecato reintrodotto nel codice applicativo; nessun cambio toolchain in questa preparazione | Avvisi delle dipendenze e rapporto Play del bundle esatto da leggere dopo upload autorizzato |
 | Orientamento e schermi grandi | Telefoni portrait a schermo intero; nessun lock globale manifest; >=600 dp e multi-window adattivi | NON VERIFICATA la matrice del nuovo pacchetto, inclusi tablet e finestre multiple |
-| R8 e risorse | Contratti PASS; minify e shrinkResources attivi, profilo ottimizzato, optimizedResourceShrinking=true, nessuna nuova keep rule | Mapping e bundle da verificare dopo build; comportamento minificato ufficiale NON VERIFICATO fino al test |
+| R8 e risorse | Contratti PASS; minify e shrinkResources attivi, profilo ottimizzato, optimizedResourceShrinking=true, nessuna nuova keep rule | Mapping esterno e incluso nel bundle coincidenti, firma e bundle PASS; comportamento minificato ufficiale NON VERIFICATO fino al test |
 
 Target SDK 36, AGP 8.13.0 e Capacitor 8.5.1 invariati rispetto a main.
 I test della TEST minificata su Galaxy Android 14 e della Web su Brave restano
@@ -143,3 +144,70 @@ blocchi per codice riutilizzato, riserva aperta, bundle esistente e conflitti
 nel ledger. La regola è documentata nel runbook e coperta da regressioni su
 entrambi i controlli di versione e sulla lettura del ledger. Le guardie di
 firma, TTL e provenienza non cambiano. 300033 non era stato ancora riservato.
+
+## Chiusura della generazione
+
+**AAB ufficiale 0.1.15 / 300033 generata**, stato `built-not-uploaded`.
+Builder terminato con exit 0 il 21 ottobre alle 15:32:55 UTC. Sorgente esatto
+`f82503e4daabc283a5caf77b49e7cf58439abf61`, allineato al main
+`c329217b5df540299dad69016848f47cf703a5d0`; nessuna differenza nei sorgenti
+runtime frontend, Android o backend rispetto a main.
+
+- Bundle: `meteofriul-300033-0.1.15.aab`, 72.859.275 byte.
+- SHA-256: `cb461c8e5e6fddd05407214a507e151e02e8041f403d9346c364bbe0174ba019`.
+- Mapping: `meteofriul-300033-0.1.15.mapping.txt`, verificato anche dentro la AAB.
+- Firma: un solo firmatario su tutte le voci; certificato upload coincidente con
+  quello dell'ultima versione accettata su Play.
+- Manifesto estratto dal bundle: `com.meteofriul.app`, min SDK 24, target 36,
+  non debuggable, MainActivity ridimensionabile e senza blocco portrait globale.
+  BuildConfig: DEBUG=false, LOCAL_WEATHER_PILOT=false.
+- Quattro librerie native transitive DataStore: segmenti ELF con allineamento
+  16.384 byte. Simboli nativi non disponibili nelle dipendenze: limite registrato,
+  non dichiarato risolto. Questo controllo statico non è una prova runtime.
+- Sponsor riletti alle 15:33:47 UTC: `enabled=false`, zero campagne, revisione 117.
+  Nessuna attivazione del pannello o sincronizzazione dati.
+
+AAB e mapping conservati nel worktree release e copiati senza sovrascrittura
+nell'archivio `release-artifacts/android-play/` della radice canonica, con verifica
+degli hash. Riserva e manifesto conservati nel registro immutabile. I nuovi
+commit di documentazione successivi alla build non cambiano il file né il suo
+commit sorgente.
+
+I precedenti tentativi **non hanno prodotto alcuna AAB**. La riserva 300032
+rimane abbandonata; 300033 è la sola AAB prodotta per questa preparazione.
+L'eccezione sul nome non riutilizza né cancella un codice riservato.
+
+Controlli locali completati: 9 guardie release, 19 test UI/inset/system bar,
+49 test dei lettori sponsor; contratti R8, writer TTL, preflight API e builder
+con regressioni del retry PASS. Build Web preliminare con binding e Carto PASS.
+Rimangono gli avvisi noti su dimensione chunk, optimizedResourceShrinking
+sperimentale, flatDir e deprecazioni Gradle: non sono stati soppressi o presentati
+come risolti. Dettagli nella
+[ricevuta di verifica](../../release-history/android-preparation/0.1.15-20261021/build-verification.json).
+
+Play Console consultata in sola lettura: test interno attivo, una sola lista
+selezionata con un utente; nessuna modifica a tester o release. L'AAB non è
+caricata, installata o distribuita. Nessun nuovo deploy, invio manuale o emulatore.
+La verifica reale attraverso Play resta da eseguire dopo autorizzazione distinta.
+
+Le [regole obbligatorie di preparazione](ANDROID_BUILD_PREVENTION_RULES.md)
+sono richiamate da README, AGENTS.md e runbook: dipendenze complete, assenza di
+junction verso altri checkout, preflight prima della riserva, provenienza,
+gestione degli errori e verifiche finali dell'artefatto.
+
+## CI e salvataggio finale
+
+[CI del commit compilato](https://github.com/meteofriul/meteofriul-app/actions/runs/39626085533):
+workflow concluso con successo. Frontend e hosting-preview-tool hanno conclusione
+success; tutti i passi backend, inclusi test, compilazione e monitor PromQL,
+sono conclusi con successo. Le API Actions e Checks mantengono però il metadato
+del solo job backend in_progress senza conclusione: discrepanza conservata nella
+[ricevuta CI](../../release-history/android-preparation/0.1.15-20261021/source-ci.json),
+non trasformata in un risultato mancante o in un nuovo test. Nessuna esecuzione
+duplicata avviata per aggirare questo stato. La generazione è conclusa; upload
+e promozione restano fasi successive.
+
+Le prove e il manifesto vengono salvati sul ramo release; main resta la base
+verificata c329217b. La documentazione non dichiara eseguito il test runtime
+della nuova AAB e non autorizza pubblicazione, installazione o altri invii.
+
