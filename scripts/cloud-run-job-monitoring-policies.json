@@ -91,11 +91,11 @@
       "policyKey": "local-notice-failures",
       "jobName": "meteofriul-local-notice",
       "displayName": "Meteo Friul - job avvisi locali",
-      "conditionDisplayName": "Due esecuzioni fallite degli avvisi locali in 4 ore",
+      "conditionDisplayName": "Due esecuzioni incomplete o fallite degli avvisi locali in 4 ore",
       "alignmentPeriodSeconds": 14400,
       "failedExecutionThreshold": 2,
       "notifyOnRecovery": false,
-      "documentation": "Il job Avvisi Meteo Friul ha fallito almeno due esecuzioni nelle ultime 4 ore. Controllare i log del job `meteofriul-local-notice`; un job verde senza candidati o dispositivi idonei resta un esito normale.",
+      "documentation": "Il job Avvisi Meteo Friul ha almeno due esiti incompleti o falliti nelle ultime 4 ore. Distinguere nel riepilogo JSON `data_degraded` con `failed=0` (alcuni fenomeni non valutabili) da errori di sorgente, contratto, sicurezza, audit o consegna. In `data_quality.by_source_run` leggere per ogni fenomeno `not_evaluable/expected`, le classi esclusive `only_resolution` e `other_or_mixed` e le cause. Un fenomeno non valutabile non significa assenza di rischio e non blocca quelli valutabili. Exit code e soglia sono conservati: questo allarme non dimostra da solo che nessun avviso sia stato inviato. Verificare `sent`, `sent_unconfirmed`, `source_failed`, `security_failed` e `failed`. Un job verde senza candidati o dispositivi idonei resta normale.",
       "labels": {
         "service": "local-notices",
         "threshold": "two-in-4h"
@@ -106,12 +106,12 @@
       "conditionType": "successful_execution_absent",
       "jobName": "meteofriul-local-notice",
       "displayName": "Meteo Friul - avvisi locali senza successi",
-      "conditionDisplayName": "Nessuna esecuzione riuscita degli avvisi locali in 3 ore",
+      "conditionDisplayName": "Nessuna esecuzione pienamente riuscita degli avvisi locali in 3 ore",
       "alignmentPeriodSeconds": 60,
       "absenceDurationSeconds": 10800,
       "notifyOnRecovery": true,
       "autoCloseSeconds": 604800,
-      "documentation": "Il job `meteofriul-local-notice` non completa con successo da almeno 3 ore. Questo incidente si risolve soltanto quando Cloud Run registra una nuova esecuzione riuscita; controllare sorgenti ICON, timeout e audit aggregati prima della consegna FCM.",
+      "documentation": "Il job `meteofriul-local-notice` non registra un esito pienamente riuscito da almeno 3 ore. Anche `data_degraded` conserva exit 1: distinguere dati incompleti da errori operativi usando stato, contatori di errore e `data_quality.by_source_run.phenomena` (non valutabili/previsti per fenomeno e causa). I fenomeni valutabili possono essere stati elaborati e inviati; verificare i contatori di consegna. Questo incidente si chiude solo con una nuova esecuzione riuscita. Non azzerare il degrado o modificare le soglie per chiuderlo.",
       "labels": {
         "service": "local-notices",
         "threshold": "no-success-3h"

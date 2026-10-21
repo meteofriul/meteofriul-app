@@ -1,5 +1,13 @@
 # Passaggio coordinato ICON-2I — piano e stato operativo
 
+> **Aggiornamento 21 ottobre, verifica del consumatore:** il produttore è stato
+> verificato sulla nuova corsa; il job operativo degli avvisi usa ancora la
+> versione precedente. Il replay locale del caso reale Chions con il codice di
+> main e sidecar verificato recupera 5 fenomeni su 6, lasciando il caldo
+> esplicitamente non valutabile. 182 test passati. Gli esiti parziali possono
+> ancora produrre exit 1; monitoraggio e attivazione del consumatore rimangono
+> passaggi distinti. [Regressione, risultati e limiti](LOCAL_NOTICE_CHIONS_READINESS_20261021.md).
+
 > **Aggiornamento 21 ottobre 2026:** la corsa ordinaria delle 08:00 italiane
 > ha pubblicato `20261021T000000Z` con il limite corretto. Verificati checkpoint
 > schema 2, source_quality, 215 documenti, 215 sidecar, entrambi i lettori storici
@@ -121,8 +129,10 @@ le prove delle tolleranze in file separati. I vecchi client rifiutano chiavi
 aggiuntive, che quindi non vengono inserite nei documenti letti dalle app.
 La fase 01 ha verificato i lettori storici e l'app ufficiale già installata;
 la fase 03 ha ricontrollato i 215 documenti FVG correnti e sei località nazionali.
-La verifica sui dati della prima nuova corsa resta aperta. Android 15/16 e altri
-dispositivi non sono stati collaudati; nessun aggiornamento Android è stato generato.
+La verifica sulla nuova corsa `20261021T000000Z` è conclusa: 215 documenti,
+215 sidecar e sei località nazionali, come attestato nel verbale corrente.
+I limiti del collaudo Android indicati sopra si riferiscono alla preparazione
+originaria del 19 ottobre e non certificano né invalidano le release successive.
 
 ## Sequenza server e stato di avanzamento
 
@@ -140,14 +150,18 @@ dispositivi non sono stati collaudati; nessun aggiornamento Android è stato gen
    checkpoint, la corsa serale del 20 ottobre ha incontrato il tetto di 32 MiB.
    Anche questa correzione è ora distribuita: limite 64 MiB, lettore 1/2 e
    packing conservati. [Verbale e rollback](ICON2I_PAYLOAD_LIMIT_DEPLOY_20261020.md).
-4. **Nuova corsa pendente:** attendere il 21 ottobre alle 08:00 italiane,
-   controllo alle 08:20 e, se necessario, 09:20. Verificare digest, esecuzione
-   ordinaria, checkpoint schema 2, source_quality, 215 letture legacy e sidecar.
-   L'ultima autorizzazione esclude tutte le esecuzioni manuali, incluso il QA
-   cloud: sostituisce le istruzioni precedenti che ne prevedevano un avvio.
-   Eventuali confronti solo locali sui dati già pubblicati, con cause e
-   denominatori espliciti. Dati vecchi o metadati assenti non valgono come
-   successo. Nessun nuovo invio è autorizzato.
+4. **Nuova corsa verificata:** la corsa ordinaria del 21 ottobre ha
+   pubblicato `20261021T000000Z`. Digest, checkpoint schema 2, source_quality,
+   215 documenti con lettori storici e sidecar, e campione nazionale verificati
+   nel verbale del produttore. Nessun QA cloud avviato per questo controllo.
+5. **Consumatore operativo da aggiornare:** il job degli avvisi usa ancora
+   il digest precedente; il replay locale Chions conferma la valutazione per
+   fenomeno già presente su main. Il test recupera cinque fenomeni ma conserva
+   il degrado e gli exit code. Prima di un eventuale cambiamento delle uscite,
+   coordinare il monitoraggio; poi identificare candidato e rollback compatibile
+   e verificare la corsa ordinaria dopo un deploy autorizzato. Gli invii ordinari
+   già autorizzati mantengono le regole correnti; nessun invio manuale o cambio
+   ai destinatari è stato eseguito in questa preparazione.
 
 La fase 02 modifica anche codice condiviso dai riepiloghi mattutino e serale:
 mantengono il rifiuto dei dati incompleti, senza usare la tolleranza per
@@ -184,5 +198,6 @@ non sommare retry come nuove corse e non contare i dispositivi come punti distin
 - Consumatore: in caso di problemi fermare gli invii candidati e conservare
   diagnostica e dati. Non ripristinare silenziosamente il null trasformato in zero.
 - Immagini, digest e configurazioni effettive sono registrati nei verbali
-  delle fasi 01–03. La prova sulla nuova corsa e il confronto senza invii
-  restano pendenti; non vengono presentati come verifiche già svolte.
+  delle fasi 01–03. La nuova corsa del produttore è verificata; il replay
+  Chions è solo locale. Attivazione e verifica ordinaria del nuovo consumatore
+  restano pendenti e non sono dimostrate dal successo del produttore.
