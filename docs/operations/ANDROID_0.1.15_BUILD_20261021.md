@@ -210,4 +210,3 @@ e promozione restano fasi successive.
 Le prove e il manifesto vengono salvati sul ramo release; main resta la base
 verificata c329217b. La documentazione non dichiara eseguito il test runtime
 della nuova AAB e non autorizza pubblicazione, installazione o altri invii.
-
