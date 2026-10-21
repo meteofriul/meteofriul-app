@@ -1,0 +1,56 @@
+{
+  "schemaVersion": "release-backend-image-evidence-v1",
+  "recordedAt": "2026-10-21T15:07:52.812053+00:00",
+  "sourceCommit": "e180b87abe5dac022034881ea4eb1ca60a0d4e78",
+  "expectedImageDigest": "europe-west1-docker.pkg.dev/meteo-friul/cloud-run-source-deploy/meteofriul-api@sha256:5522b4cfc15076a9f93e838e3643b35e1aa5ad4ce0bf5bca4851997ea94c2ae8",
+  "cloudBuildResultImageDigest": "europe-west1-docker.pkg.dev/meteo-friul/cloud-run-source-deploy/meteofriul-api@sha256:5522b4cfc15076a9f93e838e3643b35e1aa5ad4ce0bf5bca4851997ea94c2ae8",
+  "cloudBuildStatus": "SUCCESS",
+  "cloudBuildId": "4f68bd0e-6494-4caa-9be2-90d60d36a92b",
+  "cloudBuildRegion": "europe-west1",
+  "projectId": "meteo-friul",
+  "account": "meteofriul@gmail.com",
+  "revision": "meteofriul-api-00251-jow",
+  "apiTag": "play-b6fbe4d",
+  "sourceProvenance": {
+    "resolvedStorageSource": {
+      "bucket": "run-sources-meteo-friul-europe-west1",
+      "object": "services/meteofriul-api/1791726142.217432-57082d17b6cf4185926b16dbcb547d17.zip",
+      "generation": "1791726150612023"
+    },
+    "fileHashes": {
+      "gs://run-sources-meteo-friul-europe-west1/services/meteofriul-api/1791726142.217432-57082d17b6cf4185926b16dbcb547d17.zip#1791726150612023": {
+        "fileHash": [
+          {
+            "type": "MD5",
+            "value": "fEACDHyPqfoRopTBSOjwQQ=="
+          },
+          {
+            "type": "SHA256",
+            "value": "syLA6Yh7wVHnAJCdMsA0/OPLv0RAVxZGJtRMKk9R5N4="
+          }
+        ]
+      }
+    }
+  },
+  "verification": "Original pre-cleanup runtime source. Every runtime file is byte-identical to the previously image-attested rewritten commit; original evidence source is its Git ancestor. No old history merged or published.",
+  "runtimeFilesCompared": 179,
+  "comparisonScope": "Exact Git bytes, modes and paths for backend/app recursively, backend/requirements.txt and backend/Dockerfile. Dockerfile copies only app/ and requirements.txt.",
+  "deployedDuringThisVerification": false,
+  "equivalentRewrittenSourceCommit": "599aea2f8a3b1e7e65af2b43e77bb54e4637c96e",
+  "sourceIdentityEvidence": {
+    "historicalTtlSourceCommit": "ca201f081c343f6d709141cfd311190c5c93a140",
+    "historicalTtlSourceIsAncestor": true,
+    "runtimeTreeListing": {
+      "sha256": "b3622fa07f91307e1ea5b50184fde6a9e6433d9a0f699ee65e8ea7f3a425fb4e"
+    },
+    "identicalRuntimeFileCount": 179,
+    "previousImageAttestation": "release-history/cloud-operations/20261020-services-attestation/api-backend.json",
+    "previousImageAttestationFile": {
+      "sha256": "0f2a31464be76870ec8f638b2d76e89b0c7cefca3fc927d139f2ca77d5c445c2"
+    },
+    "rewriteMappingCheckedLocally": true,
+    "cloudMutations": 0,
+    "historicalEvidenceModified": false,
+    "releaseGuardsChanged": false
+  }
+}

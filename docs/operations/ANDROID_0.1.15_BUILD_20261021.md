@@ -92,3 +92,28 @@ canale interno personale e provarlo tramite Play, conservando dati e preferenze.
 App Check/Play Integrity, Community reale, notifiche/background e matrice Android
 si verificano sul pacchetto distribuito dal canale, senza attribuire PASS alla
 sola compilazione. Nessun upload o invio manuale fa parte di questa preparazione.
+
+## Legame storico Community: correzione della provenienza
+
+Il primo tentativo del builder si è fermato prima della riserva del codice:
+`source_commit_not_backend_ancestor`. La prova TTL di settembre conserva il
+commit originale; l'attestazione API del 20 ottobre usava il commit equivalente
+dopo la pulizia della cronologia Git. I due identificativi appartengono a
+percorsi di storia diversi, pur descrivendo gli stessi writer.
+
+È stato recuperato il commit originale del backend
+`e180b87abe5dac022034881ea4eb1ca60a0d4e78` dalla mappa locale di pulizia.
+La sorgente della prova TTL `ca201f08` è sua antenata. Tutti i file copiati
+nell'immagine, i percorsi, i modi Git, Dockerfile e requirements sono stati
+confrontati byte per byte con `599aea2f`: identici. Il contratto dei writer è
+identico anche a main. La nuova [attestazione di identità originale](../../release-history/android-preparation/0.1.15-20261021/api-original-source.json)
+conserva digest immagine, Cloud Build e archivio già verificati; cambia soltanto
+il riferimento al sorgente originale equivalente. Il secondo tentativo usa
+questo riferimento, senza modificare alcuna guardia o prova TTL immutabile,
+senza nuove scritture cloud e senza reintrodurre la vecchia storia nel ramo.
+
+Il primo push tecnico era stato bloccato per vecchie rappresentazioni degli
+hash nei commit documentali non pubblicati del ramo. La candidata è stata
+consolidata direttamente su main, conservando un backup locale e verificando
+l'identità dell'intero albero dei file. Il successivo push ha superato la
+guardia privacy invariata. Nessun push forzato o promozione su main.
