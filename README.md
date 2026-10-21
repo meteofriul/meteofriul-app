@@ -1,5 +1,7 @@
 # Meteo Friûl
 
+**Prima di preparare una release Android:** leggere le [regole obbligatorie di preparazione e recupero dagli errori](docs/operations/ANDROID_BUILD_PREVENTION_RULES.md), insieme al [runbook Play](docs/operations/PLAY_AAB_RUNBOOK.md).
+
 Meteo Friûl è un'app indipendente dedicata al Friuli-Venezia Giulia. Riunisce
 meteo locale, bollettino regionale, allerte ufficiali, radar, webcam, eventi e
 contenuti culturali; l'interfaccia è disponibile in italiano e friulano.
@@ -20,33 +22,42 @@ italiano/chiaro e friulano/scuro. Commit e integrazione locale autorizzati;
 nessuna pubblicazione. Evidenze e limiti nel
 [verbale Web sul Galaxy](docs/operations/WEB_APP_BROWSER_FIXES_20261020.md).
 
-**Job meteo ICON-2I — 19 ottobre 2026:** il lettore HTTP compatibile e il
-produttore sono aggiornati. Il nuovo consumatore degli avvisi resta nel job QA
-senza invii; i job di invio operativi sono invariati. La verifica delle
-tolleranze sulla prima nuova corsa è ancora incompleta: corsa attesa il
-20 ottobre alle 08:00 italiane, controllo previsto alle 08:20 (09:20 se necessario).
-Stato, ordine delle fasi e rollback sono nel
-[piano coordinato](docs/operations/ICON2I_COORDINATED_ROLLOUT_20261019.md),
-con le evidenze nel [verbale del produttore](docs/operations/ICON2I_TOLERANCE_PHASE3_DEPLOY_20261019.md).
+**Stato aggiornato al 21 ottobre 2026:** la AAB **0.1.15 / 300033** è nel
+test interno personale. La verifica del pacchetto ufficiale sul Galaxy è
+conclusa con rilievi aperti: configurazione nativa assente, posizione segnalata
+spenta dopo l'aggiornamento e sovrapposizione nella mappa. Il codice della
+release resta nella PR 11 in bozza; l'aggiornamento documentale di main non
+ne autorizza la promozione. [Stato, rami e prossimi passi](docs/operations/RELEASE_0.1.15_STATUS_20261021.md).
 
-**App — verifica locale del 19 ottobre 2026:** il candidato integrato con testi
+**Job meteo ICON-2I — verifica del 21 ottobre 2026:** nuova corsa pubblicata,
+checkpoint schema 2, 215 documenti e sidecar e campione nazionale verificati.
+Le tolleranze sono esercitate nei dati reali. Il nuovo consumatore avvisi
+resta nel percorso QA; pubblicazione dei dati e consegna degli avvisi sono
+verifiche distinte. [Verbale e limiti](docs/operations/ICON2I_PAYLOAD_LIMIT_DEPLOY_20261020.md).
+
+**Allerte FVG e Community:** aggiornamenti già distribuiti e verificati nei
+rispettivi [verbali allerte](docs/operations/FVG_ALERTS_DEPLOY_20261020.md) e
+[Community](docs/operations/COMMUNITY_0.1.15_DEPLOY_20261021.md).
+Sponsor, pannello e allineamento dati sponsor restano disattivati.
+
+**Storico TEST — verifica locale del 19 ottobre 2026:** il candidato integrato con testi
 IT/FUR, Indietro Android, conferma/ricevuta Community, aggiornamento FVG e nuovi
 temi delle previsioni ha superato le verifiche sulla TEST `.6` (`300037`) del
-Galaxy A52. È stato integrato in main locale; le impostazioni speciali
-della TEST restano escluse. Nessuna nuova AAB, pubblicazione o attivazione degli
-invii. Evidenze e limiti nel [verbale sul telefono](docs/operations/APP_INTEGRATED_TEST_DEVICE_20261019.md).
+Galaxy A52. Il lavoro approvato è integrato in main; le impostazioni speciali
+della TEST restano escluse. Questa prova storica precede la AAB ufficiale 300033
+e non sostituisce la sua verifica. Evidenze e limiti nel [verbale sul telefono](docs/operations/APP_INTEGRATED_TEST_DEVICE_20261019.md).
 
 [Apri l'app web](https://meteofriul.app) ·
 [Sostieni il progetto](https://ko-fi.com/meteofriul)
 
-## Canali — Web verificato il 20 ottobre 2026, storico Play indicato separatamente
+## Canali — Web verificato il 20 ottobre, candidata Android e Console il 21 ottobre 2026
 
 | Canale | Stato |
 | --- | --- |
 | Web | `0.1.14` pubblicata su `meteofriul.app`; aggiornamento dalla base approvata in preparazione, non ancora pubblicato |
 | API | FastAPI su Cloud Run, chiamata direttamente via HTTPS da Web e Android |
-| Android | Base approvata in main, verificata con TEST `.6` (`300037`); prossima AAB non generata |
-| Google Play | Storico al 29 settembre: `0.1.8` (`300025`) nel test interno; stato corrente della Console non ricontrollato in questa preparazione Web |
+| Android | `0.1.15` (`300033`) nel test interno personale; verificata sul Galaxy Android 14, con difetto di configurazione nativa nel bundle da correggere prima della promozione. [Esito e limiti](docs/operations/RELEASE_0.1.15_STATUS_20261021.md) |
+| Google Play | Produzione `0.1.14` (`300031`) nell’ultima lettura del 21 ottobre; `0.1.15` (`300033`) solo nel test interno, una lista con un utente. Sponsor disattivati |
 | Landing `meteofriul.it` | Gestita e distribuita da un progetto separato |
 | Push | Generazione `play-beta-v1`, App Check in enforce, Android/Web abilitati e lotti Firestore/FCM da 200 elementi |
 | Sintesi mattutina | Una notifica quotidiana alle 07:30 `Europe/Rome`, con apertura diretta del Bollettino |
