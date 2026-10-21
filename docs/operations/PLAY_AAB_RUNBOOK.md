@@ -1,7 +1,8 @@
+# Procedura operativa per la AAB Google Play
 
 Prima di qualsiasi tentativo, applicare le [regole obbligatorie di preparazione e recupero](ANDROID_BUILD_PREVENTION_RULES.md). Coprono dipendenze, provenienza storica, riserve e retry; valgono anche quando si riprende una release già avviata.
 
-# Procedura operativa per la AAB Google Play
+
 
 Questa procedura prepara la variante ufficiale `com.meteofriul.app`, non la
 variante TEST installabile in parallelo. **Build, caricamento nel test interno e
