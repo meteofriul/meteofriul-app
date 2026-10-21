@@ -136,6 +136,23 @@ $wrong[2].buildVerification.canonicalImageDigests = @("europe-west1-docker.pkg.d
 $case = $good.Clone(); $case.ImageProofs = $wrong
 Assert-Case (@(Test-FirestorePushTtlLiveWriterSet @case | Where-Object { $_.code -ceq "runtime_writer_build_verification_mismatch" }).Count -gt 0) "wrong Cloud Build digest must fail"
 
+# One attested build can emit a candidate and its compatible rollback.
+$multi = Copy-Case $proofs
+$otherDigest = "europe-west1-docker.pkg.dev/meteo-friul/meteofriul/backend@sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+$multi[2].buildVerification.canonicalImageDigests = @($otherDigest, $proofs[2].imageDigest)
+$case = $good.Clone(); $case.ImageProofs = $multi
+Assert-Case (@(Test-FirestorePushTtlLiveWriterSet @case).Count -eq 0) "multi-image build must attest the exact deployed digest regardless of result order"
+
+$missing = Copy-Case $multi
+$missing[2].buildVerification.canonicalImageDigests = @($otherDigest, "europe-west1-docker.pkg.dev/meteo-friul/meteofriul/backend@sha256:bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb")
+$case = $good.Clone(); $case.ImageProofs = $missing
+Assert-Case (@(Test-FirestorePushTtlLiveWriterSet @case | Where-Object { $_.code -ceq "runtime_writer_build_verification_mismatch" }).Count -gt 0) "multiple images without the deployed digest must fail"
+
+$wrongArchive = Copy-Case $multi
+$wrongArchive[2].buildVerification.sourceArchiveSha256Base64 = "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA="
+$case = $good.Clone(); $case.ImageProofs = $wrongArchive
+Assert-Case (@(Test-FirestorePushTtlLiveWriterSet @case | Where-Object { $_.code -ceq "runtime_writer_build_verification_mismatch" }).Count -gt 0) "multi-image build with wrong source archive must still fail"
+
 $case = $good.Clone(); $case.ContractGitStatus = [PSCustomObject]@{ tracked = $true; clean = $true; commitCount = 2 }
 Assert-Case (@(Test-FirestorePushTtlLiveWriterSet @case | Where-Object { $_.code -ceq "runtime_writer_set_contract_not_immutable" }).Count -gt 0) "rewritten contract must fail"
 

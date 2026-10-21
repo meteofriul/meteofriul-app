@@ -1,0 +1,302 @@
+{
+  "observed_at": "2026-10-20T20:10:28.678769+00:00",
+  "project": "meteo-friul",
+  "services": {
+    "meteofriul-api": {
+      "name": "projects/meteo-friul/locations/europe-west1/services/meteofriul-api",
+      "traffic": [
+        {
+          "type": "TRAFFIC_TARGET_ALLOCATION_TYPE_REVISION",
+          "revision": "meteofriul-api-00251-jow",
+          "tag": "sponsor-metrics-20261011",
+          "uri": "https://sponsor-metrics-20261011---meteofriul-api-bx24xqvcda-ew.a.run.app"
+        },
+        {
+          "type": "TRAFFIC_TARGET_ALLOCATION_TYPE_REVISION",
+          "revision": "meteofriul-api-card-c3c2a80",
+          "tag": "sponsor-card-c3c2a80",
+          "uri": "https://sponsor-card-c3c2a80---meteofriul-api-bx24xqvcda-ew.a.run.app"
+        },
+        {
+          "type": "TRAFFIC_TARGET_ALLOCATION_TYPE_REVISION",
+          "revision": "meteofriul-api-notify-3c82c89a",
+          "tag": "sponsor-bdde99b",
+          "uri": "https://sponsor-bdde99b---meteofriul-api-bx24xqvcda-ew.a.run.app"
+        },
+        {
+          "type": "TRAFFIC_TARGET_ALLOCATION_TYPE_REVISION",
+          "revision": "meteofriul-api-play-b6fbe4d-001",
+          "percent": 100
+        },
+        {
+          "type": "TRAFFIC_TARGET_ALLOCATION_TYPE_REVISION",
+          "revision": "meteofriul-api-play-e453038-017",
+          "tag": "play-e453038-a264c",
+          "uri": "https://play-e453038-a264c---meteofriul-api-bx24xqvcda-ew.a.run.app"
+        },
+        {
+          "type": "TRAFFIC_TARGET_ALLOCATION_TYPE_REVISION",
+          "revision": "meteofriul-api-pushfix-0a398fa6",
+          "tag": "pushfix-0a398fa6",
+          "uri": "https://pushfix-0a398fa6---meteofriul-api-bx24xqvcda-ew.a.run.app"
+        },
+        {
+          "type": "TRAFFIC_TARGET_ALLOCATION_TYPE_REVISION",
+          "revision": "meteofriul-api-pushmin-56f94e1f",
+          "tag": "push-min-56f94e1f",
+          "uri": "https://push-min-56f94e1f---meteofriul-api-bx24xqvcda-ew.a.run.app"
+        },
+        {
+          "type": "TRAFFIC_TARGET_ALLOCATION_TYPE_REVISION",
+          "revision": "meteofriul-api-sponsor-f189fe1",
+          "tag": "sponsor-f189fe1",
+          "uri": "https://sponsor-f189fe1---meteofriul-api-bx24xqvcda-ew.a.run.app"
+        },
+        {
+          "type": "TRAFFIC_TARGET_ALLOCATION_TYPE_REVISION",
+          "revision": "meteofriul-api-webcamrel-6854b10",
+          "tag": "webcamrel-6854b10",
+          "uri": "https://webcamrel-6854b10---meteofriul-api-bx24xqvcda-ew.a.run.app"
+        },
+        {
+          "type": "TRAFFIC_TARGET_ALLOCATION_TYPE_REVISION",
+          "revision": "meteofriul-api-webcams-bbbfdbb",
+          "tag": "webcams-bbbfdbb",
+          "uri": "https://webcams-bbbfdbb---meteofriul-api-bx24xqvcda-ew.a.run.app"
+        },
+        {
+          "type": "TRAFFIC_TARGET_ALLOCATION_TYPE_REVISION",
+          "revision": "meteofriul-api-webcamsp-bbbfdbb",
+          "tag": "webcamsp-bbbfdbb",
+          "uri": "https://webcamsp-bbbfdbb---meteofriul-api-bx24xqvcda-ew.a.run.app"
+        },
+        {
+          "type": "TRAFFIC_TARGET_ALLOCATION_TYPE_REVISION",
+          "revision": "meteofriul-api-00251-jow",
+          "tag": "play-b6fbe4d",
+          "uri": "https://play-b6fbe4d---meteofriul-api-bx24xqvcda-ew.a.run.app"
+        },
+        {
+          "type": "TRAFFIC_TARGET_ALLOCATION_TYPE_REVISION",
+          "revision": "meteofriul-api-00251-jow",
+          "tag": "sponsor-retention-23160005",
+          "uri": "https://sponsor-retention-23160005---meteofriul-api-bx24xqvcda-ew.a.run.app"
+        },
+        {
+          "type": "TRAFFIC_TARGET_ALLOCATION_TYPE_REVISION",
+          "revision": "meteofriul-api-00251-jow",
+          "tag": "natistat-da3e711d",
+          "uri": "https://natistat-da3e711d---meteofriul-api-bx24xqvcda-ew.a.run.app"
+        }
+      ],
+      "images": [
+        "europe-west1-docker.pkg.dev/meteo-friul/cloud-run-source-deploy/meteofriul-api@sha256:4186e3f587ebe723c34cde0f1d3f0e5ffcd1e8a5432449df1f2de69965fa2dde"
+      ],
+      "latest_ready": "projects/meteo-friul/locations/europe-west1/services/meteofriul-api/revisions/meteofriul-api-card-c3c2a80"
+    },
+    "meteofriul-community": {
+      "name": "projects/meteo-friul/locations/europe-west1/services/meteofriul-community",
+      "traffic": [
+        {
+          "type": "TRAFFIC_TARGET_ALLOCATION_TYPE_LATEST",
+          "revision": "meteofriul-community-00002-tt2",
+          "percent": 100
+        }
+      ],
+      "images": [
+        "europe-west1-docker.pkg.dev/meteo-friul/meteofriul/community:production-20260924-share1"
+      ],
+      "latest_ready": "projects/meteo-friul/locations/europe-west1/services/meteofriul-community/revisions/meteofriul-community-00002-tt2"
+    },
+    "meteofriul-events": {
+      "name": "projects/meteo-friul/locations/europe-west1/services/meteofriul-events",
+      "traffic": [
+        {
+          "type": "TRAFFIC_TARGET_ALLOCATION_TYPE_LATEST",
+          "revision": "meteofriul-events-00018-2vz",
+          "percent": 100
+        }
+      ],
+      "images": [
+        "europe-west1-docker.pkg.dev/meteo-friul/meteofriul/events-worker@sha256:529d93d115de05ff8d6039d09545d2d2e9da5fd87ace227b22f4be6e7b0c296b"
+      ],
+      "latest_ready": "projects/meteo-friul/locations/europe-west1/services/meteofriul-events/revisions/meteofriul-events-00018-2vz"
+    },
+    "meteofriul-weather": {
+      "name": "projects/meteo-friul/locations/europe-west1/services/meteofriul-weather",
+      "traffic": [
+        {
+          "type": "TRAFFIC_TARGET_ALLOCATION_TYPE_REVISION",
+          "revision": "meteofriul-weather-tol1-20261019",
+          "percent": 100,
+          "tag": "tolerance-phase1",
+          "uri": "https://tolerance-phase1---meteofriul-weather-bx24xqvcda-ew.a.run.app"
+        }
+      ],
+      "images": [
+        "europe-west1-docker.pkg.dev/meteo-friul/meteofriul/weather-worker@sha256:3be1d207321e8ea0cee07466c9ac29fcec230ba4e10b3267647fa8f0cb2315a6"
+      ],
+      "latest_ready": "projects/meteo-friul/locations/europe-west1/services/meteofriul-weather/revisions/meteofriul-weather-tol1-20261019"
+    },
+    "meteofriul-national-weather": {
+      "name": "projects/meteo-friul/locations/europe-west1/services/meteofriul-national-weather",
+      "traffic": [
+        {
+          "type": "TRAFFIC_TARGET_ALLOCATION_TYPE_LATEST",
+          "revision": "meteofriul-national-weather-00002-fkt",
+          "percent": 100
+        }
+      ],
+      "images": [
+        "europe-west1-docker.pkg.dev/meteo-friul/meteofriul/national-weather:production-20260923"
+      ],
+      "latest_ready": "projects/meteo-friul/locations/europe-west1/services/meteofriul-national-weather/revisions/meteofriul-national-weather-00002-fkt"
+    },
+    "play-api": {
+      "revision": "projects/meteo-friul/locations/europe-west1/services/meteofriul-api/revisions/meteofriul-api-00251-jow",
+      "images": [
+        "europe-west1-docker.pkg.dev/meteo-friul/cloud-run-source-deploy/meteofriul-api@sha256:5522b4cfc15076a9f93e838e3643b35e1aa5ad4ce0bf5bca4851997ea94c2ae8"
+      ],
+      "uri": "https://play-b6fbe4d---meteofriul-api-bx24xqvcda-ew.a.run.app"
+    }
+  },
+  "jobs": [
+    {
+      "name": "meteofriul-local-notice-tolerance-qa",
+      "images": [
+        "europe-west1-docker.pkg.dev/meteo-friul/meteofriul/backend@sha256:48d293f2d2ea2a0b5f1416e82be4b59ee95a86857a79b79822b6ee8ae5d71ca1"
+      ]
+    },
+    {
+      "name": "meteofriul-icon2i-freshness",
+      "images": [
+        "europe-west1-docker.pkg.dev/meteo-friul/meteofriul/icon2i-freshness@sha256:69b85d3014f35b78af15967fed72f76483d29b113234924216c418635b805d16"
+      ]
+    },
+    {
+      "name": "meteofriul-national-official-alert-send",
+      "images": [
+        "europe-west1-docker.pkg.dev/meteo-friul/meteofriul/backend@sha256:0ca66c4c7839f598554b5f0b5eb7f38a4205b5dbfcbedb9f7d22d81eb5a83848"
+      ]
+    },
+    {
+      "name": "meteofriul-evening-forecast",
+      "images": [
+        "europe-west1-docker.pkg.dev/meteo-friul/meteofriul/backend@sha256:68ce70252ae27a33a5bbd628984727fc993a9be09295777d945108441bf773c5"
+      ]
+    },
+    {
+      "name": "meteofriul-morning-forecast",
+      "images": [
+        "europe-west1-docker.pkg.dev/meteo-friul/meteofriul/backend@sha256:7af9d579cdc135b1823e226ae99aec7fb3ec93276d5aa0af80910923b363fe04"
+      ]
+    },
+    {
+      "name": "meteofriul-national-official-alert-sync",
+      "images": [
+        "europe-west1-docker.pkg.dev/meteo-friul/meteofriul/backend@sha256:0ca66c4c7839f598554b5f0b5eb7f38a4205b5dbfcbedb9f7d22d81eb5a83848"
+      ]
+    },
+    {
+      "name": "meteofriul-official-alert-sync",
+      "images": [
+        "europe-west1-docker.pkg.dev/meteo-friul/meteofriul/backend@sha256:7af9d579cdc135b1823e226ae99aec7fb3ec93276d5aa0af80910923b363fe04"
+      ]
+    },
+    {
+      "name": "meteofriul-local-notice",
+      "images": [
+        "europe-west1-docker.pkg.dev/meteo-friul/meteofriul/backend@sha256:7af9d579cdc135b1823e226ae99aec7fb3ec93276d5aa0af80910923b363fe04"
+      ]
+    },
+    {
+      "name": "meteofriul-cams",
+      "images": [
+        "europe-west1-docker.pkg.dev/meteo-friul/meteofriul/weather-worker@sha256:40f64c406144128b3f2768b8eaaaf82c43a0c2cb03855ee45276ee76d4d0d795"
+      ]
+    },
+    {
+      "name": "meteofriul-events-refresh",
+      "images": [
+        "europe-west1-docker.pkg.dev/meteo-friul/meteofriul/events-worker@sha256:529d93d115de05ff8d6039d09545d2d2e9da5fd87ace227b22f4be6e7b0c296b"
+      ]
+    },
+    {
+      "name": "meteofriul-icon",
+      "images": [
+        "europe-west1-docker.pkg.dev/meteo-friul/meteofriul/weather-worker@sha256:53c8709e74e75b350b1f502149bda489eb99b6e2c30eb6b47c46c4f689e78d48"
+      ]
+    },
+    {
+      "name": "meteofriul-national-icon",
+      "images": [
+        "europe-west1-docker.pkg.dev/meteo-friul/meteofriul/national-weather:production-20260923"
+      ]
+    },
+    {
+      "name": "meteofriul-event-source-publication-control",
+      "images": [
+        "europe-west1-docker.pkg.dev/meteo-friul/cloud-run-source-deploy/meteofriul-api@sha256:cffe49982e479b06361ca5c8df7577dd7d41028e33a3989d9394d07bb894f99e"
+      ]
+    }
+  ],
+  "public": {
+    "community_health": {
+      "ok": true,
+      "kind": "meteofriul.community.cloud.v2",
+      "project": "meteo-friul",
+      "storage": "pilot-cloud",
+      "scope": "IT",
+      "published": true,
+      "enrollment_required": false,
+      "app_check": true
+    },
+    "community_v3_preflight": {
+      "status": 400,
+      "allow_headers": "Accept, Accept-Language, Content-Language, Content-Type, authorization, content-type, x-firebase-appcheck, x-meteo-pilot-installation",
+      "allow_origin": "https://localhost"
+    },
+    "events": {
+      "http_status": 200,
+      "count": 100,
+      "cache": null,
+      "top_level_fields": [
+        "catalog_status",
+        "events",
+        "monitor_status",
+        "next_offset",
+        "radius_km",
+        "snapshot",
+        "source_failure_tags",
+        "source_status",
+        "status",
+        "total",
+        "unlocated_count"
+      ],
+      "cors": "https://localhost"
+    }
+  },
+  "fvg_outbox": {
+    "window_utc": [
+      "2026-10-20T20:00:00Z",
+      "2026-10-20T20:03:00Z"
+    ],
+    "count": 48,
+    "states": [
+      {
+        "state": "failed_invalid_token",
+        "error_code": "fcm_token_invalid",
+        "count": 1
+      },
+      {
+        "state": "sent",
+        "error_code": "",
+        "count": 47
+      }
+    ],
+    "identifiers_and_tokens_not_collected": true
+  },
+  "mutations": false,
+  "manual_executions": 0,
+  "manual_notifications": 0
+}

@@ -30,7 +30,7 @@ della Console è un blocco imposto da Google.
 | --- | --- | --- |
 | 1. Edge-to-edge | Contenuti e pulsanti accessibili rispetto a barre, cutout e tastiera; nessun inset doppio; icone leggibili con gesti e tre tasti, temi app e sistema chiaro/scuro. Verificare anche avvio, ripresa e ricaricamento WebView. | Prove di geometria e schermate Android 15/16, più una versione precedente supportata; dispositivo o immagine dell'emulatore identificati. |
 | 2. API deprecate | Non reintrodurre i setter deprecati dei colori delle barre nel codice applicativo. Ricondurre ogni rilievo al codice proprio o alla dipendenza e alla sua versione; verificare una migrazione compatibile. Le chiamate interne di compatibilità AndroidX non si eliminano alla cieca. | Esito dei test sul plugin, compilazione nativa, analisi delle chiamate residue e, dopo un upload autorizzato, esito Play del bundle esatto. |
-| 3. Orientamento e schermi grandi | Manifest risultante senza blocco portrait o opt-out dal ridimensionamento, con Activity ridimensionabile. Layout utilizzabile in verticale, nei due versi orizzontali e cambiando dimensione, senza overflow, pulsanti irraggiungibili o perdita di stato. | Matrice telefono/tablet e larghezze compatte; test effettivo di finestre affiancate/libere quando supportate. Dimensioni simulate e piega fisica non sono prove equivalenti. |
+| 3. Orientamento e schermi grandi | Telefoni a schermo intero solo in verticale, senza impostazione di rotazione, come richiesto in AGENTS.md. Nessun blocco portrait globale nel manifest. Schermi con smallest width >= 600 dp e multi-window adattivi, senza overflow o perdita di stato. | Verificare il verticale fisso sul telefono ruotato; tablet nei due versi e finestre ridimensionabili. Dimensioni simulate e piega fisica non sono prove equivalenti. |
 | 4. R8 e risorse | Verificare minificazione, resource shrinking, profilo ottimizzato, full mode e keep rule mirate. Controllare separatamente lo shrinking ottimizzato e la compatibilità della toolchain. Conservare mapping e inventario simboli. | Contratti R8 superati, esame degli artefatti e smoke test di un APK minificato con configurazione equivalente alla release; un APK debug non basta. |
 
 Matrice minima da riportare per ciascuna candidata:
@@ -39,7 +39,7 @@ Matrice minima da riportare per ciascuna candidata:
   ampliare la matrice quando cambiano target SDK o requisiti Google.
 - Gesti e tre tasti; temi chiaro/scuro dell'app e del sistema; cutout a sinistra
   e a destra, tastiera aperta/chiusa, ritorno dal background e ricaricamento.
-- Telefono verticale/orizzontale, larghezze compatte 320/360 dp, tablet
+- Telefono a schermo intero sempre verticale anche ruotando il dispositivo, larghezze compatte 320/360 dp, tablet
   verticale/orizzontale, ridimensionamento durante l'uso e finestre multiple.
   Verificare Home, Meteo, Eventi, Scopri e Impostazioni, scorrimento fino in
   fondo e conservazione di selezioni e tema.

@@ -1,0 +1,49 @@
+{
+  "checked_at": "2026-10-20T20:19:24.975099+00:00",
+  "release_guards": {
+    "pass": 9,
+    "fail": 0
+  },
+  "frontend": {
+    "files": 9,
+    "pass": 123,
+    "fail": 0,
+    "vitest": "4.1.12",
+    "config_loader": "native"
+  },
+  "backend": {
+    "pass": 35,
+    "fail": 0,
+    "suites": [
+      "community_cloud_compatibility",
+      "push_fcm",
+      "pilot_event_schedule_contract"
+    ],
+    "sender": "mock"
+  },
+  "r8_contracts": "PASS",
+  "play_ledger": {
+    "status": "PASS",
+    "records": 44,
+    "new_reservations": 0
+  },
+  "aab_script_contracts": {
+    "static": "PASS",
+    "gradle_runtime": "NOT_VERIFIED",
+    "reason": "Generated capacitor-cordova-android-plugins/cordova.variables.gradle absent in clean release checkout; static rerun explicitly used SkipGradleExecution"
+  },
+  "dependency_setup": {
+    "installed": false,
+    "direct_versions_match_lockfile": true,
+    "reused_existing": "release-services-readiness/node_modules",
+    "capacitor": "8.5.1"
+  },
+  "corrected_during_preparation": [
+    "Version assertion updated from 0.1.14 to 0.1.15 without changing parity enforcement",
+    "Initial shared dependencies were older; reran with already-existing lockfile-matching versions",
+    "UTF-8 branding preserved; Gradle source diff limited to version fields"
+  ],
+  "new_android_runtime_test": false,
+  "new_artifact_built": false,
+  "existing_evidence": "TEST minified Galaxy Android 14 and Web Brave; not the new official artifact"
+}

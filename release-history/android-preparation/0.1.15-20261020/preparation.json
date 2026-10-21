@@ -1,0 +1,80 @@
+{
+  "schema": "meteofriul.android.preparation.v1",
+  "status": "prepared-not-built",
+  "version_name": "0.1.15",
+  "proposed_version_code": 300032,
+  "version_reserved": false,
+  "base_main": "5cbcd35ca88088220ff167b299cb4353ebdaf6d4",
+  "branch": "codex/release-0.1.15",
+  "application_id": "com.meteofriul.app",
+  "target_track": "internal",
+  "tester_scope": "owner_only",
+  "track_evidence": "One list/one account observed 20 October; owner confirmed reactivation. Recheck before upload.",
+  "last_observed_play_version_code": 300031,
+  "play_console_rechecked_this_turn": false,
+  "ready_to_generate": false,
+  "build_binding": {
+    "api_base": "https://play-b6fbe4d---meteofriul-api-bx24xqvcda-ew.a.run.app/api",
+    "community_api_base": "https://meteofriul-community-49007668366.europe-west1.run.app/api",
+    "revision": "meteofriul-api-00251-jow",
+    "backend_commit": "599aea2f8a3b1e7e65af2b43e77bb54e4637c96e",
+    "image_digest": "europe-west1-docker.pkg.dev/meteo-friul/cloud-run-source-deploy/meteofriul-api@sha256:5522b4cfc15076a9f93e838e3643b35e1aa5ad4ce0bf5bca4851997ea94c2ae8",
+    "evidence": "release-history/cloud-operations/20261020-services-attestation/api-backend.json"
+  },
+  "backend_decisions": [
+    {
+      "component": "Community",
+      "priority": "prerequisite_for_complete_internal_test",
+      "action": "Deploy compatible legacy/v3 service with existing clients preserved; verify new header CORS. Initial v3 writes disabled during rollout, then explicitly enabled before testing new-client writes. Verify existing privacy/TTL/App Check rollout controls.",
+      "evidence": "Client always sends community-reports-v3; current public preflight returns 400 and health lacks v3. No fallback to legacy writes."
+    },
+    {
+      "component": "Eventi API and refresh worker",
+      "priority": "needed_for_approved_schedule_corrections_not_for_basic_client_reads",
+      "action": "Align the six approved event modules in reader and worker together; review Spazzapan/Cinema Muto sources separately before claiming fresh catalog.",
+      "evidence": "Current image unchanged; 100 of 321 items returned for Pordenone, catalog degraded. Schema still readable. Provider issues are not proven fixed by six-module update."
+    },
+    {
+      "component": "FCM classification",
+      "priority": "operational_fix_independent_of_AAB",
+      "action": "Propagate isolated SenderIdMismatch/Unregistered distinction to API, morning, local, national senders and FVG. Preserve deduplication and recipient settings; no resend or target reactivation. Evening already fixed.",
+      "evidence": "FVG ordinary run 44 sent + 1 failed_invalid_token. Old classifier makes original provider cause ambiguous; do not assert SenderIdMismatch occurred."
+    },
+    {
+      "component": "ICON producer",
+      "priority": "ordinary_run_pending",
+      "action": "Await 21 October 08:00 Europe/Rome run, verify new publication, 215 old readers and tolerance metadata; no further deploy justified yet."
+    },
+    {
+      "component": "Local notice tolerance consumer",
+      "priority": "separate_backend_activation",
+      "action": "After ICON verification, decide operational consumer rollout; QA deployment does not mean production sender activated. Not a prerequisite for packaging the UI."
+    },
+    {
+      "component": "Sponsor selectable fields",
+      "priority": "optional_for_this_internal_test",
+      "action": "Keep existing API; new client supports legacy catalog. Separate approved field-selection rollout if desired; do not retarget to revision containing excluded retention features."
+    },
+    {
+      "component": "CAMS, HTTP weather compatibility, API/evening provenance",
+      "priority": "no_redeploy_for_AAB",
+      "action": "Reuse verified deployment and attestations; repeat read-only preflight immediately before an authorized build."
+    }
+  ],
+  "owner_notification_confirmation": {
+    "reported_received": true,
+    "scope": "Owner report in chat; no new phone inspection or package/version readback"
+  },
+  "not_performed": [
+    "AAB generation",
+    "Play upload",
+    "installation",
+    "Git push",
+    "deploy",
+    "manual job execution",
+    "manual notifications",
+    "emulator"
+  ],
+  "web_policy": "Same approved frontend/version; public Web and Safari/PWA verification pending, not deployed in this preparation",
+  "candidate_source_commit": "f26ea2da6beb0cef9d0da5fbddf36b7a1c042b7e"
+}

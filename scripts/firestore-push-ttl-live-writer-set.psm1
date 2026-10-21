@@ -197,7 +197,7 @@ function Test-FirestorePushTtlLiveWriterSet {
             [string](Get-LiveValue $build "id") -cne $buildId -or
             [string](Get-LiveValue $build "region") -cne $buildRegion -or
             [string](Get-LiveValue $build "status") -cne "SUCCESS" -or
-            $verifiedImages.Count -ne 1 -or $verifiedImages[0] -cne $digest -or
+            $verifiedImages -cnotcontains $digest -or
             [string](Get-LiveValue $build "sourceArchiveSha256Base64") -cne $archiveSha) {
             & $fail "runtime_writer_build_verification_mismatch" "Cloud Build non conferma digest e archivio della prova $digest."
         }
