@@ -1,0 +1,85 @@
+# Stato release 0.1.15 e lavoro salvato — 21 ottobre 2026
+
+**0.1.15 / 300033 è disponibile solo nel test interno personale di Google Play.
+La promozione della release rimane sospesa.** Il proprietario l'ha installata
+dal Play Store; la sessione sul Galaxy A52 Android 14 ha trovato un difetto
+di confezionamento e un rilievo grafico. Il proprietario ha inoltre segnalato
+la posizione nell'app spenta subito dopo l'aggiornamento, prima dei test.
+
+## Canali e rami
+
+| Ambito | Stato attestato |
+| --- | --- |
+| Produzione Play | Ultima lettura Console del 21 ottobre: 0.1.14 / 300031; nessuna promozione della 0.1.15 in produzione |
+| Test interno Play | 0.1.15 / 300033, una sola lista selezionata con un utente; sponsor disattivati |
+| Web pubblica | Ultima verifica del 20 ottobre: 0.1.14 su meteofriul.app; candidata aggiornata verificata su Brave/Galaxy, ancora da pubblicare; Safari/iPhone non verificato |
+| `main` | Base runtime verificata `c329217b`; l'allineamento corrente aggiunge soltanto documentazione, senza versione o modifiche del ramo release |
+| `codex/release-0.1.15` | Preparazione, correzioni dei preflight, registri e prove del bundle conservati nella PR 11 in bozza; nessuna promozione del codice |
+| Artefatto installato | Sorgente `f82503e4daabc283a5caf77b49e7cf58439abf61`, AAB SHA256 `cb461c8e5e6fddd05407214a507e151e02e8041f403d9346c364bbe0174ba019` |
+
+I documenti successivi non cambiano il commit sorgente dell'AAB già firmata.
+La versione nella configurazione di `main` può quindi differire da quella del
+test interno: non va modificata solo per far coincidere i numeri.
+
+## Rilievi aperti e prossima azione
+
+| Rilievo | Evidenza e stato |
+| --- | --- |
+| NATIVE-CONFIG-01 | Nell'AAB manca `base/assets/capacitor.config.json`; l'app registra l'errore e usa default diversi, anche per gli inset. Correggere preparazione e controllo del contenuto del bundle prima della promozione. Verificare anche l'errore Cordova su `config.xml` |
+| LOCATION-UPDATE-01 | Il proprietario ha trovato Posizione spenta nell'app subito dopo Play, prima dei test. Causa sconosciuta. I permessi Android concessi non dimostrano la conservazione dell'interruttore. Mancava una lettura precedente all'aggiornamento |
+| BULLETIN-MAP-01 | Le gocce dell'icona coprono parte dell'etichetta della temperatura a 1000 m nella mappa del bollettino |
+| Copertura restante | Android 15/16, gesti, tablet/multi-window e percorsi con scritture o consegne reali non verificati; nessun PASS implicito |
+
+Superate sul pacchetto ufficiale le prove di avvio/ripresa, Indietro, previsioni
+FVG e nazionali, temi e campione IT/FUR, Eventi, ricerca, allerte, aria/pollini,
+webcam e conferma Community **senza invio**. Nessun crash osservato nella sessione.
+Lo stato delle preferenze è stato riportato alla prima osservazione dell'agente,
+già successiva all'aggiornamento: non certifica la migrazione dal vecchio pacchetto.
+
+Prima di una nuova AAB: correggere e verificare i rilievi pertinenti, con
+regressioni mirate. Non ricostruire o sovrascrivere 300033; seguire il registro
+e le autorizzazioni distinte del [runbook Play](PLAY_AAB_RUNBOOK.md).
+Questa sincronizzazione non esegue build, upload, installazioni, deploy o invii.
+
+## Servizi e Web
+
+- **ICON:** nuova corsa `20261021T000000Z` verificata; checkpoint schema 2,
+  215 documenti/sidecar compatibili con i due lettori storici e sei località
+  nazionali. Tolleranze presenti nei dati. Questo non certifica decisioni o
+  consegna del nuovo consumatore avvisi, rimasto nel percorso QA.
+  [Verbale ICON](ICON2I_PAYLOAD_LIMIT_DEPLOY_20261020.md).
+- **Allerte FVG:** correzione distribuita e corsa ordinaria verificata; primo
+  invio parziale e successiva deduplicazione documentati. La notifica ricevuta
+  dal proprietario non dimostra consegna a tutti i dispositivi.
+  [Verbale allerte](FVG_ALERTS_DEPLOY_20261020.md).
+- **Community:** aggiornamento compatibile v2/v3 già distribuito e attivato;
+  il controllo sul Galaxy non ha eseguito nuove scritture.
+  [Verbale Community](COMMUNITY_0.1.15_DEPLOY_20261021.md).
+- **Sponsor:** schede, sviluppo del pannello e allineamento dati restano
+  sospesi fino a nuovo ordine. Ultima lettura 21 ottobre: `enabled=false`,
+  zero campagne, revisione 117.
+- **Web:** pubblicazione separata ancora da completare. Parità con Android e
+  verifica Safari/iPhone restano nel [piano Web](WEB_ANDROID_RELEASE_PARITY.md).
+  Le correzioni operative Eventi e la classificazione degli errori FCM restano
+  attività distinte: non sono distribuite da un commit documentale.
+
+## Registri, prove e GitHub
+
+- [PR 11 — codice e preparazione release, in bozza](https://github.com/meteofriul/meteofriul-app/pull/11).
+- [Verbale build e accettazione Play](https://github.com/meteofriul/meteofriul-app/blob/codex/release-0.1.15/docs/operations/ANDROID_0.1.15_BUILD_20261021.md).
+- [Verbale sul Galaxy e rettifica sulla posizione](https://github.com/meteofriul/meteofriul-app/blob/codex/release-0.1.15/docs/operations/ANDROID_0.1.15_DEVICE_CHECK_20261021.md).
+- [Ricevuta strutturata del dispositivo](https://github.com/meteofriul/meteofriul-app/blob/codex/release-0.1.15/release-history/android-preparation/0.1.15-20261021/device-verification.json).
+- [Registro immutabile del ramo release](https://github.com/meteofriul/meteofriul-app/blob/codex/release-0.1.15/release-history/android-play/README.md).
+- [Regole obbligatorie di preparazione](ANDROID_BUILD_PREVENTION_RULES.md).
+
+Le riserve 300032 (abbandonata senza bundle) e 300033 (bundle accettato da Play)
+restano consumate e immutabili nel ramo release. Non duplicare o riscrivere quei
+record per la sincronizzazione documentale di main: consultarli prima di una
+nuova riserva. I log privati, gli screenshot e gli artefatti firmati restano
+nell'archivio locale ignorato `release-artifacts/android-play/`; non vengono
+pubblicati su GitHub. Sono conservati gli hash delle evidenze nei verbali.
+
+La CI verde controlla il codice nei commit indicati dalle esecuzioni, non
+risolve i rilievi del dispositivo. La PR release rimane in bozza anche dopo
+questo salvataggio. L'aggiornamento del README di main è solo documentale e non
+aggira il precedente rifiuto della promozione del codice.
