@@ -1,0 +1,12 @@
+{
+  "automation_id": "verifica-tolleranze-icon-sulla-nuova-corsa",
+  "status": "ACTIVE",
+  "checks_local": [
+    "2026-10-21T08:20:00+02:00",
+    "2026-10-21T09:20:00+02:00"
+  ],
+  "ordinary_run_utc": "2026-10-21T06:00:00Z",
+  "manual_executions_allowed": false,
+  "qa_manual_allowed": false,
+  "stop_after": "success, actionable problem, or second check"
+}

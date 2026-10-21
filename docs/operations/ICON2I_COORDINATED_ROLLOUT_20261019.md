@@ -1,5 +1,15 @@
 # Passaggio coordinato ICON-2I — piano e stato operativo
 
+> **Aggiornamento 21 ottobre 2026:** la corsa ordinaria delle 08:00 italiane
+> ha pubblicato `20261021T000000Z` con il limite corretto. Verificati checkpoint
+> schema 2, source_quality, 215 documenti, 215 sidecar, entrambi i lettori storici
+> e sei località nazionali. Tolleranze esercitate nei dati reali; nessun QA cloud
+> o invio manuale. Il follow-up è concluso ed eliminato.
+> [Verbale e limiti della verifica](ICON2I_PAYLOAD_LIMIT_DEPLOY_20261020.md).
+> Questo aggiornamento sostituisce le attese e le istruzioni di QA dei piani
+> storici sotto riportati. Le decisioni del consumatore e la consegna degli
+> avvisi non sono certificate dalla sola pubblicazione del produttore.
+
 > Aggiornamento 20 ottobre, ore 11:06 italiane: correzione del checkpoint
 > distribuita al solo produttore, immagine verificata con 123 test passati.
 > Previsioni correnti ancora leggibili dai vecchi client. La nuova corsa e
@@ -126,20 +136,18 @@ dispositivi non sono stati collaudati; nessun aggiornamento Android è stato gen
    né prenotazioni. L'audit usa `local_notice_pilot_runs`, distinguendo modalità
    e identificativo di tentativo; `dry_run` può scrivere l'audit.
    Non usare `deploy-local-notice-job.ps1` per questo QA: configura `send`.
-3. **Fase 03 corretta e ridistribuita:** il job ordinario del 20 ottobre alle
-   08:00 si e fermato prima di pubblicare. Il difetto del checkpoint e corretto
-   nel commit `9ef1410e` e l'immagine `e72f606f...` e distribuita al produttore.
-   Altri job, HTTP e scheduler invariati; esito terminale e dati conservati.
-4. **Nuova corsa e confronto pendenti:** attendere il job ordinario delle
-   20:00, senza acquisizioni manuali. Il follow-up serale e riattivato.
-   Prima verificare checkpoint schema 2, source_quality, 215 letture legacy
-   e sidecar validi; poi un solo QA dry_run e confronto locale sugli stessi
-   punti, ore e source_run_id. Contare candidati cambiati, tolleranze e
-   non valutabili per causa/denominatore, verificando zero invii e prenotazioni
-   attribuibili al QA. Nessun dato vecchio vale come prova della nuova corsa.
-   Il [verbale correttivo](ICON2I_CHECKPOINT_METADATA_DEPLOY_20261020.md)
-   identifica gli script e le nuove evidenze. Gli invii del nuovo consumatore
-   richiedono una successiva autorizzazione dopo questi controlli.
+3. **Fase 03 corretta e ridistribuita:** dopo il difetto dei metadati del
+   checkpoint, la corsa serale del 20 ottobre ha incontrato il tetto di 32 MiB.
+   Anche questa correzione è ora distribuita: limite 64 MiB, lettore 1/2 e
+   packing conservati. [Verbale e rollback](ICON2I_PAYLOAD_LIMIT_DEPLOY_20261020.md).
+4. **Nuova corsa pendente:** attendere il 21 ottobre alle 08:00 italiane,
+   controllo alle 08:20 e, se necessario, 09:20. Verificare digest, esecuzione
+   ordinaria, checkpoint schema 2, source_quality, 215 letture legacy e sidecar.
+   L'ultima autorizzazione esclude tutte le esecuzioni manuali, incluso il QA
+   cloud: sostituisce le istruzioni precedenti che ne prevedevano un avvio.
+   Eventuali confronti solo locali sui dati già pubblicati, con cause e
+   denominatori espliciti. Dati vecchi o metadati assenti non valgono come
+   successo. Nessun nuovo invio è autorizzato.
 
 La fase 02 modifica anche codice condiviso dai riepiloghi mattutino e serale:
 mantengono il rifiuto dei dati incompleti, senza usare la tolleranza per
@@ -169,7 +177,7 @@ non sommare retry come nuove corse e non contare i dispositivi come punti distin
 
 ## Ritorno alla versione precedente
 
-- Produttore: usare l'immagine compatibile della fase 01; deve leggere
+- Produttore: usare il rollback verificato nel [verbale corrente](ICON2I_PAYLOAD_LIMIT_DEPLOY_20261020.md); deve leggere
   checkpoint 1/2 e documenti con la nuova estensione. Vietato tornare al vecchio
   lettore rigido dopo una scrittura schema 2. Non eliminare checkpoint o
   riscrivere dati per forzare un ripristino.

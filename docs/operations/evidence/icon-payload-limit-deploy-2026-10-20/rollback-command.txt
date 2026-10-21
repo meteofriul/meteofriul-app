@@ -1,0 +1,1 @@
+gcloud run jobs update meteofriul-icon --project=meteo-friul --region=europe-west1 --account=meteofriul@gmail.com --image=europe-west1-docker.pkg.dev/meteo-friul/meteofriul/weather-worker@sha256:e72f606ffe1feec5f1c108f945ec5dbce43cfebef3d69913fc72c11b04cbcae2

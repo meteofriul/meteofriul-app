@@ -1,11 +1,11 @@
 # ICON: correzione locale del limite payload, 20 ottobre 2026
 
-**Correzione verificata localmente; non distribuita.**
-Ramo `codex/icon2i-checkpoint-metadata`, base `c8aa724dfae311d004f072010f59a0eb30d26b15`.
-Prosegue lo stesso intervento del checkpoint. Alla verifica iniziale il codice
-era non committato e main invariato; successivamente il proprietario ha
-autorizzato commit e promozione locale (vedere sotto). Nessun push, deploy,
-AAB, installazione, emulatore, acquisizione o invio.
+**Stato alla chiusura della prova locale: correzione verificata, non ancora distribuita.**
+
+Aggiornamento 21 ottobre: correzione distribuita il 20 ottobre e corsa ordinaria
+successiva riuscita. Verificati 215 documenti e sidecar, lettori storici e
+campione nazionale. [Verbale di deploy e chiusura](ICON2I_PAYLOAD_LIMIT_DEPLOY_20261020.md).
+Le verifiche locali descritte sotto precedono il deploy.
 
 ## Problema e intervento
 

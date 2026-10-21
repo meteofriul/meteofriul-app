@@ -1,0 +1,31 @@
+{
+  "build_id": "00bffaee-b3fa-49e3-90ee-6db2647825b5",
+  "status": "SUCCESS",
+  "results": [
+    {
+      "verification": "candidate",
+      "tests": 183,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "success": true,
+      "linux_peak_rss_bytes": 341217280
+    },
+    {
+      "verification": "rollback",
+      "tests": 108,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "success": true,
+      "checkpoint_schemas": [
+        1,
+        2
+      ],
+      "packing_reader_identical": true,
+      "payload_limit_bytes": 33554432
+    }
+  ],
+  "network": "none",
+  "memory_limit_bytes": 1073741824
+}

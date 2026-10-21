@@ -1,0 +1,323 @@
+Step #1: {"runtime_eccodes_api_version": "2.50.0", "source_hashes": "verified", "network": "blocked"}
+Step #1: {"event":"phase_started","provider":"icon2i","severity":"INFO","source_run_id":"20260903T000000Z","stage":"stored_run_verification","status":"started","timestamp":"2026-10-20T19:23:38.697+00:00"}
+Step #1: {"elapsed_seconds":1.33,"event":"phase_completed","provider":"icon2i","severity":"INFO","source_run_id":"20260903T000000Z","stage":"stored_run_verification","status":"completed","timestamp":"2026-10-20T19:23:40.027+00:00"}
+Step #1: {"event":"phase_started","provider":"icon2i","severity":"INFO","source_run_id":"20260903T000000Z","stage":"stored_run_verification","status":"started","timestamp":"2026-10-20T19:23:46.394+00:00"}
+Step #1: {"elapsed_seconds":1.333,"event":"phase_completed","provider":"icon2i","severity":"INFO","source_run_id":"20260903T000000Z","stage":"stored_run_verification","status":"completed","timestamp":"2026-10-20T19:23:47.727+00:00"}
+Step #1: {"before_padding_bytes": 37183656, "checkpoint_expanded_bytes": 26460979, "checkpoint_gzip_bytes": 640325, "checkpoint_schema": 2, "hours": 73, "largest_enriched_document_bytes": 124099, "memory": {"peak_working_set_bytes": 293707776, "working_set_bytes": 234246144}, "municipalities": 215, "old_limit_reproduced": true, "payload_bytes": 37183656, "regression": "synthetic_full_catalog_not_failed_live_payload", "repeat_latest_changed": false, "sidecars_verified": 215, "storage": "memory_only", "tolerance_verified": 15552}
+Step #1: test_enriched_215_by_73_reaches_checkpoint_publication_and_legacy_read (test_icon_snapshot_limits.FullIconSnapshotLimitRegression.test_enriched_215_by_73_reaches_checkpoint_publication_and_legacy_read) ... ok
+Step #1: test_diagnostics_explain_size_without_disclosing_paths (test_icon_snapshot_limits.IconSnapshotLimitTests.test_diagnostics_explain_size_without_disclosing_paths) ... ok
+Step #1: test_exact_limit_and_one_byte_over_remain_bounded_for_both_formats (test_icon_snapshot_limits.IconSnapshotLimitTests.test_exact_limit_and_one_byte_over_remain_bounded_for_both_formats) ... ok
+Step #1: test_hash_run_and_envelope_checks_are_not_bypassed (test_icon_snapshot_limits.IconSnapshotLimitTests.test_hash_run_and_envelope_checks_are_not_bypassed) ... ok
+Step #1: test_observed_size_is_rejected_before_and_read_after_json_and_zip (test_icon_snapshot_limits.IconSnapshotLimitTests.test_observed_size_is_rejected_before_and_read_after_json_and_zip) ... ok
+Step #1: test_read_is_bounded_even_if_file_grows_after_stat (test_icon_snapshot_limits.IconSnapshotLimitTests.test_read_is_bounded_even_if_file_grows_after_stat) ... ok
+Step #1: test_zero_length_report_limit_and_changed_file_still_rejected (test_icon_snapshot_limits.IconSnapshotLimitTests.test_zero_length_report_limit_and_changed_file_still_rejected) ... ok
+Step #1: test_checkpoint_is_pinned_to_original_run_when_newer_run_appears (test_run_pilot.CheckpointAcquisitionTests.test_checkpoint_is_pinned_to_original_run_when_newer_run_appears) ... ok
+Step #1: test_crash_after_atomic_link_leaves_valid_resumable_final_and_never_replaces_it (test_run_pilot.CheckpointAcquisitionTests.test_crash_after_atomic_link_leaves_valid_resumable_final_and_never_replaces_it) ... ok
+Step #1: test_invalid_packing_error_or_unknown_metadata_fails_before_reuse (test_run_pilot.CheckpointAcquisitionTests.test_invalid_packing_error_or_unknown_metadata_fails_before_reuse) ... ok
+Step #1: test_late_failure_resumes_thirteen_validated_fields_and_downloads_only_one (test_run_pilot.CheckpointAcquisitionTests.test_late_failure_resumes_thirteen_validated_fields_and_downloads_only_one) ... ok
+Step #1: test_legacy_fields_without_packing_error_resume_without_rewriting (test_run_pilot.CheckpointAcquisitionTests.test_legacy_fields_without_packing_error_resume_without_rewriting) ... ok
+Step #1: test_semantically_tampered_but_rehashed_field_is_still_rejected (test_run_pilot.CheckpointAcquisitionTests.test_semantically_tampered_but_rehashed_field_is_still_rejected) ... ok
+Step #1: test_tampered_field_fails_closed_without_redownload_or_overwrite (test_run_pilot.CheckpointAcquisitionTests.test_tampered_field_fails_closed_without_redownload_or_overwrite) ... ok
+Step #1: test_tampered_intent_is_rejected_before_any_public_listing (test_run_pilot.CheckpointAcquisitionTests.test_tampered_intent_is_rejected_before_any_public_listing) ... ok
+Step #1: test_valid_checkpoint_cannot_be_rebound_to_changed_catalog_points (test_run_pilot.CheckpointAcquisitionTests.test_valid_checkpoint_cannot_be_rebound_to_changed_catalog_points) ... ok
+Step #1: test_valid_intent_cannot_be_rebound_to_changed_provider_urls (test_run_pilot.CheckpointAcquisitionTests.test_valid_intent_cannot_be_rebound_to_changed_provider_urls) ... ok
+Step #1: test_accumulated_rain_components_retain_documented_flux_descriptors (test_run_pilot.ContractTests.test_accumulated_rain_components_retain_documented_flux_descriptors) ... ok
+Step #1: test_accumulation_must_start_at_run_and_not_be_average_flux (test_run_pilot.ContractTests.test_accumulation_must_start_at_run_and_not_be_average_flux) ... ok
+Step #1: test_all_fourteen_fields_and_native_steps (test_run_pilot.ContractTests.test_all_fourteen_fields_and_native_steps) ... ok
+Step #1: test_grid_relative_winds_are_rejected_without_rotation (test_run_pilot.ContractTests.test_grid_relative_winds_are_rejected_without_rotation) ... ok
+Step #1: test_grid_shape_must_be_consistent (test_run_pilot.ContractTests.test_grid_shape_must_be_consistent) ... ok
+Step #1: test_gust_must_be_previous_hour_maximum (test_run_pilot.ContractTests.test_gust_must_be_previous_hour_maximum) ... ok
+Step #1: test_instant_fields_must_have_start_equal_end (test_run_pilot.ContractTests.test_instant_fields_must_have_start_equal_end) ... ok
+Step #1: test_invalid_leads (test_run_pilot.ContractTests.test_invalid_leads) ... ok
+Step #1: test_run_hour_units_and_validity_must_match (test_run_pilot.ContractTests.test_run_hour_units_and_validity_must_match) ... ok
+Step #1: test_wrong_parameter_units_levels_or_identity (test_run_pilot.ContractTests.test_wrong_parameter_units_levels_or_identity) ... ok
+Step #1: test_bad_grid_mapping_fails_at_first_message (test_run_pilot.DecoderTests.test_bad_grid_mapping_fails_at_first_message) ... ok
+Step #1: test_cached_extraction_must_still_return_all_towns (test_run_pilot.DecoderTests.test_cached_extraction_must_still_return_all_towns) ... ok
+Step #1: test_changed_grid_rejected_without_using_cached_indexes (test_run_pilot.DecoderTests.test_changed_grid_rejected_without_using_cached_indexes) ... ok
+Step #1: test_duplicate_identity_rejected_before_redecode (test_run_pilot.DecoderTests.test_duplicate_identity_rejected_before_redecode) ... ok
+Step #1: test_missing_or_invalid_optional_packing_error_stays_unavailable (test_run_pilot.DecoderTests.test_missing_or_invalid_optional_packing_error_stays_unavailable) ... ok
+Step #1: test_missing_or_nonfinite_values_fail_before_being_seen (test_run_pilot.DecoderTests.test_missing_or_nonfinite_values_fail_before_being_seen) ... ok
+Step #1: test_one_mapping_for_multiple_messages_and_released_handles (test_run_pilot.DecoderTests.test_one_mapping_for_multiple_messages_and_released_handles) ... ok
+Step #1: test_parameter_validation_failure_still_releases_handle (test_run_pilot.DecoderTests.test_parameter_validation_failure_still_releases_handle) ... ok
+Step #1: test_real_decoder_metadata_survives_checkpoint_save_and_read (test_run_pilot.DecoderTests.test_real_decoder_metadata_survives_checkpoint_save_and_read) ... ok
+Step #1: test_entire_215_by_73_synthetic_chain_preserves_semantics_and_limits (test_run_pilot.DeriveTests.test_entire_215_by_73_synthetic_chain_preserves_semantics_and_limits) ... ok
+Step #1: test_near_north_wind_direction_wraps_after_rounding (test_run_pilot.DeriveTests.test_near_north_wind_direction_wraps_after_rounding) ... ok
+Step #1: test_alias_outputs_are_rejected_before_acquisition (test_run_pilot.OutputSafetyTests.test_alias_outputs_are_rejected_before_acquisition) ... ok
+Step #1: test_checkpoint_cannot_alias_or_contain_a_final_output (test_run_pilot.OutputSafetyTests.test_checkpoint_cannot_alias_or_contain_a_final_output) ... ok
+Step #1: test_existing_output_is_never_overwritten_and_no_network_starts (test_run_pilot.OutputSafetyTests.test_existing_output_is_never_overwritten_and_no_network_starts) ... ok
+Step #1: test_failed_acquisition_does_not_create_payload_or_replace_source (test_run_pilot.OutputSafetyTests.test_failed_acquisition_does_not_create_payload_or_replace_source) ... ok
+Step #1: test_failed_derivation_preserves_complete_extracted_snapshot (test_run_pilot.OutputSafetyTests.test_failed_derivation_preserves_complete_extracted_snapshot) ... ok
+Step #1: test_live_acquisition_automatically_uses_source_bound_checkpoint_directory (test_run_pilot.OutputSafetyTests.test_live_acquisition_automatically_uses_source_bound_checkpoint_directory) ... ok
+Step #1: test_missing_output_parent_is_rejected_before_acquisition (test_run_pilot.OutputSafetyTests.test_missing_output_parent_is_rejected_before_acquisition) ... ok
+Step #1: test_offline_replay_rejects_live_checkpoint_argument (test_run_pilot.OutputSafetyTests.test_offline_replay_rejects_live_checkpoint_argument) ... ok
+Step #1: test_output_cannot_alias_replay_source (test_run_pilot.OutputSafetyTests.test_output_cannot_alias_replay_source) ... ok
+Step #1: test_replay_source_is_never_overwritten_on_failure (test_run_pilot.OutputSafetyTests.test_replay_source_is_never_overwritten_on_failure) ... ok
+Step #1: test_successful_offline_replay_is_explicit_and_hashes_actual_output (test_run_pilot.OutputSafetyTests.test_successful_offline_replay_is_explicit_and_hashes_actual_output) ... ok
+Step #1: test_write_new_uses_exclusive_creation (test_run_pilot.OutputSafetyTests.test_write_new_uses_exclusive_creation) ... ok
+Step #1: test_constant_zero_has_zero_effective_quantum_despite_scale (test_run_pilot.QuantumTests.test_constant_zero_has_zero_effective_quantum_despite_scale) ... ok
+Step #1: test_finite_nonnegative_reference_is_supported_by_simple_packing (test_run_pilot.QuantumTests.test_finite_nonnegative_reference_is_supported_by_simple_packing) ... ok
+Step #1: test_invalid_or_overflowing_reference_conversion_is_rejected (test_run_pilot.QuantumTests.test_invalid_or_overflowing_reference_conversion_is_rejected) ... ok
+Step #1: test_invalid_or_overflowing_scales_fail_as_value_error (test_run_pilot.QuantumTests.test_invalid_or_overflowing_scales_fail_as_value_error) ... ok
+Step #1: test_invalid_reference_and_non_simple_packing_are_rejected (test_run_pilot.QuantumTests.test_invalid_reference_and_non_simple_packing_are_rejected) ... ok
+Step #1: test_precision_range_type_and_fractional_bits_are_rejected (test_run_pilot.QuantumTests.test_precision_range_type_and_fractional_bits_are_rejected) ... ok
+Step #1: test_reference_is_converted_to_decoded_units (test_run_pilot.QuantumTests.test_reference_is_converted_to_decoded_units) ... ok
+Step #1: test_variable_packing_quantum_uses_both_scale_factors (test_run_pilot.QuantumTests.test_variable_packing_quantum_uses_both_scale_factors) ... ok
+Step #1: test_explicit_partial_run_fails_instead_of_silently_falling_back (test_run_pilot.RunDiscoveryTests.test_explicit_partial_run_fails_instead_of_silently_falling_back) ... ok
+Step #1: test_newest_with_all_directories_but_missing_file_also_falls_back (test_run_pilot.RunDiscoveryTests.test_newest_with_all_directories_but_missing_file_also_falls_back) ... ok
+Step #1: test_no_published_high_water_preserves_terminal_no_usable_run_error (test_run_pilot.RunDiscoveryTests.test_no_published_high_water_preserves_terminal_no_usable_run_error) ... ok
+Step #1: test_partial_newest_fallback_to_verified_current_is_typed_not_advanced (test_run_pilot.RunDiscoveryTests.test_partial_newest_fallback_to_verified_current_is_typed_not_advanced) ... ok
+Step #1: test_partial_newest_falls_back_to_newest_complete_usable_run (test_run_pilot.RunDiscoveryTests.test_partial_newest_falls_back_to_newest_complete_usable_run) ... ok
+Step #1: test_provider_pruning_to_an_older_run_is_also_not_advanced (test_run_pilot.RunDiscoveryTests.test_provider_pruning_to_an_older_run_is_also_not_advanced) ... ok
+Step #1: test_unusable_newer_run_is_skipped_before_field_discovery (test_run_pilot.RunDiscoveryTests.test_unusable_newer_run_is_skipped_before_field_discovery) ... ok
+Step #1: test_verified_current_below_48h_residual_is_retryable_not_advanced (test_run_pilot.RunDiscoveryTests.test_verified_current_below_48h_residual_is_retryable_not_advanced) ... ok
+Step #1: test_verified_current_does_not_block_a_complete_newer_run (test_run_pilot.RunDiscoveryTests.test_verified_current_does_not_block_a_complete_newer_run) ... ok
+Step #1: test_verified_rollback_high_water_blocks_the_newer_revoked_run (test_run_pilot.RunDiscoveryTests.test_verified_rollback_high_water_blocks_the_newer_revoked_run) ... ok
+Step #1: test_exact_municipality_count_and_unique_slugs_are_required (test_run_pilot.SnapshotTests.test_exact_municipality_count_and_unique_slugs_are_required) ... ok
+Step #1: test_extra_field_is_not_silently_accepted (test_run_pilot.SnapshotTests.test_extra_field_is_not_silently_accepted) ... ok
+Step #1: test_grid_hash_changes_are_rejected (test_run_pilot.SnapshotTests.test_grid_hash_changes_are_rejected) ... ok
+Step #1: test_invalid_mapping_distance_or_index_is_rejected (test_run_pilot.SnapshotTests.test_invalid_mapping_distance_or_index_is_rejected) ... ok
+Step #1: test_missing_hour_and_tampered_timestamp_are_rejected (test_run_pilot.SnapshotTests.test_missing_hour_and_tampered_timestamp_are_rejected) ... ok
+Step #1: test_native_field_and_point_counts_are_required (test_run_pilot.SnapshotTests.test_native_field_and_point_counts_are_required) ... ok
+Step #1: test_nonfinite_boolean_or_text_raw_values_are_rejected (test_run_pilot.SnapshotTests.test_nonfinite_boolean_or_text_raw_values_are_rejected) ... ok
+Step #1: test_nonfinite_or_out_of_range_point_coordinates_are_rejected (test_run_pilot.SnapshotTests.test_nonfinite_or_out_of_range_point_coordinates_are_rejected) ... ok
+Step #1: test_run_label_must_match_run_code (test_run_pilot.SnapshotTests.test_run_label_must_match_run_code) ... ok
+Step #1: test_schema_kind_and_missing_fields_fail_closed (test_run_pilot.SnapshotTests.test_schema_kind_and_missing_fields_fail_closed) ... ok
+Step #1: test_synthetic_full_215_by_73_snapshot_validates (test_run_pilot.SnapshotTests.test_synthetic_full_215_by_73_snapshot_validates) ... ok
+Step #1: test_tampered_quantum_is_not_trusted_on_replay (test_run_pilot.SnapshotTests.test_tampered_quantum_is_not_trusted_on_replay) ... ok
+Step #1: test_bad_header_edition_and_size (test_run_pilot.StreamFramingTests.test_bad_header_edition_and_size) ... ok
+Step #1: test_bad_trailer (test_run_pilot.StreamFramingTests.test_bad_trailer) ... ok
+Step #1: test_chunk_size_limit (test_run_pilot.StreamFramingTests.test_chunk_size_limit) ... ok
+Step #1: test_every_single_split_boundary (test_run_pilot.StreamFramingTests.test_every_single_split_boundary) ... ok
+Step #1: test_header_and_payload_truncation (test_run_pilot.StreamFramingTests.test_header_and_payload_truncation) ... ok
+Step #1: test_missing_extra_and_trailing_garbage_are_rejected (test_run_pilot.StreamFramingTests.test_missing_extra_and_trailing_garbage_are_rejected) ... ok
+Step #1: test_native_73_messages_in_one_chunk (test_run_pilot.StreamFramingTests.test_native_73_messages_in_one_chunk) ... ok
+Step #1: test_one_byte_chunks_and_empty_chunks (test_run_pilot.StreamFramingTests.test_one_byte_chunks_and_empty_chunks) ... ok
+Step #1: test_body_larger_than_declared_never_succeeds (test_run_pilot.StreamingReaderTests.test_body_larger_than_declared_never_succeeds) ... ok
+Step #1: test_compressed_or_unbounded_content_length_is_rejected (test_run_pilot.StreamingReaderTests.test_compressed_or_unbounded_content_length_is_rejected) ... ok
+Step #1: test_early_consumer_stop_closes_response_and_does_not_claim_success (test_run_pilot.StreamingReaderTests.test_early_consumer_stop_closes_response_and_does_not_claim_success) ... ok
+Step #1: test_off_scope_urls_do_not_make_requests (test_run_pilot.StreamingReaderTests.test_off_scope_urls_do_not_make_requests) ... ok
+Step #1: test_preflight_total_budget_counts_prior_metadata (test_run_pilot.StreamingReaderTests.test_preflight_total_budget_counts_prior_metadata) ... ok
+Step #1: test_redirect_partial_and_error_responses_are_not_fallbacks (test_run_pilot.StreamingReaderTests.test_redirect_partial_and_error_responses_are_not_fallbacks) ... ok
+Step #1: test_stream_http_status_preserves_retry_classification_and_closes (test_run_pilot.StreamingReaderTests.test_stream_http_status_preserves_retry_classification_and_closes) ... ok
+Step #1: test_success_status_with_invalid_encoding_is_not_a_retryable_http_failure (test_run_pilot.StreamingReaderTests.test_success_status_with_invalid_encoding_is_not_a_retryable_http_failure) ... ok
+Step #1: test_total_budget_still_checked_during_transfer (test_run_pilot.StreamingReaderTests.test_total_budget_still_checked_during_transfer) ... ok
+Step #1: test_truncated_body_never_succeeds (test_run_pilot.StreamingReaderTests.test_truncated_body_never_succeeds) ... ok
+Step #1: test_valid_stream_measures_bytes_digest_and_closes (test_run_pilot.StreamingReaderTests.test_valid_stream_measures_bytes_digest_and_closes) ... ok
+Step #1: test_errors_never_call_untrusted_str_and_log_only_controlled_message (test_operational_diagnostics.OperationalDiagnosticsTests.test_errors_never_call_untrusted_str_and_log_only_controlled_message) ... ok
+Step #1: test_icon_field_checkpoint_reports_safe_inner_location_and_reason (test_operational_diagnostics.OperationalDiagnosticsTests.test_icon_field_checkpoint_reports_safe_inner_location_and_reason) ... ok
+Step #1: test_icon_recovery_failures_keep_readable_controlled_reasons (test_operational_diagnostics.OperationalDiagnosticsTests.test_icon_recovery_failures_keep_readable_controlled_reasons) ... ok
+Step #1: test_innermost_failed_stage_survives_outer_context_and_system_exit (test_operational_diagnostics.OperationalDiagnosticsTests.test_innermost_failed_stage_survives_outer_context_and_system_exit) ... ok
+Step #1: test_logging_failure_does_not_change_success_or_replace_original_error (test_operational_diagnostics.OperationalDiagnosticsTests.test_logging_failure_does_not_change_success_or_replace_original_error) ... ok
+Step #1: test_phase_records_success_and_resets_context (test_operational_diagnostics.OperationalDiagnosticsTests.test_phase_records_success_and_resets_context) ... ok
+Step #1: test_safe_inner_cause_is_not_lost_when_publication_wraps_it (test_operational_diagnostics.OperationalDiagnosticsTests.test_safe_inner_cause_is_not_lost_when_publication_wraps_it) ... ok
+Step #1: test_sensitive_unknown_fields_urls_absolute_paths_and_nested_data_are_dropped (test_operational_diagnostics.OperationalDiagnosticsTests.test_sensitive_unknown_fields_urls_absolute_paths_and_nested_data_are_dropped) ... ok
+Step #1: test_tolerance_denominators_and_guard_reasons_survive_safe_logging (test_operational_diagnostics.OperationalDiagnosticsTests.test_tolerance_denominators_and_guard_reasons_survive_safe_logging) ... ok
+Step #1: test_unknown_inner_run_does_not_erase_verified_outer_run_context (test_operational_diagnostics.OperationalDiagnosticsTests.test_unknown_inner_run_does_not_erase_verified_outer_run_context) ... ok
+Step #1: test_full_producer_materializer_and_quality_counts (test_accumulation_tolerance.AccumulationToleranceTests.test_full_producer_materializer_and_quality_counts) ... ok
+Step #1: test_legacy_rows_and_verified_extension_validate_but_forged_proof_does_not (test_accumulation_tolerance.AccumulationToleranceTests.test_legacy_rows_and_verified_extension_validate_but_forged_proof_does_not) ... ok
+Step #1: test_missing_packing_and_genuine_missing_are_distinct (test_accumulation_tolerance.AccumulationToleranceTests.test_missing_packing_and_genuine_missing_are_distinct) ... ok
+Step #1: test_negative_resolution_is_explicit_and_missing_never_verified (test_accumulation_tolerance.AccumulationToleranceTests.test_negative_resolution_is_explicit_and_missing_never_verified) ... ok
+Step #1: test_sum_of_components_not_a_budget_per_component (test_accumulation_tolerance.AccumulationToleranceTests.test_sum_of_components_not_a_budget_per_component) ... ok
+Step #1: test_tampered_diagnostics_are_rejected (test_icon_quality.QualityCheckpointTests.test_tampered_diagnostics_are_rejected) ... ok
+Step #1: test_v2_round_trip_keeps_public_bytes_and_v1_remains_readable (test_icon_quality.QualityCheckpointTests.test_v2_round_trip_keeps_public_bytes_and_v1_remains_readable) ... ok
+Step #1: test_wrong_run_identity_and_oversized_diagnostics_are_rejected (test_icon_quality.QualityCheckpointTests.test_wrong_run_identity_and_oversized_diagnostics_are_rejected) ... ok
+Step #1: test_distinct_towns_on_same_grid_are_counted_but_not_sampled_twice (test_icon_quality.SourceQualityTests.test_distinct_towns_on_same_grid_are_counted_but_not_sampled_twice) ... ok
+Step #1: test_legacy_checkpoint_quality_is_unavailable_not_zero (test_icon_quality.SourceQualityTests.test_legacy_checkpoint_quality_is_unavailable_not_zero) ... ok
+Step #1: test_raw_thermal_evidence_and_saturated_controls_do_not_change_public_values (test_icon_quality.SourceQualityTests.test_raw_thermal_evidence_and_saturated_controls_do_not_change_public_values) ... ok
+Step #1: test_sample_cap_does_not_truncate_counts_and_resolution_is_retained (test_icon_quality.SourceQualityTests.test_sample_cap_does_not_truncate_counts_and_resolution_is_retained) ... ok
+Step #1: test_bad_gzip_truncation_and_wrong_slot_are_rejected (test_icon_checkpoint.IconCheckpointTests.test_bad_gzip_truncation_and_wrong_slot_are_rejected) ... ok
+Step #1: test_changed_authoritative_catalog_rejects_old_checkpoint (test_icon_checkpoint.IconCheckpointTests.test_changed_authoritative_catalog_rejects_old_checkpoint) ... ok
+Step #1: test_frozen_time_conflict_is_not_overwritten (test_icon_checkpoint.IconCheckpointTests.test_frozen_time_conflict_is_not_overwritten) ... ok
+Step #1: test_gzip_expansion_is_bounded_before_json_parse (test_icon_checkpoint.IconCheckpointTests.test_gzip_expansion_is_bounded_before_json_parse) ... ok
+Step #1: test_lost_checkpoint_response_reconciles_identical_create (test_icon_checkpoint.IconCheckpointTests.test_lost_checkpoint_response_reconciles_identical_create) ... ok
+Step #1: test_restart_read_has_no_writes (test_icon_checkpoint.IconCheckpointTests.test_restart_read_has_no_writes) ... ok
+Step #1: test_round_trip_authenticates_all_215_and_preserves_exact_bytes (test_icon_checkpoint.IconCheckpointTests.test_round_trip_authenticates_all_215_and_preserves_exact_bytes) ... ok
+Step #1: test_tampered_payload_and_intent_fingerprint_fail_closed (test_icon_checkpoint.IconCheckpointTests.test_tampered_payload_and_intent_fingerprint_fail_closed) ... ok
+Step #1: test_wrong_storage_hash_or_mime_is_rejected (test_icon_checkpoint.IconCheckpointTests.test_wrong_storage_hash_or_mime_is_rejected) ... ok
+Step #1: test_evidence_cannot_cross_weather_bytes_run_city_or_hour (test_icon_accumulation_sidecar.IconSidecarTests.test_evidence_cannot_cross_weather_bytes_run_city_or_hour) ... ok
+Step #1: {"event":"phase_started","provider":"icon2i","severity":"INFO","source_run_id":"20261019T000000Z","stage":"stored_run_verification","status":"started","timestamp":"2026-10-20T19:24:58.288+00:00"}
+Step #1: {"elapsed_seconds":1.223,"event":"phase_completed","provider":"icon2i","severity":"INFO","source_run_id":"20261019T000000Z","stage":"stored_run_verification","status":"completed","timestamp":"2026-10-20T19:24:59.511+00:00"}
+Step #1: {"event":"phase_started","provider":"icon2i","severity":"INFO","source_run_id":"20261019T000000Z","stage":"stored_run_verification","status":"started","timestamp":"2026-10-20T19:25:02.086+00:00"}
+Step #1: {"elapsed_seconds":1.24,"event":"phase_completed","provider":"icon2i","severity":"INFO","source_run_id":"20261019T000000Z","stage":"stored_run_verification","status":"completed","timestamp":"2026-10-20T19:25:03.326+00:00"}
+Step #1: test_public_documents_have_only_original_fields_and_nulls (test_icon_accumulation_sidecar.IconSidecarTests.test_public_documents_have_only_original_fields_and_nulls) ... ok
+Step #1: {"event":"phase_started","provider":"icon2i","severity":"INFO","source_run_id":"20261019T000000Z","stage":"stored_run_verification","status":"started","timestamp":"2026-10-20T19:25:07.040+00:00"}
+Step #1: {"elapsed_seconds":1.245,"event":"phase_completed","provider":"icon2i","severity":"INFO","source_run_id":"20261019T000000Z","stage":"stored_run_verification","status":"completed","timestamp":"2026-10-20T19:25:08.284+00:00"}
+Step #1: test_reader_rejects_corrupted_evidence_but_keeps_public_weather (test_icon_accumulation_sidecar.IconSidecarTests.test_reader_rejects_corrupted_evidence_but_keeps_public_weather) ... ok
+Step #1: {"event":"phase_started","provider":"icon2i","severity":"INFO","source_run_id":"20261019T000000Z","stage":"stored_run_verification","status":"started","timestamp":"2026-10-20T19:25:12.022+00:00"}
+Step #1: {"elapsed_seconds":1.267,"event":"phase_completed","provider":"icon2i","severity":"INFO","source_run_id":"20261019T000000Z","stage":"stored_run_verification","status":"completed","timestamp":"2026-10-20T19:25:13.289+00:00"}
+Step #1: {"event":"phase_started","provider":"icon2i","severity":"INFO","source_run_id":"20261019T000000Z","stage":"stored_run_verification","status":"started","timestamp":"2026-10-20T19:25:16.426+00:00"}
+Step #1: {"elapsed_seconds":1.219,"event":"phase_completed","provider":"icon2i","severity":"INFO","source_run_id":"20261019T000000Z","stage":"stored_run_verification","status":"completed","timestamp":"2026-10-20T19:25:17.646+00:00"}
+Step #1: {"event":"phase_started","provider":"icon2i","severity":"INFO","source_run_id":"20261019T000000Z","stage":"stored_run_verification","status":"started","timestamp":"2026-10-20T19:25:21.972+00:00"}
+Step #1: {"elapsed_seconds":1.216,"event":"phase_completed","provider":"icon2i","severity":"INFO","source_run_id":"20261019T000000Z","stage":"stored_run_verification","status":"completed","timestamp":"2026-10-20T19:25:23.188+00:00"}
+Step #1: test_recovery_authenticates_enriched_fingerprint_after_manifest_crash (test_icon_accumulation_sidecar.IconSidecarTests.test_recovery_authenticates_enriched_fingerprint_after_manifest_crash) ... ok
+Step #1: {"event":"phase_started","provider":"icon2i","severity":"INFO","source_run_id":"20261019T000000Z","stage":"stored_run_verification","status":"started","timestamp":"2026-10-20T19:25:28.116+00:00"}
+Step #1: {"elapsed_seconds":1.231,"event":"phase_completed","provider":"icon2i","severity":"INFO","source_run_id":"20261019T000000Z","stage":"stored_run_verification","status":"completed","timestamp":"2026-10-20T19:25:29.347+00:00"}
+Step #1: test_recovery_rejects_missing_or_changed_evidence (test_icon_accumulation_sidecar.IconSidecarTests.test_recovery_rejects_missing_or_changed_evidence) ... ok
+Step #1: test_route_is_scoped_to_icon_and_rejects_path_traversal (test_icon_accumulation_sidecar.IconSidecarTests.test_route_is_scoped_to_icon_and_rejects_path_traversal) ... ok
+Step #1: test_sidecar_failure_never_advances_latest (test_icon_accumulation_sidecar.IconSidecarTests.test_sidecar_failure_never_advances_latest) ... ok
+Step #1: {"event":"phase_started","provider":"icon2i","severity":"INFO","source_run_id":"20261019T000000Z","stage":"stored_run_verification","status":"started","timestamp":"2026-10-20T19:25:39.005+00:00"}
+Step #1: {"elapsed_seconds":1.228,"event":"phase_completed","provider":"icon2i","severity":"INFO","source_run_id":"20261019T000000Z","stage":"stored_run_verification","status":"completed","timestamp":"2026-10-20T19:25:40.232+00:00"}
+Step #1: {"event":"phase_started","provider":"icon2i","severity":"INFO","source_run_id":"20261019T000000Z","stage":"stored_run_verification","status":"started","timestamp":"2026-10-20T19:25:42.485+00:00"}
+Step #1: {"elapsed_seconds":1.227,"event":"phase_completed","provider":"icon2i","severity":"INFO","source_run_id":"20261019T000000Z","stage":"stored_run_verification","status":"completed","timestamp":"2026-10-20T19:25:43.712+00:00"}
+Step #1: {"event":"phase_started","provider":"icon2i","severity":"INFO","source_run_id":"20261019T120000Z","stage":"stored_run_verification","status":"started","timestamp":"2026-10-20T19:25:49.560+00:00"}
+Step #1: {"elapsed_seconds":1.214,"event":"phase_completed","provider":"icon2i","severity":"INFO","source_run_id":"20261019T120000Z","stage":"stored_run_verification","status":"completed","timestamp":"2026-10-20T19:25:50.774+00:00"}
+Step #1: test_staged_or_revoked_evidence_is_not_exposed (test_icon_accumulation_sidecar.IconSidecarTests.test_staged_or_revoked_evidence_is_not_exposed) ... ok
+Step #1: test_cams_job_publishes_both_views_without_icon (test_job_entrypoints.CamsEntrypointTests.test_cams_job_publishes_both_views_without_icon) ... ok
+Step #1: test_cams_replay_is_no_op_but_held_lease_requests_retry (test_job_entrypoints.CamsEntrypointTests.test_cams_replay_is_no_op_but_held_lease_requests_retry) ... ok
+Step #1: test_classifier_rejects_guessing_for_unknown_errors (test_job_entrypoints.CamsEntrypointTests.test_classifier_rejects_guessing_for_unknown_errors) ... ok
+Step #1: test_invalid_evidence_requires_review_and_is_not_retried (test_job_entrypoints.CamsEntrypointTests.test_invalid_evidence_requires_review_and_is_not_retried) ... ok
+Step #1: test_lost_lease_is_retryable_but_invalid_evidence_is_not (test_job_entrypoints.CamsEntrypointTests.test_lost_lease_is_retryable_but_invalid_evidence_is_not) ... ok
+Step #1: test_mixed_or_superseded_cams_publication_requires_review (test_job_entrypoints.CamsEntrypointTests.test_mixed_or_superseded_cams_publication_requires_review) ... ok
+Step #1: test_ambiguous_sqlite_failure_requires_review_without_leaking_messages (test_job_entrypoints.IconEntrypointTests.test_ambiguous_sqlite_failure_requires_review_without_leaking_messages) ... ok
+Step #1: test_icon_job_publishes_only_icon (test_job_entrypoints.IconEntrypointTests.test_icon_job_publishes_only_icon) ... ok
+Step #1: test_icon_publish_gate_rejects_changed_bytes_or_wrong_run (test_job_entrypoints.IconEntrypointTests.test_icon_publish_gate_rejects_changed_bytes_or_wrong_run) ... ok
+Step #1: test_icon_replay_and_old_run_are_successful_no_ops (test_job_entrypoints.IconEntrypointTests.test_icon_replay_and_old_run_are_successful_no_ops) ... ok
+Step #1: test_prepared_icon_binds_run_and_fingerprint_before_intent (test_job_entrypoints.IconEntrypointTests.test_prepared_icon_binds_run_and_fingerprint_before_intent) ... ok
+Step #1: test_prepared_icon_commit_never_reopens_source_paths (test_job_entrypoints.IconEntrypointTests.test_prepared_icon_commit_never_reopens_source_paths) ... ok
+Step #1: test_recovery_preserves_retry_classification_and_run (test_job_entrypoints.IconEntrypointTests.test_recovery_preserves_retry_classification_and_run) ... ok
+Step #1: test_recovery_refuses_cams_without_touching_publisher (test_job_entrypoints.IconEntrypointTests.test_recovery_refuses_cams_without_touching_publisher) ... ok
+Step #1: test_recovery_uses_only_existing_publication_with_frozen_identity (test_job_entrypoints.IconEntrypointTests.test_recovery_uses_only_existing_publication_with_frozen_identity) ... ok
+Step #1: test_unknown_programming_failure_is_not_hidden (test_job_entrypoints.IconEntrypointTests.test_unknown_programming_failure_is_not_hidden) ... ok
+Step #1: test_wrong_icon_provider_requires_review (test_job_entrypoints.IconEntrypointTests.test_wrong_icon_provider_requires_review) ... ok
+Step #1: test_classified_remote_failure_keeps_run_http_operation_and_safe_cause (test_job_entrypoints.JobResultTests.test_classified_remote_failure_keeps_run_http_operation_and_safe_cause) ... ok
+Step #1: test_invalid_or_misleading_results_fail_closed (test_job_entrypoints.JobResultTests.test_invalid_or_misleading_results_fail_closed) ... ok
+Step #1: test_known_failed_run_is_preserved_but_unsafe_identifier_is_not_logged (test_job_entrypoints.JobResultTests.test_known_failed_run_is_preserved_but_unsafe_identifier_is_not_logged) ... ok
+Step #1: test_publication_intent_and_local_io_failures_are_secret_free (test_job_entrypoints.JobResultTests.test_publication_intent_and_local_io_failures_are_secret_free) ... ok
+Step #1: test_result_envelope_and_exit_codes_are_stable (test_job_entrypoints.JobResultTests.test_result_envelope_and_exit_codes_are_stable) ... ok
+Step #1: test_checkpoint_precedes_intent_and_publication (test_cloud_worker.IconRecoveryWorkerTests.test_checkpoint_precedes_intent_and_publication) ... ok
+Step #1: test_conflicting_terminal_create_is_not_blindly_accepted (test_cloud_worker.IconRecoveryWorkerTests.test_conflicting_terminal_create_is_not_blindly_accepted) ... ok
+Step #1: test_corrupt_checkpoint_never_falls_back_to_acquisition (test_cloud_worker.IconRecoveryWorkerTests.test_corrupt_checkpoint_never_falls_back_to_acquisition) ... ok
+Step #1: test_execution_claim_allows_only_next_attempt_same_owner (test_cloud_worker.IconRecoveryWorkerTests.test_execution_claim_allows_only_next_attempt_same_owner) ... ok
+Step #1: test_execution_keeps_original_slot_after_midnight (test_cloud_worker.IconRecoveryWorkerTests.test_execution_keeps_original_slot_after_midnight) ... ok
+Step #1: test_explicit_recovery_never_claims_or_acquires (test_cloud_worker.IconRecoveryWorkerTests.test_explicit_recovery_never_claims_or_acquires) ... ok
+Step #1: test_hard_error_stays_blocked_without_reacquisition_or_retry (test_cloud_worker.IconRecoveryWorkerTests.test_hard_error_stays_blocked_without_reacquisition_or_retry) ... ok
+Step #1: test_kill_before_checkpoint_allows_same_execution_task_retry (test_cloud_worker.IconRecoveryWorkerTests.test_kill_before_checkpoint_allows_same_execution_task_retry) ... ok
+Step #1: test_legacy_claim_without_checkpoint_never_reacquires (test_cloud_worker.IconRecoveryWorkerTests.test_legacy_claim_without_checkpoint_never_reacquires) ... ok
+Step #1: test_quality_reaches_actual_stdout_on_resume_without_acquisition (test_cloud_worker.IconRecoveryWorkerTests.test_quality_reaches_actual_stdout_on_resume_without_acquisition) ... ok
+Step #1: test_recovery_configuration_rejected_before_cloud_access (test_cloud_worker.IconRecoveryWorkerTests.test_recovery_configuration_rejected_before_cloud_access) ... ok
+Step #1: test_source_transport_failures_remain_retryable_without_blocked_marker (test_cloud_worker.IconRecoveryWorkerTests.test_source_transport_failures_remain_retryable_without_blocked_marker) ... ok
+Step #1: test_terminal_success_is_reverified_not_trusted_after_revocation (test_cloud_worker.IconRecoveryWorkerTests.test_terminal_success_is_reverified_not_trusted_after_revocation) ... ok
+Step #1: test_transient_publication_is_bounded_and_never_reacquires (test_cloud_worker.IconRecoveryWorkerTests.test_transient_publication_is_bounded_and_never_reacquires) ... ok
+Step #1: test_typed_public_http_status_is_classified_without_message_parsing (test_cloud_worker.IconRecoveryWorkerTests.test_typed_public_http_status_is_classified_without_message_parsing) ... ok
+Step #1: test_valid_checkpoint_survives_process_kill_without_redownload (test_cloud_worker.IconRecoveryWorkerTests.test_valid_checkpoint_survives_process_kill_without_redownload) ... ok
+Step #1: test_verified_pointer_high_water_includes_real_contract_fields (test_cloud_worker.IconRecoveryWorkerTests.test_verified_pointer_high_water_includes_real_contract_fields) ... ok
+Step #1: test_verified_rollback_high_water_is_retryable_before_materialization_or_intent (test_cloud_worker.IconRecoveryWorkerTests.test_verified_rollback_high_water_is_retryable_before_materialization_or_intent) ... ok
+Step #1: test_daily_dispatch_limits (test_cloud_worker.WorkerTests.test_daily_dispatch_limits) ... ok
+Step #1: test_publication_failure_is_not_a_successful_cloud_job (test_cloud_worker.WorkerTests.test_publication_failure_is_not_a_successful_cloud_job) ... ok
+Step #1: test_published_cams_skips_submission_and_dispatch (test_cloud_worker.WorkerTests.test_published_cams_skips_submission_and_dispatch) ... ok
+Step #1: test_refuses_beta_before_opening_client (test_cloud_worker.WorkerTests.test_refuses_beta_before_opening_client) ... ok
+Step #1: {"verification": "candidate", "tests": 183, "failures": 0, "errors": 0, "skipped": 0, "success": true, "linux_peak_rss_bytes": 341217280}
+Step #1: test_slot_prevents_duplicate_acquisition (test_cloud_worker.WorkerTests.test_slot_prevents_duplicate_acquisition) ... ok
+Step #1: Ran 183 tests in 170.072s
+Step #1: OK
+Step #2: test_tampered_diagnostics_are_rejected (test_icon_quality.QualityCheckpointTests.test_tampered_diagnostics_are_rejected) ... ok
+Step #2: test_v2_round_trip_keeps_public_bytes_and_v1_remains_readable (test_icon_quality.QualityCheckpointTests.test_v2_round_trip_keeps_public_bytes_and_v1_remains_readable) ... ok
+Step #2: test_wrong_run_identity_and_oversized_diagnostics_are_rejected (test_icon_quality.QualityCheckpointTests.test_wrong_run_identity_and_oversized_diagnostics_are_rejected) ... ok
+Step #2: test_distinct_towns_on_same_grid_are_counted_but_not_sampled_twice (test_icon_quality.SourceQualityTests.test_distinct_towns_on_same_grid_are_counted_but_not_sampled_twice) ... ok
+Step #2: test_legacy_checkpoint_quality_is_unavailable_not_zero (test_icon_quality.SourceQualityTests.test_legacy_checkpoint_quality_is_unavailable_not_zero) ... ok
+Step #2: test_raw_thermal_evidence_and_saturated_controls_do_not_change_public_values (test_icon_quality.SourceQualityTests.test_raw_thermal_evidence_and_saturated_controls_do_not_change_public_values) ... ok
+Step #2: test_sample_cap_does_not_truncate_counts_and_resolution_is_retained (test_icon_quality.SourceQualityTests.test_sample_cap_does_not_truncate_counts_and_resolution_is_retained) ... ok
+Step #2: test_bad_gzip_truncation_and_wrong_slot_are_rejected (test_icon_checkpoint.IconCheckpointTests.test_bad_gzip_truncation_and_wrong_slot_are_rejected) ... ok
+Step #2: test_changed_authoritative_catalog_rejects_old_checkpoint (test_icon_checkpoint.IconCheckpointTests.test_changed_authoritative_catalog_rejects_old_checkpoint) ... ok
+Step #2: test_frozen_time_conflict_is_not_overwritten (test_icon_checkpoint.IconCheckpointTests.test_frozen_time_conflict_is_not_overwritten) ... ok
+Step #2: test_gzip_expansion_is_bounded_before_json_parse (test_icon_checkpoint.IconCheckpointTests.test_gzip_expansion_is_bounded_before_json_parse) ... ok
+Step #2: test_lost_checkpoint_response_reconciles_identical_create (test_icon_checkpoint.IconCheckpointTests.test_lost_checkpoint_response_reconciles_identical_create) ... ok
+Step #2: test_restart_read_has_no_writes (test_icon_checkpoint.IconCheckpointTests.test_restart_read_has_no_writes) ... ok
+Step #2: test_round_trip_authenticates_all_215_and_preserves_exact_bytes (test_icon_checkpoint.IconCheckpointTests.test_round_trip_authenticates_all_215_and_preserves_exact_bytes) ... ok
+Step #2: test_tampered_payload_and_intent_fingerprint_fail_closed (test_icon_checkpoint.IconCheckpointTests.test_tampered_payload_and_intent_fingerprint_fail_closed) ... ok
+Step #2: test_wrong_storage_hash_or_mime_is_rejected (test_icon_checkpoint.IconCheckpointTests.test_wrong_storage_hash_or_mime_is_rejected) ... ok
+Step #2: test_checkpoint_is_pinned_to_original_run_when_newer_run_appears (test_run_pilot.CheckpointAcquisitionTests.test_checkpoint_is_pinned_to_original_run_when_newer_run_appears) ... ok
+Step #2: test_crash_after_atomic_link_leaves_valid_resumable_final_and_never_replaces_it (test_run_pilot.CheckpointAcquisitionTests.test_crash_after_atomic_link_leaves_valid_resumable_final_and_never_replaces_it) ... ok
+Step #2: test_invalid_packing_error_or_unknown_metadata_fails_before_reuse (test_run_pilot.CheckpointAcquisitionTests.test_invalid_packing_error_or_unknown_metadata_fails_before_reuse) ... ok
+Step #2: test_late_failure_resumes_thirteen_validated_fields_and_downloads_only_one (test_run_pilot.CheckpointAcquisitionTests.test_late_failure_resumes_thirteen_validated_fields_and_downloads_only_one) ... ok
+Step #2: test_legacy_fields_without_packing_error_resume_without_rewriting (test_run_pilot.CheckpointAcquisitionTests.test_legacy_fields_without_packing_error_resume_without_rewriting) ... ok
+Step #2: test_semantically_tampered_but_rehashed_field_is_still_rejected (test_run_pilot.CheckpointAcquisitionTests.test_semantically_tampered_but_rehashed_field_is_still_rejected) ... ok
+Step #2: test_tampered_field_fails_closed_without_redownload_or_overwrite (test_run_pilot.CheckpointAcquisitionTests.test_tampered_field_fails_closed_without_redownload_or_overwrite) ... ok
+Step #2: test_tampered_intent_is_rejected_before_any_public_listing (test_run_pilot.CheckpointAcquisitionTests.test_tampered_intent_is_rejected_before_any_public_listing) ... ok
+Step #2: test_valid_checkpoint_cannot_be_rebound_to_changed_catalog_points (test_run_pilot.CheckpointAcquisitionTests.test_valid_checkpoint_cannot_be_rebound_to_changed_catalog_points) ... ok
+Step #2: test_valid_intent_cannot_be_rebound_to_changed_provider_urls (test_run_pilot.CheckpointAcquisitionTests.test_valid_intent_cannot_be_rebound_to_changed_provider_urls) ... ok
+Step #2: test_accumulated_rain_components_retain_documented_flux_descriptors (test_run_pilot.ContractTests.test_accumulated_rain_components_retain_documented_flux_descriptors) ... ok
+Step #2: test_accumulation_must_start_at_run_and_not_be_average_flux (test_run_pilot.ContractTests.test_accumulation_must_start_at_run_and_not_be_average_flux) ... ok
+Step #2: test_all_fourteen_fields_and_native_steps (test_run_pilot.ContractTests.test_all_fourteen_fields_and_native_steps) ... ok
+Step #2: test_grid_relative_winds_are_rejected_without_rotation (test_run_pilot.ContractTests.test_grid_relative_winds_are_rejected_without_rotation) ... ok
+Step #2: test_grid_shape_must_be_consistent (test_run_pilot.ContractTests.test_grid_shape_must_be_consistent) ... ok
+Step #2: test_gust_must_be_previous_hour_maximum (test_run_pilot.ContractTests.test_gust_must_be_previous_hour_maximum) ... ok
+Step #2: test_instant_fields_must_have_start_equal_end (test_run_pilot.ContractTests.test_instant_fields_must_have_start_equal_end) ... ok
+Step #2: test_invalid_leads (test_run_pilot.ContractTests.test_invalid_leads) ... ok
+Step #2: test_run_hour_units_and_validity_must_match (test_run_pilot.ContractTests.test_run_hour_units_and_validity_must_match) ... ok
+Step #2: test_wrong_parameter_units_levels_or_identity (test_run_pilot.ContractTests.test_wrong_parameter_units_levels_or_identity) ... ok
+Step #2: test_bad_grid_mapping_fails_at_first_message (test_run_pilot.DecoderTests.test_bad_grid_mapping_fails_at_first_message) ... ok
+Step #2: test_cached_extraction_must_still_return_all_towns (test_run_pilot.DecoderTests.test_cached_extraction_must_still_return_all_towns) ... ok
+Step #2: test_changed_grid_rejected_without_using_cached_indexes (test_run_pilot.DecoderTests.test_changed_grid_rejected_without_using_cached_indexes) ... ok
+Step #2: test_duplicate_identity_rejected_before_redecode (test_run_pilot.DecoderTests.test_duplicate_identity_rejected_before_redecode) ... ok
+Step #2: test_missing_or_invalid_optional_packing_error_stays_unavailable (test_run_pilot.DecoderTests.test_missing_or_invalid_optional_packing_error_stays_unavailable) ... ok
+Step #2: test_missing_or_nonfinite_values_fail_before_being_seen (test_run_pilot.DecoderTests.test_missing_or_nonfinite_values_fail_before_being_seen) ... ok
+Step #2: test_one_mapping_for_multiple_messages_and_released_handles (test_run_pilot.DecoderTests.test_one_mapping_for_multiple_messages_and_released_handles) ... ok
+Step #2: test_parameter_validation_failure_still_releases_handle (test_run_pilot.DecoderTests.test_parameter_validation_failure_still_releases_handle) ... ok
+Step #2: test_real_decoder_metadata_survives_checkpoint_save_and_read (test_run_pilot.DecoderTests.test_real_decoder_metadata_survives_checkpoint_save_and_read) ... ok
+Step #2: test_entire_215_by_73_synthetic_chain_preserves_semantics_and_limits (test_run_pilot.DeriveTests.test_entire_215_by_73_synthetic_chain_preserves_semantics_and_limits) ... ok
+Step #2: test_near_north_wind_direction_wraps_after_rounding (test_run_pilot.DeriveTests.test_near_north_wind_direction_wraps_after_rounding) ... ok
+Step #2: test_alias_outputs_are_rejected_before_acquisition (test_run_pilot.OutputSafetyTests.test_alias_outputs_are_rejected_before_acquisition) ... ok
+Step #2: test_checkpoint_cannot_alias_or_contain_a_final_output (test_run_pilot.OutputSafetyTests.test_checkpoint_cannot_alias_or_contain_a_final_output) ... ok
+Step #2: test_existing_output_is_never_overwritten_and_no_network_starts (test_run_pilot.OutputSafetyTests.test_existing_output_is_never_overwritten_and_no_network_starts) ... ok
+Step #2: test_failed_acquisition_does_not_create_payload_or_replace_source (test_run_pilot.OutputSafetyTests.test_failed_acquisition_does_not_create_payload_or_replace_source) ... ok
+Step #2: test_failed_derivation_preserves_complete_extracted_snapshot (test_run_pilot.OutputSafetyTests.test_failed_derivation_preserves_complete_extracted_snapshot) ... ok
+Step #2: test_live_acquisition_automatically_uses_source_bound_checkpoint_directory (test_run_pilot.OutputSafetyTests.test_live_acquisition_automatically_uses_source_bound_checkpoint_directory) ... ok
+Step #2: test_missing_output_parent_is_rejected_before_acquisition (test_run_pilot.OutputSafetyTests.test_missing_output_parent_is_rejected_before_acquisition) ... ok
+Step #2: test_offline_replay_rejects_live_checkpoint_argument (test_run_pilot.OutputSafetyTests.test_offline_replay_rejects_live_checkpoint_argument) ... ok
+Step #2: test_output_cannot_alias_replay_source (test_run_pilot.OutputSafetyTests.test_output_cannot_alias_replay_source) ... ok
+Step #2: test_replay_source_is_never_overwritten_on_failure (test_run_pilot.OutputSafetyTests.test_replay_source_is_never_overwritten_on_failure) ... ok
+Step #2: test_successful_offline_replay_is_explicit_and_hashes_actual_output (test_run_pilot.OutputSafetyTests.test_successful_offline_replay_is_explicit_and_hashes_actual_output) ... ok
+Step #2: test_write_new_uses_exclusive_creation (test_run_pilot.OutputSafetyTests.test_write_new_uses_exclusive_creation) ... ok
+Step #2: test_constant_zero_has_zero_effective_quantum_despite_scale (test_run_pilot.QuantumTests.test_constant_zero_has_zero_effective_quantum_despite_scale) ... ok
+Step #2: test_finite_nonnegative_reference_is_supported_by_simple_packing (test_run_pilot.QuantumTests.test_finite_nonnegative_reference_is_supported_by_simple_packing) ... ok
+Step #2: test_invalid_or_overflowing_reference_conversion_is_rejected (test_run_pilot.QuantumTests.test_invalid_or_overflowing_reference_conversion_is_rejected) ... ok
+Step #2: test_invalid_or_overflowing_scales_fail_as_value_error (test_run_pilot.QuantumTests.test_invalid_or_overflowing_scales_fail_as_value_error) ... ok
+Step #2: test_invalid_reference_and_non_simple_packing_are_rejected (test_run_pilot.QuantumTests.test_invalid_reference_and_non_simple_packing_are_rejected) ... ok
+Step #2: test_precision_range_type_and_fractional_bits_are_rejected (test_run_pilot.QuantumTests.test_precision_range_type_and_fractional_bits_are_rejected) ... ok
+Step #2: test_reference_is_converted_to_decoded_units (test_run_pilot.QuantumTests.test_reference_is_converted_to_decoded_units) ... ok
+Step #2: test_variable_packing_quantum_uses_both_scale_factors (test_run_pilot.QuantumTests.test_variable_packing_quantum_uses_both_scale_factors) ... ok
+Step #2: test_explicit_partial_run_fails_instead_of_silently_falling_back (test_run_pilot.RunDiscoveryTests.test_explicit_partial_run_fails_instead_of_silently_falling_back) ... ok
+Step #2: test_newest_with_all_directories_but_missing_file_also_falls_back (test_run_pilot.RunDiscoveryTests.test_newest_with_all_directories_but_missing_file_also_falls_back) ... ok
+Step #2: test_no_published_high_water_preserves_terminal_no_usable_run_error (test_run_pilot.RunDiscoveryTests.test_no_published_high_water_preserves_terminal_no_usable_run_error) ... ok
+Step #2: test_partial_newest_fallback_to_verified_current_is_typed_not_advanced (test_run_pilot.RunDiscoveryTests.test_partial_newest_fallback_to_verified_current_is_typed_not_advanced) ... ok
+Step #2: test_partial_newest_falls_back_to_newest_complete_usable_run (test_run_pilot.RunDiscoveryTests.test_partial_newest_falls_back_to_newest_complete_usable_run) ... ok
+Step #2: test_provider_pruning_to_an_older_run_is_also_not_advanced (test_run_pilot.RunDiscoveryTests.test_provider_pruning_to_an_older_run_is_also_not_advanced) ... ok
+Step #2: test_unusable_newer_run_is_skipped_before_field_discovery (test_run_pilot.RunDiscoveryTests.test_unusable_newer_run_is_skipped_before_field_discovery) ... ok
+Step #2: test_verified_current_below_48h_residual_is_retryable_not_advanced (test_run_pilot.RunDiscoveryTests.test_verified_current_below_48h_residual_is_retryable_not_advanced) ... ok
+Step #2: test_verified_current_does_not_block_a_complete_newer_run (test_run_pilot.RunDiscoveryTests.test_verified_current_does_not_block_a_complete_newer_run) ... ok
+Step #2: test_verified_rollback_high_water_blocks_the_newer_revoked_run (test_run_pilot.RunDiscoveryTests.test_verified_rollback_high_water_blocks_the_newer_revoked_run) ... ok
+Step #2: test_exact_municipality_count_and_unique_slugs_are_required (test_run_pilot.SnapshotTests.test_exact_municipality_count_and_unique_slugs_are_required) ... ok
+Step #2: test_extra_field_is_not_silently_accepted (test_run_pilot.SnapshotTests.test_extra_field_is_not_silently_accepted) ... ok
+Step #2: test_grid_hash_changes_are_rejected (test_run_pilot.SnapshotTests.test_grid_hash_changes_are_rejected) ... ok
+Step #2: test_invalid_mapping_distance_or_index_is_rejected (test_run_pilot.SnapshotTests.test_invalid_mapping_distance_or_index_is_rejected) ... ok
+Step #2: test_missing_hour_and_tampered_timestamp_are_rejected (test_run_pilot.SnapshotTests.test_missing_hour_and_tampered_timestamp_are_rejected) ... ok
+Step #2: test_native_field_and_point_counts_are_required (test_run_pilot.SnapshotTests.test_native_field_and_point_counts_are_required) ... ok
+Step #2: test_nonfinite_boolean_or_text_raw_values_are_rejected (test_run_pilot.SnapshotTests.test_nonfinite_boolean_or_text_raw_values_are_rejected) ... ok
+Step #2: test_nonfinite_or_out_of_range_point_coordinates_are_rejected (test_run_pilot.SnapshotTests.test_nonfinite_or_out_of_range_point_coordinates_are_rejected) ... ok
+Step #2: test_run_label_must_match_run_code (test_run_pilot.SnapshotTests.test_run_label_must_match_run_code) ... ok
+Step #2: test_schema_kind_and_missing_fields_fail_closed (test_run_pilot.SnapshotTests.test_schema_kind_and_missing_fields_fail_closed) ... ok
+Step #2: test_synthetic_full_215_by_73_snapshot_validates (test_run_pilot.SnapshotTests.test_synthetic_full_215_by_73_snapshot_validates) ... ok
+Step #2: test_tampered_quantum_is_not_trusted_on_replay (test_run_pilot.SnapshotTests.test_tampered_quantum_is_not_trusted_on_replay) ... ok
+Step #2: test_bad_header_edition_and_size (test_run_pilot.StreamFramingTests.test_bad_header_edition_and_size) ... ok
+Step #2: test_bad_trailer (test_run_pilot.StreamFramingTests.test_bad_trailer) ... ok
+Step #2: test_chunk_size_limit (test_run_pilot.StreamFramingTests.test_chunk_size_limit) ... ok
+Step #2: test_every_single_split_boundary (test_run_pilot.StreamFramingTests.test_every_single_split_boundary) ... ok
+Step #2: test_header_and_payload_truncation (test_run_pilot.StreamFramingTests.test_header_and_payload_truncation) ... ok
+Step #2: test_missing_extra_and_trailing_garbage_are_rejected (test_run_pilot.StreamFramingTests.test_missing_extra_and_trailing_garbage_are_rejected) ... ok
+Step #2: test_native_73_messages_in_one_chunk (test_run_pilot.StreamFramingTests.test_native_73_messages_in_one_chunk) ... ok
+Step #2: test_one_byte_chunks_and_empty_chunks (test_run_pilot.StreamFramingTests.test_one_byte_chunks_and_empty_chunks) ... ok
+Step #2: test_body_larger_than_declared_never_succeeds (test_run_pilot.StreamingReaderTests.test_body_larger_than_declared_never_succeeds) ... ok
+Step #2: test_compressed_or_unbounded_content_length_is_rejected (test_run_pilot.StreamingReaderTests.test_compressed_or_unbounded_content_length_is_rejected) ... ok
+Step #2: test_early_consumer_stop_closes_response_and_does_not_claim_success (test_run_pilot.StreamingReaderTests.test_early_consumer_stop_closes_response_and_does_not_claim_success) ... ok
+Step #2: test_off_scope_urls_do_not_make_requests (test_run_pilot.StreamingReaderTests.test_off_scope_urls_do_not_make_requests) ... ok
+Step #2: test_preflight_total_budget_counts_prior_metadata (test_run_pilot.StreamingReaderTests.test_preflight_total_budget_counts_prior_metadata) ... ok
+Step #2: test_redirect_partial_and_error_responses_are_not_fallbacks (test_run_pilot.StreamingReaderTests.test_redirect_partial_and_error_responses_are_not_fallbacks) ... ok
+Step #2: test_stream_http_status_preserves_retry_classification_and_closes (test_run_pilot.StreamingReaderTests.test_stream_http_status_preserves_retry_classification_and_closes) ... ok
+Step #2: test_success_status_with_invalid_encoding_is_not_a_retryable_http_failure (test_run_pilot.StreamingReaderTests.test_success_status_with_invalid_encoding_is_not_a_retryable_http_failure) ... ok
+Step #2: test_total_budget_still_checked_during_transfer (test_run_pilot.StreamingReaderTests.test_total_budget_still_checked_during_transfer) ... ok
+Step #2: test_truncated_body_never_succeeds (test_run_pilot.StreamingReaderTests.test_truncated_body_never_succeeds) ... ok
+Step #2: test_valid_stream_measures_bytes_digest_and_closes (test_run_pilot.StreamingReaderTests.test_valid_stream_measures_bytes_digest_and_closes) ... ok
+Step #2: Ran 108 tests in 49.705s
+Step #2: OK
+Step #2: {"verification": "rollback", "tests": 108, "failures": 0, "errors": 0, "skipped": 0, "success": true, "checkpoint_schemas": [1, 2], "packing_reader_identical": true, "payload_limit_bytes": 33554432}

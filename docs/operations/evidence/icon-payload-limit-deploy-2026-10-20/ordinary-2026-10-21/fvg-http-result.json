@@ -1,0 +1,36 @@
+{
+  "source_run_id": "20261021T000000Z",
+  "new_run": true,
+  "public_documents_verified": 215,
+  "sidecars_verified": 215,
+  "sidecar_state_counts": {
+    "liquid_rain_mm:unavailable:missing_or_invalid_accumulation": 215,
+    "precipitation_mm:unavailable:missing_or_invalid_accumulation": 215,
+    "snow_water_equivalent_mm:unavailable:missing_or_invalid_accumulation": 215,
+    "liquid_rain_mm:quantified:": 5589,
+    "precipitation_mm:quantified:": 5727,
+    "snow_water_equivalent_mm:known_zero:": 15462,
+    "liquid_rain_mm:resolution_tolerance_verified:": 2204,
+    "precipitation_mm:resolution_tolerance_verified:": 2353,
+    "liquid_rain_mm:known_zero:": 7687,
+    "precipitation_mm:known_zero:": 7400,
+    "snow_water_equivalent_mm:resolution_tolerance_verified:": 2,
+    "snow_water_equivalent_mm:quantified:": 16
+  },
+  "legacy_clients": [
+    {
+      "reader": "2f02c8ba",
+      "public_documents_accepted": 215,
+      "enriched_document_rejected": true
+    },
+    {
+      "reader": "8497e773",
+      "public_documents_accepted": 215,
+      "enriched_document_rejected": true
+    }
+  ],
+  "old_manifest_unchanged": true,
+  "android_cors": true,
+  "network_actions": "GET only",
+  "sends": 0
+}
