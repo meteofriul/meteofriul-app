@@ -11,7 +11,7 @@ Ramo esistente `codex/release-0.1.15` allineato al main verificato
 `c329217b5df540299dad69016848f47cf703a5d0` (CI 39619073997 verde).
 I conflitti di documentazione sono risolti mantenendo le attestazioni più
 recenti di main e le copie delle evidenze con la forma approvata dal controllo
-privacy. La versione resta **0.1.15 / 300032**, package `com.meteofriul.app`.
+privacy. La versione resta **0.1.15 / 300033**, package `com.meteofriul.app`.
 Nessuna impostazione TEST viene trasferita nella variante ufficiale.
 
 Rispetto a main, oltre alla preparazione della versione, sono conservate le
@@ -117,3 +117,17 @@ hash nei commit documentali non pubblicati del ramo. La candidata è stata
 consolidata direttamente su main, conservando un backup locale e verificando
 l'identità dell'intero albero dei file. Il successivo push ha superato la
 guardia privacy invariata. Nessun push forzato o promozione su main.
+
+## Tentativo 300032 e nuova riserva prevista
+
+Il secondo tentativo ha superato tutti i gate live e di provenienza, poi si è
+fermato nella compilazione Web: la copia locale delle dipendenze aveva escluso
+le directory `build`, omettendo anche il codice distribuito dal pacchetto `idb`
+richiesto da Firebase Messaging. È un errore della preparazione locale, non un
+cambiamento delle dipendenze o un difetto risolto nel codice applicativo.
+
+Non è stata prodotta alcuna AAB. La riserva **300032** rimane immutabile con un
+nuovo evento `abandoned`; non viene eliminata né riutilizzata. La candidata
+resta 0.1.15 e passa al codice **300033**. La copia completa è stata ripristinata:
+import `idb`, build Web Android in cartella temporanea, binding API e Carto PASS
+prima della nuova riserva. Nessuna dipendenza dichiarata o toolchain aggiornata.
