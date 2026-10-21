@@ -1,0 +1,68 @@
+{
+  "schema": "meteofriul.community-deployment.v1",
+  "at": "2026-10-21T14:24:06.439189+00:00",
+  "project": "meteo-friul",
+  "region": "europe-west1",
+  "service": "meteofriul-community",
+  "source_commit": "05a4fcc69969c259163eaad9bca4a4f234384e81",
+  "documentation_baseline": "ecb409d29b4bde4b1e7246c78dd3f7ce543cc388",
+  "source_archive": {
+    "sha256": "8bf83ee888b6e9521a63ad98519d451a724a6b93118f6b77100769fd1c6add43",
+    "members": 35
+  },
+  "image": "europe-west1-docker.pkg.dev/meteo-friul/meteofriul/community@sha256:5a6b66ba8fc8f5861ac2fac57eee7c1dcf088a015479e56e291ea3d85a66a2d7",
+  "build_id": "1dd3980b-eafc-4dcf-bff0-e7f9b2795f98",
+  "build_status": "SUCCESS",
+  "build_source": {
+    "storageSource": {
+      "bucket": "meteo-friul_cloudbuild",
+      "generation": "1792591708697489",
+      "object": "source/1792591663.112281-5016dd12ae394eba8f02d1f9555f249e.gz"
+    }
+  },
+  "baseline_revision": "meteofriul-community-00002-tt2",
+  "active_revision": "meteofriul-community-active0115-20261021",
+  "rollback_revision": "meteofriul-community-compat0115-20261021",
+  "traffic_percent": 100,
+  "v3_writes_enabled": true,
+  "rollback_v3_writes_enabled": false,
+  "only_activation_config_difference": "COMMUNITY_V3_WRITES_ENABLED: 0 -> 1",
+  "configuration_hashes": {
+    "0": {
+      "sha256": "64be945ef72dbc8fded185f02687198bc1b0f116d3b59a4ed34efe67b2ef56c6"
+    },
+    "1": {
+      "sha256": "8c429642212e8b2fa316764d34d028e6c4be3d4126cbd7df9cba6513524bffff"
+    }
+  },
+  "legacy_reads_and_cors": "PASS",
+  "v3_reads_and_cors": "PASS",
+  "missing_invalid_appcheck": "REJECTED",
+  "fresh_real_play_integrity": "NOT_RUN",
+  "manual_community_write_test": "NOT_RUN_BY_OWNER_CONSTRAINT",
+  "local_packaged_tests": 33,
+  "runtime_changed_from_previous_qa": false,
+  "initial_health_500": {
+    "before_cloud_changes": true,
+    "subsequent_read": 200,
+    "cause": "not established"
+  },
+  "source_hash_normalization_note": "Only the test file in main is LF while the fixed archive is CRLF; normalized bytes match pinned source and main. Archive SHA unchanged.",
+  "sponsor_hold": {
+    "owner_order_date": "2026-10-21",
+    "until": "new explicit owner order",
+    "cards_must_remain_inactive": true,
+    "panel_development_suspended": true,
+    "data_alignment_suspended": true,
+    "observed_app_catalog_enabled": false,
+    "observed_app_catalog_campaign_count": 0,
+    "sponsor_services_or_data_changed": false
+  },
+  "storage_migrated_or_seeded": false,
+  "rollback_restores_data": false,
+  "manual_reports": 0,
+  "manual_notifications": 0,
+  "aab_generated": false,
+  "phone_installed": false,
+  "git_pushed": false
+}

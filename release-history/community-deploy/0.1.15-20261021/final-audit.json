@@ -1,0 +1,19 @@
+{
+  "at": "2026-10-21T14:23:56.470698+00:00",
+  "active_revision": "meteofriul-community-active0115-20261021",
+  "rollback_revision": "meteofriul-community-compat0115-20261021",
+  "same_image_for_active_and_rollback": true,
+  "storage_identity_unchanged": true,
+  "snapshot_pointer_exactly_unchanged": true,
+  "runtime_errors_observed": 0,
+  "active_application_log_records": 9,
+  "public_invoker_preserved": true,
+  "logging_settings_unchanged": true,
+  "manual_reports": 0,
+  "manual_notifications": 0,
+  "aab_generated": false,
+  "phone_installed": false,
+  "git_pushed": false,
+  "sponsor_rollout": false,
+  "status": "PASS"
+}
