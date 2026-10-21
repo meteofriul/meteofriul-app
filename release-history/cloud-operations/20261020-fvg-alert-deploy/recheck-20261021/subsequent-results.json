@@ -1,0 +1,223 @@
+{
+  "executions": [
+    {
+      "execution": "meteofriul-official-alert-sync-kwjgw",
+      "created_at": "2026-10-21T12:00:01.537899Z",
+      "job_completed": "True",
+      "scheduler_creator_verified": true,
+      "image_matches_deployment": true,
+      "send_configuration": "send/true",
+      "summary": {
+        "active": true,
+        "cache_status": "fresh",
+        "count": 1,
+        "push": {
+          "attempted": 44,
+          "deduplicated": 44,
+          "delivery_batches": 0,
+          "failed": 0,
+          "pages_processed": 1,
+          "sent": 0,
+          "sent_unconfirmed": 0,
+          "status": "deduplicated"
+        },
+        "refreshed": true,
+        "source_mode": "official_fvg_widget_arpa_corroborated",
+        "stored_in": "firestore",
+        "upstream_failure": null
+      }
+    },
+    {
+      "execution": "meteofriul-official-alert-sync-djd5z",
+      "created_at": "2026-10-21T10:00:02.667844Z",
+      "job_completed": "True",
+      "scheduler_creator_verified": true,
+      "image_matches_deployment": true,
+      "send_configuration": "send/true",
+      "summary": {
+        "active": true,
+        "cache_status": "fresh",
+        "count": 1,
+        "push": {
+          "attempted": 44,
+          "deduplicated": 44,
+          "delivery_batches": 0,
+          "failed": 0,
+          "pages_processed": 1,
+          "sent": 0,
+          "sent_unconfirmed": 0,
+          "status": "deduplicated"
+        },
+        "refreshed": true,
+        "source_mode": "official_fvg_widget_arpa_corroborated",
+        "stored_in": "firestore",
+        "upstream_failure": null
+      }
+    },
+    {
+      "execution": "meteofriul-official-alert-sync-rpd4d",
+      "created_at": "2026-10-21T08:00:01.693542Z",
+      "job_completed": "True",
+      "scheduler_creator_verified": true,
+      "image_matches_deployment": true,
+      "send_configuration": "send/true",
+      "summary": {
+        "active": true,
+        "cache_status": "fresh",
+        "count": 1,
+        "push": {
+          "attempted": 44,
+          "deduplicated": 44,
+          "delivery_batches": 0,
+          "failed": 0,
+          "pages_processed": 1,
+          "sent": 0,
+          "sent_unconfirmed": 0,
+          "status": "deduplicated"
+        },
+        "refreshed": true,
+        "source_mode": "official_fvg_widget_arpa_corroborated",
+        "stored_in": "firestore",
+        "upstream_failure": null
+      }
+    },
+    {
+      "execution": "meteofriul-official-alert-sync-tj2bt",
+      "created_at": "2026-10-21T06:00:01.036644Z",
+      "job_completed": "True",
+      "scheduler_creator_verified": true,
+      "image_matches_deployment": true,
+      "send_configuration": "send/true",
+      "summary": {
+        "active": true,
+        "cache_status": "fresh",
+        "count": 1,
+        "push": {
+          "attempted": 44,
+          "deduplicated": 44,
+          "delivery_batches": 0,
+          "failed": 0,
+          "pages_processed": 1,
+          "sent": 0,
+          "sent_unconfirmed": 0,
+          "status": "deduplicated"
+        },
+        "refreshed": true,
+        "source_mode": "official_fvg_widget_arpa_corroborated",
+        "stored_in": "firestore",
+        "upstream_failure": null
+      }
+    },
+    {
+      "execution": "meteofriul-official-alert-sync-kkkcc",
+      "created_at": "2026-10-21T04:00:01.540873Z",
+      "job_completed": "True",
+      "scheduler_creator_verified": true,
+      "image_matches_deployment": true,
+      "send_configuration": "send/true",
+      "summary": {
+        "active": true,
+        "cache_status": "fresh",
+        "count": 1,
+        "push": {
+          "attempted": 44,
+          "deduplicated": 44,
+          "delivery_batches": 0,
+          "failed": 0,
+          "pages_processed": 1,
+          "sent": 0,
+          "sent_unconfirmed": 0,
+          "status": "deduplicated"
+        },
+        "refreshed": true,
+        "source_mode": "official_fvg_widget_arpa_corroborated",
+        "stored_in": "firestore",
+        "upstream_failure": null
+      }
+    },
+    {
+      "execution": "meteofriul-official-alert-sync-2hnjz",
+      "created_at": "2026-10-21T02:00:01.507177Z",
+      "job_completed": "True",
+      "scheduler_creator_verified": true,
+      "image_matches_deployment": true,
+      "send_configuration": "send/true",
+      "summary": {
+        "active": true,
+        "cache_status": "fresh",
+        "count": 1,
+        "push": {
+          "attempted": 44,
+          "deduplicated": 44,
+          "delivery_batches": 0,
+          "failed": 0,
+          "pages_processed": 1,
+          "sent": 0,
+          "sent_unconfirmed": 0,
+          "status": "deduplicated"
+        },
+        "refreshed": true,
+        "source_mode": "official_fvg_widget_arpa_corroborated",
+        "stored_in": "firestore",
+        "upstream_failure": null
+      }
+    },
+    {
+      "execution": "meteofriul-official-alert-sync-sbvrw",
+      "created_at": "2026-10-21T00:00:01.564607Z",
+      "job_completed": "True",
+      "scheduler_creator_verified": true,
+      "image_matches_deployment": true,
+      "send_configuration": "send/true",
+      "summary": {
+        "active": true,
+        "cache_status": "fresh",
+        "count": 1,
+        "push": {
+          "attempted": 44,
+          "deduplicated": 44,
+          "delivery_batches": 0,
+          "failed": 0,
+          "pages_processed": 1,
+          "sent": 0,
+          "sent_unconfirmed": 0,
+          "status": "deduplicated"
+        },
+        "refreshed": true,
+        "source_mode": "official_fvg_widget_arpa_corroborated",
+        "stored_in": "firestore",
+        "upstream_failure": null
+      }
+    },
+    {
+      "execution": "meteofriul-official-alert-sync-fwk6x",
+      "created_at": "2026-10-20T22:00:11.367892Z",
+      "job_completed": "True",
+      "scheduler_creator_verified": true,
+      "image_matches_deployment": true,
+      "send_configuration": "send/true",
+      "summary": {
+        "active": true,
+        "cache_status": "fresh",
+        "count": 1,
+        "push": {
+          "attempted": 44,
+          "deduplicated": 44,
+          "delivery_batches": 0,
+          "failed": 0,
+          "pages_processed": 1,
+          "sent": 0,
+          "sent_unconfirmed": 0,
+          "status": "deduplicated"
+        },
+        "refreshed": true,
+        "source_mode": "official_fvg_widget_arpa_corroborated",
+        "stored_in": "firestore",
+        "upstream_failure": null
+      }
+    }
+  ],
+  "read_only": true,
+  "manual_executions": 0,
+  "manual_sends": 0
+}

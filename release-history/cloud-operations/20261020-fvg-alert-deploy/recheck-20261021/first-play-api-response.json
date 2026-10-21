@@ -1,0 +1,20 @@
+{
+  "active": false,
+  "count": 0,
+  "alerts": [],
+  "source": {
+    "id": "protezione_civile_fvg_alerts",
+    "name": "Protezione Civile FVG",
+    "type": "official_alert_source",
+    "url": "https://www.protezionecivile.fvg.it/it/allerte"
+  },
+  "source_mode": "official_alerts_unavailable_fast_fallback",
+  "expires_at": "",
+  "cache": {
+    "status": "unavailable",
+    "reason": "persistent_snapshot_unavailable",
+    "layer": "persistent",
+    "storage": "refreshing"
+  },
+  "error": "official_alerts_unavailable"
+}

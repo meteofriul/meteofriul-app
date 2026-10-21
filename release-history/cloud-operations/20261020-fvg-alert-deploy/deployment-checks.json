@@ -1,0 +1,21 @@
+{
+  "verified_at": "2026-10-20T19:44:31.901961+00:00",
+  "project": "meteo-friul",
+  "region": "europe-west8",
+  "job": "meteofriul-official-alert-sync",
+  "source_commit": "5cbcd35ca88088220ff167b299cb4353ebdaf6d4",
+  "candidate_image": "europe-west1-docker.pkg.dev/meteo-friul/meteofriul/backend@sha256:7364eca349bda9afb5cdbb9c88a9e3f01c7fc14f0bea8f0595ad926fc8f43368",
+  "rollback_image": "europe-west1-docker.pkg.dev/meteo-friul/meteofriul/backend@sha256:af2390e06de733509ac69304d2972cec48363e53a59e2049d75f75a5e76daca4",
+  "only_image_changed": true,
+  "send_mode": "send",
+  "send_required": true,
+  "existing_recipients_unchanged": true,
+  "persistent_storage_required": true,
+  "other_jobs_unchanged": 13,
+  "schedulers_unchanged": 11,
+  "api_unchanged": true,
+  "manual_executions": 0,
+  "new_executions_on_deploy": 0,
+  "next_ordinary_run": "2026-10-20T20:00:00.593840Z",
+  "ordinary_verification": "pending"
+}

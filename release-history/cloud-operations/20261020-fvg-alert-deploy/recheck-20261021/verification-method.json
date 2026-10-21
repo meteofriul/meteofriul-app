@@ -1,0 +1,9 @@
+{
+  "script": ".tmp/verify_fvg_ordinary.py",
+  "script_sha256": "48dfbc881ca7b99d4e3e59d4a4ca95a1d6a270ab91b4fa7351e3fb83d3c39c70",
+  "changes": [
+    "Output folder isolated to preserve 20 October evidence",
+    "Candidate import path still points to original deployed verification context"
+  ],
+  "backend_writes": false
+}

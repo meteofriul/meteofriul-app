@@ -1,0 +1,12 @@
+{
+  "automation_id": "verifica-allerte-fvg-dopo-deploy",
+  "status": "ACTIVE",
+  "checks_local": [
+    "2026-10-20T22:05:00+02:00",
+    "2026-10-20T22:15:00+02:00"
+  ],
+  "ordinary_run": "2026-10-20T22:00:00+02:00",
+  "manual_executions": false,
+  "ordinary_notifications": "Authorized; preserve existing send/true and recipients",
+  "completion_criteria": "Persisted fresh alert and consistent API/source; explicit actual push outcome; FCM acceptance is not proof of display on device"
+}

@@ -17,3 +17,4 @@ docs/operations/evidence/icon-checkpoint-hotfix-2026-10-20/evening-check/** -tex
 docs/operations/evidence/icon-payload-limit-2026-10-20/** -text whitespace=trailing-space,space-before-tab,cr-at-eol
 # Blank context lines in an archived unified diff contain one required space.
 docs/operations/evidence/icon-payload-limit-2026-10-20/runtime.patch -whitespace
+release-history/cloud-operations/20261020-fvg-alert-deploy/rollback-reader.patch -whitespace

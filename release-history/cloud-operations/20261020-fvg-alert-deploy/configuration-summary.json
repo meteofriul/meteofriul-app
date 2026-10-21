@@ -1,0 +1,17 @@
+{
+  "job": "meteofriul-official-alert-sync",
+  "region": "europe-west8",
+  "image": "europe-west1-docker.pkg.dev/meteo-friul/meteofriul/backend@sha256:1f5171ad3e07748ac7fa8e3a8d1764458ee3ab4a3f4c4b78e8275925fa621d7f",
+  "send_mode": "send",
+  "send_required": "true",
+  "persistent_storage_required": true,
+  "ordinary_next_run": "2026-10-20T20:00:00.593840Z",
+  "schedule": "0 */2 * * *",
+  "timezone": "Europe/Rome",
+  "recipient_policy": {
+    "PUSH_PILOT_ENROLLMENT_MODE": "play_beta",
+    "PUSH_ENROLLMENT_GENERATION": "play-beta-v1",
+    "PUSH_PLAY_BETA_MIN_VERSION_CODE": "300029"
+  },
+  "user_authorization": "Owner subsequently authorized ordinary notifications when eligible; preserve existing send mode and recipients"
+}

@@ -1,0 +1,89 @@
+{
+  "schemaVersion": "release-overlay-image-evidence-v1",
+  "recordedAt": "2026-10-20T19:44:46.669975+00:00",
+  "sourceCommit": "5cbcd35ca88088220ff167b299cb4353ebdaf6d4",
+  "imageDigest": "europe-west1-docker.pkg.dev/meteo-friul/meteofriul/backend@sha256:7364eca349bda9afb5cdbb9c88a9e3f01c7fc14f0bea8f0595ad926fc8f43368",
+  "rollbackImageDigest": "europe-west1-docker.pkg.dev/meteo-friul/meteofriul/backend@sha256:af2390e06de733509ac69304d2972cec48363e53a59e2049d75f75a5e76daca4",
+  "cloudBuildId": "d4ebd2e8-3298-414c-966d-33cc945d2695",
+  "cloudBuildRegion": "europe-west1",
+  "cloudBuildStatus": "SUCCESS",
+  "sourceProvenance": {
+    "fileHashes": {
+      "gs://meteo-friul_cloudbuild/source/1792525233.640647-3f3596a2ec7a4cd3a868818c80666f07.tgz#1792525240060432": {
+        "fileHash": [
+          {
+            "type": "MD5",
+            "value": "VYHW1PFTPMPJwrw0WCdM8w=="
+          },
+          {
+            "type": "SHA256",
+            "value": "ZW1qSioQJc8yTXXKmf2h_E8nW0Q79fStau1ni6uhX6c="
+          }
+        ]
+      }
+    },
+    "resolvedStorageSource": {
+      "bucket": "meteo-friul_cloudbuild",
+      "generation": "1792525240060432",
+      "object": "source/1792525233.640647-3f3596a2ec7a4cd3a868818c80666f07.tgz"
+    }
+  },
+  "parentImage": "europe-west1-docker.pkg.dev/meteo-friul/meteofriul/backend@sha256:1f5171ad3e07748ac7fa8e3a8d1764458ee3ab4a3f4c4b78e8275925fa621d7f",
+  "parentBuildId": "79a08742-4661-478a-b2e6-60e242372c41",
+  "sourceArchivePushRepositorySha256": "989a05445be31c46fa8d23e9613d0fd54c83dd29aae999402a7cd3b41bbae71c",
+  "pushWriter": "Inherited unchanged; all 127 Python runtime modules verified in each image; candidate COPY replaces only three specified modules. Build emits both rollback and candidate.",
+  "candidateOverlay": {
+    "app/services/official_alert_sources.py": "ca0baab3c3100952e821486ede78fe7db924c66171f858eec0253601d5ec2489",
+    "app/weather/alerts_engine.py": "16b049e7bb3e856221624e1c16eb30c2913d511a1b326ebdeaaaf2da152d2fba",
+    "app/services/push.py": "09a5586acd2954836111bdd8e5cc7f452fec1b4521e68285ff9636c974b4fd2b"
+  },
+  "rollbackOverlay": {
+    "app/services/official_alert_sources.py": "ac567158884db211dcffa7736adf13f45f1d6eda862de5581b37aa783a5d3ae9"
+  },
+  "linuxVerification": {
+    "build_id": "d4ebd2e8-3298-414c-966d-33cc945d2695",
+    "status": "SUCCESS",
+    "results": [
+      {
+        "candidate_commit": "520caa9a42763e1e642bc3370c4d779e8bed1d4e",
+        "base_image": "europe-west1-docker.pkg.dev/meteo-friul/meteofriul/backend@sha256:1f5171ad3e07748ac7fa8e3a8d1764458ee3ab4a3f4c4b78e8275925fa621d7f",
+        "tests": 172,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0,
+        "success": true,
+        "network": "socket connect/create_connection denied",
+        "api_reader_normalized_sha256": "73774cce7a46afb2c0a7c12f783686dd93a5a40236d479305515786bc5463f03",
+        "environment": {
+          "python": "3.13.16 (main, Oct  6 2026, 02:02:59) [GCC 14.2.0]",
+          "platform": "linux"
+        },
+        "limitations": "Pinned Linux image dependencies; synthetic ARPA and captured public sources; no live source calls",
+        "verification": "rollback",
+        "actual_image_modules_checked": 127,
+        "push_repository_unchanged": true
+      },
+      {
+        "candidate_commit": "520caa9a42763e1e642bc3370c4d779e8bed1d4e",
+        "base_image": "europe-west1-docker.pkg.dev/meteo-friul/meteofriul/backend@sha256:1f5171ad3e07748ac7fa8e3a8d1764458ee3ab4a3f4c4b78e8275925fa621d7f",
+        "tests": 172,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0,
+        "success": true,
+        "network": "socket connect/create_connection denied",
+        "api_reader_normalized_sha256": "73774cce7a46afb2c0a7c12f783686dd93a5a40236d479305515786bc5463f03",
+        "environment": {
+          "python": "3.13.16 (main, Oct  6 2026, 02:02:59) [GCC 14.2.0]",
+          "platform": "linux"
+        },
+        "limitations": "Pinned Linux image dependencies; synthetic ARPA and captured public sources; no live source calls",
+        "verification": "candidate",
+        "actual_image_modules_checked": 127,
+        "push_repository_unchanged": true
+      }
+    ],
+    "network": "none",
+    "memory_limit_bytes": 536870912
+  }
+}

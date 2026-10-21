@@ -1,0 +1,9 @@
+{
+  "schemaVersion": "firestore-push-ttl-audit-v1",
+  "ready": true,
+  "blockingCount": 0,
+  "findings": [],
+  "writer_set": "release-history/firestore-ttl/runtime-writer-sets/play-services-fvg-20261020.json",
+  "new_fvg_digest": "europe-west1-docker.pkg.dev/meteo-friul/meteofriul/backend@sha256:7364eca349bda9afb5cdbb9c88a9e3f01c7fc14f0bea8f0595ad926fc8f43368",
+  "scope": "Live read-only audit of configured images, Cloud Build provenance, scheduler bindings, Firestore TTL policies and expiry projection; no send invoked"
+}

@@ -1,0 +1,91 @@
+{
+  "verified_at_utc": "2026-10-21T13:39:17.103411+00:00",
+  "result": "verification_completed_with_recorded_limits",
+  "first_ordinary_execution": {
+    "name": "meteofriul-official-alert-sync-jdgwd",
+    "job_completed": false,
+    "push": {
+      "attempted": 45,
+      "deduplicated": 0,
+      "delivery_batches": 1,
+      "failed": 1,
+      "pages_processed": 1,
+      "sent": 44,
+      "sent_unconfirmed": 0,
+      "status": "partial"
+    },
+    "data_acquisition_and_persistence_succeeded": true
+  },
+  "subsequent_executions_checked": 8,
+  "latest_ordinary_execution_at": "2026-10-21T12:00:01.537899Z",
+  "subsequent_executions_successful": true,
+  "subsequent_deduplicated_per_execution": 44,
+  "subsequent_failed": 0,
+  "subsequent_sent": 0,
+  "subsequent_sent_unconfirmed": 0,
+  "api_snapshot_live_sources_match_after_one_repeat": true,
+  "first_play_api_response": {
+    "cache_status": "unavailable",
+    "cache_storage": "refreshing",
+    "error": "official_alerts_unavailable",
+    "active": false,
+    "count": 0
+  },
+  "first_response_interpretation": "Unavailable while refreshing, not evidence of no alert; original verifier correctly stopped on mismatch.",
+  "repeat_play_api_response": {
+    "cache_status": "fresh",
+    "cache_storage": "firestore",
+    "active": true,
+    "count": 1
+  },
+  "snapshot_update_time": "2026-10-21T12:00:12.058378Z",
+  "runtime_record_schema": "runtime-v3",
+  "alerts": [
+    {
+      "level": "arancione",
+      "zone_levels": {
+        "FVG-A": "arancione",
+        "FVG-D": "verde",
+        "FVG-B": "arancione",
+        "FVG-C": "gialla"
+      },
+      "valid_from": "2026-10-21T00:00:00+02:00",
+      "valid_to": "2026-10-22T06:00:00+02:00",
+      "pdf_url": "https://pianiemergenza.protezionecivile.fvg.it/alerts/30_2026.pdf"
+    }
+  ],
+  "limits": [
+    "First execution remains partial: 44 FCM acceptances, one failure classified fcm_token_invalid in the existing release audit.",
+    "The deployed sender cannot distinguish Unregistered from SenderIdMismatch in the recorded evidence. No recipient was changed or retried manually.",
+    "An initial Play HTTP unavailable/refreshing response was observed; one subsequent read matched all sources. Continuous availability and phone UI behavior are not proved.",
+    "The owner previously confirmed receipt on their phone; FCM acceptance is not proof of display on all devices."
+  ],
+  "automation": {
+    "id": "verifica-allerte-fvg-dopo-deploy",
+    "status": "deleted",
+    "reason": "User-authorized follow-up verification completed; historical partial send remains documented separately."
+  },
+  "manual_executions": 0,
+  "manual_sends": 0,
+  "cloud_configuration_changes": 0,
+  "deploys": 0,
+  "aab_builds": 0,
+  "installations": 0,
+  "git_pushes": 0,
+  "raw_evidence_sha256": {
+    "ordinary-verification.json": "c746fdf631c437c290653a1d605c6637f2cfa48d16de35d7ce60cca9151fe062",
+    "recheck-20261021/ordinary-logs.json": "81f41b2d9203d8fd4f974c175cfa71bb5a96b08f05d1aaef2b49b130013c7e18",
+    "recheck-20261021/ordinary-api.json": {
+      "sha256": "07ec7f031da348839053eb10e1f9761d660e39f3462e6b55a1fceb1d62ee774a"
+    },
+    "recheck-20261021/ordinary-default-api.json": {
+      "sha256": "68669288da022aea80d1215b87568035b6aa88b72a882ca03c870d817ec37ed6"
+    },
+    "recheck-20261021/ordinary-public-snapshot.json": "589137d3525bb32d1fa545b72801b407c6e7bc9e3f3ce08ff4efa15d037523e5",
+    "recheck-20261021/ordinary-public-sources.json": "156dd5bb8931d93189a91eb99923c804502285e43f5b9dba527aa06349ddc339",
+    "recheck-20261021/subsequent-results.json": "d9819fa3956233ec2963f3dd08cd767bffe76466ddaa21de651275e0ac46d5b9",
+    "recheck-20261021/repeat-api-results.json": {
+      "sha256": "4e11388287459c474b455a11f51307a04ee0ea054ad024d3358eaaceb2f9941a"
+    }
+  }
+}
