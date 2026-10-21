@@ -47,8 +47,8 @@ invii. Evidenze e limiti nel [verbale sul telefono](docs/operations/APP_INTEGRAT
 | --- | --- |
 | Web | `0.1.14` pubblicata su `meteofriul.app`; aggiornamento dalla base approvata in preparazione, non ancora pubblicato |
 | API | FastAPI su Cloud Run, chiamata direttamente via HTTPS da Web e Android |
-| Android | AAB ufficiale `0.1.15` (`300033`) generata dalla base allineata a main; firmata e archiviata, non caricata o installata. [Verbale](docs/operations/ANDROID_0.1.15_BUILD_20261021.md) |
-| Google Play | Console riletta il 21 ottobre: `0.1.14` (`300031`) ultima caricata; test interno attivo con una sola lista da un utente. `0.1.15` non caricata |
+| Android | `0.1.15` (`300033`) disponibile nel test interno personale dal 21 ottobre, ore 17:52; verifica runtime della nuova installazione in attesa. [Verbale](docs/operations/ANDROID_0.1.15_BUILD_20261021.md) |
+| Google Play | `0.1.15` pubblicata solo nel test interno, una lista selezionata con un utente; nessuna promozione in produzione. Sponsor disattivati |
 | Landing `meteofriul.it` | Gestita e distribuita da un progetto separato |
 | Push | Generazione `play-beta-v1`, App Check in enforce, Android/Web abilitati e lotti Firestore/FCM da 200 elementi |
 | Sintesi mattutina | Una notifica quotidiana alle 07:30 `Europe/Rome`, con apertura diretta del Bollettino |

@@ -210,3 +210,52 @@ e promozione restano fasi successive.
 Le prove e il manifesto vengono salvati sul ramo release; main resta la base
 verificata c329217b. La documentazione non dichiara eseguito il test runtime
 della nuova AAB e non autorizza pubblicazione, installazione o altri invii.
+
+## Test interno pubblicato — 21 ottobre, ore 17:52 Europe/Rome
+
+Su autorizzazione esplicita del proprietario, caricato **lo stesso file AAB
+0.1.15 / 300033**, senza ricompilazione; hash confrontato con il manifesto
+immutabile prima dell'invio. Play ha accettato il bundle e la Console mostra
+**Disponibile per i tester interni**. Il registro contiene un nuovo evento
+`play-accepted`; riserva e manifesto precedenti rimangono immutati.
+
+Il canale conserva la sola lista già selezionata dal proprietario, con **un
+utente**; le altre due liste restano escluse. Nessuna modifica ai destinatari,
+nessuna promozione in produzione, installazione da parte dell'agente, nuovo
+deploy o invio manuale. Il proprietario ha poi confermato di vedere la release
+di test nel Play Store e di stare aggiornando: conferma di accesso/disponibilità,
+non ancora di funzionamento sul dispositivo.
+
+Convalida Play della versione 300033:
+
+- zero errori bloccanti; un solo avviso sui simboli di debug nativi mancanti
+  delle dipendenze transitive, già noto e conservato come limite;
+- supporto a pagine di memoria 16 kB, mapping ReTrace allegato, R8 completo,
+  riduzione delle risorse ottimizzata;
+- 19.325 dispositivi supportati, nessun dispositivo precedentemente supportato
+  escluso. La feature portrait non è più obbligatoria nel manifest, in accordo
+  con la policy adattiva per schermi grandi; il comportamento sul telefono
+  resta da verificare nella nuova installazione;
+- raccomandazione di aggiornamento ad AGP 9.0 nel dettaglio R8: nessun
+  aggiornamento toolchain effettuato. Non è un errore bloccante dell'upload.
+
+Le prove runtime delle quattro aree Android e un rapporto pre-lancio del nuovo
+bundle non sono dichiarati superati. Gli sponsor sono stati riletti dopo il
+rilascio: `enabled=false`, zero campagne, revisione 117; pannello e allineamento
+dati non attivati.
+
+**Promozione Git separata:** aperta la [PR 11](https://github.com/meteofriul/meteofriul-app/pull/11).
+Tutti e tre i controlli della [CI PR](https://github.com/meteofriul/meteofriul-app/actions/runs/39628516862)
+sono conclusi con successo. Il tentativo di merge, condizionato ai controlli,
+è stato rifiutato dalla revisione automatica delle autorizzazioni perché la
+nuova AAB non era ancora stata provata su dispositivo. Il comando non è stato
+eseguito; nessun tentativo alternativo o merge indiretto. Main rimane
+`c329217b5df540299dad69016848f47cf703a5d0` e la PR è stata convertita in bozza.
+
+Il passaggio su main previsto dal runbook è quindi **ancora da completare**.
+È stato eseguito soltanto il caricamento interno richiesto, che consente al
+proprietario di provare il nuovo pacchetto via Play. La disponibilità nel test
+non costituisce una deroga ai controlli richiesti per promuovere il codice.
+
+Dettagli nella [ricevuta del test interno](../../release-history/android-preparation/0.1.15-20261021/play-internal-verification.json).
+Screenshot e letture complete restano nelle evidenze locali ignorate.

@@ -1,0 +1,80 @@
+{
+  "schema_version": 1,
+  "observed_at_utc": "2026-10-21T15:55:37.404333+00:00",
+  "application_id": "com.meteofriul.app",
+  "version_name": "0.1.15",
+  "version_code": 300033,
+  "source_commit": "f82503e4daabc283a5caf77b49e7cf58439abf61",
+  "aab_sha256": "cb461c8e5e6fddd05407214a507e151e02e8041f403d9346c364bbe0174ba019",
+  "acceptance_evidence": "20261021T155340451Z-play-accepted-97b3eda1e06e40a4935a5762d14b7c62.evidence.json",
+  "track": "internal",
+  "console_status": "Disponibile per i tester interni",
+  "console_published_at": "2026-10-21 17:52",
+  "console_timezone": "Europe/Rome",
+  "console_reference": "https://play.google.com/console/u/0/developers/7317561924451916933/app/4972150571875270846/tracks/4700755128382710882/releases/17/details",
+  "audience": {
+    "selected_lists": 1,
+    "users_in_selected_list": 1,
+    "other_lists_selected": false,
+    "selection_changed": false,
+    "basis": "Existing sole-selected list enabled by the owner for their own account"
+  },
+  "play_validation": {
+    "blocking_errors": 0,
+    "warning_count": 1,
+    "warning": "Native debug symbols absent for transitive libraries; recommendation, not upload blocker",
+    "memory_page_sizes": "Supports 16 kB",
+    "r8": "full mode",
+    "resource_shrinking": "optimized",
+    "mapping": "ReTrace mapping attached",
+    "supported_devices": 19325,
+    "devices_no_longer_supported": 0,
+    "required_features_removed": [
+      "android.hardware.screen.portrait"
+    ],
+    "agp9_suggestion": "Recommendation shown; no toolchain change performed"
+  },
+  "ci": {
+    "run_id": 39628516862,
+    "pull_request": 11,
+    "head_commit": "9744ee66f9d0d8db158b7521bfe5d3b3740f1189",
+    "checks": [
+      {
+        "link": "https://github.com/meteofriul/meteofriul-app/actions/runs/39628516862/job/119320137971",
+        "name": "frontend",
+        "state": "SUCCESS"
+      },
+      {
+        "link": "https://github.com/meteofriul/meteofriul-app/actions/runs/39628516862/job/119320138929",
+        "name": "backend",
+        "state": "SUCCESS"
+      },
+      {
+        "link": "https://github.com/meteofriul/meteofriul-app/actions/runs/39628516862/job/119320138555",
+        "name": "hosting-preview-tool",
+        "state": "SUCCESS"
+      }
+    ]
+  },
+  "sponsors": {
+    "checked_at": "2026-10-21T15:53:41.7824255Z",
+    "enabled": false,
+    "campaigns": 0,
+    "revision": 117
+  },
+  "git_promotion": {
+    "performed": false,
+    "main_commit": "c329217b5df540299dad69016848f47cf703a5d0",
+    "pull_request_status": "draft",
+    "reason": "Automatic approval review rejected merge because this AAB has not yet been tested on device. No retry or indirect merge performed."
+  },
+  "user_observation": "Owner reports seeing the test release in Play Store and updating; runtime test outcome not yet provided.",
+  "runtime_on_this_artifact": "NOT_VERIFIED",
+  "actions": {
+    "production_publications": 0,
+    "agent_device_installations": 0,
+    "backend_deploys": 0,
+    "manual_sends": 0
+  },
+  "screenshots": "Local ignored evidence directory .tmp/release-0.1.15-upload-20261021/"
+}
