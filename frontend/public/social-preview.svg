@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-labelledby="title description">
+  <title id="title">Meteo Friûl — Web app</title>
+  <desc id="description">Anteprima della web app Meteo Friûl, meteo ed eventi per il tempo libero.</desc>
+  <defs>
+    <linearGradient id="background" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#102a54"/>
+      <stop offset="1" stop-color="#073f68"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="50%" cy="50%" r="50%">
+      <stop offset="0" stop-color="#42b9f4" stop-opacity=".2"/>
+      <stop offset="1" stop-color="#42b9f4" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+
+  <rect width="1200" height="630" fill="url(#background)"/>
+  <circle cx="1090" cy="90" r="270" fill="url(#glow)"/>
+  <circle cx="1030" cy="570" r="250" fill="none" stroke="#ffffff" stroke-opacity=".08" stroke-width="2"/>
+  <circle cx="1030" cy="570" r="170" fill="none" stroke="#ffffff" stroke-opacity=".07" stroke-width="2"/>
+  <path d="M0 520C235 450 370 610 610 548C835 490 983 390 1200 470V630H0Z" fill="#081e3d" fill-opacity=".46"/>
+
+  <rect x="72" y="118" width="322" height="322" rx="74" fill="#ffffff" fill-opacity=".07" stroke="#ffffff" stroke-opacity=".12"/>
+  <!-- Use the existing official launcher artwork, without its transparent outer padding. -->
+  <svg x="83" y="129" width="300" height="300" viewBox="87 87 338 338">
+    <image xlink:href="branding/icon_launcher_any_mf-r5-20260927-512.png" width="512" height="512"/>
+  </svg>
+
+  <g font-family="Arial, Helvetica, sans-serif">
+    <text x="458" y="242" fill="#ffffff" font-size="78" font-weight="900" letter-spacing="1">METEO FRIÛL</text>
+    <path d="M728 272C810 248 960 248 1055 263C960 266 810 269 728 272Z" fill="#f2cf32"/>
+    <text x="458" y="330" fill="#cfe2ef" font-size="31" font-weight="500">Meteo ed eventi per il tempo libero</text>
+    <rect x="458" y="374" width="430" height="55" rx="27.5" fill="#ffffff" fill-opacity=".09" stroke="#ffffff" stroke-opacity=".13"/>
+    <circle cx="493" cy="401.5" r="8" fill="#4fe0b3"/>
+    <text x="518" y="411" fill="#ffffff" font-size="21" font-weight="700" letter-spacing="1.2">METEO · EVENTI · TERRITORIO</text>
+  </g>
+
+  <text x="76" y="566" fill="#94b3c8" font-family="Arial, Helvetica, sans-serif" font-size="22">meteofriul.app</text>
+</svg>
