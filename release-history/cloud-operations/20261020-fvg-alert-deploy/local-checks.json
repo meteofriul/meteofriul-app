@@ -1,0 +1,16 @@
+{
+  "candidate_commit": "520caa9a42763e1e642bc3370c4d779e8bed1d4e",
+  "base_image": "europe-west1-docker.pkg.dev/meteo-friul/meteofriul/backend@sha256:1f5171ad3e07748ac7fa8e3a8d1764458ee3ab4a3f4c4b78e8275925fa621d7f",
+  "tests": 172,
+  "failures": 0,
+  "errors": 0,
+  "skipped": 0,
+  "success": true,
+  "network": "socket connect/create_connection denied",
+  "api_reader_normalized_sha256": "73774cce7a46afb2c0a7c12f783686dd93a5a40236d479305515786bc5463f03",
+  "environment": {
+    "python": "3.13.5 (tags/v3.13.5:6cb20a2, Jun 11 2025, 16:15:46) [MSC v.1943 64 bit (AMD64)]",
+    "platform": "win32"
+  },
+  "limitations": "Local Windows dependencies; Linux image verification remains pending; captured and synthetic source cases only"
+}

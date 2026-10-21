@@ -1,0 +1,7 @@
+FROM europe-west1-docker.pkg.dev/meteo-friul/meteofriul/backend@sha256:1f5171ad3e07748ac7fa8e3a8d1764458ee3ab4a3f4c4b78e8275925fa621d7f
+ENV PUSH_OFFICIAL_ALERTS_MODE=off PUSH_OFFICIAL_ALERTS_REQUIRED=false
+COPY verification/package/candidate/app/services/official_alert_sources.py /app/app/services/official_alert_sources.py
+COPY verification/package/candidate/app/weather/alerts_engine.py /app/app/weather/alerts_engine.py
+COPY verification/package/candidate/app/services/push.py /app/app/services/push.py
+COPY verification/ /verification/
+LABEL io.meteofriul.fix="fvg-mixed-alerts-candidate" io.meteofriul.commit="5cbcd35ca88088220ff167b299cb4353ebdaf6d4"

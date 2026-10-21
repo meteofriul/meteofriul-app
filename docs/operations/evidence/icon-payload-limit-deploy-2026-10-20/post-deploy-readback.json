@@ -1,0 +1,23 @@
+{
+  "verified_at_utc": "2026-10-20T19:30:15.612980+00:00",
+  "fvg_run": "20261019T120000Z",
+  "fvg_publication_unchanged": true,
+  "fvg_documents_reread": 3,
+  "manifest_sha256": "0aa79142499aeac4e4c85b88dd902e04b3d2704964b6519b7c3b105539519add",
+  "legacy_readers_reused_on_same_immutable_manifest": [
+    {
+      "reader": "2f02c8ba",
+      "public_documents_accepted": 215,
+      "enriched_document_rejected": true
+    },
+    {
+      "reader": "8497e773",
+      "public_documents_accepted": 215,
+      "enriched_document_rejected": true
+    }
+  ],
+  "android_cors": true,
+  "network_actions": "GET only",
+  "new_run_verification": "pending",
+  "manual_job_executions": 0
+}

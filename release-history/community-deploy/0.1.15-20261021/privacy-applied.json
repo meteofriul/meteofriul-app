@@ -1,0 +1,11 @@
+{
+  "applied_at": "2026-10-21T14:10:09.403937+00:00",
+  "exclusion": {
+    "name": "community-http-request-privacy",
+    "description": "Exclude raw Community request URLs, IPs and user agents; retain application logs and native aggregate metrics.",
+    "filter": "resource.type=\"cloud_run_revision\"\nresource.labels.project_id=\"meteo-friul\"\nresource.labels.service_name=\"meteofriul-community\"\nLOG_ID(\"run.googleapis.com/requests\")",
+    "disabled": false
+  },
+  "other_sink_settings_preserved": true,
+  "before_marker": "community-deploy-before-20261021"
+}

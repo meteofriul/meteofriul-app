@@ -1,0 +1,90 @@
+[
+  {
+    "endpoint": "play",
+    "read_at": "2026-10-21T13:37:22.009914+00:00",
+    "active": true,
+    "count": 1,
+    "error": null,
+    "cache": {
+      "verification": {
+        "arpa_pcr": {
+          "status": "active",
+          "observed_at": "2026-10-21T12:00:06+00:00",
+          "revision": "e39c655b679af7d8b86c3e635b54cb9b2bd549e78a3dd95b0a9b61aa30d296d7",
+          "document_urls": [
+            "https://pianiemergenza.protezionecivile.fvg.it/alerts/30_2026.pdf"
+          ],
+          "document_membership_complete": true
+        },
+        "widget": {
+          "observed_at": "2026-10-21T12:00:06+00:00",
+          "event_signature": "645f75bb58cf7ac7b1bb9484718a8ec567d8eacf484beb4d844776609d868f50",
+          "status": "active"
+        }
+      },
+      "ttl_seconds": 600,
+      "status": "fresh",
+      "layer": "persistent",
+      "storage": "firestore",
+      "age_seconds": 5835
+    },
+    "alerts": [
+      {
+        "level": "arancione",
+        "zone_levels": {
+          "FVG-A": "arancione",
+          "FVG-D": "verde",
+          "FVG-B": "arancione",
+          "FVG-C": "gialla"
+        },
+        "valid_from": "2026-10-21T00:00:00+02:00",
+        "valid_to": "2026-10-22T06:00:00+02:00",
+        "pdf_url": "https://pianiemergenza.protezionecivile.fvg.it/alerts/30_2026.pdf"
+      }
+    ]
+  },
+  {
+    "endpoint": "default",
+    "read_at": "2026-10-21T13:37:23.022015+00:00",
+    "active": true,
+    "count": 1,
+    "error": null,
+    "cache": {
+      "ttl_seconds": 600,
+      "verification": {
+        "arpa_pcr": {
+          "document_urls": [
+            "https://pianiemergenza.protezionecivile.fvg.it/alerts/30_2026.pdf"
+          ],
+          "observed_at": "2026-10-21T12:00:06+00:00",
+          "document_membership_complete": true,
+          "revision": "e39c655b679af7d8b86c3e635b54cb9b2bd549e78a3dd95b0a9b61aa30d296d7",
+          "status": "active"
+        },
+        "widget": {
+          "status": "active",
+          "observed_at": "2026-10-21T12:00:06+00:00",
+          "event_signature": "645f75bb58cf7ac7b1bb9484718a8ec567d8eacf484beb4d844776609d868f50"
+        }
+      },
+      "status": "fresh",
+      "layer": "persistent",
+      "storage": "firestore",
+      "age_seconds": 5836
+    },
+    "alerts": [
+      {
+        "level": "arancione",
+        "zone_levels": {
+          "FVG-A": "arancione",
+          "FVG-C": "gialla",
+          "FVG-D": "verde",
+          "FVG-B": "arancione"
+        },
+        "valid_from": "2026-10-21T00:00:00+02:00",
+        "valid_to": "2026-10-22T06:00:00+02:00",
+        "pdf_url": "https://pianiemergenza.protezionecivile.fvg.it/alerts/30_2026.pdf"
+      }
+    ]
+  }
+]

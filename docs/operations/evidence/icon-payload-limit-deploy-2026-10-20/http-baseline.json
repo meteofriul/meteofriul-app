@@ -1,0 +1,33 @@
+{
+  "verified_at_utc": "2026-10-20T19:24:08.206587+00:00",
+  "source_run_id": "20261019T120000Z",
+  "manifest_sha256": "0aa79142499aeac4e4c85b88dd902e04b3d2704964b6519b7c3b105539519add",
+  "documents_reread": [
+    {
+      "istat": "093033",
+      "sha256": "ac751276a0f96a6714226246f1a6c758e4dbd4baeaa9fba7fa68f46abf41e7dc"
+    },
+    {
+      "istat": "030129",
+      "sha256": "11430be26ed9093e0715704a2825c38e9289da4399a3cebaebb12738cea08c3c"
+    },
+    {
+      "istat": "031008",
+      "sha256": "482ab8c97b603966689f01dc7482b0a7ebc580214cfb30c0aeab19447774bbe6"
+    }
+  ],
+  "legacy_readers_reused_on_same_immutable_manifest": [
+    {
+      "reader": "2f02c8ba",
+      "public_documents_accepted": 215,
+      "enriched_document_rejected": true
+    },
+    {
+      "reader": "8497e773",
+      "public_documents_accepted": 215,
+      "enriched_document_rejected": true
+    }
+  ],
+  "new_run_validation": "pending",
+  "requests": "GET only"
+}

@@ -1,0 +1,27 @@
+{
+  "start": "2026-10-21T14:15:23.884472+00:00",
+  "end": "2026-10-21T14:15:26.868598+00:00",
+  "marker": "community-deploy-after-141523",
+  "samples": [
+    {
+      "path": "/api/community/health?qa=community-deploy-after-141523",
+      "status": 200
+    },
+    {
+      "path": "/api/community/reports?istat_code=093033&qa=community-deploy-after-141523",
+      "status": 200
+    },
+    {
+      "path": "/api/community/reports?istat_code=093033&%6Cat=0&qa=community-deploy-after-141523",
+      "status": 400
+    },
+    {
+      "path": "/api/community/reports?istat_code=093033&unexpected=community-deploy-after-141523",
+      "status": 200
+    },
+    {
+      "path": "/api/community/nonexistent?qa=community-deploy-after-141523",
+      "status": 404
+    }
+  ]
+}

@@ -1,5 +1,20 @@
 # Allerte FVG e attestazioni API/job serale — 20 ottobre 2026
 
+> **Aggiornamento 21 ottobre 2026:** deploy FVG eseguito il 20 ottobre;
+> acquisizione e lettura dell'allerta ripristinate. Prima corsa con 44
+> accettazioni FCM su 45 tentativi, poi otto esecuzioni riuscite e deduplicate.
+> Il controllo dopo il deploy è concluso; restano dichiarati l'errore iniziale
+> FCM e una risposta temporanea Play `refreshing`, recuperata alla rilettura.
+> [Esito completo](FVG_ALERTS_DEPLOY_20261020.md).
+> Il perimetro locale descritto sotto è quello della preparazione precedente.
+
+## Aggiornamento operativo successivo
+
+Il [deploy FVG del 20 ottobre](FVG_ALERTS_DEPLOY_20261020.md) è completato.
+Il proprietario ha autorizzato anche gli invii ordinari previsti dalle regole
+esistenti. Resta da verificare la corsa delle 22:00: i paragrafi seguenti
+descrivono la precedente preparazione e le attestazioni storiche.
+
 ## Esito e perimetro
 
 Correzione **locale** delle allerte FVG completata; attestazioni dei servizi

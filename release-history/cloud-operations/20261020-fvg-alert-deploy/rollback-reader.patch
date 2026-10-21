@@ -1,0 +1,37 @@
+--- deployed/app/services/official_alert_sources.py
++++ rollback/app/services/official_alert_sources.py
+@@ -790,6 +790,7 @@
+     *,
+     identity: tuple[int, int],
+     pcr_revision: str,
++    schema: str = STRUCTURED_CORROBORATION_REVISION_SCHEMA,
+ ) -> str:
+     """Bind a structured two-source decision to its complete runtime meaning.
+ 
+@@ -816,7 +817,8 @@
+     return hashlib.sha256(
+         json.dumps(
+             {
+-                "schema": STRUCTURED_CORROBORATION_REVISION_SCHEMA,
++                "schema": schema,
++                **({"zone_levels": alert.get("zone_levels")} if schema == "runtime-v3" else {}),
+                 "identity": [year, number],
+                 "id": alert.get("id"),
+                 "event_id": alert.get("event_id"),
+@@ -1200,11 +1202,15 @@
+ 
+     schema = str(corroboration.get("revision_hash_schema") or "").strip()
+     try:
+-        if schema == STRUCTURED_CORROBORATION_REVISION_SCHEMA:
++        if schema in ("runtime-v2", "runtime-v3"):
++            # v2 never bound a zone map; reject a map injected under v2.
++            if schema == "runtime-v2" and "zone_levels" in alert:
++                return None
+             expected_revision_hash = _structured_corroboration_revision_hash(
+                 alert,
+                 identity=identity,
+                 pcr_revision=pcr_revision,
++                schema=schema,
+             )
+             kind = "current"
+         elif not schema:

@@ -1,0 +1,23 @@
+{
+  "verified_at_utc": "2026-10-20T19:28:55.056618+00:00",
+  "producer": "meteofriul-icon",
+  "source_commit": "5cbcd35ca88088220ff167b299cb4353ebdaf6d4",
+  "new_image": "europe-west1-docker.pkg.dev/meteo-friul/meteofriul/weather-worker@sha256:53c8709e74e75b350b1f502149bda489eb99b6e2c30eb6b47c46c4f689e78d48",
+  "compatible_rollback": "europe-west1-docker.pkg.dev/meteo-friul/meteofriul/weather-worker@sha256:e72f606ffe1feec5f1c108f945ec5dbce43cfebef3d69913fc72c11b04cbcae2",
+  "rollback_checkpoint_schemas": [
+    1,
+    2
+  ],
+  "rollback_limit": "32 MiB: same payload-size failure can recur on a fresh acquisition",
+  "other_jobs_unchanged": 12,
+  "schedulers_unchanged": 11,
+  "http_unchanged": true,
+  "only_image_changed": true,
+  "manual_executions": 0,
+  "manual_qa_executions": 0,
+  "send_settings_changed": false,
+  "new_executions_on_deploy": 0,
+  "next_scheduler_utc": "2026-10-21T06:00:00Z",
+  "new_run_validation": "pending",
+  "report_path": "docs/operations/ICON2I_PAYLOAD_LIMIT_DEPLOY_20261020.md"
+}

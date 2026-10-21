@@ -1,0 +1,23 @@
+{
+  "checked_at": "2026-10-20T19:48:44.865055+00:00",
+  "ordinary_run_not_yet_executed": true,
+  "api_reads": [
+    {
+      "api": "play",
+      "http_status": 200,
+      "active": false,
+      "count": 0,
+      "source_mode": "official_alerts_unavailable_fast_fallback",
+      "error": "official_alerts_unavailable"
+    },
+    {
+      "api": "default",
+      "http_status": 200,
+      "active": false,
+      "count": 0,
+      "source_mode": "official_alerts_unavailable_fast_fallback",
+      "error": "official_alerts_unavailable"
+    }
+  ],
+  "manual_executions": 0
+}
