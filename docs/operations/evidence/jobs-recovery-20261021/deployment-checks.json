@@ -216,7 +216,7 @@
       }
     ]
   },
-  "ordinary_verification": "pending scheduled executions",
+  "ordinary_verification": "evening and local notices verified; Eventi 2026-10-22 06:00 Europe/Rome pending",
   "follow_up": "verifica-job-eventi-e-avvisi-dopo-aggiornamento",
   "cloud_mutations": [
     "Cloud Build for two images",
@@ -252,5 +252,19 @@
     "operate.py": "015f9139a2160eb09fadf37af5c800949785bb90f5634068d3ca360ac2e1ffcf",
     "verify_ordinary.py": "8070400d9b62336039cd141acbe9a4043f064b312647f56d1157f04ace2b5459",
     "verify_events_compatibility.py": "7bae7523c4aadff4d379ca1703818e78f8ecd0e6a6105f8fea42a6fba1a7ea9d"
+  },
+  "ordinary_verification_evidence": {
+    "evening": "evening-ordinary-verification.json",
+    "notices": "notices-ordinary-verification.json"
+  },
+  "ordinary_verification_script_sha256": "13c81b0b3b95c24c7e5c5b12709a9e36bd56010537c366c2b9713462e0d61958",
+  "follow_up_window": {
+    "timezone": "Europe/Rome",
+    "target_events_run": "2026-10-22T06:00:00+02:00",
+    "not_before": "2026-10-22T06:20:00+02:00",
+    "available_until": "2026-10-22T23:59:59+02:00",
+    "late_pc_start_allowed": true,
+    "former_0720_deadline_removed": true,
+    "reuse_evening_and_notice_checks": true
   }
 }

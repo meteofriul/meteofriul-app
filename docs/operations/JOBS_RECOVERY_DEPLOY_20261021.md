@@ -1,6 +1,6 @@
 # Eventi e avvisi locali: deploy del 21 ottobre 2026
 
-**Deploy completati e configurazioni verificate; corse ordinarie successive ancora da verificare.**
+**Deploy completati; riepilogo serale e avvisi locali del 21 ottobre verificati. Eventi ancora da verificare.**
 Il proprietario ha autorizzato i commit separati, la promozione su main e il passaggio
 operativo dei job. Nessuna AAB, installazione, emulatore, pubblicazione Web,
 push Git o esecuzione/invio manuale. Sponsor invariati e disattivati.
@@ -38,7 +38,8 @@ alla candidata appena distribuita.
 
 L'aggiornamento Eventi conserva il catalogo corrente fino alla raccolta ordinaria.
 CAMS, produttori meteo, allerte FVG/nazionali, API e riepiloghi non sono stati
-ridistribuiti. In particolare la sintesi serale deve ancora dimostrare il recupero.
+ridistribuiti. La sintesi serale ha successivamente dimostrato il recupero
+nella corsa ordinaria del 21 ottobre, descritta sotto.
 
 ## Compatibilità Eventi
 
@@ -114,18 +115,87 @@ Le configurazioni complete precedenti e successive sono conservate nelle evidenz
 locali. Il ripristino dei testi Monitoring può usare i due JSON originali, senza
 alterare soglie o destinatari. Nessun rollback è stato eseguito.
 
-## Corso ordinario da verificare
+## Verifiche delle corse ordinarie
 
-| Job | Corsa Europe/Rome | Stato a fine deploy |
+| Job | Corsa Europe/Rome | Stato aggiornato |
 | --- | --- | --- |
-| Sintesi serale | 21 ottobre 20:45 | Attesa, immagine invariata |
-| Avvisi locali | 21 ottobre 21:00 | Attesa, prima candidata |
+| Sintesi serale | 21 ottobre 20:45 | Verificata: 42 invii accettati, zero errori; immagine invariata |
+| Avvisi locali | 21 ottobre 21:00 | Verificati: 7/7 punti con tolleranze, 42/42 valutazioni possibili; nessun invio dovuto |
 | Eventi | 22 ottobre 06:00 | Attesa, prima candidata |
 
-Follow-up `verifica-job-eventi-e-avvisi-dopo-aggiornamento`, ogni ora al minuto 20;
-primo controllo utile serale alle 21:20, Eventi alle 06:20 con ultimo controllo
-alle 07:20. Rimane silenzioso durante attesa o stato invariato; non avvia esecuzioni.
-Si elimina dopo tutti gli esiti, oppure al termine della finestra dichiarando i limiti.
+### Riepilogo serale: controllo richiesto dal proprietario
+
+Esecuzione `meteofriul-evening-forecast-jxgnh`, avviata alle **20:45:01** e
+conclusa alle **20:46:45 Europe/Rome** del 21 ottobre. Digest invariato e atteso.
+Scheduler ha completato la chiamata al job con HTTP 200; esecuzione riuscita.
+Risultato applicativo: **42 dispositivi idonei, 42 tentativi, 42 invii accettati
+da FCM**, su 14 gruppi. Zero errori di sorgente, sicurezza, persistenza o
+consegna; zero invii non confermati, retry e duplicati.
+
+Il proprietario riferisce di aver ricevuto una notifica nell'app alle 20:46:
+è coerente con la corsa, ma il contenuto non è stato ispezionato. I contatori
+FCM non dimostrano la visualizzazione su tutti i dispositivi.
+
+Il verificatore locale inizialmente richiedeva il campo Scheduler `status=OK`;
+il log di successo reale lo omette e riporta HTTP 200 in `AttemptFinished`.
+La verifica è stata corretta controllando anche identità esatta del job e URL,
+poi l'esito è stato ricalcolato sulle stesse evidenze, senza altre chiamate cloud.
+[Esito sintetico](evidence/jobs-recovery-20261021/evening-ordinary-verification.json).
+Nessun job o invio manuale; al termine di quel controllo avvisi locali ed
+Eventi erano ancora aperti.
+
+### Avvisi locali delle 21:00: tolleranze esercitate nella corsa ordinaria
+
+Esecuzione `meteofriul-local-notice-46tlr`, avviata alle **21:00:04** e conclusa
+alle **21:00:52 Europe/Rome** del 21 ottobre. Scheduler HTTP 200, digest candidato
+atteso e flag sidecar `true` verificati anche nella specifica dell'esecuzione.
+Corsa meteo `20261021T120000Z`; 18 dispositivi idonei raggruppati in **7 punti
+canonici di 7 comuni**, senza moltiplicare il denominatore per i dispositivi.
+
+- Metadati sidecar verificati in **7/7** punti; zero assenti, invalidi o disabilitati.
+- Tolleranze effettivamente utilizzate in **7/7** punti.
+- Sei rilevatori per punto: **42/42 valutazioni possibili**, zero parziali e zero
+  non valutabili. Classi `only_resolution` e `other_or_mixed` entrambe a zero.
+- Sette audit persistiti riconciliati in sola lettura con i contatori del job.
+- Zero errori di sorgente, sicurezza, persistenza, audit o consegna; zero invii
+  non confermati, retry, deduplicazioni e tentativi di consegna.
+
+| Rilevatore | Valutazioni | Con tolleranza | Non valutabili | Candidati rilevati prima del filtro temporale |
+| --- | ---: | ---: | ---: | ---: |
+| Pioggia | 7 | 7 | 0 | 1 |
+| Neve | 7 | 7 | 0 | 0 |
+| Temporali | 7 | 0 | 0 | 0 |
+| Ghiaccio | 7 | 0 | 0 | 0 |
+| Vento | 7 | 0 | 0 | 0 |
+| Caldo | 7 | 0 | 0 | 0 |
+
+**Perché nessun invio:** a Chions il rilevatore ha riconosciuto un candidato
+pioggia per le **23:00**, 119 minuti dopo la valutazione. L'audit registra
+`onset_beyond_notice_window`: l'anticipo massimo è 60 minuti. Quindi il candidato
+è rinviato dal filtro temporale, senza blocchi dei dati; non è una deduplicazione
+né un errore di consegna. Un eventuale invio dipenderà dalle successive valutazioni
+ordinarie, dai dati e dalle regole allora vigenti.
+
+**Limiti:** i campi tollerati osservati sono `precipitation_mm` e `liquid_rain_mm`.
+Il rilevatore neve usa anche questi campi indirettamente; la tolleranza specifica
+`snow_water_equivalent_mm` non è stata esercitata. Non è una prova su nevicata
+né una misura su tutti i 215 comuni. Non essendoci candidati tempestivi, questa
+corsa non verifica una consegna FCM degli avvisi locali.
+[Esito sintetico e denominatori](evidence/jobs-recovery-20261021/notices-ordinary-verification.json).
+
+Follow-up `verifica-job-eventi-e-avvisi-dopo-aggiornamento`, ogni ora al minuto 20.
+Riepilogo e avvisi sono già verificati e comunicati: resta soltanto Eventi.
+Il proprietario accenderà il PC dopo l'orario inizialmente previsto: la verifica
+può partire dalle 06:20 e resta valida **per tutta la giornata del 22 ottobre**,
+al primo passaggio disponibile con PC e app aperti. La scadenza delle 07:20
+è rimossa. Si legge sempre la corsa ordinaria delle 06:00; non se ne avvia un
+altra e non la si sostituisce con una successiva. Il job cloud è indipendente
+dall'accensione del PC.
+
+Prima della finestra, durante l'attesa e su stato invariato il follow-up resta
+silenzioso. Si elimina dopo esito completo o problema che richiede decisione;
+fuori dal 21-22 ottobre si elimina senza esecuzioni e dichiara l'eventuale
+verifica rimasta incompleta. Nessuna scadenza mancata equivale a un esito positivo.
 
 Dalla radice canonica, lo script locale `.tmp/job-recovery-deploy-20261021/verify_ordinary.py`
 legge soltanto: esecuzioni con digest atteso, log Scheduler, risultato applicativo,

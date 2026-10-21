@@ -1,0 +1,44 @@
+{
+  "checked_at": "2026-10-21T18:57:11.948664+00:00",
+  "target": "evening",
+  "result": {
+    "execution": "meteofriul-evening-forecast-jxgnh",
+    "created": "2026-10-21T18:45:01.601039Z",
+    "completion": "2026-10-21T18:46:45.522258Z",
+    "succeeded": 1,
+    "failed": 0,
+    "image": "europe-west1-docker.pkg.dev/meteo-friul/meteofriul/backend@sha256:68ce70252ae27a33a5bbd628984727fc993a9be09295777d945108441bf773c5",
+    "scheduler_success_evidence": true,
+    "summaries": [
+      {
+        "in_progress": 0,
+        "sent_unconfirmed": 0,
+        "attempted": 42,
+        "source_failed": 0,
+        "retry_scheduled": 0,
+        "failed_groups": 0,
+        "opted_out": 0,
+        "groups": 14,
+        "security_failed": 0,
+        "delivery_batches": 14,
+        "deduplicated": 0,
+        "failed": 0,
+        "status": "sent",
+        "sent": 42,
+        "eligible_devices": 42,
+        "evaluated": 42,
+        "pages_processed": 1,
+        "retired_targets": 0,
+        "device_failed": 0,
+        "storage_failed": 0,
+        "duplicate_targets": 0
+      }
+    ],
+    "state": "verified",
+    "scheduler_evidence_format": "AttemptFinished for exact job and run URL, HTTP 200; status field omitted",
+    "evidence_reviewed_at": "2026-10-21T19:01:07.663656+00:00",
+    "user_receipt_report": "Owner reports an app notification at 20:46; exact payload not inspected."
+  },
+  "manual_execution": false,
+  "cloud_mutation": false
+}

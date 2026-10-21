@@ -3,7 +3,9 @@
 > **Deploy consumatore, 21 ottobre sera:** job avvisi aggiornato alla candidata
 > `18b88049`, sidecar abilitato e configurazioni verificate. Il campione locale
 > sulla corsa `20261021T120000Z` ha 6/6 fenomeni valutabili a Chions e Udine,
-> con tolleranze esercitate. La prima corsa ordinaria delle 21:00 è ancora attesa.
+> con tolleranze esercitate. La corsa ordinaria delle 21:00 è verificata: 7/7
+> comuni con metadati verificati e tolleranze usate, 42/42 valutazioni possibili.
+> Nessun candidato tempestivo e nessun invio; tolleranza SWE non esercitata.
 > Exit code e soglie degli allarmi invariati. Questo stato sostituisce le attese
 > di attivazione riportate sotto. [Verbale, rollback e follow-up](JOBS_RECOVERY_DEPLOY_20261021.md).
 
@@ -164,7 +166,9 @@ originaria del 19 ottobre e non certificano né invalidano le release successive
 5. **Consumatore operativo aggiornato il 21 ottobre sera:** candidata `18b88049`
    e sidecar abilitato, runtime e Scheduler verificati. Rollback conservativo
    disponibile; testi Monitoring chiariti con soglie ed exit code invariati.
-   La verifica della prima corsa ordinaria delle 21:00 resta pendente.
+   Corsa delle 21:00 verificata: 7/7 punti con sidecar e tolleranze, nessun
+   fenomeno non valutabile. Il candidato pioggia di Chions per le 23:00 è
+   oltre l'anticipo massimo; nessun invio. Tolleranza SWE non esercitata.
    Gli invii ordinari mantengono le regole correnti; nessun avvio manuale o
    modifica dei destinatari. Un eventuale exit 0 per il solo degrado resta
    subordinato al cambiamento coordinato del monitoraggio.
