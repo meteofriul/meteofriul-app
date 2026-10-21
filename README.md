@@ -31,9 +31,11 @@ ne autorizza la promozione. [Stato, rami e prossimi passi](docs/operations/RELEA
 
 **Job meteo ICON-2I — verifica del 21 ottobre 2026:** nuova corsa pubblicata,
 checkpoint schema 2, 215 documenti e sidecar e campione nazionale verificati.
-Le tolleranze sono esercitate nei dati reali. Il nuovo consumatore avvisi
-resta nel percorso QA; pubblicazione dei dati e consegna degli avvisi sono
-verifiche distinte. [Verbale e limiti](docs/operations/ICON2I_PAYLOAD_LIMIT_DEPLOY_20261020.md).
+Le tolleranze sono esercitate nei dati reali. Il 21 ottobre sono stati aggiornati
+anche il job avvisi (valutazione per fenomeno e sidecar abilitato) e il job Eventi
+(Spazzapan e recupero dei timeout). Deploy verificati; le prime corse ordinarie
+successive restano da controllare. [Stato, rollback e verifiche pianificate](docs/operations/JOBS_RECOVERY_DEPLOY_20261021.md).
+[Verifica del produttore e limiti](docs/operations/ICON2I_PAYLOAD_LIMIT_DEPLOY_20261020.md).
 
 **Allerte FVG e Community:** aggiornamenti già distribuiti e verificati nei
 rispettivi [verbali allerte](docs/operations/FVG_ALERTS_DEPLOY_20261020.md) e

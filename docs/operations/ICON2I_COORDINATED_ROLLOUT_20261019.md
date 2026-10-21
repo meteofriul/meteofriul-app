@@ -1,5 +1,12 @@
 # Passaggio coordinato ICON-2I — piano e stato operativo
 
+> **Deploy consumatore, 21 ottobre sera:** job avvisi aggiornato alla candidata
+> `18b88049`, sidecar abilitato e configurazioni verificate. Il campione locale
+> sulla corsa `20261021T120000Z` ha 6/6 fenomeni valutabili a Chions e Udine,
+> con tolleranze esercitate. La prima corsa ordinaria delle 21:00 è ancora attesa.
+> Exit code e soglie degli allarmi invariati. Questo stato sostituisce le attese
+> di attivazione riportate sotto. [Verbale, rollback e follow-up](JOBS_RECOVERY_DEPLOY_20261021.md).
+
 > **Aggiornamento 21 ottobre, verifica del consumatore:** il produttore è stato
 > verificato sulla nuova corsa; il job operativo degli avvisi usa ancora la
 > versione precedente. Il replay locale del caso reale Chions con il codice di
@@ -154,14 +161,13 @@ originaria del 19 ottobre e non certificano né invalidano le release successive
    pubblicato `20261021T000000Z`. Digest, checkpoint schema 2, source_quality,
    215 documenti con lettori storici e sidecar, e campione nazionale verificati
    nel verbale del produttore. Nessun QA cloud avviato per questo controllo.
-5. **Consumatore operativo da aggiornare:** il job degli avvisi usa ancora
-   il digest precedente; il replay locale Chions conferma la valutazione per
-   fenomeno già presente su main. Il test recupera cinque fenomeni ma conserva
-   il degrado e gli exit code. Prima di un eventuale cambiamento delle uscite,
-   coordinare il monitoraggio; poi identificare candidato e rollback compatibile
-   e verificare la corsa ordinaria dopo un deploy autorizzato. Gli invii ordinari
-   già autorizzati mantengono le regole correnti; nessun invio manuale o cambio
-   ai destinatari è stato eseguito in questa preparazione.
+5. **Consumatore operativo aggiornato il 21 ottobre sera:** candidata `18b88049`
+   e sidecar abilitato, runtime e Scheduler verificati. Rollback conservativo
+   disponibile; testi Monitoring chiariti con soglie ed exit code invariati.
+   La verifica della prima corsa ordinaria delle 21:00 resta pendente.
+   Gli invii ordinari mantengono le regole correnti; nessun avvio manuale o
+   modifica dei destinatari. Un eventuale exit 0 per il solo degrado resta
+   subordinato al cambiamento coordinato del monitoraggio.
 
 La fase 02 modifica anche codice condiviso dai riepiloghi mattutino e serale:
 mantengono il rifiuto dei dati incompleti, senza usare la tolleranza per
@@ -199,5 +205,5 @@ non sommare retry come nuove corse e non contare i dispositivi come punti distin
   diagnostica e dati. Non ripristinare silenziosamente il null trasformato in zero.
 - Immagini, digest e configurazioni effettive sono registrati nei verbali
   delle fasi 01–03. La nuova corsa del produttore è verificata; il replay
-  Chions è solo locale. Attivazione e verifica ordinaria del nuovo consumatore
-  restano pendenti e non sono dimostrate dal successo del produttore.
+  Chions è locale. Il nuovo consumatore è ora distribuito; la verifica della
+  sua prima corsa ordinaria resta pendente e non è dimostrata dal produttore.

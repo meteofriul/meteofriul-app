@@ -1,0 +1,40 @@
+{
+  "steps": [
+    {
+      "name": "gcr.io/cloud-builders/docker",
+      "id": "events",
+      "args": [
+        "build",
+        "-f",
+        "backend/Dockerfile.events-pilot",
+        "--label",
+        "org.opencontainers.image.revision=18b88049ff5d69f401da3aca491c5a0e1df302ca",
+        "-t",
+        "europe-west1-docker.pkg.dev/meteo-friul/meteofriul/events-worker:job-recovery-18b88049-20261021",
+        "."
+      ]
+    },
+    {
+      "name": "gcr.io/cloud-builders/docker",
+      "id": "notices",
+      "args": [
+        "build",
+        "-f",
+        "Dockerfile.notices",
+        "--label",
+        "org.opencontainers.image.revision=18b88049ff5d69f401da3aca491c5a0e1df302ca",
+        "-t",
+        "europe-west1-docker.pkg.dev/meteo-friul/meteofriul/backend:job-recovery-18b88049-20261021",
+        "."
+      ]
+    }
+  ],
+  "images": [
+    "europe-west1-docker.pkg.dev/meteo-friul/meteofriul/events-worker:job-recovery-18b88049-20261021",
+    "europe-west1-docker.pkg.dev/meteo-friul/meteofriul/backend:job-recovery-18b88049-20261021"
+  ],
+  "timeout": "1500s",
+  "options": {
+    "logging": "CLOUD_LOGGING_ONLY"
+  }
+}
