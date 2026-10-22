@@ -26,7 +26,7 @@ test interno: non va modificata solo per far coincidere i numeri.
 | Rilievo | Evidenza e stato |
 | --- | --- |
 | NATIVE-CONFIG-01 | Nell'AAB manca `base/assets/capacitor.config.json`; l'app registra l'errore e usa default diversi, anche per gli inset. Correggere preparazione e controllo del contenuto del bundle prima della promozione. Verificare anche l'errore Cordova su `config.xml` |
-| LOCATION-UPDATE-01 | Il proprietario ha trovato Posizione spenta nell'app subito dopo Play, prima dei test. Causa sconosciuta. I permessi Android concessi non dimostrano la conservazione dell'interruttore. Mancava una lettura precedente all'aggiornamento |
+| LOCATION-UPDATE-01 | Causa dell'episodio Play ancora non provata. Il 22 ottobre è stato riprodotto e corretto localmente un percorso di avvio che disattiva la preferenza dopo errori temporanei: 114 test passano. Correzione sul ramo dedicato, da verificare sul dispositivo e non promossa. [Analisi e limiti](ANDROID_LOCATION_STARTUP_20261022.md) |
 | BULLETIN-MAP-01 | Le gocce dell'icona coprono parte dell'etichetta della temperatura a 1000 m nella mappa del bollettino |
 | Copertura restante | Android 15/16, gesti, tablet/multi-window e percorsi con scritture o consegne reali non verificati; nessun PASS implicito |
 

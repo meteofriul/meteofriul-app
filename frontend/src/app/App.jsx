@@ -2175,7 +2175,11 @@ export default function App() {
         if (cancelled) return { receive: NATIVE_PUSH_PERMISSION.unknown, requested: false };
         return requestAndActivateNativePush();
       },
-      resolveDeviceLocation: () => refreshAutomaticDeviceLocation({ markLoading: true }),
+      resolveDeviceLocation: () => refreshAutomaticDeviceLocation({
+        // Startup rechecks an existing choice; a temporary failure must not erase it.
+        keepAutomaticModeOnTemporaryFailure: true,
+        markLoading: true,
+      }),
       selectedLocation: readStoredAppLocation(),
       startupNotificationsAsked: startupStorage.startupNotificationsAsked,
       weatherAlertsEnabled: startupStorage.weatherAlertsEnabled,
