@@ -1,7 +1,9 @@
 # Navigazione fissa nelle sezioni Bollettino ed Eventi
 
-Stato: modifica locale sul ramo `codex/section-sticky-navigation`, basato su
-`main` `3da1db2d4d2f1de4bd14745ef7fd078ec8d399dd`. Non promossa su main.
+Stato: promossa su **main locale** il 22 ottobre 2026 con merge `0cb35bd7`.
+Sviluppata sul ramo `codex/section-sticky-navigation`, inizialmente basato su
+`main` `3da1db2d4d2f1de4bd14745ef7fd078ec8d399dd`. Nessun push o rilascio.
+Restano espliciti i limiti della verifica descritti sotto.
 
 ## Perimetro approvato
 
@@ -47,8 +49,9 @@ browser con un'allerta corrente: nella sessione non era presente il relativo
 blocco. L'offset è implementato ma la prova visiva di quel percorso resta aperta.
 La verifica su telefono, inizialmente pendente, è completata per il browser
 Brave nel seguito riportato sotto. Restano non provati Safari/iPhone, il runtime
-Android nativo e il percorso dell'allerta corrente. Nessuna promozione su main
-è stata effettuata in questa sessione.
+Android nativo e il percorso dell'allerta corrente. La prima sessione di prova
+non aveva effettuato la promozione; il successivo passaggio locale è registrato
+in fondo al verbale.
 
 Nessuna AAB, installazione, emulatore, push, deploy, esecuzione di job o invio
 manuale. Sponsor e altri lavori (posizione Android, configurazione nativa,
@@ -107,9 +110,38 @@ ignorata `.tmp/section-sticky-phone-20261022` della radice canonica. Sono
 escluse dalle evidenze versionabili le schermate delle impostazioni personali.
 Le preferenze dell'anteprima sono state riportate a italiano/tema chiaro.
 
-La verifica Brave non attesta WebView Android, AAB o Safari/iPhone. Il ramo non
-include ancora la distinta correzione della mappa già promossa su main; questa
-sessione non la ricopia e non modifica altri rami. Nessuna AAB, installazione,
-emulatore, push, deploy, invio o modifica degli sponsor. I test automatici già
-registrati sopra restano quelli del candidato, senza ripetizioni inutili perché
-il codice non è cambiato.
+La verifica Brave non attesta WebView Android, AAB o Safari/iPhone. Il candidato
+usato per le prove sul telefono precedeva l'integrazione della distinta correzione
+della mappa già promossa su main. L'integrazione successiva è descritta sotto.
+Nessuna AAB, installazione, emulatore, push, deploy, invio o modifica degli sponsor
+in questa attività.
+
+
+## Promozione locale autorizzata, 22 ottobre 2026
+
+- Codice della barra: commit `aa505cd6`.
+- Verbale e prove Galaxy: commit `49e0d97c`.
+- Integrazione del main precedente `5d63b0c5` nel ramo: `e8cf7199`, senza
+  conflitti. La correzione `BulletinMap.jsx` già verificata su main resta identica.
+- Candidato integrato sottoposto agli ultimi controlli:
+  `e8cf71992cd9b641bce3b3edf290461a469bc1d2`.
+- Merge su main: `0cb35bd7`. Albero del merge identico al candidato verificato.
+
+Ultimi controlli: **87 test superati in 9 file**, Vitest con
+`--configLoader native`, comprendenti route, composizione e gesti meteo,
+menù, Eventi e dettaglio, layout e BulletinView. ESLint sui componenti modificati
+superato. Verificati anche `git diff --check`, i link locali del verbale, tutti
+i sette hash delle evidenze salvate negli oggetti Git e il perimetro del diff.
+Il resoconto completo dei test resta nella radice canonica in
+`.tmp/section-sticky-phone-20261022/integration-vitest.json`.
+
+La promozione riusa le prove reali Galaxy/Brave riportate sopra; nessuna nuova
+installazione. Il percorso da allerta ufficiale corrente resta non esercitato,
+mentre l'apertura dal riepilogo ordinario è verificata. Non si estende questa
+attestazione a una build Android nativa né a Safari/iPhone.
+
+Main comprende solo il lavoro approvato della barra e il verbale, oltre alla
+correzione della mappa già presente. Previsioni e Tempo reale mantengono lo
+scorrimento normale. Nessuna modifica a sponsor, backend, invii, versione o
+configurazione di release. Nessun push, deploy o workflow CI remoto avviato:
+questa è una promozione locale, non una pubblicazione dell'app.
