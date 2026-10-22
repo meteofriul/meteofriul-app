@@ -37,9 +37,10 @@ Controllata anche la resa nella pagina completa del bollettino.
 ## Limiti
 
 Prima verifica svolta senza telefono; il successivo controllo sul Galaxy è riportato sotto. Nessuna verifica della modifica nel pacchetto Android installato.
-Correzione conservata sul ramo dedicato, senza promozione su main.
+Alla chiusura della prima verifica la correzione era conservata sul ramo dedicato, senza promozione su main.
 Nessuna AAB, installazione, emulatore, push, deploy o invio.
 I file della verifica sintetica restano locali e ignorati da Git.
+
 ## Verifica Galaxy collegato
 
 Completata il 22 ottobre sul candidato `babbc67f`, senza ulteriori modifiche
@@ -62,5 +63,22 @@ sintetici dichiarati, per esercitare le icone indipendentemente dal meteo.
 Esito positivo per questa correzione nel browser reale del telefono.
 Non equivale a una prova di una nuova AAB/WebView Android. Nessuna installazione,
 AAB, push, deploy, modifica alle app installate o invio manuale.
-Main e gli altri rami restano invariati; la verifica non include GPS,
+Durante le verifiche main e gli altri rami sono rimasti invariati; la verifica non include GPS,
 configurazione nativa o navigazione fissa delle sezioni.
+## Promozione locale su main
+
+Il 22 ottobre il proprietario ha autorizzato il passaggio su main della sola
+correzione della mappa e del verbale, dopo la verifica sul Galaxy in Brave.
+Il perimetro comprende `babbc67f` (correzione) e `a9af8f98` (verifica sul
+telefono), le relative evidenze e questo aggiornamento documentale.
+
+Controlli finali: ramo e worktree main puliti; diff limitato al componente
+mappa e alla sua documentazione; `git diff --check`, controllo di pulizia del
+workspace canonico e hash dei file salvati nel commit tutti superati.
+Il componente è invariato rispetto ai 36 test e alle verifiche browser/Galaxy.
+
+La navigazione fissa di Bollettino ed Eventi resta nel ramo separato
+`codex/section-sticky-navigation` (`aa505cd6`), esclusa da questa promozione.
+L'anteprima della mappa non include quella modifica. Restano separati anche
+GPS e preparazione della release. Nessuna AAB, installazione, push, deploy o
+invio: promozione del codice solo locale, senza aggiornare l'app installata.
