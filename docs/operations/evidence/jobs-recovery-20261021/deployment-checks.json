@@ -1,0 +1,272 @@
+{
+  "date": "2026-10-21",
+  "candidate_commit": "18b88049ff5d69f401da3aca491c5a0e1df302ca",
+  "commits": {
+    "events": "09514a2d",
+    "notices": "58bc2f91"
+  },
+  "cloud_build_id": "d7be8c19-3a33-4aef-ab98-6bf76c9794ca",
+  "cloud_build_status": "SUCCESS",
+  "images": {
+    "events": "europe-west1-docker.pkg.dev/meteo-friul/meteofriul/events-worker@sha256:06e4b2fb4f0655eca4f416e503b16ff24616e178ed03c56f501b1a15f678b95e",
+    "notices": "europe-west1-docker.pkg.dev/meteo-friul/meteofriul/backend@sha256:3b0cac97d0bbf533916b74ec24fd632f5fbc9f54c2266746a85fb31613aa8f74"
+  },
+  "deployment": {
+    "events": {
+      "time": "2026-10-21T18:13:05.501580+00:00",
+      "image": "europe-west1-docker.pkg.dev/meteo-friul/meteofriul/events-worker@sha256:06e4b2fb4f0655eca4f416e503b16ff24616e178ed03c56f501b1a15f678b95e",
+      "only_image_and_expected_flag_changed": true,
+      "scheduler_unchanged": true,
+      "no_manual_execution": true
+    },
+    "notices": {
+      "time": "2026-10-21T18:14:01.849019+00:00",
+      "image": "europe-west1-docker.pkg.dev/meteo-friul/meteofriul/backend@sha256:3b0cac97d0bbf533916b74ec24fd632f5fbc9f54c2266746a85fb31613aa8f74",
+      "only_image_and_expected_flag_changed": true,
+      "scheduler_unchanged": true,
+      "no_manual_execution": true
+    }
+  },
+  "tests": {
+    "events_linux": 525,
+    "notices_linux": 182,
+    "windows_source_regressions": 142,
+    "windows_notices": 182
+  },
+  "monitoring": {
+    "policy_text_updated": true,
+    "thresholds_channels_unchanged": true,
+    "exit_codes_unchanged": true,
+    "data_degraded_still_exit_1": true
+  },
+  "events_api_compatibility": {
+    "time": "2026-10-21T18:10:12.896967+00:00",
+    "compatible": true,
+    "baseline_revision": "2a2a5f106b8185fd9a8f773b64552b20253df7a4",
+    "baseline_image": "europe-west1-docker.pkg.dev/meteo-friul/meteofriul/events-worker@sha256:529d93d115de05ff8d6039d09545d2d2e9da5fd87ace227b22f4be6e7b0c296b",
+    "api_update_needed_for_this_recovery": false,
+    "preexisting_reader_differences": [
+      {
+        "variant": "before",
+        "place": "Tolmezzo",
+        "source_id": null,
+        "reason": "pre-existing API does not support end_only; unrelated to recovery"
+      },
+      {
+        "variant": "projected",
+        "place": "Tolmezzo",
+        "source_id": null,
+        "reason": "pre-existing API does not support end_only; unrelated to recovery"
+      }
+    ],
+    "catalogue_schema": "pilot-events-v1",
+    "local_comparison": {
+      "active_api": {
+        "before": {
+          "Pordenone": {
+            "sha256": "681a2c5ac497fbd5af63c6c6ad6042042d17443b23c30aa05edec5a457186877",
+            "events": 335
+          },
+          "Udine": {
+            "sha256": "5e310b2c7050557ec61b47544224abdd2886e57ecba82166b762c6ae7209f53e",
+            "events": 463
+          },
+          "Trieste": {
+            "sha256": "b1249c0b6f9042800c639b94aa00ff05dc7e449cb89a9905a794b0169e0ecc58",
+            "events": 256
+          },
+          "Gradisca": {
+            "sha256": "6198565386e7d33b392749831abbe64514f0e6116942ee0ed008cee3345936e0",
+            "events": 288
+          },
+          "Tolmezzo": {
+            "sha256": "1d4cd38c7d105aed2ace83c4f63a9a94b93c9f0202f025b89a2383c0f83d0b60",
+            "events": 60
+          }
+        },
+        "projected": {
+          "Pordenone": {
+            "sha256": "681a2c5ac497fbd5af63c6c6ad6042042d17443b23c30aa05edec5a457186877",
+            "events": 335
+          },
+          "Udine": {
+            "sha256": "5e310b2c7050557ec61b47544224abdd2886e57ecba82166b762c6ae7209f53e",
+            "events": 463
+          },
+          "Trieste": {
+            "sha256": "b1249c0b6f9042800c639b94aa00ff05dc7e449cb89a9905a794b0169e0ecc58",
+            "events": 256
+          },
+          "Gradisca": {
+            "sha256": "a44279cf9cb9c6be9d8a500d2b983c5b072518fe77ce08bf79051ffe48e06217",
+            "events": 290
+          },
+          "Tolmezzo": {
+            "sha256": "1d4cd38c7d105aed2ace83c4f63a9a94b93c9f0202f025b89a2383c0f83d0b60",
+            "events": 60
+          }
+        }
+      },
+      "candidate": {
+        "before": {
+          "Pordenone": {
+            "sha256": "681a2c5ac497fbd5af63c6c6ad6042042d17443b23c30aa05edec5a457186877",
+            "events": 335
+          },
+          "Udine": {
+            "sha256": "5e310b2c7050557ec61b47544224abdd2886e57ecba82166b762c6ae7209f53e",
+            "events": 463
+          },
+          "Trieste": {
+            "sha256": "b1249c0b6f9042800c639b94aa00ff05dc7e449cb89a9905a794b0169e0ecc58",
+            "events": 256
+          },
+          "Gradisca": {
+            "sha256": "6198565386e7d33b392749831abbe64514f0e6116942ee0ed008cee3345936e0",
+            "events": 288
+          },
+          "Tolmezzo": {
+            "sha256": "c405eb39fe7e7bdcd6edb169c65b998ccc6c44d923720c1df13b92263175e0a3",
+            "events": 61
+          }
+        },
+        "projected": {
+          "Pordenone": {
+            "sha256": "681a2c5ac497fbd5af63c6c6ad6042042d17443b23c30aa05edec5a457186877",
+            "events": 335
+          },
+          "Udine": {
+            "sha256": "5e310b2c7050557ec61b47544224abdd2886e57ecba82166b762c6ae7209f53e",
+            "events": 463
+          },
+          "Trieste": {
+            "sha256": "b1249c0b6f9042800c639b94aa00ff05dc7e449cb89a9905a794b0169e0ecc58",
+            "events": 256
+          },
+          "Gradisca": {
+            "sha256": "a44279cf9cb9c6be9d8a500d2b983c5b072518fe77ce08bf79051ffe48e06217",
+            "events": 290
+          },
+          "Tolmezzo": {
+            "sha256": "c405eb39fe7e7bdcd6edb169c65b998ccc6c44d923720c1df13b92263175e0a3",
+            "events": 61
+          }
+        }
+      }
+    },
+    "live_current_pages": [
+      {
+        "place": "Pordenone",
+        "http": 200,
+        "visible_total": 335,
+        "all_fields_equal_to_active_reader": true
+      },
+      {
+        "place": "Udine",
+        "http": 200,
+        "visible_total": 463,
+        "all_fields_equal_to_active_reader": true
+      },
+      {
+        "place": "Trieste",
+        "http": 200,
+        "visible_total": 256,
+        "all_fields_equal_to_active_reader": true
+      },
+      {
+        "place": "Gradisca",
+        "http": 200,
+        "visible_total": 288,
+        "all_fields_equal_to_active_reader": true
+      },
+      {
+        "place": "Tolmezzo",
+        "http": 200,
+        "visible_total": 60,
+        "all_fields_equal_to_active_reader": true
+      }
+    ],
+    "projected_catalogue_published": false
+  },
+  "public_live_notice_check": {
+    "checked_at": "2026-10-21T18:17:08.681134+00:00",
+    "mode": "public reads and local evaluation only; no service.run, audit or outbox writes",
+    "results": [
+      {
+        "istat": "093013",
+        "source_run_id": "20261021T120000Z",
+        "sidecar": "verified",
+        "status": "no_candidate",
+        "errors": [],
+        "candidate_count": 0,
+        "phenomena_expected": 6,
+        "phenomena_not_possible": 0,
+        "evaluations_with_tolerance": 1
+      },
+      {
+        "istat": "030129",
+        "source_run_id": "20261021T120000Z",
+        "sidecar": "verified",
+        "status": "no_candidate",
+        "errors": [],
+        "candidate_count": 0,
+        "phenomena_expected": 6,
+        "phenomena_not_possible": 0,
+        "evaluations_with_tolerance": 1
+      }
+    ]
+  },
+  "ordinary_verification": "evening, local notices and target Eventi run verified; editorial reviews remain explicit",
+  "follow_up": "verifica-job-eventi-e-avvisi-dopo-aggiornamento",
+  "cloud_mutations": [
+    "Cloud Build for two images",
+    "image of events job",
+    "image and sidecar=true on local-notice job",
+    "titles/documentation of two local-notice monitoring policies"
+  ],
+  "unchanged": [
+    "events API",
+    "weather producer and API",
+    "CAMS",
+    "official alerts",
+    "evening and morning jobs",
+    "schedulers",
+    "notification recipients",
+    "sponsor settings",
+    "app and Play releases"
+  ],
+  "no_manual_job_execution": true,
+  "no_manual_notification": true,
+  "no_git_push": true,
+  "rollback": {
+    "events": "europe-west1-docker.pkg.dev/meteo-friul/meteofriul/events-worker@sha256:529d93d115de05ff8d6039d09545d2d2e9da5fd87ace227b22f4be6e7b0c296b",
+    "notices": {
+      "image": "europe-west1-docker.pkg.dev/meteo-friul/meteofriul/backend@sha256:3b0cac97d0bbf533916b74ec24fd632f5fbc9f54c2266746a85fb31613aa8f74",
+      "sidecar_enabled": false,
+      "missing_data_preserved": true
+    }
+  },
+  "package_sha256": "1c363336cc1ce78cf819335f58c042e309139f639ce10b295b260e452c2cc0e0",
+  "local_evidence": ".tmp/job-recovery-deploy-20261021",
+  "local_scripts_sha256": {
+    "operate.py": "015f9139a2160eb09fadf37af5c800949785bb90f5634068d3ca360ac2e1ffcf",
+    "verify_ordinary.py": "8070400d9b62336039cd141acbe9a4043f064b312647f56d1157f04ace2b5459",
+    "verify_events_compatibility.py": "7bae7523c4aadff4d379ca1703818e78f8ecd0e6a6105f8fea42a6fba1a7ea9d"
+  },
+  "ordinary_verification_evidence": {
+    "evening": "evening-ordinary-verification.json",
+    "notices": "notices-ordinary-verification.json",
+    "events": "events-ordinary-verification.json"
+  },
+  "ordinary_verification_script_sha256": "13c81b0b3b95c24c7e5c5b12709a9e36bd56010537c366c2b9713462e0d61958",
+  "follow_up_window": {
+    "timezone": "Europe/Rome",
+    "target_events_run": "2026-10-22T06:00:00+02:00",
+    "not_before": "2026-10-22T06:20:00+02:00",
+    "available_until": "2026-10-22T23:59:59+02:00",
+    "late_pc_start_allowed": true,
+    "former_0720_deadline_removed": true,
+    "reuse_evening_and_notice_checks": true
+  },
+  "follow_up_status": "deleted after Eventi verification on 2026-10-22"
+}

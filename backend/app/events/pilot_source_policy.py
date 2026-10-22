@@ -1303,7 +1303,7 @@ def spazzapan_batch_verified(batch, *, today, previous_batch=None):
     """Reconcile each active detail against the complete official inventory."""
     from .pilot_spazzapan import (BASE, SOURCE, EXHIBITION_PAGES, EXPECTED_INVENTORIES,
                                   OCTOBER_28_EVENT, REVIEWED_EXHIBITION_PERIODS,
-                                  EXHIBITION_NEWS_IDS)
+                                  EXHIBITION_NEWS_IDS, NEWS_EVENTS)
     proof = batch.get('verification') or {}
     events = batch.get('events')
     reviews = batch.get('review_required')
@@ -1314,6 +1314,12 @@ def spazzapan_batch_verified(batch, *, today, previous_batch=None):
                                      EXPECTED_INVENTORIES['events'] | {OCTOBER_28_EVENT['api_id']})):
         return False
     additional_announced = OCTOBER_28_EVENT['api_id'] in event_ids
+    news_event_ids = proof.get('news_event_ids', [])
+    if (not isinstance(news_event_ids, list)
+            or any(type(value) is not int for value in news_event_ids)
+            or len(set(news_event_ids)) != len(news_event_ids)
+            or not set(news_event_ids) <= set(NEWS_EVENTS)):
+        return False
     current_ids = proof.get('current_exhibition_ids')
     archived = proof.get('archived_exhibitions')
     if (not isinstance(current_ids, list)
@@ -1356,9 +1362,9 @@ def spazzapan_batch_verified(batch, *, today, previous_batch=None):
             or proof.get('exhibition_count') != 7
             or proof.get('historical_plural_count') != 1
             or not isinstance(proof.get('news_count'), int)
-            or proof['news_count'] < 78 - len(retired_news_ids) + (2 if additional_announced else 0)
-            or proof.get('reviewed_2026_news') != 44 - len(retired_news_ids) + (2 if additional_announced else 0)
-            or proof.get('verified_distinct_current') != 4 + int(additional_announced)
+            or proof['news_count'] < 78 - len(retired_news_ids) + (2 if additional_announced else 0) + len(news_event_ids)
+            or proof.get('reviewed_2026_news') != 44 - len(retired_news_ids) + (2 if additional_announced else 0) + len(news_event_ids)
+            or proof.get('verified_distinct_current') != 4 + int(additional_announced) + len(news_event_ids)
             or not isinstance(events, list)
             or any(not isinstance(event, dict) for event in events)
             or proof.get('projected_count') != len(events)
@@ -1382,6 +1388,9 @@ def spazzapan_batch_verified(batch, *, today, previous_batch=None):
     if additional_announced:
         extra = OCTOBER_28_EVENT
         expected[str(extra['source_id'])] = ('/it' + extra['path'], extra['date'], extra['date'], False)
+    for source_id in news_event_ids:
+        extra = NEWS_EVENTS[source_id]
+        expected[str(source_id)] = ('/it' + extra['path'], extra['date'], extra['date'], True)
     active = {key for key, (_, _, end, _) in expected.items()
               if end >= today.isoformat()}
     included = {str(event.get('source_id')) for event in events}
@@ -1429,6 +1438,11 @@ def spazzapan_batch_verified(batch, *, today, previous_batch=None):
             return False
         if event['source_id'] == str(OCTOBER_28_EVENT['source_id']) and event.get('time') != '18:00':
             return False
+        if str(event['source_id']) in {str(key) for key in NEWS_EVENTS}:
+            extra = NEWS_EVENTS[int(event['source_id'])]
+            if (event.get('time') != extra['time'] or event.get('title') != extra['title']
+                    or event.get('venue') != 'Galleria Spazzapan'):
+                return False
         if not needs_excerpt and event.get('description_excerpt'):
             return False
     previous = (previous_batch or {}).get('events') or []

@@ -12,6 +12,8 @@ import unicodedata
 
 import requests
 
+from .http_client import read_with_single_transient_retry
+
 from .pilot_excerpt import attributed_excerpt
 
 
@@ -369,12 +371,19 @@ def parse_calendar(html):
 
 
 def _read(get, url, limit):
-    response = get(url, timeout=25, headers={'User-Agent': 'MeteoFriulEvents/1.0'})
-    response.raise_for_status()
-    data = response.content
-    if len(data) > limit:
-        raise ValueError('Barcolana response too large')
-    return data.decode('utf-8-sig')
+    def read():
+        response = get(url, timeout=25, headers={'User-Agent': 'MeteoFriulEvents/1.0'})
+        try:
+            response.raise_for_status()
+            data = response.content
+            if len(data) > limit:
+                raise ValueError('Barcolana response too large')
+            return data.decode('utf-8-sig')
+        finally:
+            close = getattr(response, 'close', None)
+            if close is not None:
+                close()
+    return read_with_single_transient_retry(read)
 
 
 def parse_sitemap(xml):

@@ -1,0 +1,292 @@
+{
+  "checked_at": "2026-10-22T05:15:49.320753+00:00",
+  "target": "events",
+  "result": {
+    "execution": "meteofriul-events-refresh-wv7tm",
+    "created": "2026-10-22T04:00:13.758148Z",
+    "completion": "2026-10-22T04:10:52.335810Z",
+    "succeeded": 1,
+    "failed": 0,
+    "image": "europe-west1-docker.pkg.dev/meteo-friul/meteofriul/events-worker@sha256:06e4b2fb4f0655eca4f416e503b16ff24616e178ed03c56f501b1a15f678b95e",
+    "scheduler_success_evidence": true,
+    "catalogue_generation": "1792642249377461",
+    "snapshot": "2026-10-22T04:01:32.873155+00:00",
+    "sources": {
+      "TurismoFVG": {
+        "status": "partial",
+        "updated_at": "2026-10-22T04:01:32.873155+00:00",
+        "cards": 1342,
+        "reviews": 7,
+        "error_type": null
+      },
+      "Pordenonelegge": {
+        "status": "fresh",
+        "updated_at": "2026-10-22T04:01:32.873155+00:00",
+        "cards": 0,
+        "reviews": 0,
+        "error_type": null
+      },
+      "Azalea": {
+        "status": "partial",
+        "updated_at": "2026-10-22T04:01:32.873155+00:00",
+        "cards": 7,
+        "reviews": 1,
+        "error_type": null
+      },
+      "CSS Udine": {
+        "status": "partial",
+        "updated_at": "2026-10-22T04:01:32.873155+00:00",
+        "cards": 151,
+        "reviews": 1,
+        "error_type": null
+      },
+      "Pordenone Pensa": {
+        "status": "partial",
+        "updated_at": "2026-10-22T04:01:32.873155+00:00",
+        "cards": 0,
+        "reviews": 2,
+        "error_type": null
+      },
+      "Teatro Verdi Pordenone": {
+        "status": "fresh",
+        "updated_at": "2026-10-22T04:01:32.873155+00:00",
+        "cards": 88,
+        "reviews": 0,
+        "error_type": null
+      },
+      "Teatro Verdi Trieste": {
+        "status": "fresh",
+        "updated_at": "2026-10-22T04:01:32.873155+00:00",
+        "cards": 63,
+        "reviews": 0,
+        "error_type": null
+      },
+      "Le Giornate del Cinema Muto": {
+        "status": "fresh",
+        "updated_at": "2026-10-22T04:01:32.873155+00:00",
+        "cards": 0,
+        "reviews": 0,
+        "error_type": null
+      },
+      "Paesi in Festa": {
+        "status": "fresh",
+        "updated_at": "2026-10-22T04:01:32.873155+00:00",
+        "cards": 15,
+        "reviews": 0,
+        "error_type": null
+      },
+      "SagreFVG": {
+        "status": "partial",
+        "updated_at": "2026-10-22T04:01:32.873155+00:00",
+        "cards": 16,
+        "reviews": 1,
+        "error_type": null
+      },
+      "Villa Manin": {
+        "status": "fresh",
+        "updated_at": "2026-10-22T04:01:32.873155+00:00",
+        "cards": 3,
+        "reviews": 0,
+        "error_type": null
+      },
+      "Magazzino delle Idee": {
+        "status": "fresh",
+        "updated_at": "2026-10-22T04:01:32.873155+00:00",
+        "cards": 0,
+        "reviews": 0,
+        "error_type": null
+      },
+      "MESS": {
+        "status": "fresh",
+        "updated_at": "2026-10-22T04:01:32.873155+00:00",
+        "cards": 15,
+        "reviews": 0,
+        "error_type": null
+      },
+      "Galleria Spazzapan": {
+        "status": "fresh",
+        "updated_at": "2026-10-22T04:01:32.873155+00:00",
+        "cards": 2,
+        "reviews": 0,
+        "error_type": null
+      },
+      "Barcolana": {
+        "status": "fresh",
+        "updated_at": "2026-10-22T04:01:32.873155+00:00",
+        "cards": 1,
+        "reviews": 0,
+        "error_type": null
+      }
+    },
+    "api_pages": [
+      {
+        "lat": 45.89,
+        "lon": 13.5,
+        "total": 294,
+        "source_status": {
+          "TurismoFVG": "partial",
+          "Pordenonelegge": "fresh",
+          "Azalea": "partial",
+          "CSS Udine": "partial",
+          "Pordenone Pensa": "partial",
+          "Teatro Verdi Pordenone": "fresh",
+          "Teatro Verdi Trieste": "fresh",
+          "Le Giornate del Cinema Muto": "fresh",
+          "Paesi in Festa": "fresh",
+          "SagreFVG": "partial",
+          "Villa Manin": "fresh",
+          "Magazzino delle Idee": "fresh",
+          "MESS": "fresh",
+          "Galleria Spazzapan": "fresh",
+          "Barcolana": "fresh"
+        },
+        "source_failure_tags": {
+          "TurismoFVG": "quarantined_cards",
+          "Azalea": "quarantined_cards",
+          "CSS Udine": "quarantined_cards",
+          "Pordenone Pensa": "quarantined_cards",
+          "SagreFVG": "quarantined_cards"
+        }
+      },
+      {
+        "lat": 46.071,
+        "lon": 13.235,
+        "total": 497,
+        "source_status": {
+          "TurismoFVG": "partial",
+          "Pordenonelegge": "fresh",
+          "Azalea": "partial",
+          "CSS Udine": "partial",
+          "Pordenone Pensa": "partial",
+          "Teatro Verdi Pordenone": "fresh",
+          "Teatro Verdi Trieste": "fresh",
+          "Le Giornate del Cinema Muto": "fresh",
+          "Paesi in Festa": "fresh",
+          "SagreFVG": "partial",
+          "Villa Manin": "fresh",
+          "Magazzino delle Idee": "fresh",
+          "MESS": "fresh",
+          "Galleria Spazzapan": "fresh",
+          "Barcolana": "fresh"
+        },
+        "source_failure_tags": {
+          "TurismoFVG": "quarantined_cards",
+          "Azalea": "quarantined_cards",
+          "CSS Udine": "quarantined_cards",
+          "Pordenone Pensa": "quarantined_cards",
+          "SagreFVG": "quarantined_cards"
+        }
+      },
+      {
+        "lat": 45.957,
+        "lon": 12.661,
+        "total": 358,
+        "source_status": {
+          "TurismoFVG": "partial",
+          "Pordenonelegge": "fresh",
+          "Azalea": "partial",
+          "CSS Udine": "partial",
+          "Pordenone Pensa": "partial",
+          "Teatro Verdi Pordenone": "fresh",
+          "Teatro Verdi Trieste": "fresh",
+          "Le Giornate del Cinema Muto": "fresh",
+          "Paesi in Festa": "fresh",
+          "SagreFVG": "partial",
+          "Villa Manin": "fresh",
+          "Magazzino delle Idee": "fresh",
+          "MESS": "fresh",
+          "Galleria Spazzapan": "fresh",
+          "Barcolana": "fresh"
+        },
+        "source_failure_tags": {
+          "TurismoFVG": "quarantined_cards",
+          "Azalea": "quarantined_cards",
+          "CSS Udine": "quarantined_cards",
+          "Pordenone Pensa": "quarantined_cards",
+          "SagreFVG": "quarantined_cards"
+        }
+      }
+    ],
+    "state": "verified",
+    "verification_details": {
+      "reviewed_at": "2026-10-22T05:18:48.981104+00:00",
+      "target_slot": "2026-10-22T04:00:00Z",
+      "execution_and_snapshot_same_slot": true,
+      "catalog_updated_within_execution": true,
+      "source_count": 15,
+      "source_status_counts": {
+        "partial": 5,
+        "fresh": 10
+      },
+      "catalogue_cards": 1703,
+      "quarantined_cards": 12,
+      "baseline_quarantined_cards": 15,
+      "api_http_snapshot_cors_passed": 3,
+      "remaining_reviews": {
+        "TurismoFVG": {
+          "count": 7,
+          "reason_counts": {
+            "listed_detail_http_404": 1,
+            "detail_identity_or_schedule_requires_review": 4,
+            "detail_not_resolved": 1,
+            "possible_schedule_change": 1
+          }
+        },
+        "Azalea": {
+          "count": 1,
+          "reason_counts": {
+            "schedule_change": 1
+          }
+        },
+        "CSS Udine": {
+          "count": 1,
+          "reason_counts": {
+            "ambiguous schedule": 1
+          }
+        },
+        "Pordenone Pensa": {
+          "count": 2,
+          "reason_counts": {
+            "additional future date needs session extraction": 2
+          }
+        },
+        "SagreFVG": {
+          "count": 1,
+          "reason_counts": {
+            "SagreFVG municipality or province unresolved": 1
+          }
+        }
+      },
+      "watch_alerts": [
+        {
+          "monitor": "Palazzo Attems",
+          "status": "review_required",
+          "change_count": 5
+        },
+        {
+          "monitor": "GiroFVG",
+          "status": "review_required",
+          "change_count": 19
+        }
+      ],
+      "recovered_sources": [
+        "Le Giornate del Cinema Muto",
+        "Barcolana",
+        "Galleria Spazzapan"
+      ],
+      "not_verified": [
+        "live application rendering",
+        "resolution of quarantined cards",
+        "review of Palazzo Attems and GiroFVG watch changes"
+      ]
+    }
+  },
+  "manual_execution": false,
+  "cloud_mutation": false,
+  "local_evidence_sha256": {
+    "events-ordinary-logs-private.json": "93e23ad557f0b1d163996f6b19a6bff7f66acf4db7f2447b4ec79b8ae090da08",
+    "events-ordinary-scheduler-logs-private.json": "e842a71a19caf209366800e188ef100ef371544b6a1887187568d994438d907c",
+    "events-ordinary-catalog.json": "736eac437e34f5a834d120f684a28ff67b4fdc1212e3779494d280818fca7ea8",
+    "events-ordinary-catalog-meta.json": "6dd0fa4d699e2c8bed0b08df5d9c87fc2eecfe0d62bbac32ee911e8985f9e961"
+  }
+}

@@ -1,5 +1,22 @@
 # Passaggio coordinato ICON-2I — piano e stato operativo
 
+> **Deploy consumatore, 21 ottobre sera:** job avvisi aggiornato alla candidata
+> `18b88049`, sidecar abilitato e configurazioni verificate. Il campione locale
+> sulla corsa `20261021T120000Z` ha 6/6 fenomeni valutabili a Chions e Udine,
+> con tolleranze esercitate. La corsa ordinaria delle 21:00 è verificata: 7/7
+> comuni con metadati verificati e tolleranze usate, 42/42 valutazioni possibili.
+> Nessun candidato tempestivo e nessun invio; tolleranza SWE non esercitata.
+> Exit code e soglie degli allarmi invariati. Questo stato sostituisce le attese
+> di attivazione riportate sotto. [Verbale, rollback e follow-up](JOBS_RECOVERY_DEPLOY_20261021.md).
+
+> **Aggiornamento 21 ottobre, verifica del consumatore:** il produttore è stato
+> verificato sulla nuova corsa; il job operativo degli avvisi usa ancora la
+> versione precedente. Il replay locale del caso reale Chions con il codice di
+> main e sidecar verificato recupera 5 fenomeni su 6, lasciando il caldo
+> esplicitamente non valutabile. 182 test passati. Gli esiti parziali possono
+> ancora produrre exit 1; monitoraggio e attivazione del consumatore rimangono
+> passaggi distinti. [Regressione, risultati e limiti](LOCAL_NOTICE_CHIONS_READINESS_20261021.md).
+
 > **Aggiornamento 21 ottobre 2026:** la corsa ordinaria delle 08:00 italiane
 > ha pubblicato `20261021T000000Z` con il limite corretto. Verificati checkpoint
 > schema 2, source_quality, 215 documenti, 215 sidecar, entrambi i lettori storici
@@ -121,8 +138,10 @@ le prove delle tolleranze in file separati. I vecchi client rifiutano chiavi
 aggiuntive, che quindi non vengono inserite nei documenti letti dalle app.
 La fase 01 ha verificato i lettori storici e l'app ufficiale già installata;
 la fase 03 ha ricontrollato i 215 documenti FVG correnti e sei località nazionali.
-La verifica sui dati della prima nuova corsa resta aperta. Android 15/16 e altri
-dispositivi non sono stati collaudati; nessun aggiornamento Android è stato generato.
+La verifica sulla nuova corsa `20261021T000000Z` è conclusa: 215 documenti,
+215 sidecar e sei località nazionali, come attestato nel verbale corrente.
+I limiti del collaudo Android indicati sopra si riferiscono alla preparazione
+originaria del 19 ottobre e non certificano né invalidano le release successive.
 
 ## Sequenza server e stato di avanzamento
 
@@ -140,14 +159,19 @@ dispositivi non sono stati collaudati; nessun aggiornamento Android è stato gen
    checkpoint, la corsa serale del 20 ottobre ha incontrato il tetto di 32 MiB.
    Anche questa correzione è ora distribuita: limite 64 MiB, lettore 1/2 e
    packing conservati. [Verbale e rollback](ICON2I_PAYLOAD_LIMIT_DEPLOY_20261020.md).
-4. **Nuova corsa pendente:** attendere il 21 ottobre alle 08:00 italiane,
-   controllo alle 08:20 e, se necessario, 09:20. Verificare digest, esecuzione
-   ordinaria, checkpoint schema 2, source_quality, 215 letture legacy e sidecar.
-   L'ultima autorizzazione esclude tutte le esecuzioni manuali, incluso il QA
-   cloud: sostituisce le istruzioni precedenti che ne prevedevano un avvio.
-   Eventuali confronti solo locali sui dati già pubblicati, con cause e
-   denominatori espliciti. Dati vecchi o metadati assenti non valgono come
-   successo. Nessun nuovo invio è autorizzato.
+4. **Nuova corsa verificata:** la corsa ordinaria del 21 ottobre ha
+   pubblicato `20261021T000000Z`. Digest, checkpoint schema 2, source_quality,
+   215 documenti con lettori storici e sidecar, e campione nazionale verificati
+   nel verbale del produttore. Nessun QA cloud avviato per questo controllo.
+5. **Consumatore operativo aggiornato il 21 ottobre sera:** candidata `18b88049`
+   e sidecar abilitato, runtime e Scheduler verificati. Rollback conservativo
+   disponibile; testi Monitoring chiariti con soglie ed exit code invariati.
+   Corsa delle 21:00 verificata: 7/7 punti con sidecar e tolleranze, nessun
+   fenomeno non valutabile. Il candidato pioggia di Chions per le 23:00 è
+   oltre l'anticipo massimo; nessun invio. Tolleranza SWE non esercitata.
+   Gli invii ordinari mantengono le regole correnti; nessun avvio manuale o
+   modifica dei destinatari. Un eventuale exit 0 per il solo degrado resta
+   subordinato al cambiamento coordinato del monitoraggio.
 
 La fase 02 modifica anche codice condiviso dai riepiloghi mattutino e serale:
 mantengono il rifiuto dei dati incompleti, senza usare la tolleranza per
@@ -184,5 +208,6 @@ non sommare retry come nuove corse e non contare i dispositivi come punti distin
 - Consumatore: in caso di problemi fermare gli invii candidati e conservare
   diagnostica e dati. Non ripristinare silenziosamente il null trasformato in zero.
 - Immagini, digest e configurazioni effettive sono registrati nei verbali
-  delle fasi 01–03. La prova sulla nuova corsa e il confronto senza invii
-  restano pendenti; non vengono presentati come verifiche già svolte.
+  delle fasi 01–03. La nuova corsa del produttore è verificata; il replay
+  Chions è locale. Il nuovo consumatore è ora distribuito; la verifica della
+  sua prima corsa ordinaria resta pendente e non è dimostrata dal produttore.
