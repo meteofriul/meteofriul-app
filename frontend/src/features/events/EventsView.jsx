@@ -605,69 +605,71 @@ export function EventsView({
       titleMode={titleMode}
     >
       <div className="mf-events-view">
-        <section className="mf-events-hero" aria-label={copy.viewTitle}>
-          <div className="mf-events-hero__context">
-            <LocationContext
-              city={model.locationLabel || "-----"}
-              className="mf-route-location-context"
-            />
-            {onRadiusChange ? <EventsRadiusSelect radius={radius} onChange={onRadiusChange} language={language} /> : null}
-          </div>
-          {model.message ? (
-            <div className="mf-events-hero__meta" role="status">
-              <p>{model.message}</p>
+        <div className={"mf-section-navigation" + (isDefinitiveAppExperience() ? " mf-section-navigation--sticky" : "")}>
+          <section className="mf-events-hero" aria-label={copy.viewTitle}>
+            <div className="mf-events-hero__context">
+              <LocationContext
+                city={model.locationLabel || "-----"}
+                className="mf-route-location-context"
+              />
+              {onRadiusChange ? <EventsRadiusSelect radius={radius} onChange={onRadiusChange} language={language} /> : null}
             </div>
-          ) : null}
-        </section>
+            {model.message ? (
+              <div className="mf-events-hero__meta" role="status">
+                <p>{model.message}</p>
+              </div>
+            ) : null}
+          </section>
 
-        <section className="mf-events-filters" aria-label="Filtri eventi">
-          <div className="mf-events-time-tabs mf-weather-section-nav mf-weather-section-nav--compact">
-            {model.tabs.map((tab) => {
-              const count = counts[tab.id] || 0;
-              const disabled = count === 0;
+          <section className="mf-events-filters" aria-label="Filtri eventi">
+            <div className="mf-events-time-tabs mf-weather-section-nav mf-weather-section-nav--compact">
+              {model.tabs.map((tab) => {
+                const count = counts[tab.id] || 0;
+                const disabled = count === 0;
 
-              return (
-                <button
-                  aria-label={count ? `${tab.label} ${formatTabCount(count)}` : tab.label}
-                  aria-pressed={effectiveTab === tab.id}
-                  className={`mf-weather-section-nav__item${effectiveTab === tab.id ? " is-active" : ""}`}
-                  disabled={disabled}
-                  key={tab.id}
-                  onClick={() => {
-                    if (!disabled) setRequestedTab(tab.id);
-                  }}
-                  type="button"
-                >
-                  <span>{tab.label}</span>
-                  {count ? (
-                    <strong className="mf-events-time-tabs__count">
-                      {formatTabCount(count)}
-                    </strong>
-                  ) : null}
-                </button>
-              );
-            })}
-          </div>
-
-          {categoriesWithEvents.length > 1 ? (
-            <div className="mf-events-category-scroll">
-              {categoriesWithEvents.map((category) => (
-                <button
-                  aria-pressed={effectiveCategory === category.id}
-                  className={`mf-events-filter mf-events-filter--${category.id}${effectiveCategory === category.id ? " is-active" : ""}`}
-                  key={category.id}
-                  onClick={() => setActiveCategory(category.id)}
-                  type="button"
-                >
-                  {category.id !== "all" ? (
-                    <span aria-hidden="true" className="mf-events-filter__dot" />
-                  ) : null}
-                  <span>{category.label}</span>
-                </button>
-              ))}
+                return (
+                  <button
+                    aria-label={count ? `${tab.label} ${formatTabCount(count)}` : tab.label}
+                    aria-pressed={effectiveTab === tab.id}
+                    className={`mf-weather-section-nav__item${effectiveTab === tab.id ? " is-active" : ""}`}
+                    disabled={disabled}
+                    key={tab.id}
+                    onClick={() => {
+                      if (!disabled) setRequestedTab(tab.id);
+                    }}
+                    type="button"
+                  >
+                    <span>{tab.label}</span>
+                    {count ? (
+                      <strong className="mf-events-time-tabs__count">
+                        {formatTabCount(count)}
+                      </strong>
+                    ) : null}
+                  </button>
+                );
+              })}
             </div>
-          ) : null}
-        </section>
+
+            {categoriesWithEvents.length > 1 ? (
+              <div className="mf-events-category-scroll">
+                {categoriesWithEvents.map((category) => (
+                  <button
+                    aria-pressed={effectiveCategory === category.id}
+                    className={`mf-events-filter mf-events-filter--${category.id}${effectiveCategory === category.id ? " is-active" : ""}`}
+                    key={category.id}
+                    onClick={() => setActiveCategory(category.id)}
+                    type="button"
+                  >
+                    {category.id !== "all" ? (
+                      <span aria-hidden="true" className="mf-events-filter__dot" />
+                    ) : null}
+                    <span>{category.label}</span>
+                  </button>
+                ))}
+              </div>
+            ) : null}
+          </section>
+        </div>
 
         <section className="mf-events-list" aria-label={copy.viewTitle}>
           {model.isLoading ? (

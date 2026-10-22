@@ -1,0 +1,90 @@
+{
+  "date": "2026-10-22",
+  "branch": "codex/settings-browser-back",
+  "base_commit": "afa5152aa0f7c439df1be174bb896ac0e850cc90",
+  "source_sha256": {
+    "frontend/src/app/App.jsx": "b725463cb3e6cc3488c573089a368d78247f5fbf487fe829aff9ebd97221d5be",
+    "frontend/src/app/useBrowserDialogBack.js": "7238fc8a70ea2c5bd1da38a7a2fa69a8f3b6247f9c18e5aef4350404103d4ffd",
+    "frontend/src/app/App.settingsBrowserBack.test.jsx": "27c151cebdcb5b8503594521cf3daeaf6092f8edadaec4efc91737953730f9c7"
+  },
+  "device": {
+    "model": "SM-A525F",
+    "android": "14",
+    "screen": "Physical size: 1080x2400",
+    "density": "Physical density: 420",
+    "browser": [
+      "versionCode=429705904 minSdk=32 targetSdk=37",
+      "versionName=1.97.59"
+    ],
+    "base_commit": "afa5152aa0f7c439df1be174bb896ac0e850cc90",
+    "candidate_branch": "codex/settings-browser-back",
+    "candidate_state": "working_tree_recorded_by_source_hashes",
+    "method": "Brave on physical phone via USB reverse, no installation"
+  },
+  "preview": {
+    "launcher": "scripts/start-local-weather-pilot.ps1",
+    "profile": "NationalCloud",
+    "port": 5174,
+    "vite": "8.1.6",
+    "readers": "existing_published_services"
+  },
+  "tests": {
+    "passed": 368,
+    "failed": 0,
+    "files_passed": 42,
+    "lint_changed_files": "passed",
+    "vite_web_build": "passed"
+  },
+  "phone_checks": {
+    "bulletin": "passed_settings_then_android_back_returns_to_previous_section_in_Brave",
+    "events": "passed_settings_then_android_back_returns_to_previous_section_in_Brave",
+    "weather": "passed_settings_then_android_back_returns_to_previous_section_in_Brave",
+    "settings_in_app_arrow": "passed",
+    "event_detail_android_back_after_settings": "passed",
+    "same_browser_tab_no_exit": "passed",
+    "location_language_theme_unchanged": "Pordenone / it / light"
+  },
+  "prohibited_actions_performed": [],
+  "limitations": [
+    "No native Android release build or device installation; native Back covered by existing unit tests.",
+    "No new Safari/iPhone certification.",
+    "The change is scoped to returning from Settings, not a global Web routing rewrite."
+  ],
+  "screenshots_sha256": {
+    "bulletin-return.png": "4519a69fc6469ed48c4194f013a0749c1a13416c9545ed3f2599ccf358a5beb2",
+    "events-return.png": "865c6c8b1b30b688ada2a4529d177a50bed2febf8b84118d4d91baead3440550",
+    "weather-return.png": "ad115fa2d733e5efe934c6140765f1fe06a2ef5fc5fb2f31af2814e79a006ecd"
+  },
+  "local_raw_evidence": ".tmp/settings-browser-back-20261022/phone",
+  "raw_sha256": {
+    "bulletin-before.png": "69534a2255b3c2e496f146b4a5e09faa8334d03f080c9a39f83d02cf183095b5",
+    "bulletin-before.xml": "a86d16c48e841c0aafcb25adb70c4444496c3defa1b2f4a823c90be80f129f6b",
+    "bulletin-return.png": "4519a69fc6469ed48c4194f013a0749c1a13416c9545ed3f2599ccf358a5beb2",
+    "bulletin-return.xml": "a86d16c48e841c0aafcb25adb70c4444496c3defa1b2f4a823c90be80f129f6b",
+    "event-detail.png": "d6bda76983f1fb76d365c6deedac3778e4978412fa9a0602b3ab2b5316d356e4",
+    "event-detail.xml": "0011faeb7041ad66570a1b0353c0a000f9f029a8cb22832686c7994d7b21c61f",
+    "events-arrow-return.png": "70688bee09e748d90463da80608cd3e0efe7a5b9d33af29d9b45ed1734bd6a06",
+    "events-arrow-return.xml": "6b96f8d92f912b02e5772a19b000a738d047c0a47e5cf577117acfff92b95fa4",
+    "events-before.png": "68c25e81b01463a68d996e6eaaa1d09be7a168c4bec30f662e96c77eb216c8e1",
+    "events-before.xml": "5e41295b4bc0001ae99d0e2c5bcbc55e1922498c73afe6cc566fd9e91c65fb04",
+    "events-detail-return.png": "2d502e255c18c2ccded626f4f34c313f726af4deb42bcb7211a51cd19e89be2d",
+    "events-detail-return.xml": "48d28f7a0b4d53c1acf9206a8ebd976778be720a93b128951dd4b3a5b4b2c395",
+    "events-return.png": "865c6c8b1b30b688ada2a4529d177a50bed2febf8b84118d4d91baead3440550",
+    "events-return.xml": "6b96f8d92f912b02e5772a19b000a738d047c0a47e5cf577117acfff92b95fa4",
+    "settings-arrow.png": "b2b49ff9defc65da4715498399229d317f42779d6abd82e4e6d5340a4ff98f71",
+    "settings-arrow.xml": "f1aa4f9dfac1772d497187c2fa2ec278bca45a95fb029e3ef655c48106ae8afa",
+    "settings-from-bulletin.png": "3d2f4b88f0d3b56c6197b7b1a49dd38e25b4f895fecbd537a6acfbdee8369c0b",
+    "settings-from-bulletin.xml": "f1aa4f9dfac1772d497187c2fa2ec278bca45a95fb029e3ef655c48106ae8afa",
+    "settings-from-events.png": "c3bd06efdb76d8b089078718704a5cf3dcb2f8cf9d01b0bac969ae0633e0dbdb",
+    "settings-from-events.xml": "f1aa4f9dfac1772d497187c2fa2ec278bca45a95fb029e3ef655c48106ae8afa",
+    "settings-from-weather.png": "3b15fd826814e14e38dd2d69b5537139374a8f70408f6ecee471cb17cae41c77",
+    "settings-from-weather.xml": "cf63966a6056703e2412b3a5107e818e1fb4377c9f9173a21a5abbd32b22aaa6",
+    "weather-before.png": "737e3979e01b7c85b4d8754f703f0c0d555f5dc15c80b5e3fe80fb3d1d959786",
+    "weather-before.xml": "d0420d94df5b9a781a2bfb3110809223155dc3081be50212a9bc98112478c111",
+    "weather-return.png": "ad115fa2d733e5efe934c6140765f1fe06a2ef5fc5fb2f31af2814e79a006ecd",
+    "weather-return.xml": "0e61f0caec8233179e633f8a14c678cadcda40158a8500e2fa11cb6b33f699b3"
+  },
+  "record_scope": "verification_before_commit_and_local_promotion",
+  "candidate_state_at_verification": "uncommitted_working_tree_identified_by_source_hashes",
+  "main_unchanged_during_verification": true
+}

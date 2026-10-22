@@ -38,12 +38,13 @@ function weatherRoute(activeTab, { locked = false, language = "it", theme = "lig
     theme,
   });
   const shell = route.props.children;
-  const shellChildren = shell.props.children.filter(Boolean);
+  const navigation = shell.props.children[0];
+  const shellChildren = [...navigation.props.children, ...shell.props.children.slice(1)].filter(Boolean);
   const locationContext = shellChildren.find(child => child?.type === LocationContext);
   const nav = shellChildren.find(child => child?.type === WeatherSectionNav);
   const title = shellChildren.find(child => child?.props?.className === "mf-weather-route-title");
   const view = shellChildren.at(-1);
-  return { locationContext, nav, onLocationSearchOpen, onNavigate, shell, shellChildren, title, view };
+  return { locationContext, nav, navigation, onLocationSearchOpen, onNavigate, shell, shellChildren, title, view };
 }
 
 describe("weather route swipe isolation", () => {
@@ -52,6 +53,7 @@ describe("weather route swipe isolation", () => {
     const {
       locationContext,
       nav,
+      navigation,
       onNavigate,
       shell,
       shellChildren,
@@ -60,6 +62,7 @@ describe("weather route swipe isolation", () => {
     } = weatherRoute(activeTab);
     expect(shell.type).toBe(WeatherSwipeShell);
     expect(shell.props.disabled).toBe(true);
+    expect(navigation.props.className.includes("mf-section-navigation--sticky")).toBe(activeTab === "bulletin");
     expect(title).toBeUndefined();
     expect(shellChildren[0].type).toBe(LocationContext);
     expect(shellChildren[1].type).toBe(WeatherSectionNav);
@@ -87,8 +90,9 @@ describe("weather route swipe isolation", () => {
 
   it.each(["weather", "bulletin", "live"])("preserves the beta swipe on %s", activeTab => {
     harness.pilot = false;
-    const { locationContext, nav, shell, title, view } = weatherRoute(activeTab);
+    const { locationContext, nav, navigation, shell, title, view } = weatherRoute(activeTab);
     expect(shell.props.disabled).toBe(false);
+    expect(navigation.props.className).not.toContain("mf-section-navigation--sticky");
     expect(nav.props.compact).toBe(false);
     expect(renderToStaticMarkup(WeatherSectionNav(nav.props))).not.toContain(
       "mf-weather-section-nav--compact",

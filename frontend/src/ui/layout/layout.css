@@ -353,6 +353,23 @@ html[data-theme="dark"] .mf-pull-refresh__inner {
   }
 }
 
+/* Keep the existing section controls together; dialogs stay above this layer. */
+.mf-section-navigation {
+  display: grid;
+  gap: var(--mf-space-3);
+  min-width: 0;
+}
+
+.mf-section-navigation--sticky {
+  background: var(--mf-paper);
+  box-shadow: 0 calc(-1 * var(--mf-space-2)) 0 var(--mf-paper);
+  margin-bottom: calc(-1 * var(--mf-space-2));
+  padding-bottom: var(--mf-space-2);
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
 .mf-tab-page {
   display: grid;
   gap: var(--mf-space-4);
