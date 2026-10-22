@@ -45,8 +45,11 @@ Questa sincronizzazione non esegue build, upload, installazioni, deploy o invii.
 
 - **ICON:** nuova corsa `20261021T000000Z` verificata; checkpoint schema 2,
   215 documenti/sidecar compatibili con i due lettori storici e sei località
-  nazionali. Tolleranze presenti nei dati. Questo non certifica decisioni o
-  consegna del nuovo consumatore avvisi, rimasto nel percorso QA.
+  nazionali. **Aggiornamento 22 ottobre:** consumatore distribuito e corsa
+  ordinaria delle 21:00 del 21 ottobre verificata: tolleranze usate in 7/7
+  comuni, 42/42 valutazioni possibili, nessun candidato tempestivo da inviare.
+  Tolleranza SWE e consegna FCM degli avvisi locali non esercitate in quella corsa.
+  [Esiti del consumatore e riepilogo serale](JOBS_RECOVERY_DEPLOY_20261021.md).
   [Verbale ICON](ICON2I_PAYLOAD_LIMIT_DEPLOY_20261020.md).
 - **Allerte FVG:** correzione distribuita e corsa ordinaria verificata; primo
   invio parziale e successiva deduplicazione documentati. La notifica ricevuta
@@ -60,8 +63,11 @@ Questa sincronizzazione non esegue build, upload, installazioni, deploy o invii.
   zero campagne, revisione 117.
 - **Web:** pubblicazione separata ancora da completare. Parità con Android e
   verifica Safari/iPhone restano nel [piano Web](WEB_ANDROID_RELEASE_PARITY.md).
-  Le correzioni operative Eventi e la classificazione degli errori FCM restano
-  attività distinte: non sono distribuite da un commit documentale.
+- **Eventi, aggiornamento 22 ottobre:** correzioni distribuite, corsa ordinaria
+  delle 06:00 verificata; Cinema Muto, Barcolana e Spazzapan recuperati. Restano
+  12 schede in revisione e i monitor Attems/GiroFVG. La classificazione degli
+  errori FCM resta un'attività distinta.
+  [Verbale Eventi e limiti](JOBS_RECOVERY_DEPLOY_20261021.md).
 
 ## Registri, prove e GitHub
 

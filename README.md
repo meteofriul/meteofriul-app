@@ -35,9 +35,10 @@ Le tolleranze sono esercitate nei dati reali. Il 21 ottobre sono stati aggiornat
 anche il job avvisi (valutazione per fenomeno e sidecar abilitato) e il job Eventi
 (Spazzapan e recupero dei timeout). Riepilogo serale e avvisi locali verificati:
 42 invii serali accettati da FCM; avvisi con 7/7 comuni valutabili e tolleranze
-esercitate, senza candidati tempestivi da inviare. Resta la corsa Eventi del
-22 ottobre alle 06:00, verificabile anche dopo la riaccensione del PC.
-[Esiti, limiti e controllo Eventi](docs/operations/JOBS_RECOVERY_DEPLOY_20261021.md).
+esercitate, senza candidati tempestivi da inviare. Anche la corsa Eventi del
+22 ottobre alle 06:00 è verificata: Cinema Muto, Barcolana e Spazzapan recuperati;
+restano 12 schede in revisione e i rilievi dei monitor Attems/GiroFVG.
+[Esiti e limiti](docs/operations/JOBS_RECOVERY_DEPLOY_20261021.md).
 [Verifica del produttore e limiti](docs/operations/ICON2I_PAYLOAD_LIMIT_DEPLOY_20261020.md).
 
 **Allerte FVG e Community:** aggiornamenti già distribuiti e verificati nei
