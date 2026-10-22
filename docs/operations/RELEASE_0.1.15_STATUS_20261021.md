@@ -32,7 +32,7 @@ generata. [Dettagli e limiti](ANDROID_NATIVE_CONFIG_FIX_20261022.md#numerazione-
 | Rilievo | Evidenza e stato |
 | --- | --- |
 | NATIVE-CONFIG-01 | Nell'AAB 300033 mancano il JSON Capacitor e la risorsa Cordova `xml/config`. [Correzione locale del 22 ottobre](ANDROID_NATIVE_CONFIG_FIX_20261022.md): copia esplicita, keep mirato e controllo del bundle; regressioni locali superate. Restano una nuova AAB minificata e il controllo sul telefono, quindi il rilievo non è chiuso |
-| LOCATION-UPDATE-01 | Il proprietario ha trovato Posizione spenta nell'app subito dopo Play, prima dei test. Causa sconosciuta. I permessi Android concessi non dimostrano la conservazione dell'interruttore. Mancava una lettura precedente all'aggiornamento |
+| LOCATION-UPDATE-01 | Causa dell'episodio Play ancora non provata. Il 22 ottobre è stato riprodotto e corretto localmente un percorso di avvio che disattiva la preferenza dopo errori temporanei: 114 test passano. Correzione integrata nel ramo release; da verificare sul dispositivo e non promossa su main. [Analisi e limiti](ANDROID_LOCATION_STARTUP_20261022.md) |
 | BULLETIN-MAP-01 | Le gocce dell'icona coprono parte dell'etichetta della temperatura a 1000 m nella mappa del bollettino |
 | Copertura restante | Android 15/16, gesti, tablet/multi-window e percorsi con scritture o consegne reali non verificati; nessun PASS implicito |
 
