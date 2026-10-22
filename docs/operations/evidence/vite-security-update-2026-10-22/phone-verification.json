@@ -1,0 +1,116 @@
+{
+  "date": "2026-10-22",
+  "candidate_commit": "df6280b697d0bdec6bc82451dd64893c72e2dbc7",
+  "vite": "8.1.6",
+  "environment": {
+    "model": "SM-A525F",
+    "android": "14",
+    "screen": "Physical size: 1080x2400",
+    "density": "Physical density: 420",
+    "browser": [
+      "versionCode=429705904 minSdk=32 targetSdk=37",
+      "versionName=1.97.59"
+    ],
+    "candidate_commit": "df6280b697d0bdec6bc82451dd64893c72e2dbc7",
+    "method": "Brave on physical phone via USB reverse, no installation"
+  },
+  "profile": "NationalCloud",
+  "clock": "real",
+  "source_file_hashes_match_automated_checks": true,
+  "manifest_sha256": "1e6d1a3fe0ae795d7881e769c8278a63a304acaeae9aca93c27e3fce864ecb0f",
+  "lockfile_sha256": "3d0c706e464a7bafea0d88c6239351c654a3dadff07a27691237e639e62296f8",
+  "checks": {
+    "weather_existing_icon_reader": "passed",
+    "weather_day_selection": "passed",
+    "weather_hour_detail_and_android_back": "passed",
+    "day_hour_selection_same_style": "passed_visual_light_and_dark",
+    "bulletin_map_and_sticky_location_menu": "passed",
+    "events_real_catalog_and_sticky_location_filters": "passed",
+    "event_detail_covers_section_and_android_back_preserves_scroll": "passed",
+    "weather_and_events_friulian_dark": "passed",
+    "cams_air_and_pollen": "passed_visible_values",
+    "restored_italian_light_same_location": "passed"
+  },
+  "observed_data": {
+    "location": "Pordenone",
+    "icon_run_local": "2026-10-22T02:00:00+02:00",
+    "today_events": 4,
+    "pm25_ug_m3": 2.8,
+    "pm10_ug_m3": 4.4,
+    "grass_pollen_grains_m3": 0.24
+  },
+  "geometry": {
+    "bulletin_Pordenone": {
+      "before": "[84,476][372,547]",
+      "after": "[84,476][372,547]"
+    },
+    "bulletin_Previsioni": {
+      "before": "[39,584][367,673]",
+      "after": "[39,584][367,673]"
+    },
+    "bulletin_Bollettino": {
+      "before": "[375,584][703,673]",
+      "after": "[375,584][703,673]"
+    },
+    "bulletin_Tempo reale": {
+      "before": "[711,584][1039,673]",
+      "after": "[711,584][1039,673]"
+    },
+    "events_Pordenone": {
+      "before": "[84,476][372,547]",
+      "after": "[84,476][372,547]"
+    },
+    "events_Tutti": {
+      "before": "[31,702][170,799]",
+      "after": "[31,702][170,799]"
+    },
+    "event_back_preserves_list_position": {
+      "before": "[283,998][947,1046]",
+      "after": "[283,998][947,1046]"
+    }
+  },
+  "scope_notes": [
+    "Checks concern the local Web preview on Brave, not the installed Android app or a minified AAB.",
+    "Android Back from Settings left Brave; the in-page back command returned correctly. The page-level native listener is Capacitor-only and unchanged by this dependency update. No claim of full Web browser-history parity.",
+    "No Safari/iPhone check, notifications delivery test or new backend job certification.",
+    "One invalid automation tap was rejected before interaction; completed checks use subsequent captures."
+  ],
+  "prohibited_actions_performed": [],
+  "tracked_screenshots": {
+    "weather-final.png": "edc54a81ca3a7d388ad7fb3ef1484f387a696b0ca42ef2e692cb74dc4811e1ed",
+    "weather-fur-dark.png": "69b79840d6111e691f120803001da6d3f139d9500f1c3ae1afdaf402dc5bd13e",
+    "bulletin-scrolled.png": "e154a148f0b15deac62d061c7250663dc581ea56bad7d6ad135a30bc0774e31a",
+    "event-detail.png": "874a1c5b8e9b1b21c9026900241ebca06bc55dadf2c59e9f4c3e168f31d14a28"
+  },
+  "local_evidence_root": ".tmp/vite-security-update-20261022/phone",
+  "local_evidence_sha256": {
+    "weather-ready.png": "4d45ce29cf3d03f6678671e72b6819509c48d31434cc9e369f90a16ab2edba4b",
+    "weather-ready.xml": "ad8d69b066fc9f3f1fa60bc7826a66297bbc9a85898d98f8a0ee3481c68abee2",
+    "weather-saturday.png": "33b23252d11ea6ec5119bfd65f27cbd72df662a52e75908fff09aeb5bde535ad",
+    "weather-saturday.xml": "c33d4f685a62c84b5aecc43e96a6b189fe6c8abba82ef4998c649b3d5411be15",
+    "weather-hour.png": "328ed7bdf25c80decff11ac9d9e6534cd1abc6fe408cf253fd9c6a3399d7f963",
+    "weather-hour.xml": "e8c4c46c3e84c538985822da3f2c9805bc7a619f862280adfcef1ebd9952133a",
+    "weather-return.png": "06e725197f04a18b890eacd93c8bd666851cdca8162dab13d37e78e0e96e7975",
+    "weather-return.xml": "9452fa5c15d8da73cf9e9abd5f96ca748ac111b2192c7c97ed774b3ec2dfd54e",
+    "bulletin-top.png": "ed9c6566a1af6a467c8fe5f53f6bd8395b3884633cfaaa376746a06a3878b76b",
+    "bulletin-top.xml": "9605e9b065129954bd8d3f04305b3fde99a0045bacc2f20a43ad7710c1662dcb",
+    "bulletin-scrolled.png": "e154a148f0b15deac62d061c7250663dc581ea56bad7d6ad135a30bc0774e31a",
+    "bulletin-scrolled.xml": "87d8fdb7d769c4041b3ea140e9e1f2fdb73ea17be7dc92d281ebbb6267dcdbac",
+    "events-top.png": "c40e5aa37762e02236025c5d3a3322db7541d8cf9f75a606625c9891ec2128cd",
+    "events-top.xml": "f12f3204a2e0aff0a8e607f289593967af6a4c05d794df2e7f3fed11a46667aa",
+    "events-scrolled.png": "b3bf57c950778dea593c4f0d879a816658b6cc7c717f5843ea55a8b79348fa38",
+    "events-scrolled.xml": "c5d90c99fcf3db8a52745843b3fb0b52c48889d9e4a075054b44c40131ebd33b",
+    "event-detail.png": "874a1c5b8e9b1b21c9026900241ebca06bc55dadf2c59e9f4c3e168f31d14a28",
+    "event-detail.xml": "0ba3064baecd4cacecadf5003e725994988249e943c05e852fb1cf499d68a9a8",
+    "events-return.png": "aeb148457b880051c28b299e9ff349276429f05b0e42d15cdf102fe39f687e2a",
+    "events-return.xml": "8947303627e2920bd2586a0bacb9eb101189b852cfe63edc3ec78ff624ba5568",
+    "weather-fur-dark.png": "69b79840d6111e691f120803001da6d3f139d9500f1c3ae1afdaf402dc5bd13e",
+    "weather-fur-dark.xml": "dd4d597d0dae4c9d952d00b05c10c7c91acd048b58aa6b639dff7f5671c946c4",
+    "events-fur-dark.png": "cb1b610f6fadf96b705b16f84b3c515749f8a9e67491f214a0337d0a2f8c6f2d",
+    "events-fur-dark.xml": "222022bd6f8bc0368cb508c46d7b34cb9dec24a8a87e2c1aa17edfc4f848c228",
+    "weather-cams.png": "3554401edf738165e8825ffb0d617d50ac8386502d8c9c4c1920da1aed7bc1a6",
+    "weather-cams.xml": "2e51da0b765dbe2dbda5d97f205dd9280592f679c4441bdedb8ed878eeab3e8b",
+    "weather-final.png": "edc54a81ca3a7d388ad7fb3ef1484f387a696b0ca42ef2e692cb74dc4811e1ed",
+    "weather-final.xml": "cdf3f03aae03271173497b3d151ccaaa98b45a17402211ce8fcfba55512263ab"
+  }
+}

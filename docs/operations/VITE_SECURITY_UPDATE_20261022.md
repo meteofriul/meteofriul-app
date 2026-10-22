@@ -4,8 +4,10 @@
 
 Aggiornamento locale sul ramo `codex/vite-security-update`, derivato da `main`
 `e6e73fcc48852b2601fe1c4264d739c86882fcfe`. Aggiornamento e verbale raccolti
-nel commit dedicato a Vite 8.1.6; promozione su main rinviata alla verifica
-sul telefono. Nessun push, deploy, AAB, installazione sul telefono o invio.
+nel commit `df6280b697d0bdec6bc82451dd64893c72e2dbc7`. La verifica
+su Brave del Galaxy è completata: soddisfatti i controlli per la promozione
+locale su main autorizzata dal proprietario. Nessun push, deploy, AAB,
+installazione sul telefono o invio.
 
 Vite passa da **8.0.16** (versione risolta nel lockfile di main) a **8.1.6**,
 fissata esplicitamente nel manifest. Il lockfile aggiorna anche le dipendenze
@@ -103,11 +105,47 @@ Riscontri nella stessa anteprima Vite 8.1.6, browser integrato 661 × 902:
 sulle previsioni in italiano e tema chiaro. I log e gli screenshot del primo
 controllo restano conservati per distinguere i due profili.
 
-Resta da effettuare il controllo su Brave del Galaxy quando il proprietario
-collegherà il telefono, prima della promozione su main. Non sono stati
-verificati Android, Safari/iPhone o la release minificata sul telefono.
-Non è stata effettuata una nuova certificazione di tutti i job: questo
-controllo riguarda la resa e le letture dell'anteprima dopo l'aggiornamento Vite.
+### Verifica sul Galaxy e criterio di promozione
+
+Il 22 ottobre, completato il controllo autorizzato sul Galaxy A52 (SM-A525F),
+Android 14, Brave 1.97.59, schermo 1080 × 2400. Connessione USB reverse alla
+sola anteprima locale sulla porta 5174. Nessuna installazione o modifica ai
+permessi di posizione/notifiche; località Pordenone mantenuta.
+
+Candidato verificato: `df6280b697d0bdec6bc82451dd64893c72e2dbc7`. Gli SHA-256
+di manifest e lockfile coincidono con quelli dei controlli automatici già
+passati; dopo la prova si aggiungono soltanto questo verbale e le evidenze.
+
+| Verifica su Brave | Riscontro |
+| --- | --- |
+| Previsioni reali | ICON-2I 22/10, 02:00 locali; cambio giorno, ore e dettaglio con grafici funzionanti |
+| Dettaglio orario | Chiusura tramite Indietro Android e ritorno alle previsioni |
+| Bollettino | Mappa leggibile; località e menù mantengono le stesse coordinate durante lo scroll |
+| Eventi | Catalogo reale, 4 eventi oggi; località e filtri fissi; dettaglio a copertura della sezione |
+| Indietro dal dettaglio Eventi | Ritorno alla stessa posizione della lista, verificato anche nella gerarchia |
+| Italiano/chiaro e friulano/scuro | Previsioni ed Eventi leggibili; contorno e sfumatura interna coerenti tra giorno e ora |
+| Aria e pollini | PM2.5 2,8 µg/m³, PM10 4,4 µg/m³, graminacee 0,24 grani/m³ nella vista osservata |
+| Ripristino | Italiano, tema chiaro, Pordenone; anteprima lasciata sulle previsioni |
+
+Evidenze selezionate e confronti di coordinate:
+[risultati e hash](evidence/vite-security-update-2026-10-22/phone-verification.json),
+[previsioni chiare](evidence/vite-security-update-2026-10-22/weather-final.png),
+[previsioni friulane scure](evidence/vite-security-update-2026-10-22/weather-fur-dark.png),
+[Bollettino dopo lo scroll](evidence/vite-security-update-2026-10-22/bulletin-scrolled.png),
+[dettaglio Eventi](evidence/vite-security-update-2026-10-22/event-detail.png).
+Gli screenshot di Impostazioni e le gerarchie grezze restano ignorati in locale.
+
+**Limiti:** la prova riguarda Brave, non l'app Android installata, la AAB
+minificata o Safari/iPhone. Da Impostazioni, Indietro Android ha lasciato Brave;
+la freccia nell'app ha invece ripristinato correttamente la sezione. Il gestore
+di pagina nativo in `pilotBackNavigation.js` è riservato a Capacitor e non cambia
+con questo aggiornamento: non si certifica qui la parità completa della
+cronologia Web. Il ritorno dai dettagli orario ed Eventi è verificato.
+Nessuna nuova certificazione di tutti i job o degli invii.
+
+Esito del controllo richiesto per Vite: **passato**. La promozione prevista è
+un fast-forward locale di main che comprende il commit Vite e il successivo
+commit documentale. Nessuna modifica aggiuntiva al codice applicativo.
 
 ## Evidenze locali
 
@@ -127,4 +165,5 @@ log dei guard, `build-main.log`, `build-sw.log`, `build-sw-check.log`,
 - `preview-live-check.log` (controllo finale del launcher)
 
 I log grezzi e le dipendenze restano locali; questo verbale è il riepilogo
-destinato al repository. Main non è stato modificato.
+destinato al repository, insieme alle evidenze selezionate della prova sul Galaxy.
+La promozione locale non aggiorna GitHub e non chiude da sola Dependabot.
