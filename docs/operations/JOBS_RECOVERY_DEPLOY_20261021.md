@@ -1,6 +1,6 @@
 # Eventi e avvisi locali: deploy del 21 ottobre 2026
 
-**Deploy completati; riepilogo serale e avvisi locali del 21 ottobre verificati. Eventi ancora da verificare.**
+**Corse ordinarie di riepilogo serale, avvisi locali ed Eventi verificate. Recupero delle tre fonti Eventi confermato; restano le revisioni editoriali indicate sotto.**
 Il proprietario ha autorizzato i commit separati, la promozione su main e il passaggio
 operativo dei job. Nessuna AAB, installazione, emulatore, pubblicazione Web,
 push Git o esecuzione/invio manuale. Sponsor invariati e disattivati.
@@ -121,7 +121,7 @@ alterare soglie o destinatari. Nessun rollback è stato eseguito.
 | --- | --- | --- |
 | Sintesi serale | 21 ottobre 20:45 | Verificata: 42 invii accettati, zero errori; immagine invariata |
 | Avvisi locali | 21 ottobre 21:00 | Verificati: 7/7 punti con tolleranze, 42/42 valutazioni possibili; nessun invio dovuto |
-| Eventi | 22 ottobre 06:00 | Attesa, prima candidata |
+| Eventi | 22 ottobre 06:00 | Verificata: tre fonti recuperate, catalogo fresco e API coerenti; 12 schede in revisione |
 
 ### Riepilogo serale: controllo richiesto dal proprietario
 
@@ -183,8 +183,49 @@ né una misura su tutti i 215 comuni. Non essendoci candidati tempestivi, questa
 corsa non verifica una consegna FCM degli avvisi locali.
 [Esito sintetico e denominatori](evidence/jobs-recovery-20261021/notices-ordinary-verification.json).
 
-Follow-up `verifica-job-eventi-e-avvisi-dopo-aggiornamento`, ogni ora al minuto 20.
-Riepilogo e avvisi sono già verificati e comunicati: resta soltanto Eventi.
+### Eventi del 22 ottobre: recupero verificato
+
+Controllo eseguito alle **07:15 Europe/Rome**, sulla sola esecuzione ordinaria
+`meteofriul-events-refresh-wv7tm` delle 06:00: avvio **06:00:13**, conclusione
+**06:10:52**, immagine candidata attesa, Scheduler HTTP 200 ed esito riuscito.
+Nessuna esecuzione o acquisizione avviata dal controllo.
+
+Il catalogo ha snapshot `2026-10-22T04:01:32.873155+00:00` e generazione
+`1792642249377461`; aggiornamento Storage compreso nella stessa esecuzione.
+Tutte le **15 fonti** hanno dati aggiornati in quella corsa: **10 fresh** e
+**5 partial**, nessuna stale o con errore di acquisizione. Sono presenti
+**1.703 schede**, da non interpretare come totale univoco regionale deduplicato.
+
+| Fonte oggetto della correzione | Stato | Schede pubblicate | Revisioni |
+| --- | --- | ---: | ---: |
+| Le Giornate del Cinema Muto | fresh | 0 | 0 |
+| Barcolana | fresh | 1 | 0 |
+| Galleria Spazzapan | fresh | 2 | 0 |
+
+Cinema Muto ha completato la lettura del calendario ufficiale (97 record esaminati):
+zero schede pubblicabili non equivale a un timeout. Barcolana ha esaminato 682 record;
+Spazzapan conferma la raccolta riconciliata di eventi, mostre e notizie, senza revisioni.
+
+Le API rispondono HTTP 200 e con CORS corretto sui tre punti di controllo:
+Gradisca **294**, Udine **497**, Pordenone **358** risultati nel raggio configurato.
+Snapshot e stati delle 15 fonti corrispondono al catalogo appena pubblicato.
+È una verifica delle risposte API; non attesta la visualizzazione sull'app.
+
+**Residui espliciti:** 12 schede restano escluse e in revisione su cinque fonti:
+TurismoFVG 7, Azalea 1, CSS Udine 1, Pordenone Pensa 2, SagreFVG 1. Le API
+espongono `quarantined_cards`; il catalogo salvato prima del deploy ne contava 15.
+Le revisioni riguardano dettagli non risolti, calendari/date da verificare o
+località non riconciliate e non sono state corrette automaticamente.
+
+I monitor separati segnalano inoltre `review_required` per **Palazzo Attems**
+(5 cambiamenti) e **GiroFVG** (19). Sono rilievi da esaminare separatamente;
+il recupero dei tre connettori non li dichiara risolti e non abilita nuove fonti.
+[Esito, contatori e limiti](evidence/jobs-recovery-20261021/events-ordinary-verification.json).
+
+Pianificazione applicata al follow-up `verifica-job-eventi-e-avvisi-dopo-aggiornamento`,
+ogni ora al minuto 20. Il controllo Eventi è completato; il follow-up è stato
+eliminato il 22 ottobre dopo il salvataggio degli esiti. Le regole seguenti documentano la finestra
+autorizzata, non controlli ancora pendenti.
 Il proprietario accenderà il PC dopo l'orario inizialmente previsto: la verifica
 può partire dalle 06:20 e resta valida **per tutta la giornata del 22 ottobre**,
 al primo passaggio disponibile con PC e app aperti. La scadenza delle 07:20
