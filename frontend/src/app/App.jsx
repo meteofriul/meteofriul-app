@@ -65,6 +65,7 @@ import {
   reconcileEventsNavigationSnapshot,
 } from "./appRouteRuntime";
 import { createPilotRouteHistory } from "./pilotRouteHistory";
+import { useBrowserDialogBack } from "./useBrowserDialogBack";
 import { setPilotBackPageHandler } from "../services/pilotBackNavigation";
 import {
   shouldReplaceResolvedPlace,
@@ -759,6 +760,8 @@ export default function App() {
     setPilotWhyId("");
     setActiveTab(nextTab);
   }, [settingsReturnTab]);
+
+  useBrowserDialogBack(handleSettingsBack, activeTab === "settings");
 
   useEffect(() => {
     if (!isDefinitiveAppExperience()) return undefined;

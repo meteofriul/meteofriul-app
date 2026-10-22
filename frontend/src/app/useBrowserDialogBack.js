@@ -14,12 +14,12 @@ function returnFromDialog() {
   });
 }
 
-/** Browser-only history entry, scoped to the lifetime of one open dialog. */
-export function useBrowserDialogBack(onBack) {
+/** Browser-only history entry for a dialog or an enabled temporary screen. */
+export function useBrowserDialogBack(onBack, enabled = true) {
   const callbackRef = useRef(onBack);
   useEffect(() => { callbackRef.current = onBack; }, [onBack]);
   useEffect(() => {
-    if (typeof window === "undefined" || Capacitor.isNativePlatform()) return undefined;
+    if (!enabled || typeof window === "undefined" || Capacitor.isNativePlatform()) return undefined;
     let active = true;
     let entry = null;
     const handlePopState = (event) => {
@@ -48,5 +48,5 @@ export function useBrowserDialogBack(onBack) {
         returnFromDialog();
       }
     };
-  }, []);
+  }, [enabled]);
 }
