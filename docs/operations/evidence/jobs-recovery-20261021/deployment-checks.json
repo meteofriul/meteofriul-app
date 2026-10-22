@@ -216,7 +216,7 @@
       }
     ]
   },
-  "ordinary_verification": "evening and local notices verified; Eventi 2026-10-22 06:00 Europe/Rome pending",
+  "ordinary_verification": "evening, local notices and target Eventi run verified; editorial reviews remain explicit",
   "follow_up": "verifica-job-eventi-e-avvisi-dopo-aggiornamento",
   "cloud_mutations": [
     "Cloud Build for two images",
@@ -255,7 +255,8 @@
   },
   "ordinary_verification_evidence": {
     "evening": "evening-ordinary-verification.json",
-    "notices": "notices-ordinary-verification.json"
+    "notices": "notices-ordinary-verification.json",
+    "events": "events-ordinary-verification.json"
   },
   "ordinary_verification_script_sha256": "13c81b0b3b95c24c7e5c5b12709a9e36bd56010537c366c2b9713462e0d61958",
   "follow_up_window": {
@@ -266,5 +267,6 @@
     "late_pc_start_allowed": true,
     "former_0720_deadline_removed": true,
     "reuse_evening_and_notice_checks": true
-  }
+  },
+  "follow_up_status": "deleted after Eventi verification on 2026-10-22"
 }
