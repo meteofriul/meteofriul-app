@@ -95,7 +95,7 @@ function assertCamsShown() {
   expect(container.querySelector('.mf-weather-environment [data-status="available"]')).not.toBeNull();
   expect(container.textContent).toContain("PM2.5");
   expect(container.textContent).toContain("1,2");
-  expect(container.textContent).not.toContain("Dati dell’aria non disponibili");
+  expect(container.textContent).not.toContain("Dati non disponibili");
   expect(state.harness.saved().bundle.current.data_quality.cams_status).toBe("stale");
 }
 
