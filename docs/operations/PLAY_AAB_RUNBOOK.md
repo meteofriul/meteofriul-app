@@ -270,12 +270,17 @@ esiste; stato esatto (`non costruita`, `built-not-uploaded`, `play-accepted` o
 La regola seguente è implementata sul ramo release 0.1.15; la sola promozione
 di queste istruzioni su main non distribuisce la modifica al builder.
 
-Il versionCode riservato non si riutilizza mai. Se il ledger contiene un evento
-`abandoned` valido e nessun manifesto di AAB per quel codice, un nuovo tentativo
-può conservare il solo versionName usando un codice strettamente maggiore di
-tutti i codici locali e di quello osservato in Console. Il ledger deriva questa
-condizione dalle prove validate; non esiste un parametro di bypass del builder.
-Riserve aperte, bundle già costruiti (anche abbandonati) e versioni accettate
-mantengono il blocco sul nome. Firma, provenienza, TTL e immutabilità restano
-invariati. La distinzione tra codice monotono e nome visualizzato è descritta
-nella [documentazione Android](https://developer.android.com/studio/publish/versioning).
+Il versionCode riservato non si riutilizza mai. Il ramo release aggiornato il
+22 ottobre permette lo stesso versionName per più AAB ufficiali, anche dopo
+accettazione Play, purché ogni nuovo codice superi tutti i codici locali e
+quello osservato in Console. Ogni tentativo precedente con quel nome deve avere
+un manifesto di build validato oppure un evento `abandoned` validato.
+Una riserva senza manifesto né abbandono resta aperta e blocca il nuovo tentativo.
+
+Il ledger deriva questa condizione dalle prove validate; non esiste un
+parametro di bypass. Bundle, mapping e manifesti sono distinti per codice e
+nome; ogni hash resta legato al proprio codice. Non riscrivere 300033 per
+preparare una nuova 0.1.15 e non registrare abbandoni fittizi di build accettate.
+Firma, provenienza, TTL e immutabilità restano invariati. La distinzione tra
+codice monotono e nome visualizzato è descritta nella
+[documentazione Android](https://developer.android.com/studio/publish/versioning).

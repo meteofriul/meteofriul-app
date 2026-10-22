@@ -1460,7 +1460,7 @@ $payload = [ordered]@{
             -ExistingVersions $ledger.AllVersions
     } 'release_android_play_version_not_incremented'
 
-    # Retry only the display name of a validated abandoned, unbuilt reservation.
+    # Retry the display name after validated abandonment or a completed build.
     Assert-PlayCandidateVersion -CandidateVersionCode 13 -CandidateVersionName '1.0.2' `
         -LatestConsoleVersionCode 10 -ExistingVersions $ledger.AllVersions | Out-Null
     Assert-AndroidReleaseVersionHistory -CandidateVersionCode 13 -CandidateVersionName '1.0.2' `
@@ -1473,10 +1473,18 @@ $payload = [ordered]@{
         Assert-AndroidReleaseVersionHistory -CandidateVersionCode 12 -CandidateVersionName '1.0.2' `
             -ExistingReleases $ledger.AllVersions
     } 'release_android_version_already_exists'
+    Assert-PlayCandidateVersion -CandidateVersionCode 13 -CandidateVersionName '1.0.0' `
+        -LatestConsoleVersionCode 10 -ExistingVersions $ledger.AllVersions | Out-Null
+    Assert-AndroidReleaseVersionHistory -CandidateVersionCode 13 -CandidateVersionName '1.0.0' `
+        -ExistingReleases $ledger.AllVersions | Out-Null
     Assert-ThrowsCode {
-        Assert-PlayCandidateVersion -CandidateVersionCode 13 -CandidateVersionName '1.0.0' `
+        Assert-PlayCandidateVersion -CandidateVersionCode 11 -CandidateVersionName '1.0.0' `
             -LatestConsoleVersionCode 10 -ExistingVersions $ledger.AllVersions
-    } 'release_android_play_candidate_version_reserved'
+    } 'release_android_play_version_not_incremented'
+    Assert-ThrowsCode {
+        Assert-AndroidReleaseVersionHistory -CandidateVersionCode 11 -CandidateVersionName '1.0.0' `
+            -ExistingReleases $ledger.AllVersions
+    } 'release_android_version_not_incremented'
 
     $retry13 = Join-Path $ledgerDirectory 'meteofriul-13-1.0.2.reservation.json'
     Write-NewPlayJsonFile -Path $retry13 -Payload ([ordered]@{
@@ -1500,7 +1508,7 @@ $payload = [ordered]@{
         'release_android_play_version_name_conflict'
     [IO.File]::WriteAllBytes($abandoned12, $abandoned12Bytes)
     Remove-Item -LiteralPath $retry13
-    # Even an abandoned version cannot retry its name once a bundle exists.
+    # A built bundle remains immutable, including after abandonment; only its name is reusable.
     $built12 = Join-Path $ledgerDirectory 'meteofriul-12-1.0.2.release.json'
     Write-NewPlayJsonFile -Path $built12 -Payload ([ordered]@{
         Target = 'android-play'; Status = 'built-not-uploaded'
@@ -1508,12 +1516,16 @@ $payload = [ordered]@{
         UploadCertificateSha256 = $certificateA; AabSha256 = $aabHash
     }) | Out-Null
     $builtLedger = Read-PlayReleaseLedger -Directory $ledgerDirectory
+    Assert-PlayCandidateVersion -CandidateVersionCode 13 -CandidateVersionName '1.0.2' `
+        -LatestConsoleVersionCode 10 -ExistingVersions $builtLedger.AllVersions | Out-Null
+    Assert-AndroidReleaseVersionHistory -CandidateVersionCode 13 -CandidateVersionName '1.0.2' `
+        -ExistingReleases $builtLedger.AllVersions | Out-Null
     Assert-ThrowsCode {
-        Assert-PlayCandidateVersion -CandidateVersionCode 13 -CandidateVersionName '1.0.2' `
+        Assert-PlayCandidateVersion -CandidateVersionCode 12 -CandidateVersionName '1.0.2' `
             -LatestConsoleVersionCode 10 -ExistingVersions $builtLedger.AllVersions
     } 'release_android_play_candidate_version_reserved'
     Assert-ThrowsCode {
-        Assert-AndroidReleaseVersionHistory -CandidateVersionCode 13 -CandidateVersionName '1.0.2' `
+        Assert-AndroidReleaseVersionHistory -CandidateVersionCode 12 -CandidateVersionName '1.0.2' `
             -ExistingReleases $builtLedger.AllVersions
     } 'release_android_version_already_exists'
     Remove-Item -LiteralPath $built12
@@ -1548,6 +1560,65 @@ $payload = [ordered]@{
         -Ledger $ledger
     Assert-True ($acceptedTrust.Source -ceq 'latest-play-accepted') `
         'Play-accepted evidence did not become the upload trust anchor.'
+
+    # Several official bundles with the same name remain distinct by code/hash.
+    # A later built-only bundle must not replace the accepted certificate anchor.
+    $sameNameDirectory = Join-Path $temporaryRoot 'same-name-ledger'
+    New-Item -ItemType Directory -Path $sameNameDirectory | Out-Null
+    foreach ($path in @($reservation10,$release10,$acceptance)) {
+        Copy-Item -LiteralPath $path -Destination $sameNameDirectory
+    }
+    $sameNameReservation = Join-Path $sameNameDirectory 'meteofriul-13-1.0.0.reservation.json'
+    $sameNameRelease = Join-Path $sameNameDirectory 'meteofriul-13-1.0.0.release.json'
+    Write-NewPlayJsonFile -Path $sameNameReservation -Payload ([ordered]@{
+        Kind='play-version-reservation'; Status='reserved'; VersionCode=13; VersionName='1.0.0'
+    }) | Out-Null
+    $sameNameOpenLedger = Read-PlayReleaseLedger -Directory $sameNameDirectory
+    Assert-ThrowsCode {
+        Assert-PlayCandidateVersion -CandidateVersionCode 14 -CandidateVersionName '1.0.0' `
+            -LatestConsoleVersionCode 10 -ExistingVersions $sameNameOpenLedger.AllVersions
+    } 'release_android_play_candidate_version_reserved'
+    Assert-ThrowsCode {
+        Assert-AndroidReleaseVersionHistory -CandidateVersionCode 14 -CandidateVersionName '1.0.0' `
+            -ExistingReleases $sameNameOpenLedger.AllVersions
+    } 'release_android_version_already_exists'
+    Write-NewPlayJsonFile -Path $sameNameRelease -Payload ([ordered]@{
+        Target='android-play'; Status='built-not-uploaded'; VersionCode=13; VersionName='1.0.0'
+        UploadCertificateSha256=$certificateA; AabSha256=('e' * 64)
+    }) | Out-Null
+    $sameNameBuiltLedger = Read-PlayReleaseLedger -Directory $sameNameDirectory
+    Assert-True ($sameNameBuiltLedger.Releases.Count -eq 2) 'Same-name bundles were lost or merged.'
+    Assert-True ($sameNameBuiltLedger.LatestAcceptedEvidence.VersionCode -eq 10) 'Built-only bundle changed accepted anchor.'
+    Assert-PlayCandidateVersion -CandidateVersionCode 14 -CandidateVersionName '1.0.0' `
+        -LatestConsoleVersionCode 10 -ExistingVersions $sameNameBuiltLedger.AllVersions | Out-Null
+    Assert-AndroidReleaseVersionHistory -CandidateVersionCode 14 -CandidateVersionName '1.0.0' `
+        -ExistingReleases $sameNameBuiltLedger.AllVersions | Out-Null
+    $sameNameAccepted = Join-Path $sameNameDirectory '20260823T133000000Z-play-accepted.evidence.json'
+    Write-NewPlayJsonFile -Path $sameNameAccepted -Payload ([ordered]@{
+        CreatedAtUtc='2026-08-23T13:30:00Z'; Event='play-accepted'; VersionCode=13; VersionName='1.0.0'
+        UploadCertificateSha256=$certificateA; AabSha256=('e' * 64)
+        LatestConsoleVersionCode=13; EvidenceReference='Same-name Play acceptance fixture'
+    }) | Out-Null
+    $sameNameAcceptedLedger = Read-PlayReleaseLedger -Directory $sameNameDirectory
+    Assert-True ($sameNameAcceptedLedger.LatestAcceptedEvidence.VersionCode -eq 13) 'Latest acceptance did not use version code.'
+    Assert-PlayCandidateVersion -CandidateVersionCode 14 -CandidateVersionName '1.0.0' `
+        -LatestConsoleVersionCode 13 -ExistingVersions $sameNameAcceptedLedger.AllVersions | Out-Null
+    Assert-AndroidReleaseVersionHistory -CandidateVersionCode 14 -CandidateVersionName '1.0.0' `
+        -ExistingReleases $sameNameAcceptedLedger.AllVersions | Out-Null
+    Assert-ThrowsCode {
+        Assert-PlayCandidateVersion -CandidateVersionCode 13 -CandidateVersionName '1.0.0' `
+            -LatestConsoleVersionCode 13 -ExistingVersions $sameNameAcceptedLedger.AllVersions
+    } 'release_android_play_candidate_version_reserved'
+    Assert-ThrowsCode {
+        Assert-PlayCandidateVersion -CandidateVersionCode 14 -CandidateVersionName '1.0.0' `
+            -LatestConsoleVersionCode 14 -ExistingVersions $sameNameAcceptedLedger.AllVersions
+    } 'release_android_play_version_not_incremented'
+    # A second display name for one code is still an invalid ledger identity.
+    $conflictingPayload = Get-Content -LiteralPath $sameNameRelease -Raw | ConvertFrom-Json
+    $conflictingPayload.VersionName = '1.0.1'
+    Write-TestJson -Path $sameNameRelease -Payload $conflictingPayload
+    Assert-ThrowsCode { Read-PlayReleaseLedger -Directory $sameNameDirectory } `
+        'release_android_play_version_identity_conflict'
 
     $rotation = Join-Path $ledgerDirectory '20260823T140000000Z-upload-key-rotation.evidence.json'
     Write-NewPlayJsonFile -Path $rotation -Payload ([ordered]@{

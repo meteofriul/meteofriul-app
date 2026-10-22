@@ -475,9 +475,12 @@ function Read-PlayReleaseLedger {
         }
     }
 
-    # An abandoned reservation without a bundle may retry the display name.
-    # Derive this only after validating the ledger and its terminal evidence.
-    # Version codes remain in AllVersions and can never be reused.
+    # A validated built manifest or abandonment permits another build with the
+    # same display name and a strictly greater version code. Play acceptance
+    # does not reserve a display name forever. An unresolved reservation still
+    # blocks it. Derive this only from the validated ledger, never a CLI bypass.
+    # Keep RetryableVersionName for both existing candidate guards; every code
+    # remains in AllVersions and can never be reused.
     foreach ($version in $allVersions) {
         $abandoned = @($evidence | Where-Object {
             $_.Event -ceq "abandoned" -and
@@ -485,9 +488,10 @@ function Read-PlayReleaseLedger {
         })
         $built = @($releases | Where-Object VersionCode -eq $version.VersionCode)
         $version | Add-Member NoteProperty RetryableVersionName (
-            $abandoned.Count -eq 1 -and $built.Count -eq 0
+            $abandoned.Count -eq 1 -or $built.Count -eq 1
         )
     }
+    # Multiple completed builds may share a name; two unresolved reservations may not.
     $duplicateName = @($allVersions | Where-Object { -not $_.RetryableVersionName } |
         Group-Object { $_.VersionName.ToLowerInvariant() } |
         Where-Object Count -gt 1 | Select-Object -First 1)

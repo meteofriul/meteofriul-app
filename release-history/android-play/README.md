@@ -67,8 +67,16 @@ modo anche una vecchia evidenza `play-accepted` non può essere riscritta per
 sostituire silenziosamente il certificato upload fidato.
 
 
-La modifica del builder che segue è sul ramo release, ancora da promuovere.
-Un tentativo abbandonato **senza manifesto AAB** può essere ripetuto con lo stesso
-nome visualizzato e un codice maggiore, conservando riserva ed evento precedenti.
-La regola non permette mai di riutilizzare un codice né di cambiare un artefatto
-esistente. Una riserva ancora aperta o una versione già costruita blocca il nome.
+La modifica del builder del 22 ottobre è sul ramo release, ancora da promuovere.
+Lo stesso nome visualizzato può appartenere a più AAB ufficiali con codici
+crescenti: un manifesto di build validato o un evento di abbandono validato
+consentono il nuovo tentativo. Vale anche per una build già accettata da Play.
+Una riserva senza manifesto né abbandono resta aperta e blocca quel nome.
+
+La riserva registra il nome associato al codice, senza renderlo unico fra tutte
+le versioni. Il codice resta consumato per sempre; gli artefatti e i record
+esistenti non cambiano. Il ledger conserva tutte le build dello stesso nome e
+sceglie l'ultima accettazione tramite il codice, con verifica di hash e firma.
+Una futura 0.1.15 con un codice maggiore non sostituisce il record 300033.
+Il controllo locale non assegna un nuovo codice: prima della riserva resta
+necessaria la lettura aggiornata della Console.

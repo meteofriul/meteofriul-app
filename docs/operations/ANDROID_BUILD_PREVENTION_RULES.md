@@ -84,15 +84,19 @@ distribuito dai pacchetti. In questa release escludere `build` aveva rimosso
 - Dopo una riserva, il codice è consumato anche se non esiste una AAB. Conservare
   e versionare la riserva; registrare `abandoned` con lo script dedicato e il
   motivo. Non cancellare o modificare record per liberare il numero.
-- Lo stesso nome può essere ritentato con un codice maggiore **solo** dopo
-  abbandono validato e in assenza del manifesto di un bundle per quel codice.
-  Riserve aperte e bundle già costruiti non hanno questa eccezione.
-- Android consente lo stesso `versionName` con `versionCode` crescente.
-  Il limite sul nome descritto sopra è una guardia locale più restrittiva:
-  al 22 ottobre non permette ancora una seconda 0.1.15 dopo il bundle 300033.
-  Per adottare questa numerazione occorre prima aggiornare e verificare quella
-  guardia, senza cancellare record o riusare codici. La correzione nativa non
-  modifica la guardia né assegna un nuovo numero.
+- Per le AAB ufficiali, lo stesso `versionName` può essere usato con un codice
+  maggiore quando il tentativo precedente ha un manifesto di build validato
+  oppure un evento `abandoned` validato. Vale anche dopo accettazione Play e
+  dopo abbandono di un bundle già costruito. Un nome mostrato non identifica
+  un artefatto: per ogni build conservare codice, commit e SHA-256.
+- Una riserva senza manifesto di build né abbandono resta aperta e blocca un
+  nuovo tentativo con quel nome. Due riserve aperte dello stesso nome rendono
+  il ledger incoerente. Non aggiungere un abbandono fittizio per liberare il nome.
+- La regola deriva dal ledger validato, senza parametro di bypass. Codici
+  crescenti, immutabilità, firma, provenienza e altri gate restano obbligatori.
+  L'adeguamento del 22 ottobre è locale al ramo release: nessun numero è stato
+  cambiato o riservato. Il percorso APK privato conserva la propria protezione
+  sui nomi, perché i suoi archivi non includono il codice nel nome del file.
 - Se la AAB è già valida, conservarla e usare quel file in seguito. Non
   rigenerarla per ottenere un file diverso con lo stesso numero.
 
@@ -141,6 +145,7 @@ distribuito dai pacchetti. In questa release escludere `build` aveva rimosso
 
 Il [verbale 0.1.15](https://github.com/meteofriul/meteofriul-app/blob/codex/release-0.1.15/docs/operations/ANDROID_0.1.15_BUILD_20261021.md) conserva errori,
 correzioni e limiti. I contratti del ramo release in `scripts/build-play-aab.contract.tests.ps1`
-coprono il retry del solo nome, il blocco dei codici già riservati, le riserve
-aperte e i bundle esistenti. Le guide devono restare collegate da README,
+coprono il riuso del solo nome dopo build, accettazione o abbandono, il blocco
+dei codici già riservati e delle riserve aperte, più bundle distinti con lo stesso
+nome e selezione dell'ultima accettazione per codice. Le guide devono restare collegate da README,
 AGENTS.md e runbook; aggiornarle quando emerge una nuova causa verificata.

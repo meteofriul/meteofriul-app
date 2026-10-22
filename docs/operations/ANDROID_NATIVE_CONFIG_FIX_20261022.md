@@ -85,11 +85,24 @@ Android distingue `versionName` (nome mostrato, per esempio 0.1.15) e
 Il prossimo codice va scelto dopo aver letto Console e ledger: 300034 è
 soltanto un esempio, non una riserva.
 
-Al 22 ottobre la guardia locale sul riuso del nome è più restrittiva: ammette
-solo un retry dopo una riserva abbandonata senza bundle, quindi blocca ancora
-una seconda 0.1.15 dopo 300033. Questo lavoro non cambia tale regola.
-Prima di una build con lo stesso nome occorre adeguare e verificare quella
-guardia mantenendo immutabili le identità e i record esistenti.
+Al commit della correzione nativa `38e1910b` la guardia sul nome ammetteva
+soltanto il retry dopo una riserva abbandonata senza bundle. Il successivo
+adeguamento autorizzato il 22 ottobre permette il riuso del nome anche dopo
+un manifesto di build validato, compresa una build accettata da Play.
+Una riserva senza manifesto né abbandono continua a bloccare quel nome.
+
+Verifiche dell'adeguamento, tutte locali:
+- suite `build-play-aab.contract.tests.ps1 -SkipGradleExecution`: PASS;
+  casi dopo build, abbandono e accettazione, più bundle dello stesso nome,
+  riserve aperte, identità in conflitto e codici inferiori/riutilizzati;
+- suite `release-api-preflight.tests.ps1`: PASS, protezioni APK privati incluse;
+- audit ledger: PASS, 49 record storici e correnti invariati;
+- lettura del ledger reale e della cronologia privata: entrambi i controlli
+  accettano l'ipotesi `0.1.15 / 300034`, mentre `300033` resta rifiutato.
+  La Console di riferimento è soltanto l'ultima attestazione salvata:
+  non è una nuova lettura live, né una riserva del numero.
+
+Nessuna modifica ai numeri configurati, ai JSON immutabili o all'AAB 300033.
 
 Dopo autorizzazione alla nuova build: controllare il contenuto minificato reale
 con le nuove guardie, poi verificare avvio, log Capacitor/Cordova, barre/inset

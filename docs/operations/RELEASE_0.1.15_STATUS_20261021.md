@@ -21,6 +21,12 @@ I documenti successivi non cambiano il commit sorgente dell'AAB già firmata.
 La versione nella configurazione di `main` può quindi differire da quella del
 test interno: non va modificata solo per far coincidere i numeri.
 
+**Preparazione locale del 22 ottobre:** la guardia del ramo release consente
+un'altra AAB ufficiale con nome 0.1.15 e codice crescente, anche dopo 300033
+accettata da Play. Riserve aperte e codici già consumati restano bloccati.
+Suite locali e audit ledger superati; nessuna nuova versione riservata o
+generata. [Dettagli e limiti](ANDROID_NATIVE_CONFIG_FIX_20261022.md#numerazione-e-prossimi-passi).
+
 ## Rilievi aperti e prossima azione
 
 | Rilievo | Evidenza e stato |
