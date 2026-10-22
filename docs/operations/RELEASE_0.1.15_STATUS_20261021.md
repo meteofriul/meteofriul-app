@@ -13,8 +13,8 @@ la posizione nell'app spenta subito dopo l'aggiornamento, prima dei test.
 | Produzione Play | Ultima lettura Console del 21 ottobre: 0.1.14 / 300031; nessuna promozione della 0.1.15 in produzione |
 | Test interno Play | 0.1.15 / 300033, una sola lista selezionata con un utente; sponsor disattivati |
 | Web pubblica | Ultima verifica del 20 ottobre: 0.1.14 su meteofriul.app; candidata aggiornata verificata su Brave/Galaxy, ancora da pubblicare; Safari/iPhone non verificato |
-| `main` | Base runtime verificata `c329217b`; l'allineamento corrente aggiunge soltanto documentazione, senza versione o modifiche del ramo release |
-| `codex/release-0.1.15` | Preparazione, correzioni dei preflight, registri e prove del bundle conservati nella PR 11 in bozza; nessuna promozione del codice |
+| `main` | Stato locale del 22 ottobre: `3da1db2d`, con gli aggiornamenti dei job e i relativi verbali; le correzioni della release non sono promosse |
+| `codex/release-0.1.15` | Main incorporato con merge locale `8693345c`; preparazione e registri storici conservati, correzione nativa verificata solo localmente. La PR 11 in bozza non contiene ancora questo lavoro non pubblicato |
 | Artefatto installato | Sorgente `f82503e4daabc283a5caf77b49e7cf58439abf61`, AAB SHA256 `cb461c8e5e6fddd05407214a507e151e02e8041f403d9346c364bbe0174ba019` |
 
 I documenti successivi non cambiano il commit sorgente dell'AAB già firmata.
@@ -25,7 +25,7 @@ test interno: non va modificata solo per far coincidere i numeri.
 
 | Rilievo | Evidenza e stato |
 | --- | --- |
-| NATIVE-CONFIG-01 | Nell'AAB manca `base/assets/capacitor.config.json`; l'app registra l'errore e usa default diversi, anche per gli inset. Correggere preparazione e controllo del contenuto del bundle prima della promozione. Verificare anche l'errore Cordova su `config.xml` |
+| NATIVE-CONFIG-01 | Nell'AAB 300033 mancano il JSON Capacitor e la risorsa Cordova `xml/config`. [Correzione locale del 22 ottobre](ANDROID_NATIVE_CONFIG_FIX_20261022.md): copia esplicita, keep mirato e controllo del bundle; regressioni locali superate. Restano una nuova AAB minificata e il controllo sul telefono, quindi il rilievo non è chiuso |
 | LOCATION-UPDATE-01 | Il proprietario ha trovato Posizione spenta nell'app subito dopo Play, prima dei test. Causa sconosciuta. I permessi Android concessi non dimostrano la conservazione dell'interruttore. Mancava una lettura precedente all'aggiornamento |
 | BULLETIN-MAP-01 | Le gocce dell'icona coprono parte dell'etichetta della temperatura a 1000 m nella mappa del bollettino |
 | Copertura restante | Android 15/16, gesti, tablet/multi-window e percorsi con scritture o consegne reali non verificati; nessun PASS implicito |

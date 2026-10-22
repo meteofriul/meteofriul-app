@@ -46,6 +46,9 @@ $guardScript = Join-Path $frontendRoot "scripts\runtime-api-binding.mjs"
 $versionParityGuardScript = Join-Path $frontendRoot "scripts\assert-version-parity.mjs"
 $releasePreflightModule = Join-Path $PSScriptRoot "release-api-preflight.psm1"
 $playSecurityModule = Join-Path $PSScriptRoot "play-aab-security.psm1"
+$nativeConfigurationModule = Join-Path $PSScriptRoot "play-native-configuration.psm1"
+$nativeConfigurationSource = Join-Path $frontendRoot "capacitor.config.json"
+$nativeAssetsDirectory = Join-Path $androidRoot "app\src\main\assets"
 $firestoreTtlAuditScript = Join-Path $PSScriptRoot "audit-firestore-push-ttl.ps1"
 $firestoreCommunityTtlAuditScript = Join-Path $PSScriptRoot "audit-firestore-community-ttl.ps1"
 $firestoreCommunityTtlAuditModule = Join-Path $PSScriptRoot (
@@ -1404,6 +1407,8 @@ if (-not (Test-Path -LiteralPath $notificationIconGuardScript -PathType Leaf)) {
 if ($LASTEXITCODE -ne 0) { throw "release_android_carto_basemap_config_invalid" }
 Import-Module $releasePreflightModule -Force
 Import-Module $playSecurityModule -Force
+Import-Module $nativeConfigurationModule -Force
+$nativeConfigurationState = Get-PlayNativeConfiguration -SourcePath $nativeConfigurationSource
 Import-Module $firestoreCommunityTtlEvidenceModule -Force
 Import-Module $firestoreCommunityTtlAuditModule -Force
 $normalizedApiBase = Get-NormalizedReleaseApiBase -Value $ApiBase -ServiceName "meteofriul-api"
@@ -1590,7 +1595,7 @@ try {
     try {
         # Generate Capacitor's ignored plugin registry without copying a stale
         # frontend/dist into Android. The tracked Gradle wiring is committed
-        # and must remain stable; only capacitor.plugins.json is regenerated.
+        # and must remain stable. The approved native config is copied separately.
         if (-not (Test-Path -LiteralPath $androidPublic -PathType Container)) {
             New-Item -ItemType Directory -Path $androidPublic -Force | Out-Null
         }
@@ -1603,6 +1608,14 @@ try {
         if ($settingsHashBefore -cne $settingsHashAfter -or $buildHashBefore -cne $buildHashAfter) {
             throw "Capacitor update changed tracked Gradle integration; inspect before building."
         }
+
+        Copy-PlayNativeConfiguration `
+            -SourcePath $nativeConfigurationSource `
+            -AssetsDirectory $nativeAssetsDirectory `
+            -ExpectedSha256 $nativeConfigurationState.Sha256
+        $nativePluginsSha256 = (Get-FileHash -Algorithm SHA256 -LiteralPath (
+            Join-Path $nativeAssetsDirectory "capacitor.plugins.json"
+        )).Hash.ToLowerInvariant()
 
         & node scripts/carto-basemap-guard.mjs --mode android
         if ($LASTEXITCODE -ne 0) { throw "release_android_carto_basemap_config_invalid" }
@@ -1664,6 +1677,15 @@ Invoke-PlayBundletool `
     -JavaPath $java -JarPath $resolvedBundletool `
     -Arguments @("validate", "--bundle=$aab") `
     -FailureCode "release_android_play_bundle_invalid" | Out-Null
+$cordovaResourceDump = Invoke-PlayBundletool `
+    -JavaPath $java -JarPath $resolvedBundletool `
+    -Arguments @("dump", "resources", "--bundle=$aab", "--resource=com.meteofriul.app:xml/config", "--values") `
+    -FailureCode "release_android_cordova_config_dump_failed"
+$nativeConfigurationArtifacts = Assert-PlayNativeConfigurationBundle `
+    -BundlePath $aab `
+    -ExpectedConfigSha256 $nativeConfigurationState.Sha256 `
+    -ExpectedPluginsSha256 $nativePluginsSha256 `
+    -CordovaResourceDump $cordovaResourceDump
 $identity = Get-PlayBundleIdentity -JavaPath $java -JarPath $resolvedBundletool -BundlePath $aab
 $certificateSha256 = Invoke-PlaySignedArchiveVerifier `
     -JavaPath $java `
@@ -1783,6 +1805,7 @@ $manifestPayload = [ordered]@{
     LedgerRecordCount = $ledgerGitState.RecordCount
     AabFile = [IO.Path]::GetFileName($releaseAab)
     AabSha256 = $releaseAabSha256
+    NativeConfiguration = $nativeConfigurationArtifacts
     R8Verification = "external-and-embedded-mapping-match"
     MappingFile = [IO.Path]::GetFileName($releaseMapping)
     MappingSha256 = $releaseMappingSha256
@@ -1828,6 +1851,9 @@ Write-NewPlayJsonFile -Path $releaseManifest -Payload $manifestPayload | Out-Nul
 $writtenManifest = Get-Content -LiteralPath $releaseManifest -Raw |
     ConvertFrom-Json -DateKind String
 if (
+    $writtenManifest.NativeConfiguration.ConfigSha256 -cne $nativeConfigurationState.Sha256 -or
+    $writtenManifest.NativeConfiguration.PluginsSha256 -cne $nativePluginsSha256 -or
+    $writtenManifest.NativeConfiguration.CordovaBundleEntry -cne $nativeConfigurationArtifacts.CordovaBundleEntry -or
     $writtenManifest.AabSha256 -cne $releaseAabSha256 -or
     $writtenManifest.R8Verification -cne
         "external-and-embedded-mapping-match" -or

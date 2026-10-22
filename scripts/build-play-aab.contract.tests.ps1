@@ -141,6 +141,9 @@ foreach ($script in @(
             'Assert-PlayCandidateVersion',
             'Assert-PlayGoogleServicesConfiguration',
             'Assert-PlayR8BundleArtifacts',
+            'Get-PlayNativeConfiguration',
+            'Copy-PlayNativeConfiguration',
+            'Assert-PlayNativeConfigurationBundle',
             'Assert-FirestoreCommunityTtlGate',
             'Assert-CommunityEphemeralSafetyGate',
             'Assert-FirestoreCommunityTtlEvidenceGitImmutability',
@@ -1916,7 +1919,12 @@ finally {
     }
 }
 
+$nativeConfigurationResult = & (Join-Path $PSScriptRoot 'play-native-configuration.contract.tests.ps1') |
+    ConvertFrom-Json
+Assert-True ($nativeConfigurationResult.Status -ceq 'PASS') 'Native configuration contracts failed.'
+
 [PSCustomObject]@{
+    NativeConfiguration = $nativeConfigurationResult.Status
     AppendOnlyLedger = 'PASS'
     BundletoolTrust = 'PASS'
     DurableArchive = 'PASS'

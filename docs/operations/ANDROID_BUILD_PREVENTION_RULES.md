@@ -5,11 +5,12 @@ avviare il builder**, anche se il lavoro riprende dopo una pausa. Integra il
 [runbook Play](PLAY_AAB_RUNBOOK.md); non sostituisce i suoi gate. Le regole
 seguenti derivano dagli errori della preparazione 0.1.15 del 21 ottobre 2026.
 
-> Stato 21 ottobre: le correzioni dei preflight e del retry già usate per 300033
-> sono conservate nel ramo `codex/release-0.1.15`, ancora da promuovere.
-> Queste linee guida possono essere aggiornate su main senza distribuire quelle
-> correzioni. Il controllo automatico del file Capacitor mancante resta da
-> implementare. Consultare lo [stato corrente](RELEASE_0.1.15_STATUS_20261021.md).
+> Aggiornamento 22 ottobre: preflight, retry e correzione della configurazione
+> nativa sono conservati nel ramo `codex/release-0.1.15`, ancora da promuovere.
+> Il [nuovo controllo automatico](ANDROID_NATIVE_CONFIG_FIX_20261022.md) supera
+> le regressioni locali; una nuova AAB minificata e la prova sul dispositivo
+> restano da autorizzare/eseguire. Consultare lo
+> [stato corrente](RELEASE_0.1.15_STATUS_20261021.md).
 
 ## 1. Fissare il perimetro prima dei comandi
 
@@ -86,6 +87,12 @@ distribuito dai pacchetti. In questa release escludere `build` aveva rimosso
 - Lo stesso nome può essere ritentato con un codice maggiore **solo** dopo
   abbandono validato e in assenza del manifesto di un bundle per quel codice.
   Riserve aperte e bundle già costruiti non hanno questa eccezione.
+- Android consente lo stesso `versionName` con `versionCode` crescente.
+  Il limite sul nome descritto sopra è una guardia locale più restrittiva:
+  al 22 ottobre non permette ancora una seconda 0.1.15 dopo il bundle 300033.
+  Per adottare questa numerazione occorre prima aggiornare e verificare quella
+  guardia, senza cancellare record o riusare codici. La correzione nativa non
+  modifica la guardia né assegna un nuovo numero.
 - Se la AAB è già valida, conservarla e usare quel file in seguito. Non
   rigenerarla per ottenere un file diverso con lo stesso numero.
 
@@ -114,8 +121,13 @@ distribuito dai pacchetti. In questa release escludere `build` aveva rimosso
   plugin. Controllare anche le risorse native caricate per nome a runtime e
   chiudere eventuali errori `config.xml is missing` sulla release minificata.
   Non accettare il fallback silenzioso ai default e non correggere l'artefatto
-  già firmato a mano. Questo è un requisito: il nuovo gate automatico deve ancora
-  essere implementato dopo il rilievo 300033, non è dichiarato già operativo.
+  già firmato a mano. Il ramo release implementa copia esplicita del JSON,
+  confronto degli hash e verifica della risorsa Cordova `xml/config` tramite
+  bundletool. Il keep mirato `@xml/config` protegge la risorsa caricata per nome:
+  non disabilitare R8 o lo shrinking globale per conservarla. Eseguire anche
+  `scripts/play-native-configuration.contract.tests.ps1`, incluso nella suite
+  del builder. Il PASS locale non chiude la verifica della prossima AAB e del
+  runtime; seguire il [verbale](ANDROID_NATIVE_CONFIG_FIX_20261022.md).
 - Per attestare la conservazione delle preferenze attraverso un aggiornamento,
   acquisire lo stato prima e subito dopo l'aggiornamento autorizzato, prima di
   azioni che lo possano cambiare. Distinguere permessi Android, servizio Posizione

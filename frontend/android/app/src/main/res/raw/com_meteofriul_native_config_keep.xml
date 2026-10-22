@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Cordova ConfigXmlParser loads this resource by name during Bridge startup. -->
+<resources xmlns:tools="http://schemas.android.com/tools"
+    tools:keep="@xml/config" />

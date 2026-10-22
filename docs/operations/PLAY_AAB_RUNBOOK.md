@@ -205,6 +205,14 @@ non riutilizzare output precedenti. Lo script compila gli asset Web in una
 directory temporanea, verifica gli endpoint WebView e nativi, firma e valida
 la AAB. **Non carica nulla su Play.**
 
+La correzione del 22 ottobre sul ramo release aggiunge il controllo della
+[configurazione nativa](ANDROID_NATIVE_CONFIG_FIX_20261022.md): il JSON
+approvato viene copiato separatamente dai contenuti Web; l'AAB deve contenere
+JSON e registro plugin con gli hash attesi, più la risorsa Cordova
+`com.meteofriul.app:xml/config` e il relativo file. I risultati vengono registrati
+nel campo `NativeConfiguration` del manifesto. La mancanza di questi elementi
+blocca l'archiviazione; non usare un bundle che ricade sui default.
+
 ## 4. Verificare e conservare il risultato
 
 Una build riuscita produce riserva e manifesto nel registro, più AAB e mapping
