@@ -1,0 +1,291 @@
+{
+  "candidate_commit": "aa505cd66494d7fa9833d12d7d740947562cdcc7",
+  "coordinates": "physical screen pixels from Android UI hierarchy; screenshots confirm visual occlusion",
+  "bulletin_it": [
+    {
+      "label": "Pordenone",
+      "before": [
+        84,
+        476,
+        372,
+        547
+      ],
+      "after": [
+        84,
+        476,
+        372,
+        547
+      ],
+      "unchanged": true
+    },
+    {
+      "label": "Previsioni",
+      "before": [
+        39,
+        584,
+        367,
+        673
+      ],
+      "after": [
+        39,
+        584,
+        367,
+        673
+      ],
+      "unchanged": true
+    },
+    {
+      "label": "Bollettino",
+      "before": [
+        375,
+        584,
+        703,
+        673
+      ],
+      "after": [
+        375,
+        584,
+        703,
+        673
+      ],
+      "unchanged": true
+    },
+    {
+      "label": "Tempo reale",
+      "before": [
+        711,
+        584,
+        1039,
+        673
+      ],
+      "after": [
+        711,
+        584,
+        1039,
+        673
+      ],
+      "unchanged": true
+    }
+  ],
+  "bulletin_fur": [
+    {
+      "label": "Pordenon",
+      "before": [
+        84,
+        476,
+        341,
+        547
+      ],
+      "after": [
+        84,
+        476,
+        341,
+        547
+      ],
+      "unchanged": true
+    },
+    {
+      "label": "Previsions",
+      "before": [
+        39,
+        584,
+        367,
+        673
+      ],
+      "after": [
+        39,
+        584,
+        367,
+        673
+      ],
+      "unchanged": true
+    },
+    {
+      "label": "Boletin",
+      "before": [
+        375,
+        584,
+        703,
+        673
+      ],
+      "after": [
+        375,
+        584,
+        703,
+        673
+      ],
+      "unchanged": true
+    },
+    {
+      "label": "Timp reâl",
+      "before": [
+        711,
+        584,
+        1039,
+        673
+      ],
+      "after": [
+        711,
+        584,
+        1039,
+        673
+      ],
+      "unchanged": true
+    }
+  ],
+  "events_it": [
+    {
+      "label": "Pordenone",
+      "before": [
+        84,
+        476,
+        372,
+        547
+      ],
+      "after": [
+        84,
+        476,
+        372,
+        547
+      ],
+      "unchanged": true
+    },
+    {
+      "label": "Tutti",
+      "before": [
+        31,
+        702,
+        170,
+        799
+      ],
+      "after": [
+        31,
+        702,
+        170,
+        799
+      ],
+      "unchanged": true
+    },
+    {
+      "label": "Feste e sagre",
+      "before": [
+        186,
+        702,
+        483,
+        799
+      ],
+      "after": [
+        186,
+        702,
+        483,
+        799
+      ],
+      "unchanged": true
+    },
+    {
+      "label": "Gusto",
+      "before": [
+        498,
+        702,
+        687,
+        799
+      ],
+      "after": [
+        498,
+        702,
+        687,
+        799
+      ],
+      "unchanged": true
+    }
+  ],
+  "events_fur": [
+    {
+      "label": "Pordenon",
+      "before": [
+        84,
+        476,
+        341,
+        547
+      ],
+      "after": [
+        84,
+        476,
+        341,
+        547
+      ],
+      "unchanged": true
+    },
+    {
+      "label": "Ducj",
+      "before": [
+        31,
+        702,
+        165,
+        799
+      ],
+      "after": [
+        31,
+        702,
+        165,
+        799
+      ],
+      "unchanged": true
+    },
+    {
+      "label": "Sagris",
+      "before": [
+        181,
+        702,
+        378,
+        799
+      ],
+      "after": [
+        181,
+        702,
+        378,
+        799
+      ],
+      "unchanged": true
+    },
+    {
+      "label": "Gust",
+      "before": [
+        393,
+        702,
+        564,
+        799
+      ],
+      "after": [
+        393,
+        702,
+        564,
+        799
+      ],
+      "unchanged": true
+    }
+  ],
+  "event_card_before": [
+    283,
+    1497,
+    947,
+    1547
+  ],
+  "event_card_scrolled": [
+    283,
+    998,
+    947,
+    1046
+  ],
+  "event_card_after_back": [
+    283,
+    998,
+    947,
+    1046
+  ],
+  "home_summary_to_bulletin": "PASS: standard OSMER summary opens bulletin with location and weather menu visible",
+  "official_alert_anchor": "NOT_EXERCISED: no official-alert card displayed in this local preview",
+  "native_webview": "NOT_TESTED: no native package built or installed",
+  "detail_covers_navigation": true,
+  "android_back_restores_scrolled_list": true
+}

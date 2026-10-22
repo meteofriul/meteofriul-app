@@ -1717,6 +1717,12 @@ export function AppRoutes({
 
       const target = document.getElementById(pendingRouteAnchor.anchor);
       if (target) {
+        const navigation = target.closest(".mf-weather-route-shell")
+          ?.querySelector(".mf-section-navigation--sticky");
+        if (navigation) {
+          const gap = Number.parseFloat(getComputedStyle(navigation.parentElement).rowGap) || 0;
+          target.style.scrollMarginTop = String(navigation.getBoundingClientRect().height + gap) + "px";
+        }
         target.scrollIntoView({ block: "start", behavior: "auto" });
         target.focus?.({ preventScroll: true });
         pendingRouteAnchorRef.current = null;
@@ -1825,21 +1831,23 @@ export function AppRoutes({
     >
       {WEATHER_ROUTE_IDS.has(activeTab) ? (
         <WeatherSwipeShell activeId={activeTab} disabled={localWeatherPilot || reportSubmissionLocked} onNavigate={handleRouteNavigation}>
-          {localWeatherPilot ? (
-            <LocationContext
-              city={getLocationDisplayName(activeLocation || DEFAULT_APP_LOCATION, language)}
-              className="mf-route-location-context mf-weather-route-context"
+          <div className={"mf-section-navigation" + (localWeatherPilot && activeTab === "bulletin" ? " mf-section-navigation--sticky" : "")}>
+            {localWeatherPilot ? (
+              <LocationContext
+                city={getLocationDisplayName(activeLocation || DEFAULT_APP_LOCATION, language)}
+                className="mf-route-location-context mf-weather-route-context"
+              />
+            ) : (
+              <h1 className="mf-weather-route-title">{language === "fur" ? "Timp" : "Meteo"}</h1>
+            )}
+            <WeatherSectionNav
+              activeId={activeTab}
+              compact={localWeatherPilot}
+              disabled={reportSubmissionLocked}
+              language={language}
+              onNavigate={handleRouteNavigation}
             />
-          ) : (
-            <h1 className="mf-weather-route-title">{language === "fur" ? "Timp" : "Meteo"}</h1>
-          )}
-          <WeatherSectionNav
-            activeId={activeTab}
-            compact={localWeatherPilot}
-            disabled={reportSubmissionLocked}
-            language={language}
-            onNavigate={handleRouteNavigation}
-          />
+          </div>
           {routeView}
         </WeatherSwipeShell>
       ) : routeView}
