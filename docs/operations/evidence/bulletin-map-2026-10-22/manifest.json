@@ -1,0 +1,25 @@
+{
+  "candidate_commit": "babbc67f08efbe291fa8073452a6ec54d73ce4a5",
+  "verified_on": "2026-10-22",
+  "browser": "Brave 1.97.59 on Galaxy A52 SM-A525F, Android 14",
+  "scope": "Bulletin map 1000 m badge spacing only; real browser, no native package installation",
+  "result": "PASS: rain and storm negative-temperature fixtures, plus published bulletin in the complete frontend",
+  "files": [
+    {
+      "path": "rain-it-light.png",
+      "sha256": "8ccfbdaf49047ae03b682bf3c9ed47786ea9cf0ebedeb2d32fd29fdce0587797"
+    },
+    {
+      "path": "storm-fur-dark.png",
+      "sha256": "e2f3e5b5f1c7c9d620e8bbce1f4bedce878b496629e8a7dc77ba9912f5f00ebd"
+    },
+    {
+      "path": "bulletin-app-loaded.png",
+      "sha256": "ae0be1dd92675b9a9f8c09203c13bd532260e432205f46d0fef8c61e210aa81f"
+    },
+    {
+      "path": "environment.json",
+      "sha256": "beba566cf56c844899c55146b2ee84c3c6339f64824d1fb5d38687fafd4cad61"
+    }
+  ]
+}
