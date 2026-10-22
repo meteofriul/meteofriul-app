@@ -52,7 +52,8 @@ function WeatherGlyph({ type, x, y }) {
 
 function MapBadge({ id, tone = "cool", x, y, value }) {
   const visualPosition = {
-    "quota-1000": { x: 28, y: 28 },
+    // Keep the badge clear of the rain/lightning below the Carnia glyph.
+    "quota-1000": { x: 15, y: 28 },
     "quota-2000": { x: 34, y: 8 },
   }[id] || { x, y };
   const cx = toMapUnit(visualPosition.x);
