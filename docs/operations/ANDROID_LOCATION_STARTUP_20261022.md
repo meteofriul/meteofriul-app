@@ -82,3 +82,14 @@ caricamenti Play, installazioni, push, deploy o notifiche manuali.
 
 Lo [stato della 0.1.15](RELEASE_0.1.15_STATUS_20261021.md) conserva gli altri
 rilievi e i gate di rilascio.
+
+## Integrazione nella release, 22 ottobre
+
+Il commit `2e5fc0b6` è incorporato in `codex/release-0.1.15` tramite `a3290715`,
+dopo l'allineamento a main `d62683b9`. La suite frontend completa della base
+integrata supera 5.030 test, con 13 saltati; include i dieci casi di regressione
+qui descritti. Web e asset Web Android sono compilati dallo stesso frontend.
+
+Questo non promuove la correzione su main, non modifica la AAB 300033 e non prova
+la conservazione della preferenza durante un aggiornamento Play. Il rilievo
+runtime resta aperto. [Verbale dell'integrazione](RELEASE_WEB_ALIGNMENT_20261022.md).

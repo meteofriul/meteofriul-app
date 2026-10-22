@@ -1,4 +1,4 @@
-# Stato release 0.1.15 e lavoro salvato — 21 ottobre 2026
+# Stato release 0.1.15 e lavoro salvato — aggiornamento del 22 ottobre 2026
 
 **0.1.15 / 300033 è disponibile solo nel test interno personale di Google Play.
 La promozione della release rimane sospesa.** Il proprietario l'ha installata
@@ -12,9 +12,9 @@ la posizione nell'app spenta subito dopo l'aggiornamento, prima dei test.
 | --- | --- |
 | Produzione Play | Ultima lettura Console del 21 ottobre: 0.1.14 / 300031; nessuna promozione della 0.1.15 in produzione |
 | Test interno Play | 0.1.15 / 300033, una sola lista selezionata con un utente; sponsor disattivati |
-| Web pubblica | Ultima verifica del 20 ottobre: 0.1.14 su meteofriul.app; candidata aggiornata verificata su Brave/Galaxy, ancora da pubblicare; Safari/iPhone non verificato |
-| `main` | Stato locale del 22 ottobre: `3da1db2d`, con gli aggiornamenti dei job e i relativi verbali; le correzioni della release non sono promosse |
-| `codex/release-0.1.15` | Main incorporato con merge locale `8693345c`; preparazione e registri storici conservati, correzione nativa verificata solo localmente. La PR 11 in bozza non contiene ancora questo lavoro non pubblicato |
+| Web pubblica | Pubblicazione del 21 ottobre da `1b0287c1`, versione 0.1.14; HTML e asset riconfermati il 22 ottobre. Candidata 0.1.15 da `a3290715` preparata, non distribuita; Safari/iPhone non verificato |
+| `main` | `d62683b9`, allineato a origin/main nell'ultima verifica. Contiene mappa, barra fissa Bollettino/Eventi, Vite 8.1.6 e Indietro Impostazioni; correzioni native e posizione ancora solo nel ramo release |
+| `codex/release-0.1.15` | Main `d62683b9` incorporato con `2dbdf7be`, posizione `2e5fc0b6` con `a3290715`. Quest'ultimo identifica i sorgenti compilati per Web e asset Web Android; successivi commit documentali non cambiano gli asset. PR 11 in bozza, integrazione non pubblicata |
 | Artefatto installato | Sorgente `f82503e4daabc283a5caf77b49e7cf58439abf61`, AAB SHA256 `cb461c8e5e6fddd05407214a507e151e02e8041f403d9346c364bbe0174ba019` |
 
 I documenti successivi non cambiano il commit sorgente dell'AAB già firmata.
@@ -33,7 +33,7 @@ generata. [Dettagli e limiti](ANDROID_NATIVE_CONFIG_FIX_20261022.md#numerazione-
 | --- | --- |
 | NATIVE-CONFIG-01 | Nell'AAB 300033 mancano il JSON Capacitor e la risorsa Cordova `xml/config`. [Correzione locale del 22 ottobre](ANDROID_NATIVE_CONFIG_FIX_20261022.md): copia esplicita, keep mirato e controllo del bundle; regressioni locali superate. Restano una nuova AAB minificata e il controllo sul telefono, quindi il rilievo non è chiuso |
 | LOCATION-UPDATE-01 | Causa dell'episodio Play ancora non provata. Il 22 ottobre è stato riprodotto e corretto localmente un percorso di avvio che disattiva la preferenza dopo errori temporanei: 114 test passano. Correzione integrata nel ramo release; da verificare sul dispositivo e non promossa su main. [Analisi e limiti](ANDROID_LOCATION_STARTUP_20261022.md) |
-| BULLETIN-MAP-01 | Le gocce dell'icona coprono parte dell'etichetta della temperatura a 1000 m nella mappa del bollettino |
+| BULLETIN-MAP-01 | [Spaziatura corretta e verificata su Brave/Galaxy](BULLETIN_MAP_LABEL_SPACING_20261022.md), già in main e incorporata nella candidata. Ricontrollata nel pilot integrato; non ancora presente nella AAB installata 300033 |
 | Copertura restante | Android 15/16, gesti, tablet/multi-window e percorsi con scritture o consegne reali non verificati; nessun PASS implicito |
 
 Superate sul pacchetto ufficiale le prove di avvio/ripresa, Indietro, previsioni
@@ -45,7 +45,7 @@ già successiva all'aggiornamento: non certifica la migrazione dal vecchio pacch
 Prima di una nuova AAB: correggere e verificare i rilievi pertinenti, con
 regressioni mirate. Non ricostruire o sovrascrivere 300033; seguire il registro
 e le autorizzazioni distinte del [runbook Play](PLAY_AAB_RUNBOOK.md).
-Questa sincronizzazione non esegue build, upload, installazioni, deploy o invii.
+Questa sincronizzazione esegue solo build Web e test locali: nessuna build Android, upload, installazione, push, deploy o invio. [Verbale della base comune](RELEASE_WEB_ALIGNMENT_20261022.md).
 
 ## Servizi e Web
 
@@ -65,10 +65,12 @@ Questa sincronizzazione non esegue build, upload, installazioni, deploy o invii.
   il controllo sul Galaxy non ha eseguito nuove scritture.
   [Verbale Community](COMMUNITY_0.1.15_DEPLOY_20261021.md).
 - **Sponsor:** schede, sviluppo del pannello e allineamento dati restano
-  sospesi fino a nuovo ordine. Ultima lettura 21 ottobre: `enabled=false`,
+  sospesi fino a nuovo ordine. Ultima lettura 22 ottobre: `enabled=false`,
   zero campagne, revisione 117.
-- **Web:** pubblicazione separata ancora da completare. Parità con Android e
-  verifica Safari/iPhone restano nel [piano Web](WEB_ANDROID_RELEASE_PARITY.md).
+- **Web:** pubblicazione del 21 ottobre confermata; il nuovo pacchetto locale
+  0.1.15 deve ancora essere pubblicato separatamente. Manifest e sorgenti comuni
+  nel [verbale del 22 ottobre](RELEASE_WEB_ALIGNMENT_20261022.md); Safari/iPhone
+  resta non verificato nel [piano Web](WEB_ANDROID_RELEASE_PARITY.md).
 - **Eventi, aggiornamento 22 ottobre:** correzioni distribuite, corsa ordinaria
   delle 06:00 verificata; Cinema Muto, Barcolana e Spazzapan recuperati. Restano
   12 schede in revisione e i monitor Attems/GiroFVG. La classificazione degli
@@ -93,5 +95,6 @@ pubblicati su GitHub. Sono conservati gli hash delle evidenze nei verbali.
 
 La CI verde controlla il codice nei commit indicati dalle esecuzioni, non
 risolve i rilievi del dispositivo. La PR release rimane in bozza anche dopo
-questo salvataggio. L'aggiornamento del README di main è solo documentale e non
-aggira il precedente rifiuto della promozione del codice.
+questo salvataggio locale sul ramo release. Main non viene modificato da questa
+preparazione e la CI del nuovo candidato non viene avviata senza push autorizzato.
+La prova runtime nativa rimane un prerequisito della promozione del codice.

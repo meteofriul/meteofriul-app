@@ -11,7 +11,8 @@ aggiornamenti di main sui job verificati.
 **Correzione locale preparata; NATIVE-CONFIG-01 non ancora chiuso sul runtime.**
 Nessuna nuova AAB, build Gradle, installazione, emulatore, push, deploy o
 invio manuale. Sponsor, pannello e allineamento dati sponsor restano disattivati.
-I rami GPS e navigazione fissa di Bollettino/Eventi non sono stati incorporati.
+In questa prima fase i rami GPS e navigazione fissa di Bollettino/Eventi non
+erano incorporati; l'integrazione successiva è registrata in fondo al verbale.
 
 ## Evidenza e causa
 
@@ -109,3 +110,12 @@ con le nuove guardie, poi verificare avvio, log Capacitor/Cordova, barre/inset
 e plugin sul telefono. Per le altre aree obbligatorie seguire il
 [runbook Play](PLAY_AAB_RUNBOOK.md); nessun PASS è dedotto dai test su fixture.
 Promozione su main, build, upload e installazione restano passaggi distinti.
+
+## Integrazione successiva del 22 ottobre
+
+La release incorpora ora main `d62683b9` e la correzione della posizione,
+con sorgente candidata `a3290715`. Ripetuti con successo i contratti del builder
+senza Gradle, quelli API/R8 e le 42 asserzioni native sull'archivio 300033.
+Ledger (49 record) e artefatto storico restano invariati. Sono compilati soltanto
+Web e asset Web in modalità Android: nessuna nuova prova del contenuto minificato
+nativo o del dispositivo. [Base comune, risultati e limiti](RELEASE_WEB_ALIGNMENT_20261022.md).

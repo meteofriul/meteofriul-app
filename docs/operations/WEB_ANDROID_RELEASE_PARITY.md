@@ -68,4 +68,13 @@ con i contratti dati attivi. Non è autorizzato implicitamente dalla preparazion
 - Deployment pubblico effettivo e precedente per rollback, dopo autorizzazione.
 - Nessun riferimento a chiavi private, token o credenziali negli allegati.
 
-Preparazione corrente: [candidato del 20 ottobre](WEB_APP_CANDIDATE_20261020.md).
+Preparazione corrente: [base comune del 22 ottobre](RELEASE_WEB_ALIGNMENT_20261022.md),
+commit sorgente `a3290715`, versione 0.1.15. Web e asset Web Android sono compilati
+dallo stesso albero frontend, con manifest e hash. Il ramo release incorpora main
+e la correzione della posizione ancora da verificare sul runtime Android; non è
+promosso su main e non è autorizzata la distribuzione da questa sola preparazione.
+
+La Web pubblica è già stata aggiornata il 21 ottobre da `1b0287c1`, versione
+0.1.14: non contiene le correzioni successive del 22 ottobre. Il precedente
+[candidato del 20 ottobre](WEB_APP_CANDIDATE_20261020.md) resta un verbale storico,
+non l'identità della nuova candidata o dello stato pubblico corrente.

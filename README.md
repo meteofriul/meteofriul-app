@@ -6,28 +6,29 @@ Meteo Friûl è un'app indipendente dedicata al Friuli-Venezia Giulia. Riunisce
 meteo locale, bollettino regionale, allerte ufficiali, radar, webcam, eventi e
 contenuti culturali; l'interfaccia è disponibile in italiano e friulano.
 
-> Stato Web verificato il 20 ottobre 2026: il sito pubblico espone `0.1.14`,
-> ma non contiene ancora tutte le modifiche approvate nella TEST e integrate
-> in `main`. È in preparazione il candidato Web dalla stessa base Android;
-> preparazione e pubblicazione sono fasi distinte.
+> Stato Web verificato il 22 ottobre 2026: `meteofriul.app` serve la
+> pubblicazione del 21 ottobre, versione `0.1.14`, sorgente `1b0287c1`.
+> La candidata **0.1.15** con le successive correzioni del 22 ottobre è ora
+> preparata localmente dalla stessa base della release Android; non è pubblicata.
 >
 > La Web App deve seguire la release Android: è anche il canale per chi usa
 > iPhone dal browser. Il [percorso di allineamento Web/Android](docs/operations/WEB_ANDROID_RELEASE_PARITY.md)
 > richiede sorgenti e funzionalità coerenti, oltre alla verifica Safari/iPhone.
 
-**Web — verifica locale del 20 ottobre 2026:** candidata verificata su Brave
-del Galaxy, incluse le correzioni a Indietro nel dettaglio Eventi e al doppio
-comando di cancellazione nella ricerca. Superati 56 test mirati e i controlli
-italiano/chiaro e friulano/scuro. Commit e integrazione locale autorizzati;
-nessuna pubblicazione. Evidenze e limiti nel
-[verbale Web sul Galaxy](docs/operations/WEB_APP_BROWSER_FIXES_20261020.md).
+**Preparazione locale del 22 ottobre 2026:** il ramo `codex/release-0.1.15`
+incorpora main `d62683b9` e la correzione della posizione all'avvio. Web e asset
+Web per Android sono compilati dal commit comune `a3290715`. Superati 5.030
+test frontend, lint, contratti del builder e controlli di compilazione;
+13 test restano saltati. Verificata l'anteprima pilot integrata in italiano/chiaro
+e friulano/scuro. [Esiti, artefatti e limiti](docs/operations/RELEASE_WEB_ALIGNMENT_20261022.md).
 
-**Stato aggiornato al 21 ottobre 2026:** la AAB **0.1.15 / 300033** è nel
-test interno personale. La verifica del pacchetto ufficiale sul Galaxy è
-conclusa con rilievi aperti: configurazione nativa assente, posizione segnalata
-spenta dopo l'aggiornamento e sovrapposizione nella mappa. Il codice della
-release resta nella PR 11 in bozza; l'aggiornamento documentale di main non
-ne autorizza la promozione. [Stato, rami e prossimi passi](docs/operations/RELEASE_0.1.15_STATUS_20261021.md).
+La AAB **0.1.15 / 300033** resta quella del test interno personale già provata
+sul Galaxy. Le correzioni locali della configurazione nativa e della posizione
+richiedono ancora un nuovo pacchetto minificato e la verifica sul dispositivo;
+la mappa, la barra fissa di Bollettino/Eventi, Vite e Indietro nelle Impostazioni
+sono già verificati su Brave e integrati da main. Nessuna nuova AAB o installazione.
+La PR 11 resta in bozza e questa integrazione locale non promuove la release
+su main. [Stato e prossimi passi](docs/operations/RELEASE_0.1.15_STATUS_20261021.md).
 
 **Job meteo ICON-2I — verifica del 21 ottobre 2026:** nuova corsa pubblicata,
 checkpoint schema 2, 215 documenti e sidecar e campione nazionale verificati.
@@ -56,11 +57,11 @@ e non sostituisce la sua verifica. Evidenze e limiti nel [verbale sul telefono](
 [Apri l'app web](https://meteofriul.app) ·
 [Sostieni il progetto](https://ko-fi.com/meteofriul)
 
-## Canali — Web verificato il 20 ottobre, candidata Android e Console il 21 ottobre 2026
+## Canali — preparazione locale e Web verificate il 22 ottobre, ultima lettura Play il 21 ottobre 2026
 
 | Canale | Stato |
 | --- | --- |
-| Web | `0.1.14` pubblicata su `meteofriul.app`; aggiornamento dalla base approvata in preparazione, non ancora pubblicato |
+| Web | `0.1.14` pubblicata il 21 ottobre su `meteofriul.app`; candidata locale `0.1.15` da `a3290715`, non distribuita; Safari/iPhone non verificato |
 | API | FastAPI su Cloud Run, chiamata direttamente via HTTPS da Web e Android |
 | Android | `0.1.15` (`300033`) nel test interno personale; verificata sul Galaxy Android 14, con difetto di configurazione nativa nel bundle da correggere prima della promozione. [Esito e limiti](docs/operations/RELEASE_0.1.15_STATUS_20261021.md) |
 | Google Play | Produzione `0.1.14` (`300031`) nell’ultima lettura del 21 ottobre; `0.1.15` (`300033`) solo nel test interno, una lista con un utente. Sponsor disattivati |

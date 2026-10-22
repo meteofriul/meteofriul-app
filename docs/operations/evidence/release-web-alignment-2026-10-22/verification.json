@@ -1,0 +1,156 @@
+{
+  "checked_at_utc": "2026-10-22T18:50:13.816299+00:00",
+  "status": "LOCAL_PREPARATION_COMPLETE_NATIVE_RUNTIME_PENDING",
+  "branch": "codex/release-0.1.15",
+  "source_commit": "a32907150ea96d906a8f1f1130b5e35269df0368",
+  "main_integrated": "d62683b9666ad38de42033fd2fe6db022ead8943",
+  "location_fix_integrated": "2e5fc0b69f80fe862142e294a612c78c6aef2f57",
+  "frontend_tree": "9b7accf283f9a29c122b5bbcd12a7e8949d7d38f",
+  "version_name": "0.1.15",
+  "android_version_code_unchanged": 300033,
+  "frontend_tests": {
+    "passed": 5030,
+    "failed": 0,
+    "skipped": 13,
+    "files_passed": 551,
+    "files_skipped": 5
+  },
+  "eslint": "PASS",
+  "frontend_guards": {
+    "passed": 19
+  },
+  "builder_contracts": "PASS_SKIP_GRADLE",
+  "api_preflight_contracts": "PASS",
+  "r8_contracts": "PASS",
+  "native_configuration_contracts": {
+    "assertions": 42,
+    "status": "PASS",
+    "archived_300033_rejected_as_expected": true
+  },
+  "ledger_audit": {
+    "historical_records": 49,
+    "current_records": 49,
+    "status": "UNCHANGED"
+  },
+  "protected_files": {
+    "count": 56,
+    "status": "HASHES_UNCHANGED"
+  },
+  "dependencies": {
+    "physical_copy": true,
+    "lock_equivalent_except_product_version": true,
+    "files": 23116,
+    "bytes": 313749903,
+    "installed_packages_checked": 363,
+    "vite": "8.1.6",
+    "downloaded": false
+  },
+  "artifacts": {
+    "archive_relative_path": "release-artifacts/web-candidates/20261022-0.1.15-a3290715",
+    "source_commit": "a32907150ea96d906a8f1f1130b5e35269df0368",
+    "frontend_tree": "9b7accf283f9a29c122b5bbcd12a7e8949d7d38f",
+    "manifest_sha256": "31197b1336c4aa2aeb1c70e8b7df74d1252e1a70877e625ac097fdb8d6223957",
+    "artifacts": {
+      "web": {
+        "files": 506,
+        "bytes": 76029284
+      },
+      "android-web": {
+        "files": 505,
+        "bytes": 75976616
+      }
+    }
+  },
+  "api_binding": {
+    "ApiBase": "https://play-b6fbe4d---meteofriul-api-bx24xqvcda-ew.a.run.app/api",
+    "ApiTag": "play-b6fbe4d",
+    "BackendCommit": "599aea2f8a3b1e7e65af2b43e77bb54e4637c96e",
+    "BackendCommitBinding": "verified-image-evidence",
+    "Health": "ok",
+    "ImageDigest": "europe-west1-docker.pkg.dev/meteo-friul/cloud-run-source-deploy/meteofriul-api@sha256:5522b4cfc15076a9f93e838e3643b35e1aa5ad4ce0bf5bca4851997ea94c2ae8",
+    "ProjectId": "meteo-friul",
+    "Region": "europe-west1",
+    "Revision": "meteofriul-api-00251-jow",
+    "Service": "meteofriul-api"
+  },
+  "sponsors": {
+    "enabled": false,
+    "revision": 117,
+    "campaign_count": 0
+  },
+  "public_web_last_read": {
+    "date": "2026-10-22",
+    "deployment_date": "2026-10-21",
+    "version": "0.1.14",
+    "source_commit": "1b0287c19dc78e81e84ad3fa4b54fb97c42ff250",
+    "deployment_id": "a96afc59-b1c8-4c85-b146-377e57594690",
+    "html_sha256": "cbfc53fdfd7891642236012a58b1a048e67c2c2636f963aa54d20300b7a394aa",
+    "main_js": "/assets/main-D-Nry2Xb.js",
+    "main_js_sha256": "c5ab69f0a4b63df56ea2254b60fcf829e91b30274632653f000962ac1aa010ca",
+    "new_candidate_published": false
+  },
+  "preview": {
+    "mode": "pilot_reader_NationalCloud",
+    "port": 5174,
+    "browser": "Codex in-app browser",
+    "settings_browser_back_to_bulletin": "PASS",
+    "settings_browser_back_to_events": "PASS",
+    "settings_back_friulian": "PASS",
+    "sticky_bulletin_and_events": "PASS",
+    "bulletin_map_labels": "PASS",
+    "it_light_fur_dark": "PASS",
+    "preferences_restored": true,
+    "location_and_notification_switches_untouched": true,
+    "limits": [
+      "Not the production static bundle runtime",
+      "Not Brave on Galaxy or native Android",
+      "Air and pollen displayed unavailable in this local reader session; no service-health conclusion",
+      "Italian bulletin updated 22/10 09:16, Friulian 21/10 12:30; translation freshness not equal"
+    ]
+  },
+  "not_performed": [
+    "AAB/APK generation",
+    "Gradle execution",
+    "Capacitor sync/update",
+    "phone installation",
+    "emulator",
+    "git push",
+    "deploy",
+    "manual sends",
+    "new version reservation",
+    "promotion to main"
+  ],
+  "pending": [
+    "native minified artifact validation and real-device runtime",
+    "location preference before/after an authorized update",
+    "Android 15/16, gesture navigation, tablet/multi-window",
+    "Safari/iPhone/PWA",
+    "fresh browser profile and new public deployment verification",
+    "real Community writes and notification delivery not exercised"
+  ],
+  "evidence_sha256": {
+    "frontend-tests.json": "da1cab1afa4db0409e50125834bce82199ae7b671568d87f830c9f4cfce63af3",
+    "frontend-tests.log": "a7ebcf16af088da07e6885c5845b63a0328a773c2e9c6398b7b5f18fc1f880ec",
+    "lint.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "frontend-guards.log": "cf58518425cf4bac856f25fac979d9c5e1502850fe8170a0a417adcf0fbaf6dc",
+    "builder-contracts.log": "0850ab44513462c7b383cb86cde1565f440f6621dc720e94ab7126e143959a16",
+    "api-preflight-contracts.log": "b27b3fcb158c7cbdecde0625f30cce5dc1c6016cfe5edd47c0bf57b3e998ced3",
+    "r8-contracts.log": "9cb8a388416eed6c9c12b2e941ff0cc70db257bc6e1ea29644a8378ebf66a102",
+    "ledger-audit.log": "7356aef7c065e04667460c741c9df15adc92148c6df2c8c3e377710d9d5ff095",
+    "native-config-archived.log": "b882cf28248be98a8cc31311e2b82b7fb144354cb6739e12c7c7c8b2af1872b5",
+    "dependency-verification.json": "d91ac8a9448e50e6f1049aba950e85c552c466fb561b0b06f040065b01a72262",
+    "web-build.log": "d320a4bad285182cdf9ea8f9c67a53365d030fce701717400951348b17b68157",
+    "android-web-build.log": "20d63df6c7e2ede9b9d1b311134fc0a451d8832bf6aa78700743bec8ffdbbec7",
+    "integrated-preview.log": "4f3be50e1eb822ea676d7bf9585b033e7a9639239e2c1fae590fd5ce427a72a2",
+    "bulletin-sticky-it-light.png": "c77754b0eec2d760f2d145bd505fdcaa7f0c1f87384dbb8e293ec04fe3cfaa2d",
+    "events-sticky-it-light.png": "bcf0c4d7c521651f2667eb1e3868114eecb7562d665038a043076652907c23a0",
+    "bulletin-fur-dark.png": "e85bd2d9a3c479d17c717dd933ecfaf72e3fbfb533d4141f819132a9c0a27bb8"
+  },
+  "documentation_checks": {
+    "relative_links_checked": 59,
+    "canonical_workspace_cleanliness": "PASS",
+    "git_diff_check": "PASS",
+    "main_unchanged": "d62683b9666ad38de42033fd2fe6db022ead8943",
+    "frontend_unchanged_after_build": true
+  }
+}
