@@ -36,7 +36,31 @@ Controllata anche la resa nella pagina completa del bollettino.
 
 ## Limiti
 
-Telefono non collegato: nessuna verifica Android su dispositivo.
+Prima verifica svolta senza telefono; il successivo controllo sul Galaxy è riportato sotto. Nessuna verifica della modifica nel pacchetto Android installato.
 Correzione conservata sul ramo dedicato, senza promozione su main.
 Nessuna AAB, installazione, emulatore, push, deploy o invio.
 I file della verifica sintetica restano locali e ignorati da Git.
+## Verifica Galaxy collegato
+
+Completata il 22 ottobre sul candidato `babbc67f`, senza ulteriori modifiche
+funzionali. Galaxy A52 SM-A525F, Android 14, schermo 1080 × 2400, densità 420;
+Brave 1.97.59 già installato. Anteprima locale sulla porta 5174 via USB reverse.
+
+- Pioggia, italiano/chiaro, `1000m -12°C`: badge interamente visibile e
+  separato dalle gocce della Carnia.
+- Temporale, friulano/scuro, `1000m -12°C`: badge separato dal fulmine.
+- Pagina completa del bollettino, italiano/chiaro: mappa e badge corretti,
+  con dati OSMER del 22 ottobre. Non è una nuova verifica dei servizi meteo.
+- Screenshot fisici e gerarchia Android acquisiti dopo apertura delle pagine.
+  Il primo scatto della pagina completa era ancora in caricamento; non è usato
+  come prova di successo. Lo scatto successivo mostra la mappa caricata.
+
+[Evidenze selezionate e hash](evidence/bulletin-map-2026-10-22/manifest.json).
+I due casi pioggia/temporale usano il componente e i CSS reali con dati
+sintetici dichiarati, per esercitare le icone indipendentemente dal meteo.
+
+Esito positivo per questa correzione nel browser reale del telefono.
+Non equivale a una prova di una nuova AAB/WebView Android. Nessuna installazione,
+AAB, push, deploy, modifica alle app installate o invio manuale.
+Main e gli altri rami restano invariati; la verifica non include GPS,
+configurazione nativa o navigazione fissa delle sezioni.
