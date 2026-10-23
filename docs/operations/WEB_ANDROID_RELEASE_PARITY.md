@@ -68,9 +68,11 @@ con i contratti dati attivi. Non è autorizzato implicitamente dalla preparazion
 - Deployment pubblico effettivo e precedente per rollback, dopo autorizzazione.
 - Nessun riferimento a chiavi private, token o credenziali negli allegati.
 
-Preparazione corrente: [base comune del 22 ottobre](RELEASE_WEB_ALIGNMENT_20261022.md),
-commit sorgente `a3290715`, versione 0.1.15. Web e asset Web Android sono compilati
-dallo stesso albero frontend, con manifest e hash. Il ramo release incorpora main
+Preparazione corrente: [base comune del 23 ottobre](RELEASE_WEB_ALIGNMENT_20261023.md),
+commit sorgente `cda576e7`, versione 0.1.15. Web e asset Web Android sono compilati
+dallo stesso albero frontend, con manifest e hash. Aria/pollini inclusi e dati reali
+visibili; il transitorio di indisponibilità osservato al rientro è documentato.
+Il ramo release incorpora main `f9e178b2`
 e la correzione della posizione ancora da verificare sul runtime Android; non è
 promosso su main e non è autorizzata la distribuzione da questa sola preparazione.
 

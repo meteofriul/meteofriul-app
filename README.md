@@ -8,19 +8,20 @@ contenuti culturali; l'interfaccia è disponibile in italiano e friulano.
 
 > Stato Web verificato il 22 ottobre 2026: `meteofriul.app` serve la
 > pubblicazione del 21 ottobre, versione `0.1.14`, sorgente `1b0287c1`.
-> La candidata **0.1.15** con le successive correzioni del 22 ottobre è ora
+> La candidata **0.1.15** con le successive correzioni di main, inclusi aria e pollini, è ora
 > preparata localmente dalla stessa base della release Android; non è pubblicata.
 >
 > La Web App deve seguire la release Android: è anche il canale per chi usa
 > iPhone dal browser. Il [percorso di allineamento Web/Android](docs/operations/WEB_ANDROID_RELEASE_PARITY.md)
 > richiede sorgenti e funzionalità coerenti, oltre alla verifica Safari/iPhone.
 
-**Preparazione locale del 22 ottobre 2026:** il ramo `codex/release-0.1.15`
-incorpora main `d62683b9` e la correzione della posizione all'avvio. Web e asset
-Web per Android sono compilati dal commit comune `a3290715`. Superati 5.030
-test frontend, lint, contratti del builder e controlli di compilazione;
-13 test restano saltati. Verificata l'anteprima pilot integrata in italiano/chiaro
-e friulano/scuro. [Esiti, artefatti e limiti](docs/operations/RELEASE_WEB_ALIGNMENT_20261022.md).
+**Preparazione locale del 23 ottobre 2026:** la release incorpora main
+`f9e178b2`, inclusa la correzione aria/pollini e la posizione già integrata.
+Web e asset Web Android sono compilati dal commit comune `cda576e7`.
+Superati 5.039 test frontend, lint e build protette; 13 test restano saltati.
+Nell'anteprima IT/FUR aria e pollini mostrano dati reali; resta da chiarire un
+transitorio di indisponibilità al rientro prima del recupero dei valori.
+[Esiti, artefatti e limiti](docs/operations/RELEASE_WEB_ALIGNMENT_20261023.md).
 
 La AAB **0.1.15 / 300033** resta quella del test interno personale già provata
 sul Galaxy. Le correzioni locali della configurazione nativa e della posizione
@@ -57,11 +58,11 @@ e non sostituisce la sua verifica. Evidenze e limiti nel [verbale sul telefono](
 [Apri l'app web](https://meteofriul.app) ·
 [Sostieni il progetto](https://ko-fi.com/meteofriul)
 
-## Canali — preparazione locale e Web verificate il 22 ottobre, ultima lettura Play il 21 ottobre 2026
+## Canali — preparazione locale del 23 ottobre; ultima lettura Web il 22 e Play il 21 ottobre 2026
 
 | Canale | Stato |
 | --- | --- |
-| Web | `0.1.14` pubblicata il 21 ottobre su `meteofriul.app`; candidata locale `0.1.15` da `a3290715`, non distribuita; Safari/iPhone non verificato |
+| Web | `0.1.14` pubblicata il 21 ottobre su `meteofriul.app`; candidata locale `0.1.15` da `cda576e7`, non distribuita; Safari/iPhone non verificato |
 | API | FastAPI su Cloud Run, chiamata direttamente via HTTPS da Web e Android |
 | Android | `0.1.15` (`300033`) nel test interno personale; verificata sul Galaxy Android 14, con difetto di configurazione nativa nel bundle da correggere prima della promozione. [Esito e limiti](docs/operations/RELEASE_0.1.15_STATUS_20261021.md) |
 | Google Play | Produzione `0.1.14` (`300031`) nell’ultima lettura del 21 ottobre; `0.1.15` (`300033`) solo nel test interno, una lista con un utente. Sponsor disattivati |

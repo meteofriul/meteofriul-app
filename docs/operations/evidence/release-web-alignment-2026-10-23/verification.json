@@ -1,0 +1,247 @@
+{
+  "checked_at_utc": "2026-10-23T05:27:38.707006+00:00",
+  "status": "ALIGNED_AND_BUILT_LOCALLY_RUNTIME_LIMITS_RECORDED",
+  "branch": "codex/release-0.1.15",
+  "source_commit": "cda576e7d59025171aa0c2fbb65cd58db7aa4052",
+  "main_integrated": "f9e178b25afd5154008539dbd15d9c1b5957abd1",
+  "cams_fix_integrated": "22c0fd62327d818c15edd2faf6fd7baedefe2f1b",
+  "location_fix_integrated": "2e5fc0b69f80fe862142e294a612c78c6aef2f57",
+  "version": "0.1.15",
+  "version_code_unchanged": 300033,
+  "new_version_reserved": false,
+  "frontend_tests": {
+    "passed": 5039,
+    "failed": 0,
+    "skipped": 13,
+    "files_passed": 551,
+    "files_skipped": 5
+  },
+  "lint": "PASS",
+  "ledger_audit": {
+    "status": "PASS_UNCHANGED",
+    "records": 49
+  },
+  "dependencies": {
+    "physical": true,
+    "installed_packages_checked": 363,
+    "vite": "8.1.6",
+    "lock_sha256": "aa4a706abc6512153b14dfd79d3f252b0f02e963864537b7225e75bdfa7a449f",
+    "downloads_or_dependency_changes": false
+  },
+  "artifacts": {
+    "archive_relative_path": "release-artifacts/web-candidates/20261023-0.1.15-cda576e7",
+    "source_commit": "cda576e7d59025171aa0c2fbb65cd58db7aa4052",
+    "frontend_tree": "89ee1ced2c7ef2c63c303966c55c023538a551d9",
+    "manifest_sha256": "7c15ac5859b2a0009d2ba8a99015e2555a2914247a33ed09f295a68b2f609aa9",
+    "artifacts": {
+      "web": {
+        "files": 506,
+        "bytes": 76030030
+      },
+      "android-web": {
+        "files": 505,
+        "bytes": 75977362
+      }
+    },
+    "protected_files_unchanged": 56
+  },
+  "source_file_hashes_verified": 1891,
+  "api_binding": {
+    "base": "https://play-b6fbe4d---meteofriul-api-bx24xqvcda-ew.a.run.app/api",
+    "revision": "meteofriul-api-00251-jow",
+    "backend_commit": "599aea2f8a3b1e7e65af2b43e77bb54e4637c96e",
+    "image_digest": "europe-west1-docker.pkg.dev/meteo-friul/cloud-run-source-deploy/meteofriul-api@sha256:5522b4cfc15076a9f93e838e3643b35e1aa5ad4ce0bf5bca4851997ea94c2ae8",
+    "preflight_before_after": "PASS",
+    "health": "ok"
+  },
+  "sponsors": {
+    "checked_at_utc": "2026-10-23T05:22:30.722887+00:00",
+    "enabled": false,
+    "revision": 117,
+    "campaign_count": 0
+  },
+  "reused_unchanged_contract_evidence": {
+    "frontend-guards.log": {
+      "source_date": "2026-10-22",
+      "sha256": "cf58518425cf4bac856f25fac979d9c5e1502850fe8170a0a417adcf0fbaf6dc",
+      "code_and_configuration_unchanged": true
+    },
+    "builder-contracts.log": {
+      "source_date": "2026-10-22",
+      "sha256": "0850ab44513462c7b383cb86cde1565f440f6621dc720e94ab7126e143959a16",
+      "code_and_configuration_unchanged": true
+    },
+    "api-preflight-contracts.log": {
+      "source_date": "2026-10-22",
+      "sha256": "b27b3fcb158c7cbdecde0625f30cce5dc1c6016cfe5edd47c0bf57b3e998ced3",
+      "code_and_configuration_unchanged": true
+    },
+    "r8-contracts.log": {
+      "source_date": "2026-10-22",
+      "sha256": "9cb8a388416eed6c9c12b2e941ff0cc70db257bc6e1ea29644a8378ebf66a102",
+      "code_and_configuration_unchanged": true
+    },
+    "native-config-archived.log": {
+      "source_date": "2026-10-22",
+      "sha256": "b882cf28248be98a8cc31311e2b82b7fb144354cb6739e12c7c7c8b2af1872b5",
+      "code_and_configuration_unchanged": true
+    }
+  },
+  "preview": {
+    "mode": "pilot_reader_NationalCloud",
+    "port": 5174,
+    "browser": "Codex in-app browser",
+    "it_light_fur_dark": "PASS",
+    "live_air_and_pollen_values": "PASS",
+    "pollen_fur_detail": "PASS",
+    "settings_browser_back": "PASS",
+    "events_catalog": "PASS",
+    "preferences_restored": true,
+    "caveat": "Transient unavailable labels observed before CAMS values recovered on re-entry/reload. Cause not established; no persistent absence, no job-failure conclusion. Not an all-clear for every loading transition.",
+    "old_console_errors": "Vite websocket/fetch errors captured at 05:15:28Z before the successful 05:16:23Z preview startup; no later errors returned in the inspected log."
+  },
+  "cams_galaxy_evidence": {
+    "date": "2026-10-22",
+    "source_commit": "22c0fd62327d818c15edd2faf6fd7baedefe2f1b",
+    "report": "docs/operations/CAMS_LOADING_STATE_20261022.md",
+    "new_device_session": false
+  },
+  "public_web_last_read": {
+    "date": "2026-10-22",
+    "deployment_date": "2026-10-21",
+    "version": "0.1.14",
+    "source_commit": "1b0287c19dc78e81e84ad3fa4b54fb97c42ff250",
+    "deployment_id": "a96afc59-b1c8-4c85-b146-377e57594690",
+    "html_sha256": "cbfc53fdfd7891642236012a58b1a048e67c2c2636f963aa54d20300b7a394aa",
+    "main_js": "/assets/main-D-Nry2Xb.js",
+    "main_js_sha256": "c5ab69f0a4b63df56ea2254b60fcf829e91b30274632653f000962ac1aa010ca",
+    "new_candidate_published": false
+  },
+  "not_performed": [
+    "AAB/APK generation",
+    "Capacitor sync",
+    "Gradle",
+    "installation",
+    "emulator",
+    "git push",
+    "deploy",
+    "manual sends",
+    "promotion of release to main",
+    "new Play version reservation"
+  ],
+  "pending": [
+    "Transient CAMS unavailable label on re-entry/reload to clarify",
+    "native minified configuration and location before/after update on real device",
+    "Android 15/16, gestures, tablet/multiwindow",
+    "Safari/iPhone/PWA",
+    "static Web bundle runtime and fresh-profile/update checks before publication"
+  ],
+  "static_web_smoke": {
+    "archive_source_commit": "cda576e7d59025171aa0c2fbb65cd58db7aa4052",
+    "origin": "http://127.0.0.1:5178",
+    "assets_and_application_start": "PASS",
+    "live_data_runtime": "NOT_VERIFIED_LOCAL_ORIGIN_NOT_ALLOWED_BY_API_CORS",
+    "cors_readonly": [
+      {
+        "Origin": "http://127.0.0.1:5178",
+        "Status": 200,
+        "AllowOrigin": null
+      },
+      {
+        "Origin": "https://meteofriul.app",
+        "Status": 200,
+        "AllowOrigin": [
+          "https://meteofriul.app"
+        ]
+      }
+    ],
+    "configuration_changed": false,
+    "server_stopped": true,
+    "limitations": [
+      "Local http.server does not apply Cloudflare _headers/_redirects",
+      "Not a public-origin or update-cache verification"
+    ]
+  },
+  "evidence_files": [
+    {
+      "path": "frontend-tests.json",
+      "sha256": "5e673e612fa9b6057b94e9822db307f046cfb652a392abe46755c97c6c25ae99"
+    },
+    {
+      "path": "frontend-tests.log",
+      "sha256": "f854c1bba1a6ee872a053fa42ed08ff36c2b4880097f27e9249324f538bc02eb"
+    },
+    {
+      "path": "lint.log",
+      "sha256": "502c331eee493ef021f851a051e037d8e76e006ead48a19c499b6cab4136b7e9"
+    },
+    {
+      "path": "ledger-audit.log",
+      "sha256": "7356aef7c065e04667460c741c9df15adc92148c6df2c8c3e377710d9d5ff095"
+    },
+    {
+      "path": "web-build.log",
+      "sha256": "a4b917eeb204fceab301d68eb1f89ad7014c34bb5f426070c86eff840fcc0115"
+    },
+    {
+      "path": "android-web-build.log",
+      "sha256": "736e9a29839c62c979dd33683503b0d15cbf6ef026a075b39936af2993481246"
+    },
+    {
+      "path": "android-api-binding.log",
+      "sha256": "09256a5b690bb2f411d1c420e55e53e0a37dd9067f81c04d1dec2e729541ea54"
+    },
+    {
+      "path": "android-carto-binding.log",
+      "sha256": "fb0ae53eb9cbb90e1500662e416eb7a16eb5980d63f790a7075eeb18c9b1811e"
+    },
+    {
+      "path": "integrated-preview.log",
+      "sha256": "8d86d5aa3e527fbf315fadebeaee47a8e31e6bec7f83a16e2aada2f9a9988665"
+    },
+    {
+      "path": "forecast-it-light.png",
+      "sha256": "cae895c8753c35fdf5c1d214f96d4c7468d673e9ed7eb0797de8e56955a0ea3a"
+    },
+    {
+      "path": "forecast-fur-dark.png",
+      "sha256": "db6d95f06ccca3a78c0e3ecc37f3b4f34884eff56bd0e557544b786f1c086358"
+    },
+    {
+      "path": "pollen-fur-dark.png",
+      "sha256": "858df479f393f7614dd2db46b4962bd45b3665609fa8c85c34c36e1f8017e1cd"
+    },
+    {
+      "path": "forecast-fur-reload.txt",
+      "sha256": "d3450e540ac6e1507ff535f77ecff8e70954fca2088aaf6fb28b09facd677a0b"
+    },
+    {
+      "path": "forecast-fur-after-reload.png",
+      "sha256": "50799fbb301321ef23b377f67243f4742c3814fe6f2361d52de166ba63254a02"
+    },
+    {
+      "path": "forecast-it-final.png",
+      "sha256": "a9b089ded97ceaabeff095445cd98f404797476682af419299b0e637dbfc9d0c"
+    },
+    {
+      "path": "static-web-local.txt",
+      "sha256": "0ab8d6d88f7de861b2b3689c311aa7f60c33f64cafcdbc80fe110a367efd1815"
+    },
+    {
+      "path": "static-web-local.png",
+      "sha256": "9fe77678de05359f1ff9f86ac61be842631b69dac675dbb7e87a9f87b6023980"
+    },
+    {
+      "path": "static-origin-check.json",
+      "sha256": "4e9c032528d4ad41570ebf1378994461228510b8156bec33414c680802991740"
+    },
+    {
+      "path": "static-web-server.log",
+      "sha256": "f44e16d295423172095b1881e20dedb620ce3860f6820be44ff915b946fe72f0"
+    },
+    {
+      "path": "events-it.txt",
+      "sha256": "0120baab06f8843fccf6f677721dd4ae94d93ea4dedff53634aed9e0035c9933"
+    }
+  ]
+}
