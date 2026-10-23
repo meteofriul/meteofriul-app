@@ -1,6 +1,7 @@
 export const EVENTS_VIEW_COPY = {
   it: {
     viewTitle: "Eventi",
+    loadMoreLabel: "Mostra altri",
     locationLabel: "Località",
     change: "Cambia",
     languageLabel: "Cambia lingua IT/FUR",
@@ -36,6 +37,7 @@ export const EVENTS_VIEW_COPY = {
   },
   fur: {
     viewTitle: "Evenis",
+    loadMoreLabel: "Mostre altris",
     locationLabel: "Localitât",
     change: "Cambie",
     languageLabel: "Cjambie lenghe IT/FUR",

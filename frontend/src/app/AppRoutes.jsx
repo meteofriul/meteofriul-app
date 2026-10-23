@@ -739,6 +739,8 @@ function ForecastRouteView({
       onCamsFailure: () => {
         camsSettled = true;
         camsCompletion.complete({ status: "unavailable" });
+        if (!cancelled) setWeatherState(previous => previous
+          ? { ...previous, runtimeRefreshPendingComponents: [] } : previous);
       },
       onCamsUpdate: (nextWeather, lifecycle) => {
         const isTerminal = lifecycle?.lifecycle !== "intermediate";
@@ -747,13 +749,15 @@ function ForecastRouteView({
           camsCompletion.complete(nextWeather);
         }
         enrichedWeather = nextWeather;
-        if (!cancelled) setWeatherState(nextWeather);
+        if (!cancelled) setWeatherState(isTerminal ? nextWeather
+          : { ...nextWeather, runtimeRefreshPendingComponents: ["cams"] });
       },
     }).then((nextWeather) => {
-      if (!cancelled && !enrichedWeather) setWeatherState(nextWeather);
-      return trackDeferredCams && !camsSettled
+      const presentedWeather = trackDeferredCams && !camsSettled
         ? { ...nextWeather, runtimeRefreshPendingComponents: ["cams"] }
         : nextWeather;
+      if (!cancelled && !enrichedWeather) setWeatherState(presentedWeather);
+      return presentedWeather;
     });
 
     observeRuntimeRefresh(

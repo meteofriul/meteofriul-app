@@ -421,8 +421,16 @@ function buildCamsModel(localWeather, weatherState, copy, loading) {
     && quality.cams_status === "unavailable"
     && !quality.cams_diagnostic && !rawCurrent.source?.cams?.diagnostic
     && !rawCurrent.pollen_data?.diagnostic;
+  const diagnostics = [quality.cams_diagnostic, rawCurrent.source?.cams?.diagnostic,
+    rawCurrent.pollen_data?.diagnostic].filter(Boolean);
+  // This flag belongs to the live request, not to the saved weather snapshot.
+  // A previous transport failure can be retried; provider/contract diagnostics
+  // (including revocations) must stay visible until replaced by verified data.
+  const retryingCams = weatherState?.runtimeRefreshPendingComponents?.includes("cams")
+    && !weatherState.error
+    && diagnostics.every(diagnostic => diagnostic.code === "TRANSPORT_FAILURE");
   const pending = quality.cams_status === "pending" || pollen?.status === "pending"
-    || reloadingCachedCams || (loading && !quality.cams_status);
+    || retryingCams || reloadingCachedCams || (loading && !quality.cams_status);
   const airAvailable = ["particulate_matter_2.5um", "particulate_matter_10um", "ozone", "nitrogen_dioxide"]
     .some((field) => typeof air?.values?.[field] === "number" && Number.isFinite(air.values[field]));
   const airStatus = airAvailable ? "available" : pending ? "pending" : "unavailable";

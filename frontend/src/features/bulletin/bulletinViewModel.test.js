@@ -862,3 +862,14 @@ describe("bulletin view model", () => {
     expect(model.days[0].mapPoints).toHaveLength(9);
   });
 });
+
+
+it("localizes an unreachable bulletin source in Friulian without using fixture weather", () => {
+  const model = buildBulletinViewModel({ error: "offline", forecast: null }, { language: "fur", fallbackDays: [] });
+  expect(model.days[0]).toMatchObject({
+    summary: "Dâts no acessibii",
+    text: "No rivin a contatâ la font ARPA FVG - OSMER. Torne a provâ plui tart.",
+    hasStructuredMap: false,
+    source: "source_unreachable",
+  });
+});

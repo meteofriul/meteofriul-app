@@ -19,8 +19,16 @@ anche dopo avvio a freddo, Posizione conservata, aria/pollini IT/FUR e percorsi
 di navigazione osservati PASS. [Prova e limiti](ANDROID_0.1.15_300036_DEVICE_CHECK_20261023.md).
 Il caricamento resta attestato nel [verbale Play](ANDROID_0.1.15_300036_UPLOAD_20261023.md).
 La verifica Android non sostituisce un collaudo del bundle statico Web.
-Prima della pubblicazione Web restano prova del bundle statico e aggiornamento
-cache; Safari/iPhone e PWA non verificati. Il sito pubblico nell'ultima lettura
+Eseguita la [verifica locale IT/FUR del bundle statico](WEB_0.1.15_300036_FINAL_CHECK_20261023.md):
+avvio e integrità confermati, servizi bloccati dalle regole CORS per localhost.
+Il pilot della stessa sorgente ha verifiche complementari con dati reali.
+I rilievi GPS, traduzioni e recupero CAMS hanno ora [correzioni locali verificate](WEB_0.1.15_300036_CORRECTIONS_20261023.md)
+sul ramo release: non sono ancora in main, nella AAB 300036 o nella Web archiviata.
+L'episodio iniziale CAMS non aveva una traccia temporale; è stato riprodotto e
+corretto il meccanismo di recupero da errore di trasporto, senza dichiarare
+retroattivamente provata ogni causa di quell'osservazione.
+Prima della pubblicazione restano collaudo dei servizi del bundle da origine
+autorizzata e aggiornamento cache; Safari/iPhone e PWA non verificati. Il sito pubblico nell'ultima lettura
 del 23 ottobre rimane 0.1.14: HTML con `main-D-Nry2Xb.js` e asset SHA256
 `c5ab69f0a4b63df56ea2254b60fcf829e91b30274632653f000962ac1aa010ca`,
 identico alla ricevuta del 22 ottobre. La parità pubblicata non è ancora raggiunta.

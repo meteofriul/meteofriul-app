@@ -86,8 +86,8 @@ afterEach(async () => {
   vi.unstubAllGlobals();
   vi.restoreAllMocks();
 });
-function render(token = 0) {
-  root.render(<AppRoutes activeTab="weather" activeLocation={location} language="it"
+function render(token = 0, language = "it") {
+  root.render(<AppRoutes activeTab="weather" activeLocation={location} language={language}
     copy={{ placeholders: { weatherTitle: "Meteo" } }} labEnabled={false}
     runtimeRefreshToken={token} runtimeRefreshForce={true} onRuntimeRefreshSettled={settled} />);
 }
@@ -100,8 +100,8 @@ function assertCamsShown() {
 }
 
 describe("real Meteo route state with a 27h CAMS run and fast repeated supplements", () => {
-  it("commits air and pollen after the initial rendering, including the warm-up/manual-route coalescing", async () => {
-    await act(async () => { render(); });
+  it.each(["it", "fur"])("keeps CAMS loading through delayed recovery in %s", async (language) => {
+    await act(async () => { render(0, language); });
     await act(async () => { await vi.advanceTimersByTimeAsync(10); });
     expect(container.querySelector('.mf-weather-environment [data-status="unavailable"]')).not.toBeNull();
     state.harness.publish();
@@ -112,9 +112,13 @@ describe("real Meteo route state with a 27h CAMS run and fast repeated supplemen
         // updates the route token; the real route registers its own callback.
         void loadHomeWeather(location, { force: true, deferCams: true,
           manageOfficialAlerts: false, retryUnavailableCams: true });
-        render(token);
+        render(token, language);
         await vi.advanceTimersByTimeAsync(10);
       });
+      // While a new supplement is in flight, an old unavailable snapshot is
+      // not the result of that request. Keep verified values or show loading.
+      expect(container.textContent).not.toContain(language === "fur" ? "Dâts no disponibii" : "Dati non disponibili");
+      if (token === 1) expect(container.textContent).toContain(language === "fur" ? "In cjariament…" : "Caricamento…");
       await act(async () => { await vi.advanceTimersByTimeAsync(1510); });
       // The provider completion deliberately hands the verified supplement to
       // observers on a separate task, so a consumer exception cannot poison it.
@@ -156,6 +160,10 @@ describe("real Meteo route state with a 27h CAMS run and fast repeated supplemen
     await act(async () => { await vi.advanceTimersByTimeAsync(10); });
     settled.mockClear();
     const retained = structuredClone(state.harness.saved().bundle);
+    retained.current.data_quality.cams_status = "pending";
+    retained.current.data_quality.cams_diagnostic = null;
+    retained.current.pollen_data = { status: "pending" };
+    retained.current.source.cams = { status: "pending" };
     state.harness.bundleFetcher.mockImplementationOnce((_location, options) => {
       setTimeout(() => options.onCamsFailure?.(
         new Error("controlled deferred CAMS failure"),
