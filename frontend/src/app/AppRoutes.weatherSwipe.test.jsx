@@ -1,3 +1,4 @@
+import { readFileSync } from "node:fs";
 import { afterEach, describe, expect, it, vi } from "vitest";
 import { renderToStaticMarkup } from "react-dom/server";
 
@@ -124,6 +125,28 @@ describe("weather route swipe isolation", () => {
     expect(buttons.every(button => button.props.disabled)).toBe(true);
     buttons[0].props.onClick();
     expect(onNavigate).not.toHaveBeenCalled();
+  });
+
+  it.each(["it", "fur"])("assigns the live content to the flexible grid track in %s, including short screens", language => {
+    harness.pilot = true;
+    const { shell, navigation, view } = weatherRoute("live", { language });
+    const children = shell.props.children.filter(Boolean);
+    const css = readFileSync(new URL("../features/live/live.css", import.meta.url), "utf8");
+    const routeRules = [...css.matchAll(
+      /\.mf-app-main--territory-fit > \.mf-weather-route-shell\s*\{([^}]+)\}/g,
+    )];
+    const templates = routeRules.map(([, rule]) => rule.match(/grid-template-rows:\s*([^;]+)/)?.[1]).filter(Boolean);
+
+    expect(children[0]).toBe(navigation);
+    expect(children.at(-1)).toBe(view);
+    expect(templates.length).toBeGreaterThanOrEqual(2);
+    for (const template of templates) {
+      const tracks = template.match(/minmax\([^)]*\)|[^\s]+/g);
+      // Auto-placement must put the actual route in the flexible track,
+      // not leave that track empty after the navigation was grouped.
+      expect(tracks).toHaveLength(children.length);
+      expect(tracks.at(-1)).toMatch(/^minmax\(.+,\s*1fr\)$/);
+    }
   });
 
   it("forwards the resolved theme to the territory route", () => {

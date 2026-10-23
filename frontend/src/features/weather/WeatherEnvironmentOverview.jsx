@@ -24,7 +24,8 @@ const COPY = {
     airData: "Dati Copernicus CAMS",
     airLastKnown: "Ultimo dato CAMS",
     airTitle: "Qualità dell’aria",
-    airUnavailable: "Dati dell’aria non disponibili",
+    camsUnavailable: "Dati non disponibili",
+    loading: "Caricamento…",
     activeSpecies: "attive",
     daylight: "Luce del giorno",
     pollenModel: "Previsione modellistica CAMS",
@@ -41,7 +42,8 @@ const COPY = {
     airData: "Dâts Copernicus CAMS",
     airLastKnown: "Ultin dât CAMS",
     airTitle: "Cualitât de arie",
-    airUnavailable: "Dâts de arie no disponibii",
+    camsUnavailable: "Dâts no disponibii",
+    loading: "In cjariament…",
     activeSpecies: "ativis",
     daylight: "Lus dal dì",
     pollenModel: "Prevision modelistiche CAMS",
@@ -86,7 +88,9 @@ function AirSummary({ copy, model }) {
     : finite(pm10) ? AIR_FIELDS[1] : null;
   const hasAnyAirValue = AIR_FIELDS.some(([id]) => finite(values[id]));
 
-  if (!hasAnyAirValue) return <p className="mf-weather-environment-empty">{copy.airUnavailable}</p>;
+  if (!hasAnyAirValue) return <p className="mf-weather-environment-empty" role="status">
+    {(model?.airStatus || model?.status) === "pending" ? copy.loading : copy.camsUnavailable}
+  </p>;
 
   return <>
     {chosen ? <span className="mf-weather-environment-metric">
@@ -106,7 +110,7 @@ function AirSummary({ copy, model }) {
 function PollenSummary({ copy, model }) {
   const values = Array.isArray(model?.values) ? model.values.filter((entry) => finite(entry?.value)) : [];
   if (model?.status !== "available" || !values.length) {
-    return <p className="mf-weather-environment-empty">{model?.note || copy.airUnavailable}</p>;
+    return <p className="mf-weather-environment-empty" role="status">{model?.status === "pending" ? copy.loading : copy.camsUnavailable}</p>;
   }
   const positive = values.filter((entry) => entry.value > 0);
   const dominant = positive.reduce((highest, entry) => !highest || entry.value > highest.value ? entry : highest, null);
@@ -116,7 +120,7 @@ function PollenSummary({ copy, model }) {
     {dominant ? <span className="mf-weather-environment-metric mf-weather-environment-metric--pollen">
       <b>{dominant.label}</b>
       <strong>{dominant.displayValue}<small>{model.units}</small></strong>
-    </span> : <p className="mf-weather-environment-empty">{model?.status === "available" ? copy.pollenNoDominant : model?.note || copy.airUnavailable}</p>}
+    </span> : <p className="mf-weather-environment-empty">{model?.status === "available" ? copy.pollenNoDominant : model?.note || copy.camsUnavailable}</p>}
     <span className="mf-weather-environment-secondary mf-weather-environment-secondary--pollen-count">
       <b>{values.length}</b> {copy.species} · <b>{activeSpecies}</b> {copy.activeSpecies}
     </span>
@@ -199,7 +203,7 @@ export function WeatherEnvironmentOverview({ camsModel, language = "it", locatio
       summary: <AirSummary copy={copy} model={camsModel} />,
       detail: camsModel
         ? <WeatherCamsCard detailMode language={languageKey} model={camsModel} section="air" />
-        : <p>{copy.airUnavailable}</p>,
+        : <p>{copy.camsUnavailable}</p>,
     },
     {
       id: "pollen",
@@ -210,7 +214,7 @@ export function WeatherEnvironmentOverview({ camsModel, language = "it", locatio
       summary: <PollenSummary copy={copy} model={camsModel} />,
       detail: camsModel
         ? <WeatherCamsCard detailMode language={languageKey} model={camsModel} section="pollen" />
-        : <p>{copy.airUnavailable}</p>,
+        : <p>{copy.camsUnavailable}</p>,
     },
   ];
 

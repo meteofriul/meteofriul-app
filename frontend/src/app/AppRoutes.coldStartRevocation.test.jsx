@@ -313,8 +313,8 @@ describe("localPilot cold-start revocation presentation boundary", () => {
     expect(container.querySelector(".mf-weather-hourly-card")).not.toBeNull();
     expect(container.querySelector(".mf-weather-environment [data-status]")?.getAttribute("data-status"))
       .toBe("unavailable");
-    expect(container.textContent).toContain("Dati dell’aria non disponibili");
-    expect(container.textContent).toContain("Dati pollinici non disponibili");
+    expect(container.querySelector(".mf-weather-environment-tile--air").textContent).toContain("Dati non disponibili");
+    expect(container.querySelector(".mf-weather-environment-tile--pollen").textContent).toContain("Dati non disponibili");
   });
 
   it("applies the durable journal before the first Home landing frame and native object read", async () => {

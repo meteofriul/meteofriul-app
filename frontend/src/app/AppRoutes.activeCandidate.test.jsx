@@ -163,16 +163,14 @@ function expectAvailable(marker) {
   expect(snapshot.text).toContain("Qualità dell’aria");
   expect(snapshot.text).toContain("Pollini");
   expect(snapshot.text).toContain(String(marker).replace(".", ","));
-  expect(snapshot.text).not.toContain("Dati dell’aria non disponibili");
-  expect(snapshot.text).not.toContain("Dati pollinici non disponibili");
+  expect(snapshot.text).not.toContain("Dati non disponibili");
 }
 
 function expectNoUnavailableFrame(frames) {
   expect(frames.filter(frame => frame.text)).toEqual(expect.not.arrayContaining([
     expect.objectContaining({ status: "unavailable" }),
   ]));
-  expect(frames.some(frame => frame.text.includes("Dati dell’aria non disponibili"))).toBe(false);
-  expect(frames.some(frame => frame.text.includes("Dati pollinici non disponibili"))).toBe(false);
+  expect(frames.some(frame => frame.text.includes("Dati non disponibili"))).toBe(false);
 }
 
 async function seed(location, bundle) {

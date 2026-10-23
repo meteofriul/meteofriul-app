@@ -690,6 +690,7 @@ function ForecastRouteView({
   const weatherHour = isDefinitiveAppExperience() ? Math.floor(new Date(weatherNow).getTime() / 3600000) : 0;
   const presentationKey = getLocationCacheKey(location);
   const previousForecastModel = forecastPresentationMemory.get(presentationKey) || null;
+  const [weatherLoading, setWeatherLoading] = useState(true);
   const [weatherState, setWeatherState] = useState(() => readInitialHomeData(location, {
     manageOfficialAlerts: false,
   })?.weather || null);
@@ -698,6 +699,7 @@ function ForecastRouteView({
     let cancelled = false;
 
     const hydrateAndLoadWeather = async () => {
+      setWeatherLoading(true);
       const prefetchedWeather = await hydrateHomeWeatherFromBackgroundPrefetch(location, {
         manageOfficialAlerts: false,
       });
@@ -710,7 +712,10 @@ function ForecastRouteView({
           if (!cancelled) setWeatherState(enrichedWeather);
         },
       });
-      if (!cancelled) setWeatherState(weather);
+      if (!cancelled) {
+        setWeatherState(weather);
+        setWeatherLoading(false);
+      }
     };
 
     void hydrateAndLoadWeather();
@@ -771,8 +776,9 @@ function ForecastRouteView({
       location,
       now: weatherNow,
       previousModel: previousForecastModel,
+      loading: weatherLoading,
     });
-  }, [language, location, previousForecastModel, weatherNow, weatherState]);
+  }, [language, location, previousForecastModel, weatherLoading, weatherNow, weatherState]);
 
   useEffect(() => {
     rememberForecastPresentation(presentationKey, model);

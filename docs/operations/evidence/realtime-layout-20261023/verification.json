@@ -1,0 +1,97 @@
+{
+  "result": "LOCAL_LAYOUT_FIXED_RELEASE_RUNTIME_PENDING",
+  "date": "2026-10-23",
+  "branch": "codex/realtime-layout",
+  "base_commit": "f9e178b25afd5154008539dbd15d9c1b5957abd1",
+  "source_state": "working_tree_with_hashes",
+  "source_sha256": {
+    "frontend/src/features/live/live.css": "5b82c3475d4f60c8ffd3d411187dc966f9c2e701f974198c19f4d0df9cbefe9d",
+    "frontend/src/features/live/liveCss.test.js": "c9d77177b2e26cefc3222087110822f6271dc2d8fb8400d83d896566520ef17d",
+    "frontend/src/app/AppRoutes.weatherSwipe.test.jsx": "7c9f04935742bf61010321ee2c8070feb9e54a7e7cbb9688992234106b45b3cc"
+  },
+  "regression_before": {
+    "passed": 14,
+    "failed": 2,
+    "reason": "3 grid tracks for 2 route children, it/fur"
+  },
+  "regression_after": {
+    "files": 8,
+    "passed": 170,
+    "failed": 0
+  },
+  "lint": "PASS_modified_test_files",
+  "iab_viewport": {
+    "width": 661,
+    "height": 902
+  },
+  "before": {
+    "map_height_css_px": 2,
+    "unused_third_track_css_px": 586.609
+  },
+  "after": {
+    "workspace_height_css_px": 626.65625,
+    "gap_to_bottom_navigation_css_px": 8
+  },
+  "browser_checks": [
+    "it/light",
+    "fur/light",
+    "it/dark",
+    "fur/dark",
+    "reports_empty_list",
+    "webcam_catalog",
+    "radar_controls",
+    "forecast_visible_not_fitted",
+    "bulletin_visible_sticky",
+    "return_to_live"
+  ],
+  "phone": {
+    "model": "Galaxy A52 SM-A525F",
+    "android": 14,
+    "browser": "Brave",
+    "target": "local preview 5174",
+    "checks": [
+      "it/light map visible",
+      "fur/light map visible",
+      "small visible gap above navigation",
+      "Italian restored"
+    ],
+    "installed_app_modified": false
+  },
+  "not_verified": [
+    "fixed minified Android release on device",
+    "Android 15/16 runtime",
+    "short-height native runtime",
+    "Community submissions, confirmations and withdrawals",
+    "all individual webcams"
+  ],
+  "preview_limits": [
+    "Community reporting not configured; disabled action and explanatory note differ from official build",
+    "Carto key reused in ignored local mode file only"
+  ],
+  "no_actions": [
+    "AAB",
+    "installation",
+    "emulator",
+    "push",
+    "deploy",
+    "manual sends",
+    "sponsor activation"
+  ],
+  "private_evidence_sha256": {
+    "desktop-fur-dark.png": "95f2d195ebdb0929415f913611c7c83d0fb4707e161d6f542dfb54ebef8bbf41",
+    "desktop-fur-light.png": "859232b7a52490b7352a736a49a79891a1f08c61f5efe1527052addaa856d620",
+    "desktop-it-dark.png": "deb0f6474e371f591176ff04662fa0e93098b818b11b79fe92b73c67ad9c1874",
+    "desktop-it-light-final.png": "89749c4473c91871aa17ca986c29c7d7ee72fb3eb57712cd0ef7840629db81b1",
+    "desktop-it-light.png": "254e9428c795323050927fe41e8f0783d487ba760fb049e5fba227d64ad42899",
+    "realtime-fur-light.png": "f8e8ea87fab95d58721929cac70ebb37730796fe02f343e4176c7a3216987e82",
+    "realtime-it-final.png": "5adb79805fda8870bc90303a8d9f28448d00c9adcb1323b5a2aa48914f3d54b4",
+    "realtime-it-light.png": "a646f49e2dab98a858191af48908b9717bca8da812f240d1216bb7812ec8739f",
+    "realtime-restored-it.png": "eec968bb301f4eacb089012f2a4c0d096a0c2d0b5f21a9548e07f5044c2883c1"
+  },
+  "delivery": {
+    "authorized_on": "2026-10-23",
+    "target": "local main",
+    "scope": "verified layout correction, regression tests, report and sanitized evidence",
+    "release_runtime_gate": "pending new authorized artifact and real-device check"
+  }
+}
