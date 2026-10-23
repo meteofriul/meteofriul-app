@@ -1232,8 +1232,25 @@ html[data-theme="dark"] .mf-live-webcam-picker__options button.is-active {
   }
 }
 
+/* Fit Territory against the real navigation height, not an estimated clearance.
+   The other sections retain their floating navigation and scrolling behavior. */
+.mf-app-shell.is-definitive-app:has(> .mf-app-main--territory-fit) {
+  grid-template-rows: auto minmax(0, 1fr) auto;
+  padding-bottom: calc(var(--mf-safe-area-inset-bottom) + var(--mf-space-3));
+}
+
+.mf-app-shell.is-definitive-app:has(> .mf-app-main--territory-fit) > .mf-app-main--territory-fit {
+  padding-bottom: var(--mf-space-2);
+}
+
+.mf-app-shell.is-definitive-app:has(> .mf-app-main--territory-fit) > .mf-bottom-nav {
+  position: relative;
+  inset: auto;
+}
+
 .mf-app-main--territory-fit > .mf-weather-route-shell {
-  grid-template-rows: auto auto minmax(0, 1fr);
+  /* AppRoutes has two children: grouped navigation, then the live content. */
+  grid-template-rows: auto minmax(0, 1fr);
   height: 100%;
   min-height: 620px;
 }
@@ -1274,7 +1291,7 @@ html[data-theme="dark"] .mf-live-webcam-picker__options button.is-active {
 @media (max-height: 600px) {
   .mf-app-shell.is-native-android.is-definitive-app
     .mf-app-main--territory-fit > .mf-weather-route-shell {
-    grid-template-rows: auto auto minmax(440px, 1fr);
+    grid-template-rows: auto minmax(440px, 1fr);
     height: auto;
     min-height: 100%;
   }
