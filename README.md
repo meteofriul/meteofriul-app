@@ -8,12 +8,14 @@ contenuti culturali; l'interfaccia è disponibile in italiano e friulano.
 
 > Stato Web verificato il 22 ottobre 2026: `meteofriul.app` serve la
 > pubblicazione del 21 ottobre, versione `0.1.14`, sorgente `1b0287c1`.
-> La candidata **0.1.15** con le successive correzioni di main, inclusi aria e pollini, è ora
+> La candidata **0.1.15** con le successive correzioni di main, inclusi aria e pollini e Tempo reale, è ora
 > preparata localmente dalla stessa base della release Android; non è pubblicata.
 >
 > La Web App deve seguire la release Android: è anche il canale per chi usa
 > iPhone dal browser. Il [percorso di allineamento Web/Android](docs/operations/WEB_ANDROID_RELEASE_PARITY.md)
 > richiede sorgenti e funzionalità coerenti, oltre alla verifica Safari/iPhone.
+
+**Preparazione locale aggiornata:** release e candidata Web includono main `2d8b0c32` e il fix di Tempo reale, dalla sorgente comune `16890b8c`. Controlli locali superati; nessuna nuova AAB, push o pubblicazione. La 300035 installata resta invariata. [Controlli e limiti](docs/operations/RELEASE_WEB_REALTIME_ALIGNMENT_20261023.md).
 
 **Rilievo successivo sul Galaxy: Tempo reale mostra una schermata vuota nella
 300035. Difetto riprodotto dopo la segnalazione del proprietario; promozione
@@ -24,7 +26,7 @@ I risultati positivi sotto non equivalgono a qualifica completa della release.
 **Release del 23 ottobre 2026:** AAB **0.1.15 / 300035 disponibile nel test interno personale**,
 con una sola lista selezionata e un solo account. Produzione invariata a 0.1.14 / 300031. Include main `f9e178b2`, transitorio aria/pollini,
 conservazione della Posizione e configurazione nativa. CI e builder completo
-PASS; Web preparata dalla stessa sorgente `5e9bc7dc`, non pubblicata.
+PASS; la Web associata alla 300035 era preparata dalla stessa sorgente `5e9bc7dc`, non pubblicata. La candidata locale corrente è quella indicata sopra.
 Sponsor disattivati. Il tentativo 300034 è conservato e abbandonato.
 [Artefatto e controlli](docs/operations/ANDROID_0.1.15_300035_BUILD_20261023.md) ·
 [Accettazione Play e limiti](docs/operations/ANDROID_0.1.15_300035_UPLOAD_20261023.md).
@@ -70,7 +72,7 @@ e non sostituisce la sua verifica. Evidenze e limiti nel [verbale sul telefono](
 
 | Canale | Stato |
 | --- | --- |
-| Web | `0.1.14` pubblicata il 21 ottobre su `meteofriul.app`; candidata locale `0.1.15` da `5e9bc7dc`, non distribuita; Safari/iPhone non verificato |
+| Web | `0.1.14` pubblicata il 21 ottobre su `meteofriul.app`; candidata locale `0.1.15` da `16890b8c`, con Tempo reale corretto, non distribuita; Safari/iPhone non verificato |
 | API | FastAPI su Cloud Run, chiamata direttamente via HTTPS da Web e Android |
 | Android | `0.1.15` (`300035`) disponibile nel test interno personale; FAIL Tempo reale vuoto, promozione sospesa. Positivi i controlli mirati precedenti; limiti GPS/Android 15–16/grandi schermi espliciti nel verbale. [Esito e limiti](docs/operations/RELEASE_0.1.15_STATUS_20261021.md) |
 | Google Play | Produzione `0.1.14` (`300031`) nella lettura del 23 ottobre; `0.1.15` (`300035`) solo nel test interno, una lista con un utente. Sponsor disattivati |

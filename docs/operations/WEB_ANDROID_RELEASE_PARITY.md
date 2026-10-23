@@ -3,16 +3,21 @@
 Regola del proprietario, 20 ottobre 2026: la Web App deve seguire la AAB,
 perché chi usa iPhone accede al prodotto dal browser.
 
-## Candidata del 23 ottobre 2026
+## Candidata aggiornata del 23 ottobre 2026 — Tempo reale
 
-AAB 0.1.15 / 300035 e Web provengono entrambe da `5e9bc7dc`.
-La Web è stata compilata con `-BuildOnly`, con preflight API prima/dopo,
-CARTO e service worker verificati; archivio canonico
-`release-artifacts/web-candidates/20261023-0.1.15-5e9bc7dc/`.
-Nessuna pubblicazione e nessuna nuova prova browser per scelta del proprietario.
-Safari/iPhone e PWA restano non verificati. Il sito pubblico verificato il
+Release 0.1.15 e candidata Web sono allineate a main `2d8b0c32`, sorgente comune
+`16890b8c`. Inclusa la correzione di Tempo reale; conservate Posizione, CAMS e
+configurazione nativa. Web compilata con `-BuildOnly`, asset Web Android dalla
+stessa sorgente; nessuna nuova AAB. Sponsor confermati spenti, zero campagne.
+Archivio canonico `release-artifacts/web-candidates/20261023-0.1.15-16890b8c/`.
+[Controlli, hash e limiti](RELEASE_WEB_REALTIME_ALIGNMENT_20261023.md).
+
+La candidata precedente da `5e9bc7dc` resta conservata insieme alla AAB 300035,
+già disponibile nel test interno: quel pacchetto non contiene il fix Tempo reale.
+Nessuna pubblicazione Web né nuovo test browser in questa preparazione.
+Prima della pubblicazione restano prova del bundle statico e aggiornamento cache;
+Safari/iPhone e PWA non verificati. Il sito pubblico nell'ultima lettura del
 22 ottobre rimane 0.1.14; la parità pubblicata non è ancora raggiunta.
-[Identità, hash e limiti](ANDROID_0.1.15_300035_BUILD_20261023.md).
 
 ## Base comune e confini
 
@@ -79,13 +84,7 @@ con i contratti dati attivi. Non è autorizzato implicitamente dalla preparazion
 - Deployment pubblico effettivo e precedente per rollback, dopo autorizzazione.
 - Nessun riferimento a chiavi private, token o credenziali negli allegati.
 
-Preparazione corrente: [0.1.15 / 300034](RELEASE_0.1.15_300034_PREPARATION_20261023.md),
-sorgente comune `c30cfe33`. Web e asset Web Android compilati con manifest e hash.
-La correzione CAMS al rientro è inclusa e verificata dai test automatici IT/FUR;
-nessuna nuova prova browser per scelta del proprietario. Main incorporato
-`f9e178b2`, non modificato. AAB non generata, codice non riservato. Posizione e
-configurazione nativa restano da provare nel nuovo pacchetto minificato sul
-telefono; la release non è promossa su main e nessun canale è stato pubblicato.
+Preparazioni precedenti: [300034](RELEASE_0.1.15_300034_PREPARATION_20261023.md) e [300035](ANDROID_0.1.15_300035_BUILD_20261023.md). Sono verbali storici; la candidata corrente è identificata sopra.
 
 La Web pubblica è già stata aggiornata il 21 ottobre da `1b0287c1`, versione
 0.1.14: non contiene le correzioni successive del 22 ottobre. Il precedente

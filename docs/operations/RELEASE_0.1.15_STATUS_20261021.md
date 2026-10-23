@@ -1,10 +1,11 @@
 # Stato release 0.1.15 e lavoro salvato — aggiornamento del 23 ottobre 2026
 
+**Allineamento locale successivo:** main `2d8b0c32` incorporato nella release tramite `16890b8c`, con Tempo reale corretto e Web ricompilata dalla stessa sorgente. Test e build locali PASS; codice 300035 non cambiato né riutilizzato per una nuova AAB. [Verbale corrente](RELEASE_WEB_REALTIME_ALIGNMENT_20261023.md).
+
 **0.1.15 / 300035 è disponibile solo nel test interno personale di Google Play.
 Il proprietario l'ha aggiornata via Play Store. Tempo reale risulta vuoto:
 difetto riprodotto sul Galaxy dopo la segnalazione del proprietario,
-promozione sospesa.** Nessuna nuova
-installazione dell'agente, build, push, merge, deploy o invio manuale.
+promozione sospesa.** Nessuna nuova AAB o installazione dell'agente; la preparazione locale successiva è riportata sopra.
 
 Posizione conservata dopo ripresa e avvio a freddo; il proprietario la conferma
 attiva prima e subito dopo l'aggiornamento. Aria/pollini IT/FUR e navigazione
@@ -13,7 +14,7 @@ precedente errore assente all'avvio. Restano da esercitare sul telefono gli
 errori temporanei GPS; Android 15/16 e grandi schermi non provati.
 [Verbale sul Galaxy](ANDROID_0.1.15_300035_DEVICE_CHECK_20261023.md).
 
-AAB e candidata Web dalla sorgente `5e9bc7dc`; CI `39917176816` e builder PASS.
+AAB 300035 e sua candidata Web storica dalla sorgente `5e9bc7dc`; CI `39917176816` e builder PASS.
 Web non pubblicata, sponsor disattivati. La PR 11 resta in bozza e la release
 non è stata promossa su main. Il tentativo 300034 resta abbandonato e conservato.
 [Build](ANDROID_0.1.15_300035_BUILD_20261023.md) ·
@@ -25,9 +26,9 @@ non è stata promossa su main. Il tentativo 300034 resta abbandonato e conservat
 | --- | --- |
 | Produzione Play | Lettura Console del 23 ottobre: 0.1.14 / 300031; nessuna promozione della 0.1.15 in produzione |
 | Test interno Play | 0.1.15 / 300035 disponibile dal 23 ottobre alle 09:59, una sola lista selezionata con un utente; sponsor disattivati |
-| Web pubblica | Pubblicazione del 21 ottobre da `1b0287c1`, versione 0.1.14; HTML e asset riconfermati il 22 ottobre. Candidata 0.1.15 da `5e9bc7dc` preparata, non distribuita; Safari/iPhone non verificato |
-| `main` | `f9e178b2`, due commit locali oltre origin/main `d62683b9` nella lettura del 23 ottobre. Include aria/pollini verificati sul Galaxy, oltre alle altre correzioni approvate; native e posizione restano nel ramo release |
-| `codex/release-0.1.15` | Main `f9e178b2` incorporato, posizione `2e5fc0b6` conservata, transitorio CAMS `53aba4ff` integrato. `5e9bc7dc` identifica la AAB 300035 e la candidata Web; PR 11 in bozza; FAIL Tempo reale, promozione sospesa; restano validi i risultati positivi dei percorsi mirati |
+| Web pubblica | Pubblicazione del 21 ottobre da `1b0287c1`, versione 0.1.14; HTML e asset riconfermati il 22 ottobre. Candidata 0.1.15 aggiornata da `16890b8c` preparata, non distribuita; Safari/iPhone non verificato |
+| `main` | `2d8b0c32`, allineato a GitHub tramite PR 17; CI 39935808248 verde. Include aria/pollini e fix Tempo reale verificati nell’anteprima Galaxy; posizione e altre modifiche della release restano nel ramo dedicato |
+| `codex/release-0.1.15` | Main `2d8b0c32` incorporato con sorgente `16890b8c`; Posizione, transitorio CAMS e configurazione nativa conservati. Web e asset Web Android allineati e verificati localmente. Nessuna nuova AAB o promozione della release su main |
 | Ultimo artefatto osservato sul telefono (300035) | Sorgente `5e9bc7dcdc6183a2fc43ada2dea3dfb22f2a3dc1`, AAB SHA256 `1bcf6a32348eee0f098f475c179523a309d962a86c3faf8736a0bd29a1622762`; installer Play Store |
 
 I documenti successivi non cambiano il commit sorgente dell'AAB già firmata.
@@ -44,7 +45,7 @@ generata. [Dettagli e limiti](ANDROID_NATIVE_CONFIG_FIX_20261022.md#numerazione-
 
 | Rilievo | Evidenza e stato |
 | --- | --- |
-| REALTIME-LAYOUT-01 | FAIL nella 300035: Tempo reale mostra un’area vuota. Sezione omessa dalla verifica iniziale, poi riprodotta sul Galaxy. Discrepanza griglia tre righe/due figli individuata nei sorgenti; correzione ancora da applicare e verificare. Promozione sospesa |
+| REALTIME-LAYOUT-01 | FAIL nella 300035 installata. Fix `40af8779` approvato e in main, integrato nella candidata `16890b8c`; regressioni e build PASS, sorgenti identici alla prova Brave/Galaxy. Rimane aperta la verifica su una nuova AAB minificata; non chiuso dal solo allineamento |
 | NATIVE-CONFIG-01 | Nell'AAB 300033 mancano il JSON Capacitor e la risorsa Cordova `xml/config`. [Correzione locale del 22 ottobre](ANDROID_NATIVE_CONFIG_FIX_20261022.md): copia esplicita, keep mirato e controllo del bundle; regressioni locali superate. CHIUSO nella 300035: JSON e risorsa presenti anche nell’APK installato; avvio a freddo sul Galaxy senza il precedente errore |
 | LOCATION-UPDATE-01 | Causa dell'episodio Play ancora non provata. Il 22 ottobre è stato riprodotto e corretto localmente un percorso di avvio che disattiva la preferenza dopo errori temporanei: 114 test passano. Correzione integrata nel ramo release, non promossa su main. Percorsi ordinari sul Galaxy PASS; proprietario conferma preferenza attiva prima/dopo Play. Recupero da errore temporaneo sul dispositivo ancora non esercitato. [Analisi e limiti](ANDROID_LOCATION_STARTUP_20261022.md) |
 | BULLETIN-MAP-01 | [Spaziatura corretta e verificata su Brave/Galaxy](BULLETIN_MAP_LABEL_SPACING_20261022.md), già in main e incorporata nella candidata. Ricontrollata nel campione della AAB 300035 installata sul Galaxy il 23 ottobre |
@@ -84,7 +85,7 @@ La 300035 è installata dal proprietario; nessuna installazione dell’agente, d
   zero campagne, revisione 117.
 - **Web:** pubblicazione del 21 ottobre confermata; il nuovo pacchetto locale
   0.1.15 deve ancora essere pubblicato separatamente. Manifest e sorgenti comuni
-  nel [verbale della 300035](ANDROID_0.1.15_300035_BUILD_20261023.md); Safari/iPhone
+  nel [verbale corrente](RELEASE_WEB_REALTIME_ALIGNMENT_20261023.md); Safari/iPhone
   resta non verificato nel [piano Web](WEB_ANDROID_RELEASE_PARITY.md).
 - **Eventi, aggiornamento 22 ottobre:** correzioni distribuite, corsa ordinaria
   delle 06:00 verificata; Cinema Muto, Barcolana e Spazzapan recuperati. Restano
