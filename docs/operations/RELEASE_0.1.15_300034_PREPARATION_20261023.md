@@ -1,6 +1,31 @@
 # Preparazione 0.1.15 / 300034 — 23 ottobre 2026
 
-## Stato
+## Aggiornamento successivo: GitHub e avvio build
+
+Il proprietario ha autorizzato il push della release e la generazione della
+AAB, mantenendo separati upload Play e prova sul telefono. Ramo pubblicato,
+PR #11 aggiornata e CI [39912590614](https://github.com/meteofriul/meteofriul-app/actions/runs/39912590614)
+verde sul commit `7b38fe60`. Nessuna promozione su main.
+
+I quattro commit locali non ancora pubblicati sono stati ricreati per
+rappresentare gli hash dei log come coppie `path`/`sha256`: il controllo privacy
+interpretava il nome di un log API accanto al suo hash come una credenziale.
+I valori sono stati verificati sui log reali; nessuna regola privacy esclusa.
+La candidata Web conserva la sorgente originale `c30cfe33`; il corrispondente
+commit pubblicato è `f3161829`, con identico albero frontend `d4bf47fc45e474af952932942ea88c87fd438a90`.
+
+Il primo tentativo AAB si è arrestato **prima della riserva**: l'attestazione TTL
+del 20 ottobre non includeva il job avvisi già distribuito il 21 ottobre.
+Nuovo set immutabile `play-services-notices-20261023.json`, commit `390ee61a`:
+185 file backend dell'archivio Cloud Build coincidono con la sorgente attestata;
+il writer push coincide anche con quello corrente. Audit cloud in sola lettura
+PASS, zero blocchi; 71/71 e 860/860 documenti con scadenza valida.
+Regressioni PowerShell 5/7 e TTL PASS, inclusa la bocciatura del vecchio set
+contro il job aggiornato. [Prova](evidence/release-0.1.15-300034-build-20261023/writer-attestation.json).
+Nessun deploy necessario e nessuna guardia allentata. La build va ripresa sullo
+stesso 300034 solo dopo push e CI della nuova attestazione.
+
+## Stato della preparazione precedente
 
 Candidata preparata localmente su `codex/release-0.1.15`: nome **0.1.15**,
 `versionCode` **300034**. Il numero è configurato, non riservato né consumato.
