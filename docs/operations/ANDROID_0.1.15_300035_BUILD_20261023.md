@@ -66,26 +66,37 @@ resta conservata. Nessuna pubblicazione; ultima verifica del sito pubblico
 22 ottobre: 0.1.14. Nessuna nuova prova browser per scelta del proprietario.
 Safari/iPhone, PWA e aggiornamento cache rimangono NON VERIFICATI.
 
-## Controlli runtime ancora aperti
+## Verifica runtime successiva — 23 ottobre
 
-| Area | Esito e limite |
+**Aggiornamento: FAIL Tempo reale vuoto sul Galaxy, promozione sospesa.**
+La sezione era omessa dalla prima verifica mirata. Il problema è stato
+riprodotto dopo la segnalazione del proprietario; i risultati sotto riguardano
+solo i percorsi effettivamente provati. [Rilievo REALTIME-LAYOUT-01](ANDROID_0.1.15_300035_DEVICE_CHECK_20261023.md).
+
+Il proprietario ha aggiornato la 300035 da Play. La [prova sul Galaxy A52
+Android 14](ANDROID_0.1.15_300035_DEVICE_CHECK_20261023.md) conferma avvio
+minificato, configurazioni native presenti, Posizione conservata nei percorsi
+osservati e aria/pollini IT/FUR disponibili, senza falsa indisponibilità nei
+campioni di rientro. Mappa, barra fissa e ritorno dal dettaglio Eventi verificati.
+
+| Area | Esito e limite aggiornato |
 | --- | --- |
-| Edge-to-edge / inset | Regressioni automatiche incluse nella CI; Android 15/16, gesti/tre tasti, cutout, tastiera e ripresa della nuova AAB NON VERIFICATI |
-| API system bar deprecate | Nessuna modifica applicativa o toolchain in questa build; rimangono avvisi di dipendenze e Gradle, da non dichiarare risolti |
-| Orientamento / schermi grandi | Policy telefono portrait e layout adattivo invariati; tablet e multi-window della nuova AAB NON VERIFICATI |
-| R8 / risorse | Minificazione, shrinking, firma, configurazione nativa e mapping PASS sul bundle reale; funzionamento sul dispositivo NON VERIFICATO; quattro librerie native transitive senza simboli forniti |
+| Edge-to-edge / inset | Schermate osservate portrait Android 14 a tre tasti PASS; Android 15/16, gesti, cutout e matrice tastiera NON VERIFICATI |
+| API system bar deprecate | Toolchain invariata; avvisi delle dipendenze non risolti da questa prova |
+| Orientamento / schermi grandi | Portrait osservato; rotazione, tablet e multi-window NON ESERCITATI |
+| R8 / risorse | Confezionamento e avvio del pacchetto ufficiale minificato PASS; non equivale alla verifica di tutti i plugin. Quattro librerie native transitive senza simboli forniti |
 
-NATIVE-CONFIG-01 è risolto nel confezionamento, resta da verificare l'avvio
-minificato. LOCATION-UPDATE-01 e transitorio CAMS sono inclusi e coperti dalle
-regressioni, ma attendono il nuovo pacchetto sul telefono. Acquisire preferenza
-Posizione prima e subito dopo l'aggiornamento, prima di interazioni che la
-cambino. Il difetto riprodotto non dimostra la causa dell'episodio Play precedente.
+NATIVE-CONFIG-01 è chiuso nel pacchetto e nell'avvio sul Galaxy. Il proprietario
+conferma Posizione attiva prima e subito dopo l'aggiornamento; l'agente osserva
+conservazione in ripresa e avvio a freddo. L'errore GPS temporaneo non è stato
+indotto sul dispositivo e la causa dell'episodio precedente resta non provata.
+Il recupero CAMS da cache è immediato: il testo intermedio di caricamento resta
+coperto dalle regressioni automatiche, non esercitato in questa prova sul telefono.
 
-## Prossimo passaggio
+## Passaggio successivo
 
-Caricamento di **questo file esatto** autorizzato ed eseguito nel test interno
-personale: [ricevuta e avvisi](ANDROID_0.1.15_300035_UPLOAD_20261023.md).
-Resta la verifica sul pacchetto aggiornato dal Play Store, inclusa la preferenza
-Posizione prima e dopo l'aggiornamento. Nessuna pubblicazione in produzione.
-Non promuovere la release su main prima dei controlli runtime pertinenti. [Stato](RELEASE_0.1.15_STATUS_20261021.md) ·
-[Runbook](PLAY_AAB_RUNBOOK.md) · [Regole di prevenzione](ANDROID_BUILD_PREVENTION_RULES.md).
+Il test interno personale è disponibile; codice e documenti restano nel ramo
+release, senza promozione su main o in produzione. L'artefatto 300035 è immutato.
+Nessuna nuova AAB, installazione dell'agente, push, deploy o invio manuale.
+[Stato](RELEASE_0.1.15_STATUS_20261021.md) · [Runbook](PLAY_AAB_RUNBOOK.md) ·
+[Regole di prevenzione](ANDROID_BUILD_PREVENTION_RULES.md).

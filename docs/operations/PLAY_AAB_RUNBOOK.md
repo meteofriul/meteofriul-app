@@ -50,6 +50,17 @@ Matrice minima da riportare per ciascuna candidata:
 - Per R8: avvio, bridge Capacitor, permessi, localizzazione, notifiche, mappe e
   ritorno in app sul pacchetto minificato autorizzato per il collaudo.
 
+Una verifica mirata va presentata come tale anche nel messaggio finale;
+non dichiarare verificata tutta l'app sulla base di pochi percorsi. Per una
+qualifica completa registrare separatamente Home, **Previsioni, Bollettino,
+Tempo reale**, Eventi, Scopri e Impostazioni. In Tempo reale verificare mappa
+visibile con altezza utile, controlli del dock raggiungibili, lista segnalazioni
+e webcam; rispettare il divieto di invii quando presente. Screenshot e
+gerarchia devono essere concordi: elementi nel DOM/gerarchia, dati ricevuti o
+log senza crash non provano che il contenuto sia visibile e utilizzabile.
+Dopo modifiche a contenitori condivisi o barre fisse, riprovare anche le sezioni
+adiacenti che non dovevano cambiare. Ogni percorso omesso resta NON VERIFICATO.
+
 Usare emulatori dedicati. La sostituzione della prova sul telefono reale richiede
 una decisione esplicita del proprietario per quello specifico intervento; una
 precedente accettazione non diventa un'autorizzazione permanente. Se la prova

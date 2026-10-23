@@ -72,3 +72,14 @@ Correzione salvata in `53aba4ff` e integrata nella sola release con `da5b4d25`;
 main resta invariato. La candidata 300034 include il fix e regressioni automatiche,
 ma non ha una nuova prova sul dispositivo. La ricevuta precedente descrive
 l'esito originale prima dell'integrazione. [Preparazione corrente](RELEASE_0.1.15_300034_PREPARATION_20261023.md).
+
+## Pacchetto ufficiale 300035 sul Galaxy — 23 ottobre
+
+La 300035 aggiornata dal proprietario via Play contiene il fix. Card e dettagli
+IT/FUR mostrano valori coerenti; nelle registrazioni di rientro da Impostazioni
+non ricompare la falsa indisponibilità nei campioni osservati. Il recupero
+da cache è immediato, quindi il testo intermedio di caricamento non è stato
+esercitato sul telefono; i rami differiti e di errore restano coperti dalle
+regressioni controllate sopra. Nessuna cache cancellata o rete alterata.
+Nessuna promozione su main in questa sessione.
+[Verbale e limiti della prova reale](ANDROID_0.1.15_300035_DEVICE_CHECK_20261023.md).

@@ -93,3 +93,14 @@ qui descritti. Web e asset Web Android sono compilati dallo stesso frontend.
 Questo non promuove la correzione su main, non modifica la AAB 300033 e non prova
 la conservazione della preferenza durante un aggiornamento Play. Il rilievo
 runtime resta aperto. [Verbale dell'integrazione](RELEASE_WEB_ALIGNMENT_20261022.md).
+
+## Verifica ordinaria sul Galaxy — 23 ottobre
+
+Il proprietario ha aggiornato via Play alla 300035 e conferma Posizione attiva
+prima e subito dopo. L'agente osserva lo stesso stato all'inizio, dopo ripresa
+e dopo avvio a freddo; permessi e servizio Posizione OS sono controllati
+separatamente e invariati. Non è una misura dell'agente prima dell'aggiornamento.
+Il percorso normale supera la prova; recupero da errore temporaneo GPS sul
+telefono non esercitato, causa storica della 300033 ancora non dimostrata.
+Nessuna promozione del codice in questa sessione.
+[Verbale e ricevuta](ANDROID_0.1.15_300035_DEVICE_CHECK_20261023.md).

@@ -127,3 +127,11 @@ JSON Capacitor, registro plugin e risorsa Cordova presenti e verificati nel
 bundle minificato. Nel tentativo 300034 è emerso anche un errore nel filtro
 bundletool, corretto con regressioni basate sull'output reale. La correzione
 di confezionamento è attestata; la verifica sul dispositivo resta aperta.
+
+## Runtime reale 300035 — 23 ottobre
+
+L'APK installato dal Play Store contiene i due JSON attesi e la risorsa Cordova.
+L'avvio a freddo sul Galaxy A52 Android 14 non riproduce l'errore di
+configurazione; i percorsi selezionati funzionano nel runtime minificato.
+NATIVE-CONFIG-01 chiuso per confezionamento e avvio sul dispositivo.
+[Verbale e limiti](ANDROID_0.1.15_300035_DEVICE_CHECK_20261023.md).
