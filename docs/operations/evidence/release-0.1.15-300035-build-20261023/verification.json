@@ -1,0 +1,74 @@
+{
+  "schema_version": 1,
+  "checked_at_utc": "2026-10-23T07:32:23.111313+00:00",
+  "source_commit": "5e9bc7dcdc6183a2fc43ada2dea3dfb22f2a3dc1",
+  "status": "built-not-uploaded",
+  "version_name": "0.1.15",
+  "version_code": 300035,
+  "aab_sha256": "1bcf6a32348eee0f098f475c179523a309d962a86c3faf8736a0bd29a1622762",
+  "aab_bytes": 73017265,
+  "upload_certificate_sha256": "338c051587d62cdad6f9bd38eaa1e793d3da2d6c30c4270f8450a93a6ecec3b4",
+  "native_configuration": {
+    "Verification": "native-config-hashes-and-cordova-resource",
+    "ConfigSha256": "0e6adc3fd2d8c557b848322adbda800b4e69804f0aec2f37326aa25543979cce",
+    "PluginsSha256": "b9832bcf10b7daff2969d0d4b66bcfe5ef7acdf64107709bd3f839cf3cfda7e4",
+    "CordovaResource": "com.meteofriul.app:xml/config",
+    "CordovaBundleEntry": "base/res/xml/config.xml"
+  },
+  "mapping_sha256": "1578fd6e78e3f27ea18a568673e571bf6e602f88a7d9bf349a1f34300307e6ff",
+  "native_libraries": 4,
+  "native_symbols_status": "unavailable-transitive-native-libraries",
+  "source_ci": "https://github.com/meteofriul/meteofriul-app/actions/runs/39917176816",
+  "web": {
+    "schema_version": 1,
+    "created_at_utc": "2026-10-23T07:23:32.971046+00:00",
+    "source_commit": "5e9bc7dcdc6183a2fc43ada2dea3dfb22f2a3dc1",
+    "version_name": "0.1.15",
+    "android_version_code": 300035,
+    "mode": "build-only",
+    "published": false,
+    "browser_tests": false,
+    "file_count": 506,
+    "manifest_sha256": "b864977656515bb1f651026df17d42d95d4c4eda90cc7062998c5f9a24add8ff"
+  },
+  "sponsors": {
+    "enabled": false,
+    "campaign_count": 0,
+    "revision": 117,
+    "checked_at_utc": "2026-10-23T07:32:22.941547+00:00"
+  },
+  "protected_files_unchanged": 58,
+  "aab_copy_verified": true,
+  "web_archive_verified": true,
+  "browser_or_device_tests": false,
+  "play_upload": false,
+  "installations": false,
+  "deployments": false,
+  "manual_sends": false,
+  "evidence_files": [
+    {
+      "path": "build.log",
+      "sha256": "2bd1c3fc73fb705eb596e1a6e97f59fd6c4867fcb6fd241a6c274c33532a47ee"
+    },
+    {
+      "path": "build-result.json",
+      "sha256": "1a8b332aafe9c77a6658bbfb29e6372e7fe37d925d02f94bcd7991add7b26f29"
+    },
+    {
+      "path": "ci-before-build.json",
+      "sha256": "f9fea79a0e8ea6bb0677c8dd379b5fe479d77f5016c1bcfd6038ae96d3e854ab"
+    },
+    {
+      "path": "web-build.log",
+      "sha256": "d17879292f0c834f9369e99c7d5f2efa4e0cdf2f558f132904e9431bff4ad978"
+    },
+    {
+      "path": "web-build-result.json",
+      "sha256": "c2f710ea79fbe5c91ecc8c6962d1c60a05b2d74b6844d1edfad1776194b8fc71"
+    },
+    {
+      "path": "sponsors-after-build.json",
+      "sha256": "530e10997c0b7df84b94daed8f8ac061e3c4c4339b4ebc816cebae81a0ca3bd8"
+    }
+  ]
+}

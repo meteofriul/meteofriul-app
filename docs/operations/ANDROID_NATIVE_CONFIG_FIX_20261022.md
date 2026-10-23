@@ -119,3 +119,11 @@ senza Gradle, quelli API/R8 e le 42 asserzioni native sull'archivio 300033.
 Ledger (49 record) e artefatto storico restano invariati. Sono compilati soltanto
 Web e asset Web in modalità Android: nessuna nuova prova del contenuto minificato
 nativo o del dispositivo. [Base comune, risultati e limiti](RELEASE_WEB_ALIGNMENT_20261022.md).
+
+## Bundle reale 300035 — 23 ottobre
+
+La [300035](ANDROID_0.1.15_300035_BUILD_20261023.md) supera il builder completo:
+JSON Capacitor, registro plugin e risorsa Cordova presenti e verificati nel
+bundle minificato. Nel tentativo 300034 è emerso anche un errore nel filtro
+bundletool, corretto con regressioni basate sull'output reale. La correzione
+di confezionamento è attestata; la verifica sul dispositivo resta aperta.

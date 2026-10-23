@@ -1,5 +1,7 @@
 # Tentativo 0.1.15 / 300034 e preparazione 300035 — 23 ottobre 2026
 
+**Seguito:** la [300035 è generata e verificata](ANDROID_0.1.15_300035_BUILD_20261023.md). Le sezioni sotto conservano lo stato e la diagnosi del tentativo 300034.
+
 ## Esito e autorizzazioni
 
 Il tentativo 300034 ha compilato il bundle, ma il builder si è arrestato prima

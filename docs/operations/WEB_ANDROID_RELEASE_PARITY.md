@@ -3,6 +3,17 @@
 Regola del proprietario, 20 ottobre 2026: la Web App deve seguire la AAB,
 perché chi usa iPhone accede al prodotto dal browser.
 
+## Candidata del 23 ottobre 2026
+
+AAB 0.1.15 / 300035 e Web provengono entrambe da `5e9bc7dc`.
+La Web è stata compilata con `-BuildOnly`, con preflight API prima/dopo,
+CARTO e service worker verificati; archivio canonico
+`release-artifacts/web-candidates/20261023-0.1.15-5e9bc7dc/`.
+Nessuna pubblicazione e nessuna nuova prova browser per scelta del proprietario.
+Safari/iPhone e PWA restano non verificati. Il sito pubblico verificato il
+22 ottobre rimane 0.1.14; la parità pubblicata non è ancora raggiunta.
+[Identità, hash e limiti](ANDROID_0.1.15_300035_BUILD_20261023.md).
+
 ## Base comune e confini
 
 Usare lo stesso frontend approvato in main per Web e Android ufficiale. La TEST

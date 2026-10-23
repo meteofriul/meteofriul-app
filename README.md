@@ -15,18 +15,18 @@ contenuti culturali; l'interfaccia è disponibile in italiano e friulano.
 > iPhone dal browser. Il [percorso di allineamento Web/Android](docs/operations/WEB_ANDROID_RELEASE_PARITY.md)
 > richiede sorgenti e funzionalità coerenti, oltre alla verifica Safari/iPhone.
 
-**Release del 23 ottobre 2026:** candidata **0.1.15 / 300035** in preparazione,
-con main `f9e178b2`, correzione del transitorio aria/pollini, Posizione e
-configurazione nativa. Il tentativo 300034 ha compilato ma si è fermato per un
-filtro errato nel controllo delle risorse; correzione verificata e abbandono
-registrato con autorizzazione del proprietario. Nessun nuovo upload o installazione.
-[Verbale e limiti](docs/operations/ANDROID_0.1.15_300034_BUILD_20261023.md).
+**Release del 23 ottobre 2026:** AAB **0.1.15 / 300035 generata e verificata**,
+non caricata su Play. Include main `f9e178b2`, transitorio aria/pollini,
+conservazione della Posizione e configurazione nativa. CI e builder completo
+PASS; Web preparata dalla stessa sorgente `5e9bc7dc`, non pubblicata.
+Sponsor disattivati. Il tentativo 300034 è conservato e abbandonato.
+[Artefatto, controlli e limiti](docs/operations/ANDROID_0.1.15_300035_BUILD_20261023.md).
 
 La AAB **0.1.15 / 300033** resta quella del test interno personale già provata
 sul Galaxy. Le correzioni locali della configurazione nativa e della posizione
-richiedono ancora un nuovo pacchetto minificato e la verifica sul dispositivo;
+sono incluse nella 300035 e attendono la verifica sul dispositivo;
 la mappa, la barra fissa di Bollettino/Eventi, Vite e Indietro nelle Impostazioni
-sono già verificati su Brave e integrati da main. La nuova AAB deve ancora completare il builder protetto.
+sono già verificati su Brave e integrati da main. La nuova AAB non è installata.
 La PR 11 è pubblicata in bozza e questa integrazione non promuove la release
 su main. [Stato e prossimi passi](docs/operations/RELEASE_0.1.15_STATUS_20261021.md).
 
@@ -61,7 +61,7 @@ e non sostituisce la sua verifica. Evidenze e limiti nel [verbale sul telefono](
 
 | Canale | Stato |
 | --- | --- |
-| Web | `0.1.14` pubblicata il 21 ottobre su `meteofriul.app`; candidata locale `0.1.15` da `c30cfe33`, non distribuita; Safari/iPhone non verificato |
+| Web | `0.1.14` pubblicata il 21 ottobre su `meteofriul.app`; candidata locale `0.1.15` da `5e9bc7dc`, non distribuita; Safari/iPhone non verificato |
 | API | FastAPI su Cloud Run, chiamata direttamente via HTTPS da Web e Android |
 | Android | `0.1.15` (`300033`) nel test interno personale; verificata sul Galaxy Android 14, con difetto di configurazione nativa nel bundle da correggere prima della promozione. [Esito e limiti](docs/operations/RELEASE_0.1.15_STATUS_20261021.md) |
 | Google Play | Produzione `0.1.14` (`300031`) nella lettura del 23 ottobre; `0.1.15` (`300033`) solo nel test interno, una lista con un utente. Sponsor disattivati |
