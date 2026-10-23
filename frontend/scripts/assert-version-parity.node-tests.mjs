@@ -10,7 +10,7 @@ const aligned = {
 };
 
 test("current frontend and Android release versions match", () => {
-  assert.equal(assertWorkspaceVersionParity(), "0.1.14");
+  assert.equal(assertWorkspaceVersionParity(), "0.1.15");
 });
 
 test("rejects a stale frontend version", () => {

@@ -1,0 +1,21 @@
+{
+  "observed_at": "2026-10-20T20:11:56.951103+00:00",
+  "same_alert_signature": true,
+  "rows": 45,
+  "groups": [
+    {
+      "claimed_at": "2026-10-20T20:00:19.057760Z",
+      "state": "failed_invalid_token",
+      "error_code": "fcm_token_invalid",
+      "count": 1
+    },
+    {
+      "claimed_at": "2026-10-20T20:00:19.057760Z",
+      "state": "sent",
+      "error_code": "",
+      "count": 44
+    }
+  ],
+  "privacy": "Only projected state/error/time/signature read; no device IDs, target hashes or tokens collected",
+  "limits": "Runtime FCM classifier conflates Unregistered and SenderIdMismatch; fcm_token_invalid alone cannot distinguish them"
+}

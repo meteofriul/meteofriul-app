@@ -1,0 +1,8 @@
+{
+  "SchemaVersion": 1,
+  "CreatedAtUtc": "2026-10-21T15:13:15.1946749Z",
+  "Event": "abandoned",
+  "VersionCode": 300032,
+  "VersionName": "0.1.15",
+  "Reason": "Local Web compilation failed before Android bundling: incomplete copy omitted the idb build directory. No AAB produced or uploaded. Reservation preserved; retry uses 300033."
+}

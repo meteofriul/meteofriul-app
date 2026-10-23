@@ -1,0 +1,101 @@
+[
+  {
+    "target": "api-current-test",
+    "path": "backend/app/push/fcm.py",
+    "deployed_digest": "sha256:5522b4cfc15076a9f93e838e3643b35e1aa5ad4ce0bf5bca4851997ea94c2ae8",
+    "deployed_sha256": "83d0145a9d46e4df773f6c54afc5867d1f148e1d1e3f04c6e8b6917a63f91c5b",
+    "candidate_sha256": "33139ebc45b5e3012e65a85128b3cc884c324cea4f5a242107b939ae59036faf",
+    "current_candidate_equals_audited_main": true,
+    "differs_from_deployed": true
+  },
+  {
+    "target": "api-current-test",
+    "path": "backend/app/services/promotions.py",
+    "deployed_digest": "sha256:5522b4cfc15076a9f93e838e3643b35e1aa5ad4ce0bf5bca4851997ea94c2ae8",
+    "deployed_sha256": "3febc49b544d95b069bc6acd2966a7dbf86c5124c4dd63967083adb7581f016c",
+    "candidate_sha256": "b8939af7ce7916b86e34090674e0737e8f6ac33fa30de37548c1df158b24dc05",
+    "current_candidate_equals_audited_main": true,
+    "differs_from_deployed": true
+  },
+  {
+    "target": "events",
+    "path": "backend/app/events/engine.py",
+    "deployed_digest": "sha256:529d93d115de05ff8d6039d09545d2d2e9da5fd87ace227b22f4be6e7b0c296b",
+    "deployed_sha256": "fe223e6bb998fc7f5c3e82610dfbf5f8b806451aa2180947c639027dbe6c4bc0",
+    "candidate_sha256": "07b4e77b944cbc4ec17b01dc4368b84f8ae3d6fa95fb9d1da02bc3d992bed842",
+    "current_candidate_equals_audited_main": true,
+    "differs_from_deployed": true
+  },
+  {
+    "target": "events",
+    "path": "backend/app/events/pilot_catalog.py",
+    "deployed_digest": "sha256:529d93d115de05ff8d6039d09545d2d2e9da5fd87ace227b22f4be6e7b0c296b",
+    "deployed_sha256": "ab9090a0ecd8f564fd7bed7fbaccc08ace3b70a1930f032cda583735b724cb05",
+    "candidate_sha256": "0d0f6eb19eec612d646c5b0e2bad3b09a156b1bc6c8894f6be4bf6a17dec9b6c",
+    "current_candidate_equals_audited_main": true,
+    "differs_from_deployed": true
+  },
+  {
+    "target": "events",
+    "path": "backend/app/events/pilot_http.py",
+    "deployed_digest": "sha256:529d93d115de05ff8d6039d09545d2d2e9da5fd87ace227b22f4be6e7b0c296b",
+    "deployed_sha256": "921c95d5ce9ece789a68cf907a85da806a574a1896dc5b09c0b3e6c649d76f5e",
+    "candidate_sha256": "9eb5423c15f2f7b7649175dc1cb9fe10c13ce2bf3987846bc13562501c1b2ed4",
+    "current_candidate_equals_audited_main": true,
+    "differs_from_deployed": true
+  },
+  {
+    "target": "events",
+    "path": "backend/app/events/pilot_regional_display_audit.py",
+    "deployed_digest": "sha256:529d93d115de05ff8d6039d09545d2d2e9da5fd87ace227b22f4be6e7b0c296b",
+    "deployed_sha256": "fe1ad05a54287a31e9ad4927dc769fb2e8bd676249008a04c74e2c55557db39f",
+    "candidate_sha256": "d630c5891b6b172883e91cbdfb64d8fc16486526f4dc9488e46aee78c402d72d",
+    "current_candidate_equals_audited_main": true,
+    "differs_from_deployed": true
+  },
+  {
+    "target": "events",
+    "path": "backend/app/events/pilot_sagrefvg.py",
+    "deployed_digest": "sha256:529d93d115de05ff8d6039d09545d2d2e9da5fd87ace227b22f4be6e7b0c296b",
+    "deployed_sha256": "dab69ddb54e03213dc90a2dbf7a519ee73afed5247b9a55288bb897e63310ed2",
+    "candidate_sha256": "c95f7fc29dfd52db197b472b47251377a983c6a12b45abb4f5f7cf2c7e78962d",
+    "current_candidate_equals_audited_main": true,
+    "differs_from_deployed": true
+  },
+  {
+    "target": "events",
+    "path": "backend/app/events/pilot_spazzapan.py",
+    "deployed_digest": "sha256:529d93d115de05ff8d6039d09545d2d2e9da5fd87ace227b22f4be6e7b0c296b",
+    "deployed_sha256": "da6356bf637a8afba4b898e21166bf5e991c5496d93c73d05e2cc6d6479b27a4",
+    "candidate_sha256": "2c6219020873fb102944f66fd3032e06c092f812059e1b217ee432e1f8a30526",
+    "current_candidate_equals_audited_main": true,
+    "differs_from_deployed": true
+  },
+  {
+    "target": "events",
+    "path": "backend/app/push/fcm.py",
+    "deployed_digest": "sha256:529d93d115de05ff8d6039d09545d2d2e9da5fd87ace227b22f4be6e7b0c296b",
+    "deployed_sha256": "83d0145a9d46e4df773f6c54afc5867d1f148e1d1e3f04c6e8b6917a63f91c5b",
+    "candidate_sha256": "33139ebc45b5e3012e65a85128b3cc884c324cea4f5a242107b939ae59036faf",
+    "current_candidate_equals_audited_main": true,
+    "differs_from_deployed": true
+  },
+  {
+    "target": "morning-and-local-jobs",
+    "path": "backend/app/push/fcm.py",
+    "deployed_digest": "sha256:7af9d579cdc135b1823e226ae99aec7fb3ec93276d5aa0af80910923b363fe04",
+    "deployed_sha256": "20023bc9d19319945a838cdb1b8755fd1bffe1b6db8f60f93924e663f43522b6",
+    "candidate_sha256": "33139ebc45b5e3012e65a85128b3cc884c324cea4f5a242107b939ae59036faf",
+    "current_candidate_equals_audited_main": true,
+    "differs_from_deployed": true
+  },
+  {
+    "target": "national-alert-jobs",
+    "path": "backend/app/push/fcm.py",
+    "deployed_digest": "sha256:0ca66c4c7839f598554b5f0b5eb7f38a4205b5dbfcbedb9f7d22d81eb5a83848",
+    "deployed_sha256": "83d0145a9d46e4df773f6c54afc5867d1f148e1d1e3f04c6e8b6917a63f91c5b",
+    "candidate_sha256": "33139ebc45b5e3012e65a85128b3cc884c324cea4f5a242107b939ae59036faf",
+    "current_candidate_equals_audited_main": true,
+    "differs_from_deployed": true
+  }
+]

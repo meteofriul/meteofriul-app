@@ -1,0 +1,182 @@
+{
+  "schema_version": 1,
+  "checked_at_utc": "2026-10-23T10:34:41.355862+00:00",
+  "status": "LOCAL_PREPARATION_PASS_NEW_ANDROID_RUNTIME_PENDING",
+  "branch": "codex/release-0.1.15",
+  "source_commit": "16890b8c640d4ad45e33e2bea3da4d8562a3d754",
+  "main_integrated": "2d8b0c327204c5812bb67dbf203ed948812a445e",
+  "frontend_tree": "20779cfcc19dedebb81061333ff370a67e062c43",
+  "version_name": "0.1.15",
+  "version_code_configured_unchanged": 300035,
+  "new_version_reserved": false,
+  "frontend_tests": {
+    "passed": 5047,
+    "failed": 0,
+    "skipped": 13,
+    "files_passed": 552,
+    "files_skipped": 5
+  },
+  "local_checks": {
+    "canonical-cleanliness": "PASS",
+    "ledger-audit": "PASS",
+    "frontend-tests": "PASS",
+    "lint": "PASS",
+    "frontend-guards": "PASS",
+    "builder-contracts": "PASS",
+    "native-config-contracts": "PASS",
+    "r8-contracts": "PASS",
+    "api-preflight-contracts": "PASS",
+    "diff-check": "PASS",
+    "web-build": "PASS",
+    "android-web-build": "PASS",
+    "android-api-binding": "PASS",
+    "android-carto-binding": "PASS"
+  },
+  "frontend_guard_tests": 16,
+  "native_configuration_contract_assertions": 43,
+  "dependencies": {
+    "physical_node_modules": true,
+    "required_versions_checked": 361,
+    "vite": "8.1.6",
+    "lock_sha256": "aa4a706abc6512153b14dfd79d3f252b0f02e963864537b7225e75bdfa7a449f",
+    "installations": false
+  },
+  "ledger": {
+    "record_count": 54,
+    "status": "PASS_UNCHANGED"
+  },
+  "protected_files_unchanged": 259,
+  "artifacts": {
+    "archive_relative_path": "release-artifacts/web-candidates/20261023-0.1.15-16890b8c",
+    "source_commit": "16890b8c640d4ad45e33e2bea3da4d8562a3d754",
+    "main_integrated": "2d8b0c327204c5812bb67dbf203ed948812a445e",
+    "frontend_tree": "20779cfcc19dedebb81061333ff370a67e062c43",
+    "manifest_sha256": "6dc45aa682c277f9ae3cace1a8add59a527ab78c99773a183693416daf2fb82e",
+    "artifacts": {
+      "web": {
+        "files": 506,
+        "bytes": 76030579
+      },
+      "android-web": {
+        "files": 505,
+        "bytes": 75977911
+      }
+    },
+    "protected_files_unchanged": 259,
+    "sponsors": {
+      "checked_at_utc": "2026-10-23T10:31:50.563562+00:00",
+      "enabled": false,
+      "revision": 117,
+      "campaign_count": 0
+    },
+    "realtime_css_in_both_bundles": true
+  },
+  "api": {
+    "base": "https://play-b6fbe4d---meteofriul-api-bx24xqvcda-ew.a.run.app/api",
+    "revision": "meteofriul-api-00251-jow",
+    "backend_commit": "e180b87abe5dac022034881ea4eb1ca60a0d4e78",
+    "image_digest": "europe-west1-docker.pkg.dev/meteo-friul/cloud-run-source-deploy/meteofriul-api@sha256:5522b4cfc15076a9f93e838e3643b35e1aa5ad4ce0bf5bca4851997ea94c2ae8",
+    "preflight_before_and_after": "PASS"
+  },
+  "sponsors_before": {
+    "checked_at_utc": "2026-10-23T10:30:42.274240+00:00",
+    "enabled": false,
+    "revision": 117,
+    "campaign_count": 0
+  },
+  "sponsors_after": {
+    "checked_at_utc": "2026-10-23T10:31:50.563562+00:00",
+    "enabled": false,
+    "revision": 117,
+    "campaign_count": 0
+  },
+  "reused_device_evidence": {
+    "report": "docs/operations/REALTIME_LAYOUT_FIX_20261023.md",
+    "candidate": "40af8779536881e32363019d1d446d6d672c66a9",
+    "source_hashes_identical": true,
+    "scope": "Brave Galaxy Android 14 IT/FUR, preview only; no new device session"
+  },
+  "native_toolchain_and_configuration_unchanged": true,
+  "not_performed": [
+    "AAB/APK generation",
+    "Capacitor sync",
+    "Gradle",
+    "version reservation",
+    "installation",
+    "new browser/device tests",
+    "emulator",
+    "git push",
+    "deploy",
+    "manual sends",
+    "release promotion to main"
+  ],
+  "pending": [
+    "New authorized AAB with versionCode above all consumed codes",
+    "Real-device minified runtime including all sections and REALTIME-LAYOUT-01",
+    "Android 15/16, gestures, tablet/multiwindow",
+    "Safari/iPhone/PWA and static Web update/cache checks",
+    "Push and CI for integrated release before guarded AAB build"
+  ],
+  "evidence_files": [
+    {
+      "name": "canonical-cleanliness.log",
+      "sha256": "2e7927058bc6fe40454c948e0806fc57cb4f1a1523561295738f388def34cb15"
+    },
+    {
+      "name": "ledger-audit.log",
+      "sha256": "72704fb5272106db3ea1253a7aaa19c6614894a0d21ec3c95c6b9f8ac35dfc4b"
+    },
+    {
+      "name": "frontend-tests.log",
+      "sha256": "6017fcde4761c338cfa3b149c54fd2dec7fd09574fe7bbede74956743d42d73f"
+    },
+    {
+      "name": "lint.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "frontend-guards.log",
+      "sha256": "b1c86799c122a02990e0812aededeb27d6de121d57deda266267085dc169aa9f"
+    },
+    {
+      "name": "builder-contracts.log",
+      "sha256": "0850ab44513462c7b383cb86cde1565f440f6621dc720e94ab7126e143959a16"
+    },
+    {
+      "name": "native-config-contracts.log",
+      "sha256": "a9e11e3d829b247e6b2bde45b05ffc61af47f3b8ce61384e2e6d4d51d04d1dcf"
+    },
+    {
+      "name": "r8-contracts.log",
+      "sha256": "9cb8a388416eed6c9c12b2e941ff0cc70db257bc6e1ea29644a8378ebf66a102"
+    },
+    {
+      "name": "api-preflight-contracts.log",
+      "sha256": "b27b3fcb158c7cbdecde0625f30cce5dc1c6016cfe5edd47c0bf57b3e998ced3"
+    },
+    {
+      "name": "diff-check.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "web-build.log",
+      "sha256": "ae97602f2a91f4575c6647579e6ef16c98ba607cee4a8010d331614edf334ece"
+    },
+    {
+      "name": "android-web-build.log",
+      "sha256": "dae93feb31ba62f12a7f5f81eb1a67921e58e8f090dd9023132938d083d656c3"
+    },
+    {
+      "name": "android-api-binding.log",
+      "sha256": "09256a5b690bb2f411d1c420e55e53e0a37dd9067f81c04d1dec2e729541ea54"
+    },
+    {
+      "name": "android-carto-binding.log",
+      "sha256": "fb0ae53eb9cbb90e1500662e416eb7a16eb5980d63f790a7075eeb18c9b1811e"
+    },
+    {
+      "name": "frontend-tests.json",
+      "sha256": "b17f8dbfb7c855b3de9688526c838b397334780b60daace1ed21d250ea8d2bc8"
+    }
+  ]
+}

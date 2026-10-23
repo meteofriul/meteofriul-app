@@ -1,0 +1,153 @@
+{
+  "schema_version": 1,
+  "status": "built-not-uploaded",
+  "artifact": {
+    "status": "PASS",
+    "build_exit_code": 0,
+    "source_commit": "f82503e4daabc283a5caf77b49e7cf58439abf61",
+    "artifacts": [
+      {
+        "file": "meteofriul-300033-0.1.15.aab",
+        "sha256": "cb461c8e5e6fddd05407214a507e151e02e8041f403d9346c364bbe0174ba019",
+        "bytes": 72859275
+      },
+      {
+        "file": "meteofriul-300033-0.1.15.mapping.txt",
+        "sha256": "1578fd6e78e3f27ea18a568673e571bf6e602f88a7d9bf349a1f34300307e6ff",
+        "bytes": 15259259
+      }
+    ],
+    "package": "com.meteofriul.app",
+    "version_name": "0.1.15",
+    "version_code": 300033,
+    "min_sdk": "24",
+    "target_sdk": "36",
+    "debuggable": false,
+    "global_main_activity_orientation_lock": false,
+    "resizable": true,
+    "pilot_build": false,
+    "mapping_embedded_equals_external": true,
+    "native_libraries": [
+      {
+        "entry": "base/lib/arm64-v8a/libdatastore_shared_counter.so",
+        "load_segment_alignments_bytes": [
+          16384,
+          16384,
+          16384
+        ]
+      },
+      {
+        "entry": "base/lib/armeabi-v7a/libdatastore_shared_counter.so",
+        "load_segment_alignments_bytes": [
+          16384,
+          16384
+        ]
+      },
+      {
+        "entry": "base/lib/x86/libdatastore_shared_counter.so",
+        "load_segment_alignments_bytes": [
+          16384,
+          16384
+        ]
+      },
+      {
+        "entry": "base/lib/x86_64/libdatastore_shared_counter.so",
+        "load_segment_alignments_bytes": [
+          16384,
+          16384
+        ]
+      }
+    ],
+    "native_symbols_status": "unavailable-transitive-native-libraries",
+    "runtime_tested_on_this_artifact": false
+  },
+  "sponsors": {
+    "checked_at": "2026-10-21T15:33:47.3082682Z",
+    "enabled": false,
+    "campaigns": 0,
+    "revision": 117
+  },
+  "automated_checks": {
+    "release_guards": {
+      "pass": 9,
+      "fail": 0
+    },
+    "android_ui": {
+      "files": 4,
+      "pass": 19,
+      "fail": 0
+    },
+    "sponsor_readers": {
+      "files": 4,
+      "pass": 49,
+      "fail": 0
+    },
+    "r8_contract": "PASS",
+    "writer_multi_image_contract": "PASS",
+    "ledger_before_build": {
+      "status": "PASS",
+      "records": 44
+    },
+    "guarded_builder_contract": {
+      "AppendOnlyLedger": "PASS",
+      "BundletoolTrust": "PASS",
+      "DurableArchive": "PASS",
+      "FirebaseIdentity": "PASS",
+      "GradleReleaseGuard": "PASS",
+      "JavaPerEntrySignatureVerifier": "PASS",
+      "LedgerGitImmutability": "PASS",
+      "R8Artifacts": "PASS",
+      "UploadCertificateTrust": "PASS",
+      "VersionReservation": "PASS"
+    },
+    "ledger_before_successful_build": {
+      "status": "PASS",
+      "records": 46
+    },
+    "guarded_builder_retry_regressions": "PASS",
+    "release_api_preflight_contract": "PASS",
+    "android_web_build_before_reservation": "PASS"
+  },
+  "runtime_limits": {
+    "new_official_package": "NOT_VERIFIED",
+    "android_15": "NOT_VERIFIED",
+    "android_16": "NOT_VERIFIED",
+    "older_supported_android": "NOT_VERIFIED_ON_THIS_ARTIFACT",
+    "tablet_multiwindow": "NOT_VERIFIED",
+    "play_integrity_from_internal_track": "NOT_VERIFIED",
+    "ios_safari": "NOT_VERIFIED"
+  },
+  "play_console": {
+    "observed_date": "2026-10-21",
+    "surface": "Release e bundle piu recenti",
+    "package": "com.meteofriul.app",
+    "latest_version_code": 300031,
+    "latest_version_name": "0.1.14",
+    "current_tracks": [
+      "production",
+      "internal"
+    ],
+    "mutations": 0
+  },
+  "internal_test_audience": {
+    "selected_lists": 1,
+    "users_in_selected_list": 1,
+    "console_mutations": 0
+  },
+  "retry": {
+    "abandoned_code": 300032,
+    "aab_produced_for_abandoned_code": false,
+    "third_attempt_reserved_code": false,
+    "successful_code": 300033
+  },
+  "actions": {
+    "play_uploads": 0,
+    "device_installations": 0,
+    "new_deploys": 0,
+    "manual_sends": 0
+  },
+  "storage": {
+    "release_archive_and_canonical_archive_sha256_match": true
+  },
+  "documentation": "docs/operations/ANDROID_BUILD_PREVENTION_RULES.md"
+}

@@ -1,0 +1,46 @@
+{
+  "verified_at": "2026-10-20T20:05:38.062889+00:00",
+  "execution": "meteofriul-official-alert-sync-jdgwd",
+  "scheduler_creator_verified": true,
+  "image": "europe-west1-docker.pkg.dev/meteo-friul/meteofriul/backend@sha256:7364eca349bda9afb5cdbb9c88a9e3f01c7fc14f0bea8f0595ad926fc8f43368",
+  "job_completed": "False",
+  "job_summary": {
+    "active": true,
+    "cache_status": "fresh",
+    "count": 1,
+    "push": {
+      "attempted": 45,
+      "deduplicated": 0,
+      "delivery_batches": 1,
+      "failed": 1,
+      "pages_processed": 1,
+      "sent": 44,
+      "sent_unconfirmed": 0,
+      "status": "partial"
+    },
+    "refreshed": true,
+    "source_mode": "official_fvg_widget_arpa_corroborated",
+    "stored_in": "firestore",
+    "upstream_failure": null
+  },
+  "api_matches_persistent_snapshot_and_sources": true,
+  "alerts": [
+    {
+      "level": "arancione",
+      "zone_levels": {
+        "FVG-C": "gialla",
+        "FVG-D": "verde",
+        "FVG-B": "arancione",
+        "FVG-A": "arancione"
+      },
+      "valid_from": "2026-10-21T00:00:00+02:00",
+      "valid_to": "2026-10-22T06:00:00+02:00",
+      "pdf_url": "https://pianiemergenza.protezionecivile.fvg.it/alerts/30_2026.pdf"
+    }
+  ],
+  "snapshot_update_time": "2026-10-20T20:00:18.799855Z",
+  "manual_executions": 0,
+  "push_meaning": "sent means FCM accepted the request; it does not prove display on a physical phone",
+  "success": false,
+  "physical_phone_delivery_verified": false
+}

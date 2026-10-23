@@ -100,8 +100,8 @@ android {
         applicationId "com.meteofriul.app"
         minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.targetSdkVersion
-        versionCode 300031
-        versionName "0.1.14"
+        versionCode 300036
+        versionName "0.1.15"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         buildConfigField 'String', 'METEO_API_BASE', '"' + meteoBackgroundApiBase + '"'
         buildConfigField 'boolean', 'LOCAL_WEATHER_PILOT', 'false'

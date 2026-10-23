@@ -388,11 +388,6 @@ function Read-PlayReleaseLedger {
             VersionName = $names[0]
         }
     }
-    $duplicateName = @($allVersions | Group-Object { $_.VersionName.ToLowerInvariant() } |
-        Where-Object Count -gt 1 | Select-Object -First 1)
-    if ($duplicateName.Count -gt 0) {
-        throw "release_android_play_version_name_conflict: versionName=$($duplicateName[0].Name)"
-    }
 
     foreach ($release in $releases) {
         $matchingReservation = @(
@@ -480,6 +475,30 @@ function Read-PlayReleaseLedger {
         }
     }
 
+    # A validated built manifest or abandonment permits another build with the
+    # same display name and a strictly greater version code. Play acceptance
+    # does not reserve a display name forever. An unresolved reservation still
+    # blocks it. Derive this only from the validated ledger, never a CLI bypass.
+    # Keep RetryableVersionName for both existing candidate guards; every code
+    # remains in AllVersions and can never be reused.
+    foreach ($version in $allVersions) {
+        $abandoned = @($evidence | Where-Object {
+            $_.Event -ceq "abandoned" -and
+            [int](Get-PlayLedgerProperty $_.Record "VersionCode") -eq $version.VersionCode
+        })
+        $built = @($releases | Where-Object VersionCode -eq $version.VersionCode)
+        $version | Add-Member NoteProperty RetryableVersionName (
+            $abandoned.Count -eq 1 -or $built.Count -eq 1
+        )
+    }
+    # Multiple completed builds may share a name; two unresolved reservations may not.
+    $duplicateName = @($allVersions | Where-Object { -not $_.RetryableVersionName } |
+        Group-Object { $_.VersionName.ToLowerInvariant() } |
+        Where-Object Count -gt 1 | Select-Object -First 1)
+    if ($duplicateName.Count -gt 0) {
+        throw "release_android_play_version_name_conflict: versionName=$($duplicateName[0].Name)"
+    }
+
     $latestAccepted = @(
         $evidence | Where-Object Event -eq "play-accepted" |
             Sort-Object VersionCode, CreatedAt -Descending | Select-Object -First 1
@@ -512,9 +531,11 @@ function Assert-PlayCandidateVersion {
         throw "release_android_play_candidate_version_invalid"
     }
     foreach ($existing in @($ExistingVersions)) {
+        $retryableName = Get-PlayLedgerProperty $existing "RetryableVersionName"
+        $canRetryName = $retryableName -is [bool] -and $retryableName -eq $true
         if (
             [int]$existing.VersionCode -eq $CandidateVersionCode -or
-            [string]$existing.VersionName -ieq $name
+            ([string]$existing.VersionName -ieq $name -and -not $canRetryName)
         ) {
             throw "release_android_play_candidate_version_reserved"
         }

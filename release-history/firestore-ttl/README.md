@@ -29,3 +29,19 @@ correzione delle allerte FVG. Le prove sono in
 `../cloud-operations/20261020-services-attestation/`. La copia originale locale
 dell'archivio serale coincide con lo SHA-256 di Cloud Build, anche se l'oggetto
 temporaneo cloud è stato rimosso.
+
+## Set corrente per la release 0.1.15 / 300034
+
+Il gate usa `runtime-writer-sets/play-services-notices-20261023.json`.
+Include le allerte FVG del 20 ottobre e il job avvisi locali aggiornato il
+21 ottobre (sorgente `18b88049`, Cloud Build `d7be8c19-3a33-4aef-ab98-6bf76c9794ca`).
+Il job mattutino conserva la precedente immagine. I set storici restano immutati.
+L'archivio locale del build del 21 ottobre coincide con lo SHA-256 di Cloud
+Build; sorgenti backend e writer push coincidono con il commit attestato.
+
+Dopo ogni deploy che cambia un writer, prima di preparare una AAB verificare
+il nuovo digest, la provenienza Cloud Build e il codice TTL nell'archivio
+sorgente. Aggiungere un nuovo set immutabile e aggiornare il percorso predefinito
+del gate. Un digest diverso non autorizza a ignorare il controllo: occorrono
+prima le prove del deploy, poi un nuovo audit in lettura. Non serve ridistribuire
+un job soltanto per aggiornare questa attestazione.

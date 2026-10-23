@@ -3,6 +3,28 @@
 Regola del proprietario, 20 ottobre 2026: la Web App deve seguire la AAB,
 perché chi usa iPhone accede al prodotto dal browser.
 
+## Candidata aggiornata del 23 ottobre 2026 — Tempo reale
+
+AAB **0.1.15 / 300036** e candidata Web dalla stessa sorgente `9d5ff2f415ab8b10be510eff2a0b058a8c2408ac`,
+allineata a main `2d8b0c32`. Inclusa la correzione di Tempo reale; conservate
+Posizione, CAMS e configurazione nativa. AAB firmata, verificata e disponibile nel test interno dalle 13:37 del 23 ottobre;
+Web compilata con `-BuildOnly` e non pubblicata. Sponsor spenti, zero campagne.
+Archivio canonico `release-artifacts/web-candidates/20261023-0.1.15-9d5ff2f4/`.
+[Controlli, hash e limiti](ANDROID_0.1.15_300036_BUILD_20261023.md).
+
+La candidata `16890b8c` e quella precedente da `5e9bc7dc` restano conservate.
+La AAB 300035, precedente candidata interna, non contiene il fix Tempo reale.
+La 300036 è ora l'ultimo pacchetto osservato sul Galaxy: mappa e dock visibili
+anche dopo avvio a freddo, Posizione conservata, aria/pollini IT/FUR e percorsi
+di navigazione osservati PASS. [Prova e limiti](ANDROID_0.1.15_300036_DEVICE_CHECK_20261023.md).
+Il caricamento resta attestato nel [verbale Play](ANDROID_0.1.15_300036_UPLOAD_20261023.md).
+La verifica Android non sostituisce un collaudo del bundle statico Web.
+Prima della pubblicazione Web restano prova del bundle statico e aggiornamento
+cache; Safari/iPhone e PWA non verificati. Il sito pubblico nell'ultima lettura
+del 23 ottobre rimane 0.1.14: HTML con `main-D-Nry2Xb.js` e asset SHA256
+`c5ab69f0a4b63df56ea2254b60fcf829e91b30274632653f000962ac1aa010ca`,
+identico alla ricevuta del 22 ottobre. La parità pubblicata non è ancora raggiunta.
+
 ## Base comune e confini
 
 Usare lo stesso frontend approvato in main per Web e Android ufficiale. La TEST
@@ -68,4 +90,9 @@ con i contratti dati attivi. Non è autorizzato implicitamente dalla preparazion
 - Deployment pubblico effettivo e precedente per rollback, dopo autorizzazione.
 - Nessun riferimento a chiavi private, token o credenziali negli allegati.
 
-Preparazione corrente: [candidato del 20 ottobre](WEB_APP_CANDIDATE_20261020.md).
+Preparazioni precedenti: [300034](RELEASE_0.1.15_300034_PREPARATION_20261023.md) e [300035](ANDROID_0.1.15_300035_BUILD_20261023.md). Sono verbali storici; la candidata corrente è identificata sopra.
+
+La Web pubblica è già stata aggiornata il 21 ottobre da `1b0287c1`, versione
+0.1.14: non contiene le correzioni successive del 22 ottobre. Il precedente
+[candidato del 20 ottobre](WEB_APP_CANDIDATE_20261020.md) resta un verbale storico,
+non l'identità della nuova candidata o dello stato pubblico corrente.

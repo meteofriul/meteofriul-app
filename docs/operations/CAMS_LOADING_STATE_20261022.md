@@ -118,3 +118,9 @@ installazione, AAB, push, deploy, invio, esecuzione manuale di job o emulatore.
 Gli sponsor restano disattivati. Il lavoro non attribuisce a un job il
 precedente episodio transitorio dell'anteprima: quella causa non era
 dimostrata.
+
+## Seguito del 23 ottobre
+
+Il transitorio al rientro dalle altre sezioni è riprodotto e corretto localmente
+nel [verbale dedicato](CAMS_REENTRY_LOADING_20261023.md). La prova Galaxy del
+22 ottobre sopra rimane storica: non attesta questo nuovo delta.

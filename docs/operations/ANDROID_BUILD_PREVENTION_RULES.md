@@ -5,11 +5,12 @@ avviare il builder**, anche se il lavoro riprende dopo una pausa. Integra il
 [runbook Play](PLAY_AAB_RUNBOOK.md); non sostituisce i suoi gate. Le regole
 seguenti derivano dagli errori della preparazione 0.1.15 del 21 ottobre 2026.
 
-> Stato 21 ottobre: le correzioni dei preflight e del retry già usate per 300033
-> sono conservate nel ramo `codex/release-0.1.15`, ancora da promuovere.
-> Queste linee guida possono essere aggiornate su main senza distribuire quelle
-> correzioni. Il controllo automatico del file Capacitor mancante resta da
-> implementare. Consultare lo [stato corrente](RELEASE_0.1.15_STATUS_20261021.md).
+> Aggiornamento 22 ottobre: preflight, retry e correzione della configurazione
+> nativa sono conservati nel ramo `codex/release-0.1.15`, ancora da promuovere.
+> Il [nuovo controllo automatico](ANDROID_NATIVE_CONFIG_FIX_20261022.md) supera
+> le regressioni locali; una nuova AAB minificata e la prova sul dispositivo
+> restano da autorizzare/eseguire. Consultare lo
+> [stato corrente](RELEASE_0.1.15_STATUS_20261021.md).
 
 ## 1. Fissare il perimetro prima dei comandi
 
@@ -71,6 +72,17 @@ distribuito dai pacchetti. In questa release escludere `build` aveva rimosso
   builder prima della compilazione. Se il push non è autorizzato, preparare
   localmente e dichiarare quel requisito; non bypassarlo.
 
+### Riferimenti attivi per la 0.1.15
+
+Per l'attuale immagine API `5522b4cf…`, usare insieme il commit originale
+`e180b87abe5dac022034881ea4eb1ca60a0d4e78` e
+`release-history/android-preparation/0.1.15-20261021/api-original-source.json`.
+Non sostituirli con l'identità riscritta `599aea2f` dell'attestazione precedente:
+la prova TTL storica appartiene alla genealogia originale. Se immagine o tag
+cambiano, rivalidare il legame invece di riutilizzare questi parametri.
+Il set push TTL corrente include gli avvisi del 21 ottobre:
+`release-history/firestore-ttl/runtime-writer-sets/play-services-notices-20261023.json`.
+
 ## 4. Versioni: distinguere nome, codice e tentativo
 
 - Leggere il massimo effettivo in Play Console e il registro locale completo.
@@ -83,9 +95,19 @@ distribuito dai pacchetti. In questa release escludere `build` aveva rimosso
 - Dopo una riserva, il codice è consumato anche se non esiste una AAB. Conservare
   e versionare la riserva; registrare `abandoned` con lo script dedicato e il
   motivo. Non cancellare o modificare record per liberare il numero.
-- Lo stesso nome può essere ritentato con un codice maggiore **solo** dopo
-  abbandono validato e in assenza del manifesto di un bundle per quel codice.
-  Riserve aperte e bundle già costruiti non hanno questa eccezione.
+- Per le AAB ufficiali, lo stesso `versionName` può essere usato con un codice
+  maggiore quando il tentativo precedente ha un manifesto di build validato
+  oppure un evento `abandoned` validato. Vale anche dopo accettazione Play e
+  dopo abbandono di un bundle già costruito. Un nome mostrato non identifica
+  un artefatto: per ogni build conservare codice, commit e SHA-256.
+- Una riserva senza manifesto di build né abbandono resta aperta e blocca un
+  nuovo tentativo con quel nome. Due riserve aperte dello stesso nome rendono
+  il ledger incoerente. Non aggiungere un abbandono fittizio per liberare il nome.
+- La regola deriva dal ledger validato, senza parametro di bypass. Codici
+  crescenti, immutabilità, firma, provenienza e altri gate restano obbligatori.
+  L'adeguamento del 22 ottobre è locale al ramo release: nessun numero è stato
+  cambiato o riservato. Il percorso APK privato conserva la propria protezione
+  sui nomi, perché i suoi archivi non includono il codice nel nome del file.
 - Se la AAB è già valida, conservarla e usare quel file in seguito. Non
   rigenerarla per ottenere un file diverso con lo stesso numero.
 
@@ -114,8 +136,13 @@ distribuito dai pacchetti. In questa release escludere `build` aveva rimosso
   plugin. Controllare anche le risorse native caricate per nome a runtime e
   chiudere eventuali errori `config.xml is missing` sulla release minificata.
   Non accettare il fallback silenzioso ai default e non correggere l'artefatto
-  già firmato a mano. Questo è un requisito: il nuovo gate automatico deve ancora
-  essere implementato dopo il rilievo 300033, non è dichiarato già operativo.
+  già firmato a mano. Il ramo release implementa copia esplicita del JSON,
+  confronto degli hash e verifica della risorsa Cordova `xml/config` tramite
+  bundletool. Il keep mirato `@xml/config` protegge la risorsa caricata per nome:
+  non disabilitare R8 o lo shrinking globale per conservarla. Eseguire anche
+  `scripts/play-native-configuration.contract.tests.ps1`, incluso nella suite
+  del builder. Il PASS locale non chiude la verifica della prossima AAB e del
+  runtime; seguire il [verbale](ANDROID_NATIVE_CONFIG_FIX_20261022.md).
 - Per attestare la conservazione delle preferenze attraverso un aggiornamento,
   acquisire lo stato prima e subito dopo l'aggiornamento autorizzato, prima di
   azioni che lo possano cambiare. Distinguere permessi Android, servizio Posizione
@@ -129,6 +156,16 @@ distribuito dai pacchetti. In questa release escludere `build` aveva rimosso
 
 Il [verbale 0.1.15](https://github.com/meteofriul/meteofriul-app/blob/codex/release-0.1.15/docs/operations/ANDROID_0.1.15_BUILD_20261021.md) conserva errori,
 correzioni e limiti. I contratti del ramo release in `scripts/build-play-aab.contract.tests.ps1`
-coprono il retry del solo nome, il blocco dei codici già riservati, le riserve
-aperte e i bundle esistenti. Le guide devono restare collegate da README,
+coprono il riuso del solo nome dopo build, accettazione o abbandono, il blocco
+dei codici già riservati e delle riserve aperte, più bundle distinti con lo stesso
+nome e selezione dell'ultima accettazione per codice. Le guide devono restare collegate da README,
 AGENTS.md e runbook; aggiornarle quando emerge una nuova causa verificata.
+## Sintassi bundletool verificata sul pacchetto reale
+
+`dump resources --resource=xml/config --values` usa type/name. La forma
+package:type/name restituisce output vuoto con bundletool 1.18.3 e non dimostra
+assenza della risorsa. Controllare separatamente il package nel dump e il file
+nel bundle; mantenere regressioni con output reale e casi negativi. Una fixture
+inventata non verifica che gli argomenti del comando reale siano corretti.
+Il [tentativo 300034](ANDROID_0.1.15_300034_BUILD_20261023.md) conserva causa,
+file e abbandono; non riutilizzare il codice consumato.

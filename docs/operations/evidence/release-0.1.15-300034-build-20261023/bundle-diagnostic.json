@@ -1,0 +1,53 @@
+{
+  "CheckedAtUtc": "2026-10-23T07:16:41.1923707Z",
+  "VersionCode": 300034,
+  "NativeConfiguration": {
+    "Verification": "native-config-hashes-and-cordova-resource",
+    "ConfigSha256": "0e6adc3fd2d8c557b848322adbda800b4e69804f0aec2f37326aa25543979cce",
+    "PluginsSha256": "b9832bcf10b7daff2969d0d4b66bcfe5ef7acdf64107709bd3f839cf3cfda7e4",
+    "CordovaResource": "com.meteofriul.app:xml/config",
+    "CordovaBundleEntry": "base/res/xml/config.xml"
+  },
+  "R8": {
+    "BundleMappingEntry": "BUNDLE-METADATA/com.android.tools.build.obfuscation/proguard.map",
+    "MappingSha256": "1578fd6e78e3f27ea18a568673e571bf6e602f88a7d9bf349a1f34300307e6ff",
+    "NativeLibraryCount": 4,
+    "NativeSymbolEntryCount": 0,
+    "NativeSymbolsStatus": "unavailable-transitive-native-libraries"
+  },
+  "Signature": "338c051587d62cdad6f9bd38eaa1e793d3da2d6c30c4270f8450a93a6ecec3b4",
+  "ArtifactSha256": "f903af5c19d315266f757293af80bb553d7f4f72fe031a4663e21728170c9b8c",
+  "ReleaseManifestCreated": false,
+  "BuildStatus": "guarded-build-not-completed",
+  "Uploaded": false,
+  "Installed": false,
+  "owner_authorized_next_code": 300035,
+  "current_code_status": "300034 abandoned; 300035 configured, not reserved",
+  "local_tests": {
+    "native_configuration_assertions": 43,
+    "builder_contract": "PASS",
+    "gradle_contract": "explicitly skipped; actual guarded Gradle bundleRelease succeeded for 300034"
+  },
+  "evidence_files": [
+    {
+      "path": "build-attempt3.log",
+      "sha256": "1b2a42b4916a4a29b477eb7048a6d9111195cdf77f1a0595042c2558d80358a9"
+    },
+    {
+      "path": "build-attempt3-result.json",
+      "sha256": "8bff02477519176c5cf2742e709378bd109439c943053f3046c3eeee3c446491"
+    },
+    {
+      "path": "builder-contract-after-fix.log",
+      "sha256": "0850ab44513462c7b383cb86cde1565f440f6621dc720e94ab7126e143959a16"
+    },
+    {
+      "path": "community-source-check.json",
+      "sha256": "2ec032c52c92475384fe74e34df30e36ad3f7262ae0db5c46002ed910c4d9fd8"
+    },
+    {
+      "path": "bundle-manifest-300034.xml",
+      "sha256": "ebe9b5d3cab28222a62ed6fd6c278a5a8c3b4998b9e86da6a5914ab3c9b4a9d0"
+    }
+  ]
+}

@@ -1,0 +1,70 @@
+{
+  "schema_version": 1,
+  "checked_at_utc": "2026-10-23T06:52:06.970345+00:00",
+  "source_commit": "18b88049ff5d69f401da3aca491c5a0e1df302ca",
+  "cloud_build_id": "d7be8c19-3a33-4aef-ab98-6bf76c9794ca",
+  "cloud_build_status": "SUCCESS",
+  "image_digest": "europe-west1-docker.pkg.dev/meteo-friul/meteofriul/backend@sha256:3b0cac97d0bbf533916b74ec24fd632f5fbc9f54c2266746a85fb31613aa8f74",
+  "archive_sha256": "1c363336cc1ce78cf819335f58c042e309139f639ce10b295b260e452c2cc0e0",
+  "archive_sha256_matches_cloud_build": true,
+  "backend_source_files_compared": 185,
+  "backend_source_matches_git": true,
+  "push_repository_sha256": "989a05445be31c46fa8d23e9613d0fd54c83dd29aae999402a7cd3b41bbae71c",
+  "push_repository_matches_current_and_deployed_source": true,
+  "dockerfile_matches_deployment_evidence_after_newline_normalization": true,
+  "runtime_copy_from_verified_source": true,
+  "cloud_mutations": false,
+  "ttl_gate": {
+    "ready": true,
+    "blockingCount": 0,
+    "findings": []
+  },
+  "ttl_readback_counts": [
+    {
+      "collectionGroup": "push_official_alert_outbox",
+      "documentCount": 71,
+      "validExpiresAtCount": 71,
+      "missingOrInvalidExpiresAt": 0
+    },
+    {
+      "collectionGroup": "push_local_notice_outbox",
+      "documentCount": 860,
+      "validExpiresAtCount": 860,
+      "missingOrInvalidExpiresAt": 0
+    }
+  ],
+  "contract": "play-services-notices-20261023.json",
+  "contract_tests": {
+    "windows_powershell_5": true,
+    "powershell_7": true,
+    "ttl_audit": true,
+    "old_contract_rejected_with_updated_inventory": true
+  },
+  "first_aab_attempt": {
+    "result": "stopped-before-reservation",
+    "reason": "runtime_writer_digest_mismatch",
+    "code_consumed": false
+  },
+  "evidence_files": [
+    {
+      "path": "notice-build-metadata.json",
+      "sha256": "cce6ef0ac9dee4f16443a8c2de8900276349b25760a2bbf23a354c572934b996"
+    },
+    {
+      "path": "notice-provenance.json",
+      "sha256": "2db169b460b5d1b837057f7a60e163321653975a46dd7b1d89e55ad4897a31fc"
+    },
+    {
+      "path": "push-ttl-current.json",
+      "sha256": "b3c6ce2af6527967efd4806f9474f217b5b415674a0173899c9ea3a67dee4d33"
+    },
+    {
+      "path": "build.log",
+      "sha256": "4789d938276558184d1c32ec40b2a636eeebfb895728ea7ca908797db6a23571"
+    },
+    {
+      "path": "build-result.json",
+      "sha256": "cdcddbfa5284e563dea35c8aea84a72c9c4690ba7dfa1077557ed0300d4eee55"
+    }
+  ]
+}

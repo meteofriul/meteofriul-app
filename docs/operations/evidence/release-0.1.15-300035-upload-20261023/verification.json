@@ -1,0 +1,96 @@
+{
+  "schema_version": 1,
+  "observed_at_utc": "2026-10-23T08:01:20Z",
+  "application_id": "com.meteofriul.app",
+  "version_name": "0.1.15",
+  "version_code": 300035,
+  "source_commit": "5e9bc7dcdc6183a2fc43ada2dea3dfb22f2a3dc1",
+  "aab_sha256": "1bcf6a32348eee0f098f475c179523a309d962a86c3faf8736a0bd29a1622762",
+  "console_release_url": "https://play.google.com/console/u/0/developers/7317561924451916933/app/4972150571875270846/tracks/4700755128382710882/releases/18/details",
+  "track": "internal",
+  "status": "available_to_internal_testers",
+  "console_publication_local": "2026-10-23 09:59 Europe/Rome",
+  "audience": {
+    "selected_lists": 1,
+    "selected_users": 1,
+    "owner_account_verified": true,
+    "other_lists_selected": false,
+    "modified": false
+  },
+  "production": {
+    "version_name": "0.1.14",
+    "version_code": 300031,
+    "unchanged": true
+  },
+  "validation": {
+    "blocking_errors": 0,
+    "warnings": [
+      "native_debug_symbols_not_uploaded"
+    ],
+    "retrace_mapping_attached": true,
+    "target_sdk": 36,
+    "min_sdk": 24,
+    "supports_16kb_pages_reported": true,
+    "dex_optimization": "high",
+    "optimization_percent": 89,
+    "obfuscation_percent": 91,
+    "reduction_percent": 91,
+    "r8": "full_mode",
+    "resource_shrinking": "optimized",
+    "supported_devices_lost": 0,
+    "prelaunch_report_available": false
+  },
+  "sponsors": {
+    "captured_at_utc": "2026-10-23T08:01:20.8794922Z",
+    "enabled": false,
+    "revision": 117,
+    "campaign_count": 0
+  },
+  "limits": [
+    "device_runtime_not_tested_for_300035",
+    "android_15_16_insets_not_tested",
+    "large_screen_and_multiwindow_not_tested",
+    "dependency_system_bar_warnings_remain",
+    "web_candidate_not_deployed",
+    "release_not_promoted_to_main"
+  ],
+  "actions_not_performed": [
+    "aab_generation",
+    "production_publication",
+    "device_installation",
+    "backend_deployment",
+    "manual_notification",
+    "manual_job_execution"
+  ],
+  "acceptance_event": "release-history/android-play/20261023T080003228Z-play-accepted-05f3f1ff4aaa450cb3219d1ac87f6458.evidence.json",
+  "evidence_files": [
+    {
+      "path": "bundle-details.txt",
+      "sha256": "f4afad590ffbba4134404b46ffb306e7926f4e5dbba90559ce82bc5a5c972127"
+    },
+    {
+      "path": "internal-available.jpg",
+      "sha256": "43795adb00a3c439cf9962004c2a53d8f28128abafe12cd273eaa20a8ff33dcc"
+    },
+    {
+      "path": "internal-available.txt",
+      "sha256": "280eb07091fd56fb6371173b6fe9560980752e57c0fa09b5cd2cafd01b618431"
+    },
+    {
+      "path": "prelaunch.txt",
+      "sha256": "bf52ee6f28da7f31672ef18ad5628e01da60e506e511a4cc1a5011851afda242"
+    },
+    {
+      "path": "production-unchanged.txt",
+      "sha256": "e1bf9c0c33c92aae31410bb5c691a58dc5af211c3b091e3029a3e89c0f0983fe"
+    },
+    {
+      "path": "review.txt",
+      "sha256": "22359d9788f56d056dd6b5808548c7cbee6c391d15b6a69a4f97a6c564415eef"
+    },
+    {
+      "path": "sponsors-after-upload.json",
+      "sha256": "ba56de2a65c98fcef67a53d6176b12af64e02459fa7e9d856c29620027203026"
+    }
+  ]
+}

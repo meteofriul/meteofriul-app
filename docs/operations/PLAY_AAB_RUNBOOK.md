@@ -50,6 +50,17 @@ Matrice minima da riportare per ciascuna candidata:
 - Per R8: avvio, bridge Capacitor, permessi, localizzazione, notifiche, mappe e
   ritorno in app sul pacchetto minificato autorizzato per il collaudo.
 
+Una verifica mirata va presentata come tale anche nel messaggio finale;
+non dichiarare verificata tutta l'app sulla base di pochi percorsi. Per una
+qualifica completa registrare separatamente Home, **Previsioni, Bollettino,
+Tempo reale**, Eventi, Scopri e Impostazioni. In Tempo reale verificare mappa
+visibile con altezza utile, controlli del dock raggiungibili, lista segnalazioni
+e webcam; rispettare il divieto di invii quando presente. Screenshot e
+gerarchia devono essere concordi: elementi nel DOM/gerarchia, dati ricevuti o
+log senza crash non provano che il contenuto sia visibile e utilizzabile.
+Dopo modifiche a contenitori condivisi o barre fisse, riprovare anche le sezioni
+adiacenti che non dovevano cambiare. Ogni percorso omesso resta NON VERIFICATO.
+
 Usare emulatori dedicati. La sostituzione della prova sul telefono reale richiede
 una decisione esplicita del proprietario per quello specifico intervento; una
 precedente accettazione non diventa un'autorizzazione permanente. Se la prova
@@ -205,6 +216,14 @@ non riutilizzare output precedenti. Lo script compila gli asset Web in una
 directory temporanea, verifica gli endpoint WebView e nativi, firma e valida
 la AAB. **Non carica nulla su Play.**
 
+La correzione del 22 ottobre sul ramo release aggiunge il controllo della
+[configurazione nativa](ANDROID_NATIVE_CONFIG_FIX_20261022.md): il JSON
+approvato viene copiato separatamente dai contenuti Web; l'AAB deve contenere
+JSON e registro plugin con gli hash attesi, più la risorsa Cordova
+`com.meteofriul.app:xml/config` e il relativo file. I risultati vengono registrati
+nel campo `NativeConfiguration` del manifesto. La mancanza di questi elementi
+blocca l'archiviazione; non usare un bundle che ricade sui default.
+
 ## 4. Verificare e conservare il risultato
 
 Una build riuscita produce riserva e manifesto nel registro, più AAB e mapping
@@ -262,12 +281,17 @@ esiste; stato esatto (`non costruita`, `built-not-uploaded`, `play-accepted` o
 La regola seguente è implementata sul ramo release 0.1.15; la sola promozione
 di queste istruzioni su main non distribuisce la modifica al builder.
 
-Il versionCode riservato non si riutilizza mai. Se il ledger contiene un evento
-`abandoned` valido e nessun manifesto di AAB per quel codice, un nuovo tentativo
-può conservare il solo versionName usando un codice strettamente maggiore di
-tutti i codici locali e di quello osservato in Console. Il ledger deriva questa
-condizione dalle prove validate; non esiste un parametro di bypass del builder.
-Riserve aperte, bundle già costruiti (anche abbandonati) e versioni accettate
-mantengono il blocco sul nome. Firma, provenienza, TTL e immutabilità restano
-invariati. La distinzione tra codice monotono e nome visualizzato è descritta
-nella [documentazione Android](https://developer.android.com/studio/publish/versioning).
+Il versionCode riservato non si riutilizza mai. Il ramo release aggiornato il
+22 ottobre permette lo stesso versionName per più AAB ufficiali, anche dopo
+accettazione Play, purché ogni nuovo codice superi tutti i codici locali e
+quello osservato in Console. Ogni tentativo precedente con quel nome deve avere
+un manifesto di build validato oppure un evento `abandoned` validato.
+Una riserva senza manifesto né abbandono resta aperta e blocca il nuovo tentativo.
+
+Il ledger deriva questa condizione dalle prove validate; non esiste un
+parametro di bypass. Bundle, mapping e manifesti sono distinti per codice e
+nome; ogni hash resta legato al proprio codice. Non riscrivere 300033 per
+preparare una nuova 0.1.15 e non registrare abbandoni fittizi di build accettate.
+Firma, provenienza, TTL e immutabilità restano invariati. La distinzione tra
+codice monotono e nome visualizzato è descritta nella
+[documentazione Android](https://developer.android.com/studio/publish/versioning).

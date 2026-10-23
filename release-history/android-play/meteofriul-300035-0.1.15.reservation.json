@@ -1,0 +1,18 @@
+{
+  "SchemaVersion": 1,
+  "CreatedAtUtc": "2026-10-23T07:28:10.0443275Z",
+  "Kind": "play-version-reservation",
+  "Status": "reserved",
+  "ApplicationId": "com.meteofriul.app",
+  "VersionCode": 300035,
+  "VersionName": "0.1.15",
+  "ConsoleObservation": {
+    "LatestVersionCode": 300033,
+    "Source": "operator-confirmed-play-console"
+  },
+  "ApiBase": "https://play-b6fbe4d---meteofriul-api-bx24xqvcda-ew.a.run.app/api",
+  "CommunityApiBase": "https://meteofriul-community-49007668366.europe-west1.run.app/api",
+  "BackendCommit": "e180b87abe5dac022034881ea4eb1ca60a0d4e78",
+  "CloudRunRevision": "meteofriul-api-00251-jow",
+  "FrontendCommit": "5e9bc7dcdc6183a2fc43ada2dea3dfb22f2a3dc1"
+}

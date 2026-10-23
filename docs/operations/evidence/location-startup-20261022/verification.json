@@ -1,0 +1,35 @@
+{
+  "checked_on": "2026-10-22",
+  "base_commit": "3da1db2d4d2f1de4bd14745ef7fd078ec8d399dd",
+  "branch": "codex/android-location-startup-preservation",
+  "status": "local_regression_passed_device_verification_pending",
+  "baseline_regression": {
+    "tests": 10,
+    "failed": 6,
+    "passed": 4
+  },
+  "candidate": {
+    "test_files": 10,
+    "tests_passed": 114,
+    "regression_cases": 10
+  },
+  "eslint": "passed_on_changed_source_and_test",
+  "external_requests": "mocked_and_asserted_absent",
+  "device_test": false,
+  "play_upgrade_cause_proven": false,
+  "source_files_sha256": {
+    "frontend/src/app/App.jsx": "0e6d2f464068d30e14840c772368d5856d7334b3991f3c64a88b86c949e8864e",
+    "frontend/src/app/App.locationStartup.test.jsx": "4a969c1cdbf812645e1dca0784ad593984aa8f7040b209f5dde2e43999acdf85"
+  },
+  "local_logs_sha256": {
+    "before.log": "f14f39b7ea850acd81319fa4635e56184f8d72626c20790f311dbb91ba2f0e29",
+    "after.log": "52e986492e5a8aa40bfd2a96f139b572442dd51acad98635efa9f89e85400e2b"
+  },
+  "limitations": [
+    "No pre-update preference snapshot for the owner's Play upgrade",
+    "No device or minified release verification of this change",
+    "Already-disabled preferences are not automatically re-enabled",
+    "Native packaging and bulletin map findings remain separate"
+  ],
+  "source_hash_encoding": "UTF-8 with LF line endings"
+}
