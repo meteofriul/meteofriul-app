@@ -1,0 +1,1257 @@
+{
+  "recorded_at_utc": "2026-10-23T12:20:42.751179+00:00",
+  "result": "PASS_OBSERVED_PATHS_WITH_EXPLICIT_LIMITS",
+  "full_release_qualification": false,
+  "version_name": "0.1.15",
+  "version_code": 300036,
+  "package": "com.meteofriul.app",
+  "source_commit": "9d5ff2f415ab8b10be510eff2a0b058a8c2408ac",
+  "aab_sha256": "024212752b3af72f163d75849aa53c2b191ba0352e42423b11efccd2d7f8b51f",
+  "installed_apk_hashes": {
+    "base.apk": "038b9a07ec0333ac10f5d1cc4e5b2683da6f4d728996d2013768efbf306c5dee",
+    "split_config.arm64_v8a.apk": "6b74b1aa9e563172cfa956f4d3e728ea8a2386211817c0c0e0358a80ec545c89",
+    "split_config.it.apk": "07da6d127d602c1149b63cd329e0672bb4bd4814284e2534a322a11917ff1b2f",
+    "split_config.xxhdpi.apk": "4bb528895126065a32a73ef64bec712dcf1b8c030fe6722b51f799b69fc9b4d6"
+  },
+  "environment": {
+    "model": "SM_A525F",
+    "android": 14,
+    "api": 34,
+    "target": 36,
+    "pixels": "1080x2400",
+    "dpi": 420,
+    "navigation": "three_buttons",
+    "webview": "155.0.8059.43"
+  },
+  "realtime_layout": "PASS_MAP_AND_DOCK_VISIBLE_IN_INSTALLED_RELEASE_INCLUDING_AFTER_COLD_START",
+  "native_assets": {
+    "at_utc": "2026-10-23T12:03:24.174505+00:00",
+    "version_code": 300036,
+    "installed_base_sha256": "038b9a07ec0333ac10f5d1cc4e5b2683da6f4d728996d2013768efbf306c5dee",
+    "assets_compared": 508,
+    "missing_or_different": 0,
+    "capacitor_config_present": true,
+    "capacitor_config_sha256": "0e6adc3fd2d8c557b848322adbda800b4e69804f0aec2f37326aa25543979cce",
+    "plugins_sha256": "b9832bcf10b7daff2969d0d4b66bcfe5ef7acdf64107709bd3f839cf3cfda7e4",
+    "cordova_xml_present": true,
+    "webview_debugging": false,
+    "development_server": null
+  },
+  "position": {
+    "owner_testimony": "Sì, è rimasta attiva",
+    "agent_pre_update_measurement": false,
+    "initial_resume_cold_start_enabled": true,
+    "temporary_error_recovery_on_device": "NOT_TESTED"
+  },
+  "baseline_comparison": {
+    "fields_compared": 19,
+    "changed_fields": [],
+    "technical_baseline_unchanged": true,
+    "ui_preferences_restored": [
+      "Italiano",
+      "Chiaro"
+    ],
+    "location_alerts_notices_toggles_untouched": true,
+    "owner_location_update_testimony": "Sì, è rimasta attiva",
+    "testimony_is_owner_report_not_pre_update_agent_measurement": true
+  },
+  "lifecycle": {
+    "resume_same_process": true,
+    "cold_new_process": true,
+    "background_seconds": 8,
+    "cold_activity_ms": 2181,
+    "no_clear": true
+  },
+  "cams": {
+    "languages": [
+      "it",
+      "fur"
+    ],
+    "recordings_seconds_each": 12,
+    "frames_per_second_reviewed": 4,
+    "frames_reviewed_per_language": 48,
+    "false_unavailable_observed": false,
+    "cache_available": true,
+    "forced_loading_or_remote_error_tested": false
+  },
+  "navigation_observed": [
+    "home",
+    "forecast",
+    "bulletin_entry_and_sticky_bar",
+    "live_map_and_dock",
+    "community_empty_list",
+    "webcam_detail_and_back",
+    "radar_legend_and_animation",
+    "events_sticky_bar_and_detail_back",
+    "discover",
+    "settings_back"
+  ],
+  "log_summaries": [
+    {
+      "lines": 1245,
+      "markers": {
+        "FATAL EXCEPTION": 0,
+        "Fatal signal": 0,
+        "ANR in ": 0,
+        "Uncaught TypeError": 0,
+        "Uncaught ReferenceError": 0,
+        "Uncaught Error": 0,
+        "net::ERR_": 0,
+        "AppCheck": 0,
+        "Integrity": 0,
+        "403": 1,
+        "401": 0
+      }
+    },
+    {
+      "lines": 447,
+      "markers": {
+        "FATAL EXCEPTION": 0,
+        "Fatal signal": 0,
+        "ANR in ": 0,
+        "Uncaught TypeError": 0,
+        "Uncaught ReferenceError": 0,
+        "Uncaught Error": 0,
+        "net::ERR_": 0,
+        "AppCheck": 0,
+        "Integrity": 0,
+        "403": 1,
+        "401": 0
+      }
+    }
+  ],
+  "sponsors_before": {
+    "at_utc": "2026-10-23T12:03:24.543080+00:00",
+    "enabled": false,
+    "campaign_count": 0,
+    "revision": 117
+  },
+  "sponsors_after": {
+    "at_utc": "2026-10-23T12:16:34.590795+00:00",
+    "enabled": false,
+    "campaign_count": 0,
+    "revision": 117
+  },
+  "findings": [
+    {
+      "id": "REALTIME-LAYOUT-01",
+      "status": "CLOSED_FOR_OBSERVED_GALAXY_300036"
+    },
+    {
+      "id": "RADAR-DARK-SECONDARY-TEXT",
+      "status": "VISUAL_FOLLOW_UP",
+      "note": "Low visibility of empty-radar secondary text in dark theme; contrast not measured."
+    }
+  ],
+  "not_verified": [
+    "android_15_16",
+    "gesture_navigation",
+    "keyboard_cutout_matrix",
+    "physical_rotation",
+    "tablet_multiwindow",
+    "compact_widths",
+    "gps_error_recovery",
+    "movement_accuracy",
+    "new_location_national_search",
+    "community_report_confirmation_and_send",
+    "community_populated_reports_and_votes",
+    "notification_delivery",
+    "rain_radar_echo_case",
+    "safari_iphone"
+  ],
+  "forbidden_actions_performed": [],
+  "state_restored": {
+    "language": "it",
+    "theme": "light",
+    "location_notifications_untouched": true,
+    "final_screen": "live_map"
+  },
+  "private_archive": "release-artifacts/android-play/evidence-300036/device-20261023",
+  "evidence_files": [
+    {
+      "file": "after.json",
+      "bytes": 2532,
+      "sha256": "d83f5ee49182fc74984f513fa92a4ca2b96867168569bf5e769cbd9be0273e41"
+    },
+    {
+      "file": "air-detail-fur.png",
+      "bytes": 418436,
+      "sha256": "2e2bcad0f8ef7d743dda7076a091a55383be81aa24ca8794db7b83c8820bcd36"
+    },
+    {
+      "file": "air-detail-fur.xml",
+      "bytes": 11499,
+      "sha256": "c0e8cfcc820784bb67ced73bbe58e321f11e3bfaf8c6d1d71fc8ee62edf1fe45"
+    },
+    {
+      "file": "air-detail-it.png",
+      "bytes": 418968,
+      "sha256": "87fc7b98e6e9475787a2153e3d02676ebecd95bd486df0a2c0f76efb44e269c4"
+    },
+    {
+      "file": "air-detail-it.xml",
+      "bytes": 11509,
+      "sha256": "41563fe6bec3b3b008f0d80c88c2e4ff3e35acc10077b6b54cb5e4f707018315"
+    },
+    {
+      "file": "before.json",
+      "bytes": 2532,
+      "sha256": "cb91fb598bba4bb533012b62a7ebddcd38f1e90aa1191a3eb578d285d171c481"
+    },
+    {
+      "file": "bulletin-entry.png",
+      "bytes": 1165301,
+      "sha256": "8e5830192a93b6e5372a43cffbad332f267f1a2ed77603c666a9d391a3ad7196"
+    },
+    {
+      "file": "bulletin-entry.xml",
+      "bytes": 20175,
+      "sha256": "0a6468144a8e7c29386afeb93eec51d14fe4f9595724d9e7ac32be43f282c688"
+    },
+    {
+      "file": "bulletin-scrolled.png",
+      "bytes": 928003,
+      "sha256": "3e4d6cf7001f546042f596a64807e6e85995c5163ae305a5b3ec387483e2b8eb"
+    },
+    {
+      "file": "bulletin-scrolled.xml",
+      "bytes": 20164,
+      "sha256": "c1bc93d6ea4889bcd0044cf1b3e05eec2f57d087d427c438d68961780536306e"
+    },
+    {
+      "file": "cams-current.png",
+      "bytes": 489293,
+      "sha256": "b4aaa5630663560f3a91e3033b2cefc491b0a1d54b14cc34400b01cf7e200c63"
+    },
+    {
+      "file": "cams-current.xml",
+      "bytes": 71478,
+      "sha256": "acf97627ac8ea272f0b3a2b51d59cb6dab0a18921103ea51201bb76eab943cdb"
+    },
+    {
+      "file": "cams-dark-fur-scrolled.png",
+      "bytes": 367329,
+      "sha256": "330fe64ee2e520ddbaae10fd067f61550f7d01b8e377ed7d84972efcf5b01eaa"
+    },
+    {
+      "file": "cams-dark-fur-scrolled.xml",
+      "bytes": 71461,
+      "sha256": "ff1699ed7851390a0db25dff96512e531a799175ef4a174b02e190d10806a5c6"
+    },
+    {
+      "file": "cams-dark-fur.png",
+      "bytes": 391356,
+      "sha256": "7c80727d5bec9639b3ca6ae634abd8cafc603b7390785d15be7fd7d7e638e2d8"
+    },
+    {
+      "file": "cams-dark-fur.xml",
+      "bytes": 71503,
+      "sha256": "fed58c7e255b3b89aa98db460cc1953e61f4881cde662a7ffb60d5dd8582e251"
+    },
+    {
+      "file": "cams-it.png",
+      "bytes": 489441,
+      "sha256": "bf22de05c47a3f4b09207e8921358a04c630300c07a2baddca97314b343d9ed5"
+    },
+    {
+      "file": "cams-it.xml",
+      "bytes": 71478,
+      "sha256": "acf97627ac8ea272f0b3a2b51d59cb6dab0a18921103ea51201bb76eab943cdb"
+    },
+    {
+      "file": "cold-home-settled.png",
+      "bytes": 1067276,
+      "sha256": "526a0a20c63d36397a4864488c053ce00a4b38865a51826a2065289905809229"
+    },
+    {
+      "file": "cold-home-settled.xml",
+      "bytes": 29667,
+      "sha256": "ffb91ded591a2931799f07d812c7498d8f6c2d4cbbbdb53ade536540c1d4e3b1"
+    },
+    {
+      "file": "cold-start.png",
+      "bytes": 1067999,
+      "sha256": "223d46c4e6c48acea9da286469be763ce325b17f47a22c61def71266280099a3"
+    },
+    {
+      "file": "cold-start.xml",
+      "bytes": 3800,
+      "sha256": "827e8c1cfd125e62279597a76680157608226ac6f8b2e23ec7b04a687670f954"
+    },
+    {
+      "file": "comparison.json",
+      "bytes": 355,
+      "sha256": "87c15c193047d9011da3e12a7b75ac1cf8b4ef4b988241a2c6eb03ea0023ba4e"
+    },
+    {
+      "file": "discover.png",
+      "bytes": 823708,
+      "sha256": "49aec9aab2c099f3f3ecef30e4e32d798c80c6e9c00843e7d46d506004b2d7ef"
+    },
+    {
+      "file": "discover.xml",
+      "bytes": 34623,
+      "sha256": "364749664b5860ec0f6f78c4618860625bb21ece1a18d0dcbefec1c285fd5d35"
+    },
+    {
+      "file": "event-back.png",
+      "bytes": 1166002,
+      "sha256": "0fa9143f42fd34a0091dd47b7cbf82c4185c5795900b7e5046371df801d359dd"
+    },
+    {
+      "file": "event-back.xml",
+      "bytes": 20175,
+      "sha256": "0a6468144a8e7c29386afeb93eec51d14fe4f9595724d9e7ac32be43f282c688"
+    },
+    {
+      "file": "event-detail-back.png",
+      "bytes": 909276,
+      "sha256": "f49d36c84bc512625cd3f66e07a955dd0a96bed93a82244f134b234c27d2d736"
+    },
+    {
+      "file": "event-detail-back.xml",
+      "bytes": 41542,
+      "sha256": "3e4b65caa63be0fd79e908d1877207e53a9211303be033aa5685f729ac2c422c"
+    },
+    {
+      "file": "event-detail-open.png",
+      "bytes": 1267927,
+      "sha256": "79130fbb4bba4a83b1c634f2c362954cbd2477a7674d022aac183ea7de97c8ff"
+    },
+    {
+      "file": "event-detail-open.xml",
+      "bytes": 12331,
+      "sha256": "fa37c51b4fc68cc18c636427269f526aa7380921a6c466f5a141755f5f1fe84e"
+    },
+    {
+      "file": "event-detail.png",
+      "bytes": 1009488,
+      "sha256": "a467d64e573232ad0810d41eee69a0c0391b11b4f16c0c60e77167bc45648743"
+    },
+    {
+      "file": "event-detail.xml",
+      "bytes": 65072,
+      "sha256": "7bfadc5e277642e3b24486a4cf6f7ed3f4c2357764f39530692ae6c5034753da"
+    },
+    {
+      "file": "events-entry.png",
+      "bytes": 908399,
+      "sha256": "6f5f6b2476ec59b8de2e1fe92b2be8d4dca34de80b847ab810ceeefeb831a6ea"
+    },
+    {
+      "file": "events-entry.xml",
+      "bytes": 41222,
+      "sha256": "9b4913c431bf4e7344d9b8adc3c5f4927b6ff4c7912879bda406164fc85f731a"
+    },
+    {
+      "file": "events-reentry.png",
+      "bytes": 909095,
+      "sha256": "c055ec78cbed278f3155ede5fcc468fcfce6b6515919447f910e11f29eea18c4"
+    },
+    {
+      "file": "events-reentry.xml",
+      "bytes": 41222,
+      "sha256": "9b4913c431bf4e7344d9b8adc3c5f4927b6ff4c7912879bda406164fc85f731a"
+    },
+    {
+      "file": "events-scrolled.png",
+      "bytes": 871368,
+      "sha256": "f7317e2d80add5ed697cf7ebab23a2a29ca198853913d392652cca1baa886190"
+    },
+    {
+      "file": "events-scrolled.xml",
+      "bytes": 41315,
+      "sha256": "486361dc16758b7427b8c6cb03df620775b3faeda4dccc98b413f1705585d0aa"
+    },
+    {
+      "file": "fur-reentry-cams-after.png",
+      "bytes": 487480,
+      "sha256": "5bbe02813c547c5a4d804f218030604353c9de578c35ee1c1bf415aed038e21f"
+    },
+    {
+      "file": "fur-reentry-cams-after.xml",
+      "bytes": 71492,
+      "sha256": "d67e16e93cf8373085f671e6db4943b44debd5a89ac779e83507e12caa4ce55a"
+    },
+    {
+      "file": "fur-reentry-cams-before.xml",
+      "bytes": 26450,
+      "sha256": "b480fbdde4f418a236c5df1887224198db6c32444db364df574316d9afb85bc3"
+    },
+    {
+      "file": "fur-reentry-cams-contact-1.png",
+      "bytes": 906638,
+      "sha256": "820251dacb95ea06f5b10ef776d5030ffb1932d7eeb2270d3ef29d69b9efce91"
+    },
+    {
+      "file": "fur-reentry-cams-contact-2.png",
+      "bytes": 666609,
+      "sha256": "7ed165684a2b72bfc9c900842f891a18d84690897bc59b3cd5887cbd56c61ae8"
+    },
+    {
+      "file": "fur-reentry-cams-contact-3.png",
+      "bytes": 665649,
+      "sha256": "e356a26bfa68d71b3feb82763af219162bf483cba8f5acdc46e6104910004aa4"
+    },
+    {
+      "file": "fur-reentry-cams-contact-4.png",
+      "bytes": 666600,
+      "sha256": "4312f2f68ba27a0d9ad8579e3aa61eb568e53929c9690db445e1a4ca42d7b74e"
+    },
+    {
+      "file": "fur-reentry-cams-frames/001.png",
+      "bytes": 135482,
+      "sha256": "83be94cbbab33d7c3525c69bc7f6ba246b027684afc8c373a55120f569e41f48"
+    },
+    {
+      "file": "fur-reentry-cams-frames/002.png",
+      "bytes": 135482,
+      "sha256": "83be94cbbab33d7c3525c69bc7f6ba246b027684afc8c373a55120f569e41f48"
+    },
+    {
+      "file": "fur-reentry-cams-frames/003.png",
+      "bytes": 135482,
+      "sha256": "83be94cbbab33d7c3525c69bc7f6ba246b027684afc8c373a55120f569e41f48"
+    },
+    {
+      "file": "fur-reentry-cams-frames/004.png",
+      "bytes": 135482,
+      "sha256": "83be94cbbab33d7c3525c69bc7f6ba246b027684afc8c373a55120f569e41f48"
+    },
+    {
+      "file": "fur-reentry-cams-frames/005.png",
+      "bytes": 163212,
+      "sha256": "9e09b5e70ee2b593b2ce68a3d5ed96734362b6b526f4042e86d3e3caaeba8e8a"
+    },
+    {
+      "file": "fur-reentry-cams-frames/006.png",
+      "bytes": 164338,
+      "sha256": "225496cb1b6dd0dd77a4ffbcdfd18b5931c32bdddb11c1d13e4de5f68e8efbe4"
+    },
+    {
+      "file": "fur-reentry-cams-frames/007.png",
+      "bytes": 173439,
+      "sha256": "0a5882117dcce0f75352ba15db00bd1f3b3d7fc206117461aa94e81b52c41cb2"
+    },
+    {
+      "file": "fur-reentry-cams-frames/008.png",
+      "bytes": 172640,
+      "sha256": "b93a436cfaf9b1ddc800efbf39159d1be1035c84a3e1beebe2ce53c2c81ce5ef"
+    },
+    {
+      "file": "fur-reentry-cams-frames/009.png",
+      "bytes": 169965,
+      "sha256": "f3c70fbe56fa68c1ea1f0460c1885b475269fe3263f8aeaf10f1dd9ca452978e"
+    },
+    {
+      "file": "fur-reentry-cams-frames/010.png",
+      "bytes": 169840,
+      "sha256": "7d6996e9319dfecd34da3e1a18a4610a3fc3030bb6c75f8807fedfa86b71c4fe"
+    },
+    {
+      "file": "fur-reentry-cams-frames/011.png",
+      "bytes": 169830,
+      "sha256": "b6c83d847c7b704308dea96646c8aa6df62e107f5ddcfc70d18123dae7bb374f"
+    },
+    {
+      "file": "fur-reentry-cams-frames/012.png",
+      "bytes": 169851,
+      "sha256": "a9ebd913ce9e6ed09b7559636c88ff2ed721f7214b81e6816bcf71b6cdb04377"
+    },
+    {
+      "file": "fur-reentry-cams-frames/013.png",
+      "bytes": 169877,
+      "sha256": "ca69936273b65da98ac618f0bd251a50d8b4272b1c1b799b63087f5c72bea8a3"
+    },
+    {
+      "file": "fur-reentry-cams-frames/014.png",
+      "bytes": 169852,
+      "sha256": "cfcb595f4eefc2ac461f62e95f7de2f7f6cab654973ac8a05c29354ff05be590"
+    },
+    {
+      "file": "fur-reentry-cams-frames/015.png",
+      "bytes": 169840,
+      "sha256": "8ceeab23d2ba275800a9860b3b59193dc0660825556264432afd7393878470ff"
+    },
+    {
+      "file": "fur-reentry-cams-frames/016.png",
+      "bytes": 169718,
+      "sha256": "e2cba6a12ddedca89da7cbf3f9eceb9507e01f9258db7689cc3c46958a2b39e0"
+    },
+    {
+      "file": "fur-reentry-cams-frames/017.png",
+      "bytes": 169769,
+      "sha256": "6e09fb3a5c9a097f3db2ac20906f9e32ad249232b9c648219b270e626ff54bee"
+    },
+    {
+      "file": "fur-reentry-cams-frames/018.png",
+      "bytes": 169616,
+      "sha256": "feaf27d0f0d2589f876444b75debce42157da63231f702fff1652eec9978bafc"
+    },
+    {
+      "file": "fur-reentry-cams-frames/019.png",
+      "bytes": 169632,
+      "sha256": "4b46b803db01a0e3c78e537926b7f7dbc090a1edea70bde2c8b0d7300338d9d2"
+    },
+    {
+      "file": "fur-reentry-cams-frames/020.png",
+      "bytes": 169577,
+      "sha256": "e5290770732ef38409b7c11ce70f173cf3c1417f1c8563e5a0a0358bd463a823"
+    },
+    {
+      "file": "fur-reentry-cams-frames/021.png",
+      "bytes": 169690,
+      "sha256": "2d6ee780370baa907182172315ac6e77d5646718464447f99fa51edbe2547e11"
+    },
+    {
+      "file": "fur-reentry-cams-frames/022.png",
+      "bytes": 169767,
+      "sha256": "ba5b983d773681e779f58c5e42e7b48b5f257d1a9758e5a94ca99219935ab915"
+    },
+    {
+      "file": "fur-reentry-cams-frames/023.png",
+      "bytes": 169795,
+      "sha256": "b2b41ad72f81f9c2b4f2db9275e230aae1806b7d596cb20999be830689d73fd7"
+    },
+    {
+      "file": "fur-reentry-cams-frames/024.png",
+      "bytes": 169871,
+      "sha256": "19500eb4541f17188a1b32e0f299e3faa41804b05c969d5ad27066d0c5791385"
+    },
+    {
+      "file": "fur-reentry-cams-frames/025.png",
+      "bytes": 169808,
+      "sha256": "735f72b76ebfd27db8977400ec2c3f2c0f46f1c5d5ca58dca17c54e31548faee"
+    },
+    {
+      "file": "fur-reentry-cams-frames/026.png",
+      "bytes": 169813,
+      "sha256": "89ce71c9937dc3c32a9f29a90be3f4a1c033933d4165bbc8e0030730ca8b6dd9"
+    },
+    {
+      "file": "fur-reentry-cams-frames/027.png",
+      "bytes": 169787,
+      "sha256": "eee0f9d5c8fbd5647f5a069ccd1edeebe6656471415ad97d08778cc88f6d0d33"
+    },
+    {
+      "file": "fur-reentry-cams-frames/028.png",
+      "bytes": 169606,
+      "sha256": "46b11584a11378cb55ae0218122db2baa72087571233d7a9418d7a49ac89747a"
+    },
+    {
+      "file": "fur-reentry-cams-frames/029.png",
+      "bytes": 169703,
+      "sha256": "96ed21339a73991dcffb5240c0c722f820b90ce9e71359d91bb6c2407abf5657"
+    },
+    {
+      "file": "fur-reentry-cams-frames/030.png",
+      "bytes": 169605,
+      "sha256": "f531539a5e07c332bf6aaab9c880ce2c465a7b183c592f9e206e705c9788ed4d"
+    },
+    {
+      "file": "fur-reentry-cams-frames/031.png",
+      "bytes": 169523,
+      "sha256": "b55d1bffb80479af1a77dda5dd6761ac08ae678691add37c7912629e21323ec9"
+    },
+    {
+      "file": "fur-reentry-cams-frames/032.png",
+      "bytes": 169526,
+      "sha256": "9a1337474eef50ad5d387e0f8ace46fa01a9d6d290ee9e3960530209a6f96da8"
+    },
+    {
+      "file": "fur-reentry-cams-frames/033.png",
+      "bytes": 169626,
+      "sha256": "1701f0b319a102b55026e96a0d2c7256807304e50873c1cad188278d635dabb1"
+    },
+    {
+      "file": "fur-reentry-cams-frames/034.png",
+      "bytes": 169803,
+      "sha256": "7ba606b977619784bddf622ab8344c739849ee958ca48ddc719ff6f552bd03e0"
+    },
+    {
+      "file": "fur-reentry-cams-frames/035.png",
+      "bytes": 169855,
+      "sha256": "e9739cc6d3a8348ba3b94d733c4a99ae2a4bd0117e73818aa49161185002906d"
+    },
+    {
+      "file": "fur-reentry-cams-frames/036.png",
+      "bytes": 169886,
+      "sha256": "d0030ef2a34fa6d3603eaa606e31e015351307e7da81b542f49ab7212d0094d6"
+    },
+    {
+      "file": "fur-reentry-cams-frames/037.png",
+      "bytes": 169835,
+      "sha256": "26cffeb33c33d719ce7a9c0391cbebcb12a71aad209cefd67e593537be9f8373"
+    },
+    {
+      "file": "fur-reentry-cams-frames/038.png",
+      "bytes": 169735,
+      "sha256": "ef5d2bb95ef686060e37a363cb3fcce52bfdf74c4b54ccf79febd10b524a1bf5"
+    },
+    {
+      "file": "fur-reentry-cams-frames/039.png",
+      "bytes": 169850,
+      "sha256": "824a479faf887a6687aa896c7701288a1178ef49b8f5503aff37f86a2fbcf419"
+    },
+    {
+      "file": "fur-reentry-cams-frames/040.png",
+      "bytes": 169734,
+      "sha256": "ca1542a37f2b814533be6370d1d52c5624a7ac0a4adf08292dce2d75932a1908"
+    },
+    {
+      "file": "fur-reentry-cams-frames/041.png",
+      "bytes": 169674,
+      "sha256": "6723ac0d4fc587c866bbc76bb154e95d110d737164426b4982e79a1bc24f7383"
+    },
+    {
+      "file": "fur-reentry-cams-frames/042.png",
+      "bytes": 169621,
+      "sha256": "24aaf0c8642735015ee925b2f817140cc9b014d8fce670bb7a61646479fd1460"
+    },
+    {
+      "file": "fur-reentry-cams-frames/043.png",
+      "bytes": 169631,
+      "sha256": "5ccfa4b7a9a716a1a537554eaa16a9abf4e7be2991b1d636cbe9b911a21fee2d"
+    },
+    {
+      "file": "fur-reentry-cams-frames/044.png",
+      "bytes": 169708,
+      "sha256": "e7cf246eb7bea7e7082dce3b06a2f378a3e87748eadd4d88b456851da26a07ee"
+    },
+    {
+      "file": "fur-reentry-cams-frames/045.png",
+      "bytes": 169622,
+      "sha256": "bab55eecb0bde6797eb7d9500f2863f1132c40cc2ff6e64f373646966f39c3e6"
+    },
+    {
+      "file": "fur-reentry-cams-frames/046.png",
+      "bytes": 169756,
+      "sha256": "70d9be9dc01ec31750f4f1af14c4a733ca1523c6ca68b85920aaa505463af2a1"
+    },
+    {
+      "file": "fur-reentry-cams-frames/047.png",
+      "bytes": 169846,
+      "sha256": "37f2a9529d194a55e323231956434d4548baecac193480419c6ccf62c82430ef"
+    },
+    {
+      "file": "fur-reentry-cams-frames/048.png",
+      "bytes": 169829,
+      "sha256": "178663d06b32efbf9b1e3e205a48518c01346ea0e28de98b1643a9c1de567169"
+    },
+    {
+      "file": "fur-reentry-cams-record.json",
+      "bytes": 279,
+      "sha256": "454f0a67151b19137b8eac5751c7e8e726e25eef3dd47ea4a1ce636f9841c820"
+    },
+    {
+      "file": "fur-reentry-cams.mp4",
+      "bytes": 2446057,
+      "sha256": "f4f021925108e2aa8cc2c61b164f84acf879cd6cffd112dd11b62167b5a070bd"
+    },
+    {
+      "file": "home-it.png",
+      "bytes": 1060876,
+      "sha256": "833e2c1384aba76d46009ac8bb0da45e9045768e25171e5f99cb80c521975581"
+    },
+    {
+      "file": "home-it.xml",
+      "bytes": 29661,
+      "sha256": "f11d713248f51ccc614bc951b0c2775630b98bf225947964f32234e1c83b1bb6"
+    },
+    {
+      "file": "home-restored.png",
+      "bytes": 1068554,
+      "sha256": "5c9030049423e2043bac0a83b0a07c54bf53b521df6cfbea8d5c8e3ebfe1b612"
+    },
+    {
+      "file": "home-restored.xml",
+      "bytes": 29667,
+      "sha256": "a77bbf17863ee30d41d4d0b857830ef645ac7c93099f9af8e928ab0e57a96101"
+    },
+    {
+      "file": "initial.png",
+      "bytes": 1058351,
+      "sha256": "88072140847e3046a132eb438b9f96eda00157029c3300c54f7ee87c707176ca"
+    },
+    {
+      "file": "initial.xml",
+      "bytes": 3800,
+      "sha256": "827e8c1cfd125e62279597a76680157608226ac6f8b2e23ec7b04a687670f954"
+    },
+    {
+      "file": "installed-base.apk",
+      "bytes": 74915030,
+      "sha256": "038b9a07ec0333ac10f5d1cc4e5b2683da6f4d728996d2013768efbf306c5dee"
+    },
+    {
+      "file": "installed-native-audit.json",
+      "bytes": 550,
+      "sha256": "dc600347b589b418c007fdb809b99593bb701c951f02a0a29070efbcabbfb77c"
+    },
+    {
+      "file": "it-reentry-cams-after.png",
+      "bytes": 490100,
+      "sha256": "d31e8581d1a23c7c0da70ba44d3787af1bdbfda81eec5c4b853a117d64671d30"
+    },
+    {
+      "file": "it-reentry-cams-after.xml",
+      "bytes": 71479,
+      "sha256": "0c3110c15b133347b049247f424b6f0139dbb9739c39610cb399f004eed78742"
+    },
+    {
+      "file": "it-reentry-cams-before.xml",
+      "bytes": 26456,
+      "sha256": "1288d2962a99906d230abc4ab727561174314956aa1730fab0fe854b657cec09"
+    },
+    {
+      "file": "it-reentry-cams-contact-1.png",
+      "bytes": 1196605,
+      "sha256": "e6a21ae18eb2407b0e8f69540f1105cd2a5adb5c7f21a0d028092be426524ad5"
+    },
+    {
+      "file": "it-reentry-cams-contact-2.png",
+      "bytes": 686218,
+      "sha256": "80eb4b2ad03dd1bed5ef3815a87108a6108e0bee0596b8f7186c99f41db61c11"
+    },
+    {
+      "file": "it-reentry-cams-contact-3.png",
+      "bytes": 685446,
+      "sha256": "7da6de478f69a112f4afa69acfc71487f33f999c594ab97edf608fa6d8ebb62c"
+    },
+    {
+      "file": "it-reentry-cams-contact-4.png",
+      "bytes": 685161,
+      "sha256": "7f095014cdceda1d4498bd486f209a8c71ef65288afda673ab44e88547f2c96a"
+    },
+    {
+      "file": "it-reentry-cams-frames/001.png",
+      "bytes": 136647,
+      "sha256": "a1cf44d9c8a27e06c39ec62855f8046776bd0231414c21c381b8f3a2fd142475"
+    },
+    {
+      "file": "it-reentry-cams-frames/002.png",
+      "bytes": 136647,
+      "sha256": "a1cf44d9c8a27e06c39ec62855f8046776bd0231414c21c381b8f3a2fd142475"
+    },
+    {
+      "file": "it-reentry-cams-frames/003.png",
+      "bytes": 136647,
+      "sha256": "a1cf44d9c8a27e06c39ec62855f8046776bd0231414c21c381b8f3a2fd142475"
+    },
+    {
+      "file": "it-reentry-cams-frames/004.png",
+      "bytes": 171489,
+      "sha256": "d023463ffe48de9882967d5709e508275b2bcfb55a9db90fb6abe64682520291"
+    },
+    {
+      "file": "it-reentry-cams-frames/005.png",
+      "bytes": 178109,
+      "sha256": "623eecc3021403caabdca26e4ff0a06ab9fe098cd69e89f1096c79ac087f426f"
+    },
+    {
+      "file": "it-reentry-cams-frames/006.png",
+      "bytes": 181220,
+      "sha256": "61f552c9568d1de632356a2df0cafb7cb2470fcdd0e7301a77cf11079f5c5f13"
+    },
+    {
+      "file": "it-reentry-cams-frames/007.png",
+      "bytes": 179024,
+      "sha256": "abbb3249d62376face9f6a402d45ec22c5d51912a7453770faec38f6d3b96aa1"
+    },
+    {
+      "file": "it-reentry-cams-frames/008.png",
+      "bytes": 176466,
+      "sha256": "c8d1bb9c2812c12dec85771c54eb8ab78120405bc92777e351c8873dcbceb8fc"
+    },
+    {
+      "file": "it-reentry-cams-frames/009.png",
+      "bytes": 176032,
+      "sha256": "f38027c46813a19f2a2e40e2546221ba6d73df4ec7de58200cbda006dc24aa3e"
+    },
+    {
+      "file": "it-reentry-cams-frames/010.png",
+      "bytes": 176025,
+      "sha256": "47b51c27fa9d78572c65e76fabf65e89130a18c900e99aa7f17475eb0a3c3450"
+    },
+    {
+      "file": "it-reentry-cams-frames/011.png",
+      "bytes": 176060,
+      "sha256": "e1d26329da72421340e493abeea32bcb5383dff3121b0ad7cc14545d75b1e46b"
+    },
+    {
+      "file": "it-reentry-cams-frames/012.png",
+      "bytes": 176006,
+      "sha256": "765ca01673044b897ad930a40cbbe587666c9c667aa9ff80b4b16c874376d28d"
+    },
+    {
+      "file": "it-reentry-cams-frames/013.png",
+      "bytes": 175931,
+      "sha256": "d244aef22361fe17660bba36a04b4cba6a040fd246e878ae0d40d3c620a53608"
+    },
+    {
+      "file": "it-reentry-cams-frames/014.png",
+      "bytes": 175888,
+      "sha256": "a496ddc241c2f765506d57916565c53662f6604fa6ff73acea1a3cf4928d95ae"
+    },
+    {
+      "file": "it-reentry-cams-frames/015.png",
+      "bytes": 175853,
+      "sha256": "f9c335668d4ecd4857a0cc505ad4130850ae3bd6e8b0f8748775220639948b1c"
+    },
+    {
+      "file": "it-reentry-cams-frames/016.png",
+      "bytes": 175840,
+      "sha256": "6ae47f2a4fcc850c86632bc40f2ff80c83bcf90db37526f2cef4164e6bbe1baa"
+    },
+    {
+      "file": "it-reentry-cams-frames/017.png",
+      "bytes": 175945,
+      "sha256": "5f479af4dfc6d3e70b13ffc2626e871f0be4a8952544dd8d9ecbf042c173460b"
+    },
+    {
+      "file": "it-reentry-cams-frames/018.png",
+      "bytes": 175899,
+      "sha256": "bf0c1373a714e483a6dab17651581421255af5e66df48931c15685382488a700"
+    },
+    {
+      "file": "it-reentry-cams-frames/019.png",
+      "bytes": 175928,
+      "sha256": "d34acb59ad59475bf2b1a57d034e876dce20b76ca9f31cba2b225c113173cf93"
+    },
+    {
+      "file": "it-reentry-cams-frames/020.png",
+      "bytes": 176056,
+      "sha256": "c085696819afd78fffbce2ca45275fa61d07e7f01b6b25f3ae340bee7db1f56a"
+    },
+    {
+      "file": "it-reentry-cams-frames/021.png",
+      "bytes": 175991,
+      "sha256": "53f21e89d296fd2b50ba9190896ba6ef8cb4707c30a8e6b5a5653a420b6a0675"
+    },
+    {
+      "file": "it-reentry-cams-frames/022.png",
+      "bytes": 175923,
+      "sha256": "59e7bc6839a237938e76b16fecdc027e0927ad2297996b675ccc1eab52d242bb"
+    },
+    {
+      "file": "it-reentry-cams-frames/023.png",
+      "bytes": 176007,
+      "sha256": "22914a2a33da1e9ab88d0de4f0a6848a2a15f49401cfc0590474cbfb49b7b596"
+    },
+    {
+      "file": "it-reentry-cams-frames/024.png",
+      "bytes": 175721,
+      "sha256": "fcc65be9320b302693d5eabc1a884e23dc50f5fd7123d2401d6bac71ed54c8d3"
+    },
+    {
+      "file": "it-reentry-cams-frames/025.png",
+      "bytes": 175718,
+      "sha256": "64869d449e9a3b722d423dbf1d127918b76a68b99d5077cfcd1ddc065c0969d0"
+    },
+    {
+      "file": "it-reentry-cams-frames/026.png",
+      "bytes": 175743,
+      "sha256": "52d23504f9654c7dde668e47720f637c9e408abad249d643526d2eee29d276af"
+    },
+    {
+      "file": "it-reentry-cams-frames/027.png",
+      "bytes": 175735,
+      "sha256": "4ca96dbae50075fae1c32cb36237bdc50224b3cad1e9fbe56e41782cd3476812"
+    },
+    {
+      "file": "it-reentry-cams-frames/028.png",
+      "bytes": 175824,
+      "sha256": "ef4a45ae2036ef4e0d045557d9de345695f2539ae312381d9b973c1ec9bf61b6"
+    },
+    {
+      "file": "it-reentry-cams-frames/029.png",
+      "bytes": 175768,
+      "sha256": "6699d96e15205042bae524f71d91a2eed9e626c1a03a606c6a09c3aee2e7f70f"
+    },
+    {
+      "file": "it-reentry-cams-frames/030.png",
+      "bytes": 175878,
+      "sha256": "8b54e5d4702071fc5f64bc14297be9e9e84a69ac6ca1856cae32900c4e100d21"
+    },
+    {
+      "file": "it-reentry-cams-frames/031.png",
+      "bytes": 175949,
+      "sha256": "66a621d3fc3a7c39bb957e50646ccd6eded3b315dcd6a7d115a1292322d47c97"
+    },
+    {
+      "file": "it-reentry-cams-frames/032.png",
+      "bytes": 176046,
+      "sha256": "9759c6fc694d7695fa7a84048d8ed3a873b3064ddf6e502ce4e255576d1c5c19"
+    },
+    {
+      "file": "it-reentry-cams-frames/033.png",
+      "bytes": 175995,
+      "sha256": "723a879a57fdd16171975af0285332aa8582975092d042ae792f490bcc5f5eff"
+    },
+    {
+      "file": "it-reentry-cams-frames/034.png",
+      "bytes": 175979,
+      "sha256": "06639de6d9e5d78b44a884fb75a2476793cdccd9198cbafc591e3313fb9dec23"
+    },
+    {
+      "file": "it-reentry-cams-frames/035.png",
+      "bytes": 175967,
+      "sha256": "dc1df73b46942b92285d85f10c729970bd7992d29ffcef4950b9033bdc5fc58e"
+    },
+    {
+      "file": "it-reentry-cams-frames/036.png",
+      "bytes": 175748,
+      "sha256": "dc096d74713a20e4883db3d02b11be21dcb7a0a68aa26909b12c60c05b8769b7"
+    },
+    {
+      "file": "it-reentry-cams-frames/037.png",
+      "bytes": 175691,
+      "sha256": "c339ea0a9fc9a753040181c7537689a04fa4c3465d1addd33c5501f6a0f7d0e2"
+    },
+    {
+      "file": "it-reentry-cams-frames/038.png",
+      "bytes": 175723,
+      "sha256": "af5ae3f14bff5fc882f2e8ceaab3f387daa05891d7f3fb90260e6eb71c157147"
+    },
+    {
+      "file": "it-reentry-cams-frames/039.png",
+      "bytes": 175739,
+      "sha256": "72217f7125f6fef755e0bc270b3fb603168bae03d63c4c58beb2c3f8e416e2c4"
+    },
+    {
+      "file": "it-reentry-cams-frames/040.png",
+      "bytes": 175730,
+      "sha256": "e5de276447b0edbe3364db8e70129b30166854e735500c6145a9ffa5d7f2f456"
+    },
+    {
+      "file": "it-reentry-cams-frames/041.png",
+      "bytes": 175814,
+      "sha256": "74676560a84371dacc3338af73e279d1e08ff761b1d1e0ce6743f84420c25b71"
+    },
+    {
+      "file": "it-reentry-cams-frames/042.png",
+      "bytes": 175852,
+      "sha256": "4d64043782766414a675a3954d33cc4c7998c784d9a9f7488625feed95e5a1f6"
+    },
+    {
+      "file": "it-reentry-cams-frames/043.png",
+      "bytes": 175930,
+      "sha256": "b4545a56806e738d76c87e7a524b85c16dac0b341b79e8bff537501422d8be9c"
+    },
+    {
+      "file": "it-reentry-cams-frames/044.png",
+      "bytes": 176045,
+      "sha256": "a7832ec313a1a0d1bb06428241c5cca2af210059a29a12bab9fdfcde362dc5c9"
+    },
+    {
+      "file": "it-reentry-cams-frames/045.png",
+      "bytes": 176078,
+      "sha256": "0daeb5e6d68f41103fea4fc3efeb1cc9617b48d44b61f798153aa4fb6bd93e41"
+    },
+    {
+      "file": "it-reentry-cams-frames/046.png",
+      "bytes": 176039,
+      "sha256": "c5c40cce982c0b7490f3a55db33433c6ee0244a20d716513870986a619227abf"
+    },
+    {
+      "file": "it-reentry-cams-frames/047.png",
+      "bytes": 175970,
+      "sha256": "c783cca264d01370b7172bc6b3463801fc75863c4c383679986b7d43326bad50"
+    },
+    {
+      "file": "it-reentry-cams-frames/048.png",
+      "bytes": 175807,
+      "sha256": "2c189934d43164e6d8cc198cae70fc4faa662dfa7c431d00d0d2a9d3ad826b76"
+    },
+    {
+      "file": "it-reentry-cams-record.json",
+      "bytes": 280,
+      "sha256": "150eb1d94f66dc0ed03fefa4429c3fe86affb08b161ec73657582f878c520afb"
+    },
+    {
+      "file": "it-reentry-cams.mp4",
+      "bytes": 1973793,
+      "sha256": "87522e3334aadb0ea0577435e0f977df99a4e45d27d55f0635b1bfa871a36d35"
+    },
+    {
+      "file": "latest-launch.json",
+      "bytes": 48,
+      "sha256": "19983ed56d7ac8cf83df27a4ed065a120f163bd9898d68814d98f850b750f5ac"
+    },
+    {
+      "file": "lifecycle.json",
+      "bytes": 717,
+      "sha256": "bcc54189657b796fcd61e6070ee6e7a8f4ce61ced3395079a1b0e0c8641411d9"
+    },
+    {
+      "file": "lifecycle_check.py",
+      "bytes": 1093,
+      "sha256": "735a97bb64b59cf986c0784a07ddbd0686ccf392287f859f0f763660f18c682f"
+    },
+    {
+      "file": "log-before-cold-summary.json",
+      "bytes": 358,
+      "sha256": "c46dfdc1aa189d159f013477b3fd568813b1ce005576367297a0299662af8a23"
+    },
+    {
+      "file": "log-summary.json",
+      "bytes": 358,
+      "sha256": "a715be2fc0f354158b3ce47380edad2327e8b8427aedca6dddec6a09fd8732e6"
+    },
+    {
+      "file": "native_audit.py",
+      "bytes": 2432,
+      "sha256": "a4671bd1e4cb4f7e43bf49d00aef6c04c99d909af5eb1817b9b1c92824488e4b"
+    },
+    {
+      "file": "phone.py",
+      "bytes": 5478,
+      "sha256": "7a39b86668d19710a0fde3f56a1675db8544e6b0191c594d8e29a1d1836843a2"
+    },
+    {
+      "file": "pollen-detail-fur.png",
+      "bytes": 365450,
+      "sha256": "d1a75ada6157fb4d9ea5d2a43005b9e032890dc229ec0852ef02877b4bfb3a88"
+    },
+    {
+      "file": "pollen-detail-fur.xml",
+      "bytes": 13821,
+      "sha256": "d7b38a14feed0171d01175be033cf4c9ff8806b5e6c8e6f8010cfbb3994feef5"
+    },
+    {
+      "file": "pollen-detail-it.png",
+      "bytes": 345065,
+      "sha256": "7b5cbc7978181449f05239b4a77d62bb66e6c1354d162ad8a90a97bac4e3c382"
+    },
+    {
+      "file": "pollen-detail-it.xml",
+      "bytes": 13834,
+      "sha256": "88cf6ac585fea637e16d094b204331f70706cd47f6b5bc2268cba08174c5f2e5"
+    },
+    {
+      "file": "prepare_report.py",
+      "bytes": 17961,
+      "sha256": "e485975daf89868bccbb181759cff8452fa4c21474acc91c7b86a7a77b329831"
+    },
+    {
+      "file": "radar-legend-fur.png",
+      "bytes": 656097,
+      "sha256": "ebf6f230b866298f78ae71df808801cb5f715db75743b9d04e1deaf3b732dc32"
+    },
+    {
+      "file": "radar-legend-fur.xml",
+      "bytes": 17844,
+      "sha256": "d3593576f47b1fb3c9018472e7798c1f6a03871c8667860119cb38e146e0b464"
+    },
+    {
+      "file": "radar-playing-fur.png",
+      "bytes": 656442,
+      "sha256": "facfc1d5d8a6ffc6e09e7a60bd6c0114fd8f25eaf5100c5e516dfb9a0999ab8f"
+    },
+    {
+      "file": "realtime-after-cold-start.png",
+      "bytes": 1112364,
+      "sha256": "63776a3d02cc488b225a2a0838e98fa9df84e1530dc4238df17d2fe004438ce5"
+    },
+    {
+      "file": "realtime-after-cold-start.xml",
+      "bytes": 16434,
+      "sha256": "ba5d313f2f164885e3d24034a78f09e242247d592b47c2050d5e3ac1516b1755"
+    },
+    {
+      "file": "realtime-dark-fur.png",
+      "bytes": 675445,
+      "sha256": "e95ae626868b52786a56d37e797d17543d8c836aafd76cdcedf72431964a34a7"
+    },
+    {
+      "file": "realtime-dark-fur.xml",
+      "bytes": 16421,
+      "sha256": "75b10986ee54e44bdc3a57fe38fa66a8a07bd9ebf9de3c6183ea8de93b37363a"
+    },
+    {
+      "file": "realtime-it.png",
+      "bytes": 1111641,
+      "sha256": "77e5e431516ceea07068b72a31c1f270c5622bf302f3c33cbc5927be0d57d3c7"
+    },
+    {
+      "file": "realtime-it.xml",
+      "bytes": 16434,
+      "sha256": "79d9bc2ec79668fbd691b1e754592ec1143e966b1f9ba54f3b302cf581035e15"
+    },
+    {
+      "file": "realtime-list-it.png",
+      "bytes": 900034,
+      "sha256": "a70a3814b2b1cdbc57b01d4a9a79f09617cfde6605c4770bd8dd147011173ea3"
+    },
+    {
+      "file": "realtime-list-it.xml",
+      "bytes": 19180,
+      "sha256": "7c2dc45e2d30011fad7ea639e8d8fe7e0d1e25e1139789b5315cbe5007239e45"
+    },
+    {
+      "file": "realtime-radar-fur.png",
+      "bytes": 659531,
+      "sha256": "d26ecfd40d0fbfbd78b95bde7a1aff725002d677e37f7eb0b1c669a8e4cdd4c5"
+    },
+    {
+      "file": "realtime-radar-fur.xml",
+      "bytes": 17426,
+      "sha256": "3aca25f77880f3cbd5312c65c6ddcc6242ac226997d49c5e2540b5d995ad4f95"
+    },
+    {
+      "file": "record_reentry.py",
+      "bytes": 2527,
+      "sha256": "b0538c375ff2c5eb67130da7d9df099388e41155e67a0ab8fc6d95154e3f39c3"
+    },
+    {
+      "file": "runtime-before-cold-private.log",
+      "bytes": 218277,
+      "sha256": "169fe708292c0220b20ec32828df75ae2d73dcf7001bfd0448ad9480e59154b8"
+    },
+    {
+      "file": "runtime-private.log",
+      "bytes": 75381,
+      "sha256": "4f06f83487b8b21350bb21eaa6e194c156ac3204c6dbe454bb8a54d56fe85d30"
+    },
+    {
+      "file": "settings-after-cold-start.png",
+      "bytes": 447876,
+      "sha256": "86da3c844995488efa037202905bc1595caf5555bbfa085157163ee09b9adbbd"
+    },
+    {
+      "file": "settings-after-cold-start.xml",
+      "bytes": 26456,
+      "sha256": "1288d2962a99906d230abc4ab727561174314956aa1730fab0fe854b657cec09"
+    },
+    {
+      "file": "settings-after-resume.png",
+      "bytes": 447148,
+      "sha256": "edac8c11eab82bfc0cff30bd7827cd43e7d47ad156754a9fecf25b5f6adfb3ce"
+    },
+    {
+      "file": "settings-after-resume.xml",
+      "bytes": 26776,
+      "sha256": "ee79d938f961b610fcdb757b0ff446a798bbbef987bff6bcaf6a10c9334f4a82"
+    },
+    {
+      "file": "settings-back.png",
+      "bytes": 1111688,
+      "sha256": "3e87ebd3be0cdb5f7a8832cd33e96028b5c7b368f405f8109a4af7b460765a6a"
+    },
+    {
+      "file": "settings-back.xml",
+      "bytes": 16434,
+      "sha256": "cfb95b6579fe7485243fdb6db455addf82f6a59d446ac8a3d2ceb3ee5d241a53"
+    },
+    {
+      "file": "settings-before-lifecycle.png",
+      "bytes": 448014,
+      "sha256": "98f8fe73c0fdde4f3c357af93c220dce475df0746a191ef7007a92bf8c4599fc"
+    },
+    {
+      "file": "settings-before-lifecycle.xml",
+      "bytes": 26776,
+      "sha256": "ee79d938f961b610fcdb757b0ff446a798bbbef987bff6bcaf6a10c9334f4a82"
+    },
+    {
+      "file": "settings-before.png",
+      "bytes": 447055,
+      "sha256": "e9ee1860a09ae8691907474846c1d9dad4c06d7ed7a991f661d39978af266ad4"
+    },
+    {
+      "file": "settings-before.xml",
+      "bytes": 26456,
+      "sha256": "1288d2962a99906d230abc4ab727561174314956aa1730fab0fe854b657cec09"
+    },
+    {
+      "file": "settings-fur.png",
+      "bytes": 450386,
+      "sha256": "bd493696dffc53100d3e595e3e13075313fdc9aaef40500f24a99e241ca917a8"
+    },
+    {
+      "file": "settings-fur.xml",
+      "bytes": 26450,
+      "sha256": "b480fbdde4f418a236c5df1887224198db6c32444db364df574316d9afb85bc3"
+    },
+    {
+      "file": "settings-restore.png",
+      "bytes": 319847,
+      "sha256": "e0c53a19611938895f720ab6b67c3beaf196e16a66d120681c431ef62a79d4ef"
+    },
+    {
+      "file": "settings-restore.xml",
+      "bytes": 26450,
+      "sha256": "0a628e2cf8cbc574bf2f76275ef36688875af125715eec86aeffaea31c001b9d"
+    },
+    {
+      "file": "sponsors-after.json",
+      "bytes": 117,
+      "sha256": "1f3f6885f9f856f5793eaae509f06a9ab553f17029960d6064921cf81efb947d"
+    },
+    {
+      "file": "sponsors-check.json",
+      "bytes": 117,
+      "sha256": "fc19f215dc1c69c779ba98e0753ac0868a3588a537be4d11452dd6fd9b306a2b"
+    },
+    {
+      "file": "weather-dark-fur.png",
+      "bytes": 393896,
+      "sha256": "baeb912a17f2299f47358765ea58197e505ed36d4b6058699617d774543f684b"
+    },
+    {
+      "file": "weather-dark-fur.xml",
+      "bytes": 71839,
+      "sha256": "e13e0235ea52eeacda71ea5165c6b580727eea811af9abd6f628c9f9b50d9f7e"
+    },
+    {
+      "file": "weather-it.png",
+      "bytes": 512788,
+      "sha256": "8dfbb749bab2e9c04540b4430e4db59195c3e15691f62783ebd8d75655992530"
+    },
+    {
+      "file": "weather-it.xml",
+      "bytes": 71520,
+      "sha256": "ff1fd3631cf1d487f91db1a818dd552cb3a93b06ef0a46326d7aa6c9aaa92b42"
+    },
+    {
+      "file": "webcam-back.png",
+      "bytes": 744806,
+      "sha256": "0bfed5ae75a00dba870063de4a7639e779d96da3e894c8d2df7e6d7e11233997"
+    },
+    {
+      "file": "webcam-back.xml",
+      "bytes": 22881,
+      "sha256": "a68b27fc10186965803acee4dfa5031d2c798723bea63af73b42e86a47d76f65"
+    },
+    {
+      "file": "webcam-detail.png",
+      "bytes": 934303,
+      "sha256": "035ba8f073526d8e1abb9b810b1694d10b90d9bf89efb658afd8faefdecf7273"
+    },
+    {
+      "file": "webcam-detail.xml",
+      "bytes": 21550,
+      "sha256": "e20f21fba5bf01353aba81ac5c8ba3c024eba1cbfb4665c281fcbc0b64abf745"
+    },
+    {
+      "file": "webcam-list-it.png",
+      "bytes": 957450,
+      "sha256": "e46f3d4fb6c1af3543a9b64abd53b09d42b33ff5266ed58ca2e39628356f966b"
+    },
+    {
+      "file": "webcam-list-it.xml",
+      "bytes": 20797,
+      "sha256": "6b2ea20f11c19c75ec8c9760768dbff1791ec1bdd45a2e9bd50304c2eac88dec"
+    },
+    {
+      "file": "webcams-expanded.png",
+      "bytes": 744652,
+      "sha256": "1bfa49935279f4649fc0e0fa5e42844adf1f03308ab95d501659c451b0de56ee"
+    },
+    {
+      "file": "webcams-expanded.xml",
+      "bytes": 22881,
+      "sha256": "3a1cf7f2173fac4c28442840104cac1cbb34b39d4cb3cd725919b4f9f9375152"
+    }
+  ]
+}

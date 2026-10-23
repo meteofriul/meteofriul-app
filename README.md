@@ -15,11 +15,11 @@ contenuti culturali; l'interfaccia è disponibile in italiano e friulano.
 > iPhone dal browser. Il [percorso di allineamento Web/Android](docs/operations/WEB_ANDROID_RELEASE_PARITY.md)
 > richiede sorgenti e funzionalità coerenti, oltre alla verifica Safari/iPhone.
 
-**Nuova AAB generata:** **0.1.15 / 300036**, sorgente `9d5ff2f4`, include main `2d8b0c32` e il fix Tempo reale. Firmata e verificata, CI verde; candidata Web dalla stessa sorgente. **Disponibile nel test interno dal 23 ottobre alle 13:37**, con la lista di due account confermata dal proprietario. Sponsor disattivati. La 300036 non è ancora provata sul telefono; ultima osservazione sulla 300035. [Caricamento e limiti](docs/operations/ANDROID_0.1.15_300036_UPLOAD_20261023.md).
+**Nuova AAB generata:** **0.1.15 / 300036**, sorgente `9d5ff2f4`, include main `2d8b0c32` e il fix Tempo reale. Firmata e verificata, CI verde; candidata Web dalla stessa sorgente. **Disponibile nel test interno dal 23 ottobre alle 13:37**, con la lista di due account confermata dal proprietario. Sponsor disattivati. La 300036 è stata verificata sul Galaxy A52 Android 14 dopo aggiornamento Play: Tempo reale visibile anche dopo avvio a freddo, Posizione conservata, aria/pollini IT/FUR e percorsi di navigazione osservati PASS. La matrice Android 15/16 e i casi non esercitati restano aperti. [Prova sul dispositivo](docs/operations/ANDROID_0.1.15_300036_DEVICE_CHECK_20261023.md). [Caricamento e limiti](docs/operations/ANDROID_0.1.15_300036_UPLOAD_20261023.md).
 
-**Rilievo successivo sul Galaxy: Tempo reale mostra una schermata vuota nella
-300035. Difetto riprodotto dopo la segnalazione del proprietario; promozione
-sospesa.** La prima verifica era mirata e aveva omesso questa sezione.
+**Rilievo storico della 300035: Tempo reale mostrava una schermata vuota.
+Difetto riprodotto dopo la segnalazione del proprietario; promozione allora
+sospesa.** Il difetto è risolto e verificato nella 300036, come documentato sopra. La prima verifica era mirata e aveva omesso questa sezione.
 I risultati positivi sotto non equivalgono a qualifica completa della release.
 [Difetto ed evidenze](docs/operations/ANDROID_0.1.15_300035_DEVICE_CHECK_20261023.md#realtime-layout-01--difetto-riprodotto-dopo-la-segnalazione-del-proprietario).
 
@@ -74,7 +74,7 @@ e non sostituisce la sua verifica. Evidenze e limiti nel [verbale sul telefono](
 | --- | --- |
 | Web | `0.1.14` pubblicata il 21 ottobre su `meteofriul.app`; candidata locale `0.1.15` da `9d5ff2f4`, con Tempo reale corretto, non distribuita; Safari/iPhone non verificato |
 | API | FastAPI su Cloud Run, chiamata direttamente via HTTPS da Web e Android |
-| Android | `0.1.15` (`300036`) disponibile nel test interno con fix Tempo reale; nuova prova sul telefono pendente. Il difetto della 300035 non è chiuso dal solo upload. Limiti GPS/Android 15–16/grandi schermi espliciti nel verbale. [Esito e limiti](docs/operations/RELEASE_0.1.15_STATUS_20261021.md) |
+| Android | `0.1.15` (`300036`) disponibile nel test interno con fix Tempo reale; verifica sul Galaxy Android 14 dei percorsi osservati PASS, incluso Tempo reale dopo avvio a freddo. La qualifica completa resta distinta. Limiti GPS/Android 15–16/grandi schermi espliciti nel verbale. [Esito e limiti](docs/operations/RELEASE_0.1.15_STATUS_20261021.md) |
 | Google Play | Produzione `0.1.14` (`300031`) nella lettura del 23 ottobre; `0.1.15` (`300036`) solo nel test interno, una lista con due account confermata dal proprietario. Sponsor disattivati |
 | Landing `meteofriul.it` | Gestita e distribuita da un progetto separato |
 | Push | Generazione `play-beta-v1`, App Check in enforce, Android/Web abilitati e lotti Firestore/FCM da 200 elementi |

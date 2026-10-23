@@ -1,5 +1,11 @@
 # AAB 0.1.15 / 300036 — 23 ottobre 2026
 
+> Aggiornamento successivo, 23 ottobre: la 300036 installata dal proprietario
+> via Play ha superato i percorsi osservati sul Galaxy Android 14, incluso Tempo
+> reale dopo avvio a freddo. [Verbale e limiti](ANDROID_0.1.15_300036_DEVICE_CHECK_20261023.md).
+> Il testo seguente conserva lo stato al momento di questa operazione;
+> per promozione e stato corrente vedere il [registro release](RELEASE_0.1.15_STATUS_20261021.md).
+
 ## Esito
 
 **Generata, firmata e verificata.** Aggiornamento successivo: caricata nel test interno alle 13:37 del 23 ottobre; [verbale di accettazione](ANDROID_0.1.15_300036_UPLOAD_20261023.md). Package

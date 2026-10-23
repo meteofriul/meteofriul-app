@@ -13,12 +13,17 @@ Archivio canonico `release-artifacts/web-candidates/20261023-0.1.15-9d5ff2f4/`.
 [Controlli, hash e limiti](ANDROID_0.1.15_300036_BUILD_20261023.md).
 
 La candidata `16890b8c` e quella precedente da `5e9bc7dc` restano conservate.
-La AAB 300035, precedente candidata interna e ultimo pacchetto osservato sul telefono, non contiene il fix Tempo reale.
-Il caricamento della 300036 è attestato nel [verbale Play](ANDROID_0.1.15_300036_UPLOAD_20261023.md).
-Nessuna prova runtime della nuova AAB né nuovo test browser in questa sessione.
+La AAB 300035, precedente candidata interna, non contiene il fix Tempo reale.
+La 300036 è ora l'ultimo pacchetto osservato sul Galaxy: mappa e dock visibili
+anche dopo avvio a freddo, Posizione conservata, aria/pollini IT/FUR e percorsi
+di navigazione osservati PASS. [Prova e limiti](ANDROID_0.1.15_300036_DEVICE_CHECK_20261023.md).
+Il caricamento resta attestato nel [verbale Play](ANDROID_0.1.15_300036_UPLOAD_20261023.md).
+La verifica Android non sostituisce un collaudo del bundle statico Web.
 Prima della pubblicazione Web restano prova del bundle statico e aggiornamento
 cache; Safari/iPhone e PWA non verificati. Il sito pubblico nell'ultima lettura
-del 22 ottobre rimane 0.1.14; la parità pubblicata non è ancora raggiunta.
+del 23 ottobre rimane 0.1.14: HTML con `main-D-Nry2Xb.js` e asset SHA256
+`c5ab69f0a4b63df56ea2254b60fcf829e91b30274632653f000962ac1aa010ca`,
+identico alla ricevuta del 22 ottobre. La parità pubblicata non è ancora raggiunta.
 
 ## Base comune e confini
 

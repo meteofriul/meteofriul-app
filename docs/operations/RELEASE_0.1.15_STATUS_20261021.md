@@ -1,13 +1,13 @@
 # Stato release 0.1.15 e lavoro salvato — aggiornamento del 23 ottobre 2026
 
-**Candidata corrente:** AAB **0.1.15 / 300036** generata e verificata da `9d5ff2f4`, con main `2d8b0c32` e Tempo reale corretto. Web dalla stessa sorgente; sponsor spenti. Disponibile nel test interno dalle 13:37 del 23 ottobre; non installata dall’agente e non qualificata runtime. [Verbale corrente](ANDROID_0.1.15_300036_UPLOAD_20261023.md).
+**Candidata corrente:** AAB **0.1.15 / 300036** generata e verificata da `9d5ff2f4`, con main `2d8b0c32` e Tempo reale corretto. Web dalla stessa sorgente; sponsor spenti. Disponibile nel test interno dalle 13:37 del 23 ottobre e aggiornata dal proprietario via Play. Verifica sul Galaxy Android 14: PASS dei percorsi osservati, compreso Tempo reale dopo avvio a freddo; qualifica completa ancora limitata dalla matrice non esercitata. Nessuna installazione dell’agente. [Verbale corrente](ANDROID_0.1.15_300036_DEVICE_CHECK_20261023.md).
 
 **La precedente 0.1.15 / 300035 è stata sostituita nel test interno dalla 300036.
-Il proprietario l'ha aggiornata via Play Store. Tempo reale risulta vuoto:
+Nella prova storica della 300035 Tempo reale risultava vuoto:
 difetto riprodotto sul Galaxy dopo la segnalazione del proprietario,
-promozione sospesa.** La nuova AAB 300036 è quella indicata sopra; nessuna installazione dell'agente.
+promozione allora sospesa. Il difetto è risolto nella 300036 verificata sopra.** La nuova AAB 300036 è quella indicata sopra; nessuna installazione dell'agente.
 
-Posizione conservata dopo ripresa e avvio a freddo; il proprietario la conferma
+Già nella prova della 300035: Posizione conservata dopo ripresa e avvio a freddo; il proprietario la conferma
 attiva prima e subito dopo l'aggiornamento. Aria/pollini IT/FUR e navigazione
 superano i controlli osservati; configurazione nativa presente nell'APK e
 precedente errore assente all'avvio. Restano da esercitare sul telefono gli
@@ -15,8 +15,9 @@ errori temporanei GPS; Android 15/16 e grandi schermi non provati.
 [Verbale sul Galaxy](ANDROID_0.1.15_300035_DEVICE_CHECK_20261023.md).
 
 AAB 300035 e sua candidata Web storica dalla sorgente `5e9bc7dc`; CI `39917176816` e builder PASS.
-Web non pubblicata, sponsor disattivati. La PR 11 resta in bozza e la release
-non è stata promossa su main. Il tentativo 300034 resta abbandonato e conservato.
+Web non pubblicata, sponsor disattivati. La sospensione della promozione per
+Tempo reale appartiene alla 300035; la successiva prova della 300036 è descritta
+sopra. Il tentativo 300034 resta abbandonato e conservato.
 [Build](ANDROID_0.1.15_300035_BUILD_20261023.md) ·
 [Accettazione Play](ANDROID_0.1.15_300035_UPLOAD_20261023.md).
 
@@ -27,13 +28,13 @@ non è stata promossa su main. Il tentativo 300034 resta abbandonato e conservat
 | Produzione Play | Lettura Console del 23 ottobre: 0.1.14 / 300031; nessuna promozione della 0.1.15 in produzione |
 | Test interno Play | 0.1.15 / 300036 disponibile dal 23 ottobre alle 13:37; una sola lista con due account, mantenuta su conferma del proprietario; sponsor disattivati |
 | Web pubblica | Pubblicazione del 21 ottobre da `1b0287c1`, versione 0.1.14; HTML e asset riconfermati il 22 ottobre. Candidata 0.1.15 aggiornata da `9d5ff2f4` preparata, non distribuita; Safari/iPhone non verificato |
-| `main` | `2d8b0c32`, allineato a GitHub tramite PR 17; CI 39935808248 verde. Include aria/pollini e fix Tempo reale verificati nell’anteprima Galaxy; posizione e altre modifiche della release restano nel ramo dedicato |
-| `codex/release-0.1.15` | Sorgente `9d5ff2f4`: main `2d8b0c32`, Posizione, transitorio CAMS e configurazione nativa conservati. AAB 300036 accettata nel test interno; Web costruita e non pubblicata; nessuna promozione su main |
-| Ultimo artefatto osservato sul telefono (300035) | Sorgente `5e9bc7dcdc6183a2fc43ada2dea3dfb22f2a3dc1`, AAB SHA256 `1bcf6a32348eee0f098f475c179523a309d962a86c3faf8736a0bd29a1622762`; installer Play Store |
+| Base main incorporata nella AAB | `2d8b0c32`, PR 17 e CI 39935808248 verde. La promozione della release verificata, autorizzata il 23 ottobre dopo la prova sul Galaxy, passa dalla [PR 11](https://github.com/meteofriul/meteofriul-app/pull/11): stato del merge, SHA risultante e CI sono registrati su GitHub |
+| `codex/release-0.1.15` | Sorgente AAB `9d5ff2f4`: main `2d8b0c32`, Posizione, transitorio CAMS e configurazione nativa conservati. I commit successivi documentano build, Play e dispositivo senza cambiare i sorgenti dell'artefatto. Web costruita dalla stessa base e non pubblicata |
+| Ultimo artefatto osservato sul telefono (300036) | Sorgente `9d5ff2f415ab8b10be510eff2a0b058a8c2408ac`, AAB SHA256 `024212752b3af72f163d75849aa53c2b191ba0352e42423b11efccd2d7f8b51f`; installer Play Store; [verifica sul Galaxy](ANDROID_0.1.15_300036_DEVICE_CHECK_20261023.md) |
 
 I documenti successivi non cambiano il commit sorgente dell'AAB già firmata.
-La versione nella configurazione di `main` può quindi differire da quella del
-test interno: non va modificata solo per far coincidere i numeri.
+La promozione comprende la configurazione 0.1.15 / 300036 già provata:
+non riserva un nuovo codice, non ricostruisce la AAB e non cambia i canali pubblicati.
 
 **Preparazione locale del 22 ottobre:** la guardia del ramo release consente
 un'altra AAB ufficiale con nome 0.1.15 e codice crescente, anche dopo 300033
@@ -45,10 +46,10 @@ generata. [Dettagli e limiti](ANDROID_NATIVE_CONFIG_FIX_20261022.md#numerazione-
 
 | Rilievo | Evidenza e stato |
 | --- | --- |
-| REALTIME-LAYOUT-01 | FAIL nella 300035 installata. Fix `40af8779` approvato e in main, integrato nella AAB 300036 da `9d5ff2f4`; regressioni e build PASS, sorgenti identici alla prova Brave/Galaxy. Rimane aperta la verifica su una nuova AAB minificata; non chiuso dal solo allineamento |
+| REALTIME-LAYOUT-01 | FAIL nella 300035 installata. Fix `40af8779` approvato e in main, integrato nella AAB 300036 da `9d5ff2f4`; regressioni e build PASS, sorgenti identici alla prova Brave/Galaxy. CHIUSO nella 300036 installata da Play sul Galaxy: mappa e dock visibili in IT chiaro/FUR scuro, webcam e lista utilizzabili, conferma dopo avvio a freddo. Matrice Android restante esplicita nel nuovo verbale |
 | NATIVE-CONFIG-01 | Nell'AAB 300033 mancano il JSON Capacitor e la risorsa Cordova `xml/config`. [Correzione locale del 22 ottobre](ANDROID_NATIVE_CONFIG_FIX_20261022.md): copia esplicita, keep mirato e controllo del bundle; regressioni locali superate. CHIUSO nella 300035: JSON e risorsa presenti anche nell’APK installato; avvio a freddo sul Galaxy senza il precedente errore |
-| LOCATION-UPDATE-01 | Causa dell'episodio Play ancora non provata. Il 22 ottobre è stato riprodotto e corretto localmente un percorso di avvio che disattiva la preferenza dopo errori temporanei: 114 test passano. Correzione integrata nel ramo release, non promossa su main. Percorsi ordinari sul Galaxy PASS; proprietario conferma preferenza attiva prima/dopo Play. Recupero da errore temporaneo sul dispositivo ancora non esercitato. [Analisi e limiti](ANDROID_LOCATION_STARTUP_20261022.md) |
-| BULLETIN-MAP-01 | [Spaziatura corretta e verificata su Brave/Galaxy](BULLETIN_MAP_LABEL_SPACING_20261022.md), già in main e incorporata nella candidata. Ricontrollata nel campione della AAB 300035 installata sul Galaxy il 23 ottobre |
+| LOCATION-UPDATE-01 | Causa dell'episodio Play ancora non provata. Il 22 ottobre è stato riprodotto e corretto localmente un percorso di avvio che disattiva la preferenza dopo errori temporanei: 114 test passano. Correzione inclusa nella sorgente 300036 oggetto della PR 11. Percorsi ordinari sul Galaxy PASS; proprietario conferma preferenza attiva prima/dopo Play. Recupero da errore temporaneo sul dispositivo ancora non esercitato. [Analisi e limiti](ANDROID_LOCATION_STARTUP_20261022.md) |
+| BULLETIN-MAP-01 | [Spaziatura corretta e verificata su Brave/Galaxy](BULLETIN_MAP_LABEL_SPACING_20261022.md), già in main e incorporata nella candidata. Ricontrollata nei campioni delle AAB 300035 e 300036 installate sul Galaxy il 23 ottobre |
 | CAMS-TRANSITION-01 | Causa riprodotta e corretta: cache incompleta durante una nuova richiesta. Fix `53aba4ff` incluso nella AAB 300035, regressioni automatiche IT/FUR superate; rientro IT/FUR sul Galaxy senza falsa indisponibilità osservata. Con cache disponibile i valori arrivano subito: testo di caricamento intermedio non esercitato sul telefono. [Verbale](CAMS_REENTRY_LOADING_20261023.md) |
 | Copertura restante | Android 15/16, gesti, tablet/multi-window e percorsi con scritture o consegne reali non verificati; nessun PASS implicito |
 
@@ -61,7 +62,7 @@ già successiva all'aggiornamento: non certifica la migrazione dal vecchio pacch
 La verifica corrente non ricostruisce né sovrascrive gli artefatti precedenti.
 Promozione del codice e pubblicazione restano azioni separate secondo il
 [runbook Play](PLAY_AAB_RUNBOOK.md), con i limiti runtime sopra dichiarati.
-La 300035 è installata dal proprietario; nessuna installazione dell’agente, deploy o invio manuale. [Preparazione precedente](RELEASE_0.1.15_300034_PREPARATION_20261023.md) e [verbale di build](ANDROID_0.1.15_300034_BUILD_20261023.md).
+La 300036 è ora installata dal proprietario; nessuna installazione dell’agente, deploy o invio manuale. [Preparazione precedente](RELEASE_0.1.15_300034_PREPARATION_20261023.md) e [verbale di build](ANDROID_0.1.15_300034_BUILD_20261023.md).
 
 ## Servizi e Web
 
@@ -95,7 +96,7 @@ La 300035 è installata dal proprietario; nessuna installazione dell’agente, d
 
 ## Registri, prove e GitHub
 
-- [PR 11 — codice e preparazione release, in bozza](https://github.com/meteofriul/meteofriul-app/pull/11).
+- [PR 11 — promozione del codice verificato e verbali della release](https://github.com/meteofriul/meteofriul-app/pull/11).
 - [Verbale build e accettazione Play](https://github.com/meteofriul/meteofriul-app/blob/codex/release-0.1.15/docs/operations/ANDROID_0.1.15_BUILD_20261021.md).
 - [Verbale sul Galaxy e rettifica sulla posizione](https://github.com/meteofriul/meteofriul-app/blob/codex/release-0.1.15/docs/operations/ANDROID_0.1.15_DEVICE_CHECK_20261021.md).
 - [Ricevuta strutturata del dispositivo](https://github.com/meteofriul/meteofriul-app/blob/codex/release-0.1.15/release-history/android-preparation/0.1.15-20261021/device-verification.json).
@@ -110,8 +111,15 @@ nell'archivio locale ignorato `release-artifacts/android-play/`; non vengono
 pubblicati su GitHub. Sono conservati gli hash delle evidenze nei verbali.
 
 La CI verde controlla il codice nei commit indicati dalle esecuzioni, non
-risolve i rilievi del dispositivo. La PR release rimane in bozza dopo
-il caricamento nel test interno. Main non viene modificato; CI del sorgente
-`39944265214` e dei record di build `39945799912` entrambe verdi per la 300036. Il salvataggio
-dell'accettazione Play segue il registro append-only previsto dal runbook.
-La prova runtime nativa rimane un prerequisito della promozione del codice.
+risolve i rilievi del dispositivo. CI del sorgente `39944265214`, dei record di
+build `39945799912` e dell'accettazione Play `39948472277` verdi per la 300036.
+Il salvataggio dell'accettazione Play segue il registro append-only previsto dal runbook.
+
+Il 23 ottobre il proprietario ha autorizzato commit/push dei verbali e
+allineamento a main dopo la prova della 300036. La PR 11 accompagna questa
+promozione: prima CI del nuovo commit documentale, poi merge, poi verifica CI
+di main e allineamento locale dei rami. Il suo record GitHub conserva l'esito
+effettivo, senza attribuire il futuro SHA di merge alla AAB già firmata.
+Nessuna pubblicazione Web o produzione Play è inclusa. Restano espliciti i casi
+non esercitati, i vecchi worktree indipendenti e i loro file non ancora salvati;
+non vengono importati né eliminati per questo allineamento.
