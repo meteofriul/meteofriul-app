@@ -15,20 +15,19 @@ contenuti culturali; l'interfaccia è disponibile in italiano e friulano.
 > iPhone dal browser. Il [percorso di allineamento Web/Android](docs/operations/WEB_ANDROID_RELEASE_PARITY.md)
 > richiede sorgenti e funzionalità coerenti, oltre alla verifica Safari/iPhone.
 
-**Preparazione locale del 23 ottobre 2026:** candidata **0.1.15 / 300034**,
-codice configurato ma non riservato, AAB non generata. La release incorpora
-main `f9e178b2`, la correzione del transitorio aria/pollini, Posizione e
-configurazione nativa. Web e asset Web Android dalla stessa sorgente `c30cfe33`.
-Superati 162 test mirati, guardie e build Web; nessuna nuova prova browser per
-scelta del proprietario. Verifica della nuova release sul dispositivo ancora
-aperta. [Preparazione, artefatti e limiti](docs/operations/RELEASE_0.1.15_300034_PREPARATION_20261023.md).
+**Release del 23 ottobre 2026:** candidata **0.1.15 / 300035** in preparazione,
+con main `f9e178b2`, correzione del transitorio aria/pollini, Posizione e
+configurazione nativa. Il tentativo 300034 ha compilato ma si è fermato per un
+filtro errato nel controllo delle risorse; correzione verificata e abbandono
+registrato con autorizzazione del proprietario. Nessun nuovo upload o installazione.
+[Verbale e limiti](docs/operations/ANDROID_0.1.15_300034_BUILD_20261023.md).
 
 La AAB **0.1.15 / 300033** resta quella del test interno personale già provata
 sul Galaxy. Le correzioni locali della configurazione nativa e della posizione
 richiedono ancora un nuovo pacchetto minificato e la verifica sul dispositivo;
 la mappa, la barra fissa di Bollettino/Eventi, Vite e Indietro nelle Impostazioni
-sono già verificati su Brave e integrati da main. Nessuna nuova AAB o installazione.
-La PR 11 resta in bozza e questa integrazione locale non promuove la release
+sono già verificati su Brave e integrati da main. La nuova AAB deve ancora completare il builder protetto.
+La PR 11 è pubblicata in bozza e questa integrazione non promuove la release
 su main. [Stato e prossimi passi](docs/operations/RELEASE_0.1.15_STATUS_20261021.md).
 
 **Job meteo ICON-2I — verifica del 21 ottobre 2026:** nuova corsa pubblicata,

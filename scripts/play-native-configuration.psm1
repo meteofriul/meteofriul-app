@@ -124,12 +124,14 @@ function Assert-PlayNativeConfigurationBundle {
             throw "release_android_native_plugins_bundle_mismatch"
         }
 
-        # The dump is restricted by bundletool to com.meteofriul.app:xml/config.
+        # bundletool accepts type/name, not package:type/name; verify the package here.
         # Require both the resource name used by Cordova and its actual default file;
         # a similarly named ZIP entry alone cannot prove getIdentifier() will work.
+        $packages = [regex]::Matches($CordovaResourceDump, "(?m)^Package '([^']+)':\r?" + '$')
         $resourceNames = [regex]::Matches($CordovaResourceDump, '(?m)^0x[0-9a-fA-F]+ - xml/config\r?$')
         $files = [regex]::Matches($CordovaResourceDump, '(?m)^\s*\(default\) - \[FILE\] (res/[^\s]+)\r?$')
-        if ($resourceNames.Count -ne 1 -or $files.Count -ne 1 -or
+        if ($packages.Count -ne 1 -or $packages[0].Groups[1].Value -cne 'com.meteofriul.app' -or
+            $resourceNames.Count -ne 1 -or $files.Count -ne 1 -or
             $files[0].Groups[1].Value.Contains('..')) {
             throw "release_android_cordova_config_resource_missing"
         }

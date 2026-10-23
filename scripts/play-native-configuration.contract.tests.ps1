@@ -37,7 +37,7 @@ function Fixture([object[]]$Entries) {
     return $path
 }
 $cordovaBytes = [Text.Encoding]::UTF8.GetBytes('compiled-resource-fixture')
-$cordovaDump = "0x7f110002 - xml/config`n`t(default) - [FILE] res/xml/config.xml"
+$cordovaDump = [IO.File]::ReadAllText((Join-Path $PSScriptRoot 'fixtures/play-cordova-resource-dump.txt'))
 $configEntry = Zip-Entry 'base/assets/capacitor.config.json' $sourceBytes
 $pluginEntry = Zip-Entry 'base/assets/capacitor.plugins.json' $pluginsBytes
 $cordovaEntry = Zip-Entry 'base/res/xml/config.xml' $cordovaBytes
@@ -99,6 +99,9 @@ try {
     $changedPlugins = [Text.Encoding]::UTF8.GetBytes('[{"pkg":"other","classpath":"Other"}]')
     Reject { Verify (Fixture @($configEntry,(Zip-Entry 'base/assets/capacitor.plugins.json' $changedPlugins),$cordovaEntry)) } 'plugins_bundle_mismatch'
     Reject { Verify $valid '' } 'cordova_config_resource_missing'
+    Reject { Verify $valid ($cordovaDump -replace 'com.meteofriul.app','com.other.app') } 'cordova_config_resource_missing'
+    Reject { Verify $valid ($cordovaDump -replace "Package 'com.meteofriul.app':",'') } 'cordova_config_resource_missing'
+    Reject { Verify $valid ($cordovaDump + $cordovaDump) } 'cordova_config_resource_missing'
     Reject { Verify $valid ($cordovaDump -replace 'xml/config','xml/other') } 'cordova_config_resource_missing'
     Reject { Verify (Fixture @($configEntry,$pluginEntry)) } 'cordova_config_bundle_entry_invalid'
     $renamed = Fixture @($configEntry,$pluginEntry,(Zip-Entry 'base/res/q.xml' $cordovaBytes))
@@ -110,7 +113,7 @@ try {
     Check ($builder.IndexOf('$nativeConfigurationState = Get-PlayNativeConfiguration') -lt $builder.IndexOf('Write-NewPlayJsonFile -Path $reservationPath')) 'Native source preflight must precede reservation'
     Check ($builder.IndexOf('Copy-PlayNativeConfiguration') -gt $builder.IndexOf('& npx cap update android') -and $builder.IndexOf('Copy-PlayNativeConfiguration') -lt $builder.IndexOf('& .\gradlew.bat bundleRelease')) 'Configuration copy must follow update and precede Gradle'
     Check ($builder.IndexOf('$nativeConfigurationArtifacts = Assert-PlayNativeConfigurationBundle') -lt $builder.IndexOf('Copy-NewPlayArtifact -Source $aab')) 'Native bundle guard must precede archival'
-    Check ($builder.Contains('--resource=com.meteofriul.app:xml/config')) 'Resource dump must be scoped to the application resource'
+    Check ($builder.Contains('--resource=xml/config') -and -not $builder.Contains('--resource=com.meteofriul.app:xml/config')) 'Resource dump must use the documented bundletool type/name syntax'
     Check ($builder.Contains('NativeConfiguration = $nativeConfigurationArtifacts')) 'Manifest must retain native verification'
     $keepPath = Join-Path $root 'frontend/android/app/src/main/res/raw/com_meteofriul_native_config_keep.xml'
     [xml]$keep = [IO.File]::ReadAllText($keepPath)

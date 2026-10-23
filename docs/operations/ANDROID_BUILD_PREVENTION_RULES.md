@@ -72,6 +72,17 @@ distribuito dai pacchetti. In questa release escludere `build` aveva rimosso
   builder prima della compilazione. Se il push non è autorizzato, preparare
   localmente e dichiarare quel requisito; non bypassarlo.
 
+### Riferimenti attivi per la 0.1.15
+
+Per l'attuale immagine API `5522b4cf…`, usare insieme il commit originale
+`e180b87abe5dac022034881ea4eb1ca60a0d4e78` e
+`release-history/android-preparation/0.1.15-20261021/api-original-source.json`.
+Non sostituirli con l'identità riscritta `599aea2f` dell'attestazione precedente:
+la prova TTL storica appartiene alla genealogia originale. Se immagine o tag
+cambiano, rivalidare il legame invece di riutilizzare questi parametri.
+Il set push TTL corrente include gli avvisi del 21 ottobre:
+`release-history/firestore-ttl/runtime-writer-sets/play-services-notices-20261023.json`.
+
 ## 4. Versioni: distinguere nome, codice e tentativo
 
 - Leggere il massimo effettivo in Play Console e il registro locale completo.
@@ -149,3 +160,12 @@ coprono il riuso del solo nome dopo build, accettazione o abbandono, il blocco
 dei codici già riservati e delle riserve aperte, più bundle distinti con lo stesso
 nome e selezione dell'ultima accettazione per codice. Le guide devono restare collegate da README,
 AGENTS.md e runbook; aggiornarle quando emerge una nuova causa verificata.
+## Sintassi bundletool verificata sul pacchetto reale
+
+`dump resources --resource=xml/config --values` usa type/name. La forma
+package:type/name restituisce output vuoto con bundletool 1.18.3 e non dimostra
+assenza della risorsa. Controllare separatamente il package nel dump e il file
+nel bundle; mantenere regressioni con output reale e casi negativi. Una fixture
+inventata non verifica che gli argomenti del comando reale siano corretti.
+Il [tentativo 300034](ANDROID_0.1.15_300034_BUILD_20261023.md) conserva causa,
+file e abbandono; non riutilizzare il codice consumato.

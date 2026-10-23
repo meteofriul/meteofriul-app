@@ -1679,7 +1679,7 @@ Invoke-PlayBundletool `
     -FailureCode "release_android_play_bundle_invalid" | Out-Null
 $cordovaResourceDump = Invoke-PlayBundletool `
     -JavaPath $java -JarPath $resolvedBundletool `
-    -Arguments @("dump", "resources", "--bundle=$aab", "--resource=com.meteofriul.app:xml/config", "--values") `
+    -Arguments @("dump", "resources", "--bundle=$aab", "--resource=xml/config", "--values") `
     -FailureCode "release_android_cordova_config_dump_failed"
 $nativeConfigurationArtifacts = Assert-PlayNativeConfigurationBundle `
     -BundlePath $aab `

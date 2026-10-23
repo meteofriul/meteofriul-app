@@ -1,5 +1,7 @@
 # Preparazione 0.1.15 / 300034 — 23 ottobre 2026
 
+**Seguito:** tentativo 300034 abbandonato e candidata 300035 autorizzata. Vedere il [verbale di build](ANDROID_0.1.15_300034_BUILD_20261023.md).
+
 ## Aggiornamento successivo: GitHub e avvio build
 
 Il proprietario ha autorizzato il push della release e la generazione della
