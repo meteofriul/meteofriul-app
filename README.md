@@ -15,7 +15,7 @@ contenuti culturali; l'interfaccia è disponibile in italiano e friulano.
 > iPhone dal browser. Il [percorso di allineamento Web/Android](docs/operations/WEB_ANDROID_RELEASE_PARITY.md)
 > richiede sorgenti e funzionalità coerenti, oltre alla verifica Safari/iPhone.
 
-**Preparazione locale aggiornata:** release e candidata Web includono main `2d8b0c32` e il fix di Tempo reale, dalla sorgente comune `16890b8c`. Controlli locali superati; nessuna nuova AAB, push o pubblicazione. La 300035 installata resta invariata. [Controlli e limiti](docs/operations/RELEASE_WEB_REALTIME_ALIGNMENT_20261023.md).
+**Nuova AAB generata:** **0.1.15 / 300036**, sorgente `9d5ff2f4`, include main `2d8b0c32` e il fix Tempo reale. Firmata e verificata, CI verde; candidata Web dalla stessa sorgente. **Non caricata su Play e non ancora provata sul telefono.** Sponsor disattivati. La 300035 installata resta invariata. [Artefatto e limiti](docs/operations/ANDROID_0.1.15_300036_BUILD_20261023.md).
 
 **Rilievo successivo sul Galaxy: Tempo reale mostra una schermata vuota nella
 300035. Difetto riprodotto dopo la segnalazione del proprietario; promozione

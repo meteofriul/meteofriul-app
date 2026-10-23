@@ -5,19 +5,19 @@ perché chi usa iPhone accede al prodotto dal browser.
 
 ## Candidata aggiornata del 23 ottobre 2026 — Tempo reale
 
-Release 0.1.15 e candidata Web sono allineate a main `2d8b0c32`, sorgente comune
-`16890b8c`. Inclusa la correzione di Tempo reale; conservate Posizione, CAMS e
-configurazione nativa. Web compilata con `-BuildOnly`, asset Web Android dalla
-stessa sorgente; nessuna nuova AAB. Sponsor confermati spenti, zero campagne.
-Archivio canonico `release-artifacts/web-candidates/20261023-0.1.15-16890b8c/`.
-[Controlli, hash e limiti](RELEASE_WEB_REALTIME_ALIGNMENT_20261023.md).
+AAB **0.1.15 / 300036** e candidata Web dalla stessa sorgente `9d5ff2f415ab8b10be510eff2a0b058a8c2408ac`,
+allineata a main `2d8b0c32`. Inclusa la correzione di Tempo reale; conservate
+Posizione, CAMS e configurazione nativa. AAB firmata e verificata, non caricata;
+Web compilata con `-BuildOnly` e non pubblicata. Sponsor spenti, zero campagne.
+Archivio canonico `release-artifacts/web-candidates/20261023-0.1.15-9d5ff2f4/`.
+[Controlli, hash e limiti](ANDROID_0.1.15_300036_BUILD_20261023.md).
 
-La candidata precedente da `5e9bc7dc` resta conservata insieme alla AAB 300035,
-già disponibile nel test interno: quel pacchetto non contiene il fix Tempo reale.
-Nessuna pubblicazione Web né nuovo test browser in questa preparazione.
-Prima della pubblicazione restano prova del bundle statico e aggiornamento cache;
-Safari/iPhone e PWA non verificati. Il sito pubblico nell'ultima lettura del
-22 ottobre rimane 0.1.14; la parità pubblicata non è ancora raggiunta.
+La candidata `16890b8c` e quella precedente da `5e9bc7dc` restano conservate.
+La AAB 300035 disponibile nel test interno non contiene il fix Tempo reale.
+Nessuna prova runtime della nuova AAB né nuovo test browser in questa sessione.
+Prima della pubblicazione Web restano prova del bundle statico e aggiornamento
+cache; Safari/iPhone e PWA non verificati. Il sito pubblico nell'ultima lettura
+del 22 ottobre rimane 0.1.14; la parità pubblicata non è ancora raggiunta.
 
 ## Base comune e confini
 

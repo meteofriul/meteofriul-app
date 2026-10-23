@@ -1,0 +1,108 @@
+{
+  "schema_version": 1,
+  "verified_at_utc": "2026-10-23T11:21:57.449747+00:00",
+  "status": "BUILT_NOT_UPLOADED_RUNTIME_PENDING",
+  "source_commit": "9d5ff2f415ab8b10be510eff2a0b058a8c2408ac",
+  "main_integrated": "2d8b0c327204c5812bb67dbf203ed948812a445e",
+  "version_name": "0.1.15",
+  "version_code": 300036,
+  "application_id": "com.meteofriul.app",
+  "aab": {
+    "file": "meteofriul-300036-0.1.15.aab",
+    "bytes": 73017302,
+    "sha256": "024212752b3af72f163d75849aa53c2b191ba0352e42423b11efccd2d7f8b51f"
+  },
+  "mapping": {
+    "file": "meteofriul-300036-0.1.15.mapping.txt",
+    "sha256": "1578fd6e78e3f27ea18a568673e571bf6e602f88a7d9bf349a1f34300307e6ff"
+  },
+  "upload_certificate_sha256": "338c051587d62cdad6f9bd38eaa1e793d3da2d6c30c4270f8450a93a6ecec3b4",
+  "native_configuration": {
+    "Verification": "native-config-hashes-and-cordova-resource",
+    "ConfigSha256": "0e6adc3fd2d8c557b848322adbda800b4e69804f0aec2f37326aa25543979cce",
+    "PluginsSha256": "b9832bcf10b7daff2969d0d4b66bcfe5ef7acdf64107709bd3f839cf3cfda7e4",
+    "CordovaResource": "com.meteofriul.app:xml/config",
+    "CordovaBundleEntry": "base/res/xml/config.xml"
+  },
+  "signature_verification": "all-payload-entries-single-signer",
+  "r8_verification": "external-and-embedded-mapping-match",
+  "native_symbols_status": "unavailable-transitive-native-libraries",
+  "realtime_css_present_in_signed_bundle": true,
+  "independent_bundletool_validation": "PASS",
+  "source_ci": {
+    "conclusion": "success",
+    "databaseId": 39944265214,
+    "headSha": "9d5ff2f415ab8b10be510eff2a0b058a8c2408ac",
+    "jobs": [
+      {
+        "name": "hosting-preview-tool",
+        "status": "completed",
+        "conclusion": "success"
+      },
+      {
+        "name": "frontend",
+        "status": "completed",
+        "conclusion": "success"
+      },
+      {
+        "name": "backend",
+        "status": "completed",
+        "conclusion": "success"
+      }
+    ],
+    "status": "completed",
+    "url": "https://github.com/meteofriul/meteofriul-app/actions/runs/39944265214"
+  },
+  "web": {
+    "archive_relative_path": "release-artifacts/web-candidates/20261023-0.1.15-9d5ff2f4",
+    "source_commit": "9d5ff2f415ab8b10be510eff2a0b058a8c2408ac",
+    "main_integrated": "2d8b0c327204c5812bb67dbf203ed948812a445e",
+    "frontend_tree": "65ac58a65eef88d19474af262bc6c9ec36e7198c",
+    "manifest_sha256": "42e81042e678be61091db42e401329f54353bddd8be28d4673eacbf898a75bc2",
+    "artifacts": {
+      "web": {
+        "files": 506,
+        "bytes": 76030579
+      },
+      "android-web": {
+        "files": 505,
+        "bytes": 75977911
+      }
+    },
+    "protected_files_unchanged": 797,
+    "sponsors": {
+      "checked_at_utc": "2026-10-23T11:12:22.283566+00:00",
+      "enabled": false,
+      "revision": 117,
+      "campaign_count": 0
+    },
+    "realtime_css_in_both_bundles": true
+  },
+  "sponsors": {
+    "checked_at_utc": "2026-10-23T11:21:55.449142+00:00",
+    "enabled": false,
+    "campaign_count": 0,
+    "revision": 117
+  },
+  "protected_files_unchanged": 797,
+  "build": {
+    "started_at_utc": "2026-10-23T11:16:32.265496+00:00",
+    "completed_at_utc": "2026-10-23T11:21:00.488300+00:00",
+    "source_commit": "9d5ff2f415ab8b10be510eff2a0b058a8c2408ac",
+    "returncode": 0,
+    "reservation_exists": true,
+    "release_manifest_exists": true,
+    "manual_upload_or_install": false
+  },
+  "runtime": {
+    "new_aab_on_device": "NOT_VERIFIED",
+    "android_15_16": "NOT_VERIFIED",
+    "large_screen_multiwindow": "NOT_VERIFIED",
+    "safari_iphone": "NOT_VERIFIED",
+    "note": "Prior Brave and 300035 observations are distinct; no installation or browser app test in this session."
+  },
+  "play_upload": false,
+  "installation": false,
+  "deploy": false,
+  "manual_sends": false
+}

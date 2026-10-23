@@ -1,11 +1,11 @@
 # Stato release 0.1.15 e lavoro salvato — aggiornamento del 23 ottobre 2026
 
-**Allineamento locale successivo:** main `2d8b0c32` incorporato nella release tramite `16890b8c`, con Tempo reale corretto e Web ricompilata dalla stessa sorgente. Test e build locali PASS; codice 300035 non cambiato né riutilizzato per una nuova AAB. [Verbale corrente](RELEASE_WEB_REALTIME_ALIGNMENT_20261023.md).
+**Candidata corrente:** AAB **0.1.15 / 300036** generata e verificata da `9d5ff2f4`, con main `2d8b0c32` e Tempo reale corretto. Web dalla stessa sorgente; sponsor spenti. Non caricata su Play, non installata e non qualificata runtime. [Verbale corrente](ANDROID_0.1.15_300036_BUILD_20261023.md).
 
 **0.1.15 / 300035 è disponibile solo nel test interno personale di Google Play.
 Il proprietario l'ha aggiornata via Play Store. Tempo reale risulta vuoto:
 difetto riprodotto sul Galaxy dopo la segnalazione del proprietario,
-promozione sospesa.** Nessuna nuova AAB o installazione dell'agente; la preparazione locale successiva è riportata sopra.
+promozione sospesa.** La nuova AAB 300036 è quella indicata sopra; nessuna installazione dell'agente.
 
 Posizione conservata dopo ripresa e avvio a freddo; il proprietario la conferma
 attiva prima e subito dopo l'aggiornamento. Aria/pollini IT/FUR e navigazione
@@ -26,9 +26,9 @@ non è stata promossa su main. Il tentativo 300034 resta abbandonato e conservat
 | --- | --- |
 | Produzione Play | Lettura Console del 23 ottobre: 0.1.14 / 300031; nessuna promozione della 0.1.15 in produzione |
 | Test interno Play | 0.1.15 / 300035 disponibile dal 23 ottobre alle 09:59, una sola lista selezionata con un utente; sponsor disattivati |
-| Web pubblica | Pubblicazione del 21 ottobre da `1b0287c1`, versione 0.1.14; HTML e asset riconfermati il 22 ottobre. Candidata 0.1.15 aggiornata da `16890b8c` preparata, non distribuita; Safari/iPhone non verificato |
+| Web pubblica | Pubblicazione del 21 ottobre da `1b0287c1`, versione 0.1.14; HTML e asset riconfermati il 22 ottobre. Candidata 0.1.15 aggiornata da `9d5ff2f4` preparata, non distribuita; Safari/iPhone non verificato |
 | `main` | `2d8b0c32`, allineato a GitHub tramite PR 17; CI 39935808248 verde. Include aria/pollini e fix Tempo reale verificati nell’anteprima Galaxy; posizione e altre modifiche della release restano nel ramo dedicato |
-| `codex/release-0.1.15` | Main `2d8b0c32` incorporato con sorgente `16890b8c`; Posizione, transitorio CAMS e configurazione nativa conservati. Web e asset Web Android allineati e verificati localmente. Nessuna nuova AAB o promozione della release su main |
+| `codex/release-0.1.15` | Sorgente `9d5ff2f4`: main `2d8b0c32`, Posizione, transitorio CAMS e configurazione nativa conservati. AAB 300036 e Web costruite e verificate; nessun upload o promozione su main |
 | Ultimo artefatto osservato sul telefono (300035) | Sorgente `5e9bc7dcdc6183a2fc43ada2dea3dfb22f2a3dc1`, AAB SHA256 `1bcf6a32348eee0f098f475c179523a309d962a86c3faf8736a0bd29a1622762`; installer Play Store |
 
 I documenti successivi non cambiano il commit sorgente dell'AAB già firmata.
@@ -45,7 +45,7 @@ generata. [Dettagli e limiti](ANDROID_NATIVE_CONFIG_FIX_20261022.md#numerazione-
 
 | Rilievo | Evidenza e stato |
 | --- | --- |
-| REALTIME-LAYOUT-01 | FAIL nella 300035 installata. Fix `40af8779` approvato e in main, integrato nella candidata `16890b8c`; regressioni e build PASS, sorgenti identici alla prova Brave/Galaxy. Rimane aperta la verifica su una nuova AAB minificata; non chiuso dal solo allineamento |
+| REALTIME-LAYOUT-01 | FAIL nella 300035 installata. Fix `40af8779` approvato e in main, integrato nella AAB 300036 da `9d5ff2f4`; regressioni e build PASS, sorgenti identici alla prova Brave/Galaxy. Rimane aperta la verifica su una nuova AAB minificata; non chiuso dal solo allineamento |
 | NATIVE-CONFIG-01 | Nell'AAB 300033 mancano il JSON Capacitor e la risorsa Cordova `xml/config`. [Correzione locale del 22 ottobre](ANDROID_NATIVE_CONFIG_FIX_20261022.md): copia esplicita, keep mirato e controllo del bundle; regressioni locali superate. CHIUSO nella 300035: JSON e risorsa presenti anche nell’APK installato; avvio a freddo sul Galaxy senza il precedente errore |
 | LOCATION-UPDATE-01 | Causa dell'episodio Play ancora non provata. Il 22 ottobre è stato riprodotto e corretto localmente un percorso di avvio che disattiva la preferenza dopo errori temporanei: 114 test passano. Correzione integrata nel ramo release, non promossa su main. Percorsi ordinari sul Galaxy PASS; proprietario conferma preferenza attiva prima/dopo Play. Recupero da errore temporaneo sul dispositivo ancora non esercitato. [Analisi e limiti](ANDROID_LOCATION_STARTUP_20261022.md) |
 | BULLETIN-MAP-01 | [Spaziatura corretta e verificata su Brave/Galaxy](BULLETIN_MAP_LABEL_SPACING_20261022.md), già in main e incorporata nella candidata. Ricontrollata nel campione della AAB 300035 installata sul Galaxy il 23 ottobre |
