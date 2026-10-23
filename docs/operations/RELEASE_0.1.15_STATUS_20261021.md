@@ -1,8 +1,8 @@
 # Stato release 0.1.15 e lavoro salvato — aggiornamento del 23 ottobre 2026
 
-**Candidata corrente:** AAB **0.1.15 / 300036** generata e verificata da `9d5ff2f4`, con main `2d8b0c32` e Tempo reale corretto. Web dalla stessa sorgente; sponsor spenti. Non caricata su Play, non installata e non qualificata runtime. [Verbale corrente](ANDROID_0.1.15_300036_BUILD_20261023.md).
+**Candidata corrente:** AAB **0.1.15 / 300036** generata e verificata da `9d5ff2f4`, con main `2d8b0c32` e Tempo reale corretto. Web dalla stessa sorgente; sponsor spenti. Disponibile nel test interno dalle 13:37 del 23 ottobre; non installata dall’agente e non qualificata runtime. [Verbale corrente](ANDROID_0.1.15_300036_UPLOAD_20261023.md).
 
-**0.1.15 / 300035 è disponibile solo nel test interno personale di Google Play.
+**La precedente 0.1.15 / 300035 è stata sostituita nel test interno dalla 300036.
 Il proprietario l'ha aggiornata via Play Store. Tempo reale risulta vuoto:
 difetto riprodotto sul Galaxy dopo la segnalazione del proprietario,
 promozione sospesa.** La nuova AAB 300036 è quella indicata sopra; nessuna installazione dell'agente.
@@ -25,10 +25,10 @@ non è stata promossa su main. Il tentativo 300034 resta abbandonato e conservat
 | Ambito | Stato attestato |
 | --- | --- |
 | Produzione Play | Lettura Console del 23 ottobre: 0.1.14 / 300031; nessuna promozione della 0.1.15 in produzione |
-| Test interno Play | 0.1.15 / 300035 disponibile dal 23 ottobre alle 09:59, una sola lista selezionata con un utente; sponsor disattivati |
+| Test interno Play | 0.1.15 / 300036 disponibile dal 23 ottobre alle 13:37; una sola lista con due account, mantenuta su conferma del proprietario; sponsor disattivati |
 | Web pubblica | Pubblicazione del 21 ottobre da `1b0287c1`, versione 0.1.14; HTML e asset riconfermati il 22 ottobre. Candidata 0.1.15 aggiornata da `9d5ff2f4` preparata, non distribuita; Safari/iPhone non verificato |
 | `main` | `2d8b0c32`, allineato a GitHub tramite PR 17; CI 39935808248 verde. Include aria/pollini e fix Tempo reale verificati nell’anteprima Galaxy; posizione e altre modifiche della release restano nel ramo dedicato |
-| `codex/release-0.1.15` | Sorgente `9d5ff2f4`: main `2d8b0c32`, Posizione, transitorio CAMS e configurazione nativa conservati. AAB 300036 e Web costruite e verificate; nessun upload o promozione su main |
+| `codex/release-0.1.15` | Sorgente `9d5ff2f4`: main `2d8b0c32`, Posizione, transitorio CAMS e configurazione nativa conservati. AAB 300036 accettata nel test interno; Web costruita e non pubblicata; nessuna promozione su main |
 | Ultimo artefatto osservato sul telefono (300035) | Sorgente `5e9bc7dcdc6183a2fc43ada2dea3dfb22f2a3dc1`, AAB SHA256 `1bcf6a32348eee0f098f475c179523a309d962a86c3faf8736a0bd29a1622762`; installer Play Store |
 
 I documenti successivi non cambiano il commit sorgente dell'AAB già firmata.
@@ -112,6 +112,6 @@ pubblicati su GitHub. Sono conservati gli hash delle evidenze nei verbali.
 La CI verde controlla il codice nei commit indicati dalle esecuzioni, non
 risolve i rilievi del dispositivo. La PR release rimane in bozza dopo
 il caricamento nel test interno. Main non viene modificato; CI del sorgente
-`39917176816` e dei record di build `39918859098` entrambe verdi. Il salvataggio
+`39944265214` e dei record di build `39945799912` entrambe verdi per la 300036. Il salvataggio
 dell'accettazione Play segue il registro append-only previsto dal runbook.
 La prova runtime nativa rimane un prerequisito della promozione del codice.

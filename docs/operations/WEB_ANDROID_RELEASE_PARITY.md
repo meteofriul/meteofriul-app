@@ -7,13 +7,14 @@ perché chi usa iPhone accede al prodotto dal browser.
 
 AAB **0.1.15 / 300036** e candidata Web dalla stessa sorgente `9d5ff2f415ab8b10be510eff2a0b058a8c2408ac`,
 allineata a main `2d8b0c32`. Inclusa la correzione di Tempo reale; conservate
-Posizione, CAMS e configurazione nativa. AAB firmata e verificata, non caricata;
+Posizione, CAMS e configurazione nativa. AAB firmata, verificata e disponibile nel test interno dalle 13:37 del 23 ottobre;
 Web compilata con `-BuildOnly` e non pubblicata. Sponsor spenti, zero campagne.
 Archivio canonico `release-artifacts/web-candidates/20261023-0.1.15-9d5ff2f4/`.
 [Controlli, hash e limiti](ANDROID_0.1.15_300036_BUILD_20261023.md).
 
 La candidata `16890b8c` e quella precedente da `5e9bc7dc` restano conservate.
-La AAB 300035 disponibile nel test interno non contiene il fix Tempo reale.
+La AAB 300035, precedente candidata interna e ultimo pacchetto osservato sul telefono, non contiene il fix Tempo reale.
+Il caricamento della 300036 è attestato nel [verbale Play](ANDROID_0.1.15_300036_UPLOAD_20261023.md).
 Nessuna prova runtime della nuova AAB né nuovo test browser in questa sessione.
 Prima della pubblicazione Web restano prova del bundle statico e aggiornamento
 cache; Safari/iPhone e PWA non verificati. Il sito pubblico nell'ultima lettura

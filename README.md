@@ -15,7 +15,7 @@ contenuti culturali; l'interfaccia è disponibile in italiano e friulano.
 > iPhone dal browser. Il [percorso di allineamento Web/Android](docs/operations/WEB_ANDROID_RELEASE_PARITY.md)
 > richiede sorgenti e funzionalità coerenti, oltre alla verifica Safari/iPhone.
 
-**Nuova AAB generata:** **0.1.15 / 300036**, sorgente `9d5ff2f4`, include main `2d8b0c32` e il fix Tempo reale. Firmata e verificata, CI verde; candidata Web dalla stessa sorgente. **Non caricata su Play e non ancora provata sul telefono.** Sponsor disattivati. La 300035 installata resta invariata. [Artefatto e limiti](docs/operations/ANDROID_0.1.15_300036_BUILD_20261023.md).
+**Nuova AAB generata:** **0.1.15 / 300036**, sorgente `9d5ff2f4`, include main `2d8b0c32` e il fix Tempo reale. Firmata e verificata, CI verde; candidata Web dalla stessa sorgente. **Disponibile nel test interno dal 23 ottobre alle 13:37**, con la lista di due account confermata dal proprietario. Sponsor disattivati. La 300036 non è ancora provata sul telefono; ultima osservazione sulla 300035. [Caricamento e limiti](docs/operations/ANDROID_0.1.15_300036_UPLOAD_20261023.md).
 
 **Rilievo successivo sul Galaxy: Tempo reale mostra una schermata vuota nella
 300035. Difetto riprodotto dopo la segnalazione del proprietario; promozione
@@ -23,8 +23,8 @@ sospesa.** La prima verifica era mirata e aveva omesso questa sezione.
 I risultati positivi sotto non equivalgono a qualifica completa della release.
 [Difetto ed evidenze](docs/operations/ANDROID_0.1.15_300035_DEVICE_CHECK_20261023.md#realtime-layout-01--difetto-riprodotto-dopo-la-segnalazione-del-proprietario).
 
-**Release del 23 ottobre 2026:** AAB **0.1.15 / 300035 disponibile nel test interno personale**,
-con una sola lista selezionata e un solo account. Produzione invariata a 0.1.14 / 300031. Include main `f9e178b2`, transitorio aria/pollini,
+**Precedente release interna del 23 ottobre 2026:** AAB **0.1.15 / 300035**,
+caricata alle 09:59 con una sola lista e un account, sostituita alle 13:37 dalla 300036. Produzione invariata a 0.1.14 / 300031. Include main `f9e178b2`, transitorio aria/pollini,
 conservazione della Posizione e configurazione nativa. CI e builder completo
 PASS; la Web associata alla 300035 era preparata dalla stessa sorgente `5e9bc7dc`, non pubblicata. La candidata locale corrente è quella indicata sopra.
 Sponsor disattivati. Il tentativo 300034 è conservato e abbandonato.
@@ -72,10 +72,10 @@ e non sostituisce la sua verifica. Evidenze e limiti nel [verbale sul telefono](
 
 | Canale | Stato |
 | --- | --- |
-| Web | `0.1.14` pubblicata il 21 ottobre su `meteofriul.app`; candidata locale `0.1.15` da `16890b8c`, con Tempo reale corretto, non distribuita; Safari/iPhone non verificato |
+| Web | `0.1.14` pubblicata il 21 ottobre su `meteofriul.app`; candidata locale `0.1.15` da `9d5ff2f4`, con Tempo reale corretto, non distribuita; Safari/iPhone non verificato |
 | API | FastAPI su Cloud Run, chiamata direttamente via HTTPS da Web e Android |
-| Android | `0.1.15` (`300035`) disponibile nel test interno personale; FAIL Tempo reale vuoto, promozione sospesa. Positivi i controlli mirati precedenti; limiti GPS/Android 15–16/grandi schermi espliciti nel verbale. [Esito e limiti](docs/operations/RELEASE_0.1.15_STATUS_20261021.md) |
-| Google Play | Produzione `0.1.14` (`300031`) nella lettura del 23 ottobre; `0.1.15` (`300035`) solo nel test interno, una lista con un utente. Sponsor disattivati |
+| Android | `0.1.15` (`300036`) disponibile nel test interno con fix Tempo reale; nuova prova sul telefono pendente. Il difetto della 300035 non è chiuso dal solo upload. Limiti GPS/Android 15–16/grandi schermi espliciti nel verbale. [Esito e limiti](docs/operations/RELEASE_0.1.15_STATUS_20261021.md) |
+| Google Play | Produzione `0.1.14` (`300031`) nella lettura del 23 ottobre; `0.1.15` (`300036`) solo nel test interno, una lista con due account confermata dal proprietario. Sponsor disattivati |
 | Landing `meteofriul.it` | Gestita e distribuita da un progetto separato |
 | Push | Generazione `play-beta-v1`, App Check in enforce, Android/Web abilitati e lotti Firestore/FCM da 200 elementi |
 | Sintesi mattutina | Una notifica quotidiana alle 07:30 `Europe/Rome`, con apertura diretta del Bollettino |

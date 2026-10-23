@@ -2,7 +2,7 @@
 
 ## Esito
 
-**Generata, firmata e verificata; non caricata su Play.** Package
+**Generata, firmata e verificata.** Aggiornamento successivo: caricata nel test interno alle 13:37 del 23 ottobre; [verbale di accettazione](ANDROID_0.1.15_300036_UPLOAD_20261023.md). Package
 `com.meteofriul.app`, versione **0.1.15 / 300036**, sorgente
 `9d5ff2f415ab8b10be510eff2a0b058a8c2408ac`, ramo `codex/release-0.1.15`.
 Include main `2d8b0c32` e la correzione di Tempo reale: la mappa occupa lo spazio
@@ -11,8 +11,9 @@ aria/pollini, configurazione nativa e le altre modifiche approvate.
 
 Sponsor verificati prima e dopo: `enabled=false`, zero campagne, revisione 117.
 Pannello e sincronizzazione sponsor sospesi. Nessuna installazione, emulatore,
-pubblicazione Web, deploy o invio manuale. La lettura della Console conferma
+pubblicazione Web, deploy o invio manuale. La lettura della Console prima della build confermava
 300035 come massimo caricato e test interno corrente; produzione 300031.
+Il caricamento successivo della 300036 è registrato nel verbale collegato sopra.
 
 ## Artefatto e conservazione
 
@@ -85,8 +86,8 @@ al rientro, mappa/dock/lista/webcam e sezioni adiacenti senza invii manuali.
 
 ## Prossimo passaggio
 
-Il pacchetto è pronto per un eventuale caricamento **separatamente autorizzato**
-nel test interno personale, non qualificato per la produzione. PR 11 ancora
+Il caricamento successivo è stato autorizzato ed eseguito nel test interno.
+Resta la prova sul telefono della 300036; non è qualificata per la produzione. PR 11 ancora
 in bozza; main non modificato. Documenti e registri non cambiano il commit
 sorgente dell'artefatto firmato.
 
