@@ -1,0 +1,169 @@
+{
+  "recorded_at_utc": "2026-10-23T06:16:18.707984+00:00",
+  "status": "PREPARED_LOCALLY_NOT_BUILT_AS_AAB",
+  "source_commit": "c30cfe332769248b62b810cb17da86a4d7ca4b4b",
+  "branch": "codex/release-0.1.15",
+  "main_unchanged": "f9e178b25afd5154008539dbd15d9c1b5957abd1",
+  "cams_fix_commit": "53aba4fff81869ad846738adf408c300bf2f973b",
+  "version": {
+    "checked_at_utc": "2026-10-23T06:10:06.4339332Z",
+    "candidate_version_code": 300034,
+    "candidate_version_name": "0.1.15",
+    "latest_console_code": 300033,
+    "highest_local_code": 300033,
+    "play_version_guard": "PASS",
+    "global_history_guard": "PASS",
+    "reserved": false,
+    "built": false
+  },
+  "play_observation": {
+    "checked_at_utc": "2026-10-23T06:09:24.740236+00:00",
+    "source": "Play Console UI: Release e bundle piu recenti, unfiltered",
+    "application_id": "com.meteofriul.app",
+    "latest_uploaded_version_code": 300033,
+    "latest_uploaded_version_name": "0.1.15",
+    "production_code": 300031,
+    "internal_test_code": 300033,
+    "selected_tester_lists": 1,
+    "selected_tester_count": 1,
+    "console_changes": false
+  },
+  "frontend_tests": {
+    "passed": 162,
+    "failed": 0,
+    "skipped": 0,
+    "files": 18
+  },
+  "guards": {
+    "frontend": 9,
+    "native_configuration_assertions": 40,
+    "builder_contracts": "PASS",
+    "r8_contracts": "PASS",
+    "gradle": "NOT_RUN"
+  },
+  "dependencies": {
+    "physical": true,
+    "packages_checked": 363,
+    "lock_sha256": "aa4a706abc6512153b14dfd79d3f252b0f02e963864537b7225e75bdfa7a449f",
+    "dependency_install_or_change": false
+  },
+  "artifacts": {
+    "archive_relative_path": "release-artifacts/web-candidates/20261023-0.1.15-c30cfe33",
+    "source_commit": "c30cfe332769248b62b810cb17da86a4d7ca4b4b",
+    "frontend_tree": "d4bf47fc45e474af952932942ea88c87fd438a90",
+    "manifest_sha256": "792a7f9c39b0ea7b13fec84daa22bb63432b739eab4eeb87112064fc48044e38",
+    "artifacts": {
+      "web": {
+        "files": 506,
+        "bytes": 76030169
+      },
+      "android-web": {
+        "files": 505,
+        "bytes": 75977501
+      }
+    },
+    "protected_files_unchanged": 58
+  },
+  "sponsors": {
+    "checked_at_utc": "2026-10-23T06:13:10.143181+00:00",
+    "enabled": false,
+    "revision": 117,
+    "campaign_count": 0
+  },
+  "protected_files_unchanged": 58,
+  "browser_tests": "NOT_RUN_OWNER_REQUEST",
+  "real_device_tests": "PENDING_NEW_NATIVE_PACKAGE",
+  "baseline_full_suite": {
+    "source_commit": "cda576e7d59025171aa0c2fbb65cd58db7aa4052",
+    "passed": 5039,
+    "skipped": 13,
+    "new_full_suite_run": false
+  },
+  "not_performed": [
+    "AAB/APK generation",
+    "version reservation",
+    "upload",
+    "installation",
+    "emulator",
+    "git push",
+    "promotion to main",
+    "deploy",
+    "manual sends",
+    "manual jobs",
+    "sponsor activation"
+  ],
+  "evidence_files": [
+    {
+      "path": "canonical-cleanliness.log",
+      "sha256": "2e7927058bc6fe40454c948e0806fc57cb4f1a1523561295738f388def34cb15"
+    },
+    {
+      "path": "ledger-audit.log",
+      "sha256": "7356aef7c065e04667460c741c9df15adc92148c6df2c8c3e377710d9d5ff095"
+    },
+    {
+      "path": "frontend-tests.log",
+      "sha256": "23de7caf6bc13a1347e79ba8698092eb1b6f029a19c8537108843192241c5e48"
+    },
+    {
+      "path": "lint.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "frontend-guards.log",
+      "sha256": "e504ef794456dd503f9b66cc112d7ae1cc8c1979aa9b1aa71b7e68249fe47e5e"
+    },
+    {
+      "path": "builder-contracts.log",
+      "sha256": "0850ab44513462c7b383cb86cde1565f440f6621dc720e94ab7126e143959a16"
+    },
+    {
+      "path": "native-config-contracts.log",
+      "sha256": "c54f95bc5f56b6e0caaa01fc7c94d9947a9c26159dee9e3301689d77601b4940"
+    },
+    {
+      "path": "r8-contracts.log",
+      "sha256": "9cb8a388416eed6c9c12b2e941ff0cc70db257bc6e1ea29644a8378ebf66a102"
+    },
+    {
+      "path": "web-build.log",
+      "sha256": "e50ceaa565af247ce98a40bd7b34459a3a7efde77df04b53cc9e758bb673a3de"
+    },
+    {
+      "path": "android-web-build.log",
+      "sha256": "dd6e23798a53910e8b278ee5052570c742b123767cbee2816d14228bdc115036"
+    },
+    {
+      "path": "android-api-binding.log",
+      "sha256": "09256a5b690bb2f411d1c420e55e53e0a37dd9067f81c04d1dec2e729541ea54"
+    },
+    {
+      "path": "android-carto-binding.log",
+      "sha256": "fb0ae53eb9cbb90e1500662e416eb7a16eb5980d63f790a7075eeb18c9b1811e"
+    },
+    {
+      "path": "frontend-tests.json",
+      "sha256": "8123007ee460d7d60d9e1a3e788e7c9fe960a137908706b0a0147f99eb59f0a0"
+    },
+    {
+      "path": "play-observation.json",
+      "sha256": "6ac93a58af0dd57a88edfe663cf228a55d1625d20e7cddbe1b1e8983fbaa304c"
+    },
+    {
+      "path": "version-checks.json",
+      "sha256": "d794e427509914e0db31f32ec1188fb39c4963fe268cffdba9070e21d40a4807"
+    },
+    {
+      "path": "dependency-verification.json",
+      "sha256": "6df55d6af4c0d3af3678381fe2eba81b6bcc47a947f7b486113a168e9b3959e8"
+    },
+    {
+      "path": "artifact-summary.json",
+      "sha256": "b2836f9a99a6fdffde4f90ae9870f9b9d2ad05e57bb2b76eb39e757e41ddc4fa"
+    },
+    {
+      "path": "sponsors-readonly.json",
+      "sha256": "b265b932c1b2521fc0adc1eda62416fa181dff67ee8b4f0365e3318535467002"
+    }
+  ]
+}

@@ -68,13 +68,13 @@ con i contratti dati attivi. Non è autorizzato implicitamente dalla preparazion
 - Deployment pubblico effettivo e precedente per rollback, dopo autorizzazione.
 - Nessun riferimento a chiavi private, token o credenziali negli allegati.
 
-Preparazione corrente: [base comune del 23 ottobre](RELEASE_WEB_ALIGNMENT_20261023.md),
-commit sorgente `cda576e7`, versione 0.1.15. Web e asset Web Android sono compilati
-dallo stesso albero frontend, con manifest e hash. Aria/pollini inclusi e dati reali
-visibili; il transitorio di indisponibilità osservato al rientro è documentato.
-Il ramo release incorpora main `f9e178b2`
-e la correzione della posizione ancora da verificare sul runtime Android; non è
-promosso su main e non è autorizzata la distribuzione da questa sola preparazione.
+Preparazione corrente: [0.1.15 / 300034](RELEASE_0.1.15_300034_PREPARATION_20261023.md),
+sorgente comune `c30cfe33`. Web e asset Web Android compilati con manifest e hash.
+La correzione CAMS al rientro è inclusa e verificata dai test automatici IT/FUR;
+nessuna nuova prova browser per scelta del proprietario. Main incorporato
+`f9e178b2`, non modificato. AAB non generata, codice non riservato. Posizione e
+configurazione nativa restano da provare nel nuovo pacchetto minificato sul
+telefono; la release non è promossa su main e nessun canale è stato pubblicato.
 
 La Web pubblica è già stata aggiornata il 21 ottobre da `1b0287c1`, versione
 0.1.14: non contiene le correzioni successive del 22 ottobre. Il precedente

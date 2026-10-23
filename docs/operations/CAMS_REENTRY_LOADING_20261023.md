@@ -64,3 +64,11 @@ la prova reale richiesta da AGENTS.md; poi la release e la candidata Web
 potranno incorporare la correzione e rigenerare gli asset autorizzati.
 Il numero 0.1.14 mostrato dal ramo di main non modifica la versione 0.1.15
 della release né il pacchetto già nel test interno.
+
+## Integrazione successiva nella candidata
+
+Il proprietario ha scelto di preparare la nuova 0.1.15 senza altre prove browser.
+Correzione salvata in `53aba4ff` e integrata nella sola release con `da5b4d25`;
+main resta invariato. La candidata 300034 include il fix e regressioni automatiche,
+ma non ha una nuova prova sul dispositivo. La ricevuta precedente descrive
+l'esito originale prima dell'integrazione. [Preparazione corrente](RELEASE_0.1.15_300034_PREPARATION_20261023.md).

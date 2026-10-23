@@ -1,5 +1,7 @@
 # Release 0.1.15 e Web allineate a main — 23 ottobre 2026
 
+> Seguito: [candidata 0.1.15 / 300034](RELEASE_0.1.15_300034_PREPARATION_20261023.md), con correzione del transitorio CAMS e nuovi asset. Il resoconto seguente descrive la precedente base `cda576e7`.
+
 ## Esito
 
 Il ramo `codex/release-0.1.15` incorpora main `f9e178b2`, comprese aria e
