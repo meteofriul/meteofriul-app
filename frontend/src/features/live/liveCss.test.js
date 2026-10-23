@@ -423,7 +423,7 @@ describe("live report disabled controls", () => {
     expect(fittedMainRule).toContain("padding-bottom: 0");
     expect(nativeFittedMainRule).toContain("padding-bottom: var(--mf-native-bottom-nav-clearance)");
     expect(webFittedMainRule).toContain("padding-bottom: var(--mf-web-bottom-nav-clearance)");
-    expect(fittedShellRule).toContain("grid-template-rows: auto auto minmax(0, 1fr)");
+    expect(fittedShellRule).toContain("grid-template-rows: auto minmax(0, 1fr)");
     expect(fittedShellRule).toContain("height: 100%");
     expect(fittedShellRule).toContain("min-height: 620px");
     expect(nativeFittedShellRule).toContain("min-height: 0");
