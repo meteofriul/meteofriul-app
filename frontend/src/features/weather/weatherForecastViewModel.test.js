@@ -432,3 +432,24 @@ it("preserves verified zero values during refresh and treats air and pollen inde
   expect(buildWeatherForecastViewModel(state, options).cams)
     .toMatchObject({ airStatus: "pending", status: "available" });
 });
+
+it.each(["data_quality", "source", "pollen"])("does not hide a cached CAMS diagnostic from %s while reloading", diagnosticSource => {
+  const state = { ...buildState(), fromCache: true };
+  const diagnostic = { code: "RUN_DISABLED", stage: "family" };
+  if (diagnosticSource === "data_quality") state.rawCurrent.data_quality.cams_diagnostic = diagnostic;
+  if (diagnosticSource === "source") state.rawCurrent.source = { cams: { diagnostic } };
+  if (diagnosticSource === "pollen") state.rawCurrent.pollen_data = { status: "unavailable", diagnostic };
+  expect(buildWeatherForecastViewModel(state, { location: LOCATION, now: NOW, loading: true }).cams)
+    .toMatchObject({ airStatus: "unavailable", status: "unavailable" });
+});
+
+it("keeps a failed cache fallback unavailable and verified zero visible while reloading", () => {
+  const state = { ...buildState(), fromCache: true, error: "offline" };
+  const options = { location: LOCATION, now: NOW, loading: true };
+  expect(buildWeatherForecastViewModel(state, options).cams)
+    .toMatchObject({ airStatus: "unavailable", status: "unavailable" });
+  state.error = null;
+  state.rawCurrent.air_quality_data = { values: { "particulate_matter_2.5um": 0 } };
+  expect(buildWeatherForecastViewModel(state, options).cams)
+    .toMatchObject({ airStatus: "available", status: "pending" });
+});

@@ -1,0 +1,68 @@
+{
+  "recorded_at_utc": "2026-10-23T05:44:58.026882+00:00",
+  "branch": "codex/cams-loading-state",
+  "base_commit": "f9e178b25afd5154008539dbd15d9c1b5957abd1",
+  "status": "FIXED_AND_VERIFIED_LOCALLY_NOT_PROMOTED",
+  "source_sha256": {
+    "frontend/src/features/weather/weatherForecastViewModel.js": "007174601f6cbd13db240ab526b879944a006d1a013949c04c73c8d09107829a",
+    "frontend/src/features/weather/weatherForecastViewModel.test.js": "a78f681319ce260563663ef88a1e66118f22b2c68d051551cb0ee081d637487d",
+    "frontend/src/app/AppRoutes.camsReentry.test.jsx": "1fb88e17feade26fde38c7cce1e7a79b10b0e4cde5f2e87623802734ebc779da"
+  },
+  "reproduction": {
+    "tests_before": "2 FAILED_AT_REENTRY_LOADING_ASSERTION",
+    "real_sequence": [
+      "cached unavailable, loading=true, no diagnostic",
+      "pending",
+      "verified CAMS values"
+    ]
+  },
+  "tests_after": {
+    "passed": 102,
+    "failed": 0,
+    "skipped": 0,
+    "files": 10
+  },
+  "lint_changed_files": "PASS",
+  "browser": {
+    "surface": "Codex in-app browser",
+    "launcher": "scripts/start-local-weather-pilot.ps1 -NationalCloud",
+    "port": 5174,
+    "viewport": "661x902",
+    "loading_and_recovery_it": "PASS",
+    "loading_and_recovery_fur": "PASS",
+    "cache_cleared": false,
+    "italian_and_light_theme_restored": true,
+    "location_and_notification_preferences_changed": false
+  },
+  "sponsors": {
+    "checked_at_utc": "2026-10-23T05:42:46.1978772Z",
+    "enabled": false,
+    "revision": 117,
+    "campaign_count": 0
+  },
+  "not_performed": [
+    "AAB/APK generation",
+    "installation",
+    "emulator",
+    "git push",
+    "deploy",
+    "manual sends",
+    "job execution",
+    "promotion to main or release",
+    "new real-device check"
+  ],
+  "evidence_sha256": {
+    "diagnostic-before.json": "6fe93ba6455e7818bee89581897f73c39a3e917d4af5ed4c35ee5ab061e87c27",
+    "regression-before.log": "657d21d5bd4cbb6205123d29bde38e1d7d88e019e1b53f2047715a4571db3071",
+    "tests.json": "133414b33e8085508a3c47c0a1ec47bdd683e5ccc285075111fd41194e391ab4",
+    "tests.log": "70b0b97b88665fafeb799fa4c2d7fa00e85faef9ba3a7d1351573e62d2fe8b0c",
+    "lint.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "live-reentry-it.txt": "c0549d14ba77cfa37226d294630d6bb62d3075ed773cceafb288803124404f06",
+    "live-reentry-it.png": "10c134790fb933bb18d77afb855a50e3fbca3b9314e47ca0557b8aec4af11fbc",
+    "live-ready-it.png": "25d487a261453a4160a18be2f90c7d2124898f15fbbc49efedf9df4bf5c2e7fe",
+    "live-reentry-fur-second.txt": "b593c6af9f526e1a189c2d8ae8326ccb996a9ccf8f188d0a8558106b5751498c",
+    "live-reentry-fur-second.png": "148339d8e465c3c80b739376b5d083a557353cc859fae98a4d324b5e9bda66c2",
+    "live-ready-fur.png": "9ad4c67fa36b5014bae68add1eba78b053069a10f92c32963f8f707fc6db7e17",
+    "sponsors.json": "da74f36a770479a1d72c4ecfcbfe75a059b60debbf8fbe2ee72b841d60fbba44"
+  }
+}
