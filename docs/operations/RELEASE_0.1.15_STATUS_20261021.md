@@ -1,17 +1,19 @@
 # Stato release 0.1.15 e lavoro salvato — aggiornamento del 23 ottobre 2026
 
-**0.1.15 / 300033 è disponibile solo nel test interno personale di Google Play.
-La promozione della release rimane sospesa.** Il proprietario l'ha installata
+**0.1.15 / 300035 è disponibile solo nel test interno personale di Google Play.
+La promozione della release rimane sospesa.** La precedente 300033 è quella che il proprietario ha installato
 dal Play Store; la sessione sul Galaxy A52 Android 14 ha trovato un difetto
 di confezionamento e un rilievo grafico. Il proprietario ha inoltre segnalato
 la posizione nell'app spenta subito dopo l'aggiornamento, prima dei test.
 
 
-**Nuova AAB 0.1.15 / 300035 generata e verificata**, sorgente `5e9bc7dc`,
-non caricata né installata. CI `39917176816` e builder completo PASS;
+**Nuova AAB 0.1.15 / 300035 generata, verificata e disponibile nel test interno**,
+sorgente `5e9bc7dc`, pubblicazione interna del 23 ottobre alle 09:59. Nessuna
+installazione o verifica sul dispositivo eseguita in questa sessione. CI `39917176816` e builder completo PASS;
 configurazione nativa, Cordova, firma e mapping verificati nel file reale.
 Web dalla medesima sorgente, non pubblicata. Sponsor disattivati.
-[Verbale e artefatti](ANDROID_0.1.15_300035_BUILD_20261023.md).
+[Verbale e artefatti](ANDROID_0.1.15_300035_BUILD_20261023.md) ·
+[Accettazione Play](ANDROID_0.1.15_300035_UPLOAD_20261023.md).
 Il tentativo 300034 è abbandonato con autorizzazione esplicita e conservato.
 
 ## Canali e rami
@@ -19,11 +21,11 @@ Il tentativo 300034 è abbandonato con autorizzazione esplicita e conservato.
 | Ambito | Stato attestato |
 | --- | --- |
 | Produzione Play | Lettura Console del 23 ottobre: 0.1.14 / 300031; nessuna promozione della 0.1.15 in produzione |
-| Test interno Play | 0.1.15 / 300033, una sola lista selezionata con un utente; sponsor disattivati |
+| Test interno Play | 0.1.15 / 300035 disponibile dal 23 ottobre alle 09:59, una sola lista selezionata con un utente; sponsor disattivati |
 | Web pubblica | Pubblicazione del 21 ottobre da `1b0287c1`, versione 0.1.14; HTML e asset riconfermati il 22 ottobre. Candidata 0.1.15 da `5e9bc7dc` preparata, non distribuita; Safari/iPhone non verificato |
 | `main` | `f9e178b2`, due commit locali oltre origin/main `d62683b9` nella lettura del 23 ottobre. Include aria/pollini verificati sul Galaxy, oltre alle altre correzioni approvate; native e posizione restano nel ramo release |
 | `codex/release-0.1.15` | Main `f9e178b2` incorporato, posizione `2e5fc0b6` conservata, transitorio CAMS `53aba4ff` integrato. `5e9bc7dc` identifica la AAB 300035 e la candidata Web; PR 11 pubblicata in bozza, verifica runtime aperta |
-| Artefatto installato | Sorgente `f82503e4daabc283a5caf77b49e7cf58439abf61`, AAB SHA256 `cb461c8e5e6fddd05407214a507e151e02e8041f403d9346c364bbe0174ba019` |
+| Ultimo artefatto osservato sul telefono (300033) | Sorgente `f82503e4daabc283a5caf77b49e7cf58439abf61`, AAB SHA256 `cb461c8e5e6fddd05407214a507e151e02e8041f403d9346c364bbe0174ba019` |
 
 I documenti successivi non cambiano il commit sorgente dell'AAB già firmata.
 La versione nella configurazione di `main` può quindi differire da quella del
@@ -42,10 +44,10 @@ generata. [Dettagli e limiti](ANDROID_NATIVE_CONFIG_FIX_20261022.md#numerazione-
 | NATIVE-CONFIG-01 | Nell'AAB 300033 mancano il JSON Capacitor e la risorsa Cordova `xml/config`. [Correzione locale del 22 ottobre](ANDROID_NATIVE_CONFIG_FIX_20261022.md): copia esplicita, keep mirato e controllo del bundle; regressioni locali superate. Confezionamento verificato nella 300035: JSON e risorsa presenti; resta il controllo sul telefono |
 | LOCATION-UPDATE-01 | Causa dell'episodio Play ancora non provata. Il 22 ottobre è stato riprodotto e corretto localmente un percorso di avvio che disattiva la preferenza dopo errori temporanei: 114 test passano. Correzione integrata nel ramo release; da verificare sul dispositivo e non promossa su main. [Analisi e limiti](ANDROID_LOCATION_STARTUP_20261022.md) |
 | BULLETIN-MAP-01 | [Spaziatura corretta e verificata su Brave/Galaxy](BULLETIN_MAP_LABEL_SPACING_20261022.md), già in main e incorporata nella candidata. Ricontrollata nel pilot integrato; non ancora presente nella AAB installata 300033 |
-| CAMS-TRANSITION-01 | Causa riprodotta e corretta: cache incompleta durante una nuova richiesta. Fix `53aba4ff` nella candidata 300034, regressioni automatiche IT/FUR superate; nuova verifica nel pacchetto Android ancora aperta. [Verbale](CAMS_REENTRY_LOADING_20261023.md) |
+| CAMS-TRANSITION-01 | Causa riprodotta e corretta: cache incompleta durante una nuova richiesta. Fix `53aba4ff` incluso nella AAB 300035, regressioni automatiche IT/FUR superate; nuova verifica nel pacchetto Android ancora aperta. [Verbale](CAMS_REENTRY_LOADING_20261023.md) |
 | Copertura restante | Android 15/16, gesti, tablet/multi-window e percorsi con scritture o consegne reali non verificati; nessun PASS implicito |
 
-Superate sul pacchetto ufficiale le prove di avvio/ripresa, Indietro, previsioni
+Superate sul precedente pacchetto ufficiale 300033 le prove di avvio/ripresa, Indietro, previsioni
 FVG e nazionali, temi e campione IT/FUR, Eventi, ricerca, allerte, aria/pollini,
 webcam e conferma Community **senza invio**. Nessun crash osservato nella sessione.
 Lo stato delle preferenze è stato riportato alla prima osservazione dell'agente,
@@ -54,7 +56,7 @@ già successiva all'aggiornamento: non certifica la migrazione dal vecchio pacch
 Prima di una nuova AAB: correggere e verificare i rilievi pertinenti, con
 regressioni mirate. Non ricostruire o sovrascrivere 300033; seguire il registro
 e le autorizzazioni distinte del [runbook Play](PLAY_AAB_RUNBOOK.md).
-Il tentativo Android 300034 è abbandonato; la 300035 è generata e verificata. Nessun upload, installazione, deploy o invio. [Preparazione precedente](RELEASE_0.1.15_300034_PREPARATION_20261023.md) e [verbale di build](ANDROID_0.1.15_300034_BUILD_20261023.md).
+Il tentativo Android 300034 è abbandonato; la 300035 è generata, verificata e caricata nel solo test interno. Nessuna installazione, deploy o invio manuale. [Preparazione precedente](RELEASE_0.1.15_300034_PREPARATION_20261023.md) e [verbale di build](ANDROID_0.1.15_300034_BUILD_20261023.md).
 
 ## Servizi e Web
 
@@ -78,7 +80,7 @@ Il tentativo Android 300034 è abbandonato; la 300035 è generata e verificata. 
   zero campagne, revisione 117.
 - **Web:** pubblicazione del 21 ottobre confermata; il nuovo pacchetto locale
   0.1.15 deve ancora essere pubblicato separatamente. Manifest e sorgenti comuni
-  nel [verbale della 300034](RELEASE_0.1.15_300034_PREPARATION_20261023.md); Safari/iPhone
+  nel [verbale della 300035](ANDROID_0.1.15_300035_BUILD_20261023.md); Safari/iPhone
   resta non verificato nel [piano Web](WEB_ANDROID_RELEASE_PARITY.md).
 - **Eventi, aggiornamento 22 ottobre:** correzioni distribuite, corsa ordinaria
   delle 06:00 verificata; Cinema Muto, Barcolana e Spazzapan recuperati. Restano
@@ -103,7 +105,8 @@ nell'archivio locale ignorato `release-artifacts/android-play/`; non vengono
 pubblicati su GitHub. Sono conservati gli hash delle evidenze nei verbali.
 
 La CI verde controlla il codice nei commit indicati dalle esecuzioni, non
-risolve i rilievi del dispositivo. La PR release rimane in bozza anche dopo
-questo salvataggio locale sul ramo release. Main non viene modificato da questa
-preparazione e la CI del nuovo candidato non viene avviata senza push autorizzato.
+risolve i rilievi del dispositivo. La PR release rimane in bozza dopo
+il caricamento nel test interno. Main non viene modificato; CI del sorgente
+`39917176816` e dei record di build `39918859098` entrambe verdi. Il salvataggio
+dell'accettazione Play segue il registro append-only previsto dal runbook.
 La prova runtime nativa rimane un prerequisito della promozione del codice.

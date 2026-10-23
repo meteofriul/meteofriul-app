@@ -2,7 +2,8 @@
 
 ## Esito
 
-**Generata e verificata; non caricata su Play.** Package `com.meteofriul.app`,
+**Generata e verificata. Aggiornamento successivo: caricata e disponibile nel test interno personale il 23 ottobre alle 09:59.**
+[Verbale di upload](ANDROID_0.1.15_300035_UPLOAD_20261023.md). Package `com.meteofriul.app`,
 versionName `0.1.15`, versionCode **300035**. Sorgente
 `5e9bc7dcdc6183a2fc43ada2dea3dfb22f2a3dc1`, ramo `codex/release-0.1.15`.
 Il proprietario ha autorizzato esplicitamente questa generazione dopo
@@ -82,8 +83,9 @@ cambino. Il difetto riprodotto non dimostra la causa dell'episodio Play preceden
 
 ## Prossimo passaggio
 
-Dopo il salvataggio su GitHub e la CI dei record di build, chiedere una distinta
-autorizzazione per caricare **questo file esatto** nel test interno personale.
-Nessuna pubblicazione in produzione. Non promuovere la release su main prima
-dei controlli runtime pertinenti. [Stato](RELEASE_0.1.15_STATUS_20261021.md) ·
+Caricamento di **questo file esatto** autorizzato ed eseguito nel test interno
+personale: [ricevuta e avvisi](ANDROID_0.1.15_300035_UPLOAD_20261023.md).
+Resta la verifica sul pacchetto aggiornato dal Play Store, inclusa la preferenza
+Posizione prima e dopo l'aggiornamento. Nessuna pubblicazione in produzione.
+Non promuovere la release su main prima dei controlli runtime pertinenti. [Stato](RELEASE_0.1.15_STATUS_20261021.md) ·
 [Runbook](PLAY_AAB_RUNBOOK.md) · [Regole di prevenzione](ANDROID_BUILD_PREVENTION_RULES.md).
