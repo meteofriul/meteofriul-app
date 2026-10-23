@@ -150,11 +150,11 @@ describe("pilot environmental overview", () => {
       values: [],
     });
     expect(airOnly.querySelector(".mf-weather-environment-tile--air").textContent).toContain("PM2.5");
-    expect(airOnly.querySelector(".mf-weather-environment-tile--pollen").textContent).toContain("Pollini non disponibili");
+    expect(airOnly.querySelector(".mf-weather-environment-tile--pollen").textContent).toContain("Dati non disponibili");
     expect(airOnly.querySelector(".mf-weather-environment-tile--pollen").textContent).not.toContain("0 specie monitorate");
 
     const pollenOnly = renderOverview({ ...camsModel, air: null });
-    expect(pollenOnly.querySelector(".mf-weather-environment-tile--air").textContent).toContain("Dati dell’aria non disponibili");
+    expect(pollenOnly.querySelector(".mf-weather-environment-tile--air").textContent).toContain("Dati non disponibili");
     expect(pollenOnly.querySelector(".mf-weather-environment-tile--pollen").textContent).toContain("Artemisia");
 
     const gasOnly = renderOverview({
@@ -183,4 +183,35 @@ describe("pilot environmental overview", () => {
     expect(pollen).toContain("6 speciis · 2 ativis");
     expect(pollen).toContain("Prevision modelistiche CAMS");
   });
+});
+
+
+it.each([
+  ["it", "Caricamento…", "Dati non disponibili"],
+  ["fur", "In cjariament…", "Dâts no disponibii"],
+])("distinguishes pending, unavailable and recovered CAMS cards in %s", (language, loading, unavailable) => {
+  for (const [status, expected] of [["pending", loading], ["unavailable", unavailable]]) {
+    const document = renderOverview({ ...camsModel, air: null, airStatus: status, status, values: [] }, language);
+    for (const section of ["air", "pollen"]) {
+      const tile = document.querySelector(`.mf-weather-environment-tile--${section}`);
+      expect(tile.querySelector('[role="status"]').textContent.trim()).toBe(expected);
+      expect(tile.textContent).not.toContain(status === "pending" ? unavailable : loading);
+    }
+  }
+  const recovered = renderOverview(camsModel, language);
+  for (const section of ["air", "pollen"]) {
+    const text = recovered.querySelector(`.mf-weather-environment-tile--${section}`).textContent;
+    expect(text).not.toContain(loading);
+    expect(text).not.toContain(unavailable);
+  }
+});
+
+it("keeps air values visible while pollen is pending, and never borrows pollen availability for air", () => {
+  const airOnly = renderOverview({ ...camsModel, airStatus: "available", status: "pending", values: [] });
+  expect(airOnly.querySelector('.mf-weather-environment-tile--air').textContent).toContain("7,9µg/m³");
+  expect(airOnly.querySelector('.mf-weather-environment-tile--air').textContent).not.toContain("Caricamento");
+  expect(airOnly.querySelector('.mf-weather-environment-tile--pollen').textContent).toContain("Caricamento…");
+  const pollenOnly = renderOverview({ ...camsModel, air: null, airStatus: "pending" });
+  expect(pollenOnly.querySelector('.mf-weather-environment-tile--air').textContent).toContain("Caricamento…");
+  expect(pollenOnly.querySelector('.mf-weather-environment-tile--pollen').textContent).toContain("Artemisia");
 });

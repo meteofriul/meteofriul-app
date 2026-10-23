@@ -81,8 +81,9 @@ function AirValues({ air, fields, language }) {
   })}</dl>;
 }
 
-function AirCard({ air, continuityLabel, detailMode = false, language, lastKnownLabel, runAt, sampleStatus }) {
+function AirCard({ air, continuityLabel, detailMode = false, language, lastKnownLabel, runAt, sampleStatus, status }) {
   const fur = language === "fur";
+  const hasValues = AIR_FIELDS.some(([id]) => typeof air?.values?.[id] === "number" && Number.isFinite(air.values[id]));
   const validLabel = formatTimestamp(air?.valid_at);
   const resolvedRunAt = runAt || air?.run_at;
   return <section className="mf-weather-cams-card">
@@ -90,11 +91,13 @@ function AirCard({ air, continuityLabel, detailMode = false, language, lastKnown
       <h2>{fur ? "Cualitât de arie" : "Qualità dell’aria"}</h2>
       <p>{fur ? "Concentrazions previodudis dal model" : "Concentrazioni previste da modello"}</p>
     </div></header>
-    {air && (sampleStatus === "last_known" || continuityLabel) ? (
+    {hasValues && (sampleStatus === "last_known" || continuityLabel) ? (
       <p className="mf-weather-cams-card__status" role="status">{sampleStatus === "last_known" ? lastKnownLabel : continuityLabel}</p>
     ) : null}
-    {air ? <><AirValues air={air} fields={AIR_FIELDS} language={language} />
-      </> : <p>{fur ? "Dâts de arie no disponibii" : "Dati dell’aria non disponibili"}</p>}
+    {hasValues ? <AirValues air={air} fields={AIR_FIELDS} language={language} />
+      : <p role="status">{status === "pending"
+        ? (fur ? "In cjariament…" : "Caricamento…")
+        : (fur ? "Dâts no disponibii" : "Dati non disponibili")}</p>}
     {detailMode ? <DetailFooter
       language={language}
       methodology={fur
@@ -112,6 +115,8 @@ function AirCard({ air, continuityLabel, detailMode = false, language, lastKnown
 const COPY = {
   it: {
     ariaLabel: "Previsione pollinica CAMS separata",
+    loading: "Caricamento…",
+    unavailable: "Dati non disponibili",
     experimental: "Previsione sperimentale · nessun livello sanitario",
     source: "Fonte: CAMS / Copernicus",
     modelRun: "Emissione del modello",
@@ -120,6 +125,8 @@ const COPY = {
   },
   fur: {
     ariaLabel: "Prevision dai polins CAMS separade",
+    loading: "In cjariament…",
+    unavailable: "Dâts no disponibii",
     experimental: "Prevision sperimentâl · nissun nivel sanitari",
     source: "Font: CAMS / Copernicus",
     modelRun: "Corse dal model",
@@ -144,8 +151,10 @@ function PollenCard({ copy, detailMode = false, language, model }) {
       </div>
     </header>
 
-    <p className="mf-weather-cams-card__status" role={model.pollenSampleStatus === "last_known" ? "status" : undefined}>
-      {model.pollenSampleStatus === "last_known" ? model.pollenLastKnownLabel : model.continuityLabel || model.note}
+    <p className="mf-weather-cams-card__status" role={model.status !== "available" || model.pollenSampleStatus === "last_known" ? "status" : undefined}>
+      {model.status === "pending" ? copy.loading
+        : model.status !== "available" || !model.values.length ? copy.unavailable
+          : model.pollenSampleStatus === "last_known" ? model.pollenLastKnownLabel : model.continuityLabel || model.note}
     </p>
 
     {model.status === "available" && model.values.length ? (
@@ -177,7 +186,7 @@ export function WeatherCamsCard({ detailMode = false, language = "it", model, se
   if (!model) return null;
   const copy = COPY[language === "fur" ? "fur" : "it"];
   const airCard = <AirCard air={model.air} continuityLabel={model.continuityLabel} detailMode={detailMode} language={language} lastKnownLabel={model.airLastKnownLabel}
-    runAt={model.runAt} sampleStatus={model.airSampleStatus} />;
+    runAt={model.runAt} sampleStatus={model.airSampleStatus} status={model.airStatus || model.status} />;
   const pollenCard = <PollenCard copy={copy} detailMode={detailMode} language={language} model={model} />;
 
   if (section === "air") return airCard;

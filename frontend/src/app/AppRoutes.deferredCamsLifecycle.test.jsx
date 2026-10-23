@@ -42,6 +42,7 @@ const testState = vi.hoisted(() => {
     },
     final: weather("2026-09-14T00:00:00Z", "available"),
     refreshOptions: [],
+    initialPromise: null,
     revoked: weather("2026-09-13T00:00:00Z", "unavailable", {
       code: "RUN_DISABLED",
       stage: "family",
@@ -63,7 +64,7 @@ vi.mock("../features/home/homeDataController", async importOriginal => {
     hydrateHomeWeatherFromBackgroundPrefetch: () => Promise.resolve(null),
     loadHomeEvents: () => Promise.resolve(testState.events),
     loadHomeWeather: (_location, options = {}) => {
-      if (!options.force) return Promise.resolve(testState.active);
+      if (!options.force) return testState.initialPromise || Promise.resolve(testState.active);
       testState.refreshOptions.push(options);
       options.onCamsUpdate?.(testState.revoked, {
         lifecycle: "intermediate",
@@ -108,7 +109,7 @@ vi.mock("../features/home/homeViewModel", () => ({
   buildHomeViewModel: data => data,
 }));
 vi.mock("../features/weather/weatherForecastViewModel", () => ({
-  buildWeatherForecastViewModel: state => state,
+  buildWeatherForecastViewModel: (state, options) => ({ ...state, presentationLoading: options.loading }),
 }));
 vi.mock("../features/home/HomeView", () => ({
   HomeView: ({ model }) => (
@@ -120,7 +121,7 @@ vi.mock("../features/home/HomeView", () => ({
 }));
 vi.mock("../features/weather/WeatherForecastView", () => ({
   WeatherForecastView: ({ model }) => (
-    <div data-testid="cams-presentation">
+    <div data-testid="cams-presentation" data-loading={String(model?.presentationLoading)}>
       {model?.rawCurrent?.data_quality?.cams_diagnostic?.code ||
         model?.rawCurrent?.data_quality?.cams_run_utc || "empty"}
     </div>
@@ -151,6 +152,7 @@ describe.each(["home", "weather"])("deferred CAMS lifecycle on %s", activeTab =>
   beforeEach(() => {
     vi.stubGlobal("IS_REACT_ACT_ENVIRONMENT", true);
     testState.refreshOptions = [];
+    testState.initialPromise = null;
     container = document.createElement("div");
     document.body.append(container);
     root = createRoot(container);
@@ -177,6 +179,18 @@ describe.each(["home", "weather"])("deferred CAMS lifecycle on %s", activeTab =>
       />,
     );
   }
+
+  if (activeTab === "weather") it("ends initial loading after a failed request instead of keeping the cards pending", async () => {
+    let resolveWeather;
+    testState.initialPromise = new Promise(resolve => { resolveWeather = resolve; });
+    await act(async () => render(0));
+    expect(container.querySelector('[data-testid="cams-presentation"]').dataset.loading).toBe("true");
+    await act(async () => {
+      resolveWeather({ status: "empty", error: "Network unavailable" });
+      await testState.initialPromise;
+    });
+    expect(container.querySelector('[data-testid="cams-presentation"]').dataset.loading).toBe("false");
+  });
 
   it("presents a revocation immediately but stays pending until the terminal replacement", async () => {
     await act(async () => {

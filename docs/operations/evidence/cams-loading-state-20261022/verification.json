@@ -1,0 +1,139 @@
+{
+  "date": "2026-10-22",
+  "candidate_commit": "22c0fd62327d818c15edd2faf6fd7baedefe2f1b",
+  "base_main": "d62683b9666ad38de42033fd2fe6db022ead8943",
+  "device": {
+    "model": "Galaxy A52 SM-A525F",
+    "android": "14",
+    "browser": "Brave 1.97.59",
+    "physical_pixels": "1080x2400",
+    "density_dpi": 420
+  },
+  "launcher": "scripts/start-local-weather-pilot.ps1 -NationalCloud",
+  "port": 5174,
+  "result": "passed",
+  "live_app": {
+    "languages": [
+      "it",
+      "fur"
+    ],
+    "location": "Pordenone",
+    "cards_and_details": "passed",
+    "it_valid_hour_local": "21:00",
+    "it_values": {
+      "pm25_ug_m3": 10.2,
+      "pm10_ug_m3": 13.1,
+      "grass_grains_m3": 0.25
+    },
+    "fur_valid_hour_local": "22:00",
+    "fur_values": {
+      "pm25_ug_m3": 12,
+      "pm10_ug_m3": 15.1,
+      "grass_grains_m3": 0.23
+    },
+    "note": "Values were read across the hourly boundary; the displayed valid hour changed."
+  },
+  "controlled_states": {
+    "cards_it_and_fur": "loading and unavailable visually verified, legible and not clipped",
+    "details_hierarchy_assertions": [
+      {
+        "case": "fixture-loading-air-it",
+        "expected": "Caricamento",
+        "passed": true
+      },
+      {
+        "case": "fixture-loading-pollen-it",
+        "expected": "Caricamento",
+        "passed": true
+      },
+      {
+        "case": "fixture-unavailable-air-it",
+        "expected": "Dati non disponibili",
+        "passed": true
+      },
+      {
+        "case": "fixture-unavailable-pollen-it",
+        "expected": "Dati non disponibili",
+        "passed": true
+      },
+      {
+        "case": "fixture-loading-air-fur",
+        "expected": "In cjariament",
+        "passed": true
+      },
+      {
+        "case": "fixture-loading-pollen-fur",
+        "expected": "In cjariament",
+        "passed": true
+      },
+      {
+        "case": "fixture-unavailable-air-fur",
+        "expected": "Dâts no disponibii",
+        "passed": true
+      },
+      {
+        "case": "fixture-unavailable-pollen-fur",
+        "expected": "Dâts no disponibii",
+        "passed": true
+      }
+    ],
+    "recovery": "Available values replace status in both languages; true PM2.5 zero remains visible.",
+    "scope": "Temporary ignored page, real production components and view model, local simulated inputs; no backend outage induced."
+  },
+  "settings_restored": {
+    "language": "it",
+    "theme": "light",
+    "location": "Pordenone",
+    "ui_preferences_match_before": true,
+    "position_notifications_not_modified": true
+  },
+  "existing_automated_checks": {
+    "tests": 250,
+    "files": 25,
+    "lint": "passed",
+    "reused": true,
+    "production_code_unchanged_since_checks": true
+  },
+  "limits": [
+    "Brave preview on physical Android device; not Android minified release runtime.",
+    "No Safari/iPhone check.",
+    "No new production artifacts or remote publication."
+  ],
+  "images": [
+    {
+      "file": "live-it.png",
+      "sha256": "ffbc9618e262452e7e574f956cd8529ed74f58b4bad76192d26181bbf9837b5a",
+      "kind": "live_app"
+    },
+    {
+      "file": "live-fur.png",
+      "sha256": "77620192aa6d7a4835ebc69aca7593f268991593908ce324c5c988db06acb931",
+      "kind": "live_app"
+    },
+    {
+      "file": "fixture-loading-it.png",
+      "sha256": "6ec0a68382eae1d3bea9d83a9311b295c96d67ca03d2c7518d80a5422a2308db",
+      "kind": "simulated_inputs_real_components"
+    },
+    {
+      "file": "fixture-loading-fur.png",
+      "sha256": "ba7959fd195d2f4306aa24ace93bd8bbcc71b00a99836964143780c05c3317d3",
+      "kind": "simulated_inputs_real_components"
+    },
+    {
+      "file": "fixture-unavailable-it.png",
+      "sha256": "6f715125fee114b6805c6a373137917aa98cbe97f2e70eb2569a673bf067f0fb",
+      "kind": "simulated_inputs_real_components"
+    },
+    {
+      "file": "fixture-unavailable-fur.png",
+      "sha256": "5c9049c2af87ed51c6e53a3649417370d7cd6327d2a96a0733d7af87ac216172",
+      "kind": "simulated_inputs_real_components"
+    },
+    {
+      "file": "fixture-ready-fur.png",
+      "sha256": "23cdac8ca37cd3cdb2460ba08ccdbb50569424f5e7c52a9ed2a160f1f51c45cf",
+      "kind": "simulated_inputs_real_components"
+    }
+  ]
+}

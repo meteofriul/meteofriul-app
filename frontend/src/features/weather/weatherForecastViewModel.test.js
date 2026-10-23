@@ -400,3 +400,35 @@ describe("weather forecast view model", () => {
     });
   });
 });
+
+
+it.each([
+  ["it", "Caricamento…", "Dati non disponibili"],
+  ["fur", "In cjariament…", "Dâts no disponibii"],
+])("keeps initial and deferred CAMS loading separate from terminal unavailability in %s", (language, pendingLabel, unavailableLabel) => {
+  const options = { language, location: LOCATION, now: NOW };
+  const empty = { status: "empty", rawCurrent: null, current: null, forecast: null };
+  expect(buildWeatherForecastViewModel(empty, { ...options, loading: true }).cams)
+    .toMatchObject({ airStatus: "pending", status: "pending", note: pendingLabel });
+  expect(buildWeatherForecastViewModel({ ...empty, error: "Network unavailable" }, options).cams)
+    .toMatchObject({ airStatus: "unavailable", status: "unavailable", note: unavailableLabel });
+  expect(buildWeatherForecastViewModel(buildState({ camsStatus: "pending" }), options).cams)
+    .toMatchObject({ airStatus: "pending", status: "pending", note: pendingLabel });
+  expect(buildWeatherForecastViewModel(buildState({ camsStatus: "unavailable" }), { ...options, loading: true }).cams)
+    .toMatchObject({ airStatus: "unavailable", status: "unavailable", note: unavailableLabel });
+});
+
+it("preserves verified zero values during refresh and treats air and pollen independently", () => {
+  const state = buildState({ camsStatus: "pending" });
+  state.rawCurrent.air_quality_data = { values: { "particulate_matter_2.5um": 0 } };
+  const options = { location: LOCATION, now: NOW, loading: true };
+  expect(buildWeatherForecastViewModel(state, options).cams)
+    .toMatchObject({ airStatus: "available", status: "pending" });
+  state.rawCurrent.pollen_data = { status: "experimental_model_snapshot", values: { graminacee: 0 } };
+  const both = buildWeatherForecastViewModel(state, options).cams;
+  expect(both).toMatchObject({ airStatus: "available", status: "available" });
+  expect(both.values).toEqual([expect.objectContaining({ value: 0 })]);
+  state.rawCurrent.air_quality_data = null;
+  expect(buildWeatherForecastViewModel(state, options).cams)
+    .toMatchObject({ airStatus: "pending", status: "available" });
+});

@@ -195,3 +195,18 @@ it("shows the waiting update label on both CAMS cards while preserving run and v
   expect(document.body.textContent).toContain("14/09");
   expect(document.body.textContent).not.toContain("Ultimo dato verificato");
 });
+
+
+it.each([
+  ["it", "Caricamento…", "Dati non disponibili"],
+  ["fur", "In cjariament…", "Dâts no disponibii"],
+])("uses the same pending and unavailable text in both %s detail sheets", (language, loading, unavailable) => {
+  for (const section of ["air", "pollen"]) {
+    for (const [status, expected] of [["pending", loading], ["unavailable", unavailable]]) {
+      const model = { ...DETAIL_MODEL, air: { values: { ozone: null } }, airStatus: status, status, values: [] };
+      const document = renderDocument(<WeatherCamsCard detailMode language={language} model={model} section={section} />);
+      expect(document.querySelector('[role="status"]').textContent.trim()).toBe(expected);
+      expect(document.querySelector("dl")).toBeNull();
+    }
+  }
+});

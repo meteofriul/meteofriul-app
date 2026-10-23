@@ -23,8 +23,8 @@ const COPY = {
     camsContinuity: "Previsione della corsa precedente · aggiornamento in attesa",
     camsHeading: "Pollini",
     camsLastVerified: "Ultimo dato verificato",
-    camsPending: "Dati pollinici in caricamento",
-    camsUnavailable: "Dati pollinici non disponibili",
+    camsPending: "Caricamento…",
+    camsUnavailable: "Dati non disponibili",
     camsValidAt: "Dato valido alle",
     change: "Cambia",
     completeDay: "Giornata completa",
@@ -50,8 +50,8 @@ const COPY = {
     camsContinuity: "Prevision de corse precedente · in spiete dal inzornament",
     camsHeading: "Polins",
     camsLastVerified: "Ultin dât verificât",
-    camsPending: "Dâts sui polins in cjariament",
-    camsUnavailable: "Dâts sui polins no disponibii",
+    camsPending: "In cjariament…",
+    camsUnavailable: "Dâts no disponibii",
     camsValidAt: "Dât valit aes",
     change: "Cambie",
     completeDay: "Zornade complete",
@@ -410,14 +410,20 @@ function formatHeaderStatus(weatherState, copy) {
   };
 }
 
-function buildCamsModel(localWeather, weatherState, copy) {
+function buildCamsModel(localWeather, weatherState, copy, loading) {
   const pollen = localWeather?.pollen;
   const rawCurrent = weatherState?.rawCurrent || {};
   const quality = rawCurrent.data_quality || {};
   const air = rawCurrent.air_quality_data || null;
+  // An explicit CAMS outcome (including revocation) takes precedence over the weather request.
+  const pending = quality.cams_status === "pending" || pollen?.status === "pending"
+    || (loading && !quality.cams_status);
+  const airAvailable = ["particulate_matter_2.5um", "particulate_matter_10um", "ozone", "nitrogen_dioxide"]
+    .some((field) => typeof air?.values?.[field] === "number" && Number.isFinite(air.values[field]));
+  const airStatus = airAvailable ? "available" : pending ? "pending" : "unavailable";
   const status = pollen?.available
     ? "available"
-    : quality.cams_status === "pending" || pollen?.status === "pending"
+    : pending
       ? "pending"
       : "unavailable";
   const validTime = formatClock(pollen?.validAt || quality.cams_valid_at_utc);
@@ -437,6 +443,7 @@ function buildCamsModel(localWeather, weatherState, copy) {
     continuityLabel: status === "available" && quality.cams_status === "stale"
       && !familyLastKnown && camsContinuityFromEvidence(rawCurrent) ? copy.camsContinuity : "",
     air,
+    airStatus,
     airLastKnownLabel: lastKnownLabel(airSampleStatus, air?.valid_at || quality.cams_valid_at_utc),
     airSampleStatus,
     note: status === "available"
@@ -528,6 +535,7 @@ function retainHourlyPresentation(previousModel, nextItems, {
 
 export function buildWeatherForecastViewModel(weatherState, {
   language = "it",
+  loading = false,
   location = null,
   now = Date.now(),
   previousModel = null,
@@ -578,7 +586,7 @@ export function buildWeatherForecastViewModel(weatherState, {
   const hasRetainedValues = items.some((item) => item.retainedFields?.length);
 
   return {
-    cams: buildCamsModel(localWeather, weatherState, copy),
+    cams: buildCamsModel(localWeather, weatherState, copy, loading),
     uvPoint: { latitude: location?.latitude ?? location?.lat, longitude: location?.longitude ?? location?.lon },
     changeLocationLabel: localWeather?.changeLabel || copy.change,
     header: {
