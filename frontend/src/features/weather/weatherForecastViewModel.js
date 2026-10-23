@@ -415,9 +415,14 @@ function buildCamsModel(localWeather, weatherState, copy, loading) {
   const rawCurrent = weatherState?.rawCurrent || {};
   const quality = rawCurrent.data_quality || {};
   const air = rawCurrent.air_quality_data || null;
-  // An explicit CAMS outcome (including revocation) takes precedence over the weather request.
+  // A cache snapshot without CAMS is not the outcome of the request now in flight.
+  // Keep explicit diagnostics (especially revocation) visible even during refresh.
+  const reloadingCachedCams = loading && weatherState?.fromCache && !weatherState.error
+    && quality.cams_status === "unavailable"
+    && !quality.cams_diagnostic && !rawCurrent.source?.cams?.diagnostic
+    && !rawCurrent.pollen_data?.diagnostic;
   const pending = quality.cams_status === "pending" || pollen?.status === "pending"
-    || (loading && !quality.cams_status);
+    || reloadingCachedCams || (loading && !quality.cams_status);
   const airAvailable = ["particulate_matter_2.5um", "particulate_matter_10um", "ozone", "nitrogen_dioxide"]
     .some((field) => typeof air?.values?.[field] === "number" && Number.isFinite(air.values[field]));
   const airStatus = airAvailable ? "available" : pending ? "pending" : "unavailable";
