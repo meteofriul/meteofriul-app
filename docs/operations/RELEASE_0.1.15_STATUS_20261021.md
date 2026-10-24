@@ -36,6 +36,16 @@ non una nuova AAB o Web distribuibile. Sponsor disattivati. Nessuna nuova
 versione riservata, installazione, pubblicazione o invio manuale.
 [Allineamento, controlli e passaggi ancora aperti](RELEASE_WEB_SOURCE_ALIGNMENT_20261024.md).
 
+## Rifiniture locali successive alla PR 19
+
+Base main e release osservata il 24 ottobre: `8fb11af8`, PR 19 promossa.
+Sul ramo dedicato `codex/cams-initial-loading-events-contrast` sono ora
+corretti il transitorio prima della prima risposta aria/pollini e il
+contatore Eventi poco contrastato in scuro. Prova Brave/Galaxy IT/FUR,
+76 test, lint e compilazione PASS. Modifiche ancora locali, da committare
+e promuovere; nessun nuovo pacchetto, push, installazione, deploy o invio.
+Sponsor disattivati. [Verbale e limiti](CAMS_INITIAL_LOADING_EVENTS_CONTRAST_20261024.md).
+
 ## Canali e rami
 
 | Ambito | Stato attestato |
@@ -136,8 +146,9 @@ Il salvataggio dell'accettazione Play segue il registro append-only previsto dal
 Il 23 ottobre il proprietario ha autorizzato commit/push dei verbali e
 allineamento a main dopo la prova della 300036. La PR 11 è stata unita in `eb109518`;
 il suo record GitHub conserva l’esito e la CI. Il successivo allineamento del
-24 ottobre è documentato separatamente e attende la prova delle nuove
-correzioni sul dispositivo. Nessuno SHA di merge sostituisce l’identità
+24 ottobre è documentato separatamente: prova delle quattro correzioni
+sul dispositivo completata e PR 19 promossa. Le due rifiniture ulteriori
+sono locali nel ramo dedicato indicato sopra. Nessuno SHA di merge sostituisce l’identità
 sorgente della AAB già firmata.
 Nessuna pubblicazione Web o produzione Play è inclusa. Restano espliciti i casi
 non esercitati, i vecchi worktree indipendenti e i loro file non ancora salvati;

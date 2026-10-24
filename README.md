@@ -53,6 +53,13 @@ tracciate nella [PR 19](https://github.com/meteofriul/meteofriul-app/pull/19).
 La AAB 300036 e il suo archivio Web non contengono queste quattro modifiche.
 Nessun nuovo codice versione riservato. [Verbale di allineamento](docs/operations/RELEASE_WEB_SOURCE_ALIGNMENT_20261024.md).
 
+**Rifiniture locali del 24 ottobre, dopo PR 19:** sulla base main `8fb11af8`,
+il ramo `codex/cams-initial-loading-events-contrast` corregge il transitorio
+iniziale aria/pollini e il contatore Eventi in scuro. Verifica Brave/Galaxy
+IT/FUR, 76 test, lint e compilazione superati. Modifiche locali ancora da
+committare e promuovere; AAB, archivio Web e canali pubblicati invariati.
+[Evidenze e limiti](docs/operations/CAMS_INITIAL_LOADING_EVENTS_CONTRAST_20261024.md).
+
 **Job meteo ICON-2I — verifica del 21 ottobre 2026:** nuova corsa pubblicata,
 checkpoint schema 2, 215 documenti e sidecar e campione nazionale verificati.
 Le tolleranze sono esercitate nei dati reali. Il 21 ottobre sono stati aggiornati
