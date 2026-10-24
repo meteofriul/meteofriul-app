@@ -1,6 +1,14 @@
 # Correzioni locali dopo la verifica Web 300036 — 23 ottobre 2026
 
-## Stato e perimetro
+## Ripresa del 24 ottobre
+
+Correzioni salvate in `cd471769`; ramo release allineato a main `23153e54`
+con merge `ffa61949`. Nuovamente superati i 116 test mirati. Questa ripresa
+prepara il salvataggio su GitHub; promozione in main ancora subordinata alla
+prova Galaxy (telefono non collegato). [Stato corrente](RELEASE_WEB_SOURCE_ALIGNMENT_20261024.md).
+Lo stato e le evidenze sotto descrivono la sessione originale del 23 ottobre.
+
+## Stato e perimetro al 23 ottobre
 
 Autorizzazione: «Procedi con le correzioni». Lavoro sul ramo release esistente
 `codex/release-0.1.15`, base `eb1095185023636efde111dd93b295a5a07ec10f`.

@@ -3,7 +3,16 @@
 Regola del proprietario, 20 ottobre 2026: la Web App deve seguire la AAB,
 perché chi usa iPhone accede al prodotto dal browser.
 
-## Candidata aggiornata del 23 ottobre 2026 — Tempo reale
+## Sorgenti allineate il 24 ottobre 2026
+
+Il ramo release incorpora main `23153e54` e il fix `cd471769`, mediante
+`ffa61949`, senza differenze frontend rispetto alle correzioni già verificate.
+Nuova esecuzione dei 116 test mirati: PASS. La promozione su main attende
+la prova Galaxy richiesta da AGENTS.md; telefono non collegato al controllo.
+Web e Android dovranno usare questa stessa base approvata alla prossima build.
+[Verbale corrente](RELEASE_WEB_SOURCE_ALIGNMENT_20261024.md).
+
+## Ultimi pacchetti prodotti il 23 ottobre 2026 — Tempo reale
 
 AAB **0.1.15 / 300036** e candidata Web dalla stessa sorgente `9d5ff2f415ab8b10be510eff2a0b058a8c2408ac`,
 allineata a main `2d8b0c32`. Inclusa la correzione di Tempo reale; conservate
@@ -23,7 +32,8 @@ Eseguita la [verifica locale IT/FUR del bundle statico](WEB_0.1.15_300036_FINAL_
 avvio e integrità confermati, servizi bloccati dalle regole CORS per localhost.
 Il pilot della stessa sorgente ha verifiche complementari con dati reali.
 I rilievi GPS, traduzioni e recupero CAMS hanno ora [correzioni locali verificate](WEB_0.1.15_300036_CORRECTIONS_20261023.md)
-sul ramo release: non sono ancora in main, nella AAB 300036 o nella Web archiviata.
+nel commit `cd471769` del ramo release, ora allineato con main. Non sono
+ancora promosse in main né contenute nella AAB 300036 o nella Web archiviata.
 L'episodio iniziale CAMS non aveva una traccia temporale; è stato riprodotto e
 corretto il meccanismo di recupero da errore di trasporto, senza dichiarare
 retroattivamente provata ogni causa di quell'osservazione.
@@ -88,6 +98,15 @@ confrontare HTML/asset realmente serviti con gli hash della candidata,
 verificare una sessione esistente e una nuova, poi annotare esiti e limiti.
 Un rollback Web deve ripristinare il deployment noto mantenendo la compatibilità
 con i contratti dati attivi. Non è autorizzato implicitamente dalla preparazione.
+
+## Aggiornamento dello stato
+
+Quando cambia lo stato di sorgenti, verifiche o canali, aggiornare insieme
+README, stato della release e questo piano. Ogni dichiarazione deve indicare
+la data della verifica e distinguere codice salvato/promosso, pacchetto
+generato, test interno e pubblicazione effettiva. Conservare i verbali storici
+e gli hash degli artefatti; non attribuire una correzione a una build precedente.
+I limiti del collaudo rimangono aperti finché non esiste una nuova evidenza.
 
 ## Evidenza minima per ogni aggiornamento
 

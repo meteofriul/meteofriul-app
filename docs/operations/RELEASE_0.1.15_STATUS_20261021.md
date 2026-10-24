@@ -1,6 +1,6 @@
-# Stato release 0.1.15 e lavoro salvato — aggiornamento del 23 ottobre 2026
+# Stato release 0.1.15 e lavoro salvato — aggiornamento sorgenti del 24 ottobre 2026
 
-**Candidata corrente:** AAB **0.1.15 / 300036** generata e verificata da `9d5ff2f4`, con main `2d8b0c32` e Tempo reale corretto. Web dalla stessa sorgente; sponsor spenti. Disponibile nel test interno dalle 13:37 del 23 ottobre e aggiornata dal proprietario via Play. Verifica sul Galaxy Android 14: PASS dei percorsi osservati, compreso Tempo reale dopo avvio a freddo; qualifica completa ancora limitata dalla matrice non esercitata. Nessuna installazione dell’agente. [Verbale corrente](ANDROID_0.1.15_300036_DEVICE_CHECK_20261023.md).
+**Ultimo pacchetto prodotto:** AAB **0.1.15 / 300036** generata e verificata da `9d5ff2f4`, con main `2d8b0c32` e Tempo reale corretto. Web dalla stessa sorgente; sponsor spenti. Disponibile nel test interno dalle 13:37 del 23 ottobre e aggiornata dal proprietario via Play. Verifica sul Galaxy Android 14: PASS dei percorsi osservati, compreso Tempo reale dopo avvio a freddo; qualifica completa ancora limitata dalla matrice non esercitata. Nessuna installazione dell’agente. [Verbale corrente](ANDROID_0.1.15_300036_DEVICE_CHECK_20261023.md).
 
 **La precedente 0.1.15 / 300035 è stata sostituita nel test interno dalla 300036.
 Nella prova storica della 300035 Tempo reale risultava vuoto:
@@ -21,20 +21,35 @@ sopra. Il tentativo 300034 resta abbandonato e conservato.
 [Build](ANDROID_0.1.15_300035_BUILD_20261023.md) ·
 [Accettazione Play](ANDROID_0.1.15_300035_UPLOAD_20261023.md).
 
+## Allineamento sorgenti del 24 ottobre
+
+Il ramo `codex/release-0.1.15` contiene `cd471769` (quattro correzioni successive
+alla 300036) e main `23153e54`, uniti senza conflitti in `ffa61949`. I sorgenti
+frontend sono identici a quelli delle prove del 23 ottobre; i 116 test mirati
+sono nuovamente superati dopo l’allineamento. Galaxy non collegato: promozione
+in main ancora subordinata alla prova reale prevista da AGENTS.md.
+
+Questa è la base sorgente comune per il prossimo pacchetto Web e Android;
+non una nuova AAB o Web distribuibile. Sponsor disattivati. Nessuna nuova
+versione riservata, installazione, pubblicazione o invio manuale.
+[Allineamento, controlli e passaggi ancora aperti](RELEASE_WEB_SOURCE_ALIGNMENT_20261024.md).
+
 ## Canali e rami
 
 | Ambito | Stato attestato |
 | --- | --- |
 | Produzione Play | Lettura Console del 23 ottobre: 0.1.14 / 300031; nessuna promozione della 0.1.15 in produzione |
 | Test interno Play | 0.1.15 / 300036 disponibile dal 23 ottobre alle 13:37; una sola lista con due account, mantenuta su conferma del proprietario; sponsor disattivati |
-| Web pubblica | Pubblicazione del 21 ottobre da `1b0287c1`, versione 0.1.14; HTML e asset riconfermati il 22 ottobre. Candidata 0.1.15 aggiornata da `9d5ff2f4` preparata, non distribuita; Safari/iPhone non verificato |
-| Base main incorporata nella AAB | `2d8b0c32`, PR 17 e CI 39935808248 verde. La promozione della release verificata, autorizzata il 23 ottobre dopo la prova sul Galaxy, passa dalla [PR 11](https://github.com/meteofriul/meteofriul-app/pull/11): stato del merge, SHA risultante e CI sono registrati su GitHub |
-| `codex/release-0.1.15` | Sorgente AAB `9d5ff2f4`: main `2d8b0c32`, Posizione, transitorio CAMS e configurazione nativa conservati. I commit successivi documentano build, Play e dispositivo senza cambiare i sorgenti dell'artefatto. Web costruita dalla stessa base e non pubblicata |
+| Web pubblica | Pubblicazione del 21 ottobre da `1b0287c1`, versione 0.1.14; HTML e asset riconfermati il 23 ottobre. Candidata 0.1.15 aggiornata da `9d5ff2f4` preparata, non distribuita; Safari/iPhone non verificato |
+| Base main incorporata nella AAB | `2d8b0c32`, PR 17 e CI 39935808248 verde. La [PR 11](https://github.com/meteofriul/meteofriul-app/pull/11) è unita in main con `eb109518`. Main al controllo del 24 ottobre: `23153e54`; i commit aggiunti dopo la build non cambiano la AAB |
+| `codex/release-0.1.15` | Sorgente AAB `9d5ff2f4`: main `2d8b0c32`, Posizione, transitorio CAMS e configurazione nativa conservati. I verbali di build/Play/dispositivo sono seguiti dal fix frontend `cd471769` e dall’unione di main `ffa61949`. Queste nuove correzioni non sono nell’artefatto 300036 né nella Web archiviata; prova Galaxy ancora aperta |
 | Ultimo artefatto osservato sul telefono (300036) | Sorgente `9d5ff2f415ab8b10be510eff2a0b058a8c2408ac`, AAB SHA256 `024212752b3af72f163d75849aa53c2b191ba0352e42423b11efccd2d7f8b51f`; installer Play Store; [verifica sul Galaxy](ANDROID_0.1.15_300036_DEVICE_CHECK_20261023.md) |
 
-I documenti successivi non cambiano il commit sorgente dell'AAB già firmata.
-La promozione comprende la configurazione 0.1.15 / 300036 già provata:
-non riserva un nuovo codice, non ricostruisce la AAB e non cambia i canali pubblicati.
+I commit successivi, anche quando modificano il frontend, non cambiano il
+commit sorgente dell’AAB già firmata. L’allineamento conserva la configurazione
+0.1.15 / 300036: non riserva un nuovo codice, non ricostruisce la AAB e non
+cambia i canali pubblicati. Una futura AAB richiederà un codice superiore a
+300036 e la relativa autorizzazione.
 
 **Preparazione locale del 22 ottobre:** la guardia del ramo release consente
 un'altra AAB ufficiale con nome 0.1.15 e codice crescente, anche dopo 300033
@@ -51,6 +66,7 @@ generata. [Dettagli e limiti](ANDROID_NATIVE_CONFIG_FIX_20261022.md#numerazione-
 | LOCATION-UPDATE-01 | Causa dell'episodio Play ancora non provata. Il 22 ottobre è stato riprodotto e corretto localmente un percorso di avvio che disattiva la preferenza dopo errori temporanei: 114 test passano. Correzione inclusa nella sorgente 300036 oggetto della PR 11. Percorsi ordinari sul Galaxy PASS; proprietario conferma preferenza attiva prima/dopo Play. Recupero da errore temporaneo sul dispositivo ancora non esercitato. [Analisi e limiti](ANDROID_LOCATION_STARTUP_20261022.md) |
 | BULLETIN-MAP-01 | [Spaziatura corretta e verificata su Brave/Galaxy](BULLETIN_MAP_LABEL_SPACING_20261022.md), già in main e incorporata nella candidata. Ricontrollata nei campioni delle AAB 300035 e 300036 installate sul Galaxy il 23 ottobre |
 | CAMS-TRANSITION-01 | Causa riprodotta e corretta: cache incompleta durante una nuova richiesta. Fix `53aba4ff` incluso nella AAB 300035, regressioni automatiche IT/FUR superate; rientro IT/FUR sul Galaxy senza falsa indisponibilità osservata. Con cache disponibile i valori arrivano subito: testo di caricamento intermedio non esercitato sul telefono. [Verbale](CAMS_REENTRY_LOADING_20261023.md) |
+| WEB-300036-01/04 | Quattro correzioni `cd471769`: layout GPS Community, Eventi «Mostre altris», errore fonte OSMER in FUR e recupero CAMS. Test locali e browser PC IT/FUR superati; Galaxy e nuovi pacchetti ancora da completare. [Verbale](WEB_0.1.15_300036_CORRECTIONS_20261023.md) |
 | Copertura restante | Android 15/16, gesti, tablet/multi-window e percorsi con scritture o consegne reali non verificati; nessun PASS implicito |
 
 Superate sul precedente pacchetto ufficiale 300033 le prove di avvio/ripresa, Indietro, previsioni
@@ -116,10 +132,11 @@ build `39945799912` e dell'accettazione Play `39948472277` verdi per la 300036.
 Il salvataggio dell'accettazione Play segue il registro append-only previsto dal runbook.
 
 Il 23 ottobre il proprietario ha autorizzato commit/push dei verbali e
-allineamento a main dopo la prova della 300036. La PR 11 accompagna questa
-promozione: prima CI del nuovo commit documentale, poi merge, poi verifica CI
-di main e allineamento locale dei rami. Il suo record GitHub conserva l'esito
-effettivo, senza attribuire il futuro SHA di merge alla AAB già firmata.
+allineamento a main dopo la prova della 300036. La PR 11 è stata unita in `eb109518`;
+il suo record GitHub conserva l’esito e la CI. Il successivo allineamento del
+24 ottobre è documentato separatamente e attende la prova delle nuove
+correzioni sul dispositivo. Nessuno SHA di merge sostituisce l’identità
+sorgente della AAB già firmata.
 Nessuna pubblicazione Web o produzione Play è inclusa. Restano espliciti i casi
 non esercitati, i vecchi worktree indipendenti e i loro file non ancora salvati;
 non vengono importati né eliminati per questo allineamento.

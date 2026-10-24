@@ -31,6 +31,10 @@
   ignored local assets such as private signing keys or build artifacts.
 - Never generate or upload a Play AAB without the user's explicit
   authorization.
+- When alignment, promotion, build, upload, publication or verification changes
+  the recorded state, update README, the release status and the Web parity
+  record in the same workstream. Distinguish source code, immutable artifacts,
+  internal testing and public deployments; retain dated evidence and open checks.
 
 ## Web and Android release parity
 
