@@ -22,6 +22,31 @@ PARTITION_RESULT_LIMIT = 512
 PARTITION_WINDOW_LIMIT = 64
 
 
+class CalendarPageUnavailable(ValueError):
+    """A numbered search page is missing; never an empty calendar."""
+
+
+def _read_search_page(url, get):
+    try:
+        return get_with_single_transient_retry(
+            get, url, timeout=(4, 15),
+            headers={'User-Agent': 'Meteo-Friul-Pilot-Catalog/1.0'},
+        )
+    except requests.HTTPError as exc:
+        response = exc.response
+        actual = urlsplit(getattr(response, 'url', '') or '')
+        page = page_number(url)
+        provider_error = (actual.path == '/StaticPage/404'
+                          and dict(parse_qsl(actual.query)).get('aspxerrorpath') == '/eventi')
+        if (response is not None and response.status_code == 404
+                and page is not None and page > 0
+                and actual.scheme == 'https' and actual.hostname == 'www.turismofvg.it'
+                and (provider_error or actual.path == '/eventi')):
+            raise CalendarPageUnavailable(
+                f'TurismoFVG numbered calendar page unavailable: page={page}, HTTP 404') from exc
+        raise
+
+
 def year_search_url(start, end):
     return engine.TURISMOFVG_EVENTS_URL + '?' + urlencode({
         'hidehighlights': 'true', 'start': start.isoformat(), 'end': end.isoformat(),
@@ -51,18 +76,12 @@ def fetch_page(url, *, get=requests.get):
     if requested.scheme != 'https' or requested.hostname != 'www.turismofvg.it' or requested.path != '/eventi':
         raise ValueError('unsafe TurismoFVG search URL')
     try:
-        response = get_with_single_transient_retry(
-            get, url, timeout=(4, 15),
-            headers={'User-Agent': 'Meteo-Friul-Pilot-Catalog/1.0'},
-        )
+        response = _read_search_page(url, get)
     except (requests.Timeout, requests.ConnectionError):
         # The dated index is large: one reset must not discard an otherwise
         # complete window. Keep this extra attempt local to TurismoFVG.
         time.sleep(1)
-        response = get_with_single_transient_retry(
-            get, url, timeout=(4, 15),
-            headers={'User-Agent': 'Meteo-Friul-Pilot-Catalog/1.0'},
-        )
+        response = _read_search_page(url, get)
     actual = urlsplit(response.url)
     if (actual.scheme != 'https' or actual.hostname != requested.hostname
             or actual.path != requested.path
@@ -122,8 +141,15 @@ def fetch_year(start, end, *, get=requests.get, max_workers=3):
         with ThreadPoolExecutor(max_workers=max_workers) as executor:
             futures = {executor.submit(fetch_page, url, get=get): index
                        for index, url in enumerate(remaining_urls, start=2)}
-            for future in as_completed(futures):
-                pages[futures[future]] = future.result()
+            try:
+                for future in as_completed(futures):
+                    pages[futures[future]] = future.result()
+            except Exception:
+                # Leave room in the source's existing deadline for the bounded
+                # partition recovery; do not fetch every queued broken-page scan.
+                for future in futures:
+                    future.cancel()
+                raise
     else:
         page_count = 1
         page_size = 0
@@ -243,9 +269,14 @@ def fetch_year_partitioned(start, end, *, get=requests.get, max_workers=16,
 
 
 def fetch_year_resilient(start, end, *, get=requests.get, max_workers=16):
-    """Prefer the smaller annual scan; partition only after count drift."""
+    """Recover count drift or a missing numbered page through exact partitions."""
+    partition_limit = 128
     try:
         return fetch_year(start, end, get=get, max_workers=max_workers)
+    except CalendarPageUnavailable:
+        # Use the established partition size: tiny daily windows can repeat
+        # hundreds of long-running events and exhaust the source deadline.
+        partition_limit = PARTITION_RESULT_LIMIT
     except ValueError as exc:
         message = str(exc)
         totals = re.search(r'total=(\d+)/(\d+)', message)
@@ -254,13 +285,15 @@ def fetch_year_resilient(start, end, *, get=requests.get, max_workers=16):
             and totals is not None and totals.group(1) != totals.group(2))
         if not changed_total and message != 'TurismoFVG changed result total or page size':
             raise
+    # No partial scan is published: a stable, exactly reconciled partition
+    # union is required after a missing page as well as after count drift.
     # A rolling window can stay below the normal 512-result partition
     # threshold while its count changes during parallel page reads. Force
     # smaller dated windows on this retry, then require their exact union to
     # match a stable full-window snapshot.
     return fetch_year_partitioned(start, end, get=get,
                                   max_workers=max_workers,
-                                  result_limit=128)
+                                  result_limit=partition_limit)
 
 
 def collect_filtered(*, today=None, get=requests.get, max_years=5):
