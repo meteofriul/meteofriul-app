@@ -6,14 +6,14 @@ perché chi usa iPhone accede al prodotto dal browser.
 ## Sorgente comune e nuova candidata del 24 ottobre 2026
 
 I sorgenti del prodotto sul ramo release locale coincidono con main
-`0841020a42d836e44de306e9639b07b98fceaefc`; segue il solo commit documentale locale.
+`0841020a42d836e44de306e9639b07b98fceaefc`; seguono soli commit documentali, pubblicati sul ramo release GitHub.
 Web 0.1.15 compilata con `-BuildOnly` e soli asset Web Android dalla stessa
 sorgente, incluse tutte le correzioni delle PR 19 e 20. Archivio corrente:
 `release-artifacts/web-candidates/20261024-0.1.15-0841020a/`.
 Guardie locali, API prima/dopo, CARTO, service worker e hash PASS; CI e prove
 Brave/Galaxy IT/FUR riutilizzate con identità dei sorgenti confermata.
-Sponsor disattivati. Nessuna nuova AAB o pubblicazione; ramo release remoto
-invariato, documenti salvati in un commit locale sul ramo release.
+Sponsor disattivati. Nessuna nuova AAB o pubblicazione Web/Play; ramo release
+aggiornato su GitHub con documenti ed evidenze. Main resta invariato.
 [Controlli, hash e limiti](RELEASE_WEB_CAMS_EVENTS_ALIGNMENT_20261024.md).
 Il [primo allineamento](RELEASE_WEB_SOURCE_ALIGNMENT_20261024.md) resta storico.
 
@@ -27,7 +27,7 @@ sorgenti pubblicati identici a quelli verificati. CI della PR e
 [di main](https://github.com/meteofriul/meteofriul-app/actions/runs/40107051151) verdi in tutti e tre i job.
 Il ramo release è stato successivamente allineato in locale a `0841020a` e
 la Web ricompilata come indicato sopra. La AAB 300036, il suo archivio Web
-storico e il sito pubblico restano invariati; nessun nuovo push del ramo release.
+storico e il sito pubblico restano invariati; il solo ramo release è aggiornato su GitHub.
 [Prova e limiti](CAMS_INITIAL_LOADING_EVENTS_CONTRAST_20261024.md).
 
 ## Pacchetti del 23 ottobre 2026 — AAB 300036 e Web storica

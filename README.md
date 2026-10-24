@@ -60,7 +60,7 @@ scuro corretti. Verifica Brave/Galaxy IT/FUR, 76 test, lint e compilazione
 superati; [CI di main](https://github.com/meteofriul/meteofriul-app/actions/runs/40107051151) verde in tutti e tre i job.
 Il ramo release locale è ora allineato a main `0841020a`, con nuova candidata
 Web dalla stessa sorgente, ancora non pubblicata. AAB 300036 e archivi precedenti
-conservati. Nessun push del ramo release, nuovo codice versione o deploy.
+conservati. Ramo release pubblicato su GitHub; nessun nuovo codice versione o deploy.
 Sponsor confermati disattivati, zero campagne.
 [Preparazione e controlli](docs/operations/RELEASE_WEB_CAMS_EVENTS_ALIGNMENT_20261024.md).
 [Evidenze e limiti](docs/operations/CAMS_INITIAL_LOADING_EVENTS_CONTRAST_20261024.md).

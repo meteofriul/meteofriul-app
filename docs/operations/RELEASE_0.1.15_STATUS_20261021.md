@@ -29,8 +29,9 @@ Archivio `release-artifacts/web-candidates/20261024-0.1.15-0841020a/`.
 Guardie locali (16 test), binding API prima/dopo, CARTO, service worker e hash
 PASS. CI completa e prove Galaxy riutilizzate dopo verifica dell'identità
 dei sorgenti. Sponsor disattivati, zero campagne. I 6.916 file protetti e il
-ledger sono invariati. Nessuna AAB, installazione, push, deploy o invio.
-Il ramo release remoto resta a `8fb11af8`; documentazione salvata in un commit locale sul ramo release.
+ledger sono invariati. Nessuna AAB, installazione, deploy o invio.
+Il ramo release è pubblicato su GitHub con la documentazione aggiornata;
+main e pacchetti restano invariati. Codice identico alla CI verde `40107051151`.
 [Verbale e limiti](RELEASE_WEB_CAMS_EVENTS_ALIGNMENT_20261024.md).
 
 ## Primo allineamento sorgenti del 24 ottobre (storico)
@@ -57,7 +58,7 @@ Eventi poco contrastato in scuro. Prova Brave/Galaxy IT/FUR, 76 test, lint e
 compilazione PASS; hash dei sorgenti confermati prima della promozione.
 [CI della PR](https://github.com/meteofriul/meteofriul-app/actions/runs/40106722957) e [CI di main](https://github.com/meteofriul/meteofriul-app/actions/runs/40107051151) entrambe verdi nei tre job.
 Il ramo `codex/release-0.1.15` è successivamente allineato in locale a
-`0841020a`, con candidata Web aggiornata come indicato sopra; remoto invariato. Nessuna nuova AAB, installazione, pubblicazione Web/Play,
+`0841020a`, con candidata Web aggiornata come indicato sopra e ramo release pubblicato su GitHub. Nessuna nuova AAB, installazione, pubblicazione Web/Play,
 modifica dei job o invio. Sponsor disattivati.
 [Verbale e limiti](CAMS_INITIAL_LOADING_EVENTS_CONTRAST_20261024.md).
 
@@ -69,7 +70,7 @@ modifica dei job o invio. Sponsor disattivati.
 | Test interno Play | 0.1.15 / 300036 disponibile dal 23 ottobre alle 13:37; una sola lista con due account, mantenuta su conferma del proprietario; sponsor disattivati |
 | Web pubblica | Pubblicazione del 21 ottobre da `1b0287c1`, versione 0.1.14; HTML e asset riconfermati il 23 ottobre. Candidata locale 0.1.15 ricompilata da `0841020a` il 24 ottobre, non distribuita; Safari/iPhone non verificato |
 | Base main incorporata nella AAB | `2d8b0c32`, PR 17 e CI 39935808248 verde. La [PR 11](https://github.com/meteofriul/meteofriul-app/pull/11) è unita in main con `eb109518`. Main su GitHub include ora `53bedfe4` tramite PR 20 (`7813d5c4`); i commit aggiunti dopo la build non cambiano la AAB |
-| `codex/release-0.1.15` | Base prodotto main `0841020a`, senza conflitti, seguita dal solo commit documentale locale; remoto a `8fb11af8`, nessun push. Include le correzioni PR 19/20. Nuova Web e asset Web Android archiviati dalla stessa sorgente; AAB 300036 e archivio Web precedente da `9d5ff2f4` conservati e invariati |
+| `codex/release-0.1.15` | Base prodotto main `0841020a`, senza conflitti, seguita da soli commit documentali; ramo release pubblicato su GitHub. Include le correzioni PR 19/20. Nuova Web e asset Web Android archiviati dalla stessa sorgente; AAB 300036 e archivio Web precedente da `9d5ff2f4` conservati e invariati |
 | Ultimo artefatto osservato sul telefono (300036) | Sorgente `9d5ff2f415ab8b10be510eff2a0b058a8c2408ac`, AAB SHA256 `024212752b3af72f163d75849aa53c2b191ba0352e42423b11efccd2d7f8b51f`; installer Play Store; [verifica sul Galaxy](ANDROID_0.1.15_300036_DEVICE_CHECK_20261023.md) |
 
 I commit successivi, anche quando modificano il frontend, non cambiano il

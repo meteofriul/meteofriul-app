@@ -135,7 +135,6 @@
     "job executions"
   ],
   "remaining": [
-    "remote release branch not updated",
     "new authorized AAB with versionCode above consumed codes",
     "minified native runtime for future AAB",
     "Android 15/16 and large-screen matrix",
@@ -249,5 +248,21 @@
       "sha256": "8ff37ed98b664895027d324f18bf3b2e80c0c6514aeea3d1084b000f4f60862c"
     }
   ],
-  "documentation_storage": "local Git commit on codex/release-0.1.15; no push or main promotion"
+  "documentation_storage": "Git commits on codex/release-0.1.15 published to GitHub; no main promotion",
+  "git_push_scope": "false above refers to candidate preparation; subsequent authorized branch push recorded below",
+  "github_publication": {
+    "checked_at_utc": "2026-10-24T16:02:54.024182+00:00",
+    "verified_document_commit": "61318213da20d0d7f17df167b7b8677409730749",
+    "main_unchanged": "0841020a42d836e44de306e9639b07b98fceaefc",
+    "behind_main": 0,
+    "only_documentation_diff": true,
+    "product_identical_to_green_ci": true,
+    "ci_run": 40107051151,
+    "ci_conclusion": "success",
+    "new_ci_triggered": false,
+    "ci_trigger_reason": "ordinary codex branch pushes do not trigger CI",
+    "active_or_queued_runs": 0,
+    "privacy_guard": "PASS without changes or exclusions; two verified SHA-256 false positives resolved by structured evidence records",
+    "documentation_update_follows_on_same_branch": true
+  }
 }

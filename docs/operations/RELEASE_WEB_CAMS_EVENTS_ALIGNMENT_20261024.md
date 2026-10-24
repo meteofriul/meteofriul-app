@@ -12,9 +12,9 @@ Conservate le correzioni precedenti, compresa Tempo reale.
 Nuova candidata Web compilata con il percorso protetto `-BuildOnly`, insieme
 ai soli asset Web in modalità Android dalla stessa sorgente. Nessuna AAB,
 APK, sincronizzazione Capacitor, Gradle, installazione, push, deploy o invio.
-Main e GitHub non modificati. Il ramo release remoto rimane a `8fb11af8`.
-La documentazione di questa preparazione è salvata in un commit locale sul
-ramo release, successivo alla base prodotto `0841020a`. Nessun push o merge su main.
+Durante la preparazione main e GitHub non sono stati modificati. La documentazione
+è stata salvata sul ramo release, successiva alla base prodotto `0841020a`.
+Il successivo push autorizzato è registrato nella sezione seguente; nessun merge su main.
 
 Nome 0.1.15 e codice configurato 300036 invariati: nessun nuovo numero riservato.
 La AAB 300036 resta l'ultimo artefatto firmato, dalla sorgente `9d5ff2f4`.
@@ -99,3 +99,22 @@ lettura del sito pubblico o di Play: restano le ultime osservazioni datate.
 Per la futura AAB servirà un codice superiore a quelli consumati, verificato
 nuovamente contro Play e ledger prima della riserva. La preparazione non
 autorizza generazione, caricamento o distribuzione.
+
+## Push e verifica GitHub — 24 ottobre 2026
+
+Push autorizzato del solo ramo `codex/release-0.1.15`, confermato su GitHub
+con il commit documentale `61318213`. Il precedente `9dd12d6d` non è stato
+pubblicato: due hash SHA-256 delle evidenze erano falsi positivi della regola
+generica per chiavi API. Tutti i 26 hash sono stati verificati contro i file
+locali e rappresentati in record separati file/SHA-256. Nessun segreto rilevato;
+controllo privacy completo superato, senza esclusioni o modifiche alla guardia.
+
+Confronto remoto: zero commit di main mancanti, sole differenze documentali.
+Main resta `0841020a`. CI `40107051151` riconfermata verde nei tre job; codice
+frontend, backend, script e workflow identico al commit verificato `7813d5c4`.
+Il push ordinario a `codex/**` non avvia la CI: nessuna nuova CI dichiarata,
+nessuna esecuzione manuale richiesta, nessun workflow in corso o in coda.
+Il presente aggiornamento documentale segue sullo stesso ramo.
+
+Sponsor disattivati come nelle letture già registrate, configurazione non
+modificata. Nessuna AAB, installazione, pubblicazione Web/Play, deploy o invio.
