@@ -1,0 +1,253 @@
+{
+  "schema_version": 2,
+  "checked_at_utc": "2026-10-24T15:51:47.862580+00:00",
+  "status": "LOCAL_WEB_CANDIDATE_PREPARED_NOT_PUBLISHED",
+  "branch": "codex/release-0.1.15",
+  "release_previous": "8fb11af83d94bb779049350cb913541534d85d1c",
+  "source_commit": "0841020a42d836e44de306e9639b07b98fceaefc",
+  "main_integrated": "0841020a42d836e44de306e9639b07b98fceaefc",
+  "alignment": "fast-forward; no conflict",
+  "frontend_tree": "7eeb8368dee24aa60bea567d02af6883c589c0d1",
+  "version_name": "0.1.15",
+  "configured_android_version_code_unchanged": 300036,
+  "new_version_reserved": false,
+  "new_aab_generated": false,
+  "git_push": false,
+  "local_checks": {
+    "canonical-cleanliness": "PASS",
+    "ledger-audit": "PASS",
+    "version-parity": "PASS",
+    "frontend-guards": "PASS",
+    "diff-check": "PASS",
+    "web-build": "PASS",
+    "android-web-build": "PASS",
+    "android-api-binding": "PASS",
+    "android-carto-binding": "PASS"
+  },
+  "frontend_guard_tests_passed": 16,
+  "reused_checks": {
+    "source_commit": "0841020a42d836e44de306e9639b07b98fceaefc",
+    "main_identical": true,
+    "galaxy_source_hashes_identical": true,
+    "ci_source_identical": true,
+    "ci_run": 40107051151,
+    "ci_status": "success",
+    "ci_scope": [
+      "frontend",
+      "backend",
+      "hosting-preview-tool"
+    ],
+    "full_ci_reused": true
+  },
+  "reused_galaxy_report": "docs/operations/CAMS_INITIAL_LOADING_EVENTS_CONTRAST_20261024.md",
+  "previous_approved_corrections_report": "docs/operations/WEB_POST_300036_GALAXY_20261024.md",
+  "reused_targeted_tests": {
+    "tests": 76,
+    "suites": 8,
+    "new_run_this_session": false,
+    "reason": "tested source files and CI product tree identical"
+  },
+  "dependencies": {
+    "physical_node_modules": true,
+    "required_versions_checked": 361,
+    "vite": "8.1.6",
+    "lock_sha256": "aa4a706abc6512153b14dfd79d3f252b0f02e963864537b7225e75bdfa7a449f",
+    "installations": false
+  },
+  "ledger": {
+    "record_count": 57,
+    "files_unchanged": 58,
+    "status": "PASS"
+  },
+  "artifacts": {
+    "archive_relative_path": "release-artifacts/web-candidates/20261024-0.1.15-0841020a",
+    "source_commit": "0841020a42d836e44de306e9639b07b98fceaefc",
+    "frontend_tree": "7eeb8368dee24aa60bea567d02af6883c589c0d1",
+    "manifest_sha256": "bd0a6ee2a9ad767efb0e6b85a8466bf61cb426677ae14a13b69bc1183a4d50b2",
+    "artifacts": {
+      "web": {
+        "files": 506,
+        "bytes": 76031510
+      },
+      "android-web": {
+        "files": 505,
+        "bytes": 75978842
+      }
+    },
+    "sponsors": {
+      "checked_at_utc": "2026-10-24T15:47:58.245579+00:00",
+      "enabled": false,
+      "revision": 117,
+      "campaign_count": 0
+    },
+    "bundle_checks": [
+      "dark Eventi counter",
+      "IT/FUR loading text",
+      "CAMS lifecycle",
+      "Friulian Eventi label",
+      "previous realtime CSS",
+      "no local harness"
+    ],
+    "old_artifacts_preservation": "PASS: 6916 existing files unchanged"
+  },
+  "preservation": {
+    "checked_at_utc": "2026-10-24T15:48:46.497660+00:00",
+    "status": "PASS",
+    "archive_file_count": 1011,
+    "source_file_count": 1892,
+    "protected_files_unchanged": 6916,
+    "ledger_files_unchanged": 58,
+    "native_toolchain_and_configuration_unchanged_since_300036": true,
+    "new_version_reserved": false,
+    "source_commit": "0841020a42d836e44de306e9639b07b98fceaefc"
+  },
+  "api": {
+    "base": "https://play-b6fbe4d---meteofriul-api-bx24xqvcda-ew.a.run.app/api",
+    "revision": "meteofriul-api-00251-jow",
+    "image_digest": "europe-west1-docker.pkg.dev/meteo-friul/cloud-run-source-deploy/meteofriul-api@sha256:5522b4cfc15076a9f93e838e3643b35e1aa5ad4ce0bf5bca4851997ea94c2ae8",
+    "backend_commit": "e180b87abe5dac022034881ea4eb1ca60a0d4e78",
+    "preflight_before_and_after": "PASS"
+  },
+  "sponsors_before": {
+    "checked_at_utc": "2026-10-24T15:45:59.975290+00:00",
+    "enabled": false,
+    "revision": 117,
+    "campaign_count": 0
+  },
+  "sponsors_after": {
+    "checked_at_utc": "2026-10-24T15:47:58.245579+00:00",
+    "enabled": false,
+    "revision": 117,
+    "campaign_count": 0
+  },
+  "not_performed": [
+    "AAB/APK generation",
+    "Capacitor sync",
+    "Gradle",
+    "version reservation",
+    "dependency installation",
+    "phone installation",
+    "new browser/device session",
+    "emulator",
+    "Git push",
+    "deploy",
+    "manual sends",
+    "job executions"
+  ],
+  "remaining": [
+    "remote release branch not updated",
+    "new authorized AAB with versionCode above consumed codes",
+    "minified native runtime for future AAB",
+    "Android 15/16 and large-screen matrix",
+    "static Web services and update/cache from authorized origin",
+    "Safari/iPhone/PWA"
+  ],
+  "local_evidence_directory": ".tmp/release-cams-events-alignment-20261024",
+  "evidence_sha256": [
+    {
+      "file": "android-api-binding.exit",
+      "sha256": "5feceb66ffc86f38d952786c6d696c79c2dbc239dd4e91b46729d73a27fb57e9"
+    },
+    {
+      "file": "android-api-binding.log",
+      "sha256": "09256a5b690bb2f411d1c420e55e53e0a37dd9067f81c04d1dec2e729541ea54"
+    },
+    {
+      "file": "android-carto-binding.exit",
+      "sha256": "5feceb66ffc86f38d952786c6d696c79c2dbc239dd4e91b46729d73a27fb57e9"
+    },
+    {
+      "file": "android-carto-binding.log",
+      "sha256": "fb0ae53eb9cbb90e1500662e416eb7a16eb5980d63f790a7075eeb18c9b1811e"
+    },
+    {
+      "file": "android-web-build.exit",
+      "sha256": "5feceb66ffc86f38d952786c6d696c79c2dbc239dd4e91b46729d73a27fb57e9"
+    },
+    {
+      "file": "android-web-build.log",
+      "sha256": "61bf43cae56e55532f8e698c486aa00389d0cbc5938fc150aee14cdb8c642054"
+    },
+    {
+      "file": "archive-verification.json",
+      "sha256": "c5aa4a9728484cb9b2b6075b6a9084f0d830a870aa5d53370520fd94d262b592"
+    },
+    {
+      "file": "artifact-summary.json",
+      "sha256": "0eb4dc0284c6bbd49c8e4b20278ac59fa8fb690d9595b4e498b4c8dd4e91d16d"
+    },
+    {
+      "file": "baseline.json",
+      "sha256": "58099475cb7de5cbf2a9d7f30d27588f075f6cf0d3c8bac90bbd159f66baaa62"
+    },
+    {
+      "file": "canonical-cleanliness.exit",
+      "sha256": "5feceb66ffc86f38d952786c6d696c79c2dbc239dd4e91b46729d73a27fb57e9"
+    },
+    {
+      "file": "canonical-cleanliness.log",
+      "sha256": "552669766e982738eb2b71febbab9a76c2f38a0277d5179efc80c8c6ff7976fe"
+    },
+    {
+      "file": "dependency-verification.json",
+      "sha256": "a4688e3ae04a7b1cd199950de22b43cd6226dd97597fcdcdab397aae4259a691"
+    },
+    {
+      "file": "diff-check.exit",
+      "sha256": "5feceb66ffc86f38d952786c6d696c79c2dbc239dd4e91b46729d73a27fb57e9"
+    },
+    {
+      "file": "diff-check.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "file": "frontend-guards.exit",
+      "sha256": "5feceb66ffc86f38d952786c6d696c79c2dbc239dd4e91b46729d73a27fb57e9"
+    },
+    {
+      "file": "frontend-guards.log",
+      "sha256": "ee5f214f6de7f086e19866416874605e902417efa52c7ba4f86fbe4c320e8fa3"
+    },
+    {
+      "file": "ledger-audit.exit",
+      "sha256": "5feceb66ffc86f38d952786c6d696c79c2dbc239dd4e91b46729d73a27fb57e9"
+    },
+    {
+      "file": "ledger-audit.log",
+      "sha256": "d1677ca07fceb47e4f88efbbe00cb88fbb4efd49bf861d380e0ae2660570bc01"
+    },
+    {
+      "file": "ledger-before.json",
+      "sha256": "fdd1a4ece7c058cb8355409d69ed739c86385d71184f1c38e5ee520c5d996f9e"
+    },
+    {
+      "file": "source-equivalence.json",
+      "sha256": "6fa55ba6b0060bf22c55122baeba41484d39662c5622a36dcfe2cd1bc586d2c8"
+    },
+    {
+      "file": "sponsors-after.json",
+      "sha256": "a9fea98b5305771d0067b1faf538c6a7b854e8f90facca53ffddba233fc05bbc"
+    },
+    {
+      "file": "sponsors-before.json",
+      "sha256": "93f1d332be3a5b4b3910efde388ce366f2cb184c404c1b473eeab8b8ca0d0ca9"
+    },
+    {
+      "file": "version-parity.exit",
+      "sha256": "5feceb66ffc86f38d952786c6d696c79c2dbc239dd4e91b46729d73a27fb57e9"
+    },
+    {
+      "file": "version-parity.log",
+      "sha256": "8bd54c20006b26dde84feb8525f9464efc71d020065659a475757fe59f113ac0"
+    },
+    {
+      "file": "web-build.exit",
+      "sha256": "5feceb66ffc86f38d952786c6d696c79c2dbc239dd4e91b46729d73a27fb57e9"
+    },
+    {
+      "file": "web-build.log",
+      "sha256": "8ff37ed98b664895027d324f18bf3b2e80c0c6514aeea3d1084b000f4f60862c"
+    }
+  ],
+  "documentation_storage": "local Git commit on codex/release-0.1.15; no push or main promotion"
+}

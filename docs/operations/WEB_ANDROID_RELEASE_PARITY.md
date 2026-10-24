@@ -3,15 +3,19 @@
 Regola del proprietario, 20 ottobre 2026: la Web App deve seguire la AAB,
 perché chi usa iPhone accede al prodotto dal browser.
 
-## Sorgenti allineate il 24 ottobre 2026
+## Sorgente comune e nuova candidata del 24 ottobre 2026
 
-Il ramo release incorpora main `23153e54` e il fix `cd471769`, mediante
-`ffa61949`, senza differenze frontend rispetto alle correzioni già verificate.
-Nuova esecuzione dei 116 test mirati: PASS. Il 24 ottobre completata anche
-la [prova reale Brave/Galaxy IT/FUR](WEB_POST_300036_GALAXY_20261024.md).
-Promozione e CI sono tracciate nella [PR 19](https://github.com/meteofriul/meteofriul-app/pull/19).
-Web e Android dovranno usare questa stessa base approvata alla prossima build.
-[Verbale corrente](RELEASE_WEB_SOURCE_ALIGNMENT_20261024.md).
+I sorgenti del prodotto sul ramo release locale coincidono con main
+`0841020a42d836e44de306e9639b07b98fceaefc`; segue il solo commit documentale locale.
+Web 0.1.15 compilata con `-BuildOnly` e soli asset Web Android dalla stessa
+sorgente, incluse tutte le correzioni delle PR 19 e 20. Archivio corrente:
+`release-artifacts/web-candidates/20261024-0.1.15-0841020a/`.
+Guardie locali, API prima/dopo, CARTO, service worker e hash PASS; CI e prove
+Brave/Galaxy IT/FUR riutilizzate con identità dei sorgenti confermata.
+Sponsor disattivati. Nessuna nuova AAB o pubblicazione; ramo release remoto
+invariato, documenti salvati in un commit locale sul ramo release.
+[Controlli, hash e limiti](RELEASE_WEB_CAMS_EVENTS_ALIGNMENT_20261024.md).
+Il [primo allineamento](RELEASE_WEB_SOURCE_ALIGNMENT_20261024.md) resta storico.
 
 ## Rifiniture pubblicate in main dopo la PR 19
 
@@ -21,12 +25,12 @@ transitorio iniziale aria/pollini e contatore Eventi in scuro corretti.
 Verifica Brave/Galaxy in italiano e friulano, 76 test, lint e compilazione PASS;
 sorgenti pubblicati identici a quelli verificati. CI della PR e
 [di main](https://github.com/meteofriul/meteofriul-app/actions/runs/40107051151) verdi in tutti e tre i job.
-Il ramo release rimane a `8fb11af8`: il suo riallineamento servirà prima dei
-prossimi pacchetti Web e Android, dalla stessa base frontend approvata.
-AAB 300036, archivio Web e sito pubblico non sono aggiornati da questo push.
+Il ramo release è stato successivamente allineato in locale a `0841020a` e
+la Web ricompilata come indicato sopra. La AAB 300036, il suo archivio Web
+storico e il sito pubblico restano invariati; nessun nuovo push del ramo release.
 [Prova e limiti](CAMS_INITIAL_LOADING_EVENTS_CONTRAST_20261024.md).
 
-## Ultimi pacchetti prodotti il 23 ottobre 2026 — Tempo reale
+## Pacchetti del 23 ottobre 2026 — AAB 300036 e Web storica
 
 AAB **0.1.15 / 300036** e candidata Web dalla stessa sorgente `9d5ff2f415ab8b10be510eff2a0b058a8c2408ac`,
 allineata a main `2d8b0c32`. Inclusa la correzione di Tempo reale; conservate
@@ -47,7 +51,7 @@ avvio e integrità confermati, servizi bloccati dalle regole CORS per localhost.
 Il pilot della stessa sorgente ha verifiche complementari con dati reali.
 I rilievi GPS, traduzioni e recupero CAMS hanno ora [correzioni locali verificate](WEB_0.1.15_300036_CORRECTIONS_20261023.md)
 nel commit `cd471769`, con prova Brave/Galaxy completata e promozione
-tracciata nella PR 19. Non sono contenute nella AAB 300036 o nella Web archiviata.
+tracciata nella PR 19. Non sono contenute nella AAB 300036 o nella Web storica da `9d5ff2f4`; la nuova candidata da `0841020a` le include.
 L'episodio iniziale CAMS non aveva una traccia temporale; è stato riprodotto e
 corretto il meccanismo di recupero da errore di trasporto, senza dichiarare
 retroattivamente provata ogni causa di quell'osservazione.

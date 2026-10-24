@@ -1,6 +1,6 @@
 # Stato release 0.1.15 e lavoro salvato — aggiornamento sorgenti del 24 ottobre 2026
 
-**Ultimo pacchetto prodotto:** AAB **0.1.15 / 300036** generata e verificata da `9d5ff2f4`, con main `2d8b0c32` e Tempo reale corretto. Web dalla stessa sorgente; sponsor spenti. Disponibile nel test interno dalle 13:37 del 23 ottobre e aggiornata dal proprietario via Play. Verifica sul Galaxy Android 14: PASS dei percorsi osservati, compreso Tempo reale dopo avvio a freddo; qualifica completa ancora limitata dalla matrice non esercitata. Nessuna installazione dell’agente. [Verbale corrente](ANDROID_0.1.15_300036_DEVICE_CHECK_20261023.md).
+**Ultima AAB prodotta:** AAB **0.1.15 / 300036** generata e verificata da `9d5ff2f4`, con main `2d8b0c32` e Tempo reale corretto. Web storica associata dalla stessa sorgente; sponsor spenti. Disponibile nel test interno dalle 13:37 del 23 ottobre e aggiornata dal proprietario via Play. Verifica sul Galaxy Android 14: PASS dei percorsi osservati, compreso Tempo reale dopo avvio a freddo; qualifica completa ancora limitata dalla matrice non esercitata. Nessuna installazione dell’agente. [Verbale corrente](ANDROID_0.1.15_300036_DEVICE_CHECK_20261023.md).
 
 **La precedente 0.1.15 / 300035 è stata sostituita nel test interno dalla 300036.
 Nella prova storica della 300035 Tempo reale risultava vuoto:
@@ -21,7 +21,19 @@ sopra. Il tentativo 300034 resta abbandonato e conservato.
 [Build](ANDROID_0.1.15_300035_BUILD_20261023.md) ·
 [Accettazione Play](ANDROID_0.1.15_300035_UPLOAD_20261023.md).
 
-## Allineamento sorgenti del 24 ottobre
+## Candidata corrente dopo le correzioni CAMS/Eventi
+
+Release locale allineata in fast-forward all'ultimo main `0841020a`; nuova
+candidata Web 0.1.15 e soli asset Web Android compilati dalla stessa sorgente.
+Archivio `release-artifacts/web-candidates/20261024-0.1.15-0841020a/`.
+Guardie locali (16 test), binding API prima/dopo, CARTO, service worker e hash
+PASS. CI completa e prove Galaxy riutilizzate dopo verifica dell'identità
+dei sorgenti. Sponsor disattivati, zero campagne. I 6.916 file protetti e il
+ledger sono invariati. Nessuna AAB, installazione, push, deploy o invio.
+Il ramo release remoto resta a `8fb11af8`; documentazione salvata in un commit locale sul ramo release.
+[Verbale e limiti](RELEASE_WEB_CAMS_EVENTS_ALIGNMENT_20261024.md).
+
+## Primo allineamento sorgenti del 24 ottobre (storico)
 
 Il ramo `codex/release-0.1.15` contiene `cd471769` (quattro correzioni successive
 alla 300036) e main `23153e54`, uniti senza conflitti in `ffa61949`. I sorgenti
@@ -44,8 +56,8 @@ Corretti il transitorio prima della prima risposta aria/pollini e il contatore
 Eventi poco contrastato in scuro. Prova Brave/Galaxy IT/FUR, 76 test, lint e
 compilazione PASS; hash dei sorgenti confermati prima della promozione.
 [CI della PR](https://github.com/meteofriul/meteofriul-app/actions/runs/40106722957) e [CI di main](https://github.com/meteofriul/meteofriul-app/actions/runs/40107051151) entrambe verdi nei tre job.
-Il ramo `codex/release-0.1.15` resta a `8fb11af8`, da riallineare prima dei
-prossimi pacchetti. Nessuna nuova AAB, installazione, pubblicazione Web/Play,
+Il ramo `codex/release-0.1.15` è successivamente allineato in locale a
+`0841020a`, con candidata Web aggiornata come indicato sopra; remoto invariato. Nessuna nuova AAB, installazione, pubblicazione Web/Play,
 modifica dei job o invio. Sponsor disattivati.
 [Verbale e limiti](CAMS_INITIAL_LOADING_EVENTS_CONTRAST_20261024.md).
 
@@ -55,9 +67,9 @@ modifica dei job o invio. Sponsor disattivati.
 | --- | --- |
 | Produzione Play | Lettura Console del 23 ottobre: 0.1.14 / 300031; nessuna promozione della 0.1.15 in produzione |
 | Test interno Play | 0.1.15 / 300036 disponibile dal 23 ottobre alle 13:37; una sola lista con due account, mantenuta su conferma del proprietario; sponsor disattivati |
-| Web pubblica | Pubblicazione del 21 ottobre da `1b0287c1`, versione 0.1.14; HTML e asset riconfermati il 23 ottobre. Candidata 0.1.15 aggiornata da `9d5ff2f4` preparata, non distribuita; Safari/iPhone non verificato |
+| Web pubblica | Pubblicazione del 21 ottobre da `1b0287c1`, versione 0.1.14; HTML e asset riconfermati il 23 ottobre. Candidata locale 0.1.15 ricompilata da `0841020a` il 24 ottobre, non distribuita; Safari/iPhone non verificato |
 | Base main incorporata nella AAB | `2d8b0c32`, PR 17 e CI 39935808248 verde. La [PR 11](https://github.com/meteofriul/meteofriul-app/pull/11) è unita in main con `eb109518`. Main su GitHub include ora `53bedfe4` tramite PR 20 (`7813d5c4`); i commit aggiunti dopo la build non cambiano la AAB |
-| `codex/release-0.1.15` | Sorgente AAB `9d5ff2f4`: main `2d8b0c32`, Posizione, transitorio CAMS e configurazione nativa conservati. I verbali di build/Play/dispositivo sono seguiti dal fix frontend `cd471769` e dall’unione di main `ffa61949`. Queste nuove correzioni non sono nell’artefatto 300036 né nella Web archiviata; prova Brave/Galaxy IT/FUR del 24 ottobre PASS; promozione tracciata nella PR 19 |
+| `codex/release-0.1.15` | Base prodotto main `0841020a`, senza conflitti, seguita dal solo commit documentale locale; remoto a `8fb11af8`, nessun push. Include le correzioni PR 19/20. Nuova Web e asset Web Android archiviati dalla stessa sorgente; AAB 300036 e archivio Web precedente da `9d5ff2f4` conservati e invariati |
 | Ultimo artefatto osservato sul telefono (300036) | Sorgente `9d5ff2f415ab8b10be510eff2a0b058a8c2408ac`, AAB SHA256 `024212752b3af72f163d75849aa53c2b191ba0352e42423b11efccd2d7f8b51f`; installer Play Store; [verifica sul Galaxy](ANDROID_0.1.15_300036_DEVICE_CHECK_20261023.md) |
 
 I commit successivi, anche quando modificano il frontend, non cambiano il
@@ -117,7 +129,7 @@ La 300036 è ora installata dal proprietario; nessuna installazione dell’agent
   zero campagne, revisione 117.
 - **Web:** pubblicazione del 21 ottobre confermata; il nuovo pacchetto locale
   0.1.15 deve ancora essere pubblicato separatamente. Manifest e sorgenti comuni
-  nel [verbale corrente](RELEASE_WEB_REALTIME_ALIGNMENT_20261023.md); Safari/iPhone
+  nel [verbale corrente](RELEASE_WEB_CAMS_EVENTS_ALIGNMENT_20261024.md); Safari/iPhone
   resta non verificato nel [piano Web](WEB_ANDROID_RELEASE_PARITY.md).
 - **Eventi, aggiornamento 22 ottobre:** correzioni distribuite, corsa ordinaria
   delle 06:00 verificata; Cinema Muto, Barcolana e Spazzapan recuperati. Restano
