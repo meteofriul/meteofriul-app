@@ -4,8 +4,9 @@
 
 Correzioni salvate in `cd471769`; ramo release allineato a main `23153e54`
 con merge `ffa61949`. Nuovamente superati i 116 test mirati. Questa ripresa
-prepara il salvataggio su GitHub; promozione in main ancora subordinata alla
-prova Galaxy (telefono non collegato). [Stato corrente](RELEASE_WEB_SOURCE_ALIGNMENT_20261024.md).
+è seguita dalla [prova Brave/Galaxy IT/FUR del 24 ottobre](WEB_POST_300036_GALAXY_20261024.md),
+superata nei casi documentati. Promozione e CI nella PR 19.
+[Stato corrente](RELEASE_WEB_SOURCE_ALIGNMENT_20261024.md).
 Lo stato e le evidenze sotto descrivono la sessione originale del 23 ottobre.
 
 ## Stato e perimetro al 23 ottobre

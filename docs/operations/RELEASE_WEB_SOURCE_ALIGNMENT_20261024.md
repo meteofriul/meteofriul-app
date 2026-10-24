@@ -23,19 +23,21 @@ Dopo l’unione: **116 test in 10 suite superati**, con configurazione Vitest
 nativa. ESLint dei file JS/JSX modificati e `git diff --check`: PASS.
 I nove hash frontend coincidono con l’evidenza del 23 ottobre; verificati
 anche i collegamenti locali nei sei documenti aggiornati.
-Le prove browser PC precedenti restano riferite agli stessi sorgenti;
-nessuna nuova prova sul browser o telefono in questa sessione.
+Le prove browser PC precedenti restano riferite agli stessi sorgenti.
+Successivamente il proprietario ha collegato il Galaxy: completata la
+[verifica Brave IT/FUR](WEB_POST_300036_GALAXY_20261024.md) sul candidato
+`574d3509`, quattro correzioni PASS nel perimetro documentato. Nessuna
+eccezione alla regola del dispositivo. La prova AAB 300036 rimane distinta.
 
-**Promozione in main in attesa:** il Galaxy non risulta collegato.
-AGENTS.md richiede test automatici e verifica sul dispositivo prima di main.
-La prova della 300036 precede queste correzioni e non le copre. Il ramo può
-essere salvato e sottoposto a CI su GitHub senza promuoverlo in main.
+La [PR 19](https://github.com/meteofriul/meteofriul-app/pull/19) raccoglie
+verbale del dispositivo, nuovo controllo CI e promozione autorizzata in main.
+Il merge e la CI finale vanno verificati sullo specifico head della PR.
 
 ## Sorgenti e pacchetti restano distinti
 
 | Oggetto | Stato al controllo |
 | --- | --- |
-| Base sorgente comune Web/Android | Ramo release aggiornato a main con le quattro correzioni, in attesa del controllo sul Galaxy |
+| Base sorgente comune Web/Android | Ramo release aggiornato a main con le quattro correzioni; Brave/Galaxy IT/FUR PASS, promozione tracciata nella PR 19 |
 | AAB 0.1.15 / 300036 | Sorgente immutabile `9d5ff2f4`, SHA256 `024212752b3af72f163d75849aa53c2b191ba0352e42423b11efccd2d7f8b51f`; quattro correzioni assenti |
 | Web archiviata associata alla 300036 | Stessa sorgente `9d5ff2f4`, manifest SHA256 `42e81042e678be61091db42e401329f54353bddd8be28d4673eacbf898a75bc2`; quattro correzioni assenti |
 | Test interno Play | Ultima verifica 23 ottobre: 0.1.15 / 300036, due account confermati dal proprietario |
@@ -47,7 +49,7 @@ Sponsor disattivati; codice, configurazione e servizi sponsor invariati.
 
 ## Passi ancora aperti
 
-1. Verifica Galaxy delle quattro correzioni, poi promozione del codice in main.
+1. Verifica Galaxy completata. Promozione del codice e CI finale tracciate nella PR 19.
 2. Dopo autorizzazione, nuovi pacchetti Web e Android dalla stessa sorgente
    approvata; Android con codice superiore a 300036.
 3. Collaudo Web dei servizi da origine autorizzata e aggiornamento cache dalla

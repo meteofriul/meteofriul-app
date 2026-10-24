@@ -46,8 +46,10 @@ La 300033 rimane una prova storica distinta. La [PR 11](https://github.com/meteo
 **Allineamento sorgenti del 24 ottobre:** il ramo `codex/release-0.1.15` incorpora
 main `23153e54` e le quattro correzioni `cd471769`: recupero aria/pollini,
 impaginazione del messaggio GPS e due traduzioni friulane. Le correzioni sono
-verificate localmente; la promozione in main attende il controllo sul Galaxy
-previsto da AGENTS.md. Il telefono non risultava collegato in questa sessione.
+verificate anche su Brave del Galaxy in italiano e friulano il 24 ottobre.
+La prova reale richiesta da AGENTS.md è completata; promozione e CI sono
+tracciate nella [PR 19](https://github.com/meteofriul/meteofriul-app/pull/19).
+[Esiti e limiti sul Galaxy](docs/operations/WEB_POST_300036_GALAXY_20261024.md).
 La AAB 300036 e il suo archivio Web non contengono queste quattro modifiche.
 Nessun nuovo codice versione riservato. [Verbale di allineamento](docs/operations/RELEASE_WEB_SOURCE_ALIGNMENT_20261024.md).
 
@@ -82,7 +84,7 @@ e non sostituisce la sua verifica. Evidenze e limiti nel [verbale sul telefono](
 
 | Canale | Stato |
 | --- | --- |
-| Web | `0.1.14` pubblicata il 21 ottobre; archivio `0.1.15` da `9d5ff2f4` non distribuito. Quattro correzioni successive nel ramo release, ancora da provare sul Galaxy e confezionare. Safari/iPhone non verificato |
+| Web | `0.1.14` pubblicata il 21 ottobre; archivio `0.1.15` da `9d5ff2f4` non distribuito. Quattro correzioni successive verificate anche su Brave/Galaxy IT/FUR, tracciate nella PR 19; nuovi pacchetti ancora da confezionare. Safari/iPhone non verificato |
 | API | FastAPI su Cloud Run, chiamata direttamente via HTTPS da Web e Android |
 | Android | `0.1.15` (`300036`) disponibile nel test interno con fix Tempo reale; verifica sul Galaxy Android 14 dei percorsi osservati PASS, incluso Tempo reale dopo avvio a freddo. La qualifica completa resta distinta. Limiti GPS/Android 15–16/grandi schermi espliciti nel verbale. [Esito e limiti](docs/operations/RELEASE_0.1.15_STATUS_20261021.md) |
 | Google Play | Produzione `0.1.14` (`300031`) nella lettura del 23 ottobre; `0.1.15` (`300036`) solo nel test interno, una lista con due account confermata dal proprietario. Sponsor disattivati |

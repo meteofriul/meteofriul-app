@@ -26,8 +26,10 @@ sopra. Il tentativo 300034 resta abbandonato e conservato.
 Il ramo `codex/release-0.1.15` contiene `cd471769` (quattro correzioni successive
 alla 300036) e main `23153e54`, uniti senza conflitti in `ffa61949`. I sorgenti
 frontend sono identici a quelli delle prove del 23 ottobre; i 116 test mirati
-sono nuovamente superati dopo l’allineamento. Galaxy non collegato: promozione
-in main ancora subordinata alla prova reale prevista da AGENTS.md.
+sono nuovamente superati dopo l’allineamento. Il 24 ottobre anche la prova
+Brave/Galaxy IT/FUR delle quattro correzioni è PASS, nei limiti del
+[verbale dedicato](WEB_POST_300036_GALAXY_20261024.md). Promozione e CI sono
+tracciate nella [PR 19](https://github.com/meteofriul/meteofriul-app/pull/19).
 
 Questa è la base sorgente comune per il prossimo pacchetto Web e Android;
 non una nuova AAB o Web distribuibile. Sponsor disattivati. Nessuna nuova
@@ -42,7 +44,7 @@ versione riservata, installazione, pubblicazione o invio manuale.
 | Test interno Play | 0.1.15 / 300036 disponibile dal 23 ottobre alle 13:37; una sola lista con due account, mantenuta su conferma del proprietario; sponsor disattivati |
 | Web pubblica | Pubblicazione del 21 ottobre da `1b0287c1`, versione 0.1.14; HTML e asset riconfermati il 23 ottobre. Candidata 0.1.15 aggiornata da `9d5ff2f4` preparata, non distribuita; Safari/iPhone non verificato |
 | Base main incorporata nella AAB | `2d8b0c32`, PR 17 e CI 39935808248 verde. La [PR 11](https://github.com/meteofriul/meteofriul-app/pull/11) è unita in main con `eb109518`. Main al controllo del 24 ottobre: `23153e54`; i commit aggiunti dopo la build non cambiano la AAB |
-| `codex/release-0.1.15` | Sorgente AAB `9d5ff2f4`: main `2d8b0c32`, Posizione, transitorio CAMS e configurazione nativa conservati. I verbali di build/Play/dispositivo sono seguiti dal fix frontend `cd471769` e dall’unione di main `ffa61949`. Queste nuove correzioni non sono nell’artefatto 300036 né nella Web archiviata; prova Galaxy ancora aperta |
+| `codex/release-0.1.15` | Sorgente AAB `9d5ff2f4`: main `2d8b0c32`, Posizione, transitorio CAMS e configurazione nativa conservati. I verbali di build/Play/dispositivo sono seguiti dal fix frontend `cd471769` e dall’unione di main `ffa61949`. Queste nuove correzioni non sono nell’artefatto 300036 né nella Web archiviata; prova Brave/Galaxy IT/FUR del 24 ottobre PASS; promozione tracciata nella PR 19 |
 | Ultimo artefatto osservato sul telefono (300036) | Sorgente `9d5ff2f415ab8b10be510eff2a0b058a8c2408ac`, AAB SHA256 `024212752b3af72f163d75849aa53c2b191ba0352e42423b11efccd2d7f8b51f`; installer Play Store; [verifica sul Galaxy](ANDROID_0.1.15_300036_DEVICE_CHECK_20261023.md) |
 
 I commit successivi, anche quando modificano il frontend, non cambiano il
@@ -66,7 +68,7 @@ generata. [Dettagli e limiti](ANDROID_NATIVE_CONFIG_FIX_20261022.md#numerazione-
 | LOCATION-UPDATE-01 | Causa dell'episodio Play ancora non provata. Il 22 ottobre è stato riprodotto e corretto localmente un percorso di avvio che disattiva la preferenza dopo errori temporanei: 114 test passano. Correzione inclusa nella sorgente 300036 oggetto della PR 11. Percorsi ordinari sul Galaxy PASS; proprietario conferma preferenza attiva prima/dopo Play. Recupero da errore temporaneo sul dispositivo ancora non esercitato. [Analisi e limiti](ANDROID_LOCATION_STARTUP_20261022.md) |
 | BULLETIN-MAP-01 | [Spaziatura corretta e verificata su Brave/Galaxy](BULLETIN_MAP_LABEL_SPACING_20261022.md), già in main e incorporata nella candidata. Ricontrollata nei campioni delle AAB 300035 e 300036 installate sul Galaxy il 23 ottobre |
 | CAMS-TRANSITION-01 | Causa riprodotta e corretta: cache incompleta durante una nuova richiesta. Fix `53aba4ff` incluso nella AAB 300035, regressioni automatiche IT/FUR superate; rientro IT/FUR sul Galaxy senza falsa indisponibilità osservata. Con cache disponibile i valori arrivano subito: testo di caricamento intermedio non esercitato sul telefono. [Verbale](CAMS_REENTRY_LOADING_20261023.md) |
-| WEB-300036-01/04 | Quattro correzioni `cd471769`: layout GPS Community, Eventi «Mostre altris», errore fonte OSMER in FUR e recupero CAMS. Test locali e browser PC IT/FUR superati; Galaxy e nuovi pacchetti ancora da completare. [Verbale](WEB_0.1.15_300036_CORRECTIONS_20261023.md) |
+| WEB-300036-01/04 | Quattro correzioni `cd471769`: layout GPS Community, Eventi «Mostre altris», errore fonte OSMER in FUR e recupero CAMS. Test locali, browser PC e Brave/Galaxy IT/FUR superati nei casi documentati. [Prova reale e limiti](WEB_POST_300036_GALAXY_20261024.md); nuovi pacchetti ancora da preparare. [Verbale](WEB_0.1.15_300036_CORRECTIONS_20261023.md) |
 | Copertura restante | Android 15/16, gesti, tablet/multi-window e percorsi con scritture o consegne reali non verificati; nessun PASS implicito |
 
 Superate sul precedente pacchetto ufficiale 300033 le prove di avvio/ripresa, Indietro, previsioni

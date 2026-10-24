@@ -7,8 +7,9 @@ perché chi usa iPhone accede al prodotto dal browser.
 
 Il ramo release incorpora main `23153e54` e il fix `cd471769`, mediante
 `ffa61949`, senza differenze frontend rispetto alle correzioni già verificate.
-Nuova esecuzione dei 116 test mirati: PASS. La promozione su main attende
-la prova Galaxy richiesta da AGENTS.md; telefono non collegato al controllo.
+Nuova esecuzione dei 116 test mirati: PASS. Il 24 ottobre completata anche
+la [prova reale Brave/Galaxy IT/FUR](WEB_POST_300036_GALAXY_20261024.md).
+Promozione e CI sono tracciate nella [PR 19](https://github.com/meteofriul/meteofriul-app/pull/19).
 Web e Android dovranno usare questa stessa base approvata alla prossima build.
 [Verbale corrente](RELEASE_WEB_SOURCE_ALIGNMENT_20261024.md).
 
@@ -32,8 +33,8 @@ Eseguita la [verifica locale IT/FUR del bundle statico](WEB_0.1.15_300036_FINAL_
 avvio e integrità confermati, servizi bloccati dalle regole CORS per localhost.
 Il pilot della stessa sorgente ha verifiche complementari con dati reali.
 I rilievi GPS, traduzioni e recupero CAMS hanno ora [correzioni locali verificate](WEB_0.1.15_300036_CORRECTIONS_20261023.md)
-nel commit `cd471769` del ramo release, ora allineato con main. Non sono
-ancora promosse in main né contenute nella AAB 300036 o nella Web archiviata.
+nel commit `cd471769`, con prova Brave/Galaxy completata e promozione
+tracciata nella PR 19. Non sono contenute nella AAB 300036 o nella Web archiviata.
 L'episodio iniziale CAMS non aveva una traccia temporale; è stato riprodotto e
 corretto il meccanismo di recupero da errore di trasporto, senza dichiarare
 retroattivamente provata ogni causa di quell'osservazione.
