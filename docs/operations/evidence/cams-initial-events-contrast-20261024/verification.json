@@ -1,0 +1,283 @@
+{
+  "date": "2026-10-24",
+  "branch": "codex/cams-initial-loading-events-contrast",
+  "base_commit": "8fb11af83d94bb779049350cb913541534d85d1c",
+  "candidate_identity": "source commit 53bedfe4c1adbe66912642acf439b90917caa63b; promoted locally to main; original device evidence preserved",
+  "source_sha256_raw_working_tree_bytes": {
+    "frontend/src/app/AppRoutes.jsx": "f4cc844c56616d07bf285e42d40c137014276d9d6892bc7bbcad373f64f210fb",
+    "frontend/src/app/AppRoutes.camsEpisode.test.jsx": "9dfb9adace5c0bb9ced0e74edc6e969eed54cbbc1cad5de1c42b471889abf3cc",
+    "frontend/src/features/events/events.css": "7703cfe54326e016dc37e7ddf939a3698e03ac383775dd343d3336f2070f2ace"
+  },
+  "device": {
+    "model": "Samsung Galaxy A52 SM-A525F",
+    "os": "Android 14",
+    "api": 34,
+    "browser": "Brave 1.97.59 (429705904)",
+    "physical_pixels": [
+      1080,
+      2400
+    ],
+    "css_viewport": [
+      411,
+      728
+    ]
+  },
+  "pilot": {
+    "launcher": "scripts/start-local-weather-pilot.ps1 -WeatherCloud",
+    "port": 5174
+  },
+  "automated": {
+    "result": "PASS",
+    "tests": 76,
+    "suites": [
+      "src/app/AppRoutes.camsEpisode.test.jsx",
+      "src/app/AppRoutes.deferredCamsLifecycle.test.jsx",
+      "src/app/AppRoutes.activeCandidate.test.jsx",
+      "src/app/App.coldStartRevocation.test.jsx",
+      "src/features/weather/weatherForecastViewModel.test.js",
+      "src/features/weather/WeatherEnvironmentOverview.test.jsx",
+      "src/features/events/EventsView.test.jsx",
+      "src/copy/eventsViewCopy.test.js"
+    ],
+    "new_regressions": 4,
+    "command": "npx vitest --configLoader native run src/app/AppRoutes.camsEpisode.test.jsx src/app/AppRoutes.deferredCamsLifecycle.test.jsx src/app/AppRoutes.activeCandidate.test.jsx src/app/App.coldStartRevocation.test.jsx src/features/weather/weatherForecastViewModel.test.js src/features/weather/WeatherEnvironmentOverview.test.jsx src/features/events/EventsView.test.jsx src/copy/eventsViewCopy.test.js",
+    "lint": "npx eslint src/app/AppRoutes.jsx src/app/AppRoutes.camsEpisode.test.jsx"
+  },
+  "build": {
+    "result": "PASS",
+    "vite": "8.1.6",
+    "modules": 2122,
+    "command": "npx vite build --mode cloudflare --configLoader native --outDir <unique OS temporary directory>",
+    "api_source": "release-history/android-play/meteofriul-300036-0.1.15.release.json",
+    "scope": "frontend compilation only; no official Web delivery package or AAB",
+    "warnings": [
+      "existing Almanac static/dynamic import",
+      "existing chunk size above 500 kB"
+    ]
+  },
+  "cams_cases": [
+    {
+      "id": "cams-fur-cams-fail",
+      "result": "PASS",
+      "language": "fur",
+      "first_observation": "after two animation frames; before any provider settlement",
+      "pending_samples_after_first": 12,
+      "provider_settlements_while_held": 0,
+      "terminal": "unavailable, loading ended",
+      "evidence": "cams-fur-cams-fail.json"
+    },
+    {
+      "id": "cams-fur-icon-fail",
+      "result": "PASS",
+      "language": "fur",
+      "first_observation": "after two animation frames; before any provider settlement",
+      "pending_samples_after_first": 12,
+      "provider_settlements_while_held": 0,
+      "terminal": "unavailable, loading ended",
+      "evidence": "cams-fur-icon-fail.json"
+    },
+    {
+      "id": "cams-fur-pass",
+      "result": "PASS",
+      "language": "fur",
+      "first_observation": "after two animation frames; before any provider settlement",
+      "pending_samples_after_first": 12,
+      "provider_settlements_while_held": 0,
+      "terminal": "real CAMS values",
+      "evidence": "cams-fur-pass.json"
+    },
+    {
+      "id": "cams-it-cams-fail",
+      "result": "PASS",
+      "language": "it",
+      "first_observation": "after two animation frames; before any provider settlement",
+      "pending_samples_after_first": 12,
+      "provider_settlements_while_held": 0,
+      "terminal": "unavailable, loading ended",
+      "evidence": "cams-it-cams-fail.json"
+    },
+    {
+      "id": "cams-it-icon-fail",
+      "result": "PASS",
+      "language": "it",
+      "first_observation": "after two animation frames; before any provider settlement",
+      "pending_samples_after_first": 12,
+      "provider_settlements_while_held": 0,
+      "terminal": "unavailable, loading ended",
+      "evidence": "cams-it-icon-fail.json"
+    },
+    {
+      "id": "cams-it-pass",
+      "result": "PASS",
+      "language": "it",
+      "first_observation": "after two animation frames; before any provider settlement",
+      "pending_samples_after_first": 12,
+      "provider_settlements_while_held": 0,
+      "terminal": "real CAMS values",
+      "evidence": "cams-it-pass.json"
+    }
+  ],
+  "events_cases": [
+    {
+      "id": "events-fur-dark",
+      "result": "PASS",
+      "before": {
+        "label": "16 / 20\nMostre altris",
+        "counterColor": "rgb(6, 70, 63)",
+        "background": "rgba(232, 248, 245, 0.74)",
+        "count": 16,
+        "viewport": 411,
+        "documentWidth": 411,
+        "x": 205.71429443359375,
+        "y": 594.8928833007812,
+        "minimum_contrast_over_black": 5.232699909338247
+      },
+      "after": {
+        "count": 20,
+        "more": false
+      },
+      "source": "20 local fixture items, production EventsView and CSS"
+    },
+    {
+      "id": "events-fur-light",
+      "result": "PASS",
+      "before": {
+        "label": "16 / 20\nMostre altris",
+        "counterColor": "rgb(64, 86, 106)",
+        "background": "rgba(232, 248, 245, 0.74)",
+        "count": 16,
+        "viewport": 411,
+        "documentWidth": 411,
+        "x": 205.71429443359375,
+        "y": 594.8928833007812
+      },
+      "after": {
+        "count": 20,
+        "more": false
+      },
+      "source": "20 local fixture items, production EventsView and CSS"
+    },
+    {
+      "id": "events-it-dark",
+      "result": "PASS",
+      "before": {
+        "label": "16 / 20\nMostra altri",
+        "counterColor": "rgb(6, 70, 63)",
+        "background": "rgba(232, 248, 245, 0.74)",
+        "count": 16,
+        "viewport": 411,
+        "documentWidth": 411,
+        "x": 205.71429443359375,
+        "y": 594.8928833007812,
+        "minimum_contrast_over_black": 5.232699909338247
+      },
+      "after": {
+        "count": 20,
+        "more": false
+      },
+      "source": "20 local fixture items, production EventsView and CSS"
+    },
+    {
+      "id": "events-it-light",
+      "result": "PASS",
+      "before": {
+        "label": "16 / 20\nMostra altri",
+        "counterColor": "rgb(64, 86, 106)",
+        "background": "rgba(232, 248, 245, 0.74)",
+        "count": 16,
+        "viewport": 411,
+        "documentWidth": 411,
+        "x": 205.71429443359375,
+        "y": 594.8928833007812
+      },
+      "after": {
+        "count": 20,
+        "more": false
+      },
+      "source": "20 local fixture items, production EventsView and CSS"
+    }
+  ],
+  "read_only_network_guard": {
+    "blockedWrites": 0,
+    "jsExceptions": 0,
+    "requests": 2804
+  },
+  "preferences_preserved": {
+    "mfLanguage": true,
+    "mfTheme": true,
+    "autoLocationEnabled": true,
+    "defaultLocation": true
+  },
+  "final_real_weather": {
+    "language": "it",
+    "theme": "light",
+    "pm25_ug_m3": 3.7,
+    "pm10_ug_m3": 5.7,
+    "grass_pollen_grains_m3": 0.21
+  },
+  "sponsors": "remain disabled; no configuration or sponsor development changes",
+  "local_evidence_directory": ".tmp/cams-initial-events-galaxy-20261024",
+  "local_evidence_sha256": {
+    "cams-fur-cams-fail-initial-loading.png": "7398377283b24516be756094a60e42dee3ac2ea3bbf87910e8f2b3ce81b1517b",
+    "cams-fur-cams-fail-terminal.png": "c78a8ac0215aaaa6eabb9c498b1d1ff8753b3b3580a115c742fddd79d29aa31c",
+    "cams-fur-cams-fail.json": "b349d849e5dc25d6700e07c207dce6b5249679c1106cb4a51809cdc6521981ab",
+    "cams-fur-icon-fail-initial-loading.png": "92451c9e30590e660da3e25da4c39b7ac86746ed2ce6003c7edbaaff0724df55",
+    "cams-fur-icon-fail-terminal.png": "ca70f693ab64df71bad4a810a7155b9f93e84c5846fd7f601642613837b51f34",
+    "cams-fur-icon-fail.json": "72373e3ab51d415dc245f5bb4c602133c6449de76766411b42853f820bddeb0c",
+    "cams-fur-pass-initial-loading.png": "129bb365bde33ef71ed0475e770688def9ebf57db73b29d474f9881a4040d3e9",
+    "cams-fur-pass-terminal.png": "fc046b6b9d22e196d73944ccb3e858394806fff0088185c73bec6cb315c115e4",
+    "cams-fur-pass.json": "94e8639c23ce18f178adbfecc92ed2da9216f82a3210e0ccf799b15ce76e680f",
+    "cams-it-cams-fail-initial-loading.png": "4ea9490420e3b095caebd0d23ec97ff360dfe259ada6963248037a83200620d3",
+    "cams-it-cams-fail-terminal.png": "a2e848a737786c7953a04671b46297c0197bc4e9c4e4615ef171d2892d05f768",
+    "cams-it-cams-fail.json": "8ac9d9641f6d1bd4bcb8a9fc74530ba8e3cd033f91465315f2e97584aa46620d",
+    "cams-it-icon-fail-initial-loading.png": "f3832b5c3d30efa5ae05e05cd8e2d7aa5cb487f201911bfad356097a67d85d41",
+    "cams-it-icon-fail-terminal.png": "1bf6a4956d65e0f5218600d43df2a3740d7ba1697a57517d4fa72cd26ca3c5fb",
+    "cams-it-icon-fail.json": "dc5bbc22c3f40660ec866078ebbbc842c5a01d8dfb852e4f2d9bcb246141b784",
+    "cams-it-pass-initial-loading.png": "bfc5273ec15d687ad8333d3741c52a82ee26d2f5982a503a10aed5389267a49c",
+    "cams-it-pass-terminal.png": "f31771cfeeb27a24b1b23263b5fdd8ede3f5b37d1f0d8e0d5958a2dd7252bc36",
+    "cams-it-pass.json": "6069f989d98e26ee264ab224b7df7a68d6544fce90144bd43307b4c3181394b6",
+    "events-fur-dark-counter.png": "c40c0a79543b5c405f5a53dd32d9a955103fa591b8c5c116c0a56524597dd11b",
+    "events-fur-dark.json": "c294fd476d9c0e0306f95298c0cc09f21938c5e79a9e4bfadb4b8dba8e74f080",
+    "events-fur-light-counter.png": "7076846d90c0480b2fcf3ac58e11fe5d31d3ae477eddad22886f9164f43a2d50",
+    "events-fur-light.json": "918917b112f42ca514215bcbcfee91d89ccfa846a986d5c9ea7ab3b4e403f2e4",
+    "events-it-dark-counter.png": "682a3da7dbb6d0dd3bac7c0c087540c0e385fcb40615e7ce45030f2d92f824bb",
+    "events-it-dark.json": "f8b3dc369a745c3b11008cad5d37fc347769f8b23b3a795aafe7b86451aa25fc",
+    "events-it-light-counter.png": "bc433700f9f19fe06019a8d98d50b9d28eec396d673805099127e9c5513ca22f",
+    "events-it-light.json": "dcf600e449f95d901bf405d29370edb3332d50933216c7342429e3f50a9dc3d5",
+    "final-real-weather-it.json": "a01557940c780db28b4219156e523bd2f7cc8b93050c1fb1be46ed28c44b7104",
+    "final-real-weather-it.png": "5b5331cbd6c019911e86316ffa46897b11cf562821740f36db6bde142bddf479",
+    "network-summary.json": "21dfe993edbaaceedc613a2df80fe72ed71df00008c19c1a5266cd6199e53d4a",
+    "preferences-preserved.json": "0e18149f0562a28edc814e54be15114f36cfa48e753e773dc86f682b0290dbc0",
+    "verify_events.py": "62f580ab09b3d604f343738cdb1b8ed077e960478adfc9cb4b7ef662f5cdef7c",
+    "verify_phone.py": "a9b36906642242cf2574a76c5b045c0156035d8f339cd53fe3c222a33ad245fc"
+  },
+  "limits": [
+    "controlled local network failures/delays",
+    "20 local Eventi fixture items",
+    "no new AAB or minified Android runtime verification",
+    "no published Web verification",
+    "no Safari/iPhone or other Android versions verified",
+    "no push, release-branch alignment, deployment, AAB, installation or manual send"
+  ],
+  "source_commit": "53bedfe4c1adbe66912642acf439b90917caa63b",
+  "source_sha256_git_blob": {
+    "frontend/src/app/AppRoutes.jsx": "4413945455b1d167c4b936fdd3160c81748a050120889876bae00f206b22e969",
+    "frontend/src/app/AppRoutes.camsEpisode.test.jsx": "e9f41dede9b59fa672c01487ed3f18ce1c960682ad404d810954e91734602813",
+    "frontend/src/features/events/events.css": "ee5bfc2afcb84094205b006cc2b5b85a2b99fe377322498c2694450cbc032c38"
+  },
+  "local_promotion": {
+    "date": "2026-10-24",
+    "source_commit": "53bedfe4c1adbe66912642acf439b90917caa63b",
+    "previous_main": "8fb11af83d94bb779049350cb913541534d85d1c",
+    "method": "git merge --ff-only codex/cams-initial-loading-events-contrast",
+    "result": "PASS",
+    "main_initially_clean": true,
+    "tested_source_hashes_unchanged": true,
+    "canonical_workspace_cleanliness": "PASS",
+    "diff_check": "PASS",
+    "remote_ci": "not started; no push",
+    "origin_main_unchanged": "8fb11af83d94bb779049350cb913541534d85d1c",
+    "release_branch_unchanged": "8fb11af83d94bb779049350cb913541534d85d1c",
+    "documentation_record": "subsequent documentation-only commit on same branch"
+  }
+}

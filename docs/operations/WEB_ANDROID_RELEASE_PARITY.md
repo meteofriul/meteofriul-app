@@ -13,6 +13,18 @@ Promozione e CI sono tracciate nella [PR 19](https://github.com/meteofriul/meteo
 Web e Android dovranno usare questa stessa base approvata alla prossima build.
 [Verbale corrente](RELEASE_WEB_SOURCE_ALIGNMENT_20261024.md).
 
+## Rifiniture promosse in main locale dopo la PR 19
+
+Il 24 ottobre main è avanzato dalla base `8fb11af8` al commit `53bedfe4`, dal
+ramo `codex/cams-initial-loading-events-contrast`: transitorio iniziale
+aria/pollini e contatore Eventi in scuro corretti. Verifica Brave/Galaxy in
+italiano e friulano, 76 test, lint e compilazione PASS; sorgenti promossi
+identici a quelli verificati. GitHub e il ramo release rimangono a `8fb11af8`,
+senza push o nuovo allineamento release. Le correzioni dovranno rientrare
+nella stessa base frontend dei futuri pacchetti Web e Android. AAB 300036,
+archivio Web e sito pubblico non vengono aggiornati da questa promozione.
+[Prova e limiti](CAMS_INITIAL_LOADING_EVENTS_CONTRAST_20261024.md).
+
 ## Ultimi pacchetti prodotti il 23 ottobre 2026 — Tempo reale
 
 AAB **0.1.15 / 300036** e candidata Web dalla stessa sorgente `9d5ff2f415ab8b10be510eff2a0b058a8c2408ac`,

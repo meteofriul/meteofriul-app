@@ -4,7 +4,7 @@ import { createRoot } from "react-dom/client";
 import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
 import { harness } from "../services/camsRecoveryTestFixtures";
 
-const state = vi.hoisted(() => ({ harness: null, delay: 0 }));
+const state = vi.hoisted(() => ({ harness: null, delay: 0, iconDelay: 0 }));
 vi.mock("../services/localWeatherPilot", async importOriginal => ({
   ...await importOriginal(), isDefinitiveAppExperience: () => true, isLocalWeatherPilot: () => true,
   getLocalWeatherPilotApiBase: () => state.harness.options.baseUrl,
@@ -50,9 +50,15 @@ beforeEach(() => {
   window.localStorage.clear();
   state.harness = harness({ location });
   state.delay = 0;
+  state.iconDelay = 0;
   const factory = state.harness.clientFactory.getMockImplementation();
   state.harness.clientFactory.mockImplementation(options => {
     const clients = factory(options);
+    const iconPayload = clients.icon2i.fetchMunicipality.getMockImplementation();
+    clients.icon2i.fetchMunicipality.mockImplementation(async (...args) => {
+      if (state.iconDelay) await new Promise(resolve => setTimeout(resolve, state.iconDelay));
+      return iconPayload(...args);
+    });
     const payload = clients.camsPollen.fetchMunicipality.getMockImplementation();
     clients.camsPollen.fetchMunicipality.mockImplementation(async (...args) => {
       if (state.delay) await new Promise(resolve => setTimeout(resolve, state.delay));
@@ -154,6 +160,44 @@ describe("real Meteo route state with a 27h CAMS run and fast repeated supplemen
     }
     expect(globalThis.fetch).not.toHaveBeenCalled();
   }, 15_000);
+
+  it.each(["it", "fur"])("shows loading before the first ICON response during a CAMS retry in %s", async language => {
+    await act(async () => { render(0, language); });
+    await act(async () => { await vi.advanceTimersByTimeAsync(10); });
+    expect([...container.querySelectorAll('.mf-weather-environment [role="status"]')].filter(e => e.textContent === (language === "fur" ? "Dâts no disponibii" : "Dati non disponibili"))).toHaveLength(2);
+    state.harness.publish();
+    state.iconDelay = 1000;
+    state.delay = 2000;
+    await act(async () => { render(1, language); await vi.advanceTimersByTimeAsync(1); });
+    expect(settled).not.toHaveBeenCalled();
+    expect([...container.querySelectorAll('.mf-weather-environment [role="status"]')].filter(e => e.textContent === (language === "fur" ? "In cjariament…" : "Caricamento…"))).toHaveLength(2);
+    expect(container.textContent).toContain(language === "fur" ? "In cjariament…" : "Caricamento…");
+    expect(container.textContent).not.toContain(language === "fur" ? "Dâts no disponibii" : "Dati non disponibili");
+    await act(async () => { await vi.advanceTimersByTimeAsync(1100); });
+    expect([...container.querySelectorAll('.mf-weather-environment [role="status"]')].filter(e => e.textContent === (language === "fur" ? "In cjariament…" : "Caricamento…"))).toHaveLength(2);
+    await act(async () => { await vi.advanceTimersByTimeAsync(2100); });
+    await act(async () => {
+      await state.harness.observed.at(-1)?.camsPollen.fetchMunicipality.mock.results.at(-1)?.value;
+      await vi.advanceTimersByTimeAsync(1);
+    });
+    assertCamsShown();
+    expect(settled.mock.calls.at(-1)?.[1].complete).toBe(true);
+  });
+
+  it.each(["it", "fur"])("finishes loading when the entire retry fails before a CAMS callback in %s", async language => {
+    await act(async () => { render(0, language); });
+    await act(async () => { await vi.advanceTimersByTimeAsync(10); });
+    state.harness.bundleFetcher.mockImplementationOnce(async () => {
+      await new Promise(resolve => setTimeout(resolve, 1000));
+      throw new Error("controlled whole forecast failure");
+    });
+    await act(async () => { render(1, language); await vi.advanceTimersByTimeAsync(1); });
+    expect([...container.querySelectorAll('.mf-weather-environment [role="status"]')].filter(e => e.textContent === (language === "fur" ? "In cjariament…" : "Caricamento…"))).toHaveLength(2);
+    await act(async () => { await vi.advanceTimersByTimeAsync(1100); });
+    expect([...container.querySelectorAll('.mf-weather-environment [role="status"]')].filter(e => e.textContent === (language === "fur" ? "In cjariament…" : "Caricamento…"))).toHaveLength(0);
+    expect(container.textContent).toContain(language === "fur" ? "Dâts no disponibii" : "Dati non disponibili");
+    expect(settled.mock.calls.at(-1)?.[1].complete).toBe(true);
+  });
 
   it("keeps ICON successful when the deferred CAMS failure callback closes separately", async () => {
     await act(async () => { render(); });

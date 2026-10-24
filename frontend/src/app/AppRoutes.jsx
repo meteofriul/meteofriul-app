@@ -691,6 +691,10 @@ function ForecastRouteView({
   const presentationKey = getLocationCacheKey(location);
   const previousForecastModel = forecastPresentationMemory.get(presentationKey) || null;
   const [weatherLoading, setWeatherLoading] = useState(true);
+  const [presentedRefreshToken, setPresentedRefreshToken] = useState(0);
+  const trackDeferredCams = isDefinitiveAppExperience() && !isLocalWeatherNationalPilot();
+  const startingCamsRefresh = trackDeferredCams && Boolean(runtimeRefreshToken)
+    && runtimeRefreshToken !== presentedRefreshToken;
   const [weatherState, setWeatherState] = useState(() => readInitialHomeData(location, {
     manageOfficialAlerts: false,
   })?.weather || null);
@@ -730,7 +734,6 @@ function ForecastRouteView({
     let cancelled = false;
     let enrichedWeather = null;
     let camsSettled = false;
-    const trackDeferredCams = isDefinitiveAppExperience() && !isLocalWeatherNationalPilot();
     const camsCompletion = createRuntimeComponentCompletion();
     const refresh = loadHomeWeather(location, {
       force: runtimeRefreshForce,
@@ -739,8 +742,11 @@ function ForecastRouteView({
       onCamsFailure: () => {
         camsSettled = true;
         camsCompletion.complete({ status: "unavailable" });
-        if (!cancelled) setWeatherState(previous => previous
-          ? { ...previous, runtimeRefreshPendingComponents: [] } : previous);
+        if (!cancelled) {
+          setPresentedRefreshToken(runtimeRefreshToken);
+          setWeatherState(previous => previous
+            ? { ...previous, runtimeRefreshPendingComponents: [] } : previous);
+        }
       },
       onCamsUpdate: (nextWeather, lifecycle) => {
         const isTerminal = lifecycle?.lifecycle !== "intermediate";
@@ -749,14 +755,28 @@ function ForecastRouteView({
           camsCompletion.complete(nextWeather);
         }
         enrichedWeather = nextWeather;
-        if (!cancelled) setWeatherState(isTerminal ? nextWeather
-          : { ...nextWeather, runtimeRefreshPendingComponents: ["cams"] });
+        if (!cancelled) {
+          setPresentedRefreshToken(runtimeRefreshToken);
+          setWeatherState(isTerminal ? nextWeather
+            : { ...nextWeather, runtimeRefreshPendingComponents: ["cams"] });
+        }
       },
     }).then((nextWeather) => {
+      // A whole-request failure can finish without a deferred CAMS callback.
+      const requestFailed = nextWeather.error
+        || nextWeather.rawCurrent?.cache?.runtime_fallback === true
+        || nextWeather.rawCurrent?.data_quality?.flags?.includes("runtime_refresh_failed_bundle_retained");
+      if (requestFailed && trackDeferredCams && !camsSettled) {
+        camsSettled = true;
+        camsCompletion.complete({ status: "unavailable" });
+      }
       const presentedWeather = trackDeferredCams && !camsSettled
         ? { ...nextWeather, runtimeRefreshPendingComponents: ["cams"] }
         : nextWeather;
-      if (!cancelled && !enrichedWeather) setWeatherState(presentedWeather);
+      if (!cancelled) {
+        setPresentedRefreshToken(runtimeRefreshToken);
+        if (!enrichedWeather) setWeatherState(presentedWeather);
+      }
       return presentedWeather;
     });
 
@@ -771,18 +791,23 @@ function ForecastRouteView({
     return () => {
       cancelled = true;
     };
-  }, [location, onRuntimeRefreshSettled, runtimeRefreshToken, runtimeRefreshForce]);
+  }, [location, onRuntimeRefreshSettled, runtimeRefreshToken, runtimeRefreshForce, trackDeferredCams]);
 
   const model = useMemo(() => {
     if (!weatherState) return null;
-    return buildWeatherForecastViewModel(weatherState, {
+    // The new token is visible in the first render, before any provider reply.
+    // Keep this request state out of the cached weather snapshot.
+    const presentation = startingCamsRefresh
+      ? { ...weatherState, runtimeRefreshPendingComponents: ["cams"] }
+      : weatherState;
+    return buildWeatherForecastViewModel(presentation, {
       language,
       location,
       now: weatherNow,
       previousModel: previousForecastModel,
       loading: weatherLoading,
     });
-  }, [language, location, previousForecastModel, weatherLoading, weatherNow, weatherState]);
+  }, [language, location, previousForecastModel, startingCamsRefresh, weatherLoading, weatherNow, weatherState]);
 
   useEffect(() => {
     rememberForecastPresentation(presentationKey, model);

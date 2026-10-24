@@ -1168,6 +1168,11 @@ html[data-theme="dark"] .mf-events-empty span {
   font-weight: 820;
 }
 
+/* This button keeps its light surface in dark mode. */
+html[data-theme="dark"] .mf-events-load-more span {
+  color: #06463f;
+}
+
 .mf-events-load-more strong {
   display: inline-flex;
   align-items: center;
