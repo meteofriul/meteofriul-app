@@ -1,0 +1,260 @@
+{
+  "schema_version": 1,
+  "status": "BUILT_NOT_UPLOADED_RUNTIME_PENDING",
+  "source_commit": "d15edb10067b972c10e4989ebebfe6410a194f2c",
+  "main_integrated": "0841020a42d836e44de306e9639b07b98fceaefc",
+  "version_name": "0.1.15",
+  "version_code": 300037,
+  "application_id": "com.meteofriul.app",
+  "aab": {
+    "file": "meteofriul-300037-0.1.15.aab",
+    "bytes": 73017579,
+    "sha256": "81d3b1848ceb19c9095a46ca6b55bf8ce5bd00337c01fedf1d4d7582809d96cf"
+  },
+  "mapping": {
+    "file": "meteofriul-300037-0.1.15.mapping.txt",
+    "sha256": "1578fd6e78e3f27ea18a568673e571bf6e602f88a7d9bf349a1f34300307e6ff"
+  },
+  "upload_certificate_sha256": "338c051587d62cdad6f9bd38eaa1e793d3da2d6c30c4270f8450a93a6ecec3b4",
+  "native_configuration": {
+    "Verification": "native-config-hashes-and-cordova-resource",
+    "ConfigSha256": "0e6adc3fd2d8c557b848322adbda800b4e69804f0aec2f37326aa25543979cce",
+    "PluginsSha256": "b9832bcf10b7daff2969d0d4b66bcfe5ef7acdf64107709bd3f839cf3cfda7e4",
+    "CordovaResource": "com.meteofriul.app:xml/config",
+    "CordovaBundleEntry": "base/res/xml/config.xml"
+  },
+  "signature_verification": "all-payload-entries-single-signer",
+  "r8_verification": "external-and-embedded-mapping-match",
+  "native_symbols_status": "unavailable-transitive-native-libraries",
+  "signed_bundle_corrections": {
+    "CAMS_IT_FUR": true,
+    "dark_events_counter": true,
+    "realtime_layout": true,
+    "local_test_harness_absent": true
+  },
+  "source_ci": {
+    "run_id": 40111204820,
+    "url": "https://github.com/meteofriul/meteofriul-app/actions/runs/40111204820",
+    "source_commit": "d15edb10067b972c10e4989ebebfe6410a194f2c",
+    "status": "success",
+    "jobs": [
+      {
+        "name": "backend",
+        "conclusion": "success"
+      },
+      {
+        "name": "hosting-preview-tool",
+        "conclusion": "success"
+      },
+      {
+        "name": "frontend",
+        "conclusion": "success"
+      }
+    ]
+  },
+  "local_tests": {
+    "android_ui_tests": 19,
+    "frontend_guard_tests": 16,
+    "native_configuration_assertions": 43,
+    "r8_contracts": "PASS",
+    "canonical_cleanliness": "PASS",
+    "version_guards": "PASS"
+  },
+  "play_console_before_build": {
+    "max_code": 300036,
+    "internal": 300036,
+    "production": 300031,
+    "read_only": true,
+    "observed_date": "2026-10-24"
+  },
+  "web": {
+    "archive_relative_path": "release-artifacts/web-candidates/20261024-0.1.15-d15edb10",
+    "source_commit": "d15edb10067b972c10e4989ebebfe6410a194f2c",
+    "main_integrated": "0841020a42d836e44de306e9639b07b98fceaefc",
+    "frontend_tree": "c2d5bb90dd28c578935da9b4eb6cafd4a3acf0bf",
+    "manifest_sha256": "1bc0ab3316aab8ec6d879e754a23ca38ee956a9498c3aa9602f4f9a2236dff2b",
+    "artifacts": {
+      "web": {
+        "files": 506,
+        "bytes": 76031510
+      },
+      "android-web": {
+        "files": 505,
+        "bytes": 75978842
+      }
+    },
+    "bundle_checks": [
+      "dark Eventi counter",
+      "IT/FUR loading text",
+      "CAMS lifecycle",
+      "Friulian Eventi label",
+      "previous realtime CSS",
+      "no local harness"
+    ]
+  },
+  "web_source_files_verified": 1892,
+  "sponsors": {
+    "checked_at_utc": "2026-10-24T16:34:33.668033+00:00",
+    "enabled": false,
+    "campaign_count": 0,
+    "revision": 117
+  },
+  "protected_files_unchanged": 7928,
+  "build": {
+    "started_at_utc": "2026-10-24T16:26:27.746591+00:00",
+    "completed_at_utc": "2026-10-24T16:33:28.923024+00:00",
+    "source_commit": "d15edb10067b972c10e4989ebebfe6410a194f2c",
+    "returncode": 0,
+    "reservation_exists": true,
+    "release_manifest_exists": true,
+    "manual_upload_or_install": false
+  },
+  "runtime": {
+    "new_aab_on_device": "NOT_VERIFIED",
+    "android_15_16": "NOT_VERIFIED",
+    "large_screen_multiwindow": "NOT_VERIFIED",
+    "safari_iphone": "NOT_VERIFIED",
+    "note": "Prior Brave and 300036 observations are distinct; no installation or browser app test in this session."
+  },
+  "helper_recovery": {
+    "cause": "Local helper source was initially read as cp1252 instead of UTF-8",
+    "effect": "Expected ellipsis string was corrupted in the helper; compiled IT/FUR strings were correct",
+    "resolution": "Explicit UTF-8 helper read; resume archive with byte-for-byte validation; no bundle rewrite or rebuild",
+    "version_reserved_at_failure": false
+  },
+  "play_upload": false,
+  "installation": false,
+  "deploy": false,
+  "manual_sends": false,
+  "local_evidence_archive": "release-artifacts/android-play/evidence-300037",
+  "evidence_digests": [
+    {
+      "file": "android-api-binding.exit",
+      "sha256": "5feceb66ffc86f38d952786c6d696c79c2dbc239dd4e91b46729d73a27fb57e9"
+    },
+    {
+      "file": "android-api-binding.log",
+      "sha256": "09256a5b690bb2f411d1c420e55e53e0a37dd9067f81c04d1dec2e729541ea54"
+    },
+    {
+      "file": "android-carto-binding.exit",
+      "sha256": "5feceb66ffc86f38d952786c6d696c79c2dbc239dd4e91b46729d73a27fb57e9"
+    },
+    {
+      "file": "android-carto-binding.log",
+      "sha256": "fb0ae53eb9cbb90e1500662e416eb7a16eb5980d63f790a7075eeb18c9b1811e"
+    },
+    {
+      "file": "android-ui-contracts.exit",
+      "sha256": "5feceb66ffc86f38d952786c6d696c79c2dbc239dd4e91b46729d73a27fb57e9"
+    },
+    {
+      "file": "android-ui-contracts.log",
+      "sha256": "b0f916268c3d9221b6e1ef12beb661194aab9ef561f901eea9195234df92b7ed"
+    },
+    {
+      "file": "android-web-build.exit",
+      "sha256": "5feceb66ffc86f38d952786c6d696c79c2dbc239dd4e91b46729d73a27fb57e9"
+    },
+    {
+      "file": "android-web-build.log",
+      "sha256": "66b0aff62e90d61a42f1a4b002b416498bbb0b41b0c0fb3f33eb4ee91187e1b4"
+    },
+    {
+      "file": "build.log",
+      "sha256": "f08318dbd8bc4471892b42abe7c69688b579b7cfb841f36ee672ed550406375a"
+    },
+    {
+      "file": "bundle-identity.log",
+      "sha256": "b03cf26dd4be6a9db96e1e2ae0403f754fde47299caaf70c8d3c64b828e22525"
+    },
+    {
+      "file": "bundle-validate.log",
+      "sha256": "7ff58a3ea57a663f1bb9f6559dd1c57c289a72d0338742872738cc71abaa7e47"
+    },
+    {
+      "file": "canonical-cleanliness.exit",
+      "sha256": "5feceb66ffc86f38d952786c6d696c79c2dbc239dd4e91b46729d73a27fb57e9"
+    },
+    {
+      "file": "canonical-cleanliness.log",
+      "sha256": "2e7927058bc6fe40454c948e0806fc57cb4f1a1523561295738f388def34cb15"
+    },
+    {
+      "file": "carto-config.exit",
+      "sha256": "5feceb66ffc86f38d952786c6d696c79c2dbc239dd4e91b46729d73a27fb57e9"
+    },
+    {
+      "file": "carto-config.log",
+      "sha256": "9fd14150a636f0ebf7618c879b285e14a758e5e09cd56d46c982a1a6e9256c7e"
+    },
+    {
+      "file": "cordova-resource.log",
+      "sha256": "2bb52fc45272750900a089668c2c5d82deb7061347dee2b8742f7f57944e785d"
+    },
+    {
+      "file": "diff-check.exit",
+      "sha256": "5feceb66ffc86f38d952786c6d696c79c2dbc239dd4e91b46729d73a27fb57e9"
+    },
+    {
+      "file": "diff-check.log",
+      "sha256": "4d8710c111703f66733c71a71d0bdb92041667729a75142612d81abe7ad89562"
+    },
+    {
+      "file": "frontend-guards.exit",
+      "sha256": "5feceb66ffc86f38d952786c6d696c79c2dbc239dd4e91b46729d73a27fb57e9"
+    },
+    {
+      "file": "frontend-guards.log",
+      "sha256": "e687234e9205cc55ca9ea81af058b0b54a6c7db07aa59e7a640add6d11e8d08e"
+    },
+    {
+      "file": "ledger-audit.exit",
+      "sha256": "5feceb66ffc86f38d952786c6d696c79c2dbc239dd4e91b46729d73a27fb57e9"
+    },
+    {
+      "file": "ledger-audit.log",
+      "sha256": "d1677ca07fceb47e4f88efbbe00cb88fbb4efd49bf861d380e0ae2660570bc01"
+    },
+    {
+      "file": "native-config-contracts.exit",
+      "sha256": "5feceb66ffc86f38d952786c6d696c79c2dbc239dd4e91b46729d73a27fb57e9"
+    },
+    {
+      "file": "native-config-contracts.log",
+      "sha256": "a9e11e3d829b247e6b2bde45b05ffc61af47f3b8ce61384e2e6d4d51d04d1dcf"
+    },
+    {
+      "file": "r8-contracts.exit",
+      "sha256": "5feceb66ffc86f38d952786c6d696c79c2dbc239dd4e91b46729d73a27fb57e9"
+    },
+    {
+      "file": "r8-contracts.log",
+      "sha256": "9cb8a388416eed6c9c12b2e941ff0cc70db257bc6e1ea29644a8378ebf66a102"
+    },
+    {
+      "file": "version-ledger-guards.exit",
+      "sha256": "5feceb66ffc86f38d952786c6d696c79c2dbc239dd4e91b46729d73a27fb57e9"
+    },
+    {
+      "file": "version-ledger-guards.log",
+      "sha256": "549a260c8be0484e602734dc1670692acb1e457ca227f62c15b8ebbfc17777f4"
+    },
+    {
+      "file": "version-parity.exit",
+      "sha256": "5feceb66ffc86f38d952786c6d696c79c2dbc239dd4e91b46729d73a27fb57e9"
+    },
+    {
+      "file": "version-parity.log",
+      "sha256": "8bd54c20006b26dde84feb8525f9464efc71d020065659a475757fe59f113ac0"
+    },
+    {
+      "file": "web-build.exit",
+      "sha256": "5feceb66ffc86f38d952786c6d696c79c2dbc239dd4e91b46729d73a27fb57e9"
+    },
+    {
+      "file": "web-build.log",
+      "sha256": "0a4acf48bf7c76c70a445ba4c5dbec0c99e5d8393428719548cb2d41e0bfde6c"
+    }
+  ]
+}

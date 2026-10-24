@@ -8,15 +8,17 @@ contenuti culturali; l'interfaccia è disponibile in italiano e friulano.
 
 > Ultima lettura Web del 23 ottobre 2026: `meteofriul.app` serve la
 > pubblicazione del 21 ottobre, versione `0.1.14`, sorgente `1b0287c1`.
-> La candidata Web **0.1.15** è ricompilata il 24 ottobre da main `0841020a`,
-> con release locale allineata e correzioni aria/pollini ed Eventi incluse.
-> Non è pubblicata. La AAB 300036 rimane l'artefatto precedente; nessuna nuova AAB.
+> La candidata Web **0.1.15** è ricompilata dalla stessa sorgente `d15edb10`
+> della nuova AAB **300037**, con main `0841020a` e correzioni aria/pollini ed Eventi.
+> Web non pubblicata e AAB non caricata; nel test interno resta la 300036.
 >
 > La Web App deve seguire la release Android: è anche il canale per chi usa
 > iPhone dal browser. Il [percorso di allineamento Web/Android](docs/operations/WEB_ANDROID_RELEASE_PARITY.md)
 > richiede sorgenti e funzionalità coerenti, oltre alla verifica Safari/iPhone.
 
-**Ultima AAB generata:** **0.1.15 / 300036**, sorgente `9d5ff2f4`, include main `2d8b0c32` e il fix Tempo reale. Firmata e verificata, CI verde; Web storica associata dalla stessa sorgente. **Disponibile nel test interno dal 23 ottobre alle 13:37**, con la lista di due account confermata dal proprietario. Sponsor disattivati. La 300036 è stata verificata sul Galaxy A52 Android 14 dopo aggiornamento Play: Tempo reale visibile anche dopo avvio a freddo, Posizione conservata, aria/pollini IT/FUR e percorsi di navigazione osservati PASS. La matrice Android 15/16 e i casi non esercitati restano aperti. [Prova sul dispositivo](docs/operations/ANDROID_0.1.15_300036_DEVICE_CHECK_20261023.md). [Caricamento e limiti](docs/operations/ANDROID_0.1.15_300036_UPLOAD_20261023.md).
+**Ultima AAB generata:** **0.1.15 / 300037**, sorgente `d15edb10`: firma, configurazione nativa, mapping, controlli locali e CI PASS. Sponsor disattivati. Archiviata e **non caricata su Play**; nuova AAB non provata sul telefono. [Build, hash e limiti](docs/operations/ANDROID_0.1.15_300037_BUILD_20261024.md).
+
+**AAB attualmente nel test interno:** **0.1.15 / 300036**, sorgente `9d5ff2f4`, include main `2d8b0c32` e il fix Tempo reale. Firmata e verificata, CI verde; Web storica associata dalla stessa sorgente. **Disponibile nel test interno dal 23 ottobre alle 13:37**, con la lista di due account confermata dal proprietario. Sponsor disattivati. La 300036 è stata verificata sul Galaxy A52 Android 14 dopo aggiornamento Play: Tempo reale visibile anche dopo avvio a freddo, Posizione conservata, aria/pollini IT/FUR e percorsi di navigazione osservati PASS. La matrice Android 15/16 e i casi non esercitati restano aperti. [Prova sul dispositivo](docs/operations/ANDROID_0.1.15_300036_DEVICE_CHECK_20261023.md). [Caricamento e limiti](docs/operations/ANDROID_0.1.15_300036_UPLOAD_20261023.md).
 
 **Rilievo storico della 300035: Tempo reale mostrava una schermata vuota.
 Difetto riprodotto dopo la segnalazione del proprietario; promozione allora
@@ -51,7 +53,7 @@ La prova reale richiesta da AGENTS.md è completata; promozione e CI sono
 tracciate nella [PR 19](https://github.com/meteofriul/meteofriul-app/pull/19).
 [Esiti e limiti sul Galaxy](docs/operations/WEB_POST_300036_GALAXY_20261024.md).
 La AAB 300036 e il suo archivio Web non contengono queste quattro modifiche.
-Nessun nuovo codice versione riservato. [Verbale di allineamento](docs/operations/RELEASE_WEB_SOURCE_ALIGNMENT_20261024.md).
+In quella fase nessun codice era riservato; la successiva 300037 include le correzioni. [Verbale di allineamento](docs/operations/RELEASE_WEB_SOURCE_ALIGNMENT_20261024.md).
 
 **Aggiornamento GitHub del 24 ottobre, dopo PR 19:** correzioni `53bedfe4`
 pubblicate in main tramite la [PR 20](https://github.com/meteofriul/meteofriul-app/pull/20),
@@ -60,7 +62,7 @@ scuro corretti. Verifica Brave/Galaxy IT/FUR, 76 test, lint e compilazione
 superati; [CI di main](https://github.com/meteofriul/meteofriul-app/actions/runs/40107051151) verde in tutti e tre i job.
 Il ramo release locale è ora allineato a main `0841020a`, con nuova candidata
 Web dalla stessa sorgente, ancora non pubblicata. AAB 300036 e archivi precedenti
-conservati. Ramo release pubblicato su GitHub; nessun nuovo codice versione o deploy.
+conservati. Il successivo commit `d15edb10` prepara la 300037 e la Web associata; nessun deploy.
 Sponsor confermati disattivati, zero campagne.
 [Preparazione e controlli](docs/operations/RELEASE_WEB_CAMS_EVENTS_ALIGNMENT_20261024.md).
 [Evidenze e limiti](docs/operations/CAMS_INITIAL_LOADING_EVENTS_CONTRAST_20261024.md).
@@ -96,9 +98,9 @@ e non sostituisce la sua verifica. Evidenze e limiti nel [verbale sul telefono](
 
 | Canale | Stato |
 | --- | --- |
-| Web | Ultima lettura pubblica del 23 ottobre: `0.1.14`. Nuova candidata locale `0.1.15` da main `0841020a`, con correzioni PR 19/20, compilata e archiviata il 24 ottobre; non pubblicata. Prove Galaxy IT/FUR riutilizzate su sorgenti identici. Servizi/cache del bundle da origine autorizzata e Safari/iPhone restano da verificare |
+| Web | Ultima lettura pubblica del 23 ottobre: `0.1.14`. Nuova candidata locale `0.1.15` da `d15edb10`, base main `0841020a`, con correzioni PR 19/20, compilata e archiviata il 24 ottobre; non pubblicata. Prove Galaxy IT/FUR riutilizzate su sorgenti identici. Servizi/cache del bundle da origine autorizzata e Safari/iPhone restano da verificare |
 | API | FastAPI su Cloud Run, chiamata direttamente via HTTPS da Web e Android |
-| Android | `0.1.15` (`300036`) disponibile nel test interno con fix Tempo reale; verifica sul Galaxy Android 14 dei percorsi osservati PASS, incluso Tempo reale dopo avvio a freddo. La qualifica completa resta distinta. Limiti GPS/Android 15–16/grandi schermi espliciti nel verbale. [Esito e limiti](docs/operations/RELEASE_0.1.15_STATUS_20261021.md) |
+| Android | Nuova `0.1.15` (`300037`) generata e non caricata, runtime da verificare. La `0.1.15` (`300036`) resta disponibile nel test interno con fix Tempo reale; verifica sul Galaxy Android 14 dei percorsi osservati PASS, incluso Tempo reale dopo avvio a freddo. La qualifica completa resta distinta. Limiti GPS/Android 15–16/grandi schermi espliciti nel verbale. [Esito e limiti](docs/operations/RELEASE_0.1.15_STATUS_20261021.md) |
 | Google Play | Produzione `0.1.14` (`300031`) nella lettura del 23 ottobre; `0.1.15` (`300036`) solo nel test interno, una lista con due account confermata dal proprietario. Sponsor disattivati |
 | Landing `meteofriul.it` | Gestita e distribuita da un progetto separato |
 | Push | Generazione `play-beta-v1`, App Check in enforce, Android/Web abilitati e lotti Firestore/FCM da 200 elementi |

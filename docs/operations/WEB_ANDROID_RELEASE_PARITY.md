@@ -3,19 +3,26 @@
 Regola del proprietario, 20 ottobre 2026: la Web App deve seguire la AAB,
 perché chi usa iPhone accede al prodotto dal browser.
 
-## Sorgente comune e nuova candidata del 24 ottobre 2026
+## Candidata Web associata alla AAB 300037 — 24 ottobre 2026
 
-I sorgenti del prodotto sul ramo release locale coincidono con main
-`0841020a42d836e44de306e9639b07b98fceaefc`; seguono soli commit documentali, pubblicati sul ramo release GitHub.
-Web 0.1.15 compilata con `-BuildOnly` e soli asset Web Android dalla stessa
-sorgente, incluse tutte le correzioni delle PR 19 e 20. Archivio corrente:
-`release-artifacts/web-candidates/20261024-0.1.15-0841020a/`.
-Guardie locali, API prima/dopo, CARTO, service worker e hash PASS; CI e prove
-Brave/Galaxy IT/FUR riutilizzate con identità dei sorgenti confermata.
-Sponsor disattivati. Nessuna nuova AAB o pubblicazione Web/Play; ramo release
-aggiornato su GitHub con documenti ed evidenze. Main resta invariato.
-[Controlli, hash e limiti](RELEASE_WEB_CAMS_EVENTS_ALIGNMENT_20261024.md).
-Il [primo allineamento](RELEASE_WEB_SOURCE_ALIGNMENT_20261024.md) resta storico.
+AAB 0.1.15 / 300037 e Web compilate dalla stessa sorgente
+`d15edb10067b972c10e4989ebebfe6410a194f2c`, base main `0841020a` più incremento
+versionCode. Incluse le correzioni delle PR 19/20. Archivio Web corrente:
+`release-artifacts/web-candidates/20261024-0.1.15-d15edb10/`.
+Manifest `1bc0ab3316aab8ec6d879e754a23ca38ee956a9498c3aa9602f4f9a2236dff2b`.
+
+CI del commit esatto, compilazioni Web/Android, API, CARTO, service worker,
+configurazione nativa, firma e hash PASS. Sponsor disattivati. AAB generata e
+non caricata, Web non pubblicata; nessuna installazione o deploy. Il codice
+sorgente è salvato su GitHub; registri e documenti seguono sul ramo release.
+Main resta invariato. Il telefono e Play usano ancora la 300036.
+
+Servizi/cache della candidata da origine autorizzata, Safari/iPhone e PWA
+restano non verificati. Le precedenti prove Brave/Galaxy IT/FUR dei sorgenti
+non sostituiscono una prova runtime della nuova AAB o della nuova Web pubblicata.
+[Build e limiti](ANDROID_0.1.15_300037_BUILD_20261024.md). Il
+[precedente allineamento](RELEASE_WEB_CAMS_EVENTS_ALIGNMENT_20261024.md)
+e i suoi archivi restano conservati.
 
 ## Rifiniture pubblicate in main dopo la PR 19
 

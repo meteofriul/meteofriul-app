@@ -1,5 +1,9 @@
 # Release 0.1.15 e candidata Web allineate a main — 24 ottobre 2026
 
+> Aggiornamento successivo: generata la AAB 300037 e ricompilata la Web dalla
+> sorgente comune `d15edb10`, senza pubblicazioni. [Esito corrente](ANDROID_0.1.15_300037_BUILD_20261024.md).
+> Il testo seguente conserva la preparazione precedente e il relativo archivio.
+
 ## Esito e identità
 
 Il ramo locale `codex/release-0.1.15` è stato allineato in fast-forward da
