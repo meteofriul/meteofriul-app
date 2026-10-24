@@ -4,10 +4,12 @@
 
 Ramo dedicato `codex/cams-initial-loading-events-contrast`, dalla base main
 `8fb11af83d94bb779049350cb913541534d85d1c` (PR 19 già promossa).
-Due correzioni locali verificate, ancora da committare e promuovere.
+Correzioni e verbale salvati nel commit `53bedfe4c1adbe66912642acf439b90917caa63b`,
+promosso in main locale in fast-forward dopo autorizzazione del proprietario.
 Gli hash dei tre file frontend identificano il candidato nella
 [ricevuta strutturata](evidence/cams-initial-events-contrast-20261024/verification.json).
-Main e ramo release non modificati da questa attività.
+Gli stessi sorgenti verificati sono ora in main. GitHub e il ramo release
+restano alla base `8fb11af8`; nessun push o riallineamento release.
 
 La richiesta riguarda i due rilievi residui della
 [precedente prova sul Galaxy](WEB_POST_300036_GALAXY_20261024.md), senza AAB,
@@ -93,5 +95,20 @@ Queste prove chiudono i due rilievi nel candidato Web locale. Non attestano
 il comportamento di una nuova AAB minificata, Safari/iPhone, altre versioni
 Android, aggiornamento della cache pubblica o servizi del bundle Web da
 un'origine pubblicata. AAB 300036 e relativo archivio Web restano immutabili
-e non contengono queste correzioni. La verifica non autorizza ulteriori azioni
-di distribuzione; commit e promozione restano da effettuare separatamente.
+e non contengono queste correzioni. Commit e promozione locale sono stati
+autorizzati successivamente ed eseguiti. Nessuna azione di distribuzione.
+
+## Chiusura del commit e della promozione locale
+
+Prima del commit: verificati i tre hash dei sorgenti, tutti i 32 hash delle
+evidenze locali e i collegamenti del verbale. I file del prodotto sono
+invariati rispetto alle prove del Galaxy e ai 76 test: non sono state ripetute
+prove già concluse. Controllo canonico di pulizia PASS, `git diff --check` PASS.
+Nell'indice solo otto file espliciti (tre frontend e cinque documentali);
+fixture, screenshot, configurazioni locali e artefatti esclusi.
+
+Main inizialmente pulito e alla stessa base del ramo: promozione `--ff-only`
+riuscita, senza conflitti o modifiche al prodotto. Questa registrazione dello
+stato è un successivo commit solo documentale sul medesimo ramo. Nessuna CI
+remota avviata perché non è stato eseguito alcun push. Gli asset ignorati degli
+altri worktree, gli sponsor e i canali pubblicati restano invariati.

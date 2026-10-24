@@ -2,7 +2,7 @@
   "date": "2026-10-24",
   "branch": "codex/cams-initial-loading-events-contrast",
   "base_commit": "8fb11af83d94bb779049350cb913541534d85d1c",
-  "candidate_identity": "local working-tree source hashes below; no new commit or promotion in this task",
+  "candidate_identity": "source commit 53bedfe4c1adbe66912642acf439b90917caa63b; promoted locally to main; original device evidence preserved",
   "source_sha256_raw_working_tree_bytes": {
     "frontend/src/app/AppRoutes.jsx": "f4cc844c56616d07bf285e42d40c137014276d9d6892bc7bbcad373f64f210fb",
     "frontend/src/app/AppRoutes.camsEpisode.test.jsx": "9dfb9adace5c0bb9ced0e74edc6e969eed54cbbc1cad5de1c42b471889abf3cc",
@@ -257,6 +257,27 @@
     "no new AAB or minified Android runtime verification",
     "no published Web verification",
     "no Safari/iPhone or other Android versions verified",
-    "no commit, main promotion, push, deployment, installation or manual send"
-  ]
+    "no push, release-branch alignment, deployment, AAB, installation or manual send"
+  ],
+  "source_commit": "53bedfe4c1adbe66912642acf439b90917caa63b",
+  "source_sha256_git_blob": {
+    "frontend/src/app/AppRoutes.jsx": "4413945455b1d167c4b936fdd3160c81748a050120889876bae00f206b22e969",
+    "frontend/src/app/AppRoutes.camsEpisode.test.jsx": "e9f41dede9b59fa672c01487ed3f18ce1c960682ad404d810954e91734602813",
+    "frontend/src/features/events/events.css": "ee5bfc2afcb84094205b006cc2b5b85a2b99fe377322498c2694450cbc032c38"
+  },
+  "local_promotion": {
+    "date": "2026-10-24",
+    "source_commit": "53bedfe4c1adbe66912642acf439b90917caa63b",
+    "previous_main": "8fb11af83d94bb779049350cb913541534d85d1c",
+    "method": "git merge --ff-only codex/cams-initial-loading-events-contrast",
+    "result": "PASS",
+    "main_initially_clean": true,
+    "tested_source_hashes_unchanged": true,
+    "canonical_workspace_cleanliness": "PASS",
+    "diff_check": "PASS",
+    "remote_ci": "not started; no push",
+    "origin_main_unchanged": "8fb11af83d94bb779049350cb913541534d85d1c",
+    "release_branch_unchanged": "8fb11af83d94bb779049350cb913541534d85d1c",
+    "documentation_record": "subsequent documentation-only commit on same branch"
+  }
 }
