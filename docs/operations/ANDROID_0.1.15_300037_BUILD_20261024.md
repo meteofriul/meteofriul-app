@@ -1,5 +1,7 @@
 # AAB 0.1.15 / 300037 — 24 ottobre 2026
 
+> Aggiornamento successivo del 24 ottobre, 18:52: AAB accettata e disponibile nel test interno, stessi due account e sponsor spenti. [Verbale di caricamento](ANDROID_0.1.15_300037_UPLOAD_20261024.md). Il testo seguente conserva lo stato al termine della build; runtime della 300037 ancora non verificato.
+
 ## Esito e contenuto
 
 **Generata, firmata, validata e archiviata; non caricata su Play.** Package

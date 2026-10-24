@@ -12,10 +12,11 @@ versionCode. Incluse le correzioni delle PR 19/20. Archivio Web corrente:
 Manifest `1bc0ab3316aab8ec6d879e754a23ca38ee956a9498c3aa9602f4f9a2236dff2b`.
 
 CI del commit esatto, compilazioni Web/Android, API, CARTO, service worker,
-configurazione nativa, firma e hash PASS. Sponsor disattivati. AAB generata e
-non caricata, Web non pubblicata; nessuna installazione o deploy. Il codice
-sorgente è salvato su GitHub; registri e documenti seguono sul ramo release.
-Main resta invariato. Il telefono e Play usano ancora la 300036.
+configurazione nativa, firma e hash PASS. Sponsor disattivati. AAB disponibile
+nel test interno dalle 18:52 del 24 ottobre, stessi due account; Web non pubblicata.
+Nessuna installazione o deploy. Codice, registri e documenti nel ramo release;
+main invariato. Ultimo pacchetto osservato sul telefono: 300036.
+[Caricamento della 300037 e limiti](ANDROID_0.1.15_300037_UPLOAD_20261024.md).
 
 Servizi/cache della candidata da origine autorizzata, Safari/iPhone e PWA
 restano non verificati. Le precedenti prove Brave/Galaxy IT/FUR dei sorgenti

@@ -1,13 +1,15 @@
 # Stato release 0.1.15 e lavoro salvato — aggiornamento sorgenti del 24 ottobre 2026
 
-**Ultima AAB prodotta:** **0.1.15 / 300037**, sorgente `d15edb10`, base main `0841020a`. Generata, firmata, validata e archiviata, **non caricata**. CI sul commit esatto PASS; sponsor disattivati. Web ricompilata dalla stessa sorgente, non pubblicata. Runtime della nuova AAB ancora da verificare. [Build, evidenze e limiti](ANDROID_0.1.15_300037_BUILD_20261024.md).
+**Ultima AAB prodotta:** **0.1.15 / 300037**, sorgente `d15edb10`, base main `0841020a`. Generata, firmata, validata e archiviata; **disponibile nel test interno dal 24 ottobre alle 18:52**. CI sul commit esatto PASS; sponsor disattivati. Web ricompilata dalla stessa sorgente, non pubblicata. Runtime della nuova AAB ancora da verificare. [Build, evidenze e limiti](ANDROID_0.1.15_300037_BUILD_20261024.md).
 
-**AAB attualmente nel test interno:** AAB **0.1.15 / 300036** generata e verificata da `9d5ff2f4`, con main `2d8b0c32` e Tempo reale corretto. Web storica associata dalla stessa sorgente; sponsor spenti. Disponibile nel test interno dalle 13:37 del 23 ottobre e aggiornata dal proprietario via Play. Verifica sul Galaxy Android 14: PASS dei percorsi osservati, compreso Tempo reale dopo avvio a freddo; qualifica completa ancora limitata dalla matrice non esercitata. Nessuna installazione dell’agente. [Verbale corrente](ANDROID_0.1.15_300036_DEVICE_CHECK_20261023.md).
+**AAB attualmente nel test interno:** **0.1.15 / 300037**, con gli stessi due account abilitati. Produzione invariata a 0.1.14 / 300031; sponsor disattivati. Nessuna installazione dell'agente. [Accettazione Play e limiti](ANDROID_0.1.15_300037_UPLOAD_20261024.md).
+
+**Ultimo pacchetto osservato sul Galaxy, precedente release interna:** AAB **0.1.15 / 300036** generata e verificata da `9d5ff2f4`, con main `2d8b0c32` e Tempo reale corretto. Web storica associata dalla stessa sorgente; sponsor spenti. Disponibile nel test interno dalle 13:37 del 23 ottobre e aggiornata dal proprietario via Play. Verifica sul Galaxy Android 14: PASS dei percorsi osservati, compreso Tempo reale dopo avvio a freddo; qualifica completa ancora limitata dalla matrice non esercitata. Nessuna installazione dell’agente. [Verbale corrente](ANDROID_0.1.15_300036_DEVICE_CHECK_20261023.md).
 
 **La precedente 0.1.15 / 300035 è stata sostituita nel test interno dalla 300036.
 Nella prova storica della 300035 Tempo reale risultava vuoto:
 difetto riprodotto sul Galaxy dopo la segnalazione del proprietario,
-promozione allora sospesa. Il difetto è risolto nella 300036 verificata sopra.** La nuova AAB 300036 è quella indicata sopra; nessuna installazione dell'agente.
+promozione allora sospesa. Il difetto è risolto nella 300036 verificata sopra.** La prova della AAB 300036 è quella indicata sopra; nessuna installazione dell'agente.
 
 Già nella prova della 300035: Posizione conservata dopo ripresa e avvio a freddo; il proprietario la conferma
 attiva prima e subito dopo l'aggiornamento. Aria/pollini IT/FUR e navigazione
@@ -69,17 +71,17 @@ modifica dei job o invio. Sponsor disattivati.
 | Ambito | Stato attestato |
 | --- | --- |
 | Produzione Play | Lettura Console del 24 ottobre: 0.1.14 / 300031; nessuna promozione della 0.1.15 in produzione |
-| Test interno Play | 0.1.15 / 300036 disponibile dal 23 ottobre alle 13:37; una sola lista con due account, mantenuta su conferma del proprietario; sponsor disattivati |
+| Test interno Play | 0.1.15 / 300037 disponibile dal 24 ottobre alle 18:52; stessa unica lista con due account, configurazione prima/dopo identica; sponsor disattivati |
 | Web pubblica | Pubblicazione del 21 ottobre da `1b0287c1`, versione 0.1.14; HTML e asset riconfermati il 23 ottobre. Candidata locale 0.1.15 ricompilata da `d15edb10`, associata alla 300037 il 24 ottobre, non distribuita; Safari/iPhone non verificato |
 | Base main incorporata nelle AAB | Nuova 300037: `0841020a`, con PR 19/20; sorgente `d15edb10`, CI 40111204820 verde. La 300036 già in Play resta immutabile dalla vecchia base `2d8b0c32` |
-| `codex/release-0.1.15` | Main `0841020a` incorporato; incremento versione `d15edb10` pubblicato e verificato. AAB 300037 e candidata Web dalla stessa sorgente, archiviate ma non pubblicate. Registri e documenti seguono sul ramo; vecchi artefatti invariati |
+| `codex/release-0.1.15` | Main `0841020a` incorporato; incremento versione `d15edb10` pubblicato e verificato. AAB 300037 nel test interno, candidata Web dalla stessa sorgente archiviata e non pubblicata. Registri e documenti sul ramo; vecchi artefatti invariati |
 | Ultimo artefatto osservato sul telefono (300036) | Sorgente `9d5ff2f415ab8b10be510eff2a0b058a8c2408ac`, AAB SHA256 `024212752b3af72f163d75849aa53c2b191ba0352e42423b11efccd2d7f8b51f`; installer Play Store; [verifica sul Galaxy](ANDROID_0.1.15_300036_DEVICE_CHECK_20261023.md) |
 
 I commit successivi, anche quando modificano il frontend, non cambiano il
 commit sorgente dell’AAB già firmata. L’allineamento conserva la configurazione
 0.1.15; la successiva build autorizzata ha riservato e prodotto la 300037.
-Nessun canale pubblicato è cambiato. Non riutilizzare il codice 300037:
-la AAB archiviata è quella da caricare dopo autorizzazione.
+Il solo canale interno ora usa la 300037; produzione e Web sono invariati.
+Non riutilizzare il codice 300037: artefatto e registri precedenti restano immutabili.
 
 **Preparazione locale del 22 ottobre:** la guardia del ramo release consente
 un'altra AAB ufficiale con nome 0.1.15 e codice crescente, anche dopo 300033
@@ -128,7 +130,7 @@ La 300036 è ora installata dal proprietario; nessuna installazione dell’agent
   il controllo sul Galaxy non ha eseguito nuove scritture.
   [Verbale Community](COMMUNITY_0.1.15_DEPLOY_20261021.md).
 - **Sponsor:** schede, sviluppo del pannello e allineamento dati restano
-  sospesi fino a nuovo ordine. Ultima lettura 23 ottobre: `enabled=false`,
+  sospesi fino a nuovo ordine. Ultima lettura 24 ottobre dopo upload: `enabled=false`,
   zero campagne, revisione 117.
 - **Web:** pubblicazione del 21 ottobre confermata; il nuovo pacchetto locale
   0.1.15 deve ancora essere pubblicato separatamente. Manifest e sorgenti comuni
