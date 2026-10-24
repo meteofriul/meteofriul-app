@@ -1,0 +1,30 @@
+{
+  "tests": {
+    "run": 193,
+    "passed": 193,
+    "skipped": 0
+  },
+  "offline_replay": {
+    "baseline_error": "HTTP 404 numbered page 46",
+    "observed_404_responses": 1,
+    "declared_results": 1677,
+    "cards_seen": 1677,
+    "partition_pages": 410,
+    "cached_reads": 475,
+    "network_requests": 0
+  },
+  "live_complete_recovery": false,
+  "live_limit": "provider_total_changed_1677_to_1678",
+  "base_main": "eb1095185023636efde111dd93b295a5a07ec10f",
+  "scope": "local_only",
+  "checked_at": "2026-10-24T10:37:16.651032+00:00",
+  "source_sha256": {
+    "backend/app/events/pilot_regional_filtered.py": "534da92aea1c304e7dd23f786a5718a02b45d1c572e235de899186f21621cd4a",
+    "backend/tests/test_pilot_regional_filtered.py": "7fc6b1d5cd0672603ca72622781396aa69f96340641bf62fcce9782dccc883b0"
+  },
+  "final_local_regression": {
+    "run": 843,
+    "passed": 842,
+    "skipped": 1
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "tests": {
+    "run": 90,
+    "passed": 89,
+    "skipped": 1,
+    "skip_reason": "PROMTOOL not configured"
+  },
+  "baseline_failing_subcases": 12,
+  "cloud_cause_http_status": "unknown",
+  "base_main": "eb1095185023636efde111dd93b295a5a07ec10f",
+  "scope": "local_only",
+  "checked_at": "2026-10-24T10:37:16.653266+00:00",
+  "source_sha256": {
+    "experiments/weather_autonomy/freshness_monitor/google.py": "edb73e2e971295caeb7af083be183e1aa16e3bdb1251faa554281fc92c09a0ad",
+    "experiments/weather_autonomy/test_freshness_monitor_state_recovery.py": "e345978cfba6ef667c35833bf874169da09473d5c5c78c78bf90d3cee6fe668c"
+  }
+}

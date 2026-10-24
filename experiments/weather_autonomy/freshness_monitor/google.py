@@ -8,8 +8,9 @@ import hashlib
 import json
 import os
 import re
+import time
 from urllib.parse import quote
-from .collect import Object, Unavailable
+from .collect import BudgetExpired, Object, Unavailable
 from .http import Transport, PUBLIC_DOCUMENT_BYTES, PUBLIC_TIMEOUT_SECONDS, API_TIMEOUT_SECONDS
 from .contracts import MAX_DOCUMENT, ROOTS
 from .core import METRIC_PREFIX, METRICS, PRODUCTS, instant, stamp
@@ -109,8 +110,9 @@ class WeatherData(BucketReader):
 
 
 class MonitorState(BucketReader):
-    def __init__(self, transport):
+    def __init__(self, transport, *, sleep=time.sleep):
         super().__init__(transport, STATE_BUCKET)
+        self.sleep = sleep
 
     @staticmethod
     def key(product):
@@ -139,15 +141,43 @@ class MonitorState(BucketReader):
         if len(body) > MAX_DOCUMENT:
             raise ValueError("state byte limit")
         url = "https://storage.googleapis.com/upload/storage/v1/b/" + STATE_BUCKET + "/o"
-        status, response, _ = self.transport.request("POST", url, budget,
-            params={"uploadType": "media", "name": self.key(product),
-                    "ifGenerationMatch": str(generation)},
-            headers={"Content-Type": "application/json"}, data=body)
-        if status == 412:
-            raise Conflict()
-        if status not in (200, 201):
-            raise Unavailable("monitor state commit uncertain")
-        return str(json.loads(response)["generation"])
+        # Every retry keeps the original generation precondition and bytes.
+        # A lost response may hide a successful commit: reconcile before retrying.
+        for attempt in range(3):
+            budget.remaining()
+            try:
+                status, response, _ = self.transport.request("POST", url, budget,
+                    params={"uploadType": "media", "name": self.key(product),
+                            "ifGenerationMatch": str(generation)},
+                    headers={"Content-Type": "application/json"}, data=body)
+            except Unavailable as error:
+                if not error.transient:
+                    raise
+                failure = error
+            else:
+                if status == 412:
+                    raise Conflict()
+                if status in (200, 201):
+                    return str(json.loads(response)["generation"])
+                failure = Unavailable("monitor state commit HTTP " + str(status),
+                    transient=status in (408, 429) or 500 <= status < 600,
+                    failure_kind="http_status")
+                if not failure.transient:
+                    raise failure
+            current_generation, current = self.read(product, budget)
+            if current_generation != str(generation):
+                if current == value:
+                    return current_generation
+                raise Conflict()
+            if attempt == 2:
+                raise failure
+            # Storage may throttle rapid writes to the same object. Wait only
+            # within the existing job budget; no unbounded or blind retry.
+            delay = 2 ** attempt
+            if budget.remaining(delay + 1) <= delay:
+                raise BudgetExpired()
+            self.sleep(delay)
+        raise AssertionError("unreachable state retry")
 
 
 class Metrics:
