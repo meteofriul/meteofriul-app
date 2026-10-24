@@ -5,7 +5,7 @@ from urllib.parse import parse_qs, urlsplit
 import requests
 
 from app.events.pilot_regional_filtered import (
-    collect_filtered, fetch_page, fetch_year, fetch_year_partitioned,
+    CalendarPageUnavailable, collect_filtered, fetch_page, fetch_year, fetch_year_partitioned,
     fetch_year_resilient,
 )
 
@@ -174,6 +174,59 @@ class FilteredRegionalTests(unittest.TestCase):
         with self.assertRaisesRegex(ValueError, 'cards=7/8'):
             fetch_year_resilient(start, end, max_workers=8)
         partitioned.assert_not_called()
+
+
+    @staticmethod
+    def missing_response(url, status=404):
+        response = requests.Response()
+        response.status_code = status
+        response.url = url
+        response._content = b'provider error page'
+        response._content_consumed = True
+        return response
+
+    def test_observed_numbered_page_404_is_not_an_empty_calendar(self):
+        url = ('https://www.turismofvg.it/eventi?hidehighlights=true'
+               '&start=2026-10-24&end=2026-12-08&page=46')
+        get = Mock(return_value=self.missing_response(
+            'https://www.turismofvg.it/StaticPage/404?aspxerrorpath=/eventi'))
+        with self.assertRaisesRegex(CalendarPageUnavailable, 'page=46, HTTP 404'):
+            fetch_page(url, get=get)
+        get.assert_called_once()
+
+    @patch('app.events.pilot_regional_filtered.fetch_year_partitioned')
+    def test_numbered_404_recovers_through_complete_partition_scan(self, partitioned):
+        def get(url, **_):
+            if parse_qs(urlsplit(url).query).get('page') == ['1']:
+                return self.missing_response(
+                    'https://www.turismofvg.it/StaticPage/404?aspxerrorpath=/eventi')
+            return self.page(url, [4, 5], 10, more=True)
+        verified = {'declared_results': 10, 'cards_seen': 10, 'cards': ['verified']}
+        partitioned.return_value = verified
+        start, end = date(2026, 10, 4), date(2026, 12, 31)
+        self.assertIs(fetch_year_resilient(start, end, get=get, max_workers=4), verified)
+        partitioned.assert_called_once_with(start, end, get=get, max_workers=4,
+                                           result_limit=512)
+        partitioned.side_effect = ValueError('partition union count differs')
+        with self.assertRaisesRegex(ValueError, 'partition union count differs'):
+            fetch_year_resilient(start, end, get=get, max_workers=4)
+
+    @patch('app.events.pilot_regional_filtered.fetch_year_partitioned')
+    def test_root_or_unrelated_404_does_not_trigger_partition_recovery(self, partitioned):
+        start, end = date(2026, 10, 4), date(2026, 12, 31)
+        for status in (404, 403):
+            with self.subTest(status=status):
+                get = Mock(return_value=self.missing_response(
+                    'https://www.turismofvg.it/StaticPage/404?aspxerrorpath=/eventi', status))
+                with self.assertRaises(requests.HTTPError):
+                    fetch_year_resilient(start, end, get=get)
+                partitioned.assert_not_called()
+        for actual in ('https://other.test/eventi',
+                       'https://www.turismofvg.it/StaticPage/404?aspxerrorpath=/other'):
+            with self.subTest(actual=actual):
+                with self.assertRaises(requests.HTTPError):
+                    fetch_page('https://www.turismofvg.it/eventi?page=46',
+                               get=Mock(return_value=self.missing_response(actual)))
 
     @patch('app.events.pilot_regional_filtered.fetch_page')
     @patch('app.events.pilot_regional_filtered.fetch_year')
