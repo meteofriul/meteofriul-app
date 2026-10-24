@@ -53,12 +53,14 @@ tracciate nella [PR 19](https://github.com/meteofriul/meteofriul-app/pull/19).
 La AAB 300036 e il suo archivio Web non contengono queste quattro modifiche.
 Nessun nuovo codice versione riservato. [Verbale di allineamento](docs/operations/RELEASE_WEB_SOURCE_ALIGNMENT_20261024.md).
 
-**Promozione locale del 24 ottobre, dopo PR 19:** main contiene il commit
-`53bedfe4`, dal ramo `codex/cams-initial-loading-events-contrast`: transitorio
-iniziale aria/pollini e contatore Eventi in scuro corretti. Verifica Brave/Galaxy
-IT/FUR, 76 test, lint e compilazione superati. Nessun push: GitHub e ramo release
-restano a `8fb11af8`. AAB, archivio Web e canali pubblicati invariati; questi
-pacchetti non includono le nuove correzioni.
+**Aggiornamento GitHub del 24 ottobre, dopo PR 19:** correzioni `53bedfe4`
+pubblicate in main tramite la [PR 20](https://github.com/meteofriul/meteofriul-app/pull/20),
+merge `7813d5c4`: transitorio iniziale aria/pollini e contatore Eventi in
+scuro corretti. Verifica Brave/Galaxy IT/FUR, 76 test, lint e compilazione
+superati; [CI di main](https://github.com/meteofriul/meteofriul-app/actions/runs/40107051151) verde in tutti e tre i job.
+Il ramo release rimane a `8fb11af8`, da riallineare prima dei prossimi pacchetti.
+AAB 300036, archivio Web e canali pubblicati invariati; questi pacchetti non
+includono le nuove correzioni. Sponsor disattivati.
 [Evidenze e limiti](docs/operations/CAMS_INITIAL_LOADING_EVENTS_CONTRAST_20261024.md).
 
 **Job meteo ICON-2I — verifica del 21 ottobre 2026:** nuova corsa pubblicata,
