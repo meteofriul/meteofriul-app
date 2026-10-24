@@ -4749,6 +4749,10 @@ html[data-theme="dark"] .mf-live-report-form--sheet {
 }
 
 .mf-live-report-form--sheet .mf-live-report-form__body {
+  /* Keep multiline notices in their own rows; scroll the sheet body instead
+     of shrinking its grid tracks below their content. */
+  grid-auto-rows: max-content;
+  align-content: start;
   overflow: hidden auto;
   overscroll-behavior: contain;
   padding: 12px 16px 16px;

@@ -108,6 +108,8 @@ const COPY = {
       storm: "Temporâi pussibii",
       sun: "Timp stabil",
     },
+    unreachableSummary: "Dâts no acessibii",
+    unreachableText: "No rivin a contatâ la font ARPA FVG - OSMER. Torne a provâ plui tart.",
     unavailableSummary: "Dats OSMER no disponibii",
     unavailableText: "Il boletin OSMER nol e disponibil cumo. Consulte la font ARPA FVG - OSMER dal leam sot.",
   },

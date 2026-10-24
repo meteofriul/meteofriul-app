@@ -704,7 +704,7 @@ export function EventsView({
                 >
                   <span>{visibleEvents.length} / {filteredEvents.length}</span>
                   <strong>
-                    Mostra altri
+                    {copy.loadMoreLabel}
                     <ChevronRight aria-hidden="true" size={16} strokeWidth={2.35} />
                   </strong>
                 </button>

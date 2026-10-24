@@ -1,0 +1,465 @@
+{
+  "at_utc": "2026-10-23T13:32:34.352845+00:00",
+  "status": "LOCAL_CHECK_COMPLETE_WITH_FINDINGS_PUBLIC_WEB_ACCEPTANCE_INCOMPLETE",
+  "version": "0.1.15",
+  "android_reference_version_code": 300036,
+  "source_commit": "9d5ff2f415ab8b10be510eff2a0b058a8c2408ac",
+  "frontend_tree": "65ac58a65eef88d19474af262bc6c9ec36e7198c",
+  "main_and_release_baseline": "eb1095185023636efde111dd93b295a5a07ec10f",
+  "runtime_diff_from_aab_source": false,
+  "candidate_manifest_sha256": "42e81042e678be61091db42e401329f54353bddd8be28d4673eacbf898a75bc2",
+  "artifact_hashes_pass": {
+    "web": 506,
+    "android-web": 505
+  },
+  "api_cors_and_sponsors": [
+    {
+      "origin": "http://127.0.0.1:5182",
+      "endpoint": "/healthz",
+      "status": 200,
+      "allow_origin": null
+    },
+    {
+      "origin": "http://127.0.0.1:5182",
+      "endpoint": "/promotions/catalog",
+      "status": 200,
+      "allow_origin": null,
+      "sponsors": {
+        "enabled": false,
+        "revision": 117,
+        "campaign_count": 0
+      }
+    },
+    {
+      "origin": "http://localhost:5182",
+      "endpoint": "/healthz",
+      "status": 200,
+      "allow_origin": null
+    },
+    {
+      "origin": "http://localhost:5182",
+      "endpoint": "/promotions/catalog",
+      "status": 200,
+      "allow_origin": null,
+      "sponsors": {
+        "enabled": false,
+        "revision": 117,
+        "campaign_count": 0
+      }
+    },
+    {
+      "origin": "https://meteofriul.app",
+      "endpoint": "/healthz",
+      "status": 200,
+      "allow_origin": "https://meteofriul.app"
+    },
+    {
+      "origin": "https://meteofriul.app",
+      "endpoint": "/promotions/catalog",
+      "status": 200,
+      "allow_origin": "https://meteofriul.app",
+      "sponsors": {
+        "enabled": false,
+        "revision": 117,
+        "campaign_count": 0
+      }
+    }
+  ],
+  "environments": [
+    {
+      "kind": "exact_static_bundle",
+      "origin": "http://localhost:5182",
+      "viewport": [
+        1280,
+        720
+      ],
+      "services": "Blocked by CORS for local origin; no request interception or CORS changes"
+    },
+    {
+      "kind": "complementary_pilot_same_source",
+      "origin": "http://127.0.0.1:5174",
+      "viewport": [
+        661,
+        902
+      ],
+      "launcher": "scripts/start-local-weather-pilot.ps1 -WeatherCloud",
+      "services": "Real read-only weather and events; different runtime configuration; CARTO key missing in pilot"
+    }
+  ],
+  "findings": [
+    {
+      "id": "WEB-300036-01",
+      "kind": "layout",
+      "scope": "exact static, Friulian, GPS error",
+      "detail": "Location box height 52px; copy extends about 15px below box; capture and DOM measurements retained"
+    },
+    {
+      "id": "WEB-300036-02",
+      "kind": "localization",
+      "scope": "pilot Friulian events; same source",
+      "detail": "Mostra altri remains Italian; literal at EventsView.jsx:707"
+    },
+    {
+      "id": "WEB-300036-03",
+      "kind": "localization",
+      "scope": "exact static, Friulian Home, unavailable bulletin",
+      "detail": "OSMER unreachable message remains Italian; separate from weather data text"
+    },
+    {
+      "id": "WEB-300036-04",
+      "kind": "unresolved_observation",
+      "scope": "pilot initial access after switching server",
+      "detail": "Old model timestamp and CAMS unavailable shown initially; later real data, reentry and reload pass; not timed and not reproduced on final reload"
+    }
+  ],
+  "unverified": [
+    "official bundle remote services in browser",
+    "national location in this session",
+    "successful GPS acquisition",
+    "Community confirmation/success or sends",
+    "radar and webcam remote content",
+    "public cache upgrade",
+    "Safari/iPhone",
+    "Android browser in this session",
+    "PWA installation/offline"
+  ],
+  "new_aab": false,
+  "installations": false,
+  "publication": false,
+  "deploy": false,
+  "manual_sends": false,
+  "git_push": false,
+  "cloud_config_changes": false,
+  "private_evidence_files": [
+    {
+      "file": "gps-overflow-measurement.json",
+      "bytes": 373,
+      "sha256": "64fba299f661b8e1afc10aa4473f34cf0635527ac99c519e0142eaed2673df4a"
+    },
+    {
+      "file": "pilot-air-fur-dark.png",
+      "bytes": 36122,
+      "sha256": "88097fdae65e670ec073f89bccd66b22a679f28d34e7a17d3bf2038a58e32c98"
+    },
+    {
+      "file": "pilot-air-fur-dark.txt",
+      "bytes": 963,
+      "sha256": "0766617e9620a062b4a0875a30f5e0ac7c4572f02a0e69e7427a49d5a6206d1f"
+    },
+    {
+      "file": "pilot-air-it.png",
+      "bytes": 41137,
+      "sha256": "6cb96ae33dac08ded787a124a5e2dcef21d254d62c8b524b7b3a4259b3e32b1f"
+    },
+    {
+      "file": "pilot-air-it.txt",
+      "bytes": 982,
+      "sha256": "7d3add5a78ca914f478f179eed27542fa634c2015c9bf5d3bed1b2b7bceca09b"
+    },
+    {
+      "file": "pilot-bulletin-fur-dark.png",
+      "bytes": 64978,
+      "sha256": "c28fa7784a4985c0be4d18a1d8c5100835ca6ae6d400bb49d17944be1b81d38a"
+    },
+    {
+      "file": "pilot-bulletin-fur-dark.txt",
+      "bytes": 2198,
+      "sha256": "f4a38e2cf217785d1668b74be8b592dfdd86c46d90d7e7bd62c154ba43d2e1ef"
+    },
+    {
+      "file": "pilot-bulletin-it-light.png",
+      "bytes": 68029,
+      "sha256": "4b6bf0d35d22734c52a8a4ce85c61814a37164c616591245f2e076784712e291"
+    },
+    {
+      "file": "pilot-bulletin-it-light.txt",
+      "bytes": 2287,
+      "sha256": "269a5919eb6f4830edeeccb020c0fb31533663ec56fc52905c5603532a1e1feb"
+    },
+    {
+      "file": "pilot-bulletin-scrolled-fur-dark.png",
+      "bytes": 66257,
+      "sha256": "0b4a35e52fdfa10264c6432190bb8e0533a4fa629e5a511efbcc932235755cdc"
+    },
+    {
+      "file": "pilot-bulletin-scrolled-fur-dark.txt",
+      "bytes": 2198,
+      "sha256": "d29c92ea98f1865ac99ffb1f0ab89d780458966db2e88cc76455e0fa91c9bf2d"
+    },
+    {
+      "file": "pilot-bulletin-sticky-fur-dark.png",
+      "bytes": 64978,
+      "sha256": "c28fa7784a4985c0be4d18a1d8c5100835ca6ae6d400bb49d17944be1b81d38a"
+    },
+    {
+      "file": "pilot-bulletin-sticky-fur-dark.txt",
+      "bytes": 2198,
+      "sha256": "f4a38e2cf217785d1668b74be8b592dfdd86c46d90d7e7bd62c154ba43d2e1ef"
+    },
+    {
+      "file": "pilot-day-selection-fur-dark.png",
+      "bytes": 58953,
+      "sha256": "afa5c9c01dc43133303c6d9f539f6ccb5b63bb05880f19a7f16c651b95217793"
+    },
+    {
+      "file": "pilot-day-selection-fur-dark.txt",
+      "bytes": 9251,
+      "sha256": "c56a1d2c40af5d37c276b34cf66a2425dcbeadd8eeb86f8aee1cebc6be2dd508"
+    },
+    {
+      "file": "pilot-discover-it-light.png",
+      "bytes": 86399,
+      "sha256": "cb6f474400ab973594d74b425194c6210cc4b45ab56d911264802523527283de"
+    },
+    {
+      "file": "pilot-discover-it-light.txt",
+      "bytes": 5238,
+      "sha256": "a209871249367919f446506f536a9809123645b1a16b89cd088b9bd87a730e7a"
+    },
+    {
+      "file": "pilot-event-back-fur-dark.png",
+      "bytes": 83985,
+      "sha256": "f58fe221ff994376c6ae3f93c32e7f521f9eeb66bd7b60feea43b9364da01585"
+    },
+    {
+      "file": "pilot-event-back-fur-dark.txt",
+      "bytes": 7660,
+      "sha256": "fe87a00caf5ae978b83aaf87980607be551aaf062f0d8776395685d5b902a70b"
+    },
+    {
+      "file": "pilot-event-detail-fur-dark.png",
+      "bytes": 57104,
+      "sha256": "c2d70c61b95243a28d6f0b185ac7fc7a961624dbb65a2e966d198020917eee4b"
+    },
+    {
+      "file": "pilot-event-detail-fur-dark.txt",
+      "bytes": 8800,
+      "sha256": "a9f86aa7feb089c91e156bbde1eb8280fda15521ac59b7673edc787f78c7d7aa"
+    },
+    {
+      "file": "pilot-events-it-light.png",
+      "bytes": 82157,
+      "sha256": "588081bdaff67dd6c4f6666cc03f06a6f05251b94ea607a8d743a90da80da567"
+    },
+    {
+      "file": "pilot-events-it-light.txt",
+      "bytes": 7663,
+      "sha256": "b760c19da32d1328f4d8db73ed518dcfd49ebd5fb70cc76d7811166010c0cbe1"
+    },
+    {
+      "file": "pilot-events-sticky-fur-dark.png",
+      "bytes": 84097,
+      "sha256": "058c4011fa1fadf3e58eae53d26773a1737369ca4619602b492b9cbe0999d3e9"
+    },
+    {
+      "file": "pilot-events-sticky-fur-dark.txt",
+      "bytes": 7708,
+      "sha256": "accc43faf057435090ad9ab8948f0385146146554e42460937976af1e712dcf7"
+    },
+    {
+      "file": "pilot-final-forecast-it-light.png",
+      "bytes": 62490,
+      "sha256": "da56a1f7d881f7a58e9a62cb9f012f84e66cb58d87052738e2a17406bb4eaff8"
+    },
+    {
+      "file": "pilot-final-forecast-it-light.txt",
+      "bytes": 9353,
+      "sha256": "29ec13dfd22c648dd28621d346bd676e5a0f38b7c3c04b3c10085387c780fa12"
+    },
+    {
+      "file": "pilot-forecast-fur-dark-reentry.png",
+      "bytes": 58722,
+      "sha256": "546dabd63d85faca0efd5d5a667c032953e7499aebdc9ffb8082a026daca7a8f"
+    },
+    {
+      "file": "pilot-forecast-fur-dark-reentry.txt",
+      "bytes": 9248,
+      "sha256": "eea7c0023b8c6fdd01b0d44ca08471e6132aa4c7a2e57f95b9b463f263f2cb25"
+    },
+    {
+      "file": "pilot-forecast-it-light.png",
+      "bytes": 62649,
+      "sha256": "292129a710bb2e25c5ce8f976ed380163debcc08855af03121e8f26b747d757c"
+    },
+    {
+      "file": "pilot-forecast-it-light.txt",
+      "bytes": 9269,
+      "sha256": "97ca049c11dead4980f666f4b92b5ecc19345177013a0814830dbbd47e2a5ee0"
+    },
+    {
+      "file": "pilot-home-it-light.png",
+      "bytes": 71111,
+      "sha256": "a545388354789684b76a6801c3a1414ddbb462322998275d92018e193ec813e7"
+    },
+    {
+      "file": "pilot-home-it-light.txt",
+      "bytes": 3029,
+      "sha256": "71676ca1308fc4ec5cc4fd5ffbc07dcb10f70ad3feac3f2436ce5f739f396c4f"
+    },
+    {
+      "file": "pilot-hour-selection-fur-dark.png",
+      "bytes": 52886,
+      "sha256": "c20c255d3f6543a70820f0c7e75bdc80e4a22ca6f2c25a9c4cbdac87b81ef105"
+    },
+    {
+      "file": "pilot-hour-selection-fur-dark.txt",
+      "bytes": 1648,
+      "sha256": "d4ac51c945341dc4dbd7e6624c654f74d1dece13c1f234aea5c5fc0d605755ca"
+    },
+    {
+      "file": "pilot-live-it-light.png",
+      "bytes": 45638,
+      "sha256": "5f660972caf2ee19d853280a625ac4b161e705ae3e60e753b689d74bbd93c94b"
+    },
+    {
+      "file": "pilot-live-it-light.txt",
+      "bytes": 1672,
+      "sha256": "43c828f06795ea987ab79df1f49df70f37f6e66234112d6f81f4526e7b31fca7"
+    },
+    {
+      "file": "pilot-pollen-fur-dark.png",
+      "bytes": 39936,
+      "sha256": "e03d08867b859b097937ed7fb448d731c997e7098c9f5ed2e4a95d959ea84247"
+    },
+    {
+      "file": "pilot-pollen-fur-dark.txt",
+      "bytes": 1170,
+      "sha256": "78b6dd8618727dbaab2d25f21b265b247246ba91587690d85466f37b9b1f8b1f"
+    },
+    {
+      "file": "pilot-pollen-it.png",
+      "bytes": 46399,
+      "sha256": "0a98a7621a30e23897436689888517428966cc21b98ae65e917a6ac580852359"
+    },
+    {
+      "file": "pilot-pollen-it.txt",
+      "bytes": 1187,
+      "sha256": "88f62ad95c12f1851dd80a25bfed16f92c8c4765e87fbc4f030ddc82511dcf2d"
+    },
+    {
+      "file": "pilot-reload-forecast-it-light.png",
+      "bytes": 62495,
+      "sha256": "22392b231dcb35a9532521e2b4c236a1a3c460f5a8708fc22416e9d063e27766"
+    },
+    {
+      "file": "pilot-reload-forecast-it-light.txt",
+      "bytes": 9306,
+      "sha256": "1f6062fbfc6ad9813e7df53dee99ba1031a6dfb2a66ae12e6050574d4d3cd0ea"
+    },
+    {
+      "file": "readiness.json",
+      "bytes": 1538,
+      "sha256": "dcf74453a1872f8c87f42a129b7790e69a355609fc7e9282d40a33cad29bb33e"
+    },
+    {
+      "file": "readiness.py",
+      "bytes": 1883,
+      "sha256": "4543bb6750a632d21cf9c220e293c73306ca192865b8c55c474fa281275e6c8d"
+    },
+    {
+      "file": "server.py",
+      "bytes": 866,
+      "sha256": "38ba382162086c7fe801d08566ba9f01c1771ec5ebeea3210c2bd0454145c242"
+    },
+    {
+      "file": "static-community-choice-fur.png",
+      "bytes": 58341,
+      "sha256": "6fc5eed34da26974394268ae23e5444ab277cfdf04296e000eb2e484733c0ec7"
+    },
+    {
+      "file": "static-community-choice-fur.txt",
+      "bytes": 1548,
+      "sha256": "6ff1fcd7ccd832115a51db712fe6f2d29026f9ade1d8ae3c6cf15bec3bd14553"
+    },
+    {
+      "file": "static-community-gps-overflow-fur.png",
+      "bytes": 58341,
+      "sha256": "6fc5eed34da26974394268ae23e5444ab277cfdf04296e000eb2e484733c0ec7"
+    },
+    {
+      "file": "static-community-gps-overflow-fur.txt",
+      "bytes": 1548,
+      "sha256": "a35fdec9e8584efd997549e0695849f710d7822d2da0f8b66a92c41c42fdabf0"
+    },
+    {
+      "file": "static-community-location-error-fur.png",
+      "bytes": 56058,
+      "sha256": "94b802df7a35da25e30d85c0fc26e7f23cfe4a87578ca4cff658994ae9044e0a"
+    },
+    {
+      "file": "static-community-location-error-fur.txt",
+      "bytes": 1514,
+      "sha256": "bec4d8f565cc8e88c74e5721567dc268263a7220d019e5f11e5da55744da1e31"
+    },
+    {
+      "file": "static-forecast-fur-light.png",
+      "bytes": 48090,
+      "sha256": "b2f4dfb724e46284840e5de0c614910edf22621d471ce3527c3ee2d814ccdfcf"
+    },
+    {
+      "file": "static-forecast-fur-light.txt",
+      "bytes": 1777,
+      "sha256": "89ce6fcd21cd2672bede1e4ccf39b0087fa4b3711cf7dd99683cc58911ce4932"
+    },
+    {
+      "file": "static-forecast-it-light.png",
+      "bytes": 48588,
+      "sha256": "d9db8b3eecab0a23e7badb6018344489ab2a589062d4bd06efd30055bdcbd8dd"
+    },
+    {
+      "file": "static-forecast-it-light.txt",
+      "bytes": 1786,
+      "sha256": "b1f65798b5c39545de62d023e32dc10af602e6067055c1fd6fd6984c708893fb"
+    },
+    {
+      "file": "static-home-it.png",
+      "bytes": 47831,
+      "sha256": "412860190df262cd879fb84c74f95a626cbce0fedaaa4a2b83d1c2d0fada17df"
+    },
+    {
+      "file": "static-home-it.txt",
+      "bytes": 2441,
+      "sha256": "4ba1a5a9b991fb5d2878df1354311ed989145c8d716aa7cea95440fabfdf1dc9"
+    },
+    {
+      "file": "static-live-fur-after-close.png",
+      "bytes": 50732,
+      "sha256": "3549e4290a84432adda2066eaf8f92ae9b8ed2d09b6b82808c89b9801b9e6a97"
+    },
+    {
+      "file": "static-live-fur-after-close.txt",
+      "bytes": 1558,
+      "sha256": "64aee1849eb4bbb1de081a264b045b37292d61f62bd5553cbf5c6f007080fa75"
+    },
+    {
+      "file": "static-live-fur-light.png",
+      "bytes": 51541,
+      "sha256": "868beea249fed95e4464319f5860cf3353084b23576c276ecbf43c6455384223"
+    },
+    {
+      "file": "static-live-fur-light.txt",
+      "bytes": 1512,
+      "sha256": "d59c4628422244a617d72a5615adb29c7803176469d7089f7fa80ec677fd0d41"
+    },
+    {
+      "file": "static-live-it-light.png",
+      "bytes": 40793,
+      "sha256": "5736be621358dcb3fbca2fdd001a2382db6738f45bed5b00a8f56d5d4e1092f9"
+    },
+    {
+      "file": "static-live-it-light.txt",
+      "bytes": 1552,
+      "sha256": "51d21fcbfa4b436d7c38125fbd173612c26085892ec6ce32105048b8b00909a2"
+    },
+    {
+      "file": "static-settings-fur-light.png",
+      "bytes": 42126,
+      "sha256": "ac7dd40d9de1a040512ddd160b908a88cfe96f007b762146f25941894b4dccbc"
+    },
+    {
+      "file": "static-settings-fur-light.txt",
+      "bytes": 2019,
+      "sha256": "2fbdc63515e7dc6130f82c8981a2b1cecf1b9123bf75ea907d2658beab857615"
+    }
+  ]
+}

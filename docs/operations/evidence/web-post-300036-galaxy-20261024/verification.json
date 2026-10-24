@@ -1,0 +1,470 @@
+{
+  "at_utc": "2026-10-24T14:35:41.744409+00:00",
+  "status": "FOUR_TARGETED_CORRECTIONS_PASS_ON_REAL_GALAXY_BRAVE",
+  "tested_candidate_commit": "574d3509e99d4950dbc4f63b7c3192e1a383c060",
+  "frontend_fix_commit": "cd47176954d41ab9341e009199103878bb2e0611",
+  "promotion_pr": "https://github.com/meteofriul/meteofriul-app/pull/19",
+  "device": {
+    "model": "Samsung Galaxy A52 SM-A525F",
+    "android": "14",
+    "api": 34,
+    "browser": "Brave",
+    "browser_version": "1.97.59",
+    "browser_version_code": 429705904,
+    "screen": [
+      1080,
+      2400
+    ],
+    "css_viewport": [
+      411,
+      728
+    ]
+  },
+  "preview": {
+    "port": 5174,
+    "launcher": "scripts/start-local-weather-pilot.ps1 -WeatherCloud",
+    "origin": "http://127.0.0.1:5174",
+    "source_sha256": {
+      "frontend/src/app/AppRoutes.camsEpisode.test.jsx": "8078224439f1e38d89f335284e2b86d8d2ebbe62ea1ce5b0b033f43e5ebd4fd3",
+      "frontend/src/app/AppRoutes.jsx": "98f841ff92b722b37c190b16097bad10bbb6d0e3da05a8c955c4134531b4eeac",
+      "frontend/src/copy/eventsViewCopy.js": "c3cc1364207643a4e96f3960a36a39a5988063691b2f3dd5c7f01b52d200af4c",
+      "frontend/src/features/bulletin/bulletinViewModel.js": "63a662b8845f03fe1785543dbd23d3df2a1d982c80e4d289e1b664b0e40811b4",
+      "frontend/src/features/bulletin/bulletinViewModel.test.js": "27e7d038fd7e8eece2bf99b875ea28b8b4cac105f3d18684a01019db425e1f34",
+      "frontend/src/features/events/EventsView.jsx": "266e67a65fce195f261758c5c4489067511374ad9dbf445ba584ce41fd5edc55",
+      "frontend/src/features/live/live.css": "a7e875bf367d5ff20c23a4bdd438798bf736751bae8a01e4716b3ac6c9213e96",
+      "frontend/src/features/weather/weatherForecastViewModel.js": "10ba7dfb07d45232f9c76321a9a8dd98b090e20018b95441aa208b154288a32b",
+      "frontend/src/features/weather/weatherForecastViewModel.test.js": "3b852b3c00430cd506b1642794dc48cc05201b7b5e3a8194e73adbf7c70f4b0b"
+    }
+  },
+  "checks": {
+    "gps": {
+      "it-light": {
+        "lang": "it",
+        "theme": "light",
+        "box": {
+          "top": 329.8460388183594,
+          "bottom": 405.26331329345703,
+          "left": 28.983701705932617,
+          "right": 382.4448528289795,
+          "height": 75.41727447509766
+        },
+        "copy": {
+          "top": 338.5969543457031,
+          "bottom": 396.51236724853516,
+          "left": 79.68197631835938,
+          "right": 331.7466125488281,
+          "height": 57.91541290283203
+        },
+        "next": {
+          "top": 416.2495422363281,
+          "bottom": 496.56539154052734,
+          "left": 28.983701705932617,
+          "right": 382.4448528289795,
+          "height": 80.31584930419922
+        },
+        "text": "Posizione\nIl GPS non ha trovato una posizione. Riprova all'aperto.",
+        "scrollable": true,
+        "viewport": {
+          "w": 411,
+          "h": 728
+        },
+        "bodyWidth": 411,
+        "submitDisabled": true
+      },
+      "it-dark": {
+        "lang": "it",
+        "theme": "dark",
+        "box": {
+          "top": 329.59722900390625,
+          "bottom": 405.08753204345703,
+          "left": 28.81243324279785,
+          "right": 382.61614418029785,
+          "height": 75.49030303955078
+        },
+        "copy": {
+          "top": 338.35662841796875,
+          "bottom": 396.328125,
+          "left": 79.55984497070312,
+          "right": 331.8687286376953,
+          "height": 57.97149658203125
+        },
+        "next": {
+          "top": 416.0844421386719,
+          "bottom": 496.47813415527344,
+          "left": 28.81243324279785,
+          "right": 382.61614418029785,
+          "height": 80.39369201660156
+        },
+        "text": "Posizione\nIl GPS non ha trovato una posizione. Riprova all'aperto.",
+        "scrollable": true,
+        "viewport": {
+          "w": 411,
+          "h": 728
+        },
+        "bodyWidth": 411,
+        "submitDisabled": true
+      },
+      "fur-light": {
+        "lang": "fur",
+        "theme": "light",
+        "box": {
+          "top": 329.5238037109375,
+          "bottom": 405.0357131958008,
+          "left": 28.761905670166016,
+          "right": 382.6666603088379,
+          "height": 75.51190948486328
+        },
+        "copy": {
+          "top": 338.28570556640625,
+          "bottom": 396.2738037109375,
+          "left": 79.52381134033203,
+          "right": 331.9047622680664,
+          "height": 57.98809814453125
+        },
+        "next": {
+          "top": 416.0357360839844,
+          "bottom": 496.45240783691406,
+          "left": 28.761905670166016,
+          "right": 382.6666603088379,
+          "height": 80.41667175292969
+        },
+        "text": "Posizion\nIl GPS nol è rivât a dâ une posizion. Torne a provâ in esterni.",
+        "scrollable": true,
+        "viewport": {
+          "w": 411,
+          "h": 728
+        },
+        "bodyWidth": 411,
+        "submitDisabled": true
+      },
+      "fur-dark": {
+        "lang": "fur",
+        "theme": "dark",
+        "box": {
+          "top": 329.5238037109375,
+          "bottom": 405.0357131958008,
+          "left": 28.761905670166016,
+          "right": 382.6666603088379,
+          "height": 75.51190948486328
+        },
+        "copy": {
+          "top": 338.28570556640625,
+          "bottom": 396.2738037109375,
+          "left": 79.52381134033203,
+          "right": 331.9047622680664,
+          "height": 57.98809814453125
+        },
+        "next": {
+          "top": 416.0357360839844,
+          "bottom": 496.45240783691406,
+          "left": 28.761905670166016,
+          "right": 382.6666603088379,
+          "height": 80.41667175292969
+        },
+        "text": "Posizion\nIl GPS nol è rivât a dâ une posizion. Torne a provâ in esterni.",
+        "scrollable": true,
+        "viewport": {
+          "w": 411,
+          "h": 728
+        },
+        "bodyWidth": 411,
+        "submitDisabled": true
+      }
+    },
+    "events": {
+      "it": {
+        "source": "explicit local fixture, no public catalog modification",
+        "before": {
+          "lang": "it",
+          "count": 16,
+          "label": "16 / 20\nMostra altri"
+        },
+        "after": {
+          "count": 20,
+          "more": false,
+          "width": 411,
+          "pageWidth": 411
+        },
+        "touch": {
+          "x": 205.71429443359375,
+          "y": 594.8928833007812
+        }
+      },
+      "fur": {
+        "source": "explicit local fixture, no public catalog modification",
+        "before": {
+          "lang": "fur",
+          "count": 16,
+          "label": "16 / 20\nMostre altris"
+        },
+        "after": {
+          "count": 20,
+          "more": false,
+          "width": 411,
+          "pageWidth": 411
+        },
+        "touch": {
+          "x": 205.71429443359375,
+          "y": 594.8928833007812
+        }
+      }
+    },
+    "osmer": {
+      "it": {
+        "text": "Sintesi\nOggi\nNon riusciamo a raggiungere la fonte ARPA FVG - OSMER",
+        "geometry": {
+          "left": 0,
+          "right": 411.4285888671875,
+          "width": 411,
+          "pageWidth": 411,
+          "text": "Sintesi\nOggi\nNon riusciamo a raggiungere la fonte ARPA FVG - OSMER"
+        }
+      },
+      "fur": {
+        "text": "Sintesi\nVuê\nNo rivin a contatâ la font ARPA FVG - OSMER",
+        "geometry": {
+          "left": 0,
+          "right": 411.4285888671875,
+          "width": 411,
+          "pageWidth": 411,
+          "text": "Sintesi\nVuê\nNo rivin a contatâ la font ARPA FVG - OSMER"
+        }
+      }
+    },
+    "cams": {
+      "cams-fur-pass": {
+        "result": "PASS",
+        "loading_samples": 16,
+        "terminal_text": "Soreli e Lune\n10h 31m\nLus dal dì\nAlbe 07:38\nTramont 18:09\nLune plene\nIndiç UV\n0,4\nBas\nPic 1,2 · 11:00\n11:00\n16:00\n07:00\n19:00\nCualitât de arie\nPM2.5\n2,4\nµg/m³\nPM10: 3,5 µg/m³\nDâts Copernicus CAMS\nPolins\nGraminaceis\n0,18\ngrani/m³\n6 speciis · 2 ativis\nPrevision modelistiche CAMS"
+      },
+      "cams-fur-fail": {
+        "result": "PASS",
+        "loading_samples": 16,
+        "terminal_text": "Soreli e Lune\n10h 31m\nLus dal dì\nAlbe 07:38\nTramont 18:09\nLune plene\nIndiç UV\n0,4\nBas\nPic 1,2 · 11:00\n11:00\n16:00\n07:00\n19:00\nCualitât de arie\n\nDâts no disponibii\n\nPolins\n\nDâts no disponibii"
+      },
+      "cams-it-fail": {
+        "result": "PASS",
+        "loading_samples": 16,
+        "terminal_text": "Sole e Luna\n10h 31m\nLuce del giorno\nAlba 07:38\nTramonto 18:09\nLuna piena\nIndice UV\n0,4\nBasso\nPicco 1,2 · 11:00\n11:00\n16:00\n07:00\n19:00\nQualità dell’aria\n\nDati non disponibili\n\nPollini\n\nDati non disponibili"
+      },
+      "cams-it-pass": {
+        "result": "PASS",
+        "terminal_text": "Sole e Luna\n10h 31m\nLuce del giorno\nAlba 07:38\nTramonto 18:09\nLuna piena\nIndice UV\n0,4\nBasso\nPicco 1,2 · 11:00\n11:00\n16:00\n07:00\n19:00\nQualità dell’aria\nPM2.5\n2,4\nµg/m³\nPM10: 3,5 µg/m³\nDati Copernicus CAMS\nPollini\nGraminacee\n0,18\ngrani/m³\n6 specie · 2 attive\nPrevisione modellistica CAMS",
+        "initial_samples": 5,
+        "scope": "Loading after coordinator publishes pending CAMS; previous state remains before that callback."
+      }
+    },
+    "preferences_restored": {
+      "mfLanguage": true,
+      "mfTheme": true,
+      "autoLocationEnabled": true,
+      "defaultLocation": true
+    },
+    "network_guard": {
+      "blockedWrites": 0,
+      "jsExceptions": 0,
+      "requests": 4191
+    }
+  },
+  "sponsors": "Disabled; no sponsor configuration, services or campaigns changed. Test Events component receives an empty campaign list.",
+  "local_regression": {
+    "tests": 116,
+    "suites": 10,
+    "result": "PASS on unchanged source before device session",
+    "eslint": "PASS",
+    "prior_ci": "https://github.com/meteofriul/meteofriul-app/actions/runs/40094663252"
+  },
+  "limits": [
+    "GPS layout uses the production component with a controlled timeout; no actual GPS acquisition, permissions change or report submission.",
+    "Events expansion uses 20 explicit local fixture items because the current nearby catalog is below 16; no public catalog mutation.",
+    "CAMS and OSMER failures are injected in a local harness around production AppRoutes; successful CAMS responses use already published data.",
+    "The first IT retry retains the prior error for about 1.4 seconds before the coordinator publishes pending CAMS. The pass covers the subsequent loading interval and terminal outcome, not an immediate loading guarantee on button press.",
+    "The pale 16/20 counter in the dark Events fixture has weak contrast; existing presentation outside the four corrections, left as a follow-up.",
+    "Not a new minified Android artifact test, official static Web service acceptance, public cache upgrade, Safari/iPhone or PWA test."
+  ],
+  "prohibited_actions_performed": [],
+  "included_in_aab_300036": false,
+  "included_in_archived_web_candidate": false,
+  "evidence": [
+    {
+      "file": "gps-it-light.json",
+      "sha256": "bc07a804cc3edc36c86bc1192c001edc4fc88cf5e60563f1a18ce11fb5282415",
+      "bytes": 796
+    },
+    {
+      "file": "gps-it-light.png",
+      "sha256": "18a454cbcb567215e91f732a9b297167b521ababc1a7d2660e2aab78363c2f6c",
+      "bytes": 403755
+    },
+    {
+      "file": "gps-it-dark.json",
+      "sha256": "82fa7e4a804aaa067ee5bb5168dbf38ff05954eddbf7cbfcf21ae63c0d2a25ab",
+      "bytes": 789
+    },
+    {
+      "file": "gps-it-dark.png",
+      "sha256": "e721f5412c90516cef21bb8d9b96885dadf9749f6d78fb6f77bf13d2bcf78e8e",
+      "bytes": 393260
+    },
+    {
+      "file": "gps-fur-light.json",
+      "sha256": "6dd4f802e9422e27a119b89841f8aa976dea556fb6fdf48d1e57b32cc4628b30",
+      "bytes": 806
+    },
+    {
+      "file": "gps-fur-light.png",
+      "sha256": "4c5f977299104d516a3327983d066b109365c27b422d757b227dc38cd38d2c22",
+      "bytes": 398064
+    },
+    {
+      "file": "gps-fur-dark.json",
+      "sha256": "718f6e54f35392c4d3231a803e56e8c775b9dc194348c2e1a6149cd58c83b78e",
+      "bytes": 805
+    },
+    {
+      "file": "gps-fur-dark.png",
+      "sha256": "7c1cd0c463e0c9b54d5da39e3ca571ef6cae417a70c3df6cff4c7073242e19dd",
+      "bytes": 388858
+    },
+    {
+      "file": "events-it.json",
+      "sha256": "5f62f95ddfad4a514f791d377370acbef53de541410fd90add97b340eb71ed07",
+      "bytes": 347
+    },
+    {
+      "file": "events-it-load-more.png",
+      "sha256": "59c7ffbcdc3df26364766e26f1ad50854af3ec124aa4aaa77c6a1611b75f9cc6",
+      "bytes": 372923
+    },
+    {
+      "file": "events-it-expanded.png",
+      "sha256": "3a4804f511f74e91f8b263c1ea6b61bc40ea229cc8c5c2f227a821de16a86a0e",
+      "bytes": 444930
+    },
+    {
+      "file": "events-fur.json",
+      "sha256": "c472496c8ff7f8e0e2cd1d33642d20fec8435d81c74621be9c9fb5b9c93cd675",
+      "bytes": 349
+    },
+    {
+      "file": "events-fur-load-more.png",
+      "sha256": "cbed2e9418b80ee981813fd8f1c197009cd6e818d7ebf0acc948c108d95ec413",
+      "bytes": 361910
+    },
+    {
+      "file": "events-fur-expanded.png",
+      "sha256": "1f7885dbdeefea00cc6f649cc48297867f33d27301eb4d3a92baf446acf7630f",
+      "bytes": 430748
+    },
+    {
+      "file": "osmer-it.json",
+      "sha256": "05229decb553d65595558dd3e273497447f173df40205efd4cd2f1848320d64c",
+      "bytes": 881
+    },
+    {
+      "file": "osmer-it.png",
+      "sha256": "da0d4fd996472a33807aad12ec467b1e2d6b742bf67f606f2bc2c8289573ddf3",
+      "bytes": 825895
+    },
+    {
+      "file": "osmer-fur.json",
+      "sha256": "58cba8b84c5fd04f6f94f48513e0c539a9fce2d0c982770cfb3dbc312a89ff59",
+      "bytes": 857
+    },
+    {
+      "file": "osmer-fur.png",
+      "sha256": "365df706e67d83b2645f36c3b112c3b24fb6303bdfce80ee5a4f6f495cf75119",
+      "bytes": 810613
+    },
+    {
+      "file": "cams-it-retry-initial.json",
+      "sha256": "c37350f9ef5338a4e7a91e4eabbe4aef7ab63142fc97643b75a4b0443646b2f4",
+      "bytes": 3690
+    },
+    {
+      "file": "cams-it-loading.png",
+      "sha256": "9cbbc67746165b6e6b9377c3c976786b8fb3ea0ff14cdf34873e1f6adfd85e05",
+      "bytes": 305381
+    },
+    {
+      "file": "cams-it-recovered.json",
+      "sha256": "f1a4bcca89c67b95e20116dcd0c6eebcbd36b7472dd5b81ed4f0a51a5b90bb11",
+      "bytes": 786
+    },
+    {
+      "file": "cams-it-recovered.png",
+      "sha256": "a4c383839650c4744b1834cd14d0408d19a0db285c5ee324daf9d625b47678d3",
+      "bytes": 335655
+    },
+    {
+      "file": "cams-fur-pass.json",
+      "sha256": "f2efdc138a55405f02c7d1a836bd0064b9fb9ca09e243edbcfb45b02770bdcfa",
+      "bytes": 17794
+    },
+    {
+      "file": "cams-fur-pass-loading.png",
+      "sha256": "b144b476a910df17884751dd2f6b19796e169f24cdc8e9d130ba95820cd3ae08",
+      "bytes": 279780
+    },
+    {
+      "file": "cams-fur-pass-final.png",
+      "sha256": "40a93a1a0ee56e03ed18aaf5eb744574d6c0b18277dcde2849fdb87b3dec1dc3",
+      "bytes": 314776
+    },
+    {
+      "file": "cams-it-fail.json",
+      "sha256": "e4ee601afc0886ee3859589be9880e3d90a453a112165622e792f37aafc2da38",
+      "bytes": 16931
+    },
+    {
+      "file": "cams-it-fail-loading.png",
+      "sha256": "6297e9fd4da5264c8e214cd25120961c865f3b9ab8895064f27f4b03bbe2d67c",
+      "bytes": 305722
+    },
+    {
+      "file": "cams-it-fail-final.png",
+      "sha256": "bfb3295fdf8ff9a1c080936eba4d4ab1fd84917c7ce1fafb7ab2dce16abf5a99",
+      "bytes": 306259
+    },
+    {
+      "file": "cams-fur-fail.json",
+      "sha256": "a91fda76898a032b3711548a013f3454ccda5d9a6bed00977f8301f9020a1627",
+      "bytes": 16830
+    },
+    {
+      "file": "cams-fur-fail-loading.png",
+      "sha256": "6933d4500268e4c093aa2f2dedf25aedf779a83e13e818bf682fc793d1894504",
+      "bytes": 280394
+    },
+    {
+      "file": "cams-fur-fail-final.png",
+      "sha256": "4863335cc1690a86dd566d387ef0bfd8f2f0cd2e985b0558607a10b0cb7c1fac",
+      "bytes": 282766
+    },
+    {
+      "file": "real-cams-fur.json",
+      "sha256": "0ab9faf947917ebc11849fecc41a69bd89550a0334cf7aa806553055d8c3aa2d",
+      "bytes": 349
+    },
+    {
+      "file": "real-cams-fur.png",
+      "sha256": "bf291bd5c86c8d91878515b85bdcc430325e22d0ec5c8c48d708ede16b99daf2",
+      "bytes": 328325
+    },
+    {
+      "file": "final-real-weather-it.png",
+      "sha256": "46c4d76dc46bc768fce83142b7f82384be73951341af5b2f641581a9ac4644cc",
+      "bytes": 528750
+    },
+    {
+      "file": "preferences-restored.json",
+      "sha256": "0e18149f0562a28edc814e54be15114f36cfa48e753e773dc86f682b0290dbc0",
+      "bytes": 106
+    },
+    {
+      "file": "network-summary.json",
+      "sha256": "9230ca1cc9c500789bfe2a48dfa2d742f66f9fffc816096fcdb03884a1f5b03f",
+      "bytes": 69
+    }
+  ]
+}

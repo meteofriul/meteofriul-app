@@ -1,0 +1,459 @@
+{
+  "at_utc": "2026-10-23T17:25:24.487568+00:00",
+  "status": "LOCAL_CORRECTIONS_VERIFIED_PUBLIC_WEB_ACCEPTANCE_STILL_INCOMPLETE",
+  "branch": "codex/release-0.1.15",
+  "baseline_commit": "eb1095185023636efde111dd93b295a5a07ec10f",
+  "android_reference_version": "0.1.15",
+  "android_reference_version_code": 300036,
+  "main_promoted": false,
+  "included_in_aab_300036": false,
+  "included_in_archived_web_candidate": false,
+  "archived_candidate_manifest_unchanged_sha256": "42e81042e678be61091db42e401329f54353bddd8be28d4673eacbf898a75bc2",
+  "source_sha256": {
+    "frontend/src/app/AppRoutes.camsEpisode.test.jsx": "8078224439f1e38d89f335284e2b86d8d2ebbe62ea1ce5b0b033f43e5ebd4fd3",
+    "frontend/src/app/AppRoutes.jsx": "98f841ff92b722b37c190b16097bad10bbb6d0e3da05a8c955c4134531b4eeac",
+    "frontend/src/copy/eventsViewCopy.js": "c3cc1364207643a4e96f3960a36a39a5988063691b2f3dd5c7f01b52d200af4c",
+    "frontend/src/features/bulletin/bulletinViewModel.js": "63a662b8845f03fe1785543dbd23d3df2a1d982c80e4d289e1b664b0e40811b4",
+    "frontend/src/features/bulletin/bulletinViewModel.test.js": "27e7d038fd7e8eece2bf99b875ea28b8b4cac105f3d18684a01019db425e1f34",
+    "frontend/src/features/events/EventsView.jsx": "266e67a65fce195f261758c5c4489067511374ad9dbf445ba584ce41fd5edc55",
+    "frontend/src/features/live/live.css": "a7e875bf367d5ff20c23a4bdd438798bf736751bae8a01e4716b3ac6c9213e96",
+    "frontend/src/features/weather/weatherForecastViewModel.js": "10ba7dfb07d45232f9c76321a9a8dd98b090e20018b95441aa208b154288a32b",
+    "frontend/src/features/weather/weatherForecastViewModel.test.js": "3b852b3c00430cd506b1642794dc48cc05201b7b5e3a8194e73adbf7c70f4b0b"
+  },
+  "checks": {
+    "targeted_vitest": {
+      "result": "PASS",
+      "files": 10,
+      "tests": 116,
+      "configLoader": "native",
+      "suites": [
+        "AppRoutes.camsEpisode",
+        "AppRoutes.deferredCamsLifecycle",
+        "AppRoutes.activeCandidate",
+        "App.coldStartRevocation",
+        "weatherForecastViewModel",
+        "WeatherEnvironmentOverview",
+        "bulletinViewModel",
+        "EventsView",
+        "eventsViewCopy",
+        "CommunityReportForm.locationCopy"
+      ]
+    },
+    "regression_before_fix": "Delayed CAMS recovery showed unavailable instead of loading; the new route assertion failed before the change.",
+    "eslint_changed_js_jsx": "PASS",
+    "compile": {
+      "result": "PASS",
+      "mode": "cloudflare",
+      "outDir": "unique OS temporary directory",
+      "scope": "Vite frontend compilation only; not BuildOnly delivery, no service-worker assembly or CARTO attestation",
+      "initial_guard": "Missing VITE_API_BASE correctly rejected; repeated with the pinned candidate API in process environment, no guard bypass.",
+      "warnings": [
+        "Existing chunk over 500 kB",
+        "AlmanacView static and dynamic import overlap"
+      ]
+    },
+    "gps_browser": {
+      "result": "PASS",
+      "kind": "Real CommunityReportForm with injected timeout, no GPS call and submit excluded",
+      "measurements": {
+        "gps-fur-dark-375": {
+          "box": {
+            "bottom": 438.15625,
+            "height": 94.15625,
+            "left": 29,
+            "right": 336,
+            "top": 344,
+            "width": 307,
+            "x": 29,
+            "y": 344
+          },
+          "copy": {
+            "bottom": 429.15625,
+            "height": 76.15625,
+            "left": 80,
+            "right": 285,
+            "top": 353,
+            "width": 205,
+            "x": 80,
+            "y": 353
+          },
+          "language": "fur",
+          "privacy": {
+            "bottom": 550.34375,
+            "height": 101.1875,
+            "left": 29,
+            "right": 336,
+            "top": 449.15625,
+            "width": 307,
+            "x": 29,
+            "y": 449.15625
+          },
+          "text": "Posizion\nIl GPS nol è rivât a dâ une posizion. Torne a provâ in esterni.",
+          "theme": "dark"
+        },
+        "gps-fur-dark-desktop": {
+          "box": {
+            "bottom": 413.9697570800781,
+            "height": 75.96829223632812,
+            "left": 397.0014343261719,
+            "right": 872.9986572265625,
+            "top": 338.00146484375,
+            "width": 475.9972229003906,
+            "x": 397.0014343261719,
+            "y": 338.00146484375
+          },
+          "copy": {
+            "bottom": 404.9698181152344,
+            "height": 57.968414306640625,
+            "left": 448.0011291503906,
+            "right": 821.9989013671875,
+            "top": 347.00140380859375,
+            "width": 373.9977722167969,
+            "x": 448.0011291503906,
+            "y": 347.00140380859375
+          },
+          "language": "fur",
+          "privacy": {
+            "bottom": 505.8598327636719,
+            "height": 80.89013671875,
+            "left": 397.0014343261719,
+            "right": 872.9986572265625,
+            "top": 424.9696960449219,
+            "width": 475.9972229003906,
+            "x": 397.0014343261719,
+            "y": 424.9696960449219
+          },
+          "text": "Posizion\nIl GPS nol è rivât a dâ une posizion. Torne a provâ in esterni.",
+          "theme": "dark"
+        },
+        "gps-fur-light-375": {
+          "box": {
+            "bottom": 438.15625,
+            "height": 94.15625,
+            "left": 29,
+            "right": 336,
+            "top": 344,
+            "width": 307,
+            "x": 29,
+            "y": 344
+          },
+          "copy": {
+            "bottom": 429.15625,
+            "height": 76.15625,
+            "left": 80,
+            "right": 285,
+            "top": 353,
+            "width": 205,
+            "x": 80,
+            "y": 353
+          },
+          "language": "fur",
+          "privacy": {
+            "bottom": 550.34375,
+            "height": 101.1875,
+            "left": 29,
+            "right": 336,
+            "top": 449.15625,
+            "width": 307,
+            "x": 29,
+            "y": 449.15625
+          },
+          "text": "Posizion\nIl GPS nol è rivât a dâ une posizion. Torne a provâ in esterni.",
+          "theme": "light"
+        },
+        "gps-fur-light-desktop": {
+          "box": {
+            "bottom": 413.96875,
+            "height": 75.96875,
+            "left": 397,
+            "right": 873,
+            "top": 338,
+            "width": 476,
+            "x": 397,
+            "y": 338
+          },
+          "copy": {
+            "bottom": 404.96875,
+            "height": 57.96875,
+            "left": 448,
+            "right": 822,
+            "top": 347,
+            "width": 374,
+            "x": 448,
+            "y": 347
+          },
+          "language": "fur",
+          "privacy": {
+            "bottom": 505.859375,
+            "height": 80.890625,
+            "left": 397,
+            "right": 873,
+            "top": 424.96875,
+            "width": 476,
+            "x": 397,
+            "y": 424.96875
+          },
+          "text": "Posizion\nIl GPS nol è rivât a dâ une posizion. Torne a provâ in esterni.",
+          "theme": "light"
+        },
+        "gps-it-dark-desktop": {
+          "box": {
+            "bottom": 395.78125,
+            "height": 57.78125,
+            "left": 397,
+            "right": 873,
+            "top": 338,
+            "width": 476,
+            "x": 397,
+            "y": 338
+          },
+          "copy": {
+            "bottom": 386.78125,
+            "height": 39.78125,
+            "left": 448,
+            "right": 822,
+            "top": 347,
+            "width": 374,
+            "x": 448,
+            "y": 347
+          },
+          "language": "it",
+          "privacy": {
+            "bottom": 487.671875,
+            "height": 80.890625,
+            "left": 397,
+            "right": 873,
+            "top": 406.78125,
+            "width": 476,
+            "x": 397,
+            "y": 406.78125
+          },
+          "text": "Posizione\nIl GPS non ha trovato una posizione. Riprova all'aperto.",
+          "theme": "dark"
+        },
+        "gps-it-light-desktop": {
+          "box": {
+            "bottom": 395.78125,
+            "height": 57.78125,
+            "left": 397,
+            "right": 873,
+            "top": 338,
+            "width": 476,
+            "x": 397,
+            "y": 338
+          },
+          "copy": {
+            "bottom": 386.78125,
+            "height": 39.78125,
+            "left": 448,
+            "right": 822,
+            "top": 347,
+            "width": 374,
+            "x": 448,
+            "y": 347
+          },
+          "language": "it",
+          "privacy": {
+            "bottom": 487.671875,
+            "height": 80.890625,
+            "left": 397,
+            "right": 873,
+            "top": 406.78125,
+            "width": 476,
+            "x": 397,
+            "y": 406.78125
+          },
+          "text": "Posizione\nIl GPS non ha trovato una posizione. Riprova all'aperto.",
+          "theme": "light"
+        }
+      }
+    },
+    "events_browser": {
+      "result": "PASS",
+      "language": "fur",
+      "label": "Mostre altris",
+      "before_count": 16,
+      "after_count": 19,
+      "total_count": 19
+    },
+    "osmer_unreachable": "PASS in view-model regression, Friulian error; not a live provider outage test",
+    "cams_live_pilot": {
+      "result": "PASS for values and re-entry observed",
+      "languages": [
+        "it",
+        "fur"
+      ],
+      "pm25": 6.8,
+      "pm10": 8.1,
+      "grass_pollen": 0.14,
+      "not_a_timing_trace": true
+    },
+    "sponsors": "No sponsor code, configuration or backend changed; disabled state inherited from the preceding verified catalog revision 117.",
+    "git_diff_check": "PASS"
+  },
+  "remaining_limits": [
+    "Original initial CAMS episode had no timing trace; matching recovery mechanism reproduced, not a guarantee about every transient state.",
+    "New source corrections not yet packaged into official Web or Android artifact.",
+    "Official Web services from authorized origin and old-public-version cache upgrade still unverified.",
+    "No Galaxy, Safari/iPhone or PWA check in this correction session."
+  ],
+  "prohibited_actions_performed": [],
+  "evidence": [
+    {
+      "file": "build-compile.log",
+      "sha256": "978403d32ed77572745605a1fe6bcd6aa991fd9a2c98c5812caee6d33ae627cd",
+      "bytes": 4182
+    },
+    {
+      "file": "build-output.txt",
+      "sha256": "96077c1961e271d5e9eae8388c4934e9eb942e5b2056ea089b648ebcf478e865",
+      "bytes": 92
+    },
+    {
+      "file": "build.log",
+      "sha256": "4aa488c4126f8afd2a8a2a304816407d15137a76c8d24eaf1d9c0c04a3405cdc",
+      "bytes": 1647
+    },
+    {
+      "file": "events-fur-expanded.txt",
+      "sha256": "ebcd2297c8ecb5a06a1a3ea3a68376e02a3387dd73486e65dc6471e15dfe444d",
+      "bytes": 9048
+    },
+    {
+      "file": "events-fur-label.png",
+      "sha256": "d7f74e45b3e6a29ba669c83f6a5c77dd426eff006d4e7f303dfadcca0a4569ce",
+      "bytes": 62946
+    },
+    {
+      "file": "events-fur-label.txt",
+      "sha256": "2f13ad2ae96a39ac2c594091ca78c80972b966a04506b2bca1c1848f77840615",
+      "bytes": 7718
+    },
+    {
+      "file": "frontend.patch",
+      "sha256": "ab3578f3ea4d44313e3488e1fc312a1417e14eccf5db47ca532a3228ea59daee",
+      "bytes": 11532
+    },
+    {
+      "file": "gps-fur-dark-375.json",
+      "sha256": "feb44dfea7d0eb4acce6b35ece271197e709a956ba07836a05d08793afda963c",
+      "bytes": 627
+    },
+    {
+      "file": "gps-fur-dark-375.png",
+      "sha256": "1e9f3e47dcff869fe925ddd0b4719b6297b24e887bf9fc22f7f4707cc0468e4c",
+      "bytes": 50878
+    },
+    {
+      "file": "gps-fur-dark-375.txt",
+      "sha256": "d6870de6e270b3860cabeb86bb50a415c08628498ecc7caefd4c9291d847e311",
+      "bytes": 1673
+    },
+    {
+      "file": "gps-fur-dark-desktop.json",
+      "sha256": "4f9c69003e566d0972fa69dd7a8cbadc26ddcf03287c0cb99bfdcec88ec83855",
+      "bytes": 920
+    },
+    {
+      "file": "gps-fur-dark-desktop.png",
+      "sha256": "e021d74ab8e7d9a692135e3209ca2b000ca882710098c036bb17d713dcfb9b24",
+      "bytes": 60633
+    },
+    {
+      "file": "gps-fur-dark-desktop.txt",
+      "sha256": "d6870de6e270b3860cabeb86bb50a415c08628498ecc7caefd4c9291d847e311",
+      "bytes": 1673
+    },
+    {
+      "file": "gps-fur-light-375.json",
+      "sha256": "8f16e61a3cde70631aafce312119838609035b5fb05f91d008266582a53dd8c4",
+      "bytes": 628
+    },
+    {
+      "file": "gps-fur-light-375.png",
+      "sha256": "0d5978fb07ce11c7bcbcc44a9b5278f9d96c33761fc47240708484d98eb65d1d",
+      "bytes": 50801
+    },
+    {
+      "file": "gps-fur-light-375.txt",
+      "sha256": "a39f1c1f7872e9f5be02d56665d55fdd0c97c67132ce88be130d0f0b2821ead4",
+      "bytes": 1675
+    },
+    {
+      "file": "gps-fur-light-desktop.json",
+      "sha256": "65f87f3005ed633b2ce105765971290b0655ac99076fbbbce3fede36ec0ea132",
+      "bytes": 636
+    },
+    {
+      "file": "gps-fur-light-desktop.png",
+      "sha256": "04f4e4ff81379f0639eadba35f55149db8873b82ad50534553e0edd56c13ddf0",
+      "bytes": 62675
+    },
+    {
+      "file": "gps-fur-light-desktop.txt",
+      "sha256": "a39f1c1f7872e9f5be02d56665d55fdd0c97c67132ce88be130d0f0b2821ead4",
+      "bytes": 1675
+    },
+    {
+      "file": "gps-it-dark-desktop.json",
+      "sha256": "560b7c5e4b6d9fb987423cbc52e22c963a43bca1324082b70ace29053fcb9ccb",
+      "bytes": 624
+    },
+    {
+      "file": "gps-it-dark-desktop.png",
+      "sha256": "7d27e110b3c57e6dc350357fd004ce868460679a37f9b97e73506980894dabaa",
+      "bytes": 59742
+    },
+    {
+      "file": "gps-it-dark-desktop.txt",
+      "sha256": "4961c023b1069e59f1314248e527c6955576590bacf2298a1cb5b676fbd69d70",
+      "bytes": 1663
+    },
+    {
+      "file": "gps-it-light-desktop.json",
+      "sha256": "c506bee4cb22a2578aeee296b2090f1e3970bb05af872f1f1a21078e364c7c02",
+      "bytes": 625
+    },
+    {
+      "file": "gps-it-light-desktop.png",
+      "sha256": "8c36ff6ac11d6446133a23126e40dbfac80e4ab4717c6f8238a81473b6a17687",
+      "bytes": 61686
+    },
+    {
+      "file": "gps-it-light-desktop.txt",
+      "sha256": "c5d9f7c17b7aff58b3e32ce4954bcded567f1a2ab9ae7a507ce965af7634dbdc",
+      "bytes": 1665
+    },
+    {
+      "file": "pilot-cams-fur.png",
+      "sha256": "48e73e248073fc699556e3c633a83b5e368dfa6aa8f0118aef6ac369a878993b",
+      "bytes": 62409
+    },
+    {
+      "file": "pilot-cams-fur.txt",
+      "sha256": "c90e5f8a7a198905e85ff20261959c1dd9049ea5ed8bc0714d3bb654921984bf",
+      "bytes": 9237
+    },
+    {
+      "file": "pilot-cams-it.png",
+      "sha256": "a1650fc65e92bed6c5d3e0cda1f5b726902cfdc6c4271b4d0120c006eec14304",
+      "bytes": 63457
+    },
+    {
+      "file": "pilot-cams-it.txt",
+      "sha256": "42da79c249cec207a73534040ded3a692adb97887ec5c846b8924d5b9289e7bb",
+      "bytes": 9341
+    },
+    {
+      "file": "qa.html",
+      "sha256": "125f41824d5da4d0f2d125db376b20a4cfd517dfb0bed300db88dbef87952468",
+      "bytes": 276
+    },
+    {
+      "file": "qa.jsx",
+      "sha256": "e53c0f808ea37ba8a0db439dde9e149182a6f5ba5a36524d5a8800b5ce17746b",
+      "bytes": 1773
+    }
+  ],
+  "commit_state_at_verification": "uncommitted; source hashes below identify the tested files"
+}

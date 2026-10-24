@@ -453,3 +453,21 @@ it("keeps a failed cache fallback unavailable and verified zero visible while re
   expect(buildWeatherForecastViewModel(state, options).cams)
     .toMatchObject({ airStatus: "available", status: "pending" });
 });
+
+it.each(["it", "fur"])("shows a live CAMS transport retry as pending, without hiding provider diagnostics in %s", language => {
+  const state = buildState({ camsStatus: "unavailable" });
+  const options = { location: LOCATION, now: NOW, language };
+  state.runtimeRefreshPendingComponents = ["cams"];
+  state.rawCurrent.data_quality.cams_diagnostic = { code: "TRANSPORT_FAILURE" };
+  expect(buildWeatherForecastViewModel(state, options).cams)
+    .toMatchObject({ airStatus: "pending", status: "pending" });
+  state.runtimeRefreshPendingComponents = [];
+  expect(buildWeatherForecastViewModel(state, options).cams)
+    .toMatchObject({ airStatus: "unavailable", status: "unavailable" });
+  state.runtimeRefreshPendingComponents = ["cams"];
+  for (const code of ["RUN_DISABLED", "CONTRACT_INVALID", "UNKNOWN_FAILURE"]) {
+    state.rawCurrent.data_quality.cams_diagnostic = { code };
+    expect(buildWeatherForecastViewModel(state, options).cams)
+      .toMatchObject({ airStatus: "unavailable", status: "unavailable" });
+  }
+});

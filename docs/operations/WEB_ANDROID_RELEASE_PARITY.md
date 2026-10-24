@@ -3,7 +3,17 @@
 Regola del proprietario, 20 ottobre 2026: la Web App deve seguire la AAB,
 perché chi usa iPhone accede al prodotto dal browser.
 
-## Candidata aggiornata del 23 ottobre 2026 — Tempo reale
+## Sorgenti allineate il 24 ottobre 2026
+
+Il ramo release incorpora main `23153e54` e il fix `cd471769`, mediante
+`ffa61949`, senza differenze frontend rispetto alle correzioni già verificate.
+Nuova esecuzione dei 116 test mirati: PASS. Il 24 ottobre completata anche
+la [prova reale Brave/Galaxy IT/FUR](WEB_POST_300036_GALAXY_20261024.md).
+Promozione e CI sono tracciate nella [PR 19](https://github.com/meteofriul/meteofriul-app/pull/19).
+Web e Android dovranno usare questa stessa base approvata alla prossima build.
+[Verbale corrente](RELEASE_WEB_SOURCE_ALIGNMENT_20261024.md).
+
+## Ultimi pacchetti prodotti il 23 ottobre 2026 — Tempo reale
 
 AAB **0.1.15 / 300036** e candidata Web dalla stessa sorgente `9d5ff2f415ab8b10be510eff2a0b058a8c2408ac`,
 allineata a main `2d8b0c32`. Inclusa la correzione di Tempo reale; conservate
@@ -19,8 +29,17 @@ anche dopo avvio a freddo, Posizione conservata, aria/pollini IT/FUR e percorsi
 di navigazione osservati PASS. [Prova e limiti](ANDROID_0.1.15_300036_DEVICE_CHECK_20261023.md).
 Il caricamento resta attestato nel [verbale Play](ANDROID_0.1.15_300036_UPLOAD_20261023.md).
 La verifica Android non sostituisce un collaudo del bundle statico Web.
-Prima della pubblicazione Web restano prova del bundle statico e aggiornamento
-cache; Safari/iPhone e PWA non verificati. Il sito pubblico nell'ultima lettura
+Eseguita la [verifica locale IT/FUR del bundle statico](WEB_0.1.15_300036_FINAL_CHECK_20261023.md):
+avvio e integrità confermati, servizi bloccati dalle regole CORS per localhost.
+Il pilot della stessa sorgente ha verifiche complementari con dati reali.
+I rilievi GPS, traduzioni e recupero CAMS hanno ora [correzioni locali verificate](WEB_0.1.15_300036_CORRECTIONS_20261023.md)
+nel commit `cd471769`, con prova Brave/Galaxy completata e promozione
+tracciata nella PR 19. Non sono contenute nella AAB 300036 o nella Web archiviata.
+L'episodio iniziale CAMS non aveva una traccia temporale; è stato riprodotto e
+corretto il meccanismo di recupero da errore di trasporto, senza dichiarare
+retroattivamente provata ogni causa di quell'osservazione.
+Prima della pubblicazione restano collaudo dei servizi del bundle da origine
+autorizzata e aggiornamento cache; Safari/iPhone e PWA non verificati. Il sito pubblico nell'ultima lettura
 del 23 ottobre rimane 0.1.14: HTML con `main-D-Nry2Xb.js` e asset SHA256
 `c5ab69f0a4b63df56ea2254b60fcf829e91b30274632653f000962ac1aa010ca`,
 identico alla ricevuta del 22 ottobre. La parità pubblicata non è ancora raggiunta.
@@ -80,6 +99,15 @@ confrontare HTML/asset realmente serviti con gli hash della candidata,
 verificare una sessione esistente e una nuova, poi annotare esiti e limiti.
 Un rollback Web deve ripristinare il deployment noto mantenendo la compatibilità
 con i contratti dati attivi. Non è autorizzato implicitamente dalla preparazione.
+
+## Aggiornamento dello stato
+
+Quando cambia lo stato di sorgenti, verifiche o canali, aggiornare insieme
+README, stato della release e questo piano. Ogni dichiarazione deve indicare
+la data della verifica e distinguere codice salvato/promosso, pacchetto
+generato, test interno e pubblicazione effettiva. Conservare i verbali storici
+e gli hash degli artefatti; non attribuire una correzione a una build precedente.
+I limiti del collaudo rimangono aperti finché non esiste una nuova evidenza.
 
 ## Evidenza minima per ogni aggiornamento
 

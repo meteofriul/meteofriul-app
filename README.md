@@ -6,16 +6,17 @@ Meteo Friûl è un'app indipendente dedicata al Friuli-Venezia Giulia. Riunisce
 meteo locale, bollettino regionale, allerte ufficiali, radar, webcam, eventi e
 contenuti culturali; l'interfaccia è disponibile in italiano e friulano.
 
-> Stato Web verificato il 22 ottobre 2026: `meteofriul.app` serve la
+> Ultima lettura Web del 23 ottobre 2026: `meteofriul.app` serve la
 > pubblicazione del 21 ottobre, versione `0.1.14`, sorgente `1b0287c1`.
 > La candidata **0.1.15** con le successive correzioni di main, inclusi aria e pollini e Tempo reale, è ora
-> preparata localmente dalla stessa base della release Android; non è pubblicata.
+> archiviata dalla stessa base della AAB 300036; non è pubblicata. Le quattro
+> correzioni successive sono nel ramo release e richiedono nuovi pacchetti.
 >
 > La Web App deve seguire la release Android: è anche il canale per chi usa
 > iPhone dal browser. Il [percorso di allineamento Web/Android](docs/operations/WEB_ANDROID_RELEASE_PARITY.md)
 > richiede sorgenti e funzionalità coerenti, oltre alla verifica Safari/iPhone.
 
-**Nuova AAB generata:** **0.1.15 / 300036**, sorgente `9d5ff2f4`, include main `2d8b0c32` e il fix Tempo reale. Firmata e verificata, CI verde; candidata Web dalla stessa sorgente. **Disponibile nel test interno dal 23 ottobre alle 13:37**, con la lista di due account confermata dal proprietario. Sponsor disattivati. La 300036 è stata verificata sul Galaxy A52 Android 14 dopo aggiornamento Play: Tempo reale visibile anche dopo avvio a freddo, Posizione conservata, aria/pollini IT/FUR e percorsi di navigazione osservati PASS. La matrice Android 15/16 e i casi non esercitati restano aperti. [Prova sul dispositivo](docs/operations/ANDROID_0.1.15_300036_DEVICE_CHECK_20261023.md). [Caricamento e limiti](docs/operations/ANDROID_0.1.15_300036_UPLOAD_20261023.md).
+**Ultima AAB generata:** **0.1.15 / 300036**, sorgente `9d5ff2f4`, include main `2d8b0c32` e il fix Tempo reale. Firmata e verificata, CI verde; candidata Web dalla stessa sorgente. **Disponibile nel test interno dal 23 ottobre alle 13:37**, con la lista di due account confermata dal proprietario. Sponsor disattivati. La 300036 è stata verificata sul Galaxy A52 Android 14 dopo aggiornamento Play: Tempo reale visibile anche dopo avvio a freddo, Posizione conservata, aria/pollini IT/FUR e percorsi di navigazione osservati PASS. La matrice Android 15/16 e i casi non esercitati restano aperti. [Prova sul dispositivo](docs/operations/ANDROID_0.1.15_300036_DEVICE_CHECK_20261023.md). [Caricamento e limiti](docs/operations/ANDROID_0.1.15_300036_UPLOAD_20261023.md).
 
 **Rilievo storico della 300035: Tempo reale mostrava una schermata vuota.
 Difetto riprodotto dopo la segnalazione del proprietario; promozione allora
@@ -38,8 +39,19 @@ rientro, avvio nativo e navigazione verificati. Il proprietario conferma
 Posizione attiva prima e subito dopo l'aggiornamento. Restano non esercitati
 l'errore GPS temporaneo sul telefono e la matrice Android 15/16 e schermi grandi.
 [Verifica e limiti](docs/operations/ANDROID_0.1.15_300035_DEVICE_CHECK_20261023.md).
-La 300033 rimane una prova storica distinta. La PR 11 resta in bozza; nessuna
-promozione su main o pubblicazione in produzione eseguita. [Stato e prossimi passi](docs/operations/RELEASE_0.1.15_STATUS_20261021.md).
+La 300033 rimane una prova storica distinta. La [PR 11](https://github.com/meteofriul/meteofriul-app/pull/11)
+è stata unita in main (`eb109518`); questo non ha pubblicato Web o produzione Play.
+[Stato e prossimi passi](docs/operations/RELEASE_0.1.15_STATUS_20261021.md).
+
+**Allineamento sorgenti del 24 ottobre:** il ramo `codex/release-0.1.15` incorpora
+main `23153e54` e le quattro correzioni `cd471769`: recupero aria/pollini,
+impaginazione del messaggio GPS e due traduzioni friulane. Le correzioni sono
+verificate anche su Brave del Galaxy in italiano e friulano il 24 ottobre.
+La prova reale richiesta da AGENTS.md è completata; promozione e CI sono
+tracciate nella [PR 19](https://github.com/meteofriul/meteofriul-app/pull/19).
+[Esiti e limiti sul Galaxy](docs/operations/WEB_POST_300036_GALAXY_20261024.md).
+La AAB 300036 e il suo archivio Web non contengono queste quattro modifiche.
+Nessun nuovo codice versione riservato. [Verbale di allineamento](docs/operations/RELEASE_WEB_SOURCE_ALIGNMENT_20261024.md).
 
 **Job meteo ICON-2I — verifica del 21 ottobre 2026:** nuova corsa pubblicata,
 checkpoint schema 2, 215 documenti e sidecar e campione nazionale verificati.
@@ -68,11 +80,11 @@ e non sostituisce la sua verifica. Evidenze e limiti nel [verbale sul telefono](
 [Apri l'app web](https://meteofriul.app) ·
 [Sostieni il progetto](https://ko-fi.com/meteofriul)
 
-## Canali — preparazione locale del 23 ottobre; ultima lettura Web il 22 e Play il 23 ottobre 2026
+## Canali — sorgenti aggiornate il 24 ottobre; ultima lettura Web e Play il 23 ottobre 2026
 
 | Canale | Stato |
 | --- | --- |
-| Web | `0.1.14` pubblicata il 21 ottobre su `meteofriul.app`; candidata locale `0.1.15` da `9d5ff2f4`, con Tempo reale corretto, non distribuita; Safari/iPhone non verificato |
+| Web | `0.1.14` pubblicata il 21 ottobre; archivio `0.1.15` da `9d5ff2f4` non distribuito. Quattro correzioni successive verificate anche su Brave/Galaxy IT/FUR, tracciate nella PR 19; nuovi pacchetti ancora da confezionare. Safari/iPhone non verificato |
 | API | FastAPI su Cloud Run, chiamata direttamente via HTTPS da Web e Android |
 | Android | `0.1.15` (`300036`) disponibile nel test interno con fix Tempo reale; verifica sul Galaxy Android 14 dei percorsi osservati PASS, incluso Tempo reale dopo avvio a freddo. La qualifica completa resta distinta. Limiti GPS/Android 15–16/grandi schermi espliciti nel verbale. [Esito e limiti](docs/operations/RELEASE_0.1.15_STATUS_20261021.md) |
 | Google Play | Produzione `0.1.14` (`300031`) nella lettura del 23 ottobre; `0.1.15` (`300036`) solo nel test interno, una lista con due account confermata dal proprietario. Sponsor disattivati |
