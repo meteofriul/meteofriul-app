@@ -8,8 +8,10 @@ Correzioni e verbale salvati nel commit `53bedfe4c1adbe66912642acf439b90917caa63
 promosso in main locale in fast-forward dopo autorizzazione del proprietario.
 Gli hash dei tre file frontend identificano il candidato nella
 [ricevuta strutturata](evidence/cams-initial-events-contrast-20261024/verification.json).
-Gli stessi sorgenti verificati sono ora in main. GitHub e il ramo release
-restano alla base `8fb11af8`; nessun push o riallineamento release.
+Gli stessi sorgenti verificati sono ora anche in main su GitHub tramite
+PR 20, merge `7813d5c4`, con CI della PR e di main verdi.
+Il ramo release resta alla base `8fb11af8`; nessun nuovo pacchetto o deploy.
+La pubblicazione GitHub è stata autorizzata dopo la prima promozione locale.
 
 La richiesta riguarda i due rilievi residui della
 [precedente prova sul Galaxy](WEB_POST_300036_GALAXY_20261024.md), senza AAB,
@@ -109,6 +111,20 @@ fixture, screenshot, configurazioni locali e artefatti esclusi.
 
 Main inizialmente pulito e alla stessa base del ramo: promozione `--ff-only`
 riuscita, senza conflitti o modifiche al prodotto. Questa registrazione dello
-stato è un successivo commit solo documentale sul medesimo ramo. Nessuna CI
-remota avviata perché non è stato eseguito alcun push. Gli asset ignorati degli
-altri worktree, gli sponsor e i canali pubblicati restano invariati.
+stato è il successivo commit documentale `dd7ea109` sul medesimo ramo.
+Nella fase soltanto locale non era stata avviata alcuna CI remota. Gli asset
+ignorati degli altri worktree, gli sponsor e i canali pubblicati restano invariati.
+
+## Pubblicazione GitHub e CI
+
+Su successiva autorizzazione del proprietario, i due commit sono stati
+pubblicati tramite PR 20. Main richiede una PR: il primo push diretto è stato
+rifiutato senza modificare il remoto; la protezione non è stata alterata.
+CI della PR e CI del merge in main superate: frontend, backend e strumenti
+di preparazione tutti verdi. Nessuna esecuzione duplicata da cancellare.
+[Identità, collegamenti ed esiti](evidence/cams-initial-events-contrast-20261024/github-ci-20261024.md).
+L'aggiornamento finale di questo stato è solo Markdown: segue una PR
+documentale e non richiede di ripetere la CI completa, secondo il filtro
+`paths-ignore` del workflow. Nessun cambiamento al prodotto dopo la prova.
+Il ramo release non è stato riallineato; nessuna AAB, installazione, deploy
+o invio. Sponsor disattivati.

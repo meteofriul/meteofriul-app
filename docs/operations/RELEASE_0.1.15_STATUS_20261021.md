@@ -36,17 +36,18 @@ non una nuova AAB o Web distribuibile. Sponsor disattivati. Nessuna nuova
 versione riservata, installazione, pubblicazione o invio manuale.
 [Allineamento, controlli e passaggi ancora aperti](RELEASE_WEB_SOURCE_ALIGNMENT_20261024.md).
 
-## Promozione locale successiva alla PR 19
+## Promozione e GitHub dopo la PR 19
 
-Il 24 ottobre main è avanzato in fast-forward dalla base `8fb11af8` al commit
-di correzione `53bedfe4`, dal ramo `codex/cams-initial-loading-events-contrast`.
-Corretti il transitorio prima della prima risposta aria/pollini e il
-contatore Eventi poco contrastato in scuro. Prova Brave/Galaxy IT/FUR,
-76 test, lint e compilazione PASS; hash dei sorgenti confermati prima della
-promozione. La registrazione documentale segue sullo stesso ramo.
-GitHub e `codex/release-0.1.15` restano a `8fb11af8`: niente push o allineamento
-release in questa attività. Nessun nuovo pacchetto, installazione, deploy o
-invio. Sponsor disattivati. [Verbale e limiti](CAMS_INITIAL_LOADING_EVENTS_CONTRAST_20261024.md).
+Le correzioni `53bedfe4` e il registro `dd7ea109` sono stati pubblicati tramite
+la [PR 20](https://github.com/meteofriul/meteofriul-app/pull/20), merge `7813d5c4`.
+Corretti il transitorio prima della prima risposta aria/pollini e il contatore
+Eventi poco contrastato in scuro. Prova Brave/Galaxy IT/FUR, 76 test, lint e
+compilazione PASS; hash dei sorgenti confermati prima della promozione.
+[CI della PR](https://github.com/meteofriul/meteofriul-app/actions/runs/40106722957) e [CI di main](https://github.com/meteofriul/meteofriul-app/actions/runs/40107051151) entrambe verdi nei tre job.
+Il ramo `codex/release-0.1.15` resta a `8fb11af8`, da riallineare prima dei
+prossimi pacchetti. Nessuna nuova AAB, installazione, pubblicazione Web/Play,
+modifica dei job o invio. Sponsor disattivati.
+[Verbale e limiti](CAMS_INITIAL_LOADING_EVENTS_CONTRAST_20261024.md).
 
 ## Canali e rami
 
@@ -55,7 +56,7 @@ invio. Sponsor disattivati. [Verbale e limiti](CAMS_INITIAL_LOADING_EVENTS_CONTR
 | Produzione Play | Lettura Console del 23 ottobre: 0.1.14 / 300031; nessuna promozione della 0.1.15 in produzione |
 | Test interno Play | 0.1.15 / 300036 disponibile dal 23 ottobre alle 13:37; una sola lista con due account, mantenuta su conferma del proprietario; sponsor disattivati |
 | Web pubblica | Pubblicazione del 21 ottobre da `1b0287c1`, versione 0.1.14; HTML e asset riconfermati il 23 ottobre. Candidata 0.1.15 aggiornata da `9d5ff2f4` preparata, non distribuita; Safari/iPhone non verificato |
-| Base main incorporata nella AAB | `2d8b0c32`, PR 17 e CI 39935808248 verde. La [PR 11](https://github.com/meteofriul/meteofriul-app/pull/11) è unita in main con `eb109518`. Main locale include ora `53bedfe4`, dopo PR 19 (`8fb11af8`); i commit aggiunti dopo la build non cambiano la AAB |
+| Base main incorporata nella AAB | `2d8b0c32`, PR 17 e CI 39935808248 verde. La [PR 11](https://github.com/meteofriul/meteofriul-app/pull/11) è unita in main con `eb109518`. Main su GitHub include ora `53bedfe4` tramite PR 20 (`7813d5c4`); i commit aggiunti dopo la build non cambiano la AAB |
 | `codex/release-0.1.15` | Sorgente AAB `9d5ff2f4`: main `2d8b0c32`, Posizione, transitorio CAMS e configurazione nativa conservati. I verbali di build/Play/dispositivo sono seguiti dal fix frontend `cd471769` e dall’unione di main `ffa61949`. Queste nuove correzioni non sono nell’artefatto 300036 né nella Web archiviata; prova Brave/Galaxy IT/FUR del 24 ottobre PASS; promozione tracciata nella PR 19 |
 | Ultimo artefatto osservato sul telefono (300036) | Sorgente `9d5ff2f415ab8b10be510eff2a0b058a8c2408ac`, AAB SHA256 `024212752b3af72f163d75849aa53c2b191ba0352e42423b11efccd2d7f8b51f`; installer Play Store; [verifica sul Galaxy](ANDROID_0.1.15_300036_DEVICE_CHECK_20261023.md) |
 
@@ -150,7 +151,7 @@ allineamento a main dopo la prova della 300036. La PR 11 è stata unita in `eb10
 il suo record GitHub conserva l’esito e la CI. Il successivo allineamento del
 24 ottobre è documentato separatamente: prova delle quattro correzioni
 sul dispositivo completata e PR 19 promossa. Le due rifiniture ulteriori
-sono anch'esse verificate e promosse in main locale, senza push. Nessuno SHA di merge sostituisce l’identità
+sono anch'esse verificate e pubblicate in main tramite PR 20, con CI verde. Nessuno SHA di merge sostituisce l’identità
 sorgente della AAB già firmata.
 Nessuna pubblicazione Web o produzione Play è inclusa. Restano espliciti i casi
 non esercitati, i vecchi worktree indipendenti e i loro file non ancora salvati;

@@ -18,6 +18,10 @@
 ## Branch and release workflow
 
 - Treat `main` as the verified and promoted baseline.
+- GitHub protects `main` and requires a pull request. For an authorized update
+  of remote main, push the verified workstream branch, check the PR CI, merge
+  through the PR, then check main CI. Do not attempt a direct push to main or
+  bypass the protection. Markdown-only state updates use a documentation PR.
 - Start each distinct feature, hardening activity, or release workstream from
   the current `main` in a dedicated `codex/` branch.
 - Multiple changes and test builds that belong to the same workstream remain on
