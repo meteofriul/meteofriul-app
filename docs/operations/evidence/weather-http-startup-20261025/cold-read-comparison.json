@@ -1,0 +1,28 @@
+{
+  "main": {
+    "status": "200 OK",
+    "storage_operations": {
+      "metadata_read": 1300,
+      "download": 10
+    },
+    "storage_operations_total": 1310,
+    "response_sha256": "a0623d4a12d3e5f0e9da66f1a8b6650fb5f4ffd7080426b61658ca7e636425a1",
+    "offline_seconds": 0.09,
+    "cams_operations": 874
+  },
+  "candidate": {
+    "status": "200 OK",
+    "storage_operations": {
+      "metadata_read": 3,
+      "download": 3,
+      "metadata_list": 2
+    },
+    "storage_operations_total": 8,
+    "response_sha256": "a0623d4a12d3e5f0e9da66f1a8b6650fb5f4ffd7080426b61658ca7e636425a1",
+    "offline_seconds": 0.0219,
+    "cams_operations": 0
+  },
+  "same_body": true,
+  "network_blocked": true,
+  "scope": "Synthetic complete 215-municipality current/previous runs for ICON and CAMS; operation counts, not measured cloud latency."
+}

@@ -8,7 +8,7 @@ import json
 import os
 from google.cloud import storage
 from local_pipeline.gcs_object_store import GCSObjectStore
-from local_pipeline.contract_v1 import load_catalog
+from local_pipeline.contract_v1 import load_catalog, ICON_PROVIDER, CAMS_PROVIDER, CAMS_POLLEN_PROVIDER
 from local_pipeline.published_runs_reader import PublishedRunsObjectReader
 from local_pipeline.sqlite_object_store import ObjectNotFound, ObjectStoreError
 from local_pipeline.http_data_plane import _request_object_key, _gzip_deterministic, _accepts_gzip, _if_none_match_matches
@@ -42,9 +42,17 @@ class CachedReadOnlyStore:
                     keys = [prefix + value['path'] for value in objects.values()]
                     for item in keys:
                         _request_object_key('/' + item)
-                    with ThreadPoolExecutor(max_workers=8) as pool:
-                        for item, head in zip(keys, pool.map(self.store.head, keys)):
-                            self.heads[item] = (now + 3600, head)
+                    batch = getattr(self.store, 'municipality_heads', None)
+                    if callable(batch):
+                        heads = batch(keys)
+                        if set(heads) != set(keys):
+                            raise ObjectStoreError('incomplete municipality metadata batch')
+                    else:
+                        with ThreadPoolExecutor(max_workers=8) as pool:
+                            heads = dict(zip(keys, pool.map(self.store.head, keys)))
+                    # Publish the cache only after the entire batch succeeds.
+                    for item, head in heads.items():
+                        self.heads[item] = (monotonic() + 3600, head)
                     while len(self.heads) > 1500:
                         self.heads.popitem(last=False)
             if cached:
@@ -111,7 +119,8 @@ class PilotApplication:
             with self.lock:
                 if self.reader is None:
                     self.reader = self.factory()
-                obj = self.reader.get(key)
+                reader = self.reader
+            obj = reader.get(key)
         except ObjectNotFound:
             return answer('404 Not Found', b'{"error":"not_published"}', [('Cache-Control', 'no-store')])
         except ObjectStoreError:
@@ -128,10 +137,39 @@ class PilotApplication:
             return []
         return answer('200 OK', body, extra)
 
+class ProviderScopedReader:
+    """Initialize ICON independently; core/pollen keep one atomic CAMS view."""
+    def __init__(self, factory):
+        self.factory = factory
+        self.readers = {}
+        self.locks = {'icon': RLock(), 'cams': RLock()}
+
+    def get(self, key):
+        if key.startswith(f'weather/v1/{ICON_PROVIDER}/'):
+            scope, providers = 'icon', (ICON_PROVIDER,)
+        elif key.startswith((f'weather/v1/{CAMS_PROVIDER}/',
+                             f'weather/v1/{CAMS_POLLEN_PROVIDER}/',
+                             'weather/v1/families/cams/')):
+            scope, providers = 'cams', (CAMS_PROVIDER, CAMS_POLLEN_PROVIDER)
+        else:
+            raise ObjectNotFound(key)
+        # Separate locks and stores prevent a slow CAMS startup from holding
+        # an ICON request (including the second notice-job attempt).
+        with self.locks[scope]:
+            if scope not in self.readers:
+                self.readers[scope] = self.factory(providers)
+            return self.readers[scope].get(key)
+
+
 def build_reader():
     if os.environ.get('GOOGLE_CLOUD_PROJECT') != PROJECT:
         raise ValueError('weather production configuration required')
-    client = storage.Client(project=PROJECT)
-    return PublishedRunsObjectReader(CachedReadOnlyStore(GCSObjectStore(client.bucket(DATA_BUCKET))), load_catalog())
+    catalog = load_catalog()
+    def factory(providers):
+        client = storage.Client(project=PROJECT)
+        return PublishedRunsObjectReader(
+            CachedReadOnlyStore(GCSObjectStore(client.bucket(DATA_BUCKET))),
+            catalog, providers=providers)
+    return ProviderScopedReader(factory)
 
 application = PilotApplication(build_reader)

@@ -28,7 +28,7 @@ class RemoteObjectStoreError(ObjectStoreError):
 
 
 def _http_method(operation):
-    return {"metadata_read": "GET", "download": "GET", "upload": "POST"}.get(operation)
+    return {"metadata_read": "GET", "metadata_list": "GET", "download": "GET", "upload": "POST"}.get(operation)
 
 
 def _object_context(key):
@@ -141,6 +141,43 @@ class GCSObjectStore:
         blob = self._blob(key)
         self._call(blob.reload, _operation="metadata_read", _key=key)
         return self._head(key, blob)
+
+    def municipality_heads(self, keys):
+        """Read one immutable run's municipality metadata, never its payloads.
+
+        Listing returns the same size/hash/generation metadata as individual
+        reloads. Every requested object must be present and validated before
+        any result is returned. No partial list authorizes a published run.
+        """
+        keys = tuple(keys)
+        if not 1 <= len(keys) <= 215 or len(set(keys)) != len(keys):
+            raise ValueError("invalid municipality metadata batch")
+        pattern = r"weather/v1/(?:icon2i|cams_europe|cams_europe_pollen)/runs/\d{8}T\d{6}Z/municipalities/\d{6}\.json"
+        if any(not isinstance(key, str) or not re.fullmatch(pattern, key) for key in keys):
+            raise ValueError("invalid municipality metadata key")
+        parents = {key.rsplit("/", 1)[0] for key in keys}
+        if len(parents) != 1:
+            raise ValueError("municipality metadata batch spans runs")
+        names = {self._blob(key).name: key for key in keys}
+        prefix = next(iter(names)).rsplit("/", 1)[0] + "/"
+
+        def read(*, timeout, retry):
+            # Consume the lazy iterator inside _call so page errors are also
+            # classified/sanitized. Bound unexpected objects, not just pages.
+            result = {}
+            for blob in self.bucket.list_blobs(prefix=prefix, page_size=256,
+                                                max_results=216, timeout=timeout, retry=retry):
+                key = names.get(blob.name)
+                if key is not None:
+                    if key in result:
+                        raise ObjectStoreError("duplicate municipality metadata")
+                    result[key] = self._head(key, blob)
+            return result
+
+        result = self._call(read, _operation="metadata_list", _key=keys[0])
+        if set(result) != set(keys):
+            raise ObjectNotFound("incomplete municipality metadata batch")
+        return result
 
     def get(self, key):
         blob = self._blob(key)

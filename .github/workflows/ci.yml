@@ -87,6 +87,12 @@ jobs:
       - name: Compile backend
         run: python -m compileall -q app
 
+      - name: Test regional HTTP startup and storage metadata
+        working-directory: .
+        run: |
+          python -B -m unittest discover -s experiments/weather_autonomy -p 'test_cloud_reader*.py' -v
+          python -B -m unittest discover -s experiments/weather_autonomy -p 'test_gcs_object_store.py' -v
+
       - name: Install verified promtool for monitor tests
         working-directory: .
         shell: bash
