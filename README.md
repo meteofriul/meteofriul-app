@@ -1,6 +1,6 @@
 # Meteo Friûl
 
-**Lavoro backend locale del 25 ottobre:** [Pordenone Pensa: cinque appuntamenti distinti](docs/operations/EVENTS_PNPENSA_SESSIONS_20261025.md) e [Barcolana: budget delle letture](docs/operations/EVENTS_BARCOLANA_READ_BUDGET_20261025.md). Due correzioni non distribuite, con 777 test della suite pilot (1 skip) e 5 del trasporto HTTP superati. Schema Eventi compatibile con Web e Android esistenti; nessun pacchetto, pubblicazione o stato sponsor modificato. Recupero in produzione ancora da verificare.
+**Aggiornamento backend del 25 ottobre:** PR 22 integrata, CI superata e solo job Eventi aggiornato. [Verbale e rollback](docs/operations/EVENTS_PNPENSA_BARCOLANA_DEPLOY_20261025.md). Corsa ordinaria del 26 ottobre alle 05:00 italiane: `pending`. Web e Android mantengono lo stesso contratto; pacchetti e pubblicazioni invariati, sponsor disattivati. Recupero ordinario ancora da confermare; vedere esito e limiti nel verbale.
 
 **Prima di preparare una release Android:** leggere le [regole obbligatorie di preparazione e recupero dagli errori](docs/operations/ANDROID_BUILD_PREVENTION_RULES.md), insieme al [runbook Play](docs/operations/PLAY_AAB_RUNBOOK.md).
 

@@ -1,6 +1,8 @@
 # Barcolana: budget delle letture — 25 ottobre 2026
 
-Stato: correzione locale, non distribuita. Ramo `codex/events-pnpensa-barcolana`,
+**Aggiornamento successivo:** PR 22 integrata e job Eventi aggiornato il 25 ottobre. [Deploy, rollback e verifica della corsa ordinaria](EVENTS_PNPENSA_BARCOLANA_DEPLOY_20261025.md). I risultati sotto descrivono la fase locale, precedente alla distribuzione.
+
+Stato alla chiusura della verifica locale: correzione non ancora distribuita. Ramo `codex/events-pnpensa-barcolana`,
 base main `0841020a42d836e44de306e9639b07b98fceaefc`; segue il commit Pordenone
 Pensa `84cb94c0` ([verbale](EVENTS_PNPENSA_SESSIONS_20261025.md)).
 
