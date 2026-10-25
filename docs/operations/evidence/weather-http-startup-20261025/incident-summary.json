@@ -1,0 +1,42 @@
+{
+  "date": "2026-10-25",
+  "timezone": "Europe/Rome",
+  "failed_local_hours": [
+    "12:00",
+    "15:00"
+  ],
+  "source_timeout_records": 24,
+  "evaluations_blocked_per_failure": 12,
+  "notification_attempts_in_failures": 0,
+  "requests": [
+    {
+      "local_slot": "12:00",
+      "attempt": 1,
+      "status": 504,
+      "latency": "90.001333475s",
+      "path": "/weather/v1/icon2i/latest.json"
+    },
+    {
+      "local_slot": "12:00",
+      "attempt": 2,
+      "status": 200,
+      "latency": "61.613270048s",
+      "path": "/weather/v1/icon2i/latest.json"
+    },
+    {
+      "local_slot": "15:00",
+      "attempt": 1,
+      "status": 200,
+      "latency": "85.864942016s",
+      "path": "/weather/v1/icon2i/latest.json"
+    },
+    {
+      "local_slot": "15:00",
+      "attempt": 2,
+      "status": 200,
+      "latency": "55.928491470s",
+      "path": "/weather/v1/icon2i/latest.json"
+    }
+  ],
+  "cause_limit": "Both failures coincide with new HTTP instance startup. Code cold path initializes all providers and performs 1290 separate municipality metadata reads; no per-phase cloud timing available."
+}

@@ -1,5 +1,7 @@
 # Meteo Friûl
 
+**Avvio HTTP FVG — lavoro locale del 25 ottobre:** preparata sul ramo `codex/weather-http-startup` la correzione dei timeout che hanno bloccato gli avvisi delle 12:00 e 15:00. 91 test locali superati; [causa, verifiche e passaggio ancora da autorizzare](docs/operations/WEATHER_HTTP_STARTUP_20261025.md). Nessun deploy: il servizio pubblico mantiene il comportamento precedente. Contratti Web/Android e artefatti invariati; nessuna nuova AAB necessaria per questo intervento. Sponsor disattivati e controllo Eventi del 26 ottobre mantenuto.
+
 **Sintesi per data locale — sorgenti del 25 ottobre:** [PR 24](https://github.com/meteofriul/meteofriul-app/pull/24) integrata in main (`8a47c752`); 84 test locali e CI di PR/main superati. [Verbale e limiti](docs/operations/SUMMARY_LOCAL_DATE_MONITOR_20261025.md). Nuovo allarme non attivato: collegamento operativo ancora da completare. Orari, Web/Android e sponsor invariati; controllo Eventi del 26 ottobre mantenuto.
 
 **Aggiornamento backend del 25 ottobre:** PR 22 integrata, CI superata e solo job Eventi aggiornato. [Verbale e rollback](docs/operations/EVENTS_PNPENSA_BARCOLANA_DEPLOY_20261025.md). Corsa ordinaria del 26 ottobre alle 05:00 italiane: `pending`. Web e Android mantengono lo stesso contratto; pacchetti e pubblicazioni invariati, sponsor disattivati. Recupero ordinario ancora da confermare; vedere esito e limiti nel verbale.

@@ -1,0 +1,50 @@
+{
+  "tests": 18,
+  "success": true,
+  "failures": 0,
+  "errors": 0,
+  "skipped": 0,
+  "passed": [
+    "test_cloud_reader_startup.BatchMetadataTests.test_incomplete_batch_rejected_and_not_cached",
+    "test_cloud_reader_startup.BatchMetadataTests.test_invalid_hash_generation_size_and_duplicate_metadata_rejected",
+    "test_cloud_reader_startup.BatchMetadataTests.test_page_error_is_sanitized_and_does_not_cache_partial_metadata",
+    "test_cloud_reader_startup.BatchMetadataTests.test_same_metadata_as_individual_heads",
+    "test_cloud_reader_startup.BatchMetadataTests.test_scope_is_restricted_before_storage",
+    "test_cloud_reader_startup.StartupTests.test_bad_pollen_prevents_partial_cams_family_but_not_icon",
+    "test_cloud_reader_startup.StartupTests.test_broken_cams_does_not_block_icon_but_cams_remains_unavailable",
+    "test_cloud_reader_startup.StartupTests.test_cams_core_and_pollen_keep_one_verified_family",
+    "test_cloud_reader_startup.StartupTests.test_cams_waiting_cannot_hold_icon_request",
+    "test_cloud_reader_startup.StartupTests.test_cold_icon_has_eight_storage_operations_and_no_cams_or_payload_reads",
+    "test_cloud_reader_startup.StartupTests.test_explicit_revocation_wins_after_pointer_cache_refresh",
+    "test_cloud_reader_startup.StartupTests.test_http_bytes_gzip_etag_head_and_cors_unchanged",
+    "test_cloud_reader_startup.StartupTests.test_invalid_path_never_starts_reader",
+    "test_cloud_reader_startup.StartupTests.test_missing_or_mismatching_metadata_still_rejects_entire_run",
+    "test_cloud_reader_startup.StartupTests.test_production_factory_reads_only_the_requested_product",
+    "test_cloud_reader_startup.StartupTests.test_production_factory_serves_cams_when_icon_is_missing",
+    "test_cloud_reader_startup.StartupTests.test_unpublished_run_remains_hidden",
+    "test_cloud_reader_startup.StartupTests.test_warm_pointer_needs_no_extra_io_and_single_payload_is_downloaded_on_demand"
+  ],
+  "elapsed_seconds": 15.637,
+  "network_and_dns_blocked": true,
+  "baseline_tests": 2,
+  "baseline_expected_failures": [
+    "test_cloud_reader_startup.StartupTests.test_production_factory_reads_only_the_requested_product",
+    "test_cloud_reader_startup.StartupTests.test_production_factory_serves_cams_when_icon_is_missing"
+  ],
+  "baseline_errors": 0,
+  "baseline_reproduces_defect": true,
+  "tested_source_sha256": {
+    "experiments/weather_autonomy/cloud_reader.py": "a20060d08c61bde078412526a2dafb2c3f110f2f5bc05aff43e18f8b59408f50",
+    "experiments/weather_autonomy/local_pipeline/gcs_object_store.py": "b5f4c30f23fc8988e5c74a59950b28bf8f734486feee914c94e4684063aa68a0",
+    "experiments/weather_autonomy/test_cloud_reader_startup.py": "3f430e76620f9451f44fa4dfe69848db5260a503b18b18a6ada5a4bad291068b"
+  },
+  "runtime_code_changed_during_review": false,
+  "tracked_diff_scope": [
+    "README.md",
+    "docs/operations/RELEASE_0.1.15_STATUS_20261021.md",
+    "docs/operations/WEB_ANDROID_RELEASE_PARITY.md",
+    "experiments/weather_autonomy/cloud_reader.py",
+    "experiments/weather_autonomy/local_pipeline/gcs_object_store.py"
+  ],
+  "jobs_producers_schedulers_monitors_frontend_changed": false
+}
