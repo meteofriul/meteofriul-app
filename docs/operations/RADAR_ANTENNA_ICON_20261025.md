@@ -11,8 +11,9 @@ Restano invariati dimensioni, colori, logica, stato attivo/disattivo, etichette
 accessibili, sorgenti meteo e controlli del bollettino. Nessuna nuova dipendenza.
 
 Modifica applicativa salvata nel commit `738c6538`, verificata sul Galaxy e
-promossa in **main locale** insieme al presente verbale. Il ramo dedicato è
-conservato. Nessun push: GitHub e ramo release non aggiornati da questa promozione.
+promossa prima in main locale con il verbale `5b4fcd58`, poi pubblicata su
+GitHub mediante la PR 28, merge `d159ec59`, dopo la CI. Il ramo dedicato è
+conservato; ramo release non aggiornato da questa promozione.
 La modifica non compare negli artefatti Android/Web già generati né nella Web pubblica.
 Sponsor disattivati: nessuna modifica a configurazione, pannello o dati sponsor.
 
@@ -75,8 +76,35 @@ locali in `.tmp/radar-antenna-galaxy-20261025`, ignorata da Git. I precedenti
 controlli automatici restano riferiti alla stessa identica sorgente: l'hash è
 stato ricontrollato e in questo passaggio cambia soltanto la documentazione.
 Promozione locale senza conflitti, con avanzamento di main dal precedente
-`35843b19`; nessuna CI remota avviata in assenza di push. README, stato release e
+`35843b19`; in quella fase non era ancora stato autorizzato il push. README, stato release e
 parità Web aggiornati distinguendo sorgenti approvate e pacchetti non rigenerati.
+
+## Pubblicazione GitHub e CI — 25 ottobre 2026
+
+Pubblicato il ramo `codex/radar-antenna-icon`, senza push diretto su main.
+[PR 28](https://github.com/meteofriul/meteofriul-app/pull/28) integrata con merge
+`d159ec597137901e9d7ea92ab1ab70ce9d381fba`, dopo il successo dei controlli sul
+candidato esatto `5b4fcd58189ac94efe96d4ec51bb0f81cf0f014b`.
+
+| Verifica | Sorgente | Esito |
+| --- | --- | --- |
+| [CI PR 28](https://github.com/meteofriul/meteofriul-app/actions/runs/40229982180) | `5b4fcd58` | Frontend, backend e hosting-preview-tool: tutti superati. |
+| [CI main](https://github.com/meteofriul/meteofriul-app/actions/runs/40230392567) | `d159ec59` | Frontend, backend e hosting-preview-tool: tutti superati. |
+
+La CI include test, lint, build e contratti degli strumenti di release; non
+produce né pubblica una AAB e non distribuisce servizi. Nessun workflow manuale
+avviato. Le evidenze complete delle due esecuzioni sono nella cartella locale
+ignorata `.tmp/radar-antenna-publish-20261025` (`pr-ci.json`, `main-ci.json`).
+L'aggiornamento di questo verbale, README, stato release e parità Web contiene
+soltanto Markdown: diff e collegamenti controllati localmente; la CI completa è
+esclusa dal workflow per questi soli file. Il codice è identico a quello già
+verificato sul Galaxy e nei due run indicati sopra.
+
+Il JSON della prova Galaxy conserva lo stato storico della verifica locale
+precedente al push: per la pubblicazione successiva fa fede questa sezione.
+Ramo release, AAB già prodotte, pacchetti e pubblicazioni Web non rigenerati o
+aggiornati. Sponsor disattivati; nessuna modifica a installazioni, servizi,
+notifiche, destinatari o pianificazioni. Controllo Eventi del 26 ottobre attivo.
 
 ## Evidenze e limiti
 
@@ -91,6 +119,7 @@ nomi e hash sono nella ricevuta. Nessuna immagine o credenziale privata in Git.
   modificati; lo stesso componente rende entrambe le lingue.
 - Il controllo è limitato all'icona e al comando della mappa, non attesta qualità
   meteorologica, recapito di notifiche o funzionamento di tutti i servizi.
-- Nessuna AAB, installazione, push, deploy o invio. Nessuna modifica agli orari.
+- Push e integrazione GitHub autorizzati separatamente dopo la prova locale.
+  Nessuna AAB, installazione, deploy o invio. Nessuna modifica agli orari.
 - Follow-up Eventi del **26 ottobre, corsa delle 05:00 Europe/Rome**, mantenuto
   attivo; prima verifica dalle 05:15, anche più tardi se il PC viene acceso dopo.
