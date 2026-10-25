@@ -1,6 +1,6 @@
 # Stato release 0.1.15 e lavoro salvato — aggiornamento sorgenti del 24 ottobre 2026
 
-**Antenna radar — preparazione locale del 25 ottobre:** nuova icona nel ramo `codex/radar-antenna-icon`, verificata nel browser in chiaro/scuro, attiva e disattiva; due regressioni mirate superate. [Verbale e limiti](RADAR_ANTENNA_ICON_20261025.md). Prova su dispositivo ancora da eseguire prima della promozione. Main, ramo release, AAB e Web pubblica non aggiornati da questa modifica. Sponsor disattivati e controllo Eventi del 26 ottobre mantenuto.
+**Antenna radar — verificata sul Galaxy il 25 ottobre:** icona del commit `738c6538` promossa in main locale dopo la prova reale su Brave, in chiaro/scuro e attiva/disattiva; due regressioni mirate già superate sulla stessa sorgente. [Verbale ed evidenze](RADAR_ANTENNA_ICON_20261025.md). Ramo dedicato conservato; nessun push. Ramo release, AAB, pacchetti Web e pubblicazioni non aggiornati da questa modifica. Sponsor disattivati e controllo Eventi del 26 ottobre mantenuto.
 
 **Avvio HTTP FVG — sorgenti del 25 ottobre:** [PR 26](https://github.com/meteofriul/meteofriul-app/pull/26) integrata in main (`613fe78a`), commit della correzione `a431bd14`. 91 test locali e CI di PR/main superati. [Verbale, evidenze e limiti](WEATHER_HTTP_STARTUP_20261025.md). Nessun deploy: il servizio pubblico mantiene il comportamento precedente. Contratti Web/Android e artefatti invariati; nessuna nuova AAB necessaria per questo intervento. Sponsor disattivati e controllo Eventi del 26 ottobre mantenuto.
 

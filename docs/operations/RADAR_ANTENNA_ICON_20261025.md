@@ -10,8 +10,10 @@ Cambiano soltanto import e componente SVG in `TerritoryImmersiveMap.jsx`.
 Restano invariati dimensioni, colori, logica, stato attivo/disattivo, etichette
 accessibili, sorgenti meteo e controlli del bollettino. Nessuna nuova dipendenza.
 
-La modifica è salvata sul ramo dedicato e non è promossa in main o nel ramo
-release. Non compare negli artefatti Android/Web già generati né nella Web pubblica.
+Modifica applicativa salvata nel commit `738c6538`, verificata sul Galaxy e
+promossa in **main locale** insieme al presente verbale. Il ramo dedicato è
+conservato. Nessun push: GitHub e ramo release non aggiornati da questa promozione.
+La modifica non compare negli artefatti Android/Web già generati né nella Web pubblica.
 Sponsor disattivati: nessuna modifica a configurazione, pannello o dati sponsor.
 
 ## Verifica browser locale
@@ -50,6 +52,32 @@ ESLint del componente superato nella precedente verifica della stessa identica
 modifica. `git diff --check` superato. Nessun test aggiunto per duplicare la semplice
 sostituzione del simbolo.
 
+## Verifica reale Brave / Galaxy e promozione locale
+
+Il 25 ottobre verificata la stessa sorgente `738c6538` su **Galaxy A52
+(SM-A525F), Android 14 / API 34, Brave 1.97.59**, motore Chrome 155.0.8059.85.
+Anteprima del ramo sulla porta 5174 raggiunta tramite USB; nessuna installazione,
+nessuna emulazione e nessuna modifica dell'app Android installata.
+
+- Chiaro e scuro: antenna leggibile e interamente contenuta nel pulsante,
+  sia spenta sia attiva. Nessuna ulteriore correzione CSS necessaria.
+- Tocco sul telefono: apertura e chiusura del pannello radar, con
+  `aria-pressed` rispettivamente `true` e `false`, in entrambi i temi.
+- Misure reali: pulsante 44 × 44 px CSS, SVG 21 × 21 px CSS;
+  viewport 411 × 728 px, DPR 2,625; nessun overflow orizzontale.
+- Riscontro effettuato sugli stati effettivi e sulle schermate dopo i tocchi,
+  non dedotto dal solo successo del comando di interazione.
+- Ripristinati tema chiaro e radar spento, come all'inizio della prova su Brave.
+
+Le misure e gli hash delle sei schermate del Galaxy (quattro stati e due ritorni
+allo stato spento) sono nella ricevuta, sezione `device_check`. I file sono solo
+locali in `.tmp/radar-antenna-galaxy-20261025`, ignorata da Git. I precedenti
+controlli automatici restano riferiti alla stessa identica sorgente: l'hash è
+stato ricontrollato e in questo passaggio cambia soltanto la documentazione.
+Promozione locale senza conflitti, con avanzamento di main dal precedente
+`35843b19`; nessuna CI remota avviata in assenza di push. README, stato release e
+parità Web aggiornati distinguendo sorgenti approvate e pacchetti non rigenerati.
+
 ## Evidenze e limiti
 
 [Ricevuta con misure e hash](evidence/radar-antenna-20261025/verification.json).
@@ -57,8 +85,8 @@ Quattro screenshot sono conservati localmente nella cartella
 `radar-antenna-20261025` dell'area visualizzazioni della chat, fuori dal repository;
 nomi e hash sono nella ricevuta. Nessuna immagine o credenziale privata in Git.
 
-- Nessuna nuova prova sul Galaxy o Safari/iPhone; prima di un'eventuale promozione
-  resta la verifica su dispositivo prevista da AGENTS.md.
+- Prova reale Brave/Galaxy superata per questo intervento. Safari/iPhone e
+  nuova AAB con questa icona non provati: non sono attestati da questa verifica.
 - Nessuna nuova verifica linguistica in friulano: testi italiani e friulani non
   modificati; lo stesso componente rende entrambe le lingue.
 - Il controllo è limitato all'icona e al comando della mappa, non attesta qualità
