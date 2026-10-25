@@ -88,8 +88,11 @@ def _delivery(summary: Mapping[str, Any]) -> tuple[str, str]:
         if values["eligible_devices"] or values["attempted"]:
             raise ValueError("inconsistent empty audience")
         return "completed", "no_eligible_device"
-    if status in {"sent", "deduplicated", "opted_out", "retired_targets"} and accounted != values["attempted"]:
-        raise ValueError("unaccounted delivery attempts")
+    if status in {"sent", "deduplicated", "opted_out", "retired_targets"}:
+        if accounted != values["attempted"]:
+            raise ValueError("unaccounted delivery attempts")
+        if values["attempted"] != values["eligible_devices"]:
+            raise ValueError("unaccounted eligible devices")
     if status == "sent" and values["sent"]:
         return "completed", "fcm_accepted"
     if status == "deduplicated" and values["deduplicated"]:
@@ -190,7 +193,9 @@ def evaluate_slot(slot: Mapping[str, str], evidence: Mapping[str, Any], *, now: 
         result["delivery"].update({key: summary.get(key, 0) for key in ("opted_out", "retired_targets")})
         trace = summary.get("source_trace")
         # Trace is optional for legacy jobs; never copy arbitrary payloads to output.
-        if isinstance(trace, Mapping):
+        if "source_trace" in summary:
+            if not isinstance(trace, Mapping):
+                raise ValueError("invalid explicit source trace")
             from app.services.summary_telemetry import sanitize_source_trace
             result["source_trace"] = sanitize_source_trace(trace)
         if state == "completed" and runtime != "succeeded":

@@ -163,6 +163,22 @@ class SummarySlotMonitorTests(unittest.TestCase):
         self.evidence["executions"][0]["summary"] = summary(status="retired_targets",sent=0,retired_targets=2)
         self.check("completed","retired_targets")
 
+    def test_eligible_device_without_attempt_cannot_be_complete(self):
+        for status, counts in (("sent", {"sent": 1}),
+                               ("deduplicated", {"sent": 0, "deduplicated": 1}),
+                               ("opted_out", {"sent": 0, "opted_out": 1}),
+                               ("retired_targets", {"sent": 0, "retired_targets": 1})):
+            with self.subTest(status=status):
+                self.evidence["executions"][0]["summary"] = summary(status=status, attempted=1, **counts)
+                self.check("check_unavailable", "evidence_invalid")
+
+    def test_legacy_missing_trace_allowed_but_explicit_invalid_trace_rejected(self):
+        self.check("completed")
+        for trace in (None, "private", [], False, {"fetched_groups": 0}):
+            with self.subTest(trace=trace):
+                self.evidence["executions"][0]["summary"]["source_trace"] = trace
+                self.check("check_unavailable", "evidence_invalid")
+
     def test_failure_and_conflicting_execution_identity(self):
         e=self.evidence["executions"][0]
         e["summary"]=summary(status="failed",sent=0,failed=2)

@@ -4,8 +4,9 @@ Stato: **implementazione locale e regressioni completate; non attiva nel cloud**
 Ramo `codex/summary-local-date-monitor`, derivato da main
 `e601510659387783d975b9cf62eb77328d78eae5`. Controllo, diagnostica e verbali
 consolidati nel commit locale di questo ramo, autorizzato il 25 ottobre.
-Main e GitHub non sono aggiornati da questo passaggio. Nessun push, PR, deploy,
-esecuzione cloud, acquisizione o invio manuale.
+La successiva revisione e promozione tramite PR/CI sono autorizzate il 25 ottobre;
+il loro esito va distinto dall’attivazione cloud. Nessun deploy, esecuzione cloud,
+acquisizione o invio manuale in questo lavoro.
 Sponsor disattivati; Android, Web e i relativi pacchetti non cambiano.
 
 ## Comportamento implementato
@@ -89,7 +90,7 @@ con input e replay storico, esiti test e inventario hash. Precedenti verifiche:
 
 ## Verifiche locali completate
 
-82 test, zero errori/fallimenti, zero saltati. Accesso socket bloccato durante i
+Preparazione iniziale: 82 test. Revisione successiva: **84 test**, zero errori/fallimenti, zero saltati. Accesso socket bloccato durante i
 test; servizi, sorgenti, storage e FCM sostituiti da simulazioni locali.
 
 - Giorni da 23/24/25 ore, primavera 2026/2027, autunno 2026 e mezzanotte.
@@ -105,6 +106,26 @@ Un primo test serale usava per errore la corsa 00 UTC, oltre il limite di età
 serale: corretta la fixture con quella valida 12 UTC, senza allentare la regola
 applicativa. Un lancio dalla radice senza il percorso `backend` è stato corretto;
 la sessione finale completa è quella registrata nell'evidenza test.
+
+## Revisione per main del 25 ottobre
+
+Commit iniziale revisionato: `06aa2016`. Due casi corretti prima della PR:
+
+- una sintesi non è completa se un destinatario idoneo non ha ricevuto neppure
+  un tentativo e non esiste un esito che spieghi l’assenza;
+- i vecchi log senza `source_trace` restano compatibili, ma un trace presente
+  con tipo/struttura invalidi diventa `check_unavailable`, mai ignorato per ottenere verde.
+
+Regressioni mirate aggiunte; 84 test locali superati con rete bloccata.
+Evidenze: `.tmp/summary-local-date-review-20261025/` nel worktree dedicato.
+Diff, collegamenti e scopo controllati: nessuna variazione a frontend, AAB,
+endpoint, orari, policy attive, job cloud, invii o destinatari.
+La prova sul dispositivo non è pertinente a questo diff backend: i test dei
+servizi simulati verificano che contenuti, deduplica ed esiti restino invariati;
+non viene dichiarata una nuova prova reale di ricezione o del runtime cloud.
+
+Pubblicazione del ramo, PR verso main e CI sono le sole azioni remote autorizzate
+in questa fase. L’integrazione operativa descritta sotto resta da completare.
 
 ## Prima di attivare: passaggio ancora necessario
 

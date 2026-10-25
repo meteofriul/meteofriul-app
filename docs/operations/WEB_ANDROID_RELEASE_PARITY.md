@@ -1,6 +1,6 @@
 # Allineamento della Web App con Android
 
-**Sintesi per data locale — lavoro locale del 25 ottobre:** [valutatore, diagnostica e verifiche](SUMMARY_LOCAL_DATE_MONITOR_20261025.md) consolidati in commit sul ramo dedicato; 82 test locali superati. Main e GitHub invariati. Orari invariati, integrazione cloud e nuovo allarme non attivati. Nessuna modifica a Web/Android o sponsor; controllo Eventi del 26 ottobre mantenuto.
+**Sintesi per data locale — lavoro locale del 25 ottobre:** [valutatore, diagnostica e verifiche](SUMMARY_LOCAL_DATE_MONITOR_20261025.md) revisionati sul ramo dedicato; 84 test locali superati. Promozione tramite PR e CI autorizzata, da verificare. Orari invariati, integrazione cloud e nuovo allarme non attivati. Nessuna modifica a Web/Android o sponsor; controllo Eventi del 26 ottobre mantenuto.
 
 **Aggiornamento backend del 25 ottobre:** PR 22 integrata, CI superata e solo job Eventi aggiornato. [Verbale e rollback](EVENTS_PNPENSA_BARCOLANA_DEPLOY_20261025.md). Corsa ordinaria del 26 ottobre alle 05:00 italiane: `pending`. Web e Android mantengono lo stesso contratto; pacchetti e pubblicazioni invariati, sponsor disattivati. Recupero ordinario ancora da confermare; vedere esito e limiti nel verbale.
 
