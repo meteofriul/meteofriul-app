@@ -7,7 +7,7 @@ import {
   LocateFixed,
   MapPin,
   Radio,
-  Radar,
+  SatelliteDish,
   Send,
   Share2,
   TriangleAlert,
@@ -1794,7 +1794,7 @@ export function TerritoryImmersiveMap({
           title={radarModel?.available ? copy.radar : copy.radarUnavailable}
           type="button"
         >
-          <Radar aria-hidden="true" size={21} strokeWidth={2.25} />
+          <SatelliteDish aria-hidden="true" size={21} strokeWidth={2.25} />
         </button>
         {webcamsEnabled ? (
           <button

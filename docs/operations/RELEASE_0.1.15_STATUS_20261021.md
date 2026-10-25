@@ -1,5 +1,7 @@
 # Stato release 0.1.15 e lavoro salvato — aggiornamento sorgenti del 24 ottobre 2026
 
+**Antenna radar — verificata sul Galaxy il 25 ottobre:** icona del commit `738c6538` promossa in main locale dopo la prova reale su Brave, in chiaro/scuro e attiva/disattiva; due regressioni mirate già superate sulla stessa sorgente. [Verbale ed evidenze](RADAR_ANTENNA_ICON_20261025.md). Ramo dedicato conservato; nessun push. Ramo release, AAB, pacchetti Web e pubblicazioni non aggiornati da questa modifica. Sponsor disattivati e controllo Eventi del 26 ottobre mantenuto.
+
 **Avvio HTTP FVG — sorgenti del 25 ottobre:** [PR 26](https://github.com/meteofriul/meteofriul-app/pull/26) integrata in main (`613fe78a`), commit della correzione `a431bd14`. 91 test locali e CI di PR/main superati. [Verbale, evidenze e limiti](WEATHER_HTTP_STARTUP_20261025.md). Nessun deploy: il servizio pubblico mantiene il comportamento precedente. Contratti Web/Android e artefatti invariati; nessuna nuova AAB necessaria per questo intervento. Sponsor disattivati e controllo Eventi del 26 ottobre mantenuto.
 
 **Sintesi per data locale — sorgenti del 25 ottobre:** [PR 24](https://github.com/meteofriul/meteofriul-app/pull/24) integrata in main (`8a47c752`); 84 test locali e CI di PR/main superati. [Verbale e limiti](SUMMARY_LOCAL_DATE_MONITOR_20261025.md). Nuovo allarme non attivato: collegamento operativo ancora da completare. Orari, Web/Android e sponsor invariati; controllo Eventi del 26 ottobre mantenuto.
