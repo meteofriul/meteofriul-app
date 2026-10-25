@@ -7,7 +7,7 @@ import math
 import os
 import re
 from collections.abc import Mapping
-from dataclasses import dataclass, replace
+from dataclasses import dataclass, field, replace
 from datetime import date, datetime, timedelta, timezone
 from functools import lru_cache
 from typing import Any, Callable
@@ -34,6 +34,7 @@ from app.services.local_notice_delivery import (
 )
 from app.services.location import LocationCatalog, Municipality
 from app.services.notice_municipalities import NoticeMunicipalityCatalog
+from app.services.summary_telemetry import SourceTrace
 from app.weather.local_notice_shadow import FVG_ZONE
 from app.weather.local_notice_source import (
     LocalNoticeSourceUnavailable,
@@ -87,8 +88,9 @@ class MorningForecastDeliveryResult:
     source_failed: int = 0
     pages_processed: int = 0
     delivery_batches: int = 0
+    source_trace: dict[str, Any] = field(default_factory=lambda: SourceTrace().summary())
 
-    def summary(self) -> dict[str, int | str]:
+    def summary(self) -> dict[str, Any]:
         return {
             "status": self.status,
             "eligible_devices": self.eligible_devices,
@@ -111,6 +113,7 @@ class MorningForecastDeliveryResult:
             "source_failed": self.source_failed,
             "pages_processed": self.pages_processed,
             "delivery_batches": self.delivery_batches,
+            "source_trace": self.source_trace,
         }
 
 
@@ -750,6 +753,7 @@ class MorningForecastDeliveryService:
         device_failed = storage_failed = source_failed = delivery_batches = 0
         successful_group = False
         local_date = self._forecast_date(current)
+        source_trace = SourceTrace()
 
         for group_key in sorted(grouped):
             group_targets = grouped[group_key]
@@ -760,10 +764,12 @@ class MorningForecastDeliveryService:
                     primary.locality,
                 )
             except LocalNoticeSourceUnavailable:
+                source_trace.fetch_failed()
                 source_failed += 1
                 failed += 1
                 failed_group_keys.add(group_key)
                 continue
+            source_trace.observe(snapshot, read_at=self._current_time())
             contents = self._notification_contents(
                 snapshot,
                 primary.municipality,
@@ -865,6 +871,7 @@ class MorningForecastDeliveryService:
             source_failed=source_failed,
             pages_processed=pages_processed,
             delivery_batches=delivery_batches,
+            source_trace=source_trace.summary(),
         )
 
 
