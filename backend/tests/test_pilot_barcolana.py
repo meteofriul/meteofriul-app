@@ -1,10 +1,16 @@
 import unittest
+from unittest.mock import Mock, patch
+from threading import Barrier, Event, Lock
+import time
+
+import requests
 from datetime import date, datetime, timezone
 from html import escape
 
 from app.events.pilot_barcolana import (CALENDAR_DATA, EDITION_NEWS, SITEMAP, KNOWN_ORPHAN,
                                         REGIONAL_PIAZZA_PAGES, REGIONAL_MUSEUM,
-                                        REGIONAL_TALKS,
+                                        REGIONAL_TALKS, READ_BUDGET_SECONDS,
+                                        MAX_PARALLEL_READS, _read, _read_pages,
                                         collect_barcolana, current_card, link_unique_details,
                                         parse_calendar, parse_regional_piazza)
 from app.events.pilot_catalog import PILOT_PROJECT, query_catalog
@@ -41,6 +47,97 @@ class Response:
 
 
 class BarcolanaTests(unittest.TestCase):
+
+    def test_independent_evidence_is_read_in_parallel_with_a_bounded_pool(self):
+        # Two waves fill the pool; a serial reader cannot cross the barrier.
+        barrier, lock = Barrier(MAX_PARALLEL_READS), Lock()
+        active, peak = 0, 0
+        def get(url, **kwargs):
+            nonlocal active, peak
+            self.assertLessEqual(sum(kwargs['timeout']), 11)
+            with lock:
+                active += 1
+                peak = max(peak, active)
+            try:
+                barrier.wait(timeout=5)
+                return Response(url)
+            finally:
+                with lock:
+                    active -= 1
+        specs = {f'page_{i}': (f'https://example.test/{i}', 100)
+                 for i in range(MAX_PARALLEL_READS * 2)}
+        pages = _read_pages(get, specs, deadline=time.monotonic() + READ_BUDGET_SECONDS)
+        self.assertEqual(set(pages), {url for url, _ in specs.values()})
+        self.assertEqual(peak, MAX_PARALLEL_READS)
+
+    def test_slow_required_page_rejects_all_pages_at_shared_deadline(self):
+        release = Event()
+        def get(url, **_):
+            if url == SITEMAP:
+                release.wait(timeout=5)
+            return Response('complete document')
+        try:
+            with self.assertRaisesRegex(ValueError, 'budget exhausted; pending: sitemap'):
+                _read_pages(get, {'calendar': (CALENDAR_DATA, 100),
+                                  'sitemap': (SITEMAP, 100)},
+                            deadline=time.monotonic() + 0.15)
+        finally:
+            release.set()
+
+    def test_read_retries_once_without_resetting_deadline(self):
+        now, timeouts = [100.0], []
+        success = Response('complete document')
+        success.close = Mock()
+        def get(*_, **kwargs):
+            timeouts.append(kwargs['timeout'])
+            if len(timeouts) == 1:
+                now[0] += 23
+                raise requests.ReadTimeout('temporary stall')
+            now[0] += 1
+            return success
+        with patch('app.events.pilot_barcolana.time.monotonic', side_effect=lambda: now[0]), \
+                patch('app.events.http_client.time.sleep', side_effect=lambda n: now.__setitem__(0, now[0]+n)):
+            self.assertEqual(_read(get, CALENDAR_DATA, 100, deadline=128), 'complete document')
+        self.assertEqual(len(timeouts), 2)
+        self.assertEqual(timeouts[0], (3, 8))
+        self.assertLessEqual(sum(timeouts[1]), 4.5)
+        success.close.assert_called_once()
+
+    def test_expired_deadline_does_not_start_another_request(self):
+        get = Mock()
+        with self.assertRaisesRegex(ValueError, 'budget exhausted'):
+            _read(get, CALENDAR_DATA, 100, deadline=time.monotonic() - 1)
+        get.assert_not_called()
+
+    def test_terminal_http_failure_has_stage_and_never_returns_partial_evidence(self):
+        response = Response('', 404)
+        response.close = Mock()
+        response.raise_for_status = Mock(side_effect=requests.HTTPError('HTTP 404', response=response))
+        get = Mock(return_value=response)
+        with self.assertRaisesRegex(ValueError, 'edition_news read failed.*HTTP 404'):
+            _read_pages(get, {'edition_news': (EDITION_NEWS, 100)},
+                        deadline=time.monotonic() + READ_BUDGET_SECONDS)
+        get.assert_called_once()
+        response.close.assert_called_once()
+
+    def test_read_closes_success_error_oversize_and_known_orphan(self):
+        for response, limit, status in [(Response('ok'), 100, 200),
+                                        (Response('too large'), 1, 200),
+                                        (Response('not needed', 404), 0, 404),
+                                        (Response('new page'), 0, 404)]:
+            with self.subTest(limit=limit, expected_status=status):
+                response.close = Mock()
+                get = Mock(return_value=response)
+                if len(response.content) > limit and status == 200 or response.status_code != status:
+                    with self.assertRaises(ValueError):
+                        _read(get, CALENDAR_DATA, limit, deadline=time.monotonic()+28,
+                              expected_status=status)
+                else:
+                    _read(get, CALENDAR_DATA, limit, deadline=time.monotonic()+28,
+                          expected_status=status)
+                get.assert_called_once()
+                response.close.assert_called_once()
+
     def test_detail_links_require_one_title_and_one_sitemap_slug(self):
         sessions = [{'title': 'La regata', 'url': 'calendar'},
                     {'title': 'Mostra', 'url': 'calendar'},
@@ -196,6 +293,18 @@ class BarcolanaTests(unittest.TestCase):
         self.assertEqual(late['verification']['regional_talk_row_count'], 0)
         self.assertEqual(gate_batch('Barcolana', late,
                                     today=date(2026, 10, 12))['status'], 'ok')
+        official_reads = Barrier(3)
+        def concurrent_after_festival(url, **kwargs):
+            if url in {CALENDAR_DATA, SITEMAP, EDITION_NEWS}:
+                official_reads.wait(timeout=5)
+            if url in mirrors:
+                self.fail('past regional page must not be fetched')
+            return get_without_orphan(url, **kwargs)
+        october25 = collect_barcolana(get=concurrent_after_festival, today=date(2026, 10, 25))
+        self.assertEqual(gate_batch('Barcolana', october25, today=date(2026, 10, 25))['status'], 'ok')
+        card = current_card(october25['events'][0], date(2026, 10, 25))
+        self.assertEqual(card['date_label'], '29 novembre 2026')
+        self.assertGreater(card['active_session_count'], 0)
         active_page = list(REGIONAL_PIAZZA_PAGES)[1]
         def get_missing_active_day(url, **kwargs):
             return Response('', 404) if url == active_page else get_after_first_day(url, **kwargs)

@@ -3,6 +3,7 @@ from copy import deepcopy
 from datetime import date
 import json
 from pathlib import Path
+import time
 import unittest
 from unittest.mock import Mock, patch
 
@@ -115,7 +116,7 @@ class EventReadRecoveryTests(unittest.TestCase):
     def test_barcolana_retries_one_timeout_and_closes_the_response(self):
         response = Mock(status_code=200, content=b'complete calendar')
         get = Mock(side_effect=[requests.ReadTimeout('first attempt'), response])
-        self.assertEqual(barcolana._read(get,'https://example.test/calendar',100), 'complete calendar')
+        self.assertEqual(barcolana._read(get,'https://example.test/calendar',100, deadline=time.monotonic()+28), 'complete calendar')
         self.assertEqual(get.call_count,2); response.close.assert_called_once()
         self.pause.assert_called_once_with(0.5)
 
@@ -130,7 +131,7 @@ class EventReadRecoveryTests(unittest.TestCase):
         self.assertEqual(get.call_count,2)
 
     def test_two_timeouts_remain_an_error_for_both_sources(self):
-        for read in (lambda get: barcolana._read(get,'https://example.test',100),
+        for read in (lambda get: barcolana._read(get,'https://example.test',100, deadline=time.monotonic()+28),
                      lambda get: cinema._read(get,'https://example.test',limit=100)):
             get = Mock(side_effect=[requests.ReadTimeout('first'),requests.ReadTimeout('second')])
             with self.assertRaisesRegex(requests.ReadTimeout,'second'):
@@ -138,7 +139,7 @@ class EventReadRecoveryTests(unittest.TestCase):
             self.assertEqual(get.call_count,2)
 
     def test_body_size_failure_is_not_retried_or_reported_successful(self):
-        for read, response in ((lambda get: barcolana._read(get,'https://example.test',2),
+        for read, response in ((lambda get: barcolana._read(get,'https://example.test',2, deadline=time.monotonic()+28),
                                 Mock(status_code=200,content=b'large')),
                                (lambda get: cinema._read(get,'https://example.test',limit=2),
                                 FakeResponse('large'))):

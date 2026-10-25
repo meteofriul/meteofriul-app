@@ -72,6 +72,148 @@ class ContentMedia(HTMLParser):
             self.paragraph = None
 
 
+
+WEEKDAYS = ('lunedì', 'martedì', 'mercoledì', 'giovedì', 'venerdì', 'sabato', 'domenica')
+SESSION_DATE = re.compile(
+    r'^(?:(?P<weekday>' + '|'.join(WEEKDAYS) + r')\s+)?'
+    r'(?P<day>\d{1,2})\s+(?P<month>' + MONTH_PATTERN + r')'
+    r'(?:\s+(?P<year>20\d{2}))?\s*,?\s*ore\s+'
+    r'(?P<hour>\d{1,2})(?:[:.](?P<minute>\d{2}))?\s*$', re.I)
+
+
+class ProgrammeSections(HTMLParser):
+    """Keep WordPress programme rows separate, including each row's own image."""
+    def __init__(self):
+        super().__init__(convert_charrefs=True)
+        self.sections = []
+        self.current = None
+
+    def handle_starttag(self, tag, attrs):
+        if tag == 'section':
+            if self.current is not None:
+                raise ValueError('nested programme sections need review')
+            self.current = ContentMedia()
+        elif self.current is not None:
+            self.current.handle_starttag(tag, attrs)
+
+    def handle_data(self, data):
+        if self.current is not None:
+            self.current.handle_data(data)
+
+    def handle_endtag(self, tag):
+        if tag == 'section' and self.current is not None:
+            if self.current.paragraph is not None:
+                raise ValueError('truncated programme paragraph')
+            self.sections.append(self.current)
+            self.current = None
+        elif self.current is not None:
+            self.current.handle_endtag(tag)
+
+
+def programme_year(post):
+    title = clean(post['title']['rendered'])
+    html = post['content']['rendered']
+    years = set(re.findall(r'\b20\d{2}\b', title))
+    years.update(re.findall(r'\bedizione\s+(20\d{2})\b', clean(html), re.I))
+    for heading in re.findall(r'<h[1-6]\b[^>]*>(.*?)</h[1-6]>', html, re.S | re.I):
+        text = clean(heading)
+        if re.search(r'pensa|edizione', text, re.I):
+            years.update(re.findall(r'\b20\d{2}\b', text))
+    if len(years) > 1:
+        raise ValueError('conflicting programme years in title and content')
+    return int(next(iter(years))) if years else None
+
+
+def structured_sessions(post, *, year, today):
+    """Extract only explicit date/time, municipality/venue and title rows.
+
+    No publication-year guess for a programme. Extra future dates or incomplete
+    rows quarantine the whole post, rather than publishing a partial programme.
+    """
+    html = post['content']['rendered']
+    media = ContentMedia()
+    media.feed(html)
+    if not any(SESSION_DATE.fullmatch(text) for text in media.paragraphs):
+        return None
+    if re.search(r'\bdal\s+\d{1,2}\s+al\s+\d{1,2}',
+                 clean(post['title']['rendered']), re.I):
+        raise ValueError('programme title date range needs review')
+    parser = ProgrammeSections()
+    parser.feed(html)
+    if parser.current is not None:
+        raise ValueError('truncated programme section')
+    rows = []
+    for section in parser.sections:
+        slots = [(index, SESSION_DATE.fullmatch(text))
+                 for index, text in enumerate(section.paragraphs)]
+        slots = [(index, match) for index, match in slots if match]
+        first = section.paragraphs[0] if section.paragraphs else ''
+        first = re.sub(r'^(?:' + '|'.join(WEEKDAYS) + r')\s+', '', first, flags=re.I)
+        if not slots and DAY_MONTH.match(first):
+            raise ValueError('dated programme row without verified time')
+        if slots:
+            if len(slots) != 1 or slots[0][0] != 0:
+                raise ValueError('multiple or unassigned programme sessions')
+            rows.append((section, slots[0][1]))
+    if not rows:
+        return None
+    if year is None:
+        raise ValueError('programme year not verified')
+    events, dates, identities = [], set(), set()
+    for section, slot in rows:
+        if slot['year'] and int(slot['year']) != year:
+            raise ValueError('conflicting programme session year')
+        day = date(year, MONTHS[slot['month'].lower()], int(slot['day']))
+        if slot['weekday'] and slot['weekday'].casefold() != WEEKDAYS[day.weekday()]:
+            raise ValueError('programme weekday/date mismatch')
+        hour, minute = int(slot['hour']), int(slot['minute'] or 0)
+        if hour > 23 or minute > 59:
+            raise ValueError('invalid programme time')
+        dates.add(day)
+        paragraphs = section.paragraphs
+        if len(paragraphs) < 4:
+            raise ValueError('incomplete programme session')
+        city, separator, venue = paragraphs[1].partition(',')
+        town = engine.fvg_municipality_catalog.match_names(city.strip())
+        if not separator or not venue.strip() or not town:
+            raise ValueError('programme municipality/venue not verified')
+        venue = re.sub(r'\s+([,.;:])', r'\1', venue).strip()
+        title = paragraphs[2]
+        if schedule_notice(*paragraphs):
+            raise ValueError('schedule_change_requires_review')
+        identity = (day, hour, minute, town.name, venue.strip(), title)
+        if identity in identities:
+            raise ValueError('duplicate programme session')
+        identities.add(identity)
+        event = {'source': 'Pordenone Pensa', 'url': post['link'], 'title': title,
+                 'start_date': day.isoformat(), 'end_date': day.isoformat(),
+                 'time': f'{hour:02d}:{minute:02d}', 'event_city': town.name,
+                 'place': venue.strip(), 'venue': venue.strip(),
+                 'location_confidence': 'municipality',
+                 'lat': town.latitude, 'lon': town.longitude,
+                 'date_evidence_kind': 'event_schedule',
+                 'date_evidence': f'{paragraphs[0]} [edizione {year}]', 'is_real': True}
+        if section.image:
+            event['image'] = section.image
+        event.update(attributed_excerpt(paragraphs[3], source_name='Pordenone Pensa',
+                                        source_url=post['link'], title=title))
+        if not event.get('description_excerpt'):
+            raise ValueError('programme session description unavailable')
+        if day >= today:
+            invalid = validate_candidate(event, today=today)
+            if invalid:
+                raise ValueError('invalid programme session: ' + ','.join(invalid))
+            events.append(event)
+    # This also catches a newly added date in a layout that we cannot extract.
+    text = clean(post['title']['rendered']) + ' ' + clean(post['content']['rendered'])
+    for match in DAY_MONTH.finditer(text):
+        other = date(int(match[3]) if match[3] else year,
+                     MONTHS[match[2].lower()], int(match[1]))
+        if other >= today and other not in dates:
+            raise ValueError('additional future date needs session extraction')
+    return events, 'included' if events else 'past'
+
+
 def post_date(post):
     title = clean(post['title']['rendered'])
     matches = list(DAY_MONTH.finditer(title))
@@ -130,6 +272,9 @@ def classify_post(post, *, today):
         raise ValueError('untrusted Pordenone Pensa post URL')
     title = clean(post['title']['rendered'])
     body = clean(post['content']['rendered'])
+    sessions = structured_sessions(post, year=programme_year(post), today=today)
+    if sessions is not None:
+        return sessions
     dated = post_date(post)
     if dated is None:
         if DAY_MONTH.search(title):

@@ -1,13 +1,14 @@
 """Official Barcolana calendar, published as one dated programme card."""
 from datetime import date, datetime, timezone
 from collections import Counter, defaultdict
-from concurrent.futures import ThreadPoolExecutor
+from concurrent.futures import ThreadPoolExecutor, as_completed
 from html import unescape
 from html.parser import HTMLParser
 from urllib.parse import urlsplit
 from zoneinfo import ZoneInfo
 from xml.etree import ElementTree
 import re
+import time
 import unicodedata
 
 import requests
@@ -16,6 +17,12 @@ from .http_client import read_with_single_transient_retry
 
 from .pilot_excerpt import attributed_excerpt
 
+
+# Reserve time for parsing, verification and IPC inside the unchanged 35s worker.
+READ_BUDGET_SECONDS = 28
+MAX_PARALLEL_READS = 4
+REQUEST_CONNECT_SECONDS = 3
+REQUEST_READ_SECONDS = 8
 
 SOURCE = 'Barcolana'
 CALENDAR = 'https://www.barcolana.it/it/calendario-eventi'
@@ -370,12 +377,25 @@ def parse_calendar(html):
                       'day_counts': dict(sorted(day_counts.items()))}
 
 
-def _read(get, url, limit):
+def _read(get, url, limit, *, deadline, expected_status=200):
     def read():
-        response = get(url, timeout=25, headers={'User-Agent': 'MeteoFriulEvents/1.0'})
+        remaining = deadline - time.monotonic()
+        if remaining <= 0:
+            raise ValueError('Barcolana shared read budget exhausted')
+        # Each retry consumes the same deadline, never a new 25-second window.
+        timeout = (min(REQUEST_CONNECT_SECONDS, remaining / 3),
+                   min(REQUEST_READ_SECONDS, remaining * 2 / 3))
+        response = get(url, timeout=timeout, headers={'User-Agent': 'MeteoFriulEvents/1.0'})
         try:
-            response.raise_for_status()
-            data = response.content
+            if response.status_code != expected_status:
+                response.raise_for_status()
+                raise ValueError(f'unexpected Barcolana HTTP status {response.status_code}')
+            if expected_status == 404:
+                data = b''  # The known orphan check requires absence, not a document.
+            else:
+                data = response.content
+            if time.monotonic() >= deadline:
+                raise ValueError('Barcolana shared read budget exhausted')
             if len(data) > limit:
                 raise ValueError('Barcolana response too large')
             return data.decode('utf-8-sig')
@@ -384,6 +404,33 @@ def _read(get, url, limit):
             if close is not None:
                 close()
     return read_with_single_transient_retry(read)
+
+
+def _read_pages(get, requests_by_label, *, deadline):
+    """Read independent programme evidence concurrently, with one wall deadline.
+
+    Required-page failure still rejects the source. The outer process guard is
+    retained for non-cooperative sockets/threads; timeout never returns a subset.
+    """
+    executor = ThreadPoolExecutor(max_workers=MAX_PARALLEL_READS)
+    futures = {executor.submit(_read, get, url, limit, deadline=deadline): (label, url)
+               for label, (url, limit) in requests_by_label.items()}
+    pages = {}
+    try:
+        for future in as_completed(futures, timeout=max(0, deadline - time.monotonic())):
+            label, url = futures[future]
+            try:
+                pages[url] = future.result()
+            except Exception as error:
+                raise ValueError(f'Barcolana {label} read failed '
+                                 f'({type(error).__name__}): {error}') from error
+    except TimeoutError as error:
+        pending = ', '.join(sorted(label for future, (label, _) in futures.items()
+                                   if not future.done()))
+        raise ValueError(f'Barcolana shared read budget exhausted; pending: {pending}') from error
+    finally:
+        executor.shutdown(wait=False, cancel_futures=True)
+    return pages
 
 
 def parse_sitemap(xml):
@@ -422,13 +469,21 @@ def link_unique_details(sessions, sitemap_urls):
 
 def collect_barcolana(*, get=requests.get, today=None):
     today = today or datetime.now(ZoneInfo('Europe/Rome')).date()
-    sessions, proof = parse_calendar(_read(get, CALENDAR_DATA, 3 * 1024 * 1024))
-    sitemap_urls = parse_sitemap(_read(get, SITEMAP, 2 * 1024 * 1024))
+    deadline = time.monotonic() + READ_BUDGET_SECONDS
+    active_piazza = {url: day for url, day in REGIONAL_PIAZZA_PAGES.items()
+                     if day >= today.isoformat()}
+    active_periods = {url: period for url, period in REGIONAL_PERIODS.items()
+                      if period[1] >= today.isoformat()}
+    required = {'calendar': (CALENDAR_DATA, 3 * 1024 * 1024),
+                'sitemap': (SITEMAP, 2 * 1024 * 1024),
+                'edition_news': (EDITION_NEWS, 1024 * 1024)}
+    required.update({f'regional_{index}': (url, 512 * 1024)
+                     for index, url in enumerate([*active_piazza, *active_periods], 1)})
+    pages = _read_pages(get, required, deadline=deadline)
+    sessions, proof = parse_calendar(pages[CALENDAR_DATA])
+    sitemap_urls = parse_sitemap(pages[SITEMAP])
     if KNOWN_ORPHAN in sitemap_urls:
-        orphan = get(KNOWN_ORPHAN, timeout=15,
-                     headers={'User-Agent': 'MeteoFriulEvents/1.0'})
-        if orphan.status_code != 404:
-            raise ValueError('orphan event page changed')
+        _read(get, KNOWN_ORPHAN, 0, deadline=deadline, expected_status=404)
         orphan_count = 1
     else:
         orphan_count = 0
@@ -440,17 +495,6 @@ def collect_barcolana(*, get=requests.get, today=None):
     sitemap_lag = proof['records_scanned'] - (len(sitemap_urls) - orphan_count)
     detail_url_count = link_unique_details(sessions, sitemap_urls)
     regional = []
-    active_piazza = {url: day for url, day in REGIONAL_PIAZZA_PAGES.items()
-                     if day >= today.isoformat()}
-    active_periods = {url: period for url, period in REGIONAL_PERIODS.items()
-                      if period[1] >= today.isoformat()}
-    urls = [*active_piazza, *active_periods]
-    if urls:
-        with ThreadPoolExecutor(max_workers=len(urls)) as executor:
-            pages = dict(zip(urls, executor.map(
-                lambda url: _read(get, url, 512 * 1024), urls)))
-    else:
-        pages = {}
     for url, day in active_piazza.items():
         regional.extend(parse_regional_piazza(pages[url], url=url, day=day))
     piazza_rows = len(regional)
@@ -462,7 +506,7 @@ def collect_barcolana(*, get=requests.get, today=None):
     regional.extend(talks)
     supplements, time_disagreements = merge_regional_piazza(sessions, regional)
     news = NewsMarkup()
-    news.feed(_read(get, EDITION_NEWS, 1024 * 1024))
+    news.feed(pages[EDITION_NEWS])
     if (news.body_depth or news.in_title
             or 'barcolana58' not in news.title.casefold()
             or '2026' not in news.body

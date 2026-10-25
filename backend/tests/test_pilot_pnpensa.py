@@ -31,6 +31,24 @@ PAST = {
 }
 
 
+def programme_post():
+    post = copy.deepcopy(POST)
+    post['content']['rendered'] += ''.join(
+        f'<section><div><img src="https://www.pnpensa.it/wp-content/uploads/2026/{day}.jpg"></div>'
+        f'<div><p><strong>Martedì {day} {month}, ore 19</strong></p>'
+        f'<p><strong>Pordenone, <a href="https://example.test/">{venue}</a></strong></p>'
+        f'<p><b>Incontro {index}: {title}</b></p>'
+        '<p>Un approfondimento sui rischi e sulle scelte assicurative, aperto al pubblico.</p>'
+        '</div></section>'
+        for index, (day, month, venue, title) in enumerate([
+            (27, 'ottobre', 'Spazio Zero, Piazza Maestri del lavoro 3', 'Il rischio'),
+            (3, 'novembre', 'Biblioteca Civica, sala Degan', 'I beni'),
+            (10, 'novembre', 'Biblioteca Civica, sala Degan', 'La persona'),
+            (17, 'novembre', 'Ex convento di San Francesco', 'Le imprese'),
+            (24, 'novembre', 'Biblioteca Civica, sala Degan', 'Il patrimonio')], 1))
+    return post
+
+
 class Response:
     status_code = 200
 
@@ -77,6 +95,83 @@ def fixture(*, missing_sitemap=False, posts=None):
 
 
 class PordenonePensaAuditTests(unittest.TestCase):
+
+    def test_programme_recovers_five_distinct_sessions_through_catalogue(self):
+        batch = fixture(posts=[programme_post(), PAST])
+        self.assertEqual(gate_batch('Pordenone Pensa', batch,
+                                    today=date(2026, 10, 7))['status'], 'ok')
+        events = batch['events']
+        self.assertEqual([e['start_date'] for e in events],
+                         ['2026-10-27', '2026-11-03', '2026-11-10', '2026-11-17', '2026-11-24'])
+        self.assertEqual({e['time'] for e in events}, {'19:00'})
+        self.assertEqual(events[3]['venue'], 'Ex convento di San Francesco')
+        self.assertEqual(len({e['image'] for e in events}), 5)
+        self.assertTrue(all(e.get('description_excerpt') for e in events))
+        catalog = merge_collection(PILOT_PROJECT, None,
+                                   {'Pordenone Pensa': batch}, '2026-10-07T08:00:00Z')
+        rows = query_catalog(catalog, 45.95689, 12.66051, radius=20,
+                             now=datetime.fromisoformat('2026-10-07T10:00:00+02:00'))['events']
+        self.assertEqual(len(rows), 5)
+        self.assertTrue(all('programme_id' not in e for e in rows))
+        remaining, status = classify_post(programme_post(), today=date(2026, 11, 11))
+        self.assertEqual(status, 'included')
+        self.assertEqual([e['start_date'] for e in remaining], ['2026-11-17', '2026-11-24'])
+        self.assertEqual(classify_post(programme_post(), today=date(2026, 11, 25)), ([], 'past'))
+
+    def test_programme_conflicting_edition_remains_in_review(self):
+        post = programme_post()
+        post['title']['rendered'] = 'PordenonePensa Scienza 2026 dal 13 al 16 novembre'
+        post['content']['rendered'] += '<h3>Gli appuntamenti di PordenonePensa Scienza 2025!</h3>'
+        with self.assertRaisesRegex(ValueError, 'conflicting programme years'):
+            classify_post(post, today=date(2026, 10, 25))
+        valid = programme_post()
+        valid['id'], valid['link'] = 3, 'https://www.pnpensa.it/programma-verificato/'
+        batch = fixture(posts=[post, valid])
+        gated = gate_batch('Pordenone Pensa', batch, today=date(2026, 10, 7))
+        self.assertEqual(gated['status'], 'partial')
+        self.assertEqual(len(gated['events']), 5)
+        self.assertEqual(len(gated['review_required']), 1)
+
+    def test_incomplete_or_ambiguous_session_never_publishes_partial_programme(self):
+        changes = [
+            (', ore 19', ''),
+            ('Martedì 27 ottobre', 'Lunedì 27 ottobre'),
+            ('Martedì 27 ottobre', 'Martedì 27 ottobre 2027'),
+            ('ore 19', 'ore 25'),
+            ('Pordenone, <a', 'Luogo ignoto, <a'),
+            ('Incontro 1: Il rischio', 'Incontro 1 annullato'),
+            ('</section>', ''),
+        ]
+        for before, after in changes:
+            with self.subTest(change=(before, after)):
+                post = programme_post()
+                post['content']['rendered'] = post['content']['rendered'].replace(before, after, 1)
+                with self.assertRaises(ValueError):
+                    classify_post(post, today=date(2026, 10, 25))
+        post = programme_post()
+        post['content']['rendered'] += '<section><p>Martedì 27 ottobre</p><p>Altro incontro</p></section>'
+        with self.assertRaisesRegex(ValueError, 'without verified time'):
+            classify_post(post, today=date(2026, 10, 25))
+        post = programme_post()
+        post['content']['rendered'] += '<p>Nuova conferenza il 1 dicembre 2026.</p>'
+        with self.assertRaisesRegex(ValueError, 'additional future date'):
+            classify_post(post, today=date(2026, 10, 25))
+
+    def test_unsupported_title_range_and_unrelated_layout(self):
+        post = programme_post()
+        post['title']['rendered'] = 'Programma dal 27 al 29 ottobre 2026'
+        with self.assertRaisesRegex(ValueError, 'title date range needs review'):
+            classify_post(post, today=date(2026, 10, 25))
+        past = copy.deepcopy(PAST)
+        past['content']['rendered'] = '<section><section><p>Resoconto della serata.</p></section></section>'
+        self.assertEqual(classify_post(past, today=date(2026, 10, 25)), ([], 'past'))
+
+    def test_programme_cannot_guess_year_from_publication(self):
+        post = programme_post()
+        post['content']['rendered'] = post['content']['rendered'].replace('edizione 2026', 'edizione')
+        with self.assertRaisesRegex(ValueError, 'programme year not verified'):
+            classify_post(post, today=date(2026, 10, 25))
+
     def test_current_series_uses_only_published_first_date(self):
         events, disposition = classify_post(POST, today=date(2026, 10, 7))
         self.assertEqual(disposition, 'included')
