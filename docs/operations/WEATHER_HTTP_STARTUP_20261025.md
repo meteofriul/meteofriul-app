@@ -1,9 +1,18 @@
 # Servizio HTTP FVG: avvio lento — correzione locale del 25 ottobre 2026
 
-Stato: **correzione locale verificata, non distribuita** sul ramo
-`codex/weather-http-startup`, da main `0ed41767ff4b21668947ece4575fe9f389a54f1d`.
-Commit e promozione tramite PR/CI autorizzati dal proprietario il 25 ottobre;
-esito remoto ancora da registrare. Nessun deploy, nuova AAB o installazione.
+Stato: **correzione integrata in main, non distribuita** tramite
+[PR 26](https://github.com/meteofriul/meteofriul-app/pull/26), dal ramo
+`codex/weather-http-startup` basato su `0ed41767ff4b21668947ece4575fe9f389a54f1d`.
+Commit della correzione `a431bd14385ee5c813d9e7022edffc0d5f6279f2`;
+merge `613fe78a5f95123176ff925eed7e957036fd975b` del 25 ottobre.
+[CI PR](https://github.com/meteofriul/meteofriul-app/actions/runs/40208895185)
+superata: backend, frontend e hosting-preview-tool.
+[CI main](https://github.com/meteofriul/meteofriul-app/actions/runs/40209272144)
+superata sugli stessi tre controlli; verificata una sola esecuzione, nessun duplicato.
+Sorgenti e regressioni integrati coincidono con gli hash verificati localmente.
+Il successivo aggiornamento dello stato riguarda soltanto Markdown: la CI completa
+lo esclude per configurazione; diff, collegamenti ed esiti sono verificati localmente.
+Nessun deploy, nuova AAB o installazione.
 Sponsor disattivati. Controllo Eventi del 26 ottobre alle 05:00 italiane mantenuto.
 Il lavoro non committato sul monitor sintesi resta nel suo worktree separato.
 
@@ -147,7 +156,7 @@ endpoint interni, configurazioni runtime o assegnazioni IAM. Nessuna estensione
 dei permessi è preparata o applicata. Prima del passaggio va verificata la lettura
 in elenco con l’identità della candidata.
 
-Ordine successivo: revisione/commit e PR con CI; costruzione immagine vincolata
+Ordine successivo, da autorizzare separatamente: costruzione immagine vincolata
 alla sorgente approvata; candidata HTTP senza traffico pubblico, verifica a
 freddo di ICON e CAMS, vecchi client e sidecar; poi cambio del solo traffico HTTP
 e verifica della successiva corsa ordinaria degli avvisi. Non avviare job o
