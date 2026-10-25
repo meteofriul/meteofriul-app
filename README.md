@@ -1,6 +1,6 @@
 # Meteo Friûl
 
-**Lavoro backend locale del 25 ottobre:** [Pordenone Pensa: cinque appuntamenti distinti](docs/operations/EVENTS_PNPENSA_SESSIONS_20261025.md). Correzione non distribuita; schema Eventi compatibile con Web e Android esistenti. Nessun pacchetto, pubblicazione o stato sponsor modificato.
+**Lavoro backend locale del 25 ottobre:** [Pordenone Pensa: cinque appuntamenti distinti](docs/operations/EVENTS_PNPENSA_SESSIONS_20261025.md) e [Barcolana: budget delle letture](docs/operations/EVENTS_BARCOLANA_READ_BUDGET_20261025.md). Due correzioni non distribuite, con 777 test della suite pilot (1 skip) e 5 del trasporto HTTP superati. Schema Eventi compatibile con Web e Android esistenti; nessun pacchetto, pubblicazione o stato sponsor modificato. Recupero in produzione ancora da verificare.
 
 **Prima di preparare una release Android:** leggere le [regole obbligatorie di preparazione e recupero dagli errori](docs/operations/ANDROID_BUILD_PREVENTION_RULES.md), insieme al [runbook Play](docs/operations/PLAY_AAB_RUNBOOK.md).
 

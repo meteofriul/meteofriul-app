@@ -1,6 +1,6 @@
 # Stato release 0.1.15 e lavoro salvato — aggiornamento sorgenti del 24 ottobre 2026
 
-**Lavoro backend locale del 25 ottobre:** [Pordenone Pensa: cinque appuntamenti distinti](EVENTS_PNPENSA_SESSIONS_20261025.md). Correzione non distribuita; schema Eventi compatibile con Web e Android esistenti. Nessun pacchetto, pubblicazione o stato sponsor modificato.
+**Lavoro backend locale del 25 ottobre:** [Pordenone Pensa: cinque appuntamenti distinti](EVENTS_PNPENSA_SESSIONS_20261025.md) e [Barcolana: budget delle letture](EVENTS_BARCOLANA_READ_BUDGET_20261025.md). Due correzioni non distribuite, con 777 test della suite pilot (1 skip) e 5 del trasporto HTTP superati. Schema Eventi compatibile con Web e Android esistenti; nessun pacchetto, pubblicazione o stato sponsor modificato. Recupero in produzione ancora da verificare.
 
 **Ultimo pacchetto prodotto:** AAB **0.1.15 / 300036** generata e verificata da `9d5ff2f4`, con main `2d8b0c32` e Tempo reale corretto. Web dalla stessa sorgente; sponsor spenti. Disponibile nel test interno dalle 13:37 del 23 ottobre e aggiornata dal proprietario via Play. Verifica sul Galaxy Android 14: PASS dei percorsi osservati, compreso Tempo reale dopo avvio a freddo; qualifica completa ancora limitata dalla matrice non esercitata. Nessuna installazione dell’agente. [Verbale corrente](ANDROID_0.1.15_300036_DEVICE_CHECK_20261023.md).
 
