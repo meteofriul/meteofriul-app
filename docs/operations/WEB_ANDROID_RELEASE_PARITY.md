@@ -1,5 +1,7 @@
 # Allineamento della Web App con Android
 
+**Lavoro backend locale del 25 ottobre:** [Pordenone Pensa: cinque appuntamenti distinti](EVENTS_PNPENSA_SESSIONS_20261025.md). Correzione non distribuita; schema Eventi compatibile con Web e Android esistenti. Nessun pacchetto, pubblicazione o stato sponsor modificato.
+
 Regola del proprietario, 20 ottobre 2026: la Web App deve seguire la AAB,
 perché chi usa iPhone accede al prodotto dal browser.
 

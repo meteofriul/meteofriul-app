@@ -1,5 +1,7 @@
 # Meteo Friûl
 
+**Lavoro backend locale del 25 ottobre:** [Pordenone Pensa: cinque appuntamenti distinti](docs/operations/EVENTS_PNPENSA_SESSIONS_20261025.md). Correzione non distribuita; schema Eventi compatibile con Web e Android esistenti. Nessun pacchetto, pubblicazione o stato sponsor modificato.
+
 **Prima di preparare una release Android:** leggere le [regole obbligatorie di preparazione e recupero dagli errori](docs/operations/ANDROID_BUILD_PREVENTION_RULES.md), insieme al [runbook Play](docs/operations/PLAY_AAB_RUNBOOK.md).
 
 Meteo Friûl è un'app indipendente dedicata al Friuli-Venezia Giulia. Riunisce
