@@ -71,3 +71,20 @@ orari e descrizioni. Il post Scienza contraddittorio deve restare in revisione.
 Controllare tutte le fonti e distinguere catalogo parziale da fonte obsoleta:
 un job verde da solo non dimostra la completezza. La gestione generale fuori
 stagione e altre sorgenti non sono modificate da questi commit.
+
+## Revisione PR 22 — 25 ottobre
+
+[PR 22](https://github.com/meteofriul/meteofriul-app/pull/22).
+La prima CI (`40172411872`) ha trovato tre chiamate nei test storici
+`test_event_sources_october21.py` prive del parametro obbligatorio `deadline`.
+Allineate le chiamate, mantenendo le asserzioni su retry, chiusura risposta e
+rifiuto del corpo troppo grande. Codice runtime invariato rispetto ai due commit.
+
+Suite backend completa locale: 2005 test, uno skip; due sottocasi di sicurezza
+XML falliscono perché Python locale carica lxml 5.4.0, mentre
+`requirements-dev.txt` richiede 6.1.0. File di dipendenze e test XML sono identici
+alla baseline main; nella prima CI quei controlli erano già superati con le
+dipendenze dichiarate. Non è stata installata o cambiata alcuna dipendenza locale.
+Questa esecuzione locale non è classificata come PASS globale. La CI completa
+con le dipendenze del repository resta obbligatoria prima della promozione.
+Log locale: `events-full-backend-review-20261025.log` nella cartella temporanea.
