@@ -1,11 +1,11 @@
 # Sintesi per data locale — preparazione del 25 ottobre 2026
 
-Stato: **implementazione locale e regressioni completate; non attiva nel cloud**.
+Stato: **sorgenti integrate in main e CI superata; non attive nel cloud**.
 Ramo `codex/summary-local-date-monitor`, derivato da main
 `e601510659387783d975b9cf62eb77328d78eae5`. Controllo, diagnostica e verbali
 consolidati nel commit locale di questo ramo, autorizzato il 25 ottobre.
-La successiva revisione e promozione tramite PR/CI sono autorizzate il 25 ottobre;
-il loro esito va distinto dall’attivazione cloud. Nessun deploy, esecuzione cloud,
+Revisione e promozione completate tramite PR 24 il 25 ottobre;
+il loro esito è distinto dall’attivazione cloud. Nessun deploy, esecuzione cloud,
 acquisizione o invio manuale in questo lavoro.
 Sponsor disattivati; Android, Web e i relativi pacchetti non cambiano.
 
@@ -124,8 +124,28 @@ La prova sul dispositivo non è pertinente a questo diff backend: i test dei
 servizi simulati verificano che contenuti, deduplica ed esiti restino invariati;
 non viene dichiarata una nuova prova reale di ricezione o del runtime cloud.
 
-Pubblicazione del ramo, PR verso main e CI sono le sole azioni remote autorizzate
+Pubblicazione del ramo, PR verso main e CI sono state le sole azioni remote
 in questa fase. L’integrazione operativa descritta sotto resta da completare.
+
+## Promozione verificata su main
+
+- [PR 24](https://github.com/meteofriul/meteofriul-app/pull/24) integrata il 25 ottobre 2026 alle 09:22 UTC.
+- Commit revisionato della PR: `8feff27f74e28fe4b11a6ace1fcc4fe0dbf169e5`,
+  comprendente il lavoro iniziale `06aa2016` e le due correzioni di revisione.
+- Merge del codice su main: `8a47c75216f350fc541c03916bdc54350acb49a3`.
+- [CI della PR](https://github.com/meteofriul/meteofriul-app/actions/runs/40179943732): **success**, backend/frontend/hosting-preview-tool verdi.
+- [CI di main](https://github.com/meteofriul/meteofriul-app/actions/runs/40180348224): **success** sul merge esatto,
+  stessi tre controlli verdi, nessuna esecuzione duplicata da cancellare.
+
+Le protezioni di main sono state rispettate: merge tramite PR, nessun push diretto
+né bypass amministrativo. Il checkout locale di main è stato aggiornato mediante
+fast-forward. Questo aggiornamento finale di README e verbali passa tramite PR
+solo Markdown; la CI completa lo salta per configurazione, e il codice resta
+identico a quello verificato nella CI sopra. Evidenze dettagliate e hash restano
+in `.tmp/summary-local-date-review-20261025/`.
+
+La promozione non attiva nuovi controlli nel cloud. Orari, policy operative,
+immagini distribuite, invii e pacchetti Web/Android rimangono invariati.
 
 ## Prima di attivare: passaggio ancora necessario
 
@@ -158,4 +178,4 @@ Il follow-up `verifica-eventi-pordenone-pensa-e-barcolana` resta ACTIVE e punta
 alla corsa del **26 ottobre 04:00 UTC = 05:00 Europe/Rome**, controllo dalle 05:15.
 Rimane sul worktree Eventi originale; i suoi script e documenti non sono spostati.
 Il lavoro non committato precedente su quel ramo è preservato. Nessuna prova
-sul telefono, installazione, emulatore, AAB, push, deploy o invio manuale qui.
+sul telefono, installazione, emulatore, AAB, deploy o invio manuale qui.
