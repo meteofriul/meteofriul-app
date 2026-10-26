@@ -5,8 +5,9 @@ Stato: **preparazione locale, non distribuita** sul ramo
 Correzione e test salvati nel commit locale `ae41628b`; policy e documentazione
 sono salvate separatamente nello stesso ramo.
 Riguarda soltanto CAMS e la policy `cams-failures`. Non modifica ICON, Eventi,
-sintesi, orari, destinatari, sponsor o interfaccia. La verifica Eventi del
-27 ottobre resta separata e attiva. Nessuna acquisizione, esecuzione di job,
+sintesi, orari, destinatari, sponsor o interfaccia. Il follow-up Eventi del
+27 ottobre è stato eliminato il 26 ottobre su richiesta del proprietario;
+non viene ricreato da questo intervento. Nessuna acquisizione, esecuzione di job,
 notifica manuale, installazione, AAB, push o deploy in questa attività.
 
 ## Evidenza osservata, non ipotesi
