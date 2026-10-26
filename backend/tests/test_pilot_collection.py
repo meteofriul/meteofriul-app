@@ -79,6 +79,15 @@ class CollectionTests(unittest.TestCase):
         self.assertEqual(result["sources"]["a"]["status"], "unavailable")
         self.assertEqual(result["sources"]["a"]["last_attempt_error_type"], "timeout")
 
+    def test_timeout_does_not_block_following_source(self):
+        result = collect(PILOT_PROJECT, {"slow": slow, "next": good}, None,
+                         "2026-10-26T04:00:00Z", timeout=5,
+                         source_timeouts={"slow": 0.2})
+        self.assertEqual(result['sources']['slow']['status'], 'unavailable')
+        self.assertEqual(result['sources']['slow']['last_attempt_error_type'], 'timeout')
+        self.assertEqual(result['sources']['next']['status'], 'fresh')
+        self.assertEqual(len(result['sources']['next']['events']), 1)
+
     def test_adapter_exception_has_a_tag_and_redacted_detail(self):
         result = collect(PILOT_PROJECT, {"a": broken}, None,
                          "2026-09-06T18:00:00Z", timeout=5)
