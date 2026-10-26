@@ -1,5 +1,7 @@
 # Barcolana: lettura lenta e significato degli allarmi — 26 ottobre 2026
 
+**Aggiornamento successivo:** i due commit sono in main tramite PR 30; deploy del job e aggiornamento della sola policy completati. [Distribuzione, rollback e controllo ordinario](EVENTS_BARCOLANA_RECOVERY_DEPLOY_20261026.md). Le sezioni seguenti conservano l'evidenza della fase locale precedente.
+
 ## Stato e perimetro
 
 Correzioni **locali, non distribuite**, sul ramo `codex/events-barcolana-recovery`,
