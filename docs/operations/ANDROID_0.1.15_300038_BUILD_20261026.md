@@ -1,5 +1,7 @@
 # AAB 0.1.15 / 300038 — 26 ottobre 2026
 
+> Aggiornamento successivo del 26 ottobre, ore 13:28: la stessa AAB è ora [disponibile nel test interno](ANDROID_0.1.15_300038_UPLOAD_20261026.md), con gli account invariati. Nessuna installazione; Web non pubblicata. Il follow-up Eventi è stato eliminato su richiesta e CAMS ha un deploy successivo distinto, collegato nel verbale di upload. Il resoconto di build sotto descrive il momento originale.
+
 ## Esito e contenuto
 
 **Generata, firmata, validata e archiviata; non caricata su Play.**

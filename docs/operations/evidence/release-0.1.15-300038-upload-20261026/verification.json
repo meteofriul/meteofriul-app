@@ -1,0 +1,105 @@
+{
+  "schema_version": 1,
+  "verified_at_utc": "2026-10-26T12:35:39.633917+00:00",
+  "status": "INTERNAL_AVAILABLE_RUNTIME_PENDING",
+  "version_name": "0.1.15",
+  "version_code": 300038,
+  "application_id": "com.meteofriul.app",
+  "source_commit": "7130c28ac4fdfde736498b84db28aaf738cb05db",
+  "source_ci": {
+    "run_id": 40293565378,
+    "conclusion": "success",
+    "reused_after_artifact_hash_match": true
+  },
+  "aab_sha256": "69be438d19a1e144d84227b78b9ff46bb205b4bf05465f13390abf36576c6f83",
+  "mapping_sha256": "1578fd6e78e3f27ea18a568673e571bf6e602f88a7d9bf349a1f34300307e6ff",
+  "upload_certificate_sha256": "338c051587d62cdad6f9bd38eaa1e793d3da2d6c30c4270f8450a93a6ecec3b4",
+  "play": {
+    "release_url": "https://play.google.com/console/u/0/developers/7317561924451916933/app/4972150571875270846/tracks/4700755128382710882/releases/21/details",
+    "available_at_local": "2026-10-26T13:28:00+01:00",
+    "time_precision": "minute displayed in Console",
+    "track": "internal",
+    "enabled_tester_lists": 1,
+    "enabled_tester_count": 2,
+    "tester_selection_unchanged": true,
+    "production_version_code": 300031,
+    "production_version_name": "0.1.14",
+    "blocking_errors": 0,
+    "warnings": [
+      "native debug symbols unavailable for transitive native libraries"
+    ],
+    "retrace_mapping_attached": true,
+    "supported_devices": 19414,
+    "devices_lost_from_previous": 0,
+    "minimum_api": 24,
+    "target_sdk": 36,
+    "page_size_16kb_static_support": true,
+    "r8": {
+      "dex_optimization_percent": 89,
+      "obfuscation_percent": 91,
+      "reduction_percent": 91,
+      "mode": "full",
+      "resource_shrinking": "optimized",
+      "repackaging_recommendation": "AGP 9.0"
+    },
+    "prelaunch_report": "no usable report available; no manual test started",
+    "release_notes_language": "it-IT",
+    "release_notes_characters": 497
+  },
+  "sponsors": {
+    "enabled_before": false,
+    "enabled_after": false,
+    "campaigns_before": 0,
+    "campaigns_after": 0,
+    "revision": 117
+  },
+  "ledger": {
+    "previous_records_unchanged": 62,
+    "total_records": 63,
+    "acceptance_record": "20261026T122933197Z-play-accepted-a596d9fc52d44d698224a07bd5f5a4bd.evidence.json",
+    "previous_files_unchanged_including_readme": 63
+  },
+  "web": {
+    "source_commit": "7130c28ac4fdfde736498b84db28aaf738cb05db",
+    "manifest_sha256": "59cb9a4a4d79377313760569458b5b87d8c8086202e5c1e307f06feed97a047c",
+    "published": false,
+    "safari_iphone": "not verified"
+  },
+  "runtime": "300038 device tests pending; no installation performed",
+  "excluded_actions": [
+    "rebuild",
+    "installation",
+    "production publication",
+    "web publication",
+    "backend deploy",
+    "manual notification",
+    "emulator",
+    "new follow-up"
+  ],
+  "private_evidence": [
+    {
+      "file": "internal-available.jpg",
+      "sha256": "a9c12ac69c2f0c7d8c6fd595337aaf6da0526e8a46ee65529149af3f464f29f0"
+    },
+    {
+      "file": "ledger-before.json",
+      "sha256": "61a4714fdf1ebeedde3f6183019c642c2a703dae8d7d95da02925b29ca1ad9ce"
+    },
+    {
+      "file": "pre-upload.json",
+      "sha256": "c295fd1026b948213b5ee7d979fc741c9a75f1aef0ad3d0d4437714570081c70"
+    },
+    {
+      "file": "release-notes-it.txt",
+      "sha256": "a1d32ae594f9a404e79e04e691128a732587e64fb6adc5d0a0c10873330e4fa9"
+    },
+    {
+      "file": "sponsors-after.json",
+      "sha256": "708c88b891d2f385535ff32f04ee8cf00bb5972c5c470b05a4eca81e09e05ac1"
+    },
+    {
+      "file": "sponsors-before.json",
+      "sha256": "4c8a45fda03e56b72b50269f2cd3fc0aac5838acb9748649ed23c43a21cd2d90"
+    }
+  ]
+}

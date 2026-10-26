@@ -1,6 +1,6 @@
 # Release 0.1.15 e candidata Web — preparazione locale del 26 ottobre 2026
 
-> Stato storico della preparazione iniziale. Successivamente main `c2b2cfe1` è stato incorporato e la generazione 300038 autorizzata. Il nuovo follow-up Eventi del 27 ottobre resta attivo. Seguire il [verbale della 300038](ANDROID_0.1.15_300038_BUILD_20261026.md) per lo stato aggiornato; archivio preliminare e prove sotto restano immutati.
+> Stato storico della preparazione iniziale. Successivamente main `c2b2cfe1` è stato incorporato e la generazione 300038 autorizzata. Il follow-up Eventi del 27 ottobre è stato successivamente eliminato su richiesta. Seguire il [verbale della 300038](ANDROID_0.1.15_300038_BUILD_20261026.md) per lo stato aggiornato; archivio preliminare e prove sotto restano immutati.
 
 **Allineamento locale completato e build riuscite; verifica completa dei servizi dal vivo ancora aperta per CAMS scaduto.** Nessuna nuova AAB, riserva versione, installazione, push, deploy o invio. Sponsor disattivati (catalogo live: revisione 117, zero campagne).
 
