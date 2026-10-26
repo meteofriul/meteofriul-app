@@ -482,6 +482,32 @@ class RetrievalFlowTests(unittest.TestCase):
         self.assertEqual(report["http_status"], 403)
         self.assertNotIn("safe_reason", report)
 
+    def test_storage_tls_failure_remains_nonrecoverable_through_report(self):
+        from local_pipeline.gcs_object_store import RemoteObjectStoreError
+        from local_pipeline.operational_diagnostics import attach_error_fields
+        from cloud_worker import _cams_acquisition_outcome
+        error = RemoteObjectStoreError('storage request failed', original_type='SSLError', retryable=False)
+        attach_error_fields(error, transport_reason='tls_certificate_invalid')
+        self.client.submit.side_effect = error
+        report, _, download = self.run_fake()
+        self.assertFalse(report['retryable'])
+        self.assertEqual(report['transport_reason'], 'tls_certificate_invalid')
+        outcome = _cams_acquisition_outcome(report, '20260903T000000Z')
+        self.assertEqual(outcome['status'], 'manual_review')
+        self.assertFalse(outcome['retryable'])
+        download.assert_not_called()
+
+    def test_interrupted_tls_is_typed_without_secret_in_report(self):
+        import ssl
+        from cloud_worker import _cams_acquisition_outcome
+        self.client.submit.side_effect = requests.exceptions.SSLError(ssl.SSLEOFError(8, FAKE_TOKEN))
+        report, _, download = self.run_fake()
+        self.assertEqual(report['transport_reason'], 'tls_connection_interrupted')
+        self.assertTrue(report['retryable'])
+        self.assertEqual(_cams_acquisition_outcome(report, '20260903T000000Z')['status'], 'retryable_failure')
+        self.client.submit.assert_called_once()  # Retries do not repeat an ambiguous POST.
+        download.assert_not_called()
+
     def test_remote_failure_never_attempts_download_or_deletes_job(self):
         self.remote.json = {"status": "failed", "log": FAKE_TOKEN}
         report, _, download = self.run_fake()

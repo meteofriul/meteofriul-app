@@ -104,7 +104,10 @@ class AvailabilityWorkerTests(TestCase):
         region.assert_called_once()
         rows = [json.loads(line) for line in self.output.getvalue().splitlines()]
         self.assertNotIn('source_pending', str(rows))
-        self.assertEqual(rows[-1]['reason_code'], 'execution_budget_exhausted')
+        stopped = [row for row in rows if row.get('event') == 'cams_recovery_stopped']
+        self.assertEqual(stopped[-1]['reason_code'], 'execution_budget_exhausted')
+        self.assertEqual([row['component'] for row in rows
+                          if row.get('event') == 'cams_component_unverified'], ['air', 'pollen'])
 
     def test_slow_validation_crossing_deadline_is_not_deferred(self):
         elapsed = [0]

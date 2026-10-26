@@ -77,9 +77,12 @@ class CamsWorkerRecoveryTests(TestCase):
              patch('uv_cloud.enrich', return_value={'status': 'manual_review', 'reason_code': 'request_ambiguous'}), \
              self.assertRaises(RuntimeError):
             self.run_worker()
-        final = json.loads(self.output.getvalue().splitlines()[-1])
+        rows = [json.loads(line) for line in self.output.getvalue().splitlines()]
+        final = [row for row in rows if 'components' in row][-1]
         self.assertFalse(final['complete'])
         self.assertEqual(final['components']['uv']['status'], 'manual_review')
+        alarms = [row for row in rows if row.get('event') == 'cams_component_unverified']
+        self.assertEqual([row['component'] for row in alarms], ['uv'])
 
     def test_regional_failure_does_not_suppress_uv(self):
         with patch('cloud_worker._cams_region_step', side_effect=ValueError('corrupt')), \
@@ -98,7 +101,10 @@ class CamsWorkerRecoveryTests(TestCase):
         last = [row for row in rows if 'components' in row][-1]
         self.assertEqual(last['components']['uv']['reason_code'], 'readback_pending')
         self.assertIsNone(last['retry_after_seconds'])
-        self.assertEqual(rows[-1]['reason_code'], 'execution_budget_exhausted')
+        stopped = [row for row in rows if row.get('event') == 'cams_recovery_stopped']
+        self.assertEqual(stopped[-1]['reason_code'], 'execution_budget_exhausted')
+        self.assertEqual(rows[-1]['event'], 'cams_component_unverified')
+        self.assertEqual(rows[-1]['reason_code'], 'readback_pending')
 
     def test_regional_result_is_persisted_before_uv_crash(self):
         with patch('cloud_worker._cams_region_step', return_value=VERIFIED), \

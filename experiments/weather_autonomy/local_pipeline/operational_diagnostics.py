@@ -26,7 +26,8 @@ _MUNICIPALITY = re.compile(r"(?:^|/)municipalities/(\d{6})\.json\Z")
 _FIELDS = frozenset({
     "provider", "job", "stage", "source_run_id", "run_id", "run_date", "attempt_id",
     "execution_id", "operation", "http_method", "object_key", "municipality_code", "status",
-    "reason_code", "error_type", "cause_type", "error_summary", "cause_summary",
+    "reason_code", "error_type", "cause_type", "error_summary", "cause_summary", "transport_reason", "component",
+    "continuity_status",
     "http_status", "retryable", "failure_file", "failure_function", "failure_line",
     "validation_status", "publication_status", "acquisition_status", "payload_count", "validated_count",
     "municipality_count", "artifact_kind", "observed_bytes", "limit_bytes",
