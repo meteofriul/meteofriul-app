@@ -19,7 +19,7 @@ eliminato dal proprietario non è stato ricreato; nessuna nuova automazione.
   209,468 secondi, nessun errore o fallimento.
 - Immagine candidata: `europe-west1-docker.pkg.dev/meteo-friul/meteofriul/weather-worker@sha256:572ea2889b37009b746e746402816a2fd1e6966db15c8d642e5105ccd5b0ce8e`.
 - Riepilogo pubblico ed hash delle evidenze:
-  [ricevuta](evidence/CAMS_CONTINUITY_DEPLOY_20261026.json).
+  [ricevuta](evidence/CAMS_CONTINUITY_DEPLOY_20261026.md).
 
 ## Cambiamento effettivo
 
