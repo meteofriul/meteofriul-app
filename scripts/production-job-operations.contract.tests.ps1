@@ -294,4 +294,47 @@ Assert-Contract ($monitoringSource.Contains('jsonPayload.event=')) (
     "monitoring senza filtro del log strutturato dei candidati Eventi"
 )
 
+# Exercise the policy builder locally: extract only its pure functions, never
+# dot-source the script entrypoint (which reads auth and calls cloud APIs).
+$parseTokens = $null
+$parseErrors = $null
+$ast = [Management.Automation.Language.Parser]::ParseInput(
+    $monitoringSource, [ref]$parseTokens, [ref]$parseErrors
+)
+Assert-Contract ($parseErrors.Count -eq 0) "monitoring script non parsabile"
+foreach ($functionName in @(
+    'Get-MonitoringPropertyValue', 'New-DesiredMonitoringPolicy', 'Test-PolicyMatches'
+)) {
+    $definition = $ast.FindAll({
+        param($node)
+        $node -is [Management.Automation.Language.FunctionDefinitionAst] -and
+        $node.Name -ceq $functionName
+    }, $true)
+    Assert-Contract ($definition.Count -eq 1) "funzione monitoring mancante"
+    Invoke-Expression $definition[0].Extent.Text
+}
+$eventsFailure = @($config.policies | Where-Object policyKey -CEQ 'events-failures')[0]
+Assert-Contract ($eventsFailure.notifyOnRecovery -ceq $false) (
+    "la scadenza della finestra Eventi non deve notificare recupero"
+)
+$desired = New-DesiredMonitoringPolicy $eventsFailure 'synthetic-channel'
+Assert-Contract ($desired.alertStrategy.notificationPrompts.Count -eq 1 -and
+    $desired.alertStrategy.notificationPrompts[0] -ceq 'OPENED') (
+    "Eventi deve mantenere email errore senza CLOSED fuorviante"
+)
+Assert-Contract ($desired.conditions[0].conditionThreshold.thresholdValue -eq 0 -and
+    $desired.conditions[0].conditionThreshold.aggregations[0].alignmentPeriod -ceq '7200s') (
+    "non allentare soglia e finestra dei fallimenti Eventi"
+)
+Assert-Contract ($desired.documentation.content.Contains('NON dimostra il recupero') -and
+    $desired.documentation.content.Contains('event_source_recovered')) (
+    "distinzione fra fine finestra e recupero dati non documentata"
+)
+$actual = $desired | ConvertTo-Json -Depth 20 | ConvertFrom-Json
+Assert-Contract (Test-PolicyMatches $actual $desired) "readback policy corretta non riconosciuto"
+$actual.alertStrategy.notificationPrompts = @('OPENED', 'CLOSED')
+Assert-Contract (-not (Test-PolicyMatches $actual $desired)) (
+    "audit non rileva riattivazione CLOSED Eventi"
+)
+
 Write-Output "PASS production job operations contracts"

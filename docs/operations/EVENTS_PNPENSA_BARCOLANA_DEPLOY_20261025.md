@@ -52,7 +52,7 @@ Il deploy non ripubblica il catalogo; non equivale al recupero degli eventi.
 Target fissato: **26 ottobre 2026 alle 05:00 Europe/Rome**, `2026-10-26T04:00:00Z`.
 Scheduler confermato `0 4 * * *`, Etc/UTC; primo controllo dalle 05:15 italiane.
 Controllare esattamente questa corsa anche se il PC viene acceso più tardi.
-Follow-up attivo: `verifica-eventi-pordenone-pensa-e-barcolana`; primo passaggio
+Follow-up predisposto al deploy: `verifica-eventi-pordenone-pensa-e-barcolana`; primo passaggio
 previsto dalle 05:20. Non interroga il cloud prima della finestra autorizzata,
 si elimina dopo un esito conclusivo e non avvia esecuzioni.
 
@@ -70,4 +70,17 @@ I comandi di distribuzione restano separati; non usarli nel follow-up.
 
 ## Esito ordinario
 
-**In attesa.** Non presentare il vecchio catalogo come recuperato.
+**26 ottobre: `needs_review`.** La corsa ordinaria delle 04:00 UTC è terminata
+con errore (`meteofriul-events-refresh-mnx6g`): lettura calendario Barcolana in
+`ReadTimeout` con timeout di 8 s. Digest e identità Scheduler verificati.
+Le altre 14 fonti sono aggiornate (9 fresche, 5 parziali); i cinque incontri ABC
+Pordenone Pensa sono completi nelle API e Scienza resta in revisione.
+Barcolana conserva il lotto del 25 ottobre, marcato `stale` ed escluso dalle API:
+le premiazioni del 29 novembre non sono presenti a Trieste. Il catalogo resta
+degradato; l'email di chiusura dopo due ore non prova recupero.
+
+Evidenze in `ordinary-verification.json` nella cartella privata già indicata.
+Il follow-up è stato eliminato su richiesta del proprietario. Il 26 ottobre è
+stata preparata la [correzione locale successiva](EVENTS_BARCOLANA_RECOVERY_20261026.md),
+non ancora distribuita. Nessuna nuova esecuzione o modifica cloud durante tale
+correzione.

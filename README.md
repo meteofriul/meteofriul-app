@@ -1,12 +1,14 @@
 # Meteo Friûl
 
+**Eventi, 26 ottobre — correzione locale:** la corsa ordinaria è fallita sulla lettura lenta di Barcolana; 14 fonti aggiornate, Barcolana obsoleta ed esclusa dalle API. Preparati retry entro il budget esistente e distinzione fra chiusura temporale dell'allarme e recupero dei dati. [Verifiche e limiti](docs/operations/EVENTS_BARCOLANA_RECOVERY_20261026.md). Nessun deploy o nuova AAB; sponsor disattivati. Il follow-up del 26 ottobre è concluso ed eliminato. Pannello editoriale Eventi non modificato.
+
 **Antenna radar — pubblicata in main il 25 ottobre:** commit `738c6538` verificato su Brave/Galaxy in chiaro e scuro, con radar attivo e disattivo, integrato tramite [PR 28](https://github.com/meteofriul/meteofriul-app/pull/28), merge `d159ec59`. CI della PR e di main superate in tutti e tre i job. [Verbale ed evidenze](docs/operations/RADAR_ANTENNA_ICON_20261025.md). Sorgenti su GitHub; ramo release, AAB, pacchetti Web e pubblicazioni applicative non aggiornati da questo intervento. Sponsor disattivati e controllo Eventi del 26 ottobre mantenuto.
 
 **Avvio HTTP FVG — sorgenti del 25 ottobre:** [PR 26](https://github.com/meteofriul/meteofriul-app/pull/26) integrata in main (`613fe78a`), commit della correzione `a431bd14`. 91 test locali e CI di PR/main superati. [Verbale, evidenze e limiti](docs/operations/WEATHER_HTTP_STARTUP_20261025.md). Nessun deploy: il servizio pubblico mantiene il comportamento precedente. Contratti Web/Android e artefatti invariati; nessuna nuova AAB necessaria per questo intervento. Sponsor disattivati e controllo Eventi del 26 ottobre mantenuto.
 
 **Sintesi per data locale — sorgenti del 25 ottobre:** [PR 24](https://github.com/meteofriul/meteofriul-app/pull/24) integrata in main (`8a47c752`); 84 test locali e CI di PR/main superati. [Verbale e limiti](docs/operations/SUMMARY_LOCAL_DATE_MONITOR_20261025.md). Nuovo allarme non attivato: collegamento operativo ancora da completare. Orari, Web/Android e sponsor invariati; controllo Eventi del 26 ottobre mantenuto.
 
-**Aggiornamento backend del 25 ottobre:** PR 22 integrata, CI superata e solo job Eventi aggiornato. [Verbale e rollback](docs/operations/EVENTS_PNPENSA_BARCOLANA_DEPLOY_20261025.md). Corsa ordinaria del 26 ottobre alle 05:00 italiane: `pending`. Web e Android mantengono lo stesso contratto; pacchetti e pubblicazioni invariati, sponsor disattivati. Recupero ordinario ancora da confermare; vedere esito e limiti nel verbale.
+**Aggiornamento backend del 25 ottobre:** PR 22 integrata, CI superata e solo job Eventi aggiornato. [Verbale e rollback](docs/operations/EVENTS_PNPENSA_BARCOLANA_DEPLOY_20261025.md). Corsa ordinaria del 26 ottobre alle 05:00 italiane: `needs_review`, timeout Barcolana; Pordenone Pensa verificato. Web e Android mantengono lo stesso contratto; pacchetti e pubblicazioni invariati, sponsor disattivati. Correzione successiva soltanto locale, come indicato sopra.
 
 **Prima di preparare una release Android:** leggere le [regole obbligatorie di preparazione e recupero dagli errori](docs/operations/ANDROID_BUILD_PREVENTION_RULES.md), insieme al [runbook Play](docs/operations/PLAY_AAB_RUNBOOK.md).
 

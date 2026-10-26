@@ -12,6 +12,7 @@ from .pilot_collection import collect
 from .pilot_regional_checkpoint import decode_control
 from .pilot_regional_annual_watch import run_bounded_watch
 from .pilot_sources import source_adapters
+from .pilot_recovery import log_source_recovery
 
 BUCKET = os.environ.get('EVENTS_DATA_BUCKET', 'meteofriul-pilot-20260906-data')
 KEY = os.environ.get('EVENTS_CATALOG_KEY', 'pilot/events/v1/catalog.json')
@@ -143,6 +144,7 @@ def publish(client, *, project, adapters=None, retry_failed=False):
         # The catalog retains the last verified source data and detail progress,
         # but the scheduled job must not appear successful after a partial run.
         _save_catalog(blob, generation, catalog)
+        log_source_recovery(previous, catalog, selected_adapters)
         print(json.dumps({'event_source_verification': report}, ensure_ascii=False), flush=True)
         raise RuntimeError('event source verification failed: ' + ', '.join(sorted(incomplete)))
     watch_failures = []
@@ -238,6 +240,7 @@ def publish(client, *, project, adapters=None, retry_failed=False):
             monitor_status[annual_name] = previous_annual
         catalog['monitors'] = monitor_status
     _save_catalog(blob, generation, catalog)
+    log_source_recovery(previous, catalog, selected_adapters)
     if candidate_watch_alerts:
         # A dedicated log alert reports candidate-site changes independently
         # of the publication result for the fifteen approved sources.

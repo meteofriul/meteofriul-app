@@ -8,6 +8,112 @@ from app.events.pilot_cloud import annual_watch_due, publish
 from app.events.pilot_regional_checkpoint import encode_control
 from app.events.pilot_sources import source_adapters
 from app.events.pilot_source_policy import APPROVED_SOURCES
+from app.events.pilot_recovery import log_source_recovery
+
+
+class SourceRecoveryTests(unittest.TestCase):
+    OLD = '2026-10-26T04:00:00Z'
+    NEW = '2026-10-27T04:00:00Z'
+
+    def prior_failure(self):
+        valid = merge_collection(PILOT_PROJECT, None, {
+            'Barcolana': {'status': 'ok', 'events': [{'title': 'Old'}]}},
+            '2026-10-25T04:00:00Z')
+        return merge_collection(PILOT_PROJECT, valid, {
+            'Barcolana': {'status': 'error', 'error_type': 'timeout'}}, self.OLD)
+
+    @patch('app.events.pilot_cloud.collect')
+    def test_recovery_is_logged_only_after_persistence_and_only_once(self, collect):
+        for status, events in [('ok', [{'title': 'New'}]), ('ok', []),
+                               ('partial', [{'title': 'Verified subset'}])]:
+            with self.subTest(status=status, count=len(events)):
+                previous = self.prior_failure()
+                collected = merge_collection(PILOT_PROJECT, previous, {
+                    'Barcolana': {'status': status, 'events': events,
+                                  'review_required': ([{'reason': 'conflict'}]
+                                                      if status == 'partial' else [])}
+                }, self.NEW)
+                collect.return_value = collected
+                blob = Mock(generation=7, size=100)
+                blob.download_as_bytes.return_value = json.dumps(previous).encode()
+                client = Mock(project=PILOT_PROJECT)
+                client.bucket.return_value.blob.return_value = blob
+                seen = []
+                def printed(line, **_):
+                    blob.upload_from_string.assert_called_once()
+                    seen.append(json.loads(line))
+                with patch('builtins.print', side_effect=printed):
+                    publish(client, project=PILOT_PROJECT, adapters={'Barcolana': object()})
+                self.assertEqual(len(seen), 1)
+                recovered = seen[0]['recovered'][0]
+                self.assertEqual(recovered['published_count'], len(events))
+                self.assertEqual(recovered['status'], 'partial' if status == 'partial' else 'fresh')
+                self.assertEqual(seen[0]['partial_sources'], ['Barcolana'] if status == 'partial' else [])
+                self.assertFalse(seen[0]['api_verified'])
+                with patch('builtins.print') as output:
+                    log_source_recovery(collected, collected, ['Barcolana'])
+                output.assert_not_called()
+
+    @patch('app.events.pilot_cloud.collect')
+    def test_failed_storage_write_never_reports_recovery(self, collect):
+        previous = self.prior_failure()
+        collect.return_value = merge_collection(PILOT_PROJECT, previous, {
+            'Barcolana': {'status': 'ok', 'events': []}}, self.NEW)
+        blob = Mock(generation=7, size=100)
+        blob.download_as_bytes.return_value = json.dumps(previous).encode()
+        blob.upload_from_string.side_effect = RuntimeError('conditional write failed')
+        client = Mock(project=PILOT_PROJECT)
+        client.bucket.return_value.blob.return_value = blob
+        with patch('builtins.print') as output:
+            with self.assertRaisesRegex(RuntimeError, 'conditional write failed'):
+                publish(client, project=PILOT_PROJECT, adapters={'Barcolana': object()})
+        output.assert_not_called()
+
+    def test_old_missing_invalid_or_unselected_batches_never_report_recovery(self):
+        previous = self.prior_failure()
+        current = merge_collection(PILOT_PROJECT, previous, {
+            'Barcolana': {'status': 'ok', 'events': []}}, self.NEW)
+        cases = [(previous, previous, ['Barcolana']), (previous, current, []),
+                 (None, current, ['Barcolana'])]
+        for timestamp in (self.OLD, None, 'invalid', '2026-10-27T04:00:00'):
+            altered = json.loads(json.dumps(current))
+            altered['sources']['Barcolana']['updated_at'] = timestamp
+            cases.append((previous, altered, ['Barcolana']))
+        for before, after, selected in cases:
+            with self.subTest(after=after, selected=selected), patch('builtins.print') as output:
+                log_source_recovery(before, after, selected)
+                output.assert_not_called()
+
+    @patch('app.events.pilot_cloud.collect')
+    def test_one_source_recovered_does_not_hide_other_failure(self, collect):
+        previous = self.prior_failure()
+        collect.return_value = merge_collection(PILOT_PROJECT, previous, {
+            'Barcolana': {'status': 'ok', 'events': []},
+            'Azalea': {'status': 'error', 'error_type': 'timeout'}}, self.NEW)
+        blob = Mock(generation=7, size=100)
+        blob.download_as_bytes.return_value = json.dumps(previous).encode()
+        client = Mock(project=PILOT_PROJECT)
+        client.bucket.return_value.blob.return_value = blob
+        with patch('builtins.print') as output:
+            with self.assertRaisesRegex(RuntimeError, 'Azalea'):
+                publish(client, project=PILOT_PROJECT,
+                        adapters={'Barcolana': object(), 'Azalea': object()})
+        messages = [json.loads(call.args[0]) for call in output.call_args_list]
+        recovery = [item for item in messages if item.get('event') == 'event_source_recovered']
+        self.assertEqual(len(recovery), 1)
+        self.assertEqual(recovery[0]['remaining_unavailable_sources'], ['Azalea'])
+        self.assertEqual([item['source'] for item in recovery[0]['recovered']], ['Barcolana'])
+
+    def test_recovery_keeps_expired_unselected_source_explicit(self):
+        previous = self.prior_failure()
+        previous['sources']['Azalea'] = {
+            'status': 'fresh', 'updated_at': '2026-10-24T04:00:00Z', 'events': []}
+        current = merge_collection(PILOT_PROJECT, previous, {
+            'Barcolana': {'status': 'ok', 'events': []}}, self.NEW)
+        with patch('builtins.print') as output:
+            log_source_recovery(previous, current, ['Barcolana'])
+        self.assertEqual(json.loads(output.call_args.args[0])['remaining_unavailable_sources'],
+                         ['Azalea'])
 
 
 class CloudPublicationTests(unittest.TestCase):

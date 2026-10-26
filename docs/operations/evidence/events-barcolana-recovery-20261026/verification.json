@@ -1,0 +1,52 @@
+{
+  "date": "2026-10-26",
+  "branch": "codex/events-barcolana-recovery",
+  "base_main": "a41353921bd10c94b7763f8f1b5588da72e810d7",
+  "state": "local_only_not_deployed",
+  "ordinary_evidence_sha256": "4ec65d8000659d295d84cbbed85875987a70adc2b3a1197919e573a1afd4c37d",
+  "ordinary_result": "failed_barcolana_read_timeout",
+  "limits_seconds": {
+    "first_read": 8,
+    "retry_read_cap": 16,
+    "connect_cap": 3,
+    "retry_delay": 0.5,
+    "shared_reads": 28,
+    "source_process": 35,
+    "all_sources_budget": 860
+  },
+  "max_attempts": 2,
+  "max_parallel_reads": 4,
+  "tests": {
+    "python_distinct_passed": 159,
+    "python_groups": [
+      "test_pilot_barcolana.py",
+      "test_pilot_cloud.py",
+      "test_event_source_http.py",
+      "test_event_sources_october21.py",
+      "test_pilot_collection.py",
+      "test_pilot_catalog.py",
+      "test_pilot_catalog_health.py",
+      "test_pilot_source_policy.py",
+      "test_pilot_http.py",
+      "test_pilot_quarantine_recovery.py"
+    ],
+    "powershell_contract": "production-job-operations.contract.tests.ps1",
+    "powershell_result": "passed"
+  },
+  "monitoring": {
+    "policy_key": "events-failures",
+    "window_seconds": 7200,
+    "failed_execution_threshold": 1,
+    "notification_prompts": ["OPENED"],
+    "persisted_recovery_log": "event_source_recovered",
+    "recovery_email_added": false,
+    "cloud_policy_applied": false
+  },
+  "live_provider_read_performed": false,
+  "cloud_recovery_verified": false,
+  "frontend_changes": false,
+  "catalog_schema_changes": false,
+  "panel_changes": false,
+  "manual_jobs_or_notifications": false,
+  "sponsors_enabled": false
+}
