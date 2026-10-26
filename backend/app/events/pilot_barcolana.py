@@ -8,6 +8,7 @@ from urllib.parse import urlsplit
 from zoneinfo import ZoneInfo
 from xml.etree import ElementTree
 import re
+import json
 import time
 import unicodedata
 
@@ -23,6 +24,7 @@ READ_BUDGET_SECONDS = 28
 MAX_PARALLEL_READS = 4
 REQUEST_CONNECT_SECONDS = 3
 REQUEST_READ_SECONDS = 8
+RETRY_READ_SECONDS = 16
 
 SOURCE = 'Barcolana'
 CALENDAR = 'https://www.barcolana.it/it/calendario-eventi'
@@ -377,14 +379,21 @@ def parse_calendar(html):
                       'day_counts': dict(sorted(day_counts.items()))}
 
 
-def _read(get, url, limit, *, deadline, expected_status=200):
+def _read(get, url, limit, *, deadline, expected_status=200, stage='document'):
+    started, attempts, last_timeout = time.monotonic(), 0, None
+
     def read():
+        nonlocal attempts, last_timeout
         remaining = deadline - time.monotonic()
         if remaining <= 0:
             raise ValueError('Barcolana shared read budget exhausted')
-        # Each retry consumes the same deadline, never a new 25-second window.
-        timeout = (min(REQUEST_CONNECT_SECONDS, remaining / 3),
-                   min(REQUEST_READ_SECONDS, remaining * 2 / 3))
+        # A slow origin may need more than 8s on both requests. Spend the
+        # remaining shared budget on the second read, without extending it.
+        connect = min(REQUEST_CONNECT_SECONDS, remaining / 3)
+        read_limit = REQUEST_READ_SECONDS if attempts == 0 else RETRY_READ_SECONDS
+        timeout = (connect, min(read_limit, remaining - connect))
+        attempts += 1
+        last_timeout = timeout
         response = get(url, timeout=timeout, headers={'User-Agent': 'MeteoFriulEvents/1.0'})
         try:
             if response.status_code != expected_status:
@@ -403,7 +412,22 @@ def _read(get, url, limit, *, deadline, expected_status=200):
             close = getattr(response, 'close', None)
             if close is not None:
                 close()
-    return read_with_single_transient_retry(read)
+    error_type = None
+    try:
+        return read_with_single_transient_retry(read)
+    except Exception as error:
+        error_type = type(error).__name__
+        raise
+    finally:
+        if attempts > 1 or error_type:
+            print(json.dumps({
+                'event': 'event_source_read', 'source': SOURCE, 'stage': stage,
+                'attempts': attempts, 'status': 'failed' if error_type else 'read',
+                'error_type': error_type,
+                'elapsed_seconds': round(time.monotonic() - started, 3),
+                'remaining_seconds': round(max(0, deadline - time.monotonic()), 3),
+                'last_timeout_seconds': last_timeout,
+            }), flush=True)
 
 
 def _read_pages(get, requests_by_label, *, deadline):
@@ -413,7 +437,8 @@ def _read_pages(get, requests_by_label, *, deadline):
     retained for non-cooperative sockets/threads; timeout never returns a subset.
     """
     executor = ThreadPoolExecutor(max_workers=MAX_PARALLEL_READS)
-    futures = {executor.submit(_read, get, url, limit, deadline=deadline): (label, url)
+    futures = {executor.submit(_read, get, url, limit, deadline=deadline,
+                               stage=label): (label, url)
                for label, (url, limit) in requests_by_label.items()}
     pages = {}
     try:
@@ -483,7 +508,8 @@ def collect_barcolana(*, get=requests.get, today=None):
     sessions, proof = parse_calendar(pages[CALENDAR_DATA])
     sitemap_urls = parse_sitemap(pages[SITEMAP])
     if KNOWN_ORPHAN in sitemap_urls:
-        _read(get, KNOWN_ORPHAN, 0, deadline=deadline, expected_status=404)
+        _read(get, KNOWN_ORPHAN, 0, deadline=deadline, expected_status=404,
+              stage='known_orphan')
         orphan_count = 1
     else:
         orphan_count = 0

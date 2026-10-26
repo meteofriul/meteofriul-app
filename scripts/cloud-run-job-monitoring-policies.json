@@ -232,10 +232,11 @@
       "policyKey": "events-failures",
       "jobName": "meteofriul-events-refresh",
       "displayName": "Meteo Friul - job Eventi",
-      "conditionDisplayName": "Esecuzione fallita del job Eventi",
+      "conditionDisplayName": "Esecuzione fallita del job Eventi nelle ultime 2 ore",
       "alignmentPeriodSeconds": 7200,
       "failedExecutionThreshold": 1,
-      "documentation": "Il job Eventi `meteofriul-events-refresh` ha terminato l'esecuzione con errore. Controllare esito, log e generazione del catalogo: le fonti riuscite possono essere state aggiornate, mentre i lotti falliti conservano la copia precedente per diagnosi ma sono esclusi dall'API. Verificare anche i monitor; non presumere che il catalogo completo precedente sia ancora visibile.",
+      "notifyOnRecovery": false,
+      "documentation": "Il job Eventi `meteofriul-events-refresh` ha terminato l'esecuzione con errore nelle ultime 2 ore. La chiusura di questo incidente indica soltanto che non ci sono fallimenti nella finestra: NON dimostra il recupero dei dati. La notifica CLOSED e disabilitata per evitare un falso messaggio di recupero; resta attiva la notifica di errore. Le fonti riuscite possono essere aggiornate, mentre quelle obsolete sono escluse dall'API. Per il recupero cercare `event_source_recovered`, emesso solo dopo il salvataggio di un nuovo lotto validato precedentemente fallito; leggere fonti ancora indisponibili, parzialita e schede in revisione. Il log non certifica le API: verificare generazione del catalogo, freschezza e schede effettivamente visibili. Nessuna nuova acquisizione va dedotta dalla scadenza delle 2 ore.",
       "labels": {
         "service": "events",
         "threshold": "one-in-2h"

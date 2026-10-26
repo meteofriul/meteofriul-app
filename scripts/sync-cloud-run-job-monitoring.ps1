@@ -169,9 +169,10 @@ function New-DesiredMonitoringPolicy {
     $notifyOnRecovery = Get-MonitoringPropertyValue `
         $Definition "notifyOnRecovery" $null
     if ($null -ne $notifyOnRecovery) {
-        $alertStrategy.notificationPrompts = if ([bool]$notifyOnRecovery) {
-            @("OPENED", "CLOSED")
-        } else { @("OPENED") }
+        # Preserve a JSON array even when only OPENED is requested.
+        $alertStrategy.notificationPrompts = @(if ([bool]$notifyOnRecovery) {
+            "OPENED", "CLOSED"
+        } else { "OPENED" })
     }
     if ($conditionType -in @("scheduler_log_failure", "job_log_match")) {
         $rateLimitSeconds = [int](Get-MonitoringPropertyValue `

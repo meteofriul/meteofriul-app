@@ -1,4 +1,5 @@
 import unittest
+import json
 from unittest.mock import Mock, patch
 from threading import Barrier, Event, Lock
 import time
@@ -108,6 +109,77 @@ class BarcolanaTests(unittest.TestCase):
         with self.assertRaisesRegex(ValueError, 'budget exhausted'):
             _read(get, CALENDAR_DATA, 100, deadline=time.monotonic() - 1)
         get.assert_not_called()
+
+    def test_second_read_can_recover_a_response_slower_than_eight_seconds(self):
+        now, timeouts = [100.0], []
+        def get(*_, **kwargs):
+            timeouts.append(kwargs['timeout'])
+            latency = 10  # Both requests exceed the previous 8s read timeout.
+            now[0] += min(latency, kwargs['timeout'][1])
+            if kwargs['timeout'][1] < latency:
+                raise requests.ReadTimeout('slow calendar')
+            return Response('complete calendar')
+        with patch('app.events.pilot_barcolana.time.monotonic', side_effect=lambda: now[0]), \
+                patch('app.events.http_client.time.sleep', side_effect=lambda n: now.__setitem__(0, now[0]+n)), \
+                patch('builtins.print') as output:
+            self.assertEqual(_read(get, CALENDAR_DATA, 100, deadline=128,
+                                   stage='calendar'), 'complete calendar')
+        self.assertEqual(timeouts, [(3, 8), (3, 16)])
+        self.assertLess(now[0], 128)
+        diagnostic = json.loads(output.call_args.args[0])
+        self.assertEqual((diagnostic['attempts'], diagnostic['status']), (2, 'read'))
+        self.assertEqual(diagnostic['stage'], 'calendar')
+        self.assertNotIn(CALENDAR_DATA, output.call_args.args[0])
+
+    def test_retry_cannot_extend_remaining_budget_after_connect_and_read_timeout(self):
+        now, timeouts = [100.0], []
+        def get(*_, **kwargs):
+            timeout = kwargs['timeout']
+            timeouts.append(timeout)
+            self.assertLessEqual(sum(timeout), 128 - now[0])
+            now[0] += sum(timeout)
+            raise requests.ReadTimeout('still unavailable')
+        with patch('app.events.pilot_barcolana.time.monotonic', side_effect=lambda: now[0]), \
+                patch('app.events.http_client.time.sleep', side_effect=lambda n: now.__setitem__(0, now[0]+n)), \
+                patch('builtins.print') as output:
+            with self.assertRaises(requests.ReadTimeout):
+                _read(get, CALENDAR_DATA, 100, deadline=128, stage='calendar')
+        self.assertEqual(timeouts, [(3, 8), (3, 13.5)])
+        self.assertEqual(now[0], 128)
+        diagnostic = json.loads(output.call_args.args[0])
+        self.assertEqual((diagnostic['attempts'], diagnostic['status']), (2, 'failed'))
+        self.assertEqual(diagnostic['remaining_seconds'], 0)
+
+    def test_queued_read_only_uses_remaining_budget(self):
+        now = [126.0]
+        get = Mock(return_value=Response('ok'))
+        with patch('app.events.pilot_barcolana.time.monotonic', side_effect=lambda: now[0]):
+            self.assertEqual(_read(get, SITEMAP, 100, deadline=128), 'ok')
+        self.assertAlmostEqual(sum(get.call_args.kwargs['timeout']), 2)
+
+    def test_no_retry_starts_after_deadline_is_consumed(self):
+        now = [100.0]
+        def get(*_, **__):
+            now[0] = 128
+            raise requests.ReadTimeout('budget consumed')
+        read = Mock(side_effect=get)
+        with patch('app.events.pilot_barcolana.time.monotonic', side_effect=lambda: now[0]), \
+                patch('app.events.http_client.time.sleep'):
+            with self.assertRaisesRegex(ValueError, 'budget exhausted'):
+                _read(read, SITEMAP, 100, deadline=128)
+        read.assert_called_once()
+
+    def test_late_success_is_not_published(self):
+        now = [100.0]
+        response = Response('complete but late')
+        response.close = Mock()
+        def get(*_, **__):
+            now[0] = 129
+            return response
+        with patch('app.events.pilot_barcolana.time.monotonic', side_effect=lambda: now[0]):
+            with self.assertRaisesRegex(ValueError, 'budget exhausted'):
+                _read(get, SITEMAP, 100, deadline=128)
+        response.close.assert_called_once()
 
     def test_terminal_http_failure_has_stage_and_never_returns_partial_evidence(self):
         response = Response('', 404)
