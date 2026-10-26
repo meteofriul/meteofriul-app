@@ -1,3 +1,5 @@
+param([string]$NodeDirectory)
+
 $ErrorActionPreference = "Stop"
 Set-StrictMode -Version Latest
 
@@ -22,6 +24,7 @@ $parameterNames = @(
   $launcherAst.ParamBlock.Parameters | ForEach-Object { $_.Name.VariablePath.UserPath }
 )
 Assert-Contract ($parameterNames -contains "WeatherCloud") "launcher exposes explicit -WeatherCloud opt-in"
+Assert-Contract ($parameterNames -contains "NodeDirectory") "launcher exposes an explicit portable Node directory"
 
 $main = $launcherAst.Find({
   param($node)
@@ -178,6 +181,8 @@ Assert-Contract (
 $guardEnd = $launcherText.IndexOf('$RepoRoot =')
 $guardOnly = [scriptblock]::Create($launcherText.Substring(0, $guardEnd))
 foreach ($arguments in @(
+  @{ NodeDirectory = "" },
+  @{ NodeDirectory = "   " },
   @{ CommunityCloudStore = $true },
   @{ NationalCloud = $true; NationalOnly = $true },
   @{ NationalCloud = $true; WeatherCloud = $true },
@@ -189,6 +194,95 @@ foreach ($arguments in @(
   Assert-Contract $rejected "unsafe cloud-preview flag combination rejected before lifecycle work"
 }
 Write-Output "PASS: start-local-weather-pilot cloud/offline contract complete"
+
+# Exercise path resolution and listener reuse without starting any services.
+& {
+  $sourceRepoRoot = $repoRoot
+  foreach ($functionName in @(
+    "Resolve-LauncherPath", "Assert-ExistingFile", "Resolve-PilotNodeToolchain",
+    "Assert-PilotNodeVersions", "Assert-PilotNodeListener"
+  )) {
+    $definition = $launcherAst.Find({ param($node)
+      $node -is [Management.Automation.Language.FunctionDefinitionAst] -and $node.Name -ceq $functionName
+    }, $true)
+    Assert-Contract ($null -ne $definition) "Node helper $functionName is present"
+    Invoke-Expression $definition.Extent.Text
+  }
+  $temporaryBase = [System.IO.Path]::GetFullPath([System.IO.Path]::GetTempPath())
+  $fixtureRoot = Join-Path $temporaryBase ("meteofriul-node-contract-" + [guid]::NewGuid().ToString("N"))
+  $fixtureNode = Join-Path $fixtureRoot "portable node"
+  $pathBefore = $env:PATH
+  New-Item -ItemType Directory -Path (Join-Path $fixtureNode "node_modules\npm\bin") -Force | Out-Null
+  try {
+    $RepoRoot = $fixtureRoot
+    function Resolve-Executable { param([string[]]$Candidates) return $Candidates[0] }
+    $defaultToolchain = Resolve-PilotNodeToolchain
+    Assert-Contract (
+      $defaultToolchain.Node -eq (Join-Path $env:ProgramFiles "nodejs\node.exe") -and
+      $defaultToolchain.Npm -eq (Join-Path $env:ProgramFiles "nodejs\npm.cmd") -and
+      $null -eq $defaultToolchain.ChildPath
+    ) "omitted directory preserves default selection and inherited PATH"
+    foreach ($invalidDirectory in @("", "   ", (Join-Path $fixtureRoot "absent"), $fixtureNode)) {
+      $rejected = $false
+      try { Resolve-PilotNodeToolchain -Directory $invalidDirectory -ExplicitDirectory | Out-Null } catch { $rejected = $true }
+      Assert-Contract $rejected "empty, missing or incomplete explicit directory fails without global fallback"
+    }
+    foreach ($requiredFile in @("node.exe", "npm.cmd", "node_modules\npm\bin\npm-cli.js")) {
+      New-Item -ItemType File -Path (Join-Path $fixtureNode $requiredFile) | Out-Null
+      if ($requiredFile -ne "node_modules\npm\bin\npm-cli.js") {
+        $rejected = $false
+        try { Resolve-PilotNodeToolchain -Directory $fixtureNode -ExplicitDirectory | Out-Null } catch { $rejected = $true }
+        Assert-Contract $rejected "partial Node/npm installation is rejected"
+      }
+    }
+    $portable = Resolve-PilotNodeToolchain -Directory "portable node" -ExplicitDirectory
+    Assert-Contract (
+      $portable.Node -eq (Join-Path $fixtureNode "node.exe") -and
+      $portable.Npm -eq (Join-Path $fixtureNode "npm.cmd") -and
+      $portable.NpmCli -eq (Join-Path $fixtureNode "node_modules\npm\bin\npm-cli.js") -and
+      $portable.ChildPath -ceq ($fixtureNode + [System.IO.Path]::PathSeparator + $pathBefore) -and
+      $env:PATH -ceq $pathBefore
+    ) "relative paths with spaces resolve one toolchain and a child-only PATH"
+    $fixtureListenerPath = $portable.Node
+    function Get-ListenerRecords { param([int]$Port) return [pscustomobject]@{ Pid = 42 } }
+    function Get-Process { param([int]$Id, $ErrorAction) return [pscustomobject]@{ Path = $fixtureListenerPath } }
+    Assert-PilotNodeListener -Service ([pscustomobject]@{ Port = 5174 }) -NodePath $portable.Node
+    Assert-Contract $true "listener using the selected Node can be reused"
+    $fixtureListenerPath = Join-Path $fixtureRoot "other-node.exe"
+    $rejected = $false
+    try { Assert-PilotNodeListener -Service ([pscustomobject]@{ Port = 5174 }) -NodePath $portable.Node } catch { $rejected = $true }
+    Assert-Contract $rejected "listener using another executable cannot be silently reused"
+    if ($NodeDirectory) {
+      $actualToolchain = Resolve-PilotNodeToolchain -Directory $NodeDirectory -ExplicitDirectory
+      $FrontendDir = Join-Path $sourceRepoRoot "frontend"
+      Assert-PilotNodeVersions -Toolchain $actualToolchain
+      Assert-Contract $true "provided real toolchain matches repository engines"
+      $FrontendDir = $fixtureRoot
+      foreach ($engines in @(
+        @{ node = "0.0.0"; npm = "10.9.2" },
+        @{ node = "22.17.1"; npm = "0.0.0" }
+      )) {
+        @{ engines = $engines } | ConvertTo-Json | Set-Content -LiteralPath (Join-Path $fixtureRoot "package.json")
+        $rejected = $false
+        try { Assert-PilotNodeVersions -Toolchain $actualToolchain } catch { $rejected = $true }
+        Assert-Contract $rejected "mismatched Node/npm versions fail explicit toolchain validation"
+      }
+    }
+  } finally {
+    $resolvedFixture = [System.IO.Path]::GetFullPath($fixtureRoot)
+    if (
+      [System.IO.Path]::GetDirectoryName($resolvedFixture).TrimEnd('\') -ne $temporaryBase.TrimEnd('\') -or
+      [System.IO.Path]::GetFileName($resolvedFixture) -notmatch '^meteofriul-node-contract-[0-9a-f]{32}$'
+    ) { throw "Unsafe Node contract fixture cleanup target" }
+    Remove-Item -LiteralPath $resolvedFixture -Recurse -Force
+  }
+}
+Assert-Contract (
+  $mainText.Contains('$frontendEnvironment["PATH"] = $NodeToolchain.ChildPath') -and
+  $mainText.IndexOf('if ($Stop)') -lt $mainText.IndexOf('Resolve-PilotNodeToolchain') -and
+  $mainText.Contains('if (-not $RestartFrontend) { Assert-PilotNodeListener') -and
+  $mainText.Contains('if ($NodeDirectorySpecified) { Assert-PilotNodeListener -Service $Frontend')
+) "selected toolchain scopes child PATH, checks reuse and leaves Stop independent"
 
 # Exercise the clock guard, without launching processes or changing artifacts.
 $clockGuard = $launcherAst.Find({ param($node)

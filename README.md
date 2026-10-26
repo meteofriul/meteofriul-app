@@ -368,6 +368,21 @@ Per vedere e validare la app pilota usare invece esclusivamente:
 .\scripts\start-local-weather-pilot.ps1 -WeatherCloud
 ```
 
+Se la toolchain richiesta è estratta in una directory utente separata, indicarla
+esplicitamente senza cambiare l'installazione globale o il PATH permanente:
+
+```powershell
+$pilotNode = Join-Path $env:LOCALAPPDATA "MeteoFriul\toolchains\node-v22.17.1-win-x64"
+.\scripts\start-local-weather-pilot.ps1 -WeatherCloud -NodeDirectory $pilotNode -CheckOnly
+.\scripts\start-local-weather-pilot.ps1 -WeatherCloud -NodeDirectory $pilotNode
+```
+
+`-NodeDirectory` richiede Node e npm nelle versioni di `frontend/package.json`;
+un percorso esplicito non valido blocca l'avvio, senza fallback globale. Il PATH
+selezionato vale soltanto per il frontend e i suoi figli. Per riavviare il
+frontend posseduto aggiungere `-RestartFrontend`; per fermare la preview usare
+`.\scripts\start-local-weather-pilot.ps1 -Stop`, anche senza la toolchain.
+
 La pilota è esposta su `http://127.0.0.1:5174/`. Se il reader cloud non è
 disponibile, il launcher può usare uno snapshot locale soltanto con un
 `-WeatherTestNow` esplicito e compatibile con la finestra dichiarata dallo

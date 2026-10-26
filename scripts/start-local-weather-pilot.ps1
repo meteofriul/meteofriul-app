@@ -10,6 +10,7 @@ param(
   [switch]$RestartFrontend,
   [switch]$StableFrontend,
   [switch]$RestartCommunity,
+  [string]$NodeDirectory,
   [string]$IconPayload,
   [string]$IconReport,
   [string]$CamsPayload,
@@ -20,6 +21,10 @@ param(
 
 $ErrorActionPreference = "Stop"
 Set-StrictMode -Version Latest
+$NodeDirectorySpecified = $PSBoundParameters.ContainsKey("NodeDirectory")
+if ($NodeDirectorySpecified -and [string]::IsNullOrWhiteSpace($NodeDirectory)) {
+  throw "NodeDirectory esplicita non puo essere vuota."
+}
 if ($CommunityCloudStore) {
   throw "CommunityCloudStore e stato ritirato: usa il servizio Community ufficiale meteo-friul."
 }
@@ -339,6 +344,59 @@ function Resolve-Executable {
     }
   }
   throw "Eseguibile non trovato: $($Candidates -join ', ')"
+}
+
+function Resolve-PilotNodeToolchain {
+  param([string]$Directory, [switch]$ExplicitDirectory)
+  if (-not $ExplicitDirectory) {
+    # Preserve the existing default; an explicit path never falls back here.
+    return [pscustomobject]@{
+      Node = Resolve-Executable -Candidates @((Join-Path $env:ProgramFiles "nodejs\node.exe"), "node.exe", "node")
+      Npm = Resolve-Executable -Candidates @((Join-Path $env:ProgramFiles "nodejs\npm.cmd"), "npm.cmd", "npm")
+      NpmCli = $null
+      ChildPath = $null
+    }
+  }
+  if ([string]::IsNullOrWhiteSpace($Directory)) { throw "NodeDirectory esplicita non puo essere vuota." }
+  $resolved = Resolve-LauncherPath -Label "NodeDirectory" -Value $Directory
+  if (-not [System.IO.Directory]::Exists($resolved)) { throw "NodeDirectory non trovata: $resolved" }
+  $nodePath = Join-Path $resolved "node.exe"
+  $npmPath = Join-Path $resolved "npm.cmd"
+  $npmCliPath = Join-Path $resolved "node_modules\npm\bin\npm-cli.js"
+  Assert-ExistingFile -Label "Node esplicito" -Path $nodePath
+  Assert-ExistingFile -Label "npm esplicito" -Path $npmPath
+  Assert-ExistingFile -Label "CLI npm della toolchain" -Path $npmCliPath
+  return [pscustomobject]@{
+    Node = $nodePath
+    Npm = $npmPath
+    NpmCli = $npmCliPath
+    ChildPath = $resolved + [System.IO.Path]::PathSeparator + $env:PATH
+  }
+}
+
+function Assert-PilotNodeVersions {
+  param($Toolchain)
+  $engines = (Get-Content -Raw -LiteralPath (Join-Path $FrontendDir "package.json") | ConvertFrom-Json).engines
+  $nodeVersion = @(& $Toolchain.Node --version)
+  if ($LASTEXITCODE -ne 0 -or $nodeVersion.Count -ne 1 -or $nodeVersion[0] -cne "v$($engines.node)") {
+    throw "NodeDirectory richiede Node $($engines.node), come frontend/package.json."
+  }
+  # Use the selected node directly, so version validation cannot use global node.
+  $npmVersion = @(& $Toolchain.Node $Toolchain.NpmCli --version)
+  if ($LASTEXITCODE -ne 0 -or $npmVersion.Count -ne 1 -or $npmVersion[0] -cne [string]$engines.npm) {
+    throw "NodeDirectory richiede npm $($engines.npm), come frontend/package.json."
+  }
+  Write-Host "Toolchain esplicita verificata: Node $($nodeVersion[0]), npm $($npmVersion[0])."
+}
+
+function Assert-PilotNodeListener {
+  param($Service, [string]$NodePath)
+  foreach ($listener in @(Get-ListenerRecords -Port $Service.Port)) {
+    $process = Get-Process -Id ([int]$listener.Pid) -ErrorAction Stop
+    if (-not $process.Path -or [System.IO.Path]::GetFullPath([string]$process.Path) -ne $NodePath) {
+      throw "Porta $($Service.Port) usa un eseguibile diverso dal Node selezionato; nessun riuso. Per il frontend posseduto usa -RestartFrontend."
+    }
+  }
 }
 
 function Initialize-ProcessTreeInspector {
@@ -2178,16 +2236,13 @@ if (-not $WeatherCloud -and -not $NationalOnly -and -not $NationalCloud) {
   )
   Assert-ExistingFile -Label "Python listener data plane" -Path $DataPlaneListenerPython
 }
-$Npm = Resolve-Executable -Candidates @(
-  (Join-Path $env:ProgramFiles "nodejs\npm.cmd"),
-  "npm.cmd",
-  "npm"
-)
-$Node = Resolve-Executable -Candidates @(
-  (Join-Path $env:ProgramFiles "nodejs\node.exe"),
-  "node.exe",
-  "node"
-)
+$NodeToolchain = Resolve-PilotNodeToolchain -Directory $NodeDirectory -ExplicitDirectory:$NodeDirectorySpecified
+$Npm = $NodeToolchain.Npm
+$Node = $NodeToolchain.Node
+if ($NodeDirectorySpecified) {
+  Assert-PilotNodeVersions -Toolchain $NodeToolchain
+  if (-not $RestartFrontend) { Assert-PilotNodeListener -Service $Services[2] -NodePath $Node }
+}
 
 if ($CheckOnly) {
   $modeLabel = if ($NationalCloud) { "reader nazionale/CAMS cloud correnti" } elseif ($WeatherCloud) { "reader cloud sola-lettura" } elseif ($NationalOnly) { "bundle nazionale locale" } else { "snapshot locale offline" }
@@ -2348,6 +2403,7 @@ try {
     if (-not ($state.Healthy -and $state.Recognizable)) {
       throw "Porta 5174 occupata da un servizio non sano o non riconoscibile. Nessun processo viene fermato."
     }
+    if ($NodeDirectorySpecified) { Assert-PilotNodeListener -Service $Frontend -NodePath $Node }
     Write-Host "Frontend gia sano e riconoscibile: riuso PID listener $($state.ListenerPid)."
   } else {
     $frontendEnvironment = @{
@@ -2366,6 +2422,7 @@ try {
         "http://127.0.0.1:8781"
       }
     }
+    if ($NodeDirectorySpecified) { $frontendEnvironment["PATH"] = $NodeToolchain.ChildPath }
     if ($WeatherTestNow) {
       $frontendEnvironment["VITE_LOCAL_WEATHER_PILOT_NOW"] = $WeatherTestNow
     }
