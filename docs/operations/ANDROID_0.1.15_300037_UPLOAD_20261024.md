@@ -1,5 +1,7 @@
 # AAB 0.1.15 / 300037 — test interno del 24 ottobre 2026
 
+> Aggiornamento del 24 ottobre sera: il proprietario ha aggiornato via Play; [collaudo della 300037 sul Galaxy](ANDROID_0.1.15_300037_DEVICE_CHECK_20261024.md) completato nei percorsi osservati, con limiti Android e catalogo Eventi parziale espliciti. Lo stato di build/upload riportato sotto resta storico.
+
 ## Esito e perimetro
 
 **Disponibile per i tester interni dalle 18:52 Europe/Rome.** Caricata la AAB
@@ -20,8 +22,8 @@ Le altre liste restano escluse. Produzione riletta dopo l'upload:
 Sponsor verificati prima e dopo: `enabled=false`, zero campagne, revisione 117;
 ultima lettura `2026-10-24T16:53:47.938312+00:00`. Pannello e sincronizzazione sponsor non attivati.
 Nessuna installazione, emulatore, pubblicazione Web, deploy, invio manuale o
-pubblicazione in produzione. Ultimo artefatto osservato sul Galaxy: 300036;
-**il runtime della 300037 resta NON VERIFICATO**.
+pubblicazione in produzione. Al termine dell'upload l’ultimo artefatto osservato sul Galaxy era la 300036;
+**il runtime della 300037 era NON VERIFICATO**. Il successivo collaudo è collegato sopra.
 
 ## Convalida e quattro aree Android
 

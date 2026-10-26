@@ -1,0 +1,1370 @@
+{
+  "recorded_at": "2026-10-24T20:20:48.882881+00:00",
+  "result": "observed_device_paths_pass_with_limits_events_catalog_degraded",
+  "package": "com.meteofriul.app",
+  "version_name": "0.1.15",
+  "version_code": 300037,
+  "source_commit": "d15edb10067b972c10e4989ebebfe6410a194f2c",
+  "aab_sha256": "81d3b1848ceb19c9095a46ca6b55bf8ce5bd00337c01fedf1d4d7582809d96cf",
+  "device": {
+    "model": "SM-A525F",
+    "android": 14,
+    "api": 34,
+    "navigation": "three_buttons",
+    "screen": "1080x2400",
+    "density": 420
+  },
+  "installed_by_owner": "Google Play",
+  "agent_installations": 0,
+  "owner_position_testimony": "Sì, attiva prima e dopo",
+  "owner_language_theme_restore_confirmed": true,
+  "technical_baseline": {
+    "fields_compared": 19,
+    "changed_fields": []
+  },
+  "native_assets": {
+    "at_utc": "2026-10-24T17:02:04.174806+00:00",
+    "version_code": 300037,
+    "installed_base_sha256": "bba2a3e44cde9c0db2fefd3c5b591791f2647c95b5486ebfd813024fd027ef06",
+    "assets_compared": 508,
+    "missing_or_different": 0,
+    "capacitor_config_present": true,
+    "capacitor_config_sha256": "0e6adc3fd2d8c557b848322adbda800b4e69804f0aec2f37326aa25543979cce",
+    "plugins_sha256": "b9832bcf10b7daff2969d0d4b66bcfe5ef7acdf64107709bd3f839cf3cfda7e4",
+    "cordova_xml_present": true,
+    "webview_debugging": false,
+    "development_server": null
+  },
+  "lifecycle": {
+    "background_seconds": 8,
+    "resume_same_process": true,
+    "cold_new_process": true,
+    "no_data_or_cache_clear": true,
+    "no_permission_or_location_settings_changes": true
+  },
+  "cams_recordings": {
+    "languages": [
+      "it",
+      "fur"
+    ],
+    "seconds_each": 12,
+    "frames_each": 48,
+    "sampling_fps": 4,
+    "false_unavailable_observed": false,
+    "cache_empty_or_network_error_exercised": false
+  },
+  "runtime_log_markers": [
+    {
+      "at": "2026-10-24T20:11:13.234766+00:00",
+      "lines": 845,
+      "markers": {
+        "FATAL EXCEPTION": 0,
+        "Fatal signal": 0,
+        "ANR in ": 0,
+        "Uncaught TypeError": 0,
+        "Uncaught ReferenceError": 0,
+        "Uncaught Error": 0,
+        "net::ERR_": 0,
+        "AppCheck": 0,
+        "Integrity": 6,
+        "403": 20,
+        "401": 1
+      }
+    },
+    {
+      "at": "2026-10-24T20:14:08.298707+00:00",
+      "lines": 562,
+      "markers": {
+        "FATAL EXCEPTION": 0,
+        "Fatal signal": 0,
+        "ANR in ": 0,
+        "Uncaught TypeError": 0,
+        "Uncaught ReferenceError": 0,
+        "Uncaught Error": 0,
+        "net::ERR_": 0,
+        "AppCheck": 0,
+        "Integrity": 0,
+        "403": 2,
+        "401": 0
+      }
+    }
+  ],
+  "sponsors_before": {
+    "at_utc": "2026-10-24T17:02:04.551051+00:00",
+    "enabled": false,
+    "campaign_count": 0,
+    "revision": 117
+  },
+  "sponsors_after": {
+    "at_utc": "2026-10-24T20:16:04.004466+00:00",
+    "enabled": false,
+    "campaign_count": 0,
+    "revision": 117
+  },
+  "final_user_state": {
+    "language": "it",
+    "theme": "light",
+    "location": "Pordenone",
+    "automatic_location": true,
+    "alerts": true,
+    "notices": true,
+    "section": "events"
+  },
+  "events_completeness": {
+    "snapshot": "2026-10-24T04:00:29.271355+00:00",
+    "sources": {
+      "TurismoFVG": {
+        "status": "stale",
+        "fields": {
+          "denominator": 1375,
+          "missing_core_fields": {
+            "start_date": 1
+          },
+          "invalid_fields": {
+            "invalid_dates": 1
+          },
+          "missing_optional_fields": {
+            "time": 524,
+            "address": 1375,
+            "image": 23,
+            "description_or_excerpt": 112,
+            "venue_or_place": 1
+          },
+          "programme_areas_without_single_point": 0
+        }
+      },
+      "Pordenonelegge": {
+        "status": "fresh",
+        "fields": {
+          "denominator": 0,
+          "missing_core_fields": {},
+          "invalid_fields": {},
+          "missing_optional_fields": {},
+          "programme_areas_without_single_point": 0
+        }
+      },
+      "Azalea": {
+        "status": "partial",
+        "fields": {
+          "denominator": 7,
+          "missing_core_fields": {},
+          "invalid_fields": {},
+          "missing_optional_fields": {
+            "address": 7
+          },
+          "programme_areas_without_single_point": 0
+        }
+      },
+      "CSS Udine": {
+        "status": "partial",
+        "fields": {
+          "denominator": 149,
+          "missing_core_fields": {},
+          "invalid_fields": {},
+          "missing_optional_fields": {
+            "time": 58,
+            "address": 149
+          },
+          "programme_areas_without_single_point": 0
+        }
+      },
+      "Pordenone Pensa": {
+        "status": "partial",
+        "fields": {
+          "denominator": 0,
+          "missing_core_fields": {},
+          "invalid_fields": {},
+          "missing_optional_fields": {},
+          "programme_areas_without_single_point": 0
+        }
+      },
+      "Teatro Verdi Pordenone": {
+        "status": "fresh",
+        "fields": {
+          "denominator": 87,
+          "missing_core_fields": {},
+          "invalid_fields": {},
+          "missing_optional_fields": {
+            "address": 87
+          },
+          "programme_areas_without_single_point": 0
+        }
+      },
+      "Teatro Verdi Trieste": {
+        "status": "fresh",
+        "fields": {
+          "denominator": 61,
+          "missing_core_fields": {},
+          "invalid_fields": {},
+          "missing_optional_fields": {
+            "address": 61,
+            "description_or_excerpt": 1
+          },
+          "programme_areas_without_single_point": 0
+        }
+      },
+      "Le Giornate del Cinema Muto": {
+        "status": "fresh",
+        "fields": {
+          "denominator": 0,
+          "missing_core_fields": {},
+          "invalid_fields": {},
+          "missing_optional_fields": {},
+          "programme_areas_without_single_point": 0
+        }
+      },
+      "Paesi in Festa": {
+        "status": "fresh",
+        "fields": {
+          "denominator": 15,
+          "missing_core_fields": {},
+          "invalid_fields": {},
+          "missing_optional_fields": {
+            "time": 15,
+            "image": 15,
+            "description_or_excerpt": 5,
+            "address": 15
+          },
+          "programme_areas_without_single_point": 0
+        }
+      },
+      "SagreFVG": {
+        "status": "partial",
+        "fields": {
+          "denominator": 17,
+          "missing_core_fields": {},
+          "invalid_fields": {},
+          "missing_optional_fields": {
+            "time": 17,
+            "address": 17
+          },
+          "programme_areas_without_single_point": 0
+        }
+      },
+      "Villa Manin": {
+        "status": "partial",
+        "fields": {
+          "denominator": 3,
+          "missing_core_fields": {},
+          "invalid_fields": {},
+          "missing_optional_fields": {
+            "time": 3,
+            "address": 3
+          },
+          "programme_areas_without_single_point": 0
+        }
+      },
+      "Magazzino delle Idee": {
+        "status": "fresh",
+        "fields": {
+          "denominator": 0,
+          "missing_core_fields": {},
+          "invalid_fields": {},
+          "missing_optional_fields": {},
+          "programme_areas_without_single_point": 0
+        }
+      },
+      "MESS": {
+        "status": "fresh",
+        "fields": {
+          "denominator": 15,
+          "missing_core_fields": {},
+          "invalid_fields": {},
+          "missing_optional_fields": {
+            "time": 15,
+            "image": 12,
+            "address": 3
+          },
+          "programme_areas_without_single_point": 0
+        }
+      },
+      "Galleria Spazzapan": {
+        "status": "fresh",
+        "fields": {
+          "denominator": 2,
+          "missing_core_fields": {},
+          "invalid_fields": {},
+          "missing_optional_fields": {
+            "time": 1,
+            "address": 2,
+            "description_or_excerpt": 1
+          },
+          "programme_areas_without_single_point": 0
+        }
+      },
+      "Barcolana": {
+        "status": "fresh",
+        "fields": {
+          "denominator": 1,
+          "missing_core_fields": {},
+          "invalid_fields": {},
+          "missing_optional_fields": {
+            "time": 1,
+            "address": 1
+          },
+          "programme_areas_without_single_point": 0
+        }
+      }
+    },
+    "api": {
+      "pordenone": {
+        "denominator": 100,
+        "missing_core_fields": {},
+        "invalid_fields": {},
+        "missing_optional_fields": {
+          "address": 100,
+          "time": 12,
+          "image": 7,
+          "description_or_excerpt": 2
+        },
+        "programme_areas_without_single_point": 0,
+        "identical_rows": 0,
+        "missing_time_by_source": {
+          "Paesi in Festa": 7,
+          "SagreFVG": 5
+        }
+      },
+      "udine": {
+        "denominator": 120,
+        "missing_core_fields": {},
+        "invalid_fields": {},
+        "missing_optional_fields": {
+          "address": 120,
+          "time": 46,
+          "image": 5,
+          "description_or_excerpt": 1
+        },
+        "programme_areas_without_single_point": 3,
+        "identical_rows": 0,
+        "missing_time_by_source": {
+          "CSS Udine": 34,
+          "MESS": 5,
+          "SagreFVG": 5,
+          "Paesi in Festa": 2
+        }
+      },
+      "gradisca": {
+        "denominator": 48,
+        "missing_core_fields": {},
+        "invalid_fields": {},
+        "missing_optional_fields": {
+          "time": 26,
+          "address": 48,
+          "description_or_excerpt": 1,
+          "image": 5
+        },
+        "programme_areas_without_single_point": 3,
+        "identical_rows": 0,
+        "missing_time_by_source": {
+          "Galleria Spazzapan": 1,
+          "MESS": 3,
+          "SagreFVG": 1,
+          "Paesi in Festa": 2,
+          "CSS Udine": 19
+        }
+      }
+    },
+    "pordenone_window": {
+      "method": "date bounds only, compared to observed UI; not a full frontend replay",
+      "start": "2026-10-24",
+      "end": "2026-11-08",
+      "raw_in_window": 10,
+      "raw_outside_window": 90,
+      "items": [
+        {
+          "title": "PEOPLE, PLACES & THINGS",
+          "start_date": "2026-10-24",
+          "end_date": "2026-10-24",
+          "occurrences": null,
+          "opening_days_status": null,
+          "source": "Teatro Verdi Pordenone",
+          "time": "20:30",
+          "schedule_kind": null
+        },
+        {
+          "title": "IN MUTANDE",
+          "start_date": "2026-10-28",
+          "end_date": "2026-10-28",
+          "occurrences": null,
+          "opening_days_status": null,
+          "source": "Teatro Verdi Pordenone",
+          "time": "20:30",
+          "schedule_kind": null
+        },
+        {
+          "title": "L’OPERA LIRICA PER TUTTI: IL FUTURO IN SCENA",
+          "start_date": "2026-10-30",
+          "end_date": "2026-10-30",
+          "occurrences": null,
+          "opening_days_status": null,
+          "source": "Teatro Verdi Pordenone",
+          "time": "18:30",
+          "schedule_kind": null
+        },
+        {
+          "title": "GMJO: CRISTIAN MÃCELARU",
+          "start_date": "2026-11-08",
+          "end_date": "2026-11-08",
+          "occurrences": null,
+          "opening_days_status": null,
+          "source": "Teatro Verdi Pordenone",
+          "time": "20:30",
+          "schedule_kind": null
+        },
+        {
+          "title": "Festa delle Zucche",
+          "start_date": "2026-10-24",
+          "end_date": "2026-10-25",
+          "occurrences": null,
+          "opening_days_status": "unknown",
+          "source": "SagreFVG",
+          "time": null,
+          "schedule_kind": "period"
+        },
+        {
+          "title": "Agriflumen",
+          "start_date": "2026-10-23",
+          "end_date": "2026-10-25",
+          "occurrences": null,
+          "opening_days_status": "unknown",
+          "source": "SagreFVG",
+          "time": null,
+          "schedule_kind": "period"
+        },
+        {
+          "title": "43ª Sagra delle Castagne",
+          "start_date": "2026-10-15",
+          "end_date": "2026-10-28",
+          "occurrences": null,
+          "opening_days_status": "unknown",
+          "source": "SagreFVG",
+          "time": null,
+          "schedule_kind": "period"
+        },
+        {
+          "title": "Sagra del Pan Zal",
+          "start_date": "2026-10-15",
+          "end_date": "2026-10-25",
+          "occurrences": null,
+          "opening_days_status": null,
+          "source": "Paesi in Festa",
+          "time": null,
+          "schedule_kind": null
+        },
+        {
+          "title": "40ª Sagra della Castagna",
+          "start_date": "2026-10-10",
+          "end_date": "2026-10-25",
+          "occurrences": null,
+          "opening_days_status": "unknown",
+          "source": "SagreFVG",
+          "time": null,
+          "schedule_kind": "period"
+        },
+        {
+          "title": "Sagra del Pan Zal",
+          "start_date": "2026-10-15",
+          "end_date": "2026-10-25",
+          "occurrences": null,
+          "opening_days_status": "unknown",
+          "source": "SagreFVG",
+          "time": null,
+          "schedule_kind": "period"
+        }
+      ]
+    },
+    "source_status_counts": {
+      "stale": 1,
+      "fresh": 9,
+      "partial": 5
+    },
+    "live_source_rows": 357,
+    "retained_stale_rows": 1375,
+    "current_quarantined_rows": 6
+  },
+  "events_catalog": {
+    "checked_at": "2026-10-24T20:12:14.136219+00:00",
+    "read_only": true,
+    "catalog_generation": "1792814817227349",
+    "catalog_sha256": "b25e5ea5ec8a8b092ec47eb7bb2c5c2a4c3dedda5bd77ba95ef71f6107700923",
+    "attempted_at": "2026-10-24T04:00:29.271355+00:00",
+    "sources": {
+      "TurismoFVG": {
+        "status": "stale",
+        "updated_at": "2026-10-23T04:00:30.774908+00:00",
+        "last_attempt_error_type": "adapter_exception",
+        "last_attempted_at": "2026-10-24T04:00:29.271355+00:00",
+        "events": 1375,
+        "review_required": 16,
+        "pending": 0
+      },
+      "Pordenonelegge": {
+        "status": "fresh",
+        "updated_at": "2026-10-24T04:00:29.271355+00:00",
+        "last_attempt_error_type": null,
+        "last_attempted_at": null,
+        "events": 0,
+        "review_required": 0,
+        "pending": 0
+      },
+      "Azalea": {
+        "status": "partial",
+        "updated_at": "2026-10-24T04:00:29.271355+00:00",
+        "last_attempt_error_type": null,
+        "last_attempted_at": null,
+        "events": 7,
+        "review_required": 1,
+        "pending": 0
+      },
+      "CSS Udine": {
+        "status": "partial",
+        "updated_at": "2026-10-24T04:00:29.271355+00:00",
+        "last_attempt_error_type": null,
+        "last_attempted_at": null,
+        "events": 149,
+        "review_required": 1,
+        "pending": 0
+      },
+      "Pordenone Pensa": {
+        "status": "partial",
+        "updated_at": "2026-10-24T04:00:29.271355+00:00",
+        "last_attempt_error_type": null,
+        "last_attempted_at": null,
+        "events": 0,
+        "review_required": 2,
+        "pending": 0
+      },
+      "Teatro Verdi Pordenone": {
+        "status": "fresh",
+        "updated_at": "2026-10-24T04:00:29.271355+00:00",
+        "last_attempt_error_type": null,
+        "last_attempted_at": null,
+        "events": 87,
+        "review_required": 0,
+        "pending": 0
+      },
+      "Teatro Verdi Trieste": {
+        "status": "fresh",
+        "updated_at": "2026-10-24T04:00:29.271355+00:00",
+        "last_attempt_error_type": null,
+        "last_attempted_at": null,
+        "events": 61,
+        "review_required": 0,
+        "pending": 0
+      },
+      "Le Giornate del Cinema Muto": {
+        "status": "fresh",
+        "updated_at": "2026-10-24T04:00:29.271355+00:00",
+        "last_attempt_error_type": null,
+        "last_attempted_at": null,
+        "events": 0,
+        "review_required": 0,
+        "pending": 0
+      },
+      "Paesi in Festa": {
+        "status": "fresh",
+        "updated_at": "2026-10-24T04:00:29.271355+00:00",
+        "last_attempt_error_type": null,
+        "last_attempted_at": null,
+        "events": 15,
+        "review_required": 0,
+        "pending": 0
+      },
+      "SagreFVG": {
+        "status": "partial",
+        "updated_at": "2026-10-24T04:00:29.271355+00:00",
+        "last_attempt_error_type": null,
+        "last_attempted_at": null,
+        "events": 17,
+        "review_required": 1,
+        "pending": 0
+      },
+      "Villa Manin": {
+        "status": "partial",
+        "updated_at": "2026-10-24T04:00:29.271355+00:00",
+        "last_attempt_error_type": null,
+        "last_attempted_at": null,
+        "events": 3,
+        "review_required": 1,
+        "pending": 0
+      },
+      "Magazzino delle Idee": {
+        "status": "fresh",
+        "updated_at": "2026-10-24T04:00:29.271355+00:00",
+        "last_attempt_error_type": null,
+        "last_attempted_at": null,
+        "events": 0,
+        "review_required": 0,
+        "pending": 0
+      },
+      "MESS": {
+        "status": "fresh",
+        "updated_at": "2026-10-24T04:00:29.271355+00:00",
+        "last_attempt_error_type": null,
+        "last_attempted_at": null,
+        "events": 15,
+        "review_required": 0,
+        "pending": 0
+      },
+      "Galleria Spazzapan": {
+        "status": "fresh",
+        "updated_at": "2026-10-24T04:00:29.271355+00:00",
+        "last_attempt_error_type": null,
+        "last_attempted_at": null,
+        "events": 2,
+        "review_required": 0,
+        "pending": 0
+      },
+      "Barcolana": {
+        "status": "fresh",
+        "updated_at": "2026-10-24T04:00:29.271355+00:00",
+        "last_attempt_error_type": null,
+        "last_attempted_at": null,
+        "events": 1,
+        "review_required": 0,
+        "pending": 0
+      }
+    },
+    "api": {
+      "Pordenone": {
+        "total": 100,
+        "pages": 1,
+        "snapshot": "2026-10-24T04:00:29.271355+00:00",
+        "catalog_status": "degraded",
+        "source_status": {
+          "TurismoFVG": "stale",
+          "Pordenonelegge": "fresh",
+          "Azalea": "partial",
+          "CSS Udine": "partial",
+          "Pordenone Pensa": "partial",
+          "Teatro Verdi Pordenone": "fresh",
+          "Teatro Verdi Trieste": "fresh",
+          "Le Giornate del Cinema Muto": "fresh",
+          "Paesi in Festa": "fresh",
+          "SagreFVG": "partial",
+          "Villa Manin": "partial",
+          "Magazzino delle Idee": "fresh",
+          "MESS": "fresh",
+          "Galleria Spazzapan": "fresh",
+          "Barcolana": "fresh"
+        },
+        "source_failure_tags": {
+          "TurismoFVG": "adapter_exception",
+          "Azalea": "quarantined_cards",
+          "CSS Udine": "quarantined_cards",
+          "Pordenone Pensa": "quarantined_cards",
+          "SagreFVG": "quarantined_cards",
+          "Villa Manin": "quarantined_cards"
+        },
+        "unlocated_count": 0,
+        "sources": {
+          "Azalea": 1,
+          "Paesi in Festa": 7,
+          "SagreFVG": 5,
+          "Teatro Verdi Pordenone": 87
+        }
+      },
+      "Udine": {
+        "total": 120,
+        "pages": 1,
+        "snapshot": "2026-10-24T04:00:29.271355+00:00",
+        "catalog_status": "degraded",
+        "source_status": {
+          "TurismoFVG": "stale",
+          "Pordenonelegge": "fresh",
+          "Azalea": "partial",
+          "CSS Udine": "partial",
+          "Pordenone Pensa": "partial",
+          "Teatro Verdi Pordenone": "fresh",
+          "Teatro Verdi Trieste": "fresh",
+          "Le Giornate del Cinema Muto": "fresh",
+          "Paesi in Festa": "fresh",
+          "SagreFVG": "partial",
+          "Villa Manin": "partial",
+          "Magazzino delle Idee": "fresh",
+          "MESS": "fresh",
+          "Galleria Spazzapan": "fresh",
+          "Barcolana": "fresh"
+        },
+        "source_failure_tags": {
+          "TurismoFVG": "adapter_exception",
+          "Azalea": "quarantined_cards",
+          "CSS Udine": "quarantined_cards",
+          "Pordenone Pensa": "quarantined_cards",
+          "SagreFVG": "quarantined_cards",
+          "Villa Manin": "quarantined_cards"
+        },
+        "unlocated_count": 0,
+        "sources": {
+          "Azalea": 5,
+          "CSS Udine": 103,
+          "MESS": 5,
+          "Paesi in Festa": 2,
+          "SagreFVG": 5
+        }
+      },
+      "Gradisca": {
+        "total": 48,
+        "pages": 1,
+        "snapshot": "2026-10-24T04:00:29.271355+00:00",
+        "catalog_status": "degraded",
+        "source_status": {
+          "TurismoFVG": "stale",
+          "Pordenonelegge": "fresh",
+          "Azalea": "partial",
+          "CSS Udine": "partial",
+          "Pordenone Pensa": "partial",
+          "Teatro Verdi Pordenone": "fresh",
+          "Teatro Verdi Trieste": "fresh",
+          "Le Giornate del Cinema Muto": "fresh",
+          "Paesi in Festa": "fresh",
+          "SagreFVG": "partial",
+          "Villa Manin": "partial",
+          "Magazzino delle Idee": "fresh",
+          "MESS": "fresh",
+          "Galleria Spazzapan": "fresh",
+          "Barcolana": "fresh"
+        },
+        "source_failure_tags": {
+          "TurismoFVG": "adapter_exception",
+          "Azalea": "quarantined_cards",
+          "CSS Udine": "quarantined_cards",
+          "Pordenone Pensa": "quarantined_cards",
+          "SagreFVG": "quarantined_cards",
+          "Villa Manin": "quarantined_cards"
+        },
+        "unlocated_count": 0,
+        "sources": {
+          "CSS Udine": 40,
+          "Galleria Spazzapan": 2,
+          "MESS": 3,
+          "Paesi in Festa": 2,
+          "SagreFVG": 1
+        }
+      }
+    }
+  },
+  "open_findings": [
+    "RADAR-DARK-CONTRAST",
+    "EVENTS-TURISMOFVG-ORDINARY-RUN-PENDING-20261025T040000Z"
+  ],
+  "not_verified": [
+    "Android 15/16",
+    "gestures/cutout",
+    "tablets/multi-window/rotation",
+    "GPS error recovery/moving accuracy",
+    "cache-empty CAMS/error path on device",
+    "national forecast on 300037",
+    "Community submission/receipt/votes/populated list",
+    "manual notification delivery",
+    "radar precipitation echoes",
+    "webcam image freshness",
+    "external links",
+    "Web origin cache/services",
+    "Safari/iPhone/PWA"
+  ],
+  "no_manual_jobs_or_sends": true,
+  "no_deploy_or_build": true,
+  "private_evidence_hashes": {
+    "after.json": {
+      "sha256": "1633e73f28f37aa762733de8d90267ba1b6744cbd45b313b95c4b579eab337f8",
+      "bytes": 2532
+    },
+    "air-fur.png": {
+      "sha256": "3af094a88c126c842be7293577ee527c685cd146ec52816539eee1c46a672365",
+      "bytes": 413831
+    },
+    "air-fur.xml": {
+      "sha256": "01af0c6aea81fe3c2b97f3ba20b05f24725606631def2f6102fa7a5643581c58",
+      "bytes": 11502
+    },
+    "air-it-open.png": {
+      "sha256": "f1cb1fd87844d6f38f29e8530d9a77978025cd166f078caf4b2f07a2a358d71b",
+      "bytes": 422848
+    },
+    "air-it-open.xml": {
+      "sha256": "86c7bc93e0f5e6afebef185827a8c32254648c73d3ae7e8e1a73a1544c5ee1cf",
+      "bytes": 11509
+    },
+    "air-it.png": {
+      "sha256": "389ac938f43e5a0daf7944b7d70c9ca1f914aef7d0b1210c7cfa6b710acd9505",
+      "bytes": 484323
+    },
+    "air-it.xml": {
+      "sha256": "7afd586e65570f9c461e48b48849348c349f1a5aced16328ccee02de6a0ebed8",
+      "bytes": 82004
+    },
+    "baseline-comparison.json": {
+      "sha256": "b48425c35dfe52544c37da122708bb6d35c9fd375a36dd1607205df58ee89f59",
+      "bytes": 54
+    },
+    "before.json": {
+      "sha256": "238dba37121e81af7802167adb3c4d9667e0a9476116ba43e11dc47e78a2c5d9",
+      "bytes": 2532
+    },
+    "bulletin-fur.png": {
+      "sha256": "3b83d85e34703e095d680fb0eff80a5542e1a3b8af7adb48c55957d91ec325de",
+      "bytes": 1072167
+    },
+    "bulletin-fur.xml": {
+      "sha256": "af5d5d8a6636cff7ab8e6ab4f02daad1800a528efc9cdec4e18f06d9c0f9610b",
+      "bytes": 20331
+    },
+    "bulletin-it-scrolled.png": {
+      "sha256": "4906bb8221d30b1c87a30c4a5393213988c84a3a26dbb089c2d7c7d1fe25e35b",
+      "bytes": 800386
+    },
+    "bulletin-it-scrolled.xml": {
+      "sha256": "7dfc5bd085f09dcf34b9125c48376b6ae02190a3814a8390c65047da274cb183",
+      "bytes": 20290
+    },
+    "bulletin-it.png": {
+      "sha256": "2cf641e9ce6028724a67891f4c12fb0a5ea4bd268d10b6a8fdf551e9c361c292",
+      "bytes": 1182121
+    },
+    "bulletin-it.xml": {
+      "sha256": "33fde02b55f23474ccaaa1ec6beafd72c4b3aafca7276a6f12d5db741d5b2cc2",
+      "bytes": 20315
+    },
+    "cams-fur-entry-after.png": {
+      "sha256": "6edc6754db489299156af74cdebefc737a683151af5a74f4eecaa0be11e810a0",
+      "bytes": 371596
+    },
+    "cams-fur-entry-after.xml": {
+      "sha256": "cebc8d886cdb4fc5d71f89ec211369531fa68b0dd23a24a73487c3671cc8af80",
+      "bytes": 74654
+    },
+    "cams-fur-entry-before.xml": {
+      "sha256": "ad8add0278e74d2630825943b8efa551061893bab58a3cf4a3c6ea3c46f6c8db",
+      "bytes": 29734
+    },
+    "cams-fur-entry-contact-1.png": {
+      "sha256": "d90f494cf45f3c3260af353e1e5fb53be33103adf3e4858989b7ee8934d3a2fe",
+      "bytes": 1445415
+    },
+    "cams-fur-entry-contact-2.png": {
+      "sha256": "945bb20bfb4414d20ecb0443e7cc0ed242d6407a929a8ccc4f07d2dfee073f2a",
+      "bytes": 583889
+    },
+    "cams-fur-entry-contact-3.png": {
+      "sha256": "81752501a47137fde05cfc326721376d0a1b5e0c219de95d65f629f035328efc",
+      "bytes": 585033
+    },
+    "cams-fur-entry-contact-4.png": {
+      "sha256": "1c760773d710ec658b6a56b47b73ffe2a7ae4a3fe158dbeecbb29f3eadc821af",
+      "bytes": 584907
+    },
+    "cams-fur-entry-record.json": {
+      "sha256": "7639fe0441698317e4f243671aa24637ffad7b198adc1c71e9279b3b5c066b33",
+      "bytes": 276
+    },
+    "cams-fur-entry.mp4": {
+      "sha256": "12f301f1b49ced3f8b9099e6ded31bc42ef13562b63a63248c24ef33aae5a87c",
+      "bytes": 2357861
+    },
+    "cams-it-entry-after.png": {
+      "sha256": "680a791e2758f717b8253eee956c562c048e789acb6fc94b51f0ab5848a59bed",
+      "bytes": 484150
+    },
+    "cams-it-entry-after.xml": {
+      "sha256": "7afd586e65570f9c461e48b48849348c349f1a5aced16328ccee02de6a0ebed8",
+      "bytes": 82004
+    },
+    "cams-it-entry-before.xml": {
+      "sha256": "134a1d4cfa1fd24dba9f577b8f832750e0546fe37ae3ee2c6ec3c036bc5806ec",
+      "bytes": 29728
+    },
+    "cams-it-entry-contact-1.png": {
+      "sha256": "28fb6a7e57a301a5fb78585563840dd97117a43d93fc832b4ddbd82e694fe0df",
+      "bytes": 1478350
+    },
+    "cams-it-entry-contact-2.png": {
+      "sha256": "543b5dea161c87bbe05ef6215b437768a184e1b4db9843ed99e1c50881924b2a",
+      "bytes": 628034
+    },
+    "cams-it-entry-contact-3.png": {
+      "sha256": "56b6c4eae99459c2d70df8af105d7005aa3c98c823c129e3e805ffcb71be846e",
+      "bytes": 627941
+    },
+    "cams-it-entry-contact-4.png": {
+      "sha256": "ca843f1cddb0262edf22bcf5be20ea046ed385a06e1f82dffa5f76de8009cd76",
+      "bytes": 738831
+    },
+    "cams-it-entry-record.json": {
+      "sha256": "e44226597f35052064dc9f7fe772e281e3033d024db751f9fe3c1f31176b714e",
+      "bytes": 277
+    },
+    "cams-it-entry.mp4": {
+      "sha256": "7943c70f126e32c9c7690e60f2b8c3f6e1532384d1d8873e1e432992e9ec9ebc",
+      "bytes": 2766525
+    },
+    "cold-settled.png": {
+      "sha256": "7ab8c9b060cb90ca3309b189137a3a33533bfdc83e28ac5599e696d53bd2300b",
+      "bytes": 975273
+    },
+    "cold-settled.xml": {
+      "sha256": "ad8add0278e74d2630825943b8efa551061893bab58a3cf4a3c6ea3c46f6c8db",
+      "bytes": 29734
+    },
+    "cold-start.png": {
+      "sha256": "5c8845ee2c7adb4c531af1a4e7a88972f604401139b24b8446730d13b7f47bde",
+      "bytes": 973108
+    },
+    "cold-start.xml": {
+      "sha256": "827e8c1cfd125e62279597a76680157608226ac6f8b2e23ec7b04a687670f954",
+      "bytes": 3800
+    },
+    "community-confirm-fur.png": {
+      "sha256": "944a99be3c176b8361afb7d30bd8158a8146e931018810bb9032454fe464dc8e",
+      "bytes": 421752
+    },
+    "community-confirm-fur.xml": {
+      "sha256": "70de0b0eba95c5f171f1c375dbfc16910650d90939495451e5c78583693bcbb1",
+      "bytes": 7233
+    },
+    "community-form-fur.png": {
+      "sha256": "0e9635b5c828a50b9554eb3d1f1879b9ae12d39bfc59e12a7c4fe0d81508f72f",
+      "bytes": 458542
+    },
+    "community-form-fur.xml": {
+      "sha256": "341082bd31708575530d85f99a910bbd4b95b4bca034022c2b8e540969499e1e",
+      "bytes": 11852
+    },
+    "community-no-fur.png": {
+      "sha256": "1b6fffb67e2e870d98196fc99961d5bef2ccf373f805168b9feed54e237e0090",
+      "bytes": 472866
+    },
+    "community-no-fur.xml": {
+      "sha256": "c98565e973ae36619c8854cc2c8c9976ba35e35a656899820878d0acd83fb206",
+      "bytes": 11210
+    },
+    "discover-fur.png": {
+      "sha256": "4f5e7c57352e3a736cbe55c3fb643edcd5b47e8ac6dcaab240d28a987e1017af",
+      "bytes": 696065
+    },
+    "discover-fur.xml": {
+      "sha256": "763cdb2d2bd6f937f676a2b3a43f25dddaaad4d21a42a2c57761ded628b51639",
+      "bytes": 34473
+    },
+    "discover-it.png": {
+      "sha256": "b273915397c35c4905194cb3dca03c31c5dd206ce2be0a6b8a83ef0e6830fa1a",
+      "bytes": 822731
+    },
+    "discover-it.xml": {
+      "sha256": "748d3bf381001a82a9455b98d71abb589c8ab4ccf656f1fad7875b66804d1a24",
+      "bytes": 34504
+    },
+    "event-detail-fur.png": {
+      "sha256": "cd2764368647053d2926868b9b5dd897d694f61b60531089e4f2589939019fcc",
+      "bytes": 1267029
+    },
+    "event-detail-fur.xml": {
+      "sha256": "2e6871873fe6cdb103b66e6dce18564a0b100b9f51af7d41940fbdcceab673a7",
+      "bytes": 10686
+    },
+    "event-detail-it-bottom.png": {
+      "sha256": "3fba47e441837b0d7526702c361087bbc39c6c93c09280c12ececcade2b4378c",
+      "bytes": 1290666
+    },
+    "event-detail-it-bottom.xml": {
+      "sha256": "7b4fdcf8f49d6e720df14476c040c030478302e460443c1a319bd669213c21d7",
+      "bytes": 10680
+    },
+    "event-detail-it.png": {
+      "sha256": "2c434f4934e6a7fd0bc160c04230e3efc9f01b97f880e7012df0460eb304c3d9",
+      "bytes": 1290661
+    },
+    "event-detail-it.xml": {
+      "sha256": "7b4fdcf8f49d6e720df14476c040c030478302e460443c1a319bd669213c21d7",
+      "bytes": 10680
+    },
+    "events-api-gradisca-private.json": {
+      "sha256": "51e990857f5d63870c345ca1e102939c1de6e2673e0fea8053eaa9d796d986fd",
+      "bytes": 73438
+    },
+    "events-api-pordenone-private.json": {
+      "sha256": "18af57e19af27c467c654a90bf49f98fcdbbf3f938be49becc698e6c6fdb69d1",
+      "bytes": 137566
+    },
+    "events-api-udine-private.json": {
+      "sha256": "49354dd5a7c3d4a22d35f76594e3134fac2f11460dc5b8fe6c9404a051c71a22",
+      "bytes": 177883
+    },
+    "events-catalog-meta.json": {
+      "sha256": "48132b543586140ca8d9bced4542c7dc55abc09cb4568960dc4cf36e35d00444",
+      "bytes": 1008
+    },
+    "events-catalog-private.json": {
+      "sha256": "b25e5ea5ec8a8b092ec47eb7bb2c5c2a4c3dedda5bd77ba95ef71f6107700923",
+      "bytes": 2972405
+    },
+    "events-completeness.json": {
+      "sha256": "b3046d06128c7ac962193c5db05959b42b281ef7dd4d67f9dab50218b775fa3b",
+      "bytes": 9974
+    },
+    "events-executions-private.json": {
+      "sha256": "53d16e824e2fc15a8c97bab90c75d2509abe23445bc986f5dae03538e0c6f9e5",
+      "bytes": 17432
+    },
+    "events-fur-dark.png": {
+      "sha256": "4fb9c82830b6c7aebdc3dfeadd770b3bec44d30f0ac557cbe4c90f4e291d8307",
+      "bytes": 422625
+    },
+    "events-fur-dark.xml": {
+      "sha256": "3f5cb3b209f49c41aa3c446a0fb89a0ac6adda556879da6b52a884fe75d0828d",
+      "bytes": 20671
+    },
+    "events-it-dark.png": {
+      "sha256": "607c9f0ae5dc14027ce0dfb4202b40cdda73277e6c6d82fc22231441a9dcd554",
+      "bytes": 425881
+    },
+    "events-it-dark.xml": {
+      "sha256": "c526800827c7502d01d812c0ebeb9533619f7301f869c55387eabf9d71b7dea9",
+      "bytes": 20356
+    },
+    "events-it-next.png": {
+      "sha256": "d05dc5f94b7668551ec4da19c9558bc634e471c2db01903bcf63af74b359c797",
+      "bytes": 842856
+    },
+    "events-it-next.xml": {
+      "sha256": "74b10eec9a502ad124f1c83b9ff4a1f2198a2a6ac1d4e6e01e69ec9eba28008d",
+      "bytes": 37560
+    },
+    "events-it-sticky.png": {
+      "sha256": "83530220b05a6908bc1a99d5faddd24a8ac3346e86b7cac7d498e4085d8a61f2",
+      "bytes": 690465
+    },
+    "events-it-sticky.xml": {
+      "sha256": "5480f71dd94d56e4cf51df02691467fb59af23d707707afc88a7a295155f6364",
+      "bytes": 37475
+    },
+    "events-it.png": {
+      "sha256": "d9bc0e4e5727df52ec2879eb6812100f8b5a03ad07bb72605c331e52b8bcde7c",
+      "bytes": 528314
+    },
+    "events-it.xml": {
+      "sha256": "edfa8ee80e5225dc38410364ec3da10d43c808e52e6c9f4c618c6d943341fca6",
+      "bytes": 20676
+    },
+    "events-readonly-summary.json": {
+      "sha256": "7f33abce7797e5a14e209d0d676309467e9489189e1704bfe14989121729fcaf",
+      "bytes": 14549
+    },
+    "events-return-final.png": {
+      "sha256": "b581b66e002433c113dbd14ccc5390211bd429d2c7ce0f2ad50dd0c56c8ea3a4",
+      "bytes": 531673
+    },
+    "events-return-final.xml": {
+      "sha256": "891b6cd65c311d9827a95d5025602db80fcb5ecf010a7d3dd1a1f0d193ec24a2",
+      "bytes": 20676
+    },
+    "forecast-it-tomorrow.png": {
+      "sha256": "9f88ea2caad2fd89fa245ea2549c4674a15ed6c15597e0707515359c63d7253e",
+      "bytes": 497066
+    },
+    "forecast-it-tomorrow.xml": {
+      "sha256": "99c77dfad5644d50dcf76108c08814ca0429e648fabe6ce4cbf5e409cb40b26d",
+      "bytes": 82061
+    },
+    "forecast-it-top.png": {
+      "sha256": "8a1455d46860498eef9f370e052c6a57efaa1cb12c8d89dd525662895e006d59",
+      "bytes": 499351
+    },
+    "forecast-it-top.xml": {
+      "sha256": "4d11889eceaf1cd7b141734662464eb1941401abf82178db031cfaddbd17a9c1",
+      "bytes": 82042
+    },
+    "home-initial.png": {
+      "sha256": "ea7e4311c00a6949388918d0d374750349ce4edd7967bde90b7312093f90f5f7",
+      "bytes": 446704
+    },
+    "home-initial.xml": {
+      "sha256": "827e8c1cfd125e62279597a76680157608226ac6f8b2e23ec7b04a687670f954",
+      "bytes": 3800
+    },
+    "home-it.png": {
+      "sha256": "164970fe58c67d4e3ca4d013826ac7fa4e2dd5a79fb89ef4c70fe066e4fe799e",
+      "bytes": 1068417
+    },
+    "home-it.xml": {
+      "sha256": "134a1d4cfa1fd24dba9f577b8f832750e0546fe37ae3ee2c6ec3c036bc5806ec",
+      "bytes": 29728
+    },
+    "home-settled.png": {
+      "sha256": "07fbb1f14c7b87f01e57d67398c6a2edf530f4781d99781276af55eb1c5eae4d",
+      "bytes": 446587
+    },
+    "home-settled.xml": {
+      "sha256": "76e1b0d6b052ebc7be796be11b87feaef3dba7bac8abbf1fc05e15acc28fd24f",
+      "bytes": 26456
+    },
+    "installed-native-audit.json": {
+      "sha256": "c868ff63b3663cadf41d799ac3cad6f72ff0140374efa4aa1e5b019c380c669e",
+      "bytes": 550
+    },
+    "latest-launch.json": {
+      "sha256": "620998c1a7e6a51c1b6bb2a5e1004402eddc0b157f8365b614d2d93997a69a22",
+      "bytes": 48
+    },
+    "lifecycle.json": {
+      "sha256": "3457f4718c396e9d67dd7fc970e58173bbada70b3d256d719626069d47b473f2",
+      "bytes": 715
+    },
+    "live-fur.png": {
+      "sha256": "7742f507f2425612bda630c765a58cf228c8c90066806f212c932e851600d11a",
+      "bytes": 675451
+    },
+    "live-fur.xml": {
+      "sha256": "4a2a346460ce6a1890453e27479c5d90c19904cb10edff19879e33501d87695d",
+      "bytes": 16421
+    },
+    "live-it.png": {
+      "sha256": "fcfa3ba65088698af509508eacd86db7d64f34d5a37f6ce26a2d65ca61e7f876",
+      "bytes": 1110976
+    },
+    "live-it.xml": {
+      "sha256": "b43f12ef6fcf7a447fff2f3b856c249d30fce77a9e4566c95c7dde9f590cfdc0",
+      "bytes": 16434
+    },
+    "log-summary-before-cold.json": {
+      "sha256": "48d58afedf7547b68cde671d5ec0b34fb6efd93c0511869e92c2199655095a4f",
+      "bytes": 358
+    },
+    "log-summary.json": {
+      "sha256": "f8a85198dc6004ead8226d7b34261d1481cb7750c0cd9f26f76af5a3bf24530b",
+      "bytes": 358
+    },
+    "pollen-fur.png": {
+      "sha256": "846631be7d86186b0b75ae7b886a679c276429896e7b8272e10aebb73b29c6d1",
+      "bytes": 367861
+    },
+    "pollen-fur.xml": {
+      "sha256": "55d8bea27f852215e8cb0a570cecc3e8e8729b86d23c91c6ccd0407131490ff2",
+      "bytes": 13821
+    },
+    "pollen-it.png": {
+      "sha256": "5c5992a8621eafcf1554d18fa5798614140e5ee0dd07a7951c4abc0fe5c74f71",
+      "bytes": 365996
+    },
+    "pollen-it.xml": {
+      "sha256": "2646aa718c00643edbb59c8e3e1abfd0b975c9f5ac17b98586bf3bf72198ce82",
+      "bytes": 13834
+    },
+    "radar-fur.png": {
+      "sha256": "104048214b8d354a2c0fd8e19c29005787ab9a3d6116aa9d5879de35ca520b63",
+      "bytes": 664577
+    },
+    "radar-fur.xml": {
+      "sha256": "334f46c323bf7f5ceb49cbafbb7e91fcafa6525d401f56c55b21baaa9e10ed42",
+      "bytes": 17456
+    },
+    "radar-legend-fur.png": {
+      "sha256": "b69728354dec29bd25085b81c7bb090bd2e99ef6035b1544c08dea294b9f90ac",
+      "bytes": 661018
+    },
+    "radar-legend-fur.xml": {
+      "sha256": "284ff693b0c420cdbf9b1654ac1ec76f39d2a107055e7883f6cb20cd49c3c6da",
+      "bytes": 17874
+    },
+    "radar-paused-fur.png": {
+      "sha256": "9dd229ae72489ba661b092e4a266c62abafeef8a80c592f694e42808f1a6e07e",
+      "bytes": 657198
+    },
+    "radar-paused-fur.xml": {
+      "sha256": "0ec2c2174e1567add9783174916325183a657ada74a880a48ec12a02f064a62c",
+      "bytes": 17874
+    },
+    "radar-playing-fur-next.png": {
+      "sha256": "4be96fe5d181b1ec2c4ead0351aa06e4853199d442d0b5cce6ce526d5bbbc326",
+      "bytes": 657356
+    },
+    "radar-playing-fur.png": {
+      "sha256": "2e95e6a4c09bbc9fd128223f86679210bcec972151d5fcdae9530749448269fd",
+      "bytes": 657026
+    },
+    "report-confirm-it.png": {
+      "sha256": "8cff6e5668a9d00ace09b49f83d22412fcba94d68a509ec8cbafa76ca9e2a78e",
+      "bytes": 460473
+    },
+    "report-confirm-it.xml": {
+      "sha256": "8a8d327589b50d0618af6e0701ab563292ab4cb86f6539a6c3692632ec299655",
+      "bytes": 7236
+    },
+    "report-form-fur.png": {
+      "sha256": "104048214b8d354a2c0fd8e19c29005787ab9a3d6116aa9d5879de35ca520b63",
+      "bytes": 664577
+    },
+    "report-form-fur.xml": {
+      "sha256": "334f46c323bf7f5ceb49cbafbb7e91fcafa6525d401f56c55b21baaa9e10ed42",
+      "bytes": 17456
+    },
+    "report-form-it.png": {
+      "sha256": "0f8021fdb1ad15bbb1276f123cf9d1367f0df6d97e4dfd2f780b13dcde5e7c7c",
+      "bytes": 498309
+    },
+    "report-form-it.xml": {
+      "sha256": "cf4e940467c52c51837543c3fddd590d3a82adbf547f8a7ab38f60060f2f9100",
+      "bytes": 11862
+    },
+    "report-no-it.png": {
+      "sha256": "86f23531ef6a0f0afc461b6235aa8559880df5c9963a39877796029425e6cb15",
+      "bytes": 515886
+    },
+    "report-no-it.xml": {
+      "sha256": "d575569cf66dc88fce8e42b5c92587aed5100ef9c1d2e3b0eebf13052174157c",
+      "bytes": 11220
+    },
+    "report-ready-fur.png": {
+      "sha256": "1ab6336e9e00352f4e9513fad1ef955ca356162f2e471765f62681779b329e32",
+      "bytes": 681346
+    },
+    "report-ready-fur.xml": {
+      "sha256": "2eaaa735042af445f7fc6cb43fdfba2435067d773c7890d27426d009acff4b71",
+      "bytes": 16421
+    },
+    "reports-it.png": {
+      "sha256": "715679e672069e40230832ebc11f8808e6a1917b2fd5822c9488863507c6f3ca",
+      "bytes": 899783
+    },
+    "reports-it.xml": {
+      "sha256": "833fb29557947daea76aeb0c5d4c9e5b0d867c1e9a2fa0c8772f9e5e54be772f",
+      "bytes": 19180
+    },
+    "resume-settled.png": {
+      "sha256": "d6c75ce7a60b9d65e9ac60f6781adafa9fca08805eb22200b958fd11aa33590b",
+      "bytes": 1091860
+    },
+    "resume-settled.xml": {
+      "sha256": "6692e04bba90c4c1799b6dbfb41ceccd80f83cde307a9d7a6b56e9703ce6cf3f",
+      "bytes": 29729
+    },
+    "resumed-radar-current.png": {
+      "sha256": "78f1d9cddf5e20db02de05f802bc65b0a4faecff5fd7f0d3053001b1379c800a",
+      "bytes": 661848
+    },
+    "resumed-radar-current.xml": {
+      "sha256": "284ff693b0c420cdbf9b1654ac1ec76f39d2a107055e7883f6cb20cd49c3c6da",
+      "bytes": 17874
+    },
+    "resumed-settings-fur-dark.png": {
+      "sha256": "4e50e8b51bcadeb9d9e448e1aa37f34650b7174246a6da8601dac944eb743bb0",
+      "bytes": 320959
+    },
+    "resumed-settings-fur-dark.xml": {
+      "sha256": "6acd7fd737f2fd4feafb0cbc2d461d1228cadcaf04e6f5330299dee207fb7a3c",
+      "bytes": 26450
+    },
+    "resumed-state.png": {
+      "sha256": "ffad017f5889aa67e43eb46326bdf0ac0192b85789e40828b316356f800548d9",
+      "bytes": 1068213
+    },
+    "resumed-state.xml": {
+      "sha256": "827e8c1cfd125e62279597a76680157608226ac6f8b2e23ec7b04a687670f954",
+      "bytes": 3800
+    },
+    "runtime-before-cold-private.log": {
+      "sha256": "57e6f59bfbbb3418be66acbd10733c470c79695eb3d3f0f24ba909ab2652b87f",
+      "bytes": 149018
+    },
+    "runtime-private.log": {
+      "sha256": "fc386ff82979643095860a5ebfddcc6df0bddc4a5eb56492ea006e7a335a374e",
+      "bytes": 108693
+    },
+    "search-cleared-it.png": {
+      "sha256": "309a4e56c5d6c136461d52baa441e8a327a64700b0959b90f517c982ab8b40de",
+      "bytes": 331774
+    },
+    "search-cleared-it.xml": {
+      "sha256": "c2cfc5d47f1af538453b74fee2ed17edbe3c5a2cd7136886442cc6e92ac6e8b0",
+      "bytes": 11464
+    },
+    "search-open-it.png": {
+      "sha256": "60ec107164a0dc70eb2a74cf84af0bf893bda54901801a518eca2373897f9e7b",
+      "bytes": 331777
+    },
+    "search-open-it.xml": {
+      "sha256": "c2cfc5d47f1af538453b74fee2ed17edbe3c5a2cd7136886442cc6e92ac6e8b0",
+      "bytes": 11464
+    },
+    "search-typed-it.png": {
+      "sha256": "9233ab91111f165a12c3a8b2407db884e4a66fd5527ee34df8498c735e1fe6ad",
+      "bytes": 336683
+    },
+    "search-typed-it.xml": {
+      "sha256": "b6e179bd5c247e553ed5da4c2de0a556b139434b1daac5aba7cfac882db8406b",
+      "bytes": 12835
+    },
+    "settings-after-cold.png": {
+      "sha256": "9d348e8ed8dc755c9b817ba0633276b8b15b382bcdb280f8c7a088503cb241be",
+      "bytes": 320878
+    },
+    "settings-after-cold.xml": {
+      "sha256": "95ce3ed03d630c47cf76b646f0dbee137ddb064dc8dd3cec9f47668d4e7791ea",
+      "bytes": 26450
+    },
+    "settings-after-resume.png": {
+      "sha256": "91a3a6c2037f841de5c9495b3d36813816c1909e0c02c8be22a29d03b823022f",
+      "bytes": 320482
+    },
+    "settings-after-resume.xml": {
+      "sha256": "1bc7dcd69cc3c698b02b01d5f1409fdee3b18e59cb52bab081ab3bbb66e2464e",
+      "bytes": 26770
+    },
+    "settings-final.png": {
+      "sha256": "dd9a06f432d552356bc0fa57484907c7f855c245b0cbf203ec1887ca665326bf",
+      "bytes": 449306
+    },
+    "settings-final.xml": {
+      "sha256": "0436d76b45984d34ad56eace2068292d493d5b9cbb0290d05cc6874cec2158af",
+      "bytes": 26776
+    },
+    "settings-fur-dark.png": {
+      "sha256": "20c46c93a9d0b7ec7260ef9cf1b0fa14ed56fa7aa09c2a17b5809e16836457ab",
+      "bytes": 318499
+    },
+    "settings-fur-dark.xml": {
+      "sha256": "3b521572f2d6975a88791b69e95692eadd8dc818862c07744187c5b84762a267",
+      "bytes": 26770
+    },
+    "settings-pre-lifecycle.png": {
+      "sha256": "e1842b64e58f783f1d1695c6b651c0a8bc4450844bba02c95f525740871a9810",
+      "bytes": 321430
+    },
+    "settings-pre-lifecycle.xml": {
+      "sha256": "1bc7dcd69cc3c698b02b01d5f1409fdee3b18e59cb52bab081ab3bbb66e2464e",
+      "bytes": 26770
+    },
+    "sponsors-check.json": {
+      "sha256": "1d77bd2057bf45aaf7a61e332a78a29ad31c69a62f15e11ff3292e4016f98c37",
+      "bytes": 117
+    },
+    "sponsors-final.json": {
+      "sha256": "826af6aacc6a195e2c5ce6ca4133448c707c3066623bce25624bcb1f969fe76f",
+      "bytes": 117
+    },
+    "webcam-it-detail.png": {
+      "sha256": "8e1ed4aa0491589b4d02390291ea68617cc60e3a3c92958569d85a994db38bd7",
+      "bytes": 703703
+    },
+    "webcam-it-detail.xml": {
+      "sha256": "7f91630e7e00663623e8c99de93fc026a4646212729acecd7e33b0c8877921f8",
+      "bytes": 21550
+    },
+    "webcams-it-expanded.png": {
+      "sha256": "80187e463955cd657730fcd30f4c4d4db1128dd0b80e3120526489253ffb93a9",
+      "bytes": 736091
+    },
+    "webcams-it-expanded.xml": {
+      "sha256": "7a722b5b2bc80f7f175fa79ab499650f832d3896f172713bc5f0cec896021c12",
+      "bytes": 22881
+    },
+    "webcams-it.png": {
+      "sha256": "8506334473954380de4392b6251862ec21212c64cc2b5cf21c4a2ea852b513b6",
+      "bytes": 956715
+    },
+    "webcams-it.xml": {
+      "sha256": "c711904a41404eb96296e8d24b110955239c8a1db7ccbc78a07a807a85c8de47",
+      "bytes": 20797
+    }
+  }
+}

@@ -15,7 +15,12 @@ CI del commit esatto, compilazioni Web/Android, API, CARTO, service worker,
 configurazione nativa, firma e hash PASS. Sponsor disattivati. AAB disponibile
 nel test interno dalle 18:52 del 24 ottobre, stessi due account; Web non pubblicata.
 Nessuna installazione o deploy. Codice, registri e documenti nel ramo release;
-main invariato. Ultimo pacchetto osservato sul telefono: 300036.
+main invariato. Ultimo pacchetto osservato sul telefono: **300037**, verificato
+il 24 ottobre su Galaxy Android 14 in IT/FUR nei percorsi documentati.
+Posizione e preferenze conservate, CAMS e contatore Eventi leggibili. Catalogo
+Eventi aggiornato dalla corsa manuale autorizzata delle 22:24: TurismoFVG recuperata, 20 schede ancora in revisione e prova ordinaria del 25 ottobre pendente. [Esito e limiti](EVENTS_MANUAL_RECOVERY_20261024.md).
+Contrasto del testo secondario radar scuro ancora aperto.
+[Prova Android e limiti](ANDROID_0.1.15_300037_DEVICE_CHECK_20261024.md). Questo non certifica il bundle Web da origine pubblica.
 [Caricamento della 300037 e limiti](ANDROID_0.1.15_300037_UPLOAD_20261024.md).
 
 Servizi/cache della candidata da origine autorizzata, Safari/iPhone e PWA
@@ -49,7 +54,7 @@ Archivio canonico `release-artifacts/web-candidates/20261023-0.1.15-9d5ff2f4/`.
 
 La candidata `16890b8c` e quella precedente da `5e9bc7dc` restano conservate.
 La AAB 300035, precedente candidata interna, non contiene il fix Tempo reale.
-La 300036 è ora l'ultimo pacchetto osservato sul Galaxy: mappa e dock visibili
+La 300036 è stata osservata sul Galaxy il 23 ottobre: mappa e dock visibili
 anche dopo avvio a freddo, Posizione conservata, aria/pollini IT/FUR e percorsi
 di navigazione osservati PASS. [Prova e limiti](ANDROID_0.1.15_300036_DEVICE_CHECK_20261023.md).
 Il caricamento resta attestato nel [verbale Play](ANDROID_0.1.15_300036_UPLOAD_20261023.md).

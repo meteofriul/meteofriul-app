@@ -1,10 +1,10 @@
 # Stato release 0.1.15 e lavoro salvato — aggiornamento sorgenti del 24 ottobre 2026
 
-**Ultima AAB prodotta:** **0.1.15 / 300037**, sorgente `d15edb10`, base main `0841020a`. Generata, firmata, validata e archiviata; **disponibile nel test interno dal 24 ottobre alle 18:52**. CI sul commit esatto PASS; sponsor disattivati. Web ricompilata dalla stessa sorgente, non pubblicata. Runtime della nuova AAB ancora da verificare. [Build, evidenze e limiti](ANDROID_0.1.15_300037_BUILD_20261024.md).
+**Ultima AAB prodotta:** **0.1.15 / 300037**, sorgente `d15edb10`, base main `0841020a`. Generata, firmata, validata e archiviata; **disponibile nel test interno dal 24 ottobre alle 18:52**. CI sul commit esatto PASS; sponsor disattivati. Web ricompilata dalla stessa sorgente, non pubblicata. Runtime della 300037 verificato sul Galaxy Android 14 nei percorsi osservati; restano limiti espliciti. TurismoFVG recuperata dalla successiva corsa manuale delle 22:24: 1.434 schede pubblicabili, 20 schede complessive in revisione; controllo ordinario del 25 ottobre ancora pendente. [Recupero e limiti](EVENTS_MANUAL_RECOVERY_20261024.md). [Verifica e dati Eventi](ANDROID_0.1.15_300037_DEVICE_CHECK_20261024.md). [Build, evidenze e limiti](ANDROID_0.1.15_300037_BUILD_20261024.md).
 
 **AAB attualmente nel test interno:** **0.1.15 / 300037**, con gli stessi due account abilitati. Produzione invariata a 0.1.14 / 300031; sponsor disattivati. Nessuna installazione dell'agente. [Accettazione Play e limiti](ANDROID_0.1.15_300037_UPLOAD_20261024.md).
 
-**Ultimo pacchetto osservato sul Galaxy, precedente release interna:** AAB **0.1.15 / 300036** generata e verificata da `9d5ff2f4`, con main `2d8b0c32` e Tempo reale corretto. Web storica associata dalla stessa sorgente; sponsor spenti. Disponibile nel test interno dalle 13:37 del 23 ottobre e aggiornata dal proprietario via Play. Verifica sul Galaxy Android 14: PASS dei percorsi osservati, compreso Tempo reale dopo avvio a freddo; qualifica completa ancora limitata dalla matrice non esercitata. Nessuna installazione dell’agente. [Verbale corrente](ANDROID_0.1.15_300036_DEVICE_CHECK_20261023.md).
+**Precedente pacchetto osservato sul Galaxy:** AAB **0.1.15 / 300036** generata e verificata da `9d5ff2f4`, con main `2d8b0c32` e Tempo reale corretto. Web storica associata dalla stessa sorgente; sponsor spenti. Disponibile nel test interno dalle 13:37 del 23 ottobre e aggiornata dal proprietario via Play. Verifica sul Galaxy Android 14: PASS dei percorsi osservati, compreso Tempo reale dopo avvio a freddo; qualifica completa ancora limitata dalla matrice non esercitata. Nessuna installazione dell’agente. [Verbale storico](ANDROID_0.1.15_300036_DEVICE_CHECK_20261023.md).
 
 **La precedente 0.1.15 / 300035 è stata sostituita nel test interno dalla 300036.
 Nella prova storica della 300035 Tempo reale risultava vuoto:
@@ -75,7 +75,7 @@ modifica dei job o invio. Sponsor disattivati.
 | Web pubblica | Pubblicazione del 21 ottobre da `1b0287c1`, versione 0.1.14; HTML e asset riconfermati il 23 ottobre. Candidata locale 0.1.15 ricompilata da `d15edb10`, associata alla 300037 il 24 ottobre, non distribuita; Safari/iPhone non verificato |
 | Base main incorporata nelle AAB | Nuova 300037: `0841020a`, con PR 19/20; sorgente `d15edb10`, CI 40111204820 verde. La 300036 già in Play resta immutabile dalla vecchia base `2d8b0c32` |
 | `codex/release-0.1.15` | Main `0841020a` incorporato; incremento versione `d15edb10` pubblicato e verificato. AAB 300037 nel test interno, candidata Web dalla stessa sorgente archiviata e non pubblicata. Registri e documenti sul ramo; vecchi artefatti invariati |
-| Ultimo artefatto osservato sul telefono (300036) | Sorgente `9d5ff2f415ab8b10be510eff2a0b058a8c2408ac`, AAB SHA256 `024212752b3af72f163d75849aa53c2b191ba0352e42423b11efccd2d7f8b51f`; installer Play Store; [verifica sul Galaxy](ANDROID_0.1.15_300036_DEVICE_CHECK_20261023.md) |
+| Ultimo artefatto osservato sul telefono (300037) | Sorgente `d15edb10067b972c10e4989ebebfe6410a194f2c`, AAB SHA256 `81d3b1848ceb19c9095a46ca6b55bf8ce5bd00337c01fedf1d4d7582809d96cf`; installer Play Store; [verifica sul Galaxy](ANDROID_0.1.15_300037_DEVICE_CHECK_20261024.md) |
 
 I commit successivi, anche quando modificano il frontend, non cambiano il
 commit sorgente dell’AAB già firmata. L’allineamento conserva la configurazione
@@ -89,6 +89,22 @@ accettata da Play. Riserve aperte e codici già consumati restano bloccati.
 Suite locali e audit ledger superati; nessuna nuova versione riservata o
 generata. [Dettagli e limiti](ANDROID_NATIVE_CONFIG_FIX_20261022.md#numerazione-e-prossimi-passi).
 
+## Verifica della 300037 sul Galaxy — 24 ottobre sera
+
+Posizione conservata anche secondo il proprietario prima/dopo update. Avvio,
+ripresa e riavvio, Home, Previsioni, Bollettino, Tempo reale, Eventi, Scopri,
+Impostazioni e conferma Community senza invio verificati nei percorsi descritti.
+CAMS IT/FUR leggibile senza falsa indisponibilità nei 48 campioni per lingua;
+cache vuota/errore di rete non provocati. Contatore Eventi scuro leggibile in
+entrambe le lingue. Diciannove campi tecnici invariati; italiano/chiaro ripristinati.
+
+Catalogo Eventi del 24 ottobre ancora degradato: 9 fonti fresh, 5 partial,
+TurismoFVG stale. Sei schede in revisione; controlli API completi su tre centri
+comunali, con limiti di orari/immagini espliciti. Recupero TurismoFVG da verificare
+alla corsa del 25 ottobre alle 05:00 italiane. Rimane attenuato il testo
+secondario del radar scuro. Nessuna nuova installazione, esecuzione manuale,
+invio, deploy o pubblicazione. [Ricevuta, risultati e limiti](ANDROID_0.1.15_300037_DEVICE_CHECK_20261024.md).
+
 ## Rilievi aperti e prossima azione
 
 | Rilievo | Evidenza e stato |
@@ -98,7 +114,7 @@ generata. [Dettagli e limiti](ANDROID_NATIVE_CONFIG_FIX_20261022.md#numerazione-
 | LOCATION-UPDATE-01 | Causa dell'episodio Play ancora non provata. Il 22 ottobre è stato riprodotto e corretto localmente un percorso di avvio che disattiva la preferenza dopo errori temporanei: 114 test passano. Correzione inclusa nella sorgente 300036 oggetto della PR 11. Percorsi ordinari sul Galaxy PASS; proprietario conferma preferenza attiva prima/dopo Play. Recupero da errore temporaneo sul dispositivo ancora non esercitato. [Analisi e limiti](ANDROID_LOCATION_STARTUP_20261022.md) |
 | BULLETIN-MAP-01 | [Spaziatura corretta e verificata su Brave/Galaxy](BULLETIN_MAP_LABEL_SPACING_20261022.md), già in main e incorporata nella candidata. Ricontrollata nei campioni delle AAB 300035 e 300036 installate sul Galaxy il 23 ottobre |
 | CAMS-TRANSITION-01 | Causa riprodotta e corretta: cache incompleta durante una nuova richiesta. Fix `53aba4ff` incluso nella AAB 300035, regressioni automatiche IT/FUR superate; rientro IT/FUR sul Galaxy senza falsa indisponibilità osservata. Con cache disponibile i valori arrivano subito: testo di caricamento intermedio non esercitato sul telefono. [Verbale](CAMS_REENTRY_LOADING_20261023.md) |
-| WEB-300036-01/04 | Quattro correzioni `cd471769`: layout GPS Community, Eventi «Mostre altris», errore fonte OSMER in FUR e recupero CAMS. Test locali, browser PC e Brave/Galaxy IT/FUR superati nei casi documentati. [Prova reale e limiti](WEB_POST_300036_GALAXY_20261024.md); nuovi pacchetti ancora da preparare. [Verbale](WEB_0.1.15_300036_CORRECTIONS_20261023.md) |
+| WEB-300036-01/04 | Quattro correzioni `cd471769`: layout GPS Community, Eventi «Mostre altris», errore fonte OSMER in FUR e recupero CAMS. Test locali, browser PC e Brave/Galaxy IT/FUR superati nei casi documentati. [Prova reale e limiti](WEB_POST_300036_GALAXY_20261024.md); incluse nella 300037, ora osservata sul Galaxy nei percorsi descritti nel verbale del 24 ottobre; percorsi di errore non indotti restano distinti. [Verbale](WEB_0.1.15_300036_CORRECTIONS_20261023.md) |
 | Copertura restante | Android 15/16, gesti, tablet/multi-window e percorsi con scritture o consegne reali non verificati; nessun PASS implicito |
 
 Superate sul precedente pacchetto ufficiale 300033 le prove di avvio/ripresa, Indietro, previsioni
@@ -110,7 +126,7 @@ già successiva all'aggiornamento: non certifica la migrazione dal vecchio pacch
 La verifica corrente non ricostruisce né sovrascrive gli artefatti precedenti.
 Promozione del codice e pubblicazione restano azioni separate secondo il
 [runbook Play](PLAY_AAB_RUNBOOK.md), con i limiti runtime sopra dichiarati.
-La 300036 è ora installata dal proprietario; nessuna installazione dell’agente, deploy o invio manuale. [Preparazione precedente](RELEASE_0.1.15_300034_PREPARATION_20261023.md) e [verbale di build](ANDROID_0.1.15_300034_BUILD_20261023.md).
+La 300037 è ora installata dal proprietario; nessuna installazione dell’agente, deploy o invio manuale. [Preparazione precedente](RELEASE_0.1.15_300034_PREPARATION_20261023.md) e [verbale di build](ANDROID_0.1.15_300034_BUILD_20261023.md).
 
 ## Servizi e Web
 
@@ -130,7 +146,7 @@ La 300036 è ora installata dal proprietario; nessuna installazione dell’agent
   il controllo sul Galaxy non ha eseguito nuove scritture.
   [Verbale Community](COMMUNITY_0.1.15_DEPLOY_20261021.md).
 - **Sponsor:** schede, sviluppo del pannello e allineamento dati restano
-  sospesi fino a nuovo ordine. Ultima lettura 24 ottobre dopo upload: `enabled=false`,
+  sospesi fino a nuovo ordine. Ultima lettura 24 ottobre alle 22:16 dopo il collaudo: `enabled=false`,
   zero campagne, revisione 117.
 - **Web:** pubblicazione del 21 ottobre confermata; il nuovo pacchetto locale
   0.1.15 deve ancora essere pubblicato separatamente. Manifest e sorgenti comuni

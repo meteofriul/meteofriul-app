@@ -1,0 +1,489 @@
+{
+  "checked_at": "2026-10-24T20:33:26.029047+00:00",
+  "execution": "meteofriul-events-refresh-9jskq",
+  "origin": "owner_authorized_manual",
+  "created": "2026-10-24T20:24:05.144411Z",
+  "completed": "2026-10-24T20:31:53.750930Z",
+  "image": "europe-west1-docker.pkg.dev/meteo-friul/meteofriul/events-worker@sha256:53f821f6e90b6732532ae7dc276efbed233c83eea1e271b1e72ffcd12e06c45c",
+  "creator_is_expected_account": true,
+  "succeeded": 1,
+  "failed": 0,
+  "snapshot": "2026-10-24T20:24:55.699907+00:00",
+  "generation": "1792873909746075",
+  "snapshot_matches_execution": true,
+  "all_15_sources_current_or_explicitly_partial": true,
+  "sources": {
+    "TurismoFVG": {
+      "status": "partial",
+      "updated_at": "2026-10-24T20:24:55.699907+00:00",
+      "cards": 1434,
+      "reviews": 14,
+      "error_type": null
+    },
+    "Pordenonelegge": {
+      "status": "fresh",
+      "updated_at": "2026-10-24T20:24:55.699907+00:00",
+      "cards": 0,
+      "reviews": 0,
+      "error_type": null
+    },
+    "Azalea": {
+      "status": "partial",
+      "updated_at": "2026-10-24T20:24:55.699907+00:00",
+      "cards": 7,
+      "reviews": 1,
+      "error_type": null
+    },
+    "CSS Udine": {
+      "status": "partial",
+      "updated_at": "2026-10-24T20:24:55.699907+00:00",
+      "cards": 149,
+      "reviews": 1,
+      "error_type": null
+    },
+    "Pordenone Pensa": {
+      "status": "partial",
+      "updated_at": "2026-10-24T20:24:55.699907+00:00",
+      "cards": 0,
+      "reviews": 2,
+      "error_type": null
+    },
+    "Teatro Verdi Pordenone": {
+      "status": "fresh",
+      "updated_at": "2026-10-24T20:24:55.699907+00:00",
+      "cards": 87,
+      "reviews": 0,
+      "error_type": null
+    },
+    "Teatro Verdi Trieste": {
+      "status": "fresh",
+      "updated_at": "2026-10-24T20:24:55.699907+00:00",
+      "cards": 61,
+      "reviews": 0,
+      "error_type": null
+    },
+    "Le Giornate del Cinema Muto": {
+      "status": "fresh",
+      "updated_at": "2026-10-24T20:24:55.699907+00:00",
+      "cards": 0,
+      "reviews": 0,
+      "error_type": null
+    },
+    "Paesi in Festa": {
+      "status": "fresh",
+      "updated_at": "2026-10-24T20:24:55.699907+00:00",
+      "cards": 15,
+      "reviews": 0,
+      "error_type": null
+    },
+    "SagreFVG": {
+      "status": "partial",
+      "updated_at": "2026-10-24T20:24:55.699907+00:00",
+      "cards": 17,
+      "reviews": 1,
+      "error_type": null
+    },
+    "Villa Manin": {
+      "status": "partial",
+      "updated_at": "2026-10-24T20:24:55.699907+00:00",
+      "cards": 3,
+      "reviews": 1,
+      "error_type": null
+    },
+    "Magazzino delle Idee": {
+      "status": "fresh",
+      "updated_at": "2026-10-24T20:24:55.699907+00:00",
+      "cards": 0,
+      "reviews": 0,
+      "error_type": null
+    },
+    "MESS": {
+      "status": "fresh",
+      "updated_at": "2026-10-24T20:24:55.699907+00:00",
+      "cards": 15,
+      "reviews": 0,
+      "error_type": null
+    },
+    "Galleria Spazzapan": {
+      "status": "fresh",
+      "updated_at": "2026-10-24T20:24:55.699907+00:00",
+      "cards": 2,
+      "reviews": 0,
+      "error_type": null
+    },
+    "Barcolana": {
+      "status": "fresh",
+      "updated_at": "2026-10-24T20:24:55.699907+00:00",
+      "cards": 1,
+      "reviews": 0,
+      "error_type": null
+    }
+  },
+  "api": [
+    {
+      "place": "Pordenone",
+      "total": 367,
+      "pages": 1,
+      "catalog_status": "degraded",
+      "source_status": {
+        "TurismoFVG": "partial",
+        "Pordenonelegge": "fresh",
+        "Azalea": "partial",
+        "CSS Udine": "partial",
+        "Pordenone Pensa": "partial",
+        "Teatro Verdi Pordenone": "fresh",
+        "Teatro Verdi Trieste": "fresh",
+        "Le Giornate del Cinema Muto": "fresh",
+        "Paesi in Festa": "fresh",
+        "SagreFVG": "partial",
+        "Villa Manin": "partial",
+        "Magazzino delle Idee": "fresh",
+        "MESS": "fresh",
+        "Galleria Spazzapan": "fresh",
+        "Barcolana": "fresh"
+      },
+      "source_failure_tags": {
+        "TurismoFVG": "quarantined_cards",
+        "Azalea": "quarantined_cards",
+        "CSS Udine": "quarantined_cards",
+        "Pordenone Pensa": "quarantined_cards",
+        "SagreFVG": "quarantined_cards",
+        "Villa Manin": "quarantined_cards"
+      },
+      "turismofvg_visible": 267,
+      "cors_ok": true
+    },
+    {
+      "place": "Udine",
+      "total": 532,
+      "pages": 2,
+      "catalog_status": "degraded",
+      "source_status": {
+        "TurismoFVG": "partial",
+        "Pordenonelegge": "fresh",
+        "Azalea": "partial",
+        "CSS Udine": "partial",
+        "Pordenone Pensa": "partial",
+        "Teatro Verdi Pordenone": "fresh",
+        "Teatro Verdi Trieste": "fresh",
+        "Le Giornate del Cinema Muto": "fresh",
+        "Paesi in Festa": "fresh",
+        "SagreFVG": "partial",
+        "Villa Manin": "partial",
+        "Magazzino delle Idee": "fresh",
+        "MESS": "fresh",
+        "Galleria Spazzapan": "fresh",
+        "Barcolana": "fresh"
+      },
+      "source_failure_tags": {
+        "TurismoFVG": "quarantined_cards",
+        "Azalea": "quarantined_cards",
+        "CSS Udine": "quarantined_cards",
+        "Pordenone Pensa": "quarantined_cards",
+        "SagreFVG": "quarantined_cards",
+        "Villa Manin": "quarantined_cards"
+      },
+      "turismofvg_visible": 413,
+      "cors_ok": true
+    },
+    {
+      "place": "Gradisca",
+      "total": 302,
+      "pages": 1,
+      "catalog_status": "degraded",
+      "source_status": {
+        "TurismoFVG": "partial",
+        "Pordenonelegge": "fresh",
+        "Azalea": "partial",
+        "CSS Udine": "partial",
+        "Pordenone Pensa": "partial",
+        "Teatro Verdi Pordenone": "fresh",
+        "Teatro Verdi Trieste": "fresh",
+        "Le Giornate del Cinema Muto": "fresh",
+        "Paesi in Festa": "fresh",
+        "SagreFVG": "partial",
+        "Villa Manin": "partial",
+        "Magazzino delle Idee": "fresh",
+        "MESS": "fresh",
+        "Galleria Spazzapan": "fresh",
+        "Barcolana": "fresh"
+      },
+      "source_failure_tags": {
+        "TurismoFVG": "quarantined_cards",
+        "Azalea": "quarantined_cards",
+        "CSS Udine": "quarantined_cards",
+        "Pordenone Pensa": "quarantined_cards",
+        "SagreFVG": "quarantined_cards",
+        "Villa Manin": "quarantined_cards"
+      },
+      "turismofvg_visible": 254,
+      "cors_ok": true
+    }
+  ],
+  "job_template_unchanged": true,
+  "scheduler_unchanged": true,
+  "ordinary_followup_unchanged": true,
+  "verified": true,
+  "comparison": {
+    "before": {
+      "snapshot": "2026-10-24T04:00:29.271355+00:00",
+      "statuses": {
+        "stale": 1,
+        "fresh": 9,
+        "partial": 5
+      },
+      "publishable_rows": 357,
+      "stale_retained_rows": 1375,
+      "quarantined_rows": 6
+    },
+    "after": {
+      "snapshot": "2026-10-24T20:24:55.699907+00:00",
+      "statuses": {
+        "partial": 6,
+        "fresh": 9
+      },
+      "publishable_rows": 1791,
+      "stale_retained_rows": 0,
+      "quarantined_rows": 20
+    },
+    "api": {
+      "pordenone": {
+        "before_rows": 100,
+        "after_rows": 367,
+        "turismofvg_rows": 267,
+        "catalog_status": "degraded",
+        "pages": 1,
+        "missing_core": {},
+        "invalid": {},
+        "missing_optional": {
+          "time": 101,
+          "image": 12,
+          "description_or_excerpt": 31
+        },
+        "exact_duplicates": 0
+      },
+      "udine": {
+        "before_rows": 120,
+        "after_rows": 532,
+        "turismofvg_rows": 413,
+        "catalog_status": "degraded",
+        "pages": 2,
+        "missing_core": {},
+        "invalid": {},
+        "missing_optional": {
+          "time": 179,
+          "image": 11,
+          "description_or_excerpt": 43
+        },
+        "exact_duplicates": 0
+      },
+      "gradisca": {
+        "before_rows": 48,
+        "after_rows": 302,
+        "turismofvg_rows": 254,
+        "catalog_status": "degraded",
+        "pages": 1,
+        "missing_core": {},
+        "invalid": {},
+        "missing_optional": {
+          "time": 131,
+          "image": 5,
+          "description_or_excerpt": 16
+        },
+        "exact_duplicates": 0
+      }
+    },
+    "partial_sources": {
+      "TurismoFVG": {
+        "rows": 1434,
+        "quarantined": 14,
+        "reasons": {
+          "detail_identity_or_schedule_requires_review": 4,
+          "possible_schedule_change": 4,
+          "detail_not_resolved": 1,
+          "listed_detail_http_404": 5
+        }
+      },
+      "Azalea": {
+        "rows": 7,
+        "quarantined": 1,
+        "reasons": {
+          "schedule_change": 1
+        }
+      },
+      "CSS Udine": {
+        "rows": 149,
+        "quarantined": 1,
+        "reasons": {
+          "ambiguous schedule": 1
+        }
+      },
+      "Pordenone Pensa": {
+        "rows": 0,
+        "quarantined": 2,
+        "reasons": {
+          "additional future date needs session extraction": 2
+        }
+      },
+      "SagreFVG": {
+        "rows": 17,
+        "quarantined": 1,
+        "reasons": {
+          "SagreFVG municipality or province unresolved": 1
+        }
+      },
+      "Villa Manin": {
+        "rows": 3,
+        "quarantined": 1,
+        "reasons": {
+          "calendar_or_year_disagreement": 1
+        }
+      }
+    },
+    "monitors": {
+      "Palazzo Attems": {
+        "status": "review_required",
+        "source_complete": false,
+        "checked_at": "2026-10-24T20:24:55.699907+00:00"
+      },
+      "GiroFVG": {
+        "status": "review_required",
+        "source_complete": false,
+        "checked_at": "2026-10-24T20:24:55.699907+00:00"
+      },
+      "TurismoFVG annual inventory": {
+        "status": "checked",
+        "source_complete": true,
+        "checked_at": "2026-10-19T04:01:20.998054+00:00",
+        "calendar_cards": 2293,
+        "calendar_pages": 468,
+        "missing_window_count": 0
+      }
+    }
+  },
+  "turismofvg_verification": {
+    "ambiguous": 0,
+    "collection_mode": "verified-rolling-45-day-window",
+    "within_budget": true,
+    "source_complete": true,
+    "cards_total": 1434,
+    "pending": 0,
+    "quarantine_count": 14,
+    "detail_health": {
+      "stop_reason": "complete",
+      "failed_reads": 0,
+      "quarantined_reads": 0,
+      "pending": 0,
+      "health_witness_required": false,
+      "structured_reads": 1367,
+      "schema": "turismofvg-detail-health-v1",
+      "retained_refreshes": 0
+    }
+  },
+  "task_retries": 0,
+  "ordinary_run_pending": "2026-10-25T04:00:00Z",
+  "limits": [
+    "API counts are not the frontend 15-day/deduplicated counts.",
+    "No new observation on the Galaxy after this catalog refresh.",
+    "Manual success does not attest the next scheduled run.",
+    "Partial sources and missing optional fields remain explicit."
+  ],
+  "private_evidence_sha256": [
+    {
+      "file": "after-catalog-meta.json",
+      "sha256": "3110da0b28f5bb10026f8d381a38b40e704cae722006b6aa3b3affaef06b07f3"
+    },
+    {
+      "file": "after-catalog-private.json",
+      "sha256": "7065c8f53ea3a2862452029718873d65a1296655d78902724c8ba834273b99bf"
+    },
+    {
+      "file": "api-gradisca-private.json",
+      "sha256": "3773e749844023ebd775cfd518dc300d348c956beb7d542b86a5855f59ace247"
+    },
+    {
+      "file": "api-pordenone-private.json",
+      "sha256": "63f9abb5ee6fde615ab47f7abf856ce8912bf005b321f0bcc57b3106612237a9"
+    },
+    {
+      "file": "api-udine-private.json",
+      "sha256": "45241e476b157574f64cd89d238cc4a25a13ab5dee76bcaec0f04652459e0b64"
+    },
+    {
+      "file": "before-catalog-meta.json",
+      "sha256": "48132b543586140ca8d9bced4542c7dc55abc09cb4568960dc4cf36e35d00444"
+    },
+    {
+      "file": "before-catalog-private.json",
+      "sha256": "12f62b7851759d797d62b0d9196d305c67250d4b2c33a295bc2ed0e95b04879a"
+    },
+    {
+      "file": "compare.py",
+      "sha256": "264108e82f20008417e043d1ca1fd106092df8ec80b65b214e1dad58543c674d"
+    },
+    {
+      "file": "comparison.json",
+      "sha256": "cd8445508e2f06caab4995f9a02c8e67db8772cc48354752c22349702d06f0a2"
+    },
+    {
+      "file": "execution-private.json",
+      "sha256": "7ab02439d0ae3d94eb2b7c831d3953617073f106c2d8a4b56951808beac4474d"
+    },
+    {
+      "file": "execution-submission.json",
+      "sha256": "72bc0fb834b2cc4ca138acc7b0c39d30dd6946757d5d0d9bd420357bb62aa6e0"
+    },
+    {
+      "file": "executions-before-private.json",
+      "sha256": "6473ded4eda3274031d3a2081d53d59acf95eeff30752c1d6019170545c421e3"
+    },
+    {
+      "file": "job-after-private.json",
+      "sha256": "61812b028d2c880db1a50cfbff22cb5df5ec7176de53c1b9b34526693e4cdaef"
+    },
+    {
+      "file": "job-before-private.json",
+      "sha256": "62884cd6e9da82dbb7e2c10572e419bbd0adceea762385622c78ffe649e0a16b"
+    },
+    {
+      "file": "logs-private.json",
+      "sha256": "ef2020f58c9f3beab1a75a4e496061efd7a93eed2ecf33f2af45c2105824e29b"
+    },
+    {
+      "file": "manual_events.py",
+      "sha256": "e767ffee79138dfa3ee9bbd524eceb659aeaeeb45513230e09123f4e6101c91a"
+    },
+    {
+      "file": "operation-status.json",
+      "sha256": "7546e544808fd0a1ebd73539bb85057fe2a405bd55303d248196bb35dd9033a9"
+    },
+    {
+      "file": "progress-logs-private.json",
+      "sha256": "336582458aeb323bdcc447c3969e497f4f55ad5cdac59f99fa8744acb7533d7f"
+    },
+    {
+      "file": "scheduler-after-private.json",
+      "sha256": "dbb2144977607328c6c9a1b81f55b38c00eacf5e0af0d40b2e5e0ba42f160a09"
+    },
+    {
+      "file": "scheduler-before-private.json",
+      "sha256": "37c41467d7596ddd66f7ebbb472a00e85c3a9e902c1859510cf64ccd6d35fa20"
+    },
+    {
+      "file": "submission-http.json",
+      "sha256": "25f38afbb728b1ee5ec1c97bccd0b3bf31c79d3256dd416e554c75c19827e543"
+    },
+    {
+      "file": "submission-intent.json",
+      "sha256": "67d68fbf88976d52aba9277e863b14bac701c4784602cc7c20bbdff4af68a339"
+    },
+    {
+      "file": "tasks-private.json",
+      "sha256": "5497814d5b6e4d19123defbdaba5d7ff80afe0b2016748d5ce7031dfc4c631cf"
+    },
+    {
+      "file": "verification.json",
+      "sha256": "05a72f4b4395cc834e1b62b2ff28d7b4b178de65d7c95720e9cfd0ce9cbb9ae4"
+    }
+  ]
+}
