@@ -1,21 +1,23 @@
 # Allineamento della Web App con Android
 
-**Antenna radar — pubblicata in main il 25 ottobre:** commit `738c6538` verificato su Brave/Galaxy in chiaro e scuro, con radar attivo e disattivo, integrato tramite [PR 28](https://github.com/meteofriul/meteofriul-app/pull/28), merge `d159ec59`. CI della PR e di main superate in tutti e tre i job. [Verbale ed evidenze](RADAR_ANTENNA_ICON_20261025.md). Sorgenti su GitHub; ramo release, AAB, pacchetti Web e pubblicazioni applicative non aggiornati da questo intervento. Sponsor disattivati e controllo Eventi del 26 ottobre mantenuto.
+**Stato corrente — 26 ottobre:** release locale allineata a main `a4135392`; sorgente candidata `83c12c58`, antenna radar e contrasto secondario scuro inclusi. Web e risorse Android compilate e archiviate dalla stessa base; 5.055 test, lint, contratti release e guardie API/TTL superati. Verbali Galaxy 300037 salvati. Sponsor spenti. Nessuna nuova AAB, riserva, installazione, push o distribuzione. **Verifica dal vivo CAMS aperta:** dati del 25 ottobre scaduti alle 07:00 italiane, prossima corsa ordinaria prevista alle 10:00. [Preparazione, archivio e limiti](RELEASE_WEB_ALIGNMENT_20261026.md).
 
-**Avvio HTTP FVG — sorgenti del 25 ottobre:** [PR 26](https://github.com/meteofriul/meteofriul-app/pull/26) integrata in main (`613fe78a`), commit della correzione `a431bd14`. 91 test locali e CI di PR/main superati. [Verbale, evidenze e limiti](WEATHER_HTTP_STARTUP_20261025.md). Nessun deploy: il servizio pubblico mantiene il comportamento precedente. Contratti Web/Android e artefatti invariati; nessuna nuova AAB necessaria per questo intervento. Sponsor disattivati e controllo Eventi del 26 ottobre mantenuto.
+**Antenna radar — pubblicata in main il 25 ottobre:** commit `738c6538` verificato su Brave/Galaxy in chiaro e scuro, con radar attivo e disattivo, integrato tramite [PR 28](https://github.com/meteofriul/meteofriul-app/pull/28), merge `d159ec59`. CI della PR e di main superate in tutti e tre i job. [Verbale ed evidenze](RADAR_ANTENNA_ICON_20261025.md). Il 26 ottobre la release e la candidata Web incorporano queste sorgenti; AAB e pubblicazioni restano quelle precedenti. Sponsor disattivati; follow-up Eventi concluso ed eliminato.
 
-**Sintesi per data locale — sorgenti del 25 ottobre:** [PR 24](https://github.com/meteofriul/meteofriul-app/pull/24) integrata in main (`8a47c752`); 84 test locali e CI di PR/main superati. [Verbale e limiti](SUMMARY_LOCAL_DATE_MONITOR_20261025.md). Nuovo allarme non attivato: collegamento operativo ancora da completare. Orari, Web/Android e sponsor invariati; controllo Eventi del 26 ottobre mantenuto.
+**Avvio HTTP FVG — sorgenti del 25 ottobre:** [PR 26](https://github.com/meteofriul/meteofriul-app/pull/26) integrata in main (`613fe78a`), commit della correzione `a431bd14`. 91 test locali e CI di PR/main superati. [Verbale, evidenze e limiti](WEATHER_HTTP_STARTUP_20261025.md). Il successivo deploy HTTP del 25 ottobre e la corsa avvisi delle 18:00 sono attestati nelle evidenze operative locali: source_failed=0 e tolleranze esercitate in 11/11 punti. Contratti Web/Android invariati; nessuna nuova AAB necessaria per il solo servizio HTTP.
 
-**Aggiornamento backend del 25 ottobre:** PR 22 integrata, CI superata e solo job Eventi aggiornato. [Verbale e rollback](EVENTS_PNPENSA_BARCOLANA_DEPLOY_20261025.md). Corsa ordinaria del 26 ottobre alle 05:00 italiane: `pending`. Web e Android mantengono lo stesso contratto; pacchetti e pubblicazioni invariati, sponsor disattivati. Recupero ordinario ancora da confermare; vedere esito e limiti nel verbale.
+**Sintesi per data locale — sorgenti del 25 ottobre:** [PR 24](https://github.com/meteofriul/meteofriul-app/pull/24) integrata in main (`8a47c752`); 84 test locali e CI di PR/main superati. [Verbale e limiti](SUMMARY_LOCAL_DATE_MONITOR_20261025.md). Nuovo allarme non attivato: collegamento operativo ancora da completare. Orari, Web/Android e sponsor invariati. Il follow-up Eventi del 26 ottobre è concluso ed eliminato.
+
+**Aggiornamento backend del 25 ottobre:** PR 22 integrata, CI superata e solo job Eventi aggiornato. [Verbale e rollback](EVENTS_PNPENSA_BARCOLANA_DEPLOY_20261025.md). Corsa ordinaria del 26 ottobre alle 05:00 italiane fallita con Barcolana stale per ReadTimeout. Correzione del timeout e distinzione degli allarmi preparate separatamente sul ramo `codex/events-barcolana-recovery`, non distribuite. Web/Android mantengono il contratto; il recupero Barcolana non è attestato.
 
 Regola del proprietario, 20 ottobre 2026: la Web App deve seguire la AAB,
 perché chi usa iPhone accede al prodotto dal browser.
 
-## Candidata Web associata alla AAB 300037 — 24 ottobre 2026
+## Candidata Web storica associata alla AAB 300037 — 24 ottobre 2026
 
 AAB 0.1.15 / 300037 e Web compilate dalla stessa sorgente
 `d15edb10067b972c10e4989ebebfe6410a194f2c`, base main `0841020a` più incremento
-versionCode. Incluse le correzioni delle PR 19/20. Archivio Web corrente:
+versionCode. Incluse le correzioni delle PR 19/20. Archivio Web storico:
 `release-artifacts/web-candidates/20261024-0.1.15-d15edb10/`.
 Manifest `1bc0ab3316aab8ec6d879e754a23ca38ee956a9498c3aa9602f4f9a2236dff2b`.
 
@@ -26,8 +28,8 @@ Nessuna installazione o deploy. Codice, registri e documenti nel ramo release;
 main invariato. Ultimo pacchetto osservato sul telefono: **300037**, verificato
 il 24 ottobre su Galaxy Android 14 in IT/FUR nei percorsi documentati.
 Posizione e preferenze conservate, CAMS e contatore Eventi leggibili. Catalogo
-Eventi aggiornato dalla corsa manuale autorizzata delle 22:24: TurismoFVG recuperata, 20 schede ancora in revisione e prova ordinaria del 25 ottobre pendente. [Esito e limiti](EVENTS_MANUAL_RECOVERY_20261024.md).
-Contrasto del testo secondario radar scuro ancora aperto.
+Eventi aggiornato dalla corsa manuale autorizzata delle 22:24: TurismoFVG recuperata; a quella data restavano 20 schede in revisione e la prova ordinaria del 25 ottobre pendente. Per lo stato corrente vedere il verbale del 26 ottobre, che distingue la corsa effettivamente letta. [Esito e limiti](EVENTS_MANUAL_RECOVERY_20261024.md).
+Contrasto del testo secondario radar scuro aperto nella 300037; correzione ora nella candidata del 26 ottobre, senza nuova prova su dispositivo.
 [Prova Android e limiti](ANDROID_0.1.15_300037_DEVICE_CHECK_20261024.md). Questo non certifica il bundle Web da origine pubblica.
 [Caricamento della 300037 e limiti](ANDROID_0.1.15_300037_UPLOAD_20261024.md).
 

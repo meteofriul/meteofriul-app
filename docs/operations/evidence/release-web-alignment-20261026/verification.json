@@ -1,0 +1,321 @@
+{
+  "checked_at_utc": "2026-10-26T07:47:53.571572+00:00",
+  "scope": "local release/Web preparation; no new AAB or remote publication",
+  "source": {
+    "archive_relative_path": "release-artifacts/web-candidates/20261026-0.1.15-83c12c58",
+    "source_commit": "83c12c58535e56e0603c7136c7eb742f8ac2664f",
+    "main_integrated": "a41353921bd10c94b7763f8f1b5588da72e810d7",
+    "frontend_tree": "75d4941566eb02d5cf39b871a091f92256c679c4",
+    "manifest_sha256": "8609b3fca9fa2a3de2ac83562b34732a9bbb6f9b6f70d2c9b2591665e27cb135",
+    "artifacts": {
+      "web": {
+        "files": 506,
+        "bytes": 76032145
+      },
+      "android-web": {
+        "files": 505,
+        "bytes": 75979477
+      }
+    },
+    "sponsors": {
+      "checked_at_utc": "2026-10-26T07:29:59.767479+00:00",
+      "enabled": false,
+      "revision": 117,
+      "campaign_count": 0
+    },
+    "aab_generated": false,
+    "version_reserved": false,
+    "uploaded": false,
+    "deployed": false,
+    "ci_for_source": "pending_not_pushed"
+  },
+  "source_files_hashed": 1892,
+  "saved_device_evidence_commit": "15be063d",
+  "main_merge_commit": "eb829a07",
+  "checks": {
+    "frontend": {
+      "passed": 5055,
+      "skipped": 13,
+      "files_passed": 552,
+      "files_skipped": 5
+    },
+    "lint": "PASS",
+    "frontend_node_guards": 16,
+    "release_contracts": "PASS; Gradle execution intentionally skipped",
+    "api_image_provenance": "PASS",
+    "community_contract": "PASS",
+    "push_ttl_gate": "PASS",
+    "community_ttl_ready": true,
+    "community_ttl_sample_coverage_complete": false,
+    "community_historical_gate": "PASS at observation; expires 2026-10-26T21:48:36Z",
+    "native_identity_and_certificate": "PASS",
+    "ledger": "PASS; 60 existing records",
+    "protected_files": {
+      "checked": 9311,
+      "changed": []
+    }
+  },
+  "radar_visual_fixture": {
+    "css_from_source": "83c12c58535e56e0603c7136c7eb742f8ac2664f",
+    "languages": [
+      "it",
+      "fur"
+    ],
+    "themes": [
+      "light",
+      "dark"
+    ],
+    "dark_status": "rgb(203, 213, 225)",
+    "dark_freshness": "rgb(252, 211, 77)",
+    "unavailable_status_unchanged": "rgb(63, 86, 104)",
+    "text_overflow": false,
+    "scope": "isolated fixture with real CSS, not full app or phone runtime"
+  },
+  "live_limit": {
+    "pilot_ready": false,
+    "icon_run": "20261026T000000Z",
+    "icon_manifest_integrity": true,
+    "icon_objects": 215,
+    "cams_run": "20261025T000000Z",
+    "cams_integrity": true,
+    "cams_usable_until": "2026-10-26T06:00:00Z",
+    "cams_next_schedule": "2026-10-26T09:00:00Z",
+    "last_three_cams_executions": "Completed=True; no manual execution",
+    "read_only": true
+  },
+  "next_code": {
+    "provisional": 300038,
+    "reserved": false,
+    "configured": 300037,
+    "fresh_play_maximum_required_before_generation": true
+  },
+  "limits": [
+    "New source not pushed; exact-source CI pending",
+    "Full current Web service check blocked by expired CAMS",
+    "No new minified AAB or physical-device check",
+    "Android 15/16, large screens, Safari/iPhone/PWA not verified",
+    "Barcolana backend fix remains separate; recovery not claimed"
+  ],
+  "private_evidence_sha256": [
+    {
+      "file": "aab-contracts.exit",
+      "sha256": "5feceb66ffc86f38d952786c6d696c79c2dbc239dd4e91b46729d73a27fb57e9"
+    },
+    {
+      "file": "aab-contracts.log",
+      "sha256": "0850ab44513462c7b383cb86cde1565f440f6621dc720e94ab7126e143959a16"
+    },
+    {
+      "file": "android-api-binding.exit",
+      "sha256": "5feceb66ffc86f38d952786c6d696c79c2dbc239dd4e91b46729d73a27fb57e9"
+    },
+    {
+      "file": "android-api-binding.log",
+      "sha256": "09256a5b690bb2f411d1c420e55e53e0a37dd9067f81c04d1dec2e729541ea54"
+    },
+    {
+      "file": "android-carto-binding.exit",
+      "sha256": "5feceb66ffc86f38d952786c6d696c79c2dbc239dd4e91b46729d73a27fb57e9"
+    },
+    {
+      "file": "android-carto-binding.log",
+      "sha256": "fb0ae53eb9cbb90e1500662e416eb7a16eb5980d63f790a7075eeb18c9b1811e"
+    },
+    {
+      "file": "android-web-build.exit",
+      "sha256": "5feceb66ffc86f38d952786c6d696c79c2dbc239dd4e91b46729d73a27fb57e9"
+    },
+    {
+      "file": "android-web-build.log",
+      "sha256": "f5107bfedf8a72ec8850b13a9d89f70bcf60bbf51e3b7fdd36dcdc944e3a4f09"
+    },
+    {
+      "file": "api-guard-tests.exit",
+      "sha256": "5feceb66ffc86f38d952786c6d696c79c2dbc239dd4e91b46729d73a27fb57e9"
+    },
+    {
+      "file": "api-guard-tests.log",
+      "sha256": "b27b3fcb158c7cbdecde0625f30cce5dc1c6016cfe5edd47c0bf57b3e998ced3"
+    },
+    {
+      "file": "artifact-summary.json",
+      "sha256": "d78aedd20314d0a14b4d22c6f45d6825e4a6158fb0b42c1c7092f34ebf5293f2"
+    },
+    {
+      "file": "build_candidates.py",
+      "sha256": "9952a49b4897b974bb1c9d2494e6d83b5e8c73efb4839299778f0c4b6b545d63"
+    },
+    {
+      "file": "cams-executions.json",
+      "sha256": "d6f8115b1f6ecd9de5543611e1289815433cd1a6b2469d551a11e127e1fb862d"
+    },
+    {
+      "file": "cams-scheduler.json",
+      "sha256": "02f875891c8411a6b0f9e01438ea1b3ec1fd29ff82ff4636687e79a8de348f9f"
+    },
+    {
+      "file": "canonical-cleanliness.exit",
+      "sha256": "5feceb66ffc86f38d952786c6d696c79c2dbc239dd4e91b46729d73a27fb57e9"
+    },
+    {
+      "file": "canonical-cleanliness.log",
+      "sha256": "97fc670523aa39008a617881ece3d8433c82ebfafe35617aeb49bba079af1092"
+    },
+    {
+      "file": "checks.py",
+      "sha256": "b599af56fbb231e496ae6496a32eef57ebee4c2157f53a331d82996f121f109b"
+    },
+    {
+      "file": "community-contract.json",
+      "sha256": "f352bcbb6cca8d4961d7e1b1ea9cbee37c267b61793db1414142afe47a27f712"
+    },
+    {
+      "file": "community-history-private.json",
+      "sha256": "f9ef555794f9dc845b382bee64c87979f51775230da240a475ee1b2a07ec5492"
+    },
+    {
+      "file": "community-ttl.json",
+      "sha256": "e74a47114fa5cb8bc319af155ed2a4935380043d1f1e283910b1f6aee03bf82a"
+    },
+    {
+      "file": "diff-check.exit",
+      "sha256": "5feceb66ffc86f38d952786c6d696c79c2dbc239dd4e91b46729d73a27fb57e9"
+    },
+    {
+      "file": "diff-check.log",
+      "sha256": "bc2daa751369c61287b9b0f11903229ad8548434b89d240ce1bfb2bc2f1d65ac"
+    },
+    {
+      "file": "document.py",
+      "sha256": "9384c941aa1a8004a007d6e84812274bd6e8068fe4dcd5c7e5e33de9db5c30ce"
+    },
+    {
+      "file": "frontend-guards.exit",
+      "sha256": "5feceb66ffc86f38d952786c6d696c79c2dbc239dd4e91b46729d73a27fb57e9"
+    },
+    {
+      "file": "frontend-guards.log",
+      "sha256": "7c15012fa63ea31bca143797ad4f47b13f576f87b9039deab1f8df25026be41e"
+    },
+    {
+      "file": "frontend-lint.exit",
+      "sha256": "5feceb66ffc86f38d952786c6d696c79c2dbc239dd4e91b46729d73a27fb57e9"
+    },
+    {
+      "file": "frontend-lint.log",
+      "sha256": "fb57ad703865adf87876b055b0bf236d270cb64852e9a755af813a7244d550fc"
+    },
+    {
+      "file": "frontend-tests.exit",
+      "sha256": "5feceb66ffc86f38d952786c6d696c79c2dbc239dd4e91b46729d73a27fb57e9"
+    },
+    {
+      "file": "frontend-tests.log",
+      "sha256": "a80067f604a33f5cc85e2e1f4e1c274c1a220a9edd7b6229fe5a7f4e9d744b16"
+    },
+    {
+      "file": "ledger-audit.exit",
+      "sha256": "5feceb66ffc86f38d952786c6d696c79c2dbc239dd4e91b46729d73a27fb57e9"
+    },
+    {
+      "file": "ledger-audit.log",
+      "sha256": "5d5857218268ed01dcea6344b718153d1b0db74663aaa5109d1b6fb3a387d95d"
+    },
+    {
+      "file": "live-gates.exit",
+      "sha256": "13bf7b3039c63bf5a50491fa3cfd8eb4e699d1ba1436315aef9cbe5711530354"
+    },
+    {
+      "file": "live-gates.log",
+      "sha256": "4157fc526a30aba8532a69bfac1277dbabd7c562c8ea59c7d518a22051ef35bf"
+    },
+    {
+      "file": "live_gates.ps1",
+      "sha256": "6ede9fe626a502c61ef57e46334c87b031fca064a310f1ff31bdba12289c013f"
+    },
+    {
+      "file": "native-contracts.exit",
+      "sha256": "5feceb66ffc86f38d952786c6d696c79c2dbc239dd4e91b46729d73a27fb57e9"
+    },
+    {
+      "file": "native-contracts.log",
+      "sha256": "a9e11e3d829b247e6b2bde45b05ffc61af47f3b8ce61384e2e6d4d51d04d1dcf"
+    },
+    {
+      "file": "native-preflight.json",
+      "sha256": "bd756a284352b6b47231c4732351187a6fa851f2977d8f973ebd2b319e36340f"
+    },
+    {
+      "file": "native_preflight.py",
+      "sha256": "765e53c6424b305162a46e2be2c633d094de6ed39ac73404e8db285184e57fcc"
+    },
+    {
+      "file": "preflight.json",
+      "sha256": "5e55b714f610d3aa4174b19fc76e1518f7608ec565c6448642a14498f472a4d3"
+    },
+    {
+      "file": "prepare.py",
+      "sha256": "f80a368874dd99b690f47c7ef71afcef492e4465c90d389088ac3029ab1f75e1"
+    },
+    {
+      "file": "protected-after.json",
+      "sha256": "764df286b50f691bd503688e454a085233ed5f06ae145d9ffd3da1f27827a613"
+    },
+    {
+      "file": "protected-before.json",
+      "sha256": "531ad5d57b525c504a32c5d6bcfcf3e2c4a420773fc7aea47e6198bbb902b5c7"
+    },
+    {
+      "file": "push-ttl-private.json",
+      "sha256": "46b991f683518fe2183539dfdfd92c9e6d6188439b6805c99f1a7d498bece69e"
+    },
+    {
+      "file": "r8-contracts.exit",
+      "sha256": "5feceb66ffc86f38d952786c6d696c79c2dbc239dd4e91b46729d73a27fb57e9"
+    },
+    {
+      "file": "r8-contracts.log",
+      "sha256": "9cb8a388416eed6c9c12b2e941ff0cc70db257bc6e1ea29644a8378ebf66a102"
+    },
+    {
+      "file": "read_weather.py",
+      "sha256": "6002dfb2415a1ae97630572ac53f9aaba29443cdd9ff9a9aa90097508925493f"
+    },
+    {
+      "file": "sponsors-after.json",
+      "sha256": "b46255bf08949a505ed550c430a66eade9fa1186007a7e1ea5f873543291909b"
+    },
+    {
+      "file": "sponsors-before.json",
+      "sha256": "0f81ccba493d83323fd653d3b8387b25ab221862262e7d3f7573e18fdfae6732"
+    },
+    {
+      "file": "version-parity.exit",
+      "sha256": "5feceb66ffc86f38d952786c6d696c79c2dbc239dd4e91b46729d73a27fb57e9"
+    },
+    {
+      "file": "version-parity.log",
+      "sha256": "8bd54c20006b26dde84feb8525f9464efc71d020065659a475757fe59f113ac0"
+    },
+    {
+      "file": "version-provisional.json",
+      "sha256": "ae4488eb13ea14a41631996a95d2cc6a0e050a04c6d901469412015ff5691a19"
+    },
+    {
+      "file": "visual_fixture.py",
+      "sha256": "d8d4e25c120b5097d8b63a0440f605cd26846e4e3c34d6ee3978f7b9dcbe7a57"
+    },
+    {
+      "file": "weather-read.json",
+      "sha256": "885ad4e14f83d4a19eb2fac728986713f4d99006c7c6bbff517abd91dcd9dd6c"
+    },
+    {
+      "file": "web-build.exit",
+      "sha256": "5feceb66ffc86f38d952786c6d696c79c2dbc239dd4e91b46729d73a27fb57e9"
+    },
+    {
+      "file": "web-build.log",
+      "sha256": "2f1008eee7ca28c8dc66c23036c32436711340be8bc495030e8df72776aa6ecb"
+    }
+  ]
+}
