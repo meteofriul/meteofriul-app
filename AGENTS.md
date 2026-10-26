@@ -15,6 +15,74 @@
 - Run `scripts/test-canonical-workspace-cleanliness.ps1` before establishing a
   new canonical clone or delivery baseline.
 
+## App map and coordinated agents
+
+- The four primary tabs are defined in `frontend/src/app/appConfig.js` and
+  routed in `frontend/src/app/AppRoutes.jsx`: HOME (`home`), METEO (`weather`,
+  with `weather` / `bulletin` / `live` routes), EVENTI (`events`), and SCOPRI
+  (`discover`). `almanac` and `settings` are additional routes, not primary tabs.
+- HOME: `frontend/src/features/home/` renders current local weather, the scene,
+  hourly and local summaries, official alerts/bulletin, and previews of events,
+  almanac and territorial content. Its data controller consumes other sections'
+  services. Coordinate changes to their sources with the relevant specialist.
+- METEO: `frontend/src/features/weather/` is Previsioni;
+  `frontend/src/features/bulletin/` is the official ARPA FVG/OSMER bulletin and
+  alerts; `frontend/src/features/live/` is Tempo Reale (reports, radar, webcams).
+  Radar code also exists in the bulletin feature. Keep the three information
+  types distinct while assigning one functional owner to the tab.
+- EVENTI: `frontend/src/features/events/`, `frontend/src/services/eventsApi.js`,
+  `backend/app/api/events.py`, `backend/app/events/` and related event services
+  cover catalog, sources, schedules, filters, cards and detail flows.
+- SCOPRI: `frontend/src/features/discover/` and `features/almanac/`,
+  `frontend/src/domain/discover/` and `domain/almanac/`,
+  `frontend/src/data/discover/` and `data/almanac/`, and the related curation
+  scripts provide territorial, seasonal and small editorial cards. New copy
+  needs its own assignment; the current organization task adds no content.
+- `Community` is wider than reports: `features/live/` handles reports and their
+  interactions, while `features/community/`, `features/settings/`, and backend
+  community modules also handle identity, reputation, moderation, persistence
+  and privacy. Do not equate the name with one screen or rename code from this
+  map alone.
+- The main chat scopes work, selects only useful specialists from
+  `.codex/agents/`, assigns each changed file to exactly one editor, reviews
+  cross-tab effects, gathers evidence and returns one result. A section may
+  span frontend, backend, data and scripts; do not move sources for ownership.
+  For broad METEO work, keep `meteo` accountable and delegate bounded file
+  groups only with explicit assignments.
+- The main chat assigns an explicit owner before changes to shared files:
+  `frontend/src/app/` (routing), `frontend/src/ui/` (shell/theme),
+  `frontend/src/features/settings/`, `features/community/`,
+  `features/promotions/`, shared `frontend/src/services/`, `domain/` and
+  `copy/`, location/notification code, backend common APIs/services, project
+  configurations, dependencies, Android wrapper, contracts, and `scripts/`.
+  Other specialists may analyze or review the same file, but only its assigned
+  editor changes it. `build_verifica` owns verification evidence; it changes
+  build rules or scripts only when separately assigned.
+- For structure and prescribed tools/commands, use [README](README.md#architettura)
+  and [local development](README.md#sviluppo-locale). From the repository root,
+  use `scripts/start-dev.ps1` for ordinary engineering and
+  `scripts/start-local-weather-pilot.ps1` for the pilot. Run `npm test`,
+  `npm run lint`, and `npm run build` from `frontend/`; run the Python tests
+  and `compileall` from `backend/`, as shown in [Test e qualità](README.md#test-e-qualità).
+  `frontend/package.json` prescribes Node `22.17.1` and npm `10.9.2`;
+  README prescribes Python `3.13`, PowerShell on Windows and Android Studio
+  JBR 21. The Android wrapper pins Gradle `8.14.3` and AGP `8.13.0`.
+- Consult [runtime inventory](UI3_RUNTIME_DATA_INVENTORY.md),
+  [Live contract](LIVE_VIEW_FUNCTIONAL_CONTRACT.md),
+  [Eventi sources](EVENTI_DATA_SOURCE_AUDIT.md), and
+  [Almanacco/Scopri contract](ALMANAC_DISCOVER_CONTENT_CONTRACT.md) for
+  section-specific behavior. The [Android build prevention rules](docs/operations/ANDROID_BUILD_PREVENTION_RULES.md),
+  [Play runbook](docs/operations/PLAY_AAB_RUNBOOK.md), and
+  [Web/Android parity runbook](docs/operations/WEB_ANDROID_RELEASE_PARITY.md)
+  remain authoritative for build and publication. Historical reports are
+  evidence of their dated checks, not standing instructions or current status.
+- Preserve the external Git privacy guard and active hook. Follow the existing
+  [Community privacy contract](docs/operations/COMMUNITY_PRIVACY_DATA_SAFETY_HANDOFF.md)
+  and publication gates in the runbooks; do not include
+  private identifiers, precise location or signing material in reports or
+  commits. The landing page and content-management panel are related external
+  projects. Native iOS is a future goal, not a reason to add directories here.
+
 ## Branch and release workflow
 
 - Treat `main` as the verified and promoted baseline.
