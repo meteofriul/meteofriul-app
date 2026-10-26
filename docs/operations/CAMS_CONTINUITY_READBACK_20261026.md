@@ -1,5 +1,7 @@
 # CAMS: continuità e rilettura — 26 ottobre 2026
 
+**Aggiornamento successivo:** revisione/CI e deploy del solo CAMS e della policy completati; [verbale di attivazione e verifiche ancora aperte](CAMS_CONTINUITY_DEPLOY_20261026.md). Le sezioni seguenti descrivono la preparazione precedente al deploy.
+
 Stato: **preparazione locale, non distribuita** sul ramo
 `codex/cams-continuity-readback`, da main `c2b2cfe1`.
 Correzione e test salvati nel commit locale `ae41628b`; policy e documentazione
