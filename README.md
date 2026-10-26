@@ -1,6 +1,6 @@
 # Meteo Friûl
 
-**Stato corrente — 26 ottobre, preparazione 300038:** release allineata a main `c2b2cfe1`; codice **0.1.15 / 300038** configurato dopo lettura Play (massimo 300037). Antenna radar e contrasto secondario scuro inclusi, sponsor spenti. Preflight locali e servizi API/TTL superati; salvataggio remoto/CI e build protetta in corso di preparazione. AAB non ancora generata; upload e installazione esclusi. Web da ricompilare dalla stessa sorgente finale. CAMS osservato scaduto alle 07:00 italiane: recupero da verificare, senza esecuzioni manuali. [Verbale e limiti](docs/operations/ANDROID_0.1.15_300038_BUILD_20261026.md). Controllo Eventi del 27 ottobre mantenuto.
+**Stato corrente — 26 ottobre:** AAB ufficiale **0.1.15 / 300038 generata, firmata e archiviata**, sorgente `7130c28a`, main incorporato `c2b2cfe1`. CI esatta e builder protetto PASS; Web compilata dalla stessa sorgente. Sponsor spenti. **Non caricata su Play, non installata; Web non pubblicata.** Nel test interno resta 300037. Nuovo runtime da provare sul Galaxy; freschezza CAMS e recupero Barcolana restano verifiche distinte. Controllo Eventi del 27 ottobre mantenuto. [Artefatti, controlli e limiti](docs/operations/ANDROID_0.1.15_300038_BUILD_20261026.md).
 
 **Eventi — aggiornamento del 26 ottobre:** PR 30 integrata, CI PR/main superate; solo job Eventi e policy `events-failures` aggiornati con rollback pronto. Il secondo tentativo Barcolana usa più tempo entro lo stesso budget; la chiusura della finestra degli errori non notifica più un falso recupero. [Deploy e verifica](docs/operations/EVENTS_BARCOLANA_RECOVERY_DEPLOY_20261026.md). Corsa ordinaria del 27 ottobre alle 05:00: `pending`; nessuna esecuzione manuale. Sponsor spenti, contratti Web/Android e pacchetti invariati.
 
@@ -20,7 +20,7 @@ contenuti culturali; l'interfaccia è disponibile in italiano e friulano.
 
 > Ultima lettura Web del 23 ottobre 2026: `meteofriul.app` serve la
 > pubblicazione del 21 ottobre, versione `0.1.14`, sorgente `1b0287c1`.
-> La candidata Web **0.1.15** corrente è compilata da `83c12c58`, con main `a4135392`,
+> La candidata Web **0.1.15** corrente è compilata da `7130c28a`, con main `c2b2cfe1`,
 > antenna radar e contrasto scuro. La Web storica della AAB **300037** resta da `d15edb10`.
 > Web non pubblicata; AAB **300037 disponibile nel test interno dal 24 ottobre alle 18:52**, con gli stessi due account.
 >
@@ -28,7 +28,7 @@ contenuti culturali; l'interfaccia è disponibile in italiano e friulano.
 > iPhone dal browser. Il [percorso di allineamento Web/Android](docs/operations/WEB_ANDROID_RELEASE_PARITY.md)
 > richiede sorgenti e funzionalità coerenti, oltre alla verifica Safari/iPhone.
 
-**Ultima AAB generata:** **0.1.15 / 300037**, sorgente `d15edb10`: firma, configurazione nativa, mapping, controlli locali e CI PASS. Sponsor disattivati. Archiviata e **disponibile nel test interno**; 300037 verificata sul Galaxy Android 14 nei percorsi osservati, con limiti espliciti. [Build, hash e limiti](docs/operations/ANDROID_0.1.15_300037_BUILD_20261024.md).
+**Precedente AAB generata:** **0.1.15 / 300037**, sorgente `d15edb10`: firma, configurazione nativa, mapping, controlli locali e CI PASS. Sponsor disattivati. Archiviata e **disponibile nel test interno**; 300037 verificata sul Galaxy Android 14 nei percorsi osservati, con limiti espliciti. [Build, hash e limiti](docs/operations/ANDROID_0.1.15_300037_BUILD_20261024.md).
 
 **AAB attualmente nel test interno:** **0.1.15 / 300037**, disponibile dal 24 ottobre alle 18:52. Stessi due account abilitati, sponsor disattivati, produzione invariata a 0.1.14 / 300031. Nessuna installazione dell'agente; [verifica Galaxy del 24 ottobre](docs/operations/ANDROID_0.1.15_300037_DEVICE_CHECK_20261024.md) completata nei percorsi osservati. Posizione conservata, CAMS IT/FUR e contatore Eventi scuro leggibili; TurismoFVG recuperata dalla corsa manuale autorizzata delle 22:24, con 1.434 schede pubblicabili; nel riscontro storico restavano 20 schede in revisione. Per lo stato Eventi del 26 ottobre vedere la preparazione corrente. [Recupero e limiti](docs/operations/EVENTS_MANUAL_RECOVERY_20261024.md). Il contrasto secondario radar resta quello precedente nella 300037; correzione preparata nella nuova candidata, ancora da provare sul telefono. [Caricamento e limiti](docs/operations/ANDROID_0.1.15_300037_UPLOAD_20261024.md).
 

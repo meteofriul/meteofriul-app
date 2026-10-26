@@ -1,0 +1,469 @@
+{
+  "schema_version": 1,
+  "verified_at_utc": "2026-10-26T08:47:57.151137+00:00",
+  "status": "BUILT_NOT_UPLOADED_RUNTIME_PENDING",
+  "source_commit": "7130c28ac4fdfde736498b84db28aaf738cb05db",
+  "main_integrated": "c2b2cfe16c687f10bc4be87e50d26059a855b8b1",
+  "version_name": "0.1.15",
+  "version_code": 300038,
+  "application_id": "com.meteofriul.app",
+  "aab": {
+    "file": "meteofriul-300038-0.1.15.aab",
+    "bytes": 73017701,
+    "sha256": "69be438d19a1e144d84227b78b9ff46bb205b4bf05465f13390abf36576c6f83"
+  },
+  "mapping": {
+    "file": "meteofriul-300038-0.1.15.mapping.txt",
+    "sha256": "1578fd6e78e3f27ea18a568673e571bf6e602f88a7d9bf349a1f34300307e6ff"
+  },
+  "upload_certificate_sha256": "338c051587d62cdad6f9bd38eaa1e793d3da2d6c30c4270f8450a93a6ecec3b4",
+  "native_configuration": {
+    "Verification": "native-config-hashes-and-cordova-resource",
+    "ConfigSha256": "0e6adc3fd2d8c557b848322adbda800b4e69804f0aec2f37326aa25543979cce",
+    "PluginsSha256": "b9832bcf10b7daff2969d0d4b66bcfe5ef7acdf64107709bd3f839cf3cfda7e4",
+    "CordovaResource": "com.meteofriul.app:xml/config",
+    "CordovaBundleEntry": "base/res/xml/config.xml"
+  },
+  "signature_verification": "all-payload-entries-single-signer",
+  "r8_verification": "external-and-embedded-mapping-match",
+  "native_symbols_status": "unavailable-transitive-native-libraries",
+  "realtime_css_present_in_signed_bundle": true,
+  "cams_it_fur_and_dark_events_corrections_in_signed_bundle": true,
+  "independent_bundletool_validation": "PASS",
+  "source_ci": {
+    "conclusion": "success",
+    "event": "workflow_dispatch",
+    "headSha": "7130c28ac4fdfde736498b84db28aaf738cb05db",
+    "jobs": [
+      {
+        "completedAt": "2026-10-26T08:39:55Z",
+        "conclusion": "success",
+        "databaseId": 121474081890,
+        "name": "frontend",
+        "startedAt": "2026-10-26T08:37:35Z",
+        "status": "completed",
+        "steps": [
+          {
+            "completedAt": "2026-10-26T08:37:37Z",
+            "conclusion": "success",
+            "name": "Set up job",
+            "number": 1,
+            "startedAt": "2026-10-26T08:37:36Z",
+            "status": "completed"
+          },
+          {
+            "completedAt": "2026-10-26T08:37:43Z",
+            "conclusion": "success",
+            "name": "Checkout",
+            "number": 2,
+            "startedAt": "2026-10-26T08:37:37Z",
+            "status": "completed"
+          },
+          {
+            "completedAt": "2026-10-26T08:37:52Z",
+            "conclusion": "success",
+            "name": "Set up Node.js",
+            "number": 3,
+            "startedAt": "2026-10-26T08:37:43Z",
+            "status": "completed"
+          },
+          {
+            "completedAt": "2026-10-26T08:37:58Z",
+            "conclusion": "success",
+            "name": "Install frontend dependencies",
+            "number": 4,
+            "startedAt": "2026-10-26T08:37:52Z",
+            "status": "completed"
+          },
+          {
+            "completedAt": "2026-10-26T08:39:31Z",
+            "conclusion": "success",
+            "name": "Test frontend",
+            "number": 5,
+            "startedAt": "2026-10-26T08:37:58Z",
+            "status": "completed"
+          },
+          {
+            "completedAt": "2026-10-26T08:39:31Z",
+            "conclusion": "success",
+            "name": "Test release API guard",
+            "number": 6,
+            "startedAt": "2026-10-26T08:39:31Z",
+            "status": "completed"
+          },
+          {
+            "completedAt": "2026-10-26T08:39:32Z",
+            "conclusion": "success",
+            "name": "Test dependency security and compatibility",
+            "number": 7,
+            "startedAt": "2026-10-26T08:39:31Z",
+            "status": "completed"
+          },
+          {
+            "completedAt": "2026-10-26T08:39:32Z",
+            "conclusion": "success",
+            "name": "Test isolated Android Community QA build",
+            "number": 8,
+            "startedAt": "2026-10-26T08:39:32Z",
+            "status": "completed"
+          },
+          {
+            "completedAt": "2026-10-26T08:39:50Z",
+            "conclusion": "success",
+            "name": "Lint frontend",
+            "number": 9,
+            "startedAt": "2026-10-26T08:39:32Z",
+            "status": "completed"
+          },
+          {
+            "completedAt": "2026-10-26T08:39:53Z",
+            "conclusion": "success",
+            "name": "Build frontend",
+            "number": 10,
+            "startedAt": "2026-10-26T08:39:50Z",
+            "status": "completed"
+          },
+          {
+            "completedAt": "2026-10-26T08:39:53Z",
+            "conclusion": "success",
+            "name": "Post Set up Node.js",
+            "number": 19,
+            "startedAt": "2026-10-26T08:39:53Z",
+            "status": "completed"
+          },
+          {
+            "completedAt": "2026-10-26T08:39:53Z",
+            "conclusion": "success",
+            "name": "Post Checkout",
+            "number": 20,
+            "startedAt": "2026-10-26T08:39:53Z",
+            "status": "completed"
+          },
+          {
+            "completedAt": "2026-10-26T08:39:53Z",
+            "conclusion": "success",
+            "name": "Complete job",
+            "number": 21,
+            "startedAt": "2026-10-26T08:39:53Z",
+            "status": "completed"
+          }
+        ],
+        "url": "https://github.com/meteofriul/meteofriul-app/actions/runs/40293565378/job/121474081890"
+      },
+      {
+        "completedAt": "2026-10-26T08:40:58Z",
+        "conclusion": "success",
+        "databaseId": 121474082207,
+        "name": "hosting-preview-tool",
+        "startedAt": "2026-10-26T08:37:35Z",
+        "status": "completed",
+        "steps": [
+          {
+            "completedAt": "2026-10-26T08:37:37Z",
+            "conclusion": "success",
+            "name": "Set up job",
+            "number": 1,
+            "startedAt": "2026-10-26T08:37:36Z",
+            "status": "completed"
+          },
+          {
+            "completedAt": "2026-10-26T08:37:47Z",
+            "conclusion": "success",
+            "name": "Checkout",
+            "number": 2,
+            "startedAt": "2026-10-26T08:37:37Z",
+            "status": "completed"
+          },
+          {
+            "completedAt": "2026-10-26T08:37:47Z",
+            "conclusion": "success",
+            "name": "Set up Java",
+            "number": 3,
+            "startedAt": "2026-10-26T08:37:47Z",
+            "status": "completed"
+          },
+          {
+            "completedAt": "2026-10-26T08:38:01Z",
+            "conclusion": "success",
+            "name": "Set up Node.js",
+            "number": 4,
+            "startedAt": "2026-10-26T08:37:47Z",
+            "status": "completed"
+          },
+          {
+            "completedAt": "2026-10-26T08:38:12Z",
+            "conclusion": "success",
+            "name": "Install frontend dependencies",
+            "number": 5,
+            "startedAt": "2026-10-26T08:38:01Z",
+            "status": "completed"
+          },
+          {
+            "completedAt": "2026-10-26T08:38:15Z",
+            "conclusion": "success",
+            "name": "Build web assets for Android release contracts",
+            "number": 6,
+            "startedAt": "2026-10-26T08:38:12Z",
+            "status": "completed"
+          },
+          {
+            "completedAt": "2026-10-26T08:38:17Z",
+            "conclusion": "success",
+            "name": "Sync Android project for release contracts",
+            "number": 7,
+            "startedAt": "2026-10-26T08:38:15Z",
+            "status": "completed"
+          },
+          {
+            "completedAt": "2026-10-26T08:40:54Z",
+            "conclusion": "success",
+            "name": "Test Hosting preview deployment guardrails",
+            "number": 8,
+            "startedAt": "2026-10-26T08:38:17Z",
+            "status": "completed"
+          },
+          {
+            "completedAt": "2026-10-26T08:40:54Z",
+            "conclusion": "success",
+            "name": "Post Set up Node.js",
+            "number": 14,
+            "startedAt": "2026-10-26T08:40:54Z",
+            "status": "completed"
+          },
+          {
+            "completedAt": "2026-10-26T08:40:54Z",
+            "conclusion": "success",
+            "name": "Post Set up Java",
+            "number": 15,
+            "startedAt": "2026-10-26T08:40:54Z",
+            "status": "completed"
+          },
+          {
+            "completedAt": "2026-10-26T08:40:56Z",
+            "conclusion": "success",
+            "name": "Post Checkout",
+            "number": 16,
+            "startedAt": "2026-10-26T08:40:54Z",
+            "status": "completed"
+          },
+          {
+            "completedAt": "2026-10-26T08:40:56Z",
+            "conclusion": "success",
+            "name": "Complete job",
+            "number": 17,
+            "startedAt": "2026-10-26T08:40:56Z",
+            "status": "completed"
+          }
+        ],
+        "url": "https://github.com/meteofriul/meteofriul-app/actions/runs/40293565378/job/121474082207"
+      },
+      {
+        "completedAt": "2026-10-26T08:38:46Z",
+        "conclusion": "success",
+        "databaseId": 121474082446,
+        "name": "backend",
+        "startedAt": "2026-10-26T08:37:35Z",
+        "status": "completed",
+        "steps": [
+          {
+            "completedAt": "2026-10-26T08:37:37Z",
+            "conclusion": "success",
+            "name": "Set up job",
+            "number": 1,
+            "startedAt": "2026-10-26T08:37:36Z",
+            "status": "completed"
+          },
+          {
+            "completedAt": "2026-10-26T08:37:41Z",
+            "conclusion": "success",
+            "name": "Checkout",
+            "number": 2,
+            "startedAt": "2026-10-26T08:37:37Z",
+            "status": "completed"
+          },
+          {
+            "completedAt": "2026-10-26T08:37:43Z",
+            "conclusion": "success",
+            "name": "Set up Python",
+            "number": 3,
+            "startedAt": "2026-10-26T08:37:41Z",
+            "status": "completed"
+          },
+          {
+            "completedAt": "2026-10-26T08:37:50Z",
+            "conclusion": "success",
+            "name": "Install backend dependencies",
+            "number": 4,
+            "startedAt": "2026-10-26T08:37:43Z",
+            "status": "completed"
+          },
+          {
+            "completedAt": "2026-10-26T08:38:23Z",
+            "conclusion": "success",
+            "name": "Test backend",
+            "number": 5,
+            "startedAt": "2026-10-26T08:37:50Z",
+            "status": "completed"
+          },
+          {
+            "completedAt": "2026-10-26T08:38:23Z",
+            "conclusion": "success",
+            "name": "Compile backend",
+            "number": 6,
+            "startedAt": "2026-10-26T08:38:23Z",
+            "status": "completed"
+          },
+          {
+            "completedAt": "2026-10-26T08:38:30Z",
+            "conclusion": "success",
+            "name": "Test regional HTTP startup and storage metadata",
+            "number": 7,
+            "startedAt": "2026-10-26T08:38:23Z",
+            "status": "completed"
+          },
+          {
+            "completedAt": "2026-10-26T08:38:31Z",
+            "conclusion": "success",
+            "name": "Install verified promtool for monitor tests",
+            "number": 8,
+            "startedAt": "2026-10-26T08:38:30Z",
+            "status": "completed"
+          },
+          {
+            "completedAt": "2026-10-26T08:38:44Z",
+            "conclusion": "success",
+            "name": "Test ICON-2I monitor and PromQL policies",
+            "number": 9,
+            "startedAt": "2026-10-26T08:38:31Z",
+            "status": "completed"
+          },
+          {
+            "completedAt": "2026-10-26T08:38:44Z",
+            "conclusion": "success",
+            "name": "Post Set up Python",
+            "number": 17,
+            "startedAt": "2026-10-26T08:38:44Z",
+            "status": "completed"
+          },
+          {
+            "completedAt": "2026-10-26T08:38:44Z",
+            "conclusion": "success",
+            "name": "Post Checkout",
+            "number": 18,
+            "startedAt": "2026-10-26T08:38:44Z",
+            "status": "completed"
+          },
+          {
+            "completedAt": "2026-10-26T08:38:44Z",
+            "conclusion": "success",
+            "name": "Complete job",
+            "number": 19,
+            "startedAt": "2026-10-26T08:38:44Z",
+            "status": "completed"
+          }
+        ],
+        "url": "https://github.com/meteofriul/meteofriul-app/actions/runs/40293565378/job/121474082446"
+      }
+    ],
+    "status": "completed",
+    "url": "https://github.com/meteofriul/meteofriul-app/actions/runs/40293565378",
+    "workflowName": "CI"
+  },
+  "web": {
+    "archive_relative_path": "release-artifacts/web-candidates/20261026-0.1.15-7130c28a",
+    "source_commit": "7130c28ac4fdfde736498b84db28aaf738cb05db",
+    "main_integrated": "c2b2cfe16c687f10bc4be87e50d26059a855b8b1",
+    "frontend_tree": "93f720a9c3af3323a82f752e188a99893be5348f",
+    "manifest_sha256": "59cb9a4a4d79377313760569458b5b87d8c8086202e5c1e307f06feed97a047c",
+    "artifacts": {
+      "web": {
+        "files": 506,
+        "bytes": 76032145
+      },
+      "android-web": {
+        "files": 505,
+        "bytes": 75979477
+      }
+    },
+    "sponsors": {
+      "checked_at_utc": "2026-10-26T08:37:52.338095+00:00",
+      "enabled": false,
+      "revision": 117,
+      "campaign_count": 0
+    },
+    "aab_generated": false,
+    "version_reserved": false,
+    "uploaded": false,
+    "deployed": false,
+    "ci_for_source": "pending_ci_before_aab"
+  },
+  "sponsors": {
+    "checked_at_utc": "2026-10-26T08:47:24.773716+00:00",
+    "enabled": false,
+    "campaign_count": 0,
+    "revision": 117
+  },
+  "protected_files_unchanged": 10323,
+  "build": {
+    "started_at_utc": "2026-10-26T08:41:34.919924+00:00",
+    "completed_at_utc": "2026-10-26T08:45:56.549844+00:00",
+    "source_commit": "7130c28ac4fdfde736498b84db28aaf738cb05db",
+    "returncode": 0,
+    "reservation_exists": true,
+    "release_manifest_exists": true,
+    "manual_upload_or_install": false
+  },
+  "runtime": {
+    "new_aab_on_device": "NOT_VERIFIED",
+    "android_15_16": "NOT_VERIFIED",
+    "large_screen_multiwindow": "NOT_VERIFIED",
+    "safari_iphone": "NOT_VERIFIED",
+    "note": "Prior Brave and 300037 observations are distinct; no installation or browser app test in this session."
+  },
+  "play_upload": false,
+  "installation": false,
+  "deploy": false,
+  "manual_sends": false,
+  "receipt_normalization": {
+    "reason": "Evidence SHA256 values misclassified by API-like map keys; explicit file/sha256 entries preserve all digests",
+    "unpublished_commits": [
+      {
+        "old": "15be063d99156dc7ec6ef4887b0d05e0123ef97e",
+        "new": "08a856c6497512052bb4957cf4df17a47fad72af",
+        "parents_preserved": true
+      },
+      {
+        "old": "eb829a074b4399dbd47cd9e5059e940286de7e36",
+        "new": "8f41909db6cd6ba9d36beece8905fbe8d0ad3aa5",
+        "parents_preserved": true
+      },
+      {
+        "old": "83c12c58535e56e0603c7136c7eb742f8ac2664f",
+        "new": "b87dbe158445887756dc86b76f30fc17abd5eb3d",
+        "parents_preserved": true
+      },
+      {
+        "old": "238f5517ac8abeb8dda18a1fc73e68ccf1c1e138",
+        "new": "fd2376de40cb02845ae06ffb81bddd1b8a36acf3",
+        "parents_preserved": true
+      },
+      {
+        "old": "072178cb9f0356cc589e239a4675663c3adab1db",
+        "new": "41b92af27292120f095b439ab40416fe49269c07",
+        "parents_preserved": true
+      },
+      {
+        "old": "a16f6fda1f5b1443d5872f83d8c84150291ac0cb",
+        "new": "7130c28ac4fdfde736498b84db28aaf738cb05db",
+        "parents_preserved": true
+      }
+    ],
+    "published_history_changed": false,
+    "frontend_unchanged": true,
+    "security_rules_changed": false
+  },
+  "radar_antenna_and_secondary_dark_contrast_in_signed_bundle": true,
+  "cams_last_observation": "2026-10-26T08:47:37.300217+00:00",
+  "cams_limitation": "Published CAMS run 20261025T000000Z expired at 2026-10-26T06:00:00Z; new ordinary run expected 09:00 UTC. Build does not certify live recovery.",
+  "events_followup": "2026-10-27T04:00:00Z ordinary run; maintained; recovery pending"
+}
