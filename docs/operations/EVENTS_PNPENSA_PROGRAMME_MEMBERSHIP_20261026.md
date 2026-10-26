@@ -1,9 +1,19 @@
 # Pordenone Pensa — appartenenza al programma, 26 ottobre 2026
 
-**Correzione locale verificata, da committare sul ramo
-`codex/events-programme-membership`.** Base main
-`4219581f17b35aa42bd346ff652058004d9cf5f0`. Nessun aggiornamento di main,
-GitHub, backend, AAB o Web pubblica; sponsor disattivati e invariati.
+**Correzione verificata e salvata nel commit `759b354d17bebdf9627666845526b82ad2c41320`,
+promosso su main locale il 26 ottobre.** Ramo di lavoro
+`codex/events-programme-membership`, base main
+`4219581f17b35aa42bd346ff652058004d9cf5f0`. Passaggio locale fast-forward,
+senza conflitti o cambiamenti ai sorgenti collaudati. GitHub, ramo release,
+artefatti Android/Web e backend non aggiornati; sponsor disattivati e invariati.
+
+Revisione finale completata: diff circoscritto, hash dei sorgenti, degli 81 test
+e delle evidenze Galaxy concordi; lint e build precedenti validi sullo stesso
+codice. Controllo di pulizia canonica e `git diff --check` superati. Nessuna
+ripetizione delle prove senza cambiamenti al codice. La documentazione di
+questo stato viene salvata sullo stesso ramo e allineata a main locale.
+Per aggiornare main su GitHub serviranno push del ramo, PR e CI: nessuno di
+questi passaggi remoti è eseguito o dichiarato superato qui.
 
 ## Problema e comportamento corretto
 
@@ -98,10 +108,11 @@ Indietro Android chiude il dettaglio e torna agli Eventi senza uscire da Brave.
 Ripristinati italiano e tema chiaro della sola anteprima; app ufficiale e sue
 preferenze non toccate. Le evidenze sono nella sottocartella privata `galaxy/`
 della cartella già indicata. Nessun cambiamento ai sorgenti dopo il collaudo;
-restano commit e promozione. La futura AAB minificata richiederà il proprio
+commit e promozione locale completati. La futura AAB minificata richiederà il proprio
 collaudo: non si attribuisce questo PASS alla 300038 già installata.
 
 I verbali del collaudo 300038 salvati nel ramo release restano separati e
 non sovrascritti. Nessuna modifica al pannello editoriale dell'altra chat,
 alla gestione Barcolana, ai job, agli allarmi, agli sponsor o alle automazioni.
-Nessun commit/push, deploy, installazione, emulatore o invio manuale.
+Nessun push, deploy, installazione, emulatore o invio manuale. Gli asset locali
+ignorati e il lavoro non committato degli altri worktree sono stati preservati.

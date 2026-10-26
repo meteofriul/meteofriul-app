@@ -2,7 +2,7 @@
   "recorded_at": "2026-10-26T14:44:35.450822+00:00",
   "branch": "codex/events-programme-membership",
   "base_main": "4219581f17b35aa42bd346ff652058004d9cf5f0",
-  "result": "local_fix_and_real_device_preview_verified",
+  "result": "verified_and_promoted_to_local_main",
   "tests": {
     "passed": 81,
     "failed": 0,
@@ -135,8 +135,8 @@
   ],
   "private_evidence_root": ".tmp/events-programme-membership-20261026",
   "new_runtime_device_check": true,
-  "main_updated": false,
-  "committed": false,
+  "main_updated": true,
+  "committed": true,
   "pushed": false,
   "published": false,
   "backend_changed": false,
@@ -408,5 +408,22 @@
       "No new cloud recovery check",
       "No full JS exception monitoring; one repeated inspection script failed after preferences were already restored, not an app error"
     ]
+  },
+  "source_commit": "759b354d17bebdf9627666845526b82ad2c41320",
+  "promotion": {
+    "recorded_at": "2026-10-26T15:23:30.070390+00:00",
+    "scope": "local_main_only",
+    "method": "fast-forward",
+    "base_main": "4219581f17b35aa42bd346ff652058004d9cf5f0",
+    "verified_code_commit": "759b354d17bebdf9627666845526b82ad2c41320",
+    "review": "passed",
+    "source_and_evidence_hashes_match": true,
+    "canonical_workspace_cleanliness": "passed",
+    "diff_check": "passed",
+    "source_changed_after_device_check": false,
+    "github_updated": false,
+    "remote_ci": "not_run_no_push",
+    "release_branch_aligned": false,
+    "android_web_artifacts_regenerated": false
   }
 }
