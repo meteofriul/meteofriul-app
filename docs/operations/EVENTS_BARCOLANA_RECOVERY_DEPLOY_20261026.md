@@ -1,5 +1,7 @@
 # Deploy Eventi: Barcolana e significato degli allarmi — 26 ottobre 2026
 
+**Aggiornamento del 26 ottobre:** il proprietario ha chiesto di spegnere il follow-up; `verifica-recupero-barcolana-e-policy-eventi` è stato eliminato. La corsa del 27 ottobre resta non verificata e non è più previsto un controllo automatico in questa chat. I risultati del deploy sotto riportati restano validi.
+
 ## Sorgenti, revisione e controlli
 
 [PR 30](https://github.com/meteofriul/meteofriul-app/pull/30) integrata in main

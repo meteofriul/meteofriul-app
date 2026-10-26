@@ -12,7 +12,8 @@
       "time_zone": "Etc/UTC",
       "environment": {
         "WEATHER_PUBLIC_BASE_URL": "https://meteofriul-weather-49007668366.europe-west1.run.app",
-        "WEATHER_UV_UTC_HOURS": "15,20"
+        "WEATHER_UV_UTC_HOURS": "15,20",
+        "WEATHER_CAMS_CONTINUITY_ENABLED": "1"
       },
       "task_timeout_seconds": 1200,
       "max_retries": 0,

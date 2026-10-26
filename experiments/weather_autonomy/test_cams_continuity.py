@@ -132,6 +132,26 @@ class CamsContinuityTests(TestCase):
 
 
 class CamsContinuityWorkerTests(TestCase):
+    def test_enabling_flag_does_not_extend_existing_legacy_family(self):
+        from cloud_worker import _cams_region_step
+        from datetime import datetime, timezone
+        from unittest.mock import Mock
+        import os
+        data = fixtures.MemoryObjectStore()
+        run = '20260909T000000Z'
+        data.put('weather/v1/families/cams/latest.json',canonical_json_bytes({'latest':{'source_run_id':run}}))
+        before = dict(data.objects)
+        with patch.dict(os.environ, {'WEATHER_CAMS_CONTINUITY_ENABLED': '1'}), \
+             patch('local_pipeline.contract_publisher.ContractV1Publisher.read_verified_cams_family_latest',
+                   return_value={'latest':{'source_run_id':run}}), \
+             patch('cams_readback.verify_cams', return_value={}) as readback, \
+             patch('retrieve_remote_cams.retrieve_remote_cams') as retrieve:
+            result = _cams_region_step(Mock(),data,datetime(2026,9,9,12,tzinfo=timezone.utc))
+        self.assertEqual(result['continuity_status'], 'legacy_no_grant')
+        self.assertEqual(data.objects, before)
+        readback.assert_called_once_with(data, run)
+        retrieve.assert_not_called()
+
     def test_flag_controls_new_publication_and_public_readback(self):
         from cloud_worker import _cams_region_step
         from datetime import datetime, timezone
@@ -151,7 +171,9 @@ class CamsContinuityWorkerTests(TestCase):
                  patch('publish_remote_cams.restore_remote_cams_prepared', return_value=SimpleNamespace()), \
                  patch('publish_remote_cams.publish_remote_cams') as publish, \
                  patch('cams_readback.verify_cams', return_value={}) as readback:
-                self.assertEqual(_cams_region_step(state,data,now)['status'],'verified')
+                result = _cams_region_step(state,data,now)
+                self.assertEqual(result['status'],'verified')
+                self.assertEqual(result['continuity_status'], 'verified' if enabled == '1' else 'legacy_no_grant')
                 self.assertEqual(publish.call_args.kwargs.get('cams_continuity',False), enabled=='1')
                 self.assertEqual(readback.call_args.kwargs.get('require_continuity',False), enabled=='1')
 

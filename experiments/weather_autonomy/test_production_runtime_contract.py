@@ -39,6 +39,7 @@ class ProductionRuntimeContractTests(TestCase):
             config['public_reader_base_url'],
         )
         self.assertEqual(cams['environment']['WEATHER_UV_UTC_HOURS'], '15,20')
+        self.assertEqual(cams['environment']['WEATHER_CAMS_CONTINUITY_ENABLED'], '1')
         environment = (Path(__file__).parent / cams['environment_file']).read_text()
         for line in (
             'GOOGLE_CLOUD_PROJECT: meteo-friul',
@@ -51,5 +52,6 @@ class ProductionRuntimeContractTests(TestCase):
             "WEATHER_STATE_MIGRATED: '1'",
             'WEATHER_PUBLIC_BASE_URL: https://meteofriul-weather-49007668366.europe-west1.run.app',
             "WEATHER_UV_UTC_HOURS: '15,20'",
+            "WEATHER_CAMS_CONTINUITY_ENABLED: '1'",
         ):
             self.assertIn(line, environment)

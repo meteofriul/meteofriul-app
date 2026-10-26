@@ -219,10 +219,11 @@
       "policyKey": "cams-failures",
       "jobName": "meteofriul-cams",
       "displayName": "Meteo Friul - job CAMS",
-      "conditionDisplayName": "Due esecuzioni fallite del job CAMS nella stessa finestra",
+      "conditionDisplayName": "Due esecuzioni CAMS fallite nelle ultime 8 ore",
       "alignmentPeriodSeconds": 28800,
       "failedExecutionThreshold": 2,
-      "documentation": "Entrambe le esecuzioni utili del job CAMS `meteofriul-cams` hanno fallito nella finestra di 8 ore. Controllare disponibilita delle sorgenti aria, pollini e UV e la pubblicazione atomica.",
+      "notifyOnRecovery": false,
+      "documentation": "Almeno due esecuzioni del job `meteofriul-cams` sono fallite nelle ultime 8 ore. Gli slot ordinari sono 09, 10, 11, 15 e 20 UTC; UV e previsto solo alle 15 e 20. La chiusura dell'incidente NON dimostra il recupero dei dati e non invia una notifica CLOSED. Leggere component_outcomes e cams_component_unverified: source_pending prima delle 10 UTC indica attesa del fornitore; stored_payload_verification e public readback indicano verifiche non completate, anche se una famiglia e gia stata scritta. Confermare il recupero sulla corsa attesa, con entrambi i componenti verificati via Storage e HTTP e continuity_status=verified per la nuova continuita. I client legacy mantengono 30 ore; i client compatibili possono usare 36 ore solo con continuity.json valido. Il controllo dedicato CAMS va effettuato dopo il ciclo mattutino, alle 11:30 UTC (12:30 inverno, 13:30 estate), con 30 minuti di margine prima del limite delle 36 ore. Questa policy conta fallimenti: non rileva da sola uno scheduler che non parte e non certifica la freschezza.",
       "labels": {
         "service": "cams",
         "threshold": "two-in-8h"

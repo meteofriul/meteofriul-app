@@ -69,7 +69,7 @@ class WorkerTests(TestCase):
             }).encode(), content_type="application/json")
             with patch.dict(os.environ, {"GOOGLE_CLOUD_PROJECT": PROJECT, 'PILOT_UV_ENABLED': '0'}), \
                     patch("cloud_worker.storage.Client"), \
-                    patch("cloud_worker.GCSObjectStore", side_effect=[state, data]), \
+                    patch("cams_storage.CamsObjectStore", side_effect=[state, data]), \
                     patch('local_pipeline.contract_publisher.ContractV1Publisher.read_verified_cams_family_latest',
                           return_value={'latest': {'source_run_id': datetime.now(timezone.utc).strftime('%Y%m%dT000000Z')}}), \
                     patch('cams_readback.verify_cams', return_value={}), \

@@ -51,17 +51,32 @@ def run(provider):
 def _run(provider):
     now = datetime.now(timezone.utc)
     client = storage.Client(project=PROJECT)
-    state = GCSObjectStore(client.bucket(STATE_BUCKET))
-    data = GCSObjectStore(client.bucket(DATA_BUCKET))
     if provider == "icon":
+        state = GCSObjectStore(client.bucket(STATE_BUCKET))
+        data = GCSObjectStore(client.bucket(DATA_BUCKET))
         return _run_icon(state, data, now)
+    from cams_storage import CamsObjectStore, CamsReadRecovery
+    recovery = CamsReadRecovery()
+    state = CamsObjectStore(client.bucket(STATE_BUCKET), recovery=recovery)
+    data = CamsObjectStore(client.bucket(DATA_BUCKET), recovery=recovery)
     return _run_cams(state, data, now)
+
+
+def _cams_verified_readback(data, run_id, reason, continuity):
+    from cams_readback import verify_cams
+    with phase('public_readback', provider='cams', source_run_id=run_id):
+        proof = verify_cams(data, run_id,
+                            **({'require_continuity': True} if continuity else {}))
+    continuity_status = 'verified' if continuity else 'legacy_no_grant'
+    emit('cams_family_verified', provider='cams', source_run_id=run_id,
+         status='verified', continuity_status=continuity_status)
+    return {'status': 'verified', 'source_run_id': run_id, 'reason_code': reason,
+            'continuity_status': continuity_status, **proof}
 
 
 def _cams_region_step(state, data, now):
     from local_pipeline.contract_v1 import load_catalog
     from local_pipeline.contract_publisher import ContractV1Publisher
-    from cams_readback import verify_cams
     run_id = now.strftime("%Y%m%dT000000Z")
     try:
         latest = json.loads(data.get("weather/v1/families/cams/latest.json").body)
@@ -76,9 +91,7 @@ def _cams_region_step(state, data, now):
                 continuity_present = True
             except ObjectNotFound:
                 continuity_present = False
-            return {'status': 'verified', 'source_run_id': current,
-                    'reason_code': 'existing_family_verified', **verify_cams(data, current,
-                        **({'require_continuity': True} if continuity_present else {}))}
+            return _cams_verified_readback(data, current, 'existing_family_verified', continuity_present)
     except ObjectNotFound:
         pass
     published_at = now.strftime("%Y-%m-%dT%H:%M:%SZ")
@@ -136,9 +149,7 @@ def _cams_region_step(state, data, now):
                 published_at=published_at, state_store=state, data_store=data,
                 **({"cams_continuity": True} if continuity else {}))
         emit("publication_result", provider="cams", status="published", run_date=day)
-        return {'status': 'verified', 'source_run_id': run_id,
-                'reason_code': 'new_family_verified', **verify_cams(data, run_id,
-                    **({'require_continuity': True} if continuity else {}))}
+        return _cams_verified_readback(data, run_id, 'new_family_verified', continuity)
 
 
 def _cams_uv_policy(now):
@@ -161,6 +172,14 @@ def _cams_uv_policy(now):
 def _cams_acquisition_outcome(report, run_id):
     """The legacy retriever returns a report, including failures, not exceptions."""
     result = {'source_run_id': run_id, 'stage': 'acquisition'}
+    tls = report.get('transport_reason')
+    if tls in {'tls_certificate_invalid', 'tls_connection_interrupted', 'tls_unclassified'}:
+        return {**result, 'transport_reason': tls, 'reason_code': tls,
+                'retryable': tls == 'tls_connection_interrupted',
+                'status': 'retryable_failure' if tls == 'tls_connection_interrupted' else 'manual_review'}
+    if report.get('retryable') is False:
+        return {**result, 'retryable': False, 'status': 'manual_review',
+                'reason_code': 'acquisition_nonrecoverable_failure'}
     if report.get('status') == 'submission_reconciliation_pending':
         return {**result, 'status': 'reconciling', 'reason_code': 'reconciliation_pending'}
     reason = report.get('safe_reason')
@@ -198,6 +217,13 @@ def _cams_failure(error):
     from urllib.error import URLError, HTTPError
     details = error_fields(error)
     status = _http_status(error)
+    from cams_storage import tls_failure_kind
+    tls = details.get('transport_reason') or tls_failure_kind(error)
+    if tls:
+        return {**details, 'transport_reason': tls, 'http_status': status,
+                'retryable': tls == 'tls_connection_interrupted',
+                'status': 'retryable_failure' if tls == 'tls_connection_interrupted' else 'manual_review',
+                'reason_code': tls}
     if isinstance(error, PublicMetadataUnavailable):
         # Catalog availability is preliminary, not a failed ADS submission.
         # Keep safe constraint diagnostics and let the existing bounded recovery
@@ -297,6 +323,13 @@ def _run_cams(state, data, now, *, budget=CAMS_RECOVERY_BUDGET_SECONDS,
             break
         _persist_cams_outcome(state, slot, outcomes, retry_after=delay)
         wait(delay)
+    # A failed readback does not mean that nothing was written, and a published
+    # pointer does not prove successful readback. Keep the two signals separate.
+    for component in ('air', 'pollen', 'uv'):
+        outcome = outcomes[component]
+        if outcome['status'] not in ('verified', 'disabled', 'source_pending'):
+            emit('cams_component_unverified', **{**outcome, 'provider': 'cams',
+                 'component': component, 'severity': 'ERROR'})
     raise RuntimeError('CAMS components not all verified; see persisted component outcomes')
 
 

@@ -668,6 +668,15 @@ def retrieve(
     except Exception as exc:
         report["status"] = "stopped"
         report["error_type"] = type(exc).__name__
+        from local_pipeline.operational_diagnostics import error_fields
+        from cams_storage import tls_failure_kind
+        details = error_fields(exc)
+        if type(details.get('retryable')) is bool:
+            report['retryable'] = details['retryable']
+        tls = details.get('transport_reason') or tls_failure_kind(exc)
+        if tls:
+            report['transport_reason'] = tls
+            report['retryable'] = tls == 'tls_connection_interrupted'
         if isinstance(exc, PilotError):
             report["safe_reason"] = str(exc)
         elif isinstance(exc, requests.HTTPError) and exc.response is not None:
@@ -676,7 +685,7 @@ def retrieve(
             json.dumps(
                 {
                     key: report[key]
-                    for key in ("status", "error_type", "safe_reason", "http_status")
+                    for key in ("status", "error_type", "safe_reason", "http_status", "transport_reason", "retryable")
                     if key in report
                 }
             ),
