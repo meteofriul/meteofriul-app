@@ -1,8 +1,61 @@
 import { describe, expect, it } from "vitest";
 
+import autumnMeetings from "./fixtures/pordenone-pensa-abc-2026.json";
+
 import { projectPilotProgrammeCards } from "./pilotProgrammeProjection";
 
 describe("pilot programme compatibility projection", () => {
+  it("keeps the five real autumn ABC meetings separate with their complete original data", () => {
+    expect(projectPilotProgrammeCards(autumnMeetings)).toEqual(autumnMeetings);
+    expect(projectPilotProgrammeCards(autumnMeetings)).toHaveLength(5);
+  });
+
+  it("groups only reviewed September sessions in a mixed Pordenone Pensa catalogue", () => {
+    const september = ["2026-09-05", "2026-09-07"].map((day) => ({
+      source: "Pordenone Pensa", title: `Incontro in Giallo ${day}`,
+      url: "https://www.pnpensa.it/pnpensa-giallo-settembre-2026-pordenone/?utm_source=catalogue#programma",
+      start_date: day, end_date: day, time: "18:00", event_city: "Pordenone",
+    }));
+    const result = projectPilotProgrammeCards([...september, ...autumnMeetings]);
+    expect(result).toHaveLength(6);
+    expect(result.slice(0, 5)).toEqual(autumnMeetings);
+    expect(result[5]).toMatchObject({
+      title: "Pordenone Pensa in Giallo 2026", start_date: "2026-09-05",
+      end_date: "2026-09-07", active_session_count: 2,
+    });
+    expect(result[5].programme_sessions.map(({ start_date }) => start_date))
+      .toEqual(["2026-09-05", "2026-09-07"]);
+  });
+
+  it.each([
+    { start_date: "2026-09-04" },
+    { end_date: "2026-09-08" },
+    { start_date: "2026-09-07", end_date: "2026-09-05" },
+    { start_date: null },
+    { start_date: "invalid" },
+    { url: "https://www.pnpensa.it/altro-programma/" },
+    { programme_id: "pordenone-pensa-abc-2026" },
+    { series_id: "pordenone-pensa-abc" },
+    { edition_id: "2027" },
+    { programme_start_date: "2026-10-27" },
+    { programme_end_date: "2026-11-24" },
+  ])("does not infer September membership from the source when identity disagrees: %j", (change) => {
+    const event = {
+      source: "Pordenone Pensa", title: "Da mantenere autonomo",
+      url: "https://www.pnpensa.it/pnpensa-giallo-settembre-2026-pordenone/",
+      start_date: "2026-09-05", end_date: "2026-09-07", ...change,
+    };
+    expect(projectPilotProgrammeCards([event])).toEqual([event]);
+  });
+
+  it("does not let a stale programme id relabel an autumn meeting or another source", () => {
+    for (const event of [
+      { ...autumnMeetings[0], programme_id: "pordenone-pensa-in-giallo-2026" },
+      { ...autumnMeetings[0], source: "Altra fonte", start_date: "2026-09-05",
+        end_date: "2026-09-05", programme_id: "pordenone-pensa-in-giallo-2026" },
+    ]) expect(projectPilotProgrammeCards([event])).toEqual([event]);
+  });
+
   it("collapses only the explicit Pordenonelegge edition and its reviewed regional card", () => {
     const events = [
       {

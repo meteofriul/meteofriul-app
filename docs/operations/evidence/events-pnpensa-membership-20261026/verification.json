@@ -1,0 +1,412 @@
+{
+  "recorded_at": "2026-10-26T14:44:35.450822+00:00",
+  "branch": "codex/events-programme-membership",
+  "base_main": "4219581f17b35aa42bd346ff652058004d9cf5f0",
+  "result": "local_fix_and_real_device_preview_verified",
+  "tests": {
+    "passed": 81,
+    "failed": 0,
+    "files": 3,
+    "languages": [
+      "it",
+      "fur"
+    ],
+    "native_config_loader": true
+  },
+  "lint": {
+    "command": "npm run lint",
+    "exit_code": 0
+  },
+  "build": {
+    "mode": "local-pilot-cloud",
+    "exit_code": 0,
+    "output_location": "unique operating-system temporary directory",
+    "existing_large_chunk_warning": true,
+    "aab_generated": false
+  },
+  "corpus": {
+    "pordenone": {
+      "snapshot": "2026-10-26T04:00:47.538511+00:00",
+      "rows": 326,
+      "beforeCards": 322,
+      "afterCards": 326,
+      "pnpensaInputs": 5,
+      "pnpensaCards": [
+        {
+          "title": "Prof. Massimo Lembo – Che cos’è il rischio.",
+          "start": "2026-10-27",
+          "end": "2026-10-27",
+          "time": "19:00"
+        },
+        {
+          "title": "Prof. Stefano Miani – Proteggere i beni.",
+          "start": "2026-11-03",
+          "end": "2026-11-03",
+          "time": "19:00"
+        },
+        {
+          "title": "Prof. Stefano Miani – Proteggere la persona.",
+          "start": "2026-11-10",
+          "end": "2026-11-10",
+          "time": "19:00"
+        },
+        {
+          "title": "Prof. Stefano Miani e ing. Filippo Emanuelli – I rischi catastrofali e i rischi tipici dell’attività d’impresa.",
+          "start": "2026-11-17",
+          "end": "2026-11-17",
+          "time": "19:00"
+        },
+        {
+          "title": "Prof. Stefano Miani – Proteggere il patrimonio e il risparmio.",
+          "start": "2026-11-24",
+          "end": "2026-11-24",
+          "time": "19:00"
+        }
+      ],
+      "otherSourcesUnchanged": true,
+      "inputSha256": "b3323c57c0a2e737c18aadb6c457752961336ea3642a370a842dcc90c095f6ef"
+    },
+    "udine": {
+      "snapshot": "2026-10-26T04:00:47.538511+00:00",
+      "rows": 449,
+      "beforeCards": 449,
+      "afterCards": 449,
+      "pnpensaInputs": 0,
+      "pnpensaCards": [],
+      "otherSourcesUnchanged": true,
+      "inputSha256": "a816d8fc08a136caa5b3a208235a170af25bc40b95a20fdceb47c3637305d4c7"
+    },
+    "gradisca": {
+      "snapshot": "2026-10-26T04:00:47.538511+00:00",
+      "rows": 254,
+      "beforeCards": 254,
+      "afterCards": 254,
+      "pnpensaInputs": 0,
+      "pnpensaCards": [],
+      "otherSourcesUnchanged": true,
+      "inputSha256": "0423ff39e4e57ea05894c2871c9b89791c3e4743f52595b5c021753cefa5eb43"
+    },
+    "trieste": {
+      "snapshot": "2026-10-26T04:00:47.538511+00:00",
+      "rows": 260,
+      "beforeCards": 260,
+      "afterCards": 260,
+      "pnpensaInputs": 0,
+      "pnpensaCards": [],
+      "otherSourcesUnchanged": true,
+      "inputSha256": "802e53e554031d9b890f8caf6936a3523e70316676bade94178a4a5150ccf6e2"
+    }
+  },
+  "source_files": [
+    {
+      "file": "frontend/src/services/pilotProgrammeProjection.js",
+      "sha256": "783fd9e7fa02d51582ec08174ce0595d18a61b7a5ac17d75aaa83186dfb2f01a"
+    },
+    {
+      "file": "frontend/src/services/pilotProgrammeProjection.test.js",
+      "sha256": "6c79e72b394e502bb35fdd5740fcfe15a6c81cb574bf4bc768d3c134387c4aca"
+    },
+    {
+      "file": "frontend/src/services/eventsApi.test.js",
+      "sha256": "44ba7f1485a766ecfdc2905696e6c2eabd23e73abb82ae48e02c4350e978755e"
+    },
+    {
+      "file": "frontend/src/services/fixtures/pordenone-pensa-abc-2026.json",
+      "sha256": "cca4c92743320df8de3b0c2970f12188556da1fefae967d06b82882ce2f4dcd1"
+    }
+  ],
+  "check_evidence": [
+    {
+      "file": "tests-final.json",
+      "sha256": "6a34572ad103ec3fae7b43c50a473f83e4ceb3c020ed901324932966dd6323da"
+    },
+    {
+      "file": "corpus-replay.json",
+      "sha256": "973a5e4d2b1af576e98f584a0e268b2783f97a8b3e39b5d61aaaef21c5ba53ef"
+    },
+    {
+      "file": "build-result.json",
+      "sha256": "16c3909aff1fa22c28d94f0d3748c11367b3f7dbb280b702de4e2494c0392680"
+    },
+    {
+      "file": "build.log",
+      "sha256": "1ea53583a88c8d7b0caa92cc1a43736d064930228cc4c9a432bcfd5a8f1526a9"
+    }
+  ],
+  "private_evidence_root": ".tmp/events-programme-membership-20261026",
+  "new_runtime_device_check": true,
+  "main_updated": false,
+  "committed": false,
+  "pushed": false,
+  "published": false,
+  "backend_changed": false,
+  "sponsors_changed": false,
+  "device_verification": {
+    "recorded_at": "2026-10-26T15:05:25.896758+00:00",
+    "result": "pass_for_current_15_day_ui_window",
+    "device": "Galaxy A52 SM-A525F",
+    "android": "14",
+    "sdk": 34,
+    "browser": "Brave 1.97.59",
+    "method": "local pilot stable preview via USB reverse; real device screenshots, UI hierarchy and DOM",
+    "source_code_hashes_match_local_tests": true,
+    "clock": "real; 2026-10-26 Europe/Rome; no time simulation",
+    "catalogue_snapshot": "2026-10-26T04:00:47.538511+00:00",
+    "ui_window_days": 15,
+    "expected_visible_pnp_meetings": 3,
+    "checks": [
+      {
+        "language": "it",
+        "meeting": "lembo",
+        "date": "2026-10-27",
+        "time": "19:00",
+        "correct_venue": true,
+        "no_september_programme": true,
+        "detail_read": true,
+        "screenshot": "detail-lembo-it.png"
+      },
+      {
+        "language": "it",
+        "meeting": "beni",
+        "date": "2026-11-03",
+        "time": "19:00",
+        "correct_venue": true,
+        "no_september_programme": true,
+        "detail_read": true,
+        "screenshot": "detail-beni-it.png"
+      },
+      {
+        "language": "it",
+        "meeting": "persona",
+        "date": "2026-11-10",
+        "time": "19:00",
+        "correct_venue": true,
+        "no_september_programme": true,
+        "detail_read": true,
+        "screenshot": "detail-persona-it.png"
+      },
+      {
+        "language": "fur",
+        "meeting": "lembo",
+        "date": "2026-10-27",
+        "time": "19:00",
+        "correct_venue": true,
+        "no_september_programme": true,
+        "detail_read": true,
+        "screenshot": "detail-lembo-fur.png"
+      },
+      {
+        "language": "fur",
+        "meeting": "beni",
+        "date": "2026-11-03",
+        "time": "19:00",
+        "correct_venue": true,
+        "no_september_programme": true,
+        "detail_read": true,
+        "screenshot": "detail-beni-fur.png"
+      },
+      {
+        "language": "fur",
+        "meeting": "persona",
+        "date": "2026-11-10",
+        "time": "19:00",
+        "correct_venue": true,
+        "no_september_programme": true,
+        "detail_read": true,
+        "screenshot": "detail-persona-fur.png"
+      }
+    ],
+    "future_meetings": [
+      "2026-11-17",
+      "2026-11-24"
+    ],
+    "future_limit": "Outside current UI horizon; covered by local tests, not claimed as displayed today on device",
+    "languages_themes": [
+      {
+        "language": "it",
+        "theme": "light"
+      },
+      {
+        "language": "fur",
+        "theme": "dark"
+      }
+    ],
+    "android_back_returns_to_events": true,
+    "preview_preferences_restored": {
+      "language": "it",
+      "theme": "light"
+    },
+    "installed_app_modified": false,
+    "source_assets_loaded": [
+      {
+        "file": "assets/main-DQrSBsvj.js",
+        "sha256": "c8bdb4f34e47617d5179061b506785b437f6df7acdf2405ab7aa4c4e9e82d968"
+      },
+      {
+        "file": "assets/main-CULPm0AQ.css",
+        "sha256": "548aa1d795b927eb7b6fde30d9f2123440d0c386cc7a0dc001e926df4285bc38"
+      }
+    ],
+    "screenshots_reviewed": true,
+    "evidence": [
+      {
+        "file": "all-cards-fur.json",
+        "sha256": "e715921039d2d18863bd224ca7f5b8a025f1b45498929c54734fd4c25a587eb2"
+      },
+      {
+        "file": "all-cards-it.json",
+        "sha256": "f85e4aaea46fa9793b45cfbcb7cb506cdc4325fa8369ec6723f674db2b150e32"
+      },
+      {
+        "file": "conferences-it.json",
+        "sha256": "13820dfd0831b9486bf1aa4ea340c34b63d006e71760830a2d693b75a6049465"
+      },
+      {
+        "file": "conferences-it.png",
+        "sha256": "c984b0bce3a10e0bce1f4cf86a495efc2caa39310398be7e06c7266f10b4a939"
+      },
+      {
+        "file": "conferences-it.xml",
+        "sha256": "6ca5ab31cac16cad77edaed974ee6550bb056d577580902c5e0bf9b4a7392bfc"
+      },
+      {
+        "file": "detail-beni-fur.json",
+        "sha256": "c8951da81b0a8763b29963ab5533369eb70a35d37c531130fb1ae651ebcea1b1"
+      },
+      {
+        "file": "detail-beni-fur.png",
+        "sha256": "ea3a0df9118ae723aea9414cd71c3f24f5cc2137d49fb0cd8f51611a4cfd23d9"
+      },
+      {
+        "file": "detail-beni-fur.xml",
+        "sha256": "abd621788bcc72509d07f7bc2d64b1de393f674954fa4e2cc6d3f86dad129749"
+      },
+      {
+        "file": "detail-beni-it.json",
+        "sha256": "6d820ecf5357e84abf21f7e8d1baf4f4b54d50416d587f72a2f3e6fce44fe8a9"
+      },
+      {
+        "file": "detail-beni-it.png",
+        "sha256": "c4fa1eb0928bb68097f01f8e85641143e742071cd251ff47c95e9eb77435226d"
+      },
+      {
+        "file": "detail-beni-it.xml",
+        "sha256": "4941d0bc322fe39b2d2e0b742143abf8bf45370e533cacc936630565473e4c67"
+      },
+      {
+        "file": "detail-lembo-fur.json",
+        "sha256": "c4138be03d75ff57bd965a350dc4a1831c126bfff4d6b526b98d5949130ac429"
+      },
+      {
+        "file": "detail-lembo-fur.png",
+        "sha256": "f4fdbcf8158804d1731b803995b1c5fa2276803d7b9bb64a2096570599f87d69"
+      },
+      {
+        "file": "detail-lembo-fur.xml",
+        "sha256": "719b967672ee1262372d48e4d356ffe6559a5ca202fa704d32f3fd83fe45a750"
+      },
+      {
+        "file": "detail-lembo-it-visible.json",
+        "sha256": "78fca73a4f0860e6824042405517cd0231179a9a4ca5145ce5ad7588b78d7d6d"
+      },
+      {
+        "file": "detail-lembo-it.json",
+        "sha256": "8c861265c083e1db3d0a25a409d7ba2496b2137f083eee45d96d3b12ba148663"
+      },
+      {
+        "file": "detail-lembo-it.png",
+        "sha256": "844562df7d094afafbe6fc6b9891724fc9097c2074d1dd1adbd16bc078c5b26a"
+      },
+      {
+        "file": "detail-lembo-it.xml",
+        "sha256": "db21a4da02cd6d87b7d6f02fe11c8c91340a8a8d376563d81c349404795c9490"
+      },
+      {
+        "file": "detail-persona-fur.json",
+        "sha256": "220297e1a8fb77c3cb468adc7b861e3285047da0d9c45061300a107e0ae4ae40"
+      },
+      {
+        "file": "detail-persona-fur.png",
+        "sha256": "bf6272fa8db2d181b1d634df6cf9d801c8e6a7d37bef1d0223a26e3768f9a031"
+      },
+      {
+        "file": "detail-persona-fur.xml",
+        "sha256": "f994fbcf185f31980533fefc1e9de8cf367f6d8eca1ba575877c2b180b00d8a6"
+      },
+      {
+        "file": "detail-persona-it.json",
+        "sha256": "1dca45590dfb4a6fd2447bc79b3e05f2d8de1a90e286cc4d908751052fd93225"
+      },
+      {
+        "file": "detail-persona-it.png",
+        "sha256": "79125f6714476e157710cfcef44b567af7ad55e82c1ab85ad6ae40ff32528048"
+      },
+      {
+        "file": "detail-persona-it.xml",
+        "sha256": "54692fb353b008e3f4c7ae429aa7f08f8f73c2ec6cbb24e8f6e6eb7a0d6a2201"
+      },
+      {
+        "file": "dom-initial.json",
+        "sha256": "9c437d4623ef61c48437d5d23ecd0f50fed1ffd597fd9578ba2494ec0c0f3a55"
+      },
+      {
+        "file": "environment.json",
+        "sha256": "b9386f385f0b4a00c80e6b1dcf0346b6d8a28a268bf6cfc31289df3ea8103539"
+      },
+      {
+        "file": "first-card-fur.png",
+        "sha256": "614dfea51c1fe44cb16a5cc37ae4c3a90d14f855b08b4d4c6f2c75869c15245b"
+      },
+      {
+        "file": "first-card-fur.xml",
+        "sha256": "dee354a8e97954b2778d3582bbe8ed68b8508ba88141099138da64ca54c7e19a"
+      },
+      {
+        "file": "first-card-it.json",
+        "sha256": "ba2d895510384e31d01bca1701585585ae485c6e9450401054816f146be38385"
+      },
+      {
+        "file": "first-card-it.png",
+        "sha256": "173e50345d9ce412ef109e7198759fc0012ee6570e73e3e99025aff335d48536"
+      },
+      {
+        "file": "first-card-it.xml",
+        "sha256": "16f23cc5e1e5a7b69388efaec9a21ecff780d032f03c5bf3974ab7aed6e56279"
+      },
+      {
+        "file": "initial-it.png",
+        "sha256": "b083342d1dae51bc8ba29f2d89549ae740471a8bad88ac0c81e8a9d2d7d34558"
+      },
+      {
+        "file": "initial-it.xml",
+        "sha256": "973da9abe70c571756303f4d4090b603f9ace4ef52a559b6116fbbc1aa5c3083"
+      },
+      {
+        "file": "restore-and-resources.json",
+        "sha256": "73f753d8249645864b80ae747e1201192cf30559dd88d6b83dc7d1f74f7fada7"
+      },
+      {
+        "file": "settings-before-fur.json",
+        "sha256": "6707a1ddd4a3485fe3bb5f65a55abf48251dc3daea2645cb215628ad256589f9"
+      },
+      {
+        "file": "settings-fur.json",
+        "sha256": "f4a9100093c453920b93b4952e222fa201071837cf59546b7d2f62eecdecc5b3"
+      },
+      {
+        "file": "upcoming-it.png",
+        "sha256": "0a22b9752ca62099df1a29f2d458e3159d7b254897321d7adcff6af1e2b67538"
+      },
+      {
+        "file": "upcoming-it.xml",
+        "sha256": "c418082d4f3c61ae375bc6badd82c9ca2eb6886749b1d075827843fb937e9e63"
+      }
+    ],
+    "limits": [
+      "Brave preview is not a new minified Android artifact",
+      "No general catalogue completeness assertion",
+      "No new cloud recovery check",
+      "No full JS exception monitoring; one repeated inspection script failed after preferences were already restored, not an app error"
+    ]
+  }
+}
