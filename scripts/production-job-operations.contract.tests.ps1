@@ -313,6 +313,26 @@ foreach ($functionName in @(
     Assert-Contract ($definition.Count -eq 1) "funzione monitoring mancante"
     Invoke-Expression $definition[0].Extent.Text
 }
+$camsFailure = @($config.policies | Where-Object policyKey -CEQ 'cams-failures')[0]
+$camsDesired = New-DesiredMonitoringPolicy $camsFailure 'synthetic-channel'
+Assert-Contract ($camsDesired.alertStrategy.notificationPrompts.Count -eq 1 -and
+    $camsDesired.alertStrategy.notificationPrompts[0] -ceq 'OPENED') (
+    'CAMS: la fine della finestra errori non prova il recupero dei dati'
+)
+Assert-Contract ($camsDesired.conditions[0].conditionThreshold.thresholdValue -eq 1 -and
+    $camsDesired.conditions[0].conditionThreshold.aggregations[0].alignmentPeriod -ceq '28800s') (
+    'CAMS: soglia di due fallimenti in otto ore invariata'
+)
+Assert-Contract ($camsDesired.documentation.content.Contains('11:30 UTC') -and
+    $camsDesired.documentation.content.Contains('cams_component_unverified') -and
+    $camsDesired.documentation.content.Contains('NON dimostra il recupero')) (
+    'CAMS: cadenzamento e limiti della policy devono essere espliciti'
+)
+$camsActual = $camsDesired | ConvertTo-Json -Depth 20 | ConvertFrom-Json
+Assert-Contract (Test-PolicyMatches $camsActual $camsDesired) 'CAMS: readback policy non riconosciuto'
+$camsActual.alertStrategy.notificationPrompts = @('OPENED', 'CLOSED')
+Assert-Contract (-not (Test-PolicyMatches $camsActual $camsDesired)) 'CAMS: CLOSED fuorviante non rilevato'
+
 $eventsFailure = @($config.policies | Where-Object policyKey -CEQ 'events-failures')[0]
 Assert-Contract ($eventsFailure.notifyOnRecovery -ceq $false) (
     "la scadenza della finestra Eventi non deve notificare recupero"
