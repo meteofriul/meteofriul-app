@@ -1,0 +1,390 @@
+{
+  "date_local": "2026-10-25",
+  "timezone": "Europe/Rome",
+  "branch": "codex/radar-antenna-icon",
+  "base_main": "35843b19cee6ba66b4f47331d08713bc9a9c815e",
+  "source_file": "frontend/src/features/live/TerritoryImmersiveMap.jsx",
+  "source_sha256": "142f879c5b06433a39b77b93173230337cc4a942221ccdca51680cddbc3169ea",
+  "change": "Radar -> SatelliteDish; import and map button only",
+  "browser": "Codex in-app browser",
+  "language_checked": "it",
+  "preview_mode": "local-pilot-cloud",
+  "port": 5174,
+  "measurements": [
+    {
+      "background": "rgba(19, 29, 46, 0.85)",
+      "backgroundImage": "none",
+      "button": {
+        "height": 44,
+        "width": 44
+      },
+      "color": "rgb(226, 232, 240)",
+      "disabled": false,
+      "icon": {
+        "height": 21,
+        "width": 21
+      },
+      "iconClass": "lucide lucide-satellite-dish",
+      "iconStroke": "rgb(226, 232, 240)",
+      "pressed": "false",
+      "theme": "dark",
+      "viewport": {
+        "height": 902,
+        "width": 589
+      }
+    },
+    {
+      "background": "rgba(0, 0, 0, 0)",
+      "backgroundImage": "linear-gradient(135deg, rgb(56, 189, 248), rgb(2, 132, 199))",
+      "button": {
+        "height": 44,
+        "width": 44
+      },
+      "color": "rgb(255, 255, 255)",
+      "disabled": false,
+      "icon": {
+        "height": 21,
+        "width": 21
+      },
+      "iconClass": "lucide lucide-satellite-dish",
+      "iconStroke": "rgb(255, 255, 255)",
+      "pressed": "true",
+      "theme": "dark",
+      "viewport": {
+        "height": 902,
+        "width": 589
+      }
+    },
+    {
+      "background": "rgb(255, 255, 255)",
+      "backgroundImage": "none",
+      "button": {
+        "height": 44,
+        "width": 44
+      },
+      "color": "rgb(30, 58, 138)",
+      "disabled": false,
+      "icon": {
+        "height": 21,
+        "width": 21
+      },
+      "iconClass": "lucide lucide-satellite-dish",
+      "iconStroke": "rgb(30, 58, 138)",
+      "pressed": "false",
+      "theme": "light",
+      "viewport": {
+        "height": 902,
+        "width": 589
+      }
+    },
+    {
+      "background": "rgba(0, 0, 0, 0)",
+      "backgroundImage": "linear-gradient(135deg, rgb(37, 99, 235), rgb(2, 132, 199))",
+      "button": {
+        "height": 44,
+        "width": 44
+      },
+      "color": "rgb(255, 255, 255)",
+      "disabled": false,
+      "icon": {
+        "height": 21,
+        "width": 21
+      },
+      "iconClass": "lucide lucide-satellite-dish",
+      "iconStroke": "rgb(255, 255, 255)",
+      "pressed": "true",
+      "theme": "light",
+      "viewport": {
+        "height": 902,
+        "width": 589
+      }
+    }
+  ],
+  "automated_checks": {
+    "focused_integration": {
+      "passed": 2,
+      "excluded_by_name_filter": 41,
+      "file": "src/features/live/TerritoryImmersiveMap.integration.test.jsx",
+      "filter": "toggles radar independently|keeps an unavailable radar visibly disabled"
+    },
+    "eslint": "passed on unchanged candidate in preceding preview",
+    "git_diff_check": "passed"
+  },
+  "screenshots": [
+    {
+      "file": "dark-active.jpg",
+      "sha256": "ba5d20e894f48ed19efb32d593f2f1007cd5064a3a7ea6ea521d3a634afd44ec"
+    },
+    {
+      "file": "dark-inactive.jpg",
+      "sha256": "706115df31fe5b516d94350a3280522a8d7244ad82a2c1a3f25a35149a421ea9"
+    },
+    {
+      "file": "light-active.jpg",
+      "sha256": "d21e4e0ec1abb92e641eabe196e583d12da52dc56a87fbce2c0dfceed4b8186a"
+    },
+    {
+      "file": "light-inactive.jpg",
+      "sha256": "6acf9eb4a5d19f2613657e8b0888d0d3411a52edb617af3335f2f13cbb8b8d77"
+    }
+  ],
+  "real_device_checked": true,
+  "iphone_safari_checked": false,
+  "new_aab": false,
+  "installations": false,
+  "push": false,
+  "deploy": false,
+  "manual_sends": false,
+  "sponsor_configuration_changed": false,
+  "events_followup": "preserved_active_for_2026-10-26_05:00_Europe_Rome",
+  "publication_state": "verified on real Brave/Galaxy; promoted to local main only; release branch, GitHub, immutable Android/Web artifacts and public Web unchanged",
+  "device_check": {
+    "completed_local": "2026-10-25T20:49:33+01:00",
+    "source_commit": "738c653833de7c73f5322e25f43ae2c74a028b65",
+    "model": "Samsung Galaxy A52 / SM-A525F",
+    "android": "14",
+    "api_level": 34,
+    "browser": "Brave 1.97.59",
+    "engine": "Chrome/155.0.8059.85",
+    "method": "Real USB-connected phone; ADB screen taps, DOM and screenshots through Brave remote debugging; no device emulation",
+    "language": "it",
+    "scope": "Radar antenna visibility and on/off control in light and dark; not a full application or installed-AAB verification",
+    "measurements": [
+      {
+        "case": "light-inactive",
+        "theme": "light",
+        "pressed": "false",
+        "disabled": false,
+        "label": "Radar",
+        "iconClass": "lucide lucide-satellite-dish",
+        "iconStroke": "rgb(30, 58, 138)",
+        "background": "rgb(255, 255, 255)",
+        "backgroundImage": "none",
+        "button": {
+          "x": 343.9047546386719,
+          "y": 193.04762268066406,
+          "width": 44,
+          "height": 44,
+          "right": 387.9047546386719,
+          "bottom": 237.04762268066406
+        },
+        "icon": {
+          "x": 355.4047546386719,
+          "y": 204.54762268066406,
+          "width": 21,
+          "height": 21,
+          "right": 376.4047546386719,
+          "bottom": 225.54762268066406
+        },
+        "viewport": {
+          "width": 411,
+          "height": 728,
+          "dpr": 2.625
+        },
+        "bodyOverflow": false,
+        "radar_panel_visible": false,
+        "screenshot": {
+          "file": "light-inactive.png",
+          "sha256": "3d2eab7ef35eaadd254ae37e1c1e2bbb1bf148eb24cca31b9932d265f331d3c2"
+        }
+      },
+      {
+        "case": "light-active",
+        "theme": "light",
+        "pressed": "true",
+        "disabled": false,
+        "label": "Radar",
+        "iconClass": "lucide lucide-satellite-dish",
+        "iconStroke": "rgb(255, 255, 255)",
+        "background": "rgba(0, 0, 0, 0)",
+        "backgroundImage": "linear-gradient(135deg, rgb(37, 99, 235), rgb(2, 132, 199))",
+        "button": {
+          "x": 343.9047546386719,
+          "y": 193.04762268066406,
+          "width": 44,
+          "height": 44,
+          "right": 387.9047546386719,
+          "bottom": 237.04762268066406
+        },
+        "icon": {
+          "x": 355.4047546386719,
+          "y": 204.73809814453125,
+          "width": 21,
+          "height": 21,
+          "right": 376.4047546386719,
+          "bottom": 225.73809814453125
+        },
+        "viewport": {
+          "width": 411,
+          "height": 728,
+          "dpr": 2.625
+        },
+        "bodyOverflow": false,
+        "radar_panel_visible": true,
+        "screenshot": {
+          "file": "light-active.png",
+          "sha256": "cb058d1765b464fd32230cb4c258c96c1d85476cce27120787b3558d8812f5dc"
+        }
+      },
+      {
+        "case": "dark-inactive",
+        "theme": "dark",
+        "pressed": "false",
+        "disabled": false,
+        "label": "Radar",
+        "iconClass": "lucide lucide-satellite-dish",
+        "iconStroke": "rgb(226, 232, 240)",
+        "background": "rgba(19, 29, 46, 0.85)",
+        "backgroundImage": "none",
+        "button": {
+          "x": 343.9047546386719,
+          "y": 193.04762268066406,
+          "width": 44,
+          "height": 44,
+          "right": 387.9047546386719,
+          "bottom": 237.04762268066406
+        },
+        "icon": {
+          "x": 355.4047546386719,
+          "y": 204.54762268066406,
+          "width": 21,
+          "height": 21,
+          "right": 376.4047546386719,
+          "bottom": 225.54762268066406
+        },
+        "viewport": {
+          "width": 411,
+          "height": 728,
+          "dpr": 2.625
+        },
+        "bodyOverflow": false,
+        "radar_panel_visible": false,
+        "screenshot": {
+          "file": "dark-inactive.png",
+          "sha256": "c43b32cb9d744d613480b535aca73b978a11bbdfc324081eecd10870076b3c8a"
+        }
+      },
+      {
+        "case": "dark-active",
+        "theme": "dark",
+        "pressed": "true",
+        "disabled": false,
+        "label": "Radar",
+        "iconClass": "lucide lucide-satellite-dish",
+        "iconStroke": "rgb(255, 255, 255)",
+        "background": "rgba(0, 0, 0, 0)",
+        "backgroundImage": "linear-gradient(135deg, rgb(56, 189, 248), rgb(2, 132, 199))",
+        "button": {
+          "x": 343.9047546386719,
+          "y": 193.04762268066406,
+          "width": 44,
+          "height": 44,
+          "right": 387.9047546386719,
+          "bottom": 237.04762268066406
+        },
+        "icon": {
+          "x": 355.4047546386719,
+          "y": 204.73809814453125,
+          "width": 21,
+          "height": 21,
+          "right": 376.4047546386719,
+          "bottom": 225.73809814453125
+        },
+        "viewport": {
+          "width": 411,
+          "height": 728,
+          "dpr": 2.625
+        },
+        "bodyOverflow": false,
+        "radar_panel_visible": true,
+        "screenshot": {
+          "file": "dark-active.png",
+          "sha256": "951ef0ee2ec5def6126f2cedffa11039c01facffb80226b82dcd3910ba2e5d7c"
+        }
+      },
+      {
+        "case": "dark-restored",
+        "theme": "dark",
+        "pressed": "false",
+        "disabled": false,
+        "label": "Radar",
+        "iconClass": "lucide lucide-satellite-dish",
+        "iconStroke": "rgb(226, 232, 240)",
+        "background": "rgba(19, 29, 46, 0.85)",
+        "backgroundImage": "none",
+        "button": {
+          "x": 343.9047546386719,
+          "y": 193.04762268066406,
+          "width": 44,
+          "height": 44,
+          "right": 387.9047546386719,
+          "bottom": 237.04762268066406
+        },
+        "icon": {
+          "x": 355.4047546386719,
+          "y": 204.54762268066406,
+          "width": 21,
+          "height": 21,
+          "right": 376.4047546386719,
+          "bottom": 225.54762268066406
+        },
+        "viewport": {
+          "width": 411,
+          "height": 728,
+          "dpr": 2.625
+        },
+        "bodyOverflow": false,
+        "radar_panel_visible": false,
+        "screenshot": {
+          "file": "dark-restored.png",
+          "sha256": "413c7b8fee5f27b3153e95434efe038997337f42b3752ca2e716b47722cb507d"
+        }
+      },
+      {
+        "case": "light-restored",
+        "theme": "light",
+        "pressed": "false",
+        "disabled": false,
+        "label": "Radar",
+        "iconClass": "lucide lucide-satellite-dish",
+        "iconStroke": "rgb(30, 58, 138)",
+        "background": "rgb(255, 255, 255)",
+        "backgroundImage": "none",
+        "button": {
+          "x": 343.9047546386719,
+          "y": 193.04762268066406,
+          "width": 44,
+          "height": 44,
+          "right": 387.9047546386719,
+          "bottom": 237.04762268066406
+        },
+        "icon": {
+          "x": 355.4047546386719,
+          "y": 204.54762268066406,
+          "width": 21,
+          "height": 21,
+          "right": 376.4047546386719,
+          "bottom": 225.54762268066406
+        },
+        "viewport": {
+          "width": 411,
+          "height": 728,
+          "dpr": 2.625
+        },
+        "bodyOverflow": false,
+        "radar_panel_visible": false,
+        "screenshot": {
+          "file": "light-restored.png",
+          "sha256": "3fb55e5ddd884f71989037317a066b01ba1f273a5c6eff844615c94aecc66147"
+        }
+      }
+    ],
+    "restored_state": {
+      "theme": "light",
+      "radar_enabled": false
+    },
+    "screenshots_storage": "ignored local .tmp/radar-antenna-galaxy-20261025; no screenshots committed",
+    "app_code_changed_during_check": false,
+    "sponsor_configuration_changed": false
+  }
+}

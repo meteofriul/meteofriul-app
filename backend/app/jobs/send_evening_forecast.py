@@ -3,6 +3,9 @@
 from __future__ import annotations
 
 import json
+from datetime import datetime, timezone
+
+from app.services.summary_telemetry import execution_context
 
 from app.repositories.push import PushRepositoryUnavailable
 from app.services.evening_forecast_delivery import (
@@ -57,6 +60,7 @@ def _failure_summary(status: str) -> dict[str, int | str]:
 
 
 def main() -> int:
+    started = datetime.now(timezone.utc)
     try:
         summary = get_evening_forecast_delivery_service().run().summary()
     except EveningForecastConfigurationError:
@@ -66,6 +70,7 @@ def main() -> int:
     except PushRepositoryUnavailable:
         summary = _failure_summary("delivery_storage_unavailable")
 
+    summary["execution_context"] = execution_context("evening", started, datetime.now(timezone.utc))
     print(json.dumps(summary, ensure_ascii=True))
     succeeded = (
         summary.get("status") in _SUCCESS_STATUSES

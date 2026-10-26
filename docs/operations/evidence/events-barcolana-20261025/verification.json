@@ -1,0 +1,27 @@
+{
+  "as_of_date": "2026-10-25",
+  "mode": "offline_unit_and_regression",
+  "base_main": "0841020a42d836e44de306e9639b07b98fceaefc",
+  "pnpensa_commit": "84cb94c0",
+  "read_budget_seconds": 28,
+  "max_parallel_reads": 4,
+  "worker_budget_seconds_unchanged": 35,
+  "all_sources_budget_seconds_unchanged": 860,
+  "tests": {
+    "barcolana": 13,
+    "pnpensa": 14,
+    "pilot_suite": 777,
+    "pilot_skip": 1,
+    "pilot_skip_reason": "optional local ISTAT pilot artifact has not been built",
+    "http_transport": 5
+  },
+  "source_sha256": {
+    "backend/app/events/pilot_barcolana.py": "e382c2a398c647de035b65e64ce372cd0bec833d393a59c0a65f837089021331",
+    "backend/tests/test_pilot_barcolana.py": "9e166ca67a1456f7720c7f5fc9484b775f3c0189d0b10ae323bdc3d410f7dffe",
+    "backend/app/events/pilot_pnpensa.py": "69d5337371a2fba94197010e6dd022aedf6210f6d0992b509f68edf840e92d52",
+    "backend/tests/test_pilot_pnpensa.py": "2818cd8ba5b4eadc166041ebf082e04ac6dd6926db9ca14fcddcc54a05daa45c"
+  },
+  "live_runtime_verified": false,
+  "deployed": false,
+  "published_catalog_changed": false
+}

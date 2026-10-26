@@ -5,6 +5,14 @@
 **AAB attualmente nel test interno:** **0.1.15 / 300037**, con gli stessi due account abilitati. Produzione invariata a 0.1.14 / 300031; sponsor disattivati. Nessuna installazione dell'agente. [Accettazione Play e limiti](ANDROID_0.1.15_300037_UPLOAD_20261024.md).
 
 **Precedente pacchetto osservato sul Galaxy:** AAB **0.1.15 / 300036** generata e verificata da `9d5ff2f4`, con main `2d8b0c32` e Tempo reale corretto. Web storica associata dalla stessa sorgente; sponsor spenti. Disponibile nel test interno dalle 13:37 del 23 ottobre e aggiornata dal proprietario via Play. Verifica sul Galaxy Android 14: PASS dei percorsi osservati, compreso Tempo reale dopo avvio a freddo; qualifica completa ancora limitata dalla matrice non esercitata. Nessuna installazione dell’agente. [Verbale storico](ANDROID_0.1.15_300036_DEVICE_CHECK_20261023.md).
+**Antenna radar — pubblicata in main il 25 ottobre:** commit `738c6538` verificato su Brave/Galaxy in chiaro e scuro, con radar attivo e disattivo, integrato tramite [PR 28](https://github.com/meteofriul/meteofriul-app/pull/28), merge `d159ec59`. CI della PR e di main superate in tutti e tre i job. [Verbale ed evidenze](RADAR_ANTENNA_ICON_20261025.md). Sorgenti su GitHub; ramo release, AAB, pacchetti Web e pubblicazioni applicative non aggiornati da questo intervento. Sponsor disattivati e controllo Eventi del 26 ottobre mantenuto.
+
+**Avvio HTTP FVG — sorgenti del 25 ottobre:** [PR 26](https://github.com/meteofriul/meteofriul-app/pull/26) integrata in main (`613fe78a`), commit della correzione `a431bd14`. 91 test locali e CI di PR/main superati. [Verbale, evidenze e limiti](WEATHER_HTTP_STARTUP_20261025.md). Nessun deploy: il servizio pubblico mantiene il comportamento precedente. Contratti Web/Android e artefatti invariati; nessuna nuova AAB necessaria per questo intervento. Sponsor disattivati e controllo Eventi del 26 ottobre mantenuto.
+
+**Sintesi per data locale — sorgenti del 25 ottobre:** [PR 24](https://github.com/meteofriul/meteofriul-app/pull/24) integrata in main (`8a47c752`); 84 test locali e CI di PR/main superati. [Verbale e limiti](SUMMARY_LOCAL_DATE_MONITOR_20261025.md). Nuovo allarme non attivato: collegamento operativo ancora da completare. Orari, Web/Android e sponsor invariati; controllo Eventi del 26 ottobre mantenuto.
+
+**Aggiornamento backend del 25 ottobre:** PR 22 integrata, CI superata e solo job Eventi aggiornato. [Verbale e rollback](EVENTS_PNPENSA_BARCOLANA_DEPLOY_20261025.md). Corsa ordinaria del 26 ottobre alle 05:00 italiane: `pending`. Web e Android mantengono lo stesso contratto; pacchetti e pubblicazioni invariati, sponsor disattivati. Recupero ordinario ancora da confermare; vedere esito e limiti nel verbale.
+
 
 **La precedente 0.1.15 / 300035 è stata sostituita nel test interno dalla 300036.
 Nella prova storica della 300035 Tempo reale risultava vuoto:
