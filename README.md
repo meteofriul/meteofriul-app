@@ -1,5 +1,9 @@
 # Meteo Friûl
 
+**Consolidamento del 27 ottobre — in preparazione:** agenti e confini, launcher con toolchain prescritta, archivio documentale e mappa architetturale accompagnano le correzioni radar ed Eventi gia' verificate manualmente nei rispettivi limiti. [Perimetro, controlli e promozione](docs/operations/PROJECT_CONSOLIDATION_20261027.md). Integrazione tramite PR e CI ancora da completare. Sorgenti soltanto: AAB 300038, Web, servizi e qualificazioni esistenti invariati.
+
+**Pordenone Pensa — correzione su main locale, 26 ottobre:** sul ramo `codex/events-programme-membership` i cinque incontri autunnali restano autonomi, con le proprie date, senza essere attribuiti al programma di settembre. 81 test IT/FUR, lint, build e replay dei quattro campioni API superati. [Verbale, ricevuta e limiti](docs/operations/EVENTS_PNPENSA_PROGRAMME_MEMBERSHIP_20261026.md). Verifica Brave sul Galaxy A52 superata in italiano/chiaro e friulano/scuro: tre incontri entro i 15 giorni, con dettagli corretti; gli altri due restano coperti dai test locali. Commit `759b354d` salvato e promosso su main locale dopo revisione; nessun push, PR o CI remota eseguiti in questo passaggio. Per aggiornare GitHub resta la PR obbligatoria con CI. La AAB interna 300038 e la Web candidata già archiviate restano immutate. Nessun aggiornamento dei job richiesto; sponsor invariati e spenti.
+
 **CAMS — deploy del 26 ottobre:** [PR 32](https://github.com/meteofriul/meteofriul-app/pull/32) e CI PR/main superate; aggiornati solo job CAMS e policy, con rollback compatibile pronto. [Verbale, letture e limiti](docs/operations/CAMS_CONTINUITY_DEPLOY_20261026.md). Letture attuali di aria/pollini verificate su Udine e Pordenone. La famiglia già pubblicata mantiene 30 ore; il grant a 36 ore deve ancora essere verificato sulla nuova famiglia attesa dal 27 ottobre. Orari e destinatari invariati. Nessun nuovo monitor permanente o follow-up, nessuna AAB o Web rigenerata. Sponsor spenti; follow-up Eventi eliminato su richiesta del proprietario.
 
 **Eventi — aggiornamento del 26 ottobre:** PR 30 integrata, CI PR/main superate; solo job Eventi e policy `events-failures` aggiornati con rollback pronto. Il secondo tentativo Barcolana usa più tempo entro lo stesso budget; la chiusura della finestra degli errori non notifica più un falso recupero. [Deploy e verifica](docs/operations/EVENTS_BARCOLANA_RECOVERY_DEPLOY_20261026.md). Corsa ordinaria del 27 ottobre alle 05:00: non ancora verificata; follow-up automatico eliminato il 26 ottobre su richiesta del proprietario. Nessuna esecuzione manuale. Sponsor spenti, contratti Web/Android e pacchetti invariati.
@@ -299,13 +303,20 @@ nell'APK, nei documenti o negli screenshot.
 ## Architettura
 
 ```text
-frontend/          React 19, Vite 8, UI web e wrapper Capacitor
-frontend/android/  progetto Android del pilot privato
-backend/           API modulare FastAPI
-contracts/         fixture e invarianti dei contratti runtime
-scripts/           avvio locale, export dati e guardrail di rilascio
-firebase.json      Hosting, SPA e rewrite /api
+frontend/                React 19, Vite 8, UI web e wrapper Capacitor
+frontend/src/            schermate, dominio, servizi, testi e dati condivisi
+frontend/android/        wrapper Android: release e varianti pilota
+android/launcher-assets/ sorgenti grafiche e inventari delle icone Android
+backend/                 API modulare FastAPI, fonti e persistenza
+contracts/               fixture e invarianti dei contratti runtime
+scripts/                 avvio locale, export dati e guardrail di rilascio
+firebase.json            Hosting, SPA e rewrite /api
 ```
+
+Le fonti originali e le lavorazioni editoriali recuperate per Scopri sono
+raccolte nell'[archivio Scopri](docs/archive/scopri/README.md), separato dal
+runtime. L'indice e i checksum sono versionabili; i materiali originali sono
+locali ed esclusi da Git, da includere esplicitamente nei backup del progetto.
 
 Flusso web principale previsto:
 
@@ -318,6 +329,76 @@ Il backend UI3 è autonomo dal monolite storico. La persistenza community in
 produzione è fail-closed: non degrada silenziosamente su memoria locale. Le
 allerte conservano l'ultimo stato confermato ancora valido e dichiarano sempre
 fonte e modalità, senza trasformare un errore in una falsa assenza.
+
+### Codice condiviso e possibilità futura iPhone
+
+Ricognizione documentale del **27 ottobre 2026**, sui sorgenti `08af2032`.
+**Android e Web restano le priorità.** Una futura app iPhone è una possibilità
+da mantenere percorribile, senza avviarne ora lo sviluppo o fissare una
+scadenza. Questa mappa identifica i punti da conservare e quelli da adattare
+soltanto se il proprietario deciderà di iniziare quel lavoro.
+
+Il frontend comune usa React/Vite e Capacitor `8.5.1`. La build produce i file
+Web che Capacitor include nel wrapper Android; Gradle genera APK/AAB. Restano
+validi i comandi e i guardrail esistenti: in particolare il builder Play
+gestisce già preparazione degli asset e sincronizzazione prevista, senza
+richiedere un `android:sync` manuale prima del suo avvio.
+
+"Già condiviso" indica codice e regole riutilizzati dal prodotto attuale.
+La compatibilità nativa iOS dovrà essere verificata separatamente: oggi
+`frontend/ios/` e la dipendenza `@capacitor/ios` non sono presenti.
+
+| Area | Già condiviso | Specifico Android oggi | Necessario per iPhone, se e quando si avvierà il lavoro |
+| --- | --- | --- | --- |
+| **API e dati** | Servizi HTTP, contratti dei dati, logica di dominio e cache; stesso backend per le informazioni del prodotto. | Selezione dell'indirizzo HTTPS nativo tramite `VITE_ANDROID_API_BASE`; origine del contenitore autorizzata dal backend come `https://localhost`. | Definire un profilo di indirizzi nativi iOS e l'origine esatta da autorizzare nel backend. Il percorso `/api` del browser e le estensioni CORS attuali, limitate a HTTPS, non attestano il supporto iOS. Conservare validazione degli indirizzi e controlli sulle origini. |
+| **Posizione** | Scelta manuale della località, risoluzione geografica, controlli di qualità e distinzione tra posizione del telefono e Comune mostrato; acquisizione browser separata. | L'adapter del plugin standard Geolocation è abilitato solo per Android; sono presenti anche il bridge `MeteoAndroid` e codice nativo dedicato al background. | Collegare e verificare l'acquisizione in primo piano, i permessi Apple e i casi di rifiuto o revoca, conservando la scelta manuale. Valutare separatamente l'eventuale background: non è un requisito per la prima prova di compilazione. |
+| **Notifiche** | Preferenze, contenuti degli avvisi e destinazioni nell'app; percorso Web con Firebase Messaging e service worker. | Adapter push nativo, canali Android, impostazioni di sistema e token FCM. Client di registrazione, contratto e invio backend distinguono oggi soltanto `android` e `web`. | Progettare registrazione e consegna iOS, permessi e apertura dell'app. Il plugin standard restituisce un token APNs su iOS: va scelta e verificata l'integrazione con FCM/APNs, estendendo esplicitamente il contratto backend senza trattare iOS come Android. |
+| **Firebase e protezioni** | Servizi backend Firebase/Firestore e verifica server dei token App Check; sul Web sono presenti SDK Firebase e App Check con reCAPTCHA Enterprise. | Plugin nativo App Check e provider Play Integrity per la release; configurazione Firebase Android dedicata. | Registrare/configurare l'app Apple, scegliere e integrare il provider App Check nativo e autorizzare la sua identità nel backend. L'adapter nativo non Android e l'allowlist backend oggi non implementano iOS. Mantenere il rifiuto delle richieste non valide e le regole di privacy. |
+
+Riferimenti verificati nei sorgenti:
+
+- API: [selezione client](frontend/src/services/apiConfig.js) e
+  [origini autorizzate dal backend](backend/app/main.py).
+- Posizione: [orchestrazione](frontend/src/services/deviceLocation.js),
+  [adapter Capacitor](frontend/src/services/capacitorLocationAdapter.js),
+  [bridge Android](frontend/src/services/nativeLocationAdapter.js) e
+  [background](frontend/src/services/backgroundLocationAdapter.js).
+- Notifiche: [adapter nativo](frontend/src/services/nativePushAdapter.js),
+  [registrazione client](frontend/src/services/pushDeviceRegistration.js),
+  [percorso Web](frontend/src/services/firebaseWebMessaging.js),
+  [contratto backend](backend/app/contracts/push.py) e
+  [invio](backend/app/push/fcm.py).
+- Firebase: [adapter App Check](frontend/src/services/firebaseAppCheckAdapter.js),
+  [provider Web](frontend/src/services/firebaseWebAppCheck.js),
+  [plugin Android](frontend/android/app/src/main/java/com/meteofriul/app/MeteoFirebaseAppCheckPlugin.java)
+  e [verifica server](backend/app/infrastructure/app_check.py).
+
+Per mantenere aperta questa strada, le nuove funzioni possono continuare a
+condividere schermate e regole di prodotto, lasciando le differenze del
+telefono negli adapter e nei progetti nativi. Si aggiorna questa mappa quando
+un intervento modifica uno dei confini sopra; non occorre spostare cartelle,
+duplicare le quattro sezioni, installare dipendenze Apple o introdurre
+astrazioni preventive. Landing e pannello restano progetti esterni,
+coordinati attraverso collegamenti pubblici e contratti API esistenti.
+
+Un'eventuale prima prova iOS richiederà una decisione separata: ambiente Mac
+con Xcode compatibile, pacchetto Capacitor iOS allineato, wrapper e profilo
+di compilazione dedicati, poi verifica nel simulatore e su iPhone. Le versioni
+richieste andranno ricontrollate allora. Compilazione, completezza delle
+funzioni native e pubblicazione sono traguardi distinti. I riferimenti
+ufficiali per quel futuro lavoro sono [Capacitor iOS](https://capacitorjs.com/docs/ios),
+[Geolocation](https://capacitorjs.com/docs/apis/geolocation),
+[notifiche native](https://capacitorjs.com/docs/apis/push-notifications),
+[Firebase Messaging Apple](https://firebase.google.com/docs/cloud-messaging/ios/get-started)
+e [App Check Apple](https://firebase.google.com/docs/app-check/ios/app-attest-provider).
+
+L'accesso da Safari o da Aggiungi a Home resta il percorso Web/PWA, con la
+propria verifica su iPhone reale secondo il
+[runbook di parità Web/Android](docs/operations/WEB_ANDROID_RELEASE_PARITY.md).
+Questo aggiornamento documentale non attesta prove iOS, non cambia la
+qualificazione delle AAB esistenti e lascia invariati build, permessi,
+protezioni e servizi remoti. I dossier architetturali datati restano evidenze
+del rispettivo stato storico.
 
 ## Sviluppo locale
 
@@ -365,6 +446,21 @@ Per vedere e validare la app pilota usare invece esclusivamente:
 ```powershell
 .\scripts\start-local-weather-pilot.ps1 -WeatherCloud
 ```
+
+Se la toolchain richiesta è estratta in una directory utente separata, indicarla
+esplicitamente senza cambiare l'installazione globale o il PATH permanente:
+
+```powershell
+$pilotNode = Join-Path $env:LOCALAPPDATA "MeteoFriul\toolchains\node-v22.17.1-win-x64"
+.\scripts\start-local-weather-pilot.ps1 -WeatherCloud -NodeDirectory $pilotNode -CheckOnly
+.\scripts\start-local-weather-pilot.ps1 -WeatherCloud -NodeDirectory $pilotNode
+```
+
+`-NodeDirectory` richiede Node e npm nelle versioni di `frontend/package.json`;
+un percorso esplicito non valido blocca l'avvio, senza fallback globale. Il PATH
+selezionato vale soltanto per il frontend e i suoi figli. Per riavviare il
+frontend posseduto aggiungere `-RestartFrontend`; per fermare la preview usare
+`.\scripts\start-local-weather-pilot.ps1 -Stop`, anche senza la toolchain.
 
 La pilota è esposta su `http://127.0.0.1:5174/`. Se il reader cloud non è
 disponibile, il launcher può usare uno snapshot locale soltanto con un

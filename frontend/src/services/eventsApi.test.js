@@ -1,4 +1,6 @@
 import { describe, expect, it, vi } from "vitest";
+import autumnMeetings from "./fixtures/pordenone-pensa-abc-2026.json";
+import { buildEventsViewModel } from "../features/events/eventsViewModel";
 import { DEFAULT_APP_LOCATION } from "../app/appLocation";
 import { getLocalFvgLocationResults } from "./locationSearch";
 
@@ -18,6 +20,36 @@ import {
 } from "./eventsApi";
 
 describe("events api service", () => {
+  it.each(["it", "fur"])("keeps all ABC meetings through API mapping and UI ranking in %s", async (language) => {
+    const fetchImpl = vi.fn(async () => ({ ok: true, json: async () => ({
+      events: structuredClone(autumnMeetings), total: 5, snapshot: "2026-10-26", next_offset: null,
+    }) }));
+    const location = { city: "Pordenone", lat: 45.957, lon: 12.661 };
+    const result = await fetchLocalEvents(location, { apiBase: PILOT_EVENTS_API, fetchImpl });
+    expect(result.total).toBe(5);
+    expect(new Set(result.events.map(({ id }) => id)).size).toBe(5);
+    expect(result.events.map(({ start_date }) => start_date)).toEqual(autumnMeetings.map(({ start_date }) => start_date));
+    for (const [index, event] of result.events.entries()) {
+      expect(event).toMatchObject(autumnMeetings[index]);
+      expect(event).not.toHaveProperty("display_mode");
+      expect(event).not.toHaveProperty("programme_id");
+      expect(event.date).not.toContain("settembre");
+    }
+    const state = { items: result.events, total: result.total };
+    const model = buildEventsViewModel(state, { language, location, now: new Date("2026-10-26T12:00:00") });
+    expect(model.items).toHaveLength(5);
+    expect(model.tabs.find(({ id }) => id === "today").label).toBe(language === "fur" ? "Vuê" : "Oggi");
+    for (const meeting of autumnMeetings) {
+      const dayModel = buildEventsViewModel(state, {
+        language, location, now: new Date(`${meeting.start_date}T12:00:00`),
+      });
+      const today = dayModel.items.filter(({ timeCategory }) => timeCategory === "today");
+      expect(today).toHaveLength(1);
+      expect(today[0].raw).toMatchObject(meeting);
+      expect(today[0].dateChip.start.day).toBe(String(Number(meeting.start_date.slice(-2))));
+    }
+  });
+
   it("uses the verified municipality point for a fresh-install placeholder without changing it", () => {
     const before = structuredClone(DEFAULT_APP_LOCATION);
     const params = new URL(buildLocalEventsUrl(DEFAULT_APP_LOCATION, { apiBase: PILOT_EVENTS_API })).searchParams;

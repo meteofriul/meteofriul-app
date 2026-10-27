@@ -124,6 +124,26 @@ function declaredCinemaMuto(event) {
   };
 }
 
+function matchesReviewedPordenonePensa(event, programme) {
+  if (programme.source !== "Pordenone Pensa") return true;
+  if (event?.source !== programme.source
+    || (event?.programme_id && event.programme_id !== programme.id)
+    || (event?.series_id && event.series_id !== programme.seriesId)
+    || (event?.edition_id && String(event.edition_id) !== programme.editionId)
+    || (event?.programme_start_date && event.programme_start_date !== programme.startDate)
+    || (event?.programme_end_date && event.programme_end_date !== programme.endDate)) return false;
+
+  const start = event?.start_date;
+  const end = event?.end_date || start;
+  if (![start, end].every((day) => /^\d{4}-\d{2}-\d{2}$/.test(day || ""))
+    || start < programme.startDate || end > programme.endDate || end < start) return false;
+
+  // The source also publishes unrelated programmes. Legacy sessions need the
+  // reviewed programme URL as well as dates within that specific edition.
+  const url = String(event?.url || "").split(/[?#]/, 1)[0].replace(/\/+$/, "");
+  return event?.programme_id === programme.id || url === programme.url.replace(/\/+$/, "");
+}
+
 function getProgrammeMembership(event) {
   const dynamic = declaredPordenonelegge(event) || declaredCinemaMuto(event);
   if (dynamic) return { programme: dynamic, role: event?.programme_role || "session" };
@@ -133,10 +153,11 @@ function getProgrammeMembership(event) {
     && event?.programme_id
     && !PROGRAMMES.some((programme) => programme.id === event.programme_id)) return null;
   const declared = PROGRAMMES.find((programme) => programme.id === event?.programme_id);
-  if (declared) return { programme: declared, role: event?.programme_role || "session" };
+  if (declared) return matchesReviewedPordenonePensa(event, declared)
+    ? { programme: declared, role: event?.programme_role || "session" } : null;
 
   const direct = PROGRAMMES.find((programme) => programme.source === event?.source);
-  if (direct) return { programme: direct, role: "session" };
+  if (direct && matchesReviewedPordenonePensa(event, direct)) return { programme: direct, role: "session" };
 
   if (event?.source !== "TurismoFVG") return null;
   const regional = PROGRAMMES.find((programme) => programme.reviewedRegionalUrls.has(event?.url));

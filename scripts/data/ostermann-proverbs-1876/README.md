@@ -65,15 +65,26 @@ I file `review-decisions-batch-*.json` fermano il lavoro alla decisione editoria
 
 ## Rigenerazione
 
+Il PDF originale e la cache OCR recuperati sono conservati nell'
+[archivio permanente Scopri](../../../docs/archive/scopri/README.md), insieme
+a checksum, provenienza e pagine usate nelle revisioni. Per una nuova
+elaborazione preparare una copia di lavoro della cache:
+
 ```powershell
+New-Item -ItemType Directory -Force -Path tmp/ostermann-proverbs-1876-ocr-cache | Out-Null
+Get-ChildItem -LiteralPath docs/archive/scopri/materiali/ostermann-1876/ocr -File |
+  Copy-Item -Destination tmp/ostermann-proverbs-1876-ocr-cache
+
 python scripts/extract-ostermann-proverbs-1876.py `
-  --pdf tmp/pdfs/ostermann-proverbi-friulani-1876.pdf `
+  --pdf docs/archive/scopri/materiali/ostermann-1876/fonte/ostermann-proverbi-friulani-1876.pdf `
   --output scripts/data/ostermann-proverbs-1876 `
   --cache tmp/ostermann-proverbs-1876-ocr-cache `
   --ocr missing --workers 4
 ```
 
-La cache OCR e il PDF restano in `tmp/` e non vanno committati.
+Il PDF e la cache originali restano nell'archivio locale, esclusi da Git;
+soltanto la cache di lavoro resta in `tmp/`. Non modificare gli originali
+archiviati e non confondere l'inventario versionato con un backup dei file.
 
 La coda editoriale si rigenera con:
 

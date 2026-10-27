@@ -7865,6 +7865,20 @@ html[data-theme="dark"]
 
 html[data-theme="dark"]
   .mf-live-community-map-layer--inline.mf-live-territory-workspace
+  .mf-territory-radar-overlay:not(.mf-territory-radar-overlay--unavailable)
+  .mf-territory-radar-status {
+  color: #cbd5e1;
+}
+
+html[data-theme="dark"]
+  .mf-live-community-map-layer--inline.mf-live-territory-workspace
+  .mf-territory-radar-overlay:not(.mf-territory-radar-overlay--unavailable)
+  .mf-territory-radar-status--freshness {
+  color: #fcd34d;
+}
+
+html[data-theme="dark"]
+  .mf-live-community-map-layer--inline.mf-live-territory-workspace
   .mf-territory-radar-overlay
   .mf-territory-radar-timestamp {
   color: #cbd5e1;

@@ -70,7 +70,10 @@ tmp/
 
 # Local Codex/agent workspace metadata
 .agents/
-.codex/
+.codex/*
+!.codex/agents/
+.codex/agents/*
+!.codex/agents/*.toml
 .codex-remote-attachments/
 
 # Generated isolated QA Web assets

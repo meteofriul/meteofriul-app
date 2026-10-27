@@ -1,0 +1,134 @@
+{
+  "schemaVersion": 1,
+  "archiveId": "scopri-fvg-documentary-sources-2026-10-27",
+  "recoveredOn": "2026-10-27",
+  "timezone": "Europe/Rome",
+  "projectSourceCommit": "eb2986dfb40a62be27552bd3fe11799bc4d2c3d1",
+  "scope": "Fonti documentali locali Accadde oggi FVG: sei raccolte e selezioni nei formati CSV e JSON. Non un backup completo del progetto precedente.",
+  "policy": {
+    "runtimeInput": false,
+    "editorialPublication": false,
+    "payloadTrackedInGit": false,
+    "originalsModified": false,
+    "imagesCopied": false
+  },
+  "sources": [
+    {
+      "id": "fvg-daily-history-originals",
+      "description": "Raccolta documentale esterna FVG citata nelle ricerche di Memoria del giorno; dati e selezioni storiche con riferimenti Wikidata/Wikipedia."
+    }
+  ],
+  "summary": {
+    "files": 12,
+    "bytes": 9934492,
+    "uniqueContents": 12
+  },
+  "previousInventory": {
+    "path": "manifest-sha256.json",
+    "sha256": "cbaf67cf1539b8e506b19b8fd7df608b9fa359dad590e6f99f51426ebbdcc8e9",
+    "unchanged": true
+  },
+  "verification": {
+    "sourceAndCopySha256AndSize": "matched",
+    "duplicatesAgainstTrackedTextDataAndPreviousInventory": 0,
+    "jsonRecordCounts": "Read from the original JSON arrays; the collections overlap and their counts must not be added."
+  },
+  "existingProjectReferences": [
+    "../../../docs/archive/ui3-migration/DISCOVER_DAILY_HISTORY_SOURCE_AUDIT.md",
+    "../../../frontend/src/data/discover/dailyHistoryCandidates.json",
+    "../../../scripts/import-fvg-daily-history-source.mjs",
+    "../../../backend_dryrun_staging/README.md"
+  ],
+  "files": [
+    {
+      "path": "materiali/memoria-del-giorno/fonti-fvg/accadde_oggi_fvg.csv",
+      "sourceId": "fvg-daily-history-originals",
+      "sourcePath": "accadde_oggi_fvg.csv",
+      "bytes": 719319,
+      "sha256": "10f0bc5f818d4391cc9aea527b157005349aa98177b3e911ba5ee884cd64ba6f"
+    },
+    {
+      "path": "materiali/memoria-del-giorno/fonti-fvg/accadde_oggi_fvg.json",
+      "sourceId": "fvg-daily-history-originals",
+      "sourcePath": "accadde_oggi_fvg.json",
+      "bytes": 1471500,
+      "sha256": "8f1273bd4edfa153469172e50da1784fd9328a3deb0bf5e0275bc129ef3a55a8",
+      "records": 5039
+    },
+    {
+      "path": "materiali/memoria-del-giorno/fonti-fvg/accadde_oggi_fvg_365giorni.csv",
+      "sourceId": "fvg-daily-history-originals",
+      "sourcePath": "accadde_oggi_fvg_365giorni.csv",
+      "bytes": 67676,
+      "sha256": "5639b498585b3ad11bc0d6dcdbba55b6a12b9500c3dfa44294bf2a41e5f53530"
+    },
+    {
+      "path": "materiali/memoria-del-giorno/fonti-fvg/accadde_oggi_fvg_365giorni.json",
+      "sourceId": "fvg-daily-history-originals",
+      "sourcePath": "accadde_oggi_fvg_365giorni.json",
+      "bytes": 143444,
+      "sha256": "8acbfcc651702a96371fd37dd9eefc31355de5a12c0b72e28343fb8b5dbb938f",
+      "records": 366
+    },
+    {
+      "path": "materiali/memoria-del-giorno/fonti-fvg/accadde_oggi_fvg_365giorni_esteso.csv",
+      "sourceId": "fvg-daily-history-originals",
+      "sourcePath": "accadde_oggi_fvg_365giorni_esteso.csv",
+      "bytes": 107072,
+      "sha256": "69213ec820cc60a2026db9debd7e76634ff239b02c7b426469c33c8051f57318"
+    },
+    {
+      "path": "materiali/memoria-del-giorno/fonti-fvg/accadde_oggi_fvg_365giorni_esteso.json",
+      "sourceId": "fvg-daily-history-originals",
+      "sourcePath": "accadde_oggi_fvg_365giorni_esteso.json",
+      "bytes": 186499,
+      "sha256": "2a91c0ab1fe26cc655f0e214d8e2a27380fddf683983e2142b0c7b584dbaf9e9",
+      "records": 366
+    },
+    {
+      "path": "materiali/memoria-del-giorno/fonti-fvg/accadde_oggi_fvg_catalogato.csv",
+      "sourceId": "fvg-daily-history-originals",
+      "sourcePath": "accadde_oggi_fvg_catalogato.csv",
+      "bytes": 710762,
+      "sha256": "05a039c1ef03c4e368f87d19e502a9ec57757322a8b37322ce75f37acdfb8f98"
+    },
+    {
+      "path": "materiali/memoria-del-giorno/fonti-fvg/accadde_oggi_fvg_catalogato.json",
+      "sourceId": "fvg-daily-history-originals",
+      "sourcePath": "accadde_oggi_fvg_catalogato.json",
+      "bytes": 1548503,
+      "sha256": "761fef517bbc7a1b89dd64170fe5dee53d1ea661529a85f1421945b8e73bb6e3",
+      "records": 4081
+    },
+    {
+      "path": "materiali/memoria-del-giorno/fonti-fvg/accadde_oggi_fvg_completo_esteso_metadata.csv",
+      "sourceId": "fvg-daily-history-originals",
+      "sourcePath": "accadde_oggi_fvg_completo_esteso_metadata.csv",
+      "bytes": 1507812,
+      "sha256": "6e4a8688899a0ddbd08e1f6a51f93795c01f816ecde4d8f09b5e697dc50ceafa"
+    },
+    {
+      "path": "materiali/memoria-del-giorno/fonti-fvg/accadde_oggi_fvg_completo_esteso_metadata.json",
+      "sourceId": "fvg-daily-history-originals",
+      "sourcePath": "accadde_oggi_fvg_completo_esteso_metadata.json",
+      "bytes": 3115484,
+      "sha256": "13ce1df657d2672f73393927dc4da5d3aa82fb5ff7ea351b136e4e0bac7ed601",
+      "records": 4081
+    },
+    {
+      "path": "materiali/memoria-del-giorno/fonti-fvg/accadde_oggi_fvg_VIP.csv",
+      "sourceId": "fvg-daily-history-originals",
+      "sourcePath": "accadde_oggi_fvg_VIP.csv",
+      "bytes": 114616,
+      "sha256": "c0a49471907b630ce0fca79043c5c4bc79a5fbed3e600794d99ec7f3618d3ceb"
+    },
+    {
+      "path": "materiali/memoria-del-giorno/fonti-fvg/accadde_oggi_fvg_VIP.json",
+      "sourceId": "fvg-daily-history-originals",
+      "sourcePath": "accadde_oggi_fvg_VIP.json",
+      "bytes": 241805,
+      "sha256": "331cb5e09cf53373279653ade995ba5531e04be267f7e9e768a619824299b781",
+      "records": 614
+    }
+  ]
+}
