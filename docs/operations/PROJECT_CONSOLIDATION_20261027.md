@@ -113,5 +113,26 @@ restano aperte nei rispettivi verbali.
 
 ## Promozione
 
-Preparazione locale in corso. Push del ramo, PR, CI della PR e successiva
-CI di `main` devono essere verificati; nessun push diretto su `main`.
+Consolidamento completato il 27 ottobre 2026 tramite
+[PR 34](https://github.com/meteofriul/meteofriul-app/pull/34), con head
+`d1dec916f7148453863648f29dd376649257193d` e merge in `main`
+`cab2b6eef0b82673afc9cbc8c4cd23c18cc9754b`.
+
+- [CI della PR](https://github.com/meteofriul/meteofriul-app/actions/runs/40585354043):
+  PASS su `d1dec916`, tutti e tre i job.
+- [CI di main](https://github.com/meteofriul/meteofriul-app/actions/runs/40586282824):
+  PASS su `cab2b6ee`, tutti e tre i job. Verificata una sola esecuzione
+  attiva attesa, senza duplicati da annullare.
+- Il comando completo `npm run lint` e' passato nei checkout puliti della
+  CI, insieme a test e build previsti. Il limite locale della cache Python
+  resta documentato e non e' dichiarato risolto.
+- Il merge conserva i commit originali. L'albero di `cab2b6ee` coincide
+  con quello della candidata `d1dec916`; nessuna differenza aggiunta ai
+  sorgenti verificati.
+- Push del ramo eseguito con hook privacy attivo; integrazione attraverso
+  PR, senza push diretto su `main`, force push o bypass delle protezioni.
+
+L'aggiornamento conclusivo di questo verbale, README, stato release e
+parita' Web/Android e' soltanto Markdown: diff e collegamenti sono
+controllati localmente. Il passaggio usa una PR documentale, con la CI completa
+intenzionalmente esclusa dai filtri gia' configurati, senza cambiarli.
