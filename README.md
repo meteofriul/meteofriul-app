@@ -309,6 +309,11 @@ scripts/           avvio locale, export dati e guardrail di rilascio
 firebase.json      Hosting, SPA e rewrite /api
 ```
 
+Le fonti originali e le lavorazioni editoriali recuperate per Scopri sono
+raccolte nell'[archivio Scopri](docs/archive/scopri/README.md), separato dal
+runtime. L'indice e i checksum sono versionabili; i materiali originali sono
+locali ed esclusi da Git, da includere esplicitamente nei backup del progetto.
+
 Flusso web principale previsto:
 
 ```text
