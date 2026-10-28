@@ -1,5 +1,7 @@
 # Meteo Friûl
 
+**Organizzazione e controllo job, 28 ottobre, ramo locale:** indice dei documenti e [inventario dei job](docs/operations/JOBS_INVENTORY.md) aggiornati; nuovo profilo `controllo_job` avviato nativamente in una nuova sessione CLI. [Prima verifica in sola lettura](docs/operations/JOBS_READONLY_AUDIT_20261028.md): Eventi conserva tre fonti non aggiornate; CAMS ha recuperato dopo due fallimenti delle 09 UTC. Lint locale ancora bloccato da `EPERM` su `frontend/.pytest_cache`; nessuna correzione ai job o pianificazione di controlli periodici. Sorgenti applicativi, servizi, AAB 300038, artefatti Web e qualificazioni invariati.
+
 **Consolidamento del 27 ottobre: completato in main.** [PR 34](https://github.com/meteofriul/meteofriul-app/pull/34) integrata nel merge `cab2b6ee`; [CI della PR](https://github.com/meteofriul/meteofriul-app/actions/runs/40585354043) e [CI di main](https://github.com/meteofriul/meteofriul-app/actions/runs/40586282824) superate nei tre job, incluso il lint completo. Consolidati agenti e confini, launcher, inventari documentali, mappa architetturale e correzioni radar/Eventi. [Evidenze e limiti](docs/operations/PROJECT_CONSOLIDATION_20261027.md). Originali Scopri conservati localmente; cache Python locale ancora inaccessibile al lint. AAB 300038, Web, servizi e qualificazioni esistenti invariati.
 
 **Pordenone Pensa — correzione su main locale, 26 ottobre:** sul ramo `codex/events-programme-membership` i cinque incontri autunnali restano autonomi, con le proprie date, senza essere attribuiti al programma di settembre. 81 test IT/FUR, lint, build e replay dei quattro campioni API superati. [Verbale, ricevuta e limiti](docs/operations/EVENTS_PNPENSA_PROGRAMME_MEMBERSHIP_20261026.md). Verifica Brave sul Galaxy A52 superata in italiano/chiaro e friulano/scuro: tre incontri entro i 15 giorni, con dettagli corretti; gli altri due restano coperti dai test locali. Commit `759b354d` salvato e promosso su main locale dopo revisione; nessun push, PR o CI remota eseguiti in questo passaggio. Per aggiornare GitHub resta la PR obbligatoria con CI. La AAB interna 300038 e la Web candidata già archiviate restano immutate. Nessun aggiornamento dei job richiesto; sponsor invariati e spenti.
@@ -653,6 +655,37 @@ Un link o un'attribuzione non sostituiscono un'autorizzazione quando una fonte
 o un'immagine è soggetta a condizioni ulteriori.
 
 ## Documentazione operativa
+
+### Indice e responsabilità
+
+Questo indice riusa i documenti esistenti. Per cambiare un comportamento si
+confrontano contratto e codice; un verbale datato attesta soltanto le prove
+descritte. Il coordinatore assegna un solo autore per ogni file condiviso.
+
+| Argomento | Riferimento da usare | Responsabile | Documenti storici e limiti |
+| --- | --- | --- | --- |
+| Architettura e codice condiviso | [Architettura](#architettura), compresa la mappa Android/Web e il percorso eventuale iPhone; [backend](backend/README.md) per le API | Coordinatore; `build_verifica` per vincoli tecnici e compilazione | [Architettura completa del 12 settembre](docs/operations/PILOT_APP_COMPLETE_ARCHITECTURE_2026-09-12.md), [architettura dati meteo](docs/operations/PILOT_WEATHER_DATA_ARCHITECTURE_2026-09-12.md) e [inventario UI3](UI3_RUNTIME_DATA_INVENTORY.md) sono fotografie datate. Non provano la configurazione live attuale |
+| Regole dell'app e dei dati | [Live](LIVE_VIEW_FUNCTIONAL_CONTRACT.md), [contratti API](contracts/runtime-api/v1/live/README.md), [località](contracts/runtime-api/v1/location/README.md), [Almanacco/Scopri](ALMANAC_DISCOVER_CONTENT_CONTRACT.md), [fonti Eventi](EVENTI_DATA_SOURCE_AUDIT.md) | `meteo`, `eventi`, `scopri` nei rispettivi ambiti; `home` per la composizione dei dati in Home. Il coordinatore assegna Community e servizi comuni | Gli audit Eventi/UI3 contengono osservazioni datate: distinguere le regole dalle vecchie liste di fonti e dai risultati dei test. I [verbali operativi](docs/operations/) conservano le successive verifiche |
+| Vincoli e protezioni | [AGENTS](AGENTS.md), [prevenzione build](docs/operations/ANDROID_BUILD_PREVENTION_RULES.md), [runbook Play](docs/operations/PLAY_AAB_RUNBOOK.md), [parità Web/Android](docs/operations/WEB_ANDROID_RELEASE_PARITY.md), [privacy Community](docs/operations/COMMUNITY_PRIVACY_DATA_SAFETY_HANDOFF.md) | Coordinatore e `build_verifica`; autore esplicitamente assegnato per le modifiche. Le autorizzazioni del proprietario restano separate | [Cutover Web](PRODUCTION_CUTOVER_RUNBOOK.md) e audit precedenti non sostituiscono i gate correnti |
+| Versioni e stato delle distribuzioni | [Manifest frontend](frontend/package.json), [configurazione Android](frontend/android/app/build.gradle), [registro Play](release-history/android-play/README.md), [stato release](docs/operations/RELEASE_0.1.15_STATUS_20261021.md) e [registro parità](docs/operations/WEB_ANDROID_RELEASE_PARITY.md) | `build_verifica` raccoglie commit, hash, strumenti e prove; il coordinatore distingue preparazione e pubblicazione | Le versioni del checkout, gli artefatti immutabili e i canali pubblicati sono stati diversi. Leggere la data di ogni attestazione; un vecchio verbale di build non certifica la release successiva |
+| Struttura dell'interfaccia | [Mappa e confini](AGENTS.md#app-map-and-coordinated-agents), [tab](frontend/src/app/appConfig.js), [route](frontend/src/app/AppRoutes.jsx), [architettura CSS](CSS_ARCHITECTURE.md) | `home`, `meteo`, `eventi`, `scopri`; routing, shell e temi condivisi sono assegnati dal coordinatore | [Contratto iniziale UI](UI_COMPONENTS_CONTRACT.md): principi e nomenclatura iniziali; esempi e vecchia struttura vanno confrontati con le feature attuali |
+
+Non occorrono copie parallele `architecture`, `business-logic`, `constraints`,
+`version` o `ui-structure`: l'indice indica dove aggiornare ciascun argomento.
+
+### Job e controllo dei servizi
+
+- [Inventario dei job](docs/operations/JOBS_INVENTORY.md): configurazioni,
+  pianificazioni con fuso, risultati attesi, monitoraggio e responsabilità.
+- [Prima verifica del 28 ottobre](docs/operations/JOBS_READONLY_AUDIT_20261028.md):
+  esiti osservati, anomalie, limiti e prova del nuovo profilo.
+- [Profilo `controllo_job`](.codex/agents/controllo_job.toml): legge stati, log
+  e dati; segnala al coordinatore, senza correggere o avviare job. Le eventuali
+  correzioni spettano allo specialista competente e vengono verificate da
+  `build_verifica`. Il profilo non crea un controllo periodico né nuovi permessi.
+
+La disponibilità effettiva dell'agente va provata nella sessione: il file di
+configurazione da solo non la dimostra. L'esito della prima prova è nel verbale.
 
 ### Runtime e operazioni
 

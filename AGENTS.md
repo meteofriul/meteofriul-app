@@ -58,6 +58,16 @@
   Other specialists may analyze or review the same file, but only its assigned
   editor changes it. `build_verifica` owns verification evidence; it changes
   build rules or scripts only when separately assigned.
+- `controllo_job` audits scheduled jobs, bounded execution logs, published data
+  freshness and existing monitoring in read-only mode. Use the
+  [job inventory](docs/operations/JOBS_INVENTORY.md); distinguish repository
+  configuration, deployed configuration, execution results and data results.
+  The profile does not grant cloud permissions or create a periodic monitor.
+  Verify actual agent availability; if invoked through a generic agent that
+  reads the profile, report that fallback explicitly. Never execute/retry jobs,
+  change schedules or policies, deploy or send notifications during an audit.
+  The coordinator assigns any later corrections to `meteo`, `eventi` or the
+  relevant shared-service owner; `build_verifica` verifies their evidence.
 - For structure and prescribed tools/commands, use [README](README.md#architettura)
   and [local development](README.md#sviluppo-locale). From the repository root,
   use `scripts/start-dev.ps1` for ordinary engineering and

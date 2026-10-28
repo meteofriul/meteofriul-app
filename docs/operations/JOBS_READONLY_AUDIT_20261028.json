@@ -1,0 +1,1204 @@
+{
+  "schema_version": 1,
+  "project": "meteo-friul",
+  "source_commit": "9f81253e6b1832816e4032930b7b5eb64ebff6ad",
+  "audit_date": "2026-10-28",
+  "observation_window_utc": {
+    "start": "2026-10-28T16:10:00Z",
+    "end": "2026-10-28T16:22:49.545672+00:00"
+  },
+  "timezone_context": "Europe/Rome, UTC+01:00 on audit date",
+  "agent_execution": "default agent applying .codex/agents/controllo_job.toml; native availability tested separately by coordinator",
+  "read_only": true,
+  "scope_limits": [
+    "Cloud Run jobs list covered all reported regions; Cloud Scheduler list explicitly limited to europe-west1 and europe-west8.",
+    "Execution list capped at200 per region. west1 evidence covers26Oct19:50:13.790024Z through28Oct16:10:06.533399Z,200runs; west8 filtered48h covers26Oct17:00:01.469199Z through28Oct15:00:06.411359Z,24runs. This is not exhaustive48h coverage for west1.",
+    "Latest job log queries at most60entries each; latest execution only, plus2failedCAMS executions at most60combined,38returned.",
+    "No delivery test, device inspection, email inbox, incident state, full source-site semantic validation or UI test.",
+    "No job executed/retried and no cloud/configuration/dependency changes."
+  ],
+  "counts": {
+    "cloud_run_job_instances": 14,
+    "enabled_schedulers_in_two_regions": 11,
+    "policies": 23,
+    "enabled_policies": 21,
+    "disabled_historical_test_policies": 2
+  },
+  "jobs": [
+    {
+      "job": "meteofriul-cams",
+      "region": "europe-west1",
+      "owner": "meteo",
+      "latest_execution": {
+        "completionStatus": "EXECUTION_SUCCEEDED",
+        "completionTimestamp": "2026-10-28T15:03:46.848610Z",
+        "creationTimestamp": "2026-10-28T15:00:22.370222Z",
+        "name": "meteofriul-cams-cfh6s"
+      },
+      "schedulers": [
+        {
+          "name": "meteofriul-cams-refresh",
+          "region": "europe-west1",
+          "cron": "0 9,10,11,15,20 * * *",
+          "time_zone": "Etc/UTC",
+          "state": "ENABLED",
+          "target": "https://run.googleapis.com/v2/projects/meteo-friul/locations/europe-west1/jobs/meteofriul-cams:run"
+        }
+      ],
+      "bounded_execution_count": 10,
+      "bounded_succeeded": 8,
+      "bounded_failed": 2,
+      "recent_execution_sample": [
+        {
+          "name": "meteofriul-cams-cfh6s",
+          "created_at": "2026-10-28T15:00:22.370222Z",
+          "completed_at": "2026-10-28T15:03:46.848610Z",
+          "outcome": "True"
+        },
+        {
+          "name": "meteofriul-cams-xfg5v",
+          "created_at": "2026-10-28T11:00:33.892092Z",
+          "completed_at": "2026-10-28T11:01:42.417146Z",
+          "outcome": "True"
+        },
+        {
+          "name": "meteofriul-cams-qpj2w",
+          "created_at": "2026-10-28T10:00:31.489027Z",
+          "completed_at": "2026-10-28T10:05:35.167728Z",
+          "outcome": "True"
+        },
+        {
+          "name": "meteofriul-cams-bq8tv",
+          "created_at": "2026-10-28T09:00:50.704130Z",
+          "completed_at": "2026-10-28T09:04:25.142939Z",
+          "outcome": "False"
+        },
+        {
+          "name": "meteofriul-cams-b5nkb",
+          "created_at": "2026-10-27T20:00:37.947823Z",
+          "completed_at": "2026-10-27T20:02:20.819960Z",
+          "outcome": "True"
+        }
+      ],
+      "judgment": "ANOMALIA",
+      "observations": "ANOMALIA recente: failure27/28ott09UTC acquisition_nonrecoverable_failure su aria/pollini, manual_review, retryable=false; UV fuori finestra attesa. Successivi slot10/11/15UTC riusciti. Ultimo complete=true aria/pollini/UVverified e GET ciclo28ott00UTC. Causa esterna sottostante non approfondita."
+    },
+    {
+      "job": "meteofriul-evening-forecast",
+      "region": "europe-west1",
+      "owner": "meteo",
+      "latest_execution": {
+        "completionStatus": "EXECUTION_SUCCEEDED",
+        "completionTimestamp": "2026-10-27T19:46:28.217835Z",
+        "creationTimestamp": "2026-10-27T19:45:01.605893Z",
+        "name": "meteofriul-evening-forecast-62j8k"
+      },
+      "schedulers": [
+        {
+          "name": "meteofriul-evening-forecast",
+          "region": "europe-west1",
+          "cron": "45 20 * * *",
+          "time_zone": "Europe/Rome",
+          "state": "ENABLED",
+          "target": "https://run.googleapis.com/v2/projects/meteo-friul/locations/europe-west1/jobs/meteofriul-evening-forecast:run"
+        }
+      ],
+      "bounded_execution_count": 1,
+      "bounded_succeeded": 1,
+      "bounded_failed": 0,
+      "recent_execution_sample": [
+        {
+          "name": "meteofriul-evening-forecast-62j8k",
+          "created_at": "2026-10-27T19:45:01.605893Z",
+          "completed_at": "2026-10-27T19:46:28.217835Z",
+          "outcome": "True"
+        }
+      ],
+      "judgment": "VERIFICATO nei limiti indicati",
+      "observations": "Ultimo riepilogo aggregato: sent=51, attempted=51, failed=0. Consegna sui telefoni non verificata."
+    },
+    {
+      "job": "meteofriul-event-source-publication-control",
+      "region": "europe-west1",
+      "owner": "eventi",
+      "latest_execution": {
+        "completionStatus": "EXECUTION_SUCCEEDED",
+        "completionTimestamp": "2026-08-29T22:52:56.029484Z",
+        "creationTimestamp": "2026-08-29T22:52:15.227029Z",
+        "name": "meteofriul-event-source-publication-control-lthg9"
+      },
+      "schedulers": [],
+      "bounded_execution_count": 0,
+      "bounded_succeeded": 0,
+      "bounded_failed": 0,
+      "recent_execution_sample": [],
+      "judgment": "NON VERIFICABILE comportamento attuale; presenza e assenza scheduler verificate",
+      "observations": "Presente come job, nessuno scheduler trovato nelle due regioni ispezionate. Ultima esecuzione29agosto; nessuna esecuzione attuale o gate manuale provocato."
+    },
+    {
+      "job": "meteofriul-events-refresh",
+      "region": "europe-west1",
+      "owner": "eventi",
+      "latest_execution": {
+        "completionStatus": "EXECUTION_FAILED",
+        "completionTimestamp": "2026-10-28T04:06:57.590399Z",
+        "creationTimestamp": "2026-10-28T04:00:01.231484Z",
+        "name": "meteofriul-events-refresh-kps9r"
+      },
+      "schedulers": [
+        {
+          "name": "meteofriul-events-refresh",
+          "region": "europe-west1",
+          "cron": "0 4 * * *",
+          "time_zone": "Etc/UTC",
+          "state": "ENABLED",
+          "target": "https://run.googleapis.com/v2/projects/meteo-friul/locations/europe-west1/jobs/meteofriul-events-refresh:run"
+        }
+      ],
+      "bounded_execution_count": 2,
+      "bounded_succeeded": 0,
+      "bounded_failed": 2,
+      "recent_execution_sample": [
+        {
+          "name": "meteofriul-events-refresh-kps9r",
+          "created_at": "2026-10-28T04:00:01.231484Z",
+          "completed_at": "2026-10-28T04:06:57.590399Z",
+          "outcome": "False"
+        },
+        {
+          "name": "meteofriul-events-refresh-ntm55",
+          "created_at": "2026-10-27T04:00:01.164706Z",
+          "completed_at": "2026-10-27T04:08:38.425375Z",
+          "outcome": "False"
+        }
+      ],
+      "judgment": "ANOMALIA",
+      "observations": "ANOMALIA: esecuzioni27/28ott fallite; ultimo errore source verification failed: Barcolana, CSS Udine, Magazzino delle Idee. Catalogo comunque aggiornato28ott04:06:53Z: 3stale, 7partial, 5fresh. Barcolana e CSS hanno ultimo aggiornamento >48h; lettura delle singole schede/interfaccia non verificata."
+    },
+    {
+      "job": "meteofriul-icon",
+      "region": "europe-west1",
+      "owner": "meteo",
+      "latest_execution": {
+        "completionStatus": "EXECUTION_SUCCEEDED",
+        "completionTimestamp": "2026-10-28T06:03:42.097814Z",
+        "creationTimestamp": "2026-10-28T06:00:00.846222Z",
+        "name": "meteofriul-icon-knmvk"
+      },
+      "schedulers": [
+        {
+          "name": "meteofriul-icon-refresh",
+          "region": "europe-west1",
+          "cron": "0 6,18 * * *",
+          "time_zone": "Etc/UTC",
+          "state": "ENABLED",
+          "target": "https://run.googleapis.com/v2/projects/meteo-friul/locations/europe-west1/jobs/meteofriul-icon:run"
+        }
+      ],
+      "bounded_execution_count": 3,
+      "bounded_succeeded": 3,
+      "bounded_failed": 0,
+      "recent_execution_sample": [
+        {
+          "name": "meteofriul-icon-knmvk",
+          "created_at": "2026-10-28T06:00:00.846222Z",
+          "completed_at": "2026-10-28T06:03:42.097814Z",
+          "outcome": "True"
+        },
+        {
+          "name": "meteofriul-icon-fthwf",
+          "created_at": "2026-10-27T18:00:00.921022Z",
+          "completed_at": "2026-10-27T18:04:42.939318Z",
+          "outcome": "True"
+        },
+        {
+          "name": "meteofriul-icon-d47mv",
+          "created_at": "2026-10-27T06:00:00.927718Z",
+          "completed_at": "2026-10-27T06:03:11.121540Z",
+          "outcome": "True"
+        }
+      ],
+      "judgment": "VERIFICATO nei limiti indicati",
+      "observations": "Ultima pubblicazione verified/passed, ciclo20261028T000000Z. GET puntatore stesso ciclo; monitor16:10UTC check_state0/critical_active0."
+    },
+    {
+      "job": "meteofriul-icon2i-freshness",
+      "region": "europe-west1",
+      "owner": "meteo",
+      "latest_execution": {
+        "completionStatus": "EXECUTION_SUCCEEDED",
+        "completionTimestamp": "2026-10-28T16:11:04.291161Z",
+        "creationTimestamp": "2026-10-28T16:10:06.533399Z",
+        "name": "meteofriul-icon2i-freshness-kp8f2"
+      },
+      "schedulers": [
+        {
+          "name": "meteofriul-icon2i-freshness",
+          "region": "europe-west1",
+          "cron": "10,40 * * * *",
+          "time_zone": "UTC",
+          "state": "ENABLED",
+          "target": "https://meteofriul-icon2i-freshness-dispatch-bx24xqvcda-ew.a.run.app/dispatch"
+        }
+      ],
+      "bounded_execution_count": 89,
+      "bounded_succeeded": 89,
+      "bounded_failed": 0,
+      "recent_execution_sample": [
+        {
+          "name": "meteofriul-icon2i-freshness-kp8f2",
+          "created_at": "2026-10-28T16:10:06.533399Z",
+          "completed_at": "2026-10-28T16:11:04.291161Z",
+          "outcome": "True"
+        },
+        {
+          "name": "meteofriul-icon2i-freshness-jbxj4",
+          "created_at": "2026-10-28T15:40:05.751172Z",
+          "completed_at": "2026-10-28T15:41:05.114177Z",
+          "outcome": "True"
+        },
+        {
+          "name": "meteofriul-icon2i-freshness-rkccb",
+          "created_at": "2026-10-28T15:10:06.920975Z",
+          "completed_at": "2026-10-28T15:10:54.991825Z",
+          "outcome": "True"
+        },
+        {
+          "name": "meteofriul-icon2i-freshness-hgxdx",
+          "created_at": "2026-10-28T14:40:07.002055Z",
+          "completed_at": "2026-10-28T14:40:59.040789Z",
+          "outcome": "True"
+        },
+        {
+          "name": "meteofriul-icon2i-freshness-dslf2",
+          "created_at": "2026-10-28T14:10:06.417620Z",
+          "completed_at": "2026-10-28T14:10:49.186574Z",
+          "outcome": "True"
+        }
+      ],
+      "judgment": "VERIFICATO nei limiti indicati",
+      "observations": "Slot16:10UTC FVG e nazionale check_state0, critical_active0, check_completed1, complete=true, future_samples56, indeterminate_count_last6=0. Tre policy enabled. Consegna email e stato incidenti non verificati."
+    },
+    {
+      "job": "meteofriul-local-notice",
+      "region": "europe-west1",
+      "owner": "meteo",
+      "latest_execution": {
+        "completionStatus": "EXECUTION_SUCCEEDED",
+        "completionTimestamp": "2026-10-28T16:01:19.743952Z",
+        "creationTimestamp": "2026-10-28T16:00:04.454291Z",
+        "name": "meteofriul-local-notice-8fspn"
+      },
+      "schedulers": [
+        {
+          "name": "meteofriul-local-notice",
+          "region": "europe-west1",
+          "cron": "0 * * * *",
+          "time_zone": "Europe/Rome",
+          "state": "ENABLED",
+          "target": "https://run.googleapis.com/v2/projects/meteo-friul/locations/europe-west1/jobs/meteofriul-local-notice:run"
+        }
+      ],
+      "bounded_execution_count": 45,
+      "bounded_succeeded": 45,
+      "bounded_failed": 0,
+      "recent_execution_sample": [
+        {
+          "name": "meteofriul-local-notice-8fspn",
+          "created_at": "2026-10-28T16:00:04.454291Z",
+          "completed_at": "2026-10-28T16:01:19.743952Z",
+          "outcome": "True"
+        },
+        {
+          "name": "meteofriul-local-notice-t64d7",
+          "created_at": "2026-10-28T15:00:23.873223Z",
+          "completed_at": "2026-10-28T15:01:27.243464Z",
+          "outcome": "True"
+        },
+        {
+          "name": "meteofriul-local-notice-xgbpq",
+          "created_at": "2026-10-28T14:00:04.210282Z",
+          "completed_at": "2026-10-28T14:00:55.056881Z",
+          "outcome": "True"
+        },
+        {
+          "name": "meteofriul-local-notice-r5458",
+          "created_at": "2026-10-28T13:00:04.285492Z",
+          "completed_at": "2026-10-28T13:00:56.628047Z",
+          "outcome": "True"
+        },
+        {
+          "name": "meteofriul-local-notice-tpz5z",
+          "created_at": "2026-10-28T12:00:04.382271Z",
+          "completed_at": "2026-10-28T12:01:22.285353Z",
+          "outcome": "True"
+        }
+      ],
+      "judgment": "VERIFICATO nei limiti indicati",
+      "observations": "Ultimo riepilogo no_candidate, sent=0, failed=0. Nessuna anomalia dedotta dal legittimo mancato invio."
+    },
+    {
+      "job": "meteofriul-local-notice-tolerance-qa",
+      "region": "europe-west1",
+      "owner": "meteo",
+      "latest_execution": {
+        "completionStatus": "EXECUTION_SUCCEEDED",
+        "completionTimestamp": "2026-10-19T18:11:21.950233Z",
+        "creationTimestamp": "2026-10-19T18:10:35.243871Z",
+        "name": "meteofriul-local-notice-tolerance-qa-vcgqj"
+      },
+      "schedulers": [],
+      "bounded_execution_count": 0,
+      "bounded_succeeded": 0,
+      "bounded_failed": 0,
+      "recent_execution_sample": [],
+      "judgment": "NON VERIFICABILE comportamento attuale; presenza e assenza scheduler verificate",
+      "observations": "Presente come job QA/dry-run; nessuno scheduler trovato nelle due regioni ispezionate. Ultima esecuzione19ott; nessun nuovo test provocato."
+    },
+    {
+      "job": "meteofriul-morning-forecast",
+      "region": "europe-west1",
+      "owner": "meteo",
+      "latest_execution": {
+        "completionStatus": "EXECUTION_SUCCEEDED",
+        "completionTimestamp": "2026-10-28T06:32:17.640378Z",
+        "creationTimestamp": "2026-10-28T06:30:44.866061Z",
+        "name": "meteofriul-morning-forecast-xvj72"
+      },
+      "schedulers": [
+        {
+          "name": "meteofriul-morning-forecast",
+          "region": "europe-west1",
+          "cron": "30 7 * * *",
+          "time_zone": "Europe/Rome",
+          "state": "ENABLED",
+          "target": "https://run.googleapis.com/v2/projects/meteo-friul/locations/europe-west1/jobs/meteofriul-morning-forecast:run"
+        }
+      ],
+      "bounded_execution_count": 2,
+      "bounded_succeeded": 2,
+      "bounded_failed": 0,
+      "recent_execution_sample": [
+        {
+          "name": "meteofriul-morning-forecast-xvj72",
+          "created_at": "2026-10-28T06:30:44.866061Z",
+          "completed_at": "2026-10-28T06:32:17.640378Z",
+          "outcome": "True"
+        },
+        {
+          "name": "meteofriul-morning-forecast-5kcsp",
+          "created_at": "2026-10-27T06:30:04.644661Z",
+          "completed_at": "2026-10-27T06:31:47.623885Z",
+          "outcome": "True"
+        }
+      ],
+      "judgment": "VERIFICATO nei limiti indicati",
+      "observations": "Ultimo riepilogo aggregato: sent=51, attempted=51, failed=0. Consegna sui telefoni non verificata."
+    },
+    {
+      "job": "meteofriul-national-icon",
+      "region": "europe-west1",
+      "owner": "meteo",
+      "latest_execution": {
+        "completionStatus": "EXECUTION_SUCCEEDED",
+        "completionTimestamp": "2026-10-28T06:04:00.080825Z",
+        "creationTimestamp": "2026-10-28T06:00:03.258930Z",
+        "name": "meteofriul-national-icon-v48nw"
+      },
+      "schedulers": [
+        {
+          "name": "meteofriul-national-icon-refresh",
+          "region": "europe-west1",
+          "cron": "0 6,18 * * *",
+          "time_zone": "Etc/UTC",
+          "state": "ENABLED",
+          "target": "https://run.googleapis.com/v2/projects/meteo-friul/locations/europe-west1/jobs/meteofriul-national-icon:run"
+        }
+      ],
+      "bounded_execution_count": 3,
+      "bounded_succeeded": 3,
+      "bounded_failed": 0,
+      "recent_execution_sample": [
+        {
+          "name": "meteofriul-national-icon-v48nw",
+          "created_at": "2026-10-28T06:00:03.258930Z",
+          "completed_at": "2026-10-28T06:04:00.080825Z",
+          "outcome": "True"
+        },
+        {
+          "name": "meteofriul-national-icon-s8rl4",
+          "created_at": "2026-10-27T18:00:03.216389Z",
+          "completed_at": "2026-10-27T18:04:15.147104Z",
+          "outcome": "True"
+        },
+        {
+          "name": "meteofriul-national-icon-t7cc6",
+          "created_at": "2026-10-27T06:00:03.343243Z",
+          "completed_at": "2026-10-27T06:03:57.246788Z",
+          "outcome": "True"
+        }
+      ],
+      "judgment": "VERIFICATO nei limiti indicati",
+      "observations": "Ultima pubblicazione ciclo20261028T000000Z, GET stesso ciclo; monitor16:10UTC check_state0/critical_active0."
+    },
+    {
+      "job": "meteofriul-national-official-alert-send",
+      "region": "europe-west1",
+      "owner": "meteo",
+      "latest_execution": {
+        "completionStatus": "EXECUTION_SUCCEEDED",
+        "completionTimestamp": "2026-10-28T15:50:48.773465Z",
+        "creationTimestamp": "2026-10-28T15:50:06.979498Z",
+        "name": "meteofriul-national-official-alert-send-s2zxv"
+      },
+      "schedulers": [
+        {
+          "name": "meteofriul-national-official-alert-send",
+          "region": "europe-west1",
+          "cron": "50 */2 * * *",
+          "time_zone": "Europe/Rome",
+          "state": "ENABLED",
+          "target": "https://run.googleapis.com/v2/projects/meteo-friul/locations/europe-west1/jobs/meteofriul-national-official-alert-send:run"
+        }
+      ],
+      "bounded_execution_count": 23,
+      "bounded_succeeded": 23,
+      "bounded_failed": 0,
+      "recent_execution_sample": [
+        {
+          "name": "meteofriul-national-official-alert-send-s2zxv",
+          "created_at": "2026-10-28T15:50:06.979498Z",
+          "completed_at": "2026-10-28T15:50:48.773465Z",
+          "outcome": "True"
+        },
+        {
+          "name": "meteofriul-national-official-alert-send-5njkw",
+          "created_at": "2026-10-28T13:50:15.630714Z",
+          "completed_at": "2026-10-28T13:50:42.762246Z",
+          "outcome": "True"
+        },
+        {
+          "name": "meteofriul-national-official-alert-send-sqbrp",
+          "created_at": "2026-10-28T11:50:13.004524Z",
+          "completed_at": "2026-10-28T11:50:47.651154Z",
+          "outcome": "True"
+        },
+        {
+          "name": "meteofriul-national-official-alert-send-ccrms",
+          "created_at": "2026-10-28T09:50:34.264533Z",
+          "completed_at": "2026-10-28T09:51:19.865188Z",
+          "outcome": "True"
+        },
+        {
+          "name": "meteofriul-national-official-alert-send-cnptz",
+          "created_at": "2026-10-28T07:50:09.128272Z",
+          "completed_at": "2026-10-28T07:50:34.538189Z",
+          "outcome": "True"
+        }
+      ],
+      "judgment": "VERIFICATO nei limiti indicati",
+      "observations": "Ultimo log no_candidate, sent=0, failed=0. Nessuna policy dedicata a questo nome job trovata nelle 23 policy lette; le policy del sync non provano copertura del send."
+    },
+    {
+      "job": "meteofriul-national-official-alert-sync",
+      "region": "europe-west1",
+      "owner": "meteo",
+      "latest_execution": {
+        "completionStatus": "EXECUTION_SUCCEEDED",
+        "completionTimestamp": "2026-10-28T15:35:47.390981Z",
+        "creationTimestamp": "2026-10-28T15:35:04.889090Z",
+        "name": "meteofriul-national-official-alert-sync-pz7nv"
+      },
+      "schedulers": [
+        {
+          "name": "meteofriul-national-official-alert-sync",
+          "region": "europe-west1",
+          "cron": "35 */2 * * *",
+          "time_zone": "Europe/Rome",
+          "state": "ENABLED",
+          "target": "https://run.googleapis.com/v2/projects/meteo-friul/locations/europe-west1/jobs/meteofriul-national-official-alert-sync:run"
+        }
+      ],
+      "bounded_execution_count": 22,
+      "bounded_succeeded": 22,
+      "bounded_failed": 0,
+      "recent_execution_sample": [
+        {
+          "name": "meteofriul-national-official-alert-sync-pz7nv",
+          "created_at": "2026-10-28T15:35:04.889090Z",
+          "completed_at": "2026-10-28T15:35:47.390981Z",
+          "outcome": "True"
+        },
+        {
+          "name": "meteofriul-national-official-alert-sync-2vzvc",
+          "created_at": "2026-10-28T13:35:04.871746Z",
+          "completed_at": "2026-10-28T13:35:42.803676Z",
+          "outcome": "True"
+        },
+        {
+          "name": "meteofriul-national-official-alert-sync-lzdz6",
+          "created_at": "2026-10-28T11:35:05.382694Z",
+          "completed_at": "2026-10-28T11:35:45.664269Z",
+          "outcome": "True"
+        },
+        {
+          "name": "meteofriul-national-official-alert-sync-fnxnc",
+          "created_at": "2026-10-28T09:35:04.950292Z",
+          "completed_at": "2026-10-28T09:35:48.255183Z",
+          "outcome": "True"
+        },
+        {
+          "name": "meteofriul-national-official-alert-sync-4rxtk",
+          "created_at": "2026-10-28T07:35:04.938451Z",
+          "completed_at": "2026-10-28T07:35:30.812746Z",
+          "outcome": "True"
+        }
+      ],
+      "judgment": "VERIFICATO nei limiti indicati",
+      "observations": "Ultimo log status=ok, reason=stored. GET nazionale limitato al campione pubblico Roma, complete=true/status=green."
+    },
+    {
+      "job": "meteofriul-official-alert-sync",
+      "region": "europe-west1",
+      "owner": "meteo",
+      "latest_execution": {
+        "completionStatus": "EXECUTION_SUCCEEDED",
+        "completionTimestamp": "2026-10-08T06:01:12.583105Z",
+        "creationTimestamp": "2026-10-08T06:00:01.858076Z",
+        "name": "meteofriul-official-alert-sync-g7w74"
+      },
+      "schedulers": [],
+      "bounded_execution_count": 0,
+      "bounded_succeeded": 0,
+      "bounded_failed": 0,
+      "recent_execution_sample": [],
+      "judgment": "NON VERIFICABILE comportamento attuale; presenza e assenza scheduler verificate",
+      "observations": "Istanza west8 attiva: ultimo log count=0/no_active_alert e GET count=0/fetched_at15:00:15Z. Istanza west1 storica senza scheduler corrispondente; ultima esecuzione8ott."
+    },
+    {
+      "job": "meteofriul-official-alert-sync",
+      "region": "europe-west8",
+      "owner": "meteo",
+      "latest_execution": {
+        "completionStatus": "EXECUTION_SUCCEEDED",
+        "completionTimestamp": "2026-10-28T15:00:23.955744Z",
+        "creationTimestamp": "2026-10-28T15:00:06.411359Z",
+        "name": "meteofriul-official-alert-sync-rc5lx"
+      },
+      "schedulers": [
+        {
+          "name": "meteofriul-official-alert-sync",
+          "region": "europe-west1",
+          "cron": "0 */2 * * *",
+          "time_zone": "Europe/Rome",
+          "state": "ENABLED",
+          "target": "https://run.googleapis.com/v2/projects/meteo-friul/locations/europe-west8/jobs/meteofriul-official-alert-sync:run"
+        }
+      ],
+      "bounded_execution_count": 24,
+      "bounded_succeeded": 24,
+      "bounded_failed": 0,
+      "recent_execution_sample": [
+        {
+          "name": "meteofriul-official-alert-sync-rc5lx",
+          "created_at": "2026-10-28T15:00:06.411359Z",
+          "completed_at": "2026-10-28T15:00:23.955744Z",
+          "outcome": "True"
+        },
+        {
+          "name": "meteofriul-official-alert-sync-h8tjq",
+          "created_at": "2026-10-28T13:00:01.558420Z",
+          "completed_at": "2026-10-28T13:00:19.260671Z",
+          "outcome": "True"
+        },
+        {
+          "name": "meteofriul-official-alert-sync-2rmh5",
+          "created_at": "2026-10-28T11:00:15.080525Z",
+          "completed_at": "2026-10-28T11:00:31.560318Z",
+          "outcome": "True"
+        },
+        {
+          "name": "meteofriul-official-alert-sync-bmxxc",
+          "created_at": "2026-10-28T09:00:02.479042Z",
+          "completed_at": "2026-10-28T09:00:19.543133Z",
+          "outcome": "True"
+        },
+        {
+          "name": "meteofriul-official-alert-sync-vdns8",
+          "created_at": "2026-10-28T07:00:16.255614Z",
+          "completed_at": "2026-10-28T07:00:31.410125Z",
+          "outcome": "True"
+        }
+      ],
+      "judgment": "VERIFICATO nei limiti indicati",
+      "observations": "Istanza west8 attiva: ultimo log count=0/no_active_alert e GET count=0/fetched_at15:00:15Z. Istanza west1 storica senza scheduler corrispondente; ultima esecuzione8ott."
+    }
+  ],
+  "monitoring_audit": {
+    "mode": "Audit",
+    "projectId": "meteo-friul",
+    "policies": [
+      {
+        "key": "morning-forecast-failures",
+        "job": "meteofriul-morning-forecast",
+        "status": "unchanged"
+      },
+      {
+        "key": "morning-forecast-last-success",
+        "job": "meteofriul-morning-forecast",
+        "status": "unchanged"
+      },
+      {
+        "key": "morning-forecast-scheduler-failures",
+        "job": "meteofriul-morning-forecast",
+        "status": "unchanged"
+      },
+      {
+        "key": "evening-forecast-failures",
+        "job": "meteofriul-evening-forecast",
+        "status": "unchanged"
+      },
+      {
+        "key": "evening-forecast-last-success",
+        "job": "meteofriul-evening-forecast",
+        "status": "unchanged"
+      },
+      {
+        "key": "evening-forecast-scheduler-failures",
+        "job": "meteofriul-evening-forecast",
+        "status": "unchanged"
+      },
+      {
+        "key": "local-notice-failures",
+        "job": "meteofriul-local-notice",
+        "status": "unchanged"
+      },
+      {
+        "key": "local-notice-last-success",
+        "job": "meteofriul-local-notice",
+        "status": "unchanged"
+      },
+      {
+        "key": "local-notice-scheduler-failures",
+        "job": "meteofriul-local-notice",
+        "status": "unchanged"
+      },
+      {
+        "key": "official-alert-failures",
+        "job": "meteofriul-official-alert-sync",
+        "status": "unchanged"
+      },
+      {
+        "key": "national-official-alert-failures",
+        "job": "meteofriul-national-official-alert-sync",
+        "status": "unchanged"
+      },
+      {
+        "key": "icon-fvg-failures",
+        "job": "meteofriul-icon",
+        "status": "unchanged"
+      },
+      {
+        "key": "icon-fvg-last-success",
+        "job": "meteofriul-icon",
+        "status": "drifted"
+      },
+      {
+        "key": "icon-national-failures",
+        "job": "meteofriul-national-icon",
+        "status": "unchanged"
+      },
+      {
+        "key": "icon-national-last-success",
+        "job": "meteofriul-national-icon",
+        "status": "unchanged"
+      },
+      {
+        "key": "cams-failures",
+        "job": "meteofriul-cams",
+        "status": "unchanged"
+      },
+      {
+        "key": "events-failures",
+        "job": "meteofriul-events-refresh",
+        "status": "unchanged"
+      },
+      {
+        "key": "events-candidate-watch",
+        "job": "meteofriul-events-refresh",
+        "status": "unchanged"
+      }
+    ],
+    "ready": false,
+    "observed_at_utc": "2026-10-28T16:13:34.2708935Z",
+    "exit_code": 2
+  },
+  "monitoring_encoding_diagnosis": {
+    "policy": "icon-fvg-last-success",
+    "live_documentation_equals_utf8": true,
+    "live_documentation_equals_windows_default": false,
+    "live_documentation": "Il job `meteofriul-icon` non completa con successo da almeno 18 ore. Poiché il job rifiuta i cicli sorgente non avanzati, questa condizione misura anche la freschezza operativa del bundle regionale e si risolve soltanto dopo una pubblicazione riuscita.",
+    "utf8_documentation": "Il job `meteofriul-icon` non completa con successo da almeno 18 ore. Poiché il job rifiuta i cicli sorgente non avanzati, questa condizione misura anche la freschezza operativa del bundle regionale e si risolve soltanto dopo una pubblicazione riuscita.",
+    "windows_default_documentation": "Il job `meteofriul-icon` non completa con successo da almeno 18 ore. PoichÃ© il job rifiuta i cicli sorgente non avanzati, questa condizione misura anche la freschezza operativa del bundle regionale e si risolve soltanto dopo una pubblicazione riuscita."
+  },
+  "public_products": [
+    {
+      "url": "https://meteofriul-weather-49007668366.europe-west1.run.app/weather/v1/icon2i/latest.json",
+      "observed_at_utc": "2026-10-28T16:19:22.370809+00:00",
+      "http_status": 200,
+      "data": {
+        "kind": "meteofriul.weather.latest",
+        "latest": {
+          "run_at": "2026-10-28T00:00:00Z",
+          "source_run_id": "20261028T000000Z"
+        },
+        "provider": "icon2i",
+        "published_at": "2026-10-28T06:00:26Z",
+        "revision": 98,
+        "schema_version": 1
+      },
+      "body_bytes": 813
+    },
+    {
+      "url": "https://meteofriul-national-weather-49007668366.europe-west1.run.app/weather/v2/icon2i/pilot.json",
+      "observed_at_utc": "2026-10-28T16:19:22.371456+00:00",
+      "http_status": 200,
+      "data": {
+        "generated_at": "2026-10-28T06:00:35Z",
+        "kind": "meteofriul.weather.icon.national.local_pilot_pointer",
+        "run_at": "2026-10-28T00:00:00Z",
+        "schema_version": 1,
+        "source_run_id": "20261028T000000Z",
+        "status": "experimental_local_pilot_only"
+      },
+      "body_bytes": 1025
+    },
+    {
+      "url": "https://meteofriul-weather-49007668366.europe-west1.run.app/weather/v1/families/cams/latest.json",
+      "observed_at_utc": "2026-10-28T16:19:22.371958+00:00",
+      "http_status": 200,
+      "data": {
+        "kind": "meteofriul.weather.cams_family_latest",
+        "latest": {
+          "source_run_id": "20261028T000000Z"
+        },
+        "published_at": "2026-10-28T10:01:15Z",
+        "revision": 46,
+        "schema_version": 1
+      },
+      "body_bytes": 745
+    },
+    {
+      "url": "https://meteofriul-weather-49007668366.europe-west1.run.app/weather/v1/uv/latest.json",
+      "observed_at_utc": "2026-10-28T16:19:22.372408+00:00",
+      "http_status": 200,
+      "data": {
+        "run_at": "2026-10-28T00:00:00Z",
+        "schema": "pilot-uv-v1"
+      },
+      "body_bytes": 29812
+    },
+    {
+      "url": "https://meteofriul-events-49007668366.europe-west1.run.app/health",
+      "observed_at_utc": "2026-10-28T16:19:23.170521+00:00",
+      "http_status": 200,
+      "data": {
+        "service": "pilot-events"
+      },
+      "body_bytes": 27
+    },
+    {
+      "url": "https://meteofriul-api-bx24xqvcda-ew.a.run.app/api/weather/official-alerts",
+      "observed_at_utc": "2026-10-28T16:19:23.174221+00:00",
+      "http_status": 200,
+      "data": {
+        "active": false,
+        "count": 0,
+        "source": {},
+        "source_mode": "arpa_pcr_mirror",
+        "fetched_at": "2026-10-28T15:00:15+00:00",
+        "expires_at": ""
+      },
+      "body_bytes": 563
+    },
+    {
+      "url": "https://meteofriul-api-bx24xqvcda-ew.a.run.app/api/weather/official-alerts/national?municipality_istat=058091",
+      "observed_at_utc": "2026-10-28T16:19:23.194654+00:00",
+      "http_status": 200,
+      "data": {
+        "schema_version": 1,
+        "status": "green",
+        "active": false,
+        "complete": true,
+        "source": {},
+        "expires_at": "2026-10-29T23:59:59+01:00",
+        "generated_at": "2026-10-28T16:19:33.497740+00:00"
+      },
+      "body_bytes": 10327
+    }
+  ],
+  "stored_products": [
+    {
+      "object": "gs://meteo-friul-weather-data/pilot/events/v1/catalog.json",
+      "observed_at_utc": "2026-10-28T16:19:41.046606+00:00",
+      "metadata": {
+        "name": "pilot/events/v1/catalog.json",
+        "generation": "1793160413801451",
+        "size": "2791780",
+        "updated": "2026-10-28T04:06:53.812Z"
+      },
+      "data": {
+        "schema": "pilot-events-v1",
+        "attempted_at": "2026-10-28T04:00:27.309966+00:00",
+        "sources": {
+          "TurismoFVG": {
+            "status": "partial",
+            "updated_at": "2026-10-28T04:00:27.309966+00:00",
+            "event_count": 1258,
+            "last_attempted_at": null,
+            "last_attempt_error_type": null,
+            "last_attempt_exception_type": null
+          },
+          "Pordenonelegge": {
+            "status": "fresh",
+            "updated_at": "2026-10-28T04:00:27.309966+00:00",
+            "event_count": 0,
+            "last_attempted_at": null,
+            "last_attempt_error_type": null,
+            "last_attempt_exception_type": null
+          },
+          "Azalea": {
+            "status": "partial",
+            "updated_at": "2026-10-28T04:00:27.309966+00:00",
+            "event_count": 7,
+            "last_attempted_at": null,
+            "last_attempt_error_type": null,
+            "last_attempt_exception_type": null
+          },
+          "CSS Udine": {
+            "status": "stale",
+            "updated_at": "2026-10-26T04:00:47.538511+00:00",
+            "event_count": 146,
+            "last_attempted_at": "2026-10-28T04:00:27.309966+00:00",
+            "last_attempt_error_type": "source_verification_failed",
+            "last_attempt_exception_type": null
+          },
+          "Pordenone Pensa": {
+            "status": "partial",
+            "updated_at": "2026-10-28T04:00:27.309966+00:00",
+            "event_count": 4,
+            "last_attempted_at": null,
+            "last_attempt_error_type": null,
+            "last_attempt_exception_type": null
+          },
+          "Teatro Verdi Pordenone": {
+            "status": "partial",
+            "updated_at": "2026-10-28T04:00:27.309966+00:00",
+            "event_count": 87,
+            "last_attempted_at": null,
+            "last_attempt_error_type": null,
+            "last_attempt_exception_type": null
+          },
+          "Teatro Verdi Trieste": {
+            "status": "fresh",
+            "updated_at": "2026-10-28T04:00:27.309966+00:00",
+            "event_count": 61,
+            "last_attempted_at": null,
+            "last_attempt_error_type": null,
+            "last_attempt_exception_type": null
+          },
+          "Le Giornate del Cinema Muto": {
+            "status": "fresh",
+            "updated_at": "2026-10-28T04:00:27.309966+00:00",
+            "event_count": 0,
+            "last_attempted_at": null,
+            "last_attempt_error_type": null,
+            "last_attempt_exception_type": null
+          },
+          "Paesi in Festa": {
+            "status": "fresh",
+            "updated_at": "2026-10-28T04:00:27.309966+00:00",
+            "event_count": 13,
+            "last_attempted_at": null,
+            "last_attempt_error_type": null,
+            "last_attempt_exception_type": null
+          },
+          "SagreFVG": {
+            "status": "partial",
+            "updated_at": "2026-10-28T04:00:27.309966+00:00",
+            "event_count": 9,
+            "last_attempted_at": null,
+            "last_attempt_error_type": null,
+            "last_attempt_exception_type": null
+          },
+          "Villa Manin": {
+            "status": "partial",
+            "updated_at": "2026-10-28T04:00:27.309966+00:00",
+            "event_count": 3,
+            "last_attempted_at": null,
+            "last_attempt_error_type": null,
+            "last_attempt_exception_type": null
+          },
+          "Magazzino delle Idee": {
+            "status": "stale",
+            "updated_at": "2026-10-27T04:00:45.784305+00:00",
+            "event_count": 0,
+            "last_attempted_at": "2026-10-28T04:00:27.309966+00:00",
+            "last_attempt_error_type": "adapter_exception",
+            "last_attempt_exception_type": "ReadTimeout"
+          },
+          "MESS": {
+            "status": "fresh",
+            "updated_at": "2026-10-28T04:00:27.309966+00:00",
+            "event_count": 13,
+            "last_attempted_at": null,
+            "last_attempt_error_type": null,
+            "last_attempt_exception_type": null
+          },
+          "Galleria Spazzapan": {
+            "status": "partial",
+            "updated_at": "2026-10-28T04:00:27.309966+00:00",
+            "event_count": 1,
+            "last_attempted_at": null,
+            "last_attempt_error_type": null,
+            "last_attempt_exception_type": null
+          },
+          "Barcolana": {
+            "status": "stale",
+            "updated_at": "2026-10-25T07:59:50.007837+00:00",
+            "event_count": 1,
+            "last_attempted_at": "2026-10-28T04:00:27.309966+00:00",
+            "last_attempt_error_type": "adapter_exception",
+            "last_attempt_exception_type": "ValueError"
+          }
+        },
+        "monitors": {
+          "Palazzo Attems": {
+            "status": "review_required",
+            "checked_at": "2026-10-25T07:59:50.007837+00:00",
+            "tag": null
+          },
+          "GiroFVG": {
+            "status": "review_required",
+            "checked_at": "2026-10-25T07:59:50.007837+00:00",
+            "tag": null
+          },
+          "TurismoFVG annual inventory": {
+            "status": "checked",
+            "checked_at": "2026-10-19T04:01:20.998054+00:00",
+            "tag": null
+          }
+        }
+      }
+    },
+    {
+      "object": "gs://meteo-friul-weather-state/monitoring/icon2i-freshness/v1/fvg.json",
+      "observed_at_utc": "2026-10-28T16:19:37.403504+00:00",
+      "metadata": {
+        "name": "monitoring/icon2i-freshness/v1/fvg.json",
+        "generation": "1793203858070475",
+        "size": "2651",
+        "updated": "2026-10-28T16:10:58.085Z"
+      },
+      "data": {
+        "causes": [],
+        "check_completed": 1,
+        "check_state": 0,
+        "complete": true,
+        "critical_active": 0,
+        "critical_causes": [],
+        "future_samples": 56,
+        "indeterminate_count_last6": 0,
+        "last_pointer_readable_at": "2026-10-28T16:10:44.515629Z",
+        "last_verified": {
+          "run_at": "2026-10-28T00:00:00Z",
+          "source_run_id": "20261028T000000Z"
+        },
+        "observed_at": "2026-10-28T16:10:51.848574Z",
+        "publication": {
+          "source_run_id": "20261028T000000Z"
+        },
+        "publication_age_hours": 10.12005210388889,
+        "publication_time_verified": true,
+        "run_age_hours": 16.181069048333335,
+        "scheduled_slot_utc": "2026-10-28T16:10:00.000000Z",
+        "schema_version": 1
+      }
+    },
+    {
+      "object": "gs://meteo-friul-weather-state/monitoring/icon2i-freshness/v1/national.json",
+      "observed_at_utc": "2026-10-28T16:19:37.333360+00:00",
+      "metadata": {
+        "name": "monitoring/icon2i-freshness/v1/national.json",
+        "generation": "1793203860465539",
+        "size": "3163",
+        "updated": "2026-10-28T16:11:00.480Z"
+      },
+      "data": {
+        "causes": [],
+        "check_completed": 1,
+        "check_state": 0,
+        "complete": true,
+        "critical_active": 0,
+        "critical_causes": [],
+        "future_samples": 56,
+        "indeterminate_count_last6": 0,
+        "last_pointer_readable_at": "2026-10-28T16:10:45.725735Z",
+        "last_verified": {
+          "run_at": "2026-10-28T00:00:00Z",
+          "source_run_id": "20261028T000000Z"
+        },
+        "observed_at": "2026-10-28T16:10:58.216300Z",
+        "publication": {
+          "source_run_id": "20261028T000000Z"
+        },
+        "publication_age_hours": 10.117299527777778,
+        "publication_time_verified": true,
+        "run_age_hours": 16.18283786111111,
+        "scheduled_slot_utc": "2026-10-28T16:10:00.000000Z",
+        "schema_version": 1
+      }
+    }
+  ],
+  "cams_failure_details": {
+    "query": "resource.type=\"cloud_run_job\" AND resource.labels.job_name=\"meteofriul-cams\" AND (labels.\"run.googleapis.com/execution_name\"=\"meteofriul-cams-bq8tv\" OR labels.\"run.googleapis.com/execution_name\"=\"meteofriul-cams-2j74b\")",
+    "limit": 60,
+    "returned": 38,
+    "records": [
+      {
+        "timestamp": "2026-10-28T09:04:20.895475Z",
+        "data": {
+          "event": "phase_failed",
+          "provider": "cams",
+          "stage": "worker",
+          "status": "failed"
+        }
+      },
+      {
+        "timestamp": "2026-10-28T09:04:20.895393Z",
+        "data": {
+          "complete": false,
+          "kind": "meteofriul.cams.component_outcomes",
+          "components": {
+            "air": {
+              "reason_code": "acquisition_nonrecoverable_failure",
+              "retryable": false,
+              "source_run_id": "20261028T000000Z",
+              "stage": "acquisition",
+              "status": "manual_review"
+            },
+            "pollen": {
+              "reason_code": "acquisition_nonrecoverable_failure",
+              "retryable": false,
+              "source_run_id": "20261028T000000Z",
+              "stage": "acquisition",
+              "status": "manual_review"
+            },
+            "uv": {
+              "reason_code": "uv_outside_scheduled_window",
+              "status": "disabled"
+            }
+          }
+        }
+      },
+      {
+        "timestamp": "2026-10-28T09:04:20.736137Z",
+        "data": {
+          "event": "publication_result",
+          "provider": "cams",
+          "publication_status": "stopped",
+          "reason_code": "acquisition_not_completed",
+          "stage": "worker",
+          "status": "pending"
+        }
+      },
+      {
+        "timestamp": "2026-10-27T09:02:47.380187Z",
+        "data": {
+          "event": "phase_failed",
+          "provider": "cams",
+          "stage": "worker",
+          "status": "failed"
+        }
+      },
+      {
+        "timestamp": "2026-10-27T09:02:47.380021Z",
+        "data": {
+          "complete": false,
+          "kind": "meteofriul.cams.component_outcomes",
+          "components": {
+            "air": {
+              "reason_code": "acquisition_nonrecoverable_failure",
+              "retryable": false,
+              "source_run_id": "20261027T000000Z",
+              "stage": "acquisition",
+              "status": "manual_review"
+            },
+            "pollen": {
+              "reason_code": "acquisition_nonrecoverable_failure",
+              "retryable": false,
+              "source_run_id": "20261027T000000Z",
+              "stage": "acquisition",
+              "status": "manual_review"
+            },
+            "uv": {
+              "reason_code": "uv_outside_scheduled_window",
+              "status": "disabled"
+            }
+          }
+        }
+      },
+      {
+        "timestamp": "2026-10-27T09:02:47.225850Z",
+        "data": {
+          "event": "publication_result",
+          "provider": "cams",
+          "publication_status": "stopped",
+          "reason_code": "acquisition_not_completed",
+          "stage": "worker",
+          "status": "pending"
+        }
+      }
+    ]
+  },
+  "priority_candidates": [
+    "Eventi: triage delle tre fonti stale e della scadenza >48h, con eventi.",
+    "CAMS: chiarire i fallimenti ricorrenti delle09UTC prima di proporre cambi, con meteo.",
+    "Manutenzione controlli separata: lint EPERM riportato da build_verifica; Audit monitoring legge UTF8 con defaultWindows e segnala drift spurio."
+  ],
+  "evidence_queries": [
+    "gcloud auth list --filter=status:ACTIVE --format=value(account) checked expected account without changing credentials.",
+    "gcloud run jobs list --project=meteo-friul with selected name/region/condition/latestExecution fields.",
+    "gcloud scheduler jobs list --project=meteo-friul --location=europe-west1 and europe-west8 with selected schedule/state/target fields.",
+    "gcloud run jobs executions list --project=meteo-friul --region=<region> --limit=200 with selected metadata and completion fields.",
+    "gcloud logging read resource.type=cloud_run_job AND resource.labels.job_name=<job> AND resource.labels.location=<region> AND labels.run.googleapis.com/execution_name=<execution> --freshness=48h --limit=60; sanitized selected aggregate fields.",
+    "scripts/sync-cloud-run-job-monitoring.ps1 -Mode Audit; Monitoring alertPolicies GET; comparison against JSON decoded asUTF8.",
+    "Read-only HTTP GET URLs and Storage objects recorded with timestamps above."
+  ],
+  "native_validation": {
+    "actual_agent_type": "controllo_job",
+    "child_task": "/root/controllo_job_audit_20261028",
+    "cli_version": "0.164.0-alpha.11.1",
+    "sandbox": "read-only",
+    "spawn_and_first_review": "PASS",
+    "first_review_scope": "Five collected metadata JSON files, followed by review of complete sanitized summary and log/product evidence by the same native child.",
+    "current_chat_type_registry": "New type not recognized in pre-existing session; native startup proved in a new CLI session.",
+    "data_review_same_child": "PASS: running -> completed; reviewed collected log/product evidence and encoding diagnosis without additional cloud queries."
+  },
+  "local_evidence_sha256": {
+    "jobs-live.json": "a12881c467f97fab5530135c3ddcb7f9e8c680e5ec85ba1791e6d81f6ff302b8",
+    "schedulers-live.json": "f0e5fb8b0ccf32f35c24459a7206af4a3c29c4e76c8eb8393c8a2d61b8b50f5a",
+    "executions-48h.json": "568e8951567d8870b262644d96c1b85db15242fec18001c32d0b0ac86462fab9",
+    "monitoring-config-audit.json": "136f5aa8e6c5447705b2075710097da8406e9edcf0fe1be213e09cf6d8bf02f0",
+    "monitoring-policies-live.json": "f1856bc02b07450043d539d73138481f424e2f97ff81523321aab8c2123a3f89",
+    "latest-job-logs-sanitized.json": "f21805c5a422a6d5ac52710e19c1f0b20e7cc5934cda9a37e9b87481bebe5c50",
+    "public-products-sanitized.json": "1df7106ecd3a0950231a6a0b54a8d2edd8f0d82cb87da0a2c29e3514bb9519b2",
+    "stored-products-sanitized.json": "442b31af2e6131909e84c6d0ad721d090b3ee555d65e6cc30e573876f8494264",
+    "monitoring-drift-detail.json": "f7902bc753b602aedc1596071088af92dcb76892382286d5bb6a892c7eeb90ea",
+    "public-audit-summary.json": "fd6e4eaf592a640d39acc05ad586ab933337c10cdf8387c5091d07780ca9dfe4",
+    "native-agent-validation.txt": "ddf7f6a83cb70d0159f76edfe270881d1debbb930f0aa7f20213bfb0eb79617c",
+    "cams-failure-logs-sanitized.json": "31d54e2c15d6479f9020f35eb939f49d3bd971b5717db6b081383068ea7aa932",
+    "audit-result.md": "ac584103ec29ce41bb22f196a4994ba84f0d2321131e5755476ea9cc98d6b12c",
+    "native-agent-data-review.txt": "a04d45f41b2582e031ea623885c6646e334f4ce762eedaf9af4814dfafd799a7"
+  }
+}
