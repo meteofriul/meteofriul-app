@@ -43,6 +43,32 @@ def fixture(detail=DETAIL):
                        today=date(2026, 10, 7))
 
 
+def renamed_programme_fixture(*, renamed):
+    """Minimal synthetic HTML from the 2026-10-28 CSS 2905/2940 evidence."""
+    slug = ('giovanni-ortoleva-i-sette-a-tebe' if renamed else 'i-sette-a-tebe')
+    title = 'Giovanni Ortoleva / I Sette a Tebe' if renamed else 'I Sette a Tebe'
+    path = '/stagione-contatto/2026/2905/' + slug
+    review_path = ('/stagione-contatto/2026/2940/'
+                   'itinerari-nel-teatro-contemporaneoterza-edizione')
+    card = CARD.replace('/stagione-contatto/2026/123/prova', path).replace(
+        'Prova', title).replace('9 e 10 ottobre 2026 ore 20:30',
+                               'dal 19 marzo 2027 al 20 marzo 2027')
+    detail = DETAIL.replace('Prova', 'I Sette a Tebe').replace(
+        '9 e 10 ottobre 2026 ore 20:30',
+        '19 marzo 2027 ore 20:30<br>20 marzo 2027 ore 20:30')
+    review_schedule = 'dal 9 ottobre 2026 al 13 aprile 2027'
+    review_card = CARD.replace('/stagione-contatto/2026/123/prova', review_path).replace(
+        'Prova', 'Itinerari nel teatro contemporaneo').replace(
+        '9 e 10 ottobre 2026 ore 20:30', review_schedule)
+    review_detail = DETAIL.replace('Prova', 'Itinerari nel teatro contemporaneo').replace(
+        '9 e 10 ottobre 2026 ore 20:30', review_schedule)
+    pages = {BASE + surface: card + review_card for surface in SEASON_PATHS}
+    pages[BASE.rstrip('/') + path] = detail
+    pages[BASE.rstrip('/') + review_path] = review_detail
+    return collect_css(get=lambda url, **_: Response(pages[url]),
+                       today=date(2026, 10, 28))
+
+
 class CSSAuditTests(unittest.TestCase):
     def test_season_cards_ignore_unrelated_links(self):
         cards = season_cards('<a href="/stagione-contatto/2026/123/alternate-slug">Press</a>' +
@@ -169,6 +195,97 @@ class CSSAuditTests(unittest.TestCase):
         failed = gate_batch('CSS Udine', good, today=date(2026, 10, 7),
                             previous_batch={'events': [prior]})
         self.assertEqual(failed['error_type'], 'source_verification_failed')
+
+
+class CSSStableIdentityTests(unittest.TestCase):
+    @classmethod
+    def setUpClass(cls):
+        cls.previous = renamed_programme_fixture(renamed=False)
+        cls.current = renamed_programme_fixture(renamed=True)
+
+    def check_gate(self, batch, previous):
+        return gate_batch('CSS Udine', batch, today=date(2026, 10, 28),
+                          previous_batch=previous)
+
+    def assert_rejected(self, batch, previous):
+        result = self.check_gate(batch, previous)
+        self.assertEqual(result['status'], 'error')
+        self.assertEqual(result['error_type'], 'source_verification_failed')
+
+    def test_real_2905_title_and_slug_rename_preserves_dates_and_partial_review(self):
+        self.assertEqual(self.check_gate(self.previous, None)['status'], 'partial')
+        self.assertEqual(self.check_gate(self.current, None)['status'], 'partial')
+        self.assertEqual([event['start_date'] for event in self.current['events']],
+                         ['2027-03-19', '2027-03-20'])
+        result = self.check_gate(self.current, self.previous)
+        self.assertEqual(result['status'], 'partial')
+        self.assertEqual(len(result['events']), 2)
+        self.assertEqual({event['title'] for event in result['events']},
+                         {'Giovanni Ortoleva / I Sette a Tebe'})
+        self.assertEqual({event['venue'] for event in result['events']},
+                         {'Teatro Palamostre'})
+        self.assertEqual(len(result['review_required']), 1)
+        self.assertIn('/2940/', result['review_required'][0]['url'])
+        self.assertEqual(result['review_required'][0]['reason'], 'ambiguous schedule')
+
+    def test_real_future_date_loss_still_fails(self):
+        damaged = copy.deepcopy(self.current)
+        damaged['events'].pop()
+        damaged['verification']['event_count'] -= 1
+        self.assert_rejected(damaged, self.previous)
+
+    def test_changed_or_missing_location_or_source_does_not_match(self):
+        for field, value in (
+                ('event_city', 'Pordenone'), ('event_city', ''),
+                ('venue', 'Teatro Nuovo Giovanni da Udine'),
+                ('venue', ''), ('venue', None), ('venue', 123),
+                ('source', 'Another source'), ('source', None)):
+            with self.subTest(field=field, value=value):
+                previous = copy.deepcopy(self.previous)
+                for event in previous['events']:
+                    event[field] = value
+                self.assert_rejected(self.current, previous)
+
+    def test_different_id_programme_or_year_does_not_match(self):
+        original = self.previous['events'][0]['url']
+        for url in (original.replace('/2905/', '/2906/'),
+                    original.replace('/2026/', '/2025/'),
+                    original.replace('/stagione-contatto/', '/stagione-festil/')):
+            with self.subTest(url=url):
+                previous = copy.deepcopy(self.previous)
+                for event in previous['events']:
+                    event['url'] = url
+                self.assert_rejected(self.current, previous)
+
+    def test_untrusted_or_noncanonical_url_cannot_supply_new_identity(self):
+        for side in ('previous', 'current'):
+            reference = getattr(self, side)['events'][0]['url']
+            urls = (
+                reference.replace('www.cssudine.it', 'example.org'),
+                reference.replace('www.cssudine.it', 'www.cssudine.it.example.org'),
+                reference.replace('www.cssudine.it', 'user:pass@www.cssudine.it'),
+                reference.replace('www.cssudine.it', 'www.cssudine.it:443'),
+                reference.replace('https:', 'http:'),
+                reference + '?id=2905', reference + '#2905',
+                reference.replace('/stagione-contatto/', '/stagione-unknown/'),
+                reference.replace('/stagione-contatto/', '/produzioni/'),
+                reference.replace('/2905/', '/02905/'),
+                reference.replace('/2905/', '/%32%39%30%35/'),
+                reference.replace('/2905/', '/2905/extra/'),
+                reference + '/..', reference + '%2Fextra',
+            )
+            for url in urls:
+                with self.subTest(side=side, url=url):
+                    previous = copy.deepcopy(self.previous)
+                    current = copy.deepcopy(self.current)
+                    changed = previous if side == 'previous' else current
+                    for event in changed['events']:
+                        event['url'] = event['description_source_url'] = url
+                    for key in ('listing_records', 'detail_records'):
+                        for item in changed['verification'][key]:
+                            if item['url'] == reference:
+                                item['url'] = url
+                    self.assert_rejected(current, previous)
 
 
 if __name__ == '__main__':

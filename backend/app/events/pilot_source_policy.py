@@ -810,6 +810,28 @@ def azalea_batch_verified(batch, *, today, previous_batch=None):
         return False
 
 
+def _css_retention_key(event):
+    """Recognize a renamed official page only within its season and location."""
+    from .pilot_css import SEASON_PATHS, trusted_event_url
+
+    url = event.get('url')
+    if not isinstance(url, str) or not trusted_event_url(url):
+        return None
+    parsed = urlsplit(url)
+    identity = re.fullmatch(
+        r'/(stagione-[a-z-]+)/(20[0-9]{2})/([1-9][0-9]*)/[a-z0-9]+(?:-[a-z0-9]+)*',
+        parsed.path)
+    if (url != 'https://www.cssudine.it' + parsed.path
+            or not identity or identity[1] not in SEASON_PATHS
+            or event.get('source') != 'CSS Udine'):
+        return None
+    location = (event.get('event_city'), event.get('venue'))
+    if any(not isinstance(value, str) or not value.strip() for value in location):
+        return None
+    return (identity.groups() + (event['start_date'],)
+            + tuple(' '.join(value.split()).casefold() for value in location))
+
+
 def css_batch_verified(batch, *, today, previous_batch=None):
     """Reconcile all six CSS season indexes with their detail dispositions."""
     proof = batch.get('verification') or {}
@@ -896,6 +918,7 @@ def css_batch_verified(batch, *, today, previous_batch=None):
         new_keys = {(engine.normalize_for_search(event['title']),
                      event['start_date'], engine.normalize_for_search(event['event_city']))
                     for event in events}
+        new_identities = {_css_retention_key(event) for event in events} - {None}
         for old in previous:
             if (date.fromisoformat(old['start_date']) >= today
                     and old['url'] not in reviewed
@@ -903,7 +926,8 @@ def css_batch_verified(batch, *, today, previous_batch=None):
                          engine.normalize_for_search(old['event_city'])) not in new_exact
                     and (engine.normalize_for_search(old['title']),
                          old['start_date'],
-                         engine.normalize_for_search(old['event_city'])) not in new_keys):
+                         engine.normalize_for_search(old['event_city'])) not in new_keys
+                    and _css_retention_key(old) not in new_identities):
                 return False
         return True
     except (AttributeError, KeyError, TypeError, ValueError):

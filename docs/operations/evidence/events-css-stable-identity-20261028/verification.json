@@ -1,0 +1,94 @@
+{
+  "schema_version": 1,
+  "recorded_at_utc": "2026-10-28T18:31:21.956453+00:00",
+  "source_base_commit": "7257d22b781ef9f88f3b0c5eb2d2fb5b81448927",
+  "branch": "codex/events-css-stable-identity",
+  "candidate_state": "uncommitted patch; identity defined by the two file hashes below",
+  "toolchain": {
+    "python": "3.13.5",
+    "requirement": "3.13",
+    "interpreter_selection": "existing system python; backend/venv unavailable",
+    "dependency_installation": false
+  },
+  "verified_files_sha256": {
+    "backend/app/events/pilot_source_policy.py": "589b82475167f4d2c2063b55a7d98a4af1fb797e24f4719d1084ce44b324a0d3",
+    "backend/tests/test_pilot_css.py": "690335de8c4dd7c5a2e4c2d8c6f66fec7b9ca8485289e683ead2dd5a789a90d4"
+  },
+  "checks": [
+    {
+      "name": "shared_events_regressions",
+      "owner": "build_verifica",
+      "cwd": "backend",
+      "command": "python -B -m unittest tests.test_pilot_source_policy tests.test_pilot_collection tests.test_pilot_cloud tests.test_pilot_catalog tests.test_pilot_http tests.test_pilot_catalog_health -v",
+      "exit_code": 0,
+      "tests_run": 111,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "duration_seconds": 19.63,
+      "warning_lines": 0,
+      "log": "<OS_TEMP>/meteofriul-css-verification-1793212111022/shared-events-tests.log",
+      "log_sha256": "0c9121fb78c465e34e25f9c8fb295ed6f77e9ad319931003f8f9b200c6b26354"
+    },
+    {
+      "name": "targeted_compileall",
+      "owner": "build_verifica",
+      "cwd": "backend",
+      "command": "python -X pycache_prefix=<UNIQUE_OS_TEMP_CACHE> -m compileall -q app/events/pilot_source_policy.py tests/test_pilot_css.py",
+      "exit_code": 0,
+      "cache_location": "unique operating-system temporary directory outside repository",
+      "log": "<OS_TEMP>/meteofriul-css-verification-1793212111022/compileall.log",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "canonical_workspace_cleanliness",
+      "owner": "build_verifica",
+      "cwd": "repository root",
+      "command": ".\\scripts\\test-canonical-workspace-cleanliness.ps1",
+      "exit_code": 0,
+      "tracked_files": 4000
+    },
+    {
+      "name": "diff_check",
+      "owner": "build_verifica",
+      "cwd": "repository root",
+      "command": "git diff --check",
+      "exit_code": 0
+    },
+    {
+      "name": "css_module",
+      "owner": "eventi_consolidation_review",
+      "evidence_reviewed_by": "build_verifica",
+      "cwd": "backend",
+      "command": "python -B -m unittest tests.test_pilot_css -v",
+      "tests_run": 16,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "result": "OK",
+      "log": "tmp/events-css-stable-identity-20261028/eventi-css-module.txt",
+      "log_sha256": "653a94f165858ea2e8873d59caba5d16d61050106449e9c67143a158e31f24dc"
+    },
+    {
+      "name": "css_2905_regression_before_after",
+      "owner": "eventi_consolidation_review",
+      "evidence_reviewed_by": "build_verifica",
+      "before": "expected failure: error != partial",
+      "after": "PASS; partial retained with two March 2027 dates and ambiguous record 2940 still in review",
+      "before_log_sha256": "d9d44b59be3e75f84cacadbdb2a61e53398d6d66298fbf9d3885fdca1a434464",
+      "after_log_sha256": "daa8bedf37c3945a34129ba3aec08bd07a90a178d64aded2784805abac22738e"
+    }
+  ],
+  "review": {
+    "status": "PASS",
+    "scope": "CSS future-event retention only; exact official HTTPS URL, allowed season, year, canonical numeric ID, date, nonempty municipality and venue; no mutation of visible event identity",
+    "negative_coverage": "different official ID, season/year, missing date, changed or missing location/source, and 28 noncanonical/untrusted URL subcases across old/new batches",
+    "preserved": "existing source-specific proof, generic publication gate, quarantined partial status, atomic save and recovery semantics, stale invisibility, 48-hour freshness and deduplication"
+  },
+  "limits": [
+    "No frontend, lint, Android or full backend suite run for this scoped backend change.",
+    "No deployment, cloud query, scheduled-job invocation/retry or notification sent.",
+    "Local success does not establish remote CSS recovery; ordinary publication and API results require separate authorized operational verification.",
+    "No cache or ACL modification; unittest used -B and compileall output was outside the repository."
+  ]
+}
