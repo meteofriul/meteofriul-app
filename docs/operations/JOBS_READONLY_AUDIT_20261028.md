@@ -174,7 +174,8 @@ generato, segreto locale o riferimento attivo obsoleto tracciato. Nessuna
 build, installazione di dipendenze o suite applicativa eseguita per questi
 soli cambiamenti documentali e di profilo.
 
-`build_verifica` ha riprodotto `npm run lint` da `frontend/` con Node
+Prima della sistemazione locale descritta sotto, `build_verifica` ha riprodotto
+`npm run lint` da `frontend/` con Node
 **22.17.1**, npm **10.9.2**, ESLint **10.5.0**. Il comando effettivo è
 `eslint .`; entrambi i tentativi, incluso quello fuori sandbox, terminano con
 **exit code 2**:
@@ -184,16 +185,49 @@ EPERM: operation not permitted, scandir '…\frontend\.pytest_cache'
 ```
 
 Il percorso termina nella cache Python locale del frontend, all'interno della
-radice canonica. Il lint completo è **BLOCCATO**, non superato: la scansione
-non arriva a una verifica completa delle regole ESLint. La CI verde del
+radice canonica. In quei due tentativi il lint completo era **BLOCCATO**:
+la scansione non arrivava a una verifica completa delle regole ESLint. La CI verde del
 consolidamento precedente è un'evidenza distinta, non l'esito di questo comando.
 
-Intervento separato prima delle prossime modifiche al codice: diagnosticare
+Proposta formulata prima della sistemazione: diagnosticare
 l'accesso Windows a questa sola cache (permessi/processi), oppure riprodurre
 il controllo in un checkout pulito con la toolchain prescritta. Solo dopo la
 diagnosi, autorizzare un'eventuale rimozione della cache generata interessata.
 Conservare `npm run lint`, regole, esclusioni e gate CI; nessun aggiramento del
 controllo in questo incarico. Non sono stati cambiati ACL o rimossi file.
+
+### Blocco lint risolto nello stesso checkout il 28 ottobre
+
+Diagnosi in sola lettura: Windows negava apertura, elenco e lettura ACL di
+`frontend/.pytest_cache` anche fuori sandbox (`ERROR_ACCESS_DENIED`,
+NTSTATUS `0xC0000022`); `frontend` e `frontend/src` erano invece leggibili.
+L'utente ha poi eseguito la lettura in PowerShell amministrativa: ereditarietà
+ACL disabilitata (`AreAccessRulesProtected=True`), ACL canonica, tre regole
+esplicite Allow/FullControl e contenuto `v`, `.gitignore`, `CACHEDIR.TAG`,
+`README.md`. Non è stato identificato chi abbia creato tali permessi.
+
+Il proprietario ha spostato la sola cache, in modo reversibile, da
+`frontend/.pytest_cache` a `tmp/pytest-cache-frontend-quarantena-20261028`.
+Entrambi i percorsi erano stati verificati nella radice canonica; destinazione
+inizialmente assente, fuori dal frontend ed esclusa da Git. Il coordinatore
+ha confermato sorgente assente e quarantena presente prima della prova.
+Nessuna modifica di ACL, esclusioni ESLint, regole, dipendenze o protezioni.
+
+**Lint completo PASS, exit code 0**, eseguito dal coordinatore da `frontend/`
+sulla sorgente `e6bc26767f8a5aff77f4c0e3c49df3c69bfade7d`, con Node
+`22.17.1` e npm `10.9.2` selezionati solo per il processo e i suoi figli:
+`npm run lint` → `eslint .`, senza opzioni aggiuntive. Non è una prova limitata
+ai file versionati: è lo stesso comando completo che prima si bloccava.
+
+Ricevuta locale: `tmp/lint-cache-recovery-20261028/verification.json`, SHA256
+`f175c4128b65d94a083e6fd6872a1e921a88f5f32bd7e42a0c34b2ae40530383`;
+contiene versioni, risultato, stato dei percorsi e hash di manifest, lockfile
+e configurazione ESLint rimasti invariati. I precedenti esiti negativi e la
+ricevuta dell'audit cloud restano evidenze storiche distinte.
+
+Le altre cache nella radice e nel backend risultavano anch'esse inaccessibili
+all'utente non elevato; non sono state spostate o qualificate da questa prova.
+Nessuna nuova build, suite, modifica ai job o verifica su dispositivi.
 
 ## Limiti comuni
 
