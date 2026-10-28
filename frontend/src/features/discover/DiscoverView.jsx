@@ -17,6 +17,7 @@ import { buildPilotCalendarSummary } from "./pilotCalendarSummary";
 import { createPilotWhyVisit, getPilotWhyContentForVisit } from "./pilotWhyVisit";
 import { getPilotMunicipalityContext } from "./pilotMunicipalityContext";
 import { PromotionPlacementCard } from "../promotions/PromotionPlacementCard";
+import { MarketsEntry } from "../markets/MarketsExplorer";
 
 export function OtherSaints({ saint, language }) {
   const [expanded, setExpanded] = useState(false);
@@ -261,6 +262,7 @@ export function DiscoverView({
   municipalityLocation = activeLocation,
   pilotWhyId,
   promotionCampaigns,
+  onMarketsOpen,
 }) {
   const [today, setToday] = useState(() => new Date());
   const pilot = isDefinitiveAppExperience();
@@ -345,6 +347,7 @@ export function DiscoverView({
           language={language}
           municipalityMode={pilot ? municipalityContext?.mode : undefined}
         />
+        {onMarketsOpen ? <MarketsEntry language={language} onOpen={onMarketsOpen} /> : null}
 
         {pilot ? (
           <PromotionPlacementCard

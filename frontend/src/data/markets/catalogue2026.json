@@ -1,0 +1,2506 @@
+{
+  "schemaVersion": 1,
+  "checked": "2026-10-14",
+  "validThrough": "2026-12-31",
+  "scope": "Partial FVG catalogue; validThrough is a conservative UI projection ceiling, not source certification.",
+  "sourceFile": "Mercati_FVG_verifica_2026-10-14.json",
+  "sourceSha256": "ccfed96ac417fb01c5a36002f7d2f9274b91968526301526958253324bb74e21",
+  "markets": [
+    {
+      "id": "M001",
+      "key": "pn",
+      "name": "Mercato cittadino",
+      "comune": "Pordenone",
+      "prov": "PN",
+      "kind": "Settimanale",
+      "cadence": "Mercoledì e sabato",
+      "place": "Centro cittadino; tracciato nella pagina comunale",
+      "url": "https://www.comune.pordenone.it/it/argomenti/mercato/cittadino",
+      "authority": "Comune di Pordenone",
+      "origin": "Originale",
+      "quality": "Documentato",
+      "checked": "2026-10-14",
+      "original_ids": "O012; O033",
+      "group": "regular",
+      "weekdays": [
+        3,
+        6
+      ],
+      "hours": "08:00–14:00",
+      "scheduleNote": "",
+      "auditNote": "Giorni confermati, 08:00–14:00. Non validata l'intera descrizione delle vie nel file originale.",
+      "titleAliases": [],
+      "directionsQuery": ""
+    },
+    {
+      "id": "M002",
+      "key": "sacile",
+      "name": "Mercato settimanale",
+      "comune": "Sacile",
+      "prov": "PN",
+      "kind": "Settimanale",
+      "cadence": "Giovedì",
+      "place": "Centro cittadino",
+      "url": "https://www.visitsacile.it/manifestazioni/",
+      "authority": "Visit Sacile",
+      "origin": "Originale",
+      "quality": "Documentato",
+      "checked": "2026-10-14",
+      "original_ids": "O017",
+      "group": "regular",
+      "weekdays": [
+        4
+      ],
+      "hours": "",
+      "scheduleNote": "",
+      "auditNote": "Distinto dal mercato agricolo Agrizero del martedì.",
+      "titleAliases": [],
+      "directionsQuery": ""
+    },
+    {
+      "id": "M003",
+      "key": "codroipo",
+      "name": "Mercato settimanale",
+      "comune": "Codroipo",
+      "prov": "UD",
+      "kind": "Settimanale",
+      "cadence": "Martedì",
+      "place": "",
+      "url": "https://www.comune.codroipo.ud.it/it/vivere-il-comune-224008/eventi-224010/mercato-settimanale-163515",
+      "authority": "Comune di Codroipo",
+      "origin": "Originale",
+      "quality": "Documentato",
+      "checked": "2026-10-14",
+      "original_ids": "O041",
+      "group": "regular",
+      "weekdays": [
+        2
+      ],
+      "hours": "",
+      "scheduleNote": "",
+      "auditNote": "La pagina comunale indica tutti i martedì. Non ripresa l'affermazione promozionale sulle dimensioni.",
+      "titleAliases": [],
+      "directionsQuery": ""
+    },
+    {
+      "id": "M004",
+      "key": "sdsett",
+      "name": "Mercato settimanale",
+      "comune": "San Daniele del Friuli",
+      "prov": "UD",
+      "kind": "Settimanale",
+      "cadence": "Mercoledì mattina",
+      "place": "Viale Trento Trieste",
+      "url": "https://www.infosandaniele.com/it/turismo/manifestazioni/mercato-settimanale",
+      "authority": "Pro San Daniele",
+      "origin": "Originale",
+      "quality": "Documentato",
+      "checked": "2026-10-14",
+      "original_ids": "O039",
+      "group": "regular",
+      "weekdays": [
+        3
+      ],
+      "hours": "",
+      "scheduleNote": "",
+      "auditNote": "Correggere lunedì in mercoledì.",
+      "titleAliases": [],
+      "directionsQuery": "Viale Trento Trieste, San Daniele del Friuli"
+    },
+    {
+      "id": "M005",
+      "key": "palmanova",
+      "name": "Mercato settimanale",
+      "comune": "Palmanova",
+      "prov": "UD",
+      "kind": "Settimanale",
+      "cadence": "Lunedì",
+      "place": "",
+      "url": "https://www.comune.palmanova.ud.it/it/novita-179021/avvisi-179024/nuove-concessioni-dei-posteggi-al-mercato-settimanale-proroga-al-27-gennaio-2024-227302",
+      "authority": "Comune di Palmanova",
+      "origin": "Originale",
+      "quality": "Documentato",
+      "checked": "2026-10-14",
+      "original_ids": "O043",
+      "group": "regular",
+      "weekdays": [
+        1
+      ],
+      "hours": "",
+      "scheduleNote": "La fonte documenta il giorno abituale. Non è disponibile un calendario delle eccezioni.",
+      "auditNote": "Il Comune identifica espressamente il mercato del lunedì. Atto pubblicato nel 2024; nessun calendario delle eccezioni acquisito.",
+      "titleAliases": [],
+      "directionsQuery": ""
+    },
+    {
+      "id": "M006",
+      "key": "grado",
+      "name": "Mercato settimanale",
+      "comune": "Grado",
+      "prov": "GO",
+      "kind": "Settimanale",
+      "cadence": "Sabato",
+      "place": "Viale Italia",
+      "url": "https://grado.it/it/eventi/mercato-settimanale",
+      "authority": "Portale turistico Grado",
+      "origin": "Originale",
+      "quality": "Documentato",
+      "checked": "2026-10-14",
+      "original_ids": "O040",
+      "group": "regular",
+      "weekdays": [
+        6
+      ],
+      "hours": "08:00–13:00",
+      "scheduleNote": "",
+      "auditNote": "08:00–13:00; annuale. Non confondere con i mercati stagionali o quello coperto.",
+      "titleAliases": [],
+      "directionsQuery": "Viale Italia, Grado"
+    },
+    {
+      "id": "M007",
+      "key": "cormons",
+      "name": "Mercato settimanale",
+      "comune": "Cormons",
+      "prov": "GO",
+      "kind": "Settimanale",
+      "cadence": "Venerdì",
+      "place": "",
+      "url": "https://www.comune.cormons.go.it/it/mercato-settimanale-zona-rossa-15615",
+      "authority": "Comune di Cormons",
+      "origin": "Originale",
+      "quality": "Documentato",
+      "checked": "2026-10-14",
+      "original_ids": "O051",
+      "group": "regular",
+      "weekdays": [
+        5
+      ],
+      "hours": "",
+      "scheduleNote": "Il giorno abituale è riportato in un avviso storico del Comune. Verificare gli avvisi più recenti.",
+      "auditNote": "Correggere giovedì in venerdì. La fonte comunale consultata è un avviso storico: controllare gli avvisi per spostamenti.",
+      "titleAliases": [],
+      "directionsQuery": ""
+    },
+    {
+      "id": "M008",
+      "key": "monfalcone",
+      "name": "Mercato settimanale",
+      "comune": "Monfalcone",
+      "prov": "GO",
+      "kind": "Settimanale",
+      "cadence": "Mercoledì",
+      "place": "Centro cittadino",
+      "url": "https://www.comune.monfalcone.go.it/it/amministrazione-trasparente-5724/provvedimenti-5795/provvedimenti-organi-indirizzo-politico-5796",
+      "authority": "Comune di Monfalcone",
+      "origin": "Originale",
+      "quality": "Documentato",
+      "checked": "2026-10-14",
+      "original_ids": "O044",
+      "group": "regular",
+      "weekdays": [
+        3
+      ],
+      "hours": "",
+      "scheduleNote": "",
+      "auditNote": "La documentazione comunale identifica il mercato settimanale del mercoledì. Nel file era martedì.",
+      "titleAliases": [],
+      "directionsQuery": ""
+    },
+    {
+      "id": "M009",
+      "key": "ronchi",
+      "name": "Mercato settimanale",
+      "comune": "Ronchi dei Legionari",
+      "prov": "GO",
+      "kind": "Settimanale",
+      "cadence": "Mercoledì",
+      "place": "",
+      "url": "https://www.comune.ronchideilegionari.go.it/it/servizi-28553/assegnazione-di-n-13-posteggi-in-concessione-per-lesercizio-del-commercio-136195",
+      "authority": "Comune di Ronchi dei Legionari",
+      "origin": "Originale",
+      "quality": "Documentato",
+      "checked": "2026-10-14",
+      "original_ids": "O054",
+      "group": "regular",
+      "weekdays": [
+        3
+      ],
+      "hours": "",
+      "scheduleNote": "",
+      "auditNote": "Correggere venerdì in mercoledì; documentato dall'avviso di assegnazione dei posteggi.",
+      "titleAliases": [],
+      "directionsQuery": ""
+    },
+    {
+      "id": "M010",
+      "key": "cividalesett",
+      "name": "Mercato settimanale",
+      "comune": "Cividale del Friuli",
+      "prov": "UD",
+      "kind": "Settimanale",
+      "cadence": "Sabato",
+      "place": "",
+      "url": "https://www.comune.cividale-del-friuli.ud.it/",
+      "authority": "Comune di Cividale del Friuli",
+      "origin": "Originale",
+      "quality": "Documentato",
+      "checked": "2026-10-14",
+      "original_ids": "O045",
+      "group": "regular",
+      "weekdays": [
+        6
+      ],
+      "hours": "",
+      "scheduleNote": "",
+      "auditNote": "La pagina comunale consultata indica ogni sabato. Non confondere con il Baule del Diavolo.",
+      "titleAliases": [],
+      "directionsQuery": ""
+    },
+    {
+      "id": "M011",
+      "key": "gemonasett",
+      "name": "Mercato settimanale",
+      "comune": "Gemona del Friuli",
+      "prov": "UD",
+      "kind": "Settimanale",
+      "cadence": "Venerdì",
+      "place": "Piazza Comelli (1° e ultimo venerdì); piazza del Ferro (altri venerdì)",
+      "url": "https://visitgemona.com/servizi/contatti/",
+      "authority": "Visit Gemona",
+      "origin": "Originale",
+      "quality": "Documentato",
+      "checked": "2026-10-14",
+      "original_ids": "O052",
+      "group": "regular",
+      "weekdays": [
+        5
+      ],
+      "hours": "08:00–13:00",
+      "scheduleNote": "La sede cambia: piazza Comelli il primo e l’ultimo venerdì del mese; piazza del Ferro gli altri venerdì.",
+      "auditNote": "08:00–13:00 secondo Visit Gemona. Sede variabile nello stesso mese; controllare anche gli avvisi comunali.",
+      "titleAliases": [],
+      "directionsQuery": ""
+    },
+    {
+      "id": "M012",
+      "key": "pasiano",
+      "name": "Mercato settimanale",
+      "comune": "Pasiano di Pordenone",
+      "prov": "PN",
+      "kind": "Settimanale",
+      "cadence": "Venerdì",
+      "place": "Piazza Alcide De Gasperi",
+      "url": "https://comune.pasiano.pn.it/it/novita-213726/notizie-213727/mercati-241366",
+      "authority": "Comune di Pasiano di Pordenone",
+      "origin": "Originale",
+      "quality": "Documentato",
+      "checked": "2026-10-14",
+      "original_ids": "O029",
+      "group": "regular",
+      "weekdays": [
+        5
+      ],
+      "hours": "",
+      "scheduleNote": "Informazione tratta da una pagina comunale aggiornata nel 2024.",
+      "auditNote": "Distinto dal mercato agricolo del sabato. Pagina comunale aggiornata nel 2024.",
+      "titleAliases": [],
+      "directionsQuery": "Piazza Alcide De Gasperi, Pasiano di Pordenone"
+    },
+    {
+      "id": "M013",
+      "key": "sesto",
+      "name": "Mercato settimanale del capoluogo",
+      "comune": "Sesto al Reghena",
+      "prov": "PN",
+      "kind": "Settimanale",
+      "cadence": "Mercoledì",
+      "place": "Sesto; via Riva",
+      "url": "https://www.facebook.com/comune.sestoalreghena/posts/1335292495294213/",
+      "authority": "Comune di Sesto al Reghena, pagina Facebook",
+      "origin": "Disaggregazione",
+      "quality": "Documentato",
+      "checked": "2026-10-14",
+      "original_ids": "O009",
+      "group": "regular",
+      "weekdays": [
+        3
+      ],
+      "hours": "",
+      "scheduleNote": "",
+      "auditNote": "Il post comunale distingue capoluogo mercoledì, Bagnarola martedì e Ramuscello lunedì.",
+      "titleAliases": [],
+      "directionsQuery": "Sesto; via Riva, Sesto al Reghena"
+    },
+    {
+      "id": "M014",
+      "key": "bagnarola",
+      "name": "Mercato di Bagnarola",
+      "comune": "Sesto al Reghena",
+      "prov": "PN",
+      "kind": "Settimanale",
+      "cadence": "Martedì",
+      "place": "Bagnarola",
+      "url": "https://www.facebook.com/comune.sestoalreghena/posts/1335292495294213/",
+      "authority": "Comune di Sesto al Reghena, pagina Facebook",
+      "origin": "Disaggregazione",
+      "quality": "Documentato",
+      "checked": "2026-10-14",
+      "original_ids": "",
+      "group": "regular",
+      "weekdays": [
+        2
+      ],
+      "hours": "",
+      "scheduleNote": "",
+      "auditNote": "È il mercato cui si riferisce il martedì della voce generica del file.",
+      "titleAliases": [],
+      "directionsQuery": ""
+    },
+    {
+      "id": "M015",
+      "key": "ramuscello",
+      "name": "Mercato di Ramuscello",
+      "comune": "Sesto al Reghena",
+      "prov": "PN",
+      "kind": "Settimanale",
+      "cadence": "Lunedì mattina",
+      "place": "Ramuscello",
+      "url": "https://www.facebook.com/comune.sestoalreghena/posts/1335292495294213/",
+      "authority": "Comune di Sesto al Reghena, pagina Facebook",
+      "origin": "Aggiunta",
+      "quality": "Documentato",
+      "checked": "2026-10-14",
+      "original_ids": "",
+      "group": "regular",
+      "weekdays": [
+        1
+      ],
+      "hours": "",
+      "scheduleNote": "Mercato nella frazione di Ramuscello.",
+      "auditNote": "Nuovo mercato segnalato dal Comune, con avvio il 13 aprile; la fonte annuncia due banchi.",
+      "titleAliases": [],
+      "directionsQuery": ""
+    },
+    {
+      "id": "M016",
+      "key": "muggiasett",
+      "name": "Mercato settimanale",
+      "comune": "Muggia",
+      "prov": "TS",
+      "kind": "Settimanale",
+      "cadence": "Giovedì",
+      "place": "Piazzale Alto Adriatico, sede temporanea",
+      "url": "https://www.turismofvg.it/events/weekly-market-486992",
+      "authority": "PromoTurismoFVG / Comune di Muggia",
+      "origin": "Aggiunta",
+      "quality": "Documentato",
+      "checked": "2026-10-14",
+      "original_ids": "",
+      "group": "regular",
+      "weekdays": [
+        4
+      ],
+      "hours": "08:00–13:00 indicativi",
+      "scheduleNote": "Sede temporanea dal 7 maggio 2026, fino al termine dei lavori del torrente Fugnan. Verificare eventuali aggiornamenti.",
+      "auditNote": "08:00–13:00 indicativi. Dal 7 maggio 2026 trasferito da via Tonello fino al termine dei lavori del torrente Fugnan.",
+      "titleAliases": [],
+      "directionsQuery": "Piazzale Alto Adriatico, sede temporanea, Muggia"
+    },
+    {
+      "id": "M017",
+      "key": "sdagri",
+      "name": "Mercato contadino",
+      "comune": "San Daniele del Friuli",
+      "prov": "UD",
+      "kind": "Agricolo",
+      "cadence": "Sabato mattina",
+      "place": "Le Corti, via Trento Trieste",
+      "url": "https://www.infosandaniele.com/it/turismo/manifestazioni/mercato-settimanale",
+      "authority": "Pro San Daniele",
+      "origin": "Aggiunta",
+      "quality": "Documentato",
+      "checked": "2026-10-14",
+      "original_ids": "",
+      "group": "regular",
+      "weekdays": [
+        6
+      ],
+      "hours": "08:00–12:30",
+      "scheduleNote": "",
+      "auditNote": "08:00–12:30.",
+      "titleAliases": [],
+      "directionsQuery": "Le Corti, via Trento Trieste, San Daniele del Friuli"
+    },
+    {
+      "id": "M018",
+      "key": "sacileagri",
+      "name": "Agrizero",
+      "comune": "Sacile",
+      "prov": "PN",
+      "kind": "Agricolo",
+      "cadence": "Martedì",
+      "place": "",
+      "url": "https://www.visitsacile.it/manifestazioni/",
+      "authority": "Visit Sacile",
+      "origin": "Aggiunta",
+      "quality": "Documentato",
+      "checked": "2026-10-14",
+      "original_ids": "",
+      "group": "regular",
+      "weekdays": [
+        2
+      ],
+      "hours": "",
+      "scheduleNote": "",
+      "auditNote": "Mercato agricolo a chilometro zero, distinto dal mercato cittadino del giovedì.",
+      "titleAliases": [],
+      "directionsQuery": ""
+    },
+    {
+      "id": "M019",
+      "key": "pasianoagri",
+      "name": "Mercato agricolo km 0",
+      "comune": "Pasiano di Pordenone",
+      "prov": "PN",
+      "kind": "Agricolo",
+      "cadence": "Sabato",
+      "place": "Piazza Alcide De Gasperi",
+      "url": "https://comune.pasiano.pn.it/it/novita-213726/notizie-213727/mercati-241366",
+      "authority": "Comune di Pasiano di Pordenone",
+      "origin": "Aggiunta",
+      "quality": "Documentato",
+      "checked": "2026-10-14",
+      "original_ids": "",
+      "group": "regular",
+      "weekdays": [
+        6
+      ],
+      "hours": "07:00–13:00",
+      "scheduleNote": "Informazione tratta da una pagina comunale aggiornata nel 2024.",
+      "auditNote": "07:00–13:00; pagina comunale aggiornata nel 2024.",
+      "titleAliases": [],
+      "directionsQuery": "Piazza Alcide De Gasperi, Pasiano di Pordenone"
+    },
+    {
+      "id": "M020",
+      "key": "avianoagri",
+      "name": "Mercato contadino",
+      "comune": "Aviano",
+      "prov": "PN",
+      "kind": "Agricolo",
+      "cadence": "Martedì",
+      "place": "Via Ospedale, parcheggio vicino al parco giochi",
+      "url": "https://www.comune.aviano.pn.it/it/servizi-212823/emanazione-e-istruttoria-domande-relative-al-bando-annuale-per-lassegnazione-dei-posteggi-del-mercato-contadino-265644",
+      "authority": "Comune di Aviano",
+      "origin": "Aggiunta",
+      "quality": "Documentato",
+      "checked": "2026-10-14",
+      "original_ids": "",
+      "group": "regular",
+      "weekdays": [
+        2
+      ],
+      "hours": "",
+      "scheduleNote": "",
+      "auditNote": "Cadenza settimanale documentata dalla scheda comunale.",
+      "titleAliases": [],
+      "directionsQuery": "Via Ospedale, parcheggio vicino al parco giochi, Aviano"
+    },
+    {
+      "id": "M021",
+      "key": "tsagri",
+      "name": "Campagna Amica – piazza Vittorio Veneto",
+      "comune": "Trieste",
+      "prov": "TS",
+      "kind": "Agricolo",
+      "cadence": "Martedì",
+      "place": "Piazza Vittorio Veneto",
+      "url": "https://www.discover-trieste.it/vivi/shopping/andar-per-mercatini",
+      "authority": "Discover Trieste / Comune di Trieste",
+      "origin": "Aggiunta",
+      "quality": "Documentato",
+      "checked": "2026-10-14",
+      "original_ids": "",
+      "group": "regular",
+      "weekdays": [
+        2
+      ],
+      "hours": "08:00–13:00",
+      "scheduleNote": "",
+      "auditNote": "08:00–13:00. Non accorpato agli altri mercati Campagna Amica di Trieste.",
+      "titleAliases": [],
+      "directionsQuery": "Piazza Vittorio Veneto, Trieste"
+    },
+    {
+      "id": "M022",
+      "key": "tscoperto",
+      "name": "Mercato coperto",
+      "comune": "Trieste",
+      "prov": "TS",
+      "kind": "Coperto / plurigiornaliero",
+      "cadence": "Dal lunedì al sabato",
+      "place": "Via Carducci 36",
+      "url": "https://www.discover-trieste.it/vivi/shopping/il-mercato-coperto",
+      "authority": "Discover Trieste / Comune di Trieste",
+      "origin": "Aggiunta",
+      "quality": "Documentato",
+      "checked": "2026-10-14",
+      "original_ids": "",
+      "group": "regular",
+      "weekdays": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+      ],
+      "hours": "Lunedì 08:00–14:00; martedì–sabato 08:00–17:00",
+      "scheduleNote": "",
+      "auditNote": "Lunedì 08:00–14:00; martedì–sabato 08:00–17:00 secondo Discover Trieste.",
+      "titleAliases": [],
+      "directionsQuery": "Via Carducci 36, Trieste"
+    },
+    {
+      "id": "M023",
+      "key": "tsorto",
+      "name": "Mercato ortofrutticolo – accesso al pubblico",
+      "comune": "Trieste",
+      "prov": "TS",
+      "kind": "Coperto / plurigiornaliero",
+      "cadence": "Dal martedì al sabato",
+      "place": "Riva Ottaviano Augusto 12",
+      "url": "https://www.discover-trieste.it/vivi/shopping/andar-per-mercatini",
+      "authority": "Discover Trieste / Comune di Trieste",
+      "origin": "Aggiunta",
+      "quality": "Documentato",
+      "checked": "2026-10-14",
+      "original_ids": "",
+      "group": "regular",
+      "weekdays": [
+        2,
+        3,
+        4,
+        5,
+        6
+      ],
+      "hours": "Accesso al pubblico 09:00–10:00",
+      "scheduleNote": "",
+      "auditNote": "Accesso al pubblico dalle 09:00 alle 10:00 secondo Discover Trieste. Non è un mercatino dell'usato.",
+      "titleAliases": [],
+      "directionsQuery": "Riva Ottaviano Augusto 12, Trieste"
+    },
+    {
+      "id": "M024",
+      "key": "udriuso",
+      "name": "Mercatino del Riuso",
+      "comune": "Udine",
+      "prov": "UD",
+      "kind": "Usato / riuso",
+      "cadence": "1° sabato; eccezioni da calendario",
+      "place": "Piazza Primo Maggio",
+      "url": "https://prolocoregionefvg.it/eventi-delle-associate/mercatino-del-riuso-4/",
+      "authority": "UNPLI FVG / organizzatore",
+      "origin": "Originale",
+      "quality": "Conflitto",
+      "checked": "2026-10-14",
+      "original_ids": "O057",
+      "group": "occasional",
+      "weekdays": [],
+      "hours": "",
+      "scheduleNote": "",
+      "auditNote": "Nel 2026 la descrizione UNPLI annuncia anche il 21 marzo e nessun mercatino in aprile. La lista automatica include invece il 4 aprile: conflitto da risolvere con l'organizzatore.",
+      "titleAliases": [],
+      "directionsQuery": ""
+    },
+    {
+      "id": "M025",
+      "key": "anticamente",
+      "name": "AnticaMente",
+      "comune": "Aviano",
+      "prov": "PN",
+      "kind": "Antiquariato / brocantage",
+      "cadence": "1ª domenica; edizioni speciali",
+      "place": "Centro di Aviano",
+      "url": "https://www.prolocoaviano.it/anticamente/",
+      "authority": "Pro Loco Aviano",
+      "origin": "Originale",
+      "quality": "Documentato",
+      "checked": "2026-10-14",
+      "original_ids": "O060",
+      "group": "occasional",
+      "weekdays": [],
+      "hours": "",
+      "scheduleNote": "Sono possibili edizioni speciali e spostamenti: consultare il calendario dell’organizzatore.",
+      "auditNote": "Nel 2026 l'edizione pasquale risulta il 6 aprile. Controllare il calendario annuale, non soltanto la ricorrenza.",
+      "titleAliases": [],
+      "directionsQuery": ""
+    },
+    {
+      "id": "M026",
+      "key": "svmensile",
+      "name": "Mercatino dell'antiquariato",
+      "comune": "San Vito al Tagliamento",
+      "prov": "PN",
+      "kind": "Antiquariato",
+      "cadence": "1ª domenica",
+      "place": "Piazza del Popolo",
+      "url": "https://www.facebook.com/prosanvito/posts/1570149611819450/",
+      "authority": "Pro San Vito, pagina Facebook",
+      "origin": "Originale",
+      "quality": "Parziale",
+      "checked": "2026-10-14",
+      "original_ids": "O061",
+      "group": "occasional",
+      "weekdays": [],
+      "hours": "",
+      "scheduleNote": "",
+      "auditNote": "Appuntamento del 4 ottobre 2026 confermato da Pro San Vito. Nome «Cose d'Altri Tempi» ed esclusioni annuali non validati.",
+      "titleAliases": [],
+      "directionsQuery": ""
+    },
+    {
+      "id": "M027",
+      "key": "cervignano",
+      "name": "Mercatino dell'usato",
+      "comune": "Cervignano del Friuli",
+      "prov": "UD",
+      "kind": "Usato / antiquariato",
+      "cadence": "1ª domenica",
+      "place": "Piazza Indipendenza",
+      "url": "https://www.prolococervignanofvg.it/comunicazione-importante-mercatino-dellusato-della-prima-domenica-del-mese/",
+      "authority": "Pro Loco Cervignano",
+      "origin": "Originale",
+      "quality": "Documentato",
+      "checked": "2026-10-14",
+      "original_ids": "O063",
+      "group": "occasional",
+      "weekdays": [],
+      "hours": "Dalla mattina al tardo pomeriggio",
+      "scheduleNote": "",
+      "auditNote": "Comunicazione dell'organizzatore di settembre 2026: prima domenica, dalla mattina al tardo pomeriggio.",
+      "titleAliases": [],
+      "directionsQuery": "Piazza Indipendenza, Cervignano del Friuli"
+    },
+    {
+      "id": "M028",
+      "key": "mercantigiardino",
+      "name": "Mercanti in Giardino",
+      "comune": "Codroipo",
+      "prov": "UD",
+      "kind": "Usato / antiquariato",
+      "cadence": "2ª domenica, escluso agosto",
+      "place": "Piazza Giardini",
+      "url": "https://prolocoregionefvg.it/eventi-delle-associate/mercatino-dellusato-codroipo/",
+      "authority": "UNPLI FVG",
+      "origin": "Originale",
+      "quality": "Documentato",
+      "checked": "2026-10-14",
+      "original_ids": "O068",
+      "group": "occasional",
+      "weekdays": [],
+      "hours": "Dalle 08:00",
+      "scheduleNote": "",
+      "auditNote": "Dalle 08:00. Calendario 2026 pubblicato da UNPLI.",
+      "titleAliases": [],
+      "directionsQuery": "Piazza Giardini, Codroipo"
+    },
+    {
+      "id": "M029",
+      "key": "venzone",
+      "name": "Mercanti nel Borgo – Antigae e… a Venzon",
+      "comune": "Venzone",
+      "prov": "UD",
+      "kind": "Antiquariato",
+      "cadence": "2ª domenica da validare come regola annuale",
+      "place": "Centro storico",
+      "url": "https://www.turismofvg.it/eventi/mercanti-nel-borgo-antigae-e-a-vencon-478654",
+      "authority": "PromoTurismoFVG",
+      "origin": "Originale",
+      "quality": "Parziale",
+      "checked": "2026-10-14",
+      "original_ids": "O069",
+      "group": "occasional",
+      "weekdays": [],
+      "hours": "",
+      "scheduleNote": "",
+      "auditNote": "Evento dell'8 novembre 2026 documentato. Non ricostruito un calendario annuale completo né le sospensioni.",
+      "titleAliases": [],
+      "directionsQuery": ""
+    },
+    {
+      "id": "M030",
+      "key": "gomensile",
+      "name": "Mercatino dell'antiquariato",
+      "comune": "Gorizia",
+      "prov": "GO",
+      "kind": "Antiquariato",
+      "cadence": "2ª domenica",
+      "place": "Giardini pubblici di corso Verdi oppure parte alta di corso Italia",
+      "url": "https://prolocoregionefvg.it/eventi-delle-associate/mercatino-dellantiquariato-13/",
+      "authority": "UNPLI FVG / Associazione Nuovo Lavoro",
+      "origin": "Originale",
+      "quality": "Documentato",
+      "checked": "2026-10-14",
+      "original_ids": "O070",
+      "group": "occasional",
+      "weekdays": [],
+      "hours": "",
+      "scheduleNote": "La fonte riporta più possibili sedi. Verificare il luogo della singola edizione.",
+      "auditNote": "Il titolo della scheda indica piazza Battisti; il testo specifica due possibili aree. Verificare la sede della singola edizione.",
+      "titleAliases": [],
+      "directionsQuery": ""
+    },
+    {
+      "id": "M031",
+      "key": "ricorditempo",
+      "name": "Ricordi del Tempo",
+      "comune": "Spilimbergo",
+      "prov": "PN",
+      "kind": "Antiquariato",
+      "cadence": "4° sabato",
+      "place": "Corso Roma",
+      "url": "https://www.calameo.com/books/00274640490dd6ce6d767",
+      "authority": "Comune di Spilimbergo, Estate 2026",
+      "origin": "Originale",
+      "quality": "Documentato",
+      "checked": "2026-10-14",
+      "original_ids": "O071",
+      "group": "occasional",
+      "weekdays": [],
+      "hours": "",
+      "scheduleNote": "",
+      "auditNote": "La guida turistica indica il quarto sabato; il programma comunale 2026 riporta 25 luglio e 22 agosto, non il terzo sabato.",
+      "titleAliases": [],
+      "directionsQuery": "Corso Roma, Spilimbergo"
+    },
+    {
+      "id": "M032",
+      "key": "gradisca",
+      "name": "Mercatino Fortezza / antiquariato",
+      "comune": "Gradisca d'Isonzo",
+      "prov": "GO",
+      "kind": "Antiquariato / usato",
+      "cadence": "3ª domenica",
+      "place": "Centro; area di piazza Unità d'Italia",
+      "url": "https://prolocoregionefvg.it/eventi-delle-associate/mercatino-dellantiquariato/",
+      "authority": "UNPLI FVG",
+      "origin": "Originale",
+      "quality": "Documentato",
+      "checked": "2026-10-14",
+      "original_ids": "O073",
+      "group": "occasional",
+      "weekdays": [],
+      "hours": "",
+      "scheduleNote": "Orario e perimetro esatto della manifestazione da verificare presso la fonte.",
+      "auditNote": "Ricorrenza confermata da UNPLI e turismo regionale. Orario e perimetro esatto non validati.",
+      "titleAliases": [],
+      "directionsQuery": ""
+    },
+    {
+      "id": "M033",
+      "key": "tsantico",
+      "name": "Mercatino dell'Antiquariato e dell'Usato",
+      "comune": "Trieste",
+      "prov": "TS",
+      "kind": "Antiquariato / usato",
+      "cadence": "3ª domenica + date straordinarie",
+      "place": "Largo Granatieri e area del Ghetto",
+      "url": "https://www.discover-trieste.it/vivi/trieste-now/mercatino-antiquariato",
+      "authority": "Discover Trieste / Comune di Trieste",
+      "origin": "Originale",
+      "quality": "Documentato",
+      "checked": "2026-10-14",
+      "original_ids": "O074",
+      "group": "occasional",
+      "weekdays": [],
+      "hours": "",
+      "scheduleNote": "",
+      "auditNote": "Il calendario 2026 comprende luglio e agosto e la data aggiuntiva dell'11 ottobre. Ponterosso è un'altra manifestazione.",
+      "titleAliases": [],
+      "directionsQuery": "Largo Granatieri e area del Ghetto, Trieste"
+    },
+    {
+      "id": "M034",
+      "key": "gemona",
+      "name": "Mercatino delle pulci e del libro usato",
+      "comune": "Gemona del Friuli",
+      "prov": "UD",
+      "kind": "Pulci / libri usati",
+      "cadence": "1ª domenica, escluso agosto",
+      "place": "Via Bini, centro storico",
+      "url": "https://www.turismofvg.it/eventi/mercatino-delle-pulci-e-del-libro-usato-290796",
+      "authority": "PromoTurismoFVG / organizzatori",
+      "origin": "Originale",
+      "quality": "Documentato",
+      "checked": "2026-10-14",
+      "original_ids": "O075",
+      "group": "occasional",
+      "weekdays": [],
+      "hours": "",
+      "scheduleNote": "Sospensione abituale ad agosto. Manifestazione distinta da Tesori del Tempo a Campagnola.",
+      "auditNote": "Non terza domenica. Distinto da Tesori del Tempo a Campagnola.",
+      "titleAliases": [],
+      "directionsQuery": "Via Bini, centro storico, Gemona del Friuli"
+    },
+    {
+      "id": "M035",
+      "key": "soffitta",
+      "name": "La Soffitta in Piazza",
+      "comune": "Pordenone",
+      "prov": "PN",
+      "kind": "Usato / riuso",
+      "cadence": "Ultima domenica: marzo–giugno e settembre–novembre 2026",
+      "place": "Piazza Risorgimento",
+      "url": "https://www.comune.pordenone.it/it/novita/divieti-limitazioni-e-prescrizioni-alla-circolazione-per-lo-svolgimento-dei-mercatini",
+      "authority": "Comune di Pordenone (avviso indicizzato)",
+      "origin": "Disaggregazione",
+      "quality": "Documentato",
+      "checked": "2026-10-14",
+      "original_ids": "O078",
+      "group": "occasional",
+      "weekdays": [],
+      "hours": "",
+      "scheduleNote": "Calendario limitato alle date pubblicate del 2026: marzo–giugno e settembre–novembre.",
+      "auditNote": "Solo sette date 2026: 29/03, 26/04, 31/05, 28/06, 27/09, 25/10, 29/11. Non estendere ad altri mesi.",
+      "titleAliases": [],
+      "directionsQuery": "Piazza Risorgimento, Pordenone"
+    },
+    {
+      "id": "M036",
+      "key": "contrada",
+      "name": "Antiquariato in Contrada",
+      "comune": "Pordenone",
+      "prov": "PN",
+      "kind": "Antiquariato",
+      "cadence": "Ultima domenica; esclusioni da confermare con l'organizzatore",
+      "place": "Corso Vittorio Emanuele II",
+      "url": "https://www.cosedicasa.com/mercatini/pordenone-corso-vittorio-emanuele",
+      "authority": "Cose di Casa (fonte secondaria)",
+      "origin": "Disaggregazione",
+      "quality": "Parziale",
+      "checked": "2026-10-14",
+      "original_ids": "O078",
+      "group": "occasional",
+      "weekdays": [],
+      "hours": "",
+      "scheduleNote": "",
+      "auditNote": "Riscontro secondario aggiornato al 9 febbraio 2026: sospensione luglio–agosto. La gestione di dicembre richiede conferma; non accorpare alla Soffitta.",
+      "titleAliases": [],
+      "directionsQuery": ""
+    },
+    {
+      "id": "M037",
+      "key": "sacellum",
+      "name": "Sacellum – la piazza delle antichità",
+      "comune": "Sacile",
+      "prov": "PN",
+      "kind": "Antiquariato / usato",
+      "cadence": "4ª domenica",
+      "place": "Piazza del Popolo",
+      "url": "https://www.prosacile.it/antiquariato",
+      "authority": "Pro Sacile",
+      "origin": "Originale",
+      "quality": "Documentato",
+      "checked": "2026-10-14",
+      "original_ids": "O079",
+      "group": "occasional",
+      "weekdays": [],
+      "hours": "",
+      "scheduleNote": "Quarta domenica del mese. Le date delle singole edizioni non sono ancora inserite in questo catalogo.",
+      "auditNote": "Non ultima domenica. Il calendario 2026 comprende, per esempio, il 22 novembre.",
+      "titleAliases": [],
+      "directionsQuery": "Piazza del Popolo, Sacile"
+    },
+    {
+      "id": "M038",
+      "key": "sdantico",
+      "name": "Mercatino dell'antiquariato",
+      "comune": "San Daniele del Friuli",
+      "prov": "UD",
+      "kind": "Antiquariato",
+      "cadence": "Ultima domenica",
+      "place": "Vie del centro storico",
+      "url": "https://www.infosandaniele.com/it/turismo/manifestazioni/mercato-settimanale",
+      "authority": "Pro San Daniele",
+      "origin": "Originale",
+      "quality": "Documentato",
+      "checked": "2026-10-14",
+      "original_ids": "O081",
+      "group": "occasional",
+      "weekdays": [],
+      "hours": "08:00–18:00",
+      "scheduleNote": "Non è disponibile un calendario completo delle eccezioni.",
+      "auditNote": "08:00–18:00 secondo Pro San Daniele. Nessun calendario completo delle eccezioni acquisito.",
+      "titleAliases": [],
+      "directionsQuery": ""
+    },
+    {
+      "id": "M039",
+      "key": "baule",
+      "name": "Il Baule del Diavolo",
+      "comune": "Cividale del Friuli",
+      "prov": "UD",
+      "kind": "Usato / antiquariato",
+      "cadence": "4ª domenica; mesi di sospensione da confermare",
+      "place": "Centro storico",
+      "url": "https://www.turismofvg.it/eventi/il-baule-del-diavolo-475626",
+      "authority": "PromoTurismoFVG / Pro Loco Cividale",
+      "origin": "Originale",
+      "quality": "Parziale",
+      "checked": "2026-10-14",
+      "original_ids": "O080",
+      "group": "occasional",
+      "weekdays": [],
+      "hours": "",
+      "scheduleNote": "",
+      "auditNote": "Dalle 09:00 al tramonto. Fonte turismo 2026: 25 gennaio–22 novembre; non esplicita i mesi esclusi. Una fonte secondaria indica luglio, agosto e dicembre: non mantenere soltanto luglio come dato certo.",
+      "titleAliases": [],
+      "directionsQuery": ""
+    },
+    {
+      "id": "M040",
+      "key": "antiqua",
+      "name": "Udine Antiqua",
+      "comune": "Udine",
+      "prov": "UD",
+      "kind": "Antiquariato / vintage",
+      "cadence": "3ª domenica; possibili variazioni e date extra",
+      "place": "Piazza Primo Maggio",
+      "url": "https://www.turismofvg.it/events/udine-antiqua-474448",
+      "authority": "PromoTurismoFVG / organizzatore",
+      "origin": "Aggiunta",
+      "quality": "Documentato",
+      "checked": "2026-10-14",
+      "original_ids": "",
+      "group": "occasional",
+      "weekdays": [],
+      "hours": "",
+      "scheduleNote": "",
+      "auditNote": "Manifestazione distinta dall'ipotetica voce in piazza XX Settembre alla prima domenica. Non assumere che siano lo stesso mercato.",
+      "titleAliases": [],
+      "directionsQuery": "Piazza Primo Maggio, Udine"
+    },
+    {
+      "id": "M041",
+      "key": "vecchiricordi",
+      "name": "Vecchi Ricordi",
+      "comune": "Udine",
+      "prov": "UD",
+      "kind": "Antiquariato / collezionismo",
+      "cadence": "2ª domenica",
+      "place": "Via Vittorio Veneto, piazzetta Bertrando, piazza Duomo",
+      "url": "https://www.turismofvg.it/events/vecchi-ricordi-474442",
+      "authority": "PromoTurismoFVG / organizzatore",
+      "origin": "Aggiunta",
+      "quality": "Documentato",
+      "checked": "2026-10-14",
+      "original_ids": "",
+      "group": "occasional",
+      "weekdays": [],
+      "hours": "",
+      "scheduleNote": "",
+      "auditNote": "Calendario 2026 pubblicato da PromoTurismoFVG.",
+      "titleAliases": [],
+      "directionsQuery": "Via Vittorio Veneto, piazzetta Bertrando, piazza Duomo, Udine"
+    },
+    {
+      "id": "M042",
+      "key": "robis",
+      "name": "Robis di une volte",
+      "comune": "Udine",
+      "prov": "UD",
+      "kind": "Usato / hobbistica / collezionismo",
+      "cadence": "2ª e 5ª domenica",
+      "place": "Via R. Di Giusto, parcheggio di fronte alla chiesa Gesù Buon Pastore",
+      "url": "https://www.turismofvg.it/events/second-hand-market-robis-di-une-volte-474437",
+      "authority": "PromoTurismoFVG / Associazione Udin'Nova",
+      "origin": "Aggiunta",
+      "quality": "Documentato",
+      "checked": "2026-10-14",
+      "original_ids": "",
+      "group": "occasional",
+      "weekdays": [],
+      "hours": "",
+      "scheduleNote": "La quinta domenica ricorre soltanto in alcuni mesi. Le date delle singole edizioni non sono ancora inserite in questo catalogo.",
+      "auditNote": "La quinta domenica esiste soltanto in alcuni mesi. Fonte con periodo esteso fino a dicembre 2026.",
+      "titleAliases": [],
+      "directionsQuery": "Via R. Di Giusto, parcheggio di fronte alla chiesa Gesù Buon Pastore, Udine"
+    },
+    {
+      "id": "M043",
+      "key": "tesori",
+      "name": "Tesori del Tempo",
+      "comune": "Gemona del Friuli",
+      "prov": "UD",
+      "kind": "Usato",
+      "cadence": "3ª domenica",
+      "place": "Campagnola, area festeggiamenti, via Trasaghis 256",
+      "url": "https://prolocoregionefvg.it/eventi-delle-associate/tesori-del-tempo-mercatino-dellusato/",
+      "authority": "UNPLI FVG / Borgata Campagnola",
+      "origin": "Aggiunta",
+      "quality": "Documentato",
+      "checked": "2026-10-14",
+      "original_ids": "",
+      "group": "occasional",
+      "weekdays": [],
+      "hours": "08:00–16:00",
+      "scheduleNote": "",
+      "auditNote": "08:00–16:00; calendario 2026 esplicito. Distinto dal mercatino di via Bini.",
+      "titleAliases": [],
+      "directionsQuery": "Campagnola, area festeggiamenti, via Trasaghis 256, Gemona del Friuli"
+    },
+    {
+      "id": "M044",
+      "key": "creattiva",
+      "name": "CREATTIVAMENTE",
+      "comune": "Muggia",
+      "prov": "TS",
+      "kind": "Artigianato / vintage / riuso",
+      "cadence": "3° sabato con interruzioni e date extra nel 2026",
+      "place": "Piazza Galilei",
+      "url": "https://www.turismofvg.it/events/market-in-muggia-creattivamente",
+      "authority": "PromoTurismoFVG / organizzatore",
+      "origin": "Aggiunta",
+      "quality": "Documentato",
+      "checked": "2026-10-14",
+      "original_ids": "",
+      "group": "occasional",
+      "weekdays": [],
+      "hours": "09:00–17:00",
+      "scheduleNote": "Date pubblicate da marzo a giugno e da settembre a dicembre 2026.",
+      "auditNote": "09:00–17:00. Usare le date pubblicate: marzo–giugno e settembre–dicembre; nessuna estensione automatica a luglio e agosto.",
+      "titleAliases": [],
+      "directionsQuery": "Piazza Galilei, Muggia"
+    },
+    {
+      "id": "M045",
+      "key": "meta",
+      "name": "META",
+      "comune": "Muggia",
+      "prov": "TS",
+      "kind": "Artigianato / vintage / modernariato",
+      "cadence": "Calendario 2026: 1ª e 3ª domenica marzo–dicembre, più 13 dicembre",
+      "place": "Piazzetta Galilei",
+      "url": "https://www.turismofvg.it/events/market-in-muggia-meta",
+      "authority": "PromoTurismoFVG / organizzatore",
+      "origin": "Aggiunta",
+      "quality": "Documentato",
+      "checked": "2026-10-14",
+      "original_ids": "",
+      "group": "occasional",
+      "weekdays": [],
+      "hours": "",
+      "scheduleNote": "Calendario riferito al 2026; non è una ricorrenza valida per ogni anno.",
+      "auditNote": "Schema ricavato dalle date esplicite del 2026; non è una regola perpetua.",
+      "titleAliases": [],
+      "directionsQuery": "Piazzetta Galilei, Muggia"
+    },
+    {
+      "id": "M046",
+      "key": "aurisina",
+      "name": "Cose di vecchie case – mercatino in piazza",
+      "comune": "Duino-Aurisina",
+      "prov": "TS",
+      "kind": "Antiquariato / hobbistica",
+      "cadence": "3° sabato",
+      "place": "Piazza di Aurisina",
+      "url": "https://www.turismofvg.it/events/market-in-aurisina-square",
+      "authority": "PromoTurismoFVG / Associazione Cose di Vecchie Case",
+      "origin": "Aggiunta",
+      "quality": "Documentato",
+      "checked": "2026-10-14",
+      "original_ids": "",
+      "group": "occasional",
+      "weekdays": [],
+      "hours": "Dalle 08:00",
+      "scheduleNote": "",
+      "auditNote": "Dalle 08:00. Edizione del 17 ottobre 2026 documentata.",
+      "titleAliases": [],
+      "directionsQuery": "Piazza di Aurisina, Duino-Aurisina"
+    },
+    {
+      "id": "M047",
+      "key": "tram",
+      "name": "Mercatino al tram",
+      "comune": "Trieste",
+      "prov": "TS",
+      "kind": "Usato / artigianato",
+      "cadence": "2° sabato nel calendario 2026",
+      "place": "Opicina, piazzale Monte Re",
+      "url": "https://www.discover-trieste.it/vivi/trieste-now/mercatino-al-tram",
+      "authority": "Discover Trieste / Comune di Trieste",
+      "origin": "Aggiunta",
+      "quality": "Documentato",
+      "checked": "2026-10-14",
+      "original_ids": "",
+      "group": "occasional",
+      "weekdays": [],
+      "hours": "",
+      "scheduleNote": "La fonte prevede possibili recuperi la domenica in caso di maltempo. Il recupero va confermato con l’organizzatore.",
+      "auditNote": "Possibile recupero la domenica in caso di maltempo. Tutti i dodici appuntamenti 2026 sono espliciti.",
+      "titleAliases": [],
+      "directionsQuery": "Opicina, piazzale Monte Re, Trieste"
+    },
+    {
+      "id": "M048",
+      "key": "cavana",
+      "name": "Mercatino di Cavana",
+      "comune": "Trieste",
+      "prov": "TS",
+      "kind": "Antiquariato / usato",
+      "cadence": "1ª domenica; calendario 2026 da febbraio a dicembre",
+      "place": "Piazza Cavana e via del Pesce",
+      "url": "https://www.discover-trieste.it/vivi/trieste-now/mercatino-cavana",
+      "authority": "Discover Trieste / Associazione Mericordo",
+      "origin": "Aggiunta",
+      "quality": "Documentato",
+      "checked": "2026-10-14",
+      "original_ids": "",
+      "group": "occasional",
+      "weekdays": [],
+      "hours": "Dalle 08:00 al tramonto",
+      "scheduleNote": "Il calendario acquisito va da febbraio a dicembre 2026.",
+      "auditNote": "08:00–tramonto. Il calendario consultato non contiene gennaio.",
+      "titleAliases": [],
+      "directionsQuery": "Piazza Cavana e via del Pesce, Trieste"
+    },
+    {
+      "id": "M049",
+      "key": "portovecchio",
+      "name": "Mercatino di Porto Vecchio",
+      "comune": "Trieste",
+      "prov": "TS",
+      "kind": "Antiquariato / usato",
+      "cadence": "2ª domenica nel calendario 2026",
+      "place": "Largo Città di Santos",
+      "url": "https://www.discover-trieste.it/vivi/trieste-now/mercatino-di-porto-vecchio",
+      "authority": "Discover Trieste / Associazione Mericordo",
+      "origin": "Aggiunta",
+      "quality": "Documentato",
+      "checked": "2026-10-14",
+      "original_ids": "",
+      "group": "occasional",
+      "weekdays": [],
+      "hours": "Dalle 08:00 al tramonto",
+      "scheduleNote": "",
+      "auditNote": "08:00–tramonto.",
+      "titleAliases": [],
+      "directionsQuery": "Largo Città di Santos, Trieste"
+    },
+    {
+      "id": "M050",
+      "key": "ponterosso",
+      "name": "Mercatino di Ponterosso",
+      "comune": "Trieste",
+      "prov": "TS",
+      "kind": "Antiquariato / usato",
+      "cadence": "Date puntuali 2026; cadenza testuale in conflitto",
+      "place": "Ponterosso / via Bellini",
+      "url": "https://www.discover-trieste.it/vivi/trieste-now/mercatino-di-ponterosso",
+      "authority": "Discover Trieste / Associazione Mericordo",
+      "origin": "Aggiunta",
+      "quality": "Conflitto",
+      "checked": "2026-10-14",
+      "original_ids": "",
+      "group": "occasional",
+      "weekdays": [],
+      "hours": "",
+      "scheduleNote": "",
+      "auditNote": "La pagina dice «ultima domenica», ma elenca 22/03, 24/05, 23/08 e 22/11, che sono quarte e non ultime domeniche. Tenere le date come pubblicate e chiedere conferma all'organizzatore, senza correggere silenziosamente.",
+      "titleAliases": [],
+      "directionsQuery": ""
+    },
+    {
+      "id": "M051",
+      "key": "pozzo",
+      "name": "Un pozzo di occasioni",
+      "comune": "Trieste",
+      "prov": "TS",
+      "kind": "Antiquariato / artigianato",
+      "cadence": "4° sabato",
+      "place": "Opicina: via Nazionale, strada per Vienna, via di Prosecco",
+      "url": "https://www.discover-trieste.it/vivi/trieste-now/un-pozzo-di-occasioni",
+      "authority": "Discover Trieste / Cose di Vecchie Case",
+      "origin": "Aggiunta",
+      "quality": "Documentato",
+      "checked": "2026-10-14",
+      "original_ids": "",
+      "group": "occasional",
+      "weekdays": [],
+      "hours": "Dalle 08:00 al tramonto",
+      "scheduleNote": "",
+      "auditNote": "08:00–tramonto. Calendario 2026 esplicito.",
+      "titleAliases": [],
+      "directionsQuery": "Opicina: via Nazionale, strada per Vienna, via di Prosecco, Trieste"
+    },
+    {
+      "id": "M052",
+      "key": "arti",
+      "name": "I sabati di Arti in Piazza",
+      "comune": "Trieste",
+      "prov": "TS",
+      "kind": "Artigianato",
+      "cadence": "Una data al mese, non sempre il 2° sabato",
+      "place": "Piazza Piccola e sottoportico del Comune",
+      "url": "https://www.discover-trieste.it/vivi/trieste-now/artinpiazza",
+      "authority": "Discover Trieste / Arti in Piazza",
+      "origin": "Aggiunta",
+      "quality": "Documentato",
+      "checked": "2026-10-14",
+      "original_ids": "",
+      "group": "occasional",
+      "weekdays": [],
+      "hours": "",
+      "scheduleNote": "Il sabato del mese varia: fare riferimento alle date pubblicate.",
+      "auditNote": "Nel 2026 gennaio e dicembre sono il primo sabato, agosto il terzo. Usare il calendario puntuale.",
+      "titleAliases": [],
+      "directionsQuery": "Piazza Piccola e sottoportico del Comune, Trieste"
+    },
+    {
+      "id": "M053",
+      "key": "doge",
+      "name": "Lo Scrigno del Doge",
+      "comune": "Codroipo",
+      "prov": "UD",
+      "kind": "Antiquariato / modernariato",
+      "cadence": "Date puntuali, non mensile",
+      "place": "Villa Manin, Passariano; Esedra e piazza Tonda",
+      "url": "https://prolocoregionefvg.it/eventi-delle-associate/lo-scrigno-del-doge-in-villa-manin-mercatino-dellantiquariato-e-modernariato/",
+      "authority": "UNPLI FVG / organizzatori",
+      "origin": "Aggiunta",
+      "quality": "Documentato",
+      "checked": "2026-10-14",
+      "original_ids": "",
+      "group": "occasional",
+      "weekdays": [],
+      "hours": "",
+      "scheduleNote": "Appuntamenti in date distinte, senza ricorrenza mensile.",
+      "auditNote": "Date 2026: 6 gennaio, 25 aprile, 2 giugno, 20 settembre, 1 novembre, 8 dicembre. È pubblicato anche il 6 gennaio 2027, non trasferito al foglio Date_2026.",
+      "titleAliases": [
+        "Lo scrigno del Doge in Villa Manin - Mercatino dell’antiquariato e modernariato"
+      ],
+      "directionsQuery": "Villa Manin, Passariano; Esedra e piazza Tonda, Codroipo"
+    },
+    {
+      "id": "M054",
+      "key": "sappada",
+      "name": "Antiquariato e modernariato in montagna",
+      "comune": "Sappada",
+      "prov": "UD",
+      "kind": "Antiquariato / stagionale",
+      "cadence": "Date estive puntuali",
+      "place": "Piazza Palù",
+      "url": "https://prolocoregionefvg.it/eventi-delle-associate/mercatino-dell-antiquariato-e-modernariato-in-montagna/",
+      "authority": "UNPLI FVG / Comune di Sappada",
+      "origin": "Aggiunta",
+      "quality": "Documentato",
+      "checked": "2026-10-14",
+      "original_ids": "",
+      "group": "occasional",
+      "weekdays": [],
+      "hours": "",
+      "scheduleNote": "Manifestazione stagionale con date estive.",
+      "auditNote": "Nel 2026 risultano 30 luglio, 6/13/20/27 agosto, 3 settembre. Date già trascorse al controllo; non sono appuntamenti 2027.",
+      "titleAliases": [],
+      "directionsQuery": ""
+    },
+    {
+      "id": "M055",
+      "key": "barbacan",
+      "name": "Barbacan Produce",
+      "comune": "Trieste",
+      "prov": "TS",
+      "kind": "Artigianato / design",
+      "cadence": "5 edizioni nel 2026",
+      "place": "Piazza Barbacan",
+      "url": "https://www.discover-trieste.it/vivi/trieste-now/barbacan-produce",
+      "authority": "Discover Trieste / Barbacan Produce",
+      "origin": "Aggiunta",
+      "quality": "Documentato",
+      "checked": "2026-10-14",
+      "original_ids": "",
+      "group": "occasional",
+      "weekdays": [],
+      "hours": "",
+      "scheduleNote": "",
+      "auditNote": "12 aprile, 14 giugno, 6 settembre, 25 ottobre, 13 dicembre. Le edizioni di giugno e settembre sono pomeridiane/serali; le altre 10:30–18:30.",
+      "titleAliases": [],
+      "directionsQuery": ""
+    },
+    {
+      "id": "M056",
+      "key": "montedoro",
+      "name": "Mercatino dell'usato – Montedoro",
+      "comune": "Muggia",
+      "prov": "TS",
+      "kind": "Usato / evento",
+      "cadence": "14–15 febbraio 2026; nessuna cadenza fissa confermata",
+      "place": "Montedoro Shopping Center",
+      "url": "https://www.montedoroshoppingcenter.it/2026/02/05/mercatino-dellusato/",
+      "authority": "Montedoro Shopping Center",
+      "origin": "Originale",
+      "quality": "Parziale",
+      "checked": "2026-10-14",
+      "original_ids": "O059",
+      "group": "occasional",
+      "weekdays": [],
+      "hours": "",
+      "scheduleNote": "",
+      "auditNote": "L'organizzatore documenta questa edizione. Non basta a confermare il primo sabato riportato da Gemini.",
+      "titleAliases": [],
+      "directionsQuery": ""
+    },
+    {
+      "id": "M057",
+      "key": "montedorocrea",
+      "name": "Mercatini creativi – Montedoro",
+      "comune": "Muggia",
+      "prov": "TS",
+      "kind": "Artigianato / evento",
+      "cadence": "6–7 giugno 2026",
+      "place": "Montedoro Shopping Center",
+      "url": "https://www.montedoroshoppingcenter.it/2026/05/29/mercatini-creativi-giugno/",
+      "authority": "Montedoro Shopping Center",
+      "origin": "Aggiunta",
+      "quality": "Documentato",
+      "checked": "2026-10-14",
+      "original_ids": "",
+      "group": "occasional",
+      "weekdays": [],
+      "hours": "",
+      "scheduleNote": "",
+      "auditNote": "Evento distinto dal mercatino dell'usato. Date trascorse; nessuna ricorrenza annuale dedotta.",
+      "titleAliases": [],
+      "directionsQuery": ""
+    },
+    {
+      "id": "M058",
+      "key": "svnatale",
+      "name": "La Magia del Natale – mercatino 2026",
+      "comune": "San Vito al Tagliamento",
+      "prov": "PN",
+      "kind": "Natalizio / stagionale",
+      "cadence": "8 e 13 dicembre 2026",
+      "place": "Via Amalteo e via Manfrin",
+      "url": "https://www.turismofvg.it/eventi/la-magia-del-natale-mercatino-2026",
+      "authority": "PromoTurismoFVG / organizzatore",
+      "origin": "Aggiunta",
+      "quality": "Documentato",
+      "checked": "2026-10-14",
+      "original_ids": "",
+      "group": "occasional",
+      "weekdays": [],
+      "hours": "",
+      "scheduleNote": "",
+      "auditNote": "10:00–18:00. Non confondere con la mostra-mercato Voglia di Natale all'Antico Ospedale dei Battuti.",
+      "titleAliases": [],
+      "directionsQuery": ""
+    },
+    {
+      "id": "M059",
+      "key": "svgiocattoli",
+      "name": "Mercatino dei giocattoli usati",
+      "comune": "San Vito al Tagliamento",
+      "prov": "PN",
+      "kind": "Usato / bambini / evento",
+      "cadence": "7 giugno 2026",
+      "place": "Parco Rota",
+      "url": "https://www.prosanvito.it/",
+      "authority": "Pro San Vito",
+      "origin": "Aggiunta",
+      "quality": "Documentato",
+      "checked": "2026-10-14",
+      "original_ids": "",
+      "group": "occasional",
+      "weekdays": [],
+      "hours": "",
+      "scheduleNote": "",
+      "auditNote": "Edizione pubblicata da Pro San Vito; partecipazione riservata ai bambini secondo il regolamento dell'organizzatore. Non dedurre una cadenza mensile.",
+      "titleAliases": [],
+      "directionsQuery": ""
+    },
+    {
+      "id": "M060",
+      "key": "sanrocco",
+      "name": "Fiera di San Rocco – hobbismo e artigianato",
+      "comune": "Spilimbergo",
+      "prov": "PN",
+      "kind": "Artigianato / stagionale",
+      "cadence": "14–16 agosto 2026",
+      "place": "Piazza San Rocco",
+      "url": "https://www.calameo.com/books/00274640490dd6ce6d767",
+      "authority": "Comune di Spilimbergo, Estate 2026",
+      "origin": "Aggiunta",
+      "quality": "Documentato",
+      "checked": "2026-10-14",
+      "original_ids": "",
+      "group": "occasional",
+      "weekdays": [],
+      "hours": "",
+      "scheduleNote": "",
+      "auditNote": "Edizione 2026 documentata nel programma comunale. Distinta da Ricordi del Tempo.",
+      "titleAliases": [],
+      "directionsQuery": ""
+    }
+  ],
+  "dates": [
+    {
+      "marketId": "M052",
+      "date": "2026-01-03",
+      "source": "https://www.discover-trieste.it/vivi/trieste-now/artinpiazza",
+      "status": "published"
+    },
+    {
+      "marketId": "M053",
+      "date": "2026-01-06",
+      "source": "https://prolocoregionefvg.it/eventi-delle-associate/lo-scrigno-del-doge-in-villa-manin-mercatino-dellantiquariato-e-modernariato/",
+      "status": "published"
+    },
+    {
+      "marketId": "M047",
+      "date": "2026-01-10",
+      "source": "https://www.discover-trieste.it/vivi/trieste-now/mercatino-al-tram",
+      "status": "published"
+    },
+    {
+      "marketId": "M049",
+      "date": "2026-01-11",
+      "source": "https://www.discover-trieste.it/vivi/trieste-now/mercatino-di-porto-vecchio",
+      "status": "published"
+    },
+    {
+      "marketId": "M033",
+      "date": "2026-01-18",
+      "source": "https://www.discover-trieste.it/vivi/trieste-now/mercatino-antiquariato",
+      "status": "published"
+    },
+    {
+      "marketId": "M043",
+      "date": "2026-01-18",
+      "source": "https://prolocoregionefvg.it/eventi-delle-associate/tesori-del-tempo-mercatino-dellusato/",
+      "status": "published"
+    },
+    {
+      "marketId": "M051",
+      "date": "2026-01-24",
+      "source": "https://www.discover-trieste.it/vivi/trieste-now/un-pozzo-di-occasioni",
+      "status": "published"
+    },
+    {
+      "marketId": "M050",
+      "date": "2026-01-25",
+      "source": "https://www.discover-trieste.it/vivi/trieste-now/mercatino-di-ponterosso",
+      "status": "published"
+    },
+    {
+      "marketId": "M048",
+      "date": "2026-02-01",
+      "source": "https://www.discover-trieste.it/vivi/trieste-now/mercatino-cavana",
+      "status": "published"
+    },
+    {
+      "marketId": "M049",
+      "date": "2026-02-08",
+      "source": "https://www.discover-trieste.it/vivi/trieste-now/mercatino-di-porto-vecchio",
+      "status": "published"
+    },
+    {
+      "marketId": "M052",
+      "date": "2026-02-14",
+      "source": "https://www.discover-trieste.it/vivi/trieste-now/artinpiazza",
+      "status": "published"
+    },
+    {
+      "marketId": "M047",
+      "date": "2026-02-14",
+      "source": "https://www.discover-trieste.it/vivi/trieste-now/mercatino-al-tram",
+      "status": "published"
+    },
+    {
+      "marketId": "M056",
+      "date": "2026-02-14",
+      "source": "https://www.montedoroshoppingcenter.it/2026/02/05/mercatino-dellusato/",
+      "status": "published"
+    },
+    {
+      "marketId": "M033",
+      "date": "2026-02-15",
+      "source": "https://www.discover-trieste.it/vivi/trieste-now/mercatino-antiquariato",
+      "status": "published"
+    },
+    {
+      "marketId": "M056",
+      "date": "2026-02-15",
+      "source": "https://www.montedoroshoppingcenter.it/2026/02/05/mercatino-dellusato/",
+      "status": "published"
+    },
+    {
+      "marketId": "M043",
+      "date": "2026-02-15",
+      "source": "https://prolocoregionefvg.it/eventi-delle-associate/tesori-del-tempo-mercatino-dellusato/",
+      "status": "published"
+    },
+    {
+      "marketId": "M050",
+      "date": "2026-02-22",
+      "source": "https://www.discover-trieste.it/vivi/trieste-now/mercatino-di-ponterosso",
+      "status": "published"
+    },
+    {
+      "marketId": "M051",
+      "date": "2026-02-28",
+      "source": "https://www.discover-trieste.it/vivi/trieste-now/un-pozzo-di-occasioni",
+      "status": "published"
+    },
+    {
+      "marketId": "M045",
+      "date": "2026-03-01",
+      "source": "https://www.turismofvg.it/events/market-in-muggia-meta",
+      "status": "published"
+    },
+    {
+      "marketId": "M048",
+      "date": "2026-03-01",
+      "source": "https://www.discover-trieste.it/vivi/trieste-now/mercatino-cavana",
+      "status": "published"
+    },
+    {
+      "marketId": "M049",
+      "date": "2026-03-08",
+      "source": "https://www.discover-trieste.it/vivi/trieste-now/mercatino-di-porto-vecchio",
+      "status": "published"
+    },
+    {
+      "marketId": "M052",
+      "date": "2026-03-14",
+      "source": "https://www.discover-trieste.it/vivi/trieste-now/artinpiazza",
+      "status": "published"
+    },
+    {
+      "marketId": "M047",
+      "date": "2026-03-14",
+      "source": "https://www.discover-trieste.it/vivi/trieste-now/mercatino-al-tram",
+      "status": "published"
+    },
+    {
+      "marketId": "M045",
+      "date": "2026-03-15",
+      "source": "https://www.turismofvg.it/events/market-in-muggia-meta",
+      "status": "published"
+    },
+    {
+      "marketId": "M033",
+      "date": "2026-03-15",
+      "source": "https://www.discover-trieste.it/vivi/trieste-now/mercatino-antiquariato",
+      "status": "published"
+    },
+    {
+      "marketId": "M043",
+      "date": "2026-03-15",
+      "source": "https://prolocoregionefvg.it/eventi-delle-associate/tesori-del-tempo-mercatino-dellusato/",
+      "status": "published"
+    },
+    {
+      "marketId": "M044",
+      "date": "2026-03-21",
+      "source": "https://www.turismofvg.it/events/market-in-muggia-creattivamente",
+      "status": "published"
+    },
+    {
+      "marketId": "M050",
+      "date": "2026-03-22",
+      "source": "https://www.discover-trieste.it/vivi/trieste-now/mercatino-di-ponterosso",
+      "status": "published"
+    },
+    {
+      "marketId": "M051",
+      "date": "2026-03-28",
+      "source": "https://www.discover-trieste.it/vivi/trieste-now/un-pozzo-di-occasioni",
+      "status": "published"
+    },
+    {
+      "marketId": "M035",
+      "date": "2026-03-29",
+      "source": "https://www.comune.pordenone.it/it/novita/divieti-limitazioni-e-prescrizioni-alla-circolazione-per-lo-svolgimento-dei-mercatini",
+      "status": "published"
+    },
+    {
+      "marketId": "M045",
+      "date": "2026-04-05",
+      "source": "https://www.turismofvg.it/events/market-in-muggia-meta",
+      "status": "published"
+    },
+    {
+      "marketId": "M048",
+      "date": "2026-04-05",
+      "source": "https://www.discover-trieste.it/vivi/trieste-now/mercatino-cavana",
+      "status": "published"
+    },
+    {
+      "marketId": "M044",
+      "date": "2026-04-06",
+      "source": "https://www.turismofvg.it/events/market-in-muggia-creattivamente",
+      "status": "published"
+    },
+    {
+      "marketId": "M052",
+      "date": "2026-04-11",
+      "source": "https://www.discover-trieste.it/vivi/trieste-now/artinpiazza",
+      "status": "published"
+    },
+    {
+      "marketId": "M047",
+      "date": "2026-04-11",
+      "source": "https://www.discover-trieste.it/vivi/trieste-now/mercatino-al-tram",
+      "status": "published"
+    },
+    {
+      "marketId": "M055",
+      "date": "2026-04-12",
+      "source": "https://www.discover-trieste.it/vivi/trieste-now/barbacan-produce",
+      "status": "published"
+    },
+    {
+      "marketId": "M028",
+      "date": "2026-04-12",
+      "source": "https://prolocoregionefvg.it/eventi-delle-associate/mercatino-dellusato-codroipo/",
+      "status": "published"
+    },
+    {
+      "marketId": "M049",
+      "date": "2026-04-12",
+      "source": "https://www.discover-trieste.it/vivi/trieste-now/mercatino-di-porto-vecchio",
+      "status": "published"
+    },
+    {
+      "marketId": "M044",
+      "date": "2026-04-18",
+      "source": "https://www.turismofvg.it/events/market-in-muggia-creattivamente",
+      "status": "published"
+    },
+    {
+      "marketId": "M045",
+      "date": "2026-04-19",
+      "source": "https://www.turismofvg.it/events/market-in-muggia-meta",
+      "status": "published"
+    },
+    {
+      "marketId": "M033",
+      "date": "2026-04-19",
+      "source": "https://www.discover-trieste.it/vivi/trieste-now/mercatino-antiquariato",
+      "status": "published"
+    },
+    {
+      "marketId": "M043",
+      "date": "2026-04-19",
+      "source": "https://prolocoregionefvg.it/eventi-delle-associate/tesori-del-tempo-mercatino-dellusato/",
+      "status": "published"
+    },
+    {
+      "marketId": "M044",
+      "date": "2026-04-25",
+      "source": "https://www.turismofvg.it/events/market-in-muggia-creattivamente",
+      "status": "published"
+    },
+    {
+      "marketId": "M053",
+      "date": "2026-04-25",
+      "source": "https://prolocoregionefvg.it/eventi-delle-associate/lo-scrigno-del-doge-in-villa-manin-mercatino-dellantiquariato-e-modernariato/",
+      "status": "published"
+    },
+    {
+      "marketId": "M051",
+      "date": "2026-04-25",
+      "source": "https://www.discover-trieste.it/vivi/trieste-now/un-pozzo-di-occasioni",
+      "status": "published"
+    },
+    {
+      "marketId": "M035",
+      "date": "2026-04-26",
+      "source": "https://www.comune.pordenone.it/it/novita/divieti-limitazioni-e-prescrizioni-alla-circolazione-per-lo-svolgimento-dei-mercatini",
+      "status": "published"
+    },
+    {
+      "marketId": "M050",
+      "date": "2026-04-26",
+      "source": "https://www.discover-trieste.it/vivi/trieste-now/mercatino-di-ponterosso",
+      "status": "published"
+    },
+    {
+      "marketId": "M045",
+      "date": "2026-05-03",
+      "source": "https://www.turismofvg.it/events/market-in-muggia-meta",
+      "status": "published"
+    },
+    {
+      "marketId": "M048",
+      "date": "2026-05-03",
+      "source": "https://www.discover-trieste.it/vivi/trieste-now/mercatino-cavana",
+      "status": "published"
+    },
+    {
+      "marketId": "M052",
+      "date": "2026-05-09",
+      "source": "https://www.discover-trieste.it/vivi/trieste-now/artinpiazza",
+      "status": "published"
+    },
+    {
+      "marketId": "M047",
+      "date": "2026-05-09",
+      "source": "https://www.discover-trieste.it/vivi/trieste-now/mercatino-al-tram",
+      "status": "published"
+    },
+    {
+      "marketId": "M028",
+      "date": "2026-05-10",
+      "source": "https://prolocoregionefvg.it/eventi-delle-associate/mercatino-dellusato-codroipo/",
+      "status": "published"
+    },
+    {
+      "marketId": "M049",
+      "date": "2026-05-10",
+      "source": "https://www.discover-trieste.it/vivi/trieste-now/mercatino-di-porto-vecchio",
+      "status": "published"
+    },
+    {
+      "marketId": "M044",
+      "date": "2026-05-16",
+      "source": "https://www.turismofvg.it/events/market-in-muggia-creattivamente",
+      "status": "published"
+    },
+    {
+      "marketId": "M045",
+      "date": "2026-05-17",
+      "source": "https://www.turismofvg.it/events/market-in-muggia-meta",
+      "status": "published"
+    },
+    {
+      "marketId": "M033",
+      "date": "2026-05-17",
+      "source": "https://www.discover-trieste.it/vivi/trieste-now/mercatino-antiquariato",
+      "status": "published"
+    },
+    {
+      "marketId": "M043",
+      "date": "2026-05-17",
+      "source": "https://prolocoregionefvg.it/eventi-delle-associate/tesori-del-tempo-mercatino-dellusato/",
+      "status": "published"
+    },
+    {
+      "marketId": "M051",
+      "date": "2026-05-23",
+      "source": "https://www.discover-trieste.it/vivi/trieste-now/un-pozzo-di-occasioni",
+      "status": "published"
+    },
+    {
+      "marketId": "M050",
+      "date": "2026-05-24",
+      "source": "https://www.discover-trieste.it/vivi/trieste-now/mercatino-di-ponterosso",
+      "status": "published"
+    },
+    {
+      "marketId": "M035",
+      "date": "2026-05-31",
+      "source": "https://www.comune.pordenone.it/it/novita/divieti-limitazioni-e-prescrizioni-alla-circolazione-per-lo-svolgimento-dei-mercatini",
+      "status": "published"
+    },
+    {
+      "marketId": "M044",
+      "date": "2026-06-02",
+      "source": "https://www.turismofvg.it/events/market-in-muggia-creattivamente",
+      "status": "published"
+    },
+    {
+      "marketId": "M053",
+      "date": "2026-06-02",
+      "source": "https://prolocoregionefvg.it/eventi-delle-associate/lo-scrigno-del-doge-in-villa-manin-mercatino-dellantiquariato-e-modernariato/",
+      "status": "published"
+    },
+    {
+      "marketId": "M057",
+      "date": "2026-06-06",
+      "source": "https://www.montedoroshoppingcenter.it/2026/05/29/mercatini-creativi-giugno/",
+      "status": "published"
+    },
+    {
+      "marketId": "M045",
+      "date": "2026-06-07",
+      "source": "https://www.turismofvg.it/events/market-in-muggia-meta",
+      "status": "published"
+    },
+    {
+      "marketId": "M057",
+      "date": "2026-06-07",
+      "source": "https://www.montedoroshoppingcenter.it/2026/05/29/mercatini-creativi-giugno/",
+      "status": "published"
+    },
+    {
+      "marketId": "M059",
+      "date": "2026-06-07",
+      "source": "https://www.prosanvito.it/",
+      "status": "published"
+    },
+    {
+      "marketId": "M048",
+      "date": "2026-06-07",
+      "source": "https://www.discover-trieste.it/vivi/trieste-now/mercatino-cavana",
+      "status": "published"
+    },
+    {
+      "marketId": "M052",
+      "date": "2026-06-13",
+      "source": "https://www.discover-trieste.it/vivi/trieste-now/artinpiazza",
+      "status": "published"
+    },
+    {
+      "marketId": "M047",
+      "date": "2026-06-13",
+      "source": "https://www.discover-trieste.it/vivi/trieste-now/mercatino-al-tram",
+      "status": "published"
+    },
+    {
+      "marketId": "M055",
+      "date": "2026-06-14",
+      "source": "https://www.discover-trieste.it/vivi/trieste-now/barbacan-produce",
+      "status": "published"
+    },
+    {
+      "marketId": "M028",
+      "date": "2026-06-14",
+      "source": "https://prolocoregionefvg.it/eventi-delle-associate/mercatino-dellusato-codroipo/",
+      "status": "published"
+    },
+    {
+      "marketId": "M049",
+      "date": "2026-06-14",
+      "source": "https://www.discover-trieste.it/vivi/trieste-now/mercatino-di-porto-vecchio",
+      "status": "published"
+    },
+    {
+      "marketId": "M044",
+      "date": "2026-06-20",
+      "source": "https://www.turismofvg.it/events/market-in-muggia-creattivamente",
+      "status": "published"
+    },
+    {
+      "marketId": "M045",
+      "date": "2026-06-21",
+      "source": "https://www.turismofvg.it/events/market-in-muggia-meta",
+      "status": "published"
+    },
+    {
+      "marketId": "M033",
+      "date": "2026-06-21",
+      "source": "https://www.discover-trieste.it/vivi/trieste-now/mercatino-antiquariato",
+      "status": "published"
+    },
+    {
+      "marketId": "M043",
+      "date": "2026-06-21",
+      "source": "https://prolocoregionefvg.it/eventi-delle-associate/tesori-del-tempo-mercatino-dellusato/",
+      "status": "published"
+    },
+    {
+      "marketId": "M051",
+      "date": "2026-06-27",
+      "source": "https://www.discover-trieste.it/vivi/trieste-now/un-pozzo-di-occasioni",
+      "status": "published"
+    },
+    {
+      "marketId": "M035",
+      "date": "2026-06-28",
+      "source": "https://www.comune.pordenone.it/it/novita/divieti-limitazioni-e-prescrizioni-alla-circolazione-per-lo-svolgimento-dei-mercatini",
+      "status": "published"
+    },
+    {
+      "marketId": "M050",
+      "date": "2026-06-28",
+      "source": "https://www.discover-trieste.it/vivi/trieste-now/mercatino-di-ponterosso",
+      "status": "published"
+    },
+    {
+      "marketId": "M045",
+      "date": "2026-07-05",
+      "source": "https://www.turismofvg.it/events/market-in-muggia-meta",
+      "status": "published"
+    },
+    {
+      "marketId": "M048",
+      "date": "2026-07-05",
+      "source": "https://www.discover-trieste.it/vivi/trieste-now/mercatino-cavana",
+      "status": "published"
+    },
+    {
+      "marketId": "M052",
+      "date": "2026-07-11",
+      "source": "https://www.discover-trieste.it/vivi/trieste-now/artinpiazza",
+      "status": "published"
+    },
+    {
+      "marketId": "M047",
+      "date": "2026-07-11",
+      "source": "https://www.discover-trieste.it/vivi/trieste-now/mercatino-al-tram",
+      "status": "published"
+    },
+    {
+      "marketId": "M028",
+      "date": "2026-07-12",
+      "source": "https://prolocoregionefvg.it/eventi-delle-associate/mercatino-dellusato-codroipo/",
+      "status": "published"
+    },
+    {
+      "marketId": "M049",
+      "date": "2026-07-12",
+      "source": "https://www.discover-trieste.it/vivi/trieste-now/mercatino-di-porto-vecchio",
+      "status": "published"
+    },
+    {
+      "marketId": "M045",
+      "date": "2026-07-19",
+      "source": "https://www.turismofvg.it/events/market-in-muggia-meta",
+      "status": "published"
+    },
+    {
+      "marketId": "M033",
+      "date": "2026-07-19",
+      "source": "https://www.discover-trieste.it/vivi/trieste-now/mercatino-antiquariato",
+      "status": "published"
+    },
+    {
+      "marketId": "M043",
+      "date": "2026-07-19",
+      "source": "https://prolocoregionefvg.it/eventi-delle-associate/tesori-del-tempo-mercatino-dellusato/",
+      "status": "published"
+    },
+    {
+      "marketId": "M031",
+      "date": "2026-07-25",
+      "source": "https://www.calameo.com/books/00274640490dd6ce6d767",
+      "status": "published"
+    },
+    {
+      "marketId": "M051",
+      "date": "2026-07-25",
+      "source": "https://www.discover-trieste.it/vivi/trieste-now/un-pozzo-di-occasioni",
+      "status": "published"
+    },
+    {
+      "marketId": "M050",
+      "date": "2026-07-26",
+      "source": "https://www.discover-trieste.it/vivi/trieste-now/mercatino-di-ponterosso",
+      "status": "published"
+    },
+    {
+      "marketId": "M054",
+      "date": "2026-07-30",
+      "source": "https://prolocoregionefvg.it/eventi-delle-associate/mercatino-dell-antiquariato-e-modernariato-in-montagna/",
+      "status": "published"
+    },
+    {
+      "marketId": "M045",
+      "date": "2026-08-02",
+      "source": "https://www.turismofvg.it/events/market-in-muggia-meta",
+      "status": "published"
+    },
+    {
+      "marketId": "M048",
+      "date": "2026-08-02",
+      "source": "https://www.discover-trieste.it/vivi/trieste-now/mercatino-cavana",
+      "status": "published"
+    },
+    {
+      "marketId": "M054",
+      "date": "2026-08-06",
+      "source": "https://prolocoregionefvg.it/eventi-delle-associate/mercatino-dell-antiquariato-e-modernariato-in-montagna/",
+      "status": "published"
+    },
+    {
+      "marketId": "M047",
+      "date": "2026-08-08",
+      "source": "https://www.discover-trieste.it/vivi/trieste-now/mercatino-al-tram",
+      "status": "published"
+    },
+    {
+      "marketId": "M049",
+      "date": "2026-08-09",
+      "source": "https://www.discover-trieste.it/vivi/trieste-now/mercatino-di-porto-vecchio",
+      "status": "published"
+    },
+    {
+      "marketId": "M054",
+      "date": "2026-08-13",
+      "source": "https://prolocoregionefvg.it/eventi-delle-associate/mercatino-dell-antiquariato-e-modernariato-in-montagna/",
+      "status": "published"
+    },
+    {
+      "marketId": "M060",
+      "date": "2026-08-14",
+      "source": "https://www.calameo.com/books/00274640490dd6ce6d767",
+      "status": "published"
+    },
+    {
+      "marketId": "M060",
+      "date": "2026-08-15",
+      "source": "https://www.calameo.com/books/00274640490dd6ce6d767",
+      "status": "published"
+    },
+    {
+      "marketId": "M052",
+      "date": "2026-08-15",
+      "source": "https://www.discover-trieste.it/vivi/trieste-now/artinpiazza",
+      "status": "published"
+    },
+    {
+      "marketId": "M060",
+      "date": "2026-08-16",
+      "source": "https://www.calameo.com/books/00274640490dd6ce6d767",
+      "status": "published"
+    },
+    {
+      "marketId": "M045",
+      "date": "2026-08-16",
+      "source": "https://www.turismofvg.it/events/market-in-muggia-meta",
+      "status": "published"
+    },
+    {
+      "marketId": "M033",
+      "date": "2026-08-16",
+      "source": "https://www.discover-trieste.it/vivi/trieste-now/mercatino-antiquariato",
+      "status": "published"
+    },
+    {
+      "marketId": "M043",
+      "date": "2026-08-16",
+      "source": "https://prolocoregionefvg.it/eventi-delle-associate/tesori-del-tempo-mercatino-dellusato/",
+      "status": "published"
+    },
+    {
+      "marketId": "M054",
+      "date": "2026-08-20",
+      "source": "https://prolocoregionefvg.it/eventi-delle-associate/mercatino-dell-antiquariato-e-modernariato-in-montagna/",
+      "status": "published"
+    },
+    {
+      "marketId": "M031",
+      "date": "2026-08-22",
+      "source": "https://www.calameo.com/books/00274640490dd6ce6d767",
+      "status": "published"
+    },
+    {
+      "marketId": "M051",
+      "date": "2026-08-22",
+      "source": "https://www.discover-trieste.it/vivi/trieste-now/un-pozzo-di-occasioni",
+      "status": "published"
+    },
+    {
+      "marketId": "M050",
+      "date": "2026-08-23",
+      "source": "https://www.discover-trieste.it/vivi/trieste-now/mercatino-di-ponterosso",
+      "status": "published"
+    },
+    {
+      "marketId": "M054",
+      "date": "2026-08-27",
+      "source": "https://prolocoregionefvg.it/eventi-delle-associate/mercatino-dell-antiquariato-e-modernariato-in-montagna/",
+      "status": "published"
+    },
+    {
+      "marketId": "M054",
+      "date": "2026-09-03",
+      "source": "https://prolocoregionefvg.it/eventi-delle-associate/mercatino-dell-antiquariato-e-modernariato-in-montagna/",
+      "status": "published"
+    },
+    {
+      "marketId": "M055",
+      "date": "2026-09-06",
+      "source": "https://www.discover-trieste.it/vivi/trieste-now/barbacan-produce",
+      "status": "published"
+    },
+    {
+      "marketId": "M045",
+      "date": "2026-09-06",
+      "source": "https://www.turismofvg.it/events/market-in-muggia-meta",
+      "status": "published"
+    },
+    {
+      "marketId": "M048",
+      "date": "2026-09-06",
+      "source": "https://www.discover-trieste.it/vivi/trieste-now/mercatino-cavana",
+      "status": "published"
+    },
+    {
+      "marketId": "M052",
+      "date": "2026-09-12",
+      "source": "https://www.discover-trieste.it/vivi/trieste-now/artinpiazza",
+      "status": "published"
+    },
+    {
+      "marketId": "M047",
+      "date": "2026-09-12",
+      "source": "https://www.discover-trieste.it/vivi/trieste-now/mercatino-al-tram",
+      "status": "published"
+    },
+    {
+      "marketId": "M028",
+      "date": "2026-09-13",
+      "source": "https://prolocoregionefvg.it/eventi-delle-associate/mercatino-dellusato-codroipo/",
+      "status": "published"
+    },
+    {
+      "marketId": "M049",
+      "date": "2026-09-13",
+      "source": "https://www.discover-trieste.it/vivi/trieste-now/mercatino-di-porto-vecchio",
+      "status": "published"
+    },
+    {
+      "marketId": "M044",
+      "date": "2026-09-19",
+      "source": "https://www.turismofvg.it/events/market-in-muggia-creattivamente",
+      "status": "published"
+    },
+    {
+      "marketId": "M053",
+      "date": "2026-09-20",
+      "source": "https://prolocoregionefvg.it/eventi-delle-associate/lo-scrigno-del-doge-in-villa-manin-mercatino-dellantiquariato-e-modernariato/",
+      "status": "published"
+    },
+    {
+      "marketId": "M045",
+      "date": "2026-09-20",
+      "source": "https://www.turismofvg.it/events/market-in-muggia-meta",
+      "status": "published"
+    },
+    {
+      "marketId": "M033",
+      "date": "2026-09-20",
+      "source": "https://www.discover-trieste.it/vivi/trieste-now/mercatino-antiquariato",
+      "status": "published"
+    },
+    {
+      "marketId": "M043",
+      "date": "2026-09-20",
+      "source": "https://prolocoregionefvg.it/eventi-delle-associate/tesori-del-tempo-mercatino-dellusato/",
+      "status": "published"
+    },
+    {
+      "marketId": "M051",
+      "date": "2026-09-26",
+      "source": "https://www.discover-trieste.it/vivi/trieste-now/un-pozzo-di-occasioni",
+      "status": "published"
+    },
+    {
+      "marketId": "M035",
+      "date": "2026-09-27",
+      "source": "https://www.comune.pordenone.it/it/novita/divieti-limitazioni-e-prescrizioni-alla-circolazione-per-lo-svolgimento-dei-mercatini",
+      "status": "published"
+    },
+    {
+      "marketId": "M050",
+      "date": "2026-09-27",
+      "source": "https://www.discover-trieste.it/vivi/trieste-now/mercatino-di-ponterosso",
+      "status": "published"
+    },
+    {
+      "marketId": "M045",
+      "date": "2026-10-04",
+      "source": "https://www.turismofvg.it/events/market-in-muggia-meta",
+      "status": "published"
+    },
+    {
+      "marketId": "M048",
+      "date": "2026-10-04",
+      "source": "https://www.discover-trieste.it/vivi/trieste-now/mercatino-cavana",
+      "status": "published"
+    },
+    {
+      "marketId": "M044",
+      "date": "2026-10-10",
+      "source": "https://www.turismofvg.it/events/market-in-muggia-creattivamente",
+      "status": "published"
+    },
+    {
+      "marketId": "M052",
+      "date": "2026-10-10",
+      "source": "https://www.discover-trieste.it/vivi/trieste-now/artinpiazza",
+      "status": "published"
+    },
+    {
+      "marketId": "M047",
+      "date": "2026-10-10",
+      "source": "https://www.discover-trieste.it/vivi/trieste-now/mercatino-al-tram",
+      "status": "published"
+    },
+    {
+      "marketId": "M028",
+      "date": "2026-10-11",
+      "source": "https://prolocoregionefvg.it/eventi-delle-associate/mercatino-dellusato-codroipo/",
+      "status": "published"
+    },
+    {
+      "marketId": "M033",
+      "date": "2026-10-11",
+      "source": "https://www.discover-trieste.it/vivi/trieste-now/mercatino-antiquariato",
+      "status": "published"
+    },
+    {
+      "marketId": "M049",
+      "date": "2026-10-11",
+      "source": "https://www.discover-trieste.it/vivi/trieste-now/mercatino-di-porto-vecchio",
+      "status": "published"
+    },
+    {
+      "marketId": "M044",
+      "date": "2026-10-17",
+      "source": "https://www.turismofvg.it/events/market-in-muggia-creattivamente",
+      "status": "published"
+    },
+    {
+      "marketId": "M046",
+      "date": "2026-10-17",
+      "source": "https://www.turismofvg.it/events/market-in-aurisina-square",
+      "status": "published"
+    },
+    {
+      "marketId": "M045",
+      "date": "2026-10-18",
+      "source": "https://www.turismofvg.it/events/market-in-muggia-meta",
+      "status": "published"
+    },
+    {
+      "marketId": "M033",
+      "date": "2026-10-18",
+      "source": "https://www.discover-trieste.it/vivi/trieste-now/mercatino-antiquariato",
+      "status": "published"
+    },
+    {
+      "marketId": "M043",
+      "date": "2026-10-18",
+      "source": "https://prolocoregionefvg.it/eventi-delle-associate/tesori-del-tempo-mercatino-dellusato/",
+      "status": "published"
+    },
+    {
+      "marketId": "M051",
+      "date": "2026-10-24",
+      "source": "https://www.discover-trieste.it/vivi/trieste-now/un-pozzo-di-occasioni",
+      "status": "published"
+    },
+    {
+      "marketId": "M055",
+      "date": "2026-10-25",
+      "source": "https://www.discover-trieste.it/vivi/trieste-now/barbacan-produce",
+      "status": "published"
+    },
+    {
+      "marketId": "M035",
+      "date": "2026-10-25",
+      "source": "https://www.comune.pordenone.it/it/novita/divieti-limitazioni-e-prescrizioni-alla-circolazione-per-lo-svolgimento-dei-mercatini",
+      "status": "published"
+    },
+    {
+      "marketId": "M050",
+      "date": "2026-10-25",
+      "source": "https://www.discover-trieste.it/vivi/trieste-now/mercatino-di-ponterosso",
+      "status": "published"
+    },
+    {
+      "marketId": "M044",
+      "date": "2026-10-31",
+      "source": "https://www.turismofvg.it/events/market-in-muggia-creattivamente",
+      "status": "published"
+    },
+    {
+      "marketId": "M053",
+      "date": "2026-11-01",
+      "source": "https://prolocoregionefvg.it/eventi-delle-associate/lo-scrigno-del-doge-in-villa-manin-mercatino-dellantiquariato-e-modernariato/",
+      "status": "published"
+    },
+    {
+      "marketId": "M045",
+      "date": "2026-11-01",
+      "source": "https://www.turismofvg.it/events/market-in-muggia-meta",
+      "status": "published"
+    },
+    {
+      "marketId": "M048",
+      "date": "2026-11-01",
+      "source": "https://www.discover-trieste.it/vivi/trieste-now/mercatino-cavana",
+      "status": "published"
+    },
+    {
+      "marketId": "M028",
+      "date": "2026-11-08",
+      "source": "https://prolocoregionefvg.it/eventi-delle-associate/mercatino-dellusato-codroipo/",
+      "status": "published"
+    },
+    {
+      "marketId": "M029",
+      "date": "2026-11-08",
+      "source": "https://www.turismofvg.it/eventi/mercanti-nel-borgo-antigae-e-a-vencon-478654",
+      "status": "published"
+    },
+    {
+      "marketId": "M049",
+      "date": "2026-11-08",
+      "source": "https://www.discover-trieste.it/vivi/trieste-now/mercatino-di-porto-vecchio",
+      "status": "published"
+    },
+    {
+      "marketId": "M052",
+      "date": "2026-11-14",
+      "source": "https://www.discover-trieste.it/vivi/trieste-now/artinpiazza",
+      "status": "published"
+    },
+    {
+      "marketId": "M047",
+      "date": "2026-11-14",
+      "source": "https://www.discover-trieste.it/vivi/trieste-now/mercatino-al-tram",
+      "status": "published"
+    },
+    {
+      "marketId": "M045",
+      "date": "2026-11-15",
+      "source": "https://www.turismofvg.it/events/market-in-muggia-meta",
+      "status": "published"
+    },
+    {
+      "marketId": "M033",
+      "date": "2026-11-15",
+      "source": "https://www.discover-trieste.it/vivi/trieste-now/mercatino-antiquariato",
+      "status": "published"
+    },
+    {
+      "marketId": "M043",
+      "date": "2026-11-15",
+      "source": "https://prolocoregionefvg.it/eventi-delle-associate/tesori-del-tempo-mercatino-dellusato/",
+      "status": "published"
+    },
+    {
+      "marketId": "M044",
+      "date": "2026-11-21",
+      "source": "https://www.turismofvg.it/events/market-in-muggia-creattivamente",
+      "status": "published"
+    },
+    {
+      "marketId": "M050",
+      "date": "2026-11-22",
+      "source": "https://www.discover-trieste.it/vivi/trieste-now/mercatino-di-ponterosso",
+      "status": "published"
+    },
+    {
+      "marketId": "M051",
+      "date": "2026-11-28",
+      "source": "https://www.discover-trieste.it/vivi/trieste-now/un-pozzo-di-occasioni",
+      "status": "published"
+    },
+    {
+      "marketId": "M035",
+      "date": "2026-11-29",
+      "source": "https://www.comune.pordenone.it/it/novita/divieti-limitazioni-e-prescrizioni-alla-circolazione-per-lo-svolgimento-dei-mercatini",
+      "status": "published"
+    },
+    {
+      "marketId": "M052",
+      "date": "2026-12-05",
+      "source": "https://www.discover-trieste.it/vivi/trieste-now/artinpiazza",
+      "status": "published"
+    },
+    {
+      "marketId": "M045",
+      "date": "2026-12-06",
+      "source": "https://www.turismofvg.it/events/market-in-muggia-meta",
+      "status": "published"
+    },
+    {
+      "marketId": "M048",
+      "date": "2026-12-06",
+      "source": "https://www.discover-trieste.it/vivi/trieste-now/mercatino-cavana",
+      "status": "published"
+    },
+    {
+      "marketId": "M058",
+      "date": "2026-12-08",
+      "source": "https://www.turismofvg.it/eventi/la-magia-del-natale-mercatino-2026",
+      "status": "published"
+    },
+    {
+      "marketId": "M053",
+      "date": "2026-12-08",
+      "source": "https://prolocoregionefvg.it/eventi-delle-associate/lo-scrigno-del-doge-in-villa-manin-mercatino-dellantiquariato-e-modernariato/",
+      "status": "published"
+    },
+    {
+      "marketId": "M047",
+      "date": "2026-12-12",
+      "source": "https://www.discover-trieste.it/vivi/trieste-now/mercatino-al-tram",
+      "status": "published"
+    },
+    {
+      "marketId": "M055",
+      "date": "2026-12-13",
+      "source": "https://www.discover-trieste.it/vivi/trieste-now/barbacan-produce",
+      "status": "published"
+    },
+    {
+      "marketId": "M058",
+      "date": "2026-12-13",
+      "source": "https://www.turismofvg.it/eventi/la-magia-del-natale-mercatino-2026",
+      "status": "published"
+    },
+    {
+      "marketId": "M045",
+      "date": "2026-12-13",
+      "source": "https://www.turismofvg.it/events/market-in-muggia-meta",
+      "status": "published"
+    },
+    {
+      "marketId": "M028",
+      "date": "2026-12-13",
+      "source": "https://prolocoregionefvg.it/eventi-delle-associate/mercatino-dellusato-codroipo/",
+      "status": "published"
+    },
+    {
+      "marketId": "M049",
+      "date": "2026-12-13",
+      "source": "https://www.discover-trieste.it/vivi/trieste-now/mercatino-di-porto-vecchio",
+      "status": "published"
+    },
+    {
+      "marketId": "M044",
+      "date": "2026-12-19",
+      "source": "https://www.turismofvg.it/events/market-in-muggia-creattivamente",
+      "status": "published"
+    },
+    {
+      "marketId": "M045",
+      "date": "2026-12-20",
+      "source": "https://www.turismofvg.it/events/market-in-muggia-meta",
+      "status": "published"
+    },
+    {
+      "marketId": "M033",
+      "date": "2026-12-20",
+      "source": "https://www.discover-trieste.it/vivi/trieste-now/mercatino-antiquariato",
+      "status": "published"
+    },
+    {
+      "marketId": "M043",
+      "date": "2026-12-20",
+      "source": "https://prolocoregionefvg.it/eventi-delle-associate/tesori-del-tempo-mercatino-dellusato/",
+      "status": "published"
+    },
+    {
+      "marketId": "M051",
+      "date": "2026-12-26",
+      "source": "https://www.discover-trieste.it/vivi/trieste-now/un-pozzo-di-occasioni",
+      "status": "published"
+    },
+    {
+      "marketId": "M050",
+      "date": "2026-12-27",
+      "source": "https://www.discover-trieste.it/vivi/trieste-now/mercatino-di-ponterosso",
+      "status": "published"
+    }
+  ]
+}

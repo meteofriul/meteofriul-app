@@ -15,6 +15,7 @@
 @import "../features/bulletin/nationalOfficialAlerts.css" layer(features);
 @import "../features/discover/discover.css" layer(features);
 @import "../features/events/events.css" layer(features);
+@import "../features/markets/markets.css" layer(features);
 @import "../features/home/home.css" layer(features);
 @import "../features/home/homeWeatherScene.css" layer(features);
 @import "../features/lab/lab.css" layer(features);

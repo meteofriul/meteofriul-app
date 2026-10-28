@@ -29,6 +29,8 @@ import { PromotionPlacementCard } from "../promotions/PromotionPlacementCard";
 import { buildEventPreviewModel } from "./eventPreview";
 import { groupEventOccurrences, sortEventsForTimeTab } from "./eventsViewModel";
 import { EventsRadiusSelect } from "./EventsRadiusSelect";
+import { findRequestedMarketEvent, marketDirectionsUrl, matchMarket } from "../markets/marketsCatalog";
+import { getMarketsCopy } from "../markets/marketsCopy";
 
 const INITIAL_VISIBLE_EVENTS = 16;
 const VISIBLE_EVENTS_STEP = 16;
@@ -179,9 +181,13 @@ export function EventPreviewPanel({
   onClose,
   onImageError,
   panelRef,
+  onMarketOpen,
+  language = 'it',
 }) {
   const preview = buildEventPreviewModel(event);
   const festivalDates = mainFestivalDates(event);
+  const market = matchMarket(event);
+  const directionsUrl = event.raw?.market_catalogue ? marketDirectionsUrl(market) : preview.directionsUrl;
 
   return (
     <section
@@ -286,6 +292,9 @@ export function EventPreviewPanel({
 
         <ProgrammeSchedule copy={copy} sessions={event.raw?.programme_sessions} />
 
+        {market && onMarketOpen ? <button type="button" className="mf-market-catalogue-link" onClick={() => onMarketOpen(market.id)}>
+          <ShoppingBag size={18} aria-hidden="true" />{getMarketsCopy(language).details}
+        </button> : null}
         <div className="mf-event-preview__actions">
           {preview.pageUrl ? (
             <a
@@ -298,15 +307,15 @@ export function EventPreviewPanel({
               <span>{copy.previewPageLabel}</span>
             </a>
           ) : null}
-          {preview.directionsUrl ? (
+          {directionsUrl ? (
             <a
               className="mf-event-preview__action"
-              href={preview.directionsUrl}
+              href={directionsUrl}
               rel="noopener noreferrer"
               target="_blank"
             >
               <Navigation aria-hidden="true" size={18} strokeWidth={2.25} />
-              <span>{copy.previewDirectionsLabel}</span>
+              <span>{event.raw?.market_catalogue ? getMarketsCopy(language).directions : copy.previewDirectionsLabel}</span>
             </a>
           ) : null}
         </div>
@@ -322,16 +331,19 @@ function needsTurismoFvgDetail(event) {
     && (!preview.description || !preview.directionsUrl);
 }
 
-function EventPreviewDialog({ copy, event, onClose }) {
+function EventPreviewDialog({ copy, event, onClose, onMarketOpen, language }) {
   usePilotBackHandler(onClose);
   useBrowserDialogBack(onClose);
   const closeButtonRef = useRef(null);
   const panelRef = useRef(null);
   const [imageBroken, setImageBroken] = useState(false);
-  const [resolvedEvent, setResolvedEvent] = useState(event);
-  const [descriptionPending, setDescriptionPending] = useState(
-    () => needsTurismoFvgDetail(event),
-  );
+  const [resolvedDetail, setResolvedDetail] = useState(null);
+  // Linked editions follow source refreshes. Detail fields belong only to
+  // the event object that requested them, never to a newer source snapshot.
+  const detailFields = resolvedDetail?.event === event ? resolvedDetail.fields : null;
+  const resolvedEvent = detailFields
+    ? { ...event, raw: { ...event.raw, ...detailFields } } : event;
+  const descriptionPending = needsTurismoFvgDetail(event) && resolvedDetail?.event !== event;
 
   useEffect(() => {
     if (!needsTurismoFvgDetail(event)) return undefined;
@@ -361,18 +373,10 @@ function EventPreviewDialog({ copy, event, onClose }) {
             .filter((key) => detailRaw[key] !== null && detailRaw[key] !== undefined && detailRaw[key] !== "")
             .map((key) => [key, detailRaw[key]]),
         );
-        if (!Object.keys(verifiedFields).length) return;
-        setResolvedEvent((currentEvent) => ({
-          ...currentEvent,
-          raw: {
-            ...(currentEvent?.raw || {}),
-            ...verifiedFields,
-          },
-        }));
+        setResolvedDetail({ event, fields: verifiedFields });
       })
-      .catch(() => {})
-      .finally(() => {
-        if (!cancelled) setDescriptionPending(false);
+      .catch(() => {
+        if (!cancelled) setResolvedDetail({ event, fields: {} });
       });
 
     return () => {
@@ -435,6 +439,8 @@ function EventPreviewDialog({ copy, event, onClose }) {
         onClose={onClose}
         onImageError={() => setImageBroken(true)}
         panelRef={panelRef}
+        language={language}
+        onMarketOpen={onMarketOpen ? (id) => { onClose(); onMarketOpen(id); } : undefined}
       />
     </div>,
     document.body,
@@ -537,20 +543,28 @@ export function EventsView({
   onRadiusChange,
   showCardSource = true,
   titleMode = "visible",
+  onMarketsOpen,
+  marketEventRequest,
 }) {
-  const [requestedTab, setRequestedTab] = useState("today");
-  const [activeCategory, setActiveCategory] = useState("all");
+  const requestedEvent = findRequestedMarketEvent(model.items, marketEventRequest);
+  const [requestedTab, setRequestedTab] = useState(() => requestedEvent?.timeCategory || "today");
+  const [activeCategory, setActiveCategory] = useState(() => marketEventRequest ? "mercato" : "all");
   const [selectedEvent, setSelectedEvent] = useState(null);
+  const [requestPreviewDismissed, setRequestPreviewDismissed] = useState(!marketEventRequest);
+  // Follow source refreshes until the user closes the linked edition or opens another card.
+  const effectiveSelectedEvent = requestPreviewDismissed ? selectedEvent : requestedEvent;
   const [visibleState, setVisibleState] = useState({ count: INITIAL_VISIBLE_EVENTS, key: "" });
   const previewTriggerRef = useRef(null);
   const copy = model.copy;
   const handlePreviewOpen = useCallback((event, trigger) => {
     previewTriggerRef.current = trigger;
+    setRequestPreviewDismissed(true);
     setSelectedEvent(event);
   }, []);
   const handlePreviewClose = useCallback(() => {
     const trigger = previewTriggerRef.current;
     previewTriggerRef.current = null;
+    setRequestPreviewDismissed(true);
     setSelectedEvent(null);
     window.requestAnimationFrame(() => trigger?.focus());
   }, []);
@@ -671,6 +685,12 @@ export function EventsView({
           </section>
         </div>
 
+        {onMarketsOpen ? <button className="mf-market-catalogue-link" type="button" onClick={() => onMarketsOpen()}>
+          <ShoppingBag size={18} aria-hidden="true" />{getMarketsCopy(language).catalogueLink}
+        </button> : null}
+        {marketEventRequest && !requestedEvent && !model.isLoading ? <p role="status" className="mf-markets-note">
+          {language === "fur" ? "L’apontament nol è disponibil tal calendari corint. Controle la font dal marcjât." : "L’appuntamento non è disponibile nel calendario corrente. Consulta la fonte del mercato."}
+        </p> : null}
         <section className="mf-events-list" aria-label={copy.viewTitle}>
           {model.isLoading ? (
             <EmptyEvents copy={copy} isLoading tab={effectiveTab} />
@@ -715,11 +735,13 @@ export function EventsView({
           )}
         </section>
       </div>
-      {selectedEvent ? (
+      {effectiveSelectedEvent ? (
         <EventPreviewDialog
           copy={copy}
-          event={selectedEvent}
-          key={`${selectedEvent.source || "event"}:${selectedEvent.url || selectedEvent.title}`}
+          event={effectiveSelectedEvent}
+          language={language}
+          onMarketOpen={onMarketsOpen}
+          key={`${effectiveSelectedEvent.source || "event"}:${effectiveSelectedEvent.url || effectiveSelectedEvent.title}`}
           onClose={handlePreviewClose}
         />
       ) : null}

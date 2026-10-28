@@ -48,6 +48,10 @@ import {
 import { buildHomeBulletinPresentation } from "../features/home/homeBulletinPresentation";
 import { selectHomeDiscoverPreview } from "../features/home/homeDiscoverPreview";
 import { DiscoverView } from "../features/discover/DiscoverView";
+import { MarketsExplorer } from "../features/markets/MarketsExplorer";
+import { marketDay, mergeMarketEvents } from "../features/markets/marketsCatalog";
+import { subscribeToMarketsDayClock } from "../features/markets/marketsDayClock";
+import { getPilotMunicipalityContext } from "../features/discover/pilotMunicipalityContext";
 import { buildDiscoverViewModel } from "../features/discover/discoverViewModel";
 import { HomeLabView } from "../features/lab/HomeLabView";
 import {
@@ -980,17 +984,20 @@ function BulletinRouteView({
 function EventsRouteView({
   activeLocation,
   language,
+  onMarketsOpen,
+  marketEventRequest,
   onEventsNavigationState,
   onRuntimeRefreshSettled,
   runtimeRefreshToken = 0,
 }) {
-  const activeEventsLocation = activeLocation || DEFAULT_APP_LOCATION;
-  const location = useMemo(() => isDefinitiveAppExperience()
-    ? {
-      ...activeEventsLocation,
-      eventsRadius: DEFAULT_EVENTS_RADIUS_KM,
-    }
-    : activeEventsLocation, [activeEventsLocation]);
+  const activeEventsLocation = marketEventRequest?.location || activeLocation || DEFAULT_APP_LOCATION;
+  const location = useMemo(() => ({
+    ...activeEventsLocation,
+    eventsRadius: marketEventRequest?.radius || (isDefinitiveAppExperience()
+      ? DEFAULT_EVENTS_RADIUS_KM : activeEventsLocation.eventsRadius) || DEFAULT_EVENTS_RADIUS_KM,
+  }), [activeEventsLocation, marketEventRequest?.radius]);
+  const [marketNow, setMarketNow] = useState(() => new Date());
+  useEffect(() => subscribeToMarketsDayClock(setMarketNow), []);
   const [dataState, setDataState] = useState(() => (
     readEventsRouteInitialState(location)
   ));
@@ -1057,15 +1064,20 @@ function EventsRouteView({
   }, [dataState.retry, dataState.shouldRetry, location]);
 
   const model = useMemo(
-    () => buildEventsViewModel(dataState, { language, location }),
-    [dataState, language, location],
+    () => buildEventsViewModel({ ...dataState, items: mergeMarketEvents(dataState.items, {
+      location, radius: location.eventsRadius || DEFAULT_EVENTS_RADIUS_KM, now: marketNow,
+    }) }, { language, location, now: new Date(marketDay(marketNow) + 'T12:00:00') }),
+    [dataState, language, location, marketNow],
   );
 
   return (
     <EventsView
+      key={marketEventRequest?.key || 'events'}
+      marketEventRequest={marketEventRequest}
+      onMarketsOpen={onMarketsOpen}
       language={language}
       model={model}
-      radius={DEFAULT_EVENTS_RADIUS_KM}
+      radius={location.eventsRadius}
       onRadiusChange={undefined}
       onChangeLocation={undefined}
       showCardSource={!isDefinitiveAppExperience()}
@@ -1691,6 +1703,32 @@ export function AppRoutes({
   const localWeatherPilot = isDefinitiveAppExperience();
   const editorialLocation = editorialContext?.focusLocation || DEFAULT_APP_LOCATION;
   const routeKey = getAppRouteViewKey(activeTab, activeLocation, editorialLocation);
+  const marketLocation = localWeatherPilot
+    ? getPilotMunicipalityContext({ activeLocation, autoLocationEnabled, deviceLocationStatus })?.location || null
+    : activeLocation;
+  const marketLocationKey = getLocationCacheKey(marketLocation);
+  const [marketCatalogueRequest, setMarketCatalogueRequest] = useState(null);
+  const [marketEventRequest, setMarketEventRequest] = useState(null);
+  const marketVisit = useRef(0);
+  const [marketContext, setMarketContext] = useState({ tab: activeTab, locationKey: marketLocationKey });
+  if (marketContext.tab !== activeTab || marketContext.locationKey !== marketLocationKey) {
+    setMarketContext({ tab: activeTab, locationKey: marketLocationKey });
+    // An edition link belongs to this visit; normal navigation must not reopen it.
+    if ((marketContext.tab === "events" && activeTab !== "events") || marketContext.locationKey !== marketLocationKey) {
+      setMarketEventRequest(null);
+    }
+    setMarketCatalogueRequest(null);
+  }
+  const openMarkets = useCallback((marketId = null) => {
+    if (reportSubmissionLocked) return;
+    setMarketCatalogueRequest({ marketId, key: ++marketVisit.current, locationKey: marketLocationKey });
+  }, [marketLocationKey, reportSubmissionLocked]);
+  const openMarketEvent = useCallback((request) => {
+    if (reportSubmissionLocked) return;
+    setMarketEventRequest({ ...request, location: marketLocation, key: ++marketVisit.current, locationKey: marketLocationKey });
+    setMarketCatalogueRequest(null);
+    onNavigate?.("events");
+  }, [marketLocation, marketLocationKey, onNavigate, reportSubmissionLocked]);
   const routeRuntimeRefreshToken = useRouteRuntimeRefreshToken(routeKey, runtimeRefreshToken);
   const previousRouteRefreshRef = useRef({ routeKey, token: routeRuntimeRefreshToken });
   useEffect(() => {
@@ -1793,6 +1831,7 @@ export function AppRoutes({
         ? NationalAlertsRouteView
         : NationalAlertsAvailabilityRouteView
       : activeTab === "events"
+        && !marketEventRequest
         && effectiveProductScope.sources.events?.status === "unsupported"
         ? EventsAvailabilityRouteView
         : ROUTES[routeId] || ROUTES.home;
@@ -1841,6 +1880,8 @@ export function AppRoutes({
       onThemePreferenceChange={onThemePreferenceChange}
       pendingReportUndo={pendingReportUndo}
       pilotWhyId={pilotWhyId}
+      onMarketsOpen={openMarkets}
+      marketEventRequest={marketEventRequest?.locationKey === marketLocationKey ? marketEventRequest : null}
       reportSubmissionLocked={reportSubmissionLocked}
       runtimeRefreshToken={routeRuntimeRefreshToken}
       runtimeRefreshForce={runtimeRefreshForce}
@@ -1886,6 +1927,14 @@ export function AppRoutes({
           {routeView}
         </WeatherSwipeShell>
       ) : routeView}
+      <MarketsExplorer
+        key={marketLocationKey}
+        request={marketCatalogueRequest?.locationKey === marketLocationKey ? marketCatalogueRequest : null}
+        location={marketLocation}
+        language={language}
+        onClose={() => setMarketCatalogueRequest(null)}
+        onViewEvent={openMarketEvent}
+      />
     </Suspense>
   );
 }

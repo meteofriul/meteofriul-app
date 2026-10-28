@@ -40,7 +40,7 @@ const MONTH_INDEX = {
   dicembre: 11,
 };
 
-const UPCOMING_WINDOW_DAYS = 15;
+export const UPCOMING_WINDOW_DAYS = 15;
 const MS_PER_DAY = 24 * 60 * 60 * 1000;
 const KNOWN_CATEGORY_IDS = new Set(
   EVENTS_CATEGORY_FILTERS.map((category) => category.id).filter((id) => id !== "all" && id !== "other"),

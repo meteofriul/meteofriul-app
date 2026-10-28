@@ -1,0 +1,293 @@
+{
+  "recorded_at_utc": "2026-10-28T20:48:40+00:00",
+  "workstream": "mercati-integration-20261028",
+  "branch": "codex/mercati-integration-20261028",
+  "base_commit": "40431af7b8777671dd36b1c3096d7d714c14e640",
+  "imported_commit": "7693f3d5",
+  "candidate_identity": "The source hashes below identify the tested code; this receipt is included in the local integration commit.",
+  "toolchain": {
+    "node": "22.17.1",
+    "npm": "10.9.2",
+    "python": "3.13.5",
+    "vite": "8.1.6",
+    "vitest": "4.1.12",
+    "eslint": "10.5.0",
+    "node_directory": "<LOCALAPPDATA>/MeteoFriul/toolchains/node-v22.17.1-win-x64",
+    "path_scope": "Child processes only; permanent PATH and global installation unchanged."
+  },
+  "dependencies": {
+    "command": "npm ls --depth=0 --offline",
+    "cwd": "frontend",
+    "exit_code": 0,
+    "node_modules": "Physical directory; no cross-worktree junction.",
+    "installs_or_updates": 0,
+    "manifest_or_lockfile_changes": false
+  },
+  "tests": [
+    {
+      "owner": "eventi_consolidation_review",
+      "command": "npm.cmd test -- src/features/events",
+      "cwd": "frontend",
+      "tests": 149,
+      "test_files": 14,
+      "exit_code": 0,
+      "status": "PASS",
+      "started_at_local": "2026-10-28T21:31:57+01:00",
+      "vitest_duration_seconds": 7.53,
+      "wall_seconds": 8.9755649,
+      "evidence": "Agent attestation of session output; no persistent raw log was saved. Frozen source hashes independently matched.",
+      "verified_owner_hashes": {
+        "frontend/src/features/events/EventsView.jsx": "05f9f94e0b12f1ab12c4049fcae9f9a7929b237673113897f3829335c387e111",
+        "frontend/src/features/events/eventsViewModel.js": "e77f39b93405e7ffde32c484e5bad4bec0c273adc34649bd4140a3a66c018947",
+        "frontend/src/features/events/EventsView.markets.test.jsx": "04dbaaa4a220187e89884fbdc239901e9c21761938bb6927c39ebbba2a91b7d9"
+      }
+    },
+    {
+      "owner": "scopri_mercati",
+      "command": "npm test -- src/features/markets src/features/discover/DiscoverView.test.jsx",
+      "cwd": "frontend",
+      "tests": 49,
+      "test_files": 5,
+      "exit_code": 0,
+      "status": "PASS",
+      "log": "tmp/mercati-integration-20261028/scopri-focused-tests.log",
+      "log_sha256": "0d1891f1599773b5998a23b2db3e7864a9bfcce7330af6f0a9fdc1ddda725c8d"
+    },
+    {
+      "owner": "build_verifica",
+      "name": "routing-services",
+      "command": "npm test -- src/app/AppRoutes.test.jsx src/app/AppRoutes.discoverLocation.test.jsx src/app/AppRoutes.refreshNavigation.test.jsx src/app/AppRoutes.markets.test.jsx src/app/usePilotBackHandler.test.js src/app/useBrowserDialogBack.test.jsx src/services/pilotProgrammeProjection.test.js src/services/eventsApi.test.js",
+      "cwd": "frontend",
+      "exit_code": 0,
+      "wall_seconds": 16.161,
+      "log": "tmp/mercati-integration-20261028/routing-services.log",
+      "log_sha256": "0dafd9afe862d0cea5bcc9052a60775f9008052e52b74fd3ca33e2ee9c1a6b74",
+      "tests": 118,
+      "test_files": 8,
+      "status": "PASS"
+    }
+  ],
+  "distinct_test_total": 316,
+  "distinct_test_file_total": 27,
+  "lint": {
+    "name": "lint",
+    "command": "npm run lint",
+    "cwd": "frontend",
+    "exit_code": 0,
+    "wall_seconds": 33.952,
+    "log": "tmp/mercati-integration-20261028/lint.log",
+    "log_sha256": "bf3afc05cdae6109893a1ff930ce18a01a3498e8a975205659afc65ddf75d6c6"
+  },
+  "build": {
+    "steps": [
+      {
+        "name": "web-build",
+        "command": "node node_modules/vite/bin/vite.js build --configLoader native --outDir <UNIQUE_OS_TEMP_BUILD>",
+        "cwd": "frontend",
+        "exit_code": 0,
+        "wall_seconds": 19.359,
+        "log": "tmp/mercati-integration-20261028/web-build.log",
+        "log_sha256": "5be79ced128d7a9b2e166d5d0661f8e1a768badeb6296e95dbaea70d9e740387"
+      },
+      {
+        "name": "service-worker-build",
+        "command": "node node_modules/vite/bin/vite.js build --config vite.sw.config.js --configLoader native --outDir <UNIQUE_OS_TEMP_BUILD>",
+        "cwd": "frontend",
+        "exit_code": 0,
+        "wall_seconds": 1.067,
+        "log": "tmp/mercati-integration-20261028/service-worker-build.log",
+        "log_sha256": "3be0f5f0ef10faebecebabd93e9f10ca62dcb51af4464f32db5451b785778178"
+      },
+      {
+        "name": "service-worker-assert",
+        "command": "node scripts/assert-web-push-service-worker.mjs <UNIQUE_OS_TEMP_BUILD>",
+        "cwd": "frontend",
+        "exit_code": 0,
+        "wall_seconds": 0.107,
+        "log": "tmp/mercati-integration-20261028/service-worker-assert.log",
+        "log_sha256": "a4c028ce589ca347d88cf6750207a1b772672b2f1c163eed5af48188cd9db4e8"
+      }
+    ],
+    "output_directory": "<OS_TEMP>/meteofriul-mercati-web-2_oj6zeg",
+    "output_file_count": 506,
+    "index_sha256": "0065329ea393fa52e363fabfcd4bea35f9b8512822a399a597338679d1a805a0",
+    "environment": {
+      "VITE_API_BASE": "/api",
+      "VITE_ANDROID_API_BASE": "Removed only from build child environment."
+    },
+    "qualification": "Local Web compilation only; not a distribution artifact or Android/runtime proof."
+  },
+  "build_warnings": [
+    "INEFFECTIVE_DYNAMIC_IMPORT: AlmanacView is imported dynamically and statically; existing warning retained.",
+    "Minified chunks exceed 500 kB; existing non-blocking warning retained without changing thresholds.",
+    "PLUGIN_TIMINGS: significant time in vite:asset and rolldown:vite-resolve."
+  ],
+  "tooling_incidents": [
+    "Initial wrapper stopped while printing a checkmark to a CP1252 console after successful Web build and saved UTF-8 log. Only the remaining service-worker build and assert were resumed in the same output directory, using UTF-8 console output.",
+    "Initial preview launcher had ended, but the Python log collector waited for EOF on a pipe inherited by background processes. Earlier statements attributing that wait to weather requests were corrected. Initial launcher exit code and duration were not recovered. No application gate was bypassed."
+  ],
+  "preview": {
+    "url": "http://127.0.0.1:5174/",
+    "profile": "weather-cloud-v1",
+    "vite_mode": "local-pilot-cloud",
+    "launch_command": ".\\scripts\\start-local-weather-pilot.ps1 -WeatherCloud -NodeDirectory <PORTABLE_NODE>",
+    "launch_count": 1,
+    "initial_launcher_process": "terminated",
+    "initial_launcher_exit_code": null,
+    "initial_launcher_duration_seconds": null,
+    "initial_exit_code_limit": "Unavailable because of the receipt-collector inherited-pipe wait; not asserted as PASS or FAIL.",
+    "initial_checkonly": {
+      "command": ".\\scripts\\start-local-weather-pilot.ps1 -WeatherCloud -NodeDirectory <PORTABLE_NODE> -CheckOnly",
+      "exit_code": 0,
+      "wall_seconds": 8.116,
+      "evidence": "Observed by build_verifica in the execution result before launch."
+    },
+    "final_checkonly_on_running_services": {
+      "command": ".\\scripts\\start-local-weather-pilot.ps1 -WeatherCloud -NodeDirectory <PORTABLE_NODE> -CheckOnly",
+      "cwd": "repository root",
+      "exit_code": 0,
+      "wall_seconds": 7.654,
+      "log": "tmp/mercati-integration-20261028/preview-checkonly-final.log",
+      "log_sha256": "afe44d5e81a43382c1b6da323f00e43704e053cc2f3696e92fdbb644590b946f",
+      "new_services_started": 0,
+      "services_stopped": 0
+    },
+    "final_attestation": "PASS from final canonical CheckOnly, saved ownership, matching portable Node listener and HTTP 200; original launch exit code remains unavailable.",
+    "live_observation": {
+      "observed_at_utc": "2026-10-28T20:45:43.2861790Z",
+      "url": "http://127.0.0.1:5174/",
+      "http_status": 200,
+      "vite_client_marker": true,
+      "listeners": [
+        {
+          "port": 5174,
+          "address": "127.0.0.1",
+          "pid": 17892,
+          "process_name": "node",
+          "prescribed_node": true,
+          "started_at": "2026-10-28T20:37:38.8541653Z"
+        },
+        {
+          "port": 8002,
+          "address": "127.0.0.1",
+          "pid": 12760,
+          "process_name": "python",
+          "prescribed_node": null,
+          "started_at": "2026-10-28T20:37:30.9305991Z"
+        }
+      ],
+      "expected_profile": "weather-cloud-v1",
+      "helper_only_stopped": 13672,
+      "server_processes_stopped": 0,
+      "visual_check_completed": false
+    },
+    "ownership": {
+      "frontend_wrapper_pid": 11500,
+      "frontend_listener_pid": 17892,
+      "backend_wrapper_pid": 6420,
+      "backend_listener_pid": 12760,
+      "binding": "toolhelp_parent_chain",
+      "frontend_direct_process_id_visibility": false,
+      "recognizable_by_canonical_launcher": true
+    },
+    "collector_cleanup": {
+      "only_helper_pid_stopped": 13672,
+      "identity_rechecked": true,
+      "direct_children_before_stop": 0,
+      "server_processes_stopped": 0,
+      "collector_outer_wrapper_exit_code_after_cleanup": 1,
+      "note": "This cleanup exit belongs to the log collector, not the initial launcher."
+    },
+    "remains_running": true,
+    "restart_commands": [
+      "$pilotNode = Join-Path $env:LOCALAPPDATA 'MeteoFriul\\toolchains\\node-v22.17.1-win-x64'",
+      ".\\scripts\\start-local-weather-pilot.ps1 -WeatherCloud -NodeDirectory $pilotNode"
+    ],
+    "stop_command": ".\\scripts\\start-local-weather-pilot.ps1 -Stop",
+    "automatic_visual_verification": false,
+    "browser_limit": "Coordinator reported unavailable CUA host/pipe and @oai/sky native pipe; HTTP is not visual verification.",
+    "manual_checks_remaining": [
+      "IT/FUR and light/dark at mobile and desktop widths.",
+      "Scopri -> Mercati: filters, radius, detail, return to list.",
+      "Eventi -> documented market edition -> catalogue, preserving navigation and dismissal.",
+      "Mercati integrates the existing useBrowserDialogBack mechanism; this is not a new global Back feature.",
+      "Outside FVG, no upcoming edition, location change, expired/cancelled entries, focus and scrolling."
+    ]
+  },
+  "source_file_sha256": {
+    "frontend/src/app/AppRoutes.jsx": "ba4e1230ebe98777ab033df98ce0b3d48c0ff30cfde06e4e0d762bb6dc3f9aac",
+    "frontend/src/app/AppRoutes.markets.test.jsx": "37c555302dea6100c6e17b9ede8bedab5a70312d7c199545507a9b4ca1fed2fc",
+    "frontend/src/data/markets/catalogue2026.json": "dce63d9d521ccfd9f593de9143f0ff0649220a0a15c09135ecf902290fecbafb",
+    "frontend/src/features/discover/DiscoverView.jsx": "bfbf40c72413b2e82d5d3271afa6169e136fd4fd7d229a098e80b786c170ad68",
+    "frontend/src/features/events/EventsView.jsx": "05f9f94e0b12f1ab12c4049fcae9f9a7929b237673113897f3829335c387e111",
+    "frontend/src/features/events/EventsView.markets.test.jsx": "04dbaaa4a220187e89884fbdc239901e9c21761938bb6927c39ebbba2a91b7d9",
+    "frontend/src/features/events/eventsViewModel.js": "e77f39b93405e7ffde32c484e5bad4bec0c273adc34649bd4140a3a66c018947",
+    "frontend/src/features/markets/MarketsExplorer.browserBack.test.jsx": "1d55229836a1608a1ef67d09060d22e3c4e2ca002be6a9845ef759208d1a453b",
+    "frontend/src/features/markets/MarketsExplorer.jsx": "07accba60e3f8e67dc79fa738bece9432bc65cb6951fa48305874aaca5fdd53b",
+    "frontend/src/features/markets/MarketsExplorer.test.jsx": "c958a00950019236aa50bfb3eda430c00c1082478235e8858b75d2c98b483f8f",
+    "frontend/src/features/markets/markets.css": "d8e4fe24c9466bf1b61619b1af4210e5dd4f3de59d2f7a9731120e2651ab8dc3",
+    "frontend/src/features/markets/marketsCatalog.js": "964c5ef4b50b3c07e26347770c16e9bb65b7be3129e4b74c3d7794133923c8e7",
+    "frontend/src/features/markets/marketsCatalog.test.js": "cded39ab077ef3724eea1e2642634d1234913bc97af11e1bc23361e0a0cff332",
+    "frontend/src/features/markets/marketsCopy.js": "4672189ed8eb171224adcf70a71cb088b12ff44d6bef4420dfaa8ee944b7b083",
+    "frontend/src/features/markets/marketsDayClock.js": "84306be80863f61d1e0c3d9d2ecf96a8605d8bdb0df32b64a1ee14aadb4e7edf",
+    "frontend/src/features/markets/marketsDayClock.test.js": "11c4e76f78355a42b2776e7a8024069728e5fb378973ff2db38295295e53dde1",
+    "frontend/src/ui/index.css": "6e4262a9afca19d3d3a62615ecd4fab08e87eb6f630fdbf63e6b8cc54d449e74"
+  },
+  "evidence_files": [
+    {
+      "path": "tmp/mercati-integration-20261028/routing-services.log",
+      "sha256": "0dafd9afe862d0cea5bcc9052a60775f9008052e52b74fd3ca33e2ee9c1a6b74"
+    },
+    {
+      "path": "tmp/mercati-integration-20261028/lint.log",
+      "sha256": "bf3afc05cdae6109893a1ff930ce18a01a3498e8a975205659afc65ddf75d6c6"
+    },
+    {
+      "path": "tmp/mercati-integration-20261028/web-build.log",
+      "sha256": "5be79ced128d7a9b2e166d5d0661f8e1a768badeb6296e95dbaea70d9e740387"
+    },
+    {
+      "path": "tmp/mercati-integration-20261028/service-worker-build.log",
+      "sha256": "3be0f5f0ef10faebecebabd93e9f10ca62dcb51af4464f32db5451b785778178"
+    },
+    {
+      "path": "tmp/mercati-integration-20261028/service-worker-assert.log",
+      "sha256": "a4c028ce589ca347d88cf6750207a1b772672b2f1c163eed5af48188cd9db4e8"
+    },
+    {
+      "path": "tmp/mercati-integration-20261028/scopri-focused-tests.log",
+      "sha256": "0d1891f1599773b5998a23b2db3e7864a9bfcce7330af6f0a9fdc1ddda725c8d"
+    },
+    {
+      "path": "tmp/mercati-integration-20261028/preview-checkonly-final.log",
+      "sha256": "afe44d5e81a43382c1b6da323f00e43704e053cc2f3696e92fdbb644590b946f"
+    },
+    {
+      "path": "tmp/mercati-integration-20261028/preview-live-observation.json",
+      "sha256": "2e661d2f830032f1246bd821c74f027527bede96fd4760ddab6040993380acad"
+    }
+  ],
+  "diff_checks": {
+    "working_tree": "PASS",
+    "staged": "PASS"
+  },
+  "limits": [
+    "No backend source changes or backend suite required for this frontend integration.",
+    "No Android sync/build, AAB, phone installation, remote mutation, deploy or publication performed.",
+    "Existing Web/Android/AAB qualifications unchanged; manual visual verification remains open.",
+    "Coordinator delivery checks are recorded below. No remote CI or promotion was requested."
+  ],
+  "coordinator_delivery_checks": {
+    "canonical_workspace": {
+      "command": ".\\scripts\\test-canonical-workspace-cleanliness.ps1",
+      "exit_code": 0,
+      "tracked_files": 4020,
+      "performed_after_staging": true
+    },
+    "staged_diff_check": "PASS",
+    "added_local_document_links_checked": 10,
+    "unchanged_tested_source_hashes": 17,
+    "privacy_hook": "Existing external pre-push hook preserved. No push and no execution of that push-only hook.",
+    "changed_files": 22
+  }
+}

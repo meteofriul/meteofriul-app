@@ -1,0 +1,77 @@
+// @vitest-environment jsdom
+import { act, useState } from "react";
+import { createRoot } from "react-dom/client";
+import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
+
+vi.mock("../services/localWeatherPilot", async original => ({
+  ...await original(), isDefinitiveAppExperience: () => true,
+  isLocalWeatherPilot: () => true, getLocalWeatherPilotTestNow: () => null,
+}));
+vi.mock("../features/events/eventsDataController", async original => ({
+  ...await original(), readInitialEventsData: () => null,
+  loadEventsData: vi.fn(async () => ({ items: [], status: "fresh", isRefreshing: false })),
+}));
+import { AppRoutes } from "./AppRoutes";
+import { DEFAULT_APP_LOCATION } from "./appLocation";
+import { getUiShellCopy } from "./uiShellCopy";
+import { loadEventsData } from "../features/events/eventsDataController";
+
+const pn = { city: "Pordenone", countryCode: "IT", regionCode: "IT-36", source: "manual_search", istatCode: "093033", lat: 45.9567, lon: 12.6605 };
+const ud = { city: "Udine", countryCode: "IT", regionCode: "IT-36", source: "manual_search", istatCode: "030129", lat: 46.0633, lon: 13.2357 };
+let host, root;
+function App({ location = pn, ...props }) {
+  const [tab, setTab] = useState("discover");
+  return <><nav><button onClick={() => setTab("discover")}>Vai a Scopri</button><button onClick={() => setTab("events")}>Vai a Eventi</button></nav>
+    <AppRoutes activeTab={tab} activeLocation={location} editorialContext={{ focusLocation: pn }}
+      copy={getUiShellCopy("it")} language="it" onNavigate={setTab} {...props} /></>;
+}
+const button = (text, scope = document) => [...scope.querySelectorAll("button")].find(node => node.textContent.includes(text));
+const click = async node => act(async () => node.click());
+beforeEach(() => {
+  vi.useFakeTimers(); vi.setSystemTime(new Date("2026-10-15T10:00:00Z"));
+  vi.stubGlobal("IS_REACT_ACT_ENVIRONMENT", true);
+  vi.stubGlobal("fetch", vi.fn(() => { throw new Error("Unexpected network request"); }));
+  HTMLDialogElement.prototype.showModal = function () { this.open = true; };
+  HTMLDialogElement.prototype.close = function () { this.open = false; };
+  localStorage.clear(); vi.mocked(loadEventsData).mockClear();
+  host = document.createElement("div"); document.body.append(host); root = createRoot(host);
+});
+afterEach(async () => {
+  await act(async () => root.unmount()); host.remove();
+  vi.useRealTimers(); vi.unstubAllGlobals();
+});
+describe("Scopri / market catalogue / Events integration", () => {
+  it("opens a specific edition with the selected radius, links back, and consumes the navigation request", async () => {
+    await act(async () => root.render(<App />));
+    expect(host.querySelector("dialog")).toBeNull();
+    await click(button("Esplora nella tua zona"));
+    const select = host.querySelector(".mf-markets-context select");
+    await act(async () => { select.value = "50"; select.dispatchEvent(new Event("change", { bubbles: true })); });
+    await click(button("La Soffitta in Piazza", host));
+    await click(button("Vedi appuntamento"));
+    expect(document.querySelector(".mf-event-preview__panel")?.textContent).toContain("La Soffitta in Piazza");
+    expect(host.querySelector(".mf-markets-dialog")).toBeNull();
+    expect(vi.mocked(loadEventsData).mock.lastCall[0]).toEqual(expect.objectContaining({ city: "Pordenone", eventsRadius: 50 }));
+    await click(button("Scheda del mercato", document.querySelector(".mf-event-preview__panel")));
+    expect(document.querySelector(".mf-event-preview__panel")).toBeNull();
+    expect(host.querySelector(".mf-market-detail")?.textContent).toContain("La Soffitta in Piazza");
+    await click(host.querySelector('[aria-label="Chiudi catalogo"]'));
+    await click(button("Vai a Scopri"));
+    await click(button("Vai a Eventi"));
+    expect(document.querySelector(".mf-event-preview__panel")).toBeNull();
+    expect(document.body.style.overflow).not.toBe("hidden");
+  });
+  it("uses the real municipality, closes stale detail on location change and never substitutes the editorial city", async () => {
+    await act(async () => root.render(<App location={ud} />));
+    await click(button("Esplora nella tua zona"));
+    expect(host.querySelector(".mf-markets-context strong").textContent).toBe("Udine");
+    await act(async () => root.render(<App location={pn} />));
+    expect(host.querySelector("dialog")).toBeNull();
+    await click(button("Esplora nella tua zona"));
+    expect(host.querySelector(".mf-markets-context strong").textContent).toBe("Pordenone");
+    await act(async () => root.render(<App location={DEFAULT_APP_LOCATION} />));
+    await click(button("Esplora nella tua zona"));
+    expect(host.querySelectorAll(".mf-market-card")).toHaveLength(0);
+    expect(host.querySelector(".mf-markets-empty")).not.toBeNull();
+  });
+});
