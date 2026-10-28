@@ -1,0 +1,110 @@
+{
+  "recorded_at_utc": "2026-10-28T20:13:15+00:00",
+  "mode": "read_only_local_diagnosis_evidence_review",
+  "source_commit": "6eb9cc01acdf831468dccee46f62d7332b814784",
+  "reviewer": "build_verifica",
+  "environment": {
+    "python": "3.13.5",
+    "requests": "2.33.1",
+    "curl": "8.13.0",
+    "version_evidence": "Versions confirmed by coordinator; Python and Requests also inspected locally by reviewer."
+  },
+  "successful_public_gets_reviewed": 3,
+  "reviewer_network_calls": 0,
+  "probes": [
+    {
+      "name": "calendar",
+      "summary_file": "tmp/events-barcolana-timeout-20261028/probe-calendar-summary.json",
+      "summary_sha256": "090c55302c4dbd9a6a7f27a103ad044fe002511fbe406a0ae7bc2257bf1a447e",
+      "body_file": "probe-calendar.body",
+      "body_sha256": "409401cf231d515ca43364b4556363715cbe2b5bf949d9e7b155d4ef0eae9928",
+      "decoded_bytes": 1383006,
+      "collector_byte_limit": 3145728,
+      "http_status": 200,
+      "curl_exit_code": 0,
+      "ttfb_seconds": 2.990859,
+      "total_seconds": 3.069432,
+      "integrity": "PASS"
+    },
+    {
+      "name": "sitemap",
+      "summary_file": "tmp/events-barcolana-timeout-20261028/probe-sitemap-summary.json",
+      "summary_sha256": "9f9a08b78935f60cab191f1851b1805a29c9ed5e9684e016e4b4e71c33b335b1",
+      "body_file": "probe-sitemap.body",
+      "body_sha256": "d9719fa39d0e28665054a67562de76c834f970f71c088c3c8661d1da1cf87b5b",
+      "decoded_bytes": 1061919,
+      "collector_byte_limit": 2097152,
+      "http_status": 200,
+      "curl_exit_code": 0,
+      "ttfb_seconds": 0.305004,
+      "total_seconds": 0.403713,
+      "integrity": "PASS"
+    },
+    {
+      "name": "news",
+      "summary_file": "tmp/events-barcolana-timeout-20261028/probe-news-summary.json",
+      "summary_sha256": "edc81c0cf92bf83f3cddb12c251fef7ab6ea2720e889e81fb4e2b4db9694a0f6",
+      "body_file": "probe-news.body",
+      "body_sha256": "46e9434919c865257aaf91857b37f98c95d88934a93100e393b59283493e2970",
+      "decoded_bytes": 332772,
+      "collector_byte_limit": 1048576,
+      "http_status": 200,
+      "curl_exit_code": 0,
+      "ttfb_seconds": 0.588914,
+      "total_seconds": 0.630421,
+      "integrity": "PASS"
+    }
+  ],
+  "offline_replay": {
+    "owner": "eventi_consolidation_review",
+    "review": "PASS",
+    "summary_file": "tmp/events-barcolana-timeout-20261028/offline-replay-summary.json",
+    "summary_sha256": "4ed9b3d36b39c92b3d91b6d563944ff4550ec8b566c6cd7850b7294f95e1da12",
+    "script_file": "tmp/events-barcolana-timeout-20261028/offline-replay.py",
+    "script_sha256": "cf556e048cf278b9938fe127d4a48936d6b8ebdfca7a375f3c3cca15e4488892",
+    "network_calls": 0,
+    "captured_responses_only": 3,
+    "simulated_absent_pages_or_404": false,
+    "collector_status": "ok",
+    "gate_status": "ok",
+    "records_scanned": 682,
+    "parsed_sessions": 672,
+    "duplicates": 10,
+    "sitemap_event_urls": 682,
+    "detail_urls": 233,
+    "season_phase": "post_regatta_events",
+    "remaining_session_count": 1,
+    "next_session_date": "2026-11-29",
+    "previous_future_retained": true,
+    "previous_file": "tmp/events-source-diagnosis-20261028/barcolana-stored-event.json",
+    "previous_sha256": "9e3dc06d73ccebdd9e41145c64dbe3680a0bfc7d79a427f9502e9c81f0c017db",
+    "runtime_hashes": {
+      "backend/app/events/pilot_barcolana.py": "31a5b341a3a94122f15bfd14f9043323b1e037ef391ef0b69efc7b4e089bb23f",
+      "backend/app/events/pilot_source_policy.py": "ebf99b9a71442cdbfb0df9541532042fd77a5d8a0fd87468cc1fbb7df7773968"
+    },
+    "verification_method": "Script and result reviewed; six input/runtime hashes and future-session identity checked independently. Collector not executed again."
+  },
+  "sandbox_attempt": {
+    "summary_file": "tmp/events-barcolana-timeout-20261028/sandbox-connection-summary.json",
+    "summary_sha256": "4fcf5ce5992bc809a8e67740aa7dc8f571bfc8d6f015595bca72559d964679e4",
+    "classification": "Local execution-environment connection failure; excluded from provider diagnosis and successful public GET count."
+  },
+  "conclusion": "No code or timeout adjustment is justified by these successful captures and the offline replay. Preserve current budgets and gates; the cause of prior overnight failures remains undetermined.",
+  "unchanged_controls": {
+    "shared_read_budget_seconds": 28,
+    "barcolana_process_budget_seconds": 35,
+    "all_source_budgets_seconds": 860,
+    "aggregate_budget_guard_seconds": 875,
+    "max_parallel_reads": 4,
+    "maximum_attempts_per_read": 2
+  },
+  "checks_executed": "Artifact hash/size/coherence checks and read-only script review; no test suite, build or application mutation.",
+  "limits": [
+    "Three separate curl captures on this machine, at different times; not one concurrent Requests collector run and not the cloud worker.",
+    "The replay uses stored response bodies in memory; its duration is not a network latency measurement.",
+    "Success here and now does not explain the 27/28 October cloud ReadTimeout failures or establish provider reliability.",
+    "No cloud job, retry, deploy or catalog publication was performed; no cloud recovery is claimed.",
+    "A future separately authorized remote verification is required to assess the cloud source after the preceding corrections are deployed.",
+    "No existing Web, Android or AAB release qualification is changed."
+  ]
+}
