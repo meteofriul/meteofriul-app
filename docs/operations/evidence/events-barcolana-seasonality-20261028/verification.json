@@ -1,0 +1,74 @@
+{
+  "scope": "Local Barcolana seasonality gates; review and offline regression checks only",
+  "branch": "codex/events-barcolana-seasonality",
+  "base_commit": "8ac7ea6a6883d1dfce08430c7b3894826054fc73",
+  "python": "3.13.5",
+  "environment": "Existing system Python 3.13.5 satisfies prescribed 3.13; backend venv absent. Unittest uses -B; compileall cache is outside the repository in OS temp.",
+  "shared_tests": {
+    "command": "python -B -m unittest tests.test_pilot_source_policy tests.test_pilot_collection tests.test_pilot_catalog tests.test_pilot_catalog_health tests.test_pilot_cloud tests.test_pilot_http tests.test_pilot_css tests.test_pilot_regional_year_recovery.RegionalYearRecoveryTests.test_barcolana_2026_reconciles_only_verified_german_detail -v",
+    "cwd": "backend",
+    "python_version": "3.13.5",
+    "exit_code": 0,
+    "tests": 128,
+    "unittest_seconds": 6.275,
+    "wall_seconds": 7.38,
+    "log": "tmp/events-barcolana-seasonality-20261028/build-shared-tests.log",
+    "log_sha256": "ac61e6be5e7865f25f7163e646d096027cb38cdaaeacd90879868b1b4f1eacd0",
+    "hashes_before": {
+      "backend/app/events/pilot_source_policy.py": "ebf99b9a71442cdbfb0df9541532042fd77a5d8a0fd87468cc1fbb7df7773968",
+      "backend/tests/test_pilot_barcolana.py": "29e36afbb1bf66568d7c06097bc8a1dc49e9736815cf8d04a3b1679507638e7b"
+    },
+    "hashes_after": {
+      "backend/app/events/pilot_source_policy.py": "ebf99b9a71442cdbfb0df9541532042fd77a5d8a0fd87468cc1fbb7df7773968",
+      "backend/tests/test_pilot_barcolana.py": "29e36afbb1bf66568d7c06097bc8a1dc49e9736815cf8d04a3b1679507638e7b"
+    }
+  },
+  "compileall": {
+    "command": "python -X pycache_prefix=<UNIQUE_OS_TEMP_CACHE> -m compileall -q app/events/pilot_source_policy.py tests/test_pilot_barcolana.py",
+    "cwd": "backend",
+    "exit_code": 0,
+    "wall_seconds": 0.466,
+    "cache_directory": "<OS_TEMP>/meteofriul-barcolana-pycache-nubcx_3q",
+    "log": "tmp/events-barcolana-seasonality-20261028/build-compileall.log",
+    "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  "barcolana_tests": {
+    "owner": "eventi_consolidation_review",
+    "command": "python -B -m unittest tests.test_pilot_barcolana -v",
+    "cwd": "backend",
+    "tests": 28,
+    "status": "PASS",
+    "receipt": "tmp/events-barcolana-seasonality-20261028/eventi-receipt.json",
+    "receipt_sha256": "55ba88458837d00f6f5aa4c0f522799018a41e3db1399827598619063cc4676b",
+    "evidence_hashes_verified": true,
+    "note": "Agent result and logs reviewed; module not rerun by build_verifica."
+  },
+  "distinct_tests": {
+    "shared_and_css": 127,
+    "annual_barcolana": 1,
+    "barcolana_module": 28,
+    "total": 156,
+    "before_after_runs_counted_again": false
+  },
+  "verified_file_sha256": {
+    "backend/app/events/pilot_source_policy.py": "ebf99b9a71442cdbfb0df9541532042fd77a5d8a0fd87468cc1fbb7df7773968",
+    "backend/tests/test_pilot_barcolana.py": "29e36afbb1bf66568d7c06097bc8a1dc49e9736815cf8d04a3b1679507638e7b"
+  },
+  "review": {
+    "status": "PASS",
+    "blocking_findings": [],
+    "scope": "same-day/future retention, stale and unavailable previous batches, malformed evidence, phase boundaries, elapsed empty result, year rollover and unchanged transport errors"
+  },
+  "code_diff_check": {
+    "command": "git diff --check -- backend/app/events/pilot_source_policy.py backend/tests/test_pilot_barcolana.py",
+    "status": "PASS"
+  },
+  "warnings": [],
+  "limits": [
+    "Remote ReadTimeout remains unresolved; no remote source read, cloud query, collector job or deployment performed.",
+    "Verified programme elapsed does not prove official season closure; edition 2027 requires separate verified support.",
+    "Exact future title, venue, date or time changes fail retention until separately reviewed.",
+    "No frontend checks, Android build, AAB, installation or publication; no existing release qualification changed.",
+    "Root owns the final staged documentation checks and canonical workspace guard; they are not claimed by this receipt."
+  ]
+}

@@ -5,7 +5,8 @@ import math
 import re
 
 from . import engine
-from .pilot_barcolana import (REGIONAL_MUSEUM, REGIONAL_PIAZZA_PAGES,
+from .pilot_barcolana import (MAIN_START as BARCOLANA_MAIN_START,
+                              REGIONAL_MUSEUM, REGIONAL_PIAZZA_PAGES,
                               REGIONAL_PERIODS, REGIONAL_TALKS)
 from .pilot_cinema_muto import is_edition_cover_url
 
@@ -1645,10 +1646,14 @@ def mess_batch_verified(batch, *, today, previous_batch=None):
 
 def barcolana_batch_verified(batch, *, today, previous_batch=None):
     """Verify the official programme and every still-current regional mirror."""
-    proof = batch.get('verification') or {}
-    events = batch.get('events') or []
-    previous = (previous_batch or {}).get('verification') or {}
     try:
+        proof = batch.get('verification') or {}
+        events = batch.get('events') or []
+        if previous_batch is not None and not isinstance(previous_batch, dict):
+            return False
+        previous = (previous_batch or {}).get('verification', {})
+        if not isinstance(previous, dict):
+            return False
         event, = events
         sessions = event['programme_sessions']
         counts = proof['day_counts']
@@ -1740,6 +1745,40 @@ def barcolana_batch_verified(batch, *, today, previous_batch=None):
         identities = [(item['start_date'], item['title'].casefold(),
                        (item.get('place') or '').casefold(), item.get('time'),
                        item.get('end_time')) for item in sessions]
+        never_verified = (previous_batch is not None
+                          and previous_batch.get('status') == 'unavailable'
+                          and 'updated_at' in previous_batch
+                          and previous_batch['updated_at'] is None
+                          and previous_batch.get('events') == []
+                          and not previous)
+        if previous_batch is not None and not never_verified:
+            if (previous.get('collection_mode') != 'complete-official-html-calendar'
+                    or previous.get('edition_id') != proof['edition_id']):
+                return False
+            prior_events = previous_batch['events']
+            prior_last = date.fromisoformat(previous['last_date'])
+            if not isinstance(prior_events, list) or len(prior_events) > 1:
+                return False
+            if not prior_events:
+                # The publication gate removes an elapsed umbrella, retaining
+                # its verified last date. Missing future evidence is not closure.
+                if prior_last >= today:
+                    return False
+            else:
+                prior_event, = prior_events
+                prior_sessions = prior_event['programme_sessions']
+                if (prior_event.get('source') != 'Barcolana'
+                        or prior_event.get('end_date') != prior_last.isoformat()
+                        or not isinstance(prior_sessions, list) or not prior_sessions):
+                    return False
+                current_identities = set(identities)
+                for item in prior_sessions:
+                    day = date.fromisoformat(item['start_date'])
+                    identity = (item['start_date'], item['title'].casefold(),
+                                (item.get('place') or '').casefold(), item.get('time'),
+                                item.get('end_time'))
+                    if day >= today and identity not in current_identities:
+                        return False
         detail_urls = [item['url'] for item in official_sessions if item['url'] != event['url']]
         return (len(set(identities)) == len(sessions)
                 and len(detail_urls) == detail_count
@@ -1761,7 +1800,7 @@ def barcolana_batch_verified(batch, *, today, previous_batch=None):
                 and all(not item.get('time') for item in sessions
                         if 'CERIMONIA DI CHIUSURA DEL TOUR MONDIALE VESPUCCI'
                         in item['title'].upper()))
-    except (KeyError, TypeError, ValueError, StopIteration):
+    except (AttributeError, KeyError, TypeError, ValueError, StopIteration):
         return False
 
 
@@ -1809,9 +1848,22 @@ def gate_batch(source, batch, *, today, previous_batch=None):
     if source == 'Le Giornate del Cinema Muto' and not cinema_muto_batch_verified(
             batch, previous_batch=previous_batch):
         return {**batch, 'status': 'error', 'error_type': 'source_verification_failed'}
-    if source == 'Barcolana' and not barcolana_batch_verified(
-            batch, today=today, previous_batch=previous_batch):
-        return {**batch, 'status': 'error', 'error_type': 'source_verification_failed'}
+    if source == 'Barcolana':
+        if today.year > BARCOLANA_MAIN_START.year:
+            return {**batch, 'status': 'error', 'error_type': 'edition_not_current'}
+        if not barcolana_batch_verified(batch, today=today, previous_batch=previous_batch):
+            return {**batch, 'status': 'error', 'error_type': 'source_verification_failed'}
+        proof = batch['verification']
+        dates = [item['start_date'] for item in batch['events'][0]['programme_sessions']]
+        remaining = sorted(day for day in dates if day >= today.isoformat())
+        phase = ('programme_upcoming' if today.isoformat() < min(dates) else
+                 'programme_active' if today.isoformat() <= proof['main_end_date'] else
+                 'post_regatta_events' if remaining else 'verified_programme_elapsed')
+        # Derive this only from a verified current read, before past-event
+        # filtering. Elapsed dates do not prove an official season closure.
+        batch = {**batch, 'verification': {
+            **proof, 'season_phase': phase, 'remaining_session_count': len(remaining),
+            'next_session_date': remaining[0] if remaining else None}}
     accepted, review = [], list(batch.get('review_required', []))
     serious_exclusions = 0
     isolated_exclusion = None

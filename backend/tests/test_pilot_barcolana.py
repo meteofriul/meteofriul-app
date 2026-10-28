@@ -1,5 +1,6 @@
 import unittest
 import json
+import copy
 from unittest.mock import Mock, patch
 from threading import Barrier, Event, Lock
 import time
@@ -14,7 +15,7 @@ from app.events.pilot_barcolana import (CALENDAR_DATA, EDITION_NEWS, SITEMAP, KN
                                         MAX_PARALLEL_READS, _read, _read_pages,
                                         collect_barcolana, current_card, link_unique_details,
                                         parse_calendar, parse_regional_piazza)
-from app.events.pilot_catalog import PILOT_PROJECT, query_catalog
+from app.events.pilot_catalog import PILOT_PROJECT, merge_collection, query_catalog
 from app.events.pilot_dedupe import deduplicate
 from app.events.pilot_source_policy import gate_batch
 
@@ -45,6 +46,28 @@ class Response:
     def raise_for_status(self):
         if self.status_code >= 400:
             raise ValueError(f'HTTP {self.status_code}')
+
+
+def seasonality_fixture(*, today=date(2026, 10, 28), omit_award=False,
+                        omit_past=False):
+    """Synthetic complete calendar with one post-regatta date, as archived on 25 Oct."""
+    rows = [row(index, day=DATES[index % 14]) for index in range(1, 511)
+            if not (omit_past and index == 1)]
+    if not omit_award:
+        rows.append(row(90000, title="PREMIAZIONI 58° COPPA D'AUTUNNO",
+                        day='29 novembre 2026',
+                        place='Teatro Stabile del Friuli Venezia Giulia, Il Rossetti',
+                        time='09:00:00'))
+    sitemap = ('<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">'
+               + ''.join('<url><loc>https://www.barcolana.it/it/eventi/terra/2026/'
+                         f'event-{index}</loc></url>' for index in range(len(rows)))
+               + '</urlset>')
+    news = ('<title>Barcolana58 presented by Generali</title>'
+            '<meta property="og:image" content="https://www.barcolana.it/hyve/image/2026/web/1200/630">'
+            '<div class="c-news__text">Dal 2 all\'11 ottobre 2026 Barcolana58 '
+            'porta la regata e gli incontri a Trieste.</div>')
+    pages = {CALENDAR_DATA: ''.join(rows), SITEMAP: sitemap, EDITION_NEWS: news}
+    return collect_barcolana(get=lambda url, **_: Response(pages[url]), today=today)
 
 
 class BarcolanaTests(unittest.TestCase):
@@ -318,6 +341,15 @@ class BarcolanaTests(unittest.TestCase):
         self.assertEqual(batch['verification']['regional_piazza_supplement_count'], 1)
         self.assertEqual(batch['verification']['regional_supplement_count'], 3)
         self.assertEqual(gate_batch('Barcolana', batch, today=date(2026, 10, 7))['status'], 'ok')
+        for day, phase in ((date(2026, 9, 24), 'programme_upcoming'),
+                           (date(2026, 9, 25), 'programme_active'),
+                           (date(2026, 10, 11), 'programme_active')):
+            with self.subTest(day=day):
+                dated = collect_barcolana(get=get, today=day)
+                verified = gate_batch('Barcolana', dated, today=day)
+                self.assertEqual(verified['status'], 'ok')
+                self.assertEqual(verified['verification']['season_phase'], phase)
+                self.assertGreater(verified['verification']['remaining_session_count'], 0)
         def get_calendar_ahead(url, **kwargs):
             if url == CALENDAR_DATA:
                 return Response(calendar + row(2000, title='Nuovo incontro',
@@ -457,6 +489,156 @@ class BarcolanaTests(unittest.TestCase):
         self.assertEqual(result[0]['distance_km'], 1.0)
         self.assertIn(ski['url'], result[0]['source_urls'])
         self.assertEqual(deduplicate([ski]), [ski])
+
+
+class BarcolanaSeasonalityTests(unittest.TestCase):
+    @classmethod
+    def setUpClass(cls):
+        cls.previous = seasonality_fixture()
+
+    def gate(self, batch, *, today=date(2026, 10, 28), previous=None):
+        return gate_batch('Barcolana', batch, today=today, previous_batch=previous)
+
+    def test_loss_of_single_future_award_below_count_tolerance_is_rejected(self):
+        missing = seasonality_fixture(omit_award=True)
+        self.assertEqual(self.previous['verification']['records_scanned']
+                         - missing['verification']['records_scanned'], 1)
+        self.assertGreater(missing['verification']['records_scanned'],
+                           self.previous['verification']['records_scanned'] * .9)
+        self.assertEqual(self.gate(missing)['status'], 'ok')
+        rejected = self.gate(missing, previous=self.previous)
+        self.assertEqual(rejected['status'], 'error')
+        self.assertEqual(rejected['error_type'], 'source_verification_failed')
+
+    def test_past_session_can_disappear_without_losing_future_award(self):
+        current = seasonality_fixture(omit_past=True)
+        previous = {**self.previous, 'status': 'stale'}
+        result = self.gate(current, previous=previous)
+        self.assertEqual(result['status'], 'ok')
+        self.assertEqual(result['verification']['remaining_session_count'], 1)
+        self.assertEqual(result['verification']['next_session_date'], '2026-11-29')
+
+    def test_session_today_and_stale_previous_are_still_protected(self):
+        for day in (date(2026, 10, 28), date(2026, 11, 29)):
+            with self.subTest(day=day):
+                missing = seasonality_fixture(today=day, omit_award=True)
+                result = self.gate(missing, today=day,
+                                   previous={**self.previous, 'status': 'stale'})
+                self.assertEqual(result['status'], 'error')
+
+    def test_future_title_venue_or_time_change_requires_review(self):
+        for field, value in (('title', 'Premiazione diversa'), ('place', 'Altra sede'),
+                             ('time', '11:00'), ('end_time', '14:00'),
+                             ('start_date', '2026-11-30')):
+            with self.subTest(field=field):
+                previous = copy.deepcopy(self.previous)
+                previous['events'][0]['programme_sessions'][-1][field] = value
+                self.assertEqual(self.gate(self.previous, previous=previous)['status'], 'error')
+
+    def test_season_phase_boundaries_and_untrusted_metadata_are_recomputed(self):
+        for day, phase, count, next_day in (
+                (date(2026, 10, 12), 'post_regatta_events', None, '2026-10-12'),
+                (date(2026, 10, 28), 'post_regatta_events', 1, '2026-11-29'),
+                (date(2026, 11, 29), 'post_regatta_events', 1, '2026-11-29'),
+                (date(2026, 11, 30), 'verified_programme_elapsed', 0, None),
+                (date(2026, 12, 31), 'verified_programme_elapsed', 0, None)):
+            with self.subTest(day=day):
+                current = seasonality_fixture(today=day)
+                current['verification'].update(season_phase='officially_closed',
+                                               remaining_session_count=-1,
+                                               next_session_date='2099-01-01')
+                unchanged = copy.deepcopy(current)
+                result = self.gate(current, today=day, previous=self.previous)
+                self.assertEqual(result['status'], 'ok')
+                self.assertEqual(result['verification']['season_phase'], phase)
+                self.assertEqual(result['verification']['next_session_date'], next_day)
+                if count is not None:
+                    self.assertEqual(result['verification']['remaining_session_count'], count)
+                    self.assertEqual(len(result['events']), int(count > 0))
+                self.assertEqual(current, unchanged)
+
+    def test_elapsed_proof_survives_empty_catalog_and_next_success(self):
+        day = date(2026, 11, 30)
+        result = self.gate(seasonality_fixture(today=day), today=day,
+                           previous=self.previous)
+        catalog = merge_collection(PILOT_PROJECT, None, {'Barcolana': result},
+                                   '2026-11-30T04:00:00Z')
+        previous = catalog['sources']['Barcolana']
+        self.assertEqual(previous['events'], [])
+        self.assertEqual(previous['verification']['last_date'], '2026-11-29')
+        following = date(2026, 12, 1)
+        again = self.gate(seasonality_fixture(today=following), today=following,
+                          previous=previous)
+        self.assertEqual(again['status'], 'ok')
+        self.assertEqual(again['events'], [])
+        self.assertEqual(again['verification']['season_phase'], 'verified_programme_elapsed')
+
+    def test_empty_previous_requires_valid_elapsed_last_date(self):
+        for last_day in (None, 'invalid', '2026-02-30', '2026-10-28', '2026-11-29'):
+            with self.subTest(last_day=last_day):
+                previous = copy.deepcopy(self.previous)
+                previous['events'] = []
+                previous['verification']['last_date'] = last_day
+                self.assertEqual(self.gate(self.previous, previous=previous)['status'], 'error')
+
+    def test_first_success_after_unavailable_is_not_mistaken_for_lost_programme(self):
+        failed = merge_collection(PILOT_PROJECT, None, {
+            'Barcolana': {'status': 'error', 'error_type': 'adapter_exception'}},
+            '2026-10-27T04:00:00Z')['sources']['Barcolana']
+        self.assertEqual(failed['status'], 'unavailable')
+        self.assertIsNone(failed['updated_at'])
+        for previous in (None, failed):
+            with self.subTest(previous=previous):
+                self.assertEqual(self.gate(self.previous, previous=previous)['status'], 'ok')
+        for field in ('verification', 'events', 'updated_at'):
+            previous = copy.deepcopy(self.previous)
+            previous.update(status='stale', updated_at='2026-10-25T04:00:00Z')
+            previous.pop(field)
+            with self.subTest(missing=field):
+                # A missing timestamp alone cannot erase valid programme evidence.
+                missing = seasonality_fixture(omit_award=True)
+                self.assertEqual(self.gate(missing, previous=previous)['status'], 'error')
+
+    def test_malformed_previous_does_not_escape_gate(self):
+        malformed = [[], ['not-a-batch'], 'invalid', 42,
+                     {'verification': ['invalid'], 'events': []},
+                     {'verification': {'edition_id': '2026'}, 'events': []},
+                     {'status': 'unavailable', 'updated_at': None, 'events': [],
+                      'verification': []}]
+        for field, value in (('title', None), ('place', {}), ('start_date', 'invalid'),
+                             ('time', [])):
+            previous = copy.deepcopy(self.previous)
+            previous['events'][0]['programme_sessions'][-1][field] = value
+            malformed.append(previous)
+        for sessions in (None, [], ['invalid']):
+            previous = copy.deepcopy(self.previous)
+            previous['events'][0]['programme_sessions'] = sessions
+            malformed.append(previous)
+        for previous in malformed:
+            with self.subTest(previous_type=type(previous).__name__):
+                result = self.gate(self.previous, previous=previous)
+                self.assertEqual(result['status'], 'error')
+                self.assertEqual(result['error_type'], 'source_verification_failed')
+
+    def test_new_year_does_not_certify_old_edition_or_relabel_transport_failure(self):
+        today = date(2027, 1, 1)
+        outdated = self.gate(seasonality_fixture(today=today), today=today,
+                             previous=self.previous)
+        self.assertEqual(outdated['status'], 'error')
+        self.assertEqual(outdated['error_type'], 'edition_not_current')
+        for day in (date(2026, 10, 28), date(2026, 11, 30), today):
+            for error in ('timeout', 'adapter_exception'):
+                with self.subTest(day=day, error=error):
+                    failure = {'status': 'error', 'error_type': error,
+                               'exception_type': 'ReadTimeout'}
+                    self.assertIs(self.gate(failure, today=day), failure)
+                    old_catalog = merge_collection(PILOT_PROJECT, None,
+                        {'Barcolana': self.gate(self.previous)}, '2026-10-28T04:00:00Z')
+                    failed = merge_collection(PILOT_PROJECT, old_catalog,
+                        {'Barcolana': failure}, day.isoformat() + 'T05:00:00Z')
+                    self.assertEqual(failed['sources']['Barcolana']['status'], 'stale')
+                    self.assertEqual(failed['sources']['Barcolana']['updated_at'],
+                                     '2026-10-28T04:00:00Z')
 
 
 if __name__ == '__main__':
