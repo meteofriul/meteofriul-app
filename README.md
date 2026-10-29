@@ -1,5 +1,7 @@
 # Meteo Friûl
 
+**Mercati, 29 ottobre: ricerca della copertura.** Sul ramo dedicato `codex/mercati-integration-20261028`, rilevati 74 candidati e sette date future mancanti su quattro schede esistenti. [Fonti, limiti e priorità](docs/operations/MERCATI_COPERTURA_RICERCA_20261029.md). Nessuna nuova voce attivata: catalogo, UI, AAB 300038, Web e servizi invariati. Orto sospeso nel proprio ramo; prova visiva Mercati e revisione FUR aperte.
+
 **Mercati, 28 ottobre: integrazione locale verificata automaticamente.** Il lavoro salvato è ripreso nel ramo `codex/mercati-integration-20261028`: 53 schede documentate in Scopri, con collegamento alle date pubblicate in Eventi e adattamento alla navigazione corrente. 316 test distinti, lint completo e compilazione Web superati. [Prove e percorso di anteprima](docs/operations/MERCATI_SCOPRI_V1_LOCALE_2026-10-15.md#ripresa-sul-progetto-attuale--28-ottobre-2026). Fonti ferme al 14 ottobre; prova visiva e revisione friulana ancora aperte. Nessuna promozione a main o pubblicazione; AAB 300038 e Web distribuita invariati.
 
 **Barcolana, 28 ottobre: diagnosi del timeout documentata.** Tre letture pubbliche complete e replay locale di collector/gate riusciti, con appuntamento futuro conservato. [Misure e limiti](docs/operations/EVENTS_BARCOLANA_TIMEOUT_DIAGNOSIS_20261028.md). Nessuna modifica al codice o ai timeout giustificata dalle prove attuali; causa dei fallimenti notturni e recupero del job remoto ancora da verificare. Nessun push, deploy o nuova automazione; AAB 300038 e Web invariati.

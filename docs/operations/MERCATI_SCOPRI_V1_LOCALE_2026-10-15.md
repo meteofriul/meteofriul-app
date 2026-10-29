@@ -1,5 +1,7 @@
 # Mercati e mercatini — prima versione locale
 
+**Ricerca del 29 ottobre 2026:** [copertura, candidati e dati mancanti](MERCATI_COPERTURA_RICERCA_20261029.md). Individuati 74 candidati di ricerca e sette date future mancanti su quattro schede pubbliche; da qualificare prima dell'inserimento. Catalogo e UI invariati, prova visiva ancora aperta.
+
 **Ripresa del 28 ottobre 2026:** implementazione recuperata nel ramo
 `codex/mercati-integration-20261028` e adattata alla navigazione e alle regole
 Eventi attuali. [Stato della ripresa e prove](#ripresa-sul-progetto-attuale--28-ottobre-2026).
