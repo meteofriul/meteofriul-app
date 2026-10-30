@@ -1,5 +1,7 @@
 # Meteo Friûl
 
+**Avvio locale, 30 ottobre:** corretto il blocco del launcher dopo le 30 ore CAMS, riconoscendo l'estensione esplicita a 36 ore. 93 asserzioni, preflight cloud e avvio locale superati; frontend 5174 e API 8002 sani. Correzione preparata nel ramo `codex/local-pilot-cams-startup-20261030`. [Diagnosi e prove](docs/operations/LOCAL_PILOT_CAMS_STARTUP_20261030.md). Pacchetti, pubblicazioni e servizi cloud invariati.
+
 **Mercati, 29 ottobre: ricerca della copertura.** Sul ramo dedicato `codex/mercati-integration-20261028`, rilevati 74 candidati e sette date future mancanti su quattro schede esistenti. [Fonti, limiti e priorità](docs/operations/MERCATI_COPERTURA_RICERCA_20261029.md). Nessuna nuova voce attivata: catalogo, UI, AAB 300038, Web e servizi invariati. Orto sospeso nel proprio ramo; prova visiva Mercati e revisione FUR aperte.
 
 **Mercati, 28 ottobre: integrazione locale verificata automaticamente.** Il lavoro salvato è ripreso nel ramo `codex/mercati-integration-20261028`: 53 schede documentate in Scopri, con collegamento alle date pubblicate in Eventi e adattamento alla navigazione corrente. 316 test distinti, lint completo e compilazione Web superati. [Prove e percorso di anteprima](docs/operations/MERCATI_SCOPRI_V1_LOCALE_2026-10-15.md#ripresa-sul-progetto-attuale--28-ottobre-2026). Fonti ferme al 14 ottobre; prova visiva e revisione friulana ancora aperte. Nessuna promozione a main o pubblicazione; AAB 300038 e Web distribuita invariati.
