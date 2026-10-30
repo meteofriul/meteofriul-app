@@ -1,6 +1,6 @@
 # Meteo Friûl
 
-**Mercati, 30 ottobre: preparazione del collegamento online.** Servizio dedicato con autenticazione Firebase, archivio Firestore e base client separata. 38 test backend e 8 test del lettore superati. [Perimetro e verifiche](docs/operations/MERCATI_ATTIVAZIONE_ONLINE_20261030.md). Distribuzione e migrazione ancora da attestare; le 59 pratiche restano bozze, Web pubblica e Android invariati.
+**Mercati, 30 ottobre: attivazione online sospesa dal proprietario.** Build del servizio verificata, identità runtime predisposta e archivio Firestore riservato inizializzato alla revisione 0. Il comando di distribuzione è stato rifiutato prima dell'esecuzione: servizio e pannello aggiornato non pubblicati, permesso operatore e trasferimento delle 59 bozze locali non eseguiti. 40 test backend e 8 test del lettore superati. [Stato esatto e verifiche](docs/operations/MERCATI_ATTIVAZIONE_ONLINE_20261030.md). Proseguimento in anteprima locale; Web pubblica e Android invariati. La messa online richiede una nuova indicazione esplicita.
 
 **Mercati, 30 ottobre: lotto salvato nell'archivio locale.** Eseguita la preparazione reale delle 59 pratiche (13/46): 19 aggiornamenti e 40 nuove bozze, 100 identità totali, revisione amministrativa 1. La revisione pubblica 0 con 53 schede resta identica. Il pannello riapre le bozze preparate conservando le correzioni successive. [Operazione e verifiche](docs/operations/MERCATI_BOZZE_PREPARATE_20261030.md). Nessuna pubblicazione online.
 

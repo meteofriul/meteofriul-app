@@ -1,8 +1,76 @@
 # Mercati: attivazione del collegamento online
 
-Il proprietario ha chiesto di riprendere il collegamento online il 30 ottobre.
-Il coordinatore cura backend, configurazione del pannello, archivio e verifiche.
-La pubblicazione editoriale delle 59 pratiche rimane separata.
+**Stato corrente: attivazione online sospesa per indicazione del proprietario.**
+Il coordinatore aveva interpretato la richiesta di riprendere i Mercati,
+insieme alle precedenti richieste di collegamento online, come via libera
+all'attivazione. Il proprietario ha chiarito «non ancora se compare online»
+e ha rifiutato il comando di distribuzione prima della sua esecuzione.
+Il lavoro prosegue in anteprima locale; nessuna operazione di attivazione
+online deve ripartire senza una nuova indicazione esplicita.
+
+La preparazione tecnica già eseguita non equivale alla pubblicazione.
+Il coordinatore conserva la responsabilità di backend, configurazione del
+pannello, archivio e verifiche. La pubblicazione editoriale delle 59 pratiche
+rimane separata anche da un'eventuale futura attivazione del servizio.
+
+Il proprietario ha successivamente ammesso la possibilità di collegare il solo
+pannello mantenendo i Mercati disattivati nell'app, poi ha precisato il vincolo
+definitivo: **nessuna pubblicazione automatica; prima interfaccia pronta, dati
+destinati alla pubblicazione completi e revisione del risultato da parte sua**.
+Questo vale anche per pannello e servizio. La precedente apertura al solo
+pannello non è un'autorizzazione a distribuirlo senza questa revisione.
+Non sono seguite altre operazioni cloud.
+
+## Blocco locale per il futuro collegamento del solo pannello
+
+Il servizio ora usa `MARKETS_PUBLIC_CATALOGUE_ENABLED=false` per impostazione
+predefinita. Il catalogo pubblico non viene esposto (404); una pubblicazione
+amministrativa è rifiutata (423), anche con un account autorizzato, prima di
+leggere o modificare l'archivio. Lettura e salvataggio delle bozze restano
+disponibili per gli amministratori. CORS accetta soltanto il pannello in questa
+modalità; origini dell'app escluse. Le API generali dell'anteprima locale restano
+invariate.
+
+Verifica corrente: **40 test backend superati**, compresi il comportamento
+predefinito a catalogo spento, il blocco della pubblicazione, l'autenticazione e
+la lettura amministrativa. Il blocco operativo locale è stato verificato:
+interrompe lo script prima di autenticazione, rete o mutazioni.
+Questa protezione è soltanto nei sorgenti locali: l'immagine conservata sotto
+precede il blocco e **non è una candidata valida per il nuovo perimetro**.
+Nessuna nuova build cloud o distribuzione è stata avviata.
+
+La disponibilità per una pubblicazione non è attestata: revisione visiva
+completa ancora aperta; 46 pratiche mantengono verifiche residue e tutte le 59
+richiedono approvazione editoriale prima di entrare nel catalogo per gli utenti.
+
+## Punto di arresto verificato
+
+- Build cloud riuscita: `04afca0c-4927-409d-814c-91dec56a8d50`, sorgente
+  `1c2155413e4b9b2811a97e7d1be3165d94f7cc18`.
+  Immagine conservata, non distribuita:
+  `europe-west1-docker.pkg.dev/meteo-friul/meteofriul/markets@sha256:215ed7955d4d0a846159d846baca7949fd1beeb5907a1361d2b4db0f43387a36`.
+- Identità runtime dedicata e ruolo con cinque permessi predisposti:
+  `datastore.databases.get`, `datastore.entities.create`,
+  `datastore.entities.get`, `datastore.entities.update`,
+  `firebaseauth.users.get`. Nessun permesso di eliminazione.
+- Firestore inizializzato il 30 ottobre alle 22:04:39 UTC: revisione
+  amministrativa 0 e revisione pubblica interna 0, 60 identità e 59 pratiche
+  del seed. La proiezione interna contiene 53 schede e 161 date, ma non è
+  stata esposta da un servizio Mercati. Le regole client negano l'accesso.
+- **Non eseguiti:** distribuzione Cloud Run, attribuzione `marketsAdmin`
+  all'operatore, trasferimento del lotto locale preparato, aggiornamento del
+  pannello Hosting, collegamento dell'app pubblica, nuove release Web/Android.
+- Il lotto locale rimane alla revisione amministrativa 1 con 100 identità,
+  213 date e 59 pratiche preparate (13/46); non è stato copiato sul cloud.
+  Nessuna nuova scheda approvata o pubblicata.
+- Nessuna promozione a main. Le risorse cloud già predisposte sono conservate;
+  non è stato eseguito un rollback o una cancellazione implicita.
+
+Il comando `operate.py deploy` è stato respinto prima di avviare il processo;
+non è un tentativo di distribuzione fallito dopo aver modificato il servizio.
+Gli script operativi locali hanno un blocco esplicito della ripresa.
+Per un'eventuale ripresa autorizzata occorre prima rileggere lo stato remoto:
+il bootstrap è già avvenuto e non deve essere ripetuto.
 
 ## Stato prima dell'intervento
 
@@ -35,7 +103,7 @@ e promozione a main rimangono fuori da questo passaggio.
 
 ## Preparazione verificata
 
-- 38 test backend: archivio, API, provider Firestore, isolamento del servizio,
+- 40 test backend: archivio, API, provider Firestore, isolamento del servizio,
   CORS, autorizzazione e infrastruttura Firebase.
 - 8 test del lettore Mercati, inclusa la base separata e il rifiuto di URL
   senza HTTPS, con credenziali, query o percorsi errati.

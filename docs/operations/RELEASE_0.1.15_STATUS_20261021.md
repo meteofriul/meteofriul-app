@@ -1,6 +1,6 @@
 # Stato release 0.1.15 e lavoro salvato — aggiornamento sorgenti del 24 ottobre 2026
 
-**Mercati, 30 ottobre: collegamento online in preparazione.** Il servizio dedicato espone soltanto catalogo e amministrazione Mercati. Verifiche locali: 38 test backend, 8 test client, lint e compilazione Python. [Perimetro](MERCATI_ATTIVAZIONE_ONLINE_20261030.md). Non cambia la release Android/Web; distribuzione del servizio e dati remoti ancora da attestare.
+**Mercati, 30 ottobre: attivazione online sospesa dal proprietario.** Build verificata, identità runtime predisposta e archivio Firestore riservato inizializzato alla revisione 0; nessun servizio o pannello aggiornato pubblicato. Il comando di distribuzione è stato rifiutato prima dell'esecuzione. Permesso operatore e trasferimento delle bozze locali non eseguiti. Verifiche locali: 40 test backend, 8 test client, lint e compilazione Python. [Stato e limite operativo](MERCATI_ATTIVAZIONE_ONLINE_20261030.md). Lavoro in anteprima locale; nuova indicazione esplicita necessaria per la messa online. Release Android/Web e main invariati.
 
 **Mercati, 30 ottobre: preparazione operativa locale.** Salvate 59 bozze (13/46), con 19 aggiornamenti e 40 nuove identità, nella revisione amministrativa 1. Snapshot pubblico 0 invariato, nessuna approvazione editoriale automatica. [Evidenza](MERCATI_BOZZE_PREPARATE_20261030.md). Main, servizi online, Web e AAB invariati.
 

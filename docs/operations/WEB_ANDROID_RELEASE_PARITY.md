@@ -1,6 +1,6 @@
 # Allineamento della Web App con Android
 
-**Mercati, 30 ottobre: endpoint dedicato in preparazione.** Web e Android possono selezionare la stessa base HTTPS `VITE_MARKETS_API_BASE`; senza override resta la base API esistente. [Servizio e collegamento al pannello](MERCATI_ATTIVAZIONE_ONLINE_20261030.md). La configurazione entra negli artefatti solo con una successiva build approvata. Nessuna nuova Web pubblica, APK/AAB o qualifica runtime in questo passaggio.
+**Mercati, 30 ottobre: attivazione online sospesa dal proprietario.** Build backend e archivio Firestore riservato preparati; servizio, pannello aggiornato e artefatti app non pubblicati. Permesso operatore e migrazione delle bozze locali non eseguiti. [Stato esatto](MERCATI_ATTIVAZIONE_ONLINE_20261030.md). Web e Android possono selezionare la stessa base HTTPS `VITE_MARKETS_API_BASE`, ma nessun endpoint è stato attivato o inserito negli artefatti distribuiti. Proseguimento in anteprima locale; nuova indicazione esplicita necessaria per la messa online. Nessuna nuova qualifica runtime.
 
 **Mercati, 30 ottobre: bozze locali preparate.** Le 59 pratiche sono state salvate nell'archivio locale, revisione amministrativa 1; il catalogo pubblico locale resta identico alla revisione 0. [Verifica](MERCATI_BOZZE_PREPARATE_20261030.md). Nessun dato o artefatto distribuito aggiornato, nessun nuovo esito browser/dispositivo attestato.
 

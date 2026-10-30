@@ -2,8 +2,15 @@
 
 ## Servizio cloud dedicato
 
-`app.markets_cloud:create_app` espone soltanto catalogo, amministrazione Mercati
-e liveness. Rifiuta storage SQLite, credenziali locali e progetti Firebase
+`app.markets_cloud:create_app` parte per impostazione predefinita in modalità
+solo pannello: catalogo pubblico assente (404), pubblicazione bloccata (423
+anche per un amministratore autenticato) e CORS limitato al pannello.
+L'amministrazione e il salvataggio delle bozze restano disponibili con Firebase.
+`MARKETS_PUBLIC_CATALOGUE_ENABLED=true` abilita esplicitamente catalogo e
+pubblicazione; non impostarlo senza un'autorizzazione specifica del proprietario
+dopo la revisione di interfaccia e dati. Il valore predefinito è `false`.
+La liveness indica `publicCatalogueEnabled` senza leggere l'archivio.
+Il servizio rifiuta storage SQLite, credenziali locali e progetti Firebase
 discordanti all'avvio. Il progetto non inizializza dati durante una richiesta.
 `backend/Dockerfile.markets` esegue i test del contratto nel container e usa
 un utente non privilegiato. `scripts/prepare-markets-cloud.py --output <nuova-cartella>`
@@ -15,6 +22,9 @@ L'app puo selezionare questo servizio con `VITE_MARKETS_API_BASE`, URL HTTPS
 terminante in `/api`; senza override mantiene la base API esistente. La
 distribuzione del servizio non aggiorna automaticamente Web o Android.
 Il pannello usa la medesima variabile per il suo collegamento amministrativo.
+La preparazione di codice o build non autorizza la distribuzione del pannello,
+del servizio o dell'app. Il punto di arresto e le risorse già predisposte sono
+registrati nel [verbale del 30 ottobre](../../../docs/operations/MERCATI_ATTIVAZIONE_ONLINE_20261030.md).
 
 L'API generale `app.main` espone un solo catalogo per Mercati ed Eventi.
 I raccoglitori Eventi e i servizi Community separati non scrivono questo archivio.
