@@ -1,0 +1,211 @@
+{
+  "schema_version": 1,
+  "as_of": "2026-10-30",
+  "reviewer_role": "build_verifica",
+  "verification_kind": "Independent structural and documentary consistency review",
+  "branch": "codex/mercati-integration-20261028",
+  "base_commit": "e95495394eb89dae7cfad8c4a4bc235a1092de26",
+  "environment": {
+    "platform": "Windows PowerShell",
+    "python": "3.13.5"
+  },
+  "status": "PASS",
+  "checks": [
+    {
+      "check": "Exact case coverage",
+      "result": "PASS",
+      "detail": "192 unique IDs, equal to the original candidate set; no omissions or extras."
+    },
+    {
+      "check": "Original candidate preservation",
+      "result": "PASS",
+      "detail": "Compared complete nested original_candidate values against the immutable initial registry, not the scratch allocation."
+    },
+    {
+      "check": "Municipal identity",
+      "result": "PASS",
+      "detail": "ISTAT and municipality consistent for all 192 cases."
+    },
+    {
+      "check": "Batch reconciliation",
+      "result": "PASS",
+      "detail": "25 + 96 + 6 + 65 = 192; every batch has zero pending cases."
+    },
+    {
+      "check": "Statistics",
+      "result": "PASS",
+      "detail": "13 eligible_current, 46 eligible_with_limits, 56 historical_only, 65 unconfirmed, 5 conflict, 6 planned_only, 1 not_market."
+    },
+    {
+      "check": "Source namespace",
+      "result": "PASS",
+      "detail": "182 original and 169 new source/reading records; 164 distinct URLs among the new records, not necessarily new URLs to the project."
+    },
+    {
+      "check": "Source references",
+      "result": "PASS",
+      "detail": "Every source_ids and field_evidence reference resolves, including original candidates and manifestation-only leads."
+    },
+    {
+      "check": "Identity targets",
+      "result": "PASS",
+      "detail": "27 existing runtime identities and 30 prior research references reconcile; no repeated identity target across reviewed cases."
+    },
+    {
+      "check": "Publication separation",
+      "result": "PASS",
+      "detail": "133 cases excluded from current preparation; 59 only eligible for editorial preparation, not approved for publication."
+    },
+    {
+      "check": "Calendar integrity",
+      "result": "PASS",
+      "detail": "ISO dates, ISO weekdays 1-7, unique dates per case, sourced editions, past dates historical, eligible explicit scopes contain a future confirmed date."
+    },
+    {
+      "check": "Exceptions integrity",
+      "result": "PASS",
+      "detail": "No confirmed edition overlaps a dated cancellation/closure or a bounded closed interval."
+    },
+    {
+      "check": "Evidence trace",
+      "result": "PASS",
+      "detail": "All 192 cases retain a source reading/attempt, identity comparison and a next action; targeted searches are recorded where required."
+    },
+    {
+      "check": "Access and currentness enums",
+      "result": "PASS",
+      "detail": "New source access: 140 full text, 28 indexed excerpts, 1 blocked. These describe recorded access, not independent re-fetching in this verification."
+    },
+    {
+      "check": "Markdown case coverage",
+      "result": "PASS",
+      "detail": "The readable report has exactly one row for each reviewed ID and agrees with the JSON coverage."
+    },
+    {
+      "check": "New local links",
+      "result": "PASS",
+      "detail": "9 added/new local file links resolve; historical unrelated links and external site availability were not re-audited."
+    },
+    {
+      "check": "Immutable input registry",
+      "result": "PASS",
+      "detail": "Initial source registry byte hash preserved."
+    },
+    {
+      "check": "Immutable runtime catalogue",
+      "result": "PASS",
+      "detail": "60 runtime records and 176 dates unchanged; static app data was not migrated."
+    },
+    {
+      "check": "Staged scope",
+      "result": "PASS",
+      "detail": "Exactly seven staged documentation/data-evidence files; no application, panel, service, job, dependency or build file in the change."
+    },
+    {
+      "check": "Differential privacy screen",
+      "result": "PASS",
+      "detail": "No email addresses, recognisable phone numbers, IBANs, private-key material or detected API-key tokens in the new evidence and added documentation. Public market venues and public source URLs are intentional. Manual review excludes source-document contact/signature sections; source PDFs were not copied in full."
+    },
+    {
+      "check": "Staged diff whitespace",
+      "result": "PASS",
+      "detail": "git diff --cached --check exited 0, no output."
+    },
+    {
+      "check": "Canonical workspace cleanliness",
+      "result": "PASS",
+      "detail": "scripts/test-canonical-workspace-cleanliness.ps1 exited 0: Canonical workspace cleanliness OK; 4031 tracked files; no generated output, local secrets or obsolete active workspace references tracked."
+    }
+  ],
+  "failures": [],
+  "statistics": {
+    "reviews": 192,
+    "remaining": 0,
+    "decisions": {
+      "eligible_with_limits": 46,
+      "historical_only": 56,
+      "eligible_current": 13,
+      "unconfirmed": 65,
+      "planned_only": 6,
+      "not_market": 1,
+      "conflict": 5
+    },
+    "identities": {
+      "new_candidate": 132,
+      "existing_runtime": 27,
+      "existing_research": 30,
+      "not_market": 1,
+      "unresolved": 2
+    },
+    "new_sources": 169,
+    "new_source_urls": 164,
+    "eligible_cases": 59,
+    "not_eligible_cases": 133,
+    "municipalities_with_reviewed_cases": 129,
+    "future_case_date_pairs_by_status": {
+      "confirmed": 48,
+      "conditional": 2,
+      "provisional": 9
+    },
+    "future_confirmed_pairs_in_eligible_cases": 46,
+    "new_source_access": {
+      "full_text": 140,
+      "indexed_excerpt": 28,
+      "blocked": 1
+    },
+    "confirmed_market_absences": 0
+  },
+  "artifacts": {
+    "review_registry": {
+      "path": "docs/operations/evidence/MERCATI_REVISIONE_192_20261030.json",
+      "sha256": "03998dea9472b1fd3f85749ea22af7e2338b40542101fa8d59937a0ca1280e94"
+    },
+    "input_registry": {
+      "path": "docs/operations/evidence/MERCATI_RICOGNIZIONE_COMUNI_20261030.json",
+      "sha256": "3bd483997240ba350104a62559ab6e7c9034637f260ba72e0fe92a6025be4291"
+    },
+    "runtime_catalogue": {
+      "path": "frontend/src/data/markets/catalogue2026.json",
+      "sha256": "dce63d9d521ccfd9f593de9143f0ff0649220a0a15c09135ecf902290fecbafb"
+    }
+  },
+  "findings_resolved": [
+    {
+      "case": "UDA-M005",
+      "detail": "The Ovaro manifestation date and church are retained only in manifestation_dates_lead, not as a validated market edition or venue."
+    },
+    {
+      "case": "UDA-M023",
+      "detail": "Dignano canonical name now identifies current activity as the open question; institution is supported by the 2022 evidence."
+    }
+  ],
+  "qualified_cases": [
+    {
+      "case": "PN-M033 / PN-M026",
+      "detail": "Future dates are sourced, but the absent market venue keeps both cases unconfirmed with publication_scope none."
+    },
+    {
+      "case": "UDA-M036",
+      "detail": "Aprilia Marittima annual seasonal rule is explicitly July-September; preparation is possible only as outside season on 30 October, without generated 2027 editions."
+    },
+    {
+      "case": "PN-M068",
+      "detail": "Identity reconciles to runtime M013 only; blocked primary source means no newly validated field evidence."
+    }
+  ],
+  "commands": [
+    "Python 3.13.5 read-only validation of canonical JSON/Markdown, references, hashes and staged diff",
+    "git diff --cached --check",
+    "scripts/test-canonical-workspace-cleanliness.ps1"
+  ],
+  "pending_checks": [],
+  "limitations": [
+    "No independent re-fetch of all external sites; this review verifies recorded evidence, structure and selected contradictions, not the truth or future continuity of every market.",
+    "No current absence of markets inferred for a municipality. The 192-case queue is complete, not a complete regional census.",
+    "Source PDFs are not reproduced in full; only case-level facts and evidence locators are retained.",
+    "No app tests, build, real-device check, panel write, remote CI, deployment or publication performed: the change concerns research and documentation only.",
+    "The external panel and cloud deployment state were not freshly audited by this verifier; repository scope and recorded unchanged-product claims were checked.",
+    "This receipt predates the local save commit and is not approval to publish the 59 editorial candidates."
+  ],
+  "verification_basis": "Seven canonical files staged at verification time; the receipt is added afterward as a separate evidence file. The readable report may subsequently gain the receipt link without changing case data."
+}

@@ -1,5 +1,7 @@
 # Mercati: ricognizione dei comuni e manutenzione dal pannello
 
+**Seguito del 30 ottobre:** completata la [revisione approfondita dei 192 casi](MERCATI_REVISIONE_192_20261030.md), con decisione, riconciliazione e azione amministrativa per ciascuno. Il presente documento e il suo JSON conservano lo stato della prima ricognizione; i conteggi delle priorità qui sotto sono quelli iniziali.
+
 Aggiornamento del **30 ottobre 2026**, ramo `codex/mercati-integration-20261028`,
 base di ricerca `425369ea`. Segue il [primo dossier di fonti del 30 ottobre](MERCATI_FONTI_CATALOGAZIONE_20261030.md)
 e la [ricerca dei 74 candidati del 29 ottobre](MERCATI_COPERTURA_RICERCA_20261029.md).

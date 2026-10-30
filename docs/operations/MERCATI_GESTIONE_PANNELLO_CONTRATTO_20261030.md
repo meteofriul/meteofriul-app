@@ -133,6 +133,23 @@ le stagioni.
 - **Modifica concorrente:** due browser cambiano la stessa scheda; il secondo
   riceve un confronto con la revisione corrente, senza perdita di dati.
 
+## Collegamento alla revisione dei 192 casi
+
+La [revisione completa](MERCATI_REVISIONE_192_20261030.md) e il suo
+[registro strutturato](evidence/MERCATI_REVISIONE_192_20261030.json) sono la
+base documentale per preparare il successivo lavoro amministrativo. Per ogni
+caso, `identity` distingue una candidatura autonoma dall’aggiornamento di un ID
+esistente; `proposed_panel_action` indica l’operazione proposta. `validated`,
+`field_evidence`, `outstanding` e `publication_scope` devono essere letti insieme.
+Le 192 revisioni non sono un file di importazione né un’autorizzazione alla
+pubblicazione: comprendono anche casi storici, progetti e prove insufficienti.
+
+Nell’editor una correzione di sede o calendario dovrà mantenere l’identità del
+mercato e dell’edizione, conservando fonte, motivo e decorrenza. Un caso soltanto
+storico non deve diventare attivo per effetto della migrazione; un mercato
+stagionale fuori stagione non deve apparire come aperto oggi. Restano applicabili
+le regole sopra per aggiunta, sospensione, ritiro e recupero della versione precedente.
+
 ## Passaggio alla realizzazione
 
 Prima implementare e verificare archivio/API, permessi e migrazione su dati
