@@ -1,6 +1,6 @@
 # Meteo Friûl
 
-**Home, 30 ottobre: tipografia editoriale approvata.** Nel ramo `codex/home-editorial-typography-20261030`, «I perché del Friûl» e «Memoria del giorno» condividono dimensione del titolo, metadati e spaziature. 50 test, lint completo e compilazione frontend superati; risultato osservato approvato dal proprietario, che autorizza l'allineamento. [Modifica, prove e limiti](docs/operations/HOME_EDITORIAL_TYPOGRAPHY_20261030.md). Promozione tramite PR in preparazione; pacchetti e pubblicazioni applicative invariati.
+**Home, 30 ottobre: correzione integrata in main.** «I perché del Friûl» e «Memoria del giorno» condividono dimensione del titolo, metadati e spaziature. Risultato osservato approvato dal proprietario, 50 test locali e CI della [PR 36](https://github.com/meteofriul/meteofriul-app/pull/36) superati; merge `05ec9aa9`, incluso il prerequisito di avvio CAMS. [Modifica, prove e limiti](docs/operations/HOME_EDITORIAL_TYPOGRAPHY_20261030.md). CI di main superata in tutti e tre i job; pacchetti e pubblicazioni applicative invariati.
 
 **Avvio locale, 30 ottobre:** corretto il blocco del launcher dopo le 30 ore CAMS, riconoscendo l'estensione esplicita a 36 ore. 93 asserzioni, preflight cloud e avvio locale superati; frontend 5174 e API 8002 sani. Correzione preparata nel ramo `codex/local-pilot-cams-startup-20261030`. [Diagnosi e prove](docs/operations/LOCAL_PILOT_CAMS_STARTUP_20261030.md). Pacchetti, pubblicazioni e servizi cloud invariati.
 
