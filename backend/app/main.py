@@ -7,6 +7,8 @@ from fastapi.middleware.cors import CORSMiddleware
 from app.api.events import router as events_router
 from app.api.live import router as live_router
 from app.api.location import router as location_router
+from app.api.markets import admin_router as markets_admin_router
+from app.api.markets import public_router as markets_public_router
 from app.api.push import router as push_router
 from app.api.promotions import admin_router as promotions_admin_router
 from app.api.promotions import public_router as promotions_public_router
@@ -69,6 +71,7 @@ def create_app() -> FastAPI:
             "Accept",
             "Content-Type",
             "Authorization",
+            "If-None-Match",
             "X-Firebase-AppCheck",
             LOCAL_WEATHER_PILOT_HEADER,
         ],
@@ -78,6 +81,8 @@ def create_app() -> FastAPI:
     app.include_router(location_router)
     app.include_router(live_router)
     app.include_router(events_router)
+    app.include_router(markets_public_router)
+    app.include_router(markets_admin_router)
     app.include_router(weather_router)
     app.include_router(push_router)
     app.include_router(promotions_public_router)

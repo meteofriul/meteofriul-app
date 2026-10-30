@@ -51,6 +51,7 @@ import { DiscoverView } from "../features/discover/DiscoverView";
 import { MarketsExplorer } from "../features/markets/MarketsExplorer";
 import { marketDay, mergeMarketEvents } from "../features/markets/marketsCatalog";
 import { subscribeToMarketsDayClock } from "../features/markets/marketsDayClock";
+import { useMarketsCatalogue } from "../features/markets/useMarketsCatalogue";
 import { getPilotMunicipalityContext } from "../features/discover/pilotMunicipalityContext";
 import { buildDiscoverViewModel } from "../features/discover/discoverViewModel";
 import { HomeLabView } from "../features/lab/HomeLabView";
@@ -291,6 +292,7 @@ function HomeRouteView({
   onRuntimeRefreshSettled,
   runtimeRefreshToken = 0,
   weatherNow,
+  marketsCatalogue,
 }) {
   const location = activeLocation || DEFAULT_APP_LOCATION;
   const editorialLocation = editorialContext?.focusLocation || DEFAULT_APP_LOCATION;
@@ -611,6 +613,11 @@ function HomeRouteView({
       : null;
     const mergedData = {
       ...(homeData || {}),
+      ...(marketsCatalogue?.schemaVersion === 2 && eventsEnabled ? { events: {
+        ...homeData?.events,
+        items: mergeMarketEvents(homeData?.events?.items, { location: eventsLocation,
+          radius: eventsLocation.eventsRadius || DEFAULT_EVENTS_RADIUS_KM, now: deviceNow, catalogue: marketsCatalogue }),
+      } } : {}),
       editorialLocation: eventsLocation,
       location,
       sourceAvailability: productScope?.sources,
@@ -653,6 +660,8 @@ function HomeRouteView({
     bulletinData,
     deviceNow,
     eventsLocation,
+    eventsEnabled,
+    marketsCatalogue,
     homeData,
     language,
     location,
@@ -986,6 +995,7 @@ function EventsRouteView({
   language,
   onMarketsOpen,
   marketEventRequest,
+  marketsCatalogue,
   onEventsNavigationState,
   onRuntimeRefreshSettled,
   runtimeRefreshToken = 0,
@@ -1065,15 +1075,16 @@ function EventsRouteView({
 
   const model = useMemo(
     () => buildEventsViewModel({ ...dataState, items: mergeMarketEvents(dataState.items, {
-      location, radius: location.eventsRadius || DEFAULT_EVENTS_RADIUS_KM, now: marketNow,
+      location, radius: location.eventsRadius || DEFAULT_EVENTS_RADIUS_KM, now: marketNow, catalogue: marketsCatalogue,
     }) }, { language, location, now: new Date(marketDay(marketNow) + 'T12:00:00') }),
-    [dataState, language, location, marketNow],
+    [dataState, language, location, marketNow, marketsCatalogue],
   );
 
   return (
     <EventsView
       key={marketEventRequest?.key || 'events'}
       marketEventRequest={marketEventRequest}
+      catalogue={marketsCatalogue}
       onMarketsOpen={onMarketsOpen}
       language={language}
       model={model}
@@ -1709,6 +1720,8 @@ export function AppRoutes({
   const marketLocationKey = getLocationCacheKey(marketLocation);
   const [marketCatalogueRequest, setMarketCatalogueRequest] = useState(null);
   const [marketEventRequest, setMarketEventRequest] = useState(null);
+  const marketsState = useMarketsCatalogue({ enabled: ["home", "events"].includes(activeTab) || Boolean(marketCatalogueRequest),
+    refreshToken: `${activeTab}:${runtimeRefreshToken}:${marketCatalogueRequest?.key || 0}` });
   const marketVisit = useRef(0);
   const [marketContext, setMarketContext] = useState({ tab: activeTab, locationKey: marketLocationKey });
   if (marketContext.tab !== activeTab || marketContext.locationKey !== marketLocationKey) {
@@ -1882,6 +1895,7 @@ export function AppRoutes({
       pilotWhyId={pilotWhyId}
       onMarketsOpen={openMarkets}
       marketEventRequest={marketEventRequest?.locationKey === marketLocationKey ? marketEventRequest : null}
+      marketsCatalogue={marketsState.catalogue}
       reportSubmissionLocked={reportSubmissionLocked}
       runtimeRefreshToken={routeRuntimeRefreshToken}
       runtimeRefreshForce={runtimeRefreshForce}
@@ -1934,6 +1948,8 @@ export function AppRoutes({
         language={language}
         onClose={() => setMarketCatalogueRequest(null)}
         onViewEvent={openMarketEvent}
+        catalogue={marketsState.catalogue}
+        catalogueStatus={marketsState.status}
       />
     </Suspense>
   );

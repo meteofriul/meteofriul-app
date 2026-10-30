@@ -29,9 +29,10 @@ export function safeMarketUrl(value) {
   try { const url = new URL(value); return url.protocol === "https:" ? url.href : ""; }
   catch { return ""; }
 }
-export function marketDirectionsUrl(market) {
-  return market?.directionsQuery
-    ? "https://www.google.com/maps/search/?api=1&query=" + encodeURIComponent(market.directionsQuery) : "";
+export function marketDirectionsUrl(market, edition) {
+  const venue = edition?.venue || market;
+  return venue?.directionsQuery
+    ? "https://www.google.com/maps/search/?api=1&query=" + encodeURIComponent(venue.directionsQuery) : "";
 }
 function urlKey(value) {
   try {
@@ -60,16 +61,37 @@ function distanceKm(a, b) {
   return 6371 * 2 * Math.atan2(Math.sqrt(value), Math.sqrt(1 - value));
 }
 export function publicMarkets(catalogue = inventory) {
-  return catalogue.markets.filter(market => market.quality === "Documentato");
+  if (catalogue.unavailable) return [];
+  return catalogue.markets.filter(market => market.quality === "Documentato"
+    && (!market.status || market.status === "published")
+    && !["suspended", "archived", "withdrawn", "closed"].includes(market.activityStatus)
+    && !marketIsWithdrawn(market.id, catalogue));
+}
+function marketIsWithdrawn(marketId, catalogue) {
+  return (catalogue.tombstones || []).some(item => item.marketId === marketId && !item.editionId && !item.date
+    && ["archived", "withdrawn", "suspended", "cancelled"].includes(item.status));
+}
+function editionIsWithdrawn(edition, catalogue) {
+  return marketIsWithdrawn(edition.marketId, catalogue) || (catalogue.tombstones || []).some(item =>
+    item.marketId === edition.marketId && (item.editionId === edition.id || item.date === edition.date)
+      && item.status !== "rescheduled");
+}
+function marketDayIsWithdrawn(marketId, day, catalogue) {
+  return (catalogue.tombstones || []).some(item => item.marketId === marketId && item.date === day
+    && (item.status !== "rescheduled" || item.replacementDate !== day))
+    || catalogue.dates.some(item => item.marketId === marketId && item.date === day
+      && ["cancelled", "postponed"].includes(item.status));
 }
 export function getMarket(id, catalogue = inventory) {
   return publicMarkets(catalogue).find(market => market.id === id) || null;
 }
 export function publishedMarketDates(market, now = new Date(), catalogue = inventory) {
-  if (!market || market.quality !== "Documentato") return [];
+  if (!market || market.quality !== "Documentato" || catalogue.unavailable || marketIsWithdrawn(market.id, catalogue)) return [];
   const today = marketDay(now);
   return catalogue.dates.filter(item => item.marketId === market.id && item.date >= today
-    && item.date <= catalogue.validThrough && item.status === "published")
+    && (!market.validFrom || item.date >= market.validFrom)
+    && (!market.validThrough || item.date <= market.validThrough)
+    && item.date <= catalogue.validThrough && item.status === "published" && !editionIsWithdrawn(item, catalogue))
     .sort((a, b) => a.date.localeCompare(b.date));
 }
 export function marketDateInEvents(day, now = new Date()) {
@@ -95,22 +117,37 @@ export function selectMarkets({ location, radius = 20, period = "all", now = new
   });
   const items = area.filter(market => period === "all" || selectedDays.some(day =>
     market.group === "regular"
-      ? day >= market.checked && day <= catalogue.validThrough
-        && market.weekdays.includes(new Date(day + "T12:00:00Z").getUTCDay())
+      ? !marketDayIsWithdrawn(market.id, day, catalogue) && (market.dates.some(item => item.date === day)
+        || (day >= (market.validFrom || market.checked) && day <= catalogue.validThrough
+        && (!market.validThrough || day <= market.validThrough)
+        && market.weekdays.includes(new Date(day + "T12:00:00Z").getUTCDay())))
       : market.dates.some(item => item.date === day)))
     .sort((a, b) => a.group !== b.group ? (a.group === "regular" ? -1 : 1)
       : (a.group === "occasional" ? (a.dates[0]?.date || "9999").localeCompare(b.dates[0]?.date || "9999") : 0)
         || a.distance - b.distance || a.name.localeCompare(b.name, "it"));
   return { supported: true, items, areaCount: area.length, origin };
 }
-export function matchMarket(event, catalogue = inventory) {
+export function matchMarket(event, catalogue = inventory, { includeWithdrawn = false } = {}) {
   if (!event) return null;
   const raw = event.raw || event;
   // Do not trust arbitrary IDs or fuzzy names to merge distinct local markets.
   const city = marketToken(raw.event_city || raw.city);
-  const explicit = getMarket(raw.market_id, catalogue);
-  if (explicit) return !city || marketToken(explicit.comune) === city ? explicit : null;
-  const records = publicMarkets(catalogue).filter(market => !city || marketToken(market.comune) === city);
+  const identities = includeWithdrawn ? (catalogue.identities || []).map(item => ({
+    ...item, id: item.marketId, sourceAliases: item.sourceUrls || [],
+  })) : [];
+  const recordsById = new Map(identities.map(item => [item.id, item]));
+  for (const market of includeWithdrawn ? catalogue.markets : publicMarkets(catalogue)) {
+    const identity = recordsById.get(market.id);
+    recordsById.set(market.id, { ...market,
+      titleAliases: [...(market.titleAliases || []), ...(identity?.titleAliases || []), ...(identity?.name ? [identity.name] : [])],
+      sourceAliases: [...(market.sourceAliases || []), ...(identity?.sourceAliases || [])],
+      municipalityAliases: [...(market.municipalityAliases || []), ...(identity?.municipalityAliases || [])],
+    });
+  }
+  const matchesCity = market => !city || [market.comune, ...(market.municipalityAliases || [])].some(value => marketToken(value) === city);
+  const explicit = recordsById.get(raw.market_id);
+  if (explicit) return matchesCity(explicit) ? explicit : null;
+  const records = [...recordsById.values()].filter(matchesCity);
   const key = urlKey(raw.url);
   const byUrl = key ? records.filter(market => [market.url, ...(market.sourceAliases || []),
     ...catalogue.dates.filter(item => item.marketId === market.id).map(item => item.source)]
@@ -139,6 +176,7 @@ function cancelled(event) {
 }
 export function mergeMarketEvents(events = [], { location, radius = 20, now = new Date(), catalogue = inventory } = {}) {
   if (!findMarketMunicipality(location)) return events;
+  if (catalogue.schemaVersion === 2) return mergeManagedMarketEvents(events, { location, radius, now, catalogue });
   const consumed = new Set(), broad = new Set();
   const existing = events.flatMap(event => {
     const market = matchMarket(event, catalogue);
@@ -165,8 +203,88 @@ export function mergeMarketEvents(events = [], { location, radius = 20, now = ne
     }));
   return [...existing, ...local];
 }
-export function findRequestedMarketEvent(items, request, now = new Date()) {
-  if (!request || !marketDateInEvents(request.date, now)) return null;
-  return items.find(event => matchMarket(event)?.id === request.marketId
+export function findRequestedMarketEvent(items, request, now = new Date(), catalogue = inventory) {
+  if (!request) return null;
+  const requestedEditionId = request.editionId || catalogue.dates.find(item => item.marketId === request.marketId
+    && (item.date === request.date || item.legacyDates?.includes(request.date)))?.id;
+  if (requestedEditionId) return items.find(event => {
+    const raw = event.raw || event;
+    return raw.market_id === request.marketId && raw.market_edition_id === requestedEditionId
+      && eventMarketDays(event, now).some(day => marketDateInEvents(day, now));
+  }) || null;
+  if (!marketDateInEvents(request.date, now)) return null;
+  return items.find(event => matchMarket(event, catalogue)?.id === request.marketId
     && eventMarketDays(event, now).includes(request.date)) || null;
+}
+
+function managedEditionEvent(market, edition, source = {}) {
+  const venue = edition.venue || market;
+  return {
+    image: source.image, id: edition.id, market_id: market.id, market_edition_id: edition.id,
+    category: "mercato", title: market.name, start_date: edition.date, end_date: edition.date,
+    date: formatMarketDate(edition.date), occurrences: [edition.date],
+    event_city: market.comune, place: venue.place || "", venue: venue.place || "", address: "",
+    maps_url: marketDirectionsUrl(market, edition), lat: venue.lat ?? null, lon: venue.lon ?? null,
+    time: edition.hours || market.hours || "", market_catalogue: true, market_managed: true,
+    market_venue: edition.venue || null, source: market.authority || source.source,
+    url: edition.source || market.url || source.url,
+    description: `${market.kind}. ${market.cadence}. ${market.scheduleNote || ""}`,
+    description_source_name: market.authority,
+    description_source_url: edition.source || market.url,
+  };
+}
+
+function mergeManagedMarketEvents(events, { location, radius, now, catalogue }) {
+  const area = new Map(selectMarkets({ location, radius, now, catalogue }).items.map(market => [market.id, market]));
+  const consumed = new Set();
+  const existing = events.flatMap(event => {
+    const raw = event.raw || event;
+    if (raw.market_id && marketIsWithdrawn(raw.market_id, catalogue)) return [];
+    const identity = matchMarket(event, catalogue, { includeWithdrawn: true });
+    if (!identity) {
+      const retiredEdition = (catalogue.tombstones || []).some(item =>
+        item.editionId && item.editionId === raw.market_edition_id);
+      return retiredEdition || (catalogue.blockUnknownMarkets && (raw.market_id || raw.market_edition_id || /mercat/i.test(raw.category || ""))) ? [] : [event];
+    }
+    const market = area.get(identity.id);
+    if (!market) return [];
+    const days = eventMarketDays(event, now);
+    const editions = catalogue.dates.filter(edition => edition.marketId === market.id
+      && (edition.id === raw.market_edition_id || days.some(day => edition.date === day || edition.legacyDates?.includes(day))
+        || (catalogue.editionAliases || []).some(alias => alias.editionId === edition.id && alias.legacyId === raw.id)));
+    if (editions.length) return editions.flatMap(edition => {
+      if (consumed.has(edition.id)) return [];
+      consumed.add(edition.id);
+      if (!market.dates.some(item => item.id === edition.id) || !marketDateInEvents(edition.date, now)) return [];
+      // An obsolete cancellation for the old date cannot cancel its replacement.
+      if (cancelled(raw) && days.includes(edition.date)) return [];
+      return [managedEditionEvent(market, edition, raw)];
+    });
+    const tombstones = (catalogue.tombstones || []).filter(item => item.marketId === market.id);
+    if (cancelled(raw) || tombstones.some(item => item.editionId === raw.market_edition_id
+      || (item.date && days.includes(item.date)))) return [];
+    // The managed occasional calendar is authoritative. A source range is not
+    // an extra edition and must not revive a withdrawn or superseded occurrence.
+    if (market.group === "occasional") return [];
+    if (!days.length || (market.validThrough && marketDay(now) > market.validThrough)
+      || days.some(day => day > catalogue.validThrough || (market.validThrough && day > market.validThrough)
+        || (market.validFrom && day < market.validFrom)
+        || !market.weekdays.includes(new Date(day + "T12:00:00Z").getUTCDay()))) return [];
+    return [{ id: raw.id, image: raw.image, start_date: raw.start_date, end_date: raw.end_date,
+      date: days.length === 1 ? formatMarketDate(days[0]) : raw.date, occurrences: days,
+      market_id: market.id, title: market.name, category: "mercato", event_city: market.comune,
+      place: market.place, venue: market.place, address: "", lat: null, lon: null, time: market.hours || "",
+      description: `${market.kind}. ${market.cadence}. ${market.scheduleNote || ""}`,
+      description_excerpt: "", url: market.url || raw.url, source: market.authority || raw.source,
+      description_source_name: market.authority, description_source_url: market.url,
+      maps_url: marketDirectionsUrl(market), market_managed: true, market_catalogue: true }];
+  });
+  // Explicit, approved editions are events, including extraordinary openings of
+  // a weekly market. Habitual weekdays alone never generate events.
+  const local = [...area.values()].flatMap(market => market.dates.flatMap(edition => {
+    if (consumed.has(edition.id) || !marketDateInEvents(edition.date, now)) return [];
+    consumed.add(edition.id);
+    return [managedEditionEvent(market, edition)];
+  }));
+  return [...existing, ...local];
 }

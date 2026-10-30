@@ -30,6 +30,12 @@ vi.mock("../features/events/eventsDataController", async importOriginal => ({
   readInitialEventsData: () => null,
   loadEventsData: (...args) => state.loadEvents(...args),
 }));
+// Market refreshes have their own integration coverage; keep this fixture
+// focused on ownership of the weather/live/events runtime refresh token.
+vi.mock("../features/markets/useMarketsCatalogue", async () => {
+  const { MARKET_CATALOGUE } = await import("../features/markets/marketsCatalog");
+  return { useMarketsCatalogue: () => ({ catalogue: MARKET_CATALOGUE, status: "bootstrap" }) };
+});
 vi.mock("../features/live/liveDataController", async importOriginal => ({
   ...await importOriginal(),
   readInitialLiveData: () => null,

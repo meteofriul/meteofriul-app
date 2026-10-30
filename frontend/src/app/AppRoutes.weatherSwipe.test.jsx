@@ -11,6 +11,7 @@ vi.mock("react", async (importOriginal) => ({
   useEffect: () => {},
   useRef: initial => ({ current: initial }),
   useState: initial => [typeof initial === "function" ? initial() : initial, vi.fn()],
+  useSyncExternalStore: (_subscribe, getSnapshot) => getSnapshot(),
 }));
 vi.mock("../services/localWeatherPilot", async (importOriginal) => ({
   ...await importOriginal(),
@@ -25,6 +26,9 @@ import { LocationContext } from "../ui/components/LocationContext";
 
 afterEach(() => { harness.pilot = false; });
 
+// The market dialog is a sibling of the primary route inside Suspense.
+const primaryRoute = route => Array.isArray(route.props.children) ? route.props.children[0] : route.props.children;
+
 function weatherRoute(activeTab, { locked = false, language = "it", theme = "light" } = {}) {
   const onNavigate = vi.fn();
   const onLocationSearchOpen = vi.fn();
@@ -38,7 +42,7 @@ function weatherRoute(activeTab, { locked = false, language = "it", theme = "lig
     reportSubmissionLocked: locked,
     theme,
   });
-  const shell = route.props.children;
+  const shell = primaryRoute(route);
   const navigation = shell.props.children[0];
   const shellChildren = [...navigation.props.children, ...shell.props.children.slice(1)].filter(Boolean);
   const locationContext = shellChildren.find(child => child?.type === LocationContext);
@@ -167,7 +171,7 @@ describe("weather route swipe isolation", () => {
       onNavigate: vi.fn(),
     });
 
-    expect(route.props.children.props.onLocationSearchOpen).toBeUndefined();
+    expect(primaryRoute(route).props.onLocationSearchOpen).toBeUndefined();
   });
 
   it("keeps location changes available from Settings", () => {
@@ -181,6 +185,6 @@ describe("weather route swipe isolation", () => {
       onNavigate: vi.fn(),
     });
 
-    expect(route.props.children.props.onLocationSearchOpen).toBe(onLocationSearchOpen);
+    expect(primaryRoute(route).props.onLocationSearchOpen).toBe(onLocationSearchOpen);
   });
 });

@@ -1,0 +1,183 @@
+{
+    "schemaVersion":  1,
+    "checkedAt":  "2026-10-30T14:07:35.4808911+01:00",
+    "workstream":  "codex/mercati-integration-20261028",
+    "baseCommit":  "c2d64db3f9417861d3d05a2a1ba65dd76385504b",
+    "candidate":  "working tree, identified by source hashes",
+    "scope":  "Local panel helpers -\u003e FastAPI TestClient -\u003e temporary SQLite -\u003e actual public JSON -\u003e JavaScript app",
+    "productionTouched":  false,
+    "seed":  {
+                 "markets":  60,
+                 "dates":  176,
+                 "publicMarkets":  53,
+                 "publicDates":  161,
+                 "practices":  59,
+                 "complete":  13,
+                 "limited":  46,
+                 "existingIdentityUpdates":  19,
+                 "possibleNewIdentities":  40
+             },
+    "crossBoundary":  {
+                          "status":  "pass",
+                          "preparedPractices":  59,
+                          "preparedTestIdentities":  100,
+                          "apiFlows":  [
+                                           "Save all prepared practices and publish without changing approved projections",
+                                           "Move one edition preserving ID, previous date and dedicated venue",
+                                           "Suspend, archive and restore as distinct publications",
+                                           "Restart SQLite and recover the same final publication",
+                                           "Create a new approved market using the actual panel helper, then publish and show it in the correct municipality and weekday"
+                                       ],
+                          "clientTests":  4,
+                          "harness":  "docs/operations/evidence/mercati-panel-20261030",
+                          "liveHttp":  false,
+                          "realBrowser":  false
+                      },
+    "backend":  {
+                    "status":  "pass",
+                    "tests":  68,
+                    "marketsTests":  30,
+                    "regressions":  38,
+                    "compileall":  "pass",
+                    "reportedBy":  "markets_backend_design",
+                    "command":  "python -m unittest tests.test_markets_archive tests.test_markets_api tests.test_markets_firestore tests.test_webcam_admin_api tests.test_promotions tests.test_firebase_infrastructure -q",
+                    "firestore":  "transactional fake only; no live cloud access"
+                },
+    "panel":  {
+                  "status":  "pass",
+                  "tests":  163,
+                  "lint":  "pass",
+                  "webBuild":  {
+                                   "status":  "pass",
+                                   "modules":  1950,
+                                   "output":  "OS temporary directory meteofriul-markets-panel-checked-f6b7bf93ac3f487181e4fcef06fedd93",
+                                   "reportedBy":  "root"
+                               },
+                  "reportedBy":  "root",
+                  "appliedExternalFiles":  "root confirmed hash-guarded application; existing local edits preserved",
+                  "sourceHashes":  [
+                                       {
+                                           "path":  "src/marketsEditor.js",
+                                           "sha256":  "85175eab6f668ec8e4db1f17cf4bac9a238ee71d8c20b30448a6025c0a19bcc0"
+                                       },
+                                       {
+                                           "path":  "src/marketsAdminApi.js",
+                                           "sha256":  "e001b7ae25badb15fb5799a6fabb2cf48893940f5a191607ff883c37a5d1ab92"
+                                       },
+                                       {
+                                           "path":  "src/components/MarketsControlPage.jsx",
+                                           "sha256":  "28e7dd9cb97dfcdf0268dd64139118803dc2d37e05370d14560d0fe2b15710f3"
+                                       }
+                                   ],
+                  "finalStage":  "163 tests and lint pass; build includes minimum reason length and editable market kind; external files match checked stage",
+                  "branch":  "codex/markets-management-20261030",
+                  "commitState":  "working tree; pre-existing user edits preserved and not included in an automatic commit"
+              },
+    "frontend":  {
+                     "status":  "pass",
+                     "tests":  196,
+                     "files":  21,
+                     "stage":  "final aggregate after review fixes",
+                     "lint":  "full lint pass reported by root",
+                     "reportedBy":  "markets_client_design and root",
+                     "command":  "node node_modules/vitest/vitest.mjs run --configLoader native src/app/AppRoutes src/features/events/EventsView src/features/markets src/services/marketsCatalogue.test.js",
+                     "webBuild":  {
+                                      "status":  "pass",
+                                      "appModules":  2129,
+                                      "serviceWorkerModules":  14,
+                                      "standaloneServiceWorkerAssertion":  "pass",
+                                      "output":  "OS temporary directory meteofriul-markets-app-a252148275c645cf9f42c8905adc80a3",
+                                      "reportedBy":  "root"
+                                  }
+                 },
+    "radius":  {
+                   "branch":  "codex/events-markets-radius-settings-20261030",
+                   "commit":  "f8c9ff5b7d770bfe724bfc76565562aef4e79401",
+                   "tests":  159,
+                   "lint":  "pass",
+                   "build":  "pass",
+                   "integratedIntoThisCheckout":  false,
+                   "reportedBy":  "radius_settings"
+               },
+    "closedFindings":  [
+                           "Full seed save KeyError after clearing draft ID",
+                           "Stale weekly feed day and time after editorial change",
+                           "Old municipality feed escaping identity reconciliation"
+                       ],
+    "limits":  [
+                   "Browser host unavailable: banner and panel visual QA pending",
+                   "No real-device Android or Safari/iPhone check",
+                   "Firestore production bootstrap and marketsAdmin claim not performed",
+                   "No deployment or Play build",
+                   "Editorial residual source checks remain open"
+               ],
+    "sourceHashes":  [
+                         {
+                             "path":  "backend/app/markets/model.py",
+                             "sha256":  "25bb31d6d51e18e61ed79daf6f05c6eaf06585be6b3cc3ff5efe55aca12b3f7c"
+                         },
+                         {
+                             "path":  "backend/app/markets/repository.py",
+                             "sha256":  "713b69761a00eb188bab50507a2d3e841e933ae77b2f47b7da0508bfce522fa1"
+                         },
+                         {
+                             "path":  "backend/app/markets/service.py",
+                             "sha256":  "0bc06459e200487b9b123ab6fee493a8fae2582d40b7703c1d8f12a864949c7e"
+                         },
+                         {
+                             "path":  "backend/app/markets/seed.py",
+                             "sha256":  "10a75f9f72c1ca99afa56938c6d52b6a5f23e982acbf61fd8d47450de4c65c38"
+                         },
+                         {
+                             "path":  "backend/app/markets/data/seed.json",
+                             "sha256":  "45b0322c25e51fb66f63f1eaeec2ae2df08214e6fe508f168d19ac51a8bea311"
+                         },
+                         {
+                             "path":  "backend/app/api/markets.py",
+                             "sha256":  "642b43ceb2653252869da5d6416e9773e6659d0a9e82562a1aa093db1210eac7"
+                         },
+                         {
+                             "path":  "backend/app/infrastructure/markets_admin_auth.py",
+                             "sha256":  "8e4e0a9de4b3a73bbd7daaac33a56455f36c45eb001f9964056f2b7375efb5c4"
+                         },
+                         {
+                             "path":  "frontend/src/services/marketsCatalogue.js",
+                             "sha256":  "703e4fc997228c8fafbe4de7524af51d5e3a2bf88ced57a6c5d48a5153b6b8de"
+                         },
+                         {
+                             "path":  "frontend/src/features/markets/marketsCatalog.js",
+                             "sha256":  "8d1fae21991a88d73688b94f8e174c79aa54b4d193977cdda14133566fbc13c0"
+                         },
+                         {
+                             "path":  "frontend/src/features/events/EventsView.jsx",
+                             "sha256":  "1375aa0b60aaacd4a8b4216c13079dbf5d4e3a0303db7ebc7461abea8e65e2b3"
+                         },
+                         {
+                             "path":  "frontend/src/app/AppRoutes.jsx",
+                             "sha256":  "78e0732ac8995099c22b571ddc8f78bf4b74631356ecf5a62c2f7a7037423430"
+                         }
+                     ],
+    "localHttp":  {
+                      "reportedBy":  "root",
+                      "appPort":  5174,
+                      "appStatus":  200,
+                      "panelPort":  5182,
+                      "panelStatus":  200,
+                      "publicApi":  {
+                                        "schemaVersion":  2,
+                                        "revision":  0,
+                                        "markets":  53,
+                                        "dates":  161
+                                    },
+                      "panelAdminProxy":  {
+                                              "markets":  60,
+                                              "dates":  176,
+                                              "practices":  59,
+                                              "complete":  13,
+                                              "limited":  46,
+                                              "storage":  "sqlite",
+                                              "publicationErrors":  0
+                                          },
+                      "visualVerification":  false
+                  }
+}

@@ -4,7 +4,7 @@ import { createRoot } from "react-dom/client";
 import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
 import { EventsView } from "./EventsView";
 import { buildEventsViewModel } from "./eventsViewModel";
-import { mergeMarketEvents } from "../markets/marketsCatalog";
+import { getMarket, mergeMarketEvents } from "../markets/marketsCatalog";
 import { fetchLocalEventDetail } from "../../services/eventsApi";
 
 vi.mock("../../app/useBrowserDialogBack", () => ({ useBrowserDialogBack: () => {} }));
@@ -48,6 +48,35 @@ async function renderSource(events, { day = now, state = {} } = {}) {
 }
 
 describe("linked market preview and current Eventi contracts", () => {
+  it("updates an already opened managed edition after relocation and closes it on withdrawal", async () => {
+    const market = getMarket("M035");
+    const catalogue = { schemaVersion: 2, validThrough: "2026-12-31", markets: [market], identities: [], tombstones: [],
+      dates: [{ id: "edition-35", marketId: market.id, date: request.date, status: "published", source: market.url,
+        venue: { id: "venue-1", place: "Piazza prima", directionsQuery: "Piazza prima, Pordenone" } }] };
+    const renderCatalogue = async current => {
+      const items = mergeMarketEvents([source], { location, radius: 5, now, catalogue: current });
+      const model = buildEventsViewModel({ items }, { location, now });
+      await act(async () => root.render(<EventsView model={model} catalogue={current} />));
+    };
+    await renderCatalogue(catalogue);
+    const upcoming = [...host.querySelectorAll("button")].find(node => node.textContent.includes("Prossimi"));
+    if (upcoming) await act(async () => upcoming.click());
+    const card = host.querySelector(".mf-events-card__link");
+    expect(card).not.toBeNull();
+    await act(async () => card.click());
+    expect(document.querySelector(".mf-event-preview__panel")?.textContent).toContain("Piazza prima");
+    const moved = { ...catalogue, dates: [{ ...catalogue.dates[0], date: "2026-10-26", legacyDates: [request.date],
+      venue: { id: "venue-2", place: "Piazza seconda", directionsQuery: "Piazza seconda, Pordenone" } }] };
+    await renderCatalogue(moved);
+    const preview = document.querySelector(".mf-event-preview__panel");
+    expect(preview?.textContent).toContain("Piazza seconda");
+    expect(preview?.textContent).not.toContain("Piazza prima");
+    expect(fetchLocalEventDetail).not.toHaveBeenCalled();
+    await renderCatalogue({ ...moved, markets: [], dates: [],
+      identities: [{ marketId: market.id, name: market.name, comune: market.comune }], tombstones: [{ marketId: market.id, status: "archived" }] });
+    expect(document.querySelector(".mf-event-preview__panel")).toBeNull();
+  });
+
   it("updates a linked edition when its source refreshes the same URL and title", async () => {
     await renderSource([source]);
     expect(document.querySelector('[data-testid="event-preview-time"]').textContent).toContain("09:00");

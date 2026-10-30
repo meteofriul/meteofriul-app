@@ -31,11 +31,11 @@ function MarketSummary({ market, language, onOpen }) {
   </button>;
 }
 
-export function MarketDetail({ market, language = "it", now = new Date(), radius = 20, onViewEvent, titleRef }) {
+export function MarketDetail({ market, language = "it", now = new Date(), radius = 20, onViewEvent, titleRef, catalogue = MARKET_CATALOGUE }) {
   const copy = getMarketsCopy(language);
-  const dates = publishedMarketDates(market, now);
+  const dates = publishedMarketDates(market, now, catalogue);
   const source = safeMarketUrl(market.url);
-  const stale = marketDay(now) > MARKET_CATALOGUE.validThrough;
+  const stale = marketDay(now) > catalogue.validThrough || (market.validThrough && marketDay(now) > market.validThrough);
   const directions = marketDirectionsUrl(market);
   return <article className="mf-market-detail">
     <p className="mf-market-detail__kicker">{market.comune} · {market.prov} · {market.kind}</p>
@@ -48,11 +48,13 @@ export function MarketDetail({ market, language = "it", now = new Date(), radius
       {market.scheduleNote ? <p>{market.scheduleNote}</p> : null}
       <p className="mf-markets-note">{stale ? copy.stale : market.group === "regular" ? copy.usualNote : copy.dateNote}</p>
     </section>
-    {market.group === "occasional" ? <section>
+    {market.group === "occasional" || dates.length ? <section>
       <h4>{copy.dates}</h4>
-      {dates.length ? <ul className="mf-market-dates">{dates.map(edition => <li key={edition.date}>
+      {dates.length ? <ul className="mf-market-dates">{dates.map(edition => <li key={edition.id || edition.date}>
         <time dateTime={edition.date}>{formatMarketDate(edition.date, language)}</time>
-        {onViewEvent && marketDateInEvents(edition.date, now) ? <button type="button" onClick={() => onViewEvent({ marketId: market.id, date: edition.date, radius })}>
+        {edition.venue?.place ? <span>{edition.venue.place}</span> : null}
+        {edition.venue && marketDirectionsUrl(market, edition) ? <a className="mf-market-link" href={marketDirectionsUrl(market, edition)} target="_blank" rel="noopener noreferrer">{copy.directions}</a> : null}
+        {onViewEvent && marketDateInEvents(edition.date, now) ? <button type="button" onClick={() => onViewEvent({ marketId: market.id, date: edition.date, radius, ...(edition.id ? { editionId: edition.id } : {}) })}>
           {copy.viewEvent}<ChevronRight aria-hidden="true" size={16} />
         </button> : null}
       </li>)}</ul> : <p>{copy.noDates}</p>}
@@ -65,7 +67,7 @@ export function MarketDetail({ market, language = "it", now = new Date(), radius
   </article>;
 }
 
-export function MarketsExplorer({ request, location, language = "it", onClose, onViewEvent }) {
+export function MarketsExplorer({ request, location, language = "it", onClose, onViewEvent, catalogue = MARKET_CATALOGUE, catalogueStatus }) {
   const [radius, setRadius] = useState(20);
   const [period, setPeriod] = useState("all");
   const [selectedId, setSelectedId] = useState(request?.marketId || null);
@@ -77,8 +79,8 @@ export function MarketsExplorer({ request, location, language = "it", onClose, o
     if (request) setSelectedId(request.marketId || null);
   }
   const copy = getMarketsCopy(language);
-  const model = request ? selectMarkets({ location, radius, period, now: today }) : { supported: false, items: [] };
-  const selected = model.supported ? getMarket(selectedId) : null;
+  const model = request ? selectMarkets({ location, radius, period, now: today, catalogue }) : { supported: false, items: [] };
+  const selected = model.supported ? getMarket(selectedId, catalogue) : null;
   const back = () => {
     if (selected) {
       setSelectedId(null);
@@ -121,7 +123,7 @@ export function MarketsExplorer({ request, location, language = "it", onClose, o
     </header>
     {selected ? <div className="mf-markets-detail-scroll" key={selected.id}>
       <button className="mf-markets-back" type="button" onClick={back}><ArrowLeft aria-hidden="true" size={18} />{copy.back}</button>
-      <MarketDetail market={selected} language={language} now={today} radius={radius} onViewEvent={onViewEvent} titleRef={titleRef} />
+      <MarketDetail market={selected} language={language} now={today} radius={radius} onViewEvent={onViewEvent} titleRef={titleRef} catalogue={catalogue} />
     </div> : null}
     <div ref={listRef} className="mf-markets-content" hidden={Boolean(selected)}>
       {!model.supported ? <p className="mf-markets-empty" role="status">{copy.outside}</p> : <>
@@ -134,8 +136,9 @@ export function MarketsExplorer({ request, location, language = "it", onClose, o
           {["all", "today", "weekend"].map(value => <button type="button" key={value} aria-pressed={period === value} onClick={() => setPeriod(value)}>{copy[value]}</button>)}
         </div>
         <p className="mf-markets-note">{copy.distance}</p>
-        {marketDay(today) > MARKET_CATALOGUE.validThrough ? <p className="mf-markets-note">{copy.stale}</p> : null}
-        {!model.items.length ? <p className="mf-markets-empty" role="status">{model.areaCount ? copy.noMatches : copy.noCoverage}</p> : null}
+        {marketDay(today) > catalogue.validThrough ? <p className="mf-markets-note">{copy.stale}</p> : null}
+        {!model.items.length ? <p className="mf-markets-empty" role="status">{catalogue.unavailable ? copy.unavailable : model.areaCount ? copy.noMatches : copy.noCoverage}</p> : null}
+        {catalogueStatus === "cached" ? <p className="mf-markets-note">{copy.cached}</p> : null}
         {["regular", "occasional"].map(group => {
           const items = model.items.filter(market => market.group === group);
           return items.length ? <section className="mf-markets-group" key={group} aria-labelledby={"mf-markets-" + group}>

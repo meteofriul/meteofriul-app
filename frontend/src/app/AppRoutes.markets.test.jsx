@@ -15,6 +15,7 @@ import { AppRoutes } from "./AppRoutes";
 import { DEFAULT_APP_LOCATION } from "./appLocation";
 import { getUiShellCopy } from "./uiShellCopy";
 import { loadEventsData } from "../features/events/eventsDataController";
+import { getMarket } from "../features/markets/marketsCatalog";
 
 const pn = { city: "Pordenone", countryCode: "IT", regionCode: "IT-36", source: "manual_search", istatCode: "093033", lat: 45.9567, lon: 12.6605 };
 const ud = { city: "Udine", countryCode: "IT", regionCode: "IT-36", source: "manual_search", istatCode: "030129", lat: 46.0633, lon: 13.2357 };
@@ -41,6 +42,27 @@ afterEach(async () => {
   vi.useRealTimers(); vi.unstubAllGlobals();
 });
 describe("Scopri / market catalogue / Events integration", () => {
+  it("uses the same remote edition in the catalogue and Events and reacts to withdrawal", async () => {
+    const market = { ...getMarket("M035"), name: "La Soffitta aggiornata" };
+    let remote = { schemaVersion: 2, revision: 1, snapshotId: "markets-1", expiresAt: "2026-12-31T23:00:00Z",
+      validThrough: "2026-12-31", markets: [market], identities: [{ marketId: market.id, name: market.name, comune: market.comune }],
+      tombstones: [], dates: [{ id: "edition-shared", marketId: market.id, date: "2026-10-25", status: "published", source: market.url,
+        venue: { id: "venue-shared", place: "Sede confermata dal pannello", directionsQuery: "Pordenone" } }] };
+    vi.mocked(fetch).mockImplementation(async () => ({ ok: true, json: async () => remote }));
+    await act(async () => root.render(<App />));
+    await click(button("Esplora nella tua zona"));
+    expect(host.querySelectorAll(".mf-market-card")).toHaveLength(1);
+    await click(button("La Soffitta aggiornata", host));
+    expect(host.querySelector(".mf-market-detail").textContent).toContain("Sede confermata dal pannello");
+    await click(button("Vedi appuntamento"));
+    expect(document.querySelector(".mf-event-preview__panel")?.textContent).toContain("Sede confermata dal pannello");
+    expect(vi.mocked(fetch).mock.calls.some(([url]) => url.endsWith("/api/markets/catalogue"))).toBe(true);
+    remote = { ...remote, revision: 2, snapshotId: "markets-2", markets: [], dates: [], tombstones: [{ marketId: market.id, status: "archived" }] };
+    await act(async () => window.dispatchEvent(new Event("online")));
+    expect(document.querySelector(".mf-event-preview__panel")).toBeNull();
+    expect(host.textContent).toContain("L’appuntamento non è disponibile");
+  });
+
   it("opens a specific edition with the selected radius, links back, and consumes the navigation request", async () => {
     await act(async () => root.render(<App />));
     expect(host.querySelector("dialog")).toBeNull();

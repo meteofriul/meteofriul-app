@@ -30,7 +30,7 @@ import { PromotionPlacementCard } from "../promotions/PromotionPlacementCard";
 import { buildEventPreviewModel } from "./eventPreview";
 import { groupEventOccurrences, sortEventsForTimeTab } from "./eventsViewModel";
 import { EventsRadiusSelect } from "./EventsRadiusSelect";
-import { findRequestedMarketEvent, marketDirectionsUrl, matchMarket } from "../markets/marketsCatalog";
+import { findRequestedMarketEvent, MARKET_CATALOGUE, marketDirectionsUrl, matchMarket } from "../markets/marketsCatalog";
 import { getMarketsCopy } from "../markets/marketsCopy";
 
 const INITIAL_VISIBLE_EVENTS = 16;
@@ -184,11 +184,13 @@ export function EventPreviewPanel({
   panelRef,
   onMarketOpen,
   language = 'it',
+  catalogue = MARKET_CATALOGUE,
 }) {
   const preview = buildEventPreviewModel(event);
   const festivalDates = mainFestivalDates(event);
-  const market = matchMarket(event);
-  const directionsUrl = event.raw?.market_catalogue ? marketDirectionsUrl(market) : preview.directionsUrl;
+  const market = matchMarket(event, catalogue);
+  const edition = catalogue.dates.find(item => item.id && item.id === event.raw?.market_edition_id);
+  const directionsUrl = event.raw?.market_catalogue ? marketDirectionsUrl(market, edition) : preview.directionsUrl;
 
   return (
     <section
@@ -326,13 +328,14 @@ export function EventPreviewPanel({
 }
 
 function needsTurismoFvgDetail(event) {
+  if (event?.raw?.market_managed) return false;
   const preview = buildEventPreviewModel(event);
   return preview.source.toLocaleLowerCase("it-IT") === "turismofvg"
     && Boolean(event?.url)
     && (!preview.description || !preview.directionsUrl);
 }
 
-function EventPreviewDialog({ copy, event, onClose, onMarketOpen, language }) {
+function EventPreviewDialog({ copy, event, onClose, onMarketOpen, language, catalogue }) {
   usePilotBackHandler(onClose);
   useBrowserDialogBack(onClose);
   const closeButtonRef = useRef(null);
@@ -441,6 +444,7 @@ function EventPreviewDialog({ copy, event, onClose, onMarketOpen, language }) {
         onImageError={() => setImageBroken(true)}
         panelRef={panelRef}
         language={language}
+        catalogue={catalogue}
         onMarketOpen={onMarketOpen ? (id) => { onClose(); onMarketOpen(id); } : undefined}
       />
     </div>,
@@ -546,14 +550,17 @@ export function EventsView({
   titleMode = "visible",
   onMarketsOpen,
   marketEventRequest,
+  catalogue = MARKET_CATALOGUE,
 }) {
-  const requestedEvent = findRequestedMarketEvent(model.items, marketEventRequest);
+  const requestedEvent = findRequestedMarketEvent(model.items, marketEventRequest, new Date(), catalogue);
   const [requestedTab, setRequestedTab] = useState(() => requestedEvent?.timeCategory || "today");
   const [activeCategory, setActiveCategory] = useState(() => marketEventRequest ? "mercato" : "all");
   const [selectedEvent, setSelectedEvent] = useState(null);
   const [requestPreviewDismissed, setRequestPreviewDismissed] = useState(!marketEventRequest);
   // Follow source refreshes until the user closes the linked edition or opens another card.
-  const effectiveSelectedEvent = requestPreviewDismissed ? selectedEvent : requestedEvent;
+  const currentSelectedEvent = selectedEvent?.raw?.market_id
+    ? model.items.find(item => item.id === selectedEvent.id) || null : selectedEvent;
+  const effectiveSelectedEvent = requestPreviewDismissed ? currentSelectedEvent : requestedEvent;
   const [visibleState, setVisibleState] = useState({ count: INITIAL_VISIBLE_EVENTS, key: "" });
   const previewTriggerRef = useRef(null);
   const copy = model.copy;
@@ -747,6 +754,7 @@ export function EventsView({
           copy={copy}
           event={effectiveSelectedEvent}
           language={language}
+          catalogue={catalogue}
           onMarketOpen={onMarketsOpen}
           key={`${effectiveSelectedEvent.source || "event"}:${effectiveSelectedEvent.url || effectiveSelectedEvent.title}`}
           onClose={handlePreviewClose}
