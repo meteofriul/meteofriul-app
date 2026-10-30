@@ -1,0 +1,35 @@
+{
+    "status":  "pass",
+    "savedRevision":  1,
+    "publishedRevision":  0,
+    "prepared":  59,
+    "complete":  13,
+    "limited":  46,
+    "existingUpdates":  19,
+    "newDrafts":  40,
+    "totalIdentities":  100,
+    "publicMarketsUnchanged":  53,
+    "publicDatesUnchanged":  161,
+    "publicSnapshotUnchanged":  true,
+    "residualChecksPreserved":  true,
+    "localOnly":  true,
+    "published":  false,
+    "requestSha256":  "4b1549be2ac6e736ae6fa47e58a5e593066183d2f82341b7f9c0ff582ed9ef42",
+    "totalAdministrativeDates":  213,
+    "panelTests":  165,
+    "panelTestFiles":  29,
+    "panelSourceHashes":  [
+                              {
+                                  "sha256":  "69e191b2635a5019742f44f6143e4c8e416a01e61798341731a953b11a925c05",
+                                  "path":  "src/marketsEditor.js"
+                              },
+                              {
+                                  "sha256":  "8a5d8db7b6197ddd2efd8beb1c6da95aa7c193b8a1785d250ac7656f3a3a8009",
+                                  "path":  "src/components/MarketsControlPage.jsx"
+                              },
+                              {
+                                  "sha256":  "f713d2bb18b270b1b05bf77b876751bc46d3835fbaa03b65da788131b484f8b3",
+                                  "path":  "src/marketsEditor.test.js"
+                              }
+                          ]
+}

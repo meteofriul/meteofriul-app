@@ -1,5 +1,7 @@
 # Stato release 0.1.15 e lavoro salvato — aggiornamento sorgenti del 24 ottobre 2026
 
+**Mercati, 30 ottobre: preparazione operativa locale.** Salvate 59 bozze (13/46), con 19 aggiornamenti e 40 nuove identità, nella revisione amministrativa 1. Snapshot pubblico 0 invariato, nessuna approvazione editoriale automatica. [Evidenza](MERCATI_BOZZE_PREPARATE_20261030.md). Main, servizi online, Web e AAB invariati.
+
 **Mercati, 30 ottobre: archivio amministrativo locale.** Collegati pannello, API e lettore condiviso Mercati/Eventi; SQLite locale persistente e provider Firestore esplicito, pubblicazione distinta dalle bozze, revisioni, sospensioni e sedi per edizione. 59 pratiche private preparate (13/46), senza attivare nuove schede. [Verifica e limiti](MERCATI_PANNELLO_VERIFICA_20261030.md). Raggio nelle Impostazioni completato separatamente nel ramo `codex/events-markets-radius-settings-20261030`, commit `f8c9ff5b`, non integrato nel checkout Mercati. Nessuna configurazione cloud, attribuzione del permesso, promozione a main, AAB o pubblicazione Web; AAB 300038 invariata.
 
 **Mercati, 30 ottobre: banner in Eventi.** L’accesso al catalogo usa un gradiente blu scuro, testo bianco, icona di bancarella e freccia. 32 test, lint completo e compilazione di verifica PASS; sorgenti disponibili nell’anteprima locale 5174. [Modifica e limiti della verifica visiva](MERCATI_BANNER_EVENTI_20261030.md). AAB 300038, Web distribuita e catalogo invariati; nessuna promozione o pubblicazione.
