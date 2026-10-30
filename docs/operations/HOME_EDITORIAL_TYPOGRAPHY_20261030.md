@@ -42,15 +42,24 @@ L'unico file applicativo modificato è
   `7608a3aec59ed90fef806934bef680128e4af70aa411a2910b5e56cfc1a8705c`.
 - Lint completo `npm run lint`: PASS, nessun errore o avviso.
 
-La verifica visiva automatica è impedita dagli strumenti della sessione:
+La verifica visiva automatica è stata impedita dagli strumenti della sessione:
 `The browser access host is unavailable`; il percorso Windows restituisce
 `Computer Use native pipe is unavailable`, errore Windows 2.
-Nessuna schermata acquisita e nessuna verifica visiva o su telefono dichiarata.
-Restano da osservare domande brevi/lunghe, IT/FUR, chiaro/scuro e larghezze
-360, 390, 430 e 500 px, controllando leggibilità, allineamenti e azioni.
+Nessuna schermata acquisita dall'agente e nessuna prova automatica o su telefono
+dichiarata. La matrice completa di domande brevi/lunghe, IT/FUR, chiaro/scuro
+e larghezze 360, 390, 430 e 500 px non è attestata.
+
+Il 30 ottobre il proprietario ha approvato il risultato osservato con
+«Così va bene, puoi allineare il ramo», dopo la consegna della correzione
+`02495d3f`. Questo è il riscontro visivo e l'autorizzazione alla promozione
+per la discrepanza richiesta. Dispositivo e configurazione non sono stati
+specificati: non si estende il riscontro a Safari/iPhone o a una matrice Android.
 
 ## Stato di consegna
 
-Solo sorgenti e anteprima locali. Nessun push, PR, promozione a main,
-pubblicazione, pacchetto Android o artefatto Web di release. La prova visiva
-resta necessaria prima della promozione secondo le regole del progetto.
+Promozione dei sorgenti autorizzata, in preparazione tramite PR verso main;
+CI della PR e di main da registrare. Il ramo include il prerequisito del
+launcher CAMS già verificato con 93 asserzioni e avvio reale, documentato nel
+[verbale dedicato](LOCAL_PILOT_CAMS_STARTUP_20261030.md).
+Nessun pacchetto Android o artefatto Web di release generato e nessuna
+pubblicazione applicativa autorizzata da questo allineamento.

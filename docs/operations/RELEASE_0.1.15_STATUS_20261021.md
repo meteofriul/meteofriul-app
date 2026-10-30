@@ -1,6 +1,6 @@
 # Stato release 0.1.15 e lavoro salvato — aggiornamento sorgenti del 24 ottobre 2026
 
-**Home, 30 ottobre:** correzione tipografica locale nel ramo `codex/home-editorial-typography-20261030`; 50 test, lint e compilazione frontend PASS. [Prove e limite della verifica visiva](HOME_EDITORIAL_TYPOGRAPHY_20261030.md). Versioni, pacchetti Android, canali Play e pubblicazioni Web invariati; nessuna promozione a main.
+**Home, 30 ottobre:** correzione tipografica approvata dal proprietario nel ramo `codex/home-editorial-typography-20261030`; 50 test, lint e compilazione frontend PASS. [Prove e portata del riscontro visivo](HOME_EDITORIAL_TYPOGRAPHY_20261030.md). Allineamento dei sorgenti autorizzato, PR e CI da completare. Versioni, pacchetti Android, canali Play e pubblicazioni Web invariati.
 
 **Avvio locale, 30 ottobre:** corretto e verificato il controllo CAMS del launcher, nel ramo `codex/local-pilot-cams-startup-20261030`: 93 asserzioni e avvio reale PASS; [diagnosi e prove](LOCAL_PILOT_CAMS_STARTUP_20261030.md). Nessuna variazione di versione, pacchetto, canale Play, pubblicazione Web o servizio cloud.
 

@@ -57,4 +57,7 @@ visiva Mercati, che resta aperta insieme alla revisione friulana.
 
 Nessuna modifica dei dati o dei servizi cloud, dei job, delle pianificazioni,
 dei pacchetti Android/Web o delle pubblicazioni. Nessun push o promozione a
-main. Nessuna nuova verifica visiva o su dispositivo dichiarata.
+main nel passaggio iniziale di riaccensione. Nessuna nuova verifica visiva o
+su dispositivo dichiarata per il launcher. La successiva promozione dei
+sorgenti del prerequisito CAMS è inclusa nell'allineamento autorizzato del
+[ramo Home](HOME_EDITORIAL_TYPOGRAPHY_20261030.md); PR e CI sono tracciate lì.
