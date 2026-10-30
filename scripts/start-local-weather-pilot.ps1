@@ -820,6 +820,57 @@ function Test-WeatherObjectBlocked {
   }
 }
 
+function Test-CamsContinuityResponse {
+  param(
+    $Response,
+    $ReleaseResponse,
+    $FamilyLatest,
+    [datetimeoffset]$Now = [datetimeoffset]::UtcNow
+  )
+  try {
+    if (
+      $null -eq $Response -or [int]$Response.StatusCode -ne 200 -or `
+      -not (Test-CamsFamilyLatestPayload -Payload $FamilyLatest) -or `
+      -not (Test-CamsFamilyReleaseResponse -Response $ReleaseResponse -FamilyLatest $FamilyLatest)
+    ) { return $false }
+    $runId = [string]$FamilyLatest.latest.source_run_id
+    if ($runId -cnotmatch "^\d{8}T000000Z$") { return $false }
+    $runAt = Convert-CanonicalRunIdToUtcSecond -Value $runId -Label "CAMS continuity run"
+    $run = [datetimeoffset]::ParseExact(
+      $runAt, "yyyy-MM-dd'T'HH:mm:ss'Z'",
+      [System.Globalization.CultureInfo]::InvariantCulture,
+      [System.Globalization.DateTimeStyles]::AssumeUniversal -bor [System.Globalization.DateTimeStyles]::AdjustToUniversal
+    )
+    if ($Now -lt $run -or $Now -gt $run.AddHours(36)) { return $false }
+    $release = $ReleaseResponse.Content | ConvertFrom-Json
+    # Canonical bytes are part of the client contract. Build the complete
+    # expected grant rather than accepting extra fields or coercing JSON types.
+    $expected = [ordered]@{
+      catalog = [ordered]@{
+        municipality_count = [int]$ExpectedMunicipalityCount
+        sha256 = $ExpectedCatalogSha256
+        version = $ExpectedCatalogVersion
+      }
+      current_sample_max_lag_minutes = 60
+      fresh_until = $run.AddHours(24).UtcDateTime.ToString("yyyy-MM-dd'T'HH:mm:ss'Z'")
+      issued_at = Convert-CanonicalUtcSecond -Value $release.published_at -Label "CAMS continuity issued_at"
+      kind = "meteofriul.weather.cams_continuity"
+      policy_id = "cams_continuity_36h_v1"
+      release_json_bytes = [System.Text.Encoding]::UTF8.GetByteCount([string]$ReleaseResponse.Content)
+      release_sha256 = Get-ResponseSha256 -Response $ReleaseResponse
+      run_at = $runAt
+      schema_version = 1
+      source_run_id = $runId
+      usable_until = $run.AddHours(36).UtcDateTime.ToString("yyyy-MM-dd'T'HH:mm:ss'Z'")
+    }
+    $body = [string]$Response.Content
+    return [System.Text.Encoding]::UTF8.GetByteCount($body) -le 4096 -and `
+      $body -ceq ($expected | ConvertTo-Json -Depth 4 -Compress)
+  } catch {
+    return $false
+  }
+}
+
 function Test-CamsFamilyArtifacts {
   param(
     [string]$BaseUrl,
@@ -829,6 +880,7 @@ function Test-CamsFamilyArtifacts {
   )
   $base = $BaseUrl.TrimEnd("/")
   try {
+    if (-not (Test-CamsFamilyLatestPayload -Payload $FamilyLatest)) { return $false }
     $releaseResponse = Invoke-WebRequest `
       -Uri "$base/weather/v1/families/cams/$($FamilyLatest.latest.release_path)" `
       -UseBasicParsing -TimeoutSec $TimeoutSec
@@ -867,8 +919,14 @@ function Test-CamsFamilyArtifacts {
 
     if ($RequireCurrent) {
       $now = [datetimeoffset]::UtcNow
-      if ($now -lt $activeRunInstant -or $now -gt $activeRunInstant.AddHours(30)) {
-        return $false
+      if ($now -lt $activeRunInstant) { return $false }
+      if ($now -gt $activeRunInstant.AddHours(30)) {
+        if ($now -gt $activeRunInstant.AddHours(36)) { return $false }
+        $continuityResponse = Invoke-WebRequest `
+          -Uri "$base/weather/v1/families/cams/runs/$activeRunId/continuity.json" `
+          -UseBasicParsing -TimeoutSec $TimeoutSec
+        return Test-CamsContinuityResponse -Response $continuityResponse `
+          -ReleaseResponse $releaseResponse -FamilyLatest $FamilyLatest -Now $now
       }
     }
     return $true
