@@ -86,7 +86,9 @@ def prepare_seed(root: Path) -> dict:
     return {
         "schemaVersion": 2, "checked": catalogue["checked"], "validThrough": catalogue["validThrough"],
         "markets": markets, "dates": dates, "drafts": drafts,
-        "provenance": {key: {"path": path.relative_to(root).as_posix(), "sha256": hashlib.sha256(path.read_bytes()).hexdigest()}
+        # Match the repository's LF contract even if an existing Windows file
+        # still has CRLF. Content and provenance then reproduce in Linux builds.
+        "provenance": {key: {"path": path.relative_to(root).as_posix(), "sha256": hashlib.sha256(path.read_bytes().replace(b"\r\n", b"\n")).hexdigest()}
                        for key, path in paths.items()},
     }
 

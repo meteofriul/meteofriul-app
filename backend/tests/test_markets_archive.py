@@ -63,6 +63,18 @@ class MarketsArchiveTests(unittest.TestCase):
         self.assertNotIn("drafts", initial["catalogue"])
         self.assertEqual(len({item["id"] for item in seed["dates"]}), 176)
 
+    def test_seed_and_provenance_are_stable_across_windows_and_linux_newlines(self):
+        root = Path(__file__).resolve().parents[2]
+        expected = prepare_seed(root)
+        with TemporaryDirectory(prefix="mf-market-seed-newlines-") as directory:
+            copy_root = Path(directory)
+            for entry in expected["provenance"].values():
+                relative = entry["path"]
+                target = copy_root / relative
+                target.parent.mkdir(parents=True, exist_ok=True)
+                target.write_bytes((root / relative).read_bytes().replace(b"\r\n", b"\n").replace(b"\n", b"\r\n"))
+            self.assertEqual(prepare_seed(copy_root), expected)
+
     def test_full_seed_round_trip_and_market_edit_preserve_all_59_drafts(self):
         seed = load_seed()
         self.assertEqual(validate_state(seed, seed), {

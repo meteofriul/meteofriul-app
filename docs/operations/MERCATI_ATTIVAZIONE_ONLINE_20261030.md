@@ -47,3 +47,14 @@ Questa sezione registra la preparazione prima delle operazioni remote.
 L'esito di distribuzione e migrazione deve essere registrato separatamente,
 con digest immutabile, revisione del servizio, revisioni dati e rollback.
 Le evidenze locali di lavoro sono in `.tmp/markets-online-20261030/`.
+
+### Prima build nel container
+
+La build `86439df4-a991-4fe3-a66d-76b2633271de` si e fermata nei test:
+mancava `app_check.py`, importato dalla regressione Firebase, e l'hash di una
+fonte conservava i fine riga Windows. Aggiunto il modulo all'elenco del contesto
+e normalizzato il calcolo degli hash a LF, come previsto da `.gitattributes`.
+Una regressione confronta lo stesso seed generato da fonti LF e CRLF.
+La rigenerazione cambia soltanto la provenienza del seed, senza cambiare le
+60 identita, le 176 date o le 59 pratiche. Nessun servizio o dato remoto
+e stato attivato dalla build fallita.

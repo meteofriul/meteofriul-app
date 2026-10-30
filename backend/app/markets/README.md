@@ -124,6 +124,8 @@ mentre permette di modificarne stato, collegamenti e note editoriali.
 
 `python -m app.markets.seed` rigenera deterministicamente il pacchetto dai tre
 registri canonici e ne registra gli hash. Non modifica un archivio gia inizializzato.
+Gli hash delle fonti usano i fine riga LF prescritti dal repository, per
+conservare la stessa provenienza nelle build Windows e Linux.
 Le giornate ISO 1-7 sono convertite esplicitamente nel campo JS 0-6 del lettore.
 Periodicita mensili e stagionali non diventano ricorrenze settimanali.
 

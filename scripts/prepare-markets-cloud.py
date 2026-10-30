@@ -12,6 +12,7 @@ FILES = (
     "backend/Dockerfile.markets", "backend/requirements.txt", "backend/app/__init__.py",
     "backend/app/markets_cloud.py", "backend/app/api/__init__.py", "backend/app/api/markets.py",
     "backend/app/infrastructure/__init__.py", "backend/app/infrastructure/firebase.py",
+    "backend/app/infrastructure/app_check.py",
     "backend/app/infrastructure/markets_admin_auth.py",
     "backend/app/markets/__init__.py", "backend/app/markets/bootstrap.py",
     "backend/app/markets/model.py", "backend/app/markets/repository.py",
