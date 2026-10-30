@@ -57,9 +57,23 @@ specificati: non si estende il riscontro a Safari/iPhone o a una matrice Android
 
 ## Stato di consegna
 
-Promozione dei sorgenti autorizzata, in preparazione tramite PR verso main;
-CI della PR e di main da registrare. Il ramo include il prerequisito del
+Promozione dei sorgenti completata tramite
+[PR 36](https://github.com/meteofriul/meteofriul-app/pull/36), head
+`3efaec638063b7465196d55b7b3121c1cb279eea`, merge in main
+`05ec9aa904a29b41d2acb61cb498c9b9ec3cd8db` il 30 ottobre alle 07:41 Europe/Rome.
+Il ramo include il prerequisito del
 launcher CAMS già verificato con 93 asserzioni e avvio reale, documentato nel
 [verbale dedicato](LOCAL_PILOT_CAMS_STARTUP_20261030.md).
 Nessun pacchetto Android o artefatto Web di release generato e nessuna
 pubblicazione applicativa autorizzata da questo allineamento.
+
+- [CI PR](https://github.com/meteofriul/meteofriul-app/actions/runs/41015061165):
+  PASS su tutti e tre i job (frontend, backend, hosting-preview-tool).
+- [CI main](https://github.com/meteofriul/meteofriul-app/actions/runs/41015601736):
+  PASS sul merge `05ec9aa9`, tutti e tre i job.
+- Albero del merge identico alla candidata `3efaec63`, confronto Git senza
+  differenze. Nessuna modifica aggiunta dal merge ai sorgenti verificati.
+- Privacy guard e hook pre-push attivi; promozione tramite PR senza push
+  diretto su main, forzature o bypass. Una sola CI attesa su main osservata.
+- Aggiornamento conclusivo di README, stato release e parità in una PR
+  documentale; la CI completa è esclusa dai filtri Markdown esistenti.

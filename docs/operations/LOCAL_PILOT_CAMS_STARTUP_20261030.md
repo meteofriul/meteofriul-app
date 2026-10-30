@@ -59,5 +59,6 @@ Nessuna modifica dei dati o dei servizi cloud, dei job, delle pianificazioni,
 dei pacchetti Android/Web o delle pubblicazioni. Nessun push o promozione a
 main nel passaggio iniziale di riaccensione. Nessuna nuova verifica visiva o
 su dispositivo dichiarata per il launcher. La successiva promozione dei
-sorgenti del prerequisito CAMS è inclusa nell'allineamento autorizzato del
+sorgenti del prerequisito CAMS è completata tramite PR 36, merge `05ec9aa9`,
+nell'allineamento autorizzato del
 [ramo Home](HOME_EDITORIAL_TYPOGRAPHY_20261030.md); PR e CI sono tracciate lì.
