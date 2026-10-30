@@ -1,5 +1,9 @@
 # Mercati: fonti e catalogazione del 30 ottobre 2026
 
+Seguito nello stesso giorno: [ricognizione dei 215 comuni](MERCATI_RICOGNIZIONE_COMUNI_20261030.md)
+e [contratto proposto per la gestione dal pannello](MERCATI_GESTIONE_PANNELLO_CONTRATTO_20261030.md).
+I numeri sotto descrivono questo primo lotto e non il registro territoriale successivo.
+
 Proseguimento della [ricerca del 29 ottobre](MERCATI_COPERTURA_RICERCA_20261029.md)
 sul ramo `codex/mercati-integration-20261028`. Base di questo lotto `3f4fbbbb`,
 dopo l'allineamento al `main` verificato `e3527f73`: comprende la correzione
