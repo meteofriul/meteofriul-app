@@ -1,5 +1,7 @@
 # Allineamento della Web App con Android
 
+**Home, 30 ottobre:** dimensioni e spaziature delle due schede editoriali uniformate nel ramo locale `codex/home-editorial-typography-20261030`. [Modifica e verifiche](HOME_EDITORIAL_TYPOGRAPHY_20261030.md). 50 test, lint e compilazione frontend PASS; anteprima canonica aggiornata, verifica visiva aperta. Nessun artefatto Web/Android di release rigenerato, nessuna pubblicazione o nuova qualifica browser/dispositivo.
+
 **Avvio locale, 30 ottobre:** corretto e verificato il controllo CAMS del launcher, nel ramo `codex/local-pilot-cams-startup-20261030`: 93 asserzioni e avvio reale PASS; [diagnosi e prove](LOCAL_PILOT_CAMS_STARTUP_20261030.md). Il frontend distribuito, gli artefatti Web/Android e le qualificazioni dei browser non cambiano; nessuna pubblicazione richiesta per il solo launcher locale.
 
 **Consolidamento del 27 ottobre: completato in main.** [PR 34](https://github.com/meteofriul/meteofriul-app/pull/34) integrata nel merge `cab2b6ee`; [CI della PR](https://github.com/meteofriul/meteofriul-app/actions/runs/40585354043) e [CI di main](https://github.com/meteofriul/meteofriul-app/actions/runs/40586282824) superate nei tre job, incluso il lint completo. Consolidati agenti e confini, launcher, inventari documentali, mappa architetturale e correzioni radar/Eventi. [Evidenze e limiti](PROJECT_CONSOLIDATION_20261027.md). Originali Scopri conservati localmente; cache Python locale ancora inaccessibile al lint. AAB 300038, Web, servizi e qualificazioni esistenti invariati.

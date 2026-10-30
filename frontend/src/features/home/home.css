@@ -2320,26 +2320,28 @@ html:not([data-theme="dark"])
   display: flex;
   flex: 1 1 auto;
   flex-direction: column;
-  margin-block-start: 5px;
   min-width: 0;
 }
 
+.mf-home-quick-card--memory .mf-home-quick-territory small,
 .mf-home-quick-card--why .mf-home-quick-why__meta {
   color: var(--mf-muted);
   font-size: 0.6875rem;
   font-weight: 600;
   letter-spacing: 0.06em;
   line-height: 1.4;
-  margin: 0 0 6px;
+  margin: 0;
+  padding: 0;
   text-transform: uppercase;
 }
 
+.mf-home-quick-card--memory .mf-home-quick-territory > strong,
 .mf-home-quick-card--why .mf-home-quick-why__question {
   color: var(--mf-ink);
-  font-size: clamp(1rem, 4vw, 1.25rem);
+  font-size: 1.0625rem;
   font-weight: 800;
   line-height: 1.3;
-  margin: 0;
+  margin: 7px 0 0;
   overflow-wrap: break-word;
 }
 
@@ -2373,23 +2375,10 @@ html:not([data-theme="dark"])
   text-transform: uppercase;
 }
 
-.mf-home-quick-card--memory .mf-home-quick-territory small {
-  font-size: 0.6875rem;
-  font-weight: 600;
-  line-height: 1.4;
-  margin-top: 0;
-  padding-top: 0;
-  text-transform: uppercase;
-}
-
 .mf-home-quick-card--memory .mf-home-quick-territory > strong {
   display: block;
-  font-size: 1.0625rem;
-  font-weight: 800;
   -webkit-line-clamp: unset;
-  line-height: 1.3;
   overflow: visible;
-  overflow-wrap: break-word;
 }
 
 .mf-home-quick-card--memory .mf-home-quick-territory p {
