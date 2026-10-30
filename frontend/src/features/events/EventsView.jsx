@@ -10,6 +10,7 @@ import {
   Navigation,
   ShoppingBag,
   Sprout,
+  Store,
   Ticket,
   Trophy,
   Utensils,
@@ -556,6 +557,7 @@ export function EventsView({
   const [visibleState, setVisibleState] = useState({ count: INITIAL_VISIBLE_EVENTS, key: "" });
   const previewTriggerRef = useRef(null);
   const copy = model.copy;
+  const marketsCopy = getMarketsCopy(language);
   const handlePreviewOpen = useCallback((event, trigger) => {
     previewTriggerRef.current = trigger;
     setRequestPreviewDismissed(true);
@@ -685,8 +687,13 @@ export function EventsView({
           </section>
         </div>
 
-        {onMarketsOpen ? <button className="mf-market-catalogue-link" type="button" onClick={() => onMarketsOpen()}>
-          <ShoppingBag size={18} aria-hidden="true" />{getMarketsCopy(language).catalogueLink}
+        {onMarketsOpen ? <button className="mf-market-catalogue-link mf-market-catalogue-link--banner" type="button" onClick={() => onMarketsOpen()}>
+          <span className="mf-market-banner__icon" aria-hidden="true"><Store size={27} strokeWidth={1.8} /></span>
+          <span className="mf-market-banner__copy">
+            <strong>{marketsCopy.title}</strong>
+            <span>{marketsCopy.explore}</span>
+          </span>
+          <span className="mf-market-banner__arrow" aria-hidden="true"><ChevronRight size={22} strokeWidth={2.2} /></span>
         </button> : null}
         {marketEventRequest && !requestedEvent && !model.isLoading ? <p role="status" className="mf-markets-note">
           {language === "fur" ? "L’apontament nol è disponibil tal calendari corint. Controle la font dal marcjât." : "L’appuntamento non è disponibile nel calendario corrente. Consulta la fonte del mercato."}

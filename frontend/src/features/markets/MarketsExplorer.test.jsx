@@ -69,7 +69,7 @@ describe("market navigation", () => {
     await click(button("Scheda del mercato"));
     expect(open).toHaveBeenCalledWith("M035");
     await act(async () => root.render(<EventsView model={buildEventsViewModel({ items: [] })} onMarketsOpen={open} />));
-    await click(button("Apri il catalogo")); expect(open).toHaveBeenLastCalledWith();
+    await click(button("Esplora nella tua zona")); expect(open).toHaveBeenLastCalledWith();
   });
   it("opens the requested edition and closes its preview", async () => {
     const model = buildEventsViewModel({ items: mergeMarketEvents([], { location: pn, radius: 5, now }) }, { location: pn, now });

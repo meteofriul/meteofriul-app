@@ -1,0 +1,98 @@
+{
+  "as_of": "2026-10-30",
+  "reviewer": "build_verifica",
+  "branch": "codex/mercati-integration-20261028",
+  "base_commit": "5ee56469",
+  "status": "PASS_WITH_VISUAL_CHECK_PENDING",
+  "environment": {
+    "platform": "Windows PowerShell",
+    "node": "22.17.1",
+    "npm": "10.9.2",
+    "vite": "8.1.6",
+    "vitest": "4.1.12",
+    "toolchain": "Portable MeteoFriul toolchain selected in process PATH only; global Node 24.22.1/npm 11.19.1 not used"
+  },
+  "checks": [
+    {
+      "name": "Existing focused tests",
+      "command": "npm test -- src/features/events/EventsView.test.jsx src/features/events/EventsView.preview.test.jsx src/features/events/eventsCss.test.js src/features/markets/MarketsExplorer.browserBack.test.jsx",
+      "native_config_loader": true,
+      "files": 4,
+      "tests": 23,
+      "exit_code": 0,
+      "result": "PASS",
+      "duration_seconds": 36.35
+    },
+    {
+      "name": "Eventi editor test evidence",
+      "files": ["EventsView.markets.test.jsx", "MarketsExplorer.test.jsx"],
+      "tests": 9,
+      "result": "PASS",
+      "provenance": "Reported by eventi editor; not rerun by this verifier. Combined scope is 6 files and 32 distinct tests."
+    },
+    {
+      "name": "Full frontend lint",
+      "command": "npm run lint",
+      "exit_code": 0,
+      "result": "PASS",
+      "warnings": []
+    },
+    {
+      "name": "Verification frontend build",
+      "command": "node node_modules/vite/bin/vite.js build --configLoader native --outDir <unique OS TEMP directory>",
+      "environment_override": "VITE_API_BASE=/api; VITE_ANDROID_API_BASE absent",
+      "exit_code": 0,
+      "result": "PASS",
+      "modules": 2127,
+      "duration_seconds": 19.45,
+      "artifact_directory_basename": "meteofriul-mercati-banner-6d5cdff87d0b40ecab5571426222556d",
+      "artifact_css": "assets/main-m63icINL.css",
+      "artifact_css_sha256": "b6452acee94ef45f16c4062eb3b0add6bf970663806f081bd12fc9b73e247ece",
+      "last_css_change_local_time": "11:30:39",
+      "build_started_after_local_time": "11:30:53",
+      "final_hover_selector_in_built_css": true,
+      "warnings": [
+        "External outDir is not emptied; unique OS TEMP destination intentionally retained.",
+        "AlmanacView has both static and dynamic imports.",
+        "Existing main chunk exceeds 500 kB.",
+        "PLUGIN_TIMINGS informational performance warning."
+      ],
+      "scope": "Frontend compilation only; no service-worker release packaging, Android build, publication or device qualification."
+    },
+    {
+      "name": "Diff whitespace",
+      "command": "git diff --check",
+      "exit_code": 0,
+      "result": "PASS"
+    },
+    {
+      "name": "CSS scope and focus review",
+      "result": "PASS",
+      "detail": "Banner modifier appears only on Eventi catalogue entry. Shared neutralSurfaces utilities do not target it. Individual event cards, Scopri entry and detail link keep their selectors and behavior. Whole banner is a native button, min-height 88 px; badges are decorative. Focus has white inset and blue outline; hover excludes focus-visible. No animation added. Text wraps through minmax(0,1fr), min-width:0 and overflow-wrap:anywhere; small-width padding changes at 380 px. This is source review, not visual layout verification."
+    },
+    {
+      "name": "Declared color contrast calculation",
+      "result": "PASS",
+      "method": "sRGB relative luminance WCAG formula evaluated at declared gradient stops; not a screenshot/pixel or full accessibility audit",
+      "ratios": [
+        {"background": "#142344", "white_title": 15.51, "subtitle_d5e7fa": 12.29},
+        {"background": "#1b365a", "white_title": 12.20, "subtitle_d5e7fa": 9.66},
+        {"background": "#244e7a", "white_title": 8.59, "subtitle_d5e7fa": 6.80}
+      ]
+    }
+  ],
+  "source_sha256": {
+    "frontend/src/features/events/EventsView.jsx": "1ed8ef01c2ef97cf2a677926cba1bb001d77b4858892ba2c982d04a3ca08dde6",
+    "frontend/src/features/markets/markets.css": "96cc019515ba2bcdbe2ecda4b4252dbd0a50e067b5aeac31af5fe44da54ccf28",
+    "frontend/src/features/markets/MarketsExplorer.test.jsx": "3ae1e45aff1722820920c0d87bcdb81b220c9600634d613228d0b90982e53095"
+  },
+  "pending": [
+    "Rendered visual check at narrow and wide widths, IT/FUR and light/dark themes remains pending: root reports browser host unavailable and native Computer Use pipe unavailable.",
+    "No real-device or Safari/iPhone check performed."
+  ],
+  "not_performed": [
+    "No new tests added by this verifier.",
+    "No backend tests: no backend or data changes.",
+    "No dependency changes, Android sync/AAB, deployment, remote CI, panel write or commit."
+  ]
+}
