@@ -1,5 +1,21 @@
 # Archivio Mercati
 
+## Servizio cloud dedicato
+
+`app.markets_cloud:create_app` espone soltanto catalogo, amministrazione Mercati
+e liveness. Rifiuta storage SQLite, credenziali locali e progetti Firebase
+discordanti all'avvio. Il progetto non inizializza dati durante una richiesta.
+`backend/Dockerfile.markets` esegue i test del contratto nel container e usa
+un utente non privilegiato. `scripts/prepare-markets-cloud.py --output <nuova-cartella>`
+prepara dal commit pulito un contesto esplicito con hash, senza dati locali o
+credenziali. Il servizio usa un'identita cloud dedicata, distinta dai servizi
+Meteo, Eventi, Sponsor e Community.
+
+L'app puo selezionare questo servizio con `VITE_MARKETS_API_BASE`, URL HTTPS
+terminante in `/api`; senza override mantiene la base API esistente. La
+distribuzione del servizio non aggiorna automaticamente Web o Android.
+Il pannello usa la medesima variabile per il suo collegamento amministrativo.
+
 L'API generale `app.main` espone un solo catalogo per Mercati ed Eventi.
 I raccoglitori Eventi e i servizi Community separati non scrivono questo archivio.
 

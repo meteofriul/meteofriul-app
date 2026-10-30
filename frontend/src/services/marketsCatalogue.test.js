@@ -1,5 +1,5 @@
 import { describe, expect, it, vi } from "vitest";
-import { createMarketsCatalogueStore, MARKETS_CATALOGUE_CACHE_PREFIX, marketsCatalogueUrl } from "./marketsCatalogue";
+import { createMarketsCatalogueStore, MARKETS_CATALOGUE_CACHE_PREFIX, marketsCatalogueUrl, resolveMarketsApiBase } from "./marketsCatalogue";
 import { getMarket, mergeMarketEvents } from "../features/markets/marketsCatalog";
 
 const time = Date.parse("2026-10-30T12:00:00Z");
@@ -20,6 +20,13 @@ function snapshot(revision = 1, fields = {}) {
 const response = data => ({ ok: true, json: async () => data });
 
 describe("persistent managed market catalogue", () => {
+  it("uses the independent Markets endpoint without changing other APIs", () => {
+    expect(resolveMarketsApiBase({}, "/api")).toBe("/api");
+    expect(resolveMarketsApiBase({ VITE_MARKETS_API_BASE: "https://markets.example/api/" }, "/other-api")).toBe("https://markets.example/api");
+    for (const url of ["http://markets.example/api", "https://user:pass@markets.example/api", "https://markets.example/api?token=test", "https://markets.example/api#fragment", "https://markets.example/other"]) {
+      expect(() => resolveMarketsApiBase({ VITE_MARKETS_API_BASE: url })).toThrow();
+    }
+  });
   it("loads one snapshot for concurrent readers and retries after a synchronous network error", async () => {
     const fetchImpl = vi.fn().mockImplementationOnce(() => { throw new Error("offline"); }).mockResolvedValue(response(snapshot()));
     const store = createMarketsCatalogueStore({ storage: memoryStorage(), fetchImpl, now: () => time });

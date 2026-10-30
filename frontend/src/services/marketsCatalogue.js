@@ -5,13 +5,23 @@ export const MARKETS_CATALOGUE_CACHE_PREFIX = "meteofriul:markets-catalogue:v2:"
 const emptyCatalogue = { schemaVersion: 2, revision: -1, markets: [], dates: [], identities: [], tombstones: [], validThrough: "1970-01-01" };
 const blockedStatuses = new Set(["archived", "withdrawn", "suspended", "cancelled"]);
 
+export function resolveMarketsApiBase(env = import.meta.env, fallback = API_BASE) {
+  const configured = String(env?.VITE_MARKETS_API_BASE || "").trim();
+  if (!configured) return fallback;
+  const url = new URL(configured);
+  if (url.protocol !== "https:" || url.username || url.password || url.search || url.hash
+    || url.pathname.replace(/\/$/, "") !== "/api") throw new Error("markets_api_base_must_be_https_api");
+  return url.href.replace(/\/$/, "");
+}
+export const MARKETS_API_BASE = resolveMarketsApiBase();
+
 function defaultStorage() {
   try { return globalThis.localStorage || null; } catch { return null; }
 }
 function civilDay(timestamp) {
   return new Intl.DateTimeFormat("en-CA", { timeZone: "Europe/Rome", year: "numeric", month: "2-digit", day: "2-digit" }).format(new Date(timestamp));
 }
-export function marketsCatalogueUrl(apiBase = API_BASE) {
+export function marketsCatalogueUrl(apiBase = MARKETS_API_BASE) {
   return `${String(apiBase).replace(/\/$/, "")}/markets/catalogue`;
 }
 export function validateMarketsCatalogue(value) {
@@ -46,7 +56,7 @@ export function validateMarketsCatalogue(value) {
 // Keep the last authoritative identity/revocation ledger even when its visible
 // calendar expires. This key deliberately is not an ordinary disposable cache.
 export function createMarketsCatalogueStore({
-  apiBase = API_BASE, storage = defaultStorage(), fetchImpl = (...args) => globalThis.fetch(...args),
+  apiBase = MARKETS_API_BASE, storage = defaultStorage(), fetchImpl = (...args) => globalThis.fetch(...args),
   now = Date.now, bootstrapCatalogue = bootstrap,
 } = {}) {
   const url = marketsCatalogueUrl(apiBase);

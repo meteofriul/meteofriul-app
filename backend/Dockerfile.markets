@@ -1,0 +1,17 @@
+# Input is the allowlisted Markets context, not the full repository.
+FROM python:3.13-slim
+ARG SOURCE_COMMIT
+LABEL org.opencontainers.image.revision=$SOURCE_COMMIT
+ENV PYTHONDONTWRITEBYTECODE=1 PYTHONUNBUFFERED=1 MARKETS_SOURCE_COMMIT=$SOURCE_COMMIT
+WORKDIR /workspace/backend
+COPY backend/requirements.txt ./requirements.txt
+RUN pip install --no-cache-dir -r requirements.txt
+COPY backend/app ./app
+COPY backend/tests ./tests
+COPY frontend/src/data/markets/catalogue2026.json /workspace/frontend/src/data/markets/catalogue2026.json
+COPY docs/operations/evidence/MERCATI_REVISIONE_192_20261030.json /workspace/docs/operations/evidence/MERCATI_REVISIONE_192_20261030.json
+COPY docs/operations/evidence/MERCATI_RICOGNIZIONE_COMUNI_20261030.json /workspace/docs/operations/evidence/MERCATI_RICOGNIZIONE_COMUNI_20261030.json
+RUN python -m unittest tests.test_markets_archive tests.test_markets_firestore tests.test_markets_cloud tests.test_firebase_infrastructure
+USER 65532:65532
+EXPOSE 8080
+CMD ["python", "-m", "uvicorn", "app.markets_cloud:create_app", "--factory", "--host", "0.0.0.0", "--port", "8080", "--workers", "1", "--no-access-log"]
