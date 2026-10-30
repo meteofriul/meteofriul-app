@@ -1,5 +1,7 @@
 # Mercati e mercatini — copertura e ricerca del 29 ottobre 2026
 
+**Seguito del 30 ottobre:** [dossier e registro delle fonti](MERCATI_FONTI_CATALOGAZIONE_20261030.md), con 44 schede approfondite e 11 nuove candidature. Il presente rapporto resta evidenza datata; nuove conferme e conflitti sono nel seguito, senza modificare il catalogo applicativo.
+
 Ricerca sul ramo dedicato `codex/mercati-integration-20261028`, base
 `742b409a`. Orto sospeso e conservato nel proprio ramo. Il coordinatore è
 l'unico autore di questo rapporto; `scopri` ha ricercato gli abituali UD/PN,

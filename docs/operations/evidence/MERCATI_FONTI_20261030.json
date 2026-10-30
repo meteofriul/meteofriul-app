@@ -1,0 +1,2554 @@
+{
+  "schema_version": 1,
+  "purpose": "Registro di ricerca, non consumato dal runtime e non approvazione editoriale.",
+  "as_of": "2026-10-30",
+  "timezone": "Europe/Rome",
+  "branch": "codex/mercati-integration-20261028",
+  "base_commit": "3f4fbbbb",
+  "previous_report": "../MERCATI_COPERTURA_RICERCA_20261029.md",
+  "runtime_catalogue_sha256": "dce63d9d521ccfd9f593de9143f0ff0649220a0a15c09135ecf902290fecbafb",
+  "field_contract": {
+    "verified_fields": "Dati letti nella fonte; status/currentness/limits delimitano validità e attualità. Non equivale a dati pronti per l’app.",
+    "weekdays": "ISO 8601: lunedì=1, domenica=7. Nessuna generazione automatica; non rappresenta frequenza, stagione, festività o alternanza.",
+    "hours": "Testo qualificato della fonte, oppure null. Non usare fasce di allestimento/sosta come vendita.",
+    "explicit_dates": "Sole date complete esplicitamente pubblicate, anche storiche, provvisorie o in conflitto; leggere date_evidence e open_questions.",
+    "date_evidence": "Fonte e qualifica per ogni data; published significa pubblicata, non confermata senza riserve né pubblicabile in app.",
+    "published_date": "Data di pubblicazione comprovata, oppure null; distinta da adozione, modifica, consultazione e data evento.",
+    "currentness": "Rilevanza temporale del documento: current_explicit non garantisce assenza di variazioni successive.",
+    "access": "full_text: passaggi pertinenti letti; indexed_excerpt: solo indice; blocked: contenuto non acquisito.",
+    "status": "Giudizio sulla scheda di ricerca; ready_for_editorial_review richiede comunque revisione, avvisi aggiornati e controlli di identità.",
+    "source_type": "Tipo descrittivo del documento, non livello automatico di affidabilità."
+  },
+  "scope": {
+    "previous_candidate_count": 74,
+    "new_candidate_ids": [
+      "UP-N01",
+      "UP-N02",
+      "UP-N03",
+      "UP-N04",
+      "UP-N05",
+      "N-P01",
+      "N-P02",
+      "N-P03",
+      "N-P04",
+      "GT-N01",
+      "GT-N02"
+    ],
+    "findings_by_origin": {
+      "research_20261029": 24,
+      "new_research_candidate": 11,
+      "runtime_catalogue": 9
+    },
+    "note": "Follow-up selettivo: non ricopia tutte le 74 candidature del 29 ottobre. Le nuove identità possono ancora essere deduplicate; nessun censimento regionale completo."
+  },
+  "sources": [
+    {
+      "id": "UP-S01",
+      "candidate_ids": [
+        "UP08"
+      ],
+      "url": "https://www.comune.latisana.ud.it/media/files/030046/attachment/COMMERCIO_AREE_PUBBLICHE_REGOLAMENTO_TESTO_COORDINATO_01.pdf",
+      "title": "Regolamento comunale commercio su aree pubbliche — testo coordinato",
+      "publisher": "Comune di Latisana",
+      "source_type": "municipal_regulation",
+      "published_date": null,
+      "consulted_on": "2026-10-30",
+      "access": "full_text",
+      "facts": [
+        "Art. 17: mercato di Pertegada il venerdì; l'area è rinviata all'Allegato A, scheda 2.",
+        "Art. 18: vendita 08:00–13:00; allestimento e sgombero hanno fasce distinte.",
+        "Festività, lavori e altre esigenze pubbliche possono modificare o annullare una giornata."
+      ],
+      "limits": [
+        "Il testo non documenta lo svolgimento effettivo nel 2026.",
+        "La planimetria di Pertegada non è leggibile nel testo estratto; il tentativo di screenshot della pagina 49 è fallito.",
+        "La data di pubblicazione non è ricavabile dalla copia letta."
+      ],
+      "evidence_locator": "artt. 17–18, pagine PDF 23–24; Allegato A scheda 2",
+      "currentness": "historical"
+    },
+    {
+      "id": "UP-S02",
+      "candidate_ids": [
+        "UP09"
+      ],
+      "url": "https://www.comune.tarcento.ud.it/it/documenti_pubblici/regolamento-del-mercato-32297",
+      "title": "Regolamento del mercato",
+      "publisher": "Comune di Tarcento",
+      "source_type": "municipal_document_page",
+      "published_date": null,
+      "consulted_on": "2026-10-30",
+      "access": "full_text",
+      "facts": [
+        "La scheda comunale indica il mercato annuale con cadenza settimanale di venerdì.",
+        "Collega il PDF del regolamento; ultimo aggiornamento della pagina 19 dicembre 2024."
+      ],
+      "limits": [
+        "La pagina non riporta sede e orari.",
+        "L'aggiornamento della pagina non prova attività nel 2026 né è una data di pubblicazione."
+      ],
+      "evidence_locator": "descrizione iniziale, sezione Documenti, ultimo aggiornamento",
+      "currentness": "undated"
+    },
+    {
+      "id": "UP-S03",
+      "candidate_ids": [
+        "UP09"
+      ],
+      "url": "https://municipium-images-production.s3-eu-west-1.amazonaws.com/s3/7153/allegati/regolamento_del_mercato_fefmz3v.pdf",
+      "title": "Regolamento del mercato — allegato",
+      "publisher": "Comune di Tarcento, allegato Municipium",
+      "source_type": "municipal_regulation",
+      "published_date": null,
+      "consulted_on": "2026-10-30",
+      "access": "blocked",
+      "facts": [],
+      "limits": [
+        "Il link ufficiale restituisce un PDF di 12 pagine senza testo estraibile; gli screenshot delle pagine 2 e 3 falliscono con Cache miss.",
+        "Nessun giorno, orario o luogo è stato ricavato dal PDF."
+      ],
+      "evidence_locator": "allegato collegato dalla pagina UP-S02",
+      "currentness": "undated"
+    },
+    {
+      "id": "UP-S04",
+      "candidate_ids": [
+        "UP12"
+      ],
+      "url": "https://tarvisio.comune.digital/eventi",
+      "title": "Comune di Tarvisio — App ufficiale, Eventi",
+      "publisher": "Comune di Tarvisio",
+      "source_type": "municipal_events_calendar",
+      "published_date": null,
+      "consulted_on": "2026-10-30",
+      "access": "indexed_excerpt",
+      "facts": [
+        "L'indice espone appuntamenti del mercato in via Vittorio Veneto: sabato 31 ottobre, martedì 3 novembre e sabato 7 novembre.",
+        "La fascia di calendario è 07:30–14:00, mentre il titolo dice 08:00–14:00."
+      ],
+      "limits": [
+        "L'apertura diretta della pagina fallisce con Cache miss.",
+        "L'estratto consultato non esplicita l'anno dei tre appuntamenti: nessuna conversione in date ISO è stata effettuata.",
+        "Divergenza interna sull'ora iniziale; nessuna estensione al 2027."
+      ],
+      "evidence_locator": "tre risultati consecutivi Mercato Settimanale nell'indice Eventi",
+      "currentness": "conflict"
+    },
+    {
+      "id": "UP-S05",
+      "candidate_ids": [
+        "UP15"
+      ],
+      "url": "https://comune.moggioudinese.ud.it/media/files/030059/attachment/Regolamento_disciplina_Attivita_commerciale_sulle_aree_pubbliche.pdf",
+      "title": "Regolamento comunale dell'attività commerciale sulle aree pubbliche",
+      "publisher": "Comune di Moggio Udinese",
+      "source_type": "municipal_regulation",
+      "published_date": null,
+      "consulted_on": "2026-10-30",
+      "access": "full_text",
+      "facts": [
+        "Il frontespizio riporta l'adozione con delibera consiliare 26 del 29 giugno 2015.",
+        "Art. 5: mercato settimanale del sabato, vendita 08:00–13:00.",
+        "Art. 8: presenza degli operatori 07:00–13:00; festività soggette ad apposita decisione comunale.",
+        "Art. 7 rinvia alla planimetria per l'area di mercato."
+      ],
+      "limits": [
+        "La fascia 07:00–13:00 non è presentata come orario di vendita.",
+        "Gli estremi richiamati negli artt. 5 e 7 contengono campi non compilati.",
+        "Sede attuale, vigenza del testo e svolgimento effettivo nel 2026 non accertati."
+      ],
+      "evidence_locator": "frontespizio; artt. 5, 7, 8, pagine PDF 7–9",
+      "currentness": "historical"
+    },
+    {
+      "id": "UP-S06",
+      "candidate_ids": [
+        "UP20"
+      ],
+      "url": "https://www.comune.fontanafredda.pn.it/vivere-il-comune/territorio/mercato/",
+      "title": "Mercato",
+      "publisher": "Comune di Fontanafredda",
+      "source_type": "municipal_market_page",
+      "published_date": null,
+      "consulted_on": "2026-10-30",
+      "access": "full_text",
+      "facts": [
+        "Il mercato cittadino è indicato ogni giovedì presso piazzale San Luca.",
+        "La pagina elenca diverse merceologie alimentari e non alimentari.",
+        "Ultimo aggiornamento dichiarato 13 settembre 2024."
+      ],
+      "limits": [
+        "Orario non indicato.",
+        "L'elenco non costituisce conferma datata 2026 dei singoli operatori né calendario delle eccezioni."
+      ],
+      "evidence_locator": "sottotitolo e sezione Descrizione",
+      "currentness": "undated"
+    },
+    {
+      "id": "UP-S07",
+      "candidate_ids": [
+        "UP20"
+      ],
+      "url": "https://servizionline.comune.fontanafredda.pn.it/zf/index.php/atti-amministrativi/determine/dettaglio/table-determine-public-page/54/atto/GTVRreEU1TT0-H",
+      "title": "Determinazione 30 del 17 gennaio 2025 — assegnazione posteggio vacante",
+      "publisher": "Comune di Fontanafredda",
+      "source_type": "municipal_act_metadata",
+      "published_date": "2025-01-17",
+      "consulted_on": "2026-10-30",
+      "access": "indexed_excerpt",
+      "facts": [
+        "L'oggetto della determinazione riguarda un posteggio vacante nel mercato settimanale del giovedì.",
+        "L'albo indica pubblicazione dal 17 gennaio al 1 febbraio 2025."
+      ],
+      "limits": [
+        "Il testo allegato non è stato acquisito.",
+        "Non prova la continuità al 2026 né l'orario."
+      ],
+      "evidence_locator": "Oggetto, Registro generale e Data inizio pubblicazione",
+      "currentness": "historical"
+    },
+    {
+      "id": "UP-S08",
+      "candidate_ids": [
+        "UP21"
+      ],
+      "url": "https://sac4.halleysac.it/c093017/zf/index.php/atti-amministrativi/delibere/dettaglio/atto/G9mpBd0TUWT0-A",
+      "title": "Delibera di Giunta 62 del 21 maggio 2026 — modifica riordino mercato",
+      "publisher": "Comune di Cordenons",
+      "source_type": "municipal_act_metadata",
+      "published_date": "2026-05-22",
+      "consulted_on": "2026-10-30",
+      "access": "full_text",
+      "facts": [
+        "L'oggetto identifica il mercato settimanale del venerdì in piazza della Vittoria.",
+        "L'atto del 21 maggio 2026 modifica la delibera 144 del 13 novembre 2025.",
+        "Inizio pubblicazione 22 maggio 2026; immediata eseguibilità dichiarata."
+      ],
+      "limits": [
+        "Il contenuto dell'allegato 2026 non è leggibile tramite il browser di ricerca.",
+        "L'oggetto non dettaglia gli orari o le nuove disposizioni dei posteggi."
+      ],
+      "evidence_locator": "Oggetto, Data delibera, pubblicazione ed eseguibilità",
+      "currentness": "current_explicit"
+    },
+    {
+      "id": "UP-S09",
+      "candidate_ids": [
+        "UP21"
+      ],
+      "url": "https://www.comune.cordenons.pn.it/media/files/093017/attachment/delibera_di_giunta_n._144-2025.pdf",
+      "title": "Delibera di Giunta 144 del 13 novembre 2025 — riordino posteggi",
+      "publisher": "Comune di Cordenons",
+      "source_type": "municipal_act",
+      "published_date": null,
+      "consulted_on": "2026-10-30",
+      "access": "full_text",
+      "facts": [
+        "La disciplina riporta vendita 08:00–13:00 e allestimento 06:00–08:00.",
+        "Sono previsti due assetti dei posteggi, uno ordinario e uno durante manifestazioni.",
+        "L'atto è datato 13 novembre 2025."
+      ],
+      "limits": [
+        "La delibera è modificata dalla 62/2026: gli orari e l'assetto 2025 non vanno automaticamente qualificati correnti.",
+        "Data di pubblicazione non verificata; data dell'atto conservata separatamente."
+      ],
+      "evidence_locator": "frontespizio; disciplina orari a pagina PDF 4; planimetrie A/B",
+      "currentness": "historical"
+    },
+    {
+      "id": "UP-S10",
+      "candidate_ids": [
+        "UP21"
+      ],
+      "url": "https://sac4.halleysac.it/c093017/de/attachment.php?serialDocumento=02PGQJ020265M",
+      "title": "Allegato alla delibera 62/2026 — copia uso amministrativo",
+      "publisher": "Comune di Cordenons",
+      "source_type": "municipal_act_attachment",
+      "published_date": null,
+      "consulted_on": "2026-10-30",
+      "access": "blocked",
+      "facts": [],
+      "limits": [
+        "Il collegamento Documenti della scheda ufficiale restituisce timeout e poi URL non accessibile.",
+        "Nessuna disposizione dell'allegato è stata inventata o dedotta dal titolo."
+      ],
+      "evidence_locator": "Documento della scheda UP-S08",
+      "currentness": "undated"
+    },
+    {
+      "id": "UP-S11",
+      "candidate_ids": [
+        "UP27",
+        "UP28"
+      ],
+      "url": "https://www.comune.casarsadelladelizia.pn.it/media/files/093010/attachment/POLIZIA_URBANA_TESTO_PER_SITO.pdf",
+      "title": "Regolamento di Polizia Urbana, modifica 10 marzo 2025",
+      "publisher": "Comune di Casarsa della Delizia",
+      "source_type": "municipal_regulation",
+      "published_date": null,
+      "consulted_on": "2026-10-30",
+      "access": "full_text",
+      "facts": [
+        "Il frontespizio riporta la modifica con delibera consiliare 6 del 10 marzo 2025.",
+        "Art. 31: martedì nel capoluogo, mercoledì a San Giovanni; sono ammesse modifiche di giornata secondo il regolamento del mercato."
+      ],
+      "limits": [
+        "Il documento non specifica qui sedi puntuali né orari.",
+        "Non contiene un calendario di svolgimento 2026."
+      ],
+      "evidence_locator": "frontespizio e art. 31, pagina PDF 20",
+      "currentness": "historical"
+    },
+    {
+      "id": "UP-S12",
+      "candidate_ids": [
+        "UP27"
+      ],
+      "url": "https://www.trasparenzatari.it/trasparenzatari/?comune=b940",
+      "title": "Trasparenza rifiuti Casarsa della Delizia — calendario pulizia strade",
+      "publisher": "Comune di Casarsa della Delizia, portale comunale Trasparenza Rifiuti",
+      "source_type": "municipal_service_page",
+      "published_date": null,
+      "consulted_on": "2026-10-30",
+      "access": "full_text",
+      "facts": [
+        "La sezione 3.1.I colloca il mercato del martedì 08:00–13:00 in piazza Italia e via XXIV Maggio.",
+        "Il divieto di sosta 07:00–14:30 serve anche alla pulizia e non rappresenta l'orario del mercato.",
+        "Il piè di pagina attribuisce al Comune la gestione dei contenuti."
+      ],
+      "limits": [
+        "La sezione mercato è priva di data; il portale conserva anche allegati raccolta 2020.",
+        "Le tariffe 2025 presenti altrove non datano automaticamente l'informazione sul mercato."
+      ],
+      "evidence_locator": "sezione 3.1.I, prima frase; attribuzione contenuti in fondo pagina",
+      "currentness": "undated"
+    },
+    {
+      "id": "UP-S13",
+      "candidate_ids": [
+        "UP29"
+      ],
+      "url": "https://www.comune.pordenone.it/it/citta/vivi/mercato/sacro-cuore",
+      "title": "Mercato di quartiere — Torre",
+      "publisher": "Comune di Pordenone",
+      "source_type": "municipal_market_page_legacy",
+      "published_date": null,
+      "consulted_on": "2026-10-30",
+      "access": "indexed_excerpt",
+      "facts": [
+        "Il titolo e il corpo riguardano Torre, malgrado lo slug sacro-cuore.",
+        "L'indice riporta giovedì 07:30–12:30 in piazza Don Lozer e produttori affiliati Agrizero.",
+        "La pagina menziona avvio il 27 ottobre 2016."
+      ],
+      "limits": [
+        "Apertura diretta fallita con 502.",
+        "Compare un avviso di annullamento per giovedì 2/11 privo di anno nell'estratto: non applicabile al 2026.",
+        "Pagina legacy da riconciliare con la gestione corrente; nessuna garanzia 2027."
+      ],
+      "evidence_locator": "titolo, Quando, Dove e avviso allerta",
+      "currentness": "undated"
+    },
+    {
+      "id": "UP-S14",
+      "candidate_ids": [
+        "UP30"
+      ],
+      "url": "https://www.comune.pordenone.it/it/novita/affidamento-temporaneo-e-rilancio-del-mercato-agricolo-del-sacro-cuore",
+      "title": "Affidamento temporaneo e rilancio del Mercato Agricolo del Sacro Cuore",
+      "publisher": "Comune di Pordenone",
+      "source_type": "municipal_press_release",
+      "published_date": "2025-07-07",
+      "consulted_on": "2026-10-30",
+      "access": "indexed_excerpt",
+      "facts": [
+        "Il comunicato riguarda il mercato agricolo del venerdì nel piazzale Sacro Cuore.",
+        "La gestione al Gruppo dei Produttori agricoli del Sacro Cuore è limitata dal 4 luglio al 31 dicembre 2025.",
+        "Sono citati disciplinare, convenzione e planimetria approvati."
+      ],
+      "limits": [
+        "Apertura diretta fallita con timeout; letto l'estratto indicizzato.",
+        "Non documenta affidamento o attività nel 2026; le date 2025 sono durata gestionale, non un elenco di appuntamenti."
+      ],
+      "evidence_locator": "data e primi paragrafi del comunicato",
+      "currentness": "historical"
+    },
+    {
+      "id": "UP-S15",
+      "candidate_ids": [
+        "UP-N01"
+      ],
+      "url": "https://www.comune.fontanafredda.pn.it/novita/bando-pubblico-per-lassegnazione-di-posteggi-dedicati-al-mercato-contadino-in-comune-di-fontanafredda/",
+      "title": "Bando pubblico per posteggi dedicati al mercato contadino",
+      "publisher": "Comune di Fontanafredda",
+      "source_type": "municipal_tender_notice",
+      "published_date": "2025-09-24",
+      "consulted_on": "2026-10-30",
+      "access": "indexed_excerpt",
+      "facts": [
+        "Il bando prevede dieci concessioni per mercato contadino settimanale del mercoledì, parcheggio San Luca, 07:00–13:00.",
+        "La pagina dichiara scadenza della notizia il 15 novembre 2025 e collega bando e planimetria."
+      ],
+      "limits": [
+        "Apertura diretta fallita con Cache miss; allegati non letti.",
+        "La procedura non prova da sola avvio o prosecuzione nel 2026.",
+        "Il mercoledì differisce dal giovedì del vecchio regolamento UP-S16."
+      ],
+      "evidence_locator": "Data, Descrizione e Allegati",
+      "currentness": "historical"
+    },
+    {
+      "id": "UP-S16",
+      "candidate_ids": [
+        "UP-N01"
+      ],
+      "url": "https://www.comune.fontanafredda.pn.it/wp-content/uploads/2024/09/45-regolamenti-polizia-reg-pero-lo-svolg-del-mercato-di-vendita-diret-di-prodot-agricoli.pdf",
+      "title": "Regolamento mercato di vendita diretta agricola — modifiche fino al 2017",
+      "publisher": "Comune di Fontanafredda",
+      "source_type": "municipal_regulation_legacy",
+      "published_date": null,
+      "consulted_on": "2026-10-30",
+      "access": "full_text",
+      "facts": [
+        "Frontespizio: approvazione 29 marzo 2010, modifiche fino all'8 giugno 2017.",
+        "Art. 1: giovedì in piazzale San Luca in concomitanza con il mercato ordinario, con possibilità di modificare il giorno previo accordo."
+      ],
+      "limits": [
+        "Versione storica: la pagina normativa corrente collega un diverso PDF in cartella novembre 2024.",
+        "Non va usata per annullare la successiva indicazione del mercoledì nel bando 2025 senza leggere il nuovo testo."
+      ],
+      "evidence_locator": "frontespizio e art. 1, pagina PDF 3",
+      "currentness": "historical"
+    },
+    {
+      "id": "UP-S17",
+      "candidate_ids": [
+        "UP-N01"
+      ],
+      "url": "https://www.comune.fontanafredda.pn.it/documento_pubblico/regolamento-comunale-per-lo-svolgimento-del-mercato-contadino/",
+      "title": "Regolamento comunale per lo svolgimento del mercato contadino",
+      "publisher": "Comune di Fontanafredda",
+      "source_type": "municipal_document_page",
+      "published_date": null,
+      "consulted_on": "2026-10-30",
+      "access": "full_text",
+      "facts": [
+        "La pagina normativa del Comune descrive il mercato agricolo e collega un PDF diverso dalla copia storica 2017."
+      ],
+      "limits": [
+        "La pagina non esplicita giorno, sede o orari.",
+        "Il PDF collegato non è stato leggibile."
+      ],
+      "evidence_locator": "sezioni Descrizione e Documento",
+      "currentness": "undated"
+    },
+    {
+      "id": "UP-S18",
+      "candidate_ids": [
+        "UP-N01"
+      ],
+      "url": "https://www.comune.fontanafredda.pn.it/wp-content/uploads/2024/11/Regolamento-comunale-per-lo-svolgimento-del-mercato-contadino.pdf",
+      "title": "Regolamento del mercato contadino — allegato alla pagina corrente",
+      "publisher": "Comune di Fontanafredda",
+      "source_type": "municipal_regulation",
+      "published_date": null,
+      "consulted_on": "2026-10-30",
+      "access": "blocked",
+      "facts": [],
+      "limits": [
+        "Download tramite collegamento ufficiale fallito con timeout; ripetizione non accessibile.",
+        "Il percorso novembre 2024 non è una data di adozione o pubblicazione accertata."
+      ],
+      "evidence_locator": "allegato della pagina UP-S17",
+      "currentness": "undated"
+    },
+    {
+      "id": "UP-S19",
+      "candidate_ids": [
+        "UP-N02"
+      ],
+      "url": "https://www.prolocotolmezzo.it/mercato-contadino/",
+      "title": "Mercato contadino",
+      "publisher": "Pro Loco Tolmezzo",
+      "source_type": "organizer_market_page",
+      "published_date": null,
+      "consulted_on": "2026-10-30",
+      "access": "full_text",
+      "facts": [
+        "La Pro Loco si identifica come gestore del mercato contadino in piazza Centa.",
+        "Apertura ogni lunedì mattina nelle casette di legno; prodotti agricoli locali.",
+        "La pagina riferisce il debutto del 10 luglio 2010."
+      ],
+      "limits": [
+        "Pagina senza data di pubblicazione o conferma esplicita 2026.",
+        "Manca un orario preciso e un calendario delle festività; distinta dal mercato ordinario UP05."
+      ],
+      "evidence_locator": "paragrafo Il Mercato Contadino",
+      "currentness": "undated"
+    },
+    {
+      "id": "UP-S20",
+      "candidate_ids": [
+        "UP-N03"
+      ],
+      "url": "https://www.comune.rivignanoteor.ud.it/media/files/030188/attachment/bando_definitivo_posteggi_liberi_mercato_2026-signed_6BvgMv1.pdf",
+      "title": "Bando 2026 per undici posteggi vacanti del mercato del lunedì",
+      "publisher": "Comune di Rivignano Teor",
+      "source_type": "municipal_tender",
+      "published_date": null,
+      "consulted_on": "2026-10-30",
+      "access": "full_text",
+      "facts": [
+        "Il bando esegue la determinazione 69 del 21 gennaio 2026.",
+        "Descrive il mercato settimanale del lunedì nel capoluogo, via Umberto I, area pedonale nota informalmente come piazza Tarabane e lato est.",
+        "Mette a bando undici posteggi vacanti alimentari, non alimentari e uno agricolo."
+      ],
+      "limits": [
+        "Orario di vendita non individuato nel documento.",
+        "Le date 27 gennaio–10 marzo 2026 riguardano le domande, non appuntamenti del mercato.",
+        "Il numero di posteggi banditi non equivale agli operatori effettivamente presenti."
+      ],
+      "evidence_locator": "pagina PDF 1, premessa e tabella posteggi; pagina 2, termine domande",
+      "currentness": "current_explicit"
+    },
+    {
+      "id": "UP-S21",
+      "candidate_ids": [
+        "UP-N03"
+      ],
+      "url": "https://comune.rivignanoteor.ud.it/media/files/030188/attachment/ALLEGATO_A.piao_2026_2.2_performance.pdf",
+      "title": "PIAO 2026, sezione performance — mercati Rivignano e Varmo",
+      "publisher": "Comune di Rivignano Teor",
+      "source_type": "municipal_planning_document",
+      "published_date": null,
+      "consulted_on": "2026-10-30",
+      "access": "full_text",
+      "facts": [
+        "Il piano 2026 prevede consultazione degli ambulanti e proposte organizzative per i mercati di Rivignano e Varmo.",
+        "Per Rivignano è prevista una proposta di accorpamento in via Umberto I da presentare entro novembre 2026."
+      ],
+      "limits": [
+        "È un obiettivo, non una prova di trasferimento già approvato o eseguito.",
+        "Non determina date, orari o calendario 2027."
+      ],
+      "evidence_locator": "pagina 59, obiettivo Mercato settimanale di Rivignano e Varmo",
+      "currentness": "current_explicit"
+    },
+    {
+      "id": "UP-S22",
+      "candidate_ids": [
+        "UP-N04"
+      ],
+      "url": "https://mycity.s3.sbg.io.cloud.ovh.net/4162954/Regolamento_mercato_settimanale_myK8Frb.pdf",
+      "title": "Regolamento mercato settimanale e commercio su aree pubbliche",
+      "publisher": "Comune di San Giorgio di Nogaro, allegato MyCity",
+      "source_type": "municipal_regulation",
+      "published_date": null,
+      "consulted_on": "2026-10-30",
+      "access": "full_text",
+      "facts": [
+        "Frontespizio: delibera 32 del 26 maggio 2000 e modifiche 17/2011.",
+        "Art. 2: mercato del sabato; festività soggette a decisione del sindaco.",
+        "Art. 4 demanda l'orario al sindaco e pone limiti: apertura non prima delle 07:00, chiusura non oltre le 14:00."
+      ],
+      "limits": [
+        "07:00–14:00 sono limiti regolamentari, non orario effettivo verificato.",
+        "Art. 3 rinvia a una planimetria non presente nella copia di cinque pagine.",
+        "Attività e assetto 2026 da verificare."
+      ],
+      "evidence_locator": "frontespizio, artt. 2–4, pagina PDF 2",
+      "currentness": "historical"
+    },
+    {
+      "id": "UP-S23",
+      "candidate_ids": [
+        "UP-N04"
+      ],
+      "url": "https://www.comune.sangiorgiodinogaro.ud.it/documenti/3016322/regolamento-mercato-settimanale-commercio-aree",
+      "title": "Regolamento mercato settimanale e del commercio su aree pubbliche — scheda",
+      "publisher": "Comune di San Giorgio di Nogaro",
+      "source_type": "municipal_document_page",
+      "published_date": null,
+      "consulted_on": "2026-10-30",
+      "access": "full_text",
+      "facts": [
+        "La pagina comunale aggiornata il 4 settembre 2025 collega il regolamento UP-S22 e indica il SUAP come responsabile."
+      ],
+      "limits": [
+        "La data di aggiornamento del sito non trasforma il testo 2000/2011 in una nuova disciplina 2025."
+      ],
+      "evidence_locator": "Documento, Ufficio responsabile e aggiornamento pagina",
+      "currentness": "undated"
+    },
+    {
+      "id": "UP-S24",
+      "candidate_ids": [
+        "UP-N05"
+      ],
+      "url": "https://www.comune.tolmezzo.ud.it/novita/fiera-dei-santi-2026/",
+      "title": "Fiera dei Santi 2026",
+      "publisher": "Comune di Tolmezzo",
+      "source_type": "municipal_event_notice",
+      "published_date": "2026-10-29",
+      "consulted_on": "2026-10-30",
+      "access": "full_text",
+      "facts": [
+        "Lunedì 2 novembre 2026, Fiera dei Santi nel centro cittadino, 08:00–20:00.",
+        "Gli ambulanti occupano vie e piazze del centro, con alcuni posteggi anche in via Lequio e piazza Centa.",
+        "La pagina collega ordinanze sindacali 33/2026 e 34/2026, ordinanza viabilità 465/2026 e planimetria."
+      ],
+      "limits": [
+        "Gli allegati non sono stati letti in questo lotto: regole dettagliate di accesso e viabilità restano da verificare.",
+        "È una fiera datata, distinta dal mercato ordinario del lunedì; nessuna ricorrenza 2027 dedotta."
+      ],
+      "evidence_locator": "Descrizione e Allegati",
+      "currentness": "current_explicit"
+    },
+    {
+      "id": "EV-S01",
+      "candidate_ids": [
+        "M024"
+      ],
+      "url": "https://prolocoregionefvg.it/eventi-delle-associate/mercatino-del-riuso-4/",
+      "title": "Mercatino del Riuso",
+      "publisher": "UNPLI Friuli Venezia Giulia",
+      "source_type": "pro_loco_network",
+      "published_date": null,
+      "consulted_on": "2026-10-30",
+      "access": "full_text",
+      "facts": [
+        "Il calendario elenca 7 novembre e 5 dicembre 2026 in piazza Primo Maggio, Udine, a cura di Avanti agli Eventi.",
+        "La regola è il primo sabato, con possibili spostamenti; la descrizione esclude aprile ma il calendario conserva il 4 aprile."
+      ],
+      "limits": [
+        "La data 5 dicembre è superata dall'anticipo al 28 novembre dichiarato nella pagina live PromoTurismoFVG.",
+        "Il conflitto interno su aprile impedisce di considerare validata l'intera serie annuale."
+      ],
+      "evidence_locator": "Quando e Descrizione, righe 35-60 della pagina estratta",
+      "currentness": "conflict"
+    },
+    {
+      "id": "EV-S02",
+      "candidate_ids": [
+        "M024"
+      ],
+      "url": "https://www.turismofvg.it/eventi/mercatino-del-riuso-474444",
+      "title": "Mercatino del Riuso",
+      "publisher": "PromoTurismoFVG / Avanti agli Eventi",
+      "source_type": "tourism_board",
+      "published_date": null,
+      "consulted_on": "2026-10-30",
+      "access": "full_text",
+      "facts": [
+        "La risposta HTTP live esplicita l'anticipo della data del 5 dicembre al 28 novembre; l'intervallo visualizzato termina il 28 novembre 2026.",
+        "Sede piazza Primo Maggio a Udine e organizzatore Avanti agli Eventi; ricorrenza del primo sabato soggetta a grandi eventi concomitanti."
+      ],
+      "limits": [
+        "web.open restituisce una copia indicizzata più vecchia che termina il 5 dicembre; l'HTML live è stato verificato separatamente con curl il 30 ottobre.",
+        "La risposta live presenta il testo evento in tedesco anche con LangSetCMS=it; l'equivalente /veranstaltung/mercatino-del-riuso-474446 reca lo stesso anticipo.",
+        "L'anticipo puntuale non risolve il conflitto storico UNPLI relativo ad aprile. Nessun orario numerico nella pagina."
+      ],
+      "evidence_locator": "HTML live: Descrizione, frase Das Datum vom 5. Dezember wird auf den 28. November vorverlegt; intervallo Samstag, 3. Januar 2026 - Samstag, 28. November 2026",
+      "currentness": "current_explicit"
+    },
+    {
+      "id": "EV-S03",
+      "candidate_ids": [
+        "M025"
+      ],
+      "url": "https://www.prolocoaviano.it/anticamente/",
+      "title": "AnticaMente",
+      "publisher": "Pro Loco Aviano",
+      "source_type": "organizer_page",
+      "published_date": null,
+      "consulted_on": "2026-10-30",
+      "access": "blocked",
+      "facts": [],
+      "limits": [
+        "Tentativo di apertura tramite web.open terminato con timeout; contenuto non attribuito come letto.",
+        "Usare EV-S04 per la data puntuale, senza presentare questo URL come corroborazione integrale."
+      ],
+      "evidence_locator": "Tentativo di apertura del 30 ottobre 2026",
+      "currentness": "undated"
+    },
+    {
+      "id": "EV-S04",
+      "candidate_ids": [
+        "M025"
+      ],
+      "url": "https://prolocoregionefvg.it/eventi-delle-associate/anticamente-mercatino-dellantiquariato-ad-aviano-8/",
+      "title": "Anticamente - Mercatino dell'antiquariato ad Aviano",
+      "publisher": "UNPLI Friuli Venezia Giulia / Pro Loco Aviano",
+      "source_type": "pro_loco_network",
+      "published_date": null,
+      "consulted_on": "2026-10-30",
+      "access": "full_text",
+      "facts": [
+        "Edizione esplicita domenica 1 novembre 2026, Piazza Duomo e vie limitrofe di Aviano.",
+        "La pagina descrive una prima domenica mensile dall'alba al tramonto, organizzata dalla Pro Loco Aviano."
+      ],
+      "limits": [
+        "Non dedurre la data di dicembre dalla ricorrenza; questa pagina esplicita solo l'edizione del 1 novembre.",
+        "Orario descritto in forma naturale, senza estremi numerici."
+      ],
+      "evidence_locator": "Intestazione data, Indirizzo e descrizione, righe 21-44",
+      "currentness": "current_explicit"
+    },
+    {
+      "id": "EV-S05",
+      "candidate_ids": [
+        "M027"
+      ],
+      "url": "https://www.prolococervignanofvg.it/comunicazione-importante-mercatino-dellusato-della-prima-domenica-del-mese/",
+      "title": "Comunicazione importante: Mercatino dell'usato della prima domenica del mese",
+      "publisher": "Pro Loco Cervignano del Friuli",
+      "source_type": "organizer_page",
+      "published_date": "2026-09-08",
+      "consulted_on": "2026-10-30",
+      "access": "full_text",
+      "facts": [
+        "L'organizzatore conferma che l'appuntamento di novembre si svolge regolarmente la prima domenica del mese, in Piazza Indipendenza a Cervignano.",
+        "Fascia indicativa dalla mattina al tardo pomeriggio.",
+        "I metadati HTML datePublished/article:published_time indicano 8 settembre 2026; dateModified/article:modified_time indicano 10 ottobre 2026."
+      ],
+      "limits": [
+        "Il corpo non pubblica giorno numerico e anno dell'edizione; non trasformare autonomamente la prima domenica in 2026-11-01.",
+        "La presenza di metadati 2026 aiuta a datare la comunicazione ma non sostituisce una data puntuale dell'evento."
+      ],
+      "evidence_locator": "Corpo comunicazione e metadati Open Graph/JSON-LD verificati con curl",
+      "currentness": "current_explicit"
+    },
+    {
+      "id": "EV-S06",
+      "candidate_ids": [
+        "M029"
+      ],
+      "url": "https://www.turismofvg.it/eventi/mercanti-nel-borgo-antigae-e-a-vencon-478654",
+      "title": "Mercanti nel borgo - Antigae e...a Vençon",
+      "publisher": "PromoTurismoFVG / Pro Loco Venzone",
+      "source_type": "tourism_board",
+      "published_date": null,
+      "consulted_on": "2026-10-30",
+      "access": "full_text",
+      "facts": [
+        "Edizione domenica 8 novembre 2026 nel centro storico di Venzone, con banchi aperti 08:00-17:00.",
+        "L'organizzatore indicato è Pro Loco Venzone; l'evento si svolge anche in caso di maltempo."
+      ],
+      "limits": [
+        "La scheda qualifica questa singola edizione; non documenta un calendario annuale ricorrente."
+      ],
+      "evidence_locator": "Descrizione, Organizzato da, data e sede, righe 138-169",
+      "currentness": "current_explicit"
+    },
+    {
+      "id": "EV-S07",
+      "candidate_ids": [
+        "M034"
+      ],
+      "url": "https://prolocoregionefvg.it/eventi-delle-associate/mercatino-delle-pulci-e-del-libro-usato/",
+      "title": "Mercatino delle pulci e del libro usato",
+      "publisher": "UNPLI Friuli Venezia Giulia / Comitato Borgate del Centro Storico di Gemona",
+      "source_type": "pro_loco_network",
+      "published_date": null,
+      "consulted_on": "2026-10-30",
+      "access": "full_text",
+      "facts": [
+        "Calendario esplicito 1 novembre e 6 dicembre 2026; sede Via Bini nel centro storico di Gemona del Friuli.",
+        "Descritta la prima domenica mensile, con Comitato delle Borgate del Centro Storico e Comune di Gemona come organizzatori.",
+        "Nell'elenco 2026 manca agosto, mentre la stessa pagina contiene anche una serie storica 2025 comprensiva di agosto."
+      ],
+      "limits": [
+        "Non confondere l'assenza di agosto nel 2026 con una regola universale né applicare la serie 2025 al 2026.",
+        "Nessun orario numerico nella pagina letta. Identità distinta da Tesori del tempo a Campagnola."
+      ],
+      "evidence_locator": "Indirizzo, Quando e descrizione, righe 24-75",
+      "currentness": "current_explicit"
+    },
+    {
+      "id": "EV-S08",
+      "candidate_ids": [
+        "M037"
+      ],
+      "url": "https://www.prosacile.it/antiquariato",
+      "title": "Sacellum - Piazza delle antichità",
+      "publisher": "Pro Sacile APS",
+      "source_type": "organizer_page",
+      "published_date": null,
+      "consulted_on": "2026-10-30",
+      "access": "full_text",
+      "facts": [
+        "Calendario 2026 esplicito: 22 novembre e 27 dicembre; ricorrenza della quarta domenica nel centro storico di Sacile.",
+        "Entrambe le date sono contrassegnate per possibili modifiche di planimetria.",
+        "Il 27 dicembre reca un'avvertenza aggiuntiva: la data può cambiare per esigenze comunali."
+      ],
+      "limits": [
+        "Trattare 27 dicembre come data pubblicata ma provvisoria; ricontrollare eventuali revisioni prima dell'attivazione.",
+        "La pagina non fornisce orari numerici."
+      ],
+      "evidence_locator": "Informazioni per gli espositori, elenco 2026 e note * / **, righe 71-88",
+      "currentness": "current_explicit"
+    },
+    {
+      "id": "EV-S09",
+      "candidate_ids": [
+        "M040"
+      ],
+      "url": "https://prolocoregionefvg.it/eventi-delle-associate/udine-antiqua-3/",
+      "title": "Udine Antiqua",
+      "publisher": "UNPLI Friuli Venezia Giulia / Avanti agli Eventi",
+      "source_type": "pro_loco_network",
+      "published_date": null,
+      "consulted_on": "2026-10-30",
+      "access": "full_text",
+      "facts": [
+        "Il calendario esplicita 15 novembre e 20 dicembre 2026 in piazza Primo Maggio a Udine.",
+        "La regola generale della terza domenica prevede eccezioni per grandi eventi.",
+        "La lista include 19 aprile 2026, mentre la descrizione dichiara che in aprile non sono previsti mercatini e segnala appuntamenti a marzo e maggio."
+      ],
+      "limits": [
+        "Le due date future sono puntuali e leggibili; il conflitto storico di aprile resta aperto.",
+        "Non ricostruire l'intero anno da questa sola ricorrenza; orari non indicati."
+      ],
+      "evidence_locator": "Quando e Descrizione, righe 35-59",
+      "currentness": "conflict"
+    },
+    {
+      "id": "EV-S10",
+      "candidate_ids": [
+        "M050"
+      ],
+      "url": "https://www.discover-trieste.it/vivi/trieste-now/mercatino-di-ponterosso",
+      "title": "Mercatino di Ponterosso",
+      "publisher": "Discover Trieste",
+      "source_type": "tourism_board",
+      "published_date": null,
+      "consulted_on": "2026-10-30",
+      "access": "full_text",
+      "facts": [
+        "Il calendario 2026 pubblica 22 novembre e 27 dicembre; luogo piazza Ponterosso e via Bellini, organizzatore Associazione Mericordo.",
+        "La descrizione parla di ultima domenica del mese e fascia dall'alba al tramonto."
+      ],
+      "limits": [
+        "Il 22 novembre non coincide con l'ultima domenica di novembre 2026: non applicare automaticamente la ricorrenza testuale.",
+        "La fascia oraria generica differisce dall'apertura puntuale 08:30 della scheda PromoTurismoFVG.",
+        "Identità distinta dal mercato ordinario Ponterosso TS09."
+      ],
+      "evidence_locator": "Descrizione e calendario 2026, righe 798-812",
+      "currentness": "conflict"
+    },
+    {
+      "id": "EV-S11",
+      "candidate_ids": [
+        "M050"
+      ],
+      "url": "https://www.turismofvg.it/eventi/mercatino-di-ponterosso-478821?LangSetCMS=it",
+      "title": "Mercatino di Ponterosso",
+      "publisher": "PromoTurismoFVG / Associazione Mericordo",
+      "source_type": "tourism_board",
+      "published_date": null,
+      "consulted_on": "2026-10-30",
+      "access": "full_text",
+      "facts": [
+        "Scheda puntuale domenica 22 novembre 2026 a Trieste, Canal Grande, via Bellini e via Cassa di Risparmio.",
+        "Orario 08:30-tramonto; evento sospeso in caso di condizioni meteo avverse.",
+        "Associazione Mericordo indicata come organizzatore."
+      ],
+      "limits": [
+        "Corrobora il 22 novembre ma non risolve la regola ricorrente incoerente della pagina Discover Trieste.",
+        "La data 27 dicembre deriva soltanto da EV-S10."
+      ],
+      "evidence_locator": "Descrizione, Organizzato da, data e luogo, righe 138-156",
+      "currentness": "current_explicit"
+    },
+    {
+      "id": "EV-S12",
+      "candidate_ids": [
+        "N-P01"
+      ],
+      "url": "https://www.prolocosantaluciaprata.it/moduli-e-varie.html",
+      "title": "Moduli e Varie - Mercatini di Santa Lucia 2026",
+      "publisher": "Pro Loco Santa Lucia APS di Prata di Pordenone",
+      "source_type": "organizer_page",
+      "published_date": null,
+      "consulted_on": "2026-10-30",
+      "access": "full_text",
+      "facts": [
+        "La pagina ufficiale mette a disposizione il Regolamento dei Mercatini di Santa Lucia 2026 e i moduli degli hobbisti, delle associazioni e del mercatino dei ragazzi."
+      ],
+      "limits": [
+        "L'elenco laterale Prossime Manifestazioni conserva Santa Lucia 14 dicembre 2025: non usarlo come calendario 2026.",
+        "La data 2026 è verificata nel PDF collegato EV-S13."
+      ],
+      "evidence_locator": "Moduli & Varie, collegamento al Regolamento 2026, righe 56-80",
+      "currentness": "current_explicit"
+    },
+    {
+      "id": "EV-S13",
+      "candidate_ids": [
+        "N-P01"
+      ],
+      "url": "https://www.prolocosantaluciaprata.it/files/FESTA-DI-SANTA-LUCIA-2026_regolamento-hobbisti.pdf",
+      "title": "Festa di Santa Lucia - 13 dicembre 2026. Regolamento mercatini degli hobbisti e della creatività",
+      "publisher": "Pro Loco Santa Lucia APS di Prata di Pordenone",
+      "source_type": "organizer_regulation",
+      "published_date": null,
+      "consulted_on": "2026-10-30",
+      "access": "full_text",
+      "facts": [
+        "Intestazione e articolo 4 confermano il 13 dicembre 2026 e la sede Piazza dell'Indipendenza e Libertà dei Popoli, Prata di Pordenone.",
+        "Organizzazione affidata a Pro Loco Santa Lucia APS; mercato di oggetti d'hobbistica e creatività.",
+        "Il documento è datato 2 ottobre 2026 in chiusura; la data di pubblicazione web non è esplicitata."
+      ],
+      "limits": [
+        "Orari di apertura al pubblico non indicati: non acquisire il 10:00-17:00 delle sole fonti secondarie.",
+        "Scaricato direttamente via curl dopo cache miss di web.open; letti i 5 fogli con pypdf e verificati visivamente pagina 1 e pagina 5 tramite rendering locale.",
+        "Documento di organizzazione: ricontrollare il programma pubblico e gli eventuali aggiornamenti."
+      ],
+      "evidence_locator": "PDF pagina 1, intestazione e artt. 2/4; pagina 5, data in chiusura",
+      "currentness": "current_explicit"
+    },
+    {
+      "id": "EV-S14",
+      "candidate_ids": [
+        "N-P02"
+      ],
+      "url": "https://www.turismofvg.it/eventi/marcjat-di-san-martin-467592",
+      "title": "Marcjât di San Martin",
+      "publisher": "PromoTurismoFVG / Associazione Pro Ovaro",
+      "source_type": "tourism_board",
+      "published_date": null,
+      "consulted_on": "2026-10-30",
+      "access": "full_text",
+      "facts": [
+        "Data esplicita mercoledì 11 novembre 2026, Ovaro, Chiesa S. Martino.",
+        "Associazione Pro Ovaro indicata come organizzatore; categoria Fiere e mercatini.",
+        "La descrizione menziona chioschi gastronomici e intrattenimento musicale durante la giornata."
+      ],
+      "limits": [
+        "Mancano orari numerici e dettagli espliciti sulle bancarelle di vendita: qualificare il mercato rispetto alla sola festa con chioschi prima dell'inserimento.",
+        "La fonte non prova l'eventuale estensione al 12 novembre riportata da un aggregatore."
+      ],
+      "evidence_locator": "Descrizione, Organizzato da, data e sede, righe 138-153",
+      "currentness": "current_explicit"
+    },
+    {
+      "id": "EV-S15",
+      "candidate_ids": [
+        "N-P03"
+      ],
+      "url": "https://www.rideandfun.com/event-details/bike-and-vin-brule-natale-con-ride-and-fun-1",
+      "title": "Bike and Vin Brulè - Natale con Ride and Fun",
+      "publisher": "Ride and Fun",
+      "source_type": "event_partner",
+      "published_date": null,
+      "consulted_on": "2026-10-30",
+      "access": "full_text",
+      "facts": [
+        "L'organizzatore della cicloescursione pubblica Bike & Brulè il 6 dicembre 2026, 13:30-17:30, in occasione dei mercatini di Natale a Vito d'Asio.",
+        "Il programma descrive il ritorno ai mercatini e l'accensione dell'albero."
+      ],
+      "limits": [
+        "È fonte primaria dell'attività MTB, non del programma completo del mercato.",
+        "Non trasferire al mercato l'orario 13:30-17:30 né il prezzo dell'escursione.",
+        "La data del mercato resta da confermare con Comune o promotore del mercato; nessuna piazza precisa è indicata.",
+        "web.open ha restituito cache miss; l'HTML live è stato letto con curl."
+      ],
+      "evidence_locator": "Orario & Sede e Info sull'evento, HTML live",
+      "currentness": "current_explicit"
+    },
+    {
+      "id": "EV-S16",
+      "candidate_ids": [
+        "N-P04"
+      ],
+      "url": "https://www.discoveraquileia.com/event/natale-ad-aqvileia/",
+      "title": "Natale ad Aqvileia",
+      "publisher": "Discover Aquileia",
+      "source_type": "territorial_tourism",
+      "published_date": null,
+      "consulted_on": "2026-10-30",
+      "access": "full_text",
+      "facts": [
+        "Pagina riferita esplicitamente al periodo 6 dicembre 2025-11 gennaio 2026.",
+        "Il programma colloca Aquileia d'inverno: mercatino natalizio l'8 dicembre, per l'intera giornata, tra Piazza Capitolo e Piazza Garibaldi, a cura della Pro Loco Aquileia."
+      ],
+      "limits": [
+        "Evidenza dell'edizione 2025, non del Natale 2026; l'accoglienza del 2026 a Capodanno chiarisce la stagione.",
+        "Non importare l'8 dicembre 2026 indicato da aggregatori senza una nuova fonte primaria.",
+        "web.open ha restituito cache miss; il corpo integrale dell'HTML live è stato letto con curl."
+      ],
+      "evidence_locator": "Intestazione intervallo, Il Programma > Aquileia d'inverno e Capodanno in Piazza Capitolo",
+      "currentness": "historical"
+    },
+    {
+      "id": "GT-S01",
+      "candidate_ids": [
+        "TS01",
+        "TS02",
+        "TS03",
+        "TS04",
+        "TS05",
+        "TS06",
+        "TS07",
+        "TS08",
+        "TS09"
+      ],
+      "url": "https://amministrazionetrasparente.comune.trieste.it/wp-content/uploads/2025/12/Reg_Commercio_AAPP_DC_43_2025.pdf",
+      "title": "Regolamento commercio su aree pubbliche, deliberazione 43 del 10/11/2025",
+      "publisher": "Comune di Trieste",
+      "source_type": "municipal_regulation",
+      "published_date": null,
+      "consulted_on": "2026-10-30",
+      "access": "full_text",
+      "facts": [
+        "Art. 21 elenca sette aree mercatali; fiere e antiquariato/usato sono disciplinati separatamente."
+      ],
+      "limits": [
+        "Il regolamento non certifica svolgimento e orario odierni."
+      ],
+      "evidence_locator": "Articoli 1 e 21, pp. 4 e 22-23 PDF",
+      "currentness": "current_explicit",
+      "document_date": "2025-11-10"
+    },
+    {
+      "id": "GT-S02",
+      "candidate_ids": [
+        "TS01",
+        "TS03",
+        "TS04",
+        "TS05",
+        "TS06",
+        "TS08",
+        "TS09"
+      ],
+      "url": "https://amministrazionetrasparente.comune.trieste.it/wp-content/uploads/2025/12/ALL.03-SCHEDE-AREE-MERCATALI.pdf",
+      "title": "Allegato 03, schede aree mercatali",
+      "publisher": "Comune di Trieste",
+      "source_type": "municipal_map",
+      "published_date": null,
+      "consulted_on": "2026-10-30",
+      "access": "full_text",
+      "facts": [
+        "Planimetrie M01 Roiano, M02 Ponterosso, M03 Hortis, M04 Opicina, M05 Garibaldi, M06 San Giacomo, M07 Borgo San Sergio."
+      ],
+      "limits": [
+        "Codici M01-M07 interni al PDF, diversi dagli ID M001-M060 del catalogo app.",
+        "Schede di localizzazione, non calendario; Ponterosso richiede anche l'avviso 2026."
+      ],
+      "evidence_locator": "PDF pp. 6-21; p. 12 Opicina verificata visivamente; testo estratto con pypdf",
+      "currentness": "current_explicit",
+      "sha256": "ece3538d0b922cc007fde874e8c177262c7caab531b04d41a707bac0dc7834e8",
+      "entry_url": "https://amministrazionetrasparente.comune.trieste.it/disposizioni-generali/atti-generali/atti-amministrativi-generali-2/",
+      "access_note": "Lettore Web rifiuta dimensione 15,6 MB; download HTTP pubblico riuscito."
+    },
+    {
+      "id": "GT-S03",
+      "candidate_ids": [
+        "TS09"
+      ],
+      "url": "https://t.me/comunetrieste/5366",
+      "title": "Avviso di trasferimento temporaneo del mercato storico di Ponterosso",
+      "publisher": "Comune di Trieste, canale ufficiale verificato",
+      "source_type": "municipal_notice",
+      "published_date": null,
+      "consulted_on": "2026-10-30",
+      "access": "full_text",
+      "facts": [
+        "Dal 03/06/2026 trasferimento temporaneo da Sant'Antonio Nuovo a piazza Ponterosso, lato Fontana."
+      ],
+      "limits": [
+        "Nessun termine certo del trasferimento; nessuna conferma degli orari.",
+        "La data di decorrenza è una variazione di sede, non un'edizione da aggiungere."
+      ],
+      "evidence_locator": "Post 5366 letto nel feed pubblico; avvisi contigui di giugno 2026",
+      "currentness": "current_explicit",
+      "access_url": "https://t.me/s/comunetrieste?before=5373",
+      "effective_from": "2026-06-03"
+    },
+    {
+      "id": "GT-S04",
+      "candidate_ids": [
+        "TS01",
+        "TS02",
+        "TS03",
+        "TS04",
+        "TS05",
+        "TS06",
+        "TS07",
+        "TS08",
+        "TS09"
+      ],
+      "url": "https://www.comune.trieste.it/it/guide-223180/guida-alle-attivita-economiche-230935/attivita-di-mercato-13598/mercato-su-aree-pubbliche-13599",
+      "title": "Guida: mercato su aree pubbliche",
+      "publisher": "Comune di Trieste",
+      "source_type": "municipal_guide",
+      "published_date": "2021-02-16",
+      "consulted_on": "2026-10-30",
+      "access": "indexed_excerpt",
+      "facts": [
+        "Hortis, Foraggi, Garibaldi, Tra i Rivi: lun-sab 08-14; San Giacomo: mar 08-14; Opicina e via dei Mille: lun 08-14; Borgo San Sergio: mer 08-13; Ponterosso: mar-sab 07-15."
+      ],
+      "limits": [
+        "Pagina diretta richiede JavaScript; collegamenti a graduatorie 2026-2027 non datano ciascuna riga.",
+        "Foraggi e via dei Mille non sono chiariti dalle sette schede 2025: nessuna chiusura dedotta."
+      ],
+      "evidence_locator": "Tabella nell'estratto del motore di ricerca",
+      "currentness": "historical"
+    },
+    {
+      "id": "GT-S05",
+      "candidate_ids": [
+        "GO03",
+        "GO06",
+        "GO07",
+        "TS10",
+        "TS11",
+        "M021",
+        "GT-N02"
+      ],
+      "url": "https://friuliveneziagiulia.coldiretti.it/wp-content/uploads/2026/10/coltivatore-friulano_settembre-2026.pdf",
+      "title": "Il Coltivatore Friulano, settembre 2026",
+      "publisher": "Coldiretti Friuli Venezia Giulia",
+      "source_type": "organizer_calendar",
+      "published_date": "2026-10-13",
+      "consulted_on": "2026-10-30",
+      "access": "full_text",
+      "facts": [
+        "Tabella regionale aggiornata: Gorizia coperto; Gradisca in due sedi; Monfalcone; Trieste martedì e sabati alterni."
+      ],
+      "limits": [
+        "Nessuna data puntuale per l'alternanza; divergenze con schede web di Monfalcone, Gradisca e San Giacomo."
+      ],
+      "evidence_locator": "Pagina 30, tabella letta e renderizzata con Ghostscript; colonne controllate visivamente",
+      "currentness": "current_explicit",
+      "sha256": "da2929d7de0245f7fdd5576cc7518deaa5a3517d9680ca4bacbb1bddf5658a0f",
+      "entry_url": "https://friuliveneziagiulia.coldiretti.it/il-coltivatore-friulano/il-coltivatore-friulano-settembre-2026/",
+      "access_note": "Lettore Web non apre il dettaglio; recupero HTTP pubblico riuscito. Pubblicazione pagina 13/10, fascicolo settembre."
+    },
+    {
+      "id": "GT-S06",
+      "candidate_ids": [
+        "GO07"
+      ],
+      "url": "https://www.campagnamica.it/la-nostra-rete/mercato/il-mercato-isontino-di-campagna-amica-di-gradisca-disonzo/",
+      "title": "Mercato isontino di Campagna Amica di Gradisca d'Isonzo",
+      "publisher": "Fondazione Campagna Amica",
+      "source_type": "organizer_directory",
+      "published_date": null,
+      "consulted_on": "2026-10-30",
+      "access": "full_text",
+      "facts": [
+        "Testo: martedì/giovedì; riquadro: venerdì 08:30-13, piazzale Unità."
+      ],
+      "limits": [
+        "Contraddizione interna; mensile settembre 2026 indica venerdì 08-13 in piazza Unità."
+      ],
+      "evidence_locator": "Informazioni e Orari di apertura",
+      "currentness": "conflict"
+    },
+    {
+      "id": "GT-S07",
+      "candidate_ids": [
+        "TS10",
+        "TS11"
+      ],
+      "url": "https://www.campagnamica.it/la-nostra-rete/mercato/il-mercato-di-campagna-amica-di-campo-san-giacomo-di-trieste/",
+      "title": "Campagna Amica Campo San Giacomo di Trieste",
+      "publisher": "Fondazione Campagna Amica",
+      "source_type": "organizer_directory",
+      "published_date": null,
+      "consulted_on": "2026-10-30",
+      "access": "full_text",
+      "facts": [
+        "Testo: sabati alterni San Giacomo/Goldoni 08-13; riquadro: sabato 08-14."
+      ],
+      "limits": [
+        "Nessuna sequenza delle sedi; orario contraddittorio."
+      ],
+      "evidence_locator": "Informazioni e Orari di apertura",
+      "currentness": "conflict"
+    },
+    {
+      "id": "GT-S08",
+      "candidate_ids": [
+        "GO03"
+      ],
+      "url": "https://www.campagnamica.it/la-nostra-rete/mercato/il-mercato-di-campagna-amica-di-monfalcone/",
+      "title": "Campagna Amica di Monfalcone",
+      "publisher": "Fondazione Campagna Amica",
+      "source_type": "organizer_directory",
+      "published_date": null,
+      "consulted_on": "2026-10-30",
+      "access": "full_text",
+      "facts": [
+        "Mercoledì 08-13, piazza Falcone e Borsellino, tutto l'anno."
+      ],
+      "limits": [
+        "Il mensile settembre 2026 indica 07:30-12 per la stessa sede e giorno."
+      ],
+      "evidence_locator": "Informazioni e Orari di apertura",
+      "currentness": "conflict"
+    },
+    {
+      "id": "GT-S09",
+      "candidate_ids": [
+        "GT-N01"
+      ],
+      "url": "https://www.turismofvg.it/eventi/mercatino-agricolo-in-piazza-vittorio-veneto-480978?LangSetCMS=it",
+      "title": "Agricolo piazza Vittorio Veneto, ottobre",
+      "publisher": "PromoTurismoFVG; organizzatore dichiarato Associazione Mercatino Agricolo",
+      "source_type": "tourism_board",
+      "published_date": null,
+      "consulted_on": "2026-10-30",
+      "access": "full_text",
+      "facts": [
+        "3, 17, 31 ottobre 2026; 08-14, piazza Vittorio Veneto, Trieste."
+      ],
+      "limits": [
+        "Non attribuire al Campagna Amica del martedì per la sola sede comune; nessuna ricorrenza inferita."
+      ],
+      "evidence_locator": "Descrizione, Organizzato da e data",
+      "currentness": "current_explicit"
+    },
+    {
+      "id": "GT-S10",
+      "candidate_ids": [
+        "GT-N01"
+      ],
+      "url": "https://www.turismofvg.it/eventi/mercatino-agricolo-in-piazza-vittorio-veneto-480982?LangSetCMS=it",
+      "title": "Agricolo piazza Vittorio Veneto, novembre",
+      "publisher": "PromoTurismoFVG; organizzatore dichiarato Associazione Mercatino Agricolo",
+      "source_type": "tourism_board",
+      "published_date": null,
+      "consulted_on": "2026-10-30",
+      "access": "full_text",
+      "facts": [
+        "14, 28 novembre 2026; 08-14, piazza Vittorio Veneto, Trieste."
+      ],
+      "limits": [
+        "Non attribuire al Campagna Amica del martedì per la sola sede comune; nessuna ricorrenza inferita."
+      ],
+      "evidence_locator": "Descrizione, Organizzato da e data",
+      "currentness": "current_explicit"
+    },
+    {
+      "id": "GT-S11",
+      "candidate_ids": [
+        "GT-N01"
+      ],
+      "url": "https://www.turismofvg.it/events/farmers-market-in-piazza-vittorio-veneto-480985",
+      "title": "Farmers' market, December",
+      "publisher": "PromoTurismoFVG; organizzatore dichiarato Associazione Mercatino Agricolo",
+      "source_type": "tourism_board",
+      "published_date": null,
+      "consulted_on": "2026-10-30",
+      "access": "full_text",
+      "facts": [
+        "12 dicembre 2026; 08-14, piazza Vittorio Veneto, Trieste."
+      ],
+      "limits": [
+        "Non attribuire al Campagna Amica del martedì per la sola sede comune; nessuna ricorrenza inferita."
+      ],
+      "evidence_locator": "Descrizione, Organizzato da e data",
+      "currentness": "current_explicit"
+    }
+  ],
+  "findings": [
+    {
+      "candidate_id": "UP08",
+      "name": "Mercato settimanale di Pertegada",
+      "municipality": "Latisana",
+      "province": "UD",
+      "status": "needs_current_confirmation",
+      "source_ids": [
+        "UP-S01"
+      ],
+      "verified_fields": {
+        "weekdays": [
+          5
+        ],
+        "hours": "08:00–13:00 (regolamento; attualità da confermare)",
+        "place": null,
+        "explicit_dates": []
+      },
+      "open_questions": [
+        "Sede puntuale dalla planimetria e modifiche successive?",
+        "Attività ed eccezioni festive 2026?"
+      ],
+      "next_action": "Recuperare planimetria A/2 e un avviso o atto operativo corrente; non utilizzare sedi da cronache temporanee 2017.",
+      "date_evidence": [],
+      "origin": "research_20261029"
+    },
+    {
+      "candidate_id": "UP09",
+      "name": "Mercato settimanale di Tarcento",
+      "municipality": "Tarcento",
+      "province": "UD",
+      "status": "needs_current_confirmation",
+      "source_ids": [
+        "UP-S02",
+        "UP-S03"
+      ],
+      "verified_fields": {
+        "weekdays": [
+          5
+        ],
+        "hours": null,
+        "place": null,
+        "explicit_dates": []
+      },
+      "open_questions": [
+        "Sede e orario dal regolamento non estraibile?",
+        "Conferma di operatività e festività 2026?"
+      ],
+      "next_action": "Acquisire una copia leggibile del regolamento e un riscontro comunale recente.",
+      "date_evidence": [],
+      "origin": "research_20261029"
+    },
+    {
+      "candidate_id": "UP12",
+      "name": "Mercato rionale di via Vittorio Veneto",
+      "municipality": "Tarvisio",
+      "province": "UD",
+      "status": "conflict",
+      "source_ids": [
+        "UP-S04"
+      ],
+      "verified_fields": {
+        "weekdays": [
+          2,
+          6
+        ],
+        "hours": null,
+        "place": "Via Vittorio Veneto",
+        "explicit_dates": []
+      },
+      "open_questions": [
+        "L'apertura al pubblico è 07:30 o 08:00?",
+        "Anno e dettagli delle date nell'indice ufficiale? "
+      ],
+      "next_action": "Leggere la scheda evento integrale e risolvere l'incoerenza oraria prima della pubblicazione; tenere separato il mercato coperto.",
+      "date_evidence": [],
+      "origin": "research_20261029"
+    },
+    {
+      "candidate_id": "UP15",
+      "name": "Mercato settimanale di Moggio Udinese",
+      "municipality": "Moggio Udinese",
+      "province": "UD",
+      "status": "needs_current_confirmation",
+      "source_ids": [
+        "UP-S05"
+      ],
+      "verified_fields": {
+        "weekdays": [
+          6
+        ],
+        "hours": "08:00–13:00 (vendita nel regolamento 2015)",
+        "place": null,
+        "explicit_dates": []
+      },
+      "open_questions": [
+        "Area effettiva e planimetria approvata?",
+        "Il testo 2015 e la fascia vendita sono ancora applicati?"
+      ],
+      "next_action": "Cercare l'atto di localizzazione corrente; non presentare le 07:00 di presenza operatori come apertura al pubblico.",
+      "date_evidence": [],
+      "origin": "research_20261029"
+    },
+    {
+      "candidate_id": "UP20",
+      "name": "Mercato cittadino di Fontanafredda",
+      "municipality": "Fontanafredda",
+      "province": "PN",
+      "status": "needs_current_confirmation",
+      "source_ids": [
+        "UP-S06",
+        "UP-S07"
+      ],
+      "verified_fields": {
+        "weekdays": [
+          4
+        ],
+        "hours": null,
+        "place": "Piazzale San Luca",
+        "explicit_dates": []
+      },
+      "open_questions": [
+        "Orario corrente e calendario eccezioni?",
+        "Conferma operativa nel 2026?"
+      ],
+      "next_action": "Completare con avviso corrente; mantenere distinto dal candidato agricolo UP-N01.",
+      "date_evidence": [],
+      "origin": "research_20261029"
+    },
+    {
+      "candidate_id": "UP21",
+      "name": "Mercato settimanale di Cordenons",
+      "municipality": "Cordenons",
+      "province": "PN",
+      "status": "needs_current_confirmation",
+      "source_ids": [
+        "UP-S08",
+        "UP-S09",
+        "UP-S10"
+      ],
+      "verified_fields": {
+        "weekdays": [
+          5
+        ],
+        "hours": null,
+        "place": "Piazza della Vittoria",
+        "explicit_dates": []
+      },
+      "open_questions": [
+        "Quali disposizioni e posteggi modifica l'allegato 62/2026?",
+        "Rimane l'orario vendita 08:00–13:00 del 2025?"
+      ],
+      "next_action": "Recuperare l'allegato 2026 prima di qualificare come correnti orari e planimetrie; giorno e sede sono confermati dall'oggetto 2026.",
+      "date_evidence": [],
+      "origin": "research_20261029"
+    },
+    {
+      "candidate_id": "UP27",
+      "name": "Mercato del capoluogo di Casarsa",
+      "municipality": "Casarsa della Delizia",
+      "province": "PN",
+      "status": "needs_current_confirmation",
+      "source_ids": [
+        "UP-S11",
+        "UP-S12"
+      ],
+      "verified_fields": {
+        "weekdays": [
+          2
+        ],
+        "hours": "08:00–13:00 (pagina comunale non datata)",
+        "place": "Piazza Italia e via XXIV Maggio",
+        "explicit_dates": []
+      },
+      "open_questions": [
+        "La sezione TARI descrive ancora l'assetto 2026?",
+        "Ordinanze festive o trasferimenti successivi?"
+      ],
+      "next_action": "Verificare attualità della scheda TARI; sede e orario ora documentati in testo integrale, senza confonderli con il divieto di sosta.",
+      "date_evidence": [],
+      "origin": "research_20261029"
+    },
+    {
+      "candidate_id": "UP28",
+      "name": "Mercato di San Giovanni di Casarsa",
+      "municipality": "Casarsa della Delizia",
+      "province": "PN",
+      "status": "needs_current_confirmation",
+      "source_ids": [
+        "UP-S11"
+      ],
+      "verified_fields": {
+        "weekdays": [
+          3
+        ],
+        "hours": null,
+        "place": null,
+        "explicit_dates": []
+      },
+      "open_questions": [
+        "Sede puntuale e orari?",
+        "Attività corrente e deroghe 2026?"
+      ],
+      "next_action": "Acquisire regolamento specifico/planimetria corrente; non promuovere ordinanze Covid come prova di sede attuale.",
+      "date_evidence": [],
+      "origin": "research_20261029"
+    },
+    {
+      "candidate_id": "UP29",
+      "name": "Mercato agricolo di Torre",
+      "municipality": "Pordenone",
+      "province": "PN",
+      "status": "needs_current_confirmation",
+      "source_ids": [
+        "UP-S13"
+      ],
+      "verified_fields": {
+        "weekdays": [
+          4
+        ],
+        "hours": "07:30–12:30 (pagina comunale legacy)",
+        "place": "Piazza Don Lozer, Torre",
+        "explicit_dates": []
+      },
+      "open_questions": [
+        "Gestione corrente e pagina aggiornata?",
+        "Anno dell'avviso di annullamento presente sulla pagina legacy?"
+      ],
+      "next_action": "Riconciliare con l'affidamento più recente e un canale primario Agrizero; ignorare come calendario corrente l'allerta senza anno.",
+      "date_evidence": [],
+      "origin": "research_20261029"
+    },
+    {
+      "candidate_id": "UP30",
+      "name": "Mercato agricolo del Sacro Cuore",
+      "municipality": "Pordenone",
+      "province": "PN",
+      "status": "needs_current_confirmation",
+      "source_ids": [
+        "UP-S14"
+      ],
+      "verified_fields": {
+        "weekdays": [
+          5
+        ],
+        "hours": null,
+        "place": "Piazzale Sacro Cuore",
+        "explicit_dates": []
+      },
+      "open_questions": [
+        "Prosecuzione della gestione dopo il 31 dicembre 2025?",
+        "Orari e consistenza operativa 2026?"
+      ],
+      "next_action": "Recuperare rinnovo/convenzione o notizia primaria 2026; non classificare il mercato chiuso in assenza di tale prova.",
+      "date_evidence": [],
+      "origin": "research_20261029"
+    },
+    {
+      "candidate_id": "UP-N01",
+      "name": "Mercato contadino di Fontanafredda",
+      "municipality": "Fontanafredda",
+      "province": "PN",
+      "status": "conflict",
+      "source_ids": [
+        "UP-S15",
+        "UP-S16",
+        "UP-S17",
+        "UP-S18"
+      ],
+      "verified_fields": {
+        "weekdays": [],
+        "hours": null,
+        "place": "Parcheggio/piazzale San Luca",
+        "explicit_dates": []
+      },
+      "open_questions": [
+        "Il nuovo regolamento collegato dalla pagina corrente supera il giovedì della copia 2017?",
+        "Il bando 2025 del mercoledì 07:00–13:00 ha avuto esito e attività nel 2026?"
+      ],
+      "next_action": "Leggere nuovo regolamento, bando ed esito; non unire giovedì e mercoledì in una ricorrenza doppia né confondere con UP20.",
+      "date_evidence": [],
+      "origin": "new_research_candidate"
+    },
+    {
+      "candidate_id": "UP-N02",
+      "name": "Mercato contadino di Tolmezzo",
+      "municipality": "Tolmezzo",
+      "province": "UD",
+      "status": "needs_current_confirmation",
+      "source_ids": [
+        "UP-S19"
+      ],
+      "verified_fields": {
+        "weekdays": [
+          1
+        ],
+        "hours": "mattina (senza intervallo esatto)",
+        "place": "Piazza Centa",
+        "explicit_dates": []
+      },
+      "open_questions": [
+        "Fascia oraria e apertura effettiva 2026?",
+        "Variazioni durante fiere e festività?"
+      ],
+      "next_action": "Completare con comunicazione recente dell'organizzatore; mantenere distinto da UP05 e dalla Fiera dei Santi.",
+      "date_evidence": [],
+      "origin": "new_research_candidate"
+    },
+    {
+      "candidate_id": "UP-N03",
+      "name": "Mercato settimanale di Rivignano",
+      "municipality": "Rivignano Teor",
+      "province": "UD",
+      "status": "ready_for_editorial_review",
+      "source_ids": [
+        "UP-S20",
+        "UP-S21"
+      ],
+      "verified_fields": {
+        "weekdays": [
+          1
+        ],
+        "hours": null,
+        "place": "Via Umberto I, area pedonale detta piazza Tarabane e lato est",
+        "explicit_dates": []
+      },
+      "open_questions": [
+        "Orario pubblico non ancora verificato.",
+        "Esito della proposta di accorpamento prevista entro novembre 2026?"
+      ],
+      "next_action": "Revisione editoriale su giorno e area documentati dal bando 2026; lasciare orario non valorizzato e verificare il riassetto prima dell'eventuale pubblicazione.",
+      "date_evidence": [],
+      "origin": "new_research_candidate"
+    },
+    {
+      "candidate_id": "UP-N04",
+      "name": "Mercato settimanale di San Giorgio di Nogaro",
+      "municipality": "San Giorgio di Nogaro",
+      "province": "UD",
+      "status": "needs_current_confirmation",
+      "source_ids": [
+        "UP-S22",
+        "UP-S23"
+      ],
+      "verified_fields": {
+        "weekdays": [
+          6
+        ],
+        "hours": null,
+        "place": null,
+        "explicit_dates": []
+      },
+      "open_questions": [
+        "Planimetria e orario effettivo stabilito dal sindaco?",
+        "Riscontro operativo 2026?"
+      ],
+      "next_action": "Recuperare ordinanza orari e planimetria; non usare 07:00–14:00 come orario effettivo perché sono soltanto limiti regolamentari.",
+      "date_evidence": [],
+      "origin": "new_research_candidate"
+    },
+    {
+      "candidate_id": "UP-N05",
+      "name": "Fiera dei Santi 2026 di Tolmezzo",
+      "municipality": "Tolmezzo",
+      "province": "UD",
+      "status": "ready_for_editorial_review",
+      "source_ids": [
+        "UP-S24"
+      ],
+      "verified_fields": {
+        "weekdays": [
+          1
+        ],
+        "hours": "08:00–20:00",
+        "place": "Centro cittadino; inclusi via Lequio e piazza Centa",
+        "explicit_dates": [
+          "2026-11-02"
+        ]
+      },
+      "open_questions": [
+        "Dettagli di viabilità e accesso negli allegati non ancora letti."
+      ],
+      "next_action": "Revisione editoriale della singola edizione 2026; eventuale pagina pubblica deve rimandare agli allegati ufficiali e non creare ricorrenze future.",
+      "date_evidence": [
+        {
+          "date": "2026-11-02",
+          "source_ids": [
+            "UP-S24"
+          ],
+          "qualification": "published"
+        }
+      ],
+      "origin": "new_research_candidate"
+    },
+    {
+      "candidate_id": "M024",
+      "name": "Mercatino del Riuso",
+      "municipality": "Udine",
+      "province": "UD",
+      "status": "conflict",
+      "source_ids": [
+        "EV-S01",
+        "EV-S02"
+      ],
+      "verified_fields": {
+        "weekdays": [
+          6
+        ],
+        "hours": null,
+        "place": "Piazza Primo Maggio",
+        "explicit_dates": [
+          "2026-11-07",
+          "2026-11-28"
+        ]
+      },
+      "open_questions": [
+        "UNPLI conserva 5 dicembre 2026; PromoTurismoFVG live dichiara l'anticipo al 28 novembre.",
+        "Resta incoerente l'appuntamento di aprile nel calendario annuale; la sostituzione puntuale non sana l'anno.",
+        "Orario non verificato."
+      ],
+      "next_action": "Portare a revisione editoriale la sostituzione del 5 dicembre con il 28 novembre, conservando l'evidenza della modifica; mantenere aperta la riconciliazione della serie annuale.",
+      "date_evidence": [
+        {
+          "date": "2026-11-07",
+          "source_ids": [
+            "EV-S01"
+          ],
+          "qualification": "published"
+        },
+        {
+          "date": "2026-11-28",
+          "source_ids": [
+            "EV-S02"
+          ],
+          "qualification": "rescheduled"
+        }
+      ],
+      "origin": "runtime_catalogue"
+    },
+    {
+      "candidate_id": "M025",
+      "name": "AnticaMente - Mercatino dell'antiquariato",
+      "municipality": "Aviano",
+      "province": "PN",
+      "status": "ready_for_editorial_review",
+      "source_ids": [
+        "EV-S03",
+        "EV-S04"
+      ],
+      "verified_fields": {
+        "weekdays": [
+          7
+        ],
+        "hours": "Dall'alba al tramonto",
+        "place": "Piazza Duomo e vie limitrofe",
+        "explicit_dates": [
+          "2026-11-01"
+        ]
+      },
+      "open_questions": [
+        "Nessuna data numerica di dicembre acquisita.",
+        "Pagina diretta Pro Loco non accessibile nel tentativo web; UNPLI contiene l'edizione puntuale."
+      ],
+      "next_action": "Integrare nella revisione la sola edizione 1 novembre 2026; non generare date successive dalla prima domenica.",
+      "date_evidence": [
+        {
+          "date": "2026-11-01",
+          "source_ids": [
+            "EV-S04"
+          ],
+          "qualification": "published"
+        }
+      ],
+      "origin": "runtime_catalogue"
+    },
+    {
+      "candidate_id": "M027",
+      "name": "Mercatino dell'Usato",
+      "municipality": "Cervignano del Friuli",
+      "province": "UD",
+      "status": "needs_current_confirmation",
+      "source_ids": [
+        "EV-S05"
+      ],
+      "verified_fields": {
+        "weekdays": [
+          7
+        ],
+        "hours": "Dalla mattina al tardo pomeriggio",
+        "place": "Piazza Indipendenza",
+        "explicit_dates": []
+      },
+      "open_questions": [
+        "Comunicazione datata al 2026 dai metadati, ma priva di giorno numerico e anno dell'edizione nel testo.",
+        "Serve conferma primaria puntuale del prossimo appuntamento; nessuna data è stata calcolata dalla ricorrenza."
+      ],
+      "next_action": "Cercare calendario o locandina dell'organizzatore con data completa e orari prima di aggiungere un'occorrenza.",
+      "date_evidence": [],
+      "origin": "runtime_catalogue"
+    },
+    {
+      "candidate_id": "M029",
+      "name": "Mercanti nel borgo - Antigae e...a Vençon",
+      "municipality": "Venzone",
+      "province": "UD",
+      "status": "ready_for_editorial_review",
+      "source_ids": [
+        "EV-S06"
+      ],
+      "verified_fields": {
+        "weekdays": [
+          7
+        ],
+        "hours": "08:00-17:00",
+        "place": "Centro storico",
+        "explicit_dates": [
+          "2026-11-08"
+        ]
+      },
+      "open_questions": [
+        "Ricorrenza annuale non documentata da questa scheda."
+      ],
+      "next_action": "Valutare la singola edizione 8 novembre, conservando l'indicazione che si svolge anche in caso di maltempo.",
+      "date_evidence": [
+        {
+          "date": "2026-11-08",
+          "source_ids": [
+            "EV-S06"
+          ],
+          "qualification": "published"
+        }
+      ],
+      "origin": "runtime_catalogue"
+    },
+    {
+      "candidate_id": "M034",
+      "name": "Mercatino delle pulci e del libro usato",
+      "municipality": "Gemona del Friuli",
+      "province": "UD",
+      "status": "ready_for_editorial_review",
+      "source_ids": [
+        "EV-S07"
+      ],
+      "verified_fields": {
+        "weekdays": [
+          7
+        ],
+        "hours": null,
+        "place": "Via Bini, centro storico",
+        "explicit_dates": [
+          "2026-11-01",
+          "2026-12-06"
+        ]
+      },
+      "open_questions": [
+        "Orari non verificati; mantenere distinta questa identità da Tesori del tempo di Campagnola.",
+        "Non usare la serie 2025 come prova del calendario 2026."
+      ],
+      "next_action": "Portare a revisione le due date future esplicite, lasciando l'orario non disponibile.",
+      "date_evidence": [
+        {
+          "date": "2026-11-01",
+          "source_ids": [
+            "EV-S07"
+          ],
+          "qualification": "published"
+        },
+        {
+          "date": "2026-12-06",
+          "source_ids": [
+            "EV-S07"
+          ],
+          "qualification": "published"
+        }
+      ],
+      "origin": "runtime_catalogue"
+    },
+    {
+      "candidate_id": "M037",
+      "name": "Sacellum - Piazza delle antichità",
+      "municipality": "Sacile",
+      "province": "PN",
+      "status": "ready_for_editorial_review",
+      "source_ids": [
+        "EV-S08"
+      ],
+      "verified_fields": {
+        "weekdays": [
+          7
+        ],
+        "hours": null,
+        "place": "Centro storico",
+        "explicit_dates": [
+          "2026-11-22",
+          "2026-12-27"
+        ]
+      },
+      "open_questions": [
+        "27 dicembre è espressamente modificabile per esigenze comunali.",
+        "Possibili variazioni della planimetria per entrambe le date; orari non indicati."
+      ],
+      "next_action": "Catalogare entrambe come date pubblicate, con il 27 dicembre da riconfermare prima dell'attivazione; non rimuovere la riserva comunale.",
+      "date_evidence": [
+        {
+          "date": "2026-11-22",
+          "source_ids": [
+            "EV-S08"
+          ],
+          "qualification": "published"
+        },
+        {
+          "date": "2026-12-27",
+          "source_ids": [
+            "EV-S08"
+          ],
+          "qualification": "provisional"
+        }
+      ],
+      "origin": "runtime_catalogue"
+    },
+    {
+      "candidate_id": "M040",
+      "name": "Udine Antiqua",
+      "municipality": "Udine",
+      "province": "UD",
+      "status": "conflict",
+      "source_ids": [
+        "EV-S09"
+      ],
+      "verified_fields": {
+        "weekdays": [
+          7
+        ],
+        "hours": null,
+        "place": "Piazza Primo Maggio",
+        "explicit_dates": [
+          "2026-11-15",
+          "2026-12-20"
+        ]
+      },
+      "open_questions": [
+        "Il calendario e il corpo della fonte non concordano sull'edizione di aprile.",
+        "Orario numerico non verificato."
+      ],
+      "next_action": "Proporre le due date future puntuali senza dichiarare risolto il conflitto annuale né inferire altre occorrenze.",
+      "date_evidence": [
+        {
+          "date": "2026-11-15",
+          "source_ids": [
+            "EV-S09"
+          ],
+          "qualification": "published"
+        },
+        {
+          "date": "2026-12-20",
+          "source_ids": [
+            "EV-S09"
+          ],
+          "qualification": "published"
+        }
+      ],
+      "origin": "runtime_catalogue"
+    },
+    {
+      "candidate_id": "M050",
+      "name": "Mercatino di Ponterosso",
+      "municipality": "Trieste",
+      "province": "TS",
+      "status": "conflict",
+      "source_ids": [
+        "EV-S10",
+        "EV-S11"
+      ],
+      "verified_fields": {
+        "weekdays": [
+          7
+        ],
+        "hours": "08:30-tramonto per l'edizione del 22 novembre",
+        "place": "Canal Grande, Via Bellini, Via Cassa di Risparmio (solo scheda puntuale del 22 novembre 2026)",
+        "explicit_dates": [
+          "2026-11-22",
+          "2026-12-27"
+        ]
+      },
+      "open_questions": [
+        "Il 22 novembre è confermato da due pagine istituzionali, ma contraddice la formula ultima domenica di Discover Trieste.",
+        "27 dicembre compare solo nel calendario Discover Trieste.",
+        "L'orario puntuale 08:30 non deve essere sostituito automaticamente con alba; possibile sospensione per maltempo.",
+        "Per il 27 dicembre non è stata letta una scheda puntuale di sede/orario: EV-S10 descrive genericamente Piazza Ponterosso e Via Bellini e la fascia alba-tramonto. Non estendere a dicembre sede dettagliata e apertura 08:30 di EV-S11."
+      ],
+      "next_action": "Usare le date esplicite nella revisione; mantenere bloccata la generazione per ultima domenica fino alla riconciliazione con calendario dell'organizzatore. Non unire al mercato ordinario TS09.",
+      "date_evidence": [
+        {
+          "date": "2026-11-22",
+          "source_ids": [
+            "EV-S10",
+            "EV-S11"
+          ],
+          "qualification": "published"
+        },
+        {
+          "date": "2026-12-27",
+          "source_ids": [
+            "EV-S10"
+          ],
+          "qualification": "published"
+        }
+      ],
+      "origin": "runtime_catalogue"
+    },
+    {
+      "candidate_id": "N-P01",
+      "name": "Mercatino degli hobbisti e della creatività - Festa di Santa Lucia",
+      "municipality": "Prata di Pordenone",
+      "province": "PN",
+      "status": "ready_for_editorial_review",
+      "source_ids": [
+        "EV-S12",
+        "EV-S13"
+      ],
+      "verified_fields": {
+        "weekdays": [],
+        "hours": null,
+        "place": "Piazza dell'Indipendenza e Libertà dei Popoli",
+        "explicit_dates": [
+          "2026-12-13"
+        ]
+      },
+      "open_questions": [
+        "Orario pubblico non contenuto nel regolamento.",
+        "Pagina laterale ancora riferita a dicembre 2025, mentre il PDF esplicita l'edizione 2026."
+      ],
+      "next_action": "Nuova identità candidata: revisionare data, sede e organizzatore dal regolamento 2026; acquisire il programma pubblico prima di aggiungere orari.",
+      "date_evidence": [
+        {
+          "date": "2026-12-13",
+          "source_ids": [
+            "EV-S13"
+          ],
+          "qualification": "published"
+        }
+      ],
+      "origin": "new_research_candidate"
+    },
+    {
+      "candidate_id": "N-P02",
+      "name": "Marcjât di San Martin",
+      "municipality": "Ovaro",
+      "province": "UD",
+      "status": "needs_current_confirmation",
+      "source_ids": [
+        "EV-S14"
+      ],
+      "verified_fields": {
+        "weekdays": [
+          3
+        ],
+        "hours": "Durante la giornata, senza estremi numerici",
+        "place": "Chiesa S. Martino",
+        "explicit_dates": [
+          "2026-11-11"
+        ]
+      },
+      "open_questions": [
+        "La descrizione specifica chioschi e musica ma non dettaglia l'area di vendita: verificare pertinenza al catalogo mercati.",
+        "Orari numerici e merceologie non pubblicati."
+      ],
+      "next_action": "Nuova identità candidata: trovare programma Pro Ovaro o comunale che distingua il mercato dalla festa gastronomica; mantenere soltanto l'11 novembre documentato.",
+      "date_evidence": [
+        {
+          "date": "2026-11-11",
+          "source_ids": [
+            "EV-S14"
+          ],
+          "qualification": "published"
+        }
+      ],
+      "origin": "new_research_candidate"
+    },
+    {
+      "candidate_id": "N-P03",
+      "name": "Mercatini di Natale a Vito d'Asio",
+      "municipality": "Vito d'Asio",
+      "province": "PN",
+      "status": "needs_current_confirmation",
+      "source_ids": [
+        "EV-S15"
+      ],
+      "verified_fields": {
+        "weekdays": [],
+        "hours": null,
+        "place": "Vito d'Asio; piazza precisa non indicata",
+        "explicit_dates": []
+      },
+      "open_questions": [
+        "Fonte primaria di un'attività collaterale collocata il 6 dicembre 2026 in occasione del mercato; manca il programma del promotore del mercato.",
+        "Orario, prezzo, organizzatore e sede puntuale del mercato non verificati."
+      ],
+      "next_action": "Nuova identità candidata: cercare programma comunale o del promotore; usare 6 dicembre come pista di ricerca, senza trasferire orari o tariffa dell'escursione.",
+      "date_evidence": [],
+      "origin": "new_research_candidate"
+    },
+    {
+      "candidate_id": "N-P04",
+      "name": "Aquileia d'inverno - Mercatino natalizio",
+      "municipality": "Aquileia",
+      "province": "UD",
+      "status": "historical_only",
+      "source_ids": [
+        "EV-S16"
+      ],
+      "verified_fields": {
+        "weekdays": [],
+        "hours": "Intera giornata, limitatamente all'edizione 2025",
+        "place": "Da Piazza Capitolo a Piazza Garibaldi",
+        "explicit_dates": [
+          "2025-12-08"
+        ]
+      },
+      "open_questions": [
+        "La fonte territoriale letta documenta Natale 2025-2026, non Natale 2026.",
+        "Manca conferma primaria dell'eventuale edizione 2026; gli aggregatori non sono una prova sufficiente."
+      ],
+      "next_action": "Nuova identità candidata storica: conservare come pista di copertura e ricercare il programma 2026 senza riproporre automaticamente l'8 dicembre.",
+      "date_evidence": [
+        {
+          "date": "2025-12-08",
+          "source_ids": [
+            "EV-S16"
+          ],
+          "qualification": "historical"
+        }
+      ],
+      "origin": "new_research_candidate"
+    },
+    {
+      "candidate_id": "TS01",
+      "name": "Mercato rionale Hortis",
+      "municipality": "Trieste",
+      "province": "TS",
+      "status": "needs_current_confirmation",
+      "source_ids": [
+        "GT-S01",
+        "GT-S02",
+        "GT-S04"
+      ],
+      "verified_fields": {
+        "weekdays": [],
+        "hours": null,
+        "place": "Piazza Hortis",
+        "explicit_dates": []
+      },
+      "open_questions": [
+        "Giornate e orari attuali da confrontare con ordinanze operative; la guida indicizzata resta precedente."
+      ],
+      "next_action": "Acquisire disciplina operativa corrente prima dell'attivazione.",
+      "evidence_note": "Allegato 03, pagina PDF 10; sede regolamentare, non prova di apertura.",
+      "date_evidence": [],
+      "origin": "research_20261029"
+    },
+    {
+      "candidate_id": "TS03",
+      "name": "Mercato rionale Garibaldi",
+      "municipality": "Trieste",
+      "province": "TS",
+      "status": "needs_current_confirmation",
+      "source_ids": [
+        "GT-S01",
+        "GT-S02",
+        "GT-S04"
+      ],
+      "verified_fields": {
+        "weekdays": [],
+        "hours": null,
+        "place": "Piazza Garibaldi",
+        "explicit_dates": []
+      },
+      "open_questions": [
+        "Giornate e orari attuali da confrontare con ordinanze operative; la guida indicizzata resta precedente."
+      ],
+      "next_action": "Acquisire disciplina operativa corrente prima dell'attivazione.",
+      "evidence_note": "Allegato 03, pagina PDF 14; sede regolamentare, non prova di apertura.",
+      "date_evidence": [],
+      "origin": "research_20261029"
+    },
+    {
+      "candidate_id": "TS04",
+      "name": "Mercato rionale San Giacomo",
+      "municipality": "Trieste",
+      "province": "TS",
+      "status": "needs_current_confirmation",
+      "source_ids": [
+        "GT-S01",
+        "GT-S02",
+        "GT-S04"
+      ],
+      "verified_fields": {
+        "weekdays": [],
+        "hours": null,
+        "place": "Campo San Giacomo",
+        "explicit_dates": []
+      },
+      "open_questions": [
+        "Giornate e orari attuali da confrontare con ordinanze operative; la guida indicizzata resta precedente."
+      ],
+      "next_action": "Acquisire disciplina operativa corrente prima dell'attivazione.",
+      "evidence_note": "Allegato 03, pagina PDF 16; sede regolamentare, non prova di apertura.",
+      "date_evidence": [],
+      "origin": "research_20261029"
+    },
+    {
+      "candidate_id": "TS05",
+      "name": "Mercato rionale Roiano",
+      "municipality": "Trieste",
+      "province": "TS",
+      "status": "needs_current_confirmation",
+      "source_ids": [
+        "GT-S01",
+        "GT-S02",
+        "GT-S04"
+      ],
+      "verified_fields": {
+        "weekdays": [],
+        "hours": null,
+        "place": "Piazza Tra i Rivi",
+        "explicit_dates": []
+      },
+      "open_questions": [
+        "Giornate e orari attuali da confrontare con ordinanze operative; la guida indicizzata resta precedente."
+      ],
+      "next_action": "Acquisire disciplina operativa corrente prima dell'attivazione.",
+      "evidence_note": "Allegato 03, pagina PDF 6; sede regolamentare, non prova di apertura.",
+      "date_evidence": [],
+      "origin": "research_20261029"
+    },
+    {
+      "candidate_id": "TS06",
+      "name": "Mercato rionale Opicina",
+      "municipality": "Trieste",
+      "province": "TS",
+      "status": "needs_current_confirmation",
+      "source_ids": [
+        "GT-S01",
+        "GT-S02",
+        "GT-S04"
+      ],
+      "verified_fields": {
+        "weekdays": [],
+        "hours": null,
+        "place": "Via Doberdò",
+        "explicit_dates": []
+      },
+      "open_questions": [
+        "Giornate e orari attuali da confrontare con ordinanze operative; la guida indicizzata resta precedente."
+      ],
+      "next_action": "Acquisire disciplina operativa corrente prima dell'attivazione.",
+      "evidence_note": "Allegato 03, pagina PDF 12; sede regolamentare, non prova di apertura.",
+      "date_evidence": [],
+      "origin": "research_20261029"
+    },
+    {
+      "candidate_id": "TS08",
+      "name": "Mercato rionale Borgo San Sergio",
+      "municipality": "Trieste",
+      "province": "TS",
+      "status": "needs_current_confirmation",
+      "source_ids": [
+        "GT-S01",
+        "GT-S02",
+        "GT-S04"
+      ],
+      "verified_fields": {
+        "weekdays": [],
+        "hours": null,
+        "place": "Piazza XXV Aprile / via Curiel",
+        "explicit_dates": []
+      },
+      "open_questions": [
+        "Giornate e orari attuali da confrontare con ordinanze operative; la guida indicizzata resta precedente."
+      ],
+      "next_action": "Acquisire disciplina operativa corrente prima dell'attivazione.",
+      "evidence_note": "Allegato 03, pagina PDF 18; sede regolamentare, non prova di apertura.",
+      "date_evidence": [],
+      "origin": "research_20261029"
+    },
+    {
+      "candidate_id": "TS02",
+      "name": "Mercato piazza Foraggi",
+      "municipality": "Trieste",
+      "province": "TS",
+      "status": "needs_current_confirmation",
+      "source_ids": [
+        "GT-S01",
+        "GT-S04"
+      ],
+      "verified_fields": {
+        "weekdays": [],
+        "hours": null,
+        "place": null,
+        "explicit_dates": []
+      },
+      "open_questions": [
+        "Identità/sede e attività da riconciliare con il nuovo assetto regolamentare."
+      ],
+      "next_action": "Cercare avvisi e allegati specifici; non interpretare l'assenza come cessazione.",
+      "date_evidence": [],
+      "origin": "research_20261029"
+    },
+    {
+      "candidate_id": "TS07",
+      "name": "Mercato via dei Mille",
+      "municipality": "Trieste",
+      "province": "TS",
+      "status": "needs_current_confirmation",
+      "source_ids": [
+        "GT-S01",
+        "GT-S04"
+      ],
+      "verified_fields": {
+        "weekdays": [],
+        "hours": null,
+        "place": null,
+        "explicit_dates": []
+      },
+      "open_questions": [
+        "Identità/sede e attività da riconciliare con il nuovo assetto regolamentare."
+      ],
+      "next_action": "Cercare avvisi e allegati specifici; non interpretare l'assenza come cessazione.",
+      "date_evidence": [],
+      "origin": "research_20261029"
+    },
+    {
+      "candidate_id": "TS09",
+      "name": "Mercato storico di Ponterosso",
+      "municipality": "Trieste",
+      "province": "TS",
+      "status": "needs_current_confirmation",
+      "source_ids": [
+        "GT-S01",
+        "GT-S02",
+        "GT-S03",
+        "GT-S04"
+      ],
+      "verified_fields": {
+        "weekdays": [],
+        "hours": null,
+        "place": "Piazza Ponterosso, lato Fontana (trasferimento temporaneo dal 03/06/2026)",
+        "explicit_dates": []
+      },
+      "open_questions": [
+        "Orari attuali ed eventuali spostamenti successivi; fine del trasferimento non acquisita."
+      ],
+      "next_action": "Conservare l'avviso con decorrenza; non accorpare a M050 antiquariato/usato.",
+      "date_evidence": [],
+      "origin": "research_20261029"
+    },
+    {
+      "candidate_id": "GO06",
+      "name": "Campagna Amica coperto",
+      "municipality": "Gorizia",
+      "province": "GO",
+      "status": "ready_for_editorial_review",
+      "source_ids": [
+        "GT-S05"
+      ],
+      "verified_fields": {
+        "weekdays": [
+          2,
+          4,
+          6
+        ],
+        "hours": "mar 15-19; gio/sab 08:30-13",
+        "place": "Via IX Agosto 4/b",
+        "explicit_dates": []
+      },
+      "open_questions": [
+        "Eccezioni festive non acquisite."
+      ],
+      "next_action": "Rivedere scheda e relazioni; distinto dal comunale di corso Verdi.",
+      "date_evidence": [],
+      "origin": "research_20261029"
+    },
+    {
+      "candidate_id": "GO03",
+      "name": "Campagna Amica",
+      "municipality": "Monfalcone",
+      "province": "GO",
+      "status": "conflict",
+      "source_ids": [
+        "GT-S05",
+        "GT-S08"
+      ],
+      "verified_fields": {
+        "weekdays": [
+          3
+        ],
+        "hours": null,
+        "place": "Piazza Falcone e Borsellino",
+        "explicit_dates": []
+      },
+      "open_questions": [
+        "Orario: mensile 07:30-12, directory 08-13."
+      ],
+      "next_action": "Confermare orario; giorno e sede concordano.",
+      "date_evidence": [],
+      "origin": "research_20261029"
+    },
+    {
+      "candidate_id": "GO07",
+      "name": "Campagna Amica piazza Unità",
+      "municipality": "Gradisca d'Isonzo",
+      "province": "GO",
+      "status": "conflict",
+      "source_ids": [
+        "GT-S05",
+        "GT-S06"
+      ],
+      "verified_fields": {
+        "weekdays": [],
+        "hours": null,
+        "place": "Piazza Unità d'Italia",
+        "explicit_dates": []
+      },
+      "open_questions": [
+        "Mensile: ven 08-13; directory: ven 08:30-13 e testo mar/gio."
+      ],
+      "next_action": "Usare il mensile come riscontro recente; conservare il conflitto prima della pubblicazione.",
+      "date_evidence": [],
+      "origin": "research_20261029"
+    },
+    {
+      "candidate_id": "TS10",
+      "name": "Campagna Amica Campo San Giacomo",
+      "municipality": "Trieste",
+      "province": "TS",
+      "status": "conflict",
+      "source_ids": [
+        "GT-S05",
+        "GT-S07"
+      ],
+      "verified_fields": {
+        "weekdays": [],
+        "hours": null,
+        "place": "Campo San Giacomo",
+        "explicit_dates": []
+      },
+      "open_questions": [
+        "Sabati alterni 08-13 nel mensile; riquadro directory 08-14; nessuna data per sede."
+      ],
+      "next_action": "Acquisire sequenza delle sedi e orario; non generare tutti i sabati.",
+      "date_evidence": [],
+      "origin": "research_20261029"
+    },
+    {
+      "candidate_id": "TS11",
+      "name": "Campagna Amica Piazza Goldoni",
+      "municipality": "Trieste",
+      "province": "TS",
+      "status": "conflict",
+      "source_ids": [
+        "GT-S05",
+        "GT-S07"
+      ],
+      "verified_fields": {
+        "weekdays": [],
+        "hours": null,
+        "place": "Piazza Goldoni",
+        "explicit_dates": []
+      },
+      "open_questions": [
+        "Sabati alterni 08-13 nel mensile; riquadro directory 08-14; nessuna data per sede."
+      ],
+      "next_action": "Acquisire sequenza delle sedi e orario; non generare tutti i sabati.",
+      "date_evidence": [],
+      "origin": "research_20261029"
+    },
+    {
+      "candidate_id": "M021",
+      "name": "Campagna Amica piazza Vittorio Veneto",
+      "municipality": "Trieste",
+      "province": "TS",
+      "status": "ready_for_editorial_review",
+      "source_ids": [
+        "GT-S05"
+      ],
+      "verified_fields": {
+        "weekdays": [
+          2
+        ],
+        "hours": "08-13",
+        "place": "Piazza Vittorio Veneto",
+        "explicit_dates": []
+      },
+      "open_questions": [
+        "Eccezioni festive non acquisite."
+      ],
+      "next_action": "Aggiornare la provenienza nella futura revisione del catalogo; non confondere con GT-N01.",
+      "date_evidence": [],
+      "origin": "runtime_catalogue"
+    },
+    {
+      "candidate_id": "GT-N01",
+      "name": "Mercatino agricolo, Associazione Mercatino Agricolo",
+      "municipality": "Trieste",
+      "province": "TS",
+      "status": "ready_for_editorial_review",
+      "source_ids": [
+        "GT-S09",
+        "GT-S10",
+        "GT-S11"
+      ],
+      "verified_fields": {
+        "weekdays": [],
+        "hours": "08-14",
+        "place": "Piazza Vittorio Veneto",
+        "explicit_dates": [
+          "2026-10-03",
+          "2026-10-17",
+          "2026-10-31",
+          "2026-11-14",
+          "2026-11-28",
+          "2026-12-12"
+        ]
+      },
+      "open_questions": [
+        "Identità organizzativa da mantenere distinta da M021; dicembre verificato nella variante inglese."
+      ],
+      "next_action": "Preparare scheda editoriale con sole date esplicite.",
+      "date_evidence": [
+        {
+          "date": "2026-10-03",
+          "source_ids": [
+            "GT-S09"
+          ],
+          "qualification": "historical"
+        },
+        {
+          "date": "2026-10-17",
+          "source_ids": [
+            "GT-S09"
+          ],
+          "qualification": "historical"
+        },
+        {
+          "date": "2026-10-31",
+          "source_ids": [
+            "GT-S09"
+          ],
+          "qualification": "published"
+        },
+        {
+          "date": "2026-11-14",
+          "source_ids": [
+            "GT-S10"
+          ],
+          "qualification": "published"
+        },
+        {
+          "date": "2026-11-28",
+          "source_ids": [
+            "GT-S10"
+          ],
+          "qualification": "published"
+        },
+        {
+          "date": "2026-12-12",
+          "source_ids": [
+            "GT-S11"
+          ],
+          "qualification": "published"
+        }
+      ],
+      "origin": "new_research_candidate"
+    },
+    {
+      "candidate_id": "GT-N02",
+      "name": "Campagna Amica via Regina Elena",
+      "municipality": "Gradisca d'Isonzo",
+      "province": "GO",
+      "status": "needs_current_confirmation",
+      "source_ids": [
+        "GT-S05"
+      ],
+      "verified_fields": {
+        "weekdays": [
+          2
+        ],
+        "hours": "08-13",
+        "place": "Via Regina Elena",
+        "explicit_dates": []
+      },
+      "open_questions": [
+        "Autonomia o componente del mercato ordinario GO01 da chiarire."
+      ],
+      "next_action": "Deduplicare prima di proporre una nuova scheda.",
+      "date_evidence": [],
+      "origin": "new_research_candidate"
+    }
+  ]
+}

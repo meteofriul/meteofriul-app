@@ -1,5 +1,7 @@
 # Allineamento della Web App con Android
 
+**Mercati, 30 ottobre: catalogazione delle fonti.** Proseguita la ricerca nel ramo `codex/mercati-integration-20261028`, allineato al main verificato: 51 fonti, 44 schede approfondite e 11 nuove candidature. Dieci schede pronte alla revisione editoriale, con limiti espliciti; date puntuali, conflitti e prove storiche conservati nel [dossier e registro](MERCATI_FONTI_CATALOGAZIONE_20261030.md). Nessuna nuova voce attivata nell'app; catalogo, AAB 300038 e Web distribuita invariati. Prova visiva Mercati e revisione FUR aperte.
+
 **Home, 30 ottobre:** dimensioni e spaziature delle due schede editoriali uniformate in main tramite [PR 36](https://github.com/meteofriul/meteofriul-app/pull/36), merge `05ec9aa9`, con risultato osservato approvato dal proprietario. [Modifica e verifiche](HOME_EDITORIAL_TYPOGRAPHY_20261030.md). 50 test, lint, compilazione frontend e CI PR/main PASS nei tre job. Nessun artefatto Web/Android di release rigenerato, nessuna pubblicazione o nuova qualifica completa browser/dispositivo.
 
 **Avvio locale, 30 ottobre:** corretto e verificato il controllo CAMS del launcher, nel ramo `codex/local-pilot-cams-startup-20261030`: 93 asserzioni e avvio reale PASS; [diagnosi e prove](LOCAL_PILOT_CAMS_STARTUP_20261030.md). Il frontend distribuito, gli artefatti Web/Android e le qualificazioni dei browser non cambiano; nessuna pubblicazione richiesta per il solo launcher locale.

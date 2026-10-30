@@ -1,5 +1,7 @@
 # Stato release 0.1.15 e lavoro salvato — aggiornamento sorgenti del 24 ottobre 2026
 
+**Mercati, 30 ottobre: catalogazione delle fonti.** Proseguita la ricerca nel ramo `codex/mercati-integration-20261028`, allineato al main verificato: 51 fonti, 44 schede approfondite e 11 nuove candidature. Dieci schede pronte alla revisione editoriale, con limiti espliciti; date puntuali, conflitti e prove storiche conservati nel [dossier e registro](MERCATI_FONTI_CATALOGAZIONE_20261030.md). Nessuna nuova voce attivata nell'app; catalogo, AAB 300038 e Web distribuita invariati. Prova visiva Mercati e revisione FUR aperte.
+
 **Home, 30 ottobre:** correzione tipografica approvata dal proprietario e integrata tramite [PR 36](https://github.com/meteofriul/meteofriul-app/pull/36), merge `05ec9aa9`, con il prerequisito di avvio CAMS. 50 test Home, 93 asserzioni launcher, lint, compilazione e CI PR/main PASS nei tre job. [Prove e portata del riscontro visivo](HOME_EDITORIAL_TYPOGRAPHY_20261030.md). Versioni, pacchetti Android, canali Play e pubblicazioni Web invariati.
 
 **Avvio locale, 30 ottobre:** corretto e verificato il controllo CAMS del launcher, nel ramo `codex/local-pilot-cams-startup-20261030`: 93 asserzioni e avvio reale PASS; [diagnosi e prove](LOCAL_PILOT_CAMS_STARTUP_20261030.md). Nessuna variazione di versione, pacchetto, canale Play, pubblicazione Web o servizio cloud.

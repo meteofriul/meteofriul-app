@@ -1,5 +1,7 @@
 # Mercati e mercatini — prima versione locale
 
+**Catalogazione del 30 ottobre 2026:** [dossier e registro delle fonti](MERCATI_FONTI_CATALOGAZIONE_20261030.md), 51 fonti e 44 schede approfondite sullo stesso ramo Mercati, ora allineato al main verificato. Nuovi riferimenti di ricerca, senza attivazioni nel catalogo né nuove prove runtime.
+
 **Ricerca del 29 ottobre 2026:** [copertura, candidati e dati mancanti](MERCATI_COPERTURA_RICERCA_20261029.md). Individuati 74 candidati di ricerca e sette date future mancanti su quattro schede pubbliche; da qualificare prima dell'inserimento. Catalogo e UI invariati, prova visiva ancora aperta.
 
 **Ripresa del 28 ottobre 2026:** implementazione recuperata nel ramo

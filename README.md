@@ -1,5 +1,7 @@
 # Meteo Friûl
 
+**Mercati, 30 ottobre: catalogazione delle fonti.** Proseguita la ricerca nel ramo `codex/mercati-integration-20261028`, allineato al main verificato: 51 fonti, 44 schede approfondite e 11 nuove candidature. Dieci schede pronte alla revisione editoriale, con limiti espliciti; date puntuali, conflitti e prove storiche conservati nel [dossier e registro](docs/operations/MERCATI_FONTI_CATALOGAZIONE_20261030.md). Nessuna nuova voce attivata nell'app; catalogo, AAB 300038 e Web distribuita invariati. Prova visiva Mercati e revisione FUR aperte.
+
 **Home, 30 ottobre: correzione integrata in main.** «I perché del Friûl» e «Memoria del giorno» condividono dimensione del titolo, metadati e spaziature. Risultato osservato approvato dal proprietario, 50 test locali e CI della [PR 36](https://github.com/meteofriul/meteofriul-app/pull/36) superati; merge `05ec9aa9`, incluso il prerequisito di avvio CAMS. [Modifica, prove e limiti](docs/operations/HOME_EDITORIAL_TYPOGRAPHY_20261030.md). CI di main superata in tutti e tre i job; pacchetti e pubblicazioni applicative invariati.
 
 **Avvio locale, 30 ottobre:** corretto il blocco del launcher dopo le 30 ore CAMS, riconoscendo l'estensione esplicita a 36 ore. 93 asserzioni, preflight cloud e avvio locale superati; frontend 5174 e API 8002 sani. Correzione preparata nel ramo `codex/local-pilot-cams-startup-20261030`. [Diagnosi e prove](docs/operations/LOCAL_PILOT_CAMS_STARTUP_20261030.md). Pacchetti, pubblicazioni e servizi cloud invariati.
