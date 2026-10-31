@@ -632,6 +632,38 @@ class ContractPublisherTests(unittest.TestCase):
             ),
         )
 
+    def test_verified_latest_snapshot_binds_original_generation_during_pointer_race(self):
+        published = self.publish(self.old)
+        original_get = self.store.get
+        changed = []
+
+        def racing_get(key):
+            if key == published.payload_keys[0] and not changed:
+                current = original_get(published.latest_key)
+                changed.append(self.store.compare_and_swap(
+                    published.latest_key, current.body, expected_etag=current.etag,
+                    content_type=current.content_type, metadata=current.metadata,
+                ))
+            return original_get(key)
+
+        self.store.get = racing_get
+        snapshot = self.publisher.read_verified_latest_snapshot(ICON_PROVIDER)
+        self.assertEqual(snapshot.etag, published.latest_etag)
+        self.assertNotEqual(snapshot.etag, changed[0].etag)
+        self.assertEqual(snapshot.document['latest']['source_run_id'], snapshot.manifest['source_run_id'])
+        self.assertIsNone(self.publisher.read_latest_if_etag(ICON_PROVIDER, snapshot.etag))
+
+    def test_verified_latest_snapshot_rejects_missing_body_and_handles_absence(self):
+        self.assertIsNone(self.publisher.read_verified_latest_snapshot(ICON_PROVIDER))
+        published = self.publish(self.old)
+        snapshot = self.publisher.read_verified_latest_snapshot(ICON_PROVIDER)
+        self.assertEqual(snapshot.etag, published.latest_etag)
+        self.assertEqual(snapshot.document, self.publisher.read_verified_latest(ICON_PROVIDER))
+        with self.store.lock:
+            del self.store.objects[published.payload_keys[0]]
+        with self.assertRaises(ContractPublicationVerificationError):
+            self.publisher.read_verified_latest_snapshot(ICON_PROVIDER)
+
     def test_changed_payload_or_manifest_for_same_run_conflicts_immutably(self):
         documents, manifest = self.icon_bundle(self.old)
         result = self.publish(self.old)

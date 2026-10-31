@@ -1,6 +1,6 @@
 import os
 import json
-from datetime import datetime, timezone
+from datetime import datetime, timedelta, timezone
 from pathlib import Path
 from tempfile import TemporaryDirectory
 from unittest import TestCase, main
@@ -362,6 +362,350 @@ class IconRecoveryWorkerTests(TestCase):
         with patch('local_pipeline.icon_checkpoint.read_checkpoint', return_value=CHECKPOINT), \
                 patch('cloud_worker._publish_icon_checkpoint', side_effect=publish), self.assertRaises(RuntimeError):
             _run_icon(self.state, self.data, NOW)
+
+
+class AutomaticIconWorkerTests(TestCase):
+    def setUp(self):
+        from local_pipeline.icon_recovery import FEATURE_FLAG
+        self.temp = TemporaryDirectory()
+        self.addCleanup(self.temp.cleanup)
+        self.state = SQLiteObjectStore(Path(self.temp.name) / 'state.sqlite')
+        self.data = SQLiteObjectStore(Path(self.temp.name) / 'data.sqlite')
+        self.stack = ExitStack()
+        self.addCleanup(self.stack.close)
+        self.stack.enter_context(patch.dict(os.environ, {FEATURE_FLAG: 'true',
+            'CLOUD_RUN_EXECUTION': 'pilot-icon-automatic-one', 'CLOUD_RUN_TASK_ATTEMPT': '0'}))
+        os.environ.pop('PILOT_ICON_RECOVER_RUN_ID', None)
+        self.stack.enter_context(redirect_stdout(StringIO()))
+        self.pointer = None
+        self.checkpoints = {}
+        self.elapsed = 0.0
+        self.stack.enter_context(patch('cloud_worker.monotonic', side_effect=lambda: self.elapsed))
+        self.stack.enter_context(patch.object(PREPARED, 'manifest', create=True, return_value={
+            'run_at': '2026-09-08T00:00:00Z',
+            'freshness': {'usable_until': '2026-09-09T00:00:00Z'},
+        }))
+        self.stack.enter_context(patch('local_pipeline.contract_publisher.ContractV1Publisher.read_verified_latest_snapshot',
+            side_effect=lambda *_: SimpleNamespace(document=self.pointer, manifest=PREPARED.manifest(), etag='fixture-etag')
+                if self.pointer is not None else None))
+        self.stack.enter_context(patch('local_pipeline.contract_publisher.ContractV1Publisher.read_latest_if_etag',
+            side_effect=lambda *_: self.pointer))
+        self.stack.enter_context(patch('local_pipeline.icon_checkpoint.read_checkpoint',
+            side_effect=lambda _state, *, slot, catalog: self.checkpoints.get(slot)))
+        self.stack.enter_context(patch('local_pipeline.icon_checkpoint.save_checkpoint', side_effect=self.save))
+        self.stack.enter_context(patch('local_pipeline.job_entrypoints.prepare_icon_publication', return_value=PREPARED))
+        self.acquisition = self.stack.enter_context(patch('run_pilot.run_outputs', return_value={'source_quality': QUALITY}))
+        self.discovery = self.stack.enter_context(patch('local_pipeline.icon_recovery.discovery', return_value='2026090800'))
+        self.publication = self.stack.enter_context(patch('cloud_worker._publish_icon_checkpoint', side_effect=self.publish))
+
+    def save(self, _state, *, slot, **_kwargs):
+        self.checkpoints[slot] = CHECKPOINT
+        return CHECKPOINT
+
+    def publish(self, frozen, **_kwargs):
+        self.pointer = {'latest': {'source_run_id': frozen.intent.source_run_id},
+                        'previous': None, 'disabled_run_ids': []}
+        return PUBLISHED
+
+    def test_pending_then_recovery_pins_run_and_verifies_publication(self):
+        from local_pipeline.icon_recovery import Recovery
+        self.discovery.side_effect = [None, '2026090800']
+        pending = _run_icon_result(self.state, self.data, NOW)
+        self.assertEqual(pending.status, JobStatus.RETRYABLE_FAILURE)
+        self.assertEqual(pending.metrics['recovery_state'], 'pending')
+        self.assertFalse(pending.metrics['published_pointer_verified'])
+        self.acquisition.assert_not_called()
+        self.assertIsNone(Recovery(self.state, 'fvg').active())
+        # A task retry crossing an hour keeps the already-spent poll.
+        _run_icon_result(self.state, self.data, NOW + timedelta(hours=1))
+        self.discovery.assert_called_once()
+        with patch.dict(os.environ, {'CLOUD_RUN_EXECUTION': 'pilot-icon-automatic-two'}):
+            published = _run_icon_result(self.state, self.data, NOW + timedelta(hours=1))
+        self.assertEqual(published.status, JobStatus.PUBLISHED)
+        self.assertTrue(published.metrics['published_pointer_verified'])
+        self.assertEqual(self.acquisition.call_args.kwargs['run'], '2026090800')
+        self.assertEqual(self.acquisition.call_count, 1)
+        with patch.dict(os.environ, {'CLOUD_RUN_EXECUTION': 'pilot-icon-automatic-three'}):
+            duplicate = _run_icon_result(self.state, self.data, NOW + timedelta(hours=2))
+        self.assertEqual(duplicate.status, JobStatus.NO_OP)
+        self.assertEqual(self.acquisition.call_count, 1)
+
+    def test_complete_checkpoint_resumes_before_unavailable_discovery(self):
+        from local_pipeline.icon_recovery import Recovery
+        Recovery(self.state, 'fvg').begin(None, RUN, '20260908-am', 'pilot-icon-old')
+        self.checkpoints['20260908-am'] = CHECKPOINT
+        self.discovery.side_effect = AssertionError('must not probe')
+        outcome = _run_icon_result(self.state, self.data, NOW + timedelta(hours=3))
+        self.assertEqual(outcome.status, JobStatus.PUBLISHED)
+        self.discovery.assert_not_called()
+        self.acquisition.assert_not_called()
+
+    def test_ambiguous_legacy_claim_cannot_publish_or_acquire(self):
+        self.state.put('state/dispatch/icon/20260908-am.json', b'{}')
+        outcome = _run_icon_result(self.state, self.data, NOW)
+        self.assertEqual(outcome.status, JobStatus.MANUAL_REVIEW)
+        self.assertEqual(outcome.reason_code, 'legacy_acquisition_owner_unresolved')
+        self.discovery.assert_not_called()
+        self.acquisition.assert_not_called()
+        self.publication.assert_not_called()
+
+    def test_expired_checkpoint_never_publishes_or_reacquires(self):
+        from local_pipeline.icon_recovery import Recovery
+        Recovery(self.state, 'fvg').begin(None, RUN, '20260908-am', 'pilot-icon-old')
+        self.checkpoints['20260908-am'] = CHECKPOINT
+        outcome = _run_icon_result(self.state, self.data, NOW + timedelta(days=3))
+        self.assertEqual(outcome.status, JobStatus.MANUAL_REVIEW)
+        self.assertEqual(Recovery(self.state, 'fvg').active().record['phase'], 'manual_review')
+        self.acquisition.assert_not_called()
+        self.discovery.assert_not_called()
+        self.publication.assert_not_called()
+
+    def test_checkpoint_coverage_is_checked_again_immediately_before_pointer_cas(self):
+        from local_pipeline.contract_publisher import ContractV1Publisher
+        from local_pipeline.contract_v1 import load_catalog
+        from local_pipeline.sqlite_object_store import ObjectNotFound
+        from local_pipeline.icon_recovery import Recovery
+        Recovery(self.state, 'fvg').begin(None, RUN, '20260908-am', 'pilot-icon-old')
+        self.checkpoints['20260908-am'] = CHECKPOINT
+        pointer_key = ContractV1Publisher(self.data, load_catalog()).latest_key(ICON_PROVIDER)
+
+        def slow_publication(frozen, *, data, **_kwargs):
+            self.elapsed = 120.0
+            data.compare_and_swap(pointer_key, b'{}', expected_etag=None, content_type='application/json')
+            return self.publish(frozen)
+
+        self.publication.side_effect = slow_publication
+        outcome = _run_icon_result(self.state, self.data, NOW.replace(hour=23, minute=59))
+        self.assertEqual(outcome.status, JobStatus.MANUAL_REVIEW)
+        with self.assertRaises(ObjectNotFound):
+            self.data.get(pointer_key)
+        self.assertIsNone(self.pointer)
+        self.acquisition.assert_not_called()
+        self.discovery.assert_not_called()
+
+
+class AutomaticIconVerificationCacheTests(TestCase):
+    @classmethod
+    def setUpClass(cls):
+        # Reuse the publisher's real 215-town contract fixtures, never mock its
+        # verifier. Generation changes are modeled by the locked memory store.
+        import test_contract_publisher as fixtures
+        from local_pipeline.contract_publisher import ContractV1Publisher
+        fixtures.ContractPublisherTests.setUpClass()
+        cls.catalog = fixtures.ContractPublisherTests.catalog
+        cls.memory_store = fixtures.MemoryObjectStore
+        cls.template = cls.memory_store()
+        cls.old_run = NOW.replace(hour=0)
+        cls.new_run = NOW.replace(hour=12)
+        publisher = ContractV1Publisher(cls.template, cls.catalog)
+        cls.bundles = {}
+        for run in (cls.old_run, cls.new_run):
+            docs, manifest = fixtures.ContractPublisherTests.icon_bundle(run)
+            cls.bundles[manifest['source_run_id']] = (docs, manifest)
+            publication = publisher.publish_run(ICON_PROVIDER, docs, manifest,
+                published_at=(run + timedelta(hours=2)).strftime('%Y-%m-%dT%H:%M:%SZ'))
+            if run == cls.old_run:
+                cls.old_pointer = cls.template.get(publication.latest_key)
+            else:
+                cls.new_pointer = cls.template.get(publication.latest_key)
+        cls.pointer_key = publication.latest_key
+        publisher.revoke_run(ICON_PROVIDER, '20260908T120000Z',
+            published_at='2026-09-08T18:00:00Z', rollback_to_run_id=RUN)
+        cls.revoked_pointer = cls.template.get(cls.pointer_key)
+
+    def setUp(self):
+        from local_pipeline.contract_publisher import ContractV1Publisher
+        from local_pipeline.icon_recovery import FEATURE_FLAG, Recovery
+        self.data, self.state = self.memory_store(), self.memory_store()
+        self.data.objects = dict(self.template.objects)
+        self.data.generations = dict(self.template.generations)
+        self.data.objects[self.pointer_key] = self.old_pointer
+        self.data.generations[self.pointer_key] = 1
+        self.publisher = ContractV1Publisher(self.data, self.catalog)
+        self.controller = Recovery(self.state, 'fvg')
+        owner = self.controller.begin(None, RUN, '20260908-am', 'pilot-icon-previous')
+        self.controller.transition(owner, 'completed')
+        self.stack = ExitStack()
+        self.addCleanup(self.stack.close)
+        self.stack.enter_context(patch.dict(os.environ, {FEATURE_FLAG: 'true',
+            'CLOUD_RUN_EXECUTION': 'pilot-icon-cache-one', 'CLOUD_RUN_TASK_ATTEMPT': '0'}))
+        os.environ.pop('PILOT_ICON_RECOVER_RUN_ID', None)
+        self.stack.enter_context(redirect_stdout(StringIO()))
+        self.stack.enter_context(patch('cloud_worker.monotonic', return_value=0.0))
+        self.discovery = self.stack.enter_context(patch('local_pipeline.icon_recovery.discovery'))
+        self.acquisition = self.stack.enter_context(patch('run_pilot.run_outputs'))
+        self.original_get = self.data.get
+        self.reads = []
+        self.on_get = None
+
+        def counted_get(key):
+            self.reads.append(key)
+            if self.on_get is not None:
+                self.on_get(key)
+            return self.original_get(key)
+
+        self.stack.enter_context(patch.object(self.data, 'get', side_effect=counted_get))
+
+    def municipality_reads(self):
+        return [key for key in self.reads if '/municipalities/' in key]
+
+    def replace_pointer(self, stored):
+        before = self.original_get(self.pointer_key)
+        return self.data.compare_and_swap(self.pointer_key, stored.body, expected_etag=before.etag,
+            content_type=stored.content_type, metadata=stored.metadata)
+
+    def test_no_op_reads_215_bodies_instead_of_three_complete_passes(self):
+        # Baseline equivalent: three legacy strong reads, same actual objects.
+        for _ in range(3):
+            self.publisher.read_verified_latest(ICON_PROVIDER)
+        self.assertEqual(len(self.municipality_reads()), 645)
+        self.reads.clear()
+        outcome = _run_icon_result(self.state, self.data, NOW)
+        self.assertEqual(outcome.status, JobStatus.NO_OP)
+        self.assertEqual(len(self.municipality_reads()), 215)
+        self.discovery.assert_not_called()
+        self.acquisition.assert_not_called()
+
+    def test_verification_cache_does_not_survive_next_invocation(self):
+        self.assertEqual(_run_icon_result(self.state, self.data, NOW).status, JobStatus.NO_OP)
+        self.reads.clear()
+        self.assertEqual(_run_icon_result(self.state, self.data, NOW).status, JobStatus.NO_OP)
+        self.assertEqual(len(self.municipality_reads()), 215)
+
+    def test_same_document_new_generation_requires_complete_verification(self):
+        def change_on_second_pointer_read(key):
+            if key == self.pointer_key and self.reads.count(key) == 2:
+                self.on_get = None
+                self.replace_pointer(self.old_pointer)
+        self.on_get = change_on_second_pointer_read
+        self.assertEqual(_run_icon_result(self.state, self.data, NOW).status, JobStatus.NO_OP)
+        self.assertEqual(len(self.municipality_reads()), 430)
+
+    def test_advanced_pointer_during_verification_is_not_given_old_proof(self):
+        def advance_during_first_body(key):
+            if '/municipalities/' in key:
+                self.on_get = None
+                self.replace_pointer(self.new_pointer)
+        self.on_get = advance_during_first_body
+        # The original execution ticket still refers to the completed AM cycle.
+        self.controller.execution_window(NOW, 'pilot-icon-cache-one')
+        outcome = _run_icon_result(self.state, self.data, NOW.replace(hour=18))
+        self.assertEqual(outcome.status, JobStatus.NO_OP)
+        self.assertEqual(len(self.municipality_reads()), 430)
+        self.assertEqual(sum('/20260908T120000Z/' in key for key in self.municipality_reads()), 215)
+
+    def test_corrupt_body_is_detected_at_start_and_after_generation_change(self):
+        from local_pipeline.sqlite_object_store import StoredObject
+        key = self.publisher.payload_key(ICON_PROVIDER, RUN, self.catalog.istat_codes[0])
+        original = self.original_get(key)
+        self.data.objects[key] = StoredObject(b'{}', original.head)
+        outcome = _run_icon_result(self.state, self.data, NOW)
+        self.assertNotIn(outcome.status, (JobStatus.PUBLISHED, JobStatus.NO_OP))
+        self.data.objects[key] = original
+        self.reads.clear()
+
+        def corrupt_after_snapshot(key_read):
+            if key_read == self.pointer_key and self.reads.count(key_read) == 2:
+                self.on_get = None
+                self.replace_pointer(self.old_pointer)
+                self.data.objects[key] = StoredObject(b'{}', original.head)
+        self.on_get = corrupt_after_snapshot
+        outcome = _run_icon_result(self.state, self.data, NOW)
+        self.assertNotIn(outcome.status, (JobStatus.PUBLISHED, JobStatus.NO_OP))
+        self.assertGreater(len(self.municipality_reads()), 215)
+        self.acquisition.assert_not_called()
+
+    def test_expired_cached_publication_never_reports_no_op_success(self):
+        self.controller.execution_window(NOW, 'pilot-icon-cache-one')
+        outcome = _run_icon_result(self.state, self.data, NOW + timedelta(days=3))
+        self.assertEqual(outcome.status, JobStatus.MANUAL_REVIEW)
+        self.assertEqual(outcome.reason_code, 'publication_current_coverage_expired')
+        self.assertEqual(len(self.municipality_reads()), 215)
+
+    def test_rollback_and_revocation_force_full_validation_and_reject_completed_cycle(self):
+        self.replace_pointer(self.new_pointer)
+        owner = self.controller.begin(self.controller.active(), '20260908T120000Z', '20260908-pm', 'pilot-icon-pm')
+        self.controller.transition(owner, 'completed')
+
+        def rollback_on_second_pointer_read(key):
+            if key == self.pointer_key and self.reads.count(key) == 2:
+                self.on_get = None
+                self.publisher.revoke_run(ICON_PROVIDER, '20260908T120000Z',
+                    published_at='2026-09-08T18:00:00Z', rollback_to_run_id=RUN)
+                self.reads.clear()  # Count the verification after the administrative operation.
+        self.on_get = rollback_on_second_pointer_read
+        outcome = _run_icon_result(self.state, self.data, NOW.replace(hour=18))
+        self.assertEqual(outcome.status, JobStatus.MANUAL_REVIEW)
+        self.assertEqual(outcome.reason_code, 'completed_publication_not_verified')
+        self.assertEqual(len(self.municipality_reads()), 215)
+        self.acquisition.assert_not_called()
+
+    def current_checkpoint(self):
+        from local_pipeline.job_entrypoints import PreparedIconPublication
+        from local_pipeline.contract_v1 import canonical_json_bytes
+        import hashlib
+        owner = self.controller.active()
+        self.controller.replace(owner, {**owner.record, 'phase': 'checkpointed'})
+        docs, manifest = self.bundles[RUN]
+        body = canonical_json_bytes(manifest)
+        prepared = PreparedIconPublication(RUN, hashlib.sha256(body).hexdigest(), docs, body)
+        return SimpleNamespace(prepared=prepared, intent=SimpleNamespace(source_run_id=RUN))
+
+    def test_publication_invalidates_cache_even_when_pointer_generation_is_unchanged(self):
+        # Simulate interrupted completion after immutable publication, so the
+        # checkpoint identifies the already-current run and publisher is a no-op.
+        frozen = self.current_checkpoint()
+        with patch('local_pipeline.icon_checkpoint.read_checkpoint', return_value=frozen), \
+                patch('cloud_worker._publish_icon_checkpoint', return_value=PUBLISHED):
+            outcome = _run_icon_result(self.state, self.data, NOW)
+        self.assertEqual(outcome.status, JobStatus.PUBLISHED)
+        self.assertEqual(len(self.municipality_reads()), 430)
+        self.discovery.assert_not_called()
+        self.acquisition.assert_not_called()
+
+    def test_second_change_during_full_revalidation_cannot_reuse_superseded_proof(self):
+        def change_twice(key):
+            if key == self.pointer_key and self.reads.count(key) == 2:
+                self.replace_pointer(self.new_pointer)
+            elif '/20260908T120000Z/municipalities/' in key:
+                self.on_get = None
+                self.replace_pointer(self.revoked_pointer)
+        self.on_get = change_twice
+        self.controller.execution_window(NOW, 'pilot-icon-cache-one')
+        outcome = _run_icon_result(self.state, self.data, NOW.replace(hour=18))
+        self.assertEqual(outcome.status, JobStatus.MANUAL_REVIEW)
+        self.assertEqual(outcome.reason_code, 'completed_publication_not_verified')
+        self.assertEqual(len(self.municipality_reads()), 430)
+
+    def test_generation_change_during_postpublication_readback_cannot_report_success(self):
+        frozen = self.current_checkpoint()
+
+        def change_during_final_readback(key):
+            if '/municipalities/' in key and len(self.municipality_reads()) > 215:
+                self.on_get = None
+                self.replace_pointer(self.old_pointer)
+        self.on_get = change_during_final_readback
+        with patch('local_pipeline.icon_checkpoint.read_checkpoint', return_value=frozen), \
+                patch('cloud_worker._publish_icon_checkpoint', return_value=PUBLISHED):
+            outcome = _run_icon_result(self.state, self.data, NOW)
+        self.assertEqual(outcome.status, JobStatus.MANUAL_REVIEW)
+        self.assertEqual(outcome.reason_code, 'publication_readback_failed')
+        self.assertEqual(len(self.municipality_reads()), 430)
+
+    def test_corrupt_body_after_publication_cannot_use_prepublication_proof(self):
+        from local_pipeline.sqlite_object_store import StoredObject
+        frozen = self.current_checkpoint()
+        key = self.publisher.payload_key(ICON_PROVIDER, RUN, self.catalog.istat_codes[0])
+
+        def corrupt_after_publish(*_args, **_kwargs):
+            original = self.original_get(key)
+            self.data.objects[key] = StoredObject(b'{}', original.head)
+            return PUBLISHED
+        with patch('local_pipeline.icon_checkpoint.read_checkpoint', return_value=frozen), \
+                patch('cloud_worker._publish_icon_checkpoint', side_effect=corrupt_after_publish):
+            outcome = _run_icon_result(self.state, self.data, NOW)
+        self.assertNotIn(outcome.status, (JobStatus.PUBLISHED, JobStatus.NO_OP))
+        self.assertGreater(len(self.municipality_reads()), 215)
 
 
 if __name__ == "__main__":
