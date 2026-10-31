@@ -1,5 +1,7 @@
 # Recupero automatico ICON — preparazione locale del 31 ottobre 2026
 
+**Aggiornamento successivo:** il proprietario ha autorizzato la distribuzione, completata sui due produttori ICON. [Verbale di deploy, immagini e prove reali](ICON_AUTOMATIC_RECOVERY_DEPLOY_20261031.md). Il testo seguente conserva lo stato e le autorizzazioni della precedente consegna del candidato.
+
 Ramo `codex/icon-automatic-recovery-20261031`, partito da `main`
 `e3527f73b19e13aa95b4b09bf04c1049eca91be3` in un worktree isolato.
 Percorso locale, relativo alla radice canonica:
