@@ -1,5 +1,7 @@
 # Stato release 0.1.15 e lavoro salvato — aggiornamento sorgenti del 24 ottobre 2026
 
+**Ripresa, 31 ottobre: salvataggi locali verificati.** Main locale/remoto allineati in `e3527f73`; nessuna promozione necessaria per conservare il lavoro Mercati. Pannello esterno salvato nel commit locale `7e2b2fc`, 165 test e lint PASS; archivio locale alla revisione 2 con 59 pratiche e revisione pubblica 0. [Inventario e limiti](RIPRESA_E_SALVATAGGI_20261031.md). Raggio nelle Impostazioni ancora separato; nessun push, merge, nuova build o pubblicazione. App e servizi non attivati da questo controllo.
+
 **Mercati, 30 ottobre: attivazione online sospesa dal proprietario.** Build verificata, identità runtime predisposta e archivio Firestore riservato inizializzato alla revisione 0; nessun servizio o pannello aggiornato pubblicato. Il comando di distribuzione è stato rifiutato prima dell'esecuzione. Permesso operatore e trasferimento delle bozze locali non eseguiti. Verifiche locali: 40 test backend, 8 test client, lint e compilazione Python. [Stato e limite operativo](MERCATI_ATTIVAZIONE_ONLINE_20261030.md). Lavoro in anteprima locale; nuova indicazione esplicita necessaria per la messa online. Release Android/Web e main invariati.
 
 **Mercati, 30 ottobre: preparazione operativa locale.** Salvate 59 bozze (13/46), con 19 aggiornamenti e 40 nuove identità, nella revisione amministrativa 1. Snapshot pubblico 0 invariato, nessuna approvazione editoriale automatica. [Evidenza](MERCATI_BOZZE_PREPARATE_20261030.md). Main, servizi online, Web e AAB invariati.
