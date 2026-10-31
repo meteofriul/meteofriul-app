@@ -1,0 +1,460 @@
+{
+  "status": "READ_ONLY_AUDIT_ESTIMATE_NOT_INVOICE",
+  "window_start": "2026-10-24T16:47:51.817671Z",
+  "window_end": "2026-10-31T16:47:51.817671Z",
+  "request_count_window_start": "2026-10-24T16:50:56.993272Z",
+  "request_count_window_end": "2026-10-31T16:50:56.993272Z",
+  "projection_days": 30,
+  "rates_usd": {
+    "job_vcpu_second": 1.8e-05,
+    "job_gib_second": 2e-06,
+    "service_vcpu_second": 2.4e-05,
+    "service_gib_second": 2.5e-06,
+    "service_request": 4.0000000000000003e-07,
+    "storage_class_a_per1000": 0.005,
+    "storage_class_b_per1000": 0.0004,
+    "storage_regional_gib_month": 0.02,
+    "storage_us_multiregion_gib_month": 0.026,
+    "registry_gib_month": 0.1
+  },
+  "pricing_sources": [
+    "https://cloud.google.com/run/pricing",
+    "https://docs.cloud.google.com/run/docs/locations",
+    "https://cloud.google.com/scheduler/pricing",
+    "https://cloud.google.com/storage/pricing",
+    "https://cloud.google.com/artifact-registry/pricing",
+    "https://cloud.google.com/products/observability/pricing",
+    "https://cloud.google.com/firestore/pricing"
+  ],
+  "jobs": [
+    {
+      "job": "meteofriul-icon2i-freshness",
+      "region": "europe-west1",
+      "executions": 336,
+      "attempts": 336,
+      "cpu": 1.0,
+      "gib": 0.5,
+      "metric_instance_seconds_7d": 6071.278564100468,
+      "metric_cpu_seconds_7d": 5925.135180951981,
+      "metric_gib_seconds_7d": 2945.299777093923,
+      "minimum_adjusted_seconds_7d_low": 20160,
+      "minimum_adjusted_seconds_7d_high": 26231.278564100467,
+      "projected_30d_usd_low": 1.6416000000000002,
+      "projected_30d_usd_high": 2.1359755402196092
+    },
+    {
+      "job": "meteofriul-local-notice",
+      "region": "europe-west1",
+      "executions": 168,
+      "attempts": 168,
+      "cpu": 1.0,
+      "gib": 0.5,
+      "metric_instance_seconds_7d": 4666.095069431804,
+      "metric_cpu_seconds_7d": 4387.455735272797,
+      "metric_gib_seconds_7d": 2187.023348898986,
+      "minimum_adjusted_seconds_7d_low": 10080,
+      "minimum_adjusted_seconds_7d_high": 14746.095069431805,
+      "projected_30d_usd_low": 0.8208000000000001,
+      "projected_30d_usd_high": 1.2007534556537327
+    },
+    {
+      "job": "meteofriul-national-official-alert-send",
+      "region": "europe-west1",
+      "executions": 85,
+      "attempts": 85,
+      "cpu": 1.0,
+      "gib": 0.5,
+      "metric_instance_seconds_7d": 900.3804674308424,
+      "metric_cpu_seconds_7d": 887.6097916390476,
+      "metric_gib_seconds_7d": 443.8466624123403,
+      "minimum_adjusted_seconds_7d_low": 5100,
+      "minimum_adjusted_seconds_7d_high": 6000.380467430842,
+      "projected_30d_usd_low": 0.41528571428571426,
+      "projected_30d_usd_high": 0.48860240949079714
+    },
+    {
+      "job": "meteofriul-national-official-alert-sync",
+      "region": "europe-west1",
+      "executions": 84,
+      "attempts": 84,
+      "cpu": 1.0,
+      "gib": 0.5,
+      "metric_instance_seconds_7d": 655.6638054952826,
+      "metric_cpu_seconds_7d": 641.3148582213727,
+      "metric_gib_seconds_7d": 320.70770466911677,
+      "minimum_adjusted_seconds_7d_low": 5040,
+      "minimum_adjusted_seconds_7d_high": 5695.663805495283,
+      "projected_30d_usd_low": 0.41040000000000004,
+      "projected_30d_usd_high": 0.46378976701890157
+    },
+    {
+      "job": "meteofriul-official-alert-sync",
+      "region": "europe-west8",
+      "executions": 84,
+      "attempts": 84,
+      "cpu": 1.0,
+      "gib": 0.5,
+      "metric_instance_seconds_7d": 1025.9266681023712,
+      "metric_cpu_seconds_7d": 1025.0341524568757,
+      "metric_gib_seconds_7d": 512.3869389098995,
+      "minimum_adjusted_seconds_7d_low": 5040,
+      "minimum_adjusted_seconds_7d_high": 6065.926668102371,
+      "projected_30d_usd_low": 0.41040000000000004,
+      "projected_30d_usd_high": 0.49393974297405024
+    },
+    {
+      "job": "meteofriul-cams",
+      "region": "europe-west1",
+      "executions": 35,
+      "attempts": 35,
+      "cpu": 1.0,
+      "gib": 1.0,
+      "metric_instance_seconds_7d": 4152.774924059858,
+      "metric_cpu_seconds_7d": 3950.7658100543895,
+      "metric_gib_seconds_7d": 3952.2659467519024,
+      "minimum_adjusted_seconds_7d_low": 4152.774924059858,
+      "minimum_adjusted_seconds_7d_high": 6252.774924059858,
+      "projected_30d_usd_low": 0.3559521363479878,
+      "projected_30d_usd_high": 0.5359521363479878
+    },
+    {
+      "job": "meteofriul-events-refresh",
+      "region": "europe-west1",
+      "executions": 9,
+      "attempts": 9,
+      "cpu": 1.0,
+      "gib": 1.0,
+      "metric_instance_seconds_7d": 3777.685147474926,
+      "metric_cpu_seconds_7d": 3719.4459983398638,
+      "metric_gib_seconds_7d": 3719.445592453252,
+      "minimum_adjusted_seconds_7d_low": 3777.685147474926,
+      "minimum_adjusted_seconds_7d_high": 4317.6851474749255,
+      "projected_30d_usd_low": 0.3238015840692794,
+      "projected_30d_usd_high": 0.37008729835499365
+    },
+    {
+      "job": "meteofriul-national-icon",
+      "region": "europe-west1",
+      "executions": 15,
+      "attempts": 15,
+      "cpu": 1.0,
+      "gib": 2.0,
+      "metric_instance_seconds_7d": 2528.4770454269487,
+      "metric_cpu_seconds_7d": 2442.553219253792,
+      "metric_gib_seconds_7d": 4888.806649066783,
+      "minimum_adjusted_seconds_7d_low": 2528.4770454269487,
+      "minimum_adjusted_seconds_7d_high": 3428.4770454269487,
+      "projected_30d_usd_low": 0.2383992642831123,
+      "projected_30d_usd_high": 0.32325640714025516
+    },
+    {
+      "job": "meteofriul-icon",
+      "region": "europe-west1",
+      "executions": 15,
+      "attempts": 18,
+      "cpu": 1.0,
+      "gib": 1.0,
+      "metric_instance_seconds_7d": 2287.237876585266,
+      "metric_cpu_seconds_7d": 2177.6129178802034,
+      "metric_gib_seconds_7d": 2142.150868212312,
+      "minimum_adjusted_seconds_7d_low": 2287.237876585266,
+      "minimum_adjusted_seconds_7d_high": 3367.237876585266,
+      "projected_30d_usd_low": 0.19604896085016565,
+      "projected_30d_usd_high": 0.28862038942159424
+    },
+    {
+      "job": "meteofriul-evening-forecast",
+      "region": "europe-west1",
+      "executions": 7,
+      "attempts": 7,
+      "cpu": 1.0,
+      "gib": 0.5,
+      "metric_instance_seconds_7d": 385.89154186106117,
+      "metric_cpu_seconds_7d": 385.8915407719241,
+      "metric_gib_seconds_7d": 176.2728372666624,
+      "minimum_adjusted_seconds_7d_low": 420,
+      "minimum_adjusted_seconds_7d_high": 805.8915418610611,
+      "projected_30d_usd_low": 0.0342,
+      "projected_30d_usd_high": 0.06562259698011498
+    },
+    {
+      "job": "meteofriul-morning-forecast",
+      "region": "europe-west1",
+      "executions": 7,
+      "attempts": 7,
+      "cpu": 1.0,
+      "gib": 0.5,
+      "metric_instance_seconds_7d": 364.3001963139317,
+      "metric_cpu_seconds_7d": 326.4545429413696,
+      "metric_gib_seconds_7d": 163.22727328028662,
+      "minimum_adjusted_seconds_7d_low": 420,
+      "minimum_adjusted_seconds_7d_high": 784.3001963139317,
+      "projected_30d_usd_low": 0.0342,
+      "projected_30d_usd_high": 0.06386444455699158
+    }
+  ],
+  "services": [
+    {
+      "service": "meteofriul-api",
+      "region": "europe-west1",
+      "cpu_seconds_7d": 8546.09175978948,
+      "gib_seconds_7d": 2092.315225836468,
+      "instance_seconds_7d": 4180.467451159811,
+      "requests_7d": 3361.0,
+      "projected_30d_allocation_usd": 0.9072059584265945
+    },
+    {
+      "service": "meteofriul-weather",
+      "region": "europe-west1",
+      "cpu_seconds_7d": 6243.100360685543,
+      "gib_seconds_7d": 1575.056227224853,
+      "instance_seconds_7d": 3150.112413745046,
+      "requests_7d": 10201.0,
+      "projected_30d_allocation_usd": 0.6765104966764937
+    },
+    {
+      "service": "meteofriul-national-weather",
+      "region": "europe-west1",
+      "cpu_seconds_7d": 5761.8337210749705,
+      "gib_seconds_7d": 1993.9100839835294,
+      "instance_seconds_7d": 1982.9798332695905,
+      "requests_7d": 679.0,
+      "projected_30d_allocation_usd": 0.6151730764961062
+    },
+    {
+      "service": "meteofriul-community",
+      "region": "europe-west1",
+      "cpu_seconds_7d": 4058.1154634385166,
+      "gib_seconds_7d": 790.9122780085172,
+      "instance_seconds_7d": 1570.8287236174663,
+      "requests_7d": 527.0,
+      "projected_30d_allocation_usd": 0.4267836506466243
+    },
+    {
+      "service": "meteofriul-events",
+      "region": "europe-west1",
+      "cpu_seconds_7d": 2448.947791755686,
+      "gib_seconds_7d": 281.6288953568373,
+      "instance_seconds_7d": 1126.515579214407,
+      "requests_7d": 2014.0,
+      "projected_30d_allocation_usd": 0.2583617967451224
+    },
+    {
+      "service": "meteofriul-icon2i-freshness-dispatch",
+      "region": "europe-west1",
+      "cpu_seconds_7d": 1863.2999999999997,
+      "gib_seconds_7d": 465.825,
+      "instance_seconds_7d": 1863.2999999999997,
+      "requests_7d": 336.0,
+      "projected_30d_allocation_usd": 0.1972206964285714
+    }
+  ],
+  "storage": [
+    {
+      "bucket": "meteo-friul-community",
+      "location": "europe-west1",
+      "type": "live-object",
+      "storage_class": "REGIONAL",
+      "snapshot_window_end": "2026-10-31T16:50:56.993272Z",
+      "gib": 0.0035299668088555336,
+      "constant_snapshot_30d_usd": 7.059933617711068e-05
+    },
+    {
+      "bucket": "meteo-friul-weather-data",
+      "location": "europe-west1",
+      "type": "live-object",
+      "storage_class": "REGIONAL",
+      "snapshot_window_end": "2026-10-31T16:50:56.993272Z",
+      "gib": 13.739781385287642,
+      "constant_snapshot_30d_usd": 0.27479562770575283
+    },
+    {
+      "bucket": "meteo-friul-weather-data",
+      "location": "europe-west1",
+      "type": "soft-deleted-object",
+      "storage_class": "REGIONAL",
+      "snapshot_window_end": "2026-10-31T16:50:56.993272Z",
+      "gib": 0.027590101584792137,
+      "constant_snapshot_30d_usd": 0.0005518020316958428
+    },
+    {
+      "bucket": "meteo-friul-weather-state",
+      "location": "europe-west1",
+      "type": "live-object",
+      "storage_class": "REGIONAL",
+      "snapshot_window_end": "2026-10-31T16:50:56.993272Z",
+      "gib": 5.288647992536426,
+      "constant_snapshot_30d_usd": 0.10577295985072852
+    },
+    {
+      "bucket": "meteo-friul-weather-state",
+      "location": "europe-west1",
+      "type": "soft-deleted-object",
+      "storage_class": "REGIONAL",
+      "snapshot_window_end": "2026-10-31T16:50:56.993272Z",
+      "gib": 0.015429282560944557,
+      "constant_snapshot_30d_usd": 0.00030858565121889115
+    },
+    {
+      "bucket": "meteo-friul.firebasestorage.app",
+      "location": "europe-west1",
+      "type": "live-object",
+      "storage_class": "REGIONAL",
+      "snapshot_window_end": "2026-10-31T16:50:56.993272Z",
+      "gib": 0.00010341685265302658,
+      "constant_snapshot_30d_usd": 2.0683370530605317e-06
+    },
+    {
+      "bucket": "meteo-friul_cloudbuild",
+      "location": "us",
+      "type": "live-object",
+      "storage_class": "MULTI_REGIONAL",
+      "snapshot_window_end": "2026-10-31T16:50:56.993272Z",
+      "gib": 2.940953364595771,
+      "constant_snapshot_30d_usd": 0.07646478747949004
+    },
+    {
+      "bucket": "run-sources-meteo-friul-europe-west1",
+      "location": "europe-west1",
+      "type": "live-object",
+      "storage_class": "REGIONAL",
+      "snapshot_window_end": "2026-10-31T16:50:56.993272Z",
+      "gib": 4.316772094927728,
+      "constant_snapshot_30d_usd": 0.08633544189855456
+    },
+    {
+      "bucket": "run-sources-meteo-friul-europe-west1",
+      "location": "europe-west1",
+      "type": "soft-deleted-object",
+      "storage_class": "REGIONAL",
+      "snapshot_window_end": "2026-10-29T16:50:56.993272Z",
+      "gib": 0.0,
+      "constant_snapshot_30d_usd": 0.0
+    }
+  ],
+  "storage_operations": {
+    "successful_methods_7d": {
+      "ReadObject": 85100.0,
+      "WriteObject": 23510.0,
+      "GetBucketStorageLayout": 1.0,
+      "GetIamPolicy": 1.0,
+      "GetObjectMetadata": 130026.0,
+      "ListObjects": 1549.0,
+      "GetBucketMetadata": 6.0
+    },
+    "other_response_counts_7d": {
+      "PERMISSION_DENIED": 1468.0,
+      "NOT_FOUND": 274.0,
+      "FAILED_PRECONDITION": 3.0,
+      "RESOURCE_EXHAUSTED": 6.0,
+      "UNAUTHENTICATED": 6.0
+    },
+    "classified_a_7d": 25059.0,
+    "classified_b_7d": 215133.0,
+    "unpriced_successful_methods": {
+      "GetBucketStorageLayout": 1.0
+    },
+    "projected_30d_known_successful_ops_usd": 0.9057780000000002,
+    "note": "Indicative single-region Standard rates. API counts are not billing SKU counts; failed requests, retries, other operation classes and multi-region Class A differences are not fully priced."
+  },
+  "totals": {
+    "job_compute_30d_usd_low": 4.881087659836259,
+    "job_compute_30d_usd_high": 6.4304641881590285,
+    "service_compute_allocation_30d_usd": 3.0812556754195124,
+    "storage_snapshot_gib": 26.332807605154812,
+    "storage_constant_snapshot_30d_usd": 0.5443018722906708,
+    "registry_snapshot_gib": 3.9539947658777237,
+    "registry_constant_snapshot_month_usd_before_free": 0.3953994765877724,
+    "storage_known_success_ops_30d_usd": 0.9057780000000002,
+    "scheduler_31d_usd_before_free": 1.1,
+    "scheduler_31d_usd_if_3_free_available": 0.8,
+    "partial_reference_sum_low": 10.907822684134215,
+    "partial_reference_sum_high": 12.457199212456985
+  },
+  "additional_icon_scenarios": [
+    {
+      "assumed_seconds_per_added_task": 60,
+      "additional_tasks_30d": 360,
+      "additional_compute_30d_usd": 0.45360000000000006
+    },
+    {
+      "assumed_seconds_per_added_task": 180,
+      "additional_tasks_30d": 360,
+      "additional_compute_30d_usd": 1.3608000000000002
+    },
+    {
+      "assumed_seconds_per_added_task": 300,
+      "additional_tasks_30d": 360,
+      "additional_compute_30d_usd": 2.2680000000000002
+    }
+  ],
+  "month_to_date_misc_counts": {
+    "logging.googleapis.com/billing/bytes_ingested": 152481913.0,
+    "firestore.googleapis.com/document/read_count": 112212.0,
+    "firestore.googleapis.com/document/write_count": 14867.0
+  },
+  "month_to_date_traffic_gib": {
+    "run.googleapis.com/container/network/received_bytes_count": {
+      "google": 36.87443283572793,
+      "internet": 137.42449866328388,
+      "private": 0.0
+    },
+    "run.googleapis.com/container/network/sent_bytes_count": {
+      "google": 12.198851235210896,
+      "internet": 2.067270833067596,
+      "private": 0.0
+    },
+    "storage.googleapis.com/network/sent_bytes_count": {
+      "destination_not_available": 51.16196747869253
+    }
+  },
+  "limitations": [
+    "Amounts are USD list-price models before credits, shared free quotas, negotiated discounts, tax and currency conversion; not billed amounts.",
+    "Billing API is disabled and no BigQuery datasets were discovered in this project. Billing export in another project/account was not audited. Browser control was unavailable. No API was enabled.",
+    "Seven complete aligned Monitoring windows, not local calendar days. Collection/metric lag and boundaries may slightly differ from execution metadata.",
+    "HTTP request-count series uses its own seven complete aligned windows, shifted approximately three minutes from the compute window; only that small request-price component uses the shifted window.",
+    "Job bounds model one-minute minimum per attempt using observed instance seconds S: max(S,60A) through S+60A. This assumes telemetry represents all runtimes in the interval. Resource limits were constant across observed executions.",
+    "Service CPU and memory allocation metrics already include resource quantities; no second multiplication. Request billing mode observed on latest templates. Idle/revision history and invoice reconciliation not fully verified.",
+    "Storage amount uses latest daily maximum snapshots including soft deletes, extrapolated at constant size, not byte-hour invoice integration. No full cost assigned to network destination, Cloud Build, vulnerability scans, Firebase Hosting, CI or external providers.",
+    "Do not treat partial reference sum as project total, spending cap or actual monthly invoice. Scheduler reference is 31 days while workload projection uses 30 days.",
+    "No-GRIB added task scenarios assume each task fits the stated duration, no task retries, no extra publication or changed source workload; Storage/network excluded."
+  ],
+  "evidence_hashes": [
+    {
+      "path": "cloud-inventory.json",
+      "sha256": "4c034b0b3da86c90b63e542f3588e4826ff5c2f659b067fb3ee7e7e5f351cb7b"
+    },
+    {
+      "path": "extra-usage.json",
+      "sha256": "cbc9a897b05ca2b268dcd5ecd9ffc9dea9dca32c3ab40e6ea6047b5acd0d00e2"
+    },
+    {
+      "path": "job-inventory-analysis.json",
+      "sha256": "c66bfc447e2e3e1b51b83298f0e518e6c1b611dcb4fda396d9113bd78320b464"
+    },
+    {
+      "path": "metric-descriptors.json",
+      "sha256": "711fd32de6a55850c995b692ce049ba50a7055b93333d2f5be7dc8ebc0060d33"
+    },
+    {
+      "path": "pricing-sources.json",
+      "sha256": "8d6b542c48f87e5efffbcf9d77733d9d99385139b1d727a7b87becd5a4571073"
+    },
+    {
+      "path": "recent-executions.json",
+      "sha256": "3a7c14f2b37d8a7e4d79dd5d7024e3a7153a7e6c4bfcff93038246ee214f5278"
+    },
+    {
+      "path": "registry-inventory.json",
+      "sha256": "9894c6fb5e91b73f4ad60980698d02ade6bc8b8bfba0a71c8998474259c29fc3"
+    },
+    {
+      "path": "retried-tasks.json",
+      "sha256": "bd2781f08e0ab497710cd1a0a4720a3edb6ed0667e5bae1ba0c2c818d523a13e"
+    },
+    {
+      "path": "usage-metrics.json",
+      "sha256": "6cde44df6048c8965cdd2976c5cff2b86d8ab5fc646f3a1f85afa78673c6cfd6"
+    }
+  ]
+}

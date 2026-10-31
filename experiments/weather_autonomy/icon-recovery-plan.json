@@ -1,0 +1,84 @@
+{
+  "schema_version": 1,
+  "status": "LOCAL_REVIEW_ONLY_NOT_APPLIED",
+  "project": "meteo-friul",
+  "region": "europe-west1",
+  "configuration_baseline_observed_at": "2026-10-31T15:20:50.685133Z",
+  "feature": {
+    "environment_variable": "WEATHER_ICON_AUTOMATIC_RECOVERY_ENABLED",
+    "enabled_value": "true",
+    "default_enabled": false
+  },
+  "schedule": {
+    "time_zone": "Etc/UTC",
+    "current_cron": "0 6,18 * * *",
+    "proposed_cron": "0 6,7,8,10,18,19,20,22 * * *",
+    "base_hours_utc": [6, 18],
+    "offsets_hours": [0, 1, 2, 4],
+    "hours_utc": [6, 7, 8, 10, 18, 19, 20, 22],
+    "scheduler_retry_count": 0
+  },
+  "products": [
+    {
+      "id": "fvg",
+      "cloud_run_job": "meteofriul-icon",
+      "cloud_scheduler_job": "meteofriul-icon-refresh",
+      "build_definition": "Dockerfile.pilot",
+      "task_timeout_seconds": 900,
+      "cloud_run_max_retries": 2
+    },
+    {
+      "id": "national",
+      "cloud_run_job": "meteofriul-national-icon",
+      "cloud_scheduler_job": "meteofriul-national-icon-refresh",
+      "build_definition": "Dockerfile.national-pilot",
+      "task_timeout_seconds": 1800,
+      "cloud_run_max_retries": 0
+    }
+  ],
+  "budget": {
+    "current_scheduled_starts_per_day": 4,
+    "proposed_scheduled_starts_per_day": 16,
+    "additional_scheduled_starts_per_day": 12,
+    "max_discovery_attempts_per_ticket": 2,
+    "max_complete_acquisitions_per_product_cycle": 1,
+    "max_scheduled_task_attempts_per_day_including_platform_retries": 32,
+    "duplicates_do_not_repeat_discovery_or_acquisition": true,
+    "monetary_cost_measured": false,
+    "notes": "Scheduled starts are not a cap on platform redelivery. Durable tickets bound useful work, but duplicate launches and cold starts still incur cost. Measure before activation; no price estimate is claimed."
+  },
+  "activation": {
+    "requires_separate_owner_authorization": true,
+    "new_immutable_images_required": true,
+    "candidate_commit_required": true,
+    "quiescent_legacy_executions_required": true,
+    "mixed_old_new_workers_allowed": false,
+    "legacy_claim_deletion_allowed": false,
+    "automatic_claim_takeover_allowed": false,
+    "full_environment_replacement_allowed": false,
+    "worker_cloud_run_read_permissions_required": false,
+    "approved_steps": [],
+    "proposed_order": [
+      "verify project, job configuration, Scheduler targets and retry policies",
+      "review tests, immutable image digests, cost and legacy state per product",
+      "review existing failure alerts against pending source statuses; preserve freshness checks",
+      "establish quiescence without overlapping legacy and opt-in executions",
+      "update only the reviewed worker image and explicit feature flag per product",
+      "update the existing Scheduler cron only after worker readiness is verified",
+      "verify published pointer, manifest, data samples and freshness monitoring"
+    ]
+  },
+  "rollback": {
+    "requires_separate_owner_authorization": true,
+    "quiescence_and_state_review_required": true,
+    "restore_existing_schedule": "0 6,18 * * *",
+    "preserve_last_verified_publication": true,
+    "delete_claims_or_checkpoints": false
+  },
+  "app_build_required": false,
+  "cloud_changes_applied": false,
+  "references": [
+    "https://docs.cloud.google.com/scheduler/docs/configuring/cron-job-schedules",
+    "https://docs.cloud.google.com/scheduler/docs/overview"
+  ]
+}

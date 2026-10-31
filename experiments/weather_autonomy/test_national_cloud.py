@@ -261,6 +261,60 @@ class CloudNationalTests(unittest.TestCase):
                 run="2026092000", generated_at="2026-09-20T18:00:00Z", now=NOW)
         self.assertEqual(mapping, {"T_2M": {"sha256": "a" * 64}})
 
+    def test_automatic_pending_recovers_pinned_cycle_and_deduplicates(self):
+        from local_pipeline.icon_recovery import FEATURE_FLAG, Recovery
+        bundle = sample_bundle(hour=12)
+        acquire = Mock(return_value=(bundle, {"fixture": "mapping"}))
+        discover = Mock(side_effect=[None, '2026092012'])
+        points = {'artifact_sha256': 'c' * 64}
+        with patch.dict(os.environ, {FEATURE_FLAG: 'true'}):
+            pending = worker.run_once(self.state, self.data, self.catalog, points,
+                now=NOW, execution='pilot-national-icon-one', acquire=acquire, discover=discover)
+            self.assertEqual(pending['status'], 'pending')
+            self.assertIsNone(Recovery(self.state, 'national').active())
+            acquire.assert_not_called()
+            recovered = worker.run_once(self.state, self.data, self.catalog, points,
+                now=NOW + timedelta(hours=1), execution='pilot-national-icon-two', acquire=acquire, discover=discover)
+            self.assertEqual(recovered['status'], 'published')
+            self.assertEqual(read_pointer(self.data, self.catalog)[0]['source_run_id'], '20260920T120000Z')
+            self.assertEqual(acquire.call_args.kwargs['run'], '2026092012')
+            repeated = worker.run_once(self.state, self.data, self.catalog, points,
+                now=NOW + timedelta(hours=2), execution='pilot-national-icon-three', acquire=acquire, discover=discover)
+            self.assertEqual(repeated['status'], 'no_op')
+            self.assertEqual(acquire.call_count, 1)
+            self.assertEqual(discover.call_count, 2)
+
+    def test_automatic_complete_manifest_recovers_before_discovery_outside_window(self):
+        from local_pipeline.icon_recovery import FEATURE_FLAG, Recovery
+        bundle = sample_bundle(hour=12)
+        cycle = '20260920T120000Z'
+        points = {'artifact_sha256': 'c' * 64}
+        Recovery(self.state, 'national').begin(None, cycle, '20260920-pm', 'pilot-national-icon-old')
+        worker.record_preparation(self.state, bundle, {'fixture': 'mapping'}, self.catalog, points)
+        for path, body in bundle.publication_order():
+            self.data.put(PREFIX + path, body)
+        acquire, discover = Mock(), Mock(side_effect=AssertionError('must not probe'))
+        with patch.dict(os.environ, {FEATURE_FLAG: 'true'}):
+            recovered = worker.run_once(self.state, self.data, self.catalog, points,
+                now=NOW + timedelta(hours=3), execution='pilot-national-icon-new', acquire=acquire, discover=discover)
+        self.assertEqual(recovered['status'], 'published')
+        self.assertEqual(read_pointer(self.data, self.catalog)[0]['source_run_id'], cycle)
+        discover.assert_not_called()
+        acquire.assert_not_called()
+
+    def test_automatic_corrupt_manifest_never_reacquires(self):
+        from local_pipeline.icon_recovery import FEATURE_FLAG, Recovery
+        cycle = '20260920T120000Z'
+        Recovery(self.state, 'national').begin(None, cycle, '20260920-pm', 'pilot-national-icon-old')
+        self.data.put(PREFIX + f'runs/{cycle}/manifest.json', b'{}')
+        acquire, discover = Mock(), Mock()
+        with patch.dict(os.environ, {FEATURE_FLAG: 'true'}):
+            outcome = worker.run_once(self.state, self.data, self.catalog, {'artifact_sha256': 'c' * 64},
+                now=NOW, execution='pilot-national-icon-new', acquire=acquire, discover=discover)
+        self.assertEqual(outcome['status'], 'manual_review')
+        discover.assert_not_called()
+        acquire.assert_not_called()
+
 
 if __name__ == "__main__":
     unittest.main()

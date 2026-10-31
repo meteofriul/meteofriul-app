@@ -1,0 +1,246 @@
+{
+  "schema_version": 1,
+  "observed_at_utc": "2026-10-31T17:36:57.039997Z",
+  "status": "PASS_LOCAL_VERIFICATION_WITH_EXPLICIT_LIMITS",
+  "scope": "Invocation-local reuse of verified FVG latest snapshot, additive publisher snapshot API, automatic recovery regressions and exact new CI commands.",
+  "candidate": {
+    "branch": "codex/icon-automatic-recovery-20261031",
+    "base_commit": "e3527f73b19e13aa95b4b09bf04c1049eca91be3",
+    "head_at_test_start": "e3527f73b19e13aa95b4b09bf04c1049eca91be3",
+    "identity": "Uncommitted candidate identified by source SHA-256 below; coordinator owns subsequent commit, push, PR and remote CI.",
+    "release_artifact_created": false,
+    "cloud_activation_performed": false
+  },
+  "environment": {
+    "os": "Windows x64",
+    "shell": "Windows PowerShell",
+    "python": "3.13.5",
+    "python_toolchain": "%LOCALAPPDATA%/Programs/Python/Python313/python.exe",
+    "existing_google_cloud_storage": "3.15.0",
+    "dependencies_installed": false,
+    "network_or_cloud_access_by_verifier": false
+  },
+  "verification": [
+    {
+      "name": "Complete relevant regression suite",
+      "cwd": "experiments/weather_autonomy",
+      "command": "python -B -m unittest test_cloud_worker test_national_cloud test_icon_recovery test_icon_recovery_integration test_icon_recovery_plan test_icon_checkpoint test_icon_publication_recovery test_remote_publication_intent test_gcs_object_store test_run_pilot test_probe_icon2i test_icon_quality test_contract_publisher -v",
+      "path": ".tmp/verification-reuse-20261031/full-suite.log",
+      "sha256": "6a64a26637606262c19b73943e005c6a701930606d8539accfed7a2be91cd7ce",
+      "encoding": "UTF-16LE with BOM (PowerShell redirection)",
+      "tests": 282,
+      "elapsed_seconds": 972.416,
+      "exit_code": 0,
+      "result": "PASS"
+    },
+    {
+      "name": "Exact CI recovery group without site-packages",
+      "cwd": ".",
+      "ci_command": "python -B -m unittest discover -s experiments/weather_autonomy -p 'test_icon_recovery*.py' -v",
+      "executed_command": "python -S -B -m unittest discover -s experiments/weather_autonomy -p 'test_icon_recovery*.py' -v",
+      "path": ".tmp/verification-reuse-20261031/ci-recovery-stdlib.log",
+      "sha256": "ad6b378b729f0ec988608daba1c361976f5359edc6c5c82755a2c2f753803488",
+      "encoding": "UTF-16LE with BOM (PowerShell redirection)",
+      "tests": 36,
+      "elapsed_seconds": 3.429,
+      "exit_code": 0,
+      "result": "PASS"
+    },
+    {
+      "name": "Exact CI snapshot selection without site-packages",
+      "cwd": ".",
+      "ci_command": "python -B -m unittest discover -s experiments/weather_autonomy -p 'test_contract_publisher.py' -k verified_latest_snapshot -v",
+      "executed_command": "python -S -B -m unittest discover -s experiments/weather_autonomy -p 'test_contract_publisher.py' -k verified_latest_snapshot -v",
+      "path": ".tmp/verification-reuse-20261031/ci-snapshot-stdlib.log",
+      "sha256": "2487d30a189764f0ce9cb1f5db5e7f1c3160d635d9cad8b9340dc3ff091b5bdf",
+      "encoding": "UTF-16LE with BOM (PowerShell redirection)",
+      "tests": 2,
+      "elapsed_seconds": 17.188,
+      "exit_code": 0,
+      "result": "PASS"
+    },
+    {
+      "name": "Targeted Python compilation",
+      "cwd": "experiments/weather_autonomy",
+      "command": "python -B -m compileall -q cloud_worker.py national_cloud_worker.py local_pipeline/icon_recovery.py local_pipeline/contract_publisher.py test_cloud_worker.py test_national_cloud.py test_icon_recovery.py test_icon_recovery_integration.py test_icon_recovery_plan.py test_contract_publisher.py",
+      "exit_code": 0,
+      "result": "PASS"
+    },
+    {
+      "name": "Tracked and newly staged candidate whitespace checks",
+      "cwd": ".",
+      "commands": [
+        "git diff HEAD --check",
+        "git diff --cached --check"
+      ],
+      "exit_code": 0,
+      "result": "PASS"
+    }
+  ],
+  "test_accounting": {
+    "distinct_cases_in_single_complete_run": 282,
+    "module_case_counts": {
+      "test_cloud_worker": 39,
+      "test_national_cloud": 19,
+      "test_icon_recovery": 25,
+      "test_icon_recovery_integration": 8,
+      "test_icon_recovery_plan": 3,
+      "test_icon_checkpoint": 9,
+      "test_icon_publication_recovery": 18,
+      "test_remote_publication_intent": 6,
+      "test_gcs_object_store": 10,
+      "test_run_pilot": 92,
+      "test_probe_icon2i": 18,
+      "test_icon_quality": 7,
+      "test_contract_publisher": 28
+    },
+    "prior_incremental_baseline_distinct_cases": 243,
+    "new_worker_cache_cases": 11,
+    "publisher_suite_cases": 28,
+    "publisher_new_snapshot_cases_within_28": 2,
+    "stdlib_ci_subset_cases_already_in_complete_run": 38,
+    "failed": 0,
+    "errors": 0,
+    "skipped": 0,
+    "note": "282 = 243 prior cases + 11 worker cache cases + 28 publisher cases. The 38 -S cases are reruns of a subset, not additional distinct coverage."
+  },
+  "review_results": [
+    {
+      "area": "Snapshot identity",
+      "result": "PASS",
+      "detail": "New VerifiedLatestSnapshot binds deep-copied pointer and authenticated manifest to the ETag from the same original pointer read. A later HEAD cannot relabel an older verification with a newer generation."
+    },
+    {
+      "area": "Pointer generation and rollback",
+      "result": "PASS",
+      "detail": "Every cached reuse requires the exact ETag. Generation changes, including unchanged pointer body, rollback and disabled-run changes, force a new full verification."
+    },
+    {
+      "area": "Race during revalidation/readback",
+      "result": "PASS",
+      "detail": "After each newly performed full verification, the callback confirms the ETag again. A generation change during that pass clears the proof and fails closed without an unbounded loop."
+    },
+    {
+      "area": "Invocation lifetime",
+      "result": "PASS",
+      "detail": "Cache is a local variable of the automatic FVG invocation; the next invocation performs a new complete verification."
+    },
+    {
+      "area": "Publication boundary",
+      "result": "PASS",
+      "detail": "Each publication attempt clears the cached proof before work and in finally, including failed or uncertain publication. Post-publication verification rereads all municipality payloads even if pointer generation stayed unchanged."
+    },
+    {
+      "area": "Quality and expiration",
+      "result": "PASS",
+      "detail": "Complete contract/hash/metadata validation remains in the publisher. Existing source-quality and checkpoint guards pass regressions; current coverage is checked using invocation time plus monotonic elapsed time, including cached no-op completion and pointer CAS."
+    },
+    {
+      "area": "Compatibility and activation",
+      "result": "PASS",
+      "detail": "Existing read_verified_latest API remains unchanged. Cache applies only to opt-in automatic FVG path; default-off/legacy and national worker regressions pass. No runtime schedule or deployment was changed by this verification."
+    },
+    {
+      "area": "CI scope",
+      "result": "PASS",
+      "detail": "Both new commands use repository-root working-directory above the backend default. The wildcard and -k selection run successfully under Python 3.13 with -S. No new dependency, trigger or scheduled CI job is required."
+    }
+  ],
+  "measured_local_read_reuse": {
+    "scenario": "Completed FVG cycle and unchanged pointer, no publication/acquisition",
+    "legacy_complete_reads": 3,
+    "municipality_payload_reads_before": 645,
+    "municipality_payload_reads_after": 215,
+    "saved_logical_payload_reads": 430,
+    "measurement": "Instrumented datastore get() calls against real 215-municipality contract fixtures; discovery and acquisition mocks were asserted unused.",
+    "additional_evidence": "A second invocation reads 215 again; a pointer generation change reads 430; forced post-publication readback reads 430 including the initial pass.",
+    "not_measured": [
+      "Actual GCS API request count",
+      "Cloud runtime latency",
+      "Billable duration",
+      "Observed cloud cost saving"
+    ]
+  },
+  "resolved_review_finding": {
+    "problem": "A fresh full read after cache invalidation could be superseded during that same read and then used without confirming its generation.",
+    "correction": "A cheap pointer/ETag confirmation now follows that full read; changed generations fail closed.",
+    "coverage": [
+      "test_second_change_during_full_revalidation_cannot_reuse_superseded_proof",
+      "test_generation_change_during_postpublication_readback_cannot_report_success",
+      "test_corrupt_body_after_publication_cannot_use_prepublication_proof"
+    ]
+  },
+  "source_sha256": [
+    {
+      "path": "experiments/weather_autonomy/cloud_worker.py",
+      "sha256": "4f1a6e2b49af1a0d079f8919ac9fcd484c9ab0bef1e9d9e5683815396b9f286b"
+    },
+    {
+      "path": "experiments/weather_autonomy/national_cloud_worker.py",
+      "sha256": "b791c1b38582665e21fb9d9465a3af13cbecb888a45262cf583b46f0120f736f"
+    },
+    {
+      "path": "experiments/weather_autonomy/local_pipeline/contract_publisher.py",
+      "sha256": "a15ccc550e790fdde5500a342b0e01eb6842235a1105f17b0693336c3ef92b26"
+    },
+    {
+      "path": "experiments/weather_autonomy/local_pipeline/icon_recovery.py",
+      "sha256": "0357c12497542cda48adaaa30a0ee7c740c3f3b8fb2481833098439e89352a47"
+    },
+    {
+      "path": "experiments/weather_autonomy/test_cloud_worker.py",
+      "sha256": "51ac1c8bd84a3c356384d3266532670f50d42f1c681c43cd878de5803d91571c"
+    },
+    {
+      "path": "experiments/weather_autonomy/test_contract_publisher.py",
+      "sha256": "6df98af2c74defbcdaefeee27ce2889635e168fcd2cfdc1dd7e6a7a236607eaa"
+    },
+    {
+      "path": "experiments/weather_autonomy/test_national_cloud.py",
+      "sha256": "6f65d70b4d132e9314f516286cc8e661e02f9d6e9bf1e01c88aa8e018d2c3a2c"
+    },
+    {
+      "path": "experiments/weather_autonomy/test_icon_recovery.py",
+      "sha256": "38fa37ecef64f95039e5fa13648b35fb14365ea2716e2b571c13cbc480e3f300"
+    },
+    {
+      "path": "experiments/weather_autonomy/test_icon_recovery_integration.py",
+      "sha256": "54debbc35ca257479a8e4338506d88e0dea4a127b2efb4b6edf0ca43a07a6d5c"
+    },
+    {
+      "path": "experiments/weather_autonomy/test_icon_recovery_plan.py",
+      "sha256": "17145d9d17e11c3bdda755b3bf713bfb29c0f266e568d3b9b031122b9d780601"
+    },
+    {
+      "path": "experiments/weather_autonomy/icon-recovery-plan.json",
+      "sha256": "84127a8b54a18dacb2e25a2a752e6d476d2cc437fe9414b97524744f21662755"
+    },
+    {
+      "path": ".github/workflows/ci.yml",
+      "sha256": "06d81592d76b343533c8f7027bf9e8c1646f2683a069dee4e6bdfb074face43f"
+    }
+  ],
+  "source_changes_after_test_start": [
+    {
+      "path": "experiments/weather_autonomy/test_icon_recovery_plan.py",
+      "tested_sha256": "870ad204afc4372bd27da13dd85eade8b2860c14458a76cb1b1471cf91665727",
+      "final_sha256": "17145d9d17e11c3bdda755b3bf713bfb29c0f266e568d3b9b031122b9d780601",
+      "change": "Removed exactly one trailing LF byte after tests. Approved coordinator whitespace-only correction; no logic change and no repeat test required."
+    }
+  ],
+  "prior_evidence": {
+    "path": "docs/operations/evidence/ICON_AUTOMATIC_RECOVERY_20261031.json",
+    "sha256": "4147ec38d411bc90b43573a6876b1c962a0494a7ea0faaaae9cec779ad5c9eb0",
+    "role": "Historical verification before the FVG cache change; this receipt covers the current source hashes."
+  },
+  "limitations": [
+    "Local deterministic fixtures and fault injection do not establish live GCS concurrency, latency, metering or deployment behavior. No real cloud job, scheduler, deployment or activation was performed by this verifier.",
+    "The cache assumes immutable published payloads. Direct administrative mutation/deletion of a payload after initial verification, without changing latest, is not continuously checked within the same no-op invocation; the next invocation or forced post-publication readback rechecks it.",
+    "Cheap pointer/manifest reads remain. The 645-to-215 result concerns municipality payload reads only, not total HTTP/GCS requests or a measured monetary saving.",
+    "The automatic-recovery rollout remains default-off and separately gated: quiesce legacy owners, verify cloud claims and readback, then consider explicit activation. Unresolved acquisition without a complete checkpoint still requires manual review; national crash before manifest remains outside automatic resume.",
+    "Existing acquisition/source-quality thresholds and bounded recovery windows are preserved. This verification does not extend late-cycle fallback, retries, monitoring policies or cost budgets.",
+    "No frontend/browser, real-phone, Safari/iPhone, minified Android, Web release or Play artifact qualification is claimed. No new app build was needed for this server-side producer change.",
+    "Remote PR CI and any subsequent promotion are owned by the coordinator and are not attested by these local test results.",
+    "PowerShell captures unittest stderr with native-command presentation in logs; the recorded process exit codes and unittest summary are all successful."
+  ]
+}

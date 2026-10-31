@@ -1,0 +1,250 @@
+{
+  "date": "2026-10-31",
+  "verifiedAtUtc": "2026-10-31T16:28:15.629201+00:00",
+  "verificationAgentType": "build_verifica",
+  "branch": "codex/icon-automatic-recovery-20261031",
+  "baseCommit": "e3527f73b19e13aa95b4b09bf04c1049eca91be3",
+  "uncommittedWorkingTree": true,
+  "worktreeRelativeToCanonical": ".tmp/icon-automatic-recovery-20261031",
+  "scope": "Local implementation and offline verification of opt-in bounded ICON automatic recovery; no activation",
+  "environment": {
+    "python": "3.13.5",
+    "os": "Windows",
+    "newDependenciesInstalled": false,
+    "standardLibraryOnlyCiSubsetVerified": true
+  },
+  "tests": {
+    "fullRegressionBaseline": {
+      "status": "pass",
+      "tests": 241,
+      "durationSeconds": 156.198,
+      "logPath": ".tmp/verification-20261031/tests.log",
+      "logSha256": "8fdce143d4f7a0cf2c1d068a91ed95eff39ddae5b1fa354417f11ceffd1d7b4d",
+      "workingDirectory": "experiments/weather_autonomy",
+      "command": "python -B -m unittest test_cloud_worker test_national_cloud test_icon_recovery test_icon_recovery_integration test_icon_recovery_plan test_icon_checkpoint test_icon_publication_recovery test_remote_publication_intent test_gcs_object_store test_run_pilot test_probe_icon2i test_icon_quality -v",
+      "sourcePhase": "before final FVG clock guard",
+      "modules": 12
+    },
+    "stdlibCiSubset": {
+      "status": "pass",
+      "tests": 36,
+      "durationSeconds": 3.434,
+      "logPath": ".tmp/verification-20261031/stdlib-tests.log",
+      "logSha256": "7e7264a3a6b8b8c695e4d97bfbc51cdd37cd798b5db84e6aa2ab8f6f275370c9",
+      "workingDirectory": ".",
+      "command": "python -S -B -m unittest discover -s experiments/weather_autonomy -p 'test_icon_recovery*.py' -v",
+      "sitePackagesEnabled": false,
+      "includesIndependentLostResponseTests": 8,
+      "sourcePhase": "final unchanged pure modules"
+    },
+    "finalFvgWorker": {
+      "status": "pass",
+      "tests": 28,
+      "durationSeconds": 20.125,
+      "logPath": ".tmp/verification-20261031/final-worker-tests.log",
+      "logSha256": "fe2b14de0bc1290468b3a929058d5caadb6f3924c11637c1289d8ba9cb435744",
+      "workingDirectory": "experiments/weather_autonomy",
+      "command": "python -B -m unittest test_cloud_worker -v",
+      "sourcePhase": "final FVG clock guard",
+      "newCasesSinceFullSuite": 2
+    },
+    "distinctCasesCoveredByIncrementalVerification": 243,
+    "countingNote": "241 baseline cases included 26 worker cases. The final worker rerun replaces those 26 and adds 2; the 36 -S cases repeat a subset and are not added to the distinct count."
+  },
+  "compileall": {
+    "status": "pass",
+    "initialCommand": "python -m compileall -q experiments/weather_autonomy/cloud_worker.py experiments/weather_autonomy/national_cloud_worker.py experiments/weather_autonomy/local_pipeline/icon_recovery.py experiments/weather_autonomy/test_cloud_worker.py experiments/weather_autonomy/test_national_cloud.py experiments/weather_autonomy/test_icon_recovery.py experiments/weather_autonomy/test_icon_recovery_integration.py experiments/weather_autonomy/test_icon_recovery_plan.py",
+    "finalCommand": "python -m compileall -q experiments/weather_autonomy/cloud_worker.py experiments/weather_autonomy/test_cloud_worker.py"
+  },
+  "diffCheck": {
+    "status": "pass",
+    "command": "git diff --check"
+  },
+  "ciReview": {
+    "status": "pass",
+    "change": "One existing backend-job step for test_icon_recovery*.py, working-directory repository root",
+    "scheduleOrBranchTriggersChanged": false,
+    "newDependencyRequired": false,
+    "remoteCiRun": false
+  },
+  "findingsResolved": [
+    {
+      "finding": "Lost storage acknowledgement after applied CAS/create could strand a producer guard before acquisition",
+      "resolution": "Exact bounded readback reconciliation without rewriting or takeover",
+      "coverage": "Eight independent tests; six acknowledgement boundaries tested for each product and two conflicting-owner cases"
+    },
+    {
+      "finding": "A valid frozen FVG checkpoint could age beyond current 48-hour coverage before recovery",
+      "resolution": "Current invocation clock plus monotonic elapsed checked before publication, at latest-pointer CAS and after successful publication",
+      "coverage": "Expired checkpoint and expiry during upload reject publication; existing successful recovery cases remain green"
+    }
+  ],
+  "behaviourVerified": [
+    "Default opt-in disabled; only exact true enables it",
+    "Source absent/incomplete does not consume an acquisition claim",
+    "Execution retains its first durable poll across task retry/hour boundaries",
+    "At most two discovery attempts per poll, no repeated work from duplicate launches",
+    "Selected cycle is pinned between discovery and acquisition",
+    "Product guard and per-cycle create-only claim prevent duplicate acquisition",
+    "Validated durable checkpoint resumes before another source probe and without a second acquisition",
+    "No takeover of unresolved acquisition solely because time passed",
+    "Unknown legacy claims and corrupt/invalid data fail closed",
+    "Readback is required before a publication is called complete",
+    "FVG current coverage uses icon2i_48h_v1; national retains its existing twelve-hourly-sample coverage policy"
+  ],
+  "preparedPlan": {
+    "status": "LOCAL_REVIEW_ONLY_NOT_APPLIED",
+    "featureFlag": "WEATHER_ICON_AUTOMATIC_RECOVERY_ENABLED",
+    "defaultEnabled": false,
+    "offsetHours": [
+      0,
+      1,
+      2,
+      4
+    ],
+    "baseHoursUtc": [
+      6,
+      18
+    ],
+    "proposedScheduledStartsPerDay": 16,
+    "additionalScheduledStartsPerDay": 12,
+    "maxScheduledTaskAttemptsWithPlatformRetries": 32,
+    "requiresSeparateActivationAuthorization": true,
+    "applied": false
+  },
+  "limitations": [
+    "Offline simulation and source/configuration review only; no real-cloud execution, deployment or published-data validation of this new implementation",
+    "Cost is unmeasured. No-GRIB polls still perform Storage reads; FVG may revalidate all current municipality payloads multiple times per invocation",
+    "National verified bundles are reused only for the same manifest within one invocation; cache is cleared after publication for fresh final readback",
+    "Legacy migration and rollback require quiescent executions and state review; mixed old/new producers are not approved",
+    "An abandoned acquisition without a complete authenticated checkpoint remains unresolved/manual review; national crash before complete manifest is not automatically reacquired",
+    "Each window requires at least the same-day 00Z or 12Z cycle; an intermediate advanced but earlier cycle remains excluded, and after +4 hours recovery awaits the next window",
+    "Pending and in_progress produce non-successful task outcomes; existing failure-policy impact must be reviewed before activation",
+    "Task retries and exceptional platform redelivery can add launches beyond the 16 scheduled starts; durable tickets bound useful work rather than all platform costs",
+    "No Web/Android build, browser/device test or pilot 5174 launch from this worktree was performed; canonical pilot remains a separate running workspace",
+    "Source hashes identify the uncommitted candidate, not a released immutable artifact"
+  ],
+  "unchangedDependencyAndRuntimeFiles": [
+    {
+      "path": "backend/requirements.txt",
+      "sha256": "1bf5fd2bfda2bb90c610fd6ed62fc78c6fe1e2a8084145e277458b5badec4ed9"
+    },
+    {
+      "path": "backend/requirements-dev.txt",
+      "sha256": "6501e400ef1d534ee49b1ef2a9636e9d0e724b5224eb2d93e5c8863b7650fe3a"
+    },
+    {
+      "path": "experiments/weather_autonomy/production-runtime.json",
+      "sha256": "61d7cb37bea6bf312486cf7f3982c7ed83f49b6e9638f71d35f56347ffc9c9bd"
+    },
+    {
+      "path": "frontend/package.json",
+      "sha256": "c1e1992887a998f5a10e79c24f57e1cd7dee5984aa44c31ba6a2852b05e29457"
+    },
+    {
+      "path": "frontend/package-lock.json",
+      "sha256": "aa4a706abc6512153b14dfd79d3f252b0f02e963864537b7225e75bdfa7a449f"
+    }
+  ],
+  "baselineSourceHashes": [
+    {
+      "path": ".github/workflows/ci.yml",
+      "sha256": "2c9964024fd248455fdc17dbbe58568eccd6f0a9b45cf7e8c3c58e84fe892093"
+    },
+    {
+      "path": "experiments/weather_autonomy/cloud_worker.py",
+      "sha256": "b11182d263e6bb3ae82d0ab270703f9b440fde03d54ac87da525b9946797e968"
+    },
+    {
+      "path": "experiments/weather_autonomy/national_cloud_worker.py",
+      "sha256": "b791c1b38582665e21fb9d9465a3af13cbecb888a45262cf583b46f0120f736f"
+    },
+    {
+      "path": "experiments/weather_autonomy/local_pipeline/icon_recovery.py",
+      "sha256": "0357c12497542cda48adaaa30a0ee7c740c3f3b8fb2481833098439e89352a47"
+    },
+    {
+      "path": "experiments/weather_autonomy/test_cloud_worker.py",
+      "sha256": "f0dccc7a10e17422841593847a8e74e0acf0a9328031ff0b93b9a7da3714765b"
+    },
+    {
+      "path": "experiments/weather_autonomy/test_national_cloud.py",
+      "sha256": "6f65d70b4d132e9314f516286cc8e661e02f9d6e9bf1e01c88aa8e018d2c3a2c"
+    },
+    {
+      "path": "experiments/weather_autonomy/test_icon_recovery.py",
+      "sha256": "38fa37ecef64f95039e5fa13648b35fb14365ea2716e2b571c13cbc480e3f300"
+    },
+    {
+      "path": "experiments/weather_autonomy/test_icon_recovery_integration.py",
+      "sha256": "54debbc35ca257479a8e4338506d88e0dea4a127b2efb4b6edf0ca43a07a6d5c"
+    },
+    {
+      "path": "experiments/weather_autonomy/test_icon_recovery_plan.py",
+      "sha256": "870ad204afc4372bd27da13dd85eade8b2860c14458a76cb1b1471cf91665727"
+    },
+    {
+      "path": "experiments/weather_autonomy/icon-recovery-plan.json",
+      "sha256": "84127a8b54a18dacb2e25a2a752e6d476d2cc437fe9414b97524744f21662755"
+    }
+  ],
+  "finalSourceHashes": [
+    {
+      "path": ".github/workflows/ci.yml",
+      "sha256": "2c9964024fd248455fdc17dbbe58568eccd6f0a9b45cf7e8c3c58e84fe892093"
+    },
+    {
+      "path": "experiments/weather_autonomy/cloud_worker.py",
+      "sha256": "dc3e9ccd99a2c12c276a3f0aec5971fcfca5a5c21c835fad3522abd09df6f9cb"
+    },
+    {
+      "path": "experiments/weather_autonomy/national_cloud_worker.py",
+      "sha256": "b791c1b38582665e21fb9d9465a3af13cbecb888a45262cf583b46f0120f736f"
+    },
+    {
+      "path": "experiments/weather_autonomy/local_pipeline/icon_recovery.py",
+      "sha256": "0357c12497542cda48adaaa30a0ee7c740c3f3b8fb2481833098439e89352a47"
+    },
+    {
+      "path": "experiments/weather_autonomy/test_cloud_worker.py",
+      "sha256": "156c6461d42c9d9d29c61680db75abc662baf48bd529ac06c4991170b5441a88"
+    },
+    {
+      "path": "experiments/weather_autonomy/test_national_cloud.py",
+      "sha256": "6f65d70b4d132e9314f516286cc8e661e02f9d6e9bf1e01c88aa8e018d2c3a2c"
+    },
+    {
+      "path": "experiments/weather_autonomy/test_icon_recovery.py",
+      "sha256": "38fa37ecef64f95039e5fa13648b35fb14365ea2716e2b571c13cbc480e3f300"
+    },
+    {
+      "path": "experiments/weather_autonomy/test_icon_recovery_integration.py",
+      "sha256": "54debbc35ca257479a8e4338506d88e0dea4a127b2efb4b6edf0ca43a07a6d5c"
+    },
+    {
+      "path": "experiments/weather_autonomy/test_icon_recovery_plan.py",
+      "sha256": "870ad204afc4372bd27da13dd85eade8b2860c14458a76cb1b1471cf91665727"
+    },
+    {
+      "path": "experiments/weather_autonomy/icon-recovery-plan.json",
+      "sha256": "84127a8b54a18dacb2e25a2a752e6d476d2cc437fe9414b97524744f21662755"
+    }
+  ],
+  "filesChangedAfterFullSuite": [
+    "experiments/weather_autonomy/cloud_worker.py",
+    "experiments/weather_autonomy/test_cloud_worker.py"
+  ],
+  "actions": {
+    "cloudReads": false,
+    "cloudWrites": false,
+    "jobsExecuted": false,
+    "schedulersChanged": false,
+    "policiesChanged": false,
+    "deployed": false,
+    "newImagesBuilt": false,
+    "releaseVersionChanged": false,
+    "newCommit": false,
+    "push": false,
+    "mainPromotion": false
+  }
+}

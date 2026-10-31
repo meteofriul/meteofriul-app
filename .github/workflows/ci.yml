@@ -93,6 +93,12 @@ jobs:
           python -B -m unittest discover -s experiments/weather_autonomy -p 'test_cloud_reader*.py' -v
           python -B -m unittest discover -s experiments/weather_autonomy -p 'test_gcs_object_store.py' -v
 
+      - name: Test bounded ICON recovery and verified snapshot identity
+        working-directory: .
+        run: |
+          python -B -m unittest discover -s experiments/weather_autonomy -p 'test_icon_recovery*.py' -v
+          python -B -m unittest discover -s experiments/weather_autonomy -p 'test_contract_publisher.py' -k verified_latest_snapshot -v
+
       - name: Install verified promtool for monitor tests
         working-directory: .
         shell: bash
