@@ -30,19 +30,18 @@ describe("market navigation", () => {
   it("opens from Scopri and retains period, radius and list scroll when returning from detail", async () => {
     const open = vi.fn(), close = vi.fn(), viewEvent = vi.fn();
     await act(async () => root.render(<><MarketsEntry onOpen={open} />
-      <MarketsExplorer request={{ key: 1 }} location={pn} onClose={close} onViewEvent={viewEvent} /></>));
+      <MarketsExplorer request={{ key: 1 }} location={pn} radius={5} onClose={close} onViewEvent={viewEvent} /></>));
     await click(button("Esplora nella tua zona")); expect(open).toHaveBeenCalledOnce();
     expect(host.querySelector("dialog").open).toBe(true);
     expect(document.body.style.overflow).toBe("hidden");
-    const select = host.querySelector("select");
-    await act(async () => { select.value = "5"; select.dispatchEvent(new Event("change", { bubbles: true })); });
+    expect(host.querySelector("select")).toBeNull();
     const list = host.querySelector(".mf-markets-content"); list.scrollTop = 120;
     await click([...host.querySelectorAll(".mf-market-card")].find(node => node.textContent.includes("La Soffitta")));
     expect(host.querySelector(".mf-market-detail").textContent).toContain("25 ottobre 2026");
     await click(button("Vedi appuntamento"));
     expect(viewEvent).toHaveBeenCalledWith({ marketId: "M035", date: "2026-10-25", radius: 5 });
     await click(button("Torna al catalogo"));
-    expect(host.querySelector("select").value).toBe("5");
+    expect(host.querySelector(".mf-markets-context").textContent).toBe("Comune di riferimentoPordenone");
     expect(list.scrollTop).toBe(120);
     await click(button("Oggi"));
     expect(host.querySelector('[aria-pressed="true"]').textContent).toBe("Oggi");

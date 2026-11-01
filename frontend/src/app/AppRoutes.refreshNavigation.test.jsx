@@ -113,9 +113,11 @@ async function render(
   activeLocation = location,
   force = true,
   scope = productScope,
+  radius = 20,
 ) {
   await act(async () => {
     root.render(<AppRoutes activeTab={tab} activeLocation={activeLocation}
+      eventsRadius={radius}
       editorialContext={editorialContext} language="it" productScope={scope}
       copy={{ placeholders: { homeTitle: "Home", weatherTitle: "Weather" } }}
       runtimeRefreshToken={token} runtimeRefreshForce={force}
@@ -203,7 +205,18 @@ describe("refresh ownership across route navigation", () => {
     await render("home", 0, secondLocation);
 
     expect(state.loadHomeEvents).toHaveBeenCalledTimes(1);
-    expect(state.loadHomeEvents).toHaveBeenCalledWith(secondLocation);
+    expect(state.loadHomeEvents).toHaveBeenCalledWith({ ...secondLocation, eventsRadius: 20 });
+  });
+
+  it("keeps the Home teaser and Events on the same selected radius without changing weather location", async () => {
+    await render("home", 0, secondLocation, true, productScope, 5);
+    expect(state.loadHomeEvents).toHaveBeenLastCalledWith({ ...secondLocation, eventsRadius: 5 });
+    expect(state.loadWeather.mock.lastCall[0]).toEqual(secondLocation);
+    await render("events", 0, secondLocation, true, productScope, 5);
+    expect(state.loadEvents.mock.lastCall[0]).toEqual({ ...secondLocation, eventsRadius: 5 });
+    await render("home", 0, secondLocation, true, productScope, 50);
+    expect(state.loadHomeEvents).toHaveBeenLastCalledWith({ ...secondLocation, eventsRadius: 50 });
+    expect(state.loadWeather.mock.lastCall[0]).toEqual(secondLocation);
   });
 
   it("does not replay a completed refresh when Live or Events mounts, including return navigation", async () => {

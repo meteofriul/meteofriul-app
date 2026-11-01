@@ -54,6 +54,7 @@ import {
 } from "./notificationPreferences";
 import { getUiShellCopy } from "./uiShellCopy";
 import { AppRoutes } from "./AppRoutes";
+import { readEventsRadiusPreference, writeEventsRadiusPreference } from "./eventsRadiusPreference";
 import {
   createCommunityNavigationSnapshot,
   getCommunityNavigationTotal,
@@ -340,6 +341,7 @@ export default function App() {
   const [isReportSubmissionLocked, setReportSubmissionLocked] = useState(false);
   const [pendingReportUndo, setPendingReportUndo] = useState(readLiveReportUndoState);
   const [themePreference, setThemePreference] = useState(readInitialThemePreference);
+  const [eventsRadius, setEventsRadius] = useState(readEventsRadiusPreference);
   const [systemDark, setSystemDark] = useState(readSystemDarkPreference);
   const foregroundRefreshAtRef = useRef(0);
   const activeLocationRef = useRef(activeLocation);
@@ -393,22 +395,23 @@ export default function App() {
     [language, officialAlertsEnabled, officialAlertsEvaluationAt, officialAlertsRuntime.payload],
   );
   const eventsEnabled = productScope.sources.events?.status !== "unsupported";
+  const eventsLocation = useMemo(() => ({ ...activeLocation, eventsRadius }), [activeLocation, eventsRadius]);
   const cachedEventsNavigationSnapshot = useMemo(() => (
     definitiveAppExperience && eventsEnabled
-      ? readEventsNavigationSnapshot(activeLocation)
+      ? readEventsNavigationSnapshot(eventsLocation)
       : null
-  ), [activeLocation, definitiveAppExperience, eventsEnabled]);
+  ), [eventsLocation, definitiveAppExperience, eventsEnabled]);
   const liveEventsNavigationTotal = definitiveAppExperience && eventsEnabled
-    ? getEventsNavigationTotal(eventsNavigationSnapshot, activeLocation)
+    ? getEventsNavigationTotal(eventsNavigationSnapshot, eventsLocation)
     : null;
   const resolvedEventsNavigationSnapshot = liveEventsNavigationTotal !== null
     ? eventsNavigationSnapshot
     : cachedEventsNavigationSnapshot;
   const eventsNavigationTotal = definitiveAppExperience && eventsEnabled
-    ? getEventsNavigationTotal(resolvedEventsNavigationSnapshot, activeLocation)
+    ? getEventsNavigationTotal(resolvedEventsNavigationSnapshot, eventsLocation)
     : null;
   const eventsNavigationPeriod = definitiveAppExperience && eventsEnabled
-    ? getEventsNavigationPeriod(resolvedEventsNavigationSnapshot, activeLocation)
+    ? getEventsNavigationPeriod(resolvedEventsNavigationSnapshot, eventsLocation)
     : null;
   const cachedCommunityNavigationSnapshot = useMemo(() => {
     if (
@@ -954,11 +957,11 @@ export default function App() {
 
     setEventsNavigationSnapshot((current) => reconcileEventsNavigationSnapshot(
       current,
-      activeLocation,
+      eventsLocation,
       sourceLocation,
       dataState,
     ));
-  }, [activeLocation]);
+  }, [eventsLocation]);
 
   const handleCommunityNavigationState = useCallback((sourceLocation, communityModel, options) => {
     if (!isDefinitiveAppExperience()) return;
@@ -1085,6 +1088,10 @@ export default function App() {
 
   const handleLanguagePreferenceChange = (nextLanguagePreference) => {
     setLanguage(writeUiLanguagePreference(nextLanguagePreference));
+  };
+
+  const handleEventsRadiusChange = (value) => {
+    setEventsRadius(writeEventsRadiusPreference(value));
   };
 
   const handlePilotLanguageSelect = (nextLanguagePreference) => {
@@ -2376,6 +2383,8 @@ export default function App() {
       >
         <AppRoutes
           activeTab={activeTab}
+          eventsRadius={eventsRadius}
+          onEventsRadiusChange={handleEventsRadiusChange}
           activeLocation={activeLocation}
           appVersion={{
             platform: isNativeAndroidRuntime() ? "android" : "web",

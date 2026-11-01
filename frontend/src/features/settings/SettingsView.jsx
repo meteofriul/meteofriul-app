@@ -51,6 +51,7 @@ import {
 } from "../community/communityIdentity";
 import { normalizeCommunityReputation } from "../community/communityReputation";
 import { CommunityAvatar } from "../community/CommunityAvatar";
+import { SearchRadiusSetting } from "./SearchRadiusSetting";
 
 const COPY = {
   it: {
@@ -1039,6 +1040,8 @@ function getBackgroundLocationQaRuntime(runtime) {
 
 export function SettingsView({
   activeLocation,
+  eventsRadius,
+  onEventsRadiusChange,
   appVersion,
   autoLocationEnabled = false,
   backgroundLocationRuntime,
@@ -1412,6 +1415,7 @@ export function SettingsView({
             />
 
             <SettingsPanel title={copy.sections.general} variant="pilot-group">
+              <SearchRadiusSetting language={language} radius={eventsRadius} onChange={onEventsRadiusChange} />
               <SettingsChoiceRow
                 icon={Languages}
                 label={copy.language.title}
@@ -1486,6 +1490,7 @@ export function SettingsView({
             {renderBackButton()}
 
             <SettingsPanel>
+              <SearchRadiusSetting language={language} radius={eventsRadius} onChange={onEventsRadiusChange} />
               <SettingsToggleRow
                 checked={language === "fur"}
                 detail={copy.language[language]}

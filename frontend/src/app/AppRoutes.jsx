@@ -96,6 +96,7 @@ import {
   getLocalWebcamPlayerPreviewMode,
 } from "../features/live/webcamPlayerPreview";
 import { SettingsView } from "../features/settings/SettingsView";
+import { normalizeEventsRadius } from "./eventsRadiusPreference";
 import { buildPublicCommunityIdentitySnapshot } from "../features/community/communityIdentity";
 import { WeatherForecastView } from "../features/weather/WeatherForecastView";
 import { WeatherSectionNav } from "../features/weather/WeatherSectionNav";
@@ -280,6 +281,7 @@ function withoutUnavailableWeather(initialState, location, eventsLocation, avail
 function HomeRouteView({
   runtimeRefreshForce = true,
   activeLocation,
+  eventsRadius = DEFAULT_EVENTS_RADIUS_KM,
   editorialContext,
   copy,
   deviceNow,
@@ -296,7 +298,10 @@ function HomeRouteView({
 }) {
   const location = activeLocation || DEFAULT_APP_LOCATION;
   const editorialLocation = editorialContext?.focusLocation || DEFAULT_APP_LOCATION;
-  const eventsLocation = location;
+  const eventsLocation = useMemo(() => ({
+    ...location,
+    eventsRadius: normalizeEventsRadius(eventsRadius) ?? DEFAULT_EVENTS_RADIUS_KM,
+  }), [location, eventsRadius]);
   const weatherMatchesEditorialLocation = getLocationCacheKey(location)
     === getLocationCacheKey(editorialLocation);
   const forecastAvailability = productScope?.sources?.forecast?.status || "enabled";
@@ -992,6 +997,7 @@ function BulletinRouteView({
 
 function EventsRouteView({
   activeLocation,
+  eventsRadius = DEFAULT_EVENTS_RADIUS_KM,
   language,
   onMarketsOpen,
   marketEventRequest,
@@ -1003,9 +1009,8 @@ function EventsRouteView({
   const activeEventsLocation = marketEventRequest?.location || activeLocation || DEFAULT_APP_LOCATION;
   const location = useMemo(() => ({
     ...activeEventsLocation,
-    eventsRadius: marketEventRequest?.radius || (isDefinitiveAppExperience()
-      ? DEFAULT_EVENTS_RADIUS_KM : activeEventsLocation.eventsRadius) || DEFAULT_EVENTS_RADIUS_KM,
-  }), [activeEventsLocation, marketEventRequest?.radius]);
+    eventsRadius: normalizeEventsRadius(eventsRadius) ?? DEFAULT_EVENTS_RADIUS_KM,
+  }), [activeEventsLocation, eventsRadius]);
   const [marketNow, setMarketNow] = useState(() => new Date());
   useEffect(() => subscribeToMarketsDayClock(setMarketNow), []);
   const [dataState, setDataState] = useState(() => (
@@ -1089,7 +1094,6 @@ function EventsRouteView({
       language={language}
       model={model}
       radius={location.eventsRadius}
-      onRadiusChange={undefined}
       onChangeLocation={undefined}
       showCardSource={!isDefinitiveAppExperience()}
       titleMode={isDefinitiveAppExperience() ? "hidden" : "visible"}
@@ -1667,6 +1671,8 @@ export function AppRoutes({
   runtimeRefreshForce = true,
   activeTab,
   activeLocation = DEFAULT_APP_LOCATION,
+  eventsRadius = DEFAULT_EVENTS_RADIUS_KM,
+  onEventsRadiusChange,
   appVersion,
   autoLocationEnabled = false,
   backgroundLocationRuntime,
@@ -1853,9 +1859,11 @@ export function AppRoutes({
     : activeLocation;
   const routeView = (
     <View
-      key={activeTab === "live" && isLocalCommunityPilot() ? `${routeKey}:${getLocationCacheKey(activeLocation)}` : routeKey}
+      key={activeTab === "events" || activeTab === "home" ? `${routeKey}:radius-${eventsRadius}` : activeTab === "live" && isLocalCommunityPilot() ? `${routeKey}:${getLocationCacheKey(activeLocation)}` : routeKey}
       copy={copy}
       activeLocation={viewLocation}
+      eventsRadius={eventsRadius}
+      onEventsRadiusChange={onEventsRadiusChange}
       municipalityLocation={activeLocation || null}
       appVersion={appVersion}
       autoLocationEnabled={autoLocationEnabled}
@@ -1945,6 +1953,7 @@ export function AppRoutes({
         key={marketLocationKey}
         request={marketCatalogueRequest?.locationKey === marketLocationKey ? marketCatalogueRequest : null}
         location={marketLocation}
+        radius={normalizeEventsRadius(eventsRadius) ?? DEFAULT_EVENTS_RADIUS_KM}
         language={language}
         onClose={() => setMarketCatalogueRequest(null)}
         onViewEvent={openMarketEvent}

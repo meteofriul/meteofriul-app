@@ -21,6 +21,7 @@ export const RUNTIME_DEVICE_CACHE_PREFIXES = Object.freeze([
   "communityV2:v1:liveCommunityReports:v1:",
   "eventsCache:v12:",
   "eventsCache:v12:pilot-programmes-v2:",
+  "eventsCache:v13:",
   `${EVENTS_CACHE_PREFIX}:`,
   "localCommunityPilot:v1:liveCommunityReports:v1:",
   "locationReverseCache:v3:",

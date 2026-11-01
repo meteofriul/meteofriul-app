@@ -1,0 +1,266 @@
+{
+  "date": "2026-10-31",
+  "branch": "codex/mercati-integration-20261028",
+  "baseCommit": "c0090f6c4ccefccad77f5adf6f3c270dda48b9da",
+  "uncommitted": true,
+  "radiusSourceCommit": "f8c9ff5b7d770bfe724bfc76565562aef4e79401",
+  "appTests": {
+    "files": 67,
+    "passed": 760
+  },
+  "panelTests": {
+    "files": 29,
+    "passed": 171
+  },
+  "appLint": "pass",
+  "panelLint": "pass",
+  "appBuild": "pass",
+  "serviceWorkerCheck": "pass",
+  "panelBuild": "pass",
+  "httpChecks": {
+    "panelHttp": 200,
+    "proxyAdminHttp": 200,
+    "adminRevision": 2,
+    "publishedRevision": 0,
+    "markets": 100,
+    "dates": 213,
+    "practices": 59,
+    "publicationBlocked": true,
+    "anonymousDenied": true,
+    "publicCatalogueUnavailable": true,
+    "updatedUiModuleServed": true,
+    "publicationFlagFalse": true,
+    "archiveUnchanged": true,
+    "appBuildContainsLocalCredential": false,
+    "panelBuildContainsLocalCredential": false
+  },
+  "appSourceHashes": [
+    {
+      "path": "frontend/src/app/App.jsx",
+      "sha256": "a03fed24a9e87345d61fed735d479653220a400abf642120e2984ce539eae31c"
+    },
+    {
+      "path": "frontend/src/app/AppRoutes.jsx",
+      "sha256": "92ab9633e2614d893762d1ef0fbcef5e2cb25a297de772a0d40af5004a90db74"
+    },
+    {
+      "path": "frontend/src/app/AppRoutes.markets.test.jsx",
+      "sha256": "7697fe2ebf9075700ca6eb77509b4b47e6bbfedf40ac0d64c7cc733418f7a2dc"
+    },
+    {
+      "path": "frontend/src/app/AppRoutes.refreshNavigation.test.jsx",
+      "sha256": "b9e6070b17578bb0a36892c3440d5489ecbf00cb2a4206fa376fe80bc9c35e4d"
+    },
+    {
+      "path": "frontend/src/app/appRouteRuntime.js",
+      "sha256": "397ce059c3de977794b007647296517492d3a2be3c7a874daf04bec3f0620f07"
+    },
+    {
+      "path": "frontend/src/app/appRouteRuntime.test.js",
+      "sha256": "85960315f8f81d490caecaa4afa460bcd4aa7276f9a9edaf7f87992ef4ffe685"
+    },
+    {
+      "path": "frontend/src/app/eventsRadiusPreference.js",
+      "sha256": "18b059a48a65bfcb017ec94ba526fe6cefec3f7e70ea86c479df14cc0918f52e"
+    },
+    {
+      "path": "frontend/src/app/eventsRadiusPreference.test.js",
+      "sha256": "4714db4ef63a479b61508523266934b0da460a662f340ad25be8d23b4531fcd6"
+    },
+    {
+      "path": "frontend/src/features/events/EventsView.jsx",
+      "sha256": "0a2d5558ba85743f2b5d6a700f50a9edd1cd9e6a986eb4e13c32e46b69af22d1"
+    },
+    {
+      "path": "frontend/src/features/events/events.css",
+      "sha256": "9b3d65f756e5f477643551fbc3105e245deb289579b6f107e8149a39104b1442"
+    },
+    {
+      "path": "frontend/src/features/markets/MarketsExplorer.jsx",
+      "sha256": "5af4d8a03a8ee7d139dfa163af8f4e372c644f1ed94185a00dc2cfa465b7771b"
+    },
+    {
+      "path": "frontend/src/features/markets/MarketsExplorer.test.jsx",
+      "sha256": "9c8e7842523f731cbbd9d03121f3707c62f3f21898a05154f152cbd33b3927be"
+    },
+    {
+      "path": "frontend/src/features/markets/markets.css",
+      "sha256": "703add2bad1b8354c002db2eef4dd7fba4164abeea9fce28e00f2a9191e9d7d1"
+    },
+    {
+      "path": "frontend/src/features/settings/SearchRadiusSetting.jsx",
+      "sha256": "47c334d381531075ce16482b4da1d6986ac3f81910e29182fe2e4bb329c00b74"
+    },
+    {
+      "path": "frontend/src/features/settings/SettingsView.jsx",
+      "sha256": "14014bc5e51c9544b4c9f6866a93239874a1eafffced2f1e99970d9cb21c6ac2"
+    },
+    {
+      "path": "frontend/src/features/settings/settings.css",
+      "sha256": "675f8f27b1845041583e7167f6eaa88a06ad9b2046a32b4b01556d76f995682d"
+    },
+    {
+      "path": "frontend/src/services/eventsCache.js",
+      "sha256": "1bd3c9176e486aab9fa355ec294a2cb7dce91e22f0052e9711e43e034f8656c8"
+    },
+    {
+      "path": "frontend/src/services/eventsCache.test.js",
+      "sha256": "9f3ffe94773f840a8e9f191b00bb2e2e0e7e7f5ae1cea188456fe0e3c7ec8adf"
+    },
+    {
+      "path": "frontend/src/services/runtimeDeviceCache.js",
+      "sha256": "765bd7bbf3241e9c3a95fd8eb48a7d1ba6148cbb3d1eea03bd31dd3b54269047"
+    },
+    {
+      "path": "frontend/src/services/runtimeDeviceCache.test.js",
+      "sha256": "66fc3919dcfbb87fea02a5e21e9cf84decd3b132958eb1b865a7204270566a1c"
+    }
+  ],
+  "panelSourceHashes": [
+    {
+      "path": "src/marketsAdminApi.js",
+      "before": "e001b7ae25badb15fb5799a6fabb2cf48893940f5a191607ff883c37a5d1ab92",
+      "after": "d79e2146e085dab0eb1ee7e966adaee63a8ce52e465e01123904d95b978087b5"
+    },
+    {
+      "path": "src/marketsAdminApi.test.js",
+      "before": "4ed98297922b3d05fe3c63b6f1d7567ca55deb6e213f8e56cfbc7d5c6806425e",
+      "after": "ef7c39f8a499eb621bc8e6a9a7dd959ca9321b98036c662cd40d6761a0309291"
+    },
+    {
+      "path": "src/marketsEditor.js",
+      "before": "69e191b2635a5019742f44f6143e4c8e416a01e61798341731a953b11a925c05",
+      "after": "221aed34cfb1bd8ee49ee988e81bac8c6af8214299c4a87d9485347f612cb8a3"
+    },
+    {
+      "path": "src/marketsEditor.test.js",
+      "before": "f713d2bb18b270b1b05bf77b876751bc46d3835fbaa03b65da788131b484f8b3",
+      "after": "00ada41c54ed8dc875a6ec0f93c7b967f7889b3932f4cacff4283715f7854299"
+    },
+    {
+      "path": "src/components/MarketsControlPage.jsx",
+      "before": "8a5d8db7b6197ddd2efd8beb1c6da95aa7c193b8a1785d250ac7656f3a3a8009",
+      "after": "3c493b9c8ef969391e6cf2cc3e54bba05bdb14f849e4b748adf65e9af22c2784"
+    },
+    {
+      "path": "src/components/MarketsControlPage.test.jsx",
+      "before": "c86e7a63f260c68a39765a8f9099a962d9c7c2a84f09b6ffb3faf40e9a8ab25d",
+      "after": "3202390983578906d33d47def2268dd6cc3a6f6d916a51de007a06efe5ee9998"
+    },
+    {
+      "path": "src/marketsControl.css",
+      "before": "676a08adf36a7893736cc8f9157bdbef17b7be3be276e49f9db37609ad1b2463",
+      "after": "6e1e281ae30f2b95c2e1ce446df6c765488841bbc1a3a4a97370e6817a94e8cc"
+    },
+    {
+      "path": "vite.config.js",
+      "before": "269edecfab699b65d29449d0c7f1dda892e017594f25d2b7ad644f9966bda48d",
+      "after": "b328a323e2fb5b0509e9802e9a1249842a0305c80a1b5bbe4702f39738bbf22d"
+    },
+    {
+      "path": "README.md",
+      "before": "eb574587adb61b26b61d289a8a8696a8ea9dcb0e662cf7670dd8c617692d7acb",
+      "after": "5afc9f42bfd396b1e4b0cce747dc4e3bd77562517fe7ea63f30c54c8e0bcce1f"
+    },
+    {
+      "path": "MERCATI_INTEGRAZIONE_20261030.md",
+      "before": "6993c2f02d7d18605bb540b590b223238096d8525584e4f6e3f45b9bdbc7785b",
+      "after": "4d829ebdd72dda3568c25948cfb3d4e5c96d78c728f28fe002365af10de64b67"
+    }
+  ],
+  "verificationArtifacts": {
+    "app": [
+      {
+        "path": "firebase-messaging-sw.js",
+        "sha256": "0e35841db1c430c9cfeb43bb24591c8fa82cef714915a14b4d6fff4b03aeb834"
+      },
+      {
+        "path": "index.html",
+        "sha256": "89f33ab10f93a2293234e38730fa781c0be17a309bbbc3dfd9e07286a01b1068"
+      },
+      {
+        "path": "assets/index.esm-BUQbHBZc.js",
+        "sha256": "2b9299b5f924922031eae7ab22d88b8e95a93b9ff600b8236afd94178cfd26d0"
+      },
+      {
+        "path": "assets/index.esm-CDAM2j61.js",
+        "sha256": "50a7ce4c5458312902fd07c3e63f0aeaac59430a50ef4ecb7038e8f6361d4208"
+      },
+      {
+        "path": "assets/index.esm-DOiJKDHr.js",
+        "sha256": "7be58278798be7ad8dfd73a9ce31821b77f71000dd4991d469155f7925370f12"
+      },
+      {
+        "path": "assets/index.esm-hldd9Re9.js",
+        "sha256": "23645b277e14c2721a92360031a9913aa6a8c2dfa9e5e2604d780e13a770e1ef"
+      },
+      {
+        "path": "assets/leaflet-src-AD9ZoK5_.js",
+        "sha256": "60918dd3d8b5fbd990711722c403362770988700e2846cd4c9803a8ca4502ec7"
+      },
+      {
+        "path": "assets/main-BpPbIfKj.js",
+        "sha256": "4826ff8e31bd51fbceebdd1485d08b550ab20dd11d4905775ceb50bdbbb706c0"
+      },
+      {
+        "path": "assets/main-CGfRWPNW.css",
+        "sha256": "0d570ba34f850f056ea0c1cb7cbac53348a3506a859fb26a475d149ae9a16256"
+      },
+      {
+        "path": "assets/rolldown-runtime-QTnfLwEv.js",
+        "sha256": "5db5ba82eef00d1dee7e86e663098c9427d01183a88d357437daff295aec3e75"
+      },
+      {
+        "path": "assets/web-BA98UwFi.js",
+        "sha256": "a911151e970af37eda9e298aa97fcca5b0aebd61aca27199dd407ee51ee522da"
+      },
+      {
+        "path": "assets/web-BWebqSYX.js",
+        "sha256": "066b31aa69c47ea206d83dd999d151560c99cf01dcd017569c2017e7e5491821"
+      },
+      {
+        "path": "assets/web-D3lrVaZU.js",
+        "sha256": "5c120fd0be93fa1f58311bed7a611c193e8fb07e1eaff8968b2126a4b90b58c4"
+      },
+      {
+        "path": "assets/web-jUuvBZqP.js",
+        "sha256": "f4f2469b8351cc283c96f830b14c779d6ebf54afc587af47c0f130c1aba0f0de"
+      }
+    ],
+    "panel": [
+      {
+        "path": "index.html",
+        "sha256": "6cbf0368b15676f0267d8e5fc375f3258895063163b6bd64c86bb7f11c6592ea"
+      },
+      {
+        "path": "sw.js",
+        "sha256": "0d32a782c20e022072fea33bb15e17818685132af23cb6a06892f731ceb7a95a"
+      },
+      {
+        "path": "assets/es-BueOSQr5.js",
+        "sha256": "bc0b9505c76070018bd02688fa399463ef3f1d9d83d38716211317d8199ceed6"
+      },
+      {
+        "path": "assets/index-B-ldMNKf.js",
+        "sha256": "8d07e280a8eab138547742fd973d34ffffeb23c8c8f08f0d21b1c41b084d723d"
+      },
+      {
+        "path": "assets/index-BhH3bpgv.css",
+        "sha256": "047133ce69eba6ad9a1300c56a6296347e35ba2ff7788bfa8302a23089435907"
+      }
+    ]
+  },
+  "browserCheck": "unavailable",
+  "pilotApp": "stopped_by_existing_freshness_guard",
+  "weatherBlock": {
+    "provider": "icon2i",
+    "sourceRunId": "20261030T120000Z",
+    "usableUntilUtc": "2026-10-31T12:00:00Z"
+  },
+  "localPanelPort": 5182,
+  "localDraftsPort": 8003,
+  "newCommits": false,
+  "push": false,
+  "mainPromotion": false,
+  "publication": false
+}

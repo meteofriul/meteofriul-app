@@ -6,8 +6,9 @@ import { isFvgLocation } from "../domain/scope/productScope";
 import { isLocalWeatherPilot } from "./localWeatherPilot";
 import { FULL_EVENTS_LIMIT, getEventsRequestLimit, HOME_EVENTS_LIMIT } from "./eventsApi";
 import { readJsonCacheEntry, removeJsonCache, writeJsonCache } from "./jsonCache";
+import { DEFAULT_EVENTS_RADIUS_KM, normalizeEventsRadius } from "../app/eventsRadiusPreference";
 
-export const EVENTS_CACHE_PREFIX = "eventsCache:v13";
+export const EVENTS_CACHE_PREFIX = "eventsCache:v14";
 export const EVENTS_CACHE_SCHEMA_VERSION = "canonical-events-v3-health";
 export const EVENTS_DEVICE_CACHE_MAX_AGE_MS = 48 * 60 * 60 * 1000;
 
@@ -20,7 +21,7 @@ export function getEventsLocationKey(locationOrCity) {
 }
 
 export function getEventsCacheKey(locationOrCity, limit) {
-  return `${EVENTS_CACHE_PREFIX}${isLocalWeatherPilot() ? ":pilot-programmes-v2" : ""}:${getEventsLocationKey(locationOrCity)}:${limit}`;
+  return `${EVENTS_CACHE_PREFIX}${isLocalWeatherPilot() ? ":pilot-programmes-v2" : ""}:${getEventsLocationKey(locationOrCity)}:radius-${normalizeEventsRadius(locationOrCity?.eventsRadius) ?? DEFAULT_EVENTS_RADIUS_KM}:${limit}`;
 }
 
 function getLegacyEventsCacheKey(locationOrCity, limit) {
@@ -33,7 +34,7 @@ function getLegacyEventsCacheKey(locationOrCity, limit) {
   const currentLocationKey = getEventsLocationKey(locationOrCity);
   const legacyLocationKey = getLegacyLocationCacheKey(locationOrCity);
   if (!legacyLocationKey || legacyLocationKey === currentLocationKey) return "";
-  return `${EVENTS_CACHE_PREFIX}${isLocalWeatherPilot() ? ":pilot-programmes-v2" : ""}:${legacyLocationKey}:${limit}`;
+  return `${EVENTS_CACHE_PREFIX}${isLocalWeatherPilot() ? ":pilot-programmes-v2" : ""}:${legacyLocationKey}:radius-${normalizeEventsRadius(locationOrCity?.eventsRadius) ?? DEFAULT_EVENTS_RADIUS_KM}:${limit}`;
 }
 
 export function isUsableEventsCache(value) {

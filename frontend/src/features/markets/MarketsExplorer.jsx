@@ -2,7 +2,6 @@ import { useEffect, useRef, useState } from "react";
 import { ArrowLeft, CalendarDays, ChevronRight, ExternalLink, MapPin, Navigation, ShoppingBag, X } from "lucide-react";
 import { usePilotBackHandler } from "../../app/usePilotBackHandler";
 import { useBrowserDialogBack } from "../../app/useBrowserDialogBack";
-import { EVENT_RADII } from "../events/eventsRadius";
 import { subscribeToMarketsDayClock } from "./marketsDayClock";
 import { getMarketsCopy } from "./marketsCopy";
 import { formatMarketDate, getMarket, MARKET_CATALOGUE, marketDateInEvents, marketDay, marketDirectionsUrl, publishedMarketDates, safeMarketUrl, selectMarkets } from "./marketsCatalog";
@@ -67,8 +66,7 @@ export function MarketDetail({ market, language = "it", now = new Date(), radius
   </article>;
 }
 
-export function MarketsExplorer({ request, location, language = "it", onClose, onViewEvent, catalogue = MARKET_CATALOGUE, catalogueStatus }) {
-  const [radius, setRadius] = useState(20);
+export function MarketsExplorer({ request, location, language = "it", radius = 20, onClose, onViewEvent, catalogue = MARKET_CATALOGUE, catalogueStatus }) {
   const [period, setPeriod] = useState("all");
   const [selectedId, setSelectedId] = useState(request?.marketId || null);
   const [seenRequest, setSeenRequest] = useState(request);
@@ -84,7 +82,7 @@ export function MarketsExplorer({ request, location, language = "it", onClose, o
   const back = () => {
     if (selected) {
       setSelectedId(null);
-      window.requestAnimationFrame(() => (lastCardRef.current || listRef.current?.querySelector("select"))?.focus({ preventScroll: true }));
+      window.requestAnimationFrame(() => (lastCardRef.current || listRef.current?.querySelector("button"))?.focus({ preventScroll: true }));
     } else onClose();
   };
   usePilotBackHandler(back, Boolean(request));
@@ -128,9 +126,6 @@ export function MarketsExplorer({ request, location, language = "it", onClose, o
     <div ref={listRef} className="mf-markets-content" hidden={Boolean(selected)}>
       {!model.supported ? <p className="mf-markets-empty" role="status">{copy.outside}</p> : <>
         <div className="mf-markets-context"><div><small>{copy.area}</small><strong>{model.origin.name}</strong></div>
-          <label>{copy.radius}<select aria-label={copy.radius} value={radius} onChange={event => setRadius(Number(event.target.value))}>
-            {EVENT_RADII.map(value => <option value={value} key={value}>{value} km</option>)}
-          </select></label>
         </div>
         <div className="mf-markets-tabs" role="group" aria-label={language === "fur" ? "Period" : "Periodo"}>
           {["all", "today", "weekend"].map(value => <button type="button" key={value} aria-pressed={period === value} onClick={() => setPeriod(value)}>{copy[value]}</button>)}

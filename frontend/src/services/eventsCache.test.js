@@ -33,10 +33,22 @@ function cacheEntry(data, savedAt = 1000) {
 }
 
 describe("events cache", () => {
+  it("never serves a different search radius for the same municipality", () => {
+    const narrow = { city: "Udine", eventsRadius: 5 };
+    const wide = { ...narrow, eventsRadius: 50 };
+    const storage = createStorage();
+    writeEventsCache(narrow, [{ id: "near" }], { storage, now: () => 1000 });
+    expect(readEventsCache(wide, { storage, now: () => 1000 })).toBeNull();
+    writeEventsCache(wide, [{ id: "near" }, { id: "far" }], { storage, now: () => 1000 });
+    expect(readEventsCache(narrow, { storage, now: () => 1000 }).events).toEqual([{ id: "near" }]);
+    expect(readEventsCache(wide, { storage, now: () => 1000 }).events).toHaveLength(2);
+    clearEventsCache(narrow, { storage });
+    expect(readEventsCache(wide, { storage, now: () => 1000 }).events).toHaveLength(2);
+  });
   it("builds location and cache keys from city or location objects", () => {
     expect(getEventsLocationKey("Pordenone")).toBe("pordenone|city|city");
     expect(getEventsCacheKey({ city: "Cordenons", lat: 45.98361, lon: 12.70038 }, FULL_EVENTS_LIMIT)).toBe(
-      "eventsCache:v13:cordenons|45.9836|12.7004:100",
+      "eventsCache:v14:cordenons|45.9836|12.7004:radius-20:100",
     );
   });
 

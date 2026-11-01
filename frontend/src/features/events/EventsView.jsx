@@ -29,7 +29,6 @@ import { PromotionPlacementCard } from "../promotions/PromotionPlacementCard";
 
 import { buildEventPreviewModel } from "./eventPreview";
 import { groupEventOccurrences, sortEventsForTimeTab } from "./eventsViewModel";
-import { EventsRadiusSelect } from "./EventsRadiusSelect";
 import { findRequestedMarketEvent, MARKET_CATALOGUE, marketDirectionsUrl, matchMarket } from "../markets/marketsCatalog";
 import { getMarketsCopy } from "../markets/marketsCopy";
 
@@ -545,7 +544,6 @@ export function EventsView({
   model,
   promotionCampaigns,
   radius = 20,
-  onRadiusChange,
   showCardSource = true,
   titleMode = "visible",
   onMarketsOpen,
@@ -635,7 +633,6 @@ export function EventsView({
                 city={model.locationLabel || "-----"}
                 className="mf-route-location-context"
               />
-              {onRadiusChange ? <EventsRadiusSelect radius={radius} onChange={onRadiusChange} language={language} /> : null}
             </div>
             {model.message ? (
               <div className="mf-events-hero__meta" role="status">

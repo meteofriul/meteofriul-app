@@ -8,6 +8,33 @@
   padding-bottom: var(--mf-space-4);
 }
 
+.mf-settings-search-radius {
+  display: grid;
+  grid-template-columns: 34px minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 4px 10px;
+  padding: 12px 0;
+  color: var(--mf-page-ink);
+}
+.mf-settings-search-radius label { font-weight: 700; font-size: .9rem; }
+.mf-settings-search-radius select {
+  min-height: 44px;
+  min-width: 88px;
+  padding: 8px;
+  border: 1px solid var(--mf-border);
+  border-radius: 10px;
+  background: var(--mf-surface);
+  color: var(--mf-page-ink);
+  font: inherit;
+}
+.mf-settings-search-radius p {
+  grid-column: 2 / -1;
+  margin: 0;
+  color: var(--mf-page-muted);
+  font-size: .78rem;
+  line-height: 1.4;
+}
+
 .mf-tab-page--settings-pilot {
   gap: 0;
 }

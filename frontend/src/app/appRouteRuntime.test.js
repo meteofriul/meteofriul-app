@@ -206,6 +206,11 @@ describe("App route runtime", () => {
     expect(getEventsNavigationTotal(snapshot, pordenone)).toBe(2);
     expect(getEventsNavigationPeriod(snapshot, pordenone)).toBe("today");
     expect(getEventsNavigationTotal(snapshot, { city: "Udine" })).toBeNull();
+    expect(getEventsNavigationTotal(snapshot, { ...pordenone, eventsRadius: 50 })).toBeNull();
+    expect(getEventsNavigationPeriod(snapshot, { ...pordenone, eventsRadius: 5 })).toBeNull();
+    expect(reconcileEventsNavigationSnapshot(null, { ...pordenone, eventsRadius: 5 }, pordenone, {
+      items: [{ id: "old-wide-result", date_label: "Oggi" }], loadedLimit: 100, status: "fresh", total: 1,
+    })).toBeNull();
   });
 
   it("accepts a verified cached total while rejecting incomplete candidates", () => {

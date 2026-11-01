@@ -1,0 +1,190 @@
+{
+  "observedAtUtc": "2026-10-31T14:55:57.634793+00:00",
+  "branch": "codex/mercati-integration-20261028",
+  "baseCommit": "c0090f6c4ccefccad77f5adf6f3c270dda48b9da",
+  "uncommittedWorkingTree": true,
+  "purpose": "Il raggio è visibile e modificabile soltanto nelle Impostazioni; Eventi, Mercati e Home continuano a usare la preferenza condivisa.",
+  "environment": {
+    "node": "22.17.1",
+    "vitest": "4.1.12",
+    "vite": "8.1.6",
+    "os": "Windows",
+    "configLoader": "native"
+  },
+  "checks": {
+    "tests": {
+      "status": "pass",
+      "passed": 760,
+      "files": 67,
+      "command": "node node_modules/vitest/vitest.mjs run --configLoader native --maxWorkers 2 src/app/AppRoutes src/app/appRouteRuntime.test.js src/app/eventsRadiusPreference.test.js src/features/home src/features/events src/features/markets src/features/settings src/services/eventsCache.test.js src/services/runtimeDeviceCache.test.js src/services/marketsCatalogue.test.js src/services/eventsApi.test.js"
+    },
+    "lint": {
+      "status": "pass",
+      "command": "node node_modules/eslint/bin/eslint.js ."
+    },
+    "webBuild": {
+      "status": "pass",
+      "transformedModules": 2130,
+      "command": "node node_modules/vite/bin/vite.js build --configLoader native --outDir <unique OS TEMP directory>"
+    },
+    "serviceWorkerBuild": {
+      "status": "pass",
+      "transformedModules": 14,
+      "command": "node node_modules/vite/bin/vite.js build --config vite.sw.config.js --configLoader native --outDir <same OS TEMP directory>"
+    },
+    "serviceWorkerStandalone": {
+      "status": "pass",
+      "command": "node scripts/assert-web-push-service-worker.mjs <same OS TEMP directory>"
+    },
+    "staticUiReview": {
+      "status": "pass",
+      "result": "Nessuna indicazione Entro km o collegamento raggio nelle viste Eventi/Mercati; SearchRadiusSetting è usato solo da SettingsView. EventsRadiusSelect resta un componente non importato dal prodotto."
+    }
+  },
+  "sourceHashes": [
+    {
+      "path": "frontend/src/app/App.jsx",
+      "sha256": "759143773423e387e282845fdc5d958337be5912c4e8be47485f2e0453cc77f9"
+    },
+    {
+      "path": "frontend/src/app/AppRoutes.jsx",
+      "sha256": "5e60a71da14ea57ac2e4bd659303b2a467f7b9a95ba20c74f6ce1f69e2843d91"
+    },
+    {
+      "path": "frontend/src/app/AppRoutes.markets.test.jsx",
+      "sha256": "67b5348dbbb71b6e924183ad5f46c60268fc3e9d61e9fcce2ed181e156018af1"
+    },
+    {
+      "path": "frontend/src/app/AppRoutes.refreshNavigation.test.jsx",
+      "sha256": "b9e6070b17578bb0a36892c3440d5489ecbf00cb2a4206fa376fe80bc9c35e4d"
+    },
+    {
+      "path": "frontend/src/app/appRouteRuntime.js",
+      "sha256": "397ce059c3de977794b007647296517492d3a2be3c7a874daf04bec3f0620f07"
+    },
+    {
+      "path": "frontend/src/app/appRouteRuntime.test.js",
+      "sha256": "85960315f8f81d490caecaa4afa460bcd4aa7276f9a9edaf7f87992ef4ffe685"
+    },
+    {
+      "path": "frontend/src/app/eventsRadiusPreference.js",
+      "sha256": "18b059a48a65bfcb017ec94ba526fe6cefec3f7e70ea86c479df14cc0918f52e"
+    },
+    {
+      "path": "frontend/src/app/eventsRadiusPreference.test.js",
+      "sha256": "4714db4ef63a479b61508523266934b0da460a662f340ad25be8d23b4531fcd6"
+    },
+    {
+      "path": "frontend/src/features/events/EventsView.jsx",
+      "sha256": "322cfe9bef33900a4ae1291eab4b6b27c33109259e562e52306fc32f1378e825"
+    },
+    {
+      "path": "frontend/src/features/markets/MarketsExplorer.jsx",
+      "sha256": "cff3f1a0f7641d79d53d5cb38f5b7b1de817060e50543fc9d034e05c35301e03"
+    },
+    {
+      "path": "frontend/src/features/markets/MarketsExplorer.test.jsx",
+      "sha256": "8efc99b0411d83d40d446d52ddfc0319b07a241e17490c321f804c935e6bc8f8"
+    },
+    {
+      "path": "frontend/src/features/settings/SearchRadiusSetting.jsx",
+      "sha256": "47c334d381531075ce16482b4da1d6986ac3f81910e29182fe2e4bb329c00b74"
+    },
+    {
+      "path": "frontend/src/features/settings/SettingsView.jsx",
+      "sha256": "14014bc5e51c9544b4c9f6866a93239874a1eafffced2f1e99970d9cb21c6ac2"
+    },
+    {
+      "path": "frontend/src/features/settings/settings.css",
+      "sha256": "675f8f27b1845041583e7167f6eaa88a06ad9b2046a32b4b01556d76f995682d"
+    },
+    {
+      "path": "frontend/src/services/eventsCache.js",
+      "sha256": "1bd3c9176e486aab9fa355ec294a2cb7dce91e22f0052e9711e43e034f8656c8"
+    },
+    {
+      "path": "frontend/src/services/eventsCache.test.js",
+      "sha256": "9f3ffe94773f840a8e9f191b00bb2e2e0e7e7f5ae1cea188456fe0e3c7ec8adf"
+    },
+    {
+      "path": "frontend/src/services/runtimeDeviceCache.js",
+      "sha256": "765bd7bbf3241e9c3a95fd8eb48a7d1ba6148cbb3d1eea03bd31dd3b54269047"
+    },
+    {
+      "path": "frontend/src/services/runtimeDeviceCache.test.js",
+      "sha256": "66fc3919dcfbb87fea02a5e21e9cf84decd3b132958eb1b865a7204270566a1c"
+    }
+  ],
+  "artifactDirectoryBasename": "mf-radius-settings-20261031-6b95849822124bb191c68448cf4391dc",
+  "artifactHashes": [
+    {
+      "path": "assets/index.esm-BUQbHBZc.js",
+      "sha256": "2b9299b5f924922031eae7ab22d88b8e95a93b9ff600b8236afd94178cfd26d0"
+    },
+    {
+      "path": "assets/index.esm-CDAM2j61.js",
+      "sha256": "50a7ce4c5458312902fd07c3e63f0aeaac59430a50ef4ecb7038e8f6361d4208"
+    },
+    {
+      "path": "assets/index.esm-DOiJKDHr.js",
+      "sha256": "7be58278798be7ad8dfd73a9ce31821b77f71000dd4991d469155f7925370f12"
+    },
+    {
+      "path": "assets/index.esm-hldd9Re9.js",
+      "sha256": "23645b277e14c2721a92360031a9913aa6a8c2dfa9e5e2604d780e13a770e1ef"
+    },
+    {
+      "path": "assets/leaflet-src-AD9ZoK5_.js",
+      "sha256": "60918dd3d8b5fbd990711722c403362770988700e2846cd4c9803a8ca4502ec7"
+    },
+    {
+      "path": "assets/main-1k79bh2H.js",
+      "sha256": "1e9a9fc8890f0c6aeacec316c61dfda594242bd15967357d04d8c67f78a6ebfa"
+    },
+    {
+      "path": "assets/main-5le-hhS6.css",
+      "sha256": "1a26c543694cdef65b6ffef1a5105c31248ae4b9dbaa6ca0b952ca39c5929430"
+    },
+    {
+      "path": "assets/rolldown-runtime-QTnfLwEv.js",
+      "sha256": "5db5ba82eef00d1dee7e86e663098c9427d01183a88d357437daff295aec3e75"
+    },
+    {
+      "path": "assets/web-CsQxbfmg.js",
+      "sha256": "0e318961353b3a971497c9ccb019960aabe786928ff1087d16baed6587109f61"
+    },
+    {
+      "path": "assets/web-DcPJuj3F.js",
+      "sha256": "ba6e9571eeffce5d95b4daff1e2b72e5b8c39241eca22268d72bb87a725b5e7f"
+    },
+    {
+      "path": "assets/web-mes4ZgD1.js",
+      "sha256": "97fe59df76b2ebf7fa96e582c899af2c2fdf2f244f9ac6305dd290984ce483fe"
+    },
+    {
+      "path": "assets/web-QoB2S7yS.js",
+      "sha256": "5eec4a07585ab6f240372ec55219b212e7869cfe84ffd85300dc9cd775b1dbf3"
+    },
+    {
+      "path": "firebase-messaging-sw.js",
+      "sha256": "0e35841db1c430c9cfeb43bb24591c8fa82cef714915a14b4d6fff4b03aeb834"
+    },
+    {
+      "path": "index.html",
+      "sha256": "6673a7aa1cbf7062f530c26cee92a8115689dff682a48b8ea8cd5cf0614e1a6b"
+    }
+  ],
+  "warnings": [
+    "Chunk oltre 500 kB",
+    "Import statico e dinamico di AlmanacView"
+  ],
+  "limitations": [
+    "Verifica sorgenti, DOM e compilazione; nessuna prova visiva nel browser o su dispositivo",
+    "Compilazione di verifica in OS TEMP, non artefatto di release",
+    "Pannello invariato in questa correzione; i 171 test del pannello appartengono alla precedente verifica"
+  ],
+  "newCommit": false,
+  "push": false,
+  "deployment": false,
+  "mainPromotion": false
+}

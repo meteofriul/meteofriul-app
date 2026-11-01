@@ -12,8 +12,9 @@ import {
 } from "../features/events/eventsViewModel";
 import { getCommunityActiveCount } from "../features/live/communitySocialPresentation";
 import { createCommunityUnreadSnapshot } from "../features/live/communityUnreadState";
+import { DEFAULT_EVENTS_RADIUS_KM, normalizeEventsRadius } from "./eventsRadiusPreference";
 
-export const DEFAULT_EVENTS_RADIUS_KM = 20;
+export { DEFAULT_EVENTS_RADIUS_KM };
 const EDITORIAL_ROUTE_IDS = new Set(["almanac", "discover"]);
 
 export function createEventsNavigationSnapshot(location, dataState) {
@@ -47,6 +48,7 @@ export function createEventsNavigationSnapshot(location, dataState) {
 
   return {
     catalogTotal: total,
+    eventsRadius: normalizeEventsRadius(location?.eventsRadius) ?? DEFAULT_EVENTS_RADIUS_KM,
     locationKey,
     period: contextualCount.period,
     total: contextualCount.count,
@@ -61,8 +63,10 @@ export function reconcileEventsNavigationSnapshot(
 ) {
   const candidate = createEventsNavigationSnapshot(sourceLocation, dataState);
   if (!candidate || candidate.locationKey !== getLocationCacheKey(activeLocation)) return current;
+  if (candidate.eventsRadius !== (normalizeEventsRadius(activeLocation?.eventsRadius) ?? DEFAULT_EVENTS_RADIUS_KM)) return current;
   if (
     current?.locationKey === candidate.locationKey
+    && current?.eventsRadius === candidate.eventsRadius
     && current?.total === candidate.total
     && current?.period === candidate.period
     && current?.catalogTotal === candidate.catalogTotal
@@ -72,11 +76,13 @@ export function reconcileEventsNavigationSnapshot(
 
 export function getEventsNavigationTotal(snapshot, location) {
   if (snapshot?.locationKey !== getLocationCacheKey(location)) return null;
+  if ((normalizeEventsRadius(snapshot?.eventsRadius) ?? DEFAULT_EVENTS_RADIUS_KM) !== (normalizeEventsRadius(location?.eventsRadius) ?? DEFAULT_EVENTS_RADIUS_KM)) return null;
   return Number.isInteger(snapshot?.total) && snapshot.total >= 0 ? snapshot.total : null;
 }
 
 export function getEventsNavigationPeriod(snapshot, location) {
   if (snapshot?.locationKey !== getLocationCacheKey(location)) return null;
+  if ((normalizeEventsRadius(snapshot?.eventsRadius) ?? DEFAULT_EVENTS_RADIUS_KM) !== (normalizeEventsRadius(location?.eventsRadius) ?? DEFAULT_EVENTS_RADIUS_KM)) return null;
   return ["today", "next"].includes(snapshot?.period) ? snapshot.period : null;
 }
 

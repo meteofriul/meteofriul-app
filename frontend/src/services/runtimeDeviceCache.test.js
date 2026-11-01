@@ -74,6 +74,7 @@ describe("runtime device cache", () => {
       [REGIONAL_OFFICIAL_ALERTS_CACHE_KEY]: "{}",
       "meteofriul.home-promotions.v1": "{}",
       "meteofriul:language": "fur",
+      "mfEventsMarketsRadiusKm": "50",
     });
 
     const result = await clearRuntimeDeviceCaches(location, { storage });
@@ -90,6 +91,7 @@ describe("runtime device cache", () => {
       REGIONAL_OFFICIAL_ALERTS_CACHE_KEY,
       "meteofriul.home-promotions.v1",
       "meteofriul:language",
+      "mfEventsMarketsRadiusKm",
     ].sort());
   });
 
