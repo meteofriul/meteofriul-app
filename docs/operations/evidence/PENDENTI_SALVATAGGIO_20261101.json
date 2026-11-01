@@ -1,0 +1,201 @@
+{
+  "observedAtUtc": "2026-11-01T16:26:21.7928835Z",
+  "purpose": "Read-only pending checkpoint verification; existing evidence reused for unchanged frontend sources.",
+  "headAtReview": "52b9e0e4989b2e4daadc5ee738d4683ddf71a12a",
+  "sourceReceipt": "docs/operations/evidence/MERCATI_RAGGIO_SOLO_IMPOSTAZIONI_20261031.json",
+  "sourceReceiptSha256": "38bbb4aa26009566754190ff35d70591f7560a319558521dd429ee6e79e62de6",
+  "sourceReceiptObservedAtUtc": "2026-10-31T14:55:57.634793+00:00",
+  "sourceHashCount": 18,
+  "sourceHashes": [
+    {
+      "path": "frontend/src/app/App.jsx",
+      "expectedSha256": "759143773423e387e282845fdc5d958337be5912c4e8be47485f2e0453cc77f9",
+      "actualSha256": "759143773423e387e282845fdc5d958337be5912c4e8be47485f2e0453cc77f9",
+      "match": true
+    },
+    {
+      "path": "frontend/src/app/AppRoutes.jsx",
+      "expectedSha256": "5e60a71da14ea57ac2e4bd659303b2a467f7b9a95ba20c74f6ce1f69e2843d91",
+      "actualSha256": "5e60a71da14ea57ac2e4bd659303b2a467f7b9a95ba20c74f6ce1f69e2843d91",
+      "match": true
+    },
+    {
+      "path": "frontend/src/app/AppRoutes.markets.test.jsx",
+      "expectedSha256": "67b5348dbbb71b6e924183ad5f46c60268fc3e9d61e9fcce2ed181e156018af1",
+      "actualSha256": "67b5348dbbb71b6e924183ad5f46c60268fc3e9d61e9fcce2ed181e156018af1",
+      "match": true
+    },
+    {
+      "path": "frontend/src/app/AppRoutes.refreshNavigation.test.jsx",
+      "expectedSha256": "b9e6070b17578bb0a36892c3440d5489ecbf00cb2a4206fa376fe80bc9c35e4d",
+      "actualSha256": "b9e6070b17578bb0a36892c3440d5489ecbf00cb2a4206fa376fe80bc9c35e4d",
+      "match": true
+    },
+    {
+      "path": "frontend/src/app/appRouteRuntime.js",
+      "expectedSha256": "397ce059c3de977794b007647296517492d3a2be3c7a874daf04bec3f0620f07",
+      "actualSha256": "397ce059c3de977794b007647296517492d3a2be3c7a874daf04bec3f0620f07",
+      "match": true
+    },
+    {
+      "path": "frontend/src/app/appRouteRuntime.test.js",
+      "expectedSha256": "85960315f8f81d490caecaa4afa460bcd4aa7276f9a9edaf7f87992ef4ffe685",
+      "actualSha256": "85960315f8f81d490caecaa4afa460bcd4aa7276f9a9edaf7f87992ef4ffe685",
+      "match": true
+    },
+    {
+      "path": "frontend/src/app/eventsRadiusPreference.js",
+      "expectedSha256": "18b059a48a65bfcb017ec94ba526fe6cefec3f7e70ea86c479df14cc0918f52e",
+      "actualSha256": "18b059a48a65bfcb017ec94ba526fe6cefec3f7e70ea86c479df14cc0918f52e",
+      "match": true
+    },
+    {
+      "path": "frontend/src/app/eventsRadiusPreference.test.js",
+      "expectedSha256": "4714db4ef63a479b61508523266934b0da460a662f340ad25be8d23b4531fcd6",
+      "actualSha256": "4714db4ef63a479b61508523266934b0da460a662f340ad25be8d23b4531fcd6",
+      "match": true
+    },
+    {
+      "path": "frontend/src/features/events/EventsView.jsx",
+      "expectedSha256": "322cfe9bef33900a4ae1291eab4b6b27c33109259e562e52306fc32f1378e825",
+      "actualSha256": "322cfe9bef33900a4ae1291eab4b6b27c33109259e562e52306fc32f1378e825",
+      "match": true
+    },
+    {
+      "path": "frontend/src/features/markets/MarketsExplorer.jsx",
+      "expectedSha256": "cff3f1a0f7641d79d53d5cb38f5b7b1de817060e50543fc9d034e05c35301e03",
+      "actualSha256": "cff3f1a0f7641d79d53d5cb38f5b7b1de817060e50543fc9d034e05c35301e03",
+      "match": true
+    },
+    {
+      "path": "frontend/src/features/markets/MarketsExplorer.test.jsx",
+      "expectedSha256": "8efc99b0411d83d40d446d52ddfc0319b07a241e17490c321f804c935e6bc8f8",
+      "actualSha256": "8efc99b0411d83d40d446d52ddfc0319b07a241e17490c321f804c935e6bc8f8",
+      "match": true
+    },
+    {
+      "path": "frontend/src/features/settings/SearchRadiusSetting.jsx",
+      "expectedSha256": "47c334d381531075ce16482b4da1d6986ac3f81910e29182fe2e4bb329c00b74",
+      "actualSha256": "47c334d381531075ce16482b4da1d6986ac3f81910e29182fe2e4bb329c00b74",
+      "match": true
+    },
+    {
+      "path": "frontend/src/features/settings/SettingsView.jsx",
+      "expectedSha256": "14014bc5e51c9544b4c9f6866a93239874a1eafffced2f1e99970d9cb21c6ac2",
+      "actualSha256": "14014bc5e51c9544b4c9f6866a93239874a1eafffced2f1e99970d9cb21c6ac2",
+      "match": true
+    },
+    {
+      "path": "frontend/src/features/settings/settings.css",
+      "expectedSha256": "675f8f27b1845041583e7167f6eaa88a06ad9b2046a32b4b01556d76f995682d",
+      "actualSha256": "675f8f27b1845041583e7167f6eaa88a06ad9b2046a32b4b01556d76f995682d",
+      "match": true
+    },
+    {
+      "path": "frontend/src/services/eventsCache.js",
+      "expectedSha256": "1bd3c9176e486aab9fa355ec294a2cb7dce91e22f0052e9711e43e034f8656c8",
+      "actualSha256": "1bd3c9176e486aab9fa355ec294a2cb7dce91e22f0052e9711e43e034f8656c8",
+      "match": true
+    },
+    {
+      "path": "frontend/src/services/eventsCache.test.js",
+      "expectedSha256": "9f3ffe94773f840a8e9f191b00bb2e2e0e7e7f5ae1cea188456fe0e3c7ec8adf",
+      "actualSha256": "9f3ffe94773f840a8e9f191b00bb2e2e0e7e7f5ae1cea188456fe0e3c7ec8adf",
+      "match": true
+    },
+    {
+      "path": "frontend/src/services/runtimeDeviceCache.js",
+      "expectedSha256": "765bd7bbf3241e9c3a95fd8eb48a7d1ba6148cbb3d1eea03bd31dd3b54269047",
+      "actualSha256": "765bd7bbf3241e9c3a95fd8eb48a7d1ba6148cbb3d1eea03bd31dd3b54269047",
+      "match": true
+    },
+    {
+      "path": "frontend/src/services/runtimeDeviceCache.test.js",
+      "expectedSha256": "66fc3919dcfbb87fea02a5e21e9cf84decd3b132958eb1b865a7204270566a1c",
+      "actualSha256": "66fc3919dcfbb87fea02a5e21e9cf84decd3b132958eb1b865a7204270566a1c",
+      "match": true
+    }
+  ],
+  "frontendCoverage": {
+    "trackedChangedFilesFromReceiptBase": 15,
+    "packageAndBuildConfigChangedFromReceiptBase": false,
+    "uncoveredFrontendChanges": 0,
+    "newSourceFiles": 3
+  },
+  "environmentChecked": {
+    "configLoader": "native",
+    "node": "22.17.1",
+    "vite": "8.1.6",
+    "vitest": "4.1.12"
+  },
+  "priorChecksReused": {
+    "tests": {
+      "status": "pass",
+      "passed": 760,
+      "files": 67,
+      "command": "node node_modules/vitest/vitest.mjs run --configLoader native --maxWorkers 2 src/app/AppRoutes src/app/appRouteRuntime.test.js src/app/eventsRadiusPreference.test.js src/features/home src/features/events src/features/markets src/features/settings src/services/eventsCache.test.js src/services/runtimeDeviceCache.test.js src/services/marketsCatalogue.test.js src/services/eventsApi.test.js"
+    },
+    "lint": {
+      "status": "pass",
+      "command": "node node_modules/eslint/bin/eslint.js ."
+    },
+    "webBuild": {
+      "status": "pass",
+      "transformedModules": 2130,
+      "command": "node node_modules/vite/bin/vite.js build --configLoader native --outDir <unique OS TEMP directory>"
+    },
+    "serviceWorkerBuild": {
+      "status": "pass",
+      "transformedModules": 14,
+      "command": "node node_modules/vite/bin/vite.js build --config vite.sw.config.js --configLoader native --outDir <same OS TEMP directory>"
+    },
+    "serviceWorkerStandalone": {
+      "status": "pass",
+      "command": "node scripts/assert-web-push-service-worker.mjs <same OS TEMP directory>"
+    },
+    "staticUiReview": {
+      "status": "pass",
+      "result": "Nessuna indicazione Entro km o collegamento raggio nelle viste Eventi/Mercati; SearchRadiusSetting è usato solo da SettingsView. EventsRadiusSelect resta un componente non importato dal prodotto."
+    }
+  },
+  "rerunTests": false,
+  "rerunLint": false,
+  "rerunBuild": false,
+  "currentChecks": [
+    "18/18 SHA256 source matches",
+    "Frontend diff review and test review",
+    "git diff --check -- frontend: pass",
+    "Verification directory ignored by Git"
+  ],
+  "reviewFindings": [
+    "No material defect found in reviewed radius/cache changes",
+    "Events cache v14 key includes normalized radius; legacy v13 keys are not reused",
+    "Navigation totals reject results for another radius",
+    "Home and Events remount for a radius change and load shared preference",
+    "Market selection receives shared radius; UI control is imported only by SettingsView",
+    "Cache reset preserves the radius preference",
+    "Weather location remains separate from the events radius object"
+  ],
+  "warningsRetained": [
+    "Chunk oltre 500 kB",
+    "Import statico e dinamico di AlmanacView"
+  ],
+  "limitations": [
+    "The 760 tests across 67 files, lint and Web/SW build results are reused historical evidence; not new executions",
+    "Prior evidence is scoped tests, not the complete frontend suite",
+    "No browser, device, Android release, deployment or cloud verification performed",
+    "Build evidence is an OS temporary verification build, not a release artifact",
+    "Artifact hashes were not rechecked in this source checkpoint review",
+    "No code, Git state, documentation, credentials or real data modified by this verification"
+  ],
+  "functionalCommit": "a81161dafdef193a6c6d17b126b7bd53b2c45013",
+  "functionalCommitRemoteVerified": "a81161dafdef193a6c6d17b126b7bd53b2c45013",
+  "verificationAgentType": "build_verifica",
+  "checkpointScope": "Save existing pending source changes and dated audit reports; no publication.",
+  "backup": {
+    "path": ".dev-logs/markets/backups/pending-20261101T162631Z/",
+    "pendingFiles": 29,
+    "prototypeIncluded": true,
+    "databaseRecopied": false
+  }
+}

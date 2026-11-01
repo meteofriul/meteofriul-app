@@ -1,0 +1,352 @@
+{
+  "date": "2026-10-31",
+  "timeZone": "Europe/Rome",
+  "verifiedAtUtc": "2026-10-31T15:48:05.275839+00:00",
+  "verificationAgentType": "build_verifica",
+  "verificationUsedExistingLocalCollectionsOnly": true,
+  "repositoryBaseCommit": "c0090f6c4ccefccad77f5adf6f3c270dda48b9da",
+  "workstream": "Operational recovery of existing ICON FVG and national data jobs; no application release",
+  "authorizationScope": "User requested ICON recovery; coordinator executed the two existing data jobs after explicit authorization",
+  "diagnosis": {
+    "source": "MeteoHub ItaliaMeteo ICON-2I_SURFACE_PRESSURE_LEVELS",
+    "directDiscoveryAtUtc": "2026-10-31T15:30:47.074784+00:00",
+    "selectedRun": "2026103112",
+    "expectedSourceRunId": "20261031T120000Z",
+    "metadataOnly": true,
+    "parserDefectDemonstrated": false,
+    "originAvailabilityDelay": "Directory timestamp compatible with later source availability; exact first availability and origin timestamp timezone not established"
+  },
+  "preflight": {
+    "observedAtUtc": "2026-10-31T15:37:36.985607+00:00",
+    "accountVerified": true,
+    "projectVerified": true,
+    "project": "meteo-friul",
+    "region": "europe-west1",
+    "slot": "20261031-pm",
+    "claimsAbsent": true,
+    "noConcurrentExecutions": true
+  },
+  "executions": [
+    {
+      "job": "meteofriul-icon",
+      "execution": "meteofriul-icon-h2hhk",
+      "requestedAtUtc": "2026-10-31T15:37:41.456981+00:00",
+      "startedAtUtc": "2026-10-31T15:37:44.358971Z",
+      "completedAtUtc": "2026-10-31T15:41:03.105949Z",
+      "operationDone": true,
+      "completedCondition": "CONDITION_SUCCEEDED",
+      "succeededTasks": 1,
+      "configuredGeneration": "7",
+      "configuredImage": "europe-west1-docker.pkg.dev/meteo-friul/meteofriul/weather-worker@sha256:53c8709e74e75b350b1f502149bda489eb99b6e2c30eb6b47c46c4f689e78d48",
+      "preflightPmClaimAbsent": true,
+      "preflightRunningExecutions": 0
+    },
+    {
+      "job": "meteofriul-national-icon",
+      "execution": "meteofriul-national-icon-vg8wc",
+      "requestedAtUtc": "2026-10-31T15:37:42.449453+00:00",
+      "startedAtUtc": "2026-10-31T15:37:46.410058Z",
+      "completedAtUtc": "2026-10-31T15:41:40.958216Z",
+      "operationDone": true,
+      "completedCondition": "CONDITION_SUCCEEDED",
+      "succeededTasks": 1,
+      "configuredGeneration": "1",
+      "configuredImage": "europe-west1-docker.pkg.dev/meteo-friul/meteofriul/national-weather:production-20260923",
+      "preflightPmClaimAbsent": true,
+      "preflightRunningExecutions": 0
+    }
+  ],
+  "executionStatusObservedAtUtc": "2026-10-31T15:41:54.862120+00:00",
+  "publicReadback": {
+    "observedAtUtc": "2026-10-31T15:46:19.702441+00:00",
+    "status": "pass",
+    "expectedSourceRunId": "20261031T120000Z",
+    "credentialsUsed": false,
+    "cloudWrites": false,
+    "gribDownloads": false,
+    "products": {
+      "fvg": {
+        "status": "pass",
+        "sourceRunId": "20261031T120000Z",
+        "runAt": "2026-10-31T12:00:00Z",
+        "revision": 104,
+        "publishedAt": "2026-10-31T15:37:53Z",
+        "generatedAt": "2026-10-31T15:39:01Z",
+        "freshness": {
+          "current_sample_max_lag_minutes": 60,
+          "fresh_until": "2026-11-01T06:00:00Z",
+          "policy_id": "icon2i_48h_v1",
+          "required_future_hours": 48,
+          "usable_until": "2026-11-01T12:00:00Z"
+        },
+        "municipalityDescriptors": 215,
+        "samples": [
+          {
+            "municipality": "Udine",
+            "istatCode": "030129",
+            "sourceRunId": "20261031T120000Z",
+            "hourlySamples": 73,
+            "validFrom": "2026-10-31T12:00:00Z",
+            "validTo": "2026-11-03T12:00:00Z",
+            "contractValidation": "pass",
+            "sha256": "aeee7deb4b32db6b3093ba019317a31d369aa66cf5912c73aef4c08d880727ab"
+          },
+          {
+            "municipality": "Pordenone",
+            "istatCode": "093033",
+            "sourceRunId": "20261031T120000Z",
+            "hourlySamples": 73,
+            "validFrom": "2026-10-31T12:00:00Z",
+            "validTo": "2026-11-03T12:00:00Z",
+            "contractValidation": "pass",
+            "sha256": "af2385d6cc91aa9ffe9d331b3342997f70755368ff9666c68399a302014ba1cc"
+          },
+          {
+            "municipality": "Trieste",
+            "istatCode": "032006",
+            "sourceRunId": "20261031T120000Z",
+            "hourlySamples": 73,
+            "validFrom": "2026-10-31T12:00:00Z",
+            "validTo": "2026-11-03T12:00:00Z",
+            "contractValidation": "pass",
+            "sha256": "56980a6baf04b19af3c1d30bffc3869390c2e4751b91b6d327046a134332f5ab"
+          }
+        ],
+        "scope": "complete manifest and three municipality payloads; not all 215 payloads",
+        "totalJsonBytes": 239043,
+        "verifiedHttpObjects": [
+          {
+            "path": "weather/v1/icon2i/latest.json",
+            "http": 200,
+            "jsonBytes": 814,
+            "sha256": "62abc049cf989583c21ffa26b3e6cb94cf66639d7b10481e138e4951fc5c8abf"
+          },
+          {
+            "path": "weather/v1/icon2i/runs/20261031T120000Z/manifest.json",
+            "http": 200,
+            "jsonBytes": 36111,
+            "sha256": "3001c254491739916429f64db2d0c281b244ee1611a25082cdb2459da9526a7b"
+          },
+          {
+            "path": "weather/v1/icon2i/runs/20261031T120000Z/municipalities/030129.json",
+            "http": 200,
+            "jsonBytes": 67709,
+            "sha256": "aeee7deb4b32db6b3093ba019317a31d369aa66cf5912c73aef4c08d880727ab"
+          },
+          {
+            "path": "weather/v1/icon2i/runs/20261031T120000Z/municipalities/093033.json",
+            "http": 200,
+            "jsonBytes": 67770,
+            "sha256": "af2385d6cc91aa9ffe9d331b3342997f70755368ff9666c68399a302014ba1cc"
+          },
+          {
+            "path": "weather/v1/icon2i/runs/20261031T120000Z/municipalities/032006.json",
+            "http": 200,
+            "jsonBytes": 66639,
+            "sha256": "56980a6baf04b19af3c1d30bffc3869390c2e4751b91b6d327046a134332f5ab"
+          }
+        ]
+      },
+      "national": {
+        "status": "pass",
+        "sourceRunId": "20261031T120000Z",
+        "runAt": "2026-10-31T12:00:00Z",
+        "generatedAt": "2026-10-31T15:38:23Z",
+        "contract": "weather/v2/icon2i",
+        "municipalityDescriptors": 7894,
+        "blockCount": 642,
+        "currentCoverage": "pass",
+        "runAgeHours": 3.7721395669444444,
+        "samples": [
+          {
+            "municipality": "Roma",
+            "istatCode": "058091",
+            "blockId": "t0250000-y0527-x0770",
+            "sourceRunId": "20261031T120000Z",
+            "hourlySamples": 73,
+            "validFrom": "2026-10-31T12:00:00Z",
+            "validTo": "2026-11-03T12:00:00Z",
+            "contractValidation": "pass",
+            "sha256": "66043aab12642082d16c859da651237d2c85b3c1352af93525a2e446219596be"
+          },
+          {
+            "municipality": "Milano",
+            "istatCode": "015146",
+            "blockId": "t0250000-y0541-x0756",
+            "sourceRunId": "20261031T120000Z",
+            "hourlySamples": 73,
+            "validFrom": "2026-10-31T12:00:00Z",
+            "validTo": "2026-11-03T12:00:00Z",
+            "contractValidation": "pass",
+            "sha256": "87766bf1fe0c5ba8fd14ec45bc89e3458b07dacb2fb22f43cff721ca91084675"
+          },
+          {
+            "municipality": "Napoli",
+            "istatCode": "063049",
+            "blockId": "t0250000-y0523-x0777",
+            "sourceRunId": "20261031T120000Z",
+            "hourlySamples": 73,
+            "validFrom": "2026-10-31T12:00:00Z",
+            "validTo": "2026-11-03T12:00:00Z",
+            "contractValidation": "pass",
+            "sha256": "8df9c0c865d372462ce0f8de89420815ce1b9fe98e6a026185e454079d33f3d7"
+          }
+        ],
+        "scope": "complete manifest/index and three sampled blocks; not the entire national bundle",
+        "totalJsonBytes": 1491443,
+        "verifiedHttpObjects": [
+          {
+            "path": "weather/v2/icon2i/pilot.json",
+            "http": 200,
+            "jsonBytes": 1025,
+            "sha256": "e37345efa3789c5817fc19fb4ce50e1773800e79dd21cedd52e1aec3fcf8a9e3"
+          },
+          {
+            "path": "weather/v2/icon2i/runs/20261031T120000Z/manifest.json",
+            "http": 200,
+            "jsonBytes": 151736,
+            "sha256": "c5a324a3c376d267f5f815b7d730284028040bda8fd39a31d996febf3b7fae16"
+          },
+          {
+            "path": "weather/v2/icon2i/runs/20261031T120000Z/municipality-index.json",
+            "http": 200,
+            "jsonBytes": 253142,
+            "sha256": "1e5d6800a90323398496af3f5c94f305f4ab11a6681bd1ede4c64d3bdea2eda7"
+          },
+          {
+            "path": "weather/v2/icon2i/runs/20261031T120000Z/blocks/t0250000-y0527-x0770.json",
+            "http": 200,
+            "jsonBytes": 103365,
+            "sha256": "66043aab12642082d16c859da651237d2c85b3c1352af93525a2e446219596be"
+          },
+          {
+            "path": "weather/v2/icon2i/runs/20261031T120000Z/blocks/t0250000-y0541-x0756.json",
+            "http": 200,
+            "jsonBytes": 524141,
+            "sha256": "87766bf1fe0c5ba8fd14ec45bc89e3458b07dacb2fb22f43cff721ca91084675"
+          },
+          {
+            "path": "weather/v2/icon2i/runs/20261031T120000Z/blocks/t0250000-y0523-x0777.json",
+            "http": 200,
+            "jsonBytes": 458034,
+            "sha256": "8df9c0c865d372462ce0f8de89420815ce1b9fe98e6a026185e454079d33f3d7"
+          }
+        ]
+      }
+    }
+  },
+  "localReady": {
+    "observedAtUtc": "2026-10-31T15:46:34.5325309Z",
+    "launcherExitCode": 0,
+    "pilotReady": true,
+    "appHttp": 200,
+    "backendStatus": "ok",
+    "localWeatherPilotReady": true,
+    "openMeteoEnabled": false,
+    "proxySourceRunId": "20261031T120000Z",
+    "proxyRevision": 104,
+    "proxyUsableUntil": "2026-11-01T12:00:00Z",
+    "panelHttp": 200,
+    "draftsStatus": "ok",
+    "marketsPublicationEnabled": false
+  },
+  "launcher": {
+    "script": "scripts/start-local-weather-pilot.ps1",
+    "mode": "WeatherCloud",
+    "port": 5174,
+    "result": "ready",
+    "clock": "real",
+    "freshnessGuard": "unchanged",
+    "helper": ".tmp/start-markets-local-20261031.ps1",
+    "browserVisualCheck": "not performed"
+  },
+  "operationalEffects": {
+    "weatherDataPublished": true,
+    "existingCloudJobsExecuted": 2,
+    "pmSlotConsumed": true,
+    "normalPmSlotEuropeRome": "2026-10-31T19:00:00+01:00",
+    "normalPmFollowupExpected": "FVG verifies/reconciles existing outcome; national returns slot_already_claimed. Not yet observed.",
+    "claimDeletion": false,
+    "executionOverrides": false,
+    "schedulesChanged": false,
+    "policiesChanged": false,
+    "newDeployments": false,
+    "newBuilds": false,
+    "releaseVersionChanged": false,
+    "applicationPublished": false,
+    "marketsPublished": false,
+    "newCommit": false,
+    "push": false,
+    "mainPromotion": false
+  },
+  "monitoringFollowup": {
+    "freshnessMonitorManuallyRerun": false,
+    "postRecoveryMonitorStatusVerified": false,
+    "nextNaturalSlotEuropeRome": "2026-10-31T17:10:00+01:00",
+    "lastPreRecoveryAudit": "docs/operations/evidence/JOBS_READONLY_AUDIT_20261031.json"
+  },
+  "limitations": [
+    "FVG public verification covers complete manifest and three municipality payloads, not all 215 payloads",
+    "National public verification covers complete manifest/index and three blocks, not all 642 blocks or all 7894 municipalities",
+    "HTTP checks and launcher readiness do not constitute browser or device visual approval",
+    "Public source discovery inspected 14 required file links; GRIB validation was performed by the existing workers, not independently repeated here",
+    "National configured image is a tag; these collected receipts do not supply a separately resolved immutable national image digest",
+    "This recovery proves the observed cycle is now available; it does not change future schedules or prove the next source will arrive before its scheduled slot"
+  ],
+  "collectionHashes": [
+    {
+      "path": ".tmp/icon-diagnosis-20261031/source-probe.json",
+      "sha256": "64209f638c3622cff3ad97570f2427b2f31d344bf05cea21e2a4b4cfed91d779"
+    },
+    {
+      "path": ".tmp/icon-diagnosis-20261031/cache-probe.json",
+      "sha256": "5e7ea592de186c50375b2d7d45c8a3c4e7b091ca343bb2b3f6741b38725d0b76"
+    },
+    {
+      "path": ".tmp/icon-diagnosis-20261031/recovery-state.json",
+      "sha256": "09732428d0ab73f79417ddb9b10dd0c7045cd017848d1e8f8d70d395adc35eb3"
+    },
+    {
+      "path": ".tmp/icon-diagnosis-20261031/public-readback.json",
+      "sha256": "2ac270d54da26d33e94edcc03ea6fda9f4a637afb1b459c9638390b69c17cb0e"
+    },
+    {
+      "path": ".tmp/icon-recovery-20261031/preflight.json",
+      "sha256": "415881f006ba1f9822de1b66333e4d9ec8e9e46958cde11c53a5563a7185a980"
+    },
+    {
+      "path": ".tmp/icon-recovery-20261031/meteofriul-icon-request.json",
+      "sha256": "ac3cb7762b1f6abf61017e497c39f97888068b16371b61b8a9799f3986a5ef91"
+    },
+    {
+      "path": ".tmp/icon-recovery-20261031/meteofriul-national-icon-request.json",
+      "sha256": "bdbae2566fc8c495edad6eeab3ac3c8448bc3cd54233a7500024738417e7b4b3"
+    },
+    {
+      "path": ".tmp/icon-recovery-20261031/status.json",
+      "sha256": "e1554c29b63e804afa75aa80bc7cab75371f50c4165cb85cf1e4db91e7f63184"
+    },
+    {
+      "path": ".tmp/icon-recovery-20261031/local-ready.json",
+      "sha256": "cd52d0ecd7df1a5f1135c1adfe51de2eaf705d0b822c083d5d50613538ccb5e8"
+    }
+  ],
+  "reviewedCodeHashes": [
+    {
+      "path": "experiments/weather_autonomy/cloud_worker.py",
+      "sha256": "9a50b1ab641e5af0a595fd90548b5cb6dc1d446b0ec9a545e5902b18ff4f2edb"
+    },
+    {
+      "path": "experiments/weather_autonomy/national_cloud_worker.py",
+      "sha256": "341d291e257f3baeb3f1023f1132e087dfb79edbcfd562561dc5302382740a02"
+    },
+    {
+      "path": "experiments/weather_autonomy/national_cloud_publication.py",
+      "sha256": "62176ab967ef851247834e9d633388ef97693d377b0baa925bc80fb1f3dfc038"
+    },
+    {
+      "path": "scripts/start-local-weather-pilot.ps1",
+      "sha256": "53c7fca0dcbd10960584c376ee24d6d050791aeb3fd20f56f9beb26a16287091"
+    }
+  ]
+}

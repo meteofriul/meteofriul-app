@@ -1,0 +1,330 @@
+{
+  "date": "2026-10-31",
+  "timeZone": "Europe/Rome",
+  "auditAgentType": "controllo_job",
+  "verificationAgentType": "build_verifica",
+  "verifiedAtUtc": "2026-10-31T15:26:16.586646+00:00",
+  "readOnly": true,
+  "verificationUsedExistingLocalCollectionsOnly": true,
+  "window": {
+    "startUtc": "2026-10-30T23:00:00Z",
+    "endUtc": "2026-10-31T15:20:50.685133Z",
+    "endEuropeRome": "2026-10-31T16:20:50.685133+01:00",
+    "laterProductProbeUtc": "2026-10-31T15:22:51.1203518Z",
+    "detailCollectionObservedAtUtc": "2026-10-31T15:24:07.950656+00:00"
+  },
+  "scope": {
+    "project": "meteo-friul",
+    "regions": [
+      "europe-west1",
+      "europe-west8"
+    ],
+    "cloudJobsReady": 14,
+    "cloudSchedulersEnabled": 11,
+    "cloudMonitoringPoliciesObserved": 23,
+    "repositoryInventory": "docs/operations/JOBS_INVENTORY.md",
+    "otherRegionsNotEnumerated": true
+  },
+  "executionSummary": {
+    "total": 83,
+    "succeeded": 80,
+    "failed": 3,
+    "other": 0,
+    "todayListsTruncated": false,
+    "perJob": [
+      {
+        "job": "meteofriul-official-alert-sync",
+        "region": "europe-west8",
+        "executions": 9,
+        "succeeded": 9,
+        "failed": 0,
+        "other": 0,
+        "truncatedToday": false
+      },
+      {
+        "job": "meteofriul-local-notice-tolerance-qa",
+        "region": "europe-west1",
+        "executions": 0,
+        "succeeded": 0,
+        "failed": 0,
+        "other": 0,
+        "truncatedToday": false
+      },
+      {
+        "job": "meteofriul-icon2i-freshness",
+        "region": "europe-west1",
+        "executions": 33,
+        "succeeded": 33,
+        "failed": 0,
+        "other": 0,
+        "truncatedToday": false
+      },
+      {
+        "job": "meteofriul-national-official-alert-send",
+        "region": "europe-west1",
+        "executions": 8,
+        "succeeded": 8,
+        "failed": 0,
+        "other": 0,
+        "truncatedToday": false
+      },
+      {
+        "job": "meteofriul-evening-forecast",
+        "region": "europe-west1",
+        "executions": 0,
+        "succeeded": 0,
+        "failed": 0,
+        "other": 0,
+        "truncatedToday": false
+      },
+      {
+        "job": "meteofriul-morning-forecast",
+        "region": "europe-west1",
+        "executions": 1,
+        "succeeded": 1,
+        "failed": 0,
+        "other": 0,
+        "truncatedToday": false
+      },
+      {
+        "job": "meteofriul-national-official-alert-sync",
+        "region": "europe-west1",
+        "executions": 8,
+        "succeeded": 8,
+        "failed": 0,
+        "other": 0,
+        "truncatedToday": false
+      },
+      {
+        "job": "meteofriul-official-alert-sync",
+        "region": "europe-west1",
+        "executions": 0,
+        "succeeded": 0,
+        "failed": 0,
+        "other": 0,
+        "truncatedToday": false
+      },
+      {
+        "job": "meteofriul-local-notice",
+        "region": "europe-west1",
+        "executions": 17,
+        "succeeded": 17,
+        "failed": 0,
+        "other": 0,
+        "truncatedToday": false
+      },
+      {
+        "job": "meteofriul-cams",
+        "region": "europe-west1",
+        "executions": 4,
+        "succeeded": 3,
+        "failed": 1,
+        "other": 0,
+        "truncatedToday": false
+      },
+      {
+        "job": "meteofriul-events-refresh",
+        "region": "europe-west1",
+        "executions": 1,
+        "succeeded": 0,
+        "failed": 1,
+        "other": 0,
+        "truncatedToday": false
+      },
+      {
+        "job": "meteofriul-icon",
+        "region": "europe-west1",
+        "executions": 1,
+        "succeeded": 0,
+        "failed": 1,
+        "other": 0,
+        "truncatedToday": false
+      },
+      {
+        "job": "meteofriul-national-icon",
+        "region": "europe-west1",
+        "executions": 1,
+        "succeeded": 1,
+        "failed": 0,
+        "other": 0,
+        "truncatedToday": false
+      },
+      {
+        "job": "meteofriul-event-source-publication-control",
+        "region": "europe-west1",
+        "executions": 0,
+        "succeeded": 0,
+        "failed": 0,
+        "other": 0,
+        "truncatedToday": false
+      }
+    ]
+  },
+  "schedulerErrorQuery": {
+    "count": 0,
+    "truncated": false,
+    "severityMinimum": "ERROR"
+  },
+  "logCoverage": {
+    "initialExecutionSamples": 15,
+    "initialPartialSamples": 15,
+    "initialLimitRowsPerExecution": 90,
+    "detailExecutionSamples": 3,
+    "detailPartialSamples": 3,
+    "detailLimitPagesPerExecution": 3,
+    "detailPageSize": 80,
+    "completeLogsClaimed": false,
+    "containsLatestExecutionsBeforeToday": true
+  },
+  "findings": {
+    "iconFvg": {
+      "execution": "failed",
+      "errorType": "SourceRunNotAdvanced",
+      "scheduledAtUtc": "2026-10-31T06:00:00Z",
+      "publicSourceRunId": "20261030T120000Z",
+      "publicPointerRevision": 103,
+      "publicHttp": 200,
+      "result": "No new source run published"
+    },
+    "iconNational": {
+      "execution": "succeeded",
+      "resultStatus": "no_op",
+      "reason": "source_not_advanced",
+      "publicSourceRunId": "20261030T120000Z",
+      "publicHttp": 200,
+      "result": "Successful execution did not advance published data"
+    },
+    "freshnessMonitors": [
+      {
+        "product": "fvg",
+        "observedAtUtc": "2026-10-31T15:10:33.257323Z",
+        "criticalActive": 1,
+        "causes": [
+          "publication_age_critical",
+          "run_age_critical"
+        ],
+        "sourceRunId": "20261030T120000Z"
+      },
+      {
+        "product": "national",
+        "observedAtUtc": "2026-10-31T15:10:35.786635Z",
+        "criticalActive": 1,
+        "causes": [
+          "publication_age_critical",
+          "run_age_critical"
+        ],
+        "sourceRunId": "20261030T120000Z"
+      }
+    ],
+    "cams": {
+      "executions": 4,
+      "failed": 1,
+      "succeeded": 3,
+      "failureScheduledAtUtc": "2026-10-31T09:00:00Z",
+      "failureReason": "ADS wait budget reached",
+      "airAndPollenFailureReasonCode": "acquisition_nonrecoverable_failure",
+      "latestExecutionScheduledAtUtc": "2026-10-31T15:00:00Z",
+      "latestComplete": true,
+      "air": "verified",
+      "pollen": "verified",
+      "continuity": "verified",
+      "uvPublication": "storage_verified",
+      "publicSourceRunId": "20261031T000000Z",
+      "publicFamilyRevision": 49,
+      "result": "Earlier failure followed by successful scheduled runs and verified public products"
+    },
+    "events": {
+      "execution": "failed",
+      "catalogUpdatedAtUtc": "2026-10-31T04:10:16.761Z",
+      "correctedPublicProbeHttp": 200,
+      "apiStatus": "ready",
+      "total": 365,
+      "sampleReturned": 3,
+      "snapshot": "2026-10-31T04:01:33.597881+00:00",
+      "staleSources": [
+        "CSS Udine",
+        "Teatro Verdi Trieste",
+        "Galleria Spazzapan",
+        "Barcolana"
+      ],
+      "sourceFailureTags": {
+        "TurismoFVG": "quarantined_cards",
+        "Azalea": "quarantined_cards",
+        "CSS Udine": "source_verification_failed",
+        "Pordenone Pensa": "quarantined_cards",
+        "Teatro Verdi Pordenone": "quarantined_cards",
+        "Teatro Verdi Trieste": "adapter_exception",
+        "SagreFVG": "quarantined_cards",
+        "Villa Manin": "quarantined_cards",
+        "Galleria Spazzapan": "adapter_exception",
+        "Barcolana": "adapter_exception"
+      },
+      "invalidInitialProbe": "Missing required municipal coordinates; HTTPError is not evidence of endpoint outage",
+      "result": "Partial catalog available despite failed job"
+    },
+    "localNoticeLatestSample": {
+      "scheduledAtUtc": "2026-10-31T15:00:00Z",
+      "status": "no_candidate",
+      "evaluated": 22,
+      "groups": 10,
+      "dataDegradedGroups": 0,
+      "sourceFailed": 0,
+      "sent": 0,
+      "limit": "Single bounded summary; no assertion about every execution or notifications displayed on devices"
+    },
+    "officialAlertsSamples": {
+      "fvgHttp": 200,
+      "fvgActive": false,
+      "fvgFetchedAtUtc": "2026-10-31T15:00:18+00:00",
+      "nationalHttp": 200,
+      "nationalStatus": "green",
+      "nationalComplete": true,
+      "nationalMunicipalityScope": "One public municipality sample; not a nationwide validation"
+    }
+  },
+  "limitations": [
+    "Ready is configuration readiness, not fresh output",
+    "Completed success is not proof of newly published data or delivery to a phone",
+    "All initial and detailed execution log samples are bounded and marked partial by pagination",
+    "Execution lists cover the day only through the stated cutoff; future scheduled runs are not checked",
+    "Public output checks are metadata and selected endpoint samples, not exhaustive content validation",
+    "No jobs run or retried; no schedules, policies, deployments or notifications changed"
+  ],
+  "sourceCollections": [
+    {
+      "path": ".tmp/jobs-readonly-20261031/inventory.json",
+      "sha256": "cee64ad48891fc111551d10af78902447af42875ec28eaa763c0aa55ce1392e0"
+    },
+    {
+      "path": ".tmp/jobs-readonly-20261031/executions.json",
+      "sha256": "6c8c89217fe428a789c495231e75120dc8ed779ef726d0124258890059dade5a"
+    },
+    {
+      "path": ".tmp/jobs-readonly-20261031/logs.json",
+      "sha256": "c6cd18cf5ab920650697d9502408244a39901373396d671d6c79fa3b9bb09a66"
+    },
+    {
+      "path": ".tmp/jobs-readonly-20261031/publications.json",
+      "sha256": "afd5682f15f1b7a5b88a0db1fbdeccbdcf161b5a2a10191e2d0b342faa7d39bf"
+    },
+    {
+      "path": ".tmp/jobs-readonly-20261031/receipt.json",
+      "sha256": "96fda52cd0dc6d35a1542548402f1a982a7b0f4ba23aab402eea3094a10e99ed"
+    },
+    {
+      "path": ".tmp/jobs-readonly-20261031/scheduler-errors.json",
+      "sha256": "4a9bb5afd5feb5ec4b82251a9a2a34f5822fd2effc598c4f6b6f0091c653493d"
+    },
+    {
+      "path": ".tmp/jobs-readonly-20261031/detail-logs.json",
+      "sha256": "14a3a1d36c46cfd1ebcfbd082e4dfa63a2443f2e491dad4adf226e6dd3469adf"
+    },
+    {
+      "path": ".tmp/events-job-probe-20261031.json",
+      "sha256": "4652225fcc5c58b489e18490f67851c8034dbaa79eb96541081290d567ba2424"
+    }
+  ],
+  "cloudMutations": false,
+  "newCommit": false,
+  "push": false
+}

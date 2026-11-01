@@ -28,11 +28,15 @@ schede. Nessuna pubblicazione applicativa, job cloud, email o notifica attivati.
 Monitoraggio disponibile: risultato del task, rapporti JSON locali e storico
 autenticato nel pannello; nessun avviso remoto automatico configurato.
 
+## Inventario cloud precedente
+
 Inventario predisposto il **28 ottobre 2026**, da main
 `9f81253e6b1832816e4032930b7b5eb64ebff6ad`, sul ramo
 `codex/job-control-inventory`. È un indice delle configurazioni esistenti,
 non una seconda configurazione da distribuire. La prima osservazione cloud
 è separata nel [verbale del 28 ottobre](JOBS_READONLY_AUDIT_20261028.md).
+Il [controllo del 31 ottobre](JOBS_READONLY_AUDIT_20261031.md) registra
+separatamente le esecuzioni e i risultati di quella giornata.
 
 ## Come leggere l'inventario
 
