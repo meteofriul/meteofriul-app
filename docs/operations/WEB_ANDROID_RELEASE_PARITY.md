@@ -1,5 +1,7 @@
 # Allineamento della Web App con Android
 
+**Anteprima Eventi, 1 novembre:** sorgenti locali con ordine distanza crescente → rilevanza a parità, mercati con distanza comunale approssimata, selettore del raggio con conferma e ricerca Eventi corretta attraverso il relay LAN. [Contratto e prove](../../EVENTI_DATA_SOURCE_AUDIT.md#ordinamento-approvato-il-1-novembre-2026): 252 test mirati e lint PASS; liste complete Oggi/Weekend/Prossimi controllate in Chromium desktop sull'anteprima. Checkpoint Git locale sul ramo Mercati, senza push o distribuzione; nessuna nuova build Web/Android, verifica Safari/iPhone o prova su telefono Android. La parità degli artefatti pubblicati resta quella registrata in precedenza.
+
 **Salvataggio dei pendenti, 1 novembre:** commit sorgenti `a81161da` verificato sul ramo remoto; documentazione dell'audit job e del recupero ICON salvata separatamente. I 18 file frontend sono identici ai sorgenti della verifica del 31 ottobre: prove Web/SW riutilizzate, nessuna nuova compilazione o qualifica runtime. [Checkpoint](PENDENTI_SALVATAGGIO_20261101.md). Artefatti e pubblicazioni Web/Android invariati; revisione della UI ancora aperta.
 
 **Salvataggio Mercati, 1 novembre:** sorgenti backend `f0e28d7c` e pannello `fe4768f` conservati nei rispettivi rami remoti; backup dell'archivio alla revisione 6 separato da Git. [Checkpoint e verifiche](MERCATI_SALVATAGGIO_20261101.md). Nessuna promozione a main, modifica agli artefatti Web/Android, distribuzione o nuova qualifica browser/dispositivo.

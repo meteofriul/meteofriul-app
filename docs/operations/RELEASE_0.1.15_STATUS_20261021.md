@@ -1,5 +1,7 @@
 # Stato release 0.1.15 e lavoro salvato — aggiornamento sorgenti del 24 ottobre 2026
 
+**Anteprima Eventi, 1 novembre:** ordine per distanza crescente in Oggi/Weekend/Prossimi, rilevanza soltanto a parità; distanze mancanti in fondo e stime comunali propagate alle edizioni Mercati. Raggio compatto con conferma esplicita nelle Impostazioni e collegamento al servizio Eventi corretto anche in LAN. [Regola approvata e verifiche](../../EVENTI_DATA_SOURCE_AUDIT.md#ordinamento-approvato-il-1-novembre-2026): 252 test mirati, lint e prova Chromium LAN PASS. Checkpoint Git locale sul ramo Mercati, senza push; main, versioni, artefatti e pubblicazioni Web/Android invariati. Nessuna nuova qualifica su telefono.
+
 **Salvataggio dei pendenti, 1 novembre:** raggio condiviso Home/Eventi/Mercati salvato e verificato sul remoto nel commit `a81161da`, con controllo soltanto nelle Impostazioni. Resoconti operativi del 31 ottobre conservati in un commit documentale separato. [Verifiche riutilizzate, backup e limiti](PENDENTI_SALVATAGGIO_20261101.md). Nessuna promozione a main, modifica di versione, nuova qualifica su dispositivo, build Android o pubblicazione.
 
 **Salvataggio Mercati, 1 novembre:** commit backend `f0e28d7c` e pannello `fe4768f` salvati e verificati sui rami remoti, backup locale della revisione 6 e gitignore verificati. [Evidenze e lavori separati](MERCATI_SALVATAGGIO_20261101.md). Sola conservazione dei sorgenti: main, versioni, artefatti, pubblicazioni e qualifiche su dispositivo non modificati. Invio email ancora da configurare.

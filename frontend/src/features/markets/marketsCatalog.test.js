@@ -65,6 +65,23 @@ describe("market catalogue and dated editions", () => {
     const model = buildEventsViewModel({ items: merged }, { location: pn, now });
     expect(findRequestedMarketEvent(model.items, { marketId: "M035", date: "2026-10-25" }, now)?.title).toBe(source.title);
   });
+  it("carries approximate municipality distances into injected market events without replacing a source distance", () => {
+    const localMarket = getMarket("M035");
+    const otherMarket = { ...localMarket, id: "test-udine", name: "Mercato di Udine", comune: "Udine" };
+    const catalogue = { ...MARKET_CATALOGUE, markets: [localMarket, otherMarket], dates: [localMarket, otherMarket]
+      .map(market => ({ marketId: market.id, date: "2026-10-25", status: "published", source: market.url })) };
+    const local = mergeMarketEvents([], { location: pn, radius: 50, now, catalogue });
+    expect(local.some(event => event.distance_km === 0)).toBe(true);
+    expect(local.some(event => event.distance_km > 5)).toBe(true);
+    expect(local.every(event => Number.isFinite(event.distance_km) && event.distance_km <= 50
+      && event.distance_is_approximate === true)).toBe(true);
+    const source = { title: "La Soffitta in Piazza", event_city: "Pordenone", start_date: "2026-10-25",
+      distance_km: 0.7, distance_is_approximate: false, url: "https://example.org/edition" };
+    const merged = mergeMarketEvents([source], { location: pn, radius: 5, now });
+    expect(merged.find(event => event.market_id === "M035")).toMatchObject({ distance_km: 0.7, distance_is_approximate: false });
+    const missing = mergeMarketEvents([{ ...source, distance_km: null }], { location: pn, radius: 5, now });
+    expect(missing.find(event => event.market_id === "M035")).toMatchObject({ distance_km: 0, distance_is_approximate: true });
+  });
   it("does not resurrect a cancelled date and does not turn a broad range into daily editions", () => {
     const source = { title: "La Soffitta in Piazza", event_city: "Pordenone", date: "25 ottobre 2026", status: "cancelled" };
     expect(mergeMarketEvents([source], { location: pn, radius: 5, now }).some(event => event.market_id === "M035")).toBe(false);

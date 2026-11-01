@@ -4,6 +4,7 @@ import { useEffect, useRef } from "react";
 const DIALOG_ENTRY = "__mfBrowserDialog";
 let pendingReturn = Promise.resolve();
 let nextEntry = 0;
+const activeEntries = new Set();
 
 // A close button must consume the same entry as browser Back. Wait for that
 // asynchronous traversal before registering a newly opened dialog.
@@ -24,6 +25,7 @@ export function useBrowserDialogBack(onBack, enabled = true) {
     let entry = null;
     const handlePopState = (event) => {
       if (event.state?.[DIALOG_ENTRY] === entry) return;
+      activeEntries.delete(entry);
       entry = null;
       callbackRef.current?.();
     };
@@ -36,14 +38,17 @@ export function useBrowserDialogBack(onBack, enabled = true) {
       const previous = window.history.state;
       const state = { ...previous, [DIALOG_ENTRY]: entry };
       // A reload can preserve an entry whose dialog no longer exists.
-      if (previous?.[DIALOG_ENTRY]) window.history.replaceState(state, "");
+      // An active entry belongs to a parent screen/dialog and must be preserved.
+      if (previous?.[DIALOG_ENTRY] && !activeEntries.has(previous[DIALOG_ENTRY])) window.history.replaceState(state, "");
       else window.history.pushState(state, "");
+      activeEntries.add(entry);
       window.addEventListener("popstate", handlePopState);
     });
 
     return () => {
       active = false;
       window.removeEventListener("popstate", handlePopState);
+      activeEntries.delete(entry);
       if (entry && window.history.state?.[DIALOG_ENTRY] === entry) {
         returnFromDialog();
       }

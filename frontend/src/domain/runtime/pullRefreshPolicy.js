@@ -26,6 +26,8 @@ export const PULL_REFRESH_EXCLUDED_SELECTOR = [
   "select",
   "textarea",
   "[role='button']",
+  "[role='spinbutton']",
+  ".mf-radius-dialog",
   ".mf-app-header",
   ".mf-bottom-nav",
   ".mf-location-sheet",

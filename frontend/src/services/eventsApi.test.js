@@ -127,6 +127,48 @@ describe("events api service", () => {
     })).toBe(PILOT_EVENTS_API);
   });
 
+  it("keeps the cloud preview Events proxy and radius when a LAN hostname disables the weather guard", async () => {
+    vi.stubEnv("DEV", true);
+    vi.stubEnv("MODE", "local-pilot-cloud");
+    vi.stubEnv("VITE_LOCAL_WEATHER_PILOT", "1");
+    vi.stubEnv("VITE_ANDROID_LOCAL_WEATHER_PILOT", "0");
+    try {
+      const apiBase = resolveEventsApiBase({ apiBase: "/api", localPilot: false, nativeAndroid: false });
+      expect(apiBase).toBe(LOCAL_PILOT_EVENTS_API);
+      const fetchImpl = vi.fn(async () => ({
+        ok: true, json: async () => ({ events: [], total: 0, snapshot: "lan", next_offset: null }),
+      }));
+      for (const radius of [5, 50]) {
+        await fetchLocalEvents({ ...DEFAULT_APP_LOCATION, eventsRadius: radius }, { apiBase, fetchImpl });
+        const url = new URL(fetchImpl.mock.lastCall[0], "http://192.168.1.51:5175");
+        expect(url.pathname).toBe(`${LOCAL_PILOT_EVENTS_API}/local/events`);
+        expect(url.searchParams.get("radius")).toBe(String(radius));
+      }
+    } finally {
+      vi.unstubAllEnvs();
+    }
+  });
+
+  it.each([
+    ["development", true, "1", "0", false],
+    ["local-pilot", true, "1", "0", false],
+    ["local-pilot-cloud", true, "0", "0", false],
+    ["local-pilot-cloud", true, "1", "1", false],
+    ["local-pilot-cloud", true, "1", "0", true],
+    ["local-pilot-cloud", false, "1", "0", false],
+  ])("does not activate the cloud browser proxy outside its explicit preview (%s, %s, %s, %s, %s)", (mode, dev, flag, androidFlag, nativeAndroid) => {
+    vi.stubEnv("MODE", mode);
+    vi.stubEnv("DEV", dev);
+    vi.stubEnv("PROD", false);
+    vi.stubEnv("VITE_LOCAL_WEATHER_PILOT", flag);
+    vi.stubEnv("VITE_ANDROID_LOCAL_WEATHER_PILOT", androidFlag);
+    try {
+      expect(resolveEventsApiBase({ apiBase: "/api", localPilot: false, nativeAndroid })).toBe("/api");
+    } finally {
+      vi.unstubAllEnvs();
+    }
+  });
+
   it("collects all pilot pages and sends the selected radius", async () => {
     const apiBase = "https://meteofriul-events-49007668366.europe-west1.run.app/api";
     const fetchImpl = vi.fn()

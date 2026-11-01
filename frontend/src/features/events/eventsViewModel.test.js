@@ -6,6 +6,7 @@ import {
   classifyEventTime,
   formatEventDateChip,
   getEventFilterCategory,
+  groupEventOccurrences,
   rankEventsForLocation,
   sortEventsForTimeTab,
 } from "./eventsViewModel";
@@ -428,13 +429,14 @@ describe("events view model", () => {
     });
   });
 
-  it("sorts future tabs chronologically while preserving rank within the same day", () => {
+  it("keeps relevance before date on future tabs when distances are equal", () => {
     const records = [
       buildEventRecord({
         category: "musica",
         date: "5 luglio",
         event_city: "Gorizia",
         id: "weekend-music",
+        distance_km: 10,
         source: "TurismoFVG",
         title: "Musica del weekend",
       }, { language: "it", location: { city: "Gorizia" }, now }),
@@ -443,6 +445,7 @@ describe("events view model", () => {
         date: "3 luglio",
         event_city: "Gorizia",
         id: "friday-culture",
+        distance_km: 10,
         source: "TurismoFVG",
         title: "Cultura del venerdi",
       }, { language: "it", location: { city: "Gorizia" }, now }),
@@ -451,6 +454,7 @@ describe("events view model", () => {
         date: "4 luglio",
         event_city: "Gorizia",
         id: "saturday-sagra",
+        distance_km: 10,
         source: "SagreFVG",
         title: "Sagra di sabato",
       }, { language: "it", location: { city: "Gorizia" }, now }),
@@ -460,18 +464,20 @@ describe("events view model", () => {
 
     expect(ranked[0].id).toBe("saturday-sagra");
     expect(sortEventsForTimeTab(ranked, "next", { now }).map((event) => event.id))
-      .toEqual(["friday-culture", "saturday-sagra", "weekend-music"]);
+      .toEqual(["saturday-sagra", "weekend-music", "friday-culture"]);
   });
 
-  it("puts a local festival programme first only in its own city", () => {
+  it("uses the local festival priority only as relevance at an equal distance", () => {
     const scenarioNow = new Date(2026, 8, 15, 12);
     const makeRecords = (city) => [
       buildEventRecord({
         title: "Concerto", id: "concert", start_date: "2026-09-16",
+        distance_km: 5,
         event_city: city, category: "musica",
       }, { location: { city }, now: scenarioNow }),
       buildEventRecord({
         title: "Pordenonelegge 2026", id: "programme",
+        distance_km: 5,
         start_date: "2026-09-16", end_date: "2026-09-20",
         display_mode: "umbrella", programme_city: "Pordenone",
         active_session_count: 2, event_city: "Pordenone e territorio",
@@ -537,6 +543,115 @@ describe("events view model", () => {
     expect(sortEventsForTimeTab(weekendEvents, "weekend", { now: scenarioNow }).map((event) => event.id))
       .toEqual(["barcis-23", "claut-23"]);
     expect(sortEventsForTimeTab(nextEvents, "next", { now: scenarioNow }).map((event) => event.id))
-      .toEqual(["barcis-21", "montereale-21", "barcis-23", "claut-23"]);
+      .toEqual(["barcis-23", "barcis-21", "montereale-21", "claut-23"]);
+  });
+});
+
+describe("distance-first event ordering", () => {
+  const location = { city: "Udine" };
+  const make = (fields) => buildEventRecord({
+    category: "cultura", start_date: "2026-06-28", event_city: "Altro comune",
+    date: new Intl.DateTimeFormat("it-IT", { day: "numeric", month: "long", year: "numeric" })
+      .format(new Date(`${fields.start_date || "2026-06-28"}T12:00:00`)),
+    title: fields.id, ...fields,
+  }, { location, now });
+  const ids = (records) => records.map(record => record.id);
+
+  it.each([
+    ["today", "2026-06-28"], ["weekend", "2026-07-04"], ["next", "2026-07-09"],
+  ])("puts 12 km before 38 km despite a more relevant category in %s", (tab, date) => {
+    const records = [
+      make({ id: "far", start_date: date, distance_km: 38, category: "sagra", source: "SagreFVG", image: "far.jpg" }),
+      make({ id: "near", start_date: date, distance_km: 12, category: "convegni" }),
+    ];
+    expect(records.every(record => record.timeCategory === tab)).toBe(true);
+    const ranked = rankEventsForLocation(records, { location, now });
+    expect(ids(ranked)).toEqual(["near", "far"]);
+    expect(ids(sortEventsForTimeTab(groupEventOccurrences(ranked), tab, { now }))).toEqual(["near", "far"]);
+    expect(ids(records)).toEqual(["far", "near"]);
+  });
+
+  it("continues ordering by distance beyond the old 15 km relevance cutoff", () => {
+    const records = [
+      make({ id: "far", distance_km: 42, category: "sagra" }),
+      make({ id: "middle", distance_km: 34, category: "musica" }),
+      make({ id: "near", distance_km: 18, category: "convegni" }),
+    ];
+    expect(ids(rankEventsForLocation(records, { location, now }))).toEqual(["near", "middle", "far"]);
+  });
+
+  it("uses relevance only at exactly equal distances without rounding them into ties", () => {
+    const records = [
+      make({ id: "slightly-farther-programme", distance_km: 12.01, display_mode: "umbrella",
+        programme_city: "Udine", active_session_count: 2, category: "sagra" }),
+      make({ id: "culture", distance_km: 12, category: "cultura" }),
+      make({ id: "music", distance_km: 12, category: "musica" }),
+    ];
+    const ranked = rankEventsForLocation(records, { location, now });
+    expect(ids(ranked)).toEqual(["music", "culture", "slightly-farther-programme"]);
+    expect(ids(sortEventsForTimeTab(ranked, "today", { now }))).toEqual(ids(ranked));
+  });
+
+  it.each(["weekend", "next"])("does not let programme priority or an earlier date cross distance in %s", (tab) => {
+    const records = [
+      make({ id: "far-local-programme", start_date: "2026-07-04", distance_km: 20,
+        display_mode: "umbrella", programme_city: "Udine", active_session_count: 2 }),
+      make({ id: "near-later-event", start_date: "2026-07-05", distance_km: 2 }),
+    ];
+    const ranked = rankEventsForLocation(records, { location, now });
+    expect(ids(sortEventsForTimeTab(ranked, tab, { now }))).toEqual(["near-later-event", "far-local-programme"]);
+  });
+
+  it("keeps invalid and missing distances after every known distance, including zero", () => {
+    const invalid = [null, undefined, "", "  ", false, true, -1, NaN, Infinity, "invalid"];
+    const unknown = invalid.map((distance, index) => make({
+      id: `unknown-${index}`, distance_km: distance, category: "sagra", image: "poster.jpg",
+    }));
+    const ranked = rankEventsForLocation([
+      ...unknown, make({ id: "fifty", distance_km: 50 }),
+      make({ id: "zero", distance_km: 0 }), make({ id: "numeric-string", distance_km: "5" }),
+    ], { location, now });
+    expect(ids(ranked).slice(0, 3)).toEqual(["zero", "numeric-string", "fifty"]);
+    expect(new Set(ids(ranked).slice(3))).toEqual(new Set(ids(unknown)));
+    expect(ranked).toHaveLength(13);
+  });
+
+  it("uses valid multisite fallbacks without replacing a valid primary distance", () => {
+    const ranked = rankEventsForLocation([
+      make({ id: "primary", distance_km: 20, nearest_session_distance_km: 1 }),
+      make({ id: "listed", distance_km: "", nearest_session_distance_km: -1, nearest_listed_municipality_distance_km: 6 }),
+      make({ id: "sessions", distance_km: null, nearest_session_distance_km: "4", nearest_listed_municipality_distance_km: 2 }),
+      make({ id: "unknown", distance_km: NaN, nearest_session_distance_km: false }),
+      make({ id: "zero", distance_km: 0, nearest_session_distance_km: 8 }),
+    ], { location, now });
+    expect(ids(ranked)).toEqual(["zero", "sessions", "listed", "primary", "unknown"]);
+  });
+
+  it("selects the richer duplicate before distance ordering rather than losing its verified fields", () => {
+    const basic = make({ id: "basic", title: "Same event", event_city: "Udine", distance_km: 1 });
+    const rich = make({ id: "rich", title: "Same event", event_city: "Udine", distance_km: 38,
+      source: "TurismoFVG", image: "poster.jpg", url: "https://example.org/same", description: "Verified details" });
+    const other = make({ id: "other", distance_km: 12 });
+    const ranked = rankEventsForLocation([basic, rich, other], { location, now });
+    expect(ids(ranked)).toEqual(["other", "rich"]);
+    expect(ranked[1]).toBe(rich);
+    expect(ranked[1].raw.description).toBe("Verified details");
+  });
+
+  it("orders a grouped card by its visible occurrence and preserves all original occurrences", () => {
+    const shared = { title: "Shared programme", event_city: "Comune", venue: "Sala", url: "https://example.org/shared" };
+    const outside = make({ ...shared, id: "outside", start_date: "2026-06-27", distance_km: 1, time: "18:00" });
+    const visible = make({ ...shared, id: "visible", distance_km: 38, time: "21:00" });
+    const nearer = make({ id: "nearer", distance_km: 12 });
+    const ranked = rankEventsForLocation([outside, visible, nearer], { location, now });
+    const today = ranked.filter(record => record.timeCategory === "today");
+    const groups = sortEventsForTimeTab(groupEventOccurrences(today, ranked), "today", { now });
+    expect(ids(groups)).toEqual(["nearer", "visible"]);
+    expect(groups[1].raw).toBe(visible.raw);
+    expect(groups[1].date).toBe(visible.date);
+    expect(groups[1].occurrences).toEqual([outside, visible]);
+    expect(groups[1].visibleOccurrences).toEqual([visible]);
+    expect(outside.occurrences).toBeUndefined();
+    expect(visible.occurrences).toBeUndefined();
   });
 });

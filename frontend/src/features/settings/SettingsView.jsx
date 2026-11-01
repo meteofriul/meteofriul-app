@@ -1415,7 +1415,6 @@ export function SettingsView({
             />
 
             <SettingsPanel title={copy.sections.general} variant="pilot-group">
-              <SearchRadiusSetting language={language} radius={eventsRadius} onChange={onEventsRadiusChange} />
               <SettingsChoiceRow
                 icon={Languages}
                 label={copy.language.title}
@@ -1447,6 +1446,7 @@ export function SettingsView({
                 title={copy.rows.defaultLocation}
                 variant="default-location"
               />
+              <SearchRadiusSetting language={language} radius={eventsRadius} onChange={onEventsRadiusChange} />
               <SettingsToggleRow
                 backgroundLocationState={backgroundLocationStatus?.state}
                 checked={automaticLocationChecked}
@@ -1490,7 +1490,6 @@ export function SettingsView({
             {renderBackButton()}
 
             <SettingsPanel>
-              <SearchRadiusSetting language={language} radius={eventsRadius} onChange={onEventsRadiusChange} />
               <SettingsToggleRow
                 checked={language === "fur"}
                 detail={copy.language[language]}
@@ -1527,6 +1526,7 @@ export function SettingsView({
                 onAction={onLocationSearchOpen}
                 title={activeCity}
               />
+              <SearchRadiusSetting language={language} radius={eventsRadius} onChange={onEventsRadiusChange} />
               <SettingsToggleRow
                 backgroundLocationState={backgroundLocationStatus?.state}
                 checked={automaticLocationChecked}

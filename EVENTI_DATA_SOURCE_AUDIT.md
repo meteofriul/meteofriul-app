@@ -2,6 +2,40 @@
 
 Data: 2026-07-01
 
+## Ordinamento approvato il 1 novembre 2026
+
+Nelle liste Eventi **Oggi, Weekend e Prossimi**, la distanza crescente è il
+primo criterio. Solo a parità del valore numerico di distanza si applica la
+rilevanza esistente (temporalità, durata, programmi locali, categoria, fonte e
+completezza della scheda); data, durata e titolo risolvono gli ulteriori pareggi.
+Nessuna categoria, data o priorità di programma può scavalcare una distanza minore.
+I confini delle tre finestre temporali restano invariati.
+
+Le distanze valide comprendono quelle della sede, della sessione più vicina di
+un programma o del comune elencato più vicino per un evento multisede. Un valore
+mancante, vuoto, negativo o non numerico non equivale a zero: le schede senza
+distanza nota seguono quelle con distanza nota. L'ordinamento usa il valore
+numerico disponibile, non il testo arrotondato mostrato sulla scheda.
+
+Le edizioni dei mercati inserite in Eventi usano la distanza comunale già
+calcolata dal catalogo, segnalata come approssimata; un dato valido della fonte
+resta conservato per le edizioni non gestite. Dopo un trasferimento gestito dal
+pannello, la stima segue il comune corrente e non la distanza della sede vecchia.
+Deduplica e raggruppamenti devono conservare le informazioni e le occorrenze.
+
+Questa regola riguarda l'elenco Eventi. La selezione editoriale delle anteprime
+Home e la struttura del catalogo Mercati in Scopri mantengono i propri criteri.
+La lavorazione è locale nel ramo Mercati; non attesta una nuova pubblicazione
+Web/Android né una prova su telefono.
+
+Verifica del 1 novembre: 252 test mirati in 14 file, lint e controllo del diff
+superati. Prova Chromium nell'anteprima LAN con comune Udine e raggio 50 km:
+liste complete di 25 schede Oggi, 82 Weekend e 569 Prossimi, senza inversioni
+tra le distanze visualizzate (rispettivamente 22, 63 e 445 etichette numeriche).
+I casi di distanza zero senza etichetta, valore ignoto e parità numerica esatta
+sono coperti dai test automatici. Regressioni Home, contatori e collegamento
+Scopri/Mercati incluse; nessuna nuova build o prova su telefono/Safari.
+
 ## Aggiunta richiesta per la sola pilota — 2026-09-06
 
 ### Ulteriori fonti approvate dall'utente

@@ -485,9 +485,15 @@ export function groupEventOccurrences(records = [], allRecords = records) {
       if (key) groups.set(key, group);
     }
   }
-  const visible = new Set(records);
-  return result.filter((group) => group.occurrences.some((item) => visible.has(item)))
-    .map((group) => ({ ...group, visibleOccurrences: group.occurrences.filter((item) => visible.has(item)) }));
+  const visibleOrder = new Map(records.map((record, index) => [record, index]));
+  return result.flatMap((group) => {
+    const visibleOccurrences = group.occurrences.filter((item) => visibleOrder.has(item))
+      .sort((first, second) => visibleOrder.get(first) - visibleOrder.get(second));
+    if (!visibleOccurrences.length) return [];
+    // The visible card follows the selected tab, while the detail retains
+    // every original occurrence and its source payload, including other dates.
+    return [{ ...visibleOccurrences[0], occurrences: group.occurrences, visibleOccurrences }];
+  }).sort((first, second) => visibleOrder.get(first.visibleOccurrences[0]) - visibleOrder.get(second.visibleOccurrences[0]));
 }
 
 export function getContextualEventsSummary(eventRecords = []) {
@@ -501,6 +507,24 @@ export function getContextualEventsSummary(eventRecords = []) {
   return todayCount > 0
     ? { count: todayCount, period: "today", todayCount, upcomingCount }
     : { count: upcomingCount, period: "next", todayCount, upcomingCount };
+}
+
+function getEventDistanceKm(record) {
+  const raw = record?.raw || record;
+  for (const value of [raw?.distance_km, raw?.nearest_session_distance_km, raw?.nearest_listed_municipality_distance_km]) {
+    if (typeof value !== "number" && typeof value !== "string") continue;
+    if (typeof value === "string" && !value.trim()) continue;
+    const distance = Number(value);
+    if (Number.isFinite(distance) && distance >= 0) return distance;
+  }
+  return Infinity;
+}
+
+function compareEventDistance(first, second) {
+  const firstDistance = getEventDistanceKm(first);
+  const secondDistance = getEventDistanceKm(second);
+  if (firstDistance === secondDistance) return 0;
+  return firstDistance < secondDistance ? -1 : 1;
 }
 
 function getLocationRankBoost(record, location) {
@@ -525,8 +549,8 @@ function getLocationRankBoost(record, location) {
   if (singlePlace && normalizeLocationToken(singlePlace) === activeToken) return 180;
   if (matchingPlace) return 140;
 
-  const distance = Number(record.raw?.distance_km);
-  if (Number.isFinite(distance) && distance >= 0) {
+  const distance = getEventDistanceKm(record);
+  if (Number.isFinite(distance)) {
     return Math.max(0, 120 - (distance * 8));
   }
 
@@ -585,28 +609,23 @@ export function rankEventsForLocation(eventRecords = [], { location = null, now 
   });
 
   const seen = new Set();
+  // Select the richer duplicate using the established relevance ranking
+  // before ordering distinct events by distance. Equal distances keep that
+  // ranking, including its date/duration/title tie-breakers.
   return ranked.filter((record) => {
     const key = getEventDedupeKey(record, now);
     if (!key) return true;
     if (seen.has(key)) return false;
     seen.add(key);
     return true;
-  });
+  }).sort(compareEventDistance);
 }
 
-export function sortEventsForTimeTab(eventRecords = [], tabId = "today", { now = new Date() } = {}) {
-  if (tabId === "today") return eventRecords;
-
-  return eventRecords
-    .map((event, index) => ({ event, index }))
-    .sort((first, second) => {
-      const priorityDelta = Number(second.event.localProgrammePriority) - Number(first.event.localProgrammePriority);
-      if (priorityDelta) return priorityDelta;
-      const dateDelta = getEventDateSortValue(first.event, now) - getEventDateSortValue(second.event, now);
-      if (dateDelta) return dateDelta;
-      return first.index - second.index;
-    })
-    .map(({ event }) => event);
+export function sortEventsForTimeTab(eventRecords = []) {
+  // Today, Weekend and Next share one order. The stable sort preserves the
+  // model's relevance ranking at an exactly equal distance; future tabs must
+  // not promote an earlier but more distant event over a nearer one.
+  return [...eventRecords].sort(compareEventDistance);
 }
 
 export function buildEventRecord(event, { language = "it", location = null, now = new Date() } = {}) {

@@ -605,7 +605,7 @@ export function EventsView({
       return event.timeCategory === "weekend" || event.timeCategory === "next";
     });
 
-    return sortEventsForTimeTab(groupEventOccurrences(matchingEvents, categoryFilteredEvents).map((group) => ({ ...group, date: group.visibleOccurrences[0].date })), effectiveTab);
+    return sortEventsForTimeTab(groupEventOccurrences(matchingEvents, categoryFilteredEvents));
   }, [categoryFilteredEvents, effectiveTab]);
   const visibleKey = `${effectiveCategory}:${effectiveTab}:${model.locationLabel}:${radius}`;
   const visibleCount = visibleState.key === visibleKey ? visibleState.count : INITIAL_VISIBLE_EVENTS;

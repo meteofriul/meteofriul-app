@@ -26,6 +26,18 @@ describe("authoritative market editions", () => {
     expect(findRequestedMarketEvent(model.items, { marketId: market.id, date: "2026-11-01" }, now, snapshot)?.id).toBe("edition-stable-1");
     expect(findRequestedMarketEvent(model.items, { marketId: market.id, editionId: "edition-stable-1" }, now, snapshot)?.id).toBe("edition-stable-1");
   });
+  it("recalculates distance after a managed market moves and marks the municipality estimate", () => {
+    const snapshot = catalogue({ markets: [{ ...market, comune: "Udine", municipalityAliases: ["Pordenone"] }] });
+    const old = { ...source, distance_km: 0, distance_is_approximate: false };
+    const merged = mergeMarketEvents([old], { location, radius: 50, now, catalogue: snapshot });
+    expect(merged).toHaveLength(1);
+    expect(merged[0].distance_km).toBeGreaterThan(40);
+    expect(merged[0].distance_km).toBeLessThan(50);
+    expect(merged[0].distance_is_approximate).toBe(true);
+    expect(merged[0].event_city).toBe("Udine");
+    const injected = mergeMarketEvents([], { location, radius: 50, now, catalogue: snapshot });
+    expect(injected[0].distance_km).toBe(merged[0].distance_km);
+  });
 
   it("keeps a dated venue distinct from another edition and does not guess directions", () => {
     const snapshot = catalogue();
@@ -99,6 +111,7 @@ describe("authoritative market editions", () => {
     const merged = mergeMarketEvents([saturday], { location, now, catalogue: snapshot });
     expect(merged).toHaveLength(1);
     expect(merged[0]).toMatchObject({ time: "10:00–14:00", lat: null, lon: null });
+    expect(merged[0]).toMatchObject({ distance_km: 0, distance_is_approximate: true });
     expect(merged[0].description).toContain("Sabato");
     expect(merged[0].description).not.toContain("venerdì");
     expect(mergeMarketEvents([{ ...saturday, end_date: "2026-11-30" }], { location, now, catalogue: snapshot })).toEqual([]);

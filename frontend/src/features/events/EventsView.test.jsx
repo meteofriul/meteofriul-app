@@ -25,6 +25,20 @@ const promotionCampaign = {
 };
 
 describe("filtered event heading count", () => {
+  it.each(["2026-06-28", "2026-07-04", "2026-07-09"])("renders nearby cards first in the active time tab for %s", (date) => {
+    const dateLabel = new Intl.DateTimeFormat("it-IT", { day: "numeric", month: "long", year: "numeric" }).format(new Date(`${date}T12:00:00`));
+    const model = buildEventsViewModel({ items: [
+      { id: "near", title: "Vicino semplice", date: dateLabel, start_date: date, distance_km: 12, category: "convegni" },
+      { id: "far", title: "Lontano rilevante", date: dateLabel, start_date: date, distance_km: 38, category: "sagra", image: "poster.jpg" },
+    ] }, { now: new Date("2026-06-28T12:00:00"), location: { city: "Udine" } });
+    // The grouped-card list must also apply distance ordering; it cannot rely
+    // on the API or model preserving their order through presentation changes.
+    model.items.reverse();
+    const html = renderToStaticMarkup(<EventsView model={model} />);
+    expect(html.indexOf("Vicino semplice")).toBeGreaterThan(-1);
+    expect(html.indexOf("Vicino semplice")).toBeLessThan(html.indexOf("Lontano rilevante"));
+  });
+
   it("shows the number of appointments on one programme card", () => {
     const model = buildEventsViewModel({ items: [{
       title: "Pordenonelegge 2026", source: "Pordenonelegge",

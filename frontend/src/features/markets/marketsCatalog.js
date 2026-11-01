@@ -174,9 +174,15 @@ export function eventMarketDays(event, now = new Date()) {
 function cancelled(event) {
   return event.cancelled === true || /cancel|annull|postpon|rinvi/i.test(event.status || event.event_status || "");
 }
+function marketEventDistance(market) {
+  if (!Number.isFinite(market?.distance) || market.distance < 0) return {};
+  // The catalogue uses municipality centres, not verified venue coordinates.
+  return { distance_km: Math.round(market.distance * 10) / 10, distance_is_approximate: true };
+}
 export function mergeMarketEvents(events = [], { location, radius = 20, now = new Date(), catalogue = inventory } = {}) {
   if (!findMarketMunicipality(location)) return events;
   if (catalogue.schemaVersion === 2) return mergeManagedMarketEvents(events, { location, radius, now, catalogue });
+  const area = new Map(selectMarkets({ location, radius, now, catalogue }).items.map(market => [market.id, market]));
   const consumed = new Set(), broad = new Set();
   const existing = events.flatMap(event => {
     const market = matchMarket(event, catalogue);
@@ -184,9 +190,13 @@ export function mergeMarketEvents(events = [], { location, radius = 20, now = ne
     const days = eventMarketDays(event, now);
     days.forEach(day => consumed.add(market.id + ":" + day));
     if (!days.length) broad.add(market.id);
-    return cancelled(event) ? [] : [{ ...event, market_id: market.id }];
+    const distance = event.distance_km;
+    const hasSourceDistance = (typeof distance === "number" || typeof distance === "string")
+      && String(distance).trim() !== "" && Number.isFinite(Number(distance)) && Number(distance) >= 0;
+    return cancelled(event) ? [] : [{ ...event, market_id: market.id,
+      ...(hasSourceDistance ? {} : marketEventDistance(area.get(market.id))) }];
   });
-  const local = selectMarkets({ location, radius, now, catalogue }).items.flatMap(market =>
+  const local = [...area.values()].flatMap(market =>
     market.group !== "occasional" || broad.has(market.id) ? [] : market.dates.flatMap(edition => {
       const key = market.id + ":" + edition.date;
       if (!marketDateInEvents(edition.date, now) || consumed.has(key)) return [];
@@ -195,6 +205,7 @@ export function mergeMarketEvents(events = [], { location, radius = 20, now = ne
         id: "market:" + key, market_id: market.id, category: "mercato", title: market.name,
         date: formatMarketDate(edition.date), start_date: edition.date, end_date: edition.date,
         event_city: market.comune, place: market.place, source: market.authority, url: edition.source || market.url,
+        ...marketEventDistance(market),
         description: market.kind + ". " + market.cadence + ". " + (market.scheduleNote || "")
           + " Date pubblicate dalla fonte; verificare eventuali variazioni.",
         market_catalogue: true, description_source_name: market.authority,
@@ -224,6 +235,7 @@ function managedEditionEvent(market, edition, source = {}) {
     category: "mercato", title: market.name, start_date: edition.date, end_date: edition.date,
     date: formatMarketDate(edition.date), occurrences: [edition.date],
     event_city: market.comune, place: venue.place || "", venue: venue.place || "", address: "",
+    ...marketEventDistance(market),
     maps_url: marketDirectionsUrl(market, edition), lat: venue.lat ?? null, lon: venue.lon ?? null,
     time: edition.hours || market.hours || "", market_catalogue: true, market_managed: true,
     market_venue: edition.venue || null, source: market.authority || source.source,
@@ -273,6 +285,7 @@ function mergeManagedMarketEvents(events, { location, radius, now, catalogue }) 
     return [{ id: raw.id, image: raw.image, start_date: raw.start_date, end_date: raw.end_date,
       date: days.length === 1 ? formatMarketDate(days[0]) : raw.date, occurrences: days,
       market_id: market.id, title: market.name, category: "mercato", event_city: market.comune,
+      ...marketEventDistance(market),
       place: market.place, venue: market.place, address: "", lat: null, lon: null, time: market.hours || "",
       description: `${market.kind}. ${market.cadence}. ${market.scheduleNote || ""}`,
       description_excerpt: "", url: market.url || raw.url, source: market.authority || raw.source,

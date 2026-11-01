@@ -1,3 +1,4 @@
+// @vitest-environment jsdom
 import { describe, expect, it } from "vitest";
 
 import {
@@ -32,6 +33,25 @@ describe("pullRefreshPolicy", () => {
       scrollTop: 0,
       target: targetMatching({ className: "mf-bulletin-map-frame" }),
     })).toBe(false);
+  });
+
+  it("leaves gestures on a radius wheel and its numbers to the spinbutton", () => {
+    const section = document.createElement("section");
+    section.innerHTML = '<div role="spinbutton" tabindex="0"><span>20</span></div><p>Settings</p>';
+    const wheel = section.querySelector('[role="spinbutton"]');
+    const number = wheel.querySelector("span");
+    expect(canStartPullRefresh({ scrollTop: 0, target: wheel })).toBe(false);
+    expect(canStartPullRefresh({ scrollTop: 0, target: number })).toBe(false);
+    expect(canStartPullRefresh({ scrollTop: 0, target: section.querySelector("p") })).toBe(true);
+  });
+
+  it("does not start page refresh from the radius dialog or its non-interactive content", () => {
+    const dialog = document.createElement("dialog");
+    dialog.className = "mf-radius-dialog";
+    dialog.innerHTML = "<h2>Raggio di ricerca</h2><p>Scegli il raggio</p>";
+    expect(canStartPullRefresh({ scrollTop: 0, target: dialog })).toBe(false);
+    expect(canStartPullRefresh({ scrollTop: 0, target: dialog.querySelector("h2") })).toBe(false);
+    expect(canStartPullRefresh({ scrollTop: 0, target: dialog.querySelector("p") })).toBe(false);
   });
 
   it("waits for a vertical direction lock before tracking", () => {

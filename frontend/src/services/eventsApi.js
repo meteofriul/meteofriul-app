@@ -22,6 +22,15 @@ export function resolveEventsApiBase({
   localPilot = isLocalWeatherPilot(),
   nativeAndroid = isAndroidCapacitorRuntime(),
 } = {}) {
+  // A LAN relay changes the browser hostname, so the loopback-only weather
+  // guard is false there. Keep this explicit cloud preview on its Events
+  // proxy, which supports the radius and the complete official catalogue.
+  const browserCloudPreview = import.meta.env.DEV === true
+    && import.meta.env.MODE === "local-pilot-cloud"
+    && import.meta.env.VITE_LOCAL_WEATHER_PILOT === "1"
+    && import.meta.env.VITE_ANDROID_LOCAL_WEATHER_PILOT === "0"
+    && nativeAndroid === false;
+  if (browserCloudPreview) return LOCAL_PILOT_EVENTS_API;
   if (!localPilot) {
     return import.meta.env.PROD === true ? PRODUCTION_EVENTS_API : apiBase;
   }

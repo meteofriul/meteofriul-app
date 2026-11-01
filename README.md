@@ -1,5 +1,7 @@
 # Meteo Friûl
 
+**Anteprima Eventi, 1 novembre:** distanza crescente prima in Oggi/Weekend/Prossimi, rilevanza soltanto a parità. Raggio compatto con conferma nelle Impostazioni, filtro corretto anche in LAN e distanze approssimate conservate nelle edizioni Mercati. [Regola approvata e verifica](EVENTI_DATA_SOURCE_AUDIT.md#ordinamento-approvato-il-1-novembre-2026): 252 test mirati, lint e controllo delle liste complete in Chromium LAN PASS. Checkpoint Git locale sul ramo `codex/mercati-integration-20261028`; nessun push, nuova build, promozione o pubblicazione Web/Android.
+
 **Salvataggio dei pendenti, 1 novembre:** integrazione del raggio condiviso salvata e verificata sul ramo remoto nel commit `a81161da`; resoconti dell'audit job e del recupero ICON conservati separatamente come documentazione datata. Tutti i 18 hash frontend coincidono con i sorgenti già verificati: riutilizzate le prove di 760 test, lint e build Web/SW PASS. [Checkpoint, backup e attività aperte](docs/operations/PENDENTI_SALVATAGGIO_20261101.md). Nessuna promozione, nuova build di release o pubblicazione.
 
 **Salvataggio Mercati, 1 novembre:** backend/automazione `f0e28d7c` e pannello `fe4768f` committati e verificati sui rispettivi rami remoti. Gitignore completati e backup SQLite della revisione 6 verificato; 194 test pannello e precedente prova di 119 test backend PASS. [Commit, backup, esclusioni e lavoro rimasto separato](docs/operations/MERCATI_SALVATAGGIO_20261101.md). Nessuna promozione o pubblicazione; invio SMTP ancora da configurare.
