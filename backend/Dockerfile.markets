@@ -11,7 +11,7 @@ COPY backend/tests ./tests
 COPY frontend/src/data/markets/catalogue2026.json /workspace/frontend/src/data/markets/catalogue2026.json
 COPY docs/operations/evidence/MERCATI_REVISIONE_192_20261030.json /workspace/docs/operations/evidence/MERCATI_REVISIONE_192_20261030.json
 COPY docs/operations/evidence/MERCATI_RICOGNIZIONE_COMUNI_20261030.json /workspace/docs/operations/evidence/MERCATI_RICOGNIZIONE_COMUNI_20261030.json
-RUN python -m unittest tests.test_markets_archive tests.test_markets_firestore tests.test_markets_cloud tests.test_firebase_infrastructure
+RUN python -m unittest tests.test_markets_archive tests.test_markets_firestore tests.test_markets_cloud tests.test_firebase_infrastructure tests.test_markets_refresh_contract tests.test_markets_refresh_job tests.test_markets_refresh_sources tests.test_markets_review tests.test_markets_email_reminder
 USER 65532:65532
 EXPOSE 8080
 CMD ["python", "-m", "uvicorn", "app.markets_cloud:create_app", "--factory", "--host", "0.0.0.0", "--port", "8080", "--workers", "1", "--no-access-log"]

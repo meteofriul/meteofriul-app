@@ -213,7 +213,7 @@ class FirestoreMarketRepository:
 
 
 def configured_repository():
-    deployed = bool(os.getenv("K_SERVICE", "").strip())
+    deployed = bool(os.getenv("K_SERVICE", "").strip() or os.getenv("CLOUD_RUN_JOB", "").strip())
     mode = os.getenv("MARKETS_STORAGE", "" if deployed else "sqlite").strip().lower()
     if mode == "sqlite" and not deployed:
         default = Path(__file__).resolve().parents[3] / ".dev-logs" / "markets" / "archive.sqlite3"

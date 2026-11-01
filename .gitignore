@@ -49,6 +49,20 @@ frontend/android/bundletool*.jar
 *.pid
 .dev-logs/
 .dev-patches/
+# Local Markets archive, copies and SMTP credentials, also if moved outside logs
+*.sqlite
+*.sqlite3
+*.sqlite-wal
+*.sqlite-shm
+*.sqlite3-wal
+*.sqlite3-shm
+*.db
+*.db-wal
+*.db-shm
+admin-local-token.txt
+credential.xml
+*.clixml
+smtp.json
 frontend/dev-server*.log
 frontend/ui3-vite*.log
 frontend/ui3-vite.pid

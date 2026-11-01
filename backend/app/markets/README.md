@@ -123,6 +123,38 @@ globale e l'`expiresAt` immutabile seguono la massima validita pubblicata senza
 estendere le prove degli altri mercati. Un aggiornamento al 2027 non richiede
 modifiche al codice; i lettori devono rispettare anche la validita individuale.
 
+## Ricontrollo automatico delle fonti
+
+`python -m app.markets.refresh_job --apply --report <rapporto.json>` controlla
+le fonti dei mercati dovuti e aggiorna direttamente l'archivio amministrativo,
+senza conferme interattive. Omettendo `--apply` produce soltanto un'anteprima.
+Non inizializza un archivio SQLite mancante e non pubblica il catalogo.
+In Cloud Run Job richiede Firestore e progetti Firebase coerenti, senza
+credenziali locali; il job non è distribuito implicitamente da questo comando.
+
+Un fatto documentato cambiato sostituisce il vecchio dato anche manuale;
+lo stesso fatto già osservato non annulla una correzione manuale successiva.
+Valori precedenti, prove e note rimangono nello storico delle revisioni.
+Fonti discordanti o non interpretabili producono un'anomalia senza cancellare
+dati; assenze nel calendario non cancellano edizioni. Un riscontro parziale
+non aggiorna `checked` né l'approvazione editoriale della scheda intera.
+`validThrough` può avanzare soltanto fino a una data esplicitamente documentata,
+mai per il semplice successo della richiesta HTTP o fino a una fine anno dedotta.
+
+Il comando usa un budget di 30 minuti e registra i mercati rimasti da controllare.
+Ritorna 0 per un controllo con fatti verificati o nessun mercato dovuto, 1 per
+un errore operativo, 2 quando non è stato possibile verificare alcun fatto.
+I rapporti dettagliati restano nel percorso locale richiesto; stdout contiene
+soltanto conteggi e codici. Le credenziali del pannello non servono al job locale.
+
+Dalla radice canonica `scripts/refresh-markets-local.ps1` applica il controllo;
+`-Preview` lo simula. `scripts/install-markets-local-refresh-task.ps1` mostra
+la pianificazione; `-Install` registra il task Windows per le 08:20 e all'accesso,
+con processo nascosto, senza password salvate e senza esecuzioni sovrapposte.
+Richiede PC acceso e sessione Windows attiva. La frequenza effettiva è mensile,
+settimanale per appuntamenti/scadenze entro 30 giorni e giornaliera per i
+ritentativi transitori. I raccoglitori Eventi restano distinti.
+
 ## Seed e verifiche
 
 `data/seed.json` contiene 60 identita esistenti, 176 date con ID stabile e 59
@@ -143,3 +175,13 @@ Verifica locale: `python -m unittest tests.test_markets_archive tests.test_marke
 tests.test_markets_firestore -v`, piu le regressioni Sponsor/Webcam/Firebase.
 L'editor, i permessi remoti, Web/Android e il dispositivo reale richiedono evidenze
 proprie: questi test non attestano una pubblicazione o una prova su telefono.
+## Promemoria amministrativo locale — 1 novembre 2026
+
+`review.py` calcola le scadenze mensili/trimestrali e la coda compatta persistente.
+Le route amministrative `POST /review-complete` e `PUT /email-settings` usano
+autenticazione, CAS e idempotenza. Le preferenze sono server-owned e separate
+dalle schede. `email_reminder.py` gestisce invio SMTP con prenotazione durevole,
+retry giornalieri solo per errori certi e nessun reinvio per esiti incerti.
+Mittente/credenziali non sono esposti nelle API. Il collegamento della casella
+e la registrazione del task email sono ancora da eseguire: non basta salvare
+il destinatario nel pannello. [Stato operativo e istruzioni](../../../docs/operations/MERCATI_PROMEMORIA_20261101.md).

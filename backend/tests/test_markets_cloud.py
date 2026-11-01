@@ -44,6 +44,8 @@ class MarketsCloudTests(unittest.TestCase):
         self.assertEqual({route.path for route in app.routes}, {
             "/healthz", "/api/admin/markets/state",
             "/api/admin/markets/history", "/api/admin/markets/publish",
+            "/api/admin/markets/review-complete",
+            "/api/admin/markets/email-settings",
         })
         for path in ("/api/push/status", "/api/admin/promotions/state", "/api/community/reports", "/api/docs"):
             self.assertEqual(client.get(path).status_code, 404)
@@ -59,6 +61,8 @@ class MarketsCloudTests(unittest.TestCase):
             ("GET", "/api/admin/markets/history", None),
             ("PUT", "/api/admin/markets/state", {}),
             ("POST", "/api/admin/markets/publish", {}),
+            ("POST", "/api/admin/markets/review-complete", {}),
+            ("PUT", "/api/admin/markets/email-settings", {}),
         ):
             self.assertEqual(client.request(method,path,json=body).status_code, 401)
 

@@ -27,6 +27,18 @@ class MarketStateUpdate(MarketOperation):
     state: dict[str, Any]
 
 
+class MarketReviewCompletion(MarketOperation):
+    period: str = Field(pattern=r"^\d{4}-(0[1-9]|1[0-2])$")
+
+
+class MarketEmailSettings(BaseModel):
+    model_config = ConfigDict(extra="forbid")
+    expectedRevision: int = Field(ge=0, strict=True)
+    operationId: str = Field(min_length=8, max_length=120)
+    recipient: str = Field(min_length=3, max_length=254)
+    enabled: bool = Field(strict=True)
+
+
 def _http_error(error):
     return HTTPException(status_code=error.status, detail=error.detail)
 
@@ -91,5 +103,29 @@ def publish(command: MarketOperation, response: Response, admin: Annotated[Marke
     try:
         return service.mutate(action="publish", expected_revision=command.expectedRevision, operation_id=command.operationId,
                               reason=command.reason, actor=admin.uid)
+    except MarketError as error:
+        raise _http_error(error) from error
+
+
+@admin_router.post("/review-complete")
+def complete_review(command: MarketReviewCompletion, response: Response,
+                    admin: Annotated[MarketsAdminContext, Depends(require_markets_admin)],
+                    service: Annotated[MarketsService, Depends(get_markets_service)]):
+    response.headers["Cache-Control"] = "no-store"
+    try:
+        return service.complete_review(expected_revision=command.expectedRevision, operation_id=command.operationId,
+                                       period=command.period, reason=command.reason, actor=admin.uid)
+    except MarketError as error:
+        raise _http_error(error) from error
+
+
+@admin_router.put("/email-settings")
+def configure_email(command: MarketEmailSettings, response: Response,
+                    admin: Annotated[MarketsAdminContext, Depends(require_markets_admin)],
+                    service: Annotated[MarketsService, Depends(get_markets_service)]):
+    response.headers["Cache-Control"] = "no-store"
+    try:
+        return service.configure_email(expected_revision=command.expectedRevision, operation_id=command.operationId,
+                                       recipient=command.recipient, enabled=command.enabled, actor=admin.uid)
     except MarketError as error:
         raise _http_error(error) from error

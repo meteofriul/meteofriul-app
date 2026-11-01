@@ -1,5 +1,33 @@
 # Inventario dei job e responsabilità
 
+## Promemoria Mercati — preparazione del 1 novembre 2026
+
+Avviso mensile attivo nel pannello locale, calcolato alla lettura dell'archivio:
+nessun nuovo job è necessario per mostrarlo. Destinatario email modificabile
+dal pannello e salvato, ma **invio SMTP non ancora configurato**.
+`MeteoFriul-MarketsReminder-Local` è predisposto negli script, **non registrato**.
+Il collegamento guidato della casella verificherà SMTP e registrerà il task
+delle 09:00, con recupero all'accesso Windows. Nessuna email inviata e nessun
+nuovo servizio cloud. [Configurazione, prove e limiti](MERCATI_PROMEMORIA_20261101.md).
+
+## Aggiunta locale Mercati — 1 novembre 2026
+
+`MeteoFriul-MarketsRefresh-Local` è un task Windows effettivamente registrato
+nel workspace canonico, distinto dai job cloud elencati sotto. Avvio giornaliero
+alle 08:20 italiane e all'accesso Windows, con selezione interna mensile delle
+schede e settimanale per appuntamenti/scadenze entro 30 giorni. Richiede PC
+acceso e sessione interattiva; processo nascosto e nessuna sovrapposizione.
+Launcher [refresh-markets-local.ps1](../../scripts/refresh-markets-local.ps1),
+registrazione [install-markets-local-refresh-task.ps1](../../scripts/install-markets-local-refresh-task.ps1).
+
+Prima esecuzione reale: 100 mercati controllati, 25 modifiche a 6 schede,
+revisione amministrativa 5; prova successiva attraverso il task: `LastTaskResult=0`,
+`not_due`, revisione invariata. [Evidenze, conservazione e limiti](MERCATI_AUTOMAZIONE_LOCALE_20261101.md).
+Fonti non interpretabili sono segnalate; il controllo non certifica tutte le
+schede. Nessuna pubblicazione applicativa, job cloud, email o notifica attivati.
+Monitoraggio disponibile: risultato del task, rapporti JSON locali e storico
+autenticato nel pannello; nessun avviso remoto automatico configurato.
+
 Inventario predisposto il **28 ottobre 2026**, da main
 `9f81253e6b1832816e4032930b7b5eb64ebff6ad`, sul ramo
 `codex/job-control-inventory`. È un indice delle configurazioni esistenti,
