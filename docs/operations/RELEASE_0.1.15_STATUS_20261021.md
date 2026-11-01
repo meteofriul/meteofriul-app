@@ -1,5 +1,7 @@
 # Stato release 0.1.15 e lavoro salvato — aggiornamento sorgenti del 24 ottobre 2026
 
+**Salvataggio Mercati, 1 novembre:** commit backend `f0e28d7c` e pannello `fe4768f` salvati e verificati sui rami remoti, backup locale della revisione 6 e gitignore verificati. [Evidenze e lavori separati](MERCATI_SALVATAGGIO_20261101.md). Sola conservazione dei sorgenti: main, versioni, artefatti, pubblicazioni e qualifiche su dispositivo non modificati. Invio email ancora da configurare.
+
 **Mercati, 1 novembre: promemoria e preferenze email locali.** Pannello con scadenza mensile, revisione trimestrale e destinatario modificabile. Preferenza salvata alla revisione amministrativa 6; dati delle schede e catalogo pubblico invariati. Invio email non ancora configurato, task email non registrato. [Verifiche: 119 test backend, 27 pannello, lint/build](MERCATI_PROMEMORIA_20261101.md). Nessun nuovo artefatto, deploy o qualifica Web/Android.
 
 **Mercati, 1 novembre: aggiornamento automatico locale attivato.** Task Windows verificato in esecuzione; 25 modifiche su 6 schede, archivio alla revisione 5 e 219 edizioni. Note, 59 pratiche e snapshot pubblico conservati. 92 test backend e 30 pannello, lint/build PASS. [Evidenze e limiti di copertura](MERCATI_AUTOMAZIONE_LOCALE_20261101.md). Nessun deploy, promozione, APK/AAB, nuova Web release o pubblicazione applicativa; richiede PC acceso e sessione Windows attiva.

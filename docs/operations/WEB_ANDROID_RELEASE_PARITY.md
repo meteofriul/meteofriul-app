@@ -1,5 +1,7 @@
 # Allineamento della Web App con Android
 
+**Salvataggio Mercati, 1 novembre:** sorgenti backend `f0e28d7c` e pannello `fe4768f` conservati nei rispettivi rami remoti; backup dell'archivio alla revisione 6 separato da Git. [Checkpoint e verifiche](MERCATI_SALVATAGGIO_20261101.md). Nessuna promozione a main, modifica agli artefatti Web/Android, distribuzione o nuova qualifica browser/dispositivo.
+
 **Mercati, 1 novembre: promemoria amministrativo locale.** Pannello con scadenze, coda compatta e destinatario email modificabile; preferenza salvata alla revisione 6, dati delle schede e catalogo pubblico invariati. Invio SMTP ancora non configurato e task email non registrato. [Stato e 119 test backend / 27 pannello](MERCATI_PROMEMORIA_20261101.md). Nessuna modifica agli artefatti o alle pubblicazioni Web/Android; verifica visiva del nuovo pannello ancora aperta.
 
 **Mercati, 1 novembre: sola automazione dell'archivio locale.** Task Windows operativo e provato; archivio amministrativo aggiornato dalla revisione 4 alla 5 (25 modifiche, 6 schede, 6 nuove edizioni), snapshot pubblico e revisione pubblica 0 invariati. Pannello esterno con storico compatto; 92 test backend, 30 pannello, lint/build PASS. [Prove, conservazione dei dati e copertura parziale delle fonti](MERCATI_AUTOMAZIONE_LOCALE_20261101.md). Nessun cambiamento agli artefatti Web/Android distribuiti, nessuna pubblicazione o nuova qualifica su dispositivo.
