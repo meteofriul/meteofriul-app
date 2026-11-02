@@ -123,12 +123,20 @@ def retrieve_remote_cams(*, credentials_path, request_plan_path, scratch,
             emit("cams_download_checkpoint", provider="cams", run_date=plan["run_date"], status="persisted")
         return report
 
+    missing_checkpoint = object()
     try:
         saved = state_store.get(prefix + "submitted.json")
     except ObjectNotFound:
+        saved = missing_checkpoint
+    # Missing checkpoints are normal control flow, not acquisition failures.
+    # Leave their exception handlers before calling the retriever/reconciler:
+    # otherwise a later ADS wait inherits the annotated Storage 404 context.
+    if saved is missing_checkpoint:
         try:
             saved = state_store.get(prefix + "intent.json")
         except ObjectNotFound:
+            saved = missing_checkpoint
+        if saved is missing_checkpoint:
             return finish(retrieve_fn(credentials_path, request_plan_path=request_plan_path,
                 artifacts_directory=directory, scope="fvg", max_wait=max_wait,
                 checkpoint_saver=checkpoint))

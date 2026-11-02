@@ -333,6 +333,49 @@ Assert-Contract (Test-PolicyMatches $camsActual $camsDesired) 'CAMS: readback po
 $camsActual.alertStrategy.notificationPrompts = @('OPENED', 'CLOSED')
 Assert-Contract (-not (Test-PolicyMatches $camsActual $camsDesired)) 'CAMS: CLOSED fuorviante non rilevato'
 
+foreach ($key in @('icon-fvg-failures', 'icon-national-failures')) {
+    $iconFailure = @($config.policies | Where-Object policyKey -CEQ $key)[0]
+    $iconDesired = New-DesiredMonitoringPolicy $iconFailure 'synthetic-channel'
+    $expectedQuery = '(sum(sum_over_time({"run.googleapis.com/job/completed_execution_count",' +
+        'monitored_resource="cloud_run_job",project_id="meteo-friul",location="europe-west1",' +
+        'job_name="' + $iconFailure.jobName + '",result="failed"}[2h])) or vector(0)) > 0'
+    Assert-Contract ($iconFailure.conditionType -ceq 'failed_execution_window' -and
+        $iconFailure.failedExecutionThreshold -eq 1 -and
+        $iconFailure.alignmentPeriodSeconds -eq 7200 -and
+        $iconDesired.conditions[0].conditionPrometheusQueryLanguage.query -ceq $expectedQuery) (
+        'ICON: contare gli stessi DELTA nella finestra di due ore, con scope esatto e senza bool'
+    )
+    Assert-Contract ($iconDesired.conditions[0].conditionPrometheusQueryLanguage.duration -ceq '0s' -and
+        $iconDesired.conditions[0].conditionPrometheusQueryLanguage.evaluationInterval -ceq '60s') (
+        'ICON: non ritardare la condizione di errore'
+    )
+    Assert-Contract ($iconDesired.severity -ceq 'WARNING' -and
+        $iconDesired.alertStrategy.notificationPrompts.Count -eq 1 -and
+        $iconDesired.alertStrategy.notificationPrompts[0] -ceq 'OPENED' -and
+        $iconDesired.documentation.content.Contains('NON dimostra il recupero') -and
+        $iconDesired.documentation.content.Contains('ICON2I freshness')) (
+        'ICON: distinguere tentativo fallito e freschezza, senza CLOSED fuorviante'
+    )
+    $iconActual = $iconDesired | ConvertTo-Json -Depth 20 | ConvertFrom-Json
+    Assert-Contract (Test-PolicyMatches $iconActual $iconDesired) 'ICON: policy non riconosciuta al readback'
+    foreach ($badQuery in @(
+        $expectedQuery.Replace(' > 0', ' > bool 0'),
+        ($expectedQuery + ' or vector(0)'),
+        $expectedQuery.Replace('result="failed"', 'result="succeeded"'),
+        $expectedQuery.Replace('[2h]', '[1h]'),
+        $expectedQuery.Replace('location="europe-west1"', 'location="europe-west8"')
+    )) {
+        $iconActual.conditions[0].conditionPrometheusQueryLanguage.query = $badQuery
+        Assert-Contract (-not (Test-PolicyMatches $iconActual $iconDesired)) 'ICON: deriva semantica non rilevata'
+    }
+    $iconActual = $iconDesired | ConvertTo-Json -Depth 20 | ConvertFrom-Json
+    $iconActual.severity = 'CRITICAL'
+    Assert-Contract (-not (Test-PolicyMatches $iconActual $iconDesired)) 'ICON: severita differente non rilevata'
+    $iconActual.severity = 'WARNING'
+    $iconActual.alertStrategy.notificationPrompts = @('OPENED', 'CLOSED')
+    Assert-Contract (-not (Test-PolicyMatches $iconActual $iconDesired)) 'ICON: CLOSED fuorviante non rilevato'
+}
+
 $eventsFailure = @($config.policies | Where-Object policyKey -CEQ 'events-failures')[0]
 Assert-Contract ($eventsFailure.notifyOnRecovery -ceq $false) (
     "la scadenza della finestra Eventi non deve notificare recupero"

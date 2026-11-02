@@ -158,13 +158,17 @@
     },
     {
       "policyKey": "icon-fvg-failures",
+      "conditionType": "failed_execution_window",
+      "metricProjectId": "meteo-friul",
+      "metricLocation": "europe-west1",
+      "severity": "WARNING",
       "jobName": "meteofriul-icon",
       "displayName": "Meteo Friul - job ICON FVG",
-      "conditionDisplayName": "Esecuzione fallita del job ICON FVG",
+      "conditionDisplayName": "Tentativi ICON FVG falliti nelle ultime 2 ore",
       "alignmentPeriodSeconds": 7200,
       "failedExecutionThreshold": 1,
       "notifyOnRecovery": false,
-      "documentation": "Il job ICON FVG `meteofriul-icon` ha terminato un'esecuzione con errore. Controllare acquisizione, pubblicazione atomica e freschezza dei bundle regionali.",
+      "documentation": "Almeno un tentativo ICON FVG e fallito nelle ultime 2 ore. Questo avviso riguarda le esecuzioni: leggere status e reason_code per distinguere pending/source_not_advanced da errori di acquisizione o pubblicazione. Gli slot automatici successivi possono recuperare senza intervento manuale. La chiusura indica soltanto zero fallimenti registrati nella finestra e NON dimostra il recupero dei dati; nessuna email CLOSED viene inviata da questa policy. Per dati scaduti e recupero verificato usare il monitor separato ICON2I freshness - fvg, che confronta Storage e HTTP. L'assenza di esecuzioni riuscite mantiene il suo allarme distinto. Non considerare una sorgente in attesa come un successo e non rilanciare un job dalla sola email.",
       "labels": {
         "service": "icon-fvg",
         "threshold": "one-in-2h"
@@ -188,12 +192,17 @@
     },
     {
       "policyKey": "icon-national-failures",
+      "conditionType": "failed_execution_window",
+      "metricProjectId": "meteo-friul",
+      "metricLocation": "europe-west1",
+      "severity": "WARNING",
       "jobName": "meteofriul-national-icon",
       "displayName": "Meteo Friul - job ICON nazionale",
-      "conditionDisplayName": "Esecuzione fallita del job ICON nazionale",
+      "conditionDisplayName": "Tentativi ICON nazionale falliti nelle ultime 2 ore",
       "alignmentPeriodSeconds": 7200,
       "failedExecutionThreshold": 1,
-      "documentation": "Il job ICON nazionale `meteofriul-national-icon` ha terminato un'esecuzione con errore. Controllare acquisizione e pubblicazione atomica del catalogo nazionale.",
+      "notifyOnRecovery": false,
+      "documentation": "Almeno un tentativo ICON nazionale e fallito nelle ultime 2 ore. Questo avviso riguarda le esecuzioni: leggere status e reason_code per distinguere pending/source_not_advanced da errori di acquisizione o pubblicazione. Gli slot automatici successivi possono recuperare senza intervento manuale. La chiusura indica soltanto zero fallimenti registrati nella finestra e NON dimostra il recupero dei dati; nessuna email CLOSED viene inviata da questa policy. Per dati scaduti e recupero verificato usare il monitor separato ICON2I freshness - national, che confronta Storage e HTTP. L'assenza di esecuzioni riuscite mantiene il suo allarme distinto. Non considerare una sorgente in attesa come un successo e non rilanciare un job dalla sola email.",
       "labels": {
         "service": "icon-national",
         "threshold": "one-in-2h"

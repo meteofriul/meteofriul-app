@@ -1,5 +1,7 @@
 # Allineamento della Web App con Android
 
+**CAMS e avvisi ICON, 2 novembre — candidato backend verificato.** Preparata la correzione della ripresa ADS e dei due allarmi esecutivi ICON. [Prove e distribuzione ancora da completare](WEATHER_JOB_RECOVERY_20261102.md). Nessun cambio al frontend o ai contratti dati Web/Android; nessun artefatto rigenerato o pubblicato, nessuna nuova qualifica browser/dispositivo.
+
 **Audit costi e servizi, 31 ottobre:** [letture e modello dei job](JOBS_COST_AUDIT_20261031.md) e [indice della copertura dei servizi](APP_SERVICE_REPORT_COVERAGE_20261031.md) salvati nel candidato ICON. Le prove mancanti su hosting e Safari/iPhone sono esplicite; questo audit non estende le qualificazioni browser/dispositivo.
 
 **ICON, 31 ottobre — recupero automatico distribuito e attivo.** Sorgente `04ea00b2`, [PR 38](https://github.com/meteofriul/meteofriul-app/pull/38) e CI di main superate. Aggiornati i soli produttori FVG/nazionale, entrambi collaudati; attivati i tentativi dopo una, due e quattro ore tramite i due Scheduler esistenti. [Immagini, test, configurazione e limiti](ICON_AUTOMATIC_RECOVERY_DEPLOY_20261031.md). Verificata l’adozione dei checkpoint senza nuovi download GRIB; il primo caso reale di fonte in ritardo resta da osservare. Nessuna nuova build di distribuzione o pubblicazione Web/Android, nessuna attivazione Mercati/pannello.
