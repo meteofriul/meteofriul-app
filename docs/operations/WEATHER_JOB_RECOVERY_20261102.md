@@ -1,9 +1,10 @@
 # CAMS e avvisi ICON — correzione del 2 novembre 2026
 
-Preparazione su `codex/weather-job-recovery-20261102`, base main `92230e1d`.
+Distribuzione completata il 2 novembre, riscontro finale alle 21:53 CET.
+Workstream `codex/weather-job-recovery-20261102`, base main `92230e1d`.
 Il proprietario ha autorizzato la correzione dopo la diagnosi odierna.
-Eventi escluso. Questo stato precede promozione e distribuzione: non attesta
-ancora una nuova immagine attiva o policy modificate nel cloud.
+Eventi escluso. Nuova immagine CAMS e due policy ICON verificate nel cloud;
+la prima corsa ordinaria della nuova immagine resta da osservare.
 
 ## Problema e cambiamento
 
@@ -72,15 +73,61 @@ conteggio errori non certifica sorgente, freschezza o salute della telemetria.
 
 ## Distribuzione e verifica ordinaria
 
-Piano: PR e CI, promozione protetta, CI main, immagine derivata dal digest CAMS
-attuale con il solo file runtime corretto. Confrontare pacchetti, inventario
-dei file e configurazione; eseguire la suite Linux senza rete. Conservare
-digest precedente e rollback, verificare assenza di corse attive, aggiornare
-solo l'immagine CAMS. Applicare e rileggere soltanto le due policy ICON,
-confrontando le altre policy prima/dopo. Nessuna esecuzione manuale.
+Sorgente integrato tramite [PR 40](https://github.com/meteofriul/meteofriul-app/pull/40),
+commit della correzione `d3ca483f4b5711277558ebadc742074e0d2ce05c`, merge main
+`f20cc976227161bbaea1e3c64af8607008dd5b07`.
+[CI PR](https://github.com/meteofriul/meteofriul-app/actions/runs/41519399611) e
+[CI main](https://github.com/meteofriul/meteofriul-app/actions/runs/41520225858)
+PASS nei tre job, senza dispatch duplicati.
+
+Immagine composita: base immutabile CAMS dal sorgente
+`026d5ca064fdbeebb30403b458929cd6ea1e79c0`, più il solo
+`retrieve_remote_cams.py` estratto dal merge main verificato. Non è una
+ricostruzione di tutto main: etichetta della base preservata, revisione della
+patch registrata separatamente. Nessuna installazione di dipendenze.
+
+| Prova | Risultato |
+| --- | --- |
+| Cloud Build | `7aa0fd58-0f5f-429d-92d7-e0190a9e1622`, quattro step SUCCESS |
+| Digest CAMS attivo | `sha256:83a67540e4131a0f3a90e1a9cc5674d5a0621dae6a225686613c0ff03762dbd7` |
+| Digest precedente e rollback | `sha256:572ea2889b37009b746e746402816a2fd1e6966db15c8d642e5105ccd5b0ce8e` |
+| File runtime corretto | SHA-256 `61d37d633e04c3c157cf6b571cd8ac054f241836d24bb2e10d5df842754e063e` |
+| Integrità Linux | Un solo file diverso su 212; permessi, pacchetti e configurazione preservati; Python 3.13.17, UID 65532 |
+| Suite Linux | 437 test PASS, zero errori, fallimenti o esclusioni; rete disabilitata; nuovi test di regressione montati esternamente, senza aggiunte all'immagine runtime |
+| Deploy CAMS | Aggiornamento cloud alle 21:51:09 CET; solo immagine modificata, zero corse attive prima dell'aggiornamento |
+| Confronto cloud | Scheduler invariato; altri 12 job e 6 servizi invariati |
+
+Le due policy ICON sono state applicate con PATCH sui rispettivi ID esistenti,
+sostituendo le condition ID del vecchio tipo threshold. Readback delle 21:45:21
+CET PASS tramite le stesse funzioni di confronto del repository: query uguali
+al probe, WARNING, OPENED, valutazione ogni 60 secondi, soglia e canali
+preservati. Totale 23 policy; le altre 21 invariate. Backup e rollback salvati.
+Il campo `autoClose` è conservato ma ignorato per le condizioni PromQL; non
+viene usato come prova della loro tempistica di chiusura. L'API non offre un
+CAS atomico: eseguito confronto immediato prima di ciascuna PATCH e dopo.
+
+Al readback delle 21:53 CET tutti i cinque incidenti meteo odierni già noti
+risultano CLOSED: CAMS dalle 19:10:06, freschezza nazionale dalle 11:16:40,
+freschezza FVG dalle 11:17:09; i due errori ICON dalle 21:46:02. Questi ultimi
+si sono chiusi dopo la migrazione delle condizioni, senza chiusura manuale e
+senza nuova pubblicazione: non sono una prova di recupero prodotto dal deploy.
+Nessun nuovo incidente rilevante nella pagina letta; la paginazione storica
+è troncata, ma tutti i cinque incidenti già osservati sono presenti.
+
+Le corse delle 21:00, anteriori al deploy, erano riuscite verificando dati già
+pubblicati: ICON FVG/nazionale `publication_already_verified` sul ciclo 12Z;
+CAMS aria/pollini `existing_family_verified`, UV `uv_already_published`.
+Il puntatore CAMS rimane aggiornato alle 16:05:26.810 CET, ciclo 00Z/revisione
+51. Il controllo freschezza ICON delle 21:40 è regolare per entrambi.
+La lettura HTTP dopo il deploy conferma i puntatori invariati.
+
+Nessuna esecuzione manuale, modifica a dati/checkpoint, destinatari o
+pianificazioni. Il confronto dopo il deploy conferma la nuova immagine nel
+job CAMS; l'ultima esecuzione resta quella precedente delle 21:00.
 
 Il recupero della nuova immagine dovrà essere osservato in una corsa ordinaria
-successiva, distinguendo successo tecnico, pubblicazione e lettura HTTP.
+successiva, la prima prevista il 3 novembre alle 10:00 CET, distinguendo
+successo tecnico, pubblicazione e lettura HTTP.
 Un successo senza attesa ADS non prova il ramo di ripresa in produzione.
 Nessun controllo periodico aggiuntivo è registrato da questo lavoro.
 
