@@ -100,6 +100,28 @@ function New-DesiredMonitoringPolicy {
                 }
             )
         }
+    } elseif ($conditionType -ceq "failed_execution_window") {
+        # DELTA counts can stop emitting after an error. Count the same bounded
+        # window explicitly; zero means no recorded failures, never fresh data.
+        $seconds = [int]$Definition.alignmentPeriodSeconds
+        $window = if ($seconds % 3600 -eq 0) {
+            [string]([int]($seconds / 3600)) + "h"
+        } else { [string]$seconds + "s" }
+        $query = (
+            '(sum(sum_over_time({"run.googleapis.com/job/completed_execution_count",' +
+            'monitored_resource="cloud_run_job",project_id="' +
+            [string]$Definition.metricProjectId + '",location="' +
+            [string]$Definition.metricLocation + '",job_name="' +
+            [string]$Definition.jobName + '",result="failed"}[' +
+            $window + '])) or vector(0)) > ' +
+            [string]([int]$Definition.failedExecutionThreshold - 1)
+        )
+        # No `bool`: an alert fires on the presence of the result series.
+        $condition.conditionPrometheusQueryLanguage = [ordered]@{
+            query = $query
+            duration = "0s"
+            evaluationInterval = "60s"
+        }
     } elseif ($conditionType -ceq "successful_execution_absent") {
         $condition.conditionAbsent = [ordered]@{
             filter = $metricFilter
@@ -183,7 +205,7 @@ function New-DesiredMonitoringPolicy {
         $alertStrategy.notificationPrompts = @("OPENED")
     }
 
-    return [ordered]@{
+    $desired = [ordered]@{
         displayName = [string]$Definition.displayName
         combiner = "OR"
         conditions = @($condition)
@@ -196,6 +218,9 @@ function New-DesiredMonitoringPolicy {
         enabled = $true
         alertStrategy = $alertStrategy
     }
+    $severity = [string](Get-MonitoringPropertyValue $Definition "severity" "")
+    if ($severity) { $desired.severity = $severity }
+    return $desired
 }
 
 function Get-PolicyJobNames {
@@ -251,6 +276,17 @@ function Test-PolicyMatches {
                 [string]@($desiredThreshold.aggregations)[0].alignmentPeriod -and
             [string]@($actualThreshold.aggregations)[0].perSeriesAligner -ceq
                 "ALIGN_SUM"
+        )
+    } elseif ($desiredCondition.Contains("conditionPrometheusQueryLanguage")) {
+        $actualPromql = Get-MonitoringPropertyValue `
+            $actualCondition "conditionPrometheusQueryLanguage" $null
+        $desiredPromql = $desiredCondition.conditionPrometheusQueryLanguage
+        $conditionMatches = (
+            $null -ne $actualPromql -and
+            [string]$actualPromql.query -ceq [string]$desiredPromql.query -and
+            [string]$actualPromql.duration -ceq [string]$desiredPromql.duration -and
+            [string]$actualPromql.evaluationInterval -ceq
+                [string]$desiredPromql.evaluationInterval
         )
     } elseif ($desiredCondition.Contains("conditionAbsent")) {
         $actualAbsent = Get-MonitoringPropertyValue `
@@ -327,6 +363,9 @@ function Test-PolicyMatches {
         $labelsMatch -and
         $promptsMatch -and
         $rateLimitMatches -and
+        (-not $Desired.Contains("severity") -or
+            [string](Get-MonitoringPropertyValue $Actual "severity" "") -ceq
+                [string]$Desired.severity) -and
         [string]$Actual.alertStrategy.autoClose -ceq
             [string]$Desired.alertStrategy.autoClose
     )
@@ -364,10 +403,18 @@ foreach ($definition in $definitions) {
     }
     $conditionType = [string](Get-MonitoringPropertyValue `
         $definition "conditionType" "failed_execution_count")
-    if ($conditionType -ceq "failed_execution_count") {
+    $severity = [string](Get-MonitoringPropertyValue $definition "severity" "")
+    if ($severity -and $severity -cnotin @("WARNING", "ERROR", "CRITICAL")) {
+        throw "monitoring_severity_invalid"
+    }
+    if ($conditionType -in @("failed_execution_count", "failed_execution_window")) {
         if ([int]$definition.failedExecutionThreshold -lt 1) {
             throw "monitoring_failure_threshold_invalid"
         }
+        if ($conditionType -ceq "failed_execution_window" -and (
+            [string]$definition.metricProjectId -cne [string]$config.projectId -or
+            [string]$definition.metricLocation -cnotmatch '^[a-z]+-[a-z]+[0-9]+$'
+        )) { throw "monitoring_metric_scope_invalid" }
     } elseif ($conditionType -ceq "successful_execution_absent") {
         $duration = [int]$definition.absenceDurationSeconds
         if ($duration -lt 120 -or $duration % 60 -ne 0) {
@@ -487,7 +534,10 @@ foreach ($definition in $definitions) {
                     $actualCondition "conditionAbsent" $null)) -or
             ($desired.conditions[0].Contains("conditionMatchedLog") -and
                 $null -ne (Get-MonitoringPropertyValue `
-                    $actualCondition "conditionMatchedLog" $null))
+                    $actualCondition "conditionMatchedLog" $null)) -or
+            ($desired.conditions[0].Contains("conditionPrometheusQueryLanguage") -and
+                $null -ne (Get-MonitoringPropertyValue `
+                    $actualCondition "conditionPrometheusQueryLanguage" $null))
         )
         if ($actualConditionName -and $sameConditionKind) {
             $desired.conditions[0]["name"] = $actualConditionName

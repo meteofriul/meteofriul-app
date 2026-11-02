@@ -1,5 +1,7 @@
 # Stato release 0.1.15 e lavoro salvato — aggiornamento sorgenti del 24 ottobre 2026
 
+**CAMS e avvisi ICON, 2 novembre — candidato verificato.** Correzione backend e due policy preparate, con 76 test Python, contratti PowerShell e confronto delle metriche PASS. [Prove e passaggi ancora aperti](WEATHER_JOB_RECOVERY_20261102.md). Nessuna nuova AAB o Web, numero di versione o pubblicazione; qualificazioni esistenti invariate.
+
 **Audit costi e servizi, 31 ottobre:** completati il [modello economico](JOBS_COST_AUDIT_20261031.md) e l'[indice delle prove e degli stati già conservati](APP_SERVICE_REPORT_COVERAGE_20261031.md). La spesa effettivamente addebitata resta non verificata; nessuna pianificazione o risorsa cloud modificata dall'audit.
 
 **ICON, 31 ottobre — recupero automatico distribuito e attivo.** Sorgente `04ea00b2`, [PR 38](https://github.com/meteofriul/meteofriul-app/pull/38) e CI di main superate. Aggiornati i soli produttori FVG/nazionale, entrambi collaudati; attivati i tentativi dopo una, due e quattro ore tramite i due Scheduler esistenti. [Immagini, test, configurazione e limiti](ICON_AUTOMATIC_RECOVERY_DEPLOY_20261031.md). Verificata l’adozione dei checkpoint senza nuovi download GRIB; il primo caso reale di fonte in ritardo resta da osservare. Nessuna nuova build di distribuzione o pubblicazione Web/Android, nessuna attivazione Mercati/pannello.
