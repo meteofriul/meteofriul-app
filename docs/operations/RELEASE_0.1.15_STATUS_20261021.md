@@ -1,5 +1,7 @@
 # Stato release 0.1.15 e lavoro salvato — aggiornamento sorgenti del 24 ottobre 2026
 
+**Sintesi mattutina e avvisi, 6 novembre:** [PR 42](https://github.com/meteofriul/meteofriul-app/pull/42) e CI PR/main superate. Aggiornata solo l'immagine del job mattutino; le due policy di errore mattino/sera notificano solo l'apertura, mentre quelle «nessun successo» mantengono il recupero. [Deploy, digest e verifica ancora aperta](MORNING_SUMMARY_ALERT_NOISE_DEPLOY_20261106.md). Nessuna AAB, Web o nuova pubblicazione applicativa.
+
 **CAMS e avvisi ICON, 2 novembre — distribuiti.** [PR 40](https://github.com/meteofriul/meteofriul-app/pull/40), CI PR/main e 437 test Linux PASS. Aggiornati il solo digest CAMS e le due policy errori ICON; tutti i cinque incidenti meteo odierni noti risultano chiusi al controllo delle 21:53 CET. [Prove e verifica ordinaria ancora aperta](WEATHER_JOB_RECOVERY_20261102.md). Nessuna nuova AAB o Web, numero di versione o pubblicazione; qualificazioni esistenti invariate.
 
 **Audit costi e servizi, 31 ottobre:** completati il [modello economico](JOBS_COST_AUDIT_20261031.md) e l'[indice delle prove e degli stati già conservati](APP_SERVICE_REPORT_COVERAGE_20261031.md). La spesa effettivamente addebitata resta non verificata; nessuna pianificazione o risorsa cloud modificata dall'audit.
