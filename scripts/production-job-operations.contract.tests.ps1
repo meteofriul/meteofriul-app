@@ -265,6 +265,13 @@ foreach ($policy in $successWindowPolicies) {
         "recovery giornaliero non notificato per $($policy.policyKey)"
     )
 }
+$summaryFailureKeys = @('morning-forecast-failures', 'evening-forecast-failures')
+foreach ($key in $summaryFailureKeys) {
+    $policy = @($config.policies | Where-Object policyKey -CEQ $key)
+    Assert-Contract ($policy.Count -eq 1 -and $policy[0].notifyOnRecovery -ceq $false) (
+        "chiusura della policy $key non deve inviare una seconda email"
+    )
+}
 $schedulerPolicies = @(
     $config.policies | Where-Object {
         $null -ne $_.PSObject.Properties["conditionType"] -and
@@ -332,6 +339,21 @@ $camsActual = $camsDesired | ConvertTo-Json -Depth 20 | ConvertFrom-Json
 Assert-Contract (Test-PolicyMatches $camsActual $camsDesired) 'CAMS: readback policy non riconosciuto'
 $camsActual.alertStrategy.notificationPrompts = @('OPENED', 'CLOSED')
 Assert-Contract (-not (Test-PolicyMatches $camsActual $camsDesired)) 'CAMS: CLOSED fuorviante non rilevato'
+
+foreach ($key in $summaryFailureKeys) {
+    $summaryFailure = @($config.policies | Where-Object policyKey -CEQ $key)[0]
+    $desired = New-DesiredMonitoringPolicy $summaryFailure 'synthetic-channel'
+    Assert-Contract ($desired.alertStrategy.notificationPrompts.Count -eq 1 -and
+        $desired.alertStrategy.notificationPrompts[0] -ceq 'OPENED') (
+        "$key deve notificare solo l'apertura"
+    )
+    $actual = $desired | ConvertTo-Json -Depth 20 | ConvertFrom-Json
+    Assert-Contract (Test-PolicyMatches $actual $desired) "${key}: readback non riconosciuto"
+    $actual.alertStrategy.notificationPrompts = @('OPENED', 'CLOSED')
+    Assert-Contract (-not (Test-PolicyMatches $actual $desired)) (
+        "${key}: CLOSED non rilevato come drift"
+    )
+}
 
 foreach ($key in @('icon-fvg-failures', 'icon-national-failures')) {
     $iconFailure = @($config.policies | Where-Object policyKey -CEQ $key)[0]

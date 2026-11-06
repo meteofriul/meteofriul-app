@@ -324,7 +324,7 @@ class MorningForecastDeliveryService:
     notification_ttl_seconds = MORNING_FORECAST_TTL_SECONDS
     collapse_key = "mf-morning-forecast"
     notification_tag = "mf-morning-forecast"
-    invalid_target_is_retirement = False
+    invalid_target_is_retirement = True
 
     def __init__(
         self,

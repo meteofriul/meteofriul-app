@@ -10,6 +10,7 @@
       "conditionDisplayName": "Esecuzione fallita della sintesi del mattino nelle ultime 2 ore",
       "alignmentPeriodSeconds": 7200,
       "failedExecutionThreshold": 1,
+      "notifyOnRecovery": false,
       "documentation": "Il job quotidiano `meteofriul-morning-forecast` non ha completato la sintesi delle 07:30. Controllare registrazioni eleggibili, fonte ICON, deduplica e consegna FCM.",
       "labels": {
         "service": "morning-forecast",
@@ -52,6 +53,7 @@
       "conditionDisplayName": "Esecuzione fallita dell'anticipazione serale nelle ultime 2 ore",
       "alignmentPeriodSeconds": 7200,
       "failedExecutionThreshold": 1,
+      "notifyOnRecovery": false,
       "documentation": "Il job quotidiano `meteofriul-evening-forecast` non ha completato l'anticipazione delle 20:45. Controllare freschezza e copertura ICON della giornata successiva, registrazioni eleggibili, deduplica e consegna FCM.",
       "labels": {
         "service": "evening-forecast",

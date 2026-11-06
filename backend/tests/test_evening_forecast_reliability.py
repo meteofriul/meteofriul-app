@@ -148,7 +148,7 @@ class EveningReliabilityTests(unittest.TestCase):
         self.assertEqual(sender.send_batch.call_count, 1)
         self.assertEqual(repo.finish_local_notice_delivery.call_count, 1)
 
-    def test_morning_delivery_keeps_existing_invalid_token_failure_policy(self):
+    def test_morning_delivery_retires_confirmed_invalid_token(self):
         repo = morning_tests.FakeDeviceRepository([morning_tests.device()])
         sender = morning_tests.FakeSender()
         sender.send_batch = Mock(return_value=[FcmBatchOutcome(error_code="fcm_token_invalid")])
@@ -162,7 +162,7 @@ class EveningReliabilityTests(unittest.TestCase):
             now=lambda: morning_tests.NOW,
         )
         result = service.run()
-        self.assertEqual((result.status, result.failed, result.retired_targets), ("failed", 1, 0))
+        self.assertEqual((result.status, result.failed, result.retired_targets), ("retired_targets", 0, 1))
         self.assertEqual(len(repo.disabled), 1)
 
     def test_sender_mismatch_is_configuration_failure_in_single_and_batch_send(self):

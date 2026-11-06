@@ -1,12 +1,17 @@
 from __future__ import annotations
 
+import io
+import json
 import unittest
+from contextlib import redirect_stdout
 from copy import deepcopy
 from datetime import datetime, timedelta, timezone
 from types import SimpleNamespace
+from unittest.mock import Mock, patch
 from zoneinfo import ZoneInfo
 
 from app.push.fcm import FcmBatchOutcome
+from app.jobs import send_morning_forecast
 from app.services.local_notice_delivery import LocalNoticeDeliveryConfig
 from app.services.location import LocationCatalog
 from app.services.morning_forecast_delivery import (
@@ -332,6 +337,100 @@ class MorningForecastDeliveryTests(unittest.TestCase):
         self.assertEqual(result.eligible_devices, 1)
         self.assertEqual(len(sender.messages), 1)
         self.assertEqual(sender.messages[0].platform, "android")
+
+
+class MorningForecastRetirementTests(unittest.TestCase):
+    def service(self, repository, sender, *, source=None):
+        return MorningForecastDeliveryService(
+            device_repository=repository,
+            source=source or FakeSource(snapshot()),
+            sender=sender,
+            config=config(),
+            require_single_target=False,
+            location_catalog=NoticeMunicipalityCatalog(),
+            now=lambda: NOW,
+        )
+
+    def job_exit(self, result):
+        output = io.StringIO()
+        with patch.object(
+            send_morning_forecast,
+            "get_morning_forecast_delivery_service",
+            return_value=SimpleNamespace(run=lambda: result),
+        ), redirect_stdout(output):
+            exit_code = send_morning_forecast.main()
+        return exit_code, json.loads(output.getvalue()), output.getvalue()
+
+    def test_only_confirmed_invalid_token_is_retired_without_job_failure(self):
+        repository = FakeDeviceRepository([device()])
+        sender = FakeSender()
+        sender.send_batch = Mock(return_value=[FcmBatchOutcome(error_code="fcm_token_invalid")])
+
+        result = self.service(repository, sender).run()
+        exit_code, summary, raw = self.job_exit(result)
+
+        self.assertEqual((result.status, result.sent, result.retired_targets, result.failed),
+                         ("retired_targets", 0, 1, 0))
+        self.assertEqual(exit_code, 0)
+        self.assertEqual(summary["retired_targets"], 1)
+        self.assertEqual(len(repository.disabled), 1)
+        self.assertNotIn("token-a", raw)
+
+    def test_54_sends_and_one_confirmed_retirement_keep_job_successful(self):
+        devices = [device(device_id=f"{index + 1:064x}", token=f"token-{index}")
+                   for index in range(55)]
+        repository = FakeDeviceRepository(devices)
+        sender = FakeSender()
+        sender.send_batch = Mock(return_value=[
+            *[FcmBatchOutcome(message_id=f"message-{index}") for index in range(54)],
+            FcmBatchOutcome(error_code="fcm_token_invalid"),
+        ])
+
+        result = self.service(repository, sender).run()
+        exit_code, summary, _ = self.job_exit(result)
+
+        self.assertEqual((result.status, result.sent, result.retired_targets, result.failed),
+                         ("sent", 54, 1, 0))
+        self.assertEqual((summary["eligible_devices"], summary["attempted"]), (55, 55))
+        self.assertEqual(exit_code, 0)
+        self.assertEqual(len(repository.disabled), 1)
+
+    def test_transient_fcm_and_source_errors_still_fail_the_job(self):
+        repository = FakeDeviceRepository([device()])
+        sender = FakeSender()
+        sender.send_batch = Mock(return_value=[FcmBatchOutcome(error_code="fcm_sender_unavailable")])
+        transient = self.service(repository, sender).run()
+        self.assertEqual((transient.status, transient.device_failed, transient.retired_targets),
+                         ("failed", 1, 0))
+        self.assertEqual(self.job_exit(transient)[0], 1)
+        self.assertEqual(repository.disabled, [])
+
+        source_failure = self.service(
+            FakeDeviceRepository([device()]), FakeSender(), source=FakeSource({})
+        ).run()
+        self.assertEqual((source_failure.status, source_failure.source_failed,
+                          source_failure.retired_targets), ("failed", 1, 0))
+        self.assertEqual(self.job_exit(source_failure)[0], 1)
+
+    def test_unconfirmed_invalid_token_cleanup_still_fails_the_job(self):
+        for unconfirmed_step in ("finish", "disable"):
+            with self.subTest(unconfirmed_step=unconfirmed_step):
+                repository = FakeDeviceRepository([device()])
+                if unconfirmed_step == "finish":
+                    repository.finish_local_notice_delivery = Mock(return_value=False)
+                else:
+                    repository.disable_device = Mock(return_value=False)
+                sender = FakeSender()
+                sender.send_batch = Mock(return_value=[
+                    FcmBatchOutcome(error_code="fcm_token_invalid")
+                ])
+
+                result = self.service(repository, sender).run()
+                self.assertEqual((result.status, result.retired_targets, result.failed),
+                                 ("failed", 0, 1))
+                self.assertEqual(self.job_exit(result)[0], 1)
+                if unconfirmed_step == "finish":
+                    self.assertEqual(repository.disabled, [])
 
 
 if __name__ == "__main__":
