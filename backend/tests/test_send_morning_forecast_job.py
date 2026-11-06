@@ -27,6 +27,7 @@ def result(status="sent", *, failed=0):
             "in_progress": int(status == "in_progress"),
             "retry_scheduled": int(status == "retry_scheduled"),
             "opted_out": int(status == "opted_out"),
+            "retired_targets": int(status == "retired_targets"),
             "duplicate_targets": 0,
             "security_failed": 0,
             "device_failed": 0,
@@ -71,6 +72,7 @@ class SendMorningForecastJobTests(unittest.TestCase):
             "in_progress",
             "retry_scheduled",
             "opted_out",
+            "retired_targets",
         ):
             with self.subTest(status=status):
                 exit_code, summary, raw = self.run_job(value=result(status))
@@ -94,6 +96,7 @@ class SendMorningForecastJobTests(unittest.TestCase):
 
         self.assertEqual(exit_code, 1)
         self.assertEqual(summary["status"], "configuration_invalid")
+        self.assertEqual(summary["retired_targets"], 0)
         self.assertNotIn("secret", raw)
 
 
