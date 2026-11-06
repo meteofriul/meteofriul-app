@@ -1,5 +1,7 @@
 # Allineamento della Web App con Android
 
+**Sintesi mattutina e avvisi, 6 novembre — backend distribuito.** Il job mattutino ritira i token FCM invalidi confermati; le sole policy di errore mattino/sera notificano l'apertura. [Digest, CI, audit e limiti](MORNING_SUMMARY_ALERT_NOISE_DEPLOY_20261106.md). Nessun cambio al frontend o ai contratti dati Web/Android; nessun artefatto di release rigenerato o pubblicato e nessuna nuova qualifica browser/dispositivo.
+
 **CAMS e avvisi ICON, 2 novembre — backend distribuito.** Correzione della ripresa ADS attiva nel job CAMS e due policy errori ICON aggiornate; [digest, CI, 437 test Linux e limiti](WEATHER_JOB_RECOVERY_20261102.md). Prima corsa ordinaria della nuova immagine ancora da osservare. Nessun cambio al frontend o ai contratti dati Web/Android; nessun artefatto di release rigenerato o pubblicato, nessuna nuova qualifica browser/dispositivo.
 
 **Audit costi e servizi, 31 ottobre:** [letture e modello dei job](JOBS_COST_AUDIT_20261031.md) e [indice della copertura dei servizi](APP_SERVICE_REPORT_COVERAGE_20261031.md) salvati nel candidato ICON. Le prove mancanti su hosting e Safari/iPhone sono esplicite; questo audit non estende le qualificazioni browser/dispositivo.
