@@ -219,6 +219,7 @@ def build_morning_forecast_body(
 
     current_local = now.astimezone(FVG_ZONE)
     rows: list[dict[str, Any]] = []
+    precipitation_complete = True
     for index, value in enumerate(series["time"]):
         forecast_at = _forecast_time(value)
         if forecast_at is None:
@@ -232,24 +233,36 @@ def build_morning_forecast_body(
         weather_code = _finite_number(series["weather_code"][index])
         if (
             temperature is None
-            or precipitation is None
-            or rain is None
-            or showers is None
-            or weather_code is None
-            or min(precipitation, rain, showers) < 0
-            or not weather_code.is_integer()
-            or not 0 <= weather_code <= 99
+            or any(
+                raw is not None and numeric is None
+                for raw, numeric in (
+                    (series["precipitation"][index], precipitation),
+                    (series["rain"][index], rain),
+                    (series["showers"][index], showers),
+                    (series["weather_code"][index], weather_code),
+                )
+            )
+            or any(
+                numeric is not None and numeric < 0
+                for numeric in (precipitation, rain, showers)
+            )
+            or (
+                weather_code is not None
+                and (not weather_code.is_integer() or not 0 <= weather_code <= 99)
+            )
         ):
-            # Never describe a day as dry after discarding its unknown hours.
+            # Malformed data cannot be reduced to a partial forecast.
             return ""
+        if any(value is None for value in (precipitation, rain, showers, weather_code)):
+            precipitation_complete = False
         rows.append(
             {
                 "time": forecast_at,
                 "temperature": temperature,
-                "precipitation": max(0.0, precipitation),
-                "rain": max(0.0, rain),
-                "showers": max(0.0, showers),
-                "weather_code": int(weather_code),
+                "precipitation": precipitation,
+                "rain": rain,
+                "showers": showers,
+                "weather_code": int(weather_code) if weather_code is not None else None,
             }
         )
     if not rows:
@@ -258,6 +271,17 @@ def build_morning_forecast_body(
     place = locality.name if locality is not None else municipality.name
     current_temperature = round(rows[0]["temperature"])
     maximum_temperature = round(max(row["temperature"] for row in rows))
+    if not precipitation_complete:
+        # A missing hour cannot support a dry-day claim or precise rain timing.
+        condition = (
+            f"{_condition_phrase(rows[0]['weather_code'])}, "
+            if rows[0]["weather_code"] is not None
+            else ""
+        )
+        return (
+            f"{place}: {condition}{current_temperature} °C. "
+            f"Massima {maximum_temperature} °C; dati sulle precipitazioni incompleti."
+        )
     condition = _condition_phrase(int(rows[0]["weather_code"]))
     precipitation = _precipitation_phrase(rows)
     return (

@@ -165,6 +165,48 @@ class MorningForecastCopyTests(unittest.TestCase):
             "possibili piogge dal pomeriggio.",
         )
 
+    def test_missing_accumulation_reports_uncertainty_without_dry_claim(self):
+        municipality = LocationCatalog().match_istat("093033")
+        forecast = snapshot()
+        forecast["hourly"]["precipitation"][6] = None
+
+        body = build_morning_forecast_body(forecast, municipality, now=NOW)
+
+        self.assertEqual(
+            body,
+            "Pordenone: cielo sereno, 12 °C. Massima 25 °C; "
+            "dati sulle precipitazioni incompleti.",
+        )
+        self.assertNotIn("non sono previste piogge", body)
+        self.assertNotIn("dal pomeriggio", body)
+
+    def test_missing_current_condition_keeps_only_verified_temperature(self):
+        municipality = LocationCatalog().match_istat("093033")
+        forecast = snapshot()
+        forecast["hourly"]["weather_code"][0] = None
+
+        self.assertEqual(
+            build_morning_forecast_body(forecast, municipality, now=NOW),
+            "Pordenone: 12 °C. Massima 25 °C; "
+            "dati sulle precipitazioni incompleti.",
+        )
+
+    def test_malformed_accumulation_or_condition_still_blocks_message(self):
+        municipality = LocationCatalog().match_istat("093033")
+        for field, value in (
+            ("precipitation", -1),
+            ("rain", "0"),
+            ("showers", float("nan")),
+            ("weather_code", 100),
+        ):
+            with self.subTest(field=field, value=value):
+                forecast = snapshot()
+                forecast["hourly"][field][6] = value
+                self.assertEqual(
+                    build_morning_forecast_body(forecast, municipality, now=NOW),
+                    "",
+                )
+
 
 class MorningForecastDeliveryTests(unittest.TestCase):
     def service(
@@ -225,6 +267,30 @@ class MorningForecastDeliveryTests(unittest.TestCase):
         self.assertEqual(result.status, "deduplicated")
         self.assertEqual(result.deduplicated, 1)
         self.assertEqual(sender.messages, [])
+
+    def test_partial_copy_uses_the_existing_daily_delivery_and_deduplication(self):
+        forecast = snapshot()
+        forecast["hourly"]["precipitation"][6] = None
+        repository = FakeDeviceRepository([device()])
+        sender = FakeSender()
+        source = FakeSource(forecast)
+
+        first = self.service(repository, source, sender).run()
+        repository.claim_state = "sent"
+        second = self.service(repository, source, sender).run()
+
+        self.assertEqual(first.status, "sent")
+        self.assertEqual(first.attempted, 1)
+        self.assertEqual(second.status, "deduplicated")
+        self.assertEqual(second.deduplicated, 1)
+        self.assertEqual(second.sent, 0)
+        self.assertEqual(len(sender.messages), 1)
+        self.assertIn("dati sulle precipitazioni incompleti", sender.messages[0].body)
+        self.assertEqual(repository.claims[0]["notice_kind"], "morning_forecast")
+        self.assertEqual(
+            repository.claims[0]["notice_signature"],
+            repository.claims[1]["notice_signature"],
+        )
 
     def test_saved_canonical_municipality_remains_eligible_without_location_mode(self):
         saved = device()
