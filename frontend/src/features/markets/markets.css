@@ -128,7 +128,10 @@
 .mf-market-detail section { border-top: 1px solid var(--mf-border); padding-top: 18px; margin-top: 20px; }
 .mf-market-detail section p { line-height: 1.5; }
 .mf-market-dates { list-style: none; margin: 0; padding: 0; }
-.mf-market-dates li { display: flex; align-items: center; justify-content: space-between; gap: 10px; padding: 10px 0; border-bottom: 1px solid var(--mf-border); font-size: .9rem; }
+.mf-market-dates li { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 10px; padding: 12px 0; border-bottom: 1px solid var(--mf-border); font-size: .9rem; }
+.mf-market-dates__date { display: grid; gap: 3px; margin-right: auto; }
+.mf-market-dates__date time { font-weight: 650; }
+.mf-market-dates__date > span { color: var(--mf-muted); font-size: .82rem; }
 .mf-market-detail__source { display: grid; gap: 12px; padding-top: 24px; font-size: .8rem; color: var(--mf-muted); }
 .mf-market-detail__source a { display: inline-flex; gap: 8px; color: var(--mf-blue); align-items: center; min-height: 44px; overflow-wrap: anywhere; }
 .mf-markets-dialog button:focus-visible, .mf-markets-entry:focus-visible, .mf-markets-dialog a:focus-visible, .mf-markets-dialog select:focus-visible, .mf-market-catalogue-link:focus-visible { outline: 3px solid var(--mf-blue); outline-offset: 3px; }

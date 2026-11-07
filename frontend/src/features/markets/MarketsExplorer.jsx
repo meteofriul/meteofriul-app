@@ -50,7 +50,7 @@ export function MarketDetail({ market, language = "it", now = new Date(), radius
     {market.group === "occasional" || dates.length ? <section>
       <h4>{copy.dates}</h4>
       {dates.length ? <ul className="mf-market-dates">{dates.map(edition => <li key={edition.id || edition.date}>
-        <time dateTime={edition.date}>{formatMarketDate(edition.date, language)}</time>
+        <span className="mf-market-dates__date"><time dateTime={edition.date}>{formatMarketDate(edition.date, language)}</time>{edition.hours ? <span>{edition.hours}</span> : null}</span>
         {edition.venue?.place ? <span>{edition.venue.place}</span> : null}
         {edition.venue && marketDirectionsUrl(market, edition) ? <a className="mf-market-link" href={marketDirectionsUrl(market, edition)} target="_blank" rel="noopener noreferrer">{copy.directions}</a> : null}
         {onViewEvent && marketDateInEvents(edition.date, now) ? <button type="button" onClick={() => onViewEvent({ marketId: market.id, date: edition.date, radius, ...(edition.id ? { editionId: edition.id } : {}) })}>

@@ -228,6 +228,12 @@ export function findRequestedMarketEvent(items, request, now = new Date(), catal
     && eventMarketDays(event, now).includes(request.date)) || null;
 }
 
+function marketEventTimeFields(hours) {
+  const value = String(hours || "").trim();
+  const range = /^(\d{2}:\d{2})\s*[-–]\s*(\d{2}:\d{2})$/.exec(value);
+  return range ? { time: range[1], end_time: range[2] } : { time: value };
+}
+
 function managedEditionEvent(market, edition, source = {}) {
   const venue = edition.venue || market;
   return {
@@ -237,7 +243,7 @@ function managedEditionEvent(market, edition, source = {}) {
     event_city: market.comune, place: venue.place || "", venue: venue.place || "", address: "",
     ...marketEventDistance(market),
     maps_url: marketDirectionsUrl(market, edition), lat: venue.lat ?? null, lon: venue.lon ?? null,
-    time: edition.hours || market.hours || "", market_catalogue: true, market_managed: true,
+    ...marketEventTimeFields(edition.hours || market.hours), market_catalogue: true, market_managed: true,
     market_venue: edition.venue || null, source: market.authority || source.source,
     url: edition.source || market.url || source.url,
     description: `${market.kind}. ${market.cadence}. ${market.scheduleNote || ""}`,
@@ -286,7 +292,8 @@ function mergeManagedMarketEvents(events, { location, radius, now, catalogue }) 
       date: days.length === 1 ? formatMarketDate(days[0]) : raw.date, occurrences: days,
       market_id: market.id, title: market.name, category: "mercato", event_city: market.comune,
       ...marketEventDistance(market),
-      place: market.place, venue: market.place, address: "", lat: null, lon: null, time: market.hours || "",
+      place: market.place, venue: market.place, address: "", lat: null, lon: null,
+      ...marketEventTimeFields(market.hours),
       description: `${market.kind}. ${market.cadence}. ${market.scheduleNote || ""}`,
       description_excerpt: "", url: market.url || raw.url, source: market.authority || raw.source,
       description_source_name: market.authority, description_source_url: market.url,

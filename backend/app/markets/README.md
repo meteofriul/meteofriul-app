@@ -40,29 +40,17 @@ Le prove automatizzate usano esclusivamente directory temporanee.
 
 L'autenticazione predefinita e Firebase con claim **`marketsAdmin: true`** e
 controllo revoca. I claim Sponsor e Webcam non concedono questo permesso.
-Per la sola anteprima locale sono disponibili `MARKETS_ADMIN_AUTH_MODE=local`
-e `MARKETS_ADMIN_LOCAL_TOKEN`, distinto da ogni altro token. Non inserire il token
-nel repository, nel bundle dell'app o nei log. La modalita locale e SQLite vengono
-rifiutati quando `K_SERVICE` identifica Cloud Run.
+L'anteprima locale corrente usa il medesimo login Firebase del pannello: il
+token ID viene richiesto dalla sessione gia aperta e il permesso Mercati e
+assegnato all'operatore del progetto. Non occorre inserire una seconda chiave.
+App pilota e pannello sono rispettivamente su `http://127.0.0.1:5174` e
+`http://127.0.0.1:5182`; il servizio bozze locale e su porta 8003, con
+pubblicazione disattivata. Il pannello e un progetto separato.
 
-L'anteprima del 30 ottobre usa app `http://127.0.0.1:5174` e pannello
-`http://127.0.0.1:5182`. La credenziale locale e conservata soltanto nel file
-ignorato `.dev-logs/markets/admin-local-token.txt`: inserirla nel campo
-"Credenziale del servizio locale" del pannello; non copiarla in un file
-versionato o in una variabile Vite. Il campo non esiste nella build di produzione.
-Per riprendere dopo lo spegnimento del PC, dalla radice canonica:
-
-```powershell
-$env:MARKETS_STORAGE = 'sqlite'
-$env:MARKETS_ADMIN_AUTH_MODE = 'local'
-$env:MARKETS_ADMIN_LOCAL_TOKEN = Get-Content .dev-logs/markets/admin-local-token.txt -Raw
-& scripts/start-local-weather-pilot.ps1 -WeatherCloud
-```
-
-Se il backend era gia avviato con un'altra configurazione, riavviarlo tramite
-lo stesso launcher prima di verificarne l'accesso; non modificare processi
-estranei. Il pannello e un progetto separato: avviarlo dal suo checkout con
-Node 22.17.1, `npm run dev -- --host 127.0.0.1` (porta 5182).
+`MARKETS_ADMIN_AUTH_MODE=local` e `MARKETS_ADMIN_LOCAL_TOKEN` restano nel
+backend come compatibilita per prove isolate precedenti, senza campo nel
+pannello corrente. La modalita locale e SQLite vengono rifiutati quando
+`K_SERVICE` identifica Cloud Run.
 
 La produzione richiede esplicitamente:
 
@@ -123,7 +111,17 @@ globale e l'`expiresAt` immutabile seguono la massima validita pubblicata senza
 estendere le prove degli altri mercati. Un aggiornamento al 2027 non richiede
 modifiche al codice; i lettori devono rispettare anche la validita individuale.
 
-## Ricontrollo automatico delle fonti
+## Controllo manuale e codice di acquisizione
+
+Dal 7 novembre 2026 il flusso operativo e manuale: prima ricerca e inserimento
+una tantum, correzioni dal pannello quando servono, prossimo controllo il
+7 febbraio 2027 e poi circa ogni tre mesi. Il task Windows locale di refresh e
+disabilitato; il task email non e registrato e la preferenza email e disattivata.
+Le schede insufficienti restano nell'archivio come bozze o sospese. [Selezione
+editoriale corrente](../../../docs/operations/MERCATI_AUDIT_EDITORIALE_20261107.md).
+
+Il codice di refresh seguente e disponibile per interventi puntuali, ma non e
+parte della pianificazione corrente.
 
 `python -m app.markets.refresh_job --apply --report <rapporto.json>` controlla
 le fonti dei mercati dovuti e aggiorna direttamente l'archivio amministrativo,

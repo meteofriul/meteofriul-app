@@ -1,5 +1,6 @@
 import { describe, expect, it } from "vitest";
 import { buildEventsViewModel } from "../events/eventsViewModel";
+import { buildEventPreviewModel } from "../events/eventPreview";
 import { findRequestedMarketEvent, getMarket, marketDirectionsUrl, mergeMarketEvents, selectMarkets } from "./marketsCatalog";
 
 const now = new Date("2026-10-30T12:00:00Z");
@@ -25,6 +26,14 @@ describe("authoritative market editions", () => {
     const model = buildEventsViewModel({ items: merged }, { location, now });
     expect(findRequestedMarketEvent(model.items, { marketId: market.id, date: "2026-11-01" }, now, snapshot)?.id).toBe("edition-stable-1");
     expect(findRequestedMarketEvent(model.items, { marketId: market.id, editionId: "edition-stable-1" }, now, snapshot)?.id).toBe("edition-stable-1");
+  });
+  it("uses the verified hours of a single edition in Eventi", () => {
+    const snapshot = catalogue();
+    snapshot.dates[0].hours = "10:30–18:30";
+    const merged = mergeMarketEvents([], { location, now, catalogue: snapshot });
+    expect(merged[0]).toMatchObject({ time: "10:30", end_time: "18:30" });
+    const model = buildEventsViewModel({ items: merged }, { location, now });
+    expect(buildEventPreviewModel(model.items[0]).timeLabel).toBe("10:30–18:30");
   });
   it("recalculates distance after a managed market moves and marks the municipality estimate", () => {
     const snapshot = catalogue({ markets: [{ ...market, comune: "Udine", municipalityAliases: ["Pordenone"] }] });
@@ -110,7 +119,7 @@ describe("authoritative market editions", () => {
     const saturday = { ...oldFriday, start_date: "2026-10-31", end_date: "2026-10-31" };
     const merged = mergeMarketEvents([saturday], { location, now, catalogue: snapshot });
     expect(merged).toHaveLength(1);
-    expect(merged[0]).toMatchObject({ time: "10:00–14:00", lat: null, lon: null });
+    expect(merged[0]).toMatchObject({ time: "10:00", end_time: "14:00", lat: null, lon: null });
     expect(merged[0]).toMatchObject({ distance_km: 0, distance_is_approximate: true });
     expect(merged[0].description).toContain("Sabato");
     expect(merged[0].description).not.toContain("venerdì");

@@ -60,7 +60,7 @@ class MarketsEmailReminderTests(unittest.TestCase):
                                 "sources": [{"url": "https://private.example.test/research"}]}]
         self.repository = SQLiteMarketRepository(self.path, seed=self.seed)
         self.service = MarketsService(self.repository)
-        self.now = datetime(2026, 11, 2, 9, 0, tzinfo=ROME)
+        self.now = datetime(2027, 2, 7, 9, 0, tzinfo=ROME)
         self.serial = 0
         environment = patch.dict(os.environ, SMTP_ENV)
         environment.start()
@@ -148,7 +148,7 @@ class MarketsEmailReminderTests(unittest.TestCase):
         self.assertEqual(self.repository.read(), before)
         self.configure()
         before = self.repository.read()
-        early = datetime(2026, 11, 2, 8, 59, 59, tzinfo=ROME)
+        early = datetime(2027, 2, 7, 8, 59, 59, tzinfo=ROME)
         self.assertEqual(run(self.repository, now=early, config=CONFIG, sender=sender)["status"], "not_due")
         self.assertEqual(run(self.repository, now=self.now, sender=sender)["status"], "not_configured")
         sender.assert_not_called()
@@ -160,11 +160,11 @@ class MarketsEmailReminderTests(unittest.TestCase):
         sender = Mock(return_value={"status": "accepted", "errorCode": None})
         first = run(self.repository, now=self.now, config=CONFIG, sender=sender)
         self.assertEqual(first["status"], "accepted")
-        self.assertEqual(run(SQLiteMarketRepository(self.path), now=datetime(2026,11,20,9,tzinfo=ROME),
+        self.assertEqual(run(SQLiteMarketRepository(self.path), now=datetime(2027,2,20,9,tzinfo=ROME),
                              config=CONFIG, sender=sender)["status"], "skipped")
         self.assertEqual(sender.call_count, 1)
-        next_month = run(self.repository, now=datetime(2026,12,7,9,tzinfo=ROME), config=CONFIG, sender=sender)
-        self.assertEqual(next_month["status"], "accepted")
+        next_quarter = run(self.repository, now=datetime(2027,5,7,9,tzinfo=ROME), config=CONFIG, sender=sender)
+        self.assertEqual(next_quarter["status"], "accepted")
         self.assertEqual(sender.call_count, 2)
         after = self.repository.read()
         self.assertEqual(after["state"], before["state"])
@@ -176,18 +176,18 @@ class MarketsEmailReminderTests(unittest.TestCase):
         self.configure()
         sender = Mock(return_value={"status": "failed", "errorCode": "connection_failed"})
         self.assertEqual(run(self.repository, now=self.now, config=CONFIG, sender=sender)["status"], "failed")
-        same_day = datetime(2026,11,2,23,59,tzinfo=ROME)
+        same_day = datetime(2027,2,7,23,59,tzinfo=ROME)
         self.assertEqual(run(self.repository, now=same_day, config=CONFIG, sender=sender)["status"], "skipped")
-        following = datetime(2026,11,3,0,1,tzinfo=ROME)
+        following = datetime(2027,2,8,0,1,tzinfo=ROME)
         self.assertEqual(run(self.repository, now=following, config=CONFIG, sender=sender)["status"], "failed")
         self.assertEqual(sender.call_count, 2)
 
     def test_retry_day_is_normalized_to_rome_even_if_caller_passes_utc(self):
         self.configure()
         sender = Mock(return_value={"status": "failed", "errorCode": "connection_failed"})
-        first = datetime(2026,11,3,0,5,tzinfo=ROME)
+        first = datetime(2027,2,8,0,5,tzinfo=ROME)
         run(self.repository, now=first, config=CONFIG, sender=sender)
-        same_italian_day = datetime(2026,11,2,23,10,tzinfo=timezone.utc)
+        same_italian_day = datetime(2027,2,7,23,10,tzinfo=timezone.utc)
         self.assertEqual(run(self.repository, now=same_italian_day, config=CONFIG, sender=sender)["status"], "skipped")
         self.assertEqual(sender.call_count, 1)
 
@@ -195,8 +195,8 @@ class MarketsEmailReminderTests(unittest.TestCase):
         self.configure()
         sender = Mock(side_effect=RuntimeError("PRIVATE-SERVER-RESPONSE"))
         result = run(self.repository, now=self.now, config=CONFIG, sender=sender)
-        self.assertEqual(result, {"status": "uncertain", "period": "2026-11", "errorCode": "delivery_unknown"})
-        self.assertEqual(run(self.repository, now=datetime(2026,11,3,9,tzinfo=ROME), config=CONFIG, sender=sender)["status"], "skipped")
+        self.assertEqual(result, {"status": "uncertain", "period": "2027-02", "errorCode": "delivery_unknown"})
+        self.assertEqual(run(self.repository, now=datetime(2027,2,8,9,tzinfo=ROME), config=CONFIG, sender=sender)["status"], "skipped")
         self.assertEqual(sender.call_count, 1)
         self.assertNotIn("PRIVATE-SERVER-RESPONSE", json.dumps(self.repository.read()))
 
@@ -208,7 +208,7 @@ class MarketsEmailReminderTests(unittest.TestCase):
         self.assertEqual(self.repository.read()["emailReminder"]["delivery"]["status"], "sending")
         self.assertEqual(self.service.state()["emailReminder"]["lastDelivery"]["status"], "uncertain")
         restarted = SQLiteMarketRepository(self.path)
-        self.assertEqual(run(restarted, now=datetime(2026,11,3,9,tzinfo=ROME), config=CONFIG, sender=sender)["status"], "skipped")
+        self.assertEqual(run(restarted, now=datetime(2027,2,8,9,tzinfo=ROME), config=CONFIG, sender=sender)["status"], "skipped")
         self.assertEqual(sender.call_count, 1)
 
     def test_concurrent_claims_send_only_once(self):
@@ -256,7 +256,7 @@ class MarketsEmailReminderTests(unittest.TestCase):
         def complete():
             with patch("app.markets.service.reminder", side_effect=lambda record: reminder(record, now=self.now)):
                 self.service.complete_review(expected_revision=self.service.state()["revision"],
-                    operation_id="email-complete-review", period="2026-11", reason="Ricerca completata", actor="test-owner")
+                    operation_id="email-complete-review", period="2027-02", reason="Ricerca completata", actor="test-owner")
         wrapped = AfterClaimRepository(self.repository, complete)
         sender = Mock(return_value={"status": "accepted", "errorCode": None})
         self.assertEqual(run(wrapped, now=self.now, config=CONFIG, sender=sender)["status"], "cancelled")
@@ -285,8 +285,9 @@ class MarketsEmailReminderTests(unittest.TestCase):
         self.assertEqual(message["From"], CONFIG["from"])
         self.assertEqual(message["To"], "info@example.test")
         self.assertIn("Scopri", message.get_content())
-        self.assertNotIn("calendari stagionali", message.get_content())
-        quarterly = message_for(record, config=CONFIG, now=datetime(2027,2,1,9,tzinfo=ROME))
+        self.assertIn("calendari stagionali", message.get_content())
+        self.assertNotIn("aggiornamenti automatici", message.get_content())
+        quarterly = message_for(record, config=CONFIG, now=datetime(2027,2,7,9,tzinfo=ROME))
         self.assertIn("calendari stagionali", quarterly.get_content())
 
     def test_configuration_and_public_settings_do_not_expose_smtp_secrets(self):

@@ -1,5 +1,11 @@
 # Inventario dei job e responsabilità
 
+## Stato Mercati — 7 novembre 2026
+
+La gestione Mercati segue un controllo editoriale manuale: prima ricerca e inserimento una tantum, poi nuova verifica nel pannello il 7 febbraio 2027 e circa ogni tre mesi. Il task Windows `MeteoFriul-MarketsRefresh-Local` è **Disabled**; non va riattivato per questo flusso. `MeteoFriul-MarketsReminder-Local` non è registrato. La preferenza email nell'archivio locale è disattivata e il pannello non offre più la configurazione degli invii. Nessun job o email è necessario per il promemoria visibile nel pannello. [Audit e selezione delle schede](MERCATI_AUDIT_EDITORIALE_20261107.md).
+
+Le sezioni seguenti registrano le configurazioni e le prove del 1 novembre: sono storia operativa, non lo stato corrente dei task Mercati.
+
 ## Promemoria Mercati — preparazione del 1 novembre 2026
 
 Avviso mensile attivo nel pannello locale, calcolato alla lettura dell'archivio:

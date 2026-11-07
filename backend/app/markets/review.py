@@ -1,17 +1,17 @@
-"""Persistent monthly research reminder, separate from automatic fact updates."""
+"""Quarterly in-panel reminder for a manual review of market sources."""
 from __future__ import annotations
 
-from datetime import datetime, timedelta
+from datetime import datetime
 from zoneinfo import ZoneInfo
 
 ROME = ZoneInfo("Europe/Rome")
-START = 2026 * 12 + 10  # November 2026; quarterly research from February 2027.
+START = 2027 * 12 + 1  # First manual recheck: 7 February 2027.
+INTERVAL_MONTHS = 3
 
 
 def scheduled_at(month):
     year, index = divmod(month, 12)
-    first = datetime(year, index + 1, 1, 9, tzinfo=ROME)
-    return first + timedelta(days=(-first.weekday()) % 7)
+    return datetime(year, index + 1, 7, 9, tzinfo=ROME)
 
 
 def period(month):
@@ -23,28 +23,27 @@ def reminder(record, *, now=None):
     now = (now or datetime.now(ROME)).astimezone(ROME)
     month = now.year * 12 + now.month - 1
     latest = month if now >= scheduled_at(month) else month - 1
+    latest_due = START + ((latest - START) // INTERVAL_MONTHS) * INTERVAL_MONTHS
     completed = record.get("manualReview", {})
     through = completed.get("completedPeriod")
-    last = int(through[:4]) * 12 + int(through[5:7]) - 1 if through else START - 1
-    first_pending = max(START, last + 1)
-    due = latest >= first_pending
-    next_month = latest + 1 if due else first_pending
-    quarterly = due and any(index > START and (index - START) % 3 == 0
-                            for index in range(first_pending, latest + 1))
-    return {"due": due, "period": period(latest) if due else None,
+    last = int(through[:4]) * 12 + int(through[5:7]) - 1 if through else START - INTERVAL_MONTHS
+    first_pending = max(START, last + INTERVAL_MONTHS)
+    due = latest_due >= first_pending
+    next_month = latest_due + INTERVAL_MONTHS if due else first_pending
+    return {"due": due, "period": period(latest_due) if due else None,
             "dueAt": scheduled_at(first_pending).isoformat(),
             "nextDueAt": scheduled_at(next_month).isoformat(),
-            "kind": "quarterly" if quarterly else "monthly",
+            "kind": "quarterly",
             "lastCompletedAt": completed.get("completedAt"),
             "lastCompletedPeriod": through, "timezone": "Europe/Rome"}
 
 
 def review_queue(record):
-    """Use per-market results: a partial job must not hide other unresolved sources."""
+    """Show every editable market in the manual quarterly source review."""
     queue = []
     state = record["state"]
     for market in state["markets"]:
-        if market["status"] in {"archived", "suspended"}:
+        if market["status"] == "archived":
             continue
         meta = record.get("refreshLedger", {}).get(market["id"], {})
         issues = list(meta.get("issues", []))
@@ -55,8 +54,10 @@ def review_queue(record):
             issues.append("known_calendar_conflict")
         if meta.get("considerations"):
             issues.append("source_considerations")
+        if market["status"] == "suspended":
+            issues.append("suspended_for_review")
         if not issues:
-            continue
+            issues.append("routine_review")
         urls = [market.get("url"), *meta.get("sources", {})]
         sources = list(market.get("sources", []))
         for practice in state["drafts"]:

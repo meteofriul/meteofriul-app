@@ -193,6 +193,17 @@ class MarketsArchiveTests(unittest.TestCase):
         self.assertEqual(catalogue["tombstones"][0]["replacementDate"], "2026-11-08")
         self.assertTrue(any(item["legacyId"] == "market:M001:2026-11-01" for item in catalogue["editionAliases"]))
 
+    def test_edition_hours_are_public_and_invalid_values_are_rejected(self):
+        state = self.service.state()
+        state["dates"][0]["hours"] = "10:30–18:30"
+        self.mutate(state=state)
+        self.mutate(action="publish")
+        self.assertEqual(self.service.catalogue()["dates"][0]["hours"], "10:30–18:30")
+        state = self.service.state()
+        state["dates"][0]["hours"] = 1030
+        with self.assertRaisesRegex(MarketError, "markets_invalid_edition_hours"):
+            self.mutate(state=state)
+
     def test_archive_and_restore_are_new_public_revisions(self):
         state = self.service.state()
         state["markets"][0]["status"] = "archived"

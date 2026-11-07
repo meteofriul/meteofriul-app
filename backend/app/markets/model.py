@@ -157,6 +157,8 @@ def validate_state(candidate: dict, previous: dict) -> dict:
             raise MarketError("markets_invalid_edition")
         valid_date(edition.get("date"))
         valid_url(edition.get("source"), optional=True)
+        if "hours" in edition and (not isinstance(edition["hours"], str) or len(edition["hours"]) > 200):
+            raise MarketError("markets_invalid_edition_hours")
         old = previous_dates.get(edition["id"])
         if old and old["marketId"] != edition["marketId"]:
             raise MarketError("markets_edition_identity_immutable")
@@ -277,7 +279,7 @@ def build_catalogue(state: dict, *, revision: int, now: str, previous: dict | No
                 legacy_id = f"market:{market_id}:{day}"
                 aliases[legacy_id] = {"legacyId": legacy_id, "editionId": edition["id"], "marketId": market_id}
         if market_id in visible and edition["status"] != "draft":
-            projected = {key: copy.deepcopy(edition[key]) for key in ("id", "marketId", "date", "status", "source", "legacyDates") if key in edition}
+            projected = {key: copy.deepcopy(edition[key]) for key in ("id", "marketId", "date", "status", "source", "hours", "legacyDates") if key in edition}
             if edition.get("venue"):
                 projected["venue"] = {key: copy.deepcopy(value) for key, value in edition["venue"].items() if key in PUBLIC_VENUE_FIELDS}
             public_dates.append(projected)

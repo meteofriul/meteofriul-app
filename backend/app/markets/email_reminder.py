@@ -1,4 +1,4 @@
-"""Monthly reminder delivery. SMTP acceptance is not proof of inbox delivery."""
+"""Optional quarterly reminder delivery. SMTP acceptance is not proof of inbox delivery."""
 from __future__ import annotations
 
 import argparse
@@ -66,8 +66,7 @@ def message_for(record, *, config, now):
         "Apri il pannello Meteo Friûl: Scopri → Mercati e mercatini → Verifiche.\n"
         "Consulta le fonti, aggiorna le schede e conserva note e considerazioni utili.\n" + extra +
         "Quando hai concluso, registra l’esito della revisione nel pannello.\n\n"
-        "Gli aggiornamenti automatici continuano senza attendere questa revisione.\n"
-        "Puoi cambiare il destinatario o disattivare queste email dal pannello.\n")
+        "Le schede possono essere corrette in ogni momento dal pannello.\n")
     return message
 
 

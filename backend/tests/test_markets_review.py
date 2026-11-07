@@ -27,26 +27,25 @@ class MarketsReviewTests(unittest.TestCase):
     def at(self, value, record=None):
         return reminder(record or self.repository.read(), now=datetime.fromisoformat(value).replace(tzinfo=ROME))
 
-    def test_first_monday_nine_and_month_rollover(self):
-        before = self.at("2026-11-02T08:59:59")
+    def test_first_manual_quarterly_check_three_months_after_initial_review(self):
+        before = self.at("2027-02-07T08:59:59")
         self.assertFalse(before["due"])
-        self.assertEqual(before["dueAt"], "2026-11-02T09:00:00+01:00")
-        due = self.at("2026-11-02T09:00:00")
+        self.assertEqual(before["dueAt"], "2027-02-07T09:00:00+01:00")
+        due = self.at("2027-02-07T09:00:00")
         self.assertTrue(due["due"])
-        self.assertEqual(due["period"], "2026-11")
-        self.assertEqual(due["nextDueAt"], "2026-12-07T09:00:00+01:00")
+        self.assertEqual(due["period"], "2027-02")
+        self.assertEqual(due["nextDueAt"], "2027-05-07T09:00:00+02:00")
 
     def test_overdue_remains_visible_and_quarterly_scope_is_not_lost(self):
-        overdue = self.at("2027-03-01T09:01:00")
-        self.assertEqual(overdue["dueAt"], "2026-11-02T09:00:00+01:00")
-        self.assertEqual(overdue["period"], "2027-03")
+        overdue = self.at("2027-06-01T09:01:00")
+        self.assertEqual(overdue["dueAt"], "2027-02-07T09:00:00+01:00")
+        self.assertEqual(overdue["period"], "2027-05")
         self.assertEqual(overdue["kind"], "quarterly")
         record = self.repository.read()
-        record["manualReview"] = {"completedPeriod": "2027-03", "completedAt": "2027-03-01T09:05:00Z"}
-        next_one = self.at("2027-04-05T09:00:00", record)
-        self.assertEqual(next_one["kind"], "monthly")
-        self.assertEqual(next_one["dueAt"], "2027-04-05T09:00:00+02:00")
-        self.assertEqual(self.at("2027-05-03T09:00:00", record)["kind"], "quarterly")
+        record["manualReview"] = {"completedPeriod": "2027-05", "completedAt": "2027-06-01T09:05:00Z"}
+        next_one = self.at("2027-07-07T09:00:00", record)
+        self.assertEqual(next_one["kind"], "quarterly")
+        self.assertEqual(next_one["dueAt"], "2027-08-07T09:00:00+02:00")
 
     def test_queue_retains_issues_from_other_markets_after_partial_run(self):
         record = self.repository.read()
@@ -64,20 +63,29 @@ class MarketsReviewTests(unittest.TestCase):
         self.assertIn("unsupported_source_format", result[1]["issues"])
         record["state"]["markets"][1]["status"] = "archived"
         self.assertEqual(len(review_queue(record)), 1)
+        record["state"]["markets"][1]["status"] = "suspended"
+        self.assertEqual(len(review_queue(record)), 2)
+        self.assertIn("suspended_for_review", review_queue(record)[0]["issues"])
+        record["state"]["markets"][1]["status"] = "archived"
         record["refreshLedger"][market["id"]]["issues"] = []
         market["evidenceStatus"] = "conflict"
         self.assertEqual(review_queue(record)[0]["issues"], ["known_calendar_conflict"])
 
+    def test_market_without_technical_issue_still_appears_for_manual_check(self):
+        record = self.repository.read()
+        record["refreshLedger"] = {"M001": {"lastAttempt": "2026-11-07", "issues": []}}
+        self.assertEqual(review_queue(record)[0]["issues"], ["routine_review"])
+
     def complete(self, **kwargs):
         return self.service.complete_review(**{"expected_revision": 0, "operation_id": "review-operation-one",
-            "period": "2026-11", "reason": "Verificate fonti; note conservate nelle schede", "actor": "test-owner", **kwargs})
+            "period": "2027-02", "reason": "Verificate fonti; note conservate nelle schede", "actor": "test-owner", **kwargs})
 
     def test_ack_is_persistent_idempotent_and_does_not_verify_or_publish_facts(self):
         initial = self.repository.read()
-        with patch("app.markets.service.reminder", side_effect=lambda record: self.at("2026-11-02T10:00:00", record)):
+        with patch("app.markets.service.reminder", side_effect=lambda record: self.at("2027-02-07T10:00:00", record)):
             saved = self.complete()
             self.assertFalse(saved["reviewReminder"]["due"])
-            self.assertEqual(saved["reviewReminder"]["nextDueAt"], "2026-12-07T09:00:00+01:00")
+            self.assertEqual(saved["reviewReminder"]["nextDueAt"], "2027-05-07T09:00:00+02:00")
             self.assertTrue(self.complete()["idempotentReplay"])
             with self.assertRaises(MarketError) as failure:
                 self.complete(operation_id="other-review-operation")
@@ -87,17 +95,17 @@ class MarketsReviewTests(unittest.TestCase):
         self.assertEqual(after["catalogue"], initial["catalogue"])
         self.assertEqual(after["revision"], 1)
         self.assertEqual(after["audit"][-1]["action"], "review")
-        self.assertEqual(after["manualReview"]["completedPeriod"], "2026-11")
+        self.assertEqual(after["manualReview"]["completedPeriod"], "2027-02")
 
     def test_cannot_ack_future_or_stale_period(self):
-        for now, period in (("2026-11-01T09:00:00", "2026-11"), ("2026-12-07T10:00:00", "2026-11")):
+        for now, period in (("2027-02-06T09:00:00", "2027-02"), ("2027-05-07T10:00:00", "2027-02")):
             with patch("app.markets.service.reminder", side_effect=lambda record: self.at(now, record)):
                 with self.assertRaises(MarketError):
                     self.complete(period=period)
         self.assertEqual(self.repository.read()["revision"], 0)
 
     def test_refresh_preserves_ack_and_regular_save_cannot_forge_it(self):
-        with patch("app.markets.service.reminder", side_effect=lambda record: self.at("2026-11-02T10:00:00", record)):
+        with patch("app.markets.service.reminder", side_effect=lambda record: self.at("2027-02-07T10:00:00", record)):
             self.complete()
         before = copy.deepcopy(self.repository.read()["manualReview"])
         state = self.service.state()
@@ -105,7 +113,7 @@ class MarketsReviewTests(unittest.TestCase):
         self.service.mutate(action="save", expected_revision=1, operation_id="save-review-operation", reason="Test metadata", actor="test-owner", state=state)
         market_id = state["markets"][0]["id"]
         self.service.refresh([{"marketId": market_id, "observations": [], "issues": ["source_unavailable"]}],
-                             expected_revision=2, operation_id="refresh-review-operation", as_of=date(2026, 11, 2))
+                             expected_revision=2, operation_id="refresh-review-operation", as_of=date(2027, 2, 7))
         self.assertEqual(self.repository.read()["manualReview"], before)
         self.assertEqual(self.service.state()["reviewReminder"]["items"][0]["issues"], ["source_unavailable"])
 
@@ -114,9 +122,9 @@ class MarketsReviewTests(unittest.TestCase):
         app.include_router(admin_router)
         app.dependency_overrides[get_markets_service] = lambda: self.service
         client = TestClient(app)
-        payload = {"expectedRevision": 0, "operationId": "api-review-operation", "reason": "Ricerca completata", "period": "2026-11"}
+        payload = {"expectedRevision": 0, "operationId": "api-review-operation", "reason": "Ricerca completata", "period": "2027-02"}
         env = {"K_SERVICE": "", "CLOUD_RUN_JOB": "", "MARKETS_ADMIN_AUTH_MODE": "local", "MARKETS_ADMIN_LOCAL_TOKEN": "test-review-token"}
-        with patch.dict(os.environ, env), patch("app.markets.service.reminder", side_effect=lambda record: self.at("2026-11-02T10:00:00", record)):
+        with patch.dict(os.environ, env), patch("app.markets.service.reminder", side_effect=lambda record: self.at("2027-02-07T10:00:00", record)):
             self.assertEqual(client.post("/api/admin/markets/review-complete", json=payload).status_code, 401)
             auth = {"Authorization": "Bearer test-review-token"}
             self.assertEqual(client.post("/api/admin/markets/review-complete", json={**payload, "period": "2026-13"}, headers=auth).status_code, 422)
