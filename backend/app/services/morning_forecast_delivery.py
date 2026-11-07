@@ -48,6 +48,9 @@ MORNING_FORECAST_REQUIRE_SINGLE_TARGET_ENV = (
 )
 MORNING_FORECAST_TEST_RUN_ID_ENV = "MORNING_FORECAST_TEST_RUN_ID"
 MORNING_FORECAST_TEST_PLATFORM_ENV = "MORNING_FORECAST_TEST_PLATFORM"
+MORNING_FORECAST_TEST_INSTALLATION_HASH_ENV = (
+    "MORNING_FORECAST_TEST_INSTALLATION_HASH"
+)
 MORNING_FORECAST_TITLE = "Meteo Friûl"
 MORNING_FORECAST_KIND = "morning_forecast"
 MORNING_FORECAST_HOURS = 24
@@ -335,6 +338,24 @@ def _read_test_platform(*, require_single_target: bool) -> str:
     if value not in {"android", "web"}:
         raise MorningForecastConfigurationError(
             "morning_forecast_test_platform_invalid"
+        )
+    return value
+
+
+def _read_test_installation_hash(*, require_single_target: bool) -> str:
+    value = os.getenv(
+        MORNING_FORECAST_TEST_INSTALLATION_HASH_ENV,
+        "",
+    ).strip().lower()
+    if not value:
+        return ""
+    if not require_single_target:
+        raise MorningForecastConfigurationError(
+            "morning_forecast_test_installation_hash_requires_single_target"
+        )
+    if re.fullmatch(r"[a-f0-9]{64}", value) is None:
+        raise MorningForecastConfigurationError(
+            "morning_forecast_test_installation_hash_invalid"
         )
     return value
 
@@ -929,6 +950,9 @@ def get_morning_forecast_delivery_service() -> MorningForecastDeliveryService:
         test_platform=_read_test_platform(
             require_single_target=require_single_target,
         ),
+        test_installation_hash=_read_test_installation_hash(
+            require_single_target=require_single_target,
+        ),
         location_catalog=NoticeMunicipalityCatalog(),
     )
 
@@ -943,6 +967,7 @@ __all__ = [
     "MORNING_FORECAST_KIND",
     "MORNING_FORECAST_MODE_ENV",
     "MORNING_FORECAST_REQUIRE_SINGLE_TARGET_ENV",
+    "MORNING_FORECAST_TEST_INSTALLATION_HASH_ENV",
     "MORNING_FORECAST_TEST_RUN_ID_ENV",
     "MORNING_FORECAST_TEST_PLATFORM_ENV",
     "MorningForecastConfigurationError",
