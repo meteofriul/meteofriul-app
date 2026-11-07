@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from "react";
-import { ArrowLeft, CalendarDays, ChevronRight, ExternalLink, MapPin, Navigation, ShoppingBag, X } from "lucide-react";
+import { ArrowLeft, CalendarDays, ChevronRight, ExternalLink, MapPin, Navigation, ShoppingBag, Store, X } from "lucide-react";
 import { usePilotBackHandler } from "../../app/usePilotBackHandler";
 import { useBrowserDialogBack } from "../../app/useBrowserDialogBack";
 import { subscribeToMarketsDayClock } from "./marketsDayClock";
@@ -8,10 +8,10 @@ import { formatMarketDate, getMarket, MARKET_CATALOGUE, marketDateInEvents, mark
 
 export function MarketsEntry({ language = "it", onOpen }) {
   const copy = getMarketsCopy(language);
-  return <button type="button" className="mf-markets-entry" onClick={() => onOpen?.()}>
-    <span className="mf-markets-entry__icon"><ShoppingBag size={25} aria-hidden="true" /></span>
-    <span><strong>{copy.title}</strong><span>{copy.intro}</span><b>{copy.explore}</b></span>
-    <ChevronRight size={22} aria-hidden="true" />
+  return <button type="button" className="mf-market-catalogue-link mf-market-catalogue-link--banner" onClick={() => onOpen?.()}>
+    <span className="mf-market-banner__icon" aria-hidden="true"><Store size={27} strokeWidth={1.8} /></span>
+    <span className="mf-market-banner__copy"><strong>{copy.title}</strong><span>{copy.explore}</span></span>
+    <span className="mf-market-banner__arrow" aria-hidden="true"><ChevronRight size={22} strokeWidth={2.2} /></span>
   </button>;
 }
 
