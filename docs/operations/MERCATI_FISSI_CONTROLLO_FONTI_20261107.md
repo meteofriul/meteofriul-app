@@ -23,8 +23,8 @@ controllo e non è stato creato alcun job.
 | Gruppo | Schede | Esito |
 | --- | ---: | --- |
 | Già selezionate, fonte principale coerente | 5 | Ricontrollare nel pannello prima della prima pubblicazione. |
-| Dati di base confermati, correzione circoscritta | 8 | Priorità di completamento dopo le cinque. |
-| Esistenza confermata, un dettaglio decisivo da chiarire | 14 | Conservare sospese/in bozza e cercare il riscontro mirato. |
+| Dati di base confermati, correzione circoscritta | 9 | Priorità di completamento dopo le cinque. |
+| Esistenza confermata, un dettaglio decisivo da chiarire | 13 | Conservare sospese/in bozza e cercare il riscontro mirato. |
 | Fonte troppo vecchia, parziale o discordante | 7 | Ultime da analizzare; non proporre ora. |
 
 ### 1. Cinque schede già selezionate
@@ -37,7 +37,7 @@ controllo e non è stato creato alcun job.
 | M022 Mercato coperto Trieste | [Discover Trieste](https://www.discover-trieste.it/vivi/shopping/il-mercato-coperto): via Carducci 36, lunedì 08:00–14:00, martedì–sabato 08:00–17:00. | Verificare che la scheda distingua il lunedì. |
 | M023 Mercato ortofrutticolo Trieste | [Discover Trieste](https://www.discover-trieste.it/vivi/shopping/andar-per-mercatini): Riva Ottaviano Augusto 12, accesso pubblico martedì–sabato 09:00–10:00. | Esplicitare sempre «accesso al pubblico»: non è l'intero orario all'ingrosso. |
 
-### 2. Otto schede con correzioni circoscritte
+### 2. Nove schede con correzioni circoscritte
 
 Queste hanno un riscontro istituzionale o del distretto del commercio per
 giorno e sede. Non sono ancora approvate: nell'archivio locale mancano
@@ -45,6 +45,7 @@ giorno e sede. Non sono ancora approvate: nell'archivio locale mancano
 
 | ID | Fonte e fatto verificato | Correzione da fare nel pannello |
 | --- | --- | --- |
+| M001 Pordenone | [Pagina comunale](https://www.comune.pordenone.it/it/argomenti/mercato/cittadino): mercoledì e sabato, vendita 08:00–14:00, area del centro; [calendario 2026–27](https://www.comune.pordenone.it/it/argomenti/mercato/cittadino/determina-calendario-2026-2027.pdf/@@download/file): 26 dicembre 2026 annullato, 6 gennaio 2027 confermato. L'[avviso comunale del 19 ottobre](https://www.comune.pordenone.it/it/novita/mercato-cittadino-spostamento-dei-banchi-in-piazza-xx-settembre) **revoca e sostituisce** il precedente trasferimento verso piazzetta Pescheria e via Roma. | Conservare la sede abituale e aggiungere una nota temporanea: fino all'avvio del Natale a Pordenone, sette banchi del mercoledì e nove del sabato sono spostati all'interno di Piazza XX Settembre, davanti alla Casa del Mutilato. Inserire un punto centrale per le indicazioni e l'annullamento del 26 dicembre; non inserire i mercati straordinari del 13 e 20 dicembre finché restano da confermare. Verificare il successivo assetto natalizio prima di mantenere la nota oltre novembre. |
 | M002 Sacile | [Regolamento comunale](https://comune.sacile.pn.it/media/files/093037/attachment/Regolamento_CQcs8ay.pdf): giovedì, vendita 08:15–13:00; area più ampia delle quattro vie in scheda. | Aggiornare area e orario di vendita; indicazioni verso un punto rappresentativo. |
 | M003 Codroipo | [Agenda comunale](https://www.comune.codroipo.ud.it/it/vivere-il-comune-224008/eventi-224010/mercato-settimanale-163515): martedì mattina; [piano comunale](https://www.comune.codroipo.ud.it/media/files/md/030027/PIANO_SICUREZZA_MERCATO_CODROIPO.PDF) conferma le vie elencate. | Impostare un punto per le indicazioni; non trasformare l'intervallo dell'agenda in date giornaliere certe. |
 | M005 Palmanova | [Comunicazione comunale 2026](https://www.comune.palmanova.ud.it/it/novita-179021/notizie-179022/lunedi-di-pasquetta-sui-bastioni-di-palmanova-6-aprile-2026-320575) conferma il mercato del lunedì in Piazza Grande; [atto per i posteggi](https://comune.palmanova.ud.it/media/files/030070/attachment/Allegato_B1.0.pdf) comprende anche Contrada Donato. | Completare l'area, sostituire il riferimento principale al DUP storico; lasciare vuoto l'orario non provato. |
@@ -54,11 +55,10 @@ giorno e sede. Non sono ancora approvate: nell'archivio locale mancano
 | R-PN-M014 Caneva | [Stessa guida del distretto](https://www.distrettocommercioaltolivenza.it/alla-scoperta-delle-tradizioni-del-distretto-feste-sagre-e-mercati-storici-da-non-perdere/): venerdì mattina, Piazza M. Garibaldini. | Sciogliere l'abbreviazione della piazza per le indicazioni; nessuna fascia numerica provata. |
 | R-PN-M016 Coltura di Polcenigo | [Stessa guida del distretto](https://www.distrettocommercioaltolivenza.it/alla-scoperta-delle-tradizioni-del-distretto-feste-sagre-e-mercati-storici-da-non-perdere/): mercoledì mattina, via dell'Ovre presso la chiesa. | Inserire indicazioni precise; nessuna fascia numerica provata. |
 
-### 3. Quattordici schede che richiedono una verifica mirata
+### 3. Tredici schede che richiedono una verifica mirata
 
 | ID | Riscontro | Punto aperto |
 | --- | --- | --- |
-| M001 Pordenone | [Comune: mercoledì e sabato, 08:00–14:00](https://www.comune.pordenone.it/it/argomenti/mercato/cittadino); [calendario 2026–27](https://www.comune.pordenone.it/it/argomenti/mercato/cittadino/determina-calendario-2026-2027.pdf/@@download/file). | [Avviso del 7 ottobre sugli spostamenti](https://www.comune.pordenone.it/it/novita/mercati-del-mercoledi-e-del-sabato-spostamento-banchi-di-piazza-xx-settembre) e [comunicato del 29 ottobre](https://www.comune.pordenone.it/it/argomenti/mercato) descrivono sistemazioni temporanee diverse per Piazza XX Settembre; chiarire l'assetto attuale. Il 26 dicembre 2026 è annullato. Rappresentare le eccezioni senza alterare la sede abituale. |
 | M007 Cormons | [Regolamento comunale](https://www.comune.cormons.go.it/media/files/md/031002/REGOLAMENTO_COMUNALE_PER_LA_DISCIPLINA_DELLATTIVIT%C3%A0_COMMERCIALE_SULLE_AREE_PUBBLICHE.pdf): venerdì, Piazzale Antonio Sfiligoi e via Pescheria, vendita 07:45–13:30. | Sostituire la fonte in scheda, che è una notizia COVID del 2021; cercare una conferma operativa recente. |
 | M008 Monfalcone | [Regolamento comunale](https://www.comune.monfalcone.go.it/media/files/031012/attachment/REGOLAMENTO_AREE_PUBBLICHE_-_portale.pdf): mercoledì, più vie del centro; l'orario di vendita è demandato a ordinanza. | Inserire il perimetro effettivo e trovare l'ordinanza attuale; la fonte ora in scheda è solo un indice. |
 | M009 Ronchi dei Legionari | [Bando comunale 2024](https://www.comune.ronchideilegionari.go.it/media/files/md/031016/BANDO_POSTEGGI_VACANTI_MERCATO_2024.pdf): mercoledì, posteggi in via Roma, Piazza Unità e via VII Giugno. | Definire il punto principale delle indicazioni e cercare un riscontro aggiornato. |
@@ -85,7 +85,7 @@ giorno e sede. Non sono ancora approvate: nell'archivio locale mancano
 
 ## Prossima operazione editoriale
 
-Aprire nel pannello le cinque selezionate e le otto schede del gruppo 2,
+Aprire nel pannello le cinque selezionate e le nove schede del gruppo 2,
 correggere i soli campi sostenuti dalle fonti, controllare anteprima e
 indicazioni, poi registrare una decisione per ogni scheda. Le altre rimangono
 disponibili nel pannello senza essere proposte al catalogo. Prima di qualsiasi
