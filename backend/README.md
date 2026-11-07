@@ -383,6 +383,10 @@ località salvata e dati ICON verificati. Il tap apre il Bollettino. Le variabil
 dedicate sono `MORNING_FORECAST_DELIVERY_MODE=off|dry_run|send` e
 `MORNING_FORECAST_REQUIRE_SINGLE_TARGET=true|false`; il secondo gate è
 obbligatorio per il collaudo circoscritto a una sola versione/dispositivo.
+Durante il solo collaudo owner, `MORNING_FORECAST_TEST_INSTALLATION_HASH`
+restringe l'esecuzione a un solo `device_id` SHA-256 già registrato e richiede
+`MORNING_FORECAST_REQUIRE_SINGLE_TARGET=true`. Va usato soltanto come override
+temporaneo dell'esecuzione, mai salvato nella configurazione permanente del job.
 
 L'anticipazione serale e' un percorso distinto, predisposto ma spento finche'
 non viene completato il collaudo owner. Il job

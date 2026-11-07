@@ -110,7 +110,7 @@ class NoticeToleranceTests(unittest.TestCase):
         self.assertEqual(result['data_quality']['state'],'partial')
         self.assertEqual(result['data_quality']['phenomena']['heat']['state'],'not_evaluable')
 
-    def test_verified_tolerance_does_not_fill_morning_or_evening_summaries(self):
+    def test_verified_tolerance_does_not_fill_morning_or_evening_measurements(self):
         from app.services.location import LocationCatalog
         from app.services.morning_forecast_delivery import build_morning_forecast_body
         from app.services.evening_forecast_delivery import build_evening_forecast_contents
@@ -120,7 +120,9 @@ class NoticeToleranceTests(unittest.TestCase):
         proof=public_row(unresolved={'TOT_PREC':tiny()})['accumulation_quality']
         snap=morning.snapshot(); snap['hourly']['precipitation'][6]=None
         snap['hourly']['accumulation_quality']=[proof]*len(snap['hourly']['time'])
-        self.assertEqual(build_morning_forecast_body(snap,municipality,now=morning.NOW),'')
+        body=build_morning_forecast_body(snap,municipality,now=morning.NOW)
+        self.assertIn('dati sulle precipitazioni incompleti',body)
+        self.assertNotIn('non sono previste piogge',body)
         snap=evening.snapshot(); snap['hourly']['precipitation'][evening.tomorrow_index(snap,12)]=None
         snap['hourly']['accumulation_quality']=[proof]*len(snap['hourly']['time'])
         self.assertEqual(build_evening_forecast_contents(snap,municipality,now=evening.NOW),{})
