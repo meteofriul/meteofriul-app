@@ -1,0 +1,1197 @@
+{
+  "schema_version": 1,
+  "assessment_date": "2026-10-31",
+  "mode": "OFFLINE_READ_ONLY_REVIEW_OF_EXISTING_EVIDENCE",
+  "owner": "controllo_job; coordinator owns any tracked report and any later change",
+  "reviewed_cloud_snapshot_at_utc": "2026-10-31T16:47:02.756718Z",
+  "reviewed_job_execution_cutoff_utc": "2026-10-31T15:20:50.685133Z",
+  "reviewed_usage_window_utc": [
+    "2026-10-24T16:47:51.817671Z",
+    "2026-10-31T16:47:51.817671Z"
+  ],
+  "current_state_limit": "Evidence is dated; subsequent optimization, deployments, scheduled runs and user actions are not inferred. No new cloud request performed for this review.",
+  "counts": {
+    "http_services": 6,
+    "job_instances": 14,
+    "enabled_schedulers": 11
+  },
+  "http_services": [
+    {
+      "name": "meteofriul-api",
+      "owner": "coordinator for common API; meteo for bulletin/radar/webcams/alerts",
+      "latest_report_found": [
+        "docs/operations/JOBS_READONLY_AUDIT_20261031.md",
+        "docs/operations/RELEASE_WEB_REALTIME_ALIGNMENT_20261023.md"
+      ],
+      "current_evidence": [
+        ".tmp/jobs-cost-audit-20261031/cloud-inventory.json",
+        ".tmp/jobs-cost-audit-20261031/usage-analysis.json",
+        ".tmp/jobs-readonly-20261031/publications.json"
+      ],
+      "demonstrated": [
+        "31 October configuration and traffic snapshot",
+        "Seven-day aggregate resource use and request count",
+        "31 October FVG and national alert GET samples"
+      ],
+      "not_demonstrated": [
+        "Current OSMER bulletin completeness, dates and IT/FUR alignment",
+        "Current radar product timestamps and image/tile availability",
+        "Current webcam media freshness and fallback quality",
+        "Full API latency/error distribution and deployed route provenance"
+      ],
+      "priority": "P1",
+      "persisted_state_domains": [
+        "osmer",
+        "radar",
+        "webcams",
+        "official_alerts",
+        "push"
+      ]
+    },
+    {
+      "name": "meteofriul-weather",
+      "owner": "meteo",
+      "latest_report_found": [
+        "docs/operations/ICON_RECOVERY_20261031.md",
+        "docs/operations/JOBS_READONLY_AUDIT_20261031.md",
+        "docs/operations/WEATHER_HTTP_STARTUP_20261025.md"
+      ],
+      "current_evidence": [
+        ".tmp/jobs-cost-audit-20261031/cloud-inventory.json",
+        ".tmp/jobs-cost-audit-20261031/usage-analysis.json",
+        "docs/operations/evidence/ICON_RECOVERY_20261031.json"
+      ],
+      "demonstrated": [
+        "FVG ICON recovery to 31 October 12Z, revision104; sampled payload/hash/coverage checks",
+        "CAMS family/UV 31 October 00Z and successful component outcomes",
+        "Resource/revision snapshot and aggregate usage"
+      ],
+      "not_demonstrated": [
+        "All215 municipal payloads independently reread",
+        "Current per-route cold/warm latency and error rates",
+        "Current complete semantic CAMS coverage"
+      ],
+      "priority": "P2",
+      "persisted_state_domains": [
+        "icon_fvg",
+        "cams"
+      ]
+    },
+    {
+      "name": "meteofriul-national-weather",
+      "owner": "meteo",
+      "latest_report_found": [
+        "docs/operations/ICON_RECOVERY_20261031.md",
+        "docs/operations/JOBS_READONLY_AUDIT_20261031.md"
+      ],
+      "current_evidence": [
+        ".tmp/jobs-cost-audit-20261031/cloud-inventory.json",
+        "docs/operations/evidence/ICON_RECOVERY_20261031.json"
+      ],
+      "demonstrated": [
+        "31 October12Z pointer/manifest/index recovery; three public municipal block samples",
+        "Configuration and usage snapshot"
+      ],
+      "not_demonstrated": [
+        "Independent reread of all7894 municipalities/642 blocks",
+        "Full product qualification from experimental pointer status",
+        "Current latency/error budget"
+      ],
+      "priority": "P2",
+      "persisted_state_domains": [
+        "icon_national"
+      ]
+    },
+    {
+      "name": "meteofriul-events",
+      "owner": "eventi",
+      "latest_report_found": [
+        "docs/operations/JOBS_READONLY_AUDIT_20261031.md",
+        "docs/operations/EVENTS_BARCOLANA_TIMEOUT_DIAGNOSIS_20261028.md"
+      ],
+      "current_evidence": [
+        ".tmp/jobs-readonly-20261031/publications.json",
+        ".tmp/events-job-probe-20261031.json",
+        ".tmp/jobs-cost-audit-20261031/cloud-inventory.json"
+      ],
+      "demonstrated": [
+        "Current-day persistent catalog publication, source status and counts",
+        "Correct Udine GET sample HTTP200/ready with current snapshot",
+        "Four stale sources, six partial, five fresh"
+      ],
+      "not_demonstrated": [
+        "Recovery of CSS Udine, Teatro Verdi Trieste, Galleria Spazzapan, Barcolana",
+        "Full editorial correctness/coverage of all cards",
+        "Regional/API pagination coverage beyond declared sample"
+      ],
+      "priority": "P1",
+      "persisted_state_domains": [
+        "events"
+      ]
+    },
+    {
+      "name": "meteofriul-community",
+      "owner": "coordinator for Community/common service; meteo only for Live consumer",
+      "latest_report_found": [
+        "docs/operations/COMMUNITY_0.1.15_DEPLOY_20261021.md",
+        "docs/operations/COMMUNITY_LOG_PRIVACY.md"
+      ],
+      "current_evidence": [
+        ".tmp/jobs-cost-audit-20261031/cloud-inventory.json",
+        ".tmp/jobs-cost-audit-20261031/usage-analysis.json",
+        "release-history/community-deploy/0.1.15-20261021/deployment.json"
+      ],
+      "demonstrated": [
+        "31 October traffic points to active0115 revision; aggregate request/resource metrics",
+        "21 October legacy/v3 read/CORS and missing-invalid AppCheck rejection",
+        "21 October privacy exclusion propagation proof"
+      ],
+      "not_demonstrated": [
+        "31 October current public health/read-contract sample",
+        "Current snapshot consistency and storage retention behavior",
+        "Current AppCheck/PlayIntegrity end-to-end behavior",
+        "Current sink/exclusion/retention readback; historical proof is not current certification"
+      ],
+      "priority": "P1",
+      "persisted_state_domains": [
+        "community"
+      ]
+    },
+    {
+      "name": "meteofriul-icon2i-freshness-dispatch",
+      "owner": "meteo",
+      "latest_report_found": [
+        "docs/operations/JOBS_READONLY_AUDIT_20261031.md",
+        "docs/operations/JOBS_INVENTORY.md"
+      ],
+      "current_evidence": [
+        ".tmp/jobs-cost-audit-20261031/cloud-inventory.json",
+        ".tmp/jobs-cost-audit-20261031/usage-analysis.json",
+        ".tmp/jobs-readonly-20261031/executions.json",
+        ".tmp/jobs-readonly-20261031/publications.json"
+      ],
+      "demonstrated": [
+        "Configured HTTP dispatcher and recurring monitor executions",
+        "Persistent monitor status before recovery correctly critical",
+        "Aggregate seven-day336 requests"
+      ],
+      "not_demonstrated": [
+        "Post-recovery monitor-state readback in these selected audit artifacts",
+        "Incident delivery/recovery email receipt",
+        "End-to-end correspondence of every Scheduler invocation to execution"
+      ],
+      "priority": "P2",
+      "persisted_state_domains": [
+        "freshness_monitor"
+      ]
+    }
+  ],
+  "job_inventory": {
+    "evidence": [
+      ".tmp/jobs-cost-audit-20261031/cloud-inventory.json",
+      ".tmp/jobs-readonly-20261031/executions.json",
+      "docs/operations/JOBS_INVENTORY.md"
+    ],
+    "scheduled": [
+      {
+        "job": "meteofriul-morning-forecast",
+        "region": "europe-west1",
+        "scheduler": "meteofriul-morning-forecast",
+        "owner": "meteo",
+        "state_domain": "push"
+      },
+      {
+        "job": "meteofriul-evening-forecast",
+        "region": "europe-west1",
+        "scheduler": "meteofriul-evening-forecast",
+        "owner": "meteo",
+        "state_domain": "push"
+      },
+      {
+        "job": "meteofriul-local-notice",
+        "region": "europe-west1",
+        "scheduler": "meteofriul-local-notice",
+        "owner": "meteo",
+        "state_domain": "push"
+      },
+      {
+        "job": "meteofriul-official-alert-sync",
+        "region": "europe-west8",
+        "scheduler": "meteofriul-official-alert-sync",
+        "owner": "meteo",
+        "state_domain": "official_alerts"
+      },
+      {
+        "job": "meteofriul-national-official-alert-sync",
+        "region": "europe-west1",
+        "scheduler": "meteofriul-national-official-alert-sync",
+        "owner": "meteo",
+        "state_domain": "official_alerts"
+      },
+      {
+        "job": "meteofriul-national-official-alert-send",
+        "region": "europe-west1",
+        "scheduler": "meteofriul-national-official-alert-send",
+        "owner": "meteo",
+        "state_domain": "push"
+      },
+      {
+        "job": "meteofriul-icon",
+        "region": "europe-west1",
+        "scheduler": "meteofriul-icon-refresh",
+        "owner": "meteo",
+        "state_domain": "icon_fvg"
+      },
+      {
+        "job": "meteofriul-national-icon",
+        "region": "europe-west1",
+        "scheduler": "meteofriul-national-icon-refresh",
+        "owner": "meteo",
+        "state_domain": "icon_national"
+      },
+      {
+        "job": "meteofriul-cams",
+        "region": "europe-west1",
+        "scheduler": "meteofriul-cams-refresh",
+        "owner": "meteo",
+        "state_domain": "cams"
+      },
+      {
+        "job": "meteofriul-events-refresh",
+        "region": "europe-west1",
+        "scheduler": "meteofriul-events-refresh",
+        "owner": "eventi",
+        "state_domain": "events"
+      },
+      {
+        "job": "meteofriul-icon2i-freshness",
+        "region": "europe-west1",
+        "scheduler": "meteofriul-icon2i-freshness",
+        "owner": "meteo",
+        "state_domain": "freshness_monitor"
+      }
+    ],
+    "unscheduled_observed": [
+      {
+        "job": "meteofriul-official-alert-sync",
+        "region": "europe-west1",
+        "role": "historical regional duplicate"
+      },
+      {
+        "job": "meteofriul-local-notice-tolerance-qa",
+        "region": "europe-west1",
+        "role": "QA"
+      },
+      {
+        "job": "meteofriul-event-source-publication-control",
+        "region": "europe-west1",
+        "role": "historical/manual publication control"
+      }
+    ],
+    "gap": "Do not create one more audit job merely to produce a summary. Existing execution evidence and per-domain state can be composed read-only. Manual recovery and future optimization need separate dated evidence."
+  },
+  "persisted_state_coverage": [
+    {
+      "domain": "icon_fvg",
+      "owner": "meteo",
+      "evidence_level": "CODE_PLUS_DATED_CLOUD_DATA",
+      "already_persisted": [
+        "Immutable run manifests and municipal payloads in weather-data",
+        "latest.json revision/source_run_id/published_at pointer",
+        "Acquisition slot claim and durable publication checkpoint/intent in weather-state",
+        "Hashes, byte lengths, generations and freshness windows"
+      ],
+      "where": [
+        "weather/v1/icon2i/latest.json",
+        "weather/v1/icon2i/runs/<run>/manifest.json",
+        "state/dispatch/ and local_pipeline/icon_checkpoint"
+      ],
+      "reuse_control": [
+        "Reuse authenticated checkpoint for publication retry instead of source acquisition",
+        "Reject invalid manifest; read generation/hash verified payload",
+        "HTTP ETag/conditional304 and bounded Cache-Control"
+      ],
+      "references": [
+        "experiments/weather_autonomy/cloud_worker.py",
+        "experiments/weather_autonomy/cloud_reader.py",
+        "experiments/weather_autonomy/local_pipeline/icon_checkpoint.py",
+        "docs/operations/ICON_RECOVERY_20261031.md"
+      ],
+      "gap": "Snapshot/report exists. Reassess only failure-stage/late-source recovery and cost of no-op checks; do not add duplicate catalog."
+    },
+    {
+      "domain": "icon_national",
+      "owner": "meteo",
+      "evidence_level": "CODE_PLUS_DATED_CLOUD_DATA",
+      "already_persisted": [
+        "Immutable national manifest/index/blocks",
+        "pilot.json pointer with run and descriptor hashes",
+        "Slot claims, intent and prepared/checkpoint evidence"
+      ],
+      "where": [
+        "weather/v2/icon2i/pilot.json",
+        "state/national-icon/dispatch/<slot>.json",
+        "state/national-icon/runs/<run>/intent.json"
+      ],
+      "reuse_control": [
+        "Existing complete manifest can be reused without new source download",
+        "Claim prevents same-slot reacquisition; source_not_advanced returns no-op"
+      ],
+      "references": [
+        "experiments/weather_autonomy/national_cloud_worker.py",
+        "docs/operations/ICON_RECOVERY_20261031.md"
+      ],
+      "gap": "No-op success needs to remain distinct from fresh publication in any aggregate status; this is already caught by freshness monitor."
+    },
+    {
+      "domain": "cams",
+      "owner": "meteo",
+      "evidence_level": "CODE_PLUS_DATED_CLOUD_DATA",
+      "already_persisted": [
+        "Atomic family pointer and immutable air/pollen products",
+        "UV pointer and durable request/lifecycle state",
+        "Per-slot component outcomes with status, reason_code and source_run_id"
+      ],
+      "where": [
+        "weather/v1/families/cams/latest.json",
+        "weather/v1/uv/latest.json",
+        "state/dispatch/cams/<slot>/outcomes/<timestamp>-<uuid>.json"
+      ],
+      "reuse_control": [
+        "Existing-family verification avoids duplicate family publication",
+        "Leases/checkpoints preserve request progress",
+        "UV is tracked separately from air/pollen"
+      ],
+      "references": [
+        "experiments/weather_autonomy/cloud_worker.py",
+        "experiments/weather_autonomy/production-runtime.json",
+        ".tmp/jobs-readonly-20261031/detail-logs.json"
+      ],
+      "gap": "Component report already exists. Quantify avoidable pending/repeated checks and retention of immutable outcome files; do not infer safe deletion or successful resume from this map."
+    },
+    {
+      "domain": "events",
+      "owner": "eventi",
+      "evidence_level": "CODE_PLUS_DATED_CLOUD_DATA",
+      "already_persisted": [
+        "Catalog attempted_at and per-source updated_at/status/error metadata",
+        "Prior valid source batches and review-required records",
+        "Source-specific control checkpoints, including TurismoFVG",
+        "Monitor checked_at states"
+      ],
+      "where": [
+        "gs://meteo-friul-weather-data/pilot/events/v1/catalog.json"
+      ],
+      "reuse_control": [
+        "Generation compare-and-swap prevents overwriting newer catalog",
+        "Reader cache60seconds with generation-bound object read",
+        "API snapshot parameter rejects mixed pagination versions",
+        "Explicit failed-source retry path and source-specific prior checkpoints"
+      ],
+      "references": [
+        "backend/app/events/pilot_cloud.py",
+        "backend/app/events/pilot_http.py",
+        ".tmp/jobs-readonly-20261031/publications.json",
+        ".tmp/events-job-probe-20261031.json"
+      ],
+      "gap": "Existing persistent state is sufficient to distinguish stale/partial/fresh. Evaluate source-level conditional refresh/checkpoint reuse only where missing; full source-by-source optimization not proven by this bounded map."
+    },
+    {
+      "domain": "official_alerts",
+      "owner": "meteo",
+      "evidence_level": "CODE_PLUS_DATED_PUBLIC_SAMPLES",
+      "already_persisted": [
+        "FVG authoritative snapshot with fetched_at/expires_at/status",
+        "Separate national snapshot with source revision and validity",
+        "Application read caches distinct from authoritative persistence"
+      ],
+      "where": [
+        "Firestore official_alert_snapshots/current",
+        "Firestore national_official_alert_snapshots/current"
+      ],
+      "reuse_control": [
+        "Production public GET reads saved state rather than invoking upstream ingestion",
+        "National sync recognizes already_current",
+        "30second read-cache default in national repository; bounded storage read timeout"
+      ],
+      "references": [
+        "backend/app/repositories/official_alerts.py",
+        "backend/app/repositories/national_official_alerts.py",
+        "backend/app/services/official_alerts.py",
+        "backend/app/services/national_official_alerts_state.py",
+        ".tmp/jobs-readonly-20261031/publications.json"
+      ],
+      "gap": "No missing basic persistent report identified. Full national coverage and current TTL/writer provenance require dedicated readback; no new ingestion job justified from this review."
+    },
+    {
+      "domain": "push",
+      "owner": "meteo with coordinator for shared identity/storage",
+      "evidence_level": "CODE_PLUS_AGGREGATE_JOB_LOGS",
+      "already_persisted": [
+        "Private transactional device/target ownership state",
+        "Outbox deduplication and claim/finalization state",
+        "Source revision, eligibility generation and expiry in national delivery records",
+        "Aggregate job outcome logs"
+      ],
+      "where": [
+        "Firestore push_devices",
+        "Firestore push_official_alert_outbox",
+        "Firestore push_local_notice_outbox",
+        "Firestore push_national_alert_outbox",
+        "Firestore push_pilot_state and push_target_owners"
+      ],
+      "reuse_control": [
+        "Transactional delivery claims and deduplication prevent repeated sends",
+        "Batch/pagination processing and source-revision identity"
+      ],
+      "references": [
+        "backend/app/repositories/push.py",
+        "backend/app/repositories/national_alert_delivery.py",
+        "docs/operations/FIRESTORE_PUSH_TTL_GATE.md",
+        ".tmp/jobs-readonly-20261031/logs.json"
+      ],
+      "gap": "Do not copy private outboxes into a public JSON status. A compact aggregate last-run/last-success view may be useful; log samples and FCM acceptance do not prove device receipt."
+    },
+    {
+      "domain": "freshness_monitor",
+      "owner": "meteo",
+      "evidence_level": "CODE_PLUS_DATED_CLOUD_DATA",
+      "already_persisted": [
+        "FVG/national current check state, observed_at, slot, last_verified source run",
+        "Age, causes, critical flags and bounded history/outbox state"
+      ],
+      "where": [
+        "gs://meteo-friul-weather-state/monitoring/icon2i-freshness/v1/fvg.json",
+        "gs://meteo-friul-weather-state/monitoring/icon2i-freshness/v1/national.json"
+      ],
+      "reuse_control": [
+        "Existing state preserves prior verified observation and monitor transition context",
+        "Dispatcher separates schedule invocation from bounded collection"
+      ],
+      "references": [
+        "experiments/weather_autonomy/freshness_monitor/google.py",
+        "experiments/weather_autonomy/freshness_monitor/definitions.py",
+        ".tmp/jobs-readonly-20261031/publications.json"
+      ],
+      "gap": "There is already a machine-readable report. Reuse it in an overview; confirm post-recovery state before claiming recovered monitoring or incident closure."
+    },
+    {
+      "domain": "osmer",
+      "owner": "meteo",
+      "evidence_level": "BOUNDED_CODE_REVIEW_ONLY",
+      "already_persisted": [
+        "Parsed payload carries id_emissione, published_at/updated_at, raw_hash, source_status, parser/schema version",
+        "Reviewed forecast engine has process-memory osmer_cache, default30minuteTTL and bounded stale fallback"
+      ],
+      "where": [
+        "backend/app/weather/forecast_engine.py: osmer_cache dictionary",
+        "backend/app/weather/parser_osmer.py: parsed bulletin metadata"
+      ],
+      "reuse_control": [
+        "Cache keys and issuance/date metadata prevent some repeated work within one instance",
+        "No shared durable bulletin snapshot found in the reviewed fetch/parse path"
+      ],
+      "references": [
+        "backend/app/weather/forecast_engine.py",
+        "backend/app/weather/parser_osmer.py",
+        "backend/README.md"
+      ],
+      "gap": "Concrete candidate to investigate: shared last-valid bulletin/metadata across cold starts and instances, with issuance/hash/IT-FUR date checks. No live confirmation of deployed cache behavior or cost savings; not a claim that no alternative persistence exists anywhere."
+    },
+    {
+      "domain": "radar",
+      "owner": "meteo",
+      "evidence_level": "BOUNDED_CODE_REVIEW_ONLY",
+      "already_persisted": [
+        "Product timestamps and public tile contract in responses",
+        "Process-memory metadata cache4minutes; stale fallback30minutes in reviewed module",
+        "Tiles remain on DPC/source infrastructure"
+      ],
+      "where": [
+        "backend/app/weather/radar_engine.py: radar_cache dictionary"
+      ],
+      "reuse_control": [
+        "Shared in-process metadata cache avoids repeated upstream polling",
+        "Source-hosted tiles avoid Meteo Friul rehosting/frame storage"
+      ],
+      "references": [
+        "backend/app/weather/radar_engine.py",
+        "docs/operations/RADAR_ANTENNA_ICON_20261025.md"
+      ],
+      "gap": "No shared durable metadata report found in this module. Evaluate only metadata reuse if measured cold-start/read rate warrants it; full frame archive or extra scheduled job is not justified."
+    },
+    {
+      "domain": "webcams",
+      "owner": "meteo; coordinator for admin common service",
+      "evidence_level": "BOUNDED_CODE_AND_DATED_DOCUMENTS",
+      "already_persisted": [
+        "Versioned active/suspended/candidate manifests in repository; optional remote manifest",
+        "Independent administrative enabled/preview controls with revision",
+        "Runtime manifest cache10minutes and control cache60seconds"
+      ],
+      "where": [
+        "backend/app/data/webcams_active.json",
+        "backend/app/data/webcams_suspended.json",
+        "backend/app/data/webcams_candidates.json",
+        "Firestore webcam_admin_state/current"
+      ],
+      "reuse_control": [
+        "Manifest normalization and fail-closed control state",
+        "Cache preserves disabled preview configuration",
+        "Health checks exist but no durable per-camera last-check report was demonstrated in reviewed files"
+      ],
+      "references": [
+        "backend/app/services/webcams.py",
+        "backend/app/services/webcam_controls.py",
+        "backend/app/services/webcam_health.py",
+        "docs/operations/WEBCAM_CONTROL_PLANE.md"
+      ],
+      "gap": "Distinguish persistent catalog/control from actual freshness of media. Assess a sanitized last-check result per camera only after checking existing updater/deployment; catalog presence or HTTP200 alone does not prove current image."
+    },
+    {
+      "domain": "community",
+      "owner": "coordinator for Community",
+      "evidence_level": "CODE_PLUS_DATED_DEPLOY_REPORT",
+      "already_persisted": [
+        "Immutable private state snapshots",
+        "Conditional Firestore commit pointer with generation, SHA256 and payload size",
+        "Operation receipts reconcile acknowledgement loss and avoid duplicate mutations",
+        "Logical expiry in domain state"
+      ],
+      "where": [
+        "GCS configured Community bucket/prefix",
+        "Firestore configured Community pointer/current; exact live bindings not reread in this review"
+      ],
+      "reuse_control": [
+        "Conditional pointer update rather than blind overwrite",
+        "Validated snapshot identity and operation receipts",
+        "No initialization/reset of missing runtime state"
+      ],
+      "references": [
+        "backend/app/repositories/pilot_community_cloud.py",
+        "backend/app/pilot_community_cloud.py",
+        "docs/operations/COMMUNITY_0.1.15_DEPLOY_20261021.md",
+        "docs/operations/PILOT_COMMUNITY_CLOUD_STORAGE.md"
+      ],
+      "gap": "Storage exists; do not duplicate private state in a report. Historical pilot doc uses another project, while21October deploy states retained production bindings. Current bindings/retired immutable-snapshot retention and compact aggregate health merit verification; logical expiry is not proof of physical snapshot deletion."
+    }
+  ],
+  "supporting_domains": [
+    {
+      "domain": "Firestore retention and state",
+      "owner": "coordinator/common services with meteo for push",
+      "latest_report_found": [
+        "docs/operations/FIRESTORE_PUSH_TTL_GATE.md",
+        "docs/operations/FIRESTORE_PUSH_DEVICE_RETENTION.md",
+        "release-history/firestore-community-ttl/20260926T214813748Z-community-ttl.evidence.json",
+        "release-history/firestore-ttl/runtime-writer-sets/play-services-notices-20261023.json"
+      ],
+      "demonstrated": [
+        "31October month-to-date aggregate reads/writes",
+        "Historical TTL/writer contracts and evidence"
+      ],
+      "gap": "No31October TTL policy, writer-set, physical expiry, indexes, backup/restore or permissions audit. Aggregated usage is not correctness or retention proof.",
+      "priority": "P1"
+    },
+    {
+      "domain": "Storage",
+      "owner": "coordinator/shared persistence; meteo/eventi/Community for owned data",
+      "latest_report_found": [
+        ".tmp/jobs-cost-audit-20261031/cloud-inventory.json",
+        ".tmp/jobs-cost-audit-20261031/usage-analysis.json"
+      ],
+      "demonstrated": [
+        "Six bucket configuration summaries, locations and7day soft-delete policy",
+        "Latest size snapshots and aggregate operation/traffic evidence",
+        "Selected product objects and generations"
+      ],
+      "gap": "Full lifecycle/retention/old object distribution and restore readiness not demonstrated; never delete current pointers or immutable state from size alone.",
+      "priority": "P2"
+    },
+    {
+      "domain": "Logging and Monitoring",
+      "owner": "controllo_job read-only; corrections by owning function",
+      "latest_report_found": [
+        "docs/operations/JOBS_READONLY_AUDIT_20261031.md",
+        "docs/operations/COMMUNITY_0.1.15_DEPLOY_20261021.md",
+        ".tmp/jobs-cost-audit-20261031/usage-analysis.json"
+      ],
+      "demonstrated": [
+        "23 monitoring policies/21enabled in audit snapshot",
+        "Bounded job logs and structured failure signals",
+        "Aggregate log bytes ingested"
+      ],
+      "gap": "No current complete sink/retention/privacy review, no incident-email delivery verification, no dedicated DPC-send policy found. Do not equate log sample absence with absence of errors.",
+      "priority": "P1"
+    },
+    {
+      "domain": "Hosting, Web/PWA, redirects and Android parity",
+      "owner": "coordinator and build_verifica",
+      "latest_report_found": [
+        "docs/operations/WEB_ANDROID_RELEASE_PARITY.md",
+        "docs/operations/RELEASE_0.1.15_STATUS_20261021.md",
+        "docs/operations/FIREBASE_LEGACY_HOST_REDIRECT.md"
+      ],
+      "demonstrated": [
+        "Dated artifact/source/release records",
+        "Local pilotHTTP5174 recovery31October"
+      ],
+      "gap": "No new current public hosting artifact/hash/cache/redirect or Safari/iPhone check in this review; no Cloudflare/Firebase Hosting cost evidence. Local5174 success does not establish deployed Web parity.",
+      "priority": "P1"
+    },
+    {
+      "domain": "Artifact Registry and Cloud Build",
+      "owner": "build_verifica; coordinator for cloud configuration",
+      "latest_report_found": [
+        ".tmp/jobs-cost-audit-20261031/registry-inventory.json",
+        "docs/operations/MERCATI_ATTIVAZIONE_ONLINE_20261030.md"
+      ],
+      "demonstrated": [
+        "Two Docker repositories and sizes31October",
+        "No cleanup policies returned in inspected registry entries",
+        "Dated build provenance for specific services"
+      ],
+      "gap": "No complete build-cost/security-scan/retention/rollback dependency audit. Repository size does not identify safely deletable image versions.",
+      "priority": "P2"
+    },
+    {
+      "domain": "Billing and costs",
+      "owner": "coordinator",
+      "latest_report_found": [
+        ".tmp/jobs-cost-audit-20261031/usage-analysis.json",
+        ".tmp/jobs-cost-audit-20261031/verification.json",
+        ".tmp/jobs-cost-audit-20261031/pricing-sources.json"
+      ],
+      "demonstrated": [
+        "Bounded aggregate use and list-price models",
+        "Billing API disabled; no BigQuery datasets found in queried project"
+      ],
+      "gap": "Actual invoice/credits/shared quotas/tax and export in other billing projects unverified. Model is not project total or spending cap.",
+      "priority": "P2"
+    },
+    {
+      "domain": "Authentication, AppCheck and IAM",
+      "owner": "coordinator/shared identity",
+      "latest_report_found": [
+        "docs/operations/COMMUNITY_0.1.15_DEPLOY_20261021.md",
+        "docs/operations/NOTIFICATION_RUNTIME_IAM_PREPARATION_2026-09-30.md"
+      ],
+      "demonstrated": [
+        "Expected audit account/project verified",
+        "Dated invalid/missing-token rejection and identity preparation reports"
+      ],
+      "gap": "No current broad IAM/AppCheck/provider enforcement or real-device attestation audit. No credentials or user identifiers should enter summary.",
+      "priority": "P2"
+    },
+    {
+      "domain": "Maps, locality search and reverse geocoding",
+      "owner": "coordinator shared location; meteo/Home consumers",
+      "latest_report_found": [
+        "backend/README.md",
+        "docs/operations/ANDROID_LOCATION_STARTUP_20261022.md",
+        "docs/operations/RELEASE_WEB_REALTIME_ALIGNMENT_20261023.md"
+      ],
+      "demonstrated": [
+        "Dated registry/geography and native startup tests"
+      ],
+      "gap": "External map tile/geocoding provider reachability, quotas, cache effectiveness and current browser/device behavior outside31October job audit.",
+      "priority": "P2"
+    },
+    {
+      "domain": "Mercati and management panel",
+      "owner": "coordinator with eventi/scopri",
+      "latest_report_found": [
+        "docs/operations/MERCATI_ANTEPRIMA_RAGGIO_PANNELLO_20261031.md",
+        "docs/operations/MERCATI_ATTIVAZIONE_ONLINE_20261030.md"
+      ],
+      "demonstrated": [
+        "Local draft API/panel integration and disabled publication",
+        "Dated privateFirestore seed and prepared image; no Mercati service deployed"
+      ],
+      "gap": "Visual acceptance/editorial completeness and online activation intentionally pending. Not a missing seventh production service.",
+      "priority": "P2"
+    },
+    {
+      "domain": "Sponsor and external landing/panel projects",
+      "owner": "coordinator; external project owners",
+      "latest_report_found": [
+        "docs/operations/COMMUNITY_0.1.15_DEPLOY_20261021.md",
+        "docs/operations/RELEASE_WEB_REALTIME_ALIGNMENT_20261023.md"
+      ],
+      "demonstrated": [
+        "Dated sponsor disabled/zero-campaign observation and owner hold"
+      ],
+      "gap": "External project's current availability, schedules, auth, backup and costs were not audited. Do not infer authorization to activate sponsor or publish panel.",
+      "priority": "P2"
+    },
+    {
+      "domain": "Scopri/Almanacco/editorial archives",
+      "owner": "scopri; home for teaser consumption",
+      "latest_report_found": [
+        "ALMANAC_DISCOVER_CONTENT_CONTRACT.md",
+        "docs/operations/HOME_EDITORIAL_TYPOGRAPHY_20261030.md"
+      ],
+      "demonstrated": [
+        "Local versioned content and dated typography tests/approval"
+      ],
+      "gap": "Editorial/date coverage, FUR revision and final deployed artifact association are separate from job/cloud health; no recurring job is implied.",
+      "priority": "P3"
+    }
+  ],
+  "reporting_recommendation": {
+    "one_summary": "Save one sanitized dated service-coverage index referencing existing reports, not duplicate raw logs or private state.",
+    "distinguish": [
+      "human audit/report",
+      "machine-readable product/status state",
+      "transient per-instance cache",
+      "deployed configuration",
+      "runtime execution",
+      "actual data freshness",
+      "artifact/device qualification"
+    ],
+    "safe_status_fields": [
+      "domain",
+      "checked_at",
+      "last_attempt_at",
+      "last_success_at",
+      "source_revision_or_run",
+      "published_at",
+      "valid_until",
+      "status",
+      "reason_code",
+      "public_artifact_hash",
+      "evidence_reference",
+      "next_check_or_owner"
+    ],
+    "exclude": [
+      "credentials",
+      "tokens",
+      "user/device/installation identifiers",
+      "precise user location",
+      "private Community snapshots",
+      "raw HTTP logs",
+      "signing material",
+      "admin operator identity"
+    ],
+    "avoid": [
+      "new scheduler merely to summarize already saved states",
+      "one public JSON containing private transactional state",
+      "declaring current health from old reports",
+      "treating process-memory cache as durable state",
+      "promoting uncommitted reports automatically"
+    ]
+  },
+  "document_gaps": [
+    {
+      "path": "UI3_RUNTIME_DATA_INVENTORY.md",
+      "issue": "Dated10August2026, contains obsolete runtime and push-state claims. Treat as historical map until separately reconciled with current authoritative runbooks."
+    },
+    {
+      "path": "docs/operations/WEATHER_HTTP_STARTUP_20261025.md",
+      "issue": "Header describes code not deployed; later release-status note and31October resource snapshot show25October HTTP deployment. Preserve dated evidence; current index should connect subsequent deployment proof."
+    },
+    {
+      "path": "docs/operations/RELEASE_0.1.15_STATUS_20261021.md",
+      "issue": "Mixture of dated milestones and older artifact-state tables. Do not infer latest actual Play/Web state without artifact/ledger readback."
+    },
+    {
+      "path": "docs/operations/MERCATI_ANTEPRIMA_RAGGIO_PANNELLO_20261031.md",
+      "issue": "Initial pilot blockage belongs to earlier observation; ICON recovery report supersedes runtime condition later that day. Link both dated observations."
+    }
+  ],
+  "worktree_status": "31October audit/recovery/Mercati reports and index edits are currently uncommitted in canonical worktree. This review did not edit, stage, incorporate or commit them.",
+  "delivery_provenance": {
+    "source_artifact": ".tmp/jobs-cost-audit-20261031/service-report-coverage.json",
+    "source_sha256": "8d84e5f10d011f875d6294b5a9855acd6824d4f77457553c8b9a60e0784ee87d",
+    "candidate_branch": "codex/icon-automatic-recovery-20261031",
+    "source_context": "Canonical local workspace on 2026-10-31; not every referenced report is included in this candidate.",
+    "current_state_limit": "No new cloud reads, runtime validation or activation. Original worktree_status describes the assessment moment, not later Git delivery.",
+    "local_reference_count": 64,
+    "local_references": [
+      {
+        "path": ".tmp/events-job-probe-20261031.json",
+        "canonical_source_sha256": "4652225fcc5c58b489e18490f67851c8034dbaa79eb96541081290d567ba2424",
+        "available_in_candidate": false,
+        "local_only_evidence": true
+      },
+      {
+        "path": ".tmp/jobs-cost-audit-20261031/cloud-inventory.json",
+        "canonical_source_sha256": "4c034b0b3da86c90b63e542f3588e4826ff5c2f659b067fb3ee7e7e5f351cb7b",
+        "available_in_candidate": false,
+        "local_only_evidence": true
+      },
+      {
+        "path": ".tmp/jobs-cost-audit-20261031/pricing-sources.json",
+        "canonical_source_sha256": "8d6b542c48f87e5efffbcf9d77733d9d99385139b1d727a7b87becd5a4571073",
+        "available_in_candidate": false,
+        "local_only_evidence": true
+      },
+      {
+        "path": ".tmp/jobs-cost-audit-20261031/registry-inventory.json",
+        "canonical_source_sha256": "9894c6fb5e91b73f4ad60980698d02ade6bc8b8bfba0a71c8998474259c29fc3",
+        "available_in_candidate": false,
+        "local_only_evidence": true
+      },
+      {
+        "path": ".tmp/jobs-cost-audit-20261031/usage-analysis.json",
+        "canonical_source_sha256": "5b612cb920d023632e2bda30c446d8ea61294fb9c8a4d8ba8439504cb0fb1253",
+        "available_in_candidate": false,
+        "local_only_evidence": true
+      },
+      {
+        "path": ".tmp/jobs-cost-audit-20261031/verification.json",
+        "canonical_source_sha256": "5e9d3e3d7baa3947edd9b1f96b669b69bf9f40deebb06f9f7a8d95e5d7998bbc",
+        "available_in_candidate": false,
+        "local_only_evidence": true
+      },
+      {
+        "path": ".tmp/jobs-readonly-20261031/detail-logs.json",
+        "canonical_source_sha256": "14a3a1d36c46cfd1ebcfbd082e4dfa63a2443f2e491dad4adf226e6dd3469adf",
+        "available_in_candidate": false,
+        "local_only_evidence": true
+      },
+      {
+        "path": ".tmp/jobs-readonly-20261031/executions.json",
+        "canonical_source_sha256": "6c8c89217fe428a789c495231e75120dc8ed779ef726d0124258890059dade5a",
+        "available_in_candidate": false,
+        "local_only_evidence": true
+      },
+      {
+        "path": ".tmp/jobs-readonly-20261031/logs.json",
+        "canonical_source_sha256": "c6cd18cf5ab920650697d9502408244a39901373396d671d6c79fa3b9bb09a66",
+        "available_in_candidate": false,
+        "local_only_evidence": true
+      },
+      {
+        "path": ".tmp/jobs-readonly-20261031/publications.json",
+        "canonical_source_sha256": "afd5682f15f1b7a5b88a0db1fbdeccbdcf161b5a2a10191e2d0b342faa7d39bf",
+        "available_in_candidate": false,
+        "local_only_evidence": true
+      },
+      {
+        "path": "ALMANAC_DISCOVER_CONTENT_CONTRACT.md",
+        "canonical_source_sha256": "a13889b1e9a21d5ba0c0854c70445f7509ce0a2a56ae6b658340f2a4b5a74e81",
+        "available_in_candidate": true,
+        "local_only_evidence": false
+      },
+      {
+        "path": "UI3_RUNTIME_DATA_INVENTORY.md",
+        "canonical_source_sha256": "fec07e991830aa290768bed13aedbb6031569995c2c977c6827df5df4b3f438a",
+        "available_in_candidate": true,
+        "local_only_evidence": false
+      },
+      {
+        "path": "backend/README.md",
+        "canonical_source_sha256": "65a149cec366605c73188f5958b519acf7070755518fedb3328c8ea64a6dc906",
+        "available_in_candidate": true,
+        "local_only_evidence": false
+      },
+      {
+        "path": "backend/app/data/webcams_active.json",
+        "canonical_source_sha256": "8e77b37799049672427cd2ba976548810de793bd1bdd85cea584f2f22debf0e4",
+        "available_in_candidate": true,
+        "local_only_evidence": false
+      },
+      {
+        "path": "backend/app/data/webcams_candidates.json",
+        "canonical_source_sha256": "2611fe6ded37f366fe86581bb49184871353903354a2df795766fabe0e7e4c0a",
+        "available_in_candidate": true,
+        "local_only_evidence": false
+      },
+      {
+        "path": "backend/app/data/webcams_suspended.json",
+        "canonical_source_sha256": "2f109fc9258b7cdd20606c8d12dce13ffed564f580608b3afee18ade6cb95a07",
+        "available_in_candidate": true,
+        "local_only_evidence": false
+      },
+      {
+        "path": "backend/app/events/pilot_cloud.py",
+        "canonical_source_sha256": "48cb14d0a880de9d607b4542dacfae5594d7273acc6c1fa8804ef18e607fb625",
+        "available_in_candidate": true,
+        "local_only_evidence": false
+      },
+      {
+        "path": "backend/app/events/pilot_http.py",
+        "canonical_source_sha256": "9eb5423c15f2f7b7649175dc1cb9fe10c13ce2bf3987846bc13562501c1b2ed4",
+        "available_in_candidate": true,
+        "local_only_evidence": false
+      },
+      {
+        "path": "backend/app/pilot_community_cloud.py",
+        "canonical_source_sha256": "32922c5a488b07ebedb4e8f65de9a544722d86353464ae66a41d23c583fa9ad5",
+        "available_in_candidate": true,
+        "local_only_evidence": false
+      },
+      {
+        "path": "backend/app/repositories/national_alert_delivery.py",
+        "canonical_source_sha256": "24ee85e70f5215566ca48a53ea0328783d421b6458765caf8579484c11af1ca4",
+        "available_in_candidate": true,
+        "local_only_evidence": false
+      },
+      {
+        "path": "backend/app/repositories/national_official_alerts.py",
+        "canonical_source_sha256": "407cd93689e3474c63760fb03cbe9d321aa17bb295fd53c981ab4aea3a8be5a6",
+        "available_in_candidate": true,
+        "local_only_evidence": false
+      },
+      {
+        "path": "backend/app/repositories/official_alerts.py",
+        "canonical_source_sha256": "7e3e8cc4d38e83b6daad709311f9a5de88718f73b2f4f770406fe51858362480",
+        "available_in_candidate": true,
+        "local_only_evidence": false
+      },
+      {
+        "path": "backend/app/repositories/pilot_community_cloud.py",
+        "canonical_source_sha256": "587d618bdf4bc13b5d284d04c576e09a643817c528a90a9741dcd20229a8a058",
+        "available_in_candidate": true,
+        "local_only_evidence": false
+      },
+      {
+        "path": "backend/app/repositories/push.py",
+        "canonical_source_sha256": "989a05445be31c46fa8d23e9613d0fd54c83dd29aae999402a7cd3b41bbae71c",
+        "available_in_candidate": true,
+        "local_only_evidence": false
+      },
+      {
+        "path": "backend/app/services/national_official_alerts_state.py",
+        "canonical_source_sha256": "a3af2cc6d7b216f1e3cbda56e6e63911930aa3ff76705de682d19c31822ee33d",
+        "available_in_candidate": true,
+        "local_only_evidence": false
+      },
+      {
+        "path": "backend/app/services/official_alerts.py",
+        "canonical_source_sha256": "73774cce7a46afb2c0a7c12f783686dd93a5a40236d479305515786bc5463f03",
+        "available_in_candidate": true,
+        "local_only_evidence": false
+      },
+      {
+        "path": "backend/app/services/webcam_controls.py",
+        "canonical_source_sha256": "22c16b83ac2f768aa0f322fd5f57acf06fd8119c1fd3f351c7f5617ac1c39f37",
+        "available_in_candidate": true,
+        "local_only_evidence": false
+      },
+      {
+        "path": "backend/app/services/webcam_health.py",
+        "canonical_source_sha256": "d3ba99dd7722077ef72074964642f12c3809e723f8dd246e11740567dbb7855c",
+        "available_in_candidate": true,
+        "local_only_evidence": false
+      },
+      {
+        "path": "backend/app/services/webcams.py",
+        "canonical_source_sha256": "d550c32ef124ffda6151aa69bf5866e90690a99de64acd041fed065115c30160",
+        "available_in_candidate": true,
+        "local_only_evidence": false
+      },
+      {
+        "path": "backend/app/weather/forecast_engine.py",
+        "canonical_source_sha256": "22d9bad63a77a79fc8196ead110ffc06822571c5063bb6a08f2c19ec03376626",
+        "available_in_candidate": true,
+        "local_only_evidence": false
+      },
+      {
+        "path": "backend/app/weather/parser_osmer.py",
+        "canonical_source_sha256": "546f75a29fa4131eca52fd021c3a696e9afc530259ee72ad6a7692f7d696a834",
+        "available_in_candidate": true,
+        "local_only_evidence": false
+      },
+      {
+        "path": "backend/app/weather/radar_engine.py",
+        "canonical_source_sha256": "e583047d3723ba6022eb2644987168ded76100b8a01e9479c40f684ca9add32b",
+        "available_in_candidate": true,
+        "local_only_evidence": false
+      },
+      {
+        "path": "docs/operations/ANDROID_LOCATION_STARTUP_20261022.md",
+        "canonical_source_sha256": "c2854b735b1d968a0f7b0a594b847333c06cdcd464aaa5e3bba49c1f20d72b9c",
+        "available_in_candidate": true,
+        "local_only_evidence": false
+      },
+      {
+        "path": "docs/operations/COMMUNITY_0.1.15_DEPLOY_20261021.md",
+        "canonical_source_sha256": "fa4a8793954bb6a02430605a3990498d62fb3c4c71249b32d00de3e0f368a619",
+        "available_in_candidate": true,
+        "local_only_evidence": false
+      },
+      {
+        "path": "docs/operations/COMMUNITY_LOG_PRIVACY.md",
+        "canonical_source_sha256": "eca756e29e0e0225260de1885964839a0ef33a096962264e7138b5434d713683",
+        "available_in_candidate": true,
+        "local_only_evidence": false
+      },
+      {
+        "path": "docs/operations/EVENTS_BARCOLANA_TIMEOUT_DIAGNOSIS_20261028.md",
+        "canonical_source_sha256": "e3c2ef7d2b106299ba4f330cb3d9a309bc55d9d2368f790786dc972e0d9dc6b5",
+        "available_in_candidate": false,
+        "local_only_evidence": true
+      },
+      {
+        "path": "docs/operations/FIREBASE_LEGACY_HOST_REDIRECT.md",
+        "canonical_source_sha256": "b8b82aa7656b341fc5d685dda443c883e2eaff86b150387b930735a535f40f58",
+        "available_in_candidate": true,
+        "local_only_evidence": false
+      },
+      {
+        "path": "docs/operations/FIRESTORE_PUSH_DEVICE_RETENTION.md",
+        "canonical_source_sha256": "fb0bea61f115197d271d95413d3daac4f59ac36df1ae48027335d28894a44bd5",
+        "available_in_candidate": true,
+        "local_only_evidence": false
+      },
+      {
+        "path": "docs/operations/FIRESTORE_PUSH_TTL_GATE.md",
+        "canonical_source_sha256": "124b1b543349aa956f50dd1611b5a1314fb5ea007b9c467ddcb7951559443675",
+        "available_in_candidate": true,
+        "local_only_evidence": false
+      },
+      {
+        "path": "docs/operations/HOME_EDITORIAL_TYPOGRAPHY_20261030.md",
+        "canonical_source_sha256": "de592ed1ce8e35682c7e8233e139bfb4bccf4cac599294db9b32a86cb77e22b9",
+        "available_in_candidate": true,
+        "local_only_evidence": false
+      },
+      {
+        "path": "docs/operations/ICON_RECOVERY_20261031.md",
+        "canonical_source_sha256": "0af0acdf77858c83c33ea76953106a041e421b53cbb69d59fe7bd5496a1c8f5a",
+        "available_in_candidate": false,
+        "local_only_evidence": true
+      },
+      {
+        "path": "docs/operations/JOBS_INVENTORY.md",
+        "canonical_source_sha256": "5a723b54e586153b8ed07c82087b974a42cc9dd6c73233f8dcf22b6a45786cc0",
+        "available_in_candidate": false,
+        "local_only_evidence": true
+      },
+      {
+        "path": "docs/operations/JOBS_READONLY_AUDIT_20261031.md",
+        "canonical_source_sha256": "c746d04b6c8af779125ab61c2e3d078249ca707132134010a2e9575ba3cd50ae",
+        "available_in_candidate": false,
+        "local_only_evidence": true
+      },
+      {
+        "path": "docs/operations/MERCATI_ANTEPRIMA_RAGGIO_PANNELLO_20261031.md",
+        "canonical_source_sha256": "f2a9591b56bdc38eb938fe8957090cb41d23da9af4f2118ba4e8d3f4644b0004",
+        "available_in_candidate": false,
+        "local_only_evidence": true
+      },
+      {
+        "path": "docs/operations/MERCATI_ATTIVAZIONE_ONLINE_20261030.md",
+        "canonical_source_sha256": "775b65c3ea3549689d5ba64606f7f9b96c5749d5733cc35ca86d6dce95838a49",
+        "available_in_candidate": false,
+        "local_only_evidence": true
+      },
+      {
+        "path": "docs/operations/NOTIFICATION_RUNTIME_IAM_PREPARATION_2026-09-30.md",
+        "canonical_source_sha256": "4dfedc6a528acdd1a090ee84c2c23173e52597f5cb02b7101965e4477e10cc3f",
+        "available_in_candidate": true,
+        "local_only_evidence": false
+      },
+      {
+        "path": "docs/operations/PILOT_COMMUNITY_CLOUD_STORAGE.md",
+        "canonical_source_sha256": "4bfd540c47655dcd446f38a3d6249f3c0355d5a342bb17c14a6f64ea5444fbbb",
+        "available_in_candidate": true,
+        "local_only_evidence": false
+      },
+      {
+        "path": "docs/operations/RADAR_ANTENNA_ICON_20261025.md",
+        "canonical_source_sha256": "eee16dfd7dcebf05cf5940b0b6a3154eb93dc28aa8ead1d57a2bd34605faf7db",
+        "available_in_candidate": true,
+        "local_only_evidence": false
+      },
+      {
+        "path": "docs/operations/RELEASE_0.1.15_STATUS_20261021.md",
+        "canonical_source_sha256": "2c2be01a4e8d57200d7df57ca5c684a07e75e7f91077b54a7601134e69552f54",
+        "available_in_candidate": true,
+        "local_only_evidence": false
+      },
+      {
+        "path": "docs/operations/RELEASE_WEB_REALTIME_ALIGNMENT_20261023.md",
+        "canonical_source_sha256": "8497037b10646a1f83ce0255386877e1106ec3f0f43b9405fd7d9ce68fc2cb43",
+        "available_in_candidate": true,
+        "local_only_evidence": false
+      },
+      {
+        "path": "docs/operations/WEATHER_HTTP_STARTUP_20261025.md",
+        "canonical_source_sha256": "d41f89c1f1b32eb4deda0188e5758e3d9fb28300ac0a98a3584373505e1d6b99",
+        "available_in_candidate": true,
+        "local_only_evidence": false
+      },
+      {
+        "path": "docs/operations/WEBCAM_CONTROL_PLANE.md",
+        "canonical_source_sha256": "b70600da995db05193b6f8b5e465ad691adfcf89c7f7c592e6dfe8c01f7c24fe",
+        "available_in_candidate": true,
+        "local_only_evidence": false
+      },
+      {
+        "path": "docs/operations/WEB_ANDROID_RELEASE_PARITY.md",
+        "canonical_source_sha256": "79088b2900cab811eb650343dd1ad57680191dc1718015457d9b238c9dcf1a3f",
+        "available_in_candidate": true,
+        "local_only_evidence": false
+      },
+      {
+        "path": "docs/operations/evidence/ICON_RECOVERY_20261031.json",
+        "canonical_source_sha256": "9f8916e1025874f31e42e989f59e16e1f415429e86541d2608742c7b6bb5cd48",
+        "available_in_candidate": false,
+        "local_only_evidence": true
+      },
+      {
+        "path": "experiments/weather_autonomy/cloud_reader.py",
+        "canonical_source_sha256": "a20060d08c61bde078412526a2dafb2c3f110f2f5bc05aff43e18f8b59408f50",
+        "available_in_candidate": true,
+        "local_only_evidence": false
+      },
+      {
+        "path": "experiments/weather_autonomy/cloud_worker.py",
+        "canonical_source_sha256": "9a50b1ab641e5af0a595fd90548b5cb6dc1d446b0ec9a545e5902b18ff4f2edb",
+        "available_in_candidate": true,
+        "local_only_evidence": false
+      },
+      {
+        "path": "experiments/weather_autonomy/freshness_monitor/definitions.py",
+        "canonical_source_sha256": "5faf807af776f237bb8834b8698edfefb946a025f4396c0ad9701147a97b1b7f",
+        "available_in_candidate": true,
+        "local_only_evidence": false
+      },
+      {
+        "path": "experiments/weather_autonomy/freshness_monitor/google.py",
+        "canonical_source_sha256": "4b824d0f0256f08f2b9cfb85e019002a850e57d140190d5b043b45217d631276",
+        "available_in_candidate": true,
+        "local_only_evidence": false
+      },
+      {
+        "path": "experiments/weather_autonomy/local_pipeline/icon_checkpoint.py",
+        "canonical_source_sha256": "3f47769661ed3b5a6c378fb7abf2933d0b6c766aab659a01a27781444f8f6eb4",
+        "available_in_candidate": true,
+        "local_only_evidence": false
+      },
+      {
+        "path": "experiments/weather_autonomy/national_cloud_worker.py",
+        "canonical_source_sha256": "341d291e257f3baeb3f1023f1132e087dfb79edbcfd562561dc5302382740a02",
+        "available_in_candidate": true,
+        "local_only_evidence": false
+      },
+      {
+        "path": "experiments/weather_autonomy/production-runtime.json",
+        "canonical_source_sha256": "61d7cb37bea6bf312486cf7f3982c7ed83f49b6e9638f71d35f56347ffc9c9bd",
+        "available_in_candidate": true,
+        "local_only_evidence": false
+      },
+      {
+        "path": "release-history/community-deploy/0.1.15-20261021/deployment.json",
+        "canonical_source_sha256": "0497f4200825fefe12a56938f2885b087c74803b0c67ff88b9731c6cfecb5a1e",
+        "available_in_candidate": true,
+        "local_only_evidence": false
+      },
+      {
+        "path": "release-history/firestore-community-ttl/20260926T214813748Z-community-ttl.evidence.json",
+        "canonical_source_sha256": "d2290495004f85b9b30618afc3306b698996fd93377c3b6735ce966e508f4eb3",
+        "available_in_candidate": true,
+        "local_only_evidence": false
+      },
+      {
+        "path": "release-history/firestore-ttl/runtime-writer-sets/play-services-notices-20261023.json",
+        "canonical_source_sha256": "0a794b3d3acec3ee0b9c25f557195383004b940c2ff21aca38598bd316a4c6d0",
+        "available_in_candidate": true,
+        "local_only_evidence": false
+      }
+    ]
+  }
+}

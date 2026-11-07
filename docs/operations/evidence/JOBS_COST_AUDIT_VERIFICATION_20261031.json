@@ -1,0 +1,198 @@
+{
+  "schema_version": 1,
+  "observed_at_utc": "2026-10-31T16:59:14.535678Z",
+  "status": "CALCULATION_AND_EVIDENCE_CHECKS_PASS_WITH_STATED_LIMITS",
+  "scope": "Independent offline verification of collected job inventory, usage arithmetic and conditional list-price model. No billing or invoice certification.",
+  "environment": {
+    "python": "3.13.5",
+    "platform": "win32",
+    "dependencies": "Python standard library only",
+    "cwd": "repository root"
+  },
+  "actions": {
+    "new_cloud_reads": false,
+    "cloud_mutations": false,
+    "job_execution_or_retry": false,
+    "source_code_changes": false,
+    "dependency_changes": false,
+    "deployments": false,
+    "commits_or_pushes": false,
+    "only_written_file": ".tmp/jobs-cost-audit-20261031/verification.json"
+  },
+  "verification_method": {
+    "command": "python - (independent verifier supplied through PowerShell stdin)",
+    "derived_analysis_helper_executed": false,
+    "numeric_and_hash_assertions": 212,
+    "assertions_result": "PASS",
+    "numeric_tolerance": {
+      "relative": 1e-10,
+      "absolute": 1e-09
+    },
+    "checks": [
+      "Expanded cron minute/hour sets independently; summed normal-day schedule invocations.",
+      "Recomputed execution durations and per-job statistics from original execution timestamps; source SHA-256 matched.",
+      "Aggregated raw DELTA points by region and resource name using complete aligned intervals; kept job instances and service revisions separate.",
+      "Counted task attempts from execution taskCount plus individual Task retried metadata, not retriedCount alone.",
+      "Verified constant resource limits for each observed job and normalized 1000m CPU and Mi/Gi memory units.",
+      "Recomputed each job minimum-duration bound, per-service allocation cost, storage snapshot cost, known successful operation classes, registry size, scheduler charge and additional ICON scenarios.",
+      "Recomputed partial reference sum and confirmed every evidence hash listed in usage-analysis.json."
+    ],
+    "pricing_verification": "Rates and regional tier assignments checked against the coordinator-collected pricing-sources.json. This verifier did not independently browse or retrieve prices."
+  },
+  "inventory_check": {
+    "status": "PASS",
+    "job_instances": 14,
+    "schedulers": 11,
+    "enabled_schedulers": 11,
+    "invocations_per_normal_24h_day": 120,
+    "illustrative_invocations_per_30_normal_days": 3600,
+    "audit_start_utc": "2026-10-30T23:00:00Z",
+    "audit_end_utc": "2026-10-31T15:20:50.685133Z",
+    "audit_executions": 83,
+    "audit_successes": 80,
+    "audit_failures": 3,
+    "raw_sum_execution_wallclock_seconds": 4234.538242,
+    "rounded_report_seconds": 4234.54,
+    "interpretation": "Wall-clock execution intervals are not billed resource time. The historical audit ends before the later manual ICON recovery.",
+    "older_log_samples_complete": false
+  },
+  "usage_check": {
+    "status": "PASS",
+    "complete_aligned_windows": 7,
+    "resource_window_start_utc": "2026-10-24T16:47:51.817671Z",
+    "resource_window_end_utc": "2026-10-31T16:47:51.817671Z",
+    "http_requests_window_start_utc": "2026-10-24T16:50:56.993272Z",
+    "http_requests_window_end_utc": "2026-10-31T16:50:56.993272Z",
+    "http_window_offset_seconds": 185.175601,
+    "execution_count": 845,
+    "task_attempts": 848,
+    "fvg_executions": 15,
+    "fvg_attempts": 18,
+    "additional_retries_from_task_metadata": 3,
+    "raw_collections_truncated": false,
+    "job_metric_totals": {
+      "instance_seconds": 26815.71130628276,
+      "cpu_seconds": 25869.273747783616,
+      "gib_seconds": 21451.433599015465
+    },
+    "service_metric_totals": {
+      "instance_seconds": 13874.204001006321,
+      "cpu_seconds": 28921.389096744195,
+      "gib_seconds": 7199.647710410205
+    },
+    "cost_model": "For each homogeneous job, S=sum observed instance seconds and A=observed attempts; lower=max(S,60*A), upper=S+60*A. Multiply by configured vCPU/GiB and list rates, then 30/7. Conditional on telemetry representing all attempt runtimes.",
+    "cpu_memory_units": "Allocation metrics already have units vCPU-seconds and GiB-seconds. Service costs do not multiply by configured resources a second time.",
+    "request_counts": {
+      "meteofriul-api": 3361.0,
+      "meteofriul-weather": 10201.0,
+      "meteofriul-national-weather": 679.0,
+      "meteofriul-community": 527.0,
+      "meteofriul-events": 2014.0,
+      "meteofriul-icon2i-freshness-dispatch": 336.0
+    },
+    "raw_collections_completeness_scope": "Usage metric rows, recent execution rows, retried Task metadata and regional Registry fallback pages; this does not refer to the older bounded job-log samples."
+  },
+  "verified_model_totals_usd": {
+    "job_compute_30d_usd_low": 4.881087659836259,
+    "job_compute_30d_usd_high": 6.4304641881590285,
+    "service_compute_allocation_30d_usd": 3.0812556754195124,
+    "storage_snapshot_gib": 26.332807605154812,
+    "storage_constant_snapshot_30d_usd": 0.5443018722906708,
+    "registry_snapshot_gib": 3.9539947658777237,
+    "registry_constant_snapshot_month_usd_before_free": 0.3953994765877724,
+    "storage_known_success_ops_30d_usd": 0.9057780000000002,
+    "scheduler_31d_usd_before_free": 1.1,
+    "scheduler_31d_usd_if_3_free_available": 0.8,
+    "partial_reference_sum_low": 10.907822684134215,
+    "partial_reference_sum_high": 12.457199212456985
+  },
+  "additional_icon_compute_only_scenarios": [
+    {
+      "assumed_seconds_per_added_task": 60,
+      "additional_tasks_30d": 360,
+      "additional_compute_30d_usd": 0.45360000000000006
+    },
+    {
+      "assumed_seconds_per_added_task": 180,
+      "additional_tasks_30d": 360,
+      "additional_compute_30d_usd": 1.3608000000000002
+    },
+    {
+      "assumed_seconds_per_added_task": 300,
+      "additional_tasks_30d": 360,
+      "additional_compute_30d_usd": 2.2680000000000002
+    }
+  ],
+  "resolved_findings": [
+    {
+      "finding": "HTTP request aggregation had used the resource-metric end time against a differently aligned source, including the earliest misaligned bucket and dropping the newest full bucket.",
+      "resolution": "Coordinator corrected the offline helper to use seven complete HTTP-source windows. Independent recomputation confirms the corrected counts and explicitly recorded 185.175601-second offset."
+    }
+  ],
+  "limits": [
+    "The lower/upper job figures bound the stated model, not the actual invoice. Metering lag, interval edges, resource history, billing rounding and telemetry semantics still require billing reconciliation.",
+    "Seven aligned 24-hour windows are not local calendar days. The 30-day projection includes observed manual executions/retries and is not a pure schedule-only forecast.",
+    "Service billing mode was observed on latest templates; historical idle/revision billing behavior was not fully reconstructed.",
+    "Storage uses latest daily ALIGN_MAX snapshots, including soft-deleted objects; constant-size projection is not a byte-hour invoice integral. Registry data covers the four regions explicitly queried.",
+    "Storage API method counts are not invoice SKU counts. Unclassified methods, failed requests, multi-region operation-price differences and network destination charges are incompletely priced.",
+    "Scheduler reference is for 31 days; workload projections use 30 days. Free quotas are account-wide or eligibility-dependent and are not deducted from the partial gross reference sum.",
+    "Billing API returned SERVICE_DISABLED. No BigQuery datasets were found in the audited project; exports in another project or billing account were not checked. Browser billing access was unavailable. No API was enabled.",
+    "No complete price was assigned to network, Cloud Build, vulnerability scanning, Firebase Hosting, CI, external providers or any other unobserved SKU. Partial reference sum is not total project spend, a spending cap or an actual bill.",
+    "Additional automatic-recovery scenarios assume 360 extra tasks per 30 days at the stated fixed task duration, without retries or new GRIB acquisition; storage/network costs are excluded. These scenarios were not measured on activated recovery code.",
+    "No budgets, account-wide discounts, shared free-quota consumption, taxes or currency conversion were verified. Operational sustainability remains an owner decision."
+  ],
+  "evidence_sha256": [
+    {
+      "path": ".tmp/jobs-cost-audit-20261031/cloud-inventory.json",
+      "sha256": "4c034b0b3da86c90b63e542f3588e4826ff5c2f659b067fb3ee7e7e5f351cb7b"
+    },
+    {
+      "path": ".tmp/jobs-cost-audit-20261031/extra-usage.json",
+      "sha256": "cbc9a897b05ca2b268dcd5ecd9ffc9dea9dca32c3ab40e6ea6047b5acd0d00e2"
+    },
+    {
+      "path": ".tmp/jobs-cost-audit-20261031/job-inventory-analysis.json",
+      "sha256": "c66bfc447e2e3e1b51b83298f0e518e6c1b611dcb4fda396d9113bd78320b464"
+    },
+    {
+      "path": ".tmp/jobs-cost-audit-20261031/metric-descriptors.json",
+      "sha256": "711fd32de6a55850c995b692ce049ba50a7055b93333d2f5be7dc8ebc0060d33"
+    },
+    {
+      "path": ".tmp/jobs-cost-audit-20261031/pricing-sources.json",
+      "sha256": "8d6b542c48f87e5efffbcf9d77733d9d99385139b1d727a7b87becd5a4571073"
+    },
+    {
+      "path": ".tmp/jobs-cost-audit-20261031/recent-executions.json",
+      "sha256": "3a7c14f2b37d8a7e4d79dd5d7024e3a7153a7e6c4bfcff93038246ee214f5278"
+    },
+    {
+      "path": ".tmp/jobs-cost-audit-20261031/registry-inventory.json",
+      "sha256": "9894c6fb5e91b73f4ad60980698d02ade6bc8b8bfba0a71c8998474259c29fc3"
+    },
+    {
+      "path": ".tmp/jobs-cost-audit-20261031/retried-tasks.json",
+      "sha256": "bd2781f08e0ab497710cd1a0a4720a3edb6ed0667e5bae1ba0c2c818d523a13e"
+    },
+    {
+      "path": ".tmp/jobs-cost-audit-20261031/usage-analysis.json",
+      "sha256": "5b612cb920d023632e2bda30c446d8ea61294fb9c8a4d8ba8439504cb0fb1253"
+    },
+    {
+      "path": ".tmp/jobs-cost-audit-20261031/usage-metrics.json",
+      "sha256": "6cde44df6048c8965cdd2976c5cff2b86d8ab5fc646f3a1f85afa78673c6cfd6"
+    },
+    {
+      "path": ".tmp/jobs-readonly-20261031/inventory.json",
+      "sha256": "cee64ad48891fc111551d10af78902447af42875ec28eaa763c0aa55ce1392e0"
+    },
+    {
+      "path": ".tmp/jobs-readonly-20261031/executions.json",
+      "sha256": "6c8c89217fe428a789c495231e75120dc8ed779ef726d0124258890059dade5a"
+    },
+    {
+      "path": ".tmp/jobs-readonly-20261031/logs.json",
+      "sha256": "c6cd18cf5ab920650697d9502408244a39901373396d671d6c79fa3b9bb09a66"
+    }
+  ]
+}

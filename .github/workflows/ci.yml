@@ -93,6 +93,20 @@ jobs:
           python -B -m unittest discover -s experiments/weather_autonomy -p 'test_cloud_reader*.py' -v
           python -B -m unittest discover -s experiments/weather_autonomy -p 'test_gcs_object_store.py' -v
 
+      - name: Test bounded ICON recovery and verified snapshot identity
+        working-directory: .
+        run: |
+          python -B -m unittest discover -s experiments/weather_autonomy -p 'test_icon_recovery*.py' -v
+          python -B -m unittest discover -s experiments/weather_autonomy -p 'test_contract_publisher.py' -k verified_latest_snapshot -v
+
+      - name: Install pinned ADS client for offline CAMS tests
+        working-directory: .
+        run: python -m pip install ecmwf-datastores-client==0.5.3
+
+      - name: Test CAMS wait and same-request recovery
+        working-directory: experiments/weather_autonomy
+        run: python -B -m unittest test_retrieve_remote_cams test_retrieve_cams test_cams_worker_recovery -v
+
       - name: Install verified promtool for monitor tests
         working-directory: .
         shell: bash

@@ -67,6 +67,10 @@ def discover_run(now, high_water):
 
 
 def run_once(state, data, catalog, points, *, now, execution, acquire=acquire_real_bundle, discover=discover_run, clock=None):
+    from local_pipeline.icon_recovery import enabled
+    if enabled():
+        return run_automatic(state, data, catalog, points, now=now, execution=execution,
+                             acquire=acquire, discover=discover, clock=clock)
     slot = now.strftime("%Y%m%d") + ("-am" if now.hour < 12 else "-pm")
     claim_key = STATE_PREFIX + f"dispatch/{slot}.json"
     claim = canonical_json_bytes({"schema_version": 1, "slot": slot, "execution": execution})
@@ -127,6 +131,96 @@ def run_once(state, data, catalog, points, *, now, execution, acquire=acquire_re
         "manifest_sha256": pointer["manifest"]["sha256"], "municipality_count": pointer["catalog"]["municipality_count"]}
 
 
+def run_automatic(state, data, catalog, points, *, now, execution, acquire, discover, clock=None):
+    """Opt-in recovery; complete immutable manifests remain the checkpoint."""
+    from local_pipeline.icon_recovery import Recovery, FenceLost, discovery, transient, result
+
+    try:
+        try:
+            pointer, _ = read_pointer(data, catalog)
+        except ObjectNotFound:
+            pointer = None
+        verified_manifests = {}
+        if pointer is not None:
+            _bundle, existing = load_run(data, pointer["manifest"], catalog)
+            verify_pointer_reader(pointer, existing)
+            verified_manifests[canonical_json_bytes(pointer["manifest"])] = existing
+        high_water = pointer["source_run_id"] if pointer else None
+
+        def verify(cycle):
+            current, _ = read_pointer(data, catalog)
+            descriptor_key = canonical_json_bytes(current["manifest"])
+            reader = verified_manifests.get(descriptor_key)
+            if reader is None:
+                _bundle, reader = load_run(data, current["manifest"], catalog)
+                verified_manifests[descriptor_key] = reader
+            verify_pointer_reader(current, reader)
+            return current["source_run_id"] >= cycle
+
+        def checkpoint(cycle, _slot):
+            try:
+                manifest = data.get(PREFIX + f"runs/{cycle}/manifest.json")
+            except ObjectNotFound:
+                return None
+            descriptor = {"path": f"runs/{cycle}/manifest.json", "json_bytes": manifest.size, "sha256": manifest.sha256}
+            frozen, _reader = load_run(data, descriptor, catalog)
+            verify_preparation(state, frozen, catalog, points)
+            return frozen
+
+        def freeze(cycle, slot):
+            run = datetime.strptime(cycle, "%Y%m%dT%H%M%SZ").strftime("%Y%m%d%H")
+            intent_key = STATE_PREFIX + f"runs/{cycle}/intent.json"
+            intent = {"schema_version": 1, "source_run_id": cycle, "generated_at": utc(now),
+                "catalog_sha256": catalog["catalog_sha256"], "points_sha256": points["artifact_sha256"]}
+            try:
+                state.put(intent_key, canonical_json_bytes(intent), content_type="application/json")
+            except PreconditionFailed:
+                saved = parse_document(state.get(intent_key).body)
+                if set(saved) != set(intent) or any(saved[key] != value for key, value in intent.items() if key != "generated_at"):
+                    raise ValueError("national acquisition intent differs")
+                datetime.strptime(saved["generated_at"], "%Y-%m-%dT%H:%M:%SZ")
+                intent = saved
+            with phase("national_acquisition", provider="icon", source_run_id=cycle):
+                frozen, mapping = acquire(catalog=catalog, points=points, run=run,
+                    generated_at=intent["generated_at"], now=now)
+            if json.loads(frozen.manifest_json)["source_run_id"] != cycle:
+                raise ValueError("national acquisition changed the discovered cycle")
+            # Validate the entire in-memory bundle before staging any public byte.
+            from national_cloud_publication import reader_for_bundle
+            reader_for_bundle(frozen, catalog)
+            record_preparation(state, frozen, mapping, catalog, points)
+            # Pointer is untouched. Manifest-last is the existing atomic boundary
+            # after which another execution may resume without a GRIB download.
+            for path, body in frozen.publication_order():
+                create_or_verify(data, PREFIX + path, body)
+            return checkpoint(cycle, slot)
+
+        def publish(frozen):
+            current = publish_bundle(data, frozen, catalog, now=now, clock=clock)
+            verified_manifests.clear()  # Final readback is fresh after pointer publication.
+            return result("published", "publication_committed", current["source_run_id"])
+
+        def legacy():
+            slot = now.strftime("%Y%m%d") + ("-am" if now.hour < 12 else "-pm")
+            try:
+                state.get(STATE_PREFIX + f"dispatch/{slot}.json")
+            except ObjectNotFound:
+                return None
+            cycle = now.strftime("%Y%m%dT") + ("000000Z" if now.hour < 12 else "120000Z")
+            frozen = checkpoint(cycle, slot)
+            return {"slot": slot, "source_run_id": cycle, "checkpoint": frozen}
+
+        probe = (lambda water: discovery(now, water)) if discover is discover_run else (lambda water: discover(now, water))
+        return Recovery(state, "national").run(now=now, execution=execution, high_water=high_water,
+            verified_run=high_water, discover=probe, checkpoint=checkpoint, acquire=freeze,
+            publish=publish, verify=verify, legacy=legacy)
+    except FenceLost:
+        return result("in_progress", "recovery_owner_changed")
+    except Exception as error:
+        return result("pending" if transient(error) else "manual_review",
+                      "national_transport_pending" if transient(error) else "national_recovery_invalid")
+
+
 def run():
     expected_job = os.environ.get("WEATHER_NATIONAL_JOB_NAME", "pilot-national-icon")
     acquisition = os.environ.get("WEATHER_NATIONAL_ACQUISITION", os.environ.get("PILOT_NATIONAL_ACQUISITION"))
@@ -147,6 +241,8 @@ def run():
         GCSObjectStore(client.bucket(data_bucket)), catalog, points,
         now=datetime.now(timezone.utc), execution=execution, clock=lambda: datetime.now(timezone.utc))
     print(json.dumps(result, sort_keys=True), flush=True)
+    if result.get("status") not in {"published", "no_op"}:
+        raise RuntimeError("national ICON publication did not complete; inspect structured status")
     return result
 
 

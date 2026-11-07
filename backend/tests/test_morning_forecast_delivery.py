@@ -1,12 +1,19 @@
 from __future__ import annotations
 
+import io
+import json
+import os
 import unittest
+from contextlib import redirect_stdout
 from copy import deepcopy
 from datetime import datetime, timedelta, timezone
 from types import SimpleNamespace
+from unittest.mock import Mock, patch
 from zoneinfo import ZoneInfo
 
 from app.push.fcm import FcmBatchOutcome
+from app.jobs import send_morning_forecast
+import app.services.morning_forecast_delivery as morning_delivery
 from app.services.local_notice_delivery import LocalNoticeDeliveryConfig
 from app.services.location import LocationCatalog
 from app.services.morning_forecast_delivery import (
@@ -160,6 +167,48 @@ class MorningForecastCopyTests(unittest.TestCase):
             "possibili piogge dal pomeriggio.",
         )
 
+    def test_missing_accumulation_reports_uncertainty_without_dry_claim(self):
+        municipality = LocationCatalog().match_istat("093033")
+        forecast = snapshot()
+        forecast["hourly"]["precipitation"][6] = None
+
+        body = build_morning_forecast_body(forecast, municipality, now=NOW)
+
+        self.assertEqual(
+            body,
+            "Pordenone: cielo sereno, 12 °C. Massima 25 °C; "
+            "dati sulle precipitazioni incompleti.",
+        )
+        self.assertNotIn("non sono previste piogge", body)
+        self.assertNotIn("dal pomeriggio", body)
+
+    def test_missing_current_condition_keeps_only_verified_temperature(self):
+        municipality = LocationCatalog().match_istat("093033")
+        forecast = snapshot()
+        forecast["hourly"]["weather_code"][0] = None
+
+        self.assertEqual(
+            build_morning_forecast_body(forecast, municipality, now=NOW),
+            "Pordenone: 12 °C. Massima 25 °C; "
+            "dati sulle precipitazioni incompleti.",
+        )
+
+    def test_malformed_accumulation_or_condition_still_blocks_message(self):
+        municipality = LocationCatalog().match_istat("093033")
+        for field, value in (
+            ("precipitation", -1),
+            ("rain", "0"),
+            ("showers", float("nan")),
+            ("weather_code", 100),
+        ):
+            with self.subTest(field=field, value=value):
+                forecast = snapshot()
+                forecast["hourly"][field][6] = value
+                self.assertEqual(
+                    build_morning_forecast_body(forecast, municipality, now=NOW),
+                    "",
+                )
+
 
 class MorningForecastDeliveryTests(unittest.TestCase):
     def service(
@@ -171,6 +220,7 @@ class MorningForecastDeliveryTests(unittest.TestCase):
         require_single=True,
         test_run_id="",
         test_platform="",
+        test_installation_hash="",
     ):
         return MorningForecastDeliveryService(
             device_repository=repository,
@@ -180,6 +230,7 @@ class MorningForecastDeliveryTests(unittest.TestCase):
             require_single_target=require_single,
             test_run_id=test_run_id,
             test_platform=test_platform,
+            test_installation_hash=test_installation_hash,
             location_catalog=NoticeMunicipalityCatalog(),
             now=lambda: NOW,
         )
@@ -220,6 +271,30 @@ class MorningForecastDeliveryTests(unittest.TestCase):
         self.assertEqual(result.status, "deduplicated")
         self.assertEqual(result.deduplicated, 1)
         self.assertEqual(sender.messages, [])
+
+    def test_partial_copy_uses_the_existing_daily_delivery_and_deduplication(self):
+        forecast = snapshot()
+        forecast["hourly"]["precipitation"][6] = None
+        repository = FakeDeviceRepository([device()])
+        sender = FakeSender()
+        source = FakeSource(forecast)
+
+        first = self.service(repository, source, sender).run()
+        repository.claim_state = "sent"
+        second = self.service(repository, source, sender).run()
+
+        self.assertEqual(first.status, "sent")
+        self.assertEqual(first.attempted, 1)
+        self.assertEqual(second.status, "deduplicated")
+        self.assertEqual(second.deduplicated, 1)
+        self.assertEqual(second.sent, 0)
+        self.assertEqual(len(sender.messages), 1)
+        self.assertIn("dati sulle precipitazioni incompleti", sender.messages[0].body)
+        self.assertEqual(repository.claims[0]["notice_kind"], "morning_forecast")
+        self.assertEqual(
+            repository.claims[0]["notice_signature"],
+            repository.claims[1]["notice_signature"],
+        )
 
     def test_saved_canonical_municipality_remains_eligible_without_location_mode(self):
         saved = device()
@@ -332,6 +407,200 @@ class MorningForecastDeliveryTests(unittest.TestCase):
         self.assertEqual(result.eligible_devices, 1)
         self.assertEqual(len(sender.messages), 1)
         self.assertEqual(sender.messages[0].platform, "android")
+
+    def test_installation_hash_selects_one_exact_target_before_single_guard(self):
+        selected_id = "b" * 64
+        repository = FakeDeviceRepository(
+            [device(), device(device_id=selected_id, token="token-b")]
+        )
+        source = FakeSource(snapshot())
+        sender = FakeSender()
+
+        result = self.service(
+            repository,
+            source,
+            sender,
+            test_installation_hash=selected_id,
+        ).run()
+
+        self.assertEqual(result.status, "sent")
+        self.assertEqual(result.eligible_devices, 1)
+        self.assertEqual(len(source.calls), 1)
+        self.assertEqual(len(sender.messages), 1)
+        self.assertEqual(sender.messages[0].target_value, "token-b")
+        self.assertEqual(repository.claims[0]["device_id"], selected_id)
+
+    def test_unknown_installation_hash_stops_before_source_and_fcm(self):
+        repository = FakeDeviceRepository([device()])
+        source = FakeSource(snapshot())
+        sender = FakeSender()
+
+        result = self.service(
+            repository,
+            source,
+            sender,
+            test_installation_hash="b" * 64,
+        ).run()
+
+        self.assertEqual(result.status, "no_eligible_device")
+        self.assertEqual(result.eligible_devices, 0)
+        self.assertEqual(source.calls, [])
+        self.assertEqual(sender.messages, [])
+        self.assertEqual(repository.claims, [])
+
+    def test_installation_hash_requires_single_target_and_sha256(self):
+        for value, require_single, expected in (
+            ("a" * 64, False, "requires_single_target"),
+            ("not-a-sha256", True, "test_installation_hash_invalid"),
+        ):
+            with self.subTest(value=value, require_single=require_single):
+                with self.assertRaisesRegex(MorningForecastConfigurationError, expected):
+                    self.service(
+                        FakeDeviceRepository([device()]),
+                        FakeSource(snapshot()),
+                        FakeSender(),
+                        require_single=require_single,
+                        test_installation_hash=value,
+                    )
+
+    def test_factory_reads_exact_test_installation_hash_from_environment(self):
+        morning_delivery.reset_morning_forecast_delivery_service_for_tests()
+        try:
+            with (
+                patch.dict(os.environ, {
+                    "MORNING_FORECAST_REQUIRE_SINGLE_TARGET": "true",
+                    "MORNING_FORECAST_TEST_INSTALLATION_HASH": "B" * 64,
+                }, clear=True),
+                patch.object(LocalNoticeDeliveryConfig, "from_environment", return_value=config()),
+                patch.object(morning_delivery, "PushDeviceRepository"),
+                patch.object(morning_delivery, "RoutedIconLocalNoticeSource"),
+                patch.object(morning_delivery, "FirebaseCloudMessagingSender"),
+                patch.object(morning_delivery, "MorningForecastDeliveryService") as constructor,
+            ):
+                morning_delivery.get_morning_forecast_delivery_service()
+                self.assertEqual(
+                    constructor.call_args.kwargs["test_installation_hash"],
+                    "b" * 64,
+                )
+        finally:
+            morning_delivery.reset_morning_forecast_delivery_service_for_tests()
+
+    def test_factory_rejects_unsafe_or_invalid_hash_environment(self):
+        for single, value, expected in (
+            ("false", "a" * 64, "requires_single_target"),
+            ("true", "not-a-sha256", "test_installation_hash_invalid"),
+        ):
+            with self.subTest(single=single, value=value):
+                morning_delivery.reset_morning_forecast_delivery_service_for_tests()
+                with (
+                    patch.dict(os.environ, {
+                        "MORNING_FORECAST_REQUIRE_SINGLE_TARGET": single,
+                        "MORNING_FORECAST_TEST_INSTALLATION_HASH": value,
+                    }, clear=True),
+                    patch.object(LocalNoticeDeliveryConfig, "from_environment", return_value=config()),
+                    patch.object(morning_delivery, "PushDeviceRepository"),
+                    patch.object(morning_delivery, "RoutedIconLocalNoticeSource"),
+                    patch.object(morning_delivery, "FirebaseCloudMessagingSender"),
+                    patch.object(morning_delivery, "MorningForecastDeliveryService") as constructor,
+                ):
+                    with self.assertRaisesRegex(MorningForecastConfigurationError, expected):
+                        morning_delivery.get_morning_forecast_delivery_service()
+                    constructor.assert_not_called()
+        morning_delivery.reset_morning_forecast_delivery_service_for_tests()
+
+
+class MorningForecastRetirementTests(unittest.TestCase):
+    def service(self, repository, sender, *, source=None):
+        return MorningForecastDeliveryService(
+            device_repository=repository,
+            source=source or FakeSource(snapshot()),
+            sender=sender,
+            config=config(),
+            require_single_target=False,
+            location_catalog=NoticeMunicipalityCatalog(),
+            now=lambda: NOW,
+        )
+
+    def job_exit(self, result):
+        output = io.StringIO()
+        with patch.object(
+            send_morning_forecast,
+            "get_morning_forecast_delivery_service",
+            return_value=SimpleNamespace(run=lambda: result),
+        ), redirect_stdout(output):
+            exit_code = send_morning_forecast.main()
+        return exit_code, json.loads(output.getvalue()), output.getvalue()
+
+    def test_only_confirmed_invalid_token_is_retired_without_job_failure(self):
+        repository = FakeDeviceRepository([device()])
+        sender = FakeSender()
+        sender.send_batch = Mock(return_value=[FcmBatchOutcome(error_code="fcm_token_invalid")])
+
+        result = self.service(repository, sender).run()
+        exit_code, summary, raw = self.job_exit(result)
+
+        self.assertEqual((result.status, result.sent, result.retired_targets, result.failed),
+                         ("retired_targets", 0, 1, 0))
+        self.assertEqual(exit_code, 0)
+        self.assertEqual(summary["retired_targets"], 1)
+        self.assertEqual(len(repository.disabled), 1)
+        self.assertNotIn("token-a", raw)
+
+    def test_54_sends_and_one_confirmed_retirement_keep_job_successful(self):
+        devices = [device(device_id=f"{index + 1:064x}", token=f"token-{index}")
+                   for index in range(55)]
+        repository = FakeDeviceRepository(devices)
+        sender = FakeSender()
+        sender.send_batch = Mock(return_value=[
+            *[FcmBatchOutcome(message_id=f"message-{index}") for index in range(54)],
+            FcmBatchOutcome(error_code="fcm_token_invalid"),
+        ])
+
+        result = self.service(repository, sender).run()
+        exit_code, summary, _ = self.job_exit(result)
+
+        self.assertEqual((result.status, result.sent, result.retired_targets, result.failed),
+                         ("sent", 54, 1, 0))
+        self.assertEqual((summary["eligible_devices"], summary["attempted"]), (55, 55))
+        self.assertEqual(exit_code, 0)
+        self.assertEqual(len(repository.disabled), 1)
+
+    def test_transient_fcm_and_source_errors_still_fail_the_job(self):
+        repository = FakeDeviceRepository([device()])
+        sender = FakeSender()
+        sender.send_batch = Mock(return_value=[FcmBatchOutcome(error_code="fcm_sender_unavailable")])
+        transient = self.service(repository, sender).run()
+        self.assertEqual((transient.status, transient.device_failed, transient.retired_targets),
+                         ("failed", 1, 0))
+        self.assertEqual(self.job_exit(transient)[0], 1)
+        self.assertEqual(repository.disabled, [])
+
+        source_failure = self.service(
+            FakeDeviceRepository([device()]), FakeSender(), source=FakeSource({})
+        ).run()
+        self.assertEqual((source_failure.status, source_failure.source_failed,
+                          source_failure.retired_targets), ("failed", 1, 0))
+        self.assertEqual(self.job_exit(source_failure)[0], 1)
+
+    def test_unconfirmed_invalid_token_cleanup_still_fails_the_job(self):
+        for unconfirmed_step in ("finish", "disable"):
+            with self.subTest(unconfirmed_step=unconfirmed_step):
+                repository = FakeDeviceRepository([device()])
+                if unconfirmed_step == "finish":
+                    repository.finish_local_notice_delivery = Mock(return_value=False)
+                else:
+                    repository.disable_device = Mock(return_value=False)
+                sender = FakeSender()
+                sender.send_batch = Mock(return_value=[
+                    FcmBatchOutcome(error_code="fcm_token_invalid")
+                ])
+
+                result = self.service(repository, sender).run()
+                self.assertEqual((result.status, result.retired_targets, result.failed),
+                                 ("failed", 0, 1))
+                self.assertEqual(self.job_exit(result)[0], 1)
+                if unconfirmed_step == "finish":
+                    self.assertEqual(repository.disabled, [])
 
 
 if __name__ == "__main__":

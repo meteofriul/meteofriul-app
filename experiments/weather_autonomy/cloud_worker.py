@@ -522,6 +522,9 @@ def _run_icon_result(state, data, now):
         from publish_remote_icon import recover_remote_icon
         return _retry_icon_publication(lambda: recover_remote_icon(
             source_run_id=recovery, state_store=state, data_store=data), source_run_id=recovery)
+    from local_pipeline.icon_recovery import enabled
+    if enabled():
+        return _run_icon_automatic(state, data, now)
     source_run_id = None
     marker_key = None
     try:
@@ -596,6 +599,151 @@ def _run_icon_result(state, data, now):
             return result
         result = _retry_icon_publication(record_outcome, source_run_id=source_run_id)
     return result
+
+
+def _run_icon_automatic(state, data, now):
+    """Optional delayed-source recovery; the legacy path above stays unchanged."""
+    from local_pipeline.icon_recovery import Recovery, FenceLost, discovery
+    from local_pipeline.contract_v1 import ICON_PROVIDER, load_catalog
+    from local_pipeline.contract_publisher import ContractV1Publisher
+    from local_pipeline.icon_checkpoint import read_checkpoint, save_checkpoint
+    from local_pipeline.icon_quality import validate_source_quality
+    from local_pipeline.job_entrypoints import prepare_icon_publication
+    from local_pipeline.job_outcomes import JobKind, JobResult
+    from local_pipeline.publication_intent import PublicationIntent
+    from run_pilot import run_outputs
+
+    try:
+        started = monotonic()
+        execution, _attempt = _icon_execution_identity()
+        if execution is None:
+            raise ValueError("automatic ICON recovery requires cloud execution identity")
+        catalog = load_catalog()
+        publisher = ContractV1Publisher(data, catalog)
+        verified_snapshot = publisher.read_verified_latest_snapshot(ICON_PROVIDER)
+        pointer = verified_snapshot.document if verified_snapshot is not None else None
+        high_water = _verified_icon_source_run_high_water(pointer)
+        verified_run = pointer["latest"]["source_run_id"] if pointer else None
+
+        def verify(cycle):
+            nonlocal verified_snapshot
+            if (verified_snapshot is not None
+                    and publisher.read_latest_if_etag(ICON_PROVIDER, verified_snapshot.etag) is None):
+                verified_snapshot = None
+            if verified_snapshot is None:
+                verified_snapshot = publisher.read_verified_latest_snapshot(ICON_PROVIDER)
+                if (verified_snapshot is not None
+                        and publisher.read_latest_if_etag(ICON_PROVIDER, verified_snapshot.etag) is None):
+                    # A change during the full pass cannot inherit its proof.
+                    # Fail closed instead of spinning while another writer acts.
+                    verified_snapshot = None
+                    return False
+            observed = verified_snapshot.document if verified_snapshot is not None else None
+            return (observed is not None and cycle not in observed["disabled_run_ids"]
+                    and observed["latest"]["source_run_id"] >= cycle)
+
+        def checkpoint(cycle, slot):
+            frozen = read_checkpoint(state, slot=slot, catalog=catalog)
+            if frozen is not None and frozen.intent.source_run_id != cycle:
+                raise ValueError("ICON recovery checkpoint cycle differs")
+            return frozen
+
+        def acquire(cycle, slot):
+            with TemporaryDirectory(prefix="meteofriul-icon-") as scratch:
+                root = Path(scratch)
+                with phase("acquisition", provider="icon", source_run_id=cycle):
+                    report = run_outputs(source_path=root / "source.json", payload_path=root / "payload.json",
+                        report_path=root / "report.json", run=datetime.strptime(cycle, "%Y%m%dT%H%M%SZ").strftime("%Y%m%d%H"),
+                        source_run_high_water=high_water)
+                prepared = prepare_icon_publication(payload=root / "payload.json", report=root / "report.json", catalog=catalog)
+                if prepared.source_run_id != cycle:
+                    raise ValueError("ICON acquisition changed the discovered cycle")
+                quality = report["source_quality"]
+                validate_source_quality(quality, source_run_id=cycle)
+                intent = PublicationIntent(JobKind.ICON, cycle, now.strftime("%Y-%m-%dT%H:%M:%SZ"),
+                                           prepared.input_fingerprint_sha256)
+                saved = _retry_icon_publication(lambda: save_checkpoint(state, slot=slot, prepared=prepared,
+                    intent=intent, catalog=catalog, source_quality=quality), source_run_id=cycle)
+                if isinstance(saved, JobResult):
+                    raise RuntimeError("ICON checkpoint persistence incomplete")
+                return saved
+
+        def has_current_coverage(manifest):
+            # Checkpoint validation authenticates this contract freshness metadata,
+            # but its frozen published_at is not a current clock on later resumes.
+            run_at = datetime.strptime(manifest["run_at"], "%Y-%m-%dT%H:%M:%SZ").replace(tzinfo=timezone.utc)
+            usable_until = datetime.strptime(manifest["freshness"]["usable_until"],
+                                              "%Y-%m-%dT%H:%M:%SZ").replace(tzinfo=timezone.utc)
+            observed_now = now + timedelta(seconds=max(0, monotonic() - started))
+            return run_at <= observed_now <= usable_until
+
+        def require_current_coverage(frozen):
+            if not has_current_coverage(frozen.prepared.manifest()):
+                raise ValueError("ICON checkpoint no longer satisfies current 48-hour coverage")
+
+        class CurrentCoverageStore:
+            """Keep the existing publisher, checking elapsed time at its pointer CAS."""
+            def __init__(self, frozen):
+                self.frozen = frozen
+
+            def __getattr__(self, name):
+                return getattr(data, name)
+
+            def compare_and_swap(self, key, body, **kwargs):
+                if key == publisher.latest_key(ICON_PROVIDER):
+                    require_current_coverage(self.frozen)
+                return data.compare_and_swap(key, body, **kwargs)
+
+        def publish(frozen):
+            guarded_data = CurrentCoverageStore(frozen)
+
+            def attempt():
+                nonlocal verified_snapshot
+                verified_snapshot = None
+                try:
+                    require_current_coverage(frozen)
+                    outcome = _publish_icon_checkpoint(frozen, state=state, data=guarded_data, catalog=catalog)
+                    if outcome.status.value in {"published", "no_op"}:
+                        require_current_coverage(frozen)
+                    return outcome
+                finally:
+                    # Even a failed/uncertain publication may have changed data.
+                    # Recovery.verify must perform a fresh complete readback.
+                    verified_snapshot = None
+
+            outcome = _retry_icon_publication(attempt, source_run_id=frozen.intent.source_run_id)
+            status = {"retryable_failure": "pending", "permanent_failure": "manual_review"}.get(
+                outcome.status.value, outcome.status.value)
+            return {"status": status, "reason": outcome.reason_code, "source_run_id": outcome.source_run_id}
+
+        def legacy():
+            slot = dispatch_slot("icon", now)
+            frozen = read_checkpoint(state, slot=slot, catalog=catalog)
+            if frozen is not None:
+                return {"checkpoint": frozen, "source_run_id": frozen.intent.source_run_id, "slot": slot}
+            try:
+                state.get(f"state/dispatch/icon/{slot}.json")
+            except ObjectNotFound:
+                return None
+            return {"checkpoint": None, "source_run_id": None, "slot": slot}
+
+        outcome = Recovery(state, "fvg").run(now=now, execution=execution, high_water=high_water,
+            verified_run=verified_run, discover=lambda water: discovery(now, water), checkpoint=checkpoint,
+            acquire=acquire, publish=publish, verify=verify, legacy=legacy)
+        if (outcome["status"] in {"published", "no_op"}
+                and (verified_snapshot is None or not has_current_coverage(verified_snapshot.manifest))):
+            outcome = {"status": "manual_review", "reason": "publication_current_coverage_expired",
+                       "source_run_id": outcome["source_run_id"]}
+        status = {"pending": "retryable_failure", "in_progress": "retryable_failure"}.get(outcome["status"], outcome["status"])
+        return JobResult(JobKind.ICON, status, outcome["reason"], source_run_id=outcome["source_run_id"],
+                         published_providers=(ICON_PROVIDER,) if status == "published" else (),
+                         metrics={"recovery_state": outcome["status"],
+                                  "published_pointer_verified": status in {"published", "no_op"}})
+    except FenceLost:
+        return JobResult(JobKind.ICON, "retryable_failure", "recovery_owner_changed",
+                         metrics={"recovery_state": "in_progress", "published_pointer_verified": False})
+    except Exception as error:
+        return _icon_failure(error)
 
 
 if __name__ == "__main__":

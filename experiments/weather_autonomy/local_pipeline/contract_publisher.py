@@ -113,6 +113,15 @@ class LatestCasExhausted(ContractPublicationError):
 
 
 @dataclass(frozen=True)
+class VerifiedLatestSnapshot:
+    """One verified pointer generation and the manifest authenticated with it."""
+
+    document: dict[str, Any]
+    manifest: dict[str, Any]
+    etag: str
+
+
+@dataclass(frozen=True)
 class ContractPublicationResult:
     provider: str
     source_run_id: str
@@ -1741,6 +1750,28 @@ class ContractV1Publisher:
             )
         return json.loads(canonical_json_bytes(snapshot.document))
 
+    def read_verified_latest_snapshot(self, provider: str) -> VerifiedLatestSnapshot | None:
+        """Bind complete verification to its original pointer generation.
+
+        No later HEAD may label an older verification with a newer ETag. Callers
+        must use read_latest_if_etag before reusing this proof, and discard it
+        after publication or at the end of the current invocation.
+        """
+        snapshot = self._read_latest_snapshot(provider)
+        if snapshot is None:
+            return None
+        manifest, body, _stored = self._read_manifest_by_run(
+            snapshot.document["provider"], snapshot.document["latest"]["source_run_id"],
+            verify_payloads=True,
+        )
+        if manifest != snapshot.manifest or body != snapshot.manifest_body:
+            raise ContractPublicationVerificationError("verified active manifest differs from latest")
+        return VerifiedLatestSnapshot(
+            document=json.loads(canonical_json_bytes(snapshot.document)),
+            manifest=json.loads(canonical_json_bytes(manifest)),
+            etag=snapshot.head.etag,
+        )
+
     def publish_run(
         self,
         provider: str,
@@ -2192,4 +2223,5 @@ __all__ = [
     "InvalidContractPublication",
     "LatestCasExhausted",
     "StaleContractRun",
+    "VerifiedLatestSnapshot",
 ]
