@@ -95,6 +95,17 @@ describe("authoritative market editions", () => {
     expect(selectMarkets({ location, now, period: "today", catalogue: snapshot }).items).toEqual([]);
   });
 
+  it("keeps an ordinary market findable on a holiday without inventing a confirmed event", () => {
+    const holiday = new Date("2026-12-08T12:00:00Z");
+    const regular = { ...market, group: "regular", weekdays: [2], validFrom: "2026-11-01", validThrough: "2026-12-31" };
+    const snapshot = catalogue({ markets: [regular], dates: [] });
+    expect(selectMarkets({ location, now: holiday, period: "today", catalogue: snapshot }).items).toHaveLength(1);
+    expect(mergeMarketEvents([], { location, now: holiday, catalogue: snapshot })).toEqual([]);
+    const cancelled = { ...snapshot, tombstones: [{ marketId: regular.id, date: "2026-12-08", status: "cancelled" }] };
+    expect(selectMarkets({ location, now: holiday, period: "today", catalogue: cancelled }).items).toEqual([]);
+    expect(selectMarkets({ location, now: holiday, period: "all", catalogue: cancelled }).items).toHaveLength(1);
+  });
+
   it("removes a cancelled weekly day from today/weekend and shows only explicit extraordinary editions", () => {
     const friday = { ...market, group: "regular", weekdays: [5], validThrough: "2026-12-31" };
     const cancelled = catalogue({ markets: [friday], dates: [{ id: "cancelled-friday", marketId: market.id, date: "2026-10-30", status: "cancelled" }],

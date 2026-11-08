@@ -1,5 +1,7 @@
 # Stato release 0.1.15 e lavoro salvato — aggiornamento sorgenti del 24 ottobre 2026
 
+**Mercati, ricorrenze abituali e festività, 8 novembre 2026.** Il proprietario ha scelto di rendere consultabili i sette mercati abituali anche nei festivi con un piccolo avviso di verifica: archivio privato alla revisione 30, 21 selezionate, 34 sospese e 45 bozze; revisione pubblica 0. Integrità SHA-256, convalida tecnica e proiezione a secco verificate; nel ramo app l'avviso è visibile nella scheda. [Controlli e limiti](MERCATI_CONTROLLO_PANNELLO_20261108.md). Versione, main e app distribuite invariati.
+
 **Mercati, primo gruppo verificato l'8 novembre 2026.** Archivio amministrativo privato alla revisione 23: 14 schede selezionate, 41 sospese e 45 bozze; revisione pubblica 0. Sette schede con aperture festive non confermate sono state sospese, conservando dati e fonti. Proiezione tecnica senza errori e anteprima browser locale Pordenone/Trieste verificata; il ramo app corregge la visualizzazione di «regular». [Evidenze e controlli ancora aperti](MERCATI_CONTROLLO_PANNELLO_20261108.md). Versione, main e app distribuite invariati.
 
 **Mercati, seconda verifica dell'8 novembre 2026.** Orario M004 aggiornato nel pannello da fonte Pro San Daniele: revisione amministrativa privata 16, revisione pubblica 0. M004 richiede una nuova convalida editoriale dopo la verifica del 6 gennaio; restano aperte le altre eccezioni festive e i casi M001/Maron. [Dettagli](MERCATI_CONTROLLO_PANNELLO_20261108.md). Versione, main e app distribuite invariati.

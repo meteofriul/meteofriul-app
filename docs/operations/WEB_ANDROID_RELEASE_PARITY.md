@@ -1,5 +1,7 @@
 # Allineamento della Web App con Android
 
+**Mercati, ricorrenze abituali e festività, 8 novembre 2026.** Archivio amministrativo privato alla revisione 30: 21 schede selezionate, 34 sospese e 45 bozze; catalogo pubblico alla revisione 0. Il ramo app aggiunge nelle schede dei mercati abituali «Festivi: verifica la fonte» e continua a rispettare gli annullamenti documentati. [Fonti, prove e limiti](MERCATI_CONTROLLO_PANNELLO_20261108.md). La visualizzazione è stata controllata nel browser locale; nessun artefatto Web/Android distribuito o qualificato su telefono e Safari/iPhone.
+
 **Mercati, primo gruppo verificato l'8 novembre 2026.** Sette schede con festività non confermate sono state sospese nel solo archivio privato, ora revisione 23 con 14 selezionate; pubblico ancora alla revisione 0. La proiezione privata è stata osservata nel browser del pilota locale a Pordenone e Trieste, e la stringa interna «regular» è stata corretta nel ramo app. [Prova e limiti](MERCATI_CONTROLLO_PANNELLO_20261108.md). Nessun artefatto Web/Android distribuito o qualificato su telefono e Safari/iPhone; la parità pubblica resta quella precedente.
 
 **Mercati, seconda verifica dell'8 novembre 2026.** Solo l'archivio amministrativo privato è avanzato alla revisione 16 con l'orario 08:00–13:00 di M004; revisione pubblica 0. Il salvataggio ha riaperto la convalida editoriale della scheda. [Verifiche e limiti](MERCATI_CONTROLLO_PANNELLO_20261108.md). Nessuna nuova build, distribuzione o qualifica Web/Android: la parità degli artefatti pubblici rimane quella precedente.

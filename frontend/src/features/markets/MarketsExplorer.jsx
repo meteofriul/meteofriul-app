@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from "react";
-import { ArrowLeft, CalendarDays, ChevronRight, ExternalLink, MapPin, Navigation, ShoppingBag, Store, X } from "lucide-react";
+import { ArrowLeft, CalendarDays, ChevronRight, ExternalLink, Info, MapPin, Navigation, ShoppingBag, Store, X } from "lucide-react";
 import { usePilotBackHandler } from "../../app/usePilotBackHandler";
 import { useBrowserDialogBack } from "../../app/useBrowserDialogBack";
 import { subscribeToMarketsDayClock } from "./marketsDayClock";
@@ -25,6 +25,7 @@ function MarketSummary({ market, language, onOpen }) {
       <span>{market.group === "regular" ? copy.usual + ": " + market.cadence
         : market.dates[0] ? copy.published + ": " + formatMarketDate(market.dates[0].date, language) : copy.noDates}</span>
     </span>
+    {market.group === "regular" ? <span className="mf-market-card__notice"><Info aria-hidden="true" size={14} />{copy.holidayHint}</span> : null}
     {market.place ? <span className="mf-market-card__place"><MapPin aria-hidden="true" size={16} />{market.place}</span> : null}
     <span className="mf-market-card__action">{copy.details}<ChevronRight aria-hidden="true" size={17} /></span>
   </button>;
