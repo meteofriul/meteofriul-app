@@ -1,5 +1,7 @@
 # Allineamento della Web App con Android
 
+**Sintesi Home, 8 novembre — candidata sul ramo editoriale.** La scheda Sintesi usa una colonna unica senza icona meteo laterale; l'allerta ufficiale conserva il proprio layout. La stessa geometria è preparata nell'anteprima del pannello. Frontend app compilato e 36 test Home mirati superati; nessun artefatto Web/Android è stato pubblicato e non sono state aggiunte qualifiche Safari o dispositivo. Il futuro rilascio richiede una base frontend comune approvata e le verifiche di parità del runbook.
+
 **Prova bozze del Consiglio, 8 novembre — servizio isolato.** La revisione API editoriale ha un tag usato soltanto dal pannello e 0% del traffico ordinario; `EDITORIAL_PUBLICATION_ENABLED=false`. [Evidenza](EDITORIAL_PANEL_DRAFT_TRIAL_20261108.md). Il lettore Home resta nel ramo di preparazione e non è distribuito su Web o Android; nessun artefatto o controllo Safari/dispositivo nuovo. L'attivazione della pubblicazione richiede un workstream e le verifiche di parità previste da questo runbook.
 
 **Consiglio del giorno, 8 novembre — ramo di preparazione.** L'API e il lettore Home sono nel ramo `codex/editorial-publication-20261108`, con entrambi gli interruttori editoriali disattivati per impostazione predefinita. La modifica non è distribuita su Web o Android; nessun artefatto di release o controllo Safari/dispositivo è stato eseguito. La futura attivazione richiede una base frontend approvata comune a Web e Android, il servizio verificato con il pannello, e i rispettivi controlli del runbook.

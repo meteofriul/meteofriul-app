@@ -12,7 +12,6 @@ import {
   Wind,
 } from "lucide-react";
 
-import { HomeMeteoconIcon } from "./HomeMeteoconIcon";
 import { HomeTeaserCard } from "./HomeTeaserCard";
 
 const ADVICE_ICONS = {
@@ -37,7 +36,7 @@ export function HomeBulletinSummary({ bulletin, onOpen }) {
   const adviceStatus = bulletin.advice ? "ready" : bulletin.adviceStatus || "unavailable";
 
   return (
-    <section className="mf-home-section mf-home-bulletin" aria-labelledby="home-bulletin-title">
+    <section className="mf-home-section mf-home-bulletin mf-home-bulletin--summary" aria-labelledby="home-bulletin-title">
       <HomeTeaserCard
         className="mf-home-bulletin-card"
         heading={bulletin.title}
@@ -85,12 +84,6 @@ export function HomeBulletinSummary({ bulletin, onOpen }) {
           ) : null}
           {bulletin.body ? <p>{bulletin.body}</p> : null}
         </div>
-        <span
-          className="mf-home-bulletin-card__icon mf-home-bulletin-card__icon--weather"
-          aria-hidden="true"
-        >
-          <HomeMeteoconIcon icon={bulletin.icon} size={54} />
-        </span>
       </HomeTeaserCard>
     </section>
   );

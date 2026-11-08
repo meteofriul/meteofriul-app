@@ -220,9 +220,9 @@ describe("HomeView card style", () => {
     expect(bulletinStart).toBeGreaterThan(markup.indexOf('class="mf-home-local-metrics"'));
     expect(bulletinStart).toBeLessThan(markup.indexOf("mf-home-quick-grid"));
     expect(markup).not.toContain("mf-home-bulletin-card__icon--alert");
-    expect(markup).toContain("mf-home-bulletin-card__icon--weather");
+    expect(markup).toContain("mf-home-bulletin--summary");
+    expect(markup).not.toContain("mf-home-bulletin-card__icon--weather");
     expect(markup).not.toContain("Protezione Civile FVG");
-    expect(markup).toMatch(/mf-home-bulletin-card__icon[^>]*><img[^>]*mf-home-meteocon-icon/);
   });
 
   it("keeps the bulletin slot white in light themes without changing the dark-theme surface", () => {
@@ -288,17 +288,11 @@ describe("HomeView card style", () => {
     expect(darkSurface).toContain("box-shadow: none");
   });
 
-  it("lifts the summary weather asset with a scoped vivid surface in both themes", () => {
+  it("gives the OSMER summary one full-width content column while keeping alert layout separate", () => {
     const css = readFileSync(new URL("./home.css", import.meta.url), "utf8");
-    const weatherIcon = css.match(/\.mf-home-bulletin-card__icon--weather\s*\{([^}]+)\}/)?.[1] || "";
-    const weatherAsset = css.match(/\.mf-home-bulletin-card__icon--weather \.mf-home-meteocon-icon\s*\{([^}]+)\}/)?.[1] || "";
-    const darkWeatherIcon = css.match(/html\[data-theme="dark"\] \.mf-home-bulletin-card__icon--weather\s*\{([^}]+)\}/)?.[1] || "";
-
-    expect(weatherIcon).toContain("linear-gradient(135deg, #38bdf8 0%, #0284c7 62%, #0369a1 100%)");
-    expect(weatherIcon).toContain("border-color: rgba(255, 255, 255, 0.36)");
-    expect(weatherAsset).toContain("drop-shadow(0 4px 7px rgba(3, 55, 88, 0.32))");
-    expect(weatherAsset).toContain("transform: scale(1.08)");
-    expect(darkWeatherIcon).toContain("linear-gradient(135deg, #0ea5e9 0%, #0369a1 62%, #0f3f6a 100%)");
+    const summary = css.match(/\.mf-home-bulletin--summary \.mf-home-bulletin-card\s*\{([^}]+)\}/)?.[1] || "";
+    expect(summary).toContain("grid-template-columns: minmax(0, 1fr)");
+    expect(css).toContain(".mf-home-bulletin-card__icon--alert");
   });
 
   it("keeps the event count neutral while the green remains on the icon", () => {

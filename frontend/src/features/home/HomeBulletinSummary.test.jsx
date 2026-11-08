@@ -29,6 +29,8 @@ describe("HomeBulletinSummary", () => {
     expect(markup).not.toContain("Consigliato");
     expect(markup).toContain("Ombrello a portata di mano");
     expect(markup).toContain("mf-home-bulletin-card__advice-icon");
+    expect(markup).toContain("mf-home-bulletin--summary");
+    expect(markup).not.toContain("mf-home-bulletin-card__icon--weather");
   });
 
   it("reserves the callout height with a discreet skeleton while advice is pending", () => {

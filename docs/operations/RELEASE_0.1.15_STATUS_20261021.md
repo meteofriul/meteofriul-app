@@ -1,5 +1,7 @@
 # Stato release 0.1.15 e lavoro salvato — aggiornamento sorgenti del 24 ottobre 2026
 
+**Sintesi Home, 8 novembre — sorgenti sul ramo editoriale.** La card Sintesi non riserva più la colonna dell'icona meteo; headline OSMER e consiglio occupano la stessa larghezza. L'icona dell'allerta ufficiale resta. 36 test Home mirati, lint e build frontend superati; nessuna nuova qualifica browser/dispositivo. Versione, AAB e Web App invariati.
+
 **Prova bozze del Consiglio, 8 novembre — revisione isolata.** L'API editoriale è stata distribuita con tag Cloud Run, 0% del traffico ordinario e pubblicazione disattivata. Il pannello può provare salvataggio e conferma dopo il login; l'operatore deve ancora verificare la scrittura autenticata. [Immagine, verifiche e limiti](EDITORIAL_PANEL_DRAFT_TRIAL_20261108.md). Versione, AAB, Web App, traffico API ordinario e qualifiche esistenti invariati.
 
 **Sintesi mattutina, 7 novembre — solo backend distribuito.** [PR 44](https://github.com/meteofriul/meteofriul-app/pull/44) e CI PR/main verdi; il job ordinario usa l'immagine col testo prudente per precipitazioni incomplete. Una prova su un solo telefono è stata ricevuta; la corsa ordinaria dell'8 novembre alle 07:30 resta da verificare. [Digest, test e limiti](MORNING_SUMMARY_SOURCE_QUALITY_DEPLOY_20261107.md). Versione, AAB e Web invariati.
