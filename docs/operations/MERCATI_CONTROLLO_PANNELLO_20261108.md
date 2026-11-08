@@ -48,6 +48,17 @@ abilitato, la pubblicazione rimarrà un'azione editoriale separata. Per ritirare
 una scheda pubblicata occorre sospenderla o archiviarla: una bozza conserva la
 precedente versione pubblica fino a una nuova decisione.
 
+Per la prima release dell'app occorre configurare `VITE_MARKETS_API_BASE` verso
+il servizio Mercati pubblico. Dopo questa integrazione iniziale, il lettore
+dell'app ricarica il catalogo quando la vista si apre o torna in primo piano e
+ricontrolla periodicamente mentre è attiva. Una correzione dei soli dati,
+salvata e poi pubblicata nel pannello, potrà quindi raggiungere Web e Android
+senza ricompilare l'app; una modifica a interfaccia o logica richiederà invece
+una normale release. La [verifica precedente delle 34 schede fisse](MERCATI_FISSI_CONTROLLO_FONTI_20261107.md)
+resta la coda editoriale: le altre 13 con dettaglio decisivo aperto vanno
+analizzate dopo questo gruppo, le sette con fonte debole per ultime. Le 66
+schede occasionali richiedono la verifica delle singole edizioni future.
+
 ## Blocco editoriale prima della prima pubblicazione
 
 La convalida tecnica non conosce le chiusure festive. Nella revisione 15 le
