@@ -1,5 +1,7 @@
 # Allineamento della Web App con Android
 
+**Mercati, seconda verifica dell'8 novembre 2026.** Solo l'archivio amministrativo privato è avanzato alla revisione 16 con l'orario 08:00–13:00 di M004; revisione pubblica 0. Il salvataggio ha riaperto la convalida editoriale della scheda. [Verifiche e limiti](MERCATI_CONTROLLO_PANNELLO_20261108.md). Nessuna nuova build, distribuzione o qualifica Web/Android: la parità degli artefatti pubblici rimane quella precedente.
+
 **Mercati, 8 novembre 2026.** Il pannello Hosting è stato corretto e distribuito, mentre 11 schede sono state modificate solo nell'archivio amministrativo privato (revisione 15). La revisione pubblica resta 0; l'app Web e Android distribuite non consumano questi dati. [Evidenze e controlli editoriali aperti](MERCATI_CONTROLLO_PANNELLO_20261108.md). Non è stata prodotta una nuova build Web/Android né eseguita una nuova qualifica su telefono o Safari/iPhone: la parità degli artefatti distribuiti resta quella precedente.
 
 **Allineamento del ramo Mercati, 7 novembre 2026.** I sorgenti del ramo includono `main` fino a `61ec9174` e conservano i cambi Mercati. Test frontend e backend, lint e build Web/service worker di verifica sono passati; la build non è un artefatto di release. Sono ancora aperte la prova visiva integrata, la qualifica su telefono Android e Safari/iPhone e la verifica con Node 22.17.1/npm 10.9.2 prescritti. Nessun nuovo bundle Android, Web pubblicata, versione o promozione a `main`: la parità degli artefatti distribuiti resta quella già registrata.
