@@ -1,5 +1,7 @@
 # Allineamento della Web App con Android
 
+**Prova bozze del Consiglio, 8 novembre — servizio isolato.** La revisione API editoriale ha un tag usato soltanto dal pannello e 0% del traffico ordinario; `EDITORIAL_PUBLICATION_ENABLED=false`. [Evidenza](EDITORIAL_PANEL_DRAFT_TRIAL_20261108.md). Il lettore Home resta nel ramo di preparazione e non è distribuito su Web o Android; nessun artefatto o controllo Safari/dispositivo nuovo. L'attivazione della pubblicazione richiede un workstream e le verifiche di parità previste da questo runbook.
+
 **Consiglio del giorno, 8 novembre — ramo di preparazione.** L'API e il lettore Home sono nel ramo `codex/editorial-publication-20261108`, con entrambi gli interruttori editoriali disattivati per impostazione predefinita. La modifica non è distribuita su Web o Android; nessun artefatto di release o controllo Safari/dispositivo è stato eseguito. La futura attivazione richiede una base frontend approvata comune a Web e Android, il servizio verificato con il pannello, e i rispettivi controlli del runbook.
 
 **Sintesi mattutina, 7 novembre — job backend aggiornato.** Il testo della notifica gestisce dati di precipitazione incompleti senza dedurre assenza di pioggia. [PR 44](https://github.com/meteofriul/meteofriul-app/pull/44), CI PR/main, prova su un telefono e [readback del job](MORNING_SUMMARY_SOURCE_QUALITY_DEPLOY_20261107.md) verificati; la prima corsa ordinaria resta aperta. Frontend, contratti dati, artefatti e pubblicazioni Web/Android invariati; nessuna nuova qualifica Safari o Android.
