@@ -121,11 +121,45 @@ presentazione dell'avviso, non le 21 schede una per una. La prova ha mostrato
 la scheda, ma il launcher del pilota ha terminato il controllo finale perché
 la connessione alle fonti meteo era negata nell'ambiente sandbox. La successiva
 verifica del codice ha superato 18 test mirati, lint e build Web. Restano la
-revisione manuale di ogni scheda del primo gruppo e le prove su dispositivo.
+prove su dispositivo; il riscontro puntuale delle fonti collegate al primo
+gruppo è riportato sotto.
 
 Per la prima uscita restano la configurazione del servizio pubblico, build Web
 e Android dallo stesso commit approvato, prove reali su telefono e Safari/iPhone,
 PR e pubblicazioni distinte secondo i runbook.
+
+### Riscontro delle 14 schede già selezionate, 8 novembre
+
+Ho confrontato in sola lettura le 14 schede della precedente revisione 23 con
+le rispettive fonti collegate alla revisione privata 30. Per i tre mercati
+settimanali ho verificato cadenza, sede e orari dichiarati; per gli undici
+mercatini occasionali ho verificato le edizioni future presenti in archivio.
+Le date in questa tabella sono quelle pubblicate dalle fonti e già registrate
+nel pannello, a novembre/dicembre 2026 e gennaio 2027; non sono ricorrenze
+future create per supposizione.
+
+| Scheda | Riscontro sulla fonte | Esito |
+| --- | --- | --- |
+| M002 Sacile | [Regolamento comunale](https://www.comune.sacile.pn.it/media/files/093037/attachment/Regolamento_CQcs8ay.pdf): giovedì, centro storico, vendita 08:15–13:00. | Coerente. |
+| M005 Palmanova | [Bando comunale](https://comune.palmanova.ud.it/media/files/030070/attachment/Allegato_B1.0.pdf) e [notizia comunale](https://www.comune.palmanova.ud.it/it/novita-179021/notizie-179022/lunedi-di-pasquetta-sui-bastioni-di-palmanova-6-aprile-2026-320575): lunedì, Piazza Grande e Contrada Donato; nessun orario numerico nella scheda. | Coerente. |
+| R-PN-M004 Cordenons | [Delibera comunale 2025](https://www.comune.cordenons.pn.it/media/files/093017/attachment/delibera_di_giunta_n._144-2025.pdf) e [modifica 2026](https://sac4.halleysac.it/c093017/zf/index.php/atti-amministrativi/delibere/dettaglio/atto/G9mpBd0TUWT0-A): venerdì, Piazza della Vittoria, vendita 08:00–13:00. Il venerdì festivo è anticipato al precedente non festivo solo se aderiscono almeno cinque operatori; un'edizione festiva richiede accordo con il Comune. | Coerente la cancellazione della ricorrenza ordinaria il 25 dicembre e il 1° gennaio; nessun anticipo datato confermato. |
+| M028 Mercanti in Giardino | [UNPLI FVG](https://prolocoregionefvg.it/eventi-delle-associate/mercatino-dellusato-codroipo/): Piazza Giardini, dalle 08:00, 8 novembre e 13 dicembre. | Date e sede coerenti. |
+| M033 Antiquariato e Usato di Trieste | [Discover Trieste](https://www.discover-trieste.it/vivi/trieste-now/mercatino-antiquariato): Largo Granatieri e Ghetto, 08:00–20:00, 15 novembre e 20 dicembre. | Date e sede coerenti. |
+| M044 CREATTIVAMENTE | [PromoTurismo FVG](https://www.turismofvg.it/events/market-in-muggia-creattivamente): Piazza Galilei, 09:00–17:00, 21 novembre e 19 dicembre. | Date e sede coerenti. |
+| M045 META | [PromoTurismo FVG](https://www.turismofvg.it/events/market-in-muggia-meta): Piazzetta Galilei, 15 novembre e 6, 13, **20 dicembre**. | Tutte e quattro le date sono già nella revisione 30; nessuna correzione. |
+| M047 Mercatino al tram | [Discover Trieste](https://www.discover-trieste.it/vivi/trieste-now/mercatino-al-tram): piazzale Monte Re, 14 novembre e 12 dicembre; recupero domenicale solo se annunciato. | Date e sede coerenti. |
+| M048 Cavana | [Discover Trieste](https://www.discover-trieste.it/vivi/trieste-now/mercatino-cavana): piazza Cavana e via del Pesce, 08:00–tramonto, 6 dicembre. | Data e sede coerenti. |
+| M049 Porto Vecchio | [Discover Trieste](https://www.discover-trieste.it/vivi/trieste-now/mercatino-di-porto-vecchio): Largo Città di Santos, 08:00–tramonto, 8 novembre e 13 dicembre. | Date e sede coerenti. |
+| M051 Un pozzo di occasioni | [Discover Trieste](https://www.discover-trieste.it/vivi/trieste-now/un-pozzo-di-occasioni): Opicina, 08:00–tramonto, 28 novembre e **26 dicembre**. | Date e sede coerenti. |
+| M052 I sabati di Arti in Piazza | [Discover Trieste](https://www.discover-trieste.it/vivi/trieste-now/artinpiazza): 14 novembre e 5 dicembre; il testo descrive Piazza Piccola e il sottoportico del Comune, mentre l'intestazione dell'indirizzo dice piazza Unità d'Italia. | Date coerenti; la sede descritta nella scheda segue il testo della fonte. |
+| M053 Lo Scrigno del Doge | [UNPLI FVG](https://prolocoregionefvg.it/eventi-delle-associate/lo-scrigno-del-doge-in-villa-manin-mercatino-dellantiquariato-e-modernariato/): Villa Manin, 8 dicembre e **6 gennaio**; sedi delle edizioni già specificate. | Date e sede coerenti. |
+| M055 Barbacan Produce | [Organizzatore](https://www.barbacanproduce.com/barbacan-produce-regolamento-2/) e [Discover Trieste](https://www.discover-trieste.it/vivi/trieste-now/barbacan-produce): Piazza Barbacan e dintorni, 13 dicembre, 10:30–18:30. | Data, sede e orario coerenti. |
+
+Non sono emerse discrepanze da correggere nelle 14 schede. Questo è un
+riscontro delle fonti collegate, non una garanzia contro comunicazioni comunali
+successive o avvisi pubblicati altrove. La revisione privata resta **30** e
+quella pubblica **0**. Nessuna scheda è stata modificata, nessun job è stato
+creato e nessuna nuova edizione oltre le date esplicite è stata generata.
 
 ### Verifica mirata delle fonti, 8 novembre
 

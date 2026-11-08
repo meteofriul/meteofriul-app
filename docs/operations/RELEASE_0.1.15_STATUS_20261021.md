@@ -1,5 +1,7 @@
 # Stato release 0.1.15 e lavoro salvato — aggiornamento sorgenti del 24 ottobre 2026
 
+**Mercati, riscontro delle 14 schede, 8 novembre 2026.** Fonti collegate ricontrollate per cadenza, sede, orari dichiarati e date occasionali già presenti nell'archivio: nessuna discrepanza da correggere. [Esiti e limiti](MERCATI_CONTROLLO_PANNELLO_20261108.md#riscontro-delle-14-schede-già-selezionate-8-novembre). Archivio privato 30, catalogo pubblico 0, app distribuite e versione invariati.
+
 **Mercati, ricorrenze abituali e festività, 8 novembre 2026.** Il proprietario ha scelto di rendere consultabili i sette mercati abituali anche nei festivi con un piccolo avviso di verifica: archivio privato alla revisione 30, 21 selezionate, 34 sospese e 45 bozze; revisione pubblica 0. Integrità SHA-256, convalida tecnica e proiezione a secco verificate; nel ramo app l'avviso è visibile nella scheda. [Controlli e limiti](MERCATI_CONTROLLO_PANNELLO_20261108.md). Versione, main e app distribuite invariati.
 
 **Mercati, primo gruppo verificato l'8 novembre 2026.** Archivio amministrativo privato alla revisione 23: 14 schede selezionate, 41 sospese e 45 bozze; revisione pubblica 0. Sette schede con aperture festive non confermate sono state sospese, conservando dati e fonti. Proiezione tecnica senza errori e anteprima browser locale Pordenone/Trieste verificata; il ramo app corregge la visualizzazione di «regular». [Evidenze e controlli ancora aperti](MERCATI_CONTROLLO_PANNELLO_20261108.md). Versione, main e app distribuite invariati.
