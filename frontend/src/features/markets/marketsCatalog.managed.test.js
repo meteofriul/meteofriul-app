@@ -1,7 +1,7 @@
 import { describe, expect, it } from "vitest";
 import { buildEventsViewModel } from "../events/eventsViewModel";
 import { buildEventPreviewModel } from "../events/eventPreview";
-import { findRequestedMarketEvent, getMarket, marketDirectionsUrl, mergeMarketEvents, selectMarkets } from "./marketsCatalog";
+import { findRequestedMarketEvent, getMarket, marketDirectionsUrl, marketKindLabel, mergeMarketEvents, selectMarkets } from "./marketsCatalog";
 
 const now = new Date("2026-10-30T12:00:00Z");
 const location = { city: "Pordenone", regionCode: "IT-36" };
@@ -17,6 +17,11 @@ function catalogue(fields = {}) {
 }
 
 describe("authoritative market editions", () => {
+  it("presents internal market kinds as Italian card labels", () => {
+    expect(marketKindLabel({ kind: "regular" })).toBe("Settimanale");
+    expect(marketKindLabel({ kind: "occasional" })).toBe("Mercatino");
+    expect(marketKindLabel({ kind: "Agricolo" })).toBe("Agricolo");
+  });
   it("moves a stale source edition with the same stable ID and the edition's venue", () => {
     const snapshot = catalogue();
     const merged = mergeMarketEvents([source], { location, now, catalogue: snapshot });

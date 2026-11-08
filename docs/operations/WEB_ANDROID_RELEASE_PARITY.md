@@ -1,5 +1,7 @@
 # Allineamento della Web App con Android
 
+**Mercati, primo gruppo verificato l'8 novembre 2026.** Sette schede con festività non confermate sono state sospese nel solo archivio privato, ora revisione 23 con 14 selezionate; pubblico ancora alla revisione 0. La proiezione privata è stata osservata nel browser del pilota locale a Pordenone e Trieste, e la stringa interna «regular» è stata corretta nel ramo app. [Prova e limiti](MERCATI_CONTROLLO_PANNELLO_20261108.md). Nessun artefatto Web/Android distribuito o qualificato su telefono e Safari/iPhone; la parità pubblica resta quella precedente.
+
 **Mercati, seconda verifica dell'8 novembre 2026.** Solo l'archivio amministrativo privato è avanzato alla revisione 16 con l'orario 08:00–13:00 di M004; revisione pubblica 0. Il salvataggio ha riaperto la convalida editoriale della scheda. [Verifiche e limiti](MERCATI_CONTROLLO_PANNELLO_20261108.md). Nessuna nuova build, distribuzione o qualifica Web/Android: la parità degli artefatti pubblici rimane quella precedente.
 
 **Mercati, 8 novembre 2026.** Il pannello Hosting è stato corretto e distribuito, mentre 11 schede sono state modificate solo nell'archivio amministrativo privato (revisione 15). La revisione pubblica resta 0; l'app Web e Android distribuite non consumano questi dati. [Evidenze e controlli editoriali aperti](MERCATI_CONTROLLO_PANNELLO_20261108.md). Non è stata prodotta una nuova build Web/Android né eseguita una nuova qualifica su telefono o Safari/iPhone: la parità degli artefatti distribuiti resta quella precedente.

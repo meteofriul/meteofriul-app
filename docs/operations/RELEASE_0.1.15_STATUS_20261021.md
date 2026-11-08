@@ -1,5 +1,7 @@
 # Stato release 0.1.15 e lavoro salvato — aggiornamento sorgenti del 24 ottobre 2026
 
+**Mercati, primo gruppo verificato l'8 novembre 2026.** Archivio amministrativo privato alla revisione 23: 14 schede selezionate, 41 sospese e 45 bozze; revisione pubblica 0. Sette schede con aperture festive non confermate sono state sospese, conservando dati e fonti. Proiezione tecnica senza errori e anteprima browser locale Pordenone/Trieste verificata; il ramo app corregge la visualizzazione di «regular». [Evidenze e controlli ancora aperti](MERCATI_CONTROLLO_PANNELLO_20261108.md). Versione, main e app distribuite invariati.
+
 **Mercati, seconda verifica dell'8 novembre 2026.** Orario M004 aggiornato nel pannello da fonte Pro San Daniele: revisione amministrativa privata 16, revisione pubblica 0. M004 richiede una nuova convalida editoriale dopo la verifica del 6 gennaio; restano aperte le altre eccezioni festive e i casi M001/Maron. [Dettagli](MERCATI_CONTROLLO_PANNELLO_20261108.md). Versione, main e app distribuite invariati.
 
 **Mercati, 8 novembre 2026.** Ripristinato il collegamento del pannello online al servizio Mercati e verificate modifiche autentiche con il login del proprietario. Archivio privato alla revisione 15: 21 schede selezionate, 34 sospese e 45 bozze; revisione pubblica 0. Il validatore editoriale tecnico non segnala errori, ma le eccezioni festive elencate nel [controllo dell'8 novembre](MERCATI_CONTROLLO_PANNELLO_20261108.md) restano da provare prima della pubblicazione. Nessuna modifica a versione, main, AAB o app Web/Android distribuite.

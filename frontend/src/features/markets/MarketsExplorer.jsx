@@ -4,7 +4,7 @@ import { usePilotBackHandler } from "../../app/usePilotBackHandler";
 import { useBrowserDialogBack } from "../../app/useBrowserDialogBack";
 import { subscribeToMarketsDayClock } from "./marketsDayClock";
 import { getMarketsCopy } from "./marketsCopy";
-import { formatMarketDate, getMarket, MARKET_CATALOGUE, marketDateInEvents, marketDay, marketDirectionsUrl, publishedMarketDates, safeMarketUrl, selectMarkets } from "./marketsCatalog";
+import { formatMarketDate, getMarket, MARKET_CATALOGUE, marketDateInEvents, marketDay, marketDirectionsUrl, marketKindLabel, publishedMarketDates, safeMarketUrl, selectMarkets } from "./marketsCatalog";
 
 export function MarketsEntry({ language = "it", onOpen }) {
   const copy = getMarketsCopy(language);
@@ -20,7 +20,7 @@ function MarketSummary({ market, language, onOpen }) {
   return <button type="button" className="mf-market-card" onClick={() => onOpen(market.id)}>
     <span className="mf-market-card__top"><span>{market.comune} · {market.prov}</span><span>≈ {Math.round(market.distance)} km</span></span>
     <strong>{market.name}</strong>
-    <span className="mf-market-card__kind">{market.kind}</span>
+    <span className="mf-market-card__kind">{marketKindLabel(market)}</span>
     <span className="mf-market-card__when"><CalendarDays aria-hidden="true" size={17} />
       <span>{market.group === "regular" ? copy.usual + ": " + market.cadence
         : market.dates[0] ? copy.published + ": " + formatMarketDate(market.dates[0].date, language) : copy.noDates}</span>
@@ -37,7 +37,7 @@ export function MarketDetail({ market, language = "it", now = new Date(), radius
   const stale = marketDay(now) > catalogue.validThrough || (market.validThrough && marketDay(now) > market.validThrough);
   const directions = marketDirectionsUrl(market);
   return <article className="mf-market-detail">
-    <p className="mf-market-detail__kicker">{market.comune} · {market.prov} · {market.kind}</p>
+    <p className="mf-market-detail__kicker">{market.comune} · {market.prov} · {marketKindLabel(market)}</p>
     <h3 ref={titleRef} tabIndex={-1}>{market.name}</h3>
     <section><h4><MapPin aria-hidden="true" size={18} />{copy.where}</h4><p>{market.place || copy.noPlace}</p>
       {directions ? <a className="mf-market-link" href={directions} target="_blank" rel="noopener noreferrer"><Navigation size={17} aria-hidden="true" />{copy.directions}</a> : null}

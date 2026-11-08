@@ -34,6 +34,12 @@ export function marketDirectionsUrl(market, edition) {
   return venue?.directionsQuery
     ? "https://www.google.com/maps/search/?api=1&query=" + encodeURIComponent(venue.directionsQuery) : "";
 }
+export function marketKindLabel(market) {
+  const kind = String(market?.kind || "").trim();
+  if (kind.toLowerCase() === "regular") return "Settimanale";
+  if (kind.toLowerCase() === "occasional") return "Mercatino";
+  return kind;
+}
 function urlKey(value) {
   try {
     const url = new URL(value);
@@ -206,7 +212,7 @@ export function mergeMarketEvents(events = [], { location, radius = 20, now = ne
         date: formatMarketDate(edition.date), start_date: edition.date, end_date: edition.date,
         event_city: market.comune, place: market.place, source: market.authority, url: edition.source || market.url,
         ...marketEventDistance(market),
-        description: market.kind + ". " + market.cadence + ". " + (market.scheduleNote || "")
+        description: marketKindLabel(market) + ". " + market.cadence + ". " + (market.scheduleNote || "")
           + " Date pubblicate dalla fonte; verificare eventuali variazioni.",
         market_catalogue: true, description_source_name: market.authority,
         description_source_url: edition.source || market.url,
@@ -246,7 +252,7 @@ function managedEditionEvent(market, edition, source = {}) {
     ...marketEventTimeFields(edition.hours || market.hours), market_catalogue: true, market_managed: true,
     market_venue: edition.venue || null, source: market.authority || source.source,
     url: edition.source || market.url || source.url,
-    description: `${market.kind}. ${market.cadence}. ${market.scheduleNote || ""}`,
+    description: `${marketKindLabel(market)}. ${market.cadence}. ${market.scheduleNote || ""}`,
     description_source_name: market.authority,
     description_source_url: edition.source || market.url,
   };
@@ -294,7 +300,7 @@ function mergeManagedMarketEvents(events, { location, radius, now, catalogue }) 
       ...marketEventDistance(market),
       place: market.place, venue: market.place, address: "", lat: null, lon: null,
       ...marketEventTimeFields(market.hours),
-      description: `${market.kind}. ${market.cadence}. ${market.scheduleNote || ""}`,
+      description: `${marketKindLabel(market)}. ${market.cadence}. ${market.scheduleNote || ""}`,
       description_excerpt: "", url: market.url || raw.url, source: market.authority || raw.source,
       description_source_name: market.authority, description_source_url: market.url,
       maps_url: marketDirectionsUrl(market), market_managed: true, market_catalogue: true }];
