@@ -26,7 +26,7 @@ function MarketSummary({ market, language, onOpen }) {
         : market.dates[0] ? copy.published + ": " + formatMarketDate(market.dates[0].date, language) : copy.noDates}</span>
     </span>
     {market.group === "regular" ? <span className="mf-market-card__notice"><Info aria-hidden="true" size={14} />{copy.holidayHint}</span> : null}
-    {market.place ? <span className="mf-market-card__place"><MapPin aria-hidden="true" size={16} />{market.place}</span> : null}
+    {market.place ? <span className="mf-market-card__place"><MapPin aria-hidden="true" size={16} /><span>{market.place}</span></span> : null}
     <span className="mf-market-card__action">{copy.details}<ChevronRight aria-hidden="true" size={17} /></span>
   </button>;
 }
@@ -37,6 +37,9 @@ export function MarketDetail({ market, language = "it", now = new Date(), radius
   const source = safeMarketUrl(market.url);
   const stale = marketDay(now) > catalogue.validThrough || (market.validThrough && marketDay(now) > market.validThrough);
   const directions = marketDirectionsUrl(market);
+  const hours = String(market.hours || "").trim();
+  const hoursAlreadyInCadence = hours && String(market.cadence || "").toLocaleLowerCase("it").includes(hours.toLocaleLowerCase("it"));
+  const holidayAdviceInNote = /\bfestiv/i.test(market.scheduleNote || "");
   return <article className="mf-market-detail">
     <p className="mf-market-detail__kicker">{market.comune} · {market.prov} · {marketKindLabel(market)}</p>
     <h3 ref={titleRef} tabIndex={-1}>{market.name}</h3>
@@ -44,9 +47,10 @@ export function MarketDetail({ market, language = "it", now = new Date(), radius
       {directions ? <a className="mf-market-link" href={directions} target="_blank" rel="noopener noreferrer"><Navigation size={17} aria-hidden="true" />{copy.directions}</a> : null}
     </section>
     <section><h4><CalendarDays aria-hidden="true" size={18} />{copy.when}</h4><p>{market.cadence}</p>
-      {market.hours ? <p>{market.hours}</p> : null}
+      {hours && !hoursAlreadyInCadence ? <p>{hours}</p> : null}
       {market.scheduleNote ? <p>{market.scheduleNote}</p> : null}
-      <p className="mf-markets-note">{stale ? copy.stale : market.group === "regular" ? copy.usualNote : copy.dateNote}</p>
+      {stale || market.group === "occasional" || !holidayAdviceInNote
+        ? <p className="mf-markets-note">{stale ? copy.stale : market.group === "regular" ? copy.usualNote : copy.dateNote}</p> : null}
     </section>
     {market.group === "occasional" || dates.length ? <section>
       <h4>{copy.dates}</h4>

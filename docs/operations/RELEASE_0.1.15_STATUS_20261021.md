@@ -1,5 +1,7 @@
 # Stato release 0.1.15 e lavoro salvato — aggiornamento sorgenti del 24 ottobre 2026
 
+**Mercati, pilota locale dell'8 novembre 2026.** La proiezione delle 42 schede selezionate è stata verificata su esempi rappresentativi nel browser locale; il ramo app compatta l'elenco e il dettaglio. 5.193 test frontend, lint e build PASS. [Esito e limite](MERCATI_CONTROLLO_PANNELLO_20261108.md#prova-visiva-della-selezione-privata-nel-pilota-locale). Il bootstrap storico contiene ancora 53 schede documentate, fra cui tre di Sesto sospese nel pannello: prima della distribuzione va allineato insieme al catalogo pubblico. Revisione pubblica 0, `main`, versione, AAB e app Web/Android distribuite invariati; prova su telefono aperta.
+
 **Mercati, ultime schede dell'8 novembre 2026.** Archivio amministrativo privato alla revisione 55: 42 schede selezionate, 25 sospese, 33 bozze. Integrità e proiezione a secco verificate senza errori tecnici; [esiti e limiti editoriali](MERCATI_CONTROLLO_PANNELLO_20261108.md#ultime-sette-schede-ricorrenti--revisione-privata-55). Catalogo pubblico 0, versione, `main`, AAB e app Web/Android distribuite invariati.
 
 **Mercati, riscontro delle 14 schede, 8 novembre 2026.** Fonti collegate ricontrollate per cadenza, sede, orari dichiarati e date occasionali già presenti nell'archivio: nessuna discrepanza da correggere. [Esiti e limiti](MERCATI_CONTROLLO_PANNELLO_20261108.md#riscontro-delle-14-schede-già-selezionate-8-novembre). Archivio privato 30, catalogo pubblico 0, app distribuite e versione invariati.

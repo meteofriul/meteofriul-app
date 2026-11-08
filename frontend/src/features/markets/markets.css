@@ -38,6 +38,10 @@ html:not([data-theme="dark"]) .mf-app-shell.is-definitive-app .mf-markets-tabs b
 .mf-market-card__when, .mf-market-card__place { display: flex; align-items: flex-start; gap: 7px; font-size: var(--mf-text-sm); line-height: var(--mf-line-body); }
 .mf-market-card__when { margin-top: 4px; }
 .mf-market-card__place { color: var(--mf-muted); }
+.mf-market-card__when > span, .mf-market-card__place > span {
+  display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: 2;
+  overflow: hidden; min-width: 0;
+}
 .mf-market-card__notice { display: flex; align-items: center; gap: 6px; color: var(--mf-muted); font-size: var(--mf-text-xs); line-height: var(--mf-line-title); }
 .mf-market-card svg { flex-shrink: 0; margin-top: 2px; }
 .mf-market-card__action { display: flex; align-items: center; justify-content: space-between; padding-top: 10px; margin-top: auto; color: var(--mf-blue); font-size: var(--mf-text-sm); font-weight: 800; }

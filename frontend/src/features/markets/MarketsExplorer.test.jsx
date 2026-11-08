@@ -2,7 +2,7 @@
 import { act } from "react";
 import { createRoot } from "react-dom/client";
 import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
-import { MarketsEntry, MarketsExplorer } from "./MarketsExplorer";
+import { MarketDetail, MarketsEntry, MarketsExplorer } from "./MarketsExplorer";
 import { EventPreviewPanel, EventsView } from "../events/EventsView";
 import { buildEventsViewModel } from "../events/eventsViewModel";
 import { mergeMarketEvents } from "./marketsCatalog";
@@ -27,6 +27,22 @@ afterEach(async () => {
 });
 async function click(node) { await act(async () => node.click()); }
 describe("market navigation", () => {
+  it("keeps the market detail concise without hiding a verified numeric time", async () => {
+    const catalogue = { validThrough: "2027-02-07", dates: [], tombstones: [] };
+    const market = {
+      id: "R-UDA-M052", name: "Mercato settimanale di Cervignano del Friuli", comune: "Cervignano del Friuli",
+      prov: "UD", group: "regular", quality: "Documentato", cadence: "Ogni giovedì mattina", hours: "Mattina",
+      place: "Piazza Indipendenza", checked: "2026-11-08", scheduleNote: "Nei festivi verifica l'avviso comunale.",
+    };
+    await act(async () => root.render(<MarketDetail market={market} now={now} catalogue={catalogue} />));
+    const when = host.querySelectorAll(".mf-market-detail section")[1];
+    expect([...when.querySelectorAll("p")].map(node => node.textContent)).toEqual([
+      "Ogni giovedì mattina", "Nei festivi verifica l'avviso comunale.",
+    ]);
+    await act(async () => root.render(<MarketDetail market={{ ...market, cadence: "Ogni sabato", hours: "08:30–12:30", scheduleNote: "Sede in viale Libertà." }} now={now} catalogue={catalogue} />));
+    expect(when.textContent).toContain("08:30–12:30");
+    expect(when.textContent).toContain("Il giorno abituale non conferma la singola apertura.");
+  });
   it("opens from Scopri and retains period, radius and list scroll when returning from detail", async () => {
     const open = vi.fn(), close = vi.fn(), viewEvent = vi.fn();
     await act(async () => root.render(<><MarketsEntry onOpen={open} />

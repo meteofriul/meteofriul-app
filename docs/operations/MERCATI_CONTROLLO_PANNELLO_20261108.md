@@ -1,5 +1,39 @@
 # Mercati — controllo del pannello e delle schede, 8 novembre 2026
 
+## Prova visiva della selezione privata nel pilota locale
+
+La proiezione delle **42 schede selezionate** alla revisione privata 55 è stata
+caricata in un archivio SQLite isolato e osservata nel pilota Web locale sulla
+porta 5174. Il servizio di prova ha restituito una proiezione candidata alla
+revisione 1; questo numero non è una revisione pubblicata. Sono stati aperti
+l'elenco e il dettaglio di Pordenone, Cividale, Spilimbergo e Cervignano,
+verificando titolo, cadenza, sede, fonte e collegamento alle indicazioni Maps.
+È stata controllata anche la resa di una sede lunga a Monfalcone e la vista
+«Oggi». Le tre schede sospese di Sesto non comparivano nella proiezione privata.
+La prova copre questi esempi nel browser locale, non tutte le 42 schede su un
+telefono reale.
+
+Nel ramo app, l'elenco limita a due righe cadenze e sedi lunghe, lasciando il
+testo completo nel dettaglio. Il dettaglio evita la ripetizione di «Mattina»
+quando è già nella cadenza e non ripete l'avviso generico sui festivi se una
+nota specifica li descrive già. È stato aggiunto un test che conserva la
+visibilità di un orario numerico verificato. La prova visiva nel browser ha
+confermato la resa di Cervignano e Monfalcone dopo la modifica.
+La verifica del ramo ha superato **5.193 test frontend** (13 saltati), lint e
+build Web con service worker. L'ambiente disponibile usa Node 24/npm 11,
+mentre il progetto prescrive Node 22.17.1/npm 10.9.2.
+
+**Allineamento necessario alla prima pubblicazione:** il file storico
+incorporato nell'app contiene 60 schede, di cui 53 documentate, comprese M013,
+M014 e M015 di Sesto; il catalogo pubblico del servizio è ancora alla revisione
+0 e nel pilota locale presentava 53 schede. La sola selezione privata non ritira
+queste voci dalle versioni che leggono ancora il catalogo pubblico o il
+bootstrap incorporato. Prima di distribuire Mercati occorre preparare e
+verificare insieme il catalogo pubblico approvato, il bootstrap dell'app e i
+relativi indici di identità e revoca. Nessuno dei due cataloghi distribuiti è
+stato modificato in questa prova. Restano la verifica su telefono Android e
+quella Safari/iPhone previste dal percorso di rilascio.
+
 ## Ultime sette schede ricorrenti — revisione privata 55
 
 Sono state controllate anche le sette schede lasciate per ultime nel
