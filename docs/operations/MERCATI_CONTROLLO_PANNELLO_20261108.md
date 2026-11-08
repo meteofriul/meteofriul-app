@@ -1,13 +1,13 @@
 # Mercati — controllo del pannello e delle schede, 8 novembre 2026
 
-## Avanzamento delle schede fisse — revisione privata 38
+## Avanzamento delle schede fisse — revisione privata 48
 
-Il controllo successivo ha portato **otto schede ricorrenti** da bozza o sospesa
+Il controllo successivo ha portato **diciotto schede ricorrenti** da bozza o sospesa
 a «selezionata per la prossima pubblicazione». Il pannello online conferma
-**100 schede: 29 selezionate, 28 sospese e 43 bozze**. La revisione privata è
-**38**, quella pubblica resta **0**. I cinque blocchi Firestore sono stati riletti
+**100 schede: 39 selezionate, 26 sospese e 35 bozze**. La revisione privata è
+**48**, quella pubblica resta **0**. I cinque blocchi Firestore sono stati riletti
 e confrontati con lo SHA-256 del puntatore. `publication_errors` restituisce
-`[]`; la proiezione *a secco* contiene 29 mercati, 130 date e 32 rimozioni.
+`[]`; la proiezione *a secco* contiene 39 mercati, 130 date e 30 rimozioni.
 Questo è un controllo tecnico e non sostituisce la verifica editoriale o la
 prova sull'app. L'app Web/Android distribuita non è cambiata; nessun job è
 stato creato.
@@ -22,23 +22,32 @@ stato creato.
 | R-UDA-M060 Latisana | [Regolamento comunale](https://www.comune.latisana.ud.it/media/files/030046/attachment/COMMERCIO_AREE_PUBBLICHE_REGOLAMENTO_TESTO_COORDINATO_01.pdf): mercoledì, centro, vendita 08:00–13:00; un [atto comunale 2026](https://www.comune.latisana.ud.it/media/files/md/030046/DELIBERA_65_2026_Parcheggio_Via_Percoto.pdf) conferma la ricorrenza. Indicazioni verso Piazza Garibaldi. | Allestimenti e manifestazioni possono spostare alcuni banchi. |
 | M019 Pasiano, mercato agricolo | [Pagina](https://comune.pasiano.pn.it/it/novita-213726/notizie-213727/mercati-241366) e [regolamento comunale, art. 8](https://www.comune.pasiano.pn.it/media/files/093029/attachment/Regolamento_Mercato_Agricolo_-_Pasiano_yG7mja0.pdf): sabato 07:00–13:00 in Piazza Alcide De Gasperi. Registrata come **annullata** l'edizione del 26 dicembre 2026, che è un sabato festivo. | La chiusura discende dalla regola generale del regolamento; un provvedimento successivo potrebbe modificarla. |
 | M016 Muggia | [PromoTurismoFVG](https://www.turismofvg.it/eventi/mercato-settimanale-480740) e [Comune](https://www.comune.muggia.ts.it/it/categories/mercato-9905): giovedì, circa 08:00–13:00, **sede temporanea** in Piazzale Alto Adriatico per i lavori al torrente Fugnan. | Validità della verifica limitata al **31 dicembre 2026**, termine della scheda turistica. Ricontrollare sede e prosecuzione prima di estendere; la vista «Tutti» dell'app può ancora mostrare la scheda dopo la scadenza, mentre «Oggi/Weekend» non genera più la ricorrenza. |
+| R-PN-M014 Caneva | [Guida del Distretto Alto Livenza 2026](https://www.distrettocommercioaltolivenza.it/alla-scoperta-delle-tradizioni-del-distretto-feste-sagre-e-mercati-storici-da-non-perdere/): venerdì mattina in Piazza Martiri Garibaldini. | Orario numerico non attestato; verificare i venerdì festivi. |
+| R-PN-M016 Coltura di Polcenigo | [Guida del Distretto Alto Livenza 2026](https://www.distrettocommercioaltolivenza.it/alla-scoperta-delle-tradizioni-del-distretto-feste-sagre-e-mercati-storici-da-non-perdere/): mercoledì mattina in via dell'Ovre presso la chiesa. | Orario numerico non attestato; verificare i festivi, incluso il 6 gennaio. |
+| R-UDA-M012 Basiliano | [Calendario comunale 2026–28](https://www.comune.basiliano.ud.it/it/events): venerdì mattina nelle vie del centro. | Piazza Municipio è soltanto il punto indicativo per le indicazioni; il [vecchio regolamento](https://www.comune.basiliano.ud.it/media/files/030009/attachment/sad_PYCK3_11-RegolamentoAreediMercato_EpUsP70.pdf) non basta per definire oggi l'intero perimetro. |
+| R-PN-M013 Maron di Brugnera | [Guida del Distretto 2026](https://www.distrettocommercioaltolivenza.it/alla-scoperta-delle-tradizioni-del-distretto-feste-sagre-e-mercati-storici-da-non-perdere/): mercoledì mattina, Piazza Mercato 12. | Una segnalazione secondaria su due spostamenti di novembre non è stata confermata da un atto comunale; la scheda indica la **sede abituale** e invita a verificare variazioni puntuali. |
+| R-PN-M066 San Vito al Tagliamento | [Ordinanza comunale 52/2026](https://backoffice-comuni.regione.fvg.it/media/files/md/093041/ORDINANZA_N._52_2026.pdf): mercato del venerdì in Piazza del Popolo. | La piazza è il punto principale; alcuni banchi possono occupare aree vicine. Gli orari della ZTL non sono stati scambiati per orari di vendita. |
+| R-PN-M002 Casarsa della Delizia | [Regolamento di polizia urbana](https://www.comune.casarsadelladelizia.pn.it/media/files/093010/attachment/POLIZIA_URBANA_TESTO_PER_SITO.pdf): martedì nel capoluogo; [planimetria storica](https://comune.casarsadelladelizia.pn.it/media/files/093010/attachment/Ordinanza_n._5a.pdf) e [relazione comunale](https://comune.casarsadelladelizia.pn.it/media/files/093010/attachment/DG0147-2023a.pdf) supportano Piazza Italia e via XXIV Maggio come sede abituale. | Spostamenti temporanei possibili; l'orario numerico precedente, privo di fonte datata, è stato tolto. |
+| M011 Gemona del Friuli | [Visit Gemona](https://visitgemona.com/servizi/contatti/) indica venerdì 08:00–13:00: primo e ultimo venerdì in piazza Antonio Comelli, gli altri in piazza del Ferro. Le [ordinanze comunali 2025](https://www.comune.gemona-del-friuli.ud.it/media/files/md/030043/ORDINANZA_N._129-2025.PDF) e [2026](https://www.comune.gemona-del-friuli.ud.it/media/files/md/030043/ORDINANZA_N._32-2026.PDF) confermano ulteriori trasferimenti temporanei. | Le indicazioni portano al Comune, non a una piazza fissa: verificare la sede del singolo venerdì. |
+| M009 Ronchi dei Legionari | [Bando comunale 2024](https://www.comune.ronchideilegionari.go.it/media/files/md/031016/BANDO_POSTEGGI_VACANTI_MERCATO_2024.pdf): mercoledì con posteggi in via Roma, piazza Unità e via VII Giugno. La [relazione comunale 2022](https://www.comune.ronchideilegionari.go.it/media/files/031016/attachment/RELAZIONE_SULLA_GESTIONE_2022.pdf) documenta l'eliminazione di via Duca d'Aosta e di parte di via Roma dal vecchio perimetro. | Piazza Unità è un punto di accesso. Nessun orario numerico verificato; nei festivi il [regolamento](https://www.comune.ronchideilegionari.go.it/media/files/md/031016/Regolamento_mercato_11.pdf) prevede di norma la sospensione, salvo ordinanza. |
+| R-PN-M054 Aviano | [Ricognizione comunale 2024](https://comune.aviano.pn.it/media/files/093004/attachment/determina_490_ricognizione.pdf): martedì, con posteggi nel centro e variazioni in piazza Duomo. La [relazione comunale 2025](https://www.comune.aviano.pn.it/media/files/093004/attachment/Allegato_3_Relazione_gestione_2025_bX7PgT2.pdf) conferma la riorganizzazione sperimentale della piazza. | Piazza Duomo è un riferimento, non il perimetro completo; orari di vendita non attestati. |
+| R-PN-M055 Maniago | [Rendiconto comunale 2024](https://www.comune.maniago.pn.it/media/files/093025/attachment/Relazione_Giunta_rendiconto_2024.pdf): mercato del lunedì. Il [bando comunale 2026](https://www.comune.maniago.pn.it/media/files/093025/attachment/AVVISO_PUBBLICO_SITO_RIAPERTURA_BANDO.pdf) conferma posteggi agricoli nel mercato in via Roma. | Il bando copre soltanto una parte dei posteggi; via Roma è un punto d'accesso, non l'intero mercato. Orario numerico non attestato. |
 
-Le sette schede con orizzonte ordinario sono verificate fino al **7 febbraio
+Le diciassette schede con orizzonte ordinario sono verificate fino al **7 febbraio
 2027**; M016 ha l'orizzonte breve sopra indicato. Le note pubbliche invitano a
 verificare i festivi e gli spostamenti senza presentare come certi orari o
 aperture che le fonti non attestano. La proiezione privata conserva per M019
 la data `2026-12-26` con stato `cancelled` e la corrispondente rimozione: la
 ricorrenza del sabato non la riapre in «Oggi/Weekend». La prova su dispositivo,
-il confronto visivo delle otto schede nell'app e la prima pubblicazione
+il confronto visivo delle diciotto schede nell'app e la prima pubblicazione
 restano da svolgere separatamente.
 
-Restano nel pannello, senza selezione, i casi in cui la sede o la regola è
-discordante o incompleta: Maron (spostamento di novembre non documentato da
-un atto originale), Ronchi, Gemona, San Vito, Aviano, Casarsa, Maniago,
-Basiliano, Caneva e Coltura. Per Aviano la [ricognizione comunale 2024](https://comune.aviano.pn.it/media/files/093004/attachment/determina_490_ricognizione.pdf)
-conferma il martedì ma rimanda la planimetria dello stato di fatto ad allegati
-non reperiti nel controllo; per Gemona le due pagine turistiche ufficiali
-continuano a indicare sedi diverse. Le sette schede con fonte debole elencate
+La selezione di Maron, Gemona, Aviano e Maniago riguarda la ricorrenza e un
+punto d'accesso esplicitamente descritto, senza far passare per certa la sede
+di ogni singolo banco o l'apertura in ciascun festivo. La proiezione tecnica
+non vale come conferma editoriale delle eccezioni: serve ancora la prova
+visiva e funzionale sull'app prima della prima pubblicazione. Le sette schede
+con fonte debole elencate
 nel [controllo delle 34 ricorrenze](MERCATI_FISSI_CONTROLLO_FONTI_20261107.md)
 restano l'ultimo gruppo da approfondire. Nessuna ricerca senza risultato è stata
 usata per concludere che un mercato non esiste.

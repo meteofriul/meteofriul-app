@@ -1,6 +1,6 @@
 # Allineamento della Web App con Android
 
-**Mercati, schede fisse dell'8 novembre 2026.** Otto schede ricorrenti aggiuntive sono preparate nell'archivio privato, revisione 38 con 29 selezionate; la revisione pubblica resta 0. [Dati, verifica tecnica e limiti](MERCATI_CONTROLLO_PANNELLO_20261108.md#avanzamento-delle-schede-fisse--revisione-privata-38). Nessuna nuova build o distribuzione Web/Android e nessuna qualifica su telefono o Safari/iPhone; la parità degli artefatti pubblici non cambia.
+**Mercati, schede fisse dell'8 novembre 2026.** Diciotto schede ricorrenti aggiuntive sono preparate nell'archivio privato, revisione 48 con 39 selezionate; la revisione pubblica resta 0. [Dati, verifica tecnica e limiti](MERCATI_CONTROLLO_PANNELLO_20261108.md#avanzamento-delle-schede-fisse--revisione-privata-48). Nessuna nuova build o distribuzione Web/Android e nessuna qualifica su telefono o Safari/iPhone; la parità degli artefatti pubblici non cambia.
 
 **Mercati, riscontro delle 14 schede, 8 novembre 2026.** Le fonti collegate confermano i dati stabili e le date occasionali già registrate; non è stato cambiato il catalogo. [Esiti e limiti](MERCATI_CONTROLLO_PANNELLO_20261108.md#riscontro-delle-14-schede-già-selezionate-8-novembre). Revisione privata 30, pubblica 0; nessuna nuova build, distribuzione o qualifica Web/Android e parità degli artefatti pubblici invariata.
 

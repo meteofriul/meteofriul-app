@@ -1,6 +1,6 @@
 # Stato release 0.1.15 e lavoro salvato — aggiornamento sorgenti del 24 ottobre 2026
 
-**Mercati, schede fisse dell'8 novembre 2026.** Archivio amministrativo privato alla revisione 38: 29 schede selezionate, 28 sospese, 43 bozze. L'integrità della revisione e la proiezione a secco sono verificate senza errori tecnici; [fonti e limiti editoriali](MERCATI_CONTROLLO_PANNELLO_20261108.md#avanzamento-delle-schede-fisse--revisione-privata-38). Catalogo pubblico 0, versione, `main`, AAB e app Web/Android distribuite invariati.
+**Mercati, schede fisse dell'8 novembre 2026.** Archivio amministrativo privato alla revisione 48: 39 schede selezionate, 26 sospese, 35 bozze. L'integrità della revisione e la proiezione a secco sono verificate senza errori tecnici; [fonti e limiti editoriali](MERCATI_CONTROLLO_PANNELLO_20261108.md#avanzamento-delle-schede-fisse--revisione-privata-48). Catalogo pubblico 0, versione, `main`, AAB e app Web/Android distribuite invariati.
 
 **Mercati, riscontro delle 14 schede, 8 novembre 2026.** Fonti collegate ricontrollate per cadenza, sede, orari dichiarati e date occasionali già presenti nell'archivio: nessuna discrepanza da correggere. [Esiti e limiti](MERCATI_CONTROLLO_PANNELLO_20261108.md#riscontro-delle-14-schede-già-selezionate-8-novembre). Archivio privato 30, catalogo pubblico 0, app distribuite e versione invariati.
 
