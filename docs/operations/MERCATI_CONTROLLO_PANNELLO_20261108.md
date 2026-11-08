@@ -1,5 +1,36 @@
 # Mercati — controllo del pannello e delle schede, 8 novembre 2026
 
+## Ultime sette schede ricorrenti — revisione privata 55
+
+Sono state controllate anche le sette schede lasciate per ultime nel
+[registro delle fonti](MERCATI_FISSI_CONTROLLO_FONTI_20261107.md). Tre sono
+state selezionate per una futura pubblicazione; quattro restano private e non
+selezionate. Le correzioni sono nell'archivio online del pannello, senza job e
+senza modificare l'app distribuita.
+
+| Scheda | Esito e dati verificati | Limite conservato |
+| --- | --- | --- |
+| M010 Cividale del Friuli | **Selezionata.** L'[agenda comunale di febbraio 2026](https://www.comune.cividale-del-friuli.ud.it/media/files/030026/attachment/Agenda_di_Febbraio_2026_compressed.pdf) conferma il mercato cittadino ogni sabato presso l'ex stazione in viale Libertà; la [scheda comunale](https://comune.cividale-del-friuli.ud.it/it/vivere-il-comune-70210/eventi-70212/mercato-settimanale-cittadino-110451) riporta 08:30–12:30. Indicazioni verso viale Libertà. | Il [PIAO 2026–28](https://www.comune.cividale-del-friuli.ud.it/media/files/030026/attachment/PIAO_2026_-_2028.pdf) programma lavori nell'area da dicembre 2026: verificare eventuali spostamenti e i sabati festivi. |
+| R-PN-M063 Spilimbergo | **Selezionata.** Il [regolamento comunale](https://comune.spilimbergo.pn.it/media/files/093044/attachment/Regolamento_Aree_Pubbliche_modificato_con_delibera_CC_del_2016_c3JXv8M.pdf) documenta il sabato e l'area centrale; il [DUP 2025–27](https://www.comune.spilimbergo.pn.it/media/files/093044/attachment/dup_2025_2027.pdf) prevede la vigilanza del mercato settimanale. Sede descritta come centro tra piazza Borgolucido e vie vicine; indicazioni verso la piazza. | Orario numerico rimosso perché la fonte storica confonde occupazione dei posteggi e vendita. Il perimetro corrente e i festivi possono variare. La vecchia edizione del 25 aprile 2026 resta non confermata. |
+| R-UDA-M052 Cervignano del Friuli | **Selezionata.** Il [regolamento comunale](https://www.comune.cervignanodelfriuli.ud.it/media/files/md/030023/regolamento_per_la_disciplina_del_mercato_settimanale.pdf) indica il giovedì, Piazza Indipendenza e vie vicine; la [guida del Comune](https://www.comune.cervignanodelfriuli.ud.it/media/files/md/030023/209guidastorico_art.pdf) lo colloca il giovedì mattina. Indicazioni verso la piazza. | Nessun orario numerico attestato. Il regolamento prevede di norma la soppressione nei festivi salvo ordinanza: la scheda invita a verificare l'eccezione. |
+| R-GTS-M013 Staranzano | **Bozza.** Il [provvedimento comunale 106/2025](https://www.comune.staranzano.go.it/media/files/031023/attachment/delibera_106_29_8.pdf) avvia la selezione per sei posteggi e cita concessioni scadute. È stata aggiunta una destinazione indicativa verso Piazza Dante Alighieri. | Non è stato trovato l'esito della procedura o un calendario operativo 2026. Il [PDF del regolamento](https://www.comune.staranzano.go.it/media/files/md/031023/REGOLAMENTO_COMMERCIO_SU_AREE_PUBBLICHE.pdf) ha i campi di approvazione vuoti: non è stato usato come prova autonoma dell'attività attuale. |
+| M013 Sesto capoluogo | **Sospesa.** In scheda restano mercoledì e via Riva, come dati da confermare. | Il [post Facebook comunale](https://www.facebook.com/comune.sestoalreghena/posts/1335292495294213/) indicato come fonte non è stato leggibile; manca un riscontro istituzionale attuale per giorno e sede. |
+| M014 Bagnarola | **Sospesa.** In scheda resta il martedì, senza punto per le indicazioni. | Il post comunale non è stato leggibile. La [Piazza IV Novembre](https://www.comune.sesto-al-reghena.pn.it/vivere-il-comune/territorio/10-000-passi-tra-i-luoghi-cari-a-lionello-fioretti/) è documentata come centro della frazione, non come sede del mercato nel 2026. |
+| M015 Ramuscello | **Sospesa.** In scheda resta il lunedì mattina, senza punto per le indicazioni. | Il post comunale non è stato leggibile. La [pagina comunale](https://www.comune.sesto-al-reghena.pn.it/vivere-il-comune/luoghi/centro-polifunzionale-di-ramuscello/) localizza un centro in via Battaglione Gemona, non il mercato; i dati di mappa non bastano per selezionarlo. |
+
+Le tre schede selezionate hanno controllo delle fonti datato **8 novembre 2026**
+e validità ordinaria fino al **7 febbraio 2027**. Le motivazioni delle quattro
+esclusioni sono state registrate nelle note del pannello. «Sospesa» qui non
+significa che il mercato non esista: significa che la fonte disponibile non
+permette ancora di proporre con sicurezza quei dati nell'app.
+
+Il pannello e la lettura diretta Firestore confermano la **revisione privata
+55**: 100 schede, 223 edizioni, **42 selezionate, 25 sospese e 33 bozze**.
+La lettura dei blocchi verifica lo SHA-256 del puntatore; `publication_errors`
+è `[]` e la proiezione *a secco* contiene 42 mercati, 130 date e 29 rimozioni.
+La **revisione pubblica è 0**. Nessuna prova su telefono, pubblicazione del
+catalogo o distribuzione Web/Android è stata eseguita in questo passaggio.
+
 ## Avanzamento delle schede fisse — revisione privata 48
 
 Il controllo successivo ha portato **diciotto schede ricorrenti** da bozza o sospesa
@@ -47,10 +78,10 @@ punto d'accesso esplicitamente descritto, senza far passare per certa la sede
 di ogni singolo banco o l'apertura in ciascun festivo. La proiezione tecnica
 non vale come conferma editoriale delle eccezioni: serve ancora la prova
 visiva e funzionale sull'app prima della prima pubblicazione. Le sette schede
-con fonte debole elencate
-nel [controllo delle 34 ricorrenze](MERCATI_FISSI_CONTROLLO_FONTI_20261107.md)
-restano l'ultimo gruppo da approfondire. Nessuna ricerca senza risultato è stata
-usata per concludere che un mercato non esiste.
+con fonte debole elencate nel
+[controllo delle 34 ricorrenze](MERCATI_FISSI_CONTROLLO_FONTI_20261107.md)
+sono state approfondite nella sezione iniziale di questo documento. Nessuna
+ricerca senza risultato è stata usata per concludere che un mercato non esiste.
 
 ## Stato osservato prima dell'avanzamento — revisione 30
 
