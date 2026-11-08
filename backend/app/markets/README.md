@@ -21,7 +21,9 @@ Meteo, Eventi, Sponsor e Community.
 L'app puo selezionare questo servizio con `VITE_MARKETS_API_BASE`, URL HTTPS
 terminante in `/api`; senza override mantiene la base API esistente. La
 distribuzione del servizio non aggiorna automaticamente Web o Android.
-Il pannello usa la medesima variabile per il suo collegamento amministrativo.
+Il pannello accetta la medesima variabile come override e usa la base di
+produzione Mercati come predefinita nella build Hosting. Il collegamento e
+stato verificato con login e salvataggio online l'8 novembre 2026.
 La preparazione di codice o build non autorizza la distribuzione del pannello,
 del servizio o dell'app. Il punto di arresto e le risorse già predisposte sono
 registrati nel [verbale del 30 ottobre](../../../docs/operations/MERCATI_ATTIVAZIONE_ONLINE_20261030.md).
