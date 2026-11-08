@@ -1,5 +1,7 @@
 # Allineamento della Web App con Android
 
+**Consiglio del giorno, 8 novembre — ramo di preparazione.** L'API e il lettore Home sono nel ramo `codex/editorial-publication-20261108`, con entrambi gli interruttori editoriali disattivati per impostazione predefinita. La modifica non è distribuita su Web o Android; nessun artefatto di release o controllo Safari/dispositivo è stato eseguito. La futura attivazione richiede una base frontend approvata comune a Web e Android, il servizio verificato con il pannello, e i rispettivi controlli del runbook.
+
 **Sintesi mattutina, 7 novembre — job backend aggiornato.** Il testo della notifica gestisce dati di precipitazione incompleti senza dedurre assenza di pioggia. [PR 44](https://github.com/meteofriul/meteofriul-app/pull/44), CI PR/main, prova su un telefono e [readback del job](MORNING_SUMMARY_SOURCE_QUALITY_DEPLOY_20261107.md) verificati; la prima corsa ordinaria resta aperta. Frontend, contratti dati, artefatti e pubblicazioni Web/Android invariati; nessuna nuova qualifica Safari o Android.
 
 **Sintesi mattutina e avvisi, 6 novembre — backend distribuito.** Il job mattutino ritira i token FCM invalidi confermati; le sole policy di errore mattino/sera notificano l'apertura. [Digest, CI, audit e limiti](MORNING_SUMMARY_ALERT_NOISE_DEPLOY_20261106.md). Nessun cambio al frontend o ai contratti dati Web/Android; nessun artefatto di release rigenerato o pubblicato e nessuna nuova qualifica browser/dispositivo.

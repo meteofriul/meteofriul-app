@@ -51,4 +51,15 @@ describe("HomeBulletinSummary", () => {
     expect(markup).toContain("mf-home-bulletin-card__advice-skeleton-copy");
     expect(markup).not.toContain("Consigliato");
   });
+
+  it("keeps the OSMER headline above the published editorial message", () => {
+    const markup = renderToStaticMarkup(<HomeBulletinSummary bulletin={{
+      title: "Sintesi", headline: "Cielo variabile", dateLabel: "Oggi · OSMER 12:12",
+      advice: { source: "editorial", group: "message", type: "message",
+        title: "Meteo Friûl ti accompagna", label: "Scopri cosa fare oggi." },
+    }} />);
+    expect(markup).toContain('data-advice-source="editorial"');
+    expect(markup.indexOf("Cielo variabile")).toBeLessThan(markup.indexOf("Meteo Friûl ti accompagna"));
+    expect(markup).toContain("Scopri cosa fare oggi.");
+  });
 });

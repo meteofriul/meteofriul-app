@@ -1,5 +1,8 @@
 import {
   CircleCheck,
+  Lightbulb,
+  Megaphone,
+  Sparkles,
   CloudLightning,
   Eye,
   Snowflake,
@@ -22,6 +25,9 @@ const ADVICE_ICONS = {
   storm: CloudLightning,
   temperature: Thermometer,
   wind: Wind,
+  advice: Lightbulb,
+  news: Sparkles,
+  message: Megaphone,
 };
 
 export function HomeBulletinSummary({ bulletin, onOpen }) {
@@ -56,7 +62,13 @@ export function HomeBulletinSummary({ bulletin, onOpen }) {
                   <AdviceIcon size={20} strokeWidth={2.25} />
                 </span>
               ) : null}
-              <span className="mf-home-bulletin-card__advice-copy">{bulletin.advice.label}</span>
+              <span className="mf-home-bulletin-card__advice-copy">
+                {bulletin.advice.source === "editorial" ? <>
+                  <span className="mf-home-bulletin-card__advice-category">{({ advice: "Consiglio", news: "Novità", message: "Comunicazione" })[bulletin.advice.type]} · Meteo Friûl</span>
+                  <strong className="mf-home-bulletin-card__advice-title">{bulletin.advice.title}</strong>
+                  <span className="mf-home-bulletin-card__advice-message">{bulletin.advice.label}</span>
+                </> : bulletin.advice.label}
+              </span>
             </div>
           ) : adviceStatus === "pending" ? (
             <div

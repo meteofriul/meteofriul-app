@@ -1456,6 +1456,46 @@ html[data-theme="dark"] .mf-home-bulletin {
   min-width: 0;
 }
 
+.mf-home-bulletin-card__advice[data-advice-source="editorial"] {
+  align-items: start;
+}
+
+.mf-home-bulletin-card__advice[data-advice-source="editorial"][data-advice-group="advice"] {
+  --mf-home-advice-accent: #934b37;
+}
+
+.mf-home-bulletin-card__advice[data-advice-source="editorial"][data-advice-group="news"] {
+  --mf-home-advice-accent: #164e82;
+}
+
+.mf-home-bulletin-card__advice[data-advice-source="editorial"][data-advice-group="message"] {
+  --mf-home-advice-accent: #175f55;
+}
+
+.mf-home-bulletin-card__advice-category,
+.mf-home-bulletin-card__advice-title,
+.mf-home-bulletin-card__advice-message {
+  display: block;
+  overflow-wrap: anywhere;
+}
+
+.mf-home-bulletin-card__advice-category {
+  color: var(--mf-home-advice-accent);
+  font-size: .7rem;
+  font-weight: 750;
+}
+
+.mf-home-bulletin-card__advice-title {
+  margin-top: 3px;
+  font-size: var(--mf-text-sm);
+}
+
+.mf-home-bulletin-card__advice-message {
+  margin-top: 3px;
+  font-weight: 500;
+  white-space: pre-wrap;
+}
+
 .mf-home-bulletin-card__advice--pending {
   --mf-home-advice-accent: #94a3b8;
 }
