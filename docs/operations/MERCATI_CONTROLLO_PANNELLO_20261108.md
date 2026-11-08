@@ -1,6 +1,49 @@
 # Mercati — controllo del pannello e delle schede, 8 novembre 2026
 
-## Stato osservato
+## Avanzamento delle schede fisse — revisione privata 38
+
+Il controllo successivo ha portato **otto schede ricorrenti** da bozza o sospesa
+a «selezionata per la prossima pubblicazione». Il pannello online conferma
+**100 schede: 29 selezionate, 28 sospese e 43 bozze**. La revisione privata è
+**38**, quella pubblica resta **0**. I cinque blocchi Firestore sono stati riletti
+e confrontati con lo SHA-256 del puntatore. `publication_errors` restituisce
+`[]`; la proiezione *a secco* contiene 29 mercati, 130 date e 32 rimozioni.
+Questo è un controllo tecnico e non sostituisce la verifica editoriale o la
+prova sull'app. L'app Web/Android distribuita non è cambiata; nessun job è
+stato creato.
+
+| Scheda | Dati preparati e fonte | Limite esplicito |
+| --- | --- | --- |
+| M007 Cormons | [Regolamento comunale](https://www.comune.cormons.go.it/media/files/md/031002/REGOLAMENTO_COMUNALE_PER_LA_DISCIPLINA_DELLATTIVIT%C3%80_COMMERCIALE_SULLE_AREE_PUBBLICHE.pdf): venerdì, Piazzale Antonio Sfiligoi e via Pescheria, vendita 07:45–13:30. Indicazioni verso il piazzale. | Anticipo o apertura nei festivi solo su decisione del Comune. |
+| M008 Monfalcone | [Allegato al regolamento comunale](https://www.comune.monfalcone.go.it/media/files/031012/attachment/ALLEGATO_A.PDF): mercoledì, vie del centro, 08:00–14:00; l'[atto comunale 2026](https://api.comune.monfalcone.go.it/F356/amministrazione-aperta/scarica-documento/337861/17317) conferma il mercato attivo. Indicazioni verso Piazza della Repubblica. | La posizione dei singoli banchi può variare. |
+| M001 Pordenone | [Pagina e calendario comunali](https://www.comune.pordenone.it/it/argomenti/mercato/cittadino): mercoledì e sabato 08:00–14:00, centro, indicazioni verso Piazza XX Settembre. Conservate l'edizione annullata del 26 dicembre e quella confermata del 6 gennaio. | L'[avviso di spostamento](https://www.comune.pordenone.it/it/novita/mercato-cittadino-spostamento-dei-banchi-in-piazza-xx-settembre) riguarda alcuni banchi; gli eventuali mercati straordinari del 13/20 dicembre non sono stati aggiunti. |
+| R-PN-M062 Roveredo in Piano | [Atto di trasferimento definitivo](https://www.comune.roveredoinpiano.pn.it/media/files/md/093036/Delibera_UTI_n._32_del_17_04_2019.PDF) verso Piazzale Aldo Moro e [regolamento](https://www.comune.roveredoinpiano.pn.it/media/files/md/093036/Regolamento_C.U.P._Mercato_2023__EOEyvuN.pdf): giovedì 07:00–14:00. | Eventuali variazioni festive richiedono un avviso comunale. |
+| M012 Pasiano, mercato ordinario | [Pagina comunale](https://comune.pasiano.pn.it/it/novita-213726/notizie-213727/mercati-241366): venerdì in Piazza Alcide De Gasperi; indicazioni aggiunte. | La pagina non dà un orario di vendita: il campo resta vuoto. |
+| R-UDA-M060 Latisana | [Regolamento comunale](https://www.comune.latisana.ud.it/media/files/030046/attachment/COMMERCIO_AREE_PUBBLICHE_REGOLAMENTO_TESTO_COORDINATO_01.pdf): mercoledì, centro, vendita 08:00–13:00; un [atto comunale 2026](https://www.comune.latisana.ud.it/media/files/md/030046/DELIBERA_65_2026_Parcheggio_Via_Percoto.pdf) conferma la ricorrenza. Indicazioni verso Piazza Garibaldi. | Allestimenti e manifestazioni possono spostare alcuni banchi. |
+| M019 Pasiano, mercato agricolo | [Pagina](https://comune.pasiano.pn.it/it/novita-213726/notizie-213727/mercati-241366) e [regolamento comunale, art. 8](https://www.comune.pasiano.pn.it/media/files/093029/attachment/Regolamento_Mercato_Agricolo_-_Pasiano_yG7mja0.pdf): sabato 07:00–13:00 in Piazza Alcide De Gasperi. Registrata come **annullata** l'edizione del 26 dicembre 2026, che è un sabato festivo. | La chiusura discende dalla regola generale del regolamento; un provvedimento successivo potrebbe modificarla. |
+| M016 Muggia | [PromoTurismoFVG](https://www.turismofvg.it/eventi/mercato-settimanale-480740) e [Comune](https://www.comune.muggia.ts.it/it/categories/mercato-9905): giovedì, circa 08:00–13:00, **sede temporanea** in Piazzale Alto Adriatico per i lavori al torrente Fugnan. | Validità della verifica limitata al **31 dicembre 2026**, termine della scheda turistica. Ricontrollare sede e prosecuzione prima di estendere; la vista «Tutti» dell'app può ancora mostrare la scheda dopo la scadenza, mentre «Oggi/Weekend» non genera più la ricorrenza. |
+
+Le sette schede con orizzonte ordinario sono verificate fino al **7 febbraio
+2027**; M016 ha l'orizzonte breve sopra indicato. Le note pubbliche invitano a
+verificare i festivi e gli spostamenti senza presentare come certi orari o
+aperture che le fonti non attestano. La proiezione privata conserva per M019
+la data `2026-12-26` con stato `cancelled` e la corrispondente rimozione: la
+ricorrenza del sabato non la riapre in «Oggi/Weekend». La prova su dispositivo,
+il confronto visivo delle otto schede nell'app e la prima pubblicazione
+restano da svolgere separatamente.
+
+Restano nel pannello, senza selezione, i casi in cui la sede o la regola è
+discordante o incompleta: Maron (spostamento di novembre non documentato da
+un atto originale), Ronchi, Gemona, San Vito, Aviano, Casarsa, Maniago,
+Basiliano, Caneva e Coltura. Per Aviano la [ricognizione comunale 2024](https://comune.aviano.pn.it/media/files/093004/attachment/determina_490_ricognizione.pdf)
+conferma il martedì ma rimanda la planimetria dello stato di fatto ad allegati
+non reperiti nel controllo; per Gemona le due pagine turistiche ufficiali
+continuano a indicare sedi diverse. Le sette schede con fonte debole elencate
+nel [controllo delle 34 ricorrenze](MERCATI_FISSI_CONTROLLO_FONTI_20261107.md)
+restano l'ultimo gruppo da approfondire. Nessuna ricerca senza risultato è stata
+usata per concludere che un mercato non esiste.
+
+## Stato osservato prima dell'avanzamento — revisione 30
 
 Il pannello online `https://meteofriul-inserzioni.web.app/` apre l'archivio
 Mercati con il login Firebase del progetto. L'assenza della base API nella
@@ -32,7 +75,7 @@ non serve un catalogo pubblico; l'app Web e Android distribuite sono invariate.
 Nessun job è stato creato o riattivato. La prossima revisione generale rimane
 manuale, il 7 febbraio 2027.
 
-## Correzioni salvate nel catalogo privato
+## Correzioni precedenti, fino alla revisione 30
 
 | Scheda | Decisione | Controllo e correzione |
 | --- | --- | --- |
