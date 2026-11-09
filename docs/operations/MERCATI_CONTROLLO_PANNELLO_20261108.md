@@ -1,4 +1,38 @@
-# Mercati — controllo del pannello e delle schede, 8 novembre 2026
+# Mercati — controllo del pannello e delle schede, 8–9 novembre 2026
+
+## Prova interattiva dell'app nel pilota, 9 novembre 2026
+
+La funzione Mercati esiste nel ramo `codex/mercati-integration-20261028`, ma
+non è in `main` né in un'app distribuita. Il pilota locale sulla porta 5174 ha
+usato una copia SQLite isolata dello stato privato **55**: proiezione di prova
+alla revisione locale 2 con **42 schede, 130 date e 29 rimozioni**. La revisione
+pubblica online resta **0**. La revisione 2 serve soltanto a distinguere questa
+prova dalla cache di un precedente pilota; non è stata pubblicata.
+
+Nella viewport di **390 × 844 px**, i riquadri «Mercati e mercatini» di Scopri
+ed Eventi hanno aperto lo stesso catalogo. Per Cervignano, «Tutti» ha mostrato
+sei mercati abituali nel raggio impostato; «Oggi» ha mostrato Palmanova per
+lunedì 9 novembre, «Weekend» Grado per sabato. Apertura e ritorno dal dettaglio
+funzionano. Il dettaglio di Cervignano mostra sede, cadenza, nota sui festivi,
+fonte comunale, ultima verifica e collegamento Maps con Piazza Indipendenza.
+Le tre schede sospese di Sesto non compaiono nella proiezione privata.
+
+![Elenco Mercati nel pilota a 390 × 844 px](evidence/mercati-preview-20261109/catalogo-mercati-390x844.jpg)
+
+![Dettaglio Cervignano nel pilota a 390 × 844 px](evidence/mercati-preview-20261109/dettaglio-cervignano-390x844.jpg)
+
+**Testo da affinare:** nella nota di Cervignano la prima frase ripete il
+giovedì mattina e Piazza Indipendenza, già indicati nella cadenza e nella
+sezione «Dove». Il pannello può accorciarla conservando l'avvertenza sui
+festivi. Il filtro di categoria «Mercati» in Eventi include anche schede
+provenienti dalle fonti automatiche: per esempio «Mercatino dell'usato» di
+Staranzano da TurismoFVG, con giornate di apertura segnalate come da
+verificare. È distinto dalla scheda fissa di Staranzano rimasta bozza nel
+catalogo Mercati. Questa prova non qualifica le fonti automatiche di Eventi.
+
+Il pilota è stato lasciato aperto per la revisione del proprietario. Non è stata
+eseguita una prova sull'app Android installata né su Safari/iPhone; nessuna
+modifica al catalogo pubblico, al pannello o all'app distribuita.
 
 ## Prova visiva della selezione privata nel pilota locale
 
