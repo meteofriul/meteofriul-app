@@ -5,6 +5,7 @@ import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
 import { EventsView } from "./EventsView";
 import { buildEventsViewModel } from "./eventsViewModel";
 import { getMarket, mergeMarketEvents } from "../markets/marketsCatalog";
+import historicalCatalogue from "../../data/markets/catalogue2026.json";
 import { fetchLocalEventDetail } from "../../services/eventsApi";
 
 vi.mock("../../app/useBrowserDialogBack", () => ({ useBrowserDialogBack: () => {} }));
@@ -42,14 +43,14 @@ afterEach(async () => {
 });
 
 async function renderSource(events, { day = now, state = {} } = {}) {
-  const items = mergeMarketEvents(events, { location, radius: 5, now: day });
+  const items = mergeMarketEvents(events, { location, radius: 5, now: day, catalogue: historicalCatalogue });
   const model = buildEventsViewModel({ items, ...state }, { location, now: day });
-  await act(async () => root.render(<EventsView model={model} marketEventRequest={request} />));
+  await act(async () => root.render(<EventsView model={model} marketEventRequest={request} catalogue={historicalCatalogue} />));
 }
 
 describe("linked market preview and current Eventi contracts", () => {
   it("updates an already opened managed edition after relocation and closes it on withdrawal", async () => {
-    const market = getMarket("M035");
+    const market = getMarket("M035", historicalCatalogue);
     const catalogue = { schemaVersion: 2, validThrough: "2026-12-31", markets: [market], identities: [], tombstones: [],
       dates: [{ id: "edition-35", marketId: market.id, date: request.date, status: "published", source: market.url,
         venue: { id: "venue-1", place: "Piazza prima", directionsQuery: "Piazza prima, Pordenone" } }] };

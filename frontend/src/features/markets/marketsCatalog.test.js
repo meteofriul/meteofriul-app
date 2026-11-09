@@ -1,14 +1,35 @@
 import { describe, expect, it } from "vitest";
 import { buildEventsViewModel } from "../events/eventsViewModel";
+import historicalCatalogue from "../../data/markets/catalogue2026.json";
 import {
-  MARKET_CATALOGUE, eventMarketDays, findRequestedMarketEvent, getMarket, marketDay,
-  marketDirectionsUrl, matchMarket, mergeMarketEvents, publicMarkets, publishedMarketDates, selectMarkets, weekendMarketDays,
+  MARKET_CATALOGUE as candidateCatalogue, eventMarketDays, findRequestedMarketEvent as findRequestedMarketEventIn,
+  getMarket as getMarketIn, marketDay, marketDirectionsUrl, matchMarket as matchMarketIn,
+  mergeMarketEvents as mergeMarketEventsIn, publicMarkets as publicMarketsIn,
+  publishedMarketDates as publishedMarketDatesIn, selectMarkets as selectMarketsIn, weekendMarketDays,
 } from "./marketsCatalog";
+
+// These migration cases deliberately exercise the original 60-card seed.
+const MARKET_CATALOGUE = historicalCatalogue;
+const getMarket = (id, catalogue = historicalCatalogue) => getMarketIn(id, catalogue);
+const publicMarkets = (catalogue = historicalCatalogue) => publicMarketsIn(catalogue);
+const publishedMarketDates = (market, now, catalogue = historicalCatalogue) => publishedMarketDatesIn(market, now, catalogue);
+const selectMarkets = ({ catalogue = historicalCatalogue, ...options }) => selectMarketsIn({ ...options, catalogue });
+const mergeMarketEvents = (events, { catalogue = historicalCatalogue, ...options }) => mergeMarketEventsIn(events, { ...options, catalogue });
+const matchMarket = (event, catalogue = historicalCatalogue) => matchMarketIn(event, catalogue);
+const findRequestedMarketEvent = (events, request, now, catalogue = historicalCatalogue) => findRequestedMarketEventIn(events, request, now, catalogue);
 
 const pn = { city: "Pordenone", regionCode: "IT-36" };
 const ts = { city: "Trieste", regionCode: "IT-36" };
 const now = new Date("2026-10-15T10:00:00Z");
 describe("market catalogue and dated editions", () => {
+  it("packages the selected 42 cards and withdrawals for the next app build", () => {
+    expect(candidateCatalogue.markets).toHaveLength(42);
+    expect(candidateCatalogue.dates).toHaveLength(130);
+    expect(candidateCatalogue.tombstones).toHaveLength(29);
+    expect(candidateCatalogue.markets.every(market => market.status === "published" && market.quality === "Documentato")).toBe(true);
+    expect(["M013", "M014", "M015"].every(id => getMarketIn(id) === null)).toBe(true);
+    expect(["M013", "M014", "M015"].every(id => candidateCatalogue.tombstones.some(item => item.marketId === id))).toBe(true);
+  });
   it("keeps all source records but publishes only documented cards", () => {
     expect(MARKET_CATALOGUE.markets).toHaveLength(60);
     expect(MARKET_CATALOGUE.dates).toHaveLength(176);

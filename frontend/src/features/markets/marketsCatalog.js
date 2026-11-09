@@ -1,4 +1,4 @@
-import inventory from "../../data/markets/catalogue2026.json";
+import inventory from "../../data/markets/catalogueCandidate2026.json";
 import { FIXED_FVG_PLACES } from "../../data/fvgPlaces";
 import { isFvgLocation } from "../../domain/scope/productScope";
 import { parseEventDateRange, UPCOMING_WINDOW_DAYS } from "../events/eventsViewModel";

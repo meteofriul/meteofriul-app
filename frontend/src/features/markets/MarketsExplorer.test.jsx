@@ -6,6 +6,7 @@ import { MarketDetail, MarketsEntry, MarketsExplorer } from "./MarketsExplorer";
 import { EventPreviewPanel, EventsView } from "../events/EventsView";
 import { buildEventsViewModel } from "../events/eventsViewModel";
 import { mergeMarketEvents } from "./marketsCatalog";
+import historicalCatalogue from "../../data/markets/catalogue2026.json";
 
 vi.mock("../../services/localWeatherPilot", async importOriginal => ({
   ...await importOriginal(), isDefinitiveAppExperience: () => true,
@@ -46,7 +47,7 @@ describe("market navigation", () => {
   it("opens from Scopri and retains period, radius and list scroll when returning from detail", async () => {
     const open = vi.fn(), close = vi.fn(), viewEvent = vi.fn();
     await act(async () => root.render(<><MarketsEntry onOpen={open} />
-      <MarketsExplorer request={{ key: 1 }} location={pn} radius={5} onClose={close} onViewEvent={viewEvent} /></>));
+      <MarketsExplorer request={{ key: 1 }} location={pn} radius={5} onClose={close} onViewEvent={viewEvent} catalogue={historicalCatalogue} /></>));
     await click(button("Esplora nella tua zona")); expect(open).toHaveBeenCalledOnce();
     expect(host.querySelector("dialog").open).toBe(true);
     expect(document.body.style.overflow).toBe("hidden");
@@ -67,30 +68,30 @@ describe("market navigation", () => {
   });
   it("handles Escape as detail back, then close, and offers no false local results outside FVG", async () => {
     const close = vi.fn();
-    await act(async () => root.render(<MarketsExplorer request={{ key: 2, marketId: "M001" }} location={pn} onClose={close} />));
+    await act(async () => root.render(<MarketsExplorer request={{ key: 2, marketId: "M001" }} location={pn} onClose={close} catalogue={historicalCatalogue} />));
     const dialog = host.querySelector("dialog");
     await act(async () => dialog.dispatchEvent(new Event("cancel", { bubbles: true, cancelable: true })));
     expect(host.querySelector(".mf-market-detail")).toBeNull(); expect(close).not.toHaveBeenCalled();
     await act(async () => dialog.dispatchEvent(new Event("cancel", { bubbles: true, cancelable: true })));
     expect(close).toHaveBeenCalledOnce();
-    await act(async () => root.render(<MarketsExplorer request={{ key: 3 }} location={{ city: "Roma", regionCode: "IT-62" }} onClose={close} />));
+    await act(async () => root.render(<MarketsExplorer request={{ key: 3 }} location={{ city: "Roma", regionCode: "IT-62" }} onClose={close} catalogue={historicalCatalogue} />));
     expect(host.querySelector(".mf-markets-empty").textContent).toContain("Seleziona una località");
     expect(host.querySelectorAll(".mf-market-card")).toHaveLength(0);
   });
   it("links an Event back to its market and keeps the catalogue accessible without market results", async () => {
-    const items = mergeMarketEvents([], { location: pn, radius: 5, now });
+    const items = mergeMarketEvents([], { location: pn, radius: 5, now, catalogue: historicalCatalogue });
     const model = buildEventsViewModel({ items }, { location: pn, now });
     const event = model.items.find(item => item.raw.market_id === "M035");
     const open = vi.fn();
-    await act(async () => root.render(<EventPreviewPanel event={event} copy={model.copy} onClose={() => {}} onMarketOpen={open} />));
+    await act(async () => root.render(<EventPreviewPanel event={event} copy={model.copy} onClose={() => {}} onMarketOpen={open} catalogue={historicalCatalogue} />));
     await click(button("Scheda del mercato"));
     expect(open).toHaveBeenCalledWith("M035");
-    await act(async () => root.render(<EventsView model={buildEventsViewModel({ items: [] })} onMarketsOpen={open} />));
+    await act(async () => root.render(<EventsView model={buildEventsViewModel({ items: [] })} onMarketsOpen={open} catalogue={historicalCatalogue} />));
     await click(button("Esplora nella tua zona")); expect(open).toHaveBeenLastCalledWith();
   });
   it("opens the requested edition and closes its preview", async () => {
-    const model = buildEventsViewModel({ items: mergeMarketEvents([], { location: pn, radius: 5, now }) }, { location: pn, now });
-    await act(async () => root.render(<EventsView model={model} marketEventRequest={{ marketId: "M035", date: "2026-10-25" }} />));
+    const model = buildEventsViewModel({ items: mergeMarketEvents([], { location: pn, radius: 5, now, catalogue: historicalCatalogue }) }, { location: pn, now });
+    await act(async () => root.render(<EventsView model={model} marketEventRequest={{ marketId: "M035", date: "2026-10-25" }} catalogue={historicalCatalogue} />));
     expect(document.querySelector(".mf-event-preview__panel")?.textContent).toContain("La Soffitta in Piazza");
     await act(async () => document.querySelector(".mf-event-preview__close").click());
     expect(document.querySelector(".mf-event-preview__panel")).toBeNull();
@@ -100,15 +101,15 @@ describe("market navigation", () => {
 it("follows a linked edition arriving asynchronously and does not reopen it after dismissal", async () => {
   const request = { marketId: "M035", date: "2026-10-25" };
   const pending = buildEventsViewModel({ items: [], isRefreshing: true }, { location: pn, now });
-  const ready = buildEventsViewModel({ items: mergeMarketEvents([], { location: pn, radius: 5, now }) }, { location: pn, now });
-  await act(async () => root.render(<EventsView model={pending} marketEventRequest={request} />));
+  const ready = buildEventsViewModel({ items: mergeMarketEvents([], { location: pn, radius: 5, now, catalogue: historicalCatalogue }) }, { location: pn, now });
+  await act(async () => root.render(<EventsView model={pending} marketEventRequest={request} catalogue={historicalCatalogue} />));
   expect(document.querySelector(".mf-event-preview__panel")).toBeNull();
-  await act(async () => root.render(<EventsView model={ready} marketEventRequest={request} />));
+  await act(async () => root.render(<EventsView model={ready} marketEventRequest={request} catalogue={historicalCatalogue} />));
   expect(document.querySelector(".mf-event-preview__panel")?.textContent).toContain("La Soffitta in Piazza");
-  await act(async () => root.render(<EventsView model={buildEventsViewModel({ items: [] }, { location: pn, now })} marketEventRequest={request} />));
+  await act(async () => root.render(<EventsView model={buildEventsViewModel({ items: [] }, { location: pn, now })} marketEventRequest={request} catalogue={historicalCatalogue} />));
   expect(document.querySelector(".mf-event-preview__panel")).toBeNull();
-  await act(async () => root.render(<EventsView model={ready} marketEventRequest={request} />));
+  await act(async () => root.render(<EventsView model={ready} marketEventRequest={request} catalogue={historicalCatalogue} />));
   await act(async () => document.querySelector(".mf-event-preview__close").click());
-  await act(async () => root.render(<EventsView model={{ ...ready }} marketEventRequest={request} />));
+  await act(async () => root.render(<EventsView model={{ ...ready }} marketEventRequest={request} catalogue={historicalCatalogue} />));
   expect(document.querySelector(".mf-event-preview__panel")).toBeNull();
 });

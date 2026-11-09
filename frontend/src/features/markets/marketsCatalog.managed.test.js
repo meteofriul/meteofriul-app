@@ -1,11 +1,12 @@
 import { describe, expect, it } from "vitest";
 import { buildEventsViewModel } from "../events/eventsViewModel";
 import { buildEventPreviewModel } from "../events/eventPreview";
+import historicalCatalogue from "../../data/markets/catalogue2026.json";
 import { findRequestedMarketEvent, getMarket, marketDirectionsUrl, marketKindLabel, mergeMarketEvents, selectMarkets } from "./marketsCatalog";
 
 const now = new Date("2026-10-30T12:00:00Z");
 const location = { city: "Pordenone", regionCode: "IT-36" };
-const market = getMarket("M035");
+const market = getMarket("M035", historicalCatalogue);
 const source = { market_id: market.id, event_city: market.comune, title: market.name,
   start_date: "2026-11-01", end_date: "2026-11-01", venue: "Sede precedente", lat: 0, lon: 0,
   url: "https://source.example/edition", source: "Comune", category: "mercato", id: "old-feed-id" };

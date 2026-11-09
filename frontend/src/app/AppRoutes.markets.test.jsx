@@ -16,6 +16,7 @@ import { DEFAULT_APP_LOCATION } from "./appLocation";
 import { getUiShellCopy } from "./uiShellCopy";
 import { loadEventsData } from "../features/events/eventsDataController";
 import { getMarket } from "../features/markets/marketsCatalog";
+import historicalCatalogue from "../data/markets/catalogue2026.json";
 import { readEventsRadiusPreference, writeEventsRadiusPreference } from "./eventsRadiusPreference";
 
 const pn = { city: "Pordenone", countryCode: "IT", regionCode: "IT-36", source: "manual_search", istatCode: "093033", lat: 45.9567, lon: 12.6605 };
@@ -46,7 +47,7 @@ afterEach(async () => {
 });
 describe("Scopri / market catalogue / Events integration", () => {
   it("uses the same remote edition and shared radius in the catalogue and Events and reacts to withdrawal", async () => {
-    const market = { ...getMarket("M035"), name: "La Soffitta aggiornata" };
+    const market = { ...getMarket("M035", historicalCatalogue), name: "La Soffitta aggiornata" };
     let remote = { schemaVersion: 2, revision: 1, snapshotId: "markets-1", expiresAt: "2026-12-31T23:00:00Z",
       validThrough: "2026-12-31", markets: [market], identities: [{ marketId: market.id, name: market.name, comune: market.comune }],
       tombstones: [], dates: [{ id: "edition-shared", marketId: market.id, date: "2026-10-25", status: "published", source: market.url,
@@ -108,6 +109,13 @@ describe("Scopri / market catalogue / Events integration", () => {
     expect(host.querySelector('[role="spinbutton"]')).toBeNull();
   });
   it("opens a specific edition with the selected radius, links back, and consumes the navigation request", async () => {
+    const market = getMarket("M035", historicalCatalogue);
+    const remote = { schemaVersion: 2, revision: 1, snapshotId: "markets-navigation-1",
+      expiresAt: "2026-12-31T23:00:00Z", validThrough: "2026-12-31",
+      markets: [market], dates: [{ id: "edition-navigation", marketId: market.id,
+        date: "2026-10-25", status: "published", source: market.url }],
+      identities: [{ marketId: market.id, name: market.name, comune: market.comune }], tombstones: [] };
+    vi.mocked(fetch).mockImplementation(async () => ({ ok: true, json: async () => remote }));
     await act(async () => root.render(<App radius={50} />));
     expect(host.querySelector("dialog")).toBeNull();
     await click(button("Esplora nella tua zona"));

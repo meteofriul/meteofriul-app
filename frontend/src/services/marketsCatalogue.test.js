@@ -1,10 +1,11 @@
 import { describe, expect, it, vi } from "vitest";
 import { createMarketsCatalogueStore, MARKETS_CATALOGUE_CACHE_PREFIX, marketsCatalogueUrl, resolveMarketsApiBase } from "./marketsCatalogue";
 import { getMarket, mergeMarketEvents } from "../features/markets/marketsCatalog";
+import historicalCatalogue from "../data/markets/catalogue2026.json";
 
 const time = Date.parse("2026-10-30T12:00:00Z");
 const location = { city: "Pordenone", regionCode: "IT-36" };
-const market = getMarket("M035");
+const market = getMarket("M035", historicalCatalogue);
 const feed = { market_id: "M035", title: market.name, event_city: "Pordenone", start_date: "2026-11-01", category: "mercato" };
 function memoryStorage() {
   const values = new Map();
@@ -20,6 +21,19 @@ function snapshot(revision = 1, fields = {}) {
 const response = data => ({ ok: true, json: async () => data });
 
 describe("persistent managed market catalogue", () => {
+  it("uses the selected bootstrap and never accepts the historical revision zero", async () => {
+    const storage = memoryStorage(), key = MARKETS_CATALOGUE_CACHE_PREFIX + marketsCatalogueUrl();
+    const historical = snapshot(0);
+    storage.setItem(key + ":seen", JSON.stringify({ revision: 0, snapshotId: historical.snapshotId }));
+    storage.setItem(key, JSON.stringify({ catalogue: historical }));
+    const store = createMarketsCatalogueStore({ storage, fetchImpl: async () => response(historical), now: () => time });
+    expect(store.getSnapshot().status).toBe("bootstrap");
+    expect(store.getSnapshot().catalogue.markets).toHaveLength(42);
+    await store.refresh();
+    expect(store.getSnapshot().status).toBe("bootstrap");
+    expect(store.getSnapshot().error).toMatch(/precedente alla selezione/);
+    expect(getMarket("M013", store.getSnapshot().catalogue)).toBeNull();
+  });
   it("uses the independent Markets endpoint without changing other APIs", () => {
     expect(resolveMarketsApiBase({}, "/api")).toBe("/api");
     expect(resolveMarketsApiBase({ VITE_MARKETS_API_BASE: "https://markets.example/api/" }, "/other-api")).toBe("https://markets.example/api");
@@ -108,7 +122,7 @@ describe("persistent managed market catalogue", () => {
   });
 
   it("expires the packaged bootstrap and does not renew a remote snapshot through a fresh fetch", async () => {
-    const expired = createMarketsCatalogueStore({ storage: memoryStorage(), now: () => Date.parse("2027-01-01T12:00:00Z") });
+    const expired = createMarketsCatalogueStore({ storage: memoryStorage(), now: () => Date.parse("2027-02-08T12:00:00Z") });
     expect(expired.getSnapshot().status).toBe("unavailable");
     const store = createMarketsCatalogueStore({ storage: memoryStorage(), fetchImpl: async () => response(snapshot()), now: () => time + 86400001 });
     await store.refresh();

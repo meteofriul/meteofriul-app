@@ -1,8 +1,10 @@
 import { API_BASE } from "./apiConfig";
-import bootstrap from "../data/markets/catalogue2026.json";
+import bootstrap from "../data/markets/catalogueCandidate2026.json";
 
 export const MARKETS_CATALOGUE_CACHE_PREFIX = "meteofriul:markets-catalogue:v2:";
 const emptyCatalogue = { schemaVersion: 2, revision: -1, markets: [], dates: [], identities: [], tombstones: [], validThrough: "1970-01-01" };
+// Revision 0 is the historical seed, before the owner selected the first batch.
+const MIN_SELECTED_REMOTE_REVISION = 1;
 const blockedStatuses = new Set(["archived", "withdrawn", "suspended", "cancelled"]);
 
 export function resolveMarketsApiBase(env = import.meta.env, fallback = API_BASE) {
@@ -66,15 +68,18 @@ export function createMarketsCatalogueStore({
   const listeners = new Set();
   try {
     const marker = storage?.getItem(markerKey);
-    hasSeenRemote = marker != null;
     if (marker) {
       const parsed = JSON.parse(marker);
-      if (Number.isSafeInteger(parsed?.revision)) highWater = parsed;
+      if (Number.isSafeInteger(parsed?.revision) && parsed.revision >= MIN_SELECTED_REMOTE_REVISION) {
+        hasSeenRemote = true;
+        highWater = parsed;
+      }
     }
     const saved = JSON.parse(storage?.getItem(key) || "null");
     if (saved) {
-      hasSeenRemote = true;
       validateMarketsCatalogue(saved.catalogue);
+      if (saved.catalogue.revision < MIN_SELECTED_REMOTE_REVISION) throw new Error("Catalogo storico precedente alla selezione");
+      hasSeenRemote = true;
       if (highWater && (saved.catalogue.revision < highWater.revision
         || (saved.catalogue.revision === highWater.revision && saved.catalogue.snapshotId !== highWater.snapshotId))) {
         throw new Error("Cache mercati precedente all’ultima revisione");
@@ -98,7 +103,8 @@ export function createMarketsCatalogueStore({
   function syncStorage() {
     try {
       const marker = JSON.parse(storage?.getItem(markerKey) || "null");
-      if (!Number.isSafeInteger(marker?.revision) || (highWater && marker.revision < highWater.revision)
+      if (!Number.isSafeInteger(marker?.revision) || marker.revision < MIN_SELECTED_REMOTE_REVISION
+        || (highWater && marker.revision < highWater.revision)
         || (envelope?.catalogue.revision === marker.revision && envelope.catalogue.snapshotId === marker.snapshotId)) return;
       hasSeenRemote = true;
       highWater = marker;
@@ -132,6 +138,7 @@ export function createMarketsCatalogueStore({
         const response = await fetchImpl(url, { cache: "no-store" });
         if (!response?.ok) throw new Error("Catalogo mercati non disponibile");
         const catalogue = validateMarketsCatalogue(await response.json());
+        if (catalogue.revision < MIN_SELECTED_REMOTE_REVISION) throw new Error("Catalogo mercati precedente alla selezione approvata");
         syncStorage();
         const previous = highWater;
         if (previous && (catalogue.revision < previous.revision

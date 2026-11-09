@@ -1,5 +1,29 @@
 # Mercati — controllo del pannello e delle schede, 8–9 novembre 2026
 
+## Catalogo incorporato candidato nel ramo app, 9 novembre 2026
+
+Il ramo app usa ora `frontend/src/data/markets/catalogueCandidate2026.json`
+come catalogo incorporato di Scopri ed Eventi. È una proiezione dei soli campi
+pubblici dello stato privato **55**: **42 mercati selezionati, 130 date e 29
+rimozioni**, validità massima 7 febbraio 2027. SHA-256 del contenuto Git LF:
+`875266996107f390fb59bd45f6bdc1c26545e72bed8686ab9c043f4961dfffbc`.
+Non contiene note editoriali interne, schede sospese di Sesto o bozze. Il file
+storico `catalogue2026.json` resta come input della migrazione iniziale del
+servizio e come fixture dei test storici; il runtime dell'app usa il nuovo
+catalogo candidato.
+
+La revisione pubblica **0** rappresenta il precedente catalogo a 53 schede:
+il lettore del ramo app la scarta, anche se è in cache, per non far riapparire
+le schede sospese. Una futura revisione pubblica almeno 1 potrà sostituire il
+catalogo incorporato secondo le normali regole di immutabilità e revoca. La
+pubblicazione del servizio, la distribuzione dell'app e la prova su telefono
+restano passaggi distinti. Prima della distribuzione occorre confrontare il
+catalogo pubblicato con questo candidato e riprepararlo se il pannello cambia.
+La verifica del ramo ha superato **5.195 test frontend** (13 saltati), lint e
+build Web con service worker. Node 24/npm 11 sono le versioni disponibili in
+questo ambiente; il progetto prescrive Node 22.17.1/npm 10.9.2. Nessuna
+verifica su APK installata è stata eseguita.
+
 ## Prova interattiva dell'app nel pilota, 9 novembre 2026
 
 La funzione Mercati esiste nel ramo `codex/mercati-integration-20261028`, ma
@@ -21,14 +45,14 @@ Le tre schede sospese di Sesto non compaiono nella proiezione privata.
 
 ![Dettaglio Cervignano nel pilota a 390 × 844 px](evidence/mercati-preview-20261109/dettaglio-cervignano-390x844.jpg)
 
-**Testo da affinare:** nella nota di Cervignano la prima frase ripete il
-giovedì mattina e Piazza Indipendenza, già indicati nella cadenza e nella
-sezione «Dove». Il pannello può accorciarla conservando l'avvertenza sui
-festivi. Il filtro di categoria «Mercati» in Eventi include anche schede
+**Scelta editoriale:** il proprietario ha deciso di lasciare la nota di
+Cervignano com'è, anche se ripete giorno e luogo già presenti sopra. Il filtro
+di categoria «Mercati» in Eventi include anche schede
 provenienti dalle fonti automatiche: per esempio «Mercatino dell'usato» di
 Staranzano da TurismoFVG, con giornate di apertura segnalate come da
 verificare. È distinto dalla scheda fissa di Staranzano rimasta bozza nel
-catalogo Mercati. Questa prova non qualifica le fonti automatiche di Eventi.
+catalogo Mercati. Il proprietario considera questi eventi automatici un bonus;
+questa prova non ne qualifica le fonti.
 
 Il pilota è stato lasciato aperto per la revisione del proprietario. Non è stata
 eseguita una prova sull'app Android installata né su Safari/iPhone; nessuna
