@@ -1,10 +1,100 @@
 # Mercati — controllo del pannello e delle schede, 8–9 novembre 2026
 
+## Recupero delle schede residue, 9 novembre 2026
+
+La revisione privata del pannello è ora **57**: 100 schede, **80 selezionate**, 9
+sospese e 11 bozze. La revisione pubblica del servizio resta **0**. La
+selezione è stata salvata con un'operazione `save`, senza `publish` e senza
+distribuzione Web o Android. Lo stato privato precedente, revisione 55, resta
+nel registro di revisione e nell'archivio isolato della prova locale.
+
+Sono state recuperate **38 schede** rispetto alla revisione 55:
+
+- **11 mercati abituali** che erano conservati come occasionali: San Daniele
+  contadino, Agrizero Sacile, Aviano contadino, Torre e Sacro Cuore di
+  Pordenone, Campagna Amica di Codroipo, Passons e tre sedi di Udine, mercato
+  invernale di Lignano. Le fonti confermano giorno e sede; il limite della
+  verifica è il 7 febbraio 2027, il 29 dicembre 2026 per Passons e il 27 aprile
+  2027 per la sede temporanea di Lignano. Gli orari non riattestati restano
+  descritti solo come mattina o non indicati.
+- **20 mercatini con almeno una data futura**: sei schede già sospese e una
+  bozza con edizioni pubblicabili, dodici bozze di ricerca con programma 2026
+  confermato e Il Baule del Diavolo, la cui ultima data del 22 novembre è
+  esplicita nella pagina 2026. Per Sacellum è stata selezionata solo la data
+  del 22 novembre; il 27 dicembre resta da riconfermare. Per Sauris è stata
+  usata la pagina 2026 dell'organizzatore al posto del collegamento storico.
+- **6 mercatini ricorrenti senza prossima data puntuale**: AnticaMente Aviano,
+  usato Cervignano, antiquariato San Daniele, Udine Antiqua, Vecchi Ricordi e
+  Robis di une volte. Restano visibili in «Tutti» con cadenza, sede, fonte e
+  avviso «Prossima data non disponibile»; non compaiono automaticamente in
+  «Oggi», «Weekend» o nel programma Eventi. Non sono state create date mensili
+  deducendole dalla cadenza. I tre mercatini di Udine scadono con il periodo
+  2026 attestato dalle rispettive fonti.
+- **Gradisca d'Isonzo**, recuperata con la revisione privata 57: la
+  [scheda aggiornata nel 2026](https://www.cosedicasa.com/mercatini/gradisca-di-isonzo-giardini-di-piazza-unita-ditalia)
+  conferma ricorrenza e sede. La pagina [UNPLI](https://prolocoregionefvg.it/eventi-delle-associate/mercatino-dellantiquariato/)
+  attesta l'organizzatore ma contiene date storiche. La scheda appare in
+  «Tutti» con avviso; nessuna data futura è stata dedotta.
+
+Esempi di fonti ricontrollate: [Campagna Amica Codroipo](https://www.campagnamica.it/la-nostra-rete/mercato/il-mercato-di-campagna-amica-di-codroipo/),
+[Comune di Lignano](https://comune.lignano-sabbiadoro.ud.it/novita/avvisi/avviso-spostamento-temporaneo-mercato-invernale),
+[Comune di Pordenone](https://www.comune.pordenone.it/it/argomenti/mercato),
+[Discover Trieste, Ponterosso](https://www.discover-trieste.it/vivi/trieste-now/mercatino-di-ponterosso),
+[Pro San Vito, Voglia di Natale](https://www.prosanvito.it/2026/07/16/mercatino-voglia-di-natale-2026/)
+e [Pro Loco Nediške Doline](https://www.nediskedoline.it/wpnediske/event/gesti-antichi-per-un-nuovo-natale-2026/).
+
+Rimangono **20 schede non selezionate**. Quattro sono mercati settimanali con
+conferma operativa insufficiente: M013–M015 di Sesto al Reghena e
+R-GTS-M013 di Staranzano. Le altre 16 hanno solo un'edizione passata, una
+pagina storica/generica, una data futura non confermata dall'organizzatore o
+un conflitto ancora rilevante. Sono conservate nel pannello per una successiva
+correzione. Non è stato creato alcun job.
+
+Le esclusioni residue sono:
+
+- **Giorno o attività corrente non sufficientemente confermati (4):** i tre
+  mercati di Sesto al Reghena (capoluogo, Bagnarola, Ramuscello) e Staranzano.
+- **Solo programma trascorso o stagione conclusa (11):** Mercanti nel Borgo a
+  Venzone, Ricordi del Tempo a Spilimbergo, Cose di vecchie case ad Aurisina,
+  antiquariato a Sappada, i due mercatini Montedoro a Muggia, giocattoli usati
+  a San Vito, Fiera di San Rocco a Spilimbergo, Festa della Pitina a Tramonti,
+  Festa dell'agricoltore a Enemonzo e mercato agricolo estivo di Aprilia
+  Marittima. Le edizioni passate restano documentate, ma non provano un'apertura
+  futura.
+- **Calendario o fonte discordanti (3):** Mercatino del Riuso di Udine,
+  antiquariato a San Vito e Antiquariato in Contrada a Pordenone.
+- **Fonte troppo vecchia (1):** Tal Baul da l'Agna a Casarsa, con pagina
+  dell'organizzatore del 2022 e nessuna edizione 2026 acquisita.
+- **Ricorrenza confermata ma controllo tecnico da adeguare (1):** Borc
+  Antiquaria a Polcenigo, dettagliato qui sotto.
+
+Borc Antiquaria di Polcenigo ha una ricorrenza confermata dal
+[Comune](https://www.comune.polcenigo.pn.it/media/files/093031/attachment/2_DUP_2025_2027.pdf)
+e da una [pagina locale del 2026](https://www.adpolcenigo.it/news/borc-antiquaria/).
+Resta in bozza perché il controllo attuale del servizio richiede una data
+puntuale per inserire un nuovo mercatino occasionale nel catalogo. Una data
+mensile calcolata dalla sola cadenza apparirebbe anche in Eventi e potrebbe
+essere errata per una sospensione: serve prima adeguare il controllo per le
+ricorrenze senza data confermata.
+
+Il catalogo candidato incorporato nel ramo app riflette la revisione privata
+57: **80 schede, 202 edizioni, 13 rimozioni**. L'orizzonte massimo è il 27
+aprile 2027 per Lignano; ogni scheda mantiene il proprio limite più breve.
+SHA-256 del file Git LF: `345bc8b5d8a384553f21f4f29f9c312fff25b574026689da21578c1169a22d31`.
+Il catalogo pubblico online è ancora alla revisione 0. Prima di distribuire
+l'app occorrono la verifica su telefono e l'allineamento del catalogo pubblico
+approvato con questo candidato; le date ormai passate vanno riesaminate.
+La verifica locale ha superato **5.196 test frontend** (13 saltati), lint e
+build Web; il pilota sul porto 5174 ha mostrato elenco e dettaglio di una
+scheda. Questa prova nel browser non sostituisce il telefono reale.
+
+Le sezioni seguenti documentano le verifiche precedenti e conservano i loro
+conteggi storici.
+
 ## Catalogo incorporato candidato nel ramo app, 9 novembre 2026
 
-Il ramo app usa ora `frontend/src/data/markets/catalogueCandidate2026.json`
-come catalogo incorporato di Scopri ed Eventi. È una proiezione dei soli campi
-pubblici dello stato privato **55**: **42 mercati selezionati, 130 date e 29
+Il primo catalogo candidato incorporato in Scopri ed Eventi era una proiezione
+dei soli campi pubblici dello stato privato **55**: **42 mercati selezionati, 130 date e 29
 rimozioni**, validità massima 7 febbraio 2027. SHA-256 del contenuto Git LF:
 `875266996107f390fb59bd45f6bdc1c26545e72bed8686ab9c043f4961dfffbc`.
 Non contiene note editoriali interne, schede sospese di Sesto o bozze. Il file

@@ -1,5 +1,13 @@
 # Stato release 0.1.15 e lavoro salvato — aggiornamento sorgenti del 24 ottobre 2026
 
+**Mercati, selezione privata del 9 novembre 2026.** Il pannello è alla revisione
+57: 80 schede selezionate, 9 sospese e 11 bozze. Il bootstrap candidato del
+ramo app usa le stesse 80 schede, 202 edizioni e 13 rimozioni; le 20 non
+selezionate restano correggibili nel pannello. [Esito e fonti](MERCATI_CONTROLLO_PANNELLO_20261108.md#recupero-delle-schede-residue-9-novembre-2026).
+La revisione pubblica del servizio resta 0; versione, `main`, AAB e app
+Web/Android distribuite non cambiano. La verifica su telefono e il confronto
+con il catalogo pubblico futuro restano aperti.
+
 **Mercati, bootstrap candidato del 9 novembre 2026.** Il ramo app incorpora la proiezione pubblica delle 42 schede selezionate (130 date, 29 rimozioni) e scarta la revisione pubblica storica 0 anche dalla cache. 5.195 test frontend, lint e build PASS. [Provenienza e limiti](MERCATI_CONTROLLO_PANNELLO_20261108.md#catalogo-incorporato-candidato-nel-ramo-app-9-novembre-2026). Il catalogo online resta alla revisione 0; `main`, versione e app distribuite invariati. Prima di rilasciare servono confronto con la futura revisione pubblica e prova su telefono.
 
 **Mercati, prova app del 9 novembre 2026.** Il pilota locale del ramo Mercati ha caricato una copia isolata delle 42 schede selezionate e ne ha verificato elenco, filtri e dettaglio a 390 × 844 px. [Catture e limiti](MERCATI_CONTROLLO_PANNELLO_20261108.md#prova-interattiva-dellapp-nel-pilota-9-novembre-2026). Il ramo non è in `main`; catalogo pubblico 0, versione e app distribuite invariati. La nota di Cervignano resta su scelta del proprietario; prova su telefono ancora aperta.

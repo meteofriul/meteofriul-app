@@ -1,7 +1,7 @@
 {
   "schemaVersion": 2,
   "checked": "2026-10-14",
-  "validThrough": "2027-02-07",
+  "validThrough": "2027-04-27",
   "timezone": "Europe/Rome",
   "markets": [
     {
@@ -391,6 +391,68 @@
       ]
     },
     {
+      "authority": "Pro San Daniele",
+      "cadence": "Ogni sabato; pagina descrittiva corroborata dall’edizione 31/10/2026 dell’agenda corrente.",
+      "checked": "2026-11-09",
+      "comune": "San Daniele del Friuli",
+      "directionsQuery": "Le Corti, Via Trento e Trieste, San Daniele del Friuli",
+      "group": "regular",
+      "hours": "08:00–12:30",
+      "id": "M017",
+      "key": "m017",
+      "kind": "agricultural",
+      "municipalityIstat": "030099",
+      "name": "Mercato contadino di San Daniele",
+      "place": "Area Le Corti, Via Trento e Trieste, San Daniele del Friuli",
+      "prov": "UD",
+      "quality": "Documentato",
+      "scheduleNote": "Ogni sabato; pagina descrittiva corroborata dall’edizione 31/10/2026 dell’agenda corrente.",
+      "status": "published",
+      "titleAliases": [
+        "Mercato contadino"
+      ],
+      "url": "https://infosandaniele.com/it/turismo/manifestazioni/mercato-contadino",
+      "validFrom": "",
+      "validThrough": "2027-02-07",
+      "weekdays": [
+        6
+      ],
+      "weekdaysIso": [
+        6
+      ]
+    },
+    {
+      "authority": "Distretto del Commercio Alto Livenza",
+      "cadence": "Ogni martedì mattina. Il regolamento contempla esclusioni festive e deroghe comunali, senza date annuali qui calcolate.",
+      "checked": "2026-11-09",
+      "comune": "Sacile",
+      "directionsQuery": "Piazza del Popolo, Sacile",
+      "group": "regular",
+      "hours": "Martedì mattina; orario numerico da verificare",
+      "id": "M018",
+      "key": "m018",
+      "kind": "agricultural",
+      "municipalityIstat": "093037",
+      "name": "Mercato Agrizero di Sacile",
+      "place": "Piazza del Popolo",
+      "prov": "PN",
+      "quality": "Documentato",
+      "scheduleNote": "Mercato Agrizero il martedì mattina; verificare eventuali deroghe festive.",
+      "status": "published",
+      "titleAliases": [
+        "Agrizero"
+      ],
+      "url": "https://www.distrettocommercioaltolivenza.it/alla-scoperta-delle-tradizioni-del-distretto-feste-sagre-e-mercati-storici-da-non-perdere/",
+      "validFrom": "",
+      "validThrough": "2027-02-07",
+      "weekdays": [
+        2
+      ],
+      "weekdaysIso": [
+        2
+      ]
+    },
+    {
       "authority": "Comune di Pasiano di Pordenone",
       "cadence": "Ogni sabato",
       "checked": "2026-11-08",
@@ -419,6 +481,37 @@
       ],
       "weekdaysIso": [
         6
+      ]
+    },
+    {
+      "authority": "Comune di Aviano",
+      "cadence": "Ogni martedì secondo il servizio comunale; festività e straordinari richiedono avvisi specifici.",
+      "checked": "2026-11-09",
+      "comune": "Aviano",
+      "directionsQuery": "Via Ospedale, Aviano",
+      "group": "regular",
+      "hours": "Martedì; orario da verificare",
+      "id": "M020",
+      "key": "m020",
+      "kind": "agricultural",
+      "municipalityIstat": "093004",
+      "name": "Mercato Contadino di Aviano",
+      "place": "Via Ospedale, parcheggio a fianco del parco giochi comunale",
+      "prov": "PN",
+      "quality": "Documentato",
+      "scheduleNote": "Ogni martedì secondo il servizio comunale; festività e straordinari richiedono avvisi specifici.",
+      "status": "published",
+      "titleAliases": [
+        "Mercato contadino"
+      ],
+      "url": "https://www.comune.aviano.pn.it/it/servizi-212823/emanazione-e-istruttoria-domande-relative-al-bando-annuale-per-lassegnazione-dei-posteggi-del-mercato-contadino-265644",
+      "validFrom": "",
+      "validThrough": "2027-02-07",
+      "weekdays": [
+        2
+      ],
+      "weekdaysIso": [
+        2
       ]
     },
     {
@@ -521,6 +614,60 @@
       ]
     },
     {
+      "authority": "UNPLI Friuli Venezia Giulia / Pro Loco Aviano",
+      "cadence": "Prima domenica di ogni mese, tutto l'anno; weekdays=[7] non indica tutte le domeniche.",
+      "checked": "2026-11-09",
+      "comune": "Aviano",
+      "directionsQuery": "Piazza Duomo, Aviano",
+      "group": "occasional",
+      "hours": "Dall'alba al tramonto",
+      "id": "M025",
+      "key": "m025",
+      "kind": "periodic",
+      "municipalityIstat": "093004",
+      "name": "AnticaMente ad Aviano",
+      "place": "Piazza Duomo e vie limitrofe, Aviano",
+      "prov": "PN",
+      "quality": "Documentato",
+      "scheduleNote": "La Pro Loco indica la prima domenica del mese; la prossima data puntuale va confermata.",
+      "status": "published",
+      "titleAliases": [
+        "AnticaMente"
+      ],
+      "url": "https://prolocoregionefvg.it/eventi-delle-associate/anticamente-mercatino-dellantiquariato-ad-aviano-8/",
+      "validFrom": "",
+      "validThrough": "2027-02-07",
+      "weekdays": [],
+      "weekdaysIso": []
+    },
+    {
+      "authority": "Pro Loco Cervignano del Friuli",
+      "cadence": "Prima domenica di ogni mese; avviso dell'organizzatore conferma l'appuntamento di novembre senza indicare giorno numerico.",
+      "checked": "2026-11-09",
+      "comune": "Cervignano del Friuli",
+      "directionsQuery": "Piazza Indipendenza, Cervignano del Friuli",
+      "group": "occasional",
+      "hours": "Dalla mattina al tardo pomeriggio; orari numerici non indicati",
+      "id": "M027",
+      "key": "m027",
+      "kind": "periodic",
+      "municipalityIstat": "030023",
+      "name": "Mercatino dell'Usato",
+      "place": "Piazza Indipendenza",
+      "prov": "UD",
+      "quality": "Documentato",
+      "scheduleNote": "La Pro Loco indica la prima domenica del mese; la prossima data puntuale va confermata.",
+      "status": "published",
+      "titleAliases": [
+        "Mercatino dell'usato"
+      ],
+      "url": "https://www.prolococervignanofvg.it/comunicazione-importante-mercatino-dellusato-della-prima-domenica-del-mese/",
+      "validFrom": "",
+      "validThrough": "2027-02-07",
+      "weekdays": [],
+      "weekdaysIso": []
+    },
+    {
       "authority": "UNPLI FVG",
       "cadence": "2ª domenica, escluso agosto",
       "checked": "2026-11-07",
@@ -544,6 +691,54 @@
       "weekdaysIso": []
     },
     {
+      "authority": "Associazione Culturale Nuovo Lavoro / PromoTurismoFVG",
+      "cadence": "Seconda domenica del mese, fino al 13 dicembre 2026",
+      "checked": "2026-11-09",
+      "comune": "Gorizia",
+      "directionsQuery": "Piazza Cesare Battisti, Gorizia",
+      "group": "occasional",
+      "hours": "",
+      "id": "M030",
+      "key": "gomensile",
+      "kind": "Antiquariato",
+      "name": "Mercatino dell'antiquariato",
+      "place": "Giardini Pubblici di Corso Verdi, area di Piazza Battisti",
+      "prov": "GO",
+      "quality": "Documentato",
+      "scheduleNote": "Per il 2026 è confermata la data del 13 dicembre; verificare eventuali variazioni dell'ultima edizione.",
+      "status": "published",
+      "titleAliases": [],
+      "url": "https://www.turismofvg.it/eventi/mercatino-dell-antiquariato-e-hobbistica",
+      "validThrough": "2026-12-31",
+      "weekdays": [],
+      "weekdaysIso": []
+    },
+    {
+      "authority": "Associazione Gradisca è / Cose di Casa",
+      "cadence": "Terza domenica del mese; prossima edizione da confermare",
+      "checked": "2026-11-09",
+      "comune": "Gradisca d'Isonzo",
+      "directionsQuery": "Parco della Spianata, Gradisca d'Isonzo",
+      "group": "occasional",
+      "hours": "Orario indicativo 09:00–19:00; verificare con l'organizzatore",
+      "id": "M032",
+      "key": "gradisca",
+      "kind": "Antiquariato / usato",
+      "name": "Mercatino dell'Antica Contea Fortezza di Gradisca",
+      "place": "Parco della Spianata, viale Regina Elena e area di piazza Unità d'Italia",
+      "prov": "GO",
+      "quality": "Documentato",
+      "scheduleNote": "La ricorrenza è documentata nel 2026; la prossima data puntuale non è confermata dall'organizzatore.",
+      "status": "published",
+      "titleAliases": [
+        "Mercatino Fortezza / antiquariato"
+      ],
+      "url": "https://www.cosedicasa.com/mercatini/gradisca-di-isonzo-giardini-di-piazza-unita-ditalia",
+      "validThrough": "2027-02-07",
+      "weekdays": [],
+      "weekdaysIso": []
+    },
+    {
       "authority": "Discover Trieste / Comune di Trieste",
       "cadence": "3ª domenica + date straordinarie",
       "checked": "2026-11-07",
@@ -563,6 +758,225 @@
       "titleAliases": [],
       "url": "https://www.discover-trieste.it/vivi/trieste-now/mercatino-antiquariato",
       "validThrough": "2026-12-31",
+      "weekdays": [],
+      "weekdaysIso": []
+    },
+    {
+      "authority": "UNPLI Friuli Venezia Giulia / Comitato Borgate del Centro Storico di Gemona",
+      "cadence": "Edizione confermata domenica 6 dicembre 2026",
+      "checked": "2026-11-09",
+      "comune": "Gemona del Friuli",
+      "directionsQuery": "Via Bini, Centro Storico, Gemona del Friuli",
+      "group": "occasional",
+      "hours": "Dalle 08:00; orario di chiusura non indicato.",
+      "id": "M034",
+      "key": "m034",
+      "kind": "periodic",
+      "municipalityIstat": "030043",
+      "name": "Mercatino delle pulci e del libro usato",
+      "place": "Via Giuseppe Bini, centro storico",
+      "prov": "UD",
+      "quality": "Documentato",
+      "scheduleNote": "La data e via Bini sono confermate dalla scheda UNPLI 2026. Non estendere la cadenza al 2027.",
+      "status": "published",
+      "titleAliases": [],
+      "url": "https://prolocoregionefvg.it/eventi-delle-associate/mercatino-delle-pulci-e-del-libro-usato/",
+      "validFrom": "",
+      "validThrough": "2026-12-06",
+      "weekdays": [],
+      "weekdaysIso": []
+    },
+    {
+      "authority": "Pro Loco Pordenone APS",
+      "cadence": "Ultima domenica nei mesi marzo–giugno e settembre–novembre secondo calendario esplicito 2026; nessuna estensione automatica al 2027.",
+      "checked": "2026-11-09",
+      "comune": "Pordenone",
+      "directionsQuery": "Piazza Risorgimento, Pordenone",
+      "group": "occasional",
+      "hours": "",
+      "id": "M035",
+      "key": "m035",
+      "kind": "periodic",
+      "municipalityIstat": "093033",
+      "name": "La Soffitta in Piazza",
+      "place": "Piazza Risorgimento e zone limitrofe, compreso piazzale Ellero",
+      "prov": "PN",
+      "quality": "Documentato",
+      "scheduleNote": "Ultima domenica nei mesi marzo–giugno e settembre–novembre secondo calendario esplicito 2026; nessuna estensione automatica al 2027.",
+      "status": "published",
+      "titleAliases": [],
+      "url": "https://www.prolocopordenone.it/calendario-manifestazioni/",
+      "validFrom": "",
+      "validThrough": "2026-11-29",
+      "weekdays": [],
+      "weekdaysIso": []
+    },
+    {
+      "authority": "Pro Sacile APS",
+      "cadence": "Quarta domenica del mese; per la pubblicazione utilizzare le edizioni e le relative qualifiche.",
+      "checked": "2026-11-09",
+      "comune": "Sacile",
+      "directionsQuery": "Piazza del Popolo, Sacile",
+      "group": "occasional",
+      "hours": "",
+      "id": "M037",
+      "key": "m037",
+      "kind": "periodic",
+      "municipalityIstat": "093037",
+      "name": "Sacellum – La piazza delle antichità",
+      "place": "Piazza del Popolo e vie limitrofe, centro storico di Sacile",
+      "prov": "PN",
+      "quality": "Documentato",
+      "scheduleNote": "22 novembre 2026 confermato. La disposizione dei banchi può variare; la data del 27 dicembre resta da riconfermare.",
+      "status": "published",
+      "titleAliases": [
+        "Sacellum – la piazza delle antichità"
+      ],
+      "url": "https://www.prosacile.it/antiquariato",
+      "validFrom": "",
+      "validThrough": "2026-11-22",
+      "weekdays": [],
+      "weekdaysIso": []
+    },
+    {
+      "authority": "Pro San Daniele",
+      "cadence": "Ultima domenica",
+      "checked": "2026-11-09",
+      "comune": "San Daniele del Friuli",
+      "directionsQuery": "Centro storico, San Daniele del Friuli",
+      "group": "occasional",
+      "hours": "08:00–18:00",
+      "id": "M038",
+      "key": "sdantico",
+      "kind": "Antiquariato",
+      "name": "Mercatino dell'antiquariato",
+      "place": "Vie del centro storico",
+      "prov": "UD",
+      "quality": "Documentato",
+      "scheduleNote": "Pro San Daniele indica l'ultima domenica del mese; la prossima data e le deroghe festive vanno confermate.",
+      "status": "published",
+      "titleAliases": [],
+      "url": "https://www.infosandaniele.com/it/turismo/manifestazioni/mercato-settimanale",
+      "validThrough": "2027-02-07",
+      "weekdays": [],
+      "weekdaysIso": []
+    },
+    {
+      "authority": "PromoTurismoFVG / Pro Loco Cividale",
+      "cadence": "Edizione del 22 novembre 2026",
+      "checked": "2026-11-09",
+      "comune": "Cividale del Friuli",
+      "directionsQuery": "Centro storico, Cividale del Friuli",
+      "group": "occasional",
+      "hours": "Dalle 09:00 al tramonto",
+      "id": "M039",
+      "key": "baule",
+      "kind": "Usato / antiquariato",
+      "name": "Il Baule del Diavolo",
+      "place": "Centro storico",
+      "prov": "UD",
+      "quality": "Documentato",
+      "scheduleNote": "Solo il 22 novembre 2026 è incluso; verificare eventuali cambi di programma prima della visita.",
+      "status": "published",
+      "titleAliases": [],
+      "url": "https://www.turismofvg.it/eventi/il-baule-del-diavolo-475626",
+      "validThrough": "2026-11-22",
+      "weekdays": [],
+      "weekdaysIso": []
+    },
+    {
+      "authority": "PromoTurismoFVG / organizzatore",
+      "cadence": "3ª domenica; possibili variazioni e date extra",
+      "checked": "2026-11-09",
+      "comune": "Udine",
+      "directionsQuery": "Piazza Primo Maggio, Udine",
+      "group": "occasional",
+      "hours": "",
+      "id": "M040",
+      "key": "antiqua",
+      "kind": "Antiquariato / vintage",
+      "name": "Udine Antiqua",
+      "place": "Piazza Primo Maggio",
+      "prov": "UD",
+      "quality": "Documentato",
+      "scheduleNote": "La fonte indica la terza domenica fino a dicembre 2026, ma segnala variazioni per eventi in piazza; prossima data da confermare.",
+      "status": "published",
+      "titleAliases": [],
+      "url": "https://www.turismofvg.it/events/udine-antiqua-474448",
+      "validThrough": "2026-12-20",
+      "weekdays": [],
+      "weekdaysIso": []
+    },
+    {
+      "authority": "PromoTurismoFVG / organizzatore",
+      "cadence": "2ª domenica",
+      "checked": "2026-11-09",
+      "comune": "Udine",
+      "directionsQuery": "Via Vittorio Veneto, Udine",
+      "group": "occasional",
+      "hours": "",
+      "id": "M041",
+      "key": "vecchiricordi",
+      "kind": "Antiquariato / collezionismo",
+      "name": "Vecchi Ricordi",
+      "place": "Via Vittorio Veneto, piazzetta Bertrando, piazza Duomo",
+      "prov": "UD",
+      "quality": "Documentato",
+      "scheduleNote": "Seconda domenica del mese nel periodo 2026 indicato dalla fonte; prossima data puntuale da confermare.",
+      "status": "published",
+      "titleAliases": [],
+      "url": "https://www.turismofvg.it/events/vecchi-ricordi-474442",
+      "validThrough": "2026-12-13",
+      "weekdays": [],
+      "weekdaysIso": []
+    },
+    {
+      "authority": "PromoTurismoFVG / Associazione Udin'Nova",
+      "cadence": "2ª e 5ª domenica",
+      "checked": "2026-11-09",
+      "comune": "Udine",
+      "directionsQuery": "Via Riccardo Di Giusto, Udine",
+      "group": "occasional",
+      "hours": "",
+      "id": "M042",
+      "key": "robis",
+      "kind": "Usato / hobbistica / collezionismo",
+      "name": "Robis di une volte",
+      "place": "Via R. Di Giusto, parcheggio di fronte alla chiesa Gesù Buon Pastore",
+      "prov": "UD",
+      "quality": "Documentato",
+      "scheduleNote": "Seconda e quinta domenica nel periodo della fonte; le prossime date puntuali vanno confermate.",
+      "status": "published",
+      "titleAliases": [],
+      "url": "https://www.turismofvg.it/events/second-hand-market-robis-di-une-volte-474437",
+      "validThrough": "2026-12-13",
+      "weekdays": [],
+      "weekdaysIso": []
+    },
+    {
+      "authority": "PromoTurismoFVG / Borgata di Campagnola di Gemona",
+      "cadence": "Terza domenica del mese; per il 2026 usare l'elenco numerico pubblicato da UNPLI, senza generare date 2027.",
+      "checked": "2026-11-09",
+      "comune": "Gemona del Friuli",
+      "directionsQuery": "Area festeggiamenti in Via Trasaghis 256, località Campagnola, Gemona del Friuli (UD), Gemona del Friuli",
+      "group": "occasional",
+      "hours": "08:00–16:00",
+      "id": "M043",
+      "key": "m043",
+      "kind": "periodic",
+      "municipalityIstat": "030043",
+      "name": "Tesori del Tempo — Campagnola",
+      "place": "Area festeggiamenti in Via Trasaghis 256, località Campagnola, Gemona del Friuli (UD)",
+      "prov": "UD",
+      "quality": "Documentato",
+      "scheduleNote": "Terza domenica del mese; per il 2026 usare l'elenco numerico pubblicato da UNPLI, senza generare date 2027.",
+      "status": "published",
+      "titleAliases": [
+        "Tesori del Tempo"
+      ],
+      "url": "https://www.turismofvg.it/events/treasures-of-time-second-hand-market",
+      "validFrom": "",
+      "validThrough": "2026-12-20",
       "weekdays": [],
       "weekdaysIso": []
     },
@@ -682,6 +1096,29 @@
       "weekdaysIso": []
     },
     {
+      "authority": "Discover Trieste / Associazione Mericordo",
+      "cadence": "22 novembre e 27 dicembre 2026",
+      "checked": "2026-11-09",
+      "comune": "Trieste",
+      "directionsQuery": "Via Bellini, Piazza Ponterosso, Trieste",
+      "group": "occasional",
+      "hours": "",
+      "id": "M050",
+      "key": "ponterosso",
+      "kind": "Antiquariato / usato",
+      "name": "Mercatino di Ponterosso",
+      "place": "Ponterosso / via Bellini",
+      "prov": "TS",
+      "quality": "Documentato",
+      "scheduleNote": "Valgono le date esplicite 2026 pubblicate da Discover Trieste; non dedurre altre date dalla frase «ultima domenica».",
+      "status": "published",
+      "titleAliases": [],
+      "url": "https://www.discover-trieste.it/vivi/trieste-now/mercatino-di-ponterosso",
+      "validThrough": "2026-12-31",
+      "weekdays": [],
+      "weekdaysIso": []
+    },
+    {
       "authority": "Discover Trieste / Cose di Vecchie Case",
       "cadence": "4° sabato",
       "checked": "2026-11-07",
@@ -776,6 +1213,158 @@
       "weekdaysIso": []
     },
     {
+      "authority": "Associazione Pro San Vito",
+      "cadence": "",
+      "checked": "2026-11-09",
+      "comune": "San Vito al Tagliamento",
+      "directionsQuery": "Via Amalteo, San Vito al Tagliamento",
+      "group": "occasional",
+      "hours": "10:00–18:00",
+      "id": "M058",
+      "key": "m058",
+      "kind": "seasonal",
+      "municipalityIstat": "093041",
+      "name": "Magia di Natale",
+      "place": "Via Amalteo e via Manfrin",
+      "prov": "PN",
+      "quality": "Documentato",
+      "scheduleNote": "",
+      "status": "published",
+      "titleAliases": [
+        "La Magia del Natale – mercatino 2026"
+      ],
+      "url": "https://www.prosanvito.it/natale/",
+      "validFrom": "",
+      "validThrough": "2026-12-13",
+      "weekdays": [],
+      "weekdaysIso": []
+    },
+    {
+      "authority": "Pro Loco Turriaco APS",
+      "cadence": "Una sola edizione documentata; nessuna cadenza periodica validata.",
+      "checked": "2026-11-09",
+      "comune": "Turriaco",
+      "directionsQuery": "Piazza Libertà, Turriaco",
+      "group": "occasional",
+      "hours": "",
+      "id": "R-GTS-M005",
+      "key": "r-gts-m005",
+      "kind": "periodic",
+      "municipalityIstat": "031024",
+      "name": "Mis Mas de tut un poc",
+      "place": "Piazza Libertà, Turriaco",
+      "prov": "GO",
+      "quality": "Documentato",
+      "scheduleNote": "Una sola edizione documentata; nessuna cadenza periodica validata.",
+      "status": "published",
+      "titleAliases": [],
+      "url": "https://www.prolocoturriaco.it/notizia/mismas---de-tut-un-poc",
+      "validFrom": "",
+      "validThrough": "2026-12-06",
+      "weekdays": [],
+      "weekdaysIso": []
+    },
+    {
+      "authority": "Pro Loco Maron / Festeggiamenti Maron",
+      "cadence": "",
+      "checked": "2026-11-09",
+      "comune": "Brugnera",
+      "directionsQuery": "Maron, Brugnera",
+      "group": "occasional",
+      "hours": "Dalle 09:00; chiusura non dichiarata",
+      "id": "R-PN-M032",
+      "key": "r-pn-m032",
+      "kind": "seasonal",
+      "municipalityIstat": "093007",
+      "name": "Dal Campat alla Piazza - mercatini",
+      "place": "Centro di Maron di Brugnera, area della festa Dal Campat alla Piazza",
+      "prov": "PN",
+      "quality": "Documentato",
+      "scheduleNote": "Solo domenica 22 novembre 2026; le indicazioni portano a Maron, non al singolo banco.",
+      "status": "published",
+      "titleAliases": [],
+      "url": "https://www.festeggiamentimaron.it/dalcampatallapiazza/",
+      "validFrom": "",
+      "validThrough": "2026-11-22",
+      "weekdays": [],
+      "weekdaysIso": []
+    },
+    {
+      "authority": "Pro Loco Pordenone APS",
+      "cadence": "Singola edizione documentata il 15 novembre 2026.",
+      "checked": "2026-11-09",
+      "comune": "Pordenone",
+      "directionsQuery": "Centro sportivo Armando Lupieri, Villanova, Pordenone",
+      "group": "occasional",
+      "hours": "",
+      "id": "R-PN-M034",
+      "key": "r-pn-m034",
+      "kind": "seasonal",
+      "municipalityIstat": "093033",
+      "name": "Mercatino di Natale a Villanova",
+      "place": "Centro sportivo Armando Lupieri, Villanova di Pordenone",
+      "prov": "PN",
+      "quality": "Documentato",
+      "scheduleNote": "Singola edizione documentata il 15 novembre 2026.",
+      "status": "published",
+      "titleAliases": [],
+      "url": "https://www.prolocopordenone.it/news/mercatino-di-natale-15-novembre/",
+      "validFrom": "",
+      "validThrough": "2026-11-15",
+      "weekdays": [],
+      "weekdaysIso": []
+    },
+    {
+      "authority": "Pro Loco Santa Lucia APS di Prata di Pordenone",
+      "cadence": "",
+      "checked": "2026-11-09",
+      "comune": "Prata di Pordenone",
+      "directionsQuery": "Piazza dell'Indipendenza e Libertà dei Popoli, Prata di Pordenone",
+      "group": "occasional",
+      "hours": "",
+      "id": "R-PN-M009",
+      "key": "r-pn-m009",
+      "kind": "seasonal",
+      "municipalityIstat": "093034",
+      "name": "Mercatino degli hobbisti e della creatività - Festa di Santa Lucia",
+      "place": "Piazza dell'Indipendenza e Libertà dei Popoli",
+      "prov": "PN",
+      "quality": "Documentato",
+      "scheduleNote": "",
+      "status": "published",
+      "titleAliases": [],
+      "url": "https://www.prolocosantaluciaprata.it/moduli-e-varie.html",
+      "validFrom": "",
+      "validThrough": "2026-12-13",
+      "weekdays": [],
+      "weekdaysIso": []
+    },
+    {
+      "authority": "Associazione Pro San Vito",
+      "cadence": "Solo le sette giornate pubblicate per dicembre 2026; nessuna estensione ai giorni intermedi.",
+      "checked": "2026-11-09",
+      "comune": "San Vito al Tagliamento",
+      "directionsQuery": "Antico Ospedale dei Battuti, via Bellunello 24, San Vito al Tagliamento",
+      "group": "occasional",
+      "hours": "10:00–19:30",
+      "id": "R-PN-M031",
+      "key": "r-pn-m031",
+      "kind": "seasonal",
+      "municipalityIstat": "093041",
+      "name": "Voglia di Natale",
+      "place": "Antico Ospedale dei Battuti, via Bellunello 24, San Vito al Tagliamento",
+      "prov": "PN",
+      "quality": "Documentato",
+      "scheduleNote": "Solo le sette giornate pubblicate per dicembre 2026; nessuna estensione ai giorni intermedi.",
+      "status": "published",
+      "titleAliases": [],
+      "url": "https://www.prosanvito.it/2026/07/16/mercatino-voglia-di-natale-2026/",
+      "validFrom": "",
+      "validThrough": "2026-12-20",
+      "weekdays": [],
+      "weekdaysIso": []
+    },
+    {
       "authority": "Comune di San Vito al Tagliamento",
       "cadence": "Ogni venerdì",
       "checked": "2026-11-08",
@@ -803,6 +1392,135 @@
       "weekdaysIso": [
         5
       ]
+    },
+    {
+      "authority": "Comune di Lignano Sabbiadoro",
+      "cadence": "Ogni martedì nel periodo pubblicato 6 ottobre 2026–27 aprile 2027.",
+      "checked": "2026-11-09",
+      "comune": "Lignano Sabbiadoro",
+      "directionsQuery": "Parcheggio Cinecity, Via Lilla, Lignano Sabbiadoro",
+      "group": "regular",
+      "hours": "07:30–13:30",
+      "id": "R-UDA-M054",
+      "key": "r-uda-m054",
+      "kind": "seasonal",
+      "municipalityIstat": "030049",
+      "name": "Mercato invernale di Lignano Sabbiadoro",
+      "place": "Via Lilla, parcheggio Cinecity (sede temporanea)",
+      "prov": "UD",
+      "quality": "Documentato",
+      "scheduleNote": "Sede temporanea in via Lilla fino al 27 aprile 2027 secondo l'avviso comunale; verificare eventuali spostamenti.",
+      "status": "published",
+      "titleAliases": [],
+      "url": "https://comune.lignano-sabbiadoro.ud.it/novita/avvisi/avviso-spostamento-temporaneo-mercato-invernale",
+      "validFrom": "2026-10-06",
+      "validThrough": "2027-04-27",
+      "weekdays": [
+        2
+      ],
+      "weekdaysIso": [
+        2
+      ]
+    },
+    {
+      "authority": "PromoTurismoFVG",
+      "cadence": "Solo dieci giornate esplicite fra dicembre 2026 e gennaio 2027; non tutti i giorni del sentiero e nessuna proiezione per il resto del 2027.",
+      "checked": "2026-11-09",
+      "comune": "Pontebba",
+      "directionsQuery": "Lago di Pramollo, Passo Pramollo, Pontebba",
+      "group": "occasional",
+      "hours": "15:00–21:00",
+      "id": "R-UDB-M010",
+      "key": "r-udb-m010",
+      "kind": "seasonal",
+      "municipalityIstat": "030076",
+      "name": "Advento Nassfeld – Pramollo",
+      "place": "Passo Pramollo/Nassfeldpass, percorso transfrontaliero attorno al Lago Pramollo",
+      "prov": "UD",
+      "quality": "Documentato",
+      "scheduleNote": "Solo dieci giornate esplicite fra dicembre 2026 e gennaio 2027; non tutti i giorni del sentiero e nessuna proiezione per il resto del 2027.",
+      "status": "published",
+      "titleAliases": [],
+      "url": "https://www.turismofvg.it/eventi/la-magia-del-natale-advento?LangSetCMS=it",
+      "validFrom": "",
+      "validThrough": "2027-01-06",
+      "weekdays": [],
+      "weekdaysIso": []
+    },
+    {
+      "authority": "PromoTurismoFVG",
+      "cadence": "Singola edizione documentata il 13 dicembre 2026.",
+      "checked": "2026-11-09",
+      "comune": "Raveo",
+      "directionsQuery": "Raveo, centro",
+      "group": "occasional",
+      "hours": "09:00–17:00 (fascia della manifestazione)",
+      "id": "R-UDB-M016",
+      "key": "r-udb-m016",
+      "kind": "seasonal",
+      "municipalityIstat": "030089",
+      "name": "Sapori di Carnia – mostra mercato gastronomica 2026",
+      "place": "Lungo le vie del paese di Raveo",
+      "prov": "UD",
+      "quality": "Documentato",
+      "scheduleNote": "Singola edizione documentata il 13 dicembre 2026.",
+      "status": "published",
+      "titleAliases": [],
+      "url": "https://www.turismofvg.it/eventi/sapori-di-carnia-2026",
+      "validFrom": "",
+      "validThrough": "2026-12-13",
+      "weekdays": [],
+      "weekdaysIso": []
+    },
+    {
+      "authority": "UNPLI Friuli Venezia Giulia",
+      "cadence": "",
+      "checked": "2026-11-09",
+      "comune": "Ronchis",
+      "directionsQuery": "Via Guerin 1, Ronchis",
+      "group": "occasional",
+      "hours": "",
+      "id": "R-UDB-M021",
+      "key": "r-udb-m021",
+      "kind": "seasonal",
+      "municipalityIstat": "030097",
+      "name": "Profumo di Natale nell'aria",
+      "place": "Area festeggiamenti, via Guerin 1",
+      "prov": "UD",
+      "quality": "Documentato",
+      "scheduleNote": "",
+      "status": "published",
+      "titleAliases": [],
+      "url": "https://prolocoregionefvg.it/eventi-delle-associate/profumo-di-natale-nellaria/",
+      "validFrom": "",
+      "validThrough": "2026-11-22",
+      "weekdays": [],
+      "weekdaysIso": []
+    },
+    {
+      "authority": "Pro Loco Nediške Doline – Valli del Natisone APS",
+      "cadence": "Solo 5, 6 e 8 dicembre 2026; il 7 è chiuso.",
+      "checked": "2026-11-09",
+      "comune": "San Pietro al Natisone",
+      "directionsQuery": "Palestra comunale, San Pietro al Natisone",
+      "group": "occasional",
+      "hours": "10:00–18:00",
+      "id": "R-UDB-M025",
+      "key": "r-udb-m025",
+      "kind": "seasonal",
+      "municipalityIstat": "030103",
+      "name": "22ª Mostra Mercato – Gesti antichi per un nuovo Natale",
+      "place": "Palestra comunale di San Pietro al Natisone",
+      "prov": "UD",
+      "quality": "Documentato",
+      "scheduleNote": "Solo 5, 6 e 8 dicembre 2026; il 7 è chiuso.",
+      "status": "published",
+      "titleAliases": [],
+      "url": "https://www.nediskedoline.it/wpnediske/event/gesti-antichi-per-un-nuovo-natale-2026/",
+      "validFrom": "",
+      "validThrough": "2026-12-08",
+      "weekdays": [],
+      "weekdaysIso": []
     },
     {
       "authority": "Comune di Aviano",
@@ -1037,6 +1755,64 @@
       ]
     },
     {
+      "authority": "Comune di Pordenone",
+      "cadence": "Ogni giovedì mattina; eventuali deroghe comunali da controllare.",
+      "checked": "2026-11-09",
+      "comune": "Pordenone",
+      "directionsQuery": "Piazza Don Lozer, Torre, Pordenone",
+      "group": "regular",
+      "hours": "Giovedì mattina; 07:30–12:30 comprende allestimento e smontaggio",
+      "id": "R-PN-M007",
+      "key": "r-pn-m007",
+      "kind": "agricultural",
+      "municipalityIstat": "093033",
+      "name": "Mercato agricolo di Torre",
+      "place": "Piazza Don Lozer, Torre",
+      "prov": "PN",
+      "quality": "Documentato",
+      "scheduleNote": "Ogni giovedì mattina; eventuali deroghe comunali da controllare.",
+      "status": "published",
+      "titleAliases": [],
+      "url": "https://www.comune.pordenone.it/it/argomenti/mercato",
+      "validFrom": "",
+      "validThrough": "2027-02-07",
+      "weekdays": [
+        4
+      ],
+      "weekdaysIso": [
+        4
+      ]
+    },
+    {
+      "authority": "Comune di Pordenone",
+      "cadence": "Settimanale del venerdì mattina.",
+      "checked": "2026-11-09",
+      "comune": "Pordenone",
+      "directionsQuery": "Piazzale Sacro Cuore, Pordenone",
+      "group": "regular",
+      "hours": "Venerdì mattina; orario numerico da verificare",
+      "id": "R-PN-M008",
+      "key": "r-pn-m008",
+      "kind": "agricultural",
+      "municipalityIstat": "093033",
+      "name": "Mercato agricolo del Sacro Cuore",
+      "place": "Parcheggio davanti alla chiesa del Sacro Cuore, tra via Poffabro, via Frisanco e via Colvera",
+      "prov": "PN",
+      "quality": "Documentato",
+      "scheduleNote": "Settimanale del venerdì mattina.",
+      "status": "published",
+      "titleAliases": [],
+      "url": "https://www.comune.pordenone.it/it/argomenti/mercato",
+      "validFrom": "",
+      "validThrough": "2027-02-07",
+      "weekdays": [
+        5
+      ],
+      "weekdaysIso": [
+        5
+      ]
+    },
+    {
       "authority": "Comune di Roveredo in Piano",
       "cadence": "Ogni giovedì",
       "checked": "2026-11-08",
@@ -1153,6 +1929,35 @@
       ]
     },
     {
+      "authority": "Fondazione Campagna Amica",
+      "cadence": "Ogni sabato; tutto l'anno secondo la directory, con giorno e ore riattestati dal mensile settembre 2026.",
+      "checked": "2026-11-09",
+      "comune": "Codroipo",
+      "directionsQuery": "Ex Foro Boario, Piazza Giardini Pubblici, Codroipo",
+      "group": "regular",
+      "hours": "07:30–12:00",
+      "id": "R-UDA-M020",
+      "key": "r-uda-m020",
+      "kind": "agricultural",
+      "municipalityIstat": "030027",
+      "name": "Mercato di Campagna Amica di Codroipo",
+      "place": "Area esterna ex Foro Boario, piazza Giardini Pubblici",
+      "prov": "UD",
+      "quality": "Documentato",
+      "scheduleNote": "Ogni sabato; tutto l'anno secondo la directory, con giorno e ore riattestati dal mensile settembre 2026.",
+      "status": "published",
+      "titleAliases": [],
+      "url": "https://www.campagnamica.it/la-nostra-rete/mercato/il-mercato-di-campagna-amica-di-codroipo/",
+      "validFrom": "",
+      "validThrough": "2027-02-07",
+      "weekdays": [
+        6
+      ],
+      "weekdaysIso": [
+        6
+      ]
+    },
+    {
       "authority": "Comune di Latisana",
       "cadence": "Ogni mercoledì",
       "checked": "2026-11-08",
@@ -1180,6 +1985,203 @@
       "weekdaysIso": [
         3
       ]
+    },
+    {
+      "authority": "Associazione Naturalmente Lavariano / Distretto del Commercio del Cormor",
+      "cadence": "Solo 14 e 15 novembre 2026",
+      "checked": "2026-11-09",
+      "comune": "Mortegliano",
+      "directionsQuery": "Lavariano, Mortegliano",
+      "group": "occasional",
+      "hours": "Dalle 09:00 il 14 e 15 novembre 2026; chiusura non indicata",
+      "id": "R-UDA-M057",
+      "key": "r-uda-m057",
+      "kind": "agricultural",
+      "municipalityIstat": "030062",
+      "name": "Mercato agroalimentare Naturalmente Lavariano",
+      "place": "Lavariano, nell'area della Festa dell'Oca e del Vin Novello",
+      "prov": "UD",
+      "quality": "Documentato",
+      "scheduleNote": "Il programma conferma il mercato dalle 09:00; la sede precisa dei banchi non è indicata. Le indicazioni portano a Lavariano.",
+      "status": "published",
+      "titleAliases": [],
+      "url": "https://commerciocormor.it/vivere-il-territorio/eventi/festa-delloca-e-del-vin-novello-2026/",
+      "validFrom": "",
+      "validThrough": "2026-11-15",
+      "weekdays": [],
+      "weekdaysIso": []
+    },
+    {
+      "authority": "Fondazione Campagna Amica",
+      "cadence": "Ogni martedì, attestazione Coldiretti settembre 2026; stagionalità da riallineare prima di generare periodi futuri.",
+      "checked": "2026-11-09",
+      "comune": "Pasian di Prato",
+      "directionsQuery": "Via Dante, Passons, Pasian di Prato",
+      "group": "regular",
+      "hours": "08:00–12:30",
+      "id": "R-UDB-M006",
+      "key": "r-udb-m006",
+      "kind": "agricultural",
+      "municipalityIstat": "030072",
+      "name": "Campagna Amica di Passons",
+      "place": "Via Dante, ex latteria, Passons",
+      "prov": "UD",
+      "quality": "Documentato",
+      "scheduleNote": "Mercato stagionale da aprile a dicembre; la verifica attuale non copre la riapertura del 2027.",
+      "status": "published",
+      "titleAliases": [],
+      "url": "https://www.campagnamica.it/la-nostra-rete/mercato/il-mercato-di-campagna-amica-di-passons/",
+      "validFrom": "",
+      "validThrough": "2026-12-29",
+      "weekdays": [
+        2
+      ],
+      "weekdaysIso": [
+        2
+      ]
+    },
+    {
+      "authority": "Pro Loco Ragogna",
+      "cadence": "",
+      "checked": "2026-11-09",
+      "comune": "Ragogna",
+      "directionsQuery": "Via Roma, Ragogna",
+      "group": "occasional",
+      "hours": "12:00–18:00",
+      "id": "R-UDB-M015",
+      "key": "r-udb-m015",
+      "kind": "seasonal",
+      "municipalityIstat": "030087",
+      "name": "Mercatini di Natale di Ragogna",
+      "place": "Parco festeggiamenti dietro la chiesa, accesso da Via Roma, Ragogna",
+      "prov": "UD",
+      "quality": "Documentato",
+      "scheduleNote": "",
+      "status": "published",
+      "titleAliases": [],
+      "url": "https://www.prolocoragogna.it/",
+      "validFrom": "",
+      "validThrough": "2026-12-06",
+      "weekdays": [],
+      "weekdaysIso": []
+    },
+    {
+      "authority": "Fondazione Campagna Amica",
+      "cadence": "Lunedì mattina e giovedì pomeriggio; attestazione Coldiretti settembre 2026 e directory della rete.",
+      "checked": "2026-11-09",
+      "comune": "Udine",
+      "directionsQuery": "Piazza XX Settembre, Udine",
+      "group": "regular",
+      "hours": "Lunedì 08:00–13:00; giovedì 15:30–19:30",
+      "id": "R-UDB-M040",
+      "key": "r-udb-m040",
+      "kind": "agricultural",
+      "municipalityIstat": "030129",
+      "name": "Campagna Amica Piazza XX Settembre",
+      "place": "Piazza XX Settembre, Udine",
+      "prov": "UD",
+      "quality": "Documentato",
+      "scheduleNote": "Lunedì mattina e giovedì pomeriggio; attestazione Coldiretti settembre 2026 e directory della rete.",
+      "status": "published",
+      "titleAliases": [],
+      "url": "https://www.campagnamica.it/la-nostra-rete/mercato/mercato-di-campagna-amica-di-udine/",
+      "validFrom": "",
+      "validThrough": "2027-02-07",
+      "weekdays": [
+        1,
+        4
+      ],
+      "weekdaysIso": [
+        1,
+        4
+      ]
+    },
+    {
+      "authority": "Fondazione Campagna Amica",
+      "cadence": "Ogni martedì, venerdì e sabato, secondo directory e bollettino settembre 2026.",
+      "checked": "2026-11-09",
+      "comune": "Udine",
+      "directionsQuery": "Via Tricesimo 2, Udine",
+      "group": "regular",
+      "hours": "Martedì 15:00–19:00; venerdì e sabato 08:00–13:00",
+      "id": "R-UDB-M041",
+      "key": "r-udb-m041",
+      "kind": "agricultural",
+      "municipalityIstat": "030129",
+      "name": "Mercato coperto Campagna Amica di Udine",
+      "place": "Via Tricesimo 2, Udine",
+      "prov": "UD",
+      "quality": "Documentato",
+      "scheduleNote": "Ogni martedì, venerdì e sabato, secondo directory e bollettino settembre 2026.",
+      "status": "published",
+      "titleAliases": [],
+      "url": "https://www.campagnamica.it/la-nostra-rete/mercato/mercato-coperto-campagna-amica-udine/",
+      "validFrom": "",
+      "validThrough": "2027-02-07",
+      "weekdays": [
+        2,
+        5,
+        6
+      ],
+      "weekdaysIso": [
+        2,
+        5,
+        6
+      ]
+    },
+    {
+      "authority": "Fondazione Campagna Amica",
+      "cadence": "Ogni mercoledì, attestato nel bollettino settembre 2026 e nella directory.",
+      "checked": "2026-11-09",
+      "comune": "Udine",
+      "directionsQuery": "Piazzale Carnia, Udine",
+      "group": "regular",
+      "hours": "08:00–12:30",
+      "id": "R-UDB-M042",
+      "key": "r-udb-m042",
+      "kind": "agricultural",
+      "municipalityIstat": "030129",
+      "name": "Campagna Amica Villaggio del Sole",
+      "place": "Piazzale Carnia, Villaggio del Sole, Udine",
+      "prov": "UD",
+      "quality": "Documentato",
+      "scheduleNote": "Ogni mercoledì, attestato nel bollettino settembre 2026 e nella directory.",
+      "status": "published",
+      "titleAliases": [],
+      "url": "https://www.campagnamica.it/la-nostra-rete/mercato/mercato-di-campagna-amica-del-villaggio-del-sole-di-udine/",
+      "validFrom": "",
+      "validThrough": "2027-02-07",
+      "weekdays": [
+        3
+      ],
+      "weekdaysIso": [
+        3
+      ]
+    },
+    {
+      "authority": "Rete d'Imprese Sauris Zahre",
+      "cadence": "",
+      "checked": "2026-11-09",
+      "comune": "Sauris",
+      "directionsQuery": "Sauris di Sopra, Sauris",
+      "group": "occasional",
+      "hours": "10:00–18:00",
+      "id": "R-UDB-M027",
+      "key": "r-udb-m027",
+      "kind": "seasonal",
+      "municipalityIstat": "030107",
+      "name": "Mercatini di Natale a Sauris di Sopra",
+      "place": "Vie del borgo di Sauris di Sopra",
+      "prov": "UD",
+      "quality": "Documentato",
+      "scheduleNote": "Solo 5, 6 e 8 dicembre 2026; non è indicata apertura dei banchi il 7 dicembre.",
+      "status": "published",
+      "titleAliases": [],
+      "url": "https://www.sauris.org/events/in-der-zahre-seint-de-bainachn-a-sauris-e-natale/",
+      "validFrom": "",
+      "validThrough": "2026-12-08",
+      "weekdays": [],
+      "weekdaysIso": []
     }
   ],
   "dates": [
@@ -1224,6 +2226,14 @@
       "legacyDates": []
     },
     {
+      "id": "edition-cdffa16c435a61492225f2de",
+      "marketId": "M050",
+      "date": "2026-01-25",
+      "status": "published",
+      "source": "https://www.discover-trieste.it/vivi/trieste-now/mercatino-di-ponterosso",
+      "legacyDates": []
+    },
+    {
       "id": "edition-4b7230e02907678506f00bea",
       "marketId": "M048",
       "date": "2026-02-01",
@@ -1261,6 +2271,14 @@
       "date": "2026-02-15",
       "status": "published",
       "source": "https://www.discover-trieste.it/vivi/trieste-now/mercatino-antiquariato",
+      "legacyDates": []
+    },
+    {
+      "id": "edition-4b7bf5a8a7f554f31430e421",
+      "marketId": "M050",
+      "date": "2026-02-22",
+      "status": "published",
+      "source": "https://www.discover-trieste.it/vivi/trieste-now/mercatino-di-ponterosso",
       "legacyDates": []
     },
     {
@@ -1333,6 +2351,14 @@
       "date": "2026-03-21",
       "status": "published",
       "source": "https://www.turismofvg.it/events/market-in-muggia-creattivamente",
+      "legacyDates": []
+    },
+    {
+      "id": "edition-5e29e1836a7bca29232015a3",
+      "marketId": "M050",
+      "date": "2026-03-22",
+      "status": "published",
+      "source": "https://www.discover-trieste.it/vivi/trieste-now/mercatino-di-ponterosso",
       "legacyDates": []
     },
     {
@@ -1440,6 +2466,14 @@
       "legacyDates": []
     },
     {
+      "id": "edition-e1574f2bde4797acf248dc46",
+      "marketId": "M050",
+      "date": "2026-04-26",
+      "status": "published",
+      "source": "https://www.discover-trieste.it/vivi/trieste-now/mercatino-di-ponterosso",
+      "legacyDates": []
+    },
+    {
       "id": "edition-5b4d9ef16773a94d7f321d0d",
       "marketId": "M045",
       "date": "2026-05-03",
@@ -1517,6 +2551,14 @@
       "date": "2026-05-23",
       "status": "published",
       "source": "https://www.discover-trieste.it/vivi/trieste-now/un-pozzo-di-occasioni",
+      "legacyDates": []
+    },
+    {
+      "id": "edition-ee58402073c6dfccd4100e11",
+      "marketId": "M050",
+      "date": "2026-05-24",
+      "status": "published",
+      "source": "https://www.discover-trieste.it/vivi/trieste-now/mercatino-di-ponterosso",
       "legacyDates": []
     },
     {
@@ -1608,6 +2650,14 @@
       "legacyDates": []
     },
     {
+      "id": "edition-564b579c2e2f0389b17b45a6",
+      "marketId": "M050",
+      "date": "2026-06-28",
+      "status": "published",
+      "source": "https://www.discover-trieste.it/vivi/trieste-now/mercatino-di-ponterosso",
+      "legacyDates": []
+    },
+    {
       "id": "edition-d1bda5c174ef87e184bb3ed2",
       "marketId": "M045",
       "date": "2026-07-05",
@@ -1680,6 +2730,14 @@
       "legacyDates": []
     },
     {
+      "id": "edition-cc0849ce47c45bdd923b619f",
+      "marketId": "M050",
+      "date": "2026-07-26",
+      "status": "published",
+      "source": "https://www.discover-trieste.it/vivi/trieste-now/mercatino-di-ponterosso",
+      "legacyDates": []
+    },
+    {
       "id": "edition-da4aded0477011f24b547348",
       "marketId": "M045",
       "date": "2026-08-02",
@@ -1741,6 +2799,14 @@
       "date": "2026-08-22",
       "status": "published",
       "source": "https://www.discover-trieste.it/vivi/trieste-now/un-pozzo-di-occasioni",
+      "legacyDates": []
+    },
+    {
+      "id": "edition-718c3c85be81ff2485727c69",
+      "marketId": "M050",
+      "date": "2026-08-23",
+      "status": "published",
+      "source": "https://www.discover-trieste.it/vivi/trieste-now/mercatino-di-ponterosso",
       "legacyDates": []
     },
     {
@@ -1821,6 +2887,14 @@
       "date": "2026-09-26",
       "status": "published",
       "source": "https://www.discover-trieste.it/vivi/trieste-now/un-pozzo-di-occasioni",
+      "legacyDates": []
+    },
+    {
+      "id": "edition-4b06317e2aeef01469c979af",
+      "marketId": "M050",
+      "date": "2026-09-27",
+      "status": "published",
+      "source": "https://www.discover-trieste.it/vivi/trieste-now/mercatino-di-ponterosso",
       "legacyDates": []
     },
     {
@@ -1920,6 +2994,14 @@
       "legacyDates": []
     },
     {
+      "id": "edition-688abd13a2b6042aa6f20923",
+      "marketId": "M050",
+      "date": "2026-10-25",
+      "status": "published",
+      "source": "https://www.discover-trieste.it/vivi/trieste-now/mercatino-di-ponterosso",
+      "legacyDates": []
+    },
+    {
       "id": "edition-aa9342dbadb8b780079fdfaf",
       "marketId": "M044",
       "date": "2026-10-31",
@@ -1997,6 +3079,14 @@
       "date": "2026-11-21",
       "status": "published",
       "source": "https://www.turismofvg.it/events/market-in-muggia-creattivamente",
+      "legacyDates": []
+    },
+    {
+      "id": "edition-159d328451b9d1c1f140c62d",
+      "marketId": "M050",
+      "date": "2026-11-22",
+      "status": "published",
+      "source": "https://www.discover-trieste.it/vivi/trieste-now/mercatino-di-ponterosso",
       "legacyDates": []
     },
     {
@@ -2093,6 +3183,506 @@
       "date": "2026-12-26",
       "status": "published",
       "source": "https://www.discover-trieste.it/vivi/trieste-now/un-pozzo-di-occasioni",
+      "legacyDates": []
+    },
+    {
+      "id": "edition-0879419e112e097f63001dbc",
+      "marketId": "M050",
+      "date": "2026-12-27",
+      "status": "published",
+      "source": "https://www.discover-trieste.it/vivi/trieste-now/mercatino-di-ponterosso",
+      "legacyDates": []
+    },
+    {
+      "id": "edition-9e92c3e5fb5589baa1954469",
+      "marketId": "R-GTS-M005",
+      "date": "2026-12-06",
+      "status": "published",
+      "source": "https://www.prolocoturriaco.it/notizia/mismas---de-tut-un-poc",
+      "legacyDates": []
+    },
+    {
+      "id": "edition-d1266cb2a1d43fc18a09efb1",
+      "marketId": "R-PN-M032",
+      "date": "2026-11-22",
+      "status": "published",
+      "source": "https://www.festeggiamentimaron.it/dalcampatallapiazza/",
+      "legacyDates": []
+    },
+    {
+      "id": "edition-260aec066dd87f2d359d9b62",
+      "marketId": "R-PN-M034",
+      "date": "2026-11-15",
+      "status": "published",
+      "source": "https://www.prolocopordenone.it/news/mercatino-di-natale-15-novembre/",
+      "legacyDates": []
+    },
+    {
+      "id": "edition-2ab6649bcef0ac3c71d81927",
+      "marketId": "R-PN-M009",
+      "date": "2026-12-13",
+      "status": "published",
+      "source": "https://www.prolocosantaluciaprata.it/files/FESTA-DI-SANTA-LUCIA-2026_regolamento-hobbisti.pdf",
+      "legacyDates": []
+    },
+    {
+      "id": "edition-ad8c035a031b0ca76fc6ac67",
+      "marketId": "M058",
+      "date": "2026-12-08",
+      "status": "published",
+      "source": "https://www.turismofvg.it/eventi/la-magia-del-natale-mercatino-2026",
+      "legacyDates": []
+    },
+    {
+      "id": "edition-616cfaa3b67a68fbf9c727fc",
+      "marketId": "M058",
+      "date": "2026-12-13",
+      "status": "published",
+      "source": "https://www.turismofvg.it/eventi/la-magia-del-natale-mercatino-2026",
+      "legacyDates": []
+    },
+    {
+      "id": "edition-231ac6c0684b71649bf8e2a4",
+      "marketId": "R-PN-M031",
+      "date": "2026-12-05",
+      "status": "published",
+      "source": "https://www.prosanvito.it/2026/07/16/mercatino-voglia-di-natale-2026/",
+      "legacyDates": []
+    },
+    {
+      "id": "edition-e011a9bc038e93d43a3b696e",
+      "marketId": "R-PN-M031",
+      "date": "2026-12-06",
+      "status": "published",
+      "source": "https://www.prosanvito.it/2026/07/16/mercatino-voglia-di-natale-2026/",
+      "legacyDates": []
+    },
+    {
+      "id": "edition-0614e10dc5684d9b8809148a",
+      "marketId": "R-PN-M031",
+      "date": "2026-12-08",
+      "status": "published",
+      "source": "https://www.prosanvito.it/2026/07/16/mercatino-voglia-di-natale-2026/",
+      "legacyDates": []
+    },
+    {
+      "id": "edition-d05eb895bb4729f906e8a37a",
+      "marketId": "R-PN-M031",
+      "date": "2026-12-12",
+      "status": "published",
+      "source": "https://www.prosanvito.it/2026/07/16/mercatino-voglia-di-natale-2026/",
+      "legacyDates": []
+    },
+    {
+      "id": "edition-cba0aadc4c8d9991e81b8983",
+      "marketId": "R-PN-M031",
+      "date": "2026-12-13",
+      "status": "published",
+      "source": "https://www.prosanvito.it/2026/07/16/mercatino-voglia-di-natale-2026/",
+      "legacyDates": []
+    },
+    {
+      "id": "edition-3c287b777007c9f86ae803dc",
+      "marketId": "R-PN-M031",
+      "date": "2026-12-19",
+      "status": "published",
+      "source": "https://www.prosanvito.it/2026/07/16/mercatino-voglia-di-natale-2026/",
+      "legacyDates": []
+    },
+    {
+      "id": "edition-0674c789e3a70c2ecff4fd37",
+      "marketId": "R-PN-M031",
+      "date": "2026-12-20",
+      "status": "published",
+      "source": "https://www.prosanvito.it/2026/07/16/mercatino-voglia-di-natale-2026/",
+      "legacyDates": []
+    },
+    {
+      "id": "edition-b8139afc502db506850eaf53",
+      "marketId": "R-UDB-M010",
+      "date": "2026-12-05",
+      "status": "published",
+      "source": "https://hermagor.at/freizeit-tourismus/veranstaltungskalender/details/advento-nassfeld-pramollo-5/",
+      "legacyDates": []
+    },
+    {
+      "id": "edition-c31f23e9709634c16c44d36c",
+      "marketId": "R-UDB-M010",
+      "date": "2026-12-06",
+      "status": "published",
+      "source": "https://hermagor.at/freizeit-tourismus/veranstaltungskalender/details/advento-nassfeld-pramollo-5/",
+      "legacyDates": []
+    },
+    {
+      "id": "edition-5e08450cffc0cd7595c0f190",
+      "marketId": "R-UDB-M010",
+      "date": "2026-12-08",
+      "status": "published",
+      "source": "https://hermagor.at/freizeit-tourismus/veranstaltungskalender/details/advento-nassfeld-pramollo-5/",
+      "legacyDates": []
+    },
+    {
+      "id": "edition-a0569f9556942bdf7adc4191",
+      "marketId": "R-UDB-M010",
+      "date": "2026-12-12",
+      "status": "published",
+      "source": "https://hermagor.at/freizeit-tourismus/veranstaltungskalender/details/advento-nassfeld-pramollo-5/",
+      "legacyDates": []
+    },
+    {
+      "id": "edition-b276c0fd7ce55a33ceb95178",
+      "marketId": "R-UDB-M010",
+      "date": "2026-12-13",
+      "status": "published",
+      "source": "https://hermagor.at/freizeit-tourismus/veranstaltungskalender/details/advento-nassfeld-pramollo-5/",
+      "legacyDates": []
+    },
+    {
+      "id": "edition-9a368207724f84ef39ec7786",
+      "marketId": "R-UDB-M010",
+      "date": "2026-12-19",
+      "status": "published",
+      "source": "https://hermagor.at/freizeit-tourismus/veranstaltungskalender/details/advento-nassfeld-pramollo-5/",
+      "legacyDates": []
+    },
+    {
+      "id": "edition-ff2b71e2b5c6f2bc695ee28f",
+      "marketId": "R-UDB-M010",
+      "date": "2026-12-20",
+      "status": "published",
+      "source": "https://hermagor.at/freizeit-tourismus/veranstaltungskalender/details/advento-nassfeld-pramollo-5/",
+      "legacyDates": []
+    },
+    {
+      "id": "edition-39e38b806f1292a775382078",
+      "marketId": "R-UDB-M010",
+      "date": "2026-12-26",
+      "status": "published",
+      "source": "https://hermagor.at/freizeit-tourismus/veranstaltungskalender/details/advento-nassfeld-pramollo-5/",
+      "legacyDates": []
+    },
+    {
+      "id": "edition-0f9eed952a44416da832242a",
+      "marketId": "R-UDB-M010",
+      "date": "2026-12-27",
+      "status": "published",
+      "source": "https://hermagor.at/freizeit-tourismus/veranstaltungskalender/details/advento-nassfeld-pramollo-5/",
+      "legacyDates": []
+    },
+    {
+      "id": "edition-aca3b79cacb0280ddd1ea7b1",
+      "marketId": "R-UDB-M010",
+      "date": "2027-01-06",
+      "status": "published",
+      "source": "https://hermagor.at/freizeit-tourismus/veranstaltungskalender/details/advento-nassfeld-pramollo-5/",
+      "legacyDates": []
+    },
+    {
+      "id": "edition-532ae0927e6bb4a9c3d0e05d",
+      "marketId": "R-UDB-M016",
+      "date": "2026-12-13",
+      "status": "published",
+      "source": "https://www.turismofvg.it/eventi/sapori-di-carnia-2026",
+      "legacyDates": []
+    },
+    {
+      "id": "edition-9c49430f56a8563dccd6f5c9",
+      "marketId": "R-UDB-M021",
+      "date": "2026-11-22",
+      "status": "published",
+      "source": "https://prolocoregionefvg.it/eventi-delle-associate/profumo-di-natale-nellaria/",
+      "legacyDates": []
+    },
+    {
+      "id": "edition-f992a2d0938b1f61470961e0",
+      "marketId": "R-UDB-M025",
+      "date": "2026-12-05",
+      "status": "published",
+      "source": "https://www.nediskedoline.it/wpnediske/event/gesti-antichi-per-un-nuovo-natale-2026/",
+      "legacyDates": []
+    },
+    {
+      "id": "edition-984dd51374a3862973359924",
+      "marketId": "R-UDB-M025",
+      "date": "2026-12-06",
+      "status": "published",
+      "source": "https://www.nediskedoline.it/wpnediske/event/gesti-antichi-per-un-nuovo-natale-2026/",
+      "legacyDates": []
+    },
+    {
+      "id": "edition-2f07479b88b2c1ffd95a8494",
+      "marketId": "R-UDB-M025",
+      "date": "2026-12-08",
+      "status": "published",
+      "source": "https://www.nediskedoline.it/wpnediske/event/gesti-antichi-per-un-nuovo-natale-2026/",
+      "legacyDates": []
+    },
+    {
+      "id": "edition-69dd50c75e54b9138e5f5407",
+      "marketId": "M035",
+      "date": "2026-03-29",
+      "status": "published",
+      "source": "https://www.comune.pordenone.it/it/novita/divieti-limitazioni-e-prescrizioni-alla-circolazione-per-lo-svolgimento-dei-mercatini",
+      "legacyDates": []
+    },
+    {
+      "id": "edition-b23a6eeabd790f9c413fd57f",
+      "marketId": "M035",
+      "date": "2026-04-26",
+      "status": "published",
+      "source": "https://www.comune.pordenone.it/it/novita/divieti-limitazioni-e-prescrizioni-alla-circolazione-per-lo-svolgimento-dei-mercatini",
+      "legacyDates": []
+    },
+    {
+      "id": "edition-c88860a30f822ce679637cf3",
+      "marketId": "M035",
+      "date": "2026-05-31",
+      "status": "published",
+      "source": "https://www.comune.pordenone.it/it/novita/divieti-limitazioni-e-prescrizioni-alla-circolazione-per-lo-svolgimento-dei-mercatini",
+      "legacyDates": []
+    },
+    {
+      "id": "edition-142ffbedf95278040dc84bc8",
+      "marketId": "M035",
+      "date": "2026-06-28",
+      "status": "published",
+      "source": "https://www.comune.pordenone.it/it/novita/divieti-limitazioni-e-prescrizioni-alla-circolazione-per-lo-svolgimento-dei-mercatini",
+      "legacyDates": []
+    },
+    {
+      "id": "edition-68428637ee7aa4a5016c0c23",
+      "marketId": "M035",
+      "date": "2026-09-27",
+      "status": "published",
+      "source": "https://www.comune.pordenone.it/it/novita/divieti-limitazioni-e-prescrizioni-alla-circolazione-per-lo-svolgimento-dei-mercatini",
+      "legacyDates": []
+    },
+    {
+      "id": "edition-61c74253865a39d91bf1b6e0",
+      "marketId": "M035",
+      "date": "2026-10-25",
+      "status": "published",
+      "source": "https://www.comune.pordenone.it/it/novita/divieti-limitazioni-e-prescrizioni-alla-circolazione-per-lo-svolgimento-dei-mercatini",
+      "legacyDates": []
+    },
+    {
+      "id": "edition-1b4885aebd404cd1fe7a828f",
+      "marketId": "M035",
+      "date": "2026-11-29",
+      "status": "published",
+      "source": "https://www.prolocopordenone.it/calendario-manifestazioni/",
+      "legacyDates": []
+    },
+    {
+      "id": "edition-7d72a531be3b1c3d66aca7dc",
+      "marketId": "M043",
+      "date": "2026-01-18",
+      "status": "published",
+      "source": "https://prolocoregionefvg.it/eventi-delle-associate/tesori-del-tempo-mercatino-dellusato/",
+      "legacyDates": []
+    },
+    {
+      "id": "edition-c5c7b23b32c0a507e765e40c",
+      "marketId": "M043",
+      "date": "2026-02-15",
+      "status": "published",
+      "source": "https://prolocoregionefvg.it/eventi-delle-associate/tesori-del-tempo-mercatino-dellusato/",
+      "legacyDates": []
+    },
+    {
+      "id": "edition-a68b8896dc5fc528e73347e6",
+      "marketId": "M043",
+      "date": "2026-03-15",
+      "status": "published",
+      "source": "https://prolocoregionefvg.it/eventi-delle-associate/tesori-del-tempo-mercatino-dellusato/",
+      "legacyDates": []
+    },
+    {
+      "id": "edition-d93dc48124c1cbe6546c0871",
+      "marketId": "M043",
+      "date": "2026-04-19",
+      "status": "published",
+      "source": "https://prolocoregionefvg.it/eventi-delle-associate/tesori-del-tempo-mercatino-dellusato/",
+      "legacyDates": []
+    },
+    {
+      "id": "edition-222e07498b30d42b944d94f6",
+      "marketId": "M043",
+      "date": "2026-05-17",
+      "status": "published",
+      "source": "https://prolocoregionefvg.it/eventi-delle-associate/tesori-del-tempo-mercatino-dellusato/",
+      "legacyDates": []
+    },
+    {
+      "id": "edition-8effecefffffb0087b8fc1c5",
+      "marketId": "M043",
+      "date": "2026-06-21",
+      "status": "published",
+      "source": "https://prolocoregionefvg.it/eventi-delle-associate/tesori-del-tempo-mercatino-dellusato/",
+      "legacyDates": []
+    },
+    {
+      "id": "edition-38458f63f64409d577c16f3d",
+      "marketId": "M043",
+      "date": "2026-07-19",
+      "status": "published",
+      "source": "https://prolocoregionefvg.it/eventi-delle-associate/tesori-del-tempo-mercatino-dellusato/",
+      "legacyDates": []
+    },
+    {
+      "id": "edition-36b24c732d27c04cd6c37c9a",
+      "marketId": "M043",
+      "date": "2026-08-16",
+      "status": "published",
+      "source": "https://prolocoregionefvg.it/eventi-delle-associate/tesori-del-tempo-mercatino-dellusato/",
+      "legacyDates": []
+    },
+    {
+      "id": "edition-aef64d81f13cd597528566d2",
+      "marketId": "M043",
+      "date": "2026-09-20",
+      "status": "published",
+      "source": "https://prolocoregionefvg.it/eventi-delle-associate/tesori-del-tempo-mercatino-dellusato/",
+      "legacyDates": []
+    },
+    {
+      "id": "edition-4dbc46126755a85dced30629",
+      "marketId": "M043",
+      "date": "2026-10-18",
+      "status": "published",
+      "source": "https://prolocoregionefvg.it/eventi-delle-associate/tesori-del-tempo-mercatino-dellusato/",
+      "legacyDates": []
+    },
+    {
+      "id": "edition-da0f7ce9ddbcb5f33e2312ee",
+      "marketId": "M043",
+      "date": "2026-11-15",
+      "status": "published",
+      "source": "https://prolocoregionefvg.it/eventi-delle-associate/tesori-del-tempo-mercatino-dellusato/",
+      "legacyDates": [],
+      "venue": {
+        "directionsQuery": "Area festeggiamenti in Via Trasaghis 256, località Campagnola, Gemona del Friuli (UD), Gemona del Friuli",
+        "id": "source-venue-58b0a8de3a4ee445969f",
+        "place": "Area festeggiamenti in Via Trasaghis 256, località Campagnola, Gemona del Friuli (UD)"
+      }
+    },
+    {
+      "id": "edition-12e8660cad86a64963b4a86b",
+      "marketId": "M043",
+      "date": "2026-12-20",
+      "status": "published",
+      "source": "https://prolocoregionefvg.it/eventi-delle-associate/tesori-del-tempo-mercatino-dellusato/",
+      "legacyDates": [],
+      "venue": {
+        "directionsQuery": "Area festeggiamenti in Via Trasaghis 256, località Campagnola, Gemona del Friuli (UD), Gemona del Friuli",
+        "id": "source-venue-58b0a8de3a4ee445969f",
+        "place": "Area festeggiamenti in Via Trasaghis 256, località Campagnola, Gemona del Friuli (UD)"
+      }
+    },
+    {
+      "id": "edition-afc5db0b28f2daaf03586edb",
+      "marketId": "R-UDA-M057",
+      "date": "2026-11-14",
+      "status": "published",
+      "source": "https://commerciocormor.it/vivere-il-territorio/eventi/festa-delloca-e-del-vin-novello-2026/",
+      "legacyDates": []
+    },
+    {
+      "id": "edition-003025b30c77d39c2e96f5aa",
+      "marketId": "R-UDA-M057",
+      "date": "2026-11-15",
+      "status": "published",
+      "source": "https://commerciocormor.it/vivere-il-territorio/eventi/festa-delloca-e-del-vin-novello-2026/",
+      "legacyDates": []
+    },
+    {
+      "id": "edition-d0cea5c5494e4aac1db27b49",
+      "marketId": "R-UDB-M015",
+      "date": "2026-12-05",
+      "status": "published",
+      "source": "https://www.prolocoragogna.it/wp-content/uploads/2026/10/Regolamento_Mercatini_di_Natale_Ragogna_2026-1.pdf",
+      "legacyDates": []
+    },
+    {
+      "id": "edition-c8f9eed1e5e02f7f3c39567b",
+      "marketId": "R-UDB-M015",
+      "date": "2026-12-06",
+      "status": "published",
+      "source": "https://www.prolocoragogna.it/wp-content/uploads/2026/10/Regolamento_Mercatini_di_Natale_Ragogna_2026-1.pdf",
+      "legacyDates": []
+    },
+    {
+      "id": "edition-ad945612ac472b590540d0cc",
+      "marketId": "R-UDB-M027",
+      "date": "2026-12-05",
+      "status": "published",
+      "source": "https://www.sauris.org/events/in-der-zahre-seint-de-bainachn-a-sauris-e-natale/",
+      "legacyDates": []
+    },
+    {
+      "id": "edition-71302a3b92708f0a25d20042",
+      "marketId": "R-UDB-M027",
+      "date": "2026-12-06",
+      "status": "published",
+      "source": "https://www.sauris.org/events/in-der-zahre-seint-de-bainachn-a-sauris-e-natale/",
+      "legacyDates": []
+    },
+    {
+      "id": "edition-68a0207d2abe35b408f9cfc4",
+      "marketId": "R-UDB-M027",
+      "date": "2026-12-08",
+      "status": "published",
+      "source": "https://www.sauris.org/events/in-der-zahre-seint-de-bainachn-a-sauris-e-natale/",
+      "legacyDates": []
+    },
+    {
+      "id": "edition-daeae5dde474e11b72ef865a",
+      "marketId": "M030",
+      "date": "2026-12-13",
+      "status": "published",
+      "source": "https://prolocoregionefvg.it/eventi-delle-associate/mercatino-dellantiquariato-13/",
+      "legacyDates": [],
+      "venue": {
+        "directionsQuery": "Piazza Battisti, Gorizia",
+        "id": "source-venue-d799b10fcbf4e455a5dd",
+        "place": "Piazza Battisti"
+      }
+    },
+    {
+      "id": "edition-e2b9d0098db75a5b5b1e88cb",
+      "marketId": "M030",
+      "date": "2026-11-08",
+      "status": "published",
+      "source": "https://prolocoregionefvg.it/eventi-delle-associate/mercatino-dellantiquariato-13/",
+      "legacyDates": [],
+      "venue": {
+        "directionsQuery": "Piazza Battisti, Gorizia",
+        "id": "source-venue-d799b10fcbf4e455a5dd",
+        "place": "Piazza Battisti"
+      }
+    },
+    {
+      "id": "edition-f2ee105e0051b6f172afd01c",
+      "marketId": "M034",
+      "date": "2026-12-06",
+      "status": "published",
+      "source": "https://prolocoregionefvg.it/eventi-delle-associate/mercatino-delle-pulci-e-del-libro-usato/",
+      "legacyDates": []
+    },
+    {
+      "id": "edition-b3ce7968b17a8bacab2b8fc9",
+      "marketId": "M034",
+      "date": "2026-11-01",
+      "status": "published",
+      "source": "https://prolocoregionefvg.it/eventi-delle-associate/mercatino-delle-pulci-e-del-libro-usato/",
+      "legacyDates": []
+    },
+    {
+      "id": "edition-8f9db8d7cdaf259c6171dd59",
+      "marketId": "M037",
+      "date": "2026-11-22",
+      "status": "published",
+      "source": "https://www.prosacile.it/antiquariato",
       "legacyDates": []
     },
     {
@@ -2238,6 +3828,14 @@
       "status": "cancelled",
       "source": "https://www.comune.pasiano.pn.it/media/files/093029/attachment/Regolamento_Mercato_Agricolo_-_Pasiano_yG7mja0.pdf",
       "legacyDates": []
+    },
+    {
+      "id": "edition-m039-20261122-reviewed",
+      "marketId": "M039",
+      "date": "2026-11-22",
+      "status": "published",
+      "source": "https://www.turismofvg.it/eventi/il-baule-del-diavolo-475626",
+      "legacyDates": []
     }
   ],
   "identities": [
@@ -2291,7 +3889,7 @@
         "https://www.distrettocommercioaltolivenza.it/alla-scoperta-delle-tradizioni-del-distretto-feste-sagre-e-mercati-storici-da-non-perdere/",
         "https://www.visitsacile.it/manifestazioni/"
       ],
-      "status": "suspended"
+      "status": "published"
     },
     {
       "marketId": "M025",
@@ -2305,7 +3903,7 @@
         "https://prolocoregionefvg.it/eventi-delle-associate/anticamente-mercatino-dellantiquariato-ad-aviano-8/",
         "https://www.prolocoaviano.it/anticamente/"
       ],
-      "status": "suspended"
+      "status": "published"
     },
     {
       "marketId": "M042",
@@ -2316,7 +3914,7 @@
       "sourceUrls": [
         "https://www.turismofvg.it/events/second-hand-market-robis-di-une-volte-474437"
       ],
-      "status": "suspended"
+      "status": "published"
     },
     {
       "marketId": "M007",
@@ -2364,7 +3962,7 @@
         "https://prolocoregionefvg.it/eventi-delle-associate/tesori-del-tempo-mercatino-dellusato/",
         "https://www.turismofvg.it/events/treasures-of-time-second-hand-market"
       ],
-      "status": "suspended"
+      "status": "published"
     },
     {
       "marketId": "M035",
@@ -2376,7 +3974,7 @@
         "https://www.comune.pordenone.it/it/novita/divieti-limitazioni-e-prescrizioni-alla-circolazione-per-lo-svolgimento-dei-mercatini",
         "https://www.prolocopordenone.it/calendario-manifestazioni/"
       ],
-      "status": "suspended"
+      "status": "published"
     },
     {
       "marketId": "M048",
@@ -2419,9 +4017,10 @@
       "municipalityAliases": [],
       "titleAliases": [],
       "sourceUrls": [
-        "https://prolocoregionefvg.it/eventi-delle-associate/mercatino-dellantiquariato-13/"
+        "https://prolocoregionefvg.it/eventi-delle-associate/mercatino-dellantiquariato-13/",
+        "https://www.turismofvg.it/eventi/mercatino-dell-antiquariato-e-hobbistica"
       ],
-      "status": "suspended"
+      "status": "published"
     },
     {
       "marketId": "M040",
@@ -2432,7 +4031,7 @@
       "sourceUrls": [
         "https://www.turismofvg.it/events/udine-antiqua-474448"
       ],
-      "status": "suspended"
+      "status": "published"
     },
     {
       "marketId": "M051",
@@ -2505,7 +4104,7 @@
         "https://prolocoregionefvg.it/eventi-delle-associate/mercatino-delle-pulci-e-del-libro-usato/",
         "https://www.turismofvg.it/eventi/mercatino-delle-pulci-e-del-libro-usato-290796"
       ],
-      "status": "suspended"
+      "status": "published"
     },
     {
       "marketId": "M038",
@@ -2516,7 +4115,7 @@
       "sourceUrls": [
         "https://www.infosandaniele.com/it/turismo/manifestazioni/mercato-settimanale"
       ],
-      "status": "suspended"
+      "status": "published"
     },
     {
       "marketId": "M057",
@@ -2538,7 +4137,7 @@
       "sourceUrls": [
         "https://www.turismofvg.it/events/vecchi-ricordi-474442"
       ],
-      "status": "suspended"
+      "status": "published"
     },
     {
       "marketId": "M044",
@@ -2595,7 +4194,7 @@
       "sourceUrls": [
         "https://www.prolococervignanofvg.it/comunicazione-importante-mercatino-dellusato-della-prima-domenica-del-mese/"
       ],
-      "status": "suspended"
+      "status": "published"
     },
     {
       "marketId": "M019",
@@ -2627,14 +4226,17 @@
     },
     {
       "marketId": "M032",
-      "name": "Mercatino Fortezza / antiquariato",
+      "name": "Mercatino dell'Antica Contea Fortezza di Gradisca",
       "comune": "Gradisca d'Isonzo",
       "municipalityAliases": [],
-      "titleAliases": [],
-      "sourceUrls": [
-        "https://prolocoregionefvg.it/eventi-delle-associate/mercatino-dellantiquariato/"
+      "titleAliases": [
+        "Mercatino Fortezza / antiquariato"
       ],
-      "status": "suspended"
+      "sourceUrls": [
+        "https://prolocoregionefvg.it/eventi-delle-associate/mercatino-dellantiquariato/",
+        "https://www.cosedicasa.com/mercatini/gradisca-di-isonzo-giardini-di-piazza-unita-ditalia"
+      ],
+      "status": "published"
     },
     {
       "marketId": "M006",
@@ -2658,7 +4260,7 @@
       "sourceUrls": [
         "https://www.prosacile.it/antiquariato"
       ],
-      "status": "suspended"
+      "status": "published"
     },
     {
       "marketId": "M049",
@@ -2683,7 +4285,7 @@
         "https://www.prosanvito.it/natale/",
         "https://www.turismofvg.it/eventi/la-magia-del-natale-mercatino-2026"
       ],
-      "status": "suspended"
+      "status": "published"
     },
     {
       "marketId": "M003",
@@ -2819,7 +4421,7 @@
         "https://infosandaniele.com/it/turismo/manifestazioni/mercato-contadino",
         "https://www.infosandaniele.com/it/turismo/manifestazioni/mercato-settimanale"
       ],
-      "status": "suspended"
+      "status": "published"
     },
     {
       "marketId": "M052",
@@ -2858,7 +4460,7 @@
       "sourceUrls": [
         "https://www.comune.aviano.pn.it/it/servizi-212823/emanazione-e-istruttoria-domande-relative-al-bando-annuale-per-lassegnazione-dei-posteggi-del-mercato-contadino-265644"
       ],
-      "status": "suspended"
+      "status": "published"
     },
     {
       "marketId": "M059",
@@ -2885,13 +4487,25 @@
       "status": "published"
     },
     {
-      "marketId": "R-PN-M016",
-      "name": "Mercato settimanale di Coltura",
-      "comune": "Polcenigo",
+      "marketId": "R-PN-M012",
+      "name": "Mercato settimanale di Budoia",
+      "comune": "Budoia",
       "municipalityAliases": [],
       "titleAliases": [],
       "sourceUrls": [
+        "https://comune.budoia.pn.it/media/files/093008/attachment/BANDO_COMUNE_DI_BUDOIA.pdf",
         "https://www.distrettocommercioaltolivenza.it/alla-scoperta-delle-tradizioni-del-distretto-feste-sagre-e-mercati-storici-da-non-perdere/"
+      ],
+      "status": "published"
+    },
+    {
+      "marketId": "R-GTS-M005",
+      "name": "Mis Mas de tut un poc",
+      "comune": "Turriaco",
+      "municipalityAliases": [],
+      "titleAliases": [],
+      "sourceUrls": [
+        "https://www.prolocoturriaco.it/notizia/mismas---de-tut-un-poc"
       ],
       "status": "published"
     },
@@ -2907,70 +4521,36 @@
       "status": "published"
     },
     {
-      "marketId": "R-PN-M062",
-      "name": "Mercato settimanale di Roveredo in Piano",
-      "comune": "Roveredo in Piano",
+      "marketId": "R-UDA-M057",
+      "name": "Mercato agroalimentare Naturalmente Lavariano",
+      "comune": "Mortegliano",
       "municipalityAliases": [],
       "titleAliases": [],
       "sourceUrls": [
-        "https://www.comune.roveredoinpiano.pn.it/media/files/md/093036/Regolamento_C.U.P._Mercato_2023__EOEyvuN.pdf"
+        "https://commerciocormor.it/vivere-il-territorio/eventi/festa-delloca-e-del-vin-novello-2026/",
+        "https://comune.mortegliano.ud.it/media/files/md/030062/LINEE_DI_INIZIO_MANDATO_2024-2029.pdf"
       ],
       "status": "published"
     },
     {
-      "marketId": "R-PN-M004",
-      "name": "Mercato settimanale di Cordenons",
-      "comune": "Cordenons",
+      "marketId": "R-PN-M002",
+      "name": "Mercato del capoluogo di Casarsa",
+      "comune": "Casarsa della Delizia",
       "municipalityAliases": [],
       "titleAliases": [],
       "sourceUrls": [
-        "https://sac4.halleysac.it/c093017/zf/index.php/atti-amministrativi/delibere/dettaglio/atto/G9mpBd0TUWT0-A",
-        "https://www.comune.cordenons.pn.it/media/files/093017/attachment/delibera_di_giunta_n._144-2025.pdf"
+        "https://www.comune.casarsadelladelizia.pn.it/media/files/093010/attachment/POLIZIA_URBANA_TESTO_PER_SITO.pdf"
       ],
       "status": "published"
     },
     {
-      "marketId": "R-UDA-M060",
-      "name": "Mercato settimanale di Latisana capoluogo",
-      "comune": "Latisana",
+      "marketId": "R-PN-M031",
+      "name": "Voglia di Natale",
+      "comune": "San Vito al Tagliamento",
       "municipalityAliases": [],
       "titleAliases": [],
       "sourceUrls": [
-        "https://www.comune.latisana.ud.it/media/files/030046/attachment/COMMERCIO_AREE_PUBBLICHE_REGOLAMENTO_TESTO_COORDINATO_01.pdf"
-      ],
-      "status": "published"
-    },
-    {
-      "marketId": "R-PN-M012",
-      "name": "Mercato settimanale di Budoia",
-      "comune": "Budoia",
-      "municipalityAliases": [],
-      "titleAliases": [],
-      "sourceUrls": [
-        "https://comune.budoia.pn.it/media/files/093008/attachment/BANDO_COMUNE_DI_BUDOIA.pdf",
-        "https://www.distrettocommercioaltolivenza.it/alla-scoperta-delle-tradizioni-del-distretto-feste-sagre-e-mercati-storici-da-non-perdere/"
-      ],
-      "status": "published"
-    },
-    {
-      "marketId": "R-PN-M014",
-      "name": "Mercato settimanale di Caneva",
-      "comune": "Caneva",
-      "municipalityAliases": [],
-      "titleAliases": [],
-      "sourceUrls": [
-        "https://www.distrettocommercioaltolivenza.it/alla-scoperta-delle-tradizioni-del-distretto-feste-sagre-e-mercati-storici-da-non-perdere/"
-      ],
-      "status": "published"
-    },
-    {
-      "marketId": "R-PN-M055",
-      "name": "Mercato settimanale di Maniago",
-      "comune": "Maniago",
-      "municipalityAliases": [],
-      "titleAliases": [],
-      "sourceUrls": [
-        "https://www.comune.maniago.pn.it/media/files/093025/attachment/AVVISO_PUBBLICO_SITO_RIAPERTURA_BANDO.pdf"
+        "https://www.prosanvito.it/2026/07/16/mercatino-voglia-di-natale-2026/"
       ],
       "status": "published"
     },
@@ -2986,36 +4566,126 @@
       "status": "published"
     },
     {
-      "marketId": "R-UDA-M012",
-      "name": "Mercato settimanale di Basiliano",
-      "comune": "Basiliano",
+      "marketId": "R-PN-M007",
+      "name": "Mercato agricolo di Torre",
+      "comune": "Pordenone",
       "municipalityAliases": [],
       "titleAliases": [],
       "sourceUrls": [
-        "https://www.comune.basiliano.ud.it/it/events"
+        "https://www.comune.pordenone.it/it/argomenti/mercato",
+        "https://www.comune.pordenone.it/it/citta/vivi/mercato/sacro-cuore"
       ],
       "status": "published"
     },
     {
-      "marketId": "R-PN-M066",
-      "name": "Mercato settimanale di San Vito al Tagliamento",
-      "comune": "San Vito al Tagliamento",
+      "marketId": "R-UDB-M006",
+      "name": "Campagna Amica di Passons",
+      "comune": "Pasian di Prato",
       "municipalityAliases": [],
       "titleAliases": [],
       "sourceUrls": [
-        "https://backoffice-comuni.regione.fvg.it/media/files/md/093041/ORDINANZA_N._52_2026.pdf"
+        "https://www.campagnamica.it/la-nostra-rete/mercato/il-mercato-di-campagna-amica-di-passons/"
       ],
       "status": "published"
     },
     {
-      "marketId": "R-PN-M054",
-      "name": "Mercato settimanale ordinario di Aviano",
-      "comune": "Aviano",
+      "marketId": "R-UDB-M027",
+      "name": "Mercatini di Natale a Sauris di Sopra",
+      "comune": "Sauris",
       "municipalityAliases": [],
       "titleAliases": [],
       "sourceUrls": [
-        "https://backoffice-comuni.regione.fvg.it/media/files/093004/attachment/Bando-signed.pdf",
-        "https://comune.aviano.pn.it/media/files/093004/attachment/determina_490_ricognizione.pdf"
+        "https://www.sauris.org/events/in-der-zahre-seint-de-bainachn-a-sauris-e-natale/",
+        "https://www.sauris.org/natale-mercatini-sauris/"
+      ],
+      "status": "published"
+    },
+    {
+      "marketId": "R-PN-M016",
+      "name": "Mercato settimanale di Coltura",
+      "comune": "Polcenigo",
+      "municipalityAliases": [],
+      "titleAliases": [],
+      "sourceUrls": [
+        "https://www.distrettocommercioaltolivenza.it/alla-scoperta-delle-tradizioni-del-distretto-feste-sagre-e-mercati-storici-da-non-perdere/"
+      ],
+      "status": "published"
+    },
+    {
+      "marketId": "R-UDB-M041",
+      "name": "Mercato coperto Campagna Amica di Udine",
+      "comune": "Udine",
+      "municipalityAliases": [],
+      "titleAliases": [],
+      "sourceUrls": [
+        "https://www.campagnamica.it/la-nostra-rete/mercato/mercato-coperto-campagna-amica-udine/"
+      ],
+      "status": "published"
+    },
+    {
+      "marketId": "R-UDA-M054",
+      "name": "Mercato invernale di Lignano Sabbiadoro",
+      "comune": "Lignano Sabbiadoro",
+      "municipalityAliases": [],
+      "titleAliases": [],
+      "sourceUrls": [
+        "https://comune.lignano-sabbiadoro.ud.it/novita/avvisi/avviso-spostamento-temporaneo-mercato-invernale"
+      ],
+      "status": "published"
+    },
+    {
+      "marketId": "M050",
+      "name": "Mercatino di Ponterosso",
+      "comune": "Trieste",
+      "municipalityAliases": [],
+      "titleAliases": [],
+      "sourceUrls": [
+        "https://www.discover-trieste.it/vivi/trieste-now/mercatino-di-ponterosso"
+      ],
+      "status": "published"
+    },
+    {
+      "marketId": "R-UDB-M025",
+      "name": "22ª Mostra Mercato – Gesti antichi per un nuovo Natale",
+      "comune": "San Pietro al Natisone",
+      "municipalityAliases": [],
+      "titleAliases": [],
+      "sourceUrls": [
+        "https://www.nediskedoline.it/wpnediske/event/gesti-antichi-per-un-nuovo-natale-2026/"
+      ],
+      "status": "published"
+    },
+    {
+      "marketId": "R-UDB-M015",
+      "name": "Mercatini di Natale di Ragogna",
+      "comune": "Ragogna",
+      "municipalityAliases": [],
+      "titleAliases": [],
+      "sourceUrls": [
+        "https://www.prolocoragogna.it/",
+        "https://www.prolocoragogna.it/wp-content/uploads/2026/10/Regolamento_Mercatini_di_Natale_Ragogna_2026-1.pdf"
+      ],
+      "status": "published"
+    },
+    {
+      "marketId": "R-PN-M034",
+      "name": "Mercatino di Natale a Villanova",
+      "comune": "Pordenone",
+      "municipalityAliases": [],
+      "titleAliases": [],
+      "sourceUrls": [
+        "https://www.prolocopordenone.it/news/mercatino-di-natale-15-novembre/"
+      ],
+      "status": "published"
+    },
+    {
+      "marketId": "R-UDB-M021",
+      "name": "Profumo di Natale nell'aria",
+      "comune": "Ronchis",
+      "municipalityAliases": [],
+      "titleAliases": [],
+      "sourceUrls": [
+        "https://prolocoregionefvg.it/eventi-delle-associate/profumo-di-natale-nellaria/"
       ],
       "status": "published"
     },
@@ -3032,13 +4702,194 @@
       "status": "published"
     },
     {
-      "marketId": "R-PN-M002",
-      "name": "Mercato del capoluogo di Casarsa",
-      "comune": "Casarsa della Delizia",
+      "marketId": "R-PN-M066",
+      "name": "Mercato settimanale di San Vito al Tagliamento",
+      "comune": "San Vito al Tagliamento",
       "municipalityAliases": [],
       "titleAliases": [],
       "sourceUrls": [
-        "https://www.comune.casarsadelladelizia.pn.it/media/files/093010/attachment/POLIZIA_URBANA_TESTO_PER_SITO.pdf"
+        "https://backoffice-comuni.regione.fvg.it/media/files/md/093041/ORDINANZA_N._52_2026.pdf"
+      ],
+      "status": "published"
+    },
+    {
+      "marketId": "R-UDB-M010",
+      "name": "Advento Nassfeld – Pramollo",
+      "comune": "Pontebba",
+      "municipalityAliases": [],
+      "titleAliases": [],
+      "sourceUrls": [
+        "https://hermagor.at/freizeit-tourismus/veranstaltungskalender/details/advento-nassfeld-pramollo-5/",
+        "https://www.turismofvg.it/eventi/la-magia-del-natale-advento?LangSetCMS=it"
+      ],
+      "status": "published"
+    },
+    {
+      "marketId": "R-UDA-M020",
+      "name": "Mercato di Campagna Amica di Codroipo",
+      "comune": "Codroipo",
+      "municipalityAliases": [],
+      "titleAliases": [],
+      "sourceUrls": [
+        "https://www.campagnamica.it/la-nostra-rete/mercato/il-mercato-di-campagna-amica-di-codroipo/"
+      ],
+      "status": "published"
+    },
+    {
+      "marketId": "R-PN-M004",
+      "name": "Mercato settimanale di Cordenons",
+      "comune": "Cordenons",
+      "municipalityAliases": [],
+      "titleAliases": [],
+      "sourceUrls": [
+        "https://sac4.halleysac.it/c093017/zf/index.php/atti-amministrativi/delibere/dettaglio/atto/G9mpBd0TUWT0-A",
+        "https://www.comune.cordenons.pn.it/media/files/093017/attachment/delibera_di_giunta_n._144-2025.pdf"
+      ],
+      "status": "published"
+    },
+    {
+      "marketId": "R-UDA-M012",
+      "name": "Mercato settimanale di Basiliano",
+      "comune": "Basiliano",
+      "municipalityAliases": [],
+      "titleAliases": [],
+      "sourceUrls": [
+        "https://www.comune.basiliano.ud.it/it/events"
+      ],
+      "status": "published"
+    },
+    {
+      "marketId": "R-PN-M055",
+      "name": "Mercato settimanale di Maniago",
+      "comune": "Maniago",
+      "municipalityAliases": [],
+      "titleAliases": [],
+      "sourceUrls": [
+        "https://www.comune.maniago.pn.it/media/files/093025/attachment/AVVISO_PUBBLICO_SITO_RIAPERTURA_BANDO.pdf"
+      ],
+      "status": "published"
+    },
+    {
+      "marketId": "R-UDA-M060",
+      "name": "Mercato settimanale di Latisana capoluogo",
+      "comune": "Latisana",
+      "municipalityAliases": [],
+      "titleAliases": [],
+      "sourceUrls": [
+        "https://www.comune.latisana.ud.it/media/files/030046/attachment/COMMERCIO_AREE_PUBBLICHE_REGOLAMENTO_TESTO_COORDINATO_01.pdf"
+      ],
+      "status": "published"
+    },
+    {
+      "marketId": "R-UDB-M016",
+      "name": "Sapori di Carnia – mostra mercato gastronomica 2026",
+      "comune": "Raveo",
+      "municipalityAliases": [],
+      "titleAliases": [],
+      "sourceUrls": [
+        "https://www.turismofvg.it/eventi/sapori-di-carnia-2026"
+      ],
+      "status": "published"
+    },
+    {
+      "marketId": "R-UDB-M042",
+      "name": "Campagna Amica Villaggio del Sole",
+      "comune": "Udine",
+      "municipalityAliases": [],
+      "titleAliases": [],
+      "sourceUrls": [
+        "https://www.campagnamica.it/la-nostra-rete/mercato/mercato-di-campagna-amica-del-villaggio-del-sole-di-udine/"
+      ],
+      "status": "published"
+    },
+    {
+      "marketId": "R-PN-M062",
+      "name": "Mercato settimanale di Roveredo in Piano",
+      "comune": "Roveredo in Piano",
+      "municipalityAliases": [],
+      "titleAliases": [],
+      "sourceUrls": [
+        "https://www.comune.roveredoinpiano.pn.it/media/files/md/093036/Regolamento_C.U.P._Mercato_2023__EOEyvuN.pdf"
+      ],
+      "status": "published"
+    },
+    {
+      "marketId": "R-PN-M008",
+      "name": "Mercato agricolo del Sacro Cuore",
+      "comune": "Pordenone",
+      "municipalityAliases": [],
+      "titleAliases": [],
+      "sourceUrls": [
+        "https://www.comune.pordenone.it/it/argomenti/mercato",
+        "https://www.comune.pordenone.it/it/novita/affidamento-temporaneo-e-rilancio-del-mercato-agricolo-del-sacro-cuore"
+      ],
+      "status": "published"
+    },
+    {
+      "marketId": "R-PN-M009",
+      "name": "Mercatino degli hobbisti e della creatività - Festa di Santa Lucia",
+      "comune": "Prata di Pordenone",
+      "municipalityAliases": [],
+      "titleAliases": [],
+      "sourceUrls": [
+        "https://www.prolocosantaluciaprata.it/files/FESTA-DI-SANTA-LUCIA-2026_regolamento-hobbisti.pdf",
+        "https://www.prolocosantaluciaprata.it/moduli-e-varie.html"
+      ],
+      "status": "published"
+    },
+    {
+      "marketId": "R-PN-M032",
+      "name": "Dal Campat alla Piazza - mercatini",
+      "comune": "Brugnera",
+      "municipalityAliases": [],
+      "titleAliases": [],
+      "sourceUrls": [
+        "https://www.festeggiamentimaron.it/dalcampatallapiazza/"
+      ],
+      "status": "published"
+    },
+    {
+      "marketId": "R-PN-M054",
+      "name": "Mercato settimanale ordinario di Aviano",
+      "comune": "Aviano",
+      "municipalityAliases": [],
+      "titleAliases": [],
+      "sourceUrls": [
+        "https://backoffice-comuni.regione.fvg.it/media/files/093004/attachment/Bando-signed.pdf",
+        "https://comune.aviano.pn.it/media/files/093004/attachment/determina_490_ricognizione.pdf"
+      ],
+      "status": "published"
+    },
+    {
+      "marketId": "R-UDB-M040",
+      "name": "Campagna Amica Piazza XX Settembre",
+      "comune": "Udine",
+      "municipalityAliases": [],
+      "titleAliases": [],
+      "sourceUrls": [
+        "https://www.campagnamica.it/la-nostra-rete/mercato/mercato-di-campagna-amica-di-udine/"
+      ],
+      "status": "published"
+    },
+    {
+      "marketId": "R-PN-M014",
+      "name": "Mercato settimanale di Caneva",
+      "comune": "Caneva",
+      "municipalityAliases": [],
+      "titleAliases": [],
+      "sourceUrls": [
+        "https://www.distrettocommercioaltolivenza.it/alla-scoperta-delle-tradizioni-del-distretto-feste-sagre-e-mercati-storici-da-non-perdere/"
+      ],
+      "status": "published"
+    },
+    {
+      "marketId": "M039",
+      "name": "Il Baule del Diavolo",
+      "comune": "Cividale del Friuli",
+      "municipalityAliases": [],
+      "titleAliases": [],
+      "sourceUrls": [
+        "https://www.turismofvg.it/eventi/il-baule-del-diavolo-475626"
       ],
       "status": "published"
     }
@@ -3050,42 +4901,7 @@
       "reason": "Fonte o calendario da verificare prima di riproporre la scheda."
     },
     {
-      "marketId": "M018",
-      "status": "suspended",
-      "reason": "Bozza precedente non riconfermata nella verifica del 7 novembre 2026."
-    },
-    {
-      "marketId": "M025",
-      "status": "suspended",
-      "reason": "Bozza precedente non riconfermata nella verifica del 7 novembre 2026."
-    },
-    {
-      "marketId": "M042",
-      "status": "suspended",
-      "reason": "Fonte o calendario da verificare prima di riproporre la scheda."
-    },
-    {
       "marketId": "M015",
-      "status": "suspended",
-      "reason": "Fonte o calendario da verificare prima di riproporre la scheda."
-    },
-    {
-      "marketId": "M043",
-      "status": "suspended",
-      "reason": "Bozza precedente non riconfermata nella verifica del 7 novembre 2026."
-    },
-    {
-      "marketId": "M035",
-      "status": "suspended",
-      "reason": "Bozza precedente non riconfermata nella verifica del 7 novembre 2026."
-    },
-    {
-      "marketId": "M030",
-      "status": "suspended",
-      "reason": "Fonte o calendario da verificare prima di riproporre la scheda."
-    },
-    {
-      "marketId": "M040",
       "status": "suspended",
       "reason": "Fonte o calendario da verificare prima di riproporre la scheda."
     },
@@ -3100,22 +4916,7 @@
       "reason": "Fonte o calendario da verificare prima di riproporre la scheda."
     },
     {
-      "marketId": "M034",
-      "status": "suspended",
-      "reason": "Bozza precedente non riconfermata nella verifica del 7 novembre 2026."
-    },
-    {
-      "marketId": "M038",
-      "status": "suspended",
-      "reason": "Fonte o calendario da verificare prima di riproporre la scheda."
-    },
-    {
       "marketId": "M057",
-      "status": "suspended",
-      "reason": "Fonte o calendario da verificare prima di riproporre la scheda."
-    },
-    {
-      "marketId": "M041",
       "status": "suspended",
       "reason": "Fonte o calendario da verificare prima di riproporre la scheda."
     },
@@ -3123,26 +4924,6 @@
       "marketId": "M031",
       "status": "suspended",
       "reason": "Fonte o calendario da verificare prima di riproporre la scheda."
-    },
-    {
-      "marketId": "M027",
-      "status": "suspended",
-      "reason": "Bozza precedente non riconfermata nella verifica del 7 novembre 2026."
-    },
-    {
-      "marketId": "M032",
-      "status": "suspended",
-      "reason": "Fonte o calendario da verificare prima di riproporre la scheda."
-    },
-    {
-      "marketId": "M037",
-      "status": "suspended",
-      "reason": "Bozza precedente non riconfermata nella verifica del 7 novembre 2026."
-    },
-    {
-      "marketId": "M058",
-      "status": "suspended",
-      "reason": "Bozza precedente non riconfermata nella verifica del 7 novembre 2026."
     },
     {
       "marketId": "M013",
@@ -3153,16 +4934,6 @@
       "marketId": "M054",
       "status": "suspended",
       "reason": "Fonte o calendario da verificare prima di riproporre la scheda."
-    },
-    {
-      "marketId": "M017",
-      "status": "suspended",
-      "reason": "Bozza precedente non riconfermata nella verifica del 7 novembre 2026."
-    },
-    {
-      "marketId": "M020",
-      "status": "suspended",
-      "reason": "Bozza precedente non riconfermata nella verifica del 7 novembre 2026."
     },
     {
       "marketId": "M059",
@@ -4005,6 +5776,231 @@
       "marketId": "M051"
     },
     {
+      "legacyId": "market:M050:2026-01-25",
+      "editionId": "edition-cdffa16c435a61492225f2de",
+      "marketId": "M050"
+    },
+    {
+      "legacyId": "market:M050:2026-02-22",
+      "editionId": "edition-4b7bf5a8a7f554f31430e421",
+      "marketId": "M050"
+    },
+    {
+      "legacyId": "market:M050:2026-03-22",
+      "editionId": "edition-5e29e1836a7bca29232015a3",
+      "marketId": "M050"
+    },
+    {
+      "legacyId": "market:M050:2026-04-26",
+      "editionId": "edition-e1574f2bde4797acf248dc46",
+      "marketId": "M050"
+    },
+    {
+      "legacyId": "market:M050:2026-05-24",
+      "editionId": "edition-ee58402073c6dfccd4100e11",
+      "marketId": "M050"
+    },
+    {
+      "legacyId": "market:M050:2026-06-28",
+      "editionId": "edition-564b579c2e2f0389b17b45a6",
+      "marketId": "M050"
+    },
+    {
+      "legacyId": "market:M050:2026-07-26",
+      "editionId": "edition-cc0849ce47c45bdd923b619f",
+      "marketId": "M050"
+    },
+    {
+      "legacyId": "market:M050:2026-08-23",
+      "editionId": "edition-718c3c85be81ff2485727c69",
+      "marketId": "M050"
+    },
+    {
+      "legacyId": "market:M050:2026-09-27",
+      "editionId": "edition-4b06317e2aeef01469c979af",
+      "marketId": "M050"
+    },
+    {
+      "legacyId": "market:M050:2026-10-25",
+      "editionId": "edition-688abd13a2b6042aa6f20923",
+      "marketId": "M050"
+    },
+    {
+      "legacyId": "market:M050:2026-11-22",
+      "editionId": "edition-159d328451b9d1c1f140c62d",
+      "marketId": "M050"
+    },
+    {
+      "legacyId": "market:M050:2026-12-27",
+      "editionId": "edition-0879419e112e097f63001dbc",
+      "marketId": "M050"
+    },
+    {
+      "legacyId": "market:R-GTS-M005:2026-12-06",
+      "editionId": "edition-9e92c3e5fb5589baa1954469",
+      "marketId": "R-GTS-M005"
+    },
+    {
+      "legacyId": "market:R-PN-M032:2026-11-22",
+      "editionId": "edition-d1266cb2a1d43fc18a09efb1",
+      "marketId": "R-PN-M032"
+    },
+    {
+      "legacyId": "market:R-PN-M034:2026-11-15",
+      "editionId": "edition-260aec066dd87f2d359d9b62",
+      "marketId": "R-PN-M034"
+    },
+    {
+      "legacyId": "market:R-PN-M009:2026-12-13",
+      "editionId": "edition-2ab6649bcef0ac3c71d81927",
+      "marketId": "R-PN-M009"
+    },
+    {
+      "legacyId": "market:R-PN-M031:2026-12-05",
+      "editionId": "edition-231ac6c0684b71649bf8e2a4",
+      "marketId": "R-PN-M031"
+    },
+    {
+      "legacyId": "market:R-PN-M031:2026-12-06",
+      "editionId": "edition-e011a9bc038e93d43a3b696e",
+      "marketId": "R-PN-M031"
+    },
+    {
+      "legacyId": "market:R-PN-M031:2026-12-08",
+      "editionId": "edition-0614e10dc5684d9b8809148a",
+      "marketId": "R-PN-M031"
+    },
+    {
+      "legacyId": "market:R-PN-M031:2026-12-12",
+      "editionId": "edition-d05eb895bb4729f906e8a37a",
+      "marketId": "R-PN-M031"
+    },
+    {
+      "legacyId": "market:R-PN-M031:2026-12-13",
+      "editionId": "edition-cba0aadc4c8d9991e81b8983",
+      "marketId": "R-PN-M031"
+    },
+    {
+      "legacyId": "market:R-PN-M031:2026-12-19",
+      "editionId": "edition-3c287b777007c9f86ae803dc",
+      "marketId": "R-PN-M031"
+    },
+    {
+      "legacyId": "market:R-PN-M031:2026-12-20",
+      "editionId": "edition-0674c789e3a70c2ecff4fd37",
+      "marketId": "R-PN-M031"
+    },
+    {
+      "legacyId": "market:R-UDB-M010:2026-12-05",
+      "editionId": "edition-b8139afc502db506850eaf53",
+      "marketId": "R-UDB-M010"
+    },
+    {
+      "legacyId": "market:R-UDB-M010:2026-12-06",
+      "editionId": "edition-c31f23e9709634c16c44d36c",
+      "marketId": "R-UDB-M010"
+    },
+    {
+      "legacyId": "market:R-UDB-M010:2026-12-08",
+      "editionId": "edition-5e08450cffc0cd7595c0f190",
+      "marketId": "R-UDB-M010"
+    },
+    {
+      "legacyId": "market:R-UDB-M010:2026-12-12",
+      "editionId": "edition-a0569f9556942bdf7adc4191",
+      "marketId": "R-UDB-M010"
+    },
+    {
+      "legacyId": "market:R-UDB-M010:2026-12-13",
+      "editionId": "edition-b276c0fd7ce55a33ceb95178",
+      "marketId": "R-UDB-M010"
+    },
+    {
+      "legacyId": "market:R-UDB-M010:2026-12-19",
+      "editionId": "edition-9a368207724f84ef39ec7786",
+      "marketId": "R-UDB-M010"
+    },
+    {
+      "legacyId": "market:R-UDB-M010:2026-12-20",
+      "editionId": "edition-ff2b71e2b5c6f2bc695ee28f",
+      "marketId": "R-UDB-M010"
+    },
+    {
+      "legacyId": "market:R-UDB-M010:2026-12-26",
+      "editionId": "edition-39e38b806f1292a775382078",
+      "marketId": "R-UDB-M010"
+    },
+    {
+      "legacyId": "market:R-UDB-M010:2026-12-27",
+      "editionId": "edition-0f9eed952a44416da832242a",
+      "marketId": "R-UDB-M010"
+    },
+    {
+      "legacyId": "market:R-UDB-M010:2027-01-06",
+      "editionId": "edition-aca3b79cacb0280ddd1ea7b1",
+      "marketId": "R-UDB-M010"
+    },
+    {
+      "legacyId": "market:R-UDB-M016:2026-12-13",
+      "editionId": "edition-532ae0927e6bb4a9c3d0e05d",
+      "marketId": "R-UDB-M016"
+    },
+    {
+      "legacyId": "market:R-UDB-M021:2026-11-22",
+      "editionId": "edition-9c49430f56a8563dccd6f5c9",
+      "marketId": "R-UDB-M021"
+    },
+    {
+      "legacyId": "market:R-UDB-M025:2026-12-05",
+      "editionId": "edition-f992a2d0938b1f61470961e0",
+      "marketId": "R-UDB-M025"
+    },
+    {
+      "legacyId": "market:R-UDB-M025:2026-12-06",
+      "editionId": "edition-984dd51374a3862973359924",
+      "marketId": "R-UDB-M025"
+    },
+    {
+      "legacyId": "market:R-UDB-M025:2026-12-08",
+      "editionId": "edition-2f07479b88b2c1ffd95a8494",
+      "marketId": "R-UDB-M025"
+    },
+    {
+      "legacyId": "market:R-UDA-M057:2026-11-14",
+      "editionId": "edition-afc5db0b28f2daaf03586edb",
+      "marketId": "R-UDA-M057"
+    },
+    {
+      "legacyId": "market:R-UDA-M057:2026-11-15",
+      "editionId": "edition-003025b30c77d39c2e96f5aa",
+      "marketId": "R-UDA-M057"
+    },
+    {
+      "legacyId": "market:R-UDB-M015:2026-12-05",
+      "editionId": "edition-d0cea5c5494e4aac1db27b49",
+      "marketId": "R-UDB-M015"
+    },
+    {
+      "legacyId": "market:R-UDB-M015:2026-12-06",
+      "editionId": "edition-c8f9eed1e5e02f7f3c39567b",
+      "marketId": "R-UDB-M015"
+    },
+    {
+      "legacyId": "market:R-UDB-M027:2026-12-05",
+      "editionId": "edition-ad945612ac472b590540d0cc",
+      "marketId": "R-UDB-M027"
+    },
+    {
+      "legacyId": "market:R-UDB-M027:2026-12-06",
+      "editionId": "edition-71302a3b92708f0a25d20042",
+      "marketId": "R-UDB-M027"
+    },
+    {
+      "legacyId": "market:R-UDB-M027:2026-12-08",
+      "editionId": "edition-68a0207d2abe35b408f9cfc4",
+      "marketId": "R-UDB-M027"
+    },
+    {
       "legacyId": "market:M030:2026-12-13",
       "editionId": "edition-daeae5dde474e11b72ef865a",
       "marketId": "M030"
@@ -4053,6 +6049,11 @@
       "legacyId": "market:M019:2026-12-26",
       "editionId": "edition-6d06ce3f-701c-47a6-b0ef-cdec4342f162",
       "marketId": "M019"
+    },
+    {
+      "legacyId": "market:M039:2026-11-22",
+      "editionId": "edition-m039-20261122-reviewed",
+      "marketId": "M039"
     }
   ]
 }

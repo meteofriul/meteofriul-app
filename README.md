@@ -1,5 +1,15 @@
 # Meteo Friûl
 
+**Mercati, recupero schede del 9 novembre 2026.** Nel pannello online la revisione
+privata 57 contiene 80 schede selezionate, 9 sospese e 11 bozze. Il catalogo
+candidato nel ramo app contiene 80 schede, 202 edizioni e 13 rimozioni;
+include 11 mercati abituali prima classificati come occasionali. Sette
+mercatini ricorrenti restano senza prossima data puntuale e sono visibili
+solo in «Tutti» con avviso. [Fonti, controlli e 20 schede residue](docs/operations/MERCATI_CONTROLLO_PANNELLO_20261108.md#recupero-delle-schede-residue-9-novembre-2026).
+Il catalogo pubblico è ancora alla revisione 0; il ramo, `main` e le app
+distribuite restano distinti. Il rilascio richiede ancora confronto con il
+catalogo approvato e prova su telefono.
+
 **Mercati, catalogo candidato nel ramo app, 9 novembre 2026.** Il bootstrap runtime è stato preparato dalle 42 schede selezionate del pannello, con 130 date e 29 rimozioni; la revisione pubblica 0 e la sua cache storica vengono escluse dal lettore del ramo. Il file originario resta solo per la migrazione e i test storici. 5.195 test frontend, lint e build PASS. [Provenienza e vincoli di rilascio](docs/operations/MERCATI_CONTROLLO_PANNELLO_20261108.md#catalogo-incorporato-candidato-nel-ramo-app-9-novembre-2026). La nota di Cervignano resta invariata e gli eventi automatici dei mercatini restano un bonus in Eventi. Nessuna pubblicazione dell'app o del catalogo pubblico.
 
 **Mercati, prova interattiva dell'app del 9 novembre 2026.** Il ramo Mercati contiene l'interfaccia, non ancora presente in `main` né distribuita. Il pilota Web locale con la selezione privata di 42 schede ha mostrato elenco e dettaglio a 390 × 844 px; filtri, ritorno, fonte e indicazioni funzionano negli esempi provati. [Catture e limiti](docs/operations/MERCATI_CONTROLLO_PANNELLO_20261108.md#prova-interattiva-dellapp-nel-pilota-9-novembre-2026). Revisione pubblica 0; nessuna pubblicazione o prova sul telefono Android.

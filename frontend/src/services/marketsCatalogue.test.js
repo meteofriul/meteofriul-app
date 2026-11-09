@@ -28,7 +28,7 @@ describe("persistent managed market catalogue", () => {
     storage.setItem(key, JSON.stringify({ catalogue: historical }));
     const store = createMarketsCatalogueStore({ storage, fetchImpl: async () => response(historical), now: () => time });
     expect(store.getSnapshot().status).toBe("bootstrap");
-    expect(store.getSnapshot().catalogue.markets).toHaveLength(42);
+    expect(store.getSnapshot().catalogue.markets).toHaveLength(80);
     await store.refresh();
     expect(store.getSnapshot().status).toBe("bootstrap");
     expect(store.getSnapshot().error).toMatch(/precedente alla selezione/);
@@ -122,7 +122,7 @@ describe("persistent managed market catalogue", () => {
   });
 
   it("expires the packaged bootstrap and does not renew a remote snapshot through a fresh fetch", async () => {
-    const expired = createMarketsCatalogueStore({ storage: memoryStorage(), now: () => Date.parse("2027-02-08T12:00:00Z") });
+    const expired = createMarketsCatalogueStore({ storage: memoryStorage(), now: () => Date.parse("2027-04-28T12:00:00Z") });
     expect(expired.getSnapshot().status).toBe("unavailable");
     const store = createMarketsCatalogueStore({ storage: memoryStorage(), fetchImpl: async () => response(snapshot()), now: () => time + 86400001 });
     await store.refresh();

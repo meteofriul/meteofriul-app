@@ -22,13 +22,25 @@ const pn = { city: "Pordenone", regionCode: "IT-36" };
 const ts = { city: "Trieste", regionCode: "IT-36" };
 const now = new Date("2026-10-15T10:00:00Z");
 describe("market catalogue and dated editions", () => {
-  it("packages the selected 42 cards and withdrawals for the next app build", () => {
-    expect(candidateCatalogue.markets).toHaveLength(42);
-    expect(candidateCatalogue.dates).toHaveLength(130);
-    expect(candidateCatalogue.tombstones).toHaveLength(29);
+  it("packages the selected 80 cards and withdrawals for the next app build", () => {
+    expect(candidateCatalogue.markets).toHaveLength(80);
+    expect(candidateCatalogue.dates).toHaveLength(202);
+    expect(candidateCatalogue.tombstones).toHaveLength(13);
     expect(candidateCatalogue.markets.every(market => market.status === "published" && market.quality === "Documentato")).toBe(true);
     expect(["M013", "M014", "M015"].every(id => getMarketIn(id) === null)).toBe(true);
     expect(["M013", "M014", "M015"].every(id => candidateCatalogue.tombstones.some(item => item.marketId === id))).toBe(true);
+  });
+  it("shows documented weekly markets and keeps monthly markets without confirmed dates out of Events", () => {
+    const reviewDay = new Date("2026-11-09T12:00:00Z");
+    expect(getMarketIn("R-UDB-M040")?.group).toBe("regular");
+    expect(getMarketIn("R-UDA-M054")?.validThrough).toBe("2027-04-27");
+    expect(getMarketIn("M040")?.group).toBe("occasional");
+    expect(getMarketIn("M032")?.group).toBe("occasional");
+    expect(publishedMarketDatesIn(getMarketIn("M032"), reviewDay, candidateCatalogue)).toEqual([]);
+    expect(publishedMarketDatesIn(getMarketIn("M040"), reviewDay, candidateCatalogue)).toEqual([]);
+    expect(mergeMarketEventsIn([], { location: { city: "Udine", regionCode: "IT-36" }, radius: 5, now: reviewDay,
+      catalogue: candidateCatalogue }).some(event => event.market_id === "M040")).toBe(false);
+    expect(publishedMarketDatesIn(getMarketIn("M039"), reviewDay, candidateCatalogue).map(item => item.date)).toEqual(["2026-11-22"]);
   });
   it("keeps all source records but publishes only documented cards", () => {
     expect(MARKET_CATALOGUE.markets).toHaveLength(60);

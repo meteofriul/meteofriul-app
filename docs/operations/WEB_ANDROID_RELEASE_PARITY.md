@@ -1,5 +1,13 @@
 # Allineamento della Web App con Android
 
+**Mercati, nuovo catalogo candidato del 9 novembre 2026.** Il ramo condiviso
+Web/Android incorpora ora la selezione privata 57: 80 schede, 202 edizioni e
+13 rimozioni, con orizzonte massimo al 27 aprile 2027 per il mercato invernale
+di Lignano e scadenze individuali più brevi. [Provenienza e limiti](MERCATI_CONTROLLO_PANNELLO_20261108.md#recupero-delle-schede-residue-9-novembre-2026).
+La revisione pubblica resta 0 e gli artefatti Web/Android distribuiti non
+cambiano; prima di distribuirne uno serve la stessa versione approvata del
+catalogo e la prova su Android reale e Safari/iPhone secondo il runbook.
+
 **Mercati, bootstrap candidato del 9 novembre 2026.** Il ramo Web/Android condiviso ora importa la selezione privata proiettata in 42 schede, 130 date e 29 rimozioni; il lettore ignora il vecchio pubblico 0 e la sua cache. 5.195 test frontend, lint e build Web di verifica PASS. [Dati e vincoli](MERCATI_CONTROLLO_PANNELLO_20261108.md#catalogo-incorporato-candidato-nel-ramo-app-9-novembre-2026). Nessun artefatto Web/Android distribuito cambia. Il confronto con la futura revisione pubblica, la qualifica Android e Safari/iPhone restano aperti.
 
 **Mercati, pilota Web locale del 9 novembre 2026.** La selezione privata delle 42 schede è stata caricata in una copia isolata e osservata a 390 × 844 px in Scopri ed Eventi: elenco, filtri, dettaglio, fonte e indicazioni funzionano negli esempi provati. [Catture e osservazioni](MERCATI_CONTROLLO_PANNELLO_20261108.md#prova-interattiva-dellapp-nel-pilota-9-novembre-2026). Non è una verifica Android installata o Safari/iPhone. `main`, la revisione pubblica 0 e gli artefatti Web/Android distribuiti non cambiano; parità pubblica invariata.
