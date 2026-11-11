@@ -1,6 +1,6 @@
 # Stato release 0.1.15 e lavoro salvato — aggiornamento sorgenti del 24 ottobre 2026
 
-**Allineamento Mercati + Consiglio, 11 novembre — candidata locale.** Il ramo `codex/app-candidate-alignment-20261111` unisce i due workstream sopra `main` `61ec9174` senza alterare `main` o gli artefatti distribuiti. 5.199 test frontend, lint e build PASS; backend: 2.228 test PASS nella suite completa, due controlli XML PASS alla ripetizione con `lxml 6.1.0` prescritta (la versione globale 5.4.0 li fallisce), `compileall` PASS. Restano qualifica sul telefono, verifica Node/npm prescritti e gates di pubblicazione. Il ramo notifiche dell'11 novembre e indipendente.
+**Allineamento Mercati + Consiglio, 11 novembre — candidata locale.** Il ramo `codex/app-candidate-alignment-20261111` unisce i due workstream sopra `main` `61ec9174` senza alterare `main` o gli artefatti distribuiti. 5.199 test frontend, lint e build PASS; backend: suite prescritta con `lxml 6.1.0`, 2.201 test PASS (uno saltato), `compileall` PASS. Il primo controllo con la versione globale `lxml 5.4.0` aveva fallito due test XML; entrambi passano con la versione prescritta. Restano qualifica sul telefono, verifica Node/npm prescritti e gates di pubblicazione. Il ramo notifiche dell'11 novembre e indipendente.
 
 **Mercati, selezione privata del 9 novembre 2026.** Il pannello è alla revisione
 57: 80 schede selezionate, 9 sospese e 11 bozze. Il bootstrap candidato del
