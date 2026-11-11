@@ -76,6 +76,13 @@ atteso. La query PromQL live rivalutata **oggi** all'istante storico delle
 retrospettiva non ricostruisce la visibilita delle metriche nel motore di
 alerting alle 20:19; una latenza d'ingestione o valutazione resta un'ipotesi,
 non una causa accertata. L'email non dimostra un guasto delle precipitazioni.
+L'incidente `0.oev096ptbeqb` della policy indicata nell'email si e aperto il
+10 novembre alle 20:19:54 UTC e si e chiuso alle 20:24:05 UTC. La condizione
+ha `duration=0s`: Google [documenta](https://docs.cloud.google.com/monitoring/alerts/troubleshooting-alerts)
+che una singola valutazione e dati arrivati in ritardo possono produrre
+incidenti apparentemente anomali. Questa e una possibilita tecnica, non la
+diagnosi definitiva: prima di cambiare la policy servono evidenze sui tempi
+di visibilita delle serie e sulle valutazioni.
 
 ## Controlli aperti prima di modificare servizi o pubblicare
 
