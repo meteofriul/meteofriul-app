@@ -39,7 +39,7 @@ pioggia. Blocca la sintesi se la serie della giornata ha meno di dieci ore,
 buchi orari, inizia troppo tardi o termina prima delle 18:00, per non chiamare
 «massima» il massimo di poche ore. Valori malformati restano bloccanti.
 Il job registra ora `quality_limited_groups` nel proprio riepilogo tecnico:
-conta i gruppi per cui e stata inviata una sintesi ridotta senza esporre
+conta i gruppi per cui e stata preparata una sintesi ridotta senza esporre
 localita o identificativi personali. Prima del deploy tale contatore non e
 presente nei log ordinari.
 
