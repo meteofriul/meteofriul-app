@@ -88,7 +88,7 @@ non una causa accertata. L'email non dimostra un guasto delle precipitazioni.
 3. Dopo il deploy, leggere `quality_limited_groups` insieme a `source_trace` e
    `source_failed`; il contatore e preparato nel ramo ma non esiste nei log
    storici dell'11 novembre.
-4. Qualificare la correzione sul ramo notifiche, poi eseguire la PR e osservare
+4. Verificare la CI della [PR 46 in bozza](https://github.com/meteofriul/meteofriul-app/pull/46) e osservare
    una corsa ordinaria dopo il deploy del **solo job backend**. Nessuna modifica
    all'app installata e necessaria per la frase; deploy e invio di prova sono
    azioni distinte e non sono stati eseguiti in questo audit.
@@ -96,4 +96,4 @@ non una causa accertata. L'email non dimostra un guasto delle precipitazioni.
 Verifica locale del ramo: 79 test mirati di sintesi, dati mancanti, FCM e
 telemetria PASS (53 subtest); suite backend completa con `lxml 6.1.0`
 prescritta: 2.083 test PASS e 2 saltati (1.062 subtest PASS). `compileall`
-dei moduli modificati PASS. La CI della futura PR resta da verificare.
+dei moduli modificati PASS. La CI della PR 46 resta da verificare.
