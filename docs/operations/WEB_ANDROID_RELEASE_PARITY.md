@@ -1,5 +1,7 @@
 # Allineamento della Web App con Android
 
+**Notifiche, 11 novembre — sola candidata backend.** La correzione del testo mattutino nel ramo dedicato non richiede modifiche agli artefatti Android o Web: entrambi i canali ricevono il testo costruito dal job. [Audit degli invii e dei limiti](NOTIFICATIONS_ALERTS_AUDIT_20261111.md). Nessuna immagine job distribuita, nessun artefatto o pubblicazione Web/Android nuova, nessuna qualifica di dispositivo o Safari aggiunta. La parita degli artefatti pubblici non cambia.
+
 **Sintesi mattutina, 7 novembre — job backend aggiornato.** Il testo della notifica gestisce dati di precipitazione incompleti senza dedurre assenza di pioggia. [PR 44](https://github.com/meteofriul/meteofriul-app/pull/44), CI PR/main, prova su un telefono e [readback del job](MORNING_SUMMARY_SOURCE_QUALITY_DEPLOY_20261107.md) verificati; la prima corsa ordinaria resta aperta. Frontend, contratti dati, artefatti e pubblicazioni Web/Android invariati; nessuna nuova qualifica Safari o Android.
 
 **Sintesi mattutina e avvisi, 6 novembre — backend distribuito.** Il job mattutino ritira i token FCM invalidi confermati; le sole policy di errore mattino/sera notificano l'apertura. [Digest, CI, audit e limiti](MORNING_SUMMARY_ALERT_NOISE_DEPLOY_20261106.md). Nessun cambio al frontend o ai contratti dati Web/Android; nessun artefatto di release rigenerato o pubblicato e nessuna nuova qualifica browser/dispositivo.

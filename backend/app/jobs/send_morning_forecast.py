@@ -54,6 +54,7 @@ def _failure_summary(status: str) -> dict[str, int | str]:
         "device_failed": 0,
         "storage_failed": 0,
         "source_failed": 0,
+        "quality_limited_groups": 0,
         "pages_processed": 0,
         "delivery_batches": 0,
     }
