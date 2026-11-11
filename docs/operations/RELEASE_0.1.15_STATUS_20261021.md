@@ -1,5 +1,7 @@
 # Stato release 0.1.15 e lavoro salvato — aggiornamento sorgenti del 24 ottobre 2026
 
+**Allineamento Mercati + Consiglio, 11 novembre — candidata locale.** Il ramo `codex/app-candidate-alignment-20261111` unisce i due workstream sopra `main` `61ec9174` senza alterare `main` o gli artefatti distribuiti. 5.199 test frontend, lint e build PASS; backend: 2.228 test PASS nella suite completa, due controlli XML PASS alla ripetizione con `lxml 6.1.0` prescritta (la versione globale 5.4.0 li fallisce), `compileall` PASS. Restano qualifica sul telefono, verifica Node/npm prescritti e gates di pubblicazione. Il ramo notifiche dell'11 novembre e indipendente.
+
 **Mercati, selezione privata del 9 novembre 2026.** Il pannello è alla revisione
 57: 80 schede selezionate, 9 sospese e 11 bozze. Il bootstrap candidato del
 ramo app usa le stesse 80 schede, 202 edizioni e 13 rimozioni; le 20 non
@@ -65,6 +67,9 @@ con il catalogo pubblico futuro restano aperti.
 **Mercati, 30 ottobre: ricognizione territoriale e gestione futura.** Primo esame dei 215 comuni FVG, con fonti, limiti e approfondimenti distinti nel [registro per comune](MERCATI_RICOGNIZIONE_COMUNI_20261030.md). Nessuna assenza dedotta da ricerche senza risultati. Verificato in sola lettura il pannello esterno: Eventi/Scopri sono predisposti ma non collegati a Mercati; definita la [proposta di gestione di schede, edizioni, sedi e sospensioni](MERCATI_GESTIONE_PANNELLO_CONTRATTO_20261030.md). Solo ricerca e documentazione nel ramo Mercati; catalogo applicativo, pannello, AAB 300038 e Web distribuita invariati.
 
 **Mercati, 30 ottobre: catalogazione delle fonti.** Proseguita la ricerca nel ramo `codex/mercati-integration-20261028`, allineato al main verificato: 51 fonti, 44 schede approfondite e 11 nuove candidature. Dieci schede pronte alla revisione editoriale, con limiti espliciti; date puntuali, conflitti e prove storiche conservati nel [dossier e registro](MERCATI_FONTI_CATALOGAZIONE_20261030.md). Nessuna nuova voce attivata nell'app; catalogo, AAB 300038 e Web distribuita invariati. Prova visiva Mercati e revisione FUR aperte.
+**Sintesi Home, 8 novembre — sorgenti sul ramo editoriale.** La card Sintesi non riserva più la colonna dell'icona meteo; headline OSMER e consiglio occupano la stessa larghezza. L'icona dell'allerta ufficiale resta. 36 test Home mirati, lint e build frontend superati; nessuna nuova qualifica browser/dispositivo. Versione, AAB e Web App invariati.
+
+**Prova bozze del Consiglio, 8 novembre — revisione isolata.** L'API editoriale è stata distribuita con tag Cloud Run, 0% del traffico ordinario e pubblicazione disattivata. Il pannello può provare salvataggio e conferma dopo il login; l'operatore deve ancora verificare la scrittura autenticata. [Immagine, verifiche e limiti](EDITORIAL_PANEL_DRAFT_TRIAL_20261108.md). Versione, AAB, Web App, traffico API ordinario e qualifiche esistenti invariati.
 
 **Sintesi mattutina, 7 novembre — solo backend distribuito.** [PR 44](https://github.com/meteofriul/meteofriul-app/pull/44) e CI PR/main verdi; il job ordinario usa l'immagine col testo prudente per precipitazioni incomplete. Una prova su un solo telefono è stata ricevuta; la corsa ordinaria dell'8 novembre alle 07:30 resta da verificare. [Digest, test e limiti](MORNING_SUMMARY_SOURCE_QUALITY_DEPLOY_20261107.md). Versione, AAB e Web invariati.
 

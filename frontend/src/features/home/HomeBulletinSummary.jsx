@@ -1,5 +1,8 @@
 import {
   CircleCheck,
+  Lightbulb,
+  Megaphone,
+  Sparkles,
   CloudLightning,
   Eye,
   Snowflake,
@@ -9,7 +12,6 @@ import {
   Wind,
 } from "lucide-react";
 
-import { HomeMeteoconIcon } from "./HomeMeteoconIcon";
 import { HomeTeaserCard } from "./HomeTeaserCard";
 
 const ADVICE_ICONS = {
@@ -22,6 +24,9 @@ const ADVICE_ICONS = {
   storm: CloudLightning,
   temperature: Thermometer,
   wind: Wind,
+  advice: Lightbulb,
+  news: Sparkles,
+  message: Megaphone,
 };
 
 export function HomeBulletinSummary({ bulletin, onOpen }) {
@@ -31,7 +36,7 @@ export function HomeBulletinSummary({ bulletin, onOpen }) {
   const adviceStatus = bulletin.advice ? "ready" : bulletin.adviceStatus || "unavailable";
 
   return (
-    <section className="mf-home-section mf-home-bulletin" aria-labelledby="home-bulletin-title">
+    <section className="mf-home-section mf-home-bulletin mf-home-bulletin--summary" aria-labelledby="home-bulletin-title">
       <HomeTeaserCard
         className="mf-home-bulletin-card"
         heading={bulletin.title}
@@ -56,7 +61,13 @@ export function HomeBulletinSummary({ bulletin, onOpen }) {
                   <AdviceIcon size={20} strokeWidth={2.25} />
                 </span>
               ) : null}
-              <span className="mf-home-bulletin-card__advice-copy">{bulletin.advice.label}</span>
+              <span className="mf-home-bulletin-card__advice-copy">
+                {bulletin.advice.source === "editorial" ? <>
+                  <span className="mf-home-bulletin-card__advice-category">{({ advice: "Consiglio", news: "Novità", message: "Comunicazione" })[bulletin.advice.type]} · Meteo Friûl</span>
+                  <strong className="mf-home-bulletin-card__advice-title">{bulletin.advice.title}</strong>
+                  <span className="mf-home-bulletin-card__advice-message">{bulletin.advice.label}</span>
+                </> : bulletin.advice.label}
+              </span>
             </div>
           ) : adviceStatus === "pending" ? (
             <div
@@ -73,12 +84,6 @@ export function HomeBulletinSummary({ bulletin, onOpen }) {
           ) : null}
           {bulletin.body ? <p>{bulletin.body}</p> : null}
         </div>
-        <span
-          className="mf-home-bulletin-card__icon mf-home-bulletin-card__icon--weather"
-          aria-hidden="true"
-        >
-          <HomeMeteoconIcon icon={bulletin.icon} size={54} />
-        </span>
       </HomeTeaserCard>
     </section>
   );

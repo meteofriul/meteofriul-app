@@ -1,6 +1,5 @@
 import clearDay from "@meteocons/svg/fill/clear-day.svg";
 import clearNight from "@meteocons/svg/fill/clear-night.svg";
-import cloudy from "@meteocons/svg/fill/cloudy.svg";
 import rain from "@meteocons/svg/fill/rain.svg";
 import { renderToStaticMarkup } from "react-dom/server";
 import { afterEach, describe, expect, it, vi } from "vitest";
@@ -66,23 +65,17 @@ function getImageSource(markup) {
     .replaceAll("&amp;", "&");
 }
 
-function expectIndependentWeatherIcons(
-  markup,
-  { bulletinAsset = cloudy, currentAsset },
-) {
+function expectCurrentWeatherIcon(markup, currentAsset) {
   const heroIcon = getIconMarkup(markup, "mf-home-flight-scene__weather-icon");
-  const bulletinIcon = getIconMarkup(markup, "mf-home-bulletin-card__icon");
-
   expect(getImageSource(heroIcon)).toBe(currentAsset);
-  expect(getImageSource(bulletinIcon)).toBe(bulletinAsset);
-  expect(bulletinIcon).toContain("mf-home-meteocon-icon");
+  expect(markup).not.toContain("mf-home-bulletin-card__icon--weather");
 }
 
 afterEach(() => {
   vi.useRealTimers();
 });
 
-describe("Home current-weather and bulletin icon isolation", () => {
+describe("Home current-weather icon and bulletin layout", () => {
   it.each([
     {
       name: "daylight corrects a night icon only in the current-weather scene",
@@ -121,7 +114,7 @@ describe("Home current-weather and bulletin icon isolation", () => {
     const markup = renderHome({ weather: { icon, scenePhaseOverride } });
 
     expect(markup).toContain(`data-day-phase="${phase}"`);
-    expectIndependentWeatherIcons(markup, { currentAsset: asset });
+    expectCurrentWeatherIcon(markup, asset);
   });
 
   it("uses the shared pilot instant for the Home scene instead of the device clock", () => {
@@ -134,10 +127,10 @@ describe("Home current-weather and bulletin icon isolation", () => {
     });
 
     expect(markup).toContain('data-day-phase="night"');
-    expectIndependentWeatherIcons(markup, { currentAsset: clearNight });
+    expectCurrentWeatherIcon(markup, clearNight);
   });
 
-  it.each(["it", "fur"])("keeps current rain separate from the bulletin forecast in %s", (language) => {
+  it.each(["it", "fur"])("keeps current rain separate from the bulletin text in %s", (language) => {
     vi.useFakeTimers();
     vi.setSystemTime(new Date("2026-08-12T10:00:00.000Z"));
     const headline = language === "it" ? "Domani sole e cielo sereno" : "Doman soreli e cîl seren";
@@ -152,10 +145,8 @@ describe("Home current-weather and bulletin icon isolation", () => {
     });
 
     expect(markup).toContain(headline);
-    expectIndependentWeatherIcons(markup, {
-      bulletinAsset: clearDay,
-      currentAsset: rain,
-    });
+    expectCurrentWeatherIcon(markup, rain);
+    expect(markup).toContain("mf-home-bulletin--summary");
   });
 
   it.each(["yellow", "orange", "red"])("keeps the official %s alert above the current-weather icon", (tone) => {

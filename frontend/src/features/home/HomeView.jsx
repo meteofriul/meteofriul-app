@@ -5,6 +5,7 @@ import { HomeOfficialAlertCard } from "./HomeOfficialAlertCard";
 import { HomeQuickGrid } from "./HomeQuickGrid";
 import { HomeWeatherHero } from "./HomeWeatherHero";
 import { useHomeWeatherVisual } from "./useHomeWeatherVisual";
+import { useEditorialAdvice } from "./useEditorialAdvice";
 import { isDefinitiveAppExperience } from "../../services/localWeatherPilot";
 
 export function HomeView({
@@ -16,11 +17,16 @@ export function HomeView({
   weatherNow,
 }) {
   const homeModel = model || getHomeStaticViewModel(language);
+  const editorialAdvice = useEditorialAdvice();
   const weatherVisual = useHomeWeatherVisual(homeModel.weather, { now: weatherNow });
   const officialAlert = homeModel.officialAlert || homeModel.weather?.alertSummary || null;
   const hasActiveAlert = Boolean(officialAlert?.label);
   const hasAlertDestination = officialAlert?.action?.type === "tab-anchor"
     && Boolean(officialAlert.action.tab);
+  const bulletin = editorialAdvice && homeModel.bulletin
+    ? { ...homeModel.bulletin, advice: { source: "editorial", group: editorialAdvice.type,
+      type: editorialAdvice.type, title: editorialAdvice.title, label: editorialAdvice.message } }
+    : homeModel.bulletin;
   const handleAlertAction = (action) => {
     if (action?.type === "tab-anchor" && action.tab) {
       onNavigate?.(action.tab, { anchor: action.anchor });
@@ -50,7 +56,7 @@ export function HomeView({
           />
         ) : (
           <HomeBulletinSummary
-            bulletin={homeModel.bulletin}
+            bulletin={bulletin}
             onOpen={onNavigate ? () => onNavigate("bulletin") : undefined}
           />
         )}
