@@ -96,7 +96,7 @@ di visibilita delle serie e sulle valutazioni.
    `source_failed`; il contatore e preparato nel ramo ma non esiste nei log
    storici dell'11 novembre.
 4. La CI della [PR 46 aperta per revisione](https://github.com/meteofriul/meteofriul-app/pull/46)
-   sul commit `35e842f2` e PASS. Verificare sempre la CI dell'ultimo commit
+   sul commit `24edc3df` e PASS. Verificare sempre la CI dell'ultimo commit
    e osservare una corsa ordinaria dopo il deploy del **solo job backend**. Nessuna modifica
    all'app installata e necessaria per la frase; deploy e invio di prova sono
    azioni distinte e non sono stati eseguiti in questo audit.
@@ -104,5 +104,29 @@ di visibilita delle serie e sulle valutazioni.
 Verifica locale del ramo: 79 test mirati di sintesi, dati mancanti, FCM e
 telemetria PASS (53 subtest); suite backend completa con `lxml 6.1.0`
 prescritta: 2.083 test PASS e 2 saltati (1.062 subtest PASS). `compileall`
-dei moduli modificati PASS. CI della PR 46 sul commit `35e842f2`:
+dei moduli modificati PASS. CI della PR 46 sul commit `24edc3df`:
 backend, frontend e hosting PASS.
+
+## Preparazione del collaudo owner, sera dell'11 novembre
+
+L'archivio Git del backend del commit `24edc3df`, composto solo da
+`Dockerfile`, `requirements.txt` e `app`, ha SHA-256
+`0270aa0a7de24a8437f8563f71c1bf5f1138487a8d7a87b76eef8d0ce1a425cc`.
+Cloud Build `95598f3e-f157-4b0b-9ffe-ed640f9b54c3` e terminata con
+`SUCCESS`; digest immutabile:
+`europe-west1-docker.pkg.dev/meteo-friul/meteofriul/backend@sha256:6c2b64c8c52e3f613aea406214b54da955e38330862abcb95c30845ea1aa20c5`.
+
+Il job temporaneo `meteofriul-morning-forecast-qa-20261111` usa quel digest,
+ma ha entrambi i modi di invio `off`, gate singolo `true`, zero retry,
+nessun identificativo di installazione permanente, nessuno scheduler e zero
+esecuzioni al readback. L'installazione owner Android gia usata nel collaudo
+del 7 novembre risulta attiva, iscritta alla generazione `play-beta-v1` e
+con consenso agli avvisi meteo. L'identificativo non e registrato qui.
+
+Il proprietario ha scelto la prova con dati correnti la mattina del
+12 novembre. Prima dell'invio: controllare la sorgente e la registrazione,
+eseguire il job QA con override temporanei `dry_run`, piattaforma Android,
+hash owner e gate singolo; verificare `eligible_devices=1`, `attempted=1`,
+`sent=0`, `failed=0`. Solo dopo, usare un nuovo ID di collaudo con
+`send` e confermare sul telefono testo e tap. Rimuovere il job QA dopo il
+readback; merge e deploy del job ordinario restano passi distinti.
