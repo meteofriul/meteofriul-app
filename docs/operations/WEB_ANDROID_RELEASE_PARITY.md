@@ -1,5 +1,12 @@
 # Allineamento della Web App con Android
 
+**Mercati, candidato app del 12 novembre 2026.** I sorgenti condivisi
+Web/Android dei rami app contengono 80 schede, 206 edizioni e 13 rimozioni,
+con tre edizioni aggiunte da [fonti esplicite](MERCATI_RICORRENZE_SENZA_DATA_20261112.md).
+La revisione pubblica del servizio resta 0. Nessun artefatto Web/Android è
+stato distribuito o qualificato sul telefono; prima della pubblicazione
+servono confronto del catalogo e prove sui dispositivi previste dal runbook.
+
 **Mercati, nuovo catalogo candidato del 9 novembre 2026.** Il ramo condiviso
 Web/Android incorpora ora la selezione privata 57: 80 schede, 202 edizioni e
 13 rimozioni, con orizzonte massimo al 27 aprile 2027 per il mercato invernale

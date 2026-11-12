@@ -643,11 +643,11 @@
     {
       "authority": "Pro Loco Cervignano del Friuli",
       "cadence": "Prima domenica di ogni mese.",
-      "checked": "2026-11-09",
+      "checked": "2026-11-12",
       "comune": "Cervignano del Friuli",
       "directionsQuery": "Piazza Indipendenza, Cervignano del Friuli",
       "group": "occasional",
-      "hours": "Dalla mattina al tardo pomeriggio",
+      "hours": "Orario abituale: dalla mattina al tardo pomeriggio",
       "id": "M027",
       "key": "m027",
       "kind": "periodic",
@@ -716,11 +716,11 @@
     {
       "authority": "Associazione Gradisca è / Cose di Casa",
       "cadence": "Terza domenica del mese.",
-      "checked": "2026-11-09",
+      "checked": "2026-11-12",
       "comune": "Gradisca d'Isonzo",
       "directionsQuery": "Parco della Spianata, Gradisca d'Isonzo",
       "group": "occasional",
-      "hours": "Circa 09:00–19:00",
+      "hours": "Orario abituale indicativo: 09:00–19:00",
       "id": "M032",
       "key": "gradisca",
       "kind": "Antiquariato / usato",
@@ -841,22 +841,22 @@
     {
       "authority": "Pro San Daniele",
       "cadence": "Ultima domenica del mese.",
-      "checked": "2026-11-09",
+      "checked": "2026-11-12",
       "comune": "San Daniele del Friuli",
-      "directionsQuery": "Centro storico, San Daniele del Friuli",
+      "directionsQuery": "Piazza Vittorio Emanuele II, San Daniele del Friuli",
       "group": "occasional",
       "hours": "08:00–18:00",
       "id": "M038",
       "key": "sdantico",
       "kind": "Antiquariato",
       "name": "Mercatino dell'antiquariato",
-      "place": "Vie del centro storico",
+      "place": "Centro storico (Piazza Vittorio Emanuele II)",
       "prov": "UD",
       "quality": "Documentato",
       "scheduleNote": "",
       "status": "published",
       "titleAliases": [],
-      "url": "https://www.infosandaniele.com/it/turismo/manifestazioni/mercato-settimanale",
+      "url": "https://www.infosandaniele.com/it/agenda/in-programma/mercatino-dell-antiquariato",
       "validThrough": "2027-02-07",
       "weekdays": [],
       "weekdaysIso": []
@@ -887,7 +887,7 @@
     {
       "authority": "PromoTurismoFVG / organizzatore",
       "cadence": "Terza domenica del mese.",
-      "checked": "2026-11-09",
+      "checked": "2026-11-12",
       "comune": "Udine",
       "directionsQuery": "Piazza Primo Maggio, Udine",
       "group": "occasional",
@@ -910,7 +910,7 @@
     {
       "authority": "PromoTurismoFVG / organizzatore",
       "cadence": "Seconda domenica del mese.",
-      "checked": "2026-11-09",
+      "checked": "2026-11-12",
       "comune": "Udine",
       "directionsQuery": "Via Vittorio Veneto, Udine",
       "group": "occasional",
@@ -931,9 +931,9 @@
       "weekdaysIso": []
     },
     {
-      "authority": "PromoTurismoFVG / Associazione Udin'Nova",
+      "authority": "UNPLI FVG / Associazione Udin'Nova",
       "cadence": "Seconda e quinta domenica del mese.",
-      "checked": "2026-11-09",
+      "checked": "2026-11-12",
       "comune": "Udine",
       "directionsQuery": "Via Riccardo Di Giusto, Udine",
       "group": "occasional",
@@ -948,7 +948,7 @@
       "scheduleNote": "",
       "status": "published",
       "titleAliases": [],
-      "url": "https://www.turismofvg.it/events/second-hand-market-robis-di-une-volte-474437",
+      "url": "https://prolocoregionefvg.it/eventi-delle-associate/robis-di-une-volte-4/",
       "validThrough": "2026-12-13",
       "weekdays": [],
       "weekdaysIso": []
@@ -3844,6 +3844,30 @@
       "status": "published",
       "source": "https://prolocoregionefvg.it/eventi-delle-associate/anticamente-mercatino-dellantiquariato-ad-aviano-8/",
       "legacyDates": []
+    },
+    {
+      "id": "edition-f41bc4bd75c467a223590716",
+      "marketId": "M038",
+      "date": "2026-11-29",
+      "status": "published",
+      "source": "https://www.infosandaniele.com/it/agenda/in-programma/mercatino-dell-antiquariato",
+      "legacyDates": []
+    },
+    {
+      "id": "edition-ad8d3efd0b9a4e46b14e7f33",
+      "marketId": "M042",
+      "date": "2026-11-29",
+      "status": "published",
+      "source": "https://prolocoregionefvg.it/eventi-delle-associate/robis-di-une-volte-4/",
+      "legacyDates": []
+    },
+    {
+      "id": "edition-9178932e1cc5eaf0161b883c",
+      "marketId": "M042",
+      "date": "2026-12-13",
+      "status": "published",
+      "source": "https://prolocoregionefvg.it/eventi-delle-associate/robis-di-une-volte-4/",
+      "legacyDates": []
     }
   ],
   "identities": [
@@ -3920,7 +3944,8 @@
       "municipalityAliases": [],
       "titleAliases": [],
       "sourceUrls": [
-        "https://www.turismofvg.it/events/second-hand-market-robis-di-une-volte-474437"
+        "https://www.turismofvg.it/events/second-hand-market-robis-di-une-volte-474437",
+        "https://prolocoregionefvg.it/eventi-delle-associate/robis-di-une-volte-4/"
       ],
       "status": "published"
     },
@@ -4121,7 +4146,7 @@
       "municipalityAliases": [],
       "titleAliases": [],
       "sourceUrls": [
-        "https://www.infosandaniele.com/it/turismo/manifestazioni/mercato-settimanale"
+        "https://www.infosandaniele.com/it/agenda/in-programma/mercatino-dell-antiquariato"
       ],
       "status": "published"
     },
@@ -6067,6 +6092,21 @@
       "legacyId": "market:M025:2026-12-06",
       "editionId": "edition-e29d40ece7db7d1236545fba",
       "marketId": "M025"
+    },
+    {
+      "legacyId": "market:M038:2026-11-29",
+      "editionId": "edition-f41bc4bd75c467a223590716",
+      "marketId": "M038"
+    },
+    {
+      "legacyId": "market:M042:2026-11-29",
+      "editionId": "edition-ad8d3efd0b9a4e46b14e7f33",
+      "marketId": "M042"
+    },
+    {
+      "legacyId": "market:M042:2026-12-13",
+      "editionId": "edition-9178932e1cc5eaf0161b883c",
+      "marketId": "M042"
     }
   ]
 }

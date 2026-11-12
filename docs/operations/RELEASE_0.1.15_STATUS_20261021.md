@@ -1,5 +1,11 @@
 # Stato release 0.1.15 e lavoro salvato — aggiornamento sorgenti del 24 ottobre 2026
 
+**Mercati, candidato del 12 novembre 2026.** I rami app preparano 80 schede,
+206 edizioni e 13 rimozioni dopo il [controllo delle ricorrenze](MERCATI_RICORRENZE_SENZA_DATA_20261112.md).
+È lavoro sui sorgenti: versione 0.1.15, `main`, AAB e app Web/Android distribuite
+non cambiano. Restano il confronto con il catalogo pubblico, la revisione
+editoriale e la prova sul telefono prima di un eventuale rilascio.
+
 **Mercati, selezione privata del 9 novembre 2026.** Il pannello è alla revisione
 57: 80 schede selezionate, 9 sospese e 11 bozze. Il bootstrap candidato del
 ramo app usa le stesse 80 schede, 202 edizioni e 13 rimozioni; le 20 non

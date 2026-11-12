@@ -1,5 +1,14 @@
 # Meteo Friûl
 
+**Mercati, verifica delle ricorrenze del 12 novembre 2026.** Il catalogo
+candidato nei rami app contiene ora 80 schede, 206 edizioni e 13 rimozioni.
+San Daniele e Robis hanno tre nuove edizioni tratte da fonti esplicite;
+le schede senza prossima edizione riportano «Prossima data non annunciata».
+[Riscontri e schede ancora da chiarire](docs/operations/MERCATI_RICORRENZE_SENZA_DATA_20261112.md).
+Nessun job settimanale è attivo o è stato creato; pannello e app distribuite
+non sono stati aggiornati. Le cifre del 9 novembre sotto restano lo stato di
+quella data.
+
 **Mercati, recupero schede del 9 novembre 2026.** Nel pannello online la revisione
 privata 57 contiene 80 schede selezionate, 9 sospese e 11 bozze. Il catalogo
 candidato nel ramo app contiene 80 schede, 202 edizioni e 13 rimozioni;
