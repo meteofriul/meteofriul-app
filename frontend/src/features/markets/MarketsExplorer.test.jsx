@@ -38,6 +38,16 @@ describe("market navigation", () => {
     expect(when.textContent).toContain("Orario abituale: dall'alba al tramonto");
     expect(when.textContent).not.toContain("Prossima data da confermare");
   });
+  it("distinguishes an unannounced edition from its habitual day and hours", async () => {
+    const market = candidateCatalogue.markets.find(item => item.id === "M027");
+    await act(async () => root.render(<MarketDetail market={market} now={new Date("2026-11-12T12:00:00Z")}
+      catalogue={candidateCatalogue} />));
+    const when = host.querySelectorAll(".mf-market-detail section")[1];
+    expect([...when.querySelectorAll("p")].map(node => node.textContent)).toEqual([
+      "Prima domenica di ogni mese.", "Prossima data non annunciata",
+      "Orario abituale: dalla mattina al tardo pomeriggio",
+    ]);
+  });
   it("keeps published market copy free of repeated schedules and editorial notes", async () => {
     expect(candidateCatalogue.markets).toHaveLength(80);
     for (const market of candidateCatalogue.markets) {

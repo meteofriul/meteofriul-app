@@ -1,5 +1,14 @@
 # Meteo Friûl
 
+**Mercati, verifica delle ricorrenze del 12 novembre 2026.** Il catalogo
+candidato nei rami app contiene ora 80 schede, 206 edizioni e 13 rimozioni.
+San Daniele e Robis hanno tre nuove edizioni tratte da fonti esplicite;
+le schede senza prossima edizione riportano «Prossima data non annunciata».
+[Riscontri e schede ancora da chiarire](docs/operations/MERCATI_RICORRENZE_SENZA_DATA_20261112.md).
+Nessun job settimanale è attivo o è stato creato; pannello e app distribuite
+non sono stati aggiornati. Le cifre del 9 novembre sotto restano lo stato di
+quella data.
+
 **Candidata integrata app, 11 novembre 2026.** Il ramo locale `codex/app-candidate-alignment-20261111`, nato da `main` `61ec9174`, combina Mercati e il lavoro editoriale del Consiglio. I quattro conflitti fra cronologie sono stati risolti conservando entrambe le sezioni e registrando sia le route Mercati sia quelle editoriali. Frontend: 5.199 test PASS (13 saltati), lint e build Web/service worker PASS. Backend: suite prescritta ripetuta con `lxml 6.1.0`, 2.201 test PASS (uno saltato), `compileall` PASS. Il primo controllo con `lxml 5.4.0` globale aveva fallito due test di compatibilita XML. Node 24/npm 11 del computer differiscono da 22.17.1/10.9.2 prescritti. Questa e una candidata di verifica: nessun PR, modifica a `main`, prova sul telefono o pubblicazione Web/Android.
 
 **Mercati, recupero schede del 9 novembre 2026.** Nel pannello online la revisione

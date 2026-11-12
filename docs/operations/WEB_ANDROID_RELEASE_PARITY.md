@@ -1,5 +1,12 @@
 # Allineamento della Web App con Android
 
+**Mercati, candidato app del 12 novembre 2026.** I sorgenti condivisi
+Web/Android dei rami app contengono 80 schede, 206 edizioni e 13 rimozioni,
+con tre edizioni aggiunte da [fonti esplicite](MERCATI_RICORRENZE_SENZA_DATA_20261112.md).
+La revisione pubblica del servizio resta 0. Nessun artefatto Web/Android è
+stato distribuito o qualificato sul telefono; prima della pubblicazione
+servono confronto del catalogo e prove sui dispositivi previste dal runbook.
+
 **Candidata integrata dell'11 novembre — nessuna parita pubblicata nuova.** Mercati e lettore editoriale Home sono combinati in `codex/app-candidate-alignment-20261111` e verificati con 5.199 test frontend, lint, build Web/service worker e suite backend prescritta con `lxml 6.1.0` (2.201 test PASS, uno saltato). La build e di verifica, prodotta con Node 24/npm 11 del computer; non e un artefatto Web o Android di release. Nessuna prova Safari/iPhone o Android installata, distribuzione, versione o modifica a `main`; la parita pubblica resta quella precedente.
 
 **Mercati, nuovo catalogo candidato del 9 novembre 2026.** Il ramo condiviso

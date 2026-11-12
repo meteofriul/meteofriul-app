@@ -71,7 +71,7 @@ describe("Scopri / market catalogue / Events integration", () => {
   it("changes radius only in Settings, keeps it on location change and restores it after reopening", async () => {
     await act(async () => root.render(<App />));
     await click(button("Esplora nella tua zona"));
-    expect(host.querySelector(".mf-markets-context").textContent).toBe("Comune di riferimentoPordenone");
+    expect(host.querySelector(".mf-markets-context").textContent).toBe("Pordenone");
     expect(button("Impostazioni", host.querySelector(".mf-markets-dialog"))).toBeUndefined();
     await click(host.querySelector('[aria-label="Chiudi catalogo"]'));
     await click(button("Vai a Impostazioni"));

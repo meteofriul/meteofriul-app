@@ -1,5 +1,11 @@
 # Stato release 0.1.15 e lavoro salvato — aggiornamento sorgenti del 24 ottobre 2026
 
+**Mercati, candidato del 12 novembre 2026.** I rami app preparano 80 schede,
+206 edizioni e 13 rimozioni dopo il [controllo delle ricorrenze](MERCATI_RICORRENZE_SENZA_DATA_20261112.md).
+È lavoro sui sorgenti: versione 0.1.15, `main`, AAB e app Web/Android distribuite
+non cambiano. Restano il confronto con il catalogo pubblico, la revisione
+editoriale e la prova sul telefono prima di un eventuale rilascio.
+
 **Allineamento Mercati + Consiglio, 11 novembre — candidata locale.** Il ramo `codex/app-candidate-alignment-20261111` unisce i due workstream sopra `main` `61ec9174` senza alterare `main` o gli artefatti distribuiti. 5.199 test frontend, lint e build PASS; backend: suite prescritta con `lxml 6.1.0`, 2.201 test PASS (uno saltato), `compileall` PASS. Il primo controllo con la versione globale `lxml 5.4.0` aveva fallito due test XML; entrambi passano con la versione prescritta. Restano qualifica sul telefono, verifica Node/npm prescritti e gates di pubblicazione. Il ramo notifiche dell'11 novembre e indipendente.
 
 **Mercati, selezione privata del 9 novembre 2026.** Il pannello è alla revisione
