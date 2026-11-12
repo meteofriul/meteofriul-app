@@ -167,7 +167,7 @@ class MorningForecastCopyTests(unittest.TestCase):
             "possibili piogge dal pomeriggio.",
         )
 
-    def test_missing_accumulation_reports_uncertainty_without_dry_claim(self):
+    def test_missing_accumulation_uses_only_verified_values_without_dry_claim(self):
         municipality = LocationCatalog().match_istat("093033")
         forecast = snapshot()
         forecast["hourly"]["precipitation"][6] = None
@@ -176,8 +176,7 @@ class MorningForecastCopyTests(unittest.TestCase):
 
         self.assertEqual(
             body,
-            "Pordenone: cielo sereno, 12 °C. Massima 25 °C; "
-            "dati sulle precipitazioni incompleti.",
+            "Pordenone: cielo sereno, 12 °C. Massima 25 °C.",
         )
         self.assertNotIn("non sono previste piogge", body)
         self.assertNotIn("dal pomeriggio", body)
@@ -189,9 +188,20 @@ class MorningForecastCopyTests(unittest.TestCase):
 
         self.assertEqual(
             build_morning_forecast_body(forecast, municipality, now=NOW),
-            "Pordenone: 12 °C. Massima 25 °C; "
-            "dati sulle precipitazioni incompleti.",
+            "Pordenone: 12 °C. Massima 25 °C.",
         )
+
+    def test_short_or_gapped_day_cannot_claim_daily_maximum(self):
+        municipality = LocationCatalog().match_istat("093033")
+        for remove in (slice(8, None), slice(5, 6)):
+            with self.subTest(remove=remove):
+                forecast = snapshot()
+                for values in forecast["hourly"].values():
+                    del values[remove]
+                self.assertEqual(
+                    build_morning_forecast_body(forecast, municipality, now=NOW),
+                    "",
+                )
 
     def test_malformed_accumulation_or_condition_still_blocks_message(self):
         municipality = LocationCatalog().match_istat("093033")
@@ -284,12 +294,17 @@ class MorningForecastDeliveryTests(unittest.TestCase):
         second = self.service(repository, source, sender).run()
 
         self.assertEqual(first.status, "sent")
+        self.assertEqual(first.quality_limited_groups, 1)
+        self.assertEqual(first.summary()["quality_limited_groups"], 1)
         self.assertEqual(first.attempted, 1)
         self.assertEqual(second.status, "deduplicated")
         self.assertEqual(second.deduplicated, 1)
         self.assertEqual(second.sent, 0)
         self.assertEqual(len(sender.messages), 1)
-        self.assertIn("dati sulle precipitazioni incompleti", sender.messages[0].body)
+        self.assertEqual(
+            sender.messages[0].body,
+            "Pordenone: cielo sereno, 12 °C. Massima 25 °C.",
+        )
         self.assertEqual(repository.claims[0]["notice_kind"], "morning_forecast")
         self.assertEqual(
             repository.claims[0]["notice_signature"],

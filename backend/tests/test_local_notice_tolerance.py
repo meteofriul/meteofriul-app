@@ -121,7 +121,7 @@ class NoticeToleranceTests(unittest.TestCase):
         snap=morning.snapshot(); snap['hourly']['precipitation'][6]=None
         snap['hourly']['accumulation_quality']=[proof]*len(snap['hourly']['time'])
         body=build_morning_forecast_body(snap,municipality,now=morning.NOW)
-        self.assertIn('dati sulle precipitazioni incompleti',body)
+        self.assertEqual(body,'Pordenone: cielo sereno, 12 °C. Massima 25 °C.')
         self.assertNotIn('non sono previste piogge',body)
         snap=evening.snapshot(); snap['hourly']['precipitation'][evening.tomorrow_index(snap,12)]=None
         snap['hourly']['accumulation_quality']=[proof]*len(snap['hourly']['time'])

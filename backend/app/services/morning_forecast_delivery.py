@@ -66,6 +66,7 @@ class MorningForecastConfigurationError(RuntimeError):
 class ForecastNotificationContent:
     title: str
     body: str
+    quality_limited: bool = False
 
 
 @dataclass(frozen=True)
@@ -89,6 +90,7 @@ class MorningForecastDeliveryResult:
     device_failed: int = 0
     storage_failed: int = 0
     source_failed: int = 0
+    quality_limited_groups: int = 0
     pages_processed: int = 0
     delivery_batches: int = 0
     source_trace: dict[str, Any] = field(default_factory=lambda: SourceTrace().summary())
@@ -114,6 +116,7 @@ class MorningForecastDeliveryResult:
             "device_failed": self.device_failed,
             "storage_failed": self.storage_failed,
             "source_failed": self.source_failed,
+            "quality_limited_groups": self.quality_limited_groups,
             "pages_processed": self.pages_processed,
             "delivery_batches": self.delivery_batches,
             "source_trace": self.source_trace,
@@ -201,10 +204,24 @@ def build_morning_forecast_body(
     now: datetime,
 ) -> str:
     """Build one compact Italian summary from verified hourly ICON data."""
+    body, _ = _build_morning_forecast_body_with_quality(
+        snapshot, municipality, locality, now=now
+    )
+    return body
+
+
+def _build_morning_forecast_body_with_quality(
+    snapshot: Mapping[str, Any],
+    municipality: Municipality,
+    locality: FvgLocality | None = None,
+    *,
+    now: datetime,
+) -> tuple[str, bool]:
+    """Return user copy and an internal flag for limited weather data."""
 
     hourly = snapshot.get("hourly")
     if not isinstance(hourly, Mapping):
-        return ""
+        return "", False
     required = (
         "time",
         "temperature_2m",
@@ -215,10 +232,10 @@ def build_morning_forecast_body(
     )
     series = {name: hourly.get(name) for name in required}
     if any(not isinstance(values, list) for values in series.values()):
-        return ""
+        return "", False
     lengths = {len(values) for values in series.values()}
     if len(lengths) != 1 or not lengths or next(iter(lengths)) < 1:
-        return ""
+        return "", False
 
     current_local = now.astimezone(FVG_ZONE)
     rows: list[dict[str, Any]] = []
@@ -226,7 +243,7 @@ def build_morning_forecast_body(
     for index, value in enumerate(series["time"]):
         forecast_at = _forecast_time(value)
         if forecast_at is None:
-            return ""
+            return "", False
         if forecast_at.date() != current_local.date() or forecast_at < current_local - timedelta(hours=1):
             continue
         temperature = _finite_number(series["temperature_2m"][index])
@@ -255,7 +272,7 @@ def build_morning_forecast_body(
             )
         ):
             # Malformed data cannot be reduced to a partial forecast.
-            return ""
+            return "", False
         if any(value is None for value in (precipitation, rain, showers, weather_code)):
             precipitation_complete = False
         rows.append(
@@ -269,7 +286,21 @@ def build_morning_forecast_body(
             }
         )
     if not rows:
-        return ""
+        return "", False
+
+    # A short or gapped series cannot support a daily maximum, even when
+    # every individual temperature in that series is valid.
+    if (
+        len(rows) < 10
+        or rows[0]["time"] > current_local + timedelta(hours=1)
+        or rows[-1]["time"].hour < 18
+        or any(
+            (later["time"].astimezone(timezone.utc)
+             - earlier["time"].astimezone(timezone.utc)) != timedelta(hours=1)
+            for earlier, later in zip(rows, rows[1:])
+        )
+    ):
+        return "", False
 
     place = locality.name if locality is not None else municipality.name
     current_temperature = round(rows[0]["temperature"])
@@ -283,14 +314,14 @@ def build_morning_forecast_body(
         )
         return (
             f"{place}: {condition}{current_temperature} °C. "
-            f"Massima {maximum_temperature} °C; dati sulle precipitazioni incompleti."
-        )
+            f"Massima {maximum_temperature} °C."
+        ), True
     condition = _condition_phrase(int(rows[0]["weather_code"]))
     precipitation = _precipitation_phrase(rows)
     return (
         f"{place}: {condition}, {current_temperature} °C. "
         f"Massima {maximum_temperature} °C; {precipitation}."
-    )
+    ), False
 
 
 def _read_mode() -> str:
@@ -456,7 +487,7 @@ class MorningForecastDeliveryService:
         *,
         now: datetime,
     ) -> Mapping[str, ForecastNotificationContent]:
-        body = build_morning_forecast_body(
+        body, quality_limited = _build_morning_forecast_body_with_quality(
             snapshot,
             municipality,
             locality,
@@ -467,6 +498,7 @@ class MorningForecastDeliveryService:
         content = ForecastNotificationContent(
             title=self.notification_title,
             body=body,
+            quality_limited=quality_limited,
         )
         return {"it": content, "fur": content}
 
@@ -796,6 +828,7 @@ class MorningForecastDeliveryService:
         evaluated = attempted = sent = sent_unconfirmed = deduplicated = 0
         in_progress = retry_scheduled = opted_out = retired_targets = 0
         device_failed = storage_failed = source_failed = delivery_batches = 0
+        quality_limited_groups = 0
         successful_group = False
         local_date = self._forecast_date(current)
         source_trace = SourceTrace()
@@ -827,6 +860,8 @@ class MorningForecastDeliveryService:
                 failed += 1
                 failed_group_keys.add(group_key)
                 continue
+            if any(content.quality_limited for content in contents.values()):
+                quality_limited_groups += 1
             attempted += len(group_targets)
             if self._config.mode == "dry_run":
                 successful_group = True
@@ -914,6 +949,7 @@ class MorningForecastDeliveryService:
             device_failed=device_failed,
             storage_failed=storage_failed,
             source_failed=source_failed,
+            quality_limited_groups=quality_limited_groups,
             pages_processed=pages_processed,
             delivery_batches=delivery_batches,
             source_trace=source_trace.summary(),
