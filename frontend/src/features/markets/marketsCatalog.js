@@ -36,9 +36,11 @@ export function marketDirectionsUrl(market, edition) {
 }
 export function marketKindLabel(market) {
   const kind = String(market?.kind || "").trim();
-  if (kind.toLowerCase() === "regular") return "Settimanale";
-  if (kind.toLowerCase() === "occasional") return "Mercatino";
-  return kind;
+  const labels = {
+    regular: "Settimanale", occasional: "Mercatino", agricultural: "Agricolo",
+    periodic: "Periodico", seasonal: "Stagionale",
+  };
+  return labels[kind.toLowerCase()] || kind;
 }
 function urlKey(value) {
   try {

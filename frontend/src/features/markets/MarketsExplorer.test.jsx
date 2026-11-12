@@ -36,13 +36,31 @@ describe("market navigation", () => {
       place: "Piazza Indipendenza", checked: "2026-11-08", scheduleNote: "Nei festivi verifica l'avviso comunale.",
     };
     await act(async () => root.render(<MarketDetail market={market} now={now} catalogue={catalogue} />));
-    const when = host.querySelectorAll(".mf-market-detail section")[1];
+    const when = host.querySelectorAll(".mf-market-detail section")[0];
     expect([...when.querySelectorAll("p")].map(node => node.textContent)).toEqual([
       "Ogni giovedì mattina", "Nei festivi verifica l'avviso comunale.",
     ]);
     await act(async () => root.render(<MarketDetail market={{ ...market, cadence: "Ogni sabato", hours: "08:30–12:30", scheduleNote: "Sede in viale Libertà." }} now={now} catalogue={catalogue} />));
     expect(when.textContent).toContain("08:30–12:30");
     expect(when.textContent).toContain("Il giorno abituale non conferma la singola apertura.");
+  });
+  it("shows published dates once when the verified start time is already in the note", async () => {
+    const market = {
+      id: "M-TEST", name: "Mercato agroalimentare", comune: "Mortegliano", prov: "UD",
+      group: "occasional", kind: "agricultural", quality: "Documentato", checked: "2026-10-14",
+      cadence: "Solo 25 e 26 ottobre 2026", hours: "Dalle 09:00 il 25 e 26 ottobre 2026; chiusura non indicata",
+      scheduleNote: "Il programma conferma il mercato dalle 09:00; sede da verificare.",
+    };
+    const catalogue = { validThrough: "2026-12-31", tombstones: [], dates: [
+      { marketId: market.id, date: "2026-10-25", status: "published" },
+      { marketId: market.id, date: "2026-10-26", status: "published" },
+    ] };
+    await act(async () => root.render(<MarketDetail market={market} now={now} catalogue={catalogue} />));
+    const when = host.querySelector(".mf-market-detail section");
+    expect(when.querySelectorAll("time")).toHaveLength(2);
+    expect(when.textContent).not.toContain(market.cadence);
+    expect(when.textContent.match(/09:00/g)).toHaveLength(1);
+    expect(host.querySelector(".mf-market-detail__kicker").textContent).toContain("Agricolo");
   });
   it("opens from Scopri and retains period, radius and list scroll when returning from detail", async () => {
     const open = vi.fn(), close = vi.fn(), viewEvent = vi.fn();
@@ -55,13 +73,16 @@ describe("market navigation", () => {
     expect(host.querySelector("#mf-markets-regular").parentElement.querySelector(".mf-markets-group__hint")?.textContent).toBe("Festivi: verifica la fonte");
     expect(host.querySelector("#mf-markets-occasional").parentElement.querySelector(".mf-markets-group__hint")).toBeNull();
     expect(host.querySelector(".mf-market-card").getAttribute("aria-label")).toContain("Scheda del mercato");
+    expect(host.querySelector(".mf-market-card__visual").textContent).toMatch(/^[A-Z/]+OGNI$/);
+    expect(host.querySelector(".mf-market-card__arrow").parentElement.children).toHaveLength(3);
+    expect(host.querySelector(".mf-market-card__top").textContent).not.toContain("0 km");
     const list = host.querySelector(".mf-markets-content"); list.scrollTop = 120;
     await click([...host.querySelectorAll(".mf-market-card")].find(node => node.textContent.includes("La Soffitta")));
     expect(host.querySelector(".mf-market-detail").textContent).toContain("25 ottobre 2026");
     await click(button("Vedi appuntamento"));
     expect(viewEvent).toHaveBeenCalledWith({ marketId: "M035", date: "2026-10-25", radius: 5 });
-    await click(button("Torna al catalogo"));
-    expect(host.querySelector(".mf-markets-context").textContent).toBe("Comune di riferimentoPordenone");
+    await click(host.querySelector(".mf-markets-header__back"));
+    expect(host.querySelector(".mf-markets-context").textContent).toBe("Pordenone");
     expect(list.scrollTop).toBe(120);
     await click(button("Oggi"));
     expect(host.querySelector('[aria-pressed="true"]').textContent).toBe("Oggi");

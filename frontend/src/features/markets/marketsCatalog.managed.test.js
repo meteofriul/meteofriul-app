@@ -22,6 +22,9 @@ describe("authoritative market editions", () => {
     expect(marketKindLabel({ kind: "regular" })).toBe("Settimanale");
     expect(marketKindLabel({ kind: "occasional" })).toBe("Mercatino");
     expect(marketKindLabel({ kind: "Agricolo" })).toBe("Agricolo");
+    expect(marketKindLabel({ kind: "agricultural" })).toBe("Agricolo");
+    expect(marketKindLabel({ kind: "periodic" })).toBe("Periodico");
+    expect(marketKindLabel({ kind: "seasonal" })).toBe("Stagionale");
   });
   it("moves a stale source edition with the same stable ID and the edition's venue", () => {
     const snapshot = catalogue();
