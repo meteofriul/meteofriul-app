@@ -1,4 +1,4 @@
-# Notifiche e allarmi: audit dell'11 novembre 2026
+# Notifiche e allarmi: audit dell'11-12 novembre 2026
 
 ## Perimetro e prova
 
@@ -95,11 +95,10 @@ di visibilita delle serie e sulle valutazioni.
 3. Dopo il deploy, leggere `quality_limited_groups` insieme a `source_trace` e
    `source_failed`; il contatore e preparato nel ramo ma non esiste nei log
    storici dell'11 novembre.
-4. La CI della [PR 46 aperta per revisione](https://github.com/meteofriul/meteofriul-app/pull/46)
-   sul commit `24edc3df` e PASS. Verificare sempre la CI dell'ultimo commit
-   e osservare una corsa ordinaria dopo il deploy del **solo job backend**. Nessuna modifica
-   all'app installata e necessaria per la frase; deploy e invio di prova sono
-   azioni distinte e non sono stati eseguiti in questo audit.
+4. La CI della [PR 46](https://github.com/meteofriul/meteofriul-app/pull/46)
+   e quella del merge su `main` sono PASS; prova owner e deploy sono
+   documentati sotto. Resta da osservare la prima corsa ordinaria con il
+   nuovo digest. Nessuna modifica all'app installata e necessaria per la frase.
 
 Verifica locale del ramo: 79 test mirati di sintesi, dati mancanti, FCM e
 telemetria PASS (53 subtest); suite backend completa con `lxml 6.1.0`
@@ -145,5 +144,27 @@ percorso di invio, la presentazione e il tap, mentre il ramo di testo per
 precipitazioni incomplete resta verificato dai test automatici. Il job QA,
 rimasto senza scheduler e con configurazione permanente `off` dopo gli
 override delle esecuzioni, e stato eliminato dopo il readback. Il job
-ordinario conserva ancora il digest precedente; merge, CI di `main` e
-deploy del solo job mattutino sono i prossimi passi distinti.
+ordinario conservava ancora il digest precedente alla fine del collaudo;
+merge, CI di `main` e deploy sono stati eseguiti successivamente.
+
+## Merge e deploy del solo job mattutino, 12 novembre
+
+La [PR 46](https://github.com/meteofriul/meteofriul-app/pull/46) e stata
+integrata in `main` con merge `b939a1771d90da9a84bd1ff84f968da2c06236a4`.
+La CI della PR (`43241690768`) e quella di `main` (`43242575701`)
+hanno superato backend, frontend e hosting. L'albero `backend` del merge
+coincide con quello del commit sorgente `24edc3df` usato per Cloud Build
+(`ddbec623084cec21786e2db4e3d41865d4aacfce`).
+
+Dopo autorizzazione esplicita del proprietario, e stata aggiornata **solo
+l'immagine** del job ordinario `meteofriul-morning-forecast`, dal digest
+`sha256:50f6eaebc18ba27890cffb540653adcef618c4df97a55118df81dd8a0f7db61b`
+al digest candidato
+`sha256:6c2b64c8c52e3f613aea406214b54da955e38330862abcb95c30845ea1aa20c5`.
+Il readback con `scripts/deploy-morning-forecast-job.ps1 -Mode Audit` restituisce
+`ready=true`: ambiente di invio, account runtime, invoker e scheduler
+`ENABLED` con `30 7 * * *` in `Europe/Rome` sono invariati. Non e stata
+forzata una corsa ordinaria. La prima corsa programmata con il nuovo digest
+e attesa il **13 novembre alle 07:30 CET**: verificarne log, `sent`,
+`source_failed`, `quality_limited_groups` e testo ricevuto quando
+disponibile. Non sono stati modificati AAB, Web, policy o altri job.
