@@ -29,6 +29,15 @@ afterEach(async () => {
 });
 async function click(node) { await act(async () => node.click()); }
 describe("market navigation", () => {
+  it("shows AnticaMente's verified date and labels the habitual hours", async () => {
+    const market = candidateCatalogue.markets.find(item => item.id === "M025");
+    await act(async () => root.render(<MarketDetail market={market} now={new Date("2026-11-12T12:00:00Z")}
+      catalogue={candidateCatalogue} />));
+    const when = host.querySelectorAll(".mf-market-detail section")[1];
+    expect(when.textContent).toContain("6 dicembre 2026");
+    expect(when.textContent).toContain("Orario abituale: dall'alba al tramonto");
+    expect(when.textContent).not.toContain("Prossima data da confermare");
+  });
   it("keeps published market copy free of repeated schedules and editorial notes", async () => {
     expect(candidateCatalogue.markets).toHaveLength(80);
     for (const market of candidateCatalogue.markets) {

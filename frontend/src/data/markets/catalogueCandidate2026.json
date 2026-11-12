@@ -616,11 +616,11 @@
     {
       "authority": "UNPLI Friuli Venezia Giulia / Pro Loco Aviano",
       "cadence": "Prima domenica di ogni mese.",
-      "checked": "2026-11-09",
+      "checked": "2026-11-12",
       "comune": "Aviano",
       "directionsQuery": "Piazza Duomo, Aviano",
       "group": "occasional",
-      "hours": "Dall'alba al tramonto",
+      "hours": "Orario abituale: dall'alba al tramonto",
       "id": "M025",
       "key": "m025",
       "kind": "periodic",
@@ -3836,6 +3836,14 @@
       "status": "published",
       "source": "https://www.turismofvg.it/eventi/il-baule-del-diavolo-475626",
       "legacyDates": []
+    },
+    {
+      "id": "edition-e29d40ece7db7d1236545fba",
+      "marketId": "M025",
+      "date": "2026-12-06",
+      "status": "published",
+      "source": "https://prolocoregionefvg.it/eventi-delle-associate/anticamente-mercatino-dellantiquariato-ad-aviano-8/",
+      "legacyDates": []
     }
   ],
   "identities": [
@@ -6054,6 +6062,11 @@
       "legacyId": "market:M039:2026-11-22",
       "editionId": "edition-m039-20261122-reviewed",
       "marketId": "M039"
+    },
+    {
+      "legacyId": "market:M025:2026-12-06",
+      "editionId": "edition-e29d40ece7db7d1236545fba",
+      "marketId": "M025"
     }
   ]
 }
