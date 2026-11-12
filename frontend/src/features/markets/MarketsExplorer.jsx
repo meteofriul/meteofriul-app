@@ -17,17 +17,18 @@ export function MarketsEntry({ language = "it", onOpen }) {
 
 function MarketSummary({ market, language, onOpen }) {
   const copy = getMarketsCopy(language);
-  return <button type="button" className="mf-market-card" onClick={() => onOpen(market.id)}>
-    <span className="mf-market-card__top"><span>{market.comune} · {market.prov}</span><span>≈ {Math.round(market.distance)} km</span></span>
-    <strong>{market.name}</strong>
-    <span className="mf-market-card__kind">{marketKindLabel(market)}</span>
-    <span className="mf-market-card__when"><CalendarDays aria-hidden="true" size={17} />
-      <span>{market.group === "regular" ? copy.usual + ": " + market.cadence
-        : market.dates[0] ? copy.published + ": " + formatMarketDate(market.dates[0].date, language) : copy.noDates}</span>
+  return <button type="button" className="mf-market-card" aria-label={`${market.name} · ${copy.details}`} onClick={() => onOpen(market.id)}>
+    <span className="mf-market-card__visual" aria-hidden="true"><Store size={27} strokeWidth={1.8} /></span>
+    <span className="mf-market-card__body">
+      <span className="mf-market-card__top"><span>{market.comune} · {market.prov}</span><span>≈ {Math.round(market.distance)} km</span></span>
+      <strong>{market.name}</strong>
+      <span className="mf-market-card__when"><CalendarDays aria-hidden="true" size={14} />
+        <span>{market.group === "regular" ? market.cadence
+          : market.dates[0] ? formatMarketDate(market.dates[0].date, language) : copy.noDates}</span>
+      </span>
+      {market.place ? <span className="mf-market-card__place"><MapPin aria-hidden="true" size={14} /><span>{market.place}</span></span> : null}
     </span>
-    {market.group === "regular" ? <span className="mf-market-card__notice"><Info aria-hidden="true" size={14} />{copy.holidayHint}</span> : null}
-    {market.place ? <span className="mf-market-card__place"><MapPin aria-hidden="true" size={16} /><span>{market.place}</span></span> : null}
-    <span className="mf-market-card__action">{copy.details}<ChevronRight aria-hidden="true" size={17} /></span>
+    <ChevronRight className="mf-market-card__arrow" aria-hidden="true" size={16} />
   </button>;
 }
 
@@ -143,6 +144,7 @@ export function MarketsExplorer({ request, location, language = "it", radius = 2
           const items = model.items.filter(market => market.group === group);
           return items.length ? <section className="mf-markets-group" key={group} aria-labelledby={"mf-markets-" + group}>
             <h3 id={"mf-markets-" + group}>{copy[group]}<span>{items.length}</span></h3>
+            {group === "regular" ? <p className="mf-markets-group__hint"><Info aria-hidden="true" size={14} />{copy.holidayHint}</p> : null}
             <div className="mf-markets-grid">{items.map(market => <MarketSummary key={market.id} market={market} language={language} onOpen={openMarket} />)}</div>
           </section> : null;
         })}

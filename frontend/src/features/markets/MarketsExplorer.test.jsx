@@ -52,8 +52,9 @@ describe("market navigation", () => {
     expect(host.querySelector("dialog").open).toBe(true);
     expect(document.body.style.overflow).toBe("hidden");
     expect(host.querySelector("select")).toBeNull();
-    expect(host.querySelector("#mf-markets-regular").parentElement.querySelector(".mf-market-card__notice")?.textContent).toBe("Festivi: verifica la fonte");
-    expect(host.querySelector("#mf-markets-occasional").parentElement.querySelector(".mf-market-card__notice")).toBeNull();
+    expect(host.querySelector("#mf-markets-regular").parentElement.querySelector(".mf-markets-group__hint")?.textContent).toBe("Festivi: verifica la fonte");
+    expect(host.querySelector("#mf-markets-occasional").parentElement.querySelector(".mf-markets-group__hint")).toBeNull();
+    expect(host.querySelector(".mf-market-card").getAttribute("aria-label")).toContain("Scheda del mercato");
     const list = host.querySelector(".mf-markets-content"); list.scrollTop = 120;
     await click([...host.querySelectorAll(".mf-market-card")].find(node => node.textContent.includes("La Soffitta")));
     expect(host.querySelector(".mf-market-detail").textContent).toContain("25 ottobre 2026");
