@@ -36,7 +36,7 @@ describe("market navigation", () => {
       place: "Piazza Indipendenza", checked: "2026-11-08", scheduleNote: "Nei festivi verifica l'avviso comunale.",
     };
     await act(async () => root.render(<MarketDetail market={market} now={now} catalogue={catalogue} />));
-    const when = host.querySelectorAll(".mf-market-detail section")[0];
+    const when = host.querySelectorAll(".mf-market-detail section")[1];
     expect([...when.querySelectorAll("p")].map(node => node.textContent)).toEqual([
       "Ogni giovedì mattina", "Nei festivi verifica l'avviso comunale.",
     ]);
@@ -56,7 +56,7 @@ describe("market navigation", () => {
       { marketId: market.id, date: "2026-10-26", status: "published" },
     ] };
     await act(async () => root.render(<MarketDetail market={market} now={now} catalogue={catalogue} />));
-    const when = host.querySelector(".mf-market-detail section");
+    const when = host.querySelectorAll(".mf-market-detail section")[1];
     expect(when.querySelectorAll("time")).toHaveLength(2);
     expect(when.textContent).not.toContain(market.cadence);
     expect(when.textContent.match(/09:00/g)).toHaveLength(1);
@@ -75,7 +75,7 @@ describe("market navigation", () => {
     expect(host.querySelector(".mf-market-card").getAttribute("aria-label")).toContain("Scheda del mercato");
     expect(host.querySelector(".mf-market-card__visual").textContent).toMatch(/^[A-Z/]+OGNI$/);
     expect(host.querySelector(".mf-market-card__arrow").parentElement.children).toHaveLength(3);
-    expect(host.querySelector(".mf-market-card__top").textContent).not.toContain("0 km");
+    expect(host.querySelector(".mf-market-card__location").textContent).not.toContain("0 km");
     const list = host.querySelector(".mf-markets-content"); list.scrollTop = 120;
     await click([...host.querySelectorAll(".mf-market-card")].find(node => node.textContent.includes("La Soffitta")));
     expect(host.querySelector(".mf-market-detail").textContent).toContain("25 ottobre 2026");

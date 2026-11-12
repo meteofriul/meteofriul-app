@@ -33,23 +33,31 @@ function marketCardBadge(market) {
   };
 }
 
+function marketCardTitle(market) {
+  const name = String(market.name || "");
+  const suffix = ` di ${market.comune}`;
+  return name.toLocaleLowerCase("it-IT").startsWith("mercato settimanale di ")
+    && name.toLocaleLowerCase("it-IT").endsWith(suffix.toLocaleLowerCase("it-IT"))
+    ? name.slice(0, -suffix.length) : name;
+}
+
 function MarketSummary({ market, language, onOpen }) {
   const copy = getMarketsCopy(language);
   const badge = marketCardBadge(market);
   const nextDate = market.dates?.[0]?.date;
   const distance = Math.round(market.distance);
   const when = market.group === "regular" ? market.cadence : nextDate ? formatMarketDate(nextDate, language) : copy.noDates;
-  return <button type="button" className="mf-market-card" aria-label={`${market.name} · ${market.comune} · ${when} · ${copy.details}`} onClick={() => onOpen(market.id)}>
+  return <button type="button" className={`mf-market-card mf-market-card--${market.group}`} aria-label={`${market.name} · ${market.comune} · ${when} · ${copy.details}`} onClick={() => onOpen(market.id)}>
     <span className="mf-market-card__visual" aria-hidden="true">{badge
       ? <><strong>{badge.main}</strong><small>{badge.sub}</small></>
       : <Store size={27} strokeWidth={1.8} />}</span>
     <span className="mf-market-card__body">
-      <span className="mf-market-card__top"><span>{market.comune} · {market.prov}</span>{distance > 0 ? <span>≈ {distance} km</span> : null}</span>
-      <strong>{market.name}</strong>
+      <strong>{marketCardTitle(market)}</strong>
+      <span className="mf-market-card__location"><MapPin aria-hidden="true" size={13} /><span className="mf-market-card__city">{market.comune}</span>{distance > 0 ? <span className="mf-market-card__distance">· ≈ {distance} km</span> : null}</span>
       {market.group === "regular" || !nextDate ? <span className="mf-market-card__when"><CalendarDays aria-hidden="true" size={14} />
         <span>{market.group === "regular" ? market.cadence : copy.noDates}</span>
       </span> : null}
-      {market.place ? <span className="mf-market-card__place"><MapPin aria-hidden="true" size={14} /><span>{market.place}</span></span> : null}
+      {market.place ? <span className="mf-market-card__place">{market.place}</span> : null}
     </span>
     <span className="mf-market-card__arrow" aria-hidden="true"><ChevronRight size={16} /></span>
   </button>;
@@ -69,6 +77,8 @@ export function MarketDetail({ market, language = "it", now = new Date(), radius
   return <article className="mf-market-detail">
     <p className="mf-market-detail__kicker">{market.comune} · {market.prov} · {marketKindLabel(market)}</p>
     <h3 ref={titleRef} tabIndex={-1}>{market.name}</h3>
+    <section><h4><MapPin aria-hidden="true" size={18} />{copy.where}</h4><p>{market.place || copy.noPlace}</p></section>
+    {directions ? <a className="mf-market-detail__directions" href={directions} target="_blank" rel="noopener noreferrer"><Navigation size={18} aria-hidden="true" />{copy.directions}</a> : null}
     <section><h4><CalendarDays aria-hidden="true" size={18} />{copy.when}</h4>
       {market.group === "occasional" && dates.length ? <ul className="mf-market-dates">{dates.map(edition => <li key={edition.id || edition.date}>
         <span className="mf-market-dates__date"><time dateTime={edition.date}>{formatMarketDate(edition.date, language)}</time>{edition.hours ? <span>{edition.hours}</span> : null}</span>
@@ -83,7 +93,6 @@ export function MarketDetail({ market, language = "it", now = new Date(), radius
       {stale || (market.group === "occasional" && dates.length) || (market.group === "regular" && !holidayAdviceInNote)
         ? <p className="mf-markets-note">{stale ? copy.stale : market.group === "regular" ? copy.usualNote : copy.dateNote}</p> : null}
     </section>
-    <section><h4><MapPin aria-hidden="true" size={18} />{copy.where}</h4><p>{market.place || copy.noPlace}</p></section>
     {market.group === "regular" && dates.length ? <section>
       <h4>{copy.dates}</h4>
       <ul className="mf-market-dates">{dates.map(edition => <li key={edition.id || edition.date}>
@@ -96,7 +105,6 @@ export function MarketDetail({ market, language = "it", now = new Date(), radius
       </li>)}</ul>
       {dates.some(edition => !marketDateInEvents(edition.date, now)) ? <p className="mf-markets-note">{copy.later}</p> : null}
     </section> : null}
-    {directions ? <a className="mf-market-detail__directions" href={directions} target="_blank" rel="noopener noreferrer"><Navigation size={18} aria-hidden="true" />{copy.directions}</a> : null}
     <footer className="mf-market-detail__source">
       {source ? <a href={source} target="_blank" rel="noopener noreferrer"><ExternalLink size={16} aria-hidden="true" />{copy.source}: {market.authority}</a> : null}
       <span>{copy.checked}: {formatMarketDate(market.checked, language)}</span>
@@ -104,7 +112,7 @@ export function MarketDetail({ market, language = "it", now = new Date(), radius
   </article>;
 }
 
-export function MarketsExplorer({ request, location, language = "it", radius = 20, onClose, onViewEvent, catalogue = MARKET_CATALOGUE, catalogueStatus }) {
+export function MarketsExplorer({ request, location, language = "it", radius = 20, onClose, onViewEvent, catalogue = MARKET_CATALOGUE }) {
   const [period, setPeriod] = useState("all");
   const [selectedId, setSelectedId] = useState(request?.marketId || null);
   const [seenRequest, setSeenRequest] = useState(request);
@@ -163,9 +171,7 @@ export function MarketsExplorer({ request, location, language = "it", radius = 2
     </div> : null}
     <div ref={listRef} className="mf-markets-content" hidden={Boolean(selected)}>
       {!model.supported ? <p className="mf-markets-empty" role="status">{copy.outside}</p> : <>
-        <div className="mf-markets-context"><div aria-label={`${copy.area}: ${model.origin.name}`}><MapPin aria-hidden="true" size={18} /><strong>{model.origin.name}</strong></div>
-          {catalogueStatus === "cached" ? <span className="mf-markets-context__status" aria-label={copy.cached}>{copy.cachedShort}</span> : null}
-        </div>
+        <div className="mf-markets-context"><div aria-label={`${copy.area}: ${model.origin.name}`}><MapPin aria-hidden="true" size={18} /><strong>{model.origin.name}</strong></div></div>
         <div className="mf-markets-tabs" role="group" aria-label={language === "fur" ? "Period" : "Periodo"}>
           {["all", "today", "weekend"].map(value => <button type="button" key={value} aria-pressed={period === value} onClick={() => setPeriod(value)}>{copy[value]}</button>)}
         </div>
