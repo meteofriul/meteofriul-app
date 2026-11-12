@@ -7,6 +7,7 @@ import { EventPreviewPanel, EventsView } from "../events/EventsView";
 import { buildEventsViewModel } from "../events/eventsViewModel";
 import { mergeMarketEvents } from "./marketsCatalog";
 import historicalCatalogue from "../../data/markets/catalogue2026.json";
+import candidateCatalogue from "../../data/markets/catalogueCandidate2026.json";
 
 vi.mock("../../services/localWeatherPilot", async importOriginal => ({
   ...await importOriginal(), isDefinitiveAppExperience: () => true,
@@ -28,6 +29,22 @@ afterEach(async () => {
 });
 async function click(node) { await act(async () => node.click()); }
 describe("market navigation", () => {
+  it("keeps published market copy free of repeated schedules and editorial notes", async () => {
+    expect(candidateCatalogue.markets).toHaveLength(80);
+    for (const market of candidateCatalogue.markets) {
+      const cadence = market.cadence?.trim().replace(/[. ]+$/u, "").toLocaleLowerCase("it-IT");
+      const note = market.scheduleNote?.trim().replace(/[. ]+$/u, "").toLocaleLowerCase("it-IT");
+      expect(note && cadence && note === cadence, market.id).toBeFalsy();
+      expect([market.cadence, market.hours, market.scheduleNote].join(" "), market.id)
+        .not.toMatch(/weekdays=|per la pubblicazione|da riallineare|riattestat|pagina descrittiva|orario numerico da verificare/iu);
+    }
+    const torre = candidateCatalogue.markets.find(market => market.id === "R-PN-M007");
+    await act(async () => root.render(<MarketDetail market={torre} now={now} catalogue={candidateCatalogue} />));
+    const when = host.querySelectorAll(".mf-market-detail section")[1];
+    expect(when.textContent.match(/giovedì mattina/giu)).toHaveLength(1);
+    expect(when.textContent).not.toContain("07:30–12:30");
+    expect(when.textContent).not.toContain("allestimento");
+  });
   it("keeps the market detail concise without hiding a verified numeric time", async () => {
     const catalogue = { validThrough: "2027-02-07", dates: [], tombstones: [] };
     const market = {
