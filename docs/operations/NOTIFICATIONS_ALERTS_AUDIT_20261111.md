@@ -123,10 +123,27 @@ esecuzioni al readback. L'installazione owner Android gia usata nel collaudo
 del 7 novembre risulta attiva, iscritta alla generazione `play-beta-v1` e
 con consenso agli avvisi meteo. L'identificativo non e registrato qui.
 
-Il proprietario ha scelto la prova con dati correnti la mattina del
-12 novembre. Prima dell'invio: controllare la sorgente e la registrazione,
-eseguire il job QA con override temporanei `dry_run`, piattaforma Android,
-hash owner e gate singolo; verificare `eligible_devices=1`, `attempted=1`,
-`sent=0`, `failed=0`. Solo dopo, usare un nuovo ID di collaudo con
-`send` e confermare sul telefono testo e tap. Rimuovere il job QA dopo il
-readback; merge e deploy del job ordinario restano passi distinti.
+## Esito del collaudo owner, 12 novembre
+
+Il proprietario aveva scelto dati correnti, ma ha ripreso il collaudo alle
+15:38 CET, quando le ore residue non bastavano per la massima giornaliera.
+Ha quindi scelto un replay chiaramente marcato `TEST` dei dati verificati
+delle 07:31 del 12 novembre. Il job ordinario delle 07:30 aveva usato il ciclo
+`20261112T000000Z`; il replay e stato vincolato allo stesso ciclo.
+
+L'esecuzione QA `meteofriul-morning-forecast-qa-20261111-6hlvh` ha prodotto
+`dry_run`, `eligible_devices=1`, `attempted=1`, `sent=0`, `failed=0`
+e `source_failed=0`. Il testo anteprima e stato verificato prima dell'invio.
+L'esecuzione `meteofriul-morning-forecast-qa-20261111-9l9t8`, con un ID di
+collaudo distinto, ha registrato `sent=1`, `attempted=1`, `eligible_devices=1`
+e `failed=0` alle 14:48:10 UTC. Il proprietario ha confermato sul proprio
+Android la ricezione del titolo `TEST` e l'apertura del Bollettino al tocco.
+L'identificativo del dispositivo e il token non sono riportati.
+
+Il ciclo usato aveva precipitazioni complete: questa prova conferma il
+percorso di invio, la presentazione e il tap, mentre il ramo di testo per
+precipitazioni incomplete resta verificato dai test automatici. Il job QA,
+rimasto senza scheduler e con configurazione permanente `off` dopo gli
+override delle esecuzioni, e stato eliminato dopo il readback. Il job
+ordinario conserva ancora il digest precedente; merge, CI di `main` e
+deploy del solo job mattutino sono i prossimi passi distinti.
