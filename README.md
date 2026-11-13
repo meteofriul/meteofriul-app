@@ -1,5 +1,9 @@
 # Meteo Friûl
 
+**Ramo Mercati riallineato il 13 novembre 2026.** `codex/mercati-integration-20261028` incorpora `origin/main` fino a `b225c296` e conserva il catalogo candidato di 80 schede, 206 edizioni e 13 rimozioni. I soli conflitti erano nei tre documenti di stato; la cronologia delle notifiche e quella dei Mercati sono entrambe conservate. Verifica locale: 5.202 test frontend PASS (13 saltati), lint e build Web/service worker PASS; 140 test backend mirati PASS e `compileall` PASS. Nessuna promozione a `main`, prova su telefono, nuova build Android o pubblicazione Mercati.
+
+**Notifiche, job mattutino aggiornato il 12 novembre 2026.** La frase tecnica sulle precipitazioni e stata ricondotta ai valori `null` ICON; il testo ora usa solo dati verificati e richiede copertura oraria sufficiente per la massima. [PR 46](https://github.com/meteofriul/meteofriul-app/pull/46) integrata in `main` `b939a177`, CI PR e main verdi. Il collaudo owner ha confermato ricezione e tap sul Bollettino; il job QA e stato rimosso. Il solo job ordinario `meteofriul-morning-forecast` usa ora il digest `sha256:6c2b64c8c52e3f613aea406214b54da955e38330862abcb95c30845ea1aa20c5`, con readback `ready=true` e scheduler invariato alle 07:30 Europe/Rome. [Audit, provenienza e verifica ordinaria ancora aperta](docs/operations/NOTIFICATIONS_ALERTS_AUDIT_20261111.md). Nessuna AAB o pubblicazione Web/Android, policy o sito modificati.
+
 **Mercati, verifica delle ricorrenze del 12 novembre 2026.** Il catalogo
 candidato nei rami app contiene ora 80 schede, 206 edizioni e 13 rimozioni.
 San Daniele e Robis hanno tre nuove edizioni tratte da fonti esplicite;

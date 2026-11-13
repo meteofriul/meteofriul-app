@@ -1,5 +1,9 @@
 # Stato release 0.1.15 e lavoro salvato — aggiornamento sorgenti del 24 ottobre 2026
 
+**Mercati, allineamento dei sorgenti del 13 novembre 2026.** Il ramo `codex/mercati-integration-20261028` integra `origin/main` fino a `b225c296`, incluse le correzioni backend delle notifiche, senza conflitti di codice. Risolti tre conflitti documentali conservando entrambe le cronologie. Frontend: 5.202 test PASS, 13 saltati, lint e build Web/service worker PASS. Backend: 140 test mirati Mercati/notifiche e `compileall` PASS. Le prove locali hanno usato Node 24/npm 11 e Python 3.13 con `lxml 5.4.0`; restano da ripetere negli ambienti prescritti per la release. Restano aperti il confronto del catalogo candidato con la futura revisione pubblica, la prova Android reale e la qualifica Safari/iPhone. Nessuna modifica a `main`, versione, AAB o app distribuite.
+
+**Notifiche, 12 novembre — solo job mattutino distribuito.** La [PR 46](https://github.com/meteofriul/meteofriul-app/pull/46) e integrata in `main` `b939a177`; CI PR `43241690768` e CI main `43242575701` PASS. Suite backend locale: 2.083 test PASS, 2 saltati, con `lxml 6.1.0`. Collaudo isolato con un solo Android: replay TEST ricevuto, tap sul Bollettino confermato, job QA rimosso. Il solo job `meteofriul-morning-forecast` usa ora il digest `sha256:6c2b64c8c52e3f613aea406214b54da955e38330862abcb95c30845ea1aa20c5`; readback `ready=true`, scheduler e modalita di invio invariati. [Provenienza, controlli e prima corsa ordinaria ancora aperta](NOTIFICATIONS_ALERTS_AUDIT_20261111.md). Versione app, AAB, Web, policy e candidata Mercati/editoriale invariati.
+
 **Mercati, candidato del 12 novembre 2026.** I rami app preparano 80 schede,
 206 edizioni e 13 rimozioni dopo il [controllo delle ricorrenze](MERCATI_RICORRENZE_SENZA_DATA_20261112.md).
 È lavoro sui sorgenti: versione 0.1.15, `main`, AAB e app Web/Android distribuite
