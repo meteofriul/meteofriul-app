@@ -1,5 +1,5 @@
 import copy
-from datetime import date
+from datetime import date, datetime, timezone
 import unittest
 
 from app.markets.model import initial_record, MarketError
@@ -37,6 +37,11 @@ class FakeCollection:
 
     def document(self, name):
         return FakeDocument(self.db, self.path + "/" + name)
+
+    def stream(self, timeout=None):
+        prefix = self.path + "/"
+        return [self.document(path[len(prefix):]).get()
+                for path in self.db.docs if path.startswith(prefix) and "/" not in path[len(prefix):]]
 
 
 class FakeDocument:
@@ -148,6 +153,38 @@ class MarketsWeeklyAuditTests(unittest.TestCase):
         with self.assertRaisesRegex(RuntimeError, "simulated interruption"):
             store.save(later)
         self.assertEqual(store.latest(), summary)
+
+    def test_manual_source_review_survives_new_report_without_changing_archive(self):
+        db = FakeFirestore()
+        store = FirestoreWeeklyAuditStore(db)
+        report = scan(self.repository, as_of=date(2026, 11, 13), collector=self.collect)
+        store.save(report)
+        before = copy.deepcopy(self.repository.record)
+        reviewed = store.save_review(market_id="M001", source_url="https://example.test/mercato",
+                                     outcome="verified", note="Fonte letta: il luogo coincide.",
+                                     report_run_id=report["runId"], operation_id="test-op-001",
+                                     now=datetime(2026, 11, 13, 12, tzinfo=timezone.utc))
+        self.assertEqual(reviewed["checkedAt"], "2026-11-13T12:00:00Z")
+        self.assertEqual(reviewed["reviewUntil"], "2027-02-11T12:00:00Z")
+        self.assertEqual(reviewed["sourceHash"], "b" * 64)
+        self.assertEqual(store.reviews(), [reviewed])
+        retry = store.save_review(market_id="M001", source_url="https://example.test/mercato",
+                                  outcome="verified", note="Fonte letta: il luogo coincide.",
+                                  report_run_id=report["runId"], operation_id="test-op-001",
+                                  now=datetime(2026, 11, 14, tzinfo=timezone.utc))
+        self.assertEqual(retry, reviewed)
+        next_report = scan(self.repository, as_of=date(2026, 11, 14), collector=self.collect)
+        store.save(next_report)
+        self.assertEqual(store.reviews(), [reviewed])
+        self.assertEqual(self.repository.record, before)
+        with self.assertRaisesRegex(MarketError, "markets_audit_report_stale"):
+            store.save_review(market_id="M001", source_url="https://example.test/mercato",
+                              outcome="verified", note="Fonte letta: il luogo coincide.",
+                              report_run_id=report["runId"], operation_id="test-op-002")
+        with self.assertRaisesRegex(MarketError, "markets_audit_source_missing"):
+            store.save_review(market_id="M001", source_url="https://example.test/altro",
+                              outcome="verified", note="Fonte letta: il luogo coincide.",
+                              report_run_id=next_report["runId"], operation_id="test-op-003")
 
 
 if __name__ == "__main__":

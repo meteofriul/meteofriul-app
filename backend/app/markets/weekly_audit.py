@@ -5,7 +5,7 @@ The archive is never mutated. Only a separate report store may be written.
 from __future__ import annotations
 
 import copy
-from datetime import datetime
+from datetime import datetime, timedelta, timezone
 import hashlib
 import re
 import time
@@ -136,6 +136,49 @@ class FirestoreWeeklyAuditStore:
         snapshot = ref.get(timeout=15)
         result = snapshot.to_dict() if snapshot.exists else None
         return result if result and result.get("marketId") == market_id else None
+
+    @staticmethod
+    def _review_id(market_id, source_url):
+        return hashlib.sha256((market_id + "\n" + source_url).encode("utf-8")).hexdigest()
+
+    def _reviews(self):
+        return self.root.document("manual_reviews").collection("items")
+
+    def reviews(self):
+        return [item.to_dict() for item in self._reviews().stream(timeout=15)]
+
+    def save_review(self, *, market_id, source_url, outcome, note, report_run_id,
+                    operation_id, now=None):
+        latest = self.latest()
+        if not latest or latest["runId"] != report_run_id:
+            raise MarketError("markets_audit_report_stale", 409)
+        detail = self.market(market_id)
+        source = next((item for item in (detail or {}).get("sources", [])
+                       if item.get("url") == source_url), None)
+        if source is None:
+            raise MarketError("markets_audit_source_missing", 404)
+        if outcome not in {"verified", "needs_correction", "replace_source"}:
+            raise MarketError("markets_audit_review_invalid")
+        note = note.strip() if isinstance(note, str) else ""
+        if not 5 <= len(note) <= 500:
+            raise MarketError("markets_audit_review_note_invalid")
+        ref = self._reviews().document(self._review_id(market_id, source_url))
+        previous = ref.get(timeout=15)
+        if previous.exists and (previous.to_dict() or {}).get("operationId") == operation_id:
+            return previous.to_dict()
+        checked_at = now or datetime.now(timezone.utc)
+        if checked_at.tzinfo is None:
+            raise MarketError("markets_audit_review_time_invalid")
+        iso = lambda value: value.astimezone(timezone.utc).isoformat().replace("+00:00", "Z")
+        review = {"marketId": market_id, "sourceUrl": source_url,
+                  "outcome": outcome, "note": note, "checkedAt": iso(checked_at),
+                  "reviewUntil": iso(checked_at + timedelta(days=90)),
+                  "sourceStatus": source["status"],
+                  "sourceHash": source.get("contentHash") if source["status"] in {"read", "document"} else None,
+                  "archiveRevision": latest["archiveRevision"], "reportRunId": report_run_id,
+                  "operationId": operation_id}
+        ref.set(review, timeout=15)
+        return review
 
     def save(self, report):
         if report["status"] != "completed" or report["checkedMarkets"] != report["totalMarkets"]:

@@ -45,6 +45,8 @@ class MarketsCloudTests(unittest.TestCase):
             "/healthz", "/api/admin/markets/state",
             "/api/admin/markets/history", "/api/admin/markets/publish",
             "/api/admin/markets/weekly-audit", "/api/admin/markets/weekly-audit/{market_id}",
+            "/api/admin/markets/weekly-audit/reviews",
+            "/api/admin/markets/weekly-audit/{market_id}/review",
             "/api/admin/markets/review-complete",
             "/api/admin/markets/email-settings",
         })
@@ -61,7 +63,9 @@ class MarketsCloudTests(unittest.TestCase):
             ("GET", "/api/admin/markets/state", None),
             ("GET", "/api/admin/markets/history", None),
             ("GET", "/api/admin/markets/weekly-audit", None),
+            ("GET", "/api/admin/markets/weekly-audit/reviews", None),
             ("GET", "/api/admin/markets/weekly-audit/M001", None),
+            ("PUT", "/api/admin/markets/weekly-audit/M001/review", {}),
             ("PUT", "/api/admin/markets/state", {}),
             ("POST", "/api/admin/markets/publish", {}),
             ("POST", "/api/admin/markets/review-complete", {}),
@@ -100,6 +104,10 @@ class MarketsCloudTests(unittest.TestCase):
                 return {"status": "completed", "markets": [{"marketId": "M001", "changes": 1}]}
             def market(self, market_id):
                 return {"marketId": market_id, "changesDetail": [{"before": "Piazza", "after": "Piazza nuova"}]} if market_id == "M001" else None
+            def reviews(self):
+                return [{"marketId": "M001", "outcome": "verified"}]
+            def save_review(self, **values):
+                return values
         app.dependency_overrides[get_weekly_audit_store] = ReportStore
         client = TestClient(app)
         self.assertEqual(client.get("/api/admin/markets/weekly-audit").status_code, 401)
@@ -109,6 +117,15 @@ class MarketsCloudTests(unittest.TestCase):
         self.assertEqual(response.headers["cache-control"], "no-store")
         self.assertEqual(response.json()["markets"][0]["changes"], 1)
         self.assertEqual(client.get("/api/admin/markets/weekly-audit/M001").json()["changesDetail"][0]["after"], "Piazza nuova")
+        self.assertEqual(client.get("/api/admin/markets/weekly-audit/reviews").json()[0]["outcome"], "verified")
+        review = client.put("/api/admin/markets/weekly-audit/M001/review", json={
+            "sourceUrl": "https://example.test/mercato", "outcome": "verified",
+            "note": "Fonte letta e verificata.", "reportRunId": "a" * 32,
+            "operationId": "test-op-001",
+        })
+        self.assertEqual(review.status_code, 200)
+        self.assertEqual(review.headers["cache-control"], "no-store")
+        self.assertEqual(review.json()["market_id"], "M001")
         self.assertEqual(client.get("/api/admin/markets/weekly-audit/M002").status_code, 404)
         self.assertEqual(client.get("/api/markets/weekly-audit").status_code, 404)
 

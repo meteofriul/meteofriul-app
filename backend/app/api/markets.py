@@ -1,7 +1,7 @@
 from __future__ import annotations
 
 from functools import lru_cache
-from typing import Annotated, Any
+from typing import Annotated, Any, Literal
 
 from fastapi import APIRouter, Depends, HTTPException, Request, Response
 from pydantic import BaseModel, ConfigDict, Field
@@ -38,6 +38,15 @@ class MarketEmailSettings(BaseModel):
     operationId: str = Field(min_length=8, max_length=120)
     recipient: str = Field(min_length=3, max_length=254)
     enabled: bool = Field(strict=True)
+
+
+class MarketSourceReview(BaseModel):
+    model_config = ConfigDict(extra="forbid")
+    sourceUrl: str = Field(min_length=12, max_length=2000)
+    outcome: Literal["verified", "needs_correction", "replace_source"]
+    note: str = Field(min_length=5, max_length=500)
+    reportRunId: str = Field(pattern=r"^[0-9a-f]{32}$")
+    operationId: str = Field(min_length=8, max_length=120)
 
 
 def _http_error(error):
@@ -102,6 +111,17 @@ def weekly_audit(response: Response, _admin: Annotated[MarketsAdminContext, Depe
         raise _http_error(MarketError("markets_audit_unavailable", 503)) from error
 
 
+@admin_router.get("/weekly-audit/reviews")
+def weekly_audit_reviews(response: Response,
+                         _admin: Annotated[MarketsAdminContext, Depends(require_markets_admin)],
+                         store: Annotated[FirestoreWeeklyAuditStore | None, Depends(get_weekly_audit_store)]):
+    response.headers["Cache-Control"] = "no-store"
+    try:
+        return store.reviews() if store else []
+    except Exception as error:
+        raise _http_error(MarketError("markets_audit_unavailable", 503)) from error
+
+
 @admin_router.get("/weekly-audit/{market_id}")
 def weekly_audit_market(market_id: str, response: Response,
                         _admin: Annotated[MarketsAdminContext, Depends(require_markets_admin)],
@@ -116,6 +136,26 @@ def weekly_audit_market(market_id: str, response: Response,
     if detail is None:
         raise HTTPException(status_code=404)
     return detail
+
+
+@admin_router.put("/weekly-audit/{market_id}/review")
+def weekly_audit_save_review(market_id: str, command: MarketSourceReview, response: Response,
+                             _admin: Annotated[MarketsAdminContext, Depends(require_markets_admin)],
+                             store: Annotated[FirestoreWeeklyAuditStore | None, Depends(get_weekly_audit_store)]):
+    response.headers["Cache-Control"] = "no-store"
+    if not 1 <= len(market_id) <= 120 or "/" in market_id:
+        raise HTTPException(status_code=404)
+    if store is None:
+        raise _http_error(MarketError("markets_audit_unavailable", 503))
+    try:
+        return store.save_review(market_id=market_id, source_url=command.sourceUrl,
+                                 outcome=command.outcome, note=command.note,
+                                 report_run_id=command.reportRunId,
+                                 operation_id=command.operationId)
+    except MarketError as error:
+        raise _http_error(error) from error
+    except Exception as error:
+        raise _http_error(MarketError("markets_audit_unavailable", 503)) from error
 
 
 @admin_router.put("/state")
