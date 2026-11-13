@@ -2,7 +2,7 @@
 
 ## Stato Mercati — 13 novembre 2026
 
-Il [controllo online in sola lettura](MARKETS_WEEKLY_AUDIT_20261113.md) è stato collaudato su 100/100 schede online e attivato nel pannello. Cloud Run Job e API usano il digest `sha256:897274121200346ee9e0833a0d33fd3ff2d14b3e86522930539e4d982c2a22df`; lo Scheduler `meteofriul-markets-weekly-audit` è **ENABLED** ogni martedì alle 09:00 `Europe/Rome`, dal 17 novembre. Scrive soltanto il rapporto separato, non le schede né il catalogo pubblico. Il task Windows locale resta disabilitato e il controllo trimestrale manuale rimane in vigore. La prova di invocazione Scheduler del 13 novembre ha creato l'esecuzione `jv5hj`; il suo esito è registrato nel dossier collegato.
+Il [controllo online in sola lettura](MARKETS_WEEKLY_AUDIT_20261113.md) è stato collaudato su 100/100 schede online e attivato nel pannello. Cloud Run Job e API usano il digest `sha256:15a73c0b27b508f0fa03b93d9c8dc6fdb96ee213d401a2b227981fbc9e87989b`; lo Scheduler `meteofriul-markets-weekly-audit` è **ENABLED** ogni martedì alle 09:00 `Europe/Rome`, dal 17 novembre. Il job scrive soltanto il rapporto separato, non le schede né il catalogo pubblico. Il pannello può registrare esito, nota e data della verifica manuale di una fonte in una raccolta distinta, senza modificarne i dati. Il task Windows locale resta disabilitato e il controllo trimestrale manuale rimane in vigore. La prova di invocazione Scheduler del 13 novembre ha creato l'esecuzione `jv5hj`; il suo esito è registrato nel dossier collegato.
 
 ### Stato precedente — 7 novembre 2026
 

@@ -6,8 +6,10 @@ solo un rapporto separato nel pannello, con fonte e valori prima/dopo. Il
 collaudo finale ha controllato 100/100 schede senza cambiare la revisione
 privata 57 o quella pubblica 0: due schede con differenze da decidere nel
 pannello, 92 con almeno un limite delle fonti. Lo Scheduler è attivo ogni
-martedì alle 09:00 italiane, primo avvio previsto il 17 novembre. L'app e il
-catalogo pubblico non sono stati modificati.
+martedì alle 09:00 italiane, primo avvio previsto il 17 novembre. Il pannello
+consente ora di registrare per ogni fonte esito, nota e data della verifica:
+un esito positivo torna da esaminare dopo 90 giorni o se la fonte cambia.
+L'app e il catalogo pubblico non sono stati modificati.
 [Procedura e limiti](docs/operations/MARKETS_WEEKLY_AUDIT_20261113.md).
 
 **Mercati, verifica delle ricorrenze del 12 novembre 2026.** Il catalogo

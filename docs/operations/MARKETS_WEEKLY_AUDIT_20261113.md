@@ -73,17 +73,52 @@ e 2 sono oltre il limite di quattro fonti per scheda. 92 schede hanno almeno
 un limite di fonte, fra cui 7 URL HTTP 404 e 5 pagine ancora oltre 8 MiB.
 Il pannello online mostra il rapporto autenticato, filtri e confronto con
 fonte ed estratto; la prova interattiva ha aperto il dettaglio di Lo Scrigno
-del Doge. L'ultima versione del pannello è Hosting `904698932f3c3e55`.
+del Doge. In quel collaudo la versione del pannello era Hosting
+`904698932f3c3e55`.
 127 test backend mirati, i test della build Cloud, 215 test del pannello, lint
 e build del pannello sono passati. Node locale del pannello era v24/npm11,
 diverso dalla versione prescritta v22/npm10.
 
+## Verifica manuale delle fonti — aggiornamento del 13 novembre
+
+Nel pannello online, il login amministrativo consente di annotare per ogni
+coppia scheda/fonte uno di tre esiti: **verificata**, **correzione da fare** o
+**fonte da sostituire**. Una nota di almeno cinque caratteri è obbligatoria;
+la data è registrata dal server. Il pannello mostra l'esito e la nota accanto
+alla fonte, con filtri per fonti da esaminare e verificate. L'operatore apre
+la scheda nell'editor per correggere i dati, se necessario.
+
+Le annotazioni stanno in `markets_weekly_audit/manual_reviews/items`, fuori
+dall'archivio Mercati. Non cambiano schede, revisione privata o pubblica,
+stato editoriale, job o pubblicazione. Un esito «verificata» nasconde il
+relativo limite di lettura dall'elenco da esaminare per non più di 90 giorni;
+una nuova impronta di una fonte leggibile, un cambio di stato della fonte o
+una differenza di contenuto la rimette in evidenza. I problemi a livello di
+scheda restano visibili. Il server accetta solo fonti nel rapporto più recente
+e rifiuta una verifica se nel frattempo è arrivato un altro rapporto.
+
+L'API amministrativa autenticata espone `GET
+/api/admin/markets/weekly-audit/reviews` e `PUT
+/api/admin/markets/weekly-audit/{market_id}/review`. La lettura usa riferimenti
+puntuali alle fonti presenti nel rapporto, perché il ruolo di runtime dispone
+di `datastore.entities.get` ma non di `datastore.entities.list`; non sono
+stati ampliati i permessi IAM. Il primo tentativo di lettura online ha
+restituito 503; la correzione è stata ridistribuita e il pannello ha caricato
+il rapporto con 100 schede, 2 con differenze e 92 da esaminare. Il modulo è
+stato aperto e annullato nel browser autenticato senza registrare un esito
+editoriale reale. 128 test backend mirati, 219 test del pannello, lint e build
+del pannello e Cloud Build sono passati. Il salvataggio di una verifica reale
+in produzione resta da esercitare quando l'operatore ne avrà verificata una.
+Il pannello aggiornato è online su `https://meteofriul-inserzioni.web.app/`:
+dopo il nuovo caricamento, il rapporto autenticato mostra ancora 100 schede,
+2 con differenze e 92 da esaminare.
+
 ## Configurazione attiva
 
-- API Cloud Run `meteofriul-markets`, revisione `meteofriul-markets-00005-nj8`;
+- API Cloud Run `meteofriul-markets`, revisione `meteofriul-markets-00007-ljn`;
   Cloud Run Job `meteofriul-markets-weekly-audit`, entrambi al digest
-  `sha256:897274121200346ee9e0833a0d33fd3ff2d14b3e86522930539e4d982c2a22df`
-  del commit `6f367fd5fde1e7f7ac817d73f547ad1b9895e8e0`.
+  `sha256:15a73c0b27b508f0fa03b93d9c8dc6fdb96ee213d401a2b227981fbc9e87989b`
+  del commit `2ed17514`.
 - Il job gira in `europe-west1` come
   `meteofriul-markets@meteo-friul.iam.gserviceaccount.com` con comando
   `python -m app.markets.weekly_audit_job` e Firestore `meteo-friul`.
