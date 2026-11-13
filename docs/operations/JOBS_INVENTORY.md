@@ -2,7 +2,7 @@
 
 ## Stato Mercati — 13 novembre 2026
 
-Preparato in un ramo dedicato il [controllo online in sola lettura](MARKETS_WEEKLY_AUDIT_20261113.md): rapporto separato per il pannello, prove con 100 schede locali e nuova fonte Discover Trieste. Il collaudo con le fonti online e la pianificazione settimanale restano da completare. Nessuno Scheduler Mercati è stato attivato; il controllo trimestrale manuale rimane in vigore.
+Il [controllo online in sola lettura](MARKETS_WEEKLY_AUDIT_20261113.md) è stato collaudato su 100/100 schede online e attivato nel pannello. Cloud Run Job e API usano il digest `sha256:897274121200346ee9e0833a0d33fd3ff2d14b3e86522930539e4d982c2a22df`; lo Scheduler `meteofriul-markets-weekly-audit` è **ENABLED** ogni martedì alle 09:00 `Europe/Rome`, dal 17 novembre. Scrive soltanto il rapporto separato, non le schede né il catalogo pubblico. Il task Windows locale resta disabilitato e il controllo trimestrale manuale rimane in vigore. La prova di invocazione Scheduler del 13 novembre ha creato l'esecuzione `jv5hj`; il suo esito è registrato nel dossier collegato.
 
 ### Stato precedente — 7 novembre 2026
 

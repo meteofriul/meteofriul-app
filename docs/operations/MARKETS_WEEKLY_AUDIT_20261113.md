@@ -1,4 +1,4 @@
-# Controllo settimanale Mercati — preparazione del 13 novembre 2026
+# Controllo settimanale Mercati — attivazione del 13 novembre 2026
 
 ## Scopo e confini
 
@@ -14,8 +14,8 @@ non sostituisce il rapporto precedente. La revisione dell'archivio è mostrata
 per segnalare anche modifiche successive al controllo.
 
 Le differenze sono **proposte** con valore in scheda, valore nella fonte,
-URL ed estratto. Anche una pagina cambiata senza dato interpretabile viene
-segnalata separatamente. Nessuna proposta convalida una scheda, modifica
+URL ed estratto. Una pagina non interpretabile rimane fra le fonti da verificare;
+la sua sola impronta non è presentata come cambiamento certo. Nessuna proposta convalida una scheda, modifica
 una data o pubblica nell'app. Il controllo editoriale generale ogni tre mesi
 rimane distinto e disponibile nel pannello.
 
@@ -39,51 +39,67 @@ di Pordenone che misurano circa 5,5 MiB. L'avviso "fonte cambiata" è emesso
 solo per fonti interpretate o documenti con impronta confrontabile: una pagina
 HTML non interpretata può variare nella navigazione e non costituisce da sola
 una modifica verificata del mercato. Rimane in "Fonti da verificare".
-Il metodo dell'impronta è versionato: il secondo collaudo non segnalerà come
-"pagina cambiata" tutte le fonti della prima esecuzione soltanto perché è
-cambiato l'algoritmo. Intervalli di date, elenchi con luoghi diversi e
+Il metodo dell'impronta è versionato: il cambio dell'algoritmo non genera un
+avviso di contenuto cambiato. Intervalli di date, elenchi con luoghi diversi e
 calendari senza anno non generano date. Ogni fonte tentata indica se è stata
 letta, se resta da interpretare o se non è raggiungibile; oltre quattro fonti
 per scheda, quelle non tentate sono elencate. I codici tecnici vengono
 tradotti in messaggi leggibili nel pannello. La copertura resta parziale.
 
-## Collaudo e attivazione
+## Collaudo online
 
-Il test con un archivio locale **copiato** ha elaborato 100/100 schede:
-16 selezionate, 47 bozze, 37 sospese. Il file copiato è rimasto identico.
-I test automatici coprono anche lo stato archiviato, un cambio di fonte senza
-fatto certo, una scansione parziale e un errore del collector senza fuga del
-testo dell'eccezione. Questo collaudo usa fonti simulate: non dimostra ancora
-che tutte le fonti online siano raggiungibili o interpretabili.
+I test con archivio locale **copiato** hanno elaborato 100/100 schede senza
+modificare il file: 16 selezionate, 47 bozze, 37 sospese nello snapshot locale.
+Il test automatico copre anche lo stato archiviato. Le esecuzioni online hanno
+letto lo stato corrente: 80 schede `published`, 11 `draft`, 9 `suspended`,
+nessuna `archived`. Le revisioni prima/dopo sono rimaste 57; la revisione
+pubblica è 0 e `MARKETS_PUBLIC_CATALOGUE_ENABLED=false`.
 
-La **prima esecuzione online**, con digest
-`sha256:abca21a4a8dc3729561224a673d1115ad34732ab776980483166499d02bfde49`,
-è terminata il 13 novembre in 3m21s: 100/100 schede, revisione privata 57
-invariata e revisione pubblica 0. Il pannello ha mostrato due differenze di
-sede/indicazioni per Lo Scrigno del Doge, con fonte e prima/dopo. 99 schede
-avevano almeno un limite di lettura: 82 `source_format_not_supported`, 37
-`unsupported_source_format`, 7 HTTP 404, oltre a pochi altri casi. Per questo
-il parser Discover è stato corretto sui metadati reali, sono stati aggiunti
-Campagna Amica e l'impronta dei documenti, ed è necessario un secondo giro
-prima di pianificare. Nessuno Scheduler Mercati esiste a questa data.
+La prima esecuzione online `meteofriul-markets-weekly-audit-nkccx` ha letto
+100/100 schede ma mostrato i limiti iniziali. Il secondo giro `m97dz` ha
+provato i nuovi parser e individuato tre differenze puramente tipografiche
+negli orari. Il terzo `z5x76` ha ridotto le differenze a due schede, ma ha
+mostrato 11 falsi avvisi di pagina cambiata su HTML non interpretato. Dopo la
+correzione, l'esecuzione `746vt` è terminata con successo il 13 novembre alle
+10:40 UTC in 3m44s: **100/100 schede**, revisione 57 invariata, **2 schede
+con differenze** e **0 falsi avvisi di fonte cambiata** rispetto al giro
+precedente. Restano la sede e le indicazioni di Lo Scrigno del Doge e l'inizio
+alle 07:30 anziché 08:00 per Campagna Amica in piazza Vittorio Veneto a
+Trieste. Nessuna differenza è stata applicata.
 
-Prima di creare la cadenza settimanale:
+Nel rapporto finale 42 fonti sono documenti con impronta, 16 sono lette con
+parser, 104 pagine rimangono da interpretare, 15 fonti non sono raggiungibili
+e 2 sono oltre il limite di quattro fonti per scheda. 92 schede hanno almeno
+un limite di fonte, fra cui 7 URL HTTP 404 e 5 pagine ancora oltre 8 MiB.
+Il pannello online mostra il rapporto autenticato, filtri e confronto con
+fonte ed estratto; la prova interattiva ha aperto il dettaglio di Lo Scrigno
+del Doge. L'ultima versione del pannello è Hosting `904698932f3c3e55`.
+127 test backend mirati, i test della build Cloud, 215 test del pannello, lint
+e build del pannello sono passati. Node locale del pannello era v24/npm11,
+diverso dalla versione prescritta v22/npm10.
 
-1. Distribuire API e pannello con le rotte del rapporto, senza abilitare la
-   pubblicazione Mercati.
-2. Creare il Cloud Run Job con lo stesso digest collaudato dell'API, account
-   `meteofriul-markets@meteo-friul.iam.gserviceaccount.com`, progetto
-   `meteo-friul`, regione `europe-west1`, comando
-   `python -m app.markets.weekly_audit_job`, variabili
-   `MARKETS_STORAGE=firestore`, `FIREBASE_PROJECT_ID=meteo-friul` e
-   `MARKETS_FIREBASE_PROJECT_ID=meteo-friul`; **senza Scheduler**.
-3. Avviare manualmente una sola esecuzione di collaudo, verificare 100/100
-   schede e la revisione invariata, esaminare nel pannello differenze e
-   problemi per stato e fonte, ampliare i parser necessari senza inferenze.
-4. Solo dopo l'esito positivo creare lo Scheduler settimanale in
-   `Europe/Rome`, con un'identità dedicata autorizzata a invocare **solo**
-   questo job. Registrare nome, cron, identità, digest, prima esecuzione ed
-   esito. Il task Windows locale rimane disabilitato.
+## Configurazione attiva
+
+- API Cloud Run `meteofriul-markets`, revisione `meteofriul-markets-00005-nj8`;
+  Cloud Run Job `meteofriul-markets-weekly-audit`, entrambi al digest
+  `sha256:897274121200346ee9e0833a0d33fd3ff2d14b3e86522930539e4d982c2a22df`
+  del commit `6f367fd5fde1e7f7ac817d73f547ad1b9895e8e0`.
+- Il job gira in `europe-west1` come
+  `meteofriul-markets@meteo-friul.iam.gserviceaccount.com` con comando
+  `python -m app.markets.weekly_audit_job` e Firestore `meteo-friul`.
+- Scheduler `meteofriul-markets-weekly-audit` **ENABLED**, cron `0 9 * * 2`,
+  fuso `Europe/Rome`: martedì alle 09:00; primo avvio pianificato il
+  **17 novembre 2026 alle 09:00**. Nessun retry automatico aggiuntivo.
+  Usa OAuth dell'identità dedicata
+  `meteofriul-markets-scheduler@meteo-friul.iam.gserviceaccount.com`, con
+  `roles/run.invoker` limitato a questo job. La chiamata Scheduler di prova
+  del 13 novembre alle 10:42 UTC ha creato l'esecuzione `jv5hj`, terminata
+  con successo alle 10:46 UTC in 3m34s. Il rapporto `d1072da97085434bab0c3e7b61159475`
+  ha ancora 100/100 schede, revisione 57/57, 2 schede con differenze e zero
+  avvisi di fonte cambiata. Il primo avvio automatico del martedì resta da
+  osservare.
+- Il task Windows locale rimane disabilitato. Il controllo editoriale generale
+  del 7 febbraio 2027 e poi circa trimestrale rimane una decisione separata.
 
 Non riutilizzare `refresh_job --apply`: quello salva automaticamente modifiche
 nell'archivio e contraddice la decisione editoriale di questo flusso.

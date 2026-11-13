@@ -1,14 +1,13 @@
 # Meteo Friûl
 
-**Mercati, controllo settimanale preparato il 13 novembre 2026.** Nel ramo
-`codex/markets-weekly-audit-20261113` il confronto legge l'archivio online e
-scrive solo un rapporto separato per il pannello, con fonte e valori prima/dopo.
-Prova locale su 100 schede, incluse le sospese, senza cambiare l'archivio.
-La prima prova online ha controllato 100/100 schede senza modificare la
-revisione privata 57 o quella pubblica 0; i limiti delle fonti hanno motivato
-una seconda versione dei parser, ancora da collaudare online. Lo Scheduler
-resta spento;
-app e catalogo pubblico non sono stati modificati.
+**Mercati, controllo settimanale attivo dal 13 novembre 2026.** Nel ramo
+`codex/markets-weekly-audit-20261113` il job legge l'archivio online e scrive
+solo un rapporto separato nel pannello, con fonte e valori prima/dopo. Il
+collaudo finale ha controllato 100/100 schede senza cambiare la revisione
+privata 57 o quella pubblica 0: due schede con differenze da decidere nel
+pannello, 92 con almeno un limite delle fonti. Lo Scheduler è attivo ogni
+martedì alle 09:00 italiane, primo avvio previsto il 17 novembre. L'app e il
+catalogo pubblico non sono stati modificati.
 [Procedura e limiti](docs/operations/MARKETS_WEEKLY_AUDIT_20261113.md).
 
 **Mercati, verifica delle ricorrenze del 12 novembre 2026.** Il catalogo
@@ -16,7 +15,7 @@ candidato nei rami app contiene ora 80 schede, 206 edizioni e 13 rimozioni.
 San Daniele e Robis hanno tre nuove edizioni tratte da fonti esplicite;
 le schede senza prossima edizione riportano «Prossima data non annunciata».
 [Riscontri e schede ancora da chiarire](docs/operations/MERCATI_RICORRENZE_SENZA_DATA_20261112.md).
-Nessun job settimanale è attivo o è stato creato; pannello e app distribuite
+A quella data nessun job settimanale era attivo; pannello e app distribuite
 non sono stati aggiornati. Le cifre del 9 novembre sotto restano lo stato di
 quella data.
 
