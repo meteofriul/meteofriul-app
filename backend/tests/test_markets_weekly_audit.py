@@ -3,7 +3,7 @@ from datetime import date
 import unittest
 
 from app.markets.model import initial_record, MarketError
-from app.markets.weekly_audit import scan, FirestoreWeeklyAuditStore
+from app.markets.weekly_audit import scan, FirestoreWeeklyAuditStore, _same_hours
 from tests.test_markets_archive import small_seed
 
 
@@ -96,6 +96,18 @@ class MarketsWeeklyAuditTests(unittest.TestCase):
         report = scan(self.repository, as_of=date(2026, 11, 13), collector=self.collect, previous=previous)
         self.assertTrue(next(item for item in report["markets"] if item["marketId"] == "M001")["sources"][0]["contentChanged"])
         self.assertFalse(next(item for item in report["markets"] if item["marketId"] == "M002")["sources"][0]["contentChanged"])
+
+    def test_hours_wording_does_not_hide_real_time_or_weekday_change(self):
+        saturday = {"weekdaysIso": [6]}
+        self.assertTrue(_same_hours("07:30–12:00", "Sabato dalle 07:30 alle 12:00", saturday))
+        self.assertFalse(_same_hours("08:00–13:00", "Martedi dalle 07:30 alle 13:00", {"weekdaysIso": [2]}))
+        self.assertFalse(_same_hours("08:00–13:00", "Martedi dalle 08:00 alle 13:00", saturday))
+        self.assertTrue(_same_hours("Lunedì 08:00–13:00; giovedì 15:30–19:30",
+                                    "Lunedi dalle 08:00 alle 13:00 · Giovedi dalle 15:30 alle 19:30",
+                                    {"weekdaysIso": [1, 4]}))
+        self.assertFalse(_same_hours("Lunedì 08:00–13:00; giovedì 15:30–19:30",
+                                     "Martedi dalle 08:00 alle 13:00 · Giovedi dalle 15:30 alle 19:30",
+                                     {"weekdaysIso": [1, 4]}))
 
     def test_partial_scan_cannot_be_saved_as_latest(self):
         ticks = iter([0, 61])

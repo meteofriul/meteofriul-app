@@ -7,12 +7,39 @@ from __future__ import annotations
 import copy
 from datetime import datetime
 import hashlib
+import re
 import time
+import unicodedata
 import uuid
 
 from .model import MarketError, timestamp
 from .refresh import apply_refresh
 from .refresh_job import sources_for
+
+
+_DAYS = {name: index for index, name in enumerate(
+    ("lunedi", "martedi", "mercoledi", "giovedi", "venerdi", "sabato", "domenica"), 1)}
+
+
+def _same_hours(before, after, market):
+    """Ignore wording changes only when times and named weekdays still agree."""
+    if not isinstance(before, str) or not isinstance(after, str):
+        return False
+    times = lambda text: [f"{int(hour):02}:{minute}" for hour, minute in
+                          re.findall(r"\b([01]?\d|2[0-3])[:.]([0-5]\d)\b", text)]
+    old_times, new_times = times(before), times(after)
+    if not old_times or old_times != new_times:
+        return False
+    def days(text):
+        plain = unicodedata.normalize("NFKD", text).encode("ascii", "ignore").decode().lower()
+        return [_DAYS[name] for name in re.findall(r"\b(?:lunedi|martedi|mercoledi|giovedi|venerdi|sabato|domenica)\b", plain)]
+    old_days, new_days = days(before), days(after)
+    if old_days and new_days:
+        return old_days == new_days
+    if old_days or new_days:
+        expected = market.get("weekdaysIso") or []
+        return len(old_times) == 2 and len(expected) == 1 and (old_days or new_days) == expected
+    return True
 
 
 def scan(repository, *, as_of, collector=None, previous=None, max_seconds=1800,
@@ -58,7 +85,9 @@ def scan(repository, *, as_of, collector=None, previous=None, max_seconds=1800,
             source["contentChanged"] = bool(old.get("hashMethod") and old.get("hashMethod") == source.get("hashMethod")
                                             and old.get("contentHash") and source.get("contentHash")
                                             and old["contentHash"] != source["contentHash"])
-        changes = plan["audit"][-1]["changes"]
+        changes = [change for change in plan["audit"][-1]["changes"]
+                   if not (change["collection"] == "markets" and change["fields"] == ["hours"]
+                           and _same_hours(change["before"], change["after"], market))]
         summary = {"marketId": market["id"], "name": market["name"], "comune": market["comune"],
                    "status": market["status"], "changes": len(changes),
                    "confirmedFacts": entry["confirmedFacts"], "issues": entry["issues"],
