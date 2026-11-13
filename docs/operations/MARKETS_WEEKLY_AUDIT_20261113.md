@@ -23,13 +23,24 @@ rimane distinto e disponibile nel pannello.
 
 Restano i parser prudenti per JSON-LD Event con identità e data singola,
 calendario Pro Sacile e dettagli etichettati Pro Loco FVG. Aggiunta la lettura
-della lista esplicita di date su una pagina **Discover Trieste** con titolo
-identico alla scheda, calendario unico e anno scritto. Intervalli di date,
-elenchi con luoghi diversi, calendari senza anno e PDF non generano date.
-Ogni fonte tentata indica se è stata letta, se il formato non è interpretabile
-o se non è raggiungibile; oltre quattro fonti per scheda, quelle non tentate
-sono elencate. I codici tecnici non sono mostrati come tali nel pannello.
-Questa estensione non equivale a copertura completa dei siti censiti.
+della lista esplicita di date sulle pagine **Discover Trieste** con metadati
+di titolo e URL coincidenti, calendario unico e anno scritto. Le pagine reali
+di Cavana, Ponterosso, Mercatino al tram e Un pozzo di occasioni sono state
+provate con il loro HTML: il parser ha ricavato solo le date future scritte.
+Aggiunta la lettura degli orari espliciti nelle pagine Campagna Amica con
+identità e comune verificati; provate le pagine reali di Codroipo, Passons e
+Udine. Questi orari sono solo proposte, non mutazioni o nuove edizioni.
+
+PDF e immagini fino a 5 MiB sono letti per calcolarne l'impronta e segnalare
+modifiche successive, senza estrarne date o testi. Per l'HTML, il confronto
+fra esecuzioni usa l'impronta del testo visibile, ignorando script e stile.
+Il metodo dell'impronta è versionato: il secondo collaudo non segnalerà come
+"pagina cambiata" tutte le fonti della prima esecuzione soltanto perché è
+cambiato l'algoritmo. Intervalli di date, elenchi con luoghi diversi e
+calendari senza anno non generano date. Ogni fonte tentata indica se è stata
+letta, se resta da interpretare o se non è raggiungibile; oltre quattro fonti
+per scheda, quelle non tentate sono elencate. I codici tecnici vengono
+tradotti in messaggi leggibili nel pannello. La copertura resta parziale.
 
 ## Collaudo e attivazione
 
@@ -39,6 +50,17 @@ I test automatici coprono anche lo stato archiviato, un cambio di fonte senza
 fatto certo, una scansione parziale e un errore del collector senza fuga del
 testo dell'eccezione. Questo collaudo usa fonti simulate: non dimostra ancora
 che tutte le fonti online siano raggiungibili o interpretabili.
+
+La **prima esecuzione online**, con digest
+`sha256:abca21a4a8dc3729561224a673d1115ad34732ab776980483166499d02bfde49`,
+è terminata il 13 novembre in 3m21s: 100/100 schede, revisione privata 57
+invariata e revisione pubblica 0. Il pannello ha mostrato due differenze di
+sede/indicazioni per Lo Scrigno del Doge, con fonte e prima/dopo. 99 schede
+avevano almeno un limite di lettura: 82 `source_format_not_supported`, 37
+`unsupported_source_format`, 7 HTTP 404, oltre a pochi altri casi. Per questo
+il parser Discover è stato corretto sui metadati reali, sono stati aggiunti
+Campagna Amica e l'impronta dei documenti, ed è necessario un secondo giro
+prima di pianificare. Nessuno Scheduler Mercati esiste a questa data.
 
 Prima di creare la cadenza settimanale:
 

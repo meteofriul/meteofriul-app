@@ -21,7 +21,7 @@ import unicodedata
 from urllib.parse import urljoin, urlsplit, urlunsplit
 
 
-MAX_SOURCE_BYTES = 2 * 1024 * 1024
+MAX_SOURCE_BYTES = 5 * 1024 * 1024
 MAX_SOURCES = 4
 SOURCE_DEADLINE_SECONDS = 20
 MONTHS = {name: number for number, name in enumerate(
@@ -107,7 +107,9 @@ def fetch_source(url):
             if response.status != 200:
                 raise SourceError("source_http_" + str(response.status))
             content_type = response.getheader("Content-Type", "").split(";", 1)[0].lower()
-            if content_type not in ("text/html", "application/xhtml+xml"):
+            html_type = content_type in ("text/html", "application/xhtml+xml")
+            if not html_type and content_type not in ("application/pdf", "application/octet-stream",
+                                                     "image/jpeg", "image/png", "image/webp"):
                 raise SourceError("unsupported_source_format")
             if response.getheader("Content-Encoding", "identity").lower() not in ("identity", ""):
                 raise SourceError("unsupported_source_encoding")
@@ -128,6 +130,15 @@ def fetch_source(url):
                     raise SourceError("source_too_large")
                 chunks.append(chunk)
             body = b"".join(chunks)
+            if not html_type:
+                if content_type in ("application/pdf", "application/octet-stream"):
+                    if not body.startswith(b"%PDF-"):
+                        raise SourceError("unsupported_source_format")
+                    kind = "pdf"
+                else:
+                    kind = "image"
+                return {"url": target, "format": kind, "contentHash": hashlib.sha256(body).hexdigest(),
+                        "retrievedAt": datetime.now(timezone.utc).isoformat().replace("+00:00", "Z")}
             charset = response.headers.get_content_charset() or "utf-8"
             try:
                 html = body.decode(charset, errors="replace")
@@ -145,11 +156,16 @@ class _Page(HTMLParser):
         super().__init__(convert_charrefs=True)
         self.scripts, self.text, self.script = [], [], None
         self.headings, self.heading = [], None
+        self.og_title, self.og_url = None, None
         self.hidden = 0
         self.feed(html)
 
     def handle_starttag(self, tag, attrs):
         attributes = dict(attrs)
+        if tag == "meta" and attributes.get("property") == "og:title":
+            self.og_title = attributes.get("content")
+        if tag == "meta" and attributes.get("property") == "og:url":
+            self.og_url = attributes.get("content")
         if tag in ("script", "style", "noscript"):
             self.hidden += 1
             if tag == "script" and attributes.get("type", "").lower() == "application/ld+json":
@@ -502,7 +518,9 @@ def _discover_trieste(page, market, url, as_of):
             or _normal(market.get("comune", "")) != "trieste"):
         return [], []
     names = [market.get("name", ""), *market.get("titleAliases", [])]
-    if len(page.headings) != 1 or not any(_normal(name) == _normal(page.headings[0]) for name in names):
+    if (not page.og_title or not page.og_url or
+            not any(_normal(name) == _normal(page.og_title) for name in names) or
+            _url(page.og_url).rstrip("/") != _url(url).rstrip("/")):
         return [], ["event_identity_not_verified"]
     lines = page.lines
     headings = [index for index, line in enumerate(lines) if re.fullmatch(
@@ -533,9 +551,52 @@ def _discover_trieste(page, market, url, as_of):
         edition = {"date": day.isoformat(), "status": "published", "source": url}
         editions.append(edition)
         evidence.append({"field": "editions", "value": edition,
-                         "excerpt": page.headings[0] + "; " + part + " " + str(year)})
+                         "excerpt": page.og_title + "; " + part + " " + str(year)})
     return ([{"fields": {}, "editions": editions, "evidence": evidence,
               "completeCalendar": False}] if editions else []), []
+
+
+def _campagna_amica(page, market, url):
+    """Read only opening hours on a uniquely identified market detail page."""
+    parsed = urlsplit(url)
+    if (parsed.hostname not in {"campagnamica.it", "www.campagnamica.it"} or
+            not parsed.path.startswith("/la-nostra-rete/mercato/")):
+        return [], []
+    if not page.og_url or _url(page.og_url).rstrip("/") != _url(url).rstrip("/") or len(page.headings) != 1:
+        return [], ["event_identity_not_verified"]
+    lines = page.lines
+    address = next((line for line in lines if re.match(r"^(?:PIAZZA|VIA|VIALE|CORSO)\s+", line)
+                    and _normal(market.get("comune", "")) in _normal(line)), "")
+    names = [market.get("name", ""), *market.get("titleAliases", [])]
+    # Province/region words later in the address must not identify another
+    # market with the same generic Campagna Amica title.
+    actual = set(_normal(page.headings[0] + " " + address.split(",", 1)[0]).split())
+    if not address or not any((tokens := set(_normal(name).split())) and len(tokens) >= 3
+                              and tokens.issubset(actual) for name in names):
+        return [], ["event_identity_not_verified"]
+    sections = [i for i, line in enumerate(lines) if _normal(line) == "orari di apertura"]
+    if not sections:
+        return [], ["opening_hours_not_found"]
+    pattern = re.compile(r"^(Luned[iì]|Marted[iì]|Mercoled[iì]|Gioved[iì]|Venerd[iì]|Sabato|Domenica)\s+dalle\s+(\d{2}:\d{2})\s+alle\s+(\d{2}:\d{2})$", re.I)
+    hours = []
+    for line in lines[sections[-1] + 1:sections[-1] + 8]:
+        match = pattern.fullmatch(line)
+        if not match:
+            if hours:
+                break
+            continue
+        for value in match.groups()[1:]:
+            hour, minute = map(int, value.split(":"))
+            if hour > 23 or minute > 59:
+                return [], ["opening_hours_invalid"]
+        hours.append(line)
+    if not hours:
+        return [], ["opening_hours_not_found"]
+    value = " · ".join(hours)
+    return [{"fields": {"hours": value}, "editions": [],
+             "evidence": [{"field": "hours", "value": value,
+                           "excerpt": "Orari di apertura: " + value}],
+             "completeCalendar": False}], []
 
 
 def collect_market(market, editions, sources, *, as_of, fetch=None):
@@ -567,12 +628,21 @@ def collect_market(market, editions, sources, *, as_of, fetch=None):
             response = (fetch or fetch_source)(url)
             if isinstance(response, str):
                 response = {"html": response, "url": url}
-            html = response["html"]
-            if not isinstance(html, str) or len(html.encode("utf-8")) > MAX_SOURCE_BYTES:
-                raise SourceError("source_too_large")
             final_url = _url(response.get("url", url))
             if urlsplit(final_url).hostname != urlsplit(url).hostname:
                 raise SourceError("cross_host_redirect")
+            if response.get("format") in {"pdf", "image"}:
+                digest = response.get("contentHash", "")
+                if not re.fullmatch(r"[0-9a-f]{64}", digest):
+                    raise SourceError("source_parse_error")
+                issues.append("document_requires_manual_review")
+                source_checks.append({"url": final_url, "status": "document", "contentHash": digest,
+                                      "hashMethod": "binary_v1",
+                                      "issues": ["document_requires_manual_review"]})
+                continue
+            html = response["html"]
+            if not isinstance(html, str) or len(html.encode("utf-8")) > MAX_SOURCE_BYTES:
+                raise SourceError("source_too_large")
             page = _Page(html)
             found, parse_issues = _prosacile(page, market, final_url, as_of)
             if not found:
@@ -582,13 +652,17 @@ def collect_market(market, editions, sources, *, as_of, fetch=None):
                 found, structured_issues = _jsonld(page, market, final_url, as_of)
                 parse_issues += structured_issues
             if not found:
+                found, campagna_issues = _campagna_amica(page, market, final_url)
+                parse_issues += campagna_issues
+            if not found:
                 found, trieste_issues = _discover_trieste(page, market, final_url, as_of)
                 parse_issues += trieste_issues
             issues.extend(parse_issues)
             if not found:
                 issues.append("source_format_not_supported")
             source_checks.append({"url": final_url, "status": "read" if found else "unsupported",
-                                  "contentHash": response.get("contentHash") or hashlib.sha256(html.encode()).hexdigest(),
+                                  "contentHash": hashlib.sha256("\n".join(page.lines).encode()).hexdigest(),
+                                  "hashMethod": "visible_text_v1",
                                   "issues": sorted(set(parse_issues + ([] if found else ["source_format_not_supported"])))})
             for observation in found:
                 observations.append({"sourceUrl": final_url,

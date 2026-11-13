@@ -70,7 +70,8 @@ class MarketsWeeklyAuditTests(unittest.TestCase):
     def collect(market, _editions, _sources, *, as_of):
         url = market["url"]
         return {"marketId": market["id"], "issues": [],
-                "sourceChecks": [{"url": url, "status": "read", "contentHash": "b" * 64, "issues": []}],
+                "sourceChecks": [{"url": url, "status": "read", "contentHash": "b" * 64,
+                                  "hashMethod": "visible_text_v1", "issues": []}],
                 "observations": [{"sourceUrl": url, "retrievedAt": as_of.isoformat() + "T09:00:00Z",
                                   "contentHash": "b" * 64, "fields": {"place": "Piazza nuova"},
                                   "editions": [], "evidence": [{"field": "place", "value": "Piazza nuova",
@@ -91,7 +92,7 @@ class MarketsWeeklyAuditTests(unittest.TestCase):
 
     def test_previous_source_hash_flags_page_change_without_invented_fact(self):
         previous = {"markets": [{"marketId": "M001", "sources": [{"url": "https://example.test/mercato",
-                                                               "contentHash": "a" * 64}]}]}
+                                                               "hashMethod": "visible_text_v1", "contentHash": "a" * 64}]}]}
         report = scan(self.repository, as_of=date(2026, 11, 13), collector=self.collect, previous=previous)
         self.assertTrue(next(item for item in report["markets"] if item["marketId"] == "M001")["sources"][0]["contentChanged"])
         self.assertFalse(next(item for item in report["markets"] if item["marketId"] == "M002")["sources"][0]["contentChanged"])

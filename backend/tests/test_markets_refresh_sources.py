@@ -3,7 +3,7 @@ from datetime import date
 import unittest
 from unittest.mock import patch
 
-from app.markets.refresh_sources import (collect_market, _url, _public_addresses,
+from app.markets.refresh_sources import (collect_market, fetch_source, _url, _public_addresses,
                                          MAX_SOURCES, SourceError)
 
 
@@ -196,13 +196,14 @@ class MarketRefreshSourcesTests(unittest.TestCase):
     def test_discover_trieste_reads_only_identified_explicit_calendar(self):
         url = "https://www.discover-trieste.it/vivi/trieste-now/mercatino-cavana"
         market = {**MARKET, "name": "Mercatino di Cavana", "comune": "Trieste", "url": url}
-        body = '''<h1>Mercatino di Cavana</h1><p>Dal 6 dicembre al 31 dicembre 2026</p>
+        body = '''<meta property="og:title" content="Mercatino di Cavana"><meta property="og:url" content="https://www.discover-trieste.it/vivi/trieste-now/mercatino-cavana"><h2>Mercatino di Cavana</h2><p>Dal 6 dicembre al 31 dicembre 2026</p>
         <h2>Calendario</h2><p>1 febbraio, 1 novembre, 6 dicembre 2026.</p>'''
         result = collect_market(market, [], [], as_of=date(2026, 11, 13), fetch=lambda _: body)
         self.assertEqual([item["date"] for item in result["observations"][0]["editions"]], ["2026-12-06"])
         self.assertEqual(result["sourceChecks"][0]["status"], "read")
         self.assertFalse(result["observations"][0]["completeCalendar"])
-        for wrong in (body.replace("Mercatino di Cavana</h1>", "Altro mercatino</h1>"),
+        for wrong in (body.replace('content="Mercatino di Cavana"', 'content="Altro mercatino"'),
+                      body.replace('content="https://www.discover-trieste.it/vivi/trieste-now/mercatino-cavana"', 'content="https://www.discover-trieste.it/vivi/trieste-now/altro"'),
                       body.replace("6 dicembre 2026", "6 e 20 dicembre 2026"),
                       body.replace("<h2>Calendario</h2>", "<h2>Programma</h2>")):
             with self.subTest(wrong=wrong):
@@ -213,6 +214,58 @@ class MarketRefreshSourcesTests(unittest.TestCase):
         self.assertEqual(result["sourceChecks"][0]["url"], URL)
         self.assertEqual(result["sourceChecks"][0]["status"], "unsupported")
         self.assertEqual(len(result["sourceChecks"][0]["contentHash"]), 64)
+
+    def test_campagna_amica_reads_only_identified_opening_hours(self):
+        url = "https://www.campagnamica.it/la-nostra-rete/mercato/mercato-di-campagna-amica-di-udine/"
+        market = {**MARKET, "name": "Campagna Amica Piazza XX Settembre", "comune": "Udine", "url": url}
+        body = '''<meta property="og:url" content="https://www.campagnamica.it/la-nostra-rete/mercato/mercato-di-campagna-amica-di-udine/">
+        <h1>Mercato di Campagna Amica di Udine</h1><p>PIAZZA XX Settembre, Udine, Friuli Venezia Giulia</p>
+        <h2>Orari di apertura</h2><p>Lunedi dalle 08:00 alle 13:00</p><p>Giovedi dalle 15:30 alle 19:30</p>'''
+        result = collect_market(market, [], [], as_of=date(2026, 11, 13), fetch=lambda _: body)
+        observation = result["observations"][0]
+        self.assertEqual(observation["fields"]["hours"], "Lunedi dalle 08:00 alle 13:00 · Giovedi dalle 15:30 alle 19:30")
+        self.assertEqual(observation["editions"], [])
+        self.assertEqual(result["sourceChecks"][0]["status"], "read")
+        for wrong in (body.replace("PIAZZA XX Settembre", "PIAZZA Altra"),
+                      body.replace("Udine, Friuli", "Pordenone, Friuli"),
+                      body.replace("mercato-di-campagna-amica-di-udine/\"", "altro/\"")):
+            with self.subTest(wrong=wrong):
+                self.assertEqual(collect_market(market, [], [], as_of=date(2026, 11, 13), fetch=lambda _: wrong)["observations"], [])
+
+    def test_document_fingerprint_is_reported_without_inventing_dates(self):
+        digest = "a" * 64
+        result = collect_market(MARKET, [], [], as_of=date(2026, 11, 13),
+                                fetch=lambda _: {"url": URL, "format": "pdf", "contentHash": digest})
+        self.assertEqual(result["observations"], [])
+        self.assertEqual(result["sourceChecks"][0]["status"], "document")
+        self.assertEqual(result["sourceChecks"][0]["contentHash"], digest)
+        self.assertIn("document_requires_manual_review", result["issues"])
+
+    def test_pdf_transport_hashes_bounded_bytes_without_parsing_them(self):
+        body = b"%PDF-1.7\nfixture"
+        class Response:
+            status = 200
+            def __init__(self):
+                self.remaining = [body, b""]
+            def getheader(self, name, default=""):
+                return {"Content-Type": "application/pdf", "Content-Length": str(len(body))}.get(name, default)
+            def read1(self, _):
+                return self.remaining.pop(0)
+        class Connection:
+            def __init__(self, *_):
+                pass
+            def request(self, *_, **__):
+                pass
+            def getresponse(self):
+                return Response()
+            def close(self):
+                pass
+        with (patch("app.markets.refresh_sources._public_addresses", return_value=["93.184.215.14"]),
+              patch("app.markets.refresh_sources._PinnedHTTPSConnection", Connection)):
+            result = fetch_source(URL)
+        self.assertEqual(result["format"], "pdf")
+        self.assertEqual(len(result["contentHash"]), 64)
+        self.assertNotIn("html", result)
 
 
 if __name__ == "__main__":

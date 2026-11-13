@@ -4,7 +4,10 @@
 `codex/markets-weekly-audit-20261113` il confronto legge l'archivio online e
 scrive solo un rapporto separato per il pannello, con fonte e valori prima/dopo.
 Prova locale su 100 schede, incluse le sospese, senza cambiare l'archivio.
-Restano collaudo delle fonti online e attivazione successiva dello Scheduler;
+La prima prova online ha controllato 100/100 schede senza modificare la
+revisione privata 57 o quella pubblica 0; i limiti delle fonti hanno motivato
+una seconda versione dei parser, ancora da collaudare online. Lo Scheduler
+resta spento;
 app e catalogo pubblico non sono stati modificati.
 [Procedura e limiti](docs/operations/MARKETS_WEEKLY_AUDIT_20261113.md).
 
