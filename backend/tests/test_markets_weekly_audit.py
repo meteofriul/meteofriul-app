@@ -30,6 +30,9 @@ class FakeFirestore:
     def collection(self, path):
         return FakeCollection(self, path)
 
+    def get_all(self, refs, timeout=None):
+        return [ref.get(timeout=timeout) for ref in refs]
+
 
 class FakeCollection:
     def __init__(self, db, path):
@@ -38,10 +41,6 @@ class FakeCollection:
     def document(self, name):
         return FakeDocument(self.db, self.path + "/" + name)
 
-    def stream(self, timeout=None):
-        prefix = self.path + "/"
-        return [self.document(path[len(prefix):]).get()
-                for path in self.db.docs if path.startswith(prefix) and "/" not in path[len(prefix):]]
 
 
 class FakeDocument:

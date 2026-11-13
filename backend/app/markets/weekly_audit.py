@@ -118,6 +118,7 @@ class FirestoreWeeklyAuditStore:
     def __init__(self, client, collection="markets_weekly_audit"):
         if not collection or "/" in collection or collection == "markets_archive":
             raise MarketError("markets_audit_collection_invalid", 503)
+        self.client = client
         self.root = client.collection(collection)
 
     @staticmethod
@@ -145,7 +146,18 @@ class FirestoreWeeklyAuditStore:
         return self.root.document("manual_reviews").collection("items")
 
     def reviews(self):
-        return [item.to_dict() for item in self._reviews().stream(timeout=15)]
+        latest = self.latest()
+        if not latest:
+            return []
+        # The runtime role intentionally has entities.get but not entities.list.
+        # Read only review documents named by sources in the current report.
+        refs = [self._reviews().document(self._review_id(market["marketId"], source["url"]))
+                for market in latest["markets"] for source in market.get("sources", [])]
+        result = []
+        for start in range(0, len(refs), 100):
+            result.extend(item.to_dict() for item in self.client.get_all(refs[start:start + 100], timeout=15)
+                          if item.exists)
+        return result
 
     def save_review(self, *, market_id, source_url, outcome, note, report_run_id,
                     operation_id, now=None):
