@@ -1,5 +1,14 @@
 # Stato release 0.1.15 e lavoro salvato — aggiornamento sorgenti del 24 ottobre 2026
 
+**Mercati, controllo fonti del 13 novembre 2026.** Il solo Cloud Run Job
+settimanale usa il confronto affinato per indirizzo e orario indicativo;
+l'API e il catalogo privato/pubblico non sono stati aggiornati. Le fonti
+confermano date e sede di Lo Scrigno del Doge e il martedì in piazza Vittorio
+Veneto per Campagna Amica Trieste. Il rapporto con il nuovo codice non è ancora
+osservato: l'avvio manuale è stato respinto dalla revisione automatica e il
+prossimo avvio è il 17 novembre. [Evidenza](MARKETS_WEEKLY_AUDIT_20261113.md#verifica-mirata-di-sede-date-e-orario--13-novembre-2026).
+La release 0.1.15, `main`, AAB e app Web/Android distribuite non cambiano.
+
 **Mercati, candidato del 12 novembre 2026.** I rami app preparano 80 schede,
 206 edizioni e 13 rimozioni dopo il [controllo delle ricorrenze](MERCATI_RICORRENZE_SENZA_DATA_20261112.md).
 È lavoro sui sorgenti: versione 0.1.15, `main`, AAB e app Web/Android distribuite

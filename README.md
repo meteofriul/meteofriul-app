@@ -12,6 +12,18 @@ un esito positivo torna da esaminare dopo 90 giorni o se la fonte cambia.
 L'app e il catalogo pubblico non sono stati modificati.
 [Procedura e limiti](docs/operations/MARKETS_WEEKLY_AUDIT_20261113.md).
 
+**Mercati, verifica mirata del 13 novembre:** Lo Scrigno del Doge ha nel
+pannello le date future 8 dicembre 2026 e 6 gennaio 2027, con luogo preciso
+a Villa Manin; Campagna Amica Trieste ha il martedì in piazza Vittorio Veneto
+e un'apertura indicativa tra 07:30 e 08:00. Le tre differenze del rapporto
+sono confronti letterali su indirizzo, indicazioni e orario. Il job settimanale
+è stato aggiornato per riconoscerli, ma il rapporto online resta quello
+precedente: l'avvio manuale durante l'audit è stato respinto dalla revisione
+automatica e la prima esecuzione pianificata è il 17 novembre. Una pagina
+Discover Trieste menziona anche sabati in piazza Vittorio Veneto, da valutare
+come calendario distinto prima di creare un'altra scheda.
+[Fonti e stato del collaudo](docs/operations/MARKETS_WEEKLY_AUDIT_20261113.md#verifica-mirata-di-sede-date-e-orario--13-novembre-2026).
+
 **Mercati, verifica delle ricorrenze del 12 novembre 2026.** Il catalogo
 candidato nei rami app contiene ora 80 schede, 206 edizioni e 13 rimozioni.
 San Daniele e Robis hanno tre nuove edizioni tratte da fonti esplicite;

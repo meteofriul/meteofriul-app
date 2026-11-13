@@ -115,10 +115,12 @@ dopo il nuovo caricamento, il rapporto autenticato mostra ancora 100 schede,
 
 ## Configurazione attiva
 
-- API Cloud Run `meteofriul-markets`, revisione `meteofriul-markets-00007-ljn`;
-  Cloud Run Job `meteofriul-markets-weekly-audit`, entrambi al digest
-  `sha256:15a73c0b27b508f0fa03b93d9c8dc6fdb96ee213d401a2b227981fbc9e87989b`
+- API Cloud Run `meteofriul-markets`, revisione `meteofriul-markets-00007-ljn`,
+  al digest `sha256:15a73c0b27b508f0fa03b93d9c8dc6fdb96ee213d401a2b227981fbc9e87989b`
   del commit `2ed17514`.
+- Cloud Run Job `meteofriul-markets-weekly-audit` al digest
+  `sha256:3e53f437032472391928087ee7f5594d0284500b2ce3d1ef2b7319d4defb01f0`
+  del commit `553a6fdb`.
 - Il job gira in `europe-west1` come
   `meteofriul-markets@meteo-friul.iam.gserviceaccount.com` con comando
   `python -m app.markets.weekly_audit_job` e Firestore `meteo-friul`.
@@ -138,3 +140,30 @@ dopo il nuovo caricamento, il rapporto autenticato mostra ancora 100 schede,
 
 Non riutilizzare `refresh_job --apply`: quello salva automaticamente modifiche
 nell'archivio e contraddice la decisione editoriale di questo flusso.
+
+## Verifica mirata di sede, date e orario — 13 novembre 2026
+
+- **Lo Scrigno del Doge, M053.** La [fonte UNPLI FVG](https://prolocoregionefvg.it/eventi-delle-associate/lo-scrigno-del-doge-in-villa-manin-mercatino-dellantiquariato-e-modernariato/) indica Arcate dell'Esedra e Piazza Tonda di Villa Manin, Passariano, Codroipo. Il pannello online contiene lo stesso luogo, con punteggiatura diversa; le indicazioni puntano al complesso Villa Manin. Le edizioni future **8 dicembre 2026** e **6 gennaio 2027** sono confermate nel pannello con il luogo preciso, e le date coincidono con [UNPLI](https://prolocoregionefvg.it/eventi-delle-associate/lo-scrigno-del-doge-in-villa-manin-mercatino-dellantiquariato-e-modernariato/) e [PromoTurismoFVG](https://www.turismofvg.it/eventi/lo-scrigno-del-doge-in-villa-manin-mercatino-dell-antiquariato-e-modernariato). Non serve correggere la scheda.
+- **Campagna Amica, M021.** La [guida Discover Trieste](https://www.discover-trieste.it/vivi/shopping/andar-per-mercatini) e l'[organizzatore](https://www.campagnamica.it/la-nostra-rete/mercato/il-mercato-di-campagna-amica-a-trieste/) confermano il **martedì** in **piazza Vittorio Veneto, Trieste**. Il pannello online ha ricorrenza settimanale martedì, destinazione nella stessa piazza e nota pubblica che dichiara apertura indicativa tra 07:30 e 08:00. La guida scrive 08:00; nella stessa pagina dell'organizzatore il testo scrive 08:00 e il riquadro orari 07:30. Questo scarto non cambia giorno né luogo e non richiede modifica della scheda.
+- La [pagina calendario 2026 di Discover Trieste](https://www.discover-trieste.it/vivi/trieste-now/campagna-amica-trieste) menziona anche appuntamenti del **sabato** in piazza Vittorio Veneto, collegati allo spostamento da piazza Goldoni, e altri sabati in Campo San Giacomo. È un calendario distinto dalla ricorrenza del martedì di M021; l'eventuale scheda separata dei sabati richiede un controllo editoriale del calendario e della sede prima di aggiungerla.
+
+Il confronto del job, commit `553a6fdb`, ora riconosce lo stesso luogo con CAP,
+comune e punteggiatura aggiuntivi, una destinazione stradale al medesimo
+complesso quando il luogo preciso concorda, e la variazione di apertura di
+massimo 30 minuti **solo se già dichiarata come intervallo nella nota
+pubblica**. Giorno diverso, nuovo luogo e date diverse restano differenze.
+137 test Mercati e `compileall` sono passati. Cloud Build
+`020c7e65-526b-486d-a647-d2a181ec9119` è **SUCCESS**; soltanto il Cloud Run
+Job usa il nuovo digest
+`sha256:3e53f437032472391928087ee7f5594d0284500b2ce3d1ef2b7319d4defb01f0`.
+L'API resta alla revisione `meteofriul-markets-00007-ljn` e al digest
+`sha256:15a73c0b27b508f0fa03b93d9c8dc6fdb96ee213d401a2b227981fbc9e87989b`,
+con catalogo pubblico disattivato. Lo Scheduler è ancora **ENABLED** martedì
+09:00 `Europe/Rome`.
+
+La revisione automatica dell'azione ha respinto l'avvio manuale del job di
+produzione durante questo audit, citando la regola del workspace che vieta
+esecuzioni e retry di job durante un audit. Non è stato ritentato. Il rapporto
+online resta quello precedente (100 schede, 2 con differenze); l'effetto del
+nuovo confronto sui dati reali **non è ancora osservato** e sarà verificabile
+dopo la prima esecuzione pianificata del 17 novembre.

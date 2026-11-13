@@ -1,5 +1,14 @@
 # Allineamento della Web App con Android
 
+**Controllo fonti Mercati, 13 novembre 2026.** Aggiornato soltanto il Cloud
+Run Job che produce il rapporto privato del pannello: il confronto distingue
+indirizzi equivalenti e orari già dichiarati indicativi. La prima esecuzione
+con il nuovo codice è attesa il 17 novembre; l'avvio manuale durante l'audit è
+stato respinto dalla revisione automatica. La revisione pubblica del catalogo
+resta 0. Nessun sorgente frontend, artefatto o deployment dell'app Web/Android
+è cambiato in questo controllo; la parità pubblica resta invariata.
+[Fonti e limiti](MARKETS_WEEKLY_AUDIT_20261113.md#verifica-mirata-di-sede-date-e-orario--13-novembre-2026).
+
 **Mercati, candidato app del 12 novembre 2026.** I sorgenti condivisi
 Web/Android dei rami app contengono 80 schede, 206 edizioni e 13 rimozioni,
 con tre edizioni aggiunte da [fonti esplicite](MERCATI_RICORRENZE_SENZA_DATA_20261112.md).
