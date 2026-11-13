@@ -22,14 +22,24 @@ _DAYS = {name: index for index, name in enumerate(
 
 
 def _same_hours(before, after, market):
-    """Ignore wording changes only when times and named weekdays still agree."""
+    """Ignore wording or a documented 30-minute opening window."""
     if not isinstance(before, str) or not isinstance(after, str):
         return False
     times = lambda text: [f"{int(hour):02}:{minute}" for hour, minute in
                           re.findall(r"\b([01]?\d|2[0-3])[:.]([0-5]\d)\b", text)]
     old_times, new_times = times(before), times(after)
-    if not old_times or old_times != new_times:
+    if not old_times or len(old_times) != len(new_times):
         return False
+    if old_times != new_times:
+        note = market.get("scheduleNote", "")
+        note_times = times(note)
+        opening_window = (len(old_times) == 2 and old_times[1] == new_times[1]
+                          and re.search(r"\b(?:tra|fra)\b", note, re.IGNORECASE)
+                          and old_times[0] in note_times and new_times[0] in note_times
+                          and abs(int(old_times[0][:2]) * 60 + int(old_times[0][3:])
+                                  - int(new_times[0][:2]) * 60 - int(new_times[0][3:])) <= 30)
+        if not opening_window:
+            return False
     def days(text):
         plain = unicodedata.normalize("NFKD", text).encode("ascii", "ignore").decode().lower()
         return [_DAYS[name] for name in re.findall(r"\b(?:lunedi|martedi|mercoledi|giovedi|venerdi|sabato|domenica)\b", plain)]
@@ -40,6 +50,34 @@ def _same_hours(before, after, market):
         expected = market.get("weekdaysIso") or []
         return len(old_times) == 2 and len(expected) == 1 and (old_days or new_days) == expected
     return True
+
+
+def _location_tokens(value, *, comune=""):
+    plain = unicodedata.normalize("NFKD", value).encode("ascii", "ignore").decode().lower()
+    words = re.findall(r"[a-z0-9]+", plain)
+    town = re.findall(r"[a-z0-9]+", unicodedata.normalize("NFKD", comune).encode("ascii", "ignore").decode().lower())
+    if town and words[-len(town):] == town:
+        words = words[:-len(town)]
+    return [word for word in words if not re.fullmatch(r"\d{5}", word)]
+
+
+def _same_place(before, after, market):
+    """Treat postcode, town suffix and punctuation as address formatting."""
+    if not isinstance(before, str) or not isinstance(after, str):
+        return False
+    old = _location_tokens(before, comune=market.get("comune", ""))
+    return bool(old) and old == _location_tokens(after, comune=market.get("comune", ""))
+
+
+def _same_directions(before, after, market, source_place):
+    """A route to the named complex is valid when the precise venue agrees."""
+    if not all(isinstance(value, str) for value in (before, after, source_place)):
+        return False
+    if not _same_place(market.get("place"), source_place, market):
+        return False
+    old = _location_tokens(before)
+    new = _location_tokens(after)
+    return len(old) >= 3 and set(old).issubset(set(new))
 
 
 def scan(repository, *, as_of, collector=None, previous=None, max_seconds=1800,
@@ -87,9 +125,21 @@ def scan(repository, *, as_of, collector=None, previous=None, max_seconds=1800,
                                             and old.get("hashMethod") and old.get("hashMethod") == source.get("hashMethod")
                                             and old.get("contentHash") and source.get("contentHash")
                                             and old["contentHash"] != source["contentHash"])
-        changes = [change for change in plan["audit"][-1]["changes"]
-                   if not (change["collection"] == "markets" and change["fields"] == ["hours"]
-                           and _same_hours(change["before"], change["after"], market))]
+        source_places = {item.get("sourceUrl"): item.get("fields", {}).get("place")
+                         for item in collected.get("observations", [])}
+        changes = []
+        for change in plan["audit"][-1]["changes"]:
+            if change["collection"] == "markets":
+                field = change["fields"]
+                if field == ["hours"] and _same_hours(change["before"], change["after"], market):
+                    continue
+                if field == ["place"] and _same_place(change["before"], change["after"], market):
+                    continue
+                if field == ["directionsQuery"] and _same_directions(
+                        change["before"], change["after"], market,
+                        source_places.get(change.get("sourceUrl"))):
+                    continue
+            changes.append(change)
         summary = {"marketId": market["id"], "name": market["name"], "comune": market["comune"],
                    "status": market["status"], "changes": len(changes),
                    "confirmedFacts": entry["confirmedFacts"], "issues": entry["issues"],

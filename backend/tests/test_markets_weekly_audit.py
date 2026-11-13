@@ -3,7 +3,7 @@ from datetime import date, datetime, timezone
 import unittest
 
 from app.markets.model import initial_record, MarketError
-from app.markets.weekly_audit import scan, FirestoreWeeklyAuditStore, _same_hours
+from app.markets.weekly_audit import scan, FirestoreWeeklyAuditStore, _same_hours, _same_place, _same_directions
 from tests.test_markets_archive import small_seed
 
 
@@ -122,6 +122,49 @@ class MarketsWeeklyAuditTests(unittest.TestCase):
         self.assertFalse(_same_hours("Lunedì 08:00–13:00; giovedì 15:30–19:30",
                                      "Martedi dalle 08:00 alle 13:00 · Giovedi dalle 15:30 alle 19:30",
                                      {"weekdaysIso": [1, 4]}))
+
+    def test_documented_opening_window_and_same_venue_are_not_differences(self):
+        trieste = {"weekdaysIso": [2], "scheduleNote":
+                   "Orario indicativo: apertura dei banchi tra le 07:30 e le 08:00, chiusura verso le 13:00."}
+        self.assertTrue(_same_hours("08:00–13:00", "Martedi dalle 07:30 alle 13:00", trieste))
+        self.assertFalse(_same_hours("08:00–13:00", "Martedi dalle 07:30 alle 13:00",
+                                     {"weekdaysIso": [2], "scheduleNote": "07:30 citato in una fonte; 08:00 in scheda."}))
+        self.assertFalse(_same_hours("08:00–13:00", "Martedi dalle 07:00 alle 13:00", trieste))
+        self.assertFalse(_same_hours("08:00–13:00", "Mercoledi dalle 07:30 alle 13:00", trieste))
+        doge = {"comune": "Codroipo", "place": "Arcate dell'Esedra e Piazza Tonda, Villa Manin, Passariano"}
+        official = "Arcate dell'Esedra e Piazza Tonda, Villa Manin - Passariano, 33033 CODROIPO"
+        self.assertTrue(_same_place(doge["place"], official, doge))
+        self.assertTrue(_same_directions("Villa Manin, Passariano, Codroipo",
+                                         official + ", Codroipo", doge, official))
+        moved = "Piazza Garibaldi, 33033 CODROIPO"
+        self.assertFalse(_same_place(doge["place"], moved, doge))
+        self.assertFalse(_same_directions("Villa Manin, Passariano, Codroipo", moved, doge, moved))
+
+    def test_scan_keeps_real_place_change_but_ignores_address_formatting(self):
+        record = initial_record(small_seed())
+        market = record["state"]["markets"][0]
+        market.update({"comune": "Codroipo", "place": "Arcate dell'Esedra e Piazza Tonda, Villa Manin, Passariano",
+                       "directionsQuery": "Villa Manin, Passariano, Codroipo"})
+        repository = ReadOnlyRepository(record)
+        official = "Arcate dell'Esedra e Piazza Tonda, Villa Manin - Passariano, 33033 CODROIPO"
+        def collect(market, _editions, _sources, *, as_of):
+            fields = {"place": official, "directionsQuery": official + ", Codroipo"}
+            return {"marketId": market["id"], "issues": [], "sourceChecks": [],
+                    "observations": [{"sourceUrl": market["url"], "retrievedAt": as_of.isoformat() + "T09:00:00Z",
+                                      "contentHash": "b" * 64, "fields": fields, "editions": [],
+                                      "evidence": [{"field": key, "value": value, "excerpt": value}
+                                                   for key, value in fields.items()]}]}
+        report = scan(repository, as_of=date(2026, 11, 13), collector=collect)
+        self.assertEqual(report["changedMarkets"], 0)
+        self.assertEqual(report["details"][market["id"]]["changesDetail"], [])
+        moved = "Piazza Garibaldi, 33033 CODROIPO"
+        def moved_collector(market, editions, sources, *, as_of):
+            result = collect(market, editions, sources, as_of=as_of)
+            result["observations"][0]["fields"]["place"] = moved
+            result["observations"][0]["evidence"][0] = {"field": "place", "value": moved, "excerpt": moved}
+            return result
+        changed = scan(repository, as_of=date(2026, 11, 13), collector=moved_collector)
+        self.assertEqual(changed["changedMarkets"], 1)
 
     def test_partial_scan_cannot_be_saved_as_latest(self):
         ticks = iter([0, 61])
