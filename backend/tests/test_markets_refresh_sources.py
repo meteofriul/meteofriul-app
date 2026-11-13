@@ -193,6 +193,27 @@ class MarketRefreshSourcesTests(unittest.TestCase):
                      base + '<ul><li>Quando</li><li>16/11/2026</li></ul>']:
             self.assertEqual(collect(body, market)["observations"], [])
 
+    def test_discover_trieste_reads_only_identified_explicit_calendar(self):
+        url = "https://www.discover-trieste.it/vivi/trieste-now/mercatino-cavana"
+        market = {**MARKET, "name": "Mercatino di Cavana", "comune": "Trieste", "url": url}
+        body = '''<h1>Mercatino di Cavana</h1><p>Dal 6 dicembre al 31 dicembre 2026</p>
+        <h2>Calendario</h2><p>1 febbraio, 1 novembre, 6 dicembre 2026.</p>'''
+        result = collect_market(market, [], [], as_of=date(2026, 11, 13), fetch=lambda _: body)
+        self.assertEqual([item["date"] for item in result["observations"][0]["editions"]], ["2026-12-06"])
+        self.assertEqual(result["sourceChecks"][0]["status"], "read")
+        self.assertFalse(result["observations"][0]["completeCalendar"])
+        for wrong in (body.replace("Mercatino di Cavana</h1>", "Altro mercatino</h1>"),
+                      body.replace("6 dicembre 2026", "6 e 20 dicembre 2026"),
+                      body.replace("<h2>Calendario</h2>", "<h2>Programma</h2>")):
+            with self.subTest(wrong=wrong):
+                self.assertEqual(collect_market(market, [], [], as_of=date(2026, 11, 13), fetch=lambda _: wrong)["observations"], [])
+
+    def test_per_source_status_keeps_unsupported_url_and_digest(self):
+        result = collect("<h1>Mercatino di prova</h1><p>Nessuna data esplicita</p>")
+        self.assertEqual(result["sourceChecks"][0]["url"], URL)
+        self.assertEqual(result["sourceChecks"][0]["status"], "unsupported")
+        self.assertEqual(len(result["sourceChecks"][0]["contentHash"]), 64)
+
 
 if __name__ == "__main__":
     unittest.main()

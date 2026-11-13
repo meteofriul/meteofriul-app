@@ -10,6 +10,7 @@ from app.infrastructure.markets_admin_auth import MarketsAdminContext, require_m
 from app.markets.model import MarketError
 from app.markets.repository import configured_repository
 from app.markets.service import MarketsService
+from app.markets.weekly_audit import FirestoreWeeklyAuditStore
 
 
 public_router = APIRouter(prefix="/api/markets", tags=["markets"])
@@ -51,6 +52,12 @@ def get_markets_service() -> MarketsService:
         raise _http_error(error) from error
 
 
+def get_weekly_audit_store(service: Annotated[MarketsService, Depends(get_markets_service)]):
+    if service.repository.storage != "firestore":
+        return None
+    return FirestoreWeeklyAuditStore(service.repository.db)
+
+
 @public_router.get("/catalogue")
 def catalogue(request: Request, response: Response, service: Annotated[MarketsService, Depends(get_markets_service)]):
     try:
@@ -83,6 +90,32 @@ def history(response: Response, _admin: Annotated[MarketsAdminContext, Depends(r
         return service.history()
     except MarketError as error:
         raise _http_error(error) from error
+
+
+@admin_router.get("/weekly-audit")
+def weekly_audit(response: Response, _admin: Annotated[MarketsAdminContext, Depends(require_markets_admin)],
+                 store: Annotated[FirestoreWeeklyAuditStore | None, Depends(get_weekly_audit_store)]):
+    response.headers["Cache-Control"] = "no-store"
+    try:
+        return store.latest() if store else None
+    except Exception as error:
+        raise _http_error(MarketError("markets_audit_unavailable", 503)) from error
+
+
+@admin_router.get("/weekly-audit/{market_id}")
+def weekly_audit_market(market_id: str, response: Response,
+                        _admin: Annotated[MarketsAdminContext, Depends(require_markets_admin)],
+                        store: Annotated[FirestoreWeeklyAuditStore | None, Depends(get_weekly_audit_store)]):
+    response.headers["Cache-Control"] = "no-store"
+    if not 1 <= len(market_id) <= 120 or "/" in market_id:
+        raise HTTPException(status_code=404)
+    try:
+        detail = store.market(market_id) if store else None
+    except Exception as error:
+        raise _http_error(MarketError("markets_audit_unavailable", 503)) from error
+    if detail is None:
+        raise HTTPException(status_code=404)
+    return detail
 
 
 @admin_router.put("/state")

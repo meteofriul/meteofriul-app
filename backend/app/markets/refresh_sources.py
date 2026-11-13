@@ -1,7 +1,8 @@
 """Bounded, read-only collectors for already censused market sources.
 
-Only explicit single-day JSON-LD Events, Pro Sacile's delimited calendar and
-Pro Loco FVG's labelled event details are interpreted. Missing fields, ranges and unsupported documents never imply
+Only explicit single-day JSON-LD Events, Pro Sacile's delimited calendar,
+Pro Loco FVG's labelled event details and a narrowly identified Discover
+Trieste calendar are interpreted. Missing fields, ranges and unsupported documents never imply
 deletion, closure, a weekly rule or an extended validity period.
 """
 from __future__ import annotations
@@ -143,6 +144,7 @@ class _Page(HTMLParser):
     def __init__(self, html):
         super().__init__(convert_charrefs=True)
         self.scripts, self.text, self.script = [], [], None
+        self.headings, self.heading = [], None
         self.hidden = 0
         self.feed(html)
 
@@ -154,8 +156,13 @@ class _Page(HTMLParser):
                 self.script = []
         if tag in ("p", "li", "br", "div", "h1", "h2", "h3", "section") and not self.hidden:
             self.text.append("\n")
+        if tag == "h1" and not self.hidden:
+            self.heading = []
 
     def handle_endtag(self, tag):
+        if tag == "h1" and self.heading is not None:
+            self.headings.append(re.sub(r"\s+", " ", "".join(self.heading)).strip())
+            self.heading = None
         if tag == "script" and self.script is not None:
             self.scripts.append("".join(self.script))
             self.script = None
@@ -169,6 +176,8 @@ class _Page(HTMLParser):
             self.script.append(data)
         elif not self.hidden:
             self.text.append(data)
+            if self.heading is not None:
+                self.heading.append(data)
 
     @property
     def lines(self):
@@ -483,6 +492,52 @@ def _proloco(html, market, url, as_of):
              "completeCalendar": False}], issues
 
 
+def _discover_trieste(page, market, url, as_of):
+    """Only a dedicated page with a single, explicit one-date-per-month list.
+
+    Multi-venue lists and generic page ranges are deliberately left for manual
+    review; a page range is never an edition or a validity extension.
+    """
+    if (urlsplit(url).hostname not in {"discover-trieste.it", "www.discover-trieste.it"}
+            or _normal(market.get("comune", "")) != "trieste"):
+        return [], []
+    names = [market.get("name", ""), *market.get("titleAliases", [])]
+    if len(page.headings) != 1 or not any(_normal(name) == _normal(page.headings[0]) for name in names):
+        return [], ["event_identity_not_verified"]
+    lines = page.lines
+    headings = [index for index, line in enumerate(lines) if re.fullmatch(
+        r"(?:calendario(?:\s+20\d{2})?|20\d{2}\s+calendar):?", line.casefold())]
+    if len(headings) != 1 or headings[0] + 1 >= len(lines):
+        return [], ["calendar_section_not_found"]
+    listed = lines[headings[0] + 1]
+    match = re.fullmatch(r"(.{1,1400}?)\s+(20\d{2})\.?", listed)
+    if not match:
+        return [], ["calendar_entry_requires_explicit_date"]
+    year = int(match[2])
+    months = {**MONTHS, **{name: number for number, name in enumerate(
+        ("january", "february", "march", "april", "may", "june", "july", "august",
+         "september", "october", "november", "december"), 1)}}
+    pattern = r"(\d{1,2})\s+(" + "|".join(months) + r")"
+    parts = [part.strip().casefold() for part in match[1].split(",")]
+    if not 1 <= len(parts) <= 50 or not all(re.fullmatch(pattern, part) for part in parts):
+        return [], ["calendar_entry_requires_explicit_date"]
+    editions, evidence = [], []
+    for part in parts:
+        value = re.fullmatch(pattern, part)
+        try:
+            day = date(year, months[value[2]], int(value[1]))
+        except ValueError:
+            return [], ["invalid_calendar_date"]
+        if day < as_of:
+            continue
+        edition = {"date": day.isoformat(), "status": "published", "source": url}
+        editions.append(edition)
+        evidence.append({"field": "editions", "value": edition,
+                         "excerpt": page.headings[0] + "; " + part + " " + str(year)})
+    return ([{"fields": {}, "editions": editions, "evidence": evidence,
+              "completeCalendar": False}] if editions else []), []
+
+
 def collect_market(market, editions, sources, *, as_of, fetch=None):
     """Collect supported facts without mutating any record or publishing data.
 
@@ -491,7 +546,7 @@ def collect_market(market, editions, sources, *, as_of, fetch=None):
     other hosts. Issue strings are stable codes; they contain no source body.
     """
     as_of = date.fromisoformat(as_of) if isinstance(as_of, str) else as_of
-    urls, issues, observations = [], [], []
+    urls, issues, observations, source_checks = [], [], [], []
     candidates = [market.get("url"), *[item.get("url") for item in sources if isinstance(item, dict)],
                   *[item.get("source") for item in editions if isinstance(item, dict)]]
     for value in candidates:
@@ -526,9 +581,15 @@ def collect_market(market, editions, sources, *, as_of, fetch=None):
             if not found:
                 found, structured_issues = _jsonld(page, market, final_url, as_of)
                 parse_issues += structured_issues
+            if not found:
+                found, trieste_issues = _discover_trieste(page, market, final_url, as_of)
+                parse_issues += trieste_issues
             issues.extend(parse_issues)
             if not found:
                 issues.append("source_format_not_supported")
+            source_checks.append({"url": final_url, "status": "read" if found else "unsupported",
+                                  "contentHash": response.get("contentHash") or hashlib.sha256(html.encode()).hexdigest(),
+                                  "issues": sorted(set(parse_issues + ([] if found else ["source_format_not_supported"])))})
             for observation in found:
                 observations.append({"sourceUrl": final_url,
                     "retrievedAt": response.get("retrievedAt") or datetime.now(timezone.utc).isoformat().replace("+00:00", "Z"),
@@ -536,8 +597,14 @@ def collect_market(market, editions, sources, *, as_of, fetch=None):
                     **observation})
         except SourceError as error:
             issues.append(str(error))
+            source_checks.append({"url": url, "status": "unavailable", "issues": [str(error)]})
         except (OSError, TimeoutError, http.client.HTTPException):
             issues.append("source_unavailable")
+            source_checks.append({"url": url, "status": "unavailable", "issues": ["source_unavailable"]})
         except (ValueError, TypeError, KeyError, RecursionError):
             issues.append("source_parse_error")
-    return {"marketId": market["id"], "observations": observations, "issues": sorted(set(issues))}
+            source_checks.append({"url": url, "status": "unsupported", "issues": ["source_parse_error"]})
+    source_checks.extend({"url": url, "status": "not_checked", "issues": ["source_limit_reached"]}
+                         for url in urls[MAX_SOURCES:])
+    return {"marketId": market["id"], "observations": observations,
+            "issues": sorted(set(issues)), "sourceChecks": source_checks}

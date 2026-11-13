@@ -1,6 +1,10 @@
 # Inventario dei job e responsabilità
 
-## Stato Mercati — 7 novembre 2026
+## Stato Mercati — 13 novembre 2026
+
+Preparato in un ramo dedicato il [controllo online in sola lettura](MARKETS_WEEKLY_AUDIT_20261113.md): rapporto separato per il pannello, prove con 100 schede locali e nuova fonte Discover Trieste. Il collaudo con le fonti online e la pianificazione settimanale restano da completare. Nessuno Scheduler Mercati è stato attivato; il controllo trimestrale manuale rimane in vigore.
+
+### Stato precedente — 7 novembre 2026
 
 La gestione Mercati segue un controllo editoriale manuale: prima ricerca e inserimento una tantum, poi nuova verifica nel pannello il 7 febbraio 2027 e circa ogni tre mesi. Il task Windows `MeteoFriul-MarketsRefresh-Local` è **Disabled**; non va riattivato per questo flusso. `MeteoFriul-MarketsReminder-Local` non è registrato. La preferenza email nell'archivio locale è disattivata e il pannello non offre più la configurazione degli invii. Nessun job o email è necessario per il promemoria visibile nel pannello. [Audit e selezione delle schede](MERCATI_AUDIT_EDITORIALE_20261107.md).
 

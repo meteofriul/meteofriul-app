@@ -1,5 +1,13 @@
 # Meteo Friûl
 
+**Mercati, controllo settimanale preparato il 13 novembre 2026.** Nel ramo
+`codex/markets-weekly-audit-20261113` il confronto legge l'archivio online e
+scrive solo un rapporto separato per il pannello, con fonte e valori prima/dopo.
+Prova locale su 100 schede, incluse le sospese, senza cambiare l'archivio.
+Restano collaudo delle fonti online e attivazione successiva dello Scheduler;
+app e catalogo pubblico non sono stati modificati.
+[Procedura e limiti](docs/operations/MARKETS_WEEKLY_AUDIT_20261113.md).
+
 **Mercati, verifica delle ricorrenze del 12 novembre 2026.** Il catalogo
 candidato nei rami app contiene ora 80 schede, 206 edizioni e 13 rimozioni.
 San Daniele e Robis hanno tre nuove edizioni tratte da fonti esplicite;

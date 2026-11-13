@@ -6,7 +6,7 @@ from unittest.mock import patch
 
 from fastapi.testclient import TestClient
 
-from app.api.markets import get_markets_service
+from app.api.markets import get_markets_service, get_weekly_audit_store
 from app.markets.repository import SQLiteMarketRepository
 from app.markets.service import MarketsService
 from app.markets_cloud import create_app
@@ -44,6 +44,7 @@ class MarketsCloudTests(unittest.TestCase):
         self.assertEqual({route.path for route in app.routes}, {
             "/healthz", "/api/admin/markets/state",
             "/api/admin/markets/history", "/api/admin/markets/publish",
+            "/api/admin/markets/weekly-audit", "/api/admin/markets/weekly-audit/{market_id}",
             "/api/admin/markets/review-complete",
             "/api/admin/markets/email-settings",
         })
@@ -59,6 +60,8 @@ class MarketsCloudTests(unittest.TestCase):
         for method,path,body in (
             ("GET", "/api/admin/markets/state", None),
             ("GET", "/api/admin/markets/history", None),
+            ("GET", "/api/admin/markets/weekly-audit", None),
+            ("GET", "/api/admin/markets/weekly-audit/M001", None),
             ("PUT", "/api/admin/markets/state", {}),
             ("POST", "/api/admin/markets/publish", {}),
             ("POST", "/api/admin/markets/review-complete", {}),
@@ -89,6 +92,25 @@ class MarketsCloudTests(unittest.TestCase):
             self.assertNotIn("drafts",public.json())
             self.assertNotIn("audit",public.json())
             self.assertEqual(client.get("/api/markets/catalogue",headers={"If-None-Match":public.headers["etag"]}).status_code,304)
+
+    def test_weekly_report_requires_admin_and_is_never_public(self):
+        app = create_app()
+        class ReportStore:
+            def latest(self):
+                return {"status": "completed", "markets": [{"marketId": "M001", "changes": 1}]}
+            def market(self, market_id):
+                return {"marketId": market_id, "changesDetail": [{"before": "Piazza", "after": "Piazza nuova"}]} if market_id == "M001" else None
+        app.dependency_overrides[get_weekly_audit_store] = ReportStore
+        client = TestClient(app)
+        self.assertEqual(client.get("/api/admin/markets/weekly-audit").status_code, 401)
+        app.dependency_overrides[require_markets_admin] = lambda: MarketsAdminContext("test-operator", {"marketsAdmin": True})
+        response = client.get("/api/admin/markets/weekly-audit")
+        self.assertEqual(response.status_code, 200)
+        self.assertEqual(response.headers["cache-control"], "no-store")
+        self.assertEqual(response.json()["markets"][0]["changes"], 1)
+        self.assertEqual(client.get("/api/admin/markets/weekly-audit/M001").json()["changesDetail"][0]["after"], "Piazza nuova")
+        self.assertEqual(client.get("/api/admin/markets/weekly-audit/M002").status_code, 404)
+        self.assertEqual(client.get("/api/markets/weekly-audit").status_code, 404)
 
     def test_panel_only_mode_blocks_catalogue_and_publication_before_repository_access(self):
         os.environ.pop("MARKETS_PUBLIC_CATALOGUE_ENABLED", None)
