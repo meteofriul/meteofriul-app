@@ -1,5 +1,7 @@
 # Allineamento della Web App con Android
 
+**Controllo Mercati, allineamento del ramo del 13 novembre 2026.** Il ramo del job settimanale include il candidato app `03aa0783` e `origin/main` fino a `b225c296`; 103 test backend mirati e `compileall` PASS. L'integrazione dei sorgenti non cambia il job distribuito né gli artefatti Web/Android. La parità pubblica e le verifiche su dispositivo restano quelle già registrate.
+
 **Controllo fonti Mercati, 13 novembre 2026.** Aggiornato soltanto il Cloud
 Run Job che produce il rapporto privato del pannello: il confronto distingue
 indirizzi equivalenti e orari già dichiarati indicativi. La prima esecuzione
@@ -8,6 +10,10 @@ stato respinto dalla revisione automatica. La revisione pubblica del catalogo
 resta 0. Nessun sorgente frontend, artefatto o deployment dell'app Web/Android
 è cambiato in questo controllo; la parità pubblica resta invariata.
 [Fonti e limiti](MARKETS_WEEKLY_AUDIT_20261113.md#verifica-mirata-di-sede-date-e-orario--13-novembre-2026).
+
+**Mercati, allineamento dei sorgenti del 13 novembre 2026.** Il ramo candidato Web/Android include `origin/main` fino a `b225c296` e mantiene 80 schede, 206 edizioni e 13 rimozioni. Verifica locale: 5.202 test frontend, lint, build Web/service worker, 140 test backend mirati e `compileall` PASS. Non sono state prodotte build Android né pubblicati nuovi artefatti Web/Android; la parità delle versioni distribuite resta invariata. Confronto del catalogo, Android reale e Safari/iPhone ancora da verificare prima di una release.
+
+**Notifiche, 12 novembre — aggiornato solo il job backend mattutino.** La correzione del testo e in `main` `b939a177` tramite [PR 46](https://github.com/meteofriul/meteofriul-app/pull/46), con CI PR/main PASS e [collaudo Android owner](NOTIFICATIONS_ALERTS_AUDIT_20261111.md) ricevuto e aperto sul Bollettino. Il job ordinario usa il digest candidato con readback `ready=true`; i canali Android e Web ricevono entrambi il testo costruito dal backend. Nessun artefatto o pubblicazione Web/Android nuova, nessuna qualifica Safari aggiunta. La parita degli artefatti pubblici non cambia.
 
 **Mercati, candidato app del 12 novembre 2026.** I sorgenti condivisi
 Web/Android dei rami app contengono 80 schede, 206 edizioni e 13 rimozioni,
