@@ -21,7 +21,9 @@ import unicodedata
 from urllib.parse import urljoin, urlsplit, urlunsplit
 
 
-MAX_SOURCE_BYTES = 5 * 1024 * 1024
+# Some official municipal HTML pages are about 5.5 MiB; keep a bounded ceiling
+# high enough to fingerprint those pages without fetching unbounded responses.
+MAX_SOURCE_BYTES = 8 * 1024 * 1024
 MAX_SOURCES = 4
 SOURCE_DEADLINE_SECONDS = 20
 MONTHS = {name: number for number, name in enumerate(

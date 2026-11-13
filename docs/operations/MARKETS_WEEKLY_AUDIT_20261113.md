@@ -31,9 +31,14 @@ Aggiunta la lettura degli orari espliciti nelle pagine Campagna Amica con
 identità e comune verificati; provate le pagine reali di Codroipo, Passons e
 Udine. Questi orari sono solo proposte, non mutazioni o nuove edizioni.
 
-PDF e immagini fino a 5 MiB sono letti per calcolarne l'impronta e segnalare
+PDF e immagini fino a 8 MiB sono letti per calcolarne l'impronta e segnalare
 modifiche successive, senza estrarne date o testi. Per l'HTML, il confronto
 fra esecuzioni usa l'impronta del testo visibile, ignorando script e stile.
+Il limite di 8 MiB permette anche di leggere alcune pagine comunali ufficiali
+di Pordenone che misurano circa 5,5 MiB. L'avviso "fonte cambiata" è emesso
+solo per fonti interpretate o documenti con impronta confrontabile: una pagina
+HTML non interpretata può variare nella navigazione e non costituisce da sola
+una modifica verificata del mercato. Rimane in "Fonti da verificare".
 Il metodo dell'impronta è versionato: il secondo collaudo non segnalerà come
 "pagina cambiata" tutte le fonti della prima esecuzione soltanto perché è
 cambiato l'algoritmo. Intervalli di date, elenchi con luoghi diversi e

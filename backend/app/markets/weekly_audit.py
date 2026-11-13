@@ -82,7 +82,9 @@ def scan(repository, *, as_of, collector=None, previous=None, max_seconds=1800,
         before_checks = previous_checks.get(market["id"], {})
         for source in checks:
             old = before_checks.get(source.get("url"), {})
-            source["contentChanged"] = bool(old.get("hashMethod") and old.get("hashMethod") == source.get("hashMethod")
+            source["contentChanged"] = bool(source.get("status") in {"read", "document"}
+                                            and old.get("status") == source.get("status")
+                                            and old.get("hashMethod") and old.get("hashMethod") == source.get("hashMethod")
                                             and old.get("contentHash") and source.get("contentHash")
                                             and old["contentHash"] != source["contentHash"])
         changes = [change for change in plan["audit"][-1]["changes"]

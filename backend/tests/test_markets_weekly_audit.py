@@ -91,11 +91,21 @@ class MarketsWeeklyAuditTests(unittest.TestCase):
         self.assertEqual(self.repository.record, before)
 
     def test_previous_source_hash_flags_page_change_without_invented_fact(self):
-        previous = {"markets": [{"marketId": "M001", "sources": [{"url": "https://example.test/mercato",
+        previous = {"markets": [{"marketId": "M001", "sources": [{"url": "https://example.test/mercato", "status": "read",
                                                                "hashMethod": "visible_text_v1", "contentHash": "a" * 64}]}]}
         report = scan(self.repository, as_of=date(2026, 11, 13), collector=self.collect, previous=previous)
         self.assertTrue(next(item for item in report["markets"] if item["marketId"] == "M001")["sources"][0]["contentChanged"])
         self.assertFalse(next(item for item in report["markets"] if item["marketId"] == "M002")["sources"][0]["contentChanged"])
+
+    def test_uninterpreted_page_hash_is_not_claimed_as_verified_change(self):
+        def unsupported(market, _editions, _sources, *, as_of):
+            return {"marketId": market["id"], "observations": [], "issues": ["source_format_not_supported"],
+                    "sourceChecks": [{"url": market["url"], "status": "unsupported", "contentHash": "b" * 64,
+                                      "hashMethod": "visible_text_v1", "issues": ["source_format_not_supported"]}]}
+        previous = {"markets": [{"marketId": "M001", "sources": [{"url": "https://example.test/mercato", "status": "unsupported",
+                                                                "hashMethod": "visible_text_v1", "contentHash": "a" * 64}]}]}
+        report = scan(self.repository, as_of=date(2026, 11, 13), collector=unsupported, previous=previous)
+        self.assertFalse(report["markets"][0]["sources"][0]["contentChanged"])
 
     def test_hours_wording_does_not_hide_real_time_or_weekday_change(self):
         saturday = {"weekdaysIso": [6]}
