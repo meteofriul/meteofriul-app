@@ -126,9 +126,10 @@ le prove. Nessuna scheda QA è entrata nell'app.
 
 ### Passi ancora necessari per la promozione
 
-1. Correggere CSS e Spazzapan in rami propri dopo confronto con i siti
-   ufficiali. Ripetere una verifica QA mirata e il giro completo dalla copia
-   del catalogo. Non ridurre i controlli di qualità per forzare un esito verde.
+1. Tenere CSS e Spazzapan escluse finché non superano una nuova verifica.
+   Le due riparazioni hanno rami e collaudi propri e non devono bloccare i
+   comandi per fonte: il catalogo pubblico le esclude già oggi. Conservare
+   l'avviso di errore del job e non ridurre i controlli per forzare un verde.
 2. Provare il tag amministrativo con il login del titolare: elenco, errore
    senza permessi, salvataggio e ripristino di una pausa di prova. Il ruolo
    `roles/editor` dell'identità API include `run.jobs.runWithOverrides`, ma
