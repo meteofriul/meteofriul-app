@@ -23,6 +23,11 @@ SEASON_API = BASE + '/wp-json/wp/v2/stagione?per_page=100&lang=it&_fields=id,nam
 SHOW_API = BASE + '/wp-json/wp/v2/spettacoli'
 AUDIT_BASELINE = '2026-10-07T00:00:00+00:00'
 
+def parse_sitemap_xml(body):
+    # The official sitemap currently puts a blank line before its XML
+    # declaration. Remove only leading whitespace/BOM; keep XML validation.
+    return ElementTree.fromstring(body.lstrip('\ufeff \t\r\n'))
+
 def explicit_slots(text):
     """Read enumerated calendar dates; absent time is not midnight."""
     match = re.fullmatch(r'(.+?)\s+(20\d{2})(?:\s+ore\s+(\d{1,2}[:.]\d{2}))?', text, re.I)
@@ -213,12 +218,12 @@ def collect_verdi_trieste(*, get=requests.get, today=None):
             return json.loads(b''.join(chunks).decode('utf-8-sig')), response.headers
 
     namespace = '{http://www.sitemaps.org/schemas/sitemap/0.9}'
-    index = ElementTree.fromstring(fetch(SITEMAP_INDEX, max_bytes=1024*1024))
+    index = parse_sitemap_xml(fetch(SITEMAP_INDEX, max_bytes=1024*1024))
     maps = {item.text for item in index.findall('.//' + namespace + 'loc')}
     if SHOW_SITEMAP not in maps or any('spettacoli-sitemap' in value and value != SHOW_SITEMAP
                                        for value in maps):
         raise ValueError('changed Teatro Verdi Trieste sitemap structure')
-    root = ElementTree.fromstring(fetch(SHOW_SITEMAP, max_bytes=2*1024*1024))
+    root = parse_sitemap_xml(fetch(SHOW_SITEMAP, max_bytes=2*1024*1024))
     sitemap = {item.findtext(namespace + 'loc'): item.findtext(namespace + 'lastmod')
                for item in root.findall(namespace + 'url')}
     if not 1 <= len(sitemap) <= 1000 or any(not value for value in sitemap.values()):

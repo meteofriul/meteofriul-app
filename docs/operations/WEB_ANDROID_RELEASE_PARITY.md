@@ -1,5 +1,7 @@
 # Allineamento della Web App con Android
 
+**Eventi, sorgenti del 15 novembre 2026.** Il ramo `codex/events-xml-recovery-20261115` modifica solo il lettore backend Teatro Verdi Trieste; 77 test mirati e lettura reale senza scritture PASS. [Prova](EVENTS_VERDI_TRIESTE_XML_RECOVERY_20261115.md). Nessun nuovo artefatto, deploy o controllo su dispositivo Web/Android: la parità delle versioni distribuite resta invariata.
+
 **Notifiche, 12 novembre — aggiornato solo il job backend mattutino.** La correzione del testo e in `main` `b939a177` tramite [PR 46](https://github.com/meteofriul/meteofriul-app/pull/46), con CI PR/main PASS e [collaudo Android owner](NOTIFICATIONS_ALERTS_AUDIT_20261111.md) ricevuto e aperto sul Bollettino. Il job ordinario usa il digest candidato con readback `ready=true`; i canali Android e Web ricevono entrambi il testo costruito dal backend. Nessun artefatto o pubblicazione Web/Android nuova, nessuna qualifica Safari aggiunta. La parita degli artefatti pubblici non cambia.
 
 **Sintesi mattutina, 7 novembre — job backend aggiornato.** Il testo della notifica gestisce dati di precipitazione incompleti senza dedurre assenza di pioggia. [PR 44](https://github.com/meteofriul/meteofriul-app/pull/44), CI PR/main, prova su un telefono e [readback del job](MORNING_SUMMARY_SOURCE_QUALITY_DEPLOY_20261107.md) verificati; la prima corsa ordinaria resta aperta. Frontend, contratti dati, artefatti e pubblicazioni Web/Android invariati; nessuna nuova qualifica Safari o Android.
