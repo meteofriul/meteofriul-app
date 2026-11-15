@@ -1,6 +1,7 @@
 """Small, revisioned control file shared by the Eventi admin API and collector."""
 from datetime import date, datetime, timezone, timedelta
 import json
+from zoneinfo import ZoneInfo
 
 SCHEMA = "event-source-controls-v1"
 KEY = "pilot/events/v1/source-controls.json"
@@ -12,8 +13,6 @@ def empty_controls():
 
 
 def decode_controls(data):
-    if not data:
-        return empty_controls()
     if isinstance(data, bytes):
         if len(data) > MAX_BYTES:
             raise ValueError("source controls too large")
@@ -36,7 +35,7 @@ def source_is_paused(entry, *, today=None):
     if not until:
         return False
     try:
-        return date.fromisoformat(until) >= (today or date.today())
+        return date.fromisoformat(until) >= (today or datetime.now(ZoneInfo("Europe/Rome")).date())
     except (TypeError, ValueError):
         raise ValueError("invalid pause date")
 
@@ -50,13 +49,13 @@ def read_controls(blob):
     from google.api_core.exceptions import NotFound
     try:
         blob.reload(timeout=10)
-        generation = int(blob.generation)
-        if blob.size > MAX_BYTES:
-            raise ValueError("source controls too large")
-        return decode_controls(blob.download_as_bytes(
-            if_generation_match=generation, timeout=10)), generation
     except NotFound:
         return empty_controls(), 0
+    generation = int(blob.generation)
+    if blob.size > MAX_BYTES:
+        raise ValueError("source controls too large")
+    return decode_controls(blob.download_as_bytes(
+        if_generation_match=generation, timeout=10)), generation
 
 
 def save_control(blob, *, name, enabled, paused_until, reason, actor,

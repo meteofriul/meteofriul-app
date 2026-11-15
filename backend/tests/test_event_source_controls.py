@@ -45,6 +45,8 @@ class SourceControlsTests(unittest.TestCase):
     def test_rejects_corrupt_controls(self):
         with self.assertRaises(ValueError):
             decode_controls(b'{"schema":"wrong","revision":0,"sources":{}}')
+        with self.assertRaises(ValueError):
+            decode_controls(b"")
 
     def test_verification_reservation_blocks_repeated_job_requests(self):
         now = datetime(2026, 11, 15, 10, tzinfo=timezone.utc)
