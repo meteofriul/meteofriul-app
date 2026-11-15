@@ -174,8 +174,10 @@ non l'identità della nuova candidata o dello stato pubblico corrente.
 
 # Eventi, preparazione dei controlli per fonte (15 novembre 2026)
 
-Il ramo `codex/events-source-controls-20261115` interviene su job, API Eventi
-e API amministrativa. Non cambia il bundle frontend, la Web app pubblicata o
+Il ramo `codex/events-source-controls-20261115` e la
+[PR 48](https://github.com/meteofriul/meteofriul-app/pull/48) in bozza
+intervengono su job, API Eventi e API amministrativa. CI PR PASS nei tre job.
+Non cambiano il bundle frontend, la Web app pubblicata o
 l'APK/AAB Android. Nessun artefatto o endpoint è stato distribuito da questo
 ramo. Prima dell'attivazione va verificato il client Eventi Web e Android
 contro il catalogo con una fonte in pausa e dopo una verifica riuscita;

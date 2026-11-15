@@ -3,11 +3,17 @@
 ## Stato
 
 Ramo `codex/events-source-controls-20261115`, basato su `main` `b225c296`.
-Il lavoro è codice e test locali: nessun job è stato eseguito, nessun servizio
-online è stato modificato, nessuna app Web/Android è stata pubblicata.
-La correzione XML del Teatro Verdi Trieste è nel ramo distinto
-`codex/events-xml-recovery-20261115` (`2fa82145`); va integrata e verificata
-prima dell'attivazione dei comandi.
+La correzione XML del Teatro Verdi Trieste resta nel ramo dedicato
+`codex/events-xml-recovery-20261115` (`2fa82145`) ed è stata integrata nel
+ramo controlli con merge `740fa1d6`. [PR Eventi #48](https://github.com/meteofriul/meteofriul-app/pull/48)
+in bozza, CI `43700360903` PASS nei job backend, frontend e
+hosting-preview-tool sul codice `c7551e53`. La
+[PR Pannello #2](https://github.com/meteofriul/meteofriul-inserzioni/pull/2)
+è in bozza sulla base `codex/markets-weekly-audit-20261113`, così il diff
+contiene soltanto i comandi Eventi; 222 test, lint e build locali PASS, nessun
+workflow CI configurato nel repository del pannello. Nessun job è stato
+eseguito, nessun servizio online è stato modificato, nessuna app Web/Android
+è stata pubblicata.
 
 ## Comportamento
 
@@ -36,6 +42,9 @@ prima dell'attivazione dei comandi.
    il lettore Eventi deve poter leggere il controllo GCS, l'API amministrativa
    deve poterlo scrivere, e l'identità dell'API deve avere
    `run.jobs.runWithOverrides` sul solo job `meteofriul-events-refresh`.
+   Il controllo in sola lettura del 15 novembre ha confermato che il ruolo
+   `roles/editor` già assegnato all'identità API contiene il permesso;
+   l'invocazione effettiva resta da collaudare dopo il deploy.
 2. Aggiornare **prima** il job Eventi con `--source` e il controllo delle pause;
    poi il servizio Eventi pubblico; poi l'API amministrativa. Verificare la
    revisione e l'identità dei digest distribuiti. Evitare test su fonti
@@ -53,6 +62,7 @@ prima dell'attivazione dei comandi.
 
 `python -m unittest tests.test_event_source_controls tests.test_events_admin_sources
 tests.test_pilot_cloud tests.test_pilot_http -q`: 52 test passati.
+Suite combinata con XML e catalogo: 98 test PASS; CI PR #48 PASS.
 `python -m compileall -q app/events/source_controls.py app/events/pilot_cloud.py
 app/events/pilot_http.py app/api/events_admin.py`: passato.
 

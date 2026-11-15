@@ -4,7 +4,9 @@
 `codex/events-source-controls-20261115` aggiunge pausa motivata per singola
 fonte, verifica mirata tramite il job esistente e stato amministrativo per il
 pannello. [Stato e ordine di attivazione](docs/operations/EVENTS_SOURCE_CONTROLS_20261115.md).
-Il ramo non è integrato né distribuito; l'app pubblicata non cambia.
+[PR 48](https://github.com/meteofriul/meteofriul-app/pull/48) in bozza,
+CI backend/frontend/Hosting PASS sul codice `c7551e53`. Il ramo non è
+integrato né distribuito; l'app pubblicata non cambia.
 
 **Eventi, lettore XML Teatro Verdi Trieste preparato il 15 novembre 2026.** Il ramo `codex/events-xml-recovery-20261115` accetta la riga vuota iniziale delle sitemap ufficiali senza allentare gli altri controlli. Lettura reale in sola lettura: 59 eventi, gate di fonte superato anche contro il lotto online precedente; 77 test mirati PASS. [Prova e limiti](docs/operations/EVENTS_VERDI_TRIESTE_XML_RECOVERY_20261115.md). Nessun job eseguito o aggiornato nel cloud, nessuna modifica all'app distribuita.
 
