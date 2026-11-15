@@ -5,10 +5,14 @@
 fonte, verifica mirata tramite il job esistente e stato amministrativo per il
 pannello. [Stato e ordine di attivazione](docs/operations/EVENTS_SOURCE_CONTROLS_20261115.md).
 [PR 48](https://github.com/meteofriul/meteofriul-app/pull/48) in bozza,
-CI backend/frontend/Hosting PASS sul codice `c7551e53`. Il ramo non è
-integrato né distribuito; l'app pubblicata non cambia.
+CI backend/frontend/Hosting PASS sul commit `aec1c806`. Il 15 novembre il
+worker, il lettore Eventi e l'API amministrativa sono stati provati in
+revisioni cloud isolate; il job QA temporaneo è stato rimosso. Il lettore QA
+recupera Teatro Verdi Trieste, mentre CSS Udine e Galleria Spazzapan restano
+da correggere. Il ramo non è integrato, il job ordinario e l'app pubblicata
+non sono cambiati.
 
-**Eventi, lettore XML Teatro Verdi Trieste preparato il 15 novembre 2026.** Il ramo `codex/events-xml-recovery-20261115` accetta la riga vuota iniziale delle sitemap ufficiali senza allentare gli altri controlli. Lettura reale in sola lettura: 59 eventi, gate di fonte superato anche contro il lotto online precedente; 77 test mirati PASS. [Prova e limiti](docs/operations/EVENTS_VERDI_TRIESTE_XML_RECOVERY_20261115.md). Nessun job eseguito o aggiornato nel cloud, nessuna modifica all'app distribuita.
+**Eventi, lettore XML Teatro Verdi Trieste preparato il 15 novembre 2026.** Il ramo `codex/events-xml-recovery-20261115` accetta la riga vuota iniziale delle sitemap ufficiali senza allentare gli altri controlli. Lettura reale in sola lettura: 59 eventi, gate di fonte superato anche contro il lotto online precedente; 77 test mirati PASS. [Prova e limiti](docs/operations/EVENTS_VERDI_TRIESTE_XML_RECOVERY_20261115.md). Il successivo collaudo cloud isolato è descritto nel verbale dei controlli Eventi; nessuna modifica all'app distribuita.
 
 **Notifiche, job mattutino aggiornato il 12 novembre 2026.** La frase tecnica sulle precipitazioni e stata ricondotta ai valori `null` ICON; il testo ora usa solo dati verificati e richiede copertura oraria sufficiente per la massima. [PR 46](https://github.com/meteofriul/meteofriul-app/pull/46) integrata in `main` `b939a177`, CI PR e main verdi. Il collaudo owner ha confermato ricezione e tap sul Bollettino; il job QA e stato rimosso. Il solo job ordinario `meteofriul-morning-forecast` usa ora il digest `sha256:6c2b64c8c52e3f613aea406214b54da955e38330862abcb95c30845ea1aa20c5`, con readback `ready=true` e scheduler invariato alle 07:30 Europe/Rome. [Audit, provenienza e verifica ordinaria ancora aperta](docs/operations/NOTIFICATIONS_ALERTS_AUDIT_20261111.md). Nessuna AAB o pubblicazione Web/Android, policy o sito modificati.
 

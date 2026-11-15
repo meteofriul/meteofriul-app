@@ -6,14 +6,14 @@ Ramo `codex/events-source-controls-20261115`, basato su `main` `b225c296`.
 La correzione XML del Teatro Verdi Trieste resta nel ramo dedicato
 `codex/events-xml-recovery-20261115` (`2fa82145`) ed è stata integrata nel
 ramo controlli con merge `740fa1d6`. [PR Eventi #48](https://github.com/meteofriul/meteofriul-app/pull/48)
-in bozza, CI `43700360903` PASS nei job backend, frontend e
-hosting-preview-tool sul codice `c7551e53`. La
+in bozza, CI `43702113612` PASS nei job backend, frontend e
+hosting-preview-tool sul commit `aec1c806`. La
 [PR Pannello #2](https://github.com/meteofriul/meteofriul-inserzioni/pull/2)
 è in bozza sulla base `codex/markets-weekly-audit-20261113`, così il diff
-contiene soltanto i comandi Eventi; 222 test, lint e build locali PASS, nessun
-workflow CI configurato nel repository del pannello. Nessun job è stato
-eseguito, nessun servizio online è stato modificato, nessuna app Web/Android
-è stata pubblicata.
+contiene soltanto i comandi Eventi; 223 test, lint e build locali PASS, nessun
+workflow CI configurato nel repository del pannello. Le revisioni cloud di
+prova sono descritte sotto. Il job pianificato, i servizi che servono il
+traffico ordinario, il pannello online e l'app Web/Android non sono cambiati.
 
 ## Comportamento
 
@@ -52,30 +52,95 @@ Il ramo Eventi non contiene il modulo editoriale del commit `7a1f188a`:
 la nuova API amministrativa deve quindi avere un tag distinto e zero traffico
 ordinario. Il pannello usa direttamente l'URL del tag `events-sources-v1`.
 
-1. Integrare la correzione XML su `main`, controllare CI e creare un'immagine
-   Eventi contenente entrambe le modifiche. Eseguire il preflight dei ruoli:
-   il lettore Eventi deve poter leggere il controllo GCS, l'API amministrativa
-   deve poterlo scrivere, e l'identità dell'API deve avere
-   `run.jobs.runWithOverrides` sul solo job `meteofriul-events-refresh`.
-   Il controllo in sola lettura del 15 novembre ha confermato che il ruolo
-   `roles/editor` già assegnato all'identità API contiene il permesso;
-   l'invocazione effettiva resta da collaudare dopo il deploy.
-2. Aggiornare **prima** il job Eventi con `--source` e il controllo delle pause;
-   poi il servizio Eventi pubblico. Distribuire l'API amministrativa come
-   revisione taggata `events-sources-v1` **senza spostare il traffico API
-   principale**: la revisione editoriale attuale `editorial-7a1f188a` è già
-   separata dal traffico dell'app nello stesso modo. Verificare revisione,
-   digest e URL del tag. Evitare test su fonti
-   già segnalate come guaste per non generare allarmi di prova.
-3. Solo dopo i controlli API, distribuire il pannello con la chiamata HTTPS
-   al tag `events-sources-v1` e CSP limitata a quell'host. Provare con login:
-   elenco, pausa e
-   riattivazione di una fonte di prova autorizzata, controllo che l'app non
-   mostri una fonte in pausa, verifica mirata e relativo esito. Ripristinare
-   lo stato della fonte al termine.
-4. Aggiornare le evidenze di deployment, CI e Web/Android. Nessuna AAB è
-   richiesta da questi cambi server; l'app deve comunque essere verificata
-   come client del catalogo prima di promuovere la modifica.
+### Revisioni isolate di collaudo
+
+Dal commit esatto `aec1c806` sono state costruite due immagini, senza
+modificare i digest in produzione:
+
+- Worker Eventi `sha256:5497430f4b3287e88e72a442389913e230602159548490958fa011553eda96f3`,
+  build `214cc190-b647-4c79-a1e8-40fcd57c36a1` riuscito.
+- API amministrativa `sha256:5a19ea01b689c16878166788c06b043298010f9f4ba269e5e39ccc8e557ee1c9`,
+  build `8cf1fb03-ad26-46a3-a47c-6c00c91e7e66` riuscito.
+
+Il job **temporaneo, senza pianificazione**
+`meteofriul-events-source-qa-20261115` ha usato il nuovo worker e scritto soltanto
+sotto `pilot/events/qa/`. La prima esecuzione `...-tfgdd`, limitata a
+Teatro Verdi Trieste, è riuscita: 59 schede fresche, revisione controlli 0,
+catalogo QA generazione `1794737374272991`. Una seconda esecuzione
+`...-v6dvf` verifica tutte le 15 fonti nel catalogo QA separato
+`pilot/events/qa/source-controls-20261115-all.json`: è fallita perché la
+partenza da zero non contiene il checkpoint delle 2636 pagine TurismoFVG né
+la prova dell'edizione conclusa di Pordenonelegge. Non rappresenta il giro
+quotidiano. Il risultato da zero ha comunque confermato Teatro Verdi Trieste
+`fresh` con 59 schede e CSS Udine `partial` con 129 schede, mentre Barcolana
+era in timeout e l'inventario Spazzapan era cambiato.
+
+Il catalogo pubblico è stato **copiato**, mai modificato, nel nuovo oggetto
+`pilot/events/qa/source-controls-20261115-baseline.json`. La simulazione
+completa `...-shmlm` da questa copia è terminata il 15 novembre alle 10:32
+UTC. Il job ha segnalato correttamente l'esito complessivo fallito e ha
+salvato la diagnosi nella sola copia QA. Confronto con il catalogo pubblico
+del 15 novembre alle 05:00 UTC:
+
+| Fonte | Prima | Dopo nel QA | Esito |
+| --- | --- | --- | --- |
+| Teatro Verdi Trieste | `stale`, 61 schede trattenute | `fresh`, 59 | XML recuperato; 59 schede utilizzabili |
+| Barcolana | `stale`, 1 scheda trattenuta | `fresh`, 1 | sito raggiunto al secondo tentativo |
+| TurismoFVG | `partial`, 1452 | `partial`, 1457 | checkpoint conservato, 16 elementi da rivedere |
+| Pordenonelegge | `fresh`, 0 | `fresh`, 0 | edizione conclusa riconosciuta |
+| CSS Udine | `stale`, 146 trattenute | `stale`, 146 trattenute | nuova lettura rifiutata dal confronto completo |
+| Galleria Spazzapan | `stale`, 1 trattenuta | `stale`, 1 trattenuta | inventario ufficiale cambiato |
+
+Le altre nove fonti hanno mantenuto lo stato precedente (`fresh` o `partial`).
+Per CSS il confronto ha individuato quattro occorrenze future precedentemente
+verificate e assenti dalla nuova lettura: *SDENG!* (22 novembre), *La foresta
+dei no* (23 novembre), *I Sette a Tebe* (19 e 20 marzo 2027). Le tre pagine
+ufficiali rispondevano HTTP 200 al controllo del 15 novembre; il sito ufficiale
+conferma ancora le date. Il blocco evita di presentare una nuova raccolta
+incompleta come verificata. Occorre correggere l'adattatore CSS con un ramo
+dedicato e ricontrollare le quattro occorrenze; l'inventario Spazzapan richiede
+una revisione separata della fonte ufficiale.
+
+Pagine CSS controllate: [SDENG!](https://www.cssudine.it/stagione-tig-in-famiglia/2026/2919/sdeng-storia-di-un-inventore-che-non-riesce-a-stare-fermo),
+[La foresta dei no](https://www.cssudine.it/stagione-tig/2026/2846/la-foresta-dei-no),
+[I Sette a Tebe](https://www.cssudine.it/stagione-contatto/2026/2905/i-sette-a-tebe).
+Il job QA temporaneo è stato eliminato dopo il collaudo; non esiste una nuova
+pianificazione. I cataloghi QA restano per la revisione e il tag QA li legge.
+
+Il lettore `meteofriul-events` ha la revisione taggata
+`meteofriul-events-00020-qig` (`events-reader-qa-v1`), che legge il catalogo
+QA aggiornato dalla copia pubblica. Alla richiesta di prova vicino Trieste
+restituisce `ready`, 315 eventi, 59 di Verdi Trieste, nessuno di CSS o
+Spazzapan (entrambe `stale`). La revisione pubblica
+`meteofriul-events-00018-2vz` conserva
+il 100% del traffico. La revisione taggata dell'API amministrativa
+`meteofriul-api-00256-rif` (`events-sources-v1`) ha 0% del traffico;
+`meteofriul-api-play-b6fbe4d-001` conserva il 100% del traffico API ordinario.
+Sul tag amministrativo `/api/healthz` risponde 200, l'elenco senza login 401,
+il preflight CORS dall'origine del pannello 200. L'accesso con il login del
+titolare e i comandi di scrittura richiedono ancora il collaudo nel pannello.
+La lettura pubblica del 15 novembre alle 10:20 UTC risultava `degraded`:
+`Barcolana`, `CSS Udine`, `Galleria Spazzapan` e `Teatro Verdi Trieste`
+erano `stale`; il suo snapshot era del 15 novembre alle 05:00 UTC anche dopo
+le prove. Nessuna scheda QA è entrata nell'app.
+
+### Passi ancora necessari per la promozione
+
+1. Correggere CSS e Spazzapan in rami propri dopo confronto con i siti
+   ufficiali. Ripetere una verifica QA mirata e il giro completo dalla copia
+   del catalogo. Non ridurre i controlli di qualità per forzare un esito verde.
+2. Provare il tag amministrativo con il login del titolare: elenco, errore
+   senza permessi, salvataggio e ripristino di una pausa di prova. Il ruolo
+   `roles/editor` dell'identità API include `run.jobs.runWithOverrides`, ma
+   l'invocazione reale non è ancora verificata. Il job pubblico deve ricevere
+   il nuovo worker **prima** del comando `Verifica ora` nel pannello.
+3. Solo dopo il collaudo, promuovere tramite PR e CI la correzione XML e il
+   controllo fonti; aggiornare job e lettore pubblico in quest'ordine,
+   verificando digest e traffico. Distribuire poi il pannello e provare
+   l'intero percorso sul telefono; ripristinare qualsiasi pausa di prova.
+4. Aggiornare le evidenze di deployment e Web/Android. Nessuna AAB è
+   richiesta da questi cambi server; non attribuire alle revisioni QA lo
+   stato di pubblicazione dell'app.
 
 ## Verifiche locali
 
