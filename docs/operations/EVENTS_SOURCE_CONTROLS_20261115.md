@@ -52,7 +52,7 @@ prima dell'attivazione dei comandi.
 ## Verifiche locali
 
 `python -m unittest tests.test_event_source_controls tests.test_events_admin_sources
-tests.test_pilot_cloud tests.test_pilot_http -q`: 51 test passati.
+tests.test_pilot_cloud tests.test_pilot_http -q`: 52 test passati.
 `python -m compileall -q app/events/source_controls.py app/events/pilot_cloud.py
 app/events/pilot_http.py app/api/events_admin.py`: passato.
 

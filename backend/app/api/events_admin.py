@@ -30,10 +30,13 @@ class SourceControlUpdate(BaseModel):
 
 @lru_cache(maxsize=1)
 def _client():
-    if os.getenv("GOOGLE_CLOUD_PROJECT") != PROJECT:
+    import google.auth
+    credentials, detected_project = google.auth.default(
+        scopes=["https://www.googleapis.com/auth/cloud-platform"])
+    if detected_project != PROJECT:
         raise HTTPException(503, detail={"code": "events_project_mismatch"})
     from google.cloud import storage
-    return storage.Client(project=PROJECT)
+    return storage.Client(project=PROJECT, credentials=credentials)
 
 
 def _blob(key):

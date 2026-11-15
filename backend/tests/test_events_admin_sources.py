@@ -6,6 +6,7 @@ from fastapi.testclient import TestClient
 from fastapi import HTTPException
 
 from app.infrastructure.events_admin_auth import require_events_admin
+from app.api.events_admin import _client
 from app.main import create_app
 
 
@@ -62,6 +63,13 @@ class EventsAdminSourceTests(unittest.TestCase):
 
 
 class EventsAdminAuthTests(unittest.TestCase):
+    def test_storage_client_rejects_wrong_runtime_project(self):
+        _client.cache_clear()
+        with patch("google.auth.default", return_value=(object(), "another-project")):
+            with self.assertRaises(HTTPException) as error:
+                _client()
+        self.assertEqual(error.exception.status_code, 503)
+
     def test_requires_verified_owner_account(self):
         with self.assertRaises(HTTPException) as missing:
             require_events_admin(None)
