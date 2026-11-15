@@ -37,6 +37,21 @@ eseguito, nessun servizio online è stato modificato, nessuna app Web/Android
 
 ## Ordine di attivazione
 
+### Provenienza online riletta il 15 novembre
+
+Il job `meteofriul-events-refresh` usa il digest `1923bb40…`, prodotto dal
+build `2fb529b6` per il commit `045079a0` del 26 ottobre. Il lettore
+`meteofriul-events` usa `529d93d1…`, attestato nel verbale del 15 ottobre.
+Nel servizio API generale, la revisione più recente
+`meteofriul-api-00255-yuz` usa il digest `f4b1a2ee…`, prodotto dal build
+`2477efb3` etichettato con il commit editoriale `7a1f188a`; è raggiungibile
+solo con il tag `editorial-7a1f188a`. Il traffico API ordinario al 100% usa
+invece `meteofriul-api-play-b6fbe4d-001`, digest `3e5c6014…`.
+La revisione più recente non va scambiata con quella che serve l'app.
+Il ramo Eventi non contiene il modulo editoriale del commit `7a1f188a`:
+la nuova API amministrativa deve quindi avere un tag distinto e zero traffico
+ordinario. Il pannello usa direttamente l'URL del tag `events-sources-v1`.
+
 1. Integrare la correzione XML su `main`, controllare CI e creare un'immagine
    Eventi contenente entrambe le modifiche. Eseguire il preflight dei ruoli:
    il lettore Eventi deve poter leggere il controllo GCS, l'API amministrativa
@@ -46,11 +61,15 @@ eseguito, nessun servizio online è stato modificato, nessuna app Web/Android
    `roles/editor` già assegnato all'identità API contiene il permesso;
    l'invocazione effettiva resta da collaudare dopo il deploy.
 2. Aggiornare **prima** il job Eventi con `--source` e il controllo delle pause;
-   poi il servizio Eventi pubblico; poi l'API amministrativa. Verificare la
-   revisione e l'identità dei digest distribuiti. Evitare test su fonti
+   poi il servizio Eventi pubblico. Distribuire l'API amministrativa come
+   revisione taggata `events-sources-v1` **senza spostare il traffico API
+   principale**: la revisione editoriale attuale `editorial-7a1f188a` è già
+   separata dal traffico dell'app nello stesso modo. Verificare revisione,
+   digest e URL del tag. Evitare test su fonti
    già segnalate come guaste per non generare allarmi di prova.
-3. Solo dopo i controlli API, distribuire il pannello con il rewrite Hosting
-   `/api/admin/events/sources/**`. Provare con login: elenco, pausa e
+3. Solo dopo i controlli API, distribuire il pannello con la chiamata HTTPS
+   al tag `events-sources-v1` e CSP limitata a quell'host. Provare con login:
+   elenco, pausa e
    riattivazione di una fonte di prova autorizzata, controllo che l'app non
    mostri una fonte in pausa, verifica mirata e relativo esito. Ripristinare
    lo stato della fonte al termine.
