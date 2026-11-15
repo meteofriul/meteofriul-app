@@ -169,3 +169,12 @@ La Web pubblica è già stata aggiornata il 21 ottobre da `1b0287c1`, versione
 0.1.14: non contiene le correzioni successive del 22 ottobre. Il precedente
 [candidato del 20 ottobre](WEB_APP_CANDIDATE_20261020.md) resta un verbale storico,
 non l'identità della nuova candidata o dello stato pubblico corrente.
+
+# Eventi, preparazione dei controlli per fonte (15 novembre 2026)
+
+Il ramo `codex/events-source-controls-20261115` interviene su job, API Eventi
+e API amministrativa. Non cambia il bundle frontend, la Web app pubblicata o
+l'APK/AAB Android. Nessun artefatto o endpoint è stato distribuito da questo
+ramo. Prima dell'attivazione va verificato il client Eventi Web e Android
+contro il catalogo con una fonte in pausa e dopo una verifica riuscita;
+vedere [il passaggio operativo](EVENTS_SOURCE_CONTROLS_20261115.md).

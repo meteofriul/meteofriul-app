@@ -118,6 +118,11 @@ class SourceRecoveryTests(unittest.TestCase):
 
 class CloudPublicationTests(unittest.TestCase):
     def setUp(self):
+        controls_patcher = patch('app.events.pilot_cloud.read_controls',
+                                 return_value=({'schema': 'event-source-controls-v1',
+                                                'revision': 0, 'sources': {}}, 0))
+        controls_patcher.start()
+        self.addCleanup(controls_patcher.stop)
         annual_patcher = patch('app.events.pilot_cloud.annual_watch_due',
                                return_value=False)
         annual_patcher.start()

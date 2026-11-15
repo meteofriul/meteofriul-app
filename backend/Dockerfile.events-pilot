@@ -7,6 +7,7 @@ COPY backend/tests/test_pilot_catalog.py backend/tests/test_pilot_collection.py 
 COPY backend/tests/test_pilot_comparison.py backend/tests/test_pilot_detail_calendar.py backend/tests/test_pilot_detail_rows.py backend/tests/test_pilot_details.py backend/tests/test_pilot_discovery.py backend/tests/test_pilot_excerpt.py backend/tests/test_pilot_progressive_events.py backend/tests/test_pilot_schedule.py backend/tests/test_pilot_source_registry.py /app/tests/
 COPY backend/tests/test_pilot_http.py backend/tests/test_pilot_catalog_health.py backend/tests/test_pilot_event_schedule_contract.py backend/tests/test_pilot_opening_days.py /app/tests/
 COPY backend/tests/test_pilot_cloud.py /app/tests/
+COPY backend/tests/test_event_source_controls.py /app/tests/
 COPY backend/tests/test_pilot_css.py /app/tests/
 COPY backend/tests/test_pilot_spazzapan.py backend/tests/test_pilot_regional_year_exclusions.py /app/tests/
 COPY backend/tests/test_pilot_mess.py /app/tests/
@@ -27,6 +28,7 @@ COPY backend/tests/fixtures/events_quarantine_october_15_2026.json /app/tests/fi
 COPY backend/tests/test_event_source_http.py backend/tests/test_event_sources_october21.py backend/tests/test_pilot_barcolana.py /app/tests/
 COPY backend/tests/fixtures/spazzapan_october_21_2026.json /app/tests/fixtures/
 RUN python -m unittest discover -s tests -p 'test_pilot_*.py'
+RUN python -m unittest discover -s tests -p 'test_event_source_controls.py'
 RUN python -m unittest discover -s tests -p 'test_event_source*.py'
 RUN python -m unittest discover -s tests -p 'test_attems_audit.py'
 USER 65532:65532
