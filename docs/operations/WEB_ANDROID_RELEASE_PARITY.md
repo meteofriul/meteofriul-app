@@ -1,5 +1,7 @@
 # Allineamento della Web App con Android
 
+**Mercati, rettifica del 18 novembre 2026.** Il candidato frontend comune a Web e Android riconosce gli eventi tramite un vecchio URL soltanto se il titolo è coerente; la revisione privata 59 esclude la fonte settimanale errata da M038. Revisione pubblica 0, nessun nuovo artefatto o deployment Web/Android. Prova Android reale e Web/iPhone ancora aperte. [Controllo identità](MERCATI_CONFRONTO_PANNELLO_APP_20261116.md#rettifica-fonte-storica--18-novembre-2026).
+
 **Mercati, dati privati allineati il 18 novembre 2026.** La proiezione della revisione privata online 58 coincide con il candidato Web/Android per 80 schede, 206 edizioni e 221 alias delle edizioni. Il catalogo pubblico rimane alla revisione 0. Prima di un rilascio vanno controllati gli URL storici dell'identità di San Daniele, la prova Android reale e la qualifica Web/iPhone. [Confronto e rilettura](MERCATI_CONFRONTO_PANNELLO_APP_20261116.md#allineamento-privato--18-novembre-2026). Nessun artefatto o deployment Web/Android nuovo.
 
 **Mercati, verifica del 16 novembre 2026.** Il candidato frontend comune a Web e Android è stato [confrontato con la revisione privata online 57](MERCATI_CONFRONTO_PANNELLO_APP_20261116.md): 80 identità e 202 edizioni esistenti coincidono; quattro edizioni più recenti e testi pubblici abbreviati sono solo nel ramo app. La revisione pubblica è ancora 0. Non esiste un nuovo artefatto Web/Android né una prova su dispositivo; il confronto non qualifica la parità delle versioni distribuite.

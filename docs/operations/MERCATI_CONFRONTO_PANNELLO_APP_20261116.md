@@ -1,5 +1,28 @@
 # Mercati: confronto archivio online e candidato app — 16 novembre 2026
 
+## Rettifica fonte storica — 18 novembre 2026
+
+La scheda M038 (mercatino dell'antiquariato di San Daniele) aveva conservato
+fra gli URL storici la pagina del [mercato settimanale](https://www.infosandaniele.com/it/agenda/in-programma/mercato-settimanale-1),
+che è un mercato distinto. La [pagina del mercatino dell'antiquariato](https://www.infosandaniele.com/it/agenda/in-programma/mercatino-dell-antiquariato)
+conferma invece nome, luogo e orario della scheda M038. L'ente indicato nel
+candidato, Pro San Daniele, era già corretto.
+
+La rettifica è stata salvata **solo nell'archivio privato**, revisione **59**:
+`excludedSourceUrls` esclude quell'URL dall'identità M038 alla prossima
+pubblicazione. La proiezione locale ora conserva l'URL nell'identità del
+mercato settimanale M004 e lo esclude da M038; conserva anche la vecchia
+fonte valida di Robis (M042). Rilettura del salvataggio riuscita, zero
+errori di pubblicazione; **revisione pubblica ancora 0**.
+
+Nel candidato app, il matching Eventi richiede anche il titolo coerente se
+riconosce un mercato tramite un URL storico. Il servizio ha una regola per
+escludere le fonti editorialmente respinte anche dal controllo settimanale.
+Il pannello in ramo mostra le fonti precedenti e il comando per segnare che
+una pagina riguarda un altro mercato. Queste modifiche di codice non sono
+ancora distribuite: il servizio aggiornato va rilasciato e verificato prima
+di abilitare la pubblicazione Mercati; la prova sul telefono è ancora aperta.
+
 ## Allineamento privato — 18 novembre 2026
 
 Con autorizzazione dell'owner è stata salvata **una sola revisione privata**

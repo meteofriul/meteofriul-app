@@ -114,6 +114,15 @@ class MarketRefreshSourcesTests(unittest.TestCase):
         self.assertEqual(len(calls), MAX_SOURCES)
         self.assertIn("source_limit_reached", result["issues"])
 
+    def test_misattributed_former_source_is_not_read_by_weekly_control(self):
+        wrong = "https://official.example/other-market"
+        calls = []
+        market = {**MARKET, "excludedSourceUrls": [wrong]}
+        collect_market(market, [{"source": wrong}], [{"url": wrong}], as_of=date(2026, 11, 1),
+                       fetch=lambda url: calls.append(url) or "<p>No calendar</p>")
+        self.assertNotIn(wrong, calls)
+        self.assertIn(_url(MARKET["url"]), calls)
+
     def test_many_events_share_one_observation_and_all_considerations_survive(self):
         first = event(description="Sede temporanea per lavori", dateModified="2026-10-30")
         second = event(**{"@id": URL + "#second", "startDate": "2026-11-22", "endDate": "2026-11-22",

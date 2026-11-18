@@ -147,6 +147,36 @@ class MarketsArchiveTests(unittest.TestCase):
         self.assertEqual(identity["municipalityAliases"], ["Pordenone", "Udine"])
         self.assertEqual(identity["status"], "archived")
 
+    def test_editor_can_exclude_a_misattributed_historical_source(self):
+        state = self.service.state()
+        state["markets"][0]["url"] = "https://example.test/verified-market"
+        self.mutate(state=state)
+        self.mutate(action="publish")
+        identity = self.service.catalogue()["identities"][0]
+        self.assertIn("https://example.test/mercato", identity["sourceUrls"])
+
+        state = self.service.state()
+        state["markets"][0]["excludedSourceUrls"] = ["https://example.test/mercato"]
+        self.mutate(state=state)
+        self.assertIn("https://example.test/mercato", self.service.catalogue()["identities"][0]["sourceUrls"])
+        self.mutate(action="publish")
+        identity = self.service.catalogue()["identities"][0]
+        self.assertNotIn("https://example.test/mercato", identity["sourceUrls"])
+        self.assertIn("https://example.test/verified-market", identity["sourceUrls"])
+
+        state = self.service.state()
+        state["markets"][0]["place"] = "Nuova sede"
+        self.mutate(state=state)
+        self.mutate(action="publish")
+        self.assertNotIn("https://example.test/mercato", self.service.catalogue()["identities"][0]["sourceUrls"])
+
+    def test_current_source_cannot_be_excluded(self):
+        state = self.service.state()
+        state["markets"][0]["excludedSourceUrls"] = ["https://example.test/mercato"]
+        with self.assertRaises(MarketError) as error:
+            self.mutate(state=state)
+        self.assertEqual(error.exception.detail["code"], "markets_current_source_cannot_be_excluded")
+
     def test_save_is_durable_and_does_not_publish(self):
         state = self.service.state()
         state["markets"][0]["place"] = "Nuova piazza"

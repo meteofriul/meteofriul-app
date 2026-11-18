@@ -1,5 +1,14 @@
 # Inventario dei job e responsabilità
 
+## Mercati, fonte errata di San Daniele — 18 novembre 2026
+
+La revisione privata 59 segnala che un vecchio URL del mercato settimanale
+non appartiene al mercatino antiquario M038. Nel ramo è preparata l'esclusione
+di quell'URL dal controllo settimanale e dalla futura identità pubblica.
+**Il job già distribuito non contiene ancora questa regola** e il rapporto
+del 17 novembre fotografa la revisione 57. Revisione pubblica 0; nessun job
+è stato eseguito o ripianificato per questa rettifica.
+
 ## Stato Mercati — 7 novembre 2026
 
 La gestione Mercati segue un controllo editoriale manuale: prima ricerca e inserimento una tantum, poi nuova verifica nel pannello il 7 febbraio 2027 e circa ogni tre mesi. Il task Windows `MeteoFriul-MarketsRefresh-Local` è **Disabled**; non va riattivato per questo flusso. `MeteoFriul-MarketsReminder-Local` non è registrato. La preferenza email nell'archivio locale è disattivata e il pannello non offre più la configurazione degli invii. Nessun job o email è necessario per il promemoria visibile nel pannello. [Audit e selezione delle schede](MERCATI_AUDIT_EDITORIALE_20261107.md).
