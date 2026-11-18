@@ -1,5 +1,29 @@
 # Controllo settimanale Mercati — attivazione del 13 novembre 2026
 
+## Prima esecuzione pianificata — 17 novembre 2026
+
+Verifica in sola lettura del 18 novembre. Cloud Scheduler
+`meteofriul-markets-weekly-audit` è `ENABLED`, cron `0 9 * * 2` nel fuso
+`Europe/Rome`; `lastAttemptTime=2026-11-17T08:00:04.961301Z`, cioè le 09:00
+italiane. Cloud Run ha creato l'esecuzione
+`meteofriul-markets-weekly-audit-qv7xh`, iniziata alle 08:00:14 UTC e
+completata con successo alle 08:04:12 UTC (`succeededCount=1`).
+
+Il documento Firestore `markets_weekly_audit/latest`, letto senza scritture,
+contiene il rapporto `e33a053884134876bc514929a31ae205` generato alle
+08:03:37 UTC del 17 novembre: `status=completed`, 100/100 schede,
+`archiveRevision=currentRevision=57`, **0 schede con differenze proposte** e
+92 con almeno un limite di lettura delle fonti. La revisione privata Mercati
+è ancora 57 (80 selezionate, 9 sospese, 11 bozze) e quella pubblica è 0.
+Questi 92 limiti non sono 92 cambiamenti o errori accertati: le fonti non
+interpretate o non raggiungibili rimangono da valutare nel pannello. Nessuna
+correzione, pubblicazione, esecuzione manuale o retry è stata effettuata.
+
+L'esito conferma che lo Scheduler invoca il job e che il confronto affinato
+produce un rapporto completo sui dati reali. Non certifica il contenuto delle
+fonti che il parser non riesce a interpretare né sostituisce la revisione
+editoriale generale trimestrale.
+
 ## Scopo e confini
 
 Il nuovo comando `python -m app.markets.weekly_audit_job` legge l'archivio

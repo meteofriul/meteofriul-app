@@ -1,5 +1,7 @@
 # Allineamento della Web App con Android
 
+**Mercati, prima corsa settimanale verificata il 18 novembre 2026.** Lo Scheduler ha avviato il job il 17 novembre alle 09:00 italiane e il [rapporto privato](MARKETS_WEEKLY_AUDIT_20261113.md#prima-esecuzione-pianificata--17-novembre-2026) ha concluso 100/100 schede, senza modifiche proposte. Il catalogo pubblico resta alla revisione 0; nessun artefatto Web/Android è stato generato o pubblicato e la parità delle versioni distribuite non cambia.
+
 **Controllo Mercati, allineamento del ramo del 13 novembre 2026.** Il ramo del job settimanale include il candidato app `03aa0783` e `origin/main` fino a `b225c296`; 103 test backend mirati e `compileall` PASS. L'integrazione dei sorgenti non cambia il job distribuito né gli artefatti Web/Android. La parità pubblica e le verifiche su dispositivo restano quelle già registrate.
 
 **Controllo fonti Mercati, 13 novembre 2026.** Aggiornato soltanto il Cloud

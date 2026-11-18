@@ -1,5 +1,7 @@
 # Stato release 0.1.15 e lavoro salvato — aggiornamento sorgenti del 24 ottobre 2026
 
+**Mercati, primo controllo pianificato verificato il 18 novembre 2026.** Scheduler e Cloud Run confermano l'esecuzione del 17 novembre alle 09:00 italiane; il [rapporto privato](MARKETS_WEEKLY_AUDIT_20261113.md#prima-esecuzione-pianificata--17-novembre-2026) copre 100/100 schede con 0 modifiche proposte e 92 limiti di fonte. Revisioni privata 57 e pubblica 0 invariate. Nessuna modifica a versione, `main`, AAB o app distribuite; collaudo su telefono e qualifica Web/iPhone ancora aperti.
+
 **Controllo Mercati, allineamento del ramo del 13 novembre 2026.** Il ramo `codex/markets-weekly-audit-20261113` incorpora `codex/mercati-integration-20261028` al commit `03aa0783`, che include `origin/main` fino a `b225c296`. Dopo la risoluzione dei soli tre conflitti documentali, 103 test backend mirati e `compileall` PASS. Nessun nuovo deploy, avvio del job, cambio versione o artefatto Web/Android; resta da osservare la prima esecuzione pianificata del 17 novembre.
 
 **Mercati, controllo fonti del 13 novembre 2026.** Il solo Cloud Run Job

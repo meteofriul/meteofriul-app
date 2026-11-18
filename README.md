@@ -1,5 +1,7 @@
 # Meteo Friûl
 
+**Mercati, prima esecuzione settimanale verificata il 18 novembre 2026.** Lo Scheduler ha avviato il job il 17 novembre alle 09:00 `Europe/Rome`; Cloud Run ha completato l'esecuzione `qv7xh` e il rapporto privato delle 09:03 UTC registra 100/100 schede, revisione 57 invariata, nessuna modifica proposta e 92 schede con limiti di lettura delle fonti. [Evidenza e interpretazione](docs/operations/MARKETS_WEEKLY_AUDIT_20261113.md#prima-esecuzione-pianificata--17-novembre-2026). Revisione pubblica 0, nessuna modifica o pubblicazione dell'app.
+
 **Ramo del controllo Mercati allineato il 13 novembre 2026.** `codex/markets-weekly-audit-20261113` incorpora il ramo Mercati aggiornato (`03aa0783`) e quindi `origin/main` fino a `b225c296`. Il controllo settimanale resta nel proprio ramo: 103 test backend mirati e `compileall` PASS dopo l'integrazione. Nessuna nuova esecuzione del job, modifica al servizio online, pubblicazione del catalogo o rilascio dell'app.
 
 **Mercati, controllo settimanale attivo dal 13 novembre 2026.** Nel ramo
