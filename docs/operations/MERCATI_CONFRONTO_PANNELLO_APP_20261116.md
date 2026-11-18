@@ -1,5 +1,50 @@
 # Mercati: confronto archivio online e candidato app — 16 novembre 2026
 
+## Allineamento privato — 18 novembre 2026
+
+Con autorizzazione dell'owner è stata salvata **una sola revisione privata**
+tramite `MarketsService.mutate(action="save")`, con precondizione sulla
+revisione 57 e operazione idempotente
+`markets-candidate-alignment-20261118-v1`. Prima del salvataggio sono state
+rilette le fonti per [AnticaMente, 6 dicembre](https://prolocoregionefvg.it/eventi-delle-associate/anticamente-mercatino-dellantiquariato-ad-aviano-8/?return=%2Feventi-delle-associate%2F),
+[San Daniele, 29 novembre](https://www.infosandaniele.com/it/agenda/in-programma)
+e [Robis, 29 novembre e 13 dicembre](https://prolocoregionefvg.it/eventi-delle-associate/robis-di-une-volte-4/).
+
+La revisione privata è ora **58**: 100 schede (80 selezionate, 9 sospese,
+11 bozze) e 228 edizioni nell'archivio completo. L'operazione ha cambiato i
+campi pubblici di 64 schede e aggiunto le quattro edizioni documentate;
+ha conservato le qualifiche editoriali interne, le schede non selezionate e
+le pratiche di ricerca. Il registro della revisione 58 contiene `action=save`
+e 68 elementi modificati. La rilettura indipendente proietta **80 schede,
+206 edizioni, 89 identità, 13 ritiri e 221 alias**; schede, edizioni e alias
+coincidono esattamente con il candidato app, senza errori di validazione.
+La revisione pubblica resta **0**, snapshot
+`markets-0-7c12ed39df6de046`; nessuna chiamata a `publish`, job, deploy o
+rilascio app è stata effettuata. Il rapporto settimanale del 17 novembre
+rimane relativo alla revisione privata 57 fino alla prossima esecuzione.
+
+**Controllo aperto prima della pubblicazione:** la proiezione del servizio
+conserva gli URL storici nell'indice delle identità. Per M038 rimane anche
+il precedente URL del *mercato settimanale* di San Daniele, ora riconosciuto
+come fonte sbagliata per il mercatino dell'antiquariato. Il candidato app
+non contiene quell'alias. Prima di approvare il catalogo pubblico bisogna
+escludere esplicitamente l'URL errato dall'identità M038 e verificare che il
+matching con gli eventi automatici non associ i due mercati. La differenza
+di URL storico di M042 va valutata nello stesso controllo. Questo non cambia
+le schede o le date salvate in privato.
+
+## Flusso previsto per le correzioni successive
+
+Il pannello è la fonte editoriale unica: **Salva** crea una revisione privata,
+una schermata di confronto mostra le modifiche pendenti e **Pubblica** resta
+un'azione distinta con conferma. L'app candidata sa già leggere il catalogo
+pubblico del servizio quando la revisione è almeno 1; dopo un rilascio e un
+collaudo dell'app, le correzioni approvate nel pannello potranno arrivare
+all'app senza ricopiare il catalogo nel codice e senza un job di allineamento.
+Il pannello dovrà mostrare chiaramente revisione privata, revisione pubblica
+e stato delle modifiche pendenti. Nessuna sincronizzazione automatica delle
+bozze verso l'app è prevista.
+
 ## Ambito e metodo
 
 Lettura **in sola lettura** dell'archivio Firestore `markets_archive` del progetto
