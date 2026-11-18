@@ -142,8 +142,20 @@ def validate_state(candidate: dict, previous: dict) -> dict:
         aliases = market.get("titleAliases", [])
         if not isinstance(aliases, list) or any(not isinstance(item, str) or len(item) > 300 for item in aliases):
             raise MarketError("markets_invalid_aliases")
-        # Previously used identity evidence stays available to reconcile old feeds.
         old = previous_markets.get(market["id"], {})
+        excluded = market.get("excludedSourceUrls", old.get("excludedSourceUrls", []))
+        if not isinstance(excluded, list) or len(excluded) > 100:
+            raise MarketError("markets_invalid_excluded_sources")
+        for source in excluded:
+            valid_url(source)
+        if len(set(excluded)) != len(excluded):
+            raise MarketError("markets_invalid_excluded_sources")
+        if market.get("url") in excluded:
+            raise MarketError("markets_current_source_cannot_be_excluded")
+        if "excludedSourceUrls" in market or "excludedSourceUrls" in old:
+            market["excludedSourceUrls"] = excluded
+        # Previously used identity evidence stays available unless the editor
+        # has confirmed that a URL refers to a different market.
         market["titleAliases"] = list(dict.fromkeys(aliases + old.get("titleAliases", []) +
                                                   ([old["name"]] if old.get("name") and old["name"] != market["name"] else [])))
         market["previousSourceUrls"] = sorted(set(old.get("previousSourceUrls", []) +
@@ -257,9 +269,10 @@ def build_catalogue(state: dict, *, revision: int, now: str, previous: dict | No
                                                ([old["comune"]] if old.get("comune") and old["comune"] != market["comune"] else []))),
             "titleAliases": sorted(set(old.get("titleAliases", []) + market.get("titleAliases", []) +
                                        ([old["name"]] if old.get("name") and old["name"] != market["name"] else []))),
-            "sourceUrls": sorted(set(old.get("sourceUrls", []) + market.get("previousSourceUrls", []) +
-                                     ([market["url"]] if market.get("url") else []) +
-                                     [item["source"] for item in state["dates"] if item["marketId"] == identifier and item.get("source")])),
+            "sourceUrls": sorted((set(old.get("sourceUrls", []) + market.get("previousSourceUrls", []) +
+                                      ([market["url"]] if market.get("url") else []) +
+                                      [item["source"] for item in state["dates"] if item["marketId"] == identifier and item.get("source")]))
+                                     - set(market.get("excludedSourceUrls", []))),
             "status": market["status"] if market["status"] != "draft" else "archived",
         }
     tombstones = []

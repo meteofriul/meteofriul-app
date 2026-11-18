@@ -1,5 +1,14 @@
 # Inventario dei job e responsabilità
 
+## Mercati, fonte errata di San Daniele — 18 novembre 2026
+
+La revisione privata 59 segnala che un vecchio URL del mercato settimanale
+non appartiene al mercatino antiquario M038. Nel ramo è preparata l'esclusione
+di quell'URL dal controllo settimanale e dalla futura identità pubblica.
+**Il job già distribuito non contiene ancora questa regola** e il rapporto
+del 17 novembre fotografa la revisione 57. Revisione pubblica 0; nessun job
+è stato eseguito o ripianificato per questa rettifica.
+
 ## Stato Mercati — 18 novembre 2026
 
 Più tardi il 18 novembre è stata salvata la revisione privata Mercati **58**

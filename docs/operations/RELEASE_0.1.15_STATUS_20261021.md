@@ -1,6 +1,8 @@
 # Stato release 0.1.15 e lavoro salvato — aggiornamento sorgenti del 24 ottobre 2026
 
-**Rami Mercati allineati il 18 novembre 2026.** Il ramo del controllo settimanale include il candidato app `049e074b` e la rilettura del salvataggio privato 58, oltre alla verifica della prima corsa automatica sulla revisione 57. Sono solo sorgenti e documenti del ramo; `main`, versione, AAB e app distribuite restano invariati. La revisione pubblica del catalogo è ancora 0.
+**Mercati, rettifica privata del 18 novembre 2026.** Revisione privata 59, pubblica 0: esclusa la fonte del mercato settimanale dall'identità futura del mercatino antiquario di San Daniele. Codice di servizio e app preparato nel ramo, non distribuito; nessuna versione, AAB o artefatto Web nuovo. Restano da verificare il servizio aggiornato e l'app su telefono prima di qualunque promozione. [Evidenza](MERCATI_CONFRONTO_PANNELLO_APP_20261116.md#rettifica-fonte-storica--18-novembre-2026).
+
+**Rami Mercati allineati il 18 novembre 2026.** Il ramo del controllo settimanale include il candidato app `3436bdc8` e la rilettura del salvataggio privato 59, oltre alla verifica della prima corsa automatica sulla revisione 57. Sono solo sorgenti e documenti del ramo; `main`, versione, AAB e app distribuite restano invariati. La revisione pubblica del catalogo è ancora 0.
 
 **Mercati, salvataggio privato del 18 novembre 2026.** L'archivio online è passato dalla revisione privata 57 alla 58 con quattro edizioni verificate e i testi del candidato app; 80 schede e 206 edizioni coincidono nella proiezione. Revisione pubblica 0 e snapshot invariati. [Evidenza e controllo aperto dell'alias fonte di San Daniele](MERCATI_CONFRONTO_PANNELLO_APP_20261116.md#allineamento-privato--18-novembre-2026). Nessuna versione, AAB, artefatto Web o app distribuita è stata modificata. La prova reale su telefono e il controllo delle identità restano gate prima della pubblicazione.
 

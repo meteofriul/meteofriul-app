@@ -610,6 +610,7 @@ def collect_market(market, editions, sources, *, as_of, fetch=None):
     """
     as_of = date.fromisoformat(as_of) if isinstance(as_of, str) else as_of
     urls, issues, observations, source_checks = [], [], [], []
+    excluded = {_url(item) for item in market.get("excludedSourceUrls", [])}
     candidates = [market.get("url"), *[item.get("url") for item in sources if isinstance(item, dict)],
                   *[item.get("source") for item in editions if isinstance(item, dict)]]
     for value in candidates:
@@ -617,7 +618,7 @@ def collect_market(market, editions, sources, *, as_of, fetch=None):
             continue
         try:
             normalized = _url(value)
-            if normalized not in urls:
+            if normalized not in excluded and normalized not in urls:
                 urls.append(normalized)
         except SourceError as error:
             issues.append(str(error))

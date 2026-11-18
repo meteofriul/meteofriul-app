@@ -2,7 +2,8 @@ import { describe, expect, it } from "vitest";
 import { buildEventsViewModel } from "../events/eventsViewModel";
 import { buildEventPreviewModel } from "../events/eventPreview";
 import historicalCatalogue from "../../data/markets/catalogue2026.json";
-import { findRequestedMarketEvent, getMarket, marketDirectionsUrl, marketKindLabel, mergeMarketEvents, selectMarkets } from "./marketsCatalog";
+import candidateCatalogue from "../../data/markets/catalogueCandidate2026.json";
+import { findRequestedMarketEvent, getMarket, marketDirectionsUrl, marketKindLabel, matchMarket, mergeMarketEvents, selectMarkets } from "./marketsCatalog";
 
 const now = new Date("2026-10-30T12:00:00Z");
 const location = { city: "Pordenone", regionCode: "IT-36" };
@@ -18,6 +19,16 @@ function catalogue(fields = {}) {
 }
 
 describe("authoritative market editions", () => {
+  it("does not mistake San Daniele's former weekly-market URL for the antiques market", () => {
+    const weeklyUrl = "https://www.infosandaniele.com/it/turismo/manifestazioni/mercato-settimanale";
+    const snapshot = { ...candidateCatalogue,
+      identities: candidateCatalogue.identities.map(item => item.marketId === "M038"
+        ? { ...item, sourceUrls: [...item.sourceUrls, weeklyUrl] } : item) };
+    const event = { event_city: "San Daniele del Friuli", url: weeklyUrl, title: "Mercato Settimanale" };
+    expect(matchMarket(event, snapshot)?.id).toBe("M004");
+    expect(matchMarket(event, { ...snapshot, markets: snapshot.markets.filter(item => item.id !== "M004") })).toBeNull();
+    expect(matchMarket({ ...event, title: "Mercatino dell'antiquariato" }, snapshot)?.id).toBe("M038");
+  });
   it("presents internal market kinds as Italian card labels", () => {
     expect(marketKindLabel({ kind: "regular" })).toBe("Settimanale");
     expect(marketKindLabel({ kind: "occasional" })).toBe("Mercatino");

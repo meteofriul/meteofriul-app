@@ -157,13 +157,15 @@ export function matchMarket(event, catalogue = inventory, { includeWithdrawn = f
   if (explicit) return matchesCity(explicit) ? explicit : null;
   const records = [...recordsById.values()].filter(matchesCity);
   const key = urlKey(raw.url);
-  const byUrl = key ? records.filter(market => [market.url, ...(market.sourceAliases || []),
-    ...catalogue.dates.filter(item => item.marketId === market.id).map(item => item.source)]
-    .some(value => urlKey(value) === key)) : [];
-  if (byUrl.length === 1) return byUrl[0];
   const title = marketToken(raw.title || raw.name);
-  const byName = city ? records.filter(market => [market.name, ...(market.titleAliases || [])]
-    .some(value => marketToken(value) === title)) : [];
+  const matchesTitle = market => title && [market.name, ...(market.titleAliases || [])]
+    .some(value => marketToken(value) === title);
+  const byUrl = key ? records.filter(market =>
+    [market.url, ...catalogue.dates.filter(item => item.marketId === market.id).map(item => item.source)]
+      .some(value => urlKey(value) === key)
+    || ((market.sourceAliases || []).some(value => urlKey(value) === key) && matchesTitle(market))) : [];
+  if (byUrl.length === 1) return byUrl[0];
+  const byName = city ? records.filter(matchesTitle) : [];
   return byName.length === 1 ? byName[0] : null;
 }
 export function eventMarketDays(event, now = new Date()) {
