@@ -1,6 +1,12 @@
 # Stato release 0.1.15 e lavoro salvato — aggiornamento sorgenti del 24 ottobre 2026
 
+**Rami Mercati allineati il 18 novembre 2026.** Il ramo del controllo settimanale include il candidato app `049e074b` e la rilettura del salvataggio privato 58, oltre alla verifica della prima corsa automatica sulla revisione 57. Sono solo sorgenti e documenti del ramo; `main`, versione, AAB e app distribuite restano invariati. La revisione pubblica del catalogo è ancora 0.
+
+**Mercati, salvataggio privato del 18 novembre 2026.** L'archivio online è passato dalla revisione privata 57 alla 58 con quattro edizioni verificate e i testi del candidato app; 80 schede e 206 edizioni coincidono nella proiezione. Revisione pubblica 0 e snapshot invariati. [Evidenza e controllo aperto dell'alias fonte di San Daniele](MERCATI_CONFRONTO_PANNELLO_APP_20261116.md#allineamento-privato--18-novembre-2026). Nessuna versione, AAB, artefatto Web o app distribuita è stata modificata. La prova reale su telefono e il controllo delle identità restano gate prima della pubblicazione.
+
 **Mercati, primo controllo pianificato verificato il 18 novembre 2026.** Scheduler e Cloud Run confermano l'esecuzione del 17 novembre alle 09:00 italiane; il [rapporto privato](MARKETS_WEEKLY_AUDIT_20261113.md#prima-esecuzione-pianificata--17-novembre-2026) copre 100/100 schede con 0 modifiche proposte e 92 limiti di fonte. Revisioni privata 57 e pubblica 0 invariate. Nessuna modifica a versione, `main`, AAB o app distribuite; collaudo su telefono e qualifica Web/iPhone ancora aperti.
+
+**Mercati, confronto privato del 16 novembre 2026.** Il [raffronto puntuale](MERCATI_CONFRONTO_PANNELLO_APP_20261116.md) con l'archivio online revisione 57 conferma 80/80 identità e 202/202 edizioni esistenti; nel candidato app restano quattro date e diverse riscritture editoriali non ancora salvate nel pannello. È una verifica dei dati, non un rilascio: revisione pubblica 0, nessuna build Android, nessun artefatto Web nuovo e nessuna prova su telefono. Il confronto con una futura revisione pubblica e la qualifica dei dispositivi restano aperti.
 
 **Controllo Mercati, allineamento del ramo del 13 novembre 2026.** Il ramo `codex/markets-weekly-audit-20261113` incorpora `codex/mercati-integration-20261028` al commit `03aa0783`, che include `origin/main` fino a `b225c296`. Dopo la risoluzione dei soli tre conflitti documentali, 103 test backend mirati e `compileall` PASS. Nessun nuovo deploy, avvio del job, cambio versione o artefatto Web/Android; resta da osservare la prima esecuzione pianificata del 17 novembre.
 
@@ -12,6 +18,7 @@ Veneto per Campagna Amica Trieste. Il rapporto con il nuovo codice non è ancora
 osservato: l'avvio manuale è stato respinto dalla revisione automatica e il
 prossimo avvio è il 17 novembre. [Evidenza](MARKETS_WEEKLY_AUDIT_20261113.md#verifica-mirata-di-sede-date-e-orario--13-novembre-2026).
 La release 0.1.15, `main`, AAB e app Web/Android distribuite non cambiano.
+
 
 **Mercati, allineamento dei sorgenti del 13 novembre 2026.** Il ramo `codex/mercati-integration-20261028` integra `origin/main` fino a `b225c296`, incluse le correzioni backend delle notifiche, senza conflitti di codice. Risolti tre conflitti documentali conservando entrambe le cronologie. Frontend: 5.202 test PASS, 13 saltati, lint e build Web/service worker PASS. Backend: 140 test mirati Mercati/notifiche e `compileall` PASS. Le prove locali hanno usato Node 24/npm 11 e Python 3.13 con `lxml 5.4.0`; restano da ripetere negli ambienti prescritti per la release. Restano aperti il confronto del catalogo candidato con la futura revisione pubblica, la prova Android reale e la qualifica Safari/iPhone. Nessuna modifica a `main`, versione, AAB o app distribuite.
 

@@ -1,6 +1,12 @@
 # Allineamento della Web App con Android
 
+**Rami Mercati allineati il 18 novembre 2026.** Il ramo del controllo settimanale incorpora il candidato frontend Web/Android `049e074b` con il rapporto dell'archivio privato 58. L'allineamento del codice non genera artefatti e non modifica le app distribuite. Catalogo pubblico revisione 0; restano aperti il controllo degli URL storici e le prove su Android reale e Web/iPhone.
+
+**Mercati, dati privati allineati il 18 novembre 2026.** La proiezione della revisione privata online 58 coincide con il candidato Web/Android per 80 schede, 206 edizioni e 221 alias delle edizioni. Il catalogo pubblico rimane alla revisione 0. Prima di un rilascio vanno controllati gli URL storici dell'identità di San Daniele, la prova Android reale e la qualifica Web/iPhone. [Confronto e rilettura](MERCATI_CONFRONTO_PANNELLO_APP_20261116.md#allineamento-privato--18-novembre-2026). Nessun artefatto o deployment Web/Android nuovo.
+
 **Mercati, prima corsa settimanale verificata il 18 novembre 2026.** Lo Scheduler ha avviato il job il 17 novembre alle 09:00 italiane e il [rapporto privato](MARKETS_WEEKLY_AUDIT_20261113.md#prima-esecuzione-pianificata--17-novembre-2026) ha concluso 100/100 schede, senza modifiche proposte. Il catalogo pubblico resta alla revisione 0; nessun artefatto Web/Android è stato generato o pubblicato e la parità delle versioni distribuite non cambia.
+
+**Mercati, verifica del 16 novembre 2026.** Il candidato frontend comune a Web e Android è stato [confrontato con la revisione privata online 57](MERCATI_CONFRONTO_PANNELLO_APP_20261116.md): 80 identità e 202 edizioni esistenti coincidono; quattro edizioni più recenti e testi pubblici abbreviati sono solo nel ramo app. La revisione pubblica è ancora 0. Non esiste un nuovo artefatto Web/Android né una prova su dispositivo; il confronto non qualifica la parità delle versioni distribuite.
 
 **Controllo Mercati, allineamento del ramo del 13 novembre 2026.** Il ramo del job settimanale include il candidato app `03aa0783` e `origin/main` fino a `b225c296`; 103 test backend mirati e `compileall` PASS. L'integrazione dei sorgenti non cambia il job distribuito né gli artefatti Web/Android. La parità pubblica e le verifiche su dispositivo restano quelle già registrate.
 
@@ -12,6 +18,7 @@ stato respinto dalla revisione automatica. La revisione pubblica del catalogo
 resta 0. Nessun sorgente frontend, artefatto o deployment dell'app Web/Android
 è cambiato in questo controllo; la parità pubblica resta invariata.
 [Fonti e limiti](MARKETS_WEEKLY_AUDIT_20261113.md#verifica-mirata-di-sede-date-e-orario--13-novembre-2026).
+
 
 **Mercati, allineamento dei sorgenti del 13 novembre 2026.** Il ramo candidato Web/Android include `origin/main` fino a `b225c296` e mantiene 80 schede, 206 edizioni e 13 rimozioni. Verifica locale: 5.202 test frontend, lint, build Web/service worker, 140 test backend mirati e `compileall` PASS. Non sono state prodotte build Android né pubblicati nuovi artefatti Web/Android; la parità delle versioni distribuite resta invariata. Confronto del catalogo, Android reale e Safari/iPhone ancora da verificare prima di una release.
 

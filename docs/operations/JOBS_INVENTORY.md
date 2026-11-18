@@ -2,6 +2,12 @@
 
 ## Stato Mercati — 18 novembre 2026
 
+Più tardi il 18 novembre è stata salvata la revisione privata Mercati **58**
+([rilettura](MERCATI_CONFRONTO_PANNELLO_APP_20261116.md#allineamento-privato--18-novembre-2026)).
+Il rapporto settimanale del 17 novembre resta riferito alla revisione 57;
+il pannello deve indicare che l'archivio è cambiato dopo quel controllo.
+La revisione pubblica è ancora 0.
+
 Il primo avvio pianificato del controllo settimanale Mercati è stato verificato:
 Scheduler `ENABLED`, tentativo del 17 novembre alle 09:00 `Europe/Rome`,
 esecuzione Cloud Run `meteofriul-markets-weekly-audit-qv7xh` completata e

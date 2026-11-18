@@ -1,6 +1,12 @@
 # Meteo Friûl
 
+**Rami Mercati allineati il 18 novembre 2026.** `codex/markets-weekly-audit-20261113` include ora il candidato app e il rapporto di allineamento privato fino a `049e074b`, conservando il controllo settimanale nel proprio ramo. Il rapporto del job del 17 novembre fotografa la revisione privata 57; il successivo salvataggio editoriale ha creato la revisione 58. Nessuna modifica a `main` o alle app distribuite.
+
+**Mercati, allineamento privato del 18 novembre 2026.** La revisione online 58 conserva 80 schede selezionate, 9 sospese e 11 bozze; sono stati salvati i testi pubblici del candidato e quattro edizioni verificate. La proiezione privata coincide con le 80 schede e 206 edizioni dell'app candidata. Revisione pubblica 0 e app distribuite invariate. [Rilettura, fonti e controllo aperto sugli URL storici](docs/operations/MERCATI_CONFRONTO_PANNELLO_APP_20261116.md#allineamento-privato--18-novembre-2026). Il pannello dovrà mostrare chiaramente le modifiche private in attesa di pubblicazione; dopo il futuro rilascio dell'app, il catalogo pubblicato sarà letto automaticamente senza job di riallineamento.
+
 **Mercati, prima esecuzione settimanale verificata il 18 novembre 2026.** Lo Scheduler ha avviato il job il 17 novembre alle 09:00 `Europe/Rome`; Cloud Run ha completato l'esecuzione `qv7xh` e il rapporto privato delle 09:03 UTC registra 100/100 schede, revisione 57 invariata, nessuna modifica proposta e 92 schede con limiti di lettura delle fonti. [Evidenza e interpretazione](docs/operations/MARKETS_WEEKLY_AUDIT_20261113.md#prima-esecuzione-pianificata--17-novembre-2026). Revisione pubblica 0, nessuna modifica o pubblicazione dell'app.
+
+**Mercati, confronto del 16 novembre 2026.** Letta in sola lettura la revisione privata online 57: le 80 identità selezionate coincidono con il candidato app e le 202 edizioni già presenti nel pannello sono identiche. Il candidato contiene quattro edizioni documentate in più (Aviano, San Daniele, due a Udine) e testi pubblici abbreviati in 64 schede; il pannello deve essere riallineato prima del collaudo finale. [Esito per tutte le 80 schede](docs/operations/MERCATI_CONFRONTO_PANNELLO_APP_20261116.md). Revisione pubblica 0, nessuna modifica online o pubblicazione.
 
 **Ramo del controllo Mercati allineato il 13 novembre 2026.** `codex/markets-weekly-audit-20261113` incorpora il ramo Mercati aggiornato (`03aa0783`) e quindi `origin/main` fino a `b225c296`. Il controllo settimanale resta nel proprio ramo: 103 test backend mirati e `compileall` PASS dopo l'integrazione. Nessuna nuova esecuzione del job, modifica al servizio online, pubblicazione del catalogo o rilascio dell'app.
 
@@ -27,6 +33,7 @@ automatica e la prima esecuzione pianificata è il 17 novembre. Una pagina
 Discover Trieste menziona anche sabati in piazza Vittorio Veneto, da valutare
 come calendario distinto prima di creare un'altra scheda.
 [Fonti e stato del collaudo](docs/operations/MARKETS_WEEKLY_AUDIT_20261113.md#verifica-mirata-di-sede-date-e-orario--13-novembre-2026).
+
 
 **Ramo Mercati riallineato il 13 novembre 2026.** `codex/mercati-integration-20261028` incorpora `origin/main` fino a `b225c296` e conserva il catalogo candidato di 80 schede, 206 edizioni e 13 rimozioni. I soli conflitti erano nei tre documenti di stato; la cronologia delle notifiche e quella dei Mercati sono entrambe conservate. Verifica locale: 5.202 test frontend PASS (13 saltati), lint e build Web/service worker PASS; 140 test backend mirati PASS e `compileall` PASS. Nessuna promozione a `main`, prova su telefono, nuova build Android o pubblicazione Mercati.
 
