@@ -5,7 +5,7 @@ from unittest.mock import MagicMock, patch
 
 from app.events.pilot_attems_audit import (
     BASE, REVIEWED_DETAIL_VERSIONS, REVIEWED_EVENT_IDS,
-    REVIEWED_EXHIBITION_PATHS, _fetch, audit_payloads, watch_changes,
+    REVIEWED_EXHIBITION_PATHS, _fetch, _page_id, audit_payloads, watch_changes,
 )
 
 
@@ -49,6 +49,14 @@ def sample():
 
 
 class PalazzoAttemsAuditTests(unittest.TestCase):
+    def test_nested_official_detail_paths_use_final_article_id(self):
+        self.assertEqual(_page_id('/italia-settanta-165450/design-176458'), 176458)
+        self.assertEqual(_page_id('/italia-settanta-165450/design-176458/musica-176459'), 176459)
+        for unsafe in ('https://other.example/design-176458', '/design-176458?preview=1',
+                       '/design-176458/../musica-176459', '/design-176458/'):
+            with self.subTest(path=unsafe), self.assertRaises(ValueError):
+                _page_id(unsafe)
+
     def test_temporary_gateway_error_is_retried_with_bounded_pause(self):
         failed = MagicMock(status_code=502)
         failed.__enter__.return_value = failed

@@ -39,6 +39,7 @@ MIN_CATEGORY_PAGES = 70
 MAX_CATEGORY_PAGES = 140
 MAX_SITEMAP_BYTES = 5 * 1024 * 1024
 MAX_HTML_BYTES = 2 * 1024 * 1024
+MAX_CHANGED_DETAILS = 30
 
 
 def _text(markup):
@@ -280,22 +281,28 @@ def _collect(get, today, baseline):
             changes.append({'reason': 'reviewed_future_article_disappeared', 'url': url})
     changed_recent = {url: stamp for url, stamp in recent.items()
                       if previous_recent.get(url) != stamp}
-    if len(changed_recent) > 30:
-        raise ValueError('too many changed GiroFVG sitemap entries')
-    for url, modified in changed_recent.items():
-        if url in category_cards:
-            changes.append({'reason': 'new_or_changed_category_article',
-                            'url': url, 'modified': modified})
-            continue
-        markup = _expect_html(get, url)
-        fields = {key.strip(): _text(value) for key, value in FIELD.findall(markup)}
-        if any(key in fields for key in ('data-inizio', 'data-fine', 'luogo')):
-            changes.append({'reason': 'new_or_changed_dated_article',
-                            'url': url, 'modified': modified})
+    review_budget_exceeded = len(changed_recent) > MAX_CHANGED_DETAILS
+    if review_budget_exceeded:
+        # Keep the coverage warning in the first ten entries surfaced by the job.
+        changes.insert(0, {'reason': 'sitemap_review_budget_exceeded',
+                           'url': SITEMAP, 'count': len(changed_recent),
+                           'sample_urls': sorted(changed_recent)[:10]})
+    else:
+        for url, modified in changed_recent.items():
+            if url in category_cards:
+                changes.append({'reason': 'new_or_changed_category_article',
+                                'url': url, 'modified': modified})
+                continue
+            markup = _expect_html(get, url)
+            fields = {key.strip(): _text(value) for key, value in FIELD.findall(markup)}
+            if any(key in fields for key in ('data-inizio', 'data-fine', 'luogo')):
+                changes.append({'reason': 'new_or_changed_dated_article',
+                                'url': url, 'modified': modified})
 
     deduped = {item['url'] + ':' + item['reason']: item for item in changes}
-    return {'source_complete': not missing,
+    return {'source_complete': not missing and not review_budget_exceeded,
             'sitemap_urls': len(inventory), 'recent_sitemap_urls': len(recent),
+            'changed_sitemap_urls': len(changed_recent),
             'category_pages_expected': expected,
             'category_pages_read': expected - len(missing),
             'category_cards': sum(len(cards) for cards in by_category.values()),
