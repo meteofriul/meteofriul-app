@@ -1,5 +1,13 @@
 # Allineamento della Web App con Android
 
+**Eventi, 19 novembre 2026.** Il controllo online ha Spazzapan in pausa
+alla revisione 1, ma il lettore pubblico non lo consuma ancora. Il recupero
+XML di Teatro Verdi Trieste è verificato in lettura locale; CSS Udine resta
+esclusa dal catalogo pubblico per il gate di confronto. Nessun artefatto Web
+o Android, endpoint pubblico o traffico Cloud Run è cambiato.
+[Prove e limiti](EVENTS_SOURCE_DECISION_20261119.md). Il controllo sul client
+reale resta aperto prima di promuovere il nuovo lettore.
+
 **Eventi, collaudo isolato del 15 novembre 2026.** La
 [PR 48](https://github.com/meteofriul/meteofriul-app/pull/48) aggiunge controlli
 per fonte al backend e il ramo XML. Un job QA senza pianificazione ha verificato

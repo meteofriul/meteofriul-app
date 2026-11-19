@@ -1,5 +1,13 @@
 # Meteo Friûl
 
+**Eventi, 19 novembre 2026.** Registrata online la pausa motivata di
+Galleria Spazzapan (revisione controlli 1); il job e il lettore pubblici non
+usano ancora il nuovo controllo. Il lettore XML corretto ha verificato 56
+schede di Teatro Verdi Trieste in sola lettura. CSS Udine resta bloccato dal
+confronto con cinque occorrenze future precedenti, presenti nelle pagine
+ufficiali ma assenti nella nuova raccolta. 60 test mirati PASS.
+[Decisione, prove e limiti](docs/operations/EVENTS_SOURCE_DECISION_20261119.md).
+
 **Eventi, comandi per fonte preparati il 15 novembre 2026.** Il ramo
 `codex/events-source-controls-20261115` aggiunge pausa motivata per singola
 fonte, verifica mirata tramite il job esistente e stato amministrativo per il
