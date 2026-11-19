@@ -200,6 +200,18 @@ def _schedule_slots(lines, *, season_year=None):
         line = clean(raw)
         if not line:
             continue
+        double = re.fullmatch(r'doppia replica ore\s+(\d{1,2}(?:[:.]\d{2})?)\s+e\s+ore\s+'
+                              r'(\d{1,2}(?:[:.]\d{2})?)', line, re.I)
+        if double:
+            if len(slots) != 1 or slots[0][1] or slots[0][2]:
+                raise ValueError('ambiguous double performance')
+            first, second = _clock(double[1]), _clock(double[2])
+            if second <= first:
+                raise ValueError('ambiguous double performance')
+            day, _, _, evidence = slots.pop()
+            slots.extend((day, hour, None, evidence + ' · ' + line)
+                         for hour in (first, second))
+            continue
         try:
             new = _line_slots(raw, season_year=season_year)
         except ValueError as exc:

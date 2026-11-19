@@ -43,14 +43,17 @@ def log_source_recovery(previous, catalog, selected_sources):
             'pending_count': len(new.get('detail_candidates') or []),
         })
     if recovered:
+        paused = set(catalog.get('paused_sources') or [])
         print(json.dumps({
             'event': 'event_source_recovered', 'severity': 'INFO',
             'catalog_attempted_at': catalog['attempted_at'],
             'recovered': recovered,
             'remaining_unavailable_sources': sorted(
                 name for name, batch in sources.items()
-                if batch.get('status') not in {'fresh', 'partial'}
-                or source_age_failure(batch, now=attempted)),
+                if name not in paused and (
+                    batch.get('status') not in {'fresh', 'partial'}
+                    or source_age_failure(batch, now=attempted))),
+            'paused_sources': sorted(paused),
             'partial_sources': sorted(name for name, batch in sources.items()
                                       if batch.get('status') == 'partial'),
             'api_verified': False,

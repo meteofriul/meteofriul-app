@@ -3,7 +3,7 @@ import unittest
 from datetime import date
 
 from app.events.pilot_sagrefvg import (
-    API, SOURCE, annual_window, collect_sagrefvg, event_from_api,
+    API, SOURCE, annual_window, stable_annual_window, collect_sagrefvg, event_from_api,
     resolve_municipality, edition_preview_image,
 )
 from app.events.pilot_source_policy import gate_batch
@@ -153,6 +153,26 @@ class SagreFvgTests(unittest.TestCase):
         second.clear()
         with self.assertRaisesRegex(ValueError, 'page count changed'):
             annual_window(get, 2026)
+
+    def test_rechecks_one_changed_pagination_snapshot(self):
+        first = [row(i) for i in range(1, 51)]
+        scans = 0
+
+        def get(url, *, params, **_):
+            nonlocal scans
+            if params['page'] == 1:
+                scans += 1
+            records = first if params['page'] == 1 else ([row(51)] if scans == 2 else [])
+            return Response({'events': records, 'total': 51, 'total_pages': 2})
+
+        records, proof = stable_annual_window(get, 2026)
+        self.assertEqual(scans, 2)
+        self.assertEqual((len(records), proof['pages_read']), (51, 2))
+
+        with self.assertRaisesRegex(ValueError, 'page count changed'):
+            stable_annual_window(lambda url, *, params, **_: Response({
+                'events': first if params['page'] == 1 else [],
+                'total': 51, 'total_pages': 2}), 2026)
 
 
 if __name__ == '__main__':

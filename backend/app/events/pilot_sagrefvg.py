@@ -99,6 +99,16 @@ def annual_window(get, year):
                   "records_read": len(rows), "pages_read": len(responses)}
 
 
+def stable_annual_window(get, year):
+    """Reread once if publishing changes the page count during a scan."""
+    try:
+        return annual_window(get, year)
+    except ValueError as exc:
+        if str(exc) != "SagreFVG page count changed during scan":
+            raise
+    return annual_window(get, year)
+
+
 def _distance_km(lat1, lon1, lat2, lon2):
     dlat, dlon = radians(lat2-lat1), radians(lon2-lon1)
     value = sin(dlat/2)**2 + cos(radians(lat1))*cos(radians(lat2))*sin(dlon/2)**2
@@ -239,14 +249,14 @@ def event_from_api(row):
     return event
 
 
-def collect_sagrefvg(*, get=requests.get, today=None):
+def _collect_sagrefvg(*, get, today):
     today = today or datetime.now(ZoneInfo("Europe/Rome")).date()
     events, review, windows, seen_ids = [], [], [], set()
     past_count = 0
     empty_years = 0
     year = today.year
     while empty_years < 2 and year <= today.year + 5:
-        rows, proof = annual_window(get, year)
+        rows, proof = stable_annual_window(get, year)
         windows.append(proof)
         empty_years = empty_years + 1 if not rows else 0
         for row in rows:
@@ -276,3 +286,11 @@ def collect_sagrefvg(*, get=requests.get, today=None):
                              "past_count": past_count, "active_count": len(events),
                              "review_count": len(review)},
             "coverage": "current-year-and-future-api-windows"}
+
+
+def collect_sagrefvg(*, get=requests.get, today=None):
+    today = today or datetime.now(ZoneInfo("Europe/Rome")).date()
+    if get is not requests.get:
+        return _collect_sagrefvg(get=get, today=today)
+    with requests.Session() as session:
+        return _collect_sagrefvg(get=session.get, today=today)

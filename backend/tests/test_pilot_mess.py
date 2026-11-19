@@ -151,8 +151,28 @@ class MessLaboratoriesTests(unittest.TestCase):
                          'mess-news-232542')
         changed = deepcopy(news)
         changed['articles'].append({**changed['articles'][0],
-                                    'id': 999999, 'modified': '2026-10-07T12:00:00'})
-        with self.assertRaisesRegex(ValueError, 'changed MESS news'):
+                                    'id': 999999, 'full_url': '/not-999999',
+                                    'modified': '2026-10-07T12:00:00'})
+        kept, proof = parse_news(changed, regional, today=date(2026, 10, 7))
+        self.assertEqual(len(kept), 3)
+        self.assertEqual(proof['unreviewed_news_ids'], [999999])
+        self.assertEqual(proof['news_review_required'][0]['reason'],
+                         'news_inventory_requires_review')
+        programme, museums = pages()
+        batch = parse_laboratories(programme, museums, today=date(2026, 10, 7))
+        batch['verification']['laboratory_count'] = len(batch['events'])
+        batch['events'].extend(kept)
+        batch['review_required'].extend(proof.pop('news_review_required'))
+        batch['verification'].update(proof)
+        batch['verification']['projected_count'] = len(batch['events'])
+        self.assertEqual(gate_batch('MESS', batch, today=date(2026, 10, 7))['status'],
+                         'partial')
+        untrusted = deepcopy(batch)
+        untrusted['review_required'][0]['url'] = 'https://example.org/not-999999'
+        self.assertEqual(gate_batch('MESS', untrusted, today=date(2026, 10, 7))['status'],
+                         'error')
+        changed['articles'][-1]['full_url'] = 'https://example.org/not-999999'
+        with self.assertRaisesRegex(ValueError, 'untrusted MESS news identity'):
             parse_news(changed, regional, today=date(2026, 10, 7))
 
     def test_mess_news_and_regional_detail_become_one_card(self):
