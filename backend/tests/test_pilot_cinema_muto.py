@@ -1,4 +1,5 @@
 import unittest
+from threading import Barrier
 from copy import deepcopy
 from datetime import date, datetime, timedelta
 
@@ -96,7 +97,8 @@ class CinemaMutoTests(unittest.TestCase):
     def test_sitemap_to_calendar_to_single_card(self):
         days, _, calls, get = self.fixture()
         batch = collect_cinema_muto(get=get)
-        self.assertEqual(calls, [HOME, SITEMAP, *(calendar_url(day) for day in days)])
+        self.assertEqual(calls[:2], [HOME, SITEMAP])
+        self.assertCountEqual(calls[2:], [calendar_url(day) for day in days])
         self.assertEqual(batch['verification']['sitemap_page_count'], 5)
         self.assertEqual(batch['verification']['records_scanned'], 10)
         self.assertEqual(batch['verification']['parsed_count'], 5)
@@ -150,8 +152,25 @@ class CinemaMutoTests(unittest.TestCase):
         gated = gate_batch('Le Giornate del Cinema Muto', batch, today=days[1])
         self.assertEqual(gated['status'], 'ok')
         self.assertEqual(calls[:4], [HOME, italian_home, SITEMAP, italian_sitemap])
-        self.assertEqual(calls[4:], [italian_home + f'calendario-{day:%d%m%y}/'
-                                     for day in days])
+        self.assertCountEqual(calls[4:], [italian_home + f'calendario-{day:%d%m%y}/'
+                                          for day in days])
+
+    def test_calendar_reads_are_bounded_and_results_keep_day_order(self):
+        days, pages, calls, _ = self.fixture()
+        barrier = Barrier(4)
+
+        def get(url, **_):
+            calls.append(url)
+            if url in {calendar_url(day) for day in days[:4]}:
+                barrier.wait(timeout=2)
+            return FakeResponse(pages[url])
+
+        batch = collect_cinema_muto(get=get)
+        self.assertCountEqual(calls[2:], [calendar_url(day) for day in days])
+        self.assertEqual([entry['date'] for entry in batch['verification']['days']],
+                         [day.isoformat() for day in days])
+        self.assertEqual([entry['start_date'] for entry in batch['events']],
+                         [day.isoformat() for day in days])
 
     def test_foreign_calendar_redirect_is_rejected(self):
         with self.assertRaisesRegex(ValueError, 'unexpected calendar redirect'):

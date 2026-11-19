@@ -3,6 +3,7 @@
 The page sitemap is the inventory. PDF files, film titles inside a screening,
 and the separate evening articles are never treated as extra appointments.
 """
+from concurrent.futures import ThreadPoolExecutor
 from datetime import date, timedelta
 from html.parser import HTMLParser
 from urllib.parse import urljoin, urlsplit
@@ -297,8 +298,15 @@ def collect_cinema_muto(*, get=requests.get):
     if cover:
         metadata["image"] = cover
     events, days, review = [], [], []
-    for day, url in pages:
-        parsed, issues, proof = parse_day(_read(get, url, limit=1024 * 1024),
+    # Calendar pages are independent. Bound parallel reads so one slow page
+    # does not consume the source worker's entire wall-clock budget.
+    def read_page(page):
+        return _read(get, page[1], limit=1024 * 1024)
+
+    with ThreadPoolExecutor(max_workers=4) as pool:
+        html_pages = list(pool.map(read_page, pages))
+    for (day, url), html in zip(pages, html_pages):
+        parsed, issues, proof = parse_day(html,
                                           day=day, url=url, metadata=metadata)
         events.extend(parsed)
         review.extend(issues)
