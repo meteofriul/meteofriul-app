@@ -94,9 +94,11 @@ def snapshot() -> dict:
 
 
 class FakeDeviceRepository:
-    def __init__(self, devices, *, claim_state: str = "sending") -> None:
+    def __init__(self, devices, *, claim_state: str = "sending",
+                 claim_states: dict[str, str] | None = None) -> None:
         self.devices = deepcopy(devices)
         self.claim_state = claim_state
+        self.claim_states = claim_states or {}
         self.claims = []
         self.finishes = []
         self.disabled = []
@@ -112,10 +114,11 @@ class FakeDeviceRepository:
 
     def claim_local_notice_delivery(self, **kwargs):
         self.claims.append(kwargs)
-        claimed = self.claim_state == "sending"
+        state = self.claim_states.get(kwargs["device_id"], self.claim_state)
+        claimed = state == "sending"
         return SimpleNamespace(
             claimed=claimed,
-            state=self.claim_state,
+            state=state,
             delivery_id="delivery-id",
             claim_id="claim-id" if claimed else "",
         )
@@ -579,6 +582,49 @@ class MorningForecastRetirementTests(unittest.TestCase):
         self.assertEqual((summary["eligible_devices"], summary["attempted"]), (55, 55))
         self.assertEqual(exit_code, 0)
         self.assertEqual(len(repository.disabled), 1)
+
+    def test_location_changed_during_delivery_is_skipped_without_failing_other_sends(self):
+        changed_id = "b" * 64
+        repository = FakeDeviceRepository(
+            [device(), device(device_id=changed_id, token="token-b")],
+            claim_states={changed_id: "device_location_changed"},
+        )
+        sender = FakeSender()
+
+        result = self.service(repository, sender).run()
+        exit_code, summary, raw = self.job_exit(result)
+
+        self.assertEqual((result.status, result.sent, result.location_changed,
+                          result.failed, result.security_failed), ("sent", 1, 1, 0, 0))
+        self.assertEqual(summary["location_changed"], 1)
+        self.assertEqual(exit_code, 0)
+        self.assertEqual(len(sender.messages), 1)
+        self.assertEqual(sender.messages[0].target_value, "token-a")
+        self.assertNotIn(changed_id, raw)
+        self.assertNotIn("token-b", raw)
+
+    def test_only_location_evidence_changed_is_a_non_error_skip(self):
+        repository = FakeDeviceRepository(
+            [device()], claim_state="device_location_evidence_changed"
+        )
+        sender = FakeSender()
+
+        result = self.service(repository, sender).run()
+
+        self.assertEqual((result.status, result.location_changed, result.failed),
+                         ("location_changed", 1, 0))
+        self.assertEqual(self.job_exit(result)[0], 0)
+        self.assertEqual(sender.messages, [])
+
+    def test_other_security_state_still_fails_the_job(self):
+        repository = FakeDeviceRepository(
+            [device()], claim_state="app_check_app_changed"
+        )
+        result = self.service(repository, FakeSender()).run()
+
+        self.assertEqual((result.status, result.security_failed, result.failed),
+                         ("failed", 1, 1))
+        self.assertEqual(self.job_exit(result)[0], 1)
 
     def test_transient_fcm_and_source_errors_still_fail_the_job(self):
         repository = FakeDeviceRepository([device()])

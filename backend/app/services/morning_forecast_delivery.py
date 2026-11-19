@@ -84,6 +84,7 @@ class MorningForecastDeliveryResult:
     in_progress: int = 0
     retry_scheduled: int = 0
     opted_out: int = 0
+    location_changed: int = 0
     retired_targets: int = 0
     duplicate_targets: int = 0
     security_failed: int = 0
@@ -110,6 +111,7 @@ class MorningForecastDeliveryResult:
             "in_progress": self.in_progress,
             "retry_scheduled": self.retry_scheduled,
             "opted_out": self.opted_out,
+            "location_changed": self.location_changed,
             "retired_targets": self.retired_targets,
             "duplicate_targets": self.duplicate_targets,
             "security_failed": self.security_failed,
@@ -587,11 +589,11 @@ class MorningForecastDeliveryService:
             return "retry_scheduled"
         if state in {"device_inactive", "weather_notices_disabled"}:
             return "opted_out"
+        if state in {"device_location_changed", "device_location_evidence_changed"}:
+            return "location_changed"
         if state in {
             "app_check_app_changed",
             "app_version_changed",
-            "device_location_changed",
-            "device_location_evidence_changed",
             "device_target_changed",
             "enrollment_generation_changed",
             "schema_version_changed",
@@ -826,7 +828,7 @@ class MorningForecastDeliveryService:
             grouped.setdefault(target.group_key, []).append(target)
 
         evaluated = attempted = sent = sent_unconfirmed = deduplicated = 0
-        in_progress = retry_scheduled = opted_out = retired_targets = 0
+        in_progress = retry_scheduled = opted_out = location_changed = retired_targets = 0
         device_failed = storage_failed = source_failed = delivery_batches = 0
         quality_limited_groups = 0
         successful_group = False
@@ -894,6 +896,8 @@ class MorningForecastDeliveryService:
                 elif status == "opted_out":
                     opted_out += 1
                     successful_group = True
+                elif status == "location_changed":
+                    location_changed += 1
                 elif status == "retired_target":
                     retired_targets += 1
                     successful_group = True
@@ -926,6 +930,8 @@ class MorningForecastDeliveryService:
             status = "opted_out"
         elif retired_targets:
             status = "retired_targets"
+        elif location_changed:
+            status = "location_changed"
         else:
             status = "no_forecast"
 
@@ -943,6 +949,7 @@ class MorningForecastDeliveryService:
             in_progress=in_progress,
             retry_scheduled=retry_scheduled,
             opted_out=opted_out,
+            location_changed=location_changed,
             retired_targets=retired_targets,
             duplicate_targets=duplicate_targets,
             security_failed=security_failed,

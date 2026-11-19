@@ -1,12 +1,17 @@
 from __future__ import annotations
 
+import io
+import json
 import unittest
+from contextlib import redirect_stdout
 from copy import deepcopy
 from datetime import datetime, timedelta, timezone
 from types import SimpleNamespace
+from unittest.mock import patch
 from zoneinfo import ZoneInfo
 
 from app.push.fcm import FcmBatchOutcome
+from app.jobs import send_evening_forecast
 from app.services.evening_forecast_delivery import (
     EveningForecastConfigurationError,
     EveningForecastDeliveryService,
@@ -300,6 +305,26 @@ class EveningForecastDeliveryTests(unittest.TestCase):
         self.assertEqual(message.data["forecast_date"], TOMORROW.isoformat())
         self.assertEqual(repository.claims[0]["notice_kind"], "evening_forecast")
         self.assertEqual(repository.finishes[0]["state"], "sent")
+
+    def test_location_changed_before_send_is_logged_without_job_failure(self):
+        repository = FakeDeviceRepository(
+            [device()], claim_state="device_location_changed"
+        )
+        sender = FakeSender()
+        result = self.service(repository, FakeSource(snapshot()), sender).run()
+        output = io.StringIO()
+        with patch.object(
+            send_evening_forecast,
+            "get_evening_forecast_delivery_service",
+            return_value=SimpleNamespace(run=lambda: result),
+        ), redirect_stdout(output):
+            exit_code = send_evening_forecast.main()
+
+        self.assertEqual((result.status, result.location_changed, result.failed),
+                         ("location_changed", 1, 0))
+        self.assertEqual(exit_code, 0)
+        self.assertEqual(json.loads(output.getvalue())["location_changed"], 1)
+        self.assertEqual(sender.messages, [])
 
     def test_localizes_each_device_without_refetching_the_shared_place(self):
         repository = FakeDeviceRepository(
