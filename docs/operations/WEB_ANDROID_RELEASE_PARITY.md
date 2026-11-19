@@ -1,5 +1,15 @@
 # Allineamento della Web App con Android
 
+**Eventi, job QA del 19 novembre 2026.** La
+[PR 48](https://github.com/meteofriul/meteofriul-app/pull/48) ha CI verde;
+il worker da commit `eb9fbfcb` ha completato un ciclo cloud su catalogo
+separato. Il lettore QA con lo stesso digest ha 0% del traffico e mostra
+Verdi Trieste e CSS Udine recuperati, con Spazzapan in pausa. Il catalogo
+pubblico e gli artefatti Web/Android non sono cambiati. La verifica nel
+browser del telefono resta aperta prima di promuovere il backend;
+nessuna nuova qualifica Safari o Android è dedotta dalla prova QA.
+[Evidenza](EVENTS_JOB_RECOVERY_20261119.md).
+
 **Eventi, 19 novembre 2026.** Il controllo online ha Spazzapan in pausa
 alla revisione 1, ma il lettore pubblico non lo consuma ancora. Il recupero
 XML di Teatro Verdi Trieste è verificato in lettura locale; CSS Udine resta

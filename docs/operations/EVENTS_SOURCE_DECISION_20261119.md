@@ -1,5 +1,12 @@
 # Eventi: verifica fonti e pausa Spazzapan, 19 novembre 2026
 
+**Aggiornamento successivo:** il recupero del job e delle fonti CSS, Cinema
+Muto, MESS e SagreFVG è stato collaudato in un job cloud separato; il
+lettore QA mostra anche Verdi Trieste. Il quadro sotto fotografa la verifica
+precedente a quelle correzioni. Stato corrente e passi aperti in
+[EVENTS_JOB_RECOVERY_20261119.md](EVENTS_JOB_RECOVERY_20261119.md).
+Il titolare ha dato priorità al job prima di attivare il pannello online.
+
 ## Decisione operativa
 
 La Galleria Spazzapan è stata registrata come fonte in pausa a tempo

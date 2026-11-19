@@ -1,5 +1,14 @@
 # Stato release 0.1.15 e lavoro salvato — aggiornamento sorgenti del 24 ottobre 2026
 
+**Eventi, prova job QA del 19 novembre 2026.** Il commit `eb9fbfcb`
+della [PR 48](https://github.com/meteofriul/meteofriul-app/pull/48)
+ha superato CI e job cloud isolato; il catalogo QA contiene 14 fonti
+attive verificate o parziali con i casi incerti in revisione. Il lettore
+QA serve il catalogo con 0% del traffico. [Dettagli e controlli aperti](EVENTS_JOB_RECOVERY_20261119.md).
+Il job ordinario, il lettore pubblico, il pannello online, la versione
+0.1.15, l'AAB e la Web App pubblicata restano invariati. Prova su telefono
+ancora aperta.
+
 **Eventi, 19 novembre 2026.** Pausa di Galleria Spazzapan registrata nel
 controllo online (revisione 1), senza effetto ancora sul job o sul lettore
 pubblico. Verdi Trieste: 56 schede, una in revisione, gate superato dal
