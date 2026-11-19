@@ -1,5 +1,7 @@
 # Meteo Friûl
 
+**Eventi, servizio recuperato il 19 novembre 2026.** [PR 48](https://github.com/meteofriul/meteofriul-app/pull/48), [49](https://github.com/meteofriul/meteofriul-app/pull/49), [50](https://github.com/meteofriul/meteofriul-app/pull/50) e [51](https://github.com/meteofriul/meteofriul-app/pull/51) integrate in `main`, CI verdi. Il job pubblico usa il digest `sha256:fcf3a81c...` e una corsa completa è riuscita: 14 fonti attive verificate o parziali con casi singoli in revisione, Spazzapan in pausa. Il lettore Eventi `00024-vaz` serve il 100% del traffico con Udine e Trieste HTTP 200. Scheduler e policy invariati; pannello online non attivato e app Web/Android non rigenerate. Prima corsa ordinaria del nuovo job attesa il 20 novembre alle 04:00 UTC. [Verbale e limiti](docs/operations/EVENTS_JOB_DEPLOYMENT_20261119.md).
+
 **Eventi, recupero del job in QA il 19 novembre 2026.** Il ramo Eventi
 `codex/events-source-controls-20261115` corregge i lettori CSS Udine,
 Cinema Muto, MESS e SagreFVG, oltre al Verdi Trieste già preparato.

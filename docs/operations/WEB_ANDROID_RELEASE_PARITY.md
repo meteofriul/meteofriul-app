@@ -1,5 +1,7 @@
 # Allineamento della Web App con Android
 
+**Eventi, backend pubblico del 19 novembre 2026.** Le PR 48–51 sono integrate e la CI è verde. Job e lettore Eventi usano il digest `sha256:fcf3a81c...`; una corsa completa pubblica è riuscita e il lettore `00024-vaz` ha il 100% del traffico. L'endpoint usato dalle app Web e Android risponde HTTP 200 da Udine e Trieste con 14 fonti attive `fresh`/`partial` e Spazzapan in pausa. Non sono stati creati nuovi artefatti Web/Android né eseguite pubblicazioni applicative; il contratto API resta lo stesso. Il browser del telefono ha verificato *SDENG!* nel collaudo locale, non un APK né Safari. Prima corsa ordinaria del 20 novembre ancora da osservare. [Evidenza e limiti](EVENTS_JOB_DEPLOYMENT_20261119.md).
+
 **Eventi, job QA del 19 novembre 2026.** La
 [PR 48](https://github.com/meteofriul/meteofriul-app/pull/48) ha CI verde;
 il worker da commit `eb9fbfcb` ha completato un ciclo cloud su catalogo
