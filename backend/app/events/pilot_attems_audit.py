@@ -91,7 +91,7 @@ def _fetch(url: str) -> bytes:
 
 
 def _page_id(path: str) -> int:
-    match = re.fullmatch(r"/(?:it/)?[a-z0-9-]+-(\d+)", path or "")
+    match = re.fullmatch(r"/(?:it/)?(?:[a-z0-9-]+-\d+/)*[a-z0-9-]+-(\d+)", path or "")
     if not match:
         raise ValueError("unexpected Palazzo Attems detail path")
     return int(match.group(1))
