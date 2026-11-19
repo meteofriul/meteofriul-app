@@ -1,5 +1,7 @@
 # Stato release 0.1.15 e lavoro salvato — aggiornamento sorgenti del 24 ottobre 2026
 
+**Eventi, servizio pubblico aggiornato il 19 novembre 2026.** Le PR 48–51 sono in `main`, con CI PR/main verdi. Job `meteofriul-events-refresh` generazione 48 e lettore `meteofriul-events-00024-vaz` al 100% usano il digest `sha256:fcf3a81c...`; la corsa pubblica completa `...-c79k5` è riuscita, catalogo generazione `1795112372655876`, 14 fonti attive `fresh`/`partial`, Spazzapan in pausa. API pubblica da Udine e Trieste HTTP 200. Scheduler, policy, pannello online, versione 0.1.15, AAB e artefatti Web/Android invariati. La prima corsa ordinaria del 20 novembre alle 04:00 UTC resta da verificare. [Evidenza e limiti](EVENTS_JOB_DEPLOYMENT_20261119.md).
+
 **Eventi, prova job QA del 19 novembre 2026.** Il commit `eb9fbfcb`
 della [PR 48](https://github.com/meteofriul/meteofriul-app/pull/48)
 ha superato CI e job cloud isolato; il catalogo QA contiene 14 fonti
