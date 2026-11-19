@@ -6,8 +6,9 @@ ha superato CI e job cloud isolato; il catalogo QA contiene 14 fonti
 attive verificate o parziali con i casi incerti in revisione. Il lettore
 QA serve il catalogo con 0% del traffico. [Dettagli e controlli aperti](EVENTS_JOB_RECOVERY_20261119.md).
 Il job ordinario, il lettore pubblico, il pannello online, la versione
-0.1.15, l'AAB e la Web App pubblicata restano invariati. Prova su telefono
-ancora aperta.
+0.1.15, l'AAB e la Web App pubblicata restano invariati. Nel browser del
+telefono il proprietario ha confermato le due repliche *SDENG!* nella
+scheda unica, sede e Indicazioni; il collaudo non riguarda un APK.
 
 **Eventi, 19 novembre 2026.** Pausa di Galleria Spazzapan registrata nel
 controllo online (revisione 1), senza effetto ancora sul job o sul lettore

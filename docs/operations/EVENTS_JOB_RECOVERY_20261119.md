@@ -114,9 +114,17 @@ ottenere un esito verde.
 
 ## Verifiche ancora aperte
 
-L'anteprima locale dell'app usa il lettore QA ed è pronta per il controllo
-nel browser del telefono. La prova reale di scheda e dettaglio è ancora
-aperta. Soltanto dopo si può promuovere la PR e valutare l'aggiornamento
-del job ordinario e del lettore pubblico; i nuovi comandi Eventi nel pannello
-online restano non attivati. La prima corsa ordinaria dopo un eventuale
-deploy resta una verifica distinta da quella QA.
+L'anteprima locale dell'app usa il lettore QA. Il 19 novembre il proprietario
+l'ha provata nel browser del telefono con Udine selezionata: la scheda unica
+di *SDENG!* raccoglie correttamente le repliche delle 15:00 e delle 17:00;
+nel dettaglio sono leggibili entrambe, la sede Teatro Palamostre, Sala
+Carmelo Bene, e il pulsante Indicazioni apre la destinazione corretta. Il
+raggio dell'esperienza corrente è fisso a 20 km; il primo suggerimento di
+impostarlo a 5 km era errato e non fa parte del collaudo. La prova conferma
+questo percorso Web su Android, non un APK o Safari.
+
+La PR può essere promossa dopo la CI; l'aggiornamento del job ordinario e
+del lettore pubblico richiede ancora il confronto delle configurazioni e
+una prova del digest combinato con il ramo monitor. I nuovi comandi Eventi
+nel pannello online restano non attivati. La prima corsa ordinaria dopo un
+eventuale deploy resta una verifica distinta da quella QA.

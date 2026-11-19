@@ -6,9 +6,10 @@ Cinema Muto, MESS e SagreFVG, oltre al Verdi Trieste già preparato.
 Il job cloud isolato è riuscito: 14 fonti attive verificate o con casi
 esplicitamente in revisione; Spazzapan in pausa. La
 [CI della PR 48](https://github.com/meteofriul/meteofriul-app/actions/runs/44567292574)
-è verde. Il job e il lettore pubblici, il pannello online e l'app
-distribuita non sono cambiati; resta la prova sul telefono prima della
-promozione. [Esiti e limiti](docs/operations/EVENTS_JOB_RECOVERY_20261119.md).
+è verde. Il browser del telefono ha confermato la scheda *SDENG!* con
+entrambe le repliche, sede e Indicazioni. Il job e il lettore pubblici,
+il pannello online e l'app distribuita non sono cambiati.
+[Esiti e limiti](docs/operations/EVENTS_JOB_RECOVERY_20261119.md).
 
 **Eventi, 19 novembre 2026.** Registrata online la pausa motivata di
 Galleria Spazzapan (revisione controlli 1); il job e il lettore pubblici non

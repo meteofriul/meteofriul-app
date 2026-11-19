@@ -5,9 +5,9 @@
 il worker da commit `eb9fbfcb` ha completato un ciclo cloud su catalogo
 separato. Il lettore QA con lo stesso digest ha 0% del traffico e mostra
 Verdi Trieste e CSS Udine recuperati, con Spazzapan in pausa. Il catalogo
-pubblico e gli artefatti Web/Android non sono cambiati. La verifica nel
-browser del telefono resta aperta prima di promuovere il backend;
-nessuna nuova qualifica Safari o Android è dedotta dalla prova QA.
+pubblico e gli artefatti Web/Android non sono cambiati. Il browser del
+telefono Android ha confermato la scheda *SDENG!* con entrambe le repliche,
+sede e Indicazioni; la prova non qualifica un APK o Safari.
 [Evidenza](EVENTS_JOB_RECOVERY_20261119.md).
 
 **Eventi, 19 novembre 2026.** Il controllo online ha Spazzapan in pausa
