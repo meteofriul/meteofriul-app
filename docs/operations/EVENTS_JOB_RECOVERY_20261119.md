@@ -80,7 +80,9 @@ Il job temporaneo **senza pianificazione**
 `meteofriul-events-job-qa-20261119` ha usato il solo catalogo
 `pilot/events/qa/job-recovery-20261119/catalog.json`. L'esecuzione
 `...-ztwms` è riuscita in 5 minuti e 54 secondi il 19 novembre; catalogo QA
-generazione `1795106254080118`, revisione controlli 1. Le 14 fonti attive
+generazione `1795106254080118`, revisione controlli 1. Il job QA temporaneo
+è stato eliminato dopo il collaudo; catalogo, log e tag del lettore QA restano
+consultabili. Le 14 fonti attive
 sono `fresh` o `partial`, con 1.879 schede di fonte: TurismoFVG 1.651,
 CSS Udine 130, Verdi Trieste 56, MESS 10 e SagreFVG 6. I casi non certi
 restano in revisione e Spazzapan è in pausa. Il catalogo pubblico ha
