@@ -1,5 +1,14 @@
 # Stato release 0.1.15 e lavoro salvato — aggiornamento sorgenti del 24 ottobre 2026
 
+**Notifiche, job mattutino e serale aggiornati il 19 novembre 2026.**
+[PR 53](https://github.com/meteofriul/meteofriul-app/pull/53) e CI PR/main
+verdi. Un cambio di comune durante il controllo finale resta senza invio,
+ma viene contato come `location_changed` senza uscita di errore del job.
+Entrambi i job Cloud Run sono pronti con il digest `sha256:3811ae86...`;
+configurazione e Scheduler invariati. Prima corsa ordinaria ancora aperta.
+[Evidenza e limiti](FORECAST_LOCATION_CHANGE_NONFAILURE_20261119.md).
+Versione 0.1.15, AAB, Web/Android, pannello e policy invariati.
+
 **Eventi, servizio pubblico aggiornato il 19 novembre 2026.** Le PR 48–51 sono in `main`, con CI PR/main verdi. Job `meteofriul-events-refresh` generazione 48 e lettore `meteofriul-events-00024-vaz` al 100% usano il digest `sha256:fcf3a81c...`; la corsa pubblica completa `...-c79k5` è riuscita, catalogo generazione `1795112372655876`, 14 fonti attive `fresh`/`partial`, Spazzapan in pausa. API pubblica da Udine e Trieste HTTP 200. Scheduler, policy, pannello online, versione 0.1.15, AAB e artefatti Web/Android invariati. La prima corsa ordinaria del 20 novembre alle 04:00 UTC resta da verificare. [Evidenza e limiti](EVENTS_JOB_DEPLOYMENT_20261119.md).
 
 **Eventi, prova job QA del 19 novembre 2026.** Il commit `eb9fbfcb`

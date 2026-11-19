@@ -1,5 +1,15 @@
 # Meteo Friûl
 
+**Notifiche, cambio di posizione durante l'invio — 19 novembre 2026.**
+[PR 53](https://github.com/meteofriul/meteofriul-app/pull/53) integrata in
+`main` (`05030561`), CI PR/main verdi. Se il comune cambia durante il controllo
+finale, la notifica viene saltata e contata come `location_changed`, senza
+far fallire il job; gli errori reali restano errori. I job mattutino e serale
+usano il digest `sha256:3811ae86...`, con configurazione e Scheduler invariati.
+Prima corsa ordinaria con il nuovo codice ancora da osservare.
+[Provenienza, prove e limiti](docs/operations/FORECAST_LOCATION_CHANGE_NONFAILURE_20261119.md).
+App Web/Android e policy di allarme invariate.
+
 **Eventi, servizio recuperato il 19 novembre 2026.** [PR 48](https://github.com/meteofriul/meteofriul-app/pull/48), [49](https://github.com/meteofriul/meteofriul-app/pull/49), [50](https://github.com/meteofriul/meteofriul-app/pull/50) e [51](https://github.com/meteofriul/meteofriul-app/pull/51) integrate in `main`, CI verdi. Il job pubblico usa il digest `sha256:fcf3a81c...` e una corsa completa è riuscita: 14 fonti attive verificate o parziali con casi singoli in revisione, Spazzapan in pausa. Il lettore Eventi `00024-vaz` serve il 100% del traffico con Udine e Trieste HTTP 200. Scheduler e policy invariati; pannello online non attivato e app Web/Android non rigenerate. Prima corsa ordinaria del nuovo job attesa il 20 novembre alle 04:00 UTC. [Verbale e limiti](docs/operations/EVENTS_JOB_DEPLOYMENT_20261119.md).
 
 **Eventi, recupero del job in QA il 19 novembre 2026.** Il ramo Eventi
