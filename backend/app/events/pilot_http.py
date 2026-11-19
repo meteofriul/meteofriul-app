@@ -80,11 +80,17 @@ def application(environ, start_response):
                     data = json.dumps(payload).encode('utf-8')
                     start_response(status, headers)
                     return [data]
-                payload['source_status'] = {name: batch['status'] for name, batch in visible_catalog['sources'].items()}
+                payload['source_status'] = {
+                    name: batch['status'] for name, batch in visible_catalog['sources'].items()
+                    if name not in paused}
+                payload['paused_sources'] = sorted(paused)
                 payload['source_updated_at'] = {
-                    name: batch.get('updated_at') for name, batch in catalog['sources'].items()}
+                    name: batch.get('updated_at') for name, batch in catalog['sources'].items()
+                    if name not in paused}
                 payload['source_failure_tags'] = {}
                 for name, batch in visible_catalog['sources'].items():
+                    if name in paused:
+                        continue
                     if batch['status'] in {'fresh', 'partial'}:
                         tag = source_age_failure(batch, now=now) or (
                             'quarantined_cards' if batch['status'] == 'partial' else None)
