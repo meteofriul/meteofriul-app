@@ -53,3 +53,22 @@ verifica della nuova immagine del job e delle schede nel client Web/Android.
 Il job, il lettore e le policy di monitoraggio non sono stati cambiati in
 questa verifica. Gli allarmi Eventi possono continuare per Barcolana e
 Le Giornate del Cinema Muto anche dopo la pausa di Spazzapan.
+
+## Allarme operativo
+
+La policy online `projects/meteo-friul/alertPolicies/13483592592255950505`
+è attiva: una condizione metrica segnala almeno un'esecuzione fallita del job
+nelle ultime due ore a un canale email, con sola notifica di apertura. Il
+messaggio è quindi generico. Il worker registra già nel log
+`event_source_verification` lo stato di ogni fonte e nell'errore finale i
+nomi delle fonti incomplete; la condizione metrica non incorpora quei campi
+nella mail. Una modifica del solo testo statico della policy non risolverebbe
+il problema.
+
+La correzione dell'avviso richiede un flusso separato: un riepilogo strutturato
+dei nomi dopo il salvataggio del catalogo e una notifica che estragga tali
+nomi dal log. Va mantenuta una copertura distinta per i crash che avvengono
+prima del riepilogo e va evitata una doppia email per lo stesso fallimento.
+Preparare e collaudare questa modifica dopo l'attivazione dei controlli per
+fonte, su un ramo di monitoraggio dedicato; la policy online non è stata
+modificata oggi.
