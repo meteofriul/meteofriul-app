@@ -46,9 +46,15 @@ combinata e la CI della PR 48 sono documentate in
 [EVENTS_SOURCE_CONTROLS_20261115.md](EVENTS_SOURCE_CONTROLS_20261115.md).
 Il pannello online non contiene ancora i comandi Eventi del ramo della
 [PR pannello 2](https://github.com/meteofriul/meteofriul-inserzioni/pull/2).
-L'accesso e una scrittura tramite login del titolare restano da collaudare.
+Il 19 novembre il titolare ha aperto l'anteprima locale del ramo pannello,
+ha effettuato l'accesso con l'account amministrativo e ha confermato che
+`Galleria Spazzapan` compare `In pausa`. L'API amministrativa ha restituito
+15 fonti; il pulsante `Aggiorna` era abilitato dopo l'accesso. Questo prova
+la lettura autenticata del file di controllo, non una scrittura né il
+comportamento del job e del lettore pubblici. La prova di scrittura tramite
+pannello resta aperta.
 
-Prima di promuovere il lettore pubblico: collaudo autenticato nel pannello,
+Prima di promuovere il lettore pubblico: collaudo di scrittura autenticata nel pannello,
 verifica della nuova immagine del job e delle schede nel client Web/Android.
 Il job, il lettore e le policy di monitoraggio non sono stati cambiati in
 questa verifica. Gli allarmi Eventi possono continuare per Barcolana e
