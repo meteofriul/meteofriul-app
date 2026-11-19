@@ -117,6 +117,6 @@ ottenere un esito verde.
 L'anteprima locale dell'app usa il lettore QA ed è pronta per il controllo
 nel browser del telefono. La prova reale di scheda e dettaglio è ancora
 aperta. Soltanto dopo si può promuovere la PR e valutare l'aggiornamento
-del job ordinario e del lettore pubblico; il pannello online resta
-disattivato. La prima corsa ordinaria dopo un eventuale deploy resta una
-verifica distinta da quella QA.
+del job ordinario e del lettore pubblico; i nuovi comandi Eventi nel pannello
+online restano non attivati. La prima corsa ordinaria dopo un eventuale
+deploy resta una verifica distinta da quella QA.
