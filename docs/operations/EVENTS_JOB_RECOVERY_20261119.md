@@ -102,7 +102,13 @@ La [CI della PR 48](https://github.com/meteofriul/meteofriul-app/actions/runs/44
 I monitor accessori hanno segnalato Palazzo Attems `unverified`
 (`ConnectTimeout`) e GiroFVG `unverified` (`ValueError`) nel log QA. Non
 producono schede e il job ha riportato la loro incertezza senza dichiararli
-verificati. Restano da diagnosticare nel flusso monitor Eventi.
+verificati. La lettura locale successiva ha precisato le cause: Attems
+pubblica ora [pagine annidate](https://palazzoattems.regione.fvg.it/it/italia-settanta-165450/design-176458)
+che il parser degli ID non riconosce; GiroFVG ha oltre 30 voci recenti di
+sitemap cambiate rispetto alla base revisionata. Questi due controlli
+richiedono un lavoro monitor Eventi separato, con revisione della base
+GiroFVG prima di modificare la soglia. Non abbassare i controlli per
+ottenere un esito verde.
 
 ## Verifiche ancora aperte
 
