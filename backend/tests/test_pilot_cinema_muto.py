@@ -47,10 +47,10 @@ def daily(day, *, extra="", venue=""):
 
 
 class FakeResponse:
-    status_code = 200
-
-    def __init__(self, body):
+    def __init__(self, body, *, status_code=200, location=None):
         self.body = body.encode('utf-8')
+        self.status_code = status_code
+        self.headers = {'Location': location} if location else {}
 
     def __enter__(self):
         return self
@@ -124,6 +124,39 @@ class CinemaMutoTests(unittest.TestCase):
         self.assertEqual(card['programme_end_date'], '2027-10-06')
         self.assertEqual(len(card['programme_sessions']), 4)
         self.assertEqual(card['image'], batch['events'][0]['image'])
+
+    def test_official_italian_redirect_and_sitemap_paths(self):
+        days, pages, _, _ = self.fixture()
+        italian_home = HOME + 'it/'
+        italian_sitemap = italian_home + 'page-sitemap.xml'
+        italian_pages = {
+            italian_home: pages[HOME],
+            italian_sitemap: sitemap(days).replace(HOME, italian_home),
+            **{italian_home + f'calendario-{day:%d%m%y}/': pages[calendar_url(day)]
+               for day in days},
+        }
+        calls = []
+
+        def get(url, **_):
+            calls.append(url)
+            if url in (HOME, SITEMAP):
+                target = italian_home if url == HOME else italian_sitemap
+                return FakeResponse('', status_code=302, location=target)
+            return FakeResponse(italian_pages[url])
+
+        batch = collect_cinema_muto(get=get)
+        self.assertEqual(len(batch['events']), 5)
+        self.assertEqual(batch['verification']['sitemap_page_count'], 5)
+        gated = gate_batch('Le Giornate del Cinema Muto', batch, today=days[1])
+        self.assertEqual(gated['status'], 'ok')
+        self.assertEqual(calls[:4], [HOME, italian_home, SITEMAP, italian_sitemap])
+        self.assertEqual(calls[4:], [italian_home + f'calendario-{day:%d%m%y}/'
+                                     for day in days])
+
+    def test_foreign_calendar_redirect_is_rejected(self):
+        with self.assertRaisesRegex(ValueError, 'unexpected calendar redirect'):
+            collect_cinema_muto(get=lambda *_args, **_kwargs: FakeResponse(
+                '', status_code=302, location='https://elsewhere.example/it/'))
 
     def test_cover_requires_the_official_current_edition_image(self):
         valid = f'{HOME}wp-content/uploads/2026/08/COVER-YouTube-GCM2026.jpg'

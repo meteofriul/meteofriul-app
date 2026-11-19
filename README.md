@@ -1,5 +1,38 @@
 # Meteo Friûl
 
+**Eventi, recupero del job in QA il 19 novembre 2026.** Il ramo Eventi
+`codex/events-source-controls-20261115` corregge i lettori CSS Udine,
+Cinema Muto, MESS e SagreFVG, oltre al Verdi Trieste già preparato.
+Il job cloud isolato è riuscito: 14 fonti attive verificate o con casi
+esplicitamente in revisione; Spazzapan in pausa. La
+[CI della PR 48](https://github.com/meteofriul/meteofriul-app/actions/runs/44567292574)
+è verde. Il browser del telefono ha confermato la scheda *SDENG!* con
+entrambe le repliche, sede e Indicazioni. Il job e il lettore pubblici,
+il pannello online e l'app distribuita non sono cambiati.
+[Esiti e limiti](docs/operations/EVENTS_JOB_RECOVERY_20261119.md).
+
+**Eventi, 19 novembre 2026.** Registrata online la pausa motivata di
+Galleria Spazzapan (revisione controlli 1); il job e il lettore pubblici non
+usano ancora il nuovo controllo. Il lettore XML corretto ha verificato 56
+schede di Teatro Verdi Trieste in sola lettura. CSS Udine resta bloccato dal
+confronto con cinque occorrenze future precedenti, presenti nelle pagine
+ufficiali ma assenti nella nuova raccolta. 60 test mirati PASS.
+[Decisione, prove e limiti](docs/operations/EVENTS_SOURCE_DECISION_20261119.md).
+
+**Eventi, comandi per fonte preparati il 15 novembre 2026.** Il ramo
+`codex/events-source-controls-20261115` aggiunge pausa motivata per singola
+fonte, verifica mirata tramite il job esistente e stato amministrativo per il
+pannello. [Stato e ordine di attivazione](docs/operations/EVENTS_SOURCE_CONTROLS_20261115.md).
+[PR 48](https://github.com/meteofriul/meteofriul-app/pull/48) in bozza,
+CI backend/frontend/Hosting PASS sul commit `aec1c806`. Il 15 novembre il
+worker, il lettore Eventi e l'API amministrativa sono stati provati in
+revisioni cloud isolate; il job QA temporaneo è stato rimosso. Il lettore QA
+recupera Teatro Verdi Trieste, mentre CSS Udine e Galleria Spazzapan restano
+da correggere. Il ramo non è integrato, il job ordinario e l'app pubblicata
+non sono cambiati.
+
+**Eventi, lettore XML Teatro Verdi Trieste preparato il 15 novembre 2026.** Il ramo `codex/events-xml-recovery-20261115` accetta la riga vuota iniziale delle sitemap ufficiali senza allentare gli altri controlli. Lettura reale in sola lettura: 59 eventi, gate di fonte superato anche contro il lotto online precedente; 77 test mirati PASS. [Prova e limiti](docs/operations/EVENTS_VERDI_TRIESTE_XML_RECOVERY_20261115.md). Il successivo collaudo cloud isolato è descritto nel verbale dei controlli Eventi; nessuna modifica all'app distribuita.
+
 **Notifiche, job mattutino aggiornato il 12 novembre 2026.** La frase tecnica sulle precipitazioni e stata ricondotta ai valori `null` ICON; il testo ora usa solo dati verificati e richiede copertura oraria sufficiente per la massima. [PR 46](https://github.com/meteofriul/meteofriul-app/pull/46) integrata in `main` `b939a177`, CI PR e main verdi. Il collaudo owner ha confermato ricezione e tap sul Bollettino; il job QA e stato rimosso. Il solo job ordinario `meteofriul-morning-forecast` usa ora il digest `sha256:6c2b64c8c52e3f613aea406214b54da955e38330862abcb95c30845ea1aa20c5`, con readback `ready=true` e scheduler invariato alle 07:30 Europe/Rome. [Audit, provenienza e verifica ordinaria ancora aperta](docs/operations/NOTIFICATIONS_ALERTS_AUDIT_20261111.md). Nessuna AAB o pubblicazione Web/Android, policy o sito modificati.
 
 **Sintesi mattutina, 7 novembre — backend distribuito.** Il job delle 07:30 ha scartato 19 gruppi ICON prima di FCM; [PR 44](https://github.com/meteofriul/meteofriul-app/pull/44) e CI PR/main verdi hanno corretto il testo per dati orari incompleti. Una prova mirata ha prodotto un solo invio confermato sul telefono; il job ordinario usa ora il nuovo digest, con orario e destinatari invariati. [Evidenze e verifica ordinaria ancora aperta](docs/operations/MORNING_SUMMARY_SOURCE_QUALITY_DEPLOY_20261107.md). Web e Android non rigenerati.

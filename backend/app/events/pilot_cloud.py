@@ -13,6 +13,7 @@ from .pilot_regional_checkpoint import decode_control
 from .pilot_regional_annual_watch import run_bounded_watch
 from .pilot_sources import source_adapters
 from .pilot_recovery import log_source_recovery
+from .source_controls import KEY as CONTROLS_KEY, paused_names, read_controls
 
 BUCKET = os.environ.get('EVENTS_DATA_BUCKET', 'meteofriul-pilot-20260906-data')
 KEY = os.environ.get('EVENTS_CATALOG_KEY', 'pilot/events/v1/catalog.json')
@@ -39,12 +40,14 @@ def _save_catalog(blob, generation, catalog):
                             if_generation_match=generation, timeout=30)
 
 
-def publish(client, *, project, adapters=None, retry_failed=False):
+def publish(client, *, project, adapters=None, retry_failed=False, source=None):
     started = time.monotonic()
     if project != PILOT_PROJECT or client.project != PILOT_PROJECT:
         raise ValueError('isolated events project required')
-    if adapters is not None and retry_failed:
+    if adapters is not None and (retry_failed or source):
         raise ValueError('explicit adapters cannot be combined with failed-source retry')
+    if source and retry_failed:
+        raise ValueError('single-source and failed-source retry are exclusive')
     blob = client.bucket(BUCKET).blob(KEY)
     from google.api_core.exceptions import NotFound
     try:
@@ -58,16 +61,23 @@ def publish(client, *, project, adapters=None, retry_failed=False):
     except NotFound:
         previous, generation = None, 0
     registered_adapters = source_adapters(project) if adapters is None else None
-    if retry_failed:
+    controls, _ = read_controls(client.bucket(BUCKET).blob(CONTROLS_KEY)) if adapters is None else (None, None)
+    paused = paused_names(controls, today=datetime.now(ZoneInfo('Europe/Rome')).date()) if controls else set()
+    if source:
+        if source not in registered_adapters:
+            raise ValueError('unknown registered source')
+        selected_adapters = {source: registered_adapters[source]}
+    elif retry_failed:
         failed = {name for name, batch in (previous or {}).get('sources', {}).items()
                   if isinstance(batch, dict)
                   and batch.get('status') not in {'fresh', 'partial'}}
         selected_adapters = {name: adapter for name, adapter in registered_adapters.items()
-                             if name in failed}
+                             if name in failed and name not in paused}
         if not selected_adapters:
             raise ValueError('no failed registered source to retry')
     else:
-        selected_adapters = adapters if adapters is not None else registered_adapters
+        selected_adapters = adapters if adapters is not None else {
+            name: adapter for name, adapter in registered_adapters.items() if name not in paused}
     if adapters is None:
         from .pilot_regional_verified import collect_regional_window_verified
         checkpoint = ((previous or {}).get('sources', {}).get('TurismoFVG', {})
@@ -87,7 +97,7 @@ def publish(client, *, project, adapters=None, retry_failed=False):
                 previous_batch=(previous or {}).get('sources', {}).get('Pordenonelegge'))
     source_timeouts = {name: budget for name, budget in
                        (("TurismoFVG", 360), ("Paesi in Festa", 90),
-                        ("SagreFVG", 60), ("Pordenonelegge", 20),
+                        ("SagreFVG", 75), ("Pordenonelegge", 20),
                         ("Pordenone Pensa", 25),
                         ("Le Giornate del Cinema Muto", 30),
                         ("Azalea", 20), ("CSS Udine", 20),
@@ -103,6 +113,9 @@ def publish(client, *, project, adapters=None, retry_failed=False):
     catalog = collect(project, selected_adapters, previous,
                       datetime.now(timezone.utc).isoformat(), timeout=55,
                       source_timeouts=source_timeouts)
+    if controls is not None:
+        catalog['source_controls_revision'] = controls['revision']
+        catalog['paused_sources'] = sorted(paused)
     # A source-only retry does not claim to have rerun the inventory monitors.
     catalog['monitors'] = dict((previous or {}).get('monitors') or {})
     # Retire old diagnostic entries even when this run only retries sources.
@@ -149,7 +162,7 @@ def publish(client, *, project, adapters=None, retry_failed=False):
         raise RuntimeError('event source verification failed: ' + ', '.join(sorted(incomplete)))
     watch_failures = []
     candidate_watch_alerts = []
-    if adapters is None and not retry_failed:
+    if adapters is None and not retry_failed and not source:
         monitored_at = catalog.get('attempted_at') or datetime.now(timezone.utc).isoformat()
         monitor_status = {}
         try:
@@ -208,7 +221,7 @@ def publish(client, *, project, adapters=None, retry_failed=False):
         annual_name = 'TurismoFVG annual inventory'
         previous_annual = ((previous or {}).get('monitors') or {}).get(annual_name)
         local_today = datetime.now(ZoneInfo('Europe/Rome')).date()
-        if annual_watch_due(local_today, previous_annual):
+        if 'TurismoFVG' not in paused and annual_watch_due(local_today, previous_annual):
             try:
                 if time.monotonic() - started >= 600:
                     raise TimeoutError('insufficient remaining job budget')
@@ -260,9 +273,11 @@ if __name__ == '__main__':
     actions = parser.add_mutually_exclusive_group()
     actions.add_argument('--retry-failed', action='store_true',
                          help='recollect only registered sources tagged as failed')
+    actions.add_argument('--source', help='recollect one registered source only')
     options = parser.parse_args()
     project = os.environ.get('GOOGLE_CLOUD_PROJECT')
     if project != PILOT_PROJECT:
         raise ValueError('isolated events project required')
     print(json.dumps(publish(storage.Client(project=project), project=project,
-                             retry_failed=options.retry_failed)))
+                             retry_failed=options.retry_failed,
+                             source=options.source)))
