@@ -115,6 +115,19 @@ class SourceRecoveryTests(unittest.TestCase):
         self.assertEqual(json.loads(output.call_args.args[0])['remaining_unavailable_sources'],
                          ['Azalea'])
 
+    def test_recovery_separates_intentionally_paused_source(self):
+        previous = self.prior_failure()
+        current = merge_collection(PILOT_PROJECT, previous, {
+            'Barcolana': {'status': 'ok', 'events': []}}, self.NEW)
+        current['sources']['Galleria Spazzapan'] = {
+            'status': 'stale', 'events': []}
+        current['paused_sources'] = ['Galleria Spazzapan']
+        with patch('builtins.print') as output:
+            log_source_recovery(previous, current, ['Barcolana'])
+        message = json.loads(output.call_args.args[0])
+        self.assertEqual(message['remaining_unavailable_sources'], [])
+        self.assertEqual(message['paused_sources'], ['Galleria Spazzapan'])
+
 
 class CloudPublicationTests(unittest.TestCase):
     def setUp(self):
@@ -187,7 +200,7 @@ class CloudPublicationTests(unittest.TestCase):
         self.assertEqual(collect.call_args.kwargs['timeout'], 55)
         self.assertEqual(collect.call_args.kwargs['source_timeouts'],
                          {'TurismoFVG': 360, 'Paesi in Festa': 90,
-                          'SagreFVG': 60, 'Pordenonelegge': 20,
+                          'SagreFVG': 75, 'Pordenonelegge': 20,
                           'Pordenone Pensa': 25,
                           'Le Giornate del Cinema Muto': 30,
                           'Azalea': 20, 'CSS Udine': 20,
@@ -197,7 +210,7 @@ class CloudPublicationTests(unittest.TestCase):
                           'Magazzino delle Idee': 30,
                           'MESS': 10, 'Galleria Spazzapan': 10,
                           'Barcolana': 35})
-        self.assertEqual(sum(collect.call_args.kwargs['source_timeouts'].values()), 860)
+        self.assertEqual(sum(collect.call_args.kwargs['source_timeouts'].values()), 875)
         blob.upload_from_string.assert_called_once()
         attems_audit.assert_called_once()
         attems_changes.assert_called_once_with(attems_audit.return_value)

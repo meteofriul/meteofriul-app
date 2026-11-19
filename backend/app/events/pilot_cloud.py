@@ -97,7 +97,7 @@ def publish(client, *, project, adapters=None, retry_failed=False, source=None):
                 previous_batch=(previous or {}).get('sources', {}).get('Pordenonelegge'))
     source_timeouts = {name: budget for name, budget in
                        (("TurismoFVG", 360), ("Paesi in Festa", 90),
-                        ("SagreFVG", 60), ("Pordenonelegge", 20),
+                        ("SagreFVG", 75), ("Pordenonelegge", 20),
                         ("Pordenone Pensa", 25),
                         ("Le Giornate del Cinema Muto", 30),
                         ("Azalea", 20), ("CSS Udine", 20),

@@ -83,6 +83,16 @@ class CSSAuditTests(unittest.TestCase):
                          {'Cervignano del Friuli'})
         self.assertTrue(all('time' not in event for event in events))
 
+    def test_official_double_performance_keeps_both_hours(self):
+        html = ('<h1>SDENG!</h1><p class="venue">Udine | Teatro Palamostre'
+                '<span>22 novembre 2026<br />doppia replica ore 15 e ore 17</span></p>')
+        events = parse_css(html, URL, today=date(2026, 11, 19))
+        self.assertEqual([(event['start_date'], event['time']) for event in events],
+                         [('2026-11-22', '15:00'), ('2026-11-22', '17:00')])
+        with self.assertRaisesRegex(ValueError, 'ambiguous double performance'):
+            parse_css(html.replace('ore 15 e ore 17', 'ore 17 e ore 15'),
+                      URL, today=date(2026, 11, 19))
+
     def test_cross_month_and_season_year_are_explicitly_bounded(self):
         cross = '<h1>Prova</h1><p class="venue">Udine | Teatro<span>30 novembre - 1-2 dicembre 2026</span></p>'
         self.assertEqual([event['start_date'] for event in parse_css(
@@ -169,6 +179,39 @@ class CSSAuditTests(unittest.TestCase):
         failed = gate_batch('CSS Udine', good, today=date(2026, 10, 7),
                             previous_batch={'events': [prior]})
         self.assertEqual(failed['error_type'], 'source_verification_failed')
+
+    def test_single_official_date_change_removes_old_date(self):
+        previous = fixture()
+        card = CARD.replace('9 e 10 ottobre 2026 ore 20:30', '10 ottobre 2026')
+        detail = DETAIL.replace('9 e 10 ottobre 2026 ore 20:30', '10 ottobre 2026')
+        pages = {BASE + path: card for path in SEASON_PATHS}
+        pages[URL] = detail
+        current = collect_css(get=lambda url, **_: Response(pages[url]),
+                              today=date(2026, 10, 7))
+        self.assertEqual([event['start_date'] for event in current['events']],
+                         ['2026-10-10'])
+        self.assertEqual(gate_batch('CSS Udine', current, today=date(2026, 10, 7),
+                                    previous_batch=previous)['status'], 'ok')
+        uncertain = copy.deepcopy(current)
+        uncertain['verification']['listing_records'][0]['schedule'] = '9-10 ottobre 2026'
+        self.assertEqual(gate_batch('CSS Udine', uncertain, today=date(2026, 10, 7),
+                                    previous_batch=previous)['status'], 'error')
+
+    def test_renamed_official_page_keeps_same_performances(self):
+        previous = fixture()
+        renamed = URL.replace('/123/prova', '/123/nuova-prova')
+        card = CARD.replace('/123/prova', '/123/nuova-prova').replace('>Prova</a>', '>Nuova prova</a>')
+        detail = DETAIL.replace('<h1>Prova</h1>', '<h1>Nuova prova</h1>')
+        pages = {BASE + path: card for path in SEASON_PATHS}
+        pages[renamed] = detail
+        current = collect_css(get=lambda url, **_: Response(pages[url]),
+                              today=date(2026, 10, 7))
+        self.assertEqual(gate_batch('CSS Udine', current, today=date(2026, 10, 7),
+                                    previous_batch=previous)['status'], 'ok')
+        wrong_venue = copy.deepcopy(previous)
+        wrong_venue['events'][0]['venue'] = 'Teatro diverso'
+        self.assertEqual(gate_batch('CSS Udine', current, today=date(2026, 10, 7),
+                                    previous_batch=wrong_venue)['status'], 'error')
 
 
 if __name__ == '__main__':

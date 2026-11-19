@@ -314,6 +314,7 @@ def parse_news(category, regional_details, *, today):
     if not set(REVIEWED_NEWS_2026) <= set(by_id):
         raise ValueError('reviewed MESS news disappeared')
     changed_active = set()
+    inventory_reviews = []
     for article in articles:
         try:
             published = date.fromisoformat(str(article['published_date'])[:10])
@@ -325,11 +326,23 @@ def parse_news(category, regional_details, *, today):
                 if article['id'] in REVIEWED_ACTIVE_NEWS:
                     changed_active.add(article['id'])
                 else:
-                    raise ValueError('new or changed MESS news requires date review')
+                    path = article.get('full_url')
+                    if (article.get('published') is not True
+                            or not isinstance(path, str)
+                            or not re.fullmatch(r'/not-\d+(?:/no-\d+)?', path)):
+                        raise ValueError('untrusted MESS news identity')
+                    inventory_reviews.append({
+                        'url': BASE + '/it' + path,
+                        'source_id': f"mess-news-{article['id']}",
+                        'reason': 'news_inventory_requires_review',
+                        'detail': 'new or changed news requires date review',
+                    })
         elif ((published.year < 2026 and modified.year >= 2026
                and REVIEWED_HISTORICAL_UPDATES.get(article['id']) != article['modified'])
               or published.year > 2026):
             raise ValueError('unreviewed MESS news edition')
+    if len(inventory_reviews) > 10:
+        raise ValueError('MESS news review inventory exceeded')
     events = []
     review_required = []
     for article_id, proof in REVIEWED_ACTIVE_NEWS.items():
@@ -400,7 +413,9 @@ def parse_news(category, regional_details, *, today):
                     'reviewed_2026_news': len(REVIEWED_NEWS_2026),
                     'corroborated_exhibitions': len(events),
                     'unresolved_news': len(review_required),
-                    'news_review_required': review_required}
+                    'unreviewed_news_ids': sorted(int(item['source_id'].split('-')[-1])
+                                                  for item in inventory_reviews),
+                    'news_review_required': review_required + inventory_reviews}
 
 
 def collect_mess(*, get=requests.get, today=None):
