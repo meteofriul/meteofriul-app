@@ -1,5 +1,14 @@
 # Allineamento della Web App con Android
 
+**Verifica backend del 20–22 novembre 2026.** Le sintesi mattutine sono state
+inviate; le tre anticipazioni serali non sono state inviate perché la fonte
+ICON non superava il controllo dei dati. L'API Eventi pubblica risponde
+HTTP 200 ma segnala `degraded`: Azalea e Barcolana `stale` sono escluse
+dagli eventi visibili. [Evidenza e limiti](OPERATIONAL_JOBS_CHECK_20261122.md).
+Nessun contratto client, artefatto Web/Android o pubblicazione applicativa
+e cambiato durante l'audit; la parita visiva e su dispositivo non e stata
+riesaminata in questa verifica dei job.
+
 **Notifiche, 19 novembre 2026 — aggiornati solo i job backend mattutino e
 serale.** Il cambio di comune durante il claim ora risulta invio saltato,
 senza errore del job. [PR 53](https://github.com/meteofriul/meteofriul-app/pull/53)
