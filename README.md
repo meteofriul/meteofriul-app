@@ -1,5 +1,13 @@
 # Meteo Friûl
 
+**Controllo operativo 20–22 novembre 2026.** Tre corse mattutine riuscite
+(66/67/66 invii, zero errori e zero `location_changed`); tre corse serali
+fallite prima dell'invio per dati ICON del giorno successivo insufficienti.
+Eventi: corsa del 20 riuscita, 21–22 fallite per timeout di alcune fonti;
+Azalea e Barcolana risultano `stale` ed escluse dagli eventi visibili, mentre
+l'API resta HTTP 200 in stato `degraded`. Nessuna risorsa modificata
+dall'audit. [Prove, limiti e interventi consigliati](docs/operations/OPERATIONAL_JOBS_CHECK_20261122.md).
+
 **Notifiche, cambio di posizione durante l'invio — 19 novembre 2026.**
 [PR 53](https://github.com/meteofriul/meteofriul-app/pull/53) integrata in
 `main` (`05030561`), CI PR/main verdi. Se il comune cambia durante il controllo

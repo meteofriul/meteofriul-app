@@ -1,5 +1,12 @@
 # Stato release 0.1.15 e lavoro salvato — aggiornamento sorgenti del 24 ottobre 2026
 
+**Verifica dei job del 20–22 novembre 2026.** Mattino: tre corse riuscite,
+zero `location_changed` reali. Sera: tre corse fallite senza invii perché
+nessun gruppo superava la verifica dei dati ICON di domani. Eventi: dopo il
+successo del 20, fallimenti del 21–22 per timeout di fonti; Azalea e
+Barcolana `stale` ed escluse dall'API visibile. [Audit e prossime verifiche](OPERATIONAL_JOBS_CHECK_20261122.md).
+Nessun nuovo deploy, pacchetto o cambiamento di versione in questo audit.
+
 **Notifiche, job mattutino e serale aggiornati il 19 novembre 2026.**
 [PR 53](https://github.com/meteofriul/meteofriul-app/pull/53) e CI PR/main
 verdi. Un cambio di comune durante il controllo finale resta senza invio,
