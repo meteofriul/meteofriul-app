@@ -1,5 +1,11 @@
 # Allineamento della Web App con Android
 
+**API amministrativa operativa, preparata il 22 novembre 2026.** La
+[PR 56](https://github.com/meteofriul/meteofriul-app/pull/56) legge log e
+catalogo Eventi per il solo pannello. Il frontend dell'app e i suoi endpoint
+pubblici non cambiano; non sono stati prodotti o pubblicati nuovi artefatti
+Web/Android e non è stata eseguita una nuova prova Safari o su telefono.
+
 **Verifica backend del 20–22 novembre 2026.** Le sintesi mattutine sono state
 inviate; le tre anticipazioni serali non sono state inviate perché la fonte
 ICON non superava il controllo dei dati. L'API Eventi pubblica risponde
