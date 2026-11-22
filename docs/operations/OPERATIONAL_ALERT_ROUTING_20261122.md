@@ -24,7 +24,8 @@ alla sezione Eventi. Non sono stati aggiunti job o pianificazioni.
 
 - Backend: 2105 test superati e uno saltato con `lxml 6.1.0`, più `compileall`.
   CI della [PR 56](https://github.com/meteofriul/meteofriul-app/pull/56):
-  backend, frontend e Hosting preview superati sul commit `1ca91fe6`.
+  backend, frontend e Hosting preview superati sul commit finale `be918018`.
+  PR integrata in `main` con `4cab51b2`; CI `main` 45074052090 superata.
 - I riepiloghi reali serali del 20, 21 e 22 novembre contengono data locale,
   `status=failed`, zero invii e 26/24/24 errori. Il catalogo del 22 novembre
   contiene Azalea e Barcolana `stale`, Spazzapan in pausa; Palazzo Attems e

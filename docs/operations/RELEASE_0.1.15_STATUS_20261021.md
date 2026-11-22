@@ -1,9 +1,10 @@
 # Stato release 0.1.15 e lavoro salvato — aggiornamento sorgenti del 24 ottobre 2026
 
 **Pannello operativo e email, 22 novembre 2026.** La
-[PR 56](https://github.com/meteofriul/meteofriul-app/pull/56) prepara un
-lettore amministrativo senza invii né scritture: 2105 test backend e CI PR
-verdi. Il servizio isolato `ops-panel-v1` legge i dati reali; il pannello
+[PR 56](https://github.com/meteofriul/meteofriul-app/pull/56), integrata in
+`main` con `4cab51b2`, aggiunge un lettore amministrativo senza invii né
+scritture: 2105 test backend e CI PR/`main` verdi. Il servizio isolato
+`ops-panel-v1` legge i dati reali; il pannello
 online autenticato mostra 2 problemi e apre Fonti Eventi. Quattro policy
 duplicate restano attive ma non inviano più email; le policy di assenza
 prolungata e delle allerte ufficiali mantengono l'email. Versione 0.1.15,
