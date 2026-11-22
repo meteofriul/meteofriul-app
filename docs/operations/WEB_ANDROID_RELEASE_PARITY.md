@@ -1,7 +1,8 @@
 # Allineamento della Web App con Android
 
 **API amministrativa operativa, 22 novembre 2026.** La
-[PR 56](https://github.com/meteofriul/meteofriul-app/pull/56) legge log e
+[PR 56](https://github.com/meteofriul/meteofriul-app/pull/56), integrata in
+`main` con `4cab51b2` e CI `main` verde, legge log e
 catalogo Eventi per il solo pannello; la revisione con tag `ops-panel-v1` ha
 zero traffico app. Il pannello online è stato provato con login e viewport
 360 px. Il frontend dell'app e i suoi endpoint pubblici non cambiano: nessun

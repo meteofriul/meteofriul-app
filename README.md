@@ -1,7 +1,8 @@
 # Meteo Friûl
 
 **Stato operativo del pannello, 22 novembre 2026.** La
-[PR 56](https://github.com/meteofriul/meteofriul-app/pull/56) aggiunge un'API
+[PR 56](https://github.com/meteofriul/meteofriul-app/pull/56), integrata in
+`main` con `4cab51b2` e CI `main` verde, aggiunge un'API
 amministrativa in sola lettura che riassume le corse mattutine/serali e le
 fonti Eventi. Il digest `sha256:82877df0…` è distribuito sul solo tag API
 `ops-panel-v1` a zero traffico app; il pannello online autenticato mostra 2
