@@ -1,5 +1,15 @@
 # Meteo Friûl
 
+**Stato operativo del pannello, 22 novembre 2026.** La
+[PR 56](https://github.com/meteofriul/meteofriul-app/pull/56) aggiunge un'API
+amministrativa in sola lettura che riassume le corse mattutine/serali e le
+fonti Eventi. Il digest `sha256:82877df0…` è distribuito sul solo tag API
+`ops-panel-v1` a zero traffico app; il pannello online autenticato mostra 2
+problemi e le revisioni editoriali separate. Quattro policy di singola corsa
+o revisione sono rimaste attive ma senza email; le email «senza successi» e
+quelle per le allerte ufficiali restano attive. App Web/Android, job e
+Scheduler invariati. [Prove, policy e limite residuo Eventi](docs/operations/OPERATIONAL_ALERT_ROUTING_20261122.md).
+
 **Controllo operativo 20–22 novembre 2026.** Tre corse mattutine riuscite
 (66/67/66 invii, zero errori e zero `location_changed`); tre corse serali
 fallite prima dell'invio per dati ICON del giorno successivo insufficienti.
