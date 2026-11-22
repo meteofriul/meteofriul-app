@@ -1,12 +1,15 @@
 # Stato release 0.1.15 e lavoro salvato — aggiornamento sorgenti del 24 ottobre 2026
 
-**Pannello operativo, sorgente preparato il 22 novembre 2026.** La
-[PR 56](https://github.com/meteofriul/meteofriul-app/pull/56) propone un
-lettore amministrativo delle anomalie, senza invii né scritture. Test locali:
-2105 backend superati con dipendenze prescritte (1 saltato); CI PR in corso.
-Nessun deploy, cambio policy, versione, AAB o artefatto Web/Android in questo
-checkpoint. Prima di ridurre le email resta necessaria la prova del pannello
-autenticato su una revisione API isolata.
+**Pannello operativo e email, 22 novembre 2026.** La
+[PR 56](https://github.com/meteofriul/meteofriul-app/pull/56) prepara un
+lettore amministrativo senza invii né scritture: 2105 test backend e CI PR
+verdi. Il servizio isolato `ops-panel-v1` legge i dati reali; il pannello
+online autenticato mostra 2 problemi e apre Fonti Eventi. Quattro policy
+duplicate restano attive ma non inviano più email; le policy di assenza
+prolungata e delle allerte ufficiali mantengono l'email. Versione 0.1.15,
+AAB, Web/Android, job e Scheduler invariati. Il limite di una possibile
+indisponibilità totale Eventi senza email dedicata è registrato nel
+[verbale](OPERATIONAL_ALERT_ROUTING_20261122.md).
 
 **Verifica dei job del 20–22 novembre 2026.** Mattino: tre corse riuscite,
 zero `location_changed` reali. Sera: tre corse fallite senza invii perché
