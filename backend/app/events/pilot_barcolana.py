@@ -23,8 +23,8 @@ from .pilot_excerpt import attributed_excerpt
 READ_BUDGET_SECONDS = 28
 MAX_PARALLEL_READS = 4
 REQUEST_CONNECT_SECONDS = 3
-REQUEST_READ_SECONDS = 8
-RETRY_READ_SECONDS = 16
+REQUEST_READ_SECONDS = 4
+RETRY_READ_SECONDS = 20
 
 SOURCE = 'Barcolana'
 CALENDAR = 'https://www.barcolana.it/it/calendario-eventi'
