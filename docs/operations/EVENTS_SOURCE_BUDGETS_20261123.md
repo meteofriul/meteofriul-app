@@ -35,11 +35,51 @@ in pausa per nascondere il timeout.
 72 test mirati e 16 sottocasi superati, compreso un calendario che risponde
 dopo 20 secondi; `compileall` e controllo del diff superati.
 
+## Collaudo Cloud isolato
+
+La CI della [PR 59](https://github.com/meteofriul/meteofriul-app/pull/59)
+è verde per backend, frontend e anteprima hosting sul commit `e42e7e40`.
+L'archivio Git del solo backend ha SHA-256
+`22273A33C96F6C14E39790257E7EBEF650EC4FB0114CA17CD0E2E515A88F1B01`.
+Cloud Build `d5bac9bb-3b46-47e7-bd03-2e91df65b777` è riuscito e ha
+prodotto il digest QA
+`sha256:d6ff27f255a0d969883beacb485fffdb4fdfcaa715c93f4f2744e6502a7952b7`.
+
+Il job QA, senza scheduler, ha usato solo la chiave
+`pilot/events/qa/source-read-20261123/catalog.json`. Le esecuzioni mirate
+`meteofriul-events-sources-qa-20261123-gzvss` (Azalea) e `...-jcl6p`
+(Barcolana) hanno entrambe terminato con successo. Nel catalogo QA Azalea
+è `partial`: 3 pagine di archivio, 17 dettagli controllati, 9 eventi
+inclusi, 2 cambi di programma da rivedere e nessuna pagina obbligatoria
+saltata. Barcolana è `fresh`: 682 record di calendario esaminati e 1
+evento futuro conservato. Sono state eliminate le due condizioni `stale`
+che il catalogo pubblico registrava il 23 novembre. Questa prova mirata
+non modifica il catalogo pubblico.
+
+La prima prova completa sul medesimo catalogo QA è fallita: TurismoFVG è
+scaduta e Pordenonelegge ha ricevuto il reindirizzamento di fine edizione
+senza lo storico necessario per riconoscerlo. Quel catalogo era nato con
+solo Azalea e Barcolana, senza i checkpoint delle altre fonti. Per una prova
+equivalente al ciclo ordinario è stata copiata una volta la versione pubblica
+in `pilot/events/qa/full-from-public-20261123/catalog.json`, senza scrivere
+nella chiave pubblica. Il job QA è stato puntato solo a questa copia.
+
+La seconda esecuzione completa
+`meteofriul-events-full-qa-20261123-dq6hw` è terminata con successo: tutte le
+14 fonti attive sono `fresh` o `partial`; Spazzapan resta in pausa. Azalea
+è `partial` con 9 schede e 2 cambi da rivedere; Barcolana è `fresh` con 1
+scheda; Pordenonelegge è `fresh` con 0 schede perché l'edizione è chiusa;
+TurismoFVG è `partial` con 1.486 schede. Palazzo Attems e GiroFVG restano
+`review_required` come monitor editoriali, mentre l'inventario annuale
+TurismoFVG è `checked`. I job QA temporanei sono stati eliminati dopo il
+readback. I log QA non possono attivare la policy email delle fonti candidate,
+che filtra espressamente il job pubblico `meteofriul-events-refresh`.
+
 ## Stato e verifica ancora necessaria
 
 La modifica è nel solo ramo Eventi, senza aggiornamenti al job, al catalogo
-online, al pannello o all'app. Prima del deploy servono CI, prova del lettore
-nel contesto Cloud con controllo del catalogo e verifica della prima corsa
-ordinaria. Se Barcolana continua a scadere anche con il nuovo limite, occorre
+online, al pannello o all'app. Il collaudo completo QA è riuscito; dopo un
+eventuale deploy resta da verificare la prima corsa ordinaria. Se Barcolana
+continua a scadere anche con il nuovo limite, occorre
 un lettore alternativo o una decisione editoriale sulla fonte, non un ulteriore
 aumento indefinito dei tempi.
