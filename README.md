@@ -4,7 +4,9 @@
 `codex/evening-verified-temperature-20261123` prepara un testo limitato alle
 temperature quando la pioggia oraria ICON è incerta e la giornata successiva
 ha copertura completa. 59 test mirati e un campione pubblico reale superati;
-nessun job o app aggiornati. [Prove e passaggi ancora aperti](docs/operations/EVENING_VERIFIED_TEMPERATURE_20261123.md).
+un replay isolato ha inviato una sola notifica TEST all'Android owner, che
+ha confermato ricezione e apertura del Bollettino. Nessun job pubblico o app
+aggiornati. [Prove e passaggi ancora aperti](docs/operations/EVENING_VERIFIED_TEMPERATURE_20261123.md).
 
 **Stato operativo del pannello, 22 novembre 2026.** La
 [PR 56](https://github.com/meteofriul/meteofriul-app/pull/56), integrata in

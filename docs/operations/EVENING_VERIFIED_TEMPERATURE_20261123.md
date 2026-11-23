@@ -49,11 +49,26 @@ La revisione automatica ha però respinto la sua memorizzazione nei metadati
 del job QA perché è un identificativo sensibile non coperto
 dall'autorizzazione alla singola notifica. Nessun aggiramento è stato tentato.
 Il job QA, privo di scheduler, è stato eliminato. Il test su dispositivo
-resta aperto; nessuna notifica di questo collaudo è stata inviata.
+restava aperto in quella fase; nessuna notifica era stata inviata.
+
+Il proprietario ha poi autorizzato esplicitamente l'uso temporaneo dell'hash
+del suo Android già impiegato nel TEST del 12 novembre. Il job QA è stato
+ricreato con invio predefinito `dry_run`, zero retry e filtro identico al
+collaudo precedente, senza esporre l'identificativo nei verbali. L'esecuzione
+`meteofriul-evening-replay-qa-20261123-jnlzv` ha registrato `dry_run`,
+`eligible_devices=1`, `attempted=1`, `sent=0`, `source_failed=0` e
+`quality_limited_groups=1`. Dopo il readback, una sola esecuzione con override
+temporaneo `send`, `...-ncjg4`, ha registrato `sent=1`, `attempted=1`,
+`eligible_devices=1`, `failed=0` e `source_failed=0`. Il job QA è stato
+eliminato subito dopo; Scheduler e job pubblico non sono cambiati. Il
+proprietario ha confermato sul proprio Android la ricezione del titolo TEST
+e l'apertura del Bollettino al tocco.
 
 ## Stato
 
 Questo ramo è solo una proposta backend. Job distribuito, Scheduler, destinatari,
 app Web/Android e policy email non sono cambiati. Prima di distribuire servono
-una prova isolata riuscita e la verifica del messaggio su dispositivo;
-poi si potrà aggiornare il solo job serale con un digest identificato.
+il merge con CI `main` e il digest di produzione identificato; poi si potrà
+aggiornare il solo job serale. Il replay storico verifica contenuto ridotto,
+invio e apertura, ma la prima corsa ordinaria con dati correnti va ancora
+osservata dopo il deploy.

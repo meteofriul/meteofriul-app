@@ -2,8 +2,10 @@
 
 **Anticipazione serale, candidata del 23 novembre 2026.** La proposta backend
 di testo limitato alle temperature non cambia frontend, artefatti Web/Android
-o notifiche distribuite. Le verifiche su job isolato e dispositivo restano
-aperte. [Evidenza](EVENING_VERIFIED_TEMPERATURE_20261123.md).
+o notifiche pubbliche distribuite. Un job QA isolato ha registrato una sola
+notifica TEST inviata all'Android owner ed è stato eliminato; il proprietario
+ha confermato ricezione e apertura del Bollettino sul dispositivo.
+[Evidenza](EVENING_VERIFIED_TEMPERATURE_20261123.md).
 
 **API amministrativa operativa, 22 novembre 2026.** La
 [PR 56](https://github.com/meteofriul/meteofriul-app/pull/56), integrata in

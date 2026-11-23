@@ -3,8 +3,10 @@
 **Anticipazione serale, candidata del 23 novembre 2026.** Il ramo
 `codex/evening-verified-temperature-20261123` prepara un testo ridotto da
 temperature complete e verificate quando la pioggia oraria ICON è incerta;
-59 test mirati e prova sul documento pubblico del 22 novembre superati.
-Il job serale e gli invii di produzione restano invariati.
+59 test mirati e prova sul documento pubblico del 22 novembre superati. Un
+job QA isolato ha inviato una sola notifica TEST all'Android owner, che ha
+confermato ricezione e apertura del Bollettino; il job QA è stato eliminato. Il job
+serale e gli invii di produzione restano invariati.
 [Evidenza e limiti](EVENING_VERIFIED_TEMPERATURE_20261123.md).
 
 **Pannello operativo e email, 22 novembre 2026.** La
