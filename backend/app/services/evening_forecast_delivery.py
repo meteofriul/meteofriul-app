@@ -373,15 +373,25 @@ def build_evening_forecast_contents(
     place = locality.name if locality is not None else municipality.name
     if temperature_range is not None:
         low, high = temperature_range
+        italian = (
+            f"Temperatura intorno a {low} °C. Apri e guarda."
+            if low == high else
+            f"Temperature tra {low} e {high} °C. Apri e guarda."
+        )
+        friulian = (
+            f"Temperadure ator di {low} °C. Vierç e cjale."
+            if low == high else
+            f"Temperadure tra {low} e {high} °C. Vierç e cjale."
+        )
         return {
             "it": ForecastNotificationContent(
                 title=f"Domani a {place}",
-                body=f"Temperature tra {low} e {high} °C. Apri e guarda.",
+                body=italian,
                 quality_limited=True,
             ),
             "fur": ForecastNotificationContent(
                 title=f"Doman a {place}",
-                body=f"Temperadure tra {low} e {high} °C. Vierç e cjale.",
+                body=friulian,
                 quality_limited=True,
             ),
         }

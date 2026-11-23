@@ -17,7 +17,8 @@ giornata locale, inclusi i giorni di 23 o 25 ore del cambio d'ora.
 
 ## Prove
 
-- 34 test mirati `test_evening_forecast*` superati; compilazione Python e
+- 59 test mirati in `test_evening_forecast*`, `test_local_notice_missing_data`
+  e `test_local_notice_tolerance` superati; compilazione Python e
   `git diff --check` superati. Sono coperti valori assenti, malformati, buchi,
   conteggio del testo ridotto e cambio d'ora.
 - Prova in sola lettura sul documento ICON pubblico immutabile di Pordenone

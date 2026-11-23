@@ -3,7 +3,7 @@
 **Anticipazione serale, candidata del 23 novembre 2026.** Il ramo
 `codex/evening-verified-temperature-20261123` prepara un testo ridotto da
 temperature complete e verificate quando la pioggia oraria ICON è incerta;
-34 test mirati e prova sul documento pubblico del 22 novembre superati.
+59 test mirati e prova sul documento pubblico del 22 novembre superati.
 Il job serale e gli invii di produzione restano invariati.
 [Evidenza e limiti](EVENING_VERIFIED_TEMPERATURE_20261123.md).
 

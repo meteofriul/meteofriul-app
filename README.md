@@ -3,7 +3,7 @@
 **Anticipazione serale, candidata del 23 novembre 2026.** Il ramo
 `codex/evening-verified-temperature-20261123` prepara un testo limitato alle
 temperature quando la pioggia oraria ICON è incerta e la giornata successiva
-ha copertura completa. 34 test mirati e un campione pubblico reale superati;
+ha copertura completa. 59 test mirati e un campione pubblico reale superati;
 nessun job o app aggiornati. [Prove e passaggi ancora aperti](docs/operations/EVENING_VERIFIED_TEMPERATURE_20261123.md).
 
 **Stato operativo del pannello, 22 novembre 2026.** La
