@@ -1,5 +1,12 @@
 # Stato release 0.1.15 e lavoro salvato — aggiornamento sorgenti del 24 ottobre 2026
 
+**Anticipazione serale, candidata del 23 novembre 2026.** Il ramo
+`codex/evening-verified-temperature-20261123` prepara un testo ridotto da
+temperature complete e verificate quando la pioggia oraria ICON è incerta;
+34 test mirati e prova sul documento pubblico del 22 novembre superati.
+Il job serale e gli invii di produzione restano invariati.
+[Evidenza e limiti](EVENING_VERIFIED_TEMPERATURE_20261123.md).
+
 **Pannello operativo e email, 22 novembre 2026.** La
 [PR 56](https://github.com/meteofriul/meteofriul-app/pull/56), integrata in
 `main` con `4cab51b2`, aggiunge un lettore amministrativo senza invii né

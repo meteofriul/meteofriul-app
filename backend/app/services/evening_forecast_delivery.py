@@ -44,7 +44,6 @@ EVENING_FORECAST_TEST_INSTALLATION_HASH_ENV = (
 EVENING_FORECAST_KIND = "evening_forecast"
 EVENING_FORECAST_HOURS = 36
 EVENING_FORECAST_TTL_SECONDS = 3 * 60 * 60
-EVENING_FORECAST_MINIMUM_DAY_ROWS = 20
 EVENING_FORECAST_MAX_RUN_AGE_SECONDS = 10 * 60 * 60
 
 _PRECIPITATION_CODES = frozenset(
@@ -95,6 +94,20 @@ def _period_key(hour: int) -> str:
     if hour < 18:
         return "afternoon"
     return "evening"
+
+
+def _covers_entire_local_day(times: list[datetime]) -> bool:
+    # Local days have 23 or 25 hours when daylight saving time changes.
+    return (
+        len(times) in {23, 24, 25}
+        and times[0].hour == 0
+        and times[-1].hour == 23
+        and all(
+            later.astimezone(timezone.utc) - earlier.astimezone(timezone.utc)
+            == timedelta(hours=1)
+            for earlier, later in zip(times, times[1:])
+        )
+    )
 
 
 def _event_copy(kind: str, period: str, *, language: str) -> str:
@@ -223,14 +236,64 @@ def _tomorrow_rows(
             }
         )
 
-    rows.sort(key=lambda row: row["time"])
-    if (
-        len(rows) < EVENING_FORECAST_MINIMUM_DAY_ROWS
-        or rows[0]["time"].hour > 2
-        or rows[-1]["time"].hour < 21
-    ):
+    rows.sort(key=lambda row: row["time"].astimezone(timezone.utc))
+    if not _covers_entire_local_day([row["time"] for row in rows]):
         return []
     return rows
+
+
+def _tomorrow_temperature_range(
+    snapshot: Mapping[str, Any], *, forecast_date: date
+) -> tuple[int, int] | None:
+    """Use a full verified temperature day when another hourly field is absent."""
+    hourly = snapshot.get("hourly")
+    if not isinstance(hourly, Mapping):
+        return None
+    required = (
+        "time", "temperature_2m", "precipitation", "rain", "showers",
+        "snowfall", "weather_code", "wind_gusts_10m",
+    )
+    series = {name: hourly.get(name) for name in required}
+    if any(not isinstance(values, list) for values in series.values()):
+        return None
+    lengths = {len(values) for values in series.values()}
+    if len(lengths) != 1 or not lengths:
+        return None
+
+    rows: list[tuple[datetime, float]] = []
+    missing_other_field = False
+    for index, raw_time in enumerate(series["time"]):
+        forecast_at = _forecast_time(raw_time)
+        if forecast_at is None:
+            return None
+        if forecast_at.date() != forecast_date:
+            continue
+        temperature = _finite_number(series["temperature_2m"][index])
+        if temperature is None or not -60 <= temperature <= 60:
+            return None
+        for name in required[2:]:
+            raw = series[name][index]
+            if raw is None:
+                missing_other_field = True
+                continue
+            numeric = _finite_number(raw)
+            if numeric is None or numeric < 0:
+                return None
+            if name == "weather_code" and (
+                not numeric.is_integer() or numeric > 99
+            ):
+                return None
+        rows.append((forecast_at, temperature))
+
+    # The reduced copy must never cover a gap or turn a malformed source into
+    # a temperature-only forecast. The 23/25-hour cases are local DST days.
+    rows.sort(key=lambda row: row[0].astimezone(timezone.utc))
+    if not missing_other_field or not _covers_entire_local_day(
+        [time for time, _ in rows]
+    ):
+        return None
+    temperatures = [temperature for _, temperature in rows]
+    return round(min(temperatures)), round(max(temperatures))
 
 
 def _headline_body(rows: list[dict[str, Any]], *, language: str) -> str:
@@ -302,9 +365,26 @@ def build_evening_forecast_contents(
         return {}
     forecast_date = now.astimezone(FVG_ZONE).date() + timedelta(days=1)
     rows = _tomorrow_rows(snapshot, forecast_date=forecast_date)
-    if not rows:
+    temperature_range = (
+        None if rows else _tomorrow_temperature_range(snapshot, forecast_date=forecast_date)
+    )
+    if not rows and temperature_range is None:
         return {}
     place = locality.name if locality is not None else municipality.name
+    if temperature_range is not None:
+        low, high = temperature_range
+        return {
+            "it": ForecastNotificationContent(
+                title=f"Domani a {place}",
+                body=f"Temperature tra {low} e {high} °C. Apri e guarda.",
+                quality_limited=True,
+            ),
+            "fur": ForecastNotificationContent(
+                title=f"Doman a {place}",
+                body=f"Temperadure tra {low} e {high} °C. Vierç e cjale.",
+                quality_limited=True,
+            ),
+        }
     return {
         "it": ForecastNotificationContent(
             title=f"Domani a {place}",

@@ -1,5 +1,11 @@
 # Meteo Friûl
 
+**Anticipazione serale, candidata del 23 novembre 2026.** Il ramo
+`codex/evening-verified-temperature-20261123` prepara un testo limitato alle
+temperature quando la pioggia oraria ICON è incerta e la giornata successiva
+ha copertura completa. 34 test mirati e un campione pubblico reale superati;
+nessun job o app aggiornati. [Prove e passaggi ancora aperti](docs/operations/EVENING_VERIFIED_TEMPERATURE_20261123.md).
+
 **Stato operativo del pannello, 22 novembre 2026.** La
 [PR 56](https://github.com/meteofriul/meteofriul-app/pull/56), integrata in
 `main` con `4cab51b2` e CI `main` verde, aggiunge un'API
