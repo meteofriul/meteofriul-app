@@ -3,8 +3,9 @@
 **Eventi, candidata del 23 novembre 2026.** Il ramo
 `codex/events-source-read-budgets-20261123` velocizza Azalea e ridistribuisce
 il tempo di recupero Barcolana, senza aumentare il budget totale. 72 test
-mirati e prove locali dei lettori superati; job, catalogo pubblico e app
-invariati. [Prove e limiti](EVENTS_SOURCE_BUDGETS_20261123.md).
+mirati e il collaudo Cloud delle 14 fonti attive su catalogo QA con checkpoint
+pubblici sono riusciti; job, catalogo pubblico e app invariati.
+[Prove e limiti](EVENTS_SOURCE_BUDGETS_20261123.md).
 
 **Pannello operativo e email, 22 novembre 2026.** La
 [PR 56](https://github.com/meteofriul/meteofriul-app/pull/56), integrata in

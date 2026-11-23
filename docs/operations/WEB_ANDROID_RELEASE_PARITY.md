@@ -1,8 +1,9 @@
 # Allineamento della Web App con Android
 
 **Fonti Eventi, candidata del 23 novembre 2026.** I nuovi limiti di lettura
-sono nel solo ramo backend: nessun catalogo, frontend o artefatto Web/Android
-è stato aggiornato. [Evidenza](EVENTS_SOURCE_BUDGETS_20261123.md).
+sono nel solo ramo backend. Il collaudo Cloud completo su catalogo QA con i
+checkpoint pubblici è riuscito; nessun catalogo pubblico, frontend o artefatto
+Web/Android è stato aggiornato. [Evidenza](EVENTS_SOURCE_BUDGETS_20261123.md).
 
 **API amministrativa operativa, 22 novembre 2026.** La
 [PR 56](https://github.com/meteofriul/meteofriul-app/pull/56), integrata in
