@@ -1,4 +1,5 @@
 """Pilot-only Azalea reader for the complete upcoming archive and its details."""
+from concurrent.futures import ThreadPoolExecutor
 from datetime import date, datetime
 from html import unescape
 import json
@@ -19,6 +20,7 @@ SITEMAP = 'https://www.azalea.it/sitemap_index.xml'
 BASELINE = json.loads(Path(__file__).with_name('pilot_azalea_sitemap_baseline.json')
                       .read_text(encoding='utf-8'))['unlisted_lastmod']
 EVENT_PATH = re.compile(r'/eventi/[^/]+/')
+MAX_PARALLEL_DETAIL_READS = 2
 CARD = re.compile(r'<article\b[^>]*class="[^"]*\bevent-archive-card\b[^>]*>(.*?)</article>',
                   re.I | re.S)
 MONTHS = ('', 'gennaio', 'febbraio', 'marzo', 'aprile', 'maggio', 'giugno',
@@ -249,21 +251,28 @@ def collect_azalea(*, get=requests.get, today=None):
             raise ValueError('future FVG event absent from Azalea archive: ' + event_url)
 
     events, reviewed, checked = [], [], []
-    for card in inventory:
-        url = card['url']
-        try:
-            event = parse_event(fetch(url), url, today=today, listing=card)
-            if event:
-                events.append(event)
-                disposition = 'included'
-            elif date.fromisoformat(card['date']) < today:
-                disposition = 'past'
-            else:
-                disposition = 'outside_region'
-        except ScheduleReviewRequired:
-            reviewed.append({'url': url, 'reason': 'schedule_change'})
-            disposition = 'review_required'
-        checked.append({'url': url, 'disposition': disposition})
+    # A pair of independent detail reads shortens the complete-source check
+    # without raising the job's 875-second aggregate budget or accepting a
+    # subset. Process each pair before requesting the next one.
+    with ThreadPoolExecutor(max_workers=MAX_PARALLEL_DETAIL_READS) as executor:
+        for start in range(0, len(inventory), MAX_PARALLEL_DETAIL_READS):
+            cards = inventory[start:start + MAX_PARALLEL_DETAIL_READS]
+            detail_pages = list(executor.map(fetch, (card['url'] for card in cards)))
+            for card, html in zip(cards, detail_pages):
+                url = card['url']
+                try:
+                    event = parse_event(html, url, today=today, listing=card)
+                    if event:
+                        events.append(event)
+                        disposition = 'included'
+                    elif date.fromisoformat(card['date']) < today:
+                        disposition = 'past'
+                    else:
+                        disposition = 'outside_region'
+                except ScheduleReviewRequired:
+                    reviewed.append({'url': url, 'reason': 'schedule_change'})
+                    disposition = 'review_required'
+                checked.append({'url': url, 'disposition': disposition})
     events = remove_cross_page_duplicates(events)
     events.sort(key=lambda item: (item['start_date'], item.get('time') or '',
                                   item['event_city'], item['title']))

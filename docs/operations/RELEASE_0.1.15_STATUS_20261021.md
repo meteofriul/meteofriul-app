@@ -5,9 +5,16 @@
 temperature complete e verificate quando la pioggia oraria ICON è incerta;
 59 test mirati e prova sul documento pubblico del 22 novembre superati. Un
 job QA isolato ha inviato una sola notifica TEST all'Android owner, che ha
-confermato ricezione e apertura del Bollettino; il job QA è stato eliminato. Il job
-serale e gli invii di produzione restano invariati.
+confermato ricezione e apertura del Bollettino; il job QA è stato eliminato.
+Il job serale e gli invii di produzione restano invariati.
 [Evidenza e limiti](EVENING_VERIFIED_TEMPERATURE_20261123.md).
+
+**Eventi, integrati in `main` il 23 novembre 2026.** La [PR 59](https://github.com/meteofriul/meteofriul-app/pull/59)
+velocizza Azalea e ridistribuisce
+il tempo di recupero Barcolana, senza aumentare il budget totale. 72 test
+mirati e il collaudo Cloud delle 14 fonti attive su catalogo QA con checkpoint
+pubblici sono riusciti; job, catalogo pubblico e app invariati.
+[Prove e limiti](EVENTS_SOURCE_BUDGETS_20261123.md).
 
 **Pannello operativo e email, 22 novembre 2026.** La
 [PR 56](https://github.com/meteofriul/meteofriul-app/pull/56), integrata in
