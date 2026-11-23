@@ -1,5 +1,12 @@
 # Meteo Friûl
 
+**Fonti Eventi, candidata del 23 novembre 2026.** Il ramo
+`codex/events-source-read-budgets-20261123` velocizza la lettura completa di
+Azalea e ridistribuisce il tempo di recupero di Barcolana dopo la terza corsa
+Eventi fallita. I lettori locali e 72 test mirati passano; il job e il catalogo
+online sono invariati.
+[Evidenza e controlli aperti](docs/operations/EVENTS_SOURCE_BUDGETS_20261123.md).
+
 **Stato operativo del pannello, 22 novembre 2026.** La
 [PR 56](https://github.com/meteofriul/meteofriul-app/pull/56), integrata in
 `main` con `4cab51b2` e CI `main` verde, aggiunge un'API

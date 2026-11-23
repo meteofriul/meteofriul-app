@@ -1,5 +1,6 @@
 import unittest
 from datetime import date
+from threading import Barrier
 from app.events.pilot_azalea import (
     ARCHIVE, SITEMAP, archive_cards, archive_next, collect_azalea, parse_event,
 )
@@ -102,8 +103,11 @@ class AzaleaTests(unittest.TestCase):
                 <lastmod>2026-09-01T00:00:00+00:00</lastmod></url></urlset>''',
         }
         fetched = []
+        detail_barrier = Barrier(2)
         def get(requested, **_):
             fetched.append(requested)
+            if requested in {url, outside}:
+                detail_barrier.wait(timeout=5)
             return Response(requested, pages[requested])
         batch = collect_azalea(get=get, today=date(2026, 9, 6))
         self.assertEqual(len(batch['events']), 1)
