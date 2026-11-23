@@ -1,8 +1,10 @@
 # Allineamento della Web App con Android
 
 **Anticipazione serale, integrata in `main` il 23 novembre 2026.** La modifica backend
-di testo limitato alle temperature non cambia frontend, artefatti Web/Android
-o notifiche pubbliche distribuite. Un job QA isolato ha registrato una sola
+di testo limitato alle temperature non cambia frontend o artefatti Web/Android.
+Il solo job serale pubblico usa ora il digest `sha256:7d4596ae…`, con
+scheduler invariato e prima corsa ordinaria ancora da verificare. Un job QA
+isolato ha registrato una sola
 notifica TEST inviata all'Android owner ed è stato eliminato; il proprietario
 ha confermato ricezione e apertura del Bollettino sul dispositivo. La CI
 di `main` è verde.
@@ -10,8 +12,10 @@ di `main` è verde.
 
 **Fonti Eventi, integrate in `main` il 23 novembre 2026.** I nuovi limiti di
 lettura sono nel solo backend. Il collaudo Cloud completo su catalogo QA con i
-checkpoint pubblici è riuscito; nessun catalogo pubblico, frontend o artefatto
-Web/Android è stato aggiornato. [Evidenza](OPS_JOBS_PROMOTION_20261123.md).
+checkpoint pubblici è riuscito; il solo job Eventi pubblico usa ora il digest
+`sha256:d6ff27f2…`. Il catalogo pubblico resta al precedente snapshot fino
+alla prossima corsa; frontend e artefatti Web/Android non sono stati
+aggiornati. [Evidenza](OPS_JOBS_PROMOTION_20261123.md).
 
 **API amministrativa operativa, 22 novembre 2026.** La
 [PR 56](https://github.com/meteofriul/meteofriul-app/pull/56), integrata in

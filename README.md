@@ -6,15 +6,18 @@ temperature quando la pioggia oraria ICON è incerta e la giornata successiva
 ha copertura completa. 59 test mirati e un campione pubblico reale superati;
 un replay isolato ha inviato una sola notifica TEST all'Android owner, che
 ha confermato ricezione e apertura del Bollettino. La CI di `main` è verde;
-nessun job pubblico o app
-aggiornati. [Prove e stato dei job](docs/operations/OPS_JOBS_PROMOTION_20261123.md).
+il solo job serale usa ora il digest `sha256:7d4596ae…`, con scheduler
+invariato. La prima corsa ordinaria con dati correnti è ancora da verificare;
+l'app è invariata. [Prove e stato dei job](docs/operations/OPS_JOBS_PROMOTION_20261123.md).
 
 **Fonti Eventi, integrate in `main` il 23 novembre 2026.** La [PR 59](https://github.com/meteofriul/meteofriul-app/pull/59)
 velocizza la lettura completa di
 Azalea e ridistribuisce il tempo di recupero di Barcolana dopo la terza corsa
 Eventi fallita. I lettori locali e 72 test mirati passano; il collaudo Cloud
 completo, con una copia QA dei checkpoint pubblici, recupera tutte le 14 fonti
-attive. La CI di `main` è verde; il job e il catalogo online sono invariati.
+attive. La CI di `main` è verde; il job Eventi usa ora il digest
+`sha256:d6ff27f2…`. Il catalogo online resta invariato fino alla prossima
+corsa ordinaria.
 [Evidenza e stato dei job](docs/operations/OPS_JOBS_PROMOTION_20261123.md).
 
 **Stato operativo del pannello, 22 novembre 2026.** La

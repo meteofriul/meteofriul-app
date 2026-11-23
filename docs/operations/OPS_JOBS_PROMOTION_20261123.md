@@ -34,25 +34,31 @@ Un job QA filtrato al solo Android owner ha registrato prima `dry_run` con
 `attempted=1`, `sent=0`, poi una sola esecuzione TEST con `sent=1`, `failed=0`.
 Il proprietario ha confermato ricezione e apertura del Bollettino al tocco.
 Il job QA, con il filtro del dispositivo autorizzato temporaneamente, è stato
-eliminato. Il modulo di replay non è nell'immagine candidata di produzione.
+eliminato. Il modulo di replay non è nell'immagine distribuita in produzione.
 
-## Produzione ancora invariata
+## Deploy delle sole immagini
 
-| Job | Digest pubblico attuale | Digest candidato verificato | Pianificazione |
+Il proprietario ha autorizzato i due deploy con «Facciamolo». Sono cambiate
+solo le immagini dei job Cloud Run, una alla volta. Non sono state avviate
+esecuzioni manuali: l'ultima Eventi è quella programmata del 23 novembre alle
+04:00 UTC e l'ultima serale quella del 22 novembre alle 20:45 ora italiana.
+
+| Job | Digest precedente | Digest ora distribuito | Pianificazione invariata |
 | --- | --- | --- | --- |
 | `meteofriul-events-refresh` | `sha256:fcf3a81c076bd2a0d50211b6e15c29012febb764575db2b644c5b2074fdf5fe4` | `sha256:d6ff27f255a0d969883beacb485fffdb4fdfcaa715c93f4f2744e6502a7952b7` | `0 4 * * *`, `Etc/UTC`, attiva |
 | `meteofriul-evening-forecast` | `sha256:3811ae86d2026d43869b0869e52c225e3c32e57b06783c5aae80567e31bb2b38` | `sha256:7d4596aef2b75d77ef26ef2a750ed3e7c3c6fc3d62e2e4379c26fc9f6a27495f` | `45 20 * * *`, `Europe/Rome`, attiva |
 
-Per Eventi la chiave pubblica resta `pilot/events/v1/catalog.json`, un task,
-zero retry e account writer Eventi invariati. Per la sera restano un task,
-zero retry, modalità `send`, coorte `play_beta` e account runtime invariati.
-Il catalogo pubblico Eventi mostra ancora Azalea e Barcolana `stale` dalla
-corsa del 23 novembre; il collaudo QA non lo ha aggiornato. Nessun nuovo
-artefatto Web/Android, versione app o AAB è stato prodotto.
+Il readback Eventi mostra generazione 49, chiave pubblica
+`pilot/events/v1/catalog.json`, bucket `meteo-friul-weather-data`, account
+writer Eventi, un task e zero retry invariati. Lo Scheduler resta `ENABLED`
+alle 04:00 UTC. Il readback serale mostra generazione 8, account runtime,
+modalità `send`, coorte `play_beta`, un task e zero retry invariati. Lo
+Scheduler resta `ENABLED` alle 20:45 `Europe/Rome`.
 
-L'aggiornamento delle immagini dei due job pubblici richiede autorizzazione
-esplicita per i digest indicati. La revisione automatica ha respinto il
-tentativo di aggiornare il job Eventi senza quel via libera specifico.
-Al termine di ogni eventuale deploy occorre confrontare immagine, catalogo,
-account, modalità, task, retry e scheduler. La prima corsa ordinaria con dati
-correnti resta una verifica successiva distinta dalle prove QA.
+Il catalogo pubblico Eventi, riletto dopo il deploy, conserva lo snapshot
+del 23 novembre alle 05:00 italiane: Azalea e Barcolana sono ancora `stale`.
+L'immagine nuova agirà alla prossima corsa ordinaria, il 24 novembre alle
+05:00 italiane. Il job serale userà l'immagine nuova alla corsa del 23
+novembre alle 20:45 italiane. Entrambe le corse con dati correnti restano da
+verificare; la riuscita delle prove QA non le sostituisce. Nessun nuovo
+artefatto Web/Android, versione app o AAB è stato prodotto.
