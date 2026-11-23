@@ -1,20 +1,23 @@
 # Stato release 0.1.15 e lavoro salvato — aggiornamento sorgenti del 24 ottobre 2026
 
-**Anticipazione serale, candidata del 23 novembre 2026.** Il ramo
-`codex/evening-verified-temperature-20261123` prepara un testo ridotto da
+**Anticipazione serale, integrata in `main` il 23 novembre 2026.** La [PR 58](https://github.com/meteofriul/meteofriul-app/pull/58)
+prepara un testo ridotto da
 temperature complete e verificate quando la pioggia oraria ICON è incerta;
 59 test mirati e prova sul documento pubblico del 22 novembre superati. Un
 job QA isolato ha inviato una sola notifica TEST all'Android owner, che ha
 confermato ricezione e apertura del Bollettino; il job QA è stato eliminato.
-Il job serale e gli invii di produzione restano invariati.
-[Evidenza e limiti](EVENING_VERIFIED_TEMPERATURE_20261123.md).
+La CI di `main` è verde; il solo job serale è stato aggiornato al digest
+`sha256:7d4596ae…`, senza cambiare scheduler o destinatari. La prima corsa
+ordinaria con dati correnti resta da verificare.
+[Evidenza e stato dei job](OPS_JOBS_PROMOTION_20261123.md).
 
 **Eventi, integrati in `main` il 23 novembre 2026.** La [PR 59](https://github.com/meteofriul/meteofriul-app/pull/59)
 velocizza Azalea e ridistribuisce
 il tempo di recupero Barcolana, senza aumentare il budget totale. 72 test
 mirati e il collaudo Cloud delle 14 fonti attive su catalogo QA con checkpoint
-pubblici sono riusciti; job, catalogo pubblico e app invariati.
-[Prove e limiti](EVENTS_SOURCE_BUDGETS_20261123.md).
+pubblici sono riusciti; CI di `main` verde. Il solo job Eventi usa ora il
+digest `sha256:d6ff27f2…`; catalogo pubblico e app invariati fino alla
+prossima corsa. [Prove e limiti](OPS_JOBS_PROMOTION_20261123.md).
 
 **Pannello operativo e email, 22 novembre 2026.** La
 [PR 56](https://github.com/meteofriul/meteofriul-app/pull/56), integrata in
