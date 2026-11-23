@@ -2,6 +2,7 @@ import copy
 import json
 import unittest
 from datetime import date
+from xml.etree.ElementTree import ParseError
 
 from app.events.pilot_source_policy import gate_batch
 from app.events.pilot_verdi_trieste import (
@@ -45,18 +46,19 @@ class Response:
         yield self.body
 
 
-def fixture(*, extra_italian=False):
+def fixture(*, extra_italian=False, sitemap_preamble=''):
     show_api = (SHOW_API + '?stagione=295&per_page=100&lang=it'
                 '&_fields=id,link,stagione,lang')
     ns = 'http://www.sitemaps.org/schemas/sitemap/0.9'
-    index = f'<sitemapindex xmlns="{ns}"><sitemap><loc>{SHOW_SITEMAP}</loc></sitemap></sitemapindex>'
+    declaration = '<?xml version="1.0" encoding="UTF-8"?>'
+    index = sitemap_preamble + declaration + f'<sitemapindex xmlns="{ns}"><sitemap><loc>{SHOW_SITEMAP}</loc></sitemap></sitemapindex>'
     urls = [A, B] + [BASE + f'/it/spettacoli/passato-{n}/' for n in range(444)]
     urls += [BASE + '/it/spettacoli/',
              BASE + '/en/spettacoli/the-tale-of-aida/',
              BASE + '/en/spettacoli/']
     if extra_italian:
         urls.append(BASE + '/it/spettacoli/nuovo/')
-    sitemap = (f'<urlset xmlns="{ns}">' + ''.join(
+    sitemap = (sitemap_preamble + declaration + f'<urlset xmlns="{ns}">' + ''.join(
         f'<url><loc>{url}</loc><lastmod>{"2026-10-07T12:14:50+00:00" if url in urls[-(4 if extra_italian else 3):] else "2026-10-01T00:00:00+00:00"}</lastmod></url>'
         for url in urls) + '</urlset>')
     pages = {
@@ -78,6 +80,16 @@ def fixture(*, extra_italian=False):
 
 
 class VerdiTriesteVerifiedTests(unittest.TestCase):
+    def test_sitemaps_allow_blank_line_before_xml_declaration(self):
+        batch = fixture(sitemap_preamble='\n')
+        self.assertEqual(batch['status'], 'ok')
+        self.assertEqual(gate_batch('Teatro Verdi Trieste', batch,
+                                    today=date(2026, 10, 7))['status'], 'ok')
+
+    def test_sitemaps_reject_non_whitespace_before_xml_declaration(self):
+        with self.assertRaises(ParseError):
+            fixture(sitemap_preamble='unexpected')
+
     def test_detail_keeps_two_times_on_same_day(self):
         events, _ = parse_detail(detail('Prova', [
             ('14 Ottobre 2026', '11:00'), ('14 Ottobre 2026', '18:00')]),

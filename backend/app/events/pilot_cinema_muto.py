@@ -3,9 +3,10 @@
 The page sitemap is the inventory. PDF files, film titles inside a screening,
 and the separate evening articles are never treated as extra appointments.
 """
+from concurrent.futures import ThreadPoolExecutor
 from datetime import date, timedelta
 from html.parser import HTMLParser
-from urllib.parse import urlsplit
+from urllib.parse import urljoin, urlsplit
 from xml.etree import ElementTree
 import re
 
@@ -24,7 +25,7 @@ MONTHS = {name: index for index, name in enumerate((
     "GENNAIO", "FEBBRAIO", "MARZO", "APRILE", "MAGGIO", "GIUGNO",
     "LUGLIO", "AGOSTO", "SETTEMBRE", "OTTOBRE", "NOVEMBRE", "DICEMBRE"), 1)}
 WEEKDAYS = ("LUNEDÌ", "MARTEDÌ", "MERCOLEDÌ", "GIOVEDÌ", "VENERDÌ", "SABATO", "DOMENICA")
-CALENDAR_PATH = re.compile(r"/calendario-(\d{2})(\d{2})(\d{2})/")
+CALENDAR_PATH = re.compile(r"/(?:it/)?calendario-(\d{2})(\d{2})(\d{2})/")
 SLOT = re.compile(r"^(\d{2}:\d{2})(?:\s*[-–]\s*(\d{2}:\d{2}))?\s*[-–]\s*(.+)$")
 VENUES = {
     "Teatro Zancanaro Sacile": ("Sacile", "Teatro Zancanaro"),
@@ -259,17 +260,30 @@ def parse_day(html, *, day, url, metadata):
 
 def _read(get, url, *, limit):
     def read():
-        with get(url, timeout=(4, 12), stream=True, allow_redirects=False) as response:
-            response.raise_for_status()
-            if response.status_code != 200:
-                raise ValueError("unexpected calendar response")
-            chunks, size = [], 0
-            for chunk in response.iter_content(65536):
-                size += len(chunk)
-                if size > limit:
-                    raise ValueError("calendar response too large")
-                chunks.append(chunk)
-            return b"".join(chunks).decode("utf-8-sig")
+        current = url
+        for _ in range(2):
+            with get(current, timeout=(4, 12), stream=True, allow_redirects=False) as response:
+                if response.status_code in {301, 302, 307, 308}:
+                    redirected = urljoin(current, response.headers.get("Location", ""))
+                    original = urlsplit(url)
+                    if (redirected != f"https://www.giornatedelcinemamuto.it/it{original.path}"
+                            or original.scheme != "https"
+                            or original.hostname != "www.giornatedelcinemamuto.it"
+                            or original.query or original.fragment):
+                        raise ValueError("unexpected calendar redirect")
+                    current = redirected
+                    continue
+                response.raise_for_status()
+                if response.status_code != 200:
+                    raise ValueError("unexpected calendar response")
+                chunks, size = [], 0
+                for chunk in response.iter_content(65536):
+                    size += len(chunk)
+                    if size > limit:
+                        raise ValueError("calendar response too large")
+                    chunks.append(chunk)
+                return b"".join(chunks).decode("utf-8-sig")
+        raise ValueError("too many calendar redirects")
 
     return read_with_single_transient_retry(read)
 
@@ -284,8 +298,15 @@ def collect_cinema_muto(*, get=requests.get):
     if cover:
         metadata["image"] = cover
     events, days, review = [], [], []
-    for day, url in pages:
-        parsed, issues, proof = parse_day(_read(get, url, limit=1024 * 1024),
+    # Calendar pages are independent. Bound parallel reads so one slow page
+    # does not consume the source worker's entire wall-clock budget.
+    def read_page(page):
+        return _read(get, page[1], limit=1024 * 1024)
+
+    with ThreadPoolExecutor(max_workers=4) as pool:
+        html_pages = list(pool.map(read_page, pages))
+    for (day, url), html in zip(pages, html_pages):
+        parsed, issues, proof = parse_day(html,
                                           day=day, url=url, metadata=metadata)
         events.extend(parsed)
         review.extend(issues)

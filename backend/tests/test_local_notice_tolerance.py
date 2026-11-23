@@ -125,7 +125,10 @@ class NoticeToleranceTests(unittest.TestCase):
         self.assertNotIn('non sono previste piogge',body)
         snap=evening.snapshot(); snap['hourly']['precipitation'][evening.tomorrow_index(snap,12)]=None
         snap['hourly']['accumulation_quality']=[proof]*len(snap['hourly']['time'])
-        self.assertEqual(build_evening_forecast_contents(snap,municipality,now=evening.NOW),{})
+        contents=build_evening_forecast_contents(snap,municipality,now=evening.NOW)
+        self.assertEqual(contents['it'].body,'Temperatura intorno a 18 °C. Apri e guarda.')
+        self.assertTrue(contents['it'].quality_limited)
+        self.assertNotIn('pioggia',contents['it'].body.lower())
 
     def test_real_ciampac_increments_through_producer_contract_adapter_and_detector(self):
         frozen=json.loads((EXPERIMENT/'fixtures/ciampac-snow-tolerance-20261019.json').read_text(encoding='utf-8'))

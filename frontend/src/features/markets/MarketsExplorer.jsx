@@ -49,7 +49,7 @@ function MarketSummary({ market, language, onOpen }) {
   const when = market.group === "regular" ? market.cadence : nextDate ? formatMarketDate(nextDate, language) : copy.noDates;
   return <button type="button" className={`mf-market-card mf-market-card--${market.group}`} aria-label={`${market.name} · ${market.comune} · ${when} · ${copy.details}`} onClick={() => onOpen(market.id)}>
     <span className="mf-market-card__visual" aria-hidden="true">{badge
-      ? <><strong>{badge.main}</strong><small>{badge.sub}</small></>
+      ? <><strong className={badge.main.length > 4 ? "is-long" : undefined}>{badge.main}</strong><small>{badge.sub}</small></>
       : <Store size={27} strokeWidth={1.8} />}</span>
     <span className="mf-market-card__body">
       <strong>{marketCardTitle(market)}</strong>

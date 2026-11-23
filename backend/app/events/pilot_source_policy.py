@@ -121,7 +121,10 @@ def cinema_muto_batch_verified(batch, *, previous_batch=None):
                             == item['slots_parsed'] + item['slots_reviewed'] + 1
                         and urlsplit(item['url']).scheme == 'https'
                         and urlsplit(item['url']).hostname == 'www.giornatedelcinemamuto.it'
-                        and urlsplit(item['url']).path == f"/calendario-{date.fromisoformat(item['date']):%d%m%y}/"
+                        and urlsplit(item['url']).path in {
+                            f"/calendario-{date.fromisoformat(item['date']):%d%m%y}/",
+                            f"/it/calendario-{date.fromisoformat(item['date']):%d%m%y}/",
+                        }
                         and not urlsplit(item['url']).query
                         for item in days)
                 and all(sum(event.get('start_date') == item['date'] for event in events)
@@ -812,7 +815,7 @@ def azalea_batch_verified(batch, *, today, previous_batch=None):
 
 
 def _css_retention_key(event):
-    """Recognize a renamed official page only within its season and location."""
+    """Match a renamed official page only within the same season and venue."""
     from .pilot_css import SEASON_PATHS, trusted_event_url
 
     url = event.get('url')
@@ -822,15 +825,46 @@ def _css_retention_key(event):
     identity = re.fullmatch(
         r'/(stagione-[a-z-]+)/(20[0-9]{2})/([1-9][0-9]*)/[a-z0-9]+(?:-[a-z0-9]+)*',
         parsed.path)
+    location = (event.get('event_city'), event.get('venue'))
     if (url != 'https://www.cssudine.it' + parsed.path
             or not identity or identity[1] not in SEASON_PATHS
-            or event.get('source') != 'CSS Udine'):
-        return None
-    location = (event.get('event_city'), event.get('venue'))
-    if any(not isinstance(value, str) or not value.strip() for value in location):
+            or event.get('source') != 'CSS Udine'
+            or any(not isinstance(value, str) or not value.strip()
+                   for value in location)):
         return None
     return (identity.groups() + (event['start_date'],)
             + tuple(' '.join(value.split()).casefold() for value in location))
+
+
+def _css_single_date_change_verified(old, *, listed, checked, events):
+    """Accept a moved date only when the same official card now gives one date."""
+    from .pilot_css import MONTHS
+
+    url = old.get('url')
+    card = listed.get(url)
+    if not card or checked.get(url) != 'included':
+        return False
+    month_names = '|'.join(MONTHS)
+    schedule = re.fullmatch(rf'(\d{{1,2}})\s+({month_names})\s+(20\d{{2}})',
+                            ' '.join(card['schedule'].split()), re.I)
+    if not schedule:
+        return False
+    try:
+        scheduled = date(int(schedule[3]), MONTHS[schedule[2].lower()],
+                         int(schedule[1])).isoformat()
+    except ValueError:
+        return False
+    replacements = [event for event in events if event['url'] == url]
+    return (len(replacements) == 1
+            and scheduled == replacements[0]['start_date']
+            and scheduled != old['start_date']
+            and all(engine.normalize_for_search(item) ==
+                    engine.normalize_for_search(replacements[0][key])
+                    for key, item in (('title', old['title']),
+                                      ('event_city', old['event_city']),
+                                      ('venue', old['venue'])))
+            and engine.normalize_for_search(card['title']) ==
+                engine.normalize_for_search(old['title']))
 
 
 def css_batch_verified(batch, *, today, previous_batch=None):
@@ -928,7 +962,9 @@ def css_batch_verified(batch, *, today, previous_batch=None):
                     and (engine.normalize_for_search(old['title']),
                          old['start_date'],
                          engine.normalize_for_search(old['event_city'])) not in new_keys
-                    and _css_retention_key(old) not in new_identities):
+                    and _css_retention_key(old) not in new_identities
+                    and not _css_single_date_change_verified(
+                        old, listed=listed, checked=checked, events=events)):
                 return False
         return True
     except (AttributeError, KeyError, TypeError, ValueError):
@@ -1512,7 +1548,7 @@ def mess_batch_verified(batch, *, today, previous_batch=None):
         return False
     from .pilot_programmes import reviewed_programme_metadata
     from .pilot_mess import (PROGRAMME_URL, BASE, REVIEWED_ACTIVE_NEWS,
-                             REVIEWED_LABORATORY_SLOTS_2026)
+                             REVIEWED_LABORATORY_SLOTS_2026, REVIEWED_NEWS_2026)
 
     slots = proof['slot_records']
     active_slots = [item for item in slots
@@ -1545,12 +1581,21 @@ def mess_batch_verified(batch, *, today, previous_batch=None):
                    and item.get('reason') == 'laboratory_requires_review']
     news_reviews = [item for item in reviews if isinstance(item, dict)
                     and item.get('reason') == 'news_exhibition_requires_review']
+    inventory_reviews = [item for item in reviews if isinstance(item, dict)
+                         and item.get('reason') == 'news_inventory_requires_review']
+    inventory_ids = proof.get('unreviewed_news_ids')
+    if (not isinstance(inventory_ids, list)
+            or len(inventory_ids) > 10
+            or any(not isinstance(item, int) or isinstance(item, bool) or item <= 0
+                   for item in inventory_ids)
+            or len(inventory_ids) != len(set(inventory_ids))):
+        return False
     expected_reviews = {
         (PROGRAMME_URL + '#laboratorio-' + str(item['slot']),
          f'mess-laboratori-2026-{item["museum_id"]}-{item["date"]}',
          item['slot'])
         for item in slots if item['disposition'] == 'review_required'}
-    if (len(reviews) != len(lab_reviews) + len(news_reviews)
+    if (len(reviews) != len(lab_reviews) + len(news_reviews) + len(inventory_reviews)
             or len(lab_reviews) != len(expected_reviews)
             or {(item.get('url'), item.get('source_id'), item.get('slot'))
                 for item in lab_reviews} != expected_reviews
@@ -1575,6 +1620,17 @@ def mess_batch_verified(batch, *, today, previous_batch=None):
                    not in expected_news_reviews
                    or not isinstance(item.get('detail'), str)
                    or not item['detail'] for item in news_reviews)):
+        return False
+    if (len(inventory_reviews) != len(inventory_ids)
+            or any(article_id in REVIEWED_NEWS_2026 for article_id in inventory_ids)
+            or {item.get('source_id') for item in inventory_reviews} != {
+                f'mess-news-{article_id}' for article_id in inventory_ids}
+            or any(not isinstance(item.get('url'), str)
+                   or not re.fullmatch(
+                       r'https://mess\.regione\.fvg\.it/it/not-\d+(?:/no-\d+)?',
+                       item['url'])
+                   or not isinstance(item.get('detail'), str) or not item['detail']
+                   for item in inventory_reviews)):
         return False
     seen = set()
     included_slots = set()

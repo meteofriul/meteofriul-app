@@ -1,5 +1,7 @@
 # Stato release 0.1.15 e lavoro salvato — aggiornamento sorgenti del 24 ottobre 2026
 
+**Mercati, allineamento del 23 novembre 2026.** Il ramo candidato include `origin/main` fino a `61ca8e5e`, comprese le nuove API amministrative Eventi e operative e le correzioni dei job. Il catalogo candidato mantiene 80 schede e hash SHA-256 `0DE55893D1A1CD2BB283A8C1AA915D9CA1F679E7E5EDEA7C2EFC8E120D56492A`; l'archivio online resta a revisione privata 59, pubblica 0. Verifica locale: 5.203 test frontend, lint e build Web/service worker PASS; 2.253 test backend e `compileall` PASS con Python 3.13.5 e `lxml 6.1.0` isolato. I test frontend hanno usato Node 24/npm 11 locali, anziché le versioni prescritte 22.17.1/10.9.2. Un primo tentativo backend con `lxml 5.4.0` globale aveva fallito due controlli XML; la ripetizione con la versione prescritta è verde. Questo è un allineamento dei sorgenti, senza cambio versione, AAB, artefatto Web, deploy API Mercati o pubblicazione app. Restano la verifica su telefono e le schede con data o orario da rivedere.
+
 **Mercati, rettifica privata del 18 novembre 2026.** Revisione privata 59, pubblica 0: esclusa la fonte del mercato settimanale dall'identità futura del mercatino antiquario di San Daniele. Codice di servizio e app preparato nel ramo, non distribuito; nessuna versione, AAB o artefatto Web nuovo. Restano da verificare il servizio aggiornato e l'app su telefono prima di qualunque promozione. [Evidenza](MERCATI_CONFRONTO_PANNELLO_APP_20261116.md#rettifica-fonte-storica--18-novembre-2026).
 
 **Mercati, salvataggio privato del 18 novembre 2026.** L'archivio online è passato dalla revisione privata 57 alla 58 con quattro edizioni verificate e i testi del candidato app; 80 schede e 206 edizioni coincidono nella proiezione. Revisione pubblica 0 e snapshot invariati. [Evidenza e controllo aperto dell'alias fonte di San Daniele](MERCATI_CONFRONTO_PANNELLO_APP_20261116.md#allineamento-privato--18-novembre-2026). Nessuna versione, AAB, artefatto Web o app distribuita è stata modificata. La prova reale su telefono e il controllo delle identità restano gate prima della pubblicazione.
@@ -7,6 +9,87 @@
 **Mercati, confronto privato del 16 novembre 2026.** Il [raffronto puntuale](MERCATI_CONFRONTO_PANNELLO_APP_20261116.md) con l'archivio online revisione 57 conferma 80/80 identità e 202/202 edizioni esistenti; nel candidato app restano quattro date e diverse riscritture editoriali non ancora salvate nel pannello. È una verifica dei dati, non un rilascio: revisione pubblica 0, nessuna build Android, nessun artefatto Web nuovo e nessuna prova su telefono. Il confronto con una futura revisione pubblica e la qualifica dei dispositivi restano aperti.
 
 **Mercati, allineamento dei sorgenti del 13 novembre 2026.** Il ramo `codex/mercati-integration-20261028` integra `origin/main` fino a `b225c296`, incluse le correzioni backend delle notifiche, senza conflitti di codice. Risolti tre conflitti documentali conservando entrambe le cronologie. Frontend: 5.202 test PASS, 13 saltati, lint e build Web/service worker PASS. Backend: 140 test mirati Mercati/notifiche e `compileall` PASS. Le prove locali hanno usato Node 24/npm 11 e Python 3.13 con `lxml 5.4.0`; restano da ripetere negli ambienti prescritti per la release. Restano aperti il confronto del catalogo candidato con la futura revisione pubblica, la prova Android reale e la qualifica Safari/iPhone. Nessuna modifica a `main`, versione, AAB o app distribuite.
+
+**Anticipazione serale, integrata in `main` il 23 novembre 2026.** La [PR 58](https://github.com/meteofriul/meteofriul-app/pull/58)
+prepara un testo ridotto da
+temperature complete e verificate quando la pioggia oraria ICON è incerta;
+59 test mirati e prova sul documento pubblico del 22 novembre superati. Un
+job QA isolato ha inviato una sola notifica TEST all'Android owner, che ha
+confermato ricezione e apertura del Bollettino; il job QA è stato eliminato.
+La CI di `main` è verde; il solo job serale è stato aggiornato al digest
+`sha256:7d4596ae…`, senza cambiare scheduler o destinatari. La prima corsa
+ordinaria con dati correnti resta da verificare.
+[Evidenza e stato dei job](OPS_JOBS_PROMOTION_20261123.md).
+
+**Eventi, integrati in `main` il 23 novembre 2026.** La [PR 59](https://github.com/meteofriul/meteofriul-app/pull/59)
+velocizza Azalea e ridistribuisce
+il tempo di recupero Barcolana, senza aumentare il budget totale. 72 test
+mirati e il collaudo Cloud delle 14 fonti attive su catalogo QA con checkpoint
+pubblici sono riusciti; CI di `main` verde. Il solo job Eventi usa ora il
+digest `sha256:d6ff27f2…`; catalogo pubblico e app invariati fino alla
+prossima corsa. [Prove e limiti](OPS_JOBS_PROMOTION_20261123.md).
+
+**Pannello operativo e email, 22 novembre 2026.** La
+[PR 56](https://github.com/meteofriul/meteofriul-app/pull/56), integrata in
+`main` con `4cab51b2`, aggiunge un lettore amministrativo senza invii né
+scritture: 2105 test backend e CI PR/`main` verdi. Il servizio isolato
+`ops-panel-v1` legge i dati reali; il pannello
+online autenticato mostra 2 problemi e apre Fonti Eventi. Quattro policy
+duplicate restano attive ma non inviano più email; le policy di assenza
+prolungata e delle allerte ufficiali mantengono l'email. Versione 0.1.15,
+AAB, Web/Android, job e Scheduler invariati. Il limite di una possibile
+indisponibilità totale Eventi senza email dedicata è registrato nel
+[verbale](OPERATIONAL_ALERT_ROUTING_20261122.md).
+
+**Verifica dei job del 20–22 novembre 2026.** Mattino: tre corse riuscite,
+zero `location_changed` reali. Sera: tre corse fallite senza invii perché
+nessun gruppo superava la verifica dei dati ICON di domani. Eventi: dopo il
+successo del 20, fallimenti del 21–22 per timeout di fonti; Azalea e
+Barcolana `stale` ed escluse dall'API visibile. [Audit e prossime verifiche](OPERATIONAL_JOBS_CHECK_20261122.md).
+Nessun nuovo deploy, pacchetto o cambiamento di versione in questo audit.
+
+**Notifiche, job mattutino e serale aggiornati il 19 novembre 2026.**
+[PR 53](https://github.com/meteofriul/meteofriul-app/pull/53) e CI PR/main
+verdi. Un cambio di comune durante il controllo finale resta senza invio,
+ma viene contato come `location_changed` senza uscita di errore del job.
+Entrambi i job Cloud Run sono pronti con il digest `sha256:3811ae86...`;
+configurazione e Scheduler invariati. Prima corsa ordinaria ancora aperta.
+[Evidenza e limiti](FORECAST_LOCATION_CHANGE_NONFAILURE_20261119.md).
+Versione 0.1.15, AAB, Web/Android, pannello e policy invariati.
+
+**Eventi, servizio pubblico aggiornato il 19 novembre 2026.** Le PR 48–51 sono in `main`, con CI PR/main verdi. Job `meteofriul-events-refresh` generazione 48 e lettore `meteofriul-events-00024-vaz` al 100% usano il digest `sha256:fcf3a81c...`; la corsa pubblica completa `...-c79k5` è riuscita, catalogo generazione `1795112372655876`, 14 fonti attive `fresh`/`partial`, Spazzapan in pausa. API pubblica da Udine e Trieste HTTP 200. Scheduler, policy, pannello online, versione 0.1.15, AAB e artefatti Web/Android invariati. La prima corsa ordinaria del 20 novembre alle 04:00 UTC resta da verificare. [Evidenza e limiti](EVENTS_JOB_DEPLOYMENT_20261119.md).
+
+**Eventi, prova job QA del 19 novembre 2026.** Il commit `eb9fbfcb`
+della [PR 48](https://github.com/meteofriul/meteofriul-app/pull/48)
+ha superato CI e job cloud isolato; il catalogo QA contiene 14 fonti
+attive verificate o parziali con i casi incerti in revisione. Il lettore
+QA serve il catalogo con 0% del traffico. [Dettagli e controlli aperti](EVENTS_JOB_RECOVERY_20261119.md).
+Il job ordinario, il lettore pubblico, il pannello online, la versione
+0.1.15, l'AAB e la Web App pubblicata restano invariati. Nel browser del
+telefono il proprietario ha confermato le due repliche *SDENG!* nella
+scheda unica, sede e Indicazioni; il collaudo non riguarda un APK.
+
+**Eventi, 19 novembre 2026.** Pausa di Galleria Spazzapan registrata nel
+controllo online (revisione 1), senza effetto ancora sul job o sul lettore
+pubblico. Verdi Trieste: 56 schede, una in revisione, gate superato dal
+lettore XML corretto. CSS Udine: 128 schede raccolte, gate bloccato perché
+cinque occorrenze future già verificate non sono state conservate. 60 test
+mirati PASS; [evidenza e passi aperti](EVENTS_SOURCE_DECISION_20261119.md).
+App Web/Android, AAB, pannello online e policy invariati.
+
+**Eventi, controlli per fonte preparati il 15 novembre 2026.** La
+[PR 48](https://github.com/meteofriul/meteofriul-app/pull/48) in bozza
+allinea la correzione XML del Teatro Verdi Trieste con pausa, riattivazione e
+verifica mirata delle fonti: 98 test combinati e CI PR `43702113612` PASS.
+Collaudo cloud del 15 novembre: job temporaneo eliminato, lettore Eventi e API
+amministrativa su tag a zero traffico. La copia QA recupera Verdi Trieste;
+CSS Udine e Galleria Spazzapan richiedono revisione della fonte. Il job
+ordinario e il lettore pubblico non sono stati aggiornati; la
+[PR del pannello #2](https://github.com/meteofriul/meteofriul-inserzioni/pull/2)
+è anch'essa in bozza. [Prove e limiti](EVENTS_SOURCE_CONTROLS_20261115.md).
+AAB, Web e Android distribuiti invariati.
+
+**Eventi, correzione sorgenti preparata il 15 novembre 2026.** Nel ramo `codex/events-xml-recovery-20261115` il lettore Teatro Verdi Trieste gestisce la riga vuota iniziale delle sitemap; 77 test mirati e lettura reale di 59 eventi con gate `ok`. [Evidenza](EVENTS_VERDI_TRIESTE_XML_RECOVERY_20261115.md). Il job e il catalogo online non sono stati modificati; versione, AAB e app Web/Android distribuite restano invariati.
 
 **Notifiche, 12 novembre — solo job mattutino distribuito.** La [PR 46](https://github.com/meteofriul/meteofriul-app/pull/46) e integrata in `main` `b939a177`; CI PR `43241690768` e CI main `43242575701` PASS. Suite backend locale: 2.083 test PASS, 2 saltati, con `lxml 6.1.0`. Collaudo isolato con un solo Android: replay TEST ricevuto, tap sul Bollettino confermato, job QA rimosso. Il solo job `meteofriul-morning-forecast` usa ora il digest `sha256:6c2b64c8c52e3f613aea406214b54da955e38330862abcb95c30845ea1aa20c5`; readback `ready=true`, scheduler e modalita di invio invariati. [Provenienza, controlli e prima corsa ordinaria ancora aperta](NOTIFICATIONS_ALERTS_AUDIT_20261111.md). Versione app, AAB, Web, policy e candidata Mercati/editoriale invariati.
 

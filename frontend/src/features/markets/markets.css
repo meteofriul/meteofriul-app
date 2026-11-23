@@ -49,6 +49,7 @@ html:not([data-theme="dark"]) .mf-app-shell.is-definitive-app .mf-markets-tabs b
 .mf-market-card::before { position: absolute; inset: 0 auto 0 0; z-index: 1; width: 4px; background: var(--market-accent); content: ""; }
 .mf-market-card__visual { display: flex; flex-direction: column; align-items: center; justify-content: center; align-self: stretch; gap: 1px; background: linear-gradient(145deg, var(--market-visual-start), var(--market-visual-end)); color: var(--market-accent-ink); }
 .mf-market-card__visual strong { font-size: 1.12rem; font-weight: 900; line-height: 1; }
+.mf-market-card__visual strong.is-long { font-size: .85rem; }
 .mf-market-card__visual small { font-size: .58rem; font-weight: 850; letter-spacing: .03em; line-height: 1.2; }
 .mf-market-card__visual svg { box-sizing: content-box; padding: 10px; border-radius: 50%; background: rgba(255, 255, 255, .7); }
 .mf-market-card__body { display: grid; align-content: center; gap: 5px; min-width: 0; padding: 10px 8px 10px 11px; }

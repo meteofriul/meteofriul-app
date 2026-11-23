@@ -5,6 +5,8 @@ from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 
 from app.api.events import router as events_router
+from app.api.events_admin import router as events_admin_router
+from app.api.operations_admin import router as operations_admin_router
 from app.api.live import router as live_router
 from app.api.location import router as location_router
 from app.api.markets import admin_router as markets_admin_router
@@ -83,6 +85,8 @@ def create_app() -> FastAPI:
     app.include_router(events_router)
     app.include_router(markets_public_router)
     app.include_router(markets_admin_router)
+    app.include_router(events_admin_router)
+    app.include_router(operations_admin_router)
     app.include_router(weather_router)
     app.include_router(push_router)
     app.include_router(promotions_public_router)

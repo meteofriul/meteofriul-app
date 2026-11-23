@@ -123,7 +123,7 @@ class MissingDataTests(unittest.TestCase):
         bad['reasons'] = 7
         self.assertEqual(sanitize_quality(bad)['reasons'], [])
 
-    def test_missing_hour_morning_uses_verified_values_and_evening_stays_closed(self):
+    def test_missing_hour_uses_only_verified_values_in_both_summaries(self):
         municipality = LocationCatalog().match_istat('093033')
         for native in ('precipitation', 'rain', 'weather_code'):
             snap = morning.snapshot()
@@ -134,7 +134,12 @@ class MissingDataTests(unittest.TestCase):
             self.assertNotIn('non sono previste piogge', body)
             snap = evening.snapshot()
             snap['hourly'][native][evening.tomorrow_index(snap, 12)] = None
-            self.assertEqual(build_evening_forecast_contents(snap, municipality, now=evening.NOW), {})
+            contents = build_evening_forecast_contents(snap, municipality,
+                                                       now=evening.NOW)
+            self.assertEqual(contents['it'].body,
+                             'Temperatura intorno a 18 °C. Apri e guarda.')
+            self.assertTrue(contents['it'].quality_limited)
+            self.assertNotIn('pioggia', contents['it'].body.lower())
         snap = evening.snapshot()
         snap['hourly']['precipitation'][0] = None  # Today, outside tomorrow's scope.
         self.assertTrue(build_evening_forecast_contents(snap, municipality, now=evening.NOW))

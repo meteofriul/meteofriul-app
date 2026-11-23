@@ -7,6 +7,8 @@ from time import monotonic
 from urllib.parse import parse_qs
 from .pilot_catalog import PILOT_PROJECT, query_catalog, source_age_failure
 from .pilot_cloud import BUCKET, KEY, MAX_BYTES
+from .source_controls import KEY as CONTROLS_KEY, paused_names, read_controls
+from zoneinfo import ZoneInfo
 
 _cache = None
 _until = 0
@@ -29,6 +31,8 @@ def load_catalog():
         catalog = json.loads(data)
         if catalog.get('schema') != 'pilot-events-v1':
             raise ValueError('invalid catalog')
+        controls, _ = read_controls(storage.Client(project=PILOT_PROJECT).bucket(BUCKET).blob(CONTROLS_KEY))
+        catalog['source_controls'] = controls
         _cache, _until = catalog, monotonic()+60
         return catalog
 
@@ -61,7 +65,12 @@ def application(environ, start_response):
             try:
                 catalog = load_catalog()
                 now = datetime.now(timezone.utc)
-                payload = query_catalog(catalog, lat, lon, radius, now=now)
+                paused = paused_names(catalog.get('source_controls') or {
+                    'sources': {}}, today=now.astimezone(ZoneInfo('Europe/Rome')).date())
+                visible_catalog = {**catalog, 'sources': {
+                    name: ({**batch, 'status': 'paused'} if name in paused else batch)
+                    for name, batch in catalog['sources'].items()}}
+                payload = query_catalog(visible_catalog, lat, lon, radius, now=now)
                 payload['total'] = len(payload['events'])
                 payload['events'] = payload['events'][offset:offset+limit]
                 payload['next_offset'] = offset+limit if offset+limit < payload['total'] else None
@@ -71,11 +80,17 @@ def application(environ, start_response):
                     data = json.dumps(payload).encode('utf-8')
                     start_response(status, headers)
                     return [data]
-                payload['source_status'] = {name: batch['status'] for name, batch in catalog['sources'].items()}
+                payload['source_status'] = {
+                    name: batch['status'] for name, batch in visible_catalog['sources'].items()
+                    if name not in paused}
+                payload['paused_sources'] = sorted(paused)
                 payload['source_updated_at'] = {
-                    name: batch.get('updated_at') for name, batch in catalog['sources'].items()}
+                    name: batch.get('updated_at') for name, batch in catalog['sources'].items()
+                    if name not in paused}
                 payload['source_failure_tags'] = {}
-                for name, batch in catalog['sources'].items():
+                for name, batch in visible_catalog['sources'].items():
+                    if name in paused:
+                        continue
                     if batch['status'] in {'fresh', 'partial'}:
                         tag = source_age_failure(batch, now=now) or (
                             'quarantined_cards' if batch['status'] == 'partial' else None)

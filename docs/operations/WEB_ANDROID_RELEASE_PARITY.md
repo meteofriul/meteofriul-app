@@ -1,5 +1,7 @@
 # Allineamento della Web App con Android
 
+**Mercati, sorgenti allineati il 23 novembre 2026.** Il candidato frontend condiviso Web/Android incorpora `origin/main` fino a `61ca8e5e`; la scheda compatta riduce il carattere dei badge con due giorni per mantenere leggibile `MER/SAB`. Il catalogo candidato è invariato (80 schede, SHA-256 `0DE55893D1A1CD2B…`), revisione pubblica 0. La verifica locale ha superato 5.203 test frontend, lint e build Web/service worker; nessun nuovo artefatto o deployment Web/Android è stato pubblicato. La parità delle versioni distribuite non cambia. Restano la prova Android reale, il confronto con il futuro catalogo pubblico e la qualifica Safari/iPhone.
+
 **Mercati, rettifica del 18 novembre 2026.** Il candidato frontend comune a Web e Android riconosce gli eventi tramite un vecchio URL soltanto se il titolo è coerente; la revisione privata 59 esclude la fonte settimanale errata da M038. Revisione pubblica 0, nessun nuovo artefatto o deployment Web/Android. Prova Android reale e Web/iPhone ancora aperte. [Controllo identità](MERCATI_CONFRONTO_PANNELLO_APP_20261116.md#rettifica-fonte-storica--18-novembre-2026).
 
 **Mercati, dati privati allineati il 18 novembre 2026.** La proiezione della revisione privata online 58 coincide con il candidato Web/Android per 80 schede, 206 edizioni e 221 alias delle edizioni. Il catalogo pubblico rimane alla revisione 0. Prima di un rilascio vanno controllati gli URL storici dell'identità di San Daniele, la prova Android reale e la qualifica Web/iPhone. [Confronto e rilettura](MERCATI_CONFRONTO_PANNELLO_APP_20261116.md#allineamento-privato--18-novembre-2026). Nessun artefatto o deployment Web/Android nuovo.
@@ -7,6 +9,83 @@
 **Mercati, verifica del 16 novembre 2026.** Il candidato frontend comune a Web e Android è stato [confrontato con la revisione privata online 57](MERCATI_CONFRONTO_PANNELLO_APP_20261116.md): 80 identità e 202 edizioni esistenti coincidono; quattro edizioni più recenti e testi pubblici abbreviati sono solo nel ramo app. La revisione pubblica è ancora 0. Non esiste un nuovo artefatto Web/Android né una prova su dispositivo; il confronto non qualifica la parità delle versioni distribuite.
 
 **Mercati, allineamento dei sorgenti del 13 novembre 2026.** Il ramo candidato Web/Android include `origin/main` fino a `b225c296` e mantiene 80 schede, 206 edizioni e 13 rimozioni. Verifica locale: 5.202 test frontend, lint, build Web/service worker, 140 test backend mirati e `compileall` PASS. Non sono state prodotte build Android né pubblicati nuovi artefatti Web/Android; la parità delle versioni distribuite resta invariata. Confronto del catalogo, Android reale e Safari/iPhone ancora da verificare prima di una release.
+
+**Anticipazione serale, integrata in `main` il 23 novembre 2026.** La modifica backend
+di testo limitato alle temperature non cambia frontend o artefatti Web/Android.
+Il solo job serale pubblico usa ora il digest `sha256:7d4596ae…`, con
+scheduler invariato e prima corsa ordinaria ancora da verificare. Un job QA
+isolato ha registrato una sola
+notifica TEST inviata all'Android owner ed è stato eliminato; il proprietario
+ha confermato ricezione e apertura del Bollettino sul dispositivo. La CI
+di `main` è verde.
+[Evidenza e stato dei job](OPS_JOBS_PROMOTION_20261123.md).
+
+**Fonti Eventi, integrate in `main` il 23 novembre 2026.** I nuovi limiti di
+lettura sono nel solo backend. Il collaudo Cloud completo su catalogo QA con i
+checkpoint pubblici è riuscito; il solo job Eventi pubblico usa ora il digest
+`sha256:d6ff27f2…`. Il catalogo pubblico resta al precedente snapshot fino
+alla prossima corsa; frontend e artefatti Web/Android non sono stati
+aggiornati. [Evidenza](OPS_JOBS_PROMOTION_20261123.md).
+
+**API amministrativa operativa, 22 novembre 2026.** La
+[PR 56](https://github.com/meteofriul/meteofriul-app/pull/56), integrata in
+`main` con `4cab51b2` e CI `main` verde, legge log e
+catalogo Eventi per il solo pannello; la revisione con tag `ops-panel-v1` ha
+zero traffico app. Il pannello online è stato provato con login e viewport
+360 px. Il frontend dell'app e i suoi endpoint pubblici non cambiano: nessun
+nuovo artefatto Web/Android o collaudo Safari/telefono per l'app. Quattro
+policy email duplicate sono state alleggerite, mentre gli avvisi importanti
+restano. [Evidenza e limiti](OPERATIONAL_ALERT_ROUTING_20261122.md).
+
+**Verifica backend del 20–22 novembre 2026.** Le sintesi mattutine sono state
+inviate; le tre anticipazioni serali non sono state inviate perché la fonte
+ICON non superava il controllo dei dati. L'API Eventi pubblica risponde
+HTTP 200 ma segnala `degraded`: Azalea e Barcolana `stale` sono escluse
+dagli eventi visibili. [Evidenza e limiti](OPERATIONAL_JOBS_CHECK_20261122.md).
+Nessun contratto client, artefatto Web/Android o pubblicazione applicativa
+e cambiato durante l'audit; la parita visiva e su dispositivo non e stata
+riesaminata in questa verifica dei job.
+
+**Notifiche, 19 novembre 2026 — aggiornati solo i job backend mattutino e
+serale.** Il cambio di comune durante il claim ora risulta invio saltato,
+senza errore del job. [PR 53](https://github.com/meteofriul/meteofriul-app/pull/53)
+e CI PR/main verdi; digest Cloud Run `sha256:3811ae86...`, Scheduler e
+configurazione invariati. Il payload e i contratti di Android e Web non sono
+stati modificati; nessun nuovo artefatto o pubblicazione applicativa, nessuna
+nuova qualifica Safari/Android. La prima corsa ordinaria resta da osservare.
+[Provenienza e limiti](FORECAST_LOCATION_CHANGE_NONFAILURE_20261119.md).
+
+**Eventi, backend pubblico del 19 novembre 2026.** Le PR 48–51 sono integrate e la CI è verde. Job e lettore Eventi usano il digest `sha256:fcf3a81c...`; una corsa completa pubblica è riuscita e il lettore `00024-vaz` ha il 100% del traffico. L'endpoint usato dalle app Web e Android risponde HTTP 200 da Udine e Trieste con 14 fonti attive `fresh`/`partial` e Spazzapan in pausa. Non sono stati creati nuovi artefatti Web/Android né eseguite pubblicazioni applicative; il contratto API resta lo stesso. Il browser del telefono ha verificato *SDENG!* nel collaudo locale, non un APK né Safari. Prima corsa ordinaria del 20 novembre ancora da osservare. [Evidenza e limiti](EVENTS_JOB_DEPLOYMENT_20261119.md).
+
+**Eventi, job QA del 19 novembre 2026.** La
+[PR 48](https://github.com/meteofriul/meteofriul-app/pull/48) ha CI verde;
+il worker da commit `eb9fbfcb` ha completato un ciclo cloud su catalogo
+separato. Il lettore QA con lo stesso digest ha 0% del traffico e mostra
+Verdi Trieste e CSS Udine recuperati, con Spazzapan in pausa. Il catalogo
+pubblico e gli artefatti Web/Android non sono cambiati. Il browser del
+telefono Android ha confermato la scheda *SDENG!* con entrambe le repliche,
+sede e Indicazioni; la prova non qualifica un APK o Safari.
+[Evidenza](EVENTS_JOB_RECOVERY_20261119.md).
+
+**Eventi, 19 novembre 2026.** Il controllo online ha Spazzapan in pausa
+alla revisione 1, ma il lettore pubblico non lo consuma ancora. Il recupero
+XML di Teatro Verdi Trieste è verificato in lettura locale; CSS Udine resta
+esclusa dal catalogo pubblico per il gate di confronto. Nessun artefatto Web
+o Android, endpoint pubblico o traffico Cloud Run è cambiato.
+[Prove e limiti](EVENTS_SOURCE_DECISION_20261119.md). Il controllo sul client
+reale resta aperto prima di promuovere il nuovo lettore.
+
+**Eventi, collaudo isolato del 15 novembre 2026.** La
+[PR 48](https://github.com/meteofriul/meteofriul-app/pull/48) aggiunge controlli
+per fonte al backend e il ramo XML. Un job QA senza pianificazione ha verificato
+il recupero di Teatro Verdi Trieste; il job è stato eliminato. Il lettore con
+tag QA usa una copia del catalogo e ha 0% del traffico; CSS Udine e Galleria
+Spazzapan restano escluse perché non verificate. Il lettore pubblico, il job
+ordinario, gli artefatti Web e Android e i loro endpoint non sono cambiati.
+[Prova e limiti](EVENTS_SOURCE_CONTROLS_20261115.md). La prova su Web/Android
+reali resta necessaria prima di promuovere il nuovo lettore.
+
+**Eventi, sorgenti del 15 novembre 2026.** Il ramo `codex/events-xml-recovery-20261115` modifica solo il lettore backend Teatro Verdi Trieste; 77 test mirati e lettura reale senza scritture PASS. [Prova](EVENTS_VERDI_TRIESTE_XML_RECOVERY_20261115.md). Nessun nuovo artefatto, deploy o controllo su dispositivo Web/Android: la parità delle versioni distribuite resta invariata.
 
 **Notifiche, 12 novembre — aggiornato solo il job backend mattutino.** La correzione del testo e in `main` `b939a177` tramite [PR 46](https://github.com/meteofriul/meteofriul-app/pull/46), con CI PR/main PASS e [collaudo Android owner](NOTIFICATIONS_ALERTS_AUDIT_20261111.md) ricevuto e aperto sul Bollettino. Il job ordinario usa il digest candidato con readback `ready=true`; i canali Android e Web ricevono entrambi il testo costruito dal backend. Nessun artefatto o pubblicazione Web/Android nuova, nessuna qualifica Safari aggiunta. La parita degli artefatti pubblici non cambia.
 
@@ -262,3 +341,14 @@ La Web pubblica è già stata aggiornata il 21 ottobre da `1b0287c1`, versione
 0.1.14: non contiene le correzioni successive del 22 ottobre. Il precedente
 [candidato del 20 ottobre](WEB_APP_CANDIDATE_20261020.md) resta un verbale storico,
 non l'identità della nuova candidata o dello stato pubblico corrente.
+
+# Eventi, preparazione dei controlli per fonte (15 novembre 2026)
+
+Il ramo `codex/events-source-controls-20261115` e la
+[PR 48](https://github.com/meteofriul/meteofriul-app/pull/48) in bozza
+intervengono su job, API Eventi e API amministrativa. CI PR PASS nei tre job.
+Non cambiano il bundle frontend, la Web app pubblicata o
+l'APK/AAB Android. Nessun artefatto o endpoint è stato distribuito da questo
+ramo. Prima dell'attivazione va verificato il client Eventi Web e Android
+contro il catalogo con una fonte in pausa e dopo una verifica riuscita;
+vedere [il passaggio operativo](EVENTS_SOURCE_CONTROLS_20261115.md).

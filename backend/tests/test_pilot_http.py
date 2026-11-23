@@ -14,9 +14,11 @@ class HttpTests(unittest.TestCase):
             clock.start().now.return_value = self.now
             self.addCleanup(clock.stop)
 
-    def catalog_response(self, sources):
+    def catalog_response(self, sources, *, controls=None):
         status = []
         catalog = {'attempted_at': 'v1', 'sources': sources}
+        if controls is not None:
+            catalog['source_controls'] = controls
         with patch('app.events.pilot_http.load_catalog', return_value=catalog):
             response = application({'REQUEST_METHOD': 'GET', 'PATH_INFO': '/api/local/events',
                                     'QUERY_STRING': 'lat=46&lon=13'},
@@ -71,6 +73,22 @@ class HttpTests(unittest.TestCase):
         self.assertEqual(payload['events'][0]['source'], 'Azalea')
         self.assertEqual(payload['source_failure_tags'], {'CSS Udine': 'source_expired'})
         self.assertEqual(payload['catalog_status'], 'degraded')
+
+    def test_paused_source_is_not_reported_as_an_active_failure(self):
+        event = {'title': 'Evento', 'source': 'Azalea', 'start_date': '2026-10-14',
+                 'lat': 46, 'lon': 13}
+        payload = self.catalog_response({
+            'Azalea': {'status': 'fresh', 'updated_at': self.now.isoformat(),
+                       'events': [event]},
+            'Galleria Spazzapan': {'status': 'stale',
+                                   'last_attempt_error_type': 'adapter_exception',
+                                   'events': [{**event, 'source': 'Galleria Spazzapan'}]}},
+            controls={'sources': {'Galleria Spazzapan': {'enabled': False}}})
+        self.assertEqual([item['source'] for item in payload['events']], ['Azalea'])
+        self.assertEqual(payload['paused_sources'], ['Galleria Spazzapan'])
+        self.assertEqual(payload['source_status'], {'Azalea': 'fresh'})
+        self.assertEqual(payload['source_failure_tags'], {})
+        self.assertEqual(payload['catalog_status'], 'complete')
 
     def request(self, query):
         status = []

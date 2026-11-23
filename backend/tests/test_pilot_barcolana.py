@@ -123,7 +123,7 @@ class BarcolanaTests(unittest.TestCase):
                 patch('app.events.http_client.time.sleep', side_effect=lambda n: now.__setitem__(0, now[0]+n)):
             self.assertEqual(_read(get, CALENDAR_DATA, 100, deadline=128), 'complete document')
         self.assertEqual(len(timeouts), 2)
-        self.assertEqual(timeouts[0], (3, 8))
+        self.assertEqual(timeouts[0], (3, 4))
         self.assertLessEqual(sum(timeouts[1]), 4.5)
         success.close.assert_called_once()
 
@@ -133,11 +133,11 @@ class BarcolanaTests(unittest.TestCase):
             _read(get, CALENDAR_DATA, 100, deadline=time.monotonic() - 1)
         get.assert_not_called()
 
-    def test_second_read_can_recover_a_response_slower_than_eight_seconds(self):
+    def test_second_read_can_recover_a_twenty_second_calendar_response(self):
         now, timeouts = [100.0], []
         def get(*_, **kwargs):
             timeouts.append(kwargs['timeout'])
-            latency = 10  # Both requests exceed the previous 8s read timeout.
+            latency = 20  # The former 16s retry would reject this response.
             now[0] += min(latency, kwargs['timeout'][1])
             if kwargs['timeout'][1] < latency:
                 raise requests.ReadTimeout('slow calendar')
@@ -147,7 +147,7 @@ class BarcolanaTests(unittest.TestCase):
                 patch('builtins.print') as output:
             self.assertEqual(_read(get, CALENDAR_DATA, 100, deadline=128,
                                    stage='calendar'), 'complete calendar')
-        self.assertEqual(timeouts, [(3, 8), (3, 16)])
+        self.assertEqual(timeouts, [(3, 4), (3, 20)])
         self.assertLess(now[0], 128)
         diagnostic = json.loads(output.call_args.args[0])
         self.assertEqual((diagnostic['attempts'], diagnostic['status']), (2, 'read'))
@@ -167,7 +167,7 @@ class BarcolanaTests(unittest.TestCase):
                 patch('builtins.print') as output:
             with self.assertRaises(requests.ReadTimeout):
                 _read(get, CALENDAR_DATA, 100, deadline=128, stage='calendar')
-        self.assertEqual(timeouts, [(3, 8), (3, 13.5)])
+        self.assertEqual(timeouts, [(3, 4), (3, 17.5)])
         self.assertEqual(now[0], 128)
         diagnostic = json.loads(output.call_args.args[0])
         self.assertEqual((diagnostic['attempts'], diagnostic['status']), (2, 'failed'))

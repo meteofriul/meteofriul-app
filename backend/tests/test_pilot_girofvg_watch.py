@@ -67,6 +67,33 @@ def fake_get(*, place='Udine', second_status=500, event_url='/festa-2026',
 
 
 class GiroFVGWatchTests(unittest.TestCase):
+    def test_large_sitemap_change_is_bounded_and_explicitly_incomplete(self):
+        changed = ''.join(
+            f'<url><loc>{watch.BASE}/nuovo-{index}-2026</loc>'
+            f'<lastmod>{STAMP}</lastmod></url>' for index in range(31))
+        full_sitemap = sitemap().replace(b'</urlset>',
+                                         changed.encode() + b'</urlset>')
+        ordinary_get = fake_get(place='Trieste')
+
+        def get(url, **kwargs):
+            if url == watch.SITEMAP:
+                return Response(200, full_sitemap, 'application/xml')
+            return ordinary_get(url, **kwargs)
+
+        with (patch.object(watch, 'MIN_SITEMAP_URLS', 1),
+              patch.object(watch, 'MIN_CATEGORY_PAGES', 1),
+              patch.object(watch, 'CATEGORIES', ('fiere-e-mostre',)),
+              patch.object(watch, 'PAGE_SIZE', 1)):
+            result = watch.collect_watch(date(2026, 10, 8), get=get, baseline=baseline())
+        self.assertFalse(result['source_complete'])
+        self.assertEqual(result['changed_sitemap_urls'], 31)
+        self.assertEqual(result['changes'][0], {
+            'reason': 'sitemap_review_budget_exceeded', 'url': watch.SITEMAP,
+            'count': 31, 'sample_urls': sorted(
+                f'{watch.BASE}/nuovo-{index}-2026' for index in range(31))[:10]})
+        self.assertIn('new_or_changed_active_card',
+                      {item['reason'] for item in result['changes']})
+
     def test_sitemap_rejects_missing_or_duplicate_inventory(self):
         with patch.object(watch, 'MIN_SITEMAP_URLS', 1):
             entries, recent = watch.parse_sitemap(sitemap(), date(2026, 10, 8))

@@ -9,7 +9,8 @@ import json
 from pathlib import Path
 
 from app.events.pilot_catalog import PILOT_PROJECT
-from app.events.pilot_cloud import BUCKET, KEY, publish
+from app.events.pilot_cloud import BUCKET, CONTROLS_KEY, KEY, publish
+from app.events.source_controls import decode_controls, empty_controls
 
 
 class MemoryBlob:
@@ -40,20 +41,27 @@ class MemoryBlob:
 class MemoryClient:
     project = PILOT_PROJECT
 
-    def __init__(self, previous):
+    def __init__(self, previous, controls):
         self._blob = MemoryBlob(previous)
+        self._controls_blob = MemoryBlob(controls)
 
     def bucket(self, name):
         return self
 
     def blob(self, name):
-        return self._blob
+        if name == KEY:
+            return self._blob
+        if name == CONTROLS_KEY:
+            return self._controls_blob
+        raise ValueError("unexpected audit object key")
 
 
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--previous", type=Path, required=True)
     parser.add_argument("--output", type=Path, required=True)
+    parser.add_argument("--controls", type=Path,
+                        help="Local copy of the source controls used by the job")
     parser.add_argument("--retry-failed", action="store_true", help="Retry only failed sources from the local input")
     options = parser.parse_args()
     if PILOT_PROJECT != "meteo-friul":
@@ -65,13 +73,15 @@ def main():
     previous = json.loads(options.previous.read_text(encoding="utf-8"))
     if previous.get("schema") != "pilot-events-v1":
         parser.error("unexpected previous catalog schema")
-    client = MemoryClient(previous)
+    controls = decode_controls(options.controls.read_bytes()) if options.controls else empty_controls()
+    client = MemoryClient(previous, controls)
     print(json.dumps({
         "event_readonly_audit_start": {
             "project": PILOT_PROJECT,
             "previous": str(options.previous),
             "output": str(options.output),
             "sources": len(previous.get("sources", {})),
+            "controls_revision": controls["revision"],
         }
     }), flush=True)
     failure = None
@@ -87,6 +97,7 @@ def main():
         "result": "failed" if failure else "succeeded",
         "error": failure,
         "attempted_at": catalog.get("attempted_at"),
+        "paused_sources": catalog.get("paused_sources", []),
         "sources": {
             name: {
                 "status": batch.get("status"),

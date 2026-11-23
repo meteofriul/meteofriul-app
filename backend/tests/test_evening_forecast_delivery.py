@@ -1,12 +1,17 @@
 from __future__ import annotations
 
+import io
+import json
 import unittest
+from contextlib import redirect_stdout
 from copy import deepcopy
 from datetime import datetime, timedelta, timezone
 from types import SimpleNamespace
+from unittest.mock import patch
 from zoneinfo import ZoneInfo
 
 from app.push.fcm import FcmBatchOutcome
+from app.jobs import send_evening_forecast
 from app.services.evening_forecast_delivery import (
     EveningForecastConfigurationError,
     EveningForecastDeliveryService,
@@ -243,6 +248,80 @@ class EveningForecastCopyTests(unittest.TestCase):
 
         self.assertEqual(self.contents(value), {})
 
+    def test_full_copy_rejects_a_gap_in_the_day(self):
+        value = snapshot()
+        missing_index = tomorrow_index(value, 12)
+        for series in value["hourly"].values():
+            series.pop(missing_index)
+
+        self.assertEqual(self.contents(value), {})
+
+    def test_missing_rain_uses_only_complete_temperature_day(self):
+        value = snapshot()
+        value["hourly"]["temperature_2m"] = [8.0] * len(value["hourly"]["time"])
+        for hour in (0, 5, 7, 9, 19, 23):
+            value["hourly"]["rain"][tomorrow_index(value, hour)] = None
+        value["hourly"]["temperature_2m"][tomorrow_index(value, 5)] = 5.0
+        value["hourly"]["temperature_2m"][tomorrow_index(value, 14)] = 11.0
+
+        contents = self.contents(value)
+
+        self.assertEqual(contents["it"].body,
+                         "Temperature tra 5 e 11 °C. Apri e guarda.")
+        self.assertEqual(contents["fur"].body,
+                         "Temperadure tra 5 e 11 °C. Vierç e cjale.")
+        self.assertTrue(all(content.quality_limited for content in contents.values()))
+        self.assertNotIn("pioggia", contents["it"].body.lower())
+
+    def test_reduced_copy_rejects_missing_temperature_and_malformed_data(self):
+        for field, value in (("temperature_2m", None),
+                             ("weather_code", "0"),
+                             ("precipitation", -1.0)):
+            with self.subTest(field=field):
+                candidate = snapshot()
+                candidate["hourly"]["rain"][tomorrow_index(candidate, 5)] = None
+                candidate["hourly"][field][tomorrow_index(candidate, 9)] = value
+                self.assertEqual(self.contents(candidate), {})
+
+    def test_reduced_copy_rejects_a_gap_in_the_day(self):
+        value = snapshot()
+        value["hourly"]["rain"][tomorrow_index(value, 5)] = None
+        missing_index = tomorrow_index(value, 12)
+        for series in value["hourly"].values():
+            series.pop(missing_index)
+
+        self.assertEqual(self.contents(value), {})
+
+    def test_reduced_copy_accepts_complete_dst_days(self):
+        municipality = LocationCatalog().match_istat("093033")
+        for now, first in (
+            (datetime(2026, 3, 28, 18, 45, tzinfo=timezone.utc),
+             datetime(2026, 3, 28, 20, tzinfo=timezone.utc)),
+            (datetime(2026, 10, 24, 18, 45, tzinfo=timezone.utc),
+             datetime(2026, 10, 24, 19, tzinfo=timezone.utc)),
+        ):
+            with self.subTest(now=now):
+                value = snapshot()
+                value["source_run_id"] = now.strftime("%Y%m%dT120000Z")
+                value["hourly"]["time"] = [
+                    (first + timedelta(hours=index)).isoformat()
+                    for index in range(len(value["hourly"]["time"]))
+                ]
+                forecast_date = now.astimezone(LOCAL_ZONE).date() + timedelta(days=1)
+                day_indexes = [
+                    index for index, raw in enumerate(value["hourly"]["time"])
+                    if datetime.fromisoformat(raw).astimezone(LOCAL_ZONE).date()
+                    == forecast_date
+                ]
+                self.assertIn(len(day_indexes), {23, 25})
+                value["hourly"]["rain"][day_indexes[5]] = None
+
+                contents = build_evening_forecast_contents(
+                    value, municipality, now=now
+                )
+
+                self.assertTrue(contents["it"].quality_limited)
+
     def test_rejects_the_previous_morning_model_run(self):
         value = snapshot()
         value["source_run_id"] = "20260929T000000Z"
@@ -300,6 +379,38 @@ class EveningForecastDeliveryTests(unittest.TestCase):
         self.assertEqual(message.data["forecast_date"], TOMORROW.isoformat())
         self.assertEqual(repository.claims[0]["notice_kind"], "evening_forecast")
         self.assertEqual(repository.finishes[0]["state"], "sent")
+
+    def test_reduced_copy_is_counted_in_the_internal_summary(self):
+        value = snapshot()
+        value["hourly"]["rain"][tomorrow_index(value, 5)] = None
+        sender = FakeSender()
+        result = self.service(FakeDeviceRepository([device()]),
+                              FakeSource(value), sender).run()
+
+        self.assertEqual((result.status, result.sent, result.quality_limited_groups),
+                         ("sent", 1, 1))
+        self.assertEqual(result.summary()["quality_limited_groups"], 1)
+        self.assertNotIn("incomplet", sender.messages[0].body.lower())
+
+    def test_location_changed_before_send_is_logged_without_job_failure(self):
+        repository = FakeDeviceRepository(
+            [device()], claim_state="device_location_changed"
+        )
+        sender = FakeSender()
+        result = self.service(repository, FakeSource(snapshot()), sender).run()
+        output = io.StringIO()
+        with patch.object(
+            send_evening_forecast,
+            "get_evening_forecast_delivery_service",
+            return_value=SimpleNamespace(run=lambda: result),
+        ), redirect_stdout(output):
+            exit_code = send_evening_forecast.main()
+
+        self.assertEqual((result.status, result.location_changed, result.failed),
+                         ("location_changed", 1, 0))
+        self.assertEqual(exit_code, 0)
+        self.assertEqual(json.loads(output.getvalue())["location_changed"], 1)
+        self.assertEqual(sender.messages, [])
 
     def test_localizes_each_device_without_refetching_the_shared_place(self):
         repository = FakeDeviceRepository(
