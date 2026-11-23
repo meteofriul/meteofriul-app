@@ -1,7 +1,15 @@
 # Meteo Friûl
 
-**Fonti Eventi, candidata del 23 novembre 2026.** Il ramo
-`codex/events-source-read-budgets-20261123` velocizza la lettura completa di
+**Anticipazione serale, candidata del 23 novembre 2026.** Il ramo
+`codex/evening-verified-temperature-20261123` prepara un testo limitato alle
+temperature quando la pioggia oraria ICON è incerta e la giornata successiva
+ha copertura completa. 59 test mirati e un campione pubblico reale superati;
+un replay isolato ha inviato una sola notifica TEST all'Android owner, che
+ha confermato ricezione e apertura del Bollettino. Nessun job pubblico o app
+aggiornati. [Prove e passaggi ancora aperti](docs/operations/EVENING_VERIFIED_TEMPERATURE_20261123.md).
+
+**Fonti Eventi, integrate in `main` il 23 novembre 2026.** La [PR 59](https://github.com/meteofriul/meteofriul-app/pull/59)
+velocizza la lettura completa di
 Azalea e ridistribuisce il tempo di recupero di Barcolana dopo la terza corsa
 Eventi fallita. I lettori locali e 72 test mirati passano; il collaudo Cloud
 completo, con una copia QA dei checkpoint pubblici, recupera tutte le 14 fonti

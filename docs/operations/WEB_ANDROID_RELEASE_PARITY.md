@@ -1,7 +1,14 @@
 # Allineamento della Web App con Android
 
-**Fonti Eventi, candidata del 23 novembre 2026.** I nuovi limiti di lettura
-sono nel solo ramo backend. Il collaudo Cloud completo su catalogo QA con i
+**Anticipazione serale, candidata del 23 novembre 2026.** La proposta backend
+di testo limitato alle temperature non cambia frontend, artefatti Web/Android
+o notifiche pubbliche distribuite. Un job QA isolato ha registrato una sola
+notifica TEST inviata all'Android owner ed è stato eliminato; il proprietario
+ha confermato ricezione e apertura del Bollettino sul dispositivo.
+[Evidenza](EVENING_VERIFIED_TEMPERATURE_20261123.md).
+
+**Fonti Eventi, integrate in `main` il 23 novembre 2026.** I nuovi limiti di
+lettura sono nel solo backend. Il collaudo Cloud completo su catalogo QA con i
 checkpoint pubblici è riuscito; nessun catalogo pubblico, frontend o artefatto
 Web/Android è stato aggiornato. [Evidenza](EVENTS_SOURCE_BUDGETS_20261123.md).
 
