@@ -361,3 +361,136 @@ L'esito FVG non sblocca né sostituisce il prodotto nazionale. Alle 17:57 UTC
 la famiglia CAMS pubblica era ancora alla revisione 72, ciclo del 23 novembre;
 il prossimo slot CAMS resta alle 20:00 UTC. Nessuna corsa manuale o modifica
 di Scheduler/fence è stata eseguita durante questo controllo.
+
+## Recupero ICON nazionale: codice, job e dato delle 19:41 UTC
+
+Lo slot ordinario nazionale delle 19:00 UTC (`meteofriul-national-icon-hm9dz`)
+è terminato alle 19:01:47 ancora su `manual_review`: la nuova diagnostica
+non poteva attraversare la fence del 21 novembre. Il puntatore era alla
+revisione 121, ciclo `20261121T000000Z`.
+
+La [PR 63](https://github.com/meteofriul/meteofriul-app/pull/63) ha aggiunto
+una supersessione operatore esplicita con incidente immutabile, generazione e
+hash esatti, CAS e riconciliazione di risposte ambigue. Prima del merge è
+stato corretto anche il clock del guard: ogni attestazione viene confrontata
+con l'ora letta **dopo** il controllo cloud, non con l'ora iniziale della
+corsa. I 42 test mirati locali sono passati. La CI della PR
+`45682372165` e la [CI di `main` `45683228910`](https://github.com/meteofriul/meteofriul-app/actions/runs/45683228910)
+hanno superato i tre job ciascuna. Merge `e4b80906a285fdaff72c6dc4fa32b37b97dcf20b`
+alle 19:14:32 UTC; nessuna versione dell'app è stata cambiata.
+
+Cloud Build `ac0eb1ec-c3c5-4c0f-b614-798fada62bf7`, da un contesto di
+219 file tratti esattamente da quel commit, ha concluso `SUCCESS` alle
+19:21:11 UTC: build e **102 test offline** riusciti. Il digest immutabile è
+`sha256:ecb75d539e1602a994998b9ba8c6ee569e2b13df36da8a0e58132b9979da8fe4`.
+Il job nazionale è passato dalla generazione 3 alla 4, cambiando solo
+immagine e marker `WEATHER_SOURCE_COMMIT`; il confronto del template ha
+mostrato inoltre il nonce tecnico di Cloud Run, mentre comando, identità,
+risorse, timeout, retry e altre variabili sono rimasti uguali. Lo Scheduler
+non è stato modificato dal deploy.
+
+Per la ripresa è stato creato un job operatore distinto con un solo task,
+retry zero, comando dedicato e lo stesso digest. Un tentativo di concedergli
+`storage.objectUser` su entrambi i bucket interi è stato **respinto dalla
+revisione automatica prima dell'assegnazione**, perché il permesso include
+scrittura e cancellazione fuori dal perimetro ICON. La soluzione applicata
+usa una service account dedicata con lettura delle configurazioni Run e
+Scheduler e tre cartelle gestite: stato della recovery nazionale, stato del
+worker nazionale e dati `pilot/weather/v2/icon2i/`. Il readback IAM ha
+confermato `storage.objectUser` solo su quei prefissi e **zero binding**
+della nuova identità sui bucket interi. Il primo `inspect` del job è riuscito
+in sola lettura; il secondo ha restituito `operator_guard=ready`, fase
+`manual_review`, generazione `1795284200028771`, hash owner
+`ee7f38531ed9b387889461ba102e26274e64ce9a6cb4ea073e4accf4c8bb6d4c`
+e puntatore al ciclo del 21 novembre.
+
+L'inventario dei writer distingue il percorso nazionale `weather/v2/icon2i`
+dai job FVG e CAMS, che nel codice distribuito pubblicano sotto percorsi
+`weather/v1/` distinti. Le loro service account preesistenti conservano
+comunque ruoli Storage sull'intero bucket: l'isolamento da quelle esecuzioni
+è verificato sul percorso applicativo e sulle configurazioni correnti, non
+è un divieto IAM per prefisso. È un limite residuo da trattare in un lavoro
+di hardening separato; nessun altro job nazionale era attivo durante il CAS.
+
+Prima della corsa, il ciclo sorgente `2026112512` risultava completo nella
+directory pubblica; nel ciclo fallito erano presenti claim e intent ma non
+`mapping.json`, `prepared.json` né manifest. Solo lo Scheduler nazionale
+è stato sospeso. Una sola esecuzione operatore,
+`meteofriul-national-icon-operator-mr8kv`, è partita alle **19:32:47 UTC**
+ed è finita `Completed=True` alle **19:41:30 UTC**. Ha acquisito il ciclo
+`20261125T120000Z`, validato il bundle, salvato e verificato il checkpoint,
+poi pubblicato il puntatore. La fence è `completed` sul nuovo ciclo, con
+quella stessa esecuzione come owner. Il puntatore Storage è alla revisione
+**122**, generazione `1795635658168320`, aggiornato alle 19:40:58 UTC;
+il catalogo conta **7894 comuni**. Il manifest di 151703 byte ha SHA-256
+`0037089b135957e9225e001c7bc386221c0b6c87eee431d2e8a794895e218e9b`,
+identico fra Storage, descrittore nel puntatore e HTTP 200. Il puntatore
+HTTP e il resolver reale per Udine rispondono 200 con il nuovo ciclo.
+Lo Scheduler nazionale è stato riattivato; quelli FVG e CAMS sono rimasti
+abilitati con i cron precedenti.
+
+Il monitor delle 19:40 UTC ha ancora classificato il nazionale critico:
+ha valutato il vecchio puntatore **prima** dell'aggiornamento delle 19:40:58.
+La valutazione ordinaria delle **20:10 UTC** (`meteofriul-icon2i-freshness-lnr62`)
+è invece terminata `Completed=True` alle 20:10:47. Per nazionale e FVG
+ha registrato `complete=true`, `check_state=0`, `critical_active=0` e
+nessuna causa: anche la telemetria di freschezza ha riconosciuto il nuovo
+dato nazionale. Il nuovo ciclo dimostra che il percorso attuale
+riesce; non identifica con certezza quale controllo o prima scrittura abbia
+fallito il 21 novembre, perché quella versione non registrò l'eccezione.
+La ricevuta ADS CAMS e i suoi dati pubblicati non sono stati toccati da
+questa operazione.
+
+**Prima corsa ordinaria dopo la ripresa:** lo Scheduler nazionale ha avviato
+`meteofriul-national-icon-lsfz6` alle 20:00:06 UTC. L'esecuzione è terminata
+`Completed=True` alle 20:01:04 UTC; l'esito applicativo è `no_op` /
+`publication_already_verified` sul ciclo `20261125T120000Z`. La fence non
+blocca più gli slot ordinari e il job non ha duplicato la pubblicazione.
+
+## CAMS: richiesta ADS ripresa e nuova famiglia pubblicata alle 20:04 UTC
+
+Prima dello slot, Storage e HTTP erano identici: revisione **72**, ciclo
+`20261123T000000Z`, SHA-256 del puntatore
+`78859b85f7ad3b7f246af1f4f7a08b9db62cfd21e159186ac1187bc35e6d4b49`.
+La ricevuta `submitted.json` del 25 novembre era unica, generazione
+`1795624327854827`, creata alle 16:32:07 UTC.
+
+Lo Scheduler invariato ha avviato `meteofriul-cams-9cvp6` alle **20:00:10
+UTC**. Il worker ha superato `metadata_validation`, ritrovato pronta la
+richiesta ADS già salvata, completato il download alle 20:00:34 e salvato
+il checkpoint. `decode_validation` è finita alle 20:01:13; il checkpoint
+decodificato è stato persistito alle 20:01:59. La pubblicazione è iniziata
+alle 20:02:18, ha verificato i run salvati e ha aggiornato il puntatore
+famiglia alle **20:04:09 UTC**. Il readback pubblico è terminato alle
+20:04:46 e l'esecuzione Cloud Run è finita `Completed=True` alle
+**20:04:52 UTC**. Log applicativi `publication_result=published` e
+`cams_family_verified=verified` sul ciclo `20261125T000000Z`.
+
+Il puntatore famiglia è ora alla revisione **73**, generazione
+`1795637049822525`, ciclo `20261125T000000Z`. Storage e HTTP 200 hanno
+byte identici, SHA-256
+`5e2d326b677efba6fc2b8cca2a14ef4e5609bcf46150c817fc23862b9e92d92b`.
+I manifest aria e pollini letti via HTTP elencano **215 comuni** ciascuno.
+Il campione reale di Pordenone contiene 97 ore continue e 28 variabili
+nel prodotto aria (22 `ug/m3`, 6 `grains/m3`), più 97 ore e 6 variabili
+`grains/m3` nel prodotto pollini. Lo stesso controllo su Udine e Pordenone,
+per entrambi i prodotti, non ha trovato ore mancanti, chiavi variabili
+diverse, valori mancanti, non finiti o negativi. Nel campione aria di
+Pordenone il massimo di 466,794 `ug/m3` appartiene al monossido di carbonio;
+PM10 raggiunge 44,835 e NO₂ 24,333 `ug/m3`. Questo è un controllo di
+plausibilità campionario; la verifica completa dei 215 comuni è quella
+registrata dal publisher. UV resta un prodotto separato, HTTP 200 con run
+del 25 novembre: il job ha registrato `uv_already_published`.
+
+Dopo la corsa esiste ancora **una sola ricevuta ADS**, con la stessa
+generazione della richiesta originale: nessuna nuova POST è stata
+necessaria. Il problema iniziale era la validazione del nuovo form U11;
+la successiva attesa derivava dallo stato `remote_processing` di ADS, non
+da un rifiuto del prodotto. Il checkpoint durevole e lo slot delle 20 UTC
+hanno permesso la ripresa e la pubblicazione quando ADS ha reso pronto il
+download. Nessuno Scheduler CAMS, artefatto o versione dell'app è stato
+modificato per questa corsa.
+
+Nel readback finale dopo il monitor delle 20:10, ICON nazionale è ancora
+alla revisione 122/ciclo `20261125T120000Z` e CAMS alla revisione 73/ciclo
+`20261125T000000Z`; entrambi gli Scheduler risultano `ENABLED`.

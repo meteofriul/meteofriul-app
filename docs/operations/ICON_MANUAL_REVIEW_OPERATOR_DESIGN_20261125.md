@@ -1,5 +1,15 @@
 # ICON nazionale: ripresa controllata di `manual_review` — 25 novembre 2026
 
+**Aggiornamento delle 19:41 UTC:** il protocollo della PR 63 è stato integrato
+in `main` `e4b80906`, distribuito nel solo job nazionale e usato una volta
+da un job operatore isolato. La fence è `completed` e Storage/HTTP servono
+il ciclo `20261125T120000Z`; lo Scheduler nazionale è stato riattivato.
+La telemetria delle 19:40 precedeva la pubblicazione; lo slot delle
+20:10 ha poi registrato stato sano, senza criticità attive.
+[Evidenza operativa e limiti](WEATHER_ICON_CAMS_RECOVERY_20261125.md).
+Le sezioni sotto conservano il progetto e i gate come erano prima
+dell'attivazione, non descrivono lo stato live successivo.
+
 ## Stato osservato
 
 Alle **16:53 UTC / 17:53 CET** il record durevole
@@ -52,7 +62,7 @@ GitHub per CLI, protocollo e worker nazionale ha superato **41 test** in
 locale. Queste prove non sono una corsa
 cloud e non attestano che l'invocatore sia pronto nel progetto reale.
 
-**`--execute` non è utilizzabile oggi.** Mancano un job operatore isolato
+**Alle 16:53 UTC `--execute` non era utilizzabile.** Mancavano un job operatore isolato
 con immagine e commit verificati, il marker `WEATHER_SOURCE_COMMIT` nel job
 nazionale distribuito, prova IAM e inventario completo degli altri writer,
 una finestra con Scheduler sospeso e zero esecuzioni, e un modo affidabile
@@ -81,6 +91,6 @@ intatta la fence.
 - Verificare checkpoint, manifest, puntatore Storage, HTTP e monitor di
   freschezza prima di ripristinare lo Scheduler e dichiarare recupero.
 
-Questo rapporto è un **progetto verificato localmente**, non una prova di
-recupero ICON né un'autorizzazione a mutare il cloud. Mercati e gli
+Questa sezione era un **progetto verificato localmente**; la prova del recupero
+successivo è nel rapporto operativo collegato in apertura. Mercati e gli
 artefatti Web/Android non sono coinvolti.

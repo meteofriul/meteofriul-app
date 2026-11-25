@@ -1,5 +1,21 @@
 # Allineamento della Web App con Android
 
+**Dati meteo, 25 novembre 2026, 20:04 UTC.** ICON nazionale pubblica il
+ciclo 25 novembre 12Z e CAMS aria/pollini il ciclo 25 novembre 00Z;
+Storage e HTTP pubblico sono coerenti. Le app Web e Android consumano
+i dati aggiornati attraverso i contratti esistenti: nessun frontend,
+versione, AAB o deployment applicativo è cambiato. Questa verifica dei
+dati non equivale a un nuovo collaudo Web/Android o Safari su dispositivo.
+[Evidenza](WEATHER_ICON_CAMS_RECOVERY_20261125.md).
+
+**Dato ICON nazionale, 25 novembre 2026, 19:41 UTC.** Il job backend ha
+pubblicato il ciclo `20261125T120000Z`; puntatore e manifest sono leggibili
+su Storage e HTTP. CAMS aria/pollini attende lo slot delle 20:00 UTC.
+Questa è una variazione dei dati serviti dalle API: versione, frontend,
+artefatti e deployment delle app Web e Android non sono cambiati. Non è
+un nuovo collaudo di parità su browser o dispositivo.
+[Verifica del dato](WEATHER_ICON_CAMS_RECOVERY_20261125.md).
+
 **Dati meteo, 25 novembre 2026, slot 18 UTC.** Il reader ICON FVG serve
 il ciclo 25 novembre 12Z dopo il job riuscito; ICON nazionale resta
 bloccato sul ciclo del 21 novembre. CAMS aria/pollini era ancora al ciclo

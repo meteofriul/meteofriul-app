@@ -1,5 +1,27 @@
 # Meteo Friûl
 
+**CAMS aria e pollini recuperati, 25 novembre 2026 alle 20:04 UTC.** Lo
+slot ordinario ha ripreso la richiesta ADS già salvata e ha pubblicato
+la famiglia revisione 73, ciclo `20261125T000000Z`. Storage e HTTP 200
+coincidono; i due manifest coprono 215 comuni e i campioni di Udine e
+Pordenone superano i controlli su ore, variabili e valori numerici.
+ICON nazionale, recuperato alle 19:41, ha poi superato lo slot ordinario
+delle 20:00 con `publication_already_verified`. Nessuna nuova versione
+dell'app o pubblicazione Web/Android.
+[Rapporto e limiti](docs/operations/WEATHER_ICON_CAMS_RECOVERY_20261125.md).
+
+**ICON nazionale recuperato, 25 novembre 2026 alle 19:41 UTC.** Il solo
+job nazionale usa il codice della [PR 63](https://github.com/meteofriul/meteofriul-app/pull/63)
+e l'immagine verificata `sha256:ecb75d53…`. Una ripresa controllata ha
+pubblicato il ciclo `20261125T120000Z`: fence `completed`, puntatore
+Storage revisione 122, manifest identico per hash su Storage e HTTP,
+resolver Udine HTTP 200. Lo Scheduler è stato riattivato. Il monitor delle
+19:40 aveva ancora letto il vecchio puntatore; quello delle 20:10 ha
+registrato stato sano senza criticità. CAMS aria/pollini era alla revisione
+72 prima dello slot delle 20:00 UTC. Nessuna nuova versione o pubblicazione
+Web/Android.
+[Prove e limiti](docs/operations/WEATHER_ICON_CAMS_RECOVERY_20261125.md).
+
 **Job ICON, 25 novembre 2026, slot delle 18 UTC.** ICON FVG è riuscito e
 serve il ciclo 25 novembre 12Z; ICON nazionale è fallito ancora sulla fence
 `manual_review` e il suo puntatore resta al 21 novembre. CAMS aria/pollini

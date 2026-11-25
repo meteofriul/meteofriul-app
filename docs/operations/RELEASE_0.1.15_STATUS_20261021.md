@@ -1,5 +1,23 @@
 # Stato release 0.1.15 e lavoro salvato — aggiornamento sorgenti del 24 ottobre 2026
 
+**Dati ICON/CAMS, 25 novembre 2026, 20:04 UTC.** ICON nazionale serve il
+ciclo 25 novembre 12Z; la prima corsa ordinaria successiva ha verificato
+la pubblicazione. CAMS aria/pollini serve il ciclo 25 novembre 00Z,
+revisione 73, dopo ripresa della stessa richiesta ADS. Storage e HTTP
+concordano; campioni aria/pollini sono stati controllati. Questi sono
+aggiornamenti dei job e dei dati, senza nuova versione, AAB, upload Play
+o pubblicazione Web/Android. Il monitor ICON delle 20:10 ha registrato
+stato sano per nazionale e FVG. [Prove](WEATHER_ICON_CAMS_RECOVERY_20261125.md).
+
+**Dati meteo, 25 novembre 2026, 19:41 UTC.** Il job ICON nazionale ha
+pubblicato il ciclo `20261125T120000Z` dopo una ripresa controllata della
+fence; Storage e HTTP concordano sul manifest e lo Scheduler è di nuovo
+abilitato. CAMS aria/pollini era ancora al ciclo del 23 novembre prima
+dello slot delle 20:00 UTC. L'operazione ha aggiornato solo codice/immagine
+del job e risorse operative; non è stata creata una nuova versione,
+AAB o pubblicazione Web/Android. Il monitor nazionale successivo alla
+pubblicazione resta da leggere. [Evidenza](WEATHER_ICON_CAMS_RECOVERY_20261125.md).
+
 **Job meteo, 25 novembre 2026, slot 18 UTC.** ICON FVG ha pubblicato il
 ciclo 25 novembre 12Z, verificato via HTTP 200; ICON nazionale è ancora
 in `manual_review` e il suo puntatore resta al 21 novembre. CAMS
