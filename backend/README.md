@@ -1,5 +1,23 @@
 # Meteo Friul UI3 API
 
+**Lettura corrente:** questo README documenta la FastAPI UI3 e conserva
+parti della migrazione storica. La mappa dei servizi effettivamente usati
+dal frontend, con base URL e confini separati, è in
+[Meteo Friûl: mappa dell'app e dei flussi](../docs/operations/APP_SYSTEM_MAP_20261125.md).
+In particolare le descrizioni sotto del meteo Open-Meteo, degli Eventi a sei
+fonti e dei push disabilitati non rappresentano l'intero runtime corrente:
+le Previsioni usano i reader ICON/CAMS, Eventi usa il catalogo pubblicato dal
+job e un servizio HTTP dedicato, Community ha un servizio dedicato, mentre
+la FastAPI conserva anche route legacy con path simili. Il
+[registro dei job](../docs/operations/JOBS_INVENTORY.md) distingue codice,
+pianificazione e risultato.
+
+## Nota sulle parti storiche
+
+Alcune descrizioni del runtime nelle sezioni seguenti registrano scelte della
+fase iniziale. Per stabilire il percorso operativo attuale usare la mappa
+collegata sopra; i comandi di sviluppo e test restano documentati qui.
+
 Nuova API modulare della UI3. Non importa il monolite storico e non espone
 automaticamente route che la nuova app non usa.
 
