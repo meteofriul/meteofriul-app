@@ -1,5 +1,13 @@
 # Allineamento della Web App con Android
 
+**Verifica del 25 novembre 2026.** La Web pubblica serve ancora l'HTML e
+l'asset principale della 0.1.14 del 21 ottobre, verificati per hash. La
+AAB 0.1.15/300038 è nel test interno Play dal 26 ottobre, mentre la Web
+candidata dalla sua stessa sorgente non è pubblicata. Non esiste dunque
+parità fra Web pubblica e Android interno, né fra questi artefatti e il
+frontend attuale di `main`. Il runtime 300038 su telefono e Safari/iPhone
+restano non attestati. [Matrice e prove](APP_ALIGNMENT_STATUS_20261125.md).
+
 **Dati CAMS e ICON, 25 novembre 2026, ore 17:31 UTC.** La ripresa della
 stessa richiesta ADS non ha ancora prodotto una nuova famiglia aria/pollini;
 il puntatore Storage e l'API HTTP restano alla revisione 72 del 23 novembre.
