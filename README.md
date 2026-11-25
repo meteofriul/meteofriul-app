@@ -1,5 +1,13 @@
 # Meteo Friûl
 
+**ICON nazionale, 25 novembre 2026, ore 17:12 UTC.** Il solo job nazionale
+usa ora l'immagine diagnostica verificata `sha256:6fe9e498…` della PR 61,
+con Scheduler e fence `manual_review` invariati. La prima corsa ordinaria
+è prevista alle 18:00 UTC; dati nazionali e reader HTTP non sono ancora
+dichiarati recuperati. Il protocollo di ripresa è nella [PR 63 bozza](https://github.com/meteofriul/meteofriul-app/pull/63),
+con CI verde ma senza deploy o uso operativo. Nessuna app pubblicata.
+[Prove e limiti](docs/operations/WEATHER_ICON_CAMS_RECOVERY_20261125.md).
+
 **Job CAMS, 25 novembre 2026, ore 16:39 UTC.** La [PR 61](https://github.com/meteofriul/meteofriul-app/pull/61)
 è integrata in `main` e la CI è verde. Il solo job CAMS usa il digest
 `sha256:b377e7d0…`; una corsa ha superato i metadati U11, ma ADS era ancora

@@ -1,5 +1,12 @@
 # Allineamento della Web App con Android
 
+**ICON nazionale, 25 novembre 2026, ore 17:12 UTC.** Aggiornata soltanto
+l'immagine diagnostica del job nazionale a `sha256:6fe9e498…`; Scheduler,
+fence `manual_review`, API e codice frontend invariati. Il dato nazionale
+resta da recuperare; la PR 63 operatore è solo una bozza con CI verde.
+Nessun nuovo artefatto o deploy Web/Android e nessun nuovo collaudo su
+browser o dispositivo. [Prove](WEATHER_ICON_CAMS_RECOVERY_20261125.md).
+
 **CAMS U11, 25 novembre 2026, stato operativo.** Il backend del solo job
 CAMS è passato al digest `sha256:b377e7d0…` dopo PR 61 e CI `main` verde;
 Scheduler invariato. Una prova reale ha superato i nuovi metadati, ma il
