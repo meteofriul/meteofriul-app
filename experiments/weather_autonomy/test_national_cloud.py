@@ -3,6 +3,7 @@ from datetime import datetime, timedelta, timezone
 from contextlib import redirect_stdout
 from pathlib import Path
 import gzip
+import hashlib
 import io
 import json
 import os
@@ -15,15 +16,16 @@ import national_cloud_worker as worker
 from national_cloud_publication import (PREFIX, POINTER_KEY, descriptor_for, load_run,
     publish_bundle, read_pointer, require_current_coverage)
 from local_pipeline.national_icon_bundle import build_national_icon_bundle, canonical_json_bytes
+from local_pipeline.icon_recovery import FenceLost
 from local_pipeline.sqlite_object_store import SQLiteObjectStore, ObjectNotFound, ObjectStoreError, PreconditionFailed
 from test_serve_national_bundle_v2 import _sample_catalog
 
 NOW = datetime(2026, 9, 20, 18, tzinfo=timezone.utc)
 
 
-def sample_bundle(hour=0):
+def sample_bundle(hour=0, day=20):
     catalog = _sample_catalog()
-    run = datetime(2026, 9, 20, hour, tzinfo=timezone.utc)
+    run = datetime(2026, 9, day, hour, tzinfo=timezone.utc)
     dates = [(run + timedelta(hours=h)).strftime("%Y-%m-%dT%H:%M:%SZ") for h in range(73)]
     return build_national_icon_bundle(run_at=dates[0], generated_at=dates[0],
         catalog={"version": catalog["catalog_version"], "sha256": catalog["catalog_sha256"],
@@ -368,6 +370,95 @@ class CloudNationalTests(unittest.TestCase):
         self.assertEqual(failed["failure_file"], "national_cloud_worker.py")
         self.assertEqual(failed["error_type"], "ValueError")
         self.assertNotIn("private.example", output.getvalue())
+
+    def operator_case(self):
+        from local_pipeline.icon_recovery import Recovery
+        points = {"artifact_sha256": "c" * 64}
+        self.publish()
+        failed = "20260920T120000Z"
+        controller = Recovery(self.state, "national")
+        old = controller.begin(None, failed, "20260920-pm", "national-old")
+        old = controller.transition(old, "manual_review")
+        intent = {"schema_version": 1, "source_run_id": failed,
+            "generated_at": "2026-09-20T18:00:00Z",
+            "catalog_sha256": self.catalog["catalog_sha256"],
+            "points_sha256": points["artifact_sha256"]}
+        self.state.put(worker.STATE_PREFIX + f"runs/{failed}/intent.json",
+            canonical_json_bytes(intent), content_type="application/json")
+        operator = {"incident_id": "a" * 32, "expected_etag": old.etag,
+            "expected_owner_sha256": hashlib.sha256(canonical_json_bytes(old.record)).hexdigest(),
+            "failed_run": failed, "new_run": "20260921T120000Z",
+            "published_run": "20260920T000000Z"}
+        now = datetime(2026, 9, 21, 18, tzinfo=timezone.utc)
+        return controller, operator, points, now
+
+    def operator_guard(self, now):
+        return {"scheduler_paused": True, "active_executions": 0,
+            "deployed_fence_aware": True, "legacy_invocations_blocked": True,
+            "observed_at_utc": now.strftime("%Y-%m-%dT%H:%M:%SZ"),
+            "evidence_sha256": "c" * 64}
+
+    def test_explicit_operator_path_publishes_full_next_cycle(self):
+        controller, operator, points, now = self.operator_case()
+        candidate = sample_bundle(hour=12, day=21)
+        acquire = Mock(return_value=(candidate, {"fixture": "mapping"}))
+        discover = Mock(return_value="2026092112")
+        with patch.dict(os.environ, {"WEATHER_ICON_AUTOMATIC_RECOVERY_ENABLED": "true"}):
+            ordinary = worker.run_once(self.state, self.data, self.catalog, points,
+                now=now, execution="pilot-national-icon-ordinary",
+                acquire=acquire, discover=discover)
+        self.assertEqual(ordinary["reason"], "acquisition_requires_review")
+        acquire.assert_not_called()
+        outcome = worker.run_operator_once(self.state, self.data, self.catalog, points,
+            now=now, execution="national-operator-one", operator=operator,
+            quiescent=lambda: self.operator_guard(now), guard_clock=lambda: now,
+            acquire=acquire, discover=discover)
+        self.assertEqual(outcome["status"], "published")
+        self.assertEqual(acquire.call_count, 1)
+        self.assertEqual(read_pointer(self.data, self.catalog)[0]["source_run_id"], operator["new_run"])
+        self.assertEqual(controller.active().record["phase"], "completed")
+        self.assertEqual(worker.run_operator_once(self.state, self.data, self.catalog, points,
+            now=now, execution="national-operator-one", operator=operator,
+            quiescent=lambda: self.operator_guard(now), guard_clock=lambda: now,
+            acquire=acquire, discover=discover)["reason"],
+            "operator_publication_already_completed")
+        self.assertEqual(acquire.call_count, 1)
+
+    def test_operator_missing_intent_or_quiescence_never_moves_pointer(self):
+        controller, operator, points, now = self.operator_case()
+        key = worker.STATE_PREFIX + f"runs/{operator['failed_run']}/intent.json"
+        with patch.object(self.state, "get", side_effect=lambda name, get=self.state.get: (
+                (_ for _ in ()).throw(ObjectNotFound(name)) if name == key else get(name))):
+            with self.assertRaises(ValueError):
+                worker.run_operator_once(self.state, self.data, self.catalog, points,
+                    now=now, execution="national-operator-one", operator=operator,
+                    quiescent=lambda: self.operator_guard(now), guard_clock=lambda: now,
+                    acquire=Mock(), discover=lambda *_: "2026092112")
+        with self.assertRaises(FenceLost):
+            worker.run_operator_once(self.state, self.data, self.catalog, points,
+                now=now, execution="national-operator-one", operator=operator,
+                quiescent=lambda: False, guard_clock=lambda: now,
+                acquire=Mock(), discover=lambda *_: "2026092112")
+        self.assertEqual(controller.active().record["phase"], "manual_review")
+        self.assertEqual(read_pointer(self.data, self.catalog)[0]["source_run_id"], operator["published_run"])
+
+    def test_operator_publication_cas_failure_preserves_public_pointer(self):
+        controller, operator, points, now = self.operator_case()
+        candidate = sample_bundle(hour=12, day=21)
+        original = self.data.compare_and_swap
+        def refuse_pointer(key, body, **kwargs):
+            if key == POINTER_KEY:
+                raise PreconditionFailed(key)
+            return original(key, body, **kwargs)
+        with patch.object(self.data, "compare_and_swap", side_effect=refuse_pointer):
+            outcome = worker.run_operator_once(self.state, self.data, self.catalog, points,
+                now=now, execution="national-operator-one", operator=operator,
+                quiescent=lambda: self.operator_guard(now), guard_clock=lambda: now,
+                acquire=Mock(return_value=(candidate, {"fixture": "mapping"})),
+                discover=lambda *_: "2026092112")
+        self.assertEqual(outcome["reason"], "checkpoint_publication_invalid")
+        self.assertEqual(controller.active().record["phase"], "manual_review")
+        self.assertEqual(read_pointer(self.data, self.catalog)[0]["source_run_id"], operator["published_run"])
 
 
 if __name__ == "__main__":

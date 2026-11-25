@@ -99,6 +99,10 @@ jobs:
           python -B -m unittest discover -s experiments/weather_autonomy -p 'test_icon_recovery*.py' -v
           python -B -m unittest discover -s experiments/weather_autonomy -p 'test_contract_publisher.py' -k verified_latest_snapshot -v
 
+      - name: Test national ICON operator and worker
+        working-directory: experiments/weather_autonomy
+        run: python -B -m unittest test_icon_operator_cli test_icon_operator_recovery test_national_cloud -v
+
       - name: Install pinned ADS client for offline CAMS tests
         working-directory: .
         run: python -m pip install ecmwf-datastores-client==0.5.3
