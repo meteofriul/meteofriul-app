@@ -243,3 +243,43 @@ statico della bozza vale 60 secondi e può scadere durante il provisioning:
 il comando rifiuta l'operazione in quel caso. Il solo codice o deploy non
 supera la fence. Il progetto e i gate sono nella PR bozza e non sono ancora
 presenti su `main`.
+
+## Seguito delle 17:12 UTC / 18:12 CET: diagnostica ICON distribuita
+
+La correzione diagnostica della PR 61, integrata in `main` `488f7d3c`, è
+stata preparata per il job nazionale partendo dal digest distribuito
+`sha256:d062db94eedf2337ef1886f8f2a80c9babc0901c8c78bc7385c6930fa730eb26`.
+L'archivio immutabile ha SHA-256
+`1e40983836f73738be4aefd76ac8b4bbbdb2e674f2d058665db020e0038e83e3`.
+La Cloud Build `cc48932f-46bb-4f23-b2b4-fd10a8fd0773` ha superato tutti
+e quattro gli step, inclusi **125 test offline** e il confronto di 175 file
+runtime: cambiano solo `national_cloud_worker.py`,
+`local_pipeline/icon_recovery.py` e
+`local_pipeline/operational_diagnostics.py`; dipendenze, permessi,
+configurazione runtime e base dell'immagine sono conservati. Un primo replay
+locale si era fermato per `PYTHONPATH` mancante; ripetuto con l'ambiente
+corretto, i 125 test sono passati. Il digest risultante è
+`sha256:6fe9e4980222ff57ccb12d6fe0a2045d9a5d585135efcc17dcf664aabe98c361`.
+
+Il preflight ha confermato account/progetto, template nazionale originale,
+Scheduler `ENABLED` con `0 6,7,8,10,18,19,20,22 * * *` `Etc/UTC`, nessuna
+esecuzione aperta fra le 200 più recenti e distanza dallo slot delle 18 UTC.
+Il solo job `meteofriul-national-icon` è passato alla nuova immagine,
+generazione 2 → 3. Il readback del template trova soltanto immagine e nonce
+Cloud Run generato; Scheduler e job CAMS sono invariati. Subito dopo, la
+fence nazionale risultava ancora `manual_review` sul ciclo
+`20261121T120000Z`, slot `20261121-pm`. Non è stata avviata una corsa
+manuale, modificato lo stato durevole o distribuito il codice operatore.
+La prima esecuzione ordinaria con questa diagnostica è prevista alle
+**18:00 UTC / 19:00 CET**: finché la fence resta attiva, il nuovo log del
+primo errore non può ricostruire il guasto del 21 novembre.
+
+La [PR 63 bozza](https://github.com/meteofriul/meteofriul-app/pull/63)
+per il protocollo operatore ha superato la CI remota `45659615514` nei tre
+job; resta non integrata e non distribuita. Una corsa manuale CI equivalente
+`45660003853` è stata annullata dopo la riuscita della CI PR, per evitare
+un duplicato. Il comando `--execute` non è ancora utilizzabile in modo
+operativo: mancano il job isolato, la prova IAM/writer e un inventario
+aggiornabile durante l'avvio. Il prossimo passo è una revisione del
+protocollo e delle sue condizioni, poi un recupero esplicito della fence;
+questa distribuzione serve solo a diagnosticare eventuali nuovi guasti.

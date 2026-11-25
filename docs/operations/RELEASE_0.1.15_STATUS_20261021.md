@@ -1,5 +1,13 @@
 # Stato release 0.1.15 e lavoro salvato — aggiornamento sorgenti del 24 ottobre 2026
 
+**ICON nazionale, 25 novembre 2026, ore 17:12 UTC.** Il solo job nazionale
+ha ricevuto l'immagine diagnostica `sha256:6fe9e498…` verificata con 125
+test offline e readback del template; Scheduler e fence `manual_review`
+invariati. La prima corsa ordinaria è attesa alle 18:00 UTC. La PR 63 di
+recupero è una bozza con CI verde, non distribuita; nessun dato ICON
+recuperato attestato. Nessuna nuova versione, AAB o pubblicazione
+Web/Android. [Evidenza](WEATHER_ICON_CAMS_RECOVERY_20261125.md).
+
 **CAMS U11, 25 novembre 2026, dopo il deploy del solo job.** PR 61 e CI
 PR/`main` verdi; digest CAMS `sha256:b377e7d0…`, Scheduler invariato. La
 corsa manuale ha oltrepassato la precedente validazione metadati, ma ADS era

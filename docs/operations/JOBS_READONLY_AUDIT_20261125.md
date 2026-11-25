@@ -345,3 +345,17 @@ anche alle 16:53 UTC. La [PR 63 bozza](https://github.com/meteofriul/meteofriul-
 prepara una supersessione con incidente immutabile e CAS, ma non è integrata
 né distribuita: job operatore, IAM, isolamento degli altri writer e prova di
 quiescenza restano gate. Nessun reset della fence è stato eseguito.
+
+## Seguito delle 17:12 UTC / 18:12 CET: diagnostica nazionale
+
+Dopo l'audit in sola lettura, il workstream meteo ha costruito l'immagine
+ICON nazionale `sha256:6fe9e498…` con Cloud Build
+`cc48932f-46bb-4f23-b2b4-fd10a8fd0773`: 125 test offline e verifica
+dell'overlay di soli tre file riusciti. Il solo job nazionale è stato
+aggiornato, generazione 2 → 3; readback di template, Scheduler, job CAMS e
+fence confermano che l'unico cambiamento configurativo è l'immagine, oltre
+al nonce Cloud Run generato. La fence resta `manual_review`, quindi il dato
+nazionale e il reader HTTP non sono dichiarati recuperati. La prima corsa
+ordinaria con questa immagine è attesa alle 18:00 UTC. La [PR 63 bozza](https://github.com/meteofriul/meteofriul-app/pull/63)
+ha CI remota verde, ma il protocollo operatore non è stato distribuito o
+eseguito. [Digest, prove e limiti](WEATHER_ICON_CAMS_RECOVERY_20261125.md).
