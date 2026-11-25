@@ -283,3 +283,61 @@ operativo: mancano il job isolato, la prova IAM/writer e un inventario
 aggiornabile durante l'avvio. Il prossimo passo è una revisione del
 protocollo e delle sue condizioni, poi un recupero esplicito della fence;
 questa distribuzione serve solo a diagnosticare eventuali nuovi guasti.
+
+## Perché il flusso automatico si è fermato
+
+Per ICON nazionale il ritardo della fonte e il blocco attuale sono casi
+diversi. Il recupero dei cicli in ritardo prova la scoperta nelle finestre
+programmate e lascia il risultato `pending` quando la fonte non è ancora
+avanzata. Il 21 novembre, invece, `national_acquisition` è terminata alle
+18:02:58 UTC: il worker aveva costruito il bundle e il mapping **in memoria**.
+Entro le 18:03:20 UTC un'eccezione è intervenuta nei controlli del bundle
+o nel primo salvataggio durevole del mapping. Non esistono
+`mapping.json`, `prepared.json` o manifest di quel ciclo. Non è possibile
+distinguere con certezza un controllo fallito da un errore del primo
+salvataggio: la versione allora distribuita trasformava l'eccezione in
+`acquisition_requires_review` senza registrarne fase e tipo.
+
+La fence `manual_review` serviva a impedire che un'altra esecuzione
+pubblicasse un ciclo parziale o competesse con il vecchio proprietario.
+Il difetto operativo è che il codice controlla questa fase **prima** della
+nuova scoperta della fonte e la restituisce a ogni slot successivo; non
+prevede una supersessione automatica e sicura se manca il checkpoint.
+Perciò più Scheduler avviati non producono più tentativi di acquisizione.
+La diagnostica ora distribuita rende osservabili eventuali errori futuri,
+ma non ricostruisce il bundle in memoria del 21 novembre né sblocca la fence.
+La ripresa richiede una nuova sorgente, prova che il vecchio writer non sia
+attivo, registrazione dell'incidente, claim atomico e readback finale.
+
+Per CAMS la prima barriera era diversa: il form U11 aggiungeva sette
+variabili e il catalogo aveva stato `warning`, mentre il validatore precedente
+accettava soltanto l'esatto form di 28 variabili e un insieme più stretto di
+stati. Dopo la correzione, ADS ha accettato la richiesta ma la sta ancora
+elaborando. Il checkpoint `submitted` evita una seconda POST, tuttavia il
+budget del job è limitato e gli slot programmati sono distanziati. Un
+fallimento del job per tempo scaduto può quindi coesistere con una richiesta
+ADS valida e con dati pubblici ancora vecchi. Serve controllare separatamente
+stato della fonte, esito della corsa e freschezza del prodotto.
+
+## Seguito delle 17:31 UTC / 18:31 CET: ripresa della stessa richiesta CAMS
+
+Un preflight delle 17:22:50 UTC ha verificato account/progetto, immagine CAMS
+generazione 12, Scheduler invariato, nessuna esecuzione aperta fra le 200 più
+recenti, un solo piano e una sola ricevuta ADS `submitted` del 25 novembre.
+Alle 17:23:13 UTC è stata avviata una sola ripresa manuale,
+`meteofriul-cams-8zggr`, lontano dagli slot programmati. Il percorso
+`submitted` ripristina il job ADS già registrato: non invia una nuova POST.
+La ricevuta resta una sola, con generazione `1795624327854827` e creazione
+alle 16:32:07 UTC, durante la prima corsa.
+
+La ripresa ha controllato la fonte tre volte e registrato
+`acquisition_not_completed`; è terminata `Completed=False` alle **17:31:11
+UTC**, con `remote_processing` ed `execution_budget_exhausted`. Non è un
+nuovo errore U11 e non prova che ADS abbia rifiutato la richiesta. Dopo la
+corsa, il puntatore Storage e l'API HTTP pubblica (200) concordano sulla
+revisione **72**, ciclo aria/pollini `20261123T000000Z`, pubblicato il 23
+novembre alle 09:01:18 UTC. Nessun dato CAMS nuovo è stato attestato; la
+plausibilità delle unità U11 rimane da verificare quando ADS consegnerà il
+risultato. Non è stata avviata una terza corsa manuale. Il prossimo slot
+ordinario è alle **20:00 UTC / 21:00 CET** e dovrà rileggere la stessa
+ricevuta prima di qualsiasi pubblicazione.

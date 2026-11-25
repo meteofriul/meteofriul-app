@@ -1,5 +1,12 @@
 # Meteo Friûl
 
+**CAMS e ICON, 25 novembre 2026, ore 17:31 UTC.** Una ripresa CAMS della
+stessa richiesta ADS è terminata in attesa della fonte, senza nuova POST:
+aria/pollini pubblicati ancora al ciclo del 23 novembre. ICON nazionale
+resta in `manual_review`: l'acquisizione del 21 novembre non aveva salvato
+un checkpoint completo, quindi gli slot successivi non acquisiscono un
+nuovo ciclo. [Cause, prove e recupero](docs/operations/WEATHER_ICON_CAMS_RECOVERY_20261125.md).
+
 **ICON nazionale, 25 novembre 2026, ore 17:12 UTC.** Il solo job nazionale
 usa ora l'immagine diagnostica verificata `sha256:6fe9e498…` della PR 61,
 con Scheduler e fence `manual_review` invariati. La prima corsa ordinaria

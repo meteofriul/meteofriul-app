@@ -1,5 +1,13 @@
 # Stato release 0.1.15 e lavoro salvato — aggiornamento sorgenti del 24 ottobre 2026
 
+**CAMS e ICON, 25 novembre 2026, ore 17:31 UTC.** La seconda corsa CAMS
+ha ripreso l'unica richiesta ADS senza nuova POST, ma la fonte era ancora
+in elaborazione e il dato aria/pollini resta al 23 novembre. ICON resta
+in `manual_review` per assenza di checkpoint del ciclo del 21 novembre;
+la fase precisa del primo errore non era stata registrata. Nessuna nuova
+versione, AAB o pubblicazione Web/Android.
+[Cause e verifiche](WEATHER_ICON_CAMS_RECOVERY_20261125.md).
+
 **ICON nazionale, 25 novembre 2026, ore 17:12 UTC.** Il solo job nazionale
 ha ricevuto l'immagine diagnostica `sha256:6fe9e498…` verificata con 125
 test offline e readback del template; Scheduler e fence `manual_review`

@@ -359,3 +359,21 @@ nazionale e il reader HTTP non sono dichiarati recuperati. La prima corsa
 ordinaria con questa immagine è attesa alle 18:00 UTC. La [PR 63 bozza](https://github.com/meteofriul/meteofriul-app/pull/63)
 ha CI remota verde, ma il protocollo operatore non è stato distribuito o
 eseguito. [Digest, prove e limiti](WEATHER_ICON_CAMS_RECOVERY_20261125.md).
+
+## Seguito delle 17:31 UTC / 18:31 CET: ripresa CAMS e causa dei blocchi
+
+Una seconda corsa CAMS, `meteofriul-cams-8zggr`, è stata avviata dopo
+preflight di account, immagine, Scheduler, assenza di esecuzioni attive e
+presenza di una sola ricevuta ADS. Ha ripreso la richiesta registrata alle
+16:32 UTC, senza un'altra POST. ADS era ancora `remote_processing`: tre
+controlli `acquisition_not_completed`, poi `execution_budget_exhausted` e
+`Completed=False` alle 17:31:11 UTC. Storage e API pubblica restano alla
+revisione 72 e al ciclo aria/pollini del 23 novembre. Nessuna ulteriore
+corsa manuale è stata avviata; il prossimo slot ordinario è alle 20 UTC.
+
+Il blocco ICON non è un semplice ritardo della fonte: l'acquisizione del
+21 novembre aveva costruito il bundle in memoria, ma non ha lasciato
+mapping, prepared o manifest durevoli. La fase esatta dell'eccezione non
+fu registrata; la fence `manual_review` arresta tutti i poll successivi
+prima della scoperta di un nuovo ciclo. Il report meteo descrive la
+[sequenza, il limite di osservabilità e il recupero necessario](WEATHER_ICON_CAMS_RECOVERY_20261125.md).

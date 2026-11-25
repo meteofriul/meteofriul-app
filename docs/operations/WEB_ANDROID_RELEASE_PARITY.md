@@ -1,5 +1,13 @@
 # Allineamento della Web App con Android
 
+**Dati CAMS e ICON, 25 novembre 2026, ore 17:31 UTC.** La ripresa della
+stessa richiesta ADS non ha ancora prodotto una nuova famiglia aria/pollini;
+il puntatore Storage e l'API HTTP restano alla revisione 72 del 23 novembre.
+ICON nazionale resta in `manual_review`, senza nuovo dato pubblicato.
+Nessuna modifica a codice/frontend, API, artefatti o deploy Web/Android e
+nessun nuovo collaudo browser/dispositivo.
+[Evidenza](WEATHER_ICON_CAMS_RECOVERY_20261125.md).
+
 **ICON nazionale, 25 novembre 2026, ore 17:12 UTC.** Aggiornata soltanto
 l'immagine diagnostica del job nazionale a `sha256:6fe9e498…`; Scheduler,
 fence `manual_review`, API e codice frontend invariati. Il dato nazionale
