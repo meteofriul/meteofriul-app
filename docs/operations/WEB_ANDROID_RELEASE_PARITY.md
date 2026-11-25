@@ -1,5 +1,14 @@
 # Allineamento della Web App con Android
 
+**CAMS U11, 25 novembre 2026, stato operativo.** Il backend del solo job
+CAMS è passato al digest `sha256:b377e7d0…` dopo PR 61 e CI `main` verde;
+Scheduler invariato. Una prova reale ha superato i nuovi metadati, ma il
+prodotto aria/pollini resta in attesa ADS e non è attestato come corrente.
+Il contratto API e il codice frontend delle app Web/Android non cambiano;
+nessun artefatto applicativo è stato preparato o pubblicato e la parità su
+dispositivo non è stata riesaminata. ICON nazionale resta bloccato dalla
+fence esistente. [Prove](WEATHER_ICON_CAMS_RECOVERY_20261125.md).
+
 **Job meteo, 25 novembre 2026.** La [PR 61](https://github.com/meteofriul/meteofriul-app/pull/61)
 modifica soltanto i worker CAMS e ICON: il piano U11 mantiene le 28 variabili
 e 97 ore del contratto esistente e aggiunge diagnostica sicura. Non cambia

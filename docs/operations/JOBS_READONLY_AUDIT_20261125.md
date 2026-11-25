@@ -324,3 +324,18 @@ solo i due file runtime approvati e 438 test offline senza rete sono passati.
 Il nuovo digest `sha256:b377e7d0…` è **soltanto un artefatto candidato** alle
 16:19 UTC. Nessun risultato di un job reale o dato pubblicato è implicato.
 [Dettaglio dei gate](WEATHER_ICON_CAMS_RECOVERY_20261125.md).
+
+## Seguito delle 16:39 UTC / 17:39 CET: deploy e prova CAMS
+
+La PR è stata integrata in `main` `488f7d3c`, con CI PR e `main` verdi. Il
+solo job CAMS è passato dal digest `sha256:83a67540…` al candidato verificato
+`sha256:b377e7d0…`, generazione 11 → 12; readback del template, al netto del
+nonce generato da Cloud Run, e Scheduler invariati. Una sola corsa manuale
+`meteofriul-cams-96f4b` ha superato i metadati U11 e inviato una richiesta
+ADS con intent e ricevuta durevoli, ma è terminata `Completed=False` alle
+16:39:43 UTC perché ADS era ancora `accepted` e il budget di attesa del
+worker è scaduto. La prossima ripresa deve usare lo stesso job ADS; i dati
+aria/pollini restano da verificare prima di dichiarare recupero. Il controllo
+preliminare dei checkpoint aveva omesso il prefisso Storage `pilot/`; la
+rettifica e le generazioni degli oggetti sono nel
+[rapporto meteo](WEATHER_ICON_CAMS_RECOVERY_20261125.md).

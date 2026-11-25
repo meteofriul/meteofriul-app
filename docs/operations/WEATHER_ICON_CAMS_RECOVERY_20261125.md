@@ -155,5 +155,61 @@ la presenza di una policy non è prova di recapito.
   manifest, verificare Storage/HTTP e il monitor di freschezza. La sola
   diagnostica migliora il prossimo errore, non ripara il ciclo 21 novembre.
 
-Non sono state modificate le app Web/Android, i job distribuiti, Mercati o
-le notifiche.
+In questa fase di diagnosi non erano state modificate le app Web/Android,
+i job distribuiti, Mercati o le notifiche. La successiva modifica del solo
+job CAMS è registrata sotto.
+
+## Promozione e verifica CAMS del 25 novembre
+
+La [PR 61](https://github.com/meteofriul/meteofriul-app/pull/61) è stata
+integrata in `main` con `488f7d3c`; CI PR sul commit finale
+`45652718958` e unica CI di `main` `45653497810` sono verdi nei tre job
+backend, frontend e hosting. Il 25 novembre alle 16:28 UTC il preflight
+cloud ha confermato account e progetto attesi, template CAMS generazione 11
+uguale al baseline, Scheduler `ENABLED` con `0 9,10,11,15,20 * * *`
+`Etc/UTC`, provider `cams`, continuità attiva e zero esecuzioni aperte
+nelle 200 più recenti.
+
+Il solo job `meteofriul-cams` è passato al digest immutabile candidato
+`sha256:b377e7d029f8e0d861ca3eba7fe640c1b1f0fb13b0578d775c09e7de32689012`,
+generazione 11 → 12. Il confronto readback del template ha trovato soltanto
+l'immagine e la label `client.knative.dev/nonce` generata dal comando Cloud
+Run; gli altri campi coincidono. Scheduler CAMS e digest del job ICON
+nazionale sono invariati. I verbali di intento e i template completi
+restano nello staging locale ignorato `.tmp/weather-icon-cams-deploy-20261125/`;
+nessun dato sensibile è riportato qui.
+
+Il primo controllo preliminare degli oggetti ha omesso per errore il prefisso
+Storage `pilot/` e quindi **non prova** l'assenza di un intent precedente.
+La successiva lettura del percorso corretto trova piano, `intent.json` e
+`submitted.json`; le loro generazioni indicano creazione dalle 16:32:04 UTC,
+dopo l'avvio manuale. Il worker applica inoltre la sua identità durevole
+di richiesta per evitare una seconda POST sullo stesso ciclo. Alle 16:31:47
+UTC è stata avviata una sola esecuzione manuale, `meteofriul-cams-96f4b`.
+I log delle 16:32 UTC
+registrano `form_u11_extra_variables_validated` e
+`catalogue_sanity_warning_constraints_validated`, poi l'acquisizione ADS.
+Alle 16:34 UTC il componente aria era ancora `pending` con reason
+`acquisition_not_completed`; il worker ha proseguito i propri tentativi sullo
+stesso stato durevole. L'esecuzione è terminata `Completed=False` alle
+**16:39:43 UTC**: ADS restava `accepted`, i componenti aria/pollini erano
+`remote_pending`/`remote_processing` e il worker ha registrato
+`execution_budget_exhausted`. È un limite d'attesa della fonte, non un nuovo
+rifiuto dei metadati. Piano, intent e `submitted.json` sono presenti; il
+codice di ripresa legge il checkpoint `submitted` e non invia una seconda POST
+per lo stesso piano. Nessuna seconda corsa manuale è stata avviata.
+La pubblicazione corrente e la plausibilità U11 richiedono ancora un
+risultato ADS disponibile e un readback completo.
+
+La verifica indipendente dopo il fallimento trova Storage e HTTP concordi
+su revisione 72, ciclo aria/pollini `20261123T000000Z`, pubblicato il 23
+novembre alle 09:01:18 UTC; il release HTTP corrisponde al proprio hash.
+UV risponde HTTP 200 sul ciclo del 25 novembre 00Z e copre 72 ore. Il
+checkpoint `submitted.json` supera i controlli di piano, hash, intento,
+identità del job e zero retry POST. Nel codice la ripresa da `submitted`
+usa `client.get_remote` sul medesimo job ADS; `client.submit` compare solo
+nel ramo di nuova submission. Due test mirati di ripresa/no seconda POST
+passano. Il prossimo slot ordinario CAMS è alle 20:00 UTC; un suo successo
+richiederà comunque verifica della famiglia, HTTP e valori U11. Un controllo
+diretto dello stato ADS richiederebbe credenziale e client del job: non è
+stato effettuato né sono state lette credenziali.

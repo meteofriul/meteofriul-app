@@ -1,5 +1,14 @@
 # Stato release 0.1.15 e lavoro salvato — aggiornamento sorgenti del 24 ottobre 2026
 
+**CAMS U11, 25 novembre 2026, dopo il deploy del solo job.** PR 61 e CI
+PR/`main` verdi; digest CAMS `sha256:b377e7d0…`, Scheduler invariato. La
+corsa manuale ha oltrepassato la precedente validazione metadati, ma ADS era
+ancora `accepted` quando il worker ha esaurito il budget: nessun recupero
+aria/pollini attestato. ICON nazionale resta in `manual_review` con nuova
+diagnostica sorgente, senza sblocco della fence. Nessuna nuova versione,
+AAB o pubblicazione Web/Android.
+[Evidenza e limiti](WEATHER_ICON_CAMS_RECOVERY_20261125.md).
+
 **ICON nazionale e CAMS, 25 novembre 2026.** La [PR 61](https://github.com/meteofriul/meteofriul-app/pull/61)
 propone la correzione CAMS U11 e log più precisi per il primo guasto ICON;
 120 test mirati e CI PR sono verdi. La fence ICON del 21 novembre rimane in

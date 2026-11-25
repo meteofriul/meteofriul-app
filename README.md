@@ -1,5 +1,13 @@
 # Meteo Friûl
 
+**Job CAMS, 25 novembre 2026, ore 16:39 UTC.** La [PR 61](https://github.com/meteofriul/meteofriul-app/pull/61)
+è integrata in `main` e la CI è verde. Il solo job CAMS usa il digest
+`sha256:b377e7d0…`; una corsa ha superato i metadati U11, ma ADS era ancora
+`accepted` al termine del budget di attesa. Aria/pollini non sono ancora
+dichiarati recuperati. ICON nazionale resta in `manual_review`; la sua
+diagnostica è nel codice, mentre la ripresa della fence è un lavoro separato.
+[Stato e log](docs/operations/WEATHER_ICON_CAMS_RECOVERY_20261125.md).
+
 **ICON nazionale e CAMS, 25 novembre 2026, verifica sorgenti.** La
 [PR 61](https://github.com/meteofriul/meteofriul-app/pull/61) corregge la
 validazione dei metadati CAMS U11 e registra il primo errore ICON con campi
