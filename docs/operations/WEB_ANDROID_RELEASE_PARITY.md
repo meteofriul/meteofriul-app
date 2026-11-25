@@ -1,5 +1,13 @@
 # Allineamento della Web App con Android
 
+**Job meteo, 25 novembre 2026.** La [PR 61](https://github.com/meteofriul/meteofriul-app/pull/61)
+modifica soltanto i worker CAMS e ICON: il piano U11 mantiene le 28 variabili
+e 97 ore del contratto esistente e aggiunge diagnostica sicura. Non cambia
+frontend, API dell'app, artefatti Web/Android o versione; non costituisce un
+collaudo di parità su Safari o dispositivo. Al controllo delle 15:34 UTC i
+dati pubblici CAMS aria/pollini e ICON nazionale non erano recuperati.
+[Evidenza](WEATHER_ICON_CAMS_RECOVERY_20261125.md).
+
 **Anticipazione serale, integrata in `main` il 23 novembre 2026.** La modifica backend
 di testo limitato alle temperature non cambia frontend o artefatti Web/Android.
 Il solo job serale pubblico usa ora il digest `sha256:7d4596ae…`, con

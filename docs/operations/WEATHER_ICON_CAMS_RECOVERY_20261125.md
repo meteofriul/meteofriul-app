@@ -84,6 +84,16 @@ CAS esatto sullo stato, scelta di un ciclo sorgente successivo e verifica
 completa di manifest, puntatore e HTTP. Una semplice cancellazione della
 fence o un timeout violerebbero l'invariante di concorrenza.
 
+Il disegno di ripresa richiede di congelare le esecuzioni e leggere stato e
+generazione esatti, intent, checkpoint assenti e puntatore pubblico. Una nuova
+implementazione deve creare e rileggere un record immutabile dell'incidente,
+reclamare una sola volta un ciclo successivo con precondizione sulla generazione
+e riconciliare anche una risposta CAS persa. Qualsiasi cambiamento concorrente,
+prova mancante o doppio claim blocca la ripresa. Il nuovo ciclo segue poi
+acquisizione, checkpoint, manifest, readback Storage, CAS del puntatore e
+lettura HTTP ordinari. Questo protocollo necessita test per concorrenza, crash,
+fonte non valida e lettura finale prima di operare sullo stato reale.
+
 ## Log e monitor esistenti
 
 I job scrivono eventi JSON strutturati in Cloud Logging: fasi, esiti,
@@ -114,9 +124,19 @@ la presenza di una policy non è prova di recapito.
   locale; i test CAMS includono variabili U11, `warning`, rifiuto di opzioni
   sconosciute o vincoli incompleti e indipendenza UV. Due test ICON simulano
   il primo guasto senza manifest, mantengono `manual_review` e verificano
-  l'assenza di segreti nei log. La suite meteo completa è registrata dopo
-  la sua conclusione; i test non sono una corsa cloud.
-- **CAMS prima di dichiarare recupero:** CI e provenienza immagine, deploy
+  l'assenza di segreti nei log. La suite meteo completa è stata interrotta
+  dopo circa 20 minuti senza un esito finale: non è conteggiata come prova.
+  I test non sono una corsa cloud.
+- **CI PR #61:** i job `backend`, `frontend` e `hosting-preview-tool` della
+  corsa `45649847742` sul commit `76c601bf` sono tutti riusciti il 25
+  novembre. Nessuna promozione a `main` è implicata dal successo della CI.
+- **Prima candidata immagine CAMS:** Cloud Build
+  `56ee9426-997d-442d-b651-c1da43dfe2f3` ha superato inventario base e
+  overlay, ma si è arrestata sul confronto dei permessi di un file runtime;
+  i test offline e la pubblicazione dell'immagine non sono partiti. Il gate
+  ha quindi bloccato il deploy. È in preparazione un nuovo pacchetto
+  immutabile con diagnosi del modo dei file; il primo non è riutilizzato.
+- **CAMS prima di dichiarare recupero:** provenienza immagine, deploy
   controllato, una corsa reale, checkpoint/reader Storage+HTTP, freschezza
   delle tre componenti e plausibilità U11. Nessuna di queste prove è
   implicata dal GET di metadati.

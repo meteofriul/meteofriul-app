@@ -1,5 +1,13 @@
 # Stato release 0.1.15 e lavoro salvato — aggiornamento sorgenti del 24 ottobre 2026
 
+**ICON nazionale e CAMS, 25 novembre 2026.** La [PR 61](https://github.com/meteofriul/meteofriul-app/pull/61)
+propone la correzione CAMS U11 e log più precisi per il primo guasto ICON;
+120 test mirati e CI PR sono verdi. La fence ICON del 21 novembre rimane in
+`manual_review` e richiede un protocollo separato. Al controllo delle 15:34
+UTC la famiglia CAMS aria/pollini era ancora al run del 23 novembre; UV era
+aggiornato. Nessun artefatto Web/Android, AAB o versione app cambia con
+questo intervento. [Stato e verifiche](WEATHER_ICON_CAMS_RECOVERY_20261125.md).
+
 **Anticipazione serale, integrata in `main` il 23 novembre 2026.** La [PR 58](https://github.com/meteofriul/meteofriul-app/pull/58)
 prepara un testo ridotto da
 temperature complete e verificate quando la pioggia oraria ICON è incerta;
