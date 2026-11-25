@@ -1,5 +1,12 @@
 # Meteo Friûl
 
+**Job ICON, 25 novembre 2026, slot delle 18 UTC.** ICON FVG è riuscito e
+serve il ciclo 25 novembre 12Z; ICON nazionale è fallito ancora sulla fence
+`manual_review` e il suo puntatore resta al 21 novembre. CAMS aria/pollini
+era ancora al ciclo del 23 novembre alle 17:57 UTC. Il problema dei job è
+quindi aperto per nazionale, CAMS ed Eventi.
+[Esiti e limiti](docs/operations/WEATHER_ICON_CAMS_RECOVERY_20261125.md).
+
 **Allineamento app, 25 novembre 2026.** `main` è aggiornato e l'ultima CI
 del codice è verde; il checkout canonico resta sul ramo Mercati in pausa.
 La Web pubblica serve ancora i byte della 0.1.14 del 21 ottobre. La AAB

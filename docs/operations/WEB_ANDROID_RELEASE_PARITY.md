@@ -1,5 +1,12 @@
 # Allineamento della Web App con Android
 
+**Dati meteo, 25 novembre 2026, slot 18 UTC.** Il reader ICON FVG serve
+il ciclo 25 novembre 12Z dopo il job riuscito; ICON nazionale resta
+bloccato sul ciclo del 21 novembre. CAMS aria/pollini era ancora al ciclo
+del 23 novembre alle 17:57 UTC. Nessun codice, artefatto o deploy delle
+app Web/Android è cambiato; non è un collaudo di parità su dispositivo.
+[Esiti](WEATHER_ICON_CAMS_RECOVERY_20261125.md).
+
 **Verifica del 25 novembre 2026.** La Web pubblica serve ancora l'HTML e
 l'asset principale della 0.1.14 del 21 ottobre, verificati per hash. La
 AAB 0.1.15/300038 è nel test interno Play dal 26 ottobre, mentre la Web
