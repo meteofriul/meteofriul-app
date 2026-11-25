@@ -130,12 +130,22 @@ la presenza di una policy non è prova di recapito.
 - **CI PR #61:** i job `backend`, `frontend` e `hosting-preview-tool` della
   corsa `45649847742` sul commit `76c601bf` sono tutti riusciti il 25
   novembre. Nessuna promozione a `main` è implicata dal successo della CI.
-- **Prima candidata immagine CAMS:** Cloud Build
-  `56ee9426-997d-442d-b651-c1da43dfe2f3` ha superato inventario base e
-  overlay, ma si è arrestata sul confronto dei permessi di un file runtime;
-  i test offline e la pubblicazione dell'immagine non sono partiti. Il gate
-  ha quindi bloccato il deploy. È in preparazione un nuovo pacchetto
-  immutabile con diagnosi del modo dei file; il primo non è riutilizzato.
+- **Immagine CAMS candidata:** le Cloud Build
+  `56ee9426-997d-442d-b651-c1da43dfe2f3` e
+  `aca7ba50-ac5d-4eb9-b88c-033904dd276c` si sono arrestate ai gate:
+  rispettivamente modo file diverso (`0644` nel tar contro `0666` nella
+  base) e confronto di `Config.Image`, metadato del builder. Nessuna delle
+  due ha pubblicato un'immagine o aggiornato il job. Il terzo archivio
+  immutabile, SHA-256 `a46d74e0cfd6121d2fca5591b0e7a73268381fe7940c90e730f57a67b53eec5c`,
+  ha completato Cloud Build `4cf58cf9-588c-41d6-86e0-2c700c361fd5`
+  alle 16:19 UTC: tutti e quattro gli step sono `SUCCESS`, inclusi 438 test
+  offline senza rete, zero errori/fallimenti/skipped. Il verificatore ha
+  riscontrato solo i due file previsti cambiati sui 212 file `/app`;
+  hash/modi degli altri file, pacchetti, Python, UID, configurazione runtime
+  e layer base sono conservati. Il solo `Config.Image` builder è escluso dal
+  confronto; `Env`, `Cmd`, `User`, etichette e gli altri campi restano uguali.
+  Digest candidato `sha256:b377e7d029f8e0d861ca3eba7fe640c1b1f0fb13b0578d775c09e7de32689012`.
+  Alle 16:19 UTC era un artefatto costruito, non ancora distribuito.
 - **CAMS prima di dichiarare recupero:** provenienza immagine, deploy
   controllato, una corsa reale, checkpoint/reader Storage+HTTP, freschezza
   delle tre componenti e plausibilità U11. Nessuna di queste prove è
