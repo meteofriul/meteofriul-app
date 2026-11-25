@@ -59,6 +59,7 @@ class OperatorRecoveryTests(TestCase):
             expected_owner_sha256=hashlib.sha256(canonical_json_bytes(self.old.record)).hexdigest(),
             failed_run=FAILED, new_run=NEW, published_run=PUBLISHED,
             execution="national-operator-one", quiescent=self.quiescent,
+            guard_clock=lambda: NOW,
             current_run=self.current_run, discover=self.discover,
             failed_cycle_evidence=lambda _: {"intent": True, "mapping": False,
                                               "prepared": False, "manifest": False},
@@ -89,6 +90,21 @@ class OperatorRecoveryTests(TestCase):
         self.assertEqual(self.acquire.call_count, 1)
         self.assertEqual(self.published, {PUBLISHED, NEW})
 
+    def test_guard_clock_tracks_checks_after_operation_start(self):
+        checked = datetime(2026, 11, 25, 15, 0, 20, tzinfo=timezone.utc)
+        observed = self.guard(observed_at_utc="2026-11-25T15:00:15Z")
+        order = []
+        def quiescent():
+            order.append("cloud_read")
+            return observed
+        def guard_clock():
+            order.append("clock_read")
+            return checked
+        outcome = self.call(quiescent=quiescent, guard_clock=guard_clock)
+        self.assertEqual(outcome["status"], "published")
+        self.assertEqual(self.incident()["quiescence_at_creation"], observed)
+        self.assertEqual(order, ["cloud_read", "clock_read"] * 3)
+
     def test_wrong_product_identity_generation_and_cycle_refuse_before_incident(self):
         for changes in ({"expected_etag": "1"}, {"expected_owner_sha256": "b" * 64},
                         {"failed_run": PUBLISHED}, {"new_run": FAILED},
@@ -106,6 +122,7 @@ class OperatorRecoveryTests(TestCase):
             expected_owner_sha256=hashlib.sha256(canonical_json_bytes(self.old.record)).hexdigest(),
             failed_run=FAILED, new_run=NEW, published_run=PUBLISHED,
             execution="national-operator-one", quiescent=self.quiescent,
+            guard_clock=lambda: NOW,
             current_run=self.current_run, discover=self.discover,
             failed_cycle_evidence=lambda _: {}, checkpoint=self.checkpoint,
             acquire=self.acquire, publish=self.publish,

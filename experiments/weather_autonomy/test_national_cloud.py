@@ -411,14 +411,16 @@ class CloudNationalTests(unittest.TestCase):
         acquire.assert_not_called()
         outcome = worker.run_operator_once(self.state, self.data, self.catalog, points,
             now=now, execution="national-operator-one", operator=operator,
-            quiescent=lambda: self.operator_guard(now), acquire=acquire, discover=discover)
+            quiescent=lambda: self.operator_guard(now), guard_clock=lambda: now,
+            acquire=acquire, discover=discover)
         self.assertEqual(outcome["status"], "published")
         self.assertEqual(acquire.call_count, 1)
         self.assertEqual(read_pointer(self.data, self.catalog)[0]["source_run_id"], operator["new_run"])
         self.assertEqual(controller.active().record["phase"], "completed")
         self.assertEqual(worker.run_operator_once(self.state, self.data, self.catalog, points,
             now=now, execution="national-operator-one", operator=operator,
-            quiescent=lambda: self.operator_guard(now), acquire=acquire, discover=discover)["reason"],
+            quiescent=lambda: self.operator_guard(now), guard_clock=lambda: now,
+            acquire=acquire, discover=discover)["reason"],
             "operator_publication_already_completed")
         self.assertEqual(acquire.call_count, 1)
 
@@ -430,11 +432,13 @@ class CloudNationalTests(unittest.TestCase):
             with self.assertRaises(ValueError):
                 worker.run_operator_once(self.state, self.data, self.catalog, points,
                     now=now, execution="national-operator-one", operator=operator,
-                    quiescent=lambda: self.operator_guard(now), acquire=Mock(), discover=lambda *_: "2026092112")
+                    quiescent=lambda: self.operator_guard(now), guard_clock=lambda: now,
+                    acquire=Mock(), discover=lambda *_: "2026092112")
         with self.assertRaises(FenceLost):
             worker.run_operator_once(self.state, self.data, self.catalog, points,
                 now=now, execution="national-operator-one", operator=operator,
-                quiescent=lambda: False, acquire=Mock(), discover=lambda *_: "2026092112")
+                quiescent=lambda: False, guard_clock=lambda: now,
+                acquire=Mock(), discover=lambda *_: "2026092112")
         self.assertEqual(controller.active().record["phase"], "manual_review")
         self.assertEqual(read_pointer(self.data, self.catalog)[0]["source_run_id"], operator["published_run"])
 
@@ -449,7 +453,7 @@ class CloudNationalTests(unittest.TestCase):
         with patch.object(self.data, "compare_and_swap", side_effect=refuse_pointer):
             outcome = worker.run_operator_once(self.state, self.data, self.catalog, points,
                 now=now, execution="national-operator-one", operator=operator,
-                quiescent=lambda: self.operator_guard(now),
+                quiescent=lambda: self.operator_guard(now), guard_clock=lambda: now,
                 acquire=Mock(return_value=(candidate, {"fixture": "mapping"})),
                 discover=lambda *_: "2026092112")
         self.assertEqual(outcome["reason"], "checkpoint_publication_invalid")

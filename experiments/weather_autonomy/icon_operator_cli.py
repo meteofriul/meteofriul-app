@@ -304,7 +304,8 @@ def main(argv=None):
         execution=execution, operator={"incident_id": args.incident_id,
             "expected_etag": args.expected_etag, "expected_owner_sha256": args.expected_owner_sha256,
             "failed_run": args.failed_run, "new_run": args.new_run,
-            "published_run": args.published_run}, quiescent=evidence.guard)
+            "published_run": args.published_run}, quiescent=evidence.guard,
+        guard_clock=lambda: datetime.now(timezone.utc))
     print(json.dumps(result, sort_keys=True), flush=True)
     return 0 if result["status"] in {"published", "no_op"} else 1
 

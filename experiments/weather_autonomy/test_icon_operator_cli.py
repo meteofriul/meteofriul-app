@@ -143,6 +143,7 @@ class OperatorCliTests(TestCase):
                 failed_run=failed, new_run=new, published_run=published,
                 execution=OPERATOR_JOB + "-one",
                 quiescent=self.evidence(OPERATOR_JOB + "-one").guard,
+                guard_clock=lambda: NOW,
                 current_run=lambda: current[0], discover=lambda _: "2026112500",
                 failed_cycle_evidence=lambda _: {"intent": True, "mapping": False,
                     "prepared": False, "manifest": False},

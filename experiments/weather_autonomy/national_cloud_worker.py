@@ -132,7 +132,7 @@ def run_once(state, data, catalog, points, *, now, execution, acquire=acquire_re
 
 
 def run_automatic(state, data, catalog, points, *, now, execution, acquire, discover, clock=None,
-                  operator=None, quiescent=None):
+                  operator=None, quiescent=None, guard_clock=None):
     """Opt-in recovery; complete immutable manifests remain the checkpoint."""
     from local_pipeline.icon_recovery import Recovery, FenceLost, discovery, transient, result
 
@@ -244,6 +244,7 @@ def run_automatic(state, data, catalog, points, *, now, execution, acquire, disc
                 quiescent=quiescent, current_run=lambda: read_pointer(data, catalog)[0]["source_run_id"],
                 discover=probe, failed_cycle_evidence=failed_cycle_evidence,
                 checkpoint=checkpoint, acquire=freeze, publish=publish, verify=verify,
+                guard_clock=guard_clock,
                 **operator)
         return recovery.run(now=now, execution=execution, high_water=high_water,
             verified_run=high_water, discover=probe, checkpoint=checkpoint, acquire=freeze,
@@ -264,7 +265,8 @@ def run_automatic(state, data, catalog, points, *, now, execution, acquire, disc
 
 
 def run_operator_once(state, data, catalog, points, *, now, execution, operator,
-                      quiescent, acquire=acquire_real_bundle, discover=discover_run, clock=None):
+                      quiescent, guard_clock, acquire=acquire_real_bundle, discover=discover_run,
+                      clock=None):
     """Explicit isolated operator entrypoint; the scheduled `run()` never calls it.
 
     The caller must supply a live read-only quiescence check and exact observed
@@ -273,7 +275,7 @@ def run_operator_once(state, data, catalog, points, *, now, execution, operator,
     """
     return run_automatic(state, data, catalog, points, now=now, execution=execution,
         acquire=acquire, discover=discover, clock=clock, operator=operator,
-        quiescent=quiescent)
+        quiescent=quiescent, guard_clock=guard_clock)
 
 
 def run():

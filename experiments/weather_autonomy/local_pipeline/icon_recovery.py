@@ -333,7 +333,7 @@ class Recovery:
     def supersede_manual_review(self, *, now, incident_id, expected_etag,
             expected_owner_sha256, failed_run, new_run, published_run, execution,
             quiescent, current_run, discover, failed_cycle_evidence, checkpoint,
-            acquire, publish, verify):
+            acquire, publish, verify, guard_clock):
         """Explicit national-only operator handoff; never used by scheduled run.
 
         The immutable incident is written before replacing the failed owner.
@@ -353,6 +353,8 @@ class Recovery:
                 or not re.search(r"(?:^|-)operator(?:-|$)", execution)):
             raise ValueError("invalid ICON operator identity or evidence")
         failed_run, new_run, published_run = (run_id(value) for value in (failed_run, new_run, published_run))
+        if not callable(guard_clock):
+            raise ValueError("live ICON operator guard clock required")
         if (not published_run < failed_run < new_run
                 or utc_run(new_run) > now.astimezone(timezone.utc)):
             raise ValueError("ICON operator cycle order is invalid")
@@ -371,7 +373,7 @@ class Recovery:
                     or hashlib.sha256(canonical_json_bytes(old.record)).hexdigest() != expected_owner_sha256):
                 raise FenceLost("ICON failed owner differs from operator evidence")
             claim_sha256, guard = self.operator_preflight(old, published_run, new_run,
-                now, quiescent, current_run, discover, failed_cycle_evidence, checkpoint, verify)
+                guard_clock, quiescent, current_run, discover, failed_cycle_evidence, checkpoint, verify)
             owner = {"schema_version": 1, "product": self.product, "phase": "acquiring",
                      "source_run_id": new_run, "slot": slot, "execution": execution, "fence": uuid4().hex}
             incident = {"schema_version": 1, "kind": "icon_manual_review_supersession",
@@ -416,7 +418,7 @@ class Recovery:
             raise ValueError("ICON operator incident owner differs")
         if owner is not None and owner.record == old_record and owner.etag == expected_etag:
             claim_sha256, _guard = self.operator_preflight(owner, published_run, new_run,
-                now, quiescent, current_run, discover, failed_cycle_evidence, checkpoint, verify)
+                guard_clock, quiescent, current_run, discover, failed_cycle_evidence, checkpoint, verify)
             if claim_sha256 != saved["failed_claim_sha256"]:
                 raise FenceLost("ICON failed acquisition claim changed")
             owner = self.replace(owner, new_record)
@@ -430,7 +432,7 @@ class Recovery:
                     raise FenceLost("ICON completed operator publication is not verified")
                 return result("no_op", "operator_publication_already_completed", new_run)
             if owner.record == {**new_record, "phase": "checkpointed"}:
-                self.operator_guard(quiescent, now)
+                self.operator_guard(quiescent, guard_clock)
                 prepared = checkpoint(new_run, slot)
                 if prepared is None:
                     raise FenceLost("ICON operator checkpoint disappeared")
@@ -443,7 +445,7 @@ class Recovery:
                 raise FenceLost("ICON operator public pointer changed")
             raise FenceLost("ICON operator owner changed unexpectedly")
 
-        self.operator_guard(quiescent, now)
+        self.operator_guard(quiescent, guard_clock)
         if current_run() != published_run or verify(published_run) is not True:
             raise FenceLost("ICON operator publication or quiescence changed")
         claim_key = self.prefix + f"runs/{new_run}/acquisition.json"
@@ -458,11 +460,12 @@ class Recovery:
             return self.publish(owner, prepared, publish, verify)
         return self.acquire_and_publish(owner, new_run, slot, checkpoint, acquire, publish, verify)
 
-    def operator_guard(self, quiescent, now):
+    def operator_guard(self, quiescent, guard_clock):
         """Require a live maintenance attestation, not a zero-executions snapshot."""
-        if not callable(quiescent):
+        if not callable(quiescent) or not callable(guard_clock):
             raise FenceLost("ICON operator quiescence check missing")
         guard = quiescent()
+        now = guard_clock()
         if (not isinstance(guard, dict)
                 or set(guard) != {"scheduler_paused", "active_executions",
                     "deployed_fence_aware", "legacy_invocations_blocked", "observed_at_utc",
@@ -483,10 +486,10 @@ class Recovery:
             raise FenceLost("ICON operator maintenance guard is stale")
         return guard
 
-    def operator_preflight(self, old, published_run, new_run, now, quiescent,
+    def operator_preflight(self, old, published_run, new_run, guard_clock, quiescent,
             current_run, discover, failed_cycle_evidence, checkpoint, verify):
         """Read-only checks before a manual-review CAS or its exact retry."""
-        guard = self.operator_guard(quiescent, now)
+        guard = self.operator_guard(quiescent, guard_clock)
         if current_run() != published_run or verify(published_run) is not True:
             raise FenceLost("ICON operator preflight is not quiescent or published")
         old_run, old_slot = old.record["source_run_id"], old.record["slot"]
