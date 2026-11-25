@@ -411,6 +411,11 @@ nell'APK, nei documenti o negli screenshot.
 
 ## Architettura
 
+La [mappa corrente dell'app e dei flussi](docs/operations/APP_SYSTEM_MAP_20261125.md)
+collega tab, pagine, API, risorse cloud, cache e job; l'[inventario dei job](docs/operations/JOBS_INVENTORY.md)
+e il [verbale del 25 novembre](docs/operations/JOBS_READONLY_AUDIT_20261125.md)
+separano pianificazione ed esiti osservati.
+
 ```text
 frontend/                React 19, Vite 8, UI web e wrapper Capacitor
 frontend/src/            schermate, dominio, servizi, testi e dati condivisi
@@ -765,6 +770,12 @@ o un'immagine è soggetta a condizioni ulteriori.
 
 ### Runtime e operazioni
 
+- [Mappa completa dell'app e dei flussi](docs/operations/APP_SYSTEM_MAP_20261125.md):
+  pagine, servizi, dati, API, cache, job e confini Web/Android sul `main`
+  del 25 novembre 2026.
+- [Inventario dei job](docs/operations/JOBS_INVENTORY.md): scopo,
+  pianificazioni, dipendenze e ragioni delle scelte; [audit operativo](docs/operations/JOBS_READONLY_AUDIT_20261125.md)
+  per gli esiti cloud osservati e i limiti del controllo.
 - [API UI3](backend/README.md): avvio, route, fonti, Firestore, App Check e test.
 - [Osservazioni test chiuso Google Play](docs/operations/PLAY_CLOSED_BETA_OBSERVATIONS.md):
   problemi rilevati e miglioramenti da pianificare durante la beta Alpha.
