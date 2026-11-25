@@ -17,7 +17,7 @@ from national_cloud_publication import (PREFIX, create_or_verify, descriptor_for
     utc, verify_pointer_reader)
 from local_pipeline.national_icon_bundle import canonical_json_bytes, canonical_run_id
 from local_pipeline.national_icon_bundle import sha256_hex
-from local_pipeline.operational_diagnostics import phase
+from local_pipeline.operational_diagnostics import emit, error_fields, phase
 from local_pipeline.sqlite_object_store import ObjectNotFound, PreconditionFailed
 
 STATE_PREFIX = "state/national-icon/"
@@ -187,13 +187,17 @@ def run_automatic(state, data, catalog, points, *, now, execution, acquire, disc
                 raise ValueError("national acquisition changed the discovered cycle")
             # Validate the entire in-memory bundle before staging any public byte.
             from national_cloud_publication import reader_for_bundle
-            reader_for_bundle(frozen, catalog)
-            record_preparation(state, frozen, mapping, catalog, points)
+            with phase("national_bundle_validation", provider="icon", source_run_id=cycle):
+                reader_for_bundle(frozen, catalog)
+            with phase("national_checkpoint_preparation", provider="icon", source_run_id=cycle):
+                record_preparation(state, frozen, mapping, catalog, points)
             # Pointer is untouched. Manifest-last is the existing atomic boundary
             # after which another execution may resume without a GRIB download.
-            for path, body in frozen.publication_order():
-                create_or_verify(data, PREFIX + path, body)
-            return checkpoint(cycle, slot)
+            with phase("national_checkpoint_upload", provider="icon", source_run_id=cycle):
+                for path, body in frozen.publication_order():
+                    create_or_verify(data, PREFIX + path, body)
+            with phase("national_checkpoint_verification", provider="icon", source_run_id=cycle):
+                return checkpoint(cycle, slot)
 
         def publish(frozen):
             current = publish_bundle(data, frozen, catalog, now=now, clock=clock)
@@ -217,6 +221,10 @@ def run_automatic(state, data, catalog, points, *, now, execution, acquire, disc
     except FenceLost:
         return result("in_progress", "recovery_owner_changed")
     except Exception as error:
+        details = error_fields(error)
+        details.setdefault("stage", "national_recovery")
+        emit("national_recovery_exception", **{**details, "provider": "icon",
+            "status": "failed", "severity": "ERROR"})
         return result("pending" if transient(error) else "manual_review",
                       "national_transport_pending" if transient(error) else "national_recovery_invalid")
 

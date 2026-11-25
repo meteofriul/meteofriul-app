@@ -57,7 +57,7 @@ class PublicMetadataTests(unittest.TestCase):
             self.assertRegex(evidence["documents"][name]["sha256"], r"^[0-9a-f]{64}$")
 
     def test_catalogue_with_only_zero_to_72_fails_closed(self):
-        for status in ("available", "down"):
+        for status in ("available", "warning", "down"):
             with self.subTest(status=status):
                 documents = public_metadata_documents(leads=range(73))
                 documents["catalogue"]["cads:sanity_check"]["status"] = status
@@ -111,14 +111,76 @@ class PublicMetadataTests(unittest.TestCase):
         self.assertEqual(records[1]["validation_status"], "passed")
         self.assertEqual(records[1]["severity"], "WARNING")
 
-    def test_explicit_catalogue_disable_still_fails_closed(self):
+    def test_u11_form_and_warning_catalogue_preserve_exact_request(self):
         documents = public_metadata_documents()
-        documents["catalogue"]["cads:sanity_check"]["status"] = "down"
-        documents["catalogue"]["cads:disabled_reason"] = "maintenance"
-        with self.assertRaises(cams.PublicMetadataUnavailable) as raised:
+        documents["catalogue"]["cads:sanity_check"]["status"] = "warning"
+        variable_field = next(row for row in documents["form"] if row["name"] == "variable")
+        variable_field["details"]["values"].extend(sorted(cams.U11_ADDITIONAL_VARIABLE_IDS))
+        output = io.StringIO()
+        with redirect_stdout(output):
+            evidence = validate_documents(documents)
+        plan = cams.build_request_plan(TEST_DATE, metadata_evidence=evidence)
+        request = plan["request_groups"][0]["request"]
+        self.assertEqual(evidence["catalogue_sanity"]["status"], "warning")
+        self.assertEqual(set(request["variable"]), set(cams.EXPECTED_VARIABLE_IDS))
+        self.assertEqual(request["leadtime_hour"], list(cams.EXPECTED_LEADS))
+        self.assertEqual(plan["counts"]["requested_fields"], 2716)
+        records = [json.loads(line) for line in output.getvalue().splitlines()]
+        self.assertEqual([record["reason_code"] for record in records], [
+            "constraints_validated", "form_u11_extra_variables_validated",
+            "catalogue_sanity_warning_constraints_validated",
+        ])
+        self.assertEqual(records[1]["expected_count"], 28)
+        self.assertEqual(records[1]["actual_count"], 35)
+        self.assertEqual(records[1]["metadata_field"], "variables")
+        self.assertEqual(records[2]["severity"], "WARNING")
+
+    def test_u11_does_not_approve_missing_or_unknown_variables(self):
+        for mutation in (
+            lambda values: values.remove(cams.EXPECTED_VARIABLE_IDS[0]),
+            lambda values: values.append("unapproved_variable"),
+        ):
+            with self.subTest(mutation=mutation):
+                documents = public_metadata_documents()
+                values = next(row for row in documents["form"] if row["name"] == "variable")["details"]["values"]
+                values.extend(sorted(cams.U11_ADDITIONAL_VARIABLE_IDS))
+                mutation(values)
+                with self.assertRaises(cams.PublicMetadataError) as raised:
+                    validate_documents(documents)
+                fields = error_fields(raised.exception)
+                self.assertEqual(fields["reason_code"], "form_variables_changed")
+                self.assertEqual(fields["metadata_field"], "variables")
+                self.assertEqual(fields["expected_count"], 28)
+
+    def test_form_lead_failure_identifies_field_without_logging_values(self):
+        documents = public_metadata_documents()
+        leads = next(row for row in documents["form"] if row["name"] == "leadtime_hour")["details"]["values"]
+        leads.pop()
+        with self.assertRaises(cams.PublicMetadataError) as raised:
             validate_documents(documents)
         fields = error_fields(raised.exception)
-        self.assertEqual(fields["reason_code"], "catalogue_disabled")
+        self.assertEqual(fields["reason_code"], "form_lead_hours_changed")
+        self.assertEqual(fields["metadata_field"], "lead_hours")
+        self.assertEqual(fields["expected_count"], 97)
+        self.assertEqual(fields["actual_count"], 96)
+        self.assertNotIn("form", fields)
+
+    def test_warning_catalogue_still_rejects_incomplete_constraints(self):
+        documents = public_metadata_documents(leads=range(73))
+        documents["catalogue"]["cads:sanity_check"]["status"] = "warning"
+        with self.assertRaises(cams.PublicMetadataUnavailable):
+            validate_documents(documents)
+
+    def test_explicit_catalogue_disable_still_fails_closed(self):
+        for status in ("warning", "down"):
+            with self.subTest(status=status):
+                documents = public_metadata_documents()
+                documents["catalogue"]["cads:sanity_check"]["status"] = status
+                documents["catalogue"]["cads:disabled_reason"] = "maintenance"
+                with self.assertRaises(cams.PublicMetadataUnavailable) as raised:
+                    validate_documents(documents)
+                fields = error_fields(raised.exception)
+                self.assertEqual(fields["reason_code"], "catalogue_disabled")
         self.assertEqual(fields["error_summary"], "CAMS catalogue is explicitly disabled")
 
     def test_links_must_be_unique_content_addressed_approved_https_urls(self):
@@ -144,7 +206,7 @@ class PublicMetadataTests(unittest.TestCase):
         with self.assertRaises(cams.PublicMetadataError):
             validate_documents(documents)
 
-    def test_form_requires_exact_variables_leads_and_selection_options(self):
+    def test_form_rejects_missing_or_unapproved_variables_leads_and_options(self):
         for field, mutation in (
             ("variable", lambda values: values.pop()),
             ("variable", lambda values: values.append("extra")),

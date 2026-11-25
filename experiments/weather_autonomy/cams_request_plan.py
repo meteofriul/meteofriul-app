@@ -84,6 +84,18 @@ _VALIDATED_VARIABLES = frozenset(
 )
 EXPECTED_VARIABLE_IDS = tuple(sorted(name for name, _ in _VARIABLES))
 EXPECTED_LEADS = tuple(str(hour) for hour in range(97))
+# The official U11 upgrade adds options to the public form. They are never
+# requested by this 28-variable product; the constraints must still prove the
+# original exact selection below before a plan can be written.
+U11_ADDITIONAL_VARIABLE_IDS = frozenset((
+    "dry_deposition_oxidised_nitrogen",
+    "dry_deposition_oxidised_sulphur",
+    "dry_deposition_reduced_nitrogen",
+    "hazel_pollen",
+    "wet_deposition_oxidised_nitrogen",
+    "wet_deposition_oxidised_sulphur",
+    "wet_deposition_reduced_nitrogen",
+))
 _CONSTRAINT_KEYS = frozenset(
     ("date", "leadtime_hour", "level", "model", "time", "type", "variable")
 )
@@ -292,10 +304,11 @@ def _validate_catalogue(catalogue, run_date):
     if catalogue.get("sci:doi") != "10.24381/a4005cee":
         raise PublicMetadataError("Catalogue DOI does not match the approved dataset")
     sanity = catalogue.get("cads:sanity_check")
-    if not isinstance(sanity, dict) or sanity.get("status") not in {"available", "down"}:
+    if not isinstance(sanity, dict) or sanity.get("status") not in {"available", "warning", "down"}:
         raise attach_error_fields(
             PublicMetadataUnavailable("CAMS catalogue sanity status is not available"),
             reason_code="catalogue_sanity_unavailable",
+            metadata_field="sanity_status",
             retryable=True,
         )
     # ADS can report a failing catalogue sanity check while the exact forecast
@@ -360,7 +373,16 @@ def _validate_form(form, run_date, area):
                 raise PublicMetadataError("Public form contains a duplicate field")
             named[name] = field
 
-    _exact_strings(_values(named.get("variable"), "variable"), EXPECTED_VARIABLE_IDS, "variables")
+    variables = _values(named.get("variable"), "variable")
+    expected_variables = set(EXPECTED_VARIABLE_IDS)
+    offered_variables = set(variables)
+    if (not expected_variables <= offered_variables
+            or not offered_variables - expected_variables <= U11_ADDITIONAL_VARIABLE_IDS):
+        raise attach_error_fields(
+            PublicMetadataError("Public form variables differ from the approved U11 options"),
+            reason_code="form_variables_changed", metadata_field="variables",
+            expected_count=len(expected_variables), actual_count=len(variables),
+        )
     if "ensemble" not in _values(named.get("model"), "model"):
         raise PublicMetadataError("Public form does not expose the ensemble")
     if "0" not in _values(named.get("level"), "level"):
@@ -369,7 +391,14 @@ def _validate_form(form, run_date, area):
         raise PublicMetadataError("Public form does not expose forecast type")
     if "00:00" not in _values(named.get("time"), "time"):
         raise PublicMetadataError("Public form does not expose base time 00:00")
-    _exact_strings(_values(named.get("leadtime_hour"), "leadtime_hour"), EXPECTED_LEADS, "lead hours")
+    leads = _values(named.get("leadtime_hour"), "leadtime_hour")
+    try:
+        _exact_strings(leads, EXPECTED_LEADS, "lead hours")
+    except PublicMetadataError as error:
+        raise attach_error_fields(
+            error, reason_code="form_lead_hours_changed", metadata_field="lead_hours",
+            expected_count=len(EXPECTED_LEADS), actual_count=len(leads),
+        )
     formats = _values(named.get("data_format"), "data_format")
     if set(formats) != {"grib", "netcdf_zip"}:
         raise PublicMetadataError("Public form formats changed")
@@ -422,6 +451,7 @@ def _validate_form(form, run_date, area):
         or licence.get("attachment_url") != LICENSE_URL
     ):
         raise PublicMetadataError("Public form licence is not exact CC-BY-4.0")
+    return len(variables)
 
 
 def _validate_constraints(constraints, run_date, *, metadata_sha256=None):
@@ -563,13 +593,21 @@ def validate_public_metadata(
         raise PublicMetadataError("Form URL hash does not match its response bytes")
     if _safe_resource_url(constraints_url, "constraints") != _canonical_sha256(constraints_sha256):
         raise PublicMetadataError("Constraints URL hash does not match its response bytes")
-    _validate_form(form, run_date, area)
+    form_variable_count = _validate_form(form, run_date, area)
     selection = _validate_constraints(constraints, run_date, metadata_sha256=constraints_sha256)
-    if sanity_status == "down":
+    if form_variable_count > len(EXPECTED_VARIABLE_IDS):
+        emit(
+            "weather_public_metadata_validation", provider="cams", stage="form_validation",
+            status="passed", severity="WARNING", reason_code="form_u11_extra_variables_validated",
+            metadata_field="variables", expected_count=len(EXPECTED_VARIABLE_IDS),
+            actual_count=form_variable_count, validation_status="passed",
+        )
+    if sanity_status in {"warning", "down"}:
         emit(
             "weather_public_metadata_validation", provider="cams", stage="catalogue_validation",
             status="passed", severity="WARNING",
-            reason_code="catalogue_sanity_down_constraints_validated", validation_status="passed",
+            reason_code=f"catalogue_sanity_{sanity_status}_constraints_validated",
+            metadata_field="sanity_status", validation_status="passed",
         )
     return {
         "schema_version": 1,
@@ -708,7 +746,7 @@ def _validate_evidence(evidence, run_date):
             raise PublicMetadataError("Metadata evidence content-addressed URL mismatch")
     sanity = evidence.get("catalogue_sanity")
     if (not isinstance(sanity, dict) or set(sanity) != {"status", "timestamp"}
-            or sanity["status"] not in {"available", "down"}):
+            or sanity["status"] not in {"available", "warning", "down"}):
         raise PublicMetadataError("Metadata evidence sanity status changed")
     if canonical_utc(sanity["timestamp"]) != sanity["timestamp"]:
         raise PublicMetadataError("Metadata sanity timestamp is not canonical UTC")
