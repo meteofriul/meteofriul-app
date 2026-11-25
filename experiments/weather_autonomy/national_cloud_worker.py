@@ -131,7 +131,8 @@ def run_once(state, data, catalog, points, *, now, execution, acquire=acquire_re
         "manifest_sha256": pointer["manifest"]["sha256"], "municipality_count": pointer["catalog"]["municipality_count"]}
 
 
-def run_automatic(state, data, catalog, points, *, now, execution, acquire, discover, clock=None):
+def run_automatic(state, data, catalog, points, *, now, execution, acquire, discover, clock=None,
+                  operator=None, quiescent=None):
     """Opt-in recovery; complete immutable manifests remain the checkpoint."""
     from local_pipeline.icon_recovery import Recovery, FenceLost, discovery, transient, result
 
@@ -215,18 +216,64 @@ def run_automatic(state, data, catalog, points, *, now, execution, acquire, disc
             return {"slot": slot, "source_run_id": cycle, "checkpoint": frozen}
 
         probe = (lambda water: discovery(now, water)) if discover is discover_run else (lambda water: discover(now, water))
-        return Recovery(state, "national").run(now=now, execution=execution, high_water=high_water,
+        recovery = Recovery(state, "national")
+        if operator is not None:
+            if not isinstance(operator, dict) or set(operator) != {
+                    "incident_id", "expected_etag", "expected_owner_sha256",
+                    "failed_run", "new_run", "published_run"} or not callable(quiescent):
+                raise ValueError("explicit ICON operator evidence and quiescence check required")
+
+            def failed_cycle_evidence(cycle):
+                root = STATE_PREFIX + f"runs/{cycle}/"
+                try:
+                    intent = parse_document(state.get(root + "intent.json").body)
+                except ObjectNotFound:
+                    intent_valid = False
+                else:
+                    intent_valid = (set(intent) == {"schema_version", "source_run_id", "generated_at",
+                                                   "catalog_sha256", "points_sha256"}
+                        and intent["schema_version"] == 1 and intent["source_run_id"] == cycle
+                        and intent["catalog_sha256"] == catalog["catalog_sha256"]
+                        and intent["points_sha256"] == points["artifact_sha256"])
+                return {"intent": intent_valid,
+                    "mapping": state.exists(root + "mapping.json"),
+                    "prepared": state.exists(root + "prepared.json"),
+                    "manifest": data.exists(PREFIX + f"runs/{cycle}/manifest.json")}
+
+            return recovery.supersede_manual_review(now=now, execution=execution,
+                quiescent=quiescent, current_run=lambda: read_pointer(data, catalog)[0]["source_run_id"],
+                discover=probe, failed_cycle_evidence=failed_cycle_evidence,
+                checkpoint=checkpoint, acquire=freeze, publish=publish, verify=verify,
+                **operator)
+        return recovery.run(now=now, execution=execution, high_water=high_water,
             verified_run=high_water, discover=probe, checkpoint=checkpoint, acquire=freeze,
             publish=publish, verify=verify, legacy=legacy)
     except FenceLost:
+        if operator is not None:
+            raise
         return result("in_progress", "recovery_owner_changed")
     except Exception as error:
         details = error_fields(error)
         details.setdefault("stage", "national_recovery")
         emit("national_recovery_exception", **{**details, "provider": "icon",
             "status": "failed", "severity": "ERROR"})
+        if operator is not None:
+            raise
         return result("pending" if transient(error) else "manual_review",
                       "national_transport_pending" if transient(error) else "national_recovery_invalid")
+
+
+def run_operator_once(state, data, catalog, points, *, now, execution, operator,
+                      quiescent, acquire=acquire_real_bundle, discover=discover_run, clock=None):
+    """Explicit isolated operator entrypoint; the scheduled `run()` never calls it.
+
+    The caller must supply a live read-only quiescence check and exact observed
+    generation/hash. Importing this function or deploying its image does not
+    supersede a fence; only an intentional call with those inputs can do so.
+    """
+    return run_automatic(state, data, catalog, points, now=now, execution=execution,
+        acquire=acquire, discover=discover, clock=clock, operator=operator,
+        quiescent=quiescent)
 
 
 def run():
