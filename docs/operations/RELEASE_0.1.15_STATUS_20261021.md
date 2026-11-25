@@ -1,5 +1,15 @@
 # Stato release 0.1.15 e lavoro salvato — aggiornamento sorgenti del 24 ottobre 2026
 
+**Rettifica dello stato app, 25 novembre 2026.** La AAB 0.1.15/300038,
+documentata nel ramo `codex/release-0.1.15`, è stata accettata nel test
+interno Play il 26 ottobre; sostituisce la 300036 in quel canale. Il
+collaudo runtime della 300038 su telefono non è attestato. La Web pubblica
+serve ancora HTML e JavaScript della 0.1.14 del 21 ottobre, verificati oggi
+per hash. La produzione Play era 0.1.14/300031 nell'ultima lettura Console
+del 26 ottobre: stato attuale non interrogato. Le tabelle 300036 più sotto
+sono fotografie del 23 ottobre, non l'ultimo stato dei canali.
+[Matrice repository, artefatti, dati e verifiche](APP_ALIGNMENT_STATUS_20261125.md).
+
 **CAMS e ICON, 25 novembre 2026, ore 17:31 UTC.** La seconda corsa CAMS
 ha ripreso l'unica richiesta ADS senza nuova POST, ma la fonte era ancora
 in elaborazione e il dato aria/pollini resta al 23 novembre. ICON resta
@@ -146,7 +156,7 @@ AAB, Web e Android distribuiti invariati.
 
 **Aggiornamento backend del 25 ottobre:** PR 22 integrata, CI superata e solo job Eventi aggiornato. [Verbale e rollback](EVENTS_PNPENSA_BARCOLANA_DEPLOY_20261025.md). Corsa ordinaria del 26 ottobre alle 05:00 italiane: `needs_review`, timeout Barcolana; Pordenone Pensa verificato. Follow-up concluso ed eliminato. Contratti Web/Android e pacchetti invariati; correzione successiva soltanto locale.
 
-**Ultimo pacchetto prodotto:** AAB **0.1.15 / 300036** generata e verificata da `9d5ff2f4`, con main `2d8b0c32` e Tempo reale corretto. Web dalla stessa sorgente; sponsor spenti. Disponibile nel test interno dalle 13:37 del 23 ottobre e aggiornata dal proprietario via Play. Verifica sul Galaxy Android 14: PASS dei percorsi osservati, compreso Tempo reale dopo avvio a freddo; qualifica completa ancora limitata dalla matrice non esercitata. Nessuna installazione dell’agente. [Verbale corrente](ANDROID_0.1.15_300036_DEVICE_CHECK_20261023.md).
+**Stato storico del 23 ottobre:** AAB **0.1.15 / 300036** generata e verificata da `9d5ff2f4`, con main `2d8b0c32` e Tempo reale corretto. Web dalla stessa sorgente; sponsor spenti. Disponibile nel test interno dalle 13:37 del 23 ottobre e aggiornata dal proprietario via Play. Verifica sul Galaxy Android 14: PASS dei percorsi osservati, compreso Tempo reale dopo avvio a freddo; qualifica completa ancora limitata dalla matrice non esercitata. Nessuna installazione dell’agente. [Verbale del 23 ottobre](ANDROID_0.1.15_300036_DEVICE_CHECK_20261023.md).
 
 **La precedente 0.1.15 / 300035 è stata sostituita nel test interno dalla 300036.
 Nella prova storica della 300035 Tempo reale risultava vuoto:
@@ -197,14 +207,18 @@ modifica dei job o invio. Sponsor disattivati.
 
 ## Canali e rami
 
+Le righe seguenti conservano la fotografia del **23 ottobre**. La 300038
+successiva e la verifica Web del 25 novembre sono nella
+[matrice aggiornata](APP_ALIGNMENT_STATUS_20261125.md).
+
 | Ambito | Stato attestato |
 | --- | --- |
 | Produzione Play | Lettura Console del 23 ottobre: 0.1.14 / 300031; nessuna promozione della 0.1.15 in produzione |
-| Test interno Play | 0.1.15 / 300036 disponibile dal 23 ottobre alle 13:37; una sola lista con due account, mantenuta su conferma del proprietario; sponsor disattivati |
+| Test interno Play | Stato del 23 ottobre: 0.1.15 / 300036 disponibile dalle 13:37; una sola lista con due account, mantenuta su conferma del proprietario; sponsor disattivati. Superato dalla 300038 del 26 ottobre, documentata nella rettifica sopra |
 | Web pubblica | Pubblicazione del 21 ottobre da `1b0287c1`, versione 0.1.14; HTML e asset riconfermati il 23 ottobre. Candidata 0.1.15 aggiornata da `9d5ff2f4` preparata, non distribuita; Safari/iPhone non verificato |
 | Base main incorporata nella AAB | `2d8b0c32`, PR 17 e CI 39935808248 verde. La [PR 11](https://github.com/meteofriul/meteofriul-app/pull/11) è unita in main con `eb109518`. Main su GitHub include ora `53bedfe4` tramite PR 20 (`7813d5c4`); i commit aggiunti dopo la build non cambiano la AAB |
 | `codex/release-0.1.15` | Sorgente AAB `9d5ff2f4`: main `2d8b0c32`, Posizione, transitorio CAMS e configurazione nativa conservati. I verbali di build/Play/dispositivo sono seguiti dal fix frontend `cd471769` e dall’unione di main `ffa61949`. Queste nuove correzioni non sono nell’artefatto 300036 né nella Web archiviata; prova Brave/Galaxy IT/FUR del 24 ottobre PASS; promozione tracciata nella PR 19 |
-| Ultimo artefatto osservato sul telefono (300036) | Sorgente `9d5ff2f415ab8b10be510eff2a0b058a8c2408ac`, AAB SHA256 `024212752b3af72f163d75849aa53c2b191ba0352e42423b11efccd2d7f8b51f`; installer Play Store; [verifica sul Galaxy](ANDROID_0.1.15_300036_DEVICE_CHECK_20261023.md) |
+| Ultimo artefatto osservato sul telefono al 23 ottobre (300036) | Sorgente `9d5ff2f415ab8b10be510eff2a0b058a8c2408ac`, AAB SHA256 `024212752b3af72f163d75849aa53c2b191ba0352e42423b11efccd2d7f8b51f`; installer Play Store; [verifica sul Galaxy](ANDROID_0.1.15_300036_DEVICE_CHECK_20261023.md). Non prova il runtime della successiva 300038 |
 
 I commit successivi, anche quando modificano il frontend, non cambiano il
 commit sorgente dell’AAB già firmata. L’allineamento conserva la configurazione

@@ -1,5 +1,13 @@
 # Meteo Friûl
 
+**Allineamento app, 25 novembre 2026.** `main` è aggiornato e l'ultima CI
+del codice è verde; il checkout canonico resta sul ramo Mercati in pausa.
+La Web pubblica serve ancora i byte della 0.1.14 del 21 ottobre. La AAB
+0.1.15/300038 è nel test interno Play sul ramo release, con Web candidata
+dalla stessa sorgente non pubblicata; il suo runtime su telefono non è
+attestato. ICON nazionale, CAMS aria/pollini e due fonti Eventi hanno dati
+da recuperare. [Stato verificato e limiti](docs/operations/APP_ALIGNMENT_STATUS_20261125.md).
+
 **CAMS e ICON, 25 novembre 2026, ore 17:31 UTC.** Una ripresa CAMS della
 stessa richiesta ADS è terminata in attesa della fonte, senza nuova POST:
 aria/pollini pubblicati ancora al ciclo del 23 novembre. ICON nazionale
