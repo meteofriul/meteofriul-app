@@ -1,5 +1,14 @@
 # Meteo Friûl
 
+**ICON nazionale e CAMS, 25 novembre 2026, verifica sorgenti.** La
+[PR 61](https://github.com/meteofriul/meteofriul-app/pull/61) corregge la
+validazione dei metadati CAMS U11 e registra il primo errore ICON con campi
+sicuri. 120 test mirati e la CI della PR sono riusciti. Al controllo delle
+15:34 UTC aria/pollini CAMS erano fermi al 23 novembre; ICON nazionale era in
+`manual_review` e richiede una ripresa separata della fence. Nessuna immagine
+job o app era stata distribuita in quel controllo.
+[Diagnosi, log e gate](docs/operations/WEATHER_ICON_CAMS_RECOVERY_20261125.md).
+
 **Anticipazione serale, integrata in `main` il 23 novembre 2026.** La [PR 58](https://github.com/meteofriul/meteofriul-app/pull/58)
 prepara un testo limitato alle
 temperature quando la pioggia oraria ICON è incerta e la giornata successiva

@@ -23,6 +23,7 @@ _TOKEN = re.compile(r"[A-Za-z0-9_][A-Za-z0-9_.:-]{0,127}\Z")
 _KEY = re.compile(r"[A-Za-z0-9_./-]{1,256}\Z")
 _RUN = re.compile(r"\d{8}T\d{6}Z\Z")
 _MUNICIPALITY = re.compile(r"(?:^|/)municipalities/(\d{6})\.json\Z")
+_METADATA_FIELDS = frozenset({"variables", "lead_hours", "sanity_status"})
 _FIELDS = frozenset({
     "provider", "job", "stage", "source_run_id", "run_id", "run_date", "attempt_id",
     "execution_id", "operation", "http_method", "object_key", "municipality_code", "status",
@@ -35,7 +36,7 @@ _FIELDS = frozenset({
     "retry_after_seconds", "elapsed_seconds", "duration_seconds", "exit_code",
     "expected_count", "actual_count", "core_stage_idempotent", "pollen_stage_idempotent",
     "family_idempotent", "family_latest_updated", "severity", "event",
-    "compatible_rows", "date_rows", "leadcount", "maxlead", "metadata_sha256",
+    "compatible_rows", "date_rows", "leadcount", "maxlead", "metadata_sha256", "metadata_field",
     "constraints_rows", "missing_model_rows", "missing_level_rows", "missing_type_rows",
     "missing_time_rows", "missing_variable_rows", "missing_variable_count", "missing_lead_count",
     "quality_available", "quality_reason", "quality_sha256", "raw_diagnostic_samples", "diagnostic_samples_truncated",
@@ -141,6 +142,8 @@ def _safe_fields(fields):
             value = safe_source_run_id(value)
         elif key == "municipality_code":
             value = value if isinstance(value, str) and re.fullmatch(r"\d{6}", value) else None
+        elif key == "metadata_field":
+            value = value if isinstance(value, str) and value in _METADATA_FIELDS else None
         elif key in {"error_summary", "cause_summary"}:
             value = value if isinstance(value, str) and value in _SAFE_MESSAGES else None
         elif isinstance(value, str):
@@ -195,6 +198,7 @@ def error_fields(error):
             filename = trace.tb_frame.f_code.co_filename.replace("\\", "/")
             if "/local_pipeline/" in filename or filename.endswith((
                 "/cloud_worker.py", "/run_pilot.py", "/cams_request_plan.py", "/retrieve_cams.py", "/publish_remote_icon.py",
+                "/national_cloud_worker.py", "/national_cloud_publication.py", "/benchmark_national_icon_real.py",
             )):
                 result.update(failure_file=filename.rsplit("/", 1)[-1],
                               failure_function=trace.tb_frame.f_code.co_name,

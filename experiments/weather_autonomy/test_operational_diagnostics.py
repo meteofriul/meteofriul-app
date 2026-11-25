@@ -73,6 +73,16 @@ class OperationalDiagnosticsTests(unittest.TestCase):
         self.assertEqual(record["expected_count"], 215)
         self.assertEqual(record["metadata_sha256"], "a" * 64)
 
+    def test_metadata_field_is_a_fixed_safe_label(self):
+        output = io.StringIO()
+        with redirect_stdout(output):
+            emit("metadata_check", metadata_field="variables")
+            emit("metadata_check", metadata_field="https://host/secret")
+        rows = [json.loads(line) for line in output.getvalue().splitlines()]
+        self.assertEqual(rows[0]["metadata_field"], "variables")
+        self.assertNotIn("metadata_field", rows[1])
+        self.assertNotIn("secret", output.getvalue())
+
     def test_icon_recovery_failures_keep_readable_controlled_reasons(self):
         for message in (
             "stored manifest differs from publication intent",

@@ -14,6 +14,7 @@ from time import sleep
 from uuid import uuid4
 
 from .contract_v1 import canonical_json_bytes
+from .operational_diagnostics import emit, error_fields
 from .sqlite_object_store import ObjectNotFound, ObjectStoreError, PreconditionFailed
 
 FEATURE_FLAG = "WEATHER_ICON_AUTOMATIC_RECOVERY_ENABLED"
@@ -308,7 +309,11 @@ class Recovery:
             owner = self.transition(owner, "checkpointed")
         except FenceLost:
             raise
-        except Exception:
+        except Exception as error:
+            details = error_fields(error)
+            details.setdefault("stage", "acquisition")
+            emit("icon_recovery_exception", **{**details, "provider": "icon",
+                "source_run_id": cycle, "status": "failed", "severity": "ERROR"})
             durable = checkpoint(cycle, info["slot"])
             if durable is not None:
                 self.transition(owner, "checkpointed")
@@ -324,6 +329,10 @@ class Recovery:
         try:
             outcome = publish(prepared)
         except Exception as error:
+            details = error_fields(error)
+            details.setdefault("stage", "publication")
+            emit("icon_recovery_exception", **{**details, "provider": "icon",
+                "source_run_id": cycle, "status": "failed", "severity": "ERROR"})
             if transient(error):
                 return result("pending", "checkpoint_publication_pending", cycle)
             self.transition(owner, "manual_review")

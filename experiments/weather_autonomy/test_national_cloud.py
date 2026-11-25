@@ -1,7 +1,9 @@
 """Offline failure/race tests for the isolated national pilot cloud boundary."""
 from datetime import datetime, timedelta, timezone
+from contextlib import redirect_stdout
 from pathlib import Path
 import gzip
+import io
 import json
 import os
 import tempfile
@@ -314,6 +316,58 @@ class CloudNationalTests(unittest.TestCase):
         self.assertEqual(outcome['status'], 'manual_review')
         discover.assert_not_called()
         acquire.assert_not_called()
+
+    def test_automatic_validation_failure_logs_safe_first_stage_and_keeps_fence(self):
+        from local_pipeline.icon_recovery import FEATURE_FLAG, Recovery
+        bundle = sample_bundle(hour=12)
+        acquire = Mock(return_value=(bundle, {"fixture": "mapping"}))
+        output = io.StringIO()
+        with patch.dict(os.environ, {FEATURE_FLAG: "true"}), \
+                patch("national_cloud_publication.reader_for_bundle",
+                      side_effect=ValueError("Bearer private-token https://private.example")), \
+                redirect_stdout(output):
+            outcome = worker.run_once(self.state, self.data, self.catalog,
+                {"artifact_sha256": "c" * 64}, now=NOW,
+                execution="pilot-national-icon-validation-failure", acquire=acquire,
+                discover=lambda *_: "2026092012")
+        self.assertEqual(outcome["reason"], "acquisition_requires_review")
+        self.assertEqual(Recovery(self.state, "national").active().record["phase"], "manual_review")
+        rows = [json.loads(line) for line in output.getvalue().splitlines()]
+        failed = next(row for row in rows if row["event"] == "phase_failed"
+                      and row.get("stage") == "national_bundle_validation")
+        self.assertEqual(failed["error_type"], "ValueError")
+        self.assertEqual(failed["failure_file"], "national_cloud_worker.py")
+        self.assertEqual(failed["source_run_id"], "20260920T120000Z")
+        self.assertEqual(failed["severity"], "ERROR")
+        recovery = next(row for row in rows if row["event"] == "icon_recovery_exception")
+        self.assertEqual(recovery["stage"], "national_bundle_validation")
+        self.assertEqual(recovery["severity"], "ERROR")
+        self.assertNotIn("private-token", output.getvalue())
+        self.assertNotIn("private.example", output.getvalue())
+
+    def test_automatic_preparation_failure_names_stage_without_publishing(self):
+        from local_pipeline.icon_recovery import FEATURE_FLAG, Recovery
+        cycle = "20260920T120000Z"
+        output = io.StringIO()
+        with patch.dict(os.environ, {FEATURE_FLAG: "true"}), \
+                patch.object(worker, "record_preparation",
+                    side_effect=ValueError("private metadata URL https://private.example")), \
+                redirect_stdout(output):
+            outcome = worker.run_once(self.state, self.data, self.catalog,
+                {"artifact_sha256": "c" * 64}, now=NOW,
+                execution="pilot-national-icon-preparation-failure",
+                acquire=lambda **_: (sample_bundle(hour=12), {"fixture": "mapping"}),
+                discover=lambda *_: "2026092012")
+        self.assertEqual(outcome["reason"], "acquisition_requires_review")
+        self.assertEqual(Recovery(self.state, "national").active().record["phase"], "manual_review")
+        with self.assertRaises(ObjectNotFound):
+            self.data.get(PREFIX + f"runs/{cycle}/manifest.json")
+        rows = [json.loads(line) for line in output.getvalue().splitlines()]
+        failed = next(row for row in rows if row["event"] == "phase_failed"
+                      and row.get("stage") == "national_checkpoint_preparation")
+        self.assertEqual(failed["failure_file"], "national_cloud_worker.py")
+        self.assertEqual(failed["error_type"], "ValueError")
+        self.assertNotIn("private.example", output.getvalue())
 
 
 if __name__ == "__main__":
