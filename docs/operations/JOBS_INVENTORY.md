@@ -3,7 +3,8 @@
 Questo è l'indice corrente di **funzioni, dipendenze e pianificazioni**.
 Il [verbale del 25 novembre](JOBS_READONLY_AUDIT_20261125.md) contiene
 esecuzioni e dati effettivamente osservati; la [mappa dell'app](APP_SYSTEM_MAP_20261125.md)
-collega i risultati alle pagine. Il codice di riferimento è `main` `61ca8e5e`.
+collega i risultati alle pagine. La mappa originaria usa `main` `61ca8e5e`;
+il recupero ICON successivo usa `main` `e4b80906`.
 Il cloud può avere risorse o immagini diverse dal codice: qui il cron è quello
 letto nel cloud il 25 novembre, non una promessa ricavata da un template.
 
@@ -58,15 +59,18 @@ CEST quando il cron usa UTC; quelli in `Europe/Rome` mantengono l'ora civile.
 
 ## Job cloud non ordinari e percorsi assenti
 
-Il 25 novembre sono state lette **15 istanze Cloud Run Job nelle regioni
-`europe-west1` e `europe-west8`**: le 12 raggiunte
-dagli Scheduler più tre senza target negli Scheduler osservati:
+Nel controllo iniziale del 25 novembre erano presenti **15 istanze Cloud Run
+Job nelle regioni `europe-west1` e `europe-west8`**: le 12 raggiunte dagli
+Scheduler più tre senza target. Alle 19:42 UTC, dopo il recupero nazionale,
+è presente anche il job operatore sotto: **16 istanze**, 12 schedulate e
+quattro senza Scheduler. I 12 Scheduler sono tornati `ENABLED`.
 
 | Istanza | Ruolo e limite |
 | --- | --- |
 | `meteofriul-official-alert-sync` in `europe-west1` | Copia storica distinta dal job FVG schedulato in west8. Presenza non significa attivazione; non va riavviata durante un audit. |
 | `meteofriul-event-source-publication-control` | Controllo storico/manuale di un percorso Eventi legacy, non il refresh del catalogo corrente. [codice](../../backend/app/jobs/control_event_source_publication.py). |
 | `meteofriul-local-notice-tolerance-qa` | Job di prova, senza Scheduler ordinario. Non è il job pubblico degli avvisi locali. |
+| `meteofriul-national-icon-operator` | Job isolato senza Scheduler, creato il 25 novembre per supersedere una fence nazionale `manual_review` priva di checkpoint. Usa la stessa immagine immutabile del job nazionale, un solo task, retry zero, comando `icon_operator_cli.py` e service account dedicata con permessi Storage limitati a tre prefissi ICON tramite cartelle gestite. Il comando predefinito è `--help`; l'unica esecuzione `--execute` ha pubblicato il ciclo `20261125T120000Z`. [Protocollo ed evidenza](WEATHER_ICON_CAMS_RECOVERY_20261125.md). |
 
 `meteofriul-event-source-shadow`, il digest Community e il monitor delle
 sintesi per data locale compaiono in codice o piani storici, ma non tra le
