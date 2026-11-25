@@ -339,3 +339,9 @@ aria/pollini restano da verificare prima di dichiarare recupero. Il controllo
 preliminare dei checkpoint aveva omesso il prefisso Storage `pilot/`; la
 rettifica e le generazioni degli oggetti sono nel
 [rapporto meteo](WEATHER_ICON_CAMS_RECOVERY_20261125.md).
+
+ICON nazionale è rimasto in `manual_review` sul ciclo del 21 novembre
+anche alle 16:53 UTC. La [PR 63 bozza](https://github.com/meteofriul/meteofriul-app/pull/63)
+prepara una supersessione con incidente immutabile e CAS, ma non è integrata
+né distribuita: job operatore, IAM, isolamento degli altri writer e prova di
+quiescenza restano gate. Nessun reset della fence è stato eseguito.

@@ -102,7 +102,17 @@ ICON confronta anche puntatore Storage, HTTP, copertura e freschezza: al
 controllo del 25 novembre rilevava il nazionale critico, pur con il proprio
 container riuscito. CAMS ha policy sui fallimenti del job, ma quella policy
 non attesta che aria e pollini siano correnti e non vede uno Scheduler che
-non invoca il job. I limiti di osservabilità qui erano **specifici**:
+non invoca il job.
+
+Il bucket Cloud Logging `_Default` del progetto conserva i log per **30
+giorni**. Il suo sink include i log Cloud Run Job; l'unica esclusione
+configurata riguarda le richieste HTTP grezze del servizio Community per
+privacy. `_Required` conserva per 400 giorni i log di audit obbligatori,
+non è l'archivio applicativo dei job. L'assenza dell'eccezione iniziale ICON
+nel novembre corrente deriva quindi dalla cattura nel codice, non da una
+retention già scaduta.
+
+I limiti di osservabilità qui erano **specifici**:
 
 - `Recovery.run` trasformava l'eccezione iniziale ICON in
   `acquisition_requires_review` senza emettere prima la fase e il tipo
@@ -213,3 +223,23 @@ passano. Il prossimo slot ordinario CAMS è alle 20:00 UTC; un suo successo
 richiederà comunque verifica della famiglia, HTTP e valori U11. Un controllo
 diretto dello stato ADS richiederebbe credenziale e client del job: non è
 stato effettuato né sono state lette credenziali.
+
+## Ramo separato ICON: protocollo candidato, fence intatta
+
+Alle **16:53 UTC** la fence nazionale è ancora `manual_review` sul ciclo
+`20261121T120000Z`, slot `20261121-pm`. Il job nazionale distribuito usa
+ancora il digest `sha256:d062db94…`; il suo Scheduler resta attivo. La
+[PR 63 bozza](https://github.com/meteofriul/meteofriul-app/pull/63), nata
+dal `main` `488f7d3c`, contiene un protocollo esplicito con incidente
+immutabile, CAS, riconciliazione e un solo claim, più `inspect` in sola
+lettura. Sono passati 95 test mirati ICON, `compileall`, diff check e 41
+test del nuovo comando CI eseguiti localmente. La CI remota della PR e la
+build cloud non sono attestate qui.
+
+**Non è stato usato `--execute` nel cloud.** Servono un job operatore
+isolato, immagine/commit/marker distribuiti, IAM e inventario degli altri
+writer verificato durante una finestra con Scheduler sospeso. L'inventario
+statico della bozza vale 60 secondi e può scadere durante il provisioning:
+il comando rifiuta l'operazione in quel caso. Il solo codice o deploy non
+supera la fence. Il progetto e i gate sono nella PR bozza e non sono ancora
+presenti su `main`.
