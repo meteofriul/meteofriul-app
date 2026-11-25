@@ -377,3 +377,15 @@ mapping, prepared o manifest durevoli. La fase esatta dell'eccezione non
 fu registrata; la fence `manual_review` arresta tutti i poll successivi
 prima della scoperta di un nuovo ciclo. Il report meteo descrive la
 [sequenza, il limite di osservabilità e il recupero necessario](WEATHER_ICON_CAMS_RECOVERY_20261125.md).
+
+## Seguito dello slot ICON delle 18:00 UTC
+
+ICON nazionale è partito secondo Scheduler ed è terminato `Completed=False`
+alle 18:01:12 UTC: ancora `manual_review` /
+`acquisition_requires_review` sul ciclo del 21 novembre; puntatore pubblico
+nazionale invariato alla revisione 121, ciclo 21 novembre 00Z. Il job
+ICON FVG separato è riuscito alle 18:04:17 UTC e il suo HTTP pubblico
+risponde 200 con revisione 154, ciclo 25 novembre 12Z. La riuscita FVG
+non prova il recupero nazionale. CAMS era ancora al ciclo del 23 novembre
+nel controllo delle 17:57 UTC; il prossimo slot è alle 20 UTC.
+[Dettaglio e limiti](WEATHER_ICON_CAMS_RECOVERY_20261125.md).

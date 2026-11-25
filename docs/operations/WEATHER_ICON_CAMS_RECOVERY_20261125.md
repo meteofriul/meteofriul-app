@@ -341,3 +341,23 @@ plausibilità delle unità U11 rimane da verificare quando ADS consegnerà il
 risultato. Non è stata avviata una terza corsa manuale. Il prossimo slot
 ordinario è alle **20:00 UTC / 21:00 CET** e dovrà rileggere la stessa
 ricevuta prima di qualsiasi pubblicazione.
+
+## Slot ICON ordinario delle 18:00 UTC / 19:00 CET
+
+Le esecuzioni programmate sono partite alle 18:00 UTC. Il job nazionale
+`meteofriul-national-icon-b97dl` è terminato `Completed=False` alle
+18:01:12 UTC; il risultato applicativo è ancora `manual_review` /
+`acquisition_requires_review` sul ciclo `20261121T120000Z`. Il puntatore
+pubblico nazionale resta alla revisione 121, ciclo
+`20261121T000000Z`, pubblicato il 21 novembre alle 06:06:30 UTC.
+La nuova diagnostica non emette una nuova eccezione di acquisizione perché
+la fence arresta il percorso prima di quel passaggio. Questo slot non ha
+recuperato ICON nazionale.
+
+Il job distinto ICON FVG `meteofriul-icon-smd4p` è terminato
+`Completed=True` alle 18:04:17 UTC. Il reader HTTP pubblico risponde 200
+con revisione 154 e ciclo `20261125T120000Z`, pubblicato alle 18:00:33 UTC.
+L'esito FVG non sblocca né sostituisce il prodotto nazionale. Alle 17:57 UTC
+la famiglia CAMS pubblica era ancora alla revisione 72, ciclo del 23 novembre;
+il prossimo slot CAMS resta alle 20:00 UTC. Nessuna corsa manuale o modifica
+di Scheduler/fence è stata eseguita durante questo controllo.

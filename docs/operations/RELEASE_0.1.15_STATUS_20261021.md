@@ -1,5 +1,12 @@
 # Stato release 0.1.15 e lavoro salvato — aggiornamento sorgenti del 24 ottobre 2026
 
+**Job meteo, 25 novembre 2026, slot 18 UTC.** ICON FVG ha pubblicato il
+ciclo 25 novembre 12Z, verificato via HTTP 200; ICON nazionale è ancora
+in `manual_review` e il suo puntatore resta al 21 novembre. CAMS
+aria/pollini era ancora al ciclo del 23 novembre alle 17:57 UTC. Sono
+aggiornamenti di stato dei dati, senza nuova versione, AAB o pubblicazione
+Web/Android. [Evidenza](WEATHER_ICON_CAMS_RECOVERY_20261125.md).
+
 **Rettifica dello stato app, 25 novembre 2026.** La AAB 0.1.15/300038,
 documentata nel ramo `codex/release-0.1.15`, è stata accettata nel test
 interno Play il 26 ottobre; sostituisce la 300036 in quel canale. Il

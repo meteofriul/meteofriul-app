@@ -35,6 +35,13 @@ protocollo di recupero ICON nazionale; non è nel codice `main` né in un'app.
 
 ## Funzioni e dati dell'app
 
+**Aggiornamento dello slot ICON delle 18:00 UTC:** FVG è riuscito e
+l'HTTP pubblico serve il ciclo 25 novembre 12Z (revisione 154);
+nazionale è fallito ancora con `acquisition_requires_review` e mantiene
+il puntatore al 21 novembre (revisione 121). CAMS restava al ciclo del
+23 novembre nella lettura delle 17:57 UTC.
+[Evidenza dettagliata](WEATHER_ICON_CAMS_RECOVERY_20261125.md).
+
 Il [rapporto operativo dei job](JOBS_READONLY_AUDIT_20261125.md) separa
 esecuzione, dato prodotto e lettura pubblica. Nel campione del 25 novembre:
 
