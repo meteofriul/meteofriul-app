@@ -263,3 +263,64 @@ Questa è una diagnosi, non un'autorizzazione a lanciare recuperi, mutare
 Scheduler/policy, distribuire immagini o inviare notifiche. Eventuali
 correzioni hanno responsabilità distinte: `meteo` per ICON/CAMS/notifiche,
 `eventi` per gli adattatori Eventi, e una verifica separata dei risultati.
+
+## Seguito del 25 novembre, ore 15:34 UTC / 16:34 CET
+
+Su richiesta del proprietario è iniziato un **workstream distinto** per
+correggere ICON e CAMS; questa sezione aggiorna il campione in sola lettura,
+senza cambiare retroattivamente l'esito delle 14:55 UTC sopra. Il ramo codice
+è `codex/weather-icon-cams-recovery-20261125`, creato dal `main` verificato.
+
+Il job CAMS dello slot **15:00 UTC** è terminato `Completed=False` alle
+15:05:53: aria/pollini hanno registrato `PublicMetadataUnavailable`, stage
+`metadata_validation`/`public_metadata_plan`, reason
+`catalogue_sanity_unavailable`. Il catalogo pubblico ora indica
+`cads:sanity_check.status=warning`, fuori dai due stati accettati
+dall'immagine distribuita. Storage e HTTP concordano sulla famiglia
+aria/pollini ancora al run del **23 novembre, 09:01:18 UTC**. Nello stesso
+slot il log indica `uv_publication_verified`; il puntatore UV Storage/HTTP
+mostra `run_at` del **25 novembre 00:00 UTC**. La freschezza UV è quindi
+distinta dal guasto della famiglia aria/pollini.
+
+Una lettura GET dei metadati ufficiali ADS conferma anche che il form ora
+espone **35 variabili**, includendo le 28 richieste e sette aggiunte U11.
+L'[annuncio ECMWF](https://forum.ecmwf.int/t/upgrade-u11-to-the-cams-european-air-quality-products/15596)
+data l'upgrade al 23 novembre e la prima produzione al 24. Il confronto
+spiega il `PublicMetadataError` degli slot 09/10/11: il validatore
+dell'immagine distribuita pretendeva un insieme identico di 28. Il candidato
+locale accetta solo le sette opzioni aggiuntive, continua a richiedere
+esattamente 28 variabili × 97 lead nel piano e valida i constraints prima
+di tollerare `warning`. Un piano 28/97 è stato costruito con GET, senza
+ADS POST; questa non è una prova di recupero del dato. U11 cambia anche
+una conversione upstream dei gas: servono decodifica e controllo di
+plausibilità dopo una vera acquisizione.
+
+ICON nazionale è ancora `manual_review` sullo slot `20261121-pm`: ultimo
+job osservato alle 10:00 UTC fallito, puntatore Storage al 21 novembre e
+reader HTTP 503. La prima acquisizione del 21 novembre si concluse prima
+del guasto, ma il bundle non fu salvato come checkpoint; l'eccezione iniziale
+è assente dai log consultati. Un candidato di codice aggiunge fase e tipo
+di errore sanitizzati **prima** della cattura; non cancella né supera la
+fence. Lo sblocco richiede un procedimento operativo con audit immutabile,
+controllo di concorrenza e verifica del nuovo ciclo, non un semplice retry.
+
+Gli Scheduler erano ancora `ENABLED`: prossimi slot osservati ICON nazionale
+18:00 UTC e CAMS 20:00 UTC. Il codice candidato non era distribuito alle
+15:34 UTC. La verifica dei test, di eventuali immagini e dei prodotti dopo
+una correzione viene registrata nel workstream meteo; non si inferisce da
+questa lettura.
+
+## Seguito delle 16:19 UTC / 17:19 CET: prova di build
+
+La [PR 61](https://github.com/meteofriul/meteofriul-app/pull/61) contiene la
+correzione CAMS e la diagnostica ICON, con 120 test mirati e CI PR verde sul
+commit di codice. Due candidate Cloud Build sono state bloccate dai controlli
+di conservazione dell'immagine prima della pubblicazione: una differenza nei
+permessi dei due file sovrapposti, poi un metadato del builder confrontato
+come configurazione runtime. Il terzo pacchetto, ancorato al commit
+`76c601bf` e al digest base `sha256:83a67540…`, ha superato tutti e quattro
+gli step della build `4cf58cf9-588c-41d6-86e0-2c700c361fd5`: cambiano
+solo i due file runtime approvati e 438 test offline senza rete sono passati.
+Il nuovo digest `sha256:b377e7d0…` è **soltanto un artefatto candidato** alle
+16:19 UTC. Nessun risultato di un job reale o dato pubblicato è implicato.
+[Dettaglio dei gate](WEATHER_ICON_CAMS_RECOVERY_20261125.md).
