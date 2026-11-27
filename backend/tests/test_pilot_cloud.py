@@ -1,10 +1,13 @@
 import json
 import unittest
-from datetime import date
+from datetime import date, datetime, timezone
 from unittest.mock import Mock, patch
+from zoneinfo import ZoneInfo
+from google.api_core.exceptions import PreconditionFailed
 
 from app.events.pilot_catalog import PILOT_PROJECT, merge_collection
-from app.events.pilot_cloud import annual_watch_due, publish
+from app.events.pilot_cloud import (annual_watch_due, claim_conditional_turismo_recovery,
+                                    conditional_turismo_recovery_skip, publish)
 from app.events.pilot_regional_checkpoint import encode_control
 from app.events.pilot_sources import source_adapters
 from app.events.pilot_source_policy import APPROVED_SOURCES
@@ -439,6 +442,145 @@ class CloudPublicationTests(unittest.TestCase):
             publish(client, project=PILOT_PROJECT, retry_failed=True)
         collect.assert_not_called()
         blob.upload_from_string.assert_not_called()
+
+    def test_conditional_turismo_recovery_requires_recoverable_failure(self):
+        today = date(2026, 11, 27)
+        now = datetime(2026, 11, 27, 9, 0, tzinfo=timezone.utc)
+        base = {'status': 'stale', 'last_attempt_error_type': 'incomplete_source',
+                'last_attempt_pending_count': 572}
+        self.assertIsNone(conditional_turismo_recovery_skip(
+            base, paused=set(), now=now))
+        self.assertIsNone(conditional_turismo_recovery_skip(
+            {'status': 'stale', 'last_attempt_error_type': 'adapter_exception',
+             'last_attempt_exception_type': 'ReadTimeout'}, paused=set(), now=now))
+        self.assertIsNone(conditional_turismo_recovery_skip(
+            {'status': 'partial', 'updated_at': '2026-11-24T04:00:00Z'},
+            paused=set(), now=now))
+        cases = [
+            (base, {'TurismoFVG'}, 'paused'),
+            ({**base, 'status': 'partial', 'updated_at': '2026-11-27T04:00:00Z'},
+             set(), 'not_stale'),
+            ({**base, 'last_automatic_recovery_date': today.isoformat()},
+             set(), 'already_attempted_today'),
+            ({**base, 'last_attempt_pending_count': 0},
+             set(), 'not_transient_or_incomplete'),
+            ({**base, 'last_attempt_error_type': 'source_verification_failed'},
+             set(), 'not_transient_or_incomplete'),
+            ({'status': 'stale', 'last_attempt_error_type': 'adapter_exception',
+              'last_attempt_exception_type': 'ValueError'},
+             set(), 'not_transient_or_incomplete'),
+        ]
+        for batch, paused, expected in cases:
+            with self.subTest(expected=expected, batch=batch):
+                self.assertEqual(conditional_turismo_recovery_skip(
+                    batch, paused=paused, now=now), expected)
+
+    @patch('app.events.pilot_cloud.collect')
+    def test_conditional_turismo_healthy_skip_makes_no_source_request_or_write(self, collect):
+        client, blob = self.client()
+        blob.download_as_bytes.return_value = json.dumps({
+            'schema': 'pilot-events-v1', 'sources': {
+                'TurismoFVG': {'status': 'partial', 'events': [],
+                               'updated_at': datetime.now(timezone.utc).isoformat()}}}).encode('utf-8')
+        result = publish(client, project=PILOT_PROJECT,
+                         conditional_turismo_recovery=True)
+        self.assertEqual(result['reason'], 'not_stale')
+        self.assertEqual(result['event'], 'event_source_conditional_recovery')
+        collect.assert_not_called()
+        blob.upload_from_string.assert_not_called()
+
+    def test_conditional_turismo_claim_is_atomic_and_duplicate_is_skipped(self):
+        client, blob = self.client()
+        today = date(2026, 11, 27)
+        self.assertTrue(claim_conditional_turismo_recovery(
+            client, today=today, catalog_generation=7))
+        self.assertIn('/2026-11-27.json',
+                      client.bucket.return_value.blob.call_args.args[0])
+        self.assertEqual(blob.upload_from_string.call_args.kwargs['if_generation_match'], 0)
+        self.assertEqual(json.loads(blob.upload_from_string.call_args.args[0])['catalog_generation'], 7)
+        blob.upload_from_string.side_effect = PreconditionFailed('claim exists')
+        self.assertFalse(claim_conditional_turismo_recovery(
+            client, today=today, catalog_generation=7))
+
+    @patch('app.events.pilot_cloud.claim_conditional_turismo_recovery', return_value=True)
+    @patch('app.events.pilot_cloud.collect')
+    def test_conditional_turismo_retry_marks_failed_attempt_and_skips_same_day(
+            self, collect, claim):
+        client, blob = self.client()
+        previous = merge_collection(PILOT_PROJECT, None, {
+            'TurismoFVG': {'status': 'ok', 'events': [{'title': 'Verified'}]}},
+            '2026-11-24T04:00:00Z')
+        previous = merge_collection(PILOT_PROJECT, previous, {
+            'TurismoFVG': {'status': 'error', 'error_type': 'incomplete_source',
+                           'detail_candidates': [{'url': 'https://example.org/pending'}]}},
+            '2026-11-27T04:00:00Z')
+        blob.download_as_bytes.return_value = json.dumps(previous).encode('utf-8')
+        collect.return_value = merge_collection(PILOT_PROJECT, previous, {
+            'TurismoFVG': {'status': 'error', 'error_type': 'incomplete_source',
+                           'detail_candidates': [{'url': 'https://example.org/pending'}]}},
+            '2026-11-27T08:00:00Z')
+        with self.assertRaisesRegex(RuntimeError, 'TurismoFVG'):
+            publish(client, project=PILOT_PROJECT,
+                    conditional_turismo_recovery=True)
+        self.assertEqual(set(collect.call_args.args[1]), {'TurismoFVG'})
+        claim.assert_called_once()
+        saved = json.loads(blob.upload_from_string.call_args.args[0])
+        self.assertEqual(saved['sources']['TurismoFVG']['last_automatic_recovery_date'],
+                         datetime.now(ZoneInfo('Europe/Rome')).date().isoformat())
+        self.assertEqual(saved['sources']['TurismoFVG']['status'], 'stale')
+        blob.download_as_bytes.return_value = json.dumps(saved).encode('utf-8')
+        collect.reset_mock()
+        blob.upload_from_string.reset_mock()
+        result = publish(client, project=PILOT_PROJECT,
+                         conditional_turismo_recovery=True)
+        self.assertEqual(result['reason'], 'already_attempted_today')
+        collect.assert_not_called()
+        blob.upload_from_string.assert_not_called()
+        claim.assert_called_once()
+
+    @patch('app.events.pilot_cloud.claim_conditional_turismo_recovery', return_value=False)
+    @patch('app.events.pilot_cloud.collect')
+    def test_conditional_turismo_duplicate_claim_makes_no_source_request_or_write(
+            self, collect, claim):
+        client, blob = self.client()
+        blob.download_as_bytes.return_value = json.dumps({
+            'schema': 'pilot-events-v1', 'sources': {
+                'TurismoFVG': {'status': 'stale',
+                               'last_attempt_error_type': 'incomplete_source',
+                               'last_attempt_pending_count': 1}}}).encode('utf-8')
+        result = publish(client, project=PILOT_PROJECT,
+                         conditional_turismo_recovery=True)
+        self.assertEqual(result['reason'], 'already_claimed_today')
+        claim.assert_called_once()
+        collect.assert_not_called()
+        blob.upload_from_string.assert_not_called()
+
+    @patch('app.events.pilot_cloud.claim_conditional_turismo_recovery', return_value=True)
+    @patch('app.events.pilot_cloud.collect')
+    def test_conditional_turismo_success_updates_only_source_and_attempt_date(
+            self, collect, claim):
+        client, blob = self.client()
+        previous = merge_collection(PILOT_PROJECT, None, {
+            'TurismoFVG': {'status': 'ok', 'events': [{'title': 'Old'}]},
+            'Azalea': {'status': 'ok', 'events': [{'title': 'Other'}]}},
+            '2026-11-24T04:00:00Z')
+        previous = merge_collection(PILOT_PROJECT, previous, {
+            'TurismoFVG': {'status': 'error', 'error_type': 'adapter_exception',
+                           'exception_type': 'ReadTimeout'}},
+            '2026-11-27T04:00:00Z')
+        blob.download_as_bytes.return_value = json.dumps(previous).encode('utf-8')
+        collect.return_value = merge_collection(PILOT_PROJECT, previous, {
+            'TurismoFVG': {'status': 'ok', 'events': [{'title': 'New'}]}},
+            '2026-11-27T08:00:00Z')
+        publish(client, project=PILOT_PROJECT, conditional_turismo_recovery=True)
+        self.assertEqual(set(collect.call_args.args[1]), {'TurismoFVG'})
+        claim.assert_called_once()
+        saved = json.loads(blob.upload_from_string.call_args.args[0])
+        self.assertEqual(saved['sources']['TurismoFVG']['status'], 'fresh')
+        self.assertEqual(saved['sources']['TurismoFVG']['last_automatic_recovery_date'],
+                         datetime.now(ZoneInfo('Europe/Rome')).date().isoformat())
+        self.assertEqual(saved['sources']['Azalea'], previous['sources']['Azalea'])
+        self.giro_watch.assert_not_called()
 
     @patch('app.events.pilot_cloud.collect')
     def test_azalea_incomplete_source_fails_job(self, collect):

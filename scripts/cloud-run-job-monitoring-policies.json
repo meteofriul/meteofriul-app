@@ -255,6 +255,62 @@
       }
     },
     {
+      "policyKey": "events-refresh-last-success",
+      "conditionType": "successful_execution_window",
+      "jobName": "meteofriul-events-refresh",
+      "displayName": "Meteo Friul - refresh Eventi senza successi",
+      "conditionDisplayName": "Nessun refresh Eventi riuscito nelle ultime 25 ore",
+      "alignmentPeriodSeconds": 90000,
+      "durationSeconds": 300,
+      "notifyOnRecovery": true,
+      "autoCloseSeconds": 604800,
+      "documentation": "Il job ordinario `meteofriul-events-refresh` non completa con successo da almeno 25 ore. Controllare Scheduler, log della raccolta, stato delle fonti e freschezza del catalogo pubblico. Una ripresa condizionale riuscita non chiude questo incidente: il ciclo ordinario deve tornare a completarsi. La policy misura le esecuzioni, non sostituisce la verifica dei dati serviti dall'API.",
+      "labels": {
+        "service": "events",
+        "threshold": "no-success-25h"
+      }
+    },
+    {
+      "policyKey": "events-refresh-scheduler-failures",
+      "conditionType": "scheduler_log_failure",
+      "jobName": "meteofriul-events-refresh",
+      "displayName": "Meteo Friul - invocazione scheduler Eventi",
+      "conditionDisplayName": "Cloud Scheduler non ha invocato il refresh Eventi",
+      "notificationRateLimitSeconds": 3600,
+      "documentation": "Cloud Scheduler non ha potuto invocare `meteofriul-events-refresh`. Controllare target HTTP, identita OAuth e binding `roles/run.invoker` sul job. Il successo dell'invocazione non dimostra il completamento del job o la freschezza dei dati.",
+      "labels": {
+        "service": "events-scheduler",
+        "threshold": "scheduler-error"
+      }
+    },
+    {
+      "policyKey": "events-conditional-failures",
+      "jobName": "meteofriul-events-conditional-recovery",
+      "displayName": "Meteo Friul - ripresa condizionale Eventi fallita",
+      "conditionDisplayName": "Ripresa condizionale TurismoFVG fallita nelle ultime 2 ore",
+      "alignmentPeriodSeconds": 7200,
+      "failedExecutionThreshold": 1,
+      "notifyOnRecovery": false,
+      "documentation": "Il job `meteofriul-events-conditional-recovery` e fallito. Leggere `event_source_conditional_recovery`, claim giornaliero, stato e generazione del catalogo e visibilita TurismoFVG tramite API. Un claim gia presente puo rimandare il tentativo automatico al giorno successivo; non avviare manualmente un duplicato senza controllare i dati. La chiusura della finestra di errore non dimostra il recupero e non invia una notifica CLOSED.",
+      "labels": {
+        "service": "events-conditional-recovery",
+        "threshold": "one-in-2h"
+      }
+    },
+    {
+      "policyKey": "events-conditional-scheduler-failures",
+      "conditionType": "scheduler_log_failure",
+      "jobName": "meteofriul-events-conditional-recovery",
+      "displayName": "Meteo Friul - invocazione scheduler ripresa Eventi",
+      "conditionDisplayName": "Cloud Scheduler non ha invocato la ripresa condizionale Eventi",
+      "notificationRateLimitSeconds": 3600,
+      "documentation": "Cloud Scheduler non ha potuto invocare `meteofriul-events-conditional-recovery`. Controllare target HTTP, identita OAuth e binding `roles/run.invoker` sul solo job condizionale. L'assenza di un errore Scheduler non dimostra che TurismoFVG sia aggiornata.",
+      "labels": {
+        "service": "events-conditional-scheduler",
+        "threshold": "scheduler-error"
+      }
+    },
+    {
       "policyKey": "events-candidate-watch",
       "conditionType": "job_log_match",
       "jobName": "meteofriul-events-refresh",
