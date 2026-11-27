@@ -13,9 +13,11 @@ nuova immagine resta da osservare e il recupero automatico condizionale non
 **Eventi, continuità in preparazione il 27 novembre 2026.** Un ramo separato
 propone una ripresa condizionale della sola TurismoFVG, con claim atomico
 contro avvii duplicati. 811 test Eventi e la CI della PR 71 passano; un job
-QA temporaneo ha confermato il salto della fonte sana senza scritture ed è
-stato eliminato. Il codice non è distribuito
-e non esistono nuovi job, Scheduler o allarmi attivi. Il recupero pubblico
+QA temporaneo ha confermato il salto della fonte sana senza scritture. Una
+seconda prova QA isolata ha ripreso il vecchio lotto `stale`, salvando 552
+dettagli ancora pendenti senza toccare il catalogo pubblico; entrambi i job
+QA sono stati eliminati. Quattro policy Eventi sono preparate ma non attive.
+Il codice non è distribuito e non esistono nuovi job o Scheduler attivi. Il recupero pubblico
 attestato sopra resta lo stato corrente. [Disegno e limiti](docs/operations/EVENTS_CONDITIONAL_RECOVERY_DESIGN_20261127.md).
 
 **CAMS aria e pollini recuperati, 25 novembre 2026 alle 20:04 UTC.** Lo

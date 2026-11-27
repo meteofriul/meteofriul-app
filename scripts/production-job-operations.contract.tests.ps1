@@ -48,7 +48,8 @@ $expectedJobs = @(
     "meteofriul-icon",
     "meteofriul-national-icon",
     "meteofriul-cams",
-    "meteofriul-events-refresh"
+    "meteofriul-events-refresh",
+    "meteofriul-events-conditional-recovery"
 )
 $actualJobs = @($config.policies | ForEach-Object jobName)
 Assert-Contract (@($actualJobs | Sort-Object -Unique).Count -eq $expectedJobs.Count) (
@@ -75,6 +76,10 @@ $expectedPolicyKeys = @(
     "icon-national-last-success",
     "cams-failures",
     "events-failures",
+    "events-refresh-last-success",
+    "events-refresh-scheduler-failures",
+    "events-conditional-failures",
+    "events-conditional-scheduler-failures",
     "events-candidate-watch"
 )
 $actualPolicyKeys = @($config.policies | ForEach-Object policyKey)
@@ -254,7 +259,7 @@ $successWindowPolicies = @(
         [string]$_.conditionType -ceq "successful_execution_window"
     }
 )
-Assert-Contract ($successWindowPolicies.Count -eq 2) (
+Assert-Contract ($successWindowPolicies.Count -eq 3) (
     "policy giornaliere di ultimo successo incomplete"
 )
 foreach ($policy in $successWindowPolicies) {
@@ -278,13 +283,24 @@ $schedulerPolicies = @(
         [string]$_.conditionType -ceq "scheduler_log_failure"
     }
 )
-Assert-Contract ($schedulerPolicies.Count -eq 3) (
+Assert-Contract ($schedulerPolicies.Count -eq 5) (
     "policy degli scheduler notifiche incomplete"
 )
 foreach ($policy in $schedulerPolicies) {
     Assert-Contract ([int]$policy.notificationRateLimitSeconds -ge 3600) (
         "rate limit scheduler troppo aggressivo per $($policy.policyKey)"
     )
+}
+$eventContinuityKeys = @(
+    "events-refresh-last-success",
+    "events-refresh-scheduler-failures",
+    "events-conditional-failures",
+    "events-conditional-scheduler-failures"
+)
+foreach ($key in $eventContinuityKeys) {
+    Assert-Contract (
+        @($config.policies | Where-Object policyKey -CEQ $key).Count -eq 1
+    ) "policy continuita Eventi mancante: $key"
 }
 $eventsWatchPolicy = @(
     $config.policies | Where-Object policyKey -CEQ "events-candidate-watch"

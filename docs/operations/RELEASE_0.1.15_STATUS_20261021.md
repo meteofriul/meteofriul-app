@@ -13,8 +13,11 @@ condizionale non è ancora presente. [Prove e limiti](EVENTS_TURISMOFVG_TIMEOUT_
 `codex/events-conditional-recovery-20261127` prepara un comando che salta
 la fonte sana e limita a una per data locale le riprese automatiche quando
 TurismoFVG è incompleta o scaduta. 811 test Eventi e la CI della PR 71
-passano; il job QA ha saltato la fonte sana ed è stato eliminato. Nessun nuovo
-job, Scheduler, policy, versione o artefatto è stato distribuito.
+passano; la prova QA sana ha saltato la fonte senza scritture. La prova QA
+del vecchio lotto `stale` ha salvato un checkpoint ancora incompleto senza
+toccare il catalogo pubblico; i job QA sono stati eliminati. Quattro policy
+Eventi sono preparate ma non attive. Nessun nuovo job, Scheduler, policy,
+versione o artefatto è stato distribuito.
 [Disegno e limiti](EVENTS_CONDITIONAL_RECOVERY_DESIGN_20261127.md).
 
 **Dati ICON/CAMS, 25 novembre 2026, 20:04 UTC.** ICON nazionale serve il

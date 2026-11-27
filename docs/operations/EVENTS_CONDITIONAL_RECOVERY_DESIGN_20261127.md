@@ -68,12 +68,14 @@ permesso dell'identità Scheduler sul nuovo job.
 La chiamata Scheduler all'API avvia un'esecuzione e riceve un'operazione:
 il successo dell'invocazione non dimostra che il job abbia verificato i dati.
 Serve quindi un controllo distinto della freschezza del lotto pubblicato.
-L'alert proposto segnala TurismoFVG ancora non visibile oltre 48 ore, con
-un solo canale operativo e senza notifiche per ogni singola scheda in
-revisione. Esiste il canale email `Meteo Friul - notifiche operative`, ma
-l'attuale policy di errore Eventi non lo usa. Il controllo di freschezza e
-il suo routing vanno implementati e verificati prima di dichiarare coperto
-anche un mancato avvio dello Scheduler.
+Quattro policy Eventi sono ora preparate nella configurazione del ramo:
+assenza di un refresh ordinario riuscito per 25 ore, errore di invocazione
+dei due Scheduler e fallimento del job di ripresa condizionale. Usano il
+canale email esistente `Meteo Friul - notifiche operative`. L'audit cloud
+le trova tutte mancanti; non sono ancora attive. Le policy di errore Eventi
+già distribuite non hanno un canale di notifica. Il controllo di ultimo
+successo rileva anche un refresh ordinario che non parte, ma non sostituisce
+la verifica della freschezza del lotto TurismoFVG servito dall'API.
 
 ## Prove e limiti
 
@@ -100,6 +102,22 @@ con successo il 27 novembre alle 09:06 UTC; il log strutturato registra
 Il job temporaneo è stato eliminato. La prova copre il caso sano in cloud,
 non la ripresa dovuta né un errore reale futuro.
 
+La prova QA del caso dovuto ha riusato un catalogo pubblico precedente,
+`stale` per `ReadTimeout`, sotto la nuova chiave QA
+`pilot/events/qa/conditional-due-286567cd-20261127/catalog.json`.
+L'esecuzione `meteofriul-events-conditional-due-qa-20261127-xplnb` ha
+registrato `action=run` il 27 novembre alle 09:43 UTC. Dopo il budget
+della fonte ha salvato la generazione QA `1795772954519643` e un solo
+claim giornaliero; il lotto è rimasto `stale` con 552 dettagli pendenti,
+47 letture strutturate e zero letture fallite. Il job è uscito con errore,
+senza presentare il lotto incompleto come riuscito. Ha conservato le 1.498
+schede verificate in precedenza, la diagnostica e il checkpoint del
+tentativo; le altre 14 fonti sono identiche alla copia iniziale. La
+generazione pubblica `1795768491780598` non è cambiata. Il job QA è stato
+eliminato. Questa prova dimostra il percorso di errore e la continuità del
+checkpoint, non un recupero concluso in una sola corsa: un catalogo molto
+arretrato può richiedere più giorni.
+
 Il job pubblico è ancora alla generazione 50, con un task, zero retry,
 timeout 900 secondi, 1 vCPU e 1 GiB. L'attuale identità Scheduler ha il
 solo ruolo `roles/run.invoker` sul job Eventi; per il nuovo job serve un
@@ -115,9 +133,10 @@ la franchigia di tre job è condivisa a livello di account. Una ripresa
 dovuta dura di più e consuma anche richieste alla fonte; il massimo del
 job resta 900 secondi. Questa è una stima, non una lettura della fattura.
 
-Prima di attivare una pianificazione restano la prova QA del caso dovuto
-con checkpoint incompleto su una copia separata e il readback finale del
-binding IAM. Dopo l'attivazione vanno verificati log, dati e allarme. Il
+Prima di attivare una pianificazione restano merge e CI su `main`, il
+readback finale del binding IAM e l'applicazione mirata delle sole quattro
+nuove policy dopo audit. Dopo l'attivazione vanno verificati log, dati e
+allarme. Il
 caso senza lavoro utile comporta comunque l'avvio giornaliero di un container;
 quando la fonte è incompleta, il traffico aggiuntivo è limitato a una
 raccolta della sola TurismoFVG per giorno. Nessuna di queste risorse
