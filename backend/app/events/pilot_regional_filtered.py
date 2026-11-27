@@ -23,7 +23,7 @@ PARTITION_WINDOW_LIMIT = 64
 
 
 class CalendarPageUnavailable(ValueError):
-    """A numbered search page is missing; never an empty calendar."""
+    """A numbered search page cannot be read; never an empty calendar."""
 
 
 def _read_search_page(url, get):
@@ -76,12 +76,19 @@ def fetch_page(url, *, get=requests.get):
     if requested.scheme != 'https' or requested.hostname != 'www.turismofvg.it' or requested.path != '/eventi':
         raise ValueError('unsafe TurismoFVG search URL')
     try:
-        response = _read_search_page(url, get)
-    except (requests.Timeout, requests.ConnectionError):
-        # The dated index is large: one reset must not discard an otherwise
-        # complete window. Keep this extra attempt local to TurismoFVG.
-        time.sleep(1)
-        response = _read_search_page(url, get)
+        try:
+            response = _read_search_page(url, get)
+        except (requests.Timeout, requests.ConnectionError):
+            # The dated index is large: one reset must not discard an otherwise
+            # complete window. Keep this extra attempt local to TurismoFVG.
+            time.sleep(1)
+            response = _read_search_page(url, get)
+    except requests.ReadTimeout as exc:
+        page = page_number(url)
+        if page is not None and page > 0:
+            raise CalendarPageUnavailable(
+                f'TurismoFVG numbered calendar page unavailable: page={page}, read timeout') from exc
+        raise
     actual = urlsplit(response.url)
     if (actual.scheme != 'https' or actual.hostname != requested.hostname
             or actual.path != requested.path
@@ -269,7 +276,7 @@ def fetch_year_partitioned(start, end, *, get=requests.get, max_workers=16,
 
 
 def fetch_year_resilient(start, end, *, get=requests.get, max_workers=16):
-    """Recover count drift or a missing numbered page through exact partitions."""
+    """Recover count drift or an unreadable numbered page through exact partitions."""
     partition_limit = 128
     try:
         return fetch_year(start, end, get=get, max_workers=max_workers)

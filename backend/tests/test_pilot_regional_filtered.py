@@ -212,6 +212,39 @@ class FilteredRegionalTests(unittest.TestCase):
             fetch_year_resilient(start, end, get=get, max_workers=4)
 
     @patch('app.events.pilot_regional_filtered.fetch_year_partitioned')
+    def test_numbered_read_timeout_recovers_only_with_complete_partition(self, partitioned):
+        start, end = date(2026, 11, 27), date(2026, 12, 31)
+        reads = []
+
+        def get(url, **_):
+            reads.append(url)
+            if parse_qs(urlsplit(url).query).get('page') == ['1']:
+                raise requests.ReadTimeout('numbered page timed out')
+            return self.page(url, [4, 5], 10, more=True)
+
+        verified = {'declared_results': 10, 'cards_seen': 10, 'cards': ['verified']}
+        partitioned.return_value = verified
+        with patch('time.sleep'):
+            self.assertIs(fetch_year_resilient(start, end, get=get, max_workers=4), verified)
+        self.assertEqual(sum(parse_qs(urlsplit(url).query).get('page') == ['1']
+                             for url in reads), 4)
+        partitioned.assert_called_once_with(start, end, get=get, max_workers=4,
+                                            result_limit=512)
+
+        partitioned.side_effect = ValueError('partition union count differs')
+        with patch('time.sleep'), self.assertRaisesRegex(ValueError, 'partition union count differs'):
+            fetch_year_resilient(start, end, get=get, max_workers=4)
+
+    @patch('app.events.pilot_regional_filtered.fetch_year_partitioned')
+    def test_root_read_timeout_does_not_trigger_partition(self, partitioned):
+        start, end = date(2026, 11, 27), date(2026, 12, 31)
+        get = Mock(side_effect=requests.ReadTimeout('root timed out'))
+        with patch('time.sleep'), self.assertRaises(requests.ReadTimeout):
+            fetch_year_resilient(start, end, get=get)
+        self.assertEqual(get.call_count, 4)
+        partitioned.assert_not_called()
+
+    @patch('app.events.pilot_regional_filtered.fetch_year_partitioned')
     def test_root_or_unrelated_404_does_not_trigger_partition_recovery(self, partitioned):
         start, end = date(2026, 10, 4), date(2026, 12, 31)
         for status in (404, 403):
