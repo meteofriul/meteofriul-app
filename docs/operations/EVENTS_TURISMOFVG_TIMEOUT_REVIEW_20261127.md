@@ -118,14 +118,67 @@ di sostituire l'immagine del job pubblico perché richiede autorizzazione
 esplicita al deploy e la PR è ancora in bozza. Non è stato eseguito alcun
 aggiornamento o retry pubblico successivo alla prova QA.
 
-## Verifiche necessarie prima della promozione
+## Promozione e ripresa pubblica del 27 novembre
 
-1. Ottenere autorizzazione esplicita per il deploy del solo job Eventi e
-   completare il percorso della PR protetta. La CI e il collaudo QA sono
-   riusciti; il cambio pubblico non è avvenuto.
-2. Dopo la promozione, fare una sola ripresa mirata di TurismoFVG e confrontare
-   esecuzione, generazione Storage, stati delle fonti e API prima di
-   dichiarare recuperata la fonte pubblica.
-3. Se un nuovo timeout pubblico ricompare, registrare la fase della lettura
-   prima di cambiare altre regole: il vecchio log non consente di attribuirlo
-   con certezza a una pagina numerata.
+Il proprietario ha autorizzato esplicitamente il merge, il deploy della sola
+immagine Eventi e una ripresa mirata. La [PR 69](https://github.com/meteofriul/meteofriul-app/pull/69)
+è stata unita a `main` nel commit `6675cdb4` alle 08:26 UTC. La
+[CI di main](https://github.com/meteofriul/meteofriul-app/actions/runs/45965634680)
+ha superato backend, frontend e controlli hosting. I file backend uniti sono
+identici a quelli usati per costruire il digest QA.
+
+Il job pubblico `meteofriul-events-refresh` è passato dalla generazione 49
+alla 50 con **la sola immagine**: dal digest
+`sha256:d6ff27f255a0d969883beacb485fffdb4fdfcaa715c93f4f2744e6502a7952b7`
+al digest QA
+`sha256:8bbafd4454450829eb61f6d6ec8e98b9a07a3757e6782bc4dd67bbce4d7ca3d0`.
+Il confronto del template prima/dopo conferma invariati chiave pubblica,
+identità, 1 CPU, 1 GiB, un task, zero retry e timeout 900 secondi. Lo
+Scheduler resta abilitato su `0 4 * * *`, `Etc/UTC`. Il digest precedente è
+il riferimento di rollback dell'immagine.
+
+Una sola esecuzione pubblica con `--source TurismoFVG`,
+`meteofriul-events-refresh-2gvzk`, ha completato con successo alle
+08:34:55 UTC in 2 minuti e 51 secondi. Cloud Logging registra
+`event_source_recovered` a livello INFO. Il catalogo pubblico è passato
+dalla generazione `1795764929416428` alla `1795768491780598` (SHA-256 del
+file letto dopo la corsa:
+`435342AA089B84F05B25FFF3E7A1EDF664E79EBD258A3BBB49C9F7F1352CCDE3`).
+TurismoFVG è `partial`: 1.575 schede, 1.606 URL d'inventario, 257 pagine
+di calendario, `source_complete=true`, `within_budget=true`, zero dettagli
+pendenti, zero letture fallite e 21 schede in quarantena. Le altre 14 fonti
+sono identiche al catalogo precedente nel confronto dei lotti.
+
+L'API pubblica ha risposto HTTP 200 e `ready` dai campioni di Udine e Trieste,
+con 430 e 327 eventi nel rispettivo raggio di 20 km. TurismoFVG è `partial`
+e non compare più come fonte `stale`; `catalog_status=degraded` ora comprende
+le schede singole in quarantena (`quarantined_cards`). Galleria Spazzapan
+resta nella lista delle fonti in pausa. Non sono cambiati il lettore API,
+il frontend, la versione, gli artefatti o le pubblicazioni Web/Android.
+
+## Perché può ripetersi e soluzione successiva
+
+Il blocco non era una pausa amministrativa: il sito ha restituito una pagina
+404 e in un'altra corsa un `ReadTimeout`; nei due giorni successivi il tempo
+di 335 secondi della fonte è finito prima di completare i nuovi dettagli.
+Il gate ha mantenuto il lotto validato ma ha marcato la fonte `stale` e il job
+fallito, evitando schede non verificate. Il recupero della pagina numerata
+copre solo uno dei modi in cui può fallire la lettura. La prova QA e la corsa
+pubblica sono riuscite, ma non provano che quel percorso sia stato esercitato
+in una richiesta reale: il provider può aver risposto normalmente.
+
+Per evitare una nuova indisponibilità prolungata serve un recupero
+**condizionale e limitato**: dopo il ciclo ordinario, leggere soltanto lo
+stato del catalogo; se TurismoFVG è `stale` per `incomplete_source` con
+checkpoint pendente, eseguire al massimo una ripresa della sola fonte per
+giorno. Il controllo deve rifiutare esecuzioni sovrapposte e interrompersi
+senza richieste al sito quando la fonte è già valida. Un avviso di freschezza
+deve scattare se il lotto resta assente oltre la soglia pubblica di 48 ore.
+Questa automazione e l'avviso **non sono stati creati**: richiedono un
+workstream separato, prove su catalogo QA e una verifica del traffico/costo.
+In un nuovo errore occorre registrare fase e pagina, senza URL integrali,
+per distinguere calendario, sitemap e dettagli prima di cambiare altri retry.
+
+La prima corsa ordinaria con l'immagine nuova è prevista il 28 novembre alle
+04:00 UTC e non è ancora stata osservata. Il successo della ripresa mirata
+del 27 novembre non attesta la continuità dei giorni successivi.

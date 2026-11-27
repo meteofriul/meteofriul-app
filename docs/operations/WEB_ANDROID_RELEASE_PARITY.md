@@ -1,10 +1,12 @@
 # Allineamento della Web App con Android
 
-**Eventi, collaudo backend del 27 novembre 2026.** Il worker candidato ha
-verificato TurismoFVG su un catalogo QA separato; il catalogo pubblico, l'API
-e il job pubblico non sono stati aggiornati. Le app Web e Android mantengono
-gli endpoint e gli artefatti precedenti. La prova QA non è un nuovo collaudo
-di parità su browser o dispositivo. [Prove e limiti](EVENTS_TURISMOFVG_TIMEOUT_REVIEW_20261127.md).
+**Eventi, dati pubblici del 27 novembre 2026.** La sola immagine del job
+backend è stata aggiornata dopo PR 69, CI e collaudo QA; la ripresa mirata
+ha reso TurismoFVG `partial` e visibile tramite l'API usata da Web e Android.
+Udine e Trieste rispondono HTTP 200. Contratto API, frontend, versione,
+artefatti e deployment Web/Android invariati. Questa lettura HTTP non è un
+nuovo collaudo di parità su browser o dispositivo; la prima corsa ordinaria
+del nuovo worker resta da osservare. [Prove e limiti](EVENTS_TURISMOFVG_TIMEOUT_REVIEW_20261127.md).
 
 **Dati meteo, 25 novembre 2026, 20:04 UTC.** ICON nazionale pubblica il
 ciclo 25 novembre 12Z e CAMS aria/pollini il ciclo 25 novembre 00Z;

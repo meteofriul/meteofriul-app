@@ -1,11 +1,13 @@
 # Stato release 0.1.15 e lavoro salvato — aggiornamento sorgenti del 24 ottobre 2026
 
-**Eventi, QA del 27 novembre 2026.** CI della PR 69 verde e una sola raccolta
-TurismoFVG sul catalogo QA riuscita: 1.573 schede `partial`, zero dettagli
-pendenti, altre fonti invariate. La generazione del catalogo pubblico non è
-cambiata e TurismoFVG resta `stale` online. Il solo deploy del worker Eventi
-richiede autorizzazione esplicita; PR ancora in bozza. Versione 0.1.15,
-AAB, Web e Android invariati. [Prove e limiti](EVENTS_TURISMOFVG_TIMEOUT_REVIEW_20261127.md).
+**Eventi, recupero pubblico del 27 novembre 2026.** La PR 69 è in `main`,
+CI PR/`main` verdi, job Eventi generazione 50 con la sola immagine aggiornata.
+Un'esecuzione mirata TurismoFVG è riuscita: catalogo pubblico generazione
+`1795768491780598`, fonte `partial` con 1.575 schede e zero pendenti.
+Udine e Trieste HTTP 200; altre fonti e Scheduler invariati. La prima corsa
+ordinaria della nuova immagine è ancora da verificare. Nessun AAB, upload
+Play o deploy Web/Android; versione 0.1.15 invariata. Il recupero automatico
+condizionale non è ancora presente. [Prove e limiti](EVENTS_TURISMOFVG_TIMEOUT_REVIEW_20261127.md).
 
 **Dati ICON/CAMS, 25 novembre 2026, 20:04 UTC.** ICON nazionale serve il
 ciclo 25 novembre 12Z; la prima corsa ordinaria successiva ha verificato
