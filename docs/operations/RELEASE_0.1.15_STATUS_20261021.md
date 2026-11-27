@@ -1,5 +1,12 @@
 # Stato release 0.1.15 e lavoro salvato — aggiornamento sorgenti del 24 ottobre 2026
 
+**Eventi, QA del 27 novembre 2026.** CI della PR 69 verde e una sola raccolta
+TurismoFVG sul catalogo QA riuscita: 1.573 schede `partial`, zero dettagli
+pendenti, altre fonti invariate. La generazione del catalogo pubblico non è
+cambiata e TurismoFVG resta `stale` online. Il solo deploy del worker Eventi
+richiede autorizzazione esplicita; PR ancora in bozza. Versione 0.1.15,
+AAB, Web e Android invariati. [Prove e limiti](EVENTS_TURISMOFVG_TIMEOUT_REVIEW_20261127.md).
+
 **Dati ICON/CAMS, 25 novembre 2026, 20:04 UTC.** ICON nazionale serve il
 ciclo 25 novembre 12Z; la prima corsa ordinaria successiva ha verificato
 la pubblicazione. CAMS aria/pollini serve il ciclo 25 novembre 00Z,

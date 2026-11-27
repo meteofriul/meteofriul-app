@@ -64,24 +64,68 @@ I 195 test regionali, `compileall` del file modificato e `git diff --check`
 sono passati. I test nuovi coprono la pagina numerata, la propagazione di un
 errore della partizione e il timeout della pagina iniziale. Questi test sono
 offline e **non dimostrano** che il timeout cloud osservato ricada nel caso
-corretto. Il candidato non è stato distribuito, il job non è stato ripetuto
-dopo l'unico tentativo mirato e l'app non è stata pubblicata.
+corretto. Il candidato non è stato distribuito sul job pubblico, che non è
+stato ripetuto dopo l'unico tentativo mirato; l'app non è stata pubblicata.
 
 La suite backend completa eseguita con il Python globale 3.13.5 ha contato
 2.113 test, con due fallimenti nel test di sicurezza XML di `lxml` 5.4.0.
 Lo stesso test fallisce su una worktree senza il diff Eventi e con lo stesso
 codice backend di `main`; non riguarda il candidato. Non è stato modificato
-né sostituito `lxml` per occultare il
-fallimento. Un ambiente CI con dipendenze prescritte resta una verifica
-necessaria prima di promuovere il candidato.
+né sostituito `lxml` per occultare il fallimento. La
+[CI della PR 69](https://github.com/meteofriul/meteofriul-app/actions/runs/45961887134)
+ha poi superato backend, frontend e controlli dell'anteprima hosting con le
+dipendenze prescritte. I due fallimenti locali `lxml` non compaiono in CI.
+
+## Collaudo Cloud isolato del 27 novembre
+
+L'immagine QA è stata costruita dal commit `83f6d372` con Cloud Build
+`da843360-7935-42ec-a9a9-745800ba4339`. L'archivio Git del solo backend
+aveva SHA-256 `C638C9014F23A477466AF35C0B5F2276E7D6CDD813CA5689ECFB7E1D197E2B63`;
+il digest dell'immagine risultante è
+`sha256:8bbafd4454450829eb61f6d6ec8e98b9a07a3757e6782bc4dd67bbce4d7ca3d0`.
+La build ha superato anche i test previsti dal Dockerfile del worker Eventi.
+
+La generazione pubblica `1795764929416428` è stata copiata nella chiave QA
+`pilot/events/qa/turismofvg-timeout-83f6d372-20261127/catalog.json`.
+Le due copie iniziali avevano 3.898.646 byte e lo stesso MD5 Storage.
+Il job temporaneo, senza Scheduler, usava il digest QA e la sola chiave QA.
+Un'unica esecuzione con `--source TurismoFVG`,
+`meteofriul-events-turismo-qa-20261127-xxxhw`, è terminata con
+`Completed=True` il 27 novembre alle 08:13:38 UTC, in 3 minuti e 17 secondi.
+
+Il catalogo QA risultante, generazione `1795767215459995`, classifica
+TurismoFVG `partial`: 1.573 schede, inventario di 1.603 URL, 256 pagine
+di calendario, `source_complete=true`, `within_budget=true`, zero dettagli
+pendenti e zero letture fallite. Venti schede sono in quarantena/revisione;
+non sono state pubblicate come schede confermate. Il lotto precedente nella
+copia aveva 1.498 schede e stato `stale`. Le altre fonti non sono cambiate
+nel confronto dei due cataloghi. Il job QA temporaneo è stato eliminato dopo
+la verifica; il catalogo QA e i log restano come evidenza.
+
+Il successo prova che il codice candidato completa la raccolta sulla copia
+realistica dei checkpoint. Non prova che il recupero delle pagine numerate
+sia stato effettivamente esercitato in questa corsa: il sito può aver risposto
+senza timeout. La prova offline copre quel percorso e mantiene il controllo
+esatto dei totali. La causa certa dei fallimenti pubblici resta distinta:
+il 26–27 novembre il budget di fonte finiva con dettagli pendenti; la ripresa
+manuale del 27 si è interrotta con `ReadTimeout` non localizzato per fase.
+
+La generazione del catalogo pubblico è rimasta `1795764929416428` dopo il
+collaudo e il suo TurismoFVG è ancora `stale`. Il job pubblico è rimasto alla
+generazione 49 con il precedente digest `sha256:d6ff27f2…`; Scheduler
+abilitato alle 04:00 UTC. Il controllo automatico ha respinto la richiesta
+di sostituire l'immagine del job pubblico perché richiede autorizzazione
+esplicita al deploy e la PR è ancora in bozza. Non è stato eseguito alcun
+aggiornamento o retry pubblico successivo alla prova QA.
 
 ## Verifiche necessarie prima della promozione
 
-1. Stabilire con una riproduzione isolata se il timeout riguarda una pagina
-   numerata del calendario. Se riguarda la radice, la sitemap o i dettagli,
-   scegliere una correzione diversa; non aumentare i retry alla cieca.
-2. Collaudare la correzione su un catalogo QA separato e verificare il
-   checkpoint e i conteggi, senza scrivere il catalogo pubblico.
-3. Solo dopo CI e collaudo, aggiornare il solo job Eventi. Confrontare
-   esecuzione, generazione Storage, stati delle 15 fonti e API prima di
-   dichiarare recuperata TurismoFVG.
+1. Ottenere autorizzazione esplicita per il deploy del solo job Eventi e
+   completare il percorso della PR protetta. La CI e il collaudo QA sono
+   riusciti; il cambio pubblico non è avvenuto.
+2. Dopo la promozione, fare una sola ripresa mirata di TurismoFVG e confrontare
+   esecuzione, generazione Storage, stati delle fonti e API prima di
+   dichiarare recuperata la fonte pubblica.
+3. Se un nuovo timeout pubblico ricompare, registrare la fase della lettura
+   prima di cambiare altre regole: il vecchio log non consente di attribuirlo
+   con certezza a una pagina numerata.

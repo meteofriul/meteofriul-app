@@ -1,5 +1,11 @@
 # Allineamento della Web App con Android
 
+**Eventi, collaudo backend del 27 novembre 2026.** Il worker candidato ha
+verificato TurismoFVG su un catalogo QA separato; il catalogo pubblico, l'API
+e il job pubblico non sono stati aggiornati. Le app Web e Android mantengono
+gli endpoint e gli artefatti precedenti. La prova QA non è un nuovo collaudo
+di parità su browser o dispositivo. [Prove e limiti](EVENTS_TURISMOFVG_TIMEOUT_REVIEW_20261127.md).
+
 **Dati meteo, 25 novembre 2026, 20:04 UTC.** ICON nazionale pubblica il
 ciclo 25 novembre 12Z e CAMS aria/pollini il ciclo 25 novembre 00Z;
 Storage e HTTP pubblico sono coerenti. Le app Web e Android consumano
