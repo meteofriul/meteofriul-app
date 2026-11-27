@@ -1,5 +1,13 @@
 # Meteo Friûl
 
+**Eventi, collaudo isolato del 27 novembre 2026.** La [PR 69](https://github.com/meteofriul/meteofriul-app/pull/69)
+ha CI verde; il worker candidato ha verificato TurismoFVG su una copia QA
+del catalogo pubblico: 1.573 schede `partial`, zero dettagli pendenti e zero
+letture fallite. Le altre fonti e il catalogo pubblico non sono cambiati.
+Il job pubblico usa ancora l'immagine precedente e TurismoFVG vi resta
+`stale`: il deploy è in attesa di autorizzazione esplicita. Nessuna nuova
+versione o pubblicazione Web/Android. [Prove e limiti](docs/operations/EVENTS_TURISMOFVG_TIMEOUT_REVIEW_20261127.md).
+
 **CAMS aria e pollini recuperati, 25 novembre 2026 alle 20:04 UTC.** Lo
 slot ordinario ha ripreso la richiesta ADS già salvata e ha pubblicato
 la famiglia revisione 73, ciclo `20261125T000000Z`. Storage e HTTP 200
