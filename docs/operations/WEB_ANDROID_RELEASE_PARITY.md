@@ -8,6 +8,12 @@ artefatti e deployment Web/Android invariati. Questa lettura HTTP non è un
 nuovo collaudo di parità su browser o dispositivo; la prima corsa ordinaria
 del nuovo worker resta da osservare. [Prove e limiti](EVENTS_TURISMOFVG_TIMEOUT_REVIEW_20261127.md).
 
+**Eventi, continuità candidata il 27 novembre 2026.** Il nuovo comando di
+ripresa condizionale è soltanto sorgente backend: non cambia contratto API,
+frontend o artefatti Web/Android. Non è stato attivato alcun nuovo job o
+Scheduler e non è stato eseguito un nuovo collaudo su dispositivo.
+[Disegno e limiti](EVENTS_CONDITIONAL_RECOVERY_DESIGN_20261127.md).
+
 **Dati meteo, 25 novembre 2026, 20:04 UTC.** ICON nazionale pubblica il
 ciclo 25 novembre 12Z e CAMS aria/pollini il ciclo 25 novembre 00Z;
 Storage e HTTP pubblico sono coerenti. Le app Web e Android consumano

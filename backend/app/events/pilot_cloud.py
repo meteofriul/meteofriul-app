@@ -7,7 +7,7 @@ from functools import partial
 from zoneinfo import ZoneInfo
 from .pilot_attems_audit import collect_audit as collect_attems_audit, watch_changes as attems_watch_changes
 from .pilot_girofvg_watch import collect_watch as collect_girofvg_watch
-from .pilot_catalog import PILOT_PROJECT
+from .pilot_catalog import PILOT_PROJECT, source_age_failure
 from .pilot_collection import collect
 from .pilot_regional_checkpoint import decode_control
 from .pilot_regional_annual_watch import run_bounded_watch
@@ -18,6 +18,54 @@ from .source_controls import KEY as CONTROLS_KEY, paused_names, read_controls
 BUCKET = os.environ.get('EVENTS_DATA_BUCKET', 'meteofriul-pilot-20260906-data')
 KEY = os.environ.get('EVENTS_CATALOG_KEY', 'pilot/events/v1/catalog.json')
 MAX_BYTES = 8 * 1024 * 1024
+TURISMO_RECOVERY_CLAIM_PREFIX = KEY.rsplit('/', 1)[0] + '/recovery-claims/turismofvg'
+TRANSIENT_TURISMO_EXCEPTIONS = frozenset({
+    'CalendarPageUnavailable', 'ReadTimeout', 'ConnectTimeout',
+    'ConnectionError',
+})
+
+
+def conditional_turismo_recovery_skip(batch, *, paused, now):
+    """Return a safe skip reason, or None for one bounded source-only retry."""
+    today = now.astimezone(ZoneInfo('Europe/Rome')).date()
+    if 'TurismoFVG' in paused:
+        return 'paused'
+    if not isinstance(batch, dict):
+        return 'not_stale'
+    if batch.get('last_automatic_recovery_date') == today.isoformat():
+        return 'already_attempted_today'
+    if batch.get('status') in {'fresh', 'partial'}:
+        return (None if source_age_failure(batch, now=now) == 'source_expired'
+                else 'not_stale')
+    if batch.get('status') != 'stale':
+        return 'not_stale'
+    pending = batch.get('last_attempt_pending_count')
+    if (batch.get('last_attempt_error_type') == 'incomplete_source'
+            and isinstance(pending, int) and not isinstance(pending, bool)
+            and pending > 0):
+        return None
+    if (batch.get('last_attempt_error_type') == 'adapter_exception'
+            and batch.get('last_attempt_exception_type')
+            in TRANSIENT_TURISMO_EXCEPTIONS):
+        return None
+    return 'not_transient_or_incomplete'
+
+
+def claim_conditional_turismo_recovery(client, *, today, catalog_generation):
+    """Allow at most one scheduled source read per local day, even on duplicate delivery."""
+    from google.api_core.exceptions import PreconditionFailed
+
+    key = f'{TURISMO_RECOVERY_CLAIM_PREFIX}/{today.isoformat()}.json'
+    claim = client.bucket(BUCKET).blob(key)
+    data = json.dumps({'schema': 'event-source-recovery-claim-v1',
+                       'source': 'TurismoFVG', 'date': today.isoformat(),
+                       'catalog_generation': catalog_generation})
+    try:
+        claim.upload_from_string(data, content_type='application/json',
+                                 if_generation_match=0, timeout=20)
+    except PreconditionFailed:
+        return False
+    return True
 
 
 def annual_watch_due(today, previous=None):
@@ -40,14 +88,16 @@ def _save_catalog(blob, generation, catalog):
                             if_generation_match=generation, timeout=30)
 
 
-def publish(client, *, project, adapters=None, retry_failed=False, source=None):
+def publish(client, *, project, adapters=None, retry_failed=False, source=None,
+            conditional_turismo_recovery=False):
     started = time.monotonic()
     if project != PILOT_PROJECT or client.project != PILOT_PROJECT:
         raise ValueError('isolated events project required')
-    if adapters is not None and (retry_failed or source):
-        raise ValueError('explicit adapters cannot be combined with failed-source retry')
-    if source and retry_failed:
-        raise ValueError('single-source and failed-source retry are exclusive')
+    if adapters is not None and (retry_failed or source or conditional_turismo_recovery):
+        raise ValueError('explicit adapters cannot be combined with recovery modes')
+    if sum(bool(value) for value in (source, retry_failed,
+                                    conditional_turismo_recovery)) > 1:
+        raise ValueError('source selection and recovery modes are exclusive')
     blob = client.bucket(BUCKET).blob(KEY)
     from google.api_core.exceptions import NotFound
     try:
@@ -63,7 +113,30 @@ def publish(client, *, project, adapters=None, retry_failed=False, source=None):
     registered_adapters = source_adapters(project) if adapters is None else None
     controls, _ = read_controls(client.bucket(BUCKET).blob(CONTROLS_KEY)) if adapters is None else (None, None)
     paused = paused_names(controls, today=datetime.now(ZoneInfo('Europe/Rome')).date()) if controls else set()
-    if source:
+    if conditional_turismo_recovery:
+        recovery_now = datetime.now(timezone.utc)
+        local_today = recovery_now.astimezone(ZoneInfo('Europe/Rome')).date()
+        reason = conditional_turismo_recovery_skip(
+            (previous or {}).get('sources', {}).get('TurismoFVG'),
+            paused=paused, now=recovery_now)
+        if reason:
+            return {'event': 'event_source_conditional_recovery',
+                    'action': 'skipped', 'reason': reason,
+                    'source': 'TurismoFVG'}
+        if not claim_conditional_turismo_recovery(
+                client, today=local_today, catalog_generation=generation):
+            return {'event': 'event_source_conditional_recovery',
+                    'action': 'skipped', 'reason': 'already_claimed_today',
+                    'source': 'TurismoFVG'}
+        previous_batch = previous['sources']['TurismoFVG']
+        due_reason = (previous_batch.get('last_attempt_error_type')
+                      if previous_batch.get('status') == 'stale'
+                      else 'source_expired')
+        print(json.dumps({'event': 'event_source_conditional_recovery',
+                          'source': 'TurismoFVG', 'action': 'run',
+                          'reason': due_reason}, ensure_ascii=False), flush=True)
+        selected_adapters = {'TurismoFVG': registered_adapters['TurismoFVG']}
+    elif source:
         if source not in registered_adapters:
             raise ValueError('unknown registered source')
         selected_adapters = {source: registered_adapters[source]}
@@ -113,6 +186,9 @@ def publish(client, *, project, adapters=None, retry_failed=False, source=None):
     catalog = collect(project, selected_adapters, previous,
                       datetime.now(timezone.utc).isoformat(), timeout=55,
                       source_timeouts=source_timeouts)
+    if conditional_turismo_recovery:
+        catalog['sources']['TurismoFVG']['last_automatic_recovery_date'] = (
+            local_today.isoformat())
     if controls is not None:
         catalog['source_controls_revision'] = controls['revision']
         catalog['paused_sources'] = sorted(paused)
@@ -162,7 +238,7 @@ def publish(client, *, project, adapters=None, retry_failed=False, source=None):
         raise RuntimeError('event source verification failed: ' + ', '.join(sorted(incomplete)))
     watch_failures = []
     candidate_watch_alerts = []
-    if adapters is None and not retry_failed and not source:
+    if adapters is None and not retry_failed and not source and not conditional_turismo_recovery:
         monitored_at = catalog.get('attempted_at') or datetime.now(timezone.utc).isoformat()
         monitor_status = {}
         try:
@@ -274,10 +350,13 @@ if __name__ == '__main__':
     actions.add_argument('--retry-failed', action='store_true',
                          help='recollect only registered sources tagged as failed')
     actions.add_argument('--source', help='recollect one registered source only')
+    actions.add_argument('--recover-turismofvg-if-stale', action='store_true',
+                         help='retry TurismoFVG once per local date only after a transient or incomplete run')
     options = parser.parse_args()
     project = os.environ.get('GOOGLE_CLOUD_PROJECT')
     if project != PILOT_PROJECT:
         raise ValueError('isolated events project required')
     print(json.dumps(publish(storage.Client(project=project), project=project,
                              retry_failed=options.retry_failed,
-                             source=options.source)))
+                             source=options.source,
+                             conditional_turismo_recovery=options.recover_turismofvg_if_stale)))

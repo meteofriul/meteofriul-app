@@ -1,0 +1,96 @@
+# Eventi: ripresa condizionale TurismoFVG — proposta del 27 novembre 2026
+
+## Stato e causa
+
+Il recupero pubblico del 27 novembre è riuscito e documentato nel
+[rapporto operativo](EVENTS_TURISMOFVG_TIMEOUT_REVIEW_20261127.md).
+Questo documento riguarda la continuità successiva: nessun nuovo job,
+Scheduler, allarme o immagine è stato distribuito da questo ramo.
+
+Le corse del 26 e 27 novembre avevano concluso i 335 secondi assegnati a
+TurismoFVG con dettagli ancora pendenti. Un successivo timeout del sito ha
+interrotto la ripresa manuale. Il checkpoint permette già di riusare le
+letture riuscite; manca un secondo avvio mirato e condizionale dopo il ciclo
+ordinario. Ripetere automaticamente il job completo delle 15 fonti
+aggiungerebbe traffico non necessario anche alle fonti sane.
+
+## Comportamento candidato
+
+Il comando `--recover-turismofvg-if-stale` legge il catalogo e i controlli
+fonte esistenti. Senza scrivere il catalogo e senza interrogare TurismoFVG,
+registra `action=skipped` quando la fonte è valida, in pausa oppure è
+già stata tentata in automatico nella stessa data locale.
+
+Esegue solo TurismoFVG nei seguenti casi:
+
+- lotto `stale` con errore `incomplete_source` e dettagli pendenti;
+- lotto `stale` dopo un errore di trasporto o pagina numerata temporaneamente
+  indisponibile (`ReadTimeout`, `ConnectTimeout`, `ConnectionError`,
+  `CalendarPageUnavailable`);
+- lotto `fresh` o `partial` memorizzato ma scaduto oltre la soglia pubblica
+  esistente di 48 ore, per esempio se il ciclo ordinario non è partito.
+
+Non ripete automaticamente errori strutturali o editoriali. Il tentativo
+usa il timeout di fonte già fissato a 360 secondi, i checkpoint e tutti i
+gate di pubblicazione. Se resta incompleto, salva diagnostica e data del
+tentativo, mantiene il lotto precedente e fa fallire il job.
+
+Cloud Scheduler usa una consegna [almeno una volta](https://docs.cloud.google.com/scheduler/docs/configuring/deduplicate-job-requests),
+anche se il numero di retry pianificati è zero. Prima di leggere il sito,
+il worker crea una piccola prova di presa in carico sotto
+`pilot/events/v1/recovery-claims/turismofvg/<data>.json` con la precondizione
+Storage `if_generation_match=0`: [solo il primo oggetto può essere creato](https://docs.cloud.google.com/storage/docs/request-preconditions).
+Il prefisso deriva dalla chiave del catalogo: una prova QA crea claim
+solo sotto la propria chiave QA, senza interferire con la produzione.
+Una consegna duplicata nella stessa data locale non interroga la fonte e
+non riscrive il catalogo. Il marcatore `last_automatic_recovery_date` nel
+lotto protegge anche i successivi avvii dopo un salvataggio. Se il processo
+si interrompe dopo il claim e prima del catalogo, la ripresa automatica
+aspetta il giorno successivo; un operatore può sempre usare il comando
+manuale `--source TurismoFVG` dopo verifica. La concorrenza di lettura e
+la regola compare-and-swap del catalogo restano quelle esistenti.
+
+Questa modalità non crea un timer da sola. Per attivarla, la proposta è
+un **job Cloud Run distinto**, con lo stesso digest del worker Eventi, la
+stessa identità di scrittura, la chiave del catalogo pubblico, argomento
+fisso `--recover-turismofvg-if-stale`, un task, zero retry e timeout 900
+secondi. Uno Scheduler dedicato lo avvierebbe alle 06:00 UTC, due ore dopo
+il ciclo ordinario delle 04:00 UTC e oltre il suo timeout massimo di 15
+minuti. Lo Scheduler avrebbe zero retry e userebbe OAuth verso l'API Cloud
+Run, come l'attuale Scheduler Eventi. Un job separato evita di concedere
+all'identità dello Scheduler `run.jobs.runWithOverrides` per sostituire
+gli argomenti del job pubblico: l'API richiede quel permesso per gli
+[override](https://docs.cloud.google.com/run/docs/reference/rest/v2/projects.locations.jobs/run),
+mentre la [pianificazione dei job](https://docs.cloud.google.com/run/docs/execute/jobs-on-schedule)
+usa un target HTTP autenticato. Prima dell'attivazione va verificato il
+permesso dell'identità Scheduler sul nuovo job.
+
+La chiamata Scheduler all'API avvia un'esecuzione e riceve un'operazione:
+il successo dell'invocazione non dimostra che il job abbia verificato i dati.
+Serve quindi un controllo distinto della freschezza del lotto pubblicato.
+L'alert proposto segnala TurismoFVG ancora non visibile oltre 48 ore, con
+un solo canale operativo e senza notifiche per ogni singola scheda in
+revisione. Il routing degli alert va definito e verificato separatamente;
+l'attuale policy di errore Eventi non recapita una notifica dedicata.
+
+## Prove e limiti
+
+I 38 test di `test_pilot_cloud.py`, gli 811 test `test_pilot_*.py`
+(uno saltato), `compileall`, l'help del comando e `git diff --check` sono
+passati. Un controllo senza rete sui due cataloghi reali salvati il 27
+novembre ha classificato come dovuta la ripresa del lotto pubblico
+precedente `stale` e come `not_stale` quello recuperato `partial`. I test
+esercitano il mancato accesso alla fonte e la mancata scrittura quando la
+fonte è sana, la selezione della sola fonte quando la ripresa è dovuta e il
+claim atomico, il marcatore giornaliero anche dopo un tentativo fallito e
+l'assenza di richieste quando il claim esiste già. Queste prove non
+sostituiscono una corsa QA del nuovo comando in Cloud Run.
+
+Prima di attivare una pianificazione occorrono CI, build dal commit
+approvato, prova QA del caso `skipped` sul catalogo corrente, prova QA con
+checkpoint incompleto su una copia separata, readback di IAM e costo di
+una invocazione giornaliera, poi verifica di log, dati e allarme. Il caso
+senza lavoro utile comporta comunque l'avvio giornaliero di un container;
+quando la fonte è incompleta, il traffico aggiuntivo è limitato a una
+raccolta della sola TurismoFVG per giorno. Nessuna di queste risorse
+operative è stata attivata da questa proposta.
