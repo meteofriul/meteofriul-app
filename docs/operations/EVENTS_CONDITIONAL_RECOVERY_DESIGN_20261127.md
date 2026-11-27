@@ -1,20 +1,20 @@
-# Eventi: ripresa condizionale TurismoFVG — proposta del 27 novembre 2026
+# Eventi: ripresa condizionale TurismoFVG — disegno del 27 novembre 2026
 
 ## Stato e causa
 
 Il recupero pubblico del 27 novembre è riuscito e documentato nel
 [rapporto operativo](EVENTS_TURISMOFVG_TIMEOUT_REVIEW_20261127.md).
-Questo documento riguarda la continuità successiva: nessun nuovo job,
-Scheduler, allarme o immagine è stato distribuito da questo ramo.
+Il meccanismo è stato attivato dopo la PR 71; [il rapporto di attivazione](EVENTS_CONDITIONAL_RECOVERY_ACTIVATION_20261127.md)
+distingue le prove QA, le risorse distribuite e le verifiche ancora aperte.
 
 Le corse del 26 e 27 novembre avevano concluso i 335 secondi assegnati a
 TurismoFVG con dettagli ancora pendenti. Un successivo timeout del sito ha
-interrotto la ripresa manuale. Il checkpoint permette già di riusare le
-letture riuscite; manca un secondo avvio mirato e condizionale dopo il ciclo
+interrotto la ripresa manuale. Il checkpoint permette di riusare le
+letture riuscite; il secondo avvio mirato e condizionale segue il ciclo
 ordinario. Ripetere automaticamente il job completo delle 15 fonti
 aggiungerebbe traffico non necessario anche alle fonti sane.
 
-## Comportamento candidato
+## Comportamento distribuito
 
 Il comando `--recover-turismofvg-if-stale` legge il catalogo e i controlli
 fonte esistenti. Senza scrivere il catalogo e senza interrogare TurismoFVG,
@@ -50,30 +50,31 @@ aspetta il giorno successivo; un operatore può sempre usare il comando
 manuale `--source TurismoFVG` dopo verifica. La concorrenza di lettura e
 la regola compare-and-swap del catalogo restano quelle esistenti.
 
-Questa modalità non crea un timer da sola. Per attivarla, la proposta è
-un **job Cloud Run distinto**, con lo stesso digest del worker Eventi, la
+Questa modalità non crea un timer da sola. È attiva in
+un **job Cloud Run distinto**, con il digest candidato verificato, la
 stessa identità di scrittura, la chiave del catalogo pubblico, argomento
 fisso `--recover-turismofvg-if-stale`, un task, zero retry e timeout 900
-secondi. Uno Scheduler dedicato lo avvierebbe alle 06:00 UTC, due ore dopo
+secondi. Uno Scheduler dedicato lo avvia alle 06:00 UTC, due ore dopo
 il ciclo ordinario delle 04:00 UTC e oltre il suo timeout massimo di 15
-minuti. Lo Scheduler avrebbe zero retry e userebbe OAuth verso l'API Cloud
+minuti. Lo Scheduler ha zero retry e usa OAuth verso l'API Cloud
 Run, come l'attuale Scheduler Eventi. Un job separato evita di concedere
 all'identità dello Scheduler `run.jobs.runWithOverrides` per sostituire
 gli argomenti del job pubblico: l'API richiede quel permesso per gli
 [override](https://docs.cloud.google.com/run/docs/reference/rest/v2/projects.locations.jobs/run),
 mentre la [pianificazione dei job](https://docs.cloud.google.com/run/docs/execute/jobs-on-schedule)
-usa un target HTTP autenticato. Prima dell'attivazione va verificato il
-permesso dell'identità Scheduler sul nuovo job.
+usa un target HTTP autenticato. Il readback conferma il solo ruolo
+`roles/run.invoker` dell'identità Scheduler sul nuovo job.
 
 La chiamata Scheduler all'API avvia un'esecuzione e riceve un'operazione:
 il successo dell'invocazione non dimostra che il job abbia verificato i dati.
 Serve quindi un controllo distinto della freschezza del lotto pubblicato.
-Quattro policy Eventi sono ora preparate nella configurazione del ramo:
+Quattro policy Eventi sono state aggiunte alla configurazione:
 assenza di un refresh ordinario riuscito per 25 ore, errore di invocazione
 dei due Scheduler e fallimento del job di ripresa condizionale. Usano il
-canale email esistente `Meteo Friul - notifiche operative`. L'audit cloud
-le trova tutte mancanti; non sono ancora attive. Le policy di errore Eventi
-già distribuite non hanno un canale di notifica. Il controllo di ultimo
+canale email esistente `Meteo Friul - notifiche operative`. L'audit prima
+dell'attivazione le trovava mancanti; il readback successivo le trova tutte
+`unchanged`, abilitate e con quel canale. Le due policy di errore Eventi
+precedenti restano senza un canale di notifica. Il controllo di ultimo
 successo rileva anche un refresh ordinario che non parte, ma non sostituisce
 la verifica della freschezza del lotto TurismoFVG servito dall'API.
 
@@ -118,11 +119,10 @@ eliminato. Questa prova dimostra il percorso di errore e la continuità del
 checkpoint, non un recupero concluso in una sola corsa: un catalogo molto
 arretrato può richiedere più giorni.
 
-Il job pubblico è ancora alla generazione 50, con un task, zero retry,
-timeout 900 secondi, 1 vCPU e 1 GiB. L'attuale identità Scheduler ha il
-solo ruolo `roles/run.invoker` sul job Eventi; per il nuovo job serve un
-binding altrettanto circoscritto. Il nuovo Scheduler userebbe la medesima
-identità e zero retry.
+Il job ordinario è ancora alla generazione 50. Il nuovo job è alla
+generazione 1, con un task, zero retry, timeout 900 secondi, 1 vCPU e 1 GiB.
+L'identità Scheduler ha `roles/run.invoker` sul solo nuovo job tramite un
+binding dedicato e mantiene quello preesistente sul job ordinario.
 
 Per il caso sano, il container QA è durato circa 26 secondi. Cloud Run
 fattura i job per almeno un minuto: usando le [tariffe pubblicate](https://cloud.google.com/run/pricing)
@@ -133,11 +133,12 @@ la franchigia di tre job è condivisa a livello di account. Una ripresa
 dovuta dura di più e consuma anche richieste alla fonte; il massimo del
 job resta 900 secondi. Questa è una stima, non una lettura della fattura.
 
-Prima di attivare una pianificazione restano merge e CI su `main`, il
-readback finale del binding IAM e l'applicazione mirata delle sole quattro
-nuove policy dopo audit. Dopo l'attivazione vanno verificati log, dati e
-allarme. Il
-caso senza lavoro utile comporta comunque l'avvio giornaliero di un container;
+La PR e la CI su `main` sono verdi. L'avvio pubblico di controllo
+`meteofriul-events-conditional-recovery-vthwm` è terminato con successo:
+`skipped/not_stale`, catalogo pubblico ancora alla generazione
+`1795768491780598`, nessun claim pubblico. La prima coppia di corse
+programmate del 28 novembre, l'eventuale recupero dovuto in produzione e
+il recapito reale di un futuro alert restano da osservare. Il caso senza
+lavoro utile comporta comunque l'avvio giornaliero di un container;
 quando la fonte è incompleta, il traffico aggiuntivo è limitato a una
-raccolta della sola TurismoFVG per giorno. Nessuna di queste risorse
-operative è stata attivata da questa proposta.
+raccolta della sola TurismoFVG per giorno.

@@ -1,5 +1,8 @@
 # Eventi: verifica TurismoFVG del 27 novembre 2026
 
+**Aggiornamento successivo:** il recupero condizionale e quattro allarmi
+mirati sono stati attivati dopo questa verifica. [Stato e prove finali](EVENTS_CONDITIONAL_RECOVERY_ACTIVATION_20261127.md).
+
 ## Stato osservato
 
 Questa è evidenza datata, non un'autorizzazione a rilanciare il job. Il

@@ -6,19 +6,18 @@ Un'esecuzione mirata TurismoFVG è riuscita: catalogo pubblico generazione
 `1795768491780598`, fonte `partial` con 1.575 schede e zero pendenti.
 Udine e Trieste HTTP 200; altre fonti e Scheduler invariati. La prima corsa
 ordinaria della nuova immagine è ancora da verificare. Nessun AAB, upload
-Play o deploy Web/Android; versione 0.1.15 invariata. Il recupero automatico
-condizionale non è ancora presente. [Prove e limiti](EVENTS_TURISMOFVG_TIMEOUT_REVIEW_20261127.md).
+Play o deploy Web/Android; versione 0.1.15 invariata. La ripresa condizionale
+è stata poi attivata come descritto sotto. [Prove e limiti](EVENTS_TURISMOFVG_TIMEOUT_REVIEW_20261127.md).
 
-**Eventi, ripresa condizionale candidata il 27 novembre 2026.** Il ramo
-`codex/events-conditional-recovery-20261127` prepara un comando che salta
-la fonte sana e limita a una per data locale le riprese automatiche quando
-TurismoFVG è incompleta o scaduta. 811 test Eventi e la CI della PR 71
-passano; la prova QA sana ha saltato la fonte senza scritture. La prova QA
-del vecchio lotto `stale` ha salvato un checkpoint ancora incompleto senza
-toccare il catalogo pubblico; i job QA sono stati eliminati. Quattro policy
-Eventi sono preparate ma non attive. Nessun nuovo job, Scheduler, policy,
-versione o artefatto è stato distribuito.
-[Disegno e limiti](EVENTS_CONDITIONAL_RECOVERY_DESIGN_20261127.md).
+**Eventi, ripresa condizionale attiva il 27 novembre 2026.** La PR 71 è in
+`main`, con CI verde. Il nuovo job Eventi usa il digest QA verificato e uno
+Scheduler alle 06:00 UTC; quattro policy mirate hanno il canale operativo.
+L'avvio pubblico di controllo ha saltato TurismoFVG sana senza scrittura:
+catalogo pubblico generazione `1795768491780598` e job ordinario
+generazione 50 invariati. La prova QA del vecchio lotto `stale` ha conservato
+il checkpoint ma è rimasta incompleta; il primo slot ordinario della nuova
+sequenza è il 28 novembre. Nessuna nuova versione, AAB o pubblicazione
+Web/Android. [Prove e limiti](EVENTS_CONDITIONAL_RECOVERY_ACTIVATION_20261127.md).
 
 **Dati ICON/CAMS, 25 novembre 2026, 20:04 UTC.** ICON nazionale serve il
 ciclo 25 novembre 12Z; la prima corsa ordinaria successiva ha verificato
