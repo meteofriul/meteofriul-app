@@ -1,4 +1,4 @@
-# Inventario dei job di Meteo Friûl — 25 novembre 2026
+# Inventario dei job di Meteo Friûl — aggiornato il 27 novembre 2026
 
 Questo è l'indice corrente di **funzioni, dipendenze e pianificazioni**.
 Il [verbale del 25 novembre](JOBS_READONLY_AUDIT_20261125.md) contiene
@@ -6,7 +6,8 @@ esecuzioni e dati effettivamente osservati; la [mappa dell'app](APP_SYSTEM_MAP_2
 collega i risultati alle pagine. La mappa originaria usa `main` `61ca8e5e`;
 il recupero ICON successivo usa `main` `e4b80906`.
 Il cloud può avere risorse o immagini diverse dal codice: qui il cron è quello
-letto nel cloud il 25 novembre, non una promessa ricavata da un template.
+letto nel cloud il 25 novembre, con l'aggiunta Eventi riletta il 27 novembre;
+non è una promessa ricavata da un template.
 
 ## Come funziona la catena
 
@@ -18,10 +19,12 @@ Monitoring osservano esecuzione e metriche. Sono cinque prove diverse:
 e **visualizzazione nell'app/telefono**. Nessuna prova implica automaticamente
 la successiva.
 
-Tutti i 12 Scheduler osservati sono `ENABLED` in `europe-west1`; l'allerta FVG
+I 12 Scheduler osservati il 25 novembre erano `ENABLED` in `europe-west1`.
+Il readback del 27 novembre ne conta **13, tutti `ENABLED`**: si è aggiunta
+la ripresa condizionale Eventi. L'allerta FVG
 invoca il job in `europe-west8`, gli altri target ordinari sono in
 `europe-west1`. Il monitor ICON invoca un dispatcher HTTP `/dispatch`; gli
-altri 11 invocano `jobs/<nome>:run`. I nomi Scheduler `-refresh` per CAMS e
+altri 12 invocano `jobs/<nome>:run`. I nomi Scheduler `-refresh` per CAMS e
 ICON puntano ai job senza quel suffisso. Gli orari italiani cambiano fra CET e
 CEST quando il cron usa UTC; quelli in `Europe/Rome` mantengono l'ora civile.
 
@@ -39,6 +42,7 @@ CEST quando il cron usa UTC; quelli in `Europe/Rome` mantengono l'ora civile.
 | `meteofriul-national-icon-refresh` → `meteofriul-national-icon` | Stessi otto slot UTC | Produce il bundle ICON nazionale separato dal FVG, per letture e funzioni nazionali abilitate. Il suo esito non determina quello FVG. [worker](../../experiments/weather_autonomy/national_cloud_worker.py), [piano](../../experiments/weather_autonomy/icon-recovery-plan.json). |
 | `meteofriul-cams-refresh` → `meteofriul-cams` | `0 9,10,11,15,20 * * *`, `Etc/UTC` | Aria, pollini e UV. Tre slot mattutini permettono attesa/recupero della fonte; UV è previsto solo alle 15/20 UTC. Il container può fallire o riuscire con componenti differenti: occorre leggere esiti, continuità e HTTP. [runtime](../../experiments/weather_autonomy/production-runtime.json). |
 | `meteofriul-events-refresh` → omonimo | `0 4 * * *`, `Etc/UTC` | Legge fonti Eventi approvate, verifica inventari e schede, scrive `pilot/events/v1/catalog.json`. L'API mostra solo lotti `fresh`/`partial`, non quelli `stale`; il job può scrivere diagnostici pur terminando con errore. UTC colloca la corsa alle 05:00 CET/06:00 CEST. [publisher](../../backend/app/events/pilot_cloud.py), [reader](../../backend/app/events/pilot_http.py). |
+| `meteofriul-events-conditional-recovery` → omonimo | `0 6 * * *`, `Etc/UTC` | Due ore dopo il refresh ordinario controlla il catalogo: se TurismoFVG è sana esce senza leggerla o scrivere; se è incompleta per errore temporaneo o scaduta, riprende **solo** quella fonte con checkpoint e gate invariati. Un claim Storage limita la lettura automatica a una per data italiana; un tentativo ancora incompleto salva diagnostica ed esce con errore. Primo slot atteso il 28 novembre alle 06:00 UTC. [rapporto di attivazione](EVENTS_CONDITIONAL_RECOVERY_ACTIVATION_20261127.md). |
 | `meteofriul-icon2i-freshness` → dispatcher `/dispatch` → job omonimo | `10,40 * * * *`, `UTC` | Controlla ogni mezz'ora età/identità dei prodotti ICON FVG e nazionale fra Storage e HTTP. È un osservatore distinto dai produttori: un suo successo esecutivo può accompagnare uno stato dati critico. [piano](../../experiments/weather_autonomy/freshness_monitor/resources/deployment-plan.json). |
 | `meteofriul-markets-weekly-audit` → omonimo | `0 9 * * 2`, `Europe/Rome` | Audit settimanale Mercati, **presente nel cloud ma assente dal codice di `main`**. La sorgente nel ramo separato `codex/markets-weekly-audit-20261113` confronta fonti e salva un rapporto Firestore quando completo; non scrive l'archivio delle schede né pubblica l'app. La pianificazione del martedì non riattiva il task Windows locale disabilitato. Questo flusso è mappato solo in lettura, perché Mercati è in pausa. |
 
@@ -54,6 +58,8 @@ CEST quando il cron usa UTC; quelli in `Europe/Rome` mantengono l'ora civile.
 - **Eventi** raccoglie siti esterni una volta al giorno, poi l'API serve un
   catalogo verificato senza visitare le fonti per ogni utente. Timeout e
   cambi dei siti possono lasciare lotti `stale` pur conservando diagnostici.
+  Il secondo job prova solo TurismoFVG quando necessario e mantiene distinti
+  successo del processo e qualità del catalogo.
 - **Freschezza ICON** è monitorata fuori dal produttore, per scoprire anche
   processi che terminano bene senza avanzare il ciclo pubblicato.
 
@@ -63,7 +69,9 @@ Nel controllo iniziale del 25 novembre erano presenti **15 istanze Cloud Run
 Job nelle regioni `europe-west1` e `europe-west8`**: le 12 raggiunte dagli
 Scheduler più tre senza target. Alle 19:42 UTC, dopo il recupero nazionale,
 è presente anche il job operatore sotto: **16 istanze**, 12 schedulate e
-quattro senza Scheduler. I 12 Scheduler sono tornati `ENABLED`.
+quattro senza Scheduler. Al readback del 27 novembre dopo la nuova ripresa
+Eventi risultano **17 istanze**, 13 schedulate e quattro senza Scheduler,
+nelle due regioni già inventariate.
 
 | Istanza | Ruolo e limite |
 | --- | --- |
@@ -98,14 +106,14 @@ prova di un servizio distribuito.
 ## Monitoraggio e limiti di copertura
 
 Il [catalogo delle policy](../../scripts/cloud-run-job-monitoring-policies.json)
-contiene 18 definizioni per 9 nomi di job: fallimenti, assenza di successi,
+contiene 22 definizioni per 10 nomi di job: fallimenti, assenza di successi,
 errori Scheduler e osservazione delle fonti Eventi. Le policy del monitor
 ICON e le vecchie prove si controllano separatamente nel cloud; numeri e
 canali live sono nel [verbale](JOBS_READONLY_AUDIT_20261125.md). Una policy
 di fallimento non rileva necessariamente Scheduler fermo, dati stantii o
 utente senza notifica. L'endpoint del pannello owner
 [/api/admin/operations](../../backend/app/api/operations_admin.py) legge
-riepiloghi mattino/sera e catalogo Eventi, non tutti i 12 Scheduler.
+riepiloghi mattino/sera e catalogo Eventi, non tutti i 13 Scheduler.
 
 | Famiglia | Policy del catalogo e lacuna residua |
 | --- | --- |
@@ -114,11 +122,11 @@ riepiloghi mattino/sera e catalogo Eventi, non tutti i 12 Scheduler.
 | DPC nazionale | Fallimenti del **sync**; nessuna policy dedicata al job `national-official-alert-send` individuata. |
 | ICON FVG e nazionale | Per ciascuno: fallimenti e assenza di successi; tre policy ulteriori seguono il monitor di freschezza Storage/HTTP. |
 | CAMS | Fallimenti del job; la policy non prova tutte le componenti né uno Scheduler mancante. |
-| Eventi | Fallimento del job e revisione fonti candidate; lotti `stale` e API restano verifiche distinte. |
+| Eventi | Alle due policy precedenti si aggiungono assenza di successo del refresh ordinario per 25 ore, errore dei due Scheduler e fallimento della ripresa condizionale: quattro nuove policy sul canale operativo esistente. L'ultimo successo del job non certifica da solo la freschezza del lotto TurismoFVG servito dall'API. [readback](EVENTS_CONDITIONAL_RECOVERY_ACTIVATION_20261127.md). |
 | Mercati cloud | Nessuna policy dedicata letta nel progetto al 25 novembre. Il job è su workstream separato in pausa. |
 
 Il controllo operativo deve leggere per ogni funzione cron/target, esecuzioni
 e log in una finestra dichiarata, prodotto Storage/HTTP o contatori FCM,
-policy e limiti. Non avvia job, non riprova fonti, non cambia cron/policy e non
-invia notifiche. Le anomalie osservate oggi sono descritte nel verbale,
+policy e limiti. Il profilo di audit non avvia job, non riprova fonti, non cambia
+cron/policy e non invia notifiche. Le anomalie osservate il 25 novembre sono descritte nel verbale,
 non inferite dalla sola presenza di questo inventario.

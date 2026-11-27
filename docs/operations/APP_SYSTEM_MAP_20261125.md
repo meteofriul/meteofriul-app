@@ -139,7 +139,11 @@ flowchart LR
 - **Eventi:** fonti approvate → adattatori e gate nel job →
   `pilot/events/v1/catalog.json` → servizio Eventi → Home/Eventi. Lotti
   `stale` sono conservati per diagnosi ma esclusi dalla risposta pubblica;
-  `partial` conserva solo schede verificate. [pilot_cloud.py](../../backend/app/events/pilot_cloud.py),
+  `partial` conserva solo schede verificate. Dal 27 novembre un secondo job
+  dopo quello ordinario controlla il catalogo e riprende solo TurismoFVG se
+  incompleta o scaduta, al massimo una volta per data italiana. Non cambia
+  il lettore né le pagine. [attivazione](EVENTS_CONDITIONAL_RECOVERY_ACTIVATION_20261127.md),
+  [pilot_cloud.py](../../backend/app/events/pilot_cloud.py),
   [pilot_http.py](../../backend/app/events/pilot_http.py).
 - **Scopri/Almanacco:** cataloghi IT/FUR versionati nel frontend → selettori
   temporali/locali → Home e Scopri. Non passano da Cloud Scheduler. Lo stato
@@ -211,7 +215,8 @@ dettaglio; lo stato distribuito si trova nel verbale datato.
 
 La [mappa dei job](JOBS_INVENTORY.md) specifica per ogni Scheduler nome,
 orario/fuso, funzione, ingresso, uscita e ragione della separazione.
-La verifica di oggi è nel [verbale](JOBS_READONLY_AUDIT_20261125.md).
+La verifica originaria è nel [verbale del 25 novembre](JOBS_READONLY_AUDIT_20261125.md);
+l'aggiunta Eventi del 27 novembre è nel [rapporto di attivazione](EVENTS_CONDITIONAL_RECOVERY_ACTIVATION_20261127.md).
 Il cloud contiene anche job senza Scheduler, prove e risorse che non sono
 allineate automaticamente al codice di `main`: sono inventariati con uno
 stato distinto. Le policy Monitoring possono rilevare una corsa fallita o

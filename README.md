@@ -6,19 +6,21 @@
 ripresa mirata ha pubblicato 1.575 schede TurismoFVG `partial`, zero
 dettagli pendenti e zero letture fallite. Udine e Trieste rispondono HTTP 200;
 le altre fonti e lo Scheduler sono invariati. La prima corsa ordinaria della
-nuova immagine resta da osservare e il recupero automatico condizionale non
-è ancora presente. Nessuna nuova versione o pubblicazione Web/Android.
+nuova immagine resta da osservare. La ripresa condizionale è stata poi
+attivata come descritto sotto. Nessuna nuova versione o pubblicazione Web/Android.
 [Prove e limiti](docs/operations/EVENTS_TURISMOFVG_TIMEOUT_REVIEW_20261127.md).
 
-**Eventi, continuità in preparazione il 27 novembre 2026.** Un ramo separato
-propone una ripresa condizionale della sola TurismoFVG, con claim atomico
-contro avvii duplicati. 811 test Eventi e la CI della PR 71 passano; un job
-QA temporaneo ha confermato il salto della fonte sana senza scritture. Una
-seconda prova QA isolata ha ripreso il vecchio lotto `stale`, salvando 552
-dettagli ancora pendenti senza toccare il catalogo pubblico; entrambi i job
-QA sono stati eliminati. Quattro policy Eventi sono preparate ma non attive.
-Il codice non è distribuito e non esistono nuovi job o Scheduler attivi. Il recupero pubblico
-attestato sopra resta lo stato corrente. [Disegno e limiti](docs/operations/EVENTS_CONDITIONAL_RECOVERY_DESIGN_20261127.md).
+**Eventi, ripresa condizionale attiva il 27 novembre 2026.** La PR 71 e la
+CI di `main` sono verdi. Un nuovo job, pianificato ogni giorno alle 06:00 UTC,
+controlla il catalogo e riprende solo TurismoFVG se incompleta o scaduta;
+un claim limita le letture automatiche a una per data italiana. La prova
+pubblica su dati sani ha registrato `skipped/not_stale`, senza scrittura o
+claim; il job ordinario e il catalogo pubblico restano invariati. Quattro
+nuove policy Eventi sono attive sul canale operativo. La prova QA di un
+vecchio backlog è rimasta incompleta dopo 552 dettagli pendenti: una sola
+ulteriore corsa non garantisce il recupero. Il primo slot programmato è il
+28 novembre; dati e allarmi futuri restano da osservare. Nessuna nuova
+versione o pubblicazione dell'app. [Rapporto di attivazione](docs/operations/EVENTS_CONDITIONAL_RECOVERY_ACTIVATION_20261127.md).
 
 **CAMS aria e pollini recuperati, 25 novembre 2026 alle 20:04 UTC.** Lo
 slot ordinario ha ripreso la richiesta ADS già salvata e ha pubblicato

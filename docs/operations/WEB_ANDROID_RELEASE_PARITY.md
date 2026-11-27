@@ -8,13 +8,14 @@ artefatti e deployment Web/Android invariati. Questa lettura HTTP non è un
 nuovo collaudo di parità su browser o dispositivo; la prima corsa ordinaria
 del nuovo worker resta da osservare. [Prove e limiti](EVENTS_TURISMOFVG_TIMEOUT_REVIEW_20261127.md).
 
-**Eventi, continuità candidata il 27 novembre 2026.** Il nuovo comando di
-ripresa condizionale è soltanto sorgente backend: non cambia contratto API,
-frontend o artefatti Web/Android. Le prove QA isolate hanno confermato il
-caso senza recupero e il salvataggio sicuro di un tentativo incompleto; i
-job QA sono stati eliminati. Non è stato attivato alcun nuovo
-job o Scheduler pubblico né eseguito un nuovo collaudo su dispositivo.
-[Disegno e limiti](EVENTS_CONDITIONAL_RECOVERY_DESIGN_20261127.md).
+**Eventi, continuità attiva il 27 novembre 2026.** Il nuovo job backend e
+lo Scheduler delle 06:00 UTC riprendono solo TurismoFVG quando necessario;
+quattro policy Eventi sono attive. Contratto API, frontend e artefatti
+Web/Android non cambiano. Il controllo pubblico su dati sani è terminato
+`skipped/not_stale` senza cambiare il catalogo; nessun nuovo collaudo su
+browser o dispositivo è stato eseguito. La prima corsa programmata e la
+freschezza successiva restano da verificare.
+[Prove e limiti](EVENTS_CONDITIONAL_RECOVERY_ACTIVATION_20261127.md).
 
 **Dati meteo, 25 novembre 2026, 20:04 UTC.** ICON nazionale pubblica il
 ciclo 25 novembre 12Z e CAMS aria/pollini il ciclo 25 novembre 00Z;
