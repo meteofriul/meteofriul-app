@@ -70,27 +70,55 @@ il successo dell'invocazione non dimostra che il job abbia verificato i dati.
 Serve quindi un controllo distinto della freschezza del lotto pubblicato.
 L'alert proposto segnala TurismoFVG ancora non visibile oltre 48 ore, con
 un solo canale operativo e senza notifiche per ogni singola scheda in
-revisione. Il routing degli alert va definito e verificato separatamente;
-l'attuale policy di errore Eventi non recapita una notifica dedicata.
+revisione. Esiste il canale email `Meteo Friul - notifiche operative`, ma
+l'attuale policy di errore Eventi non lo usa. Il controllo di freschezza e
+il suo routing vanno implementati e verificati prima di dichiarare coperto
+anche un mancato avvio dello Scheduler.
 
 ## Prove e limiti
 
 I 38 test di `test_pilot_cloud.py`, gli 811 test `test_pilot_*.py`
 (uno saltato), `compileall`, l'help del comando e `git diff --check` sono
-passati. Un controllo senza rete sui due cataloghi reali salvati il 27
+passati. La CI della PR 71 sul commit `286567cd` è verde nei tre job.
+Cloud Build ha prodotto dal medesimo commit il digest candidato
+`sha256:7e9f65565101737ab571358ef6c813a6082d5a3ca72766b2cdcfea33f9f36f5b`.
+Un controllo senza rete sui due cataloghi reali salvati il 27
 novembre ha classificato come dovuta la ripresa del lotto pubblico
 precedente `stale` e come `not_stale` quello recuperato `partial`. I test
 esercitano il mancato accesso alla fonte e la mancata scrittura quando la
 fonte è sana, la selezione della sola fonte quando la ripresa è dovuta e il
 claim atomico, il marcatore giornaliero anche dopo un tentativo fallito e
-l'assenza di richieste quando il claim esiste già. Queste prove non
-sostituiscono una corsa QA del nuovo comando in Cloud Run.
+l'assenza di richieste quando il claim esiste già.
 
-Prima di attivare una pianificazione occorrono CI, build dal commit
-approvato, prova QA del caso `skipped` sul catalogo corrente, prova QA con
-checkpoint incompleto su una copia separata, readback di IAM e costo di
-una invocazione giornaliera, poi verifica di log, dati e allarme. Il caso
-senza lavoro utile comporta comunque l'avvio giornaliero di un container;
+Il job QA temporaneo `meteofriul-events-conditional-qa-20261127` ha usato
+quel digest con una copia del catalogo pubblico in un prefisso separato.
+L'esecuzione `meteofriul-events-conditional-qa-20261127-qrjs5` è terminata
+con successo il 27 novembre alle 09:06 UTC; il log strutturato registra
+`action=skipped`, `reason=not_stale`. La generazione QA
+`1795770227005336`, l'MD5 `4q0q60/0VH1VNW4D5/Ky2Q==` e la dimensione
+3.252.924 byte sono rimasti identici; non è stato creato alcun claim QA.
+Il job temporaneo è stato eliminato. La prova copre il caso sano in cloud,
+non la ripresa dovuta né un errore reale futuro.
+
+Il job pubblico è ancora alla generazione 50, con un task, zero retry,
+timeout 900 secondi, 1 vCPU e 1 GiB. L'attuale identità Scheduler ha il
+solo ruolo `roles/run.invoker` sul job Eventi; per il nuovo job serve un
+binding altrettanto circoscritto. Il nuovo Scheduler userebbe la medesima
+identità e zero retry.
+
+Per il caso sano, il container QA è durato circa 26 secondi. Cloud Run
+fattura i job per almeno un minuto: usando le [tariffe pubblicate](https://cloud.google.com/run/pricing)
+per 1 vCPU e 1 GiB, 31 avvii sani valgono circa 0,026 USD prima della
+franchigia condivisa, rete e log esclusi. Cloud Scheduler costa al massimo
+[0,10 USD ogni 31 giorni per un job fatturabile](https://cloud.google.com/scheduler/pricing);
+la franchigia di tre job è condivisa a livello di account. Una ripresa
+dovuta dura di più e consuma anche richieste alla fonte; il massimo del
+job resta 900 secondi. Questa è una stima, non una lettura della fattura.
+
+Prima di attivare una pianificazione restano la prova QA del caso dovuto
+con checkpoint incompleto su una copia separata e il readback finale del
+binding IAM. Dopo l'attivazione vanno verificati log, dati e allarme. Il
+caso senza lavoro utile comporta comunque l'avvio giornaliero di un container;
 quando la fonte è incompleta, il traffico aggiuntivo è limitato a una
 raccolta della sola TurismoFVG per giorno. Nessuna di queste risorse
 operative è stata attivata da questa proposta.

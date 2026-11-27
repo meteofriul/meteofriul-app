@@ -10,8 +10,9 @@ del nuovo worker resta da osservare. [Prove e limiti](EVENTS_TURISMOFVG_TIMEOUT_
 
 **Eventi, continuità candidata il 27 novembre 2026.** Il nuovo comando di
 ripresa condizionale è soltanto sorgente backend: non cambia contratto API,
-frontend o artefatti Web/Android. Non è stato attivato alcun nuovo job o
-Scheduler e non è stato eseguito un nuovo collaudo su dispositivo.
+frontend o artefatti Web/Android. Il job QA temporaneo ha confermato il
+caso senza recupero ed è stato eliminato; non è stato attivato alcun nuovo
+job o Scheduler pubblico né eseguito un nuovo collaudo su dispositivo.
 [Disegno e limiti](EVENTS_CONDITIONAL_RECOVERY_DESIGN_20261127.md).
 
 **Dati meteo, 25 novembre 2026, 20:04 UTC.** ICON nazionale pubblica il

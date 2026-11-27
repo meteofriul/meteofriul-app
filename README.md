@@ -12,7 +12,9 @@ nuova immagine resta da osservare e il recupero automatico condizionale non
 
 **Eventi, continuità in preparazione il 27 novembre 2026.** Un ramo separato
 propone una ripresa condizionale della sola TurismoFVG, con claim atomico
-contro avvii duplicati. 811 test Eventi passano; il codice non è distribuito
+contro avvii duplicati. 811 test Eventi e la CI della PR 71 passano; un job
+QA temporaneo ha confermato il salto della fonte sana senza scritture ed è
+stato eliminato. Il codice non è distribuito
 e non esistono nuovi job, Scheduler o allarmi attivi. Il recupero pubblico
 attestato sopra resta lo stato corrente. [Disegno e limiti](docs/operations/EVENTS_CONDITIONAL_RECOVERY_DESIGN_20261127.md).
 
